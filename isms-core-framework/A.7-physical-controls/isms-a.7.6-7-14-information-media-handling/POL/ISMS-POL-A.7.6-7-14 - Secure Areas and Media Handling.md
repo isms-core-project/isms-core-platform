@@ -43,7 +43,7 @@
 - ISMS-IMP-A.7.6-7-14-S1-UG/TG (Secure Areas Working Assessment)
 - ISMS-IMP-A.7.6-7-14-S2-UG/TG (Clear Desk Screen Compliance)
 - ISMS-IMP-A.7.6-7-14-S3-UG/TG (Equipment Disposal Assessment)
-- ISMS-IMP-A.7.6-7-14-S4-UG/TG (Compliance Dashboard)
+
 - ISO/IEC 27001:2022 Controls A.7.6, A.7.7, A.7.14
 
 ---
@@ -542,4 +542,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for secure areas and media handling. Implementation procedures are documented in ISMS-IMP-A.7.6-7-14 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -3,170 +3,165 @@
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.7.10: Storage Media
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Storage Media Inventory |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.10.1-TG |
+| **Related Policy** | ISMS-POL-A.7.10 (Storage Media) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.10 (Storage Media) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Storage Media Inventory & Classification |
-| **Related Policy** | ISMS-POL-A.7.10, Section 2.2 (Removable Media Management) |
-| **Purpose** | Assess organisational compliance with storage media inventory, registration, and classification requirements across the media lifecycle |
-| **Target Audience** | IT Operations, Asset Management, Information Security Officers, Physical Security, Compliance Officers, Auditors |
-| **Assessment Type** | Asset Inventory & Operational Compliance |
-| **Review Cycle** | Quarterly (minimum) or After Significant Media Acquisitions |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Storage Media Inventory assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.10 (Storage Media)
+- ISMS-IMP-A.7.10.2 (Media Handling Procedures)
+- ISMS-IMP-A.7.10.3 (Media Lifecycle Tracking)
 
 ---
+
 # Technical Specification
-**Audience:** Python Developers, Excel Workbook Designers, ISMS Implementation Technical Teams
-
-
-> Auto-generated from `generate_a710_1_storage_media_inventory.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.7.10.1` |
-| **Output Filename** | `ISMS-IMP-A.7.10.1_Storage_Media_Inventory_YYYYMMDD.xlsx` |
-| **Workbook Title** | Storage Media Inventory |
-| **Total Sheets** | 20 (20 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #0000FF | 0000FF | Custom |
-| #003366 | 003366 | Dark Blue (Headers) |
-| #D8E4F8 | D8E4F8 | Pale Blue (Sub-section) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #F2F2F2 | F2F2F2 | Very Light Gray (Protected/Alternating) |
-| #FFFF00 | FFFF00 | Yellow (Warning) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: 2. Digital Storage Media
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a710_1_storage_media_inventory.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: 3. Removable Media Registry
+**Document ID:** `ISMS-IMP-A.7.10.1`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: 4. Fixed Storage Assets
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | 2. Digital Storage Media |
+| 3 | 3. Removable Media Registry |
+| 4 | 4. Fixed Storage Assets |
+| 5 | 5. Cloud Storage Mapping |
+| 6 | 6. Physical Documents |
+| 7 | Evidence Register |
+| 8 | Summary Dashboard |
+| 9 | Approval Sign-Off |
 
-## Sheet 5: 5. Cloud Storage Mapping
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #0000FF | Custom |
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: 6. Physical Documents
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Media ID / Asset Tag |
+| 2 | Media Type |
+| 3 | Data Classification |
+| 4 | Serial Number |
+| 5 | Assigned Custodian |
+| 6 | Status |
+| 7 | Acquisition Date |
+| 8 | Last Audit Date |
+| 9 | Next Audit Date |
+| 10 | Gap Identified |
+| 11 | Remediation Plan |
+| 12 | Target Completion |
+| 13 | Risk Level |
+| 14 | Evidence Reference |
+| 15 | Notes / Comments |
+| 16 | Remediation Owner |
+| 17 | Budget Required |
+| 18 | Physical Location |
+| 19 | Encryption Status |
+| 20 | Capacity (GB) |
+| 21 | Authorisation Reference |
+| 22 | Authorised User(s) |
+| 23 | Permitted Use Cases |
+| 24 | System Type |
+| 25 | Total Capacity (TB) |
+| 26 | Utilisation (%) |
+| 27 | Cloud Type |
+| 28 | Provider Name |
+| 29 | Data Residency |
+| 30 | Document Type |
+| 31 | Storage Location |
+| 32 | Access Control |
+| 33 | Assessment Area |
+| 34 | Total Items |
+| 35 | Registered |
+| 36 | Transitional |
+| 37 | Unregistered/Lost |
+| 38 | N/A |
+| 39 | Compliance % |
+| 40 | Evidence ID |
+| 41 | Evidence Type |
+| 42 | Description |
+| 43 | Related Sheet/Item |
+| 44 | Collection Date |
+| 45 | Collected By |
+| 46 | Retention Period |
+| 47 | Notes |
 
-## Sheet 7: Summary Dashboard
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Evidence Register
+```
+HDD, SSD, USB Flash Drive, SD Card, Backup Tape, Optical Media, Other, Public
+Internal, Confidential, Restricted, Registered, Unregistered, Pending Disposal
+In Transit, Lost/Stolen, N/A, Critical, High, Medium, Low, Yes, No, Unknown
+Encrypted (AES-256), Encrypted (Hardware), Not Encrypted, Physical Server
+Virtual Server, NAS, SAN, Archive System, Backup Appliance, IaaS, PaaS, SaaS
+Hybrid, Multi-Cloud, Switzerland, EU, US, UK, APAC, Multiple Regions
+Paper Documents, Microfilm, Microfiche, Archive Boxes, Mixed Media, Key Lock
+Combination Lock, Card Access, Biometric, Multi-Factor, None, Screenshot
+Configuration Export, Log Sample, Report, Document, Photo, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
----
-
-## Sheet 9: Approval Sign-Off
-
----
-
-## Sheet 10: Instructions
-
----
-
-## Sheet 11: Digital_Media
-
-**Data Rows:** 91 (rows 10–100)
-
----
-
-## Sheet 12: Removable_Media
-
----
-
-## Sheet 13: Fixed_Storage
-
-**Data Rows:** 91 (rows 10–100)
-
----
-
-## Sheet 14: Cloud_Storage
-
-**Data Rows:** 91 (rows 10–100)
-
----
-
-## Sheet 15: Physical_Docs
-
-**Data Rows:** 91 (rows 10–100)
-
----
-
-## Sheet 16: Summary_Dashboard
-
----
-
-## Sheet 17: Evidence_Register
-
-**Data Rows:** 100 (rows 5–104) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence ID | 12 |
-| B | Assessment Sheet | 20 |
-| C | Related Media/System | 30 |
-| D | Evidence Type | 20 |
-| E | Evidence Title/Description | 35 |
-| F | File Location/Link | 40 |
-| G | Date Created/Collected | 12 |
-| H | Retention Period | 15 |
-| I | Next Review Date | 12 |
-| J | Owner/Custodian | 20 |
-| K | Notes | 30 |
-
----
-
-## Sheet 18: Approval_Signoff
-
----
-
-## Sheet 19: Base_Validations
-
-**Data Rows:** 91 (rows 10–100)
-
----
-
-## Sheet 20: Assessment
-
-**Data Rows:** 13 (rows 10–22)
+**Extracted:** 9 sheets, 47 columns, 69 validation values, 11 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 
 *"The price of reliability is the pursuit of the utmost simplicity."*
 - C.A.R. Hoare
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

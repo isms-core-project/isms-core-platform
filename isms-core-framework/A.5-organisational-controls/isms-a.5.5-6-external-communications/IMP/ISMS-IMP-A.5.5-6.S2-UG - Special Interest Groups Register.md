@@ -3,6 +3,41 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.6: Contact with Special Interest Groups
 
+---
+
+**Document Control**
+
+| Attribute | Value |
+|-------|-------|
+| **Document Title** | Special Interest Groups Register |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.5.5-6.S2-UG |
+| **Related Policy** | ISMS-POL-A.5.5-6 (External Communications) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.6 (Contact with Special Interest Groups) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.5-6 (External Communications)
+- ISMS-IMP-A.5.5-6.S1 (Authority Contacts Register)
+- ISMS-IMP-A.5.5-6.S3 (External Communication Procedures)
+
+---
+
 ## Implementation Guide for ISO 27001:2022 Control A.5.6: Contact with Special Interest Groups
 
 **Document ID:** ISMS-IMP-A.5.5-6.S2-UG
@@ -49,15 +84,13 @@ This control ensures that the organisation benefits from external knowledge netw
 
 ### Assessment Domains
 
-This workbook is **Domain 2 of 5** in the A.5.5-6 External Communications assessment series:
+This workbook is **Domain 2 of 3** in the A.5.5-6 External Communications assessment series:
 
 | Domain | Workbook | Focus |
 |--------|----------|-------|
 | 1 | Authority Contacts Register | Documenting authority relationships |
 | **2** | **Special Interest Groups Register** | **SIG memberships and engagement** |
 | 3 | Communication Procedures | Notification and escalation processes |
-| 4 | Compliance Dashboard | KPIs and metrics monitoring |
-| 5 | Consolidation Dashboard | Executive summary across domains |
 
 ---
 
@@ -97,6 +130,24 @@ Collect the following information for each SIG membership:
 - Intelligence received and actionability
 - Contributions made
 - Value assessment
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Groups Registry** | Core register of all SIG memberships with contact, category, and value details |
+| **Membership Details** | Detailed membership terms, fees, renewal dates, and representative assignments |
+| **Engagement Log** | Record of participation, meetings attended, and activities completed per group |
+| **Intelligence Received** | Log of intelligence and information received through group participation |
+| **Contribution Log** | Record of contributions made to groups (sharing, presenting, participating) |
+| **Evidence Register** | Tracking of supporting evidence for SIG memberships and engagement activities |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
 
 ---
 
@@ -280,6 +331,19 @@ Management approval for the assessment.
 | 3 | Budget Owner | Cost-benefit validation |
 | 4 | CISO | Final approval and sign-off |
 
+### Summary_Dashboard Sheet
+
+The Summary Dashboard automatically aggregates data from your completed sheets and provides a compliance overview. No data entry is required.
+
+Review the dashboard after completing all sheets above to confirm:
+- SIG membership coverage across group types and geographic scope
+- Engagement activity levels and recency
+- Intelligence received, actionability, and distribution status
+- Contribution log demonstrating reciprocal participation
+- Evidence register completeness
+
+Use the dashboard output to support your management review discussion and sign-off process.
+
 ---
 
 ## Evidence Collection
@@ -403,7 +467,7 @@ Before submitting for approval, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Alone we can do so little; together we can do so much."*
+— Helen Keller
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

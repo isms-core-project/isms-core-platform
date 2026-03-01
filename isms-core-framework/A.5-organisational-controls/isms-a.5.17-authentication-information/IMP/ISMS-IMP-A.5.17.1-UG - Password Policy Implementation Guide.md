@@ -7,15 +7,34 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Password Policy Implementation Guide |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.17.1-UG |
+| **Related Policy** | ISMS-POL-A.5.17 (Authentication Information) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.17 (Authentication Information) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.17 Authentication Information |
-| **Parent Policy** | ISMS-POL-A.5.17 - Authentication Information |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.17 (Authentication Information)
+- ISMS-IMP-A.5.17.2 (MFA Deployment Assessment)
+- ISMS-IMP-A.5.17.3 (Authentication Management Procedures)
 
 ---
 
@@ -24,6 +43,22 @@
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.17.1-TG.
 
 ---
+
+### Workbook at a Glance
+
+This workbook contains the following 9 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Password Policy** | Password policy requirements, standards, and compliance status |
+| **MFA Requirements** | Multi-factor authentication requirements and deployment status |
+| **Credential Standards** | Credential type standards, strength requirements, and storage rules |
+| **User Responsibilities** | User obligations for authentication information management |
+| **System Requirements** | System-level authentication configuration requirements |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -562,7 +597,7 @@ The Approval_SignOff sheet requires:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A secret shared is a secret no more."*
+— Traditional proverb
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

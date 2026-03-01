@@ -56,7 +56,7 @@ This status file tracks **control packs**, not ISO certification status.
 </tr>
 <tr>
 <td>IMP Documents (UG + TG)</td>
-<td><strong>xxx</strong> (xxx UG + xxx TG)</td>
+<td><strong>372</strong> (186 UG + 186 TG)</td>
 <td><img src="https://img.shields.io/badge/UG%2FTG_Split-9400D3?style=flat-square" alt="UG/TG Split"/></td>
 </tr>
 </table>

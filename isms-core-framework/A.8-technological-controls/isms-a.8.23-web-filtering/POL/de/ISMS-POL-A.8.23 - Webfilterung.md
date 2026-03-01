@@ -413,7 +413,6 @@ Diese Richtlinie integriert mit dem Informationssicherheits-Managementsystem der
 - ISMS-IMP-A.8.23-2: Network Coverage Assessment (Topologie-Mapping, Coverage-Verifizierung)
 - ISMS-IMP-A.8.23-3: Policy Configuration Assessment (Kategorien, Regeln, Blocking-Policies)
 - ISMS-IMP-A.8.23-4: Monitoring & Response Assessment (Logging, Alerting, Incident-Prozeduren)
-- ISMS-IMP-A.8.23-5: Compliance Dashboard (Konsolidiertes Compliance-Reporting)
 
 **Assessment-Tools**:
 
@@ -442,7 +441,7 @@ Diese Richtlinie adressiert Web-Filtering-Anforderungen von:
 
 *Konditionale Anwendbarkeit gemäss ISMS-POL-00
 
-**Hinweis**: Spezifische regulatorische Interpretation und Compliance-Verifizierungs-Prozeduren sind dokumentiert in ISMS-IMP-A.8.23-5 (Compliance Dashboard).
+**Hinweis**: Spezifische regulatorische Interpretation und Compliance-Verifizierungs-Prozeduren sind dokumentiert in ISMS-IMP-A.8.23 (Implementation Guidance Suite).
 
 ## Training & Awareness
 
@@ -525,4 +524,4 @@ Diese Richtlinie adressiert Web-Filtering-Anforderungen von:
 ---
 
 *Diese Richtlinie definiert Anforderungen. Implementierungs-Prozeduren sind dokumentiert in ISMS-IMP-A.8.23.*
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

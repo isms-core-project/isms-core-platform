@@ -5,17 +5,52 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Findings and Remediation Management |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.35-36.S3-UG |
-| **Title** | Findings and Remediation Management |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.35-36 |
-| **Control Name** | Compliance and Review |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.5.35-36 (Compliance Review) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.35-36) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Information Security Manager |
 | **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.35-36 (Compliance Review)
+- ISMS-IMP-A.5.35-36.S1 (Independent Review Planning and Tracking)
+- ISMS-IMP-A.5.35-36.S2 (Compliance Assessment)
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Findings Register | Consolidated register of all findings from reviews and assessments |
+| 3 | Remediation Actions | Plan and track corrective actions for identified findings |
+| 4 | Root Cause Analysis | Analyse underlying causes of significant findings |
+| 5 | Verification Log | Record and verify closure of remediated findings |
+| 6 | Trend Analysis | Identify patterns and trends in findings over time |
+| 7 | Evidence Register | Store and reference evidence for remediation activities |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -343,7 +378,7 @@ Before submitting:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A finding is not a failure; failing to remediate is."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

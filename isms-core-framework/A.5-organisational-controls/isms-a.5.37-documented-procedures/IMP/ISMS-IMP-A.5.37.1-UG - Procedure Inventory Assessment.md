@@ -5,24 +5,57 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Procedure Inventory Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.37.1-UG |
-| **Title** | Procedure Inventory Assessment |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.37 |
-| **Control Name** | Documented Operating Procedures |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.5.37 (Documented Procedures) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.37) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Information Security Manager |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.37 (Documented Procedures)
+- ISMS-IMP-A.5.37.2 (Procedure Quality Assessment)
+- ISMS-IMP-A.5.37.3 (Procedure Review and Update Tracking)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.37.1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Procedure Inventory | Catalogue all documented operating procedures in scope |
+| 3 | Required Procedures | Verify coverage against mandatory procedure requirements |
+| 4 | Accessibility Matrix | Assess procedure accessibility and availability to personnel |
+| 5 | Gap Analysis | Identify missing or inadequate procedures requiring attention |
+| 6 | Evidence Register | Store and reference evidence supporting assessments |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -64,7 +97,6 @@ This assessment covers the following components:
 - Standards and guidelines (separate documentation type)
 - Procedure quality assessment (covered in ISMS-IMP-A.5.37.2)
 - Review and update tracking (covered in ISMS-IMP-A.5.37.3)
-- Compliance dashboards and metrics (covered in ISMS-IMP-A.5.37.4)
 - Project-specific documentation
 - End-user application guides (unless security-relevant)
 
@@ -925,7 +957,6 @@ A.5.37 Procedures (How to do it)
 |-------------|-------|--------------|
 | ISMS-IMP-A.5.37.2 | Procedure Quality Assessment | Assesses quality of inventoried procedures |
 | ISMS-IMP-A.5.37.3 | Procedure Review and Update Tracking | Tracks procedure review cycles |
-| ISMS-IMP-A.5.37.4 | Compliance Dashboard | Aggregates compliance metrics |
 | ISMS-IMP-A.5.1.x | Policy Management | Policies that procedures implement |
 | ISMS-IMP-A.5.24.x | Incident Management | Incident response procedures |
 
@@ -935,7 +966,7 @@ A.5.37 Procedures (How to do it)
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"If it isn't written down, it didn't happen."*
+— Quality management principle
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

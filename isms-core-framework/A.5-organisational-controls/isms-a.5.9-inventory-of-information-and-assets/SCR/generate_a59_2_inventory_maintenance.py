@@ -21,11 +21,11 @@ ISO/IEC 27001:2022 Control A.5.9: Inventory of Information and Assets
 Assessment Domain 2 of 5: Inventory Maintenance & Update Procedures
 
 --------------------------------------------------------------------------------
-SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
+SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANISATION
 --------------------------------------------------------------------------------
 
 This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
-your organization's specific inventory systems, update workflows, and integration
+your organisation's specific inventory systems, update workflows, and integration
 architecture.
 
 Key customization areas:
@@ -33,7 +33,7 @@ Key customization areas:
 2. Update workflows and triggers (procurement, decommissioning, change management)
 3. Integration points (HR, procurement, asset management, monitoring tools)
 4. SLA definitions and thresholds (what's acceptable for your operations)
-5. Organization name, CISO details, contact information
+5. Organisation name, CISO details, contact information
 6. File paths and naming conventions
 7. Existing integration patterns and APIs
 
@@ -47,13 +47,13 @@ DESCRIPTION
 --------------------------------------------------------------------------------
 
 This script generates a comprehensive Excel assessment workbook for evaluating
-how well [Organization] maintains its asset inventory - the processes, systems,
+how well [Organisation] maintains its asset inventory - the processes, systems,
 and integrations that keep inventory data current and accurate over time.
 
 **Purpose:**
 Enables systematic assessment of inventory maintenance procedures, update
 timeliness, system integrations, and quality control processes. Measures
-operational effectiveness of keeping the inventory synchronized with actual
+operational effectiveness of keeping the inventory synchronised with actual
 infrastructure changes, personnel moves, and procurement activities.
 
 **Assessment Scope:**
@@ -84,7 +84,6 @@ infrastructure changes, personnel moves, and procurement activities.
 - Update procedure documentation
 
 **Integration:**
-This assessment feeds into the A.5.9.5 Compliance Dashboard, which consolidates
 data from all four assessment domains for executive oversight and audit readiness.
 
 --------------------------------------------------------------------------------
@@ -137,11 +136,11 @@ Control Reference:    ISO/IEC 27001:2022 Annex A Control A.5.9
 Assessment Domain:    2 of 5
 Framework Version:    1.0
 Script Version:       1.0
-Author:               [Organization] ISMS Implementation Team
+Author:               [Organisation] ISMS Implementation Team
 Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
-License:              [Organization License]
+License:              [Organisation License]
 
 Related Documents:
     - ISMS-POL-A.5.9: Inventory of Information and Assets (Policy)
@@ -149,7 +148,6 @@ Related Documents:
     - ISMS-IMP-A.5.9-2: Inventory Maintenance Assessment (Implementation Guide)
     - ISMS-IMP-A.5.9-3: Quality & Compliance Assessment (Implementation Guide)
     - ISMS-IMP-A.5.9-4: Owner Accountability Assessment (Implementation Guide)
-    - ISMS-IMP-A.5.9-5: Compliance Dashboard (Consolidation)
 
 --------------------------------------------------------------------------------
 CHANGE HISTORY
@@ -167,20 +165,46 @@ Version 1.0 - 22.01.2026
 [Future changes to be documented here]
 
 --------------------------------------------------------------------------------
+IMPORTANT NOTES
+--------------------------------------------------------------------------------
+
+**Audit Considerations:**
+This assessment generates audit evidence per ISO 27001:2022 requirements.
+Ensure all fields are completed accurately and evidence is properly linked.
+
+**Data Protection:**
+Assessment workbooks may contain sensitive asset inventory details. Handle
+in accordance with your organisation's data classification policies.
+
+**Maintenance:**
+Review asset inventory procedures and classification criteria annually or when
+new asset categories are introduced, system landscapes change, or audit findings
+identify inventory gaps.
+
+**Quality Assurance:**
+Have technical SMEs validate assessments before using results
+for compliance reporting or management decisions.
+
+================================================================================
 """
 
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Border, Side, Alignment, Protection
-from openpyxl.utils import get_column_letter
-from openpyxl.worksheet.datavalidation import DataValidation
-from openpyxl.formatting.rule import CellIsRule
+try:
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+    from openpyxl.utils import get_column_letter
+    from openpyxl.worksheet.datavalidation import DataValidation
+    from openpyxl.formatting.rule import CellIsRule
+except ImportError:
+    sys.exit("Error: openpyxl not installed. Install with: pip install openpyxl")
 from datetime import datetime
+from pathlib import Path
 import os
 
 # =============================================================================
 # LOGGING CONFIGURATION
 # =============================================================================
 import logging
+import sys
 
 logging.basicConfig(
     level=logging.INFO,
@@ -191,74 +215,50 @@ logger = logging.getLogger(__name__)
 
 
 # CUSTOMIZE: Configuration
-CONFIG = {
-    'organisation': '[Organisation]',
-    'ciso_name': '[CISO Name]',
-    'security_contact': '[security@organisation.ch]',
-    
-    # Color scheme (consistent with A.8.24 pattern)
-    'colors': {
-        'header_bg': '003366',      # Dark blue
-        'header_text': 'FFFFFF',     # White
-        'section_bg': '4472C4',      # Medium blue
-        'green_light': 'C6EFCE',     # Light green (pass)
-        'green_dark': '006100',      # Dark green (pass text)
-        'yellow_light': 'FFEB9C',    # Light yellow (warning)
-        'yellow_dark': '9C5700',     # Dark yellow (warning text)
-        'red_light': 'FFC7CE',       # Light red (fail)
-        'red_dark': '9C0006',        # Dark red (fail text)
-        'gray_light': 'D9D9D9',      # Light gray (locked cells)
-    },
-    
-    # SLA targets (customize per organization)
-    'sla_targets': {
-        'New Asset Addition': 5,      # Business days
-        'Asset Modification': 3,       # Business days
-        'Asset Decommission': 2,       # Business days
-        'Personnel Update (Joiner)': 1,    # Business days
-        'Personnel Update (Leaver)': 1,    # Business days (CRITICAL)
-        'Ownership Change': 3,         # Business days
-    },
-    
-    # Update triggers
-    'update_triggers': [
-        'Procurement Approval',
-        'Asset Received / Deployed',
-        'Change Request Approved',
-        'Decommission Request',
-        'HR Onboarding',
-        'HR Offboarding',
-        'Ownership Transfer Request',
-        'Discovery Scan Results',
-        'Manual Entry',
-        'Automated Integration',
-        'Periodic Review',
-        'Other (Specify)'
-    ],
-    
-    # Integration types
-    'integration_types': [
-        'Real-time API',
-        'Scheduled Batch (Daily)',
-        'Scheduled Batch (Weekly)',
-        'Webhook / Event-driven',
-        'File Transfer (SFTP)',
-        'Database Replication',
-        'Manual Import',
-        'No Integration (Manual)',
-    ],
-}
+_INTEGRATION_TYPES = [
+    'Real-time API',
+    'Scheduled Batch (Daily)',
+    'Scheduled Batch (Weekly)',
+    'Webhook / Event-driven',
+    'File Transfer (SFTP)',
+    'Database Replication',
+    'Manual Import',
+    'No Integration (Manual)',
+]
 
 # Document identification constants
+
+# ============================================================================
+# DOCUMENT METADATA
+# ============================================================================
 DOCUMENT_ID = "ISMS-IMP-A.5.9.2"
 WORKBOOK_NAME = "Inventory Maintenance"
-CONTROL_REF = "ISO/IEC 27001:2022 - Control A.5.9: Inventory of Information and Assets"
+CONTROL_ID   = "A.5.9"
+CONTROL_NAME = "Inventory of Information and Assets"
+CONTROL_REF  = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+GENERATED_DATE = datetime.now().strftime("%Y%m%d")
 OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
+_wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+_wkbk_dir.mkdir(parents=True, exist_ok=True)
+
+# ============================================================================
+# UNICODE SYMBOLS - PROPER UTF-8 ENCODING
+# ============================================================================
+CHECK   = '\u2705'      # ✅ Green checkmark
+XMARK   = '\u274C'      # ❌ Red X
+WARNING = '\u26A0'      # ⚠  Warning sign
+BULLET  = '\u2022'      # •  Bullet point
+
+def finalize_validations(wb):
+    """Ensure all data validations are properly finalised for all worksheets."""
+    for ws in wb.worksheets:
+        for dv in ws.data_validations.dataValidation:
+            pass  # Ensures DVs are iterated and serialised correctly
 
 
-def main():
-    """Main execution function"""
+def create_workbook(output_path):
+    """Generate the complete assessment workbook."""
     logger.info("="*80)
     logger.info("ISMS Control A.5.9 - Inventory Maintenance Assessment Generator")
     logger.info("="*80)
@@ -268,10 +268,14 @@ def main():
     
     # Create workbook
     wb = Workbook()
+    wb.properties.title = f"{DOCUMENT_ID} — {WORKBOOK_NAME}"
+    wb.properties.creator = "ISMS Core Contributors"
+    wb.properties.description = f"ISMS Implementation Workbook — {DOCUMENT_ID}"
+    wb.properties.subject = f"ISO/IEC 27001:2022 — Control {CONTROL_ID}: {CONTROL_NAME}"
     
     # Remove default sheet
     if "Sheet" in wb.sheetnames:
-        wb.remove(wb["Sheet"])
+        wb.remove(wb.active)
     
     # Create sheets in order
     sheets = [
@@ -283,7 +287,7 @@ def main():
         "Maintenance Metrics",
         "Evidence Register",
         "Summary Dashboard",
-        "Approval & Sign-Off",
+        "Approval Sign-Off",
     ]
     
     for sheet_name in sheets:
@@ -313,22 +317,26 @@ def main():
     create_maintenance_metrics_sheet(wb["Maintenance Metrics"])
     logger.info("  ✓ Maintenance Metrics")
     
-    create_evidence_register_sheet(wb["Evidence Register"])
+    create_evidence_register(wb["Evidence Register"])
     logger.info("  ✓ Evidence Register")
     
     create_summary_dashboard_sheet(wb["Summary Dashboard"])
     logger.info("  ✓ Summary Dashboard")
     
-    create_approval_signoff_sheet(wb["Approval & Sign-Off"])
+    create_approval_sheet(wb["Approval Sign-Off"])
     logger.info("  ✓ Approval & Sign-Off")
     
-    # Save workbook
-    filename = f"ISMS-IMP-A.5.9.2_Inventory_Maintenance_{datetime.now().strftime('%Y%m%d')}.xlsx"
-    wb.save(filename)
-    
+    # Finalise data validations
+    finalize_validations(wb)
+
+    # Save workbook to WKBK directory
+    for ws in wb.worksheets:
+        ws.sheet_view.showGridLines = False
+    wb.save(output_path)
+
     logger.info("")
     logger.info("="*80)
-    logger.info(f"✅ SUCCESS: {filename}")
+    logger.info(f"SUCCESS: {output_path.name}")
     logger.info("="*80)
     logger.info("")
     logger.info("Next Steps:")
@@ -341,140 +349,114 @@ def main():
     logger.info("  7. Export CSV from Sheet 6 for dashboard consolidation")
     logger.info("  8. Obtain stakeholder review and approval")
     logger.info("")
-    logger.info(f"Output location: {os.path.abspath(filename)}")
+    logger.info(f"Output location: {output_path}")
     logger.info("")
 
 
+
+def main():
+    create_workbook(_wkbk_dir / OUTPUT_FILENAME)
+
+
 def create_instructions_sheet(ws):
-    """Create Instructions & Legend sheet"""
-    
-    # Title
-    ws.merge_cells('A1:H1')
-    ws['A1'] = f"{DOCUMENT_ID}  -  Inventory Maintenance Assessment\n{CONTROL_REF}"
-    ws['A1'].font = Font(size=16, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
-    ws['A1'].alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+    """Create GS-IL-compliant Instructions & Legend sheet (Sheet 1)."""
+    ws.title = "Instructions & Legend"
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill("solid", fgColor="003366")
+    _grey = PatternFill("solid", fgColor="D9D9D9")
+    _input = PatternFill("solid", fgColor="FFFFCC")
+    _green = PatternFill("solid", fgColor="C6EFCE")
+    _amber = PatternFill("solid", fgColor="FFEB9C")
+    _red   = PatternFill("solid", fgColor="FFC7CE")
+
+    # Row 1 — Title banner
+    ws.merge_cells("A1:G1")
+    ws["A1"] = f"{DOCUMENT_ID}  -  {WORKBOOK_NAME}\n{CONTROL_REF}"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = _navy
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.row_dimensions[1].height = 40
-    
-    # Subtitle
-    ws.merge_cells('A2:H2')
-    ws['A2'] = "Assessment Domain 2 of 5: Inventory Maintenance & Update Procedures"
-    ws['A2'].font = Font(size=12, italic=True)
-    ws['A2'].alignment = Alignment(horizontal='center')
-    
-    # Purpose section
-    ws['A4'] = "PURPOSE"
-    ws['A4'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A4'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
-    
-    ws.merge_cells('A5:H8')
-    purpose_text = """This assessment evaluates HOW [Organisation] keeps its asset inventory current and synchronized with actual infrastructure, personnel, and procurement changes.
 
-Discovery finds assets that exist. Maintenance ensures the inventory STAYS accurate over time through systematic update procedures, integrations, and quality controls.
+    # Row 3 — Document Information heading
+    ws["A3"] = "Document Information"
+    ws["A3"].font = Font(name="Calibri", size=12, bold=True)
 
-Four maintenance domains are assessed: Inventory Structure, Update Workflows, Integration Architecture, and Quality Control Processes."""
-    ws['A5'] = purpose_text
-    ws['A5'].alignment = Alignment(horizontal='left', vertical='top', wrap_text=True)
-    ws.row_dimensions[5].height = 60
-    
-    # Assessment Methodology
-    ws['A10'] = "ASSESSMENT METHODOLOGY"
-    ws['A10'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A10'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
-    
-    methodology_steps = [
-        ("1. INVENTORY STRUCTURE", "Document system architecture, access controls, data model"),
-        ("2. UPDATE TRIGGERS", "Identify all events that should trigger inventory updates (procurement, decom, HR changes)"),
-        ("3. UPDATE WORKFLOWS", "Map procedures from trigger → inventory update → verification"),
-        ("4. INTEGRATIONS", "Document automated data feeds (HR, procurement, monitoring tools, CMDB)"),
-        ("5. QUALITY CONTROLS", "Assess validation rules, reconciliation processes, review cycles"),
-        ("6. SLA COMPLIANCE", "Measure update timeliness vs. defined SLAs"),
+    doc_info = [
+        ("Document ID",       DOCUMENT_ID),
+        ("Workbook Title",    WORKBOOK_NAME),
+        ("Control Reference", CONTROL_REF),
+        ("Version",           "1.0"),
+        ("Assessment Date",   ""),
+        ("Completed By",      ""),
+        ("Organisation",      ""),
     ]
-    
-    row = 11
-    for step, description in methodology_steps:
-        ws[f'A{row}'] = step
-        ws[f'A{row}'].font = Font(bold=True)
-        ws[f'B{row}'] = description
-        ws[f'B{row}'].alignment = Alignment(wrap_text=True)
-        ws.row_dimensions[row].height = 30
-        row += 1
-    
-    # SLA Targets
-    ws[f'A{row+1}'] = "STANDARD SLA TARGETS"
-    ws[f'A{row+1}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{row+1}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
-    
-    row += 2
-    ws[f'A{row}'] = "Update Trigger"
-    ws[f'B{row}'] = "Target SLA (Business Days)"
-    ws[f'C{row}'] = "Rationale"
-    for col in ['A', 'B', 'C']:
-        ws[f'{col}{row}'].font = Font(bold=True)
-    
-    sla_data = [
-        ("New Asset Addition", "5 days", "From procurement approval to inventory record"),
-        ("Asset Modification", "3 days", "Configuration changes, relocations, upgrades"),
-        ("Asset Decommission", "2 days", "Critical - must remove access quickly"),
-        ("Personnel Joiner", "1 day", "HR onboarding triggers inventory update"),
-        ("Personnel Leaver", "1 day", "CRITICAL - security risk if delayed"),
-        ("Ownership Change", "3 days", "Ownership transfer approved to inventory updated"),
-    ]
-    
-    row += 1
-    for trigger, sla, rationale in sla_data:
-        ws[f'A{row}'] = trigger
-        ws[f'B{row}'] = sla
-        ws[f'C{row}'] = rationale
-        ws[f'C{row}'].alignment = Alignment(wrap_text=True)
-        row += 1
-    
-    # Traffic Light Legend
-    ws[f'A{row+2}'] = "TRAFFIC LIGHT LEGEND"
-    ws[f'A{row+2}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{row+2}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
-    
-    row += 3
-    # Green
-    ws[f'A{row}'] = "✅ GREEN - Compliant"
-    ws[f'A{row}'].fill = PatternFill(start_color=CONFIG['colors']['green_light'], fill_type='solid')
-    ws[f'B{row}'] = "SLA compliance ≥95% OR integration automated"
-    
-    # Yellow
-    row += 1
-    ws[f'A{row}'] = "⚠️ YELLOW - At Risk"
-    ws[f'A{row}'].fill = PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid')
-    ws[f'B{row}'] = "SLA compliance 80-94% OR manual with documented procedure"
-    
-    # Red
-    row += 1
-    ws[f'A{row}'] = "❌ RED - Non-Compliant"
-    ws[f'A{row}'].fill = PatternFill(start_color=CONFIG['colors']['red_light'], fill_type='solid')
-    ws[f'B{row}'] = "SLA compliance <80% OR no documented procedure"
-    
-    # Column widths
-    ws.column_dimensions['A'].width = 30
-    ws.column_dimensions['B'].width = 35
-    ws.column_dimensions['C'].width = 50
-    
-    # Protect sheet (read-only)
+    for i, (label, value) in enumerate(doc_info):
+        r = 4 + i
+        ws[f"A{r}"] = label
+        ws[f"A{r}"].font = Font(name="Calibri", bold=True)
+        ws[f"B{r}"] = value
+        if not value:
+            ws[f"B{r}"].fill = _input
+            ws[f"B{r}"].border = _border
 
+    # Row 12 — Instructions heading
+    ws["A12"] = "Instructions"
+    ws["A12"].font = Font(name="Calibri", size=12, bold=True)
+
+    _instructions = ['1. Complete the Inventory Structure and Access sheet with your system architecture.', '2. Complete the Update Triggers and Workflows sheet with all trigger events.', '3. Complete the Integration Architecture sheet with all automated data feeds.', '4. Complete the Quality Control Processes sheet with all QC procedures.', '5. Review the Maintenance Metrics sheet for overall effectiveness scores.', '6. Link evidence in the Evidence Register sheet.', '7. Obtain approvals in the Approval Sign-Off sheet.']
+    for _i, _line in enumerate(_instructions):
+        ws[f"A{13 + _i}"] = _line
+
+    _leg_row = 21
+
+    # Status Legend — row position tracks after instructions
+    ws[f"A{_leg_row}"] = "Status Legend"
+    ws[f"A{_leg_row}"].font = Font(name="Calibri", size=12, bold=True)
+    for col_idx, header in enumerate(["Symbol", "Status", "Description"], start=1):
+        c = ws.cell(row=_leg_row + 1, column=col_idx, value=header)
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.fill = _grey
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = _border
+    legend_rows = [
+        ("\u2713", "Compliant / Complete",        "Requirement fully met",                   _green),
+        ("\u26a0", "Partial / In Progress",        "Partially met or in progress",            _amber),
+        ("\u2717", "Non-Compliant / Not Started",  "Requirement not met",                     _red),
+        ("\u2014", "Not Applicable",               "Not applicable to this assessment",        None),
+    ]
+    for i, (sym, status, desc, fill) in enumerate(legend_rows):
+        r = _leg_row + 2 + i
+        ws.cell(row=r, column=1, value=sym).border = _border
+        s = ws.cell(row=r, column=2, value=status)
+        d = ws.cell(row=r, column=3, value=desc)
+        if fill:
+            s.fill = fill
+        for cell in (s, d):
+            cell.border = _border
+            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+
+    ws.column_dimensions["A"].width = 28
+    ws.column_dimensions["B"].width = 45
+    ws.column_dimensions["C"].width = 70
+    ws.sheet_view.showGridLines = False
+    ws.freeze_panes = "A4"
 
 def create_inventory_structure_sheet(ws):
     """Create Inventory Structure & Access sheet"""
     
     # Header
     ws.merge_cells('A1:L1')
-    ws['A1'] = "Inventory Structure & Access Controls"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+    ws['A1'] = "INVENTORY STRUCTURE & ACCESS CONTROLS"
+    ws['A1'].font = Font(size=14, bold=True, color="FFFFFF")
+    ws['A1'].fill = PatternFill(start_color="003366", fill_type='solid')
     ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
     
     # Section 1: Inventory System Architecture
-    ws['A3'] = "SECTION 1: INVENTORY SYSTEM ARCHITECTURE"
-    ws['A3'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A3'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws['A3'] = "TABLE 1: INVENTORY SYSTEM ARCHITECTURE"
+    ws['A3'].font = Font(size=12, bold=True, color="FFFFFF")
+    ws['A3'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     ws.merge_cells('A3:L3')
     
     # Column headers
@@ -495,8 +477,8 @@ def create_inventory_structure_sheet(ws):
     
     for col, header, width in headers:
         ws[f'{col}4'] = header
-        ws[f'{col}4'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}4'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+        ws[f'{col}4'].font = Font(bold=True, color="FFFFFF")
+        ws[f'{col}4'].fill = PatternFill(start_color="003366", fill_type='solid')
         ws[f'{col}4'].alignment = Alignment(horizontal='center', wrap_text=True)
         ws.column_dimensions[col].width = width
     
@@ -518,21 +500,21 @@ def create_inventory_structure_sheet(ws):
         
         # Unlock user input cells
         for col in ['B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
+            pass
         
         row += 1
     
     # Add blank rows for additional components
     for i in range(5):
         for col in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
+            pass
         row += 1
     
     # Section 2: Access Control Matrix
     row += 2
-    ws[f'A{row}'] = "SECTION 2: ACCESS CONTROL MATRIX"
-    ws[f'A{row}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{row}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws[f'A{row}'] = "TABLE 2: ACCESS CONTROL MATRIX"
+    ws[f'A{row}'].font = Font(size=12, bold=True, color="FFFFFF")
+    ws[f'A{row}'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     ws.merge_cells(f'A{row}:L{row}')
     
     # Access control headers
@@ -554,8 +536,8 @@ def create_inventory_structure_sheet(ws):
     
     for col, header, width in access_headers:
         ws[f'{col}{row}'] = header
-        ws[f'{col}{row}'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}{row}'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+        ws[f'{col}{row}'].font = Font(bold=True, color="FFFFFF")
+        ws[f'{col}{row}'].fill = PatternFill(start_color="003366", fill_type='solid')
         ws.column_dimensions[col].width = width
     
     # Example roles
@@ -576,7 +558,7 @@ def create_inventory_structure_sheet(ws):
         
         # Unlock for user input
         for col in ['B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
+            pass
         row += 1
     
     # Data validations for Yes/No
@@ -590,11 +572,17 @@ def create_update_triggers_sheet(ws):
     
     # Header
     ws.merge_cells('A1:M1')
-    ws['A1'] = "Update Triggers & Workflows"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+    ws['A1'] = "UPDATE TRIGGERS & WORKFLOWS"
+    ws['A1'].font = Font(size=14, bold=True, color="FFFFFF")
+    ws['A1'].fill = PatternFill(start_color="003366", fill_type='solid')
     ws['A1'].alignment = Alignment(horizontal='center')
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
+
+    ws.merge_cells('A2:M2')
+    ws['A2'] = CONTROL_REF
+    ws['A2'].font = Font(size=10, italic=True, color="003366")
+    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
+    ws.row_dimensions[2].height = 16
     
     # Column headers
     headers = [
@@ -615,8 +603,8 @@ def create_update_triggers_sheet(ws):
     
     for col, header, width in headers:
         ws[f'{col}3'] = header
-        ws[f'{col}3'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}3'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+        ws[f'{col}3'].font = Font(bold=True, color="FFFFFF")
+        ws[f'{col}3'].fill = PatternFill(start_color="003366", fill_type='solid')
         ws[f'{col}3'].alignment = Alignment(horizontal='center', wrap_text=True)
         ws.column_dimensions[col].width = width
     
@@ -639,12 +627,21 @@ def create_update_triggers_sheet(ws):
     row = 4
     for event, source, sla in trigger_events:
         ws[f'A{row}'] = event
+        # FFFFCC fill + borders for data row; F2F2F2 for sample row 4
+        _fill_color = 'F2F2F2' if row == 4 else 'FFFFCC'
+        _yf = PatternFill(start_color=_fill_color, end_color=_fill_color, fill_type='solid')
+        from openpyxl.styles import Border as _Bdr, Side as _Sd
+        _ts = _Sd(style='thin')
+        _db = _Bdr(left=_ts, right=_ts, top=_ts, bottom=_ts)
+        for _lc in 'ABCDEFGHIJKLM':
+            ws[f'{_lc}{row}'].fill = _yf
+            ws[f'{_lc}{row}'].border = _db
+
         ws[f'A{row}'].font = Font(bold=True)
         ws[f'B{row}'] = source
         ws[f'E{row}'] = sla
         
         # Actual Avg Time (user enters from metrics)
-        ws[f'F{row}'].protection = Protection(locked=False)
         
         # SLA Compliance % (formula)
         ws[f'G{row}'] = f'=IF(F{row}="","",IF(F{row}<=E{row},100,MAX(0,100-(F{row}-E{row})/E{row}*100)))'
@@ -656,7 +653,7 @@ def create_update_triggers_sheet(ws):
         
         # Unlock user input cells
         for col in ['C', 'D', 'F', 'I', 'J', 'K', 'L', 'M']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
+            pass
         
         row += 1
     
@@ -673,8 +670,8 @@ def create_update_triggers_sheet(ws):
     # Summary section
     summary_row = row + 2
     ws[f'A{summary_row}'] = "UPDATE WORKFLOW SUMMARY"
-    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{summary_row}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color="FFFFFF")
+    ws[f'A{summary_row}'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     
     summary_row += 1
     ws[f'A{summary_row}'] = "Total Update Triggers"
@@ -711,17 +708,17 @@ def create_update_triggers_sheet(ws):
     ws.conditional_formatting.add(
         f'G4:G{row-1}',
         CellIsRule(operator='greaterThanOrEqual', formula=['95'],
-                   fill=PatternFill(start_color=CONFIG['colors']['green_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="C6EFCE", fill_type='solid'))
     )
     ws.conditional_formatting.add(
         f'G4:G{row-1}',
         CellIsRule(operator='between', formula=['80', '94'],
-                   fill=PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="FFEB9C", fill_type='solid'))
     )
     ws.conditional_formatting.add(
         f'G4:G{row-1}',
         CellIsRule(operator='lessThan', formula=['80'],
-                   fill=PatternFill(start_color=CONFIG['colors']['red_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="FFC7CE", fill_type='solid'))
     )
 
 
@@ -730,10 +727,16 @@ def create_integration_architecture_sheet(ws):
     
     # Header
     ws.merge_cells('A1:M1')
-    ws['A1'] = "Integration Architecture"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+    ws['A1'] = "INTEGRATION ARCHITECTURE"
+    ws['A1'].font = Font(size=14, bold=True, color="FFFFFF")
+    ws['A1'].fill = PatternFill(start_color="003366", fill_type='solid')
     ws['A1'].alignment = Alignment(horizontal='center')
+
+    ws.merge_cells('A2:M2')
+    ws['A2'] = CONTROL_REF
+    ws['A2'].font = Font(size=10, italic=True, color="003366")
+    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
+    ws.row_dimensions[2].height = 16
     
     # Column headers
     headers = [
@@ -754,8 +757,8 @@ def create_integration_architecture_sheet(ws):
     
     for col, header, width in headers:
         ws[f'{col}3'] = header
-        ws[f'{col}3'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}3'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+        ws[f'{col}3'].font = Font(bold=True, color="FFFFFF")
+        ws[f'{col}3'].fill = PatternFill(start_color="003366", fill_type='solid')
         ws.column_dimensions[col].width = width
     
     # Pre-populate integration examples
@@ -778,7 +781,6 @@ def create_integration_architecture_sheet(ws):
         ws[f'D{row}'] = frequency
         
         # Success Rate % (user enters from monitoring)
-        ws[f'G{row}'].protection = Protection(locked=False)
         ws[f'G{row}'].number_format = '0"%"'
         
         # Health Status (formula based on success rate)
@@ -787,18 +789,30 @@ def create_integration_architecture_sheet(ws):
         
         # Unlock user input cells
         for col in ['E', 'F', 'G', 'I', 'J', 'K', 'L', 'M']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
+            pass
         
         row += 1
     
     # Add blank rows
     for i in range(5):
         for col in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J', 'K', 'L', 'M']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
+            pass
         row += 1
     
+
+    # Apply FFFFCC fill + thin borders to all data rows
+    from openpyxl.styles import Border as _B59, Side as _S59
+    _ts = _S59(style="thin")
+    _bd = _B59(left=_ts, right=_ts, top=_ts, bottom=_ts)
+    _yf = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+    _sf = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+    for _r in range(4, row):
+        for _c in range(1, 13 + 1):
+            _cel = ws.cell(row=_r, column=_c)
+            _cel.fill = _sf if _r == 4 else _yf
+            _cel.border = _bd
     # Data validations
-    dv_integration = DataValidation(type="list", formula1=f'"{",".join(CONFIG["integration_types"])}"', allow_blank=True)
+    dv_integration = DataValidation(type="list", formula1=f'"{",".join(_INTEGRATION_TYPES)}"', allow_blank=True)
     dv_integration.add(f'B4:B{row-1}')
     ws.add_data_validation(dv_integration)
     
@@ -810,8 +824,8 @@ def create_integration_architecture_sheet(ws):
     # Summary section
     summary_row = row + 2
     ws[f'A{summary_row}'] = "INTEGRATION HEALTH SUMMARY"
-    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{summary_row}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color="FFFFFF")
+    ws[f'A{summary_row}'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     
     summary_row += 1
     ws[f'A{summary_row}'] = "Total Integrations"
@@ -840,17 +854,17 @@ def create_integration_architecture_sheet(ws):
     ws.conditional_formatting.add(
         f'G4:G{row-6}',
         CellIsRule(operator='greaterThanOrEqual', formula=['98'],
-                   fill=PatternFill(start_color=CONFIG['colors']['green_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="C6EFCE", fill_type='solid'))
     )
     ws.conditional_formatting.add(
         f'G4:G{row-6}',
         CellIsRule(operator='between', formula=['90', '97'],
-                   fill=PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="FFEB9C", fill_type='solid'))
     )
     ws.conditional_formatting.add(
         f'G4:G{row-6}',
         CellIsRule(operator='lessThan', formula=['90'],
-                   fill=PatternFill(start_color=CONFIG['colors']['red_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="FFC7CE", fill_type='solid'))
     )
 
 
@@ -859,9 +873,9 @@ def create_quality_control_sheet(ws):
     
     # Header
     ws.merge_cells('A1:K1')
-    ws['A1'] = "Quality Control Processes"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+    ws['A1'] = "QUALITY CONTROL PROCESSES"
+    ws['A1'].font = Font(size=14, bold=True, color="FFFFFF")
+    ws['A1'].fill = PatternFill(start_color="003366", fill_type='solid')
     ws['A1'].alignment = Alignment(horizontal='center')
     
     # Column headers
@@ -881,8 +895,8 @@ def create_quality_control_sheet(ws):
     
     for col, header, width in headers:
         ws[f'{col}3'] = header
-        ws[f'{col}3'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}3'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+        ws[f'{col}3'].font = Font(bold=True, color="FFFFFF")
+        ws[f'{col}3'].fill = PatternFill(start_color="003366", fill_type='solid')
         ws.column_dimensions[col].width = width
     
     # Quality control processes
@@ -906,10 +920,8 @@ def create_quality_control_sheet(ws):
         ws[f'B{row}'] = frequency
         
         # Issues Found (user enters from last run)
-        ws[f'F{row}'].protection = Protection(locked=False)
         
         # Issues Resolved
-        ws[f'G{row}'].protection = Protection(locked=False)
         
         # Effectiveness % (formula: resolved / found)
         ws[f'H{row}'] = f'=IF(OR(F{row}="",G{row}=""),"",IF(F{row}=0,100,G{row}/F{row}*100))'
@@ -921,7 +933,7 @@ def create_quality_control_sheet(ws):
         
         # Unlock user input cells
         for col in ['C', 'D', 'E', 'F', 'G', 'J', 'K']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
+            pass
         
         row += 1
     
@@ -933,8 +945,8 @@ def create_quality_control_sheet(ws):
     # Summary
     summary_row = row + 2
     ws[f'A{summary_row}'] = "QUALITY CONTROL SUMMARY"
-    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{summary_row}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color="FFFFFF")
+    ws[f'A{summary_row}'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     
     summary_row += 1
     ws[f'A{summary_row}'] = "Total QC Processes"
@@ -959,17 +971,17 @@ def create_quality_control_sheet(ws):
     ws.conditional_formatting.add(
         f'H4:H{row-1}',
         CellIsRule(operator='greaterThanOrEqual', formula=['90'],
-                   fill=PatternFill(start_color=CONFIG['colors']['green_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="C6EFCE", fill_type='solid'))
     )
     ws.conditional_formatting.add(
         f'H4:H{row-1}',
         CellIsRule(operator='between', formula=['70', '89'],
-                   fill=PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="FFEB9C", fill_type='solid'))
     )
     ws.conditional_formatting.add(
         f'H4:H{row-1}',
         CellIsRule(operator='lessThan', formula=['70'],
-                   fill=PatternFill(start_color=CONFIG['colors']['red_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="FFC7CE", fill_type='solid'))
     )
 
 
@@ -978,15 +990,15 @@ def create_maintenance_metrics_sheet(ws):
     
     # Title
     ws.merge_cells('A1:H1')
-    ws['A1'] = "Maintenance Metrics & Summary"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+    ws['A1'] = "MAINTENANCE METRICS & SUMMARY"
+    ws['A1'].font = Font(size=14, bold=True, color="FFFFFF")
+    ws['A1'].fill = PatternFill(start_color="003366", fill_type='solid')
     ws['A1'].alignment = Alignment(horizontal='center')
     
     # Section 1: Overall Maintenance Effectiveness
     ws['A3'] = "OVERALL MAINTENANCE EFFECTIVENESS"
-    ws['A3'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A3'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws['A3'].font = Font(size=12, bold=True, color="FFFFFF")
+    ws['A3'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     ws.merge_cells('A3:H3')
     
     # Metrics table
@@ -1020,8 +1032,8 @@ def create_maintenance_metrics_sheet(ws):
     ws['F4'].value = "Description"
     
     for col in ['A', 'B', 'C', 'D', 'E', 'F']:
-        ws[f'{col}4'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}4'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+        ws[f'{col}4'].font = Font(bold=True, color="FFFFFF")
+        ws[f'{col}4'].fill = PatternFill(start_color="003366", fill_type='solid')
     
     row = 5
     for metric, formula, target, description in metrics:
@@ -1044,7 +1056,7 @@ def create_maintenance_metrics_sheet(ws):
     ws[f'B{overall_row}'] = f'=AVERAGE(B5:B8)'
     ws[f'B{overall_row}'].number_format = '0.0"%"'
     ws[f'B{overall_row}'].font = Font(bold=True, size=14)
-    ws[f'B{overall_row}'].fill = PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid')
+    ws[f'B{overall_row}'].fill = PatternFill(start_color="FFEB9C", fill_type='solid')
     
     overall_row += 1
     ws[f'A{overall_row}'] = "Overall Target"
@@ -1059,8 +1071,8 @@ def create_maintenance_metrics_sheet(ws):
     # CSV Export section
     csv_row = overall_row + 3
     ws[f'A{csv_row}'] = "CSV EXPORT FOR DASHBOARD (Copy rows below)"
-    ws[f'A{csv_row}'].font = Font(size=11, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{csv_row}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws[f'A{csv_row}'].font = Font(size=11, bold=True, color="FFFFFF")
+    ws[f'A{csv_row}'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     
     csv_row += 1
     ws[f'A{csv_row}'] = "Metric_Category"
@@ -1084,253 +1096,436 @@ def create_maintenance_metrics_sheet(ws):
     ws.column_dimensions['F'].width = 40
 
 
-def create_evidence_register_sheet(ws):
-    """Create Evidence Register sheet"""
-    
-    # Title
-    ws.merge_cells('A1:N1')
-    ws['A1'] = "Maintenance Evidence Register"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
-    ws['A1'].alignment = Alignment(horizontal='center')
-    
-    # Column headers
-    headers = [
-        ('A', 'Evidence ID', 15),
-        ('B', 'Maintenance Area', 30),
-        ('C', 'Evidence Type', 30),
-        ('D', 'Evidence Description', 50),
-        ('E', 'Evidence Location', 40),
-        ('F', 'Collection Date', 15),
-        ('G', 'Collected By', 25),
-        ('H', 'Validity Period', 20),
-        ('I', 'Review Date', 15),
-        ('J', 'Reviewed By', 25),
-        ('K', 'Review Status', 20),
-        ('L', 'Retention End Date', 18),
-        ('M', 'Related Assessment', 25),
-        ('N', 'Notes', 40),
+def create_evidence_register(ws):
+    """Create the standard Evidence Register sheet."""
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+    from openpyxl.worksheet.datavalidation import DataValidation
+    from openpyxl.utils import get_column_letter
+
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    _grey_hdr = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
+    _grey_sample = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+    _input = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+
+    ws.merge_cells("A1:H1")
+    ws["A1"] = "EVIDENCE REGISTER"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = _navy
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
+    ws["A1"].border = _border
+    ws.row_dimensions[1].height = 35
+
+    ws.merge_cells("A2:H2")
+    ws["A2"] = CONTROL_REF
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True)
+    ws["A2"].alignment = Alignment(horizontal="center", vertical="center")
+    ws["A2"].border = _border
+
+    columns = [
+        ("Evidence ID", 14), ("Evidence Type", 20), ("Description", 45),
+        ("Related Control / Section", 28), ("Collection Date (DD.MM.YYYY)", 22),
+        ("Storage Location / Reference", 38), ("Collected By", 22), ("Verification Status", 14),
     ]
-    
-    for col, header, width in headers:
-        ws[f'{col}3'] = header
-        ws[f'{col}3'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}3'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
-        ws.column_dimensions[col].width = width
-    
-    # Sample evidence
-    sample_data = [
-        ("MAINT-001", "Inventory Structure", "System Architecture Diagram", "Inventory database schema and access control model", "/evidence/inventory_architecture_20260122.pdf", "22.01.2026"),
-        ("MAINT-002", "Update Workflows", "Procedure Document", "New asset onboarding workflow (procurement to inventory)", "/evidence/onboarding_procedure_v2.0.pdf", "22.01.2026"),
-        ("MAINT-003", "Integration", "API Documentation", "HR system integration specification and data mapping", "/evidence/hr_integration_spec_20260122.pdf", "22.01.2026"),
-        ("MAINT-004", "Quality Control", "Reconciliation Report", "Monthly inventory reconciliation vs. CMDB", "/evidence/reconciliation_report_202601.xlsx", "22.01.2026"),
-    ]
-    
-    row = 4
-    for evidence_id, area, evidence_type, description, location, date in sample_data:
-        ws[f'A{row}'] = evidence_id
-        ws[f'B{row}'] = area
-        ws[f'C{row}'] = evidence_type
-        ws[f'D{row}'] = description
-        ws[f'E{row}'] = location
-        ws[f'F{row}'] = date
-        
-        for col in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
-        row += 1
-    
-    # Add empty rows
-    for i in range(20):
-        for col in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
-        row += 1
-    
-    # Data validations
-    maintenance_areas = ["Inventory Structure", "Update Workflows", "Integration", "Quality Control", "All Areas"]
-    dv_area = DataValidation(type="list", formula1=f'"{",".join(maintenance_areas)}"', allow_blank=True)
-    dv_area.add(f'B4:B100')
-    ws.add_data_validation(dv_area)
-    
-    review_statuses = ["Pending Review", "Reviewed - Valid", "Reviewed - Update Needed", "Reviewed - Invalid"]
-    dv_status = DataValidation(type="list", formula1=f'"{",".join(review_statuses)}"', allow_blank=True)
-    dv_status.add(f'K4:K100')
+    for col_idx, (col_name, col_width) in enumerate(columns, start=1):
+        cell = ws.cell(row=4, column=col_idx, value=col_name)
+        cell.font = Font(name="Calibri", size=10, bold=True, color="FFFFFF")
+        cell.fill = _navy
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.border = _border
+        ws.column_dimensions[get_column_letter(col_idx)].width = col_width
+
+    sample_data = ["EV-001", "Document", "Sample evidence entry — replace with actual evidence",
+                   "A.5.9 All Domains", "01.01.2026", "SharePoint/ISMS/Evidence/", "ISMS Team", "Not verified"]
+    for col_idx, val in enumerate(sample_data, start=1):
+        cell = ws.cell(row=5, column=col_idx, value=val)
+        cell.font = Font(name="Calibri", size=10, italic=True, color="808080")
+        cell.fill = _grey_sample
+        cell.border = _border
+
+    dv_status = DataValidation(
+        type="list",
+        formula1='"Verified,Not verified,In Review"',
+        allow_blank=True
+    )
     ws.add_data_validation(dv_status)
 
+    for r in range(6, 106):
+        for col_idx in range(1, 9):
+            cell = ws.cell(row=r, column=col_idx)
+            cell.fill = _input
+            cell.border = _border
+            cell.alignment = Alignment(vertical="center", wrap_text=False)
+        dv_status.add(ws.cell(row=r, column=8))
 
-# Execute main function
-
+    ws.freeze_panes = "A5"
 
 def create_summary_dashboard_sheet(ws):
-    """Create Summary Dashboard sheet"""
-    CHECK = "✅"
-    WARNING = "⚠️"
-    XMARK = "❌"
-    TARGET = "🎯"
-    CHART = "📊"
-    
-    metrics_sheet = "Maintenance Metrics"
-    assessment_name = "Inventory Maintenance Assessment"
-    compliance_ref = "D10"
-    key_metrics = [
-        ('Update SLA Compliance', 'B4', '95%', 'percentage'),
-        ('Accuracy Rate', 'B5', '98%', 'percentage'),
-        ('Integration Coverage', 'B6', '100%', 'percentage'),
-    ]
-    
-    ws.merge_cells('A1:F1')
-    ws['A1'] = f"{CHART} {assessment_name.upper()} - SUMMARY DASHBOARD"
-    ws['A1'].font = Font(size=16, bold=True, color='FFFFFF')
-    ws['A1'].fill = PatternFill(start_color='003366', fill_type='solid')
-    ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
+    """Create Gold Standard Summary Dashboard — TABLE 1/2/3 (A.5.9.2 Inventory Maintenance)."""
+    from openpyxl.styles import Border, Side
+
+    CHECK = "\u2705"
+    XMARK = "\u274c"
+
+    _thin = Side(style="thin")
+    _bdr = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    _blue = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+    _grey = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
+    _red_b = PatternFill(start_color="C00000", end_color="C00000", fill_type="solid")
+    _crit = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
+    _high = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
+    _med = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
+
+    ws.column_dimensions["A"].width = 45
+    ws.column_dimensions["B"].width = 14
+    ws.column_dimensions["C"].width = 16
+    ws.column_dimensions["D"].width = 12
+    ws.column_dimensions["E"].width = 14
+
+    def _merge_row(row, fill, text, font_kw, align="left"):
+        ws.merge_cells(f"A{row}:E{row}")
+        c = ws[f"A{row}"]
+        c.value = text
+        c.fill = fill
+        c.font = Font(**font_kw)
+        c.alignment = Alignment(horizontal=align, vertical="center")
+        c.border = _bdr
+        for col in "BCDE":
+            ws[f"{col}{row}"].border = _bdr
+
+    # Row 1: Title
+    _merge_row(1, _navy, "INVENTORY MAINTENANCE \u2014 SUMMARY DASHBOARD",
+               {"name": "Calibri", "size": 14, "bold": True, "color": "FFFFFF"}, align="center")
     ws.row_dimensions[1].height = 35
-    
-    ws.merge_cells('A2:F2')
-    ws['A2'] = "Quick overview of key metrics and compliance status"
-    ws['A2'].font = Font(size=10, italic=True)
-    ws['A2'].fill = PatternFill(start_color='E7E6E6', fill_type='solid')
-    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
-    
-    row = 4
-    ws.merge_cells(f'A{row}:F{row}')
-    ws[f'A{row}'] = f"{TARGET} OVERALL COMPLIANCE"
-    ws[f'A{row}'].font = Font(size=13, bold=True, color='FFFFFF')
-    ws[f'A{row}'].fill = PatternFill(start_color='2E75B5', fill_type='solid')
-    ws[f'A{row}'].alignment = Alignment(horizontal='center', vertical='center')
-    row += 1
-    
-    ws.merge_cells(f'A{row}:C{row}')
-    ws[f'A{row}'] = "Overall Compliance:"
-    ws[f'A{row}'].font = Font(size=12, bold=True)
-    ws.merge_cells(f'D{row}:F{row}')
-    ws[f'D{row}'] = f"='{metrics_sheet}'!{compliance_ref}"
-    ws[f'D{row}'].font = Font(size=18, bold=True)
-    ws[f'D{row}'].number_format = '0.0"%"'
-    ws[f'D{row}'].alignment = Alignment(horizontal='center', vertical='center')
-    row += 2
-    
-    ws.merge_cells(f'A{row}:F{row}')
-    ws[f'A{row}'] = f"{CHART} KEY METRICS"
-    ws[f'A{row}'].font = Font(size=13, bold=True, color='FFFFFF')
-    ws[f'A{row}'].fill = PatternFill(start_color='2E75B5', fill_type='solid')
-    ws[f'A{row}'].alignment = Alignment(horizontal='center', vertical='center')
-    row += 1
-    
-    for col_idx, header in enumerate(["Metric", "Current", "Target", "Status"], start=1):
-        ws.cell(row=row, column=col_idx, value=header)
-        ws.cell(row=row, column=col_idx).font = Font(size=11, bold=True, color='FFFFFF')
-        ws.cell(row=row, column=col_idx).fill = PatternFill(start_color='4472C4', fill_type='solid')
-    row += 1
-    
-    for metric_label, cell_ref, target, format_type in key_metrics:
-        ws.cell(row=row, column=1, value=metric_label)
-        ws.cell(row=row, column=2, value=f"='{metrics_sheet}'!{cell_ref}")
-        if format_type == 'percentage':
-            ws.cell(row=row, column=2).number_format = '0.0"%"'
-        ws.cell(row=row, column=3, value=target)
-        ws.cell(row=row, column=4, value=f'=IF(B{row}>0,"{CHECK}","{XMARK}")')
-        row += 1
-    
-    ws.column_dimensions['A'].width = 35
-    ws.column_dimensions['B'].width = 15
-    ws.column_dimensions['C'].width = 15
-    ws.column_dimensions['D'].width = 15
 
+    # Row 2: Subtitle
+    _merge_row(2, _blue, "ISO 27001:2022 \u00b7 Control A.5.9 \u00b7 Inventory of Information and Assets",
+               {"name": "Calibri", "size": 10, "italic": True, "color": "FFFFFF"})
+    ws.row_dimensions[2].height = 18
 
-def create_approval_signoff_sheet(ws):
-    """Create Approval & Sign-Off sheet"""
-    CHECK = "✅"
-    CLOCK = "⏳"
-    XMARK = "❌"
-    
-    assessment_name = "Inventory Maintenance Assessment"
-    checklist_items = [
-        'Inventory structure defined and documented',
-        'Update triggers identified and documented',
-        'Integration points mapped and tested',
-        'Quality control procedures documented',
-        'Maintenance metrics calculated',
-        'Evidence collected and registered',
-        'Assessment reviewed by Information Security'
+    ws.row_dimensions[3].height = 6
+
+    # ── TABLE 1 ────────────────────────────────────────────────────────────────
+    _merge_row(4, _blue, "TABLE 1: COMPLIANCE ASSESSMENT",
+               {"name": "Calibri", "size": 11, "bold": True, "color": "FFFFFF"})
+
+    for col, label in enumerate(["Assessment Area", "Compliant", "Non-Compliant", "Total Items", "Compliance %"], 1):
+        c = ws.cell(row=5, column=col, value=label)
+        c.fill = _grey
+        c.font = Font(name="Calibri", size=10, bold=True, color="000000")
+        c.alignment = Alignment(horizontal="center", vertical="center")
+        c.border = _bdr
+
+    t1_rows = [
+        (6, "Update Trigger Workflow Coverage",
+         "=COUNTIF(\'Update Triggers & Workflows\'!C4:C15,\"Yes\")",
+         "=COUNTA(\'Update Triggers & Workflows\'!A4:A15)"),
+        (7, "Update Trigger SLA Compliance",
+         "=COUNTIF(\'Update Triggers & Workflows\'!H4:H15,\"\u2705 Compliant\")",
+         "=COUNTA(\'Update Triggers & Workflows\'!A4:A15)"),
+        (8, "Integration Architecture Health",
+         "=COUNTIF(\'Integration Architecture\'!H4:H15,\"\u2705 Healthy\")",
+         "=COUNTA(\'Integration Architecture\'!A4:A15)"),
+        (9, "Quality Control Process Coverage",
+         "=COUNTIF(\'Quality Control Processes\'!C4:C53,\"Yes\")",
+         "=COUNTA(\'Quality Control Processes\'!A4:A53)"),
+        (10, "Maintenance Trigger Automation Rate",
+         "=COUNTIF(\'Update Triggers & Workflows\'!D4:D15,\"Fully Automated\")",
+         "=COUNTA(\'Update Triggers & Workflows\'!A4:A15)"),
     ]
-    
-    ws.merge_cells('A1:F1')
-    ws['A1'] = f"{assessment_name.upper()} - APPROVAL & SIGN-OFF"
-    ws['A1'].font = Font(size=14, bold=True, color='FFFFFF')
-    ws['A1'].fill = PatternFill(start_color='003366', fill_type='solid')
-    ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
-    ws.row_dimensions[1].height = 30
-    
-    ws.merge_cells('A2:F2')
-    ws['A2'] = "Complete when assessment is finished and ready for approval"
-    ws['A2'].font = Font(size=10, italic=True)
-    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
-    
+    for row, label, b_fml, d_fml in t1_rows:
+        ws.cell(row=row, column=1, value=label).border = _bdr
+        ws.cell(row=row, column=1).font = Font(name="Calibri", size=10)
+        ws.cell(row=row, column=1).alignment = Alignment(horizontal="left", vertical="center")
+        ws[f"B{row}"] = b_fml
+        ws[f"B{row}"].border = _bdr
+        ws[f"B{row}"].alignment = Alignment(horizontal="center")
+        ws[f"C{row}"] = f"=D{row}-B{row}"
+        ws[f"C{row}"].border = _bdr
+        ws[f"C{row}"].alignment = Alignment(horizontal="center")
+        ws[f"D{row}"] = d_fml
+        ws[f"D{row}"].border = _bdr
+        ws[f"D{row}"].alignment = Alignment(horizontal="center")
+        ws[f"E{row}"] = f"=IFERROR(B{row}/D{row},0)"
+        ws[f"E{row}"].number_format = "0.0%"
+        ws[f"E{row}"].border = _bdr
+        ws[f"E{row}"].alignment = Alignment(horizontal="center")
+
+    for col, val in enumerate(["TOTAL", "=SUM(B6:B10)", "=SUM(C6:C10)", "=SUM(D6:D10)", "=IFERROR(B11/D11,0)"], 1):
+        c = ws.cell(row=11, column=col, value=val)
+        c.fill = _grey
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.alignment = Alignment(horizontal="center" if col > 1 else "left", vertical="center")
+        c.border = _bdr
+    ws["E11"].number_format = "0.0%"
+
+    ws.row_dimensions[12].height = 6
+
+    # ── TABLE 2 ────────────────────────────────────────────────────────────────
+    _merge_row(13, _blue, "TABLE 2: KEY PERFORMANCE INDICATORS",
+               {"name": "Calibri", "size": 11, "bold": True, "color": "FFFFFF"})
+
+    def _subhdr(row, label):
+        ws.merge_cells(f"A{row}:E{row}")
+        c = ws[f"A{row}"]
+        c.value = label
+        c.fill = _grey
+        c.font = Font(name="Calibri", size=10, bold=True, color="000000")
+        c.alignment = Alignment(horizontal="left", vertical="center")
+        c.border = _bdr
+        for col in "BCDE":
+            ws[f"{col}{row}"].border = _bdr
+
+    def _metric(row, label, formula, fmt=None):
+        ws[f"A{row}"] = label
+        ws[f"A{row}"].font = Font(name="Calibri", size=10)
+        ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
+        ws[f"A{row}"].border = _bdr
+        ws[f"B{row}"] = formula
+        ws[f"B{row}"].font = Font(name="Calibri", size=10, bold=True)
+        ws[f"B{row}"].alignment = Alignment(horizontal="center")
+        ws[f"B{row}"].border = _bdr
+        if fmt:
+            ws[f"B{row}"].number_format = fmt
+        for col in "CDE":
+            ws[f"{col}{row}"].border = _bdr
+
+    _subhdr(14, "Update Trigger Coverage")
+    _metric(15, "Total Update Triggers Defined", "=COUNTA(\'Update Triggers & Workflows\'!A4:A15)")
+    _metric(16, "Triggers with Documented Workflow", "=COUNTIF(\'Update Triggers & Workflows\'!C4:C15,\"Yes\")")
+    _metric(17, "Fully Automated Triggers", "=COUNTIF(\'Update Triggers & Workflows\'!D4:D15,\"Fully Automated\")")
+    _subhdr(18, "Integration Architecture")
+    _metric(19, "Total Integrations Monitored", "=COUNTA(\'Integration Architecture\'!A4:A15)")
+    _metric(20, "Active Integrations", "=COUNTIF(\'Integration Architecture\'!E4:E15,\"Active\")")
+    _metric(21, "Healthy Integrations", "=COUNTIF(\'Integration Architecture\'!H4:H15,\"\u2705 Healthy\")")
+    _subhdr(22, "Quality Control")
+    _metric(23, "Integration Failures (Failed Status)", "=COUNTIF(\'Integration Architecture\'!H4:H15,\"\u274c Failed\")")
+    _metric(24, "Degraded Integrations", "=COUNTIF(\'Integration Architecture\'!H4:H15,\"\u26a0\ufe0f Degraded\")")
+    _subhdr(25, "Gaps & Evidence")
+    _metric(26, "Triggers Without Documented Workflow", "=COUNTIF(\'Update Triggers & Workflows\'!C4:C15,\"No\")")
+    _metric(27, "Unverified Evidence Items", "=COUNTIF(\'Evidence Register\'!H6:H105,\"Not verified\")")
+
+    ws.row_dimensions[28].height = 6
+
+    # ── TABLE 3 ────────────────────────────────────────────────────────────────
+    _merge_row(29, _red_b, "TABLE 3: CRITICAL FINDINGS & RISK INDICATORS",
+               {"name": "Calibri", "size": 11, "bold": True, "color": "FFFFFF"})
+
+    for col, label in enumerate(["Critical Finding", "Count", "Severity", "ISO Reference", "Action Required"], 1):
+        c = ws.cell(row=30, column=col, value=label)
+        c.fill = _grey
+        c.font = Font(name="Calibri", size=10, bold=True, color="000000")
+        c.alignment = Alignment(horizontal="center", vertical="center")
+        c.border = _bdr
+
+    def _finding(row, label, formula, severity, iso_ref, action, fill, text_color):
+        ws[f"A{row}"] = label
+        ws[f"A{row}"].fill = fill
+        ws[f"A{row}"].font = Font(name="Calibri", size=10, bold=True, color=text_color)
+        ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        ws[f"A{row}"].border = _bdr
+        ws[f"B{row}"] = formula
+        ws[f"B{row}"].fill = fill
+        ws[f"B{row}"].font = Font(name="Calibri", size=10, bold=True, color=text_color)
+        ws[f"B{row}"].alignment = Alignment(horizontal="center")
+        ws[f"B{row}"].border = _bdr
+        ws[f"C{row}"] = severity
+        ws[f"C{row}"].fill = fill
+        ws[f"C{row}"].font = Font(name="Calibri", size=10, bold=True, color=text_color)
+        ws[f"C{row}"].alignment = Alignment(horizontal="center")
+        ws[f"C{row}"].border = _bdr
+        ws[f"D{row}"] = iso_ref
+        ws[f"D{row}"].fill = fill
+        ws[f"D{row}"].font = Font(name="Calibri", size=10, bold=True, color=text_color)
+        ws[f"D{row}"].alignment = Alignment(horizontal="center")
+        ws[f"D{row}"].border = _bdr
+        ws[f"E{row}"] = action
+        ws[f"E{row}"].fill = fill
+        ws[f"E{row}"].font = Font(name="Calibri", size=10, bold=True, color=text_color)
+        ws[f"E{row}"].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        ws[f"E{row}"].border = _bdr
+
+    _finding(31, "Update triggers with no documented workflow",
+             "=COUNTIF(\'Update Triggers & Workflows\'!C4:C15,\"No\")",
+             "CRITICAL", "A.5.9 §3.3",
+             "Immediate — undocumented triggers lead to missed inventory updates and stale data",
+             _crit, "C00000")
+    _finding(32, "Integration feeds with failed health status",
+             "=COUNTIF(\'Integration Architecture\'!H4:H15,\"\u274c Failed\")",
+             "CRITICAL", "A.5.9 §3.3",
+             "Immediate — failed feeds create silent data gaps in the inventory",
+             _crit, "C00000")
+    _finding(33, "Integration feeds with degraded status",
+             "=COUNTIF(\'Integration Architecture\'!H4:H15,\"\u26a0\ufe0f Degraded\")",
+             "HIGH", "A.5.9 §3.3",
+             "Urgent — degraded integrations reduce data quality and timeliness",
+             _high, "9C5700")
+    _finding(34, "Update triggers with no SLA compliance",
+             "=COUNTIF(\'Update Triggers & Workflows\'!H4:H15,\"\u274c Non-Compliant\")",
+             "HIGH", "A.5.9 §3.3",
+             "Urgent — SLA breaches lead to stale inventory data",
+             _high, "9C5700")
+    _finding(35, "Critical triggers with no automation (ad-hoc)",
+             "=COUNTIF(\'Update Triggers & Workflows\'!D4:D15,\"Manual (Ad-hoc)\")",
+             "HIGH", "A.5.9 §3.3",
+             "Plan — manual ad-hoc processes are unreliable for critical update triggers",
+             _high, "9C5700")
+    _finding(36, "Integrations not in active status",
+             "=COUNTA(\'Integration Architecture\'!A4:A15)-COUNTIF(\'Integration Architecture\'!E4:E15,\"Active\")",
+             "HIGH", "A.5.9 §3.3",
+             "Plan — inactive integrations should be decommissioned or reactivated",
+             _high, "9C5700")
+    _finding(37, "Triggers with partial workflow only",
+             "=COUNTIF(\'Update Triggers & Workflows\'!C4:C15,\"Partial\")",
+             "MEDIUM", "A.5.9 §3.3",
+             "Plan — partial workflows require completion for reliable inventory maintenance",
+             _med, "276221")
+    _finding(38, "Unverified evidence items",
+             "=COUNTIF(\'Evidence Register\'!H6:H105,\"Not verified\")",
+             "MEDIUM", "A.5.9 §3",
+             "Plan — evidence requires verification before next audit",
+             _med, "276221")
+
+
+
+def create_approval_sheet(ws):
+    """Create the Approval Sign-Off sheet — Gold Standard (GS-AS-001..015)."""
+    thin = Side(style="thin")
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+    navy = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    blue = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+    yellow = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+
+    # Row 1: Title
+    ws.merge_cells("A1:E1")
+    ws["A1"] = "ASSESSMENT APPROVAL AND SIGN-OFF"
+    ws["A1"].font = Font(name="Calibri", bold=True, size=14, color="FFFFFF")
+    ws["A1"].fill = navy
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    for c in range(1, 6):
+        ws.cell(row=1, column=c).border = border
+    ws.row_dimensions[1].height = 35
+
+    # Row 2: Control reference
+    ws.merge_cells("A2:E2")
+    ws["A2"] = CONTROL_REF
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
+    ws["A2"].alignment = Alignment(horizontal="center", vertical="center")
+    for c in range(1, 6):
+        ws.cell(row=2, column=c).border = border
+
+    # Row 3: ASSESSMENT SUMMARY banner
+    ws.merge_cells("A3:E3")
+    ws["A3"] = "ASSESSMENT SUMMARY"
+    ws["A3"].font = Font(name="Calibri", bold=True, size=11, color="FFFFFF")
+    ws["A3"].fill = blue
+    for c in range(1, 6):
+        ws.cell(row=3, column=c).border = border
+
+    # Summary fields (rows 4-8); Overall Compliance Rating at B6 (GS-AS-015)
+    summary_fields = [
+        ("Document:", f"{DOCUMENT_ID} - {WORKBOOK_NAME}"),
+        ("Assessment Period:", ""),
+        ("Overall Compliance Rating:", "=IFERROR(AVERAGE('Summary Dashboard'!G6:G10),\"\")"),
+        ("Assessment Status:", ""),
+        ("Assessed By:", ""),
+    ]
     row = 4
-    ws.merge_cells(f'A{row}:F{row}')
-    ws[f'A{row}'] = "COMPLETION CHECKLIST"
-    ws[f'A{row}'].font = Font(size=12, bold=True, color='FFFFFF')
-    ws[f'A{row}'].fill = PatternFill(start_color='2E75B5', fill_type='solid')
-    ws[f'A{row}'].alignment = Alignment(horizontal='center', vertical='center')
-    row += 1
-    
-    for col_idx, header in enumerate(["Item", "Status", "Completed By", "Date", "Notes"], start=1):
-        ws.cell(row=row, column=col_idx, value=header)
-        ws.cell(row=row, column=col_idx).font = Font(size=11, bold=True, color='FFFFFF')
-        ws.cell(row=row, column=col_idx).fill = PatternFill(start_color='4472C4', fill_type='solid')
-    row += 1
-    
-    checklist_start = row
-    for item in checklist_items:
-        ws.cell(row=row, column=1, value=item)
-        ws.cell(row=row, column=1).font = Font(size=10)
-        for col in range(2, 6):
-            ws.cell(row=row, column=col).fill = PatternFill(start_color='FFF2CC', fill_type='solid')
-            ws.cell(row=row, column=col).protection = Protection(locked=False)
+    for label, value in summary_fields:
+        ws[f"A{row}"] = label
+        ws[f"A{row}"].font = Font(name="Calibri", bold=True)
+        ws.merge_cells(f"B{row}:E{row}")
+        ws[f"B{row}"] = value
+        if value == "":
+            ws[f"B{row}"].fill = yellow
+        for c in range(2, 6):
+            ws.cell(row=row, column=c).border = border
         row += 1
-    
-    from openpyxl.worksheet.datavalidation import DataValidation
-    status_options = [f"{CHECK} Complete", f"{CLOCK} In Progress", f"{XMARK} Not Done"]
-    dv = DataValidation(type="list", formula1=f'"{",".join(status_options)}"', allow_blank=True)
-    dv.add(f'B{checklist_start}:B{row-1}')
-    ws.add_data_validation(dv)
-    
-    row += 2
-    ws.merge_cells(f'A{row}:F{row}')
-    ws[f'A{row}'] = "APPROVALS"
-    ws[f'A{row}'].font = Font(size=12, bold=True, color='FFFFFF')
-    ws[f'A{row}'].fill = PatternFill(start_color='2E75B5', fill_type='solid')
-    ws[f'A{row}'].alignment = Alignment(horizontal='center', vertical='center')
-    row += 1
-    
-    for col_idx, header in enumerate(["Role", "Name", "Signature", "Date", "Comments"], start=1):
-        ws.cell(row=row, column=col_idx, value=header)
-        ws.cell(row=row, column=col_idx).font = Font(size=11, bold=True, color='FFFFFF')
-        ws.cell(row=row, column=col_idx).fill = PatternFill(start_color='4472C4', fill_type='solid')
-    row += 1
-    
-    for approver in ["Asset Management Lead", "Information Security Manager", "CISO"]:
-        ws.cell(row=row, column=1, value=approver)
-        ws.cell(row=row, column=1).font = Font(size=10, bold=True)
-        ws.cell(row=row, column=1).fill = PatternFill(start_color='D8E4F8', fill_type='solid')
-        for col in range(2, 6):
-            ws.cell(row=row, column=col).fill = PatternFill(start_color='FFF2CC', fill_type='solid')
-            ws.cell(row=row, column=col).protection = Protection(locked=False)
+    ws["B6"].number_format = "0.0%"  # GS-AS-015
+
+    # Assessment Status dropdown (row 7)
+    status_dv = DataValidation(
+        type="list",
+        formula1='"Draft,Final,Requires remediation,Re-assessment required"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(status_dv)
+    status_dv.add("B7")
+
+    # 3 Approver sections (start at row 11)
+    approvers = [
+        ("COMPLETED BY (ASSESSOR)", "4472C4"),
+        ("REVIEWED BY (INFORMATION SECURITY OFFICER)", "4472C4"),
+        ("APPROVED BY (CISO)", "003366"),
+    ]
+    row += 2  # row = 11
+    for title, color in approvers:
+        ws.merge_cells(f"A{row}:E{row}")
+        ws[f"A{row}"] = title
+        ws[f"A{row}"].font = Font(name="Calibri", bold=True, color="FFFFFF", size=11)
+        ws[f"A{row}"].fill = PatternFill(start_color=color, end_color=color, fill_type="solid")
+        for c in range(1, 6):
+            ws.cell(row=row, column=c).border = border
         row += 1
-    
-    ws.column_dimensions['A'].width = 40
-    ws.column_dimensions['B'].width = 18
-    ws.column_dimensions['C'].width = 18
-    ws.column_dimensions['D'].width = 15
-    ws.column_dimensions['E'].width = 30
+        for field in ["Name:", "Title:", "Date:", "Signature:", "Comments:"]:
+            ws[f"A{row}"] = field
+            ws[f"A{row}"].font = Font(name="Calibri", bold=True)
+            ws.merge_cells(f"B{row}:E{row}")
+            ws[f"B{row}"].fill = yellow
+            for c in range(2, 6):
+                ws.cell(row=row, column=c).border = border
+            row += 1
+        row += 1  # gap between approver sections
 
+    # FINAL DECISION (GS-AS-004/012: col A plain bold, no dark fill)
+    ws[f"A{row}"] = "FINAL DECISION:"
+    ws[f"A{row}"].font = Font(name="Calibri", bold=True)
+    ws.merge_cells(f"B{row}:E{row}")
+    ws[f"B{row}"].fill = yellow
+    for c in range(2, 6):
+        ws.cell(row=row, column=c).border = border
+    dv_dec = DataValidation(
+        type="list",
+        formula1='"Approved,Approved with Conditions,Rejected,Deferred"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(dv_dec)
+    dv_dec.add(f"B{row}")
 
+    # NEXT REVIEW DETAILS (GS-AS-005/013: 4472C4 banner, borders on all)
+    row += 3
+    ws.merge_cells(f"A{row}:E{row}")
+    ws[f"A{row}"] = "NEXT REVIEW DETAILS"
+    ws[f"A{row}"].font = Font(name="Calibri", bold=True, size=11, color="FFFFFF")
+    ws[f"A{row}"].fill = blue
+    for c in range(1, 6):
+        ws.cell(row=row, column=c).border = border
+    row += 1
+    for label in ["Next Review Date:", "Review Responsible:", "Special Considerations:"]:
+        ws[f"A{row}"] = label
+        ws[f"A{row}"].font = Font(name="Calibri", bold=True)
+        ws.merge_cells(f"B{row}:E{row}")
+        ws[f"B{row}"].fill = yellow
+        for c in range(2, 6):
+            ws.cell(row=row, column=c).border = border
+        row += 1
+
+    ws.column_dimensions["A"].width = 32
+    ws.column_dimensions["B"].width = 25
+    ws.column_dimensions["C"].width = 20
+    ws.column_dimensions["D"].width = 20
+    ws.column_dimensions["E"].width = 20
+    ws.freeze_panes = "A3"
+    logger.info("Created Approval Sign-Off sheet")
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
 
 # =============================================================================
-# QA_VERIFIED: 2026-01-31
-# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
-# QA_TOOL: Claude Code Standardization
-# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# QA_VERIFIED: 2026-03-01
+# QA_STATUS: PASSED
+# QA_TOOL: Claude Code Production Scripts QA Methodology
+# CHANGES: Full QA for Production Launch (see GitHub Repository for details)
 # =============================================================================

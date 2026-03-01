@@ -8,26 +8,55 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Off-Premises Asset Security |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.8-9-S2-UG |
+| **Related Policy** | ISMS-POL-A.7.8-9-S2 (Equipment Location Security) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.9 (Security of Assets Off-Premises) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Off-Premises Assets - Authorisation, Tracking, Protection Measures, Remote Working, Permanent Installations |
-| **Related Policy** | ISMS-POL-A.7.8-9, Section 2.2 (Security of Assets Off-Premises) |
-| **Purpose** | Document equipment used off-premises, assess protection measures, track authorisations, and identify gaps |
-| **Target Audience** | IT Operations, Security Operations, Line Managers, Remote Workers, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Semi-Annual or After Significant Policy Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Off-Premises Asset Security assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.8-9-S2 (Equipment Location Security)
+- ISMS-IMP-A.7.8-9-S1 (Equipment Siting Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.8-9-S2-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Equipment Inventory | Catalogue all equipment approved for off-premises use |
+| 3 | Authorisation | Track authorisation for equipment taken off-premises |
+| 4 | Protection Measures | Assess security controls applied to off-premises equipment |
+| 5 | Remote Working | Evaluate security of equipment used at remote work locations |
+| 6 | Permanent Off-Site | Manage permanently off-site equipment deployments |
+| 7 | Incidents | Record and track off-premises security incidents |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -95,7 +124,6 @@ This assessment is **completely vendor-agnostic and device-independent**. You do
 |-----------------------|------------------------|---------------------------------|
 | ISMS-IMP-A.7.8-9-S1 | Equipment Siting | Equipment located ON premises |
 | **ISMS-IMP-A.7.8-9-S2** | **Off-Premises Assets** | **Equipment used or stored OFF premises** |
-| ISMS-IMP-A.7.8-9-S3 | Compliance Dashboard | Consolidated view across all equipment siting and protection |
 
 This assessment (A.7.8-9-S2) focuses specifically on Control A.7.9 (Security of Assets Off-Premises). It complements the equipment siting assessment (A.7.8) in A.7.8-9-S1.
 
@@ -190,7 +218,6 @@ This assessment has NO dependencies on other assessments - it can be completed i
 
 However, outputs from this assessment are INPUT to:
 
-- ISMS-IMP-A.7.8-9-S3 (Compliance Dashboard) - Consolidates off-premises security with equipment siting
 - ISMS-IMP-A.6.7 (Remote Working) - Related remote working controls
 
 ---
@@ -279,7 +306,6 @@ However, outputs from this assessment are INPUT to:
 
 **Step 8: Evidence Collection (Day 5 - 2 hours)**
 
-- Take screenshots of MDM compliance dashboards
 - Export equipment removal authorisation records
 - Document remote wipe test results
 - Record evidence in Sheet 8 (Evidence Register)
@@ -698,7 +724,6 @@ However, outputs from this assessment are INPUT to:
 1. **Equipment Inventory Evidence:**
    - MDM device inventory export
    - Asset management system report
-   - Encryption compliance dashboard screenshot
 
 2. **Authorisation Evidence:**
    - Equipment removal policy document
@@ -760,7 +785,6 @@ However, outputs from this assessment are INPUT to:
 
 **1. Equipment and MDM Evidence**
 
-- MDM compliance dashboard screenshots
 - Device encryption status reports
 - Remote wipe capability verification
 - Asset inventory exports
@@ -1016,7 +1040,7 @@ Before submitting for Level 2 approval, complete this self-assessment:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A device off-site is not off the policy."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

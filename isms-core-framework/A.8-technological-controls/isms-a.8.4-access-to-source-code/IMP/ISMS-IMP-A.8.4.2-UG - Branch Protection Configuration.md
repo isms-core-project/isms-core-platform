@@ -8,22 +8,34 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Branch Protection Configuration |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.4.2-UG |
+| **Related Policy** | ISMS-POL-A.8.4 (Access to Source Code) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.4 (Access to Source Code) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Branch Protection and Code Review Compliance |
-| **Related Policy** | ISMS-POL-A.8.4, Section 2.4 (Branch Protection and Code Review) |
-| **Purpose** | Document and assess branch protection configurations across all repository platforms to enforce code review and prevent unauthorized code changes |
-| **Target Audience** | Repository Owners, DevOps Engineers, Security Team, Development Team Leads, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Branch Protection assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.4 (Access to Source Code)
+- ISMS-IMP-A.8.4.1 (Repository Access Control Implementation)
+
+---
 
 ### Document Structure
 
@@ -35,6 +47,24 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Repository Branch Inventory | Catalogue all repositories and their protected branches |
+| 3 | Branch Protection Details | Document branch protection rule configurations |
+| 4 | Pull Request Configuration | Assess pull request review requirements |
+| 5 | Status Check Verification | Verify required status checks before merging |
+| 6 | Signed Commits Audit | Track signed commit enforcement compliance |
+| 7 | Exception Management | Document and manage branch protection exceptions |
+| 8 | Gap Analysis | Identify gaps in branch protection implementation |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
+
+---
+
 ## Assessment Overview
 
 ### Purpose & Scope
@@ -43,7 +73,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 #### What This Assessment Covers
 
-This assessment documents BRANCH PROTECTION - technical controls that enforce code review and prevent unauthorized code changes. This answers:
+This assessment documents BRANCH PROTECTION - technical controls that enforce code review and prevent unauthorised code changes. This answers:
 
 - Are protected branches configured for production repositories?
 - What protection rules are enabled? (PR required, reviewers, status checks)
@@ -87,7 +117,7 @@ This assessment is **completely platform-agnostic**. You document YOUR branch pr
 |-----------------------|--------------------------|--------------------------------------|
 | ISMS-IMP-A.8.4.1     | Access Control           | WHO can access repositories          |
 | **ISMS-IMP-A.8.4.2** | **Branch Protection**    | **HOW code changes are controlled**  |
-| ISMS-IMP-A.8.4.3     | Overall Assessment       | Consolidated compliance view         |
+| ISMS-IMP-A.8.4.3     | Overall Assessment       | Summary Dashboard (aggregated metrics) |
 
 This assessment (A.8.4.2) focuses specifically on TECHNICAL CONTROLS for code changes. You can have perfect access control (S1) but still have security gaps if developers can push directly to production without review.
 
@@ -99,7 +129,7 @@ This assessment (A.8.4.2) focuses specifically on TECHNICAL CONTROLS for code ch
 2. **DevOps Engineers** - Implement and maintain CI/CD integrations
 3. **Development Team Leads** - Enforce pull request workflows
 4. **Security Team** - Audit protection configurations
-5. **Platform Administrators** - Manage organization-level defaults
+5. **Platform Administrators** - Manage organisation-level defaults
 
 #### Required Skills
 
@@ -168,7 +198,7 @@ Before starting this assessment, gather:
 #### 5. Documentation
 
 - **Platform configuration guides**
-- **Organization branch protection policies**
+- **Organisation branch protection policies**
 - **Developer workflow documentation**
 - **Exception requests** (if any exist)
 
@@ -186,7 +216,7 @@ Before starting this assessment, gather:
 
 - Repository → Settings → Branches → Branch protection rules
 - GitHub CLI: `gh api repos/{owner}/{repo}/branches/main/protection`
-- Organization → Settings → Repository defaults
+- Organisation → Settings → Repository defaults
 
 #### GitLab
 
@@ -648,7 +678,7 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **GitLab**: "Reject unsigned commits" (Premium/Ultimate only)
 - **Bitbucket**: ➖ N/A (not natively supported)
 - **Azure DevOps**: ➖ N/A (not natively supported)
-- **➖ N/A** if platform doesn't support OR organization hasn't implemented GPG
+- **➖ N/A** if platform doesn't support OR organisation hasn't implemented GPG
 
 **Column K - Linear History Enforced**: ✅ Yes, ❌ No
 
@@ -657,7 +687,7 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **GitLab**: Merge method = "Fast-forward merge"
 - **Bitbucket**: Merge strategy setting
 - **Azure DevOps**: Branch policies → Merge type
-- **Optional** for most organizations (stylistic preference)
+- **Optional** for most organisations (stylistic preference)
 
 **Column L - Compliance Score**: Formula (automated)
 
@@ -1039,7 +1069,7 @@ Same structure as IMP-S1 Gap_Analysis sheet:
 
 - Branch protection settings screenshots (per platform)
 - Protection rule exports (JSON/CSV)
-- Organization-level defaults (if applicable)
+- Organisation-level defaults (if applicable)
 
 **Enforcement Evidence:**
 
@@ -1191,7 +1221,7 @@ glab api projects/{id}/protected_branches/main
 
    - Screenshots of protection settings
    - JSON/CSV exports of rules
-   - Organization defaults
+   - Organisation defaults
 
 2. **Pull Request Enforcement**
 
@@ -1485,7 +1515,7 @@ Before submitting assessment for approval:
 - [ ] Configuration screenshots collected
 - [ ] PR enforcement examples captured
 - [ ] CI/CD logs saved
-- [ ] Files organized in structure
+- [ ] Files organised in structure
 
 **Approval:**
 
@@ -1509,7 +1539,7 @@ Before submitting assessment for approval:
 
 - [ ] All claims backed by evidence
 - [ ] Screenshots show current dates
-- [ ] Evidence is organized and labeled
+- [ ] Evidence is organised and labeled
 
 ---
 
@@ -1526,7 +1556,7 @@ Same process as IMP-S1:
 
 - Branch protection configured for all production repos
 - Compliance score ≥85% OR remediation plan for gaps
-- Evidence collected and organized
+- Evidence collected and organised
 - No critical gaps OR immediate remediation planned
 
 ---
@@ -1535,7 +1565,7 @@ Same process as IMP-S1:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"An unprotected branch is an unprotected door to your intellectual property."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

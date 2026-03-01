@@ -49,13 +49,13 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for source code access control to protect intellectual property and maintain secure software development practices in accordance with ISO/IEC 27001:2022 Control A.8.4.
+This policy establishes [Organisation]'s requirements for source code access control to protect intellectual property and maintain secure software development practices in accordance with ISO/IEC 27001:2022 Control A.8.4.
 
-**Scope**: This policy applies to all source code repositories (production, internal tools, infrastructure-as-code, open source contributions, archived); all development artifacts (libraries, build scripts, test code); all repository platforms (GitHub, GitLab, Bitbucket, Azure DevOps, self-hosted); and all organizational personnel, contractors, and third parties with source code access.
+**Scope**: This policy applies to all source code repositories (production, internal tools, infrastructure-as-code, open source contributions, archived); all development artifacts (libraries, build scripts, test code); all repository platforms (GitHub, GitLab, Bitbucket, Azure DevOps, self-hosted); and all organisational personnel, contractors, and third parties with source code access.
 
-**Purpose**: Define organizational requirements for source code access control implementation and governance. This policy establishes WHAT access controls are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8 (UG/TG variants).4 suite.
+**Purpose**: Define organisational requirements for source code access control implementation and governance. This policy establishes WHAT access controls are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8 (UG/TG variants).4 suite.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -67,19 +67,19 @@ This policy establishes [Organization]'s requirements for source code access con
 
 > *Access to source code, development tools and software libraries shall be appropriately managed.*
 
-**Control Objective**: Establish organizational policy for source code access controls protecting intellectual property and ensuring secure software development through appropriate access management to source code repositories and related development artifacts.
+**Control Objective**: Establish organisational policy for source code access controls protecting intellectual property and ensuring secure software development through appropriate access management to source code repositories and related development artifacts.
 
 **This Policy Addresses**:
 
-- Source code access control requirements based on repository classification and organizational risk appetite
+- Source code access control requirements based on repository classification and organisational risk appetite
 - Role-based access control for repositories and development artifacts
 - Branch protection and code review requirements
 - Secret management and prevention requirements
 - Backup, recovery, and audit logging requirements
 - Third-party access management
-- Organizational roles and responsibilities for source code access governance
+- Organisational roles and responsibilities for source code access governance
 - Exception and incident management frameworks
-- Integration with [Organization]'s risk assessment and treatment processes
+- Integration with [Organisation]'s risk assessment and treatment processes
 
 ## What This Policy Does
 
@@ -89,7 +89,7 @@ This policy:
 - **Establishes** governance framework for repository access decision-making and accountability
 - **Specifies** mandatory access controls for source code repositories and development artifacts
 - **References** applicable regulatory requirements per ISMS-POL-00
-- **Identifies** organizational roles and responsibilities for source code access controls
+- **Identifies** organisational roles and responsibilities for source code access controls
 
 ## What This Policy Does NOT Do
 
@@ -98,9 +98,9 @@ This policy does NOT:
 - **Specify technical implementation details** (see ISMS-IMP-A.8.4 Implementation Guides)
 - **Define platform-specific configuration procedures** (see ISMS-IMP-A.8.4.1 and ISMS-IMP-A.8.4.2 for GitHub, GitLab, Bitbucket, Azure DevOps procedures)
 - **Provide assessment methodologies or evidence collection procedures** (see ISMS-IMP-A.8.4.3 Assessment Procedures)
-- **Select repository platforms or technologies** (technology selection based on [Organization]'s risk assessment)
-- **Replace risk assessment** (source code access controls selected based on [Organization]'s risk treatment)
-- **Define detailed incident response procedures** (integrated with organizational incident response per A.5.24-27)
+- **Select repository platforms or technologies** (technology selection based on [Organisation]'s risk assessment)
+- **Replace risk assessment** (source code access controls selected based on [Organisation]'s risk treatment)
+- **Define detailed incident response procedures** (integrated with organisational incident response per A.5.24-27)
 - **Establish secure coding standards** (covered by ISMS-POL-A.8.25-26-29 Secure Development Framework)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
@@ -124,7 +124,7 @@ This policy does NOT:
 - All source code repositories containing production application code, internal tools, infrastructure-as-code, configuration management, or development artifacts
 - All repository platforms (cloud-hosted Git platforms, self-hosted Git platforms, alternative version control systems)
 - All development artifacts (source code, libraries, build scripts, test code, documentation, container definitions, CI/CD pipelines)
-- All organizational personnel (employees, contractors, temporary staff) with source code access requirements
+- All organisational personnel (employees, contractors, temporary staff) with source code access requirements
 - All third-party development partners, offshore development teams, and security auditors
 - All deployment models (on-premises infrastructure, hybrid environments, cloud-hosted repositories)
 
@@ -135,7 +135,7 @@ This policy does NOT:
 - Secure coding standards and practices (covered under ISMS-POL-A.8.25-26-29 Secure Development Framework)
 - Change management for production deployments (covered under A.8.32 - Change Management)
 - Third-party commercial software without source code access
-- Open source software used but not modified by [Organization]
+- Open source software used but not modified by [Organisation]
 
 ## Regulatory Applicability
 
@@ -143,17 +143,17 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 
 ### Tier 1: Mandatory Compliance
 
-[Organization] MUST comply with these regulations based on jurisdiction and business operations:
+[Organisation] MUST comply with these regulations based on jurisdiction and business operations:
 
 | Regulation | Applicability | Key Requirements |
 |------------|---------------|------------------|
 | **ISO/IEC 27001:2022** | All operations | A.8.4 - Access to source code shall be appropriately managed |
-| **Swiss nDSG** | All Swiss operations | Art. 8 - Technical and organizational measures to protect personal data include source code access control |
+| **Swiss nDSG** | All Swiss operations | Art. 8 - Technical and organisational measures to protect personal data include source code access control |
 | **EU GDPR** | EU data processing | Art. 32 - Appropriate technical measures include access control to systems processing personal data |
 
 ### Tier 2: Conditional Applicability
 
-Applicable only if [Organization]'s business activities trigger specific regulatory scope:
+Applicable only if [Organisation]'s business activities trigger specific regulatory scope:
 
 | Regulation | Trigger Condition | Key Requirements |
 |------------|-------------------|------------------|
@@ -178,7 +178,7 @@ This policy integrates with and depends upon the following related ISMS controls
 **A.5.15-16-18 (Access Control / Identity and Access Management)**:
 
 - Provides foundational IAM framework and user lifecycle management
-- Source code access control inherits authentication, authorization, and identity management requirements
+- Source code access control inherits authentication, authorisation, and identity management requirements
 - Multi-factor authentication (MFA) and access review requirements apply to source code repositories
 
 **A.8.2-3-5 (Authentication and Privileged Access)**:
@@ -189,7 +189,7 @@ This policy integrates with and depends upon the following related ISMS controls
 **A.8.25-26-29 (Secure Development Lifecycle)**:
 
 - Defines secure coding standards and development practices
-- A.8.4 enables secure development controls by ensuring only authorized personnel can modify code
+- A.8.4 enables secure development controls by ensuring only authorised personnel can modify code
 
 **A.8.32 (Change Management)**:
 
@@ -201,7 +201,7 @@ This policy integrates with and depends upon the following related ISMS controls
 - Defines how to respond to security incidents
 - A.8.4 helps detect source code access incidents through monitoring
 
-**Integration Principle**: A.8.4 provides the access control foundation that enables other controls. Secure development practices are only effective if unauthorized individuals cannot bypass them by directly modifying code in repositories.
+**Integration Principle**: A.8.4 provides the access control foundation that enables other controls. Secure development practices are only effective if unauthorised individuals cannot bypass them by directly modifying code in repositories.
 
 ---
 
@@ -209,7 +209,7 @@ This policy integrates with and depends upon the following related ISMS controls
 
 ## Repository Access Management
 
-[Organization] implements role-based access control for all source code repositories with the principle of least privilege.
+[Organisation] implements role-based access control for all source code repositories with the principle of least privilege.
 
 **Access Control Principles**:
 
@@ -249,7 +249,7 @@ Repository access SHALL be provisioned through centralized identity management s
 
 ## Repository Classification and Controls
 
-[Organization] classifies all source code repositories to determine appropriate protection levels.
+[Organisation] classifies all source code repositories to determine appropriate protection levels.
 
 **Classification Framework**:
 
@@ -259,7 +259,7 @@ All source code repositories SHALL be classified according to the following cate
   - *Examples*: Customer web application, payment processing service, API gateway, mobile app backend
 - **Internal Tools Repositories**: Code for internal automation, utilities, and operational tools (high protection)
   - *Examples*: CI/CD pipeline scripts, monitoring dashboards, internal admin tools, deployment automation
-- **Open Source Contribution Repositories**: Public or open source project code where organization contributes (medium protection - controlled public access)
+- **Open Source Contribution Repositories**: Public or open source project code where organisation contributes (medium protection - controlled public access)
   - *Examples*: Forked open-source libraries, community contributions, public documentation
 - **Archived/Deprecated Repositories**: Historical code no longer in active development (read-only)
   - *Examples*: Legacy application code (sunset), previous product versions, completed proof-of-concepts
@@ -281,7 +281,7 @@ Production code repositories SHALL require minimum two-person review for all cod
 
 ## Role-Based Access Control
 
-[Organization] grants repository access based on defined roles with appropriate permissions.
+[Organisation] grants repository access based on defined roles with appropriate permissions.
 
 **Access Roles and Permissions**:
 
@@ -304,7 +304,7 @@ Repository access SHALL be granted based on the following roles:
 **Service Account Quarterly Review Criteria**:
 
 - Is the automation/pipeline still active? (Check last activity date; inactive >90 days flagged for removal)
-- Is the documented owner still responsible? (Confirm owner still with organization and still managing the automation)
+- Is the documented owner still responsible? (Confirm owner still with organisation and still managing the automation)
 - Is access level still appropriate? (Review permissions; reduce if broader than required)
 - Is token expiration set appropriately? (Maximum 1 year; recommend 90 days for high-privilege accounts)
 - Action: Retain (with confirmation), Modify (reduce access), or Revoke (no longer needed)
@@ -324,7 +324,7 @@ Users SHALL be granted the minimum access level required for their role: read ac
 
 ## Branch Protection and Code Review
 
-[Organization] implements branch protection to prevent unauthorized code changes and enforce code review.
+[Organisation] implements branch protection to prevent unauthorised code changes and enforce code review.
 
 **Main Branch Protection**:
 
@@ -352,7 +352,7 @@ All code changes to protected branches SHALL be submitted via pull requests. Pul
 
 ## Secret Management
 
-[Organization] prohibits secrets in source code repositories and implements automated secret scanning.
+[Organisation] prohibits secrets in source code repositories and implements automated secret scanning.
 
 **Secret Prohibition**:
 
@@ -364,7 +364,7 @@ All repositories SHALL have automated secret scanning enabled with pre-commit sc
 
 **Secret Remediation**:
 
-Discovered secrets SHALL be remediated within 1 hour for production repository secrets and 24 hours for internal tools repository secrets, with immediate rotation if secret is confirmed exposed or used. Secret remediation SHALL include immediate rotation of exposed secret, removal from repository (including Git history if necessary), impact assessment (was secret accessed by unauthorized parties?), and incident reporting if required by A.5.24-27.
+Discovered secrets SHALL be remediated within 1 hour for production repository secrets and 24 hours for internal tools repository secrets, with immediate rotation if secret is confirmed exposed or used. Secret remediation SHALL include immediate rotation of exposed secret, removal from repository (including Git history if necessary), impact assessment (was secret accessed by unauthorised parties?), and incident reporting if required by A.5.24-27.
 
 **Remediation Timeline Exception Handling**:
 
@@ -384,11 +384,11 @@ Discovered secrets SHALL be remediated within 1 hour for production repository s
 
 ## Authentication and Multi-Factor Authentication
 
-[Organization] requires strong authentication for repository access with multi-factor authentication for production repositories.
+[Organisation] requires strong authentication for repository access with multi-factor authentication for production repositories.
 
 **Authentication Methods**:
 
-Access to source code repositories SHALL be authenticated using username/password (with MFA required), SSH public key authentication, personal access tokens (with expiration), certificate-based authentication, or single sign-on (SSO) via organizational identity provider. Passwords SHALL comply with organizational password policy (minimum length, complexity, rotation). SSH keys and personal access tokens SHALL be unique per user and device, protected with passphrase or secure storage, rotated annually or upon suspicion of compromise, and revoked upon device loss or decommissioning.
+Access to source code repositories SHALL be authenticated using username/password (with MFA required), SSH public key authentication, personal access tokens (with expiration), certificate-based authentication, or single sign-on (SSO) via organisational identity provider. Passwords SHALL comply with organisational password policy (minimum length, complexity, rotation). SSH keys and personal access tokens SHALL be unique per user and device, protected with passphrase or secure storage, rotated annually or upon suspicion of compromise, and revoked upon device loss or decommissioning.
 
 **Multi-Factor Authentication**:
 
@@ -414,11 +414,11 @@ Multi-factor authentication SHALL be required for all human user accounts with w
 
 ## Audit Logging and Monitoring
 
-[Organization] implements comprehensive logging and monitoring of repository access and activities.
+[Organisation] implements comprehensive logging and monitoring of repository access and activities.
 
 **Logging Requirements**:
 
-Repository platforms SHALL log access events (login attempts, logout events, session duration), repository access (clone, pull, browsing operations), code changes (commits with author/timestamp/message/files, pushes, force pushes), branch operations (creation, deletion, protection changes), pull request activities (creation, review, approval, merge, rejection), permission changes (access granted, revoked, role changes), administrative actions (repository settings changes, collaborator management), and security events (secret scanning alerts, failed authentication, suspicious access patterns). Logs SHALL include minimum metadata: timestamp (UTC), user identity (username or service account), source IP address, action performed, repository affected, and success or failure status. Logs SHALL be tamper-evident and protected from unauthorized modification or deletion.
+Repository platforms SHALL log access events (login attempts, logout events, session duration), repository access (clone, pull, browsing operations), code changes (commits with author/timestamp/message/files, pushes, force pushes), branch operations (creation, deletion, protection changes), pull request activities (creation, review, approval, merge, rejection), permission changes (access granted, revoked, role changes), administrative actions (repository settings changes, collaborator management), and security events (secret scanning alerts, failed authentication, suspicious access patterns). Logs SHALL include minimum metadata: timestamp (UTC), user identity (username or service account), source IP address, action performed, repository affected, and success or failure status. Logs SHALL be tamper-evident and protected from unauthorised modification or deletion.
 
 **Log Retention**:
 
@@ -426,7 +426,7 @@ Repository access logs SHALL be retained for minimum periods: access events 1 ye
 
 **Log Monitoring and Alerting**:
 
-Repository access logs SHALL be monitored for multiple failed authentication attempts (brute force), access from unusual geographic locations, access outside normal business hours (for role-based anomalies), bulk download operations, permission elevation attempts, force pushes to protected branches, secret scanning alerts, and large-scale access pattern changes. Security alerts SHALL be generated and sent to security operations team within 15 minutes of detection. Critical security events (confirmed unauthorized access, mass permission changes) SHALL trigger immediate incident response.
+Repository access logs SHALL be monitored for multiple failed authentication attempts (brute force), access from unusual geographic locations, access outside normal business hours (for role-based anomalies), bulk download operations, permission elevation attempts, force pushes to protected branches, secret scanning alerts, and large-scale access pattern changes. Security alerts SHALL be generated and sent to security operations team within 15 minutes of detection. Critical security events (confirmed unauthorised access, mass permission changes) SHALL trigger immediate incident response.
 
 **Implementation Note**: Logging configuration, monitoring rules, and alerting procedures are documented in ISMS-IMP-A.8.4.3 (Source Code Access Assessment).
 
@@ -442,11 +442,11 @@ Repository access logs SHALL be monitored for multiple failed authentication att
 
 ## Backup and Recovery
 
-[Organization] implements regular backups of source code repositories with tested recovery procedures.
+[Organisation] implements regular backups of source code repositories with tested recovery procedures.
 
 **Backup Requirements**:
 
-All source code repositories SHALL be backed up with frequency of daily incremental backups and weekly full backups, retention minimum of 90 days for active repositories and 7 years for production repositories, and geographic redundancy with backups stored in different geographic location than primary repository. Backups SHALL include source code (all branches, all commits, full history), repository metadata (permissions, settings, configurations), pull request history and discussions, issue tracking data if integrated, and wikis and documentation. Backups SHALL be encrypted at rest using organizationally-approved encryption standards. Backup access SHALL be restricted to authorized backup administrators and require MFA.
+All source code repositories SHALL be backed up with frequency of daily incremental backups and weekly full backups, retention minimum of 90 days for active repositories and 7 years for production repositories, and geographic redundancy with backups stored in different geographic location than primary repository. Backups SHALL include source code (all branches, all commits, full history), repository metadata (permissions, settings, configurations), pull request history and discussions, issue tracking data if integrated, and wikis and documentation. Backups SHALL be encrypted at rest using organisationally-approved encryption standards. Backup access SHALL be restricted to authorised backup administrators and require MFA.
 
 **Recovery Testing**:
 
@@ -474,7 +474,7 @@ Repository recovery procedures SHALL be tested quarterly for production reposito
 
 ## Third-Party Access Management
 
-[Organization] implements additional controls for third-party developer access to source code repositories.
+[Organisation] implements additional controls for third-party developer access to source code repositories.
 
 **Third-Party Access Requirements**:
 
@@ -497,7 +497,7 @@ Third-party repository access SHALL be monitored for unusual patterns or behavio
 
 ## Exception Management
 
-[Organization] implements formal exception management for source code access policy requirements.
+[Organisation] implements formal exception management for source code access policy requirements.
 
 **Exception Request Process**:
 
@@ -598,7 +598,7 @@ Where technically infeasible to meet a requirement, compensating controls SHALL 
 
 ## Policy Review and Updates
 
-This policy SHALL be reviewed annually by the CISO and Information Security Manager. Policy updates SHALL be triggered by annual scheduled review, significant security incidents involving source code access, changes to regulatory requirements, major repository platform changes, internal audit findings or external audit recommendations, and changes to organizational risk appetite. Policy updates SHALL be approved by CISO (mandatory), CTO or VP Engineering (mandatory), Legal/Compliance Officer (mandatory), and Executive Management (final authority). Policy effective date SHALL be 30 days after approval to allow implementation preparation.
+This policy SHALL be reviewed annually by the CISO and Information Security Manager. Policy updates SHALL be triggered by annual scheduled review, significant security incidents involving source code access, changes to regulatory requirements, major repository platform changes, internal audit findings or external audit recommendations, and changes to organisational risk appetite. Policy updates SHALL be approved by CISO (mandatory), CTO or VP Engineering (mandatory), Legal/Compliance Officer (mandatory), and Executive Management (final authority). Policy effective date SHALL be 30 days after approval to allow implementation preparation.
 
 **Audit Evidence**:
 
@@ -652,7 +652,7 @@ Policy violations SHALL result in minor violations (written warning, mandatory r
 
 ## Assessment Methodology
 
-[Organization] assesses compliance with source code access control requirements through repository inventory and classification verification, access control compliance assessment, branch protection configuration review, secret scanning effectiveness measurement, backup and recovery testing, and log monitoring and analysis.
+[Organisation] assesses compliance with source code access control requirements through repository inventory and classification verification, access control compliance assessment, branch protection configuration review, secret scanning effectiveness measurement, backup and recovery testing, and log monitoring and analysis.
 
 **Implementation Note**: Detailed assessment methodology, evidence collection procedures, and compliance scoring framework are documented in ISMS-IMP-A.8.4.3 (Source Code Access Assessment).
 
@@ -711,7 +711,7 @@ Evidence required to demonstrate this policy is operationally effective:
 | Secret Management (20%) | (Repos with secret scanning enabled + secrets remediated within SLA) / Total × 100 | Secret scanning tool reports |
 | Third-Party Access (10%) | (Third-party accounts with valid NDA + current contract) / Total third-party accounts × 100 | Third-party access registry |
 
-**Score Calculation**: Information Security Manager calculates monthly; score recorded in compliance dashboard (Workbook 5 or equivalent); historical scores retained for trend analysis.
+**Score Calculation**: Information Security Manager calculates monthly; score tracked in Summary Dashboards; historical scores retained for trend analysis.
 
 **Compliance Targets**: Mature ISMS ≥90% overall compliance, New ISMS ≥70% compliance within 180 days
 
@@ -781,7 +781,7 @@ No permanent exceptions SHALL be granted based solely on "existing state" or "le
 
 ## Document Distribution
 
-This policy SHALL be distributed to all personnel with source code repository access, all development team leads and managers, Information Security team, IT Operations team, Internal Audit team, Executive Management, and Board of Directors (upon request). Distribution methods include publication in organizational policy repository, email notification to affected personnel, inclusion in onboarding materials for developers, and reference in employment agreements (where applicable).
+This policy SHALL be distributed to all personnel with source code repository access, all development team leads and managers, Information Security team, IT Operations team, Internal Audit team, Executive Management, and Board of Directors (upon request). Distribution methods include publication in organisational policy repository, email notification to affected personnel, inclusion in onboarding materials for developers, and reference in employment agreements (where applicable).
 
 ## Next Review Date
 
@@ -797,4 +797,4 @@ This policy SHALL be distributed to all personnel with source code repository ac
 
 *This policy establishes requirements for source code access control. Implementation procedures are documented in ISMS-IMP-A.8.4 (UG/TG).1 (Repository Access Control), ISMS-IMP-A.8.4.2 (Branch Protection), and ISMS-IMP-A.8.4.3 (Source Code Access Assessment).*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -21,11 +21,11 @@ ISO/IEC 27001:2022 Control A.5.7: Threat Intelligence
 Assessment Domain 3 of 5: Intelligence Integration & Distribution Workflows
 
 --------------------------------------------------------------------------------
-SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
+SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANISATION
 --------------------------------------------------------------------------------
 
 This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
-your organization's specific intelligence distribution requirements, consumer
+your organisation's specific intelligence distribution requirements, consumer
 workflows, and integration architectures.
 
 Key customization areas:
@@ -45,9 +45,9 @@ DESCRIPTION
 --------------------------------------------------------------------------------
 
 This script generates a comprehensive Excel assessment workbook for evaluating
-how analyzed threat intelligence (from A.5.7.2) is integrated into security
+how analysed threat intelligence (from A.5.7.2) is integrated into security
 operations workflows and distributed to intelligence consumers across the
-organization.
+organisation.
 
 **Purpose:**
 Enables systematic assessment of intelligence distribution mechanisms, consumer
@@ -112,7 +112,6 @@ and is AUDIT CRITICAL for demonstrating operational security value.
 **Integration:**
 This assessment feeds into:
 - A.5.7.4 Threat Intelligence Effectiveness Dashboard (distribution metrics)
-- A.5.7.5 Standalone Compliance Dashboard (executive reporting)
 - A.5.7.2 Collection & Analysis (consumer feedback for requirements)
 - A.8.8 Vulnerability Management (VTL workflow effectiveness)
 - Consumer workflows: SOC, IR, Vuln Mgmt, IAM, Network Security
@@ -179,7 +178,7 @@ Control Reference:    ISO/IEC 27001:2022 Annex A Control A.5.7
 Assessment Domain:    3 of 5 (Intelligence Integration & Distribution Workflows)
 Framework Version:    1.0
 Script Version:       1.0
-Author:               [Organization] ISMS Implementation Team
+Author:               [Organisation] ISMS Implementation Team
 Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
@@ -190,8 +189,6 @@ Related Documents:
     - ISMS-IMP-A.5.7.3: Intelligence Integration & Distribution Implementation Guide
     - ISMS-IMP-A.5.7.1: Threat Intelligence Sources Assessment (Domain 1)
     - ISMS-IMP-A.5.7.2: Intelligence Collection & Analysis Assessment (Domain 2)
-    - ISMS-IMP-A.5.7.4: Threat Intelligence Effectiveness Dashboard (Consolidation)
-    - ISMS-IMP-A.5.7.5: Standalone Compliance Dashboard (Executive Reporting)
     - ISMS-POL-A.8.8: Vulnerability Management Policy (VTL integration)
     - ISMS-IMP-A.8.8: Vulnerability Management Implementation (VTL workflow)
     - ISO 27002:2022 Implementation Guidance for Control A.5.7
@@ -219,7 +216,7 @@ IMPORTANT NOTES
 --------------------------------------------------------------------------------
 
 **Distribution Effectiveness Standards:**
-Threat intelligence value is realized only when consumed operationally.
+Threat intelligence value is realised only when consumed operationally.
 Establish clear effectiveness metrics:
 - Consumer reach: Percentage of eligible consumers receiving intelligence
 - Timeliness: Time from analysis completion to consumer delivery
@@ -273,7 +270,7 @@ Maintain evidence in Sheet 12 (Evidence_Register) with proper linkage.
 
 **Data Protection:**
 Assessment workbooks contain sensitive operational details:
-- Intelligence consumer identities and organizational structure
+- Intelligence consumer identities and organisational structure
 - Integration technical details (APIs, credentials, endpoints)
 - Security tool configurations and IOC deployment mechanisms
 - Performance metrics revealing operational gaps
@@ -349,14 +346,15 @@ This end-to-end workflow must be documented, tested, and measured.
 """
 
 # =============================================================================
-# Standard Library Imports
+# STANDARD LIBRARY IMPORTS
 # =============================================================================
 import logging
 import sys
 from datetime import datetime, timedelta
+from pathlib import Path
 
 # =============================================================================
-# Third-Party Imports
+# THIRD-PARTY IMPORTS
 # =============================================================================
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -365,13 +363,13 @@ from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.formatting.rule import CellIsRule
 
 # =============================================================================
-# Logging Configuration
+# LOGGING CONFIGURATION
 # =============================================================================
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 logger = logging.getLogger(__name__)
 
-
-
+_wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+_wkbk_dir.mkdir(parents=True, exist_ok=True)
 
 # =============================================================================
 # DOCUMENT METADATA
@@ -384,10 +382,18 @@ CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
 
 # Timestamps
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
-GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
 
 # Output filename
 OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
+
+# ============================================================================
+# UNICODE SYMBOLS - PROPER UTF-8 ENCODING
+# ============================================================================
+CHECK   = '\u2705'      # ✅ Green checkmark
+XMARK   = '\u274C'      # ❌ Red X
+WARNING = '\u26A0'      # ⚠  Warning sign
+BULLET  = '\u2022'      # •  Bullet point
 
 # ============================================================================
 # SECTION 1: WORKBOOK CREATION & STYLE DEFINITIONS
@@ -396,30 +402,29 @@ OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_T
 def create_workbook() -> Workbook:
     """Create workbook with all 17 required sheets matching specification."""
     wb = Workbook()
+    wb.properties.title = f"{DOCUMENT_ID} — {WORKBOOK_NAME}"
+    wb.properties.subject = f"ISO/IEC 27001:2022 — Control {CONTROL_ID}: {CONTROL_NAME}"
+    wb.properties.creator = "ISMS Core Contributors"
+    wb.properties.description = f"ISMS Implementation Workbook — {DOCUMENT_ID}"
 
     # Remove default sheet
     if "Sheet" in wb.sheetnames:
-        wb.remove(wb["Sheet"])
+        wb.remove(wb.active)
 
-    # Sheet structure matches ISMS-IMP-A.5.7.3 V1.0 specification (17 sheets)
+    # Sheet structure for ISMS-IMP-A.5.7.3 (12 sheets — Gold Standard tail order: data → ER → SD → AS)
     sheets = [
-        "Instructions",
-        "Tool_Integration_Matrix",
-        "IOC_Deployment",
-        "Dissemination_Channels",
-        "Stakeholder_Registry",
-        "Distribution_Tracking",
-        "Prevention_Tracking",            # NEW - Sheet 7 (CRITICAL)
-        "Feedback_Collection",            # MOVED from old Sheet 7
-        "Integration_Metrics",            # MOVED from old Sheet 8
-        "SIEM_Integration_Details",      # NEW - Sheet 10
-        "EDR_Integration_Details",       # NEW - Sheet 11
-        "Threat_Hunting_Campaigns",      # NEW - Sheet 12
-        "Risk_Assessment_Updates",       # NEW - Sheet 13 (CRITICAL - Clause 6.1)
-        "Incident_TI_Integration",       # NEW - Sheet 14 (CRITICAL - A.5.24-5.28)
-        "Intelligence_Driven_Decisions", # NEW - Sheet 15 (CRITICAL - Strategic)
-        "Action_Items",                   # Sheet 16
-        "Metadata",                       # Sheet 17
+        "Instructions & Legend",
+        "Tool Integration Matrix",
+        "IOC Deployment",
+        "Dissemination Channels",
+        "Stakeholder Registry",
+        "Distribution Tracking",
+        "Feedback Collection",
+        "Integration Metrics",
+        "Action Items",
+        "Evidence Register",
+        "Summary Dashboard",
+        "Approval Sign-Off",
     ]
     for name in sheets:
         wb.create_sheet(title=name)
@@ -447,12 +452,12 @@ def setup_styles():
         },
         "subheader": {
             "font": Font(name="Calibri", size=11, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid"),
+            "fill": PatternFill(start_color="003366", end_color="003366", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
         },
         "section_header": {
             "font": Font(name="Calibri", size=10, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="8FAADC", end_color="8FAADC", fill_type="solid"),
+            "fill": PatternFill(start_color="003366", end_color="003366", fill_type="solid"),
             "alignment": Alignment(horizontal="left", vertical="center", wrap_text=True),
         },
         "column_header": {
@@ -467,7 +472,7 @@ def setup_styles():
             "border": border_thin,
         },
         "formula_cell": {
-            "fill": PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid"),
+            "fill": PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid"),
             "alignment": Alignment(horizontal="left", vertical="center", wrap_text=True),
             "border": border_thin,
         },
@@ -476,6 +481,8 @@ def setup_styles():
     return styles
 
 
+
+_STYLES = setup_styles()
 def get_border():
     """Create new border object (avoid shared object warnings)."""
     thin = Side(style="thin")
@@ -591,7 +598,7 @@ def setup_validations():
     # Priority
     validations['priority'] = DataValidation(
         type="list",
-        formula1='"🔴 Critical,🟡 High,🟢 Medium,⚫ Low"',
+        formula1='"Critical,High,Medium,Low"',
         allow_blank=False
     )
     
@@ -610,179 +617,153 @@ def setup_validations():
 # ============================================================================
 
 def create_instructions(ws, styles):
-    """Create Instructions sheet with completion guidance."""
-    
-    # Title
-    ws.merge_cells("A1:F1")
-    ws["A1"] = "ISMS-IMP-A.5.7.3 - Intelligence Integration & Distribution Assessment"
-    ws["A1"].font = styles["header"]["font"]
-    ws["A1"].fill = styles["header"]["fill"]
-    ws["A1"].alignment = styles["header"]["alignment"]
-    ws.row_dimensions[1].height = 30
-    
-    # Subtitle
-    ws.merge_cells("A2:F2")
-    ws["A2"] = "Assessment of TI Integration into Security Operations and Stakeholder Distribution"
-    ws["A2"].font = Font(name="Calibri", size=11, italic=True)
-    ws["A2"].alignment = Alignment(horizontal="center")
-    
-    row = 4
-    
-    # Purpose section
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "PURPOSE & OBJECTIVES"
-    ws[f"A{row}"].font = styles["subheader"]["font"]
-    ws[f"A{row}"].fill = styles["subheader"]["fill"]
-    ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
-    
-    row += 1
-    ws.merge_cells(f"A{row}:F{row}")
-    purpose_text = """Assess the effectiveness of threat intelligence integration into security operations:
-- Tool Integration - SIEM, EDR, firewalls, proxies, email gateways
-- IOC Deployment - Track deployment and detection effectiveness
-- Stakeholder Engagement - Measure dissemination reach and consumption
-- Feedback Loop - Intelligence refinement based on stakeholder input
-- Automation - Evaluate automated vs. manual workflows"""
-    ws[f"A{row}"] = purpose_text
-    ws[f"A{row}"].alignment = Alignment(wrap_text=True, vertical="top")
-    ws.row_dimensions[row].height = 75
-    
-    row += 2
-    
-    # Workbook Structure
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "WORKBOOK STRUCTURE"
-    ws[f"A{row}"].font = styles["subheader"]["font"]
-    ws[f"A{row}"].fill = styles["subheader"]["fill"]
-    ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
-    
-    row += 1
-    structure = [
-        "Sheet 1: Instructions - This guide",
-        "Sheet 2: Tool_Integration_Matrix - Security tool integration status",
-        "Sheet 3: IOC_Deployment - IOC tracking and effectiveness",
-        "Sheet 4: Dissemination_Channels - Distribution mechanisms",
-        "Sheet 5: Stakeholder_Registry - Audience management",
-        "Sheet 6: Distribution_Tracking - Intelligence distribution records",
-        "Sheet 7: Feedback_Collection - Stakeholder feedback and ratings",
-        "Sheet 8: Integration_Metrics - KPIs for integration effectiveness",
-        "Sheet 9: Action_Items - Integration improvement tasks",
-        "Sheet 10: Metadata - Workbook generation information",
+    """Create GS-IL-compliant Instructions & Legend sheet."""
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill("solid", fgColor="003366")
+    _grey = PatternFill("solid", fgColor="D9D9D9")
+    _input = PatternFill("solid", fgColor="FFFFCC")
+    _green = PatternFill("solid", fgColor="C6EFCE")
+    _amber = PatternFill("solid", fgColor="FFEB9C")
+    _red = PatternFill("solid", fgColor="FFC7CE")
+
+    # Row 1 — Title banner
+    ws.merge_cells("A1:G1")
+    ws["A1"] = f"{DOCUMENT_ID}  -  {WORKBOOK_NAME}\n{CONTROL_REF}"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = _navy
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    ws.row_dimensions[1].height = 40
+
+    # Row 2 — empty
+
+    # Row 3 — Document Information heading
+    ws["A3"] = "Document Information"
+    ws["A3"].font = Font(name="Calibri", size=12, bold=True)
+
+    doc_info = [
+        ("Document ID", DOCUMENT_ID),
+        ("Workbook Title", WORKBOOK_NAME),
+        ("Control Reference", CONTROL_REF),
+        ("Version", "1.0"),
+        ("Assessment Date", ""),
+        ("Completed By", ""),
+        ("Organisation", ""),
     ]
-    
-    for item in structure:
-        ws.merge_cells(f"A{row}:F{row}")
-        ws[f"A{row}"] = item
-        ws[f"A{row}"].alignment = Alignment(wrap_text=True)
-        ws.row_dimensions[row].height = 20
-        row += 1
-    
-    row += 1
-    
-    # TLP Reference
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "TLP CLASSIFICATION REFERENCE"
-    ws[f"A{row}"].font = styles["subheader"]["font"]
-    ws[f"A{row}"].fill = styles["subheader"]["fill"]
-    ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
-    
-    row += 1
-    tlp_info = [
-        "TLP:CLEAR - Disclosure is not limited",
-        "TLP:GREEN - Limited disclosure, restricted to community",
-        "TLP:AMBER - Limited disclosure, restricted to organisation and clients",
-        "TLP:AMBER+STRICT - Limited disclosure, restricted to organisation only",
-        "TLP:RED - Not for disclosure, restricted to specific individuals",
-    ]
-    
-    for item in tlp_info:
-        ws[f"A{row}"] = item
-        ws[f"A{row}"].alignment = Alignment(wrap_text=True)
-        ws.row_dimensions[row].height = 20
-        row += 1
-    
-    row += 2
-    
-    # Completion Instructions
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "COMPLETION INSTRUCTIONS"
-    ws[f"A{row}"].font = styles["subheader"]["font"]
-    ws[f"A{row}"].fill = styles["subheader"]["fill"]
-    ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
-    
-    row += 1
+    for i, (label, value) in enumerate(doc_info):
+        r = 4 + i
+        ws[f"A{r}"] = label
+        ws[f"A{r}"].font = Font(name="Calibri", bold=True)
+        ws[f"B{r}"] = value
+        if not value:
+            ws[f"B{r}"].fill = _input
+            ws[f"B{r}"].border = _border
+
+    # Instructions section
+    row = 12
+    ws[f"A{row}"] = "Instructions"
+    ws[f"A{row}"].font = Font(name="Calibri", size=12, bold=True)
+
     instructions = [
-        "1. Document all Tool_Integration_Matrix entries for security stack",
-        "2. Load IOC_Deployment data from past 90 days",
-        "3. Configure Dissemination_Channels and stakeholder registry",
-        "4. Review Distribution_Tracking for intelligence reach",
-        "5. Collect and analyze Feedback from stakeholders",
-        "6. Establish baseline Integration_Metrics",
-        "7. Generate Action_Items for gaps and improvements",
-        "8. Review monthly; full assessment quarterly",
+        "1. Document all security tools in scope for threat intelligence integration in the Tool Integration Matrix sheet (SIEM, SOAR, IDS/IPS, firewall, EDR, vulnerability scanners).",
+        "2. Assess each tool's integration status, feed ingestion capability, and supported data formats (STIX/TAXII, CSV, JSON, XML, MISP).",
+        "3. Record integration performance metrics in the Integration Metrics sheet — track timeliness, volume ingested, false positive rate, and analyst time saved.",
+        "4. Identify tools lacking active threat intelligence integration and document gap remediation plans with target completion dates and responsible owners.",
+        "5. Use the Performance Trend column to track whether each integration metric is Improving, Stable, or Declining quarter-on-quarter.",
+        "6. Prioritise automation for high-volume manual processes — document automation opportunities and measure analyst workload reduction.",
+        "7. Maintain the Evidence Register with integration configuration exports, API documentation, and performance dashboards.",
+        "8. Obtain sign-off from the SOC Manager, Security Architecture lead, and CISO.",
     ]
-    
-    for item in instructions:
-        ws.merge_cells(f"A{row}:F{row}")
-        ws[f"A{row}"] = item
-        ws[f"A{row}"].alignment = Alignment(wrap_text=True)
-        ws.row_dimensions[row].height = 20
+    row += 1
+    for instr in instructions:
+        ws[f"A{row}"] = instr
         row += 1
-    
-    row += 2
-    
-    # Footer quote
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = '"The value of intelligence is in its use - distribution without action is cargo cult security." - Systems Engineering Proverb'
-    ws[f"A{row}"].font = Font(italic=True, size=9)
-    ws[f"A{row}"].alignment = Alignment(horizontal="center")
-    
-    # Set column widths
-    ws.column_dimensions['A'].width = 80
-    for col in ['B', 'C', 'D', 'E', 'F']:
-        ws.column_dimensions[col].width = 15
 
+    # Status Legend section
+    row += 1
+    ws[f"A{row}"] = "Status Legend"
+    ws[f"A{row}"].font = Font(name="Calibri", size=12, bold=True)
+    row += 1
+    for col_idx, header in enumerate(["Symbol", "Status", "Description"], start=1):
+        c = ws.cell(row=row, column=col_idx, value=header)
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.fill = _grey
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = _border
+    legend_rows = [
+        ("✓", "Compliant / Complete", "Requirement fully met", _green),
+        ("⚠", "Partial / In Progress", "Partially met or in progress", _amber),
+        ("✗", "Non-Compliant / Not Started", "Requirement not met", _red),
+        ("—", "Not Applicable", "Not applicable to this assessment", None),
+    ]
+    row += 1
+    for sym, status, desc, fill in legend_rows:
+        ws.cell(row=row, column=1, value=sym).border = _border
+        s = ws.cell(row=row, column=2, value=status)
+        d = ws.cell(row=row, column=3, value=desc)
+        if fill:
+            s.fill = fill
+        for cell in (s, d):
+            cell.border = _border
+            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        row += 1
 
-# ============================================================================
-# SECTION 4: SHEET 2 - TOOL_INTEGRATION_MATRIX
-# ============================================================================
+    # Acceptable Evidence section
+    row += 1
+    ws[f"A{row}"] = "Acceptable Evidence (examples)"
+    ws[f"A{row}"].font = Font(name="Calibri", size=12, bold=True)
+    row += 1
+    for evidence in [
+        "\u2713 SIEM / SOAR threat intelligence integration configuration exports (sanitised)",
+        "\u2713 STIX / TAXII and API integration documentation",
+        "\u2713 Integration performance reports and dashboards",
+        "\u2713 Automation workflow documentation and efficiency metrics",
+        "\u2713 Vendor integration capability documentation and data sheets",
+    ]:
+        ws[f"A{row}"] = evidence
+        row += 1
 
+    ws.column_dimensions["A"].width = 28
+    ws.column_dimensions["B"].width = 45
+    ws.column_dimensions["C"].width = 70
+    ws.freeze_panes = "A4"
 def create_tool_integration(ws, styles, validations):
     """Create Tool_Integration_Matrix sheet - security tool integration status."""
     
     # Title
     ws.merge_cells("A1:P1")
-    ws["A1"] = "Security Tool Integration Matrix"
+    ws["A1"] = "SECURITY TOOL INTEGRATION MATRIX"
     ws["A1"].font = styles["header"]["font"]
     ws["A1"].fill = styles["header"]["fill"]
     ws["A1"].alignment = styles["header"]["alignment"]
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
     
     # Instructions
     ws.merge_cells("A2:P2")
     ws["A2"] = "Document threat intelligence integration status across all security tools - SIEM, EDR, firewalls, proxies, email gateways, etc."
-    ws["A2"].font = Font(italic=True, size=9)
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
     ws["A2"].alignment = Alignment(wrap_text=True)
-    ws.row_dimensions[2].height = 30
     
     # Column headers (row 4)
     headers = [
-        "Tool_ID",
-        "Tool_Category",
-        "Tool_Name",
+        "Tool ID",
+        "Tool Category",
+        "Tool Name",
         "Vendor",
         "Version",
-        "Primary_Owner",
-        "Integration_Status",
-        "Integration_Method",
-        "Integration_Direction",
-        "Data_Types_Integrated",
-        "Automation_Level",
-        "Update_Frequency",
-        "IOC_Types_Supported",
-        "Last_Successful_Sync",
-        "Sync_Errors_Last_30_Days",
-        "Effectiveness_Rating",
+        "Primary Owner",
+        "Integration Status",
+        "Integration Method",
+        "Integration Direction",
+        "Data Types Integrated",
+        "Automation Level",
+        "Update Frequency",
+        "IOC Types Supported",
+        "Last Successful Sync",
+        "Sync Errors Last 30 Days",
+        "Effectiveness Rating",
     ]
     
     col_widths = [12, 15, 30, 20, 12, 20, 18, 18, 18, 25, 18, 18, 30, 20, 22, 18]
@@ -790,7 +771,7 @@ def create_tool_integration(ws, styles, validations):
     for col_num, (header, width) in enumerate(zip(headers, col_widths), start=1):
         col_letter = get_column_letter(col_num)
         cell = ws[f"{col_letter}4"]
-        cell.value = header
+        cell.value = header.replace("_", " ")
         cell.font = styles["column_header"]["font"]
         cell.fill = styles["column_header"]["fill"]
         cell.alignment = styles["column_header"]["alignment"]
@@ -800,9 +781,10 @@ def create_tool_integration(ws, styles, validations):
     # Data rows (30 tools capacity)
     for row in range(5, 35):
         # Tool_ID (auto-generated format)
-        ws[f"A{row}"] = f"TOOL-{row-4:03d}"
+        if row == 5:
+            ws[f"A{row}"] = "TOOL-001"
         ws[f"A{row}"].font = Font(bold=True, size=9)
-        ws[f"A{row}"].fill = PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid")
+        ws[f"A{row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         ws[f"A{row}"].border = get_border()
         
         # Tool_Category dropdown (B)
@@ -891,7 +873,7 @@ def create_tool_integration(ws, styles, validations):
         ws.conditional_formatting.add(f"O{row}", rule)
     
     # Freeze panes
-    ws.freeze_panes = "C5"
+    ws.freeze_panes = 'A4'
     
     # Summary dashboard
     row = 36
@@ -934,41 +916,40 @@ def create_ioc_deployment(ws, styles, validations):
     
     # Title
     ws.merge_cells("A1:T1")
-    ws["A1"] = "Indicator of Compromise (IOC) Deployment Tracking"
+    ws["A1"] = "INDICATOR OF COMPROMISE (IOC) DEPLOYMENT TRACKING"
     ws["A1"].font = styles["header"]["font"]
     ws["A1"].fill = styles["header"]["fill"]
     ws["A1"].alignment = styles["header"]["alignment"]
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
     
     # Instructions
     ws.merge_cells("A2:T2")
     ws["A2"] = "Track IOC deployment lifecycle, detection effectiveness, and false positive management. Correlate IOCs to incidents and vulnerabilities."
-    ws["A2"].font = Font(italic=True, size=9)
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
     ws["A2"].alignment = Alignment(wrap_text=True)
-    ws.row_dimensions[2].height = 30
     
     # Column headers (row 4)
     headers = [
-        "IOC_ID",
-        "IOC_Type",
-        "IOC_Value",
-        "Intelligence_Source",
-        "Threat_Actor",
-        "Associated_Malware",
-        "Confidence_Level",
+        "IOC ID",
+        "IOC Type",
+        "IOC Value",
+        "Intelligence Source",
+        "Threat Actor",
+        "Associated Malware",
+        "Confidence Level",
         "Severity",
-        "TLP_Classification",
-        "Deployment_Date",
-        "Deployed_To_Tools",
-        "Deployment_Method",
-        "Expiration_Date",
+        "TLP Classification",
+        "Deployment Date",
+        "Deployed To Tools",
+        "Deployment Method",
+        "Expiration Date",
         "Status",
-        "Hits_Last_7_Days",
-        "Hits_Last_30_Days",
-        "Hits_Total",
-        "Last_Hit_Date",
-        "False_Positive",
-        "Effectiveness_Rating",
+        "Hits Last 7 Days",
+        "Hits Last 30 Days",
+        "Hits Total",
+        "Last Hit Date",
+        "False Positive",
+        "Effectiveness Rating",
     ]
     
     col_widths = [15, 15, 30, 18, 18, 20, 18, 12, 20, 15, 25, 18, 15, 15, 18, 18, 12, 15, 15, 18]
@@ -976,7 +957,7 @@ def create_ioc_deployment(ws, styles, validations):
     for col_num, (header, width) in enumerate(zip(headers, col_widths), start=1):
         col_letter = get_column_letter(col_num)
         cell = ws[f"{col_letter}4"]
-        cell.value = header
+        cell.value = header.replace("_", " ")
         cell.font = styles["column_header"]["font"]
         cell.fill = styles["column_header"]["fill"]
         cell.alignment = styles["column_header"]["alignment"]
@@ -986,9 +967,10 @@ def create_ioc_deployment(ws, styles, validations):
     # Data rows (100 IOCs capacity)
     for row in range(5, 105):
         # IOC_ID (auto-generated format)
-        ws[f"A{row}"] = f"IOC-2025-{row-4:03d}"
+        if row == 5:
+            ws[f"A{row}"] = "IOC-2025-001"
         ws[f"A{row}"].font = Font(bold=True, size=9)
-        ws[f"A{row}"].fill = PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid")
+        ws[f"A{row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         ws[f"A{row}"].border = get_border()
         
         # IOC_Type dropdown (B)
@@ -1112,7 +1094,7 @@ def create_ioc_deployment(ws, styles, validations):
         ws.conditional_formatting.add(f"T{row}", rule4)
     
     # Freeze panes
-    ws.freeze_panes = "D5"
+    ws.freeze_panes = 'A4'
     
     # Summary dashboard
     row = 106
@@ -1160,34 +1142,33 @@ def create_dissemination_channels(ws, styles, validations):
     
     # Title
     ws.merge_cells("A1:N1")
-    ws["A1"] = "Intelligence Dissemination Channels"
+    ws["A1"] = "INTELLIGENCE DISSEMINATION CHANNELS"
     ws["A1"].font = styles["header"]["font"]
     ws["A1"].fill = styles["header"]["fill"]
     ws["A1"].alignment = styles["header"]["alignment"]
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
     
     # Instructions
     ws.merge_cells("A2:N2")
     ws["A2"] = "Document all channels used to distribute threat intelligence - email lists, portals, dashboards, APIs, briefings, chat platforms."
-    ws["A2"].font = Font(italic=True, size=9)
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
     ws["A2"].alignment = Alignment(wrap_text=True)
-    ws.row_dimensions[2].height = 30
     
     # Column headers (row 4)
     headers = [
-        "Channel_ID",
-        "Channel_Name",
-        "Channel_Type",
-        "Target_Audience",
-        "Intelligence_Types",
+        "Channel ID",
+        "Channel Name",
+        "Channel Type",
+        "Target Audience",
+        "Intelligence Types",
         "Frequency",
-        "Delivery_Method",
-        "TLP_Max_Classification",
-        "Active_Subscribers",
-        "Avg_Engagement_Rate",
+        "Delivery Method",
+        "TLP Max Classification",
+        "Active Subscribers",
+        "Avg Engagement Rate",
         "Status",
         "Owner",
-        "Last_Distribution",
+        "Last Distribution",
         "Notes",
     ]
     
@@ -1196,7 +1177,7 @@ def create_dissemination_channels(ws, styles, validations):
     for col_num, (header, width) in enumerate(zip(headers, col_widths), start=1):
         col_letter = get_column_letter(col_num)
         cell = ws[f"{col_letter}4"]
-        cell.value = header
+        cell.value = header.replace("_", " ")
         cell.font = styles["column_header"]["font"]
         cell.fill = styles["column_header"]["fill"]
         cell.alignment = styles["column_header"]["alignment"]
@@ -1206,9 +1187,10 @@ def create_dissemination_channels(ws, styles, validations):
     # Data rows (25 channels capacity)
     for row in range(5, 30):
         # Channel_ID (auto-generated format)
-        ws[f"A{row}"] = f"CHAN-{row-4:03d}"
+        if row == 5:
+            ws[f"A{row}"] = "CHAN-001"
         ws[f"A{row}"].font = Font(bold=True, size=9)
-        ws[f"A{row}"].fill = PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid")
+        ws[f"A{row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         ws[f"A{row}"].border = get_border()
         
         # Channel_Name (B)
@@ -1362,7 +1344,7 @@ def create_dissemination_channels(ws, styles, validations):
         ws.conditional_formatting.add(f"K{row}", rule4)
     
     # Freeze panes
-    ws.freeze_panes = "C5"
+    ws.freeze_panes = 'A4'
     
     # Summary dashboard
     row = 31
@@ -1406,31 +1388,30 @@ def create_stakeholder_registry(ws, styles, validations):
     
     # Title
     ws.merge_cells("A1:L1")
-    ws["A1"] = "Threat Intelligence Stakeholder Registry"
+    ws["A1"] = "THREAT INTELLIGENCE STAKEHOLDER REGISTRY"
     ws["A1"].font = styles["header"]["font"]
     ws["A1"].fill = styles["header"]["fill"]
     ws["A1"].alignment = styles["header"]["alignment"]
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
     
     # Instructions
     ws.merge_cells("A2:L2")
     ws["A2"] = "Maintain registry of all threat intelligence stakeholders - track roles, clearances, engagement levels, and communication preferences."
-    ws["A2"].font = Font(italic=True, size=9)
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
     ws["A2"].alignment = Alignment(wrap_text=True)
-    ws.row_dimensions[2].height = 30
     
     # Column headers (row 4)
     headers = [
-        "Stakeholder_ID",
-        "Full_Name",
+        "Stakeholder ID",
+        "Full Name",
         "Email",
-        "Role_Title",
+        "Role Title",
         "Department",
-        "Stakeholder_Type",
-        "TLP_Clearance",
-        "Subscribed_Channels",
-        "Engagement_Level",
-        "Last_Feedback_Date",
+        "Stakeholder Type",
+        "TLP Clearance",
+        "Subscribed Channels",
+        "Engagement Level",
+        "Last Feedback Date",
         "Status",
         "Notes",
     ]
@@ -1440,7 +1421,7 @@ def create_stakeholder_registry(ws, styles, validations):
     for col_num, (header, width) in enumerate(zip(headers, col_widths), start=1):
         col_letter = get_column_letter(col_num)
         cell = ws[f"{col_letter}4"]
-        cell.value = header
+        cell.value = header.replace("_", " ")
         cell.font = styles["column_header"]["font"]
         cell.fill = styles["column_header"]["fill"]
         cell.alignment = styles["column_header"]["alignment"]
@@ -1450,9 +1431,10 @@ def create_stakeholder_registry(ws, styles, validations):
     # Data rows (50 stakeholders capacity)
     for row in range(5, 55):
         # Stakeholder_ID (auto-generated format)
-        ws[f"A{row}"] = f"STK-{row-4:03d}"
+        if row == 5:
+            ws[f"A{row}"] = "STK-001"
         ws[f"A{row}"].font = Font(bold=True, size=9)
-        ws[f"A{row}"].fill = PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid")
+        ws[f"A{row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         ws[f"A{row}"].border = get_border()
         
         # Full_Name, Email, Role_Title, Department (B-E)
@@ -1572,7 +1554,7 @@ def create_stakeholder_registry(ws, styles, validations):
         ws.conditional_formatting.add(f"K{row}", rule3)
     
     # Freeze panes
-    ws.freeze_panes = "C5"
+    ws.freeze_panes = 'A4'
     
     # Summary dashboard
     row = 56
@@ -1636,34 +1618,33 @@ def create_distribution_tracking(ws, styles, validations):
     
     # Title
     ws.merge_cells("A1:O1")
-    ws["A1"] = "Intelligence Distribution Tracking"
+    ws["A1"] = "INTELLIGENCE DISTRIBUTION TRACKING"
     ws["A1"].font = styles["header"]["font"]
     ws["A1"].fill = styles["header"]["fill"]
     ws["A1"].alignment = styles["header"]["alignment"]
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
     
     # Instructions
     ws.merge_cells("A2:O2")
     ws["A2"] = "Track who received what intelligence, when, and through which channel. Monitor engagement and action rates."
-    ws["A2"].font = Font(italic=True, size=9)
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
     ws["A2"].alignment = Alignment(wrap_text=True)
-    ws.row_dimensions[2].height = 30
     
     # Column headers (row 4)
     headers = [
-        "Distribution_ID",
-        "Product_ID",
-        "Product_Title",
-        "Channel_ID",
-        "Channel_Name",
-        "Distribution_Date",
-        "Recipients_Count",
-        "TLP_Classification",
-        "Views_Count",
-        "Downloads_Count",
-        "Feedback_Received",
-        "Action_Taken_Count",
-        "Engagement_Rate",
+        "Distribution ID",
+        "Product ID",
+        "Product Title",
+        "Channel ID",
+        "Channel Name",
+        "Distribution Date",
+        "Recipients Count",
+        "TLP Classification",
+        "Views Count",
+        "Downloads Count",
+        "Feedback Received",
+        "Action Taken Count",
+        "Engagement Rate",
         "Effectiveness",
         "Notes",
     ]
@@ -1673,7 +1654,7 @@ def create_distribution_tracking(ws, styles, validations):
     for col_num, (header, width) in enumerate(zip(headers, col_widths), start=1):
         col_letter = get_column_letter(col_num)
         cell = ws[f"{col_letter}4"]
-        cell.value = header
+        cell.value = header.replace("_", " ")
         cell.font = styles["column_header"]["font"]
         cell.fill = styles["column_header"]["fill"]
         cell.alignment = styles["column_header"]["alignment"]
@@ -1683,9 +1664,10 @@ def create_distribution_tracking(ws, styles, validations):
     # Data rows (100 distributions capacity)
     for row in range(5, 105):
         # Distribution_ID (auto-generated format)
-        ws[f"A{row}"] = f"DIST-2025-{row-4:03d}"
+        if row == 5:
+            ws[f"A{row}"] = "DIST-2025-001"
         ws[f"A{row}"].font = Font(bold=True, size=9)
-        ws[f"A{row}"].fill = PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid")
+        ws[f"A{row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         ws[f"A{row}"].border = get_border()
         
         # Product_ID (B)
@@ -1701,7 +1683,7 @@ def create_distribution_tracking(ws, styles, validations):
         ws[f"D{row}"].border = get_border()
         
         # Channel_Name (E) - formula from Dissemination_Channels
-        ws[f"E{row}"] = f'=IFERROR(VLOOKUP(D{row},Dissemination_Channels!A:B,2,FALSE),"")'
+        ws[f"E{row}"] = "=IFERROR(VLOOKUP(D" + str(row) + ",\'Dissemination Channels\'!A:B,2,FALSE),\"\")"
         ws[f"E{row}"].fill = styles["formula_cell"]["fill"]
         ws[f"E{row}"].border = get_border()
         
@@ -1775,7 +1757,7 @@ def create_distribution_tracking(ws, styles, validations):
         ws.conditional_formatting.add(f"N{row}", rule3)
     
     # Freeze panes
-    ws.freeze_panes = "D5"
+    ws.freeze_panes = 'A4'
     
     # Summary dashboard
     row = 106
@@ -1825,40 +1807,39 @@ def create_feedback_collection(ws, styles, validations):
     
     # Title
     ws.merge_cells("A1:T1")
-    ws["A1"] = "Stakeholder Feedback Collection"
+    ws["A1"] = "STAKEHOLDER FEEDBACK COLLECTION"
     ws["A1"].font = styles["header"]["font"]
     ws["A1"].fill = styles["header"]["fill"]
     ws["A1"].alignment = styles["header"]["alignment"]
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
     
     # Instructions
     ws.merge_cells("A2:T2")
     ws["A2"] = "Capture stakeholder feedback on intelligence products - ratings, actions taken, improvement suggestions. Use 1-5 scale for all ratings."
-    ws["A2"].font = Font(italic=True, size=9)
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
     ws["A2"].alignment = Alignment(wrap_text=True)
-    ws.row_dimensions[2].height = 30
     
     # Column headers (row 4)
     headers = [
-        "Feedback_ID",
-        "Distribution_ID",
-        "Product_ID",
-        "Stakeholder_ID",
-        "Stakeholder_Name",
-        "Feedback_Date",
-        "Feedback_Method",
-        "Overall_Rating",
-        "Relevance_Rating",
-        "Timeliness_Rating",
-        "Actionability_Rating",
-        "Clarity_Rating",
-        "Intelligence_Used",
-        "Action_Taken",
-        "Improvement_Suggestions",
-        "Would_Recommend",
-        "Positive_Comments",
-        "Negative_Comments",
-        "Follow_Up_Required",
+        "Feedback ID",
+        "Distribution ID",
+        "Product ID",
+        "Stakeholder ID",
+        "Stakeholder Name",
+        "Feedback Date",
+        "Feedback Method",
+        "Overall Rating",
+        "Relevance Rating",
+        "Timeliness Rating",
+        "Actionability Rating",
+        "Clarity Rating",
+        "Intelligence Used",
+        "Action Taken",
+        "Improvement Suggestions",
+        "Would Recommend",
+        "Positive Comments",
+        "Negative Comments",
+        "Follow Up Required",
         "Notes",
     ]
     
@@ -1867,7 +1848,7 @@ def create_feedback_collection(ws, styles, validations):
     for col_num, (header, width) in enumerate(zip(headers, col_widths), start=1):
         col_letter = get_column_letter(col_num)
         cell = ws[f"{col_letter}4"]
-        cell.value = header
+        cell.value = header.replace("_", " ")
         cell.font = styles["column_header"]["font"]
         cell.fill = styles["column_header"]["fill"]
         cell.alignment = styles["column_header"]["alignment"]
@@ -1879,24 +1860,24 @@ def create_feedback_collection(ws, styles, validations):
         # Feedback_ID (auto-generated format)
         ws[f"A{row}"] = f"FB-2025-{row-4:03d}"
         ws[f"A{row}"].font = Font(bold=True, size=9)
-        ws[f"A{row}"].fill = PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid")
+        ws[f"A{row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         ws[f"A{row}"].border = get_border()
         
         # Distribution_ID (B)
         ws[f"B{row}"].fill = styles["input_cell"]["fill"]
         ws[f"B{row}"].border = get_border()
         
-        # Product_ID (C) - can be VLOOKUP from Distribution_Tracking
-        ws[f"C{row}"] = f'=IFERROR(VLOOKUP(B{row},Distribution_Tracking!A:B,2,FALSE),"")'
+        # Product_ID (C) - can be VLOOKUP from Distribution Tracking
+        ws[f"C{row}"] = "=IFERROR(VLOOKUP(B" + str(row) + ",'Distribution Tracking'!A:B,2,FALSE),\"\")"
         ws[f"C{row}"].fill = styles["formula_cell"]["fill"]
         ws[f"C{row}"].border = get_border()
-        
+
         # Stakeholder_ID (D)
         ws[f"D{row}"].fill = styles["input_cell"]["fill"]
         ws[f"D{row}"].border = get_border()
-        
-        # Stakeholder_Name (E) - formula from Stakeholder_Registry
-        ws[f"E{row}"] = f'=IFERROR(VLOOKUP(D{row},Stakeholder_Registry!A:B,2,FALSE),"")'
+
+        # Stakeholder_Name (E) - formula from Stakeholder Registry
+        ws[f"E{row}"] = "=IFERROR(VLOOKUP(D" + str(row) + ",'Stakeholder Registry'!A:B,2,FALSE),\"\")"
         ws[f"E{row}"].fill = styles["formula_cell"]["fill"]
         ws[f"E{row}"].border = get_border()
         
@@ -2022,7 +2003,7 @@ def create_feedback_collection(ws, styles, validations):
     # Conditional formatting for ratings
     # 5 = Excellent (Green), 4 = Good (Light Green), 3 = Fair (Yellow), 1-2 = Poor (Red)
     excellent_fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
-    good_fill = PatternFill(start_color="D5F5D5", end_color="D5F5D5", fill_type="solid")
+    good_fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
     fair_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     poor_fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
     
@@ -2041,7 +2022,7 @@ def create_feedback_collection(ws, styles, validations):
             ws.conditional_formatting.add(f"{col}{row}", rule4)
     
     # Freeze panes
-    ws.freeze_panes = "E5"
+    ws.freeze_panes = 'A4'
     
     # Summary dashboard
     row = 106
@@ -2099,34 +2080,33 @@ def create_integration_metrics(ws, styles, validations):
     
     # Title
     ws.merge_cells("A1:N1")
-    ws["A1"] = "Integration & Dissemination KPIs"
+    ws["A1"] = "INTEGRATION & DISSEMINATION KPIS"
     ws["A1"].font = styles["header"]["font"]
     ws["A1"].fill = styles["header"]["fill"]
     ws["A1"].alignment = styles["header"]["alignment"]
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
     
     # Instructions
     ws.merge_cells("A2:N2")
     ws["A2"] = "Track key performance indicators for tool integration, IOC effectiveness, dissemination reach, and stakeholder engagement."
-    ws["A2"].font = Font(italic=True, size=9)
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
     ws["A2"].alignment = Alignment(wrap_text=True)
-    ws.row_dimensions[2].height = 30
     
     # Column headers (row 4)
     headers = [
-        "Metric_ID",
-        "Metric_Name",
-        "Metric_Category",
-        "Measurement_Period",
-        "Target_Value",
-        "Actual_Value",
+        "Metric ID",
+        "Metric Name",
+        "Metric Category",
+        "Measurement Period",
+        "Target Value",
+        "Actual Value",
         "Unit",
-        "Performance_vs_Target",
+        "Performance vs Target",
         "Status",
         "Trend",
-        "Data_Source",
+        "Data Source",
         "Owner",
-        "Last_Updated",
+        "Last Updated",
         "Notes",
     ]
     
@@ -2135,7 +2115,7 @@ def create_integration_metrics(ws, styles, validations):
     for col_num, (header, width) in enumerate(zip(headers, col_widths), start=1):
         col_letter = get_column_letter(col_num)
         cell = ws[f"{col_letter}4"]
-        cell.value = header
+        cell.value = header.replace("_", " ")
         cell.font = styles["column_header"]["font"]
         cell.fill = styles["column_header"]["fill"]
         cell.alignment = styles["column_header"]["alignment"]
@@ -2161,7 +2141,7 @@ def create_integration_metrics(ws, styles, validations):
         # Metric_ID (A)
         ws[f"A{row}"] = metric_id
         ws[f"A{row}"].font = Font(bold=True, size=9)
-        ws[f"A{row}"].fill = PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid")
+        ws[f"A{row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         ws[f"A{row}"].border = get_border()
         
         # Metric_Name (B)
@@ -2215,7 +2195,7 @@ def create_integration_metrics(ws, styles, validations):
         ws[f"H{row}"].number_format = '+0.0%;-0.0%;0.0%'
         
         # Status formula (I)
-        ws[f"I{row}"] = f'=IF(H{row}="","",IF(H{row}>=10,"Exceeds_Target",IF(H{row}>=0,"Meets_Target",IF(H{row}>=-10,"Below_Target","Critical"))))'
+        ws[f"I{row}"] = f'=IF(H{row}="","",IF(H{row}>=10,"Exceeds Target",IF(H{row}>=0,"Meets Target",IF(H{row}>=-10,"Below Target","Critical"))))'
         ws[f"I{row}"].fill = styles["formula_cell"]["fill"]
         ws[f"I{row}"].border = get_border()
         
@@ -2242,9 +2222,8 @@ def create_integration_metrics(ws, styles, validations):
     
     # Add 20 more empty rows for custom metrics
     for i in range(row, row + 20):
-        ws[f"A{i}"] = f"IM-{i-4:03d}"
         ws[f"A{i}"].font = Font(bold=True, size=9)
-        ws[f"A{i}"].fill = PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid")
+        ws[f"A{i}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         ws[f"A{i}"].border = get_border()
         
         # Setup all dropdowns and formulas for empty rows
@@ -2262,7 +2241,7 @@ def create_integration_metrics(ws, styles, validations):
         ws[f"H{i}"].border = get_border()
         ws[f"H{i}"].number_format = '+0.0%;-0.0%;0.0%'
         
-        ws[f"I{i}"] = f'=IF(H{i}="","",IF(H{i}>=10,"Exceeds_Target",IF(H{i}>=0,"Meets_Target",IF(H{i}>=-10,"Below_Target","Critical"))))'
+        ws[f"I{i}"] = f'=IF(H{i}="","",IF(H{i}>=10,"Exceeds Target",IF(H{i}>=0,"Meets Target",IF(H{i}>=-10,"Below Target","Critical"))))'
         ws[f"I{i}"].fill = styles["formula_cell"]["fill"]
         ws[f"I{i}"].border = get_border()
     
@@ -2294,25 +2273,25 @@ def create_integration_metrics(ws, styles, validations):
     
     # Conditional formatting for Status
     exceeds_fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
-    meets_fill = PatternFill(start_color="D5F5D5", end_color="D5F5D5", fill_type="solid")
+    meets_fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
     below_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     critical_fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
     
     for i in range(5, row + 20):
-        rule1 = CellIsRule(operator='equal', formula=['"Exceeds_Target"'], fill=exceeds_fill)
+        rule1 = CellIsRule(operator='equal', formula=['"Exceeds Target"'], fill=exceeds_fill)
         ws.conditional_formatting.add(f"I{i}", rule1)
-        
-        rule2 = CellIsRule(operator='equal', formula=['"Meets_Target"'], fill=meets_fill)
+
+        rule2 = CellIsRule(operator='equal', formula=['"Meets Target"'], fill=meets_fill)
         ws.conditional_formatting.add(f"I{i}", rule2)
-        
-        rule3 = CellIsRule(operator='equal', formula=['"Below_Target"'], fill=below_fill)
+
+        rule3 = CellIsRule(operator='equal', formula=['"Below Target"'], fill=below_fill)
         ws.conditional_formatting.add(f"I{i}", rule3)
         
         rule4 = CellIsRule(operator='equal', formula=['"Critical"'], fill=critical_fill)
         ws.conditional_formatting.add(f"I{i}", rule4)
     
     # Freeze panes
-    ws.freeze_panes = "C5"
+    ws.freeze_panes = 'A4'
     
     # Summary dashboard
     summary_row = row + 21
@@ -2324,19 +2303,19 @@ def create_integration_metrics(ws, styles, validations):
     summary_row += 1
     ws[f"A{summary_row}"] = "Exceeds Target:"
     ws[f"A{summary_row}"].font = Font(bold=True)
-    ws[f"B{summary_row}"] = f'=COUNTIF(I5:I{row+19},"Exceeds_Target")'
+    ws[f"B{summary_row}"] = f'=COUNTIF(I5:I{row+19},"Exceeds Target")'
     ws[f"B{summary_row}"].font = Font(bold=True, color="006100")
-    
+
     summary_row += 1
     ws[f"A{summary_row}"] = "Meets Target:"
     ws[f"A{summary_row}"].font = Font(bold=True)
-    ws[f"B{summary_row}"] = f'=COUNTIF(I5:I{row+19},"Meets_Target")'
+    ws[f"B{summary_row}"] = f'=COUNTIF(I5:I{row+19},"Meets Target")'
     ws[f"B{summary_row}"].font = Font(bold=True, color="006100")
-    
+
     summary_row += 1
     ws[f"A{summary_row}"] = "Below Target:"
     ws[f"A{summary_row}"].font = Font(bold=True)
-    ws[f"B{summary_row}"] = f'=COUNTIF(I5:I{row+19},"Below_Target")'
+    ws[f"B{summary_row}"] = f'=COUNTIF(I5:I{row+19},"Below Target")'
     ws[f"B{summary_row}"].font = Font(bold=True, color="C65911")
     
     summary_row += 1
@@ -2354,34 +2333,33 @@ def create_action_items(ws, styles, validations):
     
     # Title
     ws.merge_cells("A1:N1")
-    ws["A1"] = "Integration & Distribution Action Items"
+    ws["A1"] = "INTEGRATION & DISTRIBUTION ACTION ITEMS"
     ws["A1"].font = styles["header"]["font"]
     ws["A1"].fill = styles["header"]["fill"]
     ws["A1"].alignment = styles["header"]["alignment"]
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
     
     # Instructions
     ws.merge_cells("A2:N2")
     ws["A2"] = "Track remediation tasks, improvements, and follow-up actions for tool integration, IOC effectiveness, and stakeholder engagement."
-    ws["A2"].font = Font(italic=True, size=9)
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
     ws["A2"].alignment = Alignment(wrap_text=True)
-    ws.row_dimensions[2].height = 30
     
     # Column headers (row 4)
     headers = [
-        "Action_ID",
-        "Issue_Type",
-        "Issue_Description",
+        "Action ID",
+        "Issue Type",
+        "Issue Description",
         "Priority",
-        "Assigned_To",
-        "Due_Date",
+        "Assigned To",
+        "Due Date",
         "Status",
-        "Status_Notes",
-        "Resolution_Date",
-        "Evidence_Link",
-        "Created_Date",
-        "Created_By",
-        "Last_Updated",
+        "Status Notes",
+        "Resolution Date",
+        "Evidence Link",
+        "Created Date",
+        "Created By",
+        "Last Updated",
         "Notes",
     ]
     
@@ -2390,7 +2368,7 @@ def create_action_items(ws, styles, validations):
     for col_num, (header, width) in enumerate(zip(headers, col_widths), start=1):
         col_letter = get_column_letter(col_num)
         cell = ws[f"{col_letter}4"]
-        cell.value = header
+        cell.value = header.replace("_", " ")
         cell.font = styles["column_header"]["font"]
         cell.fill = styles["column_header"]["fill"]
         cell.alignment = styles["column_header"]["alignment"]
@@ -2402,7 +2380,7 @@ def create_action_items(ws, styles, validations):
         # Action_ID (auto-generated format)
         ws[f"A{row}"] = f"ACT-2025-{row-4:03d}"
         ws[f"A{row}"].font = Font(bold=True, size=9)
-        ws[f"A{row}"].fill = PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid")
+        ws[f"A{row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         ws[f"A{row}"].border = get_border()
         
         # Issue_Type dropdown (B)
@@ -2517,7 +2495,7 @@ def create_action_items(ws, styles, validations):
         ws.conditional_formatting.add(f"G{row}", rule3)
     
     # Freeze panes
-    ws.freeze_panes = "C5"
+    ws.freeze_panes = 'A4'
     
     # Summary dashboard
     row = 56
@@ -2584,11 +2562,11 @@ def create_metadata(ws, styles):
     
     # Title
     ws.merge_cells("A1:B1")
-    ws["A1"] = "Workbook Metadata"
+    ws["A1"] = "WORKBOOK METADATA"
     ws["A1"].font = styles["header"]["font"]
     ws["A1"].fill = styles["header"]["fill"]
     ws["A1"].alignment = styles["header"]["alignment"]
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
     
     row = 3
     
@@ -2669,7 +2647,6 @@ def create_metadata(ws, styles):
         ws[f"A{row}"] = sheet
         ws[f"B{row}"] = purpose
         ws[f"B{row}"].alignment = Alignment(wrap_text=True)
-        ws.row_dimensions[row].height = 25
         row += 1
     
     row += 1
@@ -2684,7 +2661,6 @@ def create_metadata(ws, styles):
     integration_info = [
         ("From ISMS-IMP-A.5.7.2", "Intelligence production feeds distribution tracking"),
         ("To ISMS-IMP-A.5.7.1", "IOC effectiveness feeds source quality evaluation"),
-        ("To ISMS-IMP-A.5.7.4", "All metrics feed effectiveness dashboard"),
         ("To Control 8.8", "Vulnerability-related IOCs and tool integration status"),
     ]
     
@@ -2693,7 +2669,6 @@ def create_metadata(ws, styles):
         ws[f"A{row}"].font = Font(bold=True)
         ws[f"B{row}"] = description
         ws[f"B{row}"].alignment = Alignment(wrap_text=True)
-        ws.row_dimensions[row].height = 25
         row += 1
     
     row += 2
@@ -2703,7 +2678,6 @@ def create_metadata(ws, styles):
     ws[f"A{row}"] = "This workbook was auto-generated. Manual modifications will be lost on regeneration. Update source data and regenerate instead."
     ws[f"A{row}"].font = Font(italic=True, size=9, color="9C0006")
     ws[f"A{row}"].alignment = Alignment(wrap_text=True)
-    ws.row_dimensions[row].height = 30
     
     # Set column widths
     ws.column_dimensions['A'].width = 30
@@ -2714,7 +2688,570 @@ def create_metadata(ws, styles):
 # SECTION 13: MAIN GENERATION FUNCTION
 # ============================================================================
 
-def generate_workbook():
+
+
+def create_instructions_sheet(ws):
+    """Create GS-IL-compliant Instructions & Legend sheet (Sheet 1)."""
+    ws.title = "Instructions & Legend"
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill("solid", fgColor="003366")
+    _grey = PatternFill("solid", fgColor="D9D9D9")
+    _input = PatternFill("solid", fgColor="FFFFCC")
+    _green = PatternFill("solid", fgColor="C6EFCE")
+    _amber = PatternFill("solid", fgColor="FFEB9C")
+    _red   = PatternFill("solid", fgColor="FFC7CE")
+
+    # Row 1 — Title banner
+    ws.merge_cells("A1:G1")
+    ws["A1"] = f"{DOCUMENT_ID}  -  {WORKBOOK_NAME}\n{CONTROL_REF}"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = _navy
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    ws.row_dimensions[1].height = 40
+
+    # Row 3 — Document Information heading (plain bold, no fill)
+    ws["A3"] = "Document Information"
+    ws["A3"].font = Font(name="Calibri", size=12, bold=True)
+
+    doc_info = [
+        ("Document ID",       DOCUMENT_ID),
+        ("Workbook Title",    WORKBOOK_NAME),
+        ("Control Reference", CONTROL_REF),
+        ("Version",           "1.0"),
+        ("Assessment Date",   ""),
+        ("Completed By",      ""),
+        ("Organisation",      ""),
+    ]
+    for i, (label, value) in enumerate(doc_info):
+        r = 4 + i
+        ws[f"A{r}"] = label
+        ws[f"A{r}"].font = Font(name="Calibri", bold=True)
+        ws[f"B{r}"] = value
+        if not value:
+            ws[f"B{r}"].fill = _input
+            ws[f"B{r}"].border = _border
+
+    # Row 12 — Instructions heading
+    ws["A12"] = "Instructions"
+    ws["A12"].font = Font(name="Calibri", size=12, bold=True)
+    for i, line in enumerate([
+        '1. Complete Tool Integration Matrix — map threat intelligence feeds to security tools (SIEM, EDR, firewall).',
+        '2. Complete IOC Deployment — track indicators of compromise pushed to detection systems.',
+        '3. Document Dissemination Channels — list all channels used to share intelligence internally.',
+        '4. Complete Stakeholder Registry — identify all consumers of threat intelligence outputs.',
+        '5. Track Distribution in Distribution Tracking — confirm intelligence reaches all relevant teams.',
+        '6. Complete Feedback Collection — record stakeholder feedback on intelligence utility.',
+        '7. Review Integration Metrics — measure effectiveness of threat intelligence integration.',
+        '8. Maintain the Evidence Register with integration records and feedback documentation.',
+        '9. Obtain final approval and sign-off in the Approval Sign-Off sheet.',
+    ]):
+        ws[f"A{13 + i}"] = line
+
+    # Row 19 — Status Legend heading
+    ws["A23"] = "Status Legend"
+    ws["A23"].font = Font(name="Calibri", size=12, bold=True)
+    for col_idx, header in enumerate(["Symbol", "Status", "Description"], start=1):
+        c = ws.cell(row=24, column=col_idx, value=header)
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.fill = _grey
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = _border
+    legend_rows = [
+        ("\u2713", "Compliant / Complete",        "Requirement fully met",                    _green),
+        ("\u26a0", "Partial / In Progress",        "Partially met or in progress",             _amber),
+        ("\u2717", "Non-Compliant / Not Started",  "Requirement not met",                      _red),
+        ("\u2014", "Not Applicable",               "Not applicable to this assessment",         None),
+    ]
+    for i, (sym, status, desc, fill) in enumerate(legend_rows):
+        r = 25 + i
+        ws.cell(row=r, column=1, value=sym).border = _border
+        s = ws.cell(row=r, column=2, value=status)
+        d = ws.cell(row=r, column=3, value=desc)
+        if fill:
+            s.fill = fill
+        for cell in (s, d):
+            cell.border = _border
+            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+
+    ws.column_dimensions["A"].width = 28
+    ws.column_dimensions["B"].width = 45
+    ws.column_dimensions["C"].width = 70
+    ws.sheet_view.showGridLines = False
+    ws.freeze_panes = "A4"
+
+def create_summary_dashboard_sheet(ws, styles):
+    """Summary Dashboard — A.5.7.3 Threat Intelligence Integration & Distribution.
+
+    Gold Standard implementation per A.8.33-34 reference pattern:
+    - A1: em dash title with "— SUMMARY DASHBOARD" (GS-SD-014)
+    - A2: 003366 italic, left-aligned, NO fill
+    - TABLE 1: 003366 banner, 4472C4 section headers, D9D9D9 col headers, FFFFCC data
+    - TABLE 2: 003366 banner, D9D9D9 col headers (NOT 003366), FFFFFF data rows
+    - TABLE 3: C00000 banner, D9D9D9 col headers, FFFFFF data rows
+    """
+    from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
+
+    def _f(h):
+        return PatternFill("solid", fgColor=h)
+
+    def _b():
+        t = Side(style="thin")
+        return Border(left=t, right=t, top=t, bottom=t)
+
+    def _banner(r, v, fill, fc="FFFFFF", sz=12):
+        """Render a full-width section banner (cols A:F merged)."""
+        cell = ws.cell(row=r, column=1)
+        cell.value = v
+        cell.font = Font(name="Calibri", bold=True, color=fc, size=sz)
+        cell.fill = _f(fill)
+        cell.alignment = Alignment(horizontal="left", vertical="center")
+        ws.merge_cells(f"A{r}:F{r}")
+        for c in range(1, 7):
+            ws.cell(row=r, column=c).border = _b()
+
+    def _col_hdr(r, labels):
+        """Render D9D9D9 column headers."""
+        for i, lbl in enumerate(labels):
+            cell = ws.cell(row=r, column=1 + i)
+            cell.value = lbl
+            cell.font = Font(name="Calibri", bold=True, color="000000", size=10)
+            cell.fill = _f("D9D9D9")
+            cell.alignment = Alignment(horizontal="center", vertical="center")
+            cell.border = _b()
+
+    def _dat(r, c, v, fill="FFFFCC", fc="000000", bold=False, num=False):
+        cell = ws.cell(row=r, column=c)
+        cell.value = v
+        cell.font = Font(name="Calibri", bold=bold, color=fc)
+        cell.fill = _f(fill)
+        cell.alignment = Alignment(
+            horizontal="center" if num else "left",
+            vertical="center", wrap_text=True
+        )
+        cell.border = _b()
+        return cell
+
+    # ── Column widths ───────────────────────────────────────────────────────
+    ws.column_dimensions["A"].width = 36
+    ws.column_dimensions["B"].width = 14
+    ws.column_dimensions["C"].width = 14
+    ws.column_dimensions["D"].width = 36
+    ws.column_dimensions["E"].width = 14
+    ws.column_dimensions["F"].width = 14
+    ws.freeze_panes = "A3"
+
+    # ── Row 1: Title (GS-SD-014: must contain "— SUMMARY DASHBOARD") ────────
+    ws.merge_cells("A1:F1")
+    c = ws["A1"]
+    c.value = "ISMS-IMP-A.5.7.3 \u2014 THREAT INTELLIGENCE INTEGRATION & DISTRIBUTION \u2014 SUMMARY DASHBOARD"
+    c.font = Font(name="Calibri", bold=True, color="FFFFFF", size=14)
+    c.fill = _f("003366")
+    c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    for col in range(1, 7):
+        ws.cell(row=1, column=col).border = _b()
+    ws.row_dimensions[1].height = 35
+
+    # ── Row 2: Subtitle (003366 italic, left-aligned, NO fill) ──────────────
+    ws.merge_cells("A2:F2")
+    c = ws["A2"]
+    c.value = "ISO/IEC 27001:2022 | Control A.5.7 | Tool integration status, IOC deployment health, and action tracking"
+    c.font = Font(name="Calibri", italic=True, color="003366", size=10)
+    c.alignment = Alignment(horizontal="left", vertical="center")
+
+    # ══════════════════════════════════════════════════════════════════════
+    # TABLE 1 — STATUS DISTRIBUTION
+    # ══════════════════════════════════════════════════════════════════════
+    _banner(4, "TABLE 1: STATUS DISTRIBUTION", "003366")
+
+    # Section A — Tool Integration Status (col G, rows 5:34)
+    _banner(5, "Section A: Tool Integration Status ('Tool Integration Matrix' \u2014 Column G, rows 5:34)", "4472C4", sz=10)
+    _col_hdr(6, ["Status", "Count", "% of Total"])
+
+    tool_statuses = ["Fully_Integrated", "Partially_Integrated", "Planned", "Not_Integrated"]
+    for i, status in enumerate(tool_statuses):
+        r = 7 + i
+        _dat(r, 1, status)
+        _dat(r, 2, f'=COUNTIF(\'Tool Integration Matrix\'!G5:G34,\"{status}\")', num=True)
+        _dat(r, 3, f'=IF($B$11=0,"\u2014",TEXT(B{r}/$B$11,"0.0%"))', num=True)
+
+    # TOTAL (row 11)
+    _dat(11, 1, "TOTAL", "D9D9D9", bold=True)
+    _dat(11, 2, "=SUM(B7:B10)", "D9D9D9", num=True)
+    _dat(11, 3, "\u2014", "D9D9D9", num=True)
+
+    # Section B — IOC Deployment Status (col N, rows 5:104)
+    _banner(12, "Section B: IOC Deployment Status ('IOC Deployment' \u2014 Column N, rows 5:104)", "4472C4", sz=10)
+    _col_hdr(13, ["Status", "Count", "% of Total"])
+
+    ioc_statuses = ["Active", "Expired", "Withdrawn", "Under_Review"]
+    for i, status in enumerate(ioc_statuses):
+        r = 14 + i
+        _dat(r, 1, status)
+        _dat(r, 2, f'=COUNTIF(\'IOC Deployment\'!N5:N104,\"{status}\")', num=True)
+        _dat(r, 3, f'=IF($B$18=0,"\u2014",TEXT(B{r}/$B$18,"0.0%"))', num=True)
+
+    # TOTAL (row 18)
+    _dat(18, 1, "TOTAL", "D9D9D9", bold=True)
+    _dat(18, 2, "=SUM(B14:B17)", "D9D9D9", num=True)
+    _dat(18, 3, "\u2014", "D9D9D9", num=True)
+
+    # Row 19: buffer
+    for c in range(1, 7):
+        ws.cell(row=19, column=c).fill = _f("FFFFFF")
+
+    # ══════════════════════════════════════════════════════════════════════
+    # TABLE 2 — KEY PERFORMANCE INDICATORS
+    # Gold Standard: 003366 banner, D9D9D9 col headers, FFFFFF data rows
+    # ══════════════════════════════════════════════════════════════════════
+    _banner(20, "TABLE 2: KEY PERFORMANCE INDICATORS", "003366")
+    _col_hdr(21, ["KPI Metric", "Value", "Notes"])
+    ws.merge_cells("C21:F21")
+    ws.cell(row=21, column=3).alignment = Alignment(horizontal="center", vertical="center")
+
+    kpis = [
+        ("Total Tools in Scope",
+         "=COUNTA('Tool Integration Matrix'!A5:A34)",
+         "All security tools tracked in integration matrix"),
+        ("Fully Integrated Tools",
+         "=COUNTIF('Tool Integration Matrix'!G5:G34,\"Fully_Integrated\")",
+         "Tools with complete threat intelligence integration"),
+        ("Not Integrated Tools",
+         "=COUNTIF('Tool Integration Matrix'!G5:G34,\"Not_Integrated\")",
+         "Tools with no integration \u2014 gap requiring remediation"),
+        ("Active IOC Deployments",
+         "=COUNTIF('IOC Deployment'!N5:N104,\"Active\")",
+         "IOCs currently deployed and active"),
+        ("Open Action Items",
+         "=COUNTIF('Action Items'!G5:G54,\"Open\")",
+         "Actions not yet started \u2014 requires attention"),
+        ("Closed Action Items",
+         "=COUNTIF('Action Items'!G5:G54,\"Closed\")",
+         "Successfully closed improvement actions"),
+    ]
+    for i, (metric, formula, note) in enumerate(kpis):
+        r = 22 + i
+        # Col A: metric label — FFFFFF fill, 000000 font, NOT bold (GS-SD-015)
+        cell_a = ws.cell(row=r, column=1)
+        cell_a.value = metric
+        cell_a.font = Font(name="Calibri", color="000000")
+        cell_a.fill = _f("FFFFFF")
+        cell_a.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        cell_a.border = _b()
+        # Col B: value formula — FFFFFF fill
+        cell_b = ws.cell(row=r, column=2)
+        cell_b.value = formula
+        cell_b.font = Font(name="Calibri", color="000000")
+        cell_b.fill = _f("FFFFFF")
+        cell_b.alignment = Alignment(horizontal="center", vertical="center")
+        cell_b.border = _b()
+        # Col C:F merged: notes — FFFFCC fill
+        cell_c = ws.cell(row=r, column=3)
+        cell_c.value = note
+        cell_c.font = Font(name="Calibri", color="000000")
+        cell_c.fill = _f("FFFFFF")
+        cell_c.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        cell_c.border = _b()
+        ws.merge_cells(f"C{r}:F{r}")
+
+    # Row 28: buffer
+    for c in range(1, 7):
+        ws.cell(row=28, column=c).fill = _f("FFFFFF")
+
+    # ══════════════════════════════════════════════════════════════════════
+    # TABLE 3 — CRITICAL FINDINGS
+    # Gold Standard: C00000 banner, D9D9D9 col headers, FFFFFF data rows
+    # ══════════════════════════════════════════════════════════════════════
+    _banner(29, "TABLE 3: CRITICAL FINDINGS", "C00000")
+    _col_hdr(30, ["Finding", "Count", "Action Required"])
+    ws.merge_cells("C30:F30")
+    ws.cell(row=30, column=3).alignment = Alignment(horizontal="center", vertical="center")
+
+    critical = [
+        ("Not Integrated Tools",
+         "=COUNTIF('Tool Integration Matrix'!G5:G34,\"Not_Integrated\")",
+         "Define integration plan and schedule for each unintegrated tool"),
+        ("Expired or Withdrawn IOCs",
+         "=COUNTIF('IOC Deployment'!N5:N104,\"Expired\")+COUNTIF('IOC Deployment'!N5:N104,\"Withdrawn\")",
+         "Remove expired/withdrawn IOCs from active feeds and update records"),
+        ("Open Action Items",
+         "=COUNTIF('Action Items'!G5:G54,\"Open\")",
+         "Review and assign all open actions; set realistic due dates"),
+    ]
+    for i, (finding, formula, action) in enumerate(critical):
+        r = 31 + i
+        c1 = ws.cell(row=r, column=1)
+        c1.value = finding
+        c1.font = Font(name="Calibri", bold=True, color="000000")
+        c1.fill = _f("FFFFCC")
+        c1.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        c1.border = _b()
+
+        c2 = ws.cell(row=r, column=2)
+        c2.value = formula
+        c2.font = Font(name="Calibri", color="000000")
+        c2.fill = _f("FFFFCC")
+        c2.alignment = Alignment(horizontal="center", vertical="center")
+        c2.border = _b()
+
+        c3 = ws.cell(row=r, column=3)
+        c3.value = action
+        c3.font = Font(name="Calibri", color="000000")
+        c3.fill = _f("FFFFCC")
+        c3.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        c3.border = _b()
+        ws.merge_cells(f"C{r}:F{r}")
+
+
+def create_evidence_register(ws):
+    """Create Evidence Register worksheet (Gold Standard — 100 data rows, navy headers)."""
+    thin = Side(style='thin')
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    # Row 1: TITLE BANNER
+    ws.merge_cells('A1:H1')
+    ws['A1'] = 'EVIDENCE REGISTER'
+    ws['A1'].font = Font(name='Calibri', size=14, bold=True, color='FFFFFF')
+    ws['A1'].fill = PatternFill(start_color='003366', end_color='003366', fill_type='solid')
+    ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
+    ws.row_dimensions[1].height = 35
+    for col in range(1, 9):
+        ws.cell(row=1, column=col).border = border
+
+    # Row 2: SUBTITLE
+    ws.merge_cells('A2:H2')
+    ws['A2'] = f'{DOCUMENT_ID} | {CONTROL_REF}'
+    ws['A2'].font = Font(name='Calibri', size=10, italic=True, color='003366')
+    ws['A2'].alignment = Alignment(horizontal='left', vertical='center')
+    for col in range(1, 9):
+        ws.cell(row=2, column=col).border = border
+
+    # Row 3: intentionally empty (visual separator)
+
+    # Row 4: COLUMN HEADERS with 003366 fill
+    headers = [
+        'Evidence ID', 'Assessment Area', 'Evidence Type', 'Description',
+        'Location / Path', 'Date Collected', 'Collected By', 'Verification Status',
+    ]
+    for col_idx, header in enumerate(headers, start=1):
+        cell = ws.cell(row=4, column=col_idx, value=header)
+        cell.font = Font(name='Calibri', size=10, bold=True, color='FFFFFF')
+        cell.fill = PatternFill(start_color='003366', end_color='003366', fill_type='solid')
+        cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+        cell.border = border
+
+    # Data validations
+    ev_type_dv = DataValidation(
+        type='list',
+        formula1='"Config File,Screenshot,Report,Log File,Test Result,Policy Document,Contract,Diagram,Other"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(ev_type_dv)
+
+    ver_status_dv = DataValidation(
+        type='list',
+        formula1='"\u2705 Verified,Pending,\u274c Not Verified"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(ver_status_dv)
+
+    # Row 5: SAMPLE ROW (F2F2F2 grey)
+    sample_data = {
+        1: 'EV-001',
+        2: 'Tool Integration Matrix',
+        3: 'Screenshot',
+        4: 'SIEM integration configuration showing STIX/TAXII feed subscription and IOC ingestion',
+        5: '/evidence/a57/siem-integration-config-2026-01-15.png',
+        6: datetime.now().strftime('%d.%m.%Y'),
+        7: 'Security Manager',
+        8: '\u2705 Verified',
+    }
+    for col, value in sample_data.items():
+        cell = ws.cell(row=5, column=col, value=value)
+        cell.fill = PatternFill(start_color='F2F2F2', end_color='F2F2F2', fill_type='solid')
+        cell.border = border
+        cell.font = Font(name='Calibri', size=10)
+        cell.alignment = Alignment(
+            horizontal='center' if col == 1 else 'left',
+            vertical='center',
+            wrap_text=True
+        )
+    ev_type_dv.add(ws['C5'])
+    ver_status_dv.add(ws['H5'])
+
+    # Rows 6-105: EMPTY DATA ROWS (FFFFCC yellow, 100 rows)
+    for data_row in range(6, 106):
+        for col in range(1, 9):
+            cell = ws.cell(row=data_row, column=col)
+            cell.fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+            cell.border = border
+            cell.alignment = Alignment(
+                horizontal='center' if col == 1 else 'left',
+                vertical='center',
+                wrap_text=True
+            )
+            cell.value = None
+        ev_type_dv.add(ws[f'C{data_row}'])
+        ver_status_dv.add(ws[f'H{data_row}'])
+
+    # Column widths and freeze
+    for col, width in [('A', 15), ('B', 28), ('C', 22), ('D', 45), ('E', 45), ('F', 16), ('G', 22), ('H', 20)]:
+        ws.column_dimensions[col].width = width
+    ws.freeze_panes = 'A5'
+
+
+def create_approval_sheet(ws):
+    """Create Approval Sign-Off worksheet (Gold Standard)."""
+    thin = Side(style='thin')
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    # Row 1: TITLE BANNER
+    ws.merge_cells('A1:E1')
+    ws['A1'] = 'ASSESSMENT APPROVAL AND SIGN-OFF'
+    ws['A1'].font = Font(name='Calibri', size=14, bold=True, color='FFFFFF')
+    ws['A1'].fill = PatternFill(start_color='003366', end_color='003366', fill_type='solid')
+    ws['A1'].alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+    ws.row_dimensions[1].height = 35
+    for col in range(1, 6):
+        ws.cell(row=1, column=col).border = border
+
+    # Row 2: CONTROL REFERENCE subtitle
+    ws.merge_cells('A2:E2')
+    ws['A2'] = f'{DOCUMENT_ID} | {CONTROL_REF}'
+    ws['A2'].font = Font(name='Calibri', size=10, italic=True, color='003366')
+    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
+    for col in range(1, 6):
+        ws.cell(row=2, column=col).border = border
+
+    # Row 3: ASSESSMENT SUMMARY banner
+    ws.merge_cells('A3:E3')
+    ws['A3'] = 'ASSESSMENT SUMMARY'
+    ws['A3'].font = Font(name='Calibri', size=11, bold=True, color='FFFFFF')
+    ws['A3'].fill = PatternFill(start_color='4472C4', end_color='4472C4', fill_type='solid')
+    ws['A3'].alignment = Alignment(horizontal='left', vertical='center')
+    for col in range(1, 6):
+        ws.cell(row=3, column=col).border = border
+
+    # Summary fields
+    summary_fields = [
+        ('Document:', f'{DOCUMENT_ID} - {WORKBOOK_NAME}'),
+        ('Assessment Period:', ''),
+        ('Overall Compliance Rate:', ''),
+        ('Assessment Status:', ''),
+        ('Assessed By:', ''),
+    ]
+    row = 4
+    status_row_for_dv = None
+    for label, value in summary_fields:
+        editable = (value == '')
+        ws[f'A{row}'] = label
+        ws[f'A{row}'].font = Font(name='Calibri', size=10, bold=True)
+        ws[f'A{row}'].border = border
+        ws.merge_cells(f'B{row}:E{row}')
+        ws[f'B{row}'] = value
+        for col in range(2, 6):
+            if editable:
+                ws.cell(row=row, column=col).fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+            ws.cell(row=row, column=col).border = border
+        if 'Assessment Status' in label:
+            status_row_for_dv = row
+        row += 1
+
+    # Assessment Status dropdown
+    status_dv = DataValidation(
+        type='list',
+        formula1='"Draft,Final,Requires remediation,Re-assessment required"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(status_dv)
+    if status_row_for_dv:
+        status_dv.add(f'B{status_row_for_dv}')
+
+    # B6: Overall Compliance Rate — Fully Integrated tools / Total tools
+    ws['B6'] = "=IFERROR('Summary Dashboard'!B7/'Summary Dashboard'!B11,\"\")"
+    ws['B6'].number_format = '0.0%'
+
+    row += 2  # Gap before first approver
+
+    def _create_approver_section(start_row, title, color):
+        ws.merge_cells(f'A{start_row}:E{start_row}')
+        ws[f'A{start_row}'] = title
+        ws[f'A{start_row}'].font = Font(name='Calibri', size=11, bold=True, color='FFFFFF')
+        ws[f'A{start_row}'].fill = PatternFill(start_color=color, end_color=color, fill_type='solid')
+        ws[f'A{start_row}'].alignment = Alignment(horizontal='left', vertical='center')
+        for col in range(1, 6):
+            ws.cell(row=start_row, column=col).border = border
+        current_row = start_row + 1
+        for field in ['Name:', 'Title:', 'Date:', 'Signature:', 'Comments:']:
+            ws[f'A{current_row}'] = field
+            ws[f'A{current_row}'].font = Font(name='Calibri', size=10, bold=True)
+            ws[f'A{current_row}'].border = border
+            ws.merge_cells(f'B{current_row}:E{current_row}')
+            for col in range(2, 6):
+                ws.cell(row=current_row, column=col).fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+                ws.cell(row=current_row, column=col).border = border
+            current_row += 1
+        return current_row + 1
+
+    row = _create_approver_section(row, 'COMPLETED BY (ASSESSOR)', '4472C4')
+    row = _create_approver_section(row, 'REVIEWED BY (INFORMATION SECURITY OFFICER)', '4472C4')
+    row = _create_approver_section(row, 'APPROVED BY (CISO)', '003366')
+
+    # FINAL DECISION
+    ws[f'A{row}'] = 'FINAL DECISION:'
+    ws[f'A{row}'].font = Font(name='Calibri', size=11, bold=True)
+    ws[f'A{row}'].border = border
+    ws.merge_cells(f'B{row}:E{row}')
+    for col in range(2, 6):
+        ws.cell(row=row, column=col).fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+        ws.cell(row=row, column=col).border = border
+    decision_dv = DataValidation(
+        type='list',
+        formula1='"Approved,Approved with Conditions,Rejected,Deferred"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(decision_dv)
+    decision_dv.add(f'B{row}')
+
+    # NEXT REVIEW DETAILS
+    row += 3
+    ws.merge_cells(f'A{row}:E{row}')
+    ws[f'A{row}'] = 'NEXT REVIEW DETAILS'
+    ws[f'A{row}'].font = Font(name='Calibri', size=11, bold=True, color='FFFFFF')
+    ws[f'A{row}'].fill = PatternFill(start_color='4472C4', end_color='4472C4', fill_type='solid')
+    ws[f'A{row}'].alignment = Alignment(horizontal='left', vertical='center')
+    for col in range(1, 6):
+        ws.cell(row=row, column=col).border = border
+    row += 1
+    for label in ['Next Review Date:', 'Review Responsible:', 'Special Considerations:']:
+        ws[f'A{row}'] = label
+        ws[f'A{row}'].font = Font(name='Calibri', size=10, bold=True)
+        ws[f'A{row}'].border = border
+        ws.merge_cells(f'B{row}:E{row}')
+        for col in range(2, 6):
+            ws.cell(row=row, column=col).fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+            ws.cell(row=row, column=col).border = border
+        row += 1
+
+    # Column widths and freeze
+    ws.column_dimensions['A'].width = 32
+    ws.column_dimensions['B'].width = 25
+    ws.column_dimensions['C'].width = 20
+    ws.column_dimensions['D'].width = 20
+    ws.column_dimensions['E'].width = 20
+    ws.freeze_panes = 'A3'
+
+
+def finalize_validations(wb):
+    """Ensure all data validations are properly finalised for all worksheets."""
+    for ws in wb.worksheets:
+        ws.data_validations.dataValidation = [
+            dv for dv in list(ws.data_validations.dataValidation)
+            if dv.sqref
+        ]
+
+
+def main():
     """
     Main function to generate the ISMS-IMP-A.5.7.3 workbook.
     
@@ -2733,62 +3270,69 @@ def generate_workbook():
     wb = create_workbook()
     
     logger.info("[2/14] Setting up styles...")
-    styles = setup_styles()
+    styles = _STYLES
     
     logger.info("[3/14] Configuring data validations...")
     validations = setup_validations()
     
     # Generate sheets
     logger.info("[4/14] Creating Instructions sheet...")
-    create_instructions(wb["Instructions"], styles)
+    create_instructions(wb["Instructions & Legend"], styles)
     
     logger.info("[5/14] Creating Tool_Integration_Matrix sheet...")
-    create_tool_integration(wb["Tool_Integration_Matrix"], styles, validations)
+    create_tool_integration(wb["Tool Integration Matrix"], styles, validations)
     
     logger.info("[6/14] Creating IOC_Deployment sheet...")
-    create_ioc_deployment(wb["IOC_Deployment"], styles, validations)
+    create_ioc_deployment(wb["IOC Deployment"], styles, validations)
     
     logger.info("[7/14] Creating Dissemination_Channels sheet...")
-    create_dissemination_channels(wb["Dissemination_Channels"], styles, validations)
+    create_dissemination_channels(wb["Dissemination Channels"], styles, validations)
     
     logger.info("[8/14] Creating Stakeholder_Registry sheet...")
-    create_stakeholder_registry(wb["Stakeholder_Registry"], styles, validations)
+    create_stakeholder_registry(wb["Stakeholder Registry"], styles, validations)
     
     logger.info("[9/14] Creating Distribution_Tracking sheet...")
-    create_distribution_tracking(wb["Distribution_Tracking"], styles, validations)
+    create_distribution_tracking(wb["Distribution Tracking"], styles, validations)
     
     logger.info("[10/14] Creating Feedback_Collection sheet...")
-    create_feedback_collection(wb["Feedback_Collection"], styles, validations)
+    create_feedback_collection(wb["Feedback Collection"], styles, validations)
     
     logger.info("[11/14] Creating Integration_Metrics sheet...")
-    create_integration_metrics(wb["Integration_Metrics"], styles, validations)
+    create_integration_metrics(wb["Integration Metrics"], styles, validations)
     
     logger.info("[12/14] Creating Action_Items sheet...")
-    create_action_items(wb["Action_Items"], styles, validations)
+    create_action_items(wb["Action Items"], styles, validations)
     
-    logger.info("[13/14] Creating Metadata sheet...")
-    create_metadata(wb["Metadata"], styles)
-    
-    logger.info("[14/14] Finalizing workbook...")
+    logger.info("[10/12] Creating Evidence Register sheet...")
+    create_evidence_register(wb["Evidence Register"])
 
-    create_metadata(wb["Metadata"], styles)
+    logger.info("[11/12] Creating Summary Dashboard sheet...")
+    create_summary_dashboard_sheet(wb["Summary Dashboard"], styles)
+
+    logger.info("[12/12] Creating Approval Sign-Off sheet...")
+    create_approval_sheet(wb["Approval Sign-Off"])
+
+    logger.info("[12/12] Finalizing workbook...")
     
     # Generate filename with date
     date_str = datetime.now().strftime("%Y%m%d")
     filename = f"ISMS-IMP-A.5.7.3_Integration_{date_str}.xlsx"
     
+    # Finalise validations
+    finalize_validations(wb)
+
     # Save workbook
     logger.info("")
-    logger.info(f"Saving workbook as: {filename}")
-    wb.save(filename)
-    
+    output_path = _wkbk_dir / OUTPUT_FILENAME
+    logger.info(f"Saving workbook as: {output_path.name}")
+    wb.save(output_path)
     # Print summary
     logger.info("")
     logger.info("=" * 70)
     logger.info("GENERATION COMPLETE")
     logger.info("=" * 70)
     logger.info("")
-    logger.info(f"Output file: {filename}")
+    logger.info(f"Output file: {output_path.name}")
     logger.info(f"Total sheets: {len(wb.sheetnames)}")
     logger.info("")
     logger.info("Sheet Summary:")
@@ -2814,7 +3358,7 @@ def generate_workbook():
     logger.info("  3. Load IOC_Deployment data from past 90 days")
     logger.info("  4. Configure Dissemination_Channels and stakeholder registry")
     logger.info("  5. Review Distribution_Tracking for intelligence reach")
-    logger.info("  6. Collect and analyze Feedback from stakeholders")
+    logger.info("  6. Collect and analyse Feedback from stakeholders")
     logger.info("  7. Establish baseline Integration_Metrics")
     logger.info("  8. Generate Action_Items for gaps and improvements")
     logger.info("")
@@ -2822,8 +3366,7 @@ def generate_workbook():
     logger.info("         'We integrate threat intelligence' means nothing without")
     logger.info("         IOC hit rates, stakeholder engagement metrics, and feedback.")
     logger.info("")
-    
-    return filename
+    return output_path
 
 
 def validate_workbook(filename):
@@ -2843,24 +3386,26 @@ def validate_workbook(filename):
     logger.info("-" * 40)
     
     try:
-        wb = load_workbook(filename)
+        wb = load_workbook(_wkbk_dir / filename)
         
         expected_sheets = [
-            "Instructions",
-            "Tool_Integration_Matrix",
-            "IOC_Deployment",
-            "Dissemination_Channels",
-            "Stakeholder_Registry",
-            "Distribution_Tracking",
-            "Feedback_Collection",
-            "Integration_Metrics",
-            "Action_Items",
-            "Metadata",
+            "Instructions & Legend",
+            "Tool Integration Matrix",
+            "IOC Deployment",
+            "Dissemination Channels",
+            "Stakeholder Registry",
+            "Distribution Tracking",
+            "Feedback Collection",
+            "Integration Metrics",
+            "Action Items",
+            "Evidence Register",
+            "Summary Dashboard",
+            "Approval Sign-Off",
         ]
-        
-        # Check sheet count (V1.0 has 17 sheets)
-        if len(wb.sheetnames) != 17:
-            logger.error(f"  ✗ Expected 17 sheets, found {len(wb.sheetnames)}")
+
+        # Check sheet count (12 sheets)
+        if len(wb.sheetnames) != 12:
+            logger.error(f"  ✗ Expected 11 sheets, found {len(wb.sheetnames)}")
             return False
         logger.info(f"  ✓ Sheet count: {len(wb.sheetnames)}")
         
@@ -2873,7 +3418,8 @@ def validate_workbook(filename):
                 return False
         
         # Check Tool_Integration_Matrix has 30 rows
-        ti_sheet = wb["Tool_Integration_Matrix"]
+        ti_sheet = wb["Tool Integration Matrix"]
+        ti_sheet.sheet_view.showGridLines = False
         ti_count = 0
         for row in range(5, 35):
             if ti_sheet[f"A{row}"].value:
@@ -2885,7 +3431,8 @@ def validate_workbook(filename):
             logger.info(f"  ⚠  Tool_Integration_Matrix: {ti_count} rows (expected 30)")
         
         # Check IOC_Deployment has 100 rows
-        ioc_sheet = wb["IOC_Deployment"]
+        ioc_sheet = wb["IOC Deployment"]
+        ioc_sheet.sheet_view.showGridLines = False
         ioc_count = 0
         for row in range(5, 105):
             if ioc_sheet[f"A{row}"].value:
@@ -2897,7 +3444,8 @@ def validate_workbook(filename):
             logger.info(f"  ⚠  IOC_Deployment: {ioc_count} rows (expected 100)")
         
         # Check Integration_Metrics has pre-populated metrics
-        metrics_sheet = wb["Integration_Metrics"]
+        metrics_sheet = wb["Integration Metrics"]
+        metrics_sheet.sheet_view.showGridLines = False
         metrics_count = 0
         for row in range(5, 35):
             if metrics_sheet[f"B{row}"].value:
@@ -2945,7 +3493,7 @@ if __name__ == "__main__":
     
     try:
         # Generate the workbook
-        output_file = generate_workbook()
+        output_file = main()
         
         # Validate the output
         if validate_workbook(output_file):
@@ -3011,13 +3559,11 @@ if __name__ == "__main__":
 # Integration Points:
 #   - From ISMS-IMP-A.5.7.2 (Collection & Analysis)
 #   - To ISMS-IMP-A.5.7.1 (Sources - IOC effectiveness feedback)
-#   - To ISMS-IMP-A.5.7.4 (Effectiveness Dashboard)
 #   - To Control 8.8 (Vulnerability Management)
 #
 # =============================================================================
-# =============================================================================
-# QA_VERIFIED: 2026-01-31
-# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
-# QA_TOOL: Claude Code Standardization
-# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# QA_VERIFIED: 2026-03-01
+# QA_STATUS: PASSED
+# QA_TOOL: Claude Code Production Scripts QA Methodology
+# CHANGES: Full QA for Production Launch (see GitHub Repository for details)
 # =============================================================================

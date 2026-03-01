@@ -78,7 +78,7 @@ Diese Richtlinie definiert die Anforderungen von [Organisation] für Netzwerksic
 
 **ISO/IEC 27001:2022 Annex A.8.22 - Segregation of Networks**
 
-> *Groups of information services, users and information systems should be segregated in the organization's networks.*
+> *Groups of information services, users and information systems should be segregated in the organisation's networks.*
 
 **Control-Zielsetzung**: Implementierung von Netzwerk-Segmentierung, um Blast Radius zu limitieren, Least Privilege Network Access durchzusetzen und regulatorische Anforderungen für Datenisolation zu erfüllen.
 
@@ -809,4 +809,4 @@ Frequenz-Reduktionen erfordern CISO-Genehmigung und dokumentierte Risk Acceptanc
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

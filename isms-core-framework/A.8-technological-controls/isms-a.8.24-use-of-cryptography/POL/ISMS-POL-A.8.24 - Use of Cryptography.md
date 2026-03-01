@@ -42,20 +42,20 @@
 - ISMS-IMP-A.8.24.2-UG/TG (Data Storage Assessment)
 - ISMS-IMP-A.8.24.3-UG/TG (Authentication Assessment)
 - ISMS-IMP-A.8.24.4-UG/TG (Key Management Assessment)
-- ISMS-IMP-A.8.24.5-UG/TG (Compliance Summary Dashboard)
+
 - ISO/IEC 27001:2022 Control A.8.24
 
 ---
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for cryptographic controls to protect information confidentiality, integrity, and authenticity in accordance with ISO/IEC 27001:2022 Control A.8.24.
+This policy establishes [Organisation]'s requirements for cryptographic controls to protect information confidentiality, integrity, and authenticity in accordance with ISO/IEC 27001:2022 Control A.8.24.
 
 **Scope**: This policy applies to all information assets, systems, and personnel handling classified information (Internal, Confidential, or Restricted).
 
-**Purpose**: Define organizational requirements for cryptographic control selection, implementation, and governance. This policy establishes WHAT cryptographic protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.24 (UG/TG variants).
+**Purpose**: Define organisational requirements for cryptographic control selection, implementation, and governance. This policy establishes WHAT cryptographic protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.24 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -67,14 +67,14 @@ This policy establishes [Organization]'s requirements for cryptographic controls
 
 > *A policy on the use of cryptographic controls for protection of information should be developed and implemented.*
 
-**Control Objective**: Establish organizational policy for cryptographic controls protecting information throughout its lifecycle.
+**Control Objective**: Establish organisational policy for cryptographic controls protecting information throughout its lifecycle.
 
 **This Policy Addresses**:
 
 - Cryptographic control requirements based on data classification
-- Organizational roles and responsibilities for cryptographic governance
+- Organisational roles and responsibilities for cryptographic governance
 - Exception and incident management frameworks
-- Integration with [Organization]'s risk assessment and treatment processes
+- Integration with [Organisation]'s risk assessment and treatment processes
 
 ## What This Policy Does
 
@@ -92,7 +92,7 @@ This policy does NOT:
 - **Specify technical implementation details** (see ISMS-IMP-A.8.24 Implementation Guides)
 - **Define approved algorithms or key lengths** (see ISMS-IMP-A.8.24 Technical Standards)
 - **Provide system-specific configuration procedures** (see ISMS-IMP-A.8.24 Assessment Guides)
-- **Replace risk assessment** (cryptographic controls selected based on [Organization]'s risk treatment)
+- **Replace risk assessment** (cryptographic controls selected based on [Organisation]'s risk treatment)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
@@ -105,10 +105,10 @@ This policy does NOT:
 **This policy applies to**:
 
 - All information assets classified as Internal, Confidential, or Restricted
-- All systems, applications, networks, and services processing organizational information
+- All systems, applications, networks, and services processing organisational information
 - All cryptographic implementations (encryption, hashing, digital signatures, key management)
-- All personnel (employees, contractors, third parties) with access to organizational information
-- All third-party services handling organizational data
+- All personnel (employees, contractors, third parties) with access to organisational information
+- All third-party services handling organisational data
 
 **Out of Scope**:
 
@@ -147,7 +147,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - ENISA (Algorithms and Key Sizes)
 - OWASP (Cryptographic Storage)
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
 
 ---
 
@@ -155,7 +155,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ## Data Classification-Based Requirements
 
-[Organization] implements cryptographic controls based on data classification as defined in ISMS-POL-A.5.12 (Information Classification Policy).
+[Organisation] implements cryptographic controls based on data classification as defined in ISMS-POL-A.5.12 (Information Classification Policy).
 
 **Protection Requirements by Classification**:
 
@@ -166,11 +166,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 | **Confidential** | **Required** | **Required** | Strong | Enhanced |
 | **Restricted** | **Required (Strong)** | **Required (Strong)** | Strong + MFA | HSM/KMS Required |
 
-**Implementation Note**: Specific cryptographic algorithms, key lengths, and technical configurations are defined in ISMS-IMP-A.8.24 Technical Standards. [Organization] maintains technical standards separately from policy to enable cryptographic agility.
+**Implementation Note**: Specific cryptographic algorithms, key lengths, and technical configurations are defined in ISMS-IMP-A.8.24 Technical Standards. [Organisation] maintains technical standards separately from policy to enable cryptographic agility.
 
 ## Cryptographic Control Categories
 
-[Organization] implements cryptographic controls in the following categories:
+[Organisation] implements cryptographic controls in the following categories:
 
 **Data Transmission Protection**:
 
@@ -203,7 +203,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 **Third-Party Cryptographic Requirements**:
 Third-party services handling Confidential or Restricted data must demonstrate cryptographic controls equivalent to this policy. Verification occurs during vendor security assessment per ISMS-POL-A.5.19 (Supplier Security Policy).
 
-**Verification Mechanism**: Third-party cryptographic compliance is verified through [Organization]'s vendor security assessment process, which includes questionnaire completion, evidence review, and attestation validation prior to contract execution and annually thereafter.
+**Verification Mechanism**: Third-party cryptographic compliance is verified through [Organisation]'s vendor security assessment process, which includes questionnaire completion, evidence review, and attestation validation prior to contract execution and annually thereafter.
 
 **Contractual Requirements by Data Classification**:
 
@@ -219,25 +219,25 @@ Third-party services handling Confidential or Restricted data must demonstrate c
 
 Third-party cryptographic attestations must cover audit period within:
 
-- **SOC 2 Type II**: Report date within 12 months of [Organization] assessment date. Audit period ending within 18 months acceptable if vendor confirms no material changes.
+- **SOC 2 Type II**: Report date within 12 months of [Organisation] assessment date. Audit period ending within 18 months acceptable if vendor confirms no material changes.
 
 - **ISO 27001 Certificate**: Certificate validity confirmed via certification body registry. Expired certificates not acceptable.
 
 - **Penetration Test Reports**: Report date within 12 months of assessment.
 
-**Vendor Change Notification**: Contractual requirement for vendors to notify [Organization] within 30 days of material changes to cryptographic implementations, triggering reassessment regardless of annual schedule.
+**Vendor Change Notification**: Contractual requirement for vendors to notify [Organisation] within 30 days of material changes to cryptographic implementations, triggering reassessment regardless of annual schedule.
 
 **Implementation Guidance**: Detailed procedures for each category are documented in ISMS-IMP-A.8.24 Implementation Guides (Data Transmission, Data Storage, Authentication, Key Management).
 
 ## Cryptographic Agility
 
-[Organization] systems shall be designed to support algorithm replacement without major system re-architecture.
+[Organisation] systems shall be designed to support algorithm replacement without major system re-architecture.
 
 **Requirements**:
 
 - Cryptographic algorithms should be configurable (not hardcoded where feasible)
 - Systems should support multiple algorithm versions during migration periods
-- [Organization] maintains algorithm lifecycle states (Approved, Deprecated, Prohibited)
+- [Organisation] maintains algorithm lifecycle states (Approved, Deprecated, Prohibited)
 - Algorithm deprecation triggers formal migration process
 - System Owners receive formal notification minimum 180 days prior to algorithm prohibition to enable migration planning. Critical systems supporting Restricted data receive 270-day advance notice.
 
@@ -262,7 +262,7 @@ Third-party cryptographic attestations must cover audit period within:
 
 ## Certificate Lifecycle Management
 
-[Organization] manages TLS/SSL and other digital certificates in accordance with industry standards and certificate authority requirements.
+[Organisation] manages TLS/SSL and other digital certificates in accordance with industry standards and certificate authority requirements.
 
 **Requirements**:
 
@@ -273,7 +273,7 @@ Third-party cryptographic attestations must cover audit period within:
 - Private key protection
 - Certificate revocation capability (OCSP/CRL)
 
-**Industry Context**: Certificate lifetime requirements change periodically due to CA/Browser Forum policy updates and browser vendor requirements. [Organization] monitors industry developments and adapts certificate management processes accordingly. Current CA/Browser Forum requirements are tracked in ISMS-CTX-A.8.24.
+**Industry Context**: Certificate lifetime requirements change periodically due to CA/Browser Forum policy updates and browser vendor requirements. [Organisation] monitors industry developments and adapts certificate management processes accordingly. Current CA/Browser Forum requirements are tracked in ISMS-CTX-A.8.24.
 
 **Implementation**: Certificate management procedures are defined in ISMS-IMP-A.8.24 Key Management Assessment.
 
@@ -337,9 +337,9 @@ The following practices are **strictly prohibited**:
 
 **Key Ownership vs System Ownership**:
 
-[Organization] distinguishes between:
+[Organisation] distinguishes between:
 
-- **Key Owners**: Authorize key creation and define key usage policies (governance)
+- **Key Owners**: Authorise key creation and define key usage policies (governance)
 - **Key Custodians**: Execute physical key management operations (HSM administration, key generation)
 - **System Owners**: Operate systems using keys (do not manage keys directly)
 
@@ -347,7 +347,7 @@ This separation ensures accountability, segregation of duties, and clear audit t
 
 ## Assessment & Compliance Verification
 
-**Assessment Approach**: [Organization] conducts cryptographic control assessments using structured methodology covering:
+**Assessment Approach**: [Organisation] conducts cryptographic control assessments using structured methodology covering:
 
 - Data Transmission controls
 - Data Storage controls
@@ -362,7 +362,7 @@ This separation ensures accountability, segregation of duties, and clear audit t
 
 **Continuous Monitoring**:
 
-Between scheduled assessments, [Organization] employs automated monitoring for:
+Between scheduled assessments, [Organisation] employs automated monitoring for:
 
 - **Prohibited Algorithm Detection**: Weekly vulnerability scans using [Tool Name - to be specified in ISMS-IMP-A.8.24] to detect MD5, DES, RC4, or other prohibited algorithms in production systems. Findings trigger immediate assessment per "Triggered Assessment" criteria above.
 
@@ -383,7 +383,7 @@ Between scheduled assessments, [Organization] employs automated monitoring for:
 - Deployment of new applications processing Confidential/Restricted data
 - Algorithm deprecation affecting systems in scope
 
-**Assessment Tools**: [Organization] uses ISMS-IMP-A.8.24 Assessment Workbooks to systematically verify compliance, document evidence, and track remediation.
+**Assessment Tools**: [Organisation] uses ISMS-IMP-A.8.24 Assessment Workbooks to systematically verify compliance, document evidence, and track remediation.
 
 **Evidence Collection**: Assessments collect the following evidence types:
 
@@ -445,9 +445,9 @@ For assessments covering multiple systems:
   - All Recommended controls implemented (100% Recommended Score)
   - Overall: (100% x 70%) + (100% x 30%) = 100% (exceeds target)
 
-**Rationale**: "Recommended" status reflects risk-based approach where encryption provides security value but organizational risk tolerance permits exceptions for Internal classification without formal approval process. Required controls address regulatory obligations (Tier 1); Recommended controls address defense-in-depth best practices (Tier 3).
+**Rationale**: "Recommended" status reflects risk-based approach where encryption provides security value but organisational risk tolerance permits exceptions for Internal classification without formal approval process. Required controls address regulatory obligations (Tier 1); Recommended controls address defense-in-depth best practices (Tier 3).
 
-**Evidence Storage**: Assessment evidence is retained in [Organization]'s ISMS evidence repository for minimum 3 years (or regulatory retention period if longer). Evidence is classified as Confidential and access-controlled.
+**Evidence Storage**: Assessment evidence is retained in [Organisation]'s ISMS evidence repository for minimum 3 years (or regulatory retention period if longer). Evidence is classified as Confidential and access-controlled.
 
 **Non-Compliance Management**: Assessment findings are classified by severity (Critical, High, Medium, Low) with defined remediation timelines. Gaps requiring risk acceptance follow the exception process (Section 3.3).
 
@@ -492,7 +492,7 @@ System Owners receive escalating communications. At 36-month expiration, excepti
 
 - Key compromise or suspected compromise
 - Certificate private key exposure
-- Unauthorized access to encrypted data
+- Unauthorised access to encrypted data
 - Discovery of prohibited algorithms in production
 - Cryptographic control failures
 
@@ -519,7 +519,7 @@ If response timelines cannot be met, escalate to CISO (for High/Medium/Low sever
 **Policy Review**:
 
 - **Frequency**: Annual minimum
-- **Triggers**: Regulatory changes, major incidents, algorithm deprecations, CA/Browser Forum baseline changes, organizational changes
+- **Triggers**: Regulatory changes, major incidents, algorithm deprecations, CA/Browser Forum baseline changes, organisational changes
 - **Reviewers**: CISO, IT Security Team, Legal/Compliance, selected System Owners
 - **Approval**: CISO (technical), Executive Management (strategic)
 
@@ -535,7 +535,7 @@ If response timelines cannot be met, escalate to CISO (for High/Medium/Low sever
 - **Major** (scope changes, new requirements): Full approval chain, 90-day implementation
 - **Emergency** (critical vulnerabilities): CISO approval, immediate communication
 
-**Communication**: Policy published in ISMS document repository. Changes communicated organization-wide. Training provided for significant changes.
+**Communication**: Policy published in ISMS document repository. Changes communicated organisation-wide. Training provided for significant changes.
 
 ---
 
@@ -543,17 +543,17 @@ If response timelines cannot be met, escalate to CISO (for High/Medium/Low sever
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
-- Cryptographic controls selected based on [Organization]'s risk assessment
+- Cryptographic controls selected based on [Organisation]'s risk assessment
 - Data classification determines minimum cryptographic requirements
 - Risk treatment plans document cryptographic control implementation
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Control A.8.24 applicability justified in [Organization]'s SoA
+- Control A.8.24 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 
 **Related Controls**:
@@ -588,8 +588,6 @@ Assessment of A.8.24 should reference stacked control assessments for complete c
 | **ISMS-IMP-A.8.24-2-UG/TG** | Data Storage Assessment | Verify encryption controls for data at rest | Full disk encryption, database encryption, backup encryption, cloud storage encryption, key separation |
 | **ISMS-IMP-A.8.24-3-UG/TG** | Authentication Assessment | Verify cryptographic authentication mechanisms | Password hashing algorithms, MFA implementation, certificate-based authentication, digital signatures |
 | **ISMS-IMP-A.8.24-4-UG/TG** | Key Management Assessment | Verify key lifecycle management | Key generation, storage, distribution, rotation, backup, destruction, HSM/KMS configuration |
-| **ISMS-IMP-A.8.24-5-UG/TG** | Compliance Summary Dashboard | Consolidated compliance reporting | Aggregated scores across all domains, gap analysis, regulatory mapping, remediation tracking |
-
 **Technical Reference Document** (ISMS-CTX-A.8.24):
 
 ISMS-CTX-A.8.24 (Cryptographic Technical Reference) is established as a non-ISMS technical reference document providing:
@@ -638,8 +636,6 @@ This policy addresses cryptographic requirements from:
 
 *Conditional applicability per ISMS-POL-00
 
-**Note**: Specific regulatory interpretation and compliance verification procedures are documented in ISMS-IMP-A.8.24 Compliance Summary Dashboard.
-
 ## Training & Awareness
 
 **Security Awareness** (All Personnel):
@@ -666,7 +662,7 @@ This policy addresses cryptographic requirements from:
 
 **Cryptographic Control**: Hardware or software mechanism using cryptographic algorithms to protect information confidentiality, integrity, or authenticity.
 
-**Approved Algorithm**: Cryptographic algorithm meeting [Organization]'s security standards as defined in ISMS-IMP-A.8.24 Technical Standards.
+**Approved Algorithm**: Cryptographic algorithm meeting [Organisation]'s security standards as defined in ISMS-IMP-A.8.24 Technical Standards.
 
 **Key Management**: Processes for cryptographic key lifecycle including generation, storage, distribution, rotation, backup, and destruction.
 
@@ -674,9 +670,9 @@ This policy addresses cryptographic requirements from:
 
 **Key Management Service (KMS)**: Software or cloud service for centralized cryptographic key management.
 
-**Crypto Agility**: Organizational capability to rapidly change cryptographic algorithms without major system re-architecture.
+**Crypto Agility**: Organisational capability to rapidly change cryptographic algorithms without major system re-architecture.
 
-**Data Classification**: [Organization]'s categorization of information based on confidentiality, integrity, and availability requirements (Public, Internal, Confidential, Restricted).
+**Data Classification**: [Organisation]'s categorization of information based on confidentiality, integrity, and availability requirements (Public, Internal, Confidential, Restricted).
 
 **Perfect Forward Secrecy (PFS)**: Cryptographic property where compromise of long-term keys does not compromise past session keys.
 
@@ -701,4 +697,4 @@ This policy addresses cryptographic requirements from:
 
 *This policy establishes requirements for use of cryptography. Implementation procedures are documented in ISMS-IMP-A.8.24 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

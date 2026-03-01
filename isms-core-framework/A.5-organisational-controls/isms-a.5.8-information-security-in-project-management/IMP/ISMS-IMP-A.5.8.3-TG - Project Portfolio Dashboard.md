@@ -8,224 +8,148 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Project Portfolio Dashboard |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.8.3-TG |
+| **Related Policy** | ISMS-POL-A.5.8 (Information Security in Project Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.8 (Information Security in Project Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Project Portfolio Security Status & Executive Visibility |
-| **Related Policy** | ISMS-POL-A.5.8 (All Sections - Portfolio-Wide View) |
-| **Purpose** | Consolidated executive dashboard aggregating security status across all organizational projects, providing portfolio-wide visibility, trend analysis, gap identification, and lessons learned synthesis for strategic decision-making |
-| **Target Audience** | CISO, Executive Management, PMO Director, Board of Directors, Internal Auditors, External Auditors |
-| **Assessment Type** | Consolidated Dashboard & Portfolio Analysis (Layer 2 - consolidates multiple A.5.8.1 assessments) |
-| **Review Cycle** | Quarterly (minimum) or After Major Project Milestones |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | Initial | Initial specification for Project Portfolio Dashboard workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.8 (Information Security in Project Management)
+- ISMS-IMP-A.5.8.1 (Project Lifecycle Security Assessment)
+- ISMS-IMP-A.5.8.2 (Security Requirements Register)
 
 ---
+
 # Technical Specification
-**Audience:** Workbook Developers, Data Analysts, Python/Power BI Developers
-
-
-> Auto-generated from `generate_a58_3_portfolio_dashboard.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.8.3` |
-| **Output Filename** | `ISMS-IMP-A.5.8.3_Portfolio_Dashboard_YYYYMMDD.xlsx` |
-| **Total Sheets** | 12 (12 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 Control A.5.8 |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #305496 | 305496 | Custom |
-| #B4C7E7 | B4C7E7 | Light Blue (Planned/Info) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFF00 | FFFF00 | Yellow (Warning) |
-
-## Sheet 1: Workbook
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Instructions
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a58_3_project_portfolio.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Project_Data
+**Document ID:** `ISMS-IMP-A.5.8.3`
 
-**Data Rows:** 16 (rows 1–16) | **Frozen Panes:** A{...}
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Columns
+### Sheet Structure
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Project Name | 25 |
-| B | Classification | 12 |
-| C | PM | 20 |
-| D | Business Owner | 20 |
-| E | Phase | 15 |
-| F | Compliance % | 12 |
-| G | Initiation % | 10 |
-| H | Planning % | 10 |
-| I | Execution % | 10 |
-| J | Monitoring % | 10 |
-| K | Closure % | 10 |
-| L | Critical Gaps | 10 |
-| M | High Findings | 10 |
-| N | Deploy Date | 12 |
-| O | Last Assessment | 12 |
-| P | Notes | 30 |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
 
----
+### Color Palette
 
-## Sheet 4: Executive_Summary
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-**Data Rows:** 50 (rows 4–53)
+### Column Headers (All Sheets)
 
-### Formulas
+| # | Column Header |
+|---|--------------|
+| 1 | Portfolio Compliance |
+| 2 | Regulatory Compliance |
+| 3 | Project Name |
+| 4 | Classification |
+| 5 | Business Owner |
+| 6 | Phase |
+| 7 | Compliance % |
+| 8 | Initiation % |
+| 9 | Planning % |
+| 10 | Execution % |
+| 11 | Monitoring % |
+| 12 | Closure % |
+| 13 | Critical Gaps |
+| 14 | High Findings |
+| 15 | Deploy Date |
+| 16 | Last Assessment |
+| 17 | Notes |
+| 18 | Assessment Area |
+| 19 | Questions Answered |
+| 20 | No Gap |
+| 21 | Gap Identified |
+| 22 | N/A |
+| 23 | Target |
+| 24 | Project |
+| 25 | Status |
+| 26 | Owner |
+| 27 | Gap Category |
+| 28 | Description |
+| 29 | Frequency |
+| 30 | Impact |
+| 31 | Recommended Action |
+| 32 | Quarter |
+| 33 | Total Projects |
+| 34 | Avg Compliance % |
+| 35 | High Risk Avg |
+| 36 | Medium Risk Avg |
+| 37 | Low Risk Avg |
+| 38 | Priority |
+| 39 | Action Required |
+| 40 | Lesson Learned |
+| 41 | Category |
+| 42 | Recommendation |
+| 43 | Regulation |
+| 44 | Applicable Projects |
+| 45 | Compliance Rate |
+| 46 | Gaps |
+| 47 | Security Budget (CHF) |
+| 48 | Actual Spend (CHF) |
+| 49 | % of Total Budget |
+| 50 | Resource FTE |
+| 51 | Role / Function |
+| 52 | Name |
+| 53 | Signature / Initials |
+| 54 | Date (DD.MM.YYYY) |
+| 55 | Comments |
 
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=(SUMPRODUCT(` |  |
-| — | `=COUNTA(` | Total Projects: |
-| — | `=COUNTIF(` | High Risk Projects: |
-| — | `=SUM(` | Total Critical Gaps: |
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 5: Project_Status
+```
+High, Medium, Low, Classification, Initiation, Planning, Execution, Monitoring
+Closure, Closed, Critical, P1, P2, P3, P4, Security Testing, Vendor Management
+Requirements Definition, Implementation, Training, Process, Compliant, Partial
+Non-Compliant, Approved, Approved with Conditions, Rejected, Deferred
+```
 
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Project |
-| B | Classification |
-| C | Phase |
-| D | Compliance % |
-| E | Critical Gaps |
-| F | Status |
-| G | Owner |
-| H | Notes |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| FN | `=IF(D{row}>=0.85,\` |  |
-
----
-
-## Sheet 6: Gap_Analysis
-
-**Data Rows:** 5 (rows 1–5)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Gap Category |
-| B | Description |
-| C | Frequency |
-| D | Impact |
-| E | Recommended Action |
-
----
-
-## Sheet 7: Trend_Analysis
-
-**Data Rows:** 6 (rows 1–6)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Quarter |
-| B | Total Projects |
-| C | Avg Compliance % |
-| D | High Risk Avg |
-| E | Medium Risk Avg |
-| F | Low Risk Avg |
-
----
-
-## Sheet 8: Risk_Prioritization
-
-**Data Rows:** 6 (rows 1–6)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Priority |
-| B | Project Name |
-| C | Classification |
-| D | Compliance % |
-| E | Critical Gaps |
-| F | Action Required |
-
----
-
-## Sheet 9: Lessons_Learned
-
-**Data Rows:** 4 (rows 1–4)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Project |
-| B | Lesson Learned |
-| C | Category |
-| D | Recommendation |
-
----
-
-## Sheet 10: Regulatory_Compliance
-
-**Data Rows:** 4 (rows 2–5)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Regulation |
-| B | Applicable Projects |
-| C | Compliance Rate |
-| D | Gaps |
-| E | Status |
-
----
-
-## Sheet 11: Resources_Budget
-
-**Data Rows:** 5 (rows 1–5)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Project |
-| B | Security Budget (CHF) |
-| C | Actual Spend (CHF) |
-| D | % of Total Budget |
-| E | Resource FTE |
-
----
-
-## Sheet 12: Charts
+**Extracted:** 1 sheets, 55 columns, 28 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

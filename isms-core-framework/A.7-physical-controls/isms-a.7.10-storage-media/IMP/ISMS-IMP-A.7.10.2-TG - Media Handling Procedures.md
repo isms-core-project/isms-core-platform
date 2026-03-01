@@ -3,171 +3,172 @@
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.7.10: Storage Media
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Media Handling Procedures |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.10.2-TG |
+| **Related Policy** | ISMS-POL-A.7.10 (Storage Media) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.10 (Storage Media) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Media Handling, Transportation & Access Controls |
-| **Related Policy** | ISMS-POL-A.7.10, Section 2.3-2.4 (Transportation & Storage) |
-| **Purpose** | Assess organisational compliance with storage media handling procedures, transportation security, and access controls throughout the media lifecycle |
-| **Target Audience** | IT Operations, Physical Security, Logistics, Compliance Officers, Business Unit Managers, Auditors |
-| **Assessment Type** | Process & Operational Compliance |
-| **Review Cycle** | Semi-annual (minimum) or After Security Incidents |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Media Handling Procedures assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.10 (Storage Media)
+- ISMS-IMP-A.7.10.1 (Storage Media Inventory)
+- ISMS-IMP-A.7.10.3 (Media Lifecycle Tracking)
 
 ---
+
 # Technical Specification
-**Audience:** Python Developers, Excel Workbook Designers, ISMS Implementation Technical Teams
-
-
-> Auto-generated from `generate_a710_2_media_handling.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.7.10.2` |
-| **Output Filename** | `ISMS-IMP-A.7.10.2_Media_Handling_Procedures_YYYYMMDD.xlsx` |
-| **Workbook Title** | Media Handling Procedures |
-| **Total Sheets** | 20 (20 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #0000FF | 0000FF | Custom |
-| #003366 | 003366 | Dark Blue (Headers) |
-| #D8E4F8 | D8E4F8 | Pale Blue (Sub-section) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #FFFF00 | FFFF00 | Yellow (Warning) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: 2. Media Access Controls
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a710_2_media_handling.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: 3. Transportation Security
+**Document ID:** `ISMS-IMP-A.7.10.2`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: 4. Physical Storage Controls
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | 2. Media Access Controls |
+| 3 | 3. Transportation Security |
+| 4 | 4. Physical Storage Controls |
+| 5 | 5. Media Use Procedures |
+| 6 | 6. Incident Response |
+| 7 | Evidence Register |
+| 8 | Summary Dashboard |
+| 9 | Approval Sign-Off |
 
-## Sheet 5: 5. Media Use Procedures
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #0000FF | Custom |
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: 6. Incident Response
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Control Area / Location |
+| 2 | Classification Level |
+| 3 | Control Owner |
+| 4 | Procedure Reference |
+| 5 | Last Review Date |
+| 6 | Status |
+| 7 | Implementation Date |
+| 8 | Last Audit Date |
+| 9 | Next Review Date |
+| 10 | Gap Identified |
+| 11 | Remediation Plan |
+| 12 | Target Completion |
+| 13 | Risk Level |
+| 14 | Evidence Reference |
+| 15 | Notes / Comments |
+| 16 | Remediation Owner |
+| 17 | Budget Required |
+| 18 | Access Control Type |
+| 19 | Authorised Personnel |
+| 20 | Review Frequency |
+| 21 | Transport Method |
+| 22 | Chain of Custody Required |
+| 23 | Packaging Requirement |
+| 24 | Storage Type |
+| 25 | Environmental Monitoring |
+| 26 | Fire Suppression |
+| 27 | Applicable Media Type |
+| 28 | Procedure Owner |
+| 29 | Training Required |
+| 30 | Response Procedure |
+| 31 | Escalation Path |
+| 32 | Notification Required |
+| 33 | Policy Reference: ISMS-POL-A.7.10 - Storage Media |
+| 34 | Assessment Area |
+| 35 | Total Items |
+| 36 | Compliant |
+| 37 | Partial |
+| 38 | Non-Compliant |
+| 39 | N/A |
+| 40 | Compliance % |
+| 41 | Evidence ID |
+| 42 | Evidence Type |
+| 43 | Description |
+| 44 | Related Sheet/Item |
+| 45 | Collection Date |
+| 46 | Collected By |
+| 47 | Retention Period |
+| 48 | Notes |
 
-## Sheet 7: Summary Dashboard
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Evidence Register
+```
+Public, Internal, Confidential, Restricted, All Classifications, Compliant
+Partial, Non-Compliant, N/A, Critical, High, Medium, Low, Yes, No, Unknown
+Key Lock, Card Access, Biometric, Combination Lock, Multi-Factor, PIN Code
+None, Monthly, Quarterly, Semi-annual, Annual, Ad-hoc, Secure Courier
+Standard Courier, Personal Transport, Internal Mail, Hand Delivery
+Digital Transfer, Yes - Full Documentation, Yes - Basic Log
+Tamper-Evident Packaging, Sealed Container, Locked Case, Standard Packaging
+Locked Cabinet, Fire-Rated Safe, Secure Vault, Server Room, Archive Room
+Standard Shelf, Secure Disposal Bin, Temperature Only, Humidity Only
+Temperature + Humidity, Full Environmental, Gas Suppression, Wet Sprinkler
+Dry Sprinkler, Fire Extinguisher, Removable Media, Fixed Storage
+Cloud Storage, Paper Documents, All Media Types, Yes - Initial Only
+Yes - Annual Refresh, Yes - Quarterly, Role-Specific, Regulatory (GDPR/FINMA)
+Internal Only, Both Internal + Regulatory, To Be Determined, Screenshot
+Configuration Export, Log Sample, Report, Document, Photo, Other, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
----
-
-## Sheet 9: Approval Sign-Off
-
----
-
-## Sheet 10: Instructions
-
----
-
-## Sheet 11: Access_Controls
-
-**Data Rows:** 91 (rows 10–100)
-
----
-
-## Sheet 12: Transportation
-
-**Data Rows:** 91 (rows 10–100)
-
----
-
-## Sheet 13: Physical_Storage
-
-**Data Rows:** 91 (rows 10–100)
-
----
-
-## Sheet 14: Use_Procedures
-
-**Data Rows:** 91 (rows 10–100)
-
----
-
-## Sheet 15: Incident_Response
-
-**Data Rows:** 91 (rows 10–100)
-
----
-
-## Sheet 16: Summary_Dashboard
-
----
-
-## Sheet 17: Evidence_Register
-
-**Data Rows:** 100 (rows 5–104) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence ID | 12 |
-| B | Assessment Sheet | 20 |
-| C | Related Control | 30 |
-| D | Evidence Type | 20 |
-| E | Evidence Description | 35 |
-| F | File Location/Link | 40 |
-| G | Date Collected | 12 |
-| H | Retention Period | 15 |
-| I | Next Review | 12 |
-| J | Owner | 20 |
-| K | Notes | 30 |
-
----
-
-## Sheet 18: Approval_Signoff
-
----
-
-## Sheet 19: Base_Validations
-
-**Data Rows:** 91 (rows 10–100)
-
----
-
-## Sheet 20: Assessment
-
-**Data Rows:** 13 (rows 10–22)
+**Extracted:** 9 sheets, 48 columns, 83 validation values, 11 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 
 *"Security is not a product, but a process."*
 — Bruce Schneier
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

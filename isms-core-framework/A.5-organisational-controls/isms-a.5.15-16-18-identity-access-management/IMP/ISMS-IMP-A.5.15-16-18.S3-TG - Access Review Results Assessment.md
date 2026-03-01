@@ -8,248 +8,168 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Access Review Results Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.15-16-18.S3-TG |
+| **Related Policy** | ISMS-POL-A.5.15-16-18 (Identity Access Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.15 (Access Annex) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Access Review Results & Recertification Compliance |
-| **Related Policy** | ISMS-POL-A.5.15-16-18, Section 2.3.4 (Access Review and Recertification Requirements) |
-| **Purpose** | Document access review execution, track review completion rates, assess reviewer accountability, and verify access removal for findings in a technology-agnostic manner |
-| **Target Audience** | Managers, System Owners, Security Team, IAM Team, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Quarterly (review cycle completion), Monthly (tracking progress) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Access Review Results assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.15-16-18 (Identity Access Management)
+- ISMS-IMP-A.5.15-16-18.S1 (User Inventory & Lifecycle Compliance Assessment)
+- ISMS-IMP-A.5.15-16-18.S2 (Access Rights Matrix Assessment)
+- ISMS-IMP-A.5.15-16-18.S4 (Role Definition & SoD Compliance Assessment)
 
 ---
+
 # Technical Specification
-
-
-> Auto-generated from `generate_a515-16-18_3_access_review_results.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.15-16-18.S3` |
-| **Output Filename** | `ISMS-IMP-A.5.15-16-18.S3_Access_Review_Results_YYYYMMDD.xlsx` |
-| **Workbook Title** | Access Review Results Assessment |
-| **Total Sheets** | 10 (10 visible) |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #002060 | 002060 | Custom |
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FF0000 | FF0000 | Red (Critical/Alert) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-
-## Sheet 1: Instructions & Legend
-
-**Data Rows:** 3 (rows 1–3)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Sheet |
-| B | Purpose |
-| C | Key Metrics |
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Review_Schedule
+## Generator Alignment Reference
 
-**Data Rows:** 9 (rows 1–9) | **Frozen Panes:** A6
+> Auto-generated from `generate_a515-16-18_3_access_review_results.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.15-16-18.S3`
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Review ID | 12 |
-| B | System/Application | 30 |
-| C | Criticality | 12 |
-| D | Review Period | 15 |
-| E | Frequency | 15 |
-| F | Reviewer | 20 |
-| G | Reviewer Role | 22 |
-| H | Due Date | 12 |
-| I | Est. Users | 12 |
-| J | Status | 15 |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: Review_Completion
+| # | Sheet Name |
+|---|-----------|
+| 1 | Review Schedule |
+| 2 | Review Completion |
+| 3 | Review Findings |
+| 4 | Overdue Reviews |
+| 5 | Reviewer Performance |
+| 6 | Review Metrics |
+| 7 | Gap Analysis |
+| 8 | Summary Dashboard |
+| 9 | Evidence Register |
+| 10 | Approval Sign-Off |
+| 11 | Instructions & Legend |
 
-**Data Rows:** 11 (rows 1–11) | **Frozen Panes:** A5
+### Color Palette
 
-### Columns
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FF0000 | Red (Critical/Alert) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Review ID | 12 |
-| B | System | 28 |
-| C | Review Period | 15 |
-| D | Reviewer | 20 |
-| E | Due Date | 12 |
-| F | Start Date | 12 |
-| G | Completion Date | 15 |
-| H | Days to Complete | 15 |
-| I | Users Reviewed | 15 |
-| J | Access Confirmed | 15 |
-| K | Access Removed | 15 |
-| L | Status | 15 |
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | REVIEW COMPLETION TRACKING - EXECUTION STATUS |
+| 2 | REVIEW FINDINGS - DETAILED ACTIONS |
+| 3 | OVERDUE REVIEWS - ESCALATION REQUIRED |
+| 4 | REVIEWER PERFORMANCE METRICS - RESPONSIVENESS |
+| 5 | ACCESS REVIEW COMPLIANCE METRICS - KPIS |
+| 6 | Overall Access Review Compliance Score |
+| 7 | GAP ANALYSIS - REVIEW PROCESS NON-COMPLIANCE |
+| 8 | Review ID |
+| 9 | System/Application |
+| 10 | Criticality |
+| 11 | Review Period |
+| 12 | Frequency |
+| 13 | Reviewer |
+| 14 | Reviewer Role |
+| 15 | Due Date |
+| 16 | Est. Users |
+| 17 | Status |
+| 18 | System |
+| 19 | Start Date |
+| 20 | Completion Date |
+| 21 | Days to Complete |
+| 22 | Users Reviewed |
+| 23 | Access Confirmed |
+| 24 | Access Removed |
+| 25 | Finding ID |
+| 26 | Username |
+| 27 | Access Level |
+| 28 | Action |
+| 29 | Reason |
+| 30 | Priority |
+| 31 | Days to Remediate |
+| 32 | Days Overdue |
+| 33 | Escalation Level |
+| 34 | Escalation Date |
+| 35 | Escalated To |
+| 36 | Reviewer Name |
+| 37 | Role |
+| 38 | Department |
+| 39 | Total Reviews |
+| 40 | Completed |
+| 41 | Overdue |
+| 42 | Completion Rate |
+| 43 | Avg Days to Complete |
+| 44 | Performance |
+| 45 | Metric |
+| 46 | Target |
+| 47 | Actual |
+| 48 | Gap |
+| 49 | Comments |
+| 50 | Gap ID |
+| 51 | Category |
+| 52 | Description |
+| 53 | Risk Level |
+| 54 | Affected Items |
+| 55 | Root Cause |
+| 56 | Remediation Plan |
+| 57 | Owner |
+| 58 | Assessment Area |
+| 59 | Total Items |
+| 60 | Compliant / Completed |
+| 61 | Partial / Scheduled |
+| 62 | Non-Compliant / Overdue |
+| 63 | N/A |
+| 64 | Compliance % |
 
-## Sheet 4: Review_Findings
+### Data Validation Values
 
-**Data Rows:** 10 (rows 1–10) | **Frozen Panes:** A6
+All dropdown/list values used across sheets:
 
-### Columns
+```
+Critical, High, Medium, Low, Open, In Progress, Resolved, Accepted, Active
+Archived, Superseded, Pending Review, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Finding ID | 12 |
-| B | Review ID | 12 |
-| C | System | 20 |
-| D | Username | 15 |
-| E | Access Level | 15 |
-| F | Action | 20 |
-| G | Reason | 45 |
-| H | Priority | 10 |
-| I | Completion Date | 15 |
-| J | Days to Remediate | 18 |
-| K | Status | 15 |
-
----
-
-## Sheet 5: Overdue_Reviews
-
-**Data Rows:** 9 (rows 1–9) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Review ID | 12 |
-| B | System | 28 |
-| C | Criticality | 12 |
-| D | Reviewer | 20 |
-| E | Due Date | 12 |
-| F | Days Overdue | 15 |
-| G | Escalation Level | 20 |
-| H | Escalation Date | 15 |
-| I | Escalated To | 30 |
-| J | Status | 12 |
-
----
-
-## Sheet 6: Reviewer_Performance
-
-**Data Rows:** 9 (rows 1–9) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Reviewer Name | 20 |
-| B | Role | 22 |
-| C | Department | 15 |
-| D | Total Reviews | 15 |
-| E | Completed | 12 |
-| F | Overdue | 12 |
-| G | Completion Rate | 18 |
-| H | Avg Days to Complete | 20 |
-| I | Performance | 20 |
-| J | Status | 15 |
-
----
-
-## Sheet 7: Review_Metrics
-
-**Data Rows:** 6 (rows 1–6)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Metric | 30 |
-| B | Target | 15 |
-| C | Actual | 15 |
-| D | Status | 18 |
-| E | Gap | 10 |
-| F | Comments | 50 |
-
----
-
-## Sheet 8: Gap_Analysis
-
-**Data Rows:** 10 (rows 1–10) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Gap ID | 10 |
-| B | Category | 20 |
-| C | Description | 40 |
-| D | Risk Level | 12 |
-| E | Affected Items | 15 |
-| F | Root Cause | 40 |
-| G | Remediation Plan | 40 |
-| H | Owner | 18 |
-| I | Due Date | 12 |
-| J | Status | 15 |
-
----
-
-## Sheet 9: Evidence_Register
-
-**Data Rows:** 8 (rows 1–8) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence ID | 12 |
-| B | Requirement | 25 |
-| C | Evidence Type | 20 |
-| D | Evidence Location | 35 |
-| E | Collection Date | 18 |
-| F | Completeness | 15 |
-| G | Reviewed By | 20 |
-| H | Notes | 45 |
-
----
-
-## Sheet 10: Approval_Sign_Off
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Approval Level | 25 |
-| B | Role | 20 |
-| C | Name | 25 |
-| D | Signature | 20 |
-| E | Date | 15 |
-| F | Status | 15 |
+**Extracted:** 11 sheets, 64 columns, 20 validation values, 11 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

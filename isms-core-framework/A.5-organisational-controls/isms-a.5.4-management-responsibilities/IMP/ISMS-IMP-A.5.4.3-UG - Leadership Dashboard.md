@@ -7,15 +7,35 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Leadership Dashboard |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.4.3-UG |
+| **Related Policy** | ISMS-POL-A.5.4 (Management Responsibilities) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.4 (Management Responsibilities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.4 Management Responsibilities |
-| **Parent Policy** | ISMS-POL-A.5.4 - Management Responsibilities |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.4 (Management Responsibilities)
+- ISMS-IMP-A.5.4.1 (Management Commitment Assessment)
+- ISMS-IMP-A.5.4.2 (Compliance Oversight Tracker)
+- ISMS-IMP-A.5.4.4 (Security Culture Survey)
 
 ---
 
@@ -44,7 +64,7 @@ Dashboard reporting covers:
 
 #### 1.4 Why This Matters
 
-**The Executive Visibility Problem**: Without a consolidated dashboard, executives receive fragmented security information:
+**The Executive Visibility Problem**: Without consolidated tracking in Summary Dashboards, executives receive fragmented security information:
 - Training data from HR
 - Incident data from Security
 - Access review data from IT
@@ -56,7 +76,7 @@ Dashboard reporting covers:
 - **Decision Support**: Executives can allocate resources to underperforming areas
 - **Trend Visibility**: Quarter-over-quarter trends reveal whether interventions are working
 - **Accountability**: Department-level breakdown enables targeted discussions
-- **Audit Readiness**: Consolidated evidence demonstrates management oversight to auditors
+- **Audit Readiness**: Evidence tracked in Summary Dashboards demonstrates management oversight to auditors
 
 **Real-World Impact**:
 - Organisations with executive dashboards respond to security gaps 40% faster
@@ -82,7 +102,7 @@ Before populating this dashboard, ensure:
 
 **Data Quality Verification**:
 
-Before consolidating data, verify source workbook quality:
+Before compiling data, verify source workbook quality:
 
 | Source | Verification Check | Pass Criteria |
 |--------|-------------------|---------------|
@@ -102,6 +122,25 @@ Before consolidating data, verify source workbook quality:
 | A.5.4.4 Culture Survey | Annual (Q4) | Update annually |
 | Trend Analysis | Historical data | Update quarterly |
 | Action Items | Continuous | Update monthly |
+
+### Workbook at a Glance
+
+This workbook contains the following sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Dashboard guidance, metric definitions, and source data references |
+| **Executive Summary** | Key headline metrics aggregated from source workbooks (A.5.4.1 and A.5.4.2) |
+| **By Department** | Department-level breakdown of commitment scores and compliance metrics |
+| **Trend Analysis** | Quarter-over-quarter tracking of all key metrics |
+| **Action Items** | Improvement actions with owners, due dates, and completion tracking |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+| **Evidence Register** | Tracking of evidence supporting this dashboard (source workbook exports, meeting records) |
+| **Summary Dashboard** | Auto-aggregated compliance overview across all dashboard metrics |
+
+> **Note:** Unlike the other A.5.4 workbooks, this workbook is itself a reporting dashboard — its data is sourced from ISMS-IMP-A.5.4.1, A.5.4.2, and A.5.4.4 rather than entered from scratch. See Prerequisites above for source workbook readiness checks.
+
+---
 
 ### Completion Walkthrough
 
@@ -159,6 +198,13 @@ Track improvement actions:
 5. Set realistic **Due_Date**
 6. Update **Status**: Open, In Progress, Completed, Overdue, Cancelled
 7. Record **Completion_Date** and **Evidence** when closed
+
+### After Completing the Dashboard Sheets
+
+Once Steps 1–4 are complete:
+
+- **Evidence Register** — Record the evidence used to populate this dashboard: source workbook exports (dated snapshots of A.5.4.1, A.5.4.2, A.5.4.4), executive meeting minutes referencing the dashboard, and action item closure artefacts. This provides the audit trail demonstrating that the dashboard reflects verified data from the source assessments, not manually entered figures.
+- **Summary Dashboard** — Review the built-in Summary Dashboard sheet for a high-level aggregated view across all dashboard metrics. This is separate from the Executive Summary sheet (which you populate in Step 1) — the Summary Dashboard auto-calculates from all four sheets above and is intended for quick status assessment before the management review presentation.
 
 ### Worked Examples
 
@@ -394,7 +440,7 @@ When auditors review management leadership, prepare:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"What gets measured gets managed."*
+— Peter Drucker
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

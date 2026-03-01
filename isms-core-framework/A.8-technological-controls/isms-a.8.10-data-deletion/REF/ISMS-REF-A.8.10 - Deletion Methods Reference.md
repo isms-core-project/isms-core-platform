@@ -77,7 +77,7 @@ This document provides a technical overview of deletion methods and media saniti
 
 This document does NOT:
 
-- Define [Organization]'s approved or prohibited deletion methods
+- Define [Organisation]'s approved or prohibited deletion methods
 - Establish mandatory implementation requirements
 - Create compliance obligations or audit criteria
 - Replace ISMS-POL-A.8.10 policy requirements
@@ -86,13 +86,15 @@ This document does NOT:
 
 ## Relationship to ISMS
 
+**Relationship to POL-A.8.10 Annex A**: ISMS-POL-A.8.10 Annex A (Approved Deletion Methods Matrix) provides the **binding organisational standard** for deletion method selection. This technical reference (ISMS-REF-A.8.10) provides additional technical detail and context supporting the policy annex, but does not supersede or extend policy requirements.
+
 This document is a **non-binding technical reference**. All deletion control requirements are defined exclusively in ISMS-POL-A.8.10.
 
 Implementation decisions are documented through ISMS-IMP-A.8.10 procedures based on risk assessment, operational context, and regulatory requirements.
 
-## Content Organization
+## Content Organisation
 
-This reference organizes deletion methods by:
+This reference organises deletion methods by:
 
 - Media type (magnetic, solid-state, cloud, paper, optical)
 - Sanitization method (Clear, Purge, Destroy)
@@ -118,8 +120,8 @@ NIST Special Publication 800-88 Revision 1 ("Guidelines for Media Sanitization")
 
 **Media Destination**:
 
-- Remaining in organization control → Clear may be sufficient (depending on classification)
-- Leaving organization control → Purge minimum
+- Remaining in organisation control → Clear may be sufficient (depending on classification)
+- Leaving organisation control → Purge minimum
 - Disposal / end-of-life → Destroy recommended for sensitive data
 
 **Data Classification**:
@@ -131,7 +133,7 @@ NIST Special Publication 800-88 Revision 1 ("Guidelines for Media Sanitization")
 
 **Media Reuse Intent**:
 
-- Reuse within organization → Clear or Purge
+- Reuse within organisation → Clear or Purge
 - External sale/donation → Purge or Destroy
 - Disposal → Destroy
 
@@ -547,7 +549,13 @@ Some cloud providers offer deletion attestations:
 
 # Approved Tool Examples (Informational)
 
-**Note**: This is NOT an approved vendor list. Organizations select tools based on their environment, risk assessment, and validation testing.
+**⚠️ CRITICAL DISCLAIMER**: The tools and vendors listed in this section are provided for **awareness purposes only**. Their inclusion does NOT constitute:
+- [Organisation] approval or recommendation
+- Endorsement of specific products or vendors
+- Certification that tools meet [Organisation]'s requirements
+- Guarantee of tool effectiveness or suitability
+
+[Organisation] selects deletion tools through formal evaluation based on risk assessment, operational requirements, regulatory compliance, and vendor validation per ISMS-IMP-A.8.10.2 (Deletion Methods Assessment). Tool selection is NOT defined in this reference document.
 
 ## Open-Source / Built-In Tools
 
@@ -615,6 +623,10 @@ Some cloud providers offer deletion attestations:
 ---
 
 # Cloud Provider Deletion Capabilities
+
+**Currency Note**: Cloud provider capabilities evolve rapidly. This reference reflects capabilities as of [Document Date]. Organisations SHALL verify current provider deletion capabilities during cloud provider assessment per ISMS-POL-A.8.10 Section 2.3 (Cloud Service Provider Deletion Assessment) and document results in ISMS-REF-A.5.23 (Cloud Service Provider Registry).
+
+The following capabilities are provided for informational awareness only:
 
 ## Hyperscale Providers (Tier 1)
 
@@ -734,7 +746,7 @@ If verification fails:
 
 # Appendix A: Deletion Method Selection Worksheet
 
-Organizations can use this worksheet during implementation to document deletion method decisions:
+Organisations can use this worksheet during implementation to document deletion method decisions:
 
 **Data Category**: _______________________  
 **Classification Level**: ⬜ Public ⬜ Internal ⬜ Confidential ⬜ Restricted
@@ -757,6 +769,13 @@ Organizations can use this worksheet during implementation to document deletion 
 **Approved By**: _______________________  
 **Date**: _______________________
 
+**Approval Workflow**:
+- Technical feasibility reviewed by: _______________________ (IT Operations)
+- Risk assessment reviewed by: _______________________ (Security Team)
+- Final approval per POL-A.8.10 Section 2.2 by: _______________________ (CISO or delegate)
+
+**Note**: This worksheet supports deletion method selection decisions documented in ISMS-IMP-A.8.10.2 (Deletion Methods Assessment). Completed worksheets are filed with implementation evidence.
+
 ---
 
 **END OF TECHNICAL REFERENCE**
@@ -765,4 +784,4 @@ Organizations can use this worksheet during implementation to document deletion 
 
 *This technical reference supports implementation of ISMS-POL-A.8.10. All binding requirements are defined in the policy document.*
 
-<!-- QA_VERIFIED: 2026-01-31 -->
+<!-- QA_VERIFIED: 2026-02-11 -->

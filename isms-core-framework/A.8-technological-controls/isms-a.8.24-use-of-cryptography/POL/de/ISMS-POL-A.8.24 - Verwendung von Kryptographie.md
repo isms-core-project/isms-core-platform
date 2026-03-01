@@ -524,4 +524,4 @@ Diese Richtlinie adressiert kryptographische Anforderungen von:
 *ISMS-POL-A.8.24 v1.0 | Verwendung von Kryptographie*
 *Diese Richtlinie definiert Anforderungen. Implementierungs-Prozeduren sind dokumentiert in ISMS-IMP-A.8.24.*
 
-<!-- QA_VERIFIED: 2026-01-31 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

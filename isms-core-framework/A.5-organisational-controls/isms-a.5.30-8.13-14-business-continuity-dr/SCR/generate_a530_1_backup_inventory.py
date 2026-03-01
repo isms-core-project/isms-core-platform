@@ -21,11 +21,11 @@ ISO/IEC 27001:2022 Control A.5.30: Information Backup
 Assessment Domain 1 of 4: Backup Inventory and RPO Compliance
 
 --------------------------------------------------------------------------------
-SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
+SAMPLE SCRIPT - REQUIRES CUSTOMISATION FOR YOUR ORGANISATION
 --------------------------------------------------------------------------------
 
 This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
-your organization's specific backup infrastructure, RPO/RTO requirements, and
+your organisation's specific backup infrastructure, RPO/RTO requirements, and
 assessment requirements.
 
 Key customization areas:
@@ -84,7 +84,7 @@ recoverability and backup effectiveness.
 - Professional styling without Excel repair warnings
 
 **Integration:**
-This assessment feeds into the ISMS-IMP-A.5.30.S5 BC/DR Compliance Dashboard,
+This assessment feeds into the ISMS-IMP-A.5.30.S5 BC/DR Summary Dashboard,
 which consolidates data from all four BC/DR assessment domains for executive
 oversight and audit readiness.
 
@@ -135,7 +135,7 @@ Post-Generation Steps:
     7. Define remediation actions with timelines
     8. Collect and link audit evidence (backup configs, test results)
     9. Obtain stakeholder approvals
-    10. Feed results into ISMS-IMP-A.5.30.S5 BC/DR Compliance Dashboard
+    10. Feed results into ISMS-IMP-A.5.30.S5 BC/DR Summary Dashboard
 
 --------------------------------------------------------------------------------
 METADATA
@@ -145,7 +145,7 @@ Control Reference:    ISO/IEC 27001:2022 Annex A Control A.5.30
 Assessment Domain:    1 of 4 (Backup Inventory & Coverage)
 Framework Version:    1.0
 Script Version:       1.0
-Author:               [Organization] ISMS Implementation Team
+Author:               [Organisation] ISMS Implementation Team
 Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
@@ -159,7 +159,7 @@ Related Documents:
     - ISMS-IMP-A.5.30.S2: Redundancy Analysis Assessment (Domain 2)
     - ISMS-IMP-A.5.30.S3: RPO/RTO Compliance Matrix (Domain 3)
     - ISMS-IMP-A.5.30.S4: BC/DR Testing Results Tracker (Domain 4)
-    - ISMS-IMP-A.5.30.S5: BC/DR Compliance Dashboard (Consolidation)
+    - ISMS-IMP-A.5.30.S5: BC/DR Summary Dashboard (Consolidation)
 
 --------------------------------------------------------------------------------
 CHANGE HISTORY
@@ -169,7 +169,7 @@ Version 1.0 - [Date to be set]
     - Initial release
     - Implements full assessment framework per ISMS-IMP-A.5.30-8.13-14-S2 specification
     - Supports comprehensive backup coverage and RPO compliance evaluation
-    - Integrated with ISMS-IMP-A.5.30.S5 BC/DR Compliance Dashboard
+    - Integrated with ISMS-IMP-A.5.30.S5 BC/DR Summary Dashboard
     - Includes 3-2-1-1-0 rule compliance scoring
 
 [Future changes to be documented here]
@@ -191,7 +191,7 @@ Modern backup best practice requires:
 - 1 copy offline (air-gapped, immutable)
 - 0 errors in backup verification
 
-Customize scoring criteria based on your organization's risk tolerance.
+Customize scoring criteria based on your organisation's risk tolerance.
 
 **RPO Alignment:**
 RPO requirements must derive from Business Impact Analysis (BIA). Don't assume
@@ -209,7 +209,7 @@ Assessment workbooks contain sensitive infrastructure details including:
 - Backup infrastructure architecture
 - Recovery capability gaps
 
-Handle in accordance with your organization's data classification policies.
+Handle in accordance with your organisation's data classification policies.
 
 **Maintenance:**
 Review and update assessment:
@@ -234,22 +234,26 @@ Customize assessment criteria to include regulatory-specific requirements.
 """
 
 # =============================================================================
-# Standard Library Imports
+# STANDARD LIBRARY IMPORTS
 # =============================================================================
 import logging
 from datetime import datetime, timedelta
 import sys
+from pathlib import Path
 
 # =============================================================================
-# Third-Party Imports
+# THIRD-PARTY IMPORTS
 # =============================================================================
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.utils import get_column_letter
-from openpyxl.worksheet.datavalidation import DataValidation
+try:
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+    from openpyxl.utils import get_column_letter
+    from openpyxl.worksheet.datavalidation import DataValidation
+except ImportError:
+    sys.exit("Error: openpyxl not installed. Install with: pip install openpyxl")
 
 # =============================================================================
-# Logging Configuration
+# LOGGING CONFIGURATION
 # =============================================================================
 logging.basicConfig(
     level=logging.INFO,
@@ -258,6 +262,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 WORKBOOK_TITLE = "Backup Inventory & Coverage Assessment"
+WORKBOOK_NAME = "Backup Inventory"
 VERSION = "1.0"
 CONTROLS = "A.5.30 (Information Backup)"
 
@@ -268,20 +273,22 @@ CONTROLS = "A.5.30 (Information Backup)"
 
 CHECK = '\u2705'      # ✅ Green checkmark
 XMARK = '\u274C'      # ❌ Red X
-WARNING = '\u26A0'    # ⚠️  Warning sign
-CHART = '\U0001F4CA' # 📊 Chart
-TARGET = '\U0001F3AF' # 🎯 Target
-SHIELD = '\U0001F6E1' # 🛡️  Shield
-LOCK = '\U0001F512'   # 🔒 Lock
-DISK = '\U0001F4BE'   # 💾 Floppy Disk
-GLOBE = '\U0001F310'  # 🌐 Globe
-SEARCH = '\U0001F50D' # 🔍 Magnifying Glass
+WARNING = '\u26A0'    # ⚠  Warning sign
 BULLET = '\u2022'     # • Bullet point
 ARROW = '\u2192'      # → Right arrow
 
+# ============================================================================
+# DOCUMENT METADATA
+# ============================================================================
 DOCUMENT_ID = "ISMS-IMP-A.5.30.S1"
+CONTROL_ID   = "A.5.30"
+CONTROL_NAME = "Information Backup"
+CONTROL_REF  = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
-OUTPUT_FILENAME = f"{DOCUMENT_ID}_Backup_Inventory_{GENERATED_TIMESTAMP}.xlsx"
+GENERATED_DATE = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
+_wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+_wkbk_dir.mkdir(exist_ok=True)
 
 # Color scheme (consistent with 8.23/8.20 reference implementations)
 HEADER_FILL = PatternFill(start_color='003366', end_color='003366', fill_type='solid')
@@ -293,7 +300,7 @@ INPUT_FILL = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='so
 GREEN_FILL = PatternFill(start_color='C6EFCE', end_color='C6EFCE', fill_type='solid')
 YELLOW_FILL = PatternFill(start_color='FFEB9C', end_color='FFEB9C', fill_type='solid')
 RED_FILL = PatternFill(start_color='FFC7CE', end_color='FFC7CE', fill_type='solid')
-BLUE_FILL = PatternFill(start_color='B4C7E7', end_color='B4C7E7', fill_type='solid')
+BLUE_FILL = PatternFill(start_color='D9D9D9', end_color='D9D9D9', fill_type='solid')
 
 # Fonts
 HEADER_FONT = Font(name='Calibri', size=14, bold=True, color='FFFFFF')
@@ -370,7 +377,7 @@ def create_base_validations(ws):
         ),
         'backup_status': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Backed Up,❌ Not Backed Up,⏳ In Progress,🔄 Migrating"',
+            formula1=f'"{CHECK} Backed Up,{XMARK} Not Backed Up,Pending,Migrating"',
             allow_blank=False
         ),
         'backup_frequency': DataValidation(
@@ -425,147 +432,110 @@ def create_base_validations(ws):
         ),
     }
     
-    # Add all validations to worksheet
-    for dv in validations.values():
-        ws.add_data_validation(dv)
-    
     return validations
 
 # ============================================================================
 # WORKSHEET: INSTRUCTIONS
 # ============================================================================
 
-def create_instructions_sheet(wb):
-    """Create Instructions & Legend worksheet"""
-    ws = wb.create_sheet(title="Instructions & Legend")
-    
-    # Title
-    ws.merge_cells('A1:F1')
-    ws['A1'] = f'{WORKBOOK_TITLE} - Instructions'
-    apply_style(ws['A1'], font=HEADER_FONT, fill=HEADER_FILL, 
-                alignment=Alignment(horizontal='center', vertical='center'))
-    ws.row_dimensions[1].height = 30
-    
-    # Metadata
-    row = 3
-    metadata = [
-        ('Document ID:', DOCUMENT_ID),
-        ('Assessment:', 'Backup Inventory & Coverage'),
-        ('Version:', VERSION),
-        ('Generated:', datetime.now().strftime('%d.%m.%Y %H:%M')),
-    ]
-    
-    for label, value in metadata:
-        ws[f'A{row}'] = label
-        apply_style(ws[f'A{row}'], font=BOLD_FONT)
-        ws[f'B{row}'] = value
-        row += 1
-    
-    # Purpose
-    row += 1
-    ws.merge_cells(f'A{row}:F{row}')
-    ws[f'A{row}'] = 'PURPOSE'
-    apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
-    
-    row += 1
-    purpose_text = """This workbook assesses backup coverage, RPO compliance, and adherence to the 3-2-1-1-0 backup rule (Veeam best practice). 
 
-Use this assessment to:
-• Identify systems without adequate backup protection
-• Measure RPO compliance (backup frequency vs business requirements)
-• Evaluate backup architecture maturity (3-2-1-1-0 rule)
-• Track evidence for audit compliance (minimum 5 evidence items required)
-• Obtain formal approval from stakeholders (3-level sign-off)"""
-    
-    ws.merge_cells(f'A{row}:F{row+6}')
-    ws[f'A{row}'] = purpose_text
-    ws[f'A{row}'].alignment = Alignment(wrap_text=True, vertical='top')
-    ws.row_dimensions[row].height = 100
-    
-    # Workflow
-    row += 7
-    ws.merge_cells(f'A{row}:F{row}')
-    ws[f'A{row}'] = 'ASSESSMENT WORKFLOW'
-    apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
-    
-    row += 1
-    workflow_steps = [
-        '1. Populate Backup_Inventory worksheet (document all systems)',
-        '2. Complete RPO_Compliance worksheet (compare requirements vs capability)',
-        '3. Assess 3-2-1-1-0_Compliance worksheet (evaluate backup architecture)',
-        '4. Document evidence in Evidence_Register (MINIMUM 5 evidence items for audit)',
-        '5. Review Summary dashboard (check compliance metrics)',
-        '6. Complete Approval_Sign_Off worksheet (obtain formal approval)',
-        '7. Re-assess quarterly to track improvements',
-    ]
-    
-    for step in workflow_steps:
-        ws[f'A{row}'] = step
-        ws[f'A{row}'].font = NORMAL_FONT
-        row += 1
-    
-    # Legend
-    row += 1
-    ws.merge_cells(f'A{row}:F{row}')
-    ws[f'A{row}'] = 'STATUS INDICATOR LEGEND'
-    apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
-    
-    row += 1
-    legend_items = [
-        (f'{CHECK}', 'Success / Compliant / Yes'),
-        (f'{XMARK}', 'Failure / Non-Compliant / No'),
-        (f'{WARNING}', 'Partial / Warning'),
-        ('⏳', 'In Progress / Pending'),
-        ('❓', 'Unknown / Not Tested'),
-        ('➖', 'Not Applicable'),
-        ('🔄', 'Migrating / In Transition'),
-    ]
-    
-    for emoji, description in legend_items:
-        ws[f'A{row}'] = emoji
-        ws[f'A{row}'].alignment = Alignment(horizontal='center')
-        ws[f'B{row}'] = description
-        row += 1
-    
-    # Critical Notes
-    row += 1
-    ws.merge_cells(f'A{row}:F{row}')
-    ws[f'A{row}'] = 'CRITICAL AUDIT REQUIREMENTS'
-    apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
-    
-    row += 1
-    critical_notes = [
-        f'{BULLET} EVIDENCE: Minimum 5 evidence items required in Evidence_Register',
-        f'{BULLET} APPROVAL: All 3 sign-off levels required (Assessor, ISO, CISO)',
-        f'{BULLET} TESTING: All backup systems must have tested restore dates',
-        f'{BULLET} RPO: Critical systems (Tier 1) must meet RPO requirements',
-        f'{BULLET} 3-2-1-1-0: Critical systems should target full compliance (5/5)',
-    ]
-    
-    for note in critical_notes:
-        ws[f'A{row}'] = note
-        ws[f'A{row}'].font = Font(name='Calibri', size=10, bold=True, color='C00000')
-        row += 1
-    
-    # Column widths
-    ws.column_dimensions['A'].width = 60
-    ws.column_dimensions['B'].width = 40
-    for col in ['C', 'D', 'E', 'F']:
-        ws.column_dimensions[col].width = 15
-    
-    return ws
+def create_instructions_sheet(ws):
+    """Create GS-IL-compliant Instructions & Legend sheet (Sheet 1)."""
+    ws.title = "Instructions & Legend"
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill("solid", fgColor="003366")
+    _grey = PatternFill("solid", fgColor="D9D9D9")
+    _input = PatternFill("solid", fgColor="FFFFCC")
+    _green = PatternFill("solid", fgColor="C6EFCE")
+    _amber = PatternFill("solid", fgColor="FFEB9C")
+    _red   = PatternFill("solid", fgColor="FFC7CE")
 
-# ============================================================================
-# WORKSHEET: BACKUP INVENTORY
-# ============================================================================
+    # Row 1 — Title banner
+    ws.merge_cells("A1:G1")
+    ws["A1"] = f"{DOCUMENT_ID}  -  {WORKBOOK_NAME}\n{CONTROL_REF}"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = _navy
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    ws.row_dimensions[1].height = 40
+
+    # Row 3 — Document Information heading
+    ws["A3"] = "Document Information"
+    ws["A3"].font = Font(name="Calibri", size=12, bold=True)
+
+    doc_info = [
+        ("Document ID",       DOCUMENT_ID),
+        ("Workbook Title",    WORKBOOK_NAME),
+        ("Control Reference", CONTROL_REF),
+        ("Version",           "1.0"),
+        ("Assessment Date",   ""),
+        ("Completed By",      ""),
+        ("Organisation",      ""),
+    ]
+    for i, (label, value) in enumerate(doc_info):
+        r = 4 + i
+        ws[f"A{r}"] = label
+        ws[f"A{r}"].font = Font(name="Calibri", bold=True)
+        ws[f"B{r}"] = value
+        if not value:
+            ws[f"B{r}"].fill = _input
+            ws[f"B{r}"].border = _border
+
+    # Row 12 — Instructions heading
+    ws["A12"] = "Instructions"
+    ws["A12"].font = Font(name="Calibri", size=12, bold=True)
+
+    _instructions = ['1. Populate the Backup Inventory worksheet (document all systems requiring backup).', '2. Complete the RPO Compliance worksheet (compare BIA requirements vs actual frequency).', '3. Assess the 3-2-1-1-0 Compliance worksheet (evaluate backup architecture).', '4. Document evidence in the Evidence Register (minimum 5 items required for audit).', '5. Review the Summary Dashboard for compliance status overview.', '6. Complete the Approval Sign-Off worksheet to obtain formal sign-off.', '7. Re-assess quarterly to track improvements and maintain compliance.']
+    for _i, _line in enumerate(_instructions):
+        ws[f"A{13 + _i}"] = _line
+
+    _leg_row = 21
+
+    _EVIDENCE = ['✓ Backup job configuration screenshots (Veeam, AWS Backup, Azure Backup)', '✓ Backup completion logs and status reports (last 30 days)', '✓ Restore test records with date, system, and outcome', '✓ RPO/RTO definitions from Business Impact Analysis (BIA)', '✓ Cloud storage configuration screenshots (S3 Object Lock, Azure Immutable)', '✓ Offsite backup policy and configuration evidence', '✓ Backup monitoring alerts and notification configuration', '✓ Backup vendor contracts and SLA documents']
+
+    # Status Legend — row position tracks after instructions
+    ws[f"A{_leg_row}"] = "Status Legend"
+    ws[f"A{_leg_row}"].font = Font(name="Calibri", size=12, bold=True)
+    for col_idx, header in enumerate(["Symbol", "Status", "Description"], start=1):
+        c = ws.cell(row=_leg_row + 1, column=col_idx, value=header)
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.fill = _grey
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = _border
+    legend_rows = [
+        ("\u2713", "Compliant / Complete",        "Requirement fully met",                   _green),
+        ("\u26a0", "Partial / In Progress",        "Partially met or in progress",            _amber),
+        ("\u2717", "Non-Compliant / Not Started",  "Requirement not met",                     _red),
+        ("\u2014", "Not Applicable",               "Not applicable to this assessment",        None),
+    ]
+    for i, (sym, status, desc, fill) in enumerate(legend_rows):
+        r = _leg_row + 2 + i
+        ws.cell(row=r, column=1, value=sym).border = _border
+        s = ws.cell(row=r, column=2, value=status)
+        d = ws.cell(row=r, column=3, value=desc)
+        if fill:
+            s.fill = fill
+        for cell in (s, d):
+            cell.border = _border
+            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+
+    # Acceptable Evidence section
+    _ev_row = _leg_row + 7
+    ws[f"A{_ev_row}"] = "Acceptable Evidence (examples)"
+    ws[f"A{_ev_row}"].font = Font(name="Calibri", size=12, bold=True)
+    for _ev in _EVIDENCE:
+        _ev_row += 1
+        ws[f"A{_ev_row}"] = _ev
+
+    ws.column_dimensions["A"].width = 28
+    ws.column_dimensions["B"].width = 45
+    ws.column_dimensions["C"].width = 70
+    ws.sheet_view.showGridLines = False
+    ws.freeze_panes = "A4"
 
 def create_backup_inventory_sheet(wb):
-    """Create Backup_Inventory worksheet with 110 rows (10 examples + 100 data entry)"""
-    ws = wb.create_sheet(title="Backup_Inventory")
+    """Create Backup Inventory worksheet with 110 rows (10 examples + 100 data entry)"""
+    ws = wb.create_sheet(title="Backup Inventory")  # TAB-001: no underscores
     validations = create_base_validations(ws)
     
     # Header
@@ -573,7 +543,7 @@ def create_backup_inventory_sheet(wb):
     ws['A1'] = 'BACKUP INVENTORY & STATUS'
     apply_style(ws['A1'], font=HEADER_FONT, fill=HEADER_FILL,
                 alignment=Alignment(horizontal='center', vertical='center'))
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
     
     ws.merge_cells('A2:K2')
     ws['A2'] = 'Document backup status for all in-scope systems'
@@ -602,87 +572,34 @@ def create_backup_inventory_sheet(wb):
                    alignment=Alignment(horizontal='center', vertical='center', wrap_text=True),
                    border=THIN_BORDER)
     
-    # Example data (10 comprehensive examples showing various scenarios)
     row += 1
-    examples = [
-        ['E-Commerce Website', 'Tier 1 - Critical', f'{CHECK} Backed Up', 'Veeam Backup & Replication', 'Hourly',
-         (datetime.now() - timedelta(hours=2)).strftime('%d.%m.%Y %H:%M'), f'{CHECK} Yes', f'{CHECK} Yes',
-         (datetime.now() - timedelta(days=30)).strftime('%d.%m.%Y'), f'{CHECK} Success',
-         'Full 3-2-1-1-0 compliance, cloud offsite to AWS S3 with Object Lock'],
-        
-        ['ERP System (SAP)', 'Tier 2 - Important', f'{CHECK} Backed Up', 'Veeam Backup & Replication', 'Daily',
-         (datetime.now() - timedelta(hours=20)).strftime('%d.%m.%Y %H:%M'), f'{CHECK} Yes', f'{XMARK} No',
-         (datetime.now() - timedelta(days=60)).strftime('%d.%m.%Y'), f'{WARNING} Partial',
-         'Restore worked but slow (8h vs 4h RTO), no immutable backup - GAP'],
-        
-        ['Email System (Exchange)', 'Tier 1 - Critical', f'{CHECK} Backed Up', 'Veeam Backup for Microsoft 365', 'Every 4 hours',
-         (datetime.now() - timedelta(hours=3)).strftime('%d.%m.%Y %H:%M'), f'{CHECK} Yes', f'{CHECK} Yes',
-         (datetime.now() - timedelta(days=45)).strftime('%d.%m.%Y'), f'{CHECK} Success',
-         'Application-aware backup, item-level recovery tested, meets 4h RPO'],
-        
-        ['File Server (Shared Drives)', 'Tier 3 - Standard', f'{CHECK} Backed Up', 'Windows Server Backup', 'Weekly',
-         (datetime.now() - timedelta(days=2)).strftime('%d.%m.%Y %H:%M'), f'{XMARK} No', f'{XMARK} No',
-         (datetime.now() - timedelta(days=180)).strftime('%d.%m.%Y'), '➖ Not Tested',
-         'Basic backup only - needs testing, offsite copy, and more frequent backups'],
-        
-        ['Database Server (SQL)', 'Tier 1 - Critical', f'{CHECK} Backed Up', 'Veeam + SQL Native', 'Hourly',
-         (datetime.now() - timedelta(minutes=45)).strftime('%d.%m.%Y %H:%M'), f'{CHECK} Yes', f'{CHECK} Yes',
-         (datetime.now() - timedelta(days=15)).strftime('%d.%m.%Y'), f'{CHECK} Success',
-         'Transaction log backups every 15 min, full backup hourly, meets 1h RPO'],
-        
-        ['Legacy Application Server', 'Tier 3 - Standard', f'{XMARK} Not Backed Up', '', '',
-         '', f'{XMARK} No', f'{XMARK} No', '', '➖ Not Tested',
-         'Scheduled for decommission Q2 2024, backup not justified by business'],
-        
-        ['Test Database', 'Tier 4 - Low', '⏳ In Progress', 'Veeam Backup & Replication', 'Daily',
-         '', f'{XMARK} No', f'{XMARK} No', '', '➖ Not Tested',
-         'Backup job setup in progress, testing scheduled for next week'],
-        
-        ['Payment Gateway', 'Tier 1 - Critical', f'{CHECK} Backed Up', 'Cloud Provider (AWS Backup)', 'Every 15 min',
-         (datetime.now() - timedelta(minutes=10)).strftime('%d.%m.%Y %H:%M'), f'{CHECK} Yes', f'{CHECK} Yes',
-         (datetime.now() - timedelta(days=7)).strftime('%d.%m.%Y'), f'{CHECK} Success',
-         'Continuous replication to DR region, hourly snapshots, DORA compliant'],
-        
-        ['Document Repository (SharePoint)', 'Tier 2 - Important', f'{CHECK} Backed Up', 'Veeam Backup for Microsoft 365', 'Daily',
-         (datetime.now() - timedelta(hours=18)).strftime('%d.%m.%Y %H:%M'), f'{CHECK} Yes', f'{XMARK} No',
-         (datetime.now() - timedelta(days=90)).strftime('%d.%m.%Y'), f'{CHECK} Success',
-         'OneDrive and SharePoint backup, item recovery tested successfully'],
-        
-        ['Development Server', 'Tier 4 - Low', '🔄 Migrating', 'Migrating to Veeam', 'Daily',
-         (datetime.now() - timedelta(days=1)).strftime('%d.%m.%Y %H:%M'), f'{XMARK} No', f'{XMARK} No',
-         '', '➖ Not Tested',
-         'Migrating from legacy backup solution to Veeam, completion by end of month'],
+    # Grey sample row (F2F2F2) — GS-MAX-003: first data row shows how to fill in the sheet
+    _grey = PatternFill(start_color='F2F2F2', end_color='F2F2F2', fill_type='solid')
+    _sample = [
+        'Web Application (Example)', 'Tier 2 - Important', f'{CHECK} Backed Up',
+        'Veeam Backup & Replication', 'Daily', '', f'{CHECK} Yes',
+        f'{XMARK} No', '', '➖ Not Tested', 'Sample — replace with actual system data',
     ]
-    
-    for example_data in examples:
-        for col_idx, value in enumerate(example_data, start=1):
-            cell = ws.cell(row=row, column=col_idx, value=value)
-            apply_style(cell, border=THIN_BORDER)
-            
-            # Apply dropdowns to appropriate columns
-            if col_idx == 2:  # Criticality
-                validations['criticality'].add(cell)
-            elif col_idx == 3:  # Backup Status
-                validations['backup_status'].add(cell)
-            elif col_idx == 5:  # Frequency
-                validations['backup_frequency'].add(cell)
-            elif col_idx in [7, 8]:  # Offsite, Immutable
-                validations['yes_no'].add(cell)
-            elif col_idx == 10:  # Test Result
-                validations['test_result'].add(cell)
-            
-            # Center align status columns
-            if col_idx in [3, 7, 8, 10]:
-                cell.alignment = Alignment(horizontal='center', vertical='center')
-        
-        row += 1
-    
-    # Add 100 more blank rows for data entry
-    for i in range(100):
+    for _ci, _v in enumerate(_sample, start=1):
+        _cell = ws.cell(row=row, column=_ci, value=_v)
+        apply_style(_cell, fill=_grey, border=THIN_BORDER)
+        if _ci == 2:
+            validations['criticality'].add(_cell)
+        elif _ci == 3:
+            validations['backup_status'].add(_cell)
+        elif _ci == 5:
+            validations['backup_frequency'].add(_cell)
+        elif _ci in [7, 8]:
+            validations['yes_no'].add(_cell)
+        elif _ci == 10:
+            validations['test_result'].add(_cell)
+    row += 1
+    # 50 empty FFFFCC data rows (MAX-004: 1 grey sample + 50 empty = 51 total)
+    for i in range(50):
         for col_idx in range(1, 12):
             cell = ws.cell(row=row, column=col_idx)
             apply_style(cell, fill=INPUT_FILL, border=THIN_BORDER)
-            
+
             # Apply validations
             if col_idx == 2:
                 validations['criticality'].add(cell)
@@ -694,7 +611,7 @@ def create_backup_inventory_sheet(wb):
                 validations['yes_no'].add(cell)
             elif col_idx == 10:
                 validations['test_result'].add(cell)
-        
+
         row += 1
     
     # Summary section (formulas reference all data rows)
@@ -706,11 +623,11 @@ def create_backup_inventory_sheet(wb):
     
     summary_row += 1
     metrics = [
-        ('Total Systems:', f'=COUNTA(A5:A114)'),
-        ('Systems Backed Up:', f'=COUNTIF(C5:C114,"{CHECK}*")'),
+        ('Total Systems:', f'=COUNTA(A6:A55)'),
+        ('Systems Backed Up:', f'=COUNTIF(C6:C55,"{CHECK}*")'),
         ('Backup Coverage %:', f'=IF(B{summary_row}>0,B{summary_row+1}/B{summary_row},0)'),
-        ('Critical Systems (Tier 1):', f'=COUNTIF(B5:B114,"Tier 1*")'),
-        ('Critical Systems Backed Up:', f'=COUNTIFS(B5:B114,"Tier 1*",C5:C114,"{CHECK}*")'),
+        ('Critical Systems (Tier 1):', f'=COUNTIF(B6:B55,"Tier 1*")'),
+        ('Critical Systems Backed Up:', f'=COUNTIFS(B6:B55,"Tier 1*",C6:C55,"{CHECK}*")'),
         ('Critical Coverage %:', f'=IF(B{summary_row+3}>0,B{summary_row+4}/B{summary_row+3},1)'),
     ]
     
@@ -728,7 +645,12 @@ def create_backup_inventory_sheet(wb):
     for idx, width in enumerate(widths, start=1):
         ws.column_dimensions[get_column_letter(idx)].width = width
     
-    ws.freeze_panes = 'A5'
+    # Lazy-add: only register DVs that have cells assigned (fixes empty-sqref XML error)
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
+    
+    ws.freeze_panes = 'A4'
     
     return ws
 
@@ -737,8 +659,9 @@ def create_backup_inventory_sheet(wb):
 # ============================================================================
 
 def create_rpo_compliance_sheet(wb):
-    """Create RPO_Compliance worksheet with automatic compliance calculation"""
-    ws = wb.create_sheet(title="RPO_Compliance")
+    """Create RPO Compliance worksheet with automatic compliance calculation"""
+    ws = wb.create_sheet(title="RPO Compliance")
+    ws.sheet_view.showGridLines = False
     validations = create_base_validations(ws)
     
     # Header
@@ -746,7 +669,7 @@ def create_rpo_compliance_sheet(wb):
     ws['A1'] = 'RPO COMPLIANCE ASSESSMENT'
     apply_style(ws['A1'], font=HEADER_FONT, fill=HEADER_FILL,
                 alignment=Alignment(horizontal='center', vertical='center'))
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
     
     ws.merge_cells('A2:G2')
     ws['A2'] = 'Compare RPO requirements (from BIA) vs actual backup capability'
@@ -781,31 +704,6 @@ def create_rpo_compliance_sheet(wb):
         ws[f'F{row}'] = f'=IF(AND(ISNUMBER(C{row}),ISNUMBER(D{row})),MAX(0,D{row}-C{row}),"")'
         row += 1
     
-    # Example data (10 rows showing various compliance scenarios)
-    row = start_row
-    examples = [
-        ['E-Commerce Website', 'Tier 1 - Critical', 1, 1, '', '', 'Hourly backup meets 1-hour RPO requirement (from BIA)'],
-        ['ERP System', 'Tier 2 - Important', 4, 24, '', '', 'Daily backup does NOT meet 4-hour RPO - 20 hour GAP'],
-        ['File Server', 'Tier 3 - Standard', 24, 168, '', '', 'Weekly backup exceeds 24-hour RPO - needs improvement'],
-        ['Email System', 'Tier 1 - Critical', 4, 4, '', '', 'Every 4 hours meets RPO exactly - compliant'],
-        ['Database Server', 'Tier 1 - Critical', 1, 1, '', '', 'Hourly backup + transaction logs every 15 min'],
-        ['Payment Gateway', 'Tier 1 - Critical', 0.25, 0.25, '', '', 'RPO 15 minutes met with continuous replication'],
-        ['Document Repository', 'Tier 2 - Important', 24, 24, '', '', 'Daily backup meets daily RPO requirement'],
-        ['Development Server', 'Tier 4 - Low', 168, 168, '', '', 'Weekly backup acceptable for dev environment'],
-        ['Test Database', 'Tier 4 - Low', 168, 24, '', '', 'Daily backup exceeds weekly RPO (over-compliant)'],
-        ['Legacy App', 'Tier 3 - Standard', 48, 168, '', '', 'Weekly backup exceeds 48h RPO - 120 hour gap'],
-    ]
-    
-    for example_data in examples:
-        for col_idx, value in enumerate(example_data, start=1):
-            if col_idx not in [5, 6]:  # Skip formula columns
-                cell = ws.cell(row=row, column=col_idx, value=value)
-                apply_style(cell, border=THIN_BORDER)
-                
-                if col_idx == 2:
-                    validations['criticality'].add(cell)
-        row += 1
-    
     # Summary section (formulas reference all 110 rows)
     summary_row = start_row + 113
     ws.merge_cells(f'A{summary_row}:G{summary_row}')
@@ -838,7 +736,12 @@ def create_rpo_compliance_sheet(wb):
     for idx, width in enumerate(widths, start=1):
         ws.column_dimensions[get_column_letter(idx)].width = width
     
-    ws.freeze_panes = 'A5'
+    # Lazy-add: only register DVs that have cells assigned (fixes empty-sqref XML error)
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
+    
+    ws.freeze_panes = 'A4'
     
     return ws
 
@@ -847,8 +750,9 @@ def create_rpo_compliance_sheet(wb):
 # ============================================================================
 
 def create_3_2_1_1_0_sheet(wb):
-    """Create 3-2-1-1-0_Compliance worksheet with automatic scoring"""
-    ws = wb.create_sheet(title="3-2-1-1-0_Compliance")
+    """Create 3-2-1-1-0 Compliance worksheet with automatic scoring"""
+    ws = wb.create_sheet(title="3-2-1-1-0 Compliance")
+    ws.sheet_view.showGridLines = False
     validations = create_base_validations(ws)
     
     # Header
@@ -856,7 +760,7 @@ def create_3_2_1_1_0_sheet(wb):
     ws['A1'] = '3-2-1-1-0 BACKUP RULE COMPLIANCE (VEEAM BEST PRACTICE)'
     apply_style(ws['A1'], font=HEADER_FONT, fill=HEADER_FILL,
                 alignment=Alignment(horizontal='center', vertical='center'))
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
     
     ws.merge_cells('A2:J2')
     ws['A2'] = '3 copies | 2 media types | 1 offsite | 1 immutable | 0 errors (tested)'
@@ -891,48 +795,7 @@ def create_3_2_1_1_0_sheet(wb):
         # H: Total Score (count f"{CHECK} Yes" marks across columns C-G)
         ws[f'H{row}'] = f'=(IF(C{row}="{CHECK} Yes",1,0)+IF(D{row}="{CHECK} Yes",1,0)+IF(E{row}="{CHECK} Yes",1,0)+IF(F{row}="{CHECK} Yes",1,0)+IF(G{row}="{CHECK} Yes",1,0))'
         # I: Compliance Status based on score
-        ws[f'I{row}'] = f'=IF(H{row}="","",IF(H{row}=5,"{CHECK}✅ Full Compliance",IF(H{row}>=3,"{WARNING} Partial ("&TEXT(H{row},"0")&"/5)","{XMARK}❌ Non-Compliant ("&TEXT(H{row},"0")&"/5)")))'
-        row += 1
-    
-    # Example data (10 comprehensive scenarios)
-    row = start_row
-    examples = [
-        ['E-Commerce Website', 'Tier 1 - Critical', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', '', '', 
-         'Production + Local NAS + AWS S3, Disk + Object Storage, Immutable, Tested monthly'],
-        ['ERP System', 'Tier 2 - Important', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', f'{XMARK} No', f'{WARNING} Partial', '', '',
-         'Missing immutable backup, restore test was slow but successful'],
-        ['File Server', 'Tier 3 - Standard', f'{CHECK} Yes', f'{XMARK} No', f'{XMARK} No', f'{XMARK} No', f'{XMARK} No', '', '',
-         'Basic local backup only - needs offsite, immutable, and testing'],
-        ['Email System', 'Tier 1 - Critical', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', f'{XMARK} No', '', '',
-         'All criteria met except restore not tested yet (planned next month)'],
-        ['Payment Gateway', 'Tier 1 - Critical', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', '', '',
-         'DORA/NIS2 compliant - full 3-2-1-1-0 with multi-region replication'],
-        ['Database Server', 'Tier 1 - Critical', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', '', '',
-         'Transaction logs + full backups, AWS S3 with Object Lock, tested quarterly'],
-        ['Document Repository', 'Tier 2 - Important', f'{CHECK} Yes', f'{CHECK} Yes', f'{CHECK} Yes', f'{XMARK} No', f'{CHECK} Yes', '', '',
-         'Missing immutable backup, otherwise compliant (4/5)'],
-        ['Development Server', 'Tier 4 - Low', f'{CHECK} Yes', f'{XMARK} No', f'{XMARK} No', f'{XMARK} No', f'{XMARK} No', '', '',
-         'Minimal backup acceptable for non-critical dev environment (1/5)'],
-        ['Test Database', 'Tier 4 - Low', '⏳ Partial', f'{XMARK} No', f'{XMARK} No', f'{XMARK} No', f'{XMARK} No', '', '',
-         'Backup in progress, full compliance not required for test environment'],
-        ['Legacy App', 'Tier 3 - Standard', f'{CHECK} Yes', f'{CHECK} Yes', f'{XMARK} No', f'{XMARK} No', '➖ N/A', '', '',
-         'Local + tape backup, no offsite or immutable, scheduled for decommission'],
-    ]
-    
-    for example_data in examples:
-        for col_idx, value in enumerate(example_data, start=1):
-            if col_idx not in [8, 9]:  # Skip formula columns
-                cell = ws.cell(row=row, column=col_idx, value=value)
-                apply_style(cell, border=THIN_BORDER)
-                
-                if col_idx == 2:
-                    validations['criticality'].add(cell)
-                elif col_idx in [3, 4, 5, 6, 7]:
-                    validations['yes_no'].add(cell)
-                
-                # Center align checkbox columns
-                if col_idx in [3, 4, 5, 6, 7]:
-                    cell.alignment = Alignment(horizontal='center', vertical='center')
+        ws[f'I{row}'] = f'=IF(A{row}="","",IF(H{row}=5,"{CHECK}✅ Full Compliance",IF(H{row}>=3,"{WARNING} Partial ("&TEXT(H{row},"0")&"/5)","{XMARK}❌ Non-Compliant ("&TEXT(H{row},"0")&"/5)")))'
         row += 1
     
     # Summary section (formulas reference all 110 rows)
@@ -968,7 +831,12 @@ def create_3_2_1_1_0_sheet(wb):
     for idx, width in enumerate(widths, start=1):
         ws.column_dimensions[get_column_letter(idx)].width = width
     
-    ws.freeze_panes = 'A5'
+    # Lazy-add: only register DVs that have cells assigned (fixes empty-sqref XML error)
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
+    
+    ws.freeze_panes = 'A4'
     
     return ws
 
@@ -976,37 +844,39 @@ def create_3_2_1_1_0_sheet(wb):
 # WORKSHEET: SUMMARY DASHBOARD
 # ============================================================================
 
-def create_summary_sheet(wb):
+def create_summary_dashboard_sheet(wb):
     """Create Summary dashboard worksheet (placed as 2nd sheet)"""
-    ws = wb.create_sheet(title="Summary", index=1)
-    
-    # Title
+    ws = wb.create_sheet(title="Summary Dashboard")
+    ws.sheet_view.showGridLines = False
+
+    # Title — DS-002: fill must be HEADER_FILL (003366) with white font
     ws.merge_cells('A1:E1')
-    ws['A1'] = 'BACKUP COVERAGE & COMPLIANCE DASHBOARD'
-    apply_style(ws['A1'], font=Font(name='Calibri', size=16, bold=True, color='003366'),
+    ws['A1'] = 'BACKUP INVENTORY \u2014 SUMMARY DASHBOARD'
+    apply_style(ws['A1'], font=Font(name='Calibri', size=16, bold=True, color='FFFFFF'),
+                fill=HEADER_FILL,
                 alignment=Alignment(horizontal='center', vertical='center'))
     ws.row_dimensions[1].height = 35
     
     ws.merge_cells('A2:E2')
-    ws['A2'] = f'Assessment Date: {datetime.now().strftime("%d.%m.%Y")} | Assessment ID: {DOCUMENT_ID}'
+    ws['A2'] = f'Assessment ID: {DOCUMENT_ID} | Assessment Date: [enter date]'
     ws['A2'].alignment = Alignment(horizontal='center')
-    ws['A2'].font = Font(italic=True, size=11)
+    ws['A2'].font = Font(italic=True, size=10)
     
     # Overall Metrics
     row = 4
     ws.merge_cells(f'A{row}:E{row}')
     ws[f'A{row}'] = 'OVERALL BACKUP METRICS'
     apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
+                alignment=Alignment(horizontal='left'))
     
     row += 1
     metrics = [
-        ('Total Systems Assessed:', '=Backup_Inventory!B117'),
-        ('Systems with Backup:', '=Backup_Inventory!B118'),
-        ('Overall Backup Coverage:', '=Backup_Inventory!B119'),
-        ('Critical Systems (Tier 1):', '=Backup_Inventory!B120'),
-        ('Critical Systems Backed Up:', '=Backup_Inventory!B121'),
-        ('Critical System Coverage:', '=Backup_Inventory!B122'),
+        ('Total Systems Assessed:', "='Backup Inventory'!B59"),
+        ('Systems with Backup:', "='Backup Inventory'!B60"),
+        ('Overall Backup Coverage:', "='Backup Inventory'!B61"),
+        ('Critical Systems (Tier 1):', "='Backup Inventory'!B62"),
+        ('Critical Systems Backed Up:', "='Backup Inventory'!B63"),
+        ('Critical System Coverage:', "='Backup Inventory'!B64"),
     ]
     
     for label, formula in metrics:
@@ -1023,17 +893,17 @@ def create_summary_sheet(wb):
     ws.merge_cells(f'A{row}:E{row}')
     ws[f'A{row}'] = 'RPO COMPLIANCE (Business Requirements vs Capability)'
     apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
+                alignment=Alignment(horizontal='left'))
     
     row += 1
     rpo_metrics = [
-        ('Total Systems Assessed:', '=RPO_Compliance!B122'),
-        ('Systems RPO Compliant:', '=RPO_Compliance!B123'),
-        ('Systems Non-Compliant:', '=RPO_Compliance!B124'),
-        ('Overall RPO Compliance Rate:', '=RPO_Compliance!B125'),
-        ('Critical Systems (Tier 1):', '=RPO_Compliance!B126'),
-        ('Critical Compliant:', '=RPO_Compliance!B127'),
-        ('Critical RPO Compliance Rate:', '=RPO_Compliance!B128'),
+        ('Total Systems Assessed:', "='RPO Compliance'!B119"),
+        ('Systems RPO Compliant:', "='RPO Compliance'!B120"),
+        ('Systems Non-Compliant:', "='RPO Compliance'!B121"),
+        ('Overall RPO Compliance Rate:', "='RPO Compliance'!B122"),
+        ('Critical Systems (Tier 1):', "='RPO Compliance'!B123"),
+        ('Critical Compliant:', "='RPO Compliance'!B124"),
+        ('Critical RPO Compliance Rate:', "='RPO Compliance'!B125"),
     ]
     
     for label, formula in rpo_metrics:
@@ -1050,18 +920,18 @@ def create_summary_sheet(wb):
     ws.merge_cells(f'A{row}:E{row}')
     ws[f'A{row}'] = '3-2-1-1-0 RULE COMPLIANCE (Veeam Best Practice)'
     apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
+                alignment=Alignment(horizontal='left'))
     
     row += 1
     rule_metrics = [
-        ('Total Systems Assessed:', "='3-2-1-1-0_Compliance'!B122"),
-        ('Full Compliance (5/5):', "='3-2-1-1-0_Compliance'!B123"),
-        ('Partial Compliance (3-4/5):', "='3-2-1-1-0_Compliance'!B124"),
-        ('Non-Compliant (0-2/5):', "='3-2-1-1-0_Compliance'!B125"),
-        ('Full Compliance Rate:', "='3-2-1-1-0_Compliance'!B126"),
-        ('Critical Systems (Tier 1):', "='3-2-1-1-0_Compliance'!B127"),
-        ('Critical Full Compliance:', "='3-2-1-1-0_Compliance'!B128"),
-        ('Critical Full Compliance Rate:', "='3-2-1-1-0_Compliance'!B129"),
+        ('Total Systems Assessed:', "='3-2-1-1-0 Compliance'!B119"),
+        ('Full Compliance (5/5):', "='3-2-1-1-0 Compliance'!B120"),
+        ('Partial Compliance (3-4/5):', "='3-2-1-1-0 Compliance'!B121"),
+        ('Non-Compliant (0-2/5):', "='3-2-1-1-0 Compliance'!B122"),
+        ('Full Compliance Rate:', "='3-2-1-1-0 Compliance'!B123"),
+        ('Critical Systems (Tier 1):', "='3-2-1-1-0 Compliance'!B124"),
+        ('Critical Full Compliance:', "='3-2-1-1-0 Compliance'!B125"),
+        ('Critical Full Compliance Rate:', "='3-2-1-1-0 Compliance'!B126"),
     ]
     
     for label, formula in rule_metrics:
@@ -1078,7 +948,7 @@ def create_summary_sheet(wb):
     ws.merge_cells(f'A{row}:E{row}')
     ws[f'A{row}'] = 'KEY FINDINGS & ACTION ITEMS'
     apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
+                alignment=Alignment(horizontal='left'))
     
     row += 1
     findings = [
@@ -1110,425 +980,341 @@ def create_summary_sheet(wb):
 # ============================================================================
 
 def create_evidence_register(wb):
-    """Create Evidence_Register worksheet (100 rows for comprehensive audit evidence)"""
-    ws = wb.create_sheet(title="Evidence_Register")
-    validations = create_base_validations(ws)
-    
-    # Header
+    """Create Evidence Register worksheet (Gold Standard — 100 data rows, navy headers)"""
+    ws = wb.create_sheet(title="Evidence Register")
+    ws.sheet_view.showGridLines = False
+    thin = Side(style='thin')
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    # Row 1: TITLE BANNER (GS-ER-001/002/003)
     ws.merge_cells('A1:H1')
     ws['A1'] = 'EVIDENCE REGISTER'
-    apply_style(ws['A1'], font=HEADER_FONT, fill=HEADER_FILL,
-                alignment=Alignment(horizontal='center', vertical='center'))
-    ws.row_dimensions[1].height = 30
-    
+    ws['A1'].font = Font(name='Calibri', size=14, bold=True, color='FFFFFF')
+    ws['A1'].fill = PatternFill(start_color='003366', end_color='003366', fill_type='solid')
+    ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
+    ws.row_dimensions[1].height = 35
+    for col in range(1, 9):
+        ws.cell(row=1, column=col).border = border
+
+    # Row 2: SUBTITLE italic (GS-ER-004)
     ws.merge_cells('A2:H2')
-    ws['A2'] = 'Document all evidence supporting this assessment (MINIMUM 5 evidence items required for audit compliance)'
-    apply_style(ws['A2'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
-    
-    # Column headers
-    row = 4
+    ws['A2'] = 'Document all evidence collected during this assessment (minimum 5 items required for audit compliance)'
+    ws['A2'].font = Font(name='Calibri', size=10, italic=True)
+    ws['A2'].alignment = Alignment(horizontal='left', vertical='center')
+    for col in range(1, 9):
+        ws.cell(row=2, column=col).border = border
+
+    # Row 3: intentionally empty (visual separator)
+
+    # Row 4: COLUMN HEADERS with 003366 fill (GS-ER-005)
     headers = [
-        'Evidence ID',
-        'Evidence Type',
-        'Description',
-        'Related Sheet/Row',
-        'Location/Path',
-        'Date Collected',
-        'Collected By',
-        'Verification Status'
+        'Evidence ID', 'Assessment Area', 'Evidence Type', 'Description',
+        'Location / Path', 'Date Collected', 'Collected By', 'Verification Status',
     ]
-    
     for col_idx, header in enumerate(headers, start=1):
-        cell = ws.cell(row=row, column=col_idx, value=header)
-        apply_style(cell, font=BOLD_FONT, fill=COLUMN_HEADER_FILL,
-                   alignment=Alignment(horizontal='center', vertical='center', wrap_text=True),
-                   border=THIN_BORDER)
-    
-    # Evidence rows (100 rows for comprehensive documentation)
-    row += 1
-    for i in range(1, 101):
-        # Evidence ID (auto-generated EVD-001 to EVD-100)
-        ws[f'A{row}'] = f'EVD-{i:03d}'
-        ws[f'A{row}'].font = Font(bold=True, size=9)
-        apply_style(ws[f'A{row}'], border=THIN_BORDER)
-        
-        # Evidence Type dropdown
-        cell = ws[f'B{row}']
-        apply_style(cell, fill=INPUT_FILL, border=THIN_BORDER)
-        validations['evidence_type'].add(cell)
-        
-        # Description
-        cell = ws[f'C{row}']
-        apply_style(cell, fill=INPUT_FILL, border=THIN_BORDER)
-        cell.alignment = Alignment(wrap_text=True, vertical='top')
-        
-        # Related Sheet/Row
-        cell = ws[f'D{row}']
-        apply_style(cell, fill=INPUT_FILL, border=THIN_BORDER)
-        
-        # Location/Path
-        cell = ws[f'E{row}']
-        apply_style(cell, fill=INPUT_FILL, border=THIN_BORDER)
-        
-        # Date Collected
-        cell = ws[f'F{row}']
-        apply_style(cell, fill=INPUT_FILL, border=THIN_BORDER)
-        cell.number_format = 'DD.MM.YYYY'
-        
-        # Collected By
-        cell = ws[f'G{row}']
-        apply_style(cell, fill=INPUT_FILL, border=THIN_BORDER)
-        
-        # Verification Status dropdown
-        cell = ws[f'H{row}']
-        apply_style(cell, fill=INPUT_FILL, border=THIN_BORDER)
-        validations['verification_status'].add(cell)
-        cell.alignment = Alignment(horizontal='center', vertical='center')
-        
-        row += 1
-    
-    # Example evidence (first 8 rows - comprehensive examples)
-    examples = [
-        ['Screenshot', 'Veeam Backup & Replication dashboard showing successful backup jobs', 
-         'Backup_Inventory/Row 5 (E-Commerce)', '/evidence/backup/veeam_dashboard_2024-01-10.png', 
-         datetime.now().strftime('%d.%m.%Y'), 'Backup Administrator', f'{CHECK} Verified'],
-        
-        ['Config File', 'Backup job configuration for E-Commerce website (hourly schedule)', 
-         'Backup_Inventory/Row 5', '/evidence/backup/ecommerce_backup_job_config.xml', 
-         datetime.now().strftime('%d.%m.%Y'), 'Backup Administrator', f'{CHECK} Verified'],
-        
-        ['Test Result', 'Restore test report for E-Commerce database (successful restore in 3.5 hours)', 
-         'Backup_Inventory/Row 5', '/evidence/backup/ecommerce_restore_test_2024-01-10.pdf', 
-         datetime.now().strftime('%d.%m.%Y'), 'QA Team', f'{CHECK} Verified'],
-        
-        ['Report', 'AWS S3 bucket configuration showing Object Lock enabled (immutable backup)', 
-         '3-2-1-1-0_Compliance/Row 5', '/evidence/backup/aws_s3_object_lock_config.pdf', 
-         datetime.now().strftime('%d.%m.%Y'), 'Cloud Administrator', f'{CHECK} Verified'],
-        
-        ['Log File', 'Backup job logs for past 30 days (ERP System - shows daily backups)', 
-         'Backup_Inventory/Row 6', '/evidence/backup/erp_backup_logs_30days.csv', 
-         datetime.now().strftime('%d.%m.%Y'), 'Backup Administrator', f'{CHECK} Verified'],
-        
-        ['Screenshot', 'RPO compliance gap analysis summary from BIA workshop', 
-         'RPO_Compliance/Multiple', '/evidence/bia/rpo_gap_analysis_summary.png', 
-         datetime.now().strftime('%d.%m.%Y'), 'CISO', '⏳ Pending'],
-        
-        ['Policy Document', 'Approved backup policy document (ISMS-POL-A.5.30)', 
-         'General', '/policies/ISMS-POL-A.5.30-Backup-Requirements.pdf', 
-         datetime.now().strftime('%d.%m.%Y'), 'Policy Manager', f'{CHECK} Verified'],
-        
-        ['Contract', 'Veeam license agreement and support contract (valid until 2025-12-31)', 
-         'Backup_Inventory/General', '/evidence/contracts/veeam_license_support_2024.pdf', 
-         datetime.now().strftime('%d.%m.%Y'), 'Procurement', f'{CHECK} Verified'],
-    ]
-    
-    row = 5
-    for example in examples:
-        for col_idx, value in enumerate(example, start=2):  # Start at column B (skip auto-ID)
-            ws.cell(row=row, column=col_idx, value=value)
-        row += 1
-    
-    # Column widths
-    ws.column_dimensions['A'].width = 12
-    ws.column_dimensions['B'].width = 18
-    ws.column_dimensions['C'].width = 50
-    ws.column_dimensions['D'].width = 28
-    ws.column_dimensions['E'].width = 50
-    ws.column_dimensions['F'].width = 15
-    ws.column_dimensions['G'].width = 22
-    ws.column_dimensions['H'].width = 18
-    
+        cell = ws.cell(row=4, column=col_idx, value=header)
+        cell.font = Font(name='Calibri', size=10, bold=True, color='FFFFFF')
+        cell.fill = PatternFill(start_color='003366', end_color='003366', fill_type='solid')
+        cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+        cell.border = border
+
+    # Data validations
+    ev_type_dv = DataValidation(
+        type='list',
+        formula1='"Config File,Screenshot,Report,Log File,Test Result,Policy Document,Contract,Diagram,Other"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(ev_type_dv)
+
+    ver_status_dv = DataValidation(
+        type='list',
+        formula1=f'"{CHECK} Verified,Pending,{XMARK} Not Verified"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(ver_status_dv)
+
+    # Row 5: SAMPLE ROW (F2F2F2 grey) — GS-ER-006: must start with "EV-"
+    sample_data = {
+        1: 'EV-001',
+        2: 'Backup Inventory',
+        3: 'Screenshot',
+        4: 'Veeam Backup & Replication dashboard showing successful backup jobs',
+        5: '/evidence/backup/veeam_dashboard_2026-01-10.png',
+        6: datetime.now().strftime('%d.%m.%Y'),
+        7: 'Backup Administrator',
+        8: f'{CHECK} Verified',
+    }
+    for col, value in sample_data.items():
+        cell = ws.cell(row=5, column=col, value=value)
+        cell.fill = PatternFill(start_color='F2F2F2', end_color='F2F2F2', fill_type='solid')
+        cell.border = border
+        cell.font = Font(name='Calibri', size=10)
+        cell.alignment = Alignment(
+            horizontal='center' if col == 1 else 'left',
+            vertical='center',
+            wrap_text=True
+        )
+    ev_type_dv.add(ws['C5'])
+    ver_status_dv.add(ws['H5'])
+
+    # Rows 6-105: EMPTY DATA ROWS (FFFFCC yellow, 100 rows per MAX-002 standard)
+    for data_row in range(6, 106):
+        for col in range(1, 9):
+            cell = ws.cell(row=data_row, column=col)
+            cell.fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+            cell.border = border
+            cell.alignment = Alignment(
+                horizontal='center' if col == 1 else 'left',
+                vertical='center',
+                wrap_text=True
+            )
+            cell.value = None
+        ev_type_dv.add(ws[f'C{data_row}'])
+        ver_status_dv.add(ws[f'H{data_row}'])
+
+    # Column widths and freeze (GS-ER-007)
+    for col, width in [('A', 15), ('B', 25), ('C', 22), ('D', 45), ('E', 45), ('F', 16), ('G', 22), ('H', 20)]:
+        ws.column_dimensions[col].width = width
     ws.freeze_panes = 'A5'
-    
+
     return ws
 
 # ============================================================================
 # WORKSHEET: APPROVAL SIGN-OFF
 # ============================================================================
 
-def create_approval_signoff(wb):
-    """Create Approval_Sign_Off worksheet with 3-level approval workflow"""
-    ws = wb.create_sheet(title="Approval_Sign_Off")
-    validations = create_base_validations(ws)
-    
-    # Header
+def create_approval_sheet(wb):
+    """Create Approval Sign-Off worksheet (Gold Standard)"""
+    ws = wb.create_sheet(title="Approval Sign-Off")
+    ws.sheet_view.showGridLines = False
+    thin = Side(style='thin')
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    # Row 1: TITLE BANNER (GS-AS-001/002/003: A1:E1 merge, "AND" not "&", height 35)
     ws.merge_cells('A1:E1')
-    ws['A1'] = 'ASSESSMENT APPROVAL & SIGN-OFF'
-    apply_style(ws['A1'], font=HEADER_FONT, fill=HEADER_FILL,
-                alignment=Alignment(horizontal='center', vertical='center'))
-    ws.row_dimensions[1].height = 30
-    
-    # Assessment Summary
-    row = 3
-    ws.merge_cells(f'A{row}:E{row}')
-    ws[f'A{row}'] = 'ASSESSMENT SUMMARY'
-    apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
-    
-    row += 1
-    summary_items = [
-        ('Assessment Document:', WORKBOOK_TITLE),
-        ('Assessment ID:', DOCUMENT_ID),
-        ('ISO 27001:2022 Control:', CONTROLS),
-        ('Assessment Period:', '[USER INPUT - e.g., Q1 2024]'),
-        ('Total Systems Assessed:', '=Summary!B5'),
-        ('Overall Backup Coverage:', '=Summary!B7'),
-        ('RPO Compliance Rate:', '=Summary!B15'),
-        ('3-2-1-1-0 Full Compliance Rate:', '=Summary!B27'),
-        ('Critical Gaps Identified:', '[USER INPUT - list critical gaps from findings]'),
-        ('Evidence Items Collected:', '=COUNTA(Evidence_Register!A5:A104)'),
-        ('Assessment Status:', '[SELECT FROM DROPDOWN]'),
+    ws['A1'] = 'ASSESSMENT APPROVAL AND SIGN-OFF'
+    ws['A1'].font = Font(name='Calibri', size=14, bold=True, color='FFFFFF')
+    ws['A1'].fill = PatternFill(start_color='003366', end_color='003366', fill_type='solid')
+    ws['A1'].alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+    ws.row_dimensions[1].height = 35
+    for col in range(1, 6):
+        ws.cell(row=1, column=col).border = border
+
+    # Row 2: CONTROL REFERENCE subtitle (DS-006)
+    ws.merge_cells('A2:E2')
+    ws['A2'] = f'{DOCUMENT_ID} | ISO/IEC 27001:2022 - Control A.5.30 (Information Backup)'
+    ws['A2'].font = Font(name='Calibri', size=10, italic=True, color='003366')
+    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
+    for col in range(1, 6):
+        ws.cell(row=2, column=col).border = border
+
+    # Row 3: ASSESSMENT SUMMARY banner
+    ws.merge_cells('A3:E3')
+    ws['A3'] = 'ASSESSMENT SUMMARY'
+    ws['A3'].font = Font(name='Calibri', size=11, bold=True, color='FFFFFF')
+    ws['A3'].fill = PatternFill(start_color='4472C4', end_color='4472C4', fill_type='solid')
+    ws['A3'].alignment = Alignment(horizontal='left', vertical='center')
+    for col in range(1, 6):
+        ws.cell(row=3, column=col).border = border
+
+    # Summary fields
+    summary_fields = [
+        ('Document:', f'{DOCUMENT_ID} - {WORKBOOK_TITLE}'),
+        ('Assessment Period:', ''),
+        ('Overall Backup Coverage:', "='Summary Dashboard'!B7"),
+        ('Assessment Status:', ''),
+        ('Assessed By:', ''),
     ]
-    
-    for label, value in summary_items:
+    row = 4
+    status_row_for_dv = None
+    for label, value in summary_fields:
+        editable = (value == '')
         ws[f'A{row}'] = label
-        apply_style(ws[f'A{row}'], font=BOLD_FONT)
+        ws[f'A{row}'].font = Font(name='Calibri', size=10, bold=True)
+        ws[f'A{row}'].border = border
         ws.merge_cells(f'B{row}:E{row}')
-        cell = ws[f'B{row}']
-        cell.value = value
-        
-        if 'USER INPUT' in str(value) or 'SELECT' in str(value):
-            apply_style(cell, fill=INPUT_FILL)
-        if 'DROPDOWN' in str(value):
-            validations['assessment_status'].add(cell)
+        ws[f'B{row}'] = value
+        for col in range(2, 6):
+            if editable:
+                ws.cell(row=row, column=col).fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+            ws.cell(row=row, column=col).border = border
+        if 'Assessment Status' in label:
+            status_row_for_dv = row
         if 'Coverage' in label or 'Rate' in label:
-            cell.number_format = '0.0%'
-        
+            ws[f'B{row}'].number_format = '0.0%'
         row += 1
-    
-    # Assessment Completed By
-    row += 2
-    ws.merge_cells(f'A{row}:E{row}')
-    ws[f'A{row}'] = 'LEVEL 1: ASSESSMENT COMPLETED BY'
-    apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
-    
-    row += 1
-    completion_fields = [
-        ('Name:', None),
-        ('Role/Title:', None),
-        ('Department:', None),
-        ('Email:', None),
-        ('Date Completed:', 'auto_date'),
-        ('Signature/Initials:', None),
-    ]
-    
-    for field, special in completion_fields:
-        ws[f'A{row}'] = field
-        apply_style(ws[f'A{row}'], font=BOLD_FONT)
-        ws.merge_cells(f'B{row}:E{row}')
-        cell = ws[f'B{row}']
-        apply_style(cell, fill=INPUT_FILL)
-        
-        if special == 'auto_date':
-            cell.value = '=TODAY()'
-            cell.number_format = 'DD.MM.YYYY'
-            cell.font = Font(italic=True, color='808080')
-        
-        row += 1
-    
-    # Reviewed By (ISO/Security Officer)
-    row += 2
-    ws.merge_cells(f'A{row}:E{row}')
-    ws[f'A{row}'] = 'LEVEL 2: REVIEWED BY (INFORMATION SECURITY OFFICER)'
-    apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
-    
-    row += 1
-    review_fields = [
-        ('Name:', None),
-        ('Review Date:', 'date'),
-        ('Review Notes:', 3),  # Multi-line (3 rows)
-        ('Recommendation:', 'recommendation_dropdown'),
-    ]
-    
-    for field, special in review_fields:
-        ws[f'A{row}'] = field
-        apply_style(ws[f'A{row}'], font=BOLD_FONT)
-        ws.merge_cells(f'B{row}:E{row}')
-        cell = ws[f'B{row}']
-        apply_style(cell, fill=INPUT_FILL)
-        
-        if special == 'recommendation_dropdown':
-            validations['recommendation'].add(cell)
-        elif special == 'date':
-            cell.number_format = 'DD.MM.YYYY'
-        elif isinstance(special, int):
-            ws.merge_cells(f'B{row}:E{row+special-1}')
-            cell.alignment = Alignment(vertical='top', wrap_text=True)
-            row += special - 1
-        
-        row += 1
-    
-    # Approved By (CISO)
-    row += 2
-    ws.merge_cells(f'A{row}:E{row}')
-    ws[f'A{row}'] = 'LEVEL 3: APPROVED BY (CISO / SECURITY DIRECTOR)'
-    apply_style(ws[f'A{row}'], font=HEADER_FONT, fill=HEADER_FILL,
-                alignment=Alignment(horizontal='center'))
-    
-    row += 1
-    approval_fields = [
-        ('Name:', None),
-        ('Approval Date:', 'date'),
-        ('Approval Decision:', 'approval_dropdown'),
-        ('Conditions/Notes:', 3),  # Multi-line
-    ]
-    
-    for field, special in approval_fields:
-        ws[f'A{row}'] = field
-        apply_style(ws[f'A{row}'], font=BOLD_FONT)
-        ws.merge_cells(f'B{row}:E{row}')
-        cell = ws[f'B{row}']
-        apply_style(cell, fill=INPUT_FILL)
-        
-        if special == 'approval_dropdown':
-            validations['approval_decision'].add(cell)
-        elif special == 'date':
-            cell.number_format = 'DD.MM.YYYY'
-        elif isinstance(special, int):
-            ws.merge_cells(f'B{row}:E{row+special-1}')
-            cell.alignment = Alignment(vertical='top', wrap_text=True)
-            row += special - 1
-        
-        row += 1
-    
-    # Next Review Details
-    row += 2
+
+    # Assessment Status dropdown
+    status_dv = DataValidation(
+        type='list',
+        formula1='"Draft,Final,Requires remediation,Re-assessment required"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(status_dv)
+    if status_row_for_dv:
+        status_dv.add(f'B{status_row_for_dv}')
+
+    row += 2  # Gap before first approver
+
+    def _create_approver_section(start_row, title, color):
+        """Create one approver section (GS-AS-009: Name/Title/Date/Signature/Comments order)"""
+        ws.merge_cells(f'A{start_row}:E{start_row}')
+        ws[f'A{start_row}'] = title
+        ws[f'A{start_row}'].font = Font(name='Calibri', size=11, bold=True, color='FFFFFF')
+        ws[f'A{start_row}'].fill = PatternFill(start_color=color, end_color=color, fill_type='solid')
+        ws[f'A{start_row}'].alignment = Alignment(horizontal='left', vertical='center')
+        for col in range(1, 6):
+            ws.cell(row=start_row, column=col).border = border
+        current_row = start_row + 1
+        for field in ['Name:', 'Title:', 'Date:', 'Signature:', 'Comments:']:
+            ws[f'A{current_row}'] = field
+            ws[f'A{current_row}'].font = Font(name='Calibri', size=10, bold=True)
+            ws[f'A{current_row}'].border = border
+            ws.merge_cells(f'B{current_row}:E{current_row}')
+            for col in range(2, 6):
+                ws.cell(row=current_row, column=col).fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+                ws.cell(row=current_row, column=col).border = border
+            current_row += 1
+        return current_row + 1
+
+    row = _create_approver_section(row, 'COMPLETED BY (ASSESSOR)', '4472C4')
+    row = _create_approver_section(row, 'REVIEWED BY (INFORMATION SECURITY OFFICER)', '4472C4')
+    row = _create_approver_section(row, 'APPROVED BY (CISO)', '003366')
+
+    # FINAL DECISION (GS-AS-004)
+    ws[f'A{row}'] = 'FINAL DECISION:'
+    ws[f'A{row}'].font = Font(name='Calibri', size=11, bold=True)
+    ws[f'A{row}'].border = border
+    ws.merge_cells(f'B{row}:E{row}')
+    for col in range(2, 6):
+        ws.cell(row=row, column=col).fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+        ws.cell(row=row, column=col).border = border
+    decision_dv = DataValidation(
+        type='list',
+        formula1='"Approved,Approved with Conditions,Rejected,Deferred"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(decision_dv)
+    decision_dv.add(f'B{row}')
+
+    # NEXT REVIEW DETAILS
+    row += 3
     ws.merge_cells(f'A{row}:E{row}')
     ws[f'A{row}'] = 'NEXT REVIEW DETAILS'
-    apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
-    
+    ws[f'A{row}'].font = Font(name='Calibri', size=11, bold=True, color='FFFFFF')
+    ws[f'A{row}'].fill = PatternFill(start_color='4472C4', end_color='4472C4', fill_type='solid')
+    ws[f'A{row}'].alignment = Alignment(horizontal='left', vertical='center')
+    for col in range(1, 6):
+        ws.cell(row=row, column=col).border = border
     row += 1
-    next_review_fields = [
-        ('Next Review Date (Quarterly):', 'auto_90'),
-        ('Review Responsible:', None),
-        ('Special Considerations:', None),
-    ]
-    
-    for field, special in next_review_fields:
-        ws[f'A{row}'] = field
-        apply_style(ws[f'A{row}'], font=BOLD_FONT)
+    for label in ['Next Review Date:', 'Review Responsible:', 'Special Considerations:']:
+        ws[f'A{row}'] = label
+        ws[f'A{row}'].font = Font(name='Calibri', size=10, bold=True)
+        ws[f'A{row}'].border = border
         ws.merge_cells(f'B{row}:E{row}')
-        cell = ws[f'B{row}']
-        apply_style(cell, fill=INPUT_FILL)
-        
-        if special == 'auto_90':
-            cell.value = '=TODAY()+90'
-            cell.number_format = 'DD.MM.YYYY'
-            cell.font = Font(italic=True, color='808080')
-        
+        for col in range(2, 6):
+            ws.cell(row=row, column=col).fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+            ws.cell(row=row, column=col).border = border
         row += 1
-    
-    # Approval Workflow Notes
-    row += 2
-    ws.merge_cells(f'A{row}:E{row}')
-    ws[f'A{row}'] = 'APPROVAL WORKFLOW REQUIREMENTS'
-    apply_style(ws[f'A{row}'], font=SUBHEADER_FONT, fill=SUBHEADER_FILL,
-                alignment=Alignment(horizontal='center'))
-    
-    row += 1
-    workflow_notes = [
-        f'{BULLET} All 3 approval levels must be completed for final approval',
-        f'{BULLET} Minimum 5 evidence items must be documented in Evidence_Register',
-        f'{BULLET} Assessment status must be "Final" before CISO approval',
-        f'{BULLET} If "Requires Remediation", re-assessment required after gap closure',
-        f'{BULLET} Quarterly re-assessment recommended for continuous compliance',
-    ]
-    
-    for note in workflow_notes:
-        ws[f'A{row}'] = note
-        ws[f'A{row}'].font = Font(name='Calibri', size=9, italic=True)
-        row += 1
-    
-    # Column widths
+
+    # Column widths and freeze
     ws.column_dimensions['A'].width = 32
-    for col in ['B', 'C', 'D', 'E']:
-        ws.column_dimensions[col].width = 22
-    
+    ws.column_dimensions['B'].width = 25
+    ws.column_dimensions['C'].width = 20
+    ws.column_dimensions['D'].width = 20
+    ws.column_dimensions['E'].width = 20
     ws.freeze_panes = 'A3'
-    
+
     return ws
 
 # ============================================================================
 # MAIN EXECUTION
 # ============================================================================
 
-def main():
-    """Generate complete Backup Inventory & Coverage assessment workbook"""
+def finalize_validations(wb):
+    """Ensure all data validations are properly finalised for all worksheets."""
+    for ws in wb.worksheets:
+        ws.data_validations.dataValidation = [
+            dv for dv in list(ws.data_validations.dataValidation)
+            if dv.sqref
+        ]
+
+
+def create_workbook(output_path):
+    """Generate the complete assessment workbook."""
+    # Create workbook
+    logger.info("Creating workbook structure...")
+    wb = Workbook()
+    wb.properties.title = f"{DOCUMENT_ID} — {WORKBOOK_NAME}"
+    wb.properties.creator = "ISMS Core Contributors"
+    wb.properties.description = f"ISMS Implementation Workbook — {DOCUMENT_ID}"
+    wb.properties.subject = f"ISO/IEC 27001:2022 — Control {CONTROL_ID}: {CONTROL_NAME}"
+    wb.remove(wb.active)  # Remove default sheet
     
+    # Create all worksheets in order
+    logger.info("\n  [1/7] Creating Instructions & Legend...")
+    create_instructions_sheet(wb.create_sheet())
+    logger.info("  ✅ Instructions complete")
+
+    logger.info("  [2/7] Creating Backup_Inventory...")
+    create_backup_inventory_sheet(wb)
+    logger.info("  ✅ Backup inventory complete (110 rows: 10 examples + 100 data entry)")
+    
+    logger.info("  [3/7] Creating RPO_Compliance...")
+    create_rpo_compliance_sheet(wb)
+    logger.info("  ✅ RPO compliance complete (110 rows with auto-formulas)")
+    
+    logger.info("  [4/7] Creating 3-2-1-1-0_Compliance...")
+    create_3_2_1_1_0_sheet(wb)
+    logger.info("  ✅ 3-2-1-1-0 rule compliance complete (110 rows with scoring)")
+    
+    logger.info("  [5/7] Creating Evidence_Register...")
+    create_evidence_register(wb)
+    logger.info("  ✅ Evidence register complete (100 evidence rows, 8 examples)")
+    
+    logger.info("  [6/7] Creating Summary Dashboard...")
+    create_summary_dashboard_sheet(wb)
+    logger.info("  ✅ Summary dashboard complete")
+
+    logger.info("  [7/7] Creating Approval_Sign_Off...")
+    create_approval_sheet(wb)
+    logger.info("  ✅ Approval workflow complete (3-level sign-off: Assessor → ISO → CISO)")
+    
+    for ws in wb.worksheets:
+        ws.sheet_view.showGridLines = False
+
+    # Save workbook
+    logger.info(f"\nSaving workbook: {output_path.name}...")
+    finalize_validations(wb)
+    wb.save(output_path)
+    logger.info("{CHECK} Workbook saved successfully!")
+    
+    # Summary
     logger.info(f"\n{'='*70}")
-    logger.info(f"  ISMS BC/DR Assessment - {WORKBOOK_TITLE}")
-    logger.info(f"  Control: {CONTROLS}")
-    logger.info(f"  Version: {VERSION}")
+    logger.info("WORKBOOK GENERATED SUCCESSFULLY")
+    logger.info(f"{'='*70}")
+    logger.info(f"Filename: {output_path.name}")
+    logger.info(f"Worksheets: {len(wb.sheetnames)}")
+    logger.info("\nWorksheet Details:")
+    logger.info("  • Instructions & Legend (comprehensive usage guide)")
+    logger.info("  • Summary (executive dashboard with all metrics)")
+    logger.info("  • Backup_Inventory (110 rows: 10 examples + 100 data entry)")
+    logger.info("  • RPO_Compliance (110 rows with automatic compliance formulas)")
+    logger.info("  • 3-2-1-1-0_Compliance (110 rows with automatic scoring)")
+    logger.info("  • Evidence_Register (100 evidence entries, 8 examples)")
+    logger.info("  • Approval_Sign_Off (3-level workflow + next review tracking)")
+    logger.info(f"\n{'='*70}")
+    logger.info("{CHECK} AUDIT-READY FEATURES:")
+    logger.info("  • Evidence tracking (minimum 5 items required)")
+    logger.info("  • 3-level approval workflow (Assessor → ISO → CISO)")
+    logger.info("  • Comprehensive data validations (12 dropdown types)")
+    logger.info("  • Auto-calculated compliance metrics")
+    logger.error("  • Exception handling with graceful errors")
     logger.info(f"{'='*70}\n")
     
+def main():
     try:
-        # Create workbook
-        logger.info("Creating workbook structure...")
-        wb = Workbook()
-        wb.remove(wb.active)  # Remove default sheet
-        
-        # Create all worksheets in order
-        logger.info("\n  [1/7] Creating Instructions & Legend...")
-        create_instructions_sheet(wb)
-        logger.info("  ✅ Instructions complete")
-        
-        logger.info("  [2/7] Creating Summary Dashboard...")
-        create_summary_sheet(wb)
-        logger.info("  ✅ Summary dashboard complete")
-        
-        logger.info("  [3/7] Creating Backup_Inventory...")
-        create_backup_inventory_sheet(wb)
-        logger.info("  ✅ Backup inventory complete (110 rows: 10 examples + 100 data entry)")
-        
-        logger.info("  [4/7] Creating RPO_Compliance...")
-        create_rpo_compliance_sheet(wb)
-        logger.info("  ✅ RPO compliance complete (110 rows with auto-formulas)")
-        
-        logger.info("  [5/7] Creating 3-2-1-1-0_Compliance...")
-        create_3_2_1_1_0_sheet(wb)
-        logger.info("  ✅ 3-2-1-1-0 rule compliance complete (110 rows with scoring)")
-        
-        logger.info("  [6/7] Creating Evidence_Register...")
-        create_evidence_register(wb)
-        logger.info("  ✅ Evidence register complete (100 evidence rows, 8 examples)")
-        
-        logger.info("  [7/7] Creating Approval_Sign_Off...")
-        create_approval_signoff(wb)
-        logger.info("  ✅ Approval workflow complete (3-level sign-off: Assessor → ISO → CISO)")
-        
-        # Save workbook
-        filename = f"ISMS-IMP-A.5.30.S1_Backup_Inventory_{GENERATED_TIMESTAMP}.xlsx"
-        logger.info(f"\nSaving workbook: {filename}...")
-        wb.save(filename)
-        logger.info("{CHECK} Workbook saved successfully!")
-        
-        # Summary
-        logger.info(f"\n{'='*70}")
-        logger.info("WORKBOOK GENERATED SUCCESSFULLY")
-        logger.info(f"{'='*70}")
-        logger.info(f"Filename: {filename}")
-        logger.info(f"Worksheets: {len(wb.sheetnames)}")
-        logger.info("\nWorksheet Details:")
-        logger.info("  • Instructions & Legend (comprehensive usage guide)")
-        logger.info("  • Summary (executive dashboard with all metrics)")
-        logger.info("  • Backup_Inventory (110 rows: 10 examples + 100 data entry)")
-        logger.info("  • RPO_Compliance (110 rows with automatic compliance formulas)")
-        logger.info("  • 3-2-1-1-0_Compliance (110 rows with automatic scoring)")
-        logger.info("  • Evidence_Register (100 evidence entries, 8 examples)")
-        logger.info("  • Approval_Sign_Off (3-level workflow + next review tracking)")
-        logger.info(f"\n{'='*70}")
-        logger.info("{CHECK} AUDIT-READY FEATURES:")
-        logger.info("  • Evidence tracking (minimum 5 items required)")
-        logger.info("  • 3-level approval workflow (Assessor → ISO → CISO)")
-        logger.info("  • Comprehensive data validations (12 dropdown types)")
-        logger.info("  • Auto-calculated compliance metrics")
-        logger.error("  • Exception handling with graceful errors")
-        logger.info(f"{'='*70}\n")
-        
+        create_workbook(_wkbk_dir / OUTPUT_FILENAME)
     except Exception as e:
         logger.info(f"\n{'='*70}")
         logger.error("{XMARK} ERROR: Failed to generate workbook")
@@ -1541,11 +1327,12 @@ def main():
         logger.info(f"{'='*70}\n")
         sys.exit(1)
 
+
 if __name__ == "__main__":
     main()
 # =============================================================================
-# QA_VERIFIED: 2026-01-31
-# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
-# QA_TOOL: Claude Code Standardization
-# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# QA_VERIFIED: 2026-03-01
+# QA_STATUS: PASSED
+# QA_TOOL: Claude Code Production Scripts QA Methodology
+# CHANGES: Full QA for Production Launch (see GitHub Repository for details)
 # =============================================================================

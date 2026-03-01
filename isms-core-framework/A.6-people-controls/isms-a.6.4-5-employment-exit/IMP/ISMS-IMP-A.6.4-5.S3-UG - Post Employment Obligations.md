@@ -5,24 +5,59 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Post Employment Obligations |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.4-5.S3-UG |
-| **Title** | Post-Employment Obligations |
-| **Control Reference** | ISO/IEC 27001:2022 A.6.4, A.6.5 |
-| **Control Name** | Disciplinary Process / Responsibilities After Termination |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.6.4-5 (Employment Exit) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.4, A.6.5) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Chief Human Resources Officer (CHRO) |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.4-5 (Employment Exit)
+- ISMS-IMP-A.6.4-5.S1 (Disciplinary Process Assessment)
+- ISMS-IMP-A.6.4-5.S2 (Employment Exit Assessment)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.6.4-5.S3-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Obligation Types | Define categories of post-employment security obligations |
+| 3 | Former Personnel | Register of all former personnel with active obligations |
+| 4 | Active Obligations | Track status of all active post-employment obligations |
+| 5 | Expiration Tracker | Monitor upcoming obligation expirations and renewals |
+| 6 | Acknowledgement Log | Record acknowledgement of obligations by former personnel |
+| 7 | Enforcement Register | Track enforcement actions for obligation breaches |
+| 8 | Evidence Register | Store and reference evidence of obligation management |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -791,7 +826,7 @@ EVD-A.6.4-5.3_[EvidenceType]_[YYYYMMDD].[ext]
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"An obligation does not end at the door."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

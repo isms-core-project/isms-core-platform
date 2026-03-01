@@ -8,25 +8,50 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Training Program Design |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.3.2-UG |
+| **Related Policy** | ISMS-POL-A.6.3 (Awareness and Training) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.3 (Information Security Awareness, Education and Training) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Training Curriculum Framework and Content Management |
-| **Related Policy** | ISMS-POL-A.6.3, Section 2.3-2.4 (Training Requirements), Section 2.5 (Delivery Requirements) |
-| **Purpose** | Define training curriculum, content requirements, delivery methods, and quality standards for security awareness program |
-| **Target Audience** | Training Program Managers, Instructional Designers, Information Security Officers, HR Learning & Development |
-| **Assessment Type** | Program Design & Content Management |
-| **Review Cycle** | Annual (minimum) + upon significant policy or threat changes |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | Initial | Initial specification for Training Program Design workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.3 (Awareness and Training)
+- ISMS-IMP-A.6.3.1 (Training Needs Assessment)
+- ISMS-IMP-A.6.3.3 (Training Delivery and Tracking)
 
 ---
 
-**Audience:** Training Program Managers, L&D Specialists, Information Security Officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Curriculum Catalog | Catalogue all training modules and curriculum content |
+| 3 | Content Specifications | Define content requirements, objectives, and standards |
+| 4 | Delivery Standards | Establish delivery methods and quality standards |
+| 5 | Assessment Design | Design assessments to test training effectiveness |
+| 6 | Content Lifecycle | Track content review, update, and retirement cycles |
+| 7 | Gap Analysis | Identify curriculum gaps against ISO 27001:2022 requirements |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -34,7 +59,7 @@
 
 ## What This Assessment Measures
 
-This assessment documents [Organization]'s security training curriculum design, content specifications, and delivery standards to ensure training programs meet policy requirements and effectively build security competencies.
+This assessment documents [Organisation]'s security training curriculum design, content specifications, and delivery standards to ensure training programs meet policy requirements and effectively build security competencies.
 
 **Scope:** 5 assessment domains covering training program design:
 1. **Curriculum Framework** - Overall training architecture and structure
@@ -54,14 +79,14 @@ This assessment documents [Organization]'s security training curriculum design, 
 ## Why This Matters
 
 **ISO 27002:2022 Guidance for A.6.3:**
-Training programs should be designed to cover organizational policies, procedures, and guidance relevant to job functions. Content should be practical, regularly updated, and include real-world examples.
+Training programs should be designed to cover organisational policies, procedures, and guidance relevant to job functions. Content should be practical, regularly updated, and include real-world examples.
 
 **Business Impact:**
 - **Training Effectiveness:** Well-designed programs achieve better behavioral outcomes
 - **Resource Efficiency:** Structured curriculum avoids duplication and gaps
 - **Regulatory Compliance:** Documented program design demonstrates due diligence
 - **Audit Readiness:** Clear specifications support audit evidence requirements
-- **Scalability:** Standardized design enables consistent delivery across organization
+- **Scalability:** Standardized design enables consistent delivery across organisation
 
 ## Who Should Complete This Assessment
 
@@ -107,7 +132,7 @@ This assessment implements **ISMS-POL-A.6.3, Sections 2.3-2.5** which establish:
 
 ## Step 1: Define Curriculum Architecture (Sheet 2)
 
-**Objective:** Create master catalog of all training modules required by the organization.
+**Objective:** Create master catalog of all training modules required by the organisation.
 
 **Process:**
 
@@ -120,7 +145,7 @@ This assessment implements **ISMS-POL-A.6.3, Sections 2.3-2.5** which establish:
    - **Module_ID:** Unique identifier (e.g., MOD-T1-001)
    - **Module_Title:** Clear, descriptive name
    - **Training_Tier:** Which audience tier this serves (from ISMS-IMP-A.6.3.1)
-   - **Category:** Grouping for curriculum organization
+   - **Category:** Grouping for curriculum organisation
    - **Mandatory/Optional:** Is completion required or elective?
    - **Duration:** Estimated time to complete (minutes)
    - **Delivery_Method:** How content will be delivered
@@ -146,7 +171,7 @@ The workbook includes baseline modules from POL-A.6.3. Review, modify, and suppl
 
    **Learning Objectives:**
    - Write 3-5 measurable objectives per module
-   - Use action verbs: "identify," "demonstrate," "apply," "analyze"
+   - Use action verbs: "identify," "demonstrate," "apply," "analyse"
    - Align with policy intent and risk reduction goals
 
    **Topics Covered:**
@@ -180,7 +205,7 @@ The workbook includes baseline modules from POL-A.6.3. Review, modify, and suppl
 
 1. **Review Pre-Populated Standards:**
    - eLearning, Instructor-Led, Workshop, Simulation, Briefing, Microlearning
-   - Modify to match organizational capabilities
+   - Modify to match organisational capabilities
 
 2. **For Each Delivery Method, Confirm:**
    - **Use Cases:** When this method is appropriate
@@ -189,7 +214,7 @@ The workbook includes baseline modules from POL-A.6.3. Review, modify, and suppl
    - **Completion Tracking:** How completion is recorded
    - **Quality Criteria:** Metrics for success
 
-3. **Add Organization-Specific Methods:**
+3. **Add Organisation-Specific Methods:**
    - Blended approaches
    - Mentoring/coaching programs
    - On-the-job training elements
@@ -202,7 +227,7 @@ The workbook includes baseline modules from POL-A.6.3. Review, modify, and suppl
 
 1. **Review Pre-Populated Standards:**
    - Quiz, Practical, Simulation, Scenario, Tabletop
-   - Ensure alignment with organizational policies
+   - Ensure alignment with organisational policies
 
 2. **Customize Thresholds:**
    - Pass thresholds appropriate for risk level
@@ -229,7 +254,7 @@ The workbook includes baseline modules from POL-A.6.3. Review, modify, and suppl
    - Significant security incidents
    - Regulatory changes
    - New threat landscape (emerging attack vectors)
-   - Organizational changes (new systems, processes)
+   - Organisational changes (new systems, processes)
 
 3. **Assign Ownership:**
    - Content owner responsible for updates
@@ -333,7 +358,7 @@ The workbook includes baseline modules from POL-A.6.3. Review, modify, and suppl
 
 **The Problem:** Creating curriculum without reference to ISMS-IMP-A.6.3.1 (Training Needs Assessment) results in misaligned content.
 
-**Why It Matters:** Curriculum won't serve actual organizational needs. Resources wasted on unnecessary content. Required competencies may be missed.
+**Why It Matters:** Curriculum won't serve actual organisational needs. Resources wasted on unnecessary content. Required competencies may be missed.
 
 **The Fix:**
 - Always start with completed Training Needs Assessment
@@ -543,7 +568,7 @@ The workbook includes baseline modules from POL-A.6.3. Review, modify, and suppl
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Tell me and I forget, teach me and I may remember, involve me and I learn."*
+— Chinese proverb
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

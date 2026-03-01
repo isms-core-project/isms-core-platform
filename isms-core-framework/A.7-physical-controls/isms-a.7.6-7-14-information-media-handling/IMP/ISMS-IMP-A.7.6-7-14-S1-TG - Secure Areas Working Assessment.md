@@ -8,165 +8,153 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Secure Areas Working Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.6-7-14-S1-TG |
+| **Related Policy** | ISMS-POL-A.7.6-7-14-S1 (Information Media Handling) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.6 (Working in Secure Areas) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Secure Areas - Working Procedures, Access Controls, Personnel Conduct |
-| **Related Policy** | ISMS-POL-A.7.6-7-14, Section 2.1 (Working in Secure Areas) |
-| **Purpose** | Document secure area definitions, assess working procedures against policy requirements, track personnel compliance and third-party access |
-| **Target Audience** | Facilities Management, Security Operations, IT Operations, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Procedural |
-| **Review Cycle** | Quarterly or After Major Facility Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Secure Areas Working assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.6-7-14-S1 (Information Media Handling)
+- ISMS-IMP-A.7.6-7-14-S2 (Clear Desk Screen Compliance)
+- ISMS-IMP-A.7.6-7-14-S3 (Equipment Disposal Assessment)
 
 ---
+
 # Technical Specification
-
-
-> Auto-generated from `generate_a76_1_secure_areas.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.7.6.S1` |
-| **Output Filename** | `ISMS-IMP-A.7.6.S1_Secure_Areas_Working_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Secure Areas Working Assessment |
-| **Total Sheets** | 16 (16 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #0000FF | 0000FF | Custom |
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #808080 | 808080 | Gray (Disabled) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Secure Area Register
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a76_1_secure_areas.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Working Procedures
+**Document ID:** `ISMS-IMP-A.7.6.S1`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Third-Party Access
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Secure Area Register |
+| 3 | Working Procedures |
+| 4 | Third-Party Access |
+| 5 | Incidents |
+| 6 | Evidence Register |
+| 7 | Summary Dashboard |
+| 8 | Approval Sign-Off |
 
-## Sheet 5: Incidents
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Summary Dashboard
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Secure Area ID |
+| 2 | Secure Area Name |
+| 3 | Location |
+| 4 | Classification |
+| 5 | Access Control Type |
+| 6 | Authorised Personnel |
+| 7 | Last Access Review |
+| 8 | Emergency Procedures |
+| 9 | Recording Controls |
+| 10 | Unsupervised Working |
+| 11 | Status |
+| 12 | Notes |
+| 13 | Requirement ID |
+| 14 | Requirement Description |
+| 15 | Implementation Status |
+| 16 | Evidence |
+| 17 | Access Period |
+| 18 | Secure Area |
+| 19 | Visitor/Contractor Count |
+| 20 | Escort Compliance % |
+| 21 | NDA Status |
+| 22 | Time Limit Compliance |
+| 23 | Equipment Inspected |
+| 24 | Incident ID |
+| 25 | Date |
+| 26 | Incident Type |
+| 27 | Severity |
+| 28 | Description |
+| 29 | Response Time (min) |
+| 30 | Resolution Status |
+| 31 | Corrective Action |
+| 32 | Assessment Area |
+| 33 | Total Items |
+| 34 | Compliant |
+| 35 | Partial |
+| 36 | Non-Compliant |
+| 37 | N/A |
+| 38 | Compliance % |
+| 39 | Evidence ID |
+| 40 | Evidence Type |
+| 41 | Location/Path |
+| 42 | Date Collected |
+| 43 | Collected By |
+| 44 | Verification Status |
 
-## Sheet 7: Evidence Register
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Approval Sign-Off
+```
+Tier 1 - Critical, Tier 2 - Standard, Badge + PIN, Biometric, Badge Only
+Mantrap, Key Lock, Yes, No, Prohibited, Authorised Only, No Restriction
+Restricted, Allowed, Implemented, Partial, Not Implemented, N/A
+Unauthorised Access, Procedure Violation, Tailgating
+Equipment Policy Violation, Recording Violation, Other, Critical, High, Medium
+Low, Resolved, In Progress, Escalated, Approved, Approved with Conditions
+Rejected, Deferred, Policy document, Procedure document, Screenshot
+Photograph, Audit report, Training record, Configuration file, Verified
+Pending verification, Not verified, Requires update, Draft, Final
+Requires remediation, Re-assessment required
+```
 
----
-
-## Sheet 9: Instructions
-
----
-
-## Sheet 10: Secure_Area_Register
-
-**Data Rows:** 100 (rows 4–103)
-
----
-
-## Sheet 11: Working_Procedures
-
-**Data Rows:** 6 (rows 1–6)
-
----
-
-## Sheet 12: Third_Party_Access
-
-**Data Rows:** 100 (rows 4–103)
-
----
-
-## Sheet 13: Incidents
-
-**Data Rows:** 100 (rows 4–103)
-
----
-
-## Sheet 14: Summary_Dashboard
-
-**Data Rows:** 100 (rows 4–103)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Metric |
-| B | Total |
-| C | {...} Compliant |
-| D | {...} Partial |
-| E | {...} Non-Compliant |
-| F | N/A |
-| G | % Compliant |
-
----
-
-## Sheet 15: Evidence_Register
-
-**Data Rows:** 100 (rows 5–104)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Evidence Type |
-| C | Description |
-| D | Related Sheet/Item |
-| E | File Name |
-| F | File Location |
-| G | Collection Date |
-| H | Collected By |
-| I | Retention Period |
-| J | Notes |
-
----
-
-## Sheet 16: Approval_Signoff
-
-**Data Rows:** 3 (rows 2–4)
+**Extracted:** 8 sheets, 44 columns, 50 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 
 *"Security is not a product, but a process."*
 — Bruce Schneier
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

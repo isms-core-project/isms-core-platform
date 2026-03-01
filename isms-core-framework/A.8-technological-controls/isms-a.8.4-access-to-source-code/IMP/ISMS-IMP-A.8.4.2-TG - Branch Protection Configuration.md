@@ -8,213 +8,168 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Branch Protection Configuration |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.4.2-TG |
+| **Related Policy** | ISMS-POL-A.8.4 (Access to Source Code) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.4 (Access to Source Code) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Branch Protection and Code Review Compliance |
-| **Related Policy** | ISMS-POL-A.8.4, Section 2.4 (Branch Protection and Code Review) |
-| **Purpose** | Document and assess branch protection configurations across all repository platforms to enforce code review and prevent unauthorized code changes |
-| **Target Audience** | Repository Owners, DevOps Engineers, Security Team, Development Team Leads, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Branch Protection assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.4 (Access to Source Code)
+- ISMS-IMP-A.8.4.1 (Repository Access Control Implementation)
 
 ---
+
 # Technical Specification
-**Audience:** Python/Excel Script Maintainers, Assessment Workbook Developers
-
-
-> Auto-generated from `generate_a84_2_branch_protection.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.4.2` |
-| **Output Filename** | `ISMS-IMP-A.8.4.2_Branch_Protection_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Branch Protection Assessment |
-| **Total Sheets** | 19 (19 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Repository_Branch_Inventory
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a84_2_branch_protection.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Branch_Protection_Details
+**Document ID:** `ISMS-IMP-A.8.4.2`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Pull_Request_Configuration
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Repository Branch Inventory |
+| 3 | Branch Protection Details |
+| 4 | Pull Request Configuration |
+| 5 | Status Check Verification |
+| 6 | Signed Commits Audit |
+| 7 | Exception Management |
+| 8 | Gap Analysis |
+| 9 | Evidence Register |
+| 10 | Summary Dashboard |
+| 11 | Approval Sign-Off |
 
-## Sheet 5: Status_Check_Verification
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Signed_Commits_Audit
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | REPOSITORY BRANCH INVENTORY |
+| 2 | BRANCH PROTECTION DETAILS |
+| 3 | PULL REQUEST CONFIGURATION |
+| 4 | STATUS CHECK VERIFICATION |
+| 5 | SIGNED COMMITS AUDIT |
+| 6 | EXCEPTION MANAGEMENT |
+| 7 | GAP ANALYSIS |
+| 8 | Repository Name |
+| 9 | Repository Platform |
+| 10 | Repository Classification |
+| 11 | Branch Name |
+| 12 | Branch Type |
+| 13 | Protection Required |
+| 14 | Protection Configured |
+| 15 | Status |
+| 16 | Direct Commits Blocked |
+| 17 | Pull Request Required |
+| 18 | Required Approvals |
+| 19 | Dismiss Stale Reviews |
+| 20 | Code Owner Review |
+| 21 | Status Checks Required |
+| 22 | Status Check List |
+| 23 | Signed Commits Required |
+| 24 | Linear History |
+| 25 | Compliance Score (%) |
+| 26 | Minimum Reviewers |
+| 27 | Dismiss Stale Approvals |
+| 28 | Restrict Dismiss |
+| 29 | Conversation Resolution |
+| 30 | Self-Approval Blocked |
+| 31 | Compliance Status |
+| 32 | Status Checks Configured |
+| 33 | Build Check |
+| 34 | Test Check |
+| 35 | Lint Check |
+| 36 | Security Check |
+| 37 | All Checks Must Pass |
+| 38 | Up-to-Date Before Merge |
+| 39 | % Commits Signed (30 days) |
+| 40 | GPG Infrastructure |
+| 41 | Developer Training |
+| 42 | Exception ID |
+| 43 | Repository/Branch |
+| 44 | Exception Reason |
+| 45 | Granted By |
+| 46 | Grant Date |
+| 47 | Expiration Date |
+| 48 | Review Date |
+| 49 | Gap ID |
+| 50 | Gap Description |
+| 51 | Affected Repositories |
+| 52 | Remediation Plan |
+| 53 | Responsible Party |
+| 54 | Target Date |
+| 55 | Notes |
+| 56 | Evidence ID |
+| 57 | Assessment Area |
+| 58 | Evidence Type |
+| 59 | Description |
+| 60 | Location/Path |
+| 61 | Date Collected |
+| 62 | Collected By |
+| 63 | Verification Status |
 
-## Sheet 7: Exception_Management
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Compliance_Scoring
+```
+GitHub, GitLab, Bitbucket, Azure DevOps, Self-Hosted, Other, Production Code
+Internal Tools, Open Source, Archived, Main, Release, Development, Feature
+Hotfix, Active, Expired, Revoked, Open, In Progress, Closed, Deferred
+Configuration file, Screenshot, Network scan, Documentation, Vendor spec
+Certificate inventory, Audit log, Compliance report, Verified
+Pending verification, Not verified, Requires update, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected
+```
 
----
-
-## Sheet 9: Gap_Analysis
-
----
-
-## Sheet 10: Evidence_Register
-
----
-
-## Sheet 11: Approval_Sign_Off
-
----
-
-## Sheet 12: Base_Validations
-
----
-
-## Sheet 13: Instructions
-
----
-
-## Sheet 14: Branch_Inventory
-
-**Data Rows:** 496 (rows 5–500)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Repository Name |
-| B | Repository Platform |
-| C | Repository Classification |
-| D | Branch Name |
-| E | Branch Type |
-| F | Protection Required |
-| G | Protection Configured |
-| H | Status |
-
----
-
-## Sheet 15: Protection_Details
-
-**Data Rows:** 496 (rows 5–500)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Repository Name |
-| B | Branch Name |
-| C | Direct Commits Blocked |
-| D | Pull Request Required |
-| E | Required Approvals |
-| F | Dismiss Stale Reviews |
-| G | Code Owner Review |
-| H | Status Checks Required |
-| I | Status Check List |
-| J | Signed Commits Required |
-| K | Linear History |
-| L | Compliance Score (%) |
-| M | Status |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| LN | `=((COUNTIF(C{row}:K{row},` |  |
-
----
-
-## Sheet 16: Pr_Configuration
-
-**Data Rows:** 496 (rows 5–500)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Repository Name |
-| B | Minimum Reviewers |
-| C | Code Owner Review |
-| D | Dismiss Stale Approvals |
-| E | Restrict Dismiss |
-| F | Conversation Resolution |
-| G | Self-Approval Blocked |
-| H | Compliance Status |
-
----
-
-## Sheet 17: Status_Check
-
-**Data Rows:** 496 (rows 5–500)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Repository Name |
-| B | Status Checks Configured |
-| C | Build Check |
-| D | Test Check |
-| E | Lint Check |
-| F | Security Check |
-| G | All Checks Must Pass |
-| H | Up-to-Date Before Merge |
-| I | Compliance Status |
-
----
-
-## Sheet 18: Signed_Commits
-
-**Data Rows:** 496 (rows 5–500)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Repository Name |
-| B | Signed Commits Required |
-| C | % Commits Signed (30 days) |
-| D | GPG Infrastructure |
-| E | Developer Training |
-| F | Compliance Status |
-
----
-
-## Sheet 19: Approval_Signoff
+**Extracted:** 11 sheets, 63 columns, 41 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

@@ -8,26 +8,59 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Vendor Due Diligence & Contracts |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.23.S2-UG |
+| **Related Policy** | ISMS-POL-A.5.23 (Cloud Services) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.23 (Information Security for Use of Cloud Services) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Vendor Due Diligence & Contracts |
-| **Related Policy** | ISMS-POL-A.5.19-23-S2 (Supplier Agreement Requirements), ISMS-POL-A.5.19-23-S5 (Cloud Services Security) |
-| **Purpose** | Assess vendor security posture, contract adequacy, SLA compliance, data sovereignty, audit rights, and jurisdictional risks for all cloud service providers |
-| **Target Audience** | Legal, Procurement, Security Teams, Compliance Officers, Risk Managers |
-| **Assessment Type** | Vendor Due Diligence & Contract Analysis |
-| **Review Cycle** | Quarterly (with annual comprehensive review) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial Excel workbook specification | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.23 (Cloud Services)
+- ISMS-IMP-A.5.23.S1 (Cloud Service Inventory & Classification)
+- ISMS-IMP-A.5.23.S3 (Secure Configuration & Deployment)
+- ISMS-IMP-A.5.23.S4 (Ongoing Governance & Risk Management)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.23.S2-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 10 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **2. Security Certifications** | Vendor security certifications and compliance status |
+| **3. Contract Terms** | Review of security clauses in cloud service contracts |
+| **4. SLA Performance** | Service level agreement performance tracking and compliance |
+| **5. Data Sovereignty** | Data residency, localisation, and sovereignty requirements |
+| **6. Forensics & Audit** | Forensic capability and audit rights assessment |
+| **7. Jurisdictional Risk** | Legal and regulatory risk by vendor jurisdiction |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -39,7 +72,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 #### What This Assessment Covers
 
-This assessment evaluates the **security and contractual posture** of ALL cloud service providers identified in your cloud service inventory (ISMS-IMP-A.5.23.1). This is where you verify that vendor claims match reality and that contracts protect [Organization]'s interests.
+This assessment evaluates the **security and contractual posture** of ALL cloud service providers identified in your cloud service inventory (ISMS-IMP-A.5.23.1). This is where you verify that vendor claims match reality and that contracts protect [Organisation]'s interests.
 
 **Core Principle:**
 
@@ -78,7 +111,7 @@ For EACH cloud service provider:
 - Security requirements in agreements
 - Data processing agreements (DPA) status
 - Liability and indemnification terms
-- Subprocessor authorization and notification
+- Subprocessor authorisation and notification
 - Exit and data portability clauses
 
 **SLA Compliance (Sheet 4):**
@@ -609,7 +642,7 @@ For each vendor:
 
 **Template Email:**
 ```
-Subject: Security Certification Request - [Your Organization]
+Subject: Security Certification Request - [Your Organisation]
 
 Dear [Vendor Compliance Contact],
 
@@ -691,7 +724,7 @@ Thank you,
 
 ### Purpose
 
-Ensure contracts include required security clauses to protect [Organization]'s interests. This includes data processing agreements, liability terms, exit clauses, and subprocessor controls.
+Ensure contracts include required security clauses to protect [Organisation]'s interests. This includes data processing agreements, liability terms, exit clauses, and subprocessor controls.
 
 **Success Criterion:** All contracts include DPA, security requirements, audit rights, liability caps ≥€1M, and data portability clauses.
 
@@ -716,7 +749,7 @@ For each contract:
 Master Services Agreement (MSA)
     ├── Data Processing Agreement (DPA) - GDPR/FADP compliance
     ├── Service Level Agreement (SLA) - Availability commitments
-    ├── Security Exhibit - Technical/organizational measures
+    ├── Security Exhibit - Technical/organisational measures
     └── Order Forms / Statements of Work
 ```
 
@@ -909,7 +942,7 @@ Verify data storage and processing locations comply with regulatory requirements
 For each service:
 
 - Data storage location(s) - where data is stored at rest
-- Data processing location(s) - where data is computed/analyzed
+- Data processing location(s) - where data is computed/analysed
 - Cross-border transfers (if any)
 - Transfer mechanism (SCCs, BCRs, Adequacy Decision)
 - Encryption status (at-rest, in-transit, key management)
@@ -1310,7 +1343,7 @@ For each vendor:
 
 ### Evidence Repository Structure
 
-**Folder Organization:**
+**Folder Organisation:**
 ```
 /ISMS/Evidence/A.5.23.2/
     ├── Amazon_Web_Services/
@@ -1357,7 +1390,7 @@ For each vendor:
 - Timestamp/date visible (bottom right corner overlay OR system clock)
 - Service name visible
 - Relevant setting/configuration clearly shown
-- Your organization's account context visible (if applicable)
+- Your organisation's account context visible (if applicable)
 
 **Tools:**
 
@@ -1414,7 +1447,7 @@ For each vendor:
 |---------------|------------------|----------|
 | **ISO 27001** | Certificate number valid, accreditation body recognized, service in scope | Generic "management system" cert not covering cloud service |
 | **SOC 2** | Type II (not Type I), <18 months old, unqualified opinion | Type I, qualified opinion, or ancient report |
-| **Contracts** | Signed by authorized parties, dates valid, all annexes present | Unsigned draft, missing DPA, expired |
+| **Contracts** | Signed by authorised parties, dates valid, all annexes present | Unsigned draft, missing DPA, expired |
 | **SLA Data** | From YOUR monitoring (not vendor self-report), timestamp visible | "Vendor told us 99.9%" with no proof |
 | **Screenshots** | URL visible, timestamp clear, relevant setting shown | Cropped image, no context, unclear source |
 
@@ -1663,7 +1696,7 @@ For each vendor:
 - ☐ All contract terms reviewed and approved
 - ☐ DPAs adequate for data protection compliance
 - ☐ Liability and indemnification terms acceptable
-- ☐ Exit clauses protect organization interests
+- ☐ Exit clauses protect organisation interests
 
 **Security Review:**
 
@@ -1734,7 +1767,7 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 
 - ✅ All Confidential/Restricted services have DPA
 - ✅ Liability terms adequate for service criticality
-- ✅ Exit clauses protect organization
+- ✅ Exit clauses protect organisation
 - ✅ Subprocessor controls documented
 - ❌ Reject if: No DPA for personal data, inadequate liability, missing critical clauses
 
@@ -1941,7 +1974,7 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 | **DPA** | Data Processing Agreement - GDPR-required contract for processor relationships |
 | **Extended Columns (R+)** | Sheet-specific columns beyond the standard base columns |
 | **SCCs** | Standard Contractual Clauses - EU-approved contract templates for data transfers |
-| **SOC 2 Type II** | Service Organization Control audit report covering 12 months of operational effectiveness |
+| **SOC 2 Type II** | Service Organisation Control audit report covering 12 months of operational effectiveness |
 | **TIA** | Transfer Impact Assessment - Required for transfers to non-adequate countries (post-Schrems II) |
 | **US CLOUD Act** | Clarifying Lawful Overseas Use of Data Act - US law requiring US companies to provide data to US government, even if stored abroad |
 
@@ -2029,7 +2062,7 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 
 **Template 1: Certification Request**
 ```
-Subject: Security Certification Request - [Your Organization]
+Subject: Security Certification Request - [Your Organisation]
 
 Dear [Vendor Contact],
 
@@ -2039,7 +2072,7 @@ we require the following security documentation for [Service Name]:
 1. Current ISO 27001 certificate (with scope statement)
 2. Most recent SOC 2 Type II audit report (we will sign NDA if required)
 3. Summary of latest penetration testing results
-4. List of authorized subprocessors
+4. List of authorised subprocessors
 
 Please provide these documents by [Date + 10 business days].
 
@@ -2050,7 +2083,7 @@ Thank you for your cooperation.
 
 Best regards,
 [Name], [Title]
-[Organization]
+[Organisation]
 ```
 
 **Template 2: SLA Credit Request**
@@ -2105,7 +2138,7 @@ Thank you,
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Choose your partners as carefully as you choose your enemies."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

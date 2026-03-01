@@ -3,29 +3,54 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.7.10: Storage Media
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Media Lifecycle Tracking |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.10.3-UG |
+| **Related Policy** | ISMS-POL-A.7.10 (Storage Media) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.10 (Storage Media) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Media Lifecycle Management, Disposal & Re-use |
-| **Related Policy** | ISMS-POL-A.7.10, Section 2.5-2.6 (Disposal & Paper Documents) |
-| **Purpose** | Assess organisational compliance with storage media lifecycle management from acquisition through disposal, including secure destruction and re-use procedures |
-| **Target Audience** | IT Operations, Asset Management, Procurement, Facilities, Compliance Officers, Auditors |
-| **Assessment Type** | Lifecycle Process & Operational Compliance |
-| **Review Cycle** | Annual (minimum) or After Regulatory Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Media Lifecycle Tracking assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.10 (Storage Media)
+- ISMS-IMP-A.7.10.1 (Storage Media Inventory)
+- ISMS-IMP-A.7.10.2 (Media Handling Procedures)
 
 ---
 
-**Audience:** IT Operations, Asset Management, Procurement, Facilities Management, Compliance Officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Acquisition & Procurement | Track media acquisition and procurement processes |
+| 3 | Internal Re-use | Manage re-use of media between users and systems |
+| 4 | Disposal Methods | Document approved disposal methods per media type |
+| 5 | Third-Party Disposal | Track third-party disposal engagements and certificates |
+| 6 | Paper Document Lifecycle | Manage the lifecycle of classified paper documents |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -215,7 +240,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - End-of-life considerations
 - Encryption capabilities verified
 
-**Purchase Authorization:**
+**Purchase Authorisation:**
 - Approval thresholds defined
 - Budget allocation verified
 - Standard vs. non-standard requests
@@ -835,7 +860,7 @@ Before submitting assessment for approval, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Every byte has a lifecycle; manage it from creation to destruction."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

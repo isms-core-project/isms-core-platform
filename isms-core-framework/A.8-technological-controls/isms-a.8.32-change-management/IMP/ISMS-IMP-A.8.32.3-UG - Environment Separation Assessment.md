@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Environment Separation Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.32.3-UG |
+| **Related Policy** | ISMS-POL-A.8.32 (Change Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.32 (Change Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Development, Test, Production Environment Separation |
-| **Related Policy** | ISMS-POL-A.8.32, Section 2.3 (Testing & Validation Requirements), ISO/IEC 27001:2022 Control 8.31 |
-| **Purpose** | Assess environment separation, promotion workflows, and access controls to ensure changes are properly tested before production deployment |
-| **Target Audience** | Infrastructure Team, DevOps Engineers, System Administrators, Security Team, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Technical & Infrastructure |
-| **Review Cycle** | Quarterly or After Major Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
+| Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Initial assessment specification for Environment Separation workbook | ISMS Implementation Team |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.32 (Change Management)
+- ISMS-IMP-A.8.32.1 (Change Process Assessment)
+- ISMS-IMP-A.8.32.2 (Change Types & Categories Assessment)
+- ISMS-IMP-A.8.32.4 (Testing & Validation Assessment)
+
+---
 
 ### Document Structure
 
@@ -32,8 +46,24 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 
-
 **Audience:** Infrastructure Team, DevOps Engineers, System Administrators, Security Team
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Environment Inventory | Inventory of development, test and production environments |
+| 3 | Access Controls | Assess access controls for each environment |
+| 4 | Promotion Workflows | Document and assess code promotion workflows between environments |
+| 5 | Data Protection | Evaluate protection of production data in non-production environments |
+| 6 | Environment Config | Assess environment configuration standards and consistency |
+| 7 | Separation Controls | Evaluate controls enforcing environment separation |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -41,18 +71,18 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ### What This Assessment Evaluates
 
-This assessment documents HOW your organization separates development, test, and production environments to ensure changes are properly validated before reaching production. It evaluates:
+This assessment documents HOW your organisation separates development, test, and production environments to ensure changes are properly validated before reaching production. It evaluates:
 
 - **Environment Architecture:** Physical/logical separation of Dev/Test/Prod
 - **Access Controls:** Who can access which environments
 - **Promotion Workflows:** How code/changes move between environments
 - **Data Protection:** How production data is protected in non-production
 - **Environment Configuration:** How environments mirror production
-- **Separation Enforcement:** Technical controls preventing unauthorized changes
+- **Separation Enforcement:** Technical controls preventing unauthorised changes
 
 ### Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - ISO/IEC 27001:2022 Control A.8.32: Change Management (element d - testing)
 - ISO/IEC 27001:2022 Control A.8.31: Separation of Development, Testing and Production
@@ -690,7 +720,7 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A change tested in the wrong environment is a change untested."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

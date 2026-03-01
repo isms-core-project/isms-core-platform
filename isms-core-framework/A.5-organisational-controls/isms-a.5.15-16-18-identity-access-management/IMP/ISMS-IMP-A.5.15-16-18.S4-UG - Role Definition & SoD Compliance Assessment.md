@@ -8,22 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Role Definition & SoD Compliance Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.15-16-18.S4-UG |
+| **Related Policy** | ISMS-POL-A.5.15-16-18 (Identity Access Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.15 (Access Annex) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Role-Based Access Control (RBAC) Maturity & Segregation of Duties (SoD) Compliance |
-| **Related Policy** | ISMS-POL-A.5.15-16-18, Section 2.3 (Role Definition & RBAC - A.5.18), Section 2.1.4 (Segregation of Duties - A.5.15) |
-| **Purpose** | Assess RBAC adoption, verify role-based access implementation, detect segregation of duties violations, and identify role governance gaps |
-| **Target Audience** | IAM Team, Security Operations, Access Control Administrators, Internal Audit, Compliance Officers |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Quarterly (Critical Roles), Semi-Annual (All Roles), Annual (Comprehensive Role Governance Review) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for Role Definition & SoD Compliance assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.15-16-18 (Identity Access Management)
+- ISMS-IMP-A.5.15-16-18.S1 (User Inventory & Lifecycle Compliance Assessment)
+- ISMS-IMP-A.5.15-16-18.S2 (Access Rights Matrix Assessment)
+- ISMS-IMP-A.5.15-16-18.S3 (Access Review Results Assessment)
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 11 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Role Catalog** | Complete catalogue of defined roles with permissions and owners |
+| **Role Assignments** | Mapping of users to roles for RBAC adoption assessment |
+| **Direct Access Users** | Users with direct access grants outside the RBAC role model |
+| **SoD Matrix** | Defined conflicting role pairs and segregation of duties rules |
+| **SoD Violations** | Users detected with conflicting role assignments |
+| **RBAC Metrics** | RBAC adoption rates, coverage, and maturity metrics |
+| **Gap Analysis** | Identified gaps and remediation action tracking |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -197,7 +229,7 @@ Upon completion, you will have:
    - Last review date
 
 3. Contact managers for justifications
-4. Flag unauthorized direct access (gap)
+4. Flag unauthorised direct access (gap)
 
 **Deliverable**: Complete Sheet 4 with all direct access users
 
@@ -208,7 +240,7 @@ Upon completion, you will have:
 - ✓ Justifications legitimate (not "forgot to assign role")
 - ✓ Approvals obtained (security/CISO)
 - ✓ Quarterly review frequency
-- ✓ Unauthorized direct access flagged
+- ✓ Unauthorised direct access flagged
 
 **Target**: Direct access < 20% of total users
 
@@ -267,7 +299,7 @@ Upon completion, you will have:
 **Quality Check**:
 
 - ✓ All violations detected
-- ✓ Each violation analyzed (justified or remediate)
+- ✓ Each violation analysed (justified or remediate)
 - ✓ Justified violations have compensating controls
 - ✓ Justified violations have CISO approval
 - ✓ Unjustified violations have remediation plans
@@ -329,7 +361,7 @@ Upon completion, you will have:
 
    - Low RBAC adoption (< 80%)
    - High direct access (> 20%)
-   - Unauthorized direct access
+   - Unauthorised direct access
    - Unresolved SoD violations
    - Outdated role definitions (> 12 months)
    - Obsolete roles not deactivated
@@ -343,7 +375,7 @@ Upon completion, you will have:
 
 3. Prioritize:
 
-   - **Critical**: Unresolved SoD violations, unauthorized direct access
+   - **Critical**: Unresolved SoD violations, unauthorised direct access
    - **High**: Low RBAC adoption, missing SoD approvals, outdated roles
    - **Medium**: Obsolete roles active, roles not reviewed annually
    - **Low**: Minor improvements
@@ -569,7 +601,7 @@ Upon completion, you will have:
 ### Sheet 6: SoD Violations
 
 - [ ] All violations detected
-- [ ] Each violation analyzed
+- [ ] Each violation analysed
 - [ ] Justified violations have controls
 - [ ] Justified violations have CISO approval
 - [ ] Unjustified violations have plans
@@ -683,8 +715,8 @@ Upon completion, you will have:
 
 **Article 32(1)(b) - Confidentiality**:
 
-- Role Catalog: Authorized access definition
-- SoD Matrix: Segregation prevents unauthorized combinations
+- Role Catalog: Authorised access definition
+- SoD Matrix: Segregation prevents unauthorised combinations
 - RBAC Metrics: Access is role-based (not ad-hoc)
 
 **Article 32(1)(d) - Regular Testing**:
@@ -715,7 +747,7 @@ Upon completion, you will have:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"To do two things at once is to do neither."*
+— Publilius Syrus
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -3,19 +3,21 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.31: Legal, Statutory, Regulatory and Contractual Requirements
 
+---
+
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
 | **Document Title** | Control Mapping Process |
-| **Document Type** | Implementation Guide |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.31.4-UG |
+| **Related Policy** | ISMS-POL-A.5.31 (Legal Statutory Regulatory Contractual Requirements) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.31 (Legal, Statutory, Regulatory and Contractual Requirements) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
-| **Document Owner** | Chief Executive Officer (CEO) |
-| **Approved By** | Executive Management |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -23,11 +25,34 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO/ISO | Initial implementation guide for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.31 (Legal Statutory Regulatory Contractual Requirements)
+- ISMS-IMP-A.5.31.1 (Regulatory Inventory Management Process)
+- ISMS-IMP-A.5.31.2 (Regulatory Applicability Assessment Process)
+- ISMS-IMP-A.5.31.3 (Requirements Extraction Process)
+- ISMS-IMP-A.5.31.5 (Evidence Management Process)
 
 ---
 
-**Audience:** Security assessors, Control owners, Compliance officers
+### Workbook at a Glance
+
+This workbook contains the following 7 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Control Mapping Matrix** | Maps extracted regulatory requirements to ISO 27001:2022 Annex A controls |
+| **ISO27001 Controls Reference** | Reference table of all ISO 27001:2022 Annex A controls for mapping |
+| **Mapping Guidelines** | Step-by-step guidance on how to perform and document control mappings |
+| **Gap Summary** | Summary of gaps between regulatory requirements and currently mapped controls |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -199,7 +224,7 @@ For each gap:
 3. **Review each requirement**:
 
    - Read Interpreted Requirement (actionable version)
-   - Understand Category (Technical, Organizational, Reporting, Operational)
+   - Understand Category (Technical, Organisational, Reporting, Operational)
    - Note Priority (High, Medium, Low)
    - Identify any dependencies between requirements
 
@@ -227,7 +252,7 @@ For each gap:
 1. **Access ISO 27001 Controls Reference** (Workbook 4, Sheet 2)
 2. **Review control categories**:
 
-   - Section 5: Organizational Controls (37 controls)
+   - Section 5: Organisational Controls (37 controls)
    - Section 6: People Controls (8 controls)
    - Section 7: Physical Controls (14 controls)
    - Section 8: Technological Controls (34 controls)
@@ -279,7 +304,7 @@ For each requirement in the Requirements Register, perform this analysis:
    - Compliance demonstration?
 
 3. **Understand regulatory intent**: Why does regulator mandate this? What harm are they preventing?
-4. **Note any specific technical or organizational mandates**: Does regulation prescribe HOW (e.g., "shall use encryption") or just WHAT (e.g., "shall protect data")?
+4. **Note any specific technical or organisational mandates**: Does regulation prescribe HOW (e.g., "shall use encryption") or just WHAT (e.g., "shall protect data")?
 
 **Example**:
 ```
@@ -287,7 +312,7 @@ Requirement ID: REQ-GDPR-32-001
 Interpreted Requirement: "Implement encryption for personal data at rest and in transit"
 
 Security Objective: Confidentiality protection for personal data
-Regulatory Intent: Prevent unauthorized access if data is stolen or intercepted
+Regulatory Intent: Prevent unauthorised access if data is stolen or intercepted
 Specific Mandate: YES - explicitly requires encryption (not just "appropriate security")
 
 → Need controls that implement encryption specifically
@@ -302,7 +327,7 @@ Specific Mandate: YES - explicitly requires encryption (not just "appropriate se
 **Approach A: Category-Based** (for Technical requirements)
 
 - If requirement is Technical → Focus on Section 8 (Technological Controls)
-- If requirement is Organizational → Focus on Section 5 (Organizational Controls)
+- If requirement is Organisational → Focus on Section 5 (Organisational Controls)
 - If requirement is People-related → Focus on Section 6 (People Controls)
 - If requirement is Physical → Focus on Section 7 (Physical Controls)
 
@@ -322,7 +347,7 @@ Specific Mandate: YES - explicitly requires encryption (not just "appropriate se
 | Requirement Type | Likely Candidate Controls | Examples |
 |------------------|---------------------------|----------|
 | **Encryption** | A.8.24 (Cryptography) | Personal data encryption, transmission security |
-| **Access Control** | A.5.15-A.5.18, A.8.3 | User access management, authentication, authorization |
+| **Access Control** | A.5.15-A.5.18, A.8.3 | User access management, authentication, authorisation |
 | **Logging/Monitoring** | A.8.15-A.8.16 | Security event logging, audit trails |
 | **Incident Response** | A.5.24-A.5.28 | Breach notification, incident management |
 | **Vendor/Supplier** | A.5.19-A.5.23 | Third-party risk, cloud security, supply chain |
@@ -405,11 +430,11 @@ For each candidate control → requirement pair, ask:
 
 2. **Completeness**: Does control fully address requirement, or only part?
 
-   - Example: Requirement = "Implement access controls including authentication, authorization, and logging"
+   - Example: Requirement = "Implement access controls including authentication, authorisation, and logging"
    - A.5.15 Access Control Policy → Secondary (policy, not implementation)
    - A.5.16 Identity Management → Secondary (partial - authentication only)
    - A.5.17 Authentication Information → Secondary (partial - authentication only)
-   - A.5.18 Access Rights → Secondary (partial - authorization only)
+   - A.5.18 Access Rights → Secondary (partial - authorisation only)
    - A.8.15 Logging → Secondary (partial - logging only)
    - Combination of A.5.16 + A.5.17 + A.5.18 + A.8.15 → Primary (all together)
 
@@ -551,13 +576,13 @@ Rationale: A.5.10 policy requires employees to use encrypted channels when trans
 
 **Example**:
 ```
-Requirement REQ-SEC-05: "Implement comprehensive access management including identity lifecycle, authentication, authorization, and access reviews"
+Requirement REQ-SEC-05: "Implement comprehensive access management including identity lifecycle, authentication, authorisation, and access reviews"
 
 Mappings:
 
 - A.5.16 Identity Management → P (identity lifecycle)
 - A.5.17 Authentication Information → P (authentication)
-- A.5.18 Access Rights → P (authorization and reviews)
+- A.5.18 Access Rights → P (authorisation and reviews)
 - A.8.3 Information Access Restriction → P (technical enforcement)
 
 Rationale: This requirement mandates a complete access management system. Each control addresses one component:
@@ -687,7 +712,7 @@ For each identified gap, document:
 | **Current State** | What controls exist (if partial gap) | N/A (complete gap) |
 | **Risk/Impact** | Consequence of non-compliance | GDPR enforcement action, fines up to 4% revenue |
 | **Priority** | Critical / High / Medium / Low | High |
-| **Remediation Approach** | How gap will be closed | Implement new organizational control CTRL-ORG-005 "DPIA Process" |
+| **Remediation Approach** | How gap will be closed | Implement new organisational control CTRL-ORG-005 "DPIA Process" |
 | **Responsible Party** | Who will remediate | Privacy Officer |
 | **Target Date** | When gap will be closed | 2025-06-30 |
 | **Status** | Open / In Progress / Closed | Open |
@@ -700,7 +725,7 @@ Requirement ID: REQ-GDPR-35
 Requirement Text: Conduct Data Protection Impact Assessments (DPIA) for high-risk processing activities
 Regulation: GDPR Article 35
 Gap Type: Complete Gap
-Gap Description: [Organization] has no formal DPIA process. No procedure, no template, no assessment history. When launching new products/services involving personal data, no systematic risk assessment is performed.
+Gap Description: [Organisation] has no formal DPIA process. No procedure, no template, no assessment history. When launching new products/services involving personal data, no systematic risk assessment is performed.
 Current State: N/A (gap is complete)
 Risk/Impact: 
 
@@ -709,7 +734,7 @@ Risk/Impact:
   - Reputational: Privacy incidents due to inadequate risk assessment
 
 Priority: HIGH (Tier 1 regulation, mandatory requirement, significant penalty)
-Remediation Approach: Implement new organizational control "CTRL-ORG-005: Data Protection Impact Assessment Process"
+Remediation Approach: Implement new organisational control "CTRL-ORG-005: Data Protection Impact Assessment Process"
 
   - Develop DPIA procedure
   - Create DPIA template (aligned with ICO/CNIL guidance)
@@ -721,7 +746,7 @@ Responsible Party: Privacy Officer (lead), supported by Legal Counsel and ISMS M
 Target Date: 2025-06-30 (Q2 2025)
 Status: Open
 Assigned Date: 2025-01-10
-Notes: Legal counsel reviewing DPIA template for legal sufficiency. Benchmarking against peer organizations' DPIA processes.
+Notes: Legal counsel reviewing DPIA template for legal sufficiency. Benchmarking against peer organisations' DPIA processes.
 ```
 
 ---
@@ -836,9 +861,9 @@ For each identified gap, develop remediation plan.
 - **When**: Complete gap, no existing control addresses requirement
 - **Process**:
 
-  1. Define new control (may be organization-specific, beyond Annex A)
+  1. Define new control (may be organisation-specific, beyond Annex A)
   2. Assign Control Owner
-  3. Develop implementation plan (technical, organizational, procedural)
+  3. Develop implementation plan (technical, organisational, procedural)
   4. Implement control
   5. Collect evidence
   6. Update Control Mapping Matrix (add new control, mark as Primary)
@@ -862,7 +887,7 @@ For each identified gap, develop remediation plan.
 - **When**: Complex requirement needs multiple controls together
 - **Process**:
 
-  1. Identify all controls needed (mix of Annex A and organizational)
+  1. Identify all controls needed (mix of Annex A and organisational)
   2. Assign owners (may be different for different controls)
   3. Coordinate implementation (controls must integrate)
   4. Document how combination satisfies requirement
@@ -929,7 +954,7 @@ For each identified gap, develop remediation plan.
 
 **Scope**:
 
-- What will be implemented (technical, procedural, organizational)
+- What will be implemented (technical, procedural, organisational)
 - What is explicitly OUT of scope
 
 **Activities**:
@@ -1000,7 +1025,7 @@ How will we know remediation is complete?
 - **Risk**: GDPR enforcement (fines up to 2% revenue), privacy incidents, reputational damage
 
 ## Remediation Approach
-**Chosen Approach**: Implement New Organizational Control (CTRL-ORG-005: DPIA Process)
+**Chosen Approach**: Implement New Organisational Control (CTRL-ORG-005: DPIA Process)
 
 **Rationale**: No existing control addresses DPIA requirement. This is a specialized privacy process mandated by GDPR. Must create dedicated control.
 
@@ -1021,8 +1046,8 @@ How will we know remediation is complete?
 1. Research and Benchmarking (Week 1-2)
 
    - Review ICO, CNIL, EDPB DPIA guidance
-   - Benchmark peer organization DPIA processes
-   - Identify DPIA triggers specific to [Organization]
+   - Benchmark peer organisation DPIA processes
+   - Identify DPIA triggers specific to [Organisation]
    - Responsible: Privacy Officer
    
 2. Develop DPIA Procedure (Week 3-4)
@@ -1211,7 +1236,7 @@ Completed control mapping for 42 requirements extracted from GDPR Articles 5, 24
 
 - 32 of 42 requirements (76%) have Primary control mappings
 - Strong technical controls (encryption, access control, logging)
-- Solid organizational governance (policies, procedures, roles)
+- Solid organisational governance (policies, procedures, roles)
 
 **Gaps Identified**: 10 gaps requiring remediation
 
@@ -1229,7 +1254,7 @@ Completed control mapping for 42 requirements extracted from GDPR Articles 5, 24
   
 - **Implementation Gaps** (2):
   - Privacy by Design not fully operationalized (REQ-GDPR-25)
-  - Data minimization policy exists but not enforced (REQ-GDPR-05)
+  - Data minimisation policy exists but not enforced (REQ-GDPR-05)
 
 ## Priority Remediation
 
@@ -1256,7 +1281,7 @@ Completed control mapping for 42 requirements extracted from GDPR Articles 5, 24
 - **Timeline**: Q1 2025 (CRITICAL) → Q2-Q3 2025 (HIGH+MEDIUM) → Q4 2025 (validation and audit prep)
 
 ## Recommendations
-1. **Immediate**: Approve CRITICAL gap remediation budgets and authorize DPO hire
+1. **Immediate**: Approve CRITICAL gap remediation budgets and authorise DPO hire
 2. **Q1 2025**: Execute CRITICAL remediations (breach notification, DPO hire)
 3. **Q1 2025**: Develop detailed plans for HIGH priority gaps
 4. **Q2 2025**: Begin HIGH priority implementations
@@ -1264,7 +1289,7 @@ Completed control mapping for 42 requirements extracted from GDPR Articles 5, 24
 6. **2026**: Maintain, monitor, and improve
 
 ## Risk Statement
-If CRITICAL gaps not remediated by Q1 2025, [Organization] is non-compliant with GDPR mandatory requirements (Articles 33, 37) and vulnerable to enforcement action. Immediate action required.
+If CRITICAL gaps not remediated by Q1 2025, [Organisation] is non-compliant with GDPR mandatory requirements (Articles 33, 37) and vulnerable to enforcement action. Immediate action required.
 
 Prepared by: [ISMS Manager]
 Date: 2025-01-15
@@ -1349,7 +1374,6 @@ Regulatory compliance CRITICAL. Implementation status: Implemented. Evidence: En
 
 - **Email Summary**: Brief stakeholder update with link to Control Mapping Matrix
 - **Meeting**: For CRITICAL gaps or significant findings, schedule stakeholder meeting
-- **Dashboard**: Update Compliance Dashboard (Workbook 6) with new mapping data
 
 **Example Email**:
 ```
@@ -1363,7 +1387,7 @@ We have completed the ISO 27001 control mapping for GDPR requirements. Key findi
 ✅ STRENGTHS:
 
 - 76% of requirements have primary control mappings
-- Strong technical and organizational controls in place
+- Strong technical and organisational controls in place
 
 ⚠️ GAPS IDENTIFIED:
 
@@ -1621,7 +1645,6 @@ See Section 2.6.2 for complete template
 - Gap priority informs risk treatment decisions
 - Risk acceptance for Low priority gaps
 
-**To Compliance Dashboard (Assessment Workbook 6)**:
 
 - Mapping statistics (% requirements with Primary mappings)
 - Gap counts and trends
@@ -1651,7 +1674,6 @@ See Section 2.6.2 for complete template
 2. Update Control Mapping Matrix
 3. Identify new gaps or closed gaps
 4. Update Gap Register
-5. Update Compliance Dashboard
 6. Communicate changes to stakeholders
 
 ## Metrics & Monitoring
@@ -1716,7 +1738,7 @@ See Section 2.6.2 for complete template
 ## Tool Enhancements
 
 - Add "control combination templates" to matrix (pre-populate common patterns)
-- Create separate sheet for Legal/Organizational requirements that don't map cleanly to technical controls
+- Create separate sheet for Legal/Organisational requirements that don't map cleanly to technical controls
 - Improve gap prioritization automation (auto-calculate based on fields)
 
 ```
@@ -1765,27 +1787,27 @@ See Section 2.6.2 for complete template
 
 ## Scenario 2: Complex Access Control Requirement
 
-**Requirement**: "Implement comprehensive access management including identity lifecycle, multi-factor authentication, least privilege authorization, and quarterly access reviews"
+**Requirement**: "Implement comprehensive access management including identity lifecycle, multi-factor authentication, least privilege authorisation, and quarterly access reviews"
 
 **Analysis**:
 
 - Objective: Access control across entire lifecycle
 - Specific mandates: MFA, least privilege, quarterly reviews
-- Category: Technical + Organizational
+- Category: Technical + Organisational
 
 **Candidate Controls**:
 
 - A.5.15 Access Control (policy)
 - A.5.16 Identity Management (identity lifecycle)
 - A.5.17 Authentication Information (MFA)
-- A.5.18 Access Rights (authorization, reviews)
+- A.5.18 Access Rights (authorisation, reviews)
 - A.8.3 Information Access Restriction (technical enforcement)
 
 **Mapping Decision**:
 
 - **A.5.16 → Primary (P)** - Identity lifecycle
 - **A.5.17 → Primary (P)** - MFA
-- **A.5.18 → Primary (P)** - Authorization + reviews
+- **A.5.18 → Primary (P)** - Authorisation + reviews
 - **A.8.3 → Primary (P)** - Technical enforcement
 - **A.5.15 → Supporting (Su)** - Policy foundation
 - Rationale: Requirement is comprehensive, needs multiple controls working together. Each Primary control addresses one component. All are essential (cannot satisfy without any one).
@@ -1794,7 +1816,7 @@ See Section 2.6.2 for complete template
 
 ---
 
-## Scenario 3: Organizational Requirement with No Direct Control
+## Scenario 3: Organisational Requirement with No Direct Control
 
 **Requirement**: "Appoint a Data Protection Officer (DPO) with appropriate qualifications and independence"
 
@@ -1802,7 +1824,7 @@ See Section 2.6.2 for complete template
 
 - Objective: Governance, regulatory role
 - Specific mandate: DPO role with specific characteristics
-- Category: Organizational
+- Category: Organisational
 
 **Candidate Controls**:
 
@@ -1812,9 +1834,9 @@ See Section 2.6.2 for complete template
 
 - **A.5.2 → Secondary (S)** - A.5.2 defines roles but doesn't specifically mandate DPO
 - **Gap: Complete** - ISO 27001 doesn't have "DPO" control
-- Remediation: Create organization-specific control "CTRL-ORG-004: Data Protection Officer"
+- Remediation: Create organisation-specific control "CTRL-ORG-004: Data Protection Officer"
 
-**Outcome**: Partial mapping to A.5.2, but gap identified. New organizational control needed.
+**Outcome**: Partial mapping to A.5.2, but gap identified. New organisational control needed.
 
 ---
 
@@ -1884,7 +1906,7 @@ See Section 2.6.2 for complete template
 
 **93 Controls** across 4 sections:
 
-- **Section 5: Organizational Controls** (A.5.1 - A.5.37): 37 controls
+- **Section 5: Organisational Controls** (A.5.1 - A.5.37): 37 controls
 - **Section 6: People Controls** (A.6.1 - A.6.8): 8 controls
 - **Section 7: Physical Controls** (A.7.1 - A.7.14): 14 controls
 - **Section 8: Technological Controls** (A.8.1 - A.8.34): 34 controls
@@ -1902,8 +1924,6 @@ See Section 2.6.2 for complete template
 
 - **ISMS-IMP-A.5.31.2**: Regulatory Applicability Assessment Process (determines which regulations apply)
 - **ISMS-IMP-A.5.31.3**: Requirements Extraction Process (creates Requirements Register)
-- **ISMS-IMP-A.5.31.5**: Evidence Management Process (collects evidence for mapped controls)
-- **ISMS-IMP-A.5.31.6**: Compliance Dashboard & Regulatory Monitoring (tracks compliance status)
 
 ---
 
@@ -1986,7 +2006,7 @@ END OF DOCUMENT
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A map is not the territory."*
+— Alfred Korzybski
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

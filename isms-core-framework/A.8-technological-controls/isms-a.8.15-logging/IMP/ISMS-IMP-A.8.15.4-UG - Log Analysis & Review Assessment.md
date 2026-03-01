@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Log Analysis & Review Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.15.4-UG |
+| **Related Policy** | ISMS-POL-A.8.15 (Logging) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.15 (Logging) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Log Analysis, Review Process, Threat Detection & SOC Effectiveness |
-| **Related Policy** | ISMS-POL-A.8.15, Section 2.4 (Log Review & Analysis Requirements), Section 2.1 (Event Logging Requirements) |
-| **Purpose** | Assess log review process effectiveness, SIEM use case maturity, alert management, SOC performance metrics, threat detection coverage |
-| **Target Audience** | Security Operations Center (SOC), Threat Detection Team, Security Engineers, InfoSec Manager, CISO, Incident Response Team, Auditors, Workbook Developers |
-| **Assessment Type** | Operational Effectiveness & Process Maturity |
-| **Review Cycle** | Quarterly (full assessment), Monthly (SOC metrics review) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
+| Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Initial technical specification | ISMS Implementation Team |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.15 (Logging)
+- ISMS-IMP-A.8.15.1 (Log Source Inventory Assessment)
+- ISMS-IMP-A.8.15.2 (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.3 (Log Protection & Retention Assessment)
+
+---
 
 ### Document Structure
 
@@ -35,11 +49,30 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Log Review Schedule | Document log review schedules and responsibilities |
+| 3 | Alert Management | Track alert rules, volumes, and tuning |
+| 4 | Investigation Workflow | Document log investigation procedures |
+| 5 | Analysis Tools & Capabilities | Assess log analysis tools and capabilities |
+| 6 | Review Findings | Record findings from log review activities |
+| 7 | Continuous Monitoring | Assess continuous monitoring coverage |
+| 8 | Performance Metrics | Track SOC and review performance metrics |
+| 9 | Gap Analysis | Identify log analysis and review gaps |
+| 10 | Evidence Register | Store and reference evidence supporting assessments |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
+
+---
+
 # Assessment Overview
 
 ## What This Assessment Evaluates
 
-This assessment evaluates LOG ANALYSIS AND REVIEW EFFECTIVENESS - whether logs are actually being analyzed, alerts are actionable, threats are detected, and the SOC is performing effectively.
+This assessment evaluates LOG ANALYSIS AND REVIEW EFFECTIVENESS - whether logs are actually being analysed, alerts are actionable, threats are detected, and the SOC is performing effectively.
 
 **Key Questions Answered:**
 
@@ -61,7 +94,7 @@ This is purely about **OPERATIONAL EFFECTIVENESS** - are we actually getting sec
 
 ## Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - **ISO/IEC 27001:2022 Control A.8.15**: Logs must be reviewed - collection without analysis provides no security benefit
 - **ISMS-POL-A.8.15, Section 2.4 (Log Review)**: Regular review required, frequency defined per log category
@@ -82,7 +115,7 @@ This assessment verifies [Organization]'s compliance with:
 - **PCI DSS v4.0.1 failure** if daily review not performed and documented
 - **Ineffective control** = wasted resources, poor security posture
 
-**Audit Evidence**: This assessment workbook provides **objective evidence** that logs are being analyzed and reviewed effectively.
+**Audit Evidence**: This assessment workbook provides **objective evidence** that logs are being analysed and reviewed effectively.
 
 ## Assessment Outputs
 
@@ -103,7 +136,7 @@ This assessment verifies [Organization]'s compliance with:
 - **Review Process Compliance**: 70-95% (some log categories reviewed less frequently than required)
 - **Use Case Maturity**: 40-70% (basic use cases implemented, advanced use cases lacking)
 - **Alert Management**: 60-85% (moderate false positive rates, tuning ongoing)
-- **SOC Performance**: MTTD 4-48 hours, MTTR 1-7 days (varies widely by organization maturity)
+- **SOC Performance**: MTTD 4-48 hours, MTTR 1-7 days (varies widely by organisation maturity)
 - **Automation Level**: 20-60% (some automation, much manual work remains)
 - **Gaps Identified**: 15-30 findings (process gaps, capability gaps, training needs)
 
@@ -136,13 +169,13 @@ IMP-A.8.15.4 (Analysis & Review) <-- YOU ARE HERE
     Verifies logs ANALYZED and REVIEWED
     |
     v
-IMP-A.8.15.5 (Compliance Dashboard)
+Summary Dashboards (per workbook)
     |
     v
-    Consolidates all assessments
+    Findings tracked in Summary Dashboards
 ```
 
-**Recommended Order**: Complete IMP-A.8.15.1, .2, and .3 FIRST (ensure logs exist, are collected, and are protected), then assess whether they're being analyzed effectively.
+**Recommended Order**: Complete IMP-A.8.15.1, .2, and .3 FIRST (ensure logs exist, are collected, and are protected), then assess whether they're being analysed effectively.
 
 ---
 
@@ -260,7 +293,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 - SOC Manager completes review process assessment (Sheet 2)
 - Threat Detection Lead documents use cases (Sheet 3)
-- SOC Analyst Lead analyzes alert metrics (Sheet 4)
+- SOC Analyst Lead analyses alert metrics (Sheet 4)
 
 **Week 2**:
 
@@ -494,7 +527,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Platform Name (if yes)
 - Integration Level (Basic, Intermediate, Advanced)
 - Playbook Count (automated playbooks)
-- Playbooks by Category (Phishing, Malware, Unauthorized Access, Data Exfiltration, etc.)
+- Playbooks by Category (Phishing, Malware, Unauthorised Access, Data Exfiltration, etc.)
 - Playbook Execution Volume (last 90 days)
 - Playbook Success Rate (% successful executions)
 
@@ -607,7 +640,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 - Investigation procedures comprehensive (yes/no)
 - IR integration effective (% appropriate escalations)
-- Forensics capabilities adequate (based on organization needs)
+- Forensics capabilities adequate (based on organisation needs)
 - Evidence handling compliant (yes/no)
 - **Overall Investigation Effectiveness Score** = Weighted average
 
@@ -673,7 +706,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 **Problem**: SIEM deployed != logs actually reviewed
 
-**Reality**: Many organizations have SIEM with hundreds of use cases but limited SOC coverage, resulting in alerts going uninvestigated.
+**Reality**: Many organisations have SIEM with hundreds of use cases but limited SOC coverage, resulting in alerts going uninvestigated.
 
 **How to Avoid**:
 
@@ -786,7 +819,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Logs are only valuable when they are read."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

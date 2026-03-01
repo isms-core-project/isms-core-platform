@@ -8,26 +8,55 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Environment Access Control |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.31.2-UG |
+| **Related Policy** | ISMS-POL-A.8.31 (Environment Separation) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.31 (Separation of Development, Test and Production Environments) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Environment Access Control & Production Access Restrictions |
-| **Related Policy** | ISMS-POL-A.8.31, Section 2.2 (Environment Access Control Requirements) |
-| **Purpose** | Document access control implementation, verify production access restrictions (zero developer access), and assess compliance with environment-specific access requirements |
-| **Target Audience** | IAM Administrators, IT Operations, Security Engineers, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Access Control Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Environment Access Control assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.31 (Environment Separation)
+- ISMS-IMP-A.8.31.1 (Environment Architecture Implementation)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.8.31.2-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | User Environment Access Matrix | Map user access rights across development, test and production |
+| 3 | Developer Production Access | Assess and control developer access to production environments |
+| 4 | Production Credential Audit | Audit credentials with production environment access |
+| 5 | Cross Environment Access Log | Log and review cross-environment access activities |
+| 6 | Break Glass Access Log | Track and review emergency break glass access to production |
+| 7 | MFA Enforcement | Assess MFA enforcement for environment access |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -77,7 +106,6 @@ This is a MANDATORY requirement. Developers having routine production access = M
 |-----------------------|----------------------------|-----------------------------------------|
 | ISMS-IMP-A.8.31.1     | Architecture Separation    | WHAT environments exist (input required) |
 | **ISMS-IMP-A.8.31.2** | **Access Control**         | **WHO can access WHICH environment**    |
-| ISMS-IMP-A.8.31.3     | Compliance Dashboard       | Consolidated view across architecture + access |
 
 This assessment (A.8.31.2) requires A.8.31.1 to be completed first - you need the environment list from A.8.31.1 to build the access matrix.
 
@@ -180,10 +208,6 @@ Before starting this assessment, gather:
 **Output from A.8.31.1 required**:
 
 - Sheet 2: Environment_Inventory (environment names)
-
-**Outputs to A.8.31.3**:
-
-- Access control gaps (for consolidated compliance dashboard)
 - Production access violations (critical findings)
 
 ---
@@ -352,7 +376,7 @@ Before starting this assessment, gather:
 - Complete Sheet 6: Access Monitoring & Audit Logging
 - Verify audit logging enabled for all environments
 - Verify access attempts logged (successful and failed)
-- Verify unauthorized access attempts monitored and alerted
+- Verify unauthorised access attempts monitored and alerted
 - Document access review frequency
 
 **Outputs:**
@@ -365,7 +389,7 @@ Before starting this assessment, gather:
 
 - ❌ Audit logs not retained (e.g., only 7 days - need 90+ days)
 - ❌ Logs not monitored (collection without review is useless)
-- ❌ No alerts for unauthorized access attempts
+- ❌ No alerts for unauthorised access attempts
 
 #### Phase 8: Gap Analysis (1-2 hours)
 
@@ -435,7 +459,7 @@ Before starting this assessment, gather:
 ### Sheet 1: Instructions & Legend
 
 **What to do:**
-1. Fill in assessment metadata (date, completed by, organization)
+1. Fill in assessment metadata (date, completed by, organisation)
 2. Review the status legend
 3. Review acceptable evidence examples
 4. Understand the workflow
@@ -599,7 +623,7 @@ Before starting this assessment, gather:
 3. For each break-glass account:
 
    - Account purpose
-   - Who can activate? (authorized approvers)
+   - Who can activate? (authorised approvers)
    - Time limit (how long access granted)
    - Monitoring (how usage tracked)
    - Post-incident review process
@@ -643,7 +667,7 @@ Before starting this assessment, gather:
    - What events logged? (login, permission changes, access attempts)
    - Log retention period (days)
    - Logs monitored? (Yes / No)
-   - Alerts configured? (unauthorized access attempts)
+   - Alerts configured? (unauthorised access attempts)
    - Access review frequency (weekly, monthly, quarterly)
 
 **Time:** 1-2 hours
@@ -653,7 +677,7 @@ Before starting this assessment, gather:
 - Audit logs must be enabled for production (MANDATORY)
 - Retention period: minimum 90 days (regulatory requirement may be longer)
 - Logs without monitoring = compliance checkbox (not security)
-- Unauthorized access attempts should trigger alerts
+- Unauthorised access attempts should trigger alerts
 
 **Example Entry:**
 | Environment | Logging Enabled? | Events Logged | Retention | Monitored? | Alerts | Access Review Frequency | Compliance |
@@ -668,7 +692,7 @@ Before starting this assessment, gather:
 - ✅ Logging enabled
 - ✅ Retention ≥ 90 days
 - ✅ Monitored regularly
-- ✅ Alerts for unauthorized access
+- ✅ Alerts for unauthorised access
 
 ---
 
@@ -820,7 +844,7 @@ Get-ADUser -Identity jsmith -Properties MemberOf | Select-Object -ExpandProperty
 
 **Problem:** Former employees still have access in IAM system
 
-**Impact:** HIGH security risk - unauthorized access possible
+**Impact:** HIGH security risk - unauthorised access possible
 
 **Solution:**
 ```bash
@@ -907,7 +931,7 @@ aws iam delete-access-key --user-name terminated-user --access-key-id AKIA...
 **Solution:**
 
 - Implement automated log monitoring (SIEM)
-- Configure alerts for unauthorized access attempts
+- Configure alerts for unauthorised access attempts
 - Schedule regular access reviews (weekly for production)
 - Document monitoring procedures
 
@@ -924,7 +948,7 @@ Before submitting your assessment for approval, verify:
 - [ ] Access matrix complete (all user + environment combinations)
 - [ ] Production access verified (developer count = 0 or documented violations)
 - [ ] All gaps identified and documented
-- [ ] All evidence collected and organized
+- [ ] All evidence collected and organised
 
 ### Accuracy
 
@@ -946,7 +970,7 @@ Before submitting your assessment for approval, verify:
 ### Evidence Quality
 
 - [ ] All evidence files time-stamped
-- [ ] Evidence organized in structured folder
+- [ ] Evidence organised in structured folder
 - [ ] Evidence file names descriptive and dated
 - [ ] Evidence register complete with file locations
 - [ ] Evidence accessible to reviewers/auditors
@@ -1042,7 +1066,7 @@ Document approvals in Sheet 9 (Evidence Register):
 - Mover event (role change) - update access, verify production restrictions
 - Leaver event (termination) - verify access removed
 - Access control change (new IAM policy, group membership change)
-- Security incident (unauthorized access) - document as gap
+- Security incident (unauthorised access) - document as gap
 - Audit finding (document as gap, track remediation)
 
 ### Continuous Compliance Monitoring
@@ -1068,7 +1092,7 @@ Document approvals in Sheet 9 (Evidence Register):
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The controls that protect production should never be tested in production."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

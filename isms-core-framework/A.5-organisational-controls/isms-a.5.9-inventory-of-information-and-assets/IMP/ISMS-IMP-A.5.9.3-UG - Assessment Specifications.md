@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Assessment Specifications |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.9.3-UG |
+| **Related Policy** | ISMS-POL-A.5.9 (Inventory of Information and Assets) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.9 (Inventory of Information and Other Associated Assets) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Inventory Quality & Policy Compliance Verification |
-| **Related Policy** | ISMS-POL-A.5.9, Section 2.3 (Mandatory Attributes), Section 2.5 (Quality Standards), Section 3 (Assessment Methodology) |
-| **Purpose** | Verify inventory data quality (accuracy, completeness, currency) and compliance with policy requirements |
-| **Target Audience** | Security Team, Quality Assurance, CMDB Administrators, Auditors |
-| **Assessment Type** | Quality Verification & Compliance Audit |
-| **Review Cycle** | Quarterly |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|--------|--------|
-| 1.0 | [Date] | Initial assessment specification following consolidated policy structure | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.9 (Inventory of Information and Assets)
+- ISMS-IMP-A.5.9.1 (Asset Identification & Discovery)
+- ISMS-IMP-A.5.9.2 (Inventory Structure & Maintenance)
+- ISMS-IMP-A.5.9.4 (Owner Accountability Assessment)
+
+---
 
 ### Document Structure
 
@@ -32,6 +46,25 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 **Audience:** Security Team, Quality Assurance, CMDB Administrators, Auditors
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 10 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Accuracy Sampling** | Sampling-based verification of inventory data accuracy |
+| **Completeness Assessment** | Assessment of inventory completeness across all asset categories |
+| **Currency Assessment** | Verification that inventory data is current and up to date |
+| **Consistency Checks** | Cross-system consistency checks and discrepancy identification |
+| **Policy Compliance Matrix** | Mapping of inventory attributes to policy requirements |
+| **Quality Metrics & Scoring** | Overall quality scoring and trend measurement |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -53,7 +86,7 @@ This assessment verifies that the asset inventory meets quality standards and po
 
 ### Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - **ISO/IEC 27001:2022 Control A.5.9**: "Rules related to **acceptable use** and return of assets should be identified and **implemented**"
 - **ISMS-POL-A.5.9, Section 2.5**: Quality standards (accuracy ≥95% for information assets, ≥98% for IT infrastructure)
@@ -196,7 +229,6 @@ Phase 8: Review & Approval (Day 19-20)
 ├─ Quality check against checklist
 ├─ Security Team review
 ├─ CISO approval
-└─ Submit to compliance dashboard
 ```
 
 **Timeline**: 20 working days for initial assessment, 8-12 days for quarterly updates
@@ -836,22 +868,22 @@ Create list of stale records (exceeding threshold):
 
 From ISMS-POL-A.5.9, the SHALL requirements are:
 
-- **A.5.9-R1**: [Organization] SHALL maintain an inventory of information and associated assets
-- **A.5.9-R2**: [Organization] SHALL categorize assets per defined taxonomy
-- **A.5.9-R3**: [Organization] SHALL document mandatory attributes for each inventoried asset
-- **A.5.9-R4**: [Organization] SHALL assign ownership to all inventoried assets
-- **A.5.9-R5**: [Organization] SHALL review and update the inventory on a defined schedule
-- **A.5.9-R6**: [Organization] SHALL integrate asset inventory with other ISMS processes
-- **A.5.9-R7**: [Organization] SHALL protect inventory data with appropriate access controls
-- **A.5.9-R8**: [Organization] SHALL conduct periodic assessments of inventory quality
-- **A.5.9-R9**: [Organization] SHALL report inventory metrics to management
+- **A.5.9-R1**: [Organisation] SHALL maintain an inventory of information and associated assets
+- **A.5.9-R2**: [Organisation] SHALL categorize assets per defined taxonomy
+- **A.5.9-R3**: [Organisation] SHALL document mandatory attributes for each inventoried asset
+- **A.5.9-R4**: [Organisation] SHALL assign ownership to all inventoried assets
+- **A.5.9-R5**: [Organisation] SHALL review and update the inventory on a defined schedule
+- **A.5.9-R6**: [Organisation] SHALL integrate asset inventory with other ISMS processes
+- **A.5.9-R7**: [Organisation] SHALL protect inventory data with appropriate access controls
+- **A.5.9-R8**: [Organisation] SHALL conduct periodic assessments of inventory quality
+- **A.5.9-R9**: [Organisation] SHALL report inventory metrics to management
 
 **Step 2: Verify Each Requirement**
 
 **Example 1: A.5.9-R1 (Inventory Exists)**
 
 - **Requirement ID**: A.5.9-R1
-- **Requirement Text**: "[Organization] SHALL maintain an inventory of information and associated assets"
+- **Requirement Text**: "[Organisation] SHALL maintain an inventory of information and associated assets"
 - **Compliance Criterion**: "Inventory system exists, contains records for all 5 asset categories"
 - **Verification Method**: "Review IMP-A.5.9-2 (Inventory Structure sheet), confirm inventory systems documented"
 - **Evidence Collected**: "ServiceNow CMDB (IT Infrastructure, Applications), Asset Inventory spreadsheet (Information, Physical, Personnel)"
@@ -864,7 +896,7 @@ From ISMS-POL-A.5.9, the SHALL requirements are:
 **Example 2: A.5.9-R3 (Mandatory Attributes) - Partially Met**
 
 - **Requirement ID**: A.5.9-R3
-- **Requirement Text**: "[Organization] SHALL document mandatory attributes for each inventoried asset"
+- **Requirement Text**: "[Organisation] SHALL document mandatory attributes for each inventoried asset"
 - **Compliance Criterion**: "100% of assets have all mandatory attributes populated per policy Section 2.3"
 - **Verification Method**: "Sheet 3 (Completeness Assessment) analysis"
 - **Evidence Collected**: "Completeness Assessment shows 94% average completeness across all mandatory attributes"
@@ -880,7 +912,7 @@ From ISMS-POL-A.5.9, the SHALL requirements are:
 **Example 3: A.5.9-R4 (Ownership Assignment)**
 
 - **Requirement ID**: A.5.9-R4
-- **Requirement Text**: "[Organization] SHALL assign ownership to all inventoried assets"
+- **Requirement Text**: "[Organisation] SHALL assign ownership to all inventoried assets"
 - **Compliance Criterion**: "100% of assets have Owner field populated with valid employee"
 - **Verification Method**: "Query inventory for NULL/empty Owner field, cross-reference owners with HR system"
 - **Evidence Collected**: "Owner field populated for 1,477 of 1,500 assets (98%). Cross-reference found 23 owners not in HR (departed employees)"
@@ -896,7 +928,7 @@ From ISMS-POL-A.5.9, the SHALL requirements are:
 **Example 4: A.5.9-R8 (Periodic Assessments) - Met**
 
 - **Requirement ID**: A.5.9-R8
-- **Requirement Text**: "[Organization] SHALL conduct periodic assessments of inventory quality"
+- **Requirement Text**: "[Organisation] SHALL conduct periodic assessments of inventory quality"
 - **Compliance Criterion**: "Quality assessment conducted quarterly, documented, reviewed by CISO"
 - **Verification Method**: "This assessment workbook is evidence of compliance, previous assessments on file"
 - **Evidence Collected**: "Q4 2025 quality assessment (this workbook), Q3 2025 assessment archived"
@@ -944,7 +976,7 @@ Sheet auto-calculates:
 | Column | Purpose | How to Complete |
 |--------|---------|-----------------|
 | **Quality Dimension** | Dimension name | Fixed: Accuracy / Completeness / Currency / Consistency / Policy Compliance |
-| **Weight** | Importance weighting | Policy-defined or organization-specific |
+| **Weight** | Importance weighting | Policy-defined or organisation-specific |
 | **Target Score** | Policy requirement | From policy Section 2.5 |
 | **Actual Score** | Current achievement | Auto-calculated from sheets 2-6 |
 | **Gap vs. Target** | Shortfall | Formula: Actual - Target |
@@ -1082,7 +1114,7 @@ Interpretation: Good quality (94.2%), close to target. Main gaps: Completeness (
 - Gap analysis documentation
 - Remediation plans and tracking
 
-### Evidence Organization
+### Evidence Organisation
 
 ```
 /evidence/
@@ -1213,7 +1245,7 @@ Before submitting this assessment, verify:
 
 - [ ] Automated checks documented (logic, results)
 - [ ] All major contradiction types checked
-- [ ] Root causes analyzed
+- [ ] Root causes analysed
 - [ ] Remediation plans developed
 
 ### Policy Compliance Checks
@@ -1279,10 +1311,8 @@ Before submitting this assessment, verify:
 - Escalate critical gaps to Executive Management
 - Sign approval
 
-**Step 6: Submission to Compliance Dashboard**
 
 - Export metrics to dashboard consolidation
-- Update ISMS-IMP-A.5.9.5 (Compliance Dashboard)
 - Archive assessment workbook
 - Store evidence per retention policy
 
@@ -1315,7 +1345,7 @@ Before submitting this assessment, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A specification is a promise to the future."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

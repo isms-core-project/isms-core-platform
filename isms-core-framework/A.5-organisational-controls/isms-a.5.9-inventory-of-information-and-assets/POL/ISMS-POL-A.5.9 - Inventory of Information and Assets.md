@@ -23,7 +23,7 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO | Initial consolidated policy for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial policy tracked in Summary Dashboards for ISO 27001:2022 first certification |
 
 **Review Cycle**: Annual  
 **Next Review Date**: [Effective Date + 12 months]  
@@ -44,22 +44,21 @@
 - ISMS-IMP-A.5.9.2-UG/TG (Inventory Structure & Maintenance)
 - ISMS-IMP-A.5.9.3-UG/TG (Assessment Specifications)
 - ISMS-IMP-A.5.9.4-UG/TG (Owner Accountability Assessment)
-- ISMS-IMP-A.5.9.5-UG/TG (Compliance Dashboard Specification)
 - ISO/IEC 27001:2022 Control A.5.9
 
 ---
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for maintaining an inventory of information and associated assets in accordance with ISO/IEC 27001:2022 Control A.5.9.
+This policy establishes [Organisation]'s requirements for maintaining an inventory of information and associated assets in accordance with ISO/IEC 27001:2022 Control A.5.9.
 
 **The Fundamental Principle**: You cannot protect what you do not know you have. Asset inventory is the foundation upon which all other security controls depend - risk assessment, access control, classification, vulnerability management, incident response, and business continuity planning.
 
-**Scope**: This policy applies to all information assets (data, content, intellectual property) and associated assets (IT infrastructure, applications, physical facilities, personnel competencies) within [Organization]'s information security management scope. The policy establishes WHAT must be inventoried, WHO is accountable, and HOW compliance is verified.
+**Scope**: This policy applies to all information assets (data, content, intellectual property) and associated assets (IT infrastructure, applications, physical facilities, personnel competencies) within [Organisation]'s information security management scope. The policy establishes WHAT must be inventoried, WHO is accountable, and HOW compliance is verified.
 
-**Purpose**: Define organizational requirements for asset inventory creation, maintenance, and governance. This policy establishes the governance framework (WHAT and WHY). Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5 (UG/TG variants).9 suite, and assessment tools provide objective verification mechanisms.
+**Purpose**: Define organisational requirements for asset inventory creation, maintenance, and governance. This policy establishes the governance framework (WHAT and WHY). Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5 (UG/TG variants).9 suite, and assessment tools provide objective verification mechanisms.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2, HIPAA) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2, HIPAA) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -71,9 +70,9 @@ This policy establishes [Organization]'s requirements for maintaining an invento
 
 > *An inventory of information and other associated assets, including owners, should be created and maintained.*
 
-**Control Objective (ISO/IEC 27002:2022)**: To identify the organization's information and other associated assets in order to maintain their information security and assign appropriate responsibilities.
+**Control Objective (ISO/IEC 27002:2022)**: To identify the organisation's information and other associated assets in order to maintain their information security and assign appropriate responsibilities.
 
-**Control Type**: Organizational  
+**Control Type**: Organisational  
 **Information Security Properties**: Confidentiality, Integrity, Availability  
 **Cybersecurity Concepts**: Identify  
 **Operational Capabilities**: Asset Management  
@@ -85,8 +84,8 @@ This policy establishes [Organization]'s requirements for maintaining an invento
 - Associated asset inventory requirements (IT, physical, personnel)
 - Asset ownership assignment and accountability framework
 - Inventory accuracy, completeness, and currency standards
-- Organizational roles and responsibilities for asset management
-- Integration with other ISMS controls and organizational systems
+- Organisational roles and responsibilities for asset management
+- Integration with other ISMS controls and organisational systems
 - Assessment methodology and compliance verification
 
 ## What This Policy Does
@@ -97,7 +96,7 @@ This policy:
 - **Establishes** mandatory attributes for inventory records (owner, classification, location, etc.)
 - **Specifies** ownership assignment requirements and owner accountability
 - **Sets** accuracy, completeness, and currency standards for inventory maintenance
-- **Identifies** organizational roles and responsibilities for asset inventory
+- **Identifies** organisational roles and responsibilities for asset inventory
 - **References** applicable regulatory requirements per ISMS-POL-00
 
 ## What This Policy Does NOT Do
@@ -105,32 +104,32 @@ This policy:
 This policy does NOT:
 
 - **Specify technical implementation details** (see ISMS-IMP-A.5.9 Implementation Guides)
-- **Define inventory tool selection** (technology decisions based on [Organization]'s needs)
+- **Define inventory tool selection** (technology decisions based on [Organisation]'s needs)
 - **Provide detailed discovery procedures** (see ISMS-IMP-A.5.9-1 Asset Identification)
 - **Describe maintenance workflows** (see ISMS-IMP-A.5.9-2 Inventory Maintenance)
 - **Replace risk assessment** (inventory provides input to risk assessment process)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
-- Policy stability despite organizational changes
+- Policy stability despite organisational changes
 - Technical agility for tool and process updates without policy revision
 - Clear distinction between governance (policy) and execution (implementation)
-- Adaptability to different organizational contexts and risk profiles
+- Adaptability to different organisational contexts and risk profiles
 
 ## Scope
 
 **This policy applies to**:
 
-- All information assets within [Organization]'s ISMS scope (databases, documents, records, IP, configuration data)
+- All information assets within [Organisation]'s ISMS scope (databases, documents, records, IP, configuration data)
 - All IT infrastructure supporting information processing (servers, storage, networking, endpoints)
 - All applications and software (business applications, SaaS services, development tools)
 - All physical assets supporting information security (facilities, media, equipment)
 - All personnel assets critical to operations (key roles, specialized competencies)
-- All third-party services processing [Organization]'s information
+- All third-party services processing [Organisation]'s information
 
 **In Scope Asset Categories**:
 
-1. **Information Assets**: Any data, content, or knowledge with value to [Organization]
+1. **Information Assets**: Any data, content, or knowledge with value to [Organisation]
 
    - Structured data (databases, data warehouses)
    - Unstructured documents (files, emails, reports)
@@ -170,8 +169,8 @@ This policy does NOT:
 
 **Out of Scope**:
 
-- Assets owned by third parties (unless processing [Organization]'s information)
-- Personal devices not used for [Organization] work (unless BYOD policy applies)
+- Assets owned by third parties (unless processing [Organisation]'s information)
+- Personal devices not used for [Organisation] work (unless BYOD policy applies)
 - Public information with no confidentiality, integrity, or availability requirements
 - Commodity office supplies with no security impact
 
@@ -179,7 +178,7 @@ This policy does NOT:
 
 Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicability Framework)**.
 
-**Tier 1: Mandatory Compliance** (applies to all [Organization] operations):
+**Tier 1: Mandatory Compliance** (applies to all [Organisation] operations):
 
 - **Swiss nDSG (Art. 8)**: Personal data security requires knowing what data exists and where
 - **EU GDPR (Art. 5, 32)**: Data protection by design requires documented data inventory
@@ -202,7 +201,7 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 - **CIS Controls (1, 2)**: Inventory and Control of Enterprise Assets and Software
 - **COBIT 2019 (BAI09)**: Managed Assets framework
 
-**United States Federal Requirements**: References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity requirements) apply only where [Organization] has explicit US federal contractual obligations, as defined in ISMS-POL-00.
+**United States Federal Requirements**: References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity requirements) apply only where [Organisation] has explicit US federal contractual obligations, as defined in ISMS-POL-00.
 
 For complete regulatory categorization and applicability determination methodology, refer to ISMS-POL-00.
 
@@ -212,7 +211,7 @@ For complete regulatory categorization and applicability determination methodolo
 
 ## Asset Inventory Creation
 
-**Requirement A.5.9-R1**: [Organization] SHALL maintain an inventory of information and associated assets.
+**Requirement A.5.9-R1**: [Organisation] SHALL maintain an inventory of information and associated assets.
 
 **Mandatory Coverage**:
 
@@ -222,13 +221,13 @@ For complete regulatory categorization and applicability determination methodolo
 - All physical assets supporting security (facilities, media, equipment)
 - All personnel assets critical to operations (key roles, competencies)
 
-**Implementation Approach**: [Organization] determines appropriate inventory structure based on risk assessment. Inventory may consist of multiple specialized inventories (CMDB for IT, HRIS for personnel, document repositories) provided they collectively satisfy control requirements.
+**Implementation Approach**: [Organisation] determines appropriate inventory structure based on risk assessment. Inventory may consist of multiple specialized inventories (CMDB for IT, HRIS for personnel, document repositories) provided they collectively satisfy control requirements.
 
 **Verification Method**: Completeness assessment per ISMS-IMP-A.5.9-3 (Quality & Compliance Assessment).
 
 ## Asset Categorization
 
-**Requirement A.5.9-R2**: [Organization] SHALL categorize assets to enable appropriate security control application.
+**Requirement A.5.9-R2**: [Organisation] SHALL categorize assets to enable appropriate security control application.
 
 **Categorization Dimensions**:
 
@@ -261,7 +260,7 @@ For complete regulatory categorization and applicability determination methodolo
 
 ## Mandatory Inventory Attributes
 
-**Requirement A.5.9-R3**: [Organization] SHALL document mandatory attributes for each inventoried asset.
+**Requirement A.5.9-R3**: [Organisation] SHALL document mandatory attributes for each inventoried asset.
 
 **Core Attributes** (required for all assets):
 
@@ -305,13 +304,13 @@ For complete regulatory categorization and applicability determination methodolo
 | **Dependencies** | Required assets for operation | Impact assessment |
 | **Supported Information** | Information assets it processes | Classification inheritance |
 
-**Optional Attributes**: [Organization] may extend inventory with additional attributes based on operational needs (purchase cost, warranty dates, energy consumption, compliance certifications) provided they do not create excessive maintenance burden.
+**Optional Attributes**: [Organisation] may extend inventory with additional attributes based on operational needs (purchase cost, warranty dates, energy consumption, compliance certifications) provided they do not create excessive maintenance burden.
 
 **Verification Method**: Attribute completeness checked per ISMS-IMP-A.5.9-3 (Quality & Compliance Assessment).
 
 ## Asset Ownership
 
-**Requirement A.5.9-R4**: [Organization] SHALL assign an owner to every inventoried asset.
+**Requirement A.5.9-R4**: [Organisation] SHALL assign an owner to every inventoried asset.
 
 **Ownership Principles**:
 
@@ -346,7 +345,7 @@ Unowned asset escalations tracked in exception register. Target: ≥95% assets a
 
 ## Inventory Quality Standards
 
-**Requirement A.5.9-R5**: [Organization] SHALL maintain inventory quality through accuracy, completeness, and currency standards.
+**Requirement A.5.9-R5**: [Organisation] SHALL maintain inventory quality through accuracy, completeness, and currency standards.
 
 ### Completeness
 
@@ -363,7 +362,7 @@ Unowned asset escalations tracked in exception register. Target: ≥95% assets a
 
 **Initial Certification Target**: 85% completeness for critical assets, 80% for standard assets, assessed within 90 days of policy approval via baseline inventory assessment (ISMS-IMP-A.5.9-1).
 
-**Mature State Target** (achieved within 12 months post-certification): 95% completeness for critical assets, 90% for standard assets. Interim progress tracked quarterly via ISMS-IMP-A.5.9-5 Compliance Dashboard.
+**Mature State Target** (achieved within 12 months post-certification): 95% completeness for critical assets, 90% for standard assets. Interim progress tracked quarterly via Summary Dashboard.
 
 ### Accuracy
 
@@ -431,7 +430,7 @@ Accuracy improvement tracked quarterly. Sampling methodology defined in ISMS-IMP
 
 ## Integration Requirements
 
-**Requirement A.5.9-R6**: [Organization] SHALL integrate asset inventory with other ISMS processes and organizational systems.
+**Requirement A.5.9-R6**: [Organisation] SHALL integrate asset inventory with other ISMS processes and organisational systems.
 
 **Mandatory Integration Points**:
 
@@ -439,7 +438,7 @@ Accuracy improvement tracked quarterly. Sampling methodology defined in ISMS-IMP
 |---------------------|------------------------|---------|
 | **A.5.12 (Information Classification)** | Classification assigned to information assets | Security control selection |
 | **A.5.13 (Labeling)** | Labels reference inventory classification | Visible security marking |
-| **A.5.15 (Access Control)** | Access rules based on asset ownership and classification | Authorization decisions |
+| **A.5.15 (Access Control)** | Access rules based on asset ownership and classification | Authorisation decisions |
 | **A.5.18 (Access Rights)** | Access rights approved by asset owners | Accountability enforcement |
 | **A.8.x (Technical Controls)** | Technical controls protect inventoried assets | Control-asset mapping |
 | **Risk Management (Clause 6)** | Inventory provides risk assessment input | Threat-asset-vulnerability identification |
@@ -447,7 +446,7 @@ Accuracy improvement tracked quarterly. Sampling methodology defined in ISMS-IMP
 | **Incident Management** | Incidents reference affected assets | Impact assessment |
 | **Business Continuity** | Critical asset identification for BCP/DRP | Prioritization |
 
-**Organizational System Integration**:
+**Organisational System Integration**:
 
 | System | Integration Purpose | Synchronization |
 |--------|-------------------|----------------|
@@ -472,7 +471,7 @@ Accuracy improvement tracked quarterly. Sampling methodology defined in ISMS-IMP
 - Real-time procurement integration (new asset records auto-created from approved purchase orders).
 - Automated discovery scans (weekly) with reconciliation alerts.
 
-Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current phase assessed quarterly via ISMS-IMP-A.5.9-5 Compliance Dashboard.
+Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current phase assessed quarterly via Summary Dashboard.
 
 **Verification Method**: Integration effectiveness assessed per ISMS-IMP-A.5.9-2 (Inventory Maintenance) and ISMS-IMP-A.5.9-3 (Quality & Compliance Assessment).
 
@@ -489,7 +488,7 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Approve asset inventory policy and major changes
 - Allocate resources for inventory implementation and maintenance
 - Receive annual inventory compliance reports
-- Ensure organizational culture supports asset accountability
+- Ensure organisational culture supports asset accountability
 
 **Specific Responsibilities**:
 
@@ -643,7 +642,7 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 
 ## Assessment and Verification
 
-**Requirement A.5.9-R7**: [Organization] SHALL conduct periodic assessments to verify inventory compliance.
+**Requirement A.5.9-R7**: [Organisation] SHALL conduct periodic assessments to verify inventory compliance.
 
 **Assessment Framework** (5 domains):
 
@@ -653,7 +652,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 | **Inventory Maintenance** | ISMS-IMP-A.5.9-2 | Structure, update procedures, integration | Quarterly |
 | **Quality & Compliance** | ISMS-IMP-A.5.9-3 | Accuracy, completeness, currency verification | Quarterly |
 | **Owner Accountability** | ISMS-IMP-A.5.9-4 | Owner assignment, acknowledgment, training | Quarterly |
-| **Compliance Dashboard** | ISMS-IMP-A.5.9-5 | Executive summary, consolidated metrics | Quarterly |
 
 **Assessment Tools**: Excel-based workbooks generated from Python scripts provide:
 
@@ -678,7 +676,7 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 
 ## Exception Management
 
-**Requirement A.5.9-R8**: [Organization] SHALL establish formal exception process for deviations from inventory requirements.
+**Requirement A.5.9-R8**: [Organisation] SHALL establish formal exception process for deviations from inventory requirements.
 
 **Exception Categories**:
 
@@ -709,11 +707,11 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 
 **Maximum Exception Duration**: 12 months (must be renewed or remediated)
 
-**Verification Method**: Exception register reviewed per ISMS-IMP-A.5.9-5 (Compliance Dashboard).
+**Verification Method**: Exception register reviewed per Summary Dashboard.
 
 ## Incident Response
 
-**Requirement A.5.9-R9**: [Organization] SHALL use asset inventory to support incident response processes.
+**Requirement A.5.9-R9**: [Organisation] SHALL use asset inventory to support incident response processes.
 
 **Inventory in Incident Response**:
 
@@ -738,7 +736,7 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 
 **Review Frequency**: Annual minimum, or triggered by:
 
-- Significant organizational changes (mergers, acquisitions, restructuring)
+- Significant organisational changes (mergers, acquisitions, restructuring)
 - Major regulatory changes affecting asset management
 - Audit findings requiring policy updates
 - Risk assessment identifying policy gaps
@@ -770,7 +768,7 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
@@ -781,7 +779,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Control A.5.9 applicability justified in [Organization]'s SoA
+- Control A.5.9 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 - Asset inventory enables other Annex A control implementation
 
@@ -812,7 +810,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 | **ISMS-IMP-A.5.9-2-UG/TG** | Inventory Maintenance | Inventory structure design, update procedures, integration methods | Security Team, IT Operations, System Owners |
 | **ISMS-IMP-A.5.9-3-UG/TG** | Quality & Compliance Assessment | Accuracy sampling, currency verification, gap analysis | Security Team, Audit, Compliance |
 | **ISMS-IMP-A.5.9-4-UG/TG** | Owner Accountability Assessment | Owner assignment, acknowledgment tracking, responsibility verification | Security Team, Management, Asset Owners |
-| **ISMS-IMP-A.5.9-5-UG/TG** | Compliance Dashboard | Executive summary, consolidated metrics, compliance reporting | CISO, Executive Management, Audit |
 
 **Assessment Tools**:
 
@@ -842,7 +839,7 @@ This policy addresses asset inventory requirements from multiple regulatory fram
 
 *Conditional applicability per ISMS-POL-00
 
-**Compliance Verification**: Regulatory compliance demonstration procedures documented in ISMS-IMP-A.5.9-5 (Compliance Dashboard), including evidence registers and audit trail requirements.
+**Compliance Verification**: Regulatory compliance demonstration procedures documented in Summary Dashboard, including evidence registers and audit trail requirements.
 
 ## Training & Awareness
 
@@ -880,7 +877,7 @@ This policy addresses asset inventory requirements from multiple regulatory fram
 
 # Definitions
 
-**Asset**: Anything that has value to [Organization] and requires protection. Assets include information, IT infrastructure, applications, physical resources, and personnel competencies.
+**Asset**: Anything that has value to [Organisation] and requires protection. Assets include information, IT infrastructure, applications, physical resources, and personnel competencies.
 
 **Information Asset**: Data, content, or knowledge in any form (structured databases, unstructured documents, intellectual property, configurations, credentials) with confidentiality, integrity, or availability requirements.
 
@@ -902,11 +899,11 @@ This policy addresses asset inventory requirements from multiple regulatory fram
 
 **Lifecycle State**: Current stage in asset lifecycle (active, development, maintenance, retired, archived). Determines applicable controls and maintenance requirements.
 
-**Discovery**: Automated or manual process to identify assets within organizational environment. Discovery compares findings against inventory to identify gaps.
+**Discovery**: Automated or manual process to identify assets within organisational environment. Discovery compares findings against inventory to identify gaps.
 
-**CMDB (Configuration Management Database)**: Organizational system documenting IT infrastructure configurations. Primary source for IT asset inventory where implemented.
+**CMDB (Configuration Management Database)**: Organisational system documenting IT infrastructure configurations. Primary source for IT asset inventory where implemented.
 
-**Personnel Asset**: Key organizational roles and specialized competencies (not individual person records). Documented generically to protect privacy while enabling business continuity planning.
+**Personnel Asset**: Key organisational roles and specialized competencies (not individual person records). Documented generically to protect privacy while enabling business continuity planning.
 
 **Granularity**: Level of detail at which assets are inventoried. High-risk assets require individual records; low-risk assets may be grouped (e.g., "standard laptops - quantity 50").
 
@@ -947,7 +944,6 @@ Evidence required to demonstrate this policy is operationally effective:
 - CMDB/HR/procurement system synchronization records
 - Asset lifecycle documentation (acquisition, change, retirement records)
 - Unowned asset escalation records (if any - with <30 day resolution)
-- Compliance dashboard (ISMS-IMP-A.5.9-5) showing consolidated metrics
 - Audit findings and remediation evidence for inventory gaps
 
 **Evidence Repository and Retention**:
@@ -975,7 +971,7 @@ The boundary is: POL-A.5.9 defines what must be inventoried and ownership accoun
 
 ## Purpose
 
-This annex provides practical decision framework for categorizing assets within the inventory. These are **generic examples** that [Organization] adapts to their specific context during risk assessment.
+This annex provides practical decision framework for categorizing assets within the inventory. These are **generic examples** that [Organisation] adapts to their specific context during risk assessment.
 
 ## Primary Categorization: Information vs. Associated Asset
 
@@ -1164,7 +1160,7 @@ This annex provides practical decision framework for categorizing assets within 
 
 ## Your Role as Asset Owner
 
-**You are accountable** for information or associated assets assigned to your ownership. This quick reference summarizes your responsibilities.
+**You are accountable** for information or associated assets assigned to your ownership. This quick reference summarises your responsibilities.
 
 ## Common Mistakes to Avoid
 
@@ -1225,7 +1221,7 @@ Before diving into responsibilities, be aware of these frequent errors:
 **Scenario 1: Asset Location Changed**
 
 - **Action**: Submit inventory update request within 3 business days
-- **How**: [Organization-specific procedure]
+- **How**: [Organisation-specific procedure]
 
 **Scenario 2: Asset No Longer Needed**
 
@@ -1305,4 +1301,4 @@ When leaving role or changing positions:
 
 *This policy establishes requirements for inventory of information and associated assets. Implementation procedures are documented in ISMS-IMP-A.5 (UG/TG).9-1 through A.5.9-5.*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

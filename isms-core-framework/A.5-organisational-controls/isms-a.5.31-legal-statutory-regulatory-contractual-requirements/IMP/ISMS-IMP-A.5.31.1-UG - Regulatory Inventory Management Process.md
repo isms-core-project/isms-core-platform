@@ -3,19 +3,21 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.31: Legal, Statutory, Regulatory and Contractual Requirements
 
+---
+
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
 | **Document Title** | Regulatory Inventory Management Process |
-| **Document Type** | Implementation Guide |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.31.1-UG |
+| **Related Policy** | ISMS-POL-A.5.31 (Legal Statutory Regulatory Contractual Requirements) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.31 (Legal, Statutory, Regulatory and Contractual Requirements) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
-| **Document Owner** | Chief Executive Officer (CEO) |
-| **Approved By** | Executive Management |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -23,11 +25,31 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO/ISO | Initial implementation guide for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.31 (Legal Statutory Regulatory Contractual Requirements)
+- ISMS-IMP-A.5.31.2 (Regulatory Applicability Assessment Process)
+- ISMS-IMP-A.5.31.3 (Requirements Extraction Process)
+- ISMS-IMP-A.5.31.4 (Control Mapping Process)
+- ISMS-IMP-A.5.31.5 (Evidence Management Process)
 
 ---
 
-**Audience:** Security assessors, Control owners, Compliance officers
+### Workbook at a Glance
+
+This workbook contains the following 4 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Regulatory Inventory** | Master inventory of all applicable regulations, standards, and frameworks |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -35,7 +57,7 @@
 
 ## Purpose
 
-This implementation guide provides step-by-step instructions for establishing and maintaining [Organization]'s master regulatory inventory—the definitive list of all regulations, standards, and frameworks relevant to information security compliance obligations.
+This implementation guide provides step-by-step instructions for establishing and maintaining [Organisation]'s master regulatory inventory—the definitive list of all regulations, standards, and frameworks relevant to information security compliance obligations.
 
 **What This Guide Is**:
 
@@ -236,13 +258,11 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - ISMS-IMP-A.5.31.2: Regulatory Applicability Assessment Process
 - ISMS-IMP-A.5.31.3: Requirements Extraction Process
 - ISMS-IMP-A.5.31.4: Control Mapping Process
-- ISMS-IMP-A.5.31.5: Evidence Management Process
 
 **Assessment Tools**:
 
 - Assessment Workbook 1: Regulatory Inventory (this guide's output)
 - Assessment Workbook 2: Applicability Matrix
-- Assessment Workbook 6: Compliance Dashboard
 
 ---
 
@@ -250,7 +270,7 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 
 ---
 
-*This guide provides systematic procedures for creating and maintaining [Organization]'s master regulatory inventory, ensuring all information security compliance obligations are identified, categorized, and tracked.*
+*This guide provides systematic procedures for creating and maintaining [Organisation]'s master regulatory inventory, ensuring all information security compliance obligations are identified, categorized, and tracked.*
 
 ---
 
@@ -258,7 +278,7 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Ignorance of the law excuses no man."*
+— John Selden
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

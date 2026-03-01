@@ -9,17 +9,15 @@
 
 | Attribute | Value |
 |-------|-------|
-| **Document Title** | Incident Detection & Classification Assessment |
+| **Document Title** | Detection Classification Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.24-28.S2-TG |
-| **Assessment Domain** | Domain 2 - Detection & Classification (A.5.25 Focus) |
 | **Related Policy** | ISMS-POL-A.5.24-28 (Incident Management Lifecycle) |
-| **Related Reference** | ISMS-REF-A.5.24-28 (Incident Response Reference Guide) |
-| **Document Owner** | Chief Information Security Officer (CISO) |
-| **Technical Authority** | SOC Manager / Detection Engineering Lead |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.24 (Information Security Incident Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -27,239 +25,112 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | SOC Manager | Initial detection & classification assessment specification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle**: Annual (or after major detection capability changes)  
-**Next Review Date**: [Effective Date + 12 months]  
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-**Related Documents**: 
+**Related Documents**:
 
-- ISMS-POL-A.5.24-28 (Incident Management Lifecycle Policy)
-- ISMS-REF-A.5.24-28 (Incident Response Reference Guide, Section 1: Incident Classification Taxonomy)
-- ISMS-IMP-A.5.24-28.S1 (Framework & Governance Assessment)
+- ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
+- ISMS-IMP-A.5.24-28.S1 (Incident Management Framework Assessment)
 - ISMS-IMP-A.5.24-28.S3 (Response Capabilities Assessment)
 - ISMS-IMP-A.5.24-28.S4 (Forensic Evidence Assessment)
-- ISMS-IMP-A.5.24-28.S5 (Learning & Improvement Assessment)
-- ISMS-IMP-A.8.16 (Security Monitoring Assessment)
-- ISO/IEC 27002:2022 Control A.5.25
-- NIST SP 800-61 Rev. 2 Section 3.2 (Detection and Analysis)
+- ISMS-IMP-A.5.24-28.S5 (Learning & Continuous Improvement Assessment)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a524_28_s2_detection_classification.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.24-28.S2` |
-| **Output Filename** | `ISMS-IMP-A.5.24-28.S2_Detection_&_Classification_YYYYMMDD.xlsx` |
-| **Workbook Title** | Detection & Classification |
-| **Total Sheets** | 17 (17 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D8E4F8 | D8E4F8 | Pale Blue (Sub-section) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFD9B3 | FFD9B3 | Custom |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Detection Mechanisms
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a524_28_s2_detection_classification.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Alert Handling
+**Document ID:** `ISMS-IMP-A.5.24-28.S2`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Classification & Severity
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Detection Mechanisms |
+| 3 | Alert Handling |
+| 4 | Classification & Severity |
+| 5 | Detection Effectiveness |
+| 6 | Gap Analysis |
+| 7 | Evidence Register |
+| 8 | Summary Dashboard |
+| 9 | Approval Sign-Off |
 
-## Sheet 5: Detection Effectiveness
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Gap Analysis
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Detection Mechanisms |
+| 2 | Alert Handling |
+| 3 | Classification & Severity |
+| 4 | Detection Effectiveness |
+| 5 | Question ID |
+| 6 | Section |
+| 7 | Question |
+| 8 | Answer |
+| 9 | Evidence Reference |
+| 10 | Comments |
+| 11 | Gap Identified |
+| 12 | Gap ID |
+| 13 | Gap Description |
+| 14 | Risk Level |
+| 15 | Current State |
+| 16 | Target State |
+| 17 | Remediation |
+| 18 | Owner |
+| 19 | Target Date |
+| 20 | Status |
+| 21 | Assessment Area |
+| 22 | Questions Answered |
+| 23 | No Gap |
+| 24 | N/A |
+| 25 | Target |
+| 26 | Compliance % |
 
-## Sheet 7: Evidence Register
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Dashboard
+```
+Yes, No, Partial, Never, In-Progress, N/A, Informal, Worsening, Improving
+Stable, Active, Archived, Superseded, Pending Review, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
----
-
-## Sheet 9: Approval Sign-Off
-
----
-
-## Sheet 10: Instructions
-
-**Frozen Panes:** A3
-
----
-
-## Sheet 11: Detection_Mechanisms
-
-**Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Question_ID |
-| B | Section |
-| C | Question |
-| D | Answer |
-| E | Evidence_Reference |
-| F | Comments |
-| G | Gap_Identified |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| GN | `=IF(OR(D{row}=` |  |
-
----
-
-## Sheet 12: Alert_Handling
-
-**Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Question_ID |
-| B | Section |
-| C | Question |
-| D | Answer |
-| E | Evidence_Reference |
-| F | Comments |
-| G | Gap_Identified |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| GN | `=IF(OR(D{row}=` |  |
-
----
-
-## Sheet 13: Classification_Severity
-
-**Data Rows:** 8 (rows 76–83) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Question_ID |
-| B | Section |
-| C | Question |
-| D | Answer |
-| E | Evidence_Reference |
-| F | Comments |
-| G | Gap_Identified |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| GN | `=IF(OR(D{row}=` |  |
-
----
-
-## Sheet 14: Detection_Effectiveness
-
-**Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Question_ID |
-| B | Section |
-| C | Question |
-| D | Answer |
-| E | Evidence_Reference |
-| F | Comments |
-| G | Gap_Identified |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| GN | `=IF(OR(D{row}=` |  |
-
----
-
-## Sheet 15: Gap_Analysis
-
-**Data Rows:** 9 (rows 2–10) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Gap_ID |
-| B | Section |
-| C | Gap_Description |
-| D | Risk_Level |
-| E | Current_State |
-| F | Target_State |
-| G | Remediation |
-| H | Owner |
-| I | Target_Date |
-| J | Status |
-
----
-
-## Sheet 16: Evidence_Register
-
-**Data Rows:** 7 (rows 2–8) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence_ID |
-| B | Evidence_Type |
-| C | Description |
-| D | Related_Section |
-| E | Storage_Location |
-| F | Date_Collected |
-| G | Collected_By |
-| H | Verification |
-
----
-
-## Sheet 17: Approval_Signoff
-
-**Frozen Panes:** A3
+**Extracted:** 9 sheets, 26 columns, 22 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

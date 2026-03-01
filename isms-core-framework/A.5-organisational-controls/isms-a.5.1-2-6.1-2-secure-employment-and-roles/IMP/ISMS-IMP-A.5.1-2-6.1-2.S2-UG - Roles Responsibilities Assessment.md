@@ -5,11 +5,11 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
-| **Document Title** | Roles & Responsibilities Assessment |
+| **Document Title** | Roles Responsibilities Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.1-2-6.1-2.S2-UG |
 | **Related Policy** | ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles) |
@@ -31,17 +31,29 @@
 **Next Review Date**: [Effective Date + 90 days]
 
 **Related Documents**:
-- ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles) - Section 5 (Roles & Responsibilities Requirements)
-- ISMS-IMP-A.5.1-2-6.1-2.S1 (Policy Framework Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S3 (Screening & Vetting Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S4 (Employment Contract Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S5 (Governance Compliance Dashboard)
 
-**Note on Naming Convention**: The ".S" designation indicates this implementation is part of a **stacked control framework** (A.5.1 + A.5.2 + A.6.1 + A.6.2). Despite unified implementation, each control maintains distinct requirements for Statement of Applicability purposes.
+- ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles)
+- ISMS-IMP-A.5.1-2-6.1-2.S1 (Policy Framework Assessment)
+- ISMS-IMP-A.5.1-2-6.1-2.S3 (Screening Vetting Assessment)
+- ISMS-IMP-A.5.1-2-6.1-2.S4 (Employment Contract Assessment)
 
 ---
 
-**Audience:** HR managers, CISO, security team leads, department heads, compliance officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Role Inventory | Catalogue all defined information security roles |
+| 3 | Role Definition Assessment | Evaluate completeness and clarity of role definitions |
+| 4 | RACI Matrix Assessment | Assess the RACI matrix coverage and accuracy |
+| 5 | Role Assignment Verification | Verify roles are assigned to named individuals |
+| 6 | Training Assessment | Assess security awareness training for each role |
+| 7 | Access Alignment Review | Verify access rights align with assigned responsibilities |
+| 8 | Gap Analysis | Identify gaps against ISO 27001:2022 A.5.2 requirements |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -49,7 +61,7 @@
 
 ### Assessment Objective
 
-This assessment verifies [Organization]'s compliance with ISO/IEC 27001:2022 Control A.5.2 (Information Security Roles and Responsibilities) as implemented through ISMS-POL-A.5.1-2-6.1-2, Section 5.
+This assessment verifies [Organisation]'s compliance with ISO/IEC 27001:2022 Control A.5.2 (Information Security Roles and Responsibilities) as implemented through ISMS-POL-A.5.1-2-6.1-2, Section 5.
 
 **Control A.5.2 Requirement:**
 > *Information security roles and responsibilities should be defined and allocated according to the organisation needs.*
@@ -67,24 +79,24 @@ This assessment verifies [Organization]'s compliance with ISO/IEC 27001:2022 Con
 This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2, Section 5: Roles & Responsibilities Requirements**.
 
 **Policy Requirements Being Assessed:**
-- **Section 5.1**: Organizational Security Structure (CISO, DPO, Security Committee)
+- **Section 5.1**: Organisational Security Structure (CISO, DPO, Security Committee)
 - **Section 5.2**: Key Security Roles (defined roles with clear responsibilities)
 - **Section 5.3**: RACI Framework (Responsible, Accountable, Consulted, Informed)
 - **Section 5.4**: Role Documentation (job descriptions, role definitions, delegation)
 - **Section 5.5**: Training and Awareness (role-specific security training)
 - **Section 5.6**: Role Review and Update (annual review, change management)
 
-**Evidence Collected**: Role definitions, job descriptions, RACI matrices, organizational charts, training records, role assignments
+**Evidence Collected**: Role definitions, job descriptions, RACI matrices, organisational charts, training records, role assignments
 
 ### Assessment Frequency
 
 **Standard Schedule:**
-- **Quarterly**: All organizations (routine compliance verification)
+- **Quarterly**: All organisations (routine compliance verification)
 - **Annual**: Comprehensive role review and RACI validation
-- **Triggered**: After organizational restructuring, leadership changes, or audit findings
+- **Triggered**: After organisational restructuring, leadership changes, or audit findings
 
 **Why Quarterly?**
-- Organizational changes happen continuously (new hires, promotions, departures)
+- Organisational changes happen continuously (new hires, promotions, departures)
 - Quarterly assessment catches role assignment gaps early
 - Ensures role clarity maintained during growth phases
 - Supports audit readiness
@@ -112,7 +124,7 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 This assessment uses a **role-based verification approach**:
 
 **Step 1: Role Discovery**
-- Identify all security-relevant roles in organization
+- Identify all security-relevant roles in organisation
 - Catalog roles by category (Leadership, Technical, Operational, User)
 - Document role metadata (title, department, current holder)
 
@@ -149,7 +161,7 @@ This assessment uses a **role-based verification approach**:
 ### Data Sources
 
 **Primary Sources**:
-- Organizational charts
+- Organisational charts
 - Job descriptions and role definitions
 - RACI matrices (process documentation)
 - Role assignment records (HR system, Active Directory)
@@ -263,13 +275,13 @@ This assessment uses a **role-based verification approach**:
 - [ ] Application Owners (application security)
 - [ ] Data Owners (data classification & protection)
 
-**Note**: Not all roles required for all organizations. Small organizations may combine roles. Large organizations may split roles further.
+**Note**: Not all roles required for all organisations. Small organisations may combine roles. Large organisations may split roles further.
 
 ### Role Discovery Process
 
-**For Organizations Starting Fresh:**
+**For Organisations Starting Fresh:**
 
-**Step 1**: Review organizational chart
+**Step 1**: Review organisational chart
 - Identify individuals with "security" in job title
 - Identify IT roles with security responsibilities
 - Identify business roles with data protection responsibilities
@@ -289,14 +301,14 @@ This assessment uses a **role-based verification approach**:
 - Identify roles referenced in policies
 - Cross-check role existence vs. policy requirements
 
-**For Organizations with Existing ISMS:**
+**For Organisations with Existing ISMS:**
 
 **Step 1**: Export role inventory from ISMS documentation
 - Role title, tier, current holder, department
 - Last update date, next review date
 
 **Step 2**: Validate role inventory completeness
-- Cross-check against organizational chart
+- Cross-check against organisational chart
 - Verify all security-related positions included
 - Check for orphaned or duplicate roles
 
@@ -343,7 +355,7 @@ This assessment uses a **role-based verification approach**:
 **Completion Process**:
 
 **Step 1: Role Discovery**
-- List ALL security-relevant roles in [Organization]
+- List ALL security-relevant roles in [Organisation]
 - Include Tier 1 (Leadership), Tier 2 (Management), Tier 3 (Operational)
 - Exclude Tier 4 (general users) unless specific security user roles
 
@@ -352,7 +364,7 @@ For each role, document:
 
 **Q1: Role_ID**
 - **Question**: What is the unique role identifier?
-- **Format**: Organizational standard (e.g., ROLE-SEC-001, SR-CISO)
+- **Format**: Organisational standard (e.g., ROLE-SEC-001, SR-CISO)
 - **Example**: "SR-CISO", "SR-DPO", "SR-SECMGR-001"
 - **Required**: YES
 - **Tip**: Use consistent numbering scheme
@@ -511,7 +523,7 @@ For each role, document:
 
 2. **Include hybrid roles**: IT roles with security responsibilities (e.g., "System Admin with backup management responsibility")
 
-3. **Don't over-fragment**: Small organizations may have one person in multiple roles (document as separate role entries but same Current_Holder)
+3. **Don't over-fragment**: Small organisations may have one person in multiple roles (document as separate role entries but same Current_Holder)
 
 4. **Identify vacancies early**: Mark vacant roles prominently for recruitment tracking
 
@@ -1210,7 +1222,7 @@ For each role, document:
 
 ## Evidence Collection Guide
 
-### Evidence Organization
+### Evidence Organisation
 
 **Folder Structure**:
 ```
@@ -1246,7 +1258,7 @@ Evidence/A.5.2_Roles_Responsibilities/
 ### Evidence Types by Assessment Sheet
 
 **Sheet 2 (Role Inventory)**:
-- Organizational charts
+- Organisational charts
 - HR role listings
 - Job descriptions (summary)
 
@@ -1261,7 +1273,7 @@ Evidence/A.5.2_Roles_Responsibilities/
 - Interview notes (RACI accuracy verification)
 
 **Sheet 5 (Role Assignment Verification)**:
-- Organizational charts with names
+- Organisational charts with names
 - HR assignment records
 - Interview transcripts (awareness verification)
 - Onboarding checklists
@@ -1287,13 +1299,12 @@ This assessment (.S2 - Roles & Responsibilities) is part of the stacked control 
 - **ISMS-IMP-A.5.1-2-6.1-2.S1** (Policy Framework): Policy ownership roles flow to .S2 role inventory
 - **ISMS-IMP-A.5.1-2-6.1-2.S3** (Screening & Vetting): Role sensitivity determines screening level
 - **ISMS-IMP-A.5.1-2-6.1-2.S4** (Employment Contracts): Role definitions inform contract clauses
-- **ISMS-IMP-A.5.1-2-6.1-2.S5** (Governance Compliance Dashboard): All .S gaps flow to dashboard
 
 **Data Flow**:
 - Role inventory (Sheet 2) feeds screening requirements in .S3
 - Role responsibilities inform contract security clauses in .S4
 - Training requirements link to employment onboarding in .S4
-- All gaps flow to .S5 for consolidated dashboard
+- All gaps are tracked in the Summary Dashboard
 
 ---
 
@@ -1301,7 +1312,7 @@ This assessment (.S2 - Roles & Responsibilities) is part of the stacked control 
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Accountability breeds response-ability."*
+— Stephen R. Covey
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

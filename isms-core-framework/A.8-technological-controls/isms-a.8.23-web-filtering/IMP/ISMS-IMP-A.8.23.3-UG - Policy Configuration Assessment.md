@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Policy Configuration Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.23.3-UG |
+| **Related Policy** | ISMS-POL-A.8.23 (Web Filtering) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.23 (Web Filtering) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Web Filtering Policy Configuration & Rule Management |
-| **Related Policy** | ISMS-POL-A.8.23, Section 2.1 (Threat Protection Requirements), ISMS-POL-A.8.23, Section 2.2 (Category Filtering Approach), ISMS-POL-A.8.23, Section 3.3 (Exception Management) |
-| **Purpose** | Document filtering policies, rules, exceptions, and verify alignment with organizational Acceptable Use Policy in a vendor-agnostic manner |
-| **Target Audience** | Security Team, Policy Owners, Network Engineers, Compliance Officers, Auditors, Workbook Developers (Python/Excel script maintainers) |
-| **Assessment Type** | Policy & Configuration |
-| **Review Cycle** | Quarterly or After Policy Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Web Filtering Policy Configuration assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.23 (Web Filtering)
+- ISMS-IMP-A.8.23.1 (Filtering Infrastructure Assessment)
+- ISMS-IMP-A.8.23.2 (Network Coverage Assessment)
+- ISMS-IMP-A.8.23.4 (Monitoring & Response Assessment)
+
+---
 
 ### Document Structure
 
@@ -35,6 +49,25 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Threat Protection | Assess threat protection policy configuration |
+| 3 | Category Management | Manage URL category filtering rules |
+| 4 | Custom Lists | Document custom allow and block lists |
+| 5 | Policy Exceptions | Track and manage policy exceptions |
+| 6 | User Group Policies | Document user group-specific filtering policies |
+| 7 | Acceptable Use Alignment | Verify policy alignment with Acceptable Use Policy |
+| 8 | Policy Review Process | Document policy review and update procedures |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Gap Analysis | Identify policy configuration gaps |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
+
+---
+
 ## Assessment Overview
 
 ### What This Assessment Evaluates
@@ -43,14 +76,14 @@ This assessment documents HOW web filtering solutions are configured. Unlike Ass
 
 ### Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - ISO/IEC 27001:2022 Control A.8.23: Web Filtering
 - ISMS-POL-A.8.23, Section 2.1 (Threat Protection Requirements): Threat Protection Requirements
 - ISMS-POL-A.8.23, Section 2.2 (Category Filtering Approach): Category Filtering Requirements
 - ISMS-POL-A.8.23, Section 3.3 (Exception Management): Exception Management Requirements
 
-Filtering technology without proper policy configuration provides little protection. This assessment ensures policies are properly configured, documented, regularly reviewed, and aligned with [Organization]'s Acceptable Use Policy (AUP). It verifies that threat protection is mandatory, category filtering aligns with organizational risk tolerance, and exceptions are properly managed.
+Filtering technology without proper policy configuration provides little protection. This assessment ensures policies are properly configured, documented, regularly reviewed, and aligned with [Organisation]'s Acceptable Use Policy (AUP). It verifies that threat protection is mandatory, category filtering aligns with organisational risk tolerance, and exceptions are properly managed.
 
 ### What You'll Document
 
@@ -170,7 +203,7 @@ Follow this systematic approach to complete the assessment:
 
 Before diving into details, document your approach:
 
-1. Review your organization's filtering philosophy
+1. Review your organisation's filtering philosophy
 2. Common indicators:
 
    - **Restrictive:** Many categories blocked, frequent exception requests, tight control
@@ -248,7 +281,7 @@ Skip this step if trust-based approach:
 
 **Step 5: Custom Lists Inventory (1-2 hours)**
 
-Document organization-maintained URL lists:
+Document organisation-maintained URL lists:
 
 1. Go to "Custom_Lists" sheet
 2. For EACH custom list:
@@ -352,7 +385,7 @@ If using differentiated policies:
 
 5. Verify alignment:
 
-   - Do policies match organizational hierarchy?
+   - Do policies match organisational hierarchy?
    - Are policies justified (not just "because they're execs")?
    - Is differentiation documented and approved?
 
@@ -491,7 +524,7 @@ Before submitting for review, verify:
 - [ ] Custom lists inventoried
 - [ ] All exceptions tracked (especially expired ones)
 - [ ] User/group policies documented (if applicable)
-- [ ] AUP alignment analyzed
+- [ ] AUP alignment analysed
 - [ ] Review process documented
 - [ ] All gaps identified with remediation plans
 - [ ] Evidence collected and referenced
@@ -589,7 +622,7 @@ This section provides detailed guidance for completing each field in the assessm
 - **Choose "Allow":** Category explicitly allowed
 - **Choose "Warn":** User warned but can proceed
 - **Choose "Monitor Only":** Logged but not blocked
-- **Choose "N/A":** Not applicable to this organization
+- **Choose "N/A":** Not applicable to this organisation
 - **Example:** Adult Content = Block, News/Media = Allow
 
 **Q: Applied To**
@@ -1068,7 +1101,7 @@ Before submitting for review, verify:
 - [ ] Custom lists inventoried
 - [ ] All exceptions tracked and current
 - [ ] User/group policies documented (if applicable)
-- [ ] AUP alignment analyzed
+- [ ] AUP alignment analysed
 - [ ] Policy review process documented
 - [ ] All gaps identified with remediation plans
 - [ ] Evidence collected
@@ -1099,7 +1132,7 @@ Before submitting for review, verify:
 **Evidence:**
 
 - [ ] Evidence Register populated
-- [ ] Evidence files organized
+- [ ] Evidence files organised
 - [ ] Evidence IDs match references
 - [ ] Screenshots show current date
 - [ ] Approvals documented
@@ -1119,7 +1152,7 @@ Before submitting for review, verify:
 
 - Policy Owner reviews policy decisions
 - Verifies business justifications
-- Confirms alignment with organizational goals
+- Confirms alignment with organisational goals
 - Typical turnaround: 2-3 days
 
 **Step 3: Security Team Technical Review**
@@ -1195,7 +1228,7 @@ Before submitting for review, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A policy is only as effective as its weakest rule."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

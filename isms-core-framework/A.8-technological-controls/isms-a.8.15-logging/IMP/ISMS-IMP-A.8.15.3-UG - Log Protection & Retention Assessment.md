@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Log Protection & Retention Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.15.3-UG |
+| **Related Policy** | ISMS-POL-A.8.15 (Logging) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.15 (Logging) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Log Protection, Integrity, Access Control & Retention Compliance |
-| **Related Policy** | ISMS-POL-A.8.15, Section 2.2 (Log Protection & Integrity), Section 2.3 (Log Retention & Storage), Section 2.5 (Privacy & Data Protection) |
-| **Purpose** | Verify log integrity protection mechanisms, validate access controls, assess retention compliance, evaluate privacy controls |
-| **Target Audience** | Information Security Team, SOC, IT Operations, Data Protection Officer (DPO), Legal/Compliance, Storage Team, Auditors, Workbook Developers |
-| **Assessment Type** | Security & Compliance |
-| **Review Cycle** | Semi-annual (full assessment), Quarterly (retention compliance check) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
+| Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Initial technical specification | ISMS Implementation Team |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.15 (Logging)
+- ISMS-IMP-A.8.15.1 (Log Source Inventory Assessment)
+- ISMS-IMP-A.8.15.2 (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.4 (Log Analysis & Review Assessment)
+
+---
 
 ### Document Structure
 
@@ -35,6 +49,28 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Access Control Assessment | Assess who can access log data and under what conditions |
+| 3 | Integrity Protection | Verify log integrity protection mechanisms |
+| 4 | Secure Transmission | Verify secure log transmission controls |
+| 5 | Retention Period Compliance | Assess compliance with log retention period requirements |
+| 6 | Storage Tier Implementation | Assess log storage tiering and archival implementation |
+| 7 | Log Backup & Recovery | Assess log backup and recovery capabilities |
+| 8 | Disposal Procedures | Verify secure log disposal procedures |
+| 9 | Separation of Duties | Verify separation of duties for log management |
+| 10 | Legal Hold Management | Manage legal hold requirements for log retention |
+| 11 | Privacy Impact Assessment | Assess privacy impact of log retention practices |
+| 12 | Gap Analysis | Identify log protection and retention gaps |
+| 13 | Evidence Register | Store and reference evidence supporting assessments |
+| 14 | Summary Dashboard | Compliance status and key metrics overview |
+| 15 | Approval Sign-Off | Management review sign-off and certification |
+
+---
+
 # Assessment Overview
 
 ## What This Assessment Evaluates
@@ -43,10 +79,10 @@ This assessment evaluates LOG PROTECTION AND RETENTION - how logs are protected 
 
 **Key Questions Answered:**
 
-- Are logs protected from unauthorized modification or deletion?
+- Are logs protected from unauthorised modification or deletion?
 - Who has access to logs? (Access control verification)
 - Are retention periods compliant with policy and regulatory requirements?
-- Are privacy requirements met? (GDPR, nDSG data minimization)
+- Are privacy requirements met? (GDPR, nDSG data minimisation)
 - Are tamper detection mechanisms in place and working?
 - Is secure disposal implemented after retention period expires?
 
@@ -60,19 +96,19 @@ This is purely about **PROTECTION** (integrity, access control) and **RETENTION*
 
 ## Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - **ISO/IEC 27001:2022 Control A.8.15**: Logs must be "kept" - requires protection from tampering and appropriate retention
 - **ISMS-POL-A.8.15, Section 2.2 (Log Protection)**: Integrity protection, access control, tamper detection requirements
 - **ISMS-POL-A.8.15, Section 2.3 (Log Retention)**: Minimum retention periods per regulation (PCI DSS v4.0.1 12 months, HIPAA 6 years, SOX 7 years)
-- **ISMS-POL-A.8.15, Section 2.5 (Privacy)**: Data minimization, purpose limitation, GDPR/nDSG compliance
+- **ISMS-POL-A.8.15, Section 2.5 (Privacy)**: Data minimisation, purpose limitation, GDPR/nDSG compliance
 - **PCI DSS v4.0.1 Requirement 10.3** (if applicable): Log integrity protection and access control
 - **GDPR Article 32** (if applicable): Security measures including integrity and confidentiality of logs
 
 **Security Impact**:
 
 - **Attackers modify logs to hide tracks** - integrity protection prevents evidence destruction
-- **Insider threats access sensitive logs** - access control prevents unauthorized viewing of confidential data
+- **Insider threats access sensitive logs** - access control prevents unauthorised viewing of confidential data
 - **Premature log deletion** - retention compliance ensures evidence available for investigations
 - **Privacy violations** - logging excessive personal data creates GDPR violations
 
@@ -92,7 +128,7 @@ This assessment verifies [Organization]'s compliance with:
 2. **Integrity Protection Assessment**: Tamper protection mechanisms (WORM, signatures, hashing)
 3. **Retention Compliance Tracking**: Actual retention vs. policy requirements per log category
 4. **Disposal Procedures Verification**: Secure deletion after retention period expires
-5. **Privacy Impact Assessment**: Data minimization, prohibited data types, GDPR compliance
+5. **Privacy Impact Assessment**: Data minimisation, prohibited data types, GDPR compliance
 6. **Tamper Detection Testing**: Alert verification, integrity validation procedures
 7. **Legal Hold Management**: Legal hold processes, chain of custody procedures
 8. **Gap Analysis**: Non-compliance findings, remediation plans
@@ -135,10 +171,10 @@ IMP-A.8.15.4 (Analysis & Review)
     Verifies logs ANALYZED and REVIEWED
     |
     v
-IMP-A.8.15.5 (Compliance Dashboard)
+Summary Dashboards (per workbook)
     |
     v
-    Consolidates all assessments
+    Findings tracked in Summary Dashboards
 ```
 
 **Recommended Order**: Complete IMP-A.8.15.1 and IMP-A.8.15.2 FIRST (know what logs exist and where they're stored), then complete this assessment (verify protection and retention).
@@ -172,7 +208,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 **Policy & Documentation Access**:
 
 - Data classification policy (to verify log data classifications)
-- Retention schedules (organizational retention policies)
+- Retention schedules (organisational retention policies)
 - Privacy policy and DPIA documentation (for privacy assessment)
 - Legal hold procedures (if any active legal holds)
 
@@ -239,7 +275,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 **Phase 3: Privacy & Legal (Sheets 7-8)**
 
-- Sheet 7: Privacy Impact Assessment (data minimization, prohibited data, GDPR compliance)
+- Sheet 7: Privacy Impact Assessment (data minimisation, prohibited data, GDPR compliance)
 - Sheet 8: Legal Hold Management (active holds, chain of custody)
 
 **Phase 4: Review & Approval (Sheets 9-11)**
@@ -306,7 +342,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 - Review log samples (check for prohibited data types per policy Section 2.5)
 - Interview application owners (understand what's being logged)
-- Assess data minimization (is all logged data necessary?)
+- Assess data minimisation (is all logged data necessary?)
 - Verify GDPR/nDSG compliance (purpose limitation, transparency)
 
 ---
@@ -327,7 +363,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 ## Sheet 2: Access Control Verification
 
-**Purpose**: Verify log access is restricted to authorized personnel with legitimate business need.
+**Purpose**: Verify log access is restricted to authorised personnel with legitimate business need.
 
 **What to Document**:
 
@@ -341,13 +377,13 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Business Justification (Why does this user need log access?)
 - Last Access Date (When did they last access logs? Verify from audit logs)
 - Access Review Date (When was this access last reviewed and approved?)
-- Access Approved By (Who authorized this access?)
+- Access Approved By (Who authorised this access?)
 
 **Policy Requirements (from ISMS-POL-A.8.15 Section 2.2)**:
 
-- **Read access restricted to**: SOC analysts, security engineers, InfoSec Manager, CISO, authorized auditors
+- **Read access restricted to**: SOC analysts, security engineers, InfoSec Manager, CISO, authorised auditors
 - **Write access**: Logging service daemons and system logging processes ONLY (no human write access)
-- **Administrative access**: Requires multi-person authorization
+- **Administrative access**: Requires multi-person authorisation
 - **Separation of duties**: System administrators SHALL NOT have administrative access to logging infrastructure
 - **Log access SHALL be logged**: Logging the log access for accountability
 
@@ -386,7 +422,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 ## Sheet 3: Integrity Protection Assessment
 
-**Purpose**: Verify logs are protected from unauthorized modification or deletion.
+**Purpose**: Verify logs are protected from unauthorised modification or deletion.
 
 **What to Document**:
 
@@ -407,7 +443,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 - **Access Control** (from Sheet 2):
   - Write Protection (No human write access to logs confirmed?)
-  - Administrative Controls (Multi-person authorization required?)
+  - Administrative Controls (Multi-person authorisation required?)
   - Separation of Duties (Log admins != system admins confirmed?)
 
 - **Centralized Collection**:
@@ -736,13 +772,13 @@ Check logs for presence of PROHIBITED data types:
 **Article 32 - Security of Processing**:
 
 - Logs protected (integrity and confidentiality verified - see Sheets 2-3)
-- Access controlled (only authorized personnel - see Sheet 2)
+- Access controlled (only authorised personnel - see Sheet 2)
 
 **Transparency Requirements**:
 
 - Users informed of logging (Acceptable Use Policy, employment contract, privacy notice?)
 - Logging scope disclosed (what activities logged, how long retained, who has access)
-- Privacy notice updated (logging practices described in organizational privacy policy)
+- Privacy notice updated (logging practices described in organisational privacy policy)
 
 **Employee Monitoring Considerations**:
 
@@ -758,7 +794,7 @@ Check logs for presence of PROHIBITED data types:
 
 **Privacy Compliance Score**:
 
-- Data minimization compliant (% of log categories minimizing data)
+- Data minimisation compliant (% of log categories minimising data)
 - No prohibited data (yes/no - binary compliance)
 - GDPR/nDSG compliant (% of GDPR articles addressed)
 - Transparency requirements met (yes/no)
@@ -768,7 +804,7 @@ Check logs for presence of PROHIBITED data types:
 
 - Log samples (review for prohibited data - redact sensitive info in evidence)
 - Data classification mapping (which logs contain what data types)
-- Privacy notice (organizational privacy policy referencing logging)
+- Privacy notice (organisational privacy policy referencing logging)
 - Acceptable use policy (employees informed of logging)
 - DPIA (Data Protection Impact Assessment for logging - if required)
 - Legal basis documentation (GDPR Article 6 legal basis for logging)
@@ -868,7 +904,7 @@ Check logs for presence of PROHIBITED data types:
 - RBAC configuration screenshots (role definitions, permissions)
 - Access audit logs (sample of who accessed logs, when, what they viewed)
 - Access review documentation (quarterly review records, approval signatures)
-- Separation of duties verification (organizational chart showing log admins != system admins)
+- Separation of duties verification (organisational chart showing log admins != system admins)
 
 **For Integrity Protection (Sheet 3)**:
 
@@ -904,7 +940,7 @@ Check logs for presence of PROHIBITED data types:
 **For Privacy Assessment (Sheet 7)**:
 
 - Log samples (reviewed for prohibited data - redacted for evidence)
-- Privacy notice (organizational privacy policy mentioning logging)
+- Privacy notice (organisational privacy policy mentioning logging)
 - Acceptable use policy (employees informed of logging and monitoring)
 - DPIA (Data Protection Impact Assessment if required by GDPR)
 - Legal basis documentation (GDPR Article 6 legal basis for logging)
@@ -940,7 +976,7 @@ Check logs for presence of PROHIBITED data types:
 - Record test results (pass/fail, actual vs. expected)
 - Note any deviations (if test didn't go as planned, document why)
 
-**Evidence Organization**:
+**Evidence Organisation**:
 ```
 ISMS-IMP-A.8.15.3_Evidence/
 |-- Sheet02_Access_Control/
@@ -1010,7 +1046,7 @@ ISMS-IMP-A.8.15.3_Evidence/
 
 **Evidence of Compliance**:
 
-- Organizational chart showing different people in system admin and log admin roles
+- Organisational chart showing different people in system admin and log admin roles
 - RBAC configuration showing system admin role has NO log access
 - Access audit logs showing system admins are NOT accessing security logs
 
@@ -1093,7 +1129,7 @@ ISMS-IMP-A.8.15.3_Evidence/
 **How to Avoid**:
 
 - Review log samples (actually look at logs, check for tokens/keys)
-- Regex searches (search logs for patterns: "token=", "api_key=", "Bearer ", "Authorization:")
+- Regex searches (search logs for patterns: "token=", "api_key=", "Bearer ", "Authorisation:")
 - Developer training (educate developers on what NOT to log)
 - Log scrubbing (implement filters to strip tokens/keys from logs before storage)
 
@@ -1146,12 +1182,12 @@ ISMS-IMP-A.8.15.3_Evidence/
 **Reality**:
 
 - Security logs ARE personal data (user IDs, IP addresses, authentication events = personal data)
-- GDPR applies (all GDPR principles apply: data minimization, purpose limitation, storage limitation)
+- GDPR applies (all GDPR principles apply: data minimisation, purpose limitation, storage limitation)
 - Article 32 is legal basis (not exemption): Logging justified under Article 32 (security) BUT still must comply with GDPR principles
 
 **GDPR Compliance Required**:
 
-- Data minimization (log only necessary data - don't log full health records, just "access to patient record 12345")
+- Data minimisation (log only necessary data - don't log full health records, just "access to patient record 12345")
 - Purpose limitation (use logs only for security, not general employee monitoring)
 - Storage limitation (retention periods must be justified, not indefinite)
 - Transparency (inform users that logging occurs)
@@ -1167,8 +1203,8 @@ ISMS-IMP-A.8.15.3_Evidence/
 
 - DPIA (if required) showing privacy assessment of logging
 - Legal basis documentation (memo from Legal/DPO confirming legal basis)
-- Privacy notice (organizational privacy policy describes logging practices)
-- Data minimization assessment (Sheet 7 showing unnecessary data not logged)
+- Privacy notice (organisational privacy policy describes logging practices)
+- Data minimisation assessment (Sheet 7 showing unnecessary data not logged)
 
 ---
 
@@ -1211,7 +1247,7 @@ ISMS-IMP-A.8.15.3_Evidence/
 - [ ] Evidence file naming clear and consistent
 - [ ] Evidence contains date/time metadata
 - [ ] Sensitive information redacted (GDPR compliance in evidence files)
-- [ ] Evidence organized in folder structure (per section 5.2)
+- [ ] Evidence organised in folder structure (per section 5.2)
 - [ ] Evidence Register (Sheet 10) complete (all evidence indexed)
 
 ## Approval Readiness
@@ -1249,7 +1285,7 @@ ISMS-IMP-A.8.15.3_Evidence/
 - **Reviewer**: CISO
 - **Focus**: Strategic alignment, gap priorities, resource allocation for remediation
 - **Timeline**: 1-2 weeks
-- **Outcome**: Assessment approved, gaps authorized for remediation
+- **Outcome**: Assessment approved, gaps authorised for remediation
 
 ## Approval Workflow
 
@@ -1311,7 +1347,7 @@ ISMS-IMP-A.8.15.3_Evidence/
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A log tampered with is evidence destroyed."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

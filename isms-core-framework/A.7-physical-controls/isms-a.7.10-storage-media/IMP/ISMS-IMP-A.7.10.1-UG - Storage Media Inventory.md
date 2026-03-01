@@ -3,29 +3,54 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.7.10: Storage Media
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Storage Media Inventory |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.10.1-UG |
+| **Related Policy** | ISMS-POL-A.7.10 (Storage Media) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.10 (Storage Media) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Storage Media Inventory & Classification |
-| **Related Policy** | ISMS-POL-A.7.10, Section 2.2 (Removable Media Management) |
-| **Purpose** | Assess organisational compliance with storage media inventory, registration, and classification requirements across the media lifecycle |
-| **Target Audience** | IT Operations, Asset Management, Information Security Officers, Physical Security, Compliance Officers, Auditors |
-| **Assessment Type** | Asset Inventory & Operational Compliance |
-| **Review Cycle** | Quarterly (minimum) or After Significant Media Acquisitions |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Storage Media Inventory assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.10 (Storage Media)
+- ISMS-IMP-A.7.10.2 (Media Handling Procedures)
+- ISMS-IMP-A.7.10.3 (Media Lifecycle Tracking)
 
 ---
 
-**Audience:** IT Operations, Asset Management, Physical Security Managers, Compliance Officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Digital Storage Media | Inventory all digital storage media assets |
+| 3 | Removable Media Registry | Register all removable media items and their authorisation |
+| 4 | Fixed Storage Assets | Catalogue fixed storage devices (servers, NAS, SAN) |
+| 5 | Cloud Storage Mapping | Map cloud storage services and data locations |
+| 6 | Physical Documents | Inventory classified physical document storage |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -569,7 +594,7 @@ Before submitting assessment for approval, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Data at rest is data at risk if unaccounted for."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

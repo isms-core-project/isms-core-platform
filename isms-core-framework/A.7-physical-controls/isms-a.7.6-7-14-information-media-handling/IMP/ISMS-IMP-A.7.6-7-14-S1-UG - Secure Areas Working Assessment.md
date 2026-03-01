@@ -8,26 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Secure Areas Working Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.6-7-14-S1-UG |
+| **Related Policy** | ISMS-POL-A.7.6-7-14-S1 (Information Media Handling) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.6 (Working in Secure Areas) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Secure Areas - Working Procedures, Access Controls, Personnel Conduct |
-| **Related Policy** | ISMS-POL-A.7.6-7-14, Section 2.1 (Working in Secure Areas) |
-| **Purpose** | Document secure area definitions, assess working procedures against policy requirements, track personnel compliance and third-party access |
-| **Target Audience** | Facilities Management, Security Operations, IT Operations, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Procedural |
-| **Review Cycle** | Quarterly or After Major Facility Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Secure Areas Working assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.6-7-14-S1 (Information Media Handling)
+- ISMS-IMP-A.7.6-7-14-S2 (Clear Desk Screen Compliance)
+- ISMS-IMP-A.7.6-7-14-S3 (Equipment Disposal Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.6-7-14-S1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Secure Area Register | Register all defined secure areas and their classifications |
+| 3 | Working Procedures | Assess procedures for working within secure areas |
+| 4 | Third-Party Access | Track and control third-party access to secure areas |
+| 5 | Incidents | Record and track secure area security incidents |
+| 6 | Evidence Register | Store and reference evidence supporting assessments |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -97,7 +125,7 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 | **ISMS-IMP-A.7.6-7-14-S1** | **Secure Areas Working** | **WHAT secure areas exist, HOW do personnel work within them** |
 | ISMS-IMP-A.7.6-7-14-S2 | Clear Desk/Screen Compliance | Workspace information protection practices |
 | ISMS-IMP-A.7.6-7-14-S3 | Equipment Disposal Assessment | Secure equipment disposal and re-use |
-| ISMS-IMP-A.7.6-7-14-S4 | Compliance Dashboard | Consolidated view across all secure areas and media handling |
+
 
 ### Who Should Complete This Assessment
 
@@ -191,7 +219,6 @@ This assessment has NO dependencies on other assessments - it can be completed i
 
 However, outputs from this assessment are INPUT to:
 
-- ISMS-IMP-A.7.6-7-14-S4 (Compliance Dashboard) - Consolidates secure area compliance with other controls
 
 ---
 
@@ -771,7 +798,7 @@ Before submitting for Level 2 approval, complete this self-assessment:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Security in depth begins with security in the room where work is done."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

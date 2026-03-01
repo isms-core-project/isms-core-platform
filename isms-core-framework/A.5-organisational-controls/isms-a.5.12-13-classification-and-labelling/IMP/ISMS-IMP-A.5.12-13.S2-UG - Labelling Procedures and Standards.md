@@ -7,21 +7,55 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Labelling Procedures and Standards |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.12-13.S2-UG |
+| **Related Policy** | ISMS-POL-A.5.12-13 (Classification and Labelling) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.13 (Labelling of Information) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.13 Labelling of Information |
-| **Parent Policy** | ISMS-POL-A.5.12-13 - Information Classification and Labelling |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.12-13 (Classification and Labelling)
+- ISMS-IMP-A.5.12-13.S1 (Classification Scheme Definition)
+- ISMS-IMP-A.5.12-13.S3 (Asset Classification Inventory)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.12-13.S2-TG.
+
+### Workbook at a Glance
+
+This workbook contains the following 8 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Labelling Standards** | Core labelling standards and format requirements by classification level |
+| **Digital Labelling** | Procedures and requirements for digital asset labelling |
+| **Physical Labelling** | Procedures and requirements for physical asset labelling |
+| **Automation Tools** | Inventory of automated labelling tools and their configuration |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -89,7 +123,7 @@ The Labelling Procedures Assessment covers:
 
 Per ISO/IEC 27001:2022 Control A.5.13:
 
-> *"An appropriate set of procedures for information labelling should be developed and implemented in accordance with the information classification scheme adopted by the organization."*
+> *"An appropriate set of procedures for information labelling should be developed and implemented in accordance with the information classification scheme adopted by the organisation."*
 
 **Control Type:** Preventive
 **Security Properties:** Confidentiality
@@ -506,7 +540,7 @@ The Approval_SignOff sheet requires:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Language is the roadmap of a culture."*
+— Rita Mae Brown
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

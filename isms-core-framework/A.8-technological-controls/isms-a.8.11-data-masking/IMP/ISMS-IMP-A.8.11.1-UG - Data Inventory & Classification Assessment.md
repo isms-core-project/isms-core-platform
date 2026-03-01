@@ -8,26 +8,53 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Data Inventory & Classification Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.11.1-UG |
+| **Related Policy** | ISMS-POL-A.8.11 (Data Masking) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.11 (Data Masking) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Sensitive Data Inventory & Classification |
-| **Related Policy** | ISMS-POL-A.8.11, Section 2.1 (Data Classification and Identification) |
-| **Purpose** | Assess organization's ability to identify, inventory, classify, and assign ownership to sensitive data requiring masking controls |
-| **Target Audience** | Data Governance Teams, Data Protection Officers, Database Administrators, Application Owners, Compliance Officers, Auditors |
-| **Assessment Type** | Data Discovery & Classification |
-| **Review Cycle** | Quarterly (Inventory Updates) / Annual (Classification Review) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial workbook layout specification only | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.11 (Data Masking)
+- ISMS-IMP-A.8.11.2 (Masking Technique Selection & Requirements)
+- ISMS-IMP-A.8.11.3 (Environment Coverage Assessment)
+- ISMS-IMP-A.8.11.4 (Testing & Validation Framework)
 
 ---
 
-**Audience:** Data Governance Leads, Data Protection Officers, Database Administrators, Application Owners, Compliance Officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | System Inventory | Inventory of systems processing sensitive data |
+| 3 | Data Category Reference | Reference taxonomy for sensitive data categories |
+| 4 | Sensitive Data Inventory | Catalogue all sensitive data assets |
+| 5 | Classification Matrix | Map data types to classification levels |
+| 6 | Regulatory Mapping | Map data assets to regulatory requirements |
+| 7 | Data Owner Assignment | Assign data ownership and stewardship |
+| 8 | Masking Priority Matrix | Prioritise data elements for masking |
+| 9 | Gap Analysis | Identify masking coverage gaps |
+| 10 | Evidence Register | Store and reference evidence supporting assessments |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -35,11 +62,11 @@
 
 ## What This Assessment Measures
 
-This assessment evaluates [Organization]'s **ability to identify, inventory, classify, and govern sensitive data** as the foundational prerequisite for implementing effective data masking controls under ISO/IEC 27001:2022 Control A.8.11.
+This assessment evaluates [Organisation]'s **ability to identify, inventory, classify, and govern sensitive data** as the foundational prerequisite for implementing effective data masking controls under ISO/IEC 27001:2022 Control A.8.11.
 
 **Core Principle:** *"You cannot mask what you do not know exists."*
 
-**Scope:** Complete organizational data landscape including:
+**Scope:** Complete organisational data landscape including:
 1. System Inventory (all databases, applications, file shares, SaaS platforms)
 2. Data Category Taxonomy (10 sensitive data categories from PII to biometrics)
 3. Sensitive Data Element Identification (table/field/column level)
@@ -56,7 +83,7 @@ This assessment evaluates [Organization]'s **ability to identify, inventory, cla
 ## Why This Matters
 
 **ISO 27001:2022 Control A.8.11 Requirement:**
-> *"Data masking should be used in accordance with the organization's topic-specific policy on access control and other related topic-specific policies, and business requirements, taking applicable legislation into consideration."*
+> *"Data masking should be used in accordance with the organisation's topic-specific policy on access control and other related topic-specific policies, and business requirements, taking applicable legislation into consideration."*
 
 **The Foundational Problem:**
 Data masking controls are meaningless without knowing:
@@ -89,8 +116,8 @@ Data masking controls are meaningless without knowing:
 
 **Required Knowledge:**
 
-- [Organization]'s information systems architecture (databases, applications, data flows)
-- Data protection regulatory requirements applicable to [Organization]
+- [Organisation]'s information systems architecture (databases, applications, data flows)
+- Data protection regulatory requirements applicable to [Organisation]
 - Data classification schemes and sensitivity criteria
 - Business data ownership structures
 
@@ -125,7 +152,7 @@ Data masking controls are meaningless without knowing:
 - **Evidence Collection:** 1-2 hours
 - **Quality Review:** 1-2 hours
 
-**Pro Tip for Large Organizations (>100 systems):**
+**Pro Tip for Large Organisations (>100 systems):**
 
 - **Phase 1 (Week 1):** Crown jewel systems only (top 10-20 most critical)
 - **Phase 2 (Week 2-3):** High-risk systems (regulatory scope, customer data)
@@ -137,7 +164,7 @@ Data masking controls are meaningless without knowing:
 This assessment implements **ISMS-POL-A.8.11, Section 2.1 (Data Classification and Identification)** which defines mandatory requirements for:
 
 **REQ-CLS-001:** Maintain comprehensive inventory of sensitive data categories  
-**REQ-CLS-002:** Classify all sensitive data using organizational classification scheme  
+**REQ-CLS-002:** Classify all sensitive data using organisational classification scheme  
 **REQ-CLS-003:** Document all sensitive data locations (system, database, table, column/field)  
 **REQ-CLS-010:** Perform initial data discovery (automated or manual)  
 **REQ-CLS-020:** Maintain living inventory (quarterly updates minimum)  
@@ -231,8 +258,8 @@ Before starting this assessment, ensure you have access to:
 
 **Essential Understanding:**
 
-- [Organization]'s data classification scheme (if exists; if not, use ISO 27001 framework)
-- Regulatory landscape applicable to [Organization] (GDPR, FADP, HIPAA, PCI-DSS, etc.)
+- [Organisation]'s data classification scheme (if exists; if not, use ISO 27001 framework)
+- Regulatory landscape applicable to [Organisation] (GDPR, FADP, HIPAA, PCI-DSS, etc.)
 - Business context for major applications (CRM, ERP, HR, finance, etc.)
 - Data residency and cross-border restrictions
 
@@ -274,7 +301,7 @@ Before starting this assessment, ensure you have access to:
 - **Secure storage:** Evidence repository (some evidence contains metadata about sensitive data)
 
 **Critical Tool Selection Note:**
-This assessment is **tool-agnostic**. [Organization] may use any data discovery methodology (automated, manual, hybrid). The IMPORTANT part is documenting WHAT you found, not HOW you found it.
+This assessment is **tool-agnostic**. [Organisation] may use any data discovery methodology (automated, manual, hybrid). The IMPORTANT part is documenting WHAT you found, not HOW you found it.
 
 ## Pre-Assessment Checklist
 
@@ -430,14 +457,14 @@ This assessment is **tool-agnostic**. [Organization] may use any data discovery 
 
    - Keywords: `ssn`, `social_security`, `passport`, `credit_card`, `password`, `email`, `phone`, `dob`, `address`, `salary`, `diagnosis`, etc.
 
-3. Sample data review (with appropriate authorization):
+3. Sample data review (with appropriate authorisation):
 
    - `SELECT column_name, COUNT(DISTINCT column_name) FROM table LIMIT 100;`
    - Look for PII patterns in actual data
 
 4. Document findings in Excel
 
-**Option C: Hybrid (Recommended for most organizations)**
+**Option C: Hybrid (Recommended for most organisations)**
 
 - Automated scanning for known patterns (PII, financial data)
 - Manual review for business-specific sensitive data (proprietary, trade secrets)
@@ -544,7 +571,7 @@ For EACH data element from Phase 2:
 
 **Sheet:** `Regulatory_Mapping`
 
-**Applicable Regulations (adjust for [Organization] context):**
+**Applicable Regulations (adjust for [Organisation] context):**
 
 **Mandatory (if processing personal data in scope):**
 
@@ -821,7 +848,7 @@ For EACH identified gap:
 
 ## System_Inventory Sheet
 
-**Q1: Does your organization maintain a comprehensive inventory of all systems containing sensitive data?**
+**Q1: Does your organisation maintain a comprehensive inventory of all systems containing sensitive data?**
 
 **How to Answer:**
 
@@ -829,7 +856,7 @@ For EACH identified gap:
 - **No:** No formal inventory exists, relying on tribal knowledge
 - **Partial:** Inventory exists but incomplete (missing SaaS, or only production, or >6 months stale)
 - **Planned:** Inventory project approved and funded, not yet executed
-- **N/A:** Organization has no IT systems (highly unlikely)
+- **N/A:** Organisation has no IT systems (highly unlikely)
 
 **Evidence to Attach:**
 
@@ -927,7 +954,7 @@ For EACH identified gap:
 
 **Validation Method:**
 ```sql
--- Sample data to verify (with appropriate authorization)
+-- Sample data to verify (with appropriate authorisation)
 SELECT column_name, 
        COUNT(DISTINCT column_name) as unique_values,
        MIN(LENGTH(column_name)) as min_length,
@@ -1006,13 +1033,13 @@ LIMIT 100;
 
 ## Regulatory_Mapping Sheet
 
-**Q: How do I know if GDPR applies to my organization?**
+**Q: How do I know if GDPR applies to my organisation?**
 
 **GDPR Applicability Checklist:**
 
-- [ ] Organization is established in EU (even if non-EU parent company)
-- [ ] Organization processes personal data of EU residents (customers, employees, website visitors)
-- [ ] Organization monitors behavior of EU residents (website tracking, profiling)
+- [ ] Organisation is established in EU (even if non-EU parent company)
+- [ ] Organisation processes personal data of EU residents (customers, employees, website visitors)
+- [ ] Organisation monitors behavior of EU residents (website tracking, profiling)
 
 **If ANY of above is YES → GDPR applies**
 
@@ -1030,14 +1057,14 @@ LIMIT 100;
 
 **HIPAA Applicability (US-Specific):**
 
-- [ ] Organization is a "Covered Entity": Healthcare providers, health plans, healthcare clearinghouses
-- [ ] Organization is a "Business Associate": Provides services to covered entities involving PHI (Protected Health Information)
+- [ ] Organisation is a "Covered Entity": Healthcare providers, health plans, healthcare clearinghouses
+- [ ] Organisation is a "Business Associate": Provides services to covered entities involving PHI (Protected Health Information)
 
 **If NEITHER of above → HIPAA does NOT apply**
 
 **If EITHER of above → HIPAA applies (consult HIPAA compliance officer or legal)**
 
-**Important:** HIPAA is US federal law. If your organization is not US-based and does not provide services to US healthcare entities, HIPAA does NOT apply.
+**Important:** HIPAA is US federal law. If your organisation is not US-based and does not provide services to US healthcare entities, HIPAA does NOT apply.
 
 **When in Doubt:** Answer "Conditional" and flag for legal review.
 
@@ -1107,7 +1134,7 @@ LIMIT 100;
 - [ ] PCI-DSS scope validation documentation
 - [ ] HIPAA Business Associate Agreements (if applicable)
 
-## Evidence Storage & Organization
+## Evidence Storage & Organisation
 
 **Recommended Folder Structure:**
 ```
@@ -1160,7 +1187,7 @@ Document ALL evidence in the `Evidence_Register` sheet with:
 
 ## "We Have Too Much Data to Inventory Everything"
 
-**Problem:** Organization has hundreds of systems, thousands of tables, millions of data elements.
+**Problem:** Organisation has hundreds of systems, thousands of tables, millions of data elements.
 
 **Solution: Risk-Based Phasing**
 
@@ -1216,7 +1243,7 @@ Document ALL evidence in the `Evidence_Register` sheet with:
    - Add synonym lists ("Soc_Sec", "Social_Sec", "SocSec", etc.)
    - Adjust sensitivity thresholds (reduce false negatives)
 
-3. **Decrypt Sample Data (With Authorization):**
+3. **Decrypt Sample Data (With Authorisation):**
 
    - For encrypted fields, decrypt a sample to verify contents
    - Re-classify based on plaintext contents
@@ -1242,7 +1269,7 @@ Subject: Data Ownership Required for ISO 27001 Compliance
 
 Dear [Data Owner],
 
-Our organization is required to implement ISO 27001 Control A.8.11 (Data Masking) 
+Our organisation is required to implement ISO 27001 Control A.8.11 (Data Masking) 
 for regulatory compliance (GDPR, FADP, [Other]).
 
 As the business owner of [Data Category], your input is required to:
@@ -1335,7 +1362,7 @@ Thank you,
 
 **Problem:** Policy says "substantial harm" for High sensitivity, but what is "substantial"?
 
-**Solution: Develop Organization-Specific Examples**
+**Solution: Develop Organisation-Specific Examples**
 
 Work with CISO/DPO/Legal to create a reference table:
 
@@ -1346,7 +1373,7 @@ Work with CISO/DPO/Legal to create a reference table:
 | **Medium** | Job Title + Department (indirect PII), IP Address, Device ID, Generalized location (city-level), Transaction history (anonymized) | Moderate privacy concern, Re-identification risk when combined, Business confidentiality | Regulatory scrutiny possible, Internal policy violation, Reputational risk |
 | **Low** | Aggregate demographics (age range 30-40, region), Publicly available info, Non-sensitive business data | Minimal privacy risk, Low business impact | No regulatory consequence, Minimal reputational impact |
 
-**Document in Policy Annex:** "Classification Examples - [Organization] Context"
+**Document in Policy Annex:** "Classification Examples - [Organisation] Context"
 
 **Reference During Assessment:** When classifying ambiguous data, use these examples as benchmarks.
 
@@ -1513,7 +1540,7 @@ Work with CISO/DPO/Legal to create a reference table:
 | **Chief Information Security Officer (CISO)** | [Name] | [Signature] | DD.MM.YYYY | Risk assessment and prioritization approved, resource allocation approved for P1 gaps |
 | **Legal/Compliance Officer** | [Name] | [Signature] | DD.MM.YYYY | Regulatory mapping validated |
 
-**Optional (depending on organization):**
+**Optional (depending on organisation):**
 
 - **CTO / VP Engineering:** If technical infrastructure changes required
 - **CFO:** If significant budget required for masking tools
@@ -1579,7 +1606,7 @@ Work with CISO/DPO/Legal to create a reference table:
 
 - ISO 27001 policy requirement (annual review)
 - Regulatory requirement (GDPR ROPA annual update)
-- Significant organizational changes (M&A, new business lines, geographic expansion)
+- Significant organisational changes (M&A, new business lines, geographic expansion)
 
 **Annual Review Checklist:**
 
@@ -1642,10 +1669,6 @@ This assessment (IMP-A.8.11.1) feeds into:
 - Input: Masking requirements from Masking_Priority_Matrix
 - Output: Test evidence proving masking effectiveness
 
-**ISMS-IMP-A.8.11.5 (Compliance Dashboard):**
-
-- Input: All data from this assessment (inventory, classification, ownership, gaps)
-- Output: Executive dashboard consolidating all A.8.11 assessments
 
 **Workflow Sequence:**
 ```
@@ -1661,7 +1684,7 @@ IMP-A.8.11.3 (Environment Coverage)
 IMP-A.8.11.4 (Testing & Validation)
     → "Does masking actually work?"
     ↓
-IMP-A.8.11.5 (Compliance Dashboard)
+Summary Dashboards in each workbook
     → "Overall compliance status?"
 ```
 
@@ -1681,7 +1704,7 @@ IMP-A.8.11.5 (Compliance Dashboard)
 
 **Q2: Can we use a tool other than Excel for this assessment?**
 
-**A:** Yes. The Excel workbook is a template. Organizations may use:
+**A:** Yes. The Excel workbook is a template. Organisations may use:
 
 - Commercial GRC platforms (ServiceNow GRC, RSA Archer, etc.)
 - Data governance tools (Collibra, Alation, Informatica, etc.)
@@ -1703,7 +1726,7 @@ IMP-A.8.11.5 (Compliance Dashboard)
 
 ---
 
-**Q4: Our organization has 500 databases. Do we really need to inventory ALL of them?**
+**Q4: Our organisation has 500 databases. Do we really need to inventory ALL of them?**
 
 **A:** Use risk-based phasing (see Section 6.1). Start with:
 
@@ -1860,7 +1883,7 @@ For non-sensitive data:
 
 ---
 
-*"You cannot protect what you do not know exists. Data inventory is the foundation of all data protection controls."*
-— Security Maxim
+*"To mask effectively, you must first know what needs masking."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

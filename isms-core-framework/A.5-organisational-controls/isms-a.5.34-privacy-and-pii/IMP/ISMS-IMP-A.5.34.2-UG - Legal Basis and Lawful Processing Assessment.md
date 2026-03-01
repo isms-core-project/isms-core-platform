@@ -3,24 +3,41 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Legal Basis and Lawful Processing Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.34.2-UG |
+| **Related Policy** | ISMS-POL-A.5.34 (Privacy and Pii) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.34 (Privacy and Protection of PII) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Legal Basis Assessment, Legitimate Interest Assessments (LIAs), and Consent Management |
-| **Related Policy** | ISMS-POL-A.5.34, Section 2.2 (Legal Basis and Lawful Processing) |
-| **Purpose** | Guide users through GDPR Article 6 legal basis documentation, Legitimate Interest Assessments (LIAs), consent validity evaluation, and special category data safeguards (Article 9) |
-| **Target Audience** | DPO/Privacy Officers, Legal Counsel, Business Owners, Marketing Teams, Compliance Officers, Auditors |
-| **Assessment Type** | Legal & Compliance |
-| **Review Cycle** | Annual or upon new processing activities |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for Legal Basis assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.34 (Privacy and Pii)
+- ISMS-IMP-A.5.34.1 (PII Identification and Classification Assessment)
+- ISMS-IMP-A.5.34.3 (Data Subject Rights Management Assessment)
+- ISMS-IMP-A.5.34.4 (Technical and Organisational Measures (TOMs) Assessment)
+- ISMS-IMP-A.5.34.5 (DPIA Assessment)
+- ISMS-IMP-A.5.34.6 (Cross Border Transfer Assessment)
 
 ---
 
@@ -34,6 +51,23 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
+### Workbook at a Glance
+
+This workbook contains the following 8 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, legal framework reference, and field descriptions |
+| **Legal Basis Inventory** | Complete legal basis documentation for all processing activities |
+| **Legit. Interest Assessments** | Legitimate Interest Assessment (LIA) balancing tests (Purpose/Necessity/Balancing) |
+| **Consent Management** | Consent validity assessment and withdrawal tracking |
+| **Legal Basis Gaps** | Auto-populated gaps requiring legal basis remediation |
+| **Evidence Repository** | Supporting documentation (consent logs, contracts, LIAs) |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+
+---
+
 # Assessment Overview
 
 ## Purpose & Scope
@@ -42,7 +76,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ### What This Assessment Covers
 
-This assessment evaluates [Organization]'s **legal basis for all PII processing activities** to ensure lawful processing under:
+This assessment evaluates [Organisation]'s **legal basis for all PII processing activities** to ensure lawful processing under:
 
 - ISO/IEC 27001:2022 Control A.5.34
 - GDPR Article 6 (Lawfulness of processing)
@@ -77,8 +111,7 @@ This assessment evaluates [Organization]'s **legal basis for all PII processing 
 | ISMS-IMP-A.5.34.1 | PII Identification & ROPA | **Prerequisite** - ROPA provides processing activities for legal basis documentation |
 | **ISMS-IMP-A.5.34.2** | **Legal Basis & Lawful Processing** | **This assessment** |
 | ISMS-IMP-A.5.34.3 | Data Subject Rights Management | Uses legal basis from A.5.34.2 to determine applicable rights |
-| ISMS-IMP-A.5.34.4 | Technical & Organizational Measures | Security measures must align with legal basis (e.g., consent-based processing may require stricter controls) |
-| ISMS-IMP-A.5.34.5 | Data Protection Impact Assessment | Legal basis influences DPIA necessity and risk rating |
+| ISMS-IMP-A.5.34.4 | Technical & Organisational Measures | Security measures must align with legal basis (e.g., consent-based processing may require stricter controls) |
 | ISMS-IMP-A.5.34.6 | Cross-Border Transfer Assessment | Legal basis affects transfer mechanisms (consent enables derogations) |
 
 **Context Note:** This assessment REQUIRES completed ISMS-IMP-A.5.34.1 (PII Identification) as input. You cannot document legal basis without first identifying all processing activities.
@@ -96,7 +129,7 @@ This assessment evaluates [Organization]'s **legal basis for all PII processing 
 ### Required Skills
 
 - Understanding of GDPR Articles 6 and 9 legal basis framework
-- Familiarity with [Organization]'s processing activities (from ROPA)
+- Familiarity with [Organisation]'s processing activities (from ROPA)
 - Ability to conduct balancing tests (for Legitimate Interest Assessments)
 - Knowledge of consent management requirements (GDPR Article 7)
 - Understanding of data subject rights and exemptions
@@ -104,9 +137,9 @@ This assessment evaluates [Organization]'s **legal basis for all PII processing 
 ### Time Commitment
 
 - **Initial assessment:** 8-12 hours (depending on processing complexity)
-  - Small organization (10-20 processing activities): 8-10 hours
-  - Medium organization (20-50 processing activities): 10-15 hours
-  - Large organization (50+ processing activities): 15-25+ hours
+  - Small organisation (10-20 processing activities): 8-10 hours
+  - Medium organisation (20-50 processing activities): 10-15 hours
+  - Large organisation (50+ processing activities): 15-25+ hours
 - **Quarterly updates:** 2-4 hours (verify no changes, update for new processing)
 
 ## Expected Outputs
@@ -119,7 +152,6 @@ Upon completion, you will have:
 4. ✅ **Special Category Compliance** - GDPR Art. 9 basis for sensitive PII
 5. ✅ **Gap Analysis** - Processing without valid legal basis identified with remediation plans
 6. ✅ **Evidence Repository** - Supporting documentation (contracts, consent logs, LIAs)
-7. ✅ **Compliance Dashboard** - Executive summary with metrics and KPIs
 8. ✅ **Approved Assessment** - DPO and Legal Counsel sign-offs confirming validity
 
 ---
@@ -234,7 +266,7 @@ You will need access to:
 | **(b) Contract** | Processing necessary to perform contract with data subject OR to take pre-contractual steps | Must be objectively necessary (not just useful or convenient) | No - but can refuse contract |
 | **(c) Legal Obligation** | Processing required by EU/Member State law | Must cite specific legal provision | No - legal compliance mandatory |
 | **(d) Vital Interests** | Processing necessary to protect life or physical safety | Rare - only when consent cannot be obtained | No - life protection paramount |
-| **(e) Public Task** | Public authority performing official function | Organization must have public authority status | No - public function |
+| **(e) Public Task** | Public authority performing official function | Organisation must have public authority status | No - public function |
 | **(f) Legitimate Interest** | Processing necessary for legitimate interests (controller or third party) | Requires balancing test (LIA) - controller's interests vs. data subject's rights | Yes - Art. 21 objection right |
 
 ## Legal Basis Decision Tree
@@ -555,7 +587,7 @@ Special categories (GDPR Art. 9(1)):
    - **Legitimate Interest:** Completed LIAs, safeguard documentation
    - **Special Category:** Art. 9 legal basis evidence (employment law, healthcare regulations)
 
-2. Store evidence in organized structure and register in Sheet 6:
+2. Store evidence in organised structure and register in Sheet 6:
 
    - Evidence ID
    - Evidence type (contract, consent log, LIA, etc.)
@@ -741,7 +773,7 @@ Special categories (GDPR Art. 9(1)):
 
 **Why It Happens:**
 
-- Attempting to maximize consent coverage
+- Attempting to maximise consent coverage
 - Not understanding "specific" and "freely given" requirements
 - Convenience over compliance
 
@@ -830,7 +862,7 @@ Complete this checklist before seeking approvals:
 - [ ] Necessity test documented (processing necessary for interest)
 - [ ] Balancing test documented (impact assessment, safeguards, result)
 - [ ] Data subject expectations considered
-- [ ] Safeguards documented (data minimization, retention limits, transparency)
+- [ ] Safeguards documented (data minimisation, retention limits, transparency)
 - [ ] Balancing test result documented (Pass / Pass with Conditions / Fail)
 - [ ] DPO approval obtained for all LIAs
 - [ ] Failed LIAs have alternative legal basis or processing ceased
@@ -939,7 +971,7 @@ Before presenting to stakeholders:
 - **Legal Interpretation:** Are legal basis assignments legally sound?
 - **Contractual Necessity:** Are contract claims objectively justified?
 - **Legal Obligations:** Are statutory citations accurate?
-- **LIA Legal Risk:** Do LIAs expose organization to legal challenges?
+- **LIA Legal Risk:** Do LIAs expose organisation to legal challenges?
 - **Consent Legal Validity:** Are consent mechanisms legally enforceable?
 
 **Outcome:** Legal approval or required corrections
@@ -1007,7 +1039,6 @@ After all reviews complete:
 This assessment provides foundation for:
 
 - **ISMS-IMP-A.5.34.3 (Data Subject Rights):** Legal basis determines applicable rights and exemptions
-- **ISMS-IMP-A.5.34.5 (DPIA):** Legal basis influences DPIA necessity and risk rating
 - **ISMS-IMP-A.5.34.6 (Cross-Border Transfers):** Legal basis affects transfer mechanisms
 
 ## Ongoing Maintenance
@@ -1039,7 +1070,7 @@ This assessment provides foundation for:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Where there is no law, there is no freedom."*
+— John Locke
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

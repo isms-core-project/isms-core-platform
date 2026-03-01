@@ -41,7 +41,6 @@
 - ISMS-POL-A.7.4-5-11 (Physical Infrastructure Security)
 - ISMS-IMP-A.7.8-9-S1-UG/TG (Equipment Siting Assessment)
 - ISMS-IMP-A.7.8-9-S2-UG/TG (Off-Premises Asset Security)
-- ISMS-IMP-A.7.8-9-S3-UG/TG (Equipment Protection Compliance Dashboard)
 - ISO/IEC 27001:2022 Controls A.7.8, A.7.9
 
 ---
@@ -477,4 +476,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for equipment siting and protection. Implementation procedures are documented in ISMS-IMP-A.7.8-9 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

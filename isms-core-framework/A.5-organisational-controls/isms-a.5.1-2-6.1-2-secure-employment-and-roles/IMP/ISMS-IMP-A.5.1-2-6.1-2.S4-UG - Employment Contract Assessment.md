@@ -5,18 +5,17 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
 | **Document Title** | Employment Contract Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.1-2-6.1-2.S4-UG |
 | **Related Policy** | ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles) |
 | **Control Reference** | ISO/IEC 27001:2022 Annex A.6.2 (Terms and Conditions of Employment) |
-| **Linked Control** | ISO/IEC 27001:2022 Annex A.6.5 (Responsibilities at Termination or Change of Employment) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
-| **Document Owner** | CISO / Chief Human Resources Officer (CHRO) — joint ownership |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
 | **Classification** | Internal |
@@ -28,24 +27,33 @@
 |---------|------|--------|---------|
 | 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle**: Quarterly
+**Review Cycle**: Quarterly  
 **Next Review Date**: [Effective Date + 90 days]
 
 **Related Documents**:
-- ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles) — Section 7 (Employment Contract Requirements)
-- ISMS-IMP-A.5.1-2-6.1-2.S1 (Policy Framework Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S2 (Roles & Responsibilities Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S3 (Screening & Vetting Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S5 (Governance Compliance Dashboard)
-- Swiss Code of Obligations (OR) — Articles 328, 328b, 730a
-- Swiss Federal Data Protection Act (FADP / nDSG) — Articles 6, 19
-- ISMS-POL-A.8.12 (Data Leakage Prevention) — Annex A (monitoring transparency in employment contracts)
 
-**Note on Linked Controls**: This assessment covers both A.6.2 (what security obligations are IN the contract) and A.6.5 (that post-employment obligations are specified and enforced). These are assessed together because A.6.5 obligations (confidentiality surviving termination, IP assignment, device return) must be contractually established by A.6.2.
+- ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles)
+- ISMS-IMP-A.5.1-2-6.1-2.S1 (Policy Framework Assessment)
+- ISMS-IMP-A.5.1-2-6.1-2.S2 (Roles Responsibilities Assessment)
+- ISMS-IMP-A.5.1-2-6.1-2.S3 (Screening Vetting Assessment)
 
 ---
 
-**Audience:** HR managers, CISO, Legal/Compliance, recruitment team, DPO, department heads
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Contract Template Assessment | Assess standard employment contract templates |
+| 3 | Required Clause Registry | Verify all mandatory security clauses are present |
+| 4 | Personnel Contract Compliance | Check individual contracts against requirements |
+| 5 | Confidentiality NDA Tracking | Track NDA and confidentiality agreement status |
+| 6 | Post Employment Obligations | Assess post-termination obligation enforcement |
+| 7 | Contractor Agreement Assessment | Evaluate contractor-specific agreement compliance |
+| 8 | Gap Analysis | Identify gaps against ISO 27001:2022 A.6.2/A.6.5 requirements |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -53,7 +61,7 @@
 
 ### Assessment Objective
 
-This assessment verifies [Organization]'s compliance with ISO/IEC 27001:2022 Controls A.6.2 (Terms and Conditions of Employment) and A.6.5 (Responsibilities at Termination or Change of Employment).
+This assessment verifies [Organisation]'s compliance with ISO/IEC 27001:2022 Controls A.6.2 (Terms and Conditions of Employment) and A.6.5 (Responsibilities at Termination or Change of Employment).
 
 **Control A.6.2 Requirement:**
 > *The employment contractual agreements should state the personnel's and the organisation's responsibilities for information security.*
@@ -140,7 +148,7 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 
 **Step 5: Post-Employment Obligation Tracking**
 - Verify post-employment obligations are specified in contracts
-- Track individuals who have left the organization — are obligations being enforced?
+- Track individuals who have left the organisation — are obligations being enforced?
 - Monitor ongoing confidentiality obligations
 
 **Step 6: Contractor & Third-Party Agreement Verification**
@@ -199,28 +207,28 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 
 ### Universal Clauses (All Employment Contracts)
 
-Every employment contract at [Organization] must contain the following security-related clauses, regardless of role:
+Every employment contract at [Organisation] must contain the following security-related clauses, regardless of role:
 
 **Clause 1: Information Security Responsibilities**
-- Employee acknowledges responsibility to protect organizational information
+- Employee acknowledges responsibility to protect organisational information
 - Employee agrees to comply with all information security policies, procedures, and guidelines
 - Employee acknowledges that information security policies will be communicated and must be followed
 - Policy Reference: ISMS-POL-A.5.1-2-6.1-2, Section 7.1
 
 **Clause 2: Confidentiality**
-- Employee agrees to maintain confidentiality of all organizational information encountered during employment
-- Defines what constitutes confidential information (organizational data, trade secrets, customer information, personal data of colleagues)
+- Employee agrees to maintain confidentiality of all organisational information encountered during employment
+- Defines what constitutes confidential information (organisational data, trade secrets, customer information, personal data of colleagues)
 - Specifies that confidentiality obligation survives termination (see Post-Employment section)
 - Policy Reference: ISMS-POL-A.5.1-2-6.1-2, Section 7.3
 
 **Clause 3: Acceptable Use**
-- Employee agrees to use organizational information systems and resources only for authorized business purposes
-- References the organization's Acceptable Use Policy
+- Employee agrees to use organisational information systems and resources only for authorised business purposes
+- References the organisation's Acceptable Use Policy
 - Employee acknowledges consequences of violation
 - Policy Reference: ISMS-POL-A.5.1-2-6.1-2, Section 7.1
 
 **Clause 4: Monitoring Acknowledgment**
-- Employee is informed that organizational systems may be monitored for security purposes
+- Employee is informed that organisational systems may be monitored for security purposes
 - Scope of monitoring disclosed (in general terms — specific details in privacy notice)
 - Legal Basis: Swiss FADP Art. 19 (transparency), Swiss OR Art. 328b (protection of employee personality)
 - Policy Reference: ISMS-POL-A.8.12, Annex A.4
@@ -228,12 +236,12 @@ Every employment contract at [Organization] must contain the following security-
 **Clause 5: Disciplinary Consequences**
 - Employee acknowledges that information security policy violations may result in disciplinary action
 - States that disciplinary action may range from warning to termination depending on severity
-- References the organization's disciplinary / sanctions process
+- References the organisation's disciplinary / sanctions process
 - Policy Reference: ISMS-POL-A.5.1-2-6.1-2, Section 7.6
 
 **Clause 6: Post-Employment Obligations**
 - Confidentiality obligation survives termination (duration specified — typically indefinite for trade secrets, defined period for other confidential information)
-- Obligation to return all organizational assets (devices, documents, access credentials) upon termination
+- Obligation to return all organisational assets (devices, documents, access credentials) upon termination
 - Policy Reference: ISMS-POL-A.5.1-2-6.1-2, Section 7.7
 
 ### Role-Specific Clauses
@@ -241,7 +249,7 @@ Every employment contract at [Organization] must contain the following security-
 **For Roles with Access to Confidential or Restricted Data (Tier 1–3):**
 
 **Clause 7: Intellectual Property Assignment**
-- All work product, inventions, and intellectual property created in connection with employment belong to [Organization]
+- All work product, inventions, and intellectual property created in connection with employment belong to [Organisation]
 - Specifies scope (during employment and for a defined period after, where legally permissible under Swiss OR)
 - Swiss OR Note: IP assignment clauses must comply with Swiss law — assignment of inventions made outside working hours and unrelated to employer business is generally not permissible
 - Policy Reference: ISMS-POL-A.5.1-2-6.1-2, Section 7.4
@@ -254,7 +262,7 @@ Every employment contract at [Organization] must contain the following security-
 **For Security Leadership Roles (Tier 1):**
 
 **Clause 9: Conflict of Interest Disclosure**
-- Employee agrees to disclose any financial interests or relationships that could create conflicts with organizational security decisions
+- Employee agrees to disclose any financial interests or relationships that could create conflicts with organisational security decisions
 - Defines what constitutes a reportable conflict
 - Policy Reference: ISMS-POL-A.5.1-2-6.1-2, Section 7.2
 
@@ -263,19 +271,19 @@ Every employment contract at [Organization] must contain the following security-
 **For All Contractors and Consultants:**
 
 **Clause 10: Contractor Security Obligations**
-- Contractor agrees to comply with all applicable organizational security policies during engagement
+- Contractor agrees to comply with all applicable organisational security policies during engagement
 - Contractor acknowledges that access will be revoked upon engagement termination
-- Contractor agrees to return all organizational assets upon termination
+- Contractor agrees to return all organisational assets upon termination
 - Policy Reference: ISMS-POL-A.5.1-2-6.1-2, Section 7.8
 
 **Clause 11: Contractor NDA / Confidentiality**
 - Standalone NDA or equivalent confidentiality clause
-- Covers organizational information, customer data, and technical details
+- Covers organisational information, customer data, and technical details
 - Survives contract termination
 - Policy Reference: ISMS-POL-A.5.1-2-6.1-2, Section 7.3
 
 **Clause 12: Contractor Data Processing (if applicable)**
-- If contractor processes personal data on behalf of [Organization], a Data Processing Agreement (DPA) must be in place
+- If contractor processes personal data on behalf of [Organisation], a Data Processing Agreement (DPA) must be in place
 - DPA covers processing scope, security measures, sub-processor restrictions, breach notification
 - Legal Basis: Swiss FADP Art. 9; GDPR Art. 28
 - Policy Reference: ISMS-POL-A.5.1-2-6.1-2, Section 7.8
@@ -516,7 +524,7 @@ For each template in use, verify the presence of each required clause:
 
 ### Sheet 6: Post_Employment_Obligations
 
-**Purpose**: Track individuals who have left the organization and verify that post-employment security obligations (confidentiality, non-solicitation, device return) are being enforced. Also track current employees' post-employment clauses for completeness.
+**Purpose**: Track individuals who have left the organisation and verify that post-employment security obligations (confidentiality, non-solicitation, device return) are being enforced. Also track current employees' post-employment clauses for completeness.
 
 **Structure**: Two sections.
 
@@ -619,8 +627,8 @@ For individuals who have left, track whether post-employment obligations are bei
 ```
 
 **DPA Required Criteria:**
-- DPA is required if the contractor/vendor processes personal data on behalf of [Organization]
-- Examples: HR outsourcing, payroll processing, cloud services storing organizational data, background check providers
+- DPA is required if the contractor/vendor processes personal data on behalf of [Organisation]
+- Examples: HR outsourcing, payroll processing, cloud services storing organisational data, background check providers
 - DPA_Required = "Yes" if the party handles personal data; "No" if access is limited to non-personal operational systems
 
 **DPA Required Elements (for N column assessment):**
@@ -628,9 +636,9 @@ For individuals who have left, track whether post-employment obligations are bei
 2. Data subject rights facilitation
 3. Security measures (FADP Art. 8 / GDPR Art. 32)
 4. Sub-processor restrictions
-5. Breach notification obligation (within 24 hours to [Organization])
+5. Breach notification obligation (within 24 hours to [Organisation])
 6. Data return or deletion on termination
-7. Audit rights for [Organization]
+7. Audit rights for [Organisation]
 
 **Dropdowns:**
 - Party_Type: Contractor / Consultant / Vendor
@@ -822,7 +830,7 @@ Employment-Contract / Contract-Template / NDA-Agreement / DPA-Agreement / IP-Ass
 
 ## Evidence Collection Guide
 
-### Evidence Organization
+### Evidence Organisation
 
 **Folder Structure:**
 ```
@@ -871,10 +879,6 @@ Evidence/A.6.2_Employment_Contracts/
 - Screening consent in .S3 must be consistent with contract terms in .S4
 - .S3 screening consent is NOT the same as employment contract signature — they are separate documents with different legal purposes
 
-**Output to .S5 (Governance Dashboard):**
-- All contract gaps flow to consolidated dashboard
-- NDA compliance rate is a key governance KPI
-- Post-employment obligation tracking status included
 
 **Critical Cross-Reference:**
 - A new hire in .S3 (screening complete) must also have a signed contract in .S4 before starting work
@@ -886,7 +890,7 @@ Evidence/A.6.2_Employment_Contracts/
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"An agreement must be clear before it can be honoured."*
+— Legal maxim
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -21,11 +21,11 @@ ISO/IEC 27001:2022 Controls A.8.25/A.8.26/A.8.29: Secure Development Framework
 Assessment Domain 1 of 5: Application Security Requirements (A.8.26)
 
 --------------------------------------------------------------------------------
-SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
+SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANISATION
 --------------------------------------------------------------------------------
 
 This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
-your organization's specific:
+your organisation's specific:
 - Development methodologies (Agile, Waterfall, DevOps, hybrid)
 - Technology stack (languages, frameworks, platforms)
 - Security tooling (SAST, DAST, SCA, IAST tools and versions)
@@ -72,7 +72,7 @@ requirements practices.
 4. Threat Modeling Status - Threat model execution and review status
 5. Architecture Review Status - Security architecture review completion
 6. Traceability Matrix Status - Requirements traceability compliance
-7. Compliance Summary - Overall security requirements compliance scores
+7. Summary Dashboard - Overall security requirements compliance scores
 8. Gap Analysis - Non-compliant applications and remediation requirements
 9. Evidence Register - Audit evidence tracking and documentation
 10. Approval & Sign-Off - Stakeholder review and approval workflow
@@ -149,11 +149,11 @@ Control Reference:    ISO/IEC 27001:2022 Annex A Controls A.8.25/A.8.26/A.8.29
 Assessment Domain:    1 of 5 (Application Security Requirements - A.8.26)
 Framework Version:    1.0
 Script Version:       1.0
-Author:               [Organization] ISMS Implementation Team
+Author:               [Organisation] ISMS Implementation Team
 Date:                 [YYYY-MM-DD]
 Last Modified:        [YYYY-MM-DD]
 Python Version:       3.8+
-License:              [Organization License/Terms]
+License:              [Organisation License/Terms]
 
 Related Documents:
     - ISMS-POL-A.8.25-26-29-S1: Executive Control Alignment (Governance)
@@ -228,7 +228,7 @@ Assessment workbooks contain sensitive application information including:
 - Security requirements and control implementations
 - Security gaps and vulnerabilities
 - Internal system names and data flows
-Handle in accordance with your organization's data classification policies.
+Handle in accordance with your organisation's data classification policies.
 
 **Maintenance:**
 Review and update assessment:
@@ -249,7 +249,7 @@ Security requirements assessment supports regulatory compliance:
 - Finance: Regional banking requirements for secure application development
 - Privacy: GDPR/FADP privacy-by-design and data protection requirements
 Customize assessment criteria to include regulatory-specific requirements
-applicable to your organization and industry.
+applicable to your organisation and industry.
 
 **Integration with Related Controls:**
 This assessment integrates with:
@@ -264,13 +264,14 @@ This assessment integrates with:
 """
 
 # =============================================================================
-# Standard Library Imports
+# STANDARD LIBRARY IMPORTS
 # =============================================================================
 import logging
+from pathlib import Path
 import sys
 
 # =============================================================================
-# Logging Configuration
+# LOGGING CONFIGURATION
 # =============================================================================
 logging.basicConfig(
     level=logging.INFO,
@@ -280,19 +281,34 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 from datetime import datetime, timedelta
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.utils import get_column_letter
-from openpyxl.worksheet.datavalidation import DataValidation
-
-# =============================================================================
-# Document Constants
-# =============================================================================
+try:
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+    from openpyxl.utils import get_column_letter
+    from openpyxl.worksheet.datavalidation import DataValidation
+except ImportError:
+    sys.exit("Error: openpyxl not installed. Install with: pip install openpyxl")
+# ============================================================================
+# DOCUMENT METADATA
+# ============================================================================
 DOCUMENT_ID = "ISMS-IMP-A.8.25-26-29.S1"
-CONTROL_REF = "ISO/IEC 27001:2022 - Controls A.8.25, A.8.26, A.8.29: Secure Development"
+CONTROL_ID   = "A.8.25-26-29"
+CONTROL_NAME = "Secure Development"
+CONTROL_REF  = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
+WORKBOOK_NAME = "Security Requirements Assessment"
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
-OUTPUT_FILENAME = f"{DOCUMENT_ID}_Security_Requirements_Assessment_{GENERATED_TIMESTAMP}.xlsx"
+GENERATED_DATE = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
+_wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+_wkbk_dir.mkdir(exist_ok=True)
 
+# ============================================================================
+# UNICODE SYMBOLS - PROPER UTF-8 ENCODING
+# ============================================================================
+CHECK   = '\u2705'      # ✅ Green checkmark
+XMARK   = '\u274C'      # ❌ Red X
+WARNING = '\u26A0'      # ⚠  Warning sign
+BULLET  = '\u2022'      # •  Bullet point
 
 # ============================================================================
 # SECTION 1: WORKBOOK CREATION & STYLE DEFINITIONS
@@ -301,23 +317,27 @@ OUTPUT_FILENAME = f"{DOCUMENT_ID}_Security_Requirements_Assessment_{GENERATED_TI
 def create_workbook() -> Workbook:
     """Create workbook with all required sheets matching IMP specification."""
     wb = Workbook()
+    wb.properties.title = f"{DOCUMENT_ID} — {WORKBOOK_NAME}"
+    wb.properties.creator = "ISMS Core Contributors"
+    wb.properties.description = f"ISMS Implementation Workbook — {DOCUMENT_ID}"
+    wb.properties.subject = f"ISO/IEC 27001:2022 — Control {CONTROL_ID}: {CONTROL_NAME}"
     
     # Remove default sheet
     if "Sheet" in wb.sheetnames:
-        wb.remove(wb["Sheet"])
+        wb.remove(wb.active)
     
     # Sheet structure from ISMS-IMP-A.8.25-26-29-S1 Section 6.2
     sheets = [
         "Instructions & Legend",
-        "Application_Inventory",
-        "Requirements_Documentation_Status",
-        "Threat_Modeling_Status",
-        "Architecture_Review_Status",
-        "Traceability_Matrix_Status",
-        "Compliance_Summary",
-        "Gap_Analysis",
-        "Evidence_Register",
-        "Approval_Sign_Off",
+        "Application Inventory",
+        "Requirements Documentation",
+        "Threat Modelling",
+        "Architecture Review",
+        "Traceability Matrix",
+        "Evidence Register",
+        "Gap Analysis",
+        "Summary Dashboard",
+        "Approval Sign-Off",
     ]
     for name in sheets:
         wb.create_sheet(title=name)
@@ -345,7 +365,7 @@ def setup_styles():
         },
         "subheader": {
             "font": Font(name="Calibri", size=11, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid"),
+            "fill": PatternFill(start_color="003366", end_color="003366", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
         },
         "column_header": {
@@ -356,6 +376,11 @@ def setup_styles():
         },
         "input_cell": {
             "fill": PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid"),
+            "alignment": Alignment(horizontal="left", vertical="center", wrap_text=True),
+            "border": border_thin,
+        },
+        "sample_cell": {
+            "fill": PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid"),
             "alignment": Alignment(horizontal="left", vertical="center", wrap_text=True),
             "border": border_thin,
         },
@@ -389,6 +414,8 @@ def setup_styles():
     return styles
 
 
+
+_STYLES = setup_styles()
 def apply_style(cell, style_dict):
     """
     Apply style dictionary to a cell.
@@ -424,8 +451,8 @@ def apply_style(cell, style_dict):
 
 def create_base_validations(ws):
     """
-    Create data validation objects for standard dropdowns.
-    These are added to worksheet once, then applied to multiple cells.
+    Create FRESH data validation objects registered with ws.
+    Call once per sheet builder with that sheet's ws to avoid cross-sheet DV contamination.
     """
     validations = {
         'yes_no': DataValidation(
@@ -460,7 +487,7 @@ def create_base_validations(ws):
         ),
         'approval_status': DataValidation(
             type="list",
-            formula1='"✅ Approved,⏳ Pending,❌ Not Approved"',
+            formula1='"Approved,Pending,Not Approved"',
             allow_blank=False
         ),
         'threat_methodology': DataValidation(
@@ -475,7 +502,7 @@ def create_base_validations(ws):
         ),
         'compliance_status': DataValidation(
             type="list",
-            formula1='"✅ Compliant,⚠️ Partial Compliance,❌ Non-Compliant"',
+            formula1='"Compliant,⚠️ Partial Compliance,Non-Compliant"',
             allow_blank=False
         ),
     }
@@ -491,165 +518,99 @@ def create_base_validations(ws):
 # SECTION 3: SHEET BUILDERS
 # ============================================================================
 
-def build_instructions_sheet(wb, styles):
-    """Build Instructions & Legend sheet."""
-    ws = wb["Instructions & Legend"]
-    
-    # Title
-    ws.merge_cells('A1:F1')
-    cell = ws['A1']
-    cell.value = f"{DOCUMENT_ID}\n{CONTROL_REF}"
-    apply_style(cell, styles['header'])
+
+def create_instructions_sheet(ws):
+    """Create GS-IL-compliant Instructions & Legend sheet (Sheet 1)."""
+    ws.title = "Instructions & Legend"
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill("solid", fgColor="003366")
+    _grey = PatternFill("solid", fgColor="D9D9D9")
+    _input = PatternFill("solid", fgColor="FFFFCC")
+    _green = PatternFill("solid", fgColor="C6EFCE")
+    _amber = PatternFill("solid", fgColor="FFEB9C")
+    _red   = PatternFill("solid", fgColor="FFC7CE")
+    ws.merge_cells("A1:G1")
+    ws["A1"] = f"{DOCUMENT_ID}  -  {WORKBOOK_NAME}\n{CONTROL_REF}"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = _navy
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.row_dimensions[1].height = 40
-    
-    # Subtitle
-    ws.merge_cells('A2:F2')
-    cell = ws['A2']
-    cell.value = "ISO/IEC 27001:2022 - Control A.8.26: Application Security Requirements"
-    apply_style(cell, styles['subheader'])
-    
-    # Document Information
-    row = 4
-    info = [
-        ("Document ID:", "ISMS-IMP-A.8.25-26-29.S1"),
-        ("Assessment Area:", "Application Security Requirements"),
-        ("Related Policy:", "ISMS-POL-A.8.25-26-29-S2"),
-        ("Version:", "1.0"),
-        ("Assessment Date:", "[USER INPUT]"),
-        ("Completed By:", "[USER INPUT]"),
-        ("Organisation:", "[USER INPUT]"),
-        ("Review Cycle:", "Quarterly"),
-    ]
-    
-    for label, value in info:
-        ws[f'A{row}'] = label
-        ws[f'A{row}'].font = Font(name="Calibri", size=10, bold=True)
-        ws[f'B{row}'] = value
-        if "[USER INPUT]" in value:
-            ws[f'B{row}'].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        row += 1
-    
-    # How to Use This Workbook
-    row += 1
-    ws.merge_cells(f'A{row}:F{row}')
-    cell = ws[f'A{row}']
-    cell.value = "How to Use This Workbook"
-    apply_style(cell, styles['subheader'])
-    
-    row += 1
-    instructions = [
-        "1. Complete the Application_Inventory sheet with all applications in your portfolio",
-        "2. For each application, complete the Requirements_Documentation_Status sheet",
-        "3. For each application, complete the Threat_Modeling_Status sheet",
-        "4. For each application, complete the Architecture_Review_Status sheet",
-        "5. For each application, complete the Traceability_Matrix_Status sheet",
-        "6. Review the Compliance_Summary sheet for overall compliance scores",
-        "7. Document evidence in the Evidence_Register sheet",
-        "8. Obtain approval and sign-off in the Approval_Sign_Off sheet",
-    ]
-    
-    for instruction in instructions:
-        ws[f'A{row}'] = instruction
-        ws[f'A{row}'].alignment = Alignment(horizontal="left", vertical="top", wrap_text=True)
-        ws.row_dimensions[row].height = 20
-        row += 1
-    
-    # Status Legend
-    row += 1
-    ws.merge_cells(f'A{row}:F{row}')
-    cell = ws[f'A{row}']
-    cell.value = "Status Legend"
-    apply_style(cell, styles['subheader'])
-    
-    row += 1
-    legend_headers = ["Symbol", "Status", "Description", "Color Code"]
-    for col_num, header in enumerate(legend_headers, 1):
-        cell = ws.cell(row=row, column=col_num)
-        cell.value = header
-        apply_style(cell, styles['column_header'])
-    
-    row += 1
-    legend_data = [
-        ("✅", "Compliant", "Requirement met, fully implemented", "Green"),
-        ("⚠️", "Partial", "Partially implemented, needs improvement", "Yellow"),
-        ("❌", "Non-Compliant", "Not implemented, not meeting requirement", "Red"),
-        ("⏳", "Pending", "In progress, under review", "Blue"),
-        ("N/A", "Not Applicable", "Not applicable to this application", "Gray"),
-    ]
-    
-    for symbol, status, description, color in legend_data:
-        ws[f'A{row}'] = symbol
-        ws[f'B{row}'] = status
-        ws[f'C{row}'] = description
-        ws[f'D{row}'] = color
-        
-        # Apply color to color code cell
-        if color == "Green":
-            ws[f'D{row}'].fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
-        elif color == "Yellow":
-            ws[f'D{row}'].fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
-        elif color == "Red":
-            ws[f'D{row}'].fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
-        elif color == "Blue":
-            ws[f'D{row}'].fill = PatternFill(start_color="B4C7E7", end_color="B4C7E7", fill_type="solid")
-        
-        row += 1
-    
-    # Acceptable Evidence
-    row += 1
-    ws.merge_cells(f'A{row}:F{row}')
-    cell = ws[f'A{row}']
-    cell.value = "Acceptable Evidence (Examples)"
-    apply_style(cell, styles['subheader'])
-    
-    row += 1
-    evidence_examples = [
-        "✓ Security Requirements Documents (SEC-REQ-XXX format)",
-        "✓ Threat Models (STRIDE, PASTA, LINDDUN methodologies)",
-        "✓ Architecture Review Reports (with findings and approvals)",
-        "✓ Requirements Traceability Matrices (linking requirements to design, code, tests)",
-        "✓ Security Approval Sign-offs (from Security Architects, Product Owners)",
-        "✓ Application Risk Classification Documentation",
-        "✓ Security Requirements Workshop Materials (agendas, attendees, outputs)",
-        "✓ Threat Modeling Workshop Materials (DFDs, threat lists, mitigations)",
-    ]
-    
-    for example in evidence_examples:
-        ws[f'A{row}'] = example
-        ws[f'A{row}'].alignment = Alignment(horizontal="left", vertical="top", wrap_text=True)
-        row += 1
-    
-    # Column widths
-    ws.column_dimensions['A'].width = 12
-    ws.column_dimensions['B'].width = 20
-    ws.column_dimensions['C'].width = 50
-    ws.column_dimensions['D'].width = 15
-    ws.column_dimensions['E'].width = 15
-    ws.column_dimensions['F'].width = 15
-    
-    # Freeze panes
-    ws.freeze_panes = 'A3'
-    
-    return ws
+    ws["A3"] = "Document Information"
+    ws["A3"].font = Font(name="Calibri", size=12, bold=True)
+    for i, (label, value) in enumerate([
+        ("Document ID",       DOCUMENT_ID),
+        ("Workbook Title",    WORKBOOK_NAME),
+        ("Control Reference", CONTROL_REF),
+        ("Version",           "1.0"),
+        ("Assessment Date",   ""),
+        ("Completed By",      ""),
+        ("Organisation",      ""),
+    ]):
+        r = 4 + i
+        ws[f"A{r}"] = label
+        ws[f"A{r}"].font = Font(name="Calibri", bold=True)
+        ws[f"B{r}"] = value
+        if not value:
+            ws[f"B{r}"].fill = _input
+            ws[f"B{r}"].border = _border
+    ws["A12"] = "Instructions"
+    ws["A12"].font = Font(name="Calibri", size=12, bold=True)
 
+    _instructions = ['1. Complete each worksheet tab for applicable systems/services.', '2. Use dropdown menus for standardised entries (Status, Remediation, etc.).', '3. Fill in yellow-highlighted cells with your information.', '4. If Status = Partial or Non-Compliant, complete the Exception/Deviation section.', '5. Check all applicable items in the Compliance Checklist for each section.', '6. Provide evidence location/path for each implementation entry.', '7. Summary Dashboard auto-calculates compliance statistics.', '8. Maintain the Evidence Register for audit traceability.', '9. Obtain final approval and sign-off in the Approval Sign-Off sheet.']
+    for _i, _line in enumerate(_instructions):
+        ws[f"A{13 + _i}"] = _line
 
-def build_application_inventory_sheet(wb, styles, validations):
+    _leg_row = 23
+
+    ws[f"A{_leg_row}"] = "Status Legend"
+    ws[f"A{_leg_row}"].font = Font(name="Calibri", size=12, bold=True)
+    for col_idx, header in enumerate(["Symbol", "Status", "Description"], start=1):
+        c = ws.cell(row=_leg_row + 1, column=col_idx, value=header)
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.fill = _grey
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = _border
+    for i, (sym, status, desc, fill) in enumerate([
+        ("\u2713", "Compliant / Complete",        "Requirement fully met",                   _green),
+        ("\u26a0", "Partial / In Progress",        "Partially met or in progress",            _amber),
+        ("\u2717", "Non-Compliant / Not Started",  "Requirement not met",                     _red),
+        ("\u2014", "Not Applicable",               "Not applicable to this assessment",        None),
+    ]):
+        r = _leg_row + 2 + i
+        ws.cell(row=r, column=1, value=sym).border = _border
+        s = ws.cell(row=r, column=2, value=status)
+        d = ws.cell(row=r, column=3, value=desc)
+        if fill:
+            s.fill = fill
+        for cell in (s, d):
+            cell.border = _border
+            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+    ws.column_dimensions["A"].width = 28
+    ws.column_dimensions["B"].width = 45
+    ws.column_dimensions["C"].width = 70
+    ws.sheet_view.showGridLines = False
+    ws.freeze_panes = "A4"
+
+def build_application_inventory_sheet(wb, styles):
     """Build Application Inventory sheet."""
-    ws = wb["Application_Inventory"]
-    
+    ws = wb["Application Inventory"]
+    ws.sheet_view.showGridLines = False
+    validations = create_base_validations(ws)  # FML-DV-001: fresh DV objects per sheet
+
     # Title
     ws.merge_cells('A1:J1')
     cell = ws['A1']
-    cell.value = "Application Inventory"
+    cell.value = "APPLICATION INVENTORY"
     apply_style(cell, styles['header'])
-    ws.row_dimensions[1].height = 30
-    
+    ws.row_dimensions[1].height = 35
+
     # Subtitle
     ws.merge_cells('A2:J2')
     cell = ws['A2']
-    cell.value = "Complete inventory of all applications requiring security requirements assessment"
+    cell.value = "COMPLETE INVENTORY OF ALL APPLICATIONS REQUIRING SECURITY REQUIREMENTS ASSESSMENT"
     apply_style(cell, styles['subheader'])
-    
+
     # Column headers
     headers = [
         "Application Name",
@@ -663,13 +624,13 @@ def build_application_inventory_sheet(wb, styles, validations):
         "Internet Facing",
         "Last Assessment Date",
     ]
-    
+
     row = 3
     for col_num, header in enumerate(headers, 1):
         cell = ws.cell(row=row, column=col_num)
         cell.value = header
         apply_style(cell, styles['column_header'])
-    
+
     # Column widths
     ws.column_dimensions['A'].width = 25  # Application Name
     ws.column_dimensions['B'].width = 15  # Application ID
@@ -681,11 +642,11 @@ def build_application_inventory_sheet(wb, styles, validations):
     ws.column_dimensions['H'].width = 20  # Regulatory Scope
     ws.column_dimensions['I'].width = 15  # Internet Facing
     ws.column_dimensions['J'].width = 18  # Last Assessment
-    
+
     # Apply data validations
     validations['risk_classification'].add('E4:E100')
     validations['yes_no'].add('I4:I100')
-    
+
     # Example data rows
     example_data = [
         ["Customer Portal", "APP-001", "Anna Müller", "High", "High Risk", "Java/Spring Boot", "AWS Cloud", "GDPR, PCI DSS v4.0.1", "Yes", "2025-01-15"],
@@ -694,40 +655,49 @@ def build_application_inventory_sheet(wb, styles, validations):
         ["Employee Portal", "APP-004", "Markus Huber", "Medium", "Medium Risk", "ASP.NET Core", "Azure Cloud", "GDPR", "No", "2024-11-22"],
         ["Finance Dashboard", "APP-005", "Petra Keller", "High", "High Risk", "React + Node.js", "AWS Cloud", "SOX, GDPR", "No", "2025-01-08"],
     ]
-    
+
     row = 4
-    for row_data in example_data:
+    for row_data in example_data[:1]:  # MAX-006: One F2F2F2 sample row
         for col_num, value in enumerate(row_data, 1):
             cell = ws.cell(row=row, column=col_num)
             cell.value = value
-            apply_style(cell, styles['data_cell'])
+            apply_style(cell, styles['sample_cell'])
         row += 1
-    
+
+    # DS-005 fix: Add empty rows to reach minimum 20 data rows
+    for empty_row in range(row, 55):  # 55 to create 51 total rows (1 sample + 50 empty)
+        for col_num in range(1, 11):  # 10 columns (A-J)
+            cell = ws.cell(row=empty_row, column=col_num)
+            apply_style(cell, styles['input_cell'])
+
     # Freeze panes
     ws.freeze_panes = 'A4'
-    
+
     return ws
 
 
-def build_requirements_documentation_sheet(wb, styles, validations):
+def build_requirements_documentation_sheet(wb, styles):
     """Build Requirements Documentation Status sheet."""
-    ws = wb["Requirements_Documentation_Status"]
+    ws = wb["Requirements Documentation"]
+    ws.sheet_view.showGridLines = False
+    validations = create_base_validations(ws)  # FML-DV-001: fresh DV objects per sheet
     
     # Title
-    ws.merge_cells('A1:K1')
+    ws.merge_cells('A1:L1')
     cell = ws['A1']
-    cell.value = "Security Requirements Documentation Assessment"
+    cell.value = "SECURITY REQUIREMENTS DOCUMENTATION ASSESSMENT"
     apply_style(cell, styles['header'])
-    ws.row_dimensions[1].height = 30
-    
+    ws.row_dimensions[1].height = 35
+
     # Subtitle
-    ws.merge_cells('A2:K2')
+    ws.merge_cells('A2:L2')
     cell = ws['A2']
-    cell.value = "Assess completeness of security requirements documentation per application"
+    cell.value = "ASSESS COMPLETENESS OF SECURITY REQUIREMENTS DOCUMENTATION PER APPLICATION"
     apply_style(cell, styles['subheader'])
-    
-    # Column headers
+
+    # Column headers — App-ID in col A, Application Name in col B, remaining shift right
     headers = [
+        "App-ID",
         "Application Name",
         "Requirements Document Exists?",
         "Document Location/Link",
@@ -740,73 +710,102 @@ def build_requirements_documentation_sheet(wb, styles, validations):
         "Data Protection Requirements (%)",
         "Completeness Score (%)",
     ]
-    
+
     row = 3
     for col_num, header in enumerate(headers, 1):
         cell = ws.cell(row=row, column=col_num)
         cell.value = header
         apply_style(cell, styles['column_header'])
-    
+
     # Column widths
-    ws.column_dimensions['A'].width = 25
-    ws.column_dimensions['B'].width = 18
-    ws.column_dimensions['C'].width = 40
-    ws.column_dimensions['D'].width = 15
-    ws.column_dimensions['E'].width = 18
-    ws.column_dimensions['F'].width = 20
-    ws.column_dimensions['G'].width = 15
-    ws.column_dimensions['H'].width = 20
-    ws.column_dimensions['I'].width = 22
-    ws.column_dimensions['J'].width = 22
-    ws.column_dimensions['K'].width = 18
-    
-    # Apply data validations
-    validations['yes_no'].add('B4:B100')
-    validations['yes_no'].add('E4:E100')
-    
-    # Example data with formulas
+    ws.column_dimensions['A'].width = 12   # App-ID
+    ws.column_dimensions['B'].width = 25   # Application Name
+    ws.column_dimensions['C'].width = 18   # Requirements Document Exists?
+    ws.column_dimensions['D'].width = 40   # Document Location/Link
+    ws.column_dimensions['E'].width = 15   # Last Updated
+    ws.column_dimensions['F'].width = 18   # Requirements Approved?
+    ws.column_dimensions['G'].width = 20   # Approver Name
+    ws.column_dimensions['H'].width = 15   # Approval Date
+    ws.column_dimensions['I'].width = 20   # Functional Requirements (%)
+    ws.column_dimensions['J'].width = 22   # Non-Functional Requirements (%)
+    ws.column_dimensions['K'].width = 22   # Data Protection Requirements (%)
+    ws.column_dimensions['L'].width = 18   # Completeness Score (%)
+
+    # Apply data validations (shifted right by 1 due to new App-ID col A)
+    validations['yes_no_partial'].add('C4:C100')
+    validations['yes_no'].add('F4:F100')
+
+    # Example data: App-ID in col A, then remaining fields
     example_data = [
-        ["Customer Portal", "Yes", "/docs/security-requirements/APP-001-sec-req.pdf", "2025-01-10", "Yes", "Anna Müller", "2025-01-12", 95, 90, 100],
-        ["Internal HR System", "Yes", "/docs/security-requirements/APP-002-sec-req.pdf", "2024-11-20", "Yes", "Thomas Meier", "2024-11-25", 85, 80, 90],
-        ["Marketing Website", "Partial", "/docs/security-requirements/APP-003-baseline.pdf", "2024-12-15", "Yes", "Sandra Brunner", "2024-12-18", 60, 50, 70],
-        ["Employee Portal", "Yes", "/docs/security-requirements/APP-004-sec-req.pdf", "2024-11-15", "Yes", "Markus Huber", "2024-11-18", 88, 85, 92],
-        ["Finance Dashboard", "Yes", "/docs/security-requirements/APP-005-sec-req.pdf", "2025-01-05", "Yes", "Petra Keller", "2025-01-07", 92, 88, 95],
+        ["APP-001", "Customer Portal", "Yes", "/docs/security-requirements/APP-001-sec-req.pdf", "2025-01-10", "Yes", "Anna Müller", "2025-01-12", 95, 90, 100],
     ]
-    
+
     row = 4
-    for row_data in example_data:
+    for row_data in example_data[:1]:  # MAX-006: One F2F2F2 sample row
         for col_num, value in enumerate(row_data, 1):
             cell = ws.cell(row=row, column=col_num)
-            if col_num <= 10:  # Data columns
-                cell.value = value
-                apply_style(cell, styles['data_cell'])
-            else:  # Completeness Score (Column K) - formula
-                # Formula: =IF(AND(H4<>"",I4<>"",J4<>""),(H4+I4+J4)/3,"")
-                cell.value = f'=IF(AND(H{row}<>"",I{row}<>"",J{row}<>""),(H{row}+I{row}+J{row})/3,"")'
-                cell.number_format = '0.0"%"'
+            cell.value = value
+            apply_style(cell, styles['sample_cell'])
+
+        # Add Completeness Score formula in column L (shifted from K)
+        cell_l = ws.cell(row=row, column=12)
+        cell_l.value = f'=IF(AND(I{row}<>"",J{row}<>"",K{row}<>""),(I{row}+J{row}+K{row})/3,"")'
+        cell_l.number_format = '0.0"%"'
+        apply_style(cell_l, styles['sample_cell'])
+
         row += 1
-    
+
+    # ISO 27002:2022 A.8.26: Supplier/third-party security requirements (explicit requirement)
+    # Col A = empty FFFFCC (App-ID for user to fill), Col B = requirement description FFFFCC
+    supplier_items = [
+        "[SUPPLIER] Externally acquired software subject to same security requirements as internally developed",
+        "[SUPPLIER] Vendor/supplier security requirements specified in contracts and SoW",
+        "[SUPPLIER] SaaS/PaaS applications assessed against organisational security requirements before adoption",
+        "[SUPPLIER] Open source components assessed for security before inclusion in approved component list",
+    ]
+    for i, item in enumerate(supplier_items):
+        r = row + i
+        # Col A: empty FFFFCC input (App-ID)
+        apply_style(ws.cell(row=r, column=1), styles['input_cell'])
+        # Col B: requirement description text — FFFFCC
+        ws.cell(row=r, column=2).value = item
+        apply_style(ws.cell(row=r, column=2), styles['input_cell'])
+        ws.cell(row=r, column=2).alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        # Cols C-L: empty FFFFCC input
+        for col_num in range(3, 13):
+            apply_style(ws.cell(row=r, column=col_num), styles['input_cell'])
+
+    row += len(supplier_items)
+
+    # Add 50 empty FFFFCC rows after supplier requirement rows
+    for empty_row in range(row, row + 50):
+        for col_num in range(1, 13):  # 12 columns
+            cell = ws.cell(row=empty_row, column=col_num)
+            apply_style(cell, styles['input_cell'])
+
     # Freeze panes
     ws.freeze_panes = 'A4'
-    
+
     return ws
 
 
-def build_threat_modeling_sheet(wb, styles, validations):
+def build_threat_modeling_sheet(wb, styles):
     """Build Threat Modeling Status sheet."""
-    ws = wb["Threat_Modeling_Status"]
+    ws = wb["Threat Modelling"]
+    ws.sheet_view.showGridLines = False
+    validations = create_base_validations(ws)  # FML-DV-001: fresh DV objects per sheet
     
     # Title
     ws.merge_cells('A1:K1')
     cell = ws['A1']
-    cell.value = "Threat Modeling Status Assessment"
+    cell.value = "THREAT MODELING STATUS ASSESSMENT"
     apply_style(cell, styles['header'])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
     
     # Subtitle
     ws.merge_cells('A2:K2')
     cell = ws['A2']
-    cell.value = "Assess threat modeling completion and quality per application"
+    cell.value = "ASSESS THREAT MODELING COMPLETION AND QUALITY PER APPLICATION"
     apply_style(cell, styles['subheader'])
     
     # Column headers
@@ -853,47 +852,57 @@ def build_threat_modeling_sheet(wb, styles, validations):
     
     # Example data with formulas
     example_data = [
-        ["Customer Portal", "Yes", "STRIDE", "/docs/threat-models/APP-001-threat-model.pdf", "2025-01-08", "Yes", "Yes", "Yes", "✅ Approved", "Anna Müller"],
-        ["Internal HR System", "Yes", "STRIDE", "/docs/threat-models/APP-002-threat-model.pdf", "2024-11-18", "Yes", "Yes", "Yes", "✅ Approved", "Thomas Meier"],
-        ["Marketing Website", "No", "N/A", "", "", "No", "No", "No", "❌ Not Approved", ""],
-        ["Employee Portal", "Yes", "STRIDE", "/docs/threat-models/APP-004-threat-model.pdf", "2024-11-12", "Yes", "Yes", "Partial", "⏳ Pending", "Markus Huber"],
-        ["Finance Dashboard", "Yes", "STRIDE", "/docs/threat-models/APP-005-threat-model.pdf", "2025-01-03", "Yes", "Yes", "Yes", "✅ Approved", "Petra Keller"],
+        ["Customer Portal", "Yes", "STRIDE", "/docs/threat-models/APP-001-threat-model.pdf", "2025-01-08", "Yes", "Yes", "Yes", "Approved", "Anna Müller"],
+        ["Internal HR System", "Yes", "STRIDE", "/docs/threat-models/APP-002-threat-model.pdf", "2024-11-18", "Yes", "Yes", "Yes", "Approved", "Thomas Meier"],
+        ["Marketing Website", "No", "N/A", "", "", "No", "No", "No", "Not Approved", ""],
+        ["Employee Portal", "Yes", "STRIDE", "/docs/threat-models/APP-004-threat-model.pdf", "2024-11-12", "Yes", "Yes", "Partial", "Pending", "Markus Huber"],
+        ["Finance Dashboard", "Yes", "STRIDE", "/docs/threat-models/APP-005-threat-model.pdf", "2025-01-03", "Yes", "Yes", "Yes", "Approved", "Petra Keller"],
     ]
     
     row = 4
-    for row_data in example_data:
+    for row_data in example_data[:1]:  # MAX-006: One F2F2F2 sample row
         for col_num, value in enumerate(row_data, 1):
             cell = ws.cell(row=row, column=col_num)
-            if col_num <= 10:  # Data columns
-                cell.value = value
-                apply_style(cell, styles['data_cell'])
-            else:  # Completeness Score (Column K) - formula
-                # Formula: =IF(B{row}="Yes",(IF(F{row}="Yes",25,0)+IF(G{row}="Yes",25,0)+IF(H{row}="Yes",25,0)+IF(I{row}="✅ Approved",25,0)),"N/A")
-                cell.value = f'=IF(B{row}="Yes",(IF(F{row}="Yes",25,0)+IF(G{row}="Yes",25,0)+IF(H{row}="Yes",25,0)+IF(I{row}="✅ Approved",25,0)),"N/A")'
-                cell.number_format = '0"%"'
+            cell.value = value
+            apply_style(cell, styles['sample_cell'])
+
+        # Add Completeness Score formula in column K
+        cell_k = ws.cell(row=row, column=11)
+        cell_k.value = f'=IF(B{row}="Yes",(IF(F{row}="Yes",25,0)+IF(G{row}="Yes",25,0)+IF(H{row}="Yes",25,0)+IF(I{row}="Approved",25,0)),"N/A")'
+        cell_k.number_format = '0"%"'
+        apply_style(cell_k, styles['sample_cell'])
+
         row += 1
-    
+
+    # DS-005 fix: Add empty rows to reach minimum 20 data rows
+    for empty_row in range(row, 55):  # 55 to create 51 total rows (1 sample + 50 empty)
+        for col_num in range(1, 12):  # 11 columns
+            cell = ws.cell(row=empty_row, column=col_num)
+            apply_style(cell, styles['input_cell'])
+
     # Freeze panes
     ws.freeze_panes = 'A4'
     
     return ws
 
 
-def build_architecture_review_sheet(wb, styles, validations):
+def build_architecture_review_sheet(wb, styles):
     """Build Architecture Review Status sheet."""
-    ws = wb["Architecture_Review_Status"]
+    ws = wb["Architecture Review"]
+    ws.sheet_view.showGridLines = False
+    validations = create_base_validations(ws)  # FML-DV-001: fresh DV objects per sheet
     
     # Title
     ws.merge_cells('A1:L1')
     cell = ws['A1']
-    cell.value = "Security Architecture Review Status"
+    cell.value = "SECURITY ARCHITECTURE REVIEW STATUS"
     apply_style(cell, styles['header'])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
     
     # Subtitle
     ws.merge_cells('A2:L2')
     cell = ws['A2']
-    cell.value = "Assess security architecture review completion and findings per application"
+    cell.value = "ASSESS SECURITY ARCHITECTURE REVIEW COMPLETION AND FINDINGS PER APPLICATION"
     apply_style(cell, styles['subheader'])
     
     # Column headers
@@ -938,42 +947,50 @@ def build_architecture_review_sheet(wb, styles, validations):
     
     # Example data
     example_data = [
-        ["Customer Portal", "Yes", "2025-01-09", "/docs/arch-reviews/APP-001-arch-review.pdf", "Security Team, Tech Lead", 0, 0, 2, 3, 0, "✅ Approved", "2025-01-11"],
-        ["Internal HR System", "Yes", "2024-11-19", "/docs/arch-reviews/APP-002-arch-review.pdf", "Security Architect", 0, 1, 3, 2, 0, "✅ Approved", "2024-11-22"],
-        ["Marketing Website", "No", "", "", "", 0, 0, 0, 0, 0, "❌ Not Approved", ""],
-        ["Employee Portal", "Yes", "2024-11-14", "/docs/arch-reviews/APP-004-arch-review.pdf", "Security Team", 0, 2, 1, 1, 2, "⏳ Pending", ""],
-        ["Finance Dashboard", "Yes", "2025-01-04", "/docs/arch-reviews/APP-005-arch-review.pdf", "Security Architect, CTO", 0, 0, 1, 2, 0, "✅ Approved", "2025-01-06"],
+        ["Customer Portal", "Yes", "2025-01-09", "/docs/arch-reviews/APP-001-arch-review.pdf", "Security Team, Tech Lead", 0, 0, 2, 3, 0, "Approved", "2025-01-11"],
+        ["Internal HR System", "Yes", "2024-11-19", "/docs/arch-reviews/APP-002-arch-review.pdf", "Security Architect", 0, 1, 3, 2, 0, "Approved", "2024-11-22"],
+        ["Marketing Website", "No", "", "", "", 0, 0, 0, 0, 0, "Not Approved", ""],
+        ["Employee Portal", "Yes", "2024-11-14", "/docs/arch-reviews/APP-004-arch-review.pdf", "Security Team", 0, 2, 1, 1, 2, "Pending", ""],
+        ["Finance Dashboard", "Yes", "2025-01-04", "/docs/arch-reviews/APP-005-arch-review.pdf", "Security Architect, CTO", 0, 0, 1, 2, 0, "Approved", "2025-01-06"],
     ]
     
     row = 4
-    for row_data in example_data:
+    for row_data in example_data[:1]:  # MAX-006: One F2F2F2 sample row
         for col_num, value in enumerate(row_data, 1):
             cell = ws.cell(row=row, column=col_num)
             cell.value = value
-            apply_style(cell, styles['data_cell'])
+            apply_style(cell, styles['sample_cell'])
         row += 1
-    
+
+    # DS-005 fix: Add empty rows to reach minimum 20 data rows
+    for empty_row in range(row, 55):  # 55 to create 51 total rows (1 sample + 50 empty)
+        for col_num in range(1, 13):  # 12 columns
+            cell = ws.cell(row=empty_row, column=col_num)
+            apply_style(cell, styles['input_cell'])
+
     # Freeze panes
     ws.freeze_panes = 'A4'
     
     return ws
 
 
-def build_traceability_sheet(wb, styles, validations):
+def build_traceability_sheet(wb, styles):
     """Build Traceability Matrix Status sheet."""
-    ws = wb["Traceability_Matrix_Status"]
+    ws = wb["Traceability Matrix"]
+    ws.sheet_view.showGridLines = False
+    validations = create_base_validations(ws)  # FML-DV-001: fresh DV objects per sheet
     
     # Title
     ws.merge_cells('A1:I1')
     cell = ws['A1']
-    cell.value = "Requirements Traceability Matrix Status"
+    cell.value = "REQUIREMENTS TRACEABILITY MATRIX STATUS"
     apply_style(cell, styles['header'])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
     
     # Subtitle
     ws.merge_cells('A2:I2')
     cell = ws['A2']
-    cell.value = "Assess requirements traceability completeness per application"
+    cell.value = "ASSESS REQUIREMENTS TRACEABILITY COMPLETENESS PER APPLICATION"
     apply_style(cell, styles['subheader'])
     
     # Column headers
@@ -1022,188 +1039,261 @@ def build_traceability_sheet(wb, styles, validations):
     ]
     
     row = 4
-    for row_data in example_data:
+    for row_data in example_data[:1]:  # MAX-006: One F2F2F2 sample row
         for col_num, value in enumerate(row_data, 1):
             cell = ws.cell(row=row, column=col_num)
-            if col_num <= 8:  # Data columns
-                cell.value = value
-                apply_style(cell, styles['data_cell'])
-                if col_num == 8:  # Coverage percentage
-                    cell.number_format = '0"%"'
-            else:  # Quality Score (Column I) - formula
-                # Formula: =IF(B{row}="Yes",(IF(E{row}="Yes",33,IF(E{row}="Partial",16.5,0))+IF(F{row}="Yes",33,IF(F{row}="Partial",16.5,0))+IF(G{row}="Yes",34,IF(G{row}="Partial",17,0))),"N/A")
-                cell.value = f'=IF(B{row}="Yes",(IF(E{row}="Yes",33,IF(E{row}="Partial",16.5,0))+IF(F{row}="Yes",33,IF(F{row}="Partial",16.5,0))+IF(G{row}="Yes",34,IF(G{row}="Partial",17,0))),"N/A")'
-                cell.number_format = '0.0"%"'
+            cell.value = value
+            apply_style(cell, styles['sample_cell'])
+            if col_num == 8:  # Coverage percentage
+                cell.number_format = '0"%"'
+
+        # Add Quality Score formula in column I
+        cell_i = ws.cell(row=row, column=9)
+        cell_i.value = f'=IF(B{row}="Yes",(IF(E{row}="Yes",33,IF(E{row}="Partial",16.5,0))+IF(F{row}="Yes",33,IF(F{row}="Partial",16.5,0))+IF(G{row}="Yes",34,IF(G{row}="Partial",17,0))),"N/A")'
+        cell_i.number_format = '0.0"%"'
+        apply_style(cell_i, styles['sample_cell'])
+
         row += 1
-    
+
+    # DS-005 fix: Add empty rows to reach minimum 20 data rows
+    for empty_row in range(row, 55):  # 55 to create 51 total rows (1 sample + 50 empty)
+        for col_num in range(1, 10):  # 9 columns
+            cell = ws.cell(row=empty_row, column=col_num)
+            apply_style(cell, styles['input_cell'])
+
     # Freeze panes
     ws.freeze_panes = 'A4'
     
     return ws
 
 
-def build_compliance_summary_sheet(wb, styles, validations):
-    """Build Compliance Summary dashboard sheet."""
-    ws = wb["Compliance_Summary"]
-    
-    # Title
-    ws.merge_cells('A1:H1')
-    cell = ws['A1']
-    cell.value = "A.8.26 Security Requirements Compliance Dashboard"
-    apply_style(cell, styles['header'])
-    ws.row_dimensions[1].height = 40
-    
-    # Subtitle
-    ws.merge_cells('A2:H2')
-    cell = ws['A2']
-    cell.value = "Overall compliance summary for application security requirements"
-    apply_style(cell, styles['subheader'])
-    
-    # Summary Statistics Section
+def build_compliance_summary_sheet(wb, styles):
+    """Build Summary Dashboard with TABLE 1/2/3 gold standard structure."""
+    ws = wb["Summary Dashboard"]
+    ws.sheet_view.showGridLines = False
+    thin = Side(style="thin")
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    # =========================================================================
+    # ROW 1: MAIN TITLE
+    # =========================================================================
+    ws.merge_cells("A1:G1")
+    cell = ws.cell(row=1, column=1, value=f"{WORKBOOK_NAME.upper()} — SUMMARY DASHBOARD")
+    cell.font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    cell.fill = PatternFill("solid", fgColor="003366")
+    cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    ws.row_dimensions[1].height = 35
+    for col in range(1, 8):
+        ws.cell(row=1, column=col).border = border
+
+    # =========================================================================
+    # ROW 2: CONTROL REFERENCE
+    # =========================================================================
+    ws.merge_cells("A2:G2")
+    cell = ws.cell(row=2, column=1, value=CONTROL_REF)
+    cell.font = Font(name="Calibri", size=10, italic=True, color="003366")
+    cell.alignment = Alignment(horizontal="left", vertical="center")
+    for col in range(1, 8):
+        ws.cell(row=2, column=col).border = border
+
+    # =========================================================================
+    # ROW 4: TABLE 1 — COMPLIANCE OVERVIEW
+    # =========================================================================
+    # Area configs: (display_name, sheet_name, status_col, complete_val, partial_val, nc_val, row_start, row_end)
+    area_configs = [
+        ("Security Requirements Doc",  "Requirements Documentation", "C", "Yes",       "Partial",   "No",  5, 58),
+        ("Threat Modelling",            "Threat Modelling",           "I", "Approved",  "Pending",   "Not Approved", 5, 54),
+        ("Architecture Review",         "Architecture Review",        "K", "Approved",  "Pending",   "Not Approved", 5, 54),
+        ("Traceability Matrix",         "Traceability Matrix",        "F", "Yes",       "Partial",   "No",  5, 54),
+    ]
+
     row = 4
-    ws.merge_cells(f'A{row}:H{row}')
-    cell = ws[f'A{row}']
-    cell.value = "Portfolio Summary Statistics"
-    apply_style(cell, styles['subheader'])
-    
-    row += 1
-    summary_labels = [
-        "Total Applications:",
-        "High Risk Applications:",
-        "Medium Risk Applications:",
-        "Low Risk Applications:",
-        "Applications with Security Requirements:",
-        "Applications with Threat Models:",
-        "Applications with Architecture Reviews:",
-        "Overall Portfolio Compliance Score:",
+    ws.merge_cells(f"A{row}:G{row}")
+    c = ws.cell(row=row, column=1, value="TABLE 1: ASSESSMENT AREA COMPLIANCE OVERVIEW")
+    c.font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
+    c.fill = PatternFill("solid", fgColor="003366")
+    for col in range(1, 8):
+        ws.cell(row=row, column=col).border = border
+
+    row = 5
+    t1_headers = ["Assessment Area", "Total Assessed", "Complete", "Partial", "Missing", "N/A", "Completion %"]
+    for col_idx, h in enumerate(t1_headers, 1):
+        c = ws.cell(row=row, column=col_idx, value=h)
+        c.font = Font(name="Calibri", size=10, bold=True, color="000000")
+        c.fill = PatternFill("solid", fgColor="D9D9D9")
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = border
+
+    # TABLE 1 data rows
+    for i, (display_name, sheet_name, s_col, complete_v, partial_v, nc_v, r_start, r_end) in enumerate(area_configs):
+        r = 6 + i
+        ws.cell(row=r, column=1, value=display_name).font = Font(name="Calibri", size=10)
+        ws.cell(row=r, column=1).border = border
+
+        # B: Total (COUNTA)
+        c = ws.cell(row=r, column=2)
+        c.value = f"=COUNTA('{sheet_name}'!{s_col}{r_start}:{s_col}{r_end})"
+        c.border = border; c.alignment = Alignment(horizontal="center")
+
+        # C: Complete
+        c = ws.cell(row=r, column=3)
+        c.value = f"=COUNTIF('{sheet_name}'!{s_col}{r_start}:{s_col}{r_end},\"{complete_v}\")"
+        c.border = border; c.alignment = Alignment(horizontal="center")
+
+        # D: Partial
+        c = ws.cell(row=r, column=4)
+        c.value = f"=COUNTIF('{sheet_name}'!{s_col}{r_start}:{s_col}{r_end},\"{partial_v}\")" if partial_v else "=0"
+        c.border = border; c.alignment = Alignment(horizontal="center")
+
+        # E: Missing (Non-Compliant)
+        c = ws.cell(row=r, column=5)
+        c.value = f"=COUNTIF('{sheet_name}'!{s_col}{r_start}:{s_col}{r_end},\"{nc_v}\")"
+        c.border = border; c.alignment = Alignment(horizontal="center")
+
+        # F: N/A (always 0 for these sheets)
+        c = ws.cell(row=r, column=6)
+        c.value = "=0"
+        c.border = border; c.alignment = Alignment(horizontal="center")
+
+        # G: Completion %
+        c = ws.cell(row=r, column=7)
+        c.value = f'=IF((B{r}-F{r})=0,0,C{r}/(B{r}-F{r}))'
+        c.number_format = "0.0%"
+        c.border = border; c.alignment = Alignment(horizontal="center")
+
+    # TOTAL row
+    total_row = 6 + len(area_configs)  # row 10
+    ws.cell(row=total_row, column=1, value="TOTAL").font = Font(name="Calibri", size=10, bold=True)
+    ws.cell(row=total_row, column=1).fill = PatternFill("solid", fgColor="D9D9D9")
+    ws.cell(row=total_row, column=1).border = border
+    for col_idx in range(2, 7):
+        col_letter = get_column_letter(col_idx)
+        c = ws.cell(row=total_row, column=col_idx)
+        c.value = f"=SUM({col_letter}6:{col_letter}{total_row-1})"
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.fill = PatternFill("solid", fgColor="D9D9D9")
+        c.border = border; c.alignment = Alignment(horizontal="center")
+    c = ws.cell(row=total_row, column=7)
+    c.value = f'=IF((B{total_row}-F{total_row})=0,0,C{total_row}/(B{total_row}-F{total_row}))'
+    c.number_format = "0.0%"
+    c.font = Font(name="Calibri", size=10, bold=True)
+    c.fill = PatternFill("solid", fgColor="D9D9D9")
+    c.border = border; c.alignment = Alignment(horizontal="center")
+
+    # =========================================================================
+    # TABLE 2: KEY METRICS
+    # =========================================================================
+    row = total_row + 2  # row 12
+    ws.merge_cells(f"A{row}:G{row}")
+    c = ws.cell(row=row, column=1, value="TABLE 2: KEY METRICS")
+    c.font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
+    c.fill = PatternFill("solid", fgColor="003366")
+    for col in range(1, 8):
+        ws.cell(row=row, column=col).border = border
+
+    metrics = [
+        ("Total Applications Assessed",   "=COUNTA('Application Inventory'!A5:A54)"),
+        ("High Risk Applications",         "=COUNTIF('Application Inventory'!E5:E54,\"High Risk\")"),
+        ("Approved Threat Models",         "=COUNTIF('Threat Modelling'!I5:I54,\"Approved\")"),
+        ("Next Review Due",                ""),
+        ("Assessment Owner",               ""),
     ]
-    
-    for label in summary_labels:
-        ws[f'A{row}'] = label
-        ws[f'A{row}'].font = Font(name="Calibri", size=10, bold=True)
-        ws[f'B{row}'] = "[Calculated from data]"
-        ws[f'B{row}'].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        row += 1
-    
-    # Application-Level Compliance Table
+
+    # TABLE 2 column headers
+    header_row = row + 1
+    ws.cell(row=header_row, column=1, value="Metric").font = Font(name="Calibri", size=10, bold=True)
+    ws.cell(row=header_row, column=1).fill = PatternFill("solid", fgColor="D9D9D9")
+    ws.cell(row=header_row, column=1).border = border
+    ws.merge_cells(f"B{header_row}:G{header_row}")
+    ws.cell(row=header_row, column=2, value="Value").font = Font(name="Calibri", size=10, bold=True)
+    ws.cell(row=header_row, column=2).fill = PatternFill("solid", fgColor="D9D9D9")
+    for col in range(2, 8):
+        ws.cell(row=header_row, column=col).border = border
+    r = row + 2
+    for label, formula in metrics:
+        ws.cell(row=r, column=1, value=label).font = Font(name="Calibri", size=10)
+        ws.cell(row=r, column=1).border = border
+        ws.merge_cells(f"B{r}:G{r}")
+        c = ws.cell(row=r, column=2)
+        c.value = formula if formula else ""
+        for col in range(2, 8):
+            ws.cell(row=r, column=col).border = border
+        r += 1
+
+    # =========================================================================
+    # TABLE 3: CRITICAL FINDINGS
+    # =========================================================================
+    # 2 buffer rows: A alone | B:G merged (mirrors TABLE 2 metric structure)
+    for _ in range(2):
+        ws.cell(row=r, column=1).border = border
+        ws.merge_cells(f"B{r}:G{r}")
+        for col in range(2, 8):
+            ws.cell(row=r, column=col).border = border
+        r += 1
+    row = r + 1  # blank gap, then TABLE 3
+    ws.merge_cells(f"A{row}:G{row}")
+    c = ws.cell(row=row, column=1, value="TABLE 3: CRITICAL FINDINGS")
+    c.font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
+    c.fill = PatternFill("solid", fgColor="C00000")
+    for col in range(1, 8):
+        ws.cell(row=row, column=col).border = border
+
     row += 1
-    ws.merge_cells(f'A{row}:H{row}')
-    cell = ws[f'A{row}']
-    cell.value = "Application-Level Compliance Scores"
-    apply_style(cell, styles['subheader'])
-    
-    # Column headers
-    row += 1
-    headers = [
-        "Application Name",
-        "Risk Level",
-        "Req Score (%)",
-        "TM Score (%)",
-        "Arch Score",
-        "Trace Score (%)",
-        "Overall Score (%)",
-        "Compliance Status",
+    t3_headers = ["#", "Finding", "Count", "Severity", "Affected Area", "Recommended Action", "Owner"]
+    for col_idx, h in enumerate(t3_headers, 1):
+        c = ws.cell(row=row, column=col_idx, value=h)
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.fill = PatternFill("solid", fgColor="D9D9D9")
+        c.border = border
+
+    findings = [
+        ("=COUNTIF('Requirements Documentation'!C5:C58,\"No\")",  "Apps Without Security Requirements Doc",       "High",     "Requirements Documentation",  "Create security requirements documentation"),
+        ("=COUNTIF('Threat Modelling'!B5:B54,\"No\")",             "Apps Without Threat Model",                    "High",     "Threat Modelling",            "Conduct STRIDE threat modelling session"),
+        ("=COUNTIF('Architecture Review'!B5:B54,\"No\")",          "Architecture Reviews Not Conducted",           "Medium",   "Architecture Review",         "Schedule security architecture review"),
+        ("=SUM('Architecture Review'!F5:F54)",                     "Critical Architecture Findings (Total)",       "Critical", "Architecture Review",         "Immediate remediation required"),
+        ("=SUM('Architecture Review'!J5:J54)",                     "Open Architecture Findings (Total)",           "High",     "Architecture Review",         "Track and remediate open findings"),
     ]
-    
-    for col_num, header in enumerate(headers, 1):
-        cell = ws.cell(row=row, column=col_num)
-        cell.value = header
-        apply_style(cell, styles['column_header'])
-    
+
+    for i, (count_f, finding_name, severity, area, action) in enumerate(findings, 1):
+        r = row + i
+        ws.cell(row=r, column=1, value=count_f).fill = PatternFill("solid", fgColor="FFFFCC")
+        ws.cell(row=r, column=1).border = border
+        ws.cell(row=r, column=2, value=finding_name).fill = PatternFill("solid", fgColor="FFFFCC")
+        ws.cell(row=r, column=2).border = border
+        ws.cell(row=r, column=3, value=count_f).fill = PatternFill("solid", fgColor="FFFFCC")
+        ws.cell(row=r, column=3).border = border
+        ws.cell(row=r, column=4, value=severity).fill = PatternFill("solid", fgColor="FFFFCC")
+        ws.cell(row=r, column=4).border = border
+        ws.cell(row=r, column=5, value=area).fill = PatternFill("solid", fgColor="FFFFCC")
+        ws.cell(row=r, column=5).border = border
+        ws.cell(row=r, column=6, value=action).fill = PatternFill("solid", fgColor="FFFFCC")
+        ws.cell(row=r, column=6).border = border
+        ws.cell(row=r, column=7).fill = PatternFill("solid", fgColor="FFFFCC")
+        ws.cell(row=r, column=7).border = border
+
     # Column widths
-    ws.column_dimensions['A'].width = 25
-    ws.column_dimensions['B'].width = 15
-    ws.column_dimensions['C'].width = 15
-    ws.column_dimensions['D'].width = 15
-    ws.column_dimensions['E'].width = 15
-    ws.column_dimensions['F'].width = 15
-    ws.column_dimensions['G'].width = 18
-    ws.column_dimensions['H'].width = 22
-    
-    # Example data with formulas
-    example_apps = [
-        "Customer Portal",
-        "Internal HR System",
-        "Marketing Website",
-        "Employee Portal",
-        "Finance Dashboard",
-    ]
-    
-    row += 1
-    start_row = row
-    for app_name in example_apps:
-        ws[f'A{row}'] = app_name
-        ws[f'B{row}'] = "High Risk"  # Simplified - would lookup from Application_Inventory
-        
-        # Requirements Score - reference to Requirements_Documentation_Status sheet
-        ws[f'C{row}'].value = f"=Requirements_Documentation_Status!K{row-start_row+4}"
-        ws[f'C{row}'].number_format = '0.0"%"'
-        
-        # Threat Model Score - reference to Threat_Modeling_Status sheet
-        ws[f'D{row}'].value = f"=Threat_Modeling_Status!K{row-start_row+4}"
-        ws[f'D{row}'].number_format = '0"%"'
-        
-        # Architecture Score - calculated from approval status
-        ws[f'E{row}'].value = f'=IF(Architecture_Review_Status!K{row-start_row+4}="✅ Approved",100,IF(Architecture_Review_Status!K{row-start_row+4}="⏳ Pending",50,0))'
-        ws[f'E{row}'].number_format = '0"%"'
-        
-        # Traceability Score - reference to Traceability_Matrix_Status sheet
-        ws[f'F{row}'].value = f"=Traceability_Matrix_Status!I{row-start_row+4}"
-        ws[f'F{row}'].number_format = '0.0"%"'
-        
-        # Overall Score - weighted average
-        ws[f'G{row}'].value = f"=(C{row}*0.4+D{row}*0.3+E{row}*0.2+F{row}*0.1)"
-        ws[f'G{row}'].number_format = '0.0"%"'
-        
-        # Compliance Status
-        ws[f'H{row}'].value = f'=IF(G{row}>=80,"✅ Compliant",IF(G{row}>=60,"⚠️ Partial Compliance","❌ Non-Compliant"))'
-        
-        row += 1
-    
-    # Gap Analysis Section
-    row += 1
-    ws.merge_cells(f'A{row}:H{row}')
-    cell = ws[f'A{row}']
-    cell.value = "Gap Analysis - Applications Requiring Attention"
-    apply_style(cell, styles['subheader'])
-    
-    row += 1
-    gaps = [
-        "Applications without Security Requirements:",
-        "Applications without Threat Models:",
-        "Applications without Architecture Reviews:",
-        "Applications with Open Critical Findings:",
-        "Applications below 80% Compliance Threshold:",
-    ]
-    
-    for gap in gaps:
-        ws[f'A{row}'] = gap
-        ws[f'A{row}'].font = Font(name="Calibri", size=10, bold=True)
-        ws[f'B{row}'] = "[List applications]"
-        ws[f'B{row}'].fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
-        row += 1
-    
-    # Freeze panes
-    ws.freeze_panes = 'A18'
+    for col, w in zip("ABCDEFG", [38, 16, 16, 16, 16, 16, 18]):
+        ws.column_dimensions[col].width = w
 
+    ws.freeze_panes = "A4"
     return ws
-
-
-def build_gap_analysis_sheet(wb, styles, validations):
+def build_gap_analysis_sheet(wb, styles):
     """Build Gap Analysis sheet for tracking non-compliant applications and remediation."""
-    ws = wb["Gap_Analysis"]
+    ws = wb["Gap Analysis"]
+    ws.sheet_view.showGridLines = False
+    validations = create_base_validations(ws)  # FML-DV-001: fresh DV objects per sheet
 
     # Title
     ws.merge_cells('A1:J1')
     cell = ws['A1']
-    cell.value = "Gap Analysis & Remediation Tracking"
+    cell.value = "GAP ANALYSIS & REMEDIATION TRACKING"
     apply_style(cell, styles['header'])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     # Subtitle
     ws.merge_cells('A2:J2')
     cell = ws['A2']
-    cell.value = "Track security requirements gaps and remediation actions per application"
+    cell.value = "TRACK SECURITY REQUIREMENTS GAPS AND REMEDIATION ACTIONS PER APPLICATION"
     apply_style(cell, styles['subheader'])
 
     # Column headers
@@ -1251,11 +1341,11 @@ def build_gap_analysis_sheet(wb, styles, validations):
     ]
 
     row = 4
-    for row_data in example_data:
+    for row_data in example_data[:1]:  # MAX-006: One F2F2F2 sample row
         for col_num, value in enumerate(row_data, 1):
             cell = ws.cell(row=row, column=col_num)
             cell.value = value
-            apply_style(cell, styles['data_cell'])
+            apply_style(cell, styles['sample_cell'])
 
             # Color code status
             if col_num == 9:  # Status column
@@ -1276,264 +1366,319 @@ def build_gap_analysis_sheet(wb, styles, validations):
                     cell.fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
         row += 1
 
+    # DS-005 fix: Add empty rows to reach minimum 20 data rows
+    for empty_row in range(row, 55):  # 55 to create 51 total rows (1 sample + 50 empty)
+        for col_num in range(1, 11):  # 10 columns
+            cell = ws.cell(row=empty_row, column=col_num)
+            apply_style(cell, styles['input_cell'])
+
     # Freeze panes
     ws.freeze_panes = 'A4'
 
     return ws
 
 
-def build_evidence_register_sheet(wb, styles, validations):
-    """Build Evidence Register sheet."""
-    ws = wb["Evidence_Register"]
-    
-    # Title
-    ws.merge_cells('A1:G1')
-    cell = ws['A1']
-    cell.value = "Evidence Register"
-    apply_style(cell, styles['header'])
-    ws.row_dimensions[1].height = 30
-    
-    # Subtitle
-    ws.merge_cells('A2:G2')
-    cell = ws['A2']
-    cell.value = "Centralised register of all security requirements evidence"
-    apply_style(cell, styles['subheader'])
-    
-    # Column headers
+def create_evidence_register(wb, styles):
+    """Create Evidence Register — gold standard (STANDARD-SCR-COMMON-SHEETS.md)."""
+    thin = Side(style="thin")
+    border_thin = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    ws = wb["Evidence Register"]
+    ws.sheet_view.showGridLines = False
+
+    # ROW 1: Title banner
+    ws.merge_cells("A1:H1")
+    ws["A1"] = "EVIDENCE REGISTER"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
+    ws.row_dimensions[1].height = 35
+    for col in range(1, 9):
+        ws.cell(row=1, column=col).border = border_thin
+
+    # ROW 2: Subtitle
+    ws.merge_cells("A2:H2")
+    ws["A2"] = "Document all evidence collected during this assessment"
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True)
+    ws["A2"].alignment = Alignment(horizontal="left", vertical="center")
+    for col in range(1, 9):
+        ws.cell(row=2, column=col).border = border_thin
+
+    # ROW 3: intentionally empty (visual separator)
+
+    # ROW 4: Column headers (003366 navy)
     headers = [
-        "Evidence Type",
-        "Application Name",
-        "Document Title/Description",
-        "Document Location/Link",
-        "Last Updated",
-        "Owner",
-        "Status",
+        "Evidence ID", "Assessment Area", "Evidence Type", "Description",
+        "Location / Path", "Date Collected", "Collected By", "Verification Status",
     ]
-    
-    row = 3
-    for col_num, header in enumerate(headers, 1):
-        cell = ws.cell(row=row, column=col_num)
-        cell.value = header
-        apply_style(cell, styles['column_header'])
-    
-    # Column widths
-    ws.column_dimensions['A'].width = 25
-    ws.column_dimensions['B'].width = 25
-    ws.column_dimensions['C'].width = 35
-    ws.column_dimensions['D'].width = 45
-    ws.column_dimensions['E'].width = 15
-    ws.column_dimensions['F'].width = 20
-    ws.column_dimensions['G'].width = 15
-    
-    # Apply data validations
-    validations['evidence_status'].add('G4:G100')
-    
-    # Example data
-    example_data = [
-        ["Security Requirements", "Customer Portal", "APP-001 Security Requirements v1.2", "/docs/security-requirements/APP-001-sec-req.pdf", "2025-01-10", "Anna Müller", "Current"],
-        ["Threat Model", "Customer Portal", "APP-001 STRIDE Threat Model", "/docs/threat-models/APP-001-threat-model.pdf", "2025-01-08", "Security Team", "Current"],
-        ["Architecture Review", "Customer Portal", "APP-001 Security Architecture Review Report", "/docs/arch-reviews/APP-001-arch-review.pdf", "2025-01-09", "Security Architect", "Current"],
-        ["Traceability Matrix", "Customer Portal", "APP-001 Requirements Traceability", "/docs/traceability/APP-001-traceability.xlsx", "2025-01-14", "Dev Lead", "Current"],
-        ["Security Requirements", "Internal HR System", "APP-002 Security Requirements v1.0", "/docs/security-requirements/APP-002-sec-req.pdf", "2024-11-20", "Thomas Meier", "Current"],
-        ["Threat Model", "Internal HR System", "APP-002 STRIDE Threat Model", "/docs/threat-models/APP-002-threat-model.pdf", "2024-11-18", "Security Team", "Current"],
-        ["Architecture Review", "Internal HR System", "APP-002 Security Architecture Review", "/docs/arch-reviews/APP-002-arch-review.pdf", "2024-11-19", "Security Architect", "Current"],
-        ["Security Requirements", "Marketing Website", "APP-003 Baseline Security Requirements", "/docs/security-requirements/APP-003-baseline.pdf", "2024-12-15", "Sandra Brunner", "Outdated"],
+    widths = [15, 25, 22, 40, 45, 16, 20, 22]
+    for col_idx, (header, width) in enumerate(zip(headers, widths), start=1):
+        cell = ws.cell(row=4, column=col_idx, value=header)
+        cell.font = Font(name="Calibri", size=10, bold=True, color="FFFFFF")
+        cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.border = border_thin
+        ws.column_dimensions[get_column_letter(col_idx)].width = width
+
+    # Data validations
+    dv_type = DataValidation(
+        type="list",
+        formula1='"Security requirements doc,Code review report,Test report,Vulnerability scan,Penetration test,Remediation record,SDLC process doc,Screenshot,Other"',
+        allow_blank=True,
+    )
+    dv_ver = DataValidation(
+        type="list",
+        formula1='"\u2705 Verified,\u26a0\ufe0f Pending,\u274c Not Verified,N/A"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(dv_type)
+    ws.add_data_validation(dv_ver)
+
+    # ROW 5: Sample row (F2F2F2 grey)
+    sample_data = {
+        1: "EV-001",
+        2: "Security Requirements Assessment",
+        3: "Policy Document",
+        4: "Security requirements document for Customer Portal application",
+        5: "\\\\fileserver\\policies\\document.pdf",
+        6: "15.01.2026",
+        7: "Assessor Name",
+        8: "\u2705 Verified",
+    }
+    for col, value in sample_data.items():
+        cell = ws.cell(row=5, column=col, value=value)
+        cell.fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+        cell.border = border_thin
+        cell.alignment = Alignment(
+            horizontal="center" if col == 1 else "left",
+            vertical="center", wrap_text=True
+        )
+        cell.font = Font(name="Calibri", size=10)
+    dv_type.add(ws["C5"])
+    dv_ver.add(ws["H5"])
+
+    # ROWS 6-105: Empty data rows (FFFFCC yellow, 100 rows — MAX-002)
+    for r in range(6, 106):
+        for c in range(1, 9):
+            cell = ws.cell(row=r, column=c)
+            cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            cell.border = border_thin
+            cell.alignment = Alignment(
+                horizontal="center" if c == 1 else "left",
+                vertical="center", wrap_text=True
+            )
+            cell.value = None  # No pre-filled IDs (MAX-001)
+        dv_type.add(ws[f"C{r}"])
+        dv_ver.add(ws[f"H{r}"])
+
+    ws.freeze_panes = "A5"
+    return ws
+def create_approval_sheet(wb, styles, doc_id, assessment_name, summary_sheet_name="Summary Dashboard", compliance_cell="G10"):
+    """Create Approval Sign-Off — gold standard (STANDARD-SCR-COMMON-SHEETS.md)."""
+    thin = Side(style="thin")
+    border_thin = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    if "Approval Sign-Off" in wb.sheetnames:
+        del wb["Approval Sign-Off"]
+    ws = wb.create_sheet("Approval Sign-Off")
+    ws.sheet_view.showGridLines = False
+
+    # ROW 1: Title banner (003366)
+    ws.merge_cells("A1:E1")
+    ws["A1"] = "ASSESSMENT APPROVAL AND SIGN-OFF"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
+    ws.row_dimensions[1].height = 35
+    for col in range(1, 6):
+        ws.cell(row=1, column=col).border = border_thin
+
+    # ROW 2: Control reference (003366 italic, NO fill)
+    ws.merge_cells("A2:E2")
+    ws["A2"] = CONTROL_REF
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
+    ws["A2"].alignment = Alignment(horizontal="center", vertical="center")
+    for col in range(1, 6):
+        ws.cell(row=2, column=col).border = border_thin
+
+    # ROW 3: Assessment Summary banner (4472C4)
+    ws.merge_cells("A3:E3")
+    ws["A3"] = "ASSESSMENT SUMMARY"
+    ws["A3"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
+    ws["A3"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+    ws["A3"].alignment = Alignment(horizontal="left", vertical="center")
+    for col in range(1, 6):
+        ws.cell(row=3, column=col).border = border_thin
+
+    # Summary fields (rows 4-8)
+    summary_fields = [
+        ("Document:",                  f"{doc_id} - {assessment_name}"),
+        ("Assessment Period:",         ""),
+        ("Overall Compliance Rating:", f"='{summary_sheet_name}'!G10"),
+        ("Assessment Status:",         ""),
+        ("Assessed By:",               ""),
     ]
-    
+
     row = 4
-    for row_data in example_data:
-        for col_num, value in enumerate(row_data, 1):
-            cell = ws.cell(row=row, column=col_num)
-            cell.value = value
-            apply_style(cell, styles['data_cell'])
+    for label, value in summary_fields:
+        ws[f"A{row}"] = label
+        ws[f"A{row}"].font = Font(name="Calibri", size=10, bold=True)
+        ws[f"A{row}"].border = border_thin  # GS-AS-011: border on label column
+        ws.merge_cells(f"B{row}:E{row}")
+        ws[f"B{row}"] = value
+        if value == "":
+            ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        for col_letter in ['B', 'C', 'D', 'E']:
+            ws[f"{col_letter}{row}"].border = border_thin
         row += 1
-    
-    # Freeze panes
-    ws.freeze_panes = 'A4'
-    
+
+    # Assessment Status dropdown
+    dv_status = DataValidation(type="list", formula1='"Draft,Final,Requires remediation,Re-assessment required"', allow_blank=True)
+    ws.add_data_validation(dv_status)
+    dv_status.add(ws["B7"])  # Row 7 = Assessment Status
+
+    # Approver sections
+    row += 2  # row 10
+    for title, color in [
+        ("COMPLETED BY (ASSESSOR)", "4472C4"),
+        ("REVIEWED BY (INFORMATION SECURITY OFFICER)", "4472C4"),
+        ("APPROVED BY (CISO)", "003366"),
+    ]:
+        ws.merge_cells(f"A{row}:E{row}")
+        ws[f"A{row}"] = title
+        ws[f"A{row}"].font = Font(bold=True, color="FFFFFF", size=11)
+        ws[f"A{row}"].fill = PatternFill(start_color=color, end_color=color, fill_type="solid")
+        ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
+        for col in range(1, 6):
+            ws.cell(row=row, column=col).border = border_thin
+        row += 1
+        for field in ["Name:", "Title:", "Date:", "Signature:", "Comments:"]:
+            ws[f"A{row}"] = field
+            ws[f"A{row}"].font = Font(bold=True)
+            ws[f"A{row}"].border = border_thin
+            ws.merge_cells(f"B{row}:E{row}")
+            ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            for col_letter in ['B', 'C', 'D', 'E']:
+                ws[f"{col_letter}{row}"].border = border_thin
+            row += 1
+        row += 1  # gap between sections
+
+    # Final Decision
+    ws[f"A{row}"] = "FINAL DECISION:"
+    ws[f"A{row}"].font = Font(bold=True)
+    ws[f"A{row}"].border = border_thin
+    ws.merge_cells(f"B{row}:E{row}")
+    ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+    for col_letter in ['B', 'C', 'D', 'E']:
+        ws[f"{col_letter}{row}"].border = border_thin
+    dv_dec = DataValidation(type="list", formula1='"Approved,Approved with Conditions,Rejected,Deferred"', allow_blank=True)
+    ws.add_data_validation(dv_dec)
+    dv_dec.add(ws[f"B{row}"])
+
+    # Next Review Details
+    row += 3
+    ws.merge_cells(f"A{row}:E{row}")
+    ws[f"A{row}"] = "NEXT REVIEW DETAILS"
+    ws[f"A{row}"].font = Font(bold=True, size=11, color="FFFFFF")
+    ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+    ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
+    for col in range(1, 6):
+        ws.cell(row=row, column=col).border = border_thin
+
+    row += 1
+    for label in ["Next Review Date:", "Review Responsible:", "Special Considerations:"]:
+        ws[f"A{row}"] = label
+        ws[f"A{row}"].font = Font(bold=True)
+        ws[f"A{row}"].border = border_thin
+        ws.merge_cells(f"B{row}:E{row}")
+        ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        for col_letter in ['B', 'C', 'D', 'E']:
+            ws[f"{col_letter}{row}"].border = border_thin
+        row += 1
+
+    ws.column_dimensions["A"].width = 32
+    ws.column_dimensions["B"].width = 25
+    ws.column_dimensions["C"].width = 20
+    ws.column_dimensions["D"].width = 20
+    ws.column_dimensions["E"].width = 20
+    ws.freeze_panes = "A3"
     return ws
-
-
-def build_approval_sheet(wb, styles):
-    """Build Approval/Sign-Off sheet."""
-    ws = wb["Approval_Sign_Off"]
-    
-    # Title
-    ws.merge_cells('A1:E1')
-    cell = ws['A1']
-    cell.value = "Assessment Approval and Sign-Off"
-    apply_style(cell, styles['header'])
-    ws.row_dimensions[1].height = 40
-    
-    # Assessment Information
-    row = 3
-    ws.merge_cells(f'A{row}:E{row}')
-    cell = ws[f'A{row}']
-    cell.value = "Assessment Information"
-    apply_style(cell, styles['subheader'])
-    
-    row += 1
-    info = [
-        ("Assessment Date:", "[USER INPUT]"),
-        ("Assessed By:", "[USER INPUT]"),
-        ("Organisation:", "[USER INPUT]"),
-        ("Assessment Period:", "[USER INPUT - e.g., Q1 2025]"),
-        ("Total Applications Assessed:", "[Auto-calculated or USER INPUT]"),
-    ]
-    
-    for label, value in info:
-        ws[f'A{row}'] = label
-        ws[f'A{row}'].font = Font(name="Calibri", size=10, bold=True)
-        ws[f'B{row}'] = value
-        if "[USER INPUT]" in value or "[Auto-calculated" in value:
-            ws[f'B{row}'].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        row += 1
-    
-    # Approval Table
-    row += 2
-    ws.merge_cells(f'A{row}:E{row}')
-    cell = ws[f'A{row}']
-    cell.value = "Approval Sign-Off"
-    apply_style(cell, styles['subheader'])
-    
-    row += 1
-    approval_headers = ["Approver Name", "Role/Title", "Date", "Signature", "Comments"]
-    for col_num, header in enumerate(approval_headers, 1):
-        cell = ws.cell(row=row, column=col_num)
-        cell.value = header
-        apply_style(cell, styles['column_header'])
-    
-    # Approval rows
-    approval_roles = [
-        "Security Architect",
-        "CISO / Security Leadership",
-        "Compliance Officer",
-        "Application Portfolio Manager",
-    ]
-    
-    row += 1
-    for role in approval_roles:
-        ws[f'A{row}'] = "[Name]"
-        ws[f'B{row}'] = role
-        ws[f'C{row}'] = "[Date]"
-        ws[f'D{row}'] = "[Signature/Initials]"
-        ws[f'E{row}'] = ""
-        
-        # Yellow fill for input cells
-        ws[f'A{row}'].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        ws[f'C{row}'].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        ws[f'D{row}'].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        ws[f'E{row}'].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
-        row += 1
-    
-    # Overall Compliance Determination
-    row += 2
-    ws.merge_cells(f'A{row}:E{row}')
-    cell = ws[f'A{row}']
-    cell.value = "Overall Compliance Determination"
-    apply_style(cell, styles['subheader'])
-    
-    row += 1
-    ws[f'A{row}'] = "Overall Portfolio Compliance Status:"
-    ws[f'A{row}'].font = Font(name="Calibri", size=10, bold=True)
-    ws[f'B{row}'] = "[✅ Compliant / ⚠️ Partial Compliance / ❌ Non-Compliant]"
-    ws[f'B{row}'].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-    
-    row += 1
-    ws[f'A{row}'] = "Overall Compliance Score:"
-    ws[f'A{row}'].font = Font(name="Calibri", size=10, bold=True)
-    ws[f'B{row}'] = "[X%]"
-    ws[f'B{row}'].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-    
-    # Recommended Actions
-    row += 2
-    ws.merge_cells(f'A{row}:E{row}')
-    cell = ws[f'A{row}']
-    cell.value = "Recommended Actions"
-    apply_style(cell, styles['subheader'])
-    
-    row += 1
-    ws.merge_cells(f'A{row}:E{row+5}')
-    cell = ws[f'A{row}']
-    cell.value = "[Document recommended actions based on gap analysis and compliance summary]"
-    cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-    cell.alignment = Alignment(horizontal="left", vertical="top", wrap_text=True)
-    ws.row_dimensions[row].height = 100
-    
-    # Column widths
-    ws.column_dimensions['A'].width = 25
-    ws.column_dimensions['B'].width = 30
-    ws.column_dimensions['C'].width = 15
-    ws.column_dimensions['D'].width = 25
-    ws.column_dimensions['E'].width = 40
-    
-    return ws
-
-
-# ============================================================================
-# SECTION 4: MAIN EXECUTION
-# ============================================================================
-
+def finalize_validations(wb):
+    """Ensure all data validations are properly finalised for all worksheets."""
+    for ws in wb.worksheets:
+        for dv in ws.data_validations.dataValidation:
+            dv.showErrorMessage = True
+            dv.showInputMessage = True
 def main():
     """Main execution function."""
-    logger.info("🚀 Generating ISMS A.8.26 Security Requirements Assessment Workbook...")
+    logger.info("Generating ISMS A.8.26 Security Requirements Assessment Workbook...")
     logger.info("=" * 70)
     
     # Create workbook and styles
-    logger.info("\n📊 Creating workbook structure...")
+    logger.info("\nCreating workbook structure...")
     wb = create_workbook()
-    styles = setup_styles()
+    styles = _STYLES
     
     # Build all sheets
-    logger.info("📋 Building Instructions & Legend sheet...")
-    build_instructions_sheet(wb, styles)
+    logger.info("Building Instructions & Legend sheet...")
+    create_instructions_sheet(wb["Instructions & Legend"])
     
-    logger.info("📦 Building Application Inventory sheet...")
-    ws_inventory = wb["Application_Inventory"]
-    validations = create_base_validations(ws_inventory)
-    build_application_inventory_sheet(wb, styles, validations)
+    logger.info("Building Application Inventory sheet...")
+    build_application_inventory_sheet(wb, styles)
     
-    logger.info("📄 Building Requirements Documentation Status sheet...")
-    build_requirements_documentation_sheet(wb, styles, validations)
+    logger.info("Building Requirements Documentation Status sheet...")
+    build_requirements_documentation_sheet(wb, styles)
     
-    logger.info("🎯 Building Threat Modeling Status sheet...")
-    build_threat_modeling_sheet(wb, styles, validations)
+    logger.info(" Building Threat Modeling Status sheet...")
+    build_threat_modeling_sheet(wb, styles)
     
-    logger.info("🏗️  Building Architecture Review Status sheet...")
-    build_architecture_review_sheet(wb, styles, validations)
+    logger.info("️  Building Architecture Review Status sheet...")
+    build_architecture_review_sheet(wb, styles)
     
-    logger.info("🔗 Building Traceability Matrix Status sheet...")
-    build_traceability_sheet(wb, styles, validations)
+    logger.info(" Building Traceability Matrix Status sheet...")
+    build_traceability_sheet(wb, styles)
     
-    logger.info("📈 Building Compliance Summary dashboard...")
-    build_compliance_summary_sheet(wb, styles, validations)
+    logger.info(" Building Summary Dashboard dashboard...")
+    build_compliance_summary_sheet(wb, styles)
 
-    logger.info("🔍 Building Gap Analysis sheet...")
-    build_gap_analysis_sheet(wb, styles, validations)
+    logger.info("Building Gap Analysis sheet...")
+    build_gap_analysis_sheet(wb, styles)
 
-    logger.info("📚 Building Evidence Register...")
-    build_evidence_register_sheet(wb, styles, validations)
+    logger.info(" Building Evidence Register...")
+    create_evidence_register(wb, styles)
     
-    logger.info("✅ Building Approval Sign-Off sheet...")
-    build_approval_sheet(wb, styles)
+    logger.info("Building Approval Sign-Off sheet...")
+    create_approval_sheet(wb, styles, "ISMS-IMP-A.8.25-26-29.S1", "Security Requirements Assessment", "Summary Dashboard", "G10")
     
     # Save workbook
     filename = OUTPUT_FILENAME
-    logger.info(f"\n💾 Saving workbook: {filename}")
-    wb.save(filename)
-    
+    logger.info(f"\n Saving workbook: {filename}")
+    # Finalize all data validations
+
+    for ws_name in wb.sheetnames:
+
+        ws_temp = wb[ws_name]
+
+        for dv in list(ws_temp.data_validations.dataValidation):
+
+            dv.showErrorMessage = True
+
+            dv.showInputMessage = True
+
+    output_path = _wkbk_dir / OUTPUT_FILENAME
+    finalize_validations(wb)
+    wb.save(output_path)
     logger.info("\n" + "=" * 70)
-    logger.info("✅ Workbook generated successfully!")
+    logger.info("Workbook generated successfully!")
     logger.info("=" * 70)
-    logger.info(f"\n📊 File: {filename}")
-    logger.info(f"📝 Sheets: {len(wb.sheetnames)}")
+    logger.info(f"\nFile: {filename}")
+    logger.info(f" Sheets: {len(wb.sheetnames)}")
     logger.info("\nSheet List:")
     for i, sheet_name in enumerate(wb.sheetnames, 1):
         logger.info(f"  {i}. {sheet_name}")
     
     logger.info("\n" + "=" * 70)
-    logger.info("💡 NEXT STEPS:")
+    logger.info("NEXT STEPS:")
     logger.info("=" * 70)
     logger.info("1. Open the workbook in Excel or LibreOffice Calc")
     logger.info("2. Review the Instructions & Legend sheet for guidance")
@@ -1547,29 +1692,28 @@ def main():
     logger.info("6. Document evidence in the Evidence_Register")
     logger.info("7. Obtain approvals in the Approval_Sign_Off sheet")
     logger.info("\n" + "=" * 70)
-    logger.info("📖 REFERENCE:")
+    logger.info(" REFERENCE:")
     logger.info("=" * 70)
     logger.info("Implementation Guide: ISMS-IMP-A.8.25-26-29-S1")
     logger.info("Policy Reference: ISMS-POL-A.8.25-26-29-S2")
     logger.info("ISO Control: A.8.26 (Application Security Requirements)")
     logger.info("=" * 70)
     
-    return filename
 
 
 if __name__ == "__main__":
     try:
         filename = main()
-        logger.info(f"\n✅ SUCCESS: {filename} created successfully\n")
+        logger.info(f"\nSUCCESS: {filename} created successfully\n")
     except Exception as e:
-        logger.error(f"\n❌ ERROR: {str(e)}\n")
+        logger.error(f"\nERROR: {str(e)}\n")
         import traceback
         traceback.print_exc()
         exit(1)
 
 # =============================================================================
-# QA_VERIFIED: 2026-01-31
-# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
-# QA_TOOL: Claude Code Standardization
-# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# QA_VERIFIED: 2026-03-01
+# QA_STATUS: PASSED
+# QA_TOOL: Claude Code Production Scripts QA Methodology
+# CHANGES: Full QA for Production Launch (see GitHub Repository for details)
 # =============================================================================

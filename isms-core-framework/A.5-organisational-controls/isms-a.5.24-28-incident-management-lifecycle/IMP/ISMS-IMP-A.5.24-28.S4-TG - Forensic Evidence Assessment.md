@@ -5,21 +5,19 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
 | **Document Title** | Forensic Evidence Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.24-28.S4-TG |
-| **Assessment Domain** | Domain 4 - Forensic Evidence Management (A.5.28 Focus) |
 | **Related Policy** | ISMS-POL-A.5.24-28 (Incident Management Lifecycle) |
-| **Related Reference** | ISMS-REF-A.5.24-28 (Incident Response Reference Guide, Section 3) |
-| **Document Owner** | Chief Information Security Officer (CISO) |
-| **Technical Authority** | Digital Forensics Lead / Incident Response Manager |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.28 (Collection of Evidence) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -27,204 +25,115 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Digital Forensics Lead | Initial forensic evidence assessment specification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle**: Annual (or after major forensic investigation)  
-**Next Review Date**: [Effective Date + 12 months]  
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
 **Related Documents**:
-- ISMS-POL-A.5.24-28 (Incident Management Lifecycle Policy)
-- ISMS-REF-A.5.24-28 (Incident Response Reference Guide, Section 3: Forensic Collection Techniques Library)
-- ISMS-IMP-A.5.24-28.S1 (Framework & Governance Assessment)
-- ISMS-IMP-A.5.24-28.S2 (Detection & Classification Assessment)
+
+- ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
+- ISMS-IMP-A.5.24-28.S1 (Incident Management Framework Assessment)
+- ISMS-IMP-A.5.24-28.S2 (Detection Classification Assessment)
 - ISMS-IMP-A.5.24-28.S3 (Response Capabilities Assessment)
-- ISMS-IMP-A.5.24-28.S5 (Learning & Improvement Assessment)
-- ISO/IEC 27002:2022 Control A.5.28
-- NIST SP 800-86 (Guide to Integrating Forensic Techniques into Incident Response)
-- ISO/IEC 27037:2012 (Guidelines for the Identification, Collection, Acquisition and Preservation of Digital Evidence)
+- ISMS-IMP-A.5.24-28.S5 (Learning & Continuous Improvement Assessment)
 
 ---
 
-
-> Auto-generated from `generate_a524_28_s4_forensic_evidence.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.24-28.S4` |
-| **Output Filename** | `ISMS-IMP-A.5.24-28.S4_Forensic_Evidence_YYYYMMDD.xlsx` |
-| **Total Sheets** | 20 (20 visible) |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #C8F0C8 | C8F0C8 | Custom |
-| #D8E4F8 | D8E4F8 | Pale Blue (Sub-section) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFD9B3 | FFD9B3 | Custom |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
+# Technical Specification
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Evidence Collection
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a524_28_s4_forensic_evidence.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Chain of Custody
+**Document ID:** `ISMS-IMP-A.5.24-28.S4`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Forensic Analysis
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Evidence Collection |
+| 3 | Chain of Custody |
+| 4 | Forensic Analysis |
+| 5 | Storage & Retention |
+| 6 | Legal & Regulatory |
+| 7 | Gap Analysis |
+| 8 | Evidence Register |
+| 9 | Summary Dashboard |
+| 10 | Approval Sign-Off |
 
-## Sheet 5: Storage & Retention
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Legal & Regulatory
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Evidence Collection |
+| 2 | Chain of Custody |
+| 3 | Forensic Analysis |
+| 4 | Storage & Retention |
+| 5 | Legal & Regulatory |
+| 6 | Question ID |
+| 7 | Section |
+| 8 | Question |
+| 9 | Answer |
+| 10 | Evidence Ref |
+| 11 | Comments |
+| 12 | Gap Flag |
+| 13 | Gap ID |
+| 14 | Domain |
+| 15 | Gap Description |
+| 16 | Risk Level |
+| 17 | Current State |
+| 18 | Target State |
+| 19 | Remediation Action |
+| 20 | Owner |
+| 21 | Target Date |
+| 22 | Status |
+| 23 | Assessment Area |
+| 24 | Questions Answered |
+| 25 | No Gap |
+| 26 | Gap Identified |
+| 27 | N/A |
+| 28 | Target |
+| 29 | Compliance % |
 
-## Sheet 7: Gap Analysis
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Evidence Register
+```
+Yes, No, Partial, None, Never, No Capability, In-Progress, N/A, Active
+Archived, Superseded, Pending Review, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
 
----
-
-## Sheet 9: Dashboard
-
----
-
-## Sheet 10: Approval Sign-Off
-
----
-
-## Sheet 11: Instructions
-
-**Frozen Panes:** A3
-
----
-
-## Sheet 12: Evidence_Collection
-
-**Purpose:** Evidence Collection — 25 questions.
-
----
-
-## Sheet 13: Chain_Of_Custody
-
-**Purpose:** Chain of Custody — 20 questions.
-
----
-
-## Sheet 14: Forensic_Analysis
-
-**Purpose:** Forensic Analysis — 20 questions.
-
----
-
-## Sheet 15: Storage_Retention
-
-**Purpose:** Storage & Retention — 15 questions.
-
----
-
-## Sheet 16: Legal_Regulatory
-
-**Purpose:** Legal & Regulatory Readiness — 15 questions.
-
----
-
-## Sheet 17: Gap_Analysis
-
-**Purpose:** Gap Analysis — 40 capacity.
-
-**Data Rows:** 40 (rows 6–45) | **Frozen Panes:** A7
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Gap_ID |
-| B | Domain |
-| C | Gap_Description |
-| D | Risk_Level |
-| E | Current_State |
-| F | Target_State |
-| G | Remediation_Action |
-| H | Owner |
-| I | Target_Date |
-| J | Status |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| B4 | `=COUNTA(C6:C45)-COUNTBLANK(C6:C45)` |  |
-| D4 | `=COUNTIF(E6:E45,` |  |
-
----
-
-## Sheet 18: Evidence_Register
-
-**Purpose:** Evidence Register — 60 capacity.
-
-**Data Rows:** 7 (rows 2–8) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence_ID |
-| B | Evidence_Type |
-| C | Description |
-| D | Related_Question |
-| E | Storage_Location |
-| F | Date_Collected |
-| G | Collected_By |
-| H | Verification_Status |
-
----
-
-## Sheet 19: Approval_Signoff
-
-**Purpose:** Approval Sign-Off sheet.
-
-**Frozen Panes:** A3
-
----
-
-## Sheet 20: Assessment
-
-**Data Rows:** 7 (rows 1–7)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Question_ID |
-| B | Section |
-| C | Question |
-| D | Answer |
-| E | Evidence_Ref |
-| F | Comments |
-| G | Gap_Flag |
+**Extracted:** 10 sheets, 29 columns, 20 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

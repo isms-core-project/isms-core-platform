@@ -8,313 +8,140 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Assessment Specifications |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.9.3-TG |
+| **Related Policy** | ISMS-POL-A.5.9 (Inventory of Information and Assets) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.9 (Inventory of Information and Other Associated Assets) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Inventory Quality & Policy Compliance Verification |
-| **Related Policy** | ISMS-POL-A.5.9, Section 2.3 (Mandatory Attributes), Section 2.5 (Quality Standards), Section 3 (Assessment Methodology) |
-| **Purpose** | Verify inventory data quality (accuracy, completeness, currency) and compliance with policy requirements |
-| **Target Audience** | Security Team, Quality Assurance, CMDB Administrators, Auditors |
-| **Assessment Type** | Quality Verification & Compliance Audit |
-| **Review Cycle** | Quarterly |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|--------|--------|
-| 1.0 | [Date] | Initial assessment specification following consolidated policy structure | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.9 (Inventory of Information and Assets)
+- ISMS-IMP-A.5.9.1 (Asset Identification & Discovery)
+- ISMS-IMP-A.5.9.2 (Inventory Structure & Maintenance)
+- ISMS-IMP-A.5.9.4 (Owner Accountability Assessment)
 
 ---
+
 # Technical Specification
-**Audience:** Workbook developers (Python/Excel script maintainers)
-
-
-> Auto-generated from `generate_a59_3_quality_compliance.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.9.3` |
-| **Total Sheets** | 10 (10 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control A.5.9: Inventory of Information and Assets |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | header_bg | Dark Blue (Headers) |
-| #006100 | green_dark | Dark Green (Pass) |
-| #2E75B5 | 2E75B5 | Custom |
-| #4472C4 | section_bg | Medium Blue (Sub-headers) |
-| #9C0006 | red_dark | Dark Red (Error) |
-| #9C5700 | yellow_dark | Custom |
-| #C6EFCE | green_light | Light Green (Compliant/Pass) |
-| #D8E4F8 | D8E4F8 | Pale Blue (Sub-section) |
-| #D9D9D9 | gray_light | Light Gray (Column Headers) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #FFC7CE | red_light | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | yellow_light | Light Yellow/Amber (Partial) |
-| #FFF2CC | FFF2CC | Cream (Input Alt) |
-
-## Sheet 1: Instructions
-
-**Data Rows:** 4 (rows 5–8)
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Accuracy_Sampling
+## Generator Alignment Reference
 
-**Data Rows:** 97 (rows 4–100)
+> Auto-generated from `generate_a59_3_quality_compliance.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.9.3`
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Sample ID | 15 |
-| B | Asset Category | 25 |
-| C | Asset ID (Inventory) | 25 |
-| D | Attribute Verified | 30 |
-| E | Inventory Value | 30 |
-| F | Ground Truth Value | 30 |
-| G | Match? | 12 |
-| H | Discrepancy Type | 25 |
-| I | Verification Method | 30 |
-| J | Verified By | 20 |
-| K | Verification Date | 18 |
-| L | Corrected? | 15 |
-| M | Evidence ID | 15 |
-| N | Notes | 30 |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Formulas
+### Sheet Structure
 
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=COUNTA(A4:A{row-51})` |  |
-| BN | `=COUNTIF(G4:G{row-51},` |  |
-| BN | `=IFERROR(B{summary_row-1}/B{summary_row-2}*100,0)` |  |
-| BN | `=B{summary_row-2}-98` |  |
-| BN | `=IF(B{summary_row-3}>=98,` |  |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Accuracy Sampling |
+| 3 | Completeness Assessment |
+| 4 | Currency Assessment |
+| 5 | Consistency Checks |
+| 6 | Policy Compliance Matrix |
+| 7 | Quality Metrics & Scoring |
+| 8 | Evidence Register |
+| 9 | Summary Dashboard |
+| 10 | Approval Sign-Off |
 
----
+### Color Palette
 
-## Sheet 3: Completeness
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #9C0006 | Dark Red (Error) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-### Columns
+### Column Headers (All Sheets)
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Asset Category | 25 |
-| B | Mandatory Field | 30 |
-| C | Total Assets | 15 |
-| D | Assets with Field Populated | 20 |
-| E | Completeness % | 16 |
-| F | Target % | 12 |
-| G | Gap | 12 |
-| H | Status | 18 |
-| I | Missing Count | 15 |
-| J | Evidence ID | 15 |
-| K | Notes | 30 |
+| # | Column Header |
+|---|--------------|
+| 1 | Sample ID |
+| 2 | Asset Category |
+| 3 | Asset ID (Inventory) |
+| 4 | Attribute Verified |
+| 5 | Inventory Value |
+| 6 | Ground Truth Value |
+| 7 | Match? |
+| 8 | Discrepancy Type |
+| 9 | Verification Method |
+| 10 | Verified By |
+| 11 | Verification Date |
+| 12 | Corrected? |
+| 13 | Evidence ID |
+| 14 | Notes |
+| 15 | Mandatory Field |
+| 16 | Total Assets |
+| 17 | Assets with Field Populated |
+| 18 | Completeness % |
+| 19 | Target % |
+| 20 | Gap |
+| 21 | Status |
+| 22 | Missing Count |
+| 23 | Currency Metric |
+| 24 | Assets Meeting Currency Target |
+| 25 | Currency % |
+| 26 | Stale Assets Count |
+| 27 | Consistency Check |
+| 28 | System A |
+| 29 | System B |
+| 30 | Records in A |
+| 31 | Records in B |
+| 32 | Matches |
+| 33 | Consistency % |
+| 34 | Policy Requirement |
+| 35 | SHALL Requirement |
+| 36 | Compliant Assets |
+| 37 | Compliance % |
+| 38 | Target |
 
-### Conditional Formatting
+### Data Validation Values
 
-| Range | Condition | Format |
-|-------|-----------|--------|
-| E4:EN | greaterThanOrEqual 95 |  |
-| E4:EN | between 90 |  |
-| E4:EN | lessThan 90 |  |
+All dropdown/list values used across sheets:
 
-### Formulas
+```
+Yes, No, Verified, Not verified, In Review, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
 
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| EN | `=IFERROR(D{row}/C{row}*100,0)` |  |
-| GN | `=E{row}-{target}` |  |
-| HN | `=IF(E{row}>={target},` |  |
-| IN | `=C{row}-D{row}` |  |
-| BN | `=IFERROR(AVERAGE(E4:E{row-1}),0)` |  |
-| BN | `=B{summary_row-2}-95` |  |
-| BN | `=IF(B{summary_row-3}>=95,` |  |
-
----
-
-## Sheet 4: Currency
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Asset Category | 25 |
-| B | Currency Metric | 30 |
-| C | Total Assets | 15 |
-| D | Assets Meeting Currency Target | 22 |
-| E | Currency % | 15 |
-| F | Target % | 12 |
-| G | Gap | 12 |
-| H | Status | 18 |
-| I | Stale Assets Count | 18 |
-| J | Evidence ID | 15 |
-| K | Notes | 30 |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| E4:EN | greaterThanOrEqual 90 |  |
-| E4:EN | between 85 |  |
-| E4:EN | lessThan 85 |  |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| EN | `=IFERROR(D{row}/C{row}*100,0)` |  |
-| GN | `=E{row}-{target}` |  |
-| HN | `=IF(E{row}>={target},` |  |
-| IN | `=C{row}-D{row}` |  |
-| BN | `=IFERROR(AVERAGE(E4:E{row-1}),0)` |  |
-| BN | `=B{summary_row-2}-90` |  |
-| BN | `=IF(B{summary_row-3}>=90,` |  |
-
----
-
-## Sheet 5: Consistency
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Consistency Check | 35 |
-| B | System A | 25 |
-| C | System B | 25 |
-| D | Records in A | 15 |
-| E | Records in B | 15 |
-| F | Matches | 15 |
-| G | Consistency % | 16 |
-| H | Target % | 12 |
-| I | Gap | 12 |
-| J | Status | 18 |
-| K | Evidence ID | 15 |
-| L | Notes | 30 |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| G4:GN | greaterThanOrEqual 95 |  |
-| G4:GN | between 90 |  |
-| G4:GN | lessThan 90 |  |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| GN | `=IFERROR(F{row}/MAX(D{row},E{row})*100,0)` |  |
-| IN | `=G{row}-{target}` |  |
-| JN | `=IF(G{row}>={target},` |  |
-| BN | `=IFERROR(AVERAGE(G4:G{row-1}),0)` |  |
-| BN | `=B{summary_row-2}-95` |  |
-| BN | `=IF(B{summary_row-3}>=95,` |  |
-
----
-
-## Sheet 6: Policy_Compliance
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Policy Requirement | 50 |
-| B | SHALL Requirement | 50 |
-| C | Compliant Assets | 18 |
-| D | Total Assets | 15 |
-| E | Compliance % | 16 |
-| F | Target | 12 |
-| G | Gap | 12 |
-| H | Status | 18 |
-| I | Evidence ID | 15 |
-| J | Notes | 30 |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| E4:EN | equal 100 |  |
-| E4:EN | between 95 |  |
-| E4:EN | lessThan 95 |  |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| EN | `=IFERROR(C{row}/D{row}*100,0)` |  |
-| GN | `=E{row}-{target}` |  |
-| HN | `=IF(E{row}={target},` |  |
-| BN | `=IFERROR(AVERAGE(E4:E{row-1}),0)` |  |
-| BN | `=B{summary_row-2}-100` |  |
-| BN | `=IF(B{summary_row-3}=100,` |  |
-
----
-
-## Sheet 7: Quality_Metrics
-
-**Data Rows:** 5 (rows 4–8)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| DN | `=B{row}*{weight}/100` |  |
-| FN | `=B{row}-{target}/100` |  |
-| GN | `=IF(B{row}>={target}/100,` |  |
-| BN | `=SUM(D4:D8)` |  |
-| BN | `=B{overall_row-2}-0.97` |  |
-| BN | `=IF(B{overall_row-3}>=0.97,` |  |
-| AN | `=A{4+i}` |  |
-| BN | `=B{4+i}` |  |
-| CN | `=G{4+i}` |  |
-
----
-
-## Sheet 8: Evidence_Register
-
-**Data Rows:** 97 (rows 4–100)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence ID | 15 |
-| B | Quality Dimension | 25 |
-| C | Evidence Type | 30 |
-| D | Evidence Description | 50 |
-| E | Evidence Location | 40 |
-| F | Collection Date | 15 |
-| G | Collected By | 25 |
-| H | Validity Period | 20 |
-| I | Review Date | 15 |
-| J | Reviewed By | 25 |
-| K | Review Status | 20 |
-| L | Retention End Date | 18 |
-| M | Related Assessment | 25 |
-| N | Notes | 40 |
-
----
-
-## Sheet 9: Summary_Dashboard
-
----
-
-## Sheet 10: Approval_Signoff
-
-**Data Rows:** 4 (rows 2–5)
+**Extracted:** 10 sheets, 38 columns, 13 validation values, 11 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

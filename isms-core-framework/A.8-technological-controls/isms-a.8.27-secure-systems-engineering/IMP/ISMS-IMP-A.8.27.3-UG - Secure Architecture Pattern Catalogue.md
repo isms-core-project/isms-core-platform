@@ -12,13 +12,12 @@
 | **Document Title** | Secure Architecture Pattern Catalogue |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.27.3-UG |
-| **Assessment Domain** | Domain 3 - Architecture Patterns and Standards |
-| **Related Policy** | ISMS-POL-A.8.27 (Secure System Architecture and Engineering Principles) |
-| **Document Owner** | Chief Information Security Officer (CISO) |
-| **Technical Authority** | Enterprise Security Architect |
+| **Related Policy** | ISMS-POL-A.8.27 (Secure Systems Engineering) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.27 (Secure System Architecture and Engineering Principles) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -26,21 +25,35 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Enterprise Security Architect | Initial pattern catalogue assessment specification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle**: Annual (or after significant architecture changes)
-**Next Review Date**: [Effective Date + 12 months]
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
 **Related Documents**:
 
-- ISMS-POL-A.8.27 (Secure System Architecture and Engineering Principles)
+- ISMS-POL-A.8.27 (Secure Systems Engineering)
 - ISMS-IMP-A.8.27.1 (Security Architecture Review Process)
 - ISMS-IMP-A.8.27.2 (Threat Modelling Methodology)
 - ISMS-IMP-A.8.27.4 (Zero Trust Implementation Assessment)
-- ISMS-POL-A.8.25-26-29 (Secure Development Framework)
-- ISO/IEC 27002:2022 Control A.8.27
-- NIST SP 800-160 Vol. 1 Rev. 1 (Engineering Trustworthy Secure Systems)
-- OWASP Security Architecture Cheat Sheet
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | PatternInventory | Inventory of approved secure architecture patterns |
+| 3 | PatternQuality | Quality assessment of architecture patterns |
+| 4 | Adoption | Pattern adoption rates and compliance across systems |
+| 5 | Governance | Governance of the architecture pattern catalogue |
+| 6 | Deviations | Deviations from approved patterns and exceptions |
+| 7 | Effectiveness | Effectiveness of patterns in reducing security risk |
+| 8 | Compliance | Compliance with architecture pattern requirements |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -430,7 +443,7 @@ Consolidate and track all identified gaps.
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Those who do not learn from the vulnerabilities of the past are doomed to repeat them."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

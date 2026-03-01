@@ -8,27 +8,56 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Redundancy Implementation |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.30-8.13-14-S3-UG |
+| **Related Policy** | ISMS-POL-A.5.30-8.13-14-S3 (Business Continuity Dr) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.13 (Information Backup) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Redundancy & High Availability Implementation |
-| **Related Policy** | ISMS-POL-A.5.30-8.13-14, Section 2.2 (Redundancy Requirements) |
-| **Related Assessment** | ISMS-IMP-A.5.30-8.13-14-S1 (BIA - provides RTO requirements) |
-| **Purpose** | Implement redundancy and high availability aligned with BIA-determined RTO requirements, eliminate single points of failure, configure failover capabilities |
-| **Target Audience** | Infrastructure Team, Network Team, Database Administrators, Cloud Architects, System Administrators, BC/DR Coordinator |
-| **Assessment Type** | Technical Implementation |
-| **Review Cycle** | Quarterly (redundancy configuration) + After Major System Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial redundancy implementation methodology | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.30-8.13-14-S3 (Business Continuity Dr)
+- ISMS-IMP-A.5.30-8.13-14-S1 (BIA and RPO:RTO Process)
+- ISMS-IMP-A.5.30-8.13-14-S2 (Backup Implementation)
+- ISMS-IMP-A.5.30-8.13-14-S4 (Recovery Testing Process)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.30-8.13-14-S3-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 7 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Redundancy Inventory** | Inventory of redundancy mechanisms for critical systems |
+| **SPOF Register** | Single Point of Failure identification and remediation register |
+| **RTO Compliance** | RTO target vs. actual recovery time capability assessment |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -66,7 +95,7 @@ With Redundancy (IMP-S3):
 
 ### Redundancy Implementation Outputs
 
-Upon completion, [Organization] will have:
+Upon completion, [Organisation] will have:
 
 1. **SPOF Inventory** - All single points of failure identified
 2. **Redundancy Architecture** - Documented high availability design per system
@@ -233,7 +262,7 @@ With Both:
 | **Load Balancer Admin** | Load balancer configuration, health checks | 15-25 hours |
 | **BC/DR Coordinator** | Verify RTO alignment, testing coordination | 15-30 hours |
 
-**Total Organizational Effort:** 200-335 person-hours (initial implementation for 20-30 critical systems)
+**Total Organisational Effort:** 200-335 person-hours (initial implementation for 20-30 critical systems)
 
 ## Time Estimate
 
@@ -426,7 +455,7 @@ Implement redundancy in order of criticality + revenue impact:
 
 **SPOF Analysis Framework:**
 
-For each critical system, analyze failure points across all layers:
+For each critical system, analyse failure points across all layers:
 
 ### Layer 1: Application Layer
 
@@ -700,7 +729,7 @@ Total P2 SPOFs: 1
 **Quality Check:**
 
 - ✓ SPOF analysis complete for all Tier 1 systems
-- ✓ All layers analyzed (Application → Power)
+- ✓ All layers analysed (Application → Power)
 - ✓ SPOFs prioritized (P1 = eliminate immediately)
 - ✓ Remediation plan defined for each SPOF
 - ✓ Cost estimated for each remediation
@@ -1334,7 +1363,7 @@ Switch-AzSqlDatabaseFailoverGroup `
 Write-Output "Failover initiated. Secondary is now primary."
 
 # Send notification
-Send-AlertEmail -To "bcdr@organization.ch" `
+Send-AlertEmail -To "bcdr@organisation.ch" `
     -Subject "[CRITICAL] SQL Failover Executed" `
     -Body "Automatic failover executed at $(Get-Date). Secondary (North Europe) is now primary."
 ```
@@ -1542,7 +1571,7 @@ Alert Rule 1: Replication Lag Warning
   Resource: SQL Database (Always On)
   Condition: Replication lag > 10 seconds
   Severity: Warning
-  Action: Email to dba-team@organization.ch
+  Action: Email to dba-team@organisation.ch
 
 Alert Rule 2: Replication Lag Critical
   Resource: SQL Database (Always On)
@@ -1807,7 +1836,7 @@ This section describes the 6 sheets in the **Redundancy Implementation Assessmen
 **Instructions:**
 1. Record every piece of evidence
 2. Link to actual documents (stored centrally)
-3. Keep documents organized and accessible
+3. Keep documents organised and accessible
 4. Retain all evidence 3+ years for audit compliance
 
 ---
@@ -1864,19 +1893,6 @@ Complete: Green cell (Status column)
 ## Sheet 6: Evidence Register
 
 [Audit evidence tracking - comprehensive documentation of redundancy implementation]
-
----
-
-# Integration with BC/DR Assessment (IMP-S5)
-
-**Redundancy metrics feed into overall BC/DR assessment:**
-
-| Metric | Source | Use in IMP-S5 |
-|--------|--------|---------------|
-| SPOF Count (Open) | Sheet 1 | BC/DR Maturity Score (System Availability dimension) |
-| Tier 1 Redundancy % | Sheet 4 | RTO Compliance |
-| Failover Success Rate | Sheet 5 | Recovery Capability Score |
-| Geographic Redundancy % | Sheet 4 | Disaster Resilience Score |
 
 ---
 
@@ -1952,7 +1968,7 @@ Complete: Green cell (Status column)
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Don't put all your eggs in one basket."*
+— Miguel de Cervantes
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

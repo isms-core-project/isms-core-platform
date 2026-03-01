@@ -30,7 +30,7 @@
 
 ## Purpose of This Policy Section
 
-This policy section establishes [Organization]'s systematic framework for translating regulatory obligations into actionable security controls with complete traceability. It defines the processes by which legal and regulatory text is transformed into implementable requirements, mapped to ISO 27001 controls, and tracked through to evidence.
+This policy section establishes [Organisation]'s systematic framework for translating regulatory obligations into actionable security controls with complete traceability. It defines the processes by which legal and regulatory text is transformed into implementable requirements, mapped to ISO 27001 controls, and tracked through to evidence.
 
 **This is the "translation layer"** of the regulatory compliance framework—the critical link between identifying applicable regulations and demonstrating compliance through implemented controls.
 
@@ -40,31 +40,31 @@ The regulatory compliance framework operates in a logical progression:
 
 **ISMS-POL-A.5.31.1** established the overall framework architecture, governance model, and integration with ISMS-POL-00 (Regulatory Applicability Framework). It defined the "why" and the structural foundation.
 
-**ISMS-POL-A.5.31.2** defined the systematic methodology for determining WHICH regulations apply to [Organization] based on geographic, operational, and contractual criteria. It answers the question: "What laws govern us?"
+**ISMS-POL-A.5.31.2** defined the systematic methodology for determining WHICH regulations apply to [Organisation] based on geographic, operational, and contractual criteria. It answers the question: "What laws govern us?"
 
-**ISMS-POL-A.5.31.3** (this document) defines the systematic methodology for determining WHAT those applicable regulations require and HOW [Organization] complies through ISO 27001 controls. It answers the questions:
+**ISMS-POL-A.5.31.3** (this document) defines the systematic methodology for determining WHAT those applicable regulations require and HOW [Organisation] complies through ISO 27001 controls. It answers the questions:
 
 - "What specific obligations do these regulations impose?"
 - "Which security controls satisfy these obligations?"
 - "Where are the gaps in our current control implementation?"
 - "How do we prove compliance through evidence?"
 
-**ISMS-POL-A.5.31.4** (subsequent) will define how [Organization] monitors regulatory changes, manages framework updates, and maintains audit-ready evidence.
+**ISMS-POL-A.5.31.4** (subsequent) will define how [Organisation] monitors regulatory changes, manages framework updates, and maintains audit-ready evidence.
 
 ## The Translation Challenge
 
-Regulations are written in legal language by legislators and regulators. Security controls are written in technical and organizational language by security professionals. These two domains speak different languages:
+Regulations are written in legal language by legislators and regulators. Security controls are written in technical and organisational language by security professionals. These two domains speak different languages:
 
 **Legal Language**:
 
-- "The controller shall implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk..."
+- "The controller shall implement appropriate technical and organisational measures to ensure a level of security appropriate to the risk..."
 - Written for legal compliance and enforcement
 - Often principle-based rather than prescriptive
 - May reference technical concepts without specific implementation guidance
 
 **Security Control Language**:
 
-- "A.5.15 Access Control: Information and other associated assets shall be made accessible to authorized users only."
+- "A.5.15 Access Control: Information and other associated assets shall be made accessible to authorised users only."
 - Written for security practitioners
 - Focused on what to implement, not legal compliance
 - Specific enough to guide implementation
@@ -73,7 +73,7 @@ Regulations are written in legal language by legislators and regulators. Securit
 
 The methodology defined in this document solves this challenge through:
 1. **Systematic requirements extraction** - parsing regulatory text into discrete, actionable requirements
-2. **Requirements categorization** - organizing requirements by nature (technical, organizational, reporting, operational)
+2. **Requirements categorization** - organising requirements by nature (technical, organisational, reporting, operational)
 3. **Control mapping** - identifying which ISO 27001 Annex A controls satisfy each requirement
 4. **Gap analysis** - identifying where requirements exist without corresponding controls
 5. **Traceability** - maintaining complete audit trail from regulation through requirement to control to evidence
@@ -83,14 +83,14 @@ The methodology defined in this document solves this challenge through:
 This policy section applies to:
 
 - **All regulations** identified as applicable in ISMS-POL-00 (Tier 1 Mandatory and Tier 2 Conditional regulations)
-- **All ISO 27001:2022 Annex A controls** (93 controls across organizational, people, physical, and technological domains)
-- **Organization-specific controls** created when no Annex A control satisfies a requirement
+- **All ISO 27001:2022 Annex A controls** (93 controls across organisational, people, physical, and technological domains)
+- **Organisation-specific controls** created when no Annex A control satisfies a requirement
 - **All personnel** involved in regulatory compliance, control implementation, and evidence management
 
 This document does NOT:
 
 - Provide legal interpretations of specific regulations (legal counsel required)
-- Specify which regulations apply to [Organization] (covered in 5.31.2)
+- Specify which regulations apply to [Organisation] (covered in 5.31.2)
 - Define operational procedures for extraction and mapping (covered in IMP-5.31.2 and IMP-5.31.3)
 - Define evidence management processes (covered in 5.31.4)
 
@@ -100,13 +100,13 @@ This document does NOT:
 
 ## Requirements Extraction Methodology
 
-Requirements extraction is the systematic process of parsing regulatory text to identify specific, mandatory obligations that [Organization] must satisfy. This process transforms verbose, principle-based legal text into discrete, actionable requirements suitable for control mapping.
+Requirements extraction is the systematic process of parsing regulatory text to identify specific, mandatory obligations that [Organisation] must satisfy. This process transforms verbose, principle-based legal text into discrete, actionable requirements suitable for control mapping.
 
 ### Reading Regulatory Text Systematically
 
 Regulations have structure, though it varies by jurisdiction and type:
 
-- **Statutes and Acts**: Typically organized into chapters, sections, subsections, paragraphs
+- **Statutes and Acts**: Typically organised into chapters, sections, subsections, paragraphs
 - **Regulations and Directives**: Organized into articles, sections, annexes, schedules
 - **Standards**: Organized into clauses, subclauses, requirements, recommendations
 - **Contracts**: Organized into sections, clauses, exhibits, service level agreements
@@ -115,8 +115,8 @@ Each structural element may contain:
 
 - **Definitions** - establishing meaning of terms (extract for glossary, not as requirements)
 - **Principles** - high-level objectives (may generate requirements when made mandatory)
-- **Obligations** - specific things [Organization] must do (THESE are requirements)
-- **Prohibitions** - things [Organization] must NOT do (requirements stated negatively)
+- **Obligations** - specific things [Organisation] must do (THESE are requirements)
+- **Prohibitions** - things [Organisation] must NOT do (requirements stated negatively)
 - **Procedures** - how to comply with obligations (may generate operational requirements)
 - **Reporting requirements** - what to submit and when
 - **Penalties** - consequences of non-compliance (inform prioritization, not extracted as requirements)
@@ -139,14 +139,14 @@ Each structural element may contain:
 
 ### Identifying Mandatory vs. Recommendatory Language
 
-Regulations use specific language to indicate obligation level. [Organization] extracts MANDATORY requirements for compliance and notes recommendatory language for context and best practice guidance.
+Regulations use specific language to indicate obligation level. [Organisation] extracts MANDATORY requirements for compliance and notes recommendatory language for context and best practice guidance.
 
 **Mandatory Language** (SHALL/MUST extract):
 
 - **"shall"** - primary indicator of legal obligation
 - **"must"** - equivalent to "shall", mandatory requirement
 - **"is required to"** - explicit requirement
-- **"will"** - when used prescriptively (e.g., "the organization will implement...")
+- **"will"** - when used prescriptively (e.g., "the organisation will implement...")
 - **"has a duty to"** - imposes obligation
 - **"is obligated to"** - explicit obligation
 
@@ -170,11 +170,11 @@ Regulations use specific language to indicate obligation level. [Organization] e
 
 | Regulatory Text | Mandatory? | Extraction Decision |
 |----------------|------------|---------------------|
-| "Organizations shall implement encryption for data at rest" | Yes (shall) | Extract: "Implement encryption for data at rest" |
-| "Organizations should consider multi-factor authentication" | No (should) | Note as best practice, do not extract as requirement |
-| "Organizations must conduct annual risk assessments" | Yes (must) | Extract: "Conduct risk assessments annually" |
-| "Organizations may use industry-standard frameworks" | No (may) | Note as option, do not extract as requirement |
-| "Where personal data is processed, organizations shall obtain consent" | Conditional (shall, where...) | Extract: "Obtain consent when processing personal data" |
+| "Organisations shall implement encryption for data at rest" | Yes (shall) | Extract: "Implement encryption for data at rest" |
+| "Organisations should consider multi-factor authentication" | No (should) | Note as best practice, do not extract as requirement |
+| "Organisations must conduct annual risk assessments" | Yes (must) | Extract: "Conduct risk assessments annually" |
+| "Organisations may use industry-standard frameworks" | No (may) | Note as option, do not extract as requirement |
+| "Where personal data is processed, organisations shall obtain consent" | Conditional (shall, where...) | Extract: "Obtain consent when processing personal data" |
 
 ### Granularity Guidelines
 
@@ -254,11 +254,11 @@ Requirements that mandate specific technical security measures, system configura
 **Typical Control Mappings**: Technical requirements typically map to ISO 27001 controls in domains:
 
 - **Domain 8 (Technological controls)**: A.8.1 through A.8.34
-- Some organizational controls with technical elements (e.g., A.5.15 Access Control)
+- Some organisational controls with technical elements (e.g., A.5.15 Access Control)
 
-### Organizational Requirements
+### Organisational Requirements
 
-Requirements that mandate policies, procedures, governance structures, roles, training, or organizational processes.
+Requirements that mandate policies, procedures, governance structures, roles, training, or organisational processes.
 
 **Characteristics**:
 
@@ -274,7 +274,7 @@ Requirements that mandate policies, procedures, governance structures, roles, tr
 - "Provide security awareness training to all employees annually"
 - "Establish incident response procedures including escalation paths"
 
-**Typical Control Mappings**: Organizational requirements typically map to ISO 27001 controls in domains:
+**Typical Control Mappings**: Organisational requirements typically map to ISO 27001 controls in domains:
 
 - **Domain 5 (Organisational controls)**: A.5.1 through A.5.37
 - **Domain 6 (People controls)**: A.6.1 through A.6.8
@@ -342,20 +342,20 @@ Categorization serves multiple purposes:
 **Control Mapping Efficiency**: 
 
 - Technical requirements → focus on Domain 8 controls first
-- Organizational requirements → focus on Domains 5 & 6 controls first
+- Organisational requirements → focus on Domains 5 & 6 controls first
 - Saves time by narrowing search space
 
 **Implementation Assignment**:
 
 - Technical requirements → IT/Security Engineering teams
-- Organizational requirements → Compliance/Legal/HR teams
+- Organisational requirements → Compliance/Legal/HR teams
 - Reporting requirements → Compliance/Communications teams
 - Operational requirements → Operations/SOC teams
 
 **Evidence Planning**:
 
 - Technical requirements → configuration audits, scan results, system logs
-- Organizational requirements → policy documents, training records, meeting minutes
+- Organisational requirements → policy documents, training records, meeting minutes
 - Reporting requirements → submission confirmations, notification logs
 - Operational requirements → activity logs, test results, monitoring dashboards
 
@@ -364,7 +364,7 @@ Categorization serves multiple purposes:
 - Categories help identify WHERE gaps exist (technical gaps vs. process gaps)
 - Informs remediation approach (technical fix vs. policy creation)
 
-**Note**: Requirements may span multiple categories. Example: "Implement and maintain multi-factor authentication for all privileged accounts" is both Technical (MFA implementation) and Organizational (policy requiring it).
+**Note**: Requirements may span multiple categories. Example: "Implement and maintain multi-factor authentication for all privileged accounts" is both Technical (MFA implementation) and Organisational (policy requiring it).
 
 ## Requirements Register Structure
 
@@ -415,13 +415,13 @@ Each requirement entry in the register SHALL contain the following fields:
 - **Purpose**: Exact regulatory language as written in source regulation
 - **Content**: Direct quote, no paraphrasing
 - **Examples**:
-  - "The controller shall implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk, including inter alia as appropriate: (a) the pseudonymisation and encryption of personal data"
+  - "The controller shall implement appropriate technical and organisational measures to ensure a level of security appropriate to the risk, including inter alia as appropriate: (a) the pseudonymisation and encryption of personal data"
 - **Importance**: Legal accuracy, enables verification that interpretation is faithful to source
 
 **Interpreted Requirement** (Actionable Translation)
 
 - **Purpose**: Requirement rewritten in clear, actionable language suitable for implementation
-- **Content**: What [Organization] must DO to comply, written at appropriate granularity (per Section 2.1.3)
+- **Content**: What [Organisation] must DO to comply, written at appropriate granularity (per Section 2.1.3)
 - **Examples**:
   - From original above: "Implement encryption and pseudonymization for personal data appropriate to assessed risk level"
 - **Guidance**: Should be understandable by implementers without legal background
@@ -429,8 +429,8 @@ Each requirement entry in the register SHALL contain the following fields:
 **Requirement Category** (Classification)
 
 - **Purpose**: Type of requirement per Section 2.2
-- **Content**: One or more of: Technical / Organizational / Reporting / Operational
-- **Format**: Can be multi-select (e.g., "Technical, Organizational" for requirements spanning both)
+- **Content**: One or more of: Technical / Organisational / Reporting / Operational
+- **Format**: Can be multi-select (e.g., "Technical, Organisational" for requirements spanning both)
 
 **Priority** (Implementation Urgency)
 
@@ -444,11 +444,11 @@ Each requirement entry in the register SHALL contain the following fields:
 **Implementation Deadline** (Compliance Date)
 
 - **Purpose**: When this requirement must be implemented/compliant
-- **Content**: Specific date if regulation specifies, otherwise organizational target date
+- **Content**: Specific date if regulation specifies, otherwise organisational target date
 - **Examples**:
   - "2025-01-17" (regulation effective date)
   - "Within 6 months of regulation entry into force"
-  - "TBD - organizational priority" (for ongoing requirements)
+  - "TBD - organisational priority" (for ongoing requirements)
 - **Use**: Drives implementation planning, gap remediation scheduling
 
 **Implementation Status** (Current State)
@@ -459,7 +459,7 @@ Each requirement entry in the register SHALL contain the following fields:
   - **In Progress**: Implementation underway, not yet complete
   - **Implemented**: Fully implemented and operational
   - **Verified**: Implemented and compliance verified (evidence exists)
-  - **N/A**: Requirement does not apply to [Organization] based on scope/context
+  - **N/A**: Requirement does not apply to [Organisation] based on scope/context
 - **Updated By**: Control Owner responsible for implementation
 
 **Responsible Party** (Owner)
@@ -566,7 +566,7 @@ Requirements Register SHALL be updated when:
 - New regulation identified as applicable (from 5.31.2 process)
 - Existing regulation amended (from 5.31.4 regulatory monitoring)
 - Regulation repealed or sunsets (requirements archived)
-- Organizational scope changes (new requirements become applicable)
+- Organisational scope changes (new requirements become applicable)
 - Implementation status changes (requirements move through lifecycle)
 - Gap remediation completed (Gap Status updated)
 - Control mappings change (Mapped Controls updated)
@@ -618,8 +618,8 @@ These principles govern the requirements extraction process to ensure consistenc
 
 - Do not add requirements beyond what regulation mandates
 - Example: If regulation says "annual review", do not extract "quarterly review" even if that's better practice
-- Separate compliance requirements from organizational best practices
-- If [Organization] chooses to exceed regulatory requirements, document separately as organizational policy
+- Separate compliance requirements from organisational best practices
+- If [Organisation] chooses to exceed regulatory requirements, document separately as organisational policy
 - Rationale: Compliance framework must reflect actual obligations, not aspirations
 
 **Principle 7: Legal Review**
@@ -663,7 +663,7 @@ These principles govern the requirements extraction process to ensure consistenc
 
 ## Mapping Approach
 
-Control mapping is the systematic process of identifying which ISO 27001 Annex A controls satisfy extracted regulatory requirements. It establishes the critical link between what regulations require and how [Organization] implements those requirements through security controls.
+Control mapping is the systematic process of identifying which ISO 27001 Annex A controls satisfy extracted regulatory requirements. It establishes the critical link between what regulations require and how [Organisation] implements those requirements through security controls.
 
 ### The Mapping Challenge
 
@@ -673,7 +673,7 @@ Mapping regulatory requirements to ISO 27001 controls presents several challenge
 
 - Regulations use legal language focused on obligations and penalties
 - ISO 27001 uses security management language focused on risk and controls
-- Same concept described differently (regulation: "unauthorized access prevention" vs. ISO: "access control")
+- Same concept described differently (regulation: "unauthorised access prevention" vs. ISO: "access control")
 
 **Abstraction Level Differences**:
 
@@ -704,7 +704,7 @@ This question has several possible answers:
 - **Single primary control**: One control fully satisfies requirement
 - **Multiple controls**: Several controls work together to satisfy requirement
 - **Partial controls**: Existing controls partially satisfy, gaps remain
-- **No existing controls**: Requirement has no Annex A control mapping (requires new organizational control)
+- **No existing controls**: Requirement has no Annex A control mapping (requires new organisational control)
 
 ### Mapping Philosophy
 
@@ -713,7 +713,7 @@ This question has several possible answers:
 - Start with ISO 27001 Annex A (93 controls across 4 domains)
 - Map requirements to existing controls wherever possible
 - Prefer combination of existing controls over creating new controls
-- Only create organization-specific controls when no Annex A control(s) fit
+- Only create organisation-specific controls when no Annex A control(s) fit
 
 **Rationale**:
 
@@ -748,7 +748,7 @@ This question has several possible answers:
 
 ## Mapping Types
 
-[Organization] uses a four-level classification system to characterize the relationship between a requirement and a control.
+[Organisation] uses a four-level classification system to characterize the relationship between a requirement and a control.
 
 ### Primary (P): Direct, Substantial Satisfaction
 
@@ -758,14 +758,14 @@ This question has several possible answers:
 
 - Control's stated purpose aligns with requirement's intent
 - Implementing control achieves compliance with requirement
-- Control is the "main" way [Organization] satisfies this requirement
+- Control is the "main" way [Organisation] satisfies this requirement
 - Evidence of control implementation serves as evidence of requirement compliance
 
 **Example Mappings**:
 
 | Requirement (Interpreted) | Primary Control | Rationale |
 |--------------------------|-----------------|-----------|
-| "Implement access controls to restrict information access to authorized personnel only" | A.5.15 Access Control | Control directly mandates access restrictions |
+| "Implement access controls to restrict information access to authorised personnel only" | A.5.15 Access Control | Control directly mandates access restrictions |
 | "Encrypt sensitive data at rest" | A.8.24 Use of cryptography | Control specifically addresses cryptographic protection including encryption |
 | "Conduct background checks on employees with access to sensitive information" | A.6.1 Screening | Control mandates pre-employment and ongoing screening |
 | "Maintain inventory of information assets" | A.5.9 Inventory of information and other associated assets | Control directly requires asset inventory |
@@ -803,7 +803,7 @@ This question has several possible answers:
 
 ### Supporting (Su): Indirect Contribution
 
-**Definition**: Control contributes INDIRECTLY to satisfaction of the requirement. Supporting controls create the organizational, procedural, or technical foundation that enables Primary and Secondary controls to function effectively.
+**Definition**: Control contributes INDIRECTLY to satisfaction of the requirement. Supporting controls create the organisational, procedural, or technical foundation that enables Primary and Secondary controls to function effectively.
 
 **Characteristics**:
 
@@ -872,7 +872,7 @@ The Control Mapping Matrix is the visual representation of requirement-to-contro
 - Each column represents one of 93 Annex A controls
 - Column identifier: Control ID (e.g., A.5.1, A.8.24)
 - Column label: Control name (abbreviated)
-- Columns organized by domain (A.5.x Organizational, A.6.x People, A.7.x Physical, A.8.x Technological)
+- Columns organised by domain (A.5.x Organisational, A.6.x People, A.7.x Physical, A.8.x Technological)
 
 **Cells**: Mapping Type
 
@@ -973,19 +973,19 @@ Real-world compliance scenarios frequently involve complex relationships between
 **When This Occurs**:
 
 - Requirement is complex or multi-faceted
-- Requirement spans technical, organizational, and operational domains
+- Requirement spans technical, organisational, and operational domains
 - Comprehensive security approach needed
 
 **Example 1: Comprehensive Access Management**
 
-**Requirement** (REG-DP01-32-003): "Implement comprehensive access management ensuring only authorized personnel access sensitive information based on business need, with authentication, authorization, and audit capabilities"
+**Requirement** (REG-DP01-32-003): "Implement comprehensive access management ensuring only authorised personnel access sensitive information based on business need, with authentication, authorisation, and audit capabilities"
 
 **Control Mappings**:
 
 - **A.5.15 Access Control** (Primary) - Establishes access control policy
 - **A.5.16 Identity Management** (Primary) - Manages user identities
 - **A.5.17 Authentication Information** (Primary) - Manages credentials
-- **A.5.18 Access Rights** (Primary) - Manages authorization
+- **A.5.18 Access Rights** (Primary) - Manages authorisation
 - **A.8.2 Privileged Access Rights** (Secondary) - Manages privileged accounts
 - **A.8.3 Information Access Restriction** (Secondary) - Technical access restrictions
 - **A.8.5 Secure Authentication** (Secondary) - Authentication mechanisms
@@ -1017,7 +1017,7 @@ Real-world compliance scenarios frequently involve complex relationships between
 - When requirement maps to many controls (>5), consider:
   - Is requirement too coarse? (Should it be broken into multiple requirements?)
   - Are all mappings truly necessary? (Avoid mapping everything remotely related)
-  - Can mappings be grouped? (e.g., all A.8.x technical controls as "primary", all A.5.x organizational as "secondary")
+  - Can mappings be grouped? (e.g., all A.8.x technical controls as "primary", all A.5.x organisational as "secondary")
 
 ### Multiple Requirements → One Control (Many-to-One)
 
@@ -1078,13 +1078,13 @@ Real-world compliance scenarios frequently involve complex relationships between
 **Leveraging Overlaps**:
 Section 6 (Handling Overlapping Requirements) provides detailed guidance on identifying and leveraging many-to-one mappings for efficiency.
 
-## Beyond Annex A: Organization-Specific Controls
+## Beyond Annex A: Organisation-Specific Controls
 
 ### When No Annex A Control Fits
 
 Despite 93 controls covering comprehensive ISMS scope, regulatory requirements occasionally demand capabilities not addressed by any Annex A control.
 
-**Situations Requiring Organization-Specific Controls**:
+**Situations Requiring Organisation-Specific Controls**:
 
 **Sector-Specific Technical Requirements**:
 
@@ -1113,9 +1113,9 @@ Despite 93 controls covering comprehensive ISMS scope, regulatory requirements o
   - AI-specific controls not in ISO 27001:2022
   - Emerging regulatory requirements may outpace standard updates
 
-### Creating Organization-Specific Controls
+### Creating Organisation-Specific Controls
 
-When gap analysis (Section 4) identifies requirements with no Annex A mapping, [Organization] SHALL create organization-specific controls following this methodology:
+When gap analysis (Section 4) identifies requirements with no Annex A mapping, [Organisation] SHALL create organisation-specific controls following this methodology:
 
 **Step 1: Verify Gap**
 
@@ -1126,21 +1126,21 @@ When gap analysis (Section 4) identifies requirements with no Annex A mapping, [
 **Step 2: Define Control**
 
 - **Control ID**: CTRL-ORG-[Domain]-[Sequence]
-  - Domain: ORG (Organizational), PEO (People), PHY (Physical), TEC (Technological)
+  - Domain: ORG (Organisational), PEO (People), PHY (Physical), TEC (Technological)
   - Sequence: 001, 002, 003, etc.
-  - Example: CTRL-ORG-TEC-001 (first organizational technological control)
+  - Example: CTRL-ORG-TEC-001 (first organisational technological control)
 - **Control Name**: Clear, concise description
   - Example: "Fraud Detection and Transaction Monitoring"
 - **Control Objective**: Why this control exists
   - Example: "Detect and prevent fraudulent financial transactions in real-time"
 - **Control Description**: What the control does
-  - Example: "Implement automated transaction monitoring system that analyzes financial transactions against fraud indicators, alerts on suspicious activity, and enables investigation and response"
+  - Example: "Implement automated transaction monitoring system that analyses financial transactions against fraud indicators, alerts on suspicious activity, and enables investigation and response"
 
 **Step 3: Specify Implementation**
 
 - **Implementation Guidance**: How to implement control
   - Technical specifications
-  - Organizational procedures
+  - Organisational procedures
   - Roles and responsibilities
 - **Evidence Requirements**: How to demonstrate control effectiveness
   - Documentation required
@@ -1155,20 +1155,20 @@ When gap analysis (Section 4) identifies requirements with no Annex A mapping, [
 **Step 5: Integrate with ISMS**
 
 - Add to Statement of Applicability (SoA) if pursuing certification
-  - Document in SoA that this is organization-specific control beyond Annex A
+  - Document in SoA that this is organisation-specific control beyond Annex A
   - Provide justification (regulatory requirement XYZ mandates this)
 - Add to Control Mapping Matrix (new column for CTRL-ORG-TEC-001)
 - Map requirement(s) to new control (Primary mapping)
 - Include in Internal Audit scope
 - Include in Management Review
 
-**Step 6: Document in Organizational Controls Register**
+**Step 6: Document in Organisational Controls Register**
 
-- Maintain separate register of organization-specific controls
+- Maintain separate register of organisation-specific controls
 - Link to regulatory requirements driving creation
 - Track implementation status, evidence, audits
 
-**Example: Organization-Specific Control**
+**Example: Organisation-Specific Control**
 
 **Requirement**: REG-FIN05-23-005: "Implement real-time fraud detection for all payment card transactions with automated alerts for suspicious patterns"
 
@@ -1179,7 +1179,7 @@ When gap analysis (Section 4) identifies requirements with no Annex A mapping, [
 - No Annex A control specifically addresses fraud detection
 - **Gap Type**: Complete gap, new control needed
 
-**Organization-Specific Control Created**:
+**Organisation-Specific Control Created**:
 
 - **Control ID**: CTRL-ORG-TEC-001
 - **Control Name**: Fraud Detection and Transaction Monitoring
@@ -1200,29 +1200,29 @@ When gap analysis (Section 4) identifies requirements with no Annex A mapping, [
   - Fraud detection system configuration documentation
   - Monitoring dashboard showing transaction analysis
   - Alert logs (date, time, transaction, risk score, analyst action)
-  - Monthly fraud detection metrics (transactions analyzed, alerts generated, fraud prevented)
+  - Monthly fraud detection metrics (transactions analysed, alerts generated, fraud prevented)
   - Annual testing of fraud detection rules
 - **Control Owner**: Chief Information Security Officer
 - **Mapped Requirements**: REG-FIN05-23-005 (Primary)
 
-### Governance of Organization-Specific Controls
+### Governance of Organisation-Specific Controls
 
 **Approval Process**:
 
-- New organization-specific controls require Executive Management approval
+- New organisation-specific controls require Executive Management approval
 - Justification documented (regulatory requirement, business need, risk mitigation)
 - Cost-benefit analysis (implementation cost vs. regulatory penalty/risk)
 
 **Review Cycle**:
 
-- Organization-specific controls reviewed annually
+- Organisation-specific controls reviewed annually
 - Verify continued need (has regulation changed? has Annex A added relevant control in newer version?)
 - Assess effectiveness (is control achieving objective?)
 - Update or retire controls as needed
 
 **Integration with Certification**:
 
-- ISO 27001 certification audits will review organization-specific controls
+- ISO 27001 certification audits will review organisation-specific controls
 - Auditor will assess:
   - Is control necessary? (justified by regulatory requirement or risk assessment)
   - Is control properly designed? (effective at achieving objective)
@@ -1232,10 +1232,10 @@ When gap analysis (Section 4) identifies requirements with no Annex A mapping, [
 
 **Limitation**:
 
-- Avoid proliferation of organization-specific controls
+- Avoid proliferation of organisation-specific controls
 - Prefer enhancement of Annex A controls over creating new controls
 - Only create when truly necessary
-- Too many organization-specific controls suggests:
+- Too many organisation-specific controls suggests:
   - Misunderstanding of Annex A (controls are flexible, can be tailored)
   - Over-interpretation of requirements (extracting too prescriptively)
   - Opportunity to influence standard bodies (propose new controls for future ISO versions)
@@ -1257,7 +1257,7 @@ Gap analysis is the systematic identification of regulatory requirements that ar
 - **Identification**: Requirement row in matrix is completely blank (no markings in any control column)
 - **Example**:
   - Requirement: "Notify supervisory authority of data breaches within 72 hours"
-  - Current Controls: [Organization] has incident response procedures (A.5.24-A.5.28) but no specific breach notification process for regulatory authority
+  - Current Controls: [Organisation] has incident response procedures (A.5.24-A.5.28) but no specific breach notification process for regulatory authority
   - Gap: No control governs 72-hour notification requirement
   - Remediation Needed: Create notification procedure as part of incident management
 
@@ -1272,7 +1272,7 @@ Gap analysis is the systematic identification of regulatory requirements that ar
   - Requirement: "Conduct penetration testing of all internet-facing systems annually"
   - Current Controls: A.8.8 Management of Technical Vulnerabilities (Secondary - vulnerability scanning, not pen testing)
   - Gap: No control mandates penetration testing specifically
-  - Remediation Needed: Enhance A.8.8 to include penetration testing or create new organizational procedure
+  - Remediation Needed: Enhance A.8.8 to include penetration testing or create new organisational procedure
 - **Example 2** (Incomplete Primary):
   - Requirement: "Encrypt all sensitive data at rest and in transit"
   - Current Control: A.8.24 Use of Cryptography (Primary)
@@ -1319,7 +1319,7 @@ Gap analysis is the systematic identification of regulatory requirements that ar
 **Step 3: Evidence Verification**
 
 - For requirements marked "Implemented", verify evidence exists
-- Can [Organization] demonstrate compliance through documentation, logs, reports?
+- Can [Organisation] demonstrate compliance through documentation, logs, reports?
 - If evidence is lacking or inadequate → Evidence gap (related to implementation gap)
 
 **Step 4: Stakeholder Consultation**
@@ -1347,7 +1347,7 @@ Gap analysis is the systematic identification of regulatory requirements that ar
 
 ## Gap Prioritization
 
-Not all gaps are equally urgent. Prioritization ensures [Organization] addresses highest-risk gaps first with limited resources.
+Not all gaps are equally urgent. Prioritization ensures [Organisation] addresses highest-risk gaps first with limited resources.
 
 ### Prioritization Factors
 
@@ -1431,19 +1431,19 @@ Combine factors into prioritization decision:
 
 ## Gap Remediation Approaches
 
-For each identified gap, [Organization] SHALL determine and execute an appropriate remediation approach.
+For each identified gap, [Organisation] SHALL determine and execute an appropriate remediation approach.
 
 ### Remediation Options
 
 **Option 1: Implement New Control**
 
 - **When**: Complete gap, no existing control addresses requirement
-- **Action**: Create and implement organization-specific control (per Section 3.5)
+- **Action**: Create and implement organisation-specific control (per Section 3.5)
 - **Process**:
 
   1. Define new control (control ID, name, description, objective)
   2. Assign Control Owner
-  3. Implement control (technical, organizational, procedural)
+  3. Implement control (technical, organisational, procedural)
   4. Document implementation
   5. Collect evidence
   6. Update Control Mapping Matrix (add column for new control, mark requirement as Primary)
@@ -1470,10 +1470,10 @@ For each identified gap, [Organization] SHALL determine and execute an appropria
 **Option 3: Implement Combination of Controls**
 
 - **When**: Complex requirement needs multiple controls working together
-- **Action**: Implement several controls (existing Annex A or new organizational) that collectively satisfy requirement
+- **Action**: Implement several controls (existing Annex A or new organisational) that collectively satisfy requirement
 - **Process**:
 
-  1. Identify which controls needed (may be mix of Annex A and organizational)
+  1. Identify which controls needed (may be mix of Annex A and organisational)
   2. Assign owners (may be different owners for different controls)
   3. Coordinate implementation (controls must work together)
   4. Document how combination satisfies requirement
@@ -1559,7 +1559,7 @@ For each gap remediation:
 
 ### Gap Register
 
-[Organization] SHALL maintain a Gap Register documenting all identified compliance gaps and their remediation status.
+[Organisation] SHALL maintain a Gap Register documenting all identified compliance gaps and their remediation status.
 
 **Gap Register Fields**:
 
@@ -1651,7 +1651,7 @@ Collected Evidence (in Evidence Register and repository)
 **Step 2**: Find Extracted Requirements in Requirements Register
 
 - REG-DP01-32-001: "Implement encryption for personal data at rest and in transit"
-- REG-DP01-32-002: "Implement access controls to restrict personal data access to authorized personnel"
+- REG-DP01-32-002: "Implement access controls to restrict personal data access to authorised personnel"
 - REG-DP01-32-003: "Conduct regular testing and evaluation of security measures"
 - [... additional requirements from Article 32]
 
@@ -1698,7 +1698,7 @@ Collected Evidence (in Evidence Register and repository)
 **Audit Readiness**:
 
 - Auditor asks: "Show me how you comply with Regulation Article 32"
-- [Organization] provides the forward trace above
+- [Organisation] provides the forward trace above
 - Demonstrates systematic approach, not ad-hoc compliance
 
 **Regulatory Inquiries**:
@@ -1805,7 +1805,7 @@ Source Regulation (in ISMS-POL-00)
 - Control deprecated or removed
 - New control added
 
-**Organizational Changes**:
+**Organisational Changes**:
 
 - Business expansion (new services, new geographic markets, new customer types)
 - Mergers and acquisitions
@@ -1871,7 +1871,7 @@ Source Regulation (in ISMS-POL-00)
 - Decision: REVERT control change (cannot reduce retention) OR implement differential retention (financial logs kept 7 years, other logs 6 months)
 - Demonstrates value of change traceability: prevented non-compliance
 
-**When Organization Changes**:
+**When Organisation Changes**:
 
 **Process**:
 1. Identify nature of change (new service, new market, acquisition, etc.)
@@ -1897,7 +1897,7 @@ Source Regulation (in ISMS-POL-00)
 
 **Example**:
 
-- [Organization] acquires company that processes payment cards → PCI DSS v4.0.1 now applicable (Tier 2 Conditional → Tier 1 Mandatory because condition met)
+- [Organisation] acquires company that processes payment cards → PCI DSS v4.0.1 now applicable (Tier 2 Conditional → Tier 1 Mandatory because condition met)
 - Trigger applicability re-assessment: PCI DSS v4.0.1 is now Tier 1
 - Extract PCI DSS v4.0.1 requirements (all 12 requirement categories → dozens of specific requirements)
 - Map to existing controls: Some controls already satisfy (encryption, access control), many gaps identified
@@ -2041,7 +2041,7 @@ Every change in the regulatory compliance framework SHALL be logged to create a 
 
 # Handling Overlapping Requirements
 
-Multiple regulations frequently mandate similar or identical security controls. Rather than duplicate implementations, [Organization] identifies overlaps and implements to the most stringent standard, achieving compliance with multiple regulations simultaneously.
+Multiple regulations frequently mandate similar or identical security controls. Rather than duplicate implementations, [Organisation] identifies overlaps and implements to the most stringent standard, achieving compliance with multiple regulations simultaneously.
 
 ## Identifying Overlapping Requirements
 
@@ -2053,7 +2053,7 @@ Multiple regulations frequently mandate similar or identical security controls. 
   - Encryption of personal data
   - Access controls
   - Breach notification
-  - Data minimization
+  - Data minimisation
   - Similar requirements, different jurisdictions
 
 **Sector-Specific Regulations**:
@@ -2072,7 +2072,7 @@ Multiple regulations frequently mandate similar or identical security controls. 
 
 - When extracting requirements from new regulation, compare to existing requirements in Register
 - Flag similar requirements (similar language, similar intent)
-- Example: Extracting from CCPA, encounter "Implement reasonable security measures" → Similar to existing GDPR requirement "Implement appropriate technical and organizational measures"
+- Example: Extracting from CCPA, encounter "Implement reasonable security measures" → Similar to existing GDPR requirement "Implement appropriate technical and organisational measures"
 
 **During Control Mapping**:
 
@@ -2090,7 +2090,7 @@ Multiple regulations frequently mandate similar or identical security controls. 
 
 ## Identifying the Most Stringent Requirement
 
-When overlapping requirements exist, [Organization] SHALL implement to the MOST STRINGENT standard, ensuring all overlapping requirements are satisfied.
+When overlapping requirements exist, [Organisation] SHALL implement to the MOST STRINGENT standard, ensuring all overlapping requirements are satisfied.
 
 ### Why Implement to Most Stringent Standard?
 
@@ -2110,7 +2110,7 @@ When overlapping requirements exist, [Organization] SHALL implement to the MOST 
 
 - One implementation to audit, not multiple
 - Same evidence serves multiple audits
-- Consistent approach across organization
+- Consistent approach across organisation
 
 ### Stringency Comparison Framework
 
@@ -2232,22 +2232,21 @@ Example: Encryption Policy v2.1
 **Audit Scenario**:
 
 - **GDPR Auditor** asks: "Show me how you comply with Article 32 encryption requirement"
-  - [Organization] provides: Encryption Policy v2.1, encryption configuration documentation, key management logs
+  - [Organisation] provides: Encryption Policy v2.1, encryption configuration documentation, key management logs
   - Auditor confirms compliance
 - **Financial Auditor** asks: "Show me how you protect financial data"
-  - [Organization] provides: **SAME** Encryption Policy v2.1, configuration documentation, logs
+  - [Organisation] provides: **SAME** Encryption Policy v2.1, configuration documentation, logs
   - Auditor confirms compliance
 - **Healthcare Auditor** asks: "Show me health record protection"
-  - [Organization] provides: **SAME** evidence again
+  - [Organisation] provides: **SAME** evidence again
   - Auditor confirms compliance
 
 **Result**: One policy, three audits satisfied. Evidence efficiency in action.
 
 ### Compliance Reporting Per Regulation
 
-Despite leveraging overlaps, [Organization] can still report compliance status per regulation:
+Despite leveraging overlaps, [Organisation] can still report compliance status per regulation:
 
-**Regulatory Compliance Dashboard** (Assessment Workbook 6) shows:
 
 | Regulation | Total Reqs | Satisfied | Gaps | Compliance % |
 |-----------|-----------|-----------|------|--------------|
@@ -2348,7 +2347,7 @@ Despite leveraging overlaps, [Organization] can still report compliance status p
 
 - Significant regulatory changes affecting multiple regulations
 - Major changes to ISO 27001 standard
-- Organizational changes affecting compliance scope
+- Organisational changes affecting compliance scope
 - Methodology improvements identified through use
 
 **Next Review Date**: [Effective Date + 12 months]
@@ -2378,7 +2377,6 @@ Despite leveraging overlaps, [Organization] can still report compliance status p
 - **ISMS-IMP-A.5.31.3-UG/TG**: Control Mapping Process
   - Step-by-step operational guide for mapping requirements to controls
   - Implements control mapping methodology (Section 3)
-- **ISMS-IMP-A.5.31.5-UG/TG**: Evidence Management Process (subsequent)
   - Operational guide for collecting and managing evidence
   - Uses traceability framework defined in Section 5
 
@@ -2391,7 +2389,6 @@ Despite leveraging overlaps, [Organization] can still report compliance status p
   - Template for maintaining Control Mapping Matrix (Section 3.3)
   - Pre-populated with 93 Annex A controls
   - Conditional formatting for gap visualization
-- **Assessment Workbook 5**: Compliance Evidence Register (subsequent)
   - Template for tracking evidence linked to controls and requirements
   - Supports traceability framework (Section 5)
 
@@ -2425,5 +2422,5 @@ Despite leveraging overlaps, [Organization] can still report compliance status p
 
 ---
 
-*This policy establishes the translation methodology from regulatory text to actionable controls, enabling [Organization] to demonstrate HOW it satisfies regulatory requirements through systematic control implementation.*
-<!-- QA_VERIFIED: 2026-02-01 -->
+*This policy establishes the translation methodology from regulatory text to actionable controls, enabling [Organisation] to demonstrate HOW it satisfies regulatory requirements through systematic control implementation.*
+<!-- QA_VERIFIED: 2026-03-01 -->

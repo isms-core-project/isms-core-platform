@@ -3,19 +3,21 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.31: Legal, Statutory, Regulatory and Contractual Requirements
 
+---
+
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
 | **Document Title** | Evidence Management Process |
-| **Document Type** | Implementation Guide |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.31.5-UG |
+| **Related Policy** | ISMS-POL-A.5.31 (Legal Statutory Regulatory Contractual Requirements) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.31 (Legal, Statutory, Regulatory and Contractual Requirements) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
-| **Document Owner** | Chief Executive Officer (CEO) |
-| **Approved By** | Executive Management |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -23,15 +25,20 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO/ISO | Initial implementation guide for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.31 (Legal Statutory Regulatory Contractual Requirements)
+- ISMS-IMP-A.5.31.1 (Regulatory Inventory Management Process)
+- ISMS-IMP-A.5.31.2 (Regulatory Applicability Assessment Process)
+- ISMS-IMP-A.5.31.3 (Requirements Extraction Process)
+- ISMS-IMP-A.5.31.4 (Control Mapping Process)
 
 ---
-
-**Audience:** Security assessors, Control owners, Compliance officers
-
----
-
-# Process Overview
 
 ## Purpose
 

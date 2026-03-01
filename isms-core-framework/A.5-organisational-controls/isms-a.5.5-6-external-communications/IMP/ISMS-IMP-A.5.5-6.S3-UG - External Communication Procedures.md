@@ -3,6 +3,41 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Controls A.5.5 & A.5.6: Communication Procedures
 
+---
+
+**Document Control**
+
+| Attribute | Value |
+|-------|-------|
+| **Document Title** | External Communication Procedures |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.5.5-6.S3-UG |
+| **Related Policy** | ISMS-POL-A.5.5-6 (External Communications) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.5 & A.5.6 (Communication Procedures) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.5-6 (External Communications)
+- ISMS-IMP-A.5.5-6.S1 (Authority Contacts Register)
+- ISMS-IMP-A.5.5-6.S2 (Special Interest Groups Register)
+
+---
+
 ## Implementation Guide for ISO 27001:2022 Controls A.5.5 & A.5.6: Communication Procedures
 
 **Document ID:** ISMS-IMP-A.5.5-6.S3-UG
@@ -52,15 +87,13 @@ This workbook ensures that when contact is needed, proper procedures exist to ex
 
 ### Assessment Domains
 
-This workbook is **Domain 3 of 5** in the A.5.5-6 External Communications assessment series:
+This workbook is **Domain 3 of 3** in the A.5.5-6 External Communications assessment series:
 
 | Domain | Workbook | Focus |
 |--------|----------|-------|
 | 1 | Authority Contacts Register | Documenting authority relationships |
 | 2 | Special Interest Groups Register | SIG memberships and engagement |
 | **3** | **External Communication Procedures** | **Notification and escalation processes** |
-| 4 | Compliance Dashboard | KPIs and metrics monitoring |
-| 5 | Consolidation Dashboard | Executive summary across domains |
 
 ---
 
@@ -100,6 +133,24 @@ Identify all applicable notification requirements:
 | NIS2 Art. 23 | If in scope | Significant incident | CSIRT | 24h/72h |
 | FINMA (if applicable) | Financial services | Cyber incident | FINMA | 24 hours |
 | [Add others] | | | | |
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Communication Scenarios** | When to contact which external party and required response timelines |
+| **Notification Requirements** | Mandatory regulatory notifications, timelines, and format requirements |
+| **Escalation Matrix** | Internal escalation paths before external contact is made |
+| **Approval Workflow** | Approval requirements for each type of external communication |
+| **Communication Templates** | Standardised message formats for each communication scenario |
+| **Evidence Register** | Tracking of supporting evidence for procedures and approvals |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
 
 ---
 
@@ -300,6 +351,19 @@ Management approval for procedures.
 | 4 | DPO | Data protection requirements |
 | 5 | CISO | Final approval and sign-off |
 
+### Summary_Dashboard Sheet
+
+The Summary Dashboard automatically aggregates data from your completed sheets and provides a compliance overview. No data entry is required.
+
+Review the dashboard after completing all sheets above to confirm:
+- Communication scenario coverage across all incident categories
+- Notification requirement completeness and timeline accuracy
+- Escalation matrix coverage for all defined scenario levels
+- Approval workflow documentation status
+- Template availability for all standard communication types
+
+Use the dashboard output to support your management review discussion and sign-off process.
+
 ---
 
 ## Evidence Collection
@@ -422,7 +486,7 @@ Before submitting for approval, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The single biggest problem in communication is the illusion that it has taken place."*
+— George Bernard Shaw
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

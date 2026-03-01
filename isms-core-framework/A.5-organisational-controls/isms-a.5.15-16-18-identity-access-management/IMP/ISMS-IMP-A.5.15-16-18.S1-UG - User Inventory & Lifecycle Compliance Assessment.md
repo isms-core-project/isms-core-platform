@@ -8,26 +8,60 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | User Inventory & Lifecycle Compliance Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.15-16-18.S1-UG |
+| **Related Policy** | ISMS-POL-A.5.15-16-18 (Identity Access Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.15 (Access Annex) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | User Inventory & Identity Lifecycle Compliance |
-| **Related Policy** | ISMS-POL-A.5.15-16-18, Section 2.2 (Identity Management Requirements - A.5.16) |
-| **Purpose** | Document complete user inventory across all identity systems, assess identity lifecycle compliance (joiner/mover/leaver timeliness), and identify orphaned accounts in a technology-agnostic manner |
-| **Target Audience** | IAM Team, HR Team, IT Operations, Security Team, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Monthly (user inventory updates), Quarterly (comprehensive lifecycle assessment) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for User Inventory & Lifecycle assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.15-16-18 (Identity Access Management)
+- ISMS-IMP-A.5.15-16-18.S2 (Access Rights Matrix Assessment)
+- ISMS-IMP-A.5.15-16-18.S3 (Access Review Results Assessment)
+- ISMS-IMP-A.5.15-16-18.S4 (Role Definition & SoD Compliance Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.15-16-18.S1-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 11 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **User Inventory** | Complete inventory of all user accounts across all identity systems |
+| **Employee Lifecycle** | Provisioning and deprovisioning timeliness for employee accounts |
+| **Contractor Lifecycle** | Lifecycle compliance tracking for contractor and vendor accounts |
+| **Service Accounts** | Inventory and governance of non-human and service accounts |
+| **Orphaned Accounts** | Identification of accounts without valid business ownership |
+| **Lifecycle Metrics** | Summary metrics for identity lifecycle compliance rates |
+| **Gap Analysis** | Identified gaps and remediation action tracking |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -83,7 +117,6 @@ This assessment is **completely technology-agnostic and vendor-independent**. Yo
 | ISMS-IMP-A.5.15-16-18.S2 | Access Rights Matrix | WHAT access do users have (uses user list from .1) |
 | ISMS-IMP-A.5.15-16-18.S3 | Access Review Results | HOW access is reviewed (uses user list from .1) |
 | ISMS-IMP-A.5.15-16-18.S4 | Role & SoD Compliance | WHAT roles users have and SoD violations (uses user list from .1) |
-| ISMS-IMP-A.5.15-16-18.S5 | IAM Governance Dashboard | Consolidated view across all assessments |
 
 This assessment (A.5.15-16-18.1) provides the **foundational user inventory** used by all other IAM assessments!
 
@@ -119,7 +152,7 @@ Upon completion, you will have:
 2. ✅ **Lifecycle compliance metrics** - Provisioning/deprovisioning timeliness by user
 3. ✅ **Orphaned account register** - Accounts without valid owner identified
 4. ✅ **Inactive account tracking** - Accounts with no recent login flagged
-5. ✅ **Compliance dashboard** - Overall lifecycle compliance rate calculated
+5. ✅ **Summary Dashboard** - Overall lifecycle compliance rate calculated
 6. ✅ **Gap analysis** - Late provisioning, missed deprovisioning, orphaned accounts prioritized
 7. ✅ **Remediation plan** - Actions to improve lifecycle compliance
 8. ✅ **Evidence register** - Supporting documentation for audit
@@ -181,7 +214,7 @@ However, outputs from this assessment are INPUT to:
 - A.5.15-16-18.2 (Access Rights Matrix) - Uses user inventory as baseline
 - A.5.15-16-18.3 (Access Review Results) - Uses user list for review scope
 - A.5.15-16-18.4 (Role & SoD Compliance) - Uses user list for role assignment verification
-- A.5.15-16-18.5 (IAM Governance Dashboard) - Consolidates lifecycle metrics
+- A.5.15-16-18.5 (IAM Lifecycle & Governance Compliance Assessment) - Consolidates lifecycle metrics
 
 ---
 
@@ -208,13 +241,13 @@ However, outputs from this assessment are INPUT to:
    ↓
 9. DETECT INACTIVE ACCOUNTS (Sheet 5)
    ↓
-10. ANALYZE COMPLIANCE METRICS (Sheet 6)
+10. ANALYZE COMPLIANCE METRICS (Lifecycle Metrics sheet)
     ↓
-11. IDENTIFY GAPS & REMEDIATION (Sheet 7)
+11. IDENTIFY GAPS & REMEDIATION (Gap Analysis sheet)
     ↓
-12. REGISTER EVIDENCE (Sheet 8)
+12. REGISTER EVIDENCE (Evidence Register sheet)
     ↓
-13. REVIEW & APPROVE (Sheet 9)
+13. REVIEW & APPROVE (Approval Sign-Off sheet)
 ```
 
 ### Detailed Workflow
@@ -602,7 +635,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 
 #### Phase 9: Analyze Compliance Metrics (1-2 hours)
 
-**Objective:** Complete Sheet 6 - Lifecycle Compliance Dashboard
+**Objective:** Complete Lifecycle Metrics sheet — lifecycle compliance summary
 
 **Steps:**
 1. **Consolidate metrics** from Sheets 2-5:
@@ -643,7 +676,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Root causes (why are we non-compliant?)
    - Recommendations (how to improve)
 
-**Deliverable:** Sheet 6 with compliance dashboard and analysis
+**Deliverable:** Lifecycle Metrics sheet with compliance summary and analysis
 
 **Quality Check:**
 
@@ -764,7 +797,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 
    - All evidence recent (< 30 days old for most items)
    - Evidence accessible to auditors
-   - Evidence clearly labeled and organized
+   - Evidence clearly labeled and organised
    - Evidence demonstrates compliance (or non-compliance with remediation plan)
 
 **Deliverable:** Sheet 8 with complete evidence register
@@ -772,7 +805,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 **Quality Check:**
 
 - ✓ All evidence collected and documented
-- ✓ Evidence organized in logical folder structure
+- ✓ Evidence organised in logical folder structure
 - ✓ Evidence IDs cross-referenced to assessment sheets
 - ✓ All evidence verified as accurate and current
 - ✓ Evidence accessible for audit
@@ -821,7 +854,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - CISO review: 2-3 business days
 - Total: ~1 week from submission to final approval
 
-**Deliverable:** Approved assessment ready for IAM Governance Dashboard (A.5.15-16-18.5)
+**Deliverable:** Approved assessment ready for management review
 
 **Quality Check:**
 
@@ -872,7 +905,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - Manager justifications for legitimate inactive accounts (email approvals)
 - Screenshots of inactive account details
 
-**For Sheet 6 (Compliance Dashboard):**
+**For Lifecycle Metrics sheet:**
 
 - Trend charts (if historical data available)
 - Comparison with previous assessment
@@ -887,7 +920,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 
 **For Sheet 8 (Evidence Register):**
 
-- All evidence listed above, organized and accessible
+- All evidence listed above, organised and accessible
 
 **For Sheet 9 (Approval):**
 
@@ -1072,9 +1105,9 @@ Before submitting for approval, verify:
 - [ ] Questionable inactive accounts flagged for manager review
 - [ ] Inactive account count excludes legitimately inactive (e.g., service accounts with periodic use)
 
-### Compliance Dashboard (Sheet 6)
+### Lifecycle Metrics
 
-- [ ] All metrics pulled from correct sheets (provisioning from Sheet 2, deprovisioning from Sheet 3, etc.)
+- [ ] All metrics pulled from correct sheets (provisioning from Provisioning sheet, deprovisioning from Leaver sheet, etc.)
 - [ ] Overall maturity score calculated correctly (weighted formula)
 - [ ] Benchmark category accurate (Excellent/Good/Fair/Poor)
 - [ ] Trend analysis meaningful (if historical data available)
@@ -1092,7 +1125,7 @@ Before submitting for approval, verify:
 ### Evidence Register (Sheet 8)
 
 - [ ] All evidence collected and listed
-- [ ] Evidence organized in logical folder structure
+- [ ] Evidence organised in logical folder structure
 - [ ] Evidence IDs cross-referenced to assessment sheets
 - [ ] All evidence verified as accurate and current
 - [ ] Evidence accessible for audit (file paths correct, permissions set)
@@ -1127,7 +1160,7 @@ Before submitting for approval, verify:
 - **Review Criteria:**
   - User inventory complete (all identity systems included?)
   - Provisioning/deprovisioning delays calculated correctly?
-  - Orphaned account detection logic sound (false positives minimized?)
+  - Orphaned account detection logic sound (false positives minimised?)
   - Inactive account thresholds appropriate (90 days reasonable for your org?)
   - Gap analysis accurate (missing any major gaps?)
   - Remediation plan realistic (owners have capacity, timelines achievable?)
@@ -1174,7 +1207,7 @@ Day 2-4:     IAM Team Lead review
 Day 5:       IAM Team Lead approves (or sends back for corrections)
 Day 6-8:     CISO review
 Day 9:       CISO final approval
-Day 10:      Assessment marked "Final", ready for IAM Governance Dashboard
+Day 10:      Assessment marked "Final", ready for management review
 ```
 
 **Total timeline:** ~2 weeks from start to final approval
@@ -1203,11 +1236,11 @@ This assessment (A.5.15-16-18.1) feeds into:
 - **Mapping:** User ID → Roles → SoD Violations
 - **Dependency:** SoD assessment requires knowing which users exist and what roles they have
 
-### A.5.15-16-18.5 - IAM Governance Compliance Dashboard
+### A.5.15-16-18.5 - IAM Lifecycle & Governance Compliance Assessment
 
-- **Uses:** Lifecycle compliance metrics from Sheet 6
-- **Consolidation:** Combines metrics from all 5 IAM assessments into executive dashboard
-- **Dependency:** Dashboard cannot be complete without lifecycle compliance data
+- **Uses:** Lifecycle compliance metrics from Lifecycle Metrics sheet
+- **Consolidation:** Combines metrics from all 5 IAM assessments into governance summary
+- **Dependency:** Governance assessment cannot be complete without lifecycle compliance data
 
 ---
 
@@ -1220,14 +1253,14 @@ For ongoing assessments (not initial assessment):
 2. **Calculate current month metrics** (Sheets 2-3) - provisioning/deprovisioning for current month
 3. **Scan for new orphaned accounts** (Sheet 4) - monthly cross-reference
 4. **Update inactive account list** (Sheet 5) - monthly login log analysis
-5. **Update compliance dashboard** (Sheet 6) - recalculate metrics
+5. **Update Summary Dashboard** - recalculate metrics
 6. **Track remediation progress** (Sheet 7) - update gap closure status
 
 **Time Commitment:** 2-4 hours per month (after initial assessment complete)
 
 ### Quarterly Comprehensive Review
 
-1. **Deep dive lifecycle analysis** - analyze trends, identify systemic issues
+1. **Deep dive lifecycle analysis** - analyse trends, identify systemic issues
 2. **Orphaned account cleanup campaign** - intensive investigation and remediation
 3. **Process improvement** - address root causes of provisioning/deprovisioning delays
 4. **Benchmark review** - compare against previous quarter, assess improvement
@@ -1249,7 +1282,7 @@ For ongoing assessments (not initial assessment):
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Know thyself."*
+— Socrates
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

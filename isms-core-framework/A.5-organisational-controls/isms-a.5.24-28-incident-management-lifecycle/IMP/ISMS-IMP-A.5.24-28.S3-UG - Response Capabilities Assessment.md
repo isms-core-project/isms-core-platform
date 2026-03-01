@@ -5,21 +5,19 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
-| **Document Title** | Incident Response Capabilities Assessment |
+| **Document Title** | Response Capabilities Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.24-28.S3-UG |
-| **Assessment Domain** | Domain 3 - Response Capabilities (A.5.26 Focus) |
 | **Related Policy** | ISMS-POL-A.5.24-28 (Incident Management Lifecycle) |
-| **Related Reference** | ISMS-REF-A.5.24-28 (Incident Response Reference Guide) |
-| **Document Owner** | Chief Information Security Officer (CISO) |
-| **Technical Authority** | CSIRT Manager / Incident Response Lead |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.26) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -27,21 +25,38 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CSIRT Manager | Initial response capabilities assessment specification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle**: Annual (or after major incident response activities)  
-**Next Review Date**: [Effective Date + 12 months]  
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-**Related Documents**: 
-- ISMS-POL-A.5.24-28 (Incident Management Lifecycle Policy)
-- ISMS-REF-A.5.24-28 (Incident Response Reference Guide)
-- ISMS-IMP-A.5.24-28.S1 (Framework & Governance Assessment)
-- ISMS-IMP-A.5.24-28.S2 (Detection & Classification Assessment)
+**Related Documents**:
+
+- ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
+- ISMS-IMP-A.5.24-28.S1 (Incident Management Framework Assessment)
+- ISMS-IMP-A.5.24-28.S2 (Detection Classification Assessment)
 - ISMS-IMP-A.5.24-28.S4 (Forensic Evidence Assessment)
-- ISMS-IMP-A.5.24-28.S5 (Learning & Improvement Assessment)
-- ISMS-IMP-A.5.29-30 (BC/DR Framework)
-- ISO/IEC 27002:2022 Control A.5.26
-- NIST SP 800-61 Rev. 2 Section 3.3 (Containment, Eradication, and Recovery)
+- ISMS-IMP-A.5.24-28.S5 (Learning & Continuous Improvement Assessment)
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 11 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Containment Capabilities** | Containment strategies, tools, and execution capability assessment |
+| **Eradication & Remediation** | Eradication procedures and root cause remediation capabilities |
+| **Recovery & Restoration** | System recovery, data restoration, and return-to-service capabilities |
+| **Communication** | Internal and external communication procedures during incidents |
+| **Resources & Authority** | Resource allocation, escalation authority, and crisis management |
+| **Playbook Effectiveness** | Incident response playbook coverage and effectiveness assessment |
+| **Gap Analysis** | Identified gaps and remediation action tracking |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -49,7 +64,7 @@
 
 ### Purpose
 
-This assessment evaluates [Organization]'s **incident response execution capabilities**, focusing on the **response and recovery** phase of incident management (A.5.26).
+This assessment evaluates [Organisation]'s **incident response execution capabilities**, focusing on the **response and recovery** phase of incident management (A.5.26).
 
 **What This Assessment Covers:**
 - Containment procedures and technical capabilities
@@ -105,7 +120,7 @@ This assessment evaluates [Organization]'s **incident response execution capabil
 **Primary Responsibility:** CSIRT Manager, Incident Response Lead, or Senior Incident Responder
 
 **Required Knowledge:**
-- [Organization]'s incident response procedures (containment, eradication, recovery)
+- [Organisation]'s incident response procedures (containment, eradication, recovery)
 - Response playbook execution and effectiveness
 - Communication protocols during incidents
 - Resource availability (staffing, tools, authority)
@@ -167,7 +182,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 - Technical capabilities for isolation (network, endpoint, account)
 - Maximum containment time SLAs (15 min Critical, 1 hour High, 4 hours Medium)
 - Coordination with IT Operations for containment actions
-- Authority matrix for containment decisions (who can authorize system shutdown, network segmentation)
+- Authority matrix for containment decisions (who can authorise system shutdown, network segmentation)
 
 **Eradication Requirements:**
 - Malware removal and system cleaning procedures
@@ -197,7 +212,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 - Budget for incident response (external support, forensics)
 
 **Policy Authority:** Chief Information Security Officer (CISO)  
-**Compliance Status:** Mandatory for all [Organization] security incidents
+**Compliance Status:** Mandatory for all [Organisation] security incidents
 
 ### Assessment Scope
 
@@ -239,7 +254,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 
 **Excluded from This Assessment:**
 
-❌ CSIRT organizational structure (see S1)
+❌ CSIRT organisational structure (see S1)
 ❌ Detection and triage (see S2)
 ❌ Forensic evidence collection (see S4)
 ❌ Post-incident review (see S5)
@@ -257,7 +272,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
    - Eradication and remediation playbooks
    - Recovery and restoration procedures
    - Communication templates and workflows
-   - Authority matrix (who can authorize containment actions)
+   - Authority matrix (who can authorise containment actions)
 
 3. ✅ **Extract Metrics (Last 6 Months):**
    - Mean Time to Contain (MTTC)
@@ -347,7 +362,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 #### **Section A: Network Containment (Q1-Q8)**
 
 **Q1: Network_Isolation_Capability**
-- **Question:** Can [Organization] isolate network segments to contain incidents?
+- **Question:** Can [Organisation] isolate network segments to contain incidents?
 - **Dropdown:** Yes - Automated / Yes - Manual / Limited / No
 - **Automated:** SOAR or network automation (VLAN changes, firewall rules)
 - **Manual:** Network engineer executes changes
@@ -357,7 +372,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 - **Question:** Can firewall rules be changed on emergency basis to block threats?
 - **Dropdown:** Yes - 24/7 / Yes - Business Hours Only / No
 - **Best Practice:** 24/7 capability for Critical/High incidents
-- **Authority:** Who can authorize emergency firewall changes?
+- **Authority:** Who can authorise emergency firewall changes?
 
 **Q3: Internet_Egress_Blocking**
 - **Question:** Can internet egress be blocked for infected systems?
@@ -460,7 +475,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 - **Challenge:** Service accounts often hard-coded in applications
 
 **Q20: Password_Force_Reset**
-- **Question:** Can [Organization] force password reset for affected users?
+- **Question:** Can [Organisation] force password reset for affected users?
 - **Dropdown:** Yes - Immediate / Yes - Next Login / No
 - **Use Case:** Credential compromise incidents
 
@@ -598,7 +613,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 - **Dropdown:** Yes - Comprehensive / Yes - Basic / No
 
 **Q44: Bulk_Password_Reset**
-- **Question:** Can [Organization] perform bulk password reset for affected users?
+- **Question:** Can [Organisation] perform bulk password reset for affected users?
 - **Dropdown:** Yes / No
 
 **Q45: Certificate_Revocation**
@@ -620,7 +635,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 **Q48: Attacker_Expulsion_Verification**
 - **Question:** Is threat actor expulsion verified before declaring incident resolved?
 - **Dropdown:** Yes - Systematically / Sometimes / No
-- **Verification:** No more C2 beaconing, no unauthorized access, no persistence
+- **Verification:** No more C2 beaconing, no unauthorised access, no persistence
 
 **Q49: Backdoor_Search**
 - **Question:** Are backdoors searched for and removed?
@@ -867,7 +882,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 - **Dropdown:** Yes / Limited / No
 
 **Q95: Surge_Capacity**
-- **Question:** Can [Organization] scale response for multiple simultaneous incidents?
+- **Question:** Can [Organisation] scale response for multiple simultaneous incidents?
 - **Dropdown:** Yes - External Support / Limited - Internal Only / No
 
 ---
@@ -901,7 +916,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 **Q101: Emergency_Authority_Matrix**
 - **Question:** Is emergency decision authority documented?
 - **Dropdown:** Yes / No
-- **Examples:** Who can shut down production, who can authorize emergency patching
+- **Examples:** Who can shut down production, who can authorise emergency patching
 
 **Q102: Business_Impact_Decisions**
 - **Question:** Can CSIRT make business impact decisions (e.g., accept downtime for containment)?
@@ -928,11 +943,11 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 - **Dropdown:** Yes - Dedicated / Yes - Part of IT Security / No
 
 **Q107: External_IR_Retainer**
-- **Question:** Does [Organization] have an incident response retainer (external firm)?
+- **Question:** Does [Organisation] have an incident response retainer (external firm)?
 - **Dropdown:** Yes / No
 
 **Q108: Forensic_Services_Available**
-- **Question:** Can [Organization] engage forensic services on short notice?
+- **Question:** Can [Organisation] engage forensic services on short notice?
 - **Dropdown:** Yes - Retainer / Yes - Ad-Hoc / No
 
 **Q109: Legal_Support_Available**
@@ -940,7 +955,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 - **Dropdown:** Yes / Business Hours Only / No
 
 **Q110: Insurance_Cyber_Coverage**
-- **Question:** Does [Organization] have cyber insurance covering incident response costs?
+- **Question:** Does [Organisation] have cyber insurance covering incident response costs?
 - **Dropdown:** Yes / No
 
 ---
@@ -1069,7 +1084,7 @@ SLA Compliance = (Incidents Meeting SLA / Total Incidents) × 100
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Speed is the essence of war."*
+— Sun Tzu
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

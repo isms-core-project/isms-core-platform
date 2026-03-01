@@ -5,21 +5,19 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
 | **Document Title** | Forensic Evidence Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.24-28.S4-UG |
-| **Assessment Domain** | Domain 4 - Forensic Evidence Management (A.5.28 Focus) |
 | **Related Policy** | ISMS-POL-A.5.24-28 (Incident Management Lifecycle) |
-| **Related Reference** | ISMS-REF-A.5.24-28 (Incident Response Reference Guide, Section 3) |
-| **Document Owner** | Chief Information Security Officer (CISO) |
-| **Technical Authority** | Digital Forensics Lead / Incident Response Manager |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.28) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -27,21 +25,37 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Digital Forensics Lead | Initial forensic evidence assessment specification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle**: Annual (or after major forensic investigation)  
-**Next Review Date**: [Effective Date + 12 months]  
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
 **Related Documents**:
-- ISMS-POL-A.5.24-28 (Incident Management Lifecycle Policy)
-- ISMS-REF-A.5.24-28 (Incident Response Reference Guide, Section 3: Forensic Collection Techniques Library)
-- ISMS-IMP-A.5.24-28.S1 (Framework & Governance Assessment)
-- ISMS-IMP-A.5.24-28.S2 (Detection & Classification Assessment)
+
+- ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
+- ISMS-IMP-A.5.24-28.S1 (Incident Management Framework Assessment)
+- ISMS-IMP-A.5.24-28.S2 (Detection Classification Assessment)
 - ISMS-IMP-A.5.24-28.S3 (Response Capabilities Assessment)
-- ISMS-IMP-A.5.24-28.S5 (Learning & Improvement Assessment)
-- ISO/IEC 27002:2022 Control A.5.28
-- NIST SP 800-86 (Guide to Integrating Forensic Techniques into Incident Response)
-- ISO/IEC 27037:2012 (Guidelines for the Identification, Collection, Acquisition and Preservation of Digital Evidence)
+- ISMS-IMP-A.5.24-28.S5 (Learning & Continuous Improvement Assessment)
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 10 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Evidence Collection** | Digital evidence collection procedures and capability assessment |
+| **Chain of Custody** | Evidence chain of custody controls and documentation standards |
+| **Forensic Analysis** | Forensic analysis capability, tools, and methodology assessment |
+| **Storage & Retention** | Evidence storage security and retention period compliance |
+| **Legal & Regulatory** | Legal admissibility standards and regulatory compliance assessment |
+| **Gap Analysis** | Identified gaps and remediation action tracking |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -49,7 +63,7 @@
 
 ### Purpose
 
-This assessment evaluates [Organization]'s **digital forensic evidence management capabilities**, focusing on the collection, preservation, analysis, and legal admissibility of evidence throughout the incident lifecycle (A.5.28).
+This assessment evaluates [Organisation]'s **digital forensic evidence management capabilities**, focusing on the collection, preservation, analysis, and legal admissibility of evidence throughout the incident lifecycle (A.5.28).
 
 **What This Assessment Covers:**
 - Evidence collection procedures and techniques
@@ -106,7 +120,7 @@ This assessment evaluates [Organization]'s **digital forensic evidence managemen
 
 **Required Knowledge:**
 - Digital forensics principles and methodologies
-- [Organization]'s forensic tools and capabilities
+- [Organisation]'s forensic tools and capabilities
 - Chain of custody procedures
 - Legal requirements for digital evidence
 - Forensic analysis processes and techniques
@@ -171,7 +185,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.4 (Forensic Evidence 
 - Chain of custody maintained from collection to disposal
 - Evidence integrity verification (hash values: SHA-256 minimum)
 - Tamper-evident storage
-- Access control on evidence (restricted to authorized personnel)
+- Access control on evidence (restricted to authorised personnel)
 - Backup copies of critical evidence
 
 **Analysis Requirements:**
@@ -194,7 +208,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.4 (Forensic Evidence 
 - Expert witness capability (if required)
 
 **Policy Authority:** Chief Information Security Officer (CISO)  
-**Compliance Status:** Mandatory for all [Organization] security incidents
+**Compliance Status:** Mandatory for all [Organisation] security incidents
 
 ### Assessment Scope
 
@@ -875,7 +889,7 @@ Target: <72 hours for Critical incidents
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The past is never dead. It's not even past."*
+— William Faulkner
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

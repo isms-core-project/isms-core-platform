@@ -381,18 +381,18 @@ Claude Code (Anthropic, Opus model family) has been the primary implementation p
 </tr>
 <tr>
 <td><strong>Python Scripts</strong></td>
-<td>Generators, normalizers, consolidators, sanity checks, population scripts</td>
-<td><strong>xxx4</strong> scripts, <strong>xxxK+</strong> lines</td>
+<td>Workbook Generators</td>
+<td><strong>xxx</strong> scripts, <strong>xxxK+</strong> lines</td>
 </tr>
 <tr>
 <td><strong>IMP Documents</strong></td>
 <td>User Guides (UG) + Technical Specifications (TG) for every assessment</td>
-<td><strong>xxx</strong> files (xxx UG + xxx TG)</td>
+<td><strong>372</strong> files (186 UG + 186 TG)</td>
 </tr>
 <tr>
 <td><strong>POL Documents</strong></td>
 <td>Policy framework with "WITH WHAT" verification methodology</td>
-<td><strong>xx</strong> policies, all audited</td>
+<td><strong>100+</strong> policies, all audited</td>
 </tr>
 <tr>
 <td><strong>Excel Workbooks</strong></td>

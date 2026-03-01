@@ -7,189 +7,153 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | MFA Deployment Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.17.2-TG |
+| **Related Policy** | ISMS-POL-A.5.17 (Authentication Information) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.17 (Authentication Information) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.17 Authentication Information |
-| **Parent Policy** | ISMS-POL-A.5.17 - Authentication Information |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.17.2-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.17 (Authentication Information)
+- ISMS-IMP-A.5.17.1 (Password Policy Implementation Guide)
+- ISMS-IMP-A.5.17.3 (Authentication Management Procedures)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a517_2_credential_lifecycle_management.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.17.2` |
-| **Output Filename** | `ISMS-IMP-A.5.17.2_Credential_Lifecycle_Management_YYYYMMDD.xlsx` |
-| **Workbook Title** | Credential Lifecycle Management |
-| **Total Sheets** | 9 (9 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
-
-**Frozen Panes:** A3
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Allocation_Process
+## Generator Alignment Reference
 
-**Frozen Panes:** A4
+> Auto-generated from `generate_a517_2_credential_lifecycle_management.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.17.2`
 
-| Col | Header |
-|-----|--------|
-| A | Process Step |
-| B | Description |
-| C | Responsible Role |
-| D | Verification Required |
-| E | SLA |
-| F | System/Tool |
-| G | Status |
-| H | Notes |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: Change_Management
+| # | Sheet Name |
+|---|-----------|
+| 1 | Allocation Process |
+| 2 | Change Management |
+| 3 | Recovery Process |
+| 4 | Revocation Process |
+| 5 | Audit Log Requirements |
+| 6 | Evidence Register |
+| 7 | Approval Sign-Off |
+| 8 | Summary Dashboard |
+| 9 | Instructions & Legend |
 
-**Frozen Panes:** A4
+### Color Palette
 
-### Columns
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-| Col | Header |
-|-----|--------|
-| A | Change Type |
-| B | Trigger |
-| C | Process Steps |
-| D | Verification |
-| E | SLA |
-| F | Notification |
-| G | Status |
-| H | Notes |
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | CREDENTIAL ALLOCATION PROCESS |
+| 2 | CREDENTIAL CHANGE MANAGEMENT |
+| 3 | CREDENTIAL RECOVERY PROCESSES |
+| 4 | CREDENTIAL REVOCATION PROCESS |
+| 5 | AUTHENTICATION AUDIT LOG REQUIREMENTS |
+| 6 | Process Step |
+| 7 | Description |
+| 8 | Responsible Role |
+| 9 | Verification Required |
+| 10 | SLA |
+| 11 | System/Tool |
+| 12 | Status |
+| 13 | Notes |
+| 14 | Change Type |
+| 15 | Trigger |
+| 16 | Process Steps |
+| 17 | Verification |
+| 18 | Notification |
+| 19 | Recovery Method |
+| 20 | Use Case |
+| 21 | Identity Verification |
+| 22 | Security Controls |
+| 23 | Revocation Trigger |
+| 24 | SLA Requirement |
+| 25 | Actions Required |
+| 26 | Systems Affected |
+| 27 | Responsible |
+| 28 | Event Type |
+| 29 | Details to Log |
+| 30 | Retention Period |
+| 31 | Alerting Required |
+| 32 | Review Frequency |
+| 33 | Evidence ID |
+| 34 | Assessment Area |
+| 35 | Evidence Type |
+| 36 | Location / Path |
+| 37 | Date Collected |
+| 38 | Collected By |
+| 39 | Verification Status |
+| 40 | Total Items |
+| 41 | Compliant |
+| 42 | Partial |
+| 43 | Non-Compliant |
+| 44 | N/A |
+| 45 | Compliance % |
+| 46 | Metric |
+| 47 | Value |
+| 48 | Category |
+| 49 | Finding |
+| 50 | Count |
+| 51 | Severity |
+| 52 | Action Required |
 
-## Sheet 4: Recovery_Process
+### Data Validation Values
 
-**Frozen Panes:** A4
+All dropdown/list values used across sheets:
 
-### Columns
+```
+Policy Document, Process Record, System Screenshot, Configuration Export
+Audit Log, Training Record, Test Result, Risk Assessment, Meeting Minutes
+Other, ✅ Verified, ⚠️ Pending, ❌ Not Verified, N/A, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
-| Col | Header |
-|-----|--------|
-| A | Recovery Method |
-| B | Use Case |
-| C | Process Steps |
-| D | Identity Verification |
-| E | Security Controls |
-| F | SLA |
-| G | Status |
-| H | Notes |
-
----
-
-## Sheet 5: Revocation_Process
-
-**Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Revocation Trigger |
-| B | SLA Requirement |
-| C | Actions Required |
-| D | Verification |
-| E | Systems Affected |
-| F | Responsible |
-| G | Status |
-| H | Notes |
-
----
-
-## Sheet 6: Audit_Log_Requirements
-
-**Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Event Type |
-| B | Details to Log |
-| C | Retention Period |
-| D | Alerting Required |
-| E | Review Frequency |
-| F | Status |
-| G | Notes |
-
----
-
-## Sheet 7: Evidence_Register
-
-**Data Rows:** 8 (rows 1–8) | **Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Evidence Type |
-| C | Description |
-| D | Related Process |
-| E | Location/Link |
-| F | Date Collected |
-| G | Collected By |
-| H | Status |
-
----
-
-## Sheet 8: Approval_SignOff
-
-**Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Role |
-| B | Name |
-| C | Signature |
-| D | Date |
-| E | Status |
-| F | Comments |
-
----
-
-## Sheet 9: Header_Row
+**Extracted:** 9 sheets, 52 columns, 18 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

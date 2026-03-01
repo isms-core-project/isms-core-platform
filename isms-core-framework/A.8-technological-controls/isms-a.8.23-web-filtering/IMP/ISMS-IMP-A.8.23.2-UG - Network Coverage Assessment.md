@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Network Coverage Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.23.2-UG |
+| **Related Policy** | ISMS-POL-A.8.23 (Web Filtering) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.23 (Web Filtering) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Web Filtering Network Coverage & Deployment Topology |
-| **Related Policy** | ISMS-POL-A.8.23, Section 2.1 (Threat Protection Requirements) |
-| **Purpose** | Verify WHERE web filtering is applied across network topology, identify coverage gaps, and ensure comprehensive protection across all network segments where users/devices access the internet |
-| **Target Audience** | Network Engineers, Security Engineers, Infrastructure Team, System Administrators, System Owners, Compliance Officers, Auditors, Workbook Developers (Python/Excel script maintainers) |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Web Filtering Network Coverage assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.23 (Web Filtering)
+- ISMS-IMP-A.8.23.1 (Filtering Infrastructure Assessment)
+- ISMS-IMP-A.8.23.3 (Policy Configuration Assessment)
+- ISMS-IMP-A.8.23.4 (Monitoring & Response Assessment)
+
+---
 
 ### Document Structure
 
@@ -35,15 +49,32 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Network Segment Inventory | Inventory of network segments requiring web filtering |
+| 3 | Coverage Matrix | Map web filtering coverage across network segments |
+| 4 | Gap Analysis | Identify network coverage gaps |
+| 5 | Device Inventory | Inventory of devices subject to web filtering |
+| 6 | Exemption Register | Track and manage filtering exemptions |
+| 7 | Coverage Verification | Verify web filtering coverage completeness |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
+
+---
+
 ## Assessment Overview
 
 ### What This Assessment Evaluates
 
-This assessment verifies WHERE web filtering is deployed across [Organization]'s network topology. Unlike Assessment 1 (which documents WHAT filtering solutions you have), this assessment focuses on COVERAGE - ensuring every network segment where users access the internet has appropriate filtering protection.
+This assessment verifies WHERE web filtering is deployed across [Organisation]'s network topology. Unlike Assessment 1 (which documents WHAT filtering solutions you have), this assessment focuses on COVERAGE - ensuring every network segment where users access the internet has appropriate filtering protection.
 
 ### Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - ISO/IEC 27001:2022 Control A.8.23: Web Filtering
 - ISMS-POL-A.8.23, Section 2.1 (Threat Protection Requirements): Threat Protection Requirements (Section 2.1.1: "SHALL apply web filtering across all network segments")
@@ -881,7 +912,7 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Examples:**
   - "Network isolated from internet (no direct internet access)"
   - "Application-layer security (all access via secure gateway)"
-  - "Strict NAC policy (only authorized devices can connect)"
+  - "Strict NAC policy (only authorised devices can connect)"
   - "Intensive monitoring and alerting (SOC reviews all traffic)"
   - "Time-limited exemption (30 days only)"
 - **REQUIRED:** Exemptions without compensating controls = unacceptable risk
@@ -1326,7 +1357,7 @@ Before submitting for review, verify all of the following:
 - [ ] Evidence Register populated
 - [ ] Evidence collected for all key claims
 - [ ] Evidence file names match Evidence IDs
-- [ ] Evidence organized in folder structure
+- [ ] Evidence organised in folder structure
 - [ ] Sensitive information sanitized
 - [ ] Evidence verification status marked
 
@@ -1469,7 +1500,7 @@ Common rejection reasons and solutions:
 2. **Coverage claims not verified:** Perform actual testing, document results
 3. **Gaps lack remediation plans:** Develop specific plans with owners and dates
 4. **Exemptions improperly justified:** Obtain proper approvals, document compensating controls
-5. **Evidence inadequate:** Collect missing evidence, organize properly
+5. **Evidence inadequate:** Collect missing evidence, organise properly
 
 ---
 
@@ -1477,7 +1508,7 @@ Common rejection reasons and solutions:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A filter with gaps is not a filter; it is a false sense of security."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

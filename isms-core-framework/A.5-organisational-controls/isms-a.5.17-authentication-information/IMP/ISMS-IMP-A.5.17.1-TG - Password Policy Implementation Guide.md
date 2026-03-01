@@ -7,176 +7,158 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Password Policy Implementation Guide |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.17.1-TG |
+| **Related Policy** | ISMS-POL-A.5.17 (Authentication Information) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.17 (Authentication Information) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.17 Authentication Information |
-| **Parent Policy** | ISMS-POL-A.5.17 - Authentication Information |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.17.1-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.17 (Authentication Information)
+- ISMS-IMP-A.5.17.2 (MFA Deployment Assessment)
+- ISMS-IMP-A.5.17.3 (Authentication Management Procedures)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a517_1_authentication_policy_standards.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.17.1` |
-| **Output Filename** | `ISMS-IMP-A.5.17.1_Authentication_Policy_and_Standards_YYYYMMDD.xlsx` |
-| **Workbook Title** | Authentication Policy and Standards |
-| **Total Sheets** | 9 (9 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #FCE4D6 | FCE4D6 | Peach (Warning Alt) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
-
-**Frozen Panes:** A3
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Password_Policy
+## Generator Alignment Reference
 
-**Frozen Panes:** A4
+> Auto-generated from `generate_a517_1_authentication_policy_standards.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.17.1`
 
-| Col | Header |
-|-----|--------|
-| A | Requirement Category |
-| B | Policy Requirement |
-| C | Standard Value |
-| D | Current Setting |
-| E | Compliant |
-| F | Implementation Notes |
-| G | Exception Process |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: MFA_Requirements
+| # | Sheet Name |
+|---|-----------|
+| 1 | Password Policy |
+| 2 | MFA Requirements |
+| 3 | Credential Standards |
+| 4 | User Responsibilities |
+| 5 | System Requirements |
+| 6 | Evidence Register |
+| 7 | Approval Sign-Off |
+| 8 | Summary Dashboard |
+| 9 | Instructions & Legend |
 
-**Frozen Panes:** A4
+### Color Palette
 
-### Columns
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-| Col | Header |
-|-----|--------|
-| A | System/Access Type |
-| B | MFA Required |
-| C | Approved Methods |
-| D | Fallback Method |
-| E | Current Status |
-| F | Implementation Date |
-| G | Owner |
-| H | Notes |
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | PASSWORD POLICY REQUIREMENTS |
+| 2 | MULTI-FACTOR AUTHENTICATION REQUIREMENTS |
+| 3 | CREDENTIAL TYPE STANDARDS |
+| 4 | USER RESPONSIBILITIES FOR AUTHENTICATION INFORMATION |
+| 5 | AUTHENTICATION SYSTEM TECHNICAL REQUIREMENTS |
+| 6 | Requirement Category |
+| 7 | Policy Requirement |
+| 8 | Standard Value |
+| 9 | Current Setting |
+| 10 | Compliant |
+| 11 | Implementation Notes |
+| 12 | Exception Process |
+| 13 | System/Access Type |
+| 14 | MFA Required |
+| 15 | Approved Methods |
+| 16 | Fallback Method |
+| 17 | Current Status |
+| 18 | Implementation Date |
+| 19 | Owner |
+| 20 | Notes |
+| 21 | Credential Type |
+| 22 | Use Cases |
+| 23 | Security Requirements |
+| 24 | Storage Requirements |
+| 25 | Rotation Policy |
+| 26 | Revocation Process |
+| 27 | Approved Products |
+| 28 | Responsibility |
+| 29 | Description |
+| 30 | Requirement Level |
+| 31 | Enforcement Method |
+| 32 | Training Required |
+| 33 | Requirement Area |
+| 34 | Technical Requirement |
+| 35 | Standard/Protocol |
+| 36 | Implementation |
+| 37 | Status |
+| 38 | Evidence |
+| 39 | Evidence ID |
+| 40 | Assessment Area |
+| 41 | Evidence Type |
+| 42 | Location / Path |
+| 43 | Date Collected |
+| 44 | Collected By |
+| 45 | Verification Status |
+| 46 | Total Items |
+| 47 | Partial |
+| 48 | Non-Compliant |
+| 49 | N/A |
+| 50 | Compliance % |
+| 51 | Metric |
+| 52 | Value |
+| 53 | Category |
+| 54 | Finding |
+| 55 | Count |
+| 56 | Severity |
+| 57 | Action Required |
 
-## Sheet 4: Credential_Standards
+### Data Validation Values
 
-**Frozen Panes:** A4
+All dropdown/list values used across sheets:
 
-### Columns
+```
+Policy Document, Process Record, System Screenshot, Configuration Export
+Audit Log, Training Record, Test Result, Risk Assessment, Meeting Minutes
+Other, ✅ Verified, ⚠️ Pending, ❌ Not Verified, N/A, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
-| Col | Header |
-|-----|--------|
-| A | Credential Type |
-| B | Use Cases |
-| C | Security Requirements |
-| D | Storage Requirements |
-| E | Rotation Policy |
-| F | Revocation Process |
-| G | Approved Products |
-| H | Notes |
-
----
-
-## Sheet 5: User_Responsibilities
-
-**Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Responsibility |
-| B | Description |
-| C | Requirement Level |
-| D | Enforcement Method |
-| E | Training Required |
-| F | Notes |
-
----
-
-## Sheet 6: System_Requirements
-
-**Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Requirement Area |
-| B | Technical Requirement |
-| C | Standard/Protocol |
-| D | Implementation |
-| E | Status |
-| F | Evidence |
-| G | Notes |
-
----
-
-## Sheet 7: Evidence_Register
-
-**Data Rows:** 8 (rows 1–8) | **Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Evidence Type |
-| C | Description |
-| D | Related Section |
-| E | Location/Link |
-| F | Date Collected |
-| G | Collected By |
-| H | Status |
-
----
-
-## Sheet 8: Approval_SignOff
-
-**Frozen Panes:** A4
-
----
-
-## Sheet 9: Header_Row
+**Extracted:** 9 sheets, 57 columns, 18 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

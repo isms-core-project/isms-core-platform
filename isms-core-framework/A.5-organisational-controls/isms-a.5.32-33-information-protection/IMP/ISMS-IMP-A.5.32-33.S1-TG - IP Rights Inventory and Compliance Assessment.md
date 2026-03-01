@@ -3,200 +3,173 @@
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.5.32: Intellectual Property Rights
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | IP Rights Inventory and Compliance Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.32-33.S1-TG |
+| **Related Policy** | ISMS-POL-A.5.32-33 (Information Protection) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.32 (Intellectual Property Rights) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Intellectual Property Identification, Classification, Protection, and Compliance |
-| **Related Policy** | ISMS-POL-A.5.32-33, Section 2.1 (IP Identification and Classification) |
-| **Purpose** | Guide users through systematic IP discovery, classification, protection assessment, and third-party IP compliance verification |
-| **Target Audience** | Legal Counsel, CISO, IP Owners, System Owners, IT Teams, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Annual or After Significant IP Changes |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for IP Rights Inventory assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.32-33 (Information Protection)
+- ISMS-IMP-A.5.32-33.S2 (Records Protection Assessment)
+- ISMS-IMP-A.5.32-33.S3 (Retention and Disposal Schedule Assessment)
 
 ---
 
-
----
 # Technical Specification
-**Audience:** Workbook Developers, Python/Excel Script Maintainers
-
-
-> Auto-generated from `generate_a532_33_1_ip_rights_inventory.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.32-33.S1` |
-| **Output Filename** | `ISMS-IMP-A.5.32-33.S1_IP_Rights_Inventory_YYYYMMDD.xlsx` |
-| **Workbook Title** | IP Rights Inventory |
-| **Total Sheets** | 8 (8 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #1F4E79 | 1F4E79 | Custom |
-| #2E75B6 | 2E75B6 | Custom |
-| #69DB7C | 69DB7C | Custom |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D6DCE4 | D6DCE4 | Silver (Neutral) |
-| #FF6B6B | FF6B6B | Custom |
-| #FFA94D | FFA94D | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Ip_Asset_Inventory
+## Generator Alignment Reference
 
-**Data Rows:** 46 (rows 5–50)
+> Auto-generated from `generate_a532_33_1_ip_rights_inventory.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.32-33.S1`
 
-| Col | Header |
-|-----|--------|
-| A | IP Asset ID |
-| B | IP Asset Name |
-| C | IP Category |
-| D | Description |
-| E | IP Owner |
-| F | Custodian |
-| G | Legal Protection Status |
-| H | Business Value |
-| I | Classification |
-| J | Creation Date |
-| K | Last Review |
-| L | Notes |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: Ip_Protection_Assessment
+| # | Sheet Name |
+|---|-----------|
+| 1 | IP Asset Inventory |
+| 2 | IP Protection Assessment |
+| 3 | Third-Party IP Register |
+| 4 | Software License Compliance |
+| 5 | Gap Analysis |
+| 6 | Evidence Register |
+| 7 | Summary Dashboard |
+| 8 | Approval Sign-Off |
+| 9 | Instructions & Legend |
 
-**Data Rows:** 46 (rows 5–50)
+### Color Palette
 
-### Columns
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-| Col | Header |
-|-----|--------|
-| A | IP Asset ID |
-| B | IP Asset Name |
-| C | Access Control |
-| D | Technical Controls |
-| E | Administrative Controls |
-| F | Physical Controls |
-| G | Legal Protection |
-| H | Control Effectiveness |
-| I | Gap Description |
-| J | Remediation Needed |
-| K | Status |
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | IP Asset ID |
+| 2 | IP Asset Name |
+| 3 | IP Category |
+| 4 | Description |
+| 5 | IP Owner |
+| 6 | Custodian |
+| 7 | Legal Protection Status |
+| 8 | Business Value |
+| 9 | Classification |
+| 10 | Creation Date |
+| 11 | Last Review |
+| 12 | Notes |
+| 13 | Access Control |
+| 14 | Technical Controls |
+| 15 | Administrative Controls |
+| 16 | Physical Controls |
+| 17 | Legal Protection |
+| 18 | Control Effectiveness |
+| 19 | Gap Description |
+| 20 | Remediation Needed |
+| 21 | Status |
+| 22 | Third-Party IP ID |
+| 23 | Software/Content Name |
+| 24 | Vendor |
+| 25 | License Type |
+| 26 | License Quantity |
+| 27 | Deployed Quantity |
+| 28 | Compliance Status |
+| 29 | Contract Reference |
+| 30 | Renewal Date |
+| 31 | Open Source License |
+| 32 | Software Name |
+| 33 | License Model |
+| 34 | Entitled |
+| 35 | Deployed |
+| 36 | Variance |
+| 37 | Compliance Risk |
+| 38 | Remediation Action |
+| 39 | Due Date |
+| 40 | Gap ID |
+| 41 | Gap Category |
+| 42 | Related IP |
+| 43 | Risk Rating |
+| 44 | Owner |
+| 45 | Evidence ID |
+| 46 | Evidence Type |
+| 47 | Related Item |
+| 48 | Storage Location |
+| 49 | Collected Date |
+| 50 | Collected By |
+| 51 | Verification Status |
+| 52 | Assessment Area |
+| 53 | Total Items |
+| 54 | Compliant |
+| 55 | Partial |
+| 56 | Non-Compliant |
+| 57 | N/A |
+| 58 | Compliance % |
+| 59 | Category |
+| 60 | Finding |
+| 61 | Count |
+| 62 | Severity |
+| 63 | Action Required |
 
-## Sheet 4: Third_Party_Ip_Register
+### Data Validation Values
 
-**Data Rows:** 56 (rows 5–60)
+All dropdown/list values used across sheets:
 
-### Columns
+```
+Trade Secret, Patent, Copyright, Trademark, Registered, Pending, Unregistered
+N/A, High, Medium, Low, Restricted, Confidential, Internal, Public, Effective
+Partial, Ineffective, Complete, In Progress, Not Started, Perpetual
+Subscription, Open Source, Freeware, Compliant, Over-deployed, Under-utilised
+GPL, Apache, MIT, BSD, LGPL, MPL, Other, Named User, Device, Enterprise
+Per Core, None, Open, Protection, Compliance, Documentation, Process, Accepted
+Document, Screenshot, Report, Configuration, Certificate, Verified
+Pending Review, Not Verified, Expired, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
 
-| Col | Header |
-|-----|--------|
-| A | Third-Party IP ID |
-| B | Software/Content Name |
-| C | Vendor |
-| D | License Type |
-| E | License Quantity |
-| F | Deployed Quantity |
-| G | Compliance Status |
-| H | Contract Reference |
-| I | Renewal Date |
-| J | Open Source License |
-| K | Notes |
-
----
-
-## Sheet 5: Software_License_Compliance
-
-**Data Rows:** 46 (rows 5–50)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Software Name |
-| B | Vendor |
-| C | License Model |
-| D | Entitled |
-| E | Deployed |
-| F | Variance |
-| G | Compliance Risk |
-| H | Remediation Action |
-| I | Due Date |
-| J | Status |
-
----
-
-## Sheet 6: Gap_Analysis
-
-**Data Rows:** 46 (rows 5–50)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Gap ID |
-| B | Gap Category |
-| C | Description |
-| D | Related IP |
-| E | Risk Rating |
-| F | Remediation Action |
-| G | Owner |
-| H | Due Date |
-| I | Status |
-| J | Notes |
-
----
-
-## Sheet 7: Evidence_Register
-
-**Data Rows:** 46 (rows 5–50)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Description |
-| C | Evidence Type |
-| D | Related Item |
-| E | Storage Location |
-| F | Collected Date |
-| G | Collected By |
-| H | Verification Status |
-
----
-
-## Sheet 8: Approval
-
-**Data Rows:** 8 (rows 13–20)
+**Extracted:** 9 sheets, 63 columns, 63 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

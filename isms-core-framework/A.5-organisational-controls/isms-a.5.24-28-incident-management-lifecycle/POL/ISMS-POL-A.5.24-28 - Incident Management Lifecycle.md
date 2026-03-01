@@ -52,11 +52,11 @@
 
 # Executive Summary
 
-This policy establishes [Organization]'s requirements for managing information security incidents throughout their complete lifecycle in accordance with ISO/IEC 27001:2022 Controls A.5.24 through A.5.28.
+This policy establishes [Organisation]'s requirements for managing information security incidents throughout their complete lifecycle in accordance with ISO/IEC 27001:2022 Controls A.5.24 through A.5.28.
 
-**Purpose**: Define organizational requirements for incident management control implementation and governance. This policy establishes WHAT incident management capabilities are required, WHO is accountable, and WHEN actions must occur. Implementation procedures (HOW to execute incident response) are documented separately in ISMS-IMP-A.5 (UG/TG variants).24-28 Implementation Guides.
+**Purpose**: Define organisational requirements for incident management control implementation and governance. This policy establishes WHAT incident management capabilities are required, WHO is accountable, and WHEN actions must occur. Implementation procedures (HOW to execute incident response) are documented separately in ISMS-IMP-A.5 (UG/TG variants).24-28 Implementation Guides.
 
-**Scope**: This policy applies to all information security events and incidents affecting [Organization]'s information assets, systems, networks, and services, regardless of source (internal, external, third-party) or deployment model (on-premises, cloud, hybrid).
+**Scope**: This policy applies to all information security events and incidents affecting [Organisation]'s information assets, systems, networks, and services, regardless of source (internal, external, third-party) or deployment model (on-premises, cloud, hybrid).
 
 **Combined Control Approach**: These five controls are implemented as a unified lifecycle framework:
 
@@ -80,13 +80,13 @@ Despite unified implementation, each control maintains distinct requirements for
 - Data and information assets (all classifications)
 - Network infrastructure (on-premises, cloud, hybrid)
 - Users and authentication systems
-- Third-party systems interfacing with [Organization]
+- Third-party systems interfacing with [Organisation]
 - Physical security incidents affecting information assets
 
 **Incident Categories** covered:
 
 - Malware and ransomware
-- Unauthorized access and privilege escalation
+- Unauthorised access and privilege escalation
 - Data breaches and exfiltration
 - Denial of service (DoS/DDoS)
 - Social engineering and phishing
@@ -105,10 +105,10 @@ The following require Executive Management approval and documented risk acceptan
 
 ## Third-Party Applicability
 
-Third-party service providers, contractors, and partners accessing [Organization] systems or handling [Organization] data MUST:
+Third-party service providers, contractors, and partners accessing [Organisation] systems or handling [Organisation] data MUST:
 
-- Report security events and incidents per [Organization] reporting requirements
-- Cooperate with [Organization] incident response activities
+- Report security events and incidents per [Organisation] reporting requirements
+- Cooperate with [Organisation] incident response activities
 - Comply with evidence preservation requirements
 - Participate in post-incident reviews when third-party actions contributed to incident
 
@@ -124,7 +124,7 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 
 **Tier 2: Conditional Applicability**
 
-- PCI DSS v4.0.1, FINMA, DORA, NIS2, HIPAA - Apply where [Organization]'s business activities trigger applicability per ISMS-POL-00
+- PCI DSS v4.0.1, FINMA, DORA, NIS2, HIPAA - Apply where [Organisation]'s business activities trigger applicability per ISMS-POL-00
 
 ---
 
@@ -132,31 +132,31 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 
 ## Incident Management Planning & Preparation (A.5.24)
 
-[Organization] SHALL establish incident management capabilities BEFORE incidents occur.
+[Organisation] SHALL establish incident management capabilities BEFORE incidents occur.
 
-**PS-3.1.1 Organizational Capability**: [Organization] MUST establish an incident response capability through designated CSIRT (Computer Security Incident Response Team) and/or SOC (Security Operations Center) functions with defined authority and resources.
+**PS-3.1.1 Organisational Capability**: [Organisation] MUST establish an incident response capability through designated CSIRT (Computer Security Incident Response Team) and/or SOC (Security Operations Center) functions with defined authority and resources.
 
-**PS-3.1.2 Documented Procedures**: [Organization] MUST document and maintain incident response procedures covering the complete incident lifecycle. Procedures SHALL be version controlled and reviewed annually.
+**PS-3.1.2 Documented Procedures**: [Organisation] MUST document and maintain incident response procedures covering the complete incident lifecycle. Procedures SHALL be version controlled and reviewed annually.
 
-**PS-3.1.3 Classification Framework**: [Organization] MUST establish an incident classification framework defining severity levels and incident categories. The framework SHALL enable consistent incident prioritization and escalation.
+**PS-3.1.3 Classification Framework**: [Organisation] MUST establish an incident classification framework defining severity levels and incident categories. The framework SHALL enable consistent incident prioritization and escalation.
 
 **PS-3.1.4 Training Requirements**: Incident response personnel MUST be trained and demonstrate competency before assuming incident response duties. Competency SHALL be assessed through practical tabletop exercises and supervisor verification of response procedure knowledge. Minimum competency standards are defined in ISMS-IMP-A.5.24-28.S1. Training SHALL be refreshed annually (12-month maximum interval from prior completion).
 
-**PS-3.1.5 Exercise Requirements**: [Organization] MUST conduct incident response tabletop exercises minimum twice annually covering major incident scenarios. Exercise findings SHALL be documented, prioritized by risk, and tracked as improvement actions per PS-3.5.3 (Learning & Improvement). Critical capability gaps require immediate remediation with executive escalation.
+**PS-3.1.5 Exercise Requirements**: [Organisation] MUST conduct incident response tabletop exercises minimum twice annually covering major incident scenarios. Exercise findings SHALL be documented, prioritized by risk, and tracked as improvement actions per PS-3.5.3 (Learning & Improvement). Critical capability gaps require immediate remediation with executive escalation.
 
-**PS-3.1.6 Tools & Technology**: [Organization] MUST provide incident response teams with appropriate tools including: (1) incident management system with workflow tracking, (2) forensic acquisition capability, (3) secure communication channel (encrypted), (4) access to monitoring/logging systems per A.8.15/A.8.16. Tool adequacy is assessed annually in ISMS-IMP-A.5.24-28.S1.
+**PS-3.1.6 Tools & Technology**: [Organisation] MUST provide incident response teams with appropriate tools including: (1) incident management system with workflow tracking, (2) forensic acquisition capability, (3) secure communication channel (encrypted), (4) access to monitoring/logging systems per A.8.15/A.8.16. Tool adequacy is assessed annually in ISMS-IMP-A.5.24-28.S1.
 
 **Verification**: Documented procedures, training records, exercise reports, and tool capabilities are verified through ISMS-IMP-A.5.24-28.S1 assessment.
 
 ## Event Assessment & Decision (A.5.25)
 
-[Organization] SHALL systematically assess all security events to determine if they constitute incidents requiring response.
+[Organisation] SHALL systematically assess all security events to determine if they constitute incidents requiring response.
 
 **PS-3.2.1 Assessment Requirement**: All security events detected through monitoring or reported by users MUST be assessed to determine if they constitute incidents requiring response. Events SHALL be prioritized for assessment based on: (1) automated severity indicators from monitoring systems (A.8.16), (2) affected system criticality per asset register (A.5.9), (3) event source (SOC alerts prioritized over user reports for duplicate events). Event prioritization methodology is detailed in ISMS-IMP-A.5.24-28.S2.
 
 **PS-3.2.2 Severity Classification**: All confirmed incidents MUST be assigned a severity level based on impact to confidentiality, integrity, and availability using the CIA Impact Scoring Matrix defined in ISMS-REF-A.5.24-28 Section 1. Scoring considers: data volume affected, system criticality (per A.5.9 asset register), business process impact, regulatory notification triggers. Critical and High severity incidents SHALL be scored independently by two analysts to ensure consistency. Incident severity MAY be reclassified if new information changes impact assessment; reclassification to High/Critical requires Incident Response Manager approval with retroactive management notifications per Section 5.2.
 
-**PS-3.2.3 Category Classification**: All incidents MUST be categorized by type using the organizational incident taxonomy to enable appropriate response procedures and trend analysis.
+**PS-3.2.3 Category Classification**: All incidents MUST be categorized by type using the organisational incident taxonomy to enable appropriate response procedures and trend analysis.
 
 **PS-3.2.4 Escalation Requirements**: Incidents MUST be escalated to appropriate management levels based on severity. Critical incidents require immediate Executive Management notification.
 
@@ -166,12 +166,12 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 
 ## Incident Response Operations (A.5.26)
 
-[Organization] SHALL respond to confirmed incidents in accordance with documented procedures.
+[Organisation] SHALL respond to confirmed incidents in accordance with documented procedures.
 
 **PS-3.3.1 Response Execution**: All confirmed incidents MUST be responded to following documented procedures appropriate to the incident severity and category. Response procedures are selected based on incident category (PS-3.2.3) with severity level (PS-3.2.2) determining resource allocation and escalation. Incident response playbooks are maintained in ISMS-REF-A.5.24-28 Section 3 for each primary incident category:
 
 - **Malware/Ransomware**: Isolation, forensic imaging, malware analysis, eradication verification
-- **Unauthorized Access**: Credential revocation, session termination, access log review, privilege escalation assessment
+- **Unauthorised Access**: Credential revocation, session termination, access log review, privilege escalation assessment
 - **Data Breach**: Scope assessment, regulatory notification analysis (GDPR/nDSG), affected party identification, evidence preservation
 - **Denial of Service**: Traffic analysis, mitigation activation (rate limiting, upstream filtering), service restoration prioritization
 - **Social Engineering**: User notification, credential reset, awareness reinforcement, similar attack prevention
@@ -196,17 +196,17 @@ For incidents spanning multiple categories, primary category is determined by mo
   - Regulators (GDPR/nDSG breach notification per Art. 33/Art. 24) - Legal and DPO coordinate
   - Customers (if their data affected) - Communications team drafts, Executive Management approves
   - Law enforcement (if criminal activity suspected) - Legal counsel decides, coordinates handoff
-  - Third parties (if supplier incident impacts [Organization]) - Supplier Management coordinates per A.5.22
+  - Third parties (if supplier incident impacts [Organisation]) - Supplier Management coordinates per A.5.22
 
 Communication templates for each severity level and stakeholder type are maintained in ISMS-REF-A.5.24-28 Section 2 and incident management system. All Critical/High incident communications require Incident Response Manager approval before sending.
 
-**PS-3.3.6 Response Time Standards**: [Organization] MUST define and maintain response time standards (SLAs) by severity level per Section 5.1.1. SLA compliance SHALL be measured monthly and reported in quarterly executive summaries. Missed SLAs require root cause analysis per PS-3.5.2 (Post-Incident Review) to identify systemic issues requiring remediation.
+**PS-3.3.6 Response Time Standards**: [Organisation] MUST define and maintain response time standards (SLAs) by severity level per Section 5.1.1. SLA compliance SHALL be measured monthly and reported in quarterly executive summaries. Missed SLAs require root cause analysis per PS-3.5.2 (Post-Incident Review) to identify systemic issues requiring remediation.
 
 **Verification**: Response execution, SLA compliance, and communication effectiveness are verified through ISMS-IMP-A.5.24-28.S3 assessment.
 
 ## Forensic Evidence Collection & Preservation (A.5.28)
 
-[Organization] SHALL establish procedures for forensic evidence identification, collection, acquisition, and preservation.
+[Organisation] SHALL establish procedures for forensic evidence identification, collection, acquisition, and preservation.
 
 **PS-3.4.1 Evidence Collection Requirement**: Forensic evidence MUST be collected for all Critical severity incidents and High severity incidents with potential legal or regulatory implications.
 
@@ -216,15 +216,15 @@ Communication templates for each severity level and stakeholder type are maintai
 
 **PS-3.4.4 Chain of Custody**: All evidence MUST have documented chain of custody from collection through disposal including custody transfers, storage locations, and access records.
 
-**PS-3.4.5 Evidence Preservation**: Evidence MUST be preserved securely with access controls, encryption, and integrity verification. Retention periods SHALL comply with regulatory requirements and [Organization] retention policies.
+**PS-3.4.5 Evidence Preservation**: Evidence MUST be preserved securely with access controls, encryption, and integrity verification. Retention periods SHALL comply with regulatory requirements and [Organisation] retention policies.
 
-**PS-3.4.6 Legal Hold**: [Organization] MUST implement legal hold procedures when litigation is commenced or reasonably anticipated, suspending normal deletion processes for relevant evidence.
+**PS-3.4.6 Legal Hold**: [Organisation] MUST implement legal hold procedures when litigation is commenced or reasonably anticipated, suspending normal deletion processes for relevant evidence.
 
 **Verification**: Evidence procedures, chain of custody documentation, and preservation controls are verified through ISMS-IMP-A.5.24-28.S4 assessment.
 
 ## Post-Incident Learning & Improvement (A.5.27)
 
-[Organization] SHALL extract lessons from incidents and translate findings into control improvements.
+[Organisation] SHALL extract lessons from incidents and translate findings into control improvements.
 
 **PS-3.5.1 Post-Incident Review Requirement**: Post-Incident Reviews (PIR) MUST be conducted for all Critical and High severity incidents within defined timeframes. Medium severity incidents require PIR when they reveal novel attack techniques or significant control failures.
 
@@ -232,9 +232,9 @@ Communication templates for each severity level and stakeholder type are maintai
 
 **PS-3.5.3 Improvement Implementation**: Lessons learned MUST be translated into actionable improvements with assigned owners and target completion dates. Improvement actions SHALL be tracked to completion.
 
-**PS-3.5.4 Knowledge Management**: [Organization] MUST maintain a lessons learned repository accessible to incident response personnel. Response playbooks SHALL be updated based on lessons learned.
+**PS-3.5.4 Knowledge Management**: [Organisation] MUST maintain a lessons learned repository accessible to incident response personnel. Response playbooks SHALL be updated based on lessons learned.
 
-**PS-3.5.5 Metrics & Trend Analysis**: [Organization] MUST track incident metrics (volume, severity, response times, SLA compliance) and conduct quarterly trend analysis to identify systemic issues.
+**PS-3.5.5 Metrics & Trend Analysis**: [Organisation] MUST track incident metrics (volume, severity, response times, SLA compliance) and conduct quarterly trend analysis to identify systemic issues.
 
 **PS-3.5.6 Annual Program Review**: The incident management program MUST be reviewed annually to assess effectiveness, benchmark against standards, and update procedures, training, and tools.
 
@@ -319,7 +319,7 @@ Communication templates for each severity level and stakeholder type are maintai
 
 ## Incident Severity Framework
 
-[Organization] MUST define severity levels with associated response requirements:
+[Organisation] MUST define severity levels with associated response requirements:
 
 | Severity | Definition | Response Requirement |
 |----------|------------|----------------------|
@@ -330,7 +330,7 @@ Communication templates for each severity level and stakeholder type are maintai
 
 ## Response Time Standards (SLAs)
 
-[Organization] defines the following response time standards by severity level:
+[Organisation] defines the following response time standards by severity level:
 
 | Severity | Initial Response | Containment Target | Resolution Target | Management Updates |
 |----------|------------------|-------------------|-------------------|-------------------|
@@ -388,7 +388,7 @@ This policy integrates with:
 ## Policy Review
 
 - **Frequency**: Annual minimum
-- **Triggers**: Major incident revealing policy gap, regulatory changes, audit findings, organizational changes
+- **Triggers**: Major incident revealing policy gap, regulatory changes, audit findings, organisational changes
 - **Reviewers**: CISO (owner), Incident Response Manager (contributor), Legal (compliance)
 - **Approval**: CISO (technical), Executive Management (strategic)
 
@@ -477,7 +477,7 @@ Non-compliance with this policy may result in:
 
 **Information Security Incident**: An unwanted or unexpected information security event with significant probability of compromising business operations and threatening information security. Incidents require response actions.
 
-**CSIRT (Computer Security Incident Response Team)**: Organizational team responsible for receiving, reviewing, and responding to information security incidents.
+**CSIRT (Computer Security Incident Response Team)**: Organisational team responsible for receiving, reviewing, and responding to information security incidents.
 
 **SOC (Security Operations Center)**: Team or function responsible for monitoring, detecting, analyzing, and responding to security events and incidents.
 
@@ -578,4 +578,4 @@ The boundary is: POL-A.5.24-28 defines WHAT incident management capabilities are
 
 *This policy establishes requirements for information security incident management covering the complete lifecycle (A.5.24-28). Implementation procedures are documented in ISMS-IMP-A.5.24-28 (UG/TG).S1 through S5.*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -45,20 +45,19 @@
 - ISMS-IMP-A.5.32-33.S1-UG/TG (IP Rights Inventory and Compliance Assessment)
 - ISMS-IMP-A.5.32-33.S2-UG/TG (Records Protection Assessment)
 - ISMS-IMP-A.5.32-33.S3-UG/TG (Retention and Disposal Schedule Assessment)
-- ISMS-IMP-A.5.32-33.S4-UG/TG (Information Protection Compliance Dashboard)
 - ISO/IEC 27001:2022 Controls A.5.32, A.5.33
 
 ---
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for protecting intellectual property, proprietary information, and ensuring proper protection of records throughout their lifecycle.
+This policy establishes [Organisation]'s requirements for protecting intellectual property, proprietary information, and ensuring proper protection of records throughout their lifecycle.
 
-**Scope**: This policy applies to all intellectual property, proprietary information, trade secrets, and records created, processed, stored, or transmitted by [Organization], including both physical and electronic formats.
+**Scope**: This policy applies to all intellectual property, proprietary information, trade secrets, and records created, processed, stored, or transmitted by [Organisation], including both physical and electronic formats.
 
 **Purpose**: Define organisational requirements for intellectual property protection and records management. This policy establishes WHAT protection is required and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.32-33 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss CO (Code of Obligations), Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, healthcare regulations) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss CO (Code of Obligations), Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, healthcare regulations) apply where [Organisation]'s business activities trigger applicability.
 
 **Combined Control Approach**: Controls A.5.32 (Intellectual Property Rights) and A.5.33 (Protection of Records) are implemented together because they share common governance structures and protection mechanisms.
 
@@ -74,7 +73,7 @@ This policy establishes [Organization]'s requirements for protecting intellectua
 
 **ISO/IEC 27001:2022 Annex A.5.33 - Protection of Records**
 
-> *Records should be protected from loss, destruction, falsification, unauthorized access and unauthorized release in accordance with legislative, regulatory, contractual and business requirements.*
+> *Records should be protected from loss, destruction, falsification, unauthorised access and unauthorised release in accordance with legislative, regulatory, contractual and business requirements.*
 
 **Control Objectives**:
 
@@ -167,7 +166,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Open source license compliance frameworks (GPL, Apache, MIT)
 - Software Asset Management (SAM) best practices
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent retention requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent retention requirements apply where multiple regulations overlap.
 
 ---
 
@@ -420,7 +419,7 @@ Nonconformities related to this policy (e.g., unlicensed software, premature dis
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
@@ -430,7 +429,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Controls A.5.32 and A.5.33 applicability justified in [Organization]'s SoA
+- Controls A.5.32 and A.5.33 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 
 **Related Controls**:
@@ -528,4 +527,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for intellectual property and records protection. Implementation procedures are documented in ISMS-IMP-A.5.32-33 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

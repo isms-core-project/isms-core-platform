@@ -8,26 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Entry Control Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.1-2-3-S2-UG |
+| **Related Policy** | ISMS-POL-A.7.1-2-3-S2 (Physical Access Control) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.2 (Physical Entry) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Physical Entry Controls - Access Systems, Visitor Management, Contractor Access |
-| **Related Policy** | ISMS-POL-A.7.1-2-3, Section 2.2 (Physical Entry Controls) |
-| **Purpose** | Document entry control mechanisms, assess access control systems, verify visitor and contractor procedures |
-| **Target Audience** | Facilities Management, Physical Security, Reception, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Access System Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Entry Control assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.1-2-3-S2 (Physical Access Control)
+- ISMS-IMP-A.7.1-2-3-S1 (Perimeter Security Assessment)
+- ISMS-IMP-A.7.1-2-3-S3 (Secure Areas Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.1-2-3-S2-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Access Control Systems | Assess physical access control systems and technologies |
+| 3 | Visitor Management | Evaluate visitor registration and escort procedures |
+| 4 | Contractor Access | Assess access management for contractors and third parties |
+| 5 | After-Hours Access | Evaluate out-of-hours access controls and monitoring |
+| 6 | Evidence Register | Store and reference evidence supporting assessments |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -102,7 +130,6 @@ Entry controls are the ACTIVE security measures that verify and log who enters s
 | ISMS-IMP-A.7.1-2-3-S1 | Perimeter Security     | WHERE are the boundaries?          |
 | **ISMS-IMP-A.7.1-2-3-S2** | **Entry Control**  | **HOW is access controlled?**      |
 | ISMS-IMP-A.7.1-2-3-S3 | Secure Areas           | WHAT happens inside secure areas?  |
-| ISMS-IMP-A.7.1-2-3-S4 | Compliance Dashboard   | Overall physical access control    |
 
 This assessment builds on Zone definitions from S1 to document HOW access is controlled at each entry point.
 
@@ -200,7 +227,6 @@ This assessment has DEPENDENCIES on:
 
 Outputs from this assessment are INPUT to:
 
-- ISMS-IMP-A.7.1-2-3-S4 (Compliance Dashboard) - Entry control compliance score
 
 ---
 
@@ -1021,7 +1047,7 @@ If approval is delayed beyond 10 business days:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Access is a privilege, not a right."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

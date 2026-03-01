@@ -5,24 +5,60 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Security Controls During Disruption Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.29.1-UG |
-| **Title** | Security Controls During Disruption Assessment |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.29 |
-| **Control Name** | Information Security During Disruption |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.5.29 (Security During Disruption) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.29) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Chief Information Security Officer (CISO) |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.29 (Security During Disruption)
+- ISMS-IMP-A.5.29.2 (Degraded Mode Security Requirements)
+- ISMS-IMP-A.5.29.3 (Recovery Security Verification)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.29.1-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 9 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Security Control Inventory** | Inventory of security controls assessed for disruption resilience |
+| **Minimum Baseline** | Minimum security baseline requirements during disruptive events |
+| **Security Posture Levels** | Security posture definitions for normal, degraded, and crisis modes |
+| **Compensating Controls** | Compensating controls activated when primary controls are unavailable |
+| **BCDR Security Review** | Security requirements integrated into BC/DR plans and tests |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -515,7 +551,6 @@ Assessment Published to ISMS Evidence Library
 |----------|--------------|
 | **ISMS-IMP-A.5.29.2** | Degraded Mode Security Requirements (detailed degradation scenarios) |
 | **ISMS-IMP-A.5.29.3** | Recovery Security Verification (post-disruption validation) |
-| **ISMS-IMP-A.5.29.4** | Compliance Dashboard (metrics and KPIs) |
 | **ISMS-IMP-A.5.30-8.13-14** | BC/DR implementation with security integration |
 
 ---
@@ -524,7 +559,7 @@ Assessment Published to ISMS Evidence Library
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"In chaos, there is fertility."*
+— Anaïs Nin
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

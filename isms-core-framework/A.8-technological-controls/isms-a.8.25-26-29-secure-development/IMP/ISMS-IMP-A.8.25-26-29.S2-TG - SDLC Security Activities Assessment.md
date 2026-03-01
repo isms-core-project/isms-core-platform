@@ -8,101 +8,200 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-IMP-A.8.25-26-29-S2-TG |
+|-------|-------|
+| **Document Title** | SDLC Security Activities Assessment |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.25-26-29.S2-TG |
+| **Related Policy** | ISMS-POL-A.8.25-26-29 (Secure Development) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.25 (Secure Development Life Cycle) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | SDLC Security Activities Compliance (A.8.25) |
-| **Related Policy** | ISMS-POL-A.8.25-26-29 Section 3 |
-| **Purpose** | Assessment of security integration throughout the software development lifecycle, secure coding practices, code review, security tools, and defect management |
-| **Target Audience** | Development Managers, Security Champions, DevOps Leads, Security Assessors |
-| **Assessment Type** | Application-specific assessment (per application or team) |
-| **Review Cycle** | Quarterly for High-Risk applications, Semi-annually for Medium-Risk, Annually for Low-Risk |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial traditional implementation guide | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.25-26-29 (Secure Development)
+- ISMS-IMP-A.8.25-26-29.S1 (Security Requirements Assessment)
+- ISMS-IMP-A.8.25-26-29.S3 (Security Testing Results Assessment)
+- ISMS-IMP-A.8.25-26-29.S4 (Vulnerability Remediation Assessment)
 
 ---
+
 # Technical Specification
-
-
-> Auto-generated from `generate_a825_26_29_2_sdlc_security_activities.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.25-26-29.S2` |
-| **Output Filename** | `ISMS-IMP-A.8.25-26-29.S2_SDLC_Security_Activities_Assessment_YYYYMMDD.xlsx` |
-| **Total Sheets** | 12 (12 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Controls A.8.25, A.8.26, A.8.29: Secure Development |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: SDLC_Phase_Activities
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a825_26_29_2_sdlc_security_activities.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Secure_Coding_Standards
+**Document ID:** `ISMS-IMP-A.8.25-26-29.S2`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Code_Review_Metrics
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | SDLC Phase Activities |
+| 3 | Secure Coding Standards |
+| 4 | Code Review Metrics |
+| 5 | Security Tools Deployment |
+| 6 | Security Tools Usage |
+| 7 | Developer Training |
+| 8 | Security Defect Mgmt |
+| 9 | Evidence Register |
+| 10 | Summary Dashboard |
+| 11 | Approval Sign-Off |
 
-## Sheet 5: Security_Tools_Deployment
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Security_Tools_Usage
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | SDLC SECURITY ACTIVITIES BY PHASE |
+| 2 | TRACK SECURITY ACTIVITY COMPLETION FOR EACH SDLC PHASE PER APPLICATION |
+| 3 | SECURE CODING STANDARDS ADOPTION |
+| 4 | ASSESS SECURE CODING STANDARDS ADOPTION PER APPLICATION |
+| 5 | CODE REVIEW METRICS |
+| 6 | TRACK CODE REVIEW PROCESS AND SECURITY FOCUS |
+| 7 | SECURITY TOOLS DEPLOYMENT STATUS |
+| 8 | TRACK SECURITY TOOL DEPLOYMENT ACROSS ORGANISATION |
+| 9 | SECURITY TOOLS USAGE METRICS |
+| 10 | TRACK SECURITY TOOL USAGE PER APPLICATION |
+| 11 | DEVELOPER SECURITY TRAINING COMPLIANCE |
+| 12 | TRACK DEVELOPER SECURITY TRAINING COMPLETION AND COMPLIANCE |
+| 13 | SECURITY DEFECT MANAGEMENT |
+| 14 | TRACK OPEN SECURITY DEFECTS AND REMEDIATION COMPLIANCE |
+| 15 | App-ID |
+| 16 | Application Name |
+| 17 | SDLC Methodology |
+| 18 | Requirements: Sec Req Defined |
+| 19 | Requirements: Risk Classification |
+| 20 | Design: Threat Modeling |
+| 21 | Design: Architecture Review |
+| 22 | Development: SAST Enabled |
+| 23 | Development: Code Review |
+| 24 | Testing: DAST Scan |
+| 25 | Testing: Security Testing |
+| 26 | Deployment: Security Checklist |
+| 27 | Maintenance: Vulnerability Monitoring |
+| 28 | Phase Compliance (%) |
+| 29 | Standard Adopted |
+| 30 | Standard Documented? |
+| 31 | Developers Trained? |
+| 32 | Enforced via Tools? |
+| 33 | Enforced via Code Review? |
+| 34 | Last Standard Update |
+| 35 | Compliance Score (%) |
+| 36 | Code Review Process Documented? |
+| 37 | Code Review Coverage (%) |
+| 38 | Security Checklist Used? |
+| 39 | Security Champion Involved? |
+| 40 | Avg Review Turnaround (days) |
+| 41 | Security Findings Count |
+| 42 | Review Compliance Score (%) |
+| 43 | Tool Type |
+| 44 | Tool Name/Vendor |
+| 45 | Deployment Status |
+| 46 | Applications Covered |
+| 47 | Integration Point |
+| 48 | Config Reviewed? |
+| 49 | Findings Per Month (Avg) |
+| 50 | False Positive Rate (%) |
+| 51 | SAST Scans Per Month |
+| 52 | SCA Scans Per Month |
+| 53 | Secret Scanning Enabled? |
+| 54 | DAST Scans Per Release |
+| 55 | Avg Remediation Time (days) |
+| 56 | Tool Integration Score |
+| 57 | Usage Compliance (%) |
+| 58 | Developer/Team Name |
+| 59 | Initial Training Date |
+| 60 | Annual Refresher Date |
+| 61 | Language-Specific Training |
+| 62 | Security Champion Training |
+| 63 | Training Quiz Score (%) |
+| 64 | Training Overdue? |
+| 65 | Training Status |
+| 66 | Critical Defects |
+| 67 | High Defects |
+| 68 | Medium Defects |
+| 69 | Low Defects |
+| 70 | Total Open Defects |
+| 71 | Avg Age (days) |
+| 72 | SLA Compliance (%) |
+| 73 | Security Tech Debt |
+| 74 | Monthly Trend |
+| 75 | Assessment Area |
+| 76 | Total Assessed |
+| 77 | Complete |
+| 78 | Partial |
+| 79 | Missing |
+| 80 | N/A |
+| 81 | Completion % |
+| 82 | Finding |
+| 83 | Count |
+| 84 | Severity |
+| 85 | Affected Area |
+| 86 | Recommended Action |
+| 87 | Owner |
+| 88 | Evidence ID |
+| 89 | Evidence Type |
+| 90 | Description |
+| 91 | Location / Path |
+| 92 | Date Collected |
+| 93 | Collected By |
+| 94 | Verification Status |
 
-## Sheet 7: Developer_Training
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Security_Defect_Management
+```
+Yes, No, N/A, Complete, In Progress, Not Done, Waterfall, Agile, Scrum, DevOps
+DevSecOps, Hybrid, Deployed, Not Deployed, Current, Outdated, Missing
+Compliant, ⚠️ Partial Compliance, Non-Compliant, SDLC process doc
+Code review report, Training record, Tool configuration, Security policy
+Test report, Screenshot, Other, \u2705 Verified, \u26a0\ufe0f Pending
+\u274c Not Verified, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
 
----
-
-## Sheet 9: Compliance_Summary
-
----
-
-## Sheet 10: Evidence_Register
-
----
-
-## Sheet 11: Approval_Sign_Off
-
----
-
-## Sheet 12: Base_Validations
+**Extracted:** 11 sheets, 94 columns, 39 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

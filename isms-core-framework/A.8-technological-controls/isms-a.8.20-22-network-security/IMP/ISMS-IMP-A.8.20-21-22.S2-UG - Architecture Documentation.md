@@ -8,27 +8,52 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-IMP-A.8.20-21-22-S2-UG |
+|-------|-------|
+| **Document Title** | Architecture Documentation |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.20-21-22.S2-UG |
+| **Related Policy** | ISMS-POL-A.8.20-21-22 (Network Security) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.20 (Networks Security) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Network Topology & Architecture Documentation |
-| **Related Policy** | ISMS-POL-A.8.20-21-22, Section 2.1 (Network Infrastructure Security - A.8.20), Section 2.3 (Network Segmentation - A.8.22), Section 4.2 (Implementation Resources) |
-| **Purpose** | Define standards and procedures for creating, maintaining, and validating network architecture documentation including topology diagrams, security zones, and trust boundaries |
-| **Target Audience** | Network Architects, Network Engineers, Security Engineers, IT Operations, System Administrators, Auditors |
-| **Assessment Type** | Technical Documentation & Architecture Validation |
-| **Review Cycle** | Quarterly or After Major Network Architecture Changes |
-| **Total Sheets** | 9 |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial implementation guidance for network architecture documentation | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.20-21-22 (Network Security)
+- ISMS-IMP-A.8.20-21-22.S1 (Network Discovery)
+- ISMS-IMP-A.8.20-21-22.S3 (Device Hardening)
+- ISMS-IMP-A.8.20-21-22.S4 (Services Security)
+- ISMS-IMP-A.8.20-21-22.S5 (Segmentation Implementation)
 
 ---
 
-**Audience:** Security assessors, Control owners, Compliance officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Device Hardening Assessment | Assess security hardening of network devices |
+| 3 | Hardening Baseline Reference | Document approved hardening baselines |
+| 4 | Gap Analysis | Identify hardening compliance gaps |
+| 5 | Device Type Compliance | Track hardening compliance by device type |
+| 6 | Top Gaps Analysis | Prioritise and analyse top hardening gaps |
+| 7 | Remediation Roadmap | Plan remediation of hardening gaps |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -36,7 +61,7 @@
 
 ## Purpose
 
-This document provides **practical, step-by-step guidance** for creating and maintaining comprehensive network architecture documentation for [Organization]. Proper documentation is essential for:
+This document provides **practical, step-by-step guidance** for creating and maintaining comprehensive network architecture documentation for [Organisation]. Proper documentation is essential for:
 
 - **Control A.8.20 (Network Security)**: Understanding network topology to implement perimeter controls, access controls, and monitoring
 - **Control A.8.22 (Network Segregation)**: Visualizing security zones, trust boundaries, and segmentation architecture
@@ -142,7 +167,7 @@ Phase 5: Ongoing Maintenance
 | Tool | Type | Pros | Cons | License | Best For |
 |------|------|------|------|---------|----------|
 | **Microsoft Visio** | Desktop app | Industry standard, extensive stencils, Microsoft integration | Expensive (~$300/user), Windows-only | Commercial | Enterprise with Microsoft licenses |
-| **draw.io / diagrams.net** | Web-based or desktop | Free, cloud-based, integrates with Google Drive/OneDrive | Fewer templates than Visio | Free | Budget-conscious organizations |
+| **draw.io / diagrams.net** | Web-based or desktop | Free, cloud-based, integrates with Google Drive/OneDrive | Fewer templates than Visio | Free | Budget-conscious organisations |
 | **Lucidchart** | Web-based | Collaborative, real-time editing, cloud-based | Subscription-based (~$10/month) | Commercial | Teams needing collaboration |
 | **Dia** | Desktop (Linux/Mac/Windows) | Free, open-source | Clunky UI, limited stencils | Open-source | Linux environments |
 
@@ -269,7 +294,7 @@ Every network diagram should include:
 
 **Layering Approach**:
 
-- **Layer 1 (Highest Level)**: Overview diagram (entire organization network on one page)
+- **Layer 1 (Highest Level)**: Overview diagram (entire organisation network on one page)
 - **Layer 2 (Mid Level)**: Per-site diagrams (HQ, Branch Office A, Branch Office B)
 - **Layer 3 (Detailed)**: Per-segment diagrams (Data Center, User Networks, DMZ)
 
@@ -540,7 +565,7 @@ Every network diagram should include:
 
 3. **Add Sites**:
 
-   - Organization → Sites → Add
+   - Organisation → Sites → Add
    - Site Name: "Corporate HQ"
    - Site Name: "Branch Office A"
 
@@ -575,7 +600,7 @@ Every network diagram should include:
 ```bash
 # Query all prefixes via API
 curl -X GET "http://localhost:8000/api/ipam/prefixes/" \
-  -H "Authorization: Token YOUR_API_TOKEN" \
+  -H "Authorisation: Token YOUR_API_TOKEN" \
   -H "Accept: application/json"
 ```
 
@@ -866,7 +891,7 @@ d2 switch_topology.d2 switch_topology.svg
 - [ ] Title block complete (title, version, date, author, classification)
 - [ ] Version control implemented (file versions tracked)
 - [ ] Centralized storage (SharePoint, Confluence, Git)
-- [ ] Access controls configured (only authorized personnel can edit)
+- [ ] Access controls configured (only authorised personnel can edit)
 
 ---
 
@@ -994,7 +1019,7 @@ Use this checklist for quarterly reviews:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Architecture without documentation is architecture forgotten."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

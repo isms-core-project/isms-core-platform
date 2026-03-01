@@ -57,7 +57,7 @@ This section defines requirements for ongoing monitoring, periodic review, and c
 
 **ISO/IEC 27001:2022 Control A.5.22 - Monitoring, Review and Change Management of Supplier Services**
 
-> *The organization should regularly monitor, review, evaluate and manage change in supplier information security practices and service delivery.*
+> *The organisation should regularly monitor, review, evaluate and manage change in supplier information security practices and service delivery.*
 
 **Control Objective**: Ensure ongoing validation of supplier security posture and controlled management of changes to supplier services.
 
@@ -67,7 +67,7 @@ This section defines requirements for ongoing monitoring, periodic review, and c
 - Periodic reviews of supplier security practices shall be conducted based on supplier risk classification
 - Changes to supplier services shall be managed through formal change control procedures with security review
 - Supplier compliance with agreements shall be verified through audits, attestations, or third-party certifications
-- Supplier incidents and security events shall be tracked, analyzed, and responded to appropriately
+- Supplier incidents and security events shall be tracked, analysed, and responded to appropriately
 - Supplier audits or third-party attestations (SOC 2, ISO 27001) shall be obtained and reviewed for findings
 - Relationship with suppliers shall be maintained through regular communication, reviews, and governance meetings
 - Supplier service degradation or non-compliance shall trigger escalation and remediation procedures including potential termination
@@ -122,7 +122,7 @@ Beyond scheduled reviews, conduct immediate review upon:
 | Material contract change or amendment | Security clause verification, impact analysis | Before execution |
 | Regulatory change affecting supplier obligations | Compliance assessment, gap analysis | Within 60 days |
 | Negative news or reputation event (public incident) | Risk reassessment, communication with supplier | Within 7 days |
-| Significant organizational change ([Organization] or supplier) | Relationship review, access validation | Within 30 days |
+| Significant organisational change ([Organisation] or supplier) | Relationship review, access validation | Within 30 days |
 | Repeated SLA failures (3 consecutive or 6 in 12 months) | Performance review, remediation plan | Immediate |
 | Audit finding related to supplier | Compliance review, remediation tracking | Within 14 days |
 
@@ -215,8 +215,8 @@ Beyond scheduled reviews, conduct immediate review upon:
 
 | Domain | Assessment Areas |
 |--------|------------------|
-| **Governance & Organization** | Security policies, organizational structure, roles and responsibilities, security awareness training |
-| **Access Control** | Authentication mechanisms, authorization models, privileged access management, access review processes |
+| **Governance & Organisation** | Security policies, organisational structure, roles and responsibilities, security awareness training |
+| **Access Control** | Authentication mechanisms, authorisation models, privileged access management, access review processes |
 | **Data Protection** | Data classification, encryption (transit & rest), data handling procedures, data loss prevention |
 | **Operations Security** | Change management, patch management, configuration management, backup and recovery, capacity management |
 | **Incident Management** | Detection capabilities, response procedures, notification processes, post-incident reviews |
@@ -290,7 +290,7 @@ Each assessment shall produce comprehensive documentation:
 | Certification lapsed (recently expired) | 30-day cure period, risk assessment, compensating controls | Supplier must renew within 30 days | Business Owner + ISO |
 | Certification withdrawn or revoked | Immediate risk assessment, consider service suspension pending renewal | 14 days to resolve or initiate replacement | CISO + Business Owner |
 | Failed audit (material findings unresolved) | Review findings, require remediation plan with timeline | 30 days remediation plan, 90 days execution | ISO + Business Owner |
-| Regulatory violation or sanction | Legal review, assess [Organization] exposure, document risk acceptance or exit strategy | Immediate legal consult | Legal + CISO + Executive Management |
+| Regulatory violation or sanction | Legal review, assess [Organisation] exposure, document risk acceptance or exit strategy | Immediate legal consult | Legal + CISO + Executive Management |
 | Repeated non-compliance (3+ incidents) | Formal performance improvement plan or contract termination initiation | 60 days improvement or transition planning | CISO + Executive Management |
 
 ---
@@ -315,7 +315,7 @@ Each assessment shall produce comprehensive documentation:
 | Supplier Level | Standard Notification | Material Change Approval |
 |----------------|----------------------|--------------------------|
 | **Level 1** | 30 days advance notice for all changes | Written approval required for material changes before implementation |
-| **Level 2** | 14 days advance notice for material changes | Notification sufficient, [Organization] may object within 7 days |
+| **Level 2** | 14 days advance notice for material changes | Notification sufficient, [Organisation] may object within 7 days |
 | **Level 3** | Timely notification of significant changes (7 days) | Standard contract terms apply |
 | **Level 4** | Standard contract terms apply | No specific requirement |
 
@@ -326,7 +326,7 @@ Each assessment shall produce comprehensive documentation:
 │ SUPPLIER CHANGE REVIEW PROCESS                              │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  1. Supplier notifies [Organization] of planned change      │
+│  1. Supplier notifies [Organisation] of planned change      │
 │     • Change description and business justification         │
 │     • Implementation timeline                               │
 │     • Impact assessment (supplier's view)                   │
@@ -335,7 +335,7 @@ Each assessment shall produce comprehensive documentation:
 │     • Assign change request ID                              │
 │     • Route to appropriate reviewer (Security/IT/Business)  │
 │                         ↓                                   │
-│  3. [Organization] assesses change impact                   │
+│  3. [Organisation] assesses change impact                   │
 │     • Security impact (controls, risks, vulnerabilities)    │
 │     • Operational impact (service delivery, integration)    │
 │     • Compliance impact (regulatory, contractual)           │
@@ -371,7 +371,7 @@ A change is considered **material** if it meets any of the following criteria:
 
 **Security-Related**:
 
-- Affects security controls protecting [Organization]'s data
+- Affects security controls protecting [Organisation]'s data
 - Changes encryption methods, key management, or authentication mechanisms
 - Modifies access control architecture or privileged access procedures
 - Introduces new attack surface or expands existing attack vectors
@@ -386,7 +386,7 @@ A change is considered **material** if it meets any of the following criteria:
 **Compliance-Related**:
 
 - Impacts compliance with regulatory requirements (DORA, NIS2, GDPR)
-- Introduces new sub-suppliers with access to [Organization] data
+- Introduces new sub-suppliers with access to [Organisation] data
 - Changes certification scope or causes certification lapse
 - Affects contractual security obligations
 
@@ -411,9 +411,9 @@ A change is considered **material** if it meets any of the following criteria:
 
 | Supplier Level | Governance Model | Meeting Frequency | Participants |
 |----------------|------------------|-------------------|--------------|
-| **Level 1 (Critical)** | Formal governance committee with documented charter | Quarterly | [Organization]: Business Owner, ISO, IT; Supplier: Account Manager, Technical Lead, Security |
-| **Level 2 (High)** | Regular business reviews with security component | Semi-annual | [Organization]: Business Owner, ISO; Supplier: Account Manager |
-| **Level 3 (Medium)** | Periodic check-ins as needed | Annual | [Organization]: Business Owner; Supplier: Account Manager |
+| **Level 1 (Critical)** | Formal governance committee with documented charter | Quarterly | [Organisation]: Business Owner, ISO, IT; Supplier: Account Manager, Technical Lead, Security |
+| **Level 2 (High)** | Regular business reviews with security component | Semi-annual | [Organisation]: Business Owner, ISO; Supplier: Account Manager |
+| **Level 3 (Medium)** | Periodic check-ins as needed | Annual | [Organisation]: Business Owner; Supplier: Account Manager |
 | **Level 4 (Low)** | Transactional relationship | As needed | Per transaction |
 
 ## Level 1 Quarterly Governance Meeting Agenda
@@ -452,7 +452,7 @@ A change is considered **material** if it meets any of the following criteria:
 
 | Category | Examples | Severity Indicators |
 |----------|----------|---------------------|
-| **Security incidents** | Data breach, unauthorized access, malware infection, credential compromise | Data exposure, system compromise, regulatory notification requirement |
+| **Security incidents** | Data breach, unauthorised access, malware infection, credential compromise | Data exposure, system compromise, regulatory notification requirement |
 | **Service incidents** | Unplanned outage, significant degradation, data loss, corruption | Duration, user impact, SLA breach severity |
 | **Compliance incidents** | Certification loss, regulatory violation, audit failure | Regulatory impact, contractual breach, reputational risk |
 | **Supply chain incidents** | Sub-supplier breach, software vulnerability (Log4Shell-style), dependency compromise | Cascading impact, widespread exposure, remediation complexity |
@@ -464,7 +464,7 @@ A change is considered **material** if it meets any of the following criteria:
 |------|----------|----------|-------------|
 | **1. Notification** | Receive incident notification from supplier per contract terms | Per SLA (4-48 hours) | Supplier → ISO |
 | **2. Logging** | Log incident in supplier incident register with initial assessment | Within 4 hours | ISO |
-| **3. Impact Assessment** | Assess impact on [Organization] (data, systems, compliance, business) | Within 24 hours | ISO + Business Owner |
+| **3. Impact Assessment** | Assess impact on [Organisation] (data, systems, compliance, business) | Within 24 hours | ISO + Business Owner |
 | **4. Containment Verification** | Verify supplier has contained incident, assess residual risk | Within 48 hours | ISO |
 | **5. Root Cause Analysis** | Request and review supplier's RCA | Within 30 days | Supplier provides, ISO reviews |
 | **6. Remediation Review** | Review supplier's remediation actions and preventive measures | Within 60 days | ISO |
@@ -550,4 +550,4 @@ A change is considered **material** if it meets any of the following criteria:
 ---
 
 *"Monitoring without action is just expensive watching. Action without monitoring is blind faith."*
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

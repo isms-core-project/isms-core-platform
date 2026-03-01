@@ -30,9 +30,9 @@
 
 ## Purpose of This Policy Section
 
-This policy section establishes [Organization]'s systematic framework for maintaining the regulatory compliance framework over time and demonstrating compliance through systematic evidence management. It defines the processes by which regulatory changes are detected, assessed, and incorporated into the compliance framework, and how evidence of compliance is collected, managed, and presented for audits.
+This policy section establishes [Organisation]'s systematic framework for maintaining the regulatory compliance framework over time and demonstrating compliance through systematic evidence management. It defines the processes by which regulatory changes are detected, assessed, and incorporated into the compliance framework, and how evidence of compliance is collected, managed, and presented for audits.
 
-**This is the "steady-state operation"** of the regulatory compliance framework—the processes that keep the framework current, accurate, and audit-ready as regulations evolve and [Organization] implements controls.
+**This is the "steady-state operation"** of the regulatory compliance framework—the processes that keep the framework current, accurate, and audit-ready as regulations evolve and [Organisation] implements controls.
 
 ## Framework Lifecycle: Setup → Maintain → Demonstrate
 
@@ -40,18 +40,18 @@ The regulatory compliance framework operates in a continuous lifecycle:
 
 **ISMS-POL-A.5.31.1** (Executive Summary & Control Alignment) established the framework foundation, governance structure, roles, and integration with ISMS-POL-00. It defined the "what" and "why" of the regulatory compliance architecture.
 
-**ISMS-POL-A.5.31.2** (Regulatory Applicability Methodology) defined how [Organization] determines WHICH regulations apply based on geographic, operational, and contractual criteria. It provides the systematic process for populating and maintaining the regulatory register (ISMS-POL-00).
+**ISMS-POL-A.5.31.2** (Regulatory Applicability Methodology) defined how [Organisation] determines WHICH regulations apply based on geographic, operational, and contractual criteria. It provides the systematic process for populating and maintaining the regulatory register (ISMS-POL-00).
 
-**ISMS-POL-A.5.31.3** (Requirements Extraction & Control Mapping Framework) defined how [Organization] extracts specific requirements from applicable regulations, maps them to ISO 27001 controls, identifies gaps, and maintains traceability. It provides the "translation layer" from legal language to security controls.
+**ISMS-POL-A.5.31.3** (Requirements Extraction & Control Mapping Framework) defined how [Organisation] extracts specific requirements from applicable regulations, maps them to ISO 27001 controls, identifies gaps, and maintains traceability. It provides the "translation layer" from legal language to security controls.
 
-**ISMS-POL-A.5.31.4** (this document) defines how [Organization] maintains the framework over time and proves compliance through evidence:
+**ISMS-POL-A.5.31.4** (this document) defines how [Organisation] maintains the framework over time and proves compliance through evidence:
 
-- **Regulatory monitoring**: How [Organization] detects changes to applicable regulations
-- **Impact assessment**: How [Organization] evaluates regulatory changes for impact on compliance framework
-- **Framework updates**: How [Organization] maintains Requirements Register, Control Mapping Matrix, and related documents
-- **Evidence management**: How [Organization] systematically collects, stores, verifies, and presents evidence of compliance
-- **Compliance reporting**: How [Organization] communicates compliance status internally and externally
-- **Records retention**: How [Organization] manages compliance records lifecycle
+- **Regulatory monitoring**: How [Organisation] detects changes to applicable regulations
+- **Impact assessment**: How [Organisation] evaluates regulatory changes for impact on compliance framework
+- **Framework updates**: How [Organisation] maintains Requirements Register, Control Mapping Matrix, and related documents
+- **Evidence management**: How [Organisation] systematically collects, stores, verifies, and presents evidence of compliance
+- **Compliance reporting**: How [Organisation] communicates compliance status internally and externally
+- **Records retention**: How [Organisation] manages compliance records lifecycle
 
 Together, these four policy sections (5.31.1-5.31.4) provide comprehensive governance for regulatory compliance within the ISMS.
 
@@ -68,14 +68,14 @@ The regulatory compliance framework is not "set and forget." Multiple forces dri
 - Enforcement priorities shift
 - **Challenge**: Framework must stay current with legal landscape
 
-**Organizational Changes**:
+**Organisational Changes**:
 
 - Business expansion (new markets, new services, new customers)
 - Mergers and acquisitions
 - Technology changes (cloud migration, new systems)
 - Process changes
 - Staffing changes
-- **Challenge**: Framework must reflect current organizational reality
+- **Challenge**: Framework must reflect current organisational reality
 
 **Control Implementation Evolution**:
 
@@ -115,11 +115,11 @@ This document does NOT:
 
 # Regulatory Change Monitoring
 
-Regulatory change monitoring is the systematic, ongoing process of detecting changes to the regulatory landscape that may affect [Organization]'s compliance obligations.
+Regulatory change monitoring is the systematic, ongoing process of detecting changes to the regulatory landscape that may affect [Organisation]'s compliance obligations.
 
 ## Monitoring Sources
 
-[Organization] SHALL monitor multiple sources for regulatory changes to ensure comprehensive coverage of the regulatory landscape.
+[Organisation] SHALL monitor multiple sources for regulatory changes to ensure comprehensive coverage of the regulatory landscape.
 
 ### Legal Databases & Subscription Services
 
@@ -150,7 +150,7 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 - Often free or lower-cost than commercial platforms
 - Authoritative source for official regulatory text
 
-**Usage**: Subscribe to relevant platforms based on jurisdictions where [Organization] operates and is regulated. Configure alerts for regulations in ISMS-POL-00.
+**Usage**: Subscribe to relevant platforms based on jurisdictions where [Organisation] operates and is regulated. Configure alerts for regulations in ISMS-POL-00.
 
 ### Government & Regulatory Authority Notifications
 
@@ -189,7 +189,7 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 
 **Sector-Specific Associations**:
 
-- Trade associations for [Organization]'s industry sector
+- Trade associations for [Organisation]'s industry sector
 - Examples: Financial services associations, technology industry groups, healthcare associations
 - Services:
   - Regulatory updates tailored to sector
@@ -206,7 +206,7 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 **Working Groups & Task Forces**:
 
 - Industry-regulator collaborative groups
-- Standards development organizations (ISO, NIST, etc.)
+- Standards development organisations (ISO, NIST, etc.)
 - Regulatory sandbox participants
 - Information sharing and analysis centers (ISACs) for sector-specific threats and regulatory intelligence
 
@@ -223,8 +223,8 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 
 **In-House Legal Team**:
 
-- If [Organization] has in-house legal counsel, establish regular regulatory briefings
-- Legal counsel monitors regulatory developments relevant to [Organization]'s operations
+- If [Organisation] has in-house legal counsel, establish regular regulatory briefings
+- Legal counsel monitors regulatory developments relevant to [Organisation]'s operations
 - Quarterly (minimum) briefings to Compliance Officer and ISMS Manager
 - Ad-hoc briefings for urgent regulatory changes
 
@@ -248,7 +248,7 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 - Legal counsel may attend regulatory proceedings, read proposed rules, track legislative calendars
 - Higher cost but highest quality regulatory intelligence
 
-**Usage**: Establish clear scope with legal counsel for regulatory monitoring. Designate primary legal contact for compliance matters. Review legal counsel alerts promptly and assess relevance to [Organization].
+**Usage**: Establish clear scope with legal counsel for regulatory monitoring. Designate primary legal contact for compliance matters. Review legal counsel alerts promptly and assess relevance to [Organisation].
 
 ### Peer Networks & Forums
 
@@ -279,7 +279,7 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 - Moderated discussions on regulatory changes and interpretations
 - Caution: Verify information from authoritative sources; forums are discussion not gospel
 
-**Usage**: Participate in 2-3 high-quality peer networks relevant to [Organization]'s sector and regulatory exposure. Attend at least one annual conference focused on regulatory compliance. Share learnings internally.
+**Usage**: Participate in 2-3 high-quality peer networks relevant to [Organisation]'s sector and regulatory exposure. Attend at least one annual conference focused on regulatory compliance. Share learnings internally.
 
 ### Professional Services
 
@@ -294,7 +294,7 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 
 - Specialized consultancies focused on regulatory compliance
 - Proactive monitoring and advisory services
-- Costly but high-touch, tailored to [Organization]'s needs
+- Costly but high-touch, tailored to [Organisation]'s needs
 - May provide gap analysis, remediation planning, implementation support
 
 **Specialized Regulatory Advisors**:
@@ -309,7 +309,7 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 
 **Industry Press**:
 
-- Trade publications for [Organization]'s industry
+- Trade publications for [Organisation]'s industry
 - Examples: Compliance Week, Risk.net, SC Magazine, PrivacyTech
 - Timely reporting on regulatory developments
 - Interviews with regulators, analysis of trends
@@ -375,7 +375,7 @@ Monitoring frequency SHALL be risk-based, with higher-risk regulations monitored
 - Monthly or quarterly monitoring
 - If condition triggering applicability met, these become Tier 1 and move to continuous monitoring
 - Until then, periodic check sufficient
-- Example: PCI DSS v4.0.1 if [Organization] does not currently process payment cards but may in future
+- Example: PCI DSS v4.0.1 if [Organisation] does not currently process payment cards but may in future
 
 **Tier 3 Regulations** (Informational Reference from ISMS-POL-00):
 
@@ -417,7 +417,7 @@ Monitoring frequency SHALL be risk-based, with higher-risk regulations monitored
 **Automated Monitoring Tools**:
 
 - RegTech platforms with automated change detection
-- AI-powered monitoring flags relevant changes based on [Organization]'s profile
+- AI-powered monitoring flags relevant changes based on [Organisation]'s profile
 - Reduces manual effort, increases coverage
 
 **Alert Management**:
@@ -439,7 +439,7 @@ Monitoring frequency SHALL be risk-based, with higher-risk regulations monitored
 **Decrease Monitoring Frequency**:
 
 - Mature, stable regulations with long history of no changes
-- Regulations in jurisdictions [Organization] is exiting
+- Regulations in jurisdictions [Organisation] is exiting
 - Regulations that may transition from Tier 2 to Tier 3 (condition no longer likely to be met)
 
 **Continuous Adjustment**:
@@ -454,7 +454,7 @@ All detected regulatory changes SHALL be systematically logged in a Regulatory C
 
 ### Regulatory Change Register
 
-**Purpose**: Centralized log of all detected regulatory changes affecting or potentially affecting [Organization].
+**Purpose**: Centralized log of all detected regulatory changes affecting or potentially affecting [Organisation].
 
 **Register Fields**:
 
@@ -472,7 +472,7 @@ All detected regulatory changes SHALL be systematically logged in a Regulatory C
   - New Regulation, Amendment, Repeal, Guidance, Enforcement Action
 
 - **Change Description**: Brief summary of change
-  - 2-3 sentences summarizing what changed
+  - 2-3 sentences summarising what changed
   - Example: "Article 32 amended to require post-quantum cryptography within 2 years of effective date"
 
 - **Effective Date**: When change becomes legally binding
@@ -499,7 +499,7 @@ All detected regulatory changes SHALL be systematically logged in a Regulatory C
   - **Under Assessment**: Impact assessment in progress (per Section 3)
   - **Implemented**: Framework updated, gaps remediated, change integrated
   - **Closed**: Change fully integrated, no further action needed
-  - **Not Applicable**: Assessed as not affecting [Organization]
+  - **Not Applicable**: Assessed as not affecting [Organisation]
 
 - **Impact Assessment ID** (if applicable): Link to impact assessment document
   - Cross-reference to detailed assessment (Section 3)
@@ -546,7 +546,7 @@ All detected regulatory changes SHALL be systematically logged in a Regulatory C
 
 **Enforcement Action**:
 
-- Regulatory action against another organization
+- Regulatory action against another organisation
 - Reveals regulatory interpretation and enforcement priorities
 - Examples: Regulator fines company for specific practice, clarifying what regulator considers non-compliant
 - Impact: Informational (understand enforcement priorities); may inform risk assessment
@@ -564,7 +564,7 @@ All detected regulatory changes SHALL be systematically logged in a Regulatory C
 - Detected → Under Assessment (when impact assessment begins per Section 3)
 - Under Assessment → Implemented (when framework updates complete)
 - Implemented → Closed (when verification complete, ongoing operation integrated)
-- OR: Detected → Not Applicable (if assessment determines no impact on [Organization])
+- OR: Detected → Not Applicable (if assessment determines no impact on [Organisation])
 
 **Historical Record**:
 
@@ -573,9 +573,7 @@ All detected regulatory changes SHALL be systematically logged in a Regulatory C
 - Provides audit trail of regulatory landscape evolution
 - Demonstrates proactive monitoring and diligence
 
-**Integration with Compliance Dashboard**:
 
-- Change Register feeds Regulatory Compliance Dashboard (Assessment Workbook 6)
 - Metrics: Changes detected this period, changes under assessment, changes pending implementation
 - Executive visibility into regulatory landscape volatility
 
@@ -590,7 +588,7 @@ All detected regulatory changes SHALL be systematically logged in a Regulatory C
 
 # Impact Assessment Process
 
-Impact assessment is the systematic evaluation of how a detected regulatory change affects [Organization]'s compliance obligations and control framework.
+Impact assessment is the systematic evaluation of how a detected regulatory change affects [Organisation]'s compliance obligations and control framework.
 
 ## Assessment Triggers
 
@@ -609,12 +607,12 @@ Not every detected regulatory change requires full impact assessment. Clear trig
 
 - Tier 2 = Conditional Applicability
 - If change affects condition triggering applicability, assess
-- Example: PCI DSS v4.0.1 is Tier 2 (applies only if processing cards); if PCI DSS v4.0.1 changes and [Organization] is considering accepting cards, assess impact
+- Example: PCI DSS v4.0.1 is Tier 2 (applies only if processing cards); if PCI DSS v4.0.1 changes and [Organisation] is considering accepting cards, assess impact
 - Action: Compliance Officer evaluates whether Tier 2 change is relevant given business context
 
-**New Regulation in [Organization] Jurisdiction**:
+**New Regulation in [Organisation] Jurisdiction**:
 
-- Any new regulation enacted in jurisdiction where [Organization] operates or has customers
+- Any new regulation enacted in jurisdiction where [Organisation] operates or has customers
 - Unknown applicability until assessed
 - Action: Trigger applicability assessment per 5.31.2 methodology to determine if regulation is Tier 1, 2, or 3
 
@@ -629,7 +627,7 @@ Not every detected regulatory change requires full impact assessment. Clear trig
 **Change Affecting ISO 27001 Scope**:
 
 - If regulatory change affects controls within ISO 27001 certification scope
-- Example: Regulation now requires specific control that [Organization] previously excluded from scope
+- Example: Regulation now requires specific control that [Organisation] previously excluded from scope
 - Action: Assess impact on certification and Statement of Applicability
 
 **Change with Compliance Deadline**:
@@ -640,23 +638,23 @@ Not every detected regulatory change requires full impact assessment. Clear trig
 
 ## Impact Assessment Steps
 
-[Organization] SHALL follow a six-step impact assessment process for each triggered regulatory change.
+[Organisation] SHALL follow a six-step impact assessment process for each triggered regulatory change.
 
 ### Step 1: Applicability Check
 
-**Question**: Does this regulatory change affect [Organization]?
+**Question**: Does this regulatory change affect [Organisation]?
 
 **Process**:
 
 - Review change against 5.31.2 applicability criteria:
-  - **Geographic**: Does change affect jurisdictions where [Organization] operates or has customers?
-  - **Operational**: Does change affect services [Organization] provides or data [Organization] processes?
-  - **Contractual**: Does change affect contractual obligations [Organization] has?
+  - **Geographic**: Does change affect jurisdictions where [Organisation] operates or has customers?
+  - **Operational**: Does change affect services [Organisation] provides or data [Organisation] processes?
+  - **Contractual**: Does change affect contractual obligations [Organisation] has?
   
 - **Possible Outcomes**:
 
-  1. **Affects [Organization]**: Change applies; proceed to Step 2
-  2. **Does Not Affect [Organization]**: Change does not apply (e.g., regulation specific to industry [Organization] is not in)
+  1. **Affects [Organisation]**: Change applies; proceed to Step 2
+  2. **Does Not Affect [Organisation]**: Change does not apply (e.g., regulation specific to industry [Organisation] is not in)
   3. **Uncertain**: Unclear whether change applies; obtain legal counsel interpretation
 
 **Documentation**:
@@ -668,13 +666,13 @@ Not every detected regulatory change requires full impact assessment. Clear trig
 **Example**:
 
 - Change: New healthcare data regulation enacted in Country X
-- [Organization] Assessment: [Organization] does not operate in Country X, does not have customers in Country X, does not process healthcare data
-- Outcome: Does Not Affect [Organization]
+- [Organisation] Assessment: [Organisation] does not operate in Country X, does not have customers in Country X, does not process healthcare data
+- Outcome: Does Not Affect [Organisation]
 - Action: Log as "Not Applicable" and close
 
 ### Step 2: Requirement Extraction (If Applicable)
 
-**Condition**: Only if Step 1 determined "Affects [Organization]"
+**Condition**: Only if Step 1 determined "Affects [Organisation]"
 
 **Process**:
 
@@ -831,7 +829,7 @@ Estimate resources across multiple dimensions:
 
 ### Step 6: Risk Assessment (If Not Implemented)
 
-**Question**: What is the risk if [Organization] does NOT comply with this regulatory change?
+**Question**: What is the risk if [Organisation] does NOT comply with this regulatory change?
 
 **Process**:
 Assess risk across multiple factors:
@@ -854,7 +852,7 @@ Assess risk across multiple factors:
 
 - Public disclosure of non-compliance (regulatory enforcement actions often public)
 - Customer trust impact
-- Competitive disadvantage (competitors compliant, [Organization] not)
+- Competitive disadvantage (competitors compliant, [Organisation] not)
 - Media coverage risk
 
 **Business Impact**:
@@ -868,7 +866,7 @@ Assess risk across multiple factors:
 - How active is regulator in enforcement?
 - Recent enforcement trends (increasing or decreasing)
 - Regulatory priorities (is this a focus area?)
-- [Organization]'s profile (high-profile vs. under-the-radar)
+- [Organisation]'s profile (high-profile vs. under-the-radar)
 
 **Risk Rating**:
 
@@ -912,7 +910,7 @@ All impact assessments SHALL be documented in a standardized Impact Assessment T
 
 **Section 1: Applicability Determination** (Step 1):
 
-- Does this change affect [Organization]? ☐ Yes  ☐ No  ☐ Uncertain
+- Does this change affect [Organisation]? ☐ Yes  ☐ No  ☐ Uncertain
 - Geographic Scope: [Analysis]
 - Operational Scope: [Analysis]
 - Contractual Scope: [Analysis]
@@ -975,7 +973,7 @@ All impact assessments SHALL be documented in a standardized Impact Assessment T
 - ☐ Implement (close gaps, update controls, comply fully)
 - ☐ Defer (delay implementation; state timeline and rationale)
 - ☐ Accept Risk (do not implement; document risk acceptance)
-- ☐ No Action Required (change does not affect [Organization])
+- ☐ No Action Required (change does not affect [Organisation])
 - Recommendation Rationale: [Detailed explanation]
 - If Defer: Revisit Date: [Date]
 - If Accept Risk: Requires Executive Approval: ☐ Yes (obtained) ☐ Pending
@@ -1040,7 +1038,7 @@ Certain regulatory changes require executive management involvement due to signi
 
 **Major Control Changes Required**:
 
-- Organization-wide control implementation needed
+- Organisation-wide control implementation needed
 - Examples:
   - All systems must implement new encryption standard
   - All employees must receive training on new data handling requirements
@@ -1077,7 +1075,7 @@ Certain regulatory changes require executive management involvement due to signi
 - Concise summary (1-2 pages maximum)
 - Content:
   - **What Changed**: Summary of regulatory change
-  - **Why It Matters**: Impact on [Organization] (requirements, controls, operations)
+  - **Why It Matters**: Impact on [Organisation] (requirements, controls, operations)
   - **Options**: Typically 2-3 options (e.g., Full Compliance, Partial Compliance with Risk Acceptance, Defer)
   - **Recommendation**: Preferred option with rationale
   - **Decision Needed**: Specific decision requested from executive
@@ -1114,7 +1112,7 @@ Certain regulatory changes require executive management involvement due to signi
 **Example 1: Data Localization Requirement**
 
 - **Change**: New regulation requires personal data of Country X citizens to be stored exclusively in Country X
-- **Impact**: [Organization] currently uses global cloud provider with data centers outside Country X; would require new cloud region or data center in Country X
+- **Impact**: [Organisation] currently uses global cloud provider with data centers outside Country X; would require new cloud region or data center in Country X
 - **Risk**: High (cannot serve Country X customers if non-compliant)
 - **Effort**: $2M budget, 18-month implementation (new data center, data migration)
 - **Escalation Trigger**: Significant budget/resource + high risk + major control change
@@ -1151,7 +1149,7 @@ When regulatory changes result in new or modified requirements, or when controls
 
 ### Regulatory Change with Impact
 
-**Trigger**: Impact assessment (Section 3) concludes regulatory change affects [Organization]
+**Trigger**: Impact assessment (Section 3) concludes regulatory change affects [Organisation]
 
 **Updates Needed**:
 
@@ -1177,7 +1175,7 @@ When regulatory changes result in new or modified requirements, or when controls
 
 ### New Control Implemented
 
-**Trigger**: [Organization] implements new ISO 27001 Annex A control or creates new organization-specific control (per 5.31.3 Section 3.5)
+**Trigger**: [Organisation] implements new ISO 27001 Annex A control or creates new organisation-specific control (per 5.31.3 Section 3.5)
 
 **Updates Needed**:
 
@@ -1198,7 +1196,7 @@ When regulatory changes result in new or modified requirements, or when controls
 
 ### Control Retired or Changed
 
-**Trigger**: [Organization] retires control (no longer implemented) or significantly changes control scope/implementation
+**Trigger**: [Organisation] retires control (no longer implemented) or significantly changes control scope/implementation
 
 **Updates Needed**:
 
@@ -1263,7 +1261,7 @@ When regulatory changes result in new or modified requirements, or when controls
   - **Control Mapping Matrix**: Requirement-control mappings (if requirements or controls changed)
   - **Gap Register**: Gap entries (if gaps created or closed)
   - **Evidence Register**: Evidence requirements and collection (if controls changed)
-  - **Organizational Controls Register**: Organization-specific controls (if custom control created)
+  - **Organisational Controls Register**: Organisation-specific controls (if custom control created)
 
 **Output**: List of documents requiring updates with specific changes needed
 
@@ -1359,7 +1357,6 @@ For each document requiring update:
 **Communication Methods**:
 
 - **Email Notification**: Brief summary of changes, links to updated documents
-- **Compliance Dashboard Update**: Metrics reflect new state of framework
 - **Team Meeting**: If changes are significant, brief relevant teams
 - **Training**: If new requirements create new procedures, train affected personnel
 - **Documentation**: Update README, change log, or user guide for framework documents
@@ -1410,7 +1407,7 @@ UPDATED DOCUMENTS:
 - Control Mapping Matrix v2.1  
 - Gap Register v1.8
 
-Questions? Contact Compliance Team at compliance@[organization].
+Questions? Contact Compliance Team at compliance@[organisation].
 
 [Signature]
 Compliance Officer
@@ -1426,7 +1423,7 @@ Compliance Officer
 
 - **Triggers**:
   - New regulation added to ISMS-POL-00 (significant expansion of regulatory scope)
-  - Major control changes (organization-wide control implementation)
+  - Major control changes (organisation-wide control implementation)
   - Structural changes to framework (new registers, new processes)
   - Multiple significant changes accumulated over time
 - **Examples**:
@@ -1517,7 +1514,7 @@ Compliance Officer
 
 # Evidence Management Framework
 
-Evidence is the tangible proof that [Organization] complies with regulatory requirements through implemented controls. Systematic evidence management is essential for audit readiness and regulatory inquiries.
+Evidence is the tangible proof that [Organisation] complies with regulatory requirements through implemented controls. Systematic evidence management is essential for audit readiness and regulatory inquiries.
 
 ## Evidence Requirements Per Regulation Type
 
@@ -1804,7 +1801,7 @@ Different types of controls generate different evidence.
 
 ### Centralized Evidence Repository
 
-**Requirement**: All compliance evidence SHALL be stored in a centralized, organized, access-controlled repository.
+**Requirement**: All compliance evidence SHALL be stored in a centralized, organised, access-controlled repository.
 
 **Repository Types**:
 
@@ -1817,7 +1814,7 @@ Different types of controls generate different evidence.
 
 - **Single Source of Truth**: All stakeholders access same repository (no shadow evidence in personal drives)
 - **Searchable**: Metadata, naming conventions, folder structure enable quick retrieval
-- **Backed Up**: Evidence repository is backed up per organizational backup policy
+- **Backed Up**: Evidence repository is backed up per organisational backup policy
 - **Versioned**: Previous versions of evidence retained (version control)
 - **Indexed**: Compliance evidence catalog or index maintained for quick navigation
 
@@ -1881,16 +1878,16 @@ Different types of controls generate different evidence.
     /...
 ```
 
-**Hybrid Structure** (Recommended for Large Organizations):
+**Hybrid Structure** (Recommended for Large Organisations):
 
 - Top level: By regulation (facilitates audit preparation by regulation)
-- Within each regulation: By control (organizes evidence by what control provides it)
+- Within each regulation: By control (organises evidence by what control provides it)
 - Cross-references: Evidence that satisfies multiple regulations stored once, referenced from multiple locations (shortcuts, links, or tags)
 
 **Choosing Structure**:
 
-- **By Regulation**: Better for organizations with distinct regulatory audits (GDPR audit, SOC 2 audit occur separately)
-- **By Control**: Better for organizations with integrated ISMS approach (one control framework serves multiple regulations)
+- **By Regulation**: Better for organisations with distinct regulatory audits (GDPR audit, SOC 2 audit occur separately)
+- **By Control**: Better for organisations with integrated ISMS approach (one control framework serves multiple regulations)
 - **Hybrid**: Best for complex environments with multiple regulations and many controls
 
 ### Access Controls
@@ -1929,7 +1926,7 @@ Different types of controls generate different evidence.
   - Who accessed what evidence
   - When accessed (date/time)
   - What action (view, upload, edit, download, delete)
-- Purpose: Detect unauthorized access, support forensic investigations
+- Purpose: Detect unauthorised access, support forensic investigations
 
 **Auditor Access**:
 
@@ -2075,7 +2072,6 @@ Format: [Control-ID]\_[Evidence-Type]\_[Date]\_[Version].[ext]
 
 **Verification Records**:
 
-- Evidence Register (Assessment Workbook 5) includes verification fields:
   - Last Verified By: [Name/Role]
   - Last Verified Date: [Date]
   - Verification Outcome: Pass / Issues Identified
@@ -2086,7 +2082,7 @@ Format: [Control-ID]\_[Evidence-Type]\_[Date]\_[Version].[ext]
 
 **Retention Periods**:
 
-- Defined by regulation, contract, or organizational policy (see Section 7)
+- Defined by regulation, contract, or organisational policy (see Section 7)
 - Typical: 3-7 years after event or evidence creation
 - Examples:
   - GDPR often requires 3-7 years
@@ -2101,7 +2097,7 @@ Format: [Control-ID]\_[Evidence-Type]\_[Date]\_[Version].[ext]
 
 **Evidence for Superseded Regulations**:
 
-- If regulation is repealed or [Organization] exits jurisdiction, evidence still retained
+- If regulation is repealed or [Organisation] exits jurisdiction, evidence still retained
 - Purpose: Demonstrate historical compliance (defend against retroactive inquiries, investigations, litigation)
 - Retention: Typically 7 years after regulation ceased to apply
 
@@ -2145,7 +2141,7 @@ Format: [Control-ID]\_[Evidence-Type]\_[Date]\_[Version].[ext]
 **Audit of Disposal**:
 
 - Internal Audit periodically reviews Disposal Log
-- Confirms disposals were authorized and appropriate
+- Confirms disposals were authorised and appropriate
 - Verifies secure disposal methods used
 
 ## Evidence Gaps & Remediation
@@ -2266,7 +2262,6 @@ Compliance reporting provides visibility into regulatory compliance status for i
 
 **Purpose**: Real-time or near-real-time view of regulatory compliance posture for management and ISMS stakeholders.
 
-**Implementation**: Assessment Workbook 6 (Regulatory Compliance Dashboard) provides template; may be automated via compliance management software.
 
 **Key Metrics**:
 
@@ -2384,7 +2379,6 @@ Compliance reporting provides visibility into regulatory compliance status for i
 
 - Detailed gap register (all open gaps)
 - Regulatory change log (all changes detected this period)
-- Compliance dashboard screenshots
 - Risk register (regulatory compliance risks)
 
 **Distribution**:
@@ -2491,7 +2485,7 @@ Compliance reporting provides visibility into regulatory compliance status for i
 - Scope of attestation (which requirements, which time period)
 - Supporting evidence (attached or referenced)
 - Limitations/caveats (if any - e.g., "except as disclosed in attached report")
-- Signature of authorized representative (CISO, Legal, Executive)
+- Signature of authorised representative (CISO, Legal, Executive)
 - Date
 
 ### Audit Responses
@@ -2613,7 +2607,6 @@ Compliance reporting provides visibility into regulatory compliance status for i
 
 ### Continuous
 
-**Compliance Dashboard**: 
 
 - Always current (updated as underlying data changes)
 - Accessible on-demand by stakeholders
@@ -2654,7 +2647,7 @@ Compliance reporting provides visibility into regulatory compliance status for i
 
 - Impact assessment completed → Impact Report to Executive Management
 - Timeline: Within 2 weeks of completing impact assessment
-- Content: Change summary, impact on [Organization], recommended action, resource needs
+- Content: Change summary, impact on [Organisation], recommended action, resource needs
 
 **Major Gap Identified**:
 
@@ -2747,11 +2740,11 @@ Compliance records must be retained for specified periods to support audits, reg
 - If contract requires 10 years AND regulation requires 7 years → Retain for 10 years
 - Apply most stringent retention requirement
 
-### Organizational Policy
+### Organisational Policy
 
 **Default Retention** (When Regulation/Contract Silent):
 
-- [Organization] establishes default retention period
+- [Organisation] establishes default retention period
 - Common practice: **7 years**
 - Rationale:
   - Aligns with many common regulatory and legal retention periods
@@ -2764,7 +2757,7 @@ Compliance records must be retained for specified periods to support audits, reg
 - Example: 10 years for records related to significant data breaches or regulatory investigations
 - Rationale: Potential for long-tail liability or inquiries
 
-**Organizational Policy Documentation**:
+**Organisational Policy Documentation**:
 
 - Document default retention periods in Records Retention Policy
 - Specify exceptions (longer retention for specific record types)
@@ -2798,7 +2791,7 @@ Compliance records must be retained for specified periods to support audits, reg
 
 **Post-Repeal Retention**:
 
-- When regulation repealed or [Organization] exits jurisdiction, framework documents not immediately deleted
+- When regulation repealed or [Organisation] exits jurisdiction, framework documents not immediately deleted
 - Retention period: **7 years after regulation ceases to apply** (or longer per legal counsel guidance)
 - Rationale:
   - Demonstrate historical compliance (if retroactive inquiry or investigation)
@@ -2806,7 +2799,7 @@ Compliance records must be retained for specified periods to support audits, reg
   - Contract claims or litigation may arise years later
 
 **Archival Process**:
-1. Regulation repealed or [Organization] determines regulation no longer applicable
+1. Regulation repealed or [Organisation] determines regulation no longer applicable
 2. Mark regulation as "Repealed - [Date]" or "No Longer Applicable - [Date]" in ISMS-POL-00
 3. Archive framework documents (move to "Historical_Compliance" folder)
 4. Calculate disposal date: Repeal Date + 7 years
@@ -2836,7 +2829,7 @@ Compliance records must be retained for specified periods to support audits, reg
 
 **Trigger Events**:
 
-- **Litigation**: Lawsuit filed against [Organization] or [Organization] filing lawsuit
+- **Litigation**: Lawsuit filed against [Organisation] or [Organisation] filing lawsuit
 - **Regulatory Investigation**: Regulatory authority initiates investigation or inquiry
 - **Regulatory Inquiry**: Regulator requests information (may be precursor to investigation)
 - **Internal Investigation**: Internal investigation that may lead to litigation or regulatory action
@@ -2963,7 +2956,7 @@ Compliance records must be retained for specified periods to support audits, reg
 - **Regulation/Control**: Which regulation or control it related to (if applicable)
 - **Retention Period End Date**: When retention period expired
 - **Disposal Date**: Actual disposal date
-- **Disposed By**: Name/role of person authorizing and executing disposal
+- **Disposed By**: Name/role of person authorising and executing disposal
 - **Disposal Method**: Secure deletion, shredding, physical destruction, etc.
 - **Verification**: How disposal verified (e.g., "Attempted recovery failed - data unrecoverable")
 - **Approval**: Compliance Officer and Legal Counsel approval (signatures or email confirmations)
@@ -2972,9 +2965,9 @@ Compliance records must be retained for specified periods to support audits, reg
 **Disposal Log Review**:
 
 - Internal Audit reviews Disposal Log annually
-- Confirms disposals were authorized
+- Confirms disposals were authorised
 - Verifies disposal methods were secure
-- Checks for unauthorized disposals (records disposed before retention period expired or during legal hold)
+- Checks for unauthorised disposals (records disposed before retention period expired or during legal hold)
 
 **Audit of Disposal Process**:
 
@@ -2999,7 +2992,7 @@ Compliance records must be retained for specified periods to support audits, reg
 
 - Significant changes to regulatory monitoring processes
 - Major updates to evidence management systems
-- Organizational changes affecting compliance operations
+- Organisational changes affecting compliance operations
 - Process improvements identified
 
 **Next Review Date**: [Effective Date + 12 months]
@@ -3024,15 +3017,12 @@ Compliance records must be retained for specified periods to support audits, reg
 
 - **ISMS-IMP-A.5.31.4-UG/TG**: Regulatory Monitoring Process
   - Step-by-step operational guide for regulatory monitoring (implements Section 2)
-- **ISMS-IMP-A.5.31.5-UG/TG**: Evidence Management Process
   - Step-by-step operational guide for evidence management (implements Section 5)
 
 **Assessment Workbooks**:
 
 - **Regulatory Change Register**: Template for logging regulatory changes (Section 2.3)
 - **Impact Assessment Template**: Template for impact assessments (Section 3.3)
-- **Assessment Workbook 5**: Compliance Evidence Register (Section 5)
-- **Assessment Workbook 6**: Regulatory Compliance Dashboard (Section 6.1.1)
 
 **Standards & External References**:
 
@@ -3042,7 +3032,7 @@ Compliance records must be retained for specified periods to support audits, reg
 
 ## Definitions
 
-**Evidence**: Tangible proof that [Organization] complies with regulatory requirements through implemented controls.
+**Evidence**: Tangible proof that [Organisation] complies with regulatory requirements through implemented controls.
 
 **Evidence Gap**: Regulatory requirement or control for which evidence is missing, expired, or inadequate.
 
@@ -3050,7 +3040,7 @@ Compliance records must be retained for specified periods to support audits, reg
 
 **Regulatory Change**: Modification to regulation (amendment, new regulation, repeal, guidance, enforcement action).
 
-**Retention Period**: Time duration for which compliance records must be preserved before authorized disposal.
+**Retention Period**: Time duration for which compliance records must be preserved before authorised disposal.
 
 **Traceability**: Ability to trace from regulation through requirements and controls to evidence (forward) and reverse (evidence back to regulation).
 
@@ -3060,5 +3050,5 @@ Compliance records must be retained for specified periods to support audits, reg
 
 ---
 
-*This policy establishes [Organization]'s systematic approach to maintaining the regulatory compliance framework and demonstrating compliance through evidence, enabling audit readiness and regulatory confidence.*
-<!-- QA_VERIFIED: 2026-02-01 -->
+*This policy establishes [Organisation]'s systematic approach to maintaining the regulatory compliance framework and demonstrating compliance through evidence, enabling audit readiness and regulatory confidence.*
+<!-- QA_VERIFIED: 2026-03-01 -->

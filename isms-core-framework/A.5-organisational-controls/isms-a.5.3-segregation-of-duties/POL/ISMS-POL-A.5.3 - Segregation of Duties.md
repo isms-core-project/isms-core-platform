@@ -42,20 +42,19 @@
 - ISMS-IMP-A.5.3.1-UG/TG (SoD Matrix Assessment)
 - ISMS-IMP-A.5.3.2-UG/TG (Conflict Analysis)
 - ISMS-IMP-A.5.3.3-UG/TG (Role-Function Mapping)
-- ISMS-IMP-A.5.3.4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.5.3
 
 ---
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for segregation of duties to reduce the risk of fraud, error, and unauthorized activities by ensuring that conflicting responsibilities are separated across different individuals or systems.
+This policy establishes [Organisation]'s requirements for segregation of duties to reduce the risk of fraud, error, and unauthorised activities by ensuring that conflicting responsibilities are separated across different individuals or systems.
 
 **Scope**: This policy applies to all business processes, information systems, and activities where conflicting duties could lead to fraud, error, or security breaches if performed by a single individual.
 
-**Purpose**: Define organizational requirements for segregation of duties. This policy establishes WHAT segregation is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.3 (UG/TG variants).
+**Purpose**: Define organisational requirements for segregation of duties. This policy establishes WHAT segregation is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.3 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss CO, ISO/IEC 27001:2022, and EU GDPR. Conditional sector-specific requirements (FINMA, SOX, PCI DSS v4.0.1) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss CO, ISO/IEC 27001:2022, and EU GDPR. Conditional sector-specific requirements (FINMA, SOX, PCI DSS v4.0.1) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -70,7 +69,7 @@ This policy establishes [Organization]'s requirements for segregation of duties 
 **Control Objective**: Reduce the risk of fraud, error, and circumvention of information security controls by separating conflicting duties.
 
 **Control Type**: Preventive
-**Control Category**: Organizational
+**Control Category**: Organisational
 
 **This Policy Addresses**:
 
@@ -94,13 +93,13 @@ This policy:
 This policy does NOT:
 
 - **Specify technical implementation details** (see ISMS-IMP-A.5.3 Implementation Guidance)
-- **Define specific duty assignment matrices** (organization-specific, maintained operationally)
+- **Define specific duty assignment matrices** (organisation-specific, maintained operationally)
 - **Provide system configuration procedures** (see ISMS-IMP-A.5.3 Technical Controls)
-- **Replace risk assessment** (segregation requirements informed by [Organization]'s risk treatment)
+- **Replace risk assessment** (segregation requirements informed by [Organisation]'s risk treatment)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
-- Policy stability despite organizational structure changes
+- Policy stability despite organisational structure changes
 - Flexibility for different system implementations
 - Clear distinction between governance (policy) and execution (implementation)
 
@@ -150,7 +149,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - NIST SP 800-53 (Access Enforcement AC-5)
 - IIA International Standards (Internal Audit segregation)
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
 
 ---
 
@@ -194,7 +193,7 @@ The following duty combinations SHALL be segregated:
 - Developing code AND deploying to production
 - Administering systems AND reviewing system logs
 - Creating user accounts AND approving access requests
-- Managing backups AND authorizing data restoration
+- Managing backups AND authorising data restoration
 - Configuring security controls AND auditing security effectiveness
 
 **Procurement & Contracts**:
@@ -256,7 +255,7 @@ Exceptions to segregation requirements require:
 
 **Emergency Exceptions** (≤24 hours):
 
-- Verbal authorization from Department Head + CISO
+- Verbal authorisation from Department Head + CISO
 - Documented within 4 hours of exception use
 - Full review within 24 hours of exception end
 - Compensating controls active during exception period
@@ -345,7 +344,7 @@ Nonconformities related to this policy (e.g., segregation violations, unreviewed
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
@@ -355,7 +354,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Control A.5.3 applicability justified in [Organization]'s SoA
+- Control A.5.3 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 
 **Related Controls**:
@@ -417,7 +416,7 @@ Evidence required to demonstrate this policy is operationally effective:
 | **Conflicting Duties** | Responsibilities that, if combined, would allow an individual to commit and conceal errors or fraud |
 | **Compensating Control** | An alternative control measure implemented when primary segregation cannot be achieved |
 | **Mutual Exclusion** | A technical control preventing a user from being assigned conflicting roles simultaneously |
-| **Four-Eyes Principle** | A requirement that critical actions require approval or verification by at least two authorized individuals |
+| **Four-Eyes Principle** | A requirement that critical actions require approval or verification by at least two authorised individuals |
 
 ---
 
@@ -437,4 +436,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for segregation of duties. Implementation procedures are documented in ISMS-IMP-A.5.3 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -5,189 +5,151 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Transfer Rules and Procedures |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.14.1-TG |
-| **Document Type** | Implementation Guide |
-| **Parent Policy** | ISMS-POL-A.5.14 (Information Transfer) |
-| **Control Reference** | ISO/IEC 27001:2022 Control A.5.14 |
+| **Related Policy** | ISMS-POL-A.5.14 (Information Transfer) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.14) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
 | **Classification** | Internal |
-| **Owner** | Information Security Officer |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
-**Related Documents:**
-- ISMS-POL-A.5.14 (Information Transfer Policy)
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.14 (Information Transfer)
 - ISMS-IMP-A.5.14.2 (Channel Security Assessment)
 - ISMS-IMP-A.5.14.3 (Transfer Agreements Register)
-- ISMS-POL-A.5.12-13 (Information Classification and Labelling)
-- ISMS-POL-A.8.24 (Use of Cryptography)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a514_1_transfer_rules_procedures.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.14.1` |
-| **Output Filename** | `ISMS-IMP-A.5.14.1_Transfer_Rules_and_Procedures_YYYYMMDD.xlsx` |
-| **Workbook Title** | Transfer Rules and Procedures |
-| **Total Sheets** | 9 (9 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #69DB7C | 69DB7C | Custom |
-| #74C0FC | 74C0FC | Custom |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #E2EFDA | E2EFDA | Pale Green (Success Background) |
-| #F2F2F2 | F2F2F2 | Very Light Gray (Protected/Alternating) |
-| #FF6B6B | FF6B6B | Custom |
-| #FFA94D | FFA94D | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
-
-**Frozen Panes:** A3
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Transfer_Policy
+## Generator Alignment Reference
 
-**Frozen Panes:** A4
+> Auto-generated from `generate_a514_1_transfer_rules_procedures.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.14.1`
 
-| Col | Header |
-|-----|--------|
-| A | Policy Element |
-| B | Description |
-| C | Requirement |
-| D | Owner |
-| E | Review Frequency |
-| F | Status |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: Transfer_Methods
+| # | Sheet Name |
+|---|-----------|
+| 1 | Transfer Policy |
+| 2 | Transfer Methods |
+| 3 | Electronic Transfer |
+| 4 | Physical Transfer |
+| 5 | Verbal Transfer |
+| 6 | Evidence Register |
+| 7 | Approval Sign-Off |
+| 8 | Summary Dashboard |
+| 9 | Instructions & Legend |
 
-**Frozen Panes:** A4
+### Color Palette
 
-### Columns
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-| Col | Header |
-|-----|--------|
-| A | Transfer Method |
-| B | PUBLIC |
-| C | INTERNAL |
-| D | CONFIDENTIAL |
-| E | RESTRICTED |
-| F | Conditions |
-| G | Approval Required |
-| H | Notes |
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | INFORMATION TRANSFER POLICY ELEMENTS |
+| 2 | ACCEPTABLE TRANSFER METHODS BY CLASSIFICATION LEVEL |
+| 3 | ELECTRONIC TRANSFER RULES AND CONTROLS |
+| 4 | PHYSICAL TRANSFER PROCEDURES AND CONTROLS |
+| 5 | VERBAL TRANSFER PROTOCOLS |
+| 6 | Policy Element |
+| 7 | Description |
+| 8 | Requirement |
+| 9 | Owner |
+| 10 | Review Frequency |
+| 11 | Status |
+| 12 | Transfer Method |
+| 13 | PUBLIC |
+| 14 | INTERNAL |
+| 15 | CONFIDENTIAL |
+| 16 | RESTRICTED |
+| 17 | Conditions |
+| 18 | Approval Required |
+| 19 | Notes |
+| 20 | Channel |
+| 21 | Security Controls |
+| 22 | Encryption Requirement |
+| 23 | Authentication |
+| 24 | Logging |
+| 25 | Max Classification |
+| 26 | DLP Integration |
+| 27 | Transfer Type |
+| 28 | Packaging Requirements |
+| 29 | Courier/Transport |
+| 30 | Chain of Custody |
+| 31 | Recipient Verification |
+| 32 | Environmental Protection |
+| 33 | Communication Type |
+| 34 | Security Precautions |
+| 35 | Participant Verification |
+| 36 | Recording Policy |
+| 37 | Follow-up Documentation |
+| 38 | Evidence ID |
+| 39 | Evidence Type |
+| 40 | Related Sheet / Item |
+| 41 | File Location |
+| 42 | Collection Date |
+| 43 | Collected By |
+| 44 | Assessment Area |
+| 45 | Total Items |
+| 46 | Compliant |
+| 47 | Partial |
+| 48 | Non-Compliant |
+| 49 | N/A |
+| 50 | Compliance % |
 
-## Sheet 4: Electronic_Transfer
+### Data Validation Values
 
-**Frozen Panes:** A4
+All dropdown/list values used across sheets:
 
-### Columns
+```
+Draft, Final, Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
-| Col | Header |
-|-----|--------|
-| A | Channel |
-| B | Security Controls |
-| C | Encryption Requirement |
-| D | Authentication |
-| E | Logging |
-| F | Max Classification |
-| G | DLP Integration |
-| H | Notes |
-
----
-
-## Sheet 5: Physical_Transfer
-
-**Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Transfer Type |
-| B | Packaging Requirements |
-| C | Courier/Transport |
-| D | Chain of Custody |
-| E | Recipient Verification |
-| F | Max Classification |
-| G | Environmental Protection |
-| H | Notes |
-
----
-
-## Sheet 6: Verbal_Transfer
-
-**Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Communication Type |
-| B | Security Precautions |
-| C | Participant Verification |
-| D | Recording Policy |
-| E | Max Classification |
-| F | Follow-up Documentation |
-| G | Notes |
-
----
-
-## Sheet 7: Evidence_Register
-
-**Data Rows:** 8 (rows 1–8) | **Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Evidence Type |
-| C | Description |
-| D | Related Control |
-| E | Location/Link |
-| F | Date Collected |
-| G | Collected By |
-| H | Status |
-
----
-
-## Sheet 8: Approval_SignOff
-
-**Data Rows:** 5 (rows 1–5) | **Frozen Panes:** A4
-
----
-
-## Sheet 9: Header_Row
+**Extracted:** 9 sheets, 50 columns, 8 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

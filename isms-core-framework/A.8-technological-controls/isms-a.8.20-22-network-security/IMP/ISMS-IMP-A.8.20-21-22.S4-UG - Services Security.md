@@ -8,27 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-IMP-A.8.20-21-22-S4-UG |
+|-------|-------|
+| **Document Title** | Services Security |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.20-21-22.S4-UG |
+| **Related Policy** | ISMS-POL-A.8.20-21-22 (Network Security) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.20 (Networks Security) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Network Services Security Implementation |
-| **Related Policy** | ISMS-POL-A.8.20-21-22, Section 2.2 (Network Services Security - A.8.21), Section 2.1 (Network Infrastructure Security - A.8.20) |
-| **Purpose** | Provide service-specific security implementation guidance for critical network services (DNS, DHCP, NTP, proxy, load balancers, authentication services) including hardening, monitoring, and redundancy |
-| **Target Audience** | Network Administrators, System Administrators, Security Engineers, IT Operations, Service Owners, Auditors |
-| **Assessment Type** | Service Security Configuration & Availability Assessment |
-| **Review Cycle** | Quarterly or After Service Configuration Changes |
-| **Total Sheets** | 11 |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial implementation guidance for network services security | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.20-21-22 (Network Security)
+- ISMS-IMP-A.8.20-21-22.S1 (Network Discovery)
+- ISMS-IMP-A.8.20-21-22.S2 (Architecture Documentation)
+- ISMS-IMP-A.8.20-21-22.S3 (Device Hardening)
+- ISMS-IMP-A.8.20-21-22.S5 (Segmentation Implementation)
 
 ---
 
-**Audience:** Security assessors, Control owners, Compliance officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Security Zones Inventory | Inventory of network security zones |
+| 3 | Segmentation Matrix | Document network segmentation controls between zones |
+| 4 | VLAN Inventory | Inventory of VLANs and their security configuration |
+| 5 | Firewall Rules Assessment | Assess firewall rule sets and effectiveness |
+| 6 | ACL Assessment | Assess access control lists across network devices |
+| 7 | Segmentation Testing | Document and track segmentation testing results |
+| 8 | Gap Analysis | Identify segmentation coverage gaps |
+| 9 | Remediation Roadmap | Plan remediation of segmentation gaps |
+| 10 | Evidence Register | Store and reference evidence supporting assessments |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -433,7 +460,7 @@ backend webservers
 
 ## Service Overview
 
-**Purpose**: Centralized authentication, authorization, accounting  
+**Purpose**: Centralized authentication, authorisation, accounting  
 **Security Focus**: Shared secret protection, encrypted communication  
 **Common Implementations**: FreeRADIUS, Cisco ISE, Microsoft NPS  
 **Attack Vectors**: Shared secret compromise, replay attacks  
@@ -471,11 +498,11 @@ radius server RADIUS-01
 
 aaa new-model
 aaa authentication login default group radius local
-aaa authorization exec default group radius local
+aaa authorisation exec default group radius local
 aaa accounting exec default start-stop group radius
 ```
 
-## TACACS+ Command Authorization
+## TACACS+ Command Authorisation
 
 ```tacacs
 # /etc/tacacs+/tac_plus.conf
@@ -632,7 +659,7 @@ grep "Failed password" /var/log/auth.log | awk '{print $11}' | sort | uniq -c | 
 | Proxy | SSL inspection | HTTPS sites accessible with proxy CA |
 | Load Balancer | Health checks | Failed backends removed from pool |
 | RADIUS | Authentication | radtest succeeds with valid credentials |
-| TACACS+ | Command authorization | Restricted users denied config commands |
+| TACACS+ | Command authorisation | Restricted users denied config commands |
 | SNMP | SNMPv3 works | v3 queries succeed |
 | SNMP | v1/v2c disabled | v2c queries fail/timeout |
 | Syslog | TLS encryption | tcpdump shows encrypted traffic |
@@ -670,7 +697,7 @@ grep "Failed password" /var/log/auth.log | awk '{print $11}' | sort | uniq -c | 
 ## AAA
 
 - **RADIUS auth fails** → Verify shared secret, check LDAP integration
-- **TACACS+ authorization inconsistent** → Review tac_plus.conf syntax
+- **TACACS+ authorisation inconsistent** → Review tac_plus.conf syntax
 
 ## SNMP
 
@@ -764,7 +791,7 @@ Each service must have:
 | Load Balancer | Health checks enabled | ☐ |
 | RADIUS | Shared secrets strong | ☐ |
 | RADIUS | LDAP integration | ☐ |
-| TACACS+ | Command authorization | ☐ |
+| TACACS+ | Command authorisation | ☐ |
 | SNMP | SNMPv3 only | ☐ |
 | SNMP | v1/v2c disabled | ☐ |
 | Syslog | TLS encryption | ☐ |
@@ -776,7 +803,7 @@ Each service must have:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | [Organization] ISMS Team | Initial comprehensive release |
+| 1.0 | [Date] | [Organisation] ISMS Team | Initial comprehensive release |
 
 ---
 
@@ -788,7 +815,7 @@ Each service must have:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Every open port is an invitation; make sure you know who you are inviting."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

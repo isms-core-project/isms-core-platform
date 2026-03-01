@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Log Source Inventory Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.15.1-UG |
+| **Related Policy** | ISMS-POL-A.8.15 (Logging) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.15 (Logging) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Log Source Inventory & Event Logging Completeness |
-| **Related Policy** | ISMS-POL-A.8.15, Section 2.1 (Event Logging Requirements) |
-| **Purpose** | Catalog all systems generating logs, verify logging completeness against policy requirements, and identify gaps in event logging coverage |
-| **Target Audience** | IT Operations, System Owners, Application Owners, Security Team, Compliance Officers, Auditors, Workbook Developers (Python/Excel script maintainers) |
-| **Assessment Type** | Inventory & Compliance Verification |
-| **Review Cycle** | Annual (full inventory), Quarterly (new systems update) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
+| Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Initial technical specification for Log Source Inventory assessment workbook | ISMS Implementation Team |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.15 (Logging)
+- ISMS-IMP-A.8.15.2 (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.3 (Log Protection & Retention Assessment)
+- ISMS-IMP-A.8.15.4 (Log Analysis & Review Assessment)
+
+---
 
 ### Document Structure
 
@@ -35,11 +49,31 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | System Inventory | Inventory of all systems generating logs |
+| 3 | Log Event Types by System | Map required event types to each system |
+| 4 | Authentication Logging | Verify authentication event logging coverage |
+| 5 | Authorisation & Access | Verify authorisation and access event logging |
+| 6 | Administrative Activity | Verify administrative action logging coverage |
+| 7 | Security Event Logging | Verify security event logging coverage |
+| 8 | Application & Database | Verify application and database logging coverage |
+| 9 | Network Device Logging | Verify network device logging coverage |
+| 10 | Gap Analysis | Identify log source and event coverage gaps |
+| 11 | Evidence Register | Store and reference evidence supporting assessments |
+| 12 | Summary Dashboard | Compliance status and key metrics overview |
+| 13 | Approval Sign-Off | Management review sign-off and certification |
+
+---
+
 # Assessment Overview
 
 ## What This Assessment Evaluates
 
-This assessment creates a comprehensive inventory of ALL systems generating logs within [Organization] and verifies that required events are being logged per policy requirements.
+This assessment creates a comprehensive inventory of ALL systems generating logs within [Organisation] and verifies that required events are being logged per policy requirements.
 
 **Key Questions Answered:**
 
@@ -51,10 +85,10 @@ This assessment creates a comprehensive inventory of ALL systems generating logs
 
 ## Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - **ISO/IEC 27001:2022 Control A.8.15**: Logs that record activities, exceptions, faults and other relevant events should be produced, stored, protected and analysed
-- **ISMS-POL-A.8.15, Section 2.1 (Event Logging Requirements)**: Mandatory log events including authentication, authorization, administrative actions, security events, system events, network events, application events
+- **ISMS-POL-A.8.15, Section 2.1 (Event Logging Requirements)**: Mandatory log events including authentication, authorisation, administrative actions, security events, system events, network events, application events
 - **ISMS-POL-A.8.15, Section 1.4 (Scope)**: All information systems, network devices, security tools, databases, cloud services, authentication systems
 
 **Security Impact**: You cannot investigate what you don't log. Incomplete log coverage creates blind spots attackers exploit.
@@ -75,9 +109,9 @@ This assessment verifies [Organization]'s compliance with:
 
 **Typical Assessment Results**:
 
-- **100-250 log sources** (small organization)
-- **250-1000 log sources** (medium organization)
-- **1000+ log sources** (large/complex organization)
+- **100-250 log sources** (small organisation)
+- **250-1000 log sources** (medium organisation)
+- **1000+ log sources** (large/complex organisation)
 
 **Time Investment**: 
 
@@ -197,7 +231,7 @@ For each system, document:
 
 - System name, owner, business function
 - System type (server, application, network device, security tool, cloud service, database)
-- Data classification (Public, Internal, Confidential, Restricted per organizational classification)
+- Data classification (Public, Internal, Confidential, Restricted per organisational classification)
 - System criticality (Critical, High, Standard, Low per business impact)
 - Deployment model (On-premises, Cloud, Hybrid, Third-party hosted)
 
@@ -205,7 +239,7 @@ For each system, document:
 
 For each system, use **ISMS-POL-A.8.15, Annex A (Logging Decision Matrix)** to determine:
 
-- What event categories are mandatory? (Authentication, Authorization, Administrative, Security, System, Network, Application)
+- What event categories are mandatory? (Authentication, Authorisation, Administrative, Security, System, Network, Application)
 - What retention period applies? (per ISMS-POL-A.8.15, Section 2.3 + Annex A.2)
 - Are there special regulatory requirements? (PCI DSS v4.0.1, HIPAA, SOX per ISMS-POL-A.8.15, Section 1.5)
 
@@ -214,7 +248,7 @@ For each system, use **ISMS-POL-A.8.15, Annex A (Logging Decision Matrix)** to d
 For each system, verify actual logging configuration:
 
 - **Authentication Logging** (Sheet 4): Login success/failure, logout, account lockouts, password changes, MFA events
-- **Authorization & Access** (Sheet 5): Access to sensitive data, privilege escalation, access control changes
+- **Authorisation & Access** (Sheet 5): Access to sensitive data, privilege escalation, access control changes
 - **Administrative Activity** (Sheet 6): Configuration changes, account management, privilege grants, policy changes
 - **Security Event Logging** (Sheet 7): Malware detection, intrusion attempts, firewall blocks, DLP alerts
 - **Application & Database** (Sheet 8): Errors, exceptions, database transactions, API authentication
@@ -309,7 +343,7 @@ This section provides detailed guidance for completing each assessment sheet.
 **Column F: Data Classification**
 
 - Dropdown: Public, Internal, Confidential, Restricted
-- Per [Organization]'s data classification policy
+- Per [Organisation]'s data classification policy
 - **Impact**: Higher classification = more comprehensive logging required (per ISMS-POL-A.8.15, Annex A.1)
 
 **Column G: System Criticality**
@@ -391,10 +425,10 @@ This sheet links system attributes (from Sheet 2) to logging requirements (from 
 **Column E: Required Event Categories**
 
 - Multi-select or comma-separated list
-- Values: Authentication, Authorization, Administrative, Security, System, Network, Application
+- Values: Authentication, Authorisation, Administrative, Security, System, Network, Application
 - **Decision Logic** (per ISMS-POL-A.8.15, Annex A.1):
   - **Critical Systems OR Restricted Data**: ALL event categories required
-  - **High-Value Systems OR Confidential Data**: Authentication, Authorization, Administrative, Security, System, Application
+  - **High-Value Systems OR Confidential Data**: Authentication, Authorisation, Administrative, Security, System, Application
   - **Standard Systems (Internal Data)**: Authentication, Administrative, Security (optional: Application, System)
   - **Low-Impact Systems (Public Data)**: Authentication (failures), Administrative, Critical Security Events
 
@@ -403,10 +437,10 @@ This sheet links system attributes (from Sheet 2) to logging requirements (from 
 - Dropdown: Yes (All), Yes (Failures Only), No
 - Per ISMS-POL-A.8.15, Section 2.1 (Authentication Events): Login success/failure, logout, lockouts, password changes, MFA
 
-**Column G: Authorization Events Required?**
+**Column G: Authorisation Events Required?**
 
 - Dropdown: Yes, No
-- Per ISMS-POL-A.8.15, Section 2.1 (Authorization Events): Access to sensitive data, privilege escalation, access control changes
+- Per ISMS-POL-A.8.15, Section 2.1 (Authorisation Events): Access to sensitive data, privilege escalation, access control changes
 
 **Column H: Administrative Actions Required?**
 
@@ -511,10 +545,10 @@ Jan 21 2026 14:35:22 PROD-WEB-01 sshd[12345]: Accepted publickey for admin from 
 Interpretation: Successful SSH login captured with timestamp, user, source IP, authentication method
 ```
 
-### Sheet 5: Authorization & Access
+### Sheet 5: Authorisation & Access
 
 **Specific Events Checklist (Column G)**:
-Per ISMS-POL-A.8.15, Section 2.1 (Authorization Events):
+Per ISMS-POL-A.8.15, Section 2.1 (Authorisation Events):
 
 - [ ] Access to sensitive data (user ID, data classification, action performed, timestamp)
 - [ ] Privilege escalation (user ID, escalated privileges, justification, timestamp)
@@ -887,7 +921,7 @@ Before submitting assessment for approval, verify:
 
 - **Who**: Information Security Manager or CISO
 - **What**: Review compliance scores, gap analysis, remediation plan
-- **Outcome**: InfoSec Manager/CISO approves assessment and authorizes remediation actions
+- **Outcome**: InfoSec Manager/CISO approves assessment and authorises remediation actions
 - **Timeline**: 5 business days after IT Ops approval
 
 ## Approval Criteria
@@ -921,7 +955,7 @@ Before submitting assessment for approval, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A log unrecorded is an event unwitnessed."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Baseline & Detection Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.16.2-UG |
+| **Related Policy** | ISMS-POL-A.8.16 (Monitoring) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.16 (Monitoring Activities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Baseline Establishment & Anomaly Detection Capabilities |
-| **Related Policy** | ISMS-POL-A.8.16, Section 2.2 (Baseline & Anomaly Detection Requirements) |
-| **Purpose** | Assess baseline establishment for normal behavior, evaluate anomaly detection capabilities, and verify detection effectiveness across monitoring infrastructure |
-| **Target Audience** | SOC Analysts, Security Engineers, Threat Intelligence Analysts, Detection Engineers, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly (Baselines evolve, detection rules require continuous tuning) |
-| **Date** | 22.01.2026 |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Original] | Initial technical specification | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.16 (Monitoring)
+- ISMS-IMP-A.8.16.1 (Monitoring Infrastructure Assessment)
+- ISMS-IMP-A.8.16.3 (Coverage Assessment)
+- ISMS-IMP-A.8.16.4 (Alert Management & Response Assessment)
+
+---
 
 ### Document Structure
 
@@ -33,7 +47,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 **IMPLEMENTATION NOTE:**
 
-This reworked document follows the **ISMS-POL-A.8.16 consolidated policy structure** (dated 22.01.2026).
+This reworked document follows the **ISMS-POL-A.8.16 policy structure** (dated 22.01.2026).
 
 All policy references have been updated from the old modular format:
 
@@ -41,6 +55,22 @@ All policy references have been updated from the old modular format:
 - ✅ NEW: "ISMS-POL-A.8.16, Section 2.2 (Baseline & Anomaly Detection Requirements)"
 
 **Prerequisites:** ISMS-IMP-A.8.16.1 (Monitoring Infrastructure Assessment) must be completed first. This assessment builds on the monitoring platforms and log sources documented in A.8.16.1.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | 1. Baseline Inventory | Inventory established baselines for normal behaviour |
+| 3 | 2. Detection Rules | Document and assess detection rules and use cases |
+| 4 | 3. MITRE ATT&CK Coverage | Map detection rules to MITRE ATT&CK techniques |
+| 5 | 4. Rule Performance | Track detection rule performance and effectiveness |
+| 6 | 5. Testing Validation | Document detection rule testing and validation |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -173,7 +203,7 @@ This assessment prevents cargo cult monitoring by requiring:
 - **Baseline Summary** (Part I, page 50): Coverage by system type, baseline maturity
 - **Detection Coverage Summary** (Part I, page 60): Attack types covered vs. gaps
 - **Effectiveness Metrics** (Part I, page 70): MTTD, detection rate, false positive rate
-- **Dashboard** (Part II, pages 126-128): Consolidated compliance view
+- **Dashboard** (Part II, pages 126-128): tracked in Summary Dashboards
 
 ---
 
@@ -183,7 +213,7 @@ This assessment prevents cargo cult monitoring by requiring:
 
 **Assessment Name:** ISMS-IMP-A.8.16.2 - Baseline & Detection Assessment
 
-This assessment evaluates your organization's capability to:
+This assessment evaluates your organisation's capability to:
 1. Establish **measurable baselines** for normal behavior (systems, users, applications)
 2. Detect **anomalous behavior** that deviates from baselines
 3. Cover **attack scenarios** with detection rules (MITRE ATT&CK, kill chain)
@@ -204,7 +234,7 @@ This assessment evaluates your organization's capability to:
 **Acceptable Baseline** (measurable, specific, statistical):
 ```
 Baseline ID: BL-2026-001
-System: dc01.organization.example (Domain Controller)
+System: dc01.organisation.example (Domain Controller)
 Metric: Authentication Success Rate (Events/Hour)
 Observation Period: 45 days (15.11.2025 - 29.12.2025)
 Exclusions: Security incident 18.12.2025 (brute force attack - excluded from baseline)
@@ -301,8 +331,7 @@ Sometimes it's higher, sometimes lower. We alert if it seems unusually high."
 | ISMS-IMP-A.8.16.1 | Infrastructure | Provides monitoring platforms and log sources that A.8.16.2 uses for baseline establishment |
 | **ISMS-IMP-A.8.16.2** | **Baselines & Detection** | **HOW you detect anomalies** (THIS ASSESSMENT) |
 | ISMS-IMP-A.8.16.3 | Coverage | Uses baselines from A.8.16.2 to validate monitoring coverage completeness |
-| ISMS-IMP-A.8.16.4 | Alert Management | Uses detection rules from A.8.16.2 to analyze alert response effectiveness |
-| ISMS-IMP-A.8.16.5 | Compliance Dashboard | Consolidates all assessments including baseline/detection maturity from A.8.16.2 |
+| ISMS-IMP-A.8.16.4 | Alert Management | Uses detection rules from A.8.16.2 to analyse alert response effectiveness |
 
 **Dependencies:**
 
@@ -629,7 +658,7 @@ For user authentication patterns:
 
 2. Calculate aggregate statistics:
 
-   - Total organization authentication rate (events/hour)
+   - Total organisation authentication rate (events/hour)
    - Privileged access rate (sudo, admin logins per day)
    - Service account activity patterns
 
@@ -880,7 +909,7 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 
 - **What to Enter:** Average value during business hours only
 - **Example:** CPU Business Hours Mean = 48%
-- **Time Definition:** Define organization's business hours (may vary by timezone/region)
+- **Time Definition:** Define organisation's business hours (may vary by timezone/region)
 - **Why Important:** Many systems have time-aware patterns (busier during workday)
 
 **Column R: Off-Hours Profile (18:00-08:00) - Mean**
@@ -1660,7 +1689,7 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 
 **Example:**
 
-- Organization had 800 detection rules
+- Organisation had 800 detection rules
 - Effectiveness testing revealed:
   - Only 40% of rules had generated any alerts in last 6 months (dead rules)
   - 30% had >50% false positive rate (noise generators)
@@ -1685,7 +1714,7 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 - Review baselines quarterly (minimum)
 - Update baselines when significant changes occur:
   - Infrastructure changes (migration, scaling)
-  - Business process changes (new workflows, organizational restructuring)
+  - Business process changes (new workflows, organisational restructuring)
   - Persistent deviations (sustained shift in normal behavior)
 - Document baseline version history (track changes over time)
 
@@ -1841,7 +1870,7 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"You cannot detect the abnormal without understanding the normal."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

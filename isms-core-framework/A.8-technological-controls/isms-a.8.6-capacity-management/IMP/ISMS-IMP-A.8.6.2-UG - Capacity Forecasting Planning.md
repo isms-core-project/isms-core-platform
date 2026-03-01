@@ -8,27 +8,56 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Capacity Forecasting Planning |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.6.2-UG |
+| **Related Policy** | ISMS-POL-A.8.6 (Capacity Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.6 (Capacity Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Capacity Forecasting, Trend Analysis & Expansion Planning |
-| **Related Policy** | ISMS-POL-A.8.6 (Capacity Management Policy) |
-| **Prerequisite** | ISMS-IMP-A.8.6.1 (Capacity Utilization Assessment) - MUST be completed first |
-| **Purpose** | Analyze capacity trends, forecast future requirements, plan capacity expansions, and validate forecast accuracy |
-| **Target Audience** | Capacity Planning Team, Infrastructure Managers, IT Operations, Finance (Budget Planning), Auditors |
-| **Assessment Type** | Analytical & Planning |
-| **Review Cycle** | Quarterly (with annual deep forecasting) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Capacity Forecasting & Planning assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.6 (Capacity Management)
+- ISMS-IMP-A.8.6.1 (Capacity Monitoring Implementation)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.8.6.2-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Historical Utilization | Record historical capacity utilisation data for trend analysis |
+| 3 | Trend Analysis | Analyse capacity usage trends over time |
+| 4 | Capacity Forecasts | Document capacity forecasts for each resource type |
+| 5 | Capacity Exhaustion | Identify and prioritise resources approaching exhaustion |
+| 6 | Planned Expansions | Track planned capacity expansion projects |
+| 7 | Forecast Accuracy | Measure and validate forecast accuracy |
+| 8 | Budget Planning | Link capacity plans to budget requirements |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -51,7 +80,7 @@ This assessment uses historical utilization data (from A.8.6.1) to forecast futu
 
 #### Key Principle
 
-This assessment is **data-driven and forward-looking**. You analyze historical trends to make informed predictions about future capacity needs, enabling **proactive** (planned) capacity management instead of **reactive** (emergency) capacity firefighting.
+This assessment is **data-driven and forward-looking**. You analyse historical trends to make informed predictions about future capacity needs, enabling **proactive** (planned) capacity management instead of **reactive** (emergency) capacity firefighting.
 
 #### What You'll Document
 
@@ -69,7 +98,6 @@ This assessment is **data-driven and forward-looking**. You analyze historical t
 |-----------------------|------------------------|------------------------------------|
 | ISMS-IMP-A.8.6.1     | Current Utilization     | **INPUT** - Provides historical utilization data |
 | **ISMS-IMP-A.8.6.2** | **Forecasting & Planning** | **ANALYZES A.8.6.1 data to predict future needs** |
-| ISMS-IMP-A.8.6.3     | Compliance Dashboard   | **OUTPUT** - Consolidates current + future view |
 
 This assessment (A.8.6.2) **requires A.8.6.1 to be completed first** - you can't forecast without historical data!
 
@@ -163,7 +191,7 @@ Sources:
 
 - ISMS-POL-A.8.6, Section 5 (Capacity Forecasting)
 - ISMS-POL-A.8.6, Section 6 (Capacity Planning)
-- Organizational forecasting methodology (if defined)
+- Organisational forecasting methodology (if defined)
 - Forecast accuracy targets (e.g., ±15% accuracy required)
 
 ### Required Tools
@@ -282,7 +310,7 @@ Sources:
 
 **Quality Check:**
 
-- ✓ All resources from A.8.6.1 analyzed
+- ✓ All resources from A.8.6.1 analysed
 - ✓ Trend patterns identified and documented
 - ✓ Visualizations created (charts)
 - ✓ Trend confidence assessed
@@ -443,7 +471,7 @@ Sources:
 **Quality Check:**
 
 - ✓ Previous forecasts compared to actuals
-- ✓ Forecast errors calculated and analyzed
+- ✓ Forecast errors calculated and analysed
 - ✓ Root causes of errors identified
 - ✓ Methodology improvements documented
 
@@ -512,7 +540,7 @@ Sources:
 
 - ✓ All evidence listed
 - ✓ Storage locations accessible
-- ✓ Evidence is organized
+- ✓ Evidence is organised
 - ✓ Audit-ready format
 
 #### Phase 9: Review & Approval (2-3 hours)
@@ -562,7 +590,7 @@ This section provides detailed guidance for completing each sheet in the workboo
 
 #### Purpose
 
-Visualize and analyze capacity utilization trends over time to understand historical patterns and identify growth trajectories.
+Visualize and analyse capacity utilization trends over time to understand historical patterns and identify growth trajectories.
 
 #### What to Document
 
@@ -750,7 +778,7 @@ Quantify the rate of capacity consumption to enable accurate forecasting and bud
 For EACH growing resource:
 
 - **Resource ID** and Name
-- **Measurement Period** (days/months analyzed)
+- **Measurement Period** (days/months analysed)
 - **Absolute Growth Rate** (GB/month, users/month, %bandwidth/month)
 - **Percentage Growth Rate** (%/month relative to total capacity)
 - **Compound Monthly Growth Rate** (for exponential growth)
@@ -889,7 +917,7 @@ Example:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Plan for the traffic you expect; prepare for the traffic you don't."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

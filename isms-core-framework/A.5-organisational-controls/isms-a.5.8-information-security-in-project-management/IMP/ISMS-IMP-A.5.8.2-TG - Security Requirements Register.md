@@ -8,170 +8,136 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Security Requirements Register |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.8.2-TG |
+| **Related Policy** | ISMS-POL-A.5.8 (Information Security in Project Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.8 (Information Security in Project Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Project Security Requirements Tracking & Traceability |
-| **Related Policy** | ISMS-POL-A.5.8, Section 2.4 (Security Requirements Identification) |
-| **Purpose** | Structured inventory and traceability of security requirements throughout project lifecycle, from identification through implementation and verification |
-| **Target Audience** | Business Analysts, Security Architects, Technical Leads, Project Managers, QA Teams, Auditors |
-| **Assessment Type** | Requirements Management & Verification |
-| **Review Cycle** | Updated continuously during Planning and Execution phases, reviewed at each gate |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | Initial | Initial specification for Security Requirements Register workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.8 (Information Security in Project Management)
+- ISMS-IMP-A.5.8.1 (Project Lifecycle Security Assessment)
+- ISMS-IMP-A.5.8.3 (Project Portfolio Dashboard)
 
 ---
+
 # Technical Specification
-**Audience:** Workbook Developers (Python/Excel script maintainers)
-
-
-> Auto-generated from `generate_a58_2_security_requirements_register.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.8.2` |
-| **Output Filename** | `ISMS-IMP-A.5.8.2_Security_Requirements_Register_YYYYMMDD.xlsx` |
-| **Total Sheets** | 9 (9 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 Control A.5.8 |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #305496 | 305496 | Custom |
-| #808080 | 808080 | Gray (Disabled) |
-| #B4C7E7 | B4C7E7 | Light Blue (Planned/Info) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-
-## Sheet 1: Workbook
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Instructions
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a58_2_security_requirements_register.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Requirements_Register
+**Document ID:** `ISMS-IMP-A.5.8.2`
 
-**Data Rows:** 12 (rows 2–13) | **Frozen Panes:** A{...}
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Formulas
+### Sheet Structure
 
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=TEXT(ROW()-{row-1},` |  |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
 
----
+### Color Palette
 
-## Sheet 4: Example
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-### Columns
+### Column Headers (All Sheets)
 
-| Col | Header |
-|-----|--------|
-| A | Example Requirement |
-| B | Acceptance Criteria |
-| C | Verification Method |
+| # | Column Header |
+|---|--------------|
+| 1 | Requirements Register |
+| 2 | Traceability Matrix |
+| 3 | Verification Checklist |
+| 4 | Category |
+| 5 | Requirement Statement |
+| 6 | Source |
+| 7 | Priority |
+| 8 | Acceptance Criteria |
+| 9 | Impl Status |
+| 10 | Assigned To |
+| 11 | Target Date |
+| 12 | Verification |
+| 13 | Test Status |
+| 14 | Evidence |
+| 15 | Notes |
+| 16 | Example Requirement |
+| 17 | Verification Method |
+| 18 | Req ID |
+| 19 | Design Artifact |
+| 20 | Implementation Reference |
+| 21 | Test Case ID |
+| 22 | Test Result |
+| 23 | Verified |
+| 24 | Requirement ID |
+| 25 | Gap Description |
+| 26 | Impact |
+| 27 | Remediation Action |
+| 28 | Owner |
+| 29 | Assessment Area |
+| 30 | Questions Answered |
+| 31 | No Gap |
+| 32 | Gap Identified |
+| 33 | N/A |
+| 34 | Target |
+| 35 | Compliance % |
+| 36 | Role / Function |
+| 37 | Name |
+| 38 | Signature / Initials |
+| 39 | Date (DD.MM.YYYY) |
+| 40 | Comments |
 
----
+### Data Validation Values
 
-## Sheet 5: Traceability_Matrix
+All dropdown/list values used across sheets:
 
-**Data Rows:** 6 (rows 1–6) | **Frozen Panes:** A{...}
+```
+Application Security, Data Protection, Access Control & Authentication
+Infrastructure Security, Third-Party Security, Compliance & Regulatory
+Must Have, Should Have, Nice to Have, Not Started, In Progress, Implemented
+Verified, Functional Test, SAST, DAST, Penetration Test, Vulnerability Scan
+Configuration Review, Code Review, Not Tested, Pass, Fail, Blocked, N/A, Yes
+No, Critical, High, Medium, Low, Active, Archived, Superseded, Pending Review
+Approved, Approved with Conditions, Rejected, Deferred
+```
 
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Req ID |
-| B | Design Artifact |
-| C | Implementation Reference |
-| D | Test Case ID |
-| E | Test Result |
-| F | Verified |
-
----
-
-## Sheet 6: Verification_Checklist
-
-**Data Rows:** 4 (rows 1–4)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Requirement ID |
-| B | Verification Method |
-| C | Test Status |
-| D | Notes |
-
----
-
-## Sheet 7: Gap_Analysis
-
-**Data Rows:** 6 (rows 1–6)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Req ID |
-| B | Gap Description |
-| C | Impact |
-| D | Remediation Action |
-| E | Owner |
-| F | Target Date |
-
----
-
-## Sheet 8: Evidence_Register
-
-**Data Rows:** 5 (rows 2–6) | **Frozen Panes:** A{...}
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Requirement ID |
-| C | Description |
-| D | Location/Path |
-| E | Date Collected |
-| F | Status |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=TEXT(ROW()-{row-1},` |  |
-
----
-
-## Sheet 9: Signoff
-
-**Data Rows:** 4 (rows 2–5)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Role |
-| B | Name |
-| C | Signature |
-| D | Date |
-| E | Decision |
+**Extracted:** 1 sheets, 40 columns, 39 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

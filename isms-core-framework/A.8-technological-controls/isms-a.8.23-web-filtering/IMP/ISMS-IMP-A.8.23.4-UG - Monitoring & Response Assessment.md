@@ -8,26 +8,59 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Monitoring & Response Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.23.4-UG |
+| **Related Policy** | ISMS-POL-A.8.23 (Web Filtering) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.23 (Web Filtering) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Web Filtering Monitoring, Logging & Incident Response |
-| **Related Policy** | ISMS-POL-A.8.23, Section 2.4 (Logging and Monitoring), ISMS-POL-A.8.23, Section 3.4 (Incident Response) |
-| **Purpose** | Assess operational monitoring, alerting, logging, and incident response capabilities for web filtering infrastructure |
-| **Target Audience** | SOC Analysts, Security Engineers, IT Operations, Incident Responders, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Technical |
-| **Review Cycle** | Quarterly or After Major Incidents/Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Web Filtering Monitoring & Incident Response assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.23 (Web Filtering)
+- ISMS-IMP-A.8.23.1 (Filtering Infrastructure Assessment)
+- ISMS-IMP-A.8.23.2 (Network Coverage Assessment)
+- ISMS-IMP-A.8.23.3 (Policy Configuration Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.8.23.4-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Log Collection | Assess web filtering log collection configuration |
+| 3 | Alert Configuration | Document and assess alert rules and thresholds |
+| 4 | Monitoring Dashboard | Assess monitoring dashboarding capabilities |
+| 5 | Incident Response | Document web filtering incident response procedures |
+| 6 | Blocked Events Analysis | Analyse blocked web events and trends |
+| 7 | False Positive Mgmt | Track and manage false positive events |
+| 8 | Reporting Schedule | Document reporting schedules and recipients |
+| 9 | Gap Analysis | Identify monitoring and response gaps |
+| 10 | Evidence Register | Store and reference evidence supporting assessments |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -39,7 +72,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ### What This Assessment Covers
 
-This assessment evaluates your organization's operational capabilities for monitoring, logging, alerting, and responding to web filtering events. This is the **"operations"** assessment - verifying that your web filtering infrastructure (assessed in A.8.23.1) with proper policy configuration (assessed in A.8.23.3) is actually being monitored and that incidents are being detected and handled appropriately.
+This assessment evaluates your organisation's operational capabilities for monitoring, logging, alerting, and responding to web filtering events. This is the **"operations"** assessment - verifying that your web filtering infrastructure (assessed in A.8.23.1) with proper policy configuration (assessed in A.8.23.3) is actually being monitored and that incidents are being detected and handled appropriately.
 
 ### What You'll Document
 
@@ -162,7 +195,7 @@ Have the following documents ready:
 - ISMS-POL-A.8.23, Section 3.4 (Incident Response)
 - ISMS-IMP-A.8.23.1 (Filtering Infrastructure Assessment - completed)
 - ISMS-IMP-A.8.23.3 (Policy Configuration Assessment - completed)
-- Organizational log retention policy
+- Organisational log retention policy
 - Incident response plan/runbook
 - SOC procedures documentation
 
@@ -217,8 +250,8 @@ Step 6: Approval Workflow (1-2 days)
   ├─ Level 2: Technical Approval (Security Engineering Lead)
   └─ Level 3: Executive Approval (CISO)
 
-Step 7: Integration (30 mins)
-  └─ Feed data into Dashboard (A.8.23.5)
+Step 7: Submission (30 mins)
+  └─ Submit approved assessment for management review
 ```
 
 **Total Time:** 10-15 hours spread over 1-2 weeks
@@ -243,7 +276,7 @@ Step 7: Integration (30 mins)
 
    - Assessment Date
    - Completed By
-   - Organization Name
+   - Organisation Name
 
 ### Step 2: Data Collection (Sheet by Sheet)
 
@@ -372,9 +405,8 @@ Document approvals in Sheet 11 with:
 
 Once approved:
 1. Run the normalization script (if using long filenames)
-2. The consolidated dashboard (A.8.23.5) will pull data automatically
-3. Verify data appears correctly in the dashboard
-4. Schedule quarterly update reminder
+2. Distribute results to relevant stakeholders
+3. Schedule quarterly update reminder
 
 ---
 
@@ -477,7 +509,7 @@ Once approved:
   - GDPR: Depends on data processing purposes
   - General security best practice: 90-365 days
   - Forensic investigations: 1-7 years
-- **Tip:** Check your organization's retention policy and regulatory requirements
+- **Tip:** Check your organisation's retention policy and regulatory requirements
 
 **Q9: Retention_Compliant**
 
@@ -546,7 +578,7 @@ Once approved:
 - **Question:** Where does this retention requirement come from?
 - **Dropdown Options:**
   - **Regulatory** - Law, regulation (GDPR, PCI DSS v4.0.1, SOX)
-  - **Policy** - Internal organizational policy
+  - **Policy** - Internal organisational policy
   - **Contractual** - Customer/vendor contract requirement
   - **Best_Practice** - Industry best practice (NIST, CIS)
 - **Examples:**
@@ -694,7 +726,7 @@ These are **calculated automatically** based on your data in Sections A and B:
   - **Medium** - Notable event, investigate when capacity allows
   - **Low** - Informational, routine review
   - **Informational** - FYI only, no action required
-- **Auditor Expects:** Severity aligns with organizational risk appetite
+- **Auditor Expects:** Severity aligns with organisational risk appetite
 - **Common Mistake:** Everything is "Critical" = alert fatigue
 
 **Q7: Notification_Method**
@@ -893,7 +925,7 @@ These are **calculated automatically:**
   - **IT_Ops** - IT Operations team
   - **Compliance** - Compliance officers, auditors
   - **CISO** - Information Security leadership
-  - **All** - Organization-wide dashboard
+  - **All** - Organisation-wide dashboard
   - **Security_Team** - Broader security team
 - **Best Practice:** Tailor dashboard complexity to audience
   - SOC = technical, real-time, drill-down capable
@@ -1363,7 +1395,7 @@ These are **calculated automatically:**
   - Botnets
   - Data Exfiltration
   - Adult Content (if blocked per policy)
-  - Unauthorized Cloud Apps (if blocked per policy)
+  - Unauthorised Cloud Apps (if blocked per policy)
 - **Tip:** Categories should align with your filtering policies (A.8.23.3)
 
 **Q2: Total_Blocks_Last_30_Days**
@@ -2131,7 +2163,7 @@ These are **calculated automatically:**
 
 - Evidence completeness >95%
 - All evidence = "Verified" before final approval
-- Evidence organized and accessible
+- Evidence organised and accessible
 - Evidence current (within last 90 days for most items)
 
 ---
@@ -2596,10 +2628,10 @@ Once all three levels approve:
    - Upload to final evidence repository
    - Test evidence accessibility
 
-3. **Prepare for Dashboard Integration**
+3. **Finalise Submission**
 
    - Run file normalization script if needed
-   - Verify assessment data feeds correctly into Dashboard (A.8.23.5)
+   - Distribute approved assessment to relevant stakeholders
 
 4. **Schedule Next Review**
 
@@ -2671,7 +2703,7 @@ Monitoring without response is theater. Alerts without resolution tracking is no
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Filtering is prevention; monitoring is detection; response is resolution."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

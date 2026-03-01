@@ -3,29 +3,54 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.7.10: Storage Media
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Media Handling Procedures |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.10.2-UG |
+| **Related Policy** | ISMS-POL-A.7.10 (Storage Media) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.10 (Storage Media) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Media Handling, Transportation & Access Controls |
-| **Related Policy** | ISMS-POL-A.7.10, Section 2.3-2.4 (Transportation & Storage) |
-| **Purpose** | Assess organisational compliance with storage media handling procedures, transportation security, and access controls throughout the media lifecycle |
-| **Target Audience** | IT Operations, Physical Security, Logistics, Compliance Officers, Business Unit Managers, Auditors |
-| **Assessment Type** | Process & Operational Compliance |
-| **Review Cycle** | Semi-annual (minimum) or After Security Incidents |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Media Handling Procedures assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.10 (Storage Media)
+- ISMS-IMP-A.7.10.1 (Storage Media Inventory)
+- ISMS-IMP-A.7.10.3 (Media Lifecycle Tracking)
 
 ---
 
-**Audience:** IT Operations, Physical Security, Logistics Managers, Compliance Officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Media Access Controls | Assess access controls for storage media |
+| 3 | Transportation Security | Evaluate media transportation and transit security |
+| 4 | Physical Storage Controls | Assess physical storage and location security |
+| 5 | Media Use Procedures | Evaluate procedures for authorised media use |
+| 6 | Incident Response | Track media-related security incidents |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -820,7 +845,7 @@ Before submitting assessment for approval, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Handle data as you would handle medicine: with care, labelled clearly, and disposed safely."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

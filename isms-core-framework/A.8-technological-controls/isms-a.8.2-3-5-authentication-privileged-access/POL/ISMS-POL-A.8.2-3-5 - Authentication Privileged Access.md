@@ -46,7 +46,6 @@
 - ISMS-IMP-A.8.2-3-5.S3-UG/TG (Privileged Accounts)
 - ISMS-IMP-A.8.2-3-5.S4-UG/TG (Privileged Monitoring)
 - ISMS-IMP-A.8.2-3-5.S5-UG/TG (Access Restrictions)
-- ISMS-IMP-A.8.2-3-5.S6-UG/TG (Compliance Dashboard)
 - ISMS-CTX-A.8.2-3-5 (Authentication & PAM Technology Landscape) *if created*
 - ISO/IEC 27001:2022 Controls A.8.2, A.8.3, A.8.5
 - ISO/IEC 27002:2022 (Implementation Guidance)
@@ -55,7 +54,7 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for authentication security, privileged access management, and technical access enforcement in accordance with ISO/IEC 27001:2022.
+This policy establishes [Organisation]'s requirements for authentication security, privileged access management, and technical access enforcement in accordance with ISO/IEC 27001:2022.
 
 **Controls Addressed**:
 
@@ -63,7 +62,7 @@ This policy establishes [Organization]'s requirements for authentication securit
 - **A.8.2 - Privileged Access Rights**: Restriction and management of privileged access
 - **A.8.3 - Information Access Restriction**: Technical enforcement of access controls
 
-**Scope**: All authentication mechanisms, privileged accounts, and technical access controls across all systems, platforms, and environments owned or operated by [Organization].
+**Scope**: All authentication mechanisms, privileged accounts, and technical access controls across all systems, platforms, and environments owned or operated by [Organisation].
 
 **Purpose**: Define WHAT authentication and access controls are required and WHO is accountable. Implementation procedures (HOW) are documented in ISMS-IMP-A.8.2-3-5.
 
@@ -119,7 +118,7 @@ Each control maintains independent applicability:
 
 ## Authentication Mechanism Standards
 
-[Organization] SHALL implement authentication mechanisms appropriate to the sensitivity of information and systems being accessed.
+[Organisation] SHALL implement authentication mechanisms appropriate to the sensitivity of information and systems being accessed.
 
 **Minimum Authentication Requirements**:
 
@@ -168,7 +167,7 @@ Each control maintains independent applicability:
 - All users: 95%+ MFA enrollment within 12 months of policy adoption
 - Remote access: 100% MFA enforcement
 
-**Baseline Assessment**: Prior to target enforcement, [Organization] SHALL establish current MFA coverage baseline via identity provider enrollment reports. Baseline documented in Workbook 2; gap closure plan required if baseline <80%.
+**Baseline Assessment**: Prior to target enforcement, [Organisation] SHALL establish current MFA coverage baseline via identity provider enrollment reports. Baseline documented in Workbook 2; gap closure plan required if baseline <80%.
 
 **Deployment Roadmap**: If current MFA coverage is below target, deployment milestones SHALL be documented in Workbook 2 with target dates (e.g., 80% by Month 3, 90% by Month 6, 95% by Month 12). Progress tracked quarterly.
 
@@ -176,7 +175,7 @@ Each control maintains independent applicability:
 
 ## Single Sign-On (SSO)
 
-[Organization] SHALL implement centralized SSO with a target of 90%+ SaaS application integration:
+[Organisation] SHALL implement centralized SSO with a target of 90%+ SaaS application integration:
 
 - New SaaS applications: SSO integration required before procurement approval
 - Existing applications: SSO integration prioritized based on risk and user volume
@@ -205,7 +204,7 @@ All authentication events SHALL be logged:
 
 ## Privileged Access Principles
 
-[Organization] SHALL restrict privileged access based on:
+[Organisation] SHALL restrict privileged access based on:
 
 - **Least Privilege**: Minimum access required to perform job functions
 - **Need-to-Know**: Access only to information required for specific tasks
@@ -214,7 +213,7 @@ All authentication events SHALL be logged:
 
 ## Privileged Account Classification
 
-**Admin Tiering Model** - [Organization] SHALL implement tiered administration:
+**Admin Tiering Model** - [Organisation] SHALL implement tiered administration:
 
 | Tier | Scope | Examples | Requirements |
 |------|-------|----------|--------------|
@@ -240,7 +239,7 @@ All authentication events SHALL be logged:
 
 ## Privileged Access Management (PAM)
 
-[Organization] SHALL implement privileged access controls:
+[Organisation] SHALL implement privileged access controls:
 
 **Required Controls**:
 
@@ -291,10 +290,10 @@ All authentication events SHALL be logged:
 
 ## Break-Glass / Emergency Access
 
-[Organization] SHALL maintain emergency access procedures:
+[Organisation] SHALL maintain emergency access procedures:
 
 - Break-glass accounts secured with sealed credentials (physical safe or PAM sealed envelope)
-- Multi-person authorization required for break-glass use (dual control)
+- Multi-person authorisation required for break-glass use (dual control)
 - All break-glass usage logged, alerted, and reviewed within 24 hours
 - Credentials rotated immediately after use
 
@@ -308,9 +307,9 @@ All authentication events SHALL be logged:
 
 ## Access Enforcement Principles
 
-[Organization] SHALL enforce access restrictions through technical controls:
+[Organisation] SHALL enforce access restrictions through technical controls:
 
-- **Default Deny**: Access denied by default; explicit authorization required
+- **Default Deny**: Access denied by default; explicit authorisation required
 - **Role-Based Access Control (RBAC)**: Access based on job roles
 - **Attribute-Based Access Control (ABAC)**: Context-aware access where supported
 - **Data Classification Alignment**: Access restrictions match data sensitivity
@@ -320,7 +319,7 @@ All authentication events SHALL be logged:
 **Operating System Access**:
 
 - File system permissions enforced per data classification
-- Privileged commands restricted to authorized administrators
+- Privileged commands restricted to authorised administrators
 - Local administrator rights removed from standard users
 
 **Database Access**:
@@ -348,7 +347,7 @@ All authentication events SHALL be logged:
 
 - API authentication required (OAuth 2.0, API keys with rotation)
 - Rate limiting enforced
-- Sensitive APIs require additional authorization
+- Sensitive APIs require additional authorisation
 
 **Cloud Resource Access**:
 
@@ -364,7 +363,7 @@ All authentication events SHALL be logged:
 
 ## Access Control Testing
 
-[Organization] SHALL verify access controls:
+[Organisation] SHALL verify access controls:
 
 - Annual penetration testing includes access control bypass attempts
 - Quarterly permission audits for critical systems
@@ -498,7 +497,7 @@ All authentication events SHALL be logged:
 | SSO application integration | ≥90% | Quarterly |
 | Privileged session recording (Tier 0) | 100% | Monthly |
 
-**Reporting and Visualization**: KPIs consolidated in Dashboard workbook with trend visualization. Monthly reports to IT Security Manager; quarterly executive summary to CISO and Executive Management with compliance posture and remediation priorities.
+**Reporting and Visualization**: KPIs tracked in Summary Dashboards with trend visualization. Monthly reports to IT Security Manager; quarterly executive summary to CISO and Executive Management with compliance posture and remediation priorities.
 
 ---
 
@@ -525,7 +524,7 @@ All authentication events SHALL be logged:
 | Privileged access management | Art. 8 | Art. 32 | A.8.2 | Art. 21(2)(i) |
 | Access restrictions | Art. 8 | Art. 32 | A.8.3 | Art. 21(2)(c) |
 
-*NIS2 applicable where [Organization] is classified as essential or important entity.
+*NIS2 applicable where [Organisation] is classified as essential or important entity.
 
 ---
 
@@ -573,7 +572,6 @@ Evidence required to demonstrate this policy is operationally effective:
 - Workbook 3: Privileged Account Inventory (A.8.2)
 - Workbook 4: Privileged Access Monitoring (A.8.2)
 - Workbook 5: Access Restriction Compliance (A.8.3)
-- Dashboard: Consolidated Compliance Status
 
 **Evidence Retention:**
 - Authentication logs: Minimum 12 months (longer per regulatory requirements)
@@ -636,4 +634,4 @@ All tier violations generate CRITICAL alerts. Repeated violations result in:
 
 *This policy establishes requirements for authentication security, privileged access management, and technical access enforcement. Implementation procedures, assessment methodologies, and workbook specifications are documented in ISMS-IMP-A.8 (UG/TG).2-3-5 (S1-S6).*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

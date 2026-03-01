@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Change Types & Categories Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.32.2-UG |
+| **Related Policy** | ISMS-POL-A.8.32 (Change Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.32 (Change Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Change Types, Categories & Risk Classification |
-| **Related Policy** | ISMS-POL-A.8.32, Section 2.2 (Change Classification Requirements) |
-| **Purpose** | Document standard/normal/emergency change types, assess classification procedures, and evaluate risk-based categorization in a technology-agnostic manner |
-| **Target Audience** | Change Manager, Risk Assessors, CAB Members, System Owners, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Process & Risk Assessment |
-| **Review Cycle** | Quarterly or After Classification Process Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
+| Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Initial assessment specification for Change Types & Categories workbook | ISMS Implementation Team |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.32 (Change Management)
+- ISMS-IMP-A.8.32.1 (Change Process Assessment)
+- ISMS-IMP-A.8.32.3 (Environment Separation Assessment)
+- ISMS-IMP-A.8.32.4 (Testing & Validation Assessment)
+
+---
 
 ### Document Structure
 
@@ -32,8 +46,24 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 
-
 **Audience:** Change Manager, Risk Assessors, CAB Members, System Owners
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Standard Changes Catalog | Catalogue of pre-approved standard low-risk changes |
+| 3 | Normal Change Classification | Classify normal changes by risk and impact |
+| 4 | Emergency Change Procedures | Document emergency change criteria and procedures |
+| 5 | Risk Assessment Matrix | Assess change risk using impact and likelihood matrix |
+| 6 | Change Calendar Management | Schedule changes and manage blackout windows |
+| 7 | Classification Metrics | Track change classification distribution and trends |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -41,7 +71,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ### What This Assessment Evaluates
 
-This assessment documents HOW your organization classifies changes into different types (Standard, Normal, Emergency) and HOW you assess change risk. It evaluates:
+This assessment documents HOW your organisation classifies changes into different types (Standard, Normal, Emergency) and HOW you assess change risk. It evaluates:
 
 - **Standard Change Catalog:** What pre-approved, low-risk changes are documented
 - **Normal Change Procedures:** How moderate/high-risk changes are assessed and categorized
@@ -51,7 +81,7 @@ This assessment documents HOW your organization classifies changes into differen
 
 ### Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - ISO/IEC 27001:2022 Control A.8.32: Change Management
 - ISMS-POL-A.8.32, Section 2.2 (Change Classification Requirements)
@@ -194,7 +224,7 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 
 **What to document:**
 
-- Every standard change your organization has pre-approved
+- Every standard change your organisation has pre-approved
 - Description, procedure, prerequisites, duration
 - Risk level, success rate, last review date
 - Owner and usage frequency
@@ -298,7 +328,7 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 **Tips:**
 
 - Be specific in definitions - "High Impact" needs concrete criteria
-- Document YOUR organization's risk tolerance
+- Document YOUR organisation's risk tolerance
 - Risk matrix should align with approval authority (ISMS-POL-A.8.32, Section 2.1)
 - Consistency matters - same risk assessment regardless of who performs it
 
@@ -522,7 +552,7 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 
 **Problem:** Vendor defaults may not match YOUR risk tolerance.
 
-**Solution:** Customize to YOUR organization. Document YOUR criteria.
+**Solution:** Customize to YOUR organisation. Document YOUR criteria.
 
 ### Mistake #10: "Classification is the requester's job"
 
@@ -558,7 +588,7 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - [ ] E-CAB procedures documented
 - [ ] Emergency % tracked
 - [ ] PIR completion verified
-- [ ] Emergency trend analyzed
+- [ ] Emergency trend analysed
 
 **Risk Assessment:**
 
@@ -580,7 +610,7 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - [ ] Change type distribution tracked
 - [ ] Emergency % monitored
 - [ ] Success rates by type tracked
-- [ ] Trends analyzed
+- [ ] Trends analysed
 
 **Evidence:**
 
@@ -678,7 +708,7 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Not all changes are equal; categorise to prioritise."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -3,26 +3,54 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.8.30: Outsourced Development
 
-## Document Control
+---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Security Testing and Acceptance |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.30.3-UG |
-| **Document Title** | Security Testing and Acceptance Workbook Specification |
-| **Control Reference** | ISO/IEC 27001:2022 - Control A.8.30: Outsourced Development |
-| **Parent Policy** | ISMS-POL-A.8.30 (Outsourced Development) |
+| **Related Policy** | ISMS-POL-A.8.30 (Outsourced Development) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.30 (Outsourced Development) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
 | **Classification** | Internal |
+| **Status** | Draft |
 
 **Version History**:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO/ISO | Initial implementation specification for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.30 (Outsourced Development)
+- ISMS-IMP-A.8.30.1 (Vendor Assessment and Registry)
+- ISMS-IMP-A.8.30.2 (Contract Compliance)
 
 ---
 
-This section provides step-by-step guidance for completing the Security Testing and Acceptance workbook. Follow this guide to ensure comprehensive security validation of outsourced development deliverables before acceptance.
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Deliverable Inventory | Inventory of outsourced development deliverables |
+| 3 | Code Review Tracking | Track code review activities for outsourced deliverables |
+| 4 | Security Testing | Record security testing results for deliverables |
+| 5 | SBOM Management | Software bill of materials tracking and vulnerability management |
+| 6 | Acceptance Sign-off | Formal acceptance sign-off for security-tested deliverables |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -755,7 +783,7 @@ Acceptance Authority Review
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Never accept software from a third party without testing it as if it came from an adversary."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

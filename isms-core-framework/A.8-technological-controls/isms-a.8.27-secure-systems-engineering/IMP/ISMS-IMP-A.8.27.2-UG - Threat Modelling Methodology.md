@@ -12,13 +12,12 @@
 | **Document Title** | Threat Modelling Methodology |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.27.2-UG |
-| **Assessment Domain** | Domain 2 - Threat Analysis and Modelling |
-| **Related Policy** | ISMS-POL-A.8.27 (Secure System Architecture and Engineering Principles) |
-| **Document Owner** | Chief Information Security Officer (CISO) |
-| **Technical Authority** | Security Architect / Threat Modelling Lead |
+| **Related Policy** | ISMS-POL-A.8.27 (Secure Systems Engineering) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.27 (Secure System Architecture and Engineering Principles) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -26,22 +25,35 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Security Architect | Initial threat modelling assessment specification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle**: Annual (or after methodology changes)
-**Next Review Date**: [Effective Date + 12 months]
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
 **Related Documents**:
 
-- ISMS-POL-A.8.27 (Secure System Architecture and Engineering Principles)
+- ISMS-POL-A.8.27 (Secure Systems Engineering)
 - ISMS-IMP-A.8.27.1 (Security Architecture Review Process)
 - ISMS-IMP-A.8.27.3 (Secure Architecture Pattern Catalogue)
 - ISMS-IMP-A.8.27.4 (Zero Trust Implementation Assessment)
-- ISMS-POL-A.5.7 (Threat Intelligence)
-- ISO/IEC 27002:2022 Control A.8.27
-- MITRE ATT&CK Framework
-- STRIDE Methodology (Microsoft)
-- PASTA Threat Modelling Framework
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Methodology | Threat modelling methodology framework and approach |
+| 3 | MITRE ATT&CK | MITRE ATT&CK framework alignment and threat coverage |
+| 4 | ThreatCatalogue | Organisational threat catalogue and threat library |
+| 5 | Tools | Threat modelling tools assessment and usage |
+| 6 | Competency | Threat modelling competency and training assessment |
+| 7 | Samples | Sample threat models and worked examples |
+| 8 | Compliance | Compliance with threat modelling requirements |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -517,7 +529,7 @@ Before submitting the assessment, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"If you know your enemies and know yourself, you need not fear the result of a hundred battles."*
+— Sun Tzu
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

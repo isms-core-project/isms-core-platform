@@ -8,174 +8,132 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Project Lifecycle Security Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.8.1-TG |
+| **Related Policy** | ISMS-POL-A.5.8 (Information Security in Project Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.8 (Information Security in Project Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Project Lifecycle Security Integration |
-| **Related Policy** | ISMS-POL-A.5.8, Section 2.3 (Security Activities Across Project Lifecycle) |
-| **Purpose** | Assess integration of information security activities across all project phases (Initiation → Planning → Execution → Monitoring → Closure) with phase-by-phase compliance verification and gate review documentation |
-| **Target Audience** | Project Managers, Project Security Coordinators, PMO Staff, Information Security Officers, Project Steering Committees, Auditors |
-| **Assessment Type** | Process & Procedural Compliance |
-| **Review Cycle** | Per Project Phase (at each gate review) + Annual Post-Project Review for lessons learned |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | Initial | Initial specification for Project Lifecycle Security Assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.8 (Information Security in Project Management)
+- ISMS-IMP-A.5.8.2 (Security Requirements Register)
+- ISMS-IMP-A.5.8.3 (Project Portfolio Dashboard)
 
 ---
+
 # Technical Specification
-**Audience:** Workbook Developers (Python/Excel script maintainers)
-
-
-> Auto-generated from `generate_a58_1_project_lifecycle_assessment.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.8.1` |
-| **Output Filename** | `ISMS-IMP-A.5.8.1_Project_Lifecycle_Assessment_YYYYMMDD.xlsx` |
-| **Total Sheets** | 16 (16 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 Control A.5.8 |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #305496 | 305496 | Custom |
-| #808080 | 808080 | Gray (Disabled) |
-| #B4C7E7 | B4C7E7 | Light Blue (Planned/Info) |
-| #D9E1F2 | D9E1F2 | Custom |
-| #E2EFDA | E2EFDA | Pale Green (Success Background) |
-| #FF0000 | FF0000 | Red (Critical/Alert) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFF00 | FFFF00 | Yellow (Warning) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: 2. Project Classification
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a58_1_project_lifecycle_assessment.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: 3. Initiation Phase
+**Document ID:** `ISMS-IMP-A.5.8.1`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: 4. Planning Phase
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | 2. Project Classification |
+| 3 | 3. Initiation Phase |
+| 4 | 4. Planning Phase |
+| 5 | 5. Execution Phase |
+| 6 | 6. Monitoring Phase |
+| 7 | 7. Closure Phase |
+| 8 | Evidence Register |
+| 9 | Summary Dashboard |
+| 10 | Approval Sign-Off |
 
-## Sheet 5: 5. Execution Phase
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: 6. Monitoring Phase
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Initiation Phase |
+| 2 | Planning Phase |
+| 3 | Execution Phase |
+| 4 | Monitoring Phase |
+| 5 | Closure Phase |
+| 6 | Factor |
+| 7 | High (3 pts) |
+| 8 | Medium (2 pts) |
+| 9 | Low (1 pt) |
+| 10 | Score |
+| 11 | Rationale |
+| 12 | Scenario Description |
+| 13 | Typical Classification |
+| 14 | Key Factors |
+| 15 | Activity |
+| 16 | Status |
+| 17 | Completion Date |
+| 18 | Evidence Link |
+| 19 | Notes |
+| 20 | Assessment Area |
+| 21 | Questions Answered |
+| 22 | No Gap |
+| 23 | Gap Identified |
+| 24 | N/A |
+| 25 | Target |
+| 26 | Compliance % |
+| 27 | Role / Function |
+| 28 | Name |
+| 29 | Signature / Initials |
+| 30 | Date (DD.MM.YYYY) |
+| 31 | Comments |
 
-## Sheet 7: 7. Closure Phase
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: 8. Compliance Dashboard
+```
+3, 2, 1, Complete, In Progress, Incomplete, Not Done, N/A, Active, Archived
+Superseded, Pending Review, Approved, Approved with Conditions, Rejected
+Deferred
+```
 
----
-
-## Sheet 9: 9. Evidence Register
-
----
-
-## Sheet 10: 10. Sign-Off
-
----
-
-## Sheet 11: Instructions
-
----
-
-## Sheet 12: Classification
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| EN | `=SUM(E{factor_start_row}:E{factor_start_row+5})` |  |
-| BN | `=IF(E{row-1}>=15,` |  |
-
----
-
-## Sheet 13: Phase
-
-**Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Activity |
-| B | Status |
-| C | Completion Date |
-| D | Evidence Link |
-| E | Notes |
-
----
-
-## Sheet 14: Dashboard
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=TODAY()` |  |
-| BN | `=COUNTIF({sheet_ref}!B{start_row}:B{end_row},` |  |
-| BN | `=AVERAGE(B{row-5}:B{row-1})` |  |
-
----
-
-## Sheet 15: Evidence_Register
-
-**Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Phase |
-| C | Description |
-| D | Location/Path |
-| E | Date Collected |
-| F | Status |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=TEXT(ROW()-3,\` |  |
-
----
-
-## Sheet 16: Signoff
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Role |
-| B | Name |
-| C | Signature |
-| D | Date |
-| E | Decision |
+**Extracted:** 10 sheets, 31 columns, 16 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

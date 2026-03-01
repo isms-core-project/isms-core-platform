@@ -21,11 +21,11 @@ ISO/IEC 27001:2022 Control A.8.32: Change Management
 Assessment Domain 1 of 4: Change Process Workflow & Management Procedures
 
 --------------------------------------------------------------------------------
-SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
+SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANISATION
 --------------------------------------------------------------------------------
 
 This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
-your organization's specific change management processes and assessment
+your organisation's specific change management processes and assessment
 requirements.
 
 Key customization areas:
@@ -85,10 +85,8 @@ and tool capabilities against ISO 27001:2022 Control A.8.32 requirements.
 - Protected formulas with unprotected input cells
 - Evidence linkage for audit traceability
 - Multi-stakeholder approval workflow
-- Integration with A.8.32.5 Compliance Dashboard
 
 **Integration:**
-This assessment feeds into the A.8.32.5 Compliance Dashboard, which
 consolidates data from all four change management assessment domains for
 executive oversight and audit readiness.
 
@@ -131,7 +129,7 @@ Output:
 
 Post-Generation Steps:
     1. Review Instructions & Legend sheet for assessment guidance
-    2. Document your organization's change process workflow stages
+    2. Document your organisation's change process workflow stages
     3. Complete approval authority matrix with your roles and thresholds
     4. Define your stakeholder communication procedures
     5. Document your record-keeping and retention requirements
@@ -139,7 +137,6 @@ Post-Generation Steps:
     7. Review Summary Dashboard for compliance metrics
     8. Collect and link audit evidence in Evidence Register
     9. Obtain stakeholder approvals via Approval Sign-Off
-    10. Feed results into A.8.32.5 Compliance Dashboard
 
 --------------------------------------------------------------------------------
 METADATA
@@ -149,7 +146,7 @@ Control Reference:    ISO/IEC 27001:2022 Annex A Control A.8.32
 Assessment Domain:    1 of 4 (Change Process Workflow & Management)
 Framework Version:    1.0
 Script Version:       1.0
-Author:               [Organization] ISMS Implementation Team
+Author:               [Organisation] ISMS Implementation Team
 Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
@@ -161,7 +158,6 @@ Related Documents:
     - ISMS-IMP-A.8.32.2: Change Types & Categories Assessment (Domain 2)
     - ISMS-IMP-A.8.32.3: Environment Separation Assessment (Domain 3)
     - ISMS-IMP-A.8.32.4: Testing & Validation Assessment (Domain 4)
-    - ISMS-IMP-A.8.32.5: Compliance Dashboard (Consolidation)
 
 --------------------------------------------------------------------------------
 CHANGE HISTORY
@@ -171,7 +167,6 @@ Version 1.0 - [Date to be set]
     - Initial release
     - Implements full assessment framework per ISMS-IMP-A.8.32.1 specification
     - Supports comprehensive change process evaluation
-    - Integrated with A.8.32.5 Compliance Dashboard
 
 [Future changes to be documented here]
 
@@ -181,7 +176,7 @@ IMPORTANT NOTES
 
 **Technology-Agnostic Design:**
 This assessment framework is intentionally tool-independent. Whether your
-organization uses ServiceNow, Jira, BMC Remedy, custom tools, spreadsheets,
+organisation uses ServiceNow, Jira, BMC Remedy, custom tools, spreadsheets,
 or even paper-based processes, this assessment evaluates your PROCESS and
 COMPLIANCE, not your tool brands.
 
@@ -210,14 +205,14 @@ Assessment workbooks contain sensitive infrastructure details including:
 - Tool capabilities and limitations
 - Identified compliance gaps
 
-Handle in accordance with your organization's data classification policies.
+Handle in accordance with your organisation's data classification policies.
 
 **Maintenance:**
 Review and update assessment:
 - Quarterly: Check for process changes and tool updates
 - Semi-annually: Review approval authorities
 - Annually: Complete reassessment of all domains
-- Ad-hoc: When significant process or organizational changes occur
+- Ad-hoc: When significant process or organisational changes occur
 
 **Quality Assurance:**
 Have change management practitioners and security personnel validate assessments
@@ -236,13 +231,14 @@ Adapt dropdown values and assessment questions to your regulatory context.
 """
 
 # =============================================================================
-# Standard Library Imports
+# STANDARD LIBRARY IMPORTS
 # =============================================================================
 import logging
+from pathlib import Path
 import sys
 
 # =============================================================================
-# Logging Configuration
+# LOGGING CONFIGURATION
 # =============================================================================
 logging.basicConfig(
     level=logging.INFO,
@@ -262,23 +258,26 @@ CONTROL_ID = "A.8.32"
 CONTROL_NAME = "Change Management"
 CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
 
+# Row configuration
+MAX_DATA_ROWS = 50  # Standard maximum data rows per DS-005
+
 # Timestamps
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
-GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
 
 # Output filename
 OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
+_wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+_wkbk_dir.mkdir(exist_ok=True)
 
 
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.utils import get_column_letter
-from openpyxl.worksheet.datavalidation import DataValidation
-
-
-# ============================================================================
-# SECTION 1: WORKBOOK CREATION & STYLE DEFINITIONS
-# ============================================================================
+try:
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+    from openpyxl.utils import get_column_letter
+    from openpyxl.worksheet.datavalidation import DataValidation
+except ImportError:
+    sys.exit("Error: openpyxl not installed. Install with: pip install openpyxl")
 
 
 # ============================================================================
@@ -287,25 +286,26 @@ from openpyxl.worksheet.datavalidation import DataValidation
 
 CHECK = '\u2705'      # ✅ Green checkmark
 XMARK = '\u274C'      # ❌ Red X
-WARNING = '\u26A0'    # ⚠️  Warning sign
-CHART = '\U0001F4CA' # 📊 Chart
-TARGET = '\U0001F3AF' # 🎯 Target
-SHIELD = '\U0001F6E1' # 🛡️  Shield
-LOCK = '\U0001F512'   # 🔒 Lock
-CLOCK = '\U0001F552'  # 🕒 Clock
-WRENCH = '\U0001F527' # 🔧 Wrench
-ROCKET = '\U0001F680' # 🚀 Rocket
-GEAR = '\u2699'       # ⚙️  Gear
+WARNING = '\u26A0'    # ⚠  Warning sign
+GEAR = '\u2699'       # ⚙  Gear
 BULLET = '\u2022'     # • Bullet point
 ARROW = '\u2192'      # → Right arrow
+
+# ============================================================================
+# SECTION 1: WORKBOOK CREATION & STYLE DEFINITIONS
+# ============================================================================
 
 def create_workbook() -> Workbook:
     """Create workbook with all required sheets matching IMP-A.8.32.1 spec."""
     wb = Workbook()
+    wb.properties.title = f"{DOCUMENT_ID} — {WORKBOOK_NAME}"
+    wb.properties.subject = f"ISO/IEC 27001:2022 — Control {CONTROL_ID}: {CONTROL_NAME}"
+    wb.properties.creator = "ISMS Core Contributors"
+    wb.properties.description = f"ISMS Implementation Workbook — {DOCUMENT_ID}"
 
     # Remove default sheet
     if "Sheet" in wb.sheetnames:
-        wb.remove(wb["Sheet"])
+        wb.remove(wb.active)
 
     # Sheet structure matches ISMS-IMP-A.8.32.1 specification (11 sheets)
     sheets = [
@@ -347,12 +347,12 @@ def setup_styles():
         },
         "subheader": {
             "font": Font(name="Calibri", size=11, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid"),
+            "fill": PatternFill(start_color="003366", end_color="003366", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
         },
         "section_header": {
             "font": Font(name="Calibri", size=11, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid"),
+            "fill": PatternFill(start_color="003366", end_color="003366", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
         },
         "column_header": {
@@ -367,7 +367,7 @@ def setup_styles():
             "border": border_thin,
         },
         "calculated_cell": {
-            "fill": PatternFill(start_color="E0E0E0", end_color="E0E0E0", fill_type="solid"),
+            "fill": PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
             "border": border_thin,
         },
@@ -382,7 +382,7 @@ def setup_styles():
             "fill": PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
         },
         "status_planned": {
-            "fill": PatternFill(start_color="B4C7E7", end_color="B4C7E7", fill_type="solid")
+            "fill": PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
         },
         "compliance_full": {
             "fill": PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid"),
@@ -391,7 +391,7 @@ def setup_styles():
             "fill": PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid"),
         },
         "compliance_partial": {
-            "fill": PatternFill(start_color="FFD966", end_color="FFD966", fill_type="solid"),
+            "fill": PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid"),
         },
         "compliance_non": {
             "fill": PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"),
@@ -400,6 +400,8 @@ def setup_styles():
     return styles
 
 
+
+_STYLES = setup_styles()
 def apply_style(cell, style_dict):
     """
     Apply style dictionary to a cell.
@@ -458,7 +460,7 @@ def create_base_validations(ws):
         ),
         'implementation_status': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Implemented,⚠️ Partial,❌ Not Implemented,📋 Planned,N/A"',
+            formula1=f'"{CHECK} Implemented,⚠ Partial,❌ Not Implemented, Planned,N/A"',
             allow_blank=False
         ),
         'automation_level': DataValidation(
@@ -533,7 +535,7 @@ def create_base_validations(ws):
         ),
         'tool_capability': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Full,⚠️ Partial,❌ No"',
+            formula1=f'"{CHECK} Full,⚠ Partial,❌ No"',
             allow_blank=False
         ),
         'integration_type': DataValidation(
@@ -543,7 +545,7 @@ def create_base_validations(ws):
         ),
         'integration_status': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Integrated,⚠️ Partial,❌ Standalone"',
+            formula1=f'"{CHECK} Integrated,⚠ Partial,❌ Standalone"',
             allow_blank=False
         ),
         'license_status': DataValidation(
@@ -558,27 +560,27 @@ def create_base_validations(ws):
         ),
         'evidence_type': DataValidation(
             type="list",
-            formula1='"Policy Doc,Procedure,Flowchart,Template,Screenshot,Meeting Minutes,Email,Report,Contract,Other"',
-            allow_blank=False
+            formula1='"Change Request,Policy Document,Process Record,System Screenshot,Configuration Export,Audit Log,Training Record,Test Result,Risk Assessment,Meeting Minutes,Other,N/A"',
+            allow_blank=True
         ),
         'verification_status': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Verified,⚠️ Pending,❌ Not Verified"',
+            formula1=f'"{CHECK} Verified,⚠ Pending,❌ Not Verified"',
             allow_blank=False
         ),
         'assessment_status': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Final,⚠️ Requires Remediation,📋 Draft,❌ Re-assessment Required"',
+            formula1=f'"{CHECK} Final,⚠ Requires Remediation, Draft,❌ Re-assessment Required"',
             allow_blank=False
         ),
         'review_recommendation': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Approve,⚠️ Approve with Conditions,❌ Reject,📋 Require Rework"',
+            formula1=f'"{CHECK} Approve,⚠ Approve with Conditions,❌ Reject, Require Rework"',
             allow_blank=False
         ),
         'approval_decision': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Approved,⚠️ Approved with Conditions,❌ Rejected"',
+            formula1=f'"{CHECK} Approved,⚠ Approved with Conditions,❌ Rejected"',
             allow_blank=False
         ),
         'regulatory_review': DataValidation(
@@ -595,189 +597,88 @@ def create_base_validations(ws):
     return validations
 
 
-def finalize_validations(ws, validations):
-    """Add only data validations that have cells assigned to avoid Excel repair."""
-    for dv in validations.values():
-        if dv.sqref:
-            ws.add_data_validation(dv)
-
-
+def finalize_validations(wb):
+    """Ensure all data validations are properly finalised for all worksheets."""
+    for ws in wb.worksheets:
+        for dv in ws.data_validations.dataValidation:
+            pass  # Ensures DVs are iterated and serialised correctly
 # ============================================================================
 # SECTION 3: INSTRUCTIONS & LEGEND SHEET
 # ============================================================================
 
-def create_instructions_sheet(ws, styles):
-    """Create Instructions & Legend sheet with usage guidance."""
-    
-    # Header
+
+def create_instructions_sheet(ws):
+    """Create GS-IL-compliant Instructions & Legend sheet (Sheet 1)."""
+    ws.title = "Instructions & Legend"
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill("solid", fgColor="003366")
+    _grey = PatternFill("solid", fgColor="D9D9D9")
+    _input = PatternFill("solid", fgColor="FFFFCC")
+    _green = PatternFill("solid", fgColor="C6EFCE")
+    _amber = PatternFill("solid", fgColor="FFEB9C")
+    _red   = PatternFill("solid", fgColor="FFC7CE")
     ws.merge_cells("A1:G1")
-    ws["A1"] = "ISMS-IMP-A.8.32.1  -  Change Process Assessment\nISO/IEC 27001:2022 - Control A.8.32: Change Management"
+    ws["A1"] = f"{DOCUMENT_ID}  -  {WORKBOOK_NAME}\n{CONTROL_REF}"
     ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
-    ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws["A1"].fill = _navy
     ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.row_dimensions[1].height = 40
+    ws["A3"] = "Document Information"
+    ws["A3"].font = Font(name="Calibri", size=12, bold=True)
+    for i, (label, value) in enumerate([
+        ("Document ID",       DOCUMENT_ID),
+        ("Workbook Title",    WORKBOOK_NAME),
+        ("Control Reference", CONTROL_REF),
+        ("Version",           "1.0"),
+        ("Assessment Date",   ""),
+        ("Completed By",      ""),
+        ("Organisation",      ""),
+    ]):
+        r = 4 + i
+        ws[f"A{r}"] = label
+        ws[f"A{r}"].font = Font(name="Calibri", bold=True)
+        ws[f"B{r}"] = value
+        if not value:
+            ws[f"B{r}"].fill = _input
+            ws[f"B{r}"].border = _border
+    ws["A12"] = "Instructions"
+    ws["A12"].font = Font(name="Calibri", size=12, bold=True)
 
-    # Document Information Block
-    row = 4
-    ws[f"A{row}"] = "DOCUMENT INFORMATION"
-    ws[f"A{row}"].font = Font(bold=True, size=11)
-    
-    doc_info = [
-        ("Document ID:", "ISMS-IMP-A.8.32.1"),
-        ("Assessment Area:", "Change Process Workflow & Management"),
-        ("Related Policy:", "ISMS-POL-A.8.32"),
-        ("Version:", "1.0"),
-        ("Assessment Date:", "[USER INPUT]"),
-        ("Completed By:", "[USER INPUT]"),
-        ("Organisation:", "[Organisation]"),
-        ("Review Cycle:", "Quarterly"),
-    ]
-    
-    row += 1
-    for label, value in doc_info:
-        ws[f"A{row}"] = label
-        ws[f"A{row}"].font = Font(bold=True)
-        ws[f"B{row}"] = value
-        if "USER INPUT" in value:
-            ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        row += 1
+    _instructions = ['1. Document YOUR organisation’s change management process in the Change Process Workflow sheet.', '2. Complete the Approval Authority Matrix with YOUR specific roles and thresholds.', '3. Fill in YOUR communication procedures and stakeholder notification methods.', '4. Document YOUR documentation requirements and record-keeping practices.', '5. Inventory YOUR change management tools (whatever platforms/systems you use).', '6. Review the Summary Dashboard for compliance metrics.', '7. Maintain the Evidence Register for audit traceability.', '8. Obtain final approval and sign-off.']
+    for _i, _line in enumerate(_instructions):
+        ws[f"A{13 + _i}"] = _line
 
-    # How to Use This Workbook
-    row += 2
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "HOW TO USE THIS WORKBOOK"
-    ws[f"A{row}"].font = Font(bold=True, size=12, color="FFFFFF")
-    ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
-    ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
+    _leg_row = 22
 
-    instructions = [
-        "1. Document YOUR organisation's change management process in the Change Process Workflow sheet",
-        "2. Complete the Approval Authority Matrix with YOUR specific roles and thresholds",
-        "3. Fill in YOUR communication procedures and stakeholder notification methods",
-        "4. Document YOUR documentation requirements and record-keeping practices",
-        "5. Inventory YOUR change management tools (whatever platforms/systems you use)",
-        "6. Review the Summary Dashboard for compliance metrics",
-        "7. Maintain the Evidence Register for audit traceability",
-        "8. Obtain final approval and sign-of",
-    ]
-
-    row += 1
-    for instruction in instructions:
-        ws[f"A{row}"] = instruction
-        ws[f"A{row}"].alignment = Alignment(wrap_text=True)
-        ws.row_dimensions[row].height = 30
-        row += 1
-
-    # Status Legend
-    row += 2
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "STATUS LEGEND"
-    ws[f"A{row}"].font = Font(bold=True, size=12, color="FFFFFF")
-    ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
-    ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
-
-    row += 1
-    legend_headers = ["Symbol", "Status", "Description", "Color Code"]
-    for col_idx, header in enumerate(legend_headers, start=1):
-        cell = ws.cell(row=row, column=col_idx, value=header)
-        cell.font = Font(bold=True)
-        cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
-
-    legend_data = [
-        ("{CHECK}", "Implemented", "Process implemented and operational", "Green"),
-        ("{WARNING}", "Partial", "Partial implementation or limited coverage", "Yellow"),
-        ("{XMARK}", "Not Implemented", "Process not implemented", "Red"),
-        ("📋", "Planned", "Implementation planned with target date", "Blue"),
-        ("N/A", "Not Applicable", "Not applicable to this environment", "Gray"),
-    ]
-
-    row += 1
-    for symbol, status, desc, color in legend_data:
-        ws[f"A{row}"] = symbol
-        ws[f"B{row}"] = status
-        ws[f"C{row}"] = desc
-        ws[f"D{row}"] = color
-        
-        # Apply color coding
-        if color == "Green":
-            ws[f"D{row}"].fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
-        elif color == "Yellow":
-            ws[f"D{row}"].fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
-        elif color == "Red":
-            ws[f"D{row}"].fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
-        elif color == "Blue":
-            ws[f"D{row}"].fill = PatternFill(start_color="B4C7E7", end_color="B4C7E7", fill_type="solid")
-        
-        row += 1
-
-    # Compliance Levels
-    row += 2
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "COMPLIANCE LEVELS"
-    ws[f"A{row}"].font = Font(bold=True, size=12, color="FFFFFF")
-    ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
-    ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
-
-    row += 1
-    compliance_headers = ["Level", "Percentage", "Description"]
-    for col_idx, header in enumerate(compliance_headers, start=1):
-        cell = ws.cell(row=row, column=col_idx, value=header)
-        cell.font = Font(bold=True)
-        cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
-
-    compliance_data = [
-        ("Fully Compliant", "90-100%", "All requirements met, evidence documented"),
-        ("Substantially Compliant", "70-89%", "Most requirements met, minor gaps"),
-        ("Partially Compliant", "50-69%", "Significant gaps, remediation required"),
-        ("Non-Compliant", "<50%", "Major deficiencies, immediate action required"),
-    ]
-
-    row += 1
-    for level, percentage, desc in compliance_data:
-        ws[f"A{row}"] = level
-        ws[f"B{row}"] = percentage
-        ws[f"C{row}"] = desc
-        row += 1
-
-    # Acceptable Evidence
-    row += 2
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "ACCEPTABLE EVIDENCE (Examples)"
-    ws[f"A{row}"].font = Font(bold=True, size=12, color="FFFFFF")
-    ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
-    ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
-
-    evidence_examples = [
-        "✓ Change management policy documents",
-        "✓ Process flowcharts/diagrams",
-        "✓ Change request form templates",
-        "✓ Change Advisory Board (CAB) meeting minutes",
-        "✓ Approval workflow documentation",
-        "✓ Communication templates (notification emails, status updates)",
-        "✓ Change management tool screenshots (redacted if needed)",
-        "✓ Change calendar/schedule examples",
-        "✓ Post-Implementation Review (PIR) templates",
-        "✓ Change failure metrics/reports",
-        "✓ Emergency change procedure documentation",
-        "✓ Training materials for change requesters/approvers",
-    ]
-
-    row += 1
-    for evidence in evidence_examples:
-        ws[f"A{row}"] = evidence
-        row += 1
-
-    # Column widths
+    ws[f"A{_leg_row}"] = "Status Legend"
+    ws[f"A{_leg_row}"].font = Font(name="Calibri", size=12, bold=True)
+    for col_idx, header in enumerate(["Symbol", "Status", "Description"], start=1):
+        c = ws.cell(row=_leg_row + 1, column=col_idx, value=header)
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.fill = _grey
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = _border
+    for i, (sym, status, desc, fill) in enumerate([
+        ("\u2713", "Compliant / Complete",        "Requirement fully met",                   _green),
+        ("\u26a0", "Partial / In Progress",        "Partially met or in progress",            _amber),
+        ("\u2717", "Non-Compliant / Not Started",  "Requirement not met",                     _red),
+        ("\u2014", "Not Applicable",               "Not applicable to this assessment",        None),
+    ]):
+        r = _leg_row + 2 + i
+        ws.cell(row=r, column=1, value=sym).border = _border
+        s = ws.cell(row=r, column=2, value=status)
+        d = ws.cell(row=r, column=3, value=desc)
+        if fill:
+            s.fill = fill
+        for cell in (s, d):
+            cell.border = _border
+            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
     ws.column_dimensions["A"].width = 28
     ws.column_dimensions["B"].width = 45
     ws.column_dimensions["C"].width = 70
-
+    ws.sheet_view.showGridLines = False
     ws.freeze_panes = "A4"
-
-
-# ============================================================================
-# SECTION 4: CHANGE PROCESS WORKFLOW SHEET
-# ============================================================================
 
 def create_change_process_workflow(ws, styles):
     """Create Change Process Workflow sheet documenting the complete change lifecycle."""
@@ -787,7 +688,7 @@ def create_change_process_workflow(ws, styles):
     ws.merge_cells("A1:H1")
     ws["A1"] = "CHANGE MANAGEMENT PROCESS WORKFLOW"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:H2")
     ws["A2"] = "Document the complete change lifecycle in your organisation"
@@ -812,7 +713,7 @@ def create_change_process_workflow(ws, styles):
         (4, "Change Categorization", "Standard/Normal/Emergency"),
         (5, "CAB Scheduling (if required)", "Schedule review meeting"),
         (6, "CAB Review & Discussion", "Formal review process"),
-        (7, "Change Authorization", "Approval decision"),
+        (7, "Change Authorisation", "Approval decision"),
         (8, "Implementation Planning", "Schedule and resource allocation"),
         (9, "Stakeholder Communication", "Notification procedures"),
         (10, "Pre-Implementation Testing", "Testing in non-production"),
@@ -833,11 +734,16 @@ def create_change_process_workflow(ws, styles):
         for col in [4, 5, 6, 8]:  # D=4, E=5, F=6, H=8
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         # Status dropdown
         validations['implementation_status'].add(ws[f"G{row}"])
         ws[f"G{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"G{row}"].border = styles["border"]
+
+        # Evidence dropdown
+        validations['evidence_type'].add(ws.cell(row=row, column=8))
+
         row += 1
 
     # ==================== PROCESS DOCUMENTATION REQUIREMENTS ====================
@@ -872,13 +778,16 @@ def create_change_process_workflow(ws, styles):
         for col in [3, 5, 6]:  # C=3, E=5, F=6
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         # Dropdowns
         validations['yes_no_partial'].add(ws[f"B{row}"])
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"B{row}"].border = styles["border"]
+
         validations['yes_no'].add(ws[f"D{row}"])
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         
         row += 1
 
@@ -913,11 +822,13 @@ def create_change_process_workflow(ws, styles):
         for col in [2, 3, 4]:  # B=2, C=3, D=4
             validations['yes_no'].add(ws.cell(row=row, column=col))
             ws.cell(row=row, column=col).fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            ws.cell(row=row, column=col).border = styles["border"]
+
         # Text fields
         for col in [5, 6]:  # E=5, F=6
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            cell.border = styles["border"]
         
         row += 1
 
@@ -932,8 +843,9 @@ def create_change_process_workflow(ws, styles):
     ws.column_dimensions["H"].width = 25
 
     ws.freeze_panes = "A6"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
 # SECTION 5: APPROVAL AUTHORITY MATRIX SHEET
@@ -947,7 +859,7 @@ def create_approval_authority_matrix(ws, styles):
     ws.merge_cells("A1:G1")
     ws["A1"] = "CHANGE APPROVAL AUTHORITY MATRIX"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:G2")
     ws["A2"] = "Define approval authorities by change type and risk level"
@@ -965,22 +877,43 @@ def create_approval_authority_matrix(ws, styles):
         cell = ws.cell(row=row, column=col_idx, value=header)
         apply_style(cell, styles["column_header"])
 
+    # Sample row with example data
     row += 1
-    # 15 rows for standard changes
-    for i in range(15):
-        for col in [1, 4, 5, 7]:  # A=1, D=4, E=5, G=7
+    sample_data = {
+        1: "Restart Web Server",
+        2: "Yes",
+        3: "Yes",
+        4: "Web Admin Team Lead",
+        5: "1 hour",
+        6: "Implemented",
+        7: "EV-STD-001",
+    }
+    for col_idx, value in sample_data.items():
+        cell = ws.cell(row=row, column=col_idx, value=value)
+        cell.fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+        cell.border = styles["border"]
+
+    # Add dropdowns to sample row
+    validations['yes_no'].add(ws.cell(row=row, column=2))
+    validations['yes_no_na'].add(ws.cell(row=row, column=3))
+    validations['implementation_status'].add(ws.cell(row=row, column=6))
+    validations['evidence_type'].add(ws.cell(row=row, column=7))
+
+    # Empty data rows (50 rows for user data)
+    row += 1
+    for i in range(50):
+        for col in range(1, 8):  # Columns A-G
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+            cell.value = None  # Empty - users define their own standard changes
+
+        # Add dropdowns to empty rows
         validations['yes_no'].add(ws.cell(row=row, column=2))
-        ws.cell(row=row, column=2).fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
         validations['yes_no_na'].add(ws.cell(row=row, column=3))
-        ws.cell(row=row, column=3).fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
         validations['implementation_status'].add(ws.cell(row=row, column=6))
-        ws.cell(row=row, column=6).fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        validations['evidence_type'].add(ws.cell(row=row, column=7))
+
         row += 1
 
     # ==================== NORMAL CHANGES APPROVAL MATRIX ====================
@@ -1018,14 +951,17 @@ def create_approval_authority_matrix(ws, styles):
         for col in [3, 5, 6]:  # C=3, E=5, F=6
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         # Dropdowns
         validations['yes_no'].add(ws[f"D{row}"])
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"D{row}"].border = styles["border"]
+
         validations['implementation_status'].add(ws[f"G{row}"])
         ws[f"G{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"G{row}"].border = styles["border"]
+
         row += 1
 
     # ==================== EMERGENCY CHANGES APPROVAL ====================
@@ -1051,19 +987,25 @@ def create_approval_authority_matrix(ws, styles):
     row += 1
     for criteria in emergency_criteria:
         ws[f"A{row}"] = criteria
-        
+
         # Editable cells
         for col in [2, 3, 6]:  # B=2, C=3, F=6
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         # Dropdowns
         validations['approval_method'].add(ws[f"D{row}"])
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"D{row}"].border = styles["border"]
+
         validations['implementation_status'].add(ws[f"E{row}"])
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"E{row}"].border = styles["border"]
+
+        # Evidence dropdown
+        validations['evidence_type'].add(ws.cell(row=row, column=6))
+
         row += 1
 
     # ==================== APPROVAL PROCESS METRICS ====================
@@ -1095,9 +1037,10 @@ def create_approval_authority_matrix(ws, styles):
         for col in [2, 3]:  # B=2, C=3
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         # Status - calculated (conditional formatting would be applied manually)
-        ws[f"D{row}"].fill = PatternFill(start_color="E0E0E0", end_color="E0E0E0", fill_type="solid")
+        ws[f"D{row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         
         row += 1
 
@@ -1111,8 +1054,9 @@ def create_approval_authority_matrix(ws, styles):
     ws.column_dimensions["G"].width = 25
 
     ws.freeze_panes = "A6"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
 # SECTION 5.5: CAB OPERATIONS SHEET
@@ -1126,7 +1070,7 @@ def create_cab_operations(ws, styles):
     ws.merge_cells("A1:H1")
     ws["A1"] = "CHANGE ADVISORY BOARD (CAB) OPERATIONS"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:H2")
     ws["A2"] = "Document CAB composition, meeting schedules, and operational procedures"
@@ -1191,7 +1135,7 @@ def create_cab_operations(ws, styles):
     row += 2
 
     # ==================== CAB RESPONSIBILITIES ====================
-    ws.merge_cells(f"A{row}:H{row}")
+    ws.merge_cells(f"A{row}:E{row}")
     ws[f"A{row}"] = "CAB RESPONSIBILITIES & DECISION CRITERIA"
     apply_style(ws[f"A{row}"], styles["section_header"])
     row += 1
@@ -1216,6 +1160,8 @@ def create_cab_operations(ws, styles):
             cell = ws.cell(row=row, column=col_idx, value=value)
             if col_idx > 2:
                 apply_style(cell, styles["input_cell"])
+        # Evidence Reference dropdown (col 5 = E)
+        validations['evidence_type'].add(ws.cell(row=row, column=5))
         row += 1
 
     # Column widths
@@ -1229,8 +1175,9 @@ def create_cab_operations(ws, styles):
     ws.column_dimensions["H"].width = 15
 
     ws.freeze_panes = "A6"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
 # SECTION 6: COMMUNICATION PROCEDURES SHEET
@@ -1244,7 +1191,7 @@ def create_communication_procedures(ws, styles):
     ws.merge_cells("A1:G1")
     ws["A1"] = "CHANGE COMMUNICATION PROCEDURES"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:G2")
     ws["A2"] = "Document stakeholder notification and communication methods"
@@ -1278,25 +1225,30 @@ def create_communication_procedures(ws, styles):
     row += 1
     for group in stakeholder_groups:
         ws[f"A{row}"] = group
-        
+
         # Editable cells
         for col in [2, 5]:  # B=2, E=5
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         # Dropdowns
         validations['notification_trigger'].add(ws[f"C{row}"])
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"C{row}"].border = styles["border"]
+
         validations['communication_method'].add(ws[f"D{row}"])
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"D{row}"].border = styles["border"]
+
         validations['yes_no'].add(ws[f"F{row}"])
         ws[f"F{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"F{row}"].border = styles["border"]
+
         validations['implementation_status'].add(ws[f"G{row}"])
         ws[f"G{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"G{row}"].border = styles["border"]
+
         row += 1
 
     # ==================== COMMUNICATION TEMPLATES ====================
@@ -1327,16 +1279,18 @@ def create_communication_procedures(ws, styles):
         ws[f"A{row}"] = template_type
         ws[f"B{row}"] = purpose
         ws[f"C{row}"] = content
-        
+
         # Editable cells
         for col in [6]:  # F=6
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         # Dropdowns
         validations['yes_no'].add(ws[f"D{row}"])
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"D{row}"].border = styles["border"]
+
         # Format dropdown (Email/Portal/Both)
         format_dv = DataValidation(
             type="list",
@@ -1346,9 +1300,11 @@ def create_communication_procedures(ws, styles):
         ws.add_data_validation(format_dv)
         format_dv.add(ws[f"E{row}"])
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"E{row}"].border = styles["border"]
+
         validations['implementation_status'].add(ws[f"G{row}"])
         ws[f"G{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"G{row}"].border = styles["border"]
         
         row += 1
 
@@ -1377,22 +1333,27 @@ def create_communication_procedures(ws, styles):
     row += 1
     for channel in channels:
         ws[f"A{row}"] = channel
-        
+
         # Editable cells
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"C{row}"].border = styles["border"]
+
         # Dropdowns
         validations['yes_no'].add(ws[f"B{row}"])
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"B{row}"].border = styles["border"]
+
         validations['audience_reach'].add(ws[f"D{row}"])
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"D{row}"].border = styles["border"]
+
         validations['reliability'].add(ws[f"E{row}"])
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"E{row}"].border = styles["border"]
+
         validations['implementation_status'].add(ws[f"F{row}"])
         ws[f"F{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"F{row}"].border = styles["border"]
         
         row += 1
 
@@ -1406,8 +1367,9 @@ def create_communication_procedures(ws, styles):
     ws.column_dimensions["G"].width = 18
 
     ws.freeze_panes = "A6"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
 # SECTION 7: DOCUMENTATION REQUIREMENTS SHEET
@@ -1421,7 +1383,7 @@ def create_documentation_requirements(ws, styles):
     ws.merge_cells("A1:G1")
     ws["A1"] = "CHANGE DOCUMENTATION REQUIREMENTS"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:G2")
     ws["A2"] = "Define record-keeping requirements by change type"
@@ -1451,22 +1413,26 @@ def create_documentation_requirements(ws, styles):
     row += 1
     for item in std_doc_items:
         ws[f"A{row}"] = item
-        
+
         # Editable cells
         for col in [4, 5, 6]:  # D=4, E=5, F=6
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         # Dropdowns
         validations['doc_requirement'].add(ws[f"B{row}"])
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"B{row}"].border = styles["border"]
+
         validations['format_type'].add(ws[f"C{row}"])
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"C{row}"].border = styles["border"]
+
         validations['implementation_status'].add(ws[f"G{row}"])
         ws[f"G{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"G{row}"].border = styles["border"]
+
         row += 1
 
     # ==================== NORMAL CHANGE DOCUMENTATION ====================
@@ -1499,22 +1465,37 @@ def create_documentation_requirements(ws, styles):
     row += 1
     for item in normal_doc_items:
         ws[f"A{row}"] = item
-        
+
         # Editable cells
         for col in [4, 5, 6]:  # D=4, E=5, F=6
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         # Dropdowns
         validations['doc_requirement'].add(ws[f"B{row}"])
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"B{row}"].border = styles["border"]
+
         validations['format_type'].add(ws[f"C{row}"])
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"C{row}"].border = styles["border"]
+
         validations['implementation_status'].add(ws[f"G{row}"])
         ws[f"G{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"G{row}"].border = styles["border"]
+
+        row += 1
+
+    # Additional ISO 27002:2022 normal change documentation items (F2F2F2 reference rows)
+    extra_normal_items = [
+        "Downstream documentation updated — policies, procedures, and operating manuals reviewed and updated where affected by this change",
+        "BCM/ICT continuity plan reviewed — business continuity and disaster recovery plans updated if system criticality or architecture has changed",
+    ]
+    for item in extra_normal_items:
+        ws.cell(row=row, column=1).value = item
+        ws.cell(row=row, column=1).fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+        ws.cell(row=row, column=1).font = Font(name="Calibri", size=10, color="003366")
         row += 1
 
     # ==================== EMERGENCY CHANGE DOCUMENTATION ====================
@@ -1543,18 +1524,21 @@ def create_documentation_requirements(ws, styles):
     row += 1
     for item in emerg_doc_items:
         ws[f"A{row}"] = item
-        
+
         # Editable cells
         for col in [3, 4, 5, 6]:  # C=3, D=4, E=5, F=6
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         # Dropdowns
         validations['doc_requirement'].add(ws[f"B{row}"])
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"B{row}"].border = styles["border"]
+
         validations['implementation_status'].add(ws[f"G{row}"])
         ws[f"G{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"G{row}"].border = styles["border"]
         
         row += 1
 
@@ -1582,19 +1566,25 @@ def create_documentation_requirements(ws, styles):
     row += 1
     for record_type in record_types:
         ws[f"A{row}"] = record_type
-        
+
         # Editable cells
         for col in [2, 4, 6]:  # B=2, D=4, F=6
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         # Dropdowns
         validations['disposal_method'].add(ws[f"C{row}"])
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"C{row}"].border = styles["border"]
+
         validations['implementation_status'].add(ws[f"E{row}"])
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"E{row}"].border = styles["border"]
+
+        # Evidence dropdown (col 6 = F)
+        validations['evidence_type'].add(ws.cell(row=row, column=6))
+
         row += 1
 
     # Column widths
@@ -1607,8 +1597,9 @@ def create_documentation_requirements(ws, styles):
     ws.column_dimensions["G"].width = 18
 
     ws.freeze_panes = "A6"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
 # SECTION 8: CHANGE MANAGEMENT TOOLS SHEET
@@ -1622,7 +1613,7 @@ def create_change_management_tools(ws, styles):
     ws.merge_cells("A1:F1")
     ws["A1"] = "CHANGE MANAGEMENT TOOLS & SYSTEMS INVENTORY"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:F2")
     ws["A2"] = "Document all platforms and tools supporting change management"
@@ -1630,7 +1621,7 @@ def create_change_management_tools(ws, styles):
 
     # ==================== PRIMARY CHANGE MANAGEMENT SYSTEM ====================
     row = 4
-    ws.merge_cells(f"A{row}:F{row}")
+    ws.merge_cells(f"A{row}:C{row}")
     ws[f"A{row}"] = "PRIMARY CHANGE MANAGEMENT SYSTEM"
     apply_style(ws[f"A{row}"], styles["section_header"])
 
@@ -1682,7 +1673,9 @@ def create_change_management_tools(ws, styles):
         elif field_type:
             # Editable value cell
             ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            ws[f"B{row}"].border = styles["border"]
             ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            ws[f"C{row}"].border = styles["border"]
             
             # Apply validation if specified
             if field_type == "date":
@@ -1710,13 +1703,19 @@ def create_change_management_tools(ws, styles):
         for col in [1, 2, 5, 6]:  # A=1, B=2, E=5, F=6
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         validations['integration_status'].add(ws.cell(row=row, column=3))
         ws.cell(row=row, column=3).fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws.cell(row=row, column=3).border = styles["border"]
+
         validations['implementation_status'].add(ws.cell(row=row, column=4))
         ws.cell(row=row, column=4).fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws.cell(row=row, column=4).border = styles["border"]
+
+        # Evidence dropdown (col 6 = F)
+        validations['evidence_type'].add(ws.cell(row=row, column=6))
+
         row += 1
 
     # ==================== INTEGRATION ARCHITECTURE ====================
@@ -1737,15 +1736,19 @@ def create_change_management_tools(ws, styles):
         for col in [1, 2, 3, 6]:  # A=1, B=2, C=3, F=6
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         validations['integration_type'].add(ws.cell(row=row, column=4))
         ws.cell(row=row, column=4).fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws.cell(row=row, column=4).border = styles["border"]
+
         validations['yes_no_partial'].add(ws.cell(row=row, column=5))
         ws.cell(row=row, column=5).fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws.cell(row=row, column=5).border = styles["border"]
+
         validations['implementation_status'].add(ws.cell(row=row, column=7))
         ws.cell(row=row, column=7).fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws.cell(row=row, column=7).border = styles["border"]
         
         row += 1
 
@@ -1774,16 +1777,21 @@ def create_change_management_tools(ws, styles):
     row += 1
     for control in security_controls:
         ws[f"A{row}"] = control
-        
+
         # Editable cells
         for col in [3, 4]:  # C=3, D=4
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+            cell.border = styles["border"]
+
         # Dropdown
         validations['yes_no_partial'].add(ws[f"B{row}"])
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"B{row}"].border = styles["border"]
+
+        # Evidence dropdown (col 4 = D)
+        validations['evidence_type'].add(ws.cell(row=row, column=4))
+
         row += 1
 
     # Column widths
@@ -1796,11 +1804,12 @@ def create_change_management_tools(ws, styles):
     ws.column_dimensions["G"].width = 18
 
     ws.freeze_panes = "A6"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
-# SECTION 8.5: METRICS & KPIs SHEET
+# SECTION 8.5: METRICS & KPIS SHEET
 # ============================================================================
 
 def create_metrics_kpis(ws, styles):
@@ -1809,9 +1818,9 @@ def create_metrics_kpis(ws, styles):
 
     # Header
     ws.merge_cells("A1:H1")
-    ws["A1"] = "CHANGE MANAGEMENT METRICS & KPIs"
+    ws["A1"] = "CHANGE MANAGEMENT METRICS AND KPIS"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:H2")
     ws["A2"] = "Document tracked metrics, targets, and reporting frequency"
@@ -1851,7 +1860,7 @@ def create_metrics_kpis(ws, styles):
     row += 2
 
     # ==================== REPORTING SCHEDULE ====================
-    ws.merge_cells(f"A{row}:H{row}")
+    ws.merge_cells(f"A{row}:G{row}")
     ws[f"A{row}"] = "METRICS REPORTING SCHEDULE"
     apply_style(ws[f"A{row}"], styles["section_header"])
     row += 1
@@ -1887,21 +1896,22 @@ def create_metrics_kpis(ws, styles):
     ws.column_dimensions["H"].width = 15
 
     ws.freeze_panes = "A6"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
 # SECTION 9: SUMMARY DASHBOARD SHEET
 # ============================================================================
 
-def create_summary_dashboard(ws, styles):
+def create_summary_dashboard_sheet(ws, styles):
     """Create Summary Dashboard with standard compliance table and metrics."""
     thin = Side(style="thin")
     border = Border(left=thin, right=thin, top=thin, bottom=thin)
 
     # Header
     ws.merge_cells("A1:G1")
-    ws["A1"] = "CHANGE PROCESS ASSESSMENT - COMPLIANCE SUMMARY"
+    ws["A1"] = "CHANGE PROCESS ASSESSMENT — SUMMARY DASHBOARD"
     ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
     ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
@@ -1909,60 +1919,128 @@ def create_summary_dashboard(ws, styles):
 
     ws.merge_cells("A2:G2")
     ws["A2"] = "ISO/IEC 27001:2022 \u2014 Control A.8.32: Change Management"
-    ws["A2"].font = Font(name="Calibri", size=11, italic=True)
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
     ws["A2"].alignment = Alignment(horizontal="left", vertical="center")
 
+    # Row 3: Empty (for standardisation)
+
     # --- TABLE 1: COMPLIANCE OVERVIEW ---
-    row = 3
+    row = 4
     ws.merge_cells(f"A{row}:G{row}")
-    ws[f"A{row}"] = "TABLE 1: COMPLIANCE OVERVIEW"
+    ws[f"A{row}"] = "TABLE 1: ASSESSMENT AREA COMPLIANCE OVERVIEW"
     ws[f"A{row}"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
     ws[f"A{row}"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
 
-    headers = ["Assessment Area", "Total Requirements", "Compliant", "Partially Compliant", "Non-Compliant", "N/A", "Compliance %"]
+    headers = ["Assessment Area", "Total Items", "Compliant", "Partial", "Non-Compliant", "N/A", "Compliance %"]
     for col_idx, header in enumerate(headers, start=1):
-        cell = ws.cell(row=4, column=col_idx, value=header)
-        cell.font = Font(name="Calibri", size=10, bold=True)
+        cell = ws.cell(row=5, column=col_idx, value=header)
+        cell.font = Font(name="Calibri", size=10, bold=True, color="000000")
         cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
         cell.border = border
 
-    assessment_areas = [
-        "Change Process Workflow",
-        "Approval Authority",
-        "Communication Procedures",
-        "Documentation Requirements",
-        "Change Management Tools",
+    # TABLE 1 assessment areas with formulas
+    # Pattern based on A.8.33-34 (area_configs with dynamic formula generation)
+    # Based on ISO 27001:2022 A.8.32 requirements analysis
+
+    area_configs = [
+        # (Sheet Name, Status Column, [Compliant, Partial, Non-Compliant], Row Start, Row End)
+        ('Change Process Workflow', 'G', ['✅ Implemented', '⚠ Partial', '❌ Not Implemented'], 7, 56),
+        # Approval Authority Matrix - 3 sections with formulas (extended to cover all data to row 89)
+        ('Approval Authority Matrix', 'F', ['✅ Implemented', '⚠ Partial', '❌ Not Implemented'], 7, 89),
+        ('Approval Authority Matrix', 'G', ['✅ Implemented', '⚠ Partial', '❌ Not Implemented'], 61, 89),
+        ('Approval Authority Matrix', 'E', ['✅ Implemented', '⚠ Partial', '❌ Not Implemented'], 75, 89),
+        ('Communication', 'G', ['✅ Implemented', '⚠ Partial', '❌ Not Implemented'], 6, 55),
+        ('Documentation Records', 'G', ['✅ Implemented', '⚠ Partial', '❌ Not Implemented'], 6, 55),
+        # Change Management Tools - 2 sections with formulas
+        ('Tool Capabilities', 'D', ['✅ Implemented', '⚠ Partial', '❌ Not Implemented'], 36, 81),
+        ('Tool Capabilities', 'G', ['✅ Implemented', '⚠ Partial', '❌ Not Implemented'], 57, 81),
     ]
 
-    for i, area in enumerate(assessment_areas):
-        r = 5 + i
-        ws[f"A{r}"] = area
+    assessment_areas = [
+        'Change Process Workflow',
+        'Approval Authority Matrix - Standard Changes',
+        'Approval Authority Matrix - Normal Changes',
+        'Approval Authority Matrix - Emergency Changes',
+        'Communication',
+        'Documentation Records',
+        'Change Management Tools - Supporting Tools',
+        'Change Management Tools - Integration Architecture',
+    ]
+
+    r = 6
+    for i, area_name in enumerate(assessment_areas):
+        # Column A: Area name
+        ws[f"A{r}"] = area_name
         ws[f"A{r}"].font = Font(name="Calibri", size=10)
         ws[f"A{r}"].border = border
-        for col in "BCDEF":
-            cell = ws[f"{col}{r}"]
-            cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-            cell.border = border
-            cell.alignment = Alignment(horizontal="center", vertical="center")
-        ws[f"G{r}"].border = border
-        ws[f"G{r}"].alignment = Alignment(horizontal="center", vertical="center")
+
+        if area_configs[i] is None:
+            # MANUAL ENTRY (no compliance column)
+            for col in "BCDEF":
+                cell = ws[f"{col}{r}"]
+                cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+                cell.border = border
+                cell.alignment = Alignment(horizontal="center", vertical="center")
+            ws[f"G{r}"].border = border
+            ws[f"G{r}"].alignment = Alignment(horizontal="center", vertical="center")
+        else:
+            # FORMULA-BASED
+            sheet_name, status_col, status_values, row_start, row_end = area_configs[i]
+
+            # B: Total
+            ws[f"B{r}"] = f"=COUNTA('{sheet_name}'!{status_col}{row_start}:{status_col}{row_end})"
+            ws[f"B{r}"].border = border
+            ws[f"B{r}"].alignment = Alignment(horizontal="center", vertical="center")
+
+            # C: Compliant
+            ws[f"C{r}"] = f'=COUNTIF(\'{sheet_name}\'!{status_col}{row_start}:{status_col}{row_end},"{status_values[0]}")'
+            ws[f"C{r}"].border = border
+            ws[f"C{r}"].alignment = Alignment(horizontal="center", vertical="center")
+
+            # D: Partial
+            ws[f"D{r}"] = f'=COUNTIF(\'{sheet_name}\'!{status_col}{row_start}:{status_col}{row_end},"{status_values[1]}")'
+            ws[f"D{r}"].border = border
+            ws[f"D{r}"].alignment = Alignment(horizontal="center", vertical="center")
+
+            # E: Non-Compliant (includes "Planned")
+            ws[f"E{r}"] = f'=COUNTIF(\'{sheet_name}\'!{status_col}{row_start}:{status_col}{row_end},"{status_values[2]}")+COUNTIF(\'{sheet_name}\'!{status_col}{row_start}:{status_col}{row_end},"Planned")'
+            ws[f"E{r}"].border = border
+            ws[f"E{r}"].alignment = Alignment(horizontal="center", vertical="center")
+
+            # F: N/A
+            ws[f"F{r}"] = f'=COUNTIF(\'{sheet_name}\'!{status_col}{row_start}:{status_col}{row_end},"N/A")'
+            ws[f"F{r}"].border = border
+            ws[f"F{r}"].alignment = Alignment(horizontal="center", vertical="center")
+
+            # G: Compliance % (will be added by TOTAL row loop below)
+            ws[f"G{r}"].border = border
+            ws[f"G{r}"].alignment = Alignment(horizontal="center", vertical="center")
+
+        r += 1
+
+    # Add Compliance % formulas for each assessment area row
+    for row_idx in range(6, 14):  # rows 6-13 (8 assessment areas)
+        ws[f"G{row_idx}"] = f'=IF((B{row_idx}-F{row_idx})=0,0,C{row_idx}/(B{row_idx}-F{row_idx}))'
+        ws[f"G{row_idx}"].number_format = "0.0%"
+        ws[f"G{row_idx}"].alignment = Alignment(horizontal="center", vertical="center")
 
     # TOTAL row with SUM formulas
-    total_row = 5 + len(assessment_areas)
+    total_row = 14  # After 8 assessment areas (rows 6-13)
     ws[f"A{total_row}"] = "TOTAL"
     ws[f"A{total_row}"].font = Font(name="Calibri", size=10, bold=True)
     ws[f"A{total_row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
     ws[f"A{total_row}"].border = border
     for col_letter in "BCDEF":
         cell = ws[f"{col_letter}{total_row}"]
-        cell.value = f"=SUM({col_letter}5:{col_letter}{total_row - 1})"
-        cell.font = Font(name="Calibri", size=10, bold=True)
+        cell.value = f"=SUM({col_letter}6:{col_letter}13)"
+        cell.font = Font(name="Calibri", size=10, bold=True, color="000000")
         cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         cell.border = border
         cell.alignment = Alignment(horizontal="center", vertical="center")
-    ws[f"G{total_row}"] = f'=IF((B{total_row}-F{total_row})=0,"0%",ROUND(C{total_row}/(B{total_row}-F{total_row})*100,1)&"%")'
+    ws[f"G{total_row}"] = f'=IF((B{total_row}-F{total_row})=0,0,C{total_row}/(B{total_row}-F{total_row}))'
+    ws[f"G{total_row}"].number_format = "0.0%"
     ws[f"G{total_row}"].font = Font(name="Calibri", size=10, bold=True)
     ws[f"G{total_row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
     ws[f"G{total_row}"].border = border
@@ -1973,49 +2051,120 @@ def create_summary_dashboard(ws, styles):
     ws.merge_cells(f"A{met_row}:G{met_row}")
     ws[f"A{met_row}"] = "TABLE 2: KEY METRICS"
     ws[f"A{met_row}"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
-    ws[f"A{met_row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+    ws[f"A{met_row}"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     ws[f"A{met_row}"].alignment = Alignment(horizontal="left", vertical="center")
+    for col in range(1, 8):
+        ws.cell(row=met_row, column=col).border = border
 
+    # TABLE 2 column headers (D9D9D9 grey)
+    t2_hdr_row = met_row + 1
+    t2_headers = ["Metric", "Value", "", "", "", "", ""]
+    for col_idx, hdr in enumerate(t2_headers, 1):
+        hcell = ws.cell(row=t2_hdr_row, column=col_idx, value=hdr)
+        hcell.font = Font(name="Calibri", size=10, bold=True, color="000000")
+        hcell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
+        hcell.border = border
+        hcell.alignment = Alignment(horizontal="center", vertical="center")
+
+    # Metrics with formulas (where available) or placeholders
     metrics = [
-        ("Change Success Rate", "[enter %]"),
-        ("Emergency Change Rate", "[enter %]"),
+        ("Change Success Rate", "='Metrics KPIs'!D6"),
+        ("Emergency Change Rate", "='Metrics KPIs'!D7"),
         ("Average Change Lead Time", "[enter days]"),
-        ("Failed Change Rate", "[enter %]"),
+        ("Failed Change Rate", "='Metrics KPIs'!D10"),
     ]
-    for i, (metric, placeholder) in enumerate(metrics):
-        r = met_row + 1 + i
+    r = t2_hdr_row
+    for metric, value in metrics:
+        r += 1
         ws[f"A{r}"] = metric
-        ws[f"A{r}"].font = Font(name="Calibri", size=10, bold=True)
+        ws[f"A{r}"].font = Font(name="Calibri", size=10, color="000000")
         ws[f"A{r}"].border = border
-        ws.merge_cells(f"B{r}:G{r}")
-        ws[f"B{r}"] = placeholder
-        ws[f"B{r}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{r}"] = value
+        ws[f"B{r}"].font = Font(name="Calibri", size=10, color="000000")
         ws[f"B{r}"].border = border
+        for col in range(3, 8):
+            ws.cell(row=r, column=col).border = border
+
+    # TABLE 2 buffer rows (2 empty white rows)
+    for _ in range(2):
+        r += 1
+        for col in range(1, 8):
+            ws.cell(row=r, column=col).border = border
 
     # --- TABLE 3: CRITICAL FINDINGS ---
-    crit_row = met_row + 1 + len(metrics) + 1
-    ws.merge_cells(f"A{crit_row}:G{crit_row}")
-    ws[f"A{crit_row}"] = "TABLE 3: CRITICAL FINDINGS"
-    ws[f"A{crit_row}"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
-    ws[f"A{crit_row}"].fill = PatternFill(start_color="C00000", end_color="C00000", fill_type="solid")
-    ws[f"A{crit_row}"].alignment = Alignment(horizontal="left", vertical="center")
+    crit_start = r + 2
+    ws.merge_cells(f"A{crit_start}:G{crit_start}")
+    ws[f"A{crit_start}"] = "TABLE 3: CRITICAL FINDINGS"
+    ws[f"A{crit_start}"].font = Font(bold=True, size=11, color="FFFFFF")
+    ws[f"A{crit_start}"].fill = PatternFill(start_color="C00000", end_color="C00000", fill_type="solid")
+    ws[f"A{crit_start}"].alignment = Alignment(horizontal="left", vertical="center")
+    for col in range(1, 8):
+        ws.cell(row=crit_start, column=col).border = border
 
-    find_headers = ["Finding", "Severity", "Owner", "Due Date", "Status"]
-    for col_idx, h in enumerate(find_headers, start=1):
-        cell = ws.cell(row=crit_row + 1, column=col_idx, value=h)
-        cell.font = Font(name="Calibri", size=10, bold=True)
+    findings_headers = ["Category", "Finding", "Count", "Severity", "Action Required", "", ""]
+    for col_idx, header in enumerate(findings_headers, 1):
+        cell = ws.cell(row=crit_start + 1, column=col_idx, value=header)
+        cell.font = Font(bold=True, color="000000")
         cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         cell.border = border
-        cell.alignment = Alignment(horizontal="center", vertical="center")
-    for i in range(5):
-        r = crit_row + 2 + i
-        for col in range(1, 6):
-            cell = ws.cell(row=r, column=col)
-            cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-            cell.border = border
+        cell.alignment = Alignment(horizontal="center")
 
-    # Column widths (standard)
-    for col, w in [("A", 40), ("B", 16), ("C", 16), ("D", 18), ("E", 18), ("F", 12), ("G", 15)]:
+    # Critical findings based on change management control requirements
+    findings = [
+        ("Change Process", "Changes without approval", '=COUNTIF(\'Change Process Workflow\'!G7:G56,"\u274c Not Implemented")', "Critical", "Immediate"),
+        ("Approval Authority", "Emergency changes without approval", '=COUNTIF(\'Approval Authority Matrix\'!E75:E89,"\u274c Not Implemented")', "Critical", "Immediate"),
+        ("Communication", "Changes without stakeholder notification", '=COUNTIF(\'Communication\'!G6:G55,"\u274c Not Implemented")', "Critical", "Immediate"),
+        ("Documentation", "Changes without documentation", '=COUNTIF(\'Documentation Records\'!G6:G55,"\u274c Not Implemented")', "Critical", "Immediate"),
+        ("Tool Capabilities", "Critical tool capability gaps", '=COUNTIF(\'Tool Capabilities\'!D36:D81,"\u274c Not Implemented")', "Critical", "Immediate"),
+        ("Change Process", "High-risk changes with partial implementation", '=COUNTIF(\'Change Process Workflow\'!G7:G56,"\u26a0 Partial")', "High", "Urgent"),
+        ("Approval Authority", "Standard changes with approval gaps", '=COUNTIF(\'Approval Authority Matrix\'!F7:F89,"\u26a0 Partial")', "High", "Urgent"),
+        ("Approval Authority", "Normal changes with approval gaps", '=COUNTIF(\'Approval Authority Matrix\'!G61:G89,"\u26a0 Partial")', "High", "Urgent"),
+        ("Communication", "Partial communication implementation", '=COUNTIF(\'Communication\'!G6:G55,"\u26a0 Partial")', "Medium", "Plan"),
+        ("Tool Capabilities", "Tool workflow gaps", '=COUNTIF(\'Tool Capabilities\'!G57:G81,"\u26a0 Partial")', "Medium", "Plan"),
+    ]
+
+    ffffcc_fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+    row = crit_start + 1
+    for cat, finding, formula, severity, action in findings:
+        row += 1
+        ws.cell(row=row, column=1, value=cat).border = border
+        ws.cell(row=row, column=1).font = Font(color="000000")
+        ws.cell(row=row, column=1).fill = ffffcc_fill
+        ws.cell(row=row, column=2, value=finding).border = border
+        ws.cell(row=row, column=2).font = Font(color="000000")
+        ws.cell(row=row, column=2).fill = ffffcc_fill
+        cell_count = ws.cell(row=row, column=3)
+        cell_count.value = formula
+        cell_count.border = border
+        cell_count.alignment = Alignment(horizontal="center")
+        cell_count.font = Font(color="000000")
+        cell_count.fill = ffffcc_fill
+        ws.cell(row=row, column=4, value=severity).border = border
+        ws.cell(row=row, column=4).font = Font(color="000000")
+        ws.cell(row=row, column=4).fill = ffffcc_fill
+        ws.cell(row=row, column=5, value=action).border = border
+        ws.cell(row=row, column=5).font = Font(color="000000")
+        ws.cell(row=row, column=5).fill = ffffcc_fill
+        ws.cell(row=row, column=6).border = border
+        ws.cell(row=row, column=6).fill = ffffcc_fill
+        ws.cell(row=row, column=7).border = border
+        ws.cell(row=row, column=7).fill = ffffcc_fill
+
+    # TABLE 3 buffer rows (2 empty FFFFCC rows)
+    for _ in range(2):
+        row += 1
+        for col in range(1, 8):
+            ws.cell(row=row, column=col).fill = ffffcc_fill
+            ws.cell(row=row, column=col).border = border
+
+    # Column widths (19 columns)
+    gap_widths = [
+        ("A", 15), ("B", 20), ("C", 40), ("D", 30), ("E", 30),
+        ("F", 10), ("G", 12), ("H", 12), ("I", 12), ("J", 35),
+        ("K", 20), ("L", 15), ("M", 15), ("N", 12), ("O", 15),
+        ("P", 25), ("Q", 25), ("R", 30), ("S", 20)
+    ]
+    for col, w in gap_widths:
         ws.column_dimensions[col].width = w
 
     ws.freeze_panes = "A4"
@@ -2041,7 +2190,7 @@ def create_evidence_register(ws, styles):
     # Subtitle
     ws.merge_cells("A2:H2")
     ws["A2"] = "Document all evidence collected during this assessment"
-    ws["A2"].font = Font(name="Calibri", size=11, italic=True)
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
     ws["A2"].alignment = Alignment(horizontal="left", vertical="center")
 
     # Column headers (row 4)
@@ -2051,8 +2200,8 @@ def create_evidence_register(ws, styles):
     ]
     for col_idx, header in enumerate(headers, start=1):
         cell = ws.cell(row=4, column=col_idx, value=header)
-        cell.font = Font(name="Calibri", size=10, bold=True)
-        cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
+        cell.font = Font(name="Calibri", size=10, bold=True, color="FFFFFF")
+        cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
         cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
         cell.border = border
 
@@ -2076,20 +2225,34 @@ def create_evidence_register(ws, styles):
     ver_status_dv.errorTitle = "Invalid Status"
     ws.add_data_validation(ver_status_dv)
 
-    # 100 data rows (5-104)
-    for i in range(1, 101):
-        row = 4 + i
-        # Evidence ID (gray font, no fill)
-        ws[f"A{row}"] = f"EV-{i:03d}"
-        ws[f"A{row}"].font = Font(name="Calibri", size=10, color="808080")
-        ws[f"A{row}"].border = border
-        ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
-        # Cols B-H: yellow fill + border
-        for col in range(2, 9):
+    # Sample row (row 5) with example data (grey fill per Option B standard)
+    sample_data = {
+        1: "EV-001",
+        2: "Change Process Assessment",
+        3: "Policy Document",
+        4: "Change Management Policy v1.0",
+        5: "\\\\fileserver\\policies\\change_mgmt_v1.0.pdf",
+        6: "15.01.2026",
+        7: "Change Manager",
+        8: f"{CHECK} Verified",
+    }
+    for col, value in sample_data.items():
+        cell = ws.cell(row=5, column=col, value=value)
+        cell.fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+        cell.border = border
+        cell.alignment = Alignment(horizontal="center" if col == 1 else "left", vertical="center", wrap_text=True)
+        cell.font = Font(name="Calibri", size=10)
+    ev_type_dv.add(ws["C5"])
+    ver_status_dv.add(ws["H5"])
+
+    # Empty data rows (rows 6-105) - 100 empty rows for user data (MAX-002 standard)
+    for row in range(6, 106):
+        for col in range(1, 9):
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
             cell.border = border
-            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+            cell.alignment = Alignment(horizontal="center" if col == 1 else "left", vertical="center", wrap_text=True)
+            cell.value = None  # Empty - users choose their own evidence IDs
         # Dropdowns
         ev_type_dv.add(ws[f"C{row}"])
         ver_status_dv.add(ws[f"H{row}"])
@@ -2105,7 +2268,7 @@ def create_evidence_register(ws, styles):
 # SECTION 11: APPROVAL SIGN-OFF SHEET
 # ============================================================================
 
-def create_approval_signoff(ws, styles):
+def create_approval_sheet(ws, styles):
     """Create standard Approval Sign-Off with 3-section approval workflow."""
     thin = Side(style="thin")
     border = Border(left=thin, right=thin, top=thin, bottom=thin)
@@ -2117,14 +2280,29 @@ def create_approval_signoff(ws, styles):
     ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws.row_dimensions[1].height = 35
+    # Apply borders to all merged cells in header row
+    for col in ["A", "B", "C", "D", "E"]:
+        ws[f"{col}1"].border = border
+
+    # Control reference (row 2)
+    ws.merge_cells("A2:E2")
+    ws["A2"] = CONTROL_REF
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
+    ws["A2"].alignment = Alignment(horizontal="center", vertical="center")
+    # Apply borders to all cells in merged range
+    for col in ["A", "B", "C", "D", "E"]:
+        ws[f"{col}2"].border = border
 
     # --- ASSESSMENT SUMMARY ---
-    row = 3
+    row = 4
     ws.merge_cells(f"A{row}:E{row}")
     ws[f"A{row}"] = "ASSESSMENT SUMMARY"
     ws[f"A{row}"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
     ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
     ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
+    # Apply borders to all merged cells in section title
+    for col in ["A", "B", "C", "D", "E"]:
+        ws[f"{col}{row}"].border = border
 
     # Assessment Status dropdown
     status_dv = DataValidation(
@@ -2135,23 +2313,32 @@ def create_approval_signoff(ws, styles):
     ws.add_data_validation(status_dv)
 
     summary_fields = [
-        ("Assessment Document:", "ISMS-IMP-A.8.32.1 \u2014 Change Process Assessment", False),
+        ("Document:", "ISMS-IMP-A.8.32.1 \u2014 Change Process Assessment", False),
+        ("Overall Compliance Rating:", "='Summary Dashboard'!G14", False),  # TABLE 1 TOTAL row
         ("Assessment Period:", "", True),
-        ("Assessment Scope:", "", True),
-        ("Overall Compliance:", "", True),
+        ("Assessed By:", "", True),
         ("Assessment Status:", "", "dropdown"),
     ]
-    row = 4
+    row = 5
     for label, value, editable in summary_fields:
         ws[f"A{row}"] = label
         ws[f"A{row}"].font = Font(name="Calibri", size=10, bold=True)
+        ws[f"A{row}"].border = border
         ws.merge_cells(f"B{row}:E{row}")
         ws[f"B{row}"] = value
         if editable == "dropdown":
             status_dv.add(ws[f"B{row}"])
-            ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            for col in ["B", "C", "D", "E"]:
+                ws[f"{col}{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+                ws[f"{col}{row}"].border = border
         elif editable:
-            ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            for col in ["B", "C", "D", "E"]:
+                ws[f"{col}{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+                ws[f"{col}{row}"].border = border
+        else:
+            # Non-editable fields still need borders
+            for col in ["B", "C", "D", "E"]:
+                ws[f"{col}{row}"].border = border
         row += 1
 
     # --- Helper for approver sections ---
@@ -2161,34 +2348,43 @@ def create_approval_signoff(ws, styles):
         ws[f"A{start_row}"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
         ws[f"A{start_row}"].fill = PatternFill(start_color=fill_color, end_color=fill_color, fill_type="solid")
         ws[f"A{start_row}"].alignment = Alignment(horizontal="left", vertical="center")
+        # Apply borders to all merged cells in section title
+        for col in ["A", "B", "C", "D", "E"]:
+            ws[f"{col}{start_row}"].border = border
         r = start_row + 1
         for field in ["Name:", "Title:", "Date:", "Signature:", "Comments:"]:
             ws[f"A{r}"] = field
             ws[f"A{r}"].font = Font(name="Calibri", size=10, bold=True)
+            ws[f"A{r}"].border = border
             ws.merge_cells(f"B{r}:E{r}")
-            ws[f"B{r}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-            ws[f"B{r}"].border = border
+            # Apply borders and fill to all merged cells B-E
+            for col in ["B", "C", "D", "E"]:
+                ws[f"{col}{r}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+                ws[f"{col}{r}"].border = border
             r += 1
         return r
 
     # COMPLETED BY
     row += 1
-    row = _approver_section(row, "COMPLETED BY", "4472C4")
+    row = _approver_section(row, "COMPLETED BY (ASSESSOR)", "4472C4")
 
     # REVIEWED BY
     row += 1
-    row = _approver_section(row, "REVIEWED BY", "4472C4")
+    row = _approver_section(row, "REVIEWED BY (INFORMATION SECURITY OFFICER)", "4472C4")
 
-    # APPROVED BY — CISO
+    # APPROVED BY (CISO)
     row += 1
     row = _approver_section(row, "APPROVED BY \u2014 CISO", "003366")
 
     # --- FINAL DECISION ---
     ws[f"A{row}"] = "FINAL DECISION:"
     ws[f"A{row}"].font = Font(name="Calibri", size=10, bold=True)
+    ws[f"A{row}"].border = border
     ws.merge_cells(f"B{row}:E{row}")
-    ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-    ws[f"B{row}"].border = border
+    # Apply borders and fill to all merged cells B-E
+    for col in ["B", "C", "D", "E"]:
+        ws[f"{col}{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"{col}{row}"].border = border
     decision_dv = DataValidation(
         type="list",
         formula1='"Approved,Approved with Conditions,Rejected,Deferred"',
@@ -2204,14 +2400,20 @@ def create_approval_signoff(ws, styles):
     ws[f"A{row}"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
     ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
     ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
+    # Apply borders to all merged cells in section title
+    for col in ["A", "B", "C", "D", "E"]:
+        ws[f"{col}{row}"].border = border
 
-    for field in ["Next Review Date:", "Review Frequency:", "Scheduled Reviewer:"]:
+    for field in ["Next Review Date:", "Review Responsible:", "Special Considerations:"]:
         row += 1
         ws[f"A{row}"] = field
         ws[f"A{row}"].font = Font(name="Calibri", size=10, bold=True)
+        ws[f"A{row}"].border = border
         ws.merge_cells(f"B{row}:E{row}")
-        ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        ws[f"B{row}"].border = border
+        # Apply borders and fill to all merged cells B-E
+        for col in ["B", "C", "D", "E"]:
+            ws[f"{col}{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            ws[f"{col}{row}"].border = border
 
     # Column widths
     for col, w in [("A", 32), ("B", 25), ("C", 20), ("D", 20), ("E", 20)]:
@@ -2238,22 +2440,22 @@ def main():
     logger.info("ISMS-IMP-A.8.32.1 - Change Process Assessment Generator")
     logger.info("ISO/IEC 27001:2022 Control A.8.32: Change Management")
     logger.info("=" * 78)
-    logger.info("\n🎯 Systems Engineering Approach: Evidence-Based Compliance")
-    logger.info(f"{CHART} Technology-Agnostic: Works with ANY change management approach")
-    logger.info(f"{LOCK} Audit-Ready: Comprehensive evidence collection")
+    logger.info("\n Systems Engineering Approach: Evidence-Based Compliance")
+    logger.info(f" Technology-Agnostic: Works with ANY change management approach")
+    logger.info(f" Audit-Ready: Comprehensive evidence collection")
     logger.info("\n" + "─" * 78)
 
     # Create workbook and setup styles
     logger.info("\n[Phase 1] Initializing workbook structure...")
     wb = create_workbook()
-    styles = setup_styles()
+    styles = _STYLES
     logger.info("{CHECK} Workbook created with 11 sheets")
 
     # Create all sheets (per IMP specification - 11 sheets)
     logger.info("\n[Phase 2] Generating assessment sheets...")
 
     logger.info("  [1/11] Creating Instructions & Legend...")
-    create_instructions_sheet(wb["Instructions & Legend"], styles)
+    create_instructions_sheet(wb["Instructions & Legend"])
     logger.info("  ✅ Instructions complete")
 
     logger.info("  [2/11] Creating Change Process Workflow...")
@@ -2289,11 +2491,11 @@ def main():
     logger.info("  ✅ Evidence register complete (100 evidence rows)")
 
     logger.info("  [10/11] Creating Summary Dashboard...")
-    create_summary_dashboard(wb["Summary Dashboard"], styles)
+    create_summary_dashboard_sheet(wb["Summary Dashboard"], styles)
     logger.info("  ✅ Dashboard complete (compliance metrics, audit readiness)")
 
     logger.info("  [11/11] Creating Approval Sign-Off...")
-    create_approval_signoff(wb["Approval Sign-Off"], styles)
+    create_approval_sheet(wb["Approval Sign-Off"], styles)
     logger.info("  ✅ Approval workflow complete (3-level sign-off)")
 
     # Save workbook
@@ -2301,7 +2503,11 @@ def main():
     filename = f"ISMS-IMP-A.8.32.1_Change_Process_Assessment_{datetime.now().strftime('%Y%m%d')}.xlsx"
     
     try:
-        wb.save(filename)
+        for ws in wb.worksheets:
+            ws.sheet_view.showGridLines = False
+        output_path = _wkbk_dir / OUTPUT_FILENAME
+        finalize_validations(wb)
+        wb.save(output_path)
         logger.info(f"{CHECK} SUCCESS: {filename}")
     except Exception as e:
         logger.error(f"{XMARK} ERROR saving workbook: {e}")
@@ -2309,9 +2515,9 @@ def main():
 
     # Summary
     logger.info("\n" + "=" * 78)
-    logger.info("📋 WORKBOOK STRUCTURE SUMMARY")
+    logger.info(" WORKBOOK STRUCTURE SUMMARY")
     logger.info("=" * 78)
-    logger.info("\n📄 Assessment Sheets (11 per IMP specification):")
+    logger.info("\n Assessment Sheets (11 per IMP specification):")
     logger.info("  • Instructions & Legend (usage guidance)")
     logger.info("  • Change Process Workflow (15-stage lifecycle)")
     logger.info("  • Approval Authority Matrix (Standard/Normal/Emergency)")
@@ -2320,12 +2526,12 @@ def main():
     logger.info("  • Documentation Records (record-keeping)")
     logger.info("  • Tool Capabilities (tool inventory + integrations)")
     logger.info("  • Metrics KPIs (tracked metrics and reporting)")
-    logger.info("\n📊 Analysis & Governance:")
+    logger.info("\n Analysis & Governance:")
     logger.info("  • Evidence Register (100 evidence entries)")
     logger.info("  • Summary Dashboard (compliance metrics, audit readiness)")
     logger.info("  • Approval Sign-Off (3-level approval workflow)")
     logger.info("\n" + "─" * 78)
-    logger.info("📈 ASSESSMENT CAPABILITIES:")
+    logger.info(" ASSESSMENT CAPABILITIES:")
     logger.info("  • 15 process stages documented")
     logger.info("  • 20 policy requirements mapped")
     logger.info("  • Standard/Normal/Emergency change approval paths")
@@ -2335,7 +2541,7 @@ def main():
     logger.info("  • 100 evidence documentation entries")
     logger.info("  • Automated compliance calculations")
     logger.info("\n" + "─" * 78)
-    logger.info(f"{TARGET} KEY FEATURES:")
+    logger.info(f" KEY FEATURES:")
     logger.info("  ✅ Technology-agnostic (works with ANY change management tool)")
     logger.info("  ✅ Comprehensive evidence collection")
     logger.info("  ✅ Automated compliance calculations")
@@ -2343,7 +2549,7 @@ def main():
     logger.info("  ✅ Multi-level approval workflow")
     logger.info("  ✅ Quarterly review cycle support")
     logger.info("\n" + "=" * 78)
-    logger.info(f"{ROCKET} NEXT STEPS:")
+    logger.info(f" NEXT STEPS:")
     logger.info("  1. Open the generated workbook")
     logger.info("  2. Review Instructions & Legend sheet first")
     logger.info("  3. Document YOUR organisation's change process")
@@ -2354,28 +2560,25 @@ def main():
     logger.info("  8. Review Summary Dashboard for compliance status")
     logger.info("  9. Document evidence in Evidence Register")
     logger.info("  10. Obtain final approval via Approval Sign-Off")
-    logger.info("\n💡 PRO TIP:")
+    logger.info("\n PRO TIP:")
     logger.info("  This workbook is technology-independent. Whether you use ServiceNow,")
     logger.info("  Jira, custom tools, or spreadsheets - this framework assesses YOUR")
     logger.info("  change management PROCESS, not your tool brands. That's the difference")
     logger.info("  between compliance theater and Systems Engineering.")
     logger.info("\n" + "=" * 78)
     logger.info('\n"The first principle is that you must not fool yourself')
-    logger.info('— and you are the easiest person to fool." - Richard Feynman')
-    logger.info("\n🎭 This is not cargo cult ISMS. This is evidence-based compliance.")
+    logger.info("\n This is not cargo cult ISMS. This is evidence-based compliance.")
     logger.info("=" * 78 + "\n")
 
     return 0
 
 
 if __name__ == "__main__":
-    exit(main())
+    sys.exit(main())
 
 # =============================================================================
-# QA_VERIFIED: 2026-02-10
-# QA_STATUS: PASSED - STANDARDISATION COMPLETE
-# QA_TOOL: Claude Code Standardisation
-# CHANGES: Tab names (underscores→spaces), Dashboard (real SUM formulas, TABLE banners,
-#          standard widths), Evidence Register (9→8 cols, gray font EV IDs),
-#          Approval Sign-Off (standard 3-section), Related Policy fixed, British English
+# QA_VERIFIED: 2026-03-01
+# QA_STATUS: PASSED
+# QA_TOOL: Claude Code Production Scripts QA Methodology
+# CHANGES: Full QA for Production Launch (see GitHub Repository for details)
 # =============================================================================

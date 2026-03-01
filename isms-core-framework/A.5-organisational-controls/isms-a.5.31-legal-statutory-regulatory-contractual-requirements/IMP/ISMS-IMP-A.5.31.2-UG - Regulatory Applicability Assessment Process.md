@@ -3,19 +3,21 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.31: Legal, Statutory, Regulatory and Contractual Requirements
 
+---
+
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
 | **Document Title** | Regulatory Applicability Assessment Process |
-| **Document Type** | Implementation Guide |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.31.2-UG |
+| **Related Policy** | ISMS-POL-A.5.31 (Legal Statutory Regulatory Contractual Requirements) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.31 (Legal, Statutory, Regulatory and Contractual Requirements) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
-| **Document Owner** | Chief Executive Officer (CEO) |
-| **Approved By** | Executive Management |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -23,11 +25,32 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO/ISO | Initial implementation guide for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.31 (Legal Statutory Regulatory Contractual Requirements)
+- ISMS-IMP-A.5.31.1 (Regulatory Inventory Management Process)
+- ISMS-IMP-A.5.31.3 (Requirements Extraction Process)
+- ISMS-IMP-A.5.31.4 (Control Mapping Process)
+- ISMS-IMP-A.5.31.5 (Evidence Management Process)
 
 ---
 
-**Audience:** Security assessors, Control owners, Compliance officers
+### Workbook at a Glance
+
+This workbook contains the following 5 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Applicability Assessment** | Applicability determination matrix for each regulation per jurisdiction |
+| **Template Blank** | Blank template for new applicability assessments |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -35,7 +58,7 @@
 
 ## Purpose
 
-This implementation guide operationalizes the regulatory applicability methodology defined in ISMS-POL-A.5.31.2. It provides step-by-step instructions for compliance personnel to systematically identify regulations that may apply to [Organization] and assess whether they are legally binding, conditionally applicable, or informational references.
+This implementation guide operationalizes the regulatory applicability methodology defined in ISMS-POL-A.5.31.2. It provides step-by-step instructions for compliance personnel to systematically identify regulations that may apply to [Organisation] and assess whether they are legally binding, conditionally applicable, or informational references.
 
 **What This Guide Is**:
 
@@ -54,13 +77,13 @@ This implementation guide operationalizes the regulatory applicability methodolo
 
 **Trigger Events** (from POL-5.31.2 Section 2.1):
 
-1. **New Geographic Market Entry**: [Organization] opens office, registers entity, or begins serving customers in new jurisdiction
-2. **New Service Offering**: [Organization] launches new product/service that may trigger sector-specific regulations
+1. **New Geographic Market Entry**: [Organisation] opens office, registers entity, or begins serving customers in new jurisdiction
+2. **New Service Offering**: [Organisation] launches new product/service that may trigger sector-specific regulations
 3. **New Customer Contract**: Customer contract includes regulatory compliance requirements
 4. **Periodic Review**: Annual comprehensive scan of regulatory landscape
 5. **Regulatory Alert**: Legal counsel, database, or peer network alerts to new/changed regulation
 6. **Business Model Change**: Mergers, acquisitions, restructuring, new data processing activities
-7. **Threshold Crossing**: [Organization] grows beyond size/revenue thresholds that trigger regulations
+7. **Threshold Crossing**: [Organisation] grows beyond size/revenue thresholds that trigger regulations
 
 ## Who Performs This Process
 
@@ -189,7 +212,7 @@ Search systematically across multiple sources to ensure comprehensive coverage.
 
 **How to Access**:
 
-- Subscription: Contact [Organization] Legal Department for credentials
+- Subscription: Contact [Organisation] Legal Department for credentials
 - URL: [Internal Wiki link to access instructions]
 - VPN may be required for off-site access
 
@@ -270,7 +293,7 @@ Search systematically across multiple sources to ensure comprehensive coverage.
 
 **How to Access**:
 
-- Identify industry associations for [Organization]'s sector
+- Identify industry associations for [Organisation]'s sector
 - Examples:
   - Technology: TechNet, CCIA, BSA | The Software Alliance
   - Financial Services: ABA, SIFMA, local banking associations
@@ -295,7 +318,7 @@ Search systematically across multiple sources to ensure comprehensive coverage.
 
 - Associations provide sector-specific context commercial databases lack
 - Attend association conferences for early regulatory intelligence
-- Participate in association working groups (if [Organization] is member)
+- Participate in association working groups (if [Organisation] is member)
 - Cross-reference association info with official sources (verify)
 
 ### Source 4: Legal Counsel (In-House or External)
@@ -310,16 +333,16 @@ Search systematically across multiple sources to ensure comprehensive coverage.
 **What to Request**:
 
 - "Regulatory landscape review for [Jurisdiction/Sector]"
-- "Identify information security and data protection regulations applicable to [Organization's planned activities in Jurisdiction]"
+- "Identify information security and data protection regulations applicable to [Organisation's planned activities in Jurisdiction]"
 - Proactive briefing on new or proposed regulations
 
 **Process**:
 1. Schedule consultation with legal counsel
 2. Provide context:
 
-   - [Organization]'s current and planned operations in jurisdiction
+   - [Organisation]'s current and planned operations in jurisdiction
    - Services offered, customers served, data processed
-   - Organizational characteristics (size, revenue, structure)
+   - Organisational characteristics (size, revenue, structure)
 
 3. Legal counsel researches and briefs on applicable regulations
 4. Document legal counsel's findings and recommendations
@@ -352,7 +375,7 @@ Search systematically across multiple sources to ensure comprehensive coverage.
 **Example Process**:
 1. Join relevant LinkedIn groups or professional associations
 2. Monitor discussions for regulatory mentions
-3. Post queries: "Has anyone assessed [Regulation] for [Organization Type]?"
+3. Post queries: "Has anyone assessed [Regulation] for [Organisation Type]?"
 4. Attend compliance-focused conferences and note regulatory sessions
 
 **Tips**:
@@ -371,7 +394,7 @@ Search systematically across multiple sources to ensure comprehensive coverage.
 - Legal database alerts (configured during Source 1 access)
 - Regulatory authority mailing lists (subscribe during Source 2 research)
 - Law firm client alerts (if using external counsel)
-- RegTech platform alerts (if [Organization] uses compliance software)
+- RegTech platform alerts (if [Organisation] uses compliance software)
 
 **What to Monitor**:
 
@@ -461,15 +484,15 @@ For each candidate regulation in the list, answer these screening questions:
 
 ### Question 2: Jurisdiction Check
 
-**Does [Organization] have any connection to this jurisdiction?**
+**Does [Organisation] have any connection to this jurisdiction?**
 
 Check ALL that apply:
 
-- ☐ [Organization] has physical operations (offices, facilities) in this jurisdiction
-- ☐ [Organization] has employees located in this jurisdiction
-- ☐ [Organization] serves customers located in this jurisdiction
-- ☐ [Organization] processes data of individuals in this jurisdiction
-- ☐ [Organization] targets this jurisdiction (website localization, marketing, sales efforts)
+- ☐ [Organisation] has physical operations (offices, facilities) in this jurisdiction
+- ☐ [Organisation] has employees located in this jurisdiction
+- ☐ [Organisation] serves customers located in this jurisdiction
+- ☐ [Organisation] processes data of individuals in this jurisdiction
+- ☐ [Organisation] targets this jurisdiction (website localization, marketing, sales efforts)
 - ☐ Regulation claims extraterritorial reach (applies regardless of location if certain criteria met)
 
 **Decision**:
@@ -479,46 +502,46 @@ Check ALL that apply:
 
 ### Question 3: Operational Check
 
-**Does [Organization] perform activities or process data types covered by this regulation?**
+**Does [Organisation] perform activities or process data types covered by this regulation?**
 
-Check relevant regulation text and compare to [Organization]'s operations:
+Check relevant regulation text and compare to [Organisation]'s operations:
 
-- ☐ [Organization] provides services that regulation covers (e.g., cloud services, IT consulting, software development)
-- ☐ [Organization] serves industry sectors that regulation targets (e.g., financial services, healthcare, government)
-- ☐ [Organization] processes data types that regulation governs (e.g., personal data, health records, financial information, payment card data)
-- ☐ [Organization] performs specific operations regulation addresses (e.g., e-commerce, telecommunications, payment processing)
+- ☐ [Organisation] provides services that regulation covers (e.g., cloud services, IT consulting, software development)
+- ☐ [Organisation] serves industry sectors that regulation targets (e.g., financial services, healthcare, government)
+- ☐ [Organisation] processes data types that regulation governs (e.g., personal data, health records, financial information, payment card data)
+- ☐ [Organisation] performs specific operations regulation addresses (e.g., e-commerce, telecommunications, payment processing)
 
 **Decision**:
 
-- If **NONE checked** → Likely **NOT APPLICABLE**. [Organization] does not perform activities regulation governs. Document and STOP.
+- If **NONE checked** → Likely **NOT APPLICABLE**. [Organisation] does not perform activities regulation governs. Document and STOP.
 - If **ANY checked** → Continue to Question 4
 
 ### Question 4: Threshold Check
 
-**Does this regulation have size, revenue, volume, or other thresholds? If yes, does [Organization] meet them?**
+**Does this regulation have size, revenue, volume, or other thresholds? If yes, does [Organisation] meet them?**
 
 **Common Thresholds**:
 
-- Employee count (e.g., "applies to organizations with 250+ employees")
-- Revenue (e.g., "applies to organizations with €10M+ annual revenue")
+- Employee count (e.g., "applies to organisations with 250+ employees")
+- Revenue (e.g., "applies to organisations with €10M+ annual revenue")
 - Data volume (e.g., "applies if processing data of 50,000+ individuals annually")
 - Transaction volume (e.g., "applies if processing 6M+ payment transactions annually")
-- Organizational type (e.g., "applies to public companies only", "applies to critical infrastructure operators")
+- Organisational type (e.g., "applies to public companies only", "applies to critical infrastructure operators")
 
 **Check Regulation for Thresholds**:
-1. Review regulation text for scope limitations based on organizational characteristics
-2. Compare [Organization]'s characteristics to thresholds
-3. Document [Organization]'s current status vs. threshold
+1. Review regulation text for scope limitations based on organisational characteristics
+2. Compare [Organisation]'s characteristics to thresholds
+3. Document [Organisation]'s current status vs. threshold
 
 **Decision**:
 
 - If regulation has **NO thresholds** → Continue to Screening Outcome (proceed to detailed assessment)
 - If regulation has thresholds:
-  - **[Organization] MEETS thresholds** → Continue to Screening Outcome (proceed)
-  - **[Organization] DOES NOT MEET thresholds** → **NOT APPLICABLE currently**
+  - **[Organisation] MEETS thresholds** → Continue to Screening Outcome (proceed)
+  - **[Organisation] DOES NOT MEET thresholds** → **NOT APPLICABLE currently**
     - Document that regulation not applicable due to threshold
-    - **Important**: Monitor [Organization]'s growth; if threshold crossed in future, regulation may become applicable
-    - Set reminder to reassess if [Organization] approaching threshold
+    - **Important**: Monitor [Organisation]'s growth; if threshold crossed in future, regulation may become applicable
+    - Set reminder to reassess if [Organisation] approaching threshold
 
 ## Screening Outcome
 
@@ -538,13 +561,13 @@ Based on screening questions:
   - File in "Reviewed but Not Applicable" folder
   - Do NOT proceed to detailed assessment
   - Retain documentation (demonstrates due diligence in identifying regulations)
-  - Set reminder to reassess if [Organization]'s circumstances change
+  - Set reminder to reassess if [Organisation]'s circumstances change
 
 **Outcome 3: UNCERTAIN**
 
 - Ambiguous language in regulation
 - Borderline jurisdiction connection (e.g., small number of customers in jurisdiction)
-- Unclear whether [Organization]'s activities match regulation's scope
+- Unclear whether [Organisation]'s activities match regulation's scope
 - **Action**: 
   - Err on side of caution
   - Proceed to Step 3 (Detailed Applicability Assessment)
@@ -586,12 +609,12 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
 
 **Instructions**:
 1. Review regulation text for geographic scope provisions (typically in early articles defining "scope" or "territorial application")
-2. Gather evidence for [Organization]'s geographic footprint
+2. Gather evidence for [Organisation]'s geographic footprint
 3. Answer each question below with **YES** or **NO**
 4. For each **YES**, document specific evidence
 5. Calculate Geographic Applicability Score
 
-**Question G1: Does [Organization] have physical operations in [Regulation's Jurisdiction]?**
+**Question G1: Does [Organisation] have physical operations in [Regulation's Jurisdiction]?**
 
 - Physical operations: Offices, data centers, facilities, warehouses, storefronts
 - **Evidence to Gather**:
@@ -601,16 +624,16 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
 - **Answer**: ☐ YES ☐ NO
 - **If YES, Evidence**: [e.g., "Office at 123 Main Street, City X, Country X - lease dated 2024-01-15"]
 
-**Question G2: Does [Organization] have legal entities registered in [Regulation's Jurisdiction]?**
+**Question G2: Does [Organisation] have legal entities registered in [Regulation's Jurisdiction]?**
 
 - Legal entities: Subsidiaries, branches, representative offices
 - **Evidence to Gather**:
   - Corporate structure chart
   - Business registry records (Chamber of Commerce, Companies House, etc.)
 - **Answer**: ☐ YES ☐ NO
-- **If YES, Evidence**: [e.g., "[Organization] Country X GmbH, registration #12345678, registered 2024-02-01"]
+- **If YES, Evidence**: [e.g., "[Organisation] Country X GmbH, registration #12345678, registered 2024-02-01"]
 
-**Question G3: Does [Organization] have employees located in [Regulation's Jurisdiction]?**
+**Question G3: Does [Organisation] have employees located in [Regulation's Jurisdiction]?**
 
 - Employees: Full-time, part-time, contractors physically located in jurisdiction
 - **Evidence to Gather**:
@@ -619,9 +642,9 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
 - **Answer**: ☐ YES ☐ NO
 - **If YES, Evidence**: [e.g., "15 employees (10 FTE, 5 contractors) located in Country X per HR report dated 2024-11-01"]
 
-**Question G4: Does [Organization] serve customers physically located in [Regulation's Jurisdiction]?**
+**Question G4: Does [Organisation] serve customers physically located in [Regulation's Jurisdiction]?**
 
-- Customers: Individuals or organizations with primary location in jurisdiction
+- Customers: Individuals or organisations with primary location in jurisdiction
 - **Evidence to Gather**:
   - Customer list filtered by location (from CRM)
   - Sales by region report (from Finance/Sales)
@@ -629,9 +652,9 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
 - **Answer**: ☐ YES ☐ NO
 - **If YES, Evidence**: [e.g., "127 active customers with billing addresses in Country X, representing €1.2M annual revenue"]
 
-**Question G5: Does [Organization] process data of individuals (data subjects) in [Regulation's Jurisdiction]?**
+**Question G5: Does [Organisation] process data of individuals (data subjects) in [Regulation's Jurisdiction]?**
 
-- Data subjects: Individuals whose personal data [Organization] processes, regardless of customer status
+- Data subjects: Individuals whose personal data [Organisation] processes, regardless of customer status
 - Examples: Website visitors, app users, employee applicants, customer contacts
 - **Evidence to Gather**:
   - Data processing records (from DPO or Privacy team)
@@ -640,7 +663,7 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
 - **Answer**: ☐ YES ☐ NO
 - **If YES, Evidence**: [e.g., "Process personal data of ~50,000 website visitors from Country X monthly per Google Analytics"]
 
-**Question G6: Does [Organization] target customers or users in [Regulation's Jurisdiction]?**
+**Question G6: Does [Organisation] target customers or users in [Regulation's Jurisdiction]?**
 
 - Targeting indicators:
   - Website localized for jurisdiction (language, currency, local payment methods)
@@ -657,9 +680,9 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
 
 **Question G7: Does the regulation claim extraterritorial application?**
 
-- Extraterritorial reach: Regulation applies regardless of [Organization]'s location if certain criteria met
+- Extraterritorial reach: Regulation applies regardless of [Organisation]'s location if certain criteria met
 - Common examples:
-  - GDPR: Applies if offering goods/services to EU data subjects OR monitoring EU data subjects, even if organization not in EU
+  - GDPR: Applies if offering goods/services to EU data subjects OR monitoring EU data subjects, even if organisation not in EU
   - Some financial regulations: Apply if processing transactions in certain currencies, even if not in jurisdiction
 - **Evidence to Gather**:
   - Regulation text analysis (read territorial scope provisions)
@@ -681,15 +704,15 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
 
 **Instructions**:
 1. Review regulation text for operational scope provisions (which activities, services, data types does it regulate?)
-2. Gather evidence about [Organization]'s operations, services, customers, data processing
+2. Gather evidence about [Organisation]'s operations, services, customers, data processing
 3. Answer each question below with **YES** or **NO**
 4. For each **YES**, document specific evidence
 5. Calculate Operational Applicability Score
 
-**Question O1: Does [Organization] provide services that this regulation specifically addresses?**
+**Question O1: Does [Organisation] provide services that this regulation specifically addresses?**
 
 - Identify service types regulation governs
-- Compare to [Organization]'s service catalog
+- Compare to [Organisation]'s service catalog
 - **Common Service Types in Regulations**:
   - Cloud computing services (IaaS, PaaS, SaaS)
   - IT consulting and professional services
@@ -703,9 +726,9 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
   - SOW (Statement of Work) examples from customer contracts
   - Marketing materials describing services
 - **Answer**: ☐ YES ☐ NO
-- **If YES, Evidence**: [e.g., "[Organization] provides SaaS platform and cloud infrastructure services, both explicitly covered by Regulation Section 4"]
+- **If YES, Evidence**: [e.g., "[Organisation] provides SaaS platform and cloud infrastructure services, both explicitly covered by Regulation Section 4"]
 
-**Question O2: Does [Organization] serve industry sectors that this regulation targets?**
+**Question O2: Does [Organisation] serve industry sectors that this regulation targets?**
 
 - Sector-specific regulations (financial services, healthcare, government, energy, etc.)
 - **Evidence to Gather**:
@@ -715,7 +738,7 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
 - **Answer**: ☐ YES ☐ NO
 - **If YES, Evidence**: [e.g., "35% of revenue from financial services customers; regulation specifically targets financial sector"]
 
-**Question O3: Does [Organization] process data types that this regulation governs?**
+**Question O3: Does [Organisation] process data types that this regulation governs?**
 
 - Data types commonly regulated:
   - Personal data / Personally Identifiable Information (PII)
@@ -731,24 +754,24 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
 - **Answer**: ☐ YES ☐ NO
 - **If YES, Evidence**: [e.g., "Process personal data (names, emails, IP addresses) of EU data subjects; regulation governs personal data processing"]
 
-**Question O4: Does [Organization]'s size, revenue, or other characteristics meet regulation's scope criteria?**
+**Question O4: Does [Organisation]'s size, revenue, or other characteristics meet regulation's scope criteria?**
 
-- Organizational characteristics that may trigger regulations:
+- Organisational characteristics that may trigger regulations:
   - **Size thresholds**: Number of employees (e.g., 50+, 250+, 1000+)
   - **Revenue thresholds**: Annual revenue (e.g., €10M+, $50M+)
   - **Data volume thresholds**: Number of data subjects (e.g., 10,000+, 50,000+)
   - **Transaction thresholds**: Payment volume (e.g., 6M+ card transactions annually)
-  - **Organizational type**: Public company, private, non-profit, government contractor, critical infrastructure
+  - **Organisational type**: Public company, private, non-profit, government contractor, critical infrastructure
 - **Evidence to Gather**:
   - Financial reports (revenue, profit)
   - Headcount reports (from HR)
   - Data subject counts (from data processing systems)
   - Transaction volume (from payment processing systems)
-  - Organizational structure (from Legal)
+  - Organisational structure (from Legal)
 - **Answer**: ☐ YES ☐ NO ☐ N/A (regulation has no thresholds)
-- **If YES or N/A, Evidence**: [e.g., "[Organization] has 350 employees, exceeds regulation's 250+ employee threshold per Article 5"]
+- **If YES or N/A, Evidence**: [e.g., "[Organisation] has 350 employees, exceeds regulation's 250+ employee threshold per Article 5"]
 
-**Question O5: Does [Organization] perform specific operations that regulation addresses?**
+**Question O5: Does [Organisation] perform specific operations that regulation addresses?**
 
 - Specific operational triggers:
   - E-commerce (selling goods/services online)
@@ -824,9 +847,9 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
   - Customer contracts (review audit rights clauses)
   - Audit clause summaries
 - **Answer**: ☐ YES ☐ NO
-- **If YES, Evidence**: [e.g., "12 contracts grant customer right to audit [Organization]'s data protection practices, would include [Regulation] compliance"]
+- **If YES, Evidence**: [e.g., "12 contracts grant customer right to audit [Organisation]'s data protection practices, would include [Regulation] compliance"]
 
-**Question C4: Is compliance with this regulation a competitive requirement or customer expectation in [Organization]'s market?**
+**Question C4: Is compliance with this regulation a competitive requirement or customer expectation in [Organisation]'s market?**
 
 - Market expectations even if not contractually mandated
 - **Indicators**:
@@ -878,7 +901,7 @@ Review scores from Sections 4.1, 4.2, 4.3:
 **NOT APPLICABLE if**:
 
 - Geographic = Low AND Operational = Low AND Contractual = None/Low
-- Clear mismatch (regulation addresses activities [Organization] does not perform)
+- Clear mismatch (regulation addresses activities [Organisation] does not perform)
 
 **UNCERTAIN - Escalate to Legal Counsel if**:
 
@@ -905,27 +928,27 @@ Review scores from Sections 4.1, 4.2, 4.3:
 **For Regulations Determined APPLICABLE**:
 
 **Assign Tier 1 (Mandatory Compliance) if ANY of**:
-1. Legal obligation in jurisdiction where [Organization] operates (physical presence, legal entities, employees)
+1. Legal obligation in jurisdiction where [Organisation] operates (physical presence, legal entities, employees)
 2. Required by law to serve customers in jurisdiction (e.g., GDPR for serving EU customers)
 3. Required by contract with significant customers (>10% revenue, critical customers, government contracts)
-4. Sector-specific regulation in sector where [Organization] operates (e.g., financial services reg, healthcare reg)
+4. Sector-specific regulation in sector where [Organisation] operates (e.g., financial services reg, healthcare reg)
 
 **Examples**:
 
-- Data protection law in country where [Organization] has office → Tier 1
-- Breach notification law for data processed by [Organization] → Tier 1
-- PCI DSS v4.0.1 because [Organization] processes payment cards → Tier 1 (contractual obligation with card brands)
+- Data protection law in country where [Organisation] has office → Tier 1
+- Breach notification law for data processed by [Organisation] → Tier 1
+- PCI DSS v4.0.1 because [Organisation] processes payment cards → Tier 1 (contractual obligation with card brands)
 
 **Assign Tier 2 (Conditional Applicability) if**:
-1. Regulation WOULD apply IF [Organization] enters market, launches service, or crosses threshold
+1. Regulation WOULD apply IF [Organisation] enters market, launches service, or crosses threshold
 2. Not currently legally obligated but potential future obligation
 3. Required by some customer contracts but not broadly (spot requirement)
 
 **Examples**:
 
-- Sector regulation for sector [Organization] considering entering → Tier 2
-- Regulation with threshold [Organization] does not currently meet but may in future → Tier 2
-- Regulation in jurisdiction where [Organization] may expand → Tier 2
+- Sector regulation for sector [Organisation] considering entering → Tier 2
+- Regulation with threshold [Organisation] does not currently meet but may in future → Tier 2
+- Regulation in jurisdiction where [Organisation] may expand → Tier 2
 
 **For Regulations Determined CONDITIONALLY APPLICABLE**:
 
@@ -935,13 +958,13 @@ Review scores from Sections 4.1, 4.2, 4.3:
 **For Informational References** (voluntary frameworks, not legal obligations):
 
 **Assign Tier 3 if**:
-1. Best practice framework [Organization] uses for guidance (NIST CSF 2.0, CIS Controls, etc.)
-2. Industry standard [Organization] references for control design
+1. Best practice framework [Organisation] uses for guidance (NIST CSF 2.0, CIS Controls, etc.)
+2. Industry standard [Organisation] references for control design
 3. Regulatory framework from other jurisdiction used for benchmarking
 
 **Examples**:
 
-- NIST Cybersecurity Framework (US) used by non-US organization for maturity assessment → Tier 3
+- NIST Cybersecurity Framework (US) used by non-US organisation for maturity assessment → Tier 3
 - ISO 27002 guidance (not certification requirement itself) → Tier 3
 - Foreign regulation used to inform control design but no legal obligation → Tier 3
 
@@ -954,8 +977,8 @@ Review scores from Sections 4.1, 4.2, 4.3:
 
 **Example Rationales**:
 
-- **Tier 1**: "Legal obligation because [Organization] has office in Country X and regulation applies to all entities operating in Country X"
-- **Tier 2**: "Conditional because [Organization] does not currently serve healthcare sector, but regulation would apply if healthcare services launched per 2025 strategic plan"
+- **Tier 1**: "Legal obligation because [Organisation] has office in Country X and regulation applies to all entities operating in Country X"
+- **Tier 2**: "Conditional because [Organisation] does not currently serve healthcare sector, but regulation would apply if healthcare services launched per 2025 strategic plan"
 - **Tier 3**: "Informational because NIST CSF 2.0 is voluntary framework used for maturity benchmarking, not legal requirement"
 
 ## Escalation for Tier 1
@@ -1118,8 +1141,8 @@ Gather and attach all evidence documents:
 
 **Applicability Condition** (for Tier 2): What condition would trigger Tier 1 status?
 
-- Example: "Applies if [Organization] processes payment cards" (for PCI DSS v4.0.1)
-- Example: "Applies if [Organization] enters healthcare sector" (for healthcare regulation)
+- Example: "Applies if [Organisation] processes payment cards" (for PCI DSS v4.0.1)
+- Example: "Applies if [Organisation] enters healthcare sector" (for healthcare regulation)
 
 **Related Regulations**: Any overlapping or related regulations already in POL-00
 
@@ -1231,7 +1254,7 @@ Compliance Officer
 
 ## Example 1: Data Protection Regulation in New Operating Jurisdiction
 
-**Scenario**: [Organization] opens a sales office in Country X to better serve customers in that market. Country X has a comprehensive data protection law similar to GDPR.
+**Scenario**: [Organisation] opens a sales office in Country X to better serve customers in that market. Country X has a comprehensive data protection law similar to GDPR.
 
 **Trigger**: New jurisdiction entry (office opening)
 
@@ -1244,8 +1267,8 @@ Compliance Officer
 **Step 2 - Screening**:
 
 - Relevance: YES (data protection regulation, directly relevant to ISMS)
-- Jurisdiction: YES ([Organization] now has office in Country X)
-- Operational: YES ([Organization] processes personal data)
+- Jurisdiction: YES ([Organisation] now has office in Country X)
+- Operational: YES ([Organisation] processes personal data)
 - Threshold: N/A (regulation applies to all data controllers/processors)
 - **Outcome**: Proceed to detailed assessment
 
@@ -1254,7 +1277,7 @@ Compliance Officer
 *Geographic Scope*:
 
 - G1 (Physical operations): YES - Office at 456 Business Blvd, City X, Country X
-- G2 (Legal entities): YES - [Organization] Country X LLC, registration #CX-987654
+- G2 (Legal entities): YES - [Organisation] Country X LLC, registration #CX-987654
 - G3 (Employees): YES - 8 employees (6 sales, 2 admin) in Country X office
 - G4 (Customers located): YES - 45 customers with primary address in Country X
 - G5 (Data subjects): YES - Process personal data of Country X customers and website visitors
@@ -1264,8 +1287,8 @@ Compliance Officer
 
 *Operational Scope*:
 
-- O1 (Services): YES - [Organization] provides SaaS platform, regulation governs data processing services
-- O2 (Sectors): YES - [Organization] serves financial services customers in Country X, regulation has financial sector provisions
+- O1 (Services): YES - [Organisation] provides SaaS platform, regulation governs data processing services
+- O2 (Sectors): YES - [Organisation] serves financial services customers in Country X, regulation has financial sector provisions
 - O3 (Data types): YES - Process personal data (names, emails, addresses, usage data)
 - O4 (Thresholds): N/A - No thresholds, applies to all processors
 - O5 (Specific operations): YES - Automated decision-making in platform falls under regulation's AI provisions
@@ -1281,7 +1304,7 @@ Compliance Officer
 
 **Determination**: **APPLICABLE**
 
-- Rationale: High geographic (6/7), high operational (4/5), high contractual (4/4). [Organization] operates in Country X and is legally subject to DPA-CX.
+- Rationale: High geographic (6/7), high operational (4/5), high contractual (4/4). [Organisation] operates in Country X and is legally subject to DPA-CX.
 
 **Step 4 - Tier Assignment**: **Tier 1 (Mandatory)**
 
@@ -1290,7 +1313,7 @@ Compliance Officer
 **Step 5 - Approval**:
 
 - Legal Counsel reviewed: Confirmed Tier 1 (legal obligation)
-- Executive Management briefed: Approved Tier 1 addition, authorized compliance budget
+- Executive Management briefed: Approved Tier 1 addition, authorised compliance budget
 - Approvals obtained: 2024-11-25
 
 **Step 6 - Add to POL-00**:
@@ -1309,7 +1332,7 @@ Compliance Officer
 
 ## Example 2: Sector-Specific Regulation (Potential Market Entry)
 
-**Scenario**: [Organization] is evaluating entry into the healthcare sector. Strategic planning includes potential healthcare SaaS product launch in 2025 Q3. A healthcare-specific information security regulation exists.
+**Scenario**: [Organisation] is evaluating entry into the healthcare sector. Strategic planning includes potential healthcare SaaS product launch in 2025 Q3. A healthcare-specific information security regulation exists.
 
 **Trigger**: Strategic initiative (potential market entry)
 
@@ -1322,7 +1345,7 @@ Compliance Officer
 **Step 2 - Screening**:
 
 - Relevance: YES (information security regulation for healthcare sector)
-- Jurisdiction: YES ([Organization] operates in jurisdictions where regulation applies)
+- Jurisdiction: YES ([Organisation] operates in jurisdictions where regulation applies)
 - Operational: Partial (does NOT currently serve healthcare, but considering it)
 - Threshold: N/A (applies to all healthcare service providers)
 - **Outcome**: Proceed (uncertain on operational, assess for future)
@@ -1331,7 +1354,7 @@ Compliance Officer
 
 *Geographic Scope*:
 
-- G1-G7: All YES (existing [Organization] jurisdictional presence) = 7/7
+- G1-G7: All YES (existing [Organisation] jurisdictional presence) = 7/7
 - **Score**: 7/7 = **HIGH**
 
 *Operational Scope*:
@@ -1354,8 +1377,8 @@ Compliance Officer
 
 **Step 4 - Tier Assignment**: **Tier 2 (Conditional)**
 
-- Rationale: Regulation would apply IF [Organization] launches healthcare product and serves healthcare customers. Condition: Healthcare market entry.
-- Applicability Condition: "Applies when [Organization] provides SaaS platform to healthcare providers or processes health data"
+- Rationale: Regulation would apply IF [Organisation] launches healthcare product and serves healthcare customers. Condition: Healthcare market entry.
+- Applicability Condition: "Applies when [Organisation] provides SaaS platform to healthcare providers or processes health data"
 
 **Step 5 - Approval**:
 
@@ -1380,7 +1403,7 @@ Compliance Officer
 
 ## Example 3: Industry Best Practice Framework
 
-**Scenario**: [Organization] decides to use the NIST Cybersecurity Framework (CSF) 2.0 for internal maturity assessment and continuous improvement benchmarking.
+**Scenario**: [Organisation] decides to use the NIST Cybersecurity Framework (CSF) 2.0 for internal maturity assessment and continuous improvement benchmarking.
 
 **Trigger**: Internal initiative (maturity assessment program)
 
@@ -1394,7 +1417,7 @@ Compliance Officer
 
 - Relevance: YES (cybersecurity framework for information security)
 - Jurisdiction: N/A (voluntary framework, not jurisdiction-based)
-- Operational: YES (framework applicable to any organization managing cyber risk)
+- Operational: YES (framework applicable to any organisation managing cyber risk)
 - Threshold: N/A (voluntary, no thresholds)
 - **Outcome**: Proceed (informational/best practice assessment)
 
@@ -1407,11 +1430,11 @@ Compliance Officer
 
 *Operational Scope*:
 
-- O1 (Services): YES - Framework applicable to [Organization]'s services
+- O1 (Services): YES - Framework applicable to [Organisation]'s services
 - O2 (Sectors): YES - Cross-sector framework
 - O3 (Data types): YES - Framework covers all data types
-- O4 (Thresholds): N/A - Voluntary, scalable to any organization
-- O5 (Specific operations): YES - Framework covers [Organization]'s operations
+- O4 (Thresholds): N/A - Voluntary, scalable to any organisation
+- O5 (Specific operations): YES - Framework covers [Organisation]'s operations
 - **Score**: 4/5 = **HIGH** (operationally relevant)
 
 *Contractual Scope*:
@@ -1424,7 +1447,7 @@ Compliance Officer
 
 **Determination**: **INFORMATIONAL REFERENCE**
 
-- Rationale: Voluntary framework, not legal obligation. [Organization] chooses to use for internal maturity assessment and benchmarking. High operational relevance but no compliance requirement.
+- Rationale: Voluntary framework, not legal obligation. [Organisation] chooses to use for internal maturity assessment and benchmarking. High operational relevance but no compliance requirement.
 
 **Step 4 - Tier Assignment**: **Tier 3 (Informational)**
 
@@ -1465,13 +1488,13 @@ Compliance Officer
 **Step 2 - Screening**:
 
 - Relevance: PARTIAL (data integrity related to information security, but very sector-specific)
-- Jurisdiction: YES ([Organization] operates in jurisdiction where regulation exists)
-- Operational: **NO** - [Organization] does NOT manufacture pharmaceuticals, does NOT serve pharmaceutical manufacturing sector
+- Jurisdiction: YES ([Organisation] operates in jurisdiction where regulation exists)
+- Operational: **NO** - [Organisation] does NOT manufacture pharmaceuticals, does NOT serve pharmaceutical manufacturing sector
 - Threshold: N/A
 - **Outcome**: **STOP** - Failed operational screening
 
 **Screening Rationale**:
-"Regulation applies exclusively to pharmaceutical manufacturing facilities and governs data integrity in drug production processes. [Organization] is SaaS platform provider, does not manufacture pharmaceuticals, and does not provide services to pharmaceutical manufacturing facilities. Regulation addresses sector [Organization] does not operate in."
+"Regulation applies exclusively to pharmaceutical manufacturing facilities and governs data integrity in drug production processes. [Organisation] is SaaS platform provider, does not manufacture pharmaceuticals, and does not provide services to pharmaceutical manufacturing facilities. Regulation addresses sector [Organisation] does not operate in."
 
 **Determination**: **NOT APPLICABLE**
 
@@ -1482,15 +1505,15 @@ Compliance Officer
 **Documentation**:
 
 - Completed screening checklist filed in "Reviewed but Not Applicable" folder
-- Rationale documented: "[Organization] does not operate in pharmaceutical manufacturing sector. Regulation scope limited to pharmaceutical facilities. Not applicable to SaaS business model."
+- Rationale documented: "[Organisation] does not operate in pharmaceutical manufacturing sector. Regulation scope limited to pharmaceutical facilities. Not applicable to SaaS business model."
 - Date: 2024-12-10
 - Reviewed by: Compliance Officer
 
 **Next Steps**:
 
 - Retain screening documentation (demonstrates comprehensive regulatory review)
-- No further action unless [Organization] business model changes to serve pharmaceutical sector
-- Reassess if [Organization] acquires pharmaceutical sector customers or partners with pharmaceutical companies
+- No further action unless [Organisation] business model changes to serve pharmaceutical sector
+- Reassess if [Organisation] acquires pharmaceutical sector customers or partners with pharmaceutical companies
 
 ---
 
@@ -1533,7 +1556,7 @@ protection, cybersecurity, or IT services?
 Rationale: _____________________________________________
 
 Q2: JURISDICTION CHECK
-Does [Organization] have any connection to this jurisdiction?
+Does [Organisation] have any connection to this jurisdiction?
 (operations, employees, customers, data subjects, targeting, 
 extraterritorial reach)
 
@@ -1543,7 +1566,7 @@ extraterritorial reach)
 Evidence: ______________________________________________
 
 Q3: OPERATIONAL CHECK
-Does [Organization] perform activities or process data types 
+Does [Organisation] perform activities or process data types 
 covered by this regulation?
 
 ☐ YES - Continue to Q4
@@ -1552,7 +1575,7 @@ covered by this regulation?
 Rationale: _____________________________________________
 
 Q4: THRESHOLD CHECK
-Does regulation have thresholds? If yes, does [Organization] 
+Does regulation have thresholds? If yes, does [Organisation] 
 meet them?
 
 ☐ YES, meets thresholds - Proceed to Detailed Assessment
@@ -1699,7 +1722,7 @@ Before finalizing and submitting applicability assessment for approval:
 
 **Pitfall 2: Over-Interpreting Regulatory Scope**
 
-**Mistake**: Reading regulation more broadly than written. Example: Regulation says "applies to telecommunications providers" and [Organization] interprets this as "any company using telecommunications networks" (i.e., all companies with internet).
+**Mistake**: Reading regulation more broadly than written. Example: Regulation says "applies to telecommunications providers" and [Organisation] interprets this as "any company using telecommunications networks" (i.e., all companies with internet).
 
 **Why Wrong**: Misinterpretation leads to unnecessary compliance burden (implementing requirements that don't actually apply).
 
@@ -1725,7 +1748,7 @@ Before finalizing and submitting applicability assessment for approval:
 
 **Mistake**: Assigning Tier 1 (Mandatory) based on compliance team's interpretation without legal counsel confirmation.
 
-**Why Wrong**: Legal obligations have significant consequences (penalties, liability). Non-lawyer interpretation may be incorrect. Legal review protects [Organization].
+**Why Wrong**: Legal obligations have significant consequences (penalties, liability). Non-lawyer interpretation may be incorrect. Legal review protects [Organisation].
 
 **Correct Approach**: ALWAYS engage legal counsel for Tier 1 determinations. Legal counsel confirms: (1) Regulation creates legal obligation, (2) Tier 1 assignment is correct. Document legal opinion.
 
@@ -1736,7 +1759,7 @@ Before finalizing and submitting applicability assessment for approval:
 **Why Wrong**: Circumstances change:
 
 - Regulation amended (scope expanded/contracted)
-- [Organization] changes (new services, new markets, growth crosses thresholds)
+- [Organisation] changes (new services, new markets, growth crosses thresholds)
 - Business model evolves
 
 **Correct Approach**: Set review date for each regulation (POL-00 includes "Next Review Date"). Annually reassess Tier 1, monitor Tier 2 for condition triggers, review Tier 3 biennially.
@@ -1745,9 +1768,9 @@ Before finalizing and submitting applicability assessment for approval:
 
 **Mistake**: Determining regulation "Not Applicable" and never revisiting.
 
-**Why Wrong**: Today's non-applicability may become tomorrow's obligation if [Organization] expands.
+**Why Wrong**: Today's non-applicability may become tomorrow's obligation if [Organisation] expands.
 
-**Correct Approach**: For "Not Applicable" determinations, file documentation and note WHY not applicable (e.g., "Does not serve healthcare sector"). If that condition changes (e.g., [Organization] enters healthcare), reassess.
+**Correct Approach**: For "Not Applicable" determinations, file documentation and note WHY not applicable (e.g., "Does not serve healthcare sector"). If that condition changes (e.g., [Organisation] enters healthcare), reassess.
 
 ---
 
@@ -1768,9 +1791,7 @@ Before finalizing and submitting applicability assessment for approval:
   - Immediate next step: Extract specific requirements from applicable regulations
 - **ISMS-IMP-A.5.31.4**: Control Mapping Process
   - Map extracted requirements to ISO 27001 controls
-- **ISMS-IMP-A.5.31.5**: Evidence Management Process
   - Collect and manage evidence demonstrating compliance with mapped controls
-- **ISMS-IMP-A.5.31.6**: Compliance Dashboard & Regulatory Monitoring Process
   - Ongoing monitoring of regulatory landscape for changes and compliance status tracking
 
 **Assessment Tools**:
@@ -1791,7 +1812,7 @@ Before finalizing and submitting applicability assessment for approval:
 
 ---
 
-*This operational guide provides step-by-step instructions for identifying and assessing applicable regulations, enabling [Organization] to systematically determine compliance obligations and populate the regulatory register (ISMS-POL-00) with audit-ready documentation.*
+*This operational guide provides step-by-step instructions for identifying and assessing applicable regulations, enabling [Organisation] to systematically determine compliance obligations and populate the regulatory register (ISMS-POL-00) with audit-ready documentation.*
 
 ---
 
@@ -1799,7 +1820,7 @@ Before finalizing and submitting applicability assessment for approval:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Not knowing which laws apply to you is itself a compliance risk."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -7,15 +7,34 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Conflict Analysis |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.3.2-UG |
+| **Related Policy** | ISMS-POL-A.5.3 (Segregation of Duties) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.3 (Policies for Segregation of Duties) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.3 Segregation of Duties |
-| **Parent Policy** | ISMS-POL-A.5.3 - Segregation of Duties |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.3 (Segregation of Duties)
+- ISMS-IMP-A.5.3.1 (SoD Matrix Assessment)
+- ISMS-IMP-A.5.3.3 (Role-Function Mapping)
 
 ---
 
@@ -80,6 +99,23 @@ A thorough conflict analysis delivers:
 | Control Effectiveness Check | Quarterly | Control modifications |
 | Trend Analysis Update | Quarterly | Each analysis cycle |
 | Scenario Library Update | Semi-annual | New threat intelligence |
+
+### Workbook at a Glance
+
+This workbook contains the following sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, scoring methodology, and field descriptions |
+| **Conflict Register** | All conflicts imported from ISMS-IMP-A.5.3.1 for detailed analysis |
+| **Impact Assessment** | Quantified potential impact for each conflict across five dimensions |
+| **Exploitation Scenarios** | Realistic scenarios describing how each conflict could be exploited |
+| **Control Mapping** | Mitigating controls mapped to each conflict with effectiveness ratings |
+| **Trend Analysis** | Historical tracking of conflict patterns and resolution rates |
+| **Prioritisation Matrix** | Risk-based ranking of conflicts to guide remediation sequencing |
+| **Evidence Register** | Tracking of supporting evidence collected during the analysis |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -463,6 +499,13 @@ Where:
 | CON-2026-004 | 4 | 3 | 0.8 | 2.4 | Low | <180 days |
 | CON-2026-005 | 3 | 4 | 0.5 | 6.0 | Medium | <90 days |
 
+### After Completing the Analysis Sheets
+
+Once Steps 1–6 are complete:
+
+- **Evidence Register** — Open this sheet and record all supporting documentation gathered during the analysis: impact scoring working papers, control testing results, historical incident references, and any other evidence used to inform your assessments. This sheet is the audit evidence trail for the analysis itself.
+- **Summary Dashboard** — Review the dashboard for an executive summary of conflict prioritisation and remediation coverage. It automatically aggregates your data from the analysis sheets. If the metrics look inconsistent, verify the underlying data in the relevant sheet before proceeding to approval.
+
 ---
 
 ## Exploitation Scenario Library
@@ -790,7 +833,7 @@ Upon approval:
 2. Update ISMS control status
 3. Communicate prioritisation to remediation owners
 4. Schedule next analysis cycle
-5. Update A.5.3.4 Dashboard with new data
+5. Communicate updated prioritisation data to related assessments (ISMS-IMP-A.5.3.1 and A.5.3.3) as required
 
 ---
 
@@ -798,7 +841,7 @@ Upon approval:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"To see what is right and not to do it is cowardice."*
+— Confucius
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

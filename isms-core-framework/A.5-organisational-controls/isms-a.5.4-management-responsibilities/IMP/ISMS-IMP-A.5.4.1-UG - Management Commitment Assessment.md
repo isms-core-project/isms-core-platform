@@ -7,15 +7,35 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Management Commitment Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.4.1-UG |
+| **Related Policy** | ISMS-POL-A.5.4 (Management Responsibilities) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.4 (Management Responsibilities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.4 Management Responsibilities |
-| **Parent Policy** | ISMS-POL-A.5.4 - Management Responsibilities |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.4 (Management Responsibilities)
+- ISMS-IMP-A.5.4.2 (Compliance Oversight Tracker)
+- ISMS-IMP-A.5.4.3 (Leadership Dashboard)
+- ISMS-IMP-A.5.4.4 (Security Culture Survey)
 
 ---
 
@@ -59,7 +79,7 @@ The assessment covers all personnel with management responsibilities:
 
 Per ISO/IEC 27001:2022 Control A.5.4:
 
-> *"Management should require all personnel to apply information security in accordance with the established information security policy, topic-specific policies and procedures of the organization."*
+> *"Management should require all personnel to apply information security in accordance with the established information security policy, topic-specific policies and procedures of the organisation."*
 
 This control requires that management:
 1. Actively requires personnel to follow security policies
@@ -149,6 +169,22 @@ Before beginning this assessment, ensure access to:
 | Small (<100 employees) | 5-15 managers | 1-2 days |
 | Medium (100-500 employees) | 15-50 managers | 3-5 days |
 | Large (500+ employees) | 50+ managers | 1-2 weeks |
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, scoring scale definitions, and field descriptions |
+| **Manager Inventory** | Roster of all managers in scope for assessment |
+| **Commitment Assessment** | 11-criterion scoring rubric for each manager, with evidence notes |
+| **Summary Scores** | Auto-calculated commitment scores, percentages, and status per manager |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+| **Evidence Register** | Tracking of supporting evidence collected during the assessment |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
 
 ---
 
@@ -314,6 +350,13 @@ The Summary Scores sheet auto-calculates:
 | 70-89% | Adequate | Maintain current level; minor improvements | No mandatory action |
 | 50-69% | Improvement Needed | Development plan required | Plan within 30 days |
 | <50% | Non-Compliant | Immediate intervention; escalate to HR | Escalate within 5 days |
+
+### After Completing the Data Sheets
+
+Once Steps 1–3 are complete:
+
+- **Evidence Register** — Open this sheet and record all supporting evidence used during the assessment: LMS completion reports, attendance logs, budget approval records, incident response timestamps, and any other documentation that supports your scores. The Evidence Register is the audit trail that validates your scoring decisions. Reference evidence here using the Evidence_ID format (e.g., EVD-A.5.4.1-001) and link to files stored in the SharePoint evidence folder.
+- **Summary Dashboard** — Review the dashboard for an executive overview of commitment levels across the management population. It auto-aggregates scores from the Commitment Assessment and Summary Scores sheets. Verify the metrics reflect your data before advancing to the sign-off workflow.
 
 ---
 
@@ -510,7 +553,7 @@ The Approval & Sign-Off sheet requires:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The speed of the boss is the speed of the team."*
+— Lee Iacocca
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

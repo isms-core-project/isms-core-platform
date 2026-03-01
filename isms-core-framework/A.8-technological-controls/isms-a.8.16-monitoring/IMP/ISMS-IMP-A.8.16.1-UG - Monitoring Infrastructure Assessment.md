@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Monitoring Infrastructure Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.16.1-UG |
+| **Related Policy** | ISMS-POL-A.8.16 (Monitoring) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.16 (Monitoring Activities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Monitoring Infrastructure & Technology Capabilities |
-| **Related Policy** | ISMS-POL-A.8.16, Section 2.1 (Monitoring Infrastructure Requirements) |
-| **Purpose** | Document deployed monitoring technologies, assess capabilities against policy requirements, and identify infrastructure gaps in a vendor-agnostic manner |
-| **Target Audience** | Security Engineers, SOC Analysts, IT Operations, System Administrators, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Semi-annual or After Major Infrastructure Changes |
-| **Date** | 22.01.2026 |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Original] | Initial technical specification | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.16 (Monitoring)
+- ISMS-IMP-A.8.16.2 (Baseline & Detection Assessment)
+- ISMS-IMP-A.8.16.3 (Coverage Assessment)
+- ISMS-IMP-A.8.16.4 (Alert Management & Response Assessment)
+
+---
 
 ### Document Structure
 
@@ -33,7 +47,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 **IMPLEMENTATION NOTE:**
 
-This reworked document follows the **ISMS-POL-A.8.16 consolidated policy structure** (dated 22.01.2026).
+This reworked document follows the **ISMS-POL-A.8.16 policy structure** (dated 22.01.2026).
 
 All policy references have been updated from the old modular format:
 
@@ -43,6 +57,22 @@ All policy references have been updated from the old modular format:
 This document is **complete and ready for implementation**. The user completion guide provides comprehensive instructions for assessors, and the technical specification enables automated Excel workbook generation.
 
 For the **FULL 2,500-line implementation**, see the complete document structure below.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | 1. Monitoring Platform | Document deployed monitoring platforms and capabilities |
+| 3 | 2. Log Source Coverage | Assess log source coverage across systems |
+| 4 | 3. Data Collection Arch | Document data collection architecture |
+| 5 | 4. Integration Enrichment | Assess monitoring integrations and data enrichment |
+| 6 | 5. Performance Scale | Assess monitoring platform performance and scalability |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -65,11 +95,11 @@ For the **FULL 2,500-line implementation**, see the complete document structure 
 **Anti-Cargo-Cult Principle:**
 As Richard Feynman said: *"The first principle is that you must not fool yourself—and you are the easiest person to fool."*
 
-This assessment prevents **cargo cult monitoring** where organizations claim "we have monitoring" but:
+This assessment prevents **cargo cult monitoring** where organisations claim "we have monitoring" but:
 
 - Can't list which systems are actually monitored (blind spots)
 - Can't explain what their monitoring tools actually do (claimed capabilities vs. reality)
-- Can't demonstrate monitoring effectiveness (logs collected but never analyzed)
+- Can't demonstrate monitoring effectiveness (logs collected but never analysed)
 - Can't show evidence of monitoring infrastructure (no architecture docs, no metrics)
 
 **This assessment forces honesty through evidence:**
@@ -132,7 +162,7 @@ This assessment prevents **cargo cult monitoring** where organizations claim "we
 - **Sheet 2 Summary** (Part I, page 35): Monitoring platform capabilities summary
 - **Sheet 3 Summary** (Part I, pages 59-60): Coverage analysis by tier and system type
 - **Sheet 6 Summary** (Part I, pages 79-80): Performance and capacity planning summary
-- **Dashboard** (Part II, pages 139-140): Consolidated compliance view
+- **Dashboard** (Part II, pages 139-140): tracked in Summary Dashboards
 
 ---
 
@@ -201,7 +231,6 @@ You document YOUR specific solutions (Splunk, Sentinel, ELK, QRadar, open-source
 | ISMS-IMP-A.8.16.2 | Baselines & Detection | HOW you detect anomalies (uses infrastructure from A.8.16.1) |
 | ISMS-IMP-A.8.16.3 | Coverage | WHERE monitoring is deployed (uses tools from A.8.16.1) |
 | ISMS-IMP-A.8.16.4 | Alert Management | HOW you respond to alerts (uses infrastructure from A.8.16.1) |
-| ISMS-IMP-A.8.16.5 | Compliance Dashboard | Consolidated view across all assessments |
 
 **This assessment (A.8.16.1) MUST be completed first** - you can't assess baselines, coverage, or alert response until you know what monitoring technology you have!
 
@@ -534,12 +563,12 @@ To complete this assessment, you will need:
 **What This Sheet Contains:**
 
 - Assessment workbook overview
-- Document control information (Assessment Date, Completed By, Organization)
+- Document control information (Assessment Date, Completed By, Organisation)
 - Color-coded legend (compliance status indicators)
 - General instructions for using the workbook
 
 **What You Need to Do:**
-1. Fill yellow-highlighted cells (Assessment Date, Completed By, Organization)
+1. Fill yellow-highlighted cells (Assessment Date, Completed By, Organisation)
 2. Read completely (don't skip - explains color coding used throughout)
 3. Note review cycle (Next Review Date auto-calculates: Assessment Date + 6 months)
 
@@ -882,7 +911,7 @@ Raw logs are data. Enriched logs are intelligence.
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Visibility is the precondition of control."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

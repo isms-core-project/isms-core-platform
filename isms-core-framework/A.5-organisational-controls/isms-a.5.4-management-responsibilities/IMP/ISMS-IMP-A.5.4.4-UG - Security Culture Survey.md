@@ -7,15 +7,35 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Security Culture Survey |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.4.4-UG |
+| **Related Policy** | ISMS-POL-A.5.4 (Management Responsibilities) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.4 (Management Responsibilities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.4 Management Responsibilities |
-| **Parent Policy** | ISMS-POL-A.5.4 - Management Responsibilities |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.4 (Management Responsibilities)
+- ISMS-IMP-A.5.4.1 (Management Commitment Assessment)
+- ISMS-IMP-A.5.4.2 (Compliance Oversight Tracker)
+- ISMS-IMP-A.5.4.3 (Leadership Dashboard)
 
 ---
 
@@ -101,6 +121,24 @@ The survey covers 5 categories with 4 questions each (20 questions total):
 
 **Response Scale**: 1 (Strongly Disagree) to 5 (Strongly Agree)
 
+### Workbook at a Glance
+
+This workbook contains the following sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Survey guidance, category definitions, and scoring methodology |
+| **Survey Questions** | The 20-question survey bank (exported to your survey tool for deployment) |
+| **Response Data** | Aggregated survey results by department and category |
+| **YoY Trend Analysis** | Year-over-year tracking of category scores and trends |
+| **Action Plan** | Improvement actions for categories scoring below 3.5/5.0 |
+| **Executive Summary** | High-level results summary for management review presentations |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+| **Evidence Register** | Tracking of evidence supporting the survey: response exports, announcement emails, action artefacts |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+
+---
+
 ### Completion Walkthrough
 
 #### Step 1: Deploy Survey
@@ -155,6 +193,13 @@ Compile results for leadership:
 4. Calculate **YoY Improvement** (vs prior year)
 5. Summarise each category with score and priority action
 6. Set **Status**: Exceeds Target, Meets Target, Below Target, Critical
+
+### After Completing the Survey Sheets
+
+Once Steps 1–5 are complete:
+
+- **Evidence Register** — Record the supporting evidence for this survey cycle: the anonymised response data export from the survey tool, the executive sponsor announcement email, response rate by department, and any action item closure documentation from prior survey cycles. This provides the audit trail confirming the survey was conducted as described and results are authentic.
+- **Summary Dashboard** — Review the dashboard for an aggregated compliance view across all survey categories. It auto-populates from your completed sheets. Check the dashboard before advancing to approval to confirm the overall culture score and category metrics accurately reflect the survey results.
 
 ### Worked Examples
 
@@ -471,7 +516,7 @@ When auditors review security culture, prepare:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Culture eats strategy for breakfast."*
+— Peter Drucker
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

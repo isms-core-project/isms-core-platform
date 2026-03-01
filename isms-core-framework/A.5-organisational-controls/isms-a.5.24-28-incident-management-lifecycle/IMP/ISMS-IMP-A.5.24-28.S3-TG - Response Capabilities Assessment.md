@@ -5,21 +5,19 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
-| **Document Title** | Incident Response Capabilities Assessment |
+| **Document Title** | Response Capabilities Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.24-28.S3-TG |
-| **Assessment Domain** | Domain 3 - Response Capabilities (A.5.26 Focus) |
 | **Related Policy** | ISMS-POL-A.5.24-28 (Incident Management Lifecycle) |
-| **Related Reference** | ISMS-REF-A.5.24-28 (Incident Response Reference Guide) |
-| **Document Owner** | Chief Information Security Officer (CISO) |
-| **Technical Authority** | CSIRT Manager / Incident Response Lead |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.26 (Response to Information Security Incidents) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -27,182 +25,114 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CSIRT Manager | Initial response capabilities assessment specification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle**: Annual (or after major incident response activities)  
-**Next Review Date**: [Effective Date + 12 months]  
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-**Related Documents**: 
-- ISMS-POL-A.5.24-28 (Incident Management Lifecycle Policy)
-- ISMS-REF-A.5.24-28 (Incident Response Reference Guide)
-- ISMS-IMP-A.5.24-28.S1 (Framework & Governance Assessment)
-- ISMS-IMP-A.5.24-28.S2 (Detection & Classification Assessment)
+**Related Documents**:
+
+- ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
+- ISMS-IMP-A.5.24-28.S1 (Incident Management Framework Assessment)
+- ISMS-IMP-A.5.24-28.S2 (Detection Classification Assessment)
 - ISMS-IMP-A.5.24-28.S4 (Forensic Evidence Assessment)
-- ISMS-IMP-A.5.24-28.S5 (Learning & Improvement Assessment)
-- ISMS-IMP-A.5.29-30 (BC/DR Framework)
-- ISO/IEC 27002:2022 Control A.5.26
-- NIST SP 800-61 Rev. 2 Section 3.3 (Containment, Eradication, and Recovery)
+- ISMS-IMP-A.5.24-28.S5 (Learning & Continuous Improvement Assessment)
 
 ---
 
-
-> Auto-generated from `generate_a524_28_s3_response_capabilities.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.24-28.S3` |
-| **Output Filename** | `ISMS-IMP-A.5.24-28.S3_Response_Capabilities_YYYYMMDD.xlsx` |
-| **Total Sheets** | 21 (21 visible) |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #C8F0C8 | C8F0C8 | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFD9B3 | FFD9B3 | Custom |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
+# Technical Specification
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Containment Capabilities
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a524_28_s3_response_capabilities.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Eradication & Remediation
+**Document ID:** `ISMS-IMP-A.5.24-28.S3`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Recovery & Restoration
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Containment Capabilities |
+| 3 | Eradication & Remediation |
+| 4 | Recovery & Restoration |
+| 5 | Communication |
+| 6 | Resources & Authority |
+| 7 | Playbook Effectiveness |
+| 8 | Gap Analysis |
+| 9 | Evidence Register |
+| 10 | Summary Dashboard |
+| 11 | Approval Sign-Off |
 
-## Sheet 5: Communication
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Resources & Authority
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Containment Capabilities |
+| 2 | Eradication & Remediation |
+| 3 | Recovery & Restoration |
+| 4 | Resources & Authority |
+| 5 | Playbook Effectiveness |
+| 6 | Question ID |
+| 7 | Section |
+| 8 | Question |
+| 9 | Answer |
+| 10 | Evidence Reference |
+| 11 | Comments |
+| 12 | Gap Identified |
+| 13 | Gap ID |
+| 14 | Gap Description |
+| 15 | Risk Level |
+| 16 | Current State |
+| 17 | Target State |
+| 18 | Remediation |
+| 19 | Owner |
+| 20 | Target Date |
+| 21 | Status |
+| 22 | Assessment Area |
+| 23 | Questions Answered |
+| 24 | No Gap |
+| 25 | N/A |
+| 26 | Target |
+| 27 | Compliance % |
 
-## Sheet 7: Playbook Effectiveness
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Gap Analysis
+```
+Yes, No, Partial, Limited, In-Progress, N/A, Active, Archived, Superseded
+Pending Review, Draft, Final, Requires remediation, Re-assessment required
+Approved, Approved with Conditions, Rejected, Deferred
+```
 
----
-
-## Sheet 9: Evidence Register
-
----
-
-## Sheet 10: Dashboard
-
----
-
-## Sheet 11: Approval Sign-Off
-
----
-
-## Sheet 12: Instructions
-
-**Frozen Panes:** A3
-
----
-
-## Sheet 13: Containment_Capabilities
-
----
-
-## Sheet 14: Eradication_Remediation
-
----
-
-## Sheet 15: Recovery_Restoration
-
----
-
-## Sheet 16: Resources_Authority
-
----
-
-## Sheet 17: Playbook_Effectiveness
-
----
-
-## Sheet 18: Gap_Analysis
-
-**Data Rows:** 9 (rows 2–10) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Gap_ID |
-| B | Section |
-| C | Gap_Description |
-| D | Risk_Level |
-| E | Current_State |
-| F | Target_State |
-| G | Remediation |
-| H | Owner |
-| I | Target_Date |
-| J | Status |
-
----
-
-## Sheet 19: Evidence_Register
-
-**Data Rows:** 7 (rows 2–8) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence_ID |
-| B | Evidence_Type |
-| C | Description |
-| D | Related_Section |
-| E | Storage_Location |
-| F | Date_Collected |
-| G | Collected_By |
-| H | Verification |
-
----
-
-## Sheet 20: Approval_Signoff
-
-**Frozen Panes:** A3
-
----
-
-## Sheet 21: Assessment
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Question_ID |
-| B | Section |
-| C | Question |
-| D | Answer |
-| E | Evidence_Reference |
-| F | Comments |
-| G | Gap_Identified |
+**Extracted:** 11 sheets, 27 columns, 18 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

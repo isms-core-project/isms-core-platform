@@ -44,20 +44,19 @@
 - ISMS-IMP-A.5.29.1-UG/TG (Security Controls During Disruption Assessment)
 - ISMS-IMP-A.5.29.2-UG/TG (Degraded Mode Security Requirements)
 - ISMS-IMP-A.5.29.3-UG/TG (Recovery Security Verification)
-- ISMS-IMP-A.5.29.4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.5.29
 
 ---
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for maintaining information security controls during disruptive events, ensuring that security is not compromised when normal operations are interrupted.
+This policy establishes [Organisation]'s requirements for maintaining information security controls during disruptive events, ensuring that security is not compromised when normal operations are interrupted.
 
-**Scope**: This policy applies to all disruptive events affecting [Organization]'s ability to operate normally, including natural disasters, infrastructure failures, cyber incidents, pandemics, supply chain disruptions, and civil unrest.
+**Scope**: This policy applies to all disruptive events affecting [Organisation]'s ability to operate normally, including natural disasters, infrastructure failures, cyber incidents, pandemics, supply chain disruptions, and civil unrest.
 
-**Purpose**: Define organizational requirements for security during disruption. This policy establishes WHAT security controls must be maintained and WHO is responsible for security during adverse conditions. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.29 (UG/TG variants).
+**Purpose**: Define organisational requirements for security during disruption. This policy establishes WHAT security controls must be maintained and WHO is responsible for security during adverse conditions. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.29 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (DORA, NIS2, FINMA) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (DORA, NIS2, FINMA) apply where [Organisation]'s business activities trigger applicability.
 
 **Critical Principle - "Security Cannot Take a Holiday"**: Disruptions create opportunities for threat actors. When organisations focus on recovery, adversaries exploit reduced vigilance. This policy ensures security controls remain effective throughout all phases of disruption and recovery.
 
@@ -160,7 +159,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - BCI Good Practice Guidelines
 - ENISA Guidelines on ICT Service Continuity
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent security requirements apply where multiple regulations overlap. Regulatory obligations and specific timelines are governed by the Regulatory Requirements Register (output of ISMS-POL-00); this policy applies security principles irrespective of regulatory trigger.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent security requirements apply where multiple regulations overlap. Regulatory obligations and specific timelines are governed by the Regulatory Requirements Register (output of ISMS-POL-00); this policy applies security principles irrespective of regulatory trigger.
 
 ---
 
@@ -432,7 +431,7 @@ Nonconformities related to this policy (e.g., inadequate BC/DR security review, 
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
@@ -442,7 +441,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Control A.5.29 applicability justified in [Organization]'s SoA
+- Control A.5.29 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 
 **Related Controls**:
@@ -546,4 +545,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for maintaining information security during disruption. Implementation procedures are documented in ISMS-IMP-A.5.29 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

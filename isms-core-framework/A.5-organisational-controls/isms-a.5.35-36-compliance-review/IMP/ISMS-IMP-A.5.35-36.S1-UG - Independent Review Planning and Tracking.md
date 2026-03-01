@@ -5,17 +5,52 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Independent Review Planning and Tracking |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.35-36.S1-UG |
-| **Title** | Independent Review Planning and Tracking |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.35 |
-| **Control Name** | Independent Review of Information Security |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.5.35-36 (Compliance Review) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.35) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Information Security Manager |
 | **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.35-36 (Compliance Review)
+- ISMS-IMP-A.5.35-36.S2 (Compliance Assessment)
+- ISMS-IMP-A.5.35-36.S3 (Findings and Remediation Management)
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Review Schedule | Plan and track independent review activities and timelines |
+| 3 | Reviewer Registry | Record reviewer qualifications, independence, and assignments |
+| 4 | Review Scope | Define the boundaries and objectives for each review |
+| 5 | Review Execution | Document review activities, evidence gathered, and observations |
+| 6 | Findings Summary | Consolidate and summarise all findings from reviews |
+| 7 | Evidence Register | Store and reference evidence collected during reviews |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -292,7 +327,7 @@ Before submitting:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"An audit without independence is just a formality."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

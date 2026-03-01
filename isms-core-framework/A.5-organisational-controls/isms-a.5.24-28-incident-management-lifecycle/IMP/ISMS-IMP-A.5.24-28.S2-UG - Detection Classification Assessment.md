@@ -9,17 +9,15 @@
 
 | Attribute | Value |
 |-------|-------|
-| **Document Title** | Incident Detection & Classification Assessment |
+| **Document Title** | Detection Classification Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.24-28.S2-UG |
-| **Assessment Domain** | Domain 2 - Detection & Classification (A.5.25 Focus) |
 | **Related Policy** | ISMS-POL-A.5.24-28 (Incident Management Lifecycle) |
-| **Related Reference** | ISMS-REF-A.5.24-28 (Incident Response Reference Guide) |
-| **Document Owner** | Chief Information Security Officer (CISO) |
-| **Technical Authority** | SOC Manager / Detection Engineering Lead |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.24 (Information Security Incident Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -27,22 +25,36 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | SOC Manager | Initial detection & classification assessment specification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle**: Annual (or after major detection capability changes)  
-**Next Review Date**: [Effective Date + 12 months]  
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-**Related Documents**: 
+**Related Documents**:
 
-- ISMS-POL-A.5.24-28 (Incident Management Lifecycle Policy)
-- ISMS-REF-A.5.24-28 (Incident Response Reference Guide, Section 1: Incident Classification Taxonomy)
-- ISMS-IMP-A.5.24-28.S1 (Framework & Governance Assessment)
+- ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
+- ISMS-IMP-A.5.24-28.S1 (Incident Management Framework Assessment)
 - ISMS-IMP-A.5.24-28.S3 (Response Capabilities Assessment)
 - ISMS-IMP-A.5.24-28.S4 (Forensic Evidence Assessment)
-- ISMS-IMP-A.5.24-28.S5 (Learning & Improvement Assessment)
-- ISMS-IMP-A.8.16 (Security Monitoring Assessment)
-- ISO/IEC 27002:2022 Control A.5.25
-- NIST SP 800-61 Rev. 2 Section 3.2 (Detection and Analysis)
+- ISMS-IMP-A.5.24-28.S5 (Learning & Continuous Improvement Assessment)
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 9 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Detection Mechanisms** | Security monitoring tools, detection sources, and coverage assessment |
+| **Alert Handling** | Alert triage process, escalation paths, and handling efficiency |
+| **Classification & Severity** | Incident classification taxonomy and severity rating assessment |
+| **Detection Effectiveness** | Detection rate metrics and false positive/negative analysis |
+| **Gap Analysis** | Identified gaps and remediation action tracking |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -50,7 +62,7 @@
 
 ## Purpose
 
-This assessment evaluates [Organization]'s **incident detection and classification capabilities**, focusing on the **assessment and decision** phase of incident management (A.5.25).
+This assessment evaluates [Organisation]'s **incident detection and classification capabilities**, focusing on the **assessment and decision** phase of incident management (A.5.25).
 
 **What This Assessment Covers:**
 
@@ -109,7 +121,7 @@ This assessment evaluates [Organization]'s **incident detection and classificati
 
 **Required Knowledge:**
 
-- [Organization]'s detection technologies (SIEM, EDR, IDS/IPS, NDR)
+- [Organisation]'s detection technologies (SIEM, EDR, IDS/IPS, NDR)
 - Alert triage procedures and investigation workflows
 - Incident classification criteria and severity definitions
 - Detection rule development and tuning processes
@@ -201,7 +213,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - Alert volume and handling capacity tracked
 
 **Policy Authority:** Chief Information Security Officer (CISO)  
-**Compliance Status:** Mandatory for all [Organization] security incidents
+**Compliance Status:** Mandatory for all [Organisation] security incidents
 
 ## Assessment Scope
 
@@ -243,7 +255,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 ❌ Incident response execution (see S3)
 ❌ Forensic evidence collection (see S4)
 ❌ Post-incident review (see S5)
-❌ CSIRT organizational structure (see S1)
+❌ CSIRT organisational structure (see S1)
 ❌ Detailed SIEM configuration (see A.8.16 Monitoring Assessment)
 
 ## Prerequisites
@@ -417,7 +429,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 
 **Q1: SIEM_Platform**
 
-- **Question:** What SIEM platform(s) does [Organization] use?
+- **Question:** What SIEM platform(s) does [Organisation] use?
 - **Format:** Free text (e.g., "Splunk Enterprise", "Microsoft Sentinel", "QRadar")
 - **Evidence:** SIEM platform documentation, license information
 
@@ -433,7 +445,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 
 **Q3: SIEM_Rule_Categories**
 
-- **Question:** Which threat categories have SIEM detection rules? (Select all: Malware/Unauthorized Access/Data Breach/DoS/Social Engineering/Web Attack/Network Attack/Endpoint/Physical/Config-Patch/Other)
+- **Question:** Which threat categories have SIEM detection rules? (Select all: Malware/Unauthorised Access/Data Breach/DoS/Social Engineering/Web Attack/Network Attack/Endpoint/Physical/Config-Patch/Other)
 - **Format:** Checkbox (multiple selections)
 - **Target:** Coverage across all 11 primary categories (ISMS-REF-A.5.24-28 Section 1)
 
@@ -449,7 +461,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - **Question:** What percentage of SIEM rules are custom-developed (vs. vendor-provided)?
 - **Format:** Percentage (0-100%)
 - **Interpretation:**
-  - <20%: Heavy reliance on vendor content (may miss organization-specific threats)
+  - <20%: Heavy reliance on vendor content (may miss organisation-specific threats)
   - 20-50%: Balanced approach
   - >50%: Strong custom detection capability
 - **Note:** No right answer, depends on threat landscape and resources
@@ -607,13 +619,13 @@ For each of the 11 primary threat categories, assess:
 - **Primary Detection Method:** Dropdown
 - **Coverage Quality:** Dropdown (Good = multiple layers, Fair = single layer, Poor = gaps)
 
-**Q24: Category_2_Unauthorized_Access_Detection**
+**Q24: Category_2_Unauthorised_Access_Detection**
 
-- **Category:** Unauthorized Access (Compromised Credentials, Brute Force, Privilege Escalation, Insider Threat, Supply Chain)
+- **Category:** Unauthorised Access (Compromised Credentials, Brute Force, Privilege Escalation, Insider Threat, Supply Chain)
 
 **Q25: Category_3_Data_Breach_Detection**
 
-- **Category:** Data Breach/Exfiltration (Unauthorized Access, Exfiltration, Accidental Loss, Privacy Breach)
+- **Category:** Data Breach/Exfiltration (Unauthorised Access, Exfiltration, Accidental Loss, Privacy Breach)
 
 **Q26: Category_4_DoS_Detection**
 
@@ -637,7 +649,7 @@ For each of the 11 primary threat categories, assess:
 
 **Q31: Category_9_Physical_Security_Detection**
 
-- **Category:** Physical Security (Theft/Loss, Unauthorized Access, Hardware Tampering)
+- **Category:** Physical Security (Theft/Loss, Unauthorised Access, Hardware Tampering)
 
 **Q32: Category_10_Config_Patch_Detection**
 
@@ -721,7 +733,7 @@ For each of the 11 primary threat categories, assess:
 
 **Q42: Playbook_Coverage**
 
-- **Question:** Which incident categories have documented playbooks? (Select all: Malware/Unauthorized Access/Data Breach/DoS/Social Engineering/Web Attack/Network Attack/Endpoint/Physical/Config-Patch/Other)
+- **Question:** Which incident categories have documented playbooks? (Select all: Malware/Unauthorised Access/Data Breach/DoS/Social Engineering/Web Attack/Network Attack/Endpoint/Physical/Config-Patch/Other)
 - **Format:** Checkbox
 - **Target:** Playbooks for top 5-7 incident categories (based on historical volume)
 
@@ -753,9 +765,9 @@ For each common incident type:
 
 - **Incident Type:** Phishing/BEC
 
-**Q47: Playbook_Unauthorized_Access**
+**Q47: Playbook_Unauthorised_Access**
 
-- **Incident Type:** Unauthorized Access/Compromised Credentials
+- **Incident Type:** Unauthorised Access/Compromised Credentials
 
 **Q48: Playbook_Data_Exfiltration**
 
@@ -866,7 +878,7 @@ For each common incident type:
 
 **Q59: Classification_Taxonomy_Adopted**
 
-- **Question:** Has [Organization] adopted the ISMS-REF-A.5.24-28 incident classification taxonomy (11 primary categories)?
+- **Question:** Has [Organisation] adopted the ISMS-REF-A.5.24-28 incident classification taxonomy (11 primary categories)?
 - **Dropdown:** Yes - Fully Adopted / Partially Adopted / No - Different Taxonomy
 - **Note:** Consistency with reference guide enables better tracking and comparison
 
@@ -917,7 +929,7 @@ For each common incident type:
 
 **Q66: Severity_Levels_Defined**
 
-- **Question:** How many severity levels does [Organization] use?
+- **Question:** How many severity levels does [Organisation] use?
 - **Dropdown:** 4 (Critical/High/Medium/Low) / 3 (High/Medium/Low) / 5 (Critical/High/Medium/Low/Info) / Other
 - **Recommendation:** 4 levels (aligns with ISMS-POL-A.5.24-28)
 
@@ -1390,7 +1402,7 @@ Coverage = (Categories with Detection / Total Categories) × 100
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Not all that glitters is gold; not every alert is a breach."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -8,26 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Secure Areas Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.1-2-3-S3-UG |
+| **Related Policy** | ISMS-POL-A.7.1-2-3-S3 (Physical Access Control) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.3 (Securing Offices, Rooms and Facilities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Securing Offices, Rooms and Facilities - Office Security, Server Rooms, Meeting Rooms |
-| **Related Policy** | ISMS-POL-A.7.1-2-3, Section 2.3 (Securing Offices, Rooms and Facilities) |
-| **Purpose** | Document secure area controls, assess office security, verify server room protection, evaluate meeting room procedures |
-| **Target Audience** | Facilities Management, IT Operations, Physical Security, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Annual or After Facility Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Secure Areas assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.1-2-3-S3 (Physical Access Control)
+- ISMS-IMP-A.7.1-2-3-S1 (Perimeter Security Assessment)
+- ISMS-IMP-A.7.1-2-3-S2 (Entry Control Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.1-2-3-S3-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Office Security | Assess general office area security controls |
+| 3 | Server Rooms | Evaluate server room and data centre physical security |
+| 4 | Meeting Rooms | Assess meeting room security for sensitive discussions |
+| 5 | Shared Facilities | Evaluate shared facilities access and security controls |
+| 6 | Evidence Register | Store and reference evidence supporting assessments |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -108,7 +136,6 @@ While perimeters (A.7.1) define boundaries and entry controls (A.7.2) manage who
 | ISMS-IMP-A.7.1-2-3-S1 | Perimeter Security     | WHERE are the boundaries?          |
 | ISMS-IMP-A.7.1-2-3-S2 | Entry Control          | HOW is access controlled?          |
 | **ISMS-IMP-A.7.1-2-3-S3** | **Secure Areas**   | **WHAT controls inside areas?**    |
-| ISMS-IMP-A.7.1-2-3-S4 | Compliance Dashboard   | Overall physical access control    |
 
 This assessment documents controls WITHIN secure areas, building on the perimeter (S1) and entry (S2) assessments.
 
@@ -205,7 +232,6 @@ This assessment has DEPENDENCIES on:
 
 Outputs from this assessment are INPUT to:
 
-- ISMS-IMP-A.7.1-2-3-S4 (Compliance Dashboard) - Secure areas compliance score
 
 ---
 
@@ -1075,7 +1101,7 @@ If approval is delayed beyond 10 business days:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The most secure area is the one no unauthorised person can enter."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

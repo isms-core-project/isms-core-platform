@@ -5,127 +5,127 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Security Controls During Disruption Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.29.1-TG |
-| **Title** | Security Controls During Disruption Assessment |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.29 |
-| **Control Name** | Information Security During Disruption |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.5.29 (Security During Disruption) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.29) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Chief Information Security Officer (CISO) |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.29.1-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.29 (Security During Disruption)
+- ISMS-IMP-A.5.29.2 (Degraded Mode Security Requirements)
+- ISMS-IMP-A.5.29.3 (Recovery Security Verification)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a529_1_security_controls_disruption.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.29.1` |
-| **Output Filename** | `ISMS-IMP-A.5.29.1_Security_Controls_During_Disruption_YYYYMMDD.xlsx` |
-| **Workbook Title** | Security Controls During Disruption |
-| **Total Sheets** | 10 (10 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #808080 | 808080 | Gray (Disabled) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Security_Control_Inventory
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a529_1_security_controls_disruption.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Minimum_Baseline
+**Document ID:** `ISMS-IMP-A.5.29.1`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Security_Posture_Levels
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Security Control Inventory |
+| 3 | Minimum Baseline |
+| 4 | Security Posture Levels |
+| 5 | Compensating Controls |
+| 6 | BCDR Security Review |
+| 7 | Evidence Register |
+| 8 | Summary Dashboard |
+| 9 | Approval Sign-Off |
 
-## Sheet 5: Compensating_Controls
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: BCDR_Security_Review
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Evidence ID |
+| 2 | Assessment Area |
+| 3 | Evidence Type |
+| 4 | Description |
+| 5 | Location / Path |
+| 6 | Date Collected |
+| 7 | Collected By |
+| 8 | Verification Status |
+| 9 | Role / Function |
+| 10 | Name |
+| 11 | Signature / Initials |
+| 12 | Date (DD.MM.YYYY) |
+| 13 | Comments |
+| 14 | Total Items |
+| 15 | Compliant |
+| 16 | Partial |
+| 17 | Non-Compliant |
+| 18 | N/A |
+| 19 | Compliance % |
 
-## Sheet 7: Evidence_Register
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Approval_SignOff
+```
+Access Control, Data Encryption, Logging, Network Security, Backup Protection
+Endpoint Security, Physical Security, Other, Operational, Partial
+Not Applicable, Non-Negotiable, Degradable, Deferrable, Critical, High, Medium
+Low, Pending, Approved, Rejected, Full, Minimal, Tested, Untested, Failed, BCP
+DRP, Crisis Management, IT Recovery, Yes, No, Open, In Progress, Closed
+Policy Document, Process Record, System Screenshot, Configuration Export
+Audit Log, Training Record, Test Result, Risk Assessment, Meeting Minutes
+✅ Verified, ⚠️ Pending, ❌ Not Verified, N/A, Draft, Final
+Requires remediation, Re-assessment required
+```
 
----
-
-## Sheet 9: Bcdr_Security_Review
-
-**Data Rows:** 30 (rows 4–33) | **Frozen Panes:** C4
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Plan_ID | 15 |
-| B | Plan_Name | 35 |
-| C | Plan_Type | 20 |
-| D | Plan_Owner | 25 |
-| E | Security_Section_Present | 18 |
-| F | CISO_Review_Date | 16 |
-| G | CISO_Approval_Status | 18 |
-| H | Gaps_Identified | 40 |
-| I | Remediation_Due_Date | 18 |
-| J | Remediation_Status | 18 |
-| K | Next_Review_Due | 16 |
-
----
-
-## Sheet 10: Approval_Signoff
-
-**Data Rows:** 100 (rows 4–103) | **Frozen Panes:** A3
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(Security_Control_Inventory!A4:A103)-COUNTBLANK(Security_Control_Inventor` | Total Security Controls |
-| — | `=COUNTIF(Security_Control_Inventory!F4:F103,` | Non-Negotiable Controls |
-| — | `=COUNTIF(BCDR_Security_Review!G4:G33,` | BC/DR Plans Reviewed |
-| — | `=COUNTIF(Compensating_Controls!I4:I33,` | Compensating Controls Tested |
-| — | `=COUNTIF(BCDR_Security_Review!J4:J33,` | Open Remediation Items |
+**Extracted:** 9 sheets, 19 columns, 52 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

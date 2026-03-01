@@ -42,14 +42,13 @@
 - ISMS-IMP-A.5.4.2-UG/TG (Compliance Oversight Tracker)
 - ISMS-IMP-A.5.4.3-UG/TG (Leadership Dashboard)
 - ISMS-IMP-A.5.4.4-UG/TG (Security Culture Survey)
-- ISMS-IMP-A.5.4.5-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.5.4
 
 ---
 
 **Executive Summary**
 
-This policy establishes [Organization]'s requirements for management responsibilities in information security governance, ensuring leadership actively supports, promotes, and enforces the organization's security posture in accordance with ISO/IEC 27001:2022 Control A.5.4.
+This policy establishes [Organisation]'s requirements for management responsibilities in information security governance, ensuring leadership actively supports, promotes, and enforces the organisation's security posture in accordance with ISO/IEC 27001:2022 Control A.5.4.
 
 **Purpose**: Define WHAT management responsibilities exist and WHO is accountable for security leadership. Implementation procedures (HOW) are documented in ISMS-IMP-A.5.4.
 
@@ -65,7 +64,7 @@ This policy establishes [Organization]'s requirements for management responsibil
 
 **ISO/IEC 27001:2022 Annex A.5.4 - Management Responsibilities**
 
-> *Management shall require all personnel to apply information security in accordance with the established information security policy, topic-specific policies and procedures of the organization.*
+> *Management shall require all personnel to apply information security in accordance with the established information security policy, topic-specific policies and procedures of the organisation.*
 
 **Control Objective**: Ensure management actively supports information security through visible commitment, resource allocation, and enforcement of security policies.
 
@@ -191,7 +190,7 @@ Management SHALL ensure personnel under their authority comply with information 
 **Offboarding**:
 
 - Ensuring timely access revocation for departing personnel
-- Verifying return of organizational assets
+- Verifying return of organisational assets
 - Confirming data handling obligations post-employment
 
 **Verification**: Personnel compliance tracked via ISMS-IMP-A.5.4 Compliance Oversight workbook.
@@ -260,7 +259,7 @@ Per ISMS-POL-00 (Regulatory Applicability Framework):
 | Regulation | Requirement |
 |------------|-------------|
 | **ISO/IEC 27001:2022** | Control A.5.4 - Management responsibilities |
-| **Swiss nDSG** | Art. 8 - Organizational measures |
+| **Swiss nDSG** | Art. 8 - Organisational measures |
 | **EU GDPR** | Art. 32 - Security governance |
 
 **Tier 2: Conditional Applicability**
@@ -322,7 +321,7 @@ When management personnel fail to meet their security responsibilities:
 ## Policy Review
 
 - **Frequency**: Annual minimum
-- **Triggers**: Organizational changes, audit findings, regulatory updates
+- **Triggers**: Organisational changes, audit findings, regulatory updates
 - **Reviewers**: CISO, HR Director, selected Department Heads
 - **Approval**: Executive Management
 
@@ -369,9 +368,9 @@ Evidence required to demonstrate this policy is operationally effective:
 
 # Definitions
 
-**Management Personnel**: Any individual with supervisory authority, resource allocation responsibility, or decision-making power within [Organization].
+**Management Personnel**: Any individual with supervisory authority, resource allocation responsibility, or decision-making power within [Organisation].
 
-**Security Culture**: The collective attitudes, beliefs, and behaviors regarding information security within [Organization].
+**Security Culture**: The collective attitudes, beliefs, and behaviors regarding information security within [Organisation].
 
 **Management Review**: Formal assessment of ISMS suitability, adequacy, and effectiveness per ISO 27001:2022 Clause 9.3.
 
@@ -395,4 +394,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for management responsibilities. Implementation procedures are documented in ISMS-IMP-A.5.4 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

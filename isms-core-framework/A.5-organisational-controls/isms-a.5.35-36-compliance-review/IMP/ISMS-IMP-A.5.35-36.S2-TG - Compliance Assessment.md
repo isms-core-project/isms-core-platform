@@ -5,182 +5,105 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Compliance Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.35-36.S2-TG |
-| **Title** | Compliance Assessment |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.36 |
-| **Control Name** | Compliance with Policies, Rules and Standards |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.5.35-36 (Compliance Review) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.36) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Information Security Manager |
 | **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.35-36 (Compliance Review)
+- ISMS-IMP-A.5.35-36.S1 (Independent Review Planning and Tracking)
+- ISMS-IMP-A.5.35-36.S3 (Findings and Remediation Management)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a535_36_2_compliance_assessment.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.35-36.S2` |
-| **Output Filename** | `ISMS-IMP-A.5.35-36.S2_Compliance_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Compliance Assessment |
-| **Total Sheets** | 8 (8 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #808080 | 808080 | Gray (Disabled) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Workbook
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Instructions
+## Generator Alignment Reference
 
-**Frozen Panes:** A4
+> Auto-generated from `generate_a535_36_2_compliance_assessment.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
----
+**Document ID:** `ISMS-IMP-A.5.35-36.S2`
 
-## Sheet 3: Policy_Compliance
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-**Data Rows:** 11 (rows 1–11) | **Frozen Panes:** C4
+### Sheet Structure
 
-### Columns
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Policy_ID | 16 |
-| B | Policy_Name | 40 |
-| C | Policy_Version | 14 |
-| D | Compliance_Status | 18 |
-| E | Last_Reviewed | 14 |
-| F | Assessed_By | 22 |
-| G | Assessment_Date | 14 |
-| H | Evidence_Ref | 18 |
-| I | NonCompliance_Issues | 30 |
-| J | Remediation_Status | 18 |
-| K | Notes | 30 |
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 4: Control_Compliance
+### Column Headers (All Sheets)
 
-**Data Rows:** 10 (rows 1–10) | **Frozen Panes:** C4
+| # | Column Header |
+|---|--------------|
+| 1 | Assessment Area |
+| 2 | Total Items |
+| 3 | Compliant |
+| 4 | Partial |
+| 5 | Non-Compliant |
+| 6 | N/A |
+| 7 | Compliance % |
 
-### Columns
+### Data Validation Values
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Control_ID | 14 |
-| B | Control_Name | 45 |
-| C | Control_Category | 22 |
-| D | Compliance_Status | 18 |
-| E | Implementation_% | 14 |
-| F | Last_Assessed | 14 |
-| G | Assessed_By | 22 |
-| H | Evidence_Ref | 18 |
-| I | Gaps_Identified | 30 |
-| J | Notes | 30 |
+All dropdown/list values used across sheets:
 
----
+```
+Compliant, Partial, Non-Compliant, Not Assessed, Not Applicable, N/A, Open
+In Progress, Closed, Fully Implemented, Partially Implemented, Not Implemented
+Green, Amber, Red, Critical, High, Medium, Low, Pending Verification
+Risk Accepted, Policy Document, Configuration Export, Training Record
+Attestation, Screenshot, Log Extract, Report, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
-## Sheet 5: Department_Assessment
-
-**Data Rows:** 12 (rows 1–12) | **Frozen Panes:** B4
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Department | 25 |
-| B | Manager | 22 |
-| C | Assessment_Period | 16 |
-| D | AUP_Compliance | 16 |
-| E | Access_Control_Compliance | 20 |
-| F | Incident_Reporting_Compliance | 22 |
-| G | Training_Compliance | 18 |
-| H | Asset_Management_Compliance | 22 |
-| I | Overall_Rating | 16 |
-| J | Issues_Identified | 30 |
-| K | Improvement_Actions | 30 |
-| L | Sign_Off_Date | 14 |
-
----
-
-## Sheet 6: Noncompliance_Register
-
-**Data Rows:** 100 (rows 4–103) | **Frozen Panes:** D4
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | NC_ID | 12 |
-| B | Identified_Date | 14 |
-| C | Policy_Control_Ref | 20 |
-| D | Department | 20 |
-| E | NC_Description | 45 |
-| F | Root_Cause | 30 |
-| G | Severity | 14 |
-| H | Remediation_Action | 35 |
-| I | Owner | 22 |
-| J | Target_Date | 14 |
-| K | Status | 16 |
-| L | Closure_Date | 14 |
-
----
-
-## Sheet 7: Evidence_Register
-
-**Data Rows:** 100 (rows 4–103) | **Frozen Panes:** C4
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence_ID | 15 |
-| B | Evidence_Type | 22 |
-| C | Description | 45 |
-| D | Related_Assessment | 20 |
-| E | Collection_Date | 16 |
-| F | Location | 40 |
-| G | Collected_By | 25 |
-| H | Valid_Until | 16 |
-
----
-
-## Sheet 8: Approval_Signoff
-
-**Data Rows:** 100 (rows 4–103) | **Frozen Panes:** A3
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(Policy_Compliance!A4:A36)-COUNTBLANK(Policy_Compliance!B4:B36)` | Policies Assessed |
-| — | `=COUNTIF(Policy_Compliance!D4:D36,` | Policies Compliant |
-| — | `=COUNTIF(NonCompliance_Register!K4:K103,` | Open Non-Conformances |
+**Extracted:** 1 sheets, 7 columns, 36 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

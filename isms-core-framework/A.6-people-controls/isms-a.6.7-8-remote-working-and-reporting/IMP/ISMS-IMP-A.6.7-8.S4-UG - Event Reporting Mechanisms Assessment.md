@@ -3,24 +3,39 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Controls A.6.7 (Remote Working) & A.6.8 (Information Security Event Reporting)
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Event Reporting Mechanisms Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.7-8.S4-UG |
+| **Related Policy** | ISMS-POL-A.6.7-8 (Remote Working and Reporting) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.7 (Remote Working) & A.6.8 (Information Security Event Reporting) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Security Event Reporting Channels, Procedures, and Effectiveness |
-| **Related Policy** | ISMS-POL-A.6.7-8, Section 3 (Security Event Reporting Requirements) |
-| **Purpose** | Guide users through assessment of security event reporting mechanisms and their effectiveness |
-| **Target Audience** | IT Security Team, Security Operations, Help Desk, Auditors |
-| **Assessment Type** | Operational |
-| **Review Cycle** | Semi-Annual |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for event reporting assessment | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.7-8 (Remote Working and Reporting)
+- ISMS-IMP-A.6.7-8.S1 (Remote Work Authorisation Assessment)
+- ISMS-IMP-A.6.7-8.S2 (Technical Controls Assessment)
+- ISMS-IMP-A.6.7-8.S3 (Endpoint and Physical Security Assessment)
 
 ---
 
@@ -34,11 +49,30 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Channel Assessment | Assess available security event reporting channels |
+| 3 | Channel Availability | Verify availability and accessibility of reporting channels |
+| 4 | Event Categories | Define and classify reportable security event categories |
+| 5 | Response Timeframes | Assess response time commitments and SLAs |
+| 6 | Non-Blame Culture | Evaluate non-blame culture and reporting confidence |
+| 7 | Awareness Training | Assess training on how and what to report |
+| 8 | Sample Events | Review sample event types and categorisation guidance |
+| 9 | Gap Analysis | Identify gaps in event reporting mechanisms |
+| 10 | Evidence Register | Store and reference evidence supporting assessments |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
+
+---
+
 ## Assessment Overview
 
 ### Purpose
 
-This assessment workbook evaluates [Organization]'s security event reporting mechanisms, ensuring that:
+This assessment workbook evaluates [Organisation]'s security event reporting mechanisms, ensuring that:
 - Multiple accessible reporting channels exist
 - Personnel understand what to report and how
 - Reports are acknowledged and processed timely
@@ -218,7 +252,7 @@ Before starting this assessment, ensure:
 **Event Categories (per ISO 27002:2022)**:
 - Phishing/Social engineering
 - Malware/Suspected infection
-- Unauthorized access attempts
+- Unauthorised access attempts
 - Data breach/exposure
 - Lost or stolen devices
 - Physical security breaches
@@ -320,7 +354,7 @@ Before starting this assessment, ensure:
 
 ### Gap_Analysis Sheet
 
-**Purpose**: Consolidate all event reporting gaps.
+**Purpose**: Track all event reporting gaps in the Summary Dashboard.
 
 **Column Definitions**:
 
@@ -513,7 +547,7 @@ Before starting this assessment, ensure:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The only bad incident is one that goes unreported."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

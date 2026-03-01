@@ -45,26 +45,24 @@
 - ISMS-IMP-A.8.33-34.1-TG (Test Data Protection - Technical Specification)
 - ISMS-IMP-A.8.33-34.2-UG (Audit Activity Management - User Guide)
 - ISMS-IMP-A.8.33-34.2-TG (Audit Activity Management - Technical Specification)
-- ISMS-IMP-A.8.33-34.3-UG (Compliance Dashboard - User Guide)
-- ISMS-IMP-A.8.33-34.3-TG (Compliance Dashboard - Technical Specification)
 - ISO/IEC 27001:2022 Controls A.8.33 and A.8.34
 
 ---
 
 # Executive Summary
 
-This policy establishes [Organization]'s requirements for protecting test information and safeguarding information systems during audit testing in accordance with ISO/IEC 27001:2022 Controls A.8.33 and A.8.34.
+This policy establishes [Organisation]'s requirements for protecting test information and safeguarding information systems during audit testing in accordance with ISO/IEC 27001:2022 Controls A.8.33 and A.8.34.
 
 **Scope**: This policy applies to all test data selection and protection activities, all audit and security testing activities, all environments where testing occurs, and all personnel involved in testing and audit activities.
 
-**Purpose**: Define organizational requirements for test data protection and audit testing controls, establishing WHAT protections are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.33-34.
+**Purpose**: Define organisational requirements for test data protection and audit testing controls, establishing WHAT protections are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.33-34.
 
 **Core Principles**:
 
 - Test data SHALL NOT contain unprotected production PII or sensitive data
 - Production data used in testing SHALL be masked or anonymized
 - Test environments SHALL be isolated from production systems
-- Audit testing SHALL be planned to minimize operational disruption
+- Audit testing SHALL be planned to minimise operational disruption
 - Audit tools and logs SHALL be protected and controlled
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022, with conditional sector-specific requirements (PCI DSS v4.0.1, HIPAA, FINMA) where applicable.
@@ -129,20 +127,20 @@ This policy does NOT apply to:
 
 **REQ-TEST-001: No Live Data Default**
 
-[Organization] SHALL NOT use operational (live) production data containing PII or sensitive information for testing unless explicitly approved and protected.
+[Organisation] SHALL NOT use operational (live) production data containing PII or sensitive information for testing unless explicitly approved and protected.
 
 **Preferred Data Sources** (in order of preference):
 1. Synthetic data - artificially generated, no relation to real data
 2. Anonymized data - irreversibly de-identified production data
 3. Masked/pseudonymized data - protected production data (requires approval)
 
-**Rationale**: Unprotected production data in test environments creates data breach risk, regulatory non-compliance, and unauthorized access exposure.
+**Rationale**: Unprotected production data in test environments creates data breach risk, regulatory non-compliance, and unauthorised access exposure.
 
 ---
 
 **REQ-TEST-002: Test Data Classification**
 
-Test data SHALL be classified according to [Organization]'s data classification scheme:
+Test data SHALL be classified according to [Organisation]'s data classification scheme:
 
 - **Synthetic data** (no production data source): Classified as Public or Internal based on business context
 - **Production-derived data** (masked, anonymized, or pseudonymized): Inherits production data classification until masking validation confirms non-reversibility, then MAY be downgraded with Data Owner approval
@@ -156,7 +154,7 @@ Test data SHALL be classified according to [Organization]'s data classification 
 
 **REQ-TEST-003: Production Data Masking**
 
-When production data is required for testing, [Organization] SHALL apply data masking per ISMS-POL-A.8.11:
+When production data is required for testing, [Organisation] SHALL apply data masking per ISMS-POL-A.8.11:
 
 - PII SHALL be masked, anonymized, or replaced with synthetic values
 - Financial data (account numbers, payment cards) SHALL be masked
@@ -192,10 +190,10 @@ Test data SHALL be isolated from production:
 
 **REQ-TEST-005: Environment Separation**
 
-[Organization] SHALL maintain separated test environments per ISMS-POL-A.8.31:
+[Organisation] SHALL maintain separated test environments per ISMS-POL-A.8.31:
 
 - Development, testing, and production environments SHALL be separated
-- Network segmentation SHALL prevent unauthorized cross-environment access
+- Network segmentation SHALL prevent unauthorised cross-environment access
 - Separate credentials SHALL be required for each environment
 - Clear environment identification SHALL prevent confusion
 
@@ -206,7 +204,7 @@ Test data SHALL be isolated from production:
 Access to test environments containing sensitive data SHALL:
 
 - Follow least privilege principles
-- Require explicit authorization based on job function
+- Require explicit authorisation based on job function
 - Be reviewed at least annually
 - Be revoked upon role change or termination
 
@@ -253,7 +251,7 @@ When test data is refreshed from production:
 
 **REQ-AUDIT-001: Pre-Audit Agreement**
 
-[Organization] SHALL establish formal agreement before any audit testing:
+[Organisation] SHALL establish formal agreement before any audit testing:
 
 - Scope of systems and information to be tested
 - Testing methodologies and tools to be used
@@ -267,7 +265,7 @@ When test data is refreshed from production:
 
 **REQ-AUDIT-002: Timing and Scheduling**
 
-Audit testing activities SHALL be scheduled to minimize operational impact:
+Audit testing activities SHALL be scheduled to minimise operational impact:
 
 - Critical business periods SHALL be avoided (unless specifically testing resilience)
 - Testing windows SHALL be coordinated with IT Operations
@@ -292,11 +290,11 @@ Access granted to auditors and assessors SHALL:
 
 **REQ-AUDIT-004: Device Security**
 
-Devices used by auditors to access [Organization]'s systems SHALL:
+Devices used by auditors to access [Organisation]'s systems SHALL:
 
-- Meet [Organization]'s minimum security requirements
+- Meet [Organisation]'s minimum security requirements
 - Have current endpoint protection and patching
-- Not introduce malware or unauthorized software
+- Not introduce malware or unauthorised software
 - Be verified before access is granted
 
 ---
@@ -318,7 +316,7 @@ Audit testing activities SHALL:
 
 Penetration testing and active security testing SHALL:
 
-- Be authorized in writing by appropriate management
+- Be authorised in writing by appropriate management
 - Be conducted in isolated or non-production environments where possible
 - Include rollback and recovery procedures
 - Have IT Operations on standby during active testing
@@ -343,8 +341,8 @@ Data accessed or collected during audits SHALL:
 
 Logs generated during audit activities SHALL:
 
-- Be protected from unauthorized modification or deletion
-- Be retained per [Organization]'s log retention policy
+- Be protected from unauthorised modification or deletion
+- Be retained per [Organisation]'s log retention policy
 - Be available for review if audit findings are questioned
 - Be included in security monitoring during testing period
 
@@ -369,7 +367,7 @@ Vulnerabilities discovered during audit testing SHALL:
 
 - Be reported to Security Team immediately if critical
 - Be documented in audit findings
-- Be handled per [Organization]'s vulnerability management process
+- Be handled per [Organisation]'s vulnerability management process
 - Not be exploited beyond scope necessary for verification
 
 ---
@@ -380,7 +378,7 @@ Vulnerabilities discovered during audit testing SHALL:
 
 | Role | Responsibilities |
 |------|------------------|
-| **CISO** | Policy owner; approves audit testing scope; reviews compliance; authorizes penetration testing |
+| **CISO** | Policy owner; approves audit testing scope; reviews compliance; authorises penetration testing |
 | **IT Operations Manager** | Production protection; audit scheduling; incident response during testing |
 | **Data Protection Officer** | Test data privacy compliance; anonymization approval; regulatory alignment |
 | **Information Security Manager** | Audit coordination; testing standards; policy maintenance |
@@ -390,7 +388,7 @@ Vulnerabilities discovered during audit testing SHALL:
 
 | Role | Responsibilities |
 |------|------------------|
-| **Data Owners** | Test data authorization; masking approval; data classification decisions |
+| **Data Owners** | Test data authorisation; masking approval; data classification decisions |
 | **Development Manager** | Test environment management; test data procedures; developer compliance |
 | **QA Manager** | Test data quality; testing process compliance; UAT oversight |
 | **Security Team** | Audit tool management; penetration testing coordination; vulnerability handling |
@@ -411,7 +409,7 @@ Vulnerabilities discovered during audit testing SHALL:
 
 ## Verification Mechanisms
 
-[Organization] verifies compliance through:
+[Organisation] verifies compliance through:
 
 - Automated scanning for sensitive data in test environments
 - Access log reviews for test environment access
@@ -421,13 +419,13 @@ Vulnerabilities discovered during audit testing SHALL:
 
 ## Evidence Requirements
 
-[Organization] SHALL maintain evidence including:
+[Organisation] SHALL maintain evidence including:
 
 - Test data handling procedures and approvals
 - Data masking verification records
 - Audit engagement agreements and scope documents
 - Auditor access logs and activity records
-- Penetration testing authorization and rules of engagement
+- Penetration testing authorisation and rules of engagement
 - Incident reports from testing activities
 
 ## Non-Compliance
@@ -477,8 +475,8 @@ When exceptions are approved, compensating controls SHALL include:
 
 | Regulation | Test Information (A.8.33) | Audit Testing (A.8.34) |
 |------------|---------------------------|------------------------|
-| **Swiss nDSG** | Art. 8 - Data protection by design; personal data minimization in testing | Art. 8 - Appropriate technical measures during processing |
-| **EU GDPR** | Art. 5(1)(c) - Data minimization; Art. 25 - Privacy by design; Art. 32 - Pseudonymization | Art. 32 - Security of processing; testing as security measure |
+| **Swiss nDSG** | Art. 8 - Data protection by design; personal data minimisation in testing | Art. 8 - Appropriate technical measures during processing |
+| **EU GDPR** | Art. 5(1)(c) - Data minimisation; Art. 25 - Privacy by design; Art. 32 - Pseudonymization | Art. 32 - Security of processing; testing as security measure |
 | **ISO 27001:2022** | Control A.8.33 - Test information selection and protection | Control A.8.34 - Audit testing planning and system protection |
 
 ## Conditional Applicability
@@ -511,8 +509,6 @@ When exceptions are approved, compensating controls SHALL include:
 | ISMS-IMP-A.8.33-34.1-TG | Test Data Protection - Technical Specification |
 | ISMS-IMP-A.8.33-34.2-UG | Audit Activity Management - User Guide |
 | ISMS-IMP-A.8.33-34.2-TG | Audit Activity Management - Technical Specification |
-| ISMS-IMP-A.8.33-34.3-UG | Compliance Dashboard - User Guide |
-| ISMS-IMP-A.8.33-34.3-TG | Compliance Dashboard - Technical Specification |
 
 ## External Standards
 
@@ -529,7 +525,7 @@ When exceptions are approved, compensating controls SHALL include:
 | **Anonymization** | Irreversible process removing all identifying information such that re-identification is not possible |
 | **Audit Testing** | Systematic examination of systems, controls, and processes to verify compliance and effectiveness |
 | **Data Masking** | Process of obscuring original data with modified content while maintaining format and usability |
-| **Penetration Testing** | Authorized simulated attack on systems to identify security vulnerabilities |
+| **Penetration Testing** | Authorised simulated attack on systems to identify security vulnerabilities |
 | **Production Data** | Live operational data from business systems containing real information |
 | **Pseudonymization** | Replacement of identifiers with pseudonyms; re-identifiable with separate key |
 | **Synthetic Data** | Artificially generated data containing no real personal or business information |
@@ -558,7 +554,7 @@ Evidence required to demonstrate this policy is operationally effective:
 - Data masking verification records
 - Audit engagement agreements and scope documents
 - Auditor access logs and activity records
-- Penetration testing authorization and rules of engagement
+- Penetration testing authorisation and rules of engagement
 - Incident reports from testing activities
 
 ---
@@ -583,4 +579,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for testing and audit protection. Implementation procedures are documented in ISMS-IMP-A.8.33-34.1-UG/TG, .2-UG/TG, and .3-UG/TG.*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

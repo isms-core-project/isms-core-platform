@@ -7,119 +7,127 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Management Commitment Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.4.1-TG |
+| **Related Policy** | ISMS-POL-A.5.4 (Management Responsibilities) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.4 (Management Responsibilities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.4 Management Responsibilities |
-| **Parent Policy** | ISMS-POL-A.5.4 - Management Responsibilities |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.4 (Management Responsibilities)
+- ISMS-IMP-A.5.4.2 (Compliance Oversight Tracker)
+- ISMS-IMP-A.5.4.3 (Leadership Dashboard)
+- ISMS-IMP-A.5.4.4 (Security Culture Survey)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a54_1_management_commitment.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.4.1` |
-| **Output Filename** | `ISMS-IMP-A.5.4.1_Management_Commitment_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Management Commitment Assessment |
-| **Total Sheets** | 4 (4 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #2F5496 | 2F5496 | Dark Blue (Alt Headers) |
-| #D6DCE4 | D6DCE4 | Silver (Neutral) |
-| #F2F2F2 | F2F2F2 | Very Light Gray (Protected/Alternating) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Manager Inventory
+## Generator Alignment Reference
 
-**Data Rows:** 49 (rows 2–50)
+> Auto-generated from `generate_a54_1_management_commitment.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.4.1`
 
-| Col | Header |
-|-----|--------|
-| A | Manager_ID |
-| B | Name |
-| C | Title |
-| D | Department |
-| E | Management_Level |
-| F | Direct_Reports |
-| G | Assessment_Date |
-| H | Assessor |
-| I | Status |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Data Validations
+### Sheet Structure
 
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| E | E2:E50 | `level_dv` |
-| I | I2:I50 | `status_dv` |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Manager Inventory |
+| 3 | Commitment Assessment |
+| 4 | Summary Scores |
+| 5 | Approval Sign-Off |
+| 6 | Evidence Register |
+| 7 | Summary Dashboard |
 
----
+### Color Palette
 
-## Sheet 3: Commitment Assessment
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-**Data Rows:** 499 (rows 2–500)
+### Column Headers (All Sheets)
 
-### Columns
+| # | Column Header |
+|---|--------------|
+| 1 | Manager ID |
+| 2 | Name |
+| 3 | Title |
+| 4 | Department |
+| 5 | Management Level |
+| 6 | Direct Reports |
+| 7 | Assessment Date |
+| 8 | Assessor |
+| 9 | Status |
+| 10 | Category |
+| 11 | Criterion |
+| 12 | Weight |
+| 13 | Score (0-5) |
+| 14 | Weighted Score |
+| 15 | Evidence |
+| 16 | Notes |
+| 17 | Total Weight |
+| 18 | Achieved Score |
+| 19 | Percentage |
+| 20 | Improvement Areas |
+| 21 | Evidence ID |
+| 22 | Evidence Type |
+| 23 | Description |
+| 24 | Related Sheet |
+| 25 | File Name |
+| 26 | File Location |
+| 27 | Collection Date |
+| 28 | Collected By |
 
-| Col | Header |
-|-----|--------|
-| A | Manager_ID |
-| B | Category |
-| C | Criterion |
-| D | Weight |
-| E | Score (0-5) |
-| F | Weighted_Score |
-| G | Evidence |
-| H | Notes |
+### Data Validation Values
 
-### Data Validations
+All dropdown/list values used across sheets:
 
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| E | E2:E500 | `score_dv` |
+```
+Executive, Director, Manager, Team Lead, Supervisor, Pending, In Progress
+Complete, Draft, Final, Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
----
-
-## Sheet 4: Summary Scores
-
-**Data Rows:** 48 (rows 3–50)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Manager_ID |
-| B | Name |
-| C | Management_Level |
-| D | Total_Weight |
-| E | Achieved_Score |
-| F | Percentage |
-| G | Status |
-| H | Improvement_Areas |
+**Extracted:** 7 sheets, 28 columns, 16 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

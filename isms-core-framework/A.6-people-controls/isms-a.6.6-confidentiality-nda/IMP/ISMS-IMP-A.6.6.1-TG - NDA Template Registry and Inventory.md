@@ -5,179 +5,148 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | NDA Template Registry and Inventory |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.6.1-TG |
-| **Title** | NDA Template Registry and Inventory |
-| **Control Reference** | ISO/IEC 27001:2022 A.6.6 |
-| **Control Name** | Confidentiality or Non-Disclosure Agreements |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.6.6 (Confidentiality Nda) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.6) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Information Security Manager |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.6.6.1-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.6 (Confidentiality Nda)
+- ISMS-IMP-A.6.6.2 (NDA Execution and Tracking)
+- ISMS-IMP-A.6.6.3 (NDA Review and Compliance)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a66_1_nda_template_registry.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.6.6.1` |
-| **Output Filename** | `ISMS-IMP-A.6.6.1_NDA_Template_Registry_and_Inventory_YYYYMMDD.xlsx` |
-| **Workbook Title** | NDA Template Registry and Inventory |
-| **Total Sheets** | 8 (8 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Workbook
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Instructions
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a66_1_nda_template_registry.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Template_Registry
+**Document ID:** `ISMS-IMP-A.6.6.1`
 
-**Data Rows:** 98 (rows 3–100) | **Frozen Panes:** A3
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Columns
+### Sheet Structure
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Template_ID | 14 |
-| B | Template_Name | 35 |
-| C | Template_Type | 18 |
-| D | Stakeholder_Category | 22 |
-| E | Current_Version | 14 |
-| F | Effective_Date | 14 |
-| G | Legal_Review_Date | 16 |
-| H | Legal_Reviewer | 20 |
-| I | Owner | 20 |
-| J | Storage_Location | 30 |
-| K | Status | 14 |
-| L | Notes | 30 |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Summary Dashboard |
 
----
+### Color Palette
 
-## Sheet 4: Template_Versions
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-**Data Rows:** 98 (rows 3–100) | **Frozen Panes:** A3
+### Column Headers (All Sheets)
 
-### Columns
+| # | Column Header |
+|---|--------------|
+| 1 | Template ID |
+| 2 | Template Name |
+| 3 | Template Type |
+| 4 | Stakeholder Category |
+| 5 | Current Version |
+| 6 | Effective Date |
+| 7 | Legal Review Date |
+| 8 | Legal Reviewer |
+| 9 | Owner |
+| 10 | Storage Location |
+| 11 | Status |
+| 12 | Notes |
+| 13 | Version |
+| 14 | Version Date |
+| 15 | Change Description |
+| 16 | Change Reason |
+| 17 | Changed By |
+| 18 | Legal Approved |
+| 19 | Legal Approver |
+| 20 | Approval Date |
+| 21 | Access Type |
+| 22 | Information Classification |
+| 23 | Required Template |
+| 24 | Timing |
+| 25 | Duration |
+| 26 | Post Termination |
+| 27 | Mandatory |
+| 28 | Clause ID |
+| 29 | Clause Name |
+| 30 | Clause Category |
+| 31 | Clause Purpose |
+| 32 | Standard Text |
+| 33 | Evidence ID |
+| 34 | Evidence Type |
+| 35 | Description |
+| 36 | Source / Location |
+| 37 | Collected By |
+| 38 | Collection Date |
+| 39 | Retention Date |
+| 40 | Assessment Area |
+| 41 | Total Items |
+| 42 | Compliant |
+| 43 | Partial |
+| 44 | Non-Compliant |
+| 45 | N/A |
+| 46 | Compliance % |
+| 47 | Category |
+| 48 | Finding |
+| 49 | Count |
+| 50 | Severity |
+| 51 | Action Required |
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Template_ID | 14 |
-| B | Version | 12 |
-| C | Version_Date | 14 |
-| D | Change_Description | 45 |
-| E | Change_Reason | 30 |
-| F | Changed_By | 20 |
-| G | Legal_Approved | 14 |
-| H | Legal_Approver | 20 |
-| I | Approval_Date | 14 |
-| J | Notes | 30 |
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 5: Applicability_Matrix
+```
+Standard NDA, Mutual NDA, One-Way NDA, Employment, Contractor, Vendor
+Customer, Partner, Employees, Contractors, Consultants, Vendors, Suppliers
+Partners, Customers, Board Members, Visitors, Active, Draft, Under Review
+Superseded, Archived, Yes, No, Pending, Conditional, Definitions, Obligations
+Exceptions, Term, Termination, Remedies, IP Rights, Legal, General
+Recommended, Policy Document, Procedure, Record, Certificate, Report
+Screenshot, Log, Other, Final, Requires remediation, Re-assessment required
+Approved, Approved with Conditions, Rejected, Deferred
+```
 
-**Data Rows:** 48 (rows 3–50) | **Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Stakeholder_Category | 22 |
-| B | Access_Type | 25 |
-| C | Information_Classification | 22 |
-| D | Required_Template | 25 |
-| E | Timing | 20 |
-| F | Duration | 18 |
-| G | Post_Termination | 18 |
-| H | Mandatory | 12 |
-| I | Notes | 35 |
-
----
-
-## Sheet 6: Clause_Library
-
-**Data Rows:** 48 (rows 3–50) | **Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Clause_ID | 12 |
-| B | Clause_Name | 30 |
-| C | Clause_Category | 20 |
-| D | Clause_Purpose | 40 |
-| E | Standard_Text | 60 |
-| F | Mandatory | 12 |
-| G | Notes | 30 |
-
----
-
-## Sheet 7: Evidence_Register
-
-**Data Rows:** 48 (rows 3–50) | **Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence_ID | 14 |
-| B | Template_Ref | 14 |
-| C | Evidence_Type | 20 |
-| D | Description | 40 |
-| E | Storage_Location | 35 |
-| F | Collected_Date | 14 |
-| G | Collected_By | 20 |
-| H | Retention_Until | 14 |
-
----
-
-## Sheet 8: Approval
-
-**Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Approval_Type | 25 |
-| B | Approver_Role | 25 |
-| C | Approver_Name | 25 |
-| D | Signature | 20 |
-| E | Date | 14 |
-| F | Comments | 35 |
+**Extracted:** 2 sheets, 51 columns, 51 validation values, 6 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 
@@ -186,4 +155,4 @@ This is the **Technical Specification**. The companion User Completion Guide is 
 
 *Where bamboo antennas actually work.* 🎋
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

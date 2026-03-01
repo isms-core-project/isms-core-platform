@@ -8,27 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-IMP-A.8.20-21-22-S5-UG |
+|-------|-------|
+| **Document Title** | Segmentation Implementation |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.20-21-22.S5-UG |
+| **Related Policy** | ISMS-POL-A.8.20-21-22 (Network Security) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.20 (Networks Security) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Network Segmentation Architecture & Implementation |
-| **Related Policy** | ISMS-POL-A.8.20-21-22, Section 2.3 (Network Segmentation - A.8.22), Section 4.2 (Implementation Resources) |
-| **Purpose** | Define systematic approach for designing, implementing, and validating network segmentation including security zones, VLANs, trust boundaries, and inter-zone traffic controls |
-| **Target Audience** | Network Architects, Network Engineers, Security Engineers, Firewall Administrators, Cloud Administrators, Auditors |
-| **Assessment Type** | Segmentation Architecture & Effectiveness Assessment |
-| **Review Cycle** | Quarterly or After Segmentation Architecture Changes |
-| **Total Sheets** | 11 |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial implementation guidance for network segmentation | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.20-21-22 (Network Security)
+- ISMS-IMP-A.8.20-21-22.S1 (Network Discovery)
+- ISMS-IMP-A.8.20-21-22.S2 (Architecture Documentation)
+- ISMS-IMP-A.8.20-21-22.S3 (Device Hardening)
+- ISMS-IMP-A.8.20-21-22.S4 (Services Security)
 
 ---
 
-**Audience:** Security assessors, Control owners, Compliance officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Controls Coverage Matrix | Map security controls across network zones and assets |
+| 3 | Zone Control Assessment | Assess security controls per network zone |
+| 4 | Device Control Mapping | Map controls to specific network devices |
+| 5 | Service Control Mapping | Map controls to network services |
+| 6 | Control Effectiveness | Assess effectiveness of network security controls |
+| 7 | Gap Analysis | Identify network controls coverage gaps |
+| 8 | Defense In Depth | Assess defence-in-depth strategy implementation |
+| 9 | Executive Summary | High-level summary of network security posture |
+| 10 | Evidence Register | Store and reference evidence supporting assessments |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -145,7 +172,7 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 
 **Defense in Depth**: Segmentation is one layer; combine with device hardening, monitoring, and access control.
 
-**Default Deny**: Inter-zone traffic is denied by default; only explicitly authorized traffic is allowed.
+**Default Deny**: Inter-zone traffic is denied by default; only explicitly authorised traffic is allowed.
 
 **Least Privilege**: Systems and users have network access only to resources they require.
 
@@ -264,7 +291,7 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 - **Functional separation**: Similar functions grouped together (all web servers in DMZ)
 - **Regulatory compliance**: Isolate regulated data (PCI DSS v4.0.1 → payment card zone, HIPAA → healthcare zone)
 
-**Example Zone Architecture** (for mid-size organization):
+**Example Zone Architecture** (for mid-size organisation):
 
 ```
 Internet (Untrusted)
@@ -374,13 +401,13 @@ Risk: Database compromise from DMZ. Mitigation: DB access limited to web server 
 - **Use RFC 1918 private IP space**: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
 - **Hierarchical allocation**: Allocate large blocks to regions/sites, then subdivide
 - **CIDR notation**: Use CIDR (Classless Inter-Domain Routing) for efficient allocation
-- **Contiguous allocation**: Keep related subnets contiguous for summarization
+- **Contiguous allocation**: Keep related subnets contiguous for summarisation
 - **Growth planning**: Leave room for future expansion
 
-**Example IP Allocation** (for mid-size organization):
+**Example IP Allocation** (for mid-size organisation):
 
 ```
-10.0.0.0/8 - [Organization] Private IP Space
+10.0.0.0/8 - [Organisation] Private IP Space
 
 10.1.0.0/16 - Headquarters Site
   ├─ 10.1.10.0/24 - DMZ (VLAN 10)
@@ -656,7 +683,7 @@ interface GigabitEthernet0/24
  switchport nonegotiate         ! Disable DTP
 ```
 
-3. **Explicitly Allow VLANs on Trunk** (prevent unauthorized VLAN traffic):
+3. **Explicitly Allow VLANs on Trunk** (prevent unauthorised VLAN traffic):
 ```cisco
 switchport trunk allowed vlan 10,20,30,40   ! Only list required VLANs
 ```
@@ -1004,13 +1031,13 @@ aws ec2 attach-internet-gateway --vpc-id vpc-xxxxx --internet-gateway-id igw-xxx
 aws ec2 create-security-group --group-name web-sg --description "Web server security group" --vpc-id vpc-xxxxx
 
 # Allow HTTP from anywhere
-aws ec2 authorize-security-group-ingress --group-id sg-xxxxx --protocol tcp --port 80 --cidr 0.0.0.0/0
+aws ec2 authorise-security-group-ingress --group-id sg-xxxxx --protocol tcp --port 80 --cidr 0.0.0.0/0
 
 # Allow HTTPS from anywhere
-aws ec2 authorize-security-group-ingress --group-id sg-xxxxx --protocol tcp --port 443 --cidr 0.0.0.0/0
+aws ec2 authorise-security-group-ingress --group-id sg-xxxxx --protocol tcp --port 443 --cidr 0.0.0.0/0
 
 # Allow SSH from management subnet only
-aws ec2 authorize-security-group-ingress --group-id sg-xxxxx --protocol tcp --port 22 --cidr 10.100.40.0/24
+aws ec2 authorise-security-group-ingress --group-id sg-xxxxx --protocol tcp --port 22 --cidr 10.100.40.0/24
 ```
 
 **Terraform Example** (infrastructure-as-code):
@@ -1180,9 +1207,9 @@ ssh admin@10.1.40.10
 rdesktop 10.1.10.10
 # Expected: Connection denied by firewall
 
-# Attempt database connection to Internal server (should be allowed if workstation is authorized)
+# Attempt database connection to Internal server (should be allowed if workstation is authorised)
 mysql -h 10.1.20.50 -u user -p
-# Expected: Connection allowed if workstation is authorized; denied otherwise
+# Expected: Connection allowed if workstation is authorised; denied otherwise
 ```
 
 2. **Verify firewall logs**:
@@ -1225,7 +1252,7 @@ sudo scapy
 
 ### Packet Capture Verification
 
-**Objective**: Verify that only authorized traffic flows between zones.
+**Objective**: Verify that only authorised traffic flows between zones.
 
 **Procedure**:
 
@@ -1239,8 +1266,8 @@ tcpdump -i eth0 -n host 10.1.10.10 and host 10.1.20.50 -w dmz-internal.pcap
 ```bash
 # View captured traffic
 tcpdump -r dmz-internal.pcap -n
-# Expected: Only authorized traffic (e.g., TCP/3306 from web server to database)
-#           No unauthorized traffic (e.g., SSH, RDP, ICMP)
+# Expected: Only authorised traffic (e.g., TCP/3306 from web server to database)
+#           No unauthorised traffic (e.g., SSH, RDP, ICMP)
 ```
 
 3. **Verify traffic matches firewall rules**:
@@ -1278,7 +1305,7 @@ tcpdump -r dmz-internal.pcap -n
 
 ### Develop Phased Migration Plan
 
-**Phased Approach** (minimize disruption):
+**Phased Approach** (minimise disruption):
 
 **Phase 1: High-Value Assets First**
 
@@ -1541,7 +1568,7 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - [ ] ACLs implemented (if applicable)
 - [ ] Cloud segmentation implemented (if applicable)
 - [ ] Segmentation testing completed (inter-zone traffic, lateral movement, VLAN hopping)
-- [ ] Packet captures verified (only authorized traffic flows)
+- [ ] Packet captures verified (only authorised traffic flows)
 - [ ] Segmentation architecture documented (diagrams, zone definitions)
 - [ ] Firewall rule documentation complete (justifications, approvals)
 - [ ] Configuration backups completed (switches, routers, firewalls)
@@ -1550,8 +1577,8 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 
 **Post-Implementation Validation**:
 
-1. **Connectivity Testing**: Verify all authorized traffic flows (applications work as expected)
-2. **Security Testing**: Verify unauthorized traffic is blocked (attempt lateral movement)
+1. **Connectivity Testing**: Verify all authorised traffic flows (applications work as expected)
+2. **Security Testing**: Verify unauthorised traffic is blocked (attempt lateral movement)
 3. **Performance Testing**: Verify segmentation does not degrade network performance (latency, throughput)
 4. **Documentation Review**: Verify all segmentation documentation is complete and accurate
 5. **Configuration Audit**: Verify configurations match design (no configuration drift)
@@ -1711,7 +1738,7 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 
 - SharePoint, Confluence, or similar documentation platform
 - Version control (track changes over time)
-- Access control (restrict access to authorized personnel)
+- Access control (restrict access to authorised personnel)
 
 ---
 
@@ -1860,7 +1887,7 @@ Test Scope: [Zones tested]
 1. Inter-Zone Traffic Testing
 
    - [ ] Test allowed traffic flows (verify applications work)
-   - [ ] Test denied traffic (verify unauthorized traffic blocked)
+   - [ ] Test denied traffic (verify unauthorised traffic blocked)
    - [ ] Review firewall logs (verify denials logged)
 
 2. Lateral Movement Simulation
@@ -1879,7 +1906,7 @@ Test Scope: [Zones tested]
 4. Packet Capture Verification
 
    - [ ] Capture traffic at zone boundaries
-   - [ ] Analyze traffic (verify only authorized traffic flows)
+   - [ ] Analyze traffic (verify only authorised traffic flows)
    - [ ] Document findings
 
 5. Configuration Audit
@@ -1921,7 +1948,7 @@ Next Test Date: [Date + 12 months]
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Divide and isolate: the first principle of network defence."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

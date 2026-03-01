@@ -65,11 +65,11 @@ This section defines the foundational requirements for managing information secu
 
 - Supplier relationships shall be managed through defined processes covering entire lifecycle (selection, onboarding, operation, exit)
 - Suppliers shall be identified and classified based on type of access, data sensitivity, and service criticality
-- Due diligence shall be conducted before granting supplier access to organizational information or systems
+- Due diligence shall be conducted before granting supplier access to organisational information or systems
 - Supplier security requirements shall be defined based on risk classification and data classification
 - Supplier performance and security posture shall be monitored throughout relationship duration
 - Supplier exit procedures shall be established to ensure safe termination and data return
-- Shadow IT and unauthorized supplier usage shall be actively identified and managed
+- Shadow IT and unauthorised supplier usage shall be actively identified and managed
 - Supplier dependency and concentration risk shall be assessed for critical services
 
 ---
@@ -92,9 +92,9 @@ This section defines the foundational requirements for managing information secu
 
 This policy does not apply to:
 
-- Suppliers providing goods/services without access to organizational information
+- Suppliers providing goods/services without access to organisational information
 - One-time purchases with no ongoing relationship
-- Individual consumers of [Organization]'s services
+- Individual consumers of [Organisation]'s services
 
 ---
 
@@ -170,14 +170,14 @@ Suppliers shall be classified based on the following factors:
 - Biennial security assessment
 - Annual performance review
 - Standard contractual security clauses
-- Certification preferred if handling any organizational data
+- Certification preferred if handling any organisational data
 - Incident notification within 72 hours
 
 ### Level 4: Low-Risk Suppliers
 
 **Criteria:**
 
-- No access to organizational data
+- No access to organisational data
 - No system access
 - Commodity services
 - Multiple alternatives available
@@ -218,8 +218,8 @@ No Data Access      │ Level 4    │ Level 4    │ Level 3    │
 
 | Category | Description | Assessment Focus |
 |----------|-------------|------------------|
-| **Confidentiality Risk** | Unauthorized disclosure of information | Data handling, access controls, encryption |
-| **Integrity Risk** | Unauthorized modification of data/systems | Change management, input validation, quality controls |
+| **Confidentiality Risk** | Unauthorised disclosure of information | Data handling, access controls, encryption |
+| **Integrity Risk** | Unauthorised modification of data/systems | Change management, input validation, quality controls |
 | **Availability Risk** | Service disruption or data loss | Redundancy, backup, disaster recovery, SLA commitments |
 | **Compliance Risk** | Regulatory or contractual violations | Certifications, audit reports, attestations, regulatory alignment |
 | **Concentration Risk** | Over-reliance on single supplier | Market alternatives, exit feasibility, vendor lock-in |
@@ -239,7 +239,7 @@ No Data Access      │ Level 4    │ Level 4    │ Level 3    │
 
 - Map supplier services to risk categories
 - Identify potential threat scenarios per category
-- Document existing controls (supplier-provided + organizational)
+- Document existing controls (supplier-provided + organisational)
 - Assess shared responsibility model (for cloud services)
 - Evaluate sub-processor and supply chain risks
 
@@ -320,17 +320,17 @@ No Data Access      │ Level 4    │ Level 4    │ Level 3    │
 
 - **Level 1:** ISO/IEC 27001 or SOC 2 Type II required (current within 12 months)
 - **Level 2:** ISO/IEC 27001 or SOC 2 (Type I acceptable) required (current within 12 months)
-- **Level 3:** Certification preferred but not mandatory if handling organizational data
+- **Level 3:** Certification preferred but not mandatory if handling organisational data
 - **Level 4:** No certification requirement
 
 **Certification Acceptance Criteria:**
 
 - Certificate must be current (within validity period)
-- Scope must cover services provided to [Organization]
+- Scope must cover services provided to [Organisation]
 - Issuing body must be accredited (ISO: accredited certification body; SOC: licensed CPA firm)
 - For multi-year certificates (ISO), annual surveillance audits must be completed
 
-**Alternative Attestations**: If ISO/SOC certifications unavailable, [Organization] may accept:
+**Alternative Attestations**: If ISO/SOC certifications unavailable, [Organisation] may accept:
 
 - Government-issued certifications (FedRAMP, C5 in Germany)
 - Industry-specific certifications (PCI DSS v4.0.1 for payment processors, HITRUST for healthcare)
@@ -366,8 +366,8 @@ All due diligence activities shall be documented including:
 | **Access Control** | Least privilege principle, unique accounts, role-based access, access logging |
 | **Authentication** | Strong authentication (complex passwords or certificates), MFA for privileged access |
 | **Encryption in Transit** | Data encrypted during transmission using TLS 1.2+ or equivalent |
-| **Incident Reporting** | Security incidents reported to [Organization] within 24 hours of awareness |
-| **Personnel Security** | Background checks appropriate to access level for staff with access to [Organization] data |
+| **Incident Reporting** | Security incidents reported to [Organisation] within 24 hours of awareness |
+| **Personnel Security** | Background checks appropriate to access level for staff with access to [Organisation] data |
 | **Confidentiality** | NDA or equivalent contractual confidentiality commitment |
 | **Data Minimization** | Access only to data necessary for service delivery |
 | **Data Residency** | Data processing within approved jurisdictions per contract |
@@ -380,9 +380,9 @@ All due diligence activities shall be documented including:
 | **Vulnerability Management** | Regular vulnerability scanning, timely patching (critical within 30 days, high within 60 days) |
 | **Security Monitoring** | Logging, alerting, SIEM integration where applicable, retention per regulatory requirements |
 | **Business Continuity** | Documented BC/DR plans and annual testing with evidence provided |
-| **Audit Rights** | [Organization] may audit or review third-party audit reports (SOC 2, ISO 27001 surveillance) |
+| **Audit Rights** | [Organisation] may audit or review third-party audit reports (SOC 2, ISO 27001 surveillance) |
 | **Subcontractor Controls** | Security requirements flow down to subcontractors, subcontractor disclosure required |
-| **Change Management** | Formal change control with [Organization] notification for material changes |
+| **Change Management** | Formal change control with [Organisation] notification for material changes |
 | **Data Segregation** | Logical or physical segregation from other customers (multi-tenancy controls) |
 | **Secure Development** | SDLC with security testing for custom development or integrations |
 | **Incident Response** | Documented incident response plan with contact information and escalation procedures |
@@ -411,7 +411,7 @@ Security requirements shall be communicated to suppliers through:
 
 ## Register Requirements
 
-[Organization] shall maintain a comprehensive supplier register containing:
+[Organisation] shall maintain a comprehensive supplier register containing:
 
 | Field | Description | Update Trigger |
 |-------|-------------|----------------|
@@ -422,7 +422,7 @@ Security requirements shall be communicated to suppliers through:
 | Data access | Classification of data accessible | Access change |
 | System access | Systems supplier can access | Access change |
 | Contract reference | Link to agreement and amendments | Contract change |
-| Business owner | Internal relationship owner | Organizational change |
+| Business owner | Internal relationship owner | Organisational change |
 | Security contact | Supplier security point of contact | Supplier change |
 | Last assessment date | Most recent security assessment | Assessment completion |
 | Next review date | Scheduled review date | Classification change |
@@ -461,7 +461,7 @@ Security requirements shall be communicated to suppliers through:
 
 ## Shadow IT Definition
 
-**Shadow IT**: Use of unauthorized suppliers, cloud services, or software without IT and Security approval. Shadow IT bypasses security controls, due diligence, and contract protections, creating unmanaged and often undetectable risks.
+**Shadow IT**: Use of unauthorised suppliers, cloud services, or software without IT and Security approval. Shadow IT bypasses security controls, due diligence, and contract protections, creating unmanaged and often undetectable risks.
 
 ## Prevention Measures
 
@@ -541,4 +541,4 @@ Security requirements shall be communicated to suppliers through:
 ---
 
 *"The strength of your security is only as strong as your weakest supplier."*
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -5,100 +5,125 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Procedure Inventory Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.37.1-TG |
-| **Title** | Procedure Inventory Assessment |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.37 |
-| **Control Name** | Documented Operating Procedures |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.5.37 (Documented Procedures) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.37) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Information Security Manager |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.37.1-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.37 (Documented Procedures)
+- ISMS-IMP-A.5.37.2 (Procedure Quality Assessment)
+- ISMS-IMP-A.5.37.3 (Procedure Review and Update Tracking)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a537_1_procedure_inventory.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.37.1` |
-| **Output Filename** | `ISMS-IMP-A.5.37.1_Procedure_Inventory_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Procedure Inventory Assessment |
-| **Total Sheets** | 8 (8 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #808080 | 808080 | Gray (Disabled) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E2EFDA | E2EFDA | Pale Green (Success Background) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Procedure_Inventory
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a537_1_procedure_inventory.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Required_Procedures
+**Document ID:** `ISMS-IMP-A.5.37.1`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Accessibility_Matrix
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Procedure Inventory |
+| 3 | Required Procedures |
+| 4 | Accessibility Matrix |
+| 5 | Gap Analysis |
+| 6 | Evidence Register |
+| 7 | Summary Dashboard |
+| 8 | Approval Sign-Off |
 
-## Sheet 5: Gap_Analysis
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Evidence_Register
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Evidence ID |
+| 2 | Assessment Area |
+| 3 | Evidence Type |
+| 4 | Description |
+| 5 | Location / Path |
+| 6 | Date Collected |
+| 7 | Collected By |
+| 8 | Verification Status |
+| 9 | Total Items |
+| 10 | Compliant |
+| 11 | Partial |
+| 12 | Non-Compliant |
+| 13 | N/A |
+| 14 | Compliance % |
+| 15 | Category |
+| 16 | Finding |
+| 17 | Count |
+| 18 | Severity |
+| 19 | Action Required |
 
-## Sheet 7: Approval_SignOff
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Approval_Signoff
+```
+System Operations, Security Operations, Facility Operations, Change Management
+Recovery Operations, User Management, Other, Draft, Pending Approval, Approved
+Expired, Under Review, Critical, High, Medium, Low, Exists, Partial, Missing
+Yes, No, Incomplete, Outdated, Unapproved, Open, In Progress, Closed
+Policy Document, Process Record, System Screenshot, Configuration Export
+Audit Log, Training Record, Test Result, Risk Assessment, Meeting Minutes
+Verified, Pending verification, Not verified, N/A, Approved with Conditions
+Rejected, Deferred
+```
 
-**Data Rows:** 100 (rows 4–103) | **Frozen Panes:** A3
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(Procedure_Inventory!A4:A103)-COUNTBLANK(Procedure_Inventory!B4:B103)` | Total Procedures Inventoried |
-| — | `=COUNTIF(Procedure_Inventory!K4:K103,\` | Procedures Approved |
-| — | `=COUNTIF(Gap_Analysis!H4:H53,\` | Open Gaps |
+**Extracted:** 8 sheets, 19 columns, 43 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

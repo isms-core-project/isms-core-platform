@@ -3,26 +3,54 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.8.30: Outsourced Development
 
-## Document Control
+---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Contract Compliance |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.30.2-UG |
-| **Document Title** | Contract Compliance Workbook Specification |
-| **Control Reference** | ISO/IEC 27001:2022 - Control A.8.30: Outsourced Development |
-| **Parent Policy** | ISMS-POL-A.8.30 (Outsourced Development) |
+| **Related Policy** | ISMS-POL-A.8.30 (Outsourced Development) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.30 (Outsourced Development) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
 | **Classification** | Internal |
+| **Status** | Draft |
 
 **Version History**:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO/ISO | Initial implementation specification for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.30 (Outsourced Development)
+- ISMS-IMP-A.8.30.1 (Vendor Assessment and Registry)
+- ISMS-IMP-A.8.30.3 (Security Testing and Acceptance)
 
 ---
 
-This section provides step-by-step guidance for completing the Contract Compliance workbook. Follow this guide to ensure comprehensive contract security management that satisfies ISO 27001:2022 audit requirements.
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Contract Inventory | Inventory of outsourced development contracts |
+| 3 | Security Clauses | Track security clauses included in each contract |
+| 4 | SLA Compliance | Monitor compliance with security service level agreements |
+| 5 | Subcontractor Approvals | Track approval status for subcontractors |
+| 6 | Termination Checklist | Security checklist for contract termination |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -417,7 +445,7 @@ When SLA cannot be met:
 1. Vendor requests extension with justification
 2. IT Security evaluates risk and compensating controls
 3. Appropriate authority approves exception
-4. Document in Exception Register (ISMS-IMP-A.8.30.4)
+4. Document in Contract Performance Monitoring sheet (Exception_Approved, Exception_Approver columns)
 
 | Exception Approver | Severity | Maximum Extension |
 |--------------------|----------|-------------------|
@@ -786,7 +814,7 @@ Contract Execution
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"What is not written in the contract is not obligated."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

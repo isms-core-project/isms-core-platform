@@ -8,25 +8,56 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Testing & Validation Framework |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.11.4-UG |
+| **Related Policy** | ISMS-POL-A.8.11 (Data Masking) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.11 (Data Masking) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Masking Effectiveness Testing & Validation |
-| **Related Policy** | ISMS-POL-A.8.11, Section 2.4 |
-| **Purpose** | Document and track testing procedures that verify data masking works effectively |
-| **Target Audience** | QA Engineers, Data Engineers, Security Team, Compliance Officers |
-| **Review Cycle** | Quarterly or After Major Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.11 (Data Masking)
+- ISMS-IMP-A.8.11.1 (Data Inventory & Classification Assessment)
+- ISMS-IMP-A.8.11.2 (Masking Technique Selection & Requirements)
+- ISMS-IMP-A.8.11.3 (Environment Coverage Assessment)
 
 ---
 
-**Audience:** QA Engineers, Data Engineers, Security assessors, Compliance officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Testing Procedures | Define and document masking test procedures |
+| 3 | PreDeployment Tests | Pre-deployment masking verification tests |
+| 4 | PostDeployment Validation | Post-deployment masking validation |
+| 5 | Completeness Testing | Test masking completeness across data fields |
+| 6 | Format Preservation | Verify masking preserves data format integrity |
+| 7 | Referential Integrity | Test referential integrity after masking |
+| 8 | ReIdentification Risk | Assess re-identification risk from masked data |
+| 9 | Data Utility Validation | Validate masked data utility for intended use |
+| 10 | Performance Testing | Assess masking performance impact |
+| 11 | Ongoing Monitoring | Track ongoing masking effectiveness |
+| 12 | Gap Analysis | Identify testing and validation gaps |
+| 13 | Evidence Register | Store and reference evidence supporting assessments |
+| 14 | Summary Dashboard | Compliance status and key metrics overview |
+| 15 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -122,7 +153,7 @@ Related Policy:        ISMS-POL-A.8.11, Section 2.4 (Testing and Validation)
 Version:               1.0
 Assessment Date:       [USER INPUT - yellow cell]
 Completed By:          [USER INPUT - yellow cell]
-Organization:          [USER INPUT - yellow cell]
+Organisation:          [USER INPUT - yellow cell]
 Review Cycle:          Quarterly
 ```
 
@@ -812,7 +843,7 @@ Base columns A-Q, plus:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A masking technique untested is a masking technique unproven."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

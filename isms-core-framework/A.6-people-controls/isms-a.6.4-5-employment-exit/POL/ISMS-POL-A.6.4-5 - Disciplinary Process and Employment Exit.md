@@ -44,20 +44,19 @@
 - ISMS-IMP-A.6.4-5.S1-UG/TG (Disciplinary Process Assessment)
 - ISMS-IMP-A.6.4-5.S2-UG/TG (Employment Exit Assessment)
 - ISMS-IMP-A.6.4-5.S3-UG/TG (Post Employment Obligations)
-- ISMS-IMP-A.6.4-5.S4-UG/TG (Employment Exit Dashboard)
 - ISO/IEC 27001:2022 Controls A.6.4, A.6.5
 
 ---
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for handling security policy violations through disciplinary processes and ensuring secure termination of employment including protection of organisational information and assets.
+This policy establishes [Organisation]'s requirements for handling security policy violations through disciplinary processes and ensuring secure termination of employment including protection of organisational information and assets.
 
 **Scope**: This policy applies to all employees, contractors, and temporary workers throughout the disciplinary process and employment termination lifecycle, regardless of reason for termination.
 
 **Purpose**: Define organisational requirements for disciplinary actions related to information security and secure employment exit. This policy establishes WHAT processes apply and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.6.4-5 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss employment law, Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss employment law, Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA) apply where [Organisation]'s business activities trigger applicability.
 
 **Combined Control Approach**: Controls A.6.4 (Disciplinary Process) and A.6.5 (Responsibilities After Termination) are implemented together because security-related disciplinary actions often precede termination, and both require coordinated HR-Security processes.
 
@@ -80,7 +79,7 @@ This policy establishes [Organization]'s requirements for handling security poli
 - Ensure appropriate response to information security policy violations
 - Protect organisational assets and information during and after employment changes
 - Maintain confidentiality obligations beyond employment
-- Prevent unauthorized access upon termination
+- Prevent unauthorised access upon termination
 
 **Control Type**: Preventive, Corrective
 **Control Category**: People
@@ -162,7 +161,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - ISACA employee offboarding guidelines
 - Employment law best practice guides
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
 
 ---
 
@@ -257,7 +256,7 @@ Security Team SHALL be involved in disciplinary matters when:
 | **Contract end** | Contract end date |
 | **Role change (mover)** | Previous role access within 2 business days |
 
-**SLA Trigger & Coverage**: The access-revocation timer starts when the termination decision is recorded in the authorized HR/ticketing system and the IAM/IT offboarding request is submitted through the approved channel. Urgent terminations (immediate dismissal, termination for cause) are supported via the on-call offboarding process defined in ISMS-IMP-A.6.4-5. **If full revocation cannot be completed within the SLA**, compensating controls (e.g., IdP disable, VPN disable, badge disable) are applied immediately, and a nonconformity/exception is recorded with remediation tracked to closure. The offboarding checklist is generated from the authoritative application/service inventory and identity access catalog (see ISMS-POL-A.5.9 and IAM procedures).
+**SLA Trigger & Coverage**: The access-revocation timer starts when the termination decision is recorded in the authorised HR/ticketing system and the IAM/IT offboarding request is submitted through the approved channel. Urgent terminations (immediate dismissal, termination for cause) are supported via the on-call offboarding process defined in ISMS-IMP-A.6.4-5. **If full revocation cannot be completed within the SLA**, compensating controls (e.g., IdP disable, VPN disable, badge disable) are applied immediately, and a nonconformity/exception is recorded with remediation tracked to closure. The offboarding checklist is generated from the authoritative application/service inventory and identity access catalog (see ISMS-POL-A.5.9 and IAM procedures).
 
 **Access Revocation Scope**:
 
@@ -414,7 +413,7 @@ Nonconformities related to this policy (e.g., delayed access revocation, unretur
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
@@ -424,7 +423,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Controls A.6.4 and A.6.5 applicability justified in [Organization]'s SoA
+- Controls A.6.4 and A.6.5 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 
 **Related Controls**:
@@ -521,4 +520,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for disciplinary processes and employment exit. Implementation procedures are documented in ISMS-IMP-A.6.4-5 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

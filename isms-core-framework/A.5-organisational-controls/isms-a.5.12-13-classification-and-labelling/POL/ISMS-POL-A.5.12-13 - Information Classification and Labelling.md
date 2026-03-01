@@ -45,21 +45,19 @@
 - ISMS-IMP-A.5.12-13.S1-UG/TG (Classification Scheme Definition)
 - ISMS-IMP-A.5.12-13.S2-UG/TG (Labelling Procedures and Standards)
 - ISMS-IMP-A.5.12-13.S3-UG/TG (Asset Classification Inventory)
-- ISMS-IMP-A.5.12-13.S4-UG/TG (Compliance Dashboard)
-- ISMS-IMP-A.5.12-13.S5-UG/TG (Consolidation Dashboard)
 - ISO/IEC 27001:2022 Controls A.5.12, A.5.13
 
 ---
 
 ## Executive Summary
 
-This policy establishes [Organization]'s information classification scheme and labelling requirements to ensure that information receives an appropriate level of protection according to its sensitivity, value, and legal requirements.
+This policy establishes [Organisation]'s information classification scheme and labelling requirements to ensure that information receives an appropriate level of protection according to its sensitivity, value, and legal requirements.
 
-**Scope**: This policy applies to all information created, received, processed, stored, or transmitted by [Organization], regardless of format (electronic, physical, verbal).
+**Scope**: This policy applies to all information created, received, processed, stored, or transmitted by [Organisation], regardless of format (electronic, physical, verbal).
 
-**Purpose**: Define organizational requirements for information classification and labelling. This policy establishes WHAT classification levels apply and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.12-13 (UG/TG variants).
+**Purpose**: Define organisational requirements for information classification and labelling. This policy establishes WHAT classification levels apply and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.12-13 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, Swiss Banking Secrecy) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, Swiss Banking Secrecy) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -69,11 +67,11 @@ This policy establishes [Organization]'s information classification scheme and l
 
 **ISO/IEC 27001:2022 Annex A.5.12 - Classification of Information**
 
-> *Information should be classified according to the information security needs of the organization based on confidentiality, integrity, availability and relevant interested party requirements.*
+> *Information should be classified according to the information security needs of the organisation based on confidentiality, integrity, availability and relevant interested party requirements.*
 
 **ISO/IEC 27001:2022 Annex A.5.13 - Labelling of Information**
 
-> *An appropriate set of procedures for information labelling should be developed and implemented in accordance with the information classification scheme adopted by the organization.*
+> *An appropriate set of procedures for information labelling should be developed and implemented in accordance with the information classification scheme adopted by the organisation.*
 
 **Control Objectives**:
 
@@ -83,7 +81,7 @@ This policy establishes [Organization]'s information classification scheme and l
 - Support access control and data protection decisions
 
 **Control Type**: Preventive
-**Control Category**: Organizational
+**Control Category**: Organisational
 
 **This Policy Addresses**:
 
@@ -97,7 +95,7 @@ This policy establishes [Organization]'s information classification scheme and l
 
 This policy:
 
-- **Defines** the four-tier classification scheme for all organizational information
+- **Defines** the four-tier classification scheme for all organisational information
 - **Establishes** criteria for classification decisions based on impact analysis
 - **Specifies** labelling requirements for electronic and physical formats
 - **References** applicable regulatory requirements per ISMS-POL-00
@@ -121,10 +119,10 @@ This policy does NOT:
 
 **This policy applies to**:
 
-- All information created, received, processed, stored, or transmitted by [Organization]
+- All information created, received, processed, stored, or transmitted by [Organisation]
 - All formats: electronic documents, physical documents, databases, verbal communications
-- All personnel (employees, contractors, third parties) handling organizational information
-- All systems and applications processing organizational data
+- All personnel (employees, contractors, third parties) handling organisational information
+- All systems and applications processing organisational data
 
 **Out of Scope**:
 
@@ -132,7 +130,7 @@ This policy does NOT:
 - Public information already in the public domain with no sensitivity
 - Third-party information classified by external parties (follow their classification)
 
-Where an external party's classification scheme differs from [Organization]'s four-tier scheme, the Information Owner SHALL map it to the nearest higher [Organization] classification level and document the mapping.
+Where an external party's classification scheme differs from [Organisation]'s four-tier scheme, the Information Owner SHALL map it to the nearest higher [Organisation] classification level and document the mapping.
 
 ## Regulatory Applicability
 
@@ -165,7 +163,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - CIS Controls v8.1 (Data Classification and Protection)
 - Government classification schemes (for reference in public sector work)
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent classification requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent classification requirements apply where multiple regulations overlap.
 
 ---
 
@@ -175,7 +173,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ### Classification Levels
 
-[Organization] adopts a four-tier classification scheme:
+[Organisation] adopts a four-tier classification scheme:
 
 | Level | Label | Description | Examples |
 |-------|-------|-------------|----------|
@@ -226,7 +224,7 @@ Information Owners SHALL:
 
 - Classify information upon creation or receipt
 - Review classification when information content changes
-- Authorize access appropriate to classification level
+- Authorise access appropriate to classification level
 - Ensure subordinates understand classification responsibilities
 - Review and update classification annually or upon trigger event
 
@@ -297,7 +295,7 @@ PUBLIC and INTERNAL information:
 
 ### Automated Labelling
 
-Where technically feasible, [Organization] SHALL implement:
+Where technically feasible, [Organisation] SHALL implement:
 
 - Auto-classification based on content patterns (DLP rules)
 - Inheritance of classification from parent folders/systems
@@ -312,7 +310,7 @@ Where technically feasible, [Organization] SHALL implement:
 |-------------|--------|----------|--------------|------------|
 | **Storage** | Any | Corporate systems | Encrypted storage | Encrypted, access-logged |
 | **Transmission** | Any | Corporate email | Encrypted | Encrypted, secure channel |
-| **Printing** | Unrestricted | Standard | Secure print queue | Authorized printer only |
+| **Printing** | Unrestricted | Standard | Secure print queue | Authorised printer only |
 | **Disposal** | Standard | Shredding (P-3) | Cross-cut shredding (P-4) | Cross-cut (P-5) + witness |
 | **Access** | Anyone | Employees | Need-to-know | Named individuals |
 | **Copying** | Unrestricted | Permitted | Owner approval | Not permitted (exceptions require GL) |
@@ -346,10 +344,10 @@ Encryption and logging requirements SHALL meet the minimum standards defined in 
 
 | Role | Classification Responsibilities |
 |------|--------------------------------|
-| **Executive Management** | Approve classification scheme, authorize Restricted declassification |
+| **Executive Management** | Approve classification scheme, authorise Restricted declassification |
 | **CISO** | Define classification requirements, monitor compliance, manage labelling tools |
 | **DPO** | Ensure personal data classification meets regulatory requirements |
-| **Information Owners** | Classify and label information, authorize access, review classifications |
+| **Information Owners** | Classify and label information, authorise access, review classifications |
 | **Department Heads** | Ensure departmental compliance, Confidential/Restricted classification authority |
 | **All Personnel** | Handle information per classification, report misclassified information |
 
@@ -410,17 +408,17 @@ Nonconformities related to this policy (e.g., missing labels, misclassified info
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
-- Classification levels aligned with [Organization]'s risk assessment and impact analysis
+- Classification levels aligned with [Organisation]'s risk assessment and impact analysis
 - Handling requirements determined by confidentiality, integrity, and availability impacts
 - Risk treatment plans document classification scheme implementation
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Controls A.5.12 and A.5.13 applicability justified in [Organization]'s SoA
+- Controls A.5.12 and A.5.13 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 
 **Related Controls**:
@@ -500,7 +498,7 @@ Evidence required to demonstrate this policy is operationally effective:
 
 | Term | Definition |
 |------|------------|
-| **Classification** | The process of categorizing information based on its sensitivity and the potential impact of unauthorized disclosure, modification, or unavailability |
+| **Classification** | The process of categorizing information based on its sensitivity and the potential impact of unauthorised disclosure, modification, or unavailability |
 | **Labelling** | The application of visible or metadata markers to information indicating its classification level |
 | **Information Owner** | The individual or role accountable for the classification, handling, and protection of specific information assets |
 | **Need-to-Know** | A principle that restricts access to information to those who require it to perform their job functions |
@@ -525,4 +523,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for information classification and labelling. Implementation procedures are documented in ISMS-IMP-A.5.12-13 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

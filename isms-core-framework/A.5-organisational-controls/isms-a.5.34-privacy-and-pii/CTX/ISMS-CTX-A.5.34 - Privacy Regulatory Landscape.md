@@ -70,7 +70,7 @@
 
 ## Purpose
 
-This support document provides contextual information about privacy regulations (GDPR, FADP) to help [Organization] personnel understand the regulatory landscape when implementing privacy controls under ISO/IEC 27001:2022 Control A.5.34.
+This support document provides contextual information about privacy regulations (GDPR, FADP) to help [Organisation] personnel understand the regulatory landscape when implementing privacy controls under ISO/IEC 27001:2022 Control A.5.34.
 
 **Target Audience**:
 
@@ -135,7 +135,7 @@ This support document provides contextual information about privacy regulations 
 
 ## Limitations and Disclaimers
 
-**Legal Disclaimer**: This document provides general information and does NOT constitute legal advice. Organizations should consult qualified legal counsel for legal interpretation of privacy regulations applicable to their specific circumstances.
+**Legal Disclaimer**: This document provides general information and does NOT constitute legal advice. Organisations should consult qualified legal counsel for legal interpretation of privacy regulations applicable to their specific circumstances.
 
 **Currency**: Privacy regulations and supervisory authority guidance evolve rapidly. This document reflects understanding as of the version date. Always consult:
 
@@ -144,9 +144,9 @@ This support document provides contextual information about privacy regulations 
 - Recent case law and enforcement decisions
 - Qualified legal counsel
 
-**Jurisdictional Limitations**: This document focuses on EU GDPR and Swiss FADP. Organizations operating in other jurisdictions must assess additional regulatory requirements (e.g., US state privacy laws, APAC privacy regulations, LGPD in Brazil).
+**Jurisdictional Limitations**: This document focuses on EU GDPR and Swiss FADP. Organisations operating in other jurisdictions must assess additional regulatory requirements (e.g., US state privacy laws, APAC privacy regulations, LGPD in Brazil).
 
-**No Guarantee of Accuracy**: While reasonable efforts are made to ensure accuracy, [Organization] makes no warranties regarding completeness or accuracy of this contextual information. Regulatory compliance decisions must be based on official sources and legal advice.
+**No Guarantee of Accuracy**: While reasonable efforts are made to ensure accuracy, [Organisation] makes no warranties regarding completeness or accuracy of this contextual information. Regulatory compliance decisions must be based on official sources and legal advice.
 
 ---
 
@@ -234,7 +234,7 @@ GDPR applies to processing of personal data of **data subjects who are in the EU
 - Tracking individuals on internet (cookies, device fingerprinting, behavioral advertising)
 - Location tracking of individuals in EU
 - Health/fitness tracking data of individuals in EU
-- Profiling individuals in EU to analyze or predict behavior
+- Profiling individuals in EU to analyse or predict behavior
 - Data-driven marketing based on EU individual behavior
 
 **Examples**:
@@ -363,9 +363,9 @@ Personal data must be **adequate, relevant and limited to what is necessary** in
 - ❌ Newsletter signup asking for: name, email, phone, address, date of birth, occupation → **Excessive** (email sufficient for newsletter)
 - ✅ Newsletter signup asking for: email only → **Proportionate**
 - ❌ Job application asking for: social security number, bank account details before interview → **Premature/Excessive**
-- ✅ Job application asking for: resume, cover letter, work authorization status → **Necessary**
+- ✅ Job application asking for: resume, cover letter, work authorisation status → **Necessary**
 
-**Tension with Analytics**: Organizations often want to collect extensive data for analytics/insights. Data minimization requires justifying each data point as necessary for legitimate purpose.
+**Tension with Analytics**: Organisations often want to collect extensive data for analytics/insights. Data minimisation requires justifying each data point as necessary for legitimate purpose.
 
 ---
 
@@ -439,10 +439,10 @@ Personal data must be **kept in a form which permits identification of data subj
 
 Personal data must be **processed in a manner that ensures appropriate security**, including protection against:
 
-- **Unauthorized or unlawful processing** (confidentiality)
+- **Unauthorised or unlawful processing** (confidentiality)
 - **Accidental loss, destruction or damage** (availability, integrity)
 
-Using appropriate **technical or organizational measures**.
+Using appropriate **technical or organisational measures**.
 
 **Security Principle Links to Article 32**:
 
@@ -568,7 +568,7 @@ Controllers must identify ONE legal basis (cannot cherry-pick or combine for sam
 
 **Consequence**: Data subject cannot object to contract-based processing (but has right to data portability).
 
-**Common Mistake**: Organizations often over-rely on contract basis. Just because processing is mentioned in contract or useful for business doesn't make it "necessary" for contract performance under GDPR.
+**Common Mistake**: Organisations often over-rely on contract basis. Just because processing is mentioned in contract or useful for business doesn't make it "necessary" for contract performance under GDPR.
 
 ---
 
@@ -643,7 +643,7 @@ Controllers must identify ONE legal basis (cannot cherry-pick or combine for sam
 **Applicability**:
 
 - Primarily for government entities, public bodies
-- Typically NOT applicable to private sector organizations
+- Typically NOT applicable to private sector organisations
 - Public interest task must be established by EU or member state law
 
 **Examples**:
@@ -756,9 +756,9 @@ Data subject has given **explicit consent** to processing for one or more specif
 
 Processing necessary for carrying out obligations/rights of controller/data subject in employment, social security, social protection law context.
 
-**Authorized by Law**:
+**Authorised by Law**:
 
-- Must be authorized by EU/member state law
+- Must be authorised by EU/member state law
 - Must provide appropriate safeguards
 
 **Common Uses**:
@@ -783,7 +783,7 @@ Processing by foundation, association, or non-profit body with political, philos
 
 **Examples**:
 
-- Religious organization processing member religious beliefs
+- Religious organisation processing member religious beliefs
 - Political party processing member political views
 - Trade union processing membership data
 
@@ -861,8 +861,8 @@ Processing necessary for archiving in public interest, scientific/historical res
 
 **Requirements** (Art. 89(1)):
 
-- Appropriate safeguards (technical/organizational measures)
-- Data minimization where possible
+- Appropriate safeguards (technical/organisational measures)
+- Data minimisation where possible
 - Pseudonymization where possible
 - May involve derogations from data subject rights (limited scope)
 
@@ -929,7 +929,7 @@ Supervisory authorities consider (non-exhaustive):
 - **Nature, gravity, duration** of infringement
 - **Intentional or negligent** character
 - **Actions taken to mitigate damage** to data subjects
-- **Degree of responsibility** (considering technical/organizational measures)
+- **Degree of responsibility** (considering technical/organisational measures)
 - **Relevant prior infringements** (repeat offender)
 - **Degree of cooperation** with supervisory authority
 - **Categories of personal data** affected
@@ -952,7 +952,7 @@ Supervisory authorities consider (non-exhaustive):
 
 **Key Lessons**:
 
-- Penalties reflect organizational turnover (larger companies = larger penalties)
+- Penalties reflect organisational turnover (larger companies = larger penalties)
 - Lack of cooperation with DPA increases penalties
 - Repeat violations treated more harshly
 - Self-reporting and remediation efforts can reduce penalties
@@ -1069,7 +1069,7 @@ Any handling of personal data, **irrespective of means/procedures**, including:
 
 **Profiling** (Art. 5(f)):
 
-Any form of **automated processing of personal data** consisting of using personal data to evaluate certain personal aspects relating to a natural person, particularly to analyze or predict aspects concerning:
+Any form of **automated processing of personal data** consisting of using personal data to evaluate certain personal aspects relating to a natural person, particularly to analyse or predict aspects concerning:
 
 - Performance at work
 - Economic situation
@@ -1119,7 +1119,7 @@ Personal data must be **processed lawfully**.
 Processing must be carried out in **good faith** and be **proportionate**.
 
 **"Good Faith"**: Processing must be fair, transparent, not deceptive or misleading.  
-**"Proportionate"**: Processing must be proportionate to purpose (similar to GDPR data minimization).
+**"Proportionate"**: Processing must be proportionate to purpose (similar to GDPR data minimisation).
 
 **3. Purpose Limitation** (Art. 6(3)):
 Personal data may only be **collected for a specific purpose** that data subject can recognize; may only be **further processed in manner compatible with this purpose**.
@@ -1129,7 +1129,7 @@ Personal data may only be **collected for a specific purpose** that data subject
 **4. Data Minimization / Storage Limitation** (Art. 6(4)):
 Personal data shall be **destroyed or anonymized as soon as no longer required** for purpose of processing.
 
-**Combines GDPR Concepts**: Combines GDPR data minimization (collect only necessary) and storage limitation (delete when no longer needed).
+**Combines GDPR Concepts**: Combines GDPR data minimisation (collect only necessary) and storage limitation (delete when no longer needed).
 
 **5. Accuracy** (Art. 6(5)):
 Any person processing personal data must **satisfy themselves that data are accurate**. They must take all **appropriate measures to correct, delete, or destroy data that are inaccurate or incomplete** in relation to purpose for which they are processed.
@@ -1142,11 +1142,11 @@ Any person processing personal data must **satisfy themselves that data are accu
 
 **Article 8 - Data Security**:
 
-Controller and processor must ensure **appropriate data security** through suitable technical and organizational measures.
+Controller and processor must ensure **appropriate data security** through suitable technical and organisational measures.
 
 **Measures must be designed to prevent**:
 
-- Unauthorized processing
+- Unauthorised processing
 - Loss of data
 - Alteration of data
 
@@ -1355,7 +1355,7 @@ Transfer permitted without adequacy/safeguards if:
 
 - Definition of personal data
 - Controller/processor distinction
-- Core data protection principles (lawfulness, purpose limitation, data minimization, accuracy, storage limitation, security)
+- Core data protection principles (lawfulness, purpose limitation, data minimisation, accuracy, storage limitation, security)
 - Data subject rights (access, rectification, erasure, portability, objection)
 - Cross-border transfer restrictions with safeguards
 - Risk-based approach to security
@@ -1364,7 +1364,7 @@ Transfer permitted without adequacy/safeguards if:
 
 - Maintain EU adequacy decision
 - Facilitate EU-Switzerland data flows
-- Reduce compliance burden for organizations operating in both jurisdictions
+- Reduce compliance burden for organisations operating in both jurisdictions
 - Adopt GDPR best practices
 
 ---
@@ -1378,13 +1378,13 @@ Transfer permitted without adequacy/safeguards if:
 | **Legal Bases** | 6 explicit bases (Art. 6) | Principles-based (lawfulness, good faith, proportionality) - no enumerated bases | GDPR more prescriptive; FADP requires legal analysis to determine lawfulness |
 | **Consent Definition** | Detailed requirements (freely given, specific, informed, unambiguous) | Less detailed | GDPR more stringent; FADP practitioners often apply GDPR standard |
 | **Special Categories** | Explicit list (Art. 9) | "Sensitive personal data" (Art. 5(c)) | Largely aligned, but FADP includes "private sphere" (broader concept) |
-| **DPO Requirement** | Mandatory for certain organizations (Art. 37) | No mandatory DPO | GDPR more prescriptive; FADP organizations may appoint voluntarily |
+| **DPO Requirement** | Mandatory for certain organisations (Art. 37) | No mandatory DPO | GDPR more prescriptive; FADP organisations may appoint voluntarily |
 | **ROPA (Record of Processing)** | Mandatory (Art. 30), detailed requirements | No explicit requirement | GDPR more prescriptive; FADP best practice to maintain |
 | **DPIA Requirement** | Mandatory for high-risk processing (Art. 35) | No explicit requirement | GDPR more prescriptive; FADP implicit through risk approach |
 | **Breach Notification - Threshold** | Notify for "risk", communicate for "high risk" | Notify only for "high risk" | FADP higher threshold (fewer notifications required) |
 | **Breach Notification - Timeline** | 72 hours to authority | "As quickly as possible" (no specific timeline) | GDPR more prescriptive |
 | **Breach Notification - Data Subjects** | Mandatory communication if "high risk" (Art. 34) | No explicit requirement | GDPR more prescriptive |
-| **Penalties** | Up to €20M or 4% global turnover (administrative fines on organizations) | Up to CHF 250,000 (criminal fines on individuals who intentionally/negligently violate) | Different enforcement model: GDPR targets organizations, FADP targets individuals |
+| **Penalties** | Up to €20M or 4% global turnover (administrative fines on organisations) | Up to CHF 250,000 (criminal fines on individuals who intentionally/negligently violate) | Different enforcement model: GDPR targets organisations, FADP targets individuals |
 | **Enforcement** | EU DPAs (decentralized), EDPB coordination | FDPIC (centralized Swiss authority) | GDPR more complex (multiple DPAs), FADP simpler (single authority) |
 | **Age of Consent (Children)** | 16 (member states may lower to 13) | 13 | FADP lower threshold than default GDPR |
 
@@ -1392,11 +1392,11 @@ Transfer permitted without adequacy/safeguards if:
 
 ## Dual Compliance Strategy
 
-**Organizations Processing Personal Data of Both EU and Swiss Data Subjects**:
+**Organisations Processing Personal Data of Both EU and Swiss Data Subjects**:
 
 **Pragmatic Approach - Align to Stricter Standard**:
 
-Since GDPR is generally more prescriptive and detailed than FADP, organizations often implement **GDPR standard across the board** to achieve dual compliance efficiently.
+Since GDPR is generally more prescriptive and detailed than FADP, organisations often implement **GDPR standard across the board** to achieve dual compliance efficiently.
 
 **Practical Dual Compliance**:
 
@@ -1424,7 +1424,7 @@ Since GDPR is generally more prescriptive and detailed than FADP, organizations 
 - May be more stringent than strictly necessary for FADP
 - Some GDPR compliance costs not strictly required for Swiss-only operations
 
-**Recommendation**: For organizations operating in both jurisdictions, implement GDPR standard. Benefits of single framework outweigh marginal cost savings from FADP-only approach.
+**Recommendation**: For organisations operating in both jurisdictions, implement GDPR standard. Benefits of single framework outweigh marginal cost savings from FADP-only approach.
 
 ---
 
@@ -1440,7 +1440,7 @@ Since GDPR is generally more prescriptive and detailed than FADP, organizations 
 
 **Pitfall 2: Assuming GDPR DPO Appointment Satisfies Swiss Requirements**
 
-**Reality**: FADP has no mandatory DPO requirement. If organization appoints DPO for GDPR, they should clarify whether DPO also covers FADP compliance.
+**Reality**: FADP has no mandatory DPO requirement. If organisation appoints DPO for GDPR, they should clarify whether DPO also covers FADP compliance.
 
 **Solution**: Explicitly define DPO scope in DPO job description/charter (include both GDPR and FADP if applicable).
 
@@ -1516,11 +1516,11 @@ European Commission considers:
 
 **Full Adequacy**:
 
-- Andorra, Argentina, Canada (PIPEDA - commercial organizations only, not public sector), Faroe Islands, Guernsey, Israel, Isle of Man, Japan, Jersey, New Zealand, Republic of Korea (South Korea), Switzerland, United Kingdom, Uruguay
+- Andorra, Argentina, Canada (PIPEDA - commercial organisations only, not public sector), Faroe Islands, Guernsey, Israel, Isle of Man, Japan, Jersey, New Zealand, Republic of Korea (South Korea), Switzerland, United Kingdom, Uruguay
 
 **Partial Adequacy**:
 
-- United States: **EU-US Data Privacy Framework** (DPF) - limited to US organizations that self-certify to DPF (does not cover entire US)
+- United States: **EU-US Data Privacy Framework** (DPF) - limited to US organisations that self-certify to DPF (does not cover entire US)
 
 **Withdrawn Adequacy**:
 
@@ -1536,10 +1536,10 @@ European Commission considers:
 
 **How It Works**:
 
-- US Department of Commerce maintains list of certified organizations
-- US organizations self-certify compliance with DPF principles
-- Transfers to certified organizations deemed adequate (no additional safeguards needed)
-- US organizations commit to DPF obligations (enforceable by FTC)
+- US Department of Commerce maintains list of certified organisations
+- US organisations self-certify compliance with DPF principles
+- Transfers to certified organisations deemed adequate (no additional safeguards needed)
+- US organisations commit to DPF obligations (enforceable by FTC)
 
 **Key Improvements Over Privacy Shield**:
 
@@ -1549,11 +1549,11 @@ European Commission considers:
 
 **Limitations**:
 
-- Only covers certified organizations (must verify certification via DPF website: dataprivacyframework.gov)
+- Only covers certified organisations (must verify certification via DPF website: dataprivacyframework.gov)
 - Does not cover US public sector or non-certified US companies
 - Legal challenges ongoing (may be challenged in CJEU like predecessors)
 
-**Due Diligence**: Organizations relying on DPF must verify recipient's active certification and conduct transfer impact assessment (TIA).
+**Due Diligence**: Organisations relying on DPF must verify recipient's active certification and conduct transfer impact assessment (TIA).
 
 ---
 
@@ -1590,7 +1590,7 @@ Switzerland recognizes adequacy for:
 **Key Features**:
 
 - **Modular structure**: Select module(s) appropriate to data transfer relationship
-- **Flexible annexes**: Tailor to specific transfer (data categories, purposes, technical/organizational measures)
+- **Flexible annexes**: Tailor to specific transfer (data categories, purposes, technical/organisational measures)
 - **Docking clause**: Additional parties can join without renegotiating
 - **Local law compliance**: Importer warrants local law does not prevent compliance
 - **Data subject rights**: Third-party beneficiary rights for data subjects (can enforce SCCs directly)
@@ -1630,13 +1630,13 @@ FDPIC provides Swiss-specific SCCs OR accepts EU SCCs with **Swiss addendum**.
 Even with SCCs in place, data exporter must assess whether:
 1. **Local law in third country** allows importer to comply with SCCs
 2. **Government access** to data in third country undermines protections
-3. **Supplementary measures** (technical/organizational) are needed beyond SCCs
+3. **Supplementary measures** (technical/organisational) are needed beyond SCCs
 
 **TIA Steps** (per EDPB Recommendations 01/2020):
 1. **Know your transfers**: Map all transfers to third countries
 2. **Verify transfer tool**: Check if SCCs or other mechanism used
 3. **Assess third country**: Examine laws (data access, surveillance, conflicts of law)
-4. **Identify supplementary measures**: Technical (encryption, pseudonymization) or organizational (data minimization)
+4. **Identify supplementary measures**: Technical (encryption, pseudonymization) or organisational (data minimisation)
 5. **Procedural steps**: Document TIA, inform data subjects if cannot transfer
 6. **Re-evaluate**: Periodically review as circumstances change
 
@@ -1650,11 +1650,11 @@ Even with SCCs in place, data exporter must assess whether:
 
 - **End-to-end encryption**: Data encrypted by exporter, importer has no decryption key
 - **Pseudonymization**: Identification fields replaced with pseudonyms held separately
-- **Data minimization**: Transfer only strictly necessary data
+- **Data minimisation**: Transfer only strictly necessary data
 - **Access controls**: Restrict importer access to minimum necessary
 - **Confidentiality commitments**: Enhanced contractual confidentiality beyond SCC standard
 
-**Organizational Measures**:
+**Organisational Measures**:
 
 - **Transparency**: Inform data subjects of third country transfer and risks
 - **Legal commitments**: Importer commits to challenge government data requests, notify exporter
@@ -1711,7 +1711,7 @@ Even with SCCs in place, data exporter must assess whether:
 
 **Concept**: Custom contract clauses approved by supervisory authority for specific transfer.
 
-**When to Use**: Unique circumstances where SCCs don't fit, requires DPA authorization (time-consuming).
+**When to Use**: Unique circumstances where SCCs don't fit, requires DPA authorisation (time-consuming).
 
 ---
 
@@ -1838,7 +1838,7 @@ Transfer permitted if **NOT repetitive**, concerns **limited number of data subj
 - Aligns information security and privacy governance
 - International recognition
 
-**When to Consider**: Organizations seeking structured privacy program, international operations, customer/partner requirements for privacy certification.
+**When to Consider**: Organisations seeking structured privacy program, international operations, customer/partner requirements for privacy certification.
 
 ---
 
@@ -1850,7 +1850,7 @@ Transfer permitted if **NOT repetitive**, concerns **limited number of data subj
 
 **Structure**:
 
-- **Core**: Outcomes-based privacy activities organized into Functions and Categories
+- **Core**: Outcomes-based privacy activities organised into Functions and Categories
 - **Profiles**: Current state and target state privacy posture
 - **Implementation Tiers**: Maturity levels (Partial, Risk-Informed, Repeatable, Adaptive)
 
@@ -1868,7 +1868,7 @@ Transfer permitted if **NOT repetitive**, concerns **limited number of data subj
 - Complements NIST Cybersecurity Framework
 - Widely adopted in US public and private sectors
 
-**Applicability**: Useful reference for organizations developing privacy programs, particularly US-based or US-regulated entities.
+**Applicability**: Useful reference for organisations developing privacy programs, particularly US-based or US-regulated entities.
 
 ---
 
@@ -1898,9 +1898,9 @@ Transfer permitted if **NOT repetitive**, concerns **limited number of data subj
 
 **Scope**: 21 APEC economies (Asia-Pacific region)
 
-**Cross-Border Privacy Rules (CBPR) System**: Voluntary certification for organizations demonstrating compliance with APEC Privacy Framework.
+**Cross-Border Privacy Rules (CBPR) System**: Voluntary certification for organisations demonstrating compliance with APEC Privacy Framework.
 
-**Relevance**: Organizations operating in Asia-Pacific region.
+**Relevance**: Organisations operating in Asia-Pacific region.
 
 ---
 
@@ -1926,7 +1926,7 @@ Transfer permitted if **NOT repetitive**, concerns **limited number of data subj
 **H&M (Hamburg DPA, 2020) - €35.3 million**:
 
 - **Violation**: Excessive employee surveillance, recording personal conversations, detailed behavioral profiling
-- **Lesson**: Employment context requires heightened sensitivity; data minimization critical; employees have reasonable expectation of privacy
+- **Lesson**: Employment context requires heightened sensitivity; data minimisation critical; employees have reasonable expectation of privacy
 
 **British Airways (UK ICO, 2020) - £20 million (reduced from £183m)**:
 
@@ -2011,7 +2011,7 @@ Transfer permitted if **NOT repetitive**, concerns **limited number of data subj
 
 ## Regulatory Evolution - Stay Current
 
-Privacy regulations evolve rapidly. Organizations must:
+Privacy regulations evolve rapidly. Organisations must:
 
 - **Monitor EU/Swiss regulatory updates** (EDPB guidelines, FDPIC guidance, new regulations)
 - **Track enforcement actions** (learn from others' violations)
@@ -2032,7 +2032,7 @@ Privacy regulations evolve rapidly. Organizations must:
 
 # Conclusion
 
-This context document provides supplementary information about the privacy regulatory landscape to support [Organization]'s privacy program implementation.
+This context document provides supplementary information about the privacy regulatory landscape to support [Organisation]'s privacy program implementation.
 
 **Remember**:
 

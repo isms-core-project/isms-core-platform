@@ -8,430 +8,210 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Log Analysis & Review Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.15.4-TG |
+| **Related Policy** | ISMS-POL-A.8.15 (Logging) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.15 (Logging) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Log Analysis, Review Process, Threat Detection & SOC Effectiveness |
-| **Related Policy** | ISMS-POL-A.8.15, Section 2.4 (Log Review & Analysis Requirements), Section 2.1 (Event Logging Requirements) |
-| **Purpose** | Assess log review process effectiveness, SIEM use case maturity, alert management, SOC performance metrics, threat detection coverage |
-| **Target Audience** | Security Operations Center (SOC), Threat Detection Team, Security Engineers, InfoSec Manager, CISO, Incident Response Team, Auditors, Workbook Developers |
-| **Assessment Type** | Operational Effectiveness & Process Maturity |
-| **Review Cycle** | Quarterly (full assessment), Monthly (SOC metrics review) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
+| Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Initial technical specification | ISMS Implementation Team |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.15 (Logging)
+- ISMS-IMP-A.8.15.1 (Log Source Inventory Assessment)
+- ISMS-IMP-A.8.15.2 (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.3 (Log Protection & Retention Assessment)
 
 ---
+
 # Technical Specification
-**Audience:** Workbook Developers (Python/Excel script maintainers)
-
-
-> Auto-generated from `generate_a815_4_log_analysis_review.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.15.4` |
-| **Output Filename** | `ISMS-IMP-A.8.15.4_Log_Analysis_Review_YYYYMMDD.xlsx` |
-| **Total Sheets** | 24 (24 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control A.8.15: Logging |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #E7E6E6 | end_color | Light Gray (Example Rows) |
-| #FFC000 | FFC000 | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Log Review Schedule
-
----
-
-## Sheet 3: Alert Management
-
----
-
-## Sheet 4: Investigation Workflow
-
----
-
-## Sheet 5: Analysis Tools & Capabilities
-
----
-
-## Sheet 6: Review Findings
-
----
-
-## Sheet 7: Continuous Monitoring
-
----
-
-## Sheet 8: Performance Metrics
-
----
-
-## Sheet 9: Gap Analysis
-
----
-
-## Sheet 10: Evidence Register
-
----
-
-## Sheet 11: Summary Dashboard
-
----
-
-## Sheet 12: Approval & Sign-Off
-
----
-
-## Sheet 13: Instructions
-
-**Frozen Panes:** A3
-
----
-
-## Sheet 14: Log_Review_Schedule
-
-**Purpose:** "If you don't look at your logs, you don't have logs." - Ancient SOC wisdom
-
-**Data Rows:** 92 (rows 9–100) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Review ID | 15 |
-| B | Review Type | 25 |
-| C | Log Source / Scope | 30 |
-| D | Frequency | 18 |
-| E | Responsible Party | 25 |
-| F | Review Procedure | 40 |
-| G | Last Review Date | 18 |
-| H | Next Review Due | 18 |
-| I | Status | 15 |
-| J | Days Overdue | 15 |
-| K | Completion Rate % | 18 |
-| L | Findings (Last Review) | 40 |
-| M | Actions Taken | 40 |
-| N | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| B | B9:B100 | `review_type_dv` |
-| D | D9:D100 | `frequency_dv` |
-| I | I9:I100 | `status_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=IF(B{data_row}<>` |  |
-| JN | `=IF(AND(H{data_row}<>` |  |
-
----
-
-## Sheet 15: Alert_Management
-
-**Data Rows:** 142 (rows 9–150) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Alert ID | 15 |
-| B | Alert Name | 30 |
-| C | Alert Type | 20 |
-| D | Severity | 15 |
-| E | MITRE ATT&CK Tactic | 25 |
-| F | Detection Logic | 40 |
-| G | Threshold | 20 |
-| H | Alerts/Month | 15 |
-| I | True Positives | 15 |
-| J | False Positives | 15 |
-| K | True Positive Rate % | 18 |
-| L | Tuning Required | 18 |
-| M | Playbook Exists | 18 |
-| N | Last Tuned | 15 |
-| O | Status | 15 |
-| P | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C9:C150 | `alert_type_dv` |
-| D | D9:D150 | `severity_dv` |
-| L | L9:L150 | `yes_no_dv` |
-| M | M9:M150 | `yes_no_dv` |
-| O | O9:O150 | `status_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=IF(B{data_row}<>` |  |
-| KN | `=IF(AND(I{data_row}<>` |  |
-
----
-
-## Sheet 16: Investigation_Workflow
-
-**Data Rows:** 192 (rows 9–200) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Incident ID | 15 |
-| B | Detection Date | 15 |
-| C | Alert Source | 25 |
-| D | Severity | 15 |
-| E | Incident Type | 25 |
-| F | Status | 15 |
-| G | Assigned To | 25 |
-| H | MTTD (hours) | 15 |
-| I | MTTR (hours) | 15 |
-| J | Root Cause | 40 |
-| K | Actions Taken | 40 |
-| L | Lessons Learned | 40 |
-| M | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| D | D9:D200 | `severity_dv` |
-| E | E9:E200 | `incident_type_dv` |
-| F | F9:F200 | `status_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=IF(B{data_row}<>` |  |
-
----
-
-## Sheet 17: Analysis_Tools
-
-**Data Rows:** 42 (rows 9–50) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Tool / Capability | 30 |
-| B | Category | 20 |
-| C | Vendor / Product | 25 |
-| D | Version | 15 |
-| E | Purpose | 40 |
-| F | Users Trained | 20 |
-| G | Usage Frequency | 18 |
-| H | Effectiveness | 18 |
-| I | Integration with SIEM | 18 |
-| J | Last Updated | 15 |
-| K | Status | 15 |
-| L | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| B | B9:B50 | `category_dv` |
-| G | G9:G50 | `frequency_dv` |
-| H | H9:H50 | `effectiveness_dv` |
-| I | I9:I50 | `integration_dv` |
-| K | K9:K50 | `status_dv` |
-
----
-
-## Sheet 18: Review_Findings
-
-**Data Rows:** 192 (rows 9–200) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Finding ID | 15 |
-| B | Review Date | 15 |
-| C | Review Type | 20 |
-| D | Log Source | 25 |
-| E | Finding Description | 50 |
-| F | Severity | 15 |
-| G | Category | 20 |
-| H | Action Required | 40 |
-| I | Assigned To | 25 |
-| J | Due Date | 15 |
-| K | Status | 15 |
-| L | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C9:C200 | `review_type_dv` |
-| F | F9:F200 | `severity_dv` |
-| G | G9:G200 | `category_dv` |
-| K | K9:K200 | `status_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=IF(B{data_row}<>` |  |
-
----
-
-## Sheet 19: Continuous_Monitoring
-
-**Data Rows:** 90 (rows 9–98) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Metric Date | 15 |
-| B | Total Events/Day | 20 |
-| C | Security Alerts Generated | 20 |
-| D | Alerts Investigated | 20 |
-| E | True Positives | 18 |
-| F | False Positives | 18 |
-| G | True Positive Rate % | 18 |
-| H | Avg MTTD (hours) | 18 |
-| I | Avg MTTR (hours) | 18 |
-| J | Critical Incidents | 18 |
-| K | Review Completion % | 18 |
-| L | Notes | 40 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| GN | `=IF(AND(E{data_row}<>` |  |
-
----
-
-## Sheet 20: Performance_Metrics
-
-**Data Rows:** 200 (rows 9–208)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(` | Total Incidents |
-| — | `=COUNTIF(` | Critical Incidents |
-| DN | `=IF(B{row}>0,\` |  |
-
----
-
-## Sheet 21: Gap_Analysis
-
-**Data Rows:** 92 (rows 9–100) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Gap ID | 12 |
-| B | Gap Category | 25 |
-| C | Description | 50 |
-| D | Impact | 40 |
-| E | Policy Requirement | 25 |
-| F | Priority | 15 |
-| G | Remediation Action | 50 |
-| H | Owner | 25 |
-| I | Target Date | 15 |
-| J | Budget Required | 15 |
-| K | Status | 15 |
-| L | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| B | B9:B100 | `category_dv` |
-| F | F9:F100 | `priority_dv` |
-| J | J9:J100 | `budget_dv` |
-| K | K9:K100 | `status_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=IF(B{data_row}<>` |  |
-
----
-
-## Sheet 22: Evidence_Register
-
-**Data Rows:** 42 (rows 9–50) | **Frozen Panes:** A9
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence ID | 12 |
-| B | Evidence Type | 18 |
-| C | Description | 35 |
-| D | Related Sheet | 18 |
-| E | Source System | 18 |
-| F | File Name/Location | 30 |
-| G | Date Collected | 14 |
-| H | Collected By | 15 |
-| I | Classification | 14 |
-| J | Retention Period | 14 |
-| K | Status | 12 |
-| L | Notes | 25 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| K | K9:K50 | `status_dv` |
-| I | I9:I50 | `class_dv` |
-
----
-
-## Sheet 23: Summary_Dashboard
-
-**Data Rows:** 142 (rows 9–150)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTIF(` | Review Completion Rate |
-| DN | `=IF(B{row}>0,\` |  |
-| BN | `=COUNTIFS(\` |  |
-
----
-
-## Sheet 24: Approval_Signoff
+## Generator Alignment Reference
+
+> Auto-generated from `generate_a815_4_log_analysis_review.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
+
+**Document ID:** `ISMS-IMP-A.8.15.4`
+
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
+
+### Sheet Structure
+
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Log Review Schedule |
+| 3 | Alert Management |
+| 4 | Investigation Workflow |
+| 5 | Analysis Tools & Capabilities |
+| 6 | Review Findings |
+| 7 | Continuous Monitoring |
+| 8 | Performance Metrics |
+| 9 | Gap Analysis |
+| 10 | Evidence Register |
+| 11 | Summary Dashboard |
+| 12 | Approval Sign-Off |
+
+### Color Palette
+
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
+
+### Column Headers (All Sheets)
+
+| # | Column Header |
+|---|--------------|
+| 1 | Review ID |
+| 2 | Review Type |
+| 3 | Log Source / Scope |
+| 4 | Frequency |
+| 5 | Responsible Party |
+| 6 | Review Procedure |
+| 7 | Last Review Date |
+| 8 | Next Review Due |
+| 9 | Status |
+| 10 | Days Overdue |
+| 11 | Completion Rate % |
+| 12 | Findings (Last Review) |
+| 13 | Actions Taken |
+| 14 | Notes |
+| 15 | Alert ID |
+| 16 | Alert Name |
+| 17 | Alert Type |
+| 18 | Severity |
+| 19 | MITRE ATT&CK Tactic |
+| 20 | Detection Logic |
+| 21 | Threshold |
+| 22 | Alerts/Month |
+| 23 | True Positives |
+| 24 | False Positives |
+| 25 | True Positive Rate % |
+| 26 | Tuning Required |
+| 27 | Playbook Exists |
+| 28 | Last Tuned |
+| 29 | Incident ID |
+| 30 | Detection Date |
+| 31 | Alert Source |
+| 32 | Incident Type |
+| 33 | Assigned To |
+| 34 | MTTD (hours) |
+| 35 | MTTR (hours) |
+| 36 | Root Cause |
+| 37 | Lessons Learned |
+| 38 | Tool / Capability |
+| 39 | Category |
+| 40 | Vendor / Product |
+| 41 | Version |
+| 42 | Purpose |
+| 43 | Users Trained |
+| 44 | Usage Frequency |
+| 45 | Effectiveness |
+| 46 | Integration with SIEM |
+| 47 | Last Updated |
+| 48 | Finding ID |
+| 49 | Review Date |
+| 50 | Log Source |
+| 51 | Finding Description |
+| 52 | Action Required |
+| 53 | Due Date |
+| 54 | Metric Date |
+| 55 | Total Events/Day |
+| 56 | Security Alerts Generated |
+| 57 | Alerts Investigated |
+| 58 | Avg MTTD (hours) |
+| 59 | Avg MTTR (hours) |
+| 60 | Critical Incidents |
+| 61 | Review Completion % |
+| 62 | Gap ID |
+| 63 | Gap Category |
+| 64 | Description |
+| 65 | Impact |
+| 66 | Policy Requirement |
+| 67 | Priority |
+| 68 | Remediation Action |
+| 69 | Owner |
+| 70 | Target Date |
+| 71 | Budget Required |
+| 72 | Evidence ID |
+| 73 | Assessment Area |
+| 74 | Evidence Type |
+| 75 | Location/Path |
+| 76 | Date Collected |
+| 77 | Collected By |
+| 78 | Verification Status |
+| 79 | Total Items |
+| 80 | Compliant |
+| 81 | Partial |
+| 82 | Non-Compliant |
+| 83 | N/A |
+| 84 | Compliance % |
+| 85 | Metric |
+| 86 | Value |
+| 87 | Target |
+| 88 | Finding Type |
+| 89 | Risk Level |
+| 90 | Associated Sheet |
+| 91 | Recommended Action |
+| 92 | ISO Clause |
+
+### Data Validation Values
+
+All dropdown/list values used across sheets:
+
+```
+Security Event Review, Compliance Review, Administrative Review, Access Review
+Error Review, Performance Review, Real-time, Hourly, Daily, Weekly, Monthly
+Quarterly, Annual, Ad-hoc, On Schedule, Overdue, Completed, Deferred
+Authentication, Authorisation, Malware, Network, Data Exfiltration
+Lateral Movement, Privilege Escalation, Reconnaissance, Other, Critical, High
+Medium, Low, Informational, Yes, No, Active, Disabled, Testing, Deprecated
+Brute Force Attack, Unauthorised Access, DDoS, Phishing, Insider Threat
+Configuration Error, New, Investigating, Contained, Resolved, False Positive
+SIEM Platform, Log Analysis, Threat Intelligence, Forensics, Visualisation
+Automation, As Needed, Rarely, Unknown, Native, API, Manual Export
+No Integration, Production, Planned, Policy Violation, Security Event
+Performance Issue, Compliance Issue, In Progress, Alert Tuning, Review Process
+Tools/Capabilities, Staffing, Training, Documentation, Open, Screenshot
+Configuration File, Log Export, Report, Policy Document, SOC Procedure
+Meeting Notes, Training Record, Verified, Pending verification, Not verified
+Requires update, Draft, Final, Requires remediation, Re-assessment required
+Approved, Approved with Conditions, Rejected
+```
+
+**Extracted:** 12 sheets, 92 columns, 95 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

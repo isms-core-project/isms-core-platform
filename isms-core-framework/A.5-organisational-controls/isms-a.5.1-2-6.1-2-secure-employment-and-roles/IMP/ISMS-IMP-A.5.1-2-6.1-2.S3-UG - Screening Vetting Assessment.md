@@ -5,17 +5,17 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
-| **Document Title** | Screening & Vetting Assessment |
+| **Document Title** | Screening Vetting Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.1-2-6.1-2.S3-UG |
 | **Related Policy** | ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles) |
 | **Control Reference** | ISO/IEC 27001:2022 Annex A.6.1 (Screening) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
-| **Document Owner** | CISO / Chief Human Resources Officer (CHRO) — joint ownership |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
 | **Classification** | Internal |
@@ -27,23 +27,33 @@
 |---------|------|--------|---------|
 | 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle**: Quarterly
+**Review Cycle**: Quarterly  
 **Next Review Date**: [Effective Date + 90 days]
 
 **Related Documents**:
-- ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles) — Section 6 (Screening & Vetting Requirements)
-- ISMS-IMP-A.5.1-2-6.1-2.S1 (Policy Framework Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S2 (Roles & Responsibilities Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S4 (Employment Contract Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S5 (Governance Compliance Dashboard)
-- Swiss Federal Data Protection Act (FADP / nDSG) — Articles 4, 6, 7, 22, 25
-- Swiss Code of Obligations (OR) — Article 328b
 
-**Note on Naming Convention**: The ".S" designation indicates this implementation is part of a **stacked control framework** (A.5.1 + A.5.2 + A.6.1 + A.6.2). Despite unified implementation, each control maintains distinct requirements for Statement of Applicability purposes.
+- ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles)
+- ISMS-IMP-A.5.1-2-6.1-2.S1 (Policy Framework Assessment)
+- ISMS-IMP-A.5.1-2-6.1-2.S2 (Roles Responsibilities Assessment)
+- ISMS-IMP-A.5.1-2-6.1-2.S4 (Employment Contract Assessment)
 
 ---
 
-**Audience:** HR managers, CISO, recruitment team, legal/compliance, DPO, department heads
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Screening Process Assessment | Assess the pre-employment screening process |
+| 3 | Screening Level Matrix | Map screening requirements to roles and sensitivity levels |
+| 4 | Personnel Screening Registry | Register of all personnel and their screening status |
+| 5 | Screening Compliance Verif | Verify compliance with screening requirements per role |
+| 6 | Continuous Screening Assessment | Assess ongoing/periodic rescreening activities |
+| 7 | Legal Compliance Review | Verify screening practices comply with applicable laws |
+| 8 | Gap Analysis | Identify gaps against ISO 27001:2022 A.6.1 requirements |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -51,7 +61,7 @@
 
 ### Assessment Objective
 
-This assessment verifies [Organization]'s compliance with ISO/IEC 27001:2022 Control A.6.1 (Screening) as implemented through ISMS-POL-A.5.1-2-6.1-2, Section 6.
+This assessment verifies [Organisation]'s compliance with ISO/IEC 27001:2022 Control A.6.1 (Screening) as implemented through ISMS-POL-A.5.1-2-6.1-2, Section 6.
 
 **Control A.6.1 Requirement:**
 > *Background verification checks on all candidates to become personnel should be carried out prior to joining the organisation and on an ongoing basis taking into consideration applicable laws, regulations and ethics and should be proportional to the business requirements, the classification of the information to be accessed and the perceived risks.*
@@ -87,9 +97,9 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 ### Assessment Frequency
 
 **Standard Schedule:**
-- **Quarterly**: All organizations (routine screening compliance verification)
+- **Quarterly**: All organisations (routine screening compliance verification)
 - **Annual**: Comprehensive screening program review including legal compliance re-assessment
-- **Triggered**: After organizational restructuring, new regulatory requirements, screening failures, or audit findings
+- **Triggered**: After organisational restructuring, new regulatory requirements, screening failures, or audit findings
 
 **Why Quarterly?**
 - Workforce changes continuously (new hires, role changes, departures)
@@ -171,7 +181,7 @@ This assessment uses a **process-then-person verification approach** — first v
 **Supporting Sources:**
 - .S2 Role Inventory (role tiers and sensitivity classification)
 - Employment contracts (screening clauses — verified in .S4)
-- Organizational chart (role hierarchy)
+- Organisational chart (role hierarchy)
 - Information classification records (what data each role accesses)
 - DPO sign-off documentation
 - Legal review memos
@@ -273,9 +283,9 @@ Scope: CISO, DPO, Security Committee members, C-suite roles with security oversi
 Contractors and third-party workers must be screened at a level matching their **access requirements**, not their employment type. A contractor with admin access to critical systems requires the same screening as an employee in an equivalent role.
 
 **Screening responsibility allocation:**
-- **Contractors employed via agency**: Organization verifies screening was performed by agency at required level (obtain written confirmation and screening report)
-- **Direct contractors**: Organization performs screening directly, same process as employees
-- **Vendor personnel with site/system access**: Vendor must confirm screening at required level; organization retains right to audit vendor screening records
+- **Contractors employed via agency**: Organisation verifies screening was performed by agency at required level (obtain written confirmation and screening report)
+- **Direct contractors**: Organisation performs screening directly, same process as employees
+- **Vendor personnel with site/system access**: Vendor must confirm screening at required level; organisation retains right to audit vendor screening records
 
 ### Screening Exemptions
 
@@ -421,9 +431,9 @@ In exceptional cases, screening may be delayed or modified. All exemptions requi
 - Compliant: "Yes"
 
 **Q17: Screening_Results_Access_Controlled**
-- Question: Is access to screening results restricted to authorized personnel only?
+- Question: Is access to screening results restricted to authorised personnel only?
 - Dropdown: Yes / No
-- Authorized Personnel: HR Manager, CISO, DPO, Legal (need-to-know basis)
+- Authorised Personnel: HR Manager, CISO, DPO, Legal (need-to-know basis)
 - Compliant: "Yes"
 
 **Q18: Screening_Failure_Escalation_Defined**
@@ -435,7 +445,7 @@ In exceptional cases, screening may be delayed or modified. All exemptions requi
 **Provider Management (Q19–Q22):**
 
 **Q19: Third_Party_Screening_Provider_Used**
-- Question: Does [Organization] use a third-party screening service provider?
+- Question: Does [Organisation] use a third-party screening service provider?
 - Dropdown: Yes / No
 
 **Q20: Provider_Contract_Includes_DPA**
@@ -659,7 +669,7 @@ For roles where the standard tier-level mapping does not apply (e.g., a Tier 3 r
 
 ### Sheet 6: Continuous_Screening_Assessment
 
-**Purpose**: Track the re-screening / periodic screening program. ISO 27001:2022 A.6.1 requires screening "continuously" — this sheet verifies the organization has a functioning re-screening program.
+**Purpose**: Track the re-screening / periodic screening program. ISO 27001:2022 A.6.1 requires screening "continuously" — this sheet verifies the organisation has a functioning re-screening program.
 
 **Structure**: 150 data rows (rows 5–154), 14 columns (A–N).
 
@@ -694,7 +704,7 @@ For roles where the standard tier-level mapping does not apply (e.g., a Tier 3 r
 - Security incident involving the individual
 - Suspicious activity flagged by monitoring systems
 - Individual returns from extended leave (> 6 months)
-- Organizational restructuring placing individual in new reporting line
+- Organisational restructuring placing individual in new reporting line
 
 **Auto-Calculate Formulas:**
 
@@ -741,14 +751,14 @@ For roles where the standard tier-level mapping does not apply (e.g., a Tier 3 r
 
 ### Sheet 7: Legal_Compliance_Review
 
-**Purpose**: Verify that [Organization]'s screening activities comply with Swiss FADP and EU GDPR. This is a critical sheet — screening involves processing sensitive personal data (criminal records under FADP Art. 4(c)(5)), which carries specific legal obligations.
+**Purpose**: Verify that [Organisation]'s screening activities comply with Swiss FADP and EU GDPR. This is a critical sheet — screening involves processing sensitive personal data (criminal records under FADP Art. 4(c)(5)), which carries specific legal obligations.
 
-**Structure**: Single-column question-answer format (A = Question, B = Answer). 30 questions organized into 5 legal compliance domains.
+**Structure**: Single-column question-answer format (A = Question, B = Answer). 30 questions organised into 5 legal compliance domains.
 
 **Domain A: Consent Management (Q1–Q7)**
 
 **Q1: Consent_Framework_Exists**
-- Question: Does [Organization] have a documented consent framework for screening?
+- Question: Does [Organisation] have a documented consent framework for screening?
 - Dropdown: Yes / No
 - Legal Basis: FADP Art. 6(7) — explicit consent required for processing sensitive personal data
 - Compliant: "Yes"
@@ -803,7 +813,7 @@ For roles where the standard tier-level mapping does not apply (e.g., a Tier 3 r
 - Question: Does the notice cover all required elements?
 - Dropdown: Yes / Partial / No
 - Required Elements (per FADP Art. 19/25):
-  - Identity of the controller ([Organization])
+  - Identity of the controller ([Organisation])
   - Purpose of processing (security screening)
   - Types of data collected (identity, references, criminal records as applicable)
   - Legal basis for processing (legitimate interest / consent)
@@ -1136,7 +1146,7 @@ Auto-calculated summary block:
 
 ## Evidence Collection Guide
 
-### Evidence Organization
+### Evidence Organisation
 
 **Folder Structure:**
 ```
@@ -1226,10 +1236,6 @@ This assessment (.S3 — Screening & Vetting) is part of the stacked control fra
 - Screening consent provisions must be consistent with contract terms
 - Re-screening obligations should be documented in contracts
 
-**Output to .S5 (Governance Dashboard):**
-- All screening gaps flow to consolidated dashboard
-- Screening compliance metrics included in overall governance score
-- Legal compliance status is a dashboard KPI
 
 **Critical Cross-Reference:**
 - .S3 Sheet 3 (Screening Level Matrix) directly references .S2 Role Inventory to determine required screening levels
@@ -1242,7 +1248,7 @@ This assessment (.S3 — Screening & Vetting) is part of the stacked control fra
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Trust, but verify."*
+— Ronald Reagan
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -78,12 +78,12 @@ This document provides a technical deep-dive into data masking implementation pa
 
 This document does NOT:
 
-- Define [Organization]'s approved or prohibited masking techniques (see ISMS-POL-A.8.11 Section 2.2 and Annex A)
+- Define [Organisation]'s approved or prohibited masking techniques (see ISMS-POL-A.8.11 Section 2.2 and Annex A)
 - Establish mandatory implementation requirements (see ISMS-POL-A.8.11)
 - Create compliance obligations or audit criteria (see ISMS-POL-A.8.11)
 - Replace ISMS-POL-A.8.11 policy requirements
-- Mandate specific tool vendors or products (technology selection based on [Organization]'s risk assessment)
-- Establish data classification schemes (see [Organization]'s Information Classification Policy per A.5.12)
+- Mandate specific tool vendors or products (technology selection based on [Organisation]'s risk assessment)
+- Establish data classification schemes (see [Organisation]'s Information Classification Policy per A.5.12)
 - Define roles and responsibilities (see ISMS-POL-A.8.11 Section 3.1)
 
 ## Relationship to ISMS
@@ -92,9 +92,9 @@ This document is a **non-binding technical reference**. All data masking control
 
 Implementation decisions are documented through ISMS-IMP-A.8.11 assessment workbooks based on risk assessment, operational context, data classification, and regulatory requirements.
 
-## Content Organization
+## Content Organisation
 
-This reference organizes masking guidance by:
+This reference organises masking guidance by:
 
 - **Section 2**: Detailed masking technique specifications (algorithms, parameters, configuration)
 - **Section 3**: Data discovery methodologies (how to find sensitive data)
@@ -410,7 +410,7 @@ def mask_phone(phone):
 
 ```
 Context: Customer detail screen → Show partial credit card
-Context: Financial report export → Show full credit card (authorized users)
+Context: Financial report export → Show full credit card (authorised users)
 Context: Email notification → Show masked credit card (all users)
 
 Configuration:
@@ -443,13 +443,13 @@ Configuration:
 **Partial Result Masking**:
 
 ```sql
--- Example: Show only aggregated/summary data to unauthorized users
+-- Example: Show only aggregated/summary data to unauthorised users
 
--- Authorized user query:
+-- Authorised user query:
 SELECT customer_name, salary FROM employees;
 -- Returns: Individual salaries
 
--- Unauthorized user same query:
+-- Unauthorised user same query:
 SELECT 'REDACTED' AS customer_name, 
        CASE 
          WHEN COUNT(*) < 10 THEN 'N/A'  -- Prevent small group identification
@@ -519,9 +519,9 @@ class TokenVault:
         
         return token
     
-    def detokenize(self, token, requester_authorized=True):
-        if not requester_authorized:
-            raise PermissionError("Unauthorized detokenization")
+    def detokenize(self, token, requester_authorised=True):
+        if not requester_authorised:
+            raise PermissionError("Unauthorised detokenization")
         
         if token not in self.token_to_value:
             raise ValueError("Invalid token")
@@ -535,7 +535,7 @@ class TokenVault:
 **Token Vault Security**:
 
 - Encryption: Vault data encrypted with strong encryption (AES-256)
-- Access control: Detokenization requires explicit authorization
+- Access control: Detokenization requires explicit authorisation
 - Audit logging: All tokenization and detokenization logged
 - Key management: Vault encryption keys managed per A.8.24 Cryptography Policy
 - Backup: Vault backed up separately with appropriate security
@@ -591,7 +591,7 @@ def pseudonymize(identifier, secret_key):
 
 # Example
 original_id = "john.smith@example.com"
-secret_key = "organization-specific-secret-key"  # Stored separately, per A.8.24
+secret_key = "organisation-specific-secret-key"  # Stored separately, per A.8.24
 
 pseudonym = pseudonymize(original_id, secret_key)
 # Result: "8d3f9c2a1b4e5f6d7c8e9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c"
@@ -620,7 +620,7 @@ def pseudonymize_reversible(identifier, key):
     return pseudonym.decode()
 
 def de_pseudonymize(pseudonym, key):
-    """Re-identify from pseudonym (requires key and authorization)"""
+    """Re-identify from pseudonym (requires key and authorisation)"""
     cipher = Fernet(key)
     original = cipher.decrypt(pseudonym.encode())
     return original.decode()
@@ -632,7 +632,7 @@ original_name = "John Smith"
 pseudonym = pseudonymize_reversible(original_name, key)
 # Result: "gAAAAABh3f2k..." (Fernet token)
 
-# Re-identification (when authorized)
+# Re-identification (when authorised)
 recovered = de_pseudonymize(pseudonym, key)
 # Result: "John Smith"
 ```
@@ -640,7 +640,7 @@ recovered = de_pseudonymize(pseudonym, key)
 **GDPR Compliance Considerations**:
 
 - Pseudonymization key stored separately from pseudonymized data (different system, access control)
-- Re-identification requires explicit authorization beyond data access
+- Re-identification requires explicit authorisation beyond data access
 - Key rotation: Plan for periodic key rotation (requires re-pseudonymization)
 - Audit: Log all re-identification attempts
 
@@ -851,7 +851,7 @@ import spacy
 nlp = spacy.load("en_core_web_sm")
 
 def detect_pii_entities(text_data):
-    """Use NER to detect person names, organizations, locations"""
+    """Use NER to detect person names, organisations, locations"""
     doc = nlp(text_data)
     
     entities = {
@@ -1012,7 +1012,7 @@ Q1: Is data utility required in masked environment?
 Q2: Must masking be reversible?
     YES → Q2a: Who needs to reverse?
 
-        - Authorized users only → Use: Tokenization or Pseudonymization
+        - Authorised users only → Use: Tokenization or Pseudonymization
         - Application needs referential integrity → Use: Tokenization
 
     NO → Continue
@@ -1150,7 +1150,7 @@ Solutions:
 - [ ] Primary Account Number (PAN) masked when displayed (max 6 first + 4 last digits)
 - [ ] PAN unreadable in non-production environments (masking, truncation, or tokenization)
 - [ ] CVV2/CVC2 never stored (masking not applicable - must not store)
-- [ ] Masking solution prevents unauthorized access to unmasked PAN
+- [ ] Masking solution prevents unauthorised access to unmasked PAN
 - [ ] Documented masking procedures and standards
 - [ ] Annual validation of masking effectiveness
 
@@ -1158,7 +1158,7 @@ Solutions:
 
 - [ ] Pseudonymization key stored separately from pseudonymized data
 - [ ] Re-identification requires additional information not available to data processor
-- [ ] Technical and organizational measures prevent unauthorized re-identification
+- [ ] Technical and organisational measures prevent unauthorised re-identification
 - [ ] Pseudonymization documented in data protection impact assessment (DPIA)
 - [ ] Regular review of pseudonymization effectiveness
 - [ ] Data subjects informed about pseudonymization where applicable

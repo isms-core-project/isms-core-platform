@@ -7,156 +7,155 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Labelling Procedures and Standards |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.12-13.S2-TG |
+| **Related Policy** | ISMS-POL-A.5.12-13 (Classification and Labelling) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.13 (Labelling of Information) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.13 Labelling of Information |
-| **Parent Policy** | ISMS-POL-A.5.12-13 - Information Classification and Labelling |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.12-13.S2-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.12-13 (Classification and Labelling)
+- ISMS-IMP-A.5.12-13.S1 (Classification Scheme Definition)
+- ISMS-IMP-A.5.12-13.S3 (Asset Classification Inventory)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a512_13_2_labelling_procedures.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.12-13.S2` |
-| **Output Filename** | `ISMS-IMP-A.5.12-13.S2_Labelling_Procedures_and_Standards_YYYYMMDD.xlsx` |
-| **Workbook Title** | Labelling Procedures and Standards |
-| **Total Sheets** | 7 (7 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #1F4E79 | 1F4E79 | Custom |
-| #2E75B6 | 2E75B6 | Custom |
-| #69DB7C | 69DB7C | Custom |
-| #74C0FC | 74C0FC | Custom |
-| #D6DCE4 | D6DCE4 | Silver (Neutral) |
-| #FF6B6B | FF6B6B | Custom |
-| #FFA94D | FFA94D | Custom |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Labelling_Standards
+## Generator Alignment Reference
 
-### Columns
+> Auto-generated from `generate_a512_13_2_labelling_procedures.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-| Col | Header |
-|-----|--------|
-| A | Classification Level |
-| B | Display Text |
-| C | Color (Hex) |
-| D | Header Format |
-| E | Footer Format |
-| F | Watermark Text |
-| G | Banner Style |
-| H | Icon/Symbol |
-| I | Font Requirements |
+**Document ID:** `ISMS-IMP-A.5.12-13.S2`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 3: Digital_Labelling
+### Sheet Structure
 
-**Data Rows:** 26 (rows 5–30)
+| # | Sheet Name |
+|---|-----------|
+| 1 | Labelling Standards |
+| 2 | Digital Labelling |
+| 3 | Physical Labelling |
+| 4 | Automation Tools |
+| 5 | Evidence Register |
+| 6 | Summary Dashboard |
+| 7 | Approval Sign-Off |
+| 8 | Instructions & Legend |
 
-### Columns
+### Color Palette
 
-| Col | Header |
-|-----|--------|
-| A | Asset Type |
-| B | Labelling Method |
-| C | Metadata Fields |
-| D | Automation |
-| E | Validation |
-| F | Responsibility |
-| G | Status |
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #69DB7C | Custom |
+| #74C0FC | Custom |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FF6B6B | Custom |
+| #FFA94D | Custom |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
----
+### Column Headers (All Sheets)
 
-## Sheet 4: Physical_Labelling
+| # | Column Header |
+|---|--------------|
+| 1 | Classification Level |
+| 2 | Display Text |
+| 3 | Colour (Hex) |
+| 4 | Header Format |
+| 5 | Footer Format |
+| 6 | Watermark Text |
+| 7 | Banner Style |
+| 8 | Icon/Symbol |
+| 9 | Font Requirements |
+| 10 | Asset Type |
+| 11 | Labelling Method |
+| 12 | Metadata Fields |
+| 13 | Automation |
+| 14 | Validation |
+| 15 | Responsibility |
+| 16 | Status |
+| 17 | Label Location |
+| 18 | Label Format |
+| 19 | Durability |
+| 20 | Responsible Party |
+| 21 | Tool/Solution |
+| 22 | Vendor |
+| 23 | Scope/Coverage |
+| 24 | Key Features |
+| 25 | Integration Points |
+| 26 | Licence Type |
+| 27 | Implementation Status |
+| 28 | Owner |
+| 29 | Evidence ID |
+| 30 | Assessment Area |
+| 31 | Evidence Type |
+| 32 | Description |
+| 33 | Location / Path |
+| 34 | Date Collected |
+| 35 | Collected By |
+| 36 | Verification Status |
+| 37 | Total Items |
+| 38 | Compliant |
+| 39 | Partial |
+| 40 | Non-Compliant |
+| 41 | N/A |
+| 42 | Compliance % |
+| 43 | Metric |
+| 44 | Value |
+| 45 | Category |
+| 46 | Finding |
+| 47 | Count |
+| 48 | Severity |
+| 49 | Action Required |
 
-**Data Rows:** 26 (rows 5–30)
+### Data Validation Values
 
-### Columns
+All dropdown/list values used across sheets:
 
-| Col | Header |
-|-----|--------|
-| A | Asset Type |
-| B | Labelling Method |
-| C | Label Location |
-| D | Label Format |
-| E | Durability |
-| F | Responsible Party |
-| G | Status |
+```
+Implemented, In Progress, Not Implemented, N/A, Deployed, Pilot, Evaluating
+Planned, Policy Document, Process Record, System Screenshot
+Configuration Export, Audit Log, Training Record, Test Result, Risk Assessment
+Meeting Minutes, Other, ✅ Verified, ⚠️ Pending, ❌ Not Verified, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
----
-
-## Sheet 5: Automation_Tools
-
-**Data Rows:** 16 (rows 5–20)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Tool/Solution |
-| B | Vendor |
-| C | Scope/Coverage |
-| D | Key Features |
-| E | Integration Points |
-| F | License Type |
-| G | Implementation Status |
-| H | Owner |
-
----
-
-## Sheet 6: Evidence_Register
-
-**Data Rows:** 26 (rows 5–30)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Description |
-| C | Evidence Type |
-| D | Related Procedure |
-| E | Location |
-| F | Collected Date |
-| G | Collected By |
-| H | Verification Status |
-
----
-
-## Sheet 7: Approval
-
-**Data Rows:** 8 (rows 13–20)
+**Extracted:** 8 sheets, 49 columns, 29 validation values, 13 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

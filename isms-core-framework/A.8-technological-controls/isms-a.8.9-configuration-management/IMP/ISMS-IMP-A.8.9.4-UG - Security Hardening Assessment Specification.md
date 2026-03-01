@@ -8,32 +8,40 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Security Hardening Assessment Specification |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.9.4-UG |
+| **Related Policy** | ISMS-POL-A.8.9 (Configuration Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.9 (Configuration Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Security Hardening and Compliance - Hardening Standards Selection, Implementation, Compliance Verification, Gap Remediation |
-| **Related Policy** | ISMS-POL-A.8.9, Section 2.5 (Security Hardening & Compliance) |
-| **Purpose** | Assess implementation of security hardening standards (CIS Benchmarks, DISA STIGs, vendor guides), compliance verification processes, gap analysis, and remediation tracking across all asset types |
-| **Target Audience** | Security Architect, Security Engineers, System Administrators, Configuration Manager, Compliance Officers, IT Operations, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Security Hardening assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
----
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-**Audience:** Security assessors, Control owners, Compliance officers
+**Related Documents**:
+
+- ISMS-POL-A.8.9 (Configuration Management)
+- ISMS-IMP-A.8.9.1 (Baseline Configuration Assessment Specification)
+- ISMS-IMP-A.8.9.2 (Change Control Assessment Specification)
+- ISMS-IMP-A.8.9.3 (Configuration Monitoring Assessment Specification)
 
 ---
 
 ## Document Purpose
 
-This specification defines the assessment methodology for evaluating [Organization]'s 
+This specification defines the assessment methodology for evaluating [Organisation]'s 
 compliance with security hardening standards across all in-scope information assets. 
 Security hardening represents the systematic reduction of attack surface through the 
 implementation of security-focused configuration controls.
@@ -98,11 +106,29 @@ framework:
 
 ---
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Hardening Standard Register | Catalogue applicable hardening standards by asset type |
+| 3 | Asset Type Hardening Matrix | Map hardening standards to asset types |
+| 4 | Asset Hardening Assessment | Assess hardening control implementation per asset |
+| 5 | Control Compliance Detail | Document detailed compliance status for each hardening control |
+| 6 | Exception Management | Manage hardening exceptions and risk acceptance |
+| 7 | Remediation Tracking | Track remediation of identified hardening gaps |
+| 8 | Gap Prioritization | Prioritise hardening gaps by risk and asset criticality |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
+
+---
+
 ## Assessment Overview
 
 ### Assessment Objective
 
-Evaluate [Organization]'s security hardening posture by:
+Evaluate [Organisation]'s security hardening posture by:
 
 1. **Standard Applicability**: Identify which hardening standards apply to which assets
 2. **Control Compliance**: Assess implementation of required hardening controls
@@ -123,22 +149,22 @@ All information assets within the ISMS scope that are subject to hardening stand
 - IoT/OT systems (industrial control systems, embedded devices)
 
 **Hardening Standards:**
-[Organization] defines applicable hardening standards through risk assessment. Common 
+[Organisation] defines applicable hardening standards through risk assessment. Common 
 standard categories include:
 
 - Industry benchmarks (CIS Benchmarks, DISA STIGs, etc.)
 - Regulatory requirements (PCI-DSS, HIPAA Technical Safeguards, etc.)
 - Vendor security baselines (manufacturer recommended practices)
 - Framework controls (NIST 800-53, ISO 27002 technical controls)
-- Custom organizational standards (developed for specific contexts)
+- Custom organisational standards (developed for specific contexts)
 
 **CRITICAL - Generic Framework:**
-This assessment does NOT prescribe specific hardening standards. [Organization] determines 
+This assessment does NOT prescribe specific hardening standards. [Organisation] determines 
 applicable standards during risk assessment based on:
 
 - Asset types in scope
 - Regulatory requirements
-- Industry best practices relevant to [Organization]'s sector
+- Industry best practices relevant to [Organisation]'s sector
 - Threat landscape and risk appetite
 - Technical feasibility and operational requirements
 
@@ -148,7 +174,7 @@ applicable standards during risk assessment based on:
 
 **Phase 1: Standard Identification (Implementer Perspective)**
 
-- Document all hardening standards applicable to [Organization]
+- Document all hardening standards applicable to [Organisation]
 - Map standards to asset types (which standards apply to which assets)
 - Identify control categories within each standard
 - Establish compliance targets (typically ≥95% for non-critical, 100% for critical)
@@ -239,7 +265,7 @@ Guidance on determining applicable standards:
 - Industry-standard frameworks (CIS, DISA STIG, NIST 800-53)
 - Regulatory requirements (PCI-DSS, HIPAA, GDPR technical controls)
 - Vendor security baselines (manufacturer recommended practices)
-- Custom standards developed for [Organization]'s specific context
+- Custom standards developed for [Organisation]'s specific context
 
 **Section 5: Implementation Status Definitions**
 
@@ -296,7 +322,7 @@ Guidance on determining applicable standards:
 ## Sheet 2: Hardening_Standard_Register
 
 ### Purpose
-Document all security hardening standards applicable within [Organization]'s ISMS scope.
+Document all security hardening standards applicable within [Organisation]'s ISMS scope.
 
 ### Structure
 
@@ -308,7 +334,7 @@ Document all security hardening standards applicable within [Organization]'s ISM
 | Standard_Name | Name of hardening standard | Text | Free text | CIS Benchmark - Windows Server 2022 |
 | Standard_Category | Category of standard | Dropdown | See below | Industry Benchmark |
 | Standard_Version | Version of standard | Text | Free text | v1.0.0 |
-| Issuing_Authority | Organization that publishes standard | Text | Free text | Center for Internet Security |
+| Issuing_Authority | Organisation that publishes standard | Text | Free text | Center for Internet Security |
 | Applicability_Scope | Which asset types this applies to | Text | Free text | Windows Server 2019/2022 |
 | Compliance_Level | Required compliance level | Dropdown | Level 1, Level 2, Custom | Level 1 |
 | Mandatory_Optional | Is this standard mandatory | Dropdown | Mandatory, Optional | Mandatory |
@@ -330,7 +356,7 @@ Document all security hardening standards applicable within [Organization]'s ISM
 - Regulatory Requirement (PCI-DSS, HIPAA, GDPR technical)
 - Vendor Baseline (Microsoft, Cisco, AWS security baselines)
 - Framework Control (ISO 27002, NIST 800-53 technical controls)
-- Custom Organizational Standard
+- Custom Organisational Standard
 
 **Data Validation:**
 
@@ -360,7 +386,7 @@ Document all security hardening standards applicable within [Organization]'s ISM
 ### Usage Notes
 
 **Purpose (Implementer Perspective):**
-Create definitive list of all hardening standards that [Organization] has determined 
+Create definitive list of all hardening standards that [Organisation] has determined 
 are applicable based on:
 
 - Asset types in scope
@@ -373,12 +399,12 @@ are applicable based on:
 Provides traceability for why specific hardening standards are in scope. Auditor can 
 verify:
 
-- Standards are appropriate for [Organization]'s context
+- Standards are appropriate for [Organisation]'s context
 - Mandatory standards are actually assessed
 - Review frequency is reasonable and followed
 - Deprecated standards are not still being used
 
-**Typical Row Count**: 15-30 standards (varies by organization complexity)
+**Typical Row Count**: 15-30 standards (varies by organisation complexity)
 
 **Key Considerations:**
 
@@ -503,7 +529,7 @@ Provides clear mapping of "which standards do I need to assess for this asset ty
 Enables systematic assessment planning and resource allocation.
 
 **Purpose (Auditor Perspective):**
-Demonstrates that [Organization] has systematically considered hardening requirements 
+Demonstrates that [Organisation] has systematically considered hardening requirements 
 for each asset category. Provides basis for sampling during audit.
 
 **Typical Matrix Size**: 43 rows (asset types) × 15-30 columns (standards)
@@ -647,7 +673,7 @@ Provides evidence that:
   - Not Applicable excluded from denominator
   
 **Sampling for Assessment:**
-Organizations may not assess every control on every asset every cycle. Risk-based 
+Organisations may not assess every control on every asset every cycle. Risk-based 
 sampling approach:
 
 - **Critical Assets**: Assess 100% of controls every cycle
@@ -1015,7 +1041,7 @@ Demonstrates that:
 **Best Practice:**
 Exceptions should be the exception, not the rule. Target: <5% of applicable controls 
 should be exceptions. If exception rate is higher, reassess whether hardening standards 
-are appropriate for [Organization]'s context.
+are appropriate for [Organisation]'s context.
 
 **Integration Points:**
 
@@ -1250,7 +1276,7 @@ Set aggressive but realistic targets for remediation:
 - Medium gaps: 30 days
 - Low gaps: 90 days
 
-Adjust based on [Organization]'s operational constraints, but maintain pressure to close 
+Adjust based on [Organisation]'s operational constraints, but maintain pressure to close 
 gaps quickly.
 
 ---
@@ -1748,7 +1774,7 @@ Document formal approval of hardening assessment by stakeholders.
 
 **Section 2: Key Findings**
 
-Narrative section (free text) summarizing:
+Narrative section (free text) summarising:
 
 - Overall hardening posture assessment
 - Significant compliance achievements
@@ -2042,32 +2068,6 @@ Automated drift detection (A.8.9.3) should trigger hardening assessment (A.8.9.4
 - Drift affects multiple assets (systemic issue)
 - Drift is recurring (indicates baseline problem)
 
-### Integration with A.8.9.5 (Compliance Dashboard)
-
-**Data Flow:**
-
-- A.8.9.4 feeds compliance data to A.8.9.5
-- Overall Compliance % from Sheet 8 → A.8.9.5 Dashboard
-- High-Risk Gaps → A.8.9.5 Risk Summary
-- Exception metrics → A.8.9.5 Exception Analysis
-
-**Linkage:**
-```
-A.8.9.5 Dashboard references:
-  ISMS_A_8_9_4_Security_Hardening_Assessment_YYYYMMDD.xlsx!Compliance_Dashboard
-  
-Pulls metrics:
-
-  - Overall Compliance %
-  - High-Risk Gap count
-  - Active Exception count
-  - Remediation progress
-
-```
-
-**Integration Point:**
-A.8.9.5 Compliance Dashboard aggregates A.8.9.4 hardening metrics with other 
-configuration management metrics for executive-level view.
 
 ### Integration with A.5.7 (Threat Intelligence)
 
@@ -2278,7 +2278,7 @@ ensure standards address current threat landscape.
 
 - Approval_Sign_Off complete with signatures
 - Assessment report distributed
-- Remediation activities authorized
+- Remediation activities authorised
 - Next assessment scheduled
 
 ### Phase 5: Remediation (Ongoing)
@@ -2380,7 +2380,7 @@ Configuration management team, system administrators, IT operations, security en
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Hardening is not about removing functionality; it is about removing attack surface."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

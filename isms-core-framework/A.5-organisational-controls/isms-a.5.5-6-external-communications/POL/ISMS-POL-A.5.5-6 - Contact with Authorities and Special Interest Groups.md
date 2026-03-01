@@ -42,21 +42,19 @@
 - ISMS-IMP-A.5.5-6.S1-UG/TG (Authority Contacts Register)
 - ISMS-IMP-A.5.5-6.S2-UG/TG (Special Interest Groups Register)
 - ISMS-IMP-A.5.5-6.S3-UG/TG (External Communication Procedures)
-- ISMS-IMP-A.5.5-6.S4-UG/TG (Compliance Dashboard)
-- ISMS-IMP-A.5.5-6.S5-UG/TG (Consolidation Dashboard)
 - ISO/IEC 27001:2022 Controls A.5.5, A.5.6
 
 ---
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for maintaining appropriate contacts with relevant authorities, regulatory bodies, and special interest groups to ensure timely exchange of information security intelligence, regulatory compliance, and effective incident response.
+This policy establishes [Organisation]'s requirements for maintaining appropriate contacts with relevant authorities, regulatory bodies, and special interest groups to ensure timely exchange of information security intelligence, regulatory compliance, and effective incident response.
 
 **Scope**: This policy applies to all communications with external authorities, law enforcement, regulatory bodies, and information security special interest groups regarding security matters.
 
-**Purpose**: Define organizational requirements for external authority contacts and security community engagement. This policy establishes WHAT contacts are required and WHO is authorized to engage. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.5-6 (UG/TG variants).
+**Purpose**: Define organisational requirements for external authority contacts and security community engagement. This policy establishes WHAT contacts are required and WHO is authorised to engage. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.5-6 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, NIS2, DORA) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, NIS2, DORA) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -80,12 +78,12 @@ This policy establishes [Organization]'s requirements for maintaining appropriat
 - Participate in industry security improvement initiatives
 
 **Control Type**: Preventive, Detective
-**Control Category**: Organizational
+**Control Category**: Organisational
 
 **This Policy Addresses**:
 
 - Required authority contacts and notification obligations
-- Authorized communication channels and spokespersons
+- Authorised communication channels and spokespersons
 - Special interest group participation requirements
 - Information sharing protocols and restrictions
 - Response to authority inquiries
@@ -95,7 +93,7 @@ This policy establishes [Organization]'s requirements for maintaining appropriat
 This policy:
 
 - **Defines** mandatory authority contacts and notification requirements
-- **Establishes** authorized spokespersons for external communications
+- **Establishes** authorised spokespersons for external communications
 - **Specifies** special interest group participation expectations
 - **References** applicable regulatory requirements per ISMS-POL-00
 
@@ -118,15 +116,15 @@ This policy does NOT:
 
 **This policy applies to**:
 
-- All communications with external authorities regarding [Organization] security matters
+- All communications with external authorities regarding [Organisation] security matters
 - All law enforcement and regulatory body interactions
 - All special interest group and professional association participation
-- All personnel authorized to communicate externally on security matters
+- All personnel authorised to communicate externally on security matters
 
 **Out of Scope**:
 
 - Routine business communications unrelated to security
-- Personal professional memberships (unless representing [Organization])
+- Personal professional memberships (unless representing [Organisation])
 - Internal security communications (covered by other policies)
 
 ## Regulatory Applicability
@@ -161,7 +159,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - TLP (Traffic Light Protocol) for information sharing
 - STIX/TAXII standards for threat intelligence exchange
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent notification requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent notification requirements apply where multiple regulations overlap.
 
 ---
 
@@ -171,7 +169,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ### Mandatory Authority Contacts
 
-[Organization] SHALL maintain active contacts with the following authorities:
+[Organisation] SHALL maintain active contacts with the following authorities:
 
 **Law Enforcement & Cyber Authorities**:
 
@@ -221,7 +219,7 @@ Notification obligations, deadlines, and thresholds are determined by applicable
 
 ### Communication Protocols
 
-**Authorized Spokespersons**:
+**Authorised Spokespersons**:
 
 | Topic | Primary Spokesperson | Backup |
 |-------|---------------------|--------|
@@ -232,7 +230,7 @@ Notification obligations, deadlines, and thresholds are determined by applicable
 
 **Communication Restrictions**:
 
-- No employee shall contact authorities regarding [Organization] security matters without authorization
+- No employee shall contact authorities regarding [Organisation] security matters without authorisation
 - All authority communications SHALL be documented
 - Legal Counsel SHALL review communications involving potential legal liability
 - Classified or confidential information requires approval before disclosure
@@ -248,7 +246,7 @@ Notification obligations, deadlines, and thresholds are determined by applicable
 
 ### Required Memberships
 
-[Organization] SHALL maintain active participation in relevant security communities:
+[Organisation] SHALL maintain active participation in relevant security communities:
 
 **Industry-Specific Groups**:
 
@@ -295,9 +293,9 @@ At minimum, "active participation" means: (1) membership/subscription is current
 
 **Requires Additional Approval**:
 
-- Disclosing [Organization] incident details
+- Disclosing [Organisation] incident details
 - Participating in joint operations
-- Public speaking on [Organization] security practices
+- Public speaking on [Organisation] security practices
 - Media interviews regarding security matters
 
 ---
@@ -319,7 +317,7 @@ At minimum, "active participation" means: (1) membership/subscription is current
 
 - **Contact Register Owner**: CISO
 - **Update Frequency**: Quarterly verification of contact details
-- **Access**: Restricted to authorized personnel
+- **Access**: Restricted to authorised personnel
 - **Backup**: Offline contact list maintained for emergencies
 
 ## Escalation Path
@@ -366,13 +364,13 @@ At minimum, "active participation" means: (1) membership/subscription is current
 
 - Failure to maintain required authority contacts
 - Non-compliance with mandatory notification obligations
-- Unauthorized disclosure of security information
+- Unauthorised disclosure of security information
 
 All exceptions SHALL be recorded in the Exception Register (ISMS-REG-EXCEPTIONS).
 
 ## Corrective Action Linkage
 
-Nonconformities related to this policy (e.g., missed notifications, unauthorized communications, contact register gaps) SHALL be recorded and managed through the ISMS corrective action process (Clause 10.2) with root cause analysis and tracked remediation.
+Nonconformities related to this policy (e.g., missed notifications, unauthorised communications, contact register gaps) SHALL be recorded and managed through the ISMS corrective action process (Clause 10.2) with root cause analysis and tracked remediation.
 
 ---
 
@@ -380,7 +378,7 @@ Nonconformities related to this policy (e.g., missed notifications, unauthorized
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
@@ -390,7 +388,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Controls A.5.5 and A.5.6 applicability justified in [Organization]'s SoA
+- Controls A.5.5 and A.5.6 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 
 **Related Controls**:
@@ -422,7 +420,7 @@ Required Stage 1 evidence includes:
 - ✅ Evidence of communication to relevant roles
 - ✅ Mandatory authority contacts defined (Authority Contact Requirements)
 - ✅ Notification obligations specified with timeframes (Notification Obligations)
-- ✅ Authorized spokesperson matrix documented (Communication Protocols)
+- ✅ Authorised spokesperson matrix documented (Communication Protocols)
 - ✅ Special interest group participation requirements defined (Special Interest Group Participation)
 - ✅ Roles and responsibilities assigned (Roles and Responsibilities)
 
@@ -449,10 +447,10 @@ Where no notifiable incidents occurred in the audit period, evidence may include
 
 | Term | Definition |
 |------|------------|
-| **Relevant Authority** | Any government body, law enforcement agency, or regulatory authority with jurisdiction over [Organization]'s operations or data processing activities |
-| **Special Interest Group** | Professional associations, industry forums, information sharing organizations, and security communities focused on cybersecurity topics |
+| **Relevant Authority** | Any government body, law enforcement agency, or regulatory authority with jurisdiction over [Organisation]'s operations or data processing activities |
+| **Special Interest Group** | Professional associations, industry forums, information sharing organisations, and security communities focused on cybersecurity topics |
 | **Traffic Light Protocol (TLP)** | A standardized system for classifying sensitive information and controlling its distribution |
-| **ISAC/ISAO** | Information Sharing and Analysis Center/Organization - sector-specific groups for sharing threat intelligence |
+| **ISAC/ISAO** | Information Sharing and Analysis Center/Organisation - sector-specific groups for sharing threat intelligence |
 | **Mandatory Notification** | A legally required report to authorities triggered by specific events (e.g., data breach, cyber incident) |
 
 ---
@@ -473,4 +471,4 @@ Where no notifiable incidents occurred in the audit period, evidence may include
 
 *This policy establishes requirements for external communications with authorities and special interest groups. Implementation procedures are documented in ISMS-IMP-A.5.5-6 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

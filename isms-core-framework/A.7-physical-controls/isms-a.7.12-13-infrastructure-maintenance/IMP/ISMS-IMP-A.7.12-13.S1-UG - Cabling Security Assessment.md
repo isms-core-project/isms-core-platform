@@ -8,26 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Cabling Security Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.12-13.S1-UG |
+| **Related Policy** | ISMS-POL-A.7.12-13 (Infrastructure Maintenance) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.12 (Cabling Security) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Cabling Security - Power and Data Cable Protection, Segregation, Documentation |
-| **Related Policy** | ISMS-POL-A.7.12-13, Section 2.1 (Cabling Security) |
-| **Purpose** | Document cabling infrastructure, assess protection measures against policy requirements, and identify gaps |
-| **Target Audience** | Facilities Management, Network Engineers, IT Operations, Data Centre Managers, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Annual or After Major Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Cabling Security assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.12-13 (Infrastructure Maintenance)
+- ISMS-IMP-A.7.12-13.S2 (Equipment Maintenance Assessment)
+- ISMS-IMP-A.7.12-13.S3 (Maintenance Schedule Tracking)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.12-13.S1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Cable Pathways | Document and assess all cable routes and pathways |
+| 3 | Physical Protection | Evaluate physical protection for power and data cables |
+| 4 | Access Controls | Assess access controls to cable infrastructure |
+| 5 | Documentation | Verify cabling documentation completeness and accuracy |
+| 6 | Evidence Register | Store and reference evidence supporting assessments |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -103,7 +131,6 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 | **ISMS-IMP-A.7.12-13.S1** | **Cabling Security** | **Cable protection and documentation** |
 | ISMS-IMP-A.7.12-13.S2 | Equipment Maintenance | Equipment servicing and maintenance records |
 | ISMS-IMP-A.7.12-13.S3 | Maintenance Schedule | Preventive maintenance planning and tracking |
-| ISMS-IMP-A.7.12-13.S4 | Compliance Dashboard | Consolidated view across cabling and maintenance |
 
 This assessment (A.7.12-13.S1) focuses specifically on Control A.7.12 (Cabling Security). It complements assessments for A.7.13 (Equipment Maintenance).
 
@@ -200,7 +227,6 @@ This assessment has NO dependencies on other assessments - it can be completed i
 
 However, outputs from this assessment are INPUT to:
 
-- ISMS-IMP-A.7.12-13.S4 (Compliance Dashboard) - Consolidates cabling security with equipment maintenance
 - Network security assessments (physical network infrastructure verification)
 
 ---
@@ -905,7 +931,7 @@ Before submitting for Level 2 approval, complete this self-assessment:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"In IT, what is out of sight should not be out of mind."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

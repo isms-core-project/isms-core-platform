@@ -3,24 +3,39 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Controls A.6.7 (Remote Working) & A.6.8 (Information Security Event Reporting)
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Endpoint and Physical Security Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.7-8.S3-UG |
+| **Related Policy** | ISMS-POL-A.6.7-8 (Remote Working and Reporting) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.7 (Remote Working) & A.6.8 (Information Security Event Reporting) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Device Security, Encryption, Endpoint Protection, Physical Security |
-| **Related Policy** | ISMS-POL-A.6.7-8, Sections 2.2 (Physical Security) & 2.5 (Device Security) |
-| **Purpose** | Guide users through assessment of endpoint security controls and physical security for remote work |
-| **Target Audience** | IT Security Team, Endpoint Management Team, Desktop Support, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly (technical), Annual (physical) |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for endpoint and physical security assessment | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.7-8 (Remote Working and Reporting)
+- ISMS-IMP-A.6.7-8.S1 (Remote Work Authorisation Assessment)
+- ISMS-IMP-A.6.7-8.S2 (Technical Controls Assessment)
+- ISMS-IMP-A.6.7-8.S4 (Event Reporting Mechanisms Assessment)
 
 ---
 
@@ -31,6 +46,25 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 **Audience:** IT Security Team, Endpoint Management Team, Desktop Support
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Device Inventory | Catalogue all devices used for remote work |
+| 3 | Encryption Status | Verify full-disk and in-transit encryption compliance |
+| 4 | Endpoint Protection | Assess antivirus, EDR, and endpoint protection tools |
+| 5 | Patch Compliance | Track patch and update compliance for remote devices |
+| 6 | BYOD Assessment | Evaluate bring-your-own-device controls and policies |
+| 7 | Physical Security | Assess physical security of remote work locations |
+| 8 | Lost Stolen Procedures | Verify procedures for lost or stolen remote devices |
+| 9 | Gap Analysis | Identify endpoint security gaps against requirements |
+| 10 | Evidence Register | Store and reference evidence supporting assessments |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -294,7 +328,7 @@ Before starting this assessment, ensure:
 
 #### 4.9 Gap_Analysis Sheet
 
-**Purpose**: Consolidate all endpoint and physical security gaps.
+**Purpose**: Track all endpoint and physical security gaps in the Summary Dashboard.
 
 **Column Definitions**:
 
@@ -339,7 +373,6 @@ Before starting this assessment, ensure:
 |-------------------|----------|
 | MDM Reports | Device compliance reports, encryption status |
 | EDR/AV Reports | Protection status, threat detection reports |
-| Patch Reports | Patch compliance dashboards, missing patch lists |
 | Inventory Exports | Device inventory from MDM |
 | Policy Documents | BYOD policy, physical security guidelines |
 | Acknowledgments | Sample signed acknowledgments |
@@ -487,7 +520,7 @@ Before starting this assessment, ensure:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Security doesn't happen at headquarters; it happens where work happens."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

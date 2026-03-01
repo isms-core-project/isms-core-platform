@@ -69,7 +69,7 @@ This policy establishes [Organisation]'s requirements for physical infrastructur
 - Server rooms and telecommunications closets
 - Corporate offices (headquarters, regional, branch)
 - Colocation facilities (with shared responsibility model)
-- Remote and temporary facilities where organization-owned equipment is located
+- Remote and temporary facilities where organisation-owned equipment is located
 
 **Personnel**:
 
@@ -224,7 +224,7 @@ Facilities SHALL be classified into criticality tiers based on Business Impact A
 | 60-74% | Acceptable | Develop remediation plan within 30 days |
 | <60% | Non-Compliant | Immediate remediation required, CISO escalation |
 
-**Scoring Methodology**: Compliance score is calculated by ISMS-IMP-A.7.4-5-11-S4 (Facilities Compliance Dashboard) using weighted metrics:
+**Scoring Methodology**: Compliance score is calculated from the Summary Dashboard metrics tracked across the physical infrastructure assessment workbooks using weighted metrics:
 
 | Metric | Weight | Measurement Source |
 |--------|--------|-------------------|
@@ -251,7 +251,7 @@ Physical infrastructure security requirements may be waived through formal excep
 
 Physical infrastructure control deficiencies identified through assessments (Assessment Framework) SHALL be managed as follows:
 
-**1. Documentation**: Deficiencies SHALL be recorded in the Physical Security Gap Register (maintained by Security Operations Manager in ISMS-IMP-A.7.4-5-11-S4 Compliance Dashboard) with:
+**1. Documentation**: Deficiencies SHALL be recorded in the physical security assessment records (tracked via Summary Dashboard in each assessment workbook) with:
 - Gap description and affected control(s) (A.7.4, A.7.5, A.7.11)
 - Risk severity (Critical/High/Medium/Low per Incident Classification)
 - Assigned owner and target closure date
@@ -329,7 +329,6 @@ Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulator
 | ISMS-IMP-A.7.4-5-11-S1 | Physical Monitoring Assessment |
 | ISMS-IMP-A.7.4-5-11-S2 | Environmental Protection Assessment |
 | ISMS-IMP-A.7.4-5-11-S3 | Utility Resilience Assessment |
-| ISMS-IMP-A.7.4-5-11-S4 | Facilities Compliance Dashboard |
 
 ## External Standards
 
@@ -401,7 +400,6 @@ Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulator
 | Physical Monitoring Workbook | [GRC Platform] - Physical Security Module | Monthly automated collection via ISMS-IMP-A.7.4-5-11-S1 | Security Operations Manager | 3 years |
 | Environmental Protection Assessment | [GRC Platform] - Physical Security Module | Quarterly assessment via ISMS-IMP-A.7.4-5-11-S2 | Facilities Manager | 3 years |
 | Utility Resilience Assessment | [GRC Platform] - Physical Security Module | Quarterly testing via ISMS-IMP-A.7.4-5-11-S3 | Facilities Manager | 3 years |
-| Facilities Compliance Dashboard | [GRC Platform] - Compliance Module | Monthly automated calculation via ISMS-IMP-A.7.4-5-11-S4 | Security Operations Manager | 3 years |
 | Physical Security Gap Register | [GRC Platform] - Risk Register | Continuous tracking, monthly review | Security Operations Manager | Active + 2 years |
 | Access Control Logs | [Physical Access System] | Automated logging | Security Operations | 12 months |
 | CCTV Recordings | [Video Management System] | Continuous recording | Security Operations | 30-90 days per policy |
@@ -429,4 +427,4 @@ Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulator
 
 *This policy establishes [Organisation]'s requirements for physical infrastructure security. Implementation procedures are documented in ISMS-IMP-A.7.4-5-11 (UG/TG).*
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: 2026-03-01 -->

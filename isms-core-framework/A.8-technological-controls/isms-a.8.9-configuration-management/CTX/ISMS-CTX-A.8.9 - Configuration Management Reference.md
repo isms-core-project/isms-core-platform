@@ -51,7 +51,7 @@
 
 **Audience**: Configuration managers, system administrators, DevOps engineers, security engineers, operations personnel
 
-**Usage**: Reference for baseline definitions, change procedures, drift response, and quick operational guidance. Organizations customize this content to their specific technology stack, tools, and operational processes.
+**Usage**: Reference for baseline definitions, change procedures, drift response, and quick operational guidance. Organisations customize this content to their specific technology stack, tools, and operational processes.
 
 **Updates**: This document may be updated more frequently than ISMS policies to reflect evolving technologies, new tools, and updated standards. Updates do not require executive approval but must be communicated to affected personnel.
 
@@ -61,7 +61,7 @@
 
 ### Hardening Standards Landscape
 
-Configuration hardening applies security-focused configurations based on recognized industry standards. [Organization] selects applicable standards based on asset type, regulatory requirements, and risk assessment.
+Configuration hardening applies security-focused configurations based on recognized industry standards. [Organisation] selects applicable standards based on asset type, regulatory requirements, and risk assessment.
 
 **1.1.1 CIS Benchmarks** (Center for Internet Security)
 
@@ -196,7 +196,7 @@ Configuration hardening applies security-focused configurations based on recogni
 - **Key Controls**:
   - IAM: MFA for all users, principle of least privilege, regular access key rotation
   - Logging: CloudTrail enabled in all regions, S3 bucket logging, VPC Flow Logs
-  - Monitoring: CloudWatch alarms for unauthorized API calls
+  - Monitoring: CloudWatch alarms for unauthorised API calls
   - Network: VPC security groups default-deny, no public S3 buckets (unless explicitly required)
   - Encryption: EBS encryption, S3 encryption at rest
 
@@ -268,7 +268,7 @@ Configuration hardening applies security-focused configurations based on recogni
   - Pod Security Standards enforced
   - Network policies defined
   - Secrets management (external secrets store)
-  - API server authentication and authorization
+  - API server authentication and authorisation
   - etcd encryption at rest
 
 **1.2.6 Applications**
@@ -337,7 +337,7 @@ ALWAYS: Document standard selection in baseline documentation
 **Continuous Compliance**:
 
 - Integrate scanning into CI/CD pipelines
-- Automated compliance dashboards
+- Automated Summary Dashboard reporting
 - Alert on compliance drift
 - Regular re-assessment (quarterly minimum)
 
@@ -477,7 +477,7 @@ Standard Changes are pre-approved by CAB and executable without individual revie
 - Testing: Verify access and permissions
 - Rollback: Disable account (deletion), delete account (creation)
 
-Organizations maintain their own Standard Change Catalog based on operational needs and risk appetite.
+Organisations maintain their own Standard Change Catalog based on operational needs and risk appetite.
 
 ### Emergency Change Procedures
 
@@ -522,19 +522,19 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 **Step 2: Initial Triage** (Within 1-4 hours based on severity)
 
 - Configuration Manager reviews alert details
-- Checks change management system for authorized changes
-- Classifies drift: Authorized, Unauthorized, or False Positive
+- Checks change management system for authorised changes
+- Classifies drift: Authorised, Unauthorised, or False Positive
 
 **Step 3: Classification Decision**
 
-**Authorized Drift**: Change was approved but baseline not yet updated
+**Authorised Drift**: Change was approved but baseline not yet updated
 
 - Action: Update baseline documentation
 - Update CMDB with new configuration
 - Close incident ticket
 - No further action
 
-**Unauthorized Drift**: Change not approved or unknown
+**Unauthorised Drift**: Change not approved or unknown
 
 - Action: Proceed to investigation (Step 4)
 
@@ -544,7 +544,7 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Update baseline if baseline was incorrect
 - Close incident ticket
 
-**Step 4: Unauthorized Drift Investigation**
+**Step 4: Unauthorised Drift Investigation**
 
 - Review system logs to determine who/what made change
 - Determine change timestamp
@@ -619,7 +619,7 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 **Critical Drift Remediation** (<4 hours):
 1. SOC and Configuration Manager alerted immediately
 2. System Owner investigates within 1 hour
-3. If unauthorized, revert to baseline immediately
+3. If unauthorised, revert to baseline immediately
 4. If cannot revert safely, implement compensating controls
 5. Document actions in incident ticket
 6. Escalate to CISO if not resolved within 4 hours
@@ -639,7 +639,7 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 2. System Owner develops remediation plan
 3. Schedule remediation in maintenance window
 4. Execute and verify
-5. Update baseline if authorized
+5. Update baseline if authorised
 6. Close incident ticket
 
 **Low Drift Remediation** (<30 days):
@@ -697,7 +697,7 @@ If NORMAL CHANGE, what is the risk level?
 ├─ Multiple systems, moderate impact, standard procedure
 │  └─ MEDIUM RISK → Two-tier approval
 
-├─ Organization-wide, critical systems, complex/untested
+├─ Organisation-wide, critical systems, complex/untested
    └─ HIGH RISK → Three-tier approval (CAB)
 ```
 
@@ -739,7 +739,7 @@ If NORMAL CHANGE, what is the risk level?
 
 **Access Golden Images**:
 
-- Location: [Organization-specific image repository]
+- Location: [Organisation-specific image repository]
 - Requires: Deployment team permissions
 - Always verify image version and approval status before use
 
@@ -764,8 +764,8 @@ A: No. Use Emergency Change process with proper justification and retrospective 
 **Q: How do I find the right baseline for my system?**  
 A: Search Configuration Repository by operating system and role. If not found, contact Configuration Manager.
 
-**Q: I received a drift alert for an authorized change. What do I do?**  
-A: Verify change was authorized, update baseline documentation, close incident.
+**Q: I received a drift alert for an authorised change. What do I do?**  
+A: Verify change was authorised, update baseline documentation, close incident.
 
 **Q: My system cannot meet the baseline due to vendor limitations. What are my options?**  
 A: Request formal exception with compensating controls, or contact vendor for workaround/upgrade.
@@ -784,7 +784,7 @@ This technical reference may be updated more frequently than ISMS policies to re
 - Tool landscape evolution (new monitoring/scanning tools)
 - Procedural improvements (lessons learned from operational experience)
 
-Updates are communicated via [Organization's communication channels] and do not require executive approval.
+Updates are communicated via [Organisation's communication channels] and do not require executive approval.
 
 **Last Updated**: [Date]  
 **Next Planned Review**: [Date + 6 months]

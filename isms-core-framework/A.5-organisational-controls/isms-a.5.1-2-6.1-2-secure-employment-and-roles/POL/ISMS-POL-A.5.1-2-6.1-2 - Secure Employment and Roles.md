@@ -44,7 +44,6 @@
 - ISMS-IMP-A.5.1-2-6.1-2.-UG/TGS2 (Roles and Responsibilities Assessment)
 - ISMS-IMP-A.5.1-2-6.1-2.-UG/TGS3 (Screening Assessment)
 - ISMS-IMP-A.5.1-2-6.1-2.-UG/TGS4 (Employment Contract Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.-UG/TGS5 (Governance Dashboard)
 - ISO/IEC 27001:2022 Controls A.5.1, A.5.2, A.6.1, A.6.2
 - Swiss Code of Obligations (OR) Art. 328, 328b
 - Swiss Federal Data Protection Act (nDSG/FADP)
@@ -53,22 +52,22 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for information security governance, organizational structure, personnel screening, and employment security in accordance with ISO/IEC 27001:2022 Controls A.5.1, A.5.2, A.6.1, and A.6.2.
+This policy establishes [Organisation]'s requirements for information security governance, organisational structure, personnel screening, and employment security in accordance with ISO/IEC 27001:2022 Controls A.5.1, A.5.2, A.6.1, and A.6.2.
 
-**Scope**: All personnel (employees, contractors, temporary workers, interns), all information security policies, all organizational security roles, all pre-employment screening activities, and all employment contracts.
+**Scope**: All personnel (employees, contractors, temporary workers, interns), all information security policies, all organisational security roles, all pre-employment screening activities, and all employment contracts.
 
-**Purpose**: Define organizational requirements for:
+**Purpose**: Define organisational requirements for:
 
 - Information security policy governance (A.5.1)
 - Security role definition and accountability (A.5.2)
 - Personnel screening requirements (A.6.1)
 - Contractual security obligations (A.6.2)
 
-This policy establishes WHAT governance structures are required, WHO holds security responsibilities, and WHEN reviews occur. Implementation procedures (HOW) are documented in ISMS-IMP-A.5.1-2-6.1-2.S1 through S5.
+This policy establishes WHAT governance structures are required, WHO holds security responsibilities, and WHEN reviews occur. Implementation procedures (HOW) are documented in ISMS-IMP-A.5.1-2-6.1-2.S1 through S4.
 
 **Combined Control Framework**: These four controls form the foundational "people layer" of the ISMS:
 1. **Policy Foundation (A.5.1)**: Governance rules and policy hierarchy
-2. **Role Structure (A.5.2)**: Organizational security accountability
+2. **Role Structure (A.5.2)**: Organisational security accountability
 3. **Pre-Employment Vetting (A.6.1)**: Personnel screening before access
 4. **Contractual Binding (A.6.2)**: Legally binding security obligations
 
@@ -84,20 +83,20 @@ This policy establishes WHAT governance structures are required, WHO holds secur
 > *Policies for information security and topic-specific policies should be defined, approved by management, published, communicated to and acknowledged by relevant personnel and relevant interested parties, and reviewed at planned intervals and if significant changes occur.*
 
 **Control A.5.2 - Information Security Roles and Responsibilities**
-> *Information security roles and responsibilities should be defined and allocated according to the organization needs.*
+> *Information security roles and responsibilities should be defined and allocated according to the organisation needs.*
 
 **Control A.6.1 - Screening**
-> *Background verification checks on all candidates to become personnel should be carried out prior to joining the organization and on an ongoing basis taking into consideration applicable laws, regulations and ethics and should be proportional to the business requirements, the classification of the information to be accessed and the perceived risks.*
+> *Background verification checks on all candidates to become personnel should be carried out prior to joining the organisation and on an ongoing basis taking into consideration applicable laws, regulations and ethics and should be proportional to the business requirements, the classification of the information to be accessed and the perceived risks.*
 
 **Control A.6.2 - Terms and Conditions of Employment**
-> *The employment contractual agreements should state the personnel's and the organization's responsibilities for information security.*
+> *The employment contractual agreements should state the personnel's and the organisation's responsibilities for information security.*
 
 ## What This Policy Covers
 
 **Personnel**:
 
 - All employees (full-time, part-time, temporary)
-- All contractors and consultants with access to organizational assets
+- All contractors and consultants with access to organisational assets
 - All interns and apprentices
 - All third-party personnel requiring access
 - Executive Management and Board members with system access
@@ -108,7 +107,7 @@ This policy establishes WHAT governance structures are required, WHO holds secur
 - All topic-specific information security policies (Annex A controls)
 - Information security standards and guidelines
 
-**Organizational Roles**:
+**Organisational Roles**:
 
 - Roles with explicit security responsibilities (CISO, DPO, Security Team)
 - Roles with implicit security responsibilities (System Owners, Data Owners, Managers)
@@ -160,7 +159,7 @@ For complete regulatory categorization, refer to ISMS-POL-00.
 
 ## Policy Hierarchy Requirements
 
-[Organization] SHALL maintain a hierarchical information security policy framework:
+[Organisation] SHALL maintain a hierarchical information security policy framework:
 
 | Tier | Type | Approval Authority | Review Frequency |
 |------|------|-------------------|------------------|
@@ -177,25 +176,25 @@ For complete regulatory categorization, refer to ISMS-POL-00.
 
 ## Policy Lifecycle Requirements
 
-[Organization] SHALL manage information security policies through defined lifecycle stages:
+[Organisation] SHALL manage information security policies through defined lifecycle stages:
 
-**Creation**: Policies developed using organizational template, reviewed by stakeholders (Legal, HR, IT, affected business units).
+**Creation**: Policies developed using organisational template, reviewed by stakeholders (Legal, HR, IT, affected business units).
 
 **Approval**: Policies approved by appropriate authority per tier before publication.
 
-**Publication**: Policies published to organizational policy repository with version control.
+**Publication**: Policies published to organisational policy repository with version control.
 
 **Communication**: Policies communicated to all affected personnel; supplemental training provided for complex policies.
 
 **Complex Policy Definition**: Policies introducing new technical controls, significantly changing user workflows, or addressing new regulatory requirements. Policy owner SHALL determine training need in consultation with CISO. Training formats include: webinar, workshop, e-learning module, or annotated policy guide.
 
-**Acknowledgment**: Critical policies (Master Policy, AUP, Code of Conduct) require personnel acknowledgment annually. Acknowledgments SHALL be collected via [electronic signature in policy portal / attestation form in HR system] and tracked in the Personnel Training and Acknowledgment Register (maintained by HR). The register SHALL record: policy name, version, personnel name, acknowledgment date, and signature/attestation method. Acknowledgment compliance is reported quarterly to ISMS Committee via IMP-S5 Governance Dashboard.
+**Acknowledgment**: Critical policies (Master Policy, AUP, Code of Conduct) require personnel acknowledgment annually. Acknowledgments SHALL be collected via [electronic signature in policy portal / attestation form in HR system] and tracked in the Personnel Training and Acknowledgment Register (maintained by HR). The register SHALL record: policy name, version, personnel name, acknowledgment date, and signature/attestation method. Acknowledgment compliance is reported quarterly to ISMS Committee via the Summary Dashboard.
 
 **Review**: Policies reviewed at defined intervals or upon:
 
 - Significant regulatory change (defined as: new applicable regulation per Tier 1/2 in POL-00, material amendments to existing regulation, regulatory guidance affecting control implementation, court rulings impacting compliance interpretation, or regulatory enforcement action in industry)
 - Major security incident (Severity 1-2 per A.5.24-27)
-- Organizational change (merger, acquisition, significant restructure)
+- Organisational change (merger, acquisition, significant restructure)
 - Failed audit finding requiring policy amendment
 
 **Retirement**: Retired policies archived with audit trail retained.
@@ -242,7 +241,7 @@ Exceptions are reviewed quarterly by ISMS Committee and reported in Management R
 
 ## Policy Violation Handling
 
-Policy violations SHALL be classified by severity using the organizational Severity Rating Framework (aligned with A.5.24-27 incident management):
+Policy violations SHALL be classified by severity using the organisational Severity Rating Framework (aligned with A.5.24-27 incident management):
 
 | Severity | Criteria | Investigation | Response |
 |----------|----------|---------------|----------|
@@ -251,20 +250,20 @@ Policy violations SHALL be classified by severity using the organizational Sever
 | **Severity 3 (Medium)** | Unintentional non-compliance, isolated incident, minor business impact | Manager investigation within 5 business days | Documented coaching; corrective action plan; follow-up in 30 days |
 | **Severity 4 (Low)** | Procedural error, no security impact, first occurrence | Manager-led discussion | Policy clarification; no formal disciplinary action unless recurring |
 
-All violations (Severity 1-3) SHALL be logged in the Security Incident Register (maintained by Security Team) with investigation findings, remediation actions, and closure date. Violations are analyzed quarterly by ISMS Committee for trends and policy effectiveness improvement.
+All violations (Severity 1-3) SHALL be logged in the Security Incident Register (maintained by Security Team) with investigation findings, remediation actions, and closure date. Violations are analysed quarterly by ISMS Committee for trends and policy effectiveness improvement.
 
 ---
 
 # Policy Statements: Roles and Responsibilities (A.5.2)
 
-## Organizational Security Structure Requirements
+## Organisational Security Structure Requirements
 
-[Organization] SHALL establish a clear security organizational structure with:
+[Organisation] SHALL establish a clear security organisational structure with:
 
 - **Clear Accountability**: Every security responsibility assigned to a specific role
 - **Segregation of Duties**: Separation between policy definition, execution, and oversight
 - **CISO Independence**: CISO reports to executive level (CEO/COO/CTO)
-- **Adequate Resources**: Security roles provided with budget, tools, personnel, and training commensurate with organizational size, complexity, and risk profile
+- **Adequate Resources**: Security roles provided with budget, tools, personnel, and training commensurate with organisational size, complexity, and risk profile
 
 **Resource Adequacy Assessment**: CISO SHALL assess resource adequacy annually as part of budget planning. Assessment SHALL document:
 
@@ -278,7 +277,7 @@ Resource adequacy assessment SHALL be submitted to Executive Management with ann
 
 ## Key Security Roles
 
-[Organization] SHALL define and assign the following security roles:
+[Organisation] SHALL define and assign the following security roles:
 
 **Executive Management (CEO/Board)**:
 
@@ -420,18 +419,9 @@ Implementation procedures generate the following evidence artifacts:
 
 - Role Inventory Workbook: Security-related roles with incumbent(s), reporting structure, documentation location, last review date
 - RACI Matrix: Control-to-role assignments for all ISO 27001 Annex A controls
-- Resource Adequacy Assessment: Security Team headcount, budget, tools, training vs. organizational needs
+- Resource Adequacy Assessment: Security Team headcount, budget, tools, training vs. organisational needs
 - Succession Plan Currency Check: Verification that plans are current (updated within 12 months, successors in place)
 
-**ISMS-IMP-A.5.1-2-6.1-2.S5 (Governance Dashboard)** - Quarterly:
-
-- Policy review currency metric (% policies reviewed within cycle)
-- Policy acknowledgment rate (% personnel acknowledging critical policies)
-- Exception register summary (count of active exceptions by severity and status)
-- Violation log summary (count of violations by severity, average closure time)
-- Role documentation currency (% roles reviewed within annual cycle)
-- Succession plan currency (% key roles with current plans)
-- Resource adequacy status (Red/Yellow/Green)
 
 **Supporting Evidence** (maintained by respective owners):
 
@@ -451,7 +441,7 @@ Evidence retention: Minimum 3 years for audit trail (per A.5.33 Protection of Re
 
 ## Screening Principles
 
-[Organization] SHALL conduct background verification checks based on:
+[Organisation] SHALL conduct background verification checks based on:
 
 **Proportionality**: Screening intensity proportional to:
 
@@ -476,14 +466,14 @@ Evidence retention: Minimum 3 years for audit trail (per A.5.33 Protection of Re
 
 **Confidentiality**: Screening results:
 
-- Accessed only by HR, hiring manager, authorized personnel
+- Accessed only by HR, hiring manager, authorised personnel
 - Stored securely with access controls
 - Retained per legal requirements
 - Disposed securely when no longer needed
 
 ## Screening Levels
 
-[Organization] SHALL classify roles by sensitivity and apply appropriate screening:
+[Organisation] SHALL classify roles by sensitivity and apply appropriate screening:
 
 | Level | Applicable To | Verification Required |
 |-------|--------------|----------------------|
@@ -496,7 +486,7 @@ Role-to-screening-level mapping documented in ISMS-IMP-A.5.1-2-6.1-2.S3.
 
 ## Screening Timing Requirements
 
-**Pre-Employment**: Screening SHALL be completed BEFORE granting organizational access.
+**Pre-Employment**: Screening SHALL be completed BEFORE granting organisational access.
 
 **Interim Access Exception**: Emergency access before screening complete requires:
 
@@ -526,7 +516,7 @@ Third-party personnel screening SHALL be:
 
 - Specified in contracts (minimum screening requirements)
 - Attested by vendor (vendor-provided personnel)
-- Spot-checked by organization (sample verification)
+- Spot-checked by organisation (sample verification)
 - Equivalent to employee screening for comparable access
 
 ---
@@ -535,7 +525,7 @@ Third-party personnel screening SHALL be:
 
 ## Contractual Security Obligations
 
-[Organization] SHALL include information security obligations in all employment-related contracts:
+[Organisation] SHALL include information security obligations in all employment-related contracts:
 
 - Employment contracts (employees)
 - Contractor agreements
@@ -548,7 +538,7 @@ All employment contracts SHALL include:
 
 **Confidentiality and Data Protection**:
 
-- Obligation to maintain confidentiality of organizational information
+- Obligation to maintain confidentiality of organisational information
 - Compliance with data protection policies and laws
 - Obligations continue after termination
 
@@ -570,8 +560,8 @@ All employment contracts SHALL include:
 
 **Access Rights and Termination**:
 
-- Access granted at organization's discretion, revocable at any time
-- Return of all organizational assets upon termination
+- Access granted at organisation's discretion, revocable at any time
+- Return of all organisational assets upon termination
 - Post-termination access prohibition
 
 **Disciplinary Action**:
@@ -655,7 +645,6 @@ Compliance verified through:
 - **ISMS-IMP-A.5.1-2-6.1-2.S2**: Roles and Responsibilities Assessment (annual)
 - **ISMS-IMP-A.5.1-2-6.1-2.S3**: Screening Assessment (annual)
 - **ISMS-IMP-A.5.1-2-6.1-2.S4**: Employment Contract Assessment (annual)
-- **ISMS-IMP-A.5.1-2-6.1-2.S5**: Governance Dashboard (quarterly)
 
 ## Key Metrics
 
@@ -715,7 +704,6 @@ Non-compliance SHALL be remediated:
 | ISMS-IMP-A.5.1-2-6.1-2.S2-UG/TG | Roles and Responsibilities Assessment | Role catalog and RACI matrix |
 | ISMS-IMP-A.5.1-2-6.1-2.S3-UG/TG | Screening Assessment | Screening procedures, checklists, evidence |
 | ISMS-IMP-A.5.1-2-6.1-2.S4-UG/TG | Employment Contract Assessment | Contract templates and clause library |
-| ISMS-IMP-A.5.1-2-6.1-2.S5-UG/TG | Governance Dashboard | Consolidated compliance metrics |
 | ISO/IEC 27001:2022 | ISMS Requirements | Primary standard |
 | ISO/IEC 27002:2022 | Information Security Controls | Implementation guidance |
 
@@ -748,4 +736,4 @@ Non-compliance SHALL be remediated:
 
 *This policy establishes requirements for secure employment and security roles. Implementation procedures are documented in ISMS-IMP-A.5.1-2-6.1-2 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

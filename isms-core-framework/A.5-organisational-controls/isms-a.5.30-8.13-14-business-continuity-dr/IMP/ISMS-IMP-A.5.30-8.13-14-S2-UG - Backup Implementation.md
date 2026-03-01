@@ -8,27 +8,56 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Backup Implementation |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.30-8.13-14-S2-UG |
+| **Related Policy** | ISMS-POL-A.5.30-8.13-14-S2 (Business Continuity Dr) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.13 (Information Backup) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Backup Implementation & Recovery Capability |
-| **Related Policy** | ISMS-POL-A.5.30-8.13-14, Section 2.1 (Information Backup Requirements) |
-| **Related Assessment** | ISMS-IMP-A.5.30-8.13-14-S1 (BIA - provides RPO requirements) |
-| **Purpose** | Implement backup solutions aligned with BIA-determined RPO requirements, establish backup schedules, configure retention policies, implement backup monitoring, document recovery procedures |
-| **Target Audience** | Backup Administrator, Storage Team, Database Administrators, System Administrators, IT Operations, BC/DR Coordinator |
-| **Assessment Type** | Technical Implementation |
-| **Review Cycle** | Quarterly (backup configuration) + After Major System Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial backup implementation methodology | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.30-8.13-14-S2 (Business Continuity Dr)
+- ISMS-IMP-A.5.30-8.13-14-S1 (BIA and RPO:RTO Process)
+- ISMS-IMP-A.5.30-8.13-14-S3 (Redundancy Implementation)
+- ISMS-IMP-A.5.30-8.13-14-S4 (Recovery Testing Process)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.30-8.13-14-S2-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 7 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Backup Inventory** | Comprehensive inventory of all backup jobs and schedules |
+| **RPO Compliance** | RPO target vs. actual recovery point compliance assessment |
+| **3-2-1-1-0 Compliance** | Assessment against the 3-2-1-1-0 backup rule requirements |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -54,7 +83,7 @@ You don't have a backup until you've successfully restored from it.
 
 ### Backup Implementation Outputs
 
-Upon completion, [Organization] will have:
+Upon completion, [Organisation] will have:
 
 1. **Backup Inventory** - All systems with backup status (backed up or not)
 2. **Backup Architecture** - Documented backup infrastructure and data flows
@@ -195,7 +224,7 @@ Backup Implementation (IMP-S2):
 | **Security Team** | Backup encryption configuration, key management | 10-15 hours |
 | **BC/DR Coordinator** | Verify alignment with BIA requirements, testing coordination | 10-20 hours |
 
-**Total Organizational Effort:** 130-255 person-hours (initial implementation for 50-100 systems)
+**Total Organisational Effort:** 130-255 person-hours (initial implementation for 50-100 systems)
 
 ## Time Estimate
 
@@ -228,7 +257,7 @@ Full BC/DR Capability:
   │     Purpose: System availability (RTO)
   │     Protects against: System failures, component failures
   │
-  └── A.5.30 (ICT BC Readiness) ← IMP-S4, S5
+  └── A.5.30 (ICT BC Readiness) ← IMP-S4
         Purpose: Comprehensive recovery capability
         Protects against: Site-wide disasters, major incidents
 ```
@@ -274,12 +303,6 @@ With Backup + Redundancy:
 - Backup restore testing is subset of overall recovery testing
 - Full DR scenario testing includes: Restore from backup → Validate data → Start application → Test end-to-end
 
-**To IMP-S5 (BC/DR Assessment):**
-
-- Backup coverage assessment (% systems backed up)
-- Backup success rate (% successful backups)
-- RPO compliance (backup frequency meets RPO requirement)
-- Restore testing compliance (testing per policy requirements)
 
 ---
 
@@ -570,7 +593,7 @@ Columns:
 **Hybrid:**
 
 - **On-Premises Primary + Cloud Secondary** (most common)
-- **Cloud Primary + On-Premises Secondary** (cloud-first organizations)
+- **Cloud Primary + On-Premises Secondary** (cloud-first organisations)
 
 **Capacity Planning:**
 
@@ -732,7 +755,7 @@ Create architecture diagram showing:
 | Solution | Pros | Cons | Best For |
 |----------|------|------|----------|
 | **Azure Backup** | Native integration, no infrastructure required, pay-per-use | Azure only, limited retention (5 years max) | Azure VMs, Azure SQL, Azure Files |
-| **Veeam Backup for Azure** | Agentless VM backup, Veeam familiar interface | Requires Veeam licensing | Organizations already using Veeam on-premises |
+| **Veeam Backup for Azure** | Agentless VM backup, Veeam familiar interface | Requires Veeam licensing | Organisations already using Veeam on-premises |
 | **Azure Site Recovery** | DR + backup combined | Complex setup, primarily DR-focused | Azure VMs with DR requirement |
 
 **Recommendation:** Azure Backup for Azure-native workloads
@@ -742,7 +765,7 @@ Create architecture diagram showing:
 | Solution | Pros | Cons | Best For |
 |----------|------|------|----------|
 | **AWS Backup** | Native integration, centralized backup across AWS services | AWS only | EC2, RDS, EFS, DynamoDB, Aurora |
-| **Veeam Backup for AWS** | Agentless EC2 backup | Requires Veeam licensing | Organizations using Veeam |
+| **Veeam Backup for AWS** | Agentless EC2 backup | Requires Veeam licensing | Organisations using Veeam |
 
 **Recommendation:** AWS Backup for AWS-native workloads
 
@@ -750,7 +773,7 @@ Create architecture diagram showing:
 
 | Solution | Pros | Cons | Best For |
 |----------|------|------|----------|
-| **Veeam Backup for Microsoft 365** | Market leader, excellent Exchange/SharePoint/OneDrive/Teams support | Requires infrastructure (Veeam server + storage) | Organizations with Veeam already, >100 M365 users |
+| **Veeam Backup for Microsoft 365** | Market leader, excellent Exchange/SharePoint/OneDrive/Teams support | Requires infrastructure (Veeam server + storage) | Organisations with Veeam already, >100 M365 users |
 | **Spanning Backup** | Cloud-to-cloud, no infrastructure, supports M365/Google/Salesforce | Subscription cost per user | SME, no infrastructure preference |
 | **Dropsuite** | Cost-effective, cloud-to-cloud | Smaller vendor | SME, budget-conscious |
 
@@ -1035,7 +1058,7 @@ Tier 3 (Low Priority):
 
 ## Offsite Backup Options
 
-### Option 1: Cloud Backup (Recommended for Most Organizations)
+### Option 1: Cloud Backup (Recommended for Most Organisations)
 
 **Azure Blob Storage (Example):**
 
@@ -2825,22 +2848,6 @@ E-commerce Platform:
 - Backup restore is Step 1 of recovery testing
 - Recovery testing validates end-to-end (backup → restore → application start → validation)
 
-## To IMP-S5 (BC/DR Assessment)
-
-**Backup Metrics Feed BC/DR Assessment:**
-
-- Backup coverage % (from IMP-S2 Sheet 5)
-- RPO compliance % (from IMP-S2 Sheet 2)
-- Testing compliance (from IMP-S2 Sheet 3)
-- Storage capacity status (from IMP-S2 Sheet 4)
-
-**IMP-S5 Dashboard Includes:**
-
-- Backup health score
-- Gap summary (P1/P2/P3)
-- Testing overdue count
-- Storage at-risk repositories
-
 ---
 
 # Regulatory Compliance Mapping
@@ -2860,7 +2867,7 @@ E-commerce Platform:
 ```
 Control A.8.13: APPLICABLE
 
-Justification: [Organization] maintains backup copies of all Tier 1, Tier 2, and Tier 3 systems. Backup frequency is aligned with RPO requirements from Business Impact Analysis. Tier 1 systems backed up hourly/4-hourly with 30-day retention and offsite replication to Azure Blob Storage. Quarterly restore testing validates recovery capability.
+Justification: [Organisation] maintains backup copies of all Tier 1, Tier 2, and Tier 3 systems. Backup frequency is aligned with RPO requirements from Business Impact Analysis. Tier 1 systems backed up hourly/4-hourly with 30-day retention and offsite replication to Azure Blob Storage. Quarterly restore testing validates recovery capability.
 
 Implementation Status: IMPLEMENTED
 
@@ -2875,7 +2882,7 @@ Evidence:
 
 ## Swiss nDSG Art. 8 - Data Security
 
-**Requirement:** "Appropriate technical and organizational measures"
+**Requirement:** "Appropriate technical and organisational measures"
 
 **Backup as Security Measure:**
 
@@ -2924,7 +2931,7 @@ Evidence:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Two is one, and one is none."*
+— U.S. Special Forces saying
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

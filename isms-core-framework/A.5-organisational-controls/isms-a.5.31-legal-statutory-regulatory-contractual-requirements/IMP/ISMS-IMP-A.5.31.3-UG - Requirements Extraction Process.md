@@ -3,19 +3,21 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.31: Legal, Statutory, Regulatory and Contractual Requirements
 
+---
+
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
 | **Document Title** | Requirements Extraction Process |
-| **Document Type** | Implementation Guide |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.31.3-UG |
+| **Related Policy** | ISMS-POL-A.5.31 (Legal Statutory Regulatory Contractual Requirements) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.31 (Legal, Statutory, Regulatory and Contractual Requirements) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
-| **Document Owner** | Chief Executive Officer (CEO) |
-| **Approved By** | Executive Management |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -23,11 +25,32 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO/ISO | Initial implementation guide for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.31 (Legal Statutory Regulatory Contractual Requirements)
+- ISMS-IMP-A.5.31.1 (Regulatory Inventory Management Process)
+- ISMS-IMP-A.5.31.2 (Regulatory Applicability Assessment Process)
+- ISMS-IMP-A.5.31.4 (Control Mapping Process)
+- ISMS-IMP-A.5.31.5 (Evidence Management Process)
 
 ---
 
-**Audience:** Security assessors, Control owners, Compliance officers
+### Workbook at a Glance
+
+This workbook contains the following 5 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Requirements Register** | Extracted regulatory requirements with control mappings |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+| **Extraction Worksheet** | Working template for systematic requirements extraction |
 
 ---
 
@@ -35,15 +58,15 @@
 
 ## Purpose
 
-This implementation guide operationalizes the requirements extraction methodology defined in ISMS-POL-A.5.31.3 Section 2. It provides step-by-step instructions for transforming regulatory text into specific, actionable requirements that can be mapped to ISO 27001 controls and implemented by [Organization].
+This implementation guide operationalizes the requirements extraction methodology defined in ISMS-POL-A.5.31.3 Section 2. It provides step-by-step instructions for transforming regulatory text into specific, actionable requirements that can be mapped to ISO 27001 controls and implemented by [Organisation].
 
 **The Translation Challenge**:
-Regulations are written in legal language for legal purposes. Security controls are implemented in technical and organizational terms. Requirements extraction is the "translation layer" that bridges this gap.
+Regulations are written in legal language for legal purposes. Security controls are implemented in technical and organisational terms. Requirements extraction is the "translation layer" that bridges this gap.
 
 **Example**:
 
-- Legal Language: "Organizations shall implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk..."
-- Translation: Three specific requirements: (1) Implement risk assessment process, (2) Implement technical security controls appropriate to identified risks, (3) Implement organizational security controls appropriate to identified risks
+- Legal Language: "Organisations shall implement appropriate technical and organisational measures to ensure a level of security appropriate to the risk..."
+- Translation: Three specific requirements: (1) Implement risk assessment process, (2) Implement technical security controls appropriate to identified risks, (3) Implement organisational security controls appropriate to identified risks
 - Implementation: Maps to specific ISO 27001 controls (A.5.7 Threat Intelligence, A.8.8 Technical Vulnerability Management, etc.)
 
 ## When to Use This Process
@@ -107,7 +130,7 @@ Requirements extraction is NOT a solo activity. Best results come from team:
               ↓
 [STEP 4: Categorize Requirements]
 
-- Assign category: Technical, Organizational, Reporting, Operational
+- Assign category: Technical, Organisational, Reporting, Operational
 - Streamlines control mapping (know which Annex A sections relevant)
 
               ↓
@@ -207,7 +230,7 @@ Regulations typically follow structured formats, though specific formats vary by
 
 - Supplementary material attached to main regulation text
 - May contain technical specifications, lists, forms, templates
-- Example: "Annex A: Technical and Organizational Security Measures"
+- Example: "Annex A: Technical and Organisational Security Measures"
 
 **Definitions**:
 
@@ -258,7 +281,7 @@ Before reading any obligations, understand how regulation defines key terms.
 
 - Locate definitions section (often Article 1 or Article 4)
 - Read all definitions
-- Note definitions that differ from [Organization]'s current understanding or common usage
+- Note definitions that differ from [Organisation]'s current understanding or common usage
 - Create glossary for reference during extraction
 
 **Example**:
@@ -272,7 +295,7 @@ Reconfirm what regulation applies to (already assessed in IMP-5.31.1, but re-rea
 
 **Why This Matters**:
 
-- Some requirements may only apply to subset of [Organization]'s activities
+- Some requirements may only apply to subset of [Organisation]'s activities
 - Example: Regulation applies to "high-risk processing" → Requirements only apply to those specific processes
 
 **What to Do**:
@@ -371,7 +394,7 @@ Physical or digital markup makes extraction more efficient and accurate.
 
 > Article 32: Security of Processing
 > 
-> The controller and processor **shall** implement appropriate [technical] and [organizational measures] to ensure a level of security appropriate to the risk, including inter alia as appropriate:
+> The controller and processor **shall** implement appropriate [technical] and [organisational measures] to ensure a level of security appropriate to the risk, including inter alia as appropriate:
 > 
 > (a) **pseudonymization** and **encryption** of [personal data];
 > 
@@ -448,7 +471,7 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 **"Shall"** (Strongest Mandatory):
 
 - Legal drafting convention: "shall" = mandatory obligation
-- Example: "Organizations shall implement access controls"
+- Example: "Organisations shall implement access controls"
 - Action: Extract as mandatory requirement
 - Frequency: Very common in regulations
 
@@ -475,13 +498,13 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 
 **"Has/Have obligation to"**:
 
-- Example: "Organizations have an obligation to ensure data accuracy"
+- Example: "Organisations have an obligation to ensure data accuracy"
 - Action: Extract as mandatory requirement
 
 **Implicit Obligations** (No Modal Verb):
 
 - Some regulations state obligations directly without "shall"/"must"
-- Example: "Organizations implement technical safeguards" (present tense used as obligation)
+- Example: "Organisations implement technical safeguards" (present tense used as obligation)
 - Context: Check if this is obligation or description; when in doubt, consult legal counsel
 - Action: If obligation, extract
 
@@ -492,14 +515,14 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 **"Should"**:
 
 - Recommended but not mandatory
-- Example: "Organizations should consider implementing multi-factor authentication for privileged accounts"
+- Example: "Organisations should consider implementing multi-factor authentication for privileged accounts"
 - Action: Note as best practice; do not create mandatory requirement
 - Frequency: Common in guidance documents, less common in binding regulations
 
 **"May"**:
 
 - Optional / Permissive
-- Example: "Organizations may appoint a Data Protection Officer"
+- Example: "Organisations may appoint a Data Protection Officer"
 - Action: Note as option; not mandatory unless contract or other regulation makes it mandatory
 - Exception: If contract requires DPO, "may" in regulation becomes "shall" contractually
 
@@ -512,13 +535,13 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 **"Recommended" / "Suggested"**:
 
 - Best practice, not obligation
-- Example: "It is recommended that organizations conduct annual penetration testing"
+- Example: "It is recommended that organisations conduct annual penetration testing"
 - Action: Note as best practice
 
 **"Could" / "Can"**:
 
 - Possibility, not obligation
-- Example: "Organizations could implement anonymization to reduce risk"
+- Example: "Organisations could implement anonymization to reduce risk"
 - Action: Note as option
 
 ## Contextual Interpretation
@@ -547,12 +570,12 @@ Some language requires careful contextual analysis.
 **"Or" - Alternatives**:
 
 **Example**:
-> "Organizations shall implement encryption or pseudonymization for personal data"
+> "Organisations shall implement encryption or pseudonymization for personal data"
 
 **Analysis**:
 
 - "Shall" = Mandatory
-- "Or" = Alternatives (organization can choose)
+- "Or" = Alternatives (organisation can choose)
 
 **Extraction**:
 
@@ -563,7 +586,7 @@ Some language requires careful contextual analysis.
 **Conditional Requirements ("If X, then shall Y")**:
 
 **Example**:
-> "If processing special categories of personal data, organizations shall implement additional safeguards"
+> "If processing special categories of personal data, organisations shall implement additional safeguards"
 
 **Analysis**:
 
@@ -576,12 +599,12 @@ Some language requires careful contextual analysis.
 - Extract with condition noted
 - Requirement: "Implement additional safeguards for special categories of personal data (when processing such data)"
 - OR: "If processing special categories of personal data, implement additional safeguards"
-- During control mapping: Assess if [Organization] meets condition (if yes, requirement applies)
+- During control mapping: Assess if [Organisation] meets condition (if yes, requirement applies)
 
 **"Unless"**:
 
 **Example**:
-> "Organizations shall notify the supervisory authority within 72 hours of becoming aware of a breach, unless the breach is unlikely to result in risk to individuals"
+> "Organisations shall notify the supervisory authority within 72 hours of becoming aware of a breach, unless the breach is unlikely to result in risk to individuals"
 
 **Analysis**:
 
@@ -668,7 +691,7 @@ Requirements must be "just right" - specific enough to implement, general enough
   
 - "Restrict administrative access by blocking unnecessary services and allowing only required ports"
   - Specific: Block unnecessary, allow required
-  - Flexible: [Organization] determines which ports necessary based on services used
+  - Flexible: [Organisation] determines which ports necessary based on services used
   
 - "Retain security logs for minimum 12 months or longer as required by applicable regulations"
   - Specific: Minimum 12 months
@@ -685,7 +708,7 @@ Requirements must be "just right" - specific enough to implement, general enough
 **Process for Each Mandatory Provision**:
 
 **Example Original Regulation Text**:
-> "Article 32(1): The controller and processor shall implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk, including inter alia as appropriate:
+> "Article 32(1): The controller and processor shall implement appropriate technical and organisational measures to ensure a level of security appropriate to the risk, including inter alia as appropriate:
 > 
 > (a) the pseudonymization and encryption of personal data;
 > 
@@ -693,13 +716,13 @@ Requirements must be "just right" - specific enough to implement, general enough
 > 
 > (c) the ability to restore the availability and access to personal data in a timely manner in the event of a physical or technical incident;
 > 
-> (d) a process for regularly testing, assessing and evaluating the effectiveness of technical and organizational measures for ensuring the security of the processing."
+> (d) a process for regularly testing, assessing and evaluating the effectiveness of technical and organisational measures for ensuring the security of the processing."
 
 **Step 4.2.1: Identify Discrete Obligations**
 
 Break down complex article into individual obligations:
 
-- **Obligation 1**: Implement technical and organizational security measures
+- **Obligation 1**: Implement technical and organisational security measures
 - **Obligation 2**: Measures must be appropriate to risk
 - **Obligation 3**: Include pseudonymization and encryption (example)
 - **Obligation 4**: Ensure confidentiality, integrity, availability, resilience (CIA+R)
@@ -710,10 +733,10 @@ Break down complex article into individual obligations:
 
 Transform each obligation into requirement:
 
-**REQ-001**: "Implement technical and organizational security measures appropriate to the risk level of data processing activities"
+**REQ-001**: "Implement technical and organisational security measures appropriate to the risk level of data processing activities"
 
 - Action verb: "Implement"
-- What: "technical and organizational security measures"
+- What: "technical and organisational security measures"
 - Context: "appropriate to risk level"
 - Result: Clear, actionable
 
@@ -770,7 +793,7 @@ Why: Active voice is clearer, more direct, easier to understand and implement.
 
 **Common Action Verbs**:
 
-- **Implement**: For technical/organizational controls
+- **Implement**: For technical/organisational controls
 - **Establish**: For policies, procedures, governance structures
 - **Maintain**: For ongoing activities (keep current, update as needed)
 - **Conduct**: For assessments, tests, reviews
@@ -833,13 +856,13 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 
 **Over-Interpretation Example**:
 
-- Regulation: "Organizations shall implement access controls"
+- Regulation: "Organisations shall implement access controls"
 - ❌ Over-Interpreted Requirement: "Implement role-based access control with least privilege, separation of duties, and quarterly access reviews"
 - Why wrong: Regulation says "access controls" (general), not "role-based with least privilege and quarterly reviews" (specific). You added requirements.
 
 **Correct Extraction**:
 
-- ✅ Requirement: "Implement access controls to restrict information access to authorized individuals"
+- ✅ Requirement: "Implement access controls to restrict information access to authorised individuals"
 - Why correct: Captures obligation ("implement access controls") without adding specificity regulation doesn't require
 
 **When to Add Detail**:
@@ -853,7 +876,7 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 **Case 1: Conditional Requirements**
 
 **Regulation Example**:
-> "If processing special categories of personal data, organizations shall implement additional safeguards"
+> "If processing special categories of personal data, organisations shall implement additional safeguards"
 
 **Extraction**:
 
@@ -862,18 +885,18 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 
 **Recommended**: Option A (cleaner)
 
-**Notes Field**: "Conditional requirement - applies only if [Organization] processes special categories (e.g., health, biometric, genetic data). Assess during control mapping."
+**Notes Field**: "Conditional requirement - applies only if [Organisation] processes special categories (e.g., health, biometric, genetic data). Assess during control mapping."
 
 **Case 2: Requirements with Alternatives**
 
 **Regulation Example**:
-> "Organizations shall implement encryption or pseudonymization for personal data"
+> "Organisations shall implement encryption or pseudonymization for personal data"
 
 **Extraction**:
 
 - ✅ "Implement encryption or pseudonymization for personal data"
 
-**Preserves Choice**: [Organization] can choose encryption, pseudonymization, or both. Don't arbitrarily choose one.
+**Preserves Choice**: [Organisation] can choose encryption, pseudonymization, or both. Don't arbitrarily choose one.
 
 **Case 3: Requirements with Examples ("Including but not limited to...")**
 
@@ -889,12 +912,12 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 
 - "Implement technical security measures (examples include encryption, access control, network security)"
 
-**Notes Field**: "Regulation provides examples but is non-exhaustive. [Organization] should implement comprehensive technical measures appropriate to risk."
+**Notes Field**: "Regulation provides examples but is non-exhaustive. [Organisation] should implement comprehensive technical measures appropriate to risk."
 
 **Case 4: Quantitative Requirements**
 
 **Regulation Example**:
-> "Organizations must notify the supervisory authority within 72 hours of becoming aware of a personal data breach"
+> "Organisations must notify the supervisory authority within 72 hours of becoming aware of a personal data breach"
 
 **Extraction**:
 
@@ -906,7 +929,7 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 
 - "Retain logs for minimum 12 months" (if regulation says 12 months)
 - "Conduct penetration testing annually" (if regulation says annual)
-- "Applies to organizations processing data of 50,000+ individuals" (threshold)
+- "Applies to organisations processing data of 50,000+ individuals" (threshold)
 
 **Case 5: Requirements Referencing Other Articles**
 
@@ -952,20 +975,20 @@ Some regulations have obligations in annexes (not just main articles).
 **Examples**:
 
 - "Implement encryption for data at rest"
-- "Configure firewalls to restrict unauthorized network access"
+- "Configure firewalls to restrict unauthorised network access"
 - "Deploy intrusion detection and prevention systems"
 - "Implement automated malware detection on endpoints"
 - "Enable multi-factor authentication for system access"
 
 **Maps To**: ISO 27001 Annex A Section 8 (Technology Controls)
 
-**Category 2: Organizational Requirements**
+**Category 2: Organisational Requirements**
 
 **Definition**: Requirements that relate to policies, procedures, governance, roles, management structures.
 
 **Characteristics**:
 
-- Implemented through documentation, processes, organizational structures
+- Implemented through documentation, processes, organisational structures
 - Involve policy development, role definition, governance
 - Often require Management/HR/Legal resources
 
@@ -977,7 +1000,7 @@ Some regulations have obligations in annexes (not just main articles).
 - "Define roles and responsibilities for information security"
 - "Establish information security governance structure"
 
-**Maps To**: ISO 27001 Annex A Section 5 (Organizational Controls)
+**Maps To**: ISO 27001 Annex A Section 5 (Organisational Controls)
 
 **Category 3: Reporting Requirements**
 
@@ -1028,7 +1051,7 @@ Some regulations have obligations in annexes (not just main articles).
 **Step 2**: Ask: "What type of control will satisfy this requirement?"
 
 - If answer is "technical control" → Technical
-- If answer is "policy/procedure/governance" → Organizational
+- If answer is "policy/procedure/governance" → Organisational
 - If answer is "notification/report" → Reporting
 - If answer is "ongoing activity/monitoring" → Operational
 
@@ -1041,10 +1064,10 @@ Some regulations have obligations in annexes (not just main articles).
 | Requirement | Analysis | Primary Category | Secondary Category |
 |-------------|----------|------------------|--------------------|
 | "Implement encryption for data at rest" | Technical control (encryption technology) | Technical | - |
-| "Establish incident response procedures" | Policy/procedure | Organizational | - |
+| "Establish incident response procedures" | Policy/procedure | Organisational | - |
 | "Notify authority within 72 hours of breach" | External reporting | Reporting | - |
 | "Test incident response plan annually" | Recurring testing activity | Operational | - |
-| "Establish and test business continuity plan annually" | Establish (create plan) + Test (recurring activity) | Organizational | Operational |
+| "Establish and test business continuity plan annually" | Establish (create plan) + Test (recurring activity) | Organisational | Operational |
 | "Implement access controls and review access rights quarterly" | Technical (implement) + Operational (quarterly review) | Technical | Operational |
 
 **Multiple Categories**:
@@ -1052,14 +1075,14 @@ Some requirements inherently span categories.
 
 **Example**: "Establish incident response procedures and test them annually"
 
-- Organizational (establish procedures = create documented process)
+- Organisational (establish procedures = create documented process)
 - Operational (test annually = recurring activity)
-- **Assign**: Organizational (primary), Operational (secondary)
+- **Assign**: Organisational (primary), Operational (secondary)
 
 **Why Both Matter**:
 
-- During control mapping, map to both organizational control (policy) and operational control (testing)
-- Organizational control = ISMS-POL-5.26 Incident Response Policy
+- During control mapping, map to both organisational control (policy) and operational control (testing)
+- Organisational control = ISMS-POL-5.26 Incident Response Policy
 - Operational control = Annual incident response tabletop exercise
 
 ## Why Categorization Matters
@@ -1072,16 +1095,16 @@ Knowing category narrows which Annex A controls to consider.
 
 - Requirement Category: Technical
 - Immediately focus on Annex A Section 8 (Technology Controls)
-- Don't waste time reviewing Section 5 Organizational Controls (less likely to map)
+- Don't waste time reviewing Section 5 Organisational Controls (less likely to map)
 
 **Benefit 2: Assigns Responsibility**
 
-Categories correlate to organizational responsibilities.
+Categories correlate to organisational responsibilities.
 
 | Category | Typical Responsible Party |
 |----------|---------------------------|
 | Technical | IT/Security Engineering |
-| Organizational | ISMS Manager / Management / HR / Legal |
+| Organisational | ISMS Manager / Management / HR / Legal |
 | Reporting | Compliance Officer / Legal / PR (for customer comms) |
 | Operational | Security Operations / IT Operations |
 
@@ -1095,7 +1118,7 @@ Some categories may be more urgent.
 
 - Regulation effective in 6 months
 - Reporting requirements (Category 3) may need immediate implementation (breach notification can't wait)
-- Organizational requirements (policies, procedures) needed next (foundation for technical controls)
+- Organisational requirements (policies, procedures) needed next (foundation for technical controls)
 - Technical requirements follow (time to procure, deploy, configure)
 - Operational requirements last (need controls implemented before you can test them)
 
@@ -1106,7 +1129,7 @@ Categories inform resource needs.
 **Example**:
 
 - 40 Technical requirements → Need Security Engineering capacity
-- 15 Organizational requirements → Need Policy Development capacity (Compliance Officer, Legal)
+- 15 Organisational requirements → Need Policy Development capacity (Compliance Officer, Legal)
 - 5 Reporting requirements → Need Compliance Officer + Communications support
 - 10 Operational requirements → Need Security Operations capacity
 
@@ -1157,18 +1180,18 @@ Categories inform resource needs.
 
 - **Exact quote** from regulation (copy/paste)
 - Preserves original legal language
-- **Example**: "The controller and processor shall implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk..."
+- **Example**: "The controller and processor shall implement appropriate technical and organisational measures to ensure a level of security appropriate to the risk..."
 - Use quotation marks or italics to indicate this is verbatim quote
 
 **6. Interpreted Requirement**:
 
 - Your actionable rewrite (from Step 3)
-- **Example**: "Implement technical and organizational security measures appropriate to the risk level of data processing activities"
-- This is what [Organization] will implement
+- **Example**: "Implement technical and organisational security measures appropriate to the risk level of data processing activities"
+- This is what [Organisation] will implement
 
 **7. Requirement Category**:
 
-- Technical / Organizational / Reporting / Operational (from Step 4)
+- Technical / Organisational / Reporting / Operational (from Step 4)
 - **Excel Implementation**: Dropdown list (data validation)
 
 **8. Priority**:
@@ -1186,7 +1209,7 @@ Categories inform resource needs.
 - **Sources**:
   - Regulation specifies deadline (e.g., "within 6 months of effective date")
   - Regulation effective date (if no specific deadline, assume effective date)
-  - Risk-based deadline (if no regulatory deadline, [Organization] determines based on risk)
+  - Risk-based deadline (if no regulatory deadline, [Organisation] determines based on risk)
 - **Format**: YYYY-MM-DD
 - **Example**: 2025-06-01
 
@@ -1271,7 +1294,7 @@ Categories inform resource needs.
    - Enter Citation (article/section from regulation)
    - Copy/paste Original Requirement Text (from regulation)
    - Enter Interpreted Requirement (your actionable rewrite)
-   - Select Requirement Category (dropdown: Technical/Organizational/Reporting/Operational)
+   - Select Requirement Category (dropdown: Technical/Organisational/Reporting/Operational)
    - Assign Priority (dropdown: High/Medium/Low)
    - Enter Implementation Deadline (if known)
    - Set Implementation Status to "Not Started"
@@ -1456,7 +1479,7 @@ Categories inform resource needs.
 **Too Coarse → Add Specificity**:
 
 - Before: "Implement security controls"
-- After: "Implement access controls to restrict information access to authorized individuals"
+- After: "Implement access controls to restrict information access to authorised individuals"
 
 **Too Fine → Add Flexibility**:
 
@@ -1473,7 +1496,7 @@ Categories inform resource needs.
 
 - Review first word of each interpreted requirement
 - Should be: Implement, Establish, Maintain, Conduct, Document, Ensure, Monitor, Review, Report
-- Should NOT be: "The organization shall...", "Organizations must...", "It is required that..."
+- Should NOT be: "The organisation shall...", "Organisations must...", "It is required that..."
 - Fix: Revise to start with verb
 
 ☐ **All requirements use active voice**:
@@ -1532,8 +1555,8 @@ Categories inform resource needs.
 
 **Review 4: Categorization Accuracy**
 
-- Verify Technical/Organizational/Reporting/Operational categories make sense
-- Some requirements may be debatable (is "establish policy" Organizational or also Operational?)
+- Verify Technical/Organisational/Reporting/Operational categories make sense
+- Some requirements may be debatable (is "establish policy" Organisational or also Operational?)
 
 **Review 5: Conditions and Exceptions**
 
@@ -1626,30 +1649,30 @@ Comments/Caveats: [If any]
 ## Example 1: Data Protection Obligation
 
 **Original Regulation Text** (Generic Example):
-> "Article X: Organizations shall implement appropriate technical and organizational measures to ensure the security of personal data, including protection against unauthorized or unlawful processing and against accidental loss, destruction, or damage. Such measures shall include, as appropriate, encryption and access controls."
+> "Article X: Organisations shall implement appropriate technical and organisational measures to ensure the security of personal data, including protection against unauthorised or unlawful processing and against accidental loss, destruction, or damage. Such measures shall include, as appropriate, encryption and access controls."
 
 **Extraction Process**:
 
 **Step 1: Identify Discrete Obligations**:
 
-- Implement technical and organizational measures for data security
-- Protect against unauthorized/unlawful processing
+- Implement technical and organisational measures for data security
+- Protect against unauthorised/unlawful processing
 - Protect against accidental loss, destruction, damage
 - Include encryption (as appropriate)
 - Include access controls (as appropriate)
 
 **Step 2: Extract & Rewrite**:
 
-**REQ-001**: "Implement technical and organizational security measures to ensure the security of personal data"
+**REQ-001**: "Implement technical and organisational security measures to ensure the security of personal data"
 
 - Action: Implement
-- What: Technical and organizational measures
+- What: Technical and organisational measures
 - Purpose: Security of personal data
 
-**REQ-002**: "Implement controls to protect personal data against unauthorized or unlawful processing"
+**REQ-002**: "Implement controls to protect personal data against unauthorised or unlawful processing"
 
 - Action: Implement controls
-- Purpose: Prevent unauthorized/unlawful processing
+- Purpose: Prevent unauthorised/unlawful processing
 - Context: Personal data
 
 **REQ-003**: "Implement controls to protect personal data against accidental loss, destruction, or damage"
@@ -1664,16 +1687,16 @@ Comments/Caveats: [If any]
 - Context: Personal data
 - Qualifier: "where appropriate" (from regulation - allows risk-based decision)
 
-**REQ-005**: "Implement access controls to restrict personal data access to authorized individuals"
+**REQ-005**: "Implement access controls to restrict personal data access to authorised individuals"
 
 - Action: Implement access controls
-- Purpose: Restrict access to authorized only
+- Purpose: Restrict access to authorised only
 - Context: Personal data
 
 **Step 3: Categorize**:
 
-- REQ-001: Organizational (high-level security program)
-- REQ-002: Technical (controls to prevent unauthorized processing)
+- REQ-001: Organisational (high-level security program)
+- REQ-002: Technical (controls to prevent unauthorised processing)
 - REQ-003: Technical (controls for availability/integrity)
 - REQ-004: Technical (encryption)
 - REQ-005: Technical (access management)
@@ -1686,9 +1709,9 @@ Comments/Caveats: [If any]
 | Regulation ID | REG-DPA |
 | Regulation Name | Data Protection Act |
 | Citation | Article X |
-| Original Text | "Organizations shall implement appropriate technical and organizational measures to ensure the security of personal data, including protection against unauthorized or unlawful processing and against accidental loss, destruction, or damage. Such measures shall include, as appropriate, encryption and access controls." |
-| Interpreted Requirement | Implement technical and organizational security measures to ensure the security of personal data |
-| Category | Organizational |
+| Original Text | "Organisations shall implement appropriate technical and organisational measures to ensure the security of personal data, including protection against unauthorised or unlawful processing and against accidental loss, destruction, or damage. Such measures shall include, as appropriate, encryption and access controls." |
+| Interpreted Requirement | Implement technical and organisational security measures to ensure the security of personal data |
+| Category | Organisational |
 | Priority | High |
 | Implementation Deadline | 2025-06-01 |
 | Implementation Status | Not Started |
@@ -1707,7 +1730,7 @@ Comments/Caveats: [If any]
 ## Example 2: Incident Reporting Obligation
 
 **Original Regulation Text** (Generic Example):
-> "Section Y: In the event of a security breach affecting personal data, the organization must notify the relevant supervisory authority without undue delay and, where feasible, no later than 72 hours after becoming aware of the breach, unless the breach is unlikely to result in a risk to the rights and freedoms of individuals."
+> "Section Y: In the event of a security breach affecting personal data, the organisation must notify the relevant supervisory authority without undue delay and, where feasible, no later than 72 hours after becoming aware of the breach, unless the breach is unlikely to result in a risk to the rights and freedoms of individuals."
 
 **Extraction Process**:
 
@@ -1741,7 +1764,7 @@ Comments/Caveats: [If any]
 | Regulation ID | REG-DPA |
 | Regulation Name | Data Protection Act |
 | Citation | Section Y |
-| Original Text | "In the event of a security breach affecting personal data, the organization must notify the relevant supervisory authority without undue delay and, where feasible, no later than 72 hours after becoming aware of the breach, unless the breach is unlikely to result in a risk to the rights and freedoms of individuals." |
+| Original Text | "In the event of a security breach affecting personal data, the organisation must notify the relevant supervisory authority without undue delay and, where feasible, no later than 72 hours after becoming aware of the breach, unless the breach is unlikely to result in a risk to the rights and freedoms of individuals." |
 | Interpreted Requirement | Notify the relevant supervisory authority of security breaches affecting personal data within 72 hours of becoming aware of the breach, unless the breach is unlikely to result in risk to the rights and freedoms of individuals |
 | Category | Reporting |
 | Priority | High |
@@ -1757,10 +1780,10 @@ Comments/Caveats: [If any]
 
 ---
 
-## Example 3: Organizational Requirement
+## Example 3: Organisational Requirement
 
 **Original Regulation Text** (Generic Example):
-> "Article Z: Organizations processing personal data shall designate a Data Protection Officer responsible for monitoring compliance with this regulation, advising on data protection matters, and serving as the point of contact for data subjects and the supervisory authority regarding processing activities."
+> "Article Z: Organisations processing personal data shall designate a Data Protection Officer responsible for monitoring compliance with this regulation, advising on data protection matters, and serving as the point of contact for data subjects and the supervisory authority regarding processing activities."
 
 **Extraction Process**:
 
@@ -1780,7 +1803,7 @@ Comments/Caveats: [If any]
 - Role: Data Protection Officer
 - Responsibility: Monitor compliance
 
-**REQ-002**: "Ensure DPO advises the organization on data protection matters"
+**REQ-002**: "Ensure DPO advises the organisation on data protection matters"
 
 - Action: Ensure
 - Who: DPO
@@ -1796,9 +1819,9 @@ Comments/Caveats: [If any]
 
 **Step 3: Categorize**:
 
-- REQ-001: **Organizational** (role designation)
-- REQ-002: **Organizational** (governance function)
-- REQ-003: **Organizational** (communication/interface role)
+- REQ-001: **Organisational** (role designation)
+- REQ-002: **Organisational** (governance function)
+- REQ-003: **Organisational** (communication/interface role)
 
 **Step 4: Register Entry** (Sample for REQ-001):
 
@@ -1808,16 +1831,16 @@ Comments/Caveats: [If any]
 | Regulation ID | REG-DPA |
 | Regulation Name | Data Protection Act |
 | Citation | Article Z |
-| Original Text | "Organizations processing personal data shall designate a Data Protection Officer responsible for monitoring compliance with this regulation, advising on data protection matters, and serving as the point of contact for data subjects and the supervisory authority regarding processing activities." |
+| Original Text | "Organisations processing personal data shall designate a Data Protection Officer responsible for monitoring compliance with this regulation, advising on data protection matters, and serving as the point of contact for data subjects and the supervisory authority regarding processing activities." |
 | Interpreted Requirement | Designate a Data Protection Officer responsible for monitoring compliance with data protection regulation |
-| Category | Organizational |
+| Category | Organisational |
 | Priority | High |
 | Implementation Deadline | 2025-06-01 |
 | Implementation Status | Not Started |
 | Mapped Controls | [TBD - likely new org-specific control or adapted from A.5.2 Information Security Roles and Responsibilities] |
 | Gap Status | TBD |
 | Responsible Party | Executive Management (designates DPO) |
-| Notes | Check if organization meets threshold requiring DPO designation. If required, DPO must have appropriate expertise and independence. Consider whether internal or external DPO. REQ-002 and REQ-003 define DPO responsibilities. |
+| Notes | Check if organisation meets threshold requiring DPO designation. If required, DPO must have appropriate expertise and independence. Consider whether internal or external DPO. REQ-002 and REQ-003 define DPO responsibilities. |
 | Extracted By / Date | Compliance Analyst / 2024-12-01 |
 | Reviewed By / Date | Legal Counsel / 2024-12-05 |
 | Approved By / Date | Compliance Officer / 2024-12-10 |
@@ -1829,7 +1852,7 @@ Comments/Caveats: [If any]
 ## Example 4: Operational Requirement
 
 **Original Regulation Text** (Generic Example):
-> "Section W: Organizations shall conduct regular testing and evaluation of the effectiveness of technical and organizational measures implemented to ensure the security of data processing."
+> "Section W: Organisations shall conduct regular testing and evaluation of the effectiveness of technical and organisational measures implemented to ensure the security of data processing."
 
 **Extraction Process**:
 
@@ -1837,7 +1860,7 @@ Comments/Caveats: [If any]
 
 - Conduct regular testing and evaluation
 - Focus: Effectiveness of security measures
-- Scope: Technical and organizational measures
+- Scope: Technical and organisational measures
 
 **Step 2: Extract & Rewrite**:
 
@@ -1846,7 +1869,7 @@ Comments/Caveats: [If any]
 - Action: Conduct
 - What: Testing and evaluation
 - Of what: Effectiveness of security controls
-- Frequency: "Regular" (regulation doesn't define; [Organization] will determine)
+- Frequency: "Regular" (regulation doesn't define; [Organisation] will determine)
 - Scope: Data processing security
 
 **Step 3: Categorize**:
@@ -1861,7 +1884,7 @@ Comments/Caveats: [If any]
 | Regulation ID | REG-DPA |
 | Regulation Name | Data Protection Act |
 | Citation | Section W |
-| Original Text | "Organizations shall conduct regular testing and evaluation of the effectiveness of technical and organizational measures implemented to ensure the security of data processing." |
+| Original Text | "Organisations shall conduct regular testing and evaluation of the effectiveness of technical and organisational measures implemented to ensure the security of data processing." |
 | Interpreted Requirement | Conduct regular testing and evaluation of the effectiveness of security controls for data processing |
 | Category | Operational |
 | Priority | Medium |
@@ -1984,7 +2007,7 @@ Before submitting for final approval (Step 6), perform these checks:
 
 **Consistency**:
 
-- ☐ Requirements categorized (Technical/Organizational/Reporting/Operational)
+- ☐ Requirements categorized (Technical/Organisational/Reporting/Operational)
 - ☐ Requirements prioritized (High/Medium/Low)
 - ☐ Consistent terminology (regulatory terms used consistently)
 - ☐ Consistent formatting (all start with action verb, etc.)
@@ -2019,7 +2042,7 @@ Before submitting for final approval (Step 6), perform these checks:
 **Correct Approach**: Break Article 32 into specific obligations:
 
 - Implement technical security measures
-- Implement organizational security measures
+- Implement organisational security measures
 - Implement encryption (where appropriate)
 - Ensure CIA+R of systems
 - Etc.
@@ -2028,7 +2051,7 @@ Before submitting for final approval (Step 6), perform these checks:
 
 **Mistake**: Regulation says "implement encryption", extracted requirement says "implement AES-256 encryption in GCM mode with SHA-384 HMAC and 256-bit keys rotated quarterly".
 
-**Why Wrong**: Regulation doesn't require that level of specificity. Locks [Organization] into specific technology that may become obsolete. Limits flexibility.
+**Why Wrong**: Regulation doesn't require that level of specificity. Locks [Organisation] into specific technology that may become obsolete. Limits flexibility.
 
 **Correct Approach**: "Implement encryption for data at rest using industry-standard algorithms appropriate to data sensitivity" - Preserves obligation, allows implementation flexibility.
 
@@ -2038,7 +2061,7 @@ Before submitting for final approval (Step 6), perform these checks:
 
 **Why Wrong**: Over-interpretation. Adding obligations regulation doesn't impose.
 
-**Correct Approach**: Extract what regulation says: "Implement access controls to restrict information access to authorized individuals". If [Organization] chooses to implement RBAC, SoD, quarterly reviews - that's implementation decision during control mapping, not regulatory requirement.
+**Correct Approach**: Extract what regulation says: "Implement access controls to restrict information access to authorised individuals". If [Organisation] chooses to implement RBAC, SoD, quarterly reviews - that's implementation decision during control mapping, not regulatory requirement.
 
 **When in Doubt**: Ask "Did the regulation say this, or did I infer it?" If inferred, don't extract.
 
@@ -2046,7 +2069,7 @@ Before submitting for final approval (Step 6), perform these checks:
 
 **Mistake**: Regulation says "If processing special categories of data, implement additional safeguards". Extraction skips it thinking "we don't process special categories, so not applicable".
 
-**Why Wrong**: [Organization] may process special categories in future. OR: [Organization] does process them but extractor didn't realize. Conditional requirements are still requirements.
+**Why Wrong**: [Organisation] may process special categories in future. OR: [Organisation] does process them but extractor didn't realise. Conditional requirements are still requirements.
 
 **Correct Approach**: Extract as "Implement additional safeguards for special categories of personal data (when processing such data)". Note condition in Notes field. During control mapping, assess if condition met.
 
@@ -2054,7 +2077,7 @@ Before submitting for final approval (Step 6), perform these checks:
 
 **Mistake**: Extracting requirements in isolation without reading definitions, scope, or related articles.
 
-**Example**: Regulation defines "processing" as "collection, storage, use, transmission, deletion". Extractor reads Article 25 "Organizations shall implement security for processing" and extracts requirement as "Implement security for data storage".
+**Example**: Regulation defines "processing" as "collection, storage, use, transmission, deletion". Extractor reads Article 25 "Organisations shall implement security for processing" and extracts requirement as "Implement security for data storage".
 
 **Why Wrong**: "Processing" includes more than storage (also collection, use, transmission, deletion). Requirement should cover all processing operations per regulatory definition.
 
@@ -2064,15 +2087,15 @@ Before submitting for final approval (Step 6), perform these checks:
 
 **Mistake**: Similar requirements categorized differently.
 
-- "Establish incident response policy" → Organizational
+- "Establish incident response policy" → Organisational
 - "Establish access control policy" → Technical
 
-**Why Wrong**: Both are "establish policy" (organizational activity). Inconsistency creates confusion during control mapping.
+**Why Wrong**: Both are "establish policy" (organisational activity). Inconsistency creates confusion during control mapping.
 
 **Correct Approach**: Apply categorization guidelines consistently.
 
-- "Establish incident response policy" → Organizational
-- "Establish access control policy" → Organizational
+- "Establish incident response policy" → Organisational
+- "Establish access control policy" → Organisational
 - "Implement access controls" → Technical (implementation distinct from policy)
 
 **Pitfall 7: Skipping Legal Review for Tier 1 Regulations**
@@ -2120,7 +2143,7 @@ Before submitting for final approval (Step 6), perform these checks:
 
 ---
 
-*This operational guide provides step-by-step instructions for extracting actionable requirements from regulatory text, enabling [Organization] to systematically translate legal obligations into implementable security controls with full traceability and audit readiness.*
+*This operational guide provides step-by-step instructions for extracting actionable requirements from regulatory text, enabling [Organisation] to systematically translate legal obligations into implementable security controls with full traceability and audit readiness.*
 
 ---
 
@@ -2128,7 +2151,7 @@ Before submitting for final approval (Step 6), perform these checks:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The difference between something good and something great is attention to detail."*
+— Charles R. Swindoll
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

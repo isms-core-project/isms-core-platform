@@ -32,23 +32,23 @@ This policy implements ISO 27001:2022 Annex A Control A.5.31:
 
 > **Control A.5.31: Legal, statutory, regulatory and contractual requirements**
 >
-> The legal, statutory, regulatory and contractual requirements relevant to information security and the organization's approach to meet these requirements shall be identified, documented and kept up to date.
+> The legal, statutory, regulatory and contractual requirements relevant to information security and the organisation's approach to meet these requirements shall be identified, documented and kept up to date.
 
-**Control Type**: Organizational Control  
+**Control Type**: Organisational Control  
 **ISO 27002:2022 Reference**: Section 5.31  
 **Control Attribute**: Preventive
 
-This control requires [Organization] to establish and maintain a systematic approach to:
+This control requires [Organisation] to establish and maintain a systematic approach to:
 
 - Identifying applicable legal, statutory, regulatory, and contractual requirements
-- Documenting these requirements and the organization's approach to meeting them
+- Documenting these requirements and the organisation's approach to meeting them
 - Keeping this information current as the regulatory landscape evolves
 
 ---
 
 ## How This Framework Satisfies ISO 27001:2022 Control A.5.31
 
-ISO 27001:2022 Control A.5.31 requires organizations to:
+ISO 27001:2022 Control A.5.31 requires organisations to:
 
 **1. IDENTIFY legal, statutory, regulatory, and contractual requirements relevant to information security**
 
@@ -62,21 +62,21 @@ Framework Implementation:
 - Structured decision logic (§3.4): Quantitative scoring (0-5 points per dimension) + qualitative factors
 - Output: ISMS-POL-00 (Regulatory Applicability Framework) - authoritative register of applicable regulations
 
-**2. DOCUMENT requirements and the organization's approach to meet them**
+**2. DOCUMENT requirements and the organisation's approach to meet them**
 
 **Satisfied by**: ISMS-POL-A.5.31.3 (Requirements Extraction & Control Mapping Framework)
 
 Framework Implementation:
 
 - Requirements extraction (§2): Systematic parsing of regulatory text into actionable requirements
-- Requirements categorization (§2.2): Technical/Organizational/Reporting/Operational classification
+- Requirements categorization (§2.2): Technical/Organisational/Reporting/Operational classification
 - Control mapping (§3): Requirements mapped to ISO 27001 Annex A controls (Primary/Secondary/Supporting)
 - Gap identification (§4): Systematic identification of requirements without corresponding controls
 - Gap remediation (§4.3): Multiple approaches (adopt new control, enhance existing, compensate, accept risk, apply exception)
 - Traceability (§5): Forward/reverse/change traceability (regulation → requirement → control → evidence)
 - Output: Requirements Register, Control Mapping Matrix, Gap Register
 
-**3. KEEP CURRENT as information security requirements and the organization's approach evolve**
+**3. KEEP CURRENT as information security requirements and the organisation's approach evolve**
 
 **Satisfied by**: ISMS-POL-A.5.31.4 (Change Management & Evidence Framework)
 
@@ -101,7 +101,6 @@ Framework Implementation:
 - Evidence lifecycle (§5.4): Creation → Verification → Refresh → Retention → Disposal
 - Evidence gaps (§5.5): Systematic identification and remediation of missing evidence
 - Audit readiness (§5.6): "Audit readiness kit" preparation per regulation
-- Output: Evidence Register, Compliance Dashboard
 
 **Framework Integration Architecture**:
 
@@ -158,14 +157,14 @@ This four-section policy structure (POL-5.31.1 through 5.31.4) provides **comple
 
 ## The Regulatory Compliance Challenge
 
-[Organization] operates in an increasingly complex regulatory environment. Legal, statutory, and regulatory requirements governing information security, data protection, and IT services continue to proliferate and evolve. These obligations may arise from:
+[Organisation] operates in an increasingly complex regulatory environment. Legal, statutory, and regulatory requirements governing information security, data protection, and IT services continue to proliferate and evolve. These obligations may arise from:
 
-- **Legal and statutory requirements** in jurisdictions where [Organization] operates or serves customers
+- **Legal and statutory requirements** in jurisdictions where [Organisation] operates or serves customers
 - **Regulatory mandates** from supervisory authorities and industry regulators
 - **Contractual obligations** from customers, partners, and suppliers
 - **Certification requirements** for industry standards and frameworks
 
-The consequences of non-compliance are substantial: regulatory fines and sanctions, contractual penalties, reputational damage, loss of customer trust, and in severe cases, operational restrictions or license revocations. Yet many organizations struggle with fundamental questions:
+The consequences of non-compliance are substantial: regulatory fines and sanctions, contractual penalties, reputational damage, loss of customer trust, and in severe cases, operational restrictions or license revocations. Yet many organisations struggle with fundamental questions:
 
 - Which regulations actually apply to us?
 - What specific requirements do these regulations impose?
@@ -177,7 +176,7 @@ The consequences of non-compliance are substantial: regulatory fines and sanctio
 Traditional approaches to regulatory compliance often amount to cargo cult behavior—mimicking the form of compliance without the substance:
 
 **The Checkbox Approach:**
-> "Statement: [Organization] complies with all applicable laws and regulations.
+> "Statement: [Organisation] complies with all applicable laws and regulations.
 > 
 > Evidence: This policy statement.
 > 
@@ -225,7 +224,7 @@ The framework establishes the **regulatory compliance lifecycle**:
 
 This regulatory compliance framework delivers:
 
-**For [Organization]:**
+**For [Organisation]:**
 
 - Clear understanding of which regulations apply and why
 - Systematic process for extracting and managing regulatory requirements
@@ -233,14 +232,14 @@ This regulatory compliance framework delivers:
 - Structured approach to gap identification and remediation
 - Framework for demonstrating compliance with tangible evidence
 - Process for staying current with regulatory changes
-- Scalable approach as the organization grows or enters new markets
+- Scalable approach as the organisation grows or enters new markets
 
 **For Auditors and Regulators:**
 
 - Transparent methodology showing how applicability was determined
 - Complete traceability from regulations through requirements and controls to evidence
 - Documented processes that can be examined and validated
-- Evidence packages organized by regulation for efficient audit
+- Evidence packages organised by regulation for efficient audit
 - Clear accountability and governance structure
 
 **For Executive Management:**
@@ -253,7 +252,7 @@ This regulatory compliance framework delivers:
 
 ## The Meta-Framework Nature of Control A.5.31
 
-Control A.5.31 is unique among ISO 27001 controls. While most controls are **operational** (implement access controls, configure firewalls, encrypt data), A.5.31 is a **meta-framework control**—it establishes the structure that determines what compliance means for [Organization].
+Control A.5.31 is unique among ISO 27001 controls. While most controls are **operational** (implement access controls, configure firewalls, encrypt data), A.5.31 is a **meta-framework control**—it establishes the structure that determines what compliance means for [Organisation].
 
 This control:
 
@@ -262,11 +261,11 @@ This control:
 - **Creates the compliance architecture** that underpins the entire ISMS
 - **Establishes traceability** from external obligations to internal implementation
 
-Without systematic implementation of A.5.31, [Organization] would implement ISO 27001 controls in a compliance vacuum, unable to demonstrate how these controls satisfy specific regulatory obligations.
+Without systematic implementation of A.5.31, [Organisation] would implement ISO 27001 controls in a compliance vacuum, unable to demonstrate how these controls satisfy specific regulatory obligations.
 
 ## Integration with ISMS-POL-00
 
-[Organization] has established **ISMS-POL-00 (Regulatory Applicability Framework)**, which serves as the **authoritative regulatory register**—the definitive list of legal, statutory, regulatory, and contractual requirements applicable to [Organization], organized in a three-tier structure (Mandatory/Conditional/Informational).
+[Organisation] has established **ISMS-POL-00 (Regulatory Applicability Framework)**, which serves as the **authoritative regulatory register**—the definitive list of legal, statutory, regulatory, and contractual requirements applicable to [Organisation], organised in a three-tier structure (Mandatory/Conditional/Informational).
 
 This framework (ISMS-POL-A.5.31) defines **HOW** ISMS-POL-00 is created, maintained, and used:
 
@@ -331,32 +330,32 @@ This regulatory compliance framework encompasses:
 - Impact assessment and framework updates
 - Compliance reporting and stakeholder communication
 
-**Organizational Scope**: Framework applies across:
+**Organisational Scope**: Framework applies across:
 
-- ALL business units and functions of [Organization]
+- ALL business units and functions of [Organisation]
 - ALL geographic locations and legal entities
-- ALL services and products offered by [Organization]
-- ALL jurisdictions where [Organization] operates or serves customers
+- ALL services and products offered by [Organisation]
+- ALL jurisdictions where [Organisation] operates or serves customers
 
 ## Universal and Industry-Agnostic Framework
 
 This framework is designed to be **universal and industry-agnostic**:
 
-- **No specific regulations are assumed**: The framework does not presuppose which regulations apply to [Organization]. Instead, it provides the methodology to systematically identify applicable regulations.
+- **No specific regulations are assumed**: The framework does not presuppose which regulations apply to [Organisation]. Instead, it provides the methodology to systematically identify applicable regulations.
 
-- **Works for any regulatory landscape**: Whether [Organization] operates in one jurisdiction or fifty, serves one industry or many, the framework scales appropriately.
+- **Works for any regulatory landscape**: Whether [Organisation] operates in one jurisdiction or fifty, serves one industry or many, the framework scales appropriately.
 
-- **Adaptable to organizational changes**: As [Organization] expands geographically, enters new markets, or changes its service offerings, the framework accommodates new regulatory obligations through its defined processes.
+- **Adaptable to organisational changes**: As [Organisation] expands geographically, enters new markets, or changes its service offerings, the framework accommodates new regulatory obligations through its defined processes.
 
-- **Technology and vendor neutral**: Framework does not mandate specific tools or technologies, allowing [Organization] to implement using existing systems or select appropriate solutions.
+- **Technology and vendor neutral**: Framework does not mandate specific tools or technologies, allowing [Organisation] to implement using existing systems or select appropriate solutions.
 
 ## Integration with ISMS-POL-00 (Regulatory Applicability Framework)
 
 **The Regulatory Register (POL-00)**:
 
-ISMS-POL-00 serves as the **authoritative regulatory register** for [Organization]. It contains:
+ISMS-POL-00 serves as the **authoritative regulatory register** for [Organisation]. It contains:
 
-- Comprehensive list of all regulations identified as applicable to [Organization]
+- Comprehensive list of all regulations identified as applicable to [Organisation]
 - Three-tier categorization structure:
   - **Tier 1**: Mandatory Compliance (legal obligations, enforceable contractual requirements)
   - **Tier 2**: Conditional Applicability (potential future applicability, voluntary adoption)
@@ -403,7 +402,6 @@ ISMS-POL-00 serves as the **authoritative regulatory register** for [Organizatio
 │                                                      │
 │  TOOLS: Structured templates for systematic work     │
 │  OUTPUTS: Regulatory inventory, mapping matrices,    │
-│           evidence registers, compliance dashboard   │
 └──────────────────────────────────────────────────────┘
 ```
 
@@ -411,10 +409,10 @@ ISMS-POL-00 serves as the **authoritative regulatory register** for [Organizatio
 
 - **New Regulation Identified** → Applicability Assessment (IMP-5.31.1) → If Applicable → Added to POL-00
 - **Regulation in POL-00 Changes** → Impact Assessment (IMP-5.31.4) → Framework Updates → POL-00 Updated
-- **Organizational Change** (new jurisdiction, new service) → Applicability Re-Assessment → POL-00 Updated
+- **Organisational Change** (new jurisdiction, new service) → Applicability Re-Assessment → POL-00 Updated
 - **Periodic Review** (annual minimum) → All POL-00 Entries Reviewed → Updates as Needed
 
-[Organization]'s compliance program thus operates through this integrated framework:
+[Organisation]'s compliance program thus operates through this integrated framework:
 1. POL-00 is the authoritative source of "what regulations apply"
 2. POL-A.5.31 defines "how we determine applicability and manage compliance"
 3. IMP-A.5.31 guides provide operational procedures
@@ -438,7 +436,7 @@ To ensure appropriate expectations and use of this framework, the following are 
 - Resolve ambiguities in regulatory text
 - Predict how regulators will enforce provisions
 
-→ Where regulatory requirements are ambiguous or unclear, [Organization] seeks formal guidance from legal counsel or directly from regulatory authorities.
+→ Where regulatory requirements are ambiguous or unclear, [Organisation] seeks formal guidance from legal counsel or directly from regulatory authorities.
 
 **Operational Compliance**: This framework does NOT:
 
@@ -454,15 +452,15 @@ To ensure appropriate expectations and use of this framework, the following are 
 - Prescribe detailed technical implementations
 - Specify particular policies or procedures (beyond the framework itself)
 
-→ Implementation decisions are made by [Organization] based on risk assessment, feasibility, and business requirements within the framework's methodology.
+→ Implementation decisions are made by [Organisation] based on risk assessment, feasibility, and business requirements within the framework's methodology.
 
 **Universal Applicability Determinations**: This framework does NOT:
 
-- Declare which regulations apply to every organization
+- Declare which regulations apply to every organisation
 - Assume a standard set of regulations applicable to all
 - Make one-size-fits-all compliance decisions
 
-→ Each organization must perform its own applicability assessments using the framework's methodology.
+→ Each organisation must perform its own applicability assessments using the framework's methodology.
 
 ---
 
@@ -531,7 +529,7 @@ Framework execution follows systematic implementation approach:
 
 **Stage 1 Auditor Note**: This Stage 1 audit assesses the **adequacy and completeness of the A.5.31 framework documentation**. Operational effectiveness—including populated regulatory registers, executed applicability assessments, extracted requirements, control mappings, and collected evidence—will be assessed during Stage 2 audit per ISO 27001:2022 certification process.
 
-[Organization] has intentionally separated framework design (Stage 1 deliverable) from framework execution (Stage 2 deliverable) to ensure systematic, well-planned implementation rather than rushed, inadequate compliance activity.
+[Organisation] has intentionally separated framework design (Stage 1 deliverable) from framework execution (Stage 2 deliverable) to ensure systematic, well-planned implementation rather than rushed, inadequate compliance activity.
 
 ---
 
@@ -545,7 +543,7 @@ Effective implementation and operation of this regulatory compliance framework r
 | **ISMS Manager** | • Own and maintain the regulatory compliance framework (this document and related policies)<br>• Coordinate requirements extraction activities<br>• Maintain requirements register<br>• Coordinate control mapping activities<br>• Maintain control mapping matrices<br>• Identify and track compliance gaps<br>• Coordinate gap remediation efforts<br>• Report compliance status to Executive Management<br>• Coordinate framework updates when regulations change<br>• Manage framework documentation and version control | • Approve control mappings<br>• Approve framework updates (with appropriate review)<br>• Prioritize compliance gaps<br>• Request resources for compliance activities | • Completeness and accuracy of requirements register<br>• Accuracy of control mappings<br>• Currency of gap tracking<br>• Effectiveness of framework processes |
 | **Control Owners** | • Implement controls addressing regulatory requirements<br>• Maintain control documentation (policies, procedures, configurations)<br>• Operate controls according to specifications<br>• Collect and maintain evidence of control implementation and operation<br>• Report control effectiveness<br>• Support control mapping validation<br>• Implement control enhancements when gaps identified<br>• Participate in compliance audits | • Determine control implementation approach (within framework)<br>• Define evidence collection methods<br>• Report control failures or changes | • Effective implementation of assigned controls<br>• Quality and availability of evidence<br>• Timeliness of control updates |
 | **Internal Audit / Compliance Team** | • Validate completeness and adequacy of evidence<br>• Perform periodic internal compliance audits<br>• Test control effectiveness<br>• Verify framework processes are followed<br>• Identify framework improvement opportunities<br>• Support external audits and regulatory inquiries<br>• Report audit findings to management | • Determine audit scope and schedule<br>• Issue audit findings<br>• Recommend corrective actions | • Independence and objectivity of audits<br>• Quality of audit findings<br>• Effectiveness of audit program |
-| **Executive Management** | • Approve Tier 1 (mandatory compliance) applicability determinations<br>• Approve risk acceptance for identified compliance gaps<br>• Allocate resources for compliance activities<br>• Receive and review compliance status reports<br>• Approve significant changes to compliance framework<br>• Provide strategic direction for compliance program<br>• Represent [Organization] to regulators and auditors (as needed) | • Final approval authority for compliance decisions<br>• Resource allocation decisions<br>• Risk acceptance authority | • Overall compliance posture of [Organization]<br>• Adequacy of resources for compliance<br>• Compliance with fiduciary duties to stakeholders |
+| **Executive Management** | • Approve Tier 1 (mandatory compliance) applicability determinations<br>• Approve risk acceptance for identified compliance gaps<br>• Allocate resources for compliance activities<br>• Receive and review compliance status reports<br>• Approve significant changes to compliance framework<br>• Provide strategic direction for compliance program<br>• Represent [Organisation] to regulators and auditors (as needed) | • Final approval authority for compliance decisions<br>• Resource allocation decisions<br>• Risk acceptance authority | • Overall compliance posture of [Organisation]<br>• Adequacy of resources for compliance<br>• Compliance with fiduciary duties to stakeholders |
 
 ## RACI Matrix for Key Activities
 
@@ -597,15 +595,15 @@ Effective implementation and operation of this regulatory compliance framework r
 
 ---
 
-## Resource Availability & Organizational Support
+## Resource Availability & Organisational Support
 
 ### Legal Counsel Arrangement
 
-The A.5.31 regulatory compliance framework requires legal expertise for regulatory interpretation, applicability determinations, and compliance advisory. [Organization]'s legal counsel arrangement:
+The A.5.31 regulatory compliance framework requires legal expertise for regulatory interpretation, applicability determinations, and compliance advisory. [Organisation]'s legal counsel arrangement:
 
 **Legal Counsel Availability**: External legal counsel retained for regulatory compliance matters
 
-[Organization] retains external legal counsel for information security compliance:
+[Organisation] retains external legal counsel for information security compliance:
 
 - **Law Firm**: [To be specified - external legal counsel specializing in data protection and cybersecurity]
 - **Primary Contact**: [Attorney Name and Contact Details]
@@ -721,7 +719,7 @@ This regulatory compliance framework consists of four integrated layers, each bu
 **ISMS-POL-A.5.31.3: Requirements Extraction & Control Mapping Framework**
 
 - Defines methodology for parsing regulatory text into actionable requirements
-- Establishes requirements categorization approach (technical/organizational/reporting/operational)
+- Establishes requirements categorization approach (technical/organisational/reporting/operational)
 - Specifies control mapping methodology (Primary/Secondary/Supporting)
 - Defines gap analysis and prioritization approach
 - Establishes traceability requirements (regulation → requirement → control → evidence)
@@ -736,7 +734,7 @@ This regulatory compliance framework consists of four integrated layers, each bu
 - Establishes compliance reporting approach (internal and external)
 - Specifies records retention requirements
 
-**Purpose of Policy Layer**: Defines **WHAT** [Organization] will do and **WHY**, establishing governance, principles, and methodology.
+**Purpose of Policy Layer**: Defines **WHAT** [Organisation] will do and **WHY**, establishing governance, principles, and methodology.
 
 ## Layer 2: Implementation Guides (Five Implementation Sections)
 
@@ -764,7 +762,7 @@ This regulatory compliance framework consists of four integrated layers, each bu
 - Procedures for identifying Primary, Secondary, and Supporting controls
 - Gap analysis methodology
 - Handling one-to-many and many-to-one mappings
-- Creating organization-specific controls when Annex A insufficient
+- Creating organisation-specific controls when Annex A insufficient
 - Evidence mapping procedures
 - Examples and worked scenarios
 
@@ -777,11 +775,10 @@ This regulatory compliance framework consists of four integrated layers, each bu
 - Communication templates
 - Examples and worked scenarios
 
-**ISMS-IMP-A.5.31.5: Evidence Management Process**
 
 - Step-by-step guide for defining evidence requirements
 - Evidence collection procedures
-- Evidence organization and storage methodology
+- Evidence organisation and storage methodology
 - Verification and validation procedures
 - Audit readiness preparation
 - Examples and worked scenarios
@@ -821,7 +818,6 @@ This regulatory compliance framework consists of four integrated layers, each bu
 - Coverage analysis and visualizations
 - Generated by Python script, populated by users
 
-**Assessment Workbook 5: Compliance Evidence Register**
 
 - Evidence inventory per regulation and control
 - Evidence metadata (type, location, date, custodian, verification status)
@@ -890,7 +886,7 @@ At the foundation of the framework is the **evidence layer**—the actual artifa
                               ↓
 ┌──────────────────────────────────────────────────────────────┐
 │  OUTCOME: Audit-Ready, Demonstrable Compliance              │
-│  [Organization] can prove what applies and how it complies  │
+│  [Organisation] can prove what applies and how it complies  │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -944,8 +940,6 @@ The regulatory compliance framework is supported by six Excel-based assessment w
 | **Workbook 2**: Applicability Matrix | Structured applicability assessments | ✅ **IMPLEMENTED** | Python script: `generate_531_2_applicability_matrix.py` (820 lines) |
 | **Workbook 3**: Requirements Register | Extracted requirements from regulations | ✅ **IMPLEMENTED** | Python script: `generate_531_3_requirements_register.py` (1150 lines) |
 | **Workbook 4**: Control Mapping Matrix | Requirements → ISO 27001 control mappings | ✅ **IMPLEMENTED** | Python script: `generate_531_4_control_mapping.py` (850 lines) |
-| **Workbook 5**: Evidence Register | Evidence tracking per regulation and control | ✅ **IMPLEMENTED** | Python script: `generate_531_5_evidence_register.py` (550 lines) |
-| **Workbook 6**: Compliance Dashboard | Executive compliance overview and metrics | ✅ **IMPLEMENTED** | Python script: `generate_531_6_compliance_dashboard.py` (600 lines) |
 
 **Total Implementation**: 5,013 lines of Python code across 6 generation scripts plus quality assurance utilities.
 
@@ -956,7 +950,7 @@ The regulatory compliance framework is supported by six Excel-based assessment w
 - **Language**: Python 3 with openpyxl library for Excel manipulation
 - **Encoding**: Full UTF-8 support with emoji-based visual indicators (✅ ❌ ⚠️ 🔄 📊)
 - **Professional Formatting**: 
-  - Standardized headers with organizational branding
+  - Standardized headers with organisational branding
   - Color-coded sections (policy=blue, data=white, instructions=gray)
   - Professional borders and cell formatting
   - Print-optimized layouts with repeating headers
@@ -988,7 +982,7 @@ The regulatory compliance framework is supported by six Excel-based assessment w
 
 **Stage 2 (Implementation Audit) Requirements**:
 
-- 🔄 Tools populated with organizational data (actual regulations, actual requirements, actual mappings)
+- 🔄 Tools populated with organisational data (actual regulations, actual requirements, actual mappings)
 - 🔄 Tools actively used in operational compliance management
 - 🔄 Tool-generated outputs feed decision-making and audit preparation
 - **Stage 2 Success Criteria**: IN PROGRESS per implementation roadmap
@@ -1017,7 +1011,6 @@ The regulatory compliance framework is supported by six Excel-based assessment w
 
 ### Quality Assurance
 
-**Normalization Utility**: `normalize_assessment_files_531.py` (300 lines)
 
 **Purpose**: Sanity checking and quality validation of generated assessment workbooks
 
@@ -1035,7 +1028,7 @@ The regulatory compliance framework is supported by six Excel-based assessment w
 
 # Definitions and Acronyms
 
-**Applicability Assessment**: Systematic evaluation of whether a specific regulation applies to [Organization] based on geographic, operational, and contractual criteria.
+**Applicability Assessment**: Systematic evaluation of whether a specific regulation applies to [Organisation] based on geographic, operational, and contractual criteria.
 
 **Control**: Security measure implemented to reduce information security risk (per ISO 27001).
 
@@ -1053,7 +1046,7 @@ The regulatory compliance framework is supported by six Excel-based assessment w
 
 **Traceability**: Ability to trace from regulation through requirements and controls to evidence, and in reverse.
 
-**Tier 1 (Mandatory Compliance)**: Regulations that are legally binding or contractually enforceable on [Organization].
+**Tier 1 (Mandatory Compliance)**: Regulations that are legally binding or contractually enforceable on [Organisation].
 
 **Tier 2 (Conditional Applicability)**: Regulations that may become applicable or are voluntarily adopted.
 
@@ -1104,8 +1097,6 @@ Evidence required to demonstrate this regulatory compliance framework is operati
 
 **Evidence and Compliance Tracking:**
 
-- Evidence Register (ISMS-IMP-A.5.31.5 assessment workbook) - compliance evidence tracking per regulation and per control
-- Compliance Dashboard (ISMS-IMP-A.5.31.6 assessment workbook) - current compliance status, coverage metrics, and gap trends
 - Evidence collection records showing systematic evidence gathering for implemented controls
 - Audit readiness kits per Tier 1 regulation (evidence packages prepared for regulatory audits)
 
@@ -1137,28 +1128,28 @@ Evidence required to demonstrate this regulatory compliance framework is operati
 
 **What This Policy Establishes:**
 
-This policy establishes the **regulatory compliance framework**—the systematic process to identify, assess, map, and monitor legal, statutory, regulatory, and contractual requirements applicable to [Organization]'s information security program.
+This policy establishes the **regulatory compliance framework**—the systematic process to identify, assess, map, and monitor legal, statutory, regulatory, and contractual requirements applicable to [Organisation]'s information security program.
 
 **What This Policy Does NOT Establish:**
 
 - **Specific regulatory compliance activities** (addressed in control-specific policies):
   - GDPR/FADP data protection compliance → Addressed in A.8.11 Data Masking, A.8.10 Information Deletion, A.5.34 Privacy and PII Protection
   - PCI DSS v4.0.1 payment security compliance → Addressed in relevant technical controls if applicable
-  - Industry-specific regulatory requirements → Addressed in applicable technical and organizational controls
+  - Industry-specific regulatory requirements → Addressed in applicable technical and organisational controls
   - Contractual security requirements → Addressed through control-specific implementation
 
-- **Contract negotiation and legal review processes** (organizational procurement and legal function, not ISMS policy requirement)
+- **Contract negotiation and legal review processes** (organisational procurement and legal function, not ISMS policy requirement)
 
-- **Regulatory reporting and submission mechanisms** (addressed in A.5.37 Documented Operating Procedures where applicable, or organizational compliance function)
+- **Regulatory reporting and submission mechanisms** (addressed in A.5.37 Documented Operating Procedures where applicable, or organisational compliance function)
 
 - **Incident notification to regulators** (addressed in A.5.24-28 Incident Management stack, which includes breach notification procedures)
 
-- **Organizational legal structure** (organizational decision—corporate legal entity structure, not ISMS policy concern)
+- **Organisational legal structure** (organisational decision—corporate legal entity structure, not ISMS policy concern)
 
 **The Framework Boundary:**
 
 A.5.31 provides the **FRAMEWORK** to determine:
-1. WHICH regulations apply to [Organization]
+1. WHICH regulations apply to [Organisation]
 2. WHAT requirements those regulations impose
 3. HOW those requirements map to ISO 27001 controls
 4. WHERE compliance evidence is maintained
@@ -1166,14 +1157,13 @@ A.5.31 provides the **FRAMEWORK** to determine:
 
 → Individual controls (A.5.X, A.6.X, A.7.X, A.8.X) provide **IMPLEMENTATION** to satisfy specific regulatory requirements identified through this framework
 
-→ Evidence Register (ISMS-IMP-A.5.31.5) tracks **COMPLIANCE DEMONSTRATION** showing how each regulation's requirements are satisfied through implemented controls
 
 **Example Flow:**
 1. **A.5.31 Framework**: Identifies GDPR applies → Extracts GDPR Article 32 "security of processing" requirement → Maps to A.8.24 Cryptography + A.8.11 Data Masking + others
 2. **Control Implementation**: A.8.24 implements encryption controls, A.8.11 implements data masking controls (each control has its own POL/IMP/SCR)
 3. **Evidence Register**: Links GDPR Article 32 requirement → A.8.24 encryption evidence + A.8.11 masking evidence → Demonstrates GDPR compliance
 
-**Auditor Clarity**: A.5.31 is the **meta-framework control**. It doesn't make [Organization] compliant with specific regulations—it establishes the systematic process to identify compliance obligations and track how they're satisfied through the broader ISMS control framework.
+**Auditor Clarity**: A.5.31 is the **meta-framework control**. It doesn't make [Organisation] compliant with specific regulations—it establishes the systematic process to identify compliance obligations and track how they're satisfied through the broader ISMS control framework.
 
 ---
 
@@ -1181,7 +1171,7 @@ A.5.31 provides the **FRAMEWORK** to determine:
 
 **For Executives:**
 
-- This framework moves [Organization] from checkbox compliance to systematic, demonstrable compliance
+- This framework moves [Organisation] from checkbox compliance to systematic, demonstrable compliance
 - Creates clear accountability and visibility into compliance status
 - Enables informed decision-making on compliance investments and risk acceptance
 - Supports business expansion by providing methodology for new regulatory obligations
@@ -1220,6 +1210,6 @@ A.5.31 provides the **FRAMEWORK** to determine:
 
 ---
 
-*This document establishes the foundation for [Organization]'s regulatory compliance framework implementing ISO 27001:2022 Control A.5.31. Subsequent policy sections (5.31.2, 5.31.3, 5.31.4) provide detailed methodology and processes. Implementation guides (IMP-5.31.1 through 5.31.5) operationalize these policies with step-by-step procedures.*
+*This document establishes the foundation for [Organisation]'s regulatory compliance framework implementing ISO 27001:2022 Control A.5.31. Subsequent policy sections (5.31.2, 5.31.3, 5.31.4) provide detailed methodology and processes. Implementation guides (IMP-5.31.1 through 5.31.5) operationalize these policies with step-by-step procedures.*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

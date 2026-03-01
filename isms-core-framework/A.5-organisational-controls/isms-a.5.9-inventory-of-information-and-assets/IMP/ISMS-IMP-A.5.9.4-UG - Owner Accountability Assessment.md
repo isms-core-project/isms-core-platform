@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Owner Accountability Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.9.4-UG |
+| **Related Policy** | ISMS-POL-A.5.9 (Inventory of Information and Assets) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.9 (Inventory of Information and Other Associated Assets) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Asset Ownership Assignment & Accountability Verification |
-| **Related Policy** | ISMS-POL-A.5.9, Section 2.4 (Ownership and Accountability), Section 4 (Roles and Responsibilities) |
-| **Purpose** | Verify asset ownership is assigned, acknowledged, and understood; validate owner accountability and performance |
-| **Target Audience** | Security Team, Asset Owners, Management, HR, Compliance Officers |
-| **Assessment Type** | Ownership Verification & Accountability Audit |
-| **Review Cycle** | Quarterly or After Significant Ownership Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|--------|--------|
-| 1.0 | [Date] | Initial assessment specification following consolidated policy structure | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.9 (Inventory of Information and Assets)
+- ISMS-IMP-A.5.9.1 (Asset Identification & Discovery)
+- ISMS-IMP-A.5.9.2 (Inventory Structure & Maintenance)
+- ISMS-IMP-A.5.9.3 (Assessment Specifications)
+
+---
 
 ### Document Structure
 
@@ -32,6 +46,24 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 **Audience:** Security Team, Asset Owners, Management, HR
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 9 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Ownership Coverage** | Assessment of asset ownership assignment across the inventory |
+| **Owner Acknowledgment** | Documentation of formal ownership acknowledgement by asset owners |
+| **Owner Awareness** | Assessment of owner awareness of responsibilities and obligations |
+| **Owner Performance** | Measurement of owner fulfilment of accountability duties |
+| **Accountability Metrics** | Overall accountability coverage scoring and gap analysis |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -54,10 +86,10 @@ This assessment verifies that asset ownership is not just assigned, but that own
 
 ### Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - **ISO/IEC 27001:2022 Control A.5.9**: "**Ownership** of assets should be assigned"
-- **ISMS-POL-A.5.9, Requirement A.5.9-R4**: [Organization] SHALL assign ownership to all inventoried assets (100% coverage)
+- **ISMS-POL-A.5.9, Requirement A.5.9-R4**: [Organisation] SHALL assign ownership to all inventoried assets (100% coverage)
 - **ISMS-POL-A.5.9, Section 2.4**: Ownership and accountability requirements (owner responsibilities, acknowledgment, performance)
 - **ISMS-POL-A.5.9, Section 4.2**: Asset owner role definition and responsibilities
 
@@ -189,7 +221,6 @@ Phase 6: Review & Approval (Day 13-14)
 ├─ Security Team review
 ├─ Management review (owner performance)
 ├─ CISO approval
-└─ Submit to compliance dashboard
 ```
 
 **Timeline**: 14 working days + up to 4 weeks for owner attestation collection (can overlap with other phases)
@@ -341,7 +372,7 @@ WHERE Owner NOT IN (SELECT EmployeeID FROM HR_System)
 |--------|---------|-----------------|
 | **Owner Name** | Asset owner | From inventory (unique list of owners) |
 | **Owner Email** | Contact email | From HR or inventory |
-| **Owner Department** | Organizational unit | From HR |
+| **Owner Department** | Organisational unit | From HR |
 | **Assets Owned - Count** | Number of assets | From inventory (COUNT by owner) |
 | **Asset Categories** | Types of assets owned | From inventory (Info, IT, App, etc.) |
 | **Attestation Status** | Current status | Dropdown: ✅ Signed / 📧 Sent, Pending / ❌ Not Sent / 🔴 Overdue |
@@ -395,7 +426,7 @@ Questions? Contact: [Security Team Email]
 Deadline: [2 weeks from today]
 
 Thank you,
-[Organization] Information Security Team
+[Organisation] Information Security Team
 ```
 
 **Step 3: Track Responses**
@@ -584,7 +615,7 @@ Check LMS or training records for "Asset Owner Training" completion:
 - **Knowledge Gaps**: "Unclear on review frequency requirements, confused about ownership transfer process"
 - **Remediation Plan**: "1-on-1 coaching session with Security Team to clarify responsibilities. Retake quiz after coaching."
 - **Target Date**: 29.01.2026
-- **Notes**: "David is new to organization, needs additional support"
+- **Notes**: "David is new to organisation, needs additional support"
 
 **Step 3: Calculate Awareness Rate**
 
@@ -889,7 +920,7 @@ Interpretation: Good accountability (88%), approaching target. Main gaps: Awaren
 - Engagement score calculations
 - Performance rating assignments
 
-### Evidence Organization
+### Evidence Organisation
 
 ```
 /evidence/
@@ -1075,10 +1106,8 @@ Before submitting this assessment, verify:
 - Escalate critical gaps to Executive Management
 - Sign approval
 
-**Step 6: Submission to Compliance Dashboard**
 
 - Export metrics to dashboard consolidation
-- Update ISMS-IMP-A.5.9.5 (Compliance Dashboard)
 - Archive assessment workbook
 - Store evidence per retention policy
 
@@ -1110,7 +1139,7 @@ Before submitting this assessment, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Ownership is the beginning of stewardship."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -51,7 +51,7 @@ This document provides **actionable security criteria** for code reviewers. It o
 ## Topics Covered
 
 - Pre-review preparation checklist
-- Core security review criteria (authentication, input validation, authorization, cryptography, logging, error handling)
+- Core security review criteria (authentication, input validation, authorisation, cryptography, logging, error handling)
 - Risk-based review approach
 - Common patterns and anti-patterns
 - Escalation procedures
@@ -82,7 +82,7 @@ This document provides **actionable security criteria** for code reviewers. It o
 
 **High-Risk Changes** (use full checklist):
 
-- Authentication or authorization changes
+- Authentication or authorisation changes
 - Cryptography implementation
 - Payment or financial transaction handling
 - PII processing or data exposure
@@ -91,7 +91,7 @@ This document provides **actionable security criteria** for code reviewers. It o
 
 **Medium-Risk Changes** (focus on relevant sections):
 
-- API endpoints → Input validation + Authorization
+- API endpoints → Input validation + Authorisation
 - Database queries → SQL injection prevention
 - File operations → Path traversal prevention
 - Web UI changes → XSS + CSRF prevention
@@ -113,7 +113,7 @@ This document provides **actionable security criteria** for code reviewers. It o
 - [ ] Output encoding appropriate for context
 - [ ] SQL queries parameterized
 - [ ] No hardcoded secrets
-- [ ] Authorization checks present
+- [ ] Authorisation checks present
 
 ```
 
@@ -147,7 +147,7 @@ This document provides **actionable security criteria** for code reviewers. It o
 **Escalation Channels**:
 
 - Slack: #security-champions or #appsec
-- Email: security@[organization].com
+- Email: security@[organisation].com
 - Tag in PR: @security-champions or @appsec-team
 
 ---
@@ -167,14 +167,14 @@ This document provides **actionable security criteria** for code reviewers. It o
   - *If not identified*: Assess risk per Section 2.1 criteria
   
 - [ ] **Security-relevant changes flagged**: Does PR author identify security implications?
-  - *Check for*: Authentication, authorization, input handling, cryptography, data access
+  - *Check for*: Authentication, authorisation, input handling, cryptography, data access
   - *Action*: If security-relevant but not flagged, apply appropriate checklist sections
 
 - [ ] **Change scope reasonable**: Is PR focused (not changing 50 files with unrelated changes)?
   - *If too large*: Request split into smaller, reviewable PRs
   
 - [ ] **Tests included**: Are security-relevant changes covered by tests?
-  - *Check for*: Input validation tests, authorization tests, negative test cases
+  - *Check for*: Input validation tests, authorisation tests, negative test cases
   - *Policy Reference*: ISMS-POL-A.8.28 Section 2.3.1
 
 ---
@@ -265,11 +265,11 @@ This document provides **actionable security criteria** for code reviewers. It o
   - *Check for*: Missing `X-Content-Type-Options`, `X-Frame-Options`, `Strict-Transport-Security`
   - *Verify*: Headers present and correctly configured
 
-## Authorization & Access Control
+## Authorisation & Access Control
 
-- [ ] **Authorization enforced server-side**: All access control checks on server
-  - *Check for*: Client-side only authorization (hidden UI elements), missing server checks
-  - *Verify*: Every protected resource has server-side authorization check
+- [ ] **Authorisation enforced server-side**: All access control checks on server
+  - *Check for*: Client-side only authorisation (hidden UI elements), missing server checks
+  - *Verify*: Every protected resource has server-side authorisation check
 
 - [ ] **IDOR prevention**: User ownership verified before resource access
   - *Check for*: Direct ID access without ownership check (e.g., `/api/orders/123` accessible by any user)
@@ -283,7 +283,7 @@ This document provides **actionable security criteria** for code reviewers. It o
   - *Check for*: Hardcoded user IDs instead of roles, missing role checks
 
 - [ ] **Privilege escalation prevented**: No way to elevate privileges improperly
-  - *Check for*: User-controllable role assignments, missing authorization on privilege changes
+  - *Check for*: User-controllable role assignments, missing authorisation on privilege changes
   - *Test*: Can user grant themselves admin role?
 
 ## Cryptography
@@ -316,7 +316,7 @@ This document provides **actionable security criteria** for code reviewers. It o
   - *Check for*: Detailed error messages revealing system information
   - *Verify*: User-facing errors are generic ("An error occurred"), details logged server-side
 
-- [ ] **Security events logged**: Authentication, authorization failures, input validation failures logged
+- [ ] **Security events logged**: Authentication, authorisation failures, input validation failures logged
   - *Check for*: Missing security event logging
   - *Verify*: Sufficient detail for incident investigation (user, action, result, timestamp)
   - *Policy Reference*: ISMS-POL-A.8.28 Section 2.2
@@ -334,7 +334,7 @@ This document provides **actionable security criteria** for code reviewers. It o
   - *Check for*: Plaintext storage of sensitive data
   - *Policy Reference*: ISMS-POL-A.8.24 (Cryptography)
 
-- [ ] **Data minimization**: Only necessary data collected and retained
+- [ ] **Data minimisation**: Only necessary data collected and retained
   - *Check for*: Excessive data collection, indefinite retention
 
 - [ ] **Secure data deletion**: Sensitive data deleted securely when no longer needed
@@ -364,7 +364,7 @@ This document provides **actionable security criteria** for code reviewers. It o
 **Triggers**:
 
 - Authentication system changes
-- Authorization model changes
+- Authorisation model changes
 - Cryptographic implementation
 - Payment processing
 - PII handling changes
@@ -393,7 +393,7 @@ This document provides **actionable security criteria** for code reviewers. It o
 
 **Review Approach**:
 
-- Relevant checklist sections (focus on input validation, authorization, data protection)
+- Relevant checklist sections (focus on input validation, authorisation, data protection)
 - Security Champion review recommended
 - Security testing (SAST, DAST)
 - Functional and security test cases
@@ -456,7 +456,7 @@ def validate_input(data):
     # Additional validation...
 ```
 
-**Authorization Pattern**:
+**Authorisation Pattern**:
 ```python
 # Ownership check before resource access
 def get_order(order_id, current_user):
@@ -482,9 +482,9 @@ if not API_KEY:
 query = f"SELECT * FROM users WHERE id = {user_id}"
 ```
 
-**Client-Side Authorization**:
+**Client-Side Authorisation**:
 ```javascript
-// ANTI-PATTERN - Authorization must be server-side
+// ANTI-PATTERN - Authorisation must be server-side
 if (user.role === 'admin') {
   showAdminPanel();  // Client-side only, easily bypassed
 }
@@ -533,7 +533,7 @@ Checklist sections applied:
 
 - [X] Authentication (4.1)
 - [X] Input Validation (4.2)
-- [X] Authorization (4.4)
+- [X] Authorisation (4.4)
 
 Findings:
 
@@ -581,7 +581,7 @@ Findings:
 
 - OWASP Top 10 updated
 - New vulnerability patterns identified
-- Organizational technology stack changes
+- Organisational technology stack changes
 - Policy requirements change (ISMS-POL-A.8.28 updates)
 
 **Owner**: Application Security Lead

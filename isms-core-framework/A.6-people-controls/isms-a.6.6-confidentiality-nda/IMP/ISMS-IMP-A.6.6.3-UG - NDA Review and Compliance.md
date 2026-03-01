@@ -3,26 +3,54 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.6.6: Confidentiality or Non-Disclosure Agreements
 
-## Document Control
+---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | NDA Review and Compliance |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.6.3-UG |
-| **Document Title** | NDA Review and Compliance Workbook Specification |
-| **Control Reference** | ISO/IEC 27001:2022 - Control A.6.6: Confidentiality or Non-Disclosure Agreements |
-| **Parent Policy** | ISMS-POL-A.6.6 (Confidentiality and Non-Disclosure Agreements) |
+| **Related Policy** | ISMS-POL-A.6.6 (Confidentiality Nda) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.6 (Confidentiality or Non-Disclosure Agreements) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
 | **Classification** | Internal |
+| **Status** | Draft |
 
 **Version History**:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO/ISO | Initial implementation specification for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.6 (Confidentiality Nda)
+- ISMS-IMP-A.6.6.1 (NDA Template Registry and Inventory)
+- ISMS-IMP-A.6.6.2 (NDA Execution and Tracking)
 
 ---
 
-This section provides step-by-step guidance for completing the NDA Review and Compliance workbook. Follow this guide to ensure NDAs remain current, appropriate, and properly executed as required by ISO 27001:2022.
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Periodic Review | Track scheduled reviews of NDA adequacy and currency |
+| 3 | Template Adequacy | Assess whether templates meet current legal requirements |
+| 4 | Coverage Analysis | Evaluate NDA coverage across all stakeholder categories |
+| 5 | Compliance Check | Verify compliance with NDA obligations and requirements |
+| 6 | Gap Register | Record gaps in NDA coverage or adequacy requiring action |
+| 7 | Evidence Register | Store and reference evidence of review activities |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -882,7 +910,7 @@ Next Review Scheduling
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Confidentiality is a duty, not an option."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

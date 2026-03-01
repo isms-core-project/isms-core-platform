@@ -8,35 +8,51 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Third-Party & Open Source Software Assessment Specification |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.28.4-UG |
+| **Related Policy** | ISMS-POL-A.8.28 (Secure Coding) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.28 (Secure Coding) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Third-Party Dependencies & Open Source Software Management |
-| **Related Policy** | ISMS-POL-A.8.28 Section 2.4 (Third-Party & OSS Management), Section 3 (Roles & Responsibilities) |
-| **Purpose** | Evaluate supply chain security practices for third-party dependencies, open source software, vendor security, and license compliance |
-| **Target Audience** | Application Security Team, Engineering Managers, Software Architects, Legal/Compliance Team, Procurement Team, Auditors |
-| **Assessment Type** | Process, Technical & Legal |
-| **Review Cycle** | Annually or After Major Supply Chain Security Incidents |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
 **Version History**:
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | [Date] | Initial assessment specification |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Approvers**:
-
-- Application Security Lead (Technical Review)
-- Chief Information Security Officer (Final Approval)
-- Legal Counsel (License Compliance Review)
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
 **Related Documents**:
 
-- ISMS-POL-A.8.28 - Secure Coding Policy (Master Policy)
-- ISMS-POL-A.8.28-S2.4 - Third-Party & Open Source Software Management  
-- ISMS-IMP-A.8.28.1 - SDLC Assessment
-- ISMS-IMP-A.8.28.2 - Standards & Tools Assessment
+- ISMS-POL-A.8.28 (Secure Coding)
+- ISMS-IMP-A.8.28.1 (SDLC Assessment Specification)
+- ISMS-IMP-A.8.28.2 (Standards & Tools Assessment Specification)
+- ISMS-IMP-A.8.28.3 (Code Review & Testing Assessment Specification)
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Vendor Security Assessment | Assess security posture of third-party software vendors |
+| 3 | OSS Management | Evaluate open source software management practices |
+| 4 | Dependency Vulnerability Mgmt | Track and manage vulnerabilities in third-party dependencies |
+| 5 | Third-Party Code & Integration | Assess security of third-party code and integrations |
+| 6 | License Compliance & Legal Risk | Evaluate licence compliance and legal risk management |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Gap Analysis | Identify gaps in third-party and OSS security management |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -44,7 +60,7 @@
 
 ## What This Assessment Does
 
-This assessment evaluates your organization's management of **third-party dependencies, open source software (OSS), vendor-provided components, and external code integrations**.
+This assessment evaluates your organisation's management of **third-party dependencies, open source software (OSS), vendor-provided components, and external code integrations**.
 
 **Core Question**: "Are we fooling ourselves about supply chain security?"
 
@@ -64,7 +80,7 @@ Scanning for vulnerabilities ≠ Vulnerabilities are fixed.
 
 **Why This Matters** (Real-World Incidents):
 
-- **SolarWinds** (2020): Supply chain compromise affecting thousands of organizations
+- **SolarWinds** (2020): Supply chain compromise affecting thousands of organisations
 - **Log4Shell** (2021): Critical vulnerability in ubiquitous OSS library  
 - **Codecov** (2021): CI/CD tool compromise exposing customer secrets
 - **event-stream** (2018): Malicious code injected into npm package
@@ -541,7 +557,7 @@ These MUST be "Implemented":
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Open source is not free of risk; it is free of licensing cost."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

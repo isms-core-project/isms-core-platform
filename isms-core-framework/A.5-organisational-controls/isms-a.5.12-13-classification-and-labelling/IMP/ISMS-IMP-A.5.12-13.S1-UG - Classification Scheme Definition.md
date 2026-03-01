@@ -7,21 +7,55 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Classification Scheme Definition |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.12-13.S1-UG |
+| **Related Policy** | ISMS-POL-A.5.12-13 (Classification and Labelling) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.12 (Classification of Information) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.12 Classification of Information |
-| **Parent Policy** | ISMS-POL-A.5.12-13 - Information Classification and Labelling |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.12-13 (Classification and Labelling)
+- ISMS-IMP-A.5.12-13.S2 (Labelling Procedures and Standards)
+- ISMS-IMP-A.5.12-13.S3 (Asset Classification Inventory)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.12-13.S1-TG.
+
+### Workbook at a Glance
+
+This workbook contains the following 8 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Classification Levels** | Definition and documentation of classification levels and criteria |
+| **Handling Requirements** | Mandatory handling rules for each classification level |
+| **CIA Matrix** | Mapping of classification levels to Confidentiality, Integrity, and Availability requirements |
+| **Regulatory Mapping** | Cross-reference of classification levels to applicable regulatory requirements |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -88,7 +122,7 @@ The Classification Scheme Definition Assessment covers:
 
 Per ISO/IEC 27001:2022 Control A.5.12:
 
-> *"Information should be classified according to the information security needs of the organization based on confidentiality, integrity, availability and relevant interested party requirements."*
+> *"Information should be classified according to the information security needs of the organisation based on confidentiality, integrity, availability and relevant interested party requirements."*
 
 **Control Type:** Preventive
 **Security Properties:** Confidentiality, Integrity, Availability
@@ -497,7 +531,7 @@ The Approval_SignOff sheet requires:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Classification is the beginning of all science."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

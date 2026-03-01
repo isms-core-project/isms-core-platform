@@ -8,210 +8,139 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Redundancy Implementation |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.30-8.13-14-S3-TG |
+| **Related Policy** | ISMS-POL-A.5.30-8.13-14-S3 (Business Continuity Dr) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.13 (Information Backup) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Redundancy & High Availability Implementation |
-| **Related Policy** | ISMS-POL-A.5.30-8.13-14, Section 2.2 (Redundancy Requirements) |
-| **Related Assessment** | ISMS-IMP-A.5.30-8.13-14-S1 (BIA - provides RTO requirements) |
-| **Purpose** | Implement redundancy and high availability aligned with BIA-determined RTO requirements, eliminate single points of failure, configure failover capabilities |
-| **Target Audience** | Infrastructure Team, Network Team, Database Administrators, Cloud Architects, System Administrators, BC/DR Coordinator |
-| **Assessment Type** | Technical Implementation |
-| **Review Cycle** | Quarterly (redundancy configuration) + After Major System Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial redundancy implementation methodology | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.30-8.13-14-S3 (Business Continuity Dr)
+- ISMS-IMP-A.5.30-8.13-14-S1 (BIA and RPO:RTO Process)
+- ISMS-IMP-A.5.30-8.13-14-S2 (Backup Implementation)
+- ISMS-IMP-A.5.30-8.13-14-S4 (Recovery Testing Process)
 
 ---
+
 # Technical Specification
 **Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
-
-> Auto-generated from `generate_a530_3_rpo_rto_compliance.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.30.S3` |
-| **Output Filename** | `ISMS-IMP-A.5.30.S3_RPO_RTO_Compliance_YYYYMMDD.xlsx` |
-| **Workbook Title** | RPO/RTO Compliance Matrix |
-| **Total Sheets** | 9 (9 visible) |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #666666 | 666666 | Dark Gray (Secondary Text) |
-| #808080 | 808080 | Gray (Disabled) |
-| #C00000 | C00000 | Dark Red (Blocked) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
-
 ---
 
-## Sheet 2: Summary
+## Generator Alignment Reference
 
-**Data Rows:** 110 (rows 5–114)
+> Auto-generated from `generate_a530_3_rpo_rto_compliance.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Formulas
+**Document ID:** `ISMS-IMP-A.5.30.S3`
 
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(System_Inventory!A5:A114)` | Total Systems Assessed: |
-| — | `=COUNTIF(Compliance_Matrix!E5:E114,` | Systems with Full Compliance (RPO & RTO): |
-| — | `=IF(B5>0,B6/B5,0)` | Overall Compliance Rate: |
-| — | `=COUNTIF(System_Inventory!C5:C114,` | Tier 1 - Critical Systems: |
-| — | `=SUMPRODUCT((System_Inventory!C5:C114=` | Tier 1 - Full Compliance: |
-| — | `=IF(B13>0,B14/B13,0)` | Tier 1 - Compliance Rate: |
-| — | `=IF(B17>0,B18/B17,0)` | Tier 2 - Compliance Rate: |
-| — | `=COUNTA(Gap_Analysis!A5:A114)` | Total Gaps Identified: |
-| — | `=COUNTIF(Gap_Analysis!F5:F114,` | 🔴 Critical Priority Gaps: |
-| — | `=COUNTIF(Gap_Analysis!H5:H114,` | Open Gaps (🔴): |
-| — | `=IFERROR(AVERAGE(Gap_Analysis!E5:E114),0)` | Average Risk Score: |
-| — | `=COUNTA(Evidence_Register!A5:A104)` | Evidence Items Collected: |
-| — | `=COUNTIF(Evidence_Register!H5:H104,` | Verified Evidence: |
-| — | `=IF(B40>=B42,` | Evidence Compliance: |
-| — | `=IF(Approval_Sign_Off!B27<>` | Level 1 - Assessor Completed: |
-| — | `=IF(Approval_Sign_Off!B38<>` | Level 2 - ISO Review: |
-| — | `=IF(Approval_Sign_Off!B50<>` | Level 3 - CISO Approval: |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: System_Inventory
+| # | Sheet Name |
+|---|-----------|
+| 1 | Summary Dashboard |
+| 2 | System Inventory |
+| 3 | Capability Assessment |
+| 4 | Compliance Matrix |
+| 5 | Gap Analysis |
+| 6 | Evidence Register |
+| 7 | Approval Sign-Off |
+| 8 | Instructions & Legend |
 
-**Frozen Panes:** A5
+### Color Palette
 
-### Columns
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #666666 | Dark Gray (Secondary Text) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-| Col | Header |
-|-----|--------|
-| A | System Name |
-| B | Business Process |
-| C | Criticality Tier |
-| D | MTPD (hours) |
-| E | RPO Requirement (hours) |
-| F | RTO Requirement (hours) |
-| G | Business Justification |
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | System Name |
+| 2 | Business Process |
+| 3 | Criticality Tier |
+| 4 | MTPD (hours) |
+| 5 | RPO Requirement (hours) |
+| 6 | RTO Requirement (hours) |
+| 7 | Business Justification |
+| 8 | Backup Frequency (hours) |
+| 9 | Restore Time Tested (hours) |
+| 10 | Failover Time Tested (hours) |
+| 11 | RPO Capability (hours) |
+| 12 | RTO Capability (hours) |
+| 13 | Test Notes / Observations |
+| 14 | Criticality |
+| 15 | RPO: Req vs Cap |
+| 16 | RTO: Req vs Cap |
+| 17 | Overall Compliance |
+| 18 | Priority |
+| 19 | Gap Summary |
+| 20 | Next Action Required |
+| 21 | Gap ID |
+| 22 | System |
+| 23 | Gap Type |
+| 24 | Gap Description |
+| 25 | Risk Score (1-10) |
+| 26 | Remediation Plan |
+| 27 | Status |
+| 28 | Evidence ID |
+| 29 | Assessment Area |
+| 30 | Evidence Type |
+| 31 | Description |
+| 32 | Location / Path |
+| 33 | Date Collected |
+| 34 | Collected By |
+| 35 | Verification Status |
 
-## Sheet 4: Capability_Assessment
+### Data Validation Values
 
-**Frozen Panes:** A5
+All dropdown/list values used across sheets:
 
-### Columns
+```
+Tier 1 - Critical, Tier 2 - Important, Tier 3 - Standard, Tier 4 - Low
+[!] Critical, [~] High, [.] Medium, [ ] Low, RPO Gap, RTO Gap, Both RPO & RTO
+Testing Gap, Documentation Gap, Config File, Screenshot, Report, Log File
+Test Result, Policy Document, BIA Report, Contract, Diagram, Other, Draft
+Under Review, Final, Requires Remediation, Approved, Approved with Conditions
+Rejected, Requires Rework, Approve, Approve with Conditions, Reject
+Require Rework, Re-assessment required, Deferred
+```
 
-| Col | Header |
-|-----|--------|
-| A | System Name |
-| B | Backup Frequency (hours) |
-| C | Restore Time Tested (hours) |
-| D | Failover Time Tested (hours) |
-| E | RPO Capability (hours) |
-| F | RTO Capability (hours) |
-| G | Test Notes / Observations |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| EN | `=IF(ISNUMBER(B{current_row}),B{current_row},` |  |
-| FN | `=IF(AND(ISNUMBER(C{current_row}),ISNUMBER(D{current_row})),MIN(C{current_row},D{` |  |
-
----
-
-## Sheet 5: Compliance_Matrix
-
-**Data Rows:** 110 (rows 5–114) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | System Name |
-| B | Criticality |
-| C | RPO: Req vs Cap |
-| D | RTO: Req vs Cap |
-| E | Overall Compliance |
-| F | Priority |
-| G | Gap Summary |
-| H | Next Action Required |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=System_Inventory!A{current_row}` |  |
-| BN | `=System_Inventory!C{current_row}` |  |
-
----
-
-## Sheet 6: Gap_Analysis
-
-**Data Rows:** 110 (rows 5–114) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Gap ID |
-| B | System |
-| C | Gap Type |
-| D | Gap Description |
-| E | Risk Score (1-10) |
-| F | Priority |
-| G | Remediation Plan |
-| H | Status |
-
----
-
-## Sheet 7: Evidence_Register
-
-**Data Rows:** 100 (rows 5–104) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Evidence Type |
-| C | Description |
-| D | Related Sheet/Row |
-| E | Location/Path |
-| F | Date Collected |
-| G | Collected By |
-| H | Verification Status |
-
----
-
-## Sheet 8: Approval_Sign_Off
-
-**Data Rows:** 100 (rows 5–104)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(Evidence_Register!A5:A104)` | Evidence Items Collected: |
-
----
-
-## Sheet 9: Base_Validations
+**Extracted:** 8 sheets, 35 columns, 37 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

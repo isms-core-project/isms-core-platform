@@ -77,7 +77,7 @@ This document provides technical reference patterns for implementing environment
 
 This document does NOT:
 
-- Define [Organization]'s required or prohibited architectures
+- Define [Organisation]'s required or prohibited architectures
 - Establish mandatory implementation requirements
 - Create compliance obligations or audit criteria
 - Replace ISMS-POL-A.8.31 policy requirements
@@ -90,7 +90,7 @@ This document does NOT:
 
 **This Document**: Provides **HOW** those requirements can be implemented on specific platforms (AWS multi-account, Azure subscriptions, Kubernetes namespaces, etc.)
 
-Organizations choose platforms and architectures appropriate to their needs. The requirement is separation; the implementation varies.
+Organisations choose platforms and architectures appropriate to their needs. The requirement is separation; the implementation varies.
 
 ---
 
@@ -98,13 +98,13 @@ Organizations choose platforms and architectures appropriate to their needs. The
 
 ## Architecture Overview
 
-**AWS Organizations Structure**:
+**AWS Organisations Structure**:
 
-Recommended structure using Organizational Units (OUs) to group accounts by environment:
+Recommended structure using Organisational Units (OUs) to group accounts by environment:
 
 ```
-Root Organization
-├── Security OU (Organizational Unit)
+Root Organisation
+├── Security OU (Organisational Unit)
 │   ├── Audit Account (CloudTrail logs, compliance reporting)
 │   └── Security Tooling Account (GuardDuty, SecurityHub, Inspector)
 ├── Development OU
@@ -438,10 +438,10 @@ Translation: Production storage accounts MUST use customer-managed encryption ke
 
 ## Architecture Overview
 
-**GCP Organization Hierarchy**:
+**GCP Organisation Hierarchy**:
 
 ```
-Organization (example.com)
+Organisation (example.com)
 ├── Security Folder
 │   ├── Audit Project (Cloud Logging aggregation)
 │   └── Security Tools Project (Security Command Center)
@@ -559,7 +559,7 @@ Kubernetes Cluster (shared)
 
 **Pros**: Resource efficiency, simpler management  
 **Cons**: Weaker isolation (production shares control plane with dev)  
-**Use Case**: Small organizations, low-risk applications
+**Use Case**: Small organisations, low-risk applications
 
 **Option 2: Cluster-Based Separation** (Separate Clusters):
 ```
@@ -571,7 +571,7 @@ Production Cluster (separate)
 
 **Pros**: Strong isolation (production control plane separate)  
 **Cons**: Higher operational overhead, higher cost  
-**Use Case**: Large organizations, high-risk applications, regulatory requirements
+**Use Case**: Large organisations, high-risk applications, regulatory requirements
 
 **Recommended**: Cluster-based separation for production, namespace-based for dev/test/staging.
 
@@ -628,7 +628,7 @@ spec:
 
 ```yaml
 # Developers can only access dev namespace
-apiVersion: rbac.authorization.k8s.io/v1
+apiVersion: rbac.authorisation.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: developers
@@ -638,11 +638,11 @@ subjects:
 - kind: Group
 
   name: developers
-  apiGroup: rbac.authorization.k8s.io
+  apiGroup: rbac.authorisation.k8s.io
 roleRef:
   kind: ClusterRole
   name: edit
-  apiGroup: rbac.authorization.k8s.io
+  apiGroup: rbac.authorisation.k8s.io
 ```
 
 ## Cluster-Based Separation
@@ -764,7 +764,7 @@ Database Tier VLAN (most restricted)
 - VPN or Direct Connect / ExpressRoute / Cloud Interconnect
 - Deployment pipeline deploys to cloud dev/test, then to on-premises prod
 
-**Use Case**: Organizations migrating to cloud (keep production on-prem during transition)
+**Use Case**: Organisations migrating to cloud (keep production on-prem during transition)
 
 ## Multi-Cloud Hybrid
 
@@ -790,7 +790,7 @@ Database Tier VLAN (most restricted)
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ AWS Organizations Root                                       │
+│ AWS Organisations Root                                       │
 │                                                              │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
 │  │ Dev Account  │  │ Test Account │  │ Prod Account │     │
@@ -838,7 +838,7 @@ Database Tier VLAN (most restricted)
 | **Isolation** | Medium (logical only) | High (account boundaries) | Maximum (physical) |
 | **Compliance** | Low-Medium risk | High risk acceptable | Maximum (financial, healthcare) |
 | **Complexity** | Low (single cluster/account) | Medium (multi-account management) | High (separate data centers) |
-| **Recommended For** | Small orgs, low risk | Most organizations | Regulated industries |
+| **Recommended For** | Small orgs, low risk | Most organisations | Regulated industries |
 
 ## Migration Path
 
@@ -852,6 +852,6 @@ Database Tier VLAN (most restricted)
 
 ---
 
-*This technical reference supports ISMS-POL-A.8.31. Implementation decisions should be based on organizational risk assessment and approved by CISO.*
+*This technical reference supports ISMS-POL-A.8.31. Implementation decisions should be based on organisational risk assessment and approved by CISO.*
 
 <!-- QA_VERIFIED: 2026-02-01 -->

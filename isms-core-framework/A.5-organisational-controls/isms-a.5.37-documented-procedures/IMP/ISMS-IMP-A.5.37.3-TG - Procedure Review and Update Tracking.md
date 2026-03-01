@@ -3,95 +3,122 @@
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.5.37: Documented Operating Procedures
 
-## Document Information
+---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Procedure Review and Update Tracking |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.37.3-TG |
-| **Control Reference** | ISO/IEC 27001:2022 - Control A.5.37: Documented Operating Procedures |
-| **Parent Policy** | ISMS-POL-A.5.37 Documented Operating Procedures Policy |
-| **Related IMPs** | ISMS-IMP-A.5.37.1, ISMS-IMP-A.5.37.2, ISMS-IMP-A.5.37.4 |
+| **Related Policy** | ISMS-POL-A.5.37 (Documented Procedures) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.37 (Documented Operating Procedures) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Classification** | Internal Use |
-| **Owner** | Information Security Manager |
-| **Last Review** | [Date to be set] |
-| **Framework Version** | 1.0 |
-| **Assessment Type** | Periodic Review and Change Management |
+| **Classification** | Internal |
+| **Status** | Draft |
 
----
+**Version History**:
 
-## Control Requirement
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-> "Operating procedures for information processing facilities should be documented and made available to personnel who need them."
->
-> — ISO/IEC 27001:2022, Annex A Control 5.37
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
----
+**Related Documents**:
 
-### Document Structure
-
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.37.3-UG.
+- ISMS-POL-A.5.37 (Documented Procedures)
+- ISMS-IMP-A.5.37.1 (Procedure Inventory Assessment)
+- ISMS-IMP-A.5.37.2 (Procedure Quality Assessment)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a537_3_review_tracking.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.37.3` |
-| **Output Filename** | `ISMS-IMP-A.5.37.3_Procedure_Review_and_Update_Tracking_YYYYMMDD.xlsx` |
-| **Workbook Title** | Procedure Review and Update Tracking |
-| **Total Sheets** | 7 (7 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #808080 | 808080 | Gray (Disabled) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E2EFDA | E2EFDA | Pale Green (Success Background) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Review_Schedule
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a537_3_review_tracking.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Change_Requests
+**Document ID:** `ISMS-IMP-A.5.37.3`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Version_History
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Review Schedule |
+| 3 | Change Requests |
+| 4 | Version History |
+| 5 | Communication Log |
+| 6 | Overdue Escalation |
+| 7 | Evidence Register |
+| 8 | Summary Dashboard |
+| 9 | Approval Sign-Off |
 
-## Sheet 5: Communication_Log
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Overdue_Escalation
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Assessment Area |
+| 2 | Total Items |
+| 3 | Compliant |
+| 4 | Partial |
+| 5 | Non-Compliant |
+| 6 | N/A |
+| 7 | Compliance % |
+| 8 | Category |
+| 9 | Finding |
+| 10 | Count |
+| 11 | Severity |
+| 12 | Action Required |
 
-## Sheet 7: Evidence_Register
+### Data Validation Values
+
+All dropdown/list values used across sheets:
+
+```
+Critical, High, Medium, Low, Current - No Changes, Minor Updates
+Major Updates, Obsolete, Superseded, Administrative, Minor, Major, Emergency
+Scheduled Review, System Change, Incident Related, Regulatory Change
+Audit Finding, Personnel Change, Submitted, Under Review, Approved, Rejected
+Implemented, Active, Archived, Email, Intranet, Meeting, Training, Yes, No, L1
+L2, L3, Open, Acknowledged, Resolved, Policy Document, Process Record
+System Screenshot, Configuration Export, Audit Log, Training Record
+Test Result, Risk Assessment, Meeting Minutes, Other, Verified
+Pending verification, Not verified, N/A, Approved with Conditions, Deferred
+```
+
+**Extracted:** 9 sheets, 12 columns, 54 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

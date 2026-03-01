@@ -7,15 +7,35 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Compliance Oversight Tracker |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.4.2-UG |
+| **Related Policy** | ISMS-POL-A.5.4 (Management Responsibilities) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.4 (Management Responsibilities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.4 Management Responsibilities |
-| **Parent Policy** | ISMS-POL-A.5.4 - Management Responsibilities |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.4 (Management Responsibilities)
+- ISMS-IMP-A.5.4.1 (Management Commitment Assessment)
+- ISMS-IMP-A.5.4.3 (Leadership Dashboard)
+- ISMS-IMP-A.5.4.4 (Security Culture Survey)
 
 ---
 
@@ -106,6 +126,24 @@ When thresholds are breached:
 3. Track resolution and document outcome
 4. Review root cause to prevent recurrence
 
+### Workbook at a Glance
+
+This workbook contains the following sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Tracker guidance, threshold definitions, and field descriptions |
+| **Training Oversight** | Monthly tracking of team training completion and manager follow-up actions |
+| **Policy Violations** | Log of policy violations in each manager's team with response timelines |
+| **Access Reviews** | Record of access review completions per manager per cycle |
+| **Escalation Triggers** | Log of threshold breaches requiring escalation, with resolution tracking |
+| **Quarterly Summary** | Aggregated compliance metrics and overall rating per manager per quarter |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+| **Evidence Register** | Tracking of supporting evidence collected for this tracker |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+
+---
+
 ### Completion Walkthrough
 
 #### Step 1: Training Oversight (Monthly)
@@ -157,6 +195,13 @@ Aggregate all data quarterly:
 3. Calculate **Avg_Response_Days** (target: ≤15 days)
 4. Verify **Access_Reviews_Completed** (target: 100%)
 5. Assign **Overall_Rating**: Exceeds, Meets, Below, N/A
+
+### After Completing the Tracker Sheets
+
+Once Steps 1–5 are current:
+
+- **Evidence Register** — Record the supporting evidence used to verify this tracker's data: LMS export files, violation case references, access review completion records, and escalation communication logs. Each Evidence Register entry should reference the specific sheet and record it supports. This sheet is the audit trail demonstrating that your data is evidence-based, not self-reported.
+- **Summary Dashboard** — Review the dashboard for an aggregated view of compliance oversight performance across the management population. It auto-populates from your tracker data. Confirm the metrics look accurate before the quarterly review sign-off.
 
 ### Worked Examples
 
@@ -428,7 +473,7 @@ Before quarterly reporting:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Oversight without insight is just surveillance."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

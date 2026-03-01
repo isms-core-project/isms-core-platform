@@ -3,195 +3,173 @@
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Data Subject Rights Management Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.34.3-TG |
+| **Related Policy** | ISMS-POL-A.5.34 (Privacy and Pii) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.34 (Privacy and Protection of PII) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Data Subject Rights (DSR) Request Management and GDPR Articles 15-22 Compliance |
-| **Related Policy** | ISMS-POL-A.5.34, Section 2.3 (Data Subject Rights Management) |
-| **Purpose** | Guide users through DSR request tracking, SLA compliance monitoring (30-day deadline per Article 12), identity verification, and exception handling for GDPR Articles 15-22 rights |
-| **Target Audience** | DPO/Privacy Officers, Privacy Team, Customer Service, Legal Counsel, IT Teams, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Monthly for SLA tracking, Annual for process assessment |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for DSR Management assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.34 (Privacy and Pii)
+- ISMS-IMP-A.5.34.1 (PII Identification and Classification Assessment)
+- ISMS-IMP-A.5.34.2 (Legal Basis and Lawful Processing Assessment)
+- ISMS-IMP-A.5.34.4 (Technical and Organisational Measures (TOMs) Assessment)
+- ISMS-IMP-A.5.34.5 (DPIA Assessment)
+- ISMS-IMP-A.5.34.6 (Cross Border Transfer Assessment)
 
 ---
+
 # Technical Specification
-**Audience:** Assessment Workbook Developers, Python Script Users, Technical Implementation Teams
-
-
-> Auto-generated from `generate_a5343_dsr_management_assessment.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.34.3` |
-| **Output Filename** | `ISMS-IMP-A.5.34.3_Data_Subject_Rights_Management_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Data Subject Rights Management Assessment |
-| **Total Sheets** | 10 (10 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | COLOR_HEADER | Dark Blue (Headers) |
-| #C6EFCE | COLOR_SLA_MET | Light Green (Compliant/Pass) |
-| #D6DCE4 | COLOR_INSTRUCTION | Silver (Neutral) |
-| #F2F2F2 | COLOR_CALCULATED | Very Light Gray (Protected/Alternating) |
-| #FFC7CE | COLOR_SLA_BREACHED | Light Red (Non-Compliant/Fail) |
-| #FFD966 | COLOR_WARNING | Gold/Yellow (Highlight) |
-| #FFEB9C | COLOR_PENDING | Light Yellow/Amber (Partial) |
-
-## Sheet 1: Header_Row
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: 1. Instructions & Legend
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a5343_dsr_management_assessment.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: 2. DSR Request Inventory
+**Document ID:** `ISMS-IMP-A.5.34.3`
 
-### Columns
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Request ID | 15 |
-| B | Receipt Date | 12 |
-| C | Request Channel | 15 |
-| D | Right Type | 20 |
-| E | Requester Name | 25 |
-| F | Requester Contact | 30 |
-| G | Request Description | 50 |
-| H | Request Scope | 40 |
-| I | Identity Verification Method | 20 |
-| J | Verification Status | 18 |
-| K | Verification Date | 12 |
-| L | Response Date | 12 |
-| M | Response Deadline | 12 |
-| N | Days to Respond | 12 |
-| O | SLA Status | 12 |
-| P | Response Method | 18 |
-| Q | Response Description | 50 |
-| R | Request Outcome | 20 |
-| S | Rejection Reason | 40 |
-| T | Extension Justification | 50 |
-| U | Requester Satisfaction | 15 |
-| V | Request Complexity | 15 |
-| W | Effort (Hours) | 10 |
-| X | Assigned To | 25 |
-| Y | Evidence Reference | 15 |
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | 2. DSR Request Inventory |
+| 3 | 3. Request Process. Procedures |
+| 4 | 4. SLA Compliance Tracking |
+| 5 | 5. Exception & Reject. Tracking |
+| 6 | 6. Rights-Specific Analysis |
+| 7 | 7. Evidence Repository |
+| 8 | Summary Dashboard |
+| 9 | Approval Sign-Off |
 
-## Sheet 4: 3. Request Processing Procedures
+### Color Palette
 
-**Data Rows:** 7 (rows 2–8)
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-### Columns
+### Column Headers (All Sheets)
 
-| Col | Header |
-|-----|--------|
-| A | Right Type |
-| B | Standard Response Time |
-| C | Identity Verification Required |
-| D | Typical Fulfillment Steps |
-| E | Systems Involved |
-| F | Quality Checklist |
-| G | Common Exceptions |
-| H | Escalation Criteria |
+| # | Column Header |
+|---|--------------|
+| 1 | Status Legend |
+| 2 | Request ID |
+| 3 | Receipt Date |
+| 4 | Request Channel |
+| 5 | Right Type |
+| 6 | Requester Name |
+| 7 | Requester Contact |
+| 8 | Request Description |
+| 9 | Request Scope |
+| 10 | Identity Verification Method |
+| 11 | Verification Status |
+| 12 | Verification Date |
+| 13 | Response Date |
+| 14 | Response Deadline |
+| 15 | Days to Respond |
+| 16 | SLA Status |
+| 17 | Response Method |
+| 18 | Response Description |
+| 19 | Request Outcome |
+| 20 | Rejection Reason |
+| 21 | Extension Justification |
+| 22 | Requester Satisfaction |
+| 23 | Request Complexity |
+| 24 | Effort (Hours) |
+| 25 | Assigned To |
+| 26 | Evidence Reference |
+| 27 | Standard Response Time |
+| 28 | Identity Verification Required |
+| 29 | Typical Fulfillment Steps |
+| 30 | Systems Involved |
+| 31 | Quality Checklist |
+| 32 | Common Exceptions |
+| 33 | Escalation Criteria |
+| 34 | Total |
+| 35 | SLA Met |
+| 36 | SLA Breached |
+| 37 | Avg Response Time |
+| 38 | Exception Legal Basis |
+| 39 | Detailed Justification |
+| 40 | Data Subject Notified |
+| 41 | Appeal Rights Communicated |
+| 42 | Alternative Measures Offered |
+| 43 | DPO Review |
+| 44 | Legal Counsel Review |
+| 45 | Requester Response |
+| 46 | Evidence ID |
+| 47 | Request ID (Link) |
+| 48 | Evidence Type |
+| 49 | Description |
+| 50 | File Location |
+| 51 | Evidence Date |
+| 52 | Retention Period (Years) |
+| 53 | Notes |
+| 54 | Assessment Area |
+| 55 | Total Items |
+| 56 | Compliant |
+| 57 | Partial |
+| 58 | Non-Compliant |
+| 59 | N/A |
+| 60 | Compliance % |
+| 61 | Metric |
+| 62 | Value |
+| 63 | Category |
+| 64 | Finding |
+| 65 | Count |
+| 66 | Severity |
+| 67 | Action Required |
 
----
+### Data Validation Values
 
-## Sheet 5: 4. SLA Compliance Tracking
+All dropdown/list values used across sheets:
 
----
+```
+Draft, Final, Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
-## Sheet 6: 5. Exception & Rejection Tracking
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Request ID |
-| B | Right Type |
-| C | Exception Legal Basis |
-| D | Detailed Justification |
-| E | Data Subject Notified |
-| F | Appeal Rights Communicated |
-| G | Alternative Measures Offered |
-| H | DPO Review |
-| I | Legal Counsel Review |
-| J | Requester Response |
-
----
-
-## Sheet 7: 6. Rights-Specific Analysis
-
----
-
-## Sheet 8: 7. Evidence Repository
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Request ID (Link) |
-| C | Evidence Type |
-| D | Description |
-| E | File Location |
-| F | Evidence Date |
-| G | Retention Period (Years) |
-| H | Verification Status |
-| I | Notes |
-
----
-
-## Sheet 9: 8. Dashboard
-
----
-
-## Sheet 10: 9. Approval & Sign-Off
-
----
-
-## Data Validation Dropdown Lists
-
-All dropdown value lists defined in the generator:
-
-| Variable | Values |
-|----------|--------|
-| `APPROVAL_STATUS` | Approved, Approved with Conditions, Requires Revision, Rejected |
-| `COMPLEXITY_LEVELS` | Low, Medium, High, Very High |
-| `EVIDENCE_TYPES` | Request Email, Response Email, Data Export (Access/Portability), Deletion Certificate (Erasure), ... |
-| `IDENTITY_VERIFICATION_METHODS` | Account Login, Email Confirmation, ID Document, Phone Verification, In-Person, Not Required |
-| `REJECTION_REASONS` | Legal Obligation (Art. 17(3)(b) - Tax, Employment Law), Legal Claims (Art. 17(3)(e) - Litigation,... |
-| `REQUESTER_RESPONSES` | Accepted, Appealed to Supervisory Authority, Disputed, No Response |
-| `REQUEST_CHANNELS` | Email, Web Portal, Phone, Postal Mail, In-Person |
-| `REQUEST_OUTCOMES` | Fulfilled, Partially Fulfilled, Rejected, Extended, Withdrawn |
-| `RESPONSE_METHODS` | Email, Secure Portal, Postal Mail, In-Person, Download Link |
-| `RIGHT_TYPES` | Access (Art. 15), Rectification (Art. 16), Erasure (Art. 17), Restriction (Art. 18), Data Portabi... |
-| `SATISFACTION_LEVELS` | Satisfied, Neutral, Dissatisfied, No Feedback |
-| `VERIFICATION_STATUS` | Verified, Verification Failed, Verification Pending, Not Required |
-| `VERIFICATION_STATUS_EVIDENCE` | Complete, Incomplete, Under Review, Archived |
-| `YES_NO` | Yes, No |
-| `YES_NO_NA` | Yes, No, N/A |
-| `YES_NO_PENDING` | Yes, No, Pending |
+**Extracted:** 9 sheets, 67 columns, 8 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

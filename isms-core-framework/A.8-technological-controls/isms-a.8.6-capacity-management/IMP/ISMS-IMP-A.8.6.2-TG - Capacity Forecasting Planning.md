@@ -8,120 +8,167 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Capacity Forecasting Planning |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.6.2-TG |
+| **Related Policy** | ISMS-POL-A.8.6 (Capacity Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.6 (Capacity Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Capacity Forecasting, Trend Analysis & Expansion Planning |
-| **Related Policy** | ISMS-POL-A.8.6 (Capacity Management Policy) |
-| **Prerequisite** | ISMS-IMP-A.8.6.1 (Capacity Utilization Assessment) - MUST be completed first |
-| **Purpose** | Analyze capacity trends, forecast future requirements, plan capacity expansions, and validate forecast accuracy |
-| **Target Audience** | Capacity Planning Team, Infrastructure Managers, IT Operations, Finance (Budget Planning), Auditors |
-| **Assessment Type** | Analytical & Planning |
-| **Review Cycle** | Quarterly (with annual deep forecasting) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Capacity Forecasting & Planning assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.6 (Capacity Management)
+- ISMS-IMP-A.8.6.1 (Capacity Monitoring Implementation)
 
 ---
+
 # Technical Specification
-
-
-> Auto-generated from `generate_a86_2_capacity_forecasts.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.6-Assessment-2` |
-| **Output Filename** | `ISMS-IMP-A.8.6-Assessment-2_Capacity_Forecasting_&_Planning_YYYYMMDD.xlsx` |
-| **Workbook Title** | Capacity Forecasting & Planning |
-| **Total Sheets** | 13 (13 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Historical_Utilization
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a86_2_capacity_forecasts.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Trend_Analysis
+**Document ID:** `ISMS-IMP-A.8.6-Assessment-2`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Capacity_Forecasts
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Historical Utilization |
+| 2 | Trend Analysis |
+| 3 | Capacity Forecasts |
+| 4 | Capacity Exhaustion |
+| 5 | Planned Expansions |
+| 6 | Forecast Accuracy |
+| 7 | Budget Planning |
+| 8 | Instructions & Legend |
+| 9 | Summary Dashboard |
+| 10 | Evidence Register |
+| 11 | Approval Sign-Off |
 
-## Sheet 5: Capacity_Exhaustion
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Planned_Expansions
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | HISTORICAL CAPACITY UTILIZATION DATA |
+| 2 | CAPACITY TREND ANALYSIS |
+| 3 | CAPACITY EXHAUSTION PROJECTIONS |
+| 4 | PLANNED CAPACITY EXPANSIONS |
+| 5 | FORECAST ACCURACY VALIDATION |
+| 6 | CAPACITY BUDGET PLANNING |
+| 7 | Total Critical/Immediate Exhaustion Risks: |
+| 8 | Symbol |
+| 9 | Status |
+| 10 | Description |
+| 11 | Month/Date |
+| 12 | Resource Name |
+| 13 | Utilization (%) |
+| 14 | Peak Utilization (%) |
+| 15 | Notes |
+| 16 | Data Source |
+| 17 | Trend Method |
+| 18 | Growth Rate (% per month) |
+| 19 | R-Squared |
+| 20 | Seasonal Pattern |
+| 21 | Analyst |
+| 22 | Current Utilization (%) |
+| 23 | Growth Rate (%/month) |
+| 24 | 6-Month Forecast (%) |
+| 25 | 12-Month Forecast (%) |
+| 26 | 24-Month Forecast (%) |
+| 27 | Confidence |
+| 28 | Assumptions |
+| 29 | Forecast Date |
+| 30 | Current (%) |
+| 31 | Threshold (%) |
+| 32 | Growth Rate (%/mo) |
+| 33 | Months to Threshold |
+| 34 | Exhaustion Date |
+| 35 | Urgency |
+| 36 | Action Required |
+| 37 | Current Capacity |
+| 38 | Expansion Amount |
+| 39 | New Total Capacity |
+| 40 | Planned Date |
+| 41 | Lead Time (days) |
+| 42 | Cost Estimate |
+| 43 | Approval Status |
+| 44 | Owner |
+| 45 | Forecasted Value |
+| 46 | Actual Value |
+| 47 | Absolute Error |
+| 48 | Percentage Error (%) |
+| 49 | Accuracy Rating |
+| 50 | Lessons Learned |
+| 51 | Resource/Project |
+| 52 | Quarter |
+| 53 | CapEx (CHF) |
+| 54 | OpEx (CHF/month) |
+| 55 | 3-Year TCO (CHF) |
+| 56 | Evidence ID |
+| 57 | Assessment Area |
+| 58 | Evidence Type |
+| 59 | Location/Path |
+| 60 | Date Collected |
+| 61 | Collected By |
+| 62 | Verification Status |
 
-## Sheet 7: Forecast_Accuracy
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Budget_Planning
+```
+Linear Regression, Growth Rate, Seasonal Model, Business-Driven
+Manual Estimate, None, Weekly, Monthly, Quarterly, Annual, Custom, High
+Medium, Low, Planned, In Procurement, Ordered, Delivered, Installed, Completed
+Cancelled, Pending, Approved, Rejected, Deferred, Q1, Q2, Q3, Q4
+Capacity report, Screenshot, Monitoring export, Documentation, Vendor spec
+Budget approval, Forecast model, Compliance report, Other, Verified
+Pending verification, Not verified, Requires update, Draft, Final
+Requires remediation, Re-assessment required, Approved with Conditions
+```
 
----
-
-## Sheet 9: Evidence_Register
-
----
-
-## Sheet 10: Approval_Sign_Off
-
----
-
-## Sheet 11: Instructions
-
----
-
-## Sheet 12: Hist_Utilization
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Month/Date |
-| B | Resource Name |
-| C | Utilization (%) |
-| D | Peak Utilization (%) |
-| E | Notes |
-| F | Data Source |
-
----
-
-## Sheet 13: Approval_Signoff
-
-**Data Rows:** 4 (rows 1–4)
+**Extracted:** 11 sheets, 62 columns, 47 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

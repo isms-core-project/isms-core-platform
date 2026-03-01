@@ -7,138 +7,133 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Security Culture Survey |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.4.4-TG |
+| **Related Policy** | ISMS-POL-A.5.4 (Management Responsibilities) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.4 (Management Responsibilities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.4 Management Responsibilities |
-| **Parent Policy** | ISMS-POL-A.5.4 - Management Responsibilities |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.4 (Management Responsibilities)
+- ISMS-IMP-A.5.4.1 (Management Commitment Assessment)
+- ISMS-IMP-A.5.4.2 (Compliance Oversight Tracker)
+- ISMS-IMP-A.5.4.3 (Leadership Dashboard)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a54_4_security_culture_survey.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.4.4` |
-| **Output Filename** | `ISMS-IMP-A.5.4.4_Security_Culture_Survey_YYYYMMDD.xlsx` |
-| **Workbook Title** | Security Culture Survey |
-| **Total Sheets** | 6 (6 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #2F5496 | 2F5496 | Dark Blue (Alt Headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D6DCE4 | D6DCE4 | Silver (Neutral) |
-| #F2F2F2 | F2F2F2 | Very Light Gray (Protected/Alternating) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Survey Questions
+## Generator Alignment Reference
 
-### Columns
+> Auto-generated from `generate_a54_4_security_culture_survey.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-| Col | Header |
-|-----|--------|
-| A | Question_ID |
-| B | Category |
-| C | Question_Text |
-| D | Response_Scale |
+**Document ID:** `ISMS-IMP-A.5.4.4`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 3: Response Data
+### Sheet Structure
 
-### Columns
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Survey Questions |
+| 3 | Response Data |
+| 4 | YoY Trend Analysis |
+| 5 | Action Plan |
+| 6 | Executive Summary |
+| 7 | Approval Sign-Off |
+| 8 | Evidence Register |
+| 9 | Summary Dashboard |
 
-| Col | Header |
-|-----|--------|
-| A | Department |
-| B | Respondents |
-| C | Response_Rate |
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 4: YoY Trend Analysis
+### Column Headers (All Sheets)
 
-**Data Rows:** 12 (rows 4–15)
+| # | Column Header |
+|---|--------------|
+| 1 | Question ID |
+| 2 | Category |
+| 3 | Question Text |
+| 4 | Response Scale |
+| 5 | Department |
+| 6 | Respondents |
+| 7 | Response Rate |
+| 8 | Year-3 |
+| 9 | Year-2 |
+| 10 | Year-1 |
+| 11 | Current |
+| 12 | YoY Change |
+| 13 | Trend |
+| 14 | Action ID |
+| 15 | Current Score |
+| 16 | Gap |
+| 17 | Action Required |
+| 18 | Owner |
+| 19 | Due Date |
+| 20 | Status |
+| 21 | Metric / Category |
+| 22 | Value |
+| 23 | Priority Action |
+| 24 | Evidence ID |
+| 25 | Evidence Type |
+| 26 | Description |
+| 27 | Related Sheet |
+| 28 | File Name |
+| 29 | File Location |
+| 30 | Collection Date |
+| 31 | Collected By |
 
-### Columns
+### Data Validation Values
 
-| Col | Header |
-|-----|--------|
-| A | Category |
-| B | Year-3 |
-| C | Year-2 |
-| D | Year-1 |
-| E | Current |
-| F | YoY_Change |
-| G | Trend |
+All dropdown/list values used across sheets:
 
-### Data Validations
+```
+Improving, Stable, Declining, Not Started, In Progress, Completed, Deferred
+Exceeds Target, Meets Target, Below Target, Critical, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected
+```
 
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| G | G4:G15 | `trend_dv` |
-
----
-
-## Sheet 5: Action Plan
-
-**Data Rows:** 21 (rows 5–25)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Action_ID |
-| B | Category |
-| C | Current_Score |
-| D | Gap |
-| E | Action_Required |
-| F | Owner |
-| G | Due_Date |
-| H | Status |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| H | H5:H25 | `status_dv` |
-
----
-
-## Sheet 6: Executive Summary
-
-**Data Rows:** 3 (rows 2–4)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Metric |
-| B | Value |
-| C | Benchmark |
+**Extracted:** 9 sheets, 31 columns, 18 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

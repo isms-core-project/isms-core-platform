@@ -21,11 +21,11 @@ ISO/IEC 27001:2022 Control A.8.24: Use of Cryptography
 Assessment Domain 1 of 4: Data Transmission Cryptographic Controls
 
 --------------------------------------------------------------------------------
-SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
+SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANISATION
 --------------------------------------------------------------------------------
 
 This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
-your organization's specific data transmission infrastructure, cryptographic
+your organisation's specific data transmission infrastructure, cryptographic
 standards, and assessment requirements.
 
 Key customization areas:
@@ -196,7 +196,7 @@ Assessment workbooks contain sensitive infrastructure details including:
 - Certificate details and PKI infrastructure
 - Vulnerability information and security gaps
 
-Handle in accordance with your organization's data classification policies.
+Handle in accordance with your organisation's data classification policies.
 
 **Maintenance:**
 Review and update assessment:
@@ -222,14 +222,15 @@ Customize assessment criteria to include regulatory-specific requirements.
 """
 
 # =============================================================================
-# IMPORTS - Standard Library
+# IMPORTS - STANDARD LIBRARY
 # =============================================================================
 import logging
 import sys
 from datetime import datetime
+from pathlib import Path
 
 # =============================================================================
-# IMPORTS - Third Party
+# IMPORTS - THIRD PARTY
 # =============================================================================
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -255,12 +256,25 @@ CONTROL_ID = "A.8.24"
 CONTROL_NAME = "Use of Cryptography"
 CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
 
+# Row configuration
+MAX_DATA_ROWS = 50  # Standard maximum data rows per DS-005
+
 # Timestamps
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
-GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
 
 # Output filename
 OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
+_wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+_wkbk_dir.mkdir(parents=True, exist_ok=True)
+
+# ============================================================================
+# UNICODE SYMBOLS - PROPER UTF-8 ENCODING
+# ============================================================================
+CHECK   = '\u2705'      # ✅ Green checkmark
+XMARK   = '\u274C'      # ❌ Red X
+WARNING = '\u26A0'      # ⚠  Warning sign
+BULLET  = '\u2022'      # •  Bullet point
 
 # ============================================================================
 # SECTION 1: WORKBOOK CREATION & STYLE DEFINITIONS
@@ -269,10 +283,14 @@ OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_T
 def create_workbook() -> Workbook:
     """Create workbook with all required sheets matching markdown spec."""
     wb = Workbook()
+    wb.properties.title = f"{DOCUMENT_ID} — {WORKBOOK_NAME}"
+    wb.properties.subject = f"ISO/IEC 27001:2022 — Control {CONTROL_ID}: {CONTROL_NAME}"
+    wb.properties.creator = "ISMS Core Contributors"
+    wb.properties.description = f"ISMS Implementation Workbook — {DOCUMENT_ID}"
 
     # Remove default sheet
     if "Sheet" in wb.sheetnames:
-        wb.remove(wb["Sheet"])
+        wb.remove(wb.active)
 
     # Sheet structure matches markdown subsections
     sheets = [
@@ -289,8 +307,8 @@ def create_workbook() -> Workbook:
         "6.1 Database Connections",
         "6.2 Wireless Networks",
         "7.1 Cloud Transmission",
-        "Summary Dashboard",
         "Evidence Register",
+        "Summary Dashboard",
         "Approval Sign-Off",
     ]
     for name in sheets:
@@ -312,7 +330,7 @@ def setup_styles():
         },
         "subheader": {
             "font": Font(name="Calibri", size=11, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid"),
+            "fill": PatternFill(start_color="003366", end_color="003366", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
         },
         "column_header": {
@@ -334,6 +352,13 @@ def setup_styles():
     return styles
 
 
+
+_STYLES = setup_styles()
+def finalize_validations(wb):
+    """Ensure all data validations are properly finalised for all worksheets."""
+    for ws in wb.worksheets:
+        for dv in ws.data_validations.dataValidation:
+            pass  # Ensures DVs are iterated and serialised correctly
 # ============================================================================
 # SECTION 2: COLUMN DEFINITIONS PER SUBSECTION
 # ============================================================================
@@ -466,134 +491,151 @@ def get_column_definitions(section_key):
     return column_defs.get(section_key, {})
 
 
-# ============================================================================
-# END OF PART 1
-# ============================================================================
-
+def get_example_values(section_key):
+    """
+    Return realistic example row values for each assessment section.
+    Column order must match get_column_definitions() exactly.
+    """
+    examples = {
+        "1.1_external_https": [
+            "Corporate website (www.example.com)", "TLS 1.3", "Let's Encrypt",
+            "90 days", "✅ Compliant", "/evidence/a824/1.1-ssllabs-website-20260218.pdf",
+            "None", "❌ No",
+        ],
+        "1.2_internal_https": [
+            "HR portal (hr.internal.example.com)", "Confidential", "TLS 1.2",
+            "Internal CA", "✅ Compliant", "/evidence/a824/1.2-internal-tls-config-20260218.txt",
+            "None", "❌ No",
+        ],
+        "2.1_email_encryption": [
+            "Microsoft Exchange Online", "S/MIME", "End-to-end encryption",
+            "85%", "⚠️ Partial", "/evidence/a824/2.1-smime-policy-20260218.pdf",
+            "User adoption below 90% target", "✅ Yes",
+        ],
+        "2.2_digital_signatures": [
+            "Contract signing", "S/MIME", "Internal CA",
+            "✅ Compliant", "/evidence/a824/2.2-digital-sig-cert-20260218.p12",
+            "None", "❌ No",
+        ],
+        "3.1_file_transfer": [
+            "SFTP Server (files.example.com)", "SFTP", "SSH key + MFA",
+            "Confidential", "✅ Compliant", "/evidence/a824/3.1-sftp-config-20260218.txt",
+            "None", "❌ No",
+        ],
+        "4.1_vpn": [
+            "Cisco AnyConnect", "IKEv2/IPSec", "AES-256",
+            "✅ Yes", "✅ Compliant", "/evidence/a824/4.1-vpn-config-20260218.pdf",
+            "None", "❌ No",
+        ],
+        "4.2_ssh": [
+            "Linux production servers", "SSH 2.0", "Public key (RSA)",
+            "RSA-4096", "✅ Compliant", "/evidence/a824/4.2-ssh-key-audit-20260218.txt",
+            "None", "❌ No",
+        ],
+        "4.3_rdp": [
+            "Windows admin servers", "VPN + RDP Gateway", "TLS 1.2",
+            "✅ Yes", "✅ Compliant", "/evidence/a824/4.3-rdp-config-20260218.png",
+            "None", "❌ No",
+        ],
+        "5.1_api": [
+            "Customer REST API", "OAuth 2.0 / JWT", "TLS 1.3",
+            "Vault (HashiCorp)", "1 hour", "✅ Compliant",
+            "/evidence/a824/5.1-api-tls-scan-20260218.pdf", "None", "❌ No",
+        ],
+        "6.1_database": [
+            "PostgreSQL 15 (FINDB01)", "TLS 1.2 (sslmode=verify-full)",
+            "Internal CA (verify-full)", "✅ Compliant",
+            "/evidence/a824/6.1-db-tls-config-20260218.txt", "None", "❌ No",
+        ],
+        "6.2_wireless": [
+            "CORP-WIFI", "WPA3-Enterprise", "802.1X / EAP-TLS",
+            "✅ Compliant", "/evidence/a824/6.2-wifi-controller-20260218.png",
+            "None", "❌ No",
+        ],
+        "7.1_cloud": [
+            "AWS S3 (data backups)", "HTTPS/TLS 1.3", "AES-256 (in transit + at rest)",
+            "✅ Compliant", "/evidence/a824/7.1-aws-config-20260218.pdf",
+            "None", "❌ No",
+        ],
+    }
+    return examples.get(section_key, [])
 # ============================================================================
 # SECTION 3: INSTRUCTIONS & LEGEND SHEET
 # ============================================================================
 
-def create_instructions_sheet(ws, styles):
-    """Create the Instructions & Legend sheet matching markdown spec."""
+
+def create_instructions_sheet(ws):
+    """Create GS-IL-compliant Instructions & Legend sheet (Sheet 1)."""
+    ws.title = "Instructions & Legend"
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill("solid", fgColor="003366")
+    _grey = PatternFill("solid", fgColor="D9D9D9")
+    _input = PatternFill("solid", fgColor="FFFFCC")
+    _green = PatternFill("solid", fgColor="C6EFCE")
+    _amber = PatternFill("solid", fgColor="FFEB9C")
+    _red   = PatternFill("solid", fgColor="FFC7CE")
     ws.merge_cells("A1:G1")
-    ws["A1"] = (
-        "ISMS-IMP-A.8.24.1  -  Data Transmission Assessment\n"
-        "ISO/IEC 27001:2022 - Control A.8.24: Use of Cryptography"
-    )
-    ws["A1"].font = styles["header"]["font"]
-    ws["A1"].fill = styles["header"]["fill"]
-    ws["A1"].alignment = styles["header"]["alignment"]
+    ws["A1"] = f"{DOCUMENT_ID}  -  {WORKBOOK_NAME}\n{CONTROL_REF}"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = _navy
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.row_dimensions[1].height = 40
-
     ws["A3"] = "Document Information"
-    ws["A3"].font = Font(bold=True, size=12)
+    ws["A3"].font = Font(name="Calibri", size=12, bold=True)
+    for i, (label, value) in enumerate([
+        ("Document ID",       DOCUMENT_ID),
+        ("Workbook Title",    WORKBOOK_NAME),
+        ("Control Reference", CONTROL_REF),
+        ("Version",           "1.0"),
+        ("Assessment Date",   ""),
+        ("Completed By",      ""),
+        ("Organisation",      ""),
+    ]):
+        r = 4 + i
+        ws[f"A{r}"] = label
+        ws[f"A{r}"].font = Font(name="Calibri", bold=True)
+        ws[f"B{r}"] = value
+        if not value:
+            ws[f"B{r}"].fill = _input
+            ws[f"B{r}"].border = _border
+    ws["A12"] = "Instructions"
+    ws["A12"].font = Font(name="Calibri", size=12, bold=True)
 
-    doc_info = [
-        ("Document ID", "ISMS-IMP-A.8.24.1"),
-        ("Assessment Area", "Data Transmission Cryptographic Controls"),
-        ("Related Policy", "ISMS-POL-A.8.24"),
-        ("Version", "1.0"),
-        ("Assessment Date", ""),
-        ("Completed By", ""),
-        ("Organisation", ""),
-        ("Review Cycle", "Quarterly"),
-    ]
+    _instructions = ['1. Complete each worksheet tab for applicable systems/services.', '2. Use dropdown menus for standardised entries (Status, Remediation, etc.).', '3. Fill in yellow-highlighted cells with your information.', '4. If Status = Partial or Non-Compliant, complete the Exception/Deviation section.', '5. Check all applicable items in the Compliance Checklist for each section.', '6. Provide evidence location/path for each implementation entry.', '7. Summary Dashboard auto-calculates compliance statistics.', '8. Maintain the Evidence Register for audit traceability.', '9. Obtain final approval and sign-off in the Approval Sign-Off sheet.']
+    for _i, _line in enumerate(_instructions):
+        ws[f"A{13 + _i}"] = _line
 
-    row = 4
-    for label, value in doc_info:
-        ws[f"A{row}"] = label
-        ws[f"A{row}"].font = Font(bold=True)
-        ws[f"B{row}"] = value
-        if value == "":
-            ws[f"B{row}"].fill = styles["input_cell"]["fill"]
-            ws[f"B{row}"].border = styles["border"]
-        row += 1
+    _leg_row = 23
 
-    ws[f"A{row+1}"] = "HOW TO USE THIS WORKBOOK"
-    ws[f"A{row+1}"].font = Font(bold=True, size=12)
-
-    instructions = [
-        "1. Complete each worksheet tab for applicable systems/services.",
-        "2. Use dropdown menus for standardised entries (Status, Remediation, etc.).",
-        "3. Fill in yellow-highlighted cells with your information.",
-        "4. If Status = Partial or Non-Compliant, complete the Exception/Deviation section.",
-        "5. Check all applicable items in the Compliance Checklist for each section.",
-        "6. Provide evidence location/path for each implementation entry.",
-        "7. Summary Dashboard auto-calculates compliance statistics.",
-        "8. Maintain the Evidence Register for audit traceability.",
-        "9. Obtain final approval and sign-off in the Approval Sign-Off sheet.",
-    ]
-
-    row += 2
-    for line in instructions:
-        ws[f"A{row}"] = line
-        row += 1
-
-    ws[f"A{row+1}"] = "STATUS LEGEND"
-    ws[f"A{row+1}"].font = Font(bold=True, size=12)
-
-    legend = [
-        ("Symbol", "Status", "Description"),
-        ("✅", "Compliant", "Fully meets policy requirements"),
-        ("⚠️", "Partial", "Some requirements met, gaps exist"),
-        ("❌", "Non-Compliant", "Does not meet policy requirements"),
-        ("N/A", "Not Applicable", "Requirement does not apply"),
-    ]
-
-    row += 2
-    header_row = row
-    for c, h in enumerate(legend[0], start=1):
-        cell = ws.cell(row=header_row, column=c, value=h)
-        cell.font = styles["column_header"]["font"]
-        cell.fill = styles["column_header"]["fill"]
-        cell.alignment = styles["column_header"]["alignment"]
-        cell.border = styles["column_header"]["border"]
-
-    row += 1
-    for sym, status, desc in legend[1:]:
-        ws.cell(row=row, column=1, value=sym).border = styles["border"]
-        s = ws.cell(row=row, column=2, value=status)
-        d = ws.cell(row=row, column=3, value=desc)
+    ws[f"A{_leg_row}"] = "Status Legend"
+    ws[f"A{_leg_row}"].font = Font(name="Calibri", size=12, bold=True)
+    for col_idx, header in enumerate(["Symbol", "Status", "Description"], start=1):
+        c = ws.cell(row=_leg_row + 1, column=col_idx, value=header)
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.fill = _grey
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = _border
+    for i, (sym, status, desc, fill) in enumerate([
+        ("\u2713", "Compliant / Complete",        "Requirement fully met",                   _green),
+        ("\u26a0", "Partial / In Progress",        "Partially met or in progress",            _amber),
+        ("\u2717", "Non-Compliant / Not Started",  "Requirement not met",                     _red),
+        ("\u2014", "Not Applicable",               "Not applicable to this assessment",        None),
+    ]):
+        r = _leg_row + 2 + i
+        ws.cell(row=r, column=1, value=sym).border = _border
+        s = ws.cell(row=r, column=2, value=status)
+        d = ws.cell(row=r, column=3, value=desc)
+        if fill:
+            s.fill = fill
         for cell in (s, d):
-            cell.border = styles["border"]
+            cell.border = _border
             cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
-
-        if status == "Compliant":
-            s.fill = styles["status_compliant"]["fill"]
-        elif status == "Partial":
-            s.fill = styles["status_partial"]["fill"]
-        elif status == "Non-Compliant":
-            s.fill = styles["status_noncompliant"]["fill"]
-
-        row += 1
-
-    ws[f"A{row+2}"] = "ACCEPTABLE EVIDENCE (examples)"
-    ws[f"A{row+2}"].font = Font(bold=True, size=12)
-
-    evidence_types = [
-        "✓ Configuration files or screenshots",
-        "✓ Network scan results (e.g., SSL Labs, nmap, testssl.sh)",
-        "✓ System documentation / architecture diagrams",
-        "✓ Vendor specifications / encryption statements",
-        "✓ Certificate inventory / key management records",
-        "✓ Audit logs / SIEM evidence",
-        "✓ Compliance reports / exception approvals",
-    ]
-    row += 3
-    for e in evidence_types:
-        ws[f"A{row}"] = e
-        row += 1
-
     ws.column_dimensions["A"].width = 28
     ws.column_dimensions["B"].width = 45
     ws.column_dimensions["C"].width = 70
+    ws.sheet_view.showGridLines = False
     ws.freeze_panes = "A4"
-
-
-# ============================================================================
-# SECTION 4: GENERIC ASSESSMENT SHEET ENGINE
-# ============================================================================
 
 def create_assessment_sheet(ws, styles, section_title, policy_ref, question, 
                            section_key, checklist_items, additional_details):
@@ -614,11 +656,14 @@ def create_assessment_sheet(ws, styles, section_title, policy_ref, question,
     
     # ---------- HEADER ----------
     ws.merge_cells("A1:H1")
-    ws["A1"] = f"{section_title}\nPolicy Requirement: {policy_ref}"
+    ws["A1"] = f"{section_title.upper()}\nPolicy Requirement: {policy_ref}"
     ws["A1"].font = styles["header"]["font"]
     ws["A1"].fill = styles["header"]["fill"]
     ws["A1"].alignment = styles["header"]["alignment"]
-    ws.row_dimensions[1].height = 40
+    ws.row_dimensions[1].height = 35
+    ws["A2"] = "ISO/IEC 27001:2022 | Control A.8.24: Use of Cryptography"
+    ws["A2"].font = Font(italic=True, size=10, color="003366")
+    ws["A2"].alignment = Alignment(horizontal="left", vertical="center")
 
     # ---------- ASSESSMENT QUESTION ----------
     ws.merge_cells("A3:H3")
@@ -633,7 +678,7 @@ def create_assessment_sheet(ws, styles, section_title, policy_ref, question,
     ws["B4"].fill = styles["input_cell"]["fill"]
     ws["B4"].border = styles["border"]
 
-    dv_response = DataValidation(type="list", formula1='"Yes,No,Not Applicable"', allow_blank=False)
+    dv_response = DataValidation(type="list", formula1='"✅ Yes,❌ No,⚠️ Not Applicable"', allow_blank=False)
     ws.add_data_validation(dv_response)
     dv_response.add(ws["B4"])
 
@@ -649,11 +694,14 @@ def create_assessment_sheet(ws, styles, section_title, policy_ref, question,
 
     # ---------- EXAMPLE ROW ----------
     example_row = 7
-    example_values = ["Example entry (see markdown spec)" if i == 0 else "" 
-                     for i in range(len(columns))]
-    for col_idx, value in enumerate(example_values, start=1):
+    example_values = get_example_values(section_key)
+    # Pad to column count if needed (safety fallback)
+    while len(example_values) < len(columns):
+        example_values.append("")
+    for col_idx, value in enumerate(example_values[:len(columns)], start=1):
         cell = ws.cell(row=example_row, column=col_idx, value=value)
         cell.font = Font(italic=True, color="808080")
+        cell.fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
         cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
 
     # ---------- DATA ENTRY ROWS (8-30) ----------
@@ -678,7 +726,7 @@ def create_assessment_sheet(ws, styles, section_title, policy_ref, question,
         dv_status.add(ws.cell(row=r, column=status_col_idx))
 
     # Remediation Needed dropdown
-    dv_rem = DataValidation(type="list", formula1='"Yes,No"', allow_blank=False)
+    dv_rem = DataValidation(type="list", formula1='"✅ Yes,❌ No"', allow_blank=False)
     ws.add_data_validation(dv_rem)
     for r in range(start_row, end_row + 1):
         dv_rem.add(ws.cell(row=r, column=remediation_col_idx))
@@ -730,7 +778,7 @@ def create_assessment_sheet(ws, styles, section_title, policy_ref, question,
             ws[f"C{next_row}"].fill = styles["input_cell"]["fill"]
             ws[f"C{next_row}"].border = styles["border"]
 
-            dv_chk = DataValidation(type="list", formula1='"Yes,No,N/A"', allow_blank=False)
+            dv_chk = DataValidation(type="list", formula1='"✅ Yes,❌ No,N/A"', allow_blank=False)
             ws.add_data_validation(dv_chk)
             dv_chk.add(ws[f"C{next_row}"])
             next_row += 1
@@ -739,8 +787,8 @@ def create_assessment_sheet(ws, styles, section_title, policy_ref, question,
         ws[f"A{next_row}"] = "Checklist Score:"
         ws[f"A{next_row}"].font = Font(bold=True)
         ws[f"B{next_row}"] = (
-            f'=COUNTIF(C{checklist_start}:C{next_row-1},"Yes")/'
-            f'COUNTA(C{checklist_start}:C{next_row-1})*100&"%"'
+            f'=IFERROR(ROUND(COUNTIF(C{checklist_start}:C{next_row-1},"✅ Yes")/'
+            f'COUNTA(C{checklist_start}:C{next_row-1})*100,0)&"%","0%")'
         )
         ws[f"B{next_row}"].font = Font(bold=True, color="0000FF")
         next_row += 2
@@ -754,9 +802,9 @@ def create_assessment_sheet(ws, styles, section_title, policy_ref, question,
 
     next_row += 1
     exception_fields = [
-        ("Formal exception request submitted:", "Yes,No"),
+        ("Formal exception request submitted:", "✅ Yes,❌ No"),
         ("Exception ID:", ""),
-        ("Risk acceptance documented:", "Yes,No"),
+        ("Risk acceptance documented:", "✅ Yes,❌ No"),
         ("Risk ID:", ""),
         ("Compensating Controls (summary):", ""),
         ("☐ Network segmentation / firewall restrictions", ""),
@@ -766,7 +814,7 @@ def create_assessment_sheet(ws, styles, section_title, policy_ref, question,
         ("Remediation actions required:", ""),
         ("Responsible person:", ""),
         ("Target completion date:", ""),
-        ("Budget required:", "Yes,No,Unknown"),
+        ("Budget required:", "✅ Yes,❌ No,⚠️ Unknown"),
     ]
 
     for label, options in exception_fields:
@@ -796,13 +844,15 @@ def create_assessment_sheet(ws, styles, section_title, policy_ref, question,
     ws[f"A{next_row}"].border = styles["border"]
     ws[f"A{next_row}"].alignment = Alignment(horizontal="left", vertical="top", wrap_text=True)
 
+    # GS-AS-011: Borders on all merged cell ranges
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    for _mr in list(ws.merged_cells.ranges):
+        for _r in range(_mr.min_row, _mr.max_row + 1):
+            for _c in range(_mr.min_col, _mr.max_col + 1):
+                ws.cell(row=_r, column=_c).border = _border
+
     return (start_row, end_row, status_col_idx)
-
-
-# ============================================================================
-# END OF PART 2
-# ============================================================================
-
 # ============================================================================
 # SECTION 5: INDIVIDUAL ASSESSMENT SHEET DEFINITIONS
 # ============================================================================
@@ -825,9 +875,9 @@ def create_1_1_external_https_tls(ws, styles):
     
     additional_details = [
         ("Number of external web services:", ""),
-        ("Certificate expiration monitoring configured:", "Yes,No"),
-        ("Automated certificate renewal (REQUIRED for public CAs by Mar 2026):", "Yes,No,Planned"),
-        ("Certificate inventory maintained:", "Yes,No"),
+        ("Certificate expiration monitoring configured:", "✅ Yes,❌ No"),
+        ("Automated certificate renewal (REQUIRED for public CAs by Mar 2026):", "✅ Yes,❌ No,⏳ Planned"),
+        ("Certificate inventory maintained:", "✅ Yes,❌ No"),
     ]
     
     create_assessment_sheet(
@@ -855,8 +905,8 @@ def create_1_2_internal_https_tls(ws, styles):
     additional_details = [
         ("Number of internal web services:", ""),
         ("Data classification(s) handled:", "Public,Internal,Confidential,Restricted"),
-        ("Internal CA in use:", "Yes,No"),
-        ("Certificate management process documented:", "Yes,No"),
+        ("Internal CA in use:", "✅ Yes,❌ No"),
+        ("Certificate management process documented:", "✅ Yes,❌ No"),
     ]
     
     create_assessment_sheet(
@@ -884,8 +934,8 @@ def create_2_1_email_encryption(ws, styles):
     additional_details = [
         ("Encryption solution in use:", "S/MIME,PGP/GPG,TLS-only,Other"),
         ("PKI infrastructure for email:", "Implemented,Planned,Not implemented"),
-        ("User training provided:", "Yes,No"),
-        ("Encryption enforced via policy/DLP:", "Yes,No"),
+        ("User training provided:", "✅ Yes,❌ No"),
+        ("Encryption enforced via policy/DLP:", "✅ Yes,❌ No"),
     ]
     
     create_assessment_sheet(
@@ -907,6 +957,9 @@ def create_2_2_digital_signatures(ws, styles):
         "Email certificates issued from trusted CA or internal PKI",
         "Certificate validity ≤ 1 year",
         "Users trained on digital signature usage",
+        "Non-repudiation implemented for legally binding transactions — digital signatures with qualified certificates where required",
+        "Audit log integrity protected — cryptographic checksums (HMAC, digital signatures) applied to audit logs to detect tampering",
+        "Time-stamping implemented — qualified electronic timestamps applied to critical evidence and transaction records",
     ]
     
     additional_details = [
@@ -980,7 +1033,7 @@ def create_4_1_vpn(ws, styles):
         ws=ws,
         styles=styles,
         section_title="4.1 VPN (Virtual Private Network)",
-        policy_ref="All remote access to organizational networks MUST use encrypted VPN with approved protocols (IPsec, WireGuard, OpenVPN). MFA REQUIRED (Policy Section 2.2.4)",
+        policy_ref="All remote access to organisational networks MUST use encrypted VPN with approved protocols (IPsec, WireGuard, OpenVPN). MFA REQUIRED (Policy Section 2.2.4)",
         question="Does your organisation provide remote access via VPN?",
         section_key="4.1_vpn",
         checklist_items=checklist,
@@ -1097,7 +1150,7 @@ def create_6_1_database_connections(ws, styles):
     
     additional_details = [
         ("Database systems in use:", "PostgreSQL,MySQL,MSSQL,Oracle,MongoDB,Other"),
-        ("Connection encryption enforced:", "Yes,No,Mixed"),
+        ("Connection encryption enforced:", "✅ Yes,❌ No,⚠️ Mixed"),
     ]
     
     create_assessment_sheet(
@@ -1167,137 +1220,272 @@ def create_7_1_cloud_transmission(ws, styles):
         checklist_items=checklist,
         additional_details=additional_details,
     )
-
-
-# ============================================================================
-# END OF PART 3
-# ============================================================================
-
 # ============================================================================
 # SECTION 6: SUMMARY DASHBOARD
 # ============================================================================
 
-def create_summary_dashboard(ws, styles):
-    """Create summary dashboard with compliance statistics."""
+def create_summary_dashboard_sheet(ws, styles):
+    """Create Summary Dashboard — TABLE 1/2/3, all tables uniform 7-col A:G width."""
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+    from openpyxl.utils import get_column_letter
+    from openpyxl.worksheet.datavalidation import DataValidation
+
+    thin   = Side(style="thin")
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    # --- Row 1: Title ---
     ws.merge_cells("A1:G1")
-    ws["A1"] = "DATA TRANSMISSION ASSESSMENT - COMPLIANCE SUMMARY"
-    ws["A1"].font = styles["header"]["font"]
-    ws["A1"].fill = styles["header"]["fill"]
+    ws["A1"] = f"{WORKBOOK_NAME.upper()} — SUMMARY DASHBOARD"
+    ws["A1"].font      = styles["header"]["font"]
+    ws["A1"].fill      = styles["header"]["fill"]
     ws["A1"].alignment = styles["header"]["alignment"]
     ws.row_dimensions[1].height = 35
+    for col in range(1, 8):
+        ws.cell(row=1, column=col).border = border
 
-    headers = ["Assessment Area", "Total Items", "Compliant", "Partial", "Non-Compliant", "N/A", "Compliance %"]
-    row = 3
-    for col_idx, header in enumerate(headers, start=1):
-        cell = ws.cell(row=row, column=col_idx, value=header)
-        cell.font = styles["column_header"]["font"]
-        cell.fill = styles["column_header"]["fill"]
-        cell.alignment = styles["column_header"]["alignment"]
-        cell.border = styles["column_header"]["border"]
+    # --- Row 2: ISO reference ---
+    ws.merge_cells("A2:G2")
+    ws["A2"] = "ISO/IEC 27001:2022 | Control A.8.24 | Data Transmission Cryptography"
+    ws["A2"].font      = Font(name="Calibri", size=10, italic=True, color="003366")
+    ws["A2"].alignment = Alignment(horizontal="left", vertical="center")
+    for col in range(1, 8):
+        ws.cell(row=2, column=col).border = border
 
-    # Map dashboard rows to sheet names and their status column positions
+    # --- TABLE 1: ASSESSMENT AREA COMPLIANCE OVERVIEW ---
+    row = 4
+    ws.merge_cells(f"A{row}:G{row}")
+    c = ws.cell(row=row, column=1, value="TABLE 1: ASSESSMENT AREA COMPLIANCE OVERVIEW")
+    c.font      = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
+    c.fill      = PatternFill("solid", fgColor="003366")
+    #c.alignment = Alignment(horizontal="center", vertical="center")
+    for col in range(1, 8):
+        ws.cell(row=row, column=col).border = border
+
+    row += 1
+    for col_idx, h in enumerate(["Assessment Area", "Total Items", "Compliant", "Partial",
+                                  "Non-Compliant", "N/A", "Compliance %"], 1):
+        c = ws.cell(row=row, column=col_idx, value=h)
+        c.font      = Font(name="Calibri", size=10, bold=True, color="000000")
+        c.fill      = PatternFill("solid", fgColor="D9D9D9")
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border    = border
+
     areas = [
-        ("1.1 External HTTPS/TLS", "1.1 External HTTPS-TLS", 5),
-        ("1.2 Internal HTTPS/TLS", "1.2 Internal HTTPS-TLS", 5),
-        ("2.1 Email Encryption", "2.1 Email Encryption", 5),
-        ("2.2 Digital Signatures", "2.2 Digital Signatures", 4),
-        ("3.1 File Transfer", "3.1 File Transfer Protocols", 5),
-        ("4.1 VPN", "4.1 VPN", 5),
-        ("4.2 SSH", "4.2 SSH", 5),
-        ("4.3 RDP", "4.3 RDP", 5),
-        ("5.1 API Security", "5.1 API Security", 6),
-        ("6.1 Database Connections", "6.1 Database Connections", 4),
-        ("6.2 Wireless Networks", "6.2 Wireless Networks", 4),
-        ("7.1 Cloud Transmission", "7.1 Cloud Transmission", 4),
+        ("1.1 External HTTPS/TLS",    "1.1 External HTTPS-TLS",      5),
+        ("1.2 Internal HTTPS/TLS",    "1.2 Internal HTTPS-TLS",      5),
+        ("2.1 Email Encryption",      "2.1 Email Encryption",        5),
+        ("2.2 Digital Signatures",    "2.2 Digital Signatures",      4),
+        ("3.1 File Transfer",         "3.1 File Transfer Protocols", 5),
+        ("4.1 VPN",                   "4.1 VPN",                     5),
+        ("4.2 SSH",                   "4.2 SSH",                     5),
+        ("4.3 RDP",                   "4.3 RDP",                     5),
+        ("5.1 API Security",          "5.1 API Security",            6),
+        ("6.1 Database Connections",  "6.1 Database Connections",    4),
+        ("6.2 Wireless Networks",     "6.2 Wireless Networks",       4),
+        ("7.1 Cloud Transmission",    "7.1 Cloud Transmission",      4),
     ]
-
     row += 1
     start_data_row = row
     for label, sheet, status_col in areas:
         ws.cell(row=row, column=1, value=label)
-        
-        status_col_letter = get_column_letter(status_col)
-        status_range = f"'{sheet}'!{status_col_letter}8:{status_col_letter}30"
-
-        ws.cell(row=row, column=2, value=f'=COUNTA({status_range})')
-        ws.cell(row=row, column=3, value=f'=COUNTIF({status_range},"✅*")')
-        ws.cell(row=row, column=4, value=f'=COUNTIF({status_range},"⚠️*")')
-        ws.cell(row=row, column=5, value=f'=COUNTIF({status_range},"❌*")')
-        ws.cell(row=row, column=6, value=f'=COUNTIF({status_range},"N/A")')
-        ws.cell(row=row, column=7, value=f'=IF((B{row}-F{row})=0,"0%",ROUND(C{row}/(B{row}-F{row})*100,1)&"%")')
+        sc = get_column_letter(status_col)
+        rng = f"'{sheet}'!{sc}8:{sc}69"
+        ws.cell(row=row, column=2, value=f"=COUNTA({rng})")
+        ws.cell(row=row, column=3, value=f'=COUNTIF({rng},"*Compliant")')
+        ws.cell(row=row, column=4, value=f'=COUNTIF({rng},"*Partial")')
+        ws.cell(row=row, column=5, value=f'=COUNTIF({rng},"*Non-Compliant")')
+        ws.cell(row=row, column=6, value=f'=COUNTIF({rng},"N/A")')
+        ws.cell(row=row, column=7,
+                value=f'=IF((B{row}-F{row})=0,"0%",ROUND(C{row}/(B{row}-F{row})*100,1)&"%")')
         row += 1
 
-    # Total row
-    ws.cell(row=row, column=1, value="TOTAL").font = Font(bold=True)
+    total_row = row
+    ws.cell(row=total_row, column=1, value="TOTAL").font  = Font(name="Calibri", size=10, bold=True)
+    ws.cell(row=total_row, column=1).fill                 = PatternFill("solid", fgColor="D9D9D9")
+    ws.cell(row=total_row, column=1).border               = border
     for col in range(2, 7):
-        cell = ws.cell(row=row, column=col, value=f"=SUM({get_column_letter(col)}{start_data_row}:{get_column_letter(col)}{row-1})")
-        cell.font = Font(bold=True)
+        c       = ws.cell(row=total_row, column=col)
+        c.value = f"=SUM({get_column_letter(col)}{start_data_row}:{get_column_letter(col)}{total_row - 1})"
+        c.font  = Font(name="Calibri", size=10, bold=True)
+        c.fill  = PatternFill("solid", fgColor="D9D9D9")
+        c.border = border
+    c       = ws.cell(row=total_row, column=7)
+    c.value = (f'=IF((B{total_row}-F{total_row})=0,"0%",'
+               f'ROUND(C{total_row}/(B{total_row}-F{total_row})*100,1)&"%")')
+    c.font   = Font(name="Calibri", size=12, bold=True, color="000000")
+    c.fill   = PatternFill("solid", fgColor="D9D9D9")
+    c.border = border
 
-    total_pct = ws.cell(row=row, column=7, value=f'=IF((B{row}-F{row})=0,"0%",ROUND(C{row}/(B{row}-F{row})*100,1)&"%")')
-    total_pct.font = Font(bold=True, color="0000FF", size=12)
-
-    # Column widths
     ws.column_dimensions["A"].width = 40
     ws.column_dimensions["B"].width = 16
     ws.column_dimensions["C"].width = 16
     ws.column_dimensions["D"].width = 18
     ws.column_dimensions["E"].width = 18
-    ws.column_dimensions["F"].width = 12
+    ws.column_dimensions["F"].width = 14
     ws.column_dimensions["G"].width = 15
 
-    # Critical gaps section
-    row += 3
+    _kpis = [
+        ("TLS 1.2+ Coverage – External", "100%"),
+        ("TLS 1.2+ Coverage – Internal", "≥95%"),
+        ("Email Encryption – Sensitive Data", "100%"),
+        ("VPN Compliance Rate", "100%"),
+        ("SSH Key Rotation Compliance", "≥90%"),
+        ("API mTLS Coverage", "≥95%"),
+        ("Database Encryption in Transit", "100%"),
+        ("Cloud Transmission Encryption", "100%"),
+        ("Certificates Expiring < 30 Days (count)", "0"),
+        ("Evidence Documentation Rate", "100%"),
+    ]
+    # --- TABLE 2: KEY METRICS ---
+    row = total_row + 2
     ws.merge_cells(f"A{row}:G{row}")
-    ws[f"A{row}"] = "CRITICAL GAPS REQUIRING IMMEDIATE ATTENTION"
-    ws[f"A{row}"].font = Font(bold=True, size=12, color="FFFFFF")
-    ws[f"A{row}"].fill = PatternFill(start_color="C00000", end_color="C00000", fill_type="solid")
-    ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
+    c = ws.cell(row=row, column=1, value="TABLE 2: KEY METRICS")
+    c.font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
+    c.fill = PatternFill("solid", fgColor="003366")
+    #c.alignment = Alignment(horizontal="center", vertical="center")
+    for col in range(1, 8):
+        ws.cell(row=row, column=col).border = border
 
     row += 1
-    gap_headers = ["Priority", "Assessment Area", "Gap Description", "Responsible Person", "Target Date", "Status"]
-    for col_idx, header in enumerate(gap_headers, start=1):
-        cell = ws.cell(row=row, column=col_idx, value=header)
-        cell.font = styles["column_header"]["font"]
-        cell.fill = styles["column_header"]["fill"]
-        cell.alignment = styles["column_header"]["alignment"]
-        cell.border = styles["column_header"]["border"]
+    for col_idx, h in enumerate(["KPI", "Current Value", "Target", "Status",
+                                  "Last Updated", "Owner", "Notes"], 1):
+        c = ws.cell(row=row, column=col_idx, value=h)
+        c.font = Font(name="Calibri", size=10, bold=True, color="000000")
+        c.fill = PatternFill("solid", fgColor="D9D9D9")
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = border
 
-    # Priority dropdown
-    dv_priority = DataValidation(type="list", formula1='"High,Medium,Low"', allow_blank=False)
-    ws.add_data_validation(dv_priority)
+    dv_kpi_sts = DataValidation(type="list",
+        formula1='"\u2705 On Target,\u26a0\ufe0f At Risk,\u274c Below Target"',
+        allow_blank=True)
+    ws.add_data_validation(dv_kpi_sts)
 
-    # Status dropdown for gaps
-    dv_gap_status = DataValidation(type="list", formula1='"Not started,In progress,Completed,Blocked"', allow_blank=False)
-    ws.add_data_validation(dv_gap_status)
-
-    for i in range(10):
+    row += 1
+    for kpi, target in _kpis:
+        ws.cell(row=row, column=1, value=kpi).border = border
+        c2 = ws.cell(row=row, column=2)
+        c2.border = border
+        ws.cell(row=row, column=3, value=target).border = border
+        c4 = ws.cell(row=row, column=4)
+        c4.border = border
+        dv_kpi_sts.add(c4)
+        for col in range(5, 8):
+            ws.cell(row=row, column=col).border = border
         row += 1
-        ws.cell(row=row, column=1).fill = styles["input_cell"]["fill"]
-        ws.cell(row=row, column=1).border = styles["border"]
-        dv_priority.add(ws.cell(row=row, column=1))
-        
-        for col in range(2, 7):
-            c = ws.cell(row=row, column=col)
-            c.fill = styles["input_cell"]["fill"]
-            c.border = styles["border"]
-            c.alignment = styles["input_cell"]["alignment"]
-        
-        dv_gap_status.add(ws.cell(row=row, column=6))
+    r = row
+
+    # 2 bordered buffer rows + blank gap before TABLE 3 (Gold Standard)
+    for _buf in range(2):
+        for _col in range(1, 8):
+            ws.cell(row=r, column=_col).border = border
+        r += 1
+
+    # --- TABLE 3: DOMAIN COMPLIANCE SUMMARY ---
+    row = r + 1
+    ws.merge_cells(f"A{row}:G{row}")
+    c = ws.cell(row=row, column=1, value="TABLE 3: DOMAIN COMPLIANCE SUMMARY")
+    c.font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
+    c.fill = PatternFill("solid", fgColor="C00000")
+    for col in range(1, 8):
+        ws.cell(row=row, column=col).border = border
+
+    row += 1
+    t3_headers = [
+        "Transmission Domain",
+        "Non-Compliant",
+        "Partial",
+        "Compliant",
+        "N/A",
+        "Total Items",
+        "Compliance %",
+    ]
+    for col_idx, h in enumerate(t3_headers, 1):
+        c = ws.cell(row=row, column=col_idx, value=h)
+        c.font      = Font(name="Calibri", size=10, bold=True, color="000000")
+        c.fill      = PatternFill("solid", fgColor="D9D9D9")
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border    = border
+
+    # Domain rows: (label, sheet_name, status_col_letter)
+    t3_domains = [
+        ("1.1 External HTTPS/TLS",   "1.1 External HTTPS-TLS",      "E"),
+        ("1.2 Internal HTTPS/TLS",   "1.2 Internal HTTPS-TLS",      "E"),
+        ("2.1 Email Encryption",     "2.1 Email Encryption",        "E"),
+        ("2.2 Digital Signatures",   "2.2 Digital Signatures",      "D"),
+        ("3.1 File Transfer",        "3.1 File Transfer Protocols", "E"),
+        ("4.1 VPN",                  "4.1 VPN",                     "E"),
+        ("4.2 SSH",                  "4.2 SSH",                     "E"),
+        ("4.3 RDP",                  "4.3 RDP",                     "E"),
+        ("5.1 API Security",         "5.1 API Security",            "F"),
+        ("6.1 Database Connections", "6.1 Database Connections",    "D"),
+        ("6.2 Wireless Networks",    "6.2 Wireless Networks",       "D"),
+        ("7.1 Cloud Transmission",   "7.1 Cloud Transmission",      "D"),
+    ]
+    row += 1
+    t3_start = row
+    for label, sheet, sc in t3_domains:
+        rng = f"\'{sheet}\'!{sc}8:{sc}69"
+        non_c  = f'=COUNTIF({rng},"*Non-Compliant")'
+        part   = f'=COUNTIF({rng},"*Partial")'
+        compl  = f'=COUNTIF({rng},"*Compliant")'
+        na_    = f'=COUNTIF({rng},"N/A")'
+        total  = f'=COUNTA({rng})'
+        pct_r  = row
+        c1 = ws.cell(row=row, column=1, value=label)
+        c1.font   = Font(name="Calibri", size=10, color="000000")
+        c1.fill   = PatternFill("solid", fgColor="FFFFCC")
+        c1.border = border
+        for col_idx, fml in enumerate([non_c, part, compl, na_, total], 2):
+            cx = ws.cell(row=row, column=col_idx, value=fml)
+            cx.font   = Font(name="Calibri", size=10, color="000000")
+            cx.fill   = PatternFill("solid", fgColor="FFFFCC")
+            cx.border = border
+        c7 = ws.cell(row=row, column=7,
+                     value=f'=IF((F{pct_r}-E{pct_r})=0,0,D{pct_r}/(F{pct_r}-E{pct_r}))')
+        c7.font        = Font(name="Calibri", size=10, color="000000")
+        c7.fill        = PatternFill("solid", fgColor="FFFFCC")
+        c7.number_format = "0.0%"
+        c7.border      = border
+        row += 1
+
+    # TOTAL row
+    t3_end = row - 1
+    ws.cell(row=row, column=1, value="TOTAL").font  = Font(name="Calibri", size=10, bold=True)
+    ws.cell(row=row, column=1).fill   = PatternFill("solid", fgColor="D9D9D9")
+    ws.cell(row=row, column=1).border = border
+    for col in range(2, 7):
+        cx = ws.cell(row=row, column=col)
+        cx.value  = f"=SUM({get_column_letter(col)}{t3_start}:{get_column_letter(col)}{t3_end})"
+        cx.font   = Font(name="Calibri", size=10, bold=True)
+        cx.fill   = PatternFill("solid", fgColor="D9D9D9")
+        cx.border = border
+    tot_row = row
+    cx = ws.cell(row=row, column=7,
+                 value=f'=IF((F{tot_row}-E{tot_row})=0,0,D{tot_row}/(F{tot_row}-E{tot_row}))')
+    cx.font          = Font(name="Calibri", size=10, bold=True, color="000000")
+    cx.fill          = PatternFill("solid", fgColor="D9D9D9")
+    cx.number_format = "0.0%"
+    cx.border        = border
+    row += 1
+
+    # Borders on all merged cell ranges (GS-AS-011)
+    _t = Side(style="thin")
+    _b = Border(left=_t, right=_t, top=_t, bottom=_t)
+    for _mr in list(ws.merged_cells.ranges):
+        for _r in range(_mr.min_row, _mr.max_row + 1):
+            for _c in range(_mr.min_col, _mr.max_col + 1):
+                ws.cell(row=_r, column=_c).border = _b
 
     ws.freeze_panes = "A4"
 
 
-# ============================================================================
-# SECTION 7: EVIDENCE REGISTER
-# ============================================================================
-
-def create_evidence_register(ws, styles):
+def create_evidence_register(ws):
     """Create evidence register for audit traceability."""
     ws.merge_cells("A1:H1")
     ws["A1"] = "EVIDENCE REGISTER"
-    ws["A1"].font = styles["header"]["font"]
-    ws["A1"].fill = styles["header"]["fill"]
-    ws["A1"].alignment = styles["header"]["alignment"]
+    ws["A1"].font = Font(bold=True, size=14, color="FFFFFF")
+    ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:H2")
@@ -1320,10 +1508,10 @@ def create_evidence_register(ws, styles):
     row = 4
     for col_idx, (header, width) in enumerate(zip(headers, widths), start=1):
         cell = ws.cell(row=row, column=col_idx, value=header)
-        cell.font = styles["column_header"]["font"]
-        cell.fill = styles["column_header"]["fill"]
-        cell.alignment = styles["column_header"]["alignment"]
-        cell.border = styles["column_header"]["border"]
+        cell.font = Font(bold=True, size=10, color="FFFFFF")
+        cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.border = Border(left=Side(style="thin"), right=Side(style="thin"), top=Side(style="thin"), bottom=Side(style="thin"))
         ws.column_dimensions[get_column_letter(col_idx)].width = width
 
     # Validation dropdowns
@@ -1336,20 +1524,37 @@ def create_evidence_register(ws, styles):
 
     dv_ver = DataValidation(
         type="list",
-        formula1='"Verified,Pending verification,Not verified,Requires update"',
+        formula1='"✅ Verified,⚠️ Pending,❌ Not Verified,N/A"',
         allow_blank=False,
     )
     ws.add_data_validation(dv_ver)
 
-    # Data rows
-    for r in range(5, 105):
-        ws.cell(row=r, column=1, value=f"EV-{r-4:03d}").font = Font(color="808080")
-        for c in range(2, 9):
-            cell = ws.cell(row=r, column=c)
-            cell.fill = styles["input_cell"]["fill"]
-            cell.border = styles["border"]
-            cell.alignment = styles["input_cell"]["alignment"]
+    # Sample row (row 5) — F2F2F2 grey with realistic example data
+    _er_sample = [
+        "EV-001", "1.1 External HTTPS-TLS", "Configuration file",
+        "TLS/encryption configuration export for audit evidence",
+        "/evidence/a824/config-export-2025.txt",
+        "01.01.2025", "Security Team", "✅ Verified",
+    ]
+    for c, val in enumerate(_er_sample, start=1):
+        cell = ws.cell(row=5, column=c, value=val)
+        cell.fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+        cell.border = Border(left=Side(style="thin"), right=Side(style="thin"),
+                             top=Side(style="thin"), bottom=Side(style="thin"))
+        cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        if c == 1:
+            cell.font = Font(italic=True, color="555555")
+    dv_type.add(ws.cell(row=5, column=3))
+    dv_ver.add(ws.cell(row=5, column=8))
 
+    # Empty data rows (rows 6-105) — 100 FFFFCC input rows, NO pre-filled IDs
+    for r in range(6, 106):
+        for c in range(1, 9):
+            cell = ws.cell(row=r, column=c)
+            cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            cell.border = Border(left=Side(style="thin"), right=Side(style="thin"),
+                                 top=Side(style="thin"), bottom=Side(style="thin"))
+            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
         dv_type.add(ws.cell(row=r, column=3))
         dv_ver.add(ws.cell(row=r, column=8))
 
@@ -1360,16 +1565,16 @@ def create_evidence_register(ws, styles):
 # SECTION 8: APPROVAL SIGN-OFF
 # ============================================================================
 
-def create_approval_signoff(ws, styles):
+def create_approval_sheet(ws):
     """Create approval and sign-off sheet."""
     thin = Side(style="thin")
     border = Border(left=thin, right=thin, top=thin, bottom=thin)
 
     ws.merge_cells("A1:E1")
     ws["A1"] = "ASSESSMENT APPROVAL AND SIGN-OFF"
-    ws["A1"].font = styles["header"]["font"]
-    ws["A1"].fill = styles["header"]["fill"]
-    ws["A1"].alignment = styles["header"]["alignment"]
+    ws["A1"].font = Font(bold=True, size=14, color="FFFFFF")
+    ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.row_dimensions[1].height = 35
 
     # ASSESSMENT SUMMARY banner
@@ -1382,7 +1587,7 @@ def create_approval_signoff(ws, styles):
     summary_fields = [
         ("Document:", "ISMS-IMP-A.8.24.1 - Data Transmission Assessment"),
         ("Assessment Period:", ""),
-        ("Overall Compliance:", "='Summary Dashboard'!G16"),
+        ("Overall Compliance:", "='Summary Dashboard'!G18"),
         ("Assessment Status:", ""),
     ]
 
@@ -1457,6 +1662,10 @@ def create_approval_signoff(ws, styles):
     ws.column_dimensions["C"].width = 20
     ws.column_dimensions["D"].width = 20
     ws.column_dimensions["E"].width = 20
+    for merge_range in list(ws.merged_cells.ranges):
+        for _row in range(merge_range.min_row, merge_range.max_row + 1):
+            for _col in range(merge_range.min_col, merge_range.max_col + 1):
+                ws.cell(row=_row, column=_col).border = border
     ws.freeze_panes = "A3"
 
 
@@ -1478,10 +1687,10 @@ def main() -> int:
 
     try:
         wb = create_workbook()
-        styles = setup_styles()
+        styles = _STYLES
 
         logger.info("[1/16] Creating Instructions & Legend sheet...")
-        create_instructions_sheet(wb["Instructions & Legend"], styles)
+        create_instructions_sheet(wb["Instructions & Legend"])
 
         logger.info("[2/16] Creating 1.1 External HTTPS/TLS sheet...")
         create_1_1_external_https_tls(wb["1.1 External HTTPS-TLS"], styles)
@@ -1520,18 +1729,20 @@ def main() -> int:
         create_7_1_cloud_transmission(wb["7.1 Cloud Transmission"], styles)
 
         logger.info("[14/16] Creating Summary Dashboard sheet...")
-        create_summary_dashboard(wb["Summary Dashboard"], styles)
+        create_summary_dashboard_sheet(wb["Summary Dashboard"], styles)
 
         logger.info("[15/16] Creating Evidence Register sheet...")
-        create_evidence_register(wb["Evidence Register"], styles)
+        create_evidence_register(wb["Evidence Register"])
 
         logger.info("[16/16] Creating Approval Sign-Off sheet...")
-        create_approval_signoff(wb["Approval Sign-Off"], styles)
+        create_approval_sheet(wb["Approval Sign-Off"])
 
-        filename = f"ISMS-IMP-A.8.24.1_Data_Transmission_{datetime.now().strftime('%Y%m%d')}.xlsx"
-        wb.save(filename)
-
-        logger.info("SUCCESS: %s", filename)
+        output_path = _wkbk_dir / OUTPUT_FILENAME
+        for ws in wb.worksheets:
+            ws.sheet_view.showGridLines = False
+        finalize_validations(wb)
+        wb.save(output_path)
+        logger.info(f"SUCCESS: {output_path}")
         logger.info("Next steps:")
         logger.info("  1) Complete document information in Instructions & Legend")
         logger.info("  2) Fill yellow cells in each assessment sheet (1.1 - 7.1)")
@@ -1544,27 +1755,22 @@ def main() -> int:
         return 0
 
     except ImportError as e:
-        logger.error("Missing dependency: %s", e)
+        logger.error(f"Missing dependency: {e}")
         logger.error("Install with: pip install openpyxl")
         return 1
     except PermissionError as e:
-        logger.error("Permission denied: %s", e)
+        logger.error(f"Permission denied: {e}")
         return 1
     except Exception as e:
-        logger.error("Unexpected error: %s", e)
+        logger.error(f"Unexpected error: {e}")
         return 1
 
 
 if __name__ == "__main__":
     sys.exit(main())
-
-
-# ============================================================================
-# END OF SCRIPT
-# ============================================================================
 # =============================================================================
-# QA_VERIFIED: 2026-01-31
-# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
-# QA_TOOL: Claude Code Standardization
-# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# QA_VERIFIED: 2026-03-01
+# QA_STATUS: PASSED
+# QA_TOOL: Claude Code Production Scripts QA Methodology
+# CHANGES: Full QA for Production Launch (see GitHub Repository for details)
 # =============================================================================

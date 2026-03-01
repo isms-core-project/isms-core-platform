@@ -31,7 +31,7 @@ The information contained herein provides technical context, language-specific s
 
 - Language-specific vulnerability patterns and prevention techniques
 - Technology evolution and framework security features
-- Best practice guidance for programming languages used by [Organization]
+- Best practice guidance for programming languages used by [Organisation]
 - Code examples demonstrating secure vs. insecure patterns
 
 **Usage**: Technical reference for developers and Security Champions. Content may require updates as languages evolve and new frameworks emerge—check publication date.
@@ -56,7 +56,7 @@ This document provides **language-specific secure coding patterns** that operati
 ## Coverage Philosophy
 
 **High-Value Focus**: We cover vulnerabilities that are:
-1. **Common** in organizational code
+1. **Common** in organisational code
 2. **High-severity** (exploitable, high impact)
 3. **Language-specific** (require language-specific guidance)
 
@@ -68,7 +68,7 @@ This document provides **language-specific secure coding patterns** that operati
 
 ## Language Priority
 
-Languages covered based on organizational usage (adjust per [Organization]'s technology stack):
+Languages covered based on organisational usage (adjust per [Organisation]'s technology stack):
 
 1. **Python** (backend services, data processing, automation)
 2. **JavaScript/TypeScript** (frontend, Node.js backend)
@@ -826,7 +826,7 @@ END
 - Major language version released (Python 3.x, Java 17+, Node.js LTS)
 - New framework security features available
 - OWASP Top 10 updated
-- Organizational language adoption changes
+- Organisational language adoption changes
 
 **Owner**: Application Security Lead
 

@@ -5,46 +5,57 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
 | **Document Title** | Learning & Continuous Improvement Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.24-28.S5-UG |
-| **Assessment Domain** | Domain 5 - Learning & Improvement (A.5.27 Focus) |
 | **Related Policy** | ISMS-POL-A.5.24-28 (Incident Management Lifecycle) |
-| **Related Reference** | ISMS-REF-A.5.24-28 (Incident Response Reference Guide) |
-| **Document Owner** | Chief Information Security Officer (CISO) |
-| **Technical Authority** | Incident Response Team Lead / CSIRT Manager |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.27) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
-**Version History:**
+**Version History**:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CSIRT Manager | Initial learning & improvement assessment specification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle:** Annual (or after major incident management process changes)
-**Next Review Date:** [Effective Date + 12 months]
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-**Related Documents:**
-- ISMS-POL-A.5.24-28 (Incident Management Lifecycle Policy)
-- ISMS-REF-A.5.24-28 (Incident Response Reference Guide)
-- ISMS-IMP-A.5.24-28.S1 (Framework & Governance Assessment)
-- ISMS-IMP-A.5.24-28.S2 (Detection & Classification Assessment)
+**Related Documents**:
+
+- ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
+- ISMS-IMP-A.5.24-28.S1 (Incident Management Framework Assessment)
+- ISMS-IMP-A.5.24-28.S2 (Detection Classification Assessment)
 - ISMS-IMP-A.5.24-28.S3 (Response Capabilities Assessment)
 - ISMS-IMP-A.5.24-28.S4 (Forensic Evidence Assessment)
-- ISO/IEC 27002:2022 Control A.5.27
-- NIST SP 800-61 Rev. 2 Section 3.4 (Post-Incident Activity)
 
 ---
 
-**Audience:** Incident Managers, CSIRT/SOC Leads, Security Operations Teams, Compliance Officers
+### Workbook at a Glance
+
+This workbook contains the following 10 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **PIR Process** | Post-Incident Review process maturity and completion rate assessment |
+| **Root Cause Analysis** | Root cause analysis methodology, quality, and thoroughness assessment |
+| **Lessons Learned** | Lessons learned capture, distribution, and adoption tracking |
+| **Control Improvements** | Security control improvements initiated from incident learnings |
+| **Trend Analysis** | Incident trend analysis and recurring pattern identification |
+| **Gap Analysis** | Identified gaps and remediation action tracking |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -52,7 +63,7 @@
 
 ### Purpose
 
-This assessment evaluates [Organization]'s **post-incident learning and continuous improvement capabilities**, focusing on the **learning** phase of the incident management lifecycle (A.5.27). It determines whether knowledge gained from information security incidents is systematically captured, analysed, and fed back into controls, playbooks, training, and risk assessments.
+This assessment evaluates [Organisation]'s **post-incident learning and continuous improvement capabilities**, focusing on the **learning** phase of the incident management lifecycle (A.5.27). It determines whether knowledge gained from information security incidents is systematically captured, analysed, and fed back into controls, playbooks, training, and risk assessments.
 
 ### What This Assessment Measures
 
@@ -99,7 +110,7 @@ Without a functioning learning loop, the same incidents recur, playbooks stagnat
 **Primary Responsibility:** Incident Response Team Lead / CSIRT Manager
 
 **Required Knowledge:**
-- [Organization]'s incident ticketing system and PIR workflow
+- [Organisation]'s incident ticketing system and PIR workflow
 - Historical incident records (minimum 12-month lookback recommended)
 - Root cause analysis methodology in use
 - Lessons learned repository or knowledge base location
@@ -223,7 +234,7 @@ Before starting this assessment, gather the following:
 ### Knowledge Required
 
 **Essential Understanding:**
-- [Organization]'s incident management lifecycle and ticketing workflow
+- [Organisation]'s incident management lifecycle and ticketing workflow
 - PIR process and RCA methodology in use
 - Knowledge base structure and maintenance practices
 - Remediation action lifecycle (creation -> assignment -> tracking -> closure -> verification)
@@ -613,7 +624,7 @@ Examples:
 
 ### Evidence Storage
 
-- **Location:** [Organization's evidence repository path]
+- **Location:** [Organisation's evidence repository path]
 - **Retention:** Audit cycle + 1 year minimum
 - **Access Control:** Restricted to Security Team, Incident Managers, and Auditors
 - **Sensitivity Note:** Evidence may contain details of security vulnerabilities - ensure distribution is limited to need-to-know
@@ -766,7 +777,7 @@ This assessment shall be distributed to:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
+*"The only source of knowledge is experience."*
 — Albert Einstein
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

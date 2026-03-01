@@ -3,6 +3,41 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.37: Documented Operating Procedures
 
+---
+
+**Document Control**
+
+| Attribute | Value |
+|-------|-------|
+| **Document Title** | Procedure Review and Update Tracking |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.5.37.3-UG |
+| **Related Policy** | ISMS-POL-A.5.37 (Documented Procedures) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.37 (Documented Operating Procedures) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.37 (Documented Procedures)
+- ISMS-IMP-A.5.37.1 (Procedure Inventory Assessment)
+- ISMS-IMP-A.5.37.2 (Procedure Quality Assessment)
+
+---
+
 ## Document Information
 
 | Field | Value |
@@ -31,6 +66,22 @@
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.37.3-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Review Schedule | Plan and track scheduled and triggered procedure reviews |
+| 3 | Change Requests | Manage formal requests to update procedure content |
+| 4 | Version History | Maintain historical record of procedure versions and changes |
+| 5 | Communication Log | Track distribution and acknowledgement of procedure updates |
+| 6 | Overdue Escalation | Manage and escalate overdue reviews and stalled changes |
+| 7 | Evidence Register | Store and reference evidence of review and update activities |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -664,7 +715,7 @@ When a procedure review cannot be completed within the extended escalation timef
 |---------|--------------|-------------|
 | **A.5.37.1** | Procedure Inventory | Source of procedures to track |
 | **A.5.37.2** | Quality Assessment | Quality triggers review |
-| **A.5.37.4** | Compliance Dashboard | Consumes metrics |
+| **A.5.37.4** | Summary Dashboard | Consumes metrics |
 | **A.5.1** | Information Security Policy | Policy framework for procedures |
 | **A.8.32** | Change Management | Aligns with IT change processes |
 
@@ -683,7 +734,7 @@ When a procedure review cannot be completed within the extended escalation timef
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"That which is not reviewed shall not be trusted."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

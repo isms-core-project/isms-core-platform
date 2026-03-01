@@ -8,164 +8,191 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Testing & Validation Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.32.4-TG |
+| **Related Policy** | ISMS-POL-A.8.32 (Change Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.32 (Change Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Testing & Validation Procedures for Change Management |
-| **Related Policy** | ISMS-POL-A.8.32, Section 2.3 (Testing & Validation Requirements), ISO/IEC 27001:2022 Control 8.29 |
-| **Purpose** | Assess testing procedures, validation processes, acceptance criteria, and rollback capabilities to ensure changes are properly tested before production deployment |
-| **Target Audience** | QA Team, Test Managers, DevOps Engineers, Security Team, Application Owners, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Process & Quality Assurance |
-| **Review Cycle** | Quarterly or After Major Testing Process Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
+| Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Initial assessment specification for Testing & Validation workbook | ISMS Implementation Team |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.32 (Change Management)
+- ISMS-IMP-A.8.32.1 (Change Process Assessment)
+- ISMS-IMP-A.8.32.2 (Change Types & Categories Assessment)
+- ISMS-IMP-A.8.32.3 (Environment Separation Assessment)
 
 ---
+
 # Technical Specification
 **Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
-
-> Auto-generated from `generate_a832_4_testing_validation.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.32.4` |
-| **Output Filename** | `ISMS-IMP-A.8.32.4_Testing_&_Validation_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Testing & Validation Assessment |
-| **Total Sheets** | 17 (17 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #B4C7E7 | B4C7E7 | Light Blue (Planned/Info) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E0E0E0 | E0E0E0 | Custom |
-| #F5F5F5 | F5F5F5 | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
-
 ---
 
-## Sheet 2: Testing_Framework
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a832_4_testing_validation.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Test_Coverage
+**Document ID:** `ISMS-IMP-A.8.32.4`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Acceptance_Criteria
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Testing Framework |
+| 3 | Test Coverage |
+| 4 | Acceptance Criteria |
+| 5 | Rollback Procedures |
+| 6 | Production Validation |
+| 7 | Security Testing |
+| 8 | Testing Documentation |
+| 9 | Evidence Register |
+| 10 | Summary Dashboard |
+| 11 | Approval Sign-Off |
 
-## Sheet 5: Rollback_Procedures
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Production_Validation
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Aspect |
+| 2 | Current State |
+| 3 | Compliance |
+| 4 | Evidence |
+| 5 | Notes |
+| 6 | Tool Category |
+| 7 | Tool Name |
+| 8 | Purpose |
+| 9 | Automation Level |
+| 10 | Integration |
+| 11 | License Status |
+| 12 | Owner |
+| 13 | Metric |
+| 14 | Target Value |
+| 15 | Current Value |
+| 16 | Status |
+| 17 | Implemented? |
+| 18 | Coverage/Details |
+| 19 | Tool/Framework |
+| 20 | Details |
+| 21 | Ownership |
+| 22 | Change Type |
+| 23 | Mandatory Criteria |
+| 24 | Optional Criteria |
+| 25 | Sign-Off Required |
+| 26 | Stage |
+| 27 | Entry Criteria |
+| 28 | Exit Criteria |
+| 29 | Duration |
+| 30 | Criteria ID |
+| 31 | Change/Release |
+| 32 | Criteria Description |
+| 33 | Type |
+| 34 | Expected Result |
+| 35 | Actual Result |
+| 36 | Validated By |
+| 37 | Date |
+| 38 | Rollback Method |
+| 39 | Automated? |
+| 40 | Tested? |
+| 41 | RTO Target |
+| 42 | Last Test Date |
+| 43 | Success Rate |
+| 44 | Test ID |
+| 45 | Test Date |
+| 46 | Test Result |
+| 47 | Issues Identified |
+| 48 | Remediation |
+| 49 | Target |
+| 50 | Current |
+| 51 | Check Category |
+| 52 | Check Description |
+| 53 | Critical? |
+| 54 | Frequency |
+| 55 | Test Type |
+| 56 | Description |
+| 57 | When Required |
+| 58 | Performed By |
+| 59 | Document Type |
+| 60 | Template Exists |
+| 61 | Consistently Used |
+| 62 | Review Process |
+| 63 | Assessment Area |
+| 64 | Total Items |
+| 65 | Compliant |
+| 66 | Partial |
+| 67 | Non-Compliant |
+| 68 | N/A |
+| 69 | Compliance % |
+| 70 | Value |
+| 71 | Category |
+| 72 | Finding |
+| 73 | Count |
+| 74 | Severity |
+| 75 | Action Required |
+| 76 | Evidence ID |
+| 77 | Evidence Type |
+| 78 | Location / Path |
+| 79 | Date Collected |
+| 80 | Collected By |
+| 81 | Verification Status |
 
-## Sheet 7: Security_Testing
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Testing_Documentation
+```
+Active, Expiring Soon, Expired, Every Deploy, Daily, Weekly, Monthly
+Per Release, On-Demand, Electronic, Written, Verbal, Automated, Manual
+User Report, Change Request, Policy Document, Process Record
+System Screenshot, Configuration Export, Audit Log, Training Record
+Test Result, Risk Assessment, Meeting Minutes, Other, N/A, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
----
-
-## Sheet 9: Evidence_Register
-
----
-
-## Sheet 10: Summary_Dashboard
-
----
-
-## Sheet 11: Approval_Sign_Off
-
----
-
-## Sheet 12: Instructions
-
-**Frozen Panes:** A4
-
----
-
-## Sheet 13: Testing_Framework_Assessment
-
-**Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Aspect |
-| B | Current State |
-| C | Compliance |
-| D | Evidence |
-| E | Notes |
-
----
-
-## Sheet 14: Test_Types_Coverage
-
-**Frozen Panes:** A5
-
----
-
-## Sheet 15: Acceptance_Criteria_Management
-
-**Data Rows:** 20 (rows 1–20) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Aspect |
-| B | Implemented? |
-| C | Details |
-| D | Ownership |
-| E | Compliance |
-| F | Evidence |
-| G | Notes |
-
----
-
-## Sheet 16: Approval_Signoff
-
-**Purpose:** Formal approval workflow with 3-level sign-off.
-
-**Frozen Panes:** A4
-
----
-
-## Sheet 17: Base_Validations
+**Extracted:** 11 sheets, 81 columns, 35 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
 
+
 ---
 
-*"The only truly secure system is one that is powered off, disconnected, and locked in a safe."*
-— Adi Shamir
+*"No change reaches production without passing the test of evidence."*
+— Change management principle
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

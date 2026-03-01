@@ -430,11 +430,11 @@ Renewal requests must demonstrate re-assessment of risk and continued justificat
 
 **Verification**: Risk acceptances recorded in Findings Register with status "Risk Accepted" and documented in risk register.
 
-## Compliance Dashboard and Reporting
+## Summary Dashboard and Reporting
 
 ### Executive Dashboard
 
-**PS-4.1.1 Dashboard Maintenance**: An executive compliance dashboard SHALL be maintained providing consolidated visibility into:
+**PS-4.1.1 Dashboard Maintenance**: An executive Summary Dashboard SHALL be maintained providing consolidated visibility into:
 
 - Overall ISMS compliance status
 - Independent review findings status
@@ -626,4 +626,4 @@ Changes to this policy follow ISMS document change management:
 
 *This policy establishes requirements for independent review and compliance verification. Implementation procedures are documented in ISMS-IMP-A.5.35-36.S1-4 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

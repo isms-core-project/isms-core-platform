@@ -3,6 +3,40 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Controls A.8.33: Test Information & A.8.34: Protection of Information Systems During Audit Testing
 
+---
+
+**Document Control**
+
+| Attribute | Value |
+|-------|-------|
+| **Document Title** | Test Data Protection |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.33-34.1-UG |
+| **Related Policy** | ISMS-POL-A.8.33-34 (Testing and Audit Protection) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.33 (Test Information) & A.8.34 (Protection of Information Systems During Audit Testing) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.33-34 (Testing and Audit Protection)
+- ISMS-IMP-A.8.33-34.2 (Audit Activity Management)
+
+---
+
 ### ISO/IEC 27001:2022 Controls A.8.33: Test Information & A.8.34: Protection of Information Systems During Audit Testing
 
 ---
@@ -15,7 +49,7 @@
 | **Version** | 1.0 |
 | **Assessment Area** | Test Data Governance & Protection |
 | **Related Policy** | ISMS-POL-A.8.33-34, Section 2.1 (Test Data Protection) |
-| **Purpose** | Assess organizational compliance with test data protection requirements including inventory, masking, anonymization, and environment registry management |
+| **Purpose** | Assess organisational compliance with test data protection requirements including inventory, masking, anonymization, and environment registry management |
 | **Target Audience** | Test Managers, Development Teams, Security Officers, Data Protection Officers, QA Teams, Compliance Officers, IT Operations, Auditors |
 | **Assessment Type** | Process & Operational Compliance |
 | **Review Cycle** | Semi-Annual (minimum) or After Major System Changes |
@@ -33,18 +67,34 @@
 
 ---
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Test Data Inventory | Registry of production data copied to test environments |
+| 3 | Data Masking Assessment | Assess data masking and anonymisation techniques applied |
+| 4 | Test Environment Registry | Registry of test environments and their data classifications |
+| 5 | Data Refresh Schedule | Track data refresh schedules and compliance |
+| 6 | Compliance Verification | Verify compliance with test data protection requirements |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
+
+---
+
 # Assessment Overview
 
 ## What This Assessment Measures
 
-This assessment evaluates [Organization]'s implementation of **test data governance and protection mechanisms** to ensure compliance with ISO/IEC 27001:2022 Controls A.8.33 (Test Information) and A.8.34 (Protection of Information Systems During Audit Testing), applicable data protection regulations (GDPR, FADP), and industry best practices.
+This assessment evaluates [Organisation]'s implementation of **test data governance and protection mechanisms** to ensure compliance with ISO/IEC 27001:2022 Controls A.8.33 (Test Information) and A.8.34 (Protection of Information Systems During Audit Testing), applicable data protection regulations (GDPR, FADP), and industry best practices.
 
 **Scope:** Complete test data lifecycle management across 5 critical areas:
 
 1. **Test Data Inventory** - Complete registry of what production data is copied to test environments
 2. **Data Masking/Anonymization** - Tracking of data protection techniques applied
 3. **Test Environment Registry** - Inventory of all test environments and their security posture
-4. **Data Refresh Schedule** - Management of data refresh cycles and authorizations
+4. **Data Refresh Schedule** - Management of data refresh cycles and authorisations
 5. **Compliance Verification** - Evidence of compliance with test data policies
 
 **Assessment Output:** Excel workbook with ~200-300 data points documenting current test data governance posture, masking effectiveness, environment security status, and remediation plans for identified gaps.
@@ -59,7 +109,7 @@ This assessment evaluates [Organization]'s implementation of **test data governa
 
 **Regulatory Context:**
 
-- **EU GDPR (Article 5.1.f):** "Integrity and confidentiality" principle - personal data must be protected against unauthorized processing
+- **EU GDPR (Article 5.1.f):** "Integrity and confidentiality" principle - personal data must be protected against unauthorised processing
 - **EU GDPR (Article 25):** "Data protection by design" - implement technical measures like pseudonymization
 - **EU GDPR (Article 32):** "Security of processing" - implement appropriate technical measures including pseudonymization
 - **Swiss FADP (Article 8):** Data security requirements including protection during processing
@@ -71,7 +121,7 @@ This assessment evaluates [Organization]'s implementation of **test data governa
 - **Regulatory Fines:** GDPR violations involving test data can result in significant penalties
 - **Reputational Damage:** Breaches from test environments are increasingly common attack vectors
 - **Audit Failures:** Lack of test data governance is a frequent ISO 27001 nonconformity
-- **Compliance Gaps:** Many organizations overlook test environments in data protection programs
+- **Compliance Gaps:** Many organisations overlook test environments in data protection programs
 
 ## Who Should Complete This Assessment
 
@@ -79,7 +129,7 @@ This assessment evaluates [Organization]'s implementation of **test data governa
 
 **Required Knowledge:**
 
-- [Organization]'s complete test environment inventory
+- [Organisation]'s complete test environment inventory
 - Data masking and anonymization techniques in use
 - Test data provisioning processes
 - Data classification scheme and PII locations
@@ -106,16 +156,16 @@ This assessment evaluates [Organization]'s implementation of **test data governa
 - **Evidence Collection (1-2 hours):** Gather supporting documentation
 - **Quality Review (1 hour):** Final validation and approval preparation
 
-**Pro Tip:** For organizations with >10 test environments or >50 data sets in test, consider conducting assessment over multiple sessions by environment or data domain.
+**Pro Tip:** For organisations with >10 test environments or >50 data sets in test, consider conducting assessment over multiple sessions by environment or data domain.
 
 ## Connection to Policy
 
 This assessment implements **ISMS-POL-A.8.33-34, Section 2.1 (Test Data Protection)** which defines mandatory requirements for:
 
-- **Data Inventory:** All production data copied to test must be registered and authorized
+- **Data Inventory:** All production data copied to test must be registered and authorised
 - **Masking Requirements:** Personal data must be masked/anonymized before copying to test
 - **Environment Controls:** Test environments must have appropriate security controls
-- **Refresh Governance:** Data refresh must be authorized and logged
+- **Refresh Governance:** Data refresh must be authorised and logged
 - **Compliance Monitoring:** Regular verification of test data compliance
 
 **Policy Authority:** Chief Information Security Officer (CISO) / Data Protection Officer (DPO)
@@ -189,7 +239,7 @@ Complete these tasks before beginning the assessment:
 - [ ] **Collect evidence of masking verification** tests (if any)
 - [ ] **Identify third-party test data services** in use (if any)
 
-**Critical:** If [Organization] has never conducted a formal test data inventory, allow additional time (15-25 hours) for foundational discovery work.
+**Critical:** If [Organisation] has never conducted a formal test data inventory, allow additional time (15-25 hours) for foundational discovery work.
 
 ---
 
@@ -227,7 +277,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 3. Document Target Environment in Column C (which test environment receives the data)
 4. Classify Data Sensitivity in Column D (Public, Internal, Confidential, Restricted)
 5. Indicate Contains PII in Column E (Yes/No)
-6. Record Authorization Status in Column F (Authorized/Pending/Unauthorized)
+6. Record Authorisation Status in Column F (Authorised/Pending/Unauthorised)
 7. Document Last Copy Date in Column G
 8. Specify Data Volume in Column H (record count or size)
 
@@ -243,7 +293,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Quality Check:**
 
 - Have you included ALL data copied from production?
-- Is every data set authorized by Data Owner?
+- Is every data set authorised by Data Owner?
 - Is PII classification accurate?
 - Are all target environments documented?
 
@@ -326,15 +376,15 @@ Step 8: Quality Check & Approval (Sheet 9)
 2. Document Refresh Frequency in Column B (Daily, Weekly, Monthly, Quarterly, Ad-Hoc, Never)
 3. Identify Data Sources Refreshed in Column C (which production data is refreshed)
 4. Record Last Refresh Date in Column D
-5. Document Refresh Authorization Status in Column E (Authorized, Pending, Unauthorized)
-6. Specify Authorizer in Column F (who approved the refresh)
+5. Document Refresh Authorisation Status in Column E (Authorised, Pending, Unauthorised)
+6. Specify Authoriser in Column F (who approved the refresh)
 7. Indicate Masking Applied at Refresh in Column G (Yes, Partial, No)
 8. Record Refresh Method in Column H (Full Copy, Incremental, Subset, Synthetic)
 9. Document Retention Period in Column I (how long refresh data is retained)
 
 **Refresh Governance Requirements:**
 
-- Each refresh must be authorized by Data Owner
+- Each refresh must be authorised by Data Owner
 - Masking must be applied before or during refresh
 - Refresh logs must be maintained
 - Retention periods must be defined and enforced
@@ -343,7 +393,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Quality Check:**
 
 - Are refresh schedules documented for all environments?
-- Is every refresh authorized?
+- Is every refresh authorised?
 - Is masking consistently applied at refresh?
 - Are retention periods appropriate?
 
@@ -368,7 +418,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - **GDPR Article 32:** Security of processing - appropriate technical measures
 - **ISO 27001 A.8.33:** Test information appropriately protected
 - **ISO 27001 A.8.34:** Audit testing planned and agreed
-- **Internal Policy:** Organization-specific test data requirements
+- **Internal Policy:** Organisation-specific test data requirements
 
 **Quality Check:**
 
@@ -391,7 +441,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 
 - **Policy Documents:** Test data policy, masking procedures
 - **Technical Documentation:** Masking tool configurations, environment architectures
-- **Authorization Records:** Data copy approvals, refresh authorizations
+- **Authorisation Records:** Data copy approvals, refresh authorisations
 - **Audit Logs:** Refresh execution logs, access logs
 - **Verification Reports:** Masking verification results, security assessments
 - **Training Records:** Test data handling training completion
@@ -413,7 +463,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Count of fully masked, partially masked, and unmasked data sets
 - Critical gaps requiring immediate attention
 - Environment security compliance status
-- Data sets without authorization
+- Data sets without authorisation
 - Average masking effectiveness score
 
 **Review Questions:**
@@ -489,7 +539,7 @@ A: Yes, if they contain copies of production data. Include as environment type "
 
 **Q: What security controls are required for test environments?**
 A: At minimum:
-- Access controls (authentication, authorization)
+- Access controls (authentication, authorisation)
 - Network segmentation from production
 - Logging of access
 - Data classification enforcement
@@ -497,8 +547,8 @@ A: At minimum:
 
 ## Data Refresh Schedule (Sheet 5)
 
-**Q: Who should authorize data refresh?**
-A: The Data Owner of the production data being copied. This ensures accountability and prevents unauthorized data proliferation.
+**Q: Who should authorise data refresh?**
+A: The Data Owner of the production data being copied. This ensures accountability and prevents unauthorised data proliferation.
 
 **Q: How long should test data be retained?**
 A: Only as long as needed for testing purposes. Recommend:
@@ -516,7 +566,7 @@ A: Only as long as needed for testing purposes. Recommend:
 **Test Data Inventory:**
 
 - Test data provisioning request forms
-- Data copy authorization records
+- Data copy authorisation records
 - Environment data flow diagrams
 - Data classification documentation
 
@@ -536,7 +586,7 @@ A: Only as long as needed for testing purposes. Recommend:
 
 **Refresh Schedule:**
 
-- Refresh authorization records
+- Refresh authorisation records
 - Refresh execution logs
 - Masking application evidence
 - Data retention documentation
@@ -544,7 +594,7 @@ A: Only as long as needed for testing purposes. Recommend:
 ## Audit-Readiness Tips
 
 **What Auditors Will Look For:**
-1. **Authorization:** Is every production data copy authorized?
+1. **Authorisation:** Is every production data copy authorised?
 2. **Masking:** Is PII masked before reaching test environments?
 3. **Controls:** Are test environments appropriately secured?
 4. **Governance:** Are refresh schedules controlled and logged?
@@ -554,9 +604,9 @@ A: Only as long as needed for testing purposes. Recommend:
 
 - "Production data in test without masking" - Implement masking at refresh
 - "No test data inventory" - Complete this assessment
-- "Unauthorized data copies" - Implement authorization workflow
+- "Unauthorised data copies" - Implement authorisation workflow
 - "Test environments lack security controls" - Apply baseline security
-- "No data refresh governance" - Implement refresh authorization process
+- "No data refresh governance" - Implement refresh authorisation process
 
 ---
 
@@ -608,7 +658,7 @@ A: Only as long as needed for testing purposes. Recommend:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Production data in a test environment is a production breach waiting to happen."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

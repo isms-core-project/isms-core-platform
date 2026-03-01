@@ -8,29 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | SDLC Assessment Specification |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.28.1-UG |
+| **Related Policy** | ISMS-POL-A.8.28 (Secure Coding) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.28 (Secure Coding) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Secure Development Lifecycle (SDLC) Integration |
-| **Related Policy** | ISMS-POL-A.8.28 Section 2.1 (Pre-Development Requirements), Section 3.1 (Roles & Responsibilities) |
-| **Purpose** | Evaluate integration of security practices into SDLC, focusing on pre-development activities and process-level controls that prevent vulnerabilities |
-| **Target Audience** | Application Security Lead, Development Managers, Security Architects, Project Managers, Auditors |
-| **Assessment Type** | Process & Organizational |
-| **Review Cycle** | Quarterly or After Major SDLC Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
 **Version History**:
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | [Date] | Initial assessment specification |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Approvers**:
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-- Application Security Lead (Technical Review)
-- Development Manager / Engineering Lead (Engineering Perspective)
-- QA Manager / Test Lead (Testing Validation)
-- CISO / Security Director (Executive Approval)
+**Related Documents**:
+
+- ISMS-POL-A.8.28 (Secure Coding)
+- ISMS-IMP-A.8.28.2 (Standards & Tools Assessment Specification)
+- ISMS-IMP-A.8.28.3 (Code Review & Testing Assessment Specification)
+- ISMS-IMP-A.8.28.4 (Third-Party & Open Source Software Assessment Specification)
+
+---
 
 ### Document Structure
 
@@ -39,6 +46,23 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 **Audience:** Application Security Lead, Development Managers, Security Architects, Project Managers
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Security Requirements Design | Assess security requirements integration in the design phase |
+| 3 | Development Environment | Evaluate security controls in the development environment |
+| 4 | Build Deployment Pipeline | Assess security controls in CI/CD build and deployment pipeline |
+| 5 | Security Testing Integration | Evaluate integration of security testing into SDLC phases |
+| 6 | Release Change Management | Assess security release and change management controls |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Gap Analysis | Identify gaps in SDLC security integration |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -54,23 +78,23 @@ This assessment evaluates the **integration of security practices into the Softw
 
 *"An ounce of prevention is worth a pound of cure."* - Benjamin Franklin
 
-**Application to Secure Coding**: Security activities performed before code is written are 10-100x more cost-effective than fixing vulnerabilities post-deployment. This assessment verifies that [Organization] has systematic processes to prevent vulnerabilities rather than relying on reactive patching.
+**Application to Secure Coding**: Security activities performed before code is written are 10-100x more cost-effective than fixing vulnerabilities post-deployment. This assessment verifies that [Organisation] has systematic processes to prevent vulnerabilities rather than relying on reactive patching.
 
 ### Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - ISO/IEC 27001:2022 Control A.8.28: Secure Coding
 - ISMS-POL-A.8.28 Section 2.1: Pre-Development Requirements
 - ISMS-POL-A.8.28 Section 3.1: Roles & Responsibilities (Development Managers, Security Architects, Security Champions)
 
-Organizations that integrate security into SDLC reduce:
+Organisations that integrate security into SDLC reduce:
 
 - Post-deployment vulnerability remediation costs by 60-90%
 - Security incident frequency by 40-70%
 - Time-to-market delays from late-stage security fixes
 
-Organizations without SDLC security integration experience:
+Organisations without SDLC security integration experience:
 
 - Reactive "security theater" - finding and fixing issues too late
 - Developer frustration from last-minute security blockers
@@ -205,7 +229,7 @@ Before starting this assessment, gather:
 **Software**:
 
 - Microsoft Excel 2016+ or compatible spreadsheet application
-- Access to [Organization]'s Learning Management System (LMS)
+- Access to [Organisation]'s Learning Management System (LMS)
 - Access to source code repository (GitHub, GitLab, Bitbucket, etc.)
 - Access to project management tools (Jira, Azure DevOps, etc.)
 - Access to document management system (SharePoint, Confluence, Google Drive, etc.)
@@ -255,7 +279,6 @@ Before starting this assessment, gather:
 - ISMS-IMP-A.8.28.2 (Standards & Tools) - can be done in parallel
 - ISMS-IMP-A.8.28.3 (Code Review & Testing) - can be done in parallel
 - ISMS-IMP-A.8.28.4 (Third-Party & OSS) - can be done in parallel
-- ISMS-IMP-A.8.28.5 (Compliance Dashboard) - requires IMPs 1-4 completed first
 
 ---
 
@@ -471,7 +494,7 @@ This section provides detailed guidance for completing each assessment domain. F
 
 **Assessment Question 1.1**: "Are security requirements documented for all new development projects?"
 
-**What This Asks**: Does [Organization] have a systematic process for identifying and documenting security requirements during project initiation?
+**What This Asks**: Does [Organisation] have a systematic process for identifying and documenting security requirements during project initiation?
 
 **Where to Find Evidence**:
 
@@ -486,11 +509,11 @@ This section provides detailed guidance for completing each assessment domain. F
 - **⚠️ Partial**: 50-99% of projects have security requirements documented
 - **❌ Non-Compliant**: <50% of projects have security requirements, or no systematic process
 - **🔄 Planned**: Process being developed, not yet operational
-- **N/A**: [Organization] has no new development projects (rare - justify in comments)
+- **N/A**: [Organisation] has no new development projects (rare - justify in comments)
 
 **Examples**:
 
-- ✅ **Compliant**: Project "Customer Portal v2" has dedicated security requirements section with 12 documented requirements covering authentication, authorization, data protection, logging
+- ✅ **Compliant**: Project "Customer Portal v2" has dedicated security requirements section with 12 documented requirements covering authentication, authorisation, data protection, logging
 - ❌ **Non-Compliant**: Project "Mobile App" launched without documented security requirements; security issues discovered in production
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.1 (Security Requirements Definition)
@@ -499,7 +522,7 @@ This section provides detailed guidance for completing each assessment domain. F
 
 **Assessment Question 1.2**: "Are security risk assessments conducted for high-risk projects before development begins?"
 
-**What This Asks**: Does [Organization] identify security risks and document threat severity/likelihood before coding starts?
+**What This Asks**: Does [Organisation] identify security risks and document threat severity/likelihood before coding starts?
 
 **Where to Find Evidence**:
 
@@ -514,12 +537,12 @@ This section provides detailed guidance for completing each assessment domain. F
 - **⚠️ Partial**: Most high-risk projects assessed, but some gaps (70-99% coverage)
 - **❌ Non-Compliant**: <70% of high-risk projects assessed, or no risk assessment process
 - **🔄 Planned**: Risk assessment template created, not yet applied to projects
-- **N/A**: [Organization] has no high-risk projects (justify - unlikely)
+- **N/A**: [Organisation] has no high-risk projects (justify - unlikely)
 
 **Examples**:
 
 - ✅ **Compliant**: "Payment Gateway Integration" project has risk assessment dated 15.03.2025, identifying PCI-DSS compliance risk (High), data breach risk (Critical), approved by CISO
-- ❌ **Non-Compliant**: "Admin Dashboard" project (high-risk - privileged access) proceeded without risk assessment; discovered authorization bypass in testing
+- ❌ **Non-Compliant**: "Admin Dashboard" project (high-risk - privileged access) proceeded without risk assessment; discovered authorisation bypass in testing
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.1 (Security Requirements Definition - risk assessment required)
 
@@ -554,7 +577,7 @@ This section provides detailed guidance for completing each assessment domain. F
 
 **Assessment Question 1.4**: "Are regulatory compliance requirements identified and documented for projects?"
 
-**What This Asks**: Does [Organization] identify applicable regulations (GDPR, PCI-DSS, HIPAA, sector-specific) and document compliance obligations?
+**What This Asks**: Does [Organisation] identify applicable regulations (GDPR, PCI-DSS, HIPAA, sector-specific) and document compliance obligations?
 
 **Where to Find Evidence**:
 
@@ -569,7 +592,7 @@ This section provides detailed guidance for completing each assessment domain. F
 - **⚠️ Partial**: Most projects documented, but some gaps (70-99%)
 - **❌ Non-Compliant**: <70% documented, or no compliance identification process
 - **🔄 Planned**: Compliance mapping template created, not yet applied
-- **N/A**: [Organization] has no projects processing regulated data (justify - unlikely)
+- **N/A**: [Organisation] has no projects processing regulated data (justify - unlikely)
 
 **Examples**:
 
@@ -584,7 +607,7 @@ This section provides detailed guidance for completing each assessment domain. F
 
 **Assessment Question 2.1**: "Is threat modeling performed for high-risk applications?"
 
-**What This Asks**: Does [Organization] systematically identify threats during design phase for applications handling sensitive data or critical functions?
+**What This Asks**: Does [Organisation] systematically identify threats during design phase for applications handling sensitive data or critical functions?
 
 **Where to Find Evidence**:
 
@@ -599,12 +622,12 @@ This section provides detailed guidance for completing each assessment domain. F
 - **⚠️ Partial**: 70-99% of high-risk applications have threat models
 - **❌ Non-Compliant**: <70% have threat models, or no threat modeling process
 - **🔄 Planned**: Threat modeling methodology selected, training scheduled, not yet applied
-- **N/A**: [Organization] has no high-risk applications (justify - rare)
+- **N/A**: [Organisation] has no high-risk applications (justify - rare)
 
 **Examples**:
 
 - ✅ **Compliant**: "Payment API" has threat model using STRIDE methodology, identifying 23 threats (8 High, 12 Medium, 3 Low), mitigation strategies documented
-- ❌ **Non-Compliant**: "Admin Portal" (high-risk - privileged access) deployed without threat model; authorization bypass discovered in production
+- ❌ **Non-Compliant**: "Admin Portal" (high-risk - privileged access) deployed without threat model; authorisation bypass discovered in production
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.2 (Threat Modeling - required for high-risk apps)
 
@@ -670,7 +693,7 @@ This section provides detailed guidance for completing each assessment domain. F
 
 **Assessment Question 3.1**: "Are security-by-design principles documented and applied?"
 
-**What This Asks**: Does [Organization] have documented principles (least privilege, defense in depth, fail securely, etc.) that architects reference?
+**What This Asks**: Does [Organisation] have documented principles (least privilege, defense in depth, fail securely, etc.) that architects reference?
 
 **Where to Find Evidence**:
 
@@ -714,7 +737,7 @@ This section provides detailed guidance for completing each assessment domain. F
 - **⚠️ Partial**: 50-89% undergo review
 - **❌ Non-Compliant**: <50% undergo review, or no formal review process
 - **🔄 Planned**: Review process defined, not yet operational
-- **N/A**: [Organization] has no new applications (justify - rare)
+- **N/A**: [Organisation] has no new applications (justify - rare)
 
 **Examples**:
 
@@ -771,7 +794,7 @@ This section provides detailed guidance for completing each assessment domain. F
 - **⚠️ Partial**: 70-89% completed refresher
 - **❌ Non-Compliant**: <70% completed, or no annual refresher requirement
 - **🔄 Planned**: Refresher training procured, not yet launched
-- **N/A**: [Organization] was founded <12 months ago (no annual cycle yet)
+- **N/A**: [Organisation] was founded <12 months ago (no annual cycle yet)
 
 **Examples**:
 
@@ -801,11 +824,11 @@ This section provides detailed guidance for completing each assessment domain. F
 - **⚠️ Partial**: MFA encouraged but not enforced (70-99% adoption)
 - **❌ Non-Compliant**: MFA not enforced (<70% adoption) OR not available
 - **🔄 Planned**: MFA enforcement scheduled, not yet active
-- **N/A**: [Organization] has no source code repositories (justify - very rare)
+- **N/A**: [Organisation] has no source code repositories (justify - very rare)
 
 **Examples**:
 
-- ✅ **Compliant**: GitHub Enterprise settings show "Require two-factor authentication for everyone in the organization" enabled; user audit confirms 100% compliance
+- ✅ **Compliant**: GitHub Enterprise settings show "Require two-factor authentication for everyone in the organisation" enabled; user audit confirms 100% compliance
 - ❌ **Non-Compliant**: GitLab allows password-only access; 35% of developers use MFA voluntarily; repository compromised via stolen password
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.5 (Development environment security - MFA required)
@@ -904,9 +927,9 @@ For every assessment question, you'll select from these status options:
 
 **N/A (Gray)**:
 
-- Control not applicable to [Organization]
+- Control not applicable to [Organisation]
 - Must provide justification in Comments column
-- Rare - most controls apply to all organizations
+- Rare - most controls apply to all organisations
 
 ---
 
@@ -1079,9 +1102,9 @@ Learn from others' mistakes. Here are the 10 most common errors in SDLC assessme
 
 **Problem**: Marking questions N/A without explaining WHY they don't apply.
 
-**Example**: "Threat modeling for high-risk apps" marked N/A; auditor questions whether [Organization] truly has zero high-risk applications.
+**Example**: "Threat modeling for high-risk apps" marked N/A; auditor questions whether [Organisation] truly has zero high-risk applications.
 
-**Solution**: If marking N/A, provide justification in Comments: "[Organization] develops only internal documentation tools; no PII, financial data, or critical business functions processed. Confirmed with CISO on DD.MM.YYYY."
+**Solution**: If marking N/A, provide justification in Comments: "[Organisation] develops only internal documentation tools; no PII, financial data, or critical business functions processed. Confirmed with CISO on DD.MM.YYYY."
 
 ---
 
@@ -1115,9 +1138,9 @@ Learn from others' mistakes. Here are the 10 most common errors in SDLC assessme
 
 ---
 
-## Mistake 9: Assessing Only Pilot Projects, Not Organization-Wide Practices
+## Mistake 9: Assessing Only Pilot Projects, Not Organisation-Wide Practices
 
-**Problem**: Documenting security practices from single exemplary project; claiming organization-wide compliance.
+**Problem**: Documenting security practices from single exemplary project; claiming organisation-wide compliance.
 
 **Example**: "Project A" has excellent threat model; assessor marks Compliant org-wide. Reality: Only Project A (1 of 20 projects) has threat model.
 
@@ -1295,7 +1318,7 @@ Before submitting the assessment for approval, verify:
 
 - Operational feasibility (remediation plans realistic for dev teams)
 - Resource allocation (budgets and timelines align with capacity)
-- Organizational accuracy (training and planning claims correct)
+- Organisational accuracy (training and planning claims correct)
 
 **Possible Outcomes**: Same as Application Security Lead review
 
@@ -1367,7 +1390,7 @@ Before submitting the assessment for approval, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The safest code is code written securely from the first line."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

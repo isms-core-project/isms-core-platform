@@ -8,26 +8,60 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Access Rights Matrix Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.15-16-18.S2-UG |
+| **Related Policy** | ISMS-POL-A.5.15-16-18 (Identity Access Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.15 (Access Annex) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Access Rights Matrix & Documentation |
-| **Related Policy** | ISMS-POL-A.5.15-16-18, Section 2.3 (Access Rights Management Requirements - A.5.18) |
-| **Purpose** | Document complete access rights matrix mapping users to systems/applications/data, assess access documentation completeness, and verify business justification in a technology-agnostic manner |
-| **Target Audience** | IAM Team, System Owners, IT Operations, Security Team, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Monthly (access rights updates), Quarterly (comprehensive access audit) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Access Rights Matrix assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.15-16-18 (Identity Access Management)
+- ISMS-IMP-A.5.15-16-18.S1 (User Inventory & Lifecycle Compliance Assessment)
+- ISMS-IMP-A.5.15-16-18.S3 (Access Review Results Assessment)
+- ISMS-IMP-A.5.15-16-18.S4 (Role Definition & SoD Compliance Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.15-16-18.S2-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 11 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Access Matrix** | Current state access rights mapped by system, role, and user |
+| **Role Assignments** | Mapping of users to roles across all assessed systems |
+| **Group Memberships** | Group and distribution list membership records |
+| **Privileged Access** | Inventory and assessment of privileged and administrative accounts |
+| **Access Documentation** | Documentation quality and completeness assessment |
+| **Coverage Analysis** | Coverage metrics for access rights documentation |
+| **Gap Analysis** | Identified gaps and remediation action tracking |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -87,8 +121,6 @@ This assessment is **completely technology-agnostic and vendor-independent**. Yo
 | **ISMS-IMP-A.5.15-16-18.S2** | **Access Rights Matrix** | **WHAT access do users have** |
 | ISMS-IMP-A.5.15-16-18.S3 | Access Review Results | Uses access matrix (.2) to determine WHAT to review |
 | ISMS-IMP-A.5.15-16-18.S4 | Role & SoD Compliance | Uses access via roles (from .2) to detect SoD violations |
-| ISMS-IMP-A.5.15-16-18.S5 | IAM Governance Dashboard | Uses access metrics from .2 for compliance dashboard |
-
 This assessment (A.5.15-16-18.2) provides the **foundational access rights mapping** used by access review and SoD detection!
 
 ### Who Should Complete This Assessment
@@ -194,7 +226,6 @@ For EACH system/application:
 
 - A.5.15-16-18.3 (Access Review Results) - Uses access matrix to define review scope
 - A.5.15-16-18.4 (Role & SoD Compliance) - Uses access data to detect SoD violations
-- A.5.15-16-18.5 (IAM Governance Dashboard) - Consolidates access metrics
 
 ---
 
@@ -219,13 +250,13 @@ For EACH system/application:
    ↓
 8. IDENTIFY EXCESSIVE ACCESS (Sheet 5)
    ↓
-9. CALCULATE COMPLETENESS SCORE (Sheet 6)
+9. CALCULATE COMPLETENESS SCORE (Summary Dashboard)
    ↓
-10. IDENTIFY GAPS (Sheet 7)
+10. IDENTIFY GAPS (Gap Analysis)
     ↓
-11. REGISTER EVIDENCE (Sheet 8)
+11. REGISTER EVIDENCE (Evidence Register)
     ↓
-12. REVIEW & APPROVE (Sheet 9)
+12. REVIEW & APPROVE (Approval Sign-Off)
 ```
 
 ### Detailed Workflow
@@ -354,11 +385,10 @@ Get-MgGroup -All | ForEach-Object {
 
 **Consolidation Step:**
 
-- Normalize data format across all systems
 - Map user identifiers (AD SamAccountName → Entra ID UPN → Application UserID)
 - Tag each access record with source system
 
-**Deliverable:** Consolidated access data CSV for all systems
+**Deliverable:** Collected access data for all systems
 
 **Quality Check:**
 
@@ -564,25 +594,25 @@ Get-MgGroup -All | ForEach-Object {
 
 #### Phase 8: Calculate Documentation Completeness Score (1-2 hours)
 
-**Objective:** Complete Sheet 6 - Access Rights Compliance Dashboard
+**Objective:** Calculate access rights documentation completeness and record findings in the Summary Dashboard
 
 **Steps:**
 
-1. **Consolidate metrics** from Sheets 2-5:
+1. **Collect metrics** from assessment sheets:
 
-   - Total access grants (from Sheet 2)
-   - Access with complete documentation (from Sheet 4)
-   - Privileged access count (from Sheet 2)
-   - Access to restricted/confidential data (from Sheet 2)
-   - Excessive access count (from Sheet 5)
-   - Group-based access vs. direct access (from Sheets 2-3)
+   - Total access grants (from Access Matrix sheet)
+   - Access with complete documentation (from Access Documentation sheet)
+   - Privileged access count (from Privileged Access sheet)
+   - Access to restricted/confidential data (from Access Matrix sheet)
+   - Excessive access count (from Coverage Analysis sheet)
+   - Group-based access vs. direct access (from Role Assignments and Group Memberships sheets)
 
 2. **Calculate overall access rights documentation score**:
    ```
-   Documentation Score = 
-     (Justification Completeness × 40%) + 
-     (Approval Documentation × 30%) + 
-     (Review Currency × 20%) + 
+   Documentation Score =
+     (Justification Completeness × 40%) +
+     (Approval Documentation × 30%) +
+     (Review Currency × 20%) +
      (Access Accuracy × 10%)
    ```
 
@@ -600,7 +630,7 @@ Get-MgGroup -All | ForEach-Object {
    - Root causes (why is documentation incomplete?)
    - Recommendations (how to improve)
 
-**Deliverable:** Sheet 6 with access rights compliance dashboard
+**Deliverable:** Documentation completeness score recorded in Gap Analysis and tracked in Summary Dashboards
 
 **Quality Check:**
 
@@ -707,7 +737,7 @@ Get-MgGroup -All | ForEach-Object {
 **Quality Check:**
 
 - ✓ All evidence collected and documented
-- ✓ Evidence organized in logical folder structure
+- ✓ Evidence organised in logical folder structure
 - ✓ Evidence IDs cross-referenced to assessment sheets
 - ✓ All evidence verified as accurate and current
 
@@ -741,7 +771,7 @@ Get-MgGroup -All | ForEach-Object {
 - Verify remediation plans have adequate resources
 - Final approval
 
-**Deliverable:** Approved assessment ready for IAM Governance Dashboard
+**Deliverable:** Approved assessment ready for management review
 
 **Quality Check:**
 
@@ -790,19 +820,14 @@ Get-MgGroup -All | ForEach-Object {
 - Manager justifications for excess access
 - Privilege creep analysis reports
 
-**For Sheet 6 (Compliance Dashboard):**
-
-- Trend charts (if historical data)
-- Benchmark references
-
-**For Sheet 7 (Gap Analysis):**
+**For Gap Analysis:**
 
 - Gap remediation project plans
 - Resource allocation approvals
 
 **For Sheet 8 (Evidence Register):**
 
-- All evidence listed above, organized
+- All evidence listed above, organised
 
 **For Sheet 9 (Approval):**
 
@@ -963,7 +988,7 @@ Before submitting for approval, verify:
 - [ ] Legitimate excess has justification
 - [ ] Questionable excess flagged for review
 
-### Compliance Dashboard (Sheet 6)
+### Summary Dashboard
 
 - [ ] All metrics pulled from correct sheets
 - [ ] Overall documentation score calculated correctly
@@ -981,7 +1006,7 @@ Before submitting for approval, verify:
 ### Evidence Register (Sheet 8)
 
 - [ ] All evidence collected and listed
-- [ ] Evidence organized logically
+- [ ] Evidence organised logically
 - [ ] Evidence IDs cross-referenced
 - [ ] All evidence verified
 
@@ -1059,12 +1084,6 @@ This assessment (A.5.15-16-18.2) feeds into:
 - **Mapping:** User → Roles → SoD conflicts
 - **Dependency:** SoD detection requires knowing which users have which roles
 
-### A.5.15-16-18.5 - IAM Governance Compliance Dashboard
-
-- **Uses:** Access metrics from Sheet 6
-- **Consolidation:** Access rights metrics combined with lifecycle, review, role metrics
-- **Dependency:** Dashboard incomplete without access rights data
-
 ---
 
 ## Continuous Improvement
@@ -1088,11 +1107,7 @@ This assessment (A.5.15-16-18.2) feeds into:
    - Collect justifications for new access grants
    - Update documentation completeness score
 
-4. **Refresh Compliance Dashboard (Sheet 6):**
-
-   - All metrics auto-update from linked sheets
-
-5. **Update Gap Analysis (Sheet 7):**
+4. **Update Gap Analysis (Sheet 7):**
 
    - Close resolved gaps
    - Add new gaps identified
@@ -1129,7 +1144,7 @@ This assessment (A.5.15-16-18.2) feeds into:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Least privilege is not a limitation; it is a liberation from risk."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

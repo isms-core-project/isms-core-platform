@@ -43,7 +43,6 @@
 - ISMS-IMP-A.5.30-8.13-14-S2-UG/TG (Backup Implementation)
 - ISMS-IMP-A.5.30-8.13-14-S3-UG/TG (Redundancy Implementation)
 - ISMS-IMP-A.5.30-8.13-14-S4-UG/TG (Recovery Testing Process)
-- ISMS-IMP-A.5.30-8.13-14-S5-UG/TG (BC:DR Assessment)
 - ISO/IEC 27001:2022 Controls A.8.13, A.8.14, A.5.30
 - ISMS-POL-A.5.19-23 (Supplier/Cloud Services - supplier BC/DR requirements)
 - ISMS-POL-A.5.24 (Incident Management)
@@ -53,17 +52,17 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for Business Continuity and Disaster Recovery (BC/DR) controls to ensure organizational resilience through systematic backup, redundancy, and ICT continuity capabilities in accordance with ISO/IEC 27001:2022 Controls A.8.13, A.8.14, and A.5.30.
+This policy establishes [Organisation]'s requirements for Business Continuity and Disaster Recovery (BC/DR) controls to ensure organisational resilience through systematic backup, redundancy, and ICT continuity capabilities in accordance with ISO/IEC 27001:2022 Controls A.8.13, A.8.14, and A.5.30.
 
 **Scope**: This policy applies to all information assets, ICT systems, and business processes regardless of deployment model (on-premises, cloud, hybrid) or technology platform.
 
-**Purpose**: Define organizational requirements for BC/DR control implementation and governance. This policy establishes WHAT recovery capabilities are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.30-8.13-14 (UG/TG variants). Technical standards and configurations are intentionally defined outside this policy to preserve technological agility.
+**Purpose**: Define organisational requirements for BC/DR control implementation and governance. This policy establishes WHAT recovery capabilities are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.30-8.13-14 (UG/TG variants). Technical standards and configurations are intentionally defined outside this policy to preserve technological agility.
 
 **Combined Control Approach**: These three controls are implemented as a unified framework because they operate as an integrated BC/DR ecosystem: backup provides data recovery capability (A.8.13), redundancy provides system availability capability (A.8.14), and ICT BC readiness provides overall preparedness and governance (A.5.30). Attempting separate implementation would create disconnected strategies where backup policies ignore redundancy architecture and business continuity plans don't reflect actual technical capabilities. Despite unified implementation, each control maintains distinct requirements for Statement of Applicability (SoA) purposes.
 
 **Critical Principle - "Untested Recovery = No Recovery"**: This framework mandates regular testing of all recovery capabilities. Backup success without restore testing, redundancy without failover testing, and BC plans without scenario testing provide false confidence. Evidence-based verification through systematic testing is non-negotiable.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, ISO/IEC 27001:2022, and conditional requirements for DORA (immutability, offsite backup, geographic redundancy), NIS2 (3-2-1 rule compliance, 24-hour incident notification), and sector-specific regulations where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, ISO/IEC 27001:2022, and conditional requirements for DORA (immutability, offsite backup, geographic redundancy), NIS2 (3-2-1 rule compliance, 24-hour incident notification), and sector-specific regulations where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -90,7 +89,7 @@ This policy establishes [Organization]'s requirements for Business Continuity an
 
 > *Information processing facilities shall be implemented with sufficient redundancy to meet availability requirements.*
 
-**Control Objective**: Ensure availability of information processing facilities in accordance with organizational requirements.
+**Control Objective**: Ensure availability of information processing facilities in accordance with organisational requirements.
 
 **ISO/IEC 27002:2022 Guidance Summary**:
 
@@ -124,15 +123,15 @@ This policy establishes [Organization]'s requirements for Business Continuity an
 - Redundancy and failover requirements (A.8.14)
 - ICT business continuity readiness requirements (A.5.30)
 - Recovery testing and validation framework
-- Organizational roles and responsibilities for BC/DR governance
+- Organisational roles and responsibilities for BC/DR governance
 - Exception and incident management frameworks
-- Integration with [Organization]'s risk assessment and treatment processes
+- Integration with [Organisation]'s risk assessment and treatment processes
 
 ## What This Policy Does
 
 This policy:
 
-- **Defines** backup, redundancy, and ICT continuity requirements aligned with organizational risk assessment
+- **Defines** backup, redundancy, and ICT continuity requirements aligned with organisational risk assessment
 - **Establishes** governance framework for BC/DR decision-making
 - **Specifies** accountability for BC/DR capability implementation
 - **References** applicable regulatory requirements per ISMS-POL-00
@@ -147,7 +146,7 @@ This policy does NOT:
 - **Define backup technologies or solutions** (see ISMS-IMP-A.5.30-8.13-14-S2 Backup Implementation)
 - **Provide redundancy architecture designs** (see ISMS-IMP-A.5.30-8.13-14-S3 Redundancy Implementation)
 - **Document recovery procedures** (see ISMS-IMP-A.5.30-8.13-14-S4 Recovery Testing Process)
-- **Select backup or DR vendors** (technology selection based on [Organization]'s risk assessment)
+- **Select backup or DR vendors** (technology selection based on [Organisation]'s risk assessment)
 - **Define specific RPO/RTO values** (business-driven, documented in BIA per ISMS-IMP-A.5.30-8.13-14-S1)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
@@ -220,22 +219,22 @@ This policy does NOT:
 **This policy does NOT apply to**:
 
 - Physical records and non-digital information (covered under physical security controls)
-- Business continuity for non-ICT functions (covered under organizational BCM framework)
+- Business continuity for non-ICT functions (covered under organisational BCM framework)
 - Information security incident response (covered under A.5.24-27, though BC/DR invoked during major incidents)
 
 **Cloud Environment Scope**:
 
-This policy applies to all cloud environments utilized by [Organization], regardless of provider or service model (IaaS/PaaS/SaaS). The authoritative list of in-scope cloud environments is maintained in:
+This policy applies to all cloud environments utilized by [Organisation], regardless of provider or service model (IaaS/PaaS/SaaS). The authoritative list of in-scope cloud environments is maintained in:
 
 - **Backup Inventory (Workbook 1)**: All cloud workloads requiring backup protection, including IaaS instances, PaaS databases, and SaaS application data
 - **Redundancy Analysis (Workbook 2)**: Cloud infrastructure implementing redundancy requirements (multi-AZ, multi-region, multi-cloud deployments)
-- **Asset Inventory (ISMS-POL-A.5.9)**: Complete inventory of information assets including cloud resources, organized by criticality classification
+- **Asset Inventory (ISMS-POL-A.5.9)**: Complete inventory of information assets including cloud resources, organised by criticality classification
 
-References to specific cloud providers (AWS, Azure, GCP) throughout this policy are illustrative of cloud BC/DR concepts and architectures. The actual cloud providers, services, and deployment models in scope are determined by [Organization]'s current infrastructure deployment as documented in the inventories listed above.
+References to specific cloud providers (AWS, Azure, GCP) throughout this policy are illustrative of cloud BC/DR concepts and architectures. The actual cloud providers, services, and deployment models in scope are determined by [Organisation]'s current infrastructure deployment as documented in the inventories listed above.
 
 **Cloud Provider Change Management**: Addition of new cloud providers or services requires BC/DR capability implementation (backup configuration, redundancy architecture, recovery testing) before production deployment per Section 8.1 (Operational Planning and Control). Updates to cloud provider inventory do not require policy revision but SHALL be reflected in BC/DR inventories within 30 days of production deployment.
 
-**Multi-Cloud and Hybrid Considerations**: Where [Organization] operates multi-cloud (multiple providers) or hybrid (on-premises + cloud) architectures, BC/DR requirements apply consistently across all deployment models. Recovery scenarios SHALL include:
+**Multi-Cloud and Hybrid Considerations**: Where [Organisation] operates multi-cloud (multiple providers) or hybrid (on-premises + cloud) architectures, BC/DR requirements apply consistently across all deployment models. Recovery scenarios SHALL include:
 - Cloud-to-cloud failover (primary cloud region to secondary region or alternative provider)
 - Cloud-to-on-premises recovery (for extended cloud provider outages)
 - On-premises-to-cloud recovery (cloud as disaster recovery target)
@@ -250,7 +249,7 @@ This policy implements BC/DR requirements to comply with regulations per **ISMS-
 
 | Regulation | Requirement | Applicability |
 |------------|-------------|---------------|
-| **Swiss nDSG (Federal Data Protection Act)** | Appropriate technical and organizational measures including availability protection (Art. 8) | All [Organization] processing of personal data |
+| **Swiss nDSG (Federal Data Protection Act)** | Appropriate technical and organisational measures including availability protection (Art. 8) | All [Organisation] processing of personal data |
 | **EU GDPR** | Ability to restore availability and access to personal data in timely manner (Art. 32(1)(c)) | When processing EU personal data |
 | **ISO/IEC 27001:2022** | Controls A.8.13, A.8.14, A.5.30 | Certification scope |
 
@@ -285,9 +284,9 @@ Best practice frameworks referenced but not mandatory compliance requirements:
 - Encryption of backups in transit and at rest
 - 24-hour incident reporting capability for BC/DR events
 
-**United States Federal Requirements**: References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity requirements) apply only where [Organization] has explicit US federal contractual obligations, as defined in ISMS-POL-00.
+**United States Federal Requirements**: References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity requirements) apply only where [Organisation] has explicit US federal contractual obligations, as defined in ISMS-POL-00.
 
-**Compliance Determination**: Legal/Compliance Officer determines applicability of Tier 2 regulations based on [Organization]'s business activities and regulatory status.
+**Compliance Determination**: Legal/Compliance Officer determines applicability of Tier 2 regulations based on [Organisation]'s business activities and regulatory status.
 
 ---
 
@@ -295,7 +294,7 @@ Best practice frameworks referenced but not mandatory compliance requirements:
 
 ## Information Backup Requirements (A.8.13)
 
-[Organization] implements information backup capabilities to enable recovery from data loss, corruption, or system failure.
+[Organisation] implements information backup capabilities to enable recovery from data loss, corruption, or system failure.
 
 ### Backup Scope Requirements
 
@@ -566,14 +565,14 @@ Backup operations SHALL be monitored:
 - Testing completion status
 - Outstanding issues and remediation timeline
 
-Monitoring integration: Backup alerts SHALL integrate with organizational monitoring platform (ISMS-POL-A.8.16 Monitoring Activities).
+Monitoring integration: Backup alerts SHALL integrate with organisational monitoring platform (ISMS-POL-A.8.16 Monitoring Activities).
 
 ### Recovery Procedures
 
 Recovery procedures SHALL be documented for each backed-up system including:
 
 - Step-by-step restore process
-- Required access credentials and authorization
+- Required access credentials and authorisation
 - Recovery time estimate (RTO)
 - Recovery validation steps
 - Known issues and workarounds
@@ -610,7 +609,7 @@ Recovery procedures SHALL be tested during restore testing exercises and updated
 
 ## Redundancy of Information Processing Facilities (A.8.14)
 
-[Organization] implements redundancy for critical information processing facilities to meet availability requirements and minimize single points of failure.
+[Organisation] implements redundancy for critical information processing facilities to meet availability requirements and minimise single points of failure.
 
 ### Redundancy Requirements by System Criticality
 
@@ -745,7 +744,7 @@ Critical systems SHALL implement network redundancy at multiple layers:
 
 **Hybrid Redundancy Strategies**:
 
-For organizations with hybrid cloud deployments, redundancy strategies should consider:
+For organisations with hybrid cloud deployments, redundancy strategies should consider:
 
 **Cloud-First with On-Premises Failback**:
 
@@ -804,7 +803,7 @@ Datacenters and critical infrastructure facilities SHALL implement redundancy fo
 
 ## ICT Readiness for Business Continuity (A.5.30)
 
-[Organization] implements ICT continuity planning to ensure readiness for business disruptions.
+[Organisation] implements ICT continuity planning to ensure readiness for business disruptions.
 
 ### Business Impact Analysis (BIA)
 
@@ -848,7 +847,7 @@ BIA documentation SHALL be:
 
 ### ICT Continuity Strategy
 
-Based on BIA results, [Organization] SHALL define ICT continuity strategy including:
+Based on BIA results, [Organisation] SHALL define ICT continuity strategy including:
 
 **Recovery Strategies by System Tier**:
 
@@ -861,7 +860,7 @@ Based on BIA results, [Organization] SHALL define ICT continuity strategy includ
 
 **Recovery Site Strategy**:
 
-[Organization]'s recovery site strategy:
+[Organisation]'s recovery site strategy:
 
 - **Hot Site**: Fully operational site for Tier 1 systems (cloud multi-region, alternate datacenter)
 - **Warm Site**: Partially provisioned site for Tier 2 systems (cloud reserved capacity, DR datacenter)
@@ -997,14 +996,14 @@ For each Critical and High system:
 **Cloud Provider Coordination**: For cloud-hosted systems:
 
 - Understand provider's BC/DR capabilities and responsibilities
-- Validate provider SLA aligns with organizational RTO/RPO
+- Validate provider SLA aligns with organisational RTO/RPO
 - Implement customer-managed DR where provider capability insufficient
 - Document provider incident notification procedures
 - Test recovery procedures including cloud provider engagement
 
 **Managed Service Provider Coordination**: For outsourced ICT operations:
 
-- Ensure MSP recovery plans integrate with organizational BC plans
+- Ensure MSP recovery plans integrate with organisational BC plans
 - Define MSP roles and responsibilities during disasters
 - Include MSP in BC/DR testing exercises
 - Verify MSP staffing and resource availability during disasters
@@ -1029,7 +1028,7 @@ For each Critical and High system:
 
 **Communication Channels**:
 
-- Primary: [Organization]'s communication platform (email, Teams/Slack)
+- Primary: [Organisation]'s communication platform (email, Teams/Slack)
 - Backup: SMS, phone calls (if primary unavailable)
 - Emergency: Pre-established external communication service
 
@@ -1087,7 +1086,7 @@ For each BC/DR activity, maintain evidence:
 - Testing exercise results
 - Plan update history
 
-**Consolidated Evidence Repository**: BC/DR Coordinator SHALL maintain centralized evidence repository including:
+**Evidence Repository tracked in Summary Dashboards**: BC/DR Coordinator SHALL maintain centralised evidence repository including:
 
 - Test results database
 - Plan versions and change history
@@ -1269,7 +1268,7 @@ Exceptions to BC/DR requirements (e.g., system excluded from backup, redundancy 
 - Redundancy failures: Notify BC/DR Coordinator + CISO immediately
 - Disaster declaration: Activate crisis communication plan
 
-**Integration with Incident Management**: BC/DR incidents integrate with organizational incident management process (A.5.24-27) for:
+**Integration with Incident Management**: BC/DR incidents integrate with organisational incident management process (A.5.24-27) for:
 
 - Incident logging and tracking
 - Root cause analysis
@@ -1297,7 +1296,7 @@ Exceptions to BC/DR requirements (e.g., system excluded from backup, redundancy 
 - **Major** (scope changes, new requirements): Full approval chain, implementation timeline per change management
 - **Emergency** (critical regulatory change, major incident lessons learned): CISO approval, immediate communication and implementation
 
-**Communication**: Policy published in ISMS document repository. Changes communicated organization-wide. Training provided for significant changes affecting responsibilities or procedures.
+**Communication**: Policy published in ISMS document repository. Changes communicated organisation-wide. Training provided for significant changes affecting responsibilities or procedures.
 
 ---
 
@@ -1305,11 +1304,11 @@ Exceptions to BC/DR requirements (e.g., system excluded from backup, redundancy 
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
-- BC/DR controls selected based on [Organization]'s risk assessment
+- BC/DR controls selected based on [Organisation]'s risk assessment
 - BIA results feed risk assessment process
 - Risk treatment plans document BC/DR control implementation
 - Residual risks from BC/DR exceptions documented
@@ -1336,7 +1335,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 **Monitoring Activities** (A.8.16):
 
-- Backup monitoring integrated with organizational monitoring platform
+- Backup monitoring integrated with organisational monitoring platform
 - Redundant system health monitored continuously
 - RTO/RPO compliance monitored
 - Integration: BC/DR monitoring per A.8.16 requirements
@@ -1351,7 +1350,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 | **ISMS-IMP-A.5.30-8.13-14-S2** | Backup Implementation | Backup solution selection, architecture design, scheduling, retention, monitoring, recovery procedures |
 | **ISMS-IMP-A.5.30-8.13-14-S3** | Redundancy Implementation | SPOF identification, redundancy architecture design, failover mechanisms, geographic redundancy |
 | **ISMS-IMP-A.5.30-8.13-14-S4** | Recovery Testing Process | Backup restore testing, failover testing, BC/DR scenario testing, evidence collection |
-| **ISMS-IMP-A.5.30-8.13-14-S5** | BC/DR Assessment | Backup coverage assessment, redundancy effectiveness, RPO/RTO compliance, testing compliance |
 
 **Assessment Tools** (Excel workbooks):
 
@@ -1359,7 +1357,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - **Workbook 2**: Redundancy Analysis (redundancy architecture, SPOF analysis, RTO compliance)
 - **Workbook 3**: RPO/RTO Compliance Matrix (business requirements vs. technical capabilities, gap analysis)
 - **Workbook 4**: BC/DR Testing Results (test inventory, results tracking, remediation status)
-- **Workbook 5**: BC/DR Readiness Dashboard (consolidated compliance reporting, maturity scoring)
 
 **Supporting Materials**:
 
@@ -1403,8 +1400,6 @@ This policy addresses BC/DR requirements from applicable regulations:
 - 3-2-1 backup rule → Section 2.1.5
 - 24-hour incident reporting → ISMS-POL-A.5.24 (Incident Management)
 
-**Note**: Specific regulatory interpretation and compliance verification procedures are documented in ISMS-IMP-A.5.30-8.13-14-S5 (BC/DR Readiness Dashboard).
-
 ## Training & Awareness
 
 **Security Awareness** (All Personnel):
@@ -1444,7 +1439,7 @@ This policy addresses BC/DR requirements from applicable regulations:
 
 **Redundancy**: Implementation of duplicate or alternative information processing facilities to ensure availability in the event of failure. Redundancy can be hardware-based (multiple servers), software-based (clustering), or geographic (multiple data centers).
 
-**Business Continuity (BC)**: Organizational capability to continue business operations during and after disruptive events. BC encompasses both ICT systems and non-ICT business processes.
+**Business Continuity (BC)**: Organisational capability to continue business operations during and after disruptive events. BC encompasses both ICT systems and non-ICT business processes.
 
 **Disaster Recovery (DR)**: Process of restoring ICT systems and data after disruption. DR is a subset of business continuity focused specifically on ICT recovery.
 
@@ -1510,6 +1505,6 @@ This policy addresses BC/DR requirements from applicable regulations:
 
 ---
 
-*This policy establishes BC/DR requirements. Implementation procedures are documented in ISMS-IMP-A.5.30-8.13-14 (UG/TG). Assessment workbooks for compliance verification are available in ISMS-IMP-A.5.30-8.13-14-S5.*
+*This policy establishes BC/DR requirements. Implementation procedures are documented in ISMS-IMP-A.5.30-8.13-14-S1 through S4 (UG/TG). Each assessment workbook includes its own Summary Dashboard for compliance verification.*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

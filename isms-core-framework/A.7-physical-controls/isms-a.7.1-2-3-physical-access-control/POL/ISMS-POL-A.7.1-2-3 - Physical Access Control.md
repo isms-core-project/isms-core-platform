@@ -42,7 +42,6 @@
 - ISMS-IMP-A.7.1-2-3-S1-UG/TG (Perimeter Security Assessment)
 - ISMS-IMP-A.7.1-2-3-S2-UG/TG (Entry Control Assessment)
 - ISMS-IMP-A.7.1-2-3-S3-UG/TG (Secure Areas Assessment)
-- ISMS-IMP-A.7.1-2-3-S4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Controls A.7.1, A.7.2, A.7.3
 
 ---
@@ -531,4 +530,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for physical access control. Implementation procedures are documented in ISMS-IMP-A.7.1-2-3 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

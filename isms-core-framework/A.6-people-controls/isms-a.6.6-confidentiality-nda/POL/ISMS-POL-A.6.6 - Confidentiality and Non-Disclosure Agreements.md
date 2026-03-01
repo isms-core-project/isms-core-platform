@@ -41,7 +41,6 @@
 - ISMS-IMP-A.6.6.1-UG/TG (NDA Template Registry and Inventory)
 - ISMS-IMP-A.6.6.2-UG/TG (NDA Execution and Tracking)
 - ISMS-IMP-A.6.6.3-UG/TG (NDA Review and Compliance)
-- ISMS-IMP-A.6.6.4-UG/TG (NDA Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.6.6
 - ISMS-POL-A.6.1 (Screening)
 - ISMS-POL-A.6.2 (Terms and Conditions of Employment)
@@ -517,7 +516,6 @@ Evidence required to demonstrate this policy is operationally effective:
 - Post-termination obligation tracking records
 - Secure storage evidence (access controls, audit logs)
 - Training records (NDA awareness in security training)
-- Compliance dashboard metrics (ISMS-IMP-A.6.6.4)
 
 ## Clarification on Compliance Evidence
 
@@ -553,61 +551,5 @@ The boundary is: POL-A.6.6 defines WHAT NDA requirements apply and WHEN → Lega
 - **ISMS-IMP-A.6.6.1-UG/TG**: NDA Template Registry & Inventory
 - **ISMS-IMP-A.6.6.2-UG/TG**: NDA Execution & Tracking
 - **ISMS-IMP-A.6.6.3-UG/TG**: NDA Review & Compliance
-- **ISMS-IMP-A.6.6.4-UG/TG**: NDA Compliance Dashboard
 
-## Compliance Metrics (Dashboard KPIs)
-
-The following metrics SHALL be tracked and reported via ISMS-IMP-A.6.6.4:
-
-| Metric | Target | Frequency | Owner |
-|--------|--------|-----------|-------|
-| Employee NDA coverage rate | 100% | Monthly | HR Manager |
-| Contractor NDA coverage rate | 100% | Monthly | Contracts Manager |
-| Vendor NDA coverage rate | 100% | Quarterly | Contracts Manager |
-| NDAs expiring within 30 days | <5% of active | Weekly | Information Security Team |
-| Overdue NDA renewals | 0 | Weekly | Information Security Team |
-| Average time to execute NDA (new hires) | <2 business days | Monthly | HR Manager |
-| Average time to execute NDA (contractors) | <3 business days | Monthly | Contracts Manager |
-| Active exceptions | Trending down | Quarterly | CISO |
-| Gap remediation compliance (within timeline) | >95% | Monthly | CISO |
-| Post-termination obligations tracked | 100% of terminations | Monthly | HR Manager / Contracts Manager |
-| Template review currency | 100% within 12 months | Quarterly | Legal Counsel |
-
-**Reporting**: Dashboard metrics SHALL be reviewed monthly by Information Security Team and reported to CISO. Quarterly summary presented to Executive Management.
-
----
-
-# Definitions
-
-**Non-Disclosure Agreement (NDA)**: Legal contract establishing confidential relationship between parties, where one or both agree not to disclose specified information.
-
-**Confidentiality Agreement**: Agreement requiring party to maintain confidentiality of specified information; often synonymous with NDA.
-
-**Mutual NDA**: Agreement where both parties agree to protect each other's confidential information.
-
-**One-Way NDA**: Agreement where only one party (the recipient) has obligations to protect the other's information.
-
-**Post-Termination Obligation**: Confidentiality duty that continues after the end of employment, contract, or business relationship.
-
-**Trade Secret**: Information that derives value from not being generally known and is subject to reasonable efforts to maintain secrecy.
-
----
-
-# Approval Record
-
-| Role | Name | Date | Signature |
-|------|------|------|-----------|
-| **Document Owner (CISO)** | [Name] | [Date] | [Signature] |
-| **HR Review (CHRO)** | [Name] | [Date] | [Signature] |
-| **Legal Review (General Counsel)** | [Name] | [Date] | [Signature] |
-| **Final Approval (Executive Management)** | [Name] | [Date] | [Signature] |
-
----
-
-**END OF POLICY DOCUMENT**
-
----
-
-*This policy establishes requirements for confidentiality and non-disclosure agreements. Implementation procedures are documented in ISMS-IMP-A.6.6.1-4 (UG/TG).*
-
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

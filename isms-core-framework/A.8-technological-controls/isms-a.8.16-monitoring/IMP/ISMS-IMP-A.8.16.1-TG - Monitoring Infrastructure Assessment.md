@@ -8,335 +8,213 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Monitoring Infrastructure Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.16.1-TG |
+| **Related Policy** | ISMS-POL-A.8.16 (Monitoring) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.16 (Monitoring Activities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Monitoring Infrastructure & Technology Capabilities |
-| **Related Policy** | ISMS-POL-A.8.16, Section 2.1 (Monitoring Infrastructure Requirements) |
-| **Purpose** | Document deployed monitoring technologies, assess capabilities against policy requirements, and identify infrastructure gaps in a vendor-agnostic manner |
-| **Target Audience** | Security Engineers, SOC Analysts, IT Operations, System Administrators, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Semi-annual or After Major Infrastructure Changes |
-| **Date** | 22.01.2026 |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Original] | Initial technical specification | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.16 (Monitoring)
+- ISMS-IMP-A.8.16.2 (Baseline & Detection Assessment)
+- ISMS-IMP-A.8.16.3 (Coverage Assessment)
+- ISMS-IMP-A.8.16.4 (Alert Management & Response Assessment)
 
 ---
+
 # Technical Specification
-
-
-> Auto-generated from `generate_a816_1_monitoring_infrastructure.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.16.1` |
-| **Output Filename** | `ISMS-IMP-A.8.16.1_Monitoring_Infrastructure_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Monitoring Infrastructure Assessment |
-| **Total Sheets** | 19 (19 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #666666 | 666666 | Dark Gray (Secondary Text) |
-| #808080 | 808080 | Gray (Disabled) |
-| #C00000 | C00000 | Dark Red (Blocked) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #F2F2F2 | F2F2F2 | Very Light Gray (Protected/Alternating) |
-| #FF6666 | FF6666 | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: 1. Monitoring Platform
-
----
-
-## Sheet 3: 2. Log Source Coverage
-
----
-
-## Sheet 4: 3. Data Collection Arch
-
----
-
-## Sheet 5: 4. Integration Enrichment
-
----
-
-## Sheet 6: 5. Performance Scale
-
----
-
-## Sheet 7: Summary Dashboard
-
----
-
-## Sheet 8: Evidence Register
-
----
-
-## Sheet 9: Approval Sign-Off
-
----
-
-## Sheet 10: Instructions
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=IF(B8<>` | B8 is Assessment Date |
-
----
-
-## Sheet 11: Monitoring_Platform
-
-**Data Rows:** 21 (rows 1–21)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Platform/Tool Name | 28 |
-| B | Platform Type | 20 |
-| C | Vendor/Solution | 22 |
-| D | Deployment Model | 18 |
-| E | Log Collection Methods | 24 |
-| F | Parsing Capabilities | 20 |
-| G | Storage & Indexing | 20 |
-| H | Search Performance | 18 |
-| I | Real-Time Alerting | 18 |
-| J | Correlation Engine | 18 |
-| K | Threat Intel Integration | 22 |
-| L | SOAR Integration | 18 |
-| M | Visualization/Dashboards | 20 |
-| N | High Availability | 18 |
-| O | Disaster Recovery | 18 |
-| P | Current EPS Capacity | 18 |
-| Q | Implementation Status | 20 |
-| R | Last Upgrade Date | 16 |
-| S | Compliance Status | 18 |
-| T | Gaps/Issues | 30 |
-| U | Remediation Priority | 18 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=COUNTIF(U23:U37,` |  |
-
----
-
-## Sheet 12: Log_Source_Coverage
-
-**Data Rows:** 33 (rows 8–40)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | System/Asset Name | 28 |
-| B | System Type | 22 |
-| C | Criticality | 15 |
-| D | Location | 18 |
-| E | System Owner | 20 |
-| F | OS/Platform | 18 |
-| G | Log Types Collected | 30 |
-| H | Collection Method | 20 |
-| I | Collection Protocol | 20 |
-| J | Log Volume (GB/day) | 18 |
-| K | Retention Period (days) | 20 |
-| L | Parsing Status | 18 |
-| M | Integration with SIEM | 20 |
-| N | Collection Status | 20 |
-| O | Last Verified | 16 |
-| P | Reliability | 15 |
-| Q | Compliance Status | 18 |
-| R | Gaps/Issues | 30 |
-| S | Remediation Plan | 30 |
-| T | Priority | 15 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(A8:A40)` | Total Systems Inventoried |
-| — | `=COUNTIFS(C8:C40,\` | Critical Systems with Logs |
-| — | `=SUM(J8:J40)` | Total Log Volume (GB/day) |
-| — | `=COUNTIFS(Q8:Q40,\` | Systems with Compliance Gaps |
-| — | `=COUNTIF(P8:P40,\` | Collection Reliability High |
-| BN | `=COUNTIF(T55:T69,` |  |
-
----
-
-## Sheet 13: Data_Collection_Architecture
-
-**Data Rows:** 18 (rows 8–25)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Collection Component | 28 |
-| B | Component Type | 22 |
-| C | Purpose/Function | 30 |
-| D | Protocol Used | 20 |
-| E | Encryption Status | 18 |
-| F | Authentication Method | 22 |
-| G | Throughput Capacity | 18 |
-| H | Current Utilization % | 18 |
-| I | Buffer/Queue Size | 18 |
-| J | Failover Configured | 18 |
-| K | Load Balancing | 18 |
-| L | Monitoring Enabled | 18 |
-| M | Health Check Interval | 18 |
-| N | Last Maintenance | 16 |
-| O | Implementation Status | 20 |
-| P | Compliance Status | 18 |
-| Q | Issues/Gaps | 30 |
-| R | Priority | 15 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=COUNTIF(R30:R44,` |  |
-
----
-
-## Sheet 14: Integration_Enrichment
-
-**Data Rows:** 16 (rows 1–16)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Integration/Enrichment Name | 30 |
-| B | Integration Type | 22 |
-| C | Data Source | 25 |
-| D | Enrichment Type | 22 |
-| E | Integration Method | 20 |
-| F | Update Frequency | 18 |
-| G | Data Quality | 18 |
-| H | Coverage % | 15 |
-| I | Latency | 15 |
-| J | Reliability | 15 |
-| K | Last Updated | 16 |
-| L | Implementation Status | 20 |
-| M | Compliance Status | 18 |
-| N | Value/Impact | 25 |
-| O | Issues/Gaps | 30 |
-| P | Priority | 15 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=COUNTIF(P27:P41,` |  |
-
----
-
-## Sheet 15: Performance_Scalability
-
-**Data Rows:** 15 (rows 39–53)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Metric | 35 |
-| B | Current Value | 20 |
-| C | Unit | 15 |
-| D | Target/Threshold | 20 |
-| E | Status | 18 |
-| F | Trend | 18 |
-| G | Last Measured | 18 |
-| H | Notes | 35 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=COUNTIF(Q39:Q53,` |  |
-
----
-
-## Sheet 16: Summary_Dashboard
-
-**Data Rows:** 15 (rows 23–37)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| GN | `=IF(F{row}>0,ROUND(B{row}/(F{row}-E{row})*100,1)&` |  |
-| HN | `=IF(G{row}=` |  |
-| BN | `=SUM(B7:B11)` |  |
-| CN | `=SUM(C7:C11)` |  |
-| DN | `=SUM(D7:D11)` |  |
-| EN | `=SUM(E7:E11)` |  |
-| FN | `=SUM(F7:F11)` |  |
-
----
-
-## Sheet 17: Evidence_Register
-
-**Data Rows:** 100 (rows 8–107)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence ID | 15 |
-| B | Evidence Type | 20 |
-| C | Description | 40 |
-| D | Related Requirement | 30 |
-| E | Source Assessment | 25 |
-| F | Date Collected | 16 |
-| G | Collected By | 20 |
-| H | Location/Link | 35 |
-| I | Verification Status | 18 |
-| J | Verified By | 20 |
-| K | Verification Date | 16 |
-| L | Notes | 35 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=COUNTA(A8:A107)` |  |
-| BN | `=COUNTIF(I8:I107,` |  |
-
----
-
-## Sheet 18: Approval_Signoff
-
----
-
-## Sheet 19: Base_Validations
+## Generator Alignment Reference
+
+> Auto-generated from `generate_a816_1_monitoring_infrastructure.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
+
+**Document ID:** `ISMS-IMP-A.8.16.1`
+
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
+
+### Sheet Structure
+
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | 1. Monitoring Platform |
+| 3 | 2. Log Source Coverage |
+| 4 | 3. Data Collection Arch |
+| 5 | 4. Integration Enrichment |
+| 6 | 5. Performance Scale |
+| 7 | Evidence Register |
+| 8 | Summary Dashboard |
+| 9 | Approval Sign-Off |
+
+### Color Palette
+
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
+
+### Column Headers (All Sheets)
+
+| # | Column Header |
+|---|--------------|
+| 1 | Platform/Tool Name |
+| 2 | Platform Type |
+| 3 | Vendor/Solution |
+| 4 | Deployment Model |
+| 5 | Log Collection Methods |
+| 6 | Parsing Capabilities |
+| 7 | Storage & Indexing |
+| 8 | Search Performance |
+| 9 | Real-Time Alerting |
+| 10 | Correlation Engine |
+| 11 | Threat Intel Integration |
+| 12 | SOAR Integration |
+| 13 | Visualization/Dashboards |
+| 14 | High Availability |
+| 15 | Disaster Recovery |
+| 16 | Current EPS Capacity |
+| 17 | Implementation Status |
+| 18 | Last Upgrade Date |
+| 19 | Compliance Status |
+| 20 | Gaps/Issues |
+| 21 | Remediation Priority |
+| 22 | System/Asset Name |
+| 23 | System Type |
+| 24 | Criticality |
+| 25 | Location |
+| 26 | System Owner |
+| 27 | OS/Platform |
+| 28 | Log Types Collected |
+| 29 | Collection Method |
+| 30 | Collection Protocol |
+| 31 | Log Volume (GB/day) |
+| 32 | Retention Period (days) |
+| 33 | Parsing Status |
+| 34 | Integration with SIEM |
+| 35 | Collection Status |
+| 36 | Last Verified |
+| 37 | Reliability |
+| 38 | Remediation Plan |
+| 39 | Priority |
+| 40 | Collection Component |
+| 41 | Component Type |
+| 42 | Purpose/Function |
+| 43 | Protocol Used |
+| 44 | Encryption Status |
+| 45 | Authentication Method |
+| 46 | Throughput Capacity |
+| 47 | Current Utilization % |
+| 48 | Buffer/Queue Size |
+| 49 | Failover Configured |
+| 50 | Load Balancing |
+| 51 | Monitoring Enabled |
+| 52 | Health Check Interval |
+| 53 | Last Maintenance |
+| 54 | Issues/Gaps |
+| 55 | Integration/Enrichment Name |
+| 56 | Integration Type |
+| 57 | Data Source |
+| 58 | Enrichment Type |
+| 59 | Integration Method |
+| 60 | Update Frequency |
+| 61 | Data Quality |
+| 62 | Coverage % |
+| 63 | Latency |
+| 64 | Last Updated |
+| 65 | Value/Impact |
+| 66 | Metric |
+| 67 | Current Value |
+| 68 | Unit |
+| 69 | Target/Threshold |
+| 70 | Status |
+| 71 | Trend |
+| 72 | Last Measured |
+| 73 | Notes |
+| 74 | Critical Log Sources Missing |
+| 75 | High-Priority Items Across All Sheets |
+| 76 | Primary Purpose |
+| 77 | Example Capabilities |
+| 78 | Capability |
+| 79 | Requirement Level |
+| 80 | Validation Method |
+| 81 | Exception ID |
+| 82 | Risk ID |
+| 83 | Business Justification |
+| 84 | Compensating Controls |
+| 85 | Approval Status |
+| 86 | Review Date |
+| 87 | Count/Value |
+| 88 | Target |
+| 89 | Assessment Area |
+| 90 | Total Items |
+| 91 | Compliant |
+| 92 | Partial |
+| 93 | Non-Compliant |
+| 94 | N/A |
+| 95 | Compliance % |
+| 96 | Evidence ID |
+| 97 | Evidence Type |
+| 98 | Description |
+| 99 | Location/Path |
+| 100 | Date Collected |
+| 101 | Collected By |
+| 102 | Verification Status |
+
+### Data Validation Values
+
+All dropdown/list values used across sheets:
+
+```
+Yes, No, Planned, Partial, N/A, Limited, SIEM, IDS/IPS, EDR, NDR, UEBA
+Log Management, Other, On-Premises, Cloud, Hybrid, Excellent, Good, Poor
+<10 sec, 10-60 sec, >60 sec, Documented, Tested, None, \u2705 Deployed
+\u26A0\uFE0F Partial, \u274C Not Deployed, \u2705 Compliant
+\u274C Non-Compliant, Critical, High, Medium, Low, Server, Network Device
+Security Appliance, Endpoint, Cloud Service, Database, Application
+\u2705 Collecting, \u274C Not Collecting, \u21BB Planned, Agent, Syslog, API
+NetFlow, SNMP, WMI, Syslog TCP, Syslog UDP, Syslog TLS, HTTP/S, Unknown
+Real-time, Batch, Near Real-time, Manual, Threat Intel, GeoIP, Asset Context
+User Context, Custom, Configuration file, Screenshot, Log Export
+Documentation, Report, Network scan, Audit log, Compliance report, Verified
+Pending verification, Not verified, Requires update, Approved
+Approved with Conditions, Rejected, Deferred
+```
+
+**Extracted:** 9 sheets, 102 columns, 80 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

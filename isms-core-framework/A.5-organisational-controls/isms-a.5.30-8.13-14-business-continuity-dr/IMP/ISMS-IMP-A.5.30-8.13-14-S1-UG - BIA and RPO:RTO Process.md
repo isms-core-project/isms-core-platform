@@ -8,26 +8,57 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | BIA and RPO:RTO Process |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.30-8.13-14-S1-UG |
+| **Related Policy** | ISMS-POL-A.5.30-8.13-14-S1 (Business Continuity Dr) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.13 (Information Backup) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Business Impact Analysis & Recovery Requirements Definition |
-| **Related Policy** | ISMS-POL-A.5.30-8.13-14, Section 2.3.1 (Business Impact Analysis Requirements) |
-| **Purpose** | Define systematic methodology for conducting BIA, determining system criticality, establishing RPO/RTO requirements, documenting recovery priorities |
-| **Target Audience** | BC/DR Coordinator, Business Process Owners, System Owners, IT Management, Executive Management, Risk Management, Compliance Officers |
-| **Assessment Type** | Business & Technical |
-| **Review Cycle** | Annual or After Major Business/System Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial methodology for BIA and RPO/RTO determination | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.30-8.13-14-S1 (Business Continuity Dr)
+- ISMS-IMP-A.5.30-8.13-14-S2 (Backup Implementation)
+- ISMS-IMP-A.5.30-8.13-14-S3 (Redundancy Implementation)
+- ISMS-IMP-A.5.30-8.13-14-S4 (Recovery Testing Process)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.30-8.13-14-S1-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 8 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **System Inventory** | Inventory of systems subject to BIA and RPO/RTO determination |
+| **Capability Assessment** | Assessment of existing BC/DR capabilities per system |
+| **Compliance Matrix** | RPO/RTO target versus actual achievement compliance matrix |
+| **Gap Analysis** | Identified gaps and remediation action tracking |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -53,7 +84,7 @@ Business Impact Analysis answers the fundamental questions that drive ALL BC/DR 
 
 ### BIA Process Outputs
 
-Upon completion, [Organization] will have:
+Upon completion, [Organisation] will have:
 
 1. **Business Process Inventory** - All critical business processes documented
 2. **System-Process Mapping** - Which ICT systems support which business processes
@@ -101,7 +132,7 @@ Per ISMS-POL-00 (Regulatory Applicability Framework):
 **Tier 1 - Mandatory:**
 
 - **ISO 27001:2022 A.5.30** - "ICT readiness shall be planned...based on business continuity objectives and ICT continuity requirements"
-- **Swiss nDSG Art. 8** - "Appropriate technical and organizational measures" requires understanding of what's critical
+- **Swiss nDSG Art. 8** - "Appropriate technical and organisational measures" requires understanding of what's critical
 - **EU GDPR Art. 32** - "Security of processing...taking into account...availability" requires knowing availability requirements
 
 **Tier 2 - Conditional (if applicable):**
@@ -181,7 +212,7 @@ Redundancy Implementation:
 - **Dependency map** → Recovery sequence in DR scenarios
 - **Gap analysis** → BC/DR program priorities and budget justification
 
-**Implementation Guide:** ISMS-IMP-A.5.30-8.13-14-S4 (Recovery Testing) and S5 (BC/DR Assessment)
+**Implementation Guide:** ISMS-IMP-A.5.30-8.13-14-S4 (Recovery Testing)
 
 **Example Flow:**
 ```
@@ -211,7 +242,7 @@ ICT BC Readiness:
 | **Legal/Compliance** | Identify regulatory requirements, contractual obligations, legal liabilities | 2-4 hours (regulatory impact assessment) |
 | **Risk Management** | Interpret impact findings, risk scoring, integration with risk register | 4-6 hours (risk assessment integration) |
 
-**Total Organizational Effort:** 100-150 person-hours for typical SME (50-100 systems)
+**Total Organisational Effort:** 100-150 person-hours for typical SME (50-100 systems)
 
 ## Time Estimate
 
@@ -233,7 +264,7 @@ ICT BC Readiness:
 
 - New critical business service launch
 - Major system changes (platform migration, technology refresh)
-- Organizational changes (acquisition, divestiture, restructuring)
+- Organisational changes (acquisition, divestiture, restructuring)
 - Post-incident lessons learned (major outage revealed incorrect criticality)
 - Regulatory changes affecting availability requirements
 
@@ -290,7 +321,7 @@ Risk Register (Clause 6.1):
 
 **Business Information:**
 
-- [ ] Organizational chart with all business units and departments
+- [ ] Organisational chart with all business units and departments
 - [ ] Business process inventory (even if informal - list what the business does)
 - [ ] Revenue breakdown by product/service line
 - [ ] Customer Service Level Agreements (SLAs) with availability commitments
@@ -386,7 +417,7 @@ Risk Register (Clause 6.1):
 - Provided in PART II of this document
 - Template with 5 worksheets
 - Pre-configured formulas, validations, conditional formatting
-- **Location:** [Define location for your organization - SharePoint, shared drive, etc.]
+- **Location:** [Define location for your organisation - SharePoint, shared drive, etc.]
 
 **Dependency Mapping Tool:**
 
@@ -396,7 +427,7 @@ Risk Register (Clause 6.1):
 
 **Data Classification Scheme:**
 
-- Use [Organization]'s existing data classification (typically):
+- Use [Organisation]'s existing data classification (typically):
   - **Restricted** - Highly confidential, significant impact if disclosed
   - **Confidential** - Internal use only, moderate impact if disclosed
   - **Internal** - Internal use, low impact if disclosed
@@ -450,13 +481,13 @@ Each step builds on the previous. Do not skip steps.
 
 ## STEP 1: Identify Business Processes
 
-**Objective:** Document ALL business processes and functions performed by [Organization].
+**Objective:** Document ALL business processes and functions performed by [Organisation].
 
 **Duration:** Week 1 (planning) + Week 2 (data collection)
 
 **Activities:**
 
-1. **Review Organizational Structure**
+1. **Review Organisational Structure**
 
    - Identify all business units, departments, functions
    - List each unit's primary responsibilities
@@ -475,7 +506,7 @@ Each step builds on the previous. Do not skip steps.
    - Use structured interview template
    - Key questions:
      - "What are the core processes your unit performs?"
-     - "Which processes are critical to the organization's mission?"
+     - "Which processes are critical to the organisation's mission?"
      - "Which processes generate revenue directly?"
      - "Which processes support regulatory compliance?"
      - "What are the inputs and outputs of each process?"
@@ -517,7 +548,7 @@ Each step builds on the previous. Do not skip steps.
 
 - ✓ All business units represented
 - ✓ Process owners identified and contactable
-- ✓ Revenue totals match organizational revenue
+- ✓ Revenue totals match organisational revenue
 - ✓ Compliance processes identified
 
 ## STEP 2: Map Processes to ICT Systems
@@ -589,7 +620,7 @@ Each step builds on the previous. Do not skip steps.
 |-----------|------------|---------------------|------------------|
 | SYS-050 | Network Infrastructure | ALL PROCESSES | Complete operational shutdown |
 | SYS-051 | Active Directory | Most IT-dependent processes | Authentication failure, no system access |
-| SYS-025 | Email (Microsoft 365) | Sales, Customer Service, HR, Procurement | Communication breakdown across organization |
+| SYS-025 | Email (Microsoft 365) | Sales, Customer Service, HR, Procurement | Communication breakdown across organisation |
 
 **Deliverable:** Complete system inventory with process mappings
 
@@ -609,7 +640,7 @@ Each step builds on the previous. Do not skip steps.
 
 **Impact Dimensions:**
 
-All disruptions affect the organization across FOUR dimensions:
+All disruptions affect the organisation across FOUR dimensions:
 
 ### Financial Impact
 
@@ -865,9 +896,9 @@ Reference **Section 4: Impact Scoring Methodology** for complete scoring criteri
 
 - ✓ All systems scored on all four dimensions
 - ✓ Financial impact calculated based on actual revenue data
-- ✓ Regulatory impact considers [Organization]'s specific regulatory obligations
+- ✓ Regulatory impact considers [Organisation]'s specific regulatory obligations
 - ✓ Rationale documented for audit trail
-- ✓ Cross-validation: Revenue totals across systems don't exceed organizational revenue
+- ✓ Cross-validation: Revenue totals across systems don't exceed organisational revenue
 
 ## STEP 5: DETERMINE Maximum Tolerable Downtime (MTD)
 
@@ -877,7 +908,7 @@ Reference **Section 4: Impact Scoring Methodology** for complete scoring criteri
 
 **Key Concept - MTD vs. RTO:**
 
-- **MTD (Maximum Tolerable Downtime):** The absolute survival limit. Beyond this point, the organization suffers irreparable harm (e.g., contract termination, regulatory license loss, bankruptcy).
+- **MTD (Maximum Tolerable Downtime):** The absolute survival limit. Beyond this point, the organisation suffers irreparable harm (e.g., contract termination, regulatory license loss, bankruptcy).
 - **RTO (Recovery Time Objective):** The target recovery time with a safety margin. RTO should be 30-50% of MTD to provide buffer.
 
 **Example:**
@@ -992,7 +1023,7 @@ Payment Processing System:
 
 | System | RPO | Justification |
 |--------|-----|---------------|
-| **Payment Database** | **1 hour** | High transaction volume (500/hour peak), each transaction ~CHF 100 average, 1h data loss = CHF 50K revenue impact, cannot recreate payment authorizations |
+| **Payment Database** | **1 hour** | High transaction volume (500/hour peak), each transaction ~CHF 100 average, 1h data loss = CHF 50K revenue impact, cannot recreate payment authorisations |
 | **E-commerce Database** | **4 hours** | Moderate transaction volume (100 orders/hour), 4h data loss = 400 orders to manually re-enter (100 person-hours = CHF 5K cost), acceptable vs. hourly backup cost |
 | **CRM System** | **24 hours** | Low update frequency (updates throughout day but not time-critical), 24h data loss = ~50 customer interactions to re-enter (5 person-hours = CHF 250 cost) |
 | **File Server (Internal Docs)** | **24 hours** | Document changes throughout day, most documents version-controlled elsewhere (SharePoint, Git), 24h acceptable |
@@ -1079,7 +1110,7 @@ Incorrect Example:
 
 **Criticality Tier Framework:**
 
-Per ISMS-POL-A.5.30-8.13-14, [Organization] classifies all ICT systems into four criticality tiers. Each tier has distinct BC/DR requirements.
+Per ISMS-POL-A.5.30-8.13-14, [Organisation] classifies all ICT systems into four criticality tiers. Each tier has distinct BC/DR requirements.
 
 ### Tier 1: Critical Systems
 
@@ -1091,7 +1122,7 @@ Per ISMS-POL-A.5.30-8.13-14, [Organization] classifies all ICT systems into four
 - Financial impact > CHF 100K/day
 - Regulatory compliance-critical (failure = major fines or license loss)
 - Direct customer-facing revenue system
-- Safety-critical (if applicable to [Organization])
+- Safety-critical (if applicable to [Organisation])
 
 **BC/DR Requirements:**
 
@@ -1703,7 +1734,7 @@ BIA_2026/
 
 # Integration with BC/DR Implementation
 
-[Complete integration with IMP-S2, S3, S4, S5...]
+[Complete integration with IMP-S2, S3, S4]
 
 # Regulatory Compliance Mapping
 
@@ -1715,7 +1746,7 @@ BIA_2026/
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Hope is not a strategy."*
+— Vince Lombardi
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

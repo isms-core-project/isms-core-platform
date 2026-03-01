@@ -12,13 +12,12 @@
 | **Document Title** | Zero Trust Implementation Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.27.4-UG |
-| **Assessment Domain** | Domain 4 - Zero Trust Architecture |
-| **Related Policy** | ISMS-POL-A.8.27 (Secure System Architecture and Engineering Principles) |
-| **Document Owner** | Chief Information Security Officer (CISO) |
-| **Technical Authority** | Security Architect / Zero Trust Program Lead |
+| **Related Policy** | ISMS-POL-A.8.27 (Secure Systems Engineering) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.27 (Secure System Architecture and Engineering Principles) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -26,23 +25,37 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Security Architect | Initial Zero Trust assessment specification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle**: Annual (or after significant ZTA changes)
-**Next Review Date**: [Effective Date + 12 months]
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
 **Related Documents**:
 
-- ISMS-POL-A.8.27 (Secure System Architecture and Engineering Principles)
+- ISMS-POL-A.8.27 (Secure Systems Engineering)
 - ISMS-IMP-A.8.27.1 (Security Architecture Review Process)
 - ISMS-IMP-A.8.27.2 (Threat Modelling Methodology)
 - ISMS-IMP-A.8.27.3 (Secure Architecture Pattern Catalogue)
-- ISMS-POL-A.5.15-16-18 (Identity and Access Management)
-- ISMS-POL-A.8.20-22 (Network Security)
-- ISO/IEC 27002:2022 Control A.8.27
-- NIST SP 800-207 (Zero Trust Architecture)
-- NIST SP 800-207A (Zero Trust for Cloud-Native Applications)
-- CISA Zero Trust Maturity Model
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Strategy | Zero Trust strategy and programme governance |
+| 3 | Identity | Identity pillar maturity and implementation status |
+| 4 | Device | Device pillar maturity and implementation status |
+| 5 | Network | Network pillar maturity and implementation status |
+| 6 | Workload | Workload and application pillar maturity and implementation |
+| 7 | Data | Data pillar maturity and implementation status |
+| 8 | Visibility | Visibility and analytics pillar maturity and implementation |
+| 9 | Automation | Automation and orchestration pillar maturity |
+| 10 | Compliance | Compliance with Zero Trust architecture requirements |
+| 11 | Evidence Register | Store and reference evidence supporting assessments |
+| 12 | Summary Dashboard | Compliance status and key metrics overview |
+| 13 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -426,7 +439,7 @@ ISMS-IMP-A.8.27.4_[Pillar]_[Description]_YYYYMMDD.[ext]
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Never trust, always verify."*
+— Zero Trust principle
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

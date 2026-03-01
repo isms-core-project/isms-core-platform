@@ -7,154 +7,169 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Asset Classification Inventory |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.12-13.S3-TG |
+| **Related Policy** | ISMS-POL-A.5.12-13 (Classification and Labelling) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.12-13 (Classification and Labelling) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.12-13 Classification and Labelling |
-| **Parent Policy** | ISMS-POL-A.5.12-13 - Information Classification and Labelling |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.12-13.S3-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.12-13 (Classification and Labelling)
+- ISMS-IMP-A.5.12-13.S1 (Classification Scheme Definition)
+- ISMS-IMP-A.5.12-13.S2 (Labelling Procedures and Standards)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a512_13_3_asset_classification_inventory.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.12-13.S3` |
-| **Output Filename** | `ISMS-IMP-A.5.12-13.S3_Asset_Classification_Inventory_YYYYMMDD.xlsx` |
-| **Workbook Title** | Asset Classification Inventory |
-| **Total Sheets** | 7 (7 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Controls {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #1F4E79 | 1F4E79 | Custom |
-| #2E75B6 | 2E75B6 | Custom |
-| #69DB7C | 69DB7C | Custom |
-| #74C0FC | 74C0FC | Custom |
-| #D6DCE4 | D6DCE4 | Silver (Neutral) |
-| #FF6B6B | FF6B6B | Custom |
-| #FFA94D | FFA94D | Custom |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Asset_Inventory
+## Generator Alignment Reference
 
-**Data Rows:** 96 (rows 5–100)
+> Auto-generated from `generate_a512_13_3_asset_classification_inventory.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.12-13.S3`
 
-| Col | Header |
-|-----|--------|
-| A | Asset ID |
-| B | Asset Name |
-| C | Asset Type |
-| D | Description |
-| E | Classification |
-| F | Owner |
-| G | Custodian |
-| H | Location/System |
-| I | Labelling Status |
-| J | Last Review |
-| K | Next Review |
-| L | Regulatory Req |
-| M | Notes |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: Classification_Summary
+| # | Sheet Name |
+|---|-----------|
+| 1 | Asset Inventory |
+| 2 | Classification Summary |
+| 3 | Reclassification Log |
+| 4 | Gap Analysis |
+| 5 | Evidence Register |
+| 6 | Summary Dashboard |
+| 7 | Approval Sign-Off |
+| 8 | Instructions & Legend |
 
-**Data Rows:** 10 (rows 30–39)
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #69DB7C | Custom |
+| #74C0FC | Custom |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FF6B6B | Custom |
+| #FFA94D | Custom |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 4: Reclassification_Log
+### Column Headers (All Sheets)
 
-**Data Rows:** 46 (rows 5–50)
+| # | Column Header |
+|---|--------------|
+| 1 | Asset ID |
+| 2 | Asset Name |
+| 3 | Asset Type |
+| 4 | Description |
+| 5 | Classification |
+| 6 | Owner |
+| 7 | Custodian |
+| 8 | Location/System |
+| 9 | Labelling Status |
+| 10 | Last Review |
+| 11 | Next Review |
+| 12 | Regulatory Req |
+| 13 | Notes |
+| 14 | Count |
+| 15 | Percentage |
+| 16 | Labelled |
+| 17 | Unlabelled |
+| 18 | Compliance |
+| 19 | Total |
+| 20 | RESTRICTED |
+| 21 | CONFIDENTIAL |
+| 22 | INTERNAL |
+| 23 | PUBLIC |
+| 24 | Department |
+| 25 | Compliance % |
+| 26 | Change ID |
+| 27 | Previous Class |
+| 28 | New Class |
+| 29 | Reason for Change |
+| 30 | Requested By |
+| 31 | Approved By |
+| 32 | Change Date |
+| 33 | Status |
+| 34 | Gap ID |
+| 35 | Asset/Area |
+| 36 | Gap Type |
+| 37 | Risk Level |
+| 38 | Remediation Action |
+| 39 | Due Date |
+| 40 | Evidence ID |
+| 41 | Assessment Area |
+| 42 | Evidence Type |
+| 43 | Location / Path |
+| 44 | Date Collected |
+| 45 | Collected By |
+| 46 | Verification Status |
+| 47 | Total Items |
+| 48 | Compliant |
+| 49 | Partial |
+| 50 | Non-Compliant |
+| 51 | N/A |
+| 52 | Metric |
+| 53 | Value |
+| 54 | Category |
+| 55 | Finding |
+| 56 | Severity |
+| 57 | Action Required |
 
-### Columns
+### Data Validation Values
 
-| Col | Header |
-|-----|--------|
-| A | Change ID |
-| B | Asset ID |
-| C | Asset Name |
-| D | Previous Class |
-| E | New Class |
-| F | Reason for Change |
-| G | Requested By |
-| H | Approved By |
-| I | Change Date |
-| J | Status |
+All dropdown/list values used across sheets:
 
----
+```
+Database, Document, Document Set, Application, System, Repository, Email
+Media, Other, RESTRICTED, CONFIDENTIAL, INTERNAL, PUBLIC, Labelled, Partial
+Not Labelled, N/A, Value change, Regulatory requirement, Business need
+Data lifecycle, Merger/divestiture, Error correction, Periodic review
+Complete, Pending Approval, Rejected, In Progress, Unclassified Assets
+Incomplete Labelling, Misclassification, No Labelling Capability
+Inconsistent Labels, Missing Metadata, Critical, High, Medium, Low, Resolved
+Open, Accepted, Policy Document, Process Record, System Screenshot
+Configuration Export, Audit Log, Training Record, Test Result, Risk Assessment
+Meeting Minutes, ✅ Verified, ⚠️ Pending, ❌ Not Verified, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Deferred
+```
 
-## Sheet 5: Gap_Analysis
-
-**Data Rows:** 46 (rows 5–50)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Gap ID |
-| B | Asset/Area |
-| C | Gap Type |
-| D | Description |
-| E | Risk Level |
-| F | Remediation Action |
-| G | Owner |
-| H | Due Date |
-| I | Status |
-
----
-
-## Sheet 6: Evidence_Register
-
-**Data Rows:** 26 (rows 5–30)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Description |
-| C | Evidence Type |
-| D | Related Asset/Gap |
-| E | Location |
-| F | Collected Date |
-| G | Collected By |
-| H | Verification Status |
-
----
-
-## Sheet 7: Approval
-
-**Data Rows:** 8 (rows 13–20)
+**Extracted:** 8 sheets, 57 columns, 60 validation values, 13 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

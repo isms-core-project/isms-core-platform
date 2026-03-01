@@ -8,26 +8,60 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Access Review Results Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.15-16-18.S3-UG |
+| **Related Policy** | ISMS-POL-A.5.15-16-18 (Identity Access Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.15 (Access Annex) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Access Review Results & Recertification Compliance |
-| **Related Policy** | ISMS-POL-A.5.15-16-18, Section 2.3.4 (Access Review and Recertification Requirements) |
-| **Purpose** | Document access review execution, track review completion rates, assess reviewer accountability, and verify access removal for findings in a technology-agnostic manner |
-| **Target Audience** | Managers, System Owners, Security Team, IAM Team, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Quarterly (review cycle completion), Monthly (tracking progress) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Access Review Results assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.15-16-18 (Identity Access Management)
+- ISMS-IMP-A.5.15-16-18.S1 (User Inventory & Lifecycle Compliance Assessment)
+- ISMS-IMP-A.5.15-16-18.S2 (Access Rights Matrix Assessment)
+- ISMS-IMP-A.5.15-16-18.S4 (Role Definition & SoD Compliance Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.15-16-18.S3-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 11 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Review Schedule** | Scheduled access reviews with due dates and reviewer assignments |
+| **Review Completion** | Completed review records with outcomes and certifications |
+| **Review Findings** | Findings and remediation actions from completed access reviews |
+| **Overdue Reviews** | Access reviews past their scheduled completion date |
+| **Reviewer Performance** | Metrics on reviewer completion rates and timeliness |
+| **Review Metrics** | Aggregate access review compliance statistics |
+| **Gap Analysis** | Identified gaps and remediation action tracking |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -90,8 +124,6 @@ This assessment is **completely technology-agnostic and process-independent**. W
 | ISMS-IMP-A.5.15-16-18.S2 | Access Rights Matrix | Provides WHAT access to review (.3 reviews access from .2) |
 | **ISMS-IMP-A.5.15-16-18.S3** | **Access Review Results** | **DID we review access and WHAT were findings** |
 | ISMS-IMP-A.5.15-16-18.S4 | Role & SoD Compliance | Uses review results to validate role accuracy |
-| ISMS-IMP-A.5.15-16-18.S5 | IAM Governance Dashboard | Uses review metrics from .3 for compliance dashboard |
-
 This assessment (A.5.15-16-18.3) verifies that access reviews are **actually happening** and **findings are remediated**!
 
 ### Who Should Complete This Assessment
@@ -113,8 +145,8 @@ This assessment (A.5.15-16-18.3) verifies that access reviews are **actually hap
 
 #### Time Commitment
 
-- **Initial assessment:** 8-12 hours (document review scope, track completion, analyze findings)
-- **Quarterly updates:** 10-15 hours per review cycle (coordinate reviews, track progress, analyze results)
+- **Initial assessment:** 8-12 hours (document review scope, track completion, analyse findings)
+- **Quarterly updates:** 10-15 hours per review cycle (coordinate reviews, track progress, analyse results)
 - **Monthly monitoring:** 2-3 hours (track overdue reviews, escalate to managers)
 
 ### Expected Outputs
@@ -190,7 +222,6 @@ Before starting this assessment, gather:
 **Outputs FROM this assessment feed INTO:**
 
 - A.5.15-16-18.4 (Role & SoD Compliance) - Review findings inform role accuracy
-- A.5.15-16-18.5 (IAM Governance Dashboard) - Review metrics consolidated
 
 ---
 
@@ -215,7 +246,7 @@ Before starting this assessment, gather:
    ↓
 8. VERIFY REMOVAL (confirm access actually disabled)
    ↓
-9. CALCULATE COMPLETION RATE (Sheet 6)
+9. CALCULATE COMPLETION RATE (Summary Dashboard)
    ↓
 10. IDENTIFY GAPS (overdue reviews, unexecuted removals)
     ↓
@@ -581,16 +612,16 @@ Before starting this assessment, gather:
 
 #### Phase 9: Calculate Access Review Compliance Rate (1-2 hours)
 
-**Objective:** Complete Sheet 6 - Access Review Compliance Dashboard
+**Objective:** Calculate access review compliance rate and record findings in the Summary Dashboard
 
 **Steps:**
 
-1. **Consolidate Metrics** from Sheets 1-5:
+1. **Collect Metrics** from assessment sheets:
 
-   - Review completion rate (from Sheet 3)
-   - Access removal rate (from Sheet 4)
-   - Removal compliance rate (from Sheet 5)
-   - Reviewer accountability (from Sheet 3)
+   - Review completion rate (from Review Completion sheet)
+   - Access removal rate (from Review Findings sheet)
+   - Removal compliance rate (from Reviewer Performance sheet)
+   - Reviewer accountability (from Review Completion sheet)
 
 2. **Calculate Overall Access Review Compliance Score**:
    ```
@@ -614,7 +645,7 @@ Before starting this assessment, gather:
    - Root causes (why are reviews incomplete or late?)
    - Recommendations (how to improve)
 
-**Deliverable:** Sheet 6 with access review compliance dashboard
+**Deliverable:** Access review compliance rate recorded in Gap Analysis and tracked in Summary Dashboards
 
 **Quality Check:**
 
@@ -716,7 +747,7 @@ Before starting this assessment, gather:
 **Quality Check:**
 
 - ✓ All evidence collected and documented
-- ✓ Evidence organized logically
+- ✓ Evidence organised logically
 - ✓ Evidence IDs cross-referenced
 - ✓ All evidence verified
 
@@ -749,7 +780,7 @@ Before starting this assessment, gather:
 - Verify remediation plans adequate
 - Final approval
 
-**Deliverable:** Approved assessment ready for IAM Governance Dashboard
+**Deliverable:** Approved assessment ready for management review
 
 **Quality Check:**
 
@@ -797,10 +828,6 @@ Before starting this assessment, gather:
 - Screenshots of removal execution
 - Spot-check verification results
 
-**For Sheet 6 (Compliance Dashboard):**
-
-- Trend charts (if historical data)
-- Benchmark references
 
 **For Sheet 7 (Gap Analysis):**
 
@@ -944,7 +971,7 @@ Before submitting for approval, verify:
 - [ ] Removal timeliness calculated correctly
 - [ ] Evidence collected for sample
 
-### Compliance Dashboard (Sheet 6)
+### Summary Dashboard
 
 - [ ] All metrics pulled from correct sheets
 - [ ] Overall compliance score calculated correctly
@@ -962,7 +989,7 @@ Before submitting for approval, verify:
 ### Evidence Register (Sheet 8)
 
 - [ ] All evidence collected and listed
-- [ ] Evidence organized
+- [ ] Evidence organised
 - [ ] Evidence IDs cross-referenced
 - [ ] All evidence verified
 
@@ -1034,10 +1061,6 @@ This assessment (A.5.15-16-18.3) feeds into:
 
 - **Uses:** Review findings inform role accuracy
 
-### A.5.15-16-18.5 - IAM Governance Compliance Dashboard
-
-- **Uses:** Review metrics from Sheet 6
-
 ---
 
 ## Continuous Improvement
@@ -1050,7 +1073,7 @@ Each quarter:
 3. **Track Completion** (daily/weekly monitoring)
 4. **Collect Findings** (after cycle ends)
 5. **Execute Removals** (within 5 business days)
-6. **Analyze Results** (compliance dashboard)
+6. **Analyse Results** (Summary Dashboard)
 7. **Identify Improvements** (what can be better next quarter?)
 
 **Time Commitment:** 10-15 hours per quarter
@@ -1069,7 +1092,7 @@ Each quarter:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"An unexamined access right is not worth keeping."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

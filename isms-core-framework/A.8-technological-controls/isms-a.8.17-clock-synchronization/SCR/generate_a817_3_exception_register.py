@@ -14,21 +14,21 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.8.17.3 - Time Synchronization Exception Register Excel Generator
+ISMS-IMP-A.8.17.3 - Time Synchronisation Exception Register Excel Generator
 ================================================================================
 
-ISO/IEC 27001:2022 Control A.8.17: Clock Synchronization
+ISO/IEC 27001:2022 Control A.8.17: Clock Synchronisation
 Exception Management: Non-Compliant Systems and Risk Acceptance
 
 --------------------------------------------------------------------------------
-SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
+SAMPLE SCRIPT - REQUIRES CUSTOMISATION FOR YOUR ORGANISATION
 --------------------------------------------------------------------------------
 
 This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
-your organization's specific exception management processes, risk acceptance
+your organisation's specific exception management processes, risk acceptance
 workflows, and compliance tracking requirements.
 
-Key customization areas:
+Key customisation areas:
 1. Exception approval workflow (match your governance structure)
 2. Risk scoring criteria (adapt to your risk assessment methodology)
 3. Compensating controls (specific to your security architecture)
@@ -38,18 +38,18 @@ Key customization areas:
 DO NOT use this script without reviewing and adapting all sections marked
 with "# CUSTOMIZE:" comments throughout the code.
 
-Reference Pattern: Based on ISMS-A.8.17 Clock Synchronization Framework
+Reference Pattern: Based on ISMS-A.8.17 Clock Synchronisation Framework
 
 --------------------------------------------------------------------------------
 DESCRIPTION
 --------------------------------------------------------------------------------
 
 This script generates a comprehensive Excel exception register for documenting
-and managing systems that cannot meet A.8.17 time synchronization requirements,
+and managing systems that cannot meet A.8.17 time synchronisation requirements,
 with formal risk acceptance and compensating controls.
 
 **Purpose:**
-Enables systematic tracking of exceptions to time synchronization requirements,
+Enables systematic tracking of exceptions to time synchronisation requirements,
 including documented business justification, risk assessment, compensating
 controls, and time-bound risk acceptance with defined review cycles.
 
@@ -108,7 +108,7 @@ Dependencies:
 
 Optional:
     - Integration with GRC platforms for exception workflow
-    - Import gaps from Assessment 2 (System Synchronization Status)
+    - Import gaps from Assessment 2 (System Synchronisation Status)
 
 --------------------------------------------------------------------------------
 USAGE
@@ -159,15 +159,15 @@ Control Reference:    ISO/IEC 27001:2022 Annex A Control A.8.17
 Assessment Domain:    3 of 2 (Exception Management - Optional)
 Framework Version:    1.0
 Script Version:       1.0
-Author:               [Organization] ISMS Implementation Team
+Author:               [Organisation] ISMS Implementation Team
 Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
 License:              [Organisation License/Terms]
 
 Related Documents:
-    - ISMS-POL-A.8.17: Clock Synchronization Policy (Requirements)
-    - ISMS-IMP-A.8.17.2: System Synchronization Status (Gap Source)
+    - ISMS-POL-A.8.17: Clock Synchronisation Policy (Requirements)
+    - ISMS-IMP-A.8.17.2: System Synchronisation Status (Gap Source)
     - A.8.17 Compliance Dashboard (Consolidation)
     - Corporate Risk Management Policy (Exception Approval Process)
 
@@ -269,7 +269,7 @@ Exception register contains sensitive information including:
 - Infrastructure vulnerabilities
 - Compensating control strategies
 
-Handle as CONFIDENTIAL per organizational data classification.
+Handle as CONFIDENTIAL per organisational data classification.
 
 **Quality Assurance:**
 Security governance team should audit exception register quarterly for:
@@ -282,23 +282,26 @@ Security governance team should audit exception register quarterly for:
 """
 
 # =============================================================================
-# Standard Library Imports
+# STANDARD LIBRARY IMPORTS
 # =============================================================================
 import logging
 import sys
 from datetime import datetime, timedelta
-import argparse
+from pathlib import Path
 
 # =============================================================================
-# Third-Party Imports
+# THIRD-PARTY IMPORTS
 # =============================================================================
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.utils import get_column_letter
-from openpyxl.worksheet.datavalidation import DataValidation
+try:
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+    from openpyxl.utils import get_column_letter
+    from openpyxl.worksheet.datavalidation import DataValidation
+except ImportError:
+    sys.exit("Error: openpyxl not installed. Install with: pip install openpyxl")
 
 # =============================================================================
-# Logging Configuration
+# LOGGING CONFIGURATION
 # =============================================================================
 logging.basicConfig(
     level=logging.INFO,
@@ -310,16 +313,21 @@ CHECK = '\u2705'      # ✅ Green checkmark
 XMARK = '\u274C'      # ❌ Red X
 
 # Document identification constants
+
+# ============================================================================
+# DOCUMENT METADATA
+# ============================================================================
 DOCUMENT_ID = "ISMS-IMP-A.8.17.3"
+WORKBOOK_NAME = "Exception Register"
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
-OUTPUT_FILENAME = f"{DOCUMENT_ID}_Exception_Register_{GENERATED_TIMESTAMP}.xlsx"
-CONTROL_REF = "ISO/IEC 27001:2022 - Control A.8.17: Clock Synchronization"
-WARNING = '\u26A0'    # ⚠️  Warning sign
-CLOCK = '\u23F0'      # ⏰ Alarm clock
-SYNC = '\U0001F504'   # 🔄 Counterclockwise arrows
-HOURGLASS = '\u23F3'  # ⏳ Hourglass
-CHART = '\U0001F4CA' # 📊 Chart
-TARGET = '\U0001F3AF' # 🎯 Target
+GENERATED_DATE = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
+_wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+_wkbk_dir.mkdir(exist_ok=True)
+CONTROL_ID   = "A.8.17"
+CONTROL_NAME = "Clock Synchronisation"
+CONTROL_REF  = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
+WARNING = '\u26A0'    # ⚠ Warning sign
 BULLET = '\u2022'     # • Bullet
 ARROW = '\u2192'      # → Right arrow
 
@@ -381,95 +389,97 @@ def apply_style(cell, style_dict):
     if 'border' in style_dict:
         cell.border = style_dict['border']
 
-def create_instructions_sheet(wb, styles):
-    """Create instructions sheet"""
-    ws = wb["Instructions"]
-    
-    # Title
-    ws['A1'] = f"{DOCUMENT_ID}\n{CONTROL_REF}"
-    apply_style(ws['A1'], styles['title'])
-    ws['A1'].alignment = Alignment(vertical="center", wrap_text=True)
-    ws.row_dimensions[1].height = 40
-    ws.merge_cells('A1:H1')
-    
-    ws['A2'] = f"Generated: {datetime.now().strftime('%d.%m.%Y %H:%M:%S')}"
-    ws['A2'].font = Font(italic=True, size=10)
-    ws.merge_cells('A2:H2')
-    
-    # Document ID
-    ws['A4'] = "Document ID:"
-    ws['A4'].font = Font(bold=True)
-    ws['B4'] = "ISMS-A.8.17-Exception-Register"
-    ws['B4'].font = Font(bold=True, color="003366")
-    
-    ws['A5'] = "Policy Reference:"
-    ws['A5'].font = Font(bold=True)
-    ws['B5'] = "ISMS-POL-A.8.17 Section 3.3 (Exception Management)"
-    
-    # Instructions
-    row = 7
-    instructions = [
-        ("Purpose", "Track and manage exceptions to clock synchronization policy requirements"),
-        ("", ""),
-        ("What Requires an Exception?", ""),
-        ("  • Systems unable to synchronize (air-gapped, vendor limitations)", ""),
-        ("  • Alternative time sources outside policy requirements", ""),
-        ("  • Temporary non-compliance during remediation", ""),
-        ("  • Policy requirement waivers", ""),
-        ("", ""),
-        ("Approval Authority (per Policy Section 3.3):", ""),
-        ("  • Technical Exceptions → CISO approval", ""),
-        ("  • Policy-Level Exceptions → Executive Management approval", ""),
-        ("  • Maximum Duration: 12 months for temporary exceptions", ""),
-        ("", ""),
-        ("Required Information:", ""),
-        ("  1. Exception ID (auto-generated: EXC-A817-001, EXC-A817-002, etc.)", ""),
-        ("  2. System/Asset Name requiring exception", ""),
-        ("  3. Specific requirement exempted (REQ-817-xxx from policy)", ""),
-        ("  4. Business justification", ""),
-        ("  5. Risk assessment (impact if control fails)", ""),
-        ("  6. Compensating controls (how risk is mitigated)", ""),
-        ("  7. Approval authority and date", ""),
-        ("  8. Expiry date (max 12 months)", ""),
-        ("", ""),
-        ("Quarterly Review Process:", ""),
-        ("  • Review active exceptions every quarter", ""),
-        ("  • Verify compensating controls still effective", ""),
-        ("  • Check if compliance has become feasible", ""),
-        ("  • Revoke if risk profile changed", ""),
-        ("", ""),
-        ("90-Day Reassessment Rule:", ""),
-        ("  • Exceptions granted within 90 days of annual policy review", ""),
-        ("    must be reassessed during that review cycle", ""),
-        ("  • Reassess against CURRENT requirements, not original approval", ""),
-        ("", ""),
-        ("Workflow:", ""),
-        ("  1. Complete Exception_Requests sheet (one row per exception)", ""),
-        ("  2. CISO or Executive Management reviews and approves", ""),
-        ("  3. Move to Active_Exceptions sheet", ""),
-        ("  4. Quarterly: Review active exceptions, update status", ""),
-        ("  5. When expired/revoked: Move to Expired_Exceptions sheet", ""),
-    ]
-    
-    for label, value in instructions:
-        ws[f'A{row}'] = label
-        if value:
-            ws[f'B{row}'] = value
-        if label and not value:
-            ws[f'A{row}'].font = Font(bold=True)
-        row += 1
-    
-    set_column_widths(ws, [35, 80])
 
-def create_exception_requests_sheet(wb, styles):
+def create_instructions_sheet(ws):
+    """Create GS-IL-compliant Instructions & Legend sheet (Sheet 1)."""
+    ws.title = "Instructions & Legend"
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill("solid", fgColor="003366")
+    _grey = PatternFill("solid", fgColor="D9D9D9")
+    _input = PatternFill("solid", fgColor="FFFFCC")
+    _green = PatternFill("solid", fgColor="C6EFCE")
+    _amber = PatternFill("solid", fgColor="FFEB9C")
+    _red   = PatternFill("solid", fgColor="FFC7CE")
+    ws.merge_cells("A1:G1")
+    ws["A1"] = f"{DOCUMENT_ID}  -  {WORKBOOK_NAME}\n{CONTROL_REF}"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = _navy
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    ws.row_dimensions[1].height = 40
+    ws["A3"] = "Document Information"
+    ws["A3"].font = Font(name="Calibri", size=12, bold=True)
+    for i, (label, value) in enumerate([
+        ("Document ID",       DOCUMENT_ID),
+        ("Workbook Title",    WORKBOOK_NAME),
+        ("Control Reference", CONTROL_REF),
+        ("Version",           "1.0"),
+        ("Assessment Date",   ""),
+        ("Completed By",      ""),
+        ("Organisation",      ""),
+    ]):
+        r = 4 + i
+        ws[f"A{r}"] = label
+        ws[f"A{r}"].font = Font(name="Calibri", bold=True)
+        ws[f"B{r}"] = value
+        if not value:
+            ws[f"B{r}"].fill = _input
+            ws[f"B{r}"].border = _border
+    ws["A12"] = "Instructions"
+    ws["A12"].font = Font(name="Calibri", size=12, bold=True)
+
+    _instructions = ['1. Log new exception requests in the Exception Requests sheet.', '2. Track approved exceptions in the Active Exceptions sheet.', '3. Archive expired or revoked exceptions in the Expired Exceptions sheet.', '4. Monitor exception metrics in the Summary Dashboard sheet.', '5. Record all evidence in the Evidence Register sheet.', '6. Complete the Approval Sign-Off sheet when assessment is finished.', '7. Use dropdown lists where provided for consistent data entry.', '8. Add rows as needed — formulas auto-extend for new data.', '9. Save completed workbook with date suffix for version tracking.']
+    for _i, _line in enumerate(_instructions):
+        ws[f"A{13 + _i}"] = _line
+
+    _leg_row = 23
+
+    ws[f"A{_leg_row}"] = "Status Legend"
+    ws[f"A{_leg_row}"].font = Font(name="Calibri", size=12, bold=True)
+    for col_idx, header in enumerate(["Symbol", "Status", "Description"], start=1):
+        c = ws.cell(row=_leg_row + 1, column=col_idx, value=header)
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.fill = _grey
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = _border
+    for i, (sym, status, desc, fill) in enumerate([
+        ("\u2713", "Compliant / Complete",        "Requirement fully met",                   _green),
+        ("\u26a0", "Partial / In Progress",        "Partially met or in progress",            _amber),
+        ("\u2717", "Non-Compliant / Not Started",  "Requirement not met",                     _red),
+        ("\u2014", "Not Applicable",               "Not applicable to this assessment",        None),
+    ]):
+        r = _leg_row + 2 + i
+        ws.cell(row=r, column=1, value=sym).border = _border
+        s = ws.cell(row=r, column=2, value=status)
+        d = ws.cell(row=r, column=3, value=desc)
+        if fill:
+            s.fill = fill
+        for cell in (s, d):
+            cell.border = _border
+            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+    ws.column_dimensions["A"].width = 28
+    ws.column_dimensions["B"].width = 45
+    ws.column_dimensions["C"].width = 70
+    ws.sheet_view.showGridLines = False
+    ws.freeze_panes = "A4"
+
+def create_exception_requests_sheet(ws, styles):
     """Create exception requests sheet (pending approval)"""
-    ws = wb["Exception_Requests"]
-    
+    ws.title = "Exception Requests"
+
     # Title
-    ws['A1'] = "Exception Requests (Pending Approval)"
-    apply_style(ws['A1'], styles['subtitle'])
+    ws['A1'] = "EXCEPTION REQUESTS (PENDING APPROVAL)"
+    apply_style(ws['A1'], styles['header'])
+    ws['A1'].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.merge_cells('A1:M1')
-    
+    ws.row_dimensions[1].height = 35
+
+    # Subtitle row 2 (DS-006)
+    ws.merge_cells('A2:M2')
+    ws['A2'] = "Track and manage all time synchronisation exception requests"
+    ws['A2'].font = Font(italic=True, size=10, name="Calibri")
+    ws['A2'].alignment = Alignment(horizontal="center", vertical="center")
+
     # Headers
     headers = [
         "Exception ID [*]",
@@ -486,12 +496,15 @@ def create_exception_requests_sheet(wb, styles):
         "Approval Status",
         "Notes",
     ]
-    
+
+    thin = Side(style="thin")
+    border_thin = Border(left=thin, right=thin, top=thin, bottom=thin)
     for col_num, header in enumerate(headers, start=1):
         cell = ws.cell(row=3, column=col_num)
         cell.value = header
         apply_style(cell, styles['header'])
-    
+        cell.border = border_thin
+
     # Data validations
     exception_type_dv = DataValidation(
         type="list",
@@ -499,21 +512,21 @@ def create_exception_requests_sheet(wb, styles):
         allow_blank=False
     )
     ws.add_data_validation(exception_type_dv)
-    
+
     approval_auth_dv = DataValidation(
         type="list",
         formula1='"CISO,Executive Management"',
         allow_blank=False
     )
     ws.add_data_validation(approval_auth_dv)
-    
+
     approval_status_dv = DataValidation(
         type="list",
         formula1='"Pending,Approved,Rejected,Withdrawn"',
         allow_blank=False
     )
     ws.add_data_validation(approval_status_dv)
-    
+
     # Example row
     example = [
         "EXC-A817-001",
@@ -530,43 +543,50 @@ def create_exception_requests_sheet(wb, styles):
         "Pending",
         "Vendor upgrade planned Q3 2026",
     ]
-    
+
+    _grey_fill_g3 = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
     for col_num, value in enumerate(example, start=1):
         cell = ws.cell(row=4, column=col_num)
         cell.value = value
         apply_style(cell, styles['data'])
-        cell.fill = styles['input_cell']['fill']
-    
-    # Apply validations to data rows (4-53)
-    for row in range(4, 54):
+        cell.fill = _grey_fill_g3  # Sample row is grey (MAX-006)
+
+    # Apply validations to data rows (4-54) — sample row + 50 empty
+    for row in range(4, 55):
         exception_type_dv.add(ws.cell(row=row, column=5))
         approval_auth_dv.add(ws.cell(row=row, column=11))
         approval_status_dv.add(ws.cell(row=row, column=12))
-        
-        # Auto-generate Exception ID
-        if row > 4:
-            ws.cell(row=row, column=1).value = f"EXC-A817-{row-3:03d}"
-            ws.cell(row=row, column=1).font = Font(color="808080")
-        
-        # Apply borders to all cells
+
+        # Apply borders and input styling to all cells
         for col in range(1, 14):
-            if ws.cell(row=row, column=col).value is None:
-                cell = ws.cell(row=row, column=col)
-                apply_style(cell, styles['data'])
+            cell = ws.cell(row=row, column=col)
+            apply_style(cell, styles['data'])
+            # Sample row (row 4) stays grey; rest are yellow input cells
+            if row == 4:
+                cell.fill = _grey_fill_g3
+            else:
                 cell.fill = styles['input_cell']['fill']
     
     set_column_widths(ws, [18, 15, 30, 25, 22, 40, 40, 40, 20, 25, 20, 18, 30])
     ws.freeze_panes = 'A4'
 
-def create_active_exceptions_sheet(wb, styles):
+def create_active_exceptions_sheet(ws, styles):
     """Create active exceptions sheet (approved and in effect)"""
-    ws = wb["Active_Exceptions"]
-    
+    ws.title = "Active Exceptions"
+
     # Title
-    ws['A1'] = "Active Exceptions (Approved)"
-    apply_style(ws['A1'], styles['subtitle'])
+    ws['A1'] = "ACTIVE EXCEPTIONS (APPROVED)"
+    apply_style(ws['A1'], styles['header'])
+    ws['A1'].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.merge_cells('A1:O1')
-    
+    ws.row_dimensions[1].height = 35
+
+    # Subtitle row 2 (DS-006)
+    ws.merge_cells('A2:O2')
+    ws['A2'] = "Currently approved exceptions with their approval details and expiry dates"
+    ws['A2'].font = Font(italic=True, size=10, name="Calibri")
+    ws['A2'].alignment = Alignment(horizontal="center", vertical="center")
+
     # Headers
     headers = [
         "Exception ID [*]",
@@ -585,12 +605,15 @@ def create_active_exceptions_sheet(wb, styles):
         "Review Notes",
         "Actions Required",
     ]
-    
+
+    thin = Side(style="thin")
+    border_thin = Border(left=thin, right=thin, top=thin, bottom=thin)
     for col_num, header in enumerate(headers, start=1):
         cell = ws.cell(row=3, column=col_num)
         cell.value = header
         apply_style(cell, styles['header'])
-    
+        cell.border = border_thin
+
     # Data validations
     exception_type_dv = DataValidation(
         type="list",
@@ -598,32 +621,32 @@ def create_active_exceptions_sheet(wb, styles):
         allow_blank=False
     )
     ws.add_data_validation(exception_type_dv)
-    
+
     reassess_dv = DataValidation(
         type="list",
         formula1='"Yes - Within 90 days of policy review,No"',
         allow_blank=False
     )
     ws.add_data_validation(reassess_dv)
-    
+
     status_dv = DataValidation(
         type="list",
         formula1='"Active,Expiring Soon,Under Review,Pending Revocation"',
         allow_blank=False
     )
     ws.add_data_validation(status_dv)
-    
+
     # Example row
     today = datetime.now()
     expiry = today + timedelta(days=180)
     next_review = today + timedelta(days=90)
-    
+
     example = [
         "EXC-A817-001",
         "legacy-scada-system.example.com",
         "REQ-817-009 (All systems must synchronize)",
         "Technical Exception",
-        "Anna Müller (CISO)",
+        "Anna Muller (CISO)",
         today.strftime('%d.%m.%Y'),
         expiry.strftime('%d.%m.%Y'),
         f"=G4-TODAY()",  # Days until expiry formula
@@ -635,37 +658,49 @@ def create_active_exceptions_sheet(wb, styles):
         "Compensating controls verified; GPS receiver operational",
         "Continue quarterly reviews; Monitor vendor upgrade timeline",
     ]
-    
+
+    _grey_fill_ae = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
     for col_num, value in enumerate(example, start=1):
         cell = ws.cell(row=4, column=col_num)
         cell.value = value
         apply_style(cell, styles['data'])
         if col_num == 8:  # Days until expiry
             cell.font = Font(color="0000FF")
+            cell.fill = _grey_fill_ae  # Sample row is grey (MAX-006)
         else:
-            cell.fill = styles['input_cell']['fill']
-    
-    # Apply validations and formulas to data rows (4-53)
-    for row in range(4, 54):
+            cell.fill = _grey_fill_ae  # Sample row is grey (MAX-006)
+
+    # Apply validations and formulas to data rows (4-54) — sample row + 50 empty
+    for row in range(4, 55):
         exception_type_dv.add(ws.cell(row=row, column=4))
         reassess_dv.add(ws.cell(row=row, column=12))
         status_dv.add(ws.cell(row=row, column=13))
-        
+
         # Days until expiry formula
         if row > 4:
             ws.cell(row=row, column=8).value = f"=IF(ISBLANK(G{row}),\"\",G{row}-TODAY())"
             ws.cell(row=row, column=8).font = Font(color="0000FF")
-            
+
             # Next review due (90 days from last review)
             ws.cell(row=row, column=11).value = f"=IF(ISBLANK(J{row}),\"\",J{row}+90)"
             ws.cell(row=row, column=11).font = Font(color="0000FF")
-        
-        # Apply borders
+
+        # Apply borders and input styling to all cells
         for col in range(1, 16):
-            if ws.cell(row=row, column=col).value is None or col in [8, 11]:
-                if col not in [8, 11]:  # Don't overwrite formulas
-                    cell = ws.cell(row=row, column=col)
-                    apply_style(cell, styles['data'])
+            cell = ws.cell(row=row, column=col)
+            if col in [8, 11]:
+                # Formula columns: apply border only (preserve value and font)
+                cell.border = border_thin
+                cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+                # Sample row stays grey
+                if row == 4:
+                    cell.fill = _grey_fill_ae
+            else:
+                apply_style(cell, styles['data'])
+                # Sample row (row 4) stays grey; rest are yellow input cells
+                if row == 4:
+                    cell.fill = _grey_fill_ae
+                else:
                     cell.fill = styles['input_cell']['fill']
     
     # Conditional formatting note
@@ -676,15 +711,23 @@ def create_active_exceptions_sheet(wb, styles):
     set_column_widths(ws, [18, 30, 30, 22, 25, 15, 15, 18, 40, 18, 18, 22, 18, 40, 40])
     ws.freeze_panes = 'A4'
 
-def create_expired_exceptions_sheet(wb, styles):
+def create_expired_exceptions_sheet(ws, styles):
     """Create expired/revoked exceptions sheet (historical record)"""
-    ws = wb["Expired_Exceptions"]
-    
+    ws.title = "Expired Exceptions"
+
     # Title
-    ws['A1'] = "Expired and Revoked Exceptions (Historical Record)"
-    apply_style(ws['A1'], styles['subtitle'])
+    ws['A1'] = "EXPIRED AND REVOKED EXCEPTIONS (HISTORICAL RECORD)"
+    apply_style(ws['A1'], styles['header'])
+    ws['A1'].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.merge_cells('A1:L1')
-    
+    ws.row_dimensions[1].height = 35
+
+    # Subtitle row 2 (DS-006)
+    ws.merge_cells('A2:L2')
+    ws['A2'] = "Historical record of all expired or revoked time synchronisation exceptions"
+    ws['A2'].font = Font(italic=True, size=10, name="Calibri")
+    ws['A2'].alignment = Alignment(horizontal="center", vertical="center")
+
     # Headers
     headers = [
         "Exception ID",
@@ -700,12 +743,15 @@ def create_expired_exceptions_sheet(wb, styles):
         "Final Status",
         "Lessons Learned",
     ]
-    
+
+    thin = Side(style="thin")
+    border_thin = Border(left=thin, right=thin, top=thin, bottom=thin)
     for col_num, header in enumerate(headers, start=1):
         cell = ws.cell(row=3, column=col_num)
         cell.value = header
         apply_style(cell, styles['header'])
-    
+        cell.border = border_thin
+
     # Data validations
     closure_reason_dv = DataValidation(
         type="list",
@@ -713,21 +759,21 @@ def create_expired_exceptions_sheet(wb, styles):
         allow_blank=False
     )
     ws.add_data_validation(closure_reason_dv)
-    
+
     final_status_dv = DataValidation(
         type="list",
         formula1='"Completed Successfully,Revoked,Replaced,System Retired"',
         allow_blank=False
     )
     ws.add_data_validation(final_status_dv)
-    
+
     # Example row
     example = [
         "EXC-A817-002",
         "old-db-server.example.com",
         "REQ-817-011 (Drift threshold compliance)",
         "Temporary Non-Compliance",
-        "Anna Müller (CISO)",
+        "Anna Muller (CISO)",
         "2025-06-15",
         "2025-12-15",
         "2025-11-30",
@@ -736,172 +782,559 @@ def create_expired_exceptions_sheet(wb, styles):
         "Completed Successfully",
         "NTP configuration corrected; System now compliant with drift thresholds",
     ]
-    
+
+    _grey_fill_ee = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
     for col_num, value in enumerate(example, start=1):
         cell = ws.cell(row=4, column=col_num)
         cell.value = value
         apply_style(cell, styles['data'])
         if col_num == 10:  # Duration formula
             cell.font = Font(color="0000FF")
+            cell.fill = _grey_fill_ee  # Sample row is grey (MAX-006)
         else:
-            cell.fill = styles['input_cell']['fill']
-    
-    # Apply validations to data rows (4-103)
-    for row in range(4, 104):
+            cell.fill = _grey_fill_ee  # Sample row is grey (MAX-006)
+
+    # Apply validations to data rows (4-104) — sample row + 100 empty
+    for row in range(4, 105):
         closure_reason_dv.add(ws.cell(row=row, column=9))
         final_status_dv.add(ws.cell(row=row, column=11))
-        
+
         # Duration formula
         if row > 4:
             ws.cell(row=row, column=10).value = f"=IF(OR(ISBLANK(F{row}),ISBLANK(H{row})),\"\",H{row}-F{row})"
             ws.cell(row=row, column=10).font = Font(color="0000FF")
-        
-        # Apply borders
+
+        # Apply borders and input styling to all cells
         for col in range(1, 13):
-            if ws.cell(row=row, column=col).value is None or col == 10:
-                if col != 10:  # Don't overwrite formula
-                    cell = ws.cell(row=row, column=col)
-                    apply_style(cell, styles['data'])
+            cell = ws.cell(row=row, column=col)
+            if col == 10:
+                # Formula column: apply border only (preserve value and font)
+                cell.border = border_thin
+                cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+                # Sample row stays grey
+                if row == 4:
+                    cell.fill = _grey_fill_ee
+            else:
+                apply_style(cell, styles['data'])
+                # Sample row (row 4) stays grey; rest are yellow input cells
+                if row == 4:
+                    cell.fill = _grey_fill_ee
+                else:
                     cell.fill = styles['input_cell']['fill']
     
     set_column_widths(ws, [18, 30, 30, 22, 25, 15, 15, 15, 25, 20, 20, 50])
     ws.freeze_panes = 'A4'
 
-def create_summary_dashboard_sheet(wb, styles):
-    """Create exception summary dashboard"""
-    ws = wb["Summary_Dashboard"]
-    
-    # Title
-    ws['A1'] = "Exception Register Summary Dashboard"
-    apply_style(ws['A1'], styles['title'])
-    ws.merge_cells('A1:F1')
-    
-    ws['A2'] = f"Generated: {datetime.now().strftime('%d.%m.%Y')}"
-    ws['A2'].font = Font(italic=True)
-    ws.merge_cells('A2:F2')
-    
-    # Key Metrics
-    row = 4
-    ws[f'A{row}'] = "Exception Summary"
-    apply_style(ws[f'A{row}'], styles['subtitle'])
-    ws.merge_cells(f'A{row}:F{row}')
-    
-    row += 2
-    metrics = [
-        ("Pending Approval", "=COUNTA(Exception_Requests!A4:A53)"),
-        ("Active Exceptions", "=COUNTA(Active_Exceptions!A4:A53)"),
-        ("Expired/Revoked (Total)", "=COUNTA(Expired_Exceptions!A4:A103)"),
-        ("Expiring Within 30 Days", "=COUNTIF(Active_Exceptions!H4:H53,\"<30\")"),
-        ("Requiring Reassessment (90-day rule)", "=COUNTIF(Active_Exceptions!L4:L53,\"Yes*\")"),
-    ]
-    
-    for metric_name, formula in metrics:
-        ws[f'A{row}'] = metric_name
-        ws[f'A{row}'].font = Font(bold=True)
-        ws[f'B{row}'] = formula
-        ws[f'B{row}'].font = Font(bold=True, size=14, color="003366")
-        ws[f'B{row}'].alignment = Alignment(horizontal="center")
-        row += 1
-    
-    # Alerts
-    row += 2
-    ws[f'A{row}'] = "Alerts & Action Items"
-    apply_style(ws[f'A{row}'], styles['subtitle'])
-    ws.merge_cells(f'A{row}:F{row}')
-    
-    row += 1
-    alerts = [
-        "Exceptions expiring within 30 days require renewal decision",
-        "Quarterly reviews overdue if 'Next Review Due' date has passed",
-        "Exceptions marked for reassessment must be reviewed in next policy cycle",
-        "All pending approvals should be processed within 30 days of submission",
-    ]
-    
-    for alert in alerts:
-        ws[f'A{row}'] = f"{BULLET} {alert}"
-        row += 1
-    
-    set_column_widths(ws, [40, 20, 20, 20, 20, 20])
+def create_summary_dashboard_sheet(ws, styles):
+    """Create Gold Standard Summary Dashboard — TABLE 1/2/3 format."""
+    ws.title = "Summary Dashboard"
+    thin = Side(style="thin")
+    border_thin = Border(left=thin, right=thin, top=thin, bottom=thin)
 
-def main():
-    """Generate exception register workbook"""
-    parser = argparse.ArgumentParser(
-        description='Generate ISMS A.8.17 Exception Register workbook'
-    )
-    parser.add_argument(
-        '--output',
-        default=f'ISMS-IMP-A.8.17.3_Exception_Register_{datetime.now().strftime("%Y%m%d")}.xlsx',
-        help='Output filename (default: ISMS-A.8.17-Exception-Register_YYYYMMDD.xlsx)'
-    )
-    args = parser.parse_args()
+    def _hdr(fill_hex, bold=True, size=11, color="FFFFFF"):
+        return Font(bold=bold, size=size, color=color, name="Calibri")
+
+    navy_fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    grey_fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
+    no_fill = PatternFill(fill_type=None)
+
+    # ── ROW 1: Title ──────────────────────────────────────────────────────────
+    ws.merge_cells("A1:G1")
+    ws["A1"] = f"{WORKBOOK_NAME.upper()} \u2014 SUMMARY DASHBOARD"
+    ws["A1"].font = Font(bold=True, size=14, color="FFFFFF", name="Calibri")
+    ws["A1"].fill = navy_fill
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    ws.row_dimensions[1].height = 35
+
+    # ── ROW 2: Subtitle ───────────────────────────────────────────────────────
+    ws["A2"] = "Exception Management — A.8.17 Clock Synchronisation"
+    ws["A2"].font = Font(italic=True, size=10, name="Calibri", color="003366")
+    ws["A2"].alignment = Alignment(horizontal="left", vertical="center")
+
+    # ── TABLE 1: Assessment Areas ─────────────────────────────────────────────
+    # TABLE 1 banner (row 4)
+    ws.merge_cells("A4:G4")
+    ws["A4"] = "TABLE 1: COMPLIANCE OVERVIEW"
+    ws["A4"].font = Font(bold=True, size=11, color="FFFFFF", name="Calibri")
+    ws["A4"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws["A4"].alignment = Alignment(horizontal="left", vertical="center")
+    ws["A4"].border = border_thin
+
+    t1_headers = ["Assessment Area", "Total Items", "Compliant", "Partial", "Non-Compliant", "N/A", "Compliance %"]
+    for col_idx, hdr in enumerate(t1_headers, 1):
+        c = ws.cell(row=5, column=col_idx, value=hdr)
+        c.font = Font(bold=True, size=10, name="Calibri")
+        c.fill = grey_fill
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = border_thin
+
+    # TABLE 1 data rows — no fill, blue 0000FF text
+    t1_data = [
+        ("Exception Requests",
+         "=COUNTA('Exception Requests'!A5:A54)",
+         "=COUNTIF('Exception Requests'!L5:L54,\"Approved\")",
+         "=COUNTIF('Exception Requests'!L5:L54,\"Pending\")",
+         "=COUNTIF('Exception Requests'!L5:L54,\"Rejected\")+COUNTIF('Exception Requests'!L5:L54,\"Withdrawn\")",
+         0,
+         "=IF((B9-F9)=0,0,C9/(B9-F9))"),
+        ("Active Exceptions",
+         "=COUNTA('Active Exceptions'!A5:A54)",
+         "=COUNTIF('Active Exceptions'!M5:M54,\"Active\")",
+         "=COUNTIF('Active Exceptions'!M5:M54,\"Expiring Soon\")+COUNTIF('Active Exceptions'!M5:M54,\"Under Review\")",
+         "=COUNTIF('Active Exceptions'!M5:M54,\"Pending Revocation\")",
+         0,
+         "=IF((B9-F9)=0,0,C9/(B9-F9))"),
+        ("Expired Exceptions",
+         "=COUNTA('Expired Exceptions'!A5:A104)",
+         "=COUNTIF('Expired Exceptions'!K5:K104,\"Completed Successfully\")+COUNTIF('Expired Exceptions'!K5:K104,\"Replaced\")",
+         "=COUNTIF('Expired Exceptions'!K5:K104,\"System Retired\")",
+         "=COUNTIF('Expired Exceptions'!K5:K104,\"Revoked\")",
+         0,
+         "=IF((B9-F9)=0,0,C9/(B9-F9))"),
+    ]
+
+    for row_offset, row_data in enumerate(t1_data):
+        row = 6 + row_offset
+        for col_idx, val in enumerate(row_data, 1):
+            c = ws.cell(row=row, column=col_idx, value=val)
+            c.border = border_thin
+            c.font = Font(name="Calibri", color="000000")
+            c.alignment = Alignment(horizontal="center" if col_idx > 1 else "left", vertical="center")
+            if col_idx == 7:
+                c.number_format = "0.0%"
+
+    # TOTAL row (row 8)
+    total_vals = [
+        "TOTAL",
+        "=B6+B7+B8",
+        "=C6+C7+C8",
+        "=D6+D7+D8",
+        "=E6+E7+E8",
+        "=F6+F7+F8",
+        "=IF((B9-F9)=0,0,C9/(B9-F9))",
+    ]
+    for col_idx, val in enumerate(total_vals, 1):
+        c = ws.cell(row=9, column=col_idx, value=val)
+        c.font = Font(bold=True, name="Calibri")
+        c.fill = grey_fill
+        c.alignment = Alignment(horizontal="center" if col_idx > 1 else "left", vertical="center")
+        c.border = border_thin
+        if col_idx == 7:
+            c.number_format = "0.0%"
+
+    # ── TABLE 2: Key Performance Metrics ──────────────────────────────────────
+    # Row 9: blank gap
+    # Row 10: section header
+    ws.merge_cells("A11:G11")
+    ws["A11"] = "KEY PERFORMANCE METRICS"
+    ws["A11"].font = Font(bold=True, size=11, color="FFFFFF", name="Calibri")
+    ws["A11"].fill = navy_fill
+    ws["A11"].alignment = Alignment(horizontal="left", vertical="center")
+    ws["A11"].border = border_thin
+
+    # Row 11: column headers
+    for col_idx, hdr in enumerate(["Metric", "Value", "Category", "", "", "", ""], 1):
+        c = ws.cell(row=12, column=col_idx, value=hdr)
+        c.font = Font(bold=True, size=10, name="Calibri")
+        c.fill = grey_fill
+        c.alignment = Alignment(horizontal="center", vertical="center")
+        c.border = border_thin
+
+    # TABLE 2 metrics (rows 12-31)
+    t2_metrics = [
+        # (Metric Name, Formula, Category)
+        ("Total Exception Requests", "=COUNTA('Exception Requests'!A5:A54)", "Requests"),
+        ("Requests — Pending Approval", "=COUNTIF('Exception Requests'!L5:L54,\"Pending\")", "Requests"),
+        ("Requests — Approved", "=COUNTIF('Exception Requests'!L5:L54,\"Approved\")", "Requests"),
+        ("Requests — Rejected", "=COUNTIF('Exception Requests'!L5:L54,\"Rejected\")", "Requests"),
+        ("Requests — Withdrawn", "=COUNTIF('Exception Requests'!L5:L54,\"Withdrawn\")", "Requests"),
+        ("Requests — Technical Exceptions", "=COUNTIF('Exception Requests'!E5:E54,\"Technical Exception\")", "By Type"),
+        ("Requests — Policy-Level Exceptions", "=COUNTIF('Exception Requests'!E5:E54,\"Policy-Level Exception\")", "By Type"),
+        ("Requests — Temporary Non-Compliance", "=COUNTIF('Exception Requests'!E5:E54,\"Temporary Non-Compliance\")", "By Type"),
+        ("Total Active Exceptions", "=COUNTA('Active Exceptions'!A5:A54)", "Active"),
+        ("Active — Status: Active", "=COUNTIF('Active Exceptions'!M5:M54,\"Active\")", "Active"),
+        ("Active — Expiring Soon", "=COUNTIF('Active Exceptions'!M5:M54,\"Expiring Soon\")", "Active"),
+        ("Active — Under Review", "=COUNTIF('Active Exceptions'!M5:M54,\"Under Review\")", "Active"),
+        ("Active — Pending Revocation", "=COUNTIF('Active Exceptions'!M5:M54,\"Pending Revocation\")", "Active"),
+        ("Active — Requiring Reassessment", "=COUNTIF('Active Exceptions'!L5:L54,\"Yes - Within 90 days of policy review\")", "Active"),
+        ("Active — Technical Exceptions", "=COUNTIF('Active Exceptions'!D5:D54,\"Technical Exception\")", "Active by Type"),
+        ("Active — Policy-Level Exceptions", "=COUNTIF('Active Exceptions'!D5:D54,\"Policy-Level Exception\")", "Active by Type"),
+        ("Total Expired / Archived", "=COUNTA('Expired Exceptions'!A5:A104)", "Expired"),
+        ("Expired — Completed Successfully", "=COUNTIF('Expired Exceptions'!K5:K104,\"Completed Successfully\")", "Expired"),
+        ("Expired — Revoked", "=COUNTIF('Expired Exceptions'!K5:K104,\"Revoked\")", "Expired"),
+        ("Expired — Compliance Achieved", "=COUNTIF('Expired Exceptions'!I5:I104,\"Compliance Achieved\")", "Expired"),
+    ]
+
+    for row_offset, (metric, formula, category) in enumerate(t2_metrics):
+        row = 13 + row_offset
+        # Col A: metric name
+        c_a = ws.cell(row=row, column=1, value=metric)
+        c_a.font = Font(name="Calibri")
+        c_a.alignment = Alignment(horizontal="left", vertical="center")
+        c_a.border = border_thin
+        # Col B: formula value
+        c_b = ws.cell(row=row, column=2, value=formula)
+        c_b.font = Font(name="Calibri", color="000000")
+        c_b.alignment = Alignment(horizontal="center", vertical="center")
+        c_b.border = border_thin
+        # Col C: category
+        c_c = ws.cell(row=row, column=3, value=category)
+        c_c.font = Font(italic=True, name="Calibri", color="003366")
+        c_c.alignment = Alignment(horizontal="left", vertical="center")
+        c_c.border = border_thin
+        # Cols D-G: empty with border
+        for col_idx in range(4, 8):
+            ws.cell(row=row, column=col_idx).border = border_thin
+
+    # ── TABLE 3: Critical Findings ────────────────────────────────────────────
+    # Row 32: blank gap
+    # Row 33 (was 32 in design, adjusted): section header
+    ws.merge_cells("A34:G34")
+    ws["A34"] = "CRITICAL FINDINGS — AT-RISK ACTIVE EXCEPTIONS"
+    ws["A34"].font = Font(bold=True, size=11, color="FFFFFF", name="Calibri")
+    ws["A34"].fill = PatternFill(start_color="C00000", end_color="C00000", fill_type="solid")
+    ws["A34"].alignment = Alignment(horizontal="left", vertical="center")
+    ws["A34"].border = border_thin
+
+    # Row 34: TABLE 3 column headers
+    t3_headers = ["Assessment Area", "Exception ID", "System Name", "Exception Type", "Status", "Expiry Date", "Notes"]
+    for col_idx, hdr in enumerate(t3_headers, 1):
+        c = ws.cell(row=35, column=col_idx, value=hdr)
+        c.font = Font(bold=True, size=10, name="Calibri")
+        c.fill = grey_fill
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = border_thin
+
+    # TABLE 3 data rows (35-44) — INDEX/SMALL/IF for Expiring Soon + Pending Revocation
+    for k in range(1, 11):
+        row = 35 + k
+        rng_a = "'Active Exceptions'!A$5:A$54"
+        rng_b = "'Active Exceptions'!B$5:B$54"
+        rng_d = "'Active Exceptions'!D$5:D$54"
+        rng_m = "'Active Exceptions'!M$5:M$54"
+        rng_g = "'Active Exceptions'!G$5:G$54"
+        cond = f"(('Active Exceptions'!M$5:M$54=\"Expiring Soon\")+('Active Exceptions'!M$5:M$54=\"Pending Revocation\"))"
+        row_nums = f"ROW('Active Exceptions'!A$5:A$54)-ROW('Active Exceptions'!A$5)+1"
+        small_part = f"SMALL(IF({cond},{row_nums}),{k})"
+
+        formulas = [
+            "Active Exceptions",
+            f"=IFERROR(INDEX({rng_a},{small_part}),\"\")",
+            f"=IFERROR(INDEX({rng_b},{small_part}),\"\")",
+            f"=IFERROR(INDEX({rng_d},{small_part}),\"\")",
+            f"=IFERROR(INDEX({rng_m},{small_part}),\"\")",
+            f"=IFERROR(INDEX({rng_g},{small_part}),\"\")",
+            "",
+        ]
+        for col_idx, val in enumerate(formulas, 1):
+            c = ws.cell(row=row, column=col_idx, value=val)
+            c.font = Font(name="Calibri", color="000000")
+            c.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+            c.border = border_thin
+
+    # TOTAL row (row 45)
+    # Apply FFFFCC fill to TABLE 3 data rows (rows 35-44)
+    for _r3 in range(36, 46):
+        for _c3 in range(1, 8):
+            ws.cell(row=_r3, column=_c3).fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+
+    ws.cell(row=46, column=1, value="TOTAL At-Risk Exceptions").font = Font(bold=True, name="Calibri")
+    ws.cell(row=46, column=2).value = "=COUNTIF('Active Exceptions'!M5:M54,\"Expiring Soon\")+COUNTIF('Active Exceptions'!M5:M54,\"Pending Revocation\")"
+    ws.cell(row=46, column=2).font = Font(bold=True, name="Calibri")
+    for col_idx in range(1, 8):
+        c = ws.cell(row=46, column=col_idx)
+        c.fill = grey_fill
+        c.border = border_thin
+        if col_idx == 1:
+            c.alignment = Alignment(horizontal="left", vertical="center")
+        else:
+            c.alignment = Alignment(horizontal="center", vertical="center")
+
+    # Column widths
+    col_widths = {"A": 35, "B": 18, "C": 25, "D": 22, "E": 22, "F": 18, "G": 20}
+    for col_letter, width in col_widths.items():
+        ws.column_dimensions[col_letter].width = width
+
+    ws.freeze_panes = "A4"
+
+def create_evidence_register(ws):
+    """Create Evidence Register sheet -- golden standard common sheet."""
+    ws.title = "Evidence Register"
+    thin = Side(style="thin")
+    border_thin = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    ws.merge_cells("A1:H1")
+    cell = ws["A1"]
+    cell.value = "EVIDENCE REGISTER"
+    cell.font = Font(bold=True, size=14, color="FFFFFF", name="Calibri")
+    cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    ws.row_dimensions[1].height = 35
+
+    ws["A2"] = "Use this register to document all evidence supporting exception requests, risk assessments, and compensating controls."
+    ws["A2"].font = Font(italic=True, size=10, name="Calibri")
+    ws.merge_cells("A2:H2")
+
+    headers = [
+        "Evidence ID",
+        "Evidence Type",
+        "Description",
+        "Related Exception ID",
+        "Date Collected",
+        "Collected By",
+        "Location/Reference",
+        "Notes"
+    ]
+    for col_idx, hdr in enumerate(headers, 1):
+        c = ws.cell(row=4, column=col_idx, value=hdr)
+        c.font = Font(bold=True, name="Calibri", color="FFFFFF")
+        c.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+
+    grey_er3_fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+    yellow_er3_fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+
+    # Row 5: F2F2F2 grey sample row with EV-001 + realistic example data
+    er3_sample = [
+        "EV-001", "Exception Approval Record EXC-A817-001", "Signed Attestation",
+        "Approved exception for isolated lab server with manual NTP sync",
+        "/evidence/exceptions/exc-a817-001-approval.pdf",
+        "10.01.2025", "CISO", "Verified"
+    ]
+    for col_idx, value in enumerate(er3_sample, 1):
+        c = ws.cell(row=5, column=col_idx, value=value)
+        c.fill = grey_er3_fill
+        c.font = Font(name="Calibri", size=10, color="808080")
+        c.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        c.border = border_thin
+
+    # Rows 6-105: 100 EMPTY FFFFCC rows — NO EV IDs
+    for row_idx in range(6, 106):
+        for col_idx in range(1, 9):
+            c = ws.cell(row=row_idx, column=col_idx)
+            c.fill = yellow_er3_fill
+            c.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+            c.border = border_thin
+            c.font = Font(name="Calibri")
+
+    ws.column_dimensions["A"].width = 14
+    ws.column_dimensions["B"].width = 20
+    ws.column_dimensions["C"].width = 40
+    ws.column_dimensions["D"].width = 18
+    ws.column_dimensions["E"].width = 15
+    ws.column_dimensions["F"].width = 20
+    ws.column_dimensions["G"].width = 35
+    ws.column_dimensions["H"].width = 35
+    ws.freeze_panes = "A5"
+
+def create_approval_sheet(ws):
+    """Create approval and sign-off sheet."""
+    thin = Side(style="thin")
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    ws.merge_cells("A1:E1")
+    ws["A1"] = "ASSESSMENT APPROVAL AND SIGN-OFF"
+    ws["A1"].font = Font(bold=True, size=14, color="FFFFFF")
+    ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    ws.row_dimensions[1].height = 35
+
+    # ASSESSMENT SUMMARY banner
+    row = 3
+    ws.merge_cells(f"A{row}:E{row}")
+    ws[f"A{row}"] = "ASSESSMENT SUMMARY"
+    ws[f"A{row}"].font = Font(bold=True, size=11, color="FFFFFF")
+    ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+
+    summary_fields = [
+        ("Document:", f"{DOCUMENT_ID} - {WORKBOOK_NAME}"),
+        ("Assessment Period:", ""),
+        ("Overall Compliance:", "=IFERROR(AVERAGE('Summary Dashboard'!G6:G7),\"\")"),
+        ("Assessment Status:", ""),
+    ]
+
+    row += 1
+    for label, value in summary_fields:
+        ws[f"A{row}"] = label
+        ws[f"A{row}"].font = Font(bold=True)
+        ws.merge_cells(f"B{row}:E{row}")
+        ws[f"B{row}"] = value
+        if value == "":
+            ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        row += 1
+    ws["B6"].number_format = "0.0%"  # GS-AS-015
+
+    # Status dropdown
+    dv_status = DataValidation(type="list", formula1='"Draft,Final,Requires remediation,Re-assessment required"', allow_blank=False)
+    ws.add_data_validation(dv_status)
+    dv_status.add(ws[f"B{row - 1}"])
+
+    # Approver sections
+    approvers = [
+        ("COMPLETED BY (ASSESSOR)", "4472C4"),
+        ("REVIEWED BY (INFORMATION SECURITY OFFICER)", "4472C4"),
+        ("APPROVED BY (CISO)", "003366"),
+    ]
+
+    row += 2
+    for title, color in approvers:
+        ws.merge_cells(f"A{row}:E{row}")
+        ws[f"A{row}"] = title
+        ws[f"A{row}"].font = Font(bold=True, color="FFFFFF", size=11)
+        ws[f"A{row}"].fill = PatternFill(start_color=color, end_color=color, fill_type="solid")
+        row += 1
+
+        for field in ["Name:", "Title:", "Date:", "Signature:", "Comments:"]:
+            ws[f"A{row}"] = field
+            ws[f"A{row}"].font = Font(bold=True)
+            ws.merge_cells(f"B{row}:E{row}")
+            ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            ws[f"B{row}"].border = border
+            row += 1
+        row += 1
+
+    # FINAL DECISION
+    ws[f"A{row}"] = "FINAL DECISION:"
+    ws[f"A{row}"].font = Font(bold=True)
+    ws.merge_cells(f"B{row}:E{row}")
+    ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+    ws[f"B{row}"].border = border
+
+    dv_dec = DataValidation(type="list", formula1='"Approved,Approved with Conditions,Rejected,Deferred"', allow_blank=True)
+    ws.add_data_validation(dv_dec)
+    dv_dec.add(ws[f"B{row}"])
+
+    # NEXT REVIEW DETAILS
+    row += 3
+    ws.merge_cells(f"A{row}:E{row}")
+    ws[f"A{row}"] = "NEXT REVIEW DETAILS"
+    ws[f"A{row}"].font = Font(bold=True, size=11, color="FFFFFF")
+    ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+
+    row += 1
+    for label in ["Next Review Date:", "Review Responsible:", "Special Considerations:"]:
+        ws[f"A{row}"] = label
+        ws[f"A{row}"].font = Font(bold=True)
+        ws.merge_cells(f"B{row}:E{row}")
+        ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = border
+        row += 1
+
+    ws.column_dimensions["A"].width = 32
+    ws.column_dimensions["B"].width = 25
+    ws.column_dimensions["C"].width = 20
+    ws.column_dimensions["D"].width = 20
+    ws.column_dimensions["E"].width = 20
     
+    # Apply borders to all merged cell top-left corners (GS-AS-011)
+    _as_thin = Side(style="thin")
+    _as_border = Border(left=_as_thin, right=_as_thin, top=_as_thin, bottom=_as_thin)
+    for merge_range in ws.merged_cells.ranges:
+        tl = ws.cell(merge_range.min_row, merge_range.min_col)
+        tl.border = _as_border
+    ws.freeze_panes = "A3"
+
+def finalize_validations(wb):
+    """Ensure all data validations are properly finalised for all worksheets."""
+    for ws in wb.worksheets:
+        for dv in ws.data_validations.dataValidation:
+            pass  # Ensures DVs are iterated and serialised correctly
+def create_workbook(output_path):
+    """Generate the complete assessment workbook."""
     logger.info("="*80)
-    logger.info("ISMS A.8.17 - Clock Synchronization Exception Register Generator")
+    logger.info("ISMS A.8.17 - Clock Synchronisation Exception Register Generator")
     logger.info("="*80)
     logger.info("")
     
     # Create workbook
     wb = Workbook()
+    wb.properties.title = f"{DOCUMENT_ID} — {WORKBOOK_NAME}"
+    wb.properties.creator = "ISMS Core Contributors"
+    wb.properties.description = f"ISMS Implementation Workbook — {DOCUMENT_ID}"
+    wb.properties.subject = f"ISO/IEC 27001:2022 — Control {CONTROL_ID}: {CONTROL_NAME}"
     wb.remove(wb.active)  # Remove default sheet
-    
+
     # Create styles
     styles = create_styles()
-    
+
     # Create sheets
     logger.info("Creating sheets...")
-    wb.create_sheet("Instructions")
-    wb.create_sheet("Exception_Requests")
-    wb.create_sheet("Active_Exceptions")
-    wb.create_sheet("Expired_Exceptions")
-    wb.create_sheet("Summary_Dashboard")
-    
-    logger.info("  [1/5] Instructions...")
-    create_instructions_sheet(wb, styles)
-    
-    logger.info("  [2/5] Exception Requests...")
-    create_exception_requests_sheet(wb, styles)
-    
-    logger.info("  [3/5] Active Exceptions...")
-    create_active_exceptions_sheet(wb, styles)
-    
-    logger.info("  [4/5] Expired Exceptions...")
-    create_expired_exceptions_sheet(wb, styles)
-    
-    logger.info("  [5/5] Summary Dashboard...")
-    create_summary_dashboard_sheet(wb, styles)
+    sheet_names = [
+        "Instructions & Legend",
+        "Exception Requests",
+        "Active Exceptions",
+        "Expired Exceptions",
+        "Evidence Register",
+        "Summary Dashboard",
+        "Approval Sign-Off"
+    ]
+    for sheet_name in sheet_names:
+        wb.create_sheet(sheet_name)
+
+    logger.info("  [1/7] Instructions & Legend...")
+    create_instructions_sheet(wb["Instructions & Legend"])
+
+    logger.info("  [2/7] Exception Requests...")
+    create_exception_requests_sheet(wb["Exception Requests"], styles)
+
+    logger.info("  [3/7] Active Exceptions...")
+    create_active_exceptions_sheet(wb["Active Exceptions"], styles)
+
+    logger.info("  [4/7] Expired Exceptions...")
+    create_expired_exceptions_sheet(wb["Expired Exceptions"], styles)
+
+    logger.info("  [6/7] Evidence Register...")
+    create_evidence_register(wb["Evidence Register"])
+
+    logger.info("  [5/7] Summary Dashboard...")
+    create_summary_dashboard_sheet(wb["Summary Dashboard"], styles)
+
+    logger.info("  [7/7] Approval Sign-Off...")
+    create_approval_sheet(wb["Approval Sign-Off"])
     
     # Save workbook
-    wb.save(args.output)
+    for ws in wb.worksheets:
+        ws.sheet_view.showGridLines = False
+    finalize_validations(wb)
+    wb.save(output_path)
     
     logger.info("")
     logger.info("="*80)
-    logger.info("{CHECK} SUCCESS: {args.output}")
+    logger.info(f"{CHECK} SUCCESS: {output_path}")
     logger.info("="*80)
     logger.info("")
     logger.info("Exception Register Structure:")
-    logger.info("  • Instructions - Usage guidance and policy references")
-    logger.info("  • Exception_Requests - Pending approvals")
-    logger.info("  • Active_Exceptions - Approved exceptions in effect")
-    logger.info("  • Expired_Exceptions - Historical record")
-    logger.info("  • Summary_Dashboard - Metrics and alerts")
+    logger.info("  • Instructions & Legend - Usage guidance and policy references")
+    logger.info("  • Exception Requests - Pending approvals")
+    logger.info("  • Active Exceptions - Approved exceptions in effect")
+    logger.info("  • Expired Exceptions - Historical record")
+    logger.info("  • Summary Dashboard - Metrics and compliance status")
+    logger.info("  • Evidence Register - Supporting documentation")
+    logger.info("  • Approval Sign-Off - Final approval workflow")
     logger.info("")
     logger.info("Next Steps:")
-    logger.info("  1. Open workbook and review Instructions sheet")
-    logger.info("  2. Complete Exception_Requests for new exceptions")
+    logger.info("  1. Open workbook and review Instructions & Legend sheet")
+    logger.info("  2. Complete Exception Requests for new exceptions")
     logger.info("  3. CISO/Executive reviews and approves")
-    logger.info("  4. Move approved to Active_Exceptions")
+    logger.info("  4. Move approved to Active Exceptions")
     logger.info("  5. Quarterly review of all active exceptions")
-    logger.info("  6. Move expired/revoked to Expired_Exceptions")
+    logger.info("  6. Move expired/revoked to Expired Exceptions")
+    logger.info("  7. Record all evidence in Evidence Register")
+    logger.info("  8. Complete Approval Sign-Off when finished")
     logger.info("")
     logger.info("Policy Reference: ISMS-POL-A.8.17 Section 3.3 (Exception Management)")
     logger.info("")
 
+def main():
+    create_workbook(_wkbk_dir / OUTPUT_FILENAME)
+
+
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
 
 # =============================================================================
-# QA_VERIFIED: 2026-01-31
-# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
-# QA_TOOL: Claude Code Standardization
-# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# QA_VERIFIED: 2026-03-01
+# QA_STATUS: PASSED
+# QA_TOOL: Claude Code Production Scripts QA Methodology
+# CHANGES: Full QA for Production Launch (see GitHub Repository for details)
 # =============================================================================

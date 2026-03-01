@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Asset Identification & Discovery |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.9.1-UG |
+| **Related Policy** | ISMS-POL-A.5.9 (Inventory of Information and Assets) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.9 (Inventory of Information and Other Associated Assets) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Asset Identification & Discovery Procedures |
-| **Related Policy** | ISMS-POL-A.5.9, Section 2.1 (Asset Inventory Creation), Section 2.5 (Inventory Quality Standards) |
-| **Purpose** | Document asset discovery procedures, verify completeness of inventory, and identify gaps in asset identification across all categories |
-| **Target Audience** | Security Team, IT Operations, System Owners, Information Owners, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Technical |
-| **Review Cycle** | Quarterly or After Major Organizational Changes |
-| **Date** | [Date]  |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|--------|--------|
-| 1.0 | [Date]  | Initial assessment specification following consolidated policy structure | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.9 (Inventory of Information and Assets)
+- ISMS-IMP-A.5.9.2 (Inventory Structure & Maintenance)
+- ISMS-IMP-A.5.9.3 (Assessment Specifications)
+- ISMS-IMP-A.5.9.4 (Owner Accountability Assessment)
+
+---
 
 ### Document Structure
 
@@ -35,11 +49,30 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
+### Workbook at a Glance
+
+This workbook contains the following 10 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Information Assets Discovery** | Discovery and inventory of information assets (databases, documents, IP, configurations) |
+| **IT Infrastructure Discovery** | Discovery of servers, storage, networking, and endpoint assets |
+| **Applications Discovery** | Discovery of applications, software, and SaaS services |
+| **Physical Assets Discovery** | Discovery of physical equipment, facilities, and hardware |
+| **Personnel Assets Discovery** | Discovery of human resource and skills-based assets |
+| **Discovery Metrics & Summary** | Aggregated discovery coverage metrics and gap summary |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+
+---
+
 ## Assessment Overview
 
 ### What This Assessment Evaluates
 
-This assessment documents HOW [Organization] identifies and discovers assets across all categories. This is the foundational "WHAT exists?" assessment that answers:
+This assessment documents HOW [Organisation] identifies and discovers assets across all categories. This is the foundational "WHAT exists?" assessment that answers:
 
 - **Information Assets**: What databases, documents, IP, and configurations exist?
 - **IT Infrastructure**: What servers, storage, networking, and endpoints exist?
@@ -47,19 +80,19 @@ This assessment documents HOW [Organization] identifies and discovers assets acr
 - **Physical Assets**: What facilities, media, and equipment exist?
 - **Personnel Assets**: What key roles and competencies exist?
 
-**Key Principle**: You cannot protect what you do not know you have. This assessment verifies that [Organization] has systematic procedures to discover assets and that the inventory is complete (no missing assets).
+**Key Principle**: You cannot protect what you do not know you have. This assessment verifies that [Organisation] has systematic procedures to discover assets and that the inventory is complete (no missing assets).
 
 ### Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - **ISO/IEC 27001:2022 Control A.5.9**: Inventory of Information and Other Associated Assets
-- **ISMS-POL-A.5.9, Requirement A.5.9-R1**: [Organization] SHALL maintain an inventory of information and associated assets
+- **ISMS-POL-A.5.9, Requirement A.5.9-R1**: [Organisation] SHALL maintain an inventory of information and associated assets
 - **ISMS-POL-A.5.9, Section 2.5.1**: Completeness standard (95% for critical, 90% for standard)
 
 **From Implementer Perspective**: Provides systematic methodology to find ALL assets so nothing is missed.
 
-**From Auditor Perspective**: Demonstrates [Organization] knows what assets exist and has repeatable discovery process.
+**From Auditor Perspective**: Demonstrates [Organisation] knows what assets exist and has repeatable discovery process.
 
 ### Assessment Domains
 
@@ -121,7 +154,7 @@ This assessment covers **5 discovery domains** aligned with policy asset categor
 
 - Network topology diagrams (if available)
 - Data flow diagrams (if available)
-- Organizational chart (for competency mapping)
+- Organisational chart (for competency mapping)
 - Previous inventory (if exists - for comparison)
 
 **4. Tools** (optional but recommended):
@@ -133,7 +166,7 @@ This assessment covers **5 discovery domains** aligned with policy asset categor
 
 **5. Time Allocation**:
 
-- **Initial Discovery**: 20-40 hours (varies greatly by organization size and complexity)
+- **Initial Discovery**: 20-40 hours (varies greatly by organisation size and complexity)
 - **Quarterly Updates**: 4-8 hours (once processes established)
 - **Evidence Collection**: 4-8 hours per quarter
 
@@ -173,7 +206,6 @@ Phase 5: Review & Approval (Day 15)
 ├─ Quality check against checklist
 ├─ Security Team review
 ├─ CISO approval
-└─ Submit to compliance dashboard
 ```
 
 **Timeline**: 15 working days for initial assessment, 5 days for quarterly updates
@@ -444,7 +476,7 @@ Phase 5: Review & Approval (Day 15)
 3. **Custom Developed Applications**:
 
    - **Discovery Method**: Development Repository + Deployment Records
-   - **Discovery Source**: "GitHub/GitLab organization, CI/CD pipelines, server deployments"
+   - **Discovery Source**: "GitHub/GitLab organisation, CI/CD pipelines, server deployments"
    - **Discovery Tool**: "Git repository API, deployment tracking"
    - **Include**: Web apps, mobile apps, internal tools, APIs
 
@@ -590,7 +622,7 @@ Phase 5: Review & Approval (Day 15)
 - Competency gap analysis
 - Training and certification tracking
 
-**CRITICAL PRIVACY NOTE**: This sheet documents ROLES and COMPETENCIES, never individual person records. Focus is on "what capabilities does [Organization] need and have" not "who are the people."
+**CRITICAL PRIVACY NOTE**: This sheet documents ROLES and COMPETENCIES, never individual person records. Focus is on "what capabilities does [Organisation] need and have" not "who are the people."
 
 **Column Definitions**:
 
@@ -931,7 +963,7 @@ For each discovery activity, create evidence record:
 - Collect signatures on audit checklists
 - Scan paper documents to PDF
 
-**3. Evidence Organization**:
+**3. Evidence Organisation**:
 ```
 /evidence/
 ├── 2026-Q1/
@@ -1064,7 +1096,7 @@ For each discovery activity, create evidence record:
 
 ### Pitfall 7: Poor Evidence Quality
 
-**Problem**: Collecting evidence but not organizing it properly or maintaining metadata.
+**Problem**: Collecting evidence but not organising it properly or maintaining metadata.
 
 **Why It Fails**: Evidence without context is useless. Auditors need to verify evidence currency and authenticity.
 
@@ -1184,10 +1216,8 @@ Before submitting this assessment, verify:
 - Escalate critical gaps to Executive Management if necessary
 - Sign approval
 
-**Step 5: Submission to Compliance Dashboard**
 
 - Export metrics to dashboard consolidation workbook
-- Update ISMS-IMP-A.5.9.5 (Compliance Dashboard)
 - Archive assessment workbook
 - Store evidence per retention policy
 
@@ -1234,7 +1264,7 @@ Document approval in assessment workbook:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"You cannot protect what you do not know you have."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

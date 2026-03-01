@@ -3,6 +3,41 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.5: Contact with Authorities
 
+---
+
+**Document Control**
+
+| Attribute | Value |
+|-------|-------|
+| **Document Title** | Authority Contacts Register |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.5.5-6.S1-UG |
+| **Related Policy** | ISMS-POL-A.5.5-6 (External Communications) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.5 (Contact with Authorities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.5-6 (External Communications)
+- ISMS-IMP-A.5.5-6.S2 (Special Interest Groups Register)
+- ISMS-IMP-A.5.5-6.S3 (External Communication Procedures)
+
+---
+
 ## Implementation Guide for ISO 27001:2022 Control A.5.5: Contact with Authorities
 
 **Document ID:** ISMS-IMP-A.5.5-6.S1-UG
@@ -49,15 +84,13 @@ This control ensures that the organisation establishes and maintains relationshi
 
 ### Assessment Domains
 
-This workbook is **Domain 1 of 5** in the A.5.5-6 External Communications assessment series:
+This workbook is **Domain 1 of 3** in the A.5.5-6 External Communications assessment series:
 
 | Domain | Workbook | Focus |
 |--------|----------|-------|
 | **1** | **Authority Contacts Register** | **Documenting authority relationships** |
 | 2 | Special Interest Groups Register | SIG memberships and engagement |
 | 3 | Communication Procedures | Notification and escalation processes |
-| 4 | Compliance Dashboard | KPIs and metrics monitoring |
-| 5 | Consolidation Dashboard | Executive summary across domains |
 
 ---
 
@@ -95,6 +128,23 @@ Collect the following information for each authority contact:
 - Scenarios requiring contact
 - Historical communication records
 - Verification dates and methods
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Authority Registry** | Core register of all authority contacts with contact details and trigger scenarios |
+| **Contact Types** | Classification framework for contact types and applicable regulatory requirements |
+| **Communication Log** | Record of all communications made with authority contacts |
+| **Verification Register** | Tracking of contact detail verification activities and outcomes |
+| **Evidence Register** | Tracking of supporting evidence for authority relationships |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
 
 ---
 
@@ -243,6 +293,18 @@ Management approval for the assessment.
 | 3 | Compliance Officer | Regulatory completeness check |
 | 4 | CISO | Final approval and sign-off |
 
+### Summary_Dashboard Sheet
+
+The Summary Dashboard automatically aggregates data from your completed sheets and provides a compliance overview. No data entry is required.
+
+Review the dashboard after completing all sheets above to confirm:
+- Authority contact coverage across all required contact types
+- Communication log completeness and any outstanding follow-up items
+- Verification register status — any contacts requiring re-verification
+- Evidence register completeness
+
+Use the dashboard output to support your management review discussion and approval workflow.
+
 ---
 
 ## Evidence Collection
@@ -362,7 +424,7 @@ Before submitting for approval, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"It is better to have the right contacts than the wrong answers."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

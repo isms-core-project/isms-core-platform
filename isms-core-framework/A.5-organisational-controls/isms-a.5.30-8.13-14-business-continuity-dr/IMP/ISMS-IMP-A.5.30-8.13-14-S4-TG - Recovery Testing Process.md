@@ -8,199 +8,142 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Recovery Testing Process |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.30-8.13-14-S4-TG |
+| **Related Policy** | ISMS-POL-A.5.30-8.13-14-S4 (Business Continuity Dr) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.13 (Information Backup) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Business Continuity & Disaster Recovery Testing |
-| **Related Policy** | ISMS-POL-A.5.30-8.13-14, Section 2.4 (Testing Requirements) |
-| **Related Assessments** | IMP-S1 (BIA), IMP-S2 (Backup), IMP-S3 (Redundancy) |
-| **Purpose** | Define comprehensive testing methodology for backup restoration, failover validation, and full DR scenario exercises |
-| **Target Audience** | BC/DR Coordinator, IT Operations, System Administrators, DBAs, Management |
-| **Assessment Type** | Operational Testing |
-| **Review Cycle** | After Each Test + Annual Methodology Review |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.30-8.13-14-S4 (Business Continuity Dr)
+- ISMS-IMP-A.5.30-8.13-14-S1 (BIA and RPO:RTO Process)
+- ISMS-IMP-A.5.30-8.13-14-S2 (Backup Implementation)
+- ISMS-IMP-A.5.30-8.13-14-S3 (Redundancy Implementation)
 
 ---
 
 # Technical Specification
 **Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
-
-> Auto-generated from `generate_a530_4_testing_results.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.30.S4` |
-| **Output Filename** | `ISMS-IMP-A.5.30.S4_Testing_Results_YYYYMMDD.xlsx` |
-| **Workbook Title** | BC/DR Testing Results Tracker |
-| **Total Sheets** | 9 (9 visible) |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #666666 | 666666 | Dark Gray (Secondary Text) |
-| #808080 | 808080 | Gray (Disabled) |
-| #C00000 | C00000 | Dark Red (Blocked) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
-
 ---
 
-## Sheet 2: Summary
+## Generator Alignment Reference
 
-**Data Rows:** 110 (rows 5–114)
+> Auto-generated from `generate_a530_4_testing_results.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Formulas
+**Document ID:** `ISMS-IMP-A.5.30.S4`
 
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(Test_Schedule!A5:A114)` | Total Tests Scheduled: |
-| — | `=COUNTIF(Test_Results_Log!F5:F114,` | Tests Completed (✅ Success): |
-| — | `=IF(B5>0,(B6+B7*0.5)/B5,0)` | Test Success Rate: |
-| — | `=COUNTIF(Testing_Compliance!C5:C114,` | Tier 1 - Critical Systems: |
-| — | `=SUMPRODUCT((Testing_Compliance!C5:C114=` | Tier 1 - Compliant: |
-| — | `=IF(B15>0,B16/B15,0)` | Tier 1 - Compliance Rate: |
-| — | `=IF(B19>0,B20/B19,0)` | Tier 2 - Compliance Rate: |
-| — | `=COUNTA(Issue_Remediation!A5:A114)` | Total Issues Identified: |
-| — | `=COUNTIF(Issue_Remediation!E5:E114,` | 🔴 Critical Issues: |
-| — | `=COUNTIF(Issue_Remediation!F5:F114,` | Open Issues (🔴): |
-| — | `=COUNTA(Evidence_Register!A5:A104)` | Evidence Items Collected: |
-| — | `=COUNTIF(Evidence_Register!H5:H104,` | Verified Evidence: |
-| — | `=IF(B39>=B41,` | Evidence Compliance: |
-| — | `=IF(Approval_Sign_Off!B26<>` | Level 1 - Assessor Completed: |
-| — | `=IF(Approval_Sign_Off!B37<>` | Level 2 - ISO Review: |
-| — | `=IF(Approval_Sign_Off!B49<>` | Level 3 - CISO Approval: |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: Test_Schedule
+| # | Sheet Name |
+|---|-----------|
+| 1 | Summary Dashboard |
+| 2 | Test Schedule |
+| 3 | Test Results Log |
+| 4 | Issue Remediation |
+| 5 | Testing Compliance |
+| 6 | Evidence Register |
+| 7 | Approval Sign-Off |
+| 8 | Instructions & Legend |
 
-**Data Rows:** 110 (rows 5–114) | **Frozen Panes:** A5
+### Color Palette
 
-### Columns
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #666666 | Dark Gray (Secondary Text) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-| Col | Header |
-|-----|--------|
-| A | Test ID |
-| B | System Name |
-| C | Test Type |
-| D | Criticality |
-| E | Required Frequency |
-| F | Scheduled Date |
-| G | Test Owner |
-| H | Notes / Prerequisites |
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Test ID |
+| 2 | System Name |
+| 3 | Test Type |
+| 4 | Criticality |
+| 5 | Required Frequency |
+| 6 | Scheduled Date |
+| 7 | Test Owner |
+| 8 | Notes / Prerequisites |
+| 9 | Result ID |
+| 10 | Test ID (Schedule) |
+| 11 | Test Date |
+| 12 | Result |
+| 13 | Actual Duration (hrs) |
+| 14 | Tested By |
+| 15 | Issues Found |
+| 16 | Detailed Notes |
+| 17 | Issue ID |
+| 18 | Related Test (Result ID) |
+| 19 | Issue Description |
+| 20 | Root Cause |
+| 21 | Severity |
+| 22 | Status |
+| 23 | Remediation Plan |
+| 24 | Target Resolution Date |
+| 25 | Last Test Date |
+| 26 | Days Since Last Test |
+| 27 | Compliance Status |
+| 28 | Next Test Due |
+| 29 | Evidence ID |
+| 30 | Evidence Type |
+| 31 | Description |
+| 32 | Related Sheet / Row |
+| 33 | Location / Path |
+| 34 | Date Collected |
+| 35 | Collected By |
+| 36 | Verification Status |
 
-## Sheet 4: Test_Results_Log
+### Data Validation Values
 
-**Data Rows:** 110 (rows 5–114) | **Frozen Panes:** A5
+All dropdown/list values used across sheets:
 
-### Columns
+```
+Backup Restore, Failover Test, Full DR Scenario, Tabletop Exercise
+Component Test, Integration Test, Tier 1 - Critical, Tier 2 - Important
+Tier 3 - Standard, Tier 4 - Low, Quarterly, Semi-Annual, Annual, Ad-Hoc
+Not Required, [!] Critical, [~] High, [.] Medium, [ ] Low, Test Report
+Screenshot, Log File, Video Recording, Configuration File, Runbook
+Issue Ticket, Sign-Off, Other, Draft, Under Review, Final
+Requires Remediation, Approved, Approved with Conditions, Rejected
+Requires Rework, Approve, Approve with Conditions, Reject, Require Rework
+Re-assessment required, Deferred
+```
 
-| Col | Header |
-|-----|--------|
-| A | Result ID |
-| B | Test ID (Schedule) |
-| C | System Name |
-| D | Test Type |
-| E | Test Date |
-| F | Result |
-| G | Actual Duration (hrs) |
-| H | Tested By |
-| I | Issues Found |
-| J | Detailed Notes |
-
----
-
-## Sheet 5: Issue_Remediation
-
-**Data Rows:** 110 (rows 5–114) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Issue ID |
-| B | Related Test (Result ID) |
-| C | Issue Description |
-| D | Root Cause |
-| E | Severity |
-| F | Status |
-| G | Remediation Plan |
-| H | Target Resolution Date |
-
----
-
-## Sheet 6: Testing_Compliance
-
-**Data Rows:** 110 (rows 5–114) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | System Name |
-| B | Test Type |
-| C | Criticality |
-| D | Required Frequency |
-| E | Last Test Date |
-| F | Days Since Last Test |
-| G | Compliance Status |
-| H | Next Test Due |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| FN | `=IF(E{current_row}=` |  |
-
----
-
-## Sheet 7: Evidence_Register
-
-**Data Rows:** 100 (rows 5–104) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Evidence Type |
-| C | Description |
-| D | Related Sheet/Row |
-| E | Location/Path |
-| F | Date Collected |
-| G | Collected By |
-| H | Verification Status |
-
----
-
-## Sheet 8: Approval_Sign_Off
-
-**Data Rows:** 100 (rows 5–104)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(Evidence_Register!A5:A104)` | Evidence Items Collected: |
-
----
-
-## Sheet 9: Base_Validations
+**Extracted:** 8 sheets, 36 columns, 42 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

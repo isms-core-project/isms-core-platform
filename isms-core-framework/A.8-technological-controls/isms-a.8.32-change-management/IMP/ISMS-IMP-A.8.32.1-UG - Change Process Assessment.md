@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Change Process Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.32.1-UG |
+| **Related Policy** | ISMS-POL-A.8.32 (Change Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.32 (Change Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Change Process Workflow & Management Procedures |
-| **Related Policy** | ISMS-POL-A.8.32, Section 2.1 (Change Process Requirements) |
-| **Purpose** | Document change management processes, assess procedural capabilities against policy requirements, and identify gaps in a technology-agnostic manner |
-| **Target Audience** | Change Manager, CAB Members, IT Operations, System Owners, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Process & Procedural |
-| **Review Cycle** | Quarterly or After Major Process Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial assessment specification for Change Process workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.32 (Change Management)
+- ISMS-IMP-A.8.32.2 (Change Types & Categories Assessment)
+- ISMS-IMP-A.8.32.3 (Environment Separation Assessment)
+- ISMS-IMP-A.8.32.4 (Testing & Validation Assessment)
+
+---
 
 ### Document Structure
 
@@ -32,8 +46,25 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 
-
 **Audience:** Change Manager, CAB Members, IT Operations, Process Owners
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Change Process Workflow | Document the end-to-end change management process workflow |
+| 3 | Approval Authority Matrix | Define approval authorities for different change types |
+| 4 | CAB Operations | Assess Change Advisory Board operations and effectiveness |
+| 5 | Communication | Evaluate change communication procedures and stakeholder notification |
+| 6 | Documentation Records | Assess change documentation and record-keeping |
+| 7 | Tool Capabilities | Evaluate change management tool capabilities and usage |
+| 8 | Metrics KPIs | Track change management performance metrics and KPIs |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -41,26 +72,26 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ### What This Assessment Evaluates
 
-This assessment documents HOW your organization manages changes to information systems. It evaluates the end-to-end change process from request initiation through post-implementation review, verifying that your organization has structured, controlled procedures for handling changes.
+This assessment documents HOW your organisation manages changes to information systems. It evaluates the end-to-end change process from request initiation through post-implementation review, verifying that your organisation has structured, controlled procedures for handling changes.
 
 ### Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - ISO/IEC 27001:2022 Control A.8.32: Change Management
 - ISMS-POL-A.8.32, Section 2.1 (Change Process Requirements)
 - Nine mandatory ISO 27002:2022 change management elements:
   - (a) Planning and impact assessment
-  - (b) Authorization
+  - (b) Authorisation
   - (c) Communication
-  - (d) Testing and acceptance (assessed in IMP-A.8.32.4)
+  - (d) Testing and acceptance
   - (e) Implementation
   - (f) Emergency procedures (assessed in IMP-A.8.32.2)
   - (g) Record keeping
   - (h) Documentation updates
   - (i) Continuity plan updates
 
-Change management failures are a leading cause of IT incidents. Proper change control prevents unauthorized modifications, reduces service disruptions, and ensures changes are properly tested and documented.
+Change management failures are a leading cause of IT incidents. Proper change control prevents unauthorised modifications, reduces service disruptions, and ensures changes are properly tested and documented.
 
 ### Key Principle
 
@@ -126,7 +157,7 @@ Whether you use ServiceNow, Jira, BMC Remedy, custom tools, or spreadsheets - th
 **Step 2: Change Process Documentation (Days 2-5)**
 
 - Document end-to-end change workflow (Sheet 2: Change_Process_Workflow)
-- Map process stages to your organization's actual procedures
+- Map process stages to your organisation's actual procedures
 - Identify process owners for each stage
 - Document standard durations
 - Identify tools/systems used at each stage
@@ -217,7 +248,7 @@ Whether you use ServiceNow, Jira, BMC Remedy, custom tools, or spreadsheets - th
 
 **What to document:**
 
-- Your organization's actual change lifecycle stages
+- Your organisation's actual change lifecycle stages
 - Process owner for each stage
 - Standard duration for each stage
 - Tools/systems used
@@ -350,7 +381,7 @@ Whether you use ServiceNow, Jira, BMC Remedy, custom tools, or spreadsheets - th
 - **Q:** "We don't always update documentation after changes"
   - **A:** Common problem - mark as "⚠️ Partial" and document target improvement
 - **Q:** "How long should we keep change records?"
-  - **A:** Policy requires [Organization-defined] - document YOUR retention period
+  - **A:** Policy requires [Organisation-defined] - document YOUR retention period
 
 **Evidence to provide:**
 
@@ -377,7 +408,7 @@ Whether you use ServiceNow, Jira, BMC Remedy, custom tools, or spreadsheets - th
 **Common Questions:**
 
 - **Q:** "We use spreadsheets, not ITSM tools"
-  - **A:** Document that - this may be compliant for small organizations, but identify capability gaps
+  - **A:** Document that - this may be compliant for small organisations, but identify capability gaps
 - **Q:** "Our tool can't do X"
   - **A:** Document tool limitation - this informs future tool investment decisions
 
@@ -572,7 +603,7 @@ Whether you use ServiceNow, Jira, BMC Remedy, custom tools, or spreadsheets - th
 
 **Solution:** Verify standard changes are logged (even if abbreviated). If not logged, this is gap.
 
-### Mistake #8: "We track metrics but never analyze them"
+### Mistake #8: "We track metrics but never analyse them"
 
 **Problem:** Metrics without analysis provide no value.
 
@@ -755,7 +786,7 @@ Common reasons for rejection:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Change without control is chaos; control without change is stagnation."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

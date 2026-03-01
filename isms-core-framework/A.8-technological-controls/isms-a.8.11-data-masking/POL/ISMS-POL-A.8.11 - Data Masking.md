@@ -43,7 +43,6 @@
 - ISMS-IMP-A.8.11.2-UG/TG (Masking Technique Selection & Requirements)
 - ISMS-IMP-A.8.11.3-UG/TG (Environment Coverage Assessment)
 - ISMS-IMP-A.8.11.4-UG/TG (Testing & Validation Framework)
-- ISMS-IMP-A.8.11.5-UG/TG (Compliance Dashboard)
 - ISMS-CTX-A.8.11 (Data Masking Technical Reference - Technical Reference Only)
 - ISO/IEC 27001:2022 Control A.8.11
 
@@ -51,13 +50,13 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for data masking controls to protect sensitive information confidentiality in accordance with ISO/IEC 27001:2022 Control A.8.11.
+This policy establishes [Organisation]'s requirements for data masking controls to protect sensitive information confidentiality in accordance with ISO/IEC 27001:2022 Control A.8.11.
 
-**Scope**: This policy applies to all sensitive data categories (PII, financial, health, credentials, proprietary) across all environments (production, test, development, analytics, training, backup); all masking techniques (redaction, substitution, tokenization, pseudonymization, anonymization); and all organizational personnel, contractors, and third parties handling sensitive data.
+**Scope**: This policy applies to all sensitive data categories (PII, financial, health, credentials, proprietary) across all environments (production, test, development, analytics, training, backup); all masking techniques (redaction, substitution, tokenization, pseudonymization, anonymization); and all organisational personnel, contractors, and third parties handling sensitive data.
 
-**Purpose**: Define organizational requirements for data masking control implementation and governance. This policy establishes WHAT data requires masking, WHICH techniques are approved, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.11 (UG/TG variants).
+**Purpose**: Define organisational requirements for data masking control implementation and governance. This policy establishes WHAT data requires masking, WHICH techniques are approved, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.11 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, HIPAA, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, HIPAA, FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -67,9 +66,9 @@ This policy establishes [Organization]'s requirements for data masking controls 
 
 **ISO/IEC 27001:2022 Annex A.8.11 - Data Masking**
 
-> *Data masking should be used in accordance with the organization's topic-specific policy on access control and other related topic-specific policies, and business requirements, taking applicable legislation into consideration.*
+> *Data masking should be used in accordance with the organisation's topic-specific policy on access control and other related topic-specific policies, and business requirements, taking applicable legislation into consideration.*
 
-**Control Objective**: Establish organizational policy for data masking controls protecting sensitive information confidentiality by obscuring data when full visibility is not required for legitimate business purposes.
+**Control Objective**: Establish organisational policy for data masking controls protecting sensitive information confidentiality by obscuring data when full visibility is not required for legitimate business purposes.
 
 **This Policy Addresses**:
 
@@ -77,25 +76,25 @@ This policy establishes [Organization]'s requirements for data masking controls 
 - Approved masking technique standards and selection criteria
 - Environment-specific masking coverage requirements (production, non-production)
 - Testing and validation requirements ensuring masking effectiveness
-- Organizational roles and responsibilities for data masking governance
+- Organisational roles and responsibilities for data masking governance
 - Exception and incident management frameworks
-- Integration with [Organization]'s risk assessment and treatment processes
+- Integration with [Organisation]'s risk assessment and treatment processes
 
 ## What This Policy Does
 
 This policy:
 
-- **Defines** data masking requirements aligned with data classification and organizational risk appetite
+- **Defines** data masking requirements aligned with data classification and organisational risk appetite
 - **Establishes** governance framework for data masking decision-making and accountability
 - **Specifies** approved masking techniques and selection criteria
 - **References** applicable regulatory requirements per ISMS-POL-00
-- **Identifies** organizational roles and responsibilities for masking controls
+- **Identifies** organisational roles and responsibilities for masking controls
 
 ## What This Policy Does NOT Do
 
 This policy does NOT:
 
-- **Specify masking tool vendors or products** (technology selection based on [Organization]'s risk assessment)
+- **Specify masking tool vendors or products** (technology selection based on [Organisation]'s risk assessment)
 - **Define specific masking configurations** (see ISMS-IMP-A.8.11 Implementation Guides)
 - **Provide system-specific procedures** (see ISMS-IMP-A.8.11 Assessment Guides)
 - **Replace data classification policy** (masking builds on existing classification scheme per A.5.12)
@@ -120,7 +119,7 @@ This policy does NOT:
   - Health information (medical records, diagnoses, treatment data)
   - Authentication credentials (passwords, tokens, API keys, secrets)
   - Proprietary business information (trade secrets, strategic data, pricing)
-  - Any data classified as Confidential or Restricted per [Organization]'s classification scheme
+  - Any data classified as Confidential or Restricted per [Organisation]'s classification scheme
 - All environments where sensitive data exists:
   - Production systems (where masking is operationally appropriate)
   - Test and QA environments
@@ -138,17 +137,17 @@ This policy does NOT:
   - Machine learning model training
   - User acceptance testing (UAT)
   - Analytics and business intelligence
-- All organizational personnel and third parties:
+- All organisational personnel and third parties:
   - Employees handling sensitive data
   - Contractors and consultants
   - Third-party service providers
   - Outsourced development teams
-  - Cloud service providers processing organizational data
+  - Cloud service providers processing organisational data
 
 **Out of Scope**:
 
 - Public information (unclassified data requiring no masking)
-- Data classified as "Public" per [Organization]'s classification scheme (masking provides no protection value)
+- Data classified as "Public" per [Organisation]'s classification scheme (masking provides no protection value)
 - Encrypted data protection (covered under A.8.24 Cryptography Policy - masking and encryption serve different purposes)
 - Data deletion and destruction (covered under A.8.10 Information Deletion)
 - Network-level access controls (covered under A.8.20 Networks Security)
@@ -164,8 +163,8 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 
 | Regulation | Applicability | Key Data Masking Requirements |
 |------------|---------------|-------------------------------|
-| **Swiss nDSG** | All Swiss operations | Art. 8 - Data protection by design including data minimization; Art. 25 - Appropriate technical and organizational measures for personal data protection |
-| **EU GDPR** | When processing EU personal data | Art. 5(1)(c) - Data minimization principle; Art. 25 - Data protection by design and default; Art. 32 - Security of processing including pseudonymization; Art. 89 - Safeguards for research/statistics including pseudonymization |
+| **Swiss nDSG** | All Swiss operations | Art. 8 - Data protection by design including data minimisation; Art. 25 - Appropriate technical and organisational measures for personal data protection |
+| **EU GDPR** | When processing EU personal data | Art. 5(1)(c) - Data minimisation principle; Art. 25 - Data protection by design and default; Art. 32 - Security of processing including pseudonymization; Art. 89 - Safeguards for research/statistics including pseudonymization |
 | **ISO/IEC 27001:2022** | Certification scope | Control A.8.11 - Documented data masking policy, implemented controls, evidence of effectiveness |
 
 **Tier 2: Conditional Applicability**
@@ -176,9 +175,9 @@ Apply only when specific business conditions trigger applicability:
 |-----------|-------------------|---------------------------|
 | **PCI DSS v4.0.1** | Processing payment card data | Req. 3.4 - PAN rendered unreadable (masking, truncation, hashing, tokenization); Req. 3.5 - Primary Account Number (PAN) masked when displayed (minimum first 6 and last 4 digits); Req. 12.3 - Data usage policies for non-production environments |
 | **HIPAA Privacy Rule** | US healthcare data (ePHI) | §164.514(a)-(b) - De-identification standards (Expert Determination or Safe Harbor method); §164.514(c) - Re-identification prohibition; §164.530(c) - Administrative safeguards for de-identified data |
-| **FINMA** | Swiss regulated financial institution | Technical and organizational measures per risk assessment; client data protection requirements; outsourcing risk management (FINMA Circular 2018/3) |
+| **FINMA** | Swiss regulated financial institution | Technical and organisational measures per risk assessment; client data protection requirements; outsourcing risk management (FINMA Circular 2018/3) |
 | **DORA** | EU financial services entity (ICT risk) | Art. 9 - ICT risk management framework including data protection controls; Art. 28 - ICT third-party risk management including data security |
-| **NIS2** | Essential/important entity (EU) | Art. 21 - Cybersecurity risk management measures including data security; Data minimization and pseudonymization for risk reduction |
+| **NIS2** | Essential/important entity (EU) | Art. 21 - Cybersecurity risk management measures including data security; Data minimisation and pseudonymization for risk reduction |
 | **ISO/IEC 27701** | Privacy extension (if implemented) | Control 7.2.2 - Identify basis for PII processing; Control 7.3.2 - Determine PII de-identification and deletion; Control 7.4.5 - PII de-identification and deletion processes |
 
 **Tier 3: Informational Guidance**
@@ -191,7 +190,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - OWASP Data Security Cheat Sheet
 - Cloud Security Alliance (CSA) guidance on cloud data protection
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap. Tier 2 applicability is documented in [Organization]'s regulatory compliance register and reviewed annually.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap. Tier 2 applicability is documented in [Organisation]'s regulatory compliance register and reviewed annually.
 
 ---
 
@@ -199,13 +198,13 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ## Data Classification and Identification Requirements
 
-[Organization] implements data classification as the foundation for data masking decisions.
+[Organisation] implements data classification as the foundation for data masking decisions.
 
 **Data Classification Alignment**:
 
-Data masking requirements SHALL align with [Organization]'s information classification policy (per Control A.5.12).
+Data masking requirements SHALL align with [Organisation]'s information classification policy (per Control A.5.12).
 
-| [Organization] Classification | Masking Requirement | Rationale |
+| [Organisation] Classification | Masking Requirement | Rationale |
 |-------------------------------|---------------------|-----------|
 | **Restricted** | Mandatory masking in ALL non-production environments | Highest sensitivity - exposure causes severe harm |
 | **Confidential** | Mandatory masking in non-production; risk-based in production | High sensitivity - exposure causes substantial harm |
@@ -227,7 +226,7 @@ The following data categories SHALL be assessed for masking requirements:
 
 **Data Discovery Requirements**:
 
-[Organization] SHALL maintain inventory of sensitive data requiring masking:
+[Organisation] SHALL maintain inventory of sensitive data requiring masking:
 
 - Systems and databases containing sensitive data
 - Data elements (tables, columns, fields) requiring masking
@@ -241,7 +240,7 @@ The following data categories SHALL be assessed for masking requirements:
 
 Data Owners SHALL:
 
-- Classify data per [Organization]'s classification scheme
+- Classify data per [Organisation]'s classification scheme
 - Determine masking requirements based on data sensitivity and business need
 - Approve masking techniques for their data domains
 - Review and approve exceptions to masking requirements
@@ -249,7 +248,7 @@ Data Owners SHALL:
 
 ## Masking Technique Standards
 
-[Organization] implements approved masking techniques selected based on data type, use case, and regulatory requirements.
+[Organisation] implements approved masking techniques selected based on data type, use case, and regulatory requirements.
 
 **Approved Masking Techniques**:
 
@@ -300,7 +299,7 @@ New masking techniques or significant modifications to approved techniques SHALL
 
 ## Environment Coverage Requirements
 
-[Organization] implements masking controls to achieve appropriate coverage across all environments processing sensitive data.
+[Organisation] implements masking controls to achieve appropriate coverage across all environments processing sensitive data.
 
 **Coverage Principle**: Sensitive data SHALL be masked in environments where full data visibility is not required for legitimate business operations.
 
@@ -318,7 +317,7 @@ New masking techniques or significant modifications to approved techniques SHALL
 
 **Coverage Verification**:
 
-[Organization] SHALL verify masking coverage through:
+[Organisation] SHALL verify masking coverage through:
 
 - Environment inventory documenting all systems with sensitive data access
 - Coverage gap analysis identifying unprotected sensitive data
@@ -332,7 +331,7 @@ In production environments, masking MAY be implemented where:
 - Role-based access requires some users see masked data (DDM)
 - Reports or exports to external parties require masking
 - Compliance requirements mandate masking (e.g., PCI DSS v4.0.1 display rules)
-- User interfaces display sensitive data to unauthorized personnel
+- User interfaces display sensitive data to unauthorised personnel
 
 Production masking does NOT replace access controls but provides defense in depth.
 
@@ -340,7 +339,7 @@ Production masking does NOT replace access controls but provides defense in dept
 
 ## Testing and Validation Requirements
 
-[Organization] validates masking effectiveness to ensure sensitive data protection.
+[Organisation] validates masking effectiveness to ensure sensitive data protection.
 
 **Testing Requirements**:
 
@@ -389,7 +388,7 @@ When masking testing identifies failures:
 
 ## Logging and Monitoring
 
-[Organization] implements logging of data masking activities to support security monitoring and compliance verification.
+[Organisation] implements logging of data masking activities to support security monitoring and compliance verification.
 
 **Logging Requirements**:
 
@@ -412,7 +411,7 @@ The following masking-related events SHALL be logged where technically feasible:
 
 **Monitoring Requirements**:
 
-[Organization] monitors for:
+[Organisation] monitors for:
 
 - Masking process failures indicating sensitive data exposure risk
 - Repeated masking bypass attempts indicating potential misuse
@@ -421,7 +420,7 @@ The following masking-related events SHALL be logged where technically feasible:
 
 **Privacy Compliance**:
 
-Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users are informed of monitoring through acceptable use policy. Access to logs is restricted to authorized personnel with legitimate need (security, audit, compliance).
+Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users are informed of monitoring through acceptable use policy. Access to logs is restricted to authorised personnel with legitimate need (security, audit, compliance).
 
 **Implementation Note**: Logging configuration, monitoring procedures, and alert definitions are documented in ISMS-IMP-A.8.11-4 (Testing & Validation Framework).
 
@@ -442,10 +441,10 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 
 - Accountable for overall data masking policy and program effectiveness
 - Approving high-risk exceptions and policy changes
-- Defining organizational risk appetite for data exposure
+- Defining organisational risk appetite for data exposure
 - Escalating critical data protection issues to Executive Management
 - Annual policy review and approval
-- Approving new masking techniques for organizational use
+- Approving new masking techniques for organisational use
 
 **Data Protection Officer (DPO)**:
 
@@ -518,7 +517,7 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 
 ## Assessment and Verification
 
-[Organization] verifies data masking control effectiveness through structured assessment.
+[Organisation] verifies data masking control effectiveness through structured assessment.
 
 **Assessment Domains**:
 
@@ -526,7 +525,7 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 2. **Masking Technique Selection**: Approved techniques, implementation status, configuration
 3. **Environment Coverage**: Masking implementation across all environments
 4. **Testing & Validation**: Effectiveness testing, re-identification risk, compliance validation
-5. **Compliance Dashboard**: Consolidated metrics, gap analysis, remediation tracking
+5. **Testing & Validation** (ISMS-IMP-A.8.11.4): Effectiveness testing, re-identification risk, compliance validation (Summary Dashboards consolidate metrics)
 
 **Assessment Frequency**:
 
@@ -616,7 +615,7 @@ Active exceptions are:
 | **Masking process failure exposing sensitive data** | Critical | Immediate - Stop exposure, investigate |
 | **Successful re-identification of masked data** | High | Immediate - Assess technique weakness |
 | **Masking bypass or circumvention attempt** | High | Immediate - Investigate and prevent recurrence |
-| **Unauthorized access to token vault or pseudonymization keys** | Critical | Immediate - Key compromise response |
+| **Unauthorised access to token vault or pseudonymization keys** | Critical | Immediate - Key compromise response |
 | **Masking configuration error** | Medium | Urgent - Correct configuration, validate |
 | **Data exfiltration from environment with insufficient masking** | Critical | Immediate - Incident response, breach notification |
 
@@ -632,7 +631,7 @@ Active exceptions are:
 
 **Critical Incidents**:
 
-Unmasked sensitive data exposure in non-production or unauthorized environments is treated as high-priority security incident:
+Unmasked sensitive data exposure in non-production or unauthorised environments is treated as high-priority security incident:
 
 - Immediate containment: Stop data flow, delete exposed data
 - Scope assessment: Determine extent of exposure (what data, how long, who accessed)
@@ -660,7 +659,7 @@ DPO and Legal/Compliance SHALL be involved in breach notification decisions.
 - **Triggers**: 
   - Regulatory changes (GDPR updates, new sector regulations)
   - Major incidents exposing policy gaps
-  - Significant organizational changes (mergers, new data processing)
+  - Significant organisational changes (mergers, new data processing)
   - Technology changes (new masking capabilities, tool changes)
   - Audit findings requiring policy updates
   - Data classification scheme changes
@@ -682,7 +681,7 @@ DPO and Legal/Compliance SHALL be involved in breach notification decisions.
 
 **Policy Communication**:
 
-Policy published in ISMS document repository. Changes communicated organization-wide:
+Policy published in ISMS document repository. Changes communicated organisation-wide:
 
 - Email notification to all affected stakeholders
 - Intranet announcement highlighting changes
@@ -750,18 +749,18 @@ Policy published in ISMS document repository. Changes communicated organization-
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
-- Data masking controls selected based on [Organization]'s risk assessment
+- Data masking controls selected based on [Organisation]'s risk assessment
 - Data classification determines masking requirements
 - Risk treatment plans document data masking control implementation
 - Residual risks (where masking not feasible) documented and accepted
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Control A.8.11 applicability justified in [Organization]'s SoA
+- Control A.8.11 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 - Control effectiveness measured through assessment program
 
@@ -812,12 +811,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
   - Regulatory compliance validation
   - Incident response procedures
 
-- **ISMS-IMP-A.8.11-5**: Compliance Dashboard
-  - Consolidated compliance reporting
-  - Executive summary metrics
-  - Gap analysis and prioritization
-  - Remediation tracking
-  - Audit evidence compilation
 
 **Technical Reference** (NOT ISMS):
 
@@ -851,7 +844,7 @@ This policy addresses data masking requirements from:
 
 | Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS v4.0.1* | HIPAA* | FINMA* | DORA/NIS2* |
 |---------------------|-----------|---------|-----------|---------|--------|--------|------------|
-| Data minimization | Art. 8, 25 | Art. 5(1)(c) | A.8.11 | Req. 12.3 | §164.514 | Risk-Based | Art. 21 (NIS2) |
+| Data minimisation | Art. 8, 25 | Art. 5(1)(c) | A.8.11 | Req. 12.3 | §164.514 | Risk-Based | Art. 21 (NIS2) |
 | Pseudonymization | Art. 8 | Art. 32(1)(a), Art. 89 | A.8.11 | N/A | §164.514(b) | Risk-Based | Risk-Based |
 | Masking in non-production | Art. 8 | Art. 25, 32 | A.8.11 | Req. 3.4, 12.3 | §164.514 | Risk-Based | Risk-Based |
 | Testing & validation | Art. 8 | Art. 25, 32 | A.8.11 | Req. 11.3 | §164.308(a)(8) | Risk-Based | Art. 9 (DORA) |
@@ -860,7 +853,7 @@ This policy addresses data masking requirements from:
 
 *Conditional applicability per ISMS-POL-00
 
-**Detailed Regulatory Requirements**: Specific regulatory interpretation, compliance verification procedures, and evidence mapping are documented in ISMS-IMP-A.8.11-5 (Compliance Dashboard).
+**Detailed Regulatory Requirements**: Specific regulatory interpretation, compliance verification procedures, and evidence mapping are documented in the relevant ISMS-IMP-A.8.11 assessment workbooks.
 
 ## Document Relationship
 
@@ -887,7 +880,7 @@ Implementation Layer (Assessment & Evidence - ISMS Governed)
         ├── ISMS-IMP-A.8.11-2: Masking Technique Selection
         ├── ISMS-IMP-A.8.11-3: Environment Coverage
         ├── ISMS-IMP-A.8.11-4: Testing & Validation
-        └── ISMS-IMP-A.8.11-5: Compliance Dashboard
+        └── ISMS-IMP-A.8.11-4: Testing & Validation
 ```
 
 ---
@@ -926,28 +919,28 @@ Implementation Layer (Assessment & Evidence - ISMS Governed)
 
 **Re-identification**: Process of determining the original identity of a data subject from anonymized or pseudonymized data, either through reverse engineering, linking with external data, or other techniques.
 
-**Sensitive Data**: Any information that, if disclosed, could cause harm to individuals or [Organization], including PII, financial data, health data, credentials, and proprietary information. Typically classified as Confidential or Restricted.
+**Sensitive Data**: Any information that, if disclosed, could cause harm to individuals or [Organisation], including PII, financial data, health data, credentials, and proprietary information. Typically classified as Confidential or Restricted.
 
 **Static Data Masking (SDM)**: Permanent replacement of sensitive data with masked values in non-production databases or datasets. Original data is irreversibly replaced; masking occurs once during data provisioning.
 
 **Substitution**: Replacement of sensitive data with realistic but fictitious values that maintain data format, structure, and utility for intended use cases (testing, development, analytics).
 
-**Tokenization**: Replacing sensitive data with non-sensitive tokens (surrogate values); original data stored in secure token vault enabling reversibility when authorized.
+**Tokenization**: Replacing sensitive data with non-sensitive tokens (surrogate values); original data stored in secure token vault enabling reversibility when authorised.
 
 ---
 
 # Annex A: Masking Technique Approval Framework
 
-**Scope**: This annex defines the approval framework and selection criteria for data masking techniques. All approved techniques are listed in policy Section 2.2. Organizations select techniques appropriate to their data types, use cases, and risk profiles.
+**Scope**: This annex defines the approval framework and selection criteria for data masking techniques. All approved techniques are listed in policy Section 2.2. Organisations select techniques appropriate to their data types, use cases, and risk profiles.
 
 ## A.1 Technique Approval Criteria
 
-New masking techniques or modifications to approved techniques SHALL meet the following criteria before organizational approval:
+New masking techniques or modifications to approved techniques SHALL meet the following criteria before organisational approval:
 
 **Security Effectiveness**:
 
 - Technique SHALL obscure original sensitive data effectively
-- Original data SHALL NOT be recoverable without authorized access to keys/vaults (for reversible techniques)
+- Original data SHALL NOT be recoverable without authorised access to keys/vaults (for reversible techniques)
 - Technique SHALL resist common re-identification attacks appropriate to data sensitivity
 - Technique SHALL be based on proven algorithms or industry-accepted practices
 
@@ -962,11 +955,11 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 
 **Operational Feasibility**:
 
-- Technique SHALL be implementable within [Organization]'s technical environment
+- Technique SHALL be implementable within [Organisation]'s technical environment
 - Technique SHALL maintain data utility for intended use cases (testing, analytics, reporting)
 - Technique SHALL preserve data format and referential integrity where required
 - Performance impact SHALL be acceptable for operational requirements
-- Technique SHALL be maintainable by [Organization]'s technical staff
+- Technique SHALL be maintainable by [Organisation]'s technical staff
 
 **Documentation Requirements**:
 
@@ -1024,7 +1017,7 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 
 - DDM SHALL be enforced at database or application layer (not client-side)
 - DDM rules SHALL be based on documented user roles and least privilege principle
-- DDM SHALL NOT be bypassable by users without appropriate authorization
+- DDM SHALL NOT be bypassable by users without appropriate authorisation
 - DDM SHALL log all access to masked fields for audit purposes
 - Performance impact SHALL be assessed and within acceptable limits
 
@@ -1042,20 +1035,20 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 - Tokens SHALL be format-preserving where required (e.g., credit card format)
 - Token-to-value mapping SHALL be one-to-one (deterministic tokenization)
 - Token vault SHALL be backed up separately with appropriate security
-- De-tokenization SHALL require explicit authorization and be logged
+- De-tokenization SHALL require explicit authorisation and be logged
 
 **Quality Criteria**:
 
 - Vault availability meets operational requirements
 - Key management for vault encryption follows A.8.24 Cryptography Policy
-- Token collision risk minimized through appropriate token space
+- Token collision risk minimised through appropriate token space
 
 ### A.3.4 Pseudonymization (GDPR Compliance)
 
 **Mandatory Requirements**:
 
 - Pseudonymization keys SHALL be stored separately from pseudonymized data
-- Re-identification SHALL require separate authorization beyond data access
+- Re-identification SHALL require separate authorisation beyond data access
 - Pseudonymization SHALL meet GDPR requirements (Art. 32(1)(a), Art. 89) when used for GDPR compliance
 - Pseudonymization technique SHALL be validated by DPO for GDPR adequacy
 - Key management SHALL follow A.8.24 Cryptography Policy
@@ -1103,7 +1096,7 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 
 All masking techniques SHALL be validated for:
 
-1. **Effectiveness**: Original data not recoverable (irreversible techniques) or only with authorized keys (reversible)
+1. **Effectiveness**: Original data not recoverable (irreversible techniques) or only with authorised keys (reversible)
 2. **Format preservation**: Data format matches original where required
 3. **Referential integrity**: Cross-table relationships maintained
 4. **Regulatory compliance**: Technique meets requirements for intended use case
@@ -1202,7 +1195,7 @@ Examples:
 - [ ] Time-limited access (describe duration and justification)
 - [ ] Additional audit logging (describe what is logged)
 - [ ] User training and acceptable use acknowledgment
-- [ ] Data minimization (reduced dataset size/columns)
+- [ ] Data minimisation (reduced dataset size/columns)
 - [ ] Other: [Specify]
 
 **Compensating Control Effectiveness**:
@@ -1316,4 +1309,4 @@ Examples:
 
 *This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.11 (UG/TG). Technical reference information is provided in ISMS-CTX-A.8.11 (NOT ISMS).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

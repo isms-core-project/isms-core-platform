@@ -77,7 +77,7 @@ This document provides technical reference patterns for integrating environment 
 
 This document does NOT:
 
-- Define [Organization]'s required or prohibited CI/CD platforms
+- Define [Organisation]'s required or prohibited CI/CD platforms
 - Establish mandatory pipeline configurations
 - Create compliance obligations or audit criteria
 - Replace ISMS-POL-A.8.31 policy requirements
@@ -90,7 +90,7 @@ This document does NOT:
 
 **This Document**: Provides **HOW** those requirements can be implemented in CI/CD platforms (Jenkins, GitLab CI, GitHub Actions, etc.)
 
-Organizations choose CI/CD platforms and configurations appropriate to their needs. The requirement is controlled promotion; the implementation varies.
+Organisations choose CI/CD platforms and configurations appropriate to their needs. The requirement is controlled promotion; the implementation varies.
 
 ---
 
@@ -150,7 +150,7 @@ Organizations choose CI/CD platforms and configurations appropriate to their nee
 **Production Deployment Gate Requirements**:
 
 - Explicit manual approval required
-- Approval from authorized personnel only (operations team, change manager)
+- Approval from authorised personnel only (operations team, change manager)
 - Deployment restricted to approved change windows
 - Rollback plan documented and accessible
 - Smoke tests defined for post-deployment validation

@@ -62,11 +62,11 @@
 
 ## Executive Summary
 
-This document serves as the **master index** for [Organization]'s Supplier and Cloud Services Security framework, implementing ISO/IEC 27001:2022 Controls A.5.19 through A.5.23.
+This document serves as the **master index** for [Organisation]'s Supplier and Cloud Services Security framework, implementing ISO/IEC 27001:2022 Controls A.5.19 through A.5.23.
 
 **Purpose**: Establish mandatory requirements for managing information security risks associated with external suppliers, contractual agreements, ICT supply chain dependencies, ongoing supplier relationship management, and cloud service lifecycle.
 
-**Scope**: All supplier relationships involving access to organizational information or systems, all cloud services (IaaS, PaaS, SaaS, security services), all contractual agreements with external service providers, and all ICT products with supply chain dependencies.
+**Scope**: All supplier relationships involving access to organisational information or systems, all cloud services (IaaS, PaaS, SaaS, security services), all contractual agreements with external service providers, and all ICT products with supply chain dependencies.
 
 **Critical Principle - "Supplier Trust Must Be Verified, Not Assumed"**: This framework requires evidence-based validation of supplier security posture through systematic due diligence, contractual commitments with enforceable terms, and continuous monitoring throughout the relationship lifecycle. Supplier claims without third-party attestation (SOC 2, ISO 27001, regulatory compliance certificates), contracts without enforceable security clauses and audit rights, and relationships without periodic review create unacceptable risks. Trust-but-verify through documented evidence is non-negotiable.
 
@@ -80,7 +80,7 @@ This document serves as the **master index** for [Organization]'s Supplier and C
 
 **Approach**: This framework employs a **documented, systematic process** where assessment tools are programmatically generated from controlled specifications rather than manually created. This ensures consistency, repeatability, and version control - if assessment requirements change, regenerating updated workbooks follows documented procedures rather than error-prone manual editing. The principle is straightforward: what can be created from documented specifications can be understood completely, maintained reliably, and audited objectively.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR Article 28 (processor agreements and security requirements), ISO/IEC 27001:2022, and conditional requirements for DORA (ICT third-party risk register, concentration risk assessment, exit strategies per Art. 28-31), NIS2 (supply chain security measures, 24-hour incident notification per Art. 21-23), EU AI Act (high-risk AI system provider requirements), and US CLOUD Act jurisdictional considerations where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR Article 28 (processor agreements and security requirements), ISO/IEC 27001:2022, and conditional requirements for DORA (ICT third-party risk register, concentration risk assessment, exit strategies per Art. 28-31), NIS2 (supply chain security measures, 24-hour incident notification per Art. 21-23), EU AI Act (high-risk AI system provider requirements), and US CLOUD Act jurisdictional considerations where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -88,7 +88,7 @@ This document serves as the **master index** for [Organization]'s Supplier and C
 
 **ISO/IEC 27001:2022 Annex A.5.19-23 — Supplier and Cloud Services Security**
 
-This policy framework provides organizational governance for five related controls covering the complete supplier and cloud service lifecycle:
+This policy framework provides organisational governance for five related controls covering the complete supplier and cloud service lifecycle:
 
 ### A.5.19 - Information Security in Supplier Relationships
 
@@ -100,7 +100,7 @@ This policy framework provides organizational governance for five related contro
 
 - Supplier relationships shall be managed through defined processes covering entire lifecycle (selection, onboarding, operation, exit)
 - Suppliers shall be identified and classified based on type of access, data sensitivity, and service criticality
-- Due diligence shall be conducted before granting supplier access to organizational information or systems
+- Due diligence shall be conducted before granting supplier access to organisational information or systems
 - Supplier security requirements shall be defined based on risk classification and data classification
 - Supplier performance and security posture shall be monitored throughout relationship duration
 - Supplier exit procedures shall be established to ensure safe termination and data return
@@ -111,15 +111,15 @@ This policy framework provides organizational governance for five related contro
 
 ### A.5.20 - Addressing Information Security in Supplier Agreements
 
-> *Relevant information security requirements should be established and agreed upon with each supplier that may access, process, store, communicate or provide IT infrastructure components for the organization's information.*
+> *Relevant information security requirements should be established and agreed upon with each supplier that may access, process, store, communicate or provide IT infrastructure components for the organisation's information.*
 
 **Control Objective**: Ensure information security requirements are contractually binding and enforceable throughout the supplier relationship.
 
 **ISO/IEC 27002:2022 Guidance Summary**:
 
 - Information security requirements shall be included in all supplier contracts and agreements
-- Requirements shall address confidentiality, integrity, and availability of organizational information
-- Contracts shall define access controls, authentication requirements, and authorization procedures
+- Requirements shall address confidentiality, integrity, and availability of organisational information
+- Contracts shall define access controls, authentication requirements, and authorisation procedures
 - Data protection and privacy obligations shall be specified per applicable regulations (GDPR Art. 28, nDSG)
 - Incident notification and response requirements shall be documented with specific timelines
 - Audit rights and compliance verification mechanisms shall be established
@@ -150,7 +150,7 @@ This policy framework provides organizational governance for five related contro
 
 ### A.5.22 - Monitoring, Review and Change Management of Supplier Services
 
-> *The organization should regularly monitor, review, evaluate and manage changes in supplier information security practices and service delivery.*
+> *The organisation should regularly monitor, review, evaluate and manage changes in supplier information security practices and service delivery.*
 
 **Control Objective**: Ensure ongoing validation of supplier security posture and controlled management of changes to supplier services.
 
@@ -160,7 +160,7 @@ This policy framework provides organizational governance for five related contro
 - Periodic reviews of supplier security practices shall be conducted based on risk classification
 - Changes to supplier services shall be managed through formal change control procedures
 - Supplier compliance with agreements shall be verified through audits, attestations, or certifications
-- Supplier incidents and security events shall be tracked, analyzed, and responded to appropriately
+- Supplier incidents and security events shall be tracked, analysed, and responded to appropriately
 - Supplier audits or third-party attestations (SOC 2, ISO 27001) shall be obtained and reviewed
 - Relationship with suppliers shall be maintained through regular communication and meetings
 - Supplier service degradation or non-compliance shall trigger escalation and remediation procedures
@@ -169,7 +169,7 @@ This policy framework provides organizational governance for five related contro
 
 ### A.5.23 - Information Security for Use of Cloud Services
 
-> *Processes for acquisition, use, management and exit from cloud services should be established in accordance with the organization's information security requirements.*
+> *Processes for acquisition, use, management and exit from cloud services should be established in accordance with the organisation's information security requirements.*
 
 **Control Objective**: Manage cloud service lifecycle systematically from selection through secure exit.
 
@@ -178,7 +178,7 @@ This policy framework provides organizational governance for five related contro
 - Cloud service acquisition shall follow risk-based selection process with security evaluation
 - Cloud service agreements shall address information security requirements and shared responsibility model
 - Shared responsibility model shall be explicitly understood and documented (provider vs customer controls)
-- Cloud service configuration shall be secured according to vendor baselines and organizational requirements
+- Cloud service configuration shall be secured according to vendor baselines and organisational requirements
 - Cloud data residency and sovereignty requirements shall be enforced per regulatory obligations
 - Cloud service monitoring and logging shall be implemented with appropriate retention
 - Cloud service exit strategy shall be planned and tested including data export and portability
@@ -205,7 +205,7 @@ Establish mandatory requirements for managing information security risks associa
 
 This framework applies to:
 
-- All supplier relationships involving access to organizational information or systems
+- All supplier relationships involving access to organisational information or systems
 - All cloud services (IaaS, PaaS, SaaS, XaaS models including security services, collaboration platforms, storage)
 - All contractual agreements with external service providers
 - All ICT products and services with supply chain dependencies
@@ -216,7 +216,7 @@ This framework applies to:
 This framework does not cover:
 
 - One-time purchases without ongoing service relationship or data access
-- Suppliers with no access to organizational information assets
+- Suppliers with no access to organisational information assets
 - Internal service providers (covered under separate HR/operational policies)
 
 ---
@@ -337,7 +337,7 @@ When Python generators are executed, they produce:
 - What security controls are enabled? (encryption, MFA, network segmentation, logging)
 - How is access managed? (least privilege, role-based access, privileged account monitoring)
 - What monitoring is deployed? (security events, performance, compliance drift)
-- What is shared responsibility division? (organization vs. provider controls)
+- What is shared responsibility division? (organisation vs. provider controls)
 
 **Domain 4 - Ongoing Governance & Risk Management**:
 
@@ -461,7 +461,7 @@ When Python generators are executed, they produce:
 
 ## Competence Requirements
 
-Personnel performing supplier and cloud security assessment activities SHALL meet the following competence requirements, documented in [Organization ISMS Training and Competence Matrix]:
+Personnel performing supplier and cloud security assessment activities SHALL meet the following competence requirements, documented in [Organisation ISMS Training and Competence Matrix]:
 
 **Procurement Staff:**
 
@@ -576,7 +576,7 @@ Suppliers are classified using **quantitative scoring** across six dimensions:
 
 **Risk Methodology Integration:**
 
-This supplier risk classification methodology operates within [Organization]'s enterprise risk assessment framework documented in [ISMS Risk Assessment Methodology]. Supplier risk scores feed into the organizational risk register per ISO 27001 Clause 6.1.2 requirements, enabling:
+This supplier risk classification methodology operates within [Organisation]'s enterprise risk assessment framework documented in [ISMS Risk Assessment Methodology]. Supplier risk scores feed into the organisational risk register per ISO 27001 Clause 6.1.2 requirements, enabling:
 
 - Consistent risk evaluation across all ISMS domains  
 - Integration with enterprise risk treatment plans
@@ -678,10 +678,10 @@ This framework covers five related controls that work together across the suppli
 
 | Layer | IaaS (AWS EC2) | PaaS (Azure App Service) | SaaS (Microsoft 365) |
 |-------|----------------|--------------------------|----------------------|
-| **Data** | Organization | Organization | Organization |
-| **Application** | Organization | Organization | Provider |
-| **Runtime** | Organization | Provider | Provider |
-| **OS** | Organization | Provider | Provider |
+| **Data** | Organisation | Organisation | Organisation |
+| **Application** | Organisation | Organisation | Provider |
+| **Runtime** | Organisation | Provider | Provider |
+| **OS** | Organisation | Provider | Provider |
 | **Virtualization** | Provider | Provider | Provider |
 | **Servers** | Provider | Provider | Provider |
 | **Storage** | Provider | Provider | Provider |
@@ -716,7 +716,7 @@ This framework covers five related controls that work together across the suppli
 - Security baseline configuration
 - Access provisioning (least privilege)
 - Monitoring and logging setup
-- Integration with organizational systems
+- Integration with organisational systems
 - User training and documentation
 - Go-live approval
 
@@ -822,11 +822,11 @@ Shadow IT (unauthorised cloud services or suppliers used without IT/Security app
 
 | Incident Type | Definition | Response |
 |---------------|------------|----------|
-| **Security Breach** | Unauthorized access, data breach, ransomware | Immediate containment, forensic investigation, notification (GDPR 72h, NIS2 24h) |
+| **Security Breach** | Unauthorised access, data breach, ransomware | Immediate containment, forensic investigation, notification (GDPR 72h, NIS2 24h) |
 | **Service Outage** | Unplanned downtime exceeding SLA | Incident management, business continuity activation, supplier communication |
 | **Contract Violation** | Supplier non-compliance with agreement | Escalation to legal, remediation demand, potential termination |
 | **Performance Degradation** | SLA metric failures | Performance improvement plan, monitoring intensification |
-| **Change Failure** | Unauthorized or failed change | Rollback procedures, change control review |
+| **Change Failure** | Unauthorised or failed change | Rollback procedures, change control review |
 
 ## Notification Requirements
 
@@ -1012,7 +1012,7 @@ Audit scope includes verification of: policy compliance, contract security claus
 - **Significant regulatory changes**: DORA technical standards, NIS2 implementing acts, AI Act delegated acts
 - **Major supplier security incidents**: Data breaches, service disruptions >24h, supply chain compromises
 - **Cloud service provider changes**: Mergers/acquisitions, major migrations, service discontinuation
-- **Organizational M&A activity**: New subsidiaries, divestitures, business unit changes
+- **Organisational M&A activity**: New subsidiaries, divestitures, business unit changes
 - **New cloud service categories adopted**: Emerging technologies (AI/ML platforms, quantum-safe cryptography)
 - **Audit findings requiring policy updates**: External audit, regulatory audit, internal audit critical findings
 
@@ -1090,7 +1090,7 @@ Supplier and cloud services security integrates with multiple ISO 27001 controls
 | **A.8.10** | Information Deletion - Supplier data deletion verification upon exit |
 | **A.8.13-14** | **Backup & Redundancy - Independent backups for cloud exit, geographic redundancy for concentration risk** ⭐ |
 | **A.8.24** | Cryptography - Encryption requirements for suppliers, key management |
-| **Clause 6.1** | Risk Assessment - Supplier risks in organizational risk register |
+| **Clause 6.1** | Risk Assessment - Supplier risks in organisational risk register |
 
 ## Bidirectional Data Flows
 
@@ -1127,7 +1127,7 @@ Supplier and cloud services security integrates with multiple ISO 27001 controls
 
 **Concentration Risk Assessment (DORA Requirement):**
 
-- Critical suppliers with >20% organizational dependency
+- Critical suppliers with >20% organisational dependency
 - Alternative provider feasibility analysis
 - Diversification strategy and timeline
 - **Exit capability validation with BC/DR framework** ⭐
@@ -1180,7 +1180,7 @@ This policy implements supplier and cloud service security requirements to compl
 
 | Regulation | Requirement | Applicability |
 |------------|-------------|---------------|
-| **Swiss nDSG (Federal Data Protection Act)** | Processor security measures (Art. 9), sub-processor disclosure | All [Organization] processing of personal data |
+| **Swiss nDSG (Federal Data Protection Act)** | Processor security measures (Art. 9), sub-processor disclosure | All [Organisation] processing of personal data |
 | **EU GDPR** | Processor agreements (Art. 28), security measures (Art. 32), data breach notification (Art. 33) | When processing EU personal data |
 | **ISO/IEC 27001:2022** | Controls A.5.19-23 | Certification scope |
 
@@ -1193,6 +1193,17 @@ This policy implements supplier and cloud service security requirements to compl
 | **NIS2 Directive** | Supply chain security measures (Art. 21), incident reporting (Art. 23): 24h early warning, 72h notification, final report | Essential/important entity designation |
 | **EU AI Act** | High-risk AI system requirements (Art. 9-15): conformity assessment, transparency, human oversight | Providing/deploying AI systems in EU |
 | **US CLOUD Act** | Jurisdictional data access considerations, legal process transparency | Using US-headquartered cloud providers |
+
+**Determining Applicability (Conditional Regulations):**
+
+| Regulation | You are subject if... | Confirm with |
+|------------|----------------------|--------------|
+| **DORA** | Your entity is a credit institution, payment institution, e-money institution, insurance undertaking, investment firm, crypto-asset service provider, or other financial entity regulated by EBA, EIOPA, or ESMA under EU law | Legal/Compliance — reference DORA Article 2(2) |
+| **NIS2** | Your entity is classified as essential or important under NIS2 Annex I/II (energy, transport, water, banking, healthcare, digital infrastructure, digital service providers, etc.) in an EU Member State | Legal/Compliance — reference NIS2 Annex I/II and national transposition |
+| **FINMA** | Your entity is licensed by FINMA as a bank, insurance company, securities firm, or collective investment scheme | Legal/Compliance — reference FINMA Circular 2023/1 scope |
+| **EU AI Act** | Your entity provides, deploys, or uses AI systems classified as high-risk under EU AI Act Annex III in the EU market | Legal/Compliance — reference EU AI Act Article 6 and Annex III |
+
+If uncertain whether your entity qualifies, contact Legal/Compliance with reference to **ISMS-POL-00 (Regulatory Applicability Framework)** before applying conditional requirements. Sub-policies S1-S4 refer to "DORA-covered services" and "NIS2-covered entities" — use the table above to determine whether those provisions apply to your organisation.
 
 > **Multiple Conditional Regulations:** Organisations subject to multiple conditional regulations (e.g., FINMA + DORA, or DORA + NIS2) SHALL implement the most stringent requirement where overlap exists. Assessment workbooks enable parallel tracking of FINMA, DORA, and NIS2 fields to ensure all applicable requirements are met simultaneously.
 
@@ -1231,7 +1242,7 @@ For EU financial entities subject to DORA, the following additional requirements
 - Maintain register of sub-outsourcing arrangements
 - Assess risks from sub-outsourcing
 - Ensure contractual provisions flow down to sub-contractors
-- Obtain authorization for critical sub-outsourcing
+- Obtain authorisation for critical sub-outsourcing
 
 **Article 31 - ICT Concentration Risk**:
 
@@ -1321,7 +1332,7 @@ Material services outsourced by a bank to a service provider, where the service 
 | **Contractual commitments** | Provider's legal challenge commitments (resist unlawful disclosure orders, notify customer). |
 | **Technical measures** | Encryption (data-at-rest, data-in-transit, in-use), customer-controlled key management, access controls (geo-fencing, IP allowlisting). |
 
-**Organizations handling Confidential or Restricted data SHALL**:
+**Organisations handling Confidential or Restricted data SHALL**:
 1. Document jurisdictional risk assessment for each cloud service
 2. Implement compensating controls (end-to-end encryption, customer-managed encryption keys, access restrictions)
 3. Obtain risk acceptance from CISO for residual jurisdictional risks
@@ -1329,7 +1340,7 @@ Material services outsourced by a bank to a service provider, where the service 
 
 ## United States Federal Requirements
 
-References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity requirements, CMMC) apply **only** where [Organization]:
+References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity requirements, CMMC) apply **only** where [Organisation]:
 
 - Acts as contractor, subcontractor, or service provider to US federal agencies
 - Provides services to customers subject to such regulations
@@ -1341,13 +1352,13 @@ In all other cases, these references are informational only and do not constitut
 
 # Definitions
 
-**Supplier**: External organization providing products or services to [Organization] that may access, process, store, or transmit organizational information.
+**Supplier**: External organisation providing products or services to [Organisation] that may access, process, store, or transmit organisational information.
 
 **Cloud Service Provider (CSP)**: Supplier providing cloud computing services (IaaS, PaaS, SaaS) over network.
 
-**ICT Third-Party Service Provider**: Supplier providing ICT products or services critical to organizational operations (DORA terminology).
+**ICT Third-Party Service Provider**: Supplier providing ICT products or services critical to organisational operations (DORA terminology).
 
-**Sub-Processor**: Supplier's own suppliers (sub-suppliers) that may access organizational data.
+**Sub-Processor**: Supplier's own suppliers (sub-suppliers) that may access organisational data.
 
 **Shared Responsibility Model**: Division of security responsibilities between cloud service provider and customer.
 
@@ -1373,7 +1384,7 @@ In all other cases, these references are informational only and do not constitut
 
 **NIS2**: Network and Information Security Directive 2 - EU directive for cybersecurity of essential/important entities.
 
-**Shadow IT**: Unauthorized cloud services or suppliers used without IT/Security approval.
+**Shadow IT**: Unauthorised cloud services or suppliers used without IT/Security approval.
 
 ---
 
@@ -1456,4 +1467,4 @@ The boundary is: **This policy governs EXTERNAL supplier/cloud relationships** (
 ---
 
 *This master index provides comprehensive governance for supplier and cloud services security. Detailed requirements for each control are documented in sections S1-S6. Assessment tools and implementation guidance are provided in the ISMS-IMP-A.5.23 document suite.*
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

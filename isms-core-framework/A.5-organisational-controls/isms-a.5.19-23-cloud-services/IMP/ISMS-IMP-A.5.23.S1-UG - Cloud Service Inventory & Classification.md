@@ -8,26 +8,59 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Cloud Service Inventory & Classification |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.23.S1-UG |
+| **Related Policy** | ISMS-POL-A.5.23 (Cloud Services) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.23 (Information Security for Use of Cloud Services) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Cloud Service Inventory & Classification |
-| **Related Policy** | ISMS-POL-A.5.19-23-S5 (Cloud Services Security), ISMS-POL-A.5.19-23-S1 (Supplier Relationships) |
-| **Purpose** | Maintain authoritative inventory of all cloud services with data classification, criticality assessment, and exit feasibility analysis |
-| **Target Audience** | IT Operations, Procurement, Finance, Security Teams, Compliance Officers, Auditors |
-| **Assessment Type** | Inventory & Classification |
-| **Review Cycle** | Quarterly |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.23 (Cloud Services)
+- ISMS-IMP-A.5.23.S2 (Vendor Due Diligence & Contracts)
+- ISMS-IMP-A.5.23.S3 (Secure Configuration & Deployment)
+- ISMS-IMP-A.5.23.S4 (Ongoing Governance & Risk Management)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.23.S1-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 10 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **2. SaaS Services** | Inventory and classification of Software-as-a-Service providers |
+| **3. IaaS PaaS Services** | Inventory of Infrastructure and Platform-as-a-Service providers |
+| **4. Cloud Security Services** | Security-specific cloud service inventory and controls |
+| **5. Cloud Storage Services** | Cloud storage and data management service inventory |
+| **6. Data Classification** | Data classification mapping for cloud-hosted information |
+| **7. Service Criticality** | Business criticality rating and risk assessment per service |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -39,7 +72,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 #### What This Assessment Covers
 
-This assessment creates and maintains the **authoritative inventory** of ALL cloud services used by [Organization]. This is the foundation of your cloud security program - you cannot secure, configure, monitor, or audit cloud services you don't know about.
+This assessment creates and maintains the **authoritative inventory** of ALL cloud services used by [Organisation]. This is the foundation of your cloud security program - you cannot secure, configure, monitor, or audit cloud services you don't know about.
 
 This assessment answers:
 
@@ -52,7 +85,7 @@ This assessment answers:
 
 #### Key Principle
 
-**"If it touches organizational data or infrastructure, it must be in this inventory."**
+**"If it touches organisational data or infrastructure, it must be in this inventory."**
 
 This includes:
 
@@ -121,7 +154,7 @@ For EACH cloud service:
 
 #### Required Skills
 
-- Broad knowledge of organizational IT landscape
+- Broad knowledge of organisational IT landscape
 - Understanding of cloud service models (SaaS, IaaS, PaaS)
 - Familiarity with data classification schemes
 - Access to procurement and financial systems
@@ -385,7 +418,7 @@ Update inventory immediately when:
 
 Before starting this assessment, gather:
 
-#### 1. Organizational Access
+#### 1. Organisational Access
 
 - **Financial Systems:** Access to procurement, accounts payable, expense management
 - **Asset Management:** Access to CMDB, IT asset inventory
@@ -416,10 +449,10 @@ Before starting this assessment, gather:
 - DNS query logs (identify cloud domains)
 - Email gateway logs (cloud service signups)
 
-**Organizational Data:**
+**Organisational Data:**
 
 - Department directory (service owners)
-- Organizational chart (approval hierarchy)
+- Organisational chart (approval hierarchy)
 - Business unit structure (cost allocation)
 - Geographic locations (data residency)
 
@@ -444,7 +477,7 @@ Before starting this assessment, gather:
 - **SSO admin console:** To export application list and usage data
 - **Financial reporting tools:** To extract cloud spending data
 - **Screen capture tools:** For evidence collection
-- **File organization:** Folder structure for evidence storage
+- **File organisation:** Folder structure for evidence storage
 
 ### Required Permissions
 
@@ -555,7 +588,7 @@ Ensure you have appropriate access:
 - ✓ All required access permissions obtained
 - ✓ Discovery data sources identified and accessible
 - ✓ Stakeholders identified and scheduled
-- ✓ Working folders organized
+- ✓ Working folders organised
 
 ---
 
@@ -622,7 +655,7 @@ Steps:
    
    Hi [Department Head],
    
-   We're conducting an inventory of cloud services used across [Organization].
+   We're conducting an inventory of cloud services used across [Organisation].
    Please list all cloud-based tools and services your team uses, including:
    
    - Collaboration tools (Slack, Teams, Zoom, etc.)
@@ -740,7 +773,7 @@ For each service, collect:
 **Deliverable:**
 
 - Sheet 1 (Service Inventory) - Complete for all services
-- Evidence folder with organized files
+- Evidence folder with organised files
 - Contact list of all service owners
 
 **Quality Check:**
@@ -780,7 +813,7 @@ Ask service owner:
 
 **Step 2: Apply Classification Level**
 
-Using organizational data classification policy:
+Using organisational data classification policy:
 
 | Classification | Examples | Protection Requirements |
 |----------------|----------|------------------------|
@@ -794,7 +827,7 @@ Assign highest classification level that applies.
 **Special Cases:**
 
 - **Mixed Data:** If service processes both Confidential and Public data → classify as Confidential (highest applies)
-- **No Data:** Services that don't process organizational data (rare) → classify as N/A
+- **No Data:** Services that don't process organisational data (rare) → classify as N/A
 - **Unknown:** If service owner unsure → classify as Confidential until verified (conservative approach)
 
 **Step 3: Document Data Residency**
@@ -841,7 +874,7 @@ Use these definitions (aligned with Business Continuity Policy):
 
 | Criticality | RTO | Business Impact | Examples |
 |-------------|-----|-----------------|----------|
-| **Critical** | < 4 hours | Organization cannot operate without this service. Revenue loss, customer impact, regulatory breach. | Email, CRM, payment processing, core production systems |
+| **Critical** | < 4 hours | Organisation cannot operate without this service. Revenue loss, customer impact, regulatory breach. | Email, CRM, payment processing, core production systems |
 | **High** | 4-24 hours | Significant business impact. Major workflow disruption, but workarounds exist. | Collaboration tools, HR systems, project management |
 | **Medium** | 1-3 days | Moderate impact. Can operate with temporary workarounds for limited time. | Reporting tools, analytics, non-critical integrations |
 | **Low** | > 3 days | Minimal impact. Nice to have but not essential for operations. | Training platforms, internal wikis, test environments |
@@ -897,7 +930,7 @@ For each service, ask:
 
 #### Phase 6: Exit Feasibility Assessment (4-6 hours)
 
-**Objective:** Assess how easily organization could exit each cloud service
+**Objective:** Assess how easily organisation could exit each cloud service
 
 **For each service, assess:**
 
@@ -1002,7 +1035,7 @@ Must have documented exit plans including:
 
 - Services expiring in next 90 days
 - Services with auto-renewal (can we negotiate better terms?)
-- Trial services that converted to paid (was this authorized?)
+- Trial services that converted to paid (was this authorised?)
 - Services without contracts (credit card purchases - negotiate volume discount?)
 
 **Cost Optimization Opportunities:**
@@ -1103,7 +1136,7 @@ For each gap, assess:
 
 **Objective:** Organize all evidence for audit readiness
 
-**Evidence Organization:**
+**Evidence Organisation:**
 
 Create structured evidence folders:
 ```
@@ -1145,7 +1178,7 @@ Document each evidence item:
 
 **Quality Check:**
 
-- ✓ All evidence organized in standard folders
+- ✓ All evidence organised in standard folders
 - ✓ Evidence registry complete
 - ✓ File naming consistent
 - ✓ Sensitive data redacted
@@ -1228,7 +1261,7 @@ For each service, start with basics:
 
 **Column A: Cloud Service Name**
 
-- Use the name YOUR organization calls it (may differ from vendor's name)
+- Use the name YOUR organisation calls it (may differ from vendor's name)
 - Be specific: "Microsoft 365 E5 for Enterprise" not just "Office 365"
 - Include environment if applicable: "AWS Production Account" vs. "AWS Dev/Test Account"
 
@@ -1276,7 +1309,7 @@ Initial criticality rating (detailed assessment in Sheet 3):
 
 | Criticality | Quick Test | Examples |
 |-------------|-----------|----------|
-| **Critical** | Organization stops if this fails within 4 hours | Email, CRM, payment processing, production infrastructure |
+| **Critical** | Organisation stops if this fails within 4 hours | Email, CRM, payment processing, production infrastructure |
 | **High** | Major disruption within 24 hours | Collaboration tools, HR systems, development platforms |
 | **Medium** | Can work around for 1-3 days | Reporting tools, analytics, training platforms |
 | **Low** | Minimal impact beyond 3 days | Test environments, archived data, optional tools |
@@ -1293,7 +1326,7 @@ Highest classification level of data processed (detailed assessment in Sheet 2):
 | **Confidential** | Customer data, employee data, financial data | CRM, HR systems, accounting |
 | **Internal** | Non-public business information | Internal wikis, project plans |
 | **Public** | Publicly available information | Marketing sites, public docs |
-| **N/A** | No organizational data | Pure infrastructure (empty VMs) |
+| **N/A** | No organisational data | Pure infrastructure (empty VMs) |
 
 **Conservative approach:** If unsure, classify as Confidential until verified.
 
@@ -1643,7 +1676,7 @@ Check all that apply (multiple selections possible):
 
 → Classify at HIGHEST level: Confidential
 
-**No Organizational Data:**
+**No Organisational Data:**
 
 - Empty cloud infrastructure (provisioned but not yet used)
 - Development/test with synthetic data only
@@ -1714,7 +1747,7 @@ Based on data types and residency, identify applicable regulations:
 
 | Regulation | Applies If... | Key Requirements |
 |------------|---------------|------------------|
-| **GDPR** | EU personal data | Lawful basis, data minimization, breach notification, DPA required |
+| **GDPR** | EU personal data | Lawful basis, data minimisation, breach notification, DPA required |
 | **Swiss FADP** | Swiss personal data | Similar to GDPR, data export restrictions |
 | **HIPAA** | US healthcare data | BAA required, encryption, audit logs, breach notification |
 | **PCI-DSS** | Payment card data | No storage of CVV, encryption, tokenization, SAQ compliance |
@@ -1843,7 +1876,7 @@ For EACH cloud service:
 ❌ **Over-rating criticality** - Everything marked "Critical" (dilutes the meaning)  
 ❌ **Under-rating criticality** - Customer-facing service marked "Low" because only 5 employees use it directly  
 ❌ **Ignoring dependencies** - Service rated Low but Critical service depends on it  
-❌ **Confusing criticality with importance** - CEO's calendar tool marked Critical (it's important to CEO, but not Critical to organization)  
+❌ **Confusing criticality with importance** - CEO's calendar tool marked Critical (it's important to CEO, but not Critical to organisation)  
 ❌ **No RTO/RPO defined** - Just criticality rating without recovery targets  
 ❌ **Not considering customer impact** - Internal systems rated by employee convenience, not customer experience  
 
@@ -1855,7 +1888,7 @@ Use consistent definitions across all services:
 
 | Criticality | RTO | Business Impact | Protection Level |
 |-------------|-----|-----------------|------------------|
-| **Critical** | < 4 hours | Organization cannot operate. Revenue loss, customer SLA breach, regulatory violation, safety risk. | Maximum: 24/7 monitoring, automated failover, tested BC/DR plans |
+| **Critical** | < 4 hours | Organisation cannot operate. Revenue loss, customer SLA breach, regulatory violation, safety risk. | Maximum: 24/7 monitoring, automated failover, tested BC/DR plans |
 | **High** | 4-24 hours | Significant disruption. Major workflow interruption, customer impact possible, but temporary workarounds exist. | High: Business hours monitoring, documented recovery procedures, tested annually |
 | **Medium** | 1-3 days | Moderate impact. Workflow slowdowns, internal delays, but business continues. | Standard: Standard monitoring, recovery procedures documented |
 | **Low** | > 3 days | Minimal impact. Convenience features, "nice to have" but not essential. | Basic: Best-effort recovery |
@@ -2066,14 +2099,14 @@ Service: CEO Calendar (Outlook Calendar)
 **Objective Assessment:**
 
 - **Business Impact Test:** If CEO's calendar is down for 4 hours, does business stop?
-  - Answer: No. CEO inconvenienced, but organization continues.
+  - Answer: No. CEO inconvenienced, but organisation continues.
 - **Customer Impact:** No customer impact
 - **Revenue Impact:** No direct revenue impact
 - **Regulatory Impact:** No compliance issues
 
 **Correct Assessment:**
 
-- **Criticality:** High (important person, but not Critical to organization operations)
+- **Criticality:** High (important person, but not Critical to organisation operations)
 - **RTO:** 8 hours (within business day)
 - **RPO:** 1 hour (recent appointments critical)
 
@@ -2134,7 +2167,7 @@ Service: Tax Reporting Software
 
 ### Purpose
 
-Assess how easily [Organization] could exit each cloud service if needed. This is CRITICAL for avoiding vendor lock-in, maintaining negotiation leverage, and ensuring business continuity if vendor fails or terms become unacceptable.
+Assess how easily [Organisation] could exit each cloud service if needed. This is CRITICAL for avoiding vendor lock-in, maintaining negotiation leverage, and ensuring business continuity if vendor fails or terms become unacceptable.
 
 Per **ISMS-POL-A.5.19-23-S5 Section 8.1.1**, every cloud service must have an assessed exit strategy following one of three paths:
 1. **Cloud-to-Cloud** (migrate to alternative provider) - 90%+ of services
@@ -2554,7 +2587,7 @@ For each service:
 - [ ] Regulatory changes assessed (new data residency requirements?)
 - [ ] Technology changes considered (new migration tools available?)
 - [ ] Contract terms reviewed (approaching renewal? renegotiate exit terms?)
-- [ ] Organizational changes (business strategy shift affecting cloud usage?)
+- [ ] Organisational changes (business strategy shift affecting cloud usage?)
 
 **Testing Requirements (by Service Criticality):**
 
@@ -2703,7 +2736,7 @@ Service: Salesforce Sales Cloud (Highly Customized)
 
 ### Purpose
 
-Consolidate financial data for all cloud services, analyze spending patterns, identify cost optimization opportunities, and track contract renewals.
+Consolidate financial data for all cloud services, analyse spending patterns, identify cost optimization opportunities, and track contract renewals.
 
 ### What to Document
 
@@ -2778,7 +2811,7 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Collected By
 - Verification Status
 
-**Organization:**
+**Organisation:**
 ```
 /Evidence/ISMS-IMP-A.5.23.S1/
   /Contracts/
@@ -2790,7 +2823,7 @@ Map regulatory requirements to cloud services, track compliance status, identify
 
 **Quality Check:**
 
-- [ ] All evidence organized in standard folders
+- [ ] All evidence organised in standard folders
 - [ ] Evidence registry matches actual files
 - [ ] Sensitive data redacted from screenshots
 - [ ] Evidence accessible to auditors
@@ -2804,7 +2837,7 @@ Map regulatory requirements to cloud services, track compliance status, identify
 **Workflow:**
 1. **IT Operations Review** → Verify inventory completeness, technical accuracy
 2. **Finance/Compliance Review** → Verify costs, regulatory requirements
-3. **CISO/CIO Approval** → Final approval, gap remediation authorization
+3. **CISO/CIO Approval** → Final approval, gap remediation authorisation
 
 **Completion:** All three signatures required before assessment considered complete.
 
@@ -3079,7 +3112,7 @@ Before submitting for review, verify:
 - [ ] Evidence recent (< 90 days)
 - [ ] Evidence complete (required information present)
 - [ ] Evidence sanitized (sensitive data redacted)
-- [ ] Evidence organized (follows standard structure)
+- [ ] Evidence organised (follows standard structure)
 - [ ] Evidence accessible (paths correct, files exist)
 
 #### Compliance
@@ -3331,7 +3364,7 @@ Move beyond periodic assessments:
 - Shadow IT discovery rate (services found outside procurement)
 - Exit plan coverage (% of Critical/High with documented plans)
 - Compliance rate (% services fully compliant)
-- Cost optimization savings realized
+- Cost optimization savings realised
 
 **Monthly Reporting to Management:**
 
@@ -3427,7 +3460,7 @@ Move beyond periodic assessments:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The cloud is not a place; it is a shared responsibility."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

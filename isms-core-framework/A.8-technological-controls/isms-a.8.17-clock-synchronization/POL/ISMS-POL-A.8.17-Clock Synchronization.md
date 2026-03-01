@@ -38,10 +38,9 @@
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.17-S1-UG/TG (Time Source Configuration)
-- ISMS-IMP-A.8.17-S2-UG/TG (Synchronization Verification Process)
-- ISMS-IMP-A.8.17-S3-UG/TG (Exception Management)
-- ISMS-IMP-A.8.17-S4-UG/TG (Compliance Dashboard)
+- ISMS-IMP-A.8.17.1-UG/TG (Time Source Configuration)
+- ISMS-IMP-A.8.17.2-UG/TG (Synchronization Verification Process)
+- ISMS-IMP-A.8.17.3-UG/TG (Exception Management)
 - ISO/IEC 27001:2022 Control A.8.17
 - ISMS-POL-A.8.21 (Network Services Security)
 - ISMS-POL-A.8.15 (Logging)
@@ -51,13 +50,13 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for clock synchronization across all information processing systems to enable log correlation, forensic analysis, and reliable audit trails in accordance with ISO/IEC 27001:2022 Control A.8.17.
+This policy establishes [Organisation]'s requirements for clock synchronization across all information processing systems to enable log correlation, forensic analysis, and reliable audit trails in accordance with ISO/IEC 27001:2022 Control A.8.17.
 
 **Scope**: This policy applies to all information processing systems that generate logs or participate in security-relevant operations, including servers, network devices, security systems, and cloud instances.
 
-**Purpose**: Define organizational requirements for time synchronization implementation and governance. This policy establishes WHAT time synchronization is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.17 (UG/TG variants).
+**Purpose**: Define organisational requirements for time synchronization implementation and governance. This policy establishes WHAT time synchronization is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.17 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -67,9 +66,9 @@ This policy establishes [Organization]'s requirements for clock synchronization 
 
 **ISO/IEC 27001:2022 Annex A.8.17 - Clock Synchronization**
 
-> *The clocks of information processing systems used by the organization shall be synchronized to approved time sources.*
+> *The clocks of information processing systems used by the organisation shall be synchronized to approved time sources.*
 
-**Control Objective**: Establish organizational policy for time synchronization ensuring accurate, consistent timestamps across all information systems to enable log correlation, support forensic investigations, validate digital signatures, and maintain audit trail integrity.
+**Control Objective**: Establish organisational policy for time synchronization ensuring accurate, consistent timestamps across all information systems to enable log correlation, support forensic investigations, validate digital signatures, and maintain audit trail integrity.
 
 **This Policy Addresses**:
 
@@ -77,7 +76,7 @@ This policy establishes [Organization]'s requirements for clock synchronization 
 - Internal time synchronization infrastructure requirements
 - System-level synchronization requirements and acceptable drift thresholds
 - Synchronization failure detection, alerting, and response
-- Integration with [Organization]'s risk assessment and ISMS processes
+- Integration with [Organisation]'s risk assessment and ISMS processes
 
 ## What This Policy Does
 
@@ -92,11 +91,11 @@ This policy:
 
 This policy does NOT:
 
-- **Specify technical implementation details** (see ISMS-IMP-A.8.17-S1 Time Source Configuration)
-- **Define platform-specific configuration procedures** (see ISMS-IMP-A.8.17-S1, S2 for Linux, Windows, network devices, cloud platforms)
-- **Provide verification command syntax** (see ISMS-IMP-A.8.17-S2 Synchronization Verification Process)
-- **Select NTP technologies or vendors** (technology selection based on [Organization]'s risk assessment and infrastructure requirements)
-- **Replace risk assessment** (time synchronization controls selected based on [Organization]'s risk treatment)
+- **Specify technical implementation details** (see ISMS-IMP-A.8.17.1 Time Source Configuration)
+- **Define platform-specific configuration procedures** (see ISMS-IMP-A.8.17.1, S2 for Linux, Windows, network devices, cloud platforms)
+- **Provide verification command syntax** (see ISMS-IMP-A.8.17.2 Synchronization Verification Process)
+- **Select NTP technologies or vendors** (technology selection based on [Organisation]'s risk assessment and infrastructure requirements)
+- **Replace risk assessment** (time synchronization controls selected based on [Organisation]'s risk treatment)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
@@ -142,7 +141,7 @@ Apply only when specific business conditions trigger applicability:
 | Regulation | Trigger Condition | Clock Synchronization Requirements |
 |-----------|-------------------|----------------------------|
 | **PCI DSS v4.0.1** | Processing payment card data | Req. 10.4 - Time synchronization technology, consistent time settings |
-| **FINMA** | Swiss regulated financial institution | Technical and organizational measures including audit trail integrity |
+| **FINMA** | Swiss regulated financial institution | Technical and organisational measures including audit trail integrity |
 | **DORA** | EU financial services entity | ICT risk management including logging and monitoring capabilities |
 | **NIS2** | Essential/important entity (EU) | Security measures for network and information systems including logging |
 
@@ -155,7 +154,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - RFC 5905 (Network Time Protocol Version 4)
 - NIST Time Services (time.nist.gov)
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
 
 ---
 
@@ -163,7 +162,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ## Authoritative Time Source Requirements (Mandatory)
 
-[Organization] maintains access to authoritative time sources to provide accurate reference time for all information systems.
+[Organisation] maintains access to authoritative time sources to provide accurate reference time for all information systems.
 
 **Required Time Sources**:
 
@@ -180,7 +179,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - GPS-based time servers (Stratum 0/1)
 - NIST time servers (time.nist.gov)
 - National/regional government time services
-- Organization-owned atomic clock or GPS receivers
+- Organisation-owned atomic clock or GPS receivers
 
 **Supplementary/Backup Sources (Stratum 2+ acceptable)**:
 
@@ -189,11 +188,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Note**: Internal NTP infrastructure SHALL synchronize to at least two primary (Stratum 0/1) sources. NTP Pool and cloud provider services may serve as supplementary sources for redundancy but SHALL NOT be the sole authoritative reference.
 
-**Implementation Note**: Specific time source selection, configuration, and availability monitoring procedures are defined in ISMS-IMP-A.8.17-S1 (Time Source Configuration).
+**Implementation Note**: Specific time source selection, configuration, and availability monitoring procedures are defined in ISMS-IMP-A.8.17.1 (Time Source Configuration).
 
 ## Internal Time Synchronization Infrastructure (Mandatory)
 
-[Organization] deploys internal NTP infrastructure to provide time synchronization services to all client systems.
+[Organisation] deploys internal NTP infrastructure to provide time synchronization services to all client systems.
 
 **Internal NTP Infrastructure Requirements**:
 
@@ -224,7 +223,7 @@ Internal NTP server health SHALL be continuously monitored with automated alerti
 - Service availability failures
 - Configuration changes or anomalies
 
-**Implementation Note**: NTP server deployment, hardening procedures, and monitoring configuration are documented in ISMS-IMP-A.8.17-S1 (Time Source Configuration) and ISMS-POL-A.8.21 (Network Services Security).
+**Implementation Note**: NTP server deployment, hardening procedures, and monitoring configuration are documented in ISMS-IMP-A.8.17.1 (Time Source Configuration) and ISMS-POL-A.8.21 (Network Services Security).
 
 ## System Synchronization Requirements (Mandatory)
 
@@ -253,7 +252,7 @@ All in-scope systems SHALL be configured to synchronize time with approved time 
 - System owners may define more stringent thresholds based on operational requirements but SHALL NOT exceed the maximums above for security-relevant systems
 - Systems exceeding acceptable drift thresholds SHALL generate alerts for investigation and remediation
 
-**Implementation Note**: Platform-specific configuration procedures (Linux, Windows, network devices, cloud platforms, containers) are documented in ISMS-IMP-A.8.17-S1 (Time Source Configuration).
+**Implementation Note**: Platform-specific configuration procedures (Linux, Windows, network devices, cloud platforms, containers) are documented in ISMS-IMP-A.8.17.1 (Time Source Configuration).
 
 ## Special Configuration Cases
 
@@ -273,7 +272,7 @@ All in-scope systems SHALL be configured to synchronize time with approved time 
 - Devices with limited resources MAY use SNTP (Simple Network Time Protocol)
 - Devices without time synchronization capability require documented exception and compensating controls
 
-**Implementation Note**: Special case configurations and validation procedures are documented in ISMS-IMP-A.8.17-S1 (Time Source Configuration) and ISMS-IMP-A.8.17-S2 (Synchronization Verification Process).
+**Implementation Note**: Special case configurations and validation procedures are documented in ISMS-IMP-A.8.17.1 (Time Source Configuration) and ISMS-IMP-A.8.17.2 (Synchronization Verification Process).
 
 ---
 
@@ -324,7 +323,7 @@ All in-scope systems SHALL be configured to synchronize time with approved time 
 
 - Maintain this policy and related implementation guidance
 - Conduct monthly system synchronization status assessments
-- Generate compliance dashboards and reports
+- Generate Summary Dashboard reports
 - Track remediation of identified gaps and non-compliance
 - Present compliance status to CISO and management
 - Coordinate with auditors for evidence provision
@@ -354,7 +353,7 @@ Legend: A = Accountable, R = Responsible, C = Consulted, I = Informed
 
 **Monitoring Requirements**:
 
-[Organization] monitors time synchronization to ensure:
+[Organisation] monitors time synchronization to ensure:
 
 - All in-scope systems maintain active synchronization to approved time sources
 - Time drift remains within acceptable thresholds defined in Section 2.3
@@ -383,14 +382,14 @@ Legend: A = Accountable, R = Responsible, C = Consulted, I = Informed
 
 - **Frequency**: Monthly compliance reports, quarterly executive summaries
 - **Audience**: CISO (monthly), Executive Management (quarterly), IT Operations (continuous monitoring)
-- **Format**: Compliance dashboard showing sync status, drift metrics, gaps, and remediation tracking
+- **Format**: Summary Dashboard showing sync status, drift metrics, gaps, and remediation tracking
 - **Escalation**: Immediate notification for critical system sync failures, infrastructure outages, or compliance falling below 90%
 
 **Evidence Retention**:
 
 Compliance evidence (synchronization status reports, drift measurements, assessment workbooks, and remediation records) SHALL be retained for a minimum of **3 years** to support audit cycles and regulatory inquiries. Evidence retention aligns with the ISO 27001 certification cycle and enables trend analysis across multiple assessment periods.
 
-**Detailed Procedures**: ISMS-IMP-A.8.17-S2 (Synchronization Verification Process) provides monitoring configuration, verification procedures, metric calculations, and reporting templates.
+**Detailed Procedures**: ISMS-IMP-A.8.17.2 (Synchronization Verification Process) provides monitoring configuration, verification procedures, metric calculations, and reporting templates.
 
 ## Exception Management
 
@@ -467,7 +466,7 @@ Exceptions to clock synchronization policy requirements require:
 
 Infrastructure failures are escalated to IT Management and CISO immediately upon detection due to cascading impact on all dependent systems.
 
-**Detailed Procedures**: ISMS-IMP-A.8.17-S2 (Synchronization Verification Process) provides incident classification criteria, response workflows, escalation procedures, and coordination with endpoint security and infrastructure teams.
+**Detailed Procedures**: ISMS-IMP-A.8.17.2 (Synchronization Verification Process) provides incident classification criteria, response workflows, escalation procedures, and coordination with endpoint security and infrastructure teams.
 
 ## Policy Governance
 
@@ -490,7 +489,7 @@ Infrastructure failures are escalated to IT Management and CISO immediately upon
 - **Major** (scope changes, new requirements, infrastructure changes): Full approval chain, implementation timeline per change management
 - **Emergency** (critical security vulnerabilities, NTP protocol issues): CISO approval, immediate communication and implementation
 
-**Communication**: Policy published in ISMS document repository. Changes communicated organization-wide to affected personnel (Network Operations, System Administrators, Security Operations). Training provided for significant changes affecting responsibilities or procedures.
+**Communication**: Policy published in ISMS document repository. Changes communicated organisation-wide to affected personnel (Network Operations, System Administrators, Security Operations). Training provided for significant changes affecting responsibilities or procedures.
 
 ---
 
@@ -498,17 +497,17 @@ Infrastructure failures are escalated to IT Management and CISO immediately upon
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
-- Clock synchronization controls selected based on [Organization]'s risk assessment
+- Clock synchronization controls selected based on [Organisation]'s risk assessment
 - System criticality determines synchronization requirements and acceptable drift thresholds
 - Risk treatment plans document time synchronization control implementation and exceptions
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Control A.8.17 applicability justified in [Organization]'s SoA
+- Control A.8.17 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported through compliance assessments
 
 **Related Controls**:
@@ -524,15 +523,15 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 **Implementation Guidance** (ISMS-IMP-A.8.17 Suite):
 
-- ISMS-IMP-A.8.17-S1: Time Source Configuration (authoritative sources, internal NTP servers, client configuration for Linux, Windows, network devices, cloud platforms)
-- ISMS-IMP-A.8.17-S2: Synchronization Verification Process (verification commands per platform, drift measurement, automated status collection, compliance assessment)
+- ISMS-IMP-A.8.17.1: Time Source Configuration (authoritative sources, internal NTP servers, client configuration for Linux, Windows, network devices, cloud platforms)
+- ISMS-IMP-A.8.17.2: Synchronization Verification Process (verification commands per platform, drift measurement, automated status collection, compliance assessment)
 
 **Assessment Tools**:
 
 - Excel-based assessment workbooks with automated compliance calculations
 - Time source inventory templates
 - System synchronization status tracking
-- Compliance dashboard and gap analysis
+- Summary Dashboard and gap analysis
 - Evidence registers for audit support
 
 **Supporting Materials**:
@@ -555,7 +554,7 @@ This policy addresses clock synchronization requirements from:
 
 *Conditional applicability per ISMS-POL-00
 
-**Note**: Specific regulatory interpretation and compliance verification procedures are documented in ISMS-IMP-A.8.17-S2 (Synchronization Verification Process) compliance dashboard.
+**Note**: Specific regulatory interpretation and compliance verification procedures are documented in ISMS-IMP-A.8.17.2 (Synchronization Verification Process) Summary Dashboard.
 
 ## Training & Awareness
 
@@ -594,7 +593,7 @@ This policy addresses clock synchronization requirements from:
 
 **NTP (Network Time Protocol)**: Industry-standard protocol for time synchronization over packet-switched networks (RFC 5905). Provides hierarchical time distribution with accuracy typically within tens of milliseconds.
 
-**Internal NTP Server**: Organization-operated time server (typically Stratum 2) that synchronizes to external authoritative sources and provides time services to internal client systems.
+**Internal NTP Server**: Organisation-operated time server (typically Stratum 2) that synchronizes to external authoritative sources and provides time services to internal client systems.
 
 **Critical Security System**: System where time accuracy directly impacts security operations (e.g., SIEM for log correlation, authentication servers for token validation, certificate authorities for certificate validity).
 
@@ -619,4 +618,4 @@ This policy addresses clock synchronization requirements from:
 
 *This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.17 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

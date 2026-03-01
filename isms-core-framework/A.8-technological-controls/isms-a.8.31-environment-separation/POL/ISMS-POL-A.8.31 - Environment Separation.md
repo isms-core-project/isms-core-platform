@@ -32,9 +32,9 @@
 
 # Executive Summary
 
-This policy establishes [Organization]'s requirements for separating development, test, and production environments to reduce risks associated with unauthorized changes and data exposure in accordance with ISO/IEC 27001:2022 Control A.8.31.
+This policy establishes [Organisation]'s requirements for separating development, test, and production environments to reduce risks associated with unauthorised changes and data exposure in accordance with ISO/IEC 27001:2022 Control A.8.31.
 
-**Purpose**: Define organizational requirements for environment separation, establishing WHAT separation is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.31 (UG/TG variants).
+**Purpose**: Define organisational requirements for environment separation, establishing WHAT separation is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.31 (UG/TG variants).
 
 **Core Principles**:
 
@@ -62,24 +62,24 @@ This policy applies to:
 
 **Technology Scope**:
 
-- All information systems and applications operated by [Organization]
+- All information systems and applications operated by [Organisation]
 - On-premises, cloud, hybrid, and container-based infrastructure
 - Internal and customer-facing systems
-- Third-party managed systems processing organizational data
+- Third-party managed systems processing organisational data
 
 **Personnel**:
 
-- All employees, contractors, and third parties with access to organizational systems
+- All employees, contractors, and third parties with access to organisational systems
 
 ## Out of Scope
 
 This policy does NOT apply to:
 
-- Single-user isolated research environments not connected to organizational networks
-- Temporary proof-of-concept systems with no organizational data
+- Single-user isolated research environments not connected to organisational networks
+- Temporary proof-of-concept systems with no organisational data
 - Vendor demonstration systems managed entirely by vendors
 
-Once research or proof-of-concept systems transition to organizational use, they SHALL comply with this policy.
+Once research or proof-of-concept systems transition to organisational use, they SHALL comply with this policy.
 
 ---
 
@@ -87,11 +87,11 @@ Once research or proof-of-concept systems transition to organizational use, they
 
 ## Environment Architecture Requirements
 
-[Organization] SHALL maintain separated environments with the following characteristics:
+[Organisation] SHALL maintain separated environments with the following characteristics:
 
 **3.1.1 Minimum Environment Tiers**
 
-- Organizations SHALL maintain at minimum three environment tiers: Development, Testing/QA, and Production
+- Organisations SHALL maintain at minimum three environment tiers: Development, Testing/QA, and Production
 - Each environment tier SHALL have defined purpose, infrastructure resources, data handling restrictions, and access controls
 - Environment naming SHALL clearly distinguish environment type to prevent confusion
 
@@ -231,7 +231,7 @@ Before DPO approves anonymized data for non-production use:
 
 - Previous versions SHALL be retained for rollback purposes
 - Rollback procedures SHALL be documented and tested periodically
-- Operations team SHALL be authorized to execute rollbacks without additional approval during incidents
+- Operations team SHALL be authorised to execute rollbacks without additional approval during incidents
 
 ## Production Support Requirements
 
@@ -325,7 +325,7 @@ Assessment results SHALL be documented in Compliance Assessment Register (ISMS-I
 
 ## Evidence Requirements
 
-[Organization] SHALL maintain evidence of compliance including:
+[Organisation] SHALL maintain evidence of compliance including:
 
 - Environment architecture documentation
 - Access control matrices per environment
@@ -476,4 +476,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for separation of development, test and production environments. Implementation procedures are documented in ISMS-IMP-A.8 (UG/TG).31-S1, S2, and S3.*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

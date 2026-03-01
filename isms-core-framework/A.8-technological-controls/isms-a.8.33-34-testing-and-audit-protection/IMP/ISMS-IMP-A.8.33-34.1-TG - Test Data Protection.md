@@ -3,391 +3,232 @@
 **Technical Specification**
 ### ISO/IEC 27001:2022 Controls A.8.33: Test Information & A.8.34: Protection of Information Systems During Audit Testing
 
-### ISO/IEC 27001:2022 Controls A.8.33: Test Information & A.8.34: Protection of Information Systems During Audit Testing
-
 ---
 
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Test Data Protection |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.33-34.1-TG |
+| **Related Policy** | ISMS-POL-A.8.33-34 (Testing and Audit Protection) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.33 (Test Information) & A.8.34 (Protection of Information Systems During Audit Testing) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Test Data Governance & Protection |
-| **Related Policy** | ISMS-POL-A.8.33-34, Section 2.1 (Test Data Protection) |
-| **Purpose** | Assess organizational compliance with test data protection requirements including inventory, masking, anonymization, and environment registry management |
-| **Target Audience** | Test Managers, Development Teams, Security Officers, Data Protection Officers, QA Teams, Compliance Officers, IT Operations, Auditors |
-| **Assessment Type** | Process & Operational Compliance |
-| **Review Cycle** | Semi-Annual (minimum) or After Major System Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Test Data Protection assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.33-34 (Testing and Audit Protection)
+- ISMS-IMP-A.8.33-34.2 (Audit Activity Management)
 
 ---
+
 # Technical Specification
 **Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
-
-> Auto-generated from `generate_a83334_1_test_data_protection.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.33-34.1` |
-| **Output Filename** | `ISMS-IMP-A.8.33-34.1_Test_Data_Protection_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Test Data Protection Assessment |
-| **Total Sheets** | 9 (9 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #C00000 | C00000 | Dark Red (Blocked) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D6DCE4 | D6DCE4 | Silver (Neutral) |
-| #F2F2F2 | F2F2F2 | Very Light Gray (Protected/Alternating) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions_and_Legend
-
 ---
 
-## Sheet 2: Test_Data_Inventory
+## Generator Alignment Reference
 
-**Data Rows:** 100 (rows 5–104)
+> Auto-generated from `generate_a83334_1_test_data_protection.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.8.33-34.1`
 
-| Col | Header |
-|-----|--------|
-| A | Data_Set_ID |
-| B | Data_Set_Name |
-| C | Source_System |
-| D | Target_Environment |
-| E | Data_Classification |
-| F | Contains_PII |
-| G | PII_Categories |
-| H | Data_Volume |
-| I | Authorization_Status |
-| J | Data_Owner |
-| K | Authorizer |
-| L | Authorization_Date |
-| M | Last_Copy_Date |
-| N | Refresh_Frequency |
-| O | Masking_Required |
-| P | Masking_Status |
-| Q | Business_Justification |
-| R | Expiration_Date |
-| S | Evidence_Reference |
-| T | Notes |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Data Validations
+### Sheet Structure
 
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| E | E5:E104 | `classification_dv` |
-| F | F5:F104 | `pii_dv` |
-| O | O5:O104 | `pii_dv` |
-| I | I5:I104 | `auth_status_dv` |
-| N | N5:N104 | `refresh_dv` |
-| P | P5:P104 | `masking_dv` |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Test Data Inventory |
+| 3 | Data Masking Assessment |
+| 4 | Test Environment Registry |
+| 5 | Data Refresh Schedule |
+| 6 | Compliance Verification |
+| 7 | Summary Dashboard |
+| 8 | Evidence Register |
+| 9 | Approval Sign-Off |
 
-### Formulas
+### Color Palette
 
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(B5:B104)` | Total Data Sets |
-| — | `=COUNTIF(I5:I104,` | Authorized Data Sets |
-| — | `=COUNTIF(F5:F104,` | Data Sets with PII |
-| — | `=COUNTIFS(F5:F104,` | Fully Masked PII Sets |
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
----
+### Column Headers (All Sheets)
 
-## Sheet 3: Data_Masking_Assessment
+| # | Column Header |
+|---|--------------|
+| 1 | TEST DATA INVENTORY |
+| 2 | SUMMARY STATISTICS |
+| 3 | DATA MASKING ASSESSMENT |
+| 4 | MASKING TECHNIQUE SUMMARY |
+| 5 | EFFECTIVENESS SUMMARY |
+| 6 | Average Effectiveness Score |
+| 7 | High Re-identification Risk |
+| 8 | Critical Masking Gaps |
+| 9 | TEST ENVIRONMENT REGISTRY |
+| 10 | ENVIRONMENT STATISTICS |
+| 11 | DATA REFRESH SCHEDULE |
+| 12 | REFRESH STATISTICS |
+| 13 | COMPLIANCE VERIFICATION |
+| 14 | COMPLIANCE STATISTICS |
+| 15 | Data Set ID |
+| 16 | Data Set Name |
+| 17 | Source System |
+| 18 | Target Environment |
+| 19 | Data Classification |
+| 20 | Contains PII |
+| 21 | PII Categories |
+| 22 | Data Volume |
+| 23 | Authorisation Status |
+| 24 | Data Owner |
+| 25 | Authoriser |
+| 26 | Authorisation Date |
+| 27 | Last Copy Date |
+| 28 | Refresh Frequency |
+| 29 | Masking Required |
+| 30 | Masking Status |
+| 31 | Business Justification |
+| 32 | Expiration Date |
+| 33 | Evidence Reference |
+| 34 | Notes |
+| 35 | Deleted After Testing |
+| 36 | Primary Masking Technique |
+| 37 | Masking Tool |
+| 38 | Masking Effectiveness Score |
+| 39 | PII Fields Identified |
+| 40 | PII Fields Masked |
+| 41 | PII Fields Unmasked |
+| 42 | Masking Verification Date |
+| 43 | Verification Method |
+| 44 | Re identification Risk |
+| 45 | Masking Gap Severity |
+| 46 | Remediation Owner |
+| 47 | Remediation Target Date |
+| 48 | Remediation Status |
+| 49 | Exception Approved |
+| 50 | Exception Justification |
+| 51 | Environment ID |
+| 52 | Environment Name |
+| 53 | Environment Type |
+| 54 | Infrastructure Type |
+| 55 | Environment Owner |
+| 56 | Business Unit |
+| 57 | Highest Data Classification |
+| 58 | Contains Production Data |
+| 59 | Access Control Type |
+| 60 | Network Isolation |
+| 61 | Encryption at Rest |
+| 62 | Encryption in Transit |
+| 63 | Logging Enabled |
+| 64 | Patch Management |
+| 65 | Security Control Status |
+| 66 | Last Security Review |
+| 67 | Next Review Due |
+| 68 | Data Masking Enforced |
+| 69 | Environment URL Location |
+| 70 | Support Contact |
+| 71 | Refresh ID |
+| 72 | Data Sources |
+| 73 | Refresh Method |
+| 74 | Last Refresh Date |
+| 75 | Next Scheduled Refresh |
+| 76 | Masking Applied at Refresh |
+| 77 | Refresh Duration |
+| 78 | Refresh Window |
+| 79 | Retention Period |
+| 80 | Auto Purge Enabled |
+| 81 | Refresh Owner |
+| 82 | Refresh Log Location |
+| 83 | Requirement ID |
+| 84 | Requirement Source |
+| 85 | Requirement Reference |
+| 86 | Requirement Description |
+| 87 | Applicable Data Sets |
+| 88 | Applicable Environments |
+| 89 | Compliance Status |
+| 90 | Last Verification Date |
+| 91 | Verifier |
+| 92 | Findings |
+| 93 | Finding Severity |
+| 94 | Remediation Required |
+| 95 | Next Verification Due |
+| 96 | Assessment Area |
+| 97 | Total Items |
+| 98 | Compliant |
+| 99 | Partial |
+| 100 | Non-Compliant |
+| 101 | N/A |
+| 102 | Compliance % |
+| 103 | Metric |
+| 104 | Value |
+| 105 | Category |
+| 106 | Finding |
+| 107 | Count |
+| 108 | Severity |
+| 109 | Action Required |
+| 110 | Evidence ID |
+| 111 | Evidence Type |
+| 112 | Description |
+| 113 | Location/Path |
+| 114 | Date Collected |
+| 115 | Collected By |
+| 116 | Verification Status |
 
-**Data Rows:** 100 (rows 5–104)
+### Data Validation Values
 
-### Columns
+All dropdown/list values used across sheets:
 
-| Col | Header |
-|-----|--------|
-| A | Data_Set_ID |
-| B | Data_Set_Name |
-| C | Target_Environment |
-| D | Contains_PII |
-| E | Masking_Status |
-| F | Primary_Masking_Technique |
-| G | Masking_Tool |
-| H | Masking_Effectiveness_Score |
-| I | PII_Fields_Identified |
-| J | PII_Fields_Masked |
-| K | PII_Fields_Unmasked |
-| L | Masking_Verification_Date |
-| M | Verification_Method |
-| N | Re_identification_Risk |
-| O | Masking_Gap_Severity |
-| P | Remediation_Owner |
-| Q | Remediation_Target_Date |
-| R | Remediation_Status |
-| S | Exception_Approved |
-| T | Exception_Justification |
-| U | Evidence_Reference |
+```
+Public, Internal, Confidential, Restricted, Yes, No, Authorised, Pending
+Unauthorised, N/A, Daily, Weekly, Monthly, Quarterly, Ad-Hoc, One-Time
+Fully Masked, Partially Masked, Not Masked, Substitution, Shuffling
+Tokenization, Encryption, Synthetic, Anonymization, None, 1, 2, 3, 4, 5
+Automated, Manual Sampling, High, Medium, Low, Critical, Not Started
+In Progress, Completed, Development, QA, Staging, UAT, Performance, Training
+DR-Test, Sandbox, On-Premise, Cloud-AWS, Cloud-Azure, Cloud-GCP, Hybrid
+Container, Local, RBAC, AD/LDAP, SSO, Local Accounts, Full, Partial
+Manual-Current, Manual-Delayed, Compliant, Non-Compliant, Bi-Weekly, Full Copy
+Incremental, Subset, Clone, Yes - Automated, Yes - Manual, GDPR, ISO 27001
+FADP, Internal Policy, Industry Standard, Not Assessed, Automated Check
+Manual Audit, Self-Assessment, Third-Party Audit, Configuration file
+Screenshot, Network scan, Documentation, Vendor spec, Certificate inventory
+Audit log, Compliance report, Other, Verified, Pending verification
+Not verified, Requires update, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
 
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| D | D5:D104 | `pii_dv` |
-| S | S5:S104 | `pii_dv` |
-| E | E5:E104 | `masking_dv` |
-| F | F5:F104 | `technique_dv` |
-| H | H5:H104 | `score_dv` |
-| M | M5:M104 | `verify_dv` |
-| N | N5:N104 | `risk_dv` |
-| O | O5:O104 | `severity_dv` |
-| R | R5:R104 | `status_dv` |
-
----
-
-## Sheet 4: Test_Environment_Registry
-
-**Data Rows:** 50 (rows 5–54)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Environment_ID |
-| B | Environment_Name |
-| C | Environment_Type |
-| D | Infrastructure_Type |
-| E | Environment_Owner |
-| F | Business_Unit |
-| G | Highest_Data_Classification |
-| H | Contains_Production_Data |
-| I | Access_Control_Type |
-| J | Network_Isolation |
-| K | Encryption_at_Rest |
-| L | Encryption_in_Transit |
-| M | Logging_Enabled |
-| N | Patch_Management |
-| O | Security_Control_Status |
-| P | Last_Security_Review |
-| Q | Next_Review_Due |
-| R | Data_Masking_Enforced |
-| S | Environment_URL_Location |
-| T | Support_Contact |
-| U | Evidence_Reference |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C5:C54 | `env_type_dv` |
-| D | D5:D54 | `infra_type_dv` |
-| G | G5:G54 | `classification_dv` |
-| H | H5:H54 | `yn_dv` |
-| I | I5:I54 | `access_dv` |
-| J | J5:J54 | `isolation_dv` |
-| K | K5:K54 | `ynp_dv` |
-| L | L5:L54 | `ynp_dv` |
-| M | M5:M54 | `ynp_dv` |
-| R | R5:R54 | `ynp_dv` |
-| N | N5:N54 | `patch_dv` |
-| O | O5:O54 | `status_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(B5:B54)` | Total Environments |
-| — | `=COUNTIF(C5:C54,` | Development Environments |
-| — | `=COUNTIF(H5:H54,` | Environments with Prod Data |
-| — | `=COUNTIF(O5:O54,` | Security Compliant |
-| — | `=COUNTIF(J5:J54,` | Full Network Isolation |
-
----
-
-## Sheet 5: Data_Refresh_Schedule
-
-**Data Rows:** 50 (rows 5–54)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Refresh_ID |
-| B | Target_Environment |
-| C | Data_Sources |
-| D | Refresh_Frequency |
-| E | Refresh_Method |
-| F | Last_Refresh_Date |
-| G | Next_Scheduled_Refresh |
-| H | Authorization_Status |
-| I | Authorizer |
-| J | Authorization_Date |
-| K | Masking_Applied_at_Refresh |
-| L | Masking_Tool |
-| M | Data_Volume |
-| N | Refresh_Duration |
-| O | Refresh_Window |
-| P | Retention_Period |
-| Q | Auto_Purge_Enabled |
-| R | Refresh_Owner |
-| S | Refresh_Log_Location |
-| T | Evidence_Reference |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| D | D5:D54 | `freq_dv` |
-| E | E5:E54 | `method_dv` |
-| H | H5:H54 | `auth_dv` |
-| K | K5:K54 | `masking_dv` |
-| Q | Q5:Q54 | `yn_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(B5:B54)` | Total Refresh Schedules |
-| — | `=COUNTIF(H5:H54,` | Authorized Refreshes |
-| — | `=COUNTIF(D5:D54,` | Daily Refreshes |
-| — | `=COUNTIF(K5:K54,` | Masking Automated |
-| — | `=COUNTIF(Q5:Q54,` | Auto-Purge Enabled |
-
----
-
-## Sheet 6: Compliance_Verification
-
-**Data Rows:** 50 (rows 5–54)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Requirement_ID |
-| B | Requirement_Source |
-| C | Requirement_Reference |
-| D | Requirement_Description |
-| E | Applicable_Data_Sets |
-| F | Applicable_Environments |
-| G | Compliance_Status |
-| H | Last_Verification_Date |
-| I | Verification_Method |
-| J | Verifier |
-| K | Findings |
-| L | Finding_Severity |
-| M | Remediation_Required |
-| N | Remediation_Owner |
-| O | Remediation_Target_Date |
-| P | Remediation_Status |
-| Q | Next_Verification_Due |
-| R | Evidence_Reference |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| B | B5:B54 | `source_dv` |
-| G | G5:G54 | `status_dv` |
-| I | I5:I54 | `method_dv` |
-| L | L5:L54 | `severity_dv` |
-| M | M5:M54 | `yn_dv` |
-| P | P5:P54 | `rem_status_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(B5:B54)` | Total Requirements |
-| — | `=COUNTIF(G5:G54,` | Compliant |
-| — | `=COUNTIF(L5:L54,` | Critical Findings |
-
----
-
-## Sheet 7: Summary_Dashboard
-
-**Data Rows:** 9 (rows 7–15)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Metric |
-| B | Value |
-| C | Target |
-| D | Status |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| D | D7:D15 | `status_dv` |
-
----
-
-## Sheet 8: Evidence_Register
-
-**Data Rows:** 100 (rows 5–104)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence_ID |
-| B | Evidence_Type |
-| C | Evidence_Title |
-| D | Description |
-| E | Related_Assessment_Area |
-| F | Related_Finding_Control |
-| G | Document_Location |
-| H | Date_Collected |
-| I | Collected_By |
-| J | Verification_Status |
-| K | Verified_By |
-| L | Verification_Date |
-| M | Retention_Period |
-| N | Expiration_Date |
-| O | Confidentiality |
-| P | Auditor_Notes |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| B | B5:B104 | `type_dv` |
-| E | E5:E104 | `area_dv` |
-| J | J5:J104 | `status_dv` |
-| M | M5:M104 | `retention_dv` |
-| O | O5:O104 | `conf_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(B5:B104)` | Total Evidence Entries |
-| — | `=COUNTIF(J5:J104,` | Verified Evidence |
-| — | `=COUNTIF(E5:E104,` | Evidence by Area - Inventory |
-
----
-
-## Sheet 9: Approval_Sign_Off
+**Extracted:** 9 sheets, 116 columns, 103 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

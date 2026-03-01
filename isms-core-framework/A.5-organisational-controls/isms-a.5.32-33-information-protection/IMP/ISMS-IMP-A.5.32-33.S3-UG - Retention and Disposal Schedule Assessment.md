@@ -3,24 +3,38 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.33: Protection of Records
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Retention and Disposal Schedule Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.32-33.S3-UG |
+| **Related Policy** | ISMS-POL-A.5.32-33 (Information Protection) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.33 (Protection of Records) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Records Retention Requirements, Disposal Schedule, Secure Destruction Verification |
-| **Related Policy** | ISMS-POL-A.5.32-33, Section 2.2 (Retention Requirements, Records Disposal) |
-| **Purpose** | Guide users through defining retention periods, managing disposal schedules, and verifying secure destruction |
-| **Target Audience** | Records Manager, Legal Counsel, CISO, IT Operations, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Annual or After Regulatory Changes |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for Retention and Disposal assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.32-33 (Information Protection)
+- ISMS-IMP-A.5.32-33.S1 (IP Rights Inventory and Compliance Assessment)
+- ISMS-IMP-A.5.32-33.S2 (Records Protection Assessment)
 
 ---
 
@@ -31,6 +45,26 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 **Audience:** Records Manager, Legal Counsel, CISO, IT Operations, Compliance Officers
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 11 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Retention Schedule** | Defined retention periods for each record category by regulation |
+| **Regulatory Mapping** | Mapping of record types to applicable regulatory retention requirements |
+| **Disposal Queue** | Records due or scheduled for disposal with approval status |
+| **Disposal Method Matrix** | Approved disposal methods for each record classification |
+| **Destruction Verification** | Verification log of completed secure destruction activities |
+| **Exception Register** | Records retained beyond their standard retention period with justification |
+| **Gap Analysis** | Identified gaps in retention schedule compliance and disposal procedures |
+| **Evidence Register** | Evidence collected to support retention and disposal compliance |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -84,7 +118,6 @@ Proper retention and disposal balances two competing requirements:
 | ISMS-IMP-A.5.32-33.S1 | IP Rights Inventory | IP retention requirements |
 | ISMS-IMP-A.5.32-33.S2 | Records Protection | Protection during retention |
 | **ISMS-IMP-A.5.32-33.S3** | **Retention & Disposal** | **Lifecycle - WHEN and HOW** |
-| ISMS-IMP-A.5.32-33.S4 | Compliance Dashboard | Retention metrics |
 
 ## Who Should Complete This Assessment
 
@@ -388,15 +421,6 @@ Before starting this assessment, gather:
    - Records retained past maximum
    - Exception rate
 
-2. **Complete Sheet 8 (Compliance Dashboard):**
-
-   - Metric name
-   - Target
-   - Current value
-   - Trend
-   - Status
-
-**Deliverable:** Complete Sheet 8 (Compliance Dashboard)
 
 ### Phase 9: Gap Analysis (1-2 hours)
 
@@ -526,10 +550,6 @@ Before starting this assessment, gather:
 | Expiration | When exception ends | Until case resolution |
 | Status | Active/Expired/Cancelled | Active |
 
-## Sheet 8: Compliance Dashboard
-
-**Required Fields:**
-| Column | Description | Example |
 |--------|-------------|---------|
 | Metric ID | Unique identifier | MET-001 |
 | Metric Name | Descriptive name | On-Schedule Disposal Rate |
@@ -659,7 +679,7 @@ Store all evidence in:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Knowing when to let go is as important as knowing when to hold on."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

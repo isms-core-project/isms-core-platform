@@ -7,15 +7,34 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Role-Function Mapping |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.3.3-UG |
+| **Related Policy** | ISMS-POL-A.5.3 (Segregation of Duties) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.3 (Policies for Segregation of Duties) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.3 Segregation of Duties |
-| **Parent Policy** | ISMS-POL-A.5.3 - Segregation of Duties |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.3 (Segregation of Duties)
+- ISMS-IMP-A.5.3.1 (SoD Matrix Assessment)
+- ISMS-IMP-A.5.3.2 (Conflict Analysis)
 
 ---
 
@@ -89,6 +108,24 @@ Detailed role-function mapping delivers:
 | Function Conflict Review | Quarterly | New functions added |
 | Change Log Update | Ongoing | Any permission change |
 | Dormant Permission Analysis | Quarterly | Access review cycles |
+
+### Workbook at a Glance
+
+This workbook contains the following sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, CRUD+A classifications, and field descriptions |
+| **Business Roles** | Catalogue of organisational roles in scope for mapping |
+| **Application Roles** | Application-specific roles linked to each business role |
+| **Functions** | Discrete capabilities available in each application |
+| **Permissions** | Technical permissions (T-codes, API calls, etc.) enabling each function |
+| **Role Function Map** | Complete mapping of business roles to functions |
+| **Function Conflicts** | Function-level conflicts and their classifications |
+| **Validation Status** | Results of RBAC validation against actual system configuration |
+| **Change Log** | Ongoing record of all permission and mapping changes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -456,6 +493,13 @@ Before proceeding, verify:
 | VAL-003 | AROLE-AD-001 | 03.02.2026 | 12 | 12 | 0 | Validated |
 | VAL-004 | AROLE-SQL-001 | 03.02.2026 | 20 | 18 | 2 | Remediated |
 
+### After Completing the Mapping Sheets
+
+Once Steps 1–7 are complete:
+
+- **Change Log** — This sheet is an ongoing responsibility, not a one-time activity. Record every permission or mapping change as it occurs: the date, the role or function affected, the nature of the change, who approved it, and who implemented it. An up-to-date Change Log demonstrates active access governance and is key audit evidence. Start populating it from Day 1 of your mapping effort and continue throughout the year.
+- **Summary Dashboard** — Review the dashboard for an executive summary of mapping completeness, validation status, and function-level conflict counts. It aggregates data from your completed sheets automatically. Review it before initiating the approval workflow to confirm the metrics reflect your current state.
+
 ---
 
 ## Function-Level Conflict Analysis
@@ -754,8 +798,8 @@ Upon approval:
 2. Update ISMS control status
 3. Communicate function conflicts to A.5.3.1 assessment
 4. Schedule next validation cycle
-5. Update A.5.3.4 Dashboard with new data
-6. Integrate change log updates into permission change process
+5. Communicate function conflict data to related assessments (ISMS-IMP-A.5.3.1 and A.5.3.2) as required
+6. Integrate Change Log updates into the ongoing permission change process
 
 ---
 
@@ -763,7 +807,7 @@ Upon approval:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Form ever follows function."*
+— Louis Sullivan
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

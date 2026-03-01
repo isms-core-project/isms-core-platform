@@ -8,27 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-IMP-A.8.20-21-22-S3-UG |
+|-------|-------|
+| **Document Title** | Device Hardening |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.20-21-22.S3-UG |
+| **Related Policy** | ISMS-POL-A.8.20-21-22 (Network Security) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.20 (Networks Security) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Network Device Security Hardening |
-| **Related Policy** | ISMS-POL-A.8.20-21-22, Section 2.1 (Network Infrastructure Security - A.8.20) |
-| **Purpose** | Establish systematic procedures for hardening network devices (routers, switches, firewalls, wireless APs) against security threats using industry-standard baselines and vendor best practices |
-| **Target Audience** | Network Administrators, Security Engineers, System Administrators, Configuration Management Teams, Auditors |
-| **Assessment Type** | Technical Configuration & Compliance Assessment |
-| **Review Cycle** | Quarterly or After Major Firmware/Configuration Changes |
-| **Total Sheets** | 11 |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial implementation guidance for network device hardening process | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.20-21-22 (Network Security)
+- ISMS-IMP-A.8.20-21-22.S1 (Network Discovery)
+- ISMS-IMP-A.8.20-21-22.S2 (Architecture Documentation)
+- ISMS-IMP-A.8.20-21-22.S4 (Services Security)
+- ISMS-IMP-A.8.20-21-22.S5 (Segmentation Implementation)
 
 ---
 
-**Audience:** Security assessors, Control owners, Compliance officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Services Catalog | Catalogue all network services in use |
+| 3 | DNS Security Assessment | Assess DNS service security configuration |
+| 4 | DHCP Security Assessment | Assess DHCP service security configuration |
+| 5 | NTP Security Assessment | Assess NTP service security configuration |
+| 6 | Proxy Security Assessment | Assess proxy service security configuration |
+| 7 | Additional Services | Document and assess additional network services |
+| 8 | Gap Analysis | Identify network services security gaps |
+| 9 | Service Dependencies | Map service dependencies and risks |
+| 10 | Evidence Register | Store and reference evidence supporting assessments |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -86,7 +113,7 @@ This guidance is **technology-agnostic** with specific examples for:
 
 Phase 1: Baseline Development
 ├─ Identify hardening standards (CIS Benchmarks, vendor guides)
-├─ Adapt standards to [Organization] environment
+├─ Adapt standards to [Organisation] environment
 ├─ Document hardening baseline per device type
 └─ Get baseline approved by security and network teams
 
@@ -105,7 +132,7 @@ Phase 3: Hardening Implementation
 Phase 4: Validation and Testing
 ├─ Verify hardening configuration applied correctly
 ├─ Run compliance scan (compare against baseline)
-├─ Test security controls (attempt unauthorized access)
+├─ Test security controls (attempt unauthorised access)
 └─ Document validation results
 
 Phase 5: Documentation and Change Management
@@ -183,15 +210,15 @@ Phase 6: Ongoing Maintenance
 - CIS Cisco IOS Benchmark (e.g., version 4.1.0)
 - Cisco IOS Security Configuration Guide
 
-### Adapt Standards to [Organization] Environment
+### Adapt Standards to [Organisation] Environment
 
 **Action**: Customize baseline to fit operational requirements.
 
 **Example Customizations**:
 
-- **SNMP**: CIS recommends SNMPv3 only, but [Organization] may need SNMPv2c for legacy monitoring tools (document as exception)
+- **SNMP**: CIS recommends SNMPv3 only, but [Organisation] may need SNMPv2c for legacy monitoring tools (document as exception)
 - **SSH Version**: CIS recommends SSH v2 only → Adopt (no exceptions)
-- **Banner Messages**: CIS provides generic banner → Customize with [Organization] legal language
+- **Banner Messages**: CIS provides generic banner → Customize with [Organisation] legal language
 
 **Document Exceptions**:
 ```
@@ -214,7 +241,7 @@ Hardening Baseline Exceptions
 | 1 | Disable HTTP (use HTTPS only) | `no ip http server`<br>`ip http secure-server` | Show: `show ip http server status` |
 | 2 | Enable SSH v2 (disable Telnet) | `no line vty 0 4 transport input telnet`<br>`line vty 0 4 transport input ssh`<br>`ip ssh version 2` | Show: `show ip ssh` |
 | 3 | Set enable secret (strong password) | `enable secret [strong_password]` | Config check (encrypted) |
-| 4 | Configure login banner | `banner login ^Unauthorized access prohibited^` | Show: `show running-config \| include banner` |
+| 4 | Configure login banner | `banner login ^Unauthorised access prohibited^` | Show: `show running-config \| include banner` |
 | 5 | Enable NTP | `ntp server 10.1.0.30` | Show: `show ntp status` |
 | 6 | Configure syslog | `logging host 10.1.0.100` | Show: `show logging` |
 | 7 | Disable unused services | `no ip bootp server`<br>`no service dhcp`<br>`no ip domain-lookup` | Config check |
@@ -469,8 +496,8 @@ banner login ^
 ===============================================================================
                    UNAUTHORIZED ACCESS PROHIBITED
   
-  This system is for authorized use only. All activity is monitored and
-  logged. Unauthorized access is prohibited and will be prosecuted to the
+  This system is for authorised use only. All activity is monitored and
+  logged. Unauthorised access is prohibited and will be prosecuted to the
   fullest extent of the law.
 ===============================================================================
 ^
@@ -491,7 +518,7 @@ banner motd ^
 ! aaa new-model
 ! tacacs-server host 10.1.0.50 key [TACACS_KEY]
 ! aaa authentication login default group tacacs+ local
-! aaa authorization exec default group tacacs+ local
+! aaa authorisation exec default group tacacs+ local
 ! aaa accounting exec default start-stop group tacacs+
 
 ! ----------------------------------
@@ -693,11 +720,11 @@ show access-lists 99
 
 ### Penetration Testing
 
-**Test Unauthorized Access**:
+**Test Unauthorised Access**:
 
 - Attempt to Telnet to device → Should be refused (Telnet disabled)
 - Attempt to access HTTP → Should be refused (HTTP disabled)
-- Attempt to SSH from unauthorized IP → Should be denied (VTY ACL)
+- Attempt to SSH from unauthorised IP → Should be denied (VTY ACL)
 - Attempt to brute-force SSH login → Should lock out after 3 attempts
 
 **Example Test Commands**:
@@ -807,7 +834,7 @@ Next Steps:
 
 **Action**: Run compliance scan every quarter to detect configuration drift.
 
-**Configuration Drift**: Unauthorized changes to device configuration.
+**Configuration Drift**: Unauthorised changes to device configuration.
 
 **Detection Methods**:
 1. **Automated**: RANCID/Oxidized emails diffs daily
@@ -1042,7 +1069,7 @@ print("Report generated: compliance_report.csv")
 - [ ] Hardening configuration applied
 - [ ] Post-hardening validation passed (compliance scan)
 - [ ] Functional testing passed (device still works)
-- [ ] Security testing passed (unauthorized access denied)
+- [ ] Security testing passed (unauthorised access denied)
 - [ ] CMDB updated (hardening status, date)
 - [ ] Configuration version controlled (Git/RANCID)
 - [ ] RFC closed with success notes
@@ -1129,7 +1156,7 @@ print("Report generated: compliance_report.csv")
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A default configuration is a known vulnerability."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

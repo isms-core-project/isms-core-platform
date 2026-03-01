@@ -5,307 +5,171 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
 | **Document Title** | Learning & Continuous Improvement Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.24-28.S5-TG |
-| **Assessment Domain** | Domain 5 - Learning & Improvement (A.5.27 Focus) |
 | **Related Policy** | ISMS-POL-A.5.24-28 (Incident Management Lifecycle) |
-| **Related Reference** | ISMS-REF-A.5.24-28 (Incident Response Reference Guide) |
-| **Document Owner** | Chief Information Security Officer (CISO) |
-| **Technical Authority** | Incident Response Team Lead / CSIRT Manager |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.27) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
-**Version History:**
+**Version History**:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CSIRT Manager | Initial learning & improvement assessment specification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle:** Annual (or after major incident management process changes)
-**Next Review Date:** [Effective Date + 12 months]
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-**Related Documents:**
-- ISMS-POL-A.5.24-28 (Incident Management Lifecycle Policy)
-- ISMS-REF-A.5.24-28 (Incident Response Reference Guide)
-- ISMS-IMP-A.5.24-28.S1 (Framework & Governance Assessment)
-- ISMS-IMP-A.5.24-28.S2 (Detection & Classification Assessment)
+**Related Documents**:
+
+- ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
+- ISMS-IMP-A.5.24-28.S1 (Incident Management Framework Assessment)
+- ISMS-IMP-A.5.24-28.S2 (Detection Classification Assessment)
 - ISMS-IMP-A.5.24-28.S3 (Response Capabilities Assessment)
 - ISMS-IMP-A.5.24-28.S4 (Forensic Evidence Assessment)
-- ISO/IEC 27002:2022 Control A.5.27
-- NIST SP 800-61 Rev. 2 Section 3.4 (Post-Incident Activity)
 
 ---
 
 # Technical Specification
 **Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
-
-> Auto-generated from `generate_a524_28_s5_learning_improvement.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.24-28.S5` |
-| **Output Filename** | `ISMS-IMP-A.5.24-28.S5_Learning_Improvement_YYYYMMDD.xlsx` |
-| **Workbook Title** | Learning & Continuous Improvement |
-| **Total Sheets** | 20 (20 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9E2F3 | D9E2F3 | Custom |
-| #E2EFDA | E2EFDA | Pale Green (Success Background) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFF99 | FFFF99 | Custom |
-
-## Sheet 1: Instructions & Legend
-
 ---
 
-## Sheet 2: PIR Process
-
----
-
-## Sheet 3: Root Cause Analysis
-
----
-
-## Sheet 4: Lessons Learned
-
----
-
-## Sheet 5: Control Improvements
-
----
-
-## Sheet 6: Trend Analysis
-
----
-
-## Sheet 7: Gap Analysis
-
----
-
-## Sheet 8: Evidence Register
-
----
-
-## Sheet 9: Summary Dashboard
-
----
-
-## Sheet 10: Approval Sign-Off
-
----
-
-## Sheet 11: Instructions
-
----
-
-## Sheet 12: Pir_Process
-
-**Data Rows:** 50 (rows 6–55)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Incident_ID |
-| B | Incident_Date |
-| C | Severity |
-| D | Resolution_Date |
-| E | PIR_Status |
-| F | PIR_Completion_Date |
-| G | SLA_Days |
-| H | Actual_Days |
-| I | SLA_Met |
-| J | Participants_Met |
-| K | Quality_Score |
-| L | Evidence_Ref |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(A6:A55)` | Total incidents in period |
-| — | `=COUNTIF(E6:E55,` | PIRs completed |
-| — | `=IF(B` | SLA compliance rate (%) |
-
----
-
-## Sheet 13: Rca
-
-**Data Rows:** 30 (rows 6–35)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Incident_ID |
-| B | Severity |
-| C | RCA_Status |
-| D | RCA_Date |
-| E | Methodology |
-| F | Root_Cause_Summary |
-| G | Depth_Score |
-| H | Recurring |
-| I | Evidence_Ref |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(A6:A35)` | Critical/High incidents in period |
-| — | `=COUNTIF(C6:C35,` | RCAs completed |
-| — | `=COUNTIF(G6:G35,` | Systemic depth RCAs |
-| — | `=COUNTIF(H6:H35,` | Recurring root causes |
-
----
-
-## Sheet 14: Lessons_Learned
-
-**Data Rows:** 50 (rows 6–55)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | PIR_ID |
-| B | LL_Entry_Date |
-| C | Lesson_Summary |
-| D | Distribution_Date |
-| E | SLA_Met |
-| F | Playbook_Update |
-| G | Playbook_Date |
-| H | Evidence_Ref |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(A6:A55)` | Total lessons learned entries |
-| — | `=IF(COUNTA(A6:A55)>0,COUNTIF(E6:E55,` | Distribution SLA met (%) |
-| — | `=COUNTIF(F6:F55,` | Playbook updates completed |
-| — | `=COUNTIF(E60:E74,` | KB items current |
-| — | `=COUNTIFS(E60:E74,` | KB items outdated/missing |
-
----
-
-## Sheet 15: Control_Improvements
-
-**Data Rows:** 70 (rows 6–75)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Action_ID |
-| B | Source_Incident |
-| C | Action_Description |
-| D | Priority |
-| E | Owner |
-| F | Target_Date |
-| G | Status |
-| H | Completion_Date |
-| I | Verified_By |
-| J | Escalated |
-| K | Evidence_Ref |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(A6:A75)` | Total actions |
-| — | `=COUNTIF(G6:G75,` | Actions completed |
-| — | `=IF(COUNTA(A6:A75)>0,COUNTIF(G6:G75,` | Closure rate (%) |
-| — | `=COUNTIFS(D6:D75,` | Critical actions open |
-| — | `=COUNTIFS(F6:F75,` | Overdue actions |
-
----
-
-## Sheet 16: Trend_Analysis
-
-**Data Rows:** 8 (rows 6–13)
-
----
-
-## Sheet 17: Gap_Analysis
-
-**Data Rows:** 30 (rows 6–35)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Gap_ID |
-| B | Source_Sheet |
-| C | Gap_Description |
-| D | Severity |
-| E | Owner |
-| F | Target_Date |
-| G | Remediation_Plan |
-| H | Status |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=COUNTA(A6:A35)` |  |
-| DN | `=COUNTIF(D6:D35,` |  |
-
----
-
-## Sheet 18: Evidence_Register
-
-**Data Rows:** 50 (rows 6–55)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence_ID |
-| B | Related_Sheet |
-| C | Evidence_Type |
-| D | Description |
-| E | File_Location |
-| F | Collection_Date |
-| G | Collected_By |
-
----
-
-## Sheet 19: Summary_Dashboard
-
-**Data Rows:** 5 (rows 10–14)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| B6 | `=AVERAGE(B10:B14)` |  |
-
----
-
-## Sheet 20: Approval_Signoff
+## Generator Alignment Reference
+
+> Auto-generated from `generate_a524_28_s5_learning_improvement.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
+
+**Document ID:** `ISMS-IMP-A.5.24-28.S5`
+
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
+
+### Sheet Structure
+
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | PIR Process |
+| 3 | Root Cause Analysis |
+| 4 | Lessons Learned |
+| 5 | Control Improvements |
+| 6 | Trend Analysis |
+| 7 | Gap Analysis |
+| 8 | Evidence Register |
+| 9 | Summary Dashboard |
+| 10 | Approval Sign-Off |
+
+### Color Palette
+
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
+
+### Column Headers (All Sheets)
+
+| # | Column Header |
+|---|--------------|
+| 1 | Incident ID |
+| 2 | Incident Date |
+| 3 | Severity |
+| 4 | Resolution Date |
+| 5 | PIR Status |
+| 6 | PIR Completion Date |
+| 7 | SLA Days |
+| 8 | Actual Days |
+| 9 | SLA Met |
+| 10 | Participants Met |
+| 11 | Quality Score |
+| 12 | Evidence Ref |
+| 13 | RCA Status |
+| 14 | RCA Date |
+| 15 | Methodology |
+| 16 | Root Cause Summary |
+| 17 | Depth Score |
+| 18 | Recurring |
+| 19 | PIR ID |
+| 20 | LL Entry Date |
+| 21 | Lesson Summary |
+| 22 | Distribution Date |
+| 23 | Playbook Update |
+| 24 | Playbook Date |
+| 25 | KB ID |
+| 26 | Title |
+| 27 | Type |
+| 28 | Last Updated |
+| 29 | Status |
+| 30 | Owner |
+| 31 | Action ID |
+| 32 | Source Incident |
+| 33 | Action Description |
+| 34 | Priority |
+| 35 | Target Date |
+| 36 | Completion Date |
+| 37 | Verified By |
+| 38 | Escalated |
+| 39 | KPI |
+| 40 | Metric Type |
+| 41 | Target |
+| 42 | Current |
+| 43 | Trend |
+| 44 | Period |
+| 45 | Report Type |
+| 46 | Frequency |
+| 47 | Last Produced |
+| 48 | On Schedule |
+| 49 | Recipients Documented |
+| 50 | Gap ID |
+| 51 | Source Sheet |
+| 52 | Gap Description |
+| 53 | Remediation Plan |
+| 54 | Assessment Area |
+| 55 | Records |
+| 56 | Completed |
+| 57 | In Progress |
+| 58 | Not Done |
+| 59 | Completion % |
+
+### Data Validation Values
+
+All dropdown/list values used across sheets:
+
+```
+Critical, High, Medium, Low, Completed, Overdue, Pending, Not_Required, Yes
+No, 1, 2, 3, 4, 5, In_Progress, Not_Performed, 5_Whys, Fishbone, Fault_Tree
+Timeline, Combined, Other, 1 - Technical, 2 - Procedural, 3 - Systemic
+Partial, N/A, Playbook, Procedure, Template, Reference, Training, Current
+Outdated, Missing, Under_Review, Open, Blocked, Cancelled, At_Risk, Improving
+Stable, Degrading, PIR Process, Root Cause Analysis, Lessons Learned
+Control Improvements, Trend Analysis, Closed, Accepted, Active, Archived
+Superseded, Pending Review, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
+
+**Extracted:** 10 sheets, 59 columns, 63 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

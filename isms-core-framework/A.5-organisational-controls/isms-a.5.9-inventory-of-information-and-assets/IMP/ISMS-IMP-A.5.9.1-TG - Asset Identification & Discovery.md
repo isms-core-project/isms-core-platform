@@ -8,352 +8,121 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Asset Identification & Discovery |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.9.1-TG |
+| **Related Policy** | ISMS-POL-A.5.9 (Inventory of Information and Assets) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.9 (Inventory of Information and Other Associated Assets) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Asset Identification & Discovery Procedures |
-| **Related Policy** | ISMS-POL-A.5.9, Section 2.1 (Asset Inventory Creation), Section 2.5 (Inventory Quality Standards) |
-| **Purpose** | Document asset discovery procedures, verify completeness of inventory, and identify gaps in asset identification across all categories |
-| **Target Audience** | Security Team, IT Operations, System Owners, Information Owners, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Technical |
-| **Review Cycle** | Quarterly or After Major Organizational Changes |
-| **Date** | [Date]  |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|--------|--------|
-| 1.0 | [Date]  | Initial assessment specification following consolidated policy structure | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.9 (Inventory of Information and Assets)
+- ISMS-IMP-A.5.9.2 (Inventory Structure & Maintenance)
+- ISMS-IMP-A.5.9.3 (Assessment Specifications)
+- ISMS-IMP-A.5.9.4 (Owner Accountability Assessment)
 
 ---
+
 # Technical Specification
-**Audience:** Workbook developers (Python/Excel script maintainers)
-
-
-> Auto-generated from `generate_a59_1_asset_discovery.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.9.1` |
-| **Total Sheets** | 10 (10 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control A.5.9: Inventory of Information and Assets |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | header_bg | Dark Blue (Headers) |
-| #006100 | green_dark | Dark Green (Pass) |
-| #2E75B5 | 2E75B5 | Custom |
-| #4472C4 | section_bg | Medium Blue (Sub-headers) |
-| #9C0006 | red_dark | Dark Red (Error) |
-| #9C5700 | yellow_dark | Custom |
-| #C6EFCE | green_light | Light Green (Compliant/Pass) |
-| #D8E4F8 | D8E4F8 | Pale Blue (Sub-section) |
-| #D9D9D9 | gray_light | Light Gray (Column Headers) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #FFC7CE | red_light | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | yellow_light | Light Yellow/Amber (Partial) |
-| #FFF2CC | FFF2CC | Cream (Input Alt) |
-
-## Sheet 1: Instructions
-
-**Data Rows:** 4 (rows 5–8)
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Information_Assets
+## Generator Alignment Reference
 
-### Columns
+> Auto-generated from `generate_a59_1_asset_discovery.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Asset Subcategory | 25 |
-| B | Discovery Method | 30 |
-| C | Expected Count | 15 |
-| D | Discovered Count | 15 |
-| E | Completeness % | 15 |
-| F | Compliance Status | 18 |
-| G | Gaps Identified | 40 |
-| H | Discovery Evidence | 30 |
-| I | Next Discovery Actions | 40 |
-| J | Responsible Party | 25 |
-| K | Target Date | 15 |
-| L | Evidence ID | 15 |
-| M | Notes | 30 |
+**Document ID:** `ISMS-IMP-A.5.9.1`
 
-### Conditional Formatting
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-| Range | Condition | Format |
-|-------|-----------|--------|
-| E4:EN | greaterThanOrEqual 95 |  |
-| E4:EN | between 85 |  |
-| E4:EN | lessThan 85 |  |
+### Sheet Structure
 
-### Formulas
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Information Assets Discovery |
+| 3 | IT Infrastructure Discovery |
+| 4 | Applications Discovery |
+| 5 | Physical Assets Discovery |
+| 6 | Personnel Assets Discovery |
+| 7 | Discovery Metrics & Summary |
+| 8 | Evidence Register |
+| 9 | Summary Dashboard |
+| 10 | Approval Sign-Off |
 
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| EN | `=IFERROR(D{row}/C{row}*100,0)` |  |
-| FN | `=IF(E{row}>=95,` |  |
-| BN | `=SUM(C4:C{row-1})` |  |
-| BN | `=SUM(D4:D{row-1})` |  |
-| BN | `=IFERROR(B{summary_row-1}/B{summary_row-2}*100,0)` |  |
-| BN | `=B{summary_row-2}-95` |  |
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #9C0006 | Dark Red (Error) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 3: It_Infrastructure
+### Column Headers (All Sheets)
 
-### Columns
+| # | Column Header |
+|---|--------------|
+| 1 | Asset Subcategory |
+| 2 | Discovery Method |
+| 3 | Expected Count |
+| 4 | Discovered Count |
+| 5 | Completeness % |
+| 6 | Compliance Status |
+| 7 | Gaps Identified |
+| 8 | Discovery Evidence |
+| 9 | Next Discovery Actions |
+| 10 | Responsible Party |
+| 11 | Target Date |
+| 12 | Evidence ID |
+| 13 | Notes |
+| 14 | Asset Category |
+| 15 | Target % |
+| 16 | Gap vs. Target |
+| 17 | Priority |
+| 18 | Key Gaps |
+| 19 | Next Actions |
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Asset Subcategory | 25 |
-| B | Discovery Method | 30 |
-| C | Expected Count | 15 |
-| D | Discovered Count | 15 |
-| E | Completeness % | 15 |
-| F | Compliance Status | 18 |
-| G | Gaps Identified | 40 |
-| H | Discovery Evidence | 30 |
-| I | Next Discovery Actions | 40 |
-| J | Responsible Party | 25 |
-| K | Target Date | 15 |
-| L | Evidence ID | 15 |
-| M | Notes | 30 |
+### Data Validation Values
 
-### Conditional Formatting
+All dropdown/list values used across sheets:
 
-| Range | Condition | Format |
-|-------|-----------|--------|
-| E4:EN | greaterThanOrEqual 98 |  |
-| E4:EN | between 88 |  |
-| E4:EN | lessThan 88 |  |
+```
+Verified, Not verified, In Review, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
 
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| EN | `=IFERROR(D{row}/C{row}*100,0)` |  |
-| FN | `=IF(E{row}>=98,` |  |
-| BN | `=SUM(C4:C{row-1})` |  |
-| BN | `=SUM(D4:D{row-1})` |  |
-| BN | `=IFERROR(B{summary_row-1}/B{summary_row-2}*100,0)` |  |
-| BN | `=B{summary_row-2}-98` |  |
-
----
-
-## Sheet 4: Applications
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Asset Subcategory | 25 |
-| B | Discovery Method | 30 |
-| C | Expected Count | 15 |
-| D | Discovered Count | 15 |
-| E | Completeness % | 15 |
-| F | Compliance Status | 18 |
-| G | Gaps Identified | 40 |
-| H | Discovery Evidence | 30 |
-| I | Next Discovery Actions | 40 |
-| J | Responsible Party | 25 |
-| K | Target Date | 15 |
-| L | Evidence ID | 15 |
-| M | Notes | 30 |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| E4:EN | greaterThanOrEqual 90 |  |
-| E4:EN | between 80 |  |
-| E4:EN | lessThan 80 |  |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| EN | `=IFERROR(D{row}/C{row}*100,0)` |  |
-| FN | `=IF(E{row}>=90,` |  |
-| BN | `=SUM(C4:C{row-1})` |  |
-| BN | `=SUM(D4:D{row-1})` |  |
-| BN | `=IFERROR(B{summary_row+2}/B{summary_row+1}*100,0)` |  |
-| BN | `=B{summary_row+3}-90` |  |
-
----
-
-## Sheet 5: Physical_Assets
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Asset Subcategory | 25 |
-| B | Discovery Method | 30 |
-| C | Expected Count | 15 |
-| D | Discovered Count | 15 |
-| E | Completeness % | 15 |
-| F | Compliance Status | 18 |
-| G | Gaps Identified | 40 |
-| H | Discovery Evidence | 30 |
-| I | Next Discovery Actions | 40 |
-| J | Responsible Party | 25 |
-| K | Target Date | 15 |
-| L | Evidence ID | 15 |
-| M | Notes | 30 |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| E4:EN | greaterThanOrEqual 90 |  |
-| E4:EN | between 80 |  |
-| E4:EN | lessThan 80 |  |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| EN | `=IFERROR(D{row}/C{row}*100,0)` |  |
-| FN | `=IF(E{row}>=90,` |  |
-| BN | `=SUM(C4:C{row-1})` |  |
-| BN | `=SUM(D4:D{row-1})` |  |
-| BN | `=IFERROR(B{summary_row+2}/B{summary_row+1}*100,0)` |  |
-| BN | `=B{summary_row+3}-90` |  |
-
----
-
-## Sheet 6: Personnel_Assets
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Asset Subcategory | 25 |
-| B | Discovery Method | 30 |
-| C | Expected Count | 15 |
-| D | Discovered Count | 15 |
-| E | Completeness % | 15 |
-| F | Compliance Status | 18 |
-| G | Gaps Identified | 40 |
-| H | Discovery Evidence | 30 |
-| I | Next Discovery Actions | 40 |
-| J | Responsible Party | 25 |
-| K | Target Date | 15 |
-| L | Evidence ID | 15 |
-| M | Notes | 30 |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| E4:EN | equal 100 |  |
-| E4:EN | between 90 |  |
-| E4:EN | lessThan 90 |  |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| EN | `=IFERROR(D{row}/C{row}*100,0)` |  |
-| FN | `=IF(E{row}=100,` |  |
-| BN | `=SUM(C4:C{row-1})` |  |
-| BN | `=SUM(D4:D{row-1})` |  |
-| BN | `=IFERROR(B{summary_row+2}/B{summary_row+1}*100,0)` |  |
-| BN | `=B{summary_row+3}-100` |  |
-
----
-
-## Sheet 7: Discovery_Metrics
-
-**Data Rows:** 5 (rows 4–8)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Asset Category | 30 |
-| B | Expected Count | 15 |
-| C | Discovered Count | 15 |
-| D | Completeness % | 15 |
-| E | Target % | 12 |
-| F | Gap vs. Target | 15 |
-| G | Compliance Status | 20 |
-| H | Priority | 15 |
-| I | Key Gaps | 50 |
-| J | Next Actions | 50 |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| D4:D8 | greaterThanOrEqual 95 |  |
-| D4:D8 | between 85 |  |
-| D4:D8 | lessThan 85 |  |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `={sheet_ref}!B22` | Adjust row as needed |
-| CN | `={sheet_ref}!B23` | Adjust row as needed |
-| DN | `=IFERROR(C{row}/B{row}*100,0)` |  |
-| FN | `=D{row}-{target}` |  |
-| GN | `=IF(D{row}>={target},` |  |
-| HN | `=IF(F{row}<-10,` |  |
-| BN | `=SUM(B4:B8)` |  |
-| BN | `=SUM(C4:C8)` |  |
-| BN | `=IFERROR(B{overall_row-1}/B{overall_row-2}*100,0)` |  |
-| BN | `=B{overall_row-2}-95` |  |
-| AN | `=A{4+i}` |  |
-| BN | `=D{4+i}` |  |
-| CN | `=G{4+i}` |  |
-
----
-
-## Sheet 8: Evidence_Register
-
-**Data Rows:** 97 (rows 4–100)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence ID | 15 |
-| B | Asset Category | 25 |
-| C | Discovery Method | 30 |
-| D | Evidence Type | 30 |
-| E | Evidence Description | 50 |
-| F | Evidence Location | 40 |
-| G | Collection Date | 15 |
-| H | Collected By | 25 |
-| I | Validity Period | 20 |
-| J | Review Date | 15 |
-| K | Reviewed By | 25 |
-| L | Review Status | 20 |
-| M | Retention End Date | 18 |
-| N | Notes | 40 |
-
----
-
-## Sheet 9: Summary_Dashboard
-
----
-
-## Sheet 10: Approval_Signoff
-
-**Data Rows:** 4 (rows 2–5)
+**Extracted:** 10 sheets, 19 columns, 11 validation values, 11 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

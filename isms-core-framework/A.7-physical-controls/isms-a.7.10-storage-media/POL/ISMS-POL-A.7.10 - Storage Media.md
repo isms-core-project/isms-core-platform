@@ -43,7 +43,6 @@
 - ISMS-IMP-A.7.10.1-UG/TG (Storage Media Inventory)
 - ISMS-IMP-A.7.10.2-UG/TG (Media Handling Procedures)
 - ISMS-IMP-A.7.10.3-UG/TG (Media Lifecycle Tracking)
-- ISMS-IMP-A.7.10.4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.7.10
 
 ---
@@ -511,4 +510,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for storage media management. Implementation procedures are documented in ISMS-IMP-A.7.10 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

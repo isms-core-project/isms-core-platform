@@ -8,26 +8,58 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Intelligence Integration & Distribution Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.7.3-UG |
+| **Related Policy** | ISMS-POL-A.5.7 (Threat Intelligence) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.7 (Threat Intelligence) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Intelligence Integration into Security Operations & Distribution to Stakeholders |
-| **Related Policy** | ISMS-POL-A.5.7, Section 2.3 (Intelligence Dissemination Requirements), Section 2.4 (Risk Assessment Integration Requirements), Section 2.5 (Incident Management Integration Requirements), Section 2.7 (Effectiveness Measurement Requirements) |
-| **Purpose** | Assess effectiveness of threat intelligence integration with security tools, dissemination to stakeholders, and measurement of operational impact including prevention tracking |
-| **Target Audience** | Security Operations Manager, SOC Team, Incident Response, Network Security, Threat Intelligence Team, Risk Management, CISO, Auditors |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Quarterly |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial consolidated specification (17 sheets) | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.7 (Threat Intelligence)
+- ISMS-IMP-A.5.7.1 (Threat Intelligence Sources Assessment)
+- ISMS-IMP-A.5.7.2 (Intelligence Collection & Analysis Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.7.3-TG.
+
+### Workbook at a Glance
+
+This workbook contains the following 12 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Tool Integration Matrix** | Mapping of intelligence integration with security tools (SIEM, EDR, SOAR) |
+| **IOC Deployment** | Tracking of IOC deployment across security controls |
+| **Dissemination Channels** | Documentation of intelligence distribution channels by stakeholder |
+| **Stakeholder Registry** | Intelligence consumer registry with distribution preferences |
+| **Distribution Tracking** | Record of intelligence distributed and stakeholder acknowledgement |
+| **Feedback Collection** | Structured feedback from intelligence consumers |
+| **Integration Metrics** | Measurement of integration effectiveness and operational impact |
+| **Action Items** | Gap identification and remediation tracking |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -53,7 +85,7 @@ This assessment evaluates how effectively threat intelligence is INTEGRATED into
 
 #### Key Principle
 
-This assessment is **integration and distribution-focused**. You document HOW intelligence flows INTO security tools and OUT to stakeholders - not how intelligence is collected (A.5.7.1) or analyzed (A.5.7.2), but where it goes and what happens with it.
+This assessment is **integration and distribution-focused**. You document HOW intelligence flows INTO security tools and OUT to stakeholders - not how intelligence is collected (A.5.7.1) or analysed (A.5.7.2), but where it goes and what happens with it.
 
 **CRITICAL COMPLIANCE NOTE**: Sheets 7, 13, 14, and 15 provide MANDATORY audit evidence required by:
 
@@ -97,8 +129,6 @@ This assessment is **integration and distribution-focused**. You document HOW in
 | ISMS-IMP-A.5.7.1 | Source Portfolio | Sources identified, feeds into A.5.7.3 |
 | ISMS-IMP-A.5.7.2 | Collection & Analysis | VTL records and IOCs produced, consumed by A.5.7.3 |
 | **ISMS-IMP-A.5.7.3** | **Integration & Distribution** | **WHERE intelligence is deployed (this assessment)** |
-| ISMS-IMP-A.5.7.4 | Effectiveness Dashboard | Consolidates A.5.7.3 metrics |
-| ISMS-IMP-A.5.7.5 | Standalone Dashboard | Uses A.5.7.3 prevention/decision metrics |
 
 This assessment (A.5.7.3) is the OPERATIONAL DEPLOYMENT - it consumes intelligence from A.5.7.2 and demonstrates VALUE through prevented incidents, updated risk assessments, and business decisions.
 
@@ -223,8 +253,6 @@ This assessment depends on:
 
 Outputs from this assessment feed into:
 
-- **A.5.7.4 (Effectiveness Dashboard)** - Prevention metrics, integration metrics consolidated
-- **A.5.7.5 (Standalone Dashboard)** - Prevention and decision metrics for executives
 - **Risk Management Process** - Sheet 13 updates feed into risk register
 - **Incident Management Process** - Sheet 14 tracks TI usage effectiveness
 
@@ -295,7 +323,7 @@ Outputs from this assessment feed into:
 **Objective:** Complete Sheet 2 - Tool_Integration_Matrix
 
 **Steps:**
-1. List EVERY security tool in [Organization]'s environment:
+1. List EVERY security tool in [Organisation]'s environment:
 
    - SIEM (Splunk, QRadar, Sentinel, etc.)
    - EDR/XDR (CrowdStrike, SentinelOne, Carbon Black, etc.)
@@ -411,7 +439,7 @@ Outputs from this assessment feed into:
 
 - ✓ All distribution methods documented
 - ✓ Appropriate channels for each audience
-- ✓ Automation maximized (reduce manual distribution)
+- ✓ Automation maximised (reduce manual distribution)
 - ✓ Access controls appropriate (TLP compliance)
 
 ---
@@ -557,7 +585,7 @@ A prevented incident is a situation where:
 
    - What specific action was taken?
    - When was action taken?
-   - Who authorized/executed the action?
+   - Who authorised/executed the action?
    - Systems/processes affected
 
 3. **Collect Evidence**:
@@ -634,7 +662,7 @@ A prevented incident is a situation where:
 **Quality Check:**
 
 - ✓ Each prevention has complete evidence package
-- ✓ Business impact justified (not exaggerated, not minimized)
+- ✓ Business impact justified (not exaggerated, not minimised)
 - ✓ Confidence level appropriate to evidence quality
 - ✓ Quarterly target met (≥3)
 - ✓ Lessons learned actionable
@@ -672,7 +700,7 @@ A prevented incident is a situation where:
 
 - ✓ Feedback solicited for all major distributions
 - ✓ Response rate ≥30% (target)
-- ✓ Negative feedback analyzed and addressed
+- ✓ Negative feedback analysed and addressed
 - ✓ Improvements implemented and communicated
 
 ---
@@ -822,7 +850,7 @@ A prevented incident is a situation where:
 **KPI TARGET**: ≥3 risk assessment updates per quarter
 
 **ISO 27001 CLAUSE 6.1 REQUIREMENT**:
-Organizations must regularly review and update their risk assessment based on changes in:
+Organisations must regularly review and update their risk assessment based on changes in:
 
 - Threat landscape
 - Vulnerabilities discovered
@@ -833,9 +861,9 @@ Organizations must regularly review and update their risk assessment based on ch
 
 **WHEN TO UPDATE RISK ASSESSMENT BASED ON TI:**
 
-✅ **Trigger 1: New Threat Actor Targeting Organization's Sector**
+✅ **Trigger 1: New Threat Actor Targeting Organisation's Sector**
 
-- Intelligence: Threat actor profile (from A.5.7.2 Sheet 12) shows targeting of [Organization]'s sector
+- Intelligence: Threat actor profile (from A.5.7.2 Sheet 12) shows targeting of [Organisation]'s sector
 - Action: Update risk assessment to reflect new threat actor capability/motivation
 - Example: APT group now targeting financial sector → increase likelihood ratings
 
@@ -845,9 +873,9 @@ Organizations must regularly review and update their risk assessment based on ch
 - Action: Update risk assessment for affected systems/data
 - Example: CVE-2025-12345 (CVSS 9.3) actively exploited → increase risk rating for web servers
 
-✅ **Trigger 3: Campaign Targeting Similar Organizations**
+✅ **Trigger 3: Campaign Targeting Similar Organisations**
 
-- Intelligence: Campaign tracking (from A.5.7.2 Sheet 13) shows attacks on similar organizations
+- Intelligence: Campaign tracking (from A.5.7.2 Sheet 13) shows attacks on similar organisations
 - Action: Update risk assessment based on campaign TTPs and targets
 - Example: Ransomware campaign targeting healthcare providers → reassess data backup risks
 
@@ -1233,8 +1261,8 @@ A decision where:
 | **Decision_Date** | Date decision made | 25.01.2026 |
 | **Quarter** | Auto-calculated | 2026-Q1 |
 | **Intelligence_Source** | What intelligence informed decision? | ACTOR-005, CAMP-003, Industry ISAC Report Q4-2025 |
-| **Intelligence_Summary** | Brief summary (max 500 chars) | Ransomware group RansomX targeting financial sector, 15 organizations compromised Q4-2025. Backups primary target. No working decryptors ever provided despite ransom payment. |
-| **Intelligence_Significance** | Why was this intelligence important? | Direct threat to [Organization] as financial services provider, backup strategy at risk |
+| **Intelligence_Summary** | Brief summary (max 500 chars) | Ransomware group RansomX targeting financial sector, 15 organisations compromised Q4-2025. Backups primary target. No working decryptors ever provided despite ransom payment. |
+| **Intelligence_Significance** | Why was this intelligence important? | Direct threat to [Organisation] as financial services provider, backup strategy at risk |
 | **Decision_Category** | Dropdown: Security_Investment, Policy_Change, Process_Change, Architecture_Change, Business_Strategy, Vendor_Management, Other | Security_Investment |
 | **Decision_Description** | What was decided? (max 500 chars) | Approved CHF 100K for immutable backup solution deployment to protect against ransomware targeting backups |
 | **Decision_Maker** | Name and role | Sarah Johnson, CTO |
@@ -1321,7 +1349,7 @@ A decision where:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"An intelligence failure is not just a failure of information; it is a failure of sharing."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

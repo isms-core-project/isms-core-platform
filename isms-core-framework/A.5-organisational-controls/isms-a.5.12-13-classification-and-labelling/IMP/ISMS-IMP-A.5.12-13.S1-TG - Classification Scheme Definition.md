@@ -7,140 +7,162 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Classification Scheme Definition |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.12-13.S1-TG |
+| **Related Policy** | ISMS-POL-A.5.12-13 (Classification and Labelling) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.12 (Classification of Information) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.12 Classification of Information |
-| **Parent Policy** | ISMS-POL-A.5.12-13 - Information Classification and Labelling |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.12-13.S1-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.12-13 (Classification and Labelling)
+- ISMS-IMP-A.5.12-13.S2 (Labelling Procedures and Standards)
+- ISMS-IMP-A.5.12-13.S3 (Asset Classification Inventory)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a512_13_1_classification_scheme.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.12-13.S1` |
-| **Output Filename** | `ISMS-IMP-A.5.12-13.S1_Classification_Scheme_Definition_YYYYMMDD.xlsx` |
-| **Workbook Title** | Classification Scheme Definition |
-| **Total Sheets** | 7 (7 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #1F4E79 | 1F4E79 | Custom |
-| #2E75B6 | 2E75B6 | Custom |
-| #69DB7C | 69DB7C | Custom |
-| #74C0FC | 74C0FC | Custom |
-| #D6DCE4 | D6DCE4 | Silver (Neutral) |
-| #FF6B6B | FF6B6B | Custom |
-| #FFA94D | FFA94D | Custom |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Classification_Levels
+## Generator Alignment Reference
 
-**Data Rows:** 16 (rows 5–20)
+> Auto-generated from `generate_a512_13_1_classification_scheme.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.12-13.S1`
 
-| Col | Header |
-|-----|--------|
-| A | Level ID |
-| B | Level Name |
-| C | Display Label |
-| D | Color Code |
-| E | Description |
-| F | Impact if Disclosed |
-| G | Examples |
-| H | Default Retention |
-| I | Review Frequency |
-| J | Owner Approval Required |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: Handling_Requirements
+| # | Sheet Name |
+|---|-----------|
+| 1 | Classification Levels |
+| 2 | Handling Requirements |
+| 3 | CIA Matrix |
+| 4 | Regulatory Mapping |
+| 5 | Evidence Register |
+| 6 | Summary Dashboard |
+| 7 | Approval Sign-Off |
+| 8 | Instructions & Legend |
 
-### Columns
+### Color Palette
 
-| Col | Header |
-|-----|--------|
-| A | Requirement Category |
-| B | RESTRICTED |
-| C | CONFIDENTIAL |
-| D | INTERNAL |
-| E | PUBLIC |
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #69DB7C | Custom |
+| #74C0FC | Custom |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FF6B6B | Custom |
+| #FFA94D | Custom |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
----
+### Column Headers (All Sheets)
 
-## Sheet 4: Cia_Matrix
+| # | Column Header |
+|---|--------------|
+| 1 | Level ID |
+| 2 | Level Name |
+| 3 | Display Label |
+| 4 | Colour Code |
+| 5 | Description |
+| 6 | Impact if Disclosed |
+| 7 | Examples |
+| 8 | Default Retention |
+| 9 | Review Frequency |
+| 10 | Owner Approval Required |
+| 11 | Requirement Category |
+| 12 | RESTRICTED |
+| 13 | CONFIDENTIAL |
+| 14 | INTERNAL |
+| 15 | PUBLIC |
+| 16 | Level |
+| 17 | Access Control |
+| 18 | Encryption |
+| 19 | Disclosure Impact |
+| 20 | Monitoring |
+| 21 | Change Control |
+| 22 | Version Control |
+| 23 | Modification Impact |
+| 24 | Validation |
+| 25 | Recovery Time |
+| 26 | Backup Frequency |
+| 27 | Unavailability Impact |
+| 28 | Redundancy |
+| 29 | Regulation |
+| 30 | Requirement |
+| 31 | Data Types Covered |
+| 32 | Min Classification |
+| 33 | Special Handling |
+| 34 | Retention |
+| 35 | Status |
+| 36 | Evidence ID |
+| 37 | Assessment Area |
+| 38 | Evidence Type |
+| 39 | Location / Path |
+| 40 | Date Collected |
+| 41 | Collected By |
+| 42 | Verification Status |
+| 43 | Total Items |
+| 44 | Compliant |
+| 45 | Partial |
+| 46 | Non-Compliant |
+| 47 | N/A |
+| 48 | Compliance % |
+| 49 | Metric |
+| 50 | Value |
+| 51 | Category |
+| 52 | Finding |
+| 53 | Count |
+| 54 | Severity |
+| 55 | Action Required |
 
----
+### Data Validation Values
 
-## Sheet 5: Regulatory_Mapping
+All dropdown/list values used across sheets:
 
-**Data Rows:** 26 (rows 5–30)
+```
+Yes - Executive, Yes - Manager, Yes - Owner, No, Compliant, Partial
+Non-Compliant, N/A, RESTRICTED, CONFIDENTIAL, INTERNAL, PUBLIC
+Policy Document, Process Record, System Screenshot, Configuration Export
+Audit Log, Training Record, Test Result, Risk Assessment, Meeting Minutes
+Other, ✅ Verified, ⚠️ Pending, ❌ Not Verified, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Regulation |
-| B | Requirement |
-| C | Data Types Covered |
-| D | Min Classification |
-| E | Special Handling |
-| F | Retention |
-| G | Status |
-
----
-
-## Sheet 6: Evidence_Register
-
-**Data Rows:** 26 (rows 5–30)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Description |
-| C | Evidence Type |
-| D | Related Requirement |
-| E | Location |
-| F | Collected Date |
-| G | Collected By |
-| H | Verification Status |
-
----
-
-## Sheet 7: Approval
-
-**Data Rows:** 8 (rows 13–20)
+**Extracted:** 8 sheets, 55 columns, 33 validation values, 13 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

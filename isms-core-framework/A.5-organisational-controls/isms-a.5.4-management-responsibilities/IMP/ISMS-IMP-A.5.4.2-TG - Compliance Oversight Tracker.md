@@ -7,164 +7,156 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Compliance Oversight Tracker |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.4.2-TG |
+| **Related Policy** | ISMS-POL-A.5.4 (Management Responsibilities) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.4 (Management Responsibilities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.4 Management Responsibilities |
-| **Parent Policy** | ISMS-POL-A.5.4 - Management Responsibilities |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.4 (Management Responsibilities)
+- ISMS-IMP-A.5.4.1 (Management Commitment Assessment)
+- ISMS-IMP-A.5.4.3 (Leadership Dashboard)
+- ISMS-IMP-A.5.4.4 (Security Culture Survey)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a54_2_compliance_oversight.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.4.2` |
-| **Output Filename** | `ISMS-IMP-A.5.4.2_Compliance_Oversight_Tracker_YYYYMMDD.xlsx` |
-| **Workbook Title** | Compliance Oversight Tracker |
-| **Total Sheets** | 6 (6 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #2F5496 | 2F5496 | Dark Blue (Alt Headers) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Training Oversight
+## Generator Alignment Reference
 
-**Data Rows:** 49 (rows 2–50)
+> Auto-generated from `generate_a54_2_compliance_oversight.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.4.2`
 
-| Col | Header |
-|-----|--------|
-| A | Manager_ID |
-| B | Manager_Name |
-| C | Department |
-| D | Team_Size |
-| E | Training_Required |
-| F | Training_Completed |
-| G | Completion_Rate |
-| H | Overdue_Count |
-| I | Follow_Up_Actions |
-| J | Last_Review_Date |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: Policy Violations
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Training Oversight |
+| 3 | Policy Violations |
+| 4 | Access Reviews |
+| 5 | Escalation Triggers |
+| 6 | Quarterly Summary |
+| 7 | Approval Sign-Off |
+| 8 | Evidence Register |
+| 9 | Summary Dashboard |
 
-**Data Rows:** 99 (rows 2–100)
+### Color Palette
 
-### Columns
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-| Col | Header |
-|-----|--------|
-| A | Violation_ID |
-| B | Date_Reported |
-| C | Manager_ID |
-| D | Manager_Name |
-| E | Employee_ID |
-| F | Violation_Type |
-| G | Severity |
-| H | Manager_Response |
-| I | Response_Date |
-| J | Resolution |
-| K | Lessons_Learned |
+### Column Headers (All Sheets)
 
-### Data Validations
+| # | Column Header |
+|---|--------------|
+| 1 | Manager ID |
+| 2 | Manager Name |
+| 3 | Department |
+| 4 | Team Size |
+| 5 | Training Required |
+| 6 | Training Completed |
+| 7 | Completion Rate |
+| 8 | Overdue Count |
+| 9 | Follow-Up Actions |
+| 10 | Last Review Date |
+| 11 | Violation ID |
+| 12 | Date Reported |
+| 13 | Employee ID |
+| 14 | Violation Type |
+| 15 | Severity |
+| 16 | Manager Response |
+| 17 | Response Date |
+| 18 | Resolution |
+| 19 | Lessons Learned |
+| 20 | Review ID |
+| 21 | Review Period |
+| 22 | System Scope |
+| 23 | Accounts Reviewed |
+| 24 | Changes Requested |
+| 25 | Review Completed |
+| 26 | Completion Date |
+| 27 | Notes |
+| 28 | Metric |
+| 29 | Threshold |
+| 30 | Condition |
+| 31 | Escalation Action |
+| 32 | Escalation ID |
+| 33 | Date |
+| 34 | Metric Triggered |
+| 35 | Actual Value |
+| 36 | Escalated To |
+| 37 | Resolution Date |
+| 38 | Quarter |
+| 39 | Training Compliance Rate |
+| 40 | Violations Handled |
+| 41 | Avg Response Days |
+| 42 | Access Reviews Completed |
+| 43 | Overall Rating |
+| 44 | Comments |
+| 45 | Evidence ID |
+| 46 | Evidence Type |
+| 47 | Description |
+| 48 | Related Sheet |
+| 49 | File Name |
+| 50 | File Location |
+| 51 | Collection Date |
+| 52 | Collected By |
 
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| G | G2:G100 | `severity_dv` |
-| H | H2:H100 | `response_dv` |
-| J | J2:J100 | `resolution_dv` |
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 4: Access Reviews
+```
+Critical, High, Medium, Low, Coaching, Written Warning, Performance Plan
+Escalated, No Action, Resolved, In Progress, Pending, Yes, No, Partial
+Training Completion Rate, Policy Violations, Manager Response Time
+Closed - No Action, Q1, Q2, Q3, Q4, Exceeds, Meets, Below, N/A, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
-**Data Rows:** 99 (rows 2–100)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Review_ID |
-| B | Review_Period |
-| C | Manager_ID |
-| D | Manager_Name |
-| E | System_Scope |
-| F | Accounts_Reviewed |
-| G | Changes_Requested |
-| H | Review_Completed |
-| I | Completion_Date |
-| J | Notes |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| H | H2:H100 | `completed_dv` |
-
----
-
-## Sheet 5: Escalation Triggers
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Metric |
-| B | Threshold |
-| C | Condition |
-| D | Escalation Action |
-
----
-
-## Sheet 6: Quarterly Summary
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Manager_ID |
-| B | Manager_Name |
-| C | Quarter |
-| D | Training_Compliance_Rate |
-| E | Violations_Handled |
-| F | Avg_Response_Days |
-| G | Access_Reviews_Completed |
-| H | Overall_Rating |
-| I | Comments |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C2:C200 | `quarter_dv` |
-| H | H2:H200 | `rating_dv` |
+**Extracted:** 9 sheets, 52 columns, 35 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

@@ -44,21 +44,19 @@
 - ISMS-IMP-A.5.14.1-UG/TG (Transfer Rules and Procedures)
 - ISMS-IMP-A.5.14.2-UG/TG (Channel Security Assessment)
 - ISMS-IMP-A.5.14.3-UG/TG (Transfer Agreements Register)
-- ISMS-IMP-A.5.14.4-UG/TG (Compliance Monitoring Dashboard)
-- ISMS-IMP-A.5.14.5-UG/TG (Consolidation Dashboard)
 - ISO/IEC 27001:2022 Control A.5.14
 
 ---
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for secure information transfer to protect information during transmission through all types of communication channels and facilities.
+This policy establishes [Organisation]'s requirements for secure information transfer to protect information during transmission through all types of communication channels and facilities.
 
-**Scope**: This policy applies to all information transfers, whether electronic, physical, or verbal, including transfers within [Organization] and with external parties.
+**Scope**: This policy applies to all information transfers, whether electronic, physical, or verbal, including transfers within [Organisation] and with external parties.
 
-**Purpose**: Define organizational requirements for information transfer security. This policy establishes WHAT transfer methods are approved and WHO is authorized. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.14 (UG/TG variants).
+**Purpose**: Define organisational requirements for information transfer security. This policy establishes WHAT transfer methods are approved and WHO is authorised. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.14 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS v4.0.1) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS v4.0.1) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -68,7 +66,7 @@ This policy establishes [Organization]'s requirements for secure information tra
 
 **ISO/IEC 27001:2022 Annex A.5.14 - Information Transfer**
 
-> *Information transfer rules, procedures, or agreements should be in place for all types of transfer facilities within the organization and between the organization and other parties.*
+> *Information transfer rules, procedures, or agreements should be in place for all types of transfer facilities within the organisation and between the organisation and other parties.*
 
 **Control Objectives**:
 
@@ -78,14 +76,14 @@ This policy establishes [Organization]'s requirements for secure information tra
 - Maintain accountability and audit trails for transfers
 
 **Control Type**: Preventive
-**Control Category**: Organizational
+**Control Category**: Organisational
 
 **This Policy Addresses**:
 
 - Approved transfer methods and channels
 - Transfer requirements per information classification
 - External transfer agreements and requirements
-- Transfer authorization and accountability
+- Transfer authorisation and accountability
 - Incident handling for transfer failures
 
 ## What This Policy Does
@@ -94,7 +92,7 @@ This policy:
 
 - **Defines** approved transfer methods for each classification level
 - **Establishes** requirements for external and cross-border transfers
-- **Specifies** authorization requirements for different transfer types
+- **Specifies** authorisation requirements for different transfer types
 - **References** applicable regulatory requirements per ISMS-POL-00
 
 ## What This Policy Does NOT Do
@@ -118,12 +116,12 @@ This policy does NOT:
 
 - All information transfers (electronic, physical, verbal)
 - All transfer methods (email, file sharing, courier, in-person)
-- All personnel (employees, contractors, third parties) transferring organizational information
+- All personnel (employees, contractors, third parties) transferring organisational information
 - All external transfers to customers, partners, vendors, and regulatory bodies
 
 **Out of Scope**:
 
-- Personal communications unrelated to organizational information
+- Personal communications unrelated to organisational information
 - Public information already freely available
 - Real-time database replication (covered by system architecture)
 
@@ -159,7 +157,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - CIS Controls v8.1 (Data Protection)
 - ENISA Guidelines on Data Transfer Security
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent transfer requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent transfer requirements apply where multiple regulations overlap.
 
 ---
 
@@ -239,7 +237,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **In-Person Discussions**:
 
-- CONFIDENTIAL: Private location, no unauthorized listeners
+- CONFIDENTIAL: Private location, no unauthorised listeners
 - RESTRICTED: Secure room, no electronic devices, need-to-know participants only
 
 ## External Transfer Requirements
@@ -298,14 +296,14 @@ Special handling for data belonging to external parties:
 
 ## Transfer Controls
 
-### Authorization
+### Authorisation
 
-**Transfer Authorization Matrix**:
+**Transfer Authorisation Matrix**:
 
 | Classification | Internal Transfer | External Transfer |
 |----------------|-------------------|-------------------|
-| PUBLIC | Self-authorized | Self-authorized |
-| INTERNAL | Self-authorized | Manager approval |
+| PUBLIC | Self-authorised | Self-authorised |
+| INTERNAL | Self-authorised | Manager approval |
 | CONFIDENTIAL | Manager approval | Information Owner + Manager |
 | RESTRICTED | Department Head | Department Head + CISO |
 
@@ -319,7 +317,7 @@ All CONFIDENTIAL and RESTRICTED transfers SHALL be logged:
 - Sender and recipient identification
 - Information description (not content)
 - Transfer method used
-- Authorization reference
+- Authorisation reference
 
 **Retention**: Transfer logs retained for minimum 2 years.
 
@@ -340,10 +338,10 @@ Transfer failures or suspected compromises:
 
 | Role | Transfer Responsibilities |
 |------|--------------------------|
-| **Executive Management** | Approve transfer policy, authorize RESTRICTED external transfers |
+| **Executive Management** | Approve transfer policy, authorise RESTRICTED external transfers |
 | **CISO** | Define transfer requirements, approve transfer platforms, incident oversight |
 | **IT Operations** | Implement secure transfer infrastructure, manage platforms |
-| **Information Owners** | Authorize transfers of owned information, verify recipient appropriateness |
+| **Information Owners** | Authorise transfers of owned information, verify recipient appropriateness |
 | **Department Heads** | Approve departmental transfers, ensure compliance |
 | **All Personnel** | Use approved transfer methods, protect information during transfer |
 
@@ -414,17 +412,17 @@ Nonconformities related to this policy (e.g., unapproved transfer methods, missi
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
-- Transfer controls selected based on [Organization]'s risk assessment
+- Transfer controls selected based on [Organisation]'s risk assessment
 - Information classification determines minimum transfer security requirements
 - Risk treatment plans document transfer control implementation
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Control A.5.14 applicability justified in [Organization]'s SoA
+- Control A.5.14 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 
 **Related Controls**:
@@ -476,7 +474,7 @@ Required Stage 1 evidence includes:
 - ✅ Approved transfer methods defined (Transfer Method Requirements)
 - ✅ External transfer requirements documented (External Transfer Requirements)
 - ✅ Cross-border transfer requirements specified (Cross-Border Transfers)
-- ✅ Transfer authorization matrix defined (Transfer Controls)
+- ✅ Transfer authorisation matrix defined (Transfer Controls)
 - ✅ Roles and responsibilities assigned (Roles and Responsibilities)
 
 Evidence status is tracked in the ISMS Evidence Register.
@@ -525,4 +523,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for information transfer. Implementation procedures are documented in ISMS-IMP-A.5.14 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -8,26 +8,61 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Intelligence Collection & Analysis Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.7.2-UG |
+| **Related Policy** | ISMS-POL-A.5.7 (Threat Intelligence) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.7 (Threat Intelligence) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Intelligence Collection, Analysis & Production Capabilities |
-| **Related Policy** | ISMS-POL-A.5.7, Section 2.1 (Intelligence Collection Requirements), Section 2.2 (Intelligence Analysis and Production Requirements) |
-| **Purpose** | Assess organizational capability to collect, analyze, and produce actionable threat intelligence including CVSS-integrated vulnerability-threat linkage |
-| **Target Audience** | Threat Intelligence Analysts, SOC Team, Security Engineers, CISO, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial consolidated specification (14 sheets) | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.7 (Threat Intelligence)
+- ISMS-IMP-A.5.7.1 (Threat Intelligence Sources Assessment)
+- ISMS-IMP-A.5.7.3 (Intelligence Integration & Distribution Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.7.2-TG.
+
+### Workbook at a Glance
+
+This workbook contains the following 15 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Intelligence Requirements** | Priority Intelligence Requirements (PIR), Specific Intelligence Requirements (SIR) |
+| **Collection Sources** | Documentation of collection workflows per intelligence source |
+| **Raw Intelligence Log** | Tracking of raw intelligence items received and validated |
+| **Intelligence Production** | Finished intelligence products, reports, and briefings |
+| **MITRE Mapping** | Coverage mapping of adversary TTPs against MITRE ATT&CK |
+| **Quality Metrics** | Intelligence quality and timeliness measurement |
+| **Process Maturity** | Capability maturity assessment for intelligence functions |
+| **Action Items** | Gap identification and remediation tracking |
+| **Analysis Tools** | Inventory and assessment of intelligence analysis tools |
+| **Threat Actor Profiles** | Documented threat actor profiles relevant to the organisation |
+| **Campaign Tracking** | Tracking of threat campaigns targeting the sector or organisation |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -39,7 +74,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 #### What This Assessment Covers
 
-This assessment evaluates [Organization]'s CAPABILITY to collect, analyze, and produce actionable threat intelligence. This is the operational "HOW do we process intelligence?" assessment that answers:
+This assessment evaluates [Organisation]'s CAPABILITY to collect, analyse, and produce actionable threat intelligence. This is the operational "HOW do we process intelligence?" assessment that answers:
 
 - How do we collect threat intelligence from multiple sources?
 - What analysis methodologies do we use? (MITRE ATT&CK, Diamond Model, Kill Chain)
@@ -75,8 +110,6 @@ This assessment is **operational and process-focused**. You document YOUR actual
 | ISMS-IMP-A.5.7.1 | Source Portfolio | WHERE intelligence comes from (input to A.5.7.2) |
 | **ISMS-IMP-A.5.7.2** | **Collection & Analysis** | **HOW intelligence is processed (this assessment)** |
 | ISMS-IMP-A.5.7.3 | Integration & Distribution | WHERE intelligence is deployed (uses VTL from A.5.7.2) |
-| ISMS-IMP-A.5.7.4 | Effectiveness Dashboard | OVERALL program metrics (consolidates A.5.7.2 data) |
-| ISMS-IMP-A.5.7.5 | Standalone Dashboard | EXECUTIVE summary (uses A.5.7.2 production metrics) |
 
 This assessment (A.5.7.2) is the CORE operational intelligence capability assessment - it depends on sources from A.5.7.1 and feeds into distribution (A.5.7.3).
 
@@ -182,7 +215,6 @@ This assessment depends on:
 However, outputs from this assessment are INPUT to:
 
 - **A.5.7.3 (Integration & Distribution)** - VTL records (Sheet 8) feed into IOC deployment
-- **A.5.7.4 (Effectiveness Dashboard)** - Quality metrics (Sheet 7) consolidated
 - **A.8.8 (Vulnerability Management)** - VTL records trigger emergency patching workflows
 
 ---
@@ -246,7 +278,7 @@ However, outputs from this assessment are INPUT to:
 **Objective:** Complete Sheet 2 - Intelligence_Requirements
 
 **Steps:**
-1. List EVERY intelligence requirement your organization has
+1. List EVERY intelligence requirement your organisation has
 2. For each requirement:
 
    - Classify type (Strategic, Tactical, Operational, Technical)
@@ -264,7 +296,7 @@ However, outputs from this assessment are INPUT to:
 
 **Quality Check:**
 
-- ✓ All organizational intelligence needs documented
+- ✓ All organisational intelligence needs documented
 - ✓ Critical requirements have ≥2 sources (redundancy)
 - ✓ Gaps identified with remediation plans
 - ✓ Stakeholder needs represented
@@ -432,8 +464,8 @@ However, outputs from this assessment are INPUT to:
 
 **WHEN to create VTL record:**
 1. **Active Exploitation Detected**: Threat intelligence source reports a CVE is being actively exploited in the wild
-2. **Mass Exploitation**: Widespread exploitation across multiple organizations or sectors
-3. **Targeted Exploitation**: APT or nation-state actor targeting vulnerabilities relevant to [Organization]
+2. **Mass Exploitation**: Widespread exploitation across multiple organisations or sectors
+3. **Targeted Exploitation**: APT or nation-state actor targeting vulnerabilities relevant to [Organisation]
 4. **Zero-Day Discovery**: New vulnerability with no patch but active exploitation
 5. **CISA KEV Addition**: CVE added to CISA Known Exploited Vulnerabilities catalog
 
@@ -466,7 +498,7 @@ However, outputs from this assessment are INPUT to:
 4. **Assess Risk Impact:**
 
    - Critical assets affected: Yes/No
-   - Affected systems count: Number of vulnerable systems in [Organization]
+   - Affected systems count: Number of vulnerable systems in [Organisation]
    - Business impact: What would happen if exploited?
    - Related incidents: Any incidents already occurred?
 
@@ -602,11 +634,11 @@ Assigned To: Infrastructure Team
 **Objective:** Complete Sheet 12 - Threat_Actor_Profiles
 
 **Steps:**
-1. For each threat actor relevant to [Organization]:
+1. For each threat actor relevant to [Organisation]:
 
    - **Identification**: Name, aliases, attribution (nation-state, group)
    - **Motivation**: Financial gain, espionage, disruption, etc.
-   - **Target Profile**: Which sectors, regions, organizations
+   - **Target Profile**: Which sectors, regions, organisations
    - **Capabilities**: Sophistication level, resources, tradecraft
    - **TTPs**: MITRE ATT&CK techniques commonly used
    - **Infrastructure**: Known C2 servers, malware families, tools
@@ -622,7 +654,7 @@ Assigned To: Infrastructure Team
 
 **Quality Check:**
 
-- ✓ Actors relevant to [Organization]'s threat model
+- ✓ Actors relevant to [Organisation]'s threat model
 - ✓ Profiles updated when new intelligence available
 - ✓ Attribution confidence documented (Confirmed, Likely, Suspected)
 - ✓ Cross-references to campaigns and VTL records
@@ -640,15 +672,15 @@ Assigned To: Infrastructure Team
    - **Threat Actor**: Attribution to known actor (if possible)
    - **Discovery Date**: When campaign first detected
    - **Status**: Active, Monitoring, Contained, Concluded
-   - **Target Profile**: Which organizations/sectors targeted
+   - **Target Profile**: Which organisations/sectors targeted
    - **Attack Vectors**: How intrusions occur (phishing, exploits, etc.)
    - **Objectives**: What attackers are after (data theft, ransomware, etc.)
    - **TTPs**: MITRE ATT&CK techniques used
    - **IOCs**: Associated indicators (IPs, domains, hashes)
    - **CVEs Exploited**: Link to VTL records (Sheet 8)
-   - **Affected Organizations**: Known victims
+   - **Affected Organisations**: Known victims
    - **Intelligence Sources**: Which sources reporting on campaign
-   - **[Organization] Risk**: Assessment of risk to [Organization] (High, Medium, Low)
+   - **[Organisation] Risk**: Assessment of risk to [Organisation] (High, Medium, Low)
 
 2. Update campaigns as intelligence evolves
 3. Mark campaigns "Concluded" when no longer active
@@ -659,7 +691,7 @@ Assigned To: Infrastructure Team
 **Quality Check:**
 
 - ✓ All active campaigns documented
-- ✓ [Organization] risk assessed for each campaign
+- ✓ [Organisation] risk assessed for each campaign
 - ✓ IOCs extracted and ready for deployment (feeds into A.5.7.3)
 - ✓ VTL linkage maintained (campaign exploiting CVE-XXXX)
 - ✓ Status updated regularly (weekly for active campaigns)
@@ -992,7 +1024,7 @@ Assigned To: Infrastructure Team
 
 - Use MITRE ATT&CK Navigator for visualization
 - Focus on techniques seen in wild (last 90 days) first
-- Prioritize based on [Organization]'s threat model
+- Prioritize based on [Organisation]'s threat model
 - Critical gaps = technique seen recently + no coverage + high impact
 
 **Conditional Formatting:**
@@ -1299,10 +1331,10 @@ Priority_Score = MIN(10,
 
 **Tips:**
 
-- Focus on actors relevant to [Organization]'s threat model
+- Focus on actors relevant to [Organisation]'s threat model
 - Update when new intelligence emerges
 - Link to campaigns (Sheet 13) and VTL records (Sheet 8)
-- Document threat level to [Organization] realistically
+- Document threat level to [Organisation] realistically
 
 ---
 
@@ -1310,7 +1342,7 @@ Priority_Score = MIN(10,
 
 **User Action:** DATA ENTRY (ONGOING) - Track active threat campaigns
 
-**Purpose:** Monitor active campaigns that may affect [Organization]
+**Purpose:** Monitor active campaigns that may affect [Organisation]
 
 **Columns:**
 
@@ -1329,10 +1361,10 @@ Priority_Score = MIN(10,
 | **IOCs** | Comma-separated | 192.0.2.50, evil.example.com, hash:abc123... |
 | **CVEs_Exploited** | Comma-separated CVE IDs, link to VTL (Sheet 8) | CVE-2025-11111 |
 | **CVEs_CVSS_Max** | Highest CVSS score of exploited CVEs | 8.1 |
-| **Affected_Organizations** | Known victims | Ministry of Defense (Country X) |
+| **Affected_Organisations** | Known victims | Ministry of Defense (Country X) |
 | **Intelligence_Sources** | Which sources reporting? | SRC-001, SRC-007 |
 | **Org_Risk_Assessment** | Dropdown: High, Medium, Low | Low |
-| **Org_Risk_Justification** | Why this risk level? | [Organization] not in target profile, no similar infrastructure |
+| **Org_Risk_Justification** | Why this risk level? | [Organisation] not in target profile, no similar infrastructure |
 | **Monitoring_Actions** | What are we doing? | IOCs deployed to SIEM, hunting for similar TTPs |
 | **Last_Updated** | Date | 21.01.2026 |
 | **Notes** | Free text | Campaign primarily targeting government, low direct risk |
@@ -1342,7 +1374,7 @@ Priority_Score = MIN(10,
 - Update Active campaigns weekly (at minimum)
 - Mark "Concluded" when campaign no longer active
 - Link CVEs to VTL records (Sheet 8)
-- Assess risk to [Organization] honestly
+- Assess risk to [Organisation] honestly
 - Extract IOCs for deployment (feeds into A.5.7.3)
 
 ---
@@ -1440,7 +1472,7 @@ Priority_Score = MIN(10,
 
 ### Evidence Storage
 
-**Organization:**
+**Organisation:**
 ```
 Evidence/
 ├── 2026-Q1/
@@ -1698,7 +1730,7 @@ Evidence/
 
 - Major capability gaps requiring significant investment
 - Analyst skill gaps requiring hiring or major training budget
-- Process maturity improvements requiring organizational change
+- Process maturity improvements requiring organisational change
 - Integration with A.8.8 requiring cross-team coordination and resources
 
 **Responsibilities:**
@@ -1706,7 +1738,7 @@ Evidence/
 - Review business justification for capability investments
 - Approve budget for tools, training, or personnel
 - Provide strategic direction on program development
-- Approve cross-organizational integration initiatives
+- Approve cross-organisational integration initiatives
 
 **Approval Criteria:**
 
@@ -1735,7 +1767,7 @@ Evidence/
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Data is the new oil; refined intelligence is the new fuel."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

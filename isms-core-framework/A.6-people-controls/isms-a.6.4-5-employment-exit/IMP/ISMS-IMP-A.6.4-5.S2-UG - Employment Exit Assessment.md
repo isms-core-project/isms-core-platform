@@ -5,24 +5,58 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Employment Exit Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.4-5.S2-UG |
-| **Title** | Employment Exit Assessment |
-| **Control Reference** | ISO/IEC 27001:2022 A.6.4, A.6.5 |
-| **Control Name** | Disciplinary Process / Responsibilities After Termination |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.6.4-5 (Employment Exit) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.4, A.6.5) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Chief Human Resources Officer (CHRO) |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.4-5 (Employment Exit)
+- ISMS-IMP-A.6.4-5.S1 (Disciplinary Process Assessment)
+- ISMS-IMP-A.6.4-5.S3 (Post Employment Obligations)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.6.4-5.S2-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Exit Procedures | Define exit procedures by termination type |
+| 3 | Access Revocation | Track access revocation for departing personnel |
+| 4 | Asset Recovery | Manage recovery of organisation-owned assets |
+| 5 | Exit Tracker | Track exit process completion per departing individual |
+| 6 | Leaver Reconciliation | Reconcile all access and assets after departure |
+| 7 | Evidence Register | Store and reference evidence of exit process completion |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -799,7 +833,7 @@ Before submitting the completed assessment:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Beginnings and endings are merely stages in the continuing cycle."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

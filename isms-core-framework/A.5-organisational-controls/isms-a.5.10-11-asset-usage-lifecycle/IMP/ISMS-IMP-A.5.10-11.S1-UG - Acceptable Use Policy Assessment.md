@@ -3,6 +3,41 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.10: Acceptable Use of Information and Other Associated Assets
 
+---
+
+**Document Control**
+
+| Attribute | Value |
+|-------|-------|
+| **Document Title** | Acceptable Use Policy Assessment |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.5.10-11.S1-UG |
+| **Related Policy** | ISMS-POL-A.5.10-11 (Asset Usage Lifecycle) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.10 (Acceptable Use of Information and Other Associated Assets) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.10-11 (Asset Usage Lifecycle)
+- ISMS-IMP-A.5.10-11.S2 (Usage Rules Inventory)
+- ISMS-IMP-A.5.10-11.S3 (Asset Return and Offboarding Assessment)
+
+---
+
 ## Document Information
 
 | Field | Value |
@@ -10,7 +45,7 @@
 | **Document ID** | ISMS-IMP-A.5.10-11.S1-UG |
 | **Control Reference** | ISO/IEC 27001:2022 - Control A.5.10: Acceptable Use of Information and Other Associated Assets |
 | **Parent Policy** | ISMS-POL-A.5.10-11 Asset Usage Lifecycle Policy |
-| **Related IMPs** | ISMS-IMP-A.5.10-11.S2, ISMS-IMP-A.5.10-11.S3, ISMS-IMP-A.5.10-11.S4 |
+| **Related IMPs** | ISMS-IMP-A.5.10-11.S2, ISMS-IMP-A.5.10-11.S3 |
 | **Version** | 1.0 |
 | **Classification** | Internal Use |
 | **Owner** | Information Security Manager |
@@ -31,6 +66,21 @@
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.10-11.S1-TG.
+
+### Workbook at a Glance
+
+This workbook contains the following 8 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Policy Assessment** | Evaluation of AUP content completeness against required policy sections |
+| **Asset Coverage** | Verification that all asset categories are covered by AUP rules |
+| **Awareness Tracking** | Tracking of user acknowledgement and training completion |
+| **Communication Matrix** | Documentation of AUP distribution channels and effectiveness |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -702,7 +752,6 @@ Effective AUP communication uses multiple channels:
 | **A.5.9** | Asset Inventory | Provides asset categories to cover |
 | **A.5.10-11.2** | Usage Rules Inventory | Detailed rules supporting AUP |
 | **A.5.10-11.3** | Asset Return | Offboarding extends AUP lifecycle |
-| **A.5.10-11.4** | Compliance Dashboard | Aggregates assessment metrics |
 | **A.6.3** | Awareness and Training | Training delivery mechanism |
 
 ### Related Controls
@@ -720,7 +769,7 @@ Effective AUP communication uses multiple channels:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"With great power comes great responsibility."*
+— Voltaire
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

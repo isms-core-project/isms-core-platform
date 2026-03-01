@@ -8,230 +8,173 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Environment Access Control |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.31.2-TG |
+| **Related Policy** | ISMS-POL-A.8.31 (Environment Separation) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.31 (Separation of Development, Test and Production Environments) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Environment Access Control & Production Access Restrictions |
-| **Related Policy** | ISMS-POL-A.8.31, Section 2.2 (Environment Access Control Requirements) |
-| **Purpose** | Document access control implementation, verify production access restrictions (zero developer access), and assess compliance with environment-specific access requirements |
-| **Target Audience** | IAM Administrators, IT Operations, Security Engineers, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Access Control Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Environment Access Control assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.31 (Environment Separation)
+- ISMS-IMP-A.8.31.1 (Environment Architecture Implementation)
 
 ---
+
 # Technical Specification
-
-
-> Auto-generated from `generate_a831_2_environment_access.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.31.2` |
-| **Output Filename** | `ISMS-IMP-A.8.31.2_Environment_Access_Control_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Environment Access Control Assessment |
-| **Total Sheets** | 19 (19 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #C00000 | C00000 | Dark Red (Blocked) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions_Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: User_Environment_Access_Matrix
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a831_2_environment_access.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Developer_Production_Access
+**Document ID:** `ISMS-IMP-A.8.31.2`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Production_Credential_Audit
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | User Environment Access Matrix |
+| 3 | Developer Production Access |
+| 4 | Production Credential Audit |
+| 5 | Cross Environment Access Log |
+| 6 | Break Glass Access Log |
+| 7 | MFA Enforcement |
+| 8 | Evidence Register |
+| 9 | Summary Dashboard |
+| 10 | Approval Sign-Off |
 
-## Sheet 5: Cross_Environment_Access_Log
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Break_Glass_Access_Log
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | User ID / Email |
+| 2 | Role |
+| 3 | Development Access |
+| 4 | Testing Access |
+| 5 | Staging Access |
+| 6 | Production Access |
+| 7 | Compliance Status |
+| 8 | Notes |
+| 9 | Developer ID |
+| 10 | Production Account/Sub |
+| 11 | Production Access? |
+| 12 | Access Type |
+| 13 | Justification |
+| 14 | Violation Severity |
+| 15 | Remediation Action |
+| 16 | Credential Type |
+| 17 | System/Service |
+| 18 | Stored in PAM Vault? |
+| 19 | Vault Location |
+| 20 | Last Rotated |
+| 21 | Rotation Schedule |
+| 22 | Compliance |
+| 23 | Date/Time |
+| 24 | User ID |
+| 25 | Source Environment |
+| 26 | Target Environment |
+| 27 | Attempted Action |
+| 28 | Result |
+| 29 | Alert Generated? |
+| 30 | Investigation Notes |
+| 31 | Incident ID |
+| 32 | Date/Time Activated |
+| 33 | Approved By |
+| 34 | Reason/Justification |
+| 35 | Duration (hours) |
+| 36 | Date/Time Revoked |
+| 37 | Post-Incident Review |
+| 38 | MFA Enabled? |
+| 39 | MFA Type |
+| 40 | Last MFA Check |
+| 41 | Evidence |
+| 42 | N/A - Compliant |
+| 43 | PRODUCTION CREDENTIAL AUDIT |
+| 44 | CROSS-ENVIRONMENT ACCESS ATTEMPTS LOG |
+| 45 | BREAK-GLASS EMERGENCY ACCESS LOG |
+| 46 | MFA ENFORCEMENT VERIFICATION |
+| 47 | EVIDENCE REGISTER |
+| 48 | ASSESSMENT APPROVAL AND SIGN-OFF |
+| 49 | ASSESSMENT SUMMARY |
+| 50 | FINAL DECISION: |
+| 51 | NEXT REVIEW DETAILS |
+| 52 | Assessment Area |
+| 53 | Total Items |
+| 54 | Compliant |
+| 55 | Partial |
+| 56 | Non-Compliant |
+| 57 | N/A |
+| 58 | Compliance % |
+| 59 | Severity |
+| 60 | Production Account |
+| 61 | Status |
+| 62 | Evidence ID |
+| 63 | Evidence Type |
+| 64 | Description |
+| 65 | Location / Path |
+| 66 | Date Collected |
+| 67 | Collected By |
+| 68 | Verification Status |
 
-## Sheet 7: MFA_Enforcement
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Access_Compliance_Scorecard
+```
+Yes, No, ✅ Yes, ❌ No, ➖ N/A, Full (CRUD), Read/Write, Read-only, No Access
+Break-Glass Only, Compliant, Non-Compliant, Partial, Not Assessed, Developer
+QA Engineer, DevOps Engineer, Operations Engineer, Security Analyst, Manager
+Auditor, Other, Development, Testing, Staging, Production, Critical, High
+Medium, Low, Configuration file, Screenshot, Log extract, Policy document
+Training record, Audit report, Risk assessment, Interview notes, Test results
+Verified, Pending Verification, Insufficient, Not Reviewed, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
----
-
-## Sheet 9: Evidence_Register
-
----
-
-## Sheet 10: Approval_Sign_Off
-
----
-
-## Sheet 11: Instructions
-
----
-
-## Sheet 12: User_Access_Matrix
-
-**Data Rows:** 96 (rows 5–100)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | User ID / Email | 30 |
-| B | Role | 25 |
-| C | Development Access | 25 |
-| D | Testing Access | 25 |
-| E | Staging Access | 25 |
-| F | Production Access | 25 |
-| G | Compliance Status | 20 |
-| H | Notes | 40 |
-
----
-
-## Sheet 13: Developer_Prod_Access
-
-**Data Rows:** 96 (rows 5–100)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Developer ID | 30 |
-| B | Production Account/Sub | 30 |
-| C | Production Access? | 20 |
-| D | Access Type | 25 |
-| E | Justification | 40 |
-| F | Violation Severity | 20 |
-| G | Remediation Action | 40 |
-
----
-
-## Sheet 14: Cross_Environment_Access
-
-**Data Rows:** 96 (rows 5–100)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Date/Time | 20 |
-| B | User ID | 30 |
-| C | Source Environment | 20 |
-| D | Target Environment | 20 |
-| E | Attempted Action | 30 |
-| F | Result | 20 |
-| G | Alert Generated? | 20 |
-| H | Investigation Notes | 40 |
-
----
-
-## Sheet 15: Breakglass_Access
-
-**Data Rows:** 96 (rows 5–100)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Incident ID | 15 |
-| B | Date/Time Activated | 20 |
-| C | Developer ID | 30 |
-| D | Approved By | 25 |
-| E | Reason/Justification | 40 |
-| F | Duration (hours) | 15 |
-| G | Date/Time Revoked | 20 |
-| H | Post-Incident Review | 30 |
-| I | Compliance | 20 |
-| J | Notes | 40 |
-
----
-
-## Sheet 16: Mfa_Enforcement
-
-**Data Rows:** 96 (rows 5–100)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | User ID | 30 |
-| B | Production Access? | 20 |
-| C | MFA Enabled? | 20 |
-| D | MFA Type | 25 |
-| E | Last MFA Check | 20 |
-| F | Compliance | 20 |
-| G | Evidence | 40 |
-
----
-
-## Sheet 17: Compliance_Scorecard
-
-**Data Rows:** 5 (rows 1–5)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Metric | 40 |
-| B | Current Value | 20 |
-| C | Target Value | 20 |
-| D | Status | 20 |
-| E | Notes | 40 |
-
----
-
-## Sheet 18: Approval_Signoff
-
-**Data Rows:** 5 (rows 1–5)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Role |
-| B | Name |
-| C | Signature |
-| D | Date |
-| E | Comments |
-
----
-
-## Sheet 19: Base_Validations
+**Extracted:** 10 sheets, 68 columns, 51 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

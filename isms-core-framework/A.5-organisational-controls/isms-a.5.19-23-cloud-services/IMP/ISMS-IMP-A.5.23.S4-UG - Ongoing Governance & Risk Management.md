@@ -8,26 +8,60 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Ongoing Governance & Risk Management |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.23.S4-UG |
+| **Related Policy** | ISMS-POL-A.5.23 (Cloud Services) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.23 (Information Security for Use of Cloud Services) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Ongoing Governance & Risk Management |
-| **Related Policy** | ISMS-POL-A.5.19-23-S4 (Supplier Monitoring & Change Management), ISMS-POL-A.5.19-23-S5 (Cloud Services Security - Section 6) |
-| **Purpose** | Assess ongoing governance, access reviews, change management, incident response, business continuity, and vendor risk monitoring for all cloud services |
-| **Target Audience** | IT Operations, Risk Management, Compliance Officers, Business Continuity Planners, Vendor Managers, Security Teams |
-| **Assessment Type** | Operational Governance & Continuous Monitoring |
-| **Review Cycle** | Quarterly (with continuous monitoring) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial User Completion Guide | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.23 (Cloud Services)
+- ISMS-IMP-A.5.23.S1 (Cloud Service Inventory & Classification)
+- ISMS-IMP-A.5.23.S2 (Vendor Due Diligence & Contracts)
+- ISMS-IMP-A.5.23.S3 (Secure Configuration & Deployment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.23.S4-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 11 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **2. Access Review** | Periodic access review results and remediation tracking |
+| **3. Change Management** | Cloud service change management and approval records |
+| **4. Incident Management** | Security incident tracking and vendor response assessment |
+| **5. Business Continuity** | Business continuity and disaster recovery testing results |
+| **6. Vendor Risk Monitoring** | Ongoing vendor risk monitoring and reassessment records |
+| **7. Exit Strategy Review** | Cloud exit strategy readiness and portability assessment |
+| **8. Jurisdictional Risk** | Legal and regulatory risk monitoring by jurisdiction |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -61,7 +95,7 @@ Cloud security is NOT a one-time implementation—it requires ongoing vigilance.
 **2. Change Management (Sheet 3)**
 
 - Provider-initiated changes (service updates, acquisitions, policy changes)
-- Organization-initiated changes (configuration updates, integrations)
+- Organisation-initiated changes (configuration updates, integrations)
 - Emergency change tracking
 - Change impact assessment and rollback capability
 
@@ -675,7 +709,7 @@ Each assessment sheet (2-8) has 7 additional columns (R-X) tailored to that gove
 
 ### Sheet 2: Access Review & Recertification
 
-**Purpose:** Validate that user access to cloud services remains appropriate and authorized. Detect and remediate orphan accounts within 24 hours.
+**Purpose:** Validate that user access to cloud services remains appropriate and authorised. Detect and remediate orphan accounts within 24 hours.
 
 **Policy Reference:** "Access to cloud services MUST be reviewed quarterly. Orphan accounts MUST be disabled within 24 hours of detection." (ISMS-POL-A.5.19-23-S5 Section 6.1)
 
@@ -788,7 +822,7 @@ Q: 2026-01-15
 ☐ Orphan accounts disabled within 24 hours of detection
 ☐ Terminated user access revoked within SLA (24 hours)
 ☐ Service account ownership verified and documented
-☐ Shared accounts minimized and justified
+☐ Shared accounts minimised and justified
 ☐ MFA status verified during access review
 ☐ External/guest access reviewed and time-limited
 ☐ Access review findings documented with evidence
@@ -1514,7 +1548,7 @@ Q: 2026-01-18 (quarterly review date)
 
 #### 5.1.2 Evidence Folder Structure
 
-**Recommended Organization:**
+**Recommended Organisation:**
 ```
 /evidence/governance/
 ├── Q1_2026/
@@ -1832,7 +1866,7 @@ Example: /evidence/vendor/Q1_2026/Slack_SOC2_Type_II_2025-12-01.pdf
 ☐ Quarter covered (e.g., "Q1 2026")
 ☐ Incidents reported (from vendor notifications, status pages)
 ☐ Incident severity (vendor's classification)
-☐ Impact to [Organization] (did it affect us?)
+☐ Impact to [Organisation] (did it affect us?)
 ☐ Vendor response (how quickly resolved)
 
 Format: Tracking spreadsheet + incident notification emails
@@ -1842,7 +1876,7 @@ Example: /evidence/vendor/Q1_2026/vendor_incident_log_Q1_2026.xlsx
 **3. Vendor QBR Meeting Notes (Quarterly for Critical vendors)**
 ```
 ☐ Meeting date
-☐ Attendees (vendor and [Organization] representatives)
+☐ Attendees (vendor and [Organisation] representatives)
 ☐ Agenda (topics discussed)
 ☐ Security topics covered (incidents, roadmap, certifications)
 ☐ Performance review (SLA compliance, issues)
@@ -1914,7 +1948,7 @@ Example: /evidence/exit/alternative_providers_GitLab_vs_Bitbucket.xlsx
 
 **1. Data Processing Agreement (DPA) with SCCs (Required for all EU data)**
 ```
-☐ Signed DPA between [Organization] and vendor
+☐ Signed DPA between [Organisation] and vendor
 ☐ Standard Contractual Clauses (current EU template)
 ☐ Annexes (data categories, security measures, sub-processors)
 ☐ Signing date (both parties)
@@ -2240,7 +2274,7 @@ Assessor marks: "Risk Acceptance: Accepted"
 6 months later: Data breach investigation
 
 Regulator: "Show us documented risk acceptance for US data transfer"
-[Organization]: "It was verbal..."
+[Organisation]: "It was verbal..."
 Regulator: *GDPR Article 32 violation fine*
 ```
 
@@ -2672,7 +2706,7 @@ AUDIT READINESS (8 items)
 ☐ Evidence register is complete (all claims have supporting evidence)
 ☐ Timestamps on evidence are credible (not backdated)
 ☐ Sign-offs are genuine (actual signatories, not proxies)
-☐ Gaps are honestly disclosed (not hidden or minimized)
+☐ Gaps are honestly disclosed (not hidden or minimised)
 ☐ Remediation plans exist for all gaps
 ☐ Assessment tells a coherent story (no contradictions)
 ☐ Previous audit findings addressed (if applicable)
@@ -2694,7 +2728,7 @@ RISK MANAGEMENT (6 items)
 ☐ Risk acceptance documented (not verbal)
 ☐ Compensating controls justified (actually compensate for risk)
 ☐ Risk ratings consistent with evidence
-☐ Risk treatment aligned with organization risk appetite
+☐ Risk treatment aligned with organisation risk appetite
 ```
 
 **Approval Outcomes:**
@@ -2773,7 +2807,7 @@ ACCOUNTABILITY (3 items)
 
 **✅ Final Approval:**
 ```
-Assessment complete. CISO signature authorizes:
+Assessment complete. CISO signature authorises:
 
 - Current risk posture acceptance
 - Remediation budget allocation
@@ -2914,9 +2948,9 @@ Requires executive discussion before resubmission.
 
 ---
 
-### Integration with Organizational Systems
+### Integration with Organisational Systems
 
-**Cloud governance assessment should NOT be a standalone spreadsheet.** To avoid creating "shadow IT governance," integrate with existing organizational systems:
+**Cloud governance assessment should NOT be a standalone spreadsheet.** To avoid creating "shadow IT governance," integrate with existing organisational systems:
 
 **Priority 1: Configuration Management Database (CMDB)**
 
@@ -2957,7 +2991,7 @@ for row in range(7, 31):  # Data rows 7-30
             "last_access_review": last_review_date.strftime("%Y-%m-%d"),
             "compliance_status": "Governance Reviewed"
         }
-        response = requests.post(cmdb_api_url, json=payload, headers={"Authorization": "Bearer TOKEN"})
+        response = requests.post(cmdb_api_url, json=payload, headers={"Authorisation": "Bearer TOKEN"})
         print(f"✅ Updated CMDB for {service_name}: {response.status_code}")
 ```
 
@@ -3068,7 +3102,7 @@ Coordinator: [Name]
     ├─ Disable inactive accounts
     └─ Document review date in Column R
   ☐ Sheet 3 (Change Management): Review changes this quarter
-    ├─ Verify all changes properly authorized
+    ├─ Verify all changes properly authorised
     ├─ Check emergency change documentation
     └─ Update change risk assessment if needed
   ☐ Sheet 4 (Incident Management): Review incidents this quarter
@@ -3495,16 +3529,16 @@ Examples:
 
 - CIS Controls v8.1 - Center for Internet Security benchmarks
 - NIST Cybersecurity Framework (CSF) 2.0
-- SOC 2 Type II - Service Organization Control audit reports
+- SOC 2 Type II - Service Organisation Control audit reports
 - PCI DSS v4.0.1 - Payment Card Industry Data Security Standard
 
 ---
 
 ### Regulatory Applicability Decision Matrix
 
-**Quick reference to determine which regulatory columns apply to your organization.**
+**Quick reference to determine which regulatory columns apply to your organisation.**
 
-| If Your Organization Is... | Complete These Sheets/Columns | Justification |
+| If Your Organisation Is... | Complete These Sheets/Columns | Justification |
 |----------------------------|------------------------------|---------------|
 | **EU Financial Entity** (bank, insurance, investment firm) | Sheet 6: Columns Y-AA (DORA), Sheet 7 (if US vendor) | DORA mandates ICT risk management for financial entities |
 | **EU Essential/Important Entity** (energy, transport, health, digital infra) | Sheet 4: Column Z (NIS2), Sheet 6: Column Z (NIS2) | NIS2 requires cybersecurity measures for critical sectors |
@@ -3516,7 +3550,7 @@ Examples:
 
 ### Governance Maturity Model
 
-**Assess your organization's governance maturity level:**
+**Assess your organisation's governance maturity level:**
 
 **Level 1: Initial (Ad Hoc)**
 
@@ -3633,67 +3667,67 @@ ACTION ITEMS:
 
 ### Contact Information & Escalation Path
 
-**Template - Customize for [Organization].**
+**Template - Customize for [Organisation].**
 
 ```
 GOVERNANCE ASSESSMENT SUPPORT CONTACTS
 
 GENERAL QUESTIONS:
   Cloud Operations Team
-  Email: cloud-ops@[organization].com
+  Email: cloud-ops@[organisation].com
   Teams: Cloud Operations Channel
   Response Time: 1 business day
 
 ACCESS REVIEW QUESTIONS (Sheet 2):
   Identity & Access Management (IAM) Team
-  Email: iam@[organization].com
+  Email: iam@[organisation].com
   Phone: +XX XXX XXX XXXX
   Response Time: 2 business days
   Escalation: IAM Manager
 
 CHANGE MANAGEMENT QUESTIONS (Sheet 3):
   Change Advisory Board (CAB)
-  Email: cab@[organization].com
+  Email: cab@[organisation].com
   Meeting: Weekly Thursdays 10:00 AM
   Response Time: Next CAB meeting
   Escalation: CIO
 
 INCIDENT MANAGEMENT QUESTIONS (Sheet 4):
   Security Operations Center (SOC)
-  Email: soc@[organization].com
+  Email: soc@[organisation].com
   Phone: +XX XXX XXX XXXX (24/7 hotline)
   Response Time: Immediate (P1/P2), 4 hours (P3/P4)
   Escalation: Incident Commander → CISO
 
 BUSINESS CONTINUITY QUESTIONS (Sheet 5):
   Business Continuity Planning Team
-  Email: bcdr@[organization].com
+  Email: bcdr@[organisation].com
   Phone: +XX XXX XXX XXXX
   Response Time: 2 business days
   Escalation: Business Continuity Manager
 
 VENDOR RISK QUESTIONS (Sheet 6):
   Vendor Management Office
-  Email: vendor-risk@[organization].com
+  Email: vendor-risk@[organisation].com
   Response Time: 3 business days
   Escalation: Chief Risk Officer (CRO)
 
 COMPLIANCE/REGULATORY QUESTIONS:
   Compliance Officer
-  Email: compliance@[organization].com
+  Email: compliance@[organisation].com
   Phone: +XX XXX XXX XXXX
   Response Time: 3 business days
   Escalation: General Counsel
 
 APPROVAL WORKFLOW (Sheet 11):
   ISMS Coordinator
-  Email: isms-coordinator@[organization].com
+  Email: isms-coordinator@[organisation].com
   Response Time: 1 business day
   Escalation: CISO
 
 TOOL/WORKBOOK TECHNICAL ISSUES:
   ISMS Implementation Team
-  Email: isms-admin@[organization].com
+  Email: isms-admin@[organisation].com
   Response Time: 1 business day
   Escalation: ISMS Program Manager
 ```
@@ -3724,7 +3758,7 @@ TOOL/WORKBOOK TECHNICAL ISSUES:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Governance is not an event; it is a practice."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

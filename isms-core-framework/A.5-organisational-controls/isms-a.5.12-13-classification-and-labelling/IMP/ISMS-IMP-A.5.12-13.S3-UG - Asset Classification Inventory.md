@@ -7,21 +7,55 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Asset Classification Inventory |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.12-13.S3-UG |
+| **Related Policy** | ISMS-POL-A.5.12-13 (Classification and Labelling) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.12-13 (Classification and Labelling) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.12-13 Classification and Labelling |
-| **Parent Policy** | ISMS-POL-A.5.12-13 - Information Classification and Labelling |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.12-13 (Classification and Labelling)
+- ISMS-IMP-A.5.12-13.S1 (Classification Scheme Definition)
+- ISMS-IMP-A.5.12-13.S2 (Labelling Procedures and Standards)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.12-13.S3-TG.
+
+### Workbook at a Glance
+
+This workbook contains the following 8 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Asset Inventory** | Complete inventory of assets with classification assignments |
+| **Classification Summary** | Summary statistics and coverage analysis of classification assignments |
+| **Reclassification Log** | Audit trail of classification changes with justification and approval |
+| **Gap Analysis** | Identification of unclassified assets and classification coverage gaps |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -90,10 +124,10 @@ The Asset Classification Inventory covers:
 Per ISO/IEC 27001:2022:
 
 **Control A.5.12:**
-> *"Information should be classified according to the information security needs of the organization based on confidentiality, integrity, availability and relevant interested party requirements."*
+> *"Information should be classified according to the information security needs of the organisation based on confidentiality, integrity, availability and relevant interested party requirements."*
 
 **Control A.5.13:**
-> *"An appropriate set of procedures for information labelling should be developed and implemented in accordance with the information classification scheme adopted by the organization."*
+> *"An appropriate set of procedures for information labelling should be developed and implemented in accordance with the information classification scheme adopted by the organisation."*
 
 **Control Type:** Preventive
 **Security Properties:** Confidentiality, Integrity, Availability
@@ -532,7 +566,7 @@ The Approval_SignOff sheet requires:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Order is the shape upon which beauty depends."*
+— Pearl S. Buck
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

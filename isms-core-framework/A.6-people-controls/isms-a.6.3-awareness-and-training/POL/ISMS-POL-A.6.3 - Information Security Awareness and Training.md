@@ -41,7 +41,6 @@
 - ISMS-IMP-A.6.3.1-UG/TG (Training Needs Assessment)
 - ISMS-IMP-A.6.3.2-UG/TG (Training Program Design)
 - ISMS-IMP-A.6.3.3-UG/TG (Training Delivery and Tracking)
-- ISMS-IMP-A.6.3.4-UG/TG (Training Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.6.3
 - ISO/IEC 27002:2022 Section 6.3 (Implementation Guidance)
 - ISMS-POL-A.5.1-2-6.1-2 (Information Security Policies and Roles)
@@ -52,11 +51,11 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for information security awareness, education, and training programs to ensure all personnel and relevant interested parties understand their security responsibilities and are equipped to fulfill them effectively, in accordance with ISO/IEC 27001:2022 Control A.6.3.
+This policy establishes [Organisation]'s requirements for information security awareness, education, and training programs to ensure all personnel and relevant interested parties understand their security responsibilities and are equipped to fulfill them effectively, in accordance with ISO/IEC 27001:2022 Control A.6.3.
 
-**Scope**: This policy applies to all personnel who work under [Organization]'s control, including employees, contractors, temporary staff, and relevant third parties who access [Organization]'s information systems or handle organizational data. The policy covers initial onboarding awareness, role-specific training, ongoing education, and regular policy updates.
+**Scope**: This policy applies to all personnel who work under [Organisation]'s control, including employees, contractors, temporary staff, and relevant third parties who access [Organisation]'s information systems or handle organisational data. The policy covers initial onboarding awareness, role-specific training, ongoing education, and regular policy updates.
 
-**Purpose**: Define organizational requirements for information security awareness, education, and training programs. This policy establishes WHAT training is required, WHO must receive training, and WHEN training must be completed. Implementation procedures (HOW to deliver and track training) are documented separately in ISMS-IMP-A.6.3 (UG/TG variants).
+**Purpose**: Define organisational requirements for information security awareness, education, and training programs. This policy establishes WHAT training is required, WHO must receive training, and WHEN training must be completed. Implementation procedures (HOW to deliver and track training) are documented separately in ISMS-IMP-A.6.3 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including ISO/IEC 27001:2022 (Clause 7.2 Competence, Clause 7.3 Awareness), Swiss nDSG, EU GDPR (Art. 29, 32), and industry-specific requirements where applicable. Security awareness training is a foundational control required by virtually all regulatory frameworks.
 
@@ -68,9 +67,9 @@ This policy establishes [Organization]'s requirements for information security a
 
 **ISO/IEC 27001:2022 Annex A.6.3 - Information Security Awareness, Education and Training**
 
-> *Personnel of the organization and relevant interested parties shall receive appropriate information security awareness, education and training and regular updates of the organization's information security policy, topic-specific policies and procedures, as relevant for their job function.*
+> *Personnel of the organisation and relevant interested parties shall receive appropriate information security awareness, education and training and regular updates of the organisation's information security policy, topic-specific policies and procedures, as relevant for their job function.*
 
-**Control Objective**: Ensure all personnel understand their information security responsibilities, possess the competencies required for their roles, and maintain current knowledge of [Organization]'s policies and emerging threats to effectively protect organizational information assets.
+**Control Objective**: Ensure all personnel understand their information security responsibilities, possess the competencies required for their roles, and maintain current knowledge of [Organisation]'s policies and emerging threats to effectively protect organisational information assets.
 
 **This Policy Addresses**:
 
@@ -88,14 +87,14 @@ This policy establishes [Organization]'s requirements for information security a
 This policy also addresses requirements from ISO/IEC 27001:2022 main body clauses:
 
 **Clause 7.2 - Competence**:
-> The organization shall:
+> The organisation shall:
 > a) determine the necessary competence of person(s) doing work under its control that affects its information security performance;
 > b) ensure that these persons are competent on the basis of appropriate education, training, or experience;
 > c) where applicable, take actions to acquire the necessary competence, and evaluate the effectiveness of the actions taken;
 > d) retain appropriate documented information as evidence of competence.
 
 **Clause 7.3 - Awareness**:
-> Persons doing work under the organization's control shall be aware of:
+> Persons doing work under the organisation's control shall be aware of:
 > a) the information security policy;
 > b) their contribution to the effectiveness of the information security management system, including the benefits of improved information security performance;
 > c) the implications of not conforming with the information security management system requirements.
@@ -106,7 +105,7 @@ This policy:
 
 - **Defines** requirements for security awareness programs applicable to all personnel
 - **Establishes** role-based training requirements framework based on job function and access
-- **Specifies** training content requirements addressing organizational policies and security topics
+- **Specifies** training content requirements addressing organisational policies and security topics
 - **Assigns** accountability for training program management and completion
 - **References** applicable regulatory requirements per ISMS-POL-00
 - **Integrates** training with HR lifecycle processes (hiring, role changes, exit)
@@ -118,10 +117,10 @@ This policy does NOT:
 
 - **Specify detailed training curriculum** (developed by training team based on this policy's requirements)
 - **Define training content development procedures** (see ISMS-IMP-A.6.3.2 Training Program Design)
-- **Provide technical LMS configuration guidance** (organizational technology choice)
-- **Define HR onboarding procedures** (organizational HR policy, interfaces with this policy)
+- **Provide technical LMS configuration guidance** (organisational technology choice)
+- **Define HR onboarding procedures** (organisational HR policy, interfaces with this policy)
 - **Replace specialized technical certification programs** (vendor certifications, professional development)
-- **Dictate training delivery platforms** (tool selection based on [Organization]'s preferences)
+- **Dictate training delivery platforms** (tool selection based on [Organisation]'s preferences)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
@@ -135,22 +134,22 @@ This policy does NOT:
 
 **This policy applies to**:
 
-- All employees of [Organization] (permanent, fixed-term, part-time)
-- Contractors and consultants working under [Organization]'s direction
+- All employees of [Organisation] (permanent, fixed-term, part-time)
+- Contractors and consultants working under [Organisation]'s direction
 - Temporary staff and interns
-- Third-party personnel with access to [Organization]'s systems or data
+- Third-party personnel with access to [Organisation]'s systems or data
 - Executive management and board members
-- All organizational locations and remote workers
+- All organisational locations and remote workers
 - Personnel at all levels (entry-level to executive)
 
 **Out of Scope**:
 
 - Training content for external customers (separate customer education programs)
-- Partner organization training (partners responsible for own training, contractual requirements only)
+- Partner organisation training (partners responsible for own training, contractual requirements only)
 - Public awareness campaigns (covered under external communications)
 - Professional development not related to information security (general HR domain)
 
-**Definition of "Personnel"**: For this policy, personnel includes any person doing work under [Organization]'s control whose work may affect information security, regardless of employment relationship or location.
+**Definition of "Personnel"**: For this policy, personnel includes any person doing work under [Organisation]'s control whose work may affect information security, regardless of employment relationship or location.
 
 ## Regulatory Applicability
 
@@ -160,7 +159,7 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 
 | Regulation | Applicability | Key Requirements |
 |------------|---------------|------------------|
-| **Swiss nDSG** | All Swiss operations | Art. 8 - Appropriate technical and organizational measures (includes staff competency) |
+| **Swiss nDSG** | All Swiss operations | Art. 8 - Appropriate technical and organisational measures (includes staff competency) |
 | **EU GDPR** | When processing EU personal data | Art. 29, 32 - Personnel processing personal data must act under controller instruction with appropriate training |
 | **ISO/IEC 27001:2022** | Certification scope | Control A.6.3 - Security awareness, education and training; Clauses 7.2-7.3 - Competence and awareness |
 
@@ -186,7 +185,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - SANS Security Awareness Maturity Model
 - ISO/IEC 27002:2022 Section 6.3 - Implementation guidance for awareness and training
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment per ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment per ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.
 
 ---
 
@@ -194,7 +193,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ## Security Awareness Program Principles
 
-[Organization]'s approach to security awareness, education, and training is based on the following principles:
+[Organisation]'s approach to security awareness, education, and training is based on the following principles:
 
 | Principle | Requirement | Implementation |
 |-----------|-------------|----------------|
@@ -208,7 +207,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ## Training Audience Classification
 
-[Organization] classifies personnel into training audiences based on role, access, and risk exposure to determine appropriate training requirements.
+[Organisation] classifies personnel into training audiences based on role, access, and risk exposure to determine appropriate training requirements.
 
 **Classification Criteria**:
 
@@ -225,7 +224,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 | Tier | Audience | Training Requirements | Examples |
 |------|----------|----------------------|----------|
-| **Tier 1: All Personnel** | Everyone under [Organization]'s control | Baseline security awareness (mandatory for all) | All employees, contractors, temporary staff |
+| **Tier 1: All Personnel** | Everyone under [Organisation]'s control | Baseline security awareness (mandatory for all) | All employees, contractors, temporary staff |
 | **Tier 2: Standard Users** | Personnel with standard business system access | Tier 1 + Application security, data handling | Office workers, general business users |
 | **Tier 3: Data Handlers** | Personnel regularly handling sensitive data | Tier 2 + Data protection, privacy, classification | HR, Finance, Legal, Customer Service |
 | **Tier 4: Technical Staff** | IT/Development personnel with system access | Tier 2 + Secure development, system security | Developers, system administrators, IT support |
@@ -263,8 +262,8 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 All personnel SHALL be trained on:
 
-- [Organization]'s Information Security Policy (ISMS-POL-A.5.1) objectives and scope
-- Individual responsibility for protecting organizational information
+- [Organisation]'s Information Security Policy (ISMS-POL-A.5.1) objectives and scope
+- Individual responsibility for protecting organisational information
 - Consequences of non-compliance (disciplinary, legal, reputational)
 - How to access complete policy documentation
 - Who to contact for security questions (CISO, Security Team)
@@ -273,8 +272,8 @@ All personnel SHALL be trained on:
 
 All personnel SHALL understand:
 
-- Acceptable use of [Organization]'s information assets (per A.5.10)
-- Personal use policies for organizational systems
+- Acceptable use of [Organisation]'s information assets (per A.5.10)
+- Personal use policies for organisational systems
 - Prohibited activities and behaviors
 - Asset return requirements (per A.5.11)
 - Bring Your Own Device (BYOD) policies (if applicable)
@@ -283,7 +282,7 @@ All personnel SHALL understand:
 
 All personnel SHALL be trained on:
 
-- [Organization]'s data classification scheme (Public, Internal, Confidential, Restricted)
+- [Organisation]'s data classification scheme (Public, Internal, Confidential, Restricted)
 - Handling requirements for each classification level
 - Information labeling requirements (per A.5.12-13)
 - Secure information transfer procedures (per A.5.14)
@@ -307,7 +306,7 @@ All personnel SHALL be trained on:
 - How to identify suspicious communications (email, phone, physical)
 - Reporting procedures for suspected attacks
 - Current threat landscape (updated regularly)
-- Real-world examples relevant to [Organization]
+- Real-world examples relevant to [Organisation]
 
 ### Incident Reporting
 
@@ -327,7 +326,7 @@ All personnel SHALL understand:
 - Visitor management procedures
 - Workstation security (locking, clean desk)
 - Security in public spaces (shoulder surfing, conversations)
-- Reporting unauthorized access or tailgating
+- Reporting unauthorised access or tailgating
 
 ### Remote and Mobile Working
 
@@ -350,8 +349,8 @@ Personnel who regularly handle sensitive data SHALL receive additional training 
 **Privacy and Data Protection**:
 
 - Applicable privacy regulations (GDPR, nDSG, sector-specific)
-- Data subject rights and organizational obligations
-- Data minimization and purpose limitation
+- Data subject rights and organisational obligations
+- Data minimisation and purpose limitation
 - Data retention and secure deletion (per A.8.10)
 - Cross-border data transfer requirements
 - Breach notification requirements
@@ -476,10 +475,10 @@ All training delivered under this policy SHALL meet the following requirements:
 
 | Characteristic | Requirement |
 |----------------|-------------|
-| **Trackable** | Completion tracked and documented in organizational records |
+| **Trackable** | Completion tracked and documented in organisational records |
 | **Assessable** | Includes knowledge verification (tests, assessments) |
 | **Accessible** | Available to all personnel regardless of location or ability |
-| **Relevant** | Content specific to [Organization]'s policies and context |
+| **Relevant** | Content specific to [Organisation]'s policies and context |
 | **Current** | Updated to reflect current threats and policy changes |
 | **Verifiable** | Evidence of completion available for audit |
 
@@ -520,10 +519,10 @@ All training content SHALL meet the following requirements:
 
 | Requirement | Description |
 |-------------|-------------|
-| **Accurate** | Reflects current [Organization] policies and threat landscape |
+| **Accurate** | Reflects current [Organisation] policies and threat landscape |
 | **Current** | Reviewed and updated at least annually |
 | **Accessible** | Available to all personnel regardless of ability or location |
-| **Relevant** | References [Organization]'s policies and context |
+| **Relevant** | References [Organisation]'s policies and context |
 | **Assessable** | Includes knowledge verification mechanisms |
 | **Version-Controlled** | Clear versioning with effective dates |
 
@@ -533,7 +532,7 @@ All training content SHALL meet the following requirements:
 
 ### Knowledge Assessment
 
-[Organization] SHALL assess training effectiveness through formal knowledge assessments.
+[Organisation] SHALL assess training effectiveness through formal knowledge assessments.
 
 **Assessment Requirements**:
 
@@ -560,7 +559,7 @@ All training content SHALL meet the following requirements:
 
 ### Behavioral Assessment
 
-[Organization] SHALL measure behavioral effectiveness through:
+[Organisation] SHALL measure behavioral effectiveness through:
 
 **Simulation Programs**:
 
@@ -585,7 +584,7 @@ All training content SHALL meet the following requirements:
 - Badge/access control compliance
 
 **Behavioral Targets**:
-Targets SHALL be defined by the CISO and reviewed annually. Targets should reflect industry benchmarks and organizational risk tolerance. See ISMS-IMP-A.6.3.4 for current target definitions.
+Targets SHALL be defined by the CISO and reviewed annually. Targets should reflect industry benchmarks and organisational risk tolerance. See ISMS-IMP-A.6.3.4 for current target definitions.
 
 ### Remediation Requirements
 
@@ -626,7 +625,7 @@ Personnel who fail assessments or demonstrate concerning behaviors SHALL:
 
 ### Documentation Requirements
 
-[Organization] SHALL maintain documentation of:
+[Organisation] SHALL maintain documentation of:
 
 **Individual Training Records**:
 
@@ -664,7 +663,7 @@ Training records SHALL be retained:
 
 ## Executive Management
 
-**Accountability**: Overall organizational commitment to security awareness and training.
+**Accountability**: Overall organisational commitment to security awareness and training.
 
 **Responsibilities**:
 
@@ -753,16 +752,16 @@ Training records SHALL be retained:
 
 **Authority**: None - obligation to comply with training requirements.
 
-## Third-Party/Contractor Organizations
+## Third-Party/Contractor Organisations
 
-**Accountability**: Ensuring their personnel meet [Organization]'s training requirements.
+**Accountability**: Ensuring their personnel meet [Organisation]'s training requirements.
 
 **Responsibilities**:
 
-- Ensure personnel accessing [Organization]'s systems complete required training
+- Ensure personnel accessing [Organisation]'s systems complete required training
 - Maintain training records for personnel under their employment
-- Report training completion to [Organization] as required by contract
-- Comply with [Organization]'s security awareness requirements
+- Report training completion to [Organisation] as required by contract
+- Comply with [Organisation]'s security awareness requirements
 
 **Authority**: As defined in contract or statement of work.
 
@@ -770,7 +769,7 @@ Training records SHALL be retained:
 
 - Third parties SHALL provide training completion attestations upon request (minimum annually)
 - Attestations SHALL be in writing (email acceptable) and include: personnel names, training completed, completion dates
-- [Organization] reserves the right to require third-party personnel to complete [Organization]'s training directly
+- [Organisation] reserves the right to require third-party personnel to complete [Organisation]'s training directly
 - Non-compliance triggers contract escalation procedures and potential access suspension
 - Verification records maintained by Procurement/Vendor Management with copy to Information Security
 
@@ -782,7 +781,7 @@ Training records SHALL be retained:
 
 ### Program Oversight
 
-[Organization] establishes the following governance for security awareness and training:
+[Organisation] establishes the following governance for security awareness and training:
 
 **Training Steering Committee** (or equivalent):
 
@@ -868,12 +867,12 @@ All training content SHALL be version-controlled:
 
 ### Training Evidence Register
 
-[Organization] SHALL maintain a Training Evidence Register documenting all evidence supporting compliance with this policy.
+[Organisation] SHALL maintain a Training Evidence Register documenting all evidence supporting compliance with this policy.
 
 **Evidence Register Requirements**:
 
 - Maintained by the Information Security Officer (or delegate)
-- Location: ISMS-IMP-A.6.3.4 Training Compliance Dashboard (Evidence_Register sheet) or equivalent centralized repository
+- Location: centralised evidence repository (see Summary Dashboard in each workbook)
 - Updated at least monthly or upon evidence collection
 - Reviewed quarterly as part of training program review
 
@@ -895,7 +894,7 @@ All training content SHALL be version-controlled:
 This policy SHALL be reviewed:
 
 - **Annually** (minimum) by CISO with input from HR and Security team
-- **Triggered by**: Significant security incidents with training root causes, regulatory changes, organizational changes
+- **Triggered by**: Significant security incidents with training root causes, regulatory changes, organisational changes
 
 **Review Criteria**:
 
@@ -924,7 +923,7 @@ This policy SHALL be reviewed:
 
 ### Training Effectiveness Metrics
 
-[Organization] SHALL track metrics to measure training program effectiveness.
+[Organisation] SHALL track metrics to measure training program effectiveness.
 
 **Required Metric Categories and Minimum Targets**:
 
@@ -943,7 +942,7 @@ This policy SHALL be reviewed:
 **Target Authority**: The CISO reviews and adjusts targets annually based on:
 
 - Industry benchmarks and best practices
-- Organizational risk tolerance
+- Organisational risk tolerance
 - Regulatory requirements
 - Historical performance trends
 
@@ -955,13 +954,13 @@ Target adjustments are documented in ISMS-IMP-A.6.3.4 and reported to Executive 
 - **Quarterly**: Program effectiveness to management (including target vs. actual)
 - **Annually**: Program summary to Executive Management
 
-**Implementation Note**: Detailed reporting formats and dashboards are maintained in ISMS-IMP-A.6.3.4 - Training Compliance Dashboard.
+**Implementation Note**: Detailed reporting formats and dashboards are maintained in the Summary Dashboard sheet of each implementation workbook.
 
 ---
 
 # Integration with Other Controls
 
-This policy integrates with [Organization]'s Information Security Management System as follows:
+This policy integrates with [Organisation]'s Information Security Management System as follows:
 
 ## Integration with ISMS Core
 
@@ -995,7 +994,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 - **A.5.24-28** (Incident Management): Personnel trained on incident reporting and response roles
 
-**Emergency Awareness Communications**: During active security incidents (e.g., widespread phishing campaign, ransomware threat), the CISO may authorize immediate awareness communications outside normal training schedules. Emergency communications:
+**Emergency Awareness Communications**: During active security incidents (e.g., widespread phishing campaign, ransomware threat), the CISO may authorise immediate awareness communications outside normal training schedules. Emergency communications:
 
 - Distributed via email, intranet, or other rapid communication channels
 - May require immediate acknowledgment
@@ -1018,7 +1017,7 @@ Training content references and reinforces the following controls:
 
 ## HR Process Integration
 
-This policy integrates with [Organization]'s HR processes:
+This policy integrates with [Organisation]'s HR processes:
 
 **Onboarding**:
 
@@ -1087,7 +1086,7 @@ Evidence required to demonstrate this policy is operationally effective (maintai
 This policy establishes security awareness and training requirements. It does NOT establish:
 
 - **Specific training content** (developed by training team per this policy's requirements, documented in ISMS-IMP-A.6.3)
-- **HR onboarding procedures** (organizational HR policy, interfaces with this policy)
+- **HR onboarding procedures** (organisational HR policy, interfaces with this policy)
 - **General professional development** (broader HR/L&D domain, not ISMS scope)
 - **LMS configuration** (technical implementation choice, not policy requirement)
 
@@ -1112,4 +1111,4 @@ The boundary is: POL-A.6.3 defines WHAT training is required and WHO must comple
 
 *This policy establishes requirements for information security awareness, education, and training. Implementation procedures, assessment templates, and detailed guidance are documented in ISMS-IMP-A.6.3 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

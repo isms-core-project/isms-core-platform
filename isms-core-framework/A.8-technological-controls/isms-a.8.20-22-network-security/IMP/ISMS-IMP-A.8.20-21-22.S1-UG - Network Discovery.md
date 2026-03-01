@@ -8,27 +8,52 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-IMP-A.8.20-21-22-S1-UG |
+|-------|-------|
+| **Document Title** | Network Discovery |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.20-21-22.S1-UG |
+| **Related Policy** | ISMS-POL-A.8.20-21-22 (Network Security) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.20 (Networks Security) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Network Asset Discovery & Inventory |
-| **Related Policy** | ISMS-POL-A.8.20-21-22, Section 2.1 (Network Infrastructure Security - A.8.20), Section 2.2 (Network Services Security - A.8.21), Section 2.3 (Network Segmentation - A.8.22) |
-| **Purpose** | Provide systematic methodology for discovering and inventorying network infrastructure, services, and segments to support compliance assessment |
-| **Target Audience** | Network Administrators, Security Engineers, ISMS Implementation Teams, Infrastructure Teams, Auditors |
-| **Assessment Type** | Technical Discovery & Inventory |
-| **Review Cycle** | Annually or After Major Network Changes |
-| **Total Sheets** | 9 |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial implementation guidance for network discovery process | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.20-21-22 (Network Security)
+- ISMS-IMP-A.8.20-21-22.S2 (Architecture Documentation)
+- ISMS-IMP-A.8.20-21-22.S3 (Device Hardening)
+- ISMS-IMP-A.8.20-21-22.S4 (Services Security)
+- ISMS-IMP-A.8.20-21-22.S5 (Segmentation Implementation)
 
 ---
 
-**Audience:** Security assessors, Control owners, Compliance officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Device Inventory | Inventory of all network devices |
+| 3 | Device Criticality Matrix | Assess criticality of each network device |
+| 4 | Device Type Summary | Summary of network device types |
+| 5 | Discovery Metadata | Record network discovery process metadata |
+| 6 | Gap Analysis | Identify network inventory coverage gaps |
+| 7 | Validation Rules | Define and track inventory validation rules |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -55,8 +80,8 @@ This guidance covers:
 
 - Administrative access to network management systems
 - Access to network documentation (if available)
-- Understanding of [Organization]'s network topology (high-level)
-- Authorization to perform network scanning activities
+- Understanding of [Organisation]'s network topology (high-level)
+- Authorisation to perform network scanning activities
 
 ---
 
@@ -99,7 +124,7 @@ Phase 4: Data Consolidation & Validation
 - **SNMP Community Strings / SNMPv3 Credentials**: For SNMP-based discovery
 - **Cloud Console Access**: AWS/Azure/GCP console access (if using cloud infrastructure)
 - **Network Documentation Access**: Access to existing diagrams, IP address management (IPAM) systems
-- **Scanning Authorization**: Documented approval to perform network scans (avoid triggering IDS/IPS)
+- **Scanning Authorisation**: Documented approval to perform network scans (avoid triggering IDS/IPS)
 
 ## Recommended Tools
 
@@ -121,7 +146,7 @@ Phase 4: Data Consolidation & Validation
 | Tool | Type | Use Case |
 |------|------|----------|
 | **Visio / draw.io** | Diagramming | Document discovered topology |
-| **Spreadsheets** | Data management | Consolidate discovery results |
+| **Spreadsheets** | Data management | Track discovery results |
 | **Interview templates** | Documentation | Capture knowledge from network admins |
 | **Configuration management systems** | CMDB | Extract existing asset data |
 
@@ -131,7 +156,7 @@ Phase 4: Data Consolidation & Validation
 - Command-line proficiency (Bash/PowerShell)
 - Understanding of SNMP (v2c and v3)
 - Familiarity with cloud platforms (if applicable)
-- Data analysis skills (consolidating results from multiple sources)
+- Data analysis skills (tracking results from multiple sources)
 
 ---
 
@@ -160,14 +185,14 @@ Document constraints that may affect discovery:
 
 **Deliverable**: Discovery constraints matrix
 
-### Obtain Scanning Authorization
+### Obtain Scanning Authorisation
 Obtain written approval for scanning activities:
 
 - **Change ticket** (if required by change management process)
 - **Security team notification** (to whitelist scanning source IPs)
 - **Stakeholder communication** (notify network admins, service owners)
 
-**Deliverable**: Scanning authorization document
+**Deliverable**: Scanning authorisation document
 
 ---
 
@@ -521,7 +546,7 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - Flag discrepancies (documented but not discovered = potentially offline or decommissioned)
 - Flag discoveries not documented (shadow IT, undocumented changes)
 
-**Deliverable**: Consolidated asset list from documentation sources
+**Deliverable**: Asset list from documentation sources
 
 ---
 
@@ -590,7 +615,7 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 
 ## Phase 4: Data Consolidation & Validation
 
-### Consolidate Discovery Results
+### Compile Discovery Results
 
 **Combine Data from All Sources**:
 
@@ -621,7 +646,7 @@ nmap_data = csv.DictReader(open('nmap_scan.csv'))
 snmp_data = csv.DictReader(open('snmp_walk.csv'))
 docs_data = csv.DictReader(open('documentation.csv'))
 
-# Consolidate by IP address
+# Compile by IP address
 inventory = defaultdict(dict)
 
 for row in nmap_data:
@@ -643,7 +668,7 @@ for ip, data in inventory.items():
     inventory[ip]['hostname'] = hostname
     inventory[ip]['location'] = location
 
-# Write consolidated inventory
+# Write compiled inventory
 with open('consolidated_inventory.csv', 'w', newline='') as f:
     fieldnames = ['IP Address', 'Hostname', 'Location', 'OS', 'Discovery Source']
     writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -657,7 +682,7 @@ with open('consolidated_inventory.csv', 'w', newline='') as f:
             'Discovery Source': 'Multiple sources'
         })
 
-print(f"Consolidated {len(inventory)} unique devices")
+print(f"Compiled {len(inventory)} unique devices")
 ```
 
 ---
@@ -699,7 +724,7 @@ while IFS=, read -r ip hostname; do
 done < <(tail -n +2 consolidated_inventory.csv | cut -d',' -f1,2)
 ```
 
-**Deliverable**: Validated consolidated inventory (CSV/Excel)
+**Deliverable**: Validated compiled inventory (CSV/Excel)
 
 ---
 
@@ -919,12 +944,12 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 **Solution**:
 
 - Loop through all regions (AWS: `aws ec2 describe-regions`, Azure: `az account list-locations`)
-- Loop through all accounts (AWS Organizations, Azure Management Groups)
+- Loop through all accounts (AWS Organisations, Azure Management Groups)
 - Use cloud-native discovery tools (AWS Config, Azure Resource Graph)
 
 ---
 
-## Pitfall: Duplicate Devices in Consolidated Inventory
+## Pitfall: Duplicate Devices in Compiled Inventory
 **Problem**: Same device appears multiple times due to multiple IP addresses or hostnames  
 **Solution**:
 
@@ -965,7 +990,7 @@ Document the following:
 
 ---
 
-## Consolidated Inventory
+## Compiled Inventory
 The consolidated inventory should be stored in a structured format (CSV or database) with the following fields:
 
 **Minimum Required Fields**:
@@ -990,7 +1015,7 @@ The consolidated inventory should be stored in a structured format (CSV or datab
 - Criticality (Critical, High, Medium, Low)
 - Status (Active, Offline, Decommissioned)
 
-**Storage Location**: [Organization] CMDB / Network Documentation Repository
+**Storage Location**: [Organisation] CMDB / Network Documentation Repository
 
 ---
 
@@ -1115,7 +1140,7 @@ gcloud dns managed-zones list                 # List DNS zones
 **Week 1: Planning & Preparation**
 
 - Day 1-2: Define scope, identify constraints
-- Day 3: Obtain scanning authorization
+- Day 3: Obtain scanning authorisation
 - Day 4-5: Prepare tools, test scanning in lab environment
 
 **Week 2: Automated Discovery**
@@ -1134,7 +1159,7 @@ gcloud dns managed-zones list                 # List DNS zones
 
 **Week 4: Consolidation & Validation**
 
-- Day 1-2: Consolidate data from all sources
+- Day 1-2: Compile data from all sources
 - Day 3: Deduplication and validation
 - Day 4: Gap analysis
 - Day 5: Generate discovery report, update inventory
@@ -1152,7 +1177,7 @@ gcloud dns managed-zones list                 # List DNS zones
 **Revision History:**
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
-| 1.0 | [Date] | Initial release | [Organization] ISMS Team |
+| 1.0 | [Date] | Initial release | [Organisation] ISMS Team |
 
 ---
 
@@ -1160,7 +1185,7 @@ gcloud dns managed-zones list                 # List DNS zones
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"You cannot secure a network you have not mapped."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

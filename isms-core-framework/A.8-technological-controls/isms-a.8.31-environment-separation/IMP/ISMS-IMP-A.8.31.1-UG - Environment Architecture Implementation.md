@@ -8,26 +8,56 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Environment Architecture Implementation |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.31.1-UG |
+| **Related Policy** | ISMS-POL-A.8.31 (Environment Separation) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.31 (Separation of Development, Test and Production Environments) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Environment Architecture & Separation Mechanisms |
-| **Related Policy** | ISMS-POL-A.8.31, Section 2.1 (Environment Architecture Requirements) |
-| **Purpose** | Document environment architecture, assess separation mechanisms against policy requirements, and identify gaps in environment isolation |
-| **Target Audience** | IT Operations, Cloud Architects, DevOps Engineers, Security Engineers, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Environment Architecture assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.31 (Environment Separation)
+- ISMS-IMP-A.8.31.2 (Environment Access Control)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.8.31.1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Environment Inventory | Inventory of development, test and production environments |
+| 3 | Network Separation | Assess network-level separation between environments |
+| 4 | Infrastructure Separation | Evaluate infrastructure-level environment isolation |
+| 5 | Data Separation | Assess data separation and segregation between environments |
+| 6 | Credential Separation | Evaluate credential separation and access key management |
+| 7 | Configuration Consistency | Assess configuration management consistency across environments |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Gap Analysis | Identify gaps in environment separation controls |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -68,7 +98,6 @@ This assessment is **completely technology-agnostic and platform-independent**. 
 |-----------------------|----------------------------|-----------------------------------------|
 | **ISMS-IMP-A.8.31.1** | **Architecture**           | **HOW environments are separated**      |
 | ISMS-IMP-A.8.31.2     | Access Control             | WHO can access WHICH environment        |
-| ISMS-IMP-A.8.31.3     | Compliance Dashboard       | Consolidated view across architecture + access |
 
 This assessment (A.8.31.1) MUST be completed first - you can't assess access control compliance until you know what environment architecture exists!
 
@@ -166,7 +195,6 @@ This assessment has NO dependencies - it's the first assessment in the A.8.31 se
 However, outputs from this assessment are INPUT to:
 
 - A.8.31.2 (Access Control) - Needs environment list from Sheet 1
-- A.8.31.3 (Compliance Dashboard) - Consolidates architecture + access data
 
 ---
 
@@ -417,7 +445,7 @@ However, outputs from this assessment are INPUT to:
 ### Sheet 1: Instructions & Legend
 
 **What to do:**
-1. Fill in assessment metadata (date, completed by, organization)
+1. Fill in assessment metadata (date, completed by, organisation)
 2. Review the status legend
 3. Review acceptable evidence examples
 4. Understand the workflow
@@ -541,7 +569,7 @@ However, outputs from this assessment are INPUT to:
 **Example Entry:**
 | Environment | Production Data Present? | Data Type | Anonymization Used? | Violations | Evidence |
 |-------------|-------------------------|-----------|---------------------|------------|----------|
-| Production | ✅ Yes (authorized) | Real production data | N/A | None | N/A |
+| Production | ✅ Yes (authorised) | Real production data | N/A | None | N/A |
 | Staging | ❌ No | Anonymized production subset | ✅ Yes (k-anonymity=5) | None | data-anonymization-procedure.pdf |
 | Testing | ❌ No | Synthetic test data | N/A | None | synthetic-data-generator-config.yaml |
 | Development | ❌ No | Synthetic test data | N/A | None | dev-database-schema.sql |
@@ -678,7 +706,7 @@ However, outputs from this assessment are INPUT to:
 |-------------|------|-------------|-----------|------|---------------------|----------|
 | EVD-001 | Network Diagram | Complete network architecture showing VLAN segmentation | network-architecture-2024-01.pdf | 2024-01-15 | ISMS-POL-A.8.31, Section 2.1 | ./evidence/EVD-001/ |
 | EVD-002 | Firewall Export | Firewall rules showing default deny between environments | firewall-rules-export-2024-01.txt | 2024-01-15 | ISMS-POL-A.8.31, Section 2.1 | ./evidence/EVD-002/ |
-| EVD-003 | Screenshot | AWS Organizations showing separate accounts per environment | aws-accounts-screenshot-2024-01.png | 2024-01-15 | ISMS-POL-A.8.31, Section 2.1 | ./evidence/EVD-003/ |
+| EVD-003 | Screenshot | AWS Organisations showing separate accounts per environment | aws-accounts-screenshot-2024-01.png | 2024-01-15 | ISMS-POL-A.8.31, Section 2.1 | ./evidence/EVD-003/ |
 | EVD-004 | Database Inventory | RDS instance list showing separate instances per environment | rds-instance-list-2024-01.csv | 2024-01-15 | ISMS-POL-A.8.31, Section 2.1 | ./evidence/EVD-004/ |
 | EVD-005 | PAM Vault Config | HashiCorp Vault configuration showing production credentials | vault-config-screenshot-2024-01.png | 2024-01-16 | ISMS-POL-A.8.31, Section 2.1 | ./evidence/EVD-005/ |
 | EVD-006 | Penetration Test | Network isolation test results | pentest-report-2024-01.pdf | 2024-01-18 | ISMS-POL-A.8.31, Section 2.1 | ./evidence/EVD-006/ |
@@ -692,7 +720,7 @@ However, outputs from this assessment are INPUT to:
 | Requirement Area | Evidence Type | Examples | How to Collect |
 |------------------|---------------|----------|----------------|
 | **Network Separation** | Network diagrams, firewall exports | VLAN configuration, VPC architecture, firewall rules | Export from firewall admin console, create diagram in Visio/Lucidchart |
-| **Infrastructure Separation** | Cloud inventory, server list | AWS account list, VM inventory, Kubernetes namespace list | AWS CLI: `aws organizations list-accounts`, `kubectl get namespaces` |
+| **Infrastructure Separation** | Cloud inventory, server list | AWS account list, VM inventory, Kubernetes namespace list | AWS CLI: `aws organisations list-accounts`, `kubectl get namespaces` |
 | **Data Separation** | Database inventory, data scan results | Database instance list, data discovery scan | `aws rds describe-db-instances`, data discovery tool report |
 | **Credential Separation** | PAM vault config, credential inventory | HashiCorp Vault policy, AWS Secrets Manager inventory | Screenshot vault configuration, export secret list |
 | **Configuration Consistency** | IaC configuration, drift reports | Terraform state, CloudFormation templates | `terraform plan` output, AWS Config compliance report |
@@ -740,8 +768,8 @@ aws ec2 describe-security-groups --region us-east-1 > sg-export-2024-01.json
 
 **Cloud Account Structure:**
 ```bash
-# AWS - List all accounts in organization
-aws organizations list-accounts --output table > aws-accounts-2024-01.txt
+# AWS - List all accounts in organisation
+aws organisations list-accounts --output table > aws-accounts-2024-01.txt
 
 # Azure - List all subscriptions
 az account list --output table > azure-subscriptions-2024-01.txt
@@ -870,7 +898,7 @@ curl http://prod-app:9090/metrics  # Should SUCCEED (allowed)
 
 ---
 
-### Pitfall 7: Poor Evidence Organization
+### Pitfall 7: Poor Evidence Organisation
 
 **Problem:** Evidence files scattered, unclear naming, missing dates
 
@@ -901,7 +929,7 @@ Before submitting your assessment for approval, verify:
 - [ ] All environments documented (including shadow/decommissioned)
 - [ ] All separation mechanisms documented (network, infrastructure, data, credentials)
 - [ ] All gaps identified and documented
-- [ ] All evidence collected and organized
+- [ ] All evidence collected and organised
 
 ### Accuracy
 
@@ -914,7 +942,7 @@ Before submitting your assessment for approval, verify:
 ### Evidence Quality
 
 - [ ] All evidence files time-stamped
-- [ ] Evidence organized in structured folder
+- [ ] Evidence organised in structured folder
 - [ ] Evidence file names descriptive and dated
 - [ ] Evidence register complete with file locations
 - [ ] Evidence accessible to reviewers/auditors
@@ -1040,7 +1068,7 @@ Document approvals in Sheet 9 (Evidence Register):
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Production and development share a purpose; they should not share an environment."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

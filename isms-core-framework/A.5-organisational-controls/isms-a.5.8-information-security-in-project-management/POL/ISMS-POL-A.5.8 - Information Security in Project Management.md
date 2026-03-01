@@ -32,13 +32,13 @@
 
 # Executive Summary
 
-This policy establishes [Organization]'s requirements for integrating information security into project management to ensure security risks are systematically addressed throughout the project lifecycle in accordance with ISO/IEC 27001:2022 Control A.5.8.
+This policy establishes [Organisation]'s requirements for integrating information security into project management to ensure security risks are systematically addressed throughout the project lifecycle in accordance with ISO/IEC 27001:2022 Control A.5.8.
 
-**Purpose**: Define organizational requirements for information security integration into project management processes. This policy establishes WHAT security activities are required at each project phase and WHO is accountable for security outcomes.
+**Purpose**: Define organisational requirements for information security integration into project management processes. This policy establishes WHAT security activities are required at each project phase and WHO is accountable for security outcomes.
 
-**Scope**: This policy applies to all projects undertaken by [Organization], regardless of project type, methodology, complexity, size, duration, or organizational scope, including projects managed by internal teams, external vendors, or hybrid structures.
+**Scope**: This policy applies to all projects undertaken by [Organisation], regardless of project type, methodology, complexity, size, duration, or organisational scope, including projects managed by internal teams, external vendors, or hybrid structures.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG (Art. 8), EU GDPR (Art. 25), and ISO/IEC 27001:2022. Conditional sector-specific requirements (NIS2, DORA, FINMA) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG (Art. 8), EU GDPR (Art. 25), and ISO/IEC 27001:2022. Conditional sector-specific requirements (NIS2, DORA, FINMA) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -55,7 +55,7 @@ This policy establishes [Organization]'s requirements for integrating informatio
 This policy applies to:
 
 - **IT projects**: Software development, system implementation, infrastructure deployment
-- **Business projects**: Process redesign, organizational change, merger/acquisition activities
+- **Business projects**: Process redesign, organisational change, merger/acquisition activities
 - **Infrastructure projects**: Data center construction, facility modifications, equipment installation
 - **Compliance projects**: Regulatory implementation, audit remediation, certification programs
 - Projects of all sizes and durations
@@ -73,7 +73,7 @@ This policy applies to:
 
 **Tier 1 - Mandatory Compliance**:
 
-- Swiss nDSG (Art. 8): Appropriate technical and organizational measures
+- Swiss nDSG (Art. 8): Appropriate technical and organisational measures
 - EU GDPR (Art. 25, 32): Data protection by design and by default
 - ISO/IEC 27001:2022: Control A.5.8 information security in project management
 
@@ -87,7 +87,7 @@ This policy applies to:
 
 ## Project Security Integration Principles
 
-[Organization] SHALL integrate information security into all projects based on the following principles:
+[Organisation] SHALL integrate information security into all projects based on the following principles:
 
 | Principle | Requirement | Application Example |
 |-----------|-------------|---------------------|
@@ -131,7 +131,7 @@ Classification SHALL be reviewed at each phase gate and updated if scope, data s
 
 ## Phase Gate Security Requirements
 
-[Organization] SHALL integrate security reviews into project governance at the following phase gates:
+[Organisation] SHALL integrate security reviews into project governance at the following phase gates:
 
 | Phase Gate | Security Criteria Required |
 |------------|---------------------------|
@@ -181,11 +181,11 @@ All projects SHALL include security testing proportional to project classificati
 **Security Testing Requirements by Classification**:
 
 - **High Risk Projects**:
-  - **Mandatory**: External penetration testing (OWASP methodology or equivalent), automated vulnerability scanning (weekly during development + final pre-deployment scan), security code review for custom code (minimum 20% coverage of authentication, authorization, data protection, and cryptographic functions)
+  - **Mandatory**: External penetration testing (OWASP methodology or equivalent), automated vulnerability scanning (weekly during development + final pre-deployment scan), security code review for custom code (minimum 20% coverage of authentication, authorisation, data protection, and cryptographic functions)
   - **Testing Criteria**: Penetration testing SHALL be performed by independent third party (not project team). All Critical findings and ≥80% of High findings SHALL be remediated before deployment.
 
 - **Medium Risk Projects**:
-  - **Mandatory**: Automated vulnerability scanning (final pre-deployment scan), functional security testing of authentication, authorization, data validation, and error handling
+  - **Mandatory**: Automated vulnerability scanning (final pre-deployment scan), functional security testing of authentication, authorisation, data validation, and error handling
   - **Conditional**: Penetration testing required if project is internet-facing OR processes regulated data (GDPR/PCI DSS v4.0.1)
   - **Testing Criteria**: All Critical findings and ≥70% of High findings SHALL be remediated before deployment.
 
@@ -194,7 +194,7 @@ All projects SHALL include security testing proportional to project classificati
   - **Optional**: Automated vulnerability scanning (recommended but not required)
   - **Testing Criteria**: Critical findings SHALL be remediated before deployment.
 
-**Testing Sufficiency Documentation**: For Medium/High Risk projects, testing adequacy SHALL be documented in security assessment report and approved by InfoSec Officer (Medium) or CISO (High) before deployment authorization. If remediation target is not achieved, residual risk SHALL be formally accepted per Exception Management section.
+**Testing Sufficiency Documentation**: For Medium/High Risk projects, testing adequacy SHALL be documented in security assessment report and approved by InfoSec Officer (Medium) or CISO (High) before deployment authorisation. If remediation target is not achieved, residual risk SHALL be formally accepted per Exception Management section.
 
 **Testing evidence (scan reports, penetration test reports, code review findings) SHALL be archived per A.5.33 and provided in security handover documentation.**
 
@@ -239,11 +239,11 @@ Security handover SHALL include the following documentation, delivered to operat
 
 ## Executive Management
 
-**Accountability**: Overall organizational security, including project security integration.
+**Accountability**: Overall organisational security, including project security integration.
 
 **Responsibilities**:
 
-- Approve this policy and ensure organizational resources for implementation
+- Approve this policy and ensure organisational resources for implementation
 - Review high-risk project security status in management reviews
 - Accept residual risks for critical projects
 
@@ -319,9 +319,9 @@ Security handover SHALL include the following documentation, delivered to operat
 
 **Responsibilities**:
 
-- Comply with [Organization]'s security requirements in contracts
+- Comply with [Organisation]'s security requirements in contracts
 - Participate in security assessments and provide required evidence
-- Report security incidents or vulnerabilities to [Organization]
+- Report security incidents or vulnerabilities to [Organisation]
 
 ## RACI Matrix for Project Security Activities
 
@@ -391,7 +391,7 @@ This policy SHALL be reviewed:
 - Annually (minimum) by CISO
 - Upon major project failures with security root causes
 - Upon regulatory changes affecting project security
-- Upon significant organizational changes
+- Upon significant organisational changes
 
 ---
 
@@ -409,7 +409,7 @@ This policy SHALL be reviewed:
 
 ## Monitoring and Metrics
 
-[Organization] SHALL track project security metrics including:
+[Organisation] SHALL track project security metrics including:
 
 - Projects by security classification
 - Projects with completed security assessments
@@ -440,7 +440,7 @@ Non-compliance with this policy may result in:
 
 - Project delays until security requirements are met
 - Escalation to Executive Management
-- Disciplinary action per [Organization]'s HR policies
+- Disciplinary action per [Organisation]'s HR policies
 
 ---
 
@@ -508,7 +508,7 @@ Evidence required to demonstrate this policy is operationally effective:
 This policy establishes information security integration requirements for project management governance. It does NOT establish:
 
 - **Specific technical security controls** (addressed in technical control policies A.8.x)
-- **Project management methodology** (organizational choice - Agile, Waterfall, hybrid)
+- **Project management methodology** (organisational choice - Agile, Waterfall, hybrid)
 - **Vendor selection criteria** (addressed in A.5.19-22 Supplier Relationship Security)
 - **Application security testing techniques** (addressed in A.8.25-28 Secure Development Lifecycle)
 
@@ -534,4 +534,4 @@ The boundary is: POL-A.5.8 defines WHAT security activities must occur at each p
 
 *This policy establishes requirements for information security integration into project management. Implementation procedures, assessment templates, and detailed guidance are documented in ISMS-IMP-A.5.8 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

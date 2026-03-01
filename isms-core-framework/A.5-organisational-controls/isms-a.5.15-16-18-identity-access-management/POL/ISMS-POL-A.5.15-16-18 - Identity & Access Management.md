@@ -43,8 +43,6 @@
 - ISMS-IMP-A.5.15-16-18.S2-UG/TG (Access Rights Matrix Assessment)
 - ISMS-IMP-A.5.15-16-18.S3-UG/TG (Access Review Results Assessment)
 - ISMS-IMP-A.5.15-16-18.S4-UG/TG (Role Definition & SoD Compliance Assessment)
-- ISMS-IMP-A.5.15-16-18.S5-UG/TG (IAM Governance Compliance Dashboard)
-- ISMS-IMP-A.5.15-16-18.S6-UG/TG (IAM Compliance Dashboard)
 - ISMS-POL-A.8.2-3-5 (Authentication & Privileged Access)
 - ISO/IEC 27001:2022 Controls A.5.15, A.5.16, A.5.18
 
@@ -52,9 +50,9 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for identity and access management controls to ensure appropriate access governance throughout the complete identity lifecycle in accordance with ISO/IEC 27001:2022 Controls A.5.15, A.5.16, and A.5.18.
+This policy establishes [Organisation]'s requirements for identity and access management controls to ensure appropriate access governance throughout the complete identity lifecycle in accordance with ISO/IEC 27001:2022 Controls A.5.15, A.5.16, and A.5.18.
 
-**Purpose**: Define organizational requirements for identity and access management governance. This policy establishes WHAT IAM controls are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.15-16-18 (UG/TG variants).
+**Purpose**: Define organisational requirements for identity and access management governance. This policy establishes WHAT IAM controls are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.15-16-18 (UG/TG variants).
 
 **Scope**: This policy applies to all user identities (employees, contractors, vendors, service accounts), all identity systems, and all access types regardless of deployment model or technology.
 
@@ -72,7 +70,7 @@ This policy establishes [Organization]'s requirements for identity and access ma
 
 **A.5.16 - Identity Management**: The full life cycle of identities should be managed.
 
-**A.5.18 - Access Rights**: Access rights to information and other associated assets shall be provisioned, reviewed, modified and removed in accordance with the organization's topic-specific policy and rules for access control.
+**A.5.18 - Access Rights**: Access rights to information and other associated assets shall be provisioned, reviewed, modified and removed in accordance with the organisation's topic-specific policy and rules for access control.
 
 ## Policy Scope
 
@@ -81,7 +79,7 @@ This policy establishes [Organization]'s requirements for identity and access ma
 | Category | Scope |
 |----------|-------|
 | **User Types** | Employees, contractors, vendors, service accounts, shared accounts (with approval), emergency accounts |
-| **Identity Systems** | Active Directory, Azure AD/Entra ID, Okta, Google Workspace, LDAP, and any identity system used by [Organization] |
+| **Identity Systems** | Active Directory, Azure AD/Entra ID, Okta, Google Workspace, LDAP, and any identity system used by [Organisation] |
 | **Access Types** | Application, system, data, network, and administrative/privileged access |
 | **Personnel** | IAM Team, Security Team, HR Team, IT Operations, Managers, System Owners, all employees |
 
@@ -97,16 +95,16 @@ This policy establishes [Organization]'s requirements for identity and access ma
 
 | Regulation | Key IAM Requirements |
 |------------|----------------------|
-| **Swiss nDSG** | Article 8 - Technical and organizational measures for access control |
+| **Swiss nDSG** | Article 8 - Technical and organisational measures for access control |
 | **EU GDPR** | Article 32 - Security of processing including access controls |
 | **ISO/IEC 27001:2022** | Controls A.5.15, A.5.16, A.5.18 |
 
 **Tier 2 - Conditional Applicability** (Triggered by business activities):
 
-- **FINMA**: If [Organization] holds FINMA license (Circular 2023/1 Margin 50-62)
-- **DORA**: If [Organization] is EU financial entity (Articles 6, 28-30)
-- **NIS2**: If [Organization] is essential or important entity (Article 21)
-- **PCI DSS v4.0.1**: If [Organization] processes payment card data (Requirements 7, 8)
+- **FINMA**: If [Organisation] holds FINMA license (Circular 2023/1 Margin 50-62)
+- **DORA**: If [Organisation] is EU financial entity (Articles 6, 28-30)
+- **NIS2**: If [Organisation] is essential or important entity (Article 21)
+- **PCI DSS v4.0.1**: If [Organisation] processes payment card data (Requirements 7, 8)
 
 Compliance determination per ISMS-POL-00 (Regulatory Applicability Framework).
 
@@ -118,7 +116,7 @@ Compliance determination per ISMS-POL-00 (Regulatory Applicability Framework).
 
 ### Access Control Principles
 
-[Organization] SHALL implement access controls based on the following principles:
+[Organisation] SHALL implement access controls based on the following principles:
 
 | Principle | Requirement |
 |-----------|-------------|
@@ -130,7 +128,7 @@ Compliance determination per ISMS-POL-00 (Regulatory Applicability Framework).
 
 ### Access Classification
 
-[Organization] SHALL classify access based on:
+[Organisation] SHALL classify access based on:
 
 | Dimension | Classifications |
 |-----------|----------------|
@@ -179,7 +177,7 @@ HR system designated as authoritative source for identity lifecycle events.
 
 ### Identity Lifecycle Framework
 
-[Organization] SHALL manage identities through standardized lifecycle processes:
+[Organisation] SHALL manage identities through standardized lifecycle processes:
 
 | Process | Trigger | Timeline | Accountability |
 |---------|---------|----------|----------------|
@@ -201,7 +199,7 @@ Detailed procedures documented in ISMS-IMP-A.5.15-16-18.2.
 
 ### Orphaned Account Management
 
-[Organization] SHALL detect and remediate orphaned accounts:
+[Organisation] SHALL detect and remediate orphaned accounts:
 
 - **Detection**: Monthly cross-reference of identity systems with HR system
 - **Remediation**: Investigation, notification, disable, delete sequence within 30 days
@@ -213,7 +211,7 @@ Detailed procedures documented in ISMS-IMP-A.5.15-16-18.2.
 
 ### Access Rights Assignment
 
-[Organization] SHALL assign access rights through:
+[Organisation] SHALL assign access rights through:
 
 - Documented request and approval workflow
 - Role-based access control (RBAC) as preferred method
@@ -241,7 +239,7 @@ Detailed procedures documented in ISMS-IMP-A.5.15-16-18.2.
 
 ### Access Review and Recertification
 
-[Organization] SHALL review access rights periodically:
+[Organisation] SHALL review access rights periodically:
 
 | Classification | Frequency | Reviewer |
 |----------------|-----------|----------|
@@ -265,7 +263,7 @@ If inappropriate access cannot be removed within 5 business days due to technica
 
 ### Access Removal
 
-[Organization] SHALL remove access promptly:
+[Organisation] SHALL remove access promptly:
 
 | Trigger | Timeline |
 |---------|----------|
@@ -277,7 +275,7 @@ If inappropriate access cannot be removed within 5 business days due to technica
 
 ### Privilege Creep Prevention
 
-[Organization] SHALL detect and remediate privilege creep through:
+[Organisation] SHALL detect and remediate privilege creep through:
 
 **Detection Methodology**:
 
@@ -412,7 +410,7 @@ Emergency deprovisioning SHALL occur within 1 hour for security incidents.
 This policy SHALL be reviewed:
 
 - **Annually** (mandatory)
-- **When triggered** by regulatory changes, organizational changes, technology changes, audit findings, risk assessment changes, or incident lessons learned
+- **When triggered** by regulatory changes, organisational changes, technology changes, audit findings, risk assessment changes, or incident lessons learned
 
 Policy changes require CISO approval; major revisions require Executive Management approval.
 
@@ -533,4 +531,4 @@ The boundary is: **This policy defines WHO gets WHAT access, WHEN, and HOW it is
 
 *This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.5.15-16-18 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

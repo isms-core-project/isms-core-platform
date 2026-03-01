@@ -31,11 +31,11 @@
 **Implementation Status**:
 - **Deployment Status**: [Fully Operational / Partial Deployment / Planned]
 - **Operational Since**: [Date DLP infrastructure became operational]
-- **Current Coverage**: [Percentage]% of organizational egress channels protected
+- **Current Coverage**: [Percentage]% of organisational egress channels protected
 - **Last Assessment**: [Date of most recent IMP-A.8.12-3 Channel Coverage Assessment]
 - **Next Assessment**: [Date per quarterly review schedule]
 
-*Note: Implementation status is tracked in IMP-A.8.12-5 Compliance Dashboard and reported to Executive Management quarterly.*
+*Note: Implementation status is tracked in Summary Dashboards and reported to Executive Management quarterly.*
 
 **Approval Chain**:
 
@@ -51,7 +51,6 @@
 - ISMS-IMP-A.8.12.2-UG/TG (Data Classification Assessment)
 - ISMS-IMP-A.8.12.3-UG/TG (Channel Coverage Assessment)
 - ISMS-IMP-A.8.12.4-UG/TG (Monitoring & Response Assessment)
-- ISMS-IMP-A.8.12.5-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.8.12
 - Swiss FADP (Federal Act on Data Protection)
 - EU GDPR (General Data Protection Regulation)
@@ -60,13 +59,13 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for data leakage prevention (DLP) controls to protect sensitive information from unauthorized disclosure, transfer, or exfiltration in accordance with ISO/IEC 27001:2022 Control A.8.12.
+This policy establishes [Organisation]'s requirements for data leakage prevention (DLP) controls to protect sensitive information from unauthorised disclosure, transfer, or exfiltration in accordance with ISO/IEC 27001:2022 Control A.8.12.
 
-**Scope**: This policy applies to all information assets classified as Internal, Confidential, or Restricted; all data egress channels including email, web, endpoints, network, cloud, and mobile; all organizational personnel; and all DLP technologies regardless of deployment model.
+**Scope**: This policy applies to all information assets classified as Internal, Confidential, or Restricted; all data egress channels including email, web, endpoints, network, cloud, and mobile; all organisational personnel; and all DLP technologies regardless of deployment model.
 
-**Purpose**: Define organizational requirements for DLP control implementation and governance. This policy establishes WHAT data leakage prevention protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.12 (UG/TG variants). DLP controls address both malicious exfiltration (insider threats, compromised systems) and accidental disclosure (user error, misconfiguration).
+**Purpose**: Define organisational requirements for DLP control implementation and governance. This policy establishes WHAT data leakage prevention protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.12 (UG/TG variants). DLP controls address both malicious exfiltration (insider threats, compromised systems) and accidental disclosure (user error, misconfiguration).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG (employee monitoring Art. 328b CO), EU GDPR (lawful processing Art. 5, security Art. 32), and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2, HIPAA) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG (employee monitoring Art. 328b CO), EU GDPR (lawful processing Art. 5, security Art. 32), and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2, HIPAA) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -78,7 +77,7 @@ This policy establishes [Organization]'s requirements for data leakage preventio
 
 > *Data leakage prevention measures should be applied to systems, networks and any other devices that process, store or transmit sensitive information.*
 
-**Control Objective**: Establish organizational policy for DLP controls preventing unauthorized data exfiltration throughout [Organization]'s information processing environment.
+**Control Objective**: Establish organisational policy for DLP controls preventing unauthorised data exfiltration throughout [Organisation]'s information processing environment.
 
 **This Policy Addresses**:
 
@@ -86,20 +85,20 @@ This policy establishes [Organization]'s requirements for data leakage preventio
 - Channel protection requirements across all data egress paths (email, web, endpoint, network, application, mobile)
 - Monitoring and detection requirements for identifying leakage attempts
 - Incident response and remediation procedures for DLP events
-- Organizational roles and responsibilities for DLP governance
+- Organisational roles and responsibilities for DLP governance
 - Exception and incident management frameworks
-- Integration with [Organization]'s risk assessment and treatment processes
+- Integration with [Organisation]'s risk assessment and treatment processes
 - Legal and regulatory compliance requirements (employee monitoring, proportionality, transparency)
 
 ## What This Policy Does
 
 This policy:
 
-- **Defines** DLP control requirements aligned with data classification and organizational risk appetite
+- **Defines** DLP control requirements aligned with data classification and organisational risk appetite
 - **Establishes** governance framework for DLP decision-making and accountability
 - **Specifies** mandatory protections for sensitive information across all egress channels
 - **References** applicable regulatory requirements per ISMS-POL-00 (Tier 1/2/3 framework)
-- **Identifies** organizational roles and responsibilities for DLP implementation
+- **Identifies** organisational roles and responsibilities for DLP implementation
 - **Addresses** legal requirements for employee monitoring (Swiss FADP Art. 328b CO, GDPR Art. 88)
 
 ## What This Policy Does NOT Do
@@ -109,8 +108,8 @@ This policy does NOT:
 - **Specify technical implementation details** (see ISMS-IMP-A.8.12 Implementation Guides)
 - **Define specific DLP rules, patterns, or detection logic** (see ISMS-IMP-A.8.12-2 Data Classification Assessment)
 - **Provide system-specific configuration procedures** (see ISMS-IMP-A.8.12-1 Infrastructure Assessment)
-- **Select DLP technologies or vendors** (technology selection based on [Organization]'s risk assessment)
-- **Replace risk assessment** (DLP controls selected based on [Organization]'s risk treatment)
+- **Select DLP technologies or vendors** (technology selection based on [Organisation]'s risk assessment)
+- **Replace risk assessment** (DLP controls selected based on [Organisation]'s risk treatment)
 - **Define detailed incident response procedures** (see ISMS-IMP-A.8.12-4 Monitoring & Response Assessment)
 - **Establish exception request workflows** (see ISMS-IMP-A.8.12 Exception Procedures)
 
@@ -125,11 +124,11 @@ This policy does NOT:
 
 **This policy applies to**:
 
-- All information assets classified as **Internal, Confidential, or Restricted** per [Organization]'s data classification scheme
-- All systems, applications, networks, endpoints, and services processing, storing, or transmitting organizational information
+- All information assets classified as **Internal, Confidential, or Restricted** per [Organisation]'s data classification scheme
+- All systems, applications, networks, endpoints, and services processing, storing, or transmitting organisational information
 - All data egress channels: email (SMTP, webmail), web (HTTP/HTTPS), endpoints (USB, local storage), network (file transfer protocols), cloud services (SaaS, cloud storage), mobile devices (corporate and BYOD), application APIs
-- All organizational personnel (employees, contractors, temporary staff) with access to organizational information
-- All third-party service providers and cloud services handling organizational data
+- All organisational personnel (employees, contractors, temporary staff) with access to organisational information
+- All third-party service providers and cloud services handling organisational data
 - All deployment models (on-premises infrastructure, hybrid environments, cloud-native services)
 
 **Out of Scope**:
@@ -159,11 +158,11 @@ Apply only when specific business conditions trigger applicability:
 
 | Regulation | Trigger Condition | DLP Requirements |
 |-----------|-------------------|------------------|
-| **PCI DSS v4.0.1** | Processing payment card data | Req. 12.10 (Incident response), protect cardholder data from unauthorized disclosure |
+| **PCI DSS v4.0.1** | Processing payment card data | Req. 12.10 (Incident response), protect cardholder data from unauthorised disclosure |
 | **FINMA** | Swiss regulated financial institution | Operational resilience, data protection measures per risk assessment, incident reporting |
 | **DORA** | EU financial services entity | ICT risk management, incident reporting, operational resilience testing |
 | **NIS2** | Essential/important entity (EU) | Security measures for network and information systems, incident notification |
-| **HIPAA** | Processing US healthcare PHI | PHI protection, breach notification (applies ONLY if [Organization] is a covered entity or business associate) |
+| **HIPAA** | Processing US healthcare PHI | PHI protection, breach notification (applies ONLY if [Organisation] is a covered entity or business associate) |
 
 **Tier 3: Informational Guidance**
 
@@ -176,7 +175,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Cloud Security Alliance (CSA) - Data Security Lifecycle
 - SANS Institute - DLP Best Practices
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment conducted by Legal/Compliance, CISO, and DPO. The most stringent requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment conducted by Legal/Compliance, CISO, and DPO. The most stringent requirements apply where multiple regulations overlap.
 
 ---
 
@@ -184,7 +183,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ## Data Classification & Identification Requirements
 
-[Organization] implements DLP controls based on data classification to focus protection on sensitive information.
+[Organisation] implements DLP controls based on data classification to focus protection on sensitive information.
 
 **Classification-Based Protection**:
 
@@ -197,7 +196,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Data Identification Methods**:
 
-[Organization] implements multiple identification methods to detect sensitive information:
+[Organisation] implements multiple identification methods to detect sensitive information:
 
 | Method | Description | Implementation Priority | Use Cases |
 |--------|-------------|------------------------|-----------|
@@ -209,7 +208,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Sensitive Data Categories**:
 
-[Organization] protects the following data categories through DLP controls:
+[Organisation] protects the following data categories through DLP controls:
 
 | Data Category | Examples | Regulatory Driver | Detection Method |
 |--------------|----------|-------------------|------------------|
@@ -221,17 +220,17 @@ These frameworks inform implementation but do not constitute mandatory complianc
 | **Customer Data** | Customer lists, contracts, pricing | Contractual obligations | Contextual, labeling |
 | **Employee Data** | HR records, payroll, performance reviews | Swiss nDSG Art. 328b | Contextual, labeling |
 
-**Sensitive Data Inventory**: [Organization] maintains a quantified inventory of sensitive data requiring DLP protection, documented in IMP-A.8.12-2 Data Classification Assessment:
+**Sensitive Data Inventory**: [Organisation] maintains a quantified inventory of sensitive data requiring DLP protection, documented in IMP-A.8.12-2 Data Classification Assessment:
 - **Restricted data**: [Volume TB] across [Number] systems
 - **Confidential data**: [Volume TB] across [Number] systems
 - **Last inventory update**: [Date]
 - **Inventory reconciliation**: Quarterly against Asset Inventory (A.5.9)
 
-**Implementation Note**: Specific data patterns, regex rules, classification labels, and machine learning models are documented in ISMS-IMP-A.8.12-2 (Data Classification Assessment). Organizations customize detection logic based on their specific data inventory and risk assessment.
+**Implementation Note**: Specific data patterns, regex rules, classification labels, and machine learning models are documented in ISMS-IMP-A.8.12-2 (Data Classification Assessment). Organisations customize detection logic based on their specific data inventory and risk assessment.
 
 ## Channel Protection Requirements
 
-[Organization] implements DLP controls across all data egress channels to prevent unauthorized information disclosure.
+[Organisation] implements DLP controls across all data egress channels to prevent unauthorised information disclosure.
 
 **Required Channel Coverage**:
 
@@ -264,7 +263,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 **Endpoint DLP**:
 
 - Monitor file operations (copy, move, rename, delete)
-- Block unauthorized removable media usage
+- Block unauthorised removable media usage
 - Detect shadow IT applications (unapproved cloud storage, messaging)
 - Integrate with endpoint protection platform (EPP/EDR)
 - Support offline operation (enforce policies when disconnected from network)
@@ -290,7 +289,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Email and document sharing monitoring
 - BYOD risk-based controls (containerization, conditional access)
 
-**Coverage Verification**: [Organization] SHALL verify DLP coverage through technical testing and network topology mapping. Testing methodology and frequency defined in ISMS-IMP-A.8.12-3 (Channel Coverage Assessment).
+**Coverage Verification**: [Organisation] SHALL verify DLP coverage through technical testing and network topology mapping. Testing methodology and frequency defined in ISMS-IMP-A.8.12-3 (Channel Coverage Assessment).
 
 **Current Coverage Status** (per IMP-A.8.12-3 latest assessment):
 - **Email**: [Percentage]% of SMTP traffic, [Percentage]% of webmail
@@ -316,7 +315,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ## Monitoring & Detection Requirements
 
-[Organization] implements continuous monitoring to detect data leakage attempts and policy violations.
+[Organisation] implements continuous monitoring to detect data leakage attempts and policy violations.
 
 **Monitoring Requirements**:
 
@@ -330,7 +329,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Detection Modes**:
 
-[Organization] deploys DLP in multiple detection modes based on risk and operational requirements:
+[Organisation] deploys DLP in multiple detection modes based on risk and operational requirements:
 
 | Mode | Description | Use Case | Approval Authority |
 |------|-------------|----------|-------------------|
@@ -350,7 +349,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **DLP Performance Metrics**:
 
-[Organization] tracks DLP effectiveness through the following key performance indicators (KPIs):
+[Organisation] tracks DLP effectiveness through the following key performance indicators (KPIs):
 
 | Metric | Target | Acceptable Range | Review Frequency |
 |--------|--------|------------------|------------------|
@@ -367,11 +366,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 1. Conduct root cause analysis within 30 days
 2. Implement corrective action plan with timeline
 3. Report remediation status to Executive Management
-4. Document findings in IMP-A.8.12-5 Compliance Dashboard
+4. Document findings in the relevant Summary Dashboard
 
 **Logging Requirements**:
 
-[Organization] maintains comprehensive logs of DLP events for incident investigation and compliance verification:
+[Organisation] maintains comprehensive logs of DLP events for incident investigation and compliance verification:
 
 **Log Content**:
 
@@ -392,13 +391,13 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Logs protected with appropriate integrity and confidentiality controls per A.8.15 (Protection of Log Information)
 - Log deletion requires documented approval and follows data retention policy procedures
 
-**Privacy Compliance**: DLP monitoring SHALL comply with applicable privacy regulations per ISMS-POL-00. Users informed of monitoring through acceptable use policy, employment contracts, and privacy notices. Access to DLP logs restricted to authorized personnel (Security Team, CISO, DPO, Legal) with legitimate need. Employee monitoring transparency requirements documented in Annex A.
+**Privacy Compliance**: DLP monitoring SHALL comply with applicable privacy regulations per ISMS-POL-00. Users informed of monitoring through acceptable use policy, employment contracts, and privacy notices. Access to DLP logs restricted to authorised personnel (Security Team, CISO, DPO, Legal) with legitimate need. Employee monitoring transparency requirements documented in Annex A.
 
 **Implementation Note**: Specific alert rules, escalation workflows, log formats, and SIEM integration procedures are documented in ISMS-IMP-A.8.12-4 (Monitoring & Response Assessment).
 
 ## Incident Response & Remediation Requirements
 
-[Organization] implements structured incident response procedures for DLP events.
+[Organisation] implements structured incident response procedures for DLP events.
 
 **DLP Incident Classification**:
 
@@ -447,7 +446,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Regulatory Notification**:
 
-Where DLP incidents constitute personal data breaches, [Organization] follows regulatory notification requirements:
+Where DLP incidents constitute personal data breaches, [Organisation] follows regulatory notification requirements:
 
 | Regulation | Notification Requirement | Timeline | Authority |
 |-----------|-------------------------|----------|-----------|
@@ -476,7 +475,7 @@ Where DLP incidents constitute personal data breaches, [Organization] follows re
 **Executive Management / Board**:
 
 - **Accountable** for approving DLP policy and strategy
-- Ensuring adequate resources, budget, and organizational priority
+- Ensuring adequate resources, budget, and organisational priority
 - Accepting residual risks where DLP controls cannot fully mitigate data leakage risks
 - Supporting security program and DLP initiatives
 
@@ -550,7 +549,7 @@ Where DLP incidents constitute personal data breaches, [Organization] follows re
 
 ## Assessment and Verification
 
-[Organization] verifies DLP control effectiveness through structured assessment.
+[Organisation] verifies DLP control effectiveness through structured assessment.
 
 **Assessment Domains**:
 
@@ -558,22 +557,6 @@ Where DLP incidents constitute personal data breaches, [Organization] follows re
 2. **Data Classification** (ISMS-IMP-A.8.12-2): Sensitive data inventory, classification schema, detection methods
 3. **Channel Coverage** (ISMS-IMP-A.8.12-3): Email, web, endpoint, network, cloud, mobile protection
 4. **Monitoring & Response** (ISMS-IMP-A.8.12-4): Alerting, incident response, effectiveness metrics
-5. **Compliance Dashboard** (ISMS-IMP-A.8.12-5): Consolidated metrics, gap analysis, executive reporting
-
-**Executive DLP Dashboard** (IMP-A.8.12-5):
-
-The Compliance Dashboard provides consolidated visibility into DLP program effectiveness:
-
-| Dashboard Component | Content | Update Frequency |
-|---------------------|---------|------------------|
-| **Alert Summary** | Alerts by severity (Critical/High/Medium/Low) | Weekly |
-| **Channel Coverage** | Coverage percentages by channel type | Quarterly |
-| **False Positive Rates** | FP rate trend analysis | Monthly |
-| **SLA Compliance** | Alert response SLA compliance | Weekly |
-| **Incident Tracker** | Open/closed DLP incidents | Weekly |
-| **Exception Status** | Active exceptions count and approval status | Monthly |
-| **Legal Compliance** | Annex A.5 checklist completion status | Quarterly |
-| **Trend Analysis** | 12-month rolling metrics | Quarterly |
 
 **Reporting Schedule**: Monthly Security Team review, quarterly CISO review, annual Executive Management review (as part of ISO 27001 Clause 9.3 management review)
 
@@ -723,7 +706,7 @@ DLP alerts automatically create incident tickets to ensure tracking and accounta
 **Policy Review**:
 
 - **Frequency**: Annual minimum (aligned with ISMS management review cycle)
-- **Triggers**: Regulatory changes, major incidents, significant threat landscape changes, organizational changes (M&A, new business lines), audit findings
+- **Triggers**: Regulatory changes, major incidents, significant threat landscape changes, organisational changes (M&A, new business lines), audit findings
 - **Reviewers**: CISO, Security Team, Legal/Compliance, DPO, IT Operations, Data Owners
 - **Approval**: CISO (technical), Executive Management (strategic)
 
@@ -754,7 +737,7 @@ Policy updates communicated via:
 
 **Change Management**:
 
-DLP policy changes follow [Organization]'s standard change management process:
+DLP policy changes follow [Organisation]'s standard change management process:
 1. Change request submitted to Policy Owner (CISO)
 2. Impact assessment (affected stakeholders, systems, channels, legal implications)
 3. Stakeholder consultation (Security, IT Operations, Legal, DPO, HR, Works Council where required)
@@ -772,17 +755,17 @@ DLP policy changes follow [Organization]'s standard change management process:
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
-- DLP controls selected based on [Organization]'s risk assessment identifying data exfiltration threats
+- DLP controls selected based on [Organisation]'s risk assessment identifying data exfiltration threats
 - Threat landscape assessment determines protection requirements (insider threats, APT, accidental disclosure)
 - Risk treatment plans document DLP control implementation, residual risks, and acceptance
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Control A.8.12 applicability justified in [Organization]'s SoA based on information assets requiring protection
+- Control A.8.12 applicability justified in [Organisation]'s SoA based on information assets requiring protection
 - Implementation status tracked and reported in management review
 
 **Related Controls**:
@@ -795,8 +778,8 @@ This policy integrates with [Organization]'s Information Security Management Sys
 | **A.5.17** | Authentication Information - DLP detects credential leakage |
 | **A.5.19-23** | Supplier Security - DLP controls for third-party data sharing |
 | **A.5.24-28** | Incident Management - DLP alerts trigger security incident response |
-| **A.5.34** | Privacy and PII Protection - DLP prevents unauthorized PII disclosure |
-| **A.8.10** | Information Deletion - DLP prevents unauthorized data retention on removable media |
+| **A.5.34** | Privacy and PII Protection - DLP prevents unauthorised PII disclosure |
+| **A.8.10** | Information Deletion - DLP prevents unauthorised data retention on removable media |
 | **A.8.11** | Data Masking - Complementary data protection technique (mask before sharing) |
 | **A.8.15** | Logging - DLP events logged for security monitoring and investigation |
 | **A.8.16** | Monitoring Activities - DLP generates security event logs for SIEM integration |
@@ -817,20 +800,19 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 - Classification decisions → DLP protection scope: What data to protect and with what controls
 - Incident lessons learned → DLP rule tuning: Post-incident improvements and policy adjustments
-- Access control policies → DLP enforcement rules: Authorized vs. unauthorized transfers
+- Access control policies → DLP enforcement rules: Authorised vs. unauthorised transfers
 - Network segmentation → DLP deployment architecture: Where to place DLP sensors and monitoring points
 
 ## Implementation Resources
 
 **Implementation Guidance** (ISMS-IMP-A.8.12 Suite):
 
-[Organization] implements DLP controls using structured assessment workbooks:
+[Organisation] implements DLP controls using structured assessment workbooks:
 
 - **ISMS-IMP-A.8.12-1**: DLP Infrastructure Assessment (technologies, capabilities, architecture, vendor evaluation)
 - **ISMS-IMP-A.8.12-2**: Data Classification Assessment (sensitive data inventory, classification schema, detection methods)
 - **ISMS-IMP-A.8.12-3**: Channel Coverage Assessment (email, web, endpoint, network, cloud, mobile protection)
 - **ISMS-IMP-A.8.12-4**: Monitoring & Response Assessment (alerting, incident response, effectiveness metrics)
-- **ISMS-IMP-A.8.12-5**: Compliance Dashboard (consolidated metrics, gap analysis, executive reporting)
 
 **Assessment Tools**:
 
@@ -864,7 +846,7 @@ This policy addresses DLP requirements from multiple regulations:
 
 *Conditional applicability per ISMS-POL-00
 
-**Note**: Specific regulatory interpretation, compliance verification procedures, and audit evidence requirements are documented in ISMS-IMP-A.8.12-5 (Compliance Dashboard).
+**Note**: Specific regulatory interpretation, compliance verification procedures, and audit evidence requirements are documented in the relevant ISMS-IMP-A.8.12 assessment workbooks.
 
 ## Training & Awareness
 
@@ -905,21 +887,21 @@ This policy addresses DLP requirements from multiple regulations:
 
 # Definitions
 
-**Data Leakage Prevention (DLP)**: A set of technologies, processes, and policies designed to detect, prevent, and respond to unauthorized disclosure, transfer, or exfiltration of sensitive information from organizational systems, networks, and endpoints. DLP controls operate at multiple layers: content inspection (pattern matching, machine learning), contextual analysis (source system, user role, destination), and policy enforcement (block, alert, quarantine).
+**Data Leakage Prevention (DLP)**: A set of technologies, processes, and policies designed to detect, prevent, and respond to unauthorised disclosure, transfer, or exfiltration of sensitive information from organisational systems, networks, and endpoints. DLP controls operate at multiple layers: content inspection (pattern matching, machine learning), contextual analysis (source system, user role, destination), and policy enforcement (block, alert, quarantine).
 
-**Data Leakage**: The unintentional or unauthorized disclosure of sensitive information to external parties or unauthorized internal parties. Includes accidental disclosure (user error, misconfiguration, oversharing) and malicious exfiltration (insider threats, malware-based exfiltration, advanced persistent threats).
+**Data Leakage**: The unintentional or unauthorised disclosure of sensitive information to external parties or unauthorised internal parties. Includes accidental disclosure (user error, misconfiguration, oversharing) and malicious exfiltration (insider threats, malware-based exfiltration, advanced persistent threats).
 
-**Data Loss**: The permanent destruction or unavailability of information due to hardware failure, corruption, deletion, or disaster. Data loss is addressed by backup and disaster recovery controls (ISMS-POL-A.8.13, ISMS-POL-A.7.14), NOT by DLP. DLP prevents unauthorized DISCLOSURE, not data LOSS.
+**Data Loss**: The permanent destruction or unavailability of information due to hardware failure, corruption, deletion, or disaster. Data loss is addressed by backup and disaster recovery controls (ISMS-POL-A.8.13, ISMS-POL-A.7.14), NOT by DLP. DLP prevents unauthorised DISCLOSURE, not data LOSS.
 
-**Exfiltration**: The unauthorized transfer of data from an organization's systems to external locations or actors. Exfiltration methods include: email (to personal accounts), web upload (cloud storage, file sharing), removable media (USB drives), network protocols (FTP, DNS tunneling), mobile devices (BYOD data sync), and application APIs (unauthorized data export).
+**Exfiltration**: The unauthorised transfer of data from an organisation's systems to external locations or actors. Exfiltration methods include: email (to personal accounts), web upload (cloud storage, file sharing), removable media (USB drives), network protocols (FTP, DNS tunneling), mobile devices (BYOD data sync), and application APIs (unauthorised data export).
 
-**Egress Channel**: Any communication path through which data can leave the organization's control. Egress channels include: email (SMTP, webmail), web (HTTP/HTTPS uploads, cloud storage), endpoints (USB, local storage, print, screenshots), network (file transfer protocols, covert channels), cloud applications (SaaS data sharing), mobile devices (corporate and BYOD), and application APIs (REST, GraphQL, SOAP).
+**Egress Channel**: Any communication path through which data can leave the organisation's control. Egress channels include: email (SMTP, webmail), web (HTTP/HTTPS uploads, cloud storage), endpoints (USB, local storage, print, screenshots), network (file transfer protocols, covert channels), cloud applications (SaaS data sharing), mobile devices (corporate and BYOD), and application APIs (REST, GraphQL, SOAP).
 
 **Content Inspection**: Technical method for analyzing data content to detect sensitive information. Methods include: pattern matching (regex for credit cards, SSNs), keyword detection (confidential terms, project names), document fingerprinting (hash-based tracking), machine learning (AI-based classification), and natural language processing (contextual understanding).
 
 **Contextual Analysis**: Evaluation of data transfer context to determine sensitivity and risk. Context factors include: source system (HR database, financial system), user role (privilege level, department), destination (internal vs. external, trusted vs. untrusted domain), time of day (business hours vs. after-hours), transfer volume (single file vs. bulk export), and behavioral patterns (baseline vs. anomaly).
 
-**Data Classification**: Systematic categorization of information based on sensitivity, criticality, and regulatory requirements. Classification levels typically include: Public (unrestricted disclosure), Internal (limited to organization), Confidential (limited distribution, business impact if leaked), Restricted (highly sensitive, significant impact, legal/regulatory constraints).
+**Data Classification**: Systematic categorization of information based on sensitivity, criticality, and regulatory requirements. Classification levels typically include: Public (unrestricted disclosure), Internal (limited to organisation), Confidential (limited distribution, business impact if leaked), Restricted (highly sensitive, significant impact, legal/regulatory constraints).
 
 **Document Labeling**: Embedding classification metadata directly into files (headers, footers, watermarks, file properties, metadata tags). Enables DLP systems to identify sensitive documents regardless of content. Common standards: Microsoft Information Protection, Adobe Document Security, PDF metadata.
 
@@ -927,7 +909,7 @@ This policy addresses DLP requirements from multiple regulations:
 
 **False Negative**: Data leakage that occurs despite DLP controls (bypassed or undetected). Causes: coverage gaps, detection logic limitations, encrypted channels, covert exfiltration techniques. False negatives represent residual risk and drive continuous DLP improvement.
 
-**Insider Threat**: Security risk posed by individuals with authorized access who intentionally or unintentionally cause harm. DLP addresses insider data exfiltration including: malicious insiders (theft for financial gain, competitive advantage), negligent insiders (accidental disclosure, poor security hygiene), and compromised insiders (account takeover, social engineering).
+**Insider Threat**: Security risk posed by individuals with authorised access who intentionally or unintentionally cause harm. DLP addresses insider data exfiltration including: malicious insiders (theft for financial gain, competitive advantage), negligent insiders (accidental disclosure, poor security hygiene), and compromised insiders (account takeover, social engineering).
 
 **Proportionality Principle**: Legal requirement (Swiss FADP Art. 6, GDPR Art. 5) that security monitoring must be proportionate to the legitimate security objective. DLP monitoring must balance data protection needs against employee privacy rights. Disproportionate monitoring (excessive scope, retention, invasiveness) may be legally non-compliant regardless of security justification.
 
@@ -984,7 +966,7 @@ Employees have the right to know:
 
 - Lawfulness, fairness, transparency
 - Purpose limitation (security monitoring only)
-- Data minimization (collect only what's necessary)
+- Data minimisation (collect only what's necessary)
 - Accuracy
 - Storage limitation (retention aligned with purpose)
 - Integrity and confidentiality
@@ -993,12 +975,12 @@ Employees have the right to know:
 
 DLP monitoring typically relies on:
 
-- **Legitimate Interest** (Art. 6(1)(f)): Protecting organizational data is a legitimate interest, balanced against employee privacy
+- **Legitimate Interest** (Art. 6(1)(f)): Protecting organisational data is a legitimate interest, balanced against employee privacy
 - **Legal Obligation** (Art. 6(1)(c)): Where regulations require security monitoring (e.g., financial sector)
 - **Contract** (Art. 6(1)(b)): Employment contract includes acceptable use and monitoring provisions
 
 **GDPR Article 32 - Security of Processing**:
-Organizations must implement appropriate technical and organizational measures (DLP is a security measure).
+Organisations must implement appropriate technical and organisational measures (DLP is a security measure).
 
 **GDPR Article 88 - Processing in Employment Context**:
 Member states may provide specific rules for employee data processing. DLP monitoring must comply with national employment law in each EU jurisdiction.
@@ -1029,7 +1011,7 @@ Member states may provide specific rules for employee data processing. DLP monit
 
 ## A.4 Transparency Requirements
 
-**[Organization] MUST inform employees about DLP monitoring through**:
+**[Organisation] MUST inform employees about DLP monitoring through**:
 
 **1. Employment Contract / Addendum**:
 
@@ -1071,7 +1053,7 @@ In jurisdictions requiring co-determination (Germany, France, Belgium, Netherlan
 
 ## A.5 Implementation Checklist
 
-Before deploying DLP monitoring, [Organization] MUST complete:
+Before deploying DLP monitoring, [Organisation] MUST complete:
 
 | Requirement | Status | Completion Date | Verified By | Evidence Location |
 |------------|--------|----------------|-------------|-------------------|
@@ -1092,11 +1074,11 @@ Before deploying DLP monitoring, [Organization] MUST complete:
 **Approved By**: [Name - CISO] | **Date**: [Date]
 
 **Compliance Status Tracking**: This checklist SHALL be reviewed:
-- Quarterly (as part of IMP-A.8.12-5 Compliance Dashboard review)
+- Quarterly (as part of the regular DLP assessment review cycle)
 - Upon any DLP scope expansion (new channels, new jurisdictions)
 - Upon regulatory changes affecting employee monitoring requirements
 
-**Critical**: Failure to comply with legal requirements may render DLP deployment unlawful, expose [Organization] to regulatory fines (FADP: CHF 250,000, GDPR: €20M or 4% global revenue), and create employee relations issues (works council disputes, labor law violations, employee lawsuits).
+**Critical**: Failure to comply with legal requirements may render DLP deployment unlawful, expose [Organisation] to regulatory fines (FADP: CHF 250,000, GDPR: €20M or 4% global revenue), and create employee relations issues (works council disputes, labor law violations, employee lawsuits).
 
 ## A.6 Regulatory Enforcement Risk
 
@@ -1111,7 +1093,7 @@ Before deploying DLP monitoring, [Organization] MUST complete:
 - Maximum fine: €20,000,000 or 4% of annual global turnover (whichever is higher)
 - EU supervisory authorities (DPAs) can issue warnings, reprimands, processing bans, and fines
 - Private lawsuits by employees for compensation (GDPR Art. 82)
-- Collective actions by employee representatives or data protection organizations
+- Collective actions by employee representatives or data protection organisations
 
 **Employment Law Risks**:
 
@@ -1127,7 +1109,7 @@ Before deploying DLP monitoring, [Organization] MUST complete:
 
 ## What is DLP?
 
-Data Leakage Prevention (DLP) protects [Organization]'s sensitive information from unauthorized disclosure through technical monitoring and policy enforcement.
+Data Leakage Prevention (DLP) protects [Organisation]'s sensitive information from unauthorised disclosure through technical monitoring and policy enforcement.
 
 ## What Does DLP Monitor?
 
@@ -1142,7 +1124,7 @@ Data Leakage Prevention (DLP) protects [Organization]'s sensitive information fr
 
 - **Restricted**: Highly sensitive (legal, regulatory, critical IP) - Full DLP protection
 - **Confidential**: Business-sensitive (customer data, financial, internal documents) - DLP monitoring and blocking
-- **Internal**: Organization-only (policies, procedures) - DLP monitoring (detection only)
+- **Internal**: Organisation-only (policies, procedures) - DLP monitoring (detection only)
 - **Public**: No DLP protection
 
 ## Your Responsibilities
@@ -1151,7 +1133,7 @@ Data Leakage Prevention (DLP) protects [Organization]'s sensitive information fr
 ✅ **Use approved channels**: Corporate email, approved cloud storage (OneDrive, SharePoint)  
 ✅ **Request exceptions**: Contact Security Team for legitimate business needs requiring DLP exception  
 ✅ **Report issues**: False positives, urgent business needs, suspected security incidents  
-❌ **DO NOT**: Attempt to bypass DLP controls (proxy, encryption, unauthorized cloud storage)  
+❌ **DO NOT**: Attempt to bypass DLP controls (proxy, encryption, unauthorised cloud storage)  
 
 ## If DLP Blocks Your Transfer
 
@@ -1162,15 +1144,15 @@ Data Leakage Prevention (DLP) protects [Organization]'s sensitive information fr
 
 ## Legal Notice - Employee Monitoring
 
-[Organization] monitors data transfers for security purposes in compliance with Swiss FADP (Art. 328b CO) and EU GDPR (Art. 88). Monitoring is limited to egress channels, focused on sensitive data protection, and governed by proportionality principles. You have been informed of this monitoring through your employment contract and this notice. DLP logs are retained for 90 days (routine) and 12 months (security incidents), accessible only to Security Team, CISO, and DPO on a need-to-know basis.
+[Organisation] monitors data transfers for security purposes in compliance with Swiss FADP (Art. 328b CO) and EU GDPR (Art. 88). Monitoring is limited to egress channels, focused on sensitive data protection, and governed by proportionality principles. You have been informed of this monitoring through your employment contract and this notice. DLP logs are retained for 90 days (routine) and 12 months (security incidents), accessible only to Security Team, CISO, and DPO on a need-to-know basis.
 
 ## Questions or Concerns?
 
-- **Security Team**: security@[organization].example
-- **Help Desk**: helpdesk@[organization].example (urgent transfer blocks)
-- **Data Protection Officer (DPO)**: dpo@[organization].example (privacy concerns)
+- **Security Team**: security@[organisation].example
+- **Help Desk**: helpdesk@[organisation].example (urgent transfer blocks)
+- **Data Protection Officer (DPO)**: dpo@[organisation].example (privacy concerns)
 
-**Thank you for helping protect [Organization]'s information assets.**
+**Thank you for helping protect [Organisation]'s information assets.**
 
 ---
 
@@ -1192,4 +1174,4 @@ Data Leakage Prevention (DLP) protects [Organization]'s sensitive information fr
 
 *This policy establishes requirements for data leakage prevention. Implementation procedures, technical standards, and assessment workbooks are documented in ISMS-IMP-A.8.12 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

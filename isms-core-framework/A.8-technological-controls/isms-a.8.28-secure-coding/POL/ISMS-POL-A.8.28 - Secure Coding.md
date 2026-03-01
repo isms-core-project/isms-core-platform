@@ -42,7 +42,6 @@
 - ISMS-IMP-A.8.28.2-UG/TG (Standards & Tools Assessment Specification)
 - ISMS-IMP-A.8.28.3-UG/TG (Code Review & Testing Assessment Specification)
 - ISMS-IMP-A.8.28.4-UG/TG (Third-Party & Open Source Software Assessment Specification)
-- ISMS-IMP-A.8.28.5-UG/TG (Compliance Dashboard (Master Aggregator) Specification)
 - ISMS-CTX-A.8.28 (Language-Specific Secure Coding Guidelines)
 - ISMS-REF-A.8.28 (Code Review Technical Reference)
 - ISO/IEC 27001:2022 Control A.8.28
@@ -52,7 +51,7 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for secure software development in accordance with ISO/IEC 27001:2022 Control A.8.28 (Secure Coding).
+This policy establishes [Organisation]'s requirements for secure software development in accordance with ISO/IEC 27001:2022 Control A.8.28 (Secure Coding).
 
 **Purpose**: Define WHAT secure coding controls are required and WHO is accountable. Technical implementation details (HOW) are documented in ISMS-IMP-A.8.28 specifications.
 
@@ -92,7 +91,7 @@ This policy establishes [Organization]'s requirements for secure software develo
 - All software development (new, maintenance, enhancements, patches)
 - All development types (internal, outsourced, contracted, acquired)
 - All application types (web, mobile, API, desktop, embedded, serverless)
-- All languages and frameworks used by [Organization]
+- All languages and frameworks used by [Organisation]
 - Development, staging, and production environments
 
 **Out of Scope**:
@@ -140,7 +139,7 @@ This policy establishes [Organization]'s requirements for secure software develo
 - Mitigation controls mapped to threats
 - Validation approach
 
-**Threat Modeling Methodology**: [Organization] SHALL use a recognized methodology (STRIDE, PASTA, DREAD, or OWASP Threat Dragon). Methodology selection documented per application; consistency within application families encouraged.
+**Threat Modeling Methodology**: [Organisation] SHALL use a recognized methodology (STRIDE, PASTA, DREAD, or OWASP Threat Dragon). Methodology selection documented per application; consistency within application families encouraged.
 
 **Verification**: Threat models reviewed by Application Security Team; approval documented in Workbook 1. Critical applications require CISO sign-off.
 
@@ -202,7 +201,7 @@ This policy establishes [Organization]'s requirements for secure software develo
 - Session timeout and invalidation on logout
 - MFA support for sensitive applications
 
-**Authorization**:
+**Authorisation**:
 
 - Server-side enforcement for every request
 - Least privilege principle
@@ -276,7 +275,7 @@ The following are **PROHIBITED**:
 **Peer Review**:
 
 - All production code changes require peer review
-- Security-focused review for changes touching authentication, authorization, cryptography, input handling
+- Security-focused review for changes touching authentication, authorisation, cryptography, input handling
 - Branch protection prevents merging without approval
 
 **Security Review Criteria**: See ISMS-REF-A.8.28 for detailed checklist.
@@ -309,7 +308,7 @@ The following are **PROHIBITED**:
 - Last 90 days scan reports available on request
 - Pipeline logs demonstrate automated execution
 
-**Verification**: Security tool dashboard (or consolidated report) reviewed weekly; tool coverage and scan success rates tracked as KPIs.
+**Verification**: Security tool dashboards reviewed weekly; tool coverage and scan success rates tracked as KPIs.
 
 **Penetration Testing**:
 
@@ -422,7 +421,7 @@ The following are **PROHIBITED**:
 
 ## Third-Party Developers
 
-- Comply with [Organization]'s secure coding standards
+- Comply with [Organisation]'s secure coding standards
 - Complete security training as required
 - Submit to code reviews and security testing
 - Remediate vulnerabilities within SLAs
@@ -501,7 +500,7 @@ Application Security Team assesses adequacy; CISO approval for High/Critical exc
 | High vulnerabilities within SLA | ≥90% | Monthly | Vulnerability tracker aging report |
 | Threat model coverage (high-risk apps) | ≥90% | Quarterly | Workbook 1 application inventory |
 
-**Metrics Dashboard**: Security metrics consolidated in dashboard (Workbook 5) or security operations platform; reviewed monthly by CISO.
+**Metrics Dashboard**: Security metrics tracked in individual assessment Summary Dashboards (Workbooks 1-4) or security operations platform; reviewed monthly by CISO.
 
 ---
 
@@ -566,7 +565,6 @@ Evidence required to demonstrate this policy is operationally effective:
 - ISMS-IMP-A.8.28.2: Standards & Tools Assessment
 - ISMS-IMP-A.8.28.3: Code Review & Testing Assessment
 - ISMS-IMP-A.8.28.4: Third-Party & OSS Assessment
-- ISMS-IMP-A.8.28.5: Compliance Dashboard
 
 **Evidence Retention:**
 - Training records: Duration of employment + 2 years
@@ -613,4 +611,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for secure software development. Implementation procedures, assessment methodologies, and workbook specifications are documented in ISMS-IMP-A.8.28 (UG/TG). Language-specific guidelines are in ISMS-CTX-A.8.28. Code review checklists are in ISMS-REF-A.8.28.*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -3,343 +3,198 @@
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | PII Identification and Classification Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.34.1-TG |
+| **Related Policy** | ISMS-POL-A.5.34 (Privacy and Pii) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.34 (Privacy and Protection of PII) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | PII Identification, Classification, Data Flow Mapping, and ROPA Maintenance |
-| **Related Policy** | ISMS-POL-A.5.34, Section 2.1 (PII Classification and Identification) |
-| **Purpose** | Guide users through systematic PII discovery, classification, data mapping, and GDPR Article 30 compliant Record of Processing Activities (ROPA) maintenance |
-| **Target Audience** | DPO/Privacy Officers, Data Owners, System Owners, IT Teams, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major System Changes |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for PII Identification assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.34 (Privacy and Pii)
+- ISMS-IMP-A.5.34.2 (Legal Basis and Lawful Processing Assessment)
+- ISMS-IMP-A.5.34.3 (Data Subject Rights Management Assessment)
+- ISMS-IMP-A.5.34.4 (Technical and Organisational Measures (TOMs) Assessment)
+- ISMS-IMP-A.5.34.5 (DPIA Assessment)
+- ISMS-IMP-A.5.34.6 (Cross Border Transfer Assessment)
 
 ---
 
-
----
 # Technical Specification
-**Audience:** Workbook developers (Python/Excel script maintainers), Technical implementation teams
-
-
-> Auto-generated from `generate_a5341_pii_identification_assessment.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.34.1` |
-| **Output Filename** | `ISMS-IMP-A.5.34.1_PII_Identification_and_Classification_YYYYMMDD.xlsx` |
-| **Workbook Title** | PII Identification and Classification |
-| **Total Sheets** | 9 (9 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | COLOR_HEADER | Dark Blue (Headers) |
-| #006400 | COLOR_VALIDATED | Custom |
-| #87CEEB | COLOR_LOW | Custom |
-| #8B0000 | COLOR_CRITICAL | Dark Red (Critical) |
-| #90EE90 | COLOR_COMPLETE | Custom |
-| #D3D3D3 | COLOR_NOT_STARTED | Custom |
-| #FFA500 | COLOR_HIGH | Orange (High Priority) |
-| #FFFF00 | COLOR_IN_PROGRESS | Yellow (Warning) |
-
-## Sheet 1: 1. Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: 2. PII System Inventory
+## Generator Alignment Reference
 
-**Data Rows:** 999 (rows 2–1000) | **Frozen Panes:** A2
+> Auto-generated from `generate_a5341_pii_identification_assessment.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.34.1`
 
-| Col | Header |
-|-----|--------|
-| A | RowID |
-| B | Status |
-| C | System Name |
-| D | System Owner |
-| E | System Type |
-| F | PII Processing Role |
-| G | PII Data Subjects |
-| H | PII Categories |
-| I | PII Classification |
-| J | Sensitive PII Types (if applicable) |
-| K | Data Volume (approx. records) |
-| L | Hosting Location |
-| M | Access Level (who/how many) |
-| N | Discovery Method |
-| O | Discovery Date |
-| P | Last Updated |
-| Q | Updated By |
-| R | Notes |
-| S | Evidence Reference |
-| T | Review Comments |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Conditional Formatting
+### Sheet Structure
 
-| Range | Condition | Format |
-|-------|-----------|--------|
-| I2:I1000 | containsText  |  |
-| I2:I1000 | containsText  |  |
+| # | Sheet Name |
+|---|-----------|
+| 1 | 2. PII System Inventory |
+| 2 | 3. PII Data Flow Mapping |
+| 3 | 4. ROPA (Record of Processing) |
+| 4 | 5. PII Discovery Gaps |
+| 5 | Evidence Register |
+| 6 | Summary Dashboard |
+| 7 | Approval Sign-Off |
+| 8 | Instructions & Legend |
 
-### Formulas
+### Color Palette
 
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| A2 | `=TEXT(ROW()-1,` |  |
-| O2 | `=TODAY()` |  |
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #006400 | Custom |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #87CEEB | Custom |
+| #8B0000 | Dark Red (Critical) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFA500 | Orange (High Priority) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
----
+### Column Headers (All Sheets)
 
-## Sheet 3: 3. PII Data Flow Mapping
+| # | Column Header |
+|---|--------------|
+| 1 | RowID |
+| 2 | Status |
+| 3 | System Name |
+| 4 | System Owner |
+| 5 | System Type |
+| 6 | PII Processing Role |
+| 7 | PII Data Subjects |
+| 8 | PII Categories |
+| 9 | PII Classification |
+| 10 | Sensitive PII Types (if applicable) |
+| 11 | Data Volume (approx. records) |
+| 12 | Hosting Location |
+| 13 | Access Level (who/how many) |
+| 14 | Discovery Method |
+| 15 | Discovery Date |
+| 16 | Last Updated |
+| 17 | Updated By |
+| 18 | Notes |
+| 19 | Evidence Reference |
+| 20 | Review Comments |
+| 21 | Source System |
+| 22 | Destination System |
+| 23 | PII Categories Transferred |
+| 24 | Transfer Method |
+| 25 | Transfer Frequency |
+| 26 | Purpose of Transfer |
+| 27 | Legal Basis (Art. 6) |
+| 28 | Recipient Type |
+| 29 | Recipient Name (if external) |
+| 30 | Cross-Border Transfer? |
+| 31 | Destination Country |
+| 32 | Transfer Mechanism |
+| 33 | SCC Date (if applicable) |
+| 34 | TIA Completed? (if cross-border) |
+| 35 | Security Measures |
+| 36 | Processing Activity Name |
+| 37 | Purpose of Processing |
+| 38 | Legal Basis (Art. 9 if special category) |
+| 39 | Legal Basis Justification |
+| 40 | Categories of Data Subjects |
+| 41 | Categories of Personal Data |
+| 42 | Contains Special Category Data? |
+| 43 | Specific Special Category Types |
+| 44 | Categories of Recipients (Internal) |
+| 45 | Categories of Recipients (Processors) |
+| 46 | Categories of Recipients (Third Parties) |
+| 47 | Categories of Recipients (Public Authorities) |
+| 48 | Transfers to Third Countries? |
+| 49 | Third Countries |
+| 50 | Transfer Safeguards |
+| 51 | Retention Period |
+| 52 | Retention Justification |
+| 53 | Deletion Method |
+| 54 | Technical Security Measures |
+| 55 | Organisational Security Measures |
+| 56 | Data Sources |
+| 57 | Data Subject Rights Supported |
+| 58 | DPIA Completed? |
+| 59 | DPIA Reference |
+| 60 | LIA Completed? (if Leg. Interest) |
+| 61 | LIA Reference |
+| 62 | GapID |
+| 63 | Gap Type |
+| 64 | Gap Description |
+| 65 | System/Activity Affected |
+| 66 | Risk Level |
+| 67 | Risk Justification |
+| 68 | Remediation Action |
+| 69 | Remediation Owner |
+| 70 | Target Completion Date |
+| 71 | Actual Completion Date |
+| 72 | Date Identified |
+| 73 | Identified By |
+| 74 | Assessment Area |
+| 75 | Total Items |
+| 76 | Compliant |
+| 77 | Partial |
+| 78 | Non-Compliant |
+| 79 | N/A |
+| 80 | Compliance % |
+| 81 | Metric |
+| 82 | Value |
+| 83 | Category |
+| 84 | Finding |
+| 85 | Count |
+| 86 | Severity |
+| 87 | Action Required |
 
-**Data Rows:** 999 (rows 2–1000) | **Frozen Panes:** A2
+### Data Validation Values
 
-### Columns
+All dropdown/list values used across sheets:
 
-| Col | Header |
-|-----|--------|
-| A | RowID |
-| B | Status |
-| C | Source System |
-| D | Destination System |
-| E | PII Categories Transferred |
-| F | Transfer Method |
-| G | Transfer Frequency |
-| H | Purpose of Transfer |
-| I | Legal Basis (Art. 6) |
-| J | Recipient Type |
-| K | Recipient Name (if external) |
-| L | Cross-Border Transfer? |
-| M | Destination Country |
-| N | Transfer Mechanism |
-| O | SCC Date (if applicable) |
-| P | TIA Completed? (if cross-border) |
-| Q | Security Measures |
-| R | Last Updated |
-| S | Updated By |
-| T | Notes |
-| U | Evidence Reference |
-| V | Review Comments |
+```
+Active, Archived, Superseded, Pending Review, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| A2 | `=TEXT(ROW()-1,` |  |
-| R2 | `=TODAY()` |  |
-
----
-
-## Sheet 4: 4. ROPA (Record of Processing)
-
-**Data Rows:** 999 (rows 2–1000) | **Frozen Panes:** A2
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | RowID |
-| B | Status |
-| C | Processing Activity Name |
-| D | Purpose of Processing |
-| E | Legal Basis (Art. 6) |
-| F | Legal Basis (Art. 9 if special category) |
-| G | Legal Basis Justification |
-| H | Categories of Data Subjects |
-| I | Categories of Personal Data |
-| J | Contains Special Category Data? |
-| K | Specific Special Category Types |
-| L | Categories of Recipients (Internal) |
-| M | Categories of Recipients (Processors) |
-| N | Categories of Recipients (Third Parties) |
-| O | Categories of Recipients (Public Authorities) |
-| P | Transfers to Third Countries? |
-| Q | Third Countries |
-| R | Transfer Safeguards |
-| S | Retention Period |
-| T | Retention Justification |
-| U | Deletion Method |
-| V | Technical Security Measures |
-| W | Organizational Security Measures |
-| X | Data Sources |
-| Y | Data Subject Rights Supported |
-| Z | DPIA Completed? |
-| AA | DPIA Reference |
-| AB | LIA Completed? (if Leg. Interest) |
-| AC | LIA Reference |
-| AD | Last Updated |
-| AE | Updated By |
-| AF | Notes |
-| AG | Evidence Reference |
-| AH | Review Comments |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| A2 | `=TEXT(ROW()-1,` |  |
-| AD2 | `=TODAY()` |  |
-
----
-
-## Sheet 5: 5. PII Discovery Gaps
-
-**Data Rows:** 999 (rows 2–1000) | **Frozen Panes:** A2
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | GapID |
-| B | Status |
-| C | Gap Type |
-| D | Gap Description |
-| E | System/Activity Affected |
-| F | Risk Level |
-| G | Risk Justification |
-| H | Remediation Action |
-| I | Remediation Owner |
-| J | Target Completion Date |
-| K | Actual Completion Date |
-| L | Date Identified |
-| M | Identified By |
-| N | Last Updated |
-| O | Updated By |
-| P | Notes |
-| Q | Evidence Reference |
-| R | Review Comments |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| B2:B1000 | equal  |  |
-| B2:B1000 | equal  |  |
-| B2:B1000 | equal  |  |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| A2 | `=TEXT(YEAR(TODAY()),` |  |
-| L2 | `=TODAY()` |  |
-
----
-
-## Sheet 6: 6. Evidence Register
-
-**Data Rows:** 999 (rows 2–1000) | **Frozen Panes:** A2
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | EvidenceID |
-| B | Evidence Type |
-| C | Evidence Description |
-| D | Related System/Activity |
-| E | Related Sheet Reference |
-| F | Date Collected |
-| G | Collected By |
-| H | File Location/URL |
-| I | File Name |
-| J | Retention Period |
-| K | Confidentiality Level |
-| L | Last Updated |
-| M | Updated By |
-| N | Notes |
-| O | Review Comments |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| K2:K1000 | equal  |  |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| F2 | `=TODAY()` |  |
-
----
-
-## Sheet 7: 7. Dashboard
-
-**Data Rows:** 999 (rows 2–1000)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(` | Total Systems Assessed: |
-| — | `=COUNTIF(` | Systems with Basic PII: |
-| — | `=SUMPRODUCT((` | Flows Missing Transfer Mechanism: |
-| — | `=IFERROR(TEXT(COUNTIF(` | Assessment Completion Rate: |
-
----
-
-## Sheet 8: 8. Approval & Sign-Off
-
-**Data Rows:** 997 (rows 4–1000)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Signatory Role |
-| B | Signatory Name |
-| C | Signature / Electronic Approval |
-| D | Signature Date |
-| E | Approval Scope |
-| F | Comments |
-| G | Contact Email |
-
----
-
-## Sheet 9: Header_Row
-
----
-
-## Data Validation Dropdown Lists
-
-All dropdown value lists defined in the generator:
-
-| Variable | Values |
-|----------|--------|
-| `DISCOVERY_METHODS` | Automated Scan (DLP), Manual Survey, Interview (System Owner), Documentation Review, Database Sch... |
-| `EVIDENCE_TYPES` | System Documentation, Interview Notes, DLP Scan Results, Contract (Processor Agreement, SCCs), Co... |
-| `GAP_TYPES` | Unknown System (Not in inventory), Undocumented Data Flow, Missing Legal Basis, Unclear Retention... |
-| `LEGAL_BASIS_ART6` | Consent (Art. 6(1)(a)), Contract (Art. 6(1)(b)), Legal Obligation (Art. 6(1)(c)), Vital Interests... |
-| `LEGAL_BASIS_ART9` | N/A (No special category data), Explicit Consent (Art. 9(2)(a)), Employment / Social Security (Ar... |
-| `PII_CLASSIFICATIONS` | Basic PII, Sensitive PII (GDPR Art. 9 / FADP Art. 5(c)), Criminal Offense Data (GDPR Art. 10 / FA... |
-| `PII_DATA_SUBJECTS` | Customers, Employees, Contractors, Vendors/Suppliers, Job Applicants, Website Visitors, Other |
-| `RECIPIENT_TYPES` | Internal (within organization), Processor (processes on our behalf per Art. 28), Third Party (sep... |
-| `RISK_LEVELS` | Critical, High, Medium, Low |
-| `SENSITIVE_PII_TYPES` | Health Data, Genetic Data, Biometric Data (for unique identification), Racial or Ethnic Origin, P... |
-| `SIGNATORY_ROLES` | Assessment Lead (DPO / Privacy Officer), Chief Information Security Officer (CISO), Legal / Compl... |
-| `STATUS_OPTIONS` | Not Started, In Progress, Complete, Validated |
-| `SYSTEM_TYPES` | Customer Relationship Management (CRM), Human Resources Information System (HRIS), Payroll System... |
-| `TRANSFER_MECHANISMS` | No cross-border transfer, Adequacy Decision (EU/CH recognizes country), Standard Contractual Clau... |
+**Extracted:** 8 sheets, 87 columns, 12 validation values, 14 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

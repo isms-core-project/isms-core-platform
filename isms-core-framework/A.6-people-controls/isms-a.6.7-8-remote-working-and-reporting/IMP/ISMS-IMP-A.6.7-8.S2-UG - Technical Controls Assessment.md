@@ -3,24 +3,39 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Controls A.6.7 (Remote Working) & A.6.8 (Information Security Event Reporting)
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Technical Controls Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.7-8.S2-UG |
+| **Related Policy** | ISMS-POL-A.6.7-8 (Remote Working and Reporting) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.7 (Remote Working) & A.6.8 (Information Security Event Reporting) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | VPN, MFA, Encryption, Logging, and Session Management |
-| **Related Policy** | ISMS-POL-A.6.7-8, Section 2.3 (Technical Security Requirements) |
-| **Purpose** | Guide users through systematic assessment of technical security controls for remote access |
-| **Target Audience** | IT Security Team, Network Engineers, Identity Management Team, Auditors |
-| **Assessment Type** | Technical |
-| **Review Cycle** | Semi-Annual |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for technical controls assessment | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.7-8 (Remote Working and Reporting)
+- ISMS-IMP-A.6.7-8.S1 (Remote Work Authorisation Assessment)
+- ISMS-IMP-A.6.7-8.S3 (Endpoint and Physical Security Assessment)
+- ISMS-IMP-A.6.7-8.S4 (Event Reporting Mechanisms Assessment)
 
 ---
 
@@ -34,11 +49,28 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | VPN Assessment | Evaluate VPN implementation and configuration |
+| 3 | MFA Assessment | Assess multi-factor authentication coverage and strength |
+| 4 | Encryption Assessment | Verify encryption requirements for remote data in transit |
+| 5 | Logging Assessment | Review logging and monitoring for remote access |
+| 6 | Compliance Summary | Summarise compliance status across all technical controls |
+| 7 | Gap Analysis | Identify technical control gaps against requirements |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
+
+---
+
 ## Assessment Overview
 
 #### 1.1 Purpose
 
-This assessment workbook evaluates [Organization]'s technical security controls for remote work, ensuring that:
+This assessment workbook evaluates [Organisation]'s technical security controls for remote work, ensuring that:
 - VPN or Zero Trust access solutions are properly deployed
 - Multi-factor authentication (MFA) is enforced for all remote access
 - Data encryption (in transit and at rest) meets requirements
@@ -310,7 +342,7 @@ Before starting this assessment, ensure:
 
 #### 4.9 Gap_Analysis Sheet
 
-**Purpose**: Consolidate all technical control gaps.
+**Purpose**: Track all technical control gaps in the Summary Dashboard.
 
 **Column Definitions**:
 
@@ -368,7 +400,7 @@ Before starting this assessment, ensure:
 | Evidence Category | Examples |
 |-------------------|----------|
 | Configuration Exports | VPN config, MFA policies, TLS settings |
-| Screenshots | Admin console settings, compliance dashboards |
+| Screenshots | Admin console settings, Summary Dashboard |
 | Test Results | TLS scan results, penetration test excerpts |
 | Reports | MFA enrollment reports, login statistics |
 | Architecture Diagrams | Remote access architecture |
@@ -389,7 +421,7 @@ When collecting evidence:
 
 **The Problem:** Focusing assessment only on the main corporate VPN, missing other remote access paths.
 
-**Why It Matters:** Organizations often have multiple remote access methods (vendor VPN, legacy systems, cloud gateways). Unassessed paths may have weaker security.
+**Why It Matters:** Organisations often have multiple remote access methods (vendor VPN, legacy systems, cloud gateways). Unassessed paths may have weaker security.
 
 **The Fix:**
 - Inventory ALL remote access methods before starting
@@ -486,7 +518,7 @@ When collecting evidence:
 
 #### ❌ MISTAKE #10: Not Correlating VPN Access with HR Data
 
-**The Problem:** Assessing VPN technically but not verifying users are authorized personnel.
+**The Problem:** Assessing VPN technically but not verifying users are authorised personnel.
 
 **Why It Matters:** May find active VPN accounts for terminated employees. Orphaned accounts represent security risk.
 
@@ -565,7 +597,7 @@ When collecting evidence:
 **Step 3: Management Approval** (CISO)
 - Review overall security posture
 - Approve remediation priorities
-- Authorize resources
+- Authorise resources
 - Duration: 1-2 business days
 
 #### 8.2 After Approval
@@ -581,7 +613,7 @@ When collecting evidence:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The perimeter is wherever your people are."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

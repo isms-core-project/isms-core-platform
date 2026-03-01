@@ -8,43 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Environment Coverage Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.11.3-UG |
+| **Related Policy** | ISMS-POL-A.8.11 (Data Masking) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.11 (Data Masking) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Environment Coverage & Deployment Verification |
-| **Related Policy** | ISMS-POL-A.8.11, Section 2.3 (Environment Coverage Requirements) |
-| **Purpose** | Guide users through assessing WHERE data masking is deployed across all organizational environments to ensure comprehensive coverage |
-| **Target Audience** | IT Operations Managers, Database Administrators, Cloud Architects, DevOps Engineers, Security Engineers, Compliance Officers, Auditors |
-| **Assessment Type** | Environment Coverage & Gap Analysis |
-| **Review Cycle** | Quarterly (Environment Inventory Updates) / After Major System Deployments |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial workbook layout specification only | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.11 (Data Masking)
+- ISMS-IMP-A.8.11.1 (Data Inventory & Classification Assessment)
+- ISMS-IMP-A.8.11.2 (Masking Technique Selection & Requirements)
+- ISMS-IMP-A.8.11.4 (Testing & Validation Framework)
 
 ---
 
-**Target Audience:** IT Operations Managers, Database Administrators, Cloud Architects, DevOps Engineers, Security Engineers, Compliance Officers, Data Governance Teams
+## Workbook at a Glance
 
-**Purpose of This Guide:** Enable systematic assessment of masking coverage across ALL organizational environments - production, non-production, cloud, analytics, backup, and external sharing - to identify gaps and ensure compliance.
-
-**What This Document Does:**
-
-- Explains environment discovery methodology (finding ALL environments, including shadow IT)
-- Provides decision frameworks for determining masking requirements per environment type
-- Guides through workbook completion for comprehensive coverage assessment
-- Defines validation criteria for masking deployment effectiveness
-- Establishes gap identification and remediation workflows
-
-**What This Document Does NOT Do:**
-
-- Replace data inventory assessment (prerequisite: complete IMP-A.8.11.1 first)
-- Replace masking technique selection (prerequisite: complete IMP-A.8.11.2 first)
-- Provide masking tool implementation guides (see vendor documentation)
-- Define data classification criteria (see IMP-A.8.11.1)
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Environment Inventory | Inventory of all organisational environments |
+| 3 | Production Environment | Masking coverage in production environment |
+| 4 | NonProduction Environments | Masking coverage in non-production environments |
+| 5 | Analytics & Reporting | Masking coverage in analytics and reporting systems |
+| 6 | Backup & Archive | Masking coverage in backup and archive systems |
+| 7 | External Sharing | Masking controls for externally shared data |
+| 8 | Cloud Environments | Masking coverage in cloud environments |
+| 9 | Data Flow Mapping | Map data flows to identify masking requirements |
+| 10 | Gap Analysis | Identify environment coverage gaps |
+| 11 | Evidence Register | Store and reference evidence supporting assessments |
+| 12 | Summary Dashboard | Compliance status and key metrics overview |
+| 13 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -52,7 +63,7 @@
 
 ## What This Assessment Measures
 
-This assessment evaluates [Organization]'s **masking deployment coverage** across the complete IT environment landscape to ensure:
+This assessment evaluates [Organisation]'s **masking deployment coverage** across the complete IT environment landscape to ensure:
 
 1. **Environment Inventory Completeness** - ALL environments cataloged (production, non-production, cloud, analytics, backup, external)
 2. **Non-Production Coverage** - 100% of non-production environments masked (MANDATORY policy requirement)
@@ -65,7 +76,7 @@ This assessment evaluates [Organization]'s **masking deployment coverage** acros
 
 **Core Principle:** *"Every environment where sensitive data resides MUST have appropriate masking controls. No exceptions without formal risk acceptance."*
 
-**Assessment Scope:** Complete organizational IT landscape including:
+**Assessment Scope:** Complete organisational IT landscape including:
 1. **Production Environments** (live operational systems)
 2. **Non-Production Environments** (development, testing, UAT, staging, training, sandbox)
 3. **Analytics & Reporting** (BI tools, data warehouses, data lakes, ML/AI platforms)
@@ -81,14 +92,14 @@ This assessment evaluates [Organization]'s **masking deployment coverage** acros
 ## Why This Matters
 
 **ISO 27001:2022 Control A.8.11 Requirement:**
-> *"Data masking should be used in accordance with the organization's topic-specific policy on access control and other related topic-specific policies, and business requirements, taking applicable legislation into consideration."*
+> *"Data masking should be used in accordance with the organisation's topic-specific policy on access control and other related topic-specific policies, and business requirements, taking applicable legislation into consideration."*
 
 **The Critical Coverage Problem:**
 
-Organizations often implement masking in some environments while leaving critical gaps:
+Organisations often implement masking in some environments while leaving critical gaps:
 
 - **Development/Test environments** contain production data clones WITHOUT masking (80% of data breaches in test systems)
-- **Analytics platforms** have raw PII for reporting (violated GDPR/FADP minimization principles)
+- **Analytics platforms** have raw PII for reporting (violated GDPR/FADP minimisation principles)
 - **Cloud sandbox environments** forgotten during compliance initiatives (shadow IT blind spot)
 - **Vendor data shares** lack masking (third-party risk exposure)
 - **Backup systems** contain unmasked archives (disaster recovery = compliance disaster)
@@ -115,7 +126,7 @@ Organizations often implement masking in some environments while leaving critica
 
 **Required Knowledge:**
 
-- [Organization]'s IT environment architecture (all systems, databases, applications, cloud resources)
+- [Organisation]'s IT environment architecture (all systems, databases, applications, cloud resources)
 - Environment lifecycle (dev, test, UAT, staging, production promotion flows)
 - Data refresh/copy processes (how production data gets to non-production)
 - Cloud infrastructure (AWS, Azure, GCP accounts, resource groups, subscriptions)
@@ -156,7 +167,7 @@ Organizations often implement masking in some environments while leaving critica
 - **Evidence Collection:** 1-2 hours
 - **Quality Review:** 1 hour
 
-**Pro Tip for Large Organizations (>100 environments):**
+**Pro Tip for Large Organisations (>100 environments):**
 
 - **Phase 1 (Week 1):** Production + critical non-production (top 20-30 environments)
 - **Phase 2 (Week 2):** All non-production environments (dev/test/UAT/staging/training)
@@ -185,7 +196,6 @@ ISMS-POL-A.8.11 (Data Masking Policy)
 **Feeds Into (complete next):**
 
 - ➡️ **ISMS-IMP-A.8.11.4** (Testing & Validation Framework) - Tests masking effectiveness in environments identified here
-- ➡️ **ISMS-IMP-A.8.11.5** (Compliance Dashboard) - Consolidates environment coverage metrics with other assessments
 
 **Integration Points:**
 
@@ -320,7 +330,7 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 
 **Essential Understanding:**
 
-- [Organization]'s IT environment landscape (all datacenters, cloud providers, hosting locations)
+- [Organisation]'s IT environment landscape (all datacenters, cloud providers, hosting locations)
 - Environment lifecycle management (how environments are provisioned, refreshed, decommissioned)
 - Data copy/refresh processes (production → non-production data movement)
 - Cloud architecture (resource groups, subscriptions, accounts, VPCs, regions)
@@ -375,7 +385,7 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - **Secure storage:** Evidence repository (some evidence contains infrastructure details)
 
 **Critical Tool Selection Note:**
-This assessment is **tool-agnostic**. [Organization] may use any environment discovery methodology (CMDB, cloud APIs, manual inventory, network scanning). The IMPORTANT part is documenting WHICH environments exist and WHETHER they are masked, not HOW you discovered them.
+This assessment is **tool-agnostic**. [Organisation] may use any environment discovery methodology (CMDB, cloud APIs, manual inventory, network scanning). The IMPORTANT part is documenting WHICH environments exist and WHETHER they are masked, not HOW you discovered them.
 
 ## Pre-Assessment Checklist
 
@@ -992,13 +1002,13 @@ Backups present a unique challenge:
    **High Risk (Requires Mitigation):**
 
    - Unencrypted backups containing sensitive data → CRITICAL GAP
-   - Backup access not logged → Cannot detect unauthorized restore
+   - Backup access not logged → Cannot detect unauthorised restore
    - Weak encryption (DES, 3DES, <128-bit keys) → Upgrade required
    
    **Medium Risk (Monitor):**
 
    - Encrypted but not masked (acceptable if access-controlled)
-   - Long retention periods (>7 years) → Data minimization concern
+   - Long retention periods (>7 years) → Data minimisation concern
    - Offshore backups (cross-border data transfer) → GDPR/FADP concern
    
    **Low Risk:**
@@ -1104,7 +1114,7 @@ Third-party data sharing is a major compliance blind spot:
    
    **Best Practices:**
 
-   - **Redaction:** Remove PII entirely if not needed (GDPR minimization)
+   - **Redaction:** Remove PII entirely if not needed (GDPR minimisation)
    - **Aggregation:** Provide summary statistics instead of individual records
    - **Sampling:** Provide subset of data, not full production dump
    - **Time-Limited Access:** Revoke access after project completion
@@ -1534,7 +1544,7 @@ Data moves between environments constantly:
 
 ## "We Can't Find All Our Environments"
 
-**Problem:** Organization has grown organically, no central CMDB, environments scattered across on-prem and multiple cloud providers.
+**Problem:** Organisation has grown organically, no central CMDB, environments scattered across on-prem and multiple cloud providers.
 
 **Solution: Multi-Pronged Discovery Approach**
 
@@ -1595,7 +1605,7 @@ Data moves between environments constantly:
 
 **Argument 2: "We need to debug production issues"**
 
-- **Response:** Debug in production with role-based DDM (masked for most, unmasked for authorized debuggers only)
+- **Response:** Debug in production with role-based DDM (masked for most, unmasked for authorised debuggers only)
 - **Alternative:** Reproduce issue in test environment with synthetic data matching production scenario
 
 **Argument 3: "Masking is too slow, we can't wait for data refresh"**
@@ -1652,7 +1662,7 @@ Data moves between environments constantly:
 **Detective Controls:**
 1. **Quarterly Cloud Inventory:**
 
-   - AWS: `aws organizations list-accounts`
+   - AWS: `aws organisations list-accounts`
    - Azure: `az account list`
    - GCP: `gcloud projects list`
    - Reconcile with approved account list
@@ -1851,7 +1861,7 @@ Data moves between environments constantly:
 
 **For Cloud Environments:**
 
-- [ ] Cloud account inventory (AWS Organizations, Azure Management Groups, GCP Projects)
+- [ ] Cloud account inventory (AWS Organisations, Azure Management Groups, GCP Projects)
 - [ ] Cloud resource tagging compliance (Owner, Environment, Expiry tags)
 - [ ] Cloud masking configuration (RDS instance settings, BigQuery column-level security)
 
@@ -1876,7 +1886,7 @@ Data moves between environments constantly:
 - [ ] Masking checkpoint validation scripts (automated tests)
 - [ ] Pipeline failure alerts (proof masking failures are detected)
 
-## Evidence Storage & Organization
+## Evidence Storage & Organisation
 
 **Recommended Folder Structure:**
 ```
@@ -1983,7 +1993,7 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 
 **Cloud Environments:**
 
-- [ ] Cloud accounts inventoried (AWS Organizations, Azure Management Groups, GCP Projects)
+- [ ] Cloud accounts inventoried (AWS Organisations, Azure Management Groups, GCP Projects)
 - [ ] Cloud resources follow same masking rules as on-prem (no cloud exemption)
 - [ ] Cloud dev/test databases 100% masked
 - [ ] SaaS platforms data protection verified (vendor questionnaires)
@@ -2127,7 +2137,7 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 | **Data Protection Officer (DPO)** | [Name] | [Signature] | DD.MM.YYYY | Regulatory compliance validated (GDPR, FADP external sharing requirements) |
 | **Legal/Compliance Officer** | [Name] | [Signature] | DD.MM.YYYY | DPAs validated, risk acceptances reviewed |
 
-**Optional (depending on organization):**
+**Optional (depending on organisation):**
 
 - **CFO:** If significant budget required for masking tools or cloud resources
 - **CTO / VP Engineering:** If infrastructure changes required (new environments, decommissions)
@@ -2265,18 +2275,12 @@ This assessment (IMP-A.8.11.3) integrates with:
 - **Output:** Environment list for testing (which environments to validate masking effectiveness)
 - **Output:** Coverage gaps requiring testing priority (P1 gaps test first)
 
-**ISMS-IMP-A.8.11.5 (Compliance Dashboard):**
-
-- **Output:** Environment coverage metrics (% non-production masked, % production DDM, etc.)
-- **Output:** Gap count and remediation status (feeds into executive dashboard)
-
 **Cross-Reference Example:**
 
 - IMP-A.8.11.1 identifies: "Customer database contains PII (Critical sensitivity)"
 - IMP-A.8.11.2 specifies: "PII SHALL be masked using SDM in non-production"
 - **IMP-A.8.11.3 verifies:** "Dev/Test/UAT customer databases 100% masked using SDM"
 - IMP-A.8.11.4 tests: "Masked dev database passed completeness test (100% coverage)"
-- IMP-A.8.11.5 reports: "Non-production coverage: 100% (Compliant)"
 
 ---
 
@@ -2284,7 +2288,7 @@ This assessment (IMP-A.8.11.3) integrates with:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Sensitive data does not become safe simply because the environment is labelled test."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -31,9 +31,9 @@
 
 # Executive Summary
 
-This policy establishes [Organization]'s Secure Development Framework, implementing ISO/IEC 27001:2022 Controls A.8.26 (Application Security Requirements), A.8.25 (Secure Development Lifecycle), and A.8.29 (Security Testing in Development and Acceptance) as a unified security framework.
+This policy establishes [Organisation]'s Secure Development Framework, implementing ISO/IEC 27001:2022 Controls A.8.26 (Application Security Requirements), A.8.25 (Secure Development Lifecycle), and A.8.29 (Security Testing in Development and Acceptance) as a unified security framework.
 
-**Purpose**: Define organizational requirements for secure software development throughout the software development lifecycle (SDLC). This policy establishes WHAT security practices are required, WHEN they must be applied, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8 (UG/TG variants).25-26-29 Implementation Guides.
+**Purpose**: Define organisational requirements for secure software development throughout the software development lifecycle (SDLC). This policy establishes WHAT security practices are required, WHEN they must be applied, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8 (UG/TG variants).25-26-29 Implementation Guides.
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG (data protection by design), EU GDPR Article 25 (data protection by design and default), and ISO/IEC 27001:2022.
 
@@ -91,7 +91,7 @@ This policy establishes [Organization]'s Secure Development Framework, implement
 
 ## Application Risk Classification (A.8.26)
 
-[Organization] SHALL classify all applications by risk level to determine appropriate security requirements.
+[Organisation] SHALL classify all applications by risk level to determine appropriate security requirements.
 
 **High-Risk Applications** meet ANY of these criteria:
 
@@ -116,7 +116,7 @@ This policy establishes [Organization]'s Secure Development Framework, implement
 
 ## Security Requirements Specification (A.8.26)
 
-[Organization] SHALL specify security requirements for all applications based on risk classification.
+[Organisation] SHALL specify security requirements for all applications based on risk classification.
 
 **Mandatory Requirements by Risk Level**:
 
@@ -129,7 +129,7 @@ This policy establishes [Organization]'s Secure Development Framework, implement
 
 **Security Requirements SHALL address**:
 
-- Authentication and authorization controls
+- Authentication and authorisation controls
 - Input validation and output encoding
 - Cryptography (data in transit and at rest)
 - Session management
@@ -142,7 +142,7 @@ High-Risk applications SHALL use a structured threat modeling methodology (e.g.,
 
 ## Secure Development Lifecycle Integration (A.8.25)
 
-[Organization] SHALL integrate security activities into all SDLC phases.
+[Organisation] SHALL integrate security activities into all SDLC phases.
 
 **Security Gates by Phase**:
 
@@ -164,7 +164,7 @@ High-Risk applications SHALL use a structured threat modeling methodology (e.g.,
 
 ## Security Testing Requirements (A.8.29)
 
-[Organization] SHALL implement security testing based on application risk classification.
+[Organisation] SHALL implement security testing based on application risk classification.
 
 **Required Testing by Risk Level**:
 
@@ -186,7 +186,7 @@ Security testing tools SHALL be selected based on criteria documented in **ISMS-
 
 ## Vulnerability Remediation Requirements (A.8.29)
 
-[Organization] SHALL remediate security vulnerabilities within defined timeframes.
+[Organisation] SHALL remediate security vulnerabilities within defined timeframes.
 
 **Remediation Service Level Agreements**:
 
@@ -199,7 +199,7 @@ Security testing tools SHALL be selected based on criteria documented in **ISMS-
 
 ## Failure Mode Management
 
-[Organization] SHALL define procedures for handling security control failures and exceptions.
+[Organisation] SHALL define procedures for handling security control failures and exceptions.
 
 **Security Gate Bypass**:
 - Emergency deployments bypassing security gates require CISO approval + retrospective security validation within 72 hours
@@ -221,7 +221,7 @@ Security testing tools SHALL be selected based on criteria documented in **ISMS-
 
 ## Outsourced Development Requirements (A.8.25)
 
-[Organization] SHALL apply secure development requirements to outsourced and third-party development.
+[Organisation] SHALL apply secure development requirements to outsourced and third-party development.
 
 **Contractual Requirements**:
 
@@ -232,15 +232,15 @@ Security testing tools SHALL be selected based on criteria documented in **ISMS-
 - Code review and security architecture review rights
 
 **Verification of Contractor Compliance**:
-[Organization] SHALL verify contractor adherence to secure development requirements through:
+[Organisation] SHALL verify contractor adherence to secure development requirements through:
 - **Quarterly reporting**: Contractors SHALL submit security testing reports (SAST/DAST/SCA results, remediation status) to Application Security Lead
-- **Access to contractor tools**: [Organization] SHALL maintain read-only access to contractor SAST/DAST platforms or receive exported reports
-- **Periodic audits**: High-Risk outsourced projects SHALL undergo security review by [Organization] Security Architects at major milestones (design approval, pre-production)
-- **Contractual audit rights**: Contracts SHALL include [Organization] right to audit contractor security practices upon 30-day notice
+- **Access to contractor tools**: [Organisation] SHALL maintain read-only access to contractor SAST/DAST platforms or receive exported reports
+- **Periodic audits**: High-Risk outsourced projects SHALL undergo security review by [Organisation] Security Architects at major milestones (design approval, pre-production)
+- **Contractual audit rights**: Contracts SHALL include [Organisation] right to audit contractor security practices upon 30-day notice
 
 ## Developer Security Training (A.8.25)
 
-[Organization] SHALL provide security training for all developers.
+[Organisation] SHALL provide security training for all developers.
 
 **Training Requirements**:
 
@@ -270,7 +270,7 @@ Security testing tools SHALL be selected based on criteria documented in **ISMS-
 | **Security Analysts** | Assessment execution; vulnerability triage; security testing; metrics reporting |
 | **Penetration Testers** | Penetration testing execution; vulnerability validation; security testing methodology |
 
-## Development Organization
+## Development Organisation
 
 | Role | Responsibility |
 |------|----------------|
@@ -305,7 +305,7 @@ Security testing tools SHALL be selected based on criteria documented in **ISMS-
 
 ## Assessment and Verification
 
-[Organization] SHALL verify secure development control effectiveness through structured assessment.
+[Organisation] SHALL verify secure development control effectiveness through structured assessment.
 
 **Assessment Frequency**:
 
@@ -318,7 +318,7 @@ Security testing tools SHALL be selected based on criteria documented in **ISMS-
 | Triggered assessment (incidents, audit findings) | Within 30 days |
 
 **Assessment Methodology**:
-Assessment procedures are documented in **ISMS-IMP-A.8.25-26-29-S5 (Secure Development Assessment)**. Assessments SHALL include:
+Assessment procedures are documented in the respective assessment workbooks (S1–S4), each with a Summary Dashboard tracking compliance status. Assessments SHALL include:
 - Review of application risk classification currency (verify classification remains accurate)
 - Evidence sampling (SAST/DAST/SCA reports, penetration test reports, security gate approvals)
 - Remediation SLA compliance verification (check overdue vulnerabilities)
@@ -327,7 +327,7 @@ Assessment procedures are documented in **ISMS-IMP-A.8.25-26-29-S5 (Secure Devel
 
 ## Evidence Collection and Retention
 
-[Organization] SHALL maintain verifiable evidence of secure development control implementation.
+[Organisation] SHALL maintain verifiable evidence of secure development control implementation.
 
 **Evidence Types and Storage**:
 
@@ -349,7 +349,7 @@ Assessment procedures are documented in **ISMS-IMP-A.8.25-26-29-S5 (Secure Devel
 
 ## Gap Remediation and Tracking
 
-[Organization] SHALL maintain a centralized gap register for secure development control deficiencies.
+[Organisation] SHALL maintain a centralized gap register for secure development control deficiencies.
 
 **Gap Identification Sources**:
 - Quarterly/semi-annual/annual assessments (per Assessment Frequency table)
@@ -423,7 +423,7 @@ Assessment procedures are documented in **ISMS-IMP-A.8.25-26-29-S5 (Secure Devel
 
 **Swiss Federal Data Protection Act (FADP/nDSG)**
 
-- Article 8: Technical and organizational measures for data protection
+- Article 8: Technical and organisational measures for data protection
 - Article 26: Security by design and by default
 
 **EU General Data Protection Regulation (GDPR)**
@@ -433,7 +433,7 @@ Assessment procedures are documented in **ISMS-IMP-A.8.25-26-29-S5 (Secure Devel
 
 ## Conditional Compliance (Tier 2)
 
-Sector-specific requirements apply where [Organization]'s business activities trigger applicability:
+Sector-specific requirements apply where [Organisation]'s business activities trigger applicability:
 
 | Regulation | Applicability Trigger | Key Requirements |
 |------------|----------------------|------------------|
@@ -467,7 +467,6 @@ Sector-specific requirements apply where [Organization]'s business activities tr
 | ISMS-IMP-A.8.25-26-29-S2 | SDLC Security Integration | Security activities by phase |
 | ISMS-IMP-A.8.25-26-29-S3 | Secure Coding Practices | Code review, tool deployment |
 | ISMS-IMP-A.8.25-26-29-S4 | Security Testing Implementation | SAST/DAST/SCA configuration |
-| ISMS-IMP-A.8.25-26-29-S5 | Secure Development Assessment | Assessment methodology, compliance |
 
 ## Reference Materials
 
@@ -482,10 +481,10 @@ Sector-specific requirements apply where [Organization]'s business activities tr
 
 | Term | Definition |
 |------|------------|
-| **Application** | Software system developed, acquired, or integrated by [Organization] |
-| **DAST** | Dynamic Application Security Testing - analyzes running applications |
+| **Application** | Software system developed, acquired, or integrated by [Organisation] |
+| **DAST** | Dynamic Application Security Testing - analyses running applications |
 | **Penetration Testing** | Manual security testing by qualified professionals |
-| **SAST** | Static Application Security Testing - analyzes source code |
+| **SAST** | Static Application Security Testing - analyses source code |
 | **SCA** | Software Composition Analysis - identifies dependency vulnerabilities |
 | **SDLC** | Software Development Lifecycle |
 | **Security Champion** | Developer with specialized security training serving as team security contact |
@@ -511,4 +510,4 @@ Sector-specific requirements apply where [Organization]'s business activities tr
 
 *This policy establishes requirements for secure software development. Implementation procedures (HOW) are documented in ISMS-IMP-A.8 (UG/TG).25-26-29 Implementation Guides. Technical tool guidance is provided in ISMS-REF-A.8.25-26-29.*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

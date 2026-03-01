@@ -32,17 +32,29 @@
 
 **Related Documents**:
 
-- ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles) - Section 4 (Policy Framework Requirements)
-- ISMS-IMP-A.5.1-2-6.1-2.S2 (Roles & Responsibilities Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S3 (Screening & Vetting Assessment)
+- ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles)
+- ISMS-IMP-A.5.1-2-6.1-2.S2 (Roles Responsibilities Assessment)
+- ISMS-IMP-A.5.1-2-6.1-2.S3 (Screening Vetting Assessment)
 - ISMS-IMP-A.5.1-2-6.1-2.S4 (Employment Contract Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S5 (Governance Compliance Dashboard)
-
-**Note on Naming Convention**: The ".S" designation indicates this implementation is part of a **stacked control framework** (A.5.1 + A.5.2 + A.6.1 + A.6.2). Despite unified implementation, each control maintains distinct requirements for Statement of Applicability purposes.
 
 ---
 
-**Audience:** Policy owners, CISO, compliance officers, internal auditors, system owners
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Policy Inventory | Catalogue all information security policies in scope |
+| 3 | Lifecycle Compliance | Assess policy review and update lifecycle compliance |
+| 4 | Governance Assessment | Evaluate policy governance structures and approvals |
+| 5 | Classification Review | Verify policies are correctly classified and controlled |
+| 6 | Communication Tracking | Track policy communication and staff acknowledgement |
+| 7 | Repository Assessment | Assess the policy repository and accessibility controls |
+| 8 | Gap Analysis | Identify policy gaps against ISO 27001:2022 A.5.1 requirements |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Action Items | Track remediation actions for identified gaps |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -50,7 +62,7 @@
 
 ## Assessment Objective
 
-This assessment verifies [Organization]'s compliance with ISO/IEC 27001:2022 Control A.5.1 (Policies for Information Security) as implemented through ISMS-POL-A.5.1-2-6.1-2, Section 4.
+This assessment verifies [Organisation]'s compliance with ISO/IEC 27001:2022 Control A.5.1 (Policies for Information Security) as implemented through ISMS-POL-A.5.1-2-6.1-2, Section 4.
 
 **Control A.5.1 Requirement:**
 > *Information security policy and topic-specific policies should be defined, approved by management, published, communicated to and acknowledged by relevant personnel and relevant interested parties, and reviewed at planned intervals and if significant changes occur.*
@@ -83,9 +95,9 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 
 **Standard Schedule:**
 
-- **Quarterly**: All organizations (routine compliance verification)
+- **Quarterly**: All organisations (routine compliance verification)
 - **Annual**: Comprehensive policy framework review
-- **Triggered**: After major policy changes, organizational restructuring, audit findings, or regulatory updates
+- **Triggered**: After major policy changes, organisational restructuring, audit findings, or regulatory updates
 
 **Why Quarterly?**
 
@@ -164,7 +176,7 @@ This assessment uses a **systematic inventory and verification approach**:
 
 - ISMS Master Policy (policy hierarchy definition)
 - Policy templates and standards
-- Organizational charts (ownership verification)
+- Organisational charts (ownership verification)
 - Management review meeting minutes
 - Internal audit reports
 
@@ -207,7 +219,7 @@ This assessment uses a **systematic inventory and verification approach**:
 - Policy Governance: 20% (clear ownership and accountability)
 - Policy Classification: 10% (appropriate access controls)
 - Policy Communication: 15% (stakeholder awareness)
-- Policy Repository: 5% (accessible and organized)
+- Policy Repository: 5% (accessible and organised)
 
 **Compliance Score Interpretation**:
 
@@ -276,7 +288,7 @@ This assessment uses a **systematic inventory and verification approach**:
 
 **Tier 3 - Topic-Specific Policies** (aligned with ISO 27001:2022 Annex A):
 
-- [ ] Organizational Context (A.5.1-14): Policies for information security, roles/responsibilities, project management
+- [ ] Organisational Context (A.5.1-14): Policies for information security, roles/responsibilities, project management
 - [ ] People Controls (A.6.1-8): Screening, employment terms, awareness, discipline
 - [ ] Physical Controls (A.7.1-14): Physical access, monitoring, equipment
 - [ ] Technological Controls (A.8.1-34): 34 technology-focused policies
@@ -289,7 +301,7 @@ This assessment uses a **systematic inventory and verification approach**:
 
 ## Policy Discovery Process
 
-**For Organizations Starting Fresh:**
+**For Organisations Starting Fresh:**
 
 **Step 1**: List all existing information security policies
 
@@ -297,7 +309,7 @@ This assessment uses a **systematic inventory and verification approach**:
 - Check document management system
 - Check intranet/SharePoint
 - Ask policy owners what policies they maintain
-- Review organizational chart for policy ownership
+- Review organisational chart for policy ownership
 
 **Step 2**: Classify each policy by hierarchy tier
 
@@ -313,7 +325,7 @@ This assessment uses a **systematic inventory and verification approach**:
 - Check Statement of Applicability for excluded controls
 - Prioritize gap remediation (critical controls first)
 
-**For Organizations with Existing ISMS:**
+**For Organisations with Existing ISMS:**
 
 **Step 1**: Export policy inventory from ISMS tool
 
@@ -374,7 +386,7 @@ This assessment uses a **systematic inventory and verification approach**:
 
 **Step 1: Policy Discovery**
 
-- List ALL information security policies in [Organization]
+- List ALL information security policies in [Organisation]
 - Include Tier 1 (Master), Tier 2 (Domain), Tier 3 (Topic-Specific)
 - Exclude Tier 4 (Standards/Procedures) - tracked separately
 
@@ -384,7 +396,7 @@ For each policy, document:
 **Q1: Policy_ID**
 
 - **Question**: What is the unique policy identifier?
-- **Format**: Organizational standard (e.g., ISMS-POL-A.5.1, POL-SEC-001)
+- **Format**: Organisational standard (e.g., ISMS-POL-A.5.1, POL-SEC-001)
 - **Example**: "ISMS-POL-A.5.1-2-6.1-2", "POL-IAM-001"
 - **Required**: YES
 - **Tip**: Use consistent numbering scheme across all policies
@@ -483,7 +495,7 @@ For each policy, document:
 - **Dropdown**: Annual / Biennial / Quarterly / Triggered-Only
 - **Guidance**:
   - Annual: High-change policies (technology, regulatory)
-  - Biennial: Stable policies (governance, organizational)
+  - Biennial: Stable policies (governance, organisational)
   - Quarterly: Policies tied to fast-changing regulations (data protection)
   - Triggered: Low-change policies reviewed only when changes occur
 - **Required**: YES
@@ -580,7 +592,7 @@ For each policy, document:
 
 **Inventory Completion Tips**:
 
-1. **Start with existing inventory**: If [Organization] has a policy tracking system, export data and import into workbook
+1. **Start with existing inventory**: If [Organisation] has a policy tracking system, export data and import into workbook
 
 2. **Validate completeness**: Cross-check against minimum required policies (Section 3.2)
 
@@ -785,7 +797,7 @@ For each policy, document:
 - **Question**: Owner name and role?
 - **Auto-Populate**: From Sheet 2 (Policy_Owner)
 - **Verification**: Owner is currently employed and in stated role
-- **Evidence**: Organizational chart, HR records
+- **Evidence**: Organisational chart, HR records
 
 **Q6: Owner_Accountability_Clear**
 
@@ -875,7 +887,7 @@ For each policy, document:
 - **Question**: Describe governance gaps
 - **Format**: Free text
 - **Examples**:
-  - "Policy owner (Jane Smith) left organization 6 months ago - no replacement assigned"
+  - "Policy owner (Jane Smith) left organisation 6 months ago - no replacement assigned"
   - "Tier 2 policy approved by Security Manager (insufficient authority)"
   - "RACI not documented - unclear who implements policy requirements"
 - **Required**: IF Governance_Compliance_Rating ≠ "Compliant"
@@ -890,7 +902,7 @@ For each policy, document:
 
 **Governance Assessment Tips**:
 
-1. **Validate owner currency**: Check owners haven't left organization or changed roles
+1. **Validate owner currency**: Check owners haven't left organisation or changed roles
 
 2. **Verify approval authority**: Ensure approvers have documented authority for their level
 
@@ -948,7 +960,7 @@ For each policy, document:
 - **Dropdown**: None / Low / Medium / High
 - **Sensitive Information Types**:
   - **High**: Security architecture, vulnerability details, detection capabilities, incident response procedures (specific)
-  - **Medium**: System names, tool names, organizational structure, security controls (general)
+  - **Medium**: System names, tool names, organisational structure, security controls (general)
   - **Low**: General security principles, user responsibilities, high-level requirements
   - **None**: Public-facing policies, codes of conduct, acceptable use (generic)
 - **Guidance**: Classification should align with highest sensitivity content in policy
@@ -1184,7 +1196,7 @@ For each policy, document:
 
 ## Sheet 7: Repository_Assessment
 
-**Purpose**: Assess the policy repository structure, organization, and access.
+**Purpose**: Assess the policy repository structure, organisation, and access.
 
 **Note**: This sheet assesses the repository as a whole, not individual policies.
 
@@ -1206,16 +1218,16 @@ For each policy, document:
 - **Format**: Free text - URL or file path
 - **Example**: "https://org.sharepoint.com/sites/isms/policies"
 
-**Q3: Repository_Organization**
+**Q3: Repository_Organisation**
 
-- **Question**: How is repository organized?
-- **Dropdown**: By-Hierarchy-Tier / By-Domain / By-ISO-Control / Alphabetical / Unorganized / Mixed
+- **Question**: How is repository organised?
+- **Dropdown**: By-Hierarchy-Tier / By-Domain / By-ISO-Control / Alphabetical / Unorganised / Mixed
 - **Best Practices**:
   - **By-Hierarchy-Tier**: Folders for Tier 1, Tier 2, Tier 3 (mirrors governance structure)
   - **By-Domain**: Folders for Access Control, Data Protection, etc.
   - **By-ISO-Control**: Folders for A.5, A.6, A.7, A.8 controls
   - **Alphabetical**: Simple, but loses logical grouping
-- **Compliant**: "By-Hierarchy-Tier" or "By-Domain" (logical organization)
+- **Compliant**: "By-Hierarchy-Tier" or "By-Domain" (logical organisation)
 
 **Q4: Navigation_Ease**
 
@@ -1224,8 +1236,8 @@ For each policy, document:
 - **Assessment**:
   - **Excellent**: Search function, clear navigation, policy index/catalog
   - **Good**: Logical folder structure, most policies findable quickly
-  - **Adequate**: Some organization, requires knowledge of structure
-  - **Poor**: Disorganized, difficult to locate policies
+  - **Adequate**: Some organisation, requires knowledge of structure
+  - **Poor**: Disorganised, difficult to locate policies
 - **Verification**: Test finding 5 random policies as typical user
 - **Compliant**: "Excellent" or "Good"
 
@@ -1270,7 +1282,7 @@ For each policy, document:
 - **Dropdown**: Yes / Partial / No
 - **Logging Purpose**:
   - Audit trail (who accessed which policy when)
-  - Detect unauthorized access attempts
+  - Detect unauthorised access attempts
   - Support compliance verification (prove user had access to policy)
 - **Compliant**: "Yes" (at least for Confidential policies)
 
@@ -1288,7 +1300,7 @@ For each policy, document:
 - **Options**:
   - Yes: Policies downloadable as PDF, mobile app supports offline
   - No: Online-only access
-  - Not-Required: Organization always online, offline not needed
+  - Not-Required: Organisation always online, offline not needed
 - **Compliant**: "Yes" or "Not-Required"
 
 **Q12: Repository_Backup**
@@ -1329,14 +1341,14 @@ For each policy, document:
 - **Calculation**:
   - **Compliant**: Organized, searchable, version control, access controls, backed up
   - **Partial**: Minor issues (search limited, manual versioning)
-  - **Non-Compliant**: Major issues (disorganized, no version control, no backups)
+  - **Non-Compliant**: Major issues (disorganised, no version control, no backups)
 - **Auto-Calculate**: Based on Q3-Q15
 
 **Q17: Gap_Description**
 
 - **Format**: Free text
 - **Examples**:
-  - "Repository disorganized - policies difficult to locate"
+  - "Repository disorganised - policies difficult to locate"
   - "No version control - only current version available"
   - "Access controls not implemented - all policies accessible to all employees regardless of classification"
   - "Repository not included in backup schedule"
@@ -1391,7 +1403,7 @@ For each policy, document:
   | Risk Level | Criteria | Examples |
   |------------|----------|----------|
   | **Critical** | Immediate compliance failure, audit finding, regulatory violation | Required policy missing, policy without approval, policy overdue > 90 days |
-  | **High** | Significant risk, impacts audit readiness | Owner left organization (no replacement), acknowledgment < 70%, classification inappropriate |
+  | **High** | Significant risk, impacts audit readiness | Owner left organisation (no replacement), acknowledgment < 70%, classification inappropriate |
   | **Medium** | Moderate risk, should remediate within quarter | Policy overdue 30-60 days, RACI not documented, acknowledgment 70-89% |
   | **Low** | Minor issue, remediate when feasible | Minor metadata gaps, documentation incomplete, navigation suboptimal |
 
@@ -1521,7 +1533,7 @@ For each policy, document:
   - Acknowledgment-Report
   - Training-Records
   - Version-History
-  - Organizational-Chart
+  - Organisational-Chart
   - Other
 
 **Q3: Description**
@@ -1530,9 +1542,9 @@ For each policy, document:
 - **Format**: Free text - clear, descriptive
 - **Examples**:
   - "ISMS Master Policy v2.0 approved by CEO - email approval 10.01.2026"
-  - "Policy repository structure screenshot showing hierarchy-based organization"
+  - "Policy repository structure screenshot showing hierarchy-based organisation"
   - "Acknowledgment report - Acceptable Use Policy 92% completion rate"
-  - "CISO organizational chart showing policy ownership assignments"
+  - "CISO organisational chart showing policy ownership assignments"
 
 **Q4: Related_Policy_ID**
 
@@ -1740,7 +1752,7 @@ For each policy, document:
 **Signature**: _______________________  
 
 **Certification**:
-"I certify that this policy framework assessment has been completed with due diligence, all policy metadata has been verified, gaps have been identified and documented, and evidence has been collected and organized."
+"I certify that this policy framework assessment has been completed with due diligence, all policy metadata has been verified, gaps have been identified and documented, and evidence has been collected and organised."
 
 **Comments**: _______________________
 
@@ -1775,7 +1787,7 @@ For each policy, document:
 **Signature**: _______________________  
 
 **Final Approval**:
-"I approve this policy framework assessment as accurate representation of [Organization]'s policy framework compliance status. Identified gaps have remediation plans with assigned owners and target dates. Critical and high-priority gaps will be addressed by [Date]."
+"I approve this policy framework assessment as accurate representation of [Organisation]'s policy framework compliance status. Identified gaps have remediation plans with assigned owners and target dates. Critical and high-priority gaps will be addressed by [Date]."
 
 **Risk Acceptance** (if applicable):
 "I accept residual risk for the following low-priority gaps: [list]"
@@ -1842,7 +1854,7 @@ For each policy, document:
 ## Repository Assessment
 
 - [ ] Repository type and location documented
-- [ ] Organization and navigation assessed
+- [ ] Organisation and navigation assessed
 - [ ] Version control verified
 - [ ] Repository gaps documented in Sheet 7
 
@@ -1878,7 +1890,7 @@ For each policy, document:
 
 # Evidence Collection Guide
 
-## Evidence Organization
+## Evidence Organisation
 
 **Folder Structure**:
 ```
@@ -1905,7 +1917,7 @@ Evidence/A.5.1_Policy_Framework/
 │   ├── Training-Completion-Report.pdf
 │   └── ...
 ├── 06_Governance/
-│   ├── Organizational-Chart-2026.pdf
+│   ├── Organisational-Chart-2026.pdf
 │   ├── RACI-Matrix-Policies.xlsx
 │   ├── Approval-Authority-Matrix.pdf
 │   └── ...
@@ -1931,7 +1943,7 @@ Evidence/A.5.1_Policy_Framework/
 
 **Sheet 4 (Governance Assessment)**:
 
-- Organizational charts
+- Organisational charts
 - Role descriptions (policy owner responsibilities)
 - RACI matrices
 - Approval authority documentation
@@ -2035,7 +2047,7 @@ Evidence/A.5.1_Policy_Framework/
 
 Re-assess policy framework outside scheduled cycle if:
 
-- Major organizational change (restructure, acquisition, significant growth)
+- Major organisational change (restructure, acquisition, significant growth)
 - New regulations effective (requiring new policies)
 - Significant audit findings on policy framework
 - Executive management request
@@ -2052,14 +2064,13 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 - **ISMS-IMP-A.5.1-2-6.1-2.S2** (Roles & Responsibilities): Verifies security role definitions from policies
 - **ISMS-IMP-A.5.1-2-6.1-2.S3** (Screening & Vetting): Implements screening policies
 - **ISMS-IMP-A.5.1-2-6.1-2.S4** (Employment Contracts): Implements contract requirement policies
-- **ISMS-IMP-A.5.1-2-6.1-2.S5** (Governance Compliance Dashboard): Consolidates all .S assessments
 
 **Data Flow**:
 
 - Policy inventory (Sheet 2) feeds role definitions in .S2
 - Policy governance (Sheet 4) validates role accountability in .S2
 - Policy communication (Sheet 6) supports training verification in .S3 and .S4
-- All gaps flow to .S5 for consolidated dashboard
+- All gaps are tracked in the Summary Dashboard
 
 ---
 
@@ -2067,7 +2078,7 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A principle is not a principle until it costs you something."*
+— Bill Bernbach
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

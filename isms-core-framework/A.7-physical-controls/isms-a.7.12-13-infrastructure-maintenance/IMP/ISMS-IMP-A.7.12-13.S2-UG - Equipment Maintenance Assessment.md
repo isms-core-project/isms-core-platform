@@ -8,26 +8,55 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Equipment Maintenance Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.12-13.S2-UG |
+| **Related Policy** | ISMS-POL-A.7.12-13 (Infrastructure Maintenance) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.13 (Equipment Maintenance) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Equipment Maintenance - Maintenance Programme, Personnel, Security During Maintenance, Remote Maintenance, Records |
-| **Related Policy** | ISMS-POL-A.7.12-13, Section 2.2 (Equipment Maintenance) |
-| **Purpose** | Document equipment maintenance practices, assess compliance against policy requirements, and identify gaps |
-| **Target Audience** | IT Operations, Facilities Management, System Administrators, Vendor Managers, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major Maintenance Events |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Equipment Maintenance assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.12-13 (Infrastructure Maintenance)
+- ISMS-IMP-A.7.12-13.S1 (Cabling Security Assessment)
+- ISMS-IMP-A.7.12-13.S3 (Maintenance Schedule Tracking)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.12-13.S2-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Equipment Inventory | Catalogue all equipment requiring security maintenance |
+| 3 | Maintenance Programme | Document approved maintenance schedules and programmes |
+| 4 | Personnel & Vendors | Track authorised maintenance personnel and vendors |
+| 5 | Security During Maintenance | Assess security controls applied during maintenance activities |
+| 6 | Remote Maintenance | Evaluate remote maintenance access controls and monitoring |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -110,7 +139,6 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 | ISMS-IMP-A.7.12-13.S1 | Cabling Security | Cable protection and documentation |
 | **ISMS-IMP-A.7.12-13.S2** | **Equipment Maintenance** | **Maintenance practices and records** |
 | ISMS-IMP-A.7.12-13.S3 | Maintenance Schedule | Preventive maintenance planning and tracking |
-| ISMS-IMP-A.7.12-13.S4 | Compliance Dashboard | Consolidated view across cabling and maintenance |
 
 This assessment (A.7.12-13.S2) focuses specifically on Control A.7.13 (Equipment Maintenance). It complements assessments for A.7.12 (Cabling Security) and the detailed schedule tracking in S3.
 
@@ -207,7 +235,6 @@ This assessment has NO dependencies on other assessments - it can be completed i
 However, outputs from this assessment are INPUT to:
 
 - ISMS-IMP-A.7.12-13.S3 (Maintenance Schedule Tracking) - Detailed schedule compliance
-- ISMS-IMP-A.7.12-13.S4 (Compliance Dashboard) - Consolidated compliance view
 
 ---
 
@@ -792,7 +819,7 @@ However, outputs from this assessment are INPUT to:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"An ounce of prevention is worth a pound of cure."*
+— Benjamin Franklin
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

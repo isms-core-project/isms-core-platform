@@ -5,191 +5,155 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | NDA Execution and Tracking |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.6.2-TG |
-| **Title** | NDA Execution and Tracking |
-| **Control Reference** | ISO/IEC 27001:2022 A.6.6 |
-| **Control Name** | Confidentiality or Non-Disclosure Agreements |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.6.6 (Confidentiality Nda) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.6) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Information Security Manager |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.6.6.2-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.6 (Confidentiality Nda)
+- ISMS-IMP-A.6.6.1 (NDA Template Registry and Inventory)
+- ISMS-IMP-A.6.6.3 (NDA Review and Compliance)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a66_2_nda_execution_tracking.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.6.6.2` |
-| **Output Filename** | `ISMS-IMP-A.6.6.2_NDA_Execution_and_Tracking_YYYYMMDD.xlsx` |
-| **Workbook Title** | NDA Execution and Tracking |
-| **Total Sheets** | 8 (8 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Workbook
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Instructions
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a66_2_nda_execution_tracking.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Active_Ndas
+**Document ID:** `ISMS-IMP-A.6.6.2`
 
-**Data Rows:** 198 (rows 3–200) | **Frozen Panes:** A3
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Columns
+### Sheet Structure
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | NDA_ID | 14 |
-| B | Template_Ref | 14 |
-| C | NDA_Title | 35 |
-| D | Counterparty | 30 |
-| E | Counterparty_Type | 18 |
-| F | Execution_Date | 14 |
-| G | Effective_Date | 14 |
-| H | Expiration_Date | 14 |
-| I | Post_Term_Period | 16 |
-| J | Post_Term_Expiry | 16 |
-| K | Signatories_Count | 14 |
-| L | Storage_Location | 30 |
-| M | Status | 14 |
-| N | Notes | 30 |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Summary Dashboard |
 
----
+### Color Palette
 
-## Sheet 4: Signatory_Register
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-**Data Rows:** 498 (rows 3–500) | **Frozen Panes:** A3
+### Column Headers (All Sheets)
 
-### Columns
+| # | Column Header |
+|---|--------------|
+| 1 | NDA ID |
+| 2 | Template Ref |
+| 3 | NDA Title |
+| 4 | Counterparty |
+| 5 | Counterparty Type |
+| 6 | Execution Date |
+| 7 | Effective Date |
+| 8 | Expiration Date |
+| 9 | Post Term Period |
+| 10 | Post Term Expiry |
+| 11 | Signatories Count |
+| 12 | Storage Location |
+| 13 | Status |
+| 14 | Notes |
+| 15 | Signatory ID |
+| 16 | NDA Ref |
+| 17 | Signatory Name |
+| 18 | Signatory Type |
+| 19 | Organisation |
+| 20 | Role Title |
+| 21 | Email |
+| 22 | Signature Date |
+| 23 | Signature Method |
+| 24 | Termination Date |
+| 25 | Days Until Expiry |
+| 26 | Alert Status |
+| 27 | Renewal Required |
+| 28 | Renewal Owner |
+| 29 | Renewal Started |
+| 30 | Action Required |
+| 31 | Renewal ID |
+| 32 | Original NDA |
+| 33 | Original Expiry |
+| 34 | Renewal Initiated |
+| 35 | New Terms Required |
+| 36 | Legal Review |
+| 37 | Counterparty Agreed |
+| 38 | New NDA ID |
+| 39 | New Expiry |
+| 40 | Evidence ID |
+| 41 | Evidence Type |
+| 42 | Description |
+| 43 | Source / Location |
+| 44 | Collected By |
+| 45 | Collection Date |
+| 46 | Retention Date |
+| 47 | Assessment Area |
+| 48 | Total Items |
+| 49 | Compliant |
+| 50 | Partial |
+| 51 | Non-Compliant |
+| 52 | N/A |
+| 53 | Compliance % |
+| 54 | Category |
+| 55 | Finding |
+| 56 | Count |
+| 57 | Severity |
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Signatory_ID | 14 |
-| B | NDA_Ref | 14 |
-| C | Signatory_Name | 25 |
-| D | Signatory_Type | 18 |
-| E | Organisation | 25 |
-| F | Role_Title | 25 |
-| G | Email | 30 |
-| H | Signature_Date | 14 |
-| I | Signature_Method | 16 |
-| J | Termination_Date | 14 |
-| K | Status | 14 |
-| L | Notes | 30 |
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 5: Expiration_Monitor
+```
+Employee, Contractor, Consultant, Vendor, Supplier, Partner, Customer
+Board Member, Visitor, Other, Active, Expired, Terminated, Renewed, Superseded
+Vendor Rep, Partner Rep, Customer Rep, Witness, Authorised Signatory
+Wet Signature, Digital Signature, Electronic Signature, DocuSign, Adobe Sign
+Green (>90 days), Amber (30-90 days), Red (<30 days), Yes, No, Under Review
+Pending, Not Started, In Progress, Legal Review, Awaiting Signature, Completed
+Cancelled, Policy Document, Procedure, Record, Certificate, Report, Screenshot
+Log, Draft, Final, Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
-**Data Rows:** 98 (rows 3–100) | **Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | NDA_ID | 14 |
-| B | Counterparty | 30 |
-| C | Expiration_Date | 14 |
-| D | Days_Until_Expiry | 16 |
-| E | Alert_Status | 14 |
-| F | Renewal_Required | 14 |
-| G | Renewal_Owner | 20 |
-| H | Renewal_Started | 14 |
-| I | Action_Required | 30 |
-| J | Notes | 30 |
-
----
-
-## Sheet 6: Renewal_Tracking
-
-**Data Rows:** 98 (rows 3–100) | **Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Renewal_ID | 14 |
-| B | Original_NDA | 14 |
-| C | Counterparty | 25 |
-| D | Original_Expiry | 14 |
-| E | Renewal_Initiated | 14 |
-| F | New_Terms_Required | 16 |
-| G | Legal_Review | 14 |
-| H | Counterparty_Agreed | 16 |
-| I | New_NDA_ID | 14 |
-| J | New_Expiry | 14 |
-| K | Status | 14 |
-| L | Notes | 30 |
-
----
-
-## Sheet 7: Evidence_Register
-
-**Data Rows:** 98 (rows 3–100) | **Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence_ID | 14 |
-| B | NDA_Ref | 14 |
-| C | Evidence_Type | 22 |
-| D | Description | 40 |
-| E | Storage_Location | 35 |
-| F | Collected_Date | 14 |
-| G | Collected_By | 20 |
-| H | Retention_Until | 14 |
-
----
-
-## Sheet 8: Approval
-
-**Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Approval_Type | 25 |
-| B | Approver_Role | 25 |
-| C | Approver_Name | 25 |
-| D | Signature | 20 |
-| E | Date | 14 |
-| F | Comments | 35 |
+**Extracted:** 2 sheets, 57 columns, 53 validation values, 6 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 
@@ -198,4 +162,4 @@ This is the **Technical Specification**. The companion User Completion Guide is 
 
 *Where bamboo antennas actually work.* 🎋
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

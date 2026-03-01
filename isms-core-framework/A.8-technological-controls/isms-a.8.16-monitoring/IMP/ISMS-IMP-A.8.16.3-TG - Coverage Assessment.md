@@ -8,328 +8,215 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Coverage Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.16.3-TG |
+| **Related Policy** | ISMS-POL-A.8.16 (Monitoring) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.16 (Monitoring Activities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Monitoring Coverage (Assets, Networks, Users, Applications) |
-| **Related Policy** | ISMS-POL-A.8.16, Section 2.1.2 (Log Source Coverage), Section 2.1.3 (Coverage Assessment) |
-| **Purpose** | Assess completeness of monitoring coverage across all organizational assets, identify blind spots, and document remediation plans |
-| **Target Audience** | Asset Owners, IT Operations, Security Operations, Network Teams, Application Teams, Compliance Officers |
-| **Assessment Type** | Coverage Analysis & Gap Assessment |
-| **Review Cycle** | Quarterly or After Major Infrastructure Changes |
-| **Date** | 22.01.2026 |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Original] | Initial technical specification | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
----
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-# Appendix: Coverage Assessment Quick Reference
+**Related Documents**:
 
-
-> Auto-generated from `generate_a816_3_coverage_assessment.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.16.3` |
-| **Output Filename** | `ISMS-IMP-A.8.16.3_Coverage_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Coverage Assessment |
-| **Total Sheets** | 19 (19 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #808080 | 808080 | Gray (Disabled) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #F2F2F2 | F2F2F2 | Very Light Gray (Protected/Alternating) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
+- ISMS-POL-A.8.16 (Monitoring)
+- ISMS-IMP-A.8.16.1 (Monitoring Infrastructure Assessment)
+- ISMS-IMP-A.8.16.2 (Baseline & Detection Assessment)
+- ISMS-IMP-A.8.16.4 (Alert Management & Response Assessment)
 
 ---
 
-## Sheet 2: 1. Asset Coverage
+# Technical Specification
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 3: 2. Network Coverage
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a816_3_coverage_assessment.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 4: 3. User Identity Coverage
+**Document ID:** `ISMS-IMP-A.8.16.3`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 5: 4. Application Coverage
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | 1. Asset Coverage |
+| 3 | 2. Network Coverage |
+| 4 | 3. User Identity Coverage |
+| 5 | 4. Application Coverage |
+| 6 | 5. Gap Analysis |
+| 7 | Evidence Register |
+| 8 | Summary Dashboard |
+| 9 | Approval Sign-Off |
 
-## Sheet 6: 5. Gap Analysis
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 7: Summary Dashboard
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Asset ID |
+| 2 | Asset Name |
+| 3 | Asset Type |
+| 4 | Operating System |
+| 5 | Location |
+| 6 | Business Unit |
+| 7 | Asset Owner |
+| 8 | Data Classification |
+| 9 | Criticality |
+| 10 | Regulatory Scope |
+| 11 | Monitoring Required |
+| 12 | Currently Monitored |
+| 13 | Log Types Collected |
+| 14 | Monitoring Platform |
+| 15 | Baseline Established |
+| 16 | Detection Rules Active |
+| 17 | Last Log Verified |
+| 18 | Coverage Status |
+| 19 | Gap Reason |
+| 20 | Exception Approved |
+| 21 | Target Coverage Date |
+| 22 | Responsible Party |
+| 23 | Notes |
+| 24 | Network Segment/Zone |
+| 25 | Segment Type |
+| 26 | IP Range/CIDR |
+| 27 | VLAN ID |
+| 28 | Number of Assets |
+| 29 | Perimeter Monitoring |
+| 30 | Flow Monitoring |
+| 31 | DNS Monitoring |
+| 32 | Endpoint Monitoring |
+| 33 | Log Collection Active |
+| 34 | Network Tap/SPAN |
+| 35 | Isolation Status |
+| 36 | Gaps Identified |
+| 37 | Target Date |
+| 38 | Identity System |
+| 39 | System Type |
+| 40 | User Count |
+| 41 | Privileged Account Count |
+| 42 | Service Account Count |
+| 43 | Authentication Logs Collected |
+| 44 | Authorisation Logs Collected |
+| 45 | Password Change Logs |
+| 46 | Privilege Escalation Logs |
+| 47 | MFA Events Logged |
+| 48 | SSO Events Logged |
+| 49 | Failed Login Monitoring |
+| 50 | After-Hours Access Monitoring |
+| 51 | Geographic Anomaly Detection |
+| 52 | User Behaviour Analytics |
+| 53 | Privileged Access Monitoring |
+| 54 | Gaps/Issues |
+| 55 | Priority |
+| 56 | Application/Service Name |
+| 57 | Application Type |
+| 58 | Application Owner |
+| 59 | User Base |
+| 60 | Application Logs Collected |
+| 61 | API Logs Collected |
+| 62 | Database Logs Collected |
+| 63 | Error/Exception Logging |
+| 64 | Transaction Logging |
+| 65 | Access Control Logs |
+| 66 | Data Export Monitoring |
+| 67 | Performance Monitoring |
+| 68 | WAF Integration |
+| 69 | APM Integration |
+| 70 | Gaps |
+| 71 | Gap ID |
+| 72 | Gap Category |
+| 73 | Affected Asset/System |
+| 74 | Gap Description |
+| 75 | Business Impact |
+| 76 | Risk Level |
+| 77 | Root Cause |
+| 78 | Exception ID |
+| 79 | Compensating Controls |
+| 80 | Remediation Plan |
+| 81 | Remediation Owner |
+| 82 | Budget Required |
+| 83 | Status |
+| 84 | Status Date |
+| 85 | Verification Method |
+| 86 | Mandatory Monitoring Not Done |
+| 87 | Assessment Area |
+| 88 | Total Items |
+| 89 | Compliant |
+| 90 | Partial |
+| 91 | Non-Compliant |
+| 92 | N/A |
+| 93 | Compliance % |
+| 94 | Evidence ID |
+| 95 | Evidence Type |
+| 96 | Description |
+| 97 | Location/Path |
+| 98 | Date Collected |
+| 99 | Collected By |
+| 100 | Verification Status |
 
-## Sheet 8: Evidence Register
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 9: Approval Sign-Off
+```
+Yes, No, N/A, Partial, Server, Network Device, Security Device, Endpoint
+Cloud Resource, Database, Application, Container, IoT Device, Other
+Confidential, Internal, Public, Critical, High, Medium, Low, PCI-DSS, HIPAA
+GDPR, SOX, Multiple, None, Mandatory, Recommended, Optional
+\u2705 Full Coverage, \u26A0\uFE0F Partial Coverage, \u274C No Coverage
+Production, DMZ, Management, Guest, Partner, Development, Test, Cloud VPC
+Firewall, IDS/IPS, Both, Isolated, Semi-Isolated, Open, Active Directory
+Microsoft Entra ID (formerly Azure AD), LDAP, SAML IdP, OAuth Provider
+Database Auth, Application-Specific, Web Application, API, Microservice, SaaS
+Mobile App, Desktop App, Asset Not Monitored, Log Source Missing
+Network Segment Gap, User/Identity Gap, Application Gap, Detection Gap
+In Progress, Resolved, Deferred, Accepted, \u2705 Compliant
+\u26A0\uFE0F Partial, \u274C Non-Compliant, Yes (EDR), Planned, \u2705 Full
+\u274C None, Yes (UEBA), Yes (PAM integrated), Unknown, Pending
+Configuration file, Screenshot, Log Export, Documentation, Report
+Network scan, Audit log, Compliance report, Verified, Pending verification
+Not verified, Requires update, Approved, Approved with Conditions, Rejected
+```
 
----
-
-## Sheet 10: Instructions
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=IF(B8<>` |  |
-
----
-
-## Sheet 11: Asset_Coverage
-
-**Data Rows:** 43 (rows 8–50)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Asset ID | 15 |
-| B | Asset Name | 28 |
-| C | Asset Type | 22 |
-| D | Operating System | 22 |
-| E | Location | 18 |
-| F | Business Unit | 20 |
-| G | Asset Owner | 20 |
-| H | Data Classification | 18 |
-| I | Criticality | 15 |
-| J | Regulatory Scope | 22 |
-| K | Monitoring Required | 16 |
-| L | Currently Monitored | 16 |
-| M | Log Types Collected | 30 |
-| N | Monitoring Platform | 22 |
-| O | Baseline Established | 16 |
-| P | Detection Rules Active | 18 |
-| Q | Last Log Verified | 14 |
-| R | Coverage Status | 18 |
-| S | Gap Reason | 30 |
-| T | Exception Approved | 16 |
-| U | Target Coverage Date | 14 |
-| V | Responsible Party | 20 |
-| W | Notes | 25 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=COUNTIF(W55:W69,` |  |
-
----
-
-## Sheet 12: Network_Coverage
-
-**Data Rows:** 25 (rows 8–32)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Network Segment/Zone | 28 |
-| B | Segment Type | 22 |
-| C | IP Range/CIDR | 20 |
-| D | VLAN ID | 12 |
-| E | Number of Assets | 15 |
-| F | Criticality | 15 |
-| G | Data Classification | 18 |
-| H | Perimeter Monitoring | 18 |
-| I | Flow Monitoring | 16 |
-| J | DNS Monitoring | 16 |
-| K | Endpoint Monitoring | 18 |
-| L | Log Collection Active | 18 |
-| M | Network Tap/SPAN | 16 |
-| N | Isolation Status | 16 |
-| O | Coverage Status | 18 |
-| P | Gaps Identified | 30 |
-| Q | Exception Approved | 16 |
-| R | Target Date | 14 |
-| S | Responsible Party | 20 |
-| T | Notes | 25 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=COUNTIF(T37:T46,` |  |
-
----
-
-## Sheet 13: User_Identity_Coverage
-
-**Data Rows:** 19 (rows 1–19)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Identity System | 25 |
-| B | System Type | 22 |
-| C | User Count | 15 |
-| D | Privileged Account Count | 20 |
-| E | Service Account Count | 20 |
-| F | Authentication Logs Collected | 22 |
-| G | Authorization Logs Collected | 22 |
-| H | Password Change Logs | 20 |
-| I | Privilege Escalation Logs | 22 |
-| J | MFA Events Logged | 18 |
-| K | SSO Events Logged | 18 |
-| L | Failed Login Monitoring | 20 |
-| M | After-Hours Access Monitoring | 22 |
-| N | Geographic Anomaly Detection | 22 |
-| O | User Behavior Analytics | 22 |
-| P | Privileged Access Monitoring | 22 |
-| Q | Coverage Status | 18 |
-| R | Gaps/Issues | 30 |
-| S | Priority | 16 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=COUNTIF(S27:S41,` |  |
-
----
-
-## Sheet 14: Application_Coverage
-
-**Data Rows:** 25 (rows 8–32)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Application/Service Name | 28 |
-| B | Application Type | 22 |
-| C | Business Unit | 20 |
-| D | Application Owner | 20 |
-| E | Data Classification | 18 |
-| F | Criticality | 15 |
-| G | User Base | 18 |
-| H | Application Logs Collected | 22 |
-| I | API Logs Collected | 18 |
-| J | Database Logs Collected | 22 |
-| K | Error/Exception Logging | 20 |
-| L | Transaction Logging | 18 |
-| M | Access Control Logs | 20 |
-| N | Data Export Monitoring | 20 |
-| O | Performance Monitoring | 20 |
-| P | WAF Integration | 16 |
-| Q | APM Integration | 16 |
-| R | Coverage Status | 18 |
-| S | Gaps | 30 |
-| T | Target Date | 14 |
-| U | Priority | 16 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=COUNTIF(U37:U51,` |  |
-
----
-
-## Sheet 15: Gap_Analysis
-
-**Data Rows:** 40 (rows 8–47)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Gap ID | 12 |
-| B | Gap Category | 22 |
-| C | Affected Asset/System | 28 |
-| D | Gap Description | 35 |
-| E | Business Impact | 30 |
-| F | Risk Level | 15 |
-| G | Root Cause | 30 |
-| H | Exception Approved | 16 |
-| I | Exception ID | 15 |
-| J | Compensating Controls | 30 |
-| K | Remediation Plan | 35 |
-| L | Remediation Owner | 20 |
-| M | Target Date | 14 |
-| N | Budget Required | 15 |
-| O | Status | 18 |
-| P | Status Date | 14 |
-| Q | Verification Method | 25 |
-| R | Notes | 30 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(B8:B47)` | Total Gaps Identified |
-| — | `=COUNTIF(F8:F47,` | Critical Gaps |
-| — | `=COUNTIF(O8:O47,` | Open Gaps |
-| — | `=SUMPRODUCT((O8:O47<>` | Overdue (Past Target Date) |
-| BN | `=COUNTIF(R64:R78,` |  |
-
----
-
-## Sheet 16: Summary_Dashboard
-
-**Data Rows:** 43 (rows 8–50)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(` | Total Assets in Inventory |
-| — | `=COUNTIF(` | Assets Monitored |
-| — | `=IF(B6>0,ROUND(B7/B6*100,1)&\` | % Asset Coverage |
-| — | `=COUNTIFS(` | Critical Assets - 100% Monitored |
-| — | `=IF(COUNTIF(` | High Assets - % Monitored |
-| GN | `=IF(F{row}>0,ROUND(B{row}/(F{row}-E{row})*100,1)&` |  |
-| HN | `=IF(G{row}=` |  |
-| BN | `=SUM(B22:B26)` |  |
-| CN | `=SUM(C22:C26)` |  |
-| DN | `=SUM(D22:D26)` |  |
-| EN | `=SUM(E22:E26)` |  |
-| FN | `=SUM(F22:F26)` |  |
-
----
-
-## Sheet 17: Base_Validations
-
----
-
-## Sheet 18: Evidence_Register
-
----
-
-## Sheet 19: Approval_Signoff
+**Extracted:** 9 sheets, 100 columns, 96 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

@@ -8,26 +8,58 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Filtering Infrastructure Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.23.1-UG |
+| **Related Policy** | ISMS-POL-A.8.23 (Web Filtering) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.23 (Web Filtering) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Web Filtering Infrastructure & Technology Capabilities |
-| **Related Policy** | ISMS-POL-A.8.23, Section 2.1 (Threat Protection Requirements), ISMS-POL-A.8.23, Section 2.2 (Category Filtering Approach) |
-| **Purpose** | Document deployed web filtering technologies, assess capabilities against policy requirements, and identify gaps in a vendor-agnostic manner |
-| **Target Audience** | Security Engineers, Network Engineers, IT Operations, System Administrators, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Web Filtering assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.23 (Web Filtering)
+- ISMS-IMP-A.8.23.2 (Network Coverage Assessment)
+- ISMS-IMP-A.8.23.3 (Policy Configuration Assessment)
+- ISMS-IMP-A.8.23.4 (Monitoring & Response Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.8.23.1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Solution Details Template | Document web filtering solution details and configuration |
+| 3 | Technology Comparison | Compare web filtering technology options |
+| 4 | Capability Requirements | Define and assess capability requirements |
+| 5 | Integration Architecture | Document integration architecture |
+| 6 | Licensing Support | Track licensing and support arrangements |
+| 7 | Performance Metrics | Monitor web filtering performance metrics |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Gap Analysis | Identify infrastructure capability gaps |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -72,7 +104,6 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 | ISMS-IMP-A.8.23.2     | Network Coverage       | WHERE those solutions are deployed |
 | ISMS-IMP-A.8.23.3     | Policy Configuration   | HOW those solutions are configured |
 | ISMS-IMP-A.8.23.4     | Monitoring & Response  | HOW you monitor and respond        |
-| ISMS-IMP-A.8.23.5     | Compliance Dashboard   | Consolidated view across all       |
 
 This assessment (A.8.23.1) MUST be completed first - you can't assess coverage, configuration, or monitoring until you know what technology you have!
 
@@ -165,7 +196,6 @@ However, outputs from this assessment are INPUT to:
 - A.8.23.2 (Network Coverage) - Needs solution list from Sheet 1
 - A.8.23.3 (Policy Configuration) - Needs capability data from Sheets 3-6
 - A.8.23.4 (Monitoring & Response) - Needs logging capabilities from Sheet 3
-- A.8.23.5 (Compliance Dashboard) - Consolidates all data
 
 ---
 
@@ -366,7 +396,7 @@ For each solution in Sheet 1:
 - ✓ Performance data is recent
 - ✓ Incidents are comprehensive
 - ✓ Uptime calculations are accurate
-- ✓ Trends are analyzed
+- ✓ Trends are analysed
 
 #### Phase 8: Evidence Registry (1 hour)
 
@@ -442,7 +472,7 @@ For each solution in Sheet 1:
    - Allocate resources
    - Final approval
 
-**Deliverable:** Approved assessment ready for compliance dashboard
+**Deliverable:** Approved assessment ready for management review
 
 **Quality Check:**
 
@@ -511,7 +541,7 @@ Ask these questions:
 
 | Field | How to Complete |
 |-------|-----------------|
-| **Solution Name** | What YOUR organization calls it (e.g., "Corporate Perimeter Filter", "Endpoint Protection Suite") |
+| **Solution Name** | What YOUR organisation calls it (e.g., "Corporate Perimeter Filter", "Endpoint Protection Suite") |
 | **Vendor/Provider** | Exact vendor name (Fortigate, Sophos, Zscaler, Cisco, etc.) |
 | **Product Name** | Specific product (Fortigate FortiGate 1000D, Zscaler Internet Access, etc.) |
 | **Version** | Exact version from admin console |
@@ -1582,7 +1612,7 @@ For each solution:
 
 **Analysis:**
 
-- What's analyzed? (file behavior, network connections, registry changes)
+- What's analysed? (file behavior, network connections, registry changes)
 - Analysis depth (quick scan vs. deep analysis)?
 - Analysis time (seconds, minutes)?
 - Verdict reliability?
@@ -1837,7 +1867,7 @@ For each solution, document:
 
 **Step 6: Integration with Procurement**
 
-If your organization uses procurement/asset management systems:
+If your organisation uses procurement/asset management systems:
 
 - Is licensing data in that system?
 - Is this assessment synced with that data?
@@ -2311,7 +2341,7 @@ Track trends over time (monthly):
 - [ ] All incidents (last 90 days) documented
 - [ ] MTTD and MTTR calculated
 - [ ] Recurring issues identified
-- [ ] Performance trends analyzed
+- [ ] Performance trends analysed
 - [ ] Evidence collected (reports, tickets)
 - [ ] Capacity concerns flagged
 
@@ -2467,7 +2497,7 @@ Organize evidence by these categories:
 #### Quality Checklist
 
 - [ ] All evidence collected throughout assessment
-- [ ] Evidence organized in clear folder structure
+- [ ] Evidence organised in clear folder structure
 - [ ] Every piece of evidence registered in this sheet
 - [ ] Evidence IDs unique and traceable
 - [ ] Sensitive data sanitized
@@ -2496,7 +2526,7 @@ Organize evidence by these categories:
 - Use timestamps in screenshots when possible
 - Evidence >90 days old may not be accepted by auditors
 
-**Organization:**
+**Organisation:**
 
 - Use consistent naming conventions
 - Group by sheet/requirement
@@ -2586,7 +2616,7 @@ Organize evidence by these categories:
 - Problem: Sensitive data exposed in evidence
 - Solution: Re-capture with sanitization, or redact before sharing
 
-**Gap 5: Evidence not organized**
+**Gap 5: Evidence not organised**
 
 - Problem: Random files in random folders
 - Solution: Organize per Sheet 10, create clear structure
@@ -2872,7 +2902,7 @@ Before submitting assessment for review, verify:
 - [ ] Evidence collected for all "Compliant" ratings
 - [ ] Critical capabilities have supporting evidence
 - [ ] All evidence sanitized (no passwords, internal IPs)
-- [ ] Evidence organized and indexed (Sheet 10)
+- [ ] Evidence organised and indexed (Sheet 10)
 - [ ] Evidence is audit-ready quality
 
 ### Remediation
@@ -3032,11 +3062,6 @@ This assessment (A.8.23.1) is now complete. Use the data collected here as INPUT
 - Use logging capabilities (Sheet 5) to assess what can be monitored
 - Use SIEM integration details to understand log flows
 
-**A.8.23.5 - Compliance Dashboard:**
-
-- This assessment's data feeds into the consolidated compliance view
-- Gap analysis from Sheet 8 is a key input
-
 ### Execute Remediation Plans
 
 From Sheet 8 (Gap Analysis):
@@ -3096,7 +3121,7 @@ Use this assessment to drive improvements:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Not all web traffic is created equal; filter accordingly."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

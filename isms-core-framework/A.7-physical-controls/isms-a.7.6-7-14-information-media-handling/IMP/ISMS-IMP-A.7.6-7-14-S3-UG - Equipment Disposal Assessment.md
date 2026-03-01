@@ -8,26 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Equipment Disposal Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.6-7-14-S3-UG |
+| **Related Policy** | ISMS-POL-A.7.6-7-14-S3 (Information Media Handling) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.14 (Secure Disposal or Re-Use of Equipment) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Secure Disposal and Re-Use of Equipment - Data Sanitisation and Destruction |
-| **Related Policy** | ISMS-POL-A.7.6-7-14, Section 2.3 (Secure Disposal or Re-Use of Equipment) |
-| **Purpose** | Document disposal procedures, assess data sanitisation practices, track disposal records and certificates |
-| **Target Audience** | IT Operations, Asset Management, Procurement, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Procedural |
-| **Review Cycle** | Semi-Annual or After Major Disposal Events |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Equipment Disposal assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.6-7-14-S3 (Information Media Handling)
+- ISMS-IMP-A.7.6-7-14-S1 (Secure Areas Working Assessment)
+- ISMS-IMP-A.7.6-7-14-S2 (Clear Desk Screen Compliance)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.6-7-14-S3-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Disposal Requirements | Define approved disposal methods by equipment type |
+| 3 | Disposal Tools | Assess data destruction tools and their effectiveness |
+| 4 | Service Providers | Manage approved third-party disposal vendors |
+| 5 | Disposal Log | Record all equipment disposal activities and certificates |
+| 6 | Evidence Register | Store and reference evidence supporting assessments |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -97,7 +125,7 @@ This assessment covers the ENTIRE equipment lifecycle end-point - from identific
 | ISMS-IMP-A.7.6-7-14-S1 | Secure Areas Working | Equipment storage in secure areas before disposal |
 | ISMS-IMP-A.7.6-7-14-S2 | Clear Desk/Screen Compliance | Removable media handling links to disposal |
 | **ISMS-IMP-A.7.6-7-14-S3** | **Equipment Disposal Assessment** | **HOW equipment is securely disposed of or re-used** |
-| ISMS-IMP-A.7.6-7-14-S4 | Compliance Dashboard | Consolidated disposal compliance metrics |
+
 
 #### Related Controls
 
@@ -662,7 +690,7 @@ This assessment should be conducted after:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Disposing of equipment without disposing of its data is not disposal at all."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

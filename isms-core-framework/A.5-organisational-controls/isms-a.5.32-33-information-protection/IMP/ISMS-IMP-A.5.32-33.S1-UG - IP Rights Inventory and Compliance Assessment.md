@@ -3,24 +3,38 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.32: Intellectual Property Rights
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | IP Rights Inventory and Compliance Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.32-33.S1-UG |
+| **Related Policy** | ISMS-POL-A.5.32-33 (Information Protection) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.32 (Intellectual Property Rights) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Intellectual Property Identification, Classification, Protection, and Compliance |
-| **Related Policy** | ISMS-POL-A.5.32-33, Section 2.1 (IP Identification and Classification) |
-| **Purpose** | Guide users through systematic IP discovery, classification, protection assessment, and third-party IP compliance verification |
-| **Target Audience** | Legal Counsel, CISO, IP Owners, System Owners, IT Teams, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Annual or After Significant IP Changes |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for IP Rights Inventory assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.32-33 (Information Protection)
+- ISMS-IMP-A.5.32-33.S2 (Records Protection Assessment)
+- ISMS-IMP-A.5.32-33.S3 (Retention and Disposal Schedule Assessment)
 
 ---
 
@@ -31,6 +45,24 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 **Audience:** Legal Counsel, CISO, IP Owners, System Owners, IT Teams, Compliance Officers
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 9 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **IP Asset Inventory** | Inventory of all intellectual property assets owned or used by the organisation |
+| **IP Protection Assessment** | Assessment of controls protecting identified IP assets |
+| **Third-Party IP Register** | Register of third-party IP used under licence or agreement |
+| **Software License Compliance** | Tracking of software licences and compliance status |
+| **Gap Analysis** | Identified gaps in IP rights management and compliance |
+| **Evidence Register** | Evidence collected to support IP rights compliance |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -83,7 +115,6 @@ This assessment is **organisation-specific and technology-independent**. You doc
 | **ISMS-IMP-A.5.32-33.S1** | **IP Rights Inventory** | **Foundation - WHAT IP exists** |
 | ISMS-IMP-A.5.32-33.S2 | Records Protection | Requires IP classification for records containing IP |
 | ISMS-IMP-A.5.32-33.S3 | Retention & Disposal | Requires IP inventory for retention requirements |
-| ISMS-IMP-A.5.32-33.S4 | Compliance Dashboard | Aggregates metrics from all assessments |
 
 **Context Note:** This assessment (A.5.32-33.1) should be completed first - it provides the foundational IP inventory that informs records protection and retention decisions.
 
@@ -125,7 +156,7 @@ Upon completion, you will have:
 6. **Legal Protection Status** - Patents, trademarks, copyrights documented
 7. **Gap Analysis** - Identified protection gaps with remediation plans
 8. **Evidence Register** - Supporting documentation linked to audit artefacts
-9. **Compliance Dashboard** - Executive summary with metrics
+9. **Summary Dashboard** - Executive summary with metrics
 10. **Approved Assessment** - Legal Counsel and CISO sign-offs
 
 ---
@@ -840,7 +871,7 @@ Assessment approved when:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Intellectual property is the cornerstone of the knowledge economy."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

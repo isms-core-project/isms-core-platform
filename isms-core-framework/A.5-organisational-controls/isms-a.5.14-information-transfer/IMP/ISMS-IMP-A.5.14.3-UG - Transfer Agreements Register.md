@@ -5,25 +5,53 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Transfer Agreements Register |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.14.3-UG |
-| **Document Type** | Implementation Guide |
-| **Parent Policy** | ISMS-POL-A.5.14 (Information Transfer) |
-| **Control Reference** | ISO/IEC 27001:2022 Control A.5.14 |
+| **Related Policy** | ISMS-POL-A.5.14 (Information Transfer) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.14) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
 | **Classification** | Internal |
-| **Owner** | Information Security Officer |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
-**Related Documents:**
-- ISMS-POL-A.5.14 (Information Transfer Policy)
-- ISMS-POL-A.6.6 (Confidentiality and Non-Disclosure Agreements)
-- ISMS-POL-A.5.19-23 (Supplier Relationships)
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.14 (Information Transfer)
 - ISMS-IMP-A.5.14.1 (Transfer Rules and Procedures)
-- Legal/Procurement Contract Templates
+- ISMS-IMP-A.5.14.2 (Channel Security Assessment)
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 8 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Agreement Register** | Master register of all information transfer agreements with third parties |
+| **Agreement Requirements** | Required clauses and security requirements for transfer agreements |
+| **Third Party Assessment** | Security assessment of third-party counterparties |
+| **Review Schedule** | Schedule for periodic review and renewal of agreements |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -55,7 +83,7 @@ Maintaining this register delivers:
 
 > *ISO/IEC 27001:2022 Annex A.5.14 — Information Transfer*
 >
-> "Information transfer rules, procedures, or agreements should be in place for all types of transfer facilities within the organization and between the organization and other parties."
+> "Information transfer rules, procedures, or agreements should be in place for all types of transfer facilities within the organisation and between the organisation and other parties."
 
 This register specifically addresses the "agreements" component for transfers with external parties.
 
@@ -431,7 +459,7 @@ Before submitting the register, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The devil is in the details."*
+— Gustave Flaubert
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

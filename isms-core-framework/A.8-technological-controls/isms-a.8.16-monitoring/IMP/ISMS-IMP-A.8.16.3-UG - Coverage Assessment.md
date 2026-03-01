@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Coverage Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.16.3-UG |
+| **Related Policy** | ISMS-POL-A.8.16 (Monitoring) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.16 (Monitoring Activities) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Monitoring Coverage (Assets, Networks, Users, Applications) |
-| **Related Policy** | ISMS-POL-A.8.16, Section 2.1.2 (Log Source Coverage), Section 2.1.3 (Coverage Assessment) |
-| **Purpose** | Assess completeness of monitoring coverage across all organizational assets, identify blind spots, and document remediation plans |
-| **Target Audience** | Asset Owners, IT Operations, Security Operations, Network Teams, Application Teams, Compliance Officers |
-| **Assessment Type** | Coverage Analysis & Gap Assessment |
-| **Review Cycle** | Quarterly or After Major Infrastructure Changes |
-| **Date** | 22.01.2026 |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Original] | Initial technical specification | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.16 (Monitoring)
+- ISMS-IMP-A.8.16.1 (Monitoring Infrastructure Assessment)
+- ISMS-IMP-A.8.16.2 (Baseline & Detection Assessment)
+- ISMS-IMP-A.8.16.4 (Alert Management & Response Assessment)
+
+---
 
 ### Document Structure
 
@@ -44,13 +58,29 @@ Cross-references between assessments are critical for accurate coverage analysis
 
 ---
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | 1. Asset Coverage | Assess monitoring coverage across assets |
+| 3 | 2. Network Coverage | Assess monitoring coverage across network segments |
+| 4 | 3. User Identity Coverage | Assess monitoring coverage for user and identity activity |
+| 5 | 4. Application Coverage | Assess monitoring coverage for applications |
+| 6 | 5. Gap Analysis | Identify monitoring coverage gaps and blind spots |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
+
+---
+
 # EXECUTIVE SUMMARY
 
 ## What This Assessment Does
 
 **ISMS-IMP-A.8.16.3** assesses monitoring COVERAGE - answering the critical question: **"What are we monitoring vs. what SHOULD we be monitoring?"**
 
-This assessment maps your entire organization's attack surface and verifies monitoring coverage:
+This assessment maps your entire organisation's attack surface and verifies monitoring coverage:
 
 **Key Questions Answered:**
 1. **Asset Coverage:** Are all assets inventoried and appropriately monitored?
@@ -62,7 +92,7 @@ This assessment maps your entire organization's attack surface and verifies moni
 ## Why This Assessment Matters
 
 **The Coverage Problem:**
-Most organizations believe they have comprehensive monitoring, but in reality:
+Most organisations believe they have comprehensive monitoring, but in reality:
 
 - Only 40-60% of critical assets are actually monitored
 - Network blind spots exist (legacy VLANs, guest networks, OT/IoT)
@@ -95,7 +125,6 @@ This assessment provides that evidence.
 | ISMS-IMP-A.8.16.2 | Baselines & Detection | Provides baseline/detection status → A.8.16.3 validates coverage is complete |
 | **ISMS-IMP-A.8.16.3** | **Coverage** | **WHERE monitoring deployed** (THIS ASSESSMENT) |
 | ISMS-IMP-A.8.16.4 | Alert Management | Uses coverage data to understand alert context |
-| ISMS-IMP-A.8.16.5 | Compliance Dashboard | Consolidates coverage metrics for reporting |
 
 **Dependency Chain:**
 ```
@@ -113,7 +142,7 @@ A.8.16.3 (Coverage) → A.8.16.4 (Alert Management)
 
 ### For Asset Owners & IT Operations:
 
-**You are the SOURCE OF TRUTH** for what exists in the organization.
+**You are the SOURCE OF TRUTH** for what exists in the organisation.
 
 **Your Role:**
 
@@ -182,7 +211,7 @@ This assessment provides:
 
 **Assessment Name:** ISMS-IMP-A.8.16.3 - Coverage Assessment
 
-This assessment documents WHERE monitoring is deployed across your organization's entire attack surface.
+This assessment documents WHERE monitoring is deployed across your organisation's entire attack surface.
 
 **Core Purpose:**
 Prevent blind spots by systematically mapping monitoring coverage against your complete asset inventory, network topology, identity systems, and application portfolio.
@@ -191,7 +220,7 @@ Prevent blind spots by systematically mapping monitoring coverage against your c
 
 **IN SCOPE:**
 
-- All organizational assets (on-premises, cloud, hybrid)
+- All organisational assets (on-premises, cloud, hybrid)
 - All network segments and security zones
 - All user accounts and service accounts
 - All applications (commercial, custom, SaaS)
@@ -220,7 +249,7 @@ An asset/network/user/application is EITHER monitored OR NOT monitored. There is
 
 ### Sheet 2: Asset Inventory & Coverage
 
-- Complete organizational asset inventory
+- Complete organisational asset inventory
 - Asset criticality, data classification, regulatory scope
 - Current monitoring status per asset
 - Coverage gaps and remediation plans
@@ -471,7 +500,7 @@ Before starting this assessment, you MUST have:
 
 **Deliverables:**
 
-- Consolidated asset inventory (Excel/CSV)
+- Unified asset inventory (Excel/CSV)
 - SIEM data source list
 - Network topology maps
 - Identity account lists
@@ -592,7 +621,7 @@ Before starting this assessment, you MUST have:
 
 - Assessment Date (DD.MM.YYYY)
 - Completed By (your name and role)
-- Organization name
+- Organisation name
 - Review cycle (typically Quarterly for coverage assessment)
 - Next Review Date (auto-calculated: Assessment Date + 90 days)
 
@@ -609,7 +638,7 @@ Before starting this assessment, you MUST have:
 
 ## Sheet 2: Asset Inventory & Monitoring Coverage
 
-**Purpose:** Document EVERY organizational asset and its monitoring coverage status
+**Purpose:** Document EVERY organisational asset and its monitoring coverage status
 
 **Policy Reference:** ISMS-POL-A.8.16, Section 2.1.2 (Log Source Coverage)
 
@@ -757,7 +786,7 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
 
 - **What to Enter:** Count of detection rules monitoring this asset
 - **How to Find:** Check A.8.16.2, Sheet 5 - count rules where this asset is in scope
-- **Example:** `5 rules` (failed login, CPU spike, unauthorized access, process anomaly, network anomaly)
+- **Example:** `5 rules` (failed login, CPU spike, unauthorised access, process anomaly, network anomaly)
 
 **Column Q: Last Log Verified (DD.MM.YYYY)**
 
@@ -1791,7 +1820,7 @@ Not all gaps are equal:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Blind spots in monitoring are open doors to attackers."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

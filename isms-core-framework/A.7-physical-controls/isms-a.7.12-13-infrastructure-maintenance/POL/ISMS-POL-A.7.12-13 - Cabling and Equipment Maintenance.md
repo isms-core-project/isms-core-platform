@@ -43,7 +43,6 @@
 - ISMS-IMP-A.7.12-13.S1-UG/TG (Cabling Security Assessment)
 - ISMS-IMP-A.7.12-13.S2-UG/TG (Equipment Maintenance Assessment)
 - ISMS-IMP-A.7.12-13.S3-UG/TG (Maintenance Schedule Tracking)
-- ISMS-IMP-A.7.12-13.S4-UG/TG (Infrastructure Compliance Dashboard)
 - ISO/IEC 27001:2022 Controls A.7.12, A.7.13
 
 ---
@@ -499,4 +498,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for cabling security and equipment maintenance. Implementation procedures are documented in ISMS-IMP-A.7.12-13 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

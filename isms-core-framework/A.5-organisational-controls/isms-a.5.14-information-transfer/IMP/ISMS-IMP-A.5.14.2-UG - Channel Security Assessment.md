@@ -5,25 +5,54 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Channel Security Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.14.2-UG |
-| **Document Type** | Implementation Guide |
-| **Parent Policy** | ISMS-POL-A.5.14 (Information Transfer) |
-| **Control Reference** | ISO/IEC 27001:2022 Control A.5.14 |
+| **Related Policy** | ISMS-POL-A.5.14 (Information Transfer) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.14) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
 | **Classification** | Internal |
-| **Owner** | Information Security Officer |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
-**Related Documents:**
-- ISMS-POL-A.5.14 (Information Transfer Policy)
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.14 (Information Transfer)
 - ISMS-IMP-A.5.14.1 (Transfer Rules and Procedures)
-- ISMS-IMP-A.5.14.4 (Compliance Monitoring Dashboard)
-- ISMS-POL-A.8.24 (Use of Cryptography)
-- ISMS-POL-A.8.12 (Data Leakage Prevention)
+- ISMS-IMP-A.5.14.3 (Transfer Agreements Register)
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 9 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Email Assessment** | Security controls assessment for email transfer channels |
+| **Cloud Services** | Security assessment of cloud-based information transfer services |
+| **File Transfer** | Security controls for file transfer protocols and platforms |
+| **Physical Channels** | Security assessment of physical information transfer channels |
+| **Risk Assessment** | Risk assessment of identified channel security gaps |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -55,7 +84,7 @@ Completing this assessment delivers:
 
 > *ISO/IEC 27001:2022 Annex A.5.14 — Information Transfer*
 >
-> "Information transfer rules, procedures, or agreements should be in place for all types of transfer facilities within the organization and between the organization and other parties."
+> "Information transfer rules, procedures, or agreements should be in place for all types of transfer facilities within the organisation and between the organisation and other parties."
 
 The Channel Security Assessment verifies that transfer facilities meet the rules and procedures established in A.5.14.1.
 
@@ -463,7 +492,7 @@ Before submitting the assessment, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A chain is only as strong as its weakest link."*
+— Thomas Reid
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

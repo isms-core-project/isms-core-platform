@@ -38,7 +38,6 @@ Configuration management team, system administrators, IT operations, security en
 - ISMS-IMP-A.8.9.2: Change Control Assessment
 - ISMS-IMP-A.8.9.3: Configuration Monitoring Assessment
 - ISMS-IMP-A.8.9.4: Security Hardening Assessment
-- ISMS-IMP-A.8.9.5: Compliance Dashboard
 
 ---
 
@@ -52,13 +51,13 @@ Configuration management team, system administrators, IT operations, security en
 
 **ALL BINDING REQUIREMENTS ARE DEFINED IN ISMS-POL-A.8.9.**
 
-**This is technical reference and operational guidance for evidence collection, organization, and audit preparation only.**
+**This is technical reference and operational guidance for evidence collection, organisation, and audit preparation only.**
 
-**Purpose**: Provide practical guidance for organizing evidence to demonstrate Control A.8.9 compliance during ISO 27001:2022 audits. This document supplements ISMS-POL-A.8.9 and ISMS-IMP-A.8.9.1-5 but does NOT replace policy requirements.
+**Purpose**: Provide practical guidance for organising evidence to demonstrate Control A.8.9 compliance during ISO 27001:2022 audits. This document supplements ISMS-POL-A.8.9 and ISMS-IMP-A.8.9.1-5 but does NOT replace policy requirements.
 
 **Audience**: Evidence custodians, audit coordinators, configuration managers responsible for preparing audit evidence packages.
 
-**Usage**: Reference for establishing evidence repository structure, naming conventions, retention policies, and audit preparation workflows. Organizations customize this content to their specific document management systems and audit requirements.
+**Usage**: Reference for establishing evidence repository structure, naming conventions, retention policies, and audit preparation workflows. Organisations customize this content to their specific document management systems and audit requirements.
 
 **Updates**: This document may be updated more frequently than ISMS policies to reflect evolving audit practices, document management tools, and compliance requirements. Updates do not require executive approval but must be communicated to affected personnel.
 
@@ -66,9 +65,9 @@ Configuration management team, system administrators, IT operations, security en
 
 ## Overview
 
-This guide defines the standardized evidence repository structure for ISO 27001:2022 Control A.8.9 (Configuration Management). Proper evidence organization enables efficient audits, demonstrates control effectiveness, and supports compliance verification.
+This guide defines the standardized evidence repository structure for ISO 27001:2022 Control A.8.9 (Configuration Management). Proper evidence organisation enables efficient audits, demonstrates control effectiveness, and supports compliance verification.
 
-**Repository Location**: [Organization to define - e.g., SharePoint/Network Drive/Document Management System]
+**Repository Location**: [Organisation to define - e.g., SharePoint/Network Drive/Document Management System]
 
 **Access Control**: Evidence repository SHALL be access-controlled with read access for auditors and compliance officers, write access restricted to Configuration Management team.
 
@@ -112,7 +111,7 @@ Contains complete asset inventory demonstrating scope of baseline coverage.
 **Evidence Purpose**: Demonstrates complete asset inventory exists and baseline coverage targets are measurable.
 
 #### 2. Baseline-Documentation/
-Contains approved baseline configurations organized by asset type.
+Contains approved baseline configurations organised by asset type.
 
 **Sub-directories**:
 
@@ -197,7 +196,7 @@ Contains formal approvals for baselines.
 - `Email-Approval-BL-WIN2022-DC-v2.1.pdf` - Email approval chains
 - `CISO-Approval-Baseline-Security-Standards.pdf` - Executive approval
 
-**Evidence Purpose**: Demonstrates baselines have proper authorization and governance oversight.
+**Evidence Purpose**: Demonstrates baselines have proper authorisation and governance oversight.
 
 #### 5. Configuration-Snapshots/
 Contains actual configuration exports demonstrating baseline compliance.
@@ -534,7 +533,7 @@ Contains improvement initiatives and lessons learned.
 
 - Assessment workbooks: `Baseline-Assessment-20240315.xlsx`
 - Change requests: `CR-2024-042-Firewall-Rule-Update.pdf`
-- Drift incidents: `DRIFT-2024-018-Unauthorized-Service-Start.pdf`
+- Drift incidents: `DRIFT-2024-018-Unauthorised-Service-Start.pdf`
 - Exceptions: `HARD-EX-2024-005-Legacy-App-Exception.pdf`
 - CAB minutes: `CAB-Meeting-Minutes-20240315.pdf`
 
@@ -636,7 +635,7 @@ Before filing evidence, verify:
 
 ## Appendix: Evidence Template Downloads
 
-[Organization should provide templates for]:
+[Organisation should provide templates for]:
 
 - Change Request Form (CR-Template.docx)
 - Deviation Request Form (DEV-Template.docx)
@@ -644,7 +643,7 @@ Before filing evidence, verify:
 - Risk Assessment Template (Risk-Assessment-Template.xlsx)
 - CAB Meeting Minutes Template (CAB-Minutes-Template.docx)
 
-**Template Location**: [Organization to define - e.g., SharePoint/Intranet]
+**Template Location**: [Organisation to define - e.g., SharePoint/Intranet]
 
 ---
 

@@ -53,7 +53,7 @@
 
 This section defines requirements for managing information security risks within the ICT supply chain, including sub-suppliers, component providers, and software dependencies. It addresses the "supplier's supplier" problem and supply chain attack vectors.
 
-**Critical Principle - "Trust Cascades Through the Chain"**: Your suppliers' security posture depends on their suppliers, who depend on their suppliers. SolarWinds, Log4Shell, and MOVEit breaches demonstrate supply chain compromise as a force multiplier - one backdoor in a widely-used component grants attackers access to thousands of downstream organizations. This policy requires systematic visibility, security requirement propagation, and continuous monitoring throughout multi-tier ICT supply chains.
+**Critical Principle - "Trust Cascades Through the Chain"**: Your suppliers' security posture depends on their suppliers, who depend on their suppliers. SolarWinds, Log4Shell, and MOVEit breaches demonstrate supply chain compromise as a force multiplier - one backdoor in a widely-used component grants attackers access to thousands of downstream organisations. This policy requires systematic visibility, security requirement propagation, and continuous monitoring throughout multi-tier ICT supply chains.
 
 **ISO/IEC 27001:2022 Control A.5.21 - Managing Information Security in the ICT Supply Chain**
 
@@ -93,7 +93,7 @@ This section defines requirements for managing information security risks within
 |---------------|-------------|--------|
 | **Compromise risk** | Malicious code or backdoors inserted into supply chain | Data breach, system compromise, espionage |
 | **Availability risk** | Supply chain disruption or single point of failure | Service outage, business disruption, delivery delays |
-| **Integrity risk** | Unauthorized modifications to components or services | Data corruption, system instability, compliance violations |
+| **Integrity risk** | Unauthorised modifications to components or services | Data corruption, system instability, compliance violations |
 | **Compliance risk** | Regulatory violations via supply chain (GDPR, DORA, NIS2) | Fines, sanctions, legal liability, reputational damage |
 | **Concentration risk** | Over-reliance on single supplier/component/jurisdiction | Widespread impact from single failure, vendor lock-in |
 | **Geopolitical risk** | Supply chain exposed to hostile jurisdictions or sanctions | Data access by foreign governments, service disruption |
@@ -125,11 +125,11 @@ For Level 1 and Level 2 suppliers, maintain comprehensive visibility including:
 | Sub-supplier name | Legal entity name and identifier | New engagement |
 | Sub-supplier type | Category (infrastructure, development, support, processing) | Service change |
 | Services provided | Specific services sub-supplier provides to primary supplier | Scope change |
-| Data access | Whether sub-supplier accesses [Organization] data, classification level | Access change |
+| Data access | Whether sub-supplier accesses [Organisation] data, classification level | Access change |
 | Processing location | Geographic location(s) of data processing or service delivery | Location change |
 | Certification status | Security certifications held (ISO 27001, SOC 2) | Cert expiry/renewal |
 | Criticality | Impact if sub-supplier fails (Critical/High/Medium/Low) | Annual review |
-| Approval status | [Organization] approval (Approved/Pending/Rejected) | Review decision |
+| Approval status | [Organisation] approval (Approved/Pending/Rejected) | Review decision |
 | Contract terms | Key security obligations flowing to sub-supplier | Contract change |
 
 **Register Maintenance**:
@@ -144,14 +144,14 @@ For Level 1 and Level 2 suppliers, maintain comprehensive visibility including:
 
 | Requirement | Level 1 | Level 2 | Level 3-4 |
 |-------------|---------|---------|-----------|
-| Notify [Organization] of sub-supplier changes | ✓ 30 days prior | ✓ Before engagement | — |
+| Notify [Organisation] of sub-supplier changes | ✓ 30 days prior | ✓ Before engagement | — |
 | Obtain written approval for new sub-suppliers | ✓ Required | ✓ Notification sufficient | — |
 | Flow security requirements to sub-suppliers | ✓ Verbatim | ✓ Equivalent | — |
 | Remain fully liable for sub-supplier acts | ✓ Required | ✓ Required | ✓ Required |
 | Provide sub-supplier audit reports on request | ✓ Within 30 days | ✓ Best effort | — |
-| Allow [Organization] objection to specific sub-suppliers | ✓ 14-day objection window | ✓ Reasonable objection | — |
+| Allow [Organisation] objection to specific sub-suppliers | ✓ 14-day objection window | ✓ Reasonable objection | — |
 | Maintain sub-supplier register | ✓ Current, comprehensive | ✓ Key sub-suppliers | — |
-| Perform sub-supplier due diligence | ✓ Equivalent to [Organization]'s | ✓ Risk-based | — |
+| Perform sub-supplier due diligence | ✓ Equivalent to [Organisation]'s | ✓ Risk-based | — |
 
 ## Sub-Supplier Change Process
 
@@ -160,21 +160,21 @@ For Level 1 and Level 2 suppliers, maintain comprehensive visibility including:
 │ SUB-SUPPLIER CHANGE NOTIFICATION PROCESS                    │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  1. Supplier notifies [Organization] of planned change      │
+│  1. Supplier notifies [Organisation] of planned change      │
 │     • Sub-supplier name and details                         │
 │     • Services to be provided                               │
 │     • Data access requirements                              │
 │     • Geographic locations                                  │
 │     • Security certifications                               │
 │                         ↓                                   │
-│  2. [Organization] Security reviews sub-supplier            │
+│  2. [Organisation] Security reviews sub-supplier            │
 │     • Certifications (ISO 27001, SOC 2)                     │
 │     • Data access scope and classification                  │
 │     • Geographic location and jurisdiction                  │
 │     • Concentration risk impact                             │
 │     • Regulatory implications (DORA, NIS2, GDPR)            │
 │                         ↓                                   │
-│  3. [Organization] responds (within 14 days)                │
+│  3. [Organisation] responds (within 14 days)                │
 │     • APPROVED: Proceed with engagement                     │
 │     • REQUEST MORE INFO: Additional documentation needed    │
 │     • OBJECT: Valid security/compliance reason provided     │
@@ -248,6 +248,49 @@ Identify and document fourth-party dependencies for:
 - Business continuity implications
 - Mitigation strategies (multi-cloud, hybrid architecture)
 
+## Fourth-Party Risk Acceptance Criteria
+
+When fourth-party risk indicators are identified, [Organisation] Security applies the following structured decision process before accepting or escalating the risk:
+
+**Incident History Threshold:**
+
+| Fourth-Party Incident History | Decision |
+|-------------------------------|----------|
+| 0–1 major incidents in the past 3 years | Accept if certifications current and BC/DR evidence provided |
+| 2 major incidents in the past 3 years | Conditional accept — require supplier to implement geographic redundancy or alternative fourth-party within 90 days |
+| 3+ major incidents in the past 3 years | Reject unless CISO approves with documented compensating controls and time-limited waiver |
+| Active, unresolved critical incident at time of review | Reject until incident is resolved and RCA accepted |
+
+> "Major incident" = outage or security event with >4h service impact on critical services, confirmed breach of customer data, or regulatory sanction against the fourth-party.
+
+**Accept/Reject Decision Flow:**
+
+```
+Fourth-party identified in supplier's supply chain
+              ↓
+Is fourth-party in high-risk jurisdiction?
+  YES → Assess data residency, encryption, contractual protections
+        → If no adequate protection → REJECT / require fourth-party change
+  NO  → Continue
+              ↓
+Does fourth-party hold required certifications (ISO 27001, SOC 2)?
+  NO  → Supplier must provide compensating evidence (third-party audit, CISO assessment)
+        → No evidence → REJECT
+  YES → Continue
+              ↓
+Incident history check (3-year lookback)
+  3+ major incidents → Escalate to CISO for waiver decision
+  2 incidents → Conditional accept with time-bound mitigation plan
+  0-1 incidents → ACCEPT
+              ↓
+Concentration risk check
+  >50% of Level 1 suppliers depend on same fourth-party?
+  YES → Document concentration risk in risk register; require multi-cloud/redundancy roadmap
+  NO  → ACCEPT
+```
+
+**Escalation**: All fourth-party REJECT decisions and CISO waivers shall be documented in the Supplier Risk Register with rationale, risk owner, and waiver expiry date (maximum 12-month waiver period).
+
 ---
 
 # Software Supply Chain Security
@@ -274,7 +317,7 @@ Identify and document fourth-party dependencies for:
 | Code signing | Digitally sign all releases and updates to verify integrity and authenticity |
 | Source code repository security | MFA, branch protection, audit logging, secrets scanning on repositories |
 | Third-party library approval | Formal process for approving open-source and third-party components |
-| Update notification | Notify [Organization] of security-relevant updates within 24 hours |
+| Update notification | Notify [Organisation] of security-relevant updates within 24 hours |
 | Dependency update cadence | Regular dependency updates (quarterly minimum for non-security) |
 
 ## Software Bill of Materials (SBOM)
@@ -287,7 +330,7 @@ For Level 1 software suppliers, SBOM shall include:
 | Version | Specific version in use (semantic versioning) |
 | Source | Repository or vendor where component was obtained |
 | License | SPDX license identifier (MIT, Apache-2.0, GPL-3.0) |
-| Direct vs transitive | Whether [Organization] directly uses component or it's a dependency |
+| Direct vs transitive | Whether [Organisation] directly uses component or it's a dependency |
 | Known vulnerabilities | Current CVE status with CVSS scores |
 | Criticality | Impact if component were compromised (based on privileges, data access) |
 
@@ -297,10 +340,12 @@ For Level 1 software suppliers, SBOM shall include:
 - **SPDX**: Linux Foundation standard
 - Both support JSON and XML formats for automated processing
 
-**SBOM Update Frequency**: 
+**SBOM Update Frequency**:
 
 - Quarterly for routine updates
 - Within 48 hours after new critical vulnerability discovered in component
+
+**CVE Discovery Responsibility**: Suppliers shall subscribe to authoritative vulnerability feeds — including NVD (nvd.nist.gov), GitHub Dependabot alerts, Snyk, or sector-specific CERT/ISAC feeds — to monitor for CVEs affecting components in their SBOM. The 48-hour update clock starts from the point the supplier is notified by any feed, not from the point [Organisation] raises the issue. [Organisation] also monitors threat intelligence independently; if [Organisation] identifies a critical CVE in a supplier's SBOM before the supplier reports it, [Organisation] may request an expedited SBOM update and patch timeline outside the scheduled cycle. Suppliers failing to maintain active CVE monitoring are in breach of this requirement.
 
 ## Open Source Security
 
@@ -317,7 +362,7 @@ For Level 1 software suppliers, SBOM shall include:
 **Prohibited Practices**:
 
 - Installing packages from unofficial mirrors or modified repositories
-- Using unmaintained packages for cryptography, authentication, or authorization
+- Using unmaintained packages for cryptography, authentication, or authorisation
 - Including packages with known critical vulnerabilities without remediation plan
 - Copy-pasting code from Stack Overflow or GitHub without security review
 
@@ -341,7 +386,7 @@ For Level 1 software suppliers, SBOM shall include:
 
 | Requirement | Description |
 |-------------|-------------|
-| Authorized channels | Purchase through manufacturer-authorized distributors only |
+| Authorised channels | Purchase through manufacturer-authorised distributors only |
 | Chain of custody | Complete documentation of handling and transportation from factory |
 | Integrity verification | Verify tamper-evident seals, packaging integrity, serial number authentication |
 | Firmware verification | Validate firmware versions against manufacturer database, verify digital signatures |
@@ -361,11 +406,11 @@ For Level 1 software suppliers, SBOM shall include:
 
 | Phase | Security Consideration |
 |-------|------------------------|
-| Procurement | Authorized source, integrity verification, authenticity checks |
+| Procurement | Authorised source, integrity verification, authenticity checks |
 | Receiving | Tamper inspection, documentation verification, quarantine period |
 | Deployment | Secure configuration, firmware updates to current versions, asset registration |
 | Operation | Patch management, firmware updates, environmental monitoring, physical security |
-| Maintenance | Authorized service providers only, witness hardware service, verify post-service integrity |
+| Maintenance | Authorised service providers only, witness hardware service, verify post-service integrity |
 | End-of-life | Secure decommissioning, data destruction (NIST SP 800-88 Rev. 2), certificate of destruction |
 
 ---
@@ -452,7 +497,7 @@ Primary suppliers shall propagate security requirements through the entire suppl
 
 ```
 ┌──────────────┐      ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-│ Organization │ ───► │   Supplier   │ ───► │ Sub-supplier │ ───► │ Fourth Party │
+│ Organisation │ ───► │   Supplier   │ ───► │ Sub-supplier │ ───► │ Fourth Party │
 │              │      │  (Level 1)   │      │              │      │              │
 │ Requirements │      │ MUST flow    │      │ MUST flow    │      │ MUST flow    │
 │ defined in   │      │ requirements │      │ requirements │      │ requirements │
@@ -466,14 +511,14 @@ Primary suppliers shall propagate security requirements through the entire suppl
 |-------------|---------------------------|---------------------|
 | Confidentiality obligations | ✓ Always, verbatim | Review sub-supplier contracts |
 | Data protection (GDPR Art. 28) | ✓ If processing personal data | Review DPAs with sub-processors |
-| Security controls baseline | ✓ If accessing [Organization] data or systems | Review sub-supplier certifications |
+| Security controls baseline | ✓ If accessing [Organisation] data or systems | Review sub-supplier certifications |
 | Incident notification (24-hour) | ✓ Always | Verify incident escalation procedures |
 | Audit cooperation | ✓ For critical sub-suppliers | Verify contract audit rights clause |
 | Subcontractor approval | ✓ If sub-supplier uses fourth parties | Review sub-supplier's procurement process |
 | Data residency | ✓ If geographic restrictions apply | Verify data processing locations |
 | Secure development practices | ✓ If software development involved | Review SDLC documentation |
 
-**Verification**: [Organization] may request evidence of flow-down including:
+**Verification**: [Organisation] may request evidence of flow-down including:
 
 - Sub-supplier contract excerpts (redacted for non-security terms)
 - Sub-supplier security questionnaires and certifications
@@ -533,7 +578,7 @@ For ICT services covered by DORA, maintain comprehensive sub-outsourcing registe
 - Nature of sub-outsourced functions
 - Jurisdictions where sub-outsourcing takes place
 - Date of sub-outsourcing contracts
-- Notification to [Organization] prior to sub-outsourcing
+- Notification to [Organisation] prior to sub-outsourcing
 
 **Concentration Risk**: Assess and document concentration risk from sub-outsourcing arrangements per DORA Article 28.
 
@@ -579,4 +624,4 @@ For entities covered by NIS2, supply chain security measures shall include:
 ---
 
 *"Your security is only as strong as your weakest supplier's weakest supplier."*
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

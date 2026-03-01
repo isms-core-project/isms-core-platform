@@ -3,35 +3,41 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.8.9: Configuration Management
 
-**Document ID**: ISMS-IMP-A.8.9.1-UG  
-**Title**: Baseline Configuration Assessment Specification  
-**Version**: 1.0  
-**Date**: [Date]  
-**Classification**: Internal  
-**Owner**: Configuration Manager  
-**Status**: Draft  
-
 ---
 
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Baseline Configuration Assessment Specification |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.9.1-UG |
+| **Related Policy** | ISMS-POL-A.8.9 (Configuration Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.9 (Configuration Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Baseline Configuration Management - Asset Inventory, Baseline Documentation, Golden Images, Approvals |
-| **Related Policy** | ISMS-POL-A.8.9, Section 2.2 (Baseline Configuration Management) |
-| **Purpose** | Assess establishment, documentation, approval, and maintenance of configuration baselines across all asset types to demonstrate ISO 27001:2022 Control A.8.9 compliance |
-| **Target Audience** | Configuration Manager, System Administrators, Asset Managers, Security Engineers, IT Operations, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Baseline Configuration assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.9 (Configuration Management)
+- ISMS-IMP-A.8.9.2 (Change Control Assessment Specification)
+- ISMS-IMP-A.8.9.3 (Configuration Monitoring Assessment Specification)
+- ISMS-IMP-A.8.9.4 (Security Hardening Assessment Specification)
+
+---
 
 ### Approvers
 
@@ -48,15 +54,32 @@ Configuration management team, system administrators, IT operations, security en
 - ISMS-POL-A.8.9: Configuration Management Policy (Consolidated)
 - ISMS-CTX-A.8.9: Configuration Management Reference (NOT ISMS)
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Asset Inventory | Catalogue all assets requiring configuration baselines |
+| 3 | Baseline Repository | Store and manage approved configuration baselines |
+| 4 | Baseline Coverage Matrix | Map baseline coverage across all asset types |
+| 5 | Approval Tracking | Track baseline approval status and workflow |
+| 6 | Documentation Assessment | Assess quality and completeness of baseline documentation |
+| 7 | Version Control | Manage baseline version history and change tracking |
+| 8 | Deviation Register | Record deviations from approved configuration baselines |
+| 9 | Metrics Summary | Consolidated metrics on baseline compliance and coverage |
+| 10 | Evidence Register | Store and reference evidence supporting assessments |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
+
 # Assessment Purpose
 
 ## Objective
 
-This assessment evaluates the establishment, documentation, approval, and maintenance of configuration baselines across [Organization]'s information assets. The assessment provides objective evidence of compliance with ISO 27001:2022 Control A.8.9 baseline configuration requirements and supports audit verification of configuration management maturity.
+This assessment evaluates the establishment, documentation, approval, and maintenance of configuration baselines across [Organisation]'s information assets. The assessment provides objective evidence of compliance with ISO 27001:2022 Control A.8.9 baseline configuration requirements and supports audit verification of configuration management maturity.
 
 **Implementer Perspective**: This workbook provides a systematic framework for documenting which assets have defined baselines, tracking baseline approval status, assessing documentation quality, and identifying coverage gaps requiring remediation.
 
-**Auditor Perspective**: This assessment generates quantitative metrics (baseline coverage percentage, approval compliance rates, documentation quality scores) that demonstrate [Organization]'s capability to establish and maintain configuration baselines. Evidence collected supports verification of control implementation effectiveness.
+**Auditor Perspective**: This assessment generates quantitative metrics (baseline coverage percentage, approval compliance rates, documentation quality scores) that demonstrate [Organisation]'s capability to establish and maintain configuration baselines. Evidence collected supports verification of control implementation effectiveness.
 
 ## Assessment Scope
 
@@ -66,10 +89,10 @@ This assessment addresses the baseline configuration domain of Control A.8.9, sp
 
 - Asset inventory completeness and accuracy (foundation for baseline management)
 - Configuration baseline definition and documentation for all asset types
-- Baseline approval and authorization workflows
+- Baseline approval and authorisation workflows
 - Baseline repository management and version control
 - Documentation quality assessment (completeness, accuracy, maintainability)
-- Authorized deviations from baselines (with business justification)
+- Authorised deviations from baselines (with business justification)
 - Coverage analysis by asset type and criticality level
 
 **Out of Scope** (covered in other assessments):
@@ -98,7 +121,7 @@ This assessment implements requirements from:
 
 ## Asset Types Covered
 
-This assessment applies to all asset types within [Organization]'s asset inventory that require configuration management. The 43-type asset taxonomy organizes assets into six major categories:
+This assessment applies to all asset types within [Organisation]'s asset inventory that require configuration management. The 43-type asset taxonomy organises assets into six major categories:
 
 **Infrastructure Assets** (12 types):
 
@@ -191,7 +214,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 
    - Review overall compliance metrics
    - Approve assessment findings
-   - Authorize remediation priorities
+   - Authorise remediation priorities
    - Sign off on assessment completion
    - Timeline: 3-5 business days
 
@@ -199,7 +222,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 
 **Asset Inventory Sheet**: Populated from existing asset inventory (A.5.9) or manually compiled if no CMDB exists. Each asset requires unique identifier, type classification, and criticality assignment.
 
-**Baseline Repository Sheet**: Documents each distinct configuration baseline maintained by [Organization]. A baseline may apply to multiple assets (e.g., "Windows Server 2022 Standard Build" applies to all Windows 2022 servers).
+**Baseline Repository Sheet**: Documents each distinct configuration baseline maintained by [Organisation]. A baseline may apply to multiple assets (e.g., "Windows Server 2022 Standard Build" applies to all Windows 2022 servers).
 
 **Coverage Matrix Sheet**: Auto-calculates coverage statistics by asset type. Used to identify which asset categories have insufficient baseline coverage.
 
@@ -209,7 +232,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 
 **Version Control Sheet**: Tracks baseline versions over time. When baselines are updated through change control (see ISMS-IMP-A.8.9.2), new versions are recorded here.
 
-**Deviation Register Sheet**: Documents authorized deviations from standard baselines. Example: Server X requires non-standard configuration due to legacy application compatibility (approved deviation with business justification).
+**Deviation Register Sheet**: Documents authorised deviations from standard baselines. Example: Server X requires non-standard configuration due to legacy application compatibility (approved deviation with business justification).
 
 ## Assessment Frequency
 
@@ -354,7 +377,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 
 ## Sheet 3: Baseline_Repository
 
-**Purpose**: Catalog of all configuration baselines maintained by [Organization]. Each row represents a distinct baseline that may apply to one or multiple assets.
+**Purpose**: Catalog of all configuration baselines maintained by [Organisation]. Each row represents a distinct baseline that may apply to one or multiple assets.
 
 **Column Structure**:
 
@@ -636,7 +659,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
   =IF(K3="","",IF(K3<=14,"Within SLA",IF(K3<=21,"Approaching SLA","SLA Breach")))
 ```
 
-  - Explanation: Approval SLA is 14 days (customize for [Organization]). Warns if approaching or exceeding SLA.
+  - Explanation: Approval SLA is 14 days (customize for [Organisation]). Warns if approaching or exceeding SLA.
 
 **Conditional Formatting**:
 
@@ -667,7 +690,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 - Update Column E as baseline progresses through approval workflow
 - Column H (Approval Reference) is critical for audit trail - document where approval decision is recorded
 - If "Revisions Requested", document required changes in Column M (Next Action)
-- SLA of 14 days is example; customize for [Organization]'s governance cycle
+- SLA of 14 days is example; customize for [Organisation]'s governance cycle
 
 ---
 
@@ -890,7 +913,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 
 ## Sheet 8: Deviation_Register
 
-**Purpose**: Document and track authorized deviations from standard configuration baselines. Deviations require business justification and approval, and are regularly reviewed to ensure they remain valid.
+**Purpose**: Document and track authorised deviations from standard configuration baselines. Deviations require business justification and approval, and are regularly reviewed to ensure they remain valid.
 
 **Column Structure**:
 
@@ -912,7 +935,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 | N | Review Frequency | Text | Dropdown | Monthly, Quarterly, Semi-Annual, Annual |
 | O | Next Review Date | Date | Formula | Auto-calculated based on Approval Date + Review Frequency |
 | P | Deviation Status | Text | Dropdown | Active, Under Review, Expired, Revoked, No Longer Needed |
-| Q | Expiration Date | Date | Date format | Date deviation authorization expires (if temporary) |
+| Q | Expiration Date | Date | Date format | Date deviation authorisation expires (if temporary) |
 | R | Notes | Text | Free text | Additional context |
 
 **Row Allocation**: 50 data rows (Row 3 to Row 52)
@@ -1070,7 +1093,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 - All cells protected (formula-driven, no user input)
 - Print area defined (fits on 2 pages for executive reporting)
 - Page breaks set logically between sections
-- Chart/graph area reserved (Rows 42-60) for visual representation if organization wants to add charts
+- Chart/graph area reserved (Rows 42-60) for visual representation if organisation wants to add charts
 
 **Usage Notes**:
 
@@ -1078,7 +1101,6 @@ The following asset scenarios may be excluded from baseline requirements with ap
 - Review this sheet LAST after all other sheets are complete
 - Use this sheet for executive reporting and governance meetings
 - Red/Yellow status items should be discussed in Approval Sign-Off section
-- This feeds into overall compliance dashboard (ISMS-IMP-A.8.9.5)
 
 ---
 
@@ -1118,7 +1140,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 - Column I (Evidence Classification): Dropdown list
   - Values: "Public, Internal, Confidential, Restricted"
   - Allow blank: No
-  - Classification should match [Organization]'s information classification policy
+  - Classification should match [Organisation]'s information classification policy
 
 - Column J (Retention Period): Dropdown list
   - Values: "1 Year, 3 Years, 5 Years, 7 Years, Indefinite"
@@ -1162,7 +1184,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 - "Verified" status means evidence was checked and is valid/accessible
 - Evidence verification should be performed at least semi-annually
 - Missing or Outdated evidence is a compliance gap that must be remediated
-- Retention Period based on [Organization]'s retention policy and regulatory requirements
+- Retention Period based on [Organisation]'s retention policy and regulatory requirements
 
 ---
 
@@ -1202,7 +1224,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 | Date Reviewed | [Date field] |
 | Review Findings | [Free text entry - summary of review findings] |
 | Gaps Identified | [Free text entry - list of gaps requiring remediation] |
-| Review Attestation | "I have reviewed this assessment and verify that it accurately represents [Organization]'s baseline configuration status. Identified gaps have been documented for remediation." |
+| Review Attestation | "I have reviewed this assessment and verify that it accurately represents [Organisation]'s baseline configuration status. Identified gaps have been documented for remediation." |
 
 **Section D: Approver Sign-Off** (Rows 27-35)
 
@@ -1215,7 +1237,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 | Approval Decision | [Dropdown: "Approved", "Approved with Conditions", "Not Approved - Revisions Required"] |
 | Conditions/Comments | [Free text entry - any conditions or required actions] |
 | Next Assessment Due | [Date field - typically +90 or +180 days based on criticality] |
-| Approver Attestation | "I approve this baseline configuration assessment and authorize any documented remediation activities to proceed. This assessment will be used for compliance reporting and audit purposes." |
+| Approver Attestation | "I approve this baseline configuration assessment and authorise any documented remediation activities to proceed. This assessment will be used for compliance reporting and audit purposes." |
 
 **Formatting**:
 
@@ -1241,7 +1263,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 - All value cells (for names, dates, signatures, comments) are UNLOCKED for user entry
 - All other cells (labels, attestations) are PROTECTED to prevent modification
 - Print area defined to fit on single page for formal signature printing if required
-- Digital signature support: If [Organization] uses digital signatures, this section can be modified to reference digital signature validation
+- Digital signature support: If [Organisation] uses digital signatures, this section can be modified to reference digital signature validation
 
 **Usage Notes**:
 
@@ -1589,7 +1611,7 @@ Final Assessment:
 - Review Metrics_Summary for overall compliance status
 - Assess remediation plans for identified gaps
 - Approve assessment or request revisions
-- Authorize remediation activities
+- Authorise remediation activities
 - Complete Approver sign-off
 
 ## Common Questions and Troubleshooting
@@ -1675,7 +1697,7 @@ A: Valid deviations require:
 
 **Integration with Asset Inventory (A.5.9)**:
 
-- Asset_Inventory sheet should align with organization's asset register
+- Asset_Inventory sheet should align with organisation's asset register
 - Asset criticality classification comes from asset inventory process
 - Baseline status feeds back into asset inventory as attribute
 
@@ -1690,12 +1712,9 @@ A: Valid deviations require:
 | Asset_Inventory sheet | ISMS-IMP-A.8.9.2 (Change Control) | Changes to baselines trigger version updates | Bidirectional: Asset list → Change requests for baseline updates |
 | Baseline_Repository | ISMS-IMP-A.8.9.3 (Config Monitoring) | Baselines define expected state for drift detection | Unidirectional: Baselines → Monitoring tools |
 | Deviation_Register | ISMS-IMP-A.8.9.4 (Security Hardening) | Deviations may be security hardening exceptions | Bidirectional: Hardening gaps ↔ Approved deviations |
-| Documentation_Assessment | ISMS-IMP-A.8.9.5 (Compliance Dashboard) | Quality scores feed into overall compliance | Unidirectional: Quality metrics → Dashboard |
-| All sheets | A.5.9 (Asset Inventory) | Asset list must align with organizational asset register | Bidirectional: Asset data synchronized |
+| All sheets | A.5.9 (Asset Inventory) | Asset list must align with organisational asset register | Bidirectional: Asset data synchronized |
 
 ## Data Export Requirements
-
-For integration with ISMS-IMP-A.8.9.5 (Compliance Dashboard), the following data must be extractable:
 
 **Key Metrics to Export**:
 
@@ -1716,7 +1735,7 @@ For integration with ISMS-IMP-A.8.9.5 (Compliance Dashboard), the following data
 
 ## CMDB Integration (if applicable)
 
-If [Organization] maintains a Configuration Management Database (CMDB):
+If [Organisation] maintains a Configuration Management Database (CMDB):
 
 **Import from CMDB**:
 
@@ -1909,7 +1928,7 @@ This assessment workbook should be updated when:
 2. Verify documentation quality standards are still appropriate
 3. Update asset taxonomy if new asset types introduced
 4. Review deviation register - determine if long-standing deviations should become new baseline variants
-5. Assess whether target coverage percentages need adjustment based on organizational maturity
+5. Assess whether target coverage percentages need adjustment based on organisational maturity
 6. Update evidence retention periods if regulatory requirements change
 7. Brief management on annual trends (improving or declining baseline coverage)
 
@@ -1924,7 +1943,7 @@ This assessment workbook should be updated when:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A baseline is not a snapshot; it is a commitment to a known-good state."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

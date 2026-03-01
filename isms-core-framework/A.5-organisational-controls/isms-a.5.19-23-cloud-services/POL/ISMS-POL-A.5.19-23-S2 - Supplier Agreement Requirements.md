@@ -57,15 +57,15 @@ This section defines the mandatory information security requirements that shall 
 
 **ISO/IEC 27001:2022 Control A.5.20 - Addressing Information Security in Supplier Agreements**
 
-> *Relevant information security requirements should be established and agreed upon with each supplier that may access, process, store, communicate or provide IT infrastructure components for the organization's information.*
+> *Relevant information security requirements should be established and agreed upon with each supplier that may access, process, store, communicate or provide IT infrastructure components for the organisation's information.*
 
 **Control Objective**: Ensure information security requirements are contractually binding and enforceable throughout the supplier relationship.
 
 **ISO/IEC 27002:2022 Guidance Summary**:
 
 - Information security requirements shall be included in all supplier contracts and agreements
-- Requirements shall address confidentiality, integrity, and availability of organizational information
-- Contracts shall define access controls, authentication requirements, and authorization procedures
+- Requirements shall address confidentiality, integrity, and availability of organisational information
+- Contracts shall define access controls, authentication requirements, and authorisation procedures
 - Data protection and privacy obligations shall be specified per applicable regulations (GDPR Art. 28, nDSG)
 - Incident notification and response requirements shall be documented with specific timelines
 - Audit rights and compliance verification mechanisms shall be established
@@ -148,7 +148,7 @@ This section applies to all formal agreements with suppliers including:
 | Exceptions | Publicly available, independently developed, legally required (with notice) |
 
 **Model Clause**:
-> "Supplier shall treat all [Organization] information as confidential and shall not use, disclose, or reproduce such information except as necessary to perform the services. Supplier shall protect [Organization] information using no less than the same degree of care used to protect its own confidential information of similar sensitivity, and in no event less than reasonable care."
+> "Supplier shall treat all [Organisation] information as confidential and shall not use, disclose, or reproduce such information except as necessary to perform the services. Supplier shall protect [Organisation] information using no less than the same degree of care used to protect its own confidential information of similar sensitivity, and in no event less than reasonable care."
 
 ## Data Protection Compliance
 
@@ -162,10 +162,10 @@ This section applies to all formal agreements with suppliers including:
 | Data subjects | Categories of individuals (employees, customers, etc.) |
 | Processing location | Geographic restrictions if applicable (EU, CH, specific jurisdictions) |
 | Technical measures | Security controls for personal data (encryption, pseudonymization) |
-| Organizational measures | Policies, training, access controls |
+| Organisational measures | Policies, training, access controls |
 | Subprocessor rules | Prior approval required, flow-down requirements |
 | Data subject rights | Support for access, rectification, deletion, portability requests |
-| Breach notification | Within 24 hours to [Organization], cooperation with authority notification |
+| Breach notification | Within 24 hours to [Organisation], cooperation with authority notification |
 | Audit cooperation | Support for regulatory audits, data protection impact assessments |
 | International transfers | Standard Contractual Clauses (SCCs) or adequacy mechanisms |
 
@@ -191,14 +191,14 @@ This section applies to all formal agreements with suppliers including:
 
 | Control Domain | Requirements |
 |----------------|--------------|
-| Access management | Authentication (MFA for privileged), authorization (RBAC), access logging |
+| Access management | Authentication (MFA for privileged), authorisation (RBAC), access logging |
 | Encryption | In-transit (TLS 1.2+), at-rest (AES-256 or equivalent) |
 | Network security | Segmentation, firewall, intrusion detection/prevention, monitoring |
 | Endpoint security | Malware protection, endpoint detection and response (EDR), patching |
 | Personnel security | Background checks, security awareness training, termination procedures |
 | Physical security | Facility access controls (if applicable), environmental protections |
 | Incident management | Detection, analysis, containment, eradication, recovery, lessons learned |
-| Change management | Controlled changes with testing, rollback capability, [Organization] notification |
+| Change management | Controlled changes with testing, rollback capability, [Organisation] notification |
 | Vulnerability management | Scanning, patch management, penetration testing |
 | Backup and recovery | Regular backups, offsite storage, restoration testing |
 
@@ -206,7 +206,7 @@ This section applies to all formal agreements with suppliers including:
 
 - ISO/IEC 27001 certification OR
 - SOC 2 Type II attestation
-- Current within 12 months, covering services provided to [Organization]
+- Current within 12 months, covering services provided to [Organisation]
 
 ---
 
@@ -229,6 +229,8 @@ This section applies to all formal agreements with suppliers including:
 - **DORA-covered services**: Within 2 hours for critical incidents, include concentration risk impact
 - **NIS2-covered services**: Within 4 hours for essential service disruption, enable 24-hour regulatory notification
 
+> **Priority Rule — Shortest Timeline Governs:** When multiple regulatory notification timelines apply simultaneously to the same incident (e.g., an entity subject to both DORA and NIS2, or a supplier contractually bound to both the 4-hour L1 clause and the 2-hour DORA clause), the **shortest applicable deadline takes precedence**. Suppliers must be operationally capable of meeting the most stringent requirement for their service classification. Inability to meet the tightest deadline is not excused by the existence of a longer timeline in another regulation or contract clause.
+
 ## Notification Content Requirements
 
 **Initial notification shall include (at minimum)**:
@@ -248,15 +250,15 @@ This section applies to all formal agreements with suppliers including:
 - Remediation actions taken with evidence
 - Preventive measures implemented to prevent recurrence
 - Detailed timeline of events
-- Recommendations for [Organization] actions if any
+- Recommendations for [Organisation] actions if any
 
 ## Required Contract Language
 
 **Standard Clause**:
-> "Supplier shall notify [Organization] without undue delay, and in no event later than twenty-four (24) hours after becoming aware of any Security Incident affecting [Organization]'s data or systems. Supplier shall cooperate fully with [Organization]'s investigation, provide all reasonably requested information, and take all necessary actions to contain, remediate, and prevent recurrence of the incident."
+> "Supplier shall notify [Organisation] without undue delay, and in no event later than twenty-four (24) hours after becoming aware of any Security Incident affecting [Organisation]'s data or systems. Supplier shall cooperate fully with [Organisation]'s investigation, provide all reasonably requested information, and take all necessary actions to contain, remediate, and prevent recurrence of the incident."
 
 **Enhanced Clause for Level 1 Suppliers**:
-> "For any incident involving [Organization]'s Restricted or Confidential data, or any incident that may trigger regulatory notification requirements, Supplier shall notify [Organization]'s Chief Information Security Officer within four (4) hours of confirmation. Supplier shall preserve all forensic evidence, engage independent forensic investigators if requested by [Organization], and bear reasonable costs of [Organization]'s incident response activities."
+> "For any incident involving [Organisation]'s Restricted or Confidential data, or any incident that may trigger regulatory notification requirements, Supplier shall notify [Organisation]'s Chief Information Security Officer within four (4) hours of confirmation. Supplier shall preserve all forensic evidence, engage independent forensic investigators if requested by [Organisation], and bear reasonable costs of [Organisation]'s incident response activities."
 
 ---
 
@@ -280,19 +282,19 @@ This section applies to all formal agreements with suppliers including:
 | Scope | Security controls, processes, facilities, personnel, documentation |
 | Frequency | Annual minimum, additional upon cause (incident, material change, regulatory requirement) |
 | Notice | Reasonable notice (30 days) for planned audits; immediate for cause-based audits |
-| Auditor | [Organization] or appointed third party, qualified auditors |
-| Cost | Supplier bears cost for cause-based audits; [Organization] bears cost for routine audits |
+| Auditor | [Organisation] or appointed third party, qualified auditors |
+| Cost | Supplier bears cost for cause-based audits; [Organisation] bears cost for routine audits |
 | Cooperation | Access to personnel, records, systems, facilities; prompt response to requests |
 | Findings | Supplier shall remediate within agreed timeline (typically 30-90 days based on severity) |
-| Reporting | Audit report provided to [Organization] within 30 days of completion |
+| Reporting | Audit report provided to [Organisation] within 30 days of completion |
 | Regulatory cooperation | Supplier shall cooperate with regulatory audits per DORA Art. 29 if applicable |
 
 **Model Clause for Level 1**:
-> "[Organization] shall have the right, upon thirty (30) days' prior written notice (or immediately in the event of a Security Incident or regulatory requirement), to audit Supplier's security controls, processes, and facilities relevant to the services provided. Supplier shall provide reasonable cooperation and access to personnel, documentation, and systems. Audits may be conducted by [Organization] or its appointed third-party auditors."
+> "[Organisation] shall have the right, upon thirty (30) days' prior written notice (or immediately in the event of a Security Incident or regulatory requirement), to audit Supplier's security controls, processes, and facilities relevant to the services provided. Supplier shall provide reasonable cooperation and access to personnel, documentation, and systems. Audits may be conducted by [Organisation] or its appointed third-party auditors."
 
 **Alternative for Level 2 Suppliers**:
 
-> "Supplier shall, upon request and at least annually, provide copies of current third-party audit reports (SOC 2 Type II, ISO/IEC 27001 certification with surveillance audit results, or equivalent) and evidence of remediation for any identified findings. Reports must be current (within 12 months) and scope must cover services provided to [Organization]."
+> "Supplier shall, upon request and at least annually, provide copies of current third-party audit reports (SOC 2 Type II, ISO/IEC 27001 certification with surveillance audit results, or equivalent) and evidence of remediation for any identified findings. Reports must be current (within 12 months) and scope must cover services provided to [Organisation]."
 
 ## Third-Party Report Acceptance
 
@@ -309,7 +311,7 @@ Acceptable alternatives to direct audit:
 **Report Evaluation Criteria**:
 
 - Certification body or audit firm must be accredited/licensed
-- Scope explicitly covers services provided to [Organization]
+- Scope explicitly covers services provided to [Organisation]
 - No material findings unresolved without acceptable remediation plan
 - Report date within validity period
 
@@ -328,22 +330,22 @@ Acceptable alternatives to direct audit:
 | Flow-down | Security requirements must flow to subcontractors verbatim |
 | Liability | Supplier remains fully liable for subcontractor acts and omissions |
 | Register | Maintain current list of subcontractors with data access |
-| Objection right | [Organization] may object to specific subcontractors within 14 days |
-| Audit rights | [Organization]'s audit rights extend to subcontractors |
-| Termination | Subcontractor must be removed if [Organization] objects |
+| Objection right | [Organisation] may object to specific subcontractors within 14 days |
+| Audit rights | [Organisation]'s audit rights extend to subcontractors |
+| Termination | Subcontractor must be removed if [Organisation] objects |
 
-**Subcontractor Due Diligence**: Supplier shall perform due diligence on subcontractors equivalent to [Organization]'s requirements in ISMS-POL-A.5.19-23-S1 (Supplier Relationship Fundamentals).
+**Subcontractor Due Diligence**: Supplier shall perform due diligence on subcontractors equivalent to [Organisation]'s requirements in ISMS-POL-A.5.19-23-S1 (Supplier Relationship Fundamentals).
 
 ## Required Contract Language
 
 **Standard Clause**:
-> "Supplier shall not engage any subcontractor to access, process, or store [Organization]'s data without prior written approval from [Organization]. Supplier shall ensure that any approved subcontractor is bound by written obligations no less protective than those in this Agreement. Supplier remains fully liable for acts, omissions, and security failures of its subcontractors."
+> "Supplier shall not engage any subcontractor to access, process, or store [Organisation]'s data without prior written approval from [Organisation]. Supplier shall ensure that any approved subcontractor is bound by written obligations no less protective than those in this Agreement. Supplier remains fully liable for acts, omissions, and security failures of its subcontractors."
 
 **Enhanced Clause for DORA-Covered Services**:
-> "For ICT services covered by DORA, Supplier shall maintain a register of all sub-outsourcing arrangements and provide advance notice of any intended sub-outsourcing per DORA Article 30. [Organization] reserves the right to require termination of sub-outsourcing arrangements that do not meet security or concentration risk requirements."
+> "For ICT services covered by DORA, Supplier shall maintain a register of all sub-outsourcing arrangements and provide advance notice of any intended sub-outsourcing per DORA Article 30. [Organisation] reserves the right to require termination of sub-outsourcing arrangements that do not meet security or concentration risk requirements."
 
 **Enhanced Clause for FINMA-Regulated Institutions (Circular 2023/1)**:
-> "For outsourced services subject to FINMA Circular 2023/1, Supplier shall maintain a register of all sub-outsourcing arrangements and obtain [Organization]'s prior written approval before any material sub-outsourcing. The register shall include sub-outsourcer name, jurisdiction, services provided, data categories, and FINMA approval status where required. [Organization] retains audit rights over sub-outsourcers, exercisable directly or via Supplier."
+> "For outsourced services subject to FINMA Circular 2023/1, Supplier shall maintain a register of all sub-outsourcing arrangements and obtain [Organisation]'s prior written approval before any material sub-outsourcing. The register shall include sub-outsourcer name, jurisdiction, services provided, data categories, and FINMA approval status where required. [Organisation] retains audit rights over sub-outsourcers, exercisable directly or via Supplier."
 
 ---
 
@@ -390,7 +392,7 @@ Acceptable alternatives to direct audit:
 - **Medium (Tier 3)**: 99.5% (max 43.8 hours downtime/year)
 
 **Required SLA Clause**:
-> "Supplier commits to maintain [X]% availability measured monthly. In the event of failure to meet this commitment, Supplier shall provide service credits equal to [Y]% of monthly fees for each [Z]% below target. Service credits do not limit [Organization]'s other remedies for material service failures."
+> "Supplier commits to maintain [X]% availability measured monthly. In the event of failure to meet this commitment, Supplier shall provide service credits equal to [Y]% of monthly fees for each [Z]% below target. Service credits do not limit [Organisation]'s other remedies for material service failures."
 
 ---
 
@@ -405,7 +407,7 @@ Acceptable alternatives to direct audit:
 | Return timeline | Within 30 days of termination (or shorter if critical) |
 | Return completeness | All data, metadata, configurations, audit logs |
 | Transition support | Reasonable assistance for migration at agreed rates |
-| Data destruction | Secure deletion after return confirmation by [Organization] |
+| Data destruction | Secure deletion after return confirmation by [Organisation] |
 | Destruction method | DOD 5220.22-M, NIST SP 800-88 Rev. 2, or cryptographic erasure |
 | Destruction certificate | Written confirmation of destruction with method and date |
 | Retention exception | Only if legally required, with written notification and duration |
@@ -414,10 +416,10 @@ Acceptable alternatives to direct audit:
 ## Required Contract Language
 
 **Standard Clause**:
-> "Upon termination or expiration of this Agreement, Supplier shall, at [Organization]'s election, either (a) return or (b) securely destroy all [Organization] data within thirty (30) days. For data return, Supplier shall provide data in [specify format] and assist with migration. For data destruction, Supplier shall provide written certification of destruction using methods consistent with NIST SP 800-88 Rev. 2 or equivalent. Supplier shall not retain any copies except as required by law, in which case Supplier shall notify [Organization] in writing."
+> "Upon termination or expiration of this Agreement, Supplier shall, at [Organisation]'s election, either (a) return or (b) securely destroy all [Organisation] data within thirty (30) days. For data return, Supplier shall provide data in [specify format] and assist with migration. For data destruction, Supplier shall provide written certification of destruction using methods consistent with NIST SP 800-88 Rev. 2 or equivalent. Supplier shall not retain any copies except as required by law, in which case Supplier shall notify [Organisation] in writing."
 
 **Enhanced Clause for Regulated Data**:
-> "For personal data subject to GDPR or nDSG, destruction must occur within thirty (30) days and comply with data protection requirements. For data subject to retention regulations, Supplier shall notify [Organization] of retention requirements and duration, maintain data subject to agreement confidentiality obligations, and destroy upon expiration of retention period."
+> "For personal data subject to GDPR or nDSG, destruction must occur within thirty (30) days and comply with data protection requirements. For data subject to retention regulations, Supplier shall notify [Organisation] of retention requirements and duration, maintain data subject to agreement confidentiality obligations, and destroy upon expiration of retention period."
 
 ---
 
@@ -454,7 +456,7 @@ Acceptable alternatives to direct audit:
 - For cause termination (supplier breach): No additional fees beyond contracted rates
 
 **Required Clause**:
-> "Upon termination, Supplier shall provide reasonable transition assistance to facilitate migration to [Organization] or a replacement supplier. For Level 1 services, Supplier shall continue to provide services at contracted rates for up to six (6) months during transition. Supplier shall cooperate fully with knowledge transfer, data migration, and replacement supplier onboarding."
+> "Upon termination, Supplier shall provide reasonable transition assistance to facilitate migration to [Organisation] or a replacement supplier. For Level 1 services, Supplier shall continue to provide services at contracted rates for up to six (6) months during transition. Supplier shall cooperate fully with knowledge transfer, data migration, and replacement supplier onboarding."
 
 ---
 
@@ -471,7 +473,7 @@ Acceptable alternatives to direct audit:
 | Time limit | Claims must be brought within [X] years of discovery |
 
 **Model Limitation of Liability Clause**:
-> "Notwithstanding any limitation of liability in this Agreement, Supplier's liability shall be unlimited for: (a) data breaches or unauthorized disclosure of [Organization]'s Confidential or Restricted data, (b) gross negligence or willful misconduct, (c) violation of data protection laws, (d) breach of confidentiality obligations. For all other claims, Supplier's liability shall not exceed twelve (12) times the monthly fees paid in the twelve (12) months preceding the claim."
+> "Notwithstanding any limitation of liability in this Agreement, Supplier's liability shall be unlimited for: (a) data breaches or unauthorised disclosure of [Organisation]'s Confidential or Restricted data, (b) gross negligence or willful misconduct, (c) violation of data protection laws, (d) breach of confidentiality obligations. For all other claims, Supplier's liability shall not exceed twelve (12) times the monthly fees paid in the twelve (12) months preceding the claim."
 
 ## Insurance Requirements (Level 1 & 2)
 
@@ -482,10 +484,10 @@ Acceptable alternatives to direct audit:
 | General liability | €2M per occurrence | Standard commercial coverage |
 | Privacy/GDPR | Included in cyber or separate €2M | GDPR fines and defense costs |
 
-**Certificate of Insurance**: Supplier shall provide certificate of insurance naming [Organization] as additional insured, with 30 days notice of cancellation or material change.
+**Certificate of Insurance**: Supplier shall provide certificate of insurance naming [Organisation] as additional insured, with 30 days notice of cancellation or material change.
 
 **Required Clause**:
-> "Supplier shall maintain insurance coverage as specified in Appendix [X] with reputable insurers, and shall provide certificates of insurance upon request. Supplier shall notify [Organization] immediately of any insurance cancellation or reduction below required coverage."
+> "Supplier shall maintain insurance coverage as specified in Appendix [X] with reputable insurers, and shall provide certificates of insurance upon request. Supplier shall notify [Organisation] immediately of any insurance cancellation or reduction below required coverage."
 
 ---
 
@@ -563,7 +565,7 @@ For suppliers processing personal data, Data Processing Agreement (DPA) must inc
 
 - Processing only on documented instructions
 - Confidentiality commitments from personnel
-- Technical and organizational security measures
+- Technical and organisational security measures
 - Sub-processor requirements and approval process
 - Data subject rights support (access, deletion, portability)
 - Deletion or return at end of services
@@ -591,4 +593,4 @@ For suppliers processing personal data, Data Processing Agreement (DPA) must inc
 ---
 
 *"A contract without security clauses is an invitation to breach."*
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

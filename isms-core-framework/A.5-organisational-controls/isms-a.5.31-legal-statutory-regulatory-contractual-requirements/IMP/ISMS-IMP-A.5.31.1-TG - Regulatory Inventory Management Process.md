@@ -3,19 +3,21 @@
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.5.31: Legal, Statutory, Regulatory and Contractual Requirements
 
+---
+
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
 | **Document Title** | Regulatory Inventory Management Process |
-| **Document Type** | Implementation Guide |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.31.1-TG |
+| **Related Policy** | ISMS-POL-A.5.31 (Legal Statutory Regulatory Contractual Requirements) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.31 (Legal, Statutory, Regulatory and Contractual Requirements) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
-| **Document Owner** | Chief Executive Officer (CEO) |
-| **Approved By** | Executive Management |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -23,98 +25,80 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO/ISO | Initial implementation guide for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.31 (Legal Statutory Regulatory Contractual Requirements)
+- ISMS-IMP-A.5.31.2 (Regulatory Applicability Assessment Process)
+- ISMS-IMP-A.5.31.3 (Requirements Extraction Process)
+- ISMS-IMP-A.5.31.4 (Control Mapping Process)
+- ISMS-IMP-A.5.31.5 (Evidence Management Process)
 
 ---
 
 # Technical Specification
 **Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
-
-> Auto-generated from `generate_531_1_regulatory_inventory.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.31.1` |
-| **Output Filename** | `ISMS-IMP-A.5.31.1_Regulatory_Inventory_YYYYMMDD.xlsx` |
-| **Total Sheets** | 4 (4 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control A.5.31: Legal, Statutory, Regulatory and Contractual Requirements |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #00FF00 | 00FF00 | Custom |
-| #808080 | 808080 | Gray (Disabled) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FF0000 | FF0000 | Red (Critical/Alert) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Regulatory_Inventory
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Regulation ID | 15 |
-| B | Regulation Name | 40 |
-| C | Short Name / Acronym | 20 |
-| D | Jurisdiction | 20 |
-| E | Issuing Authority | 25 |
-| F | Citation | 30 |
-| G | Effective Date | 15 |
-| H | Tier | 18 |
-| I | Applicability Status | 20 |
-| J | Applicability Rationale | 50 |
-| K | Key Requirements (Summary) | 50 |
-| L | Assessment Reference | 35 |
-| M | Next Review Date | 15 |
-| N | Responsible Party | 20 |
-| O | Notes | 40 |
-| P | Last Updated | 15 |
-
 ---
 
-## Sheet 2: Instructions
+## Generator Alignment Reference
 
-### Columns
+> Auto-generated from `generate_531_1_regulatory_inventory.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Regulation ID | 15 |
-| B | Regulation Name | 40 |
-| C | Short Name / Acronym | 20 |
-| D | Jurisdiction | 20 |
-| E | Issuing Authority | 25 |
-| F | Citation | 30 |
-| G | Effective Date | 15 |
-| H | Tier | 18 |
-| I | Applicability Status | 20 |
-| J | Applicability Rationale | 50 |
-| K | Key Requirements (Summary) | 50 |
-| L | Assessment Reference | 35 |
-| M | Next Review Date | 15 |
-| N | Responsible Party | 20 |
-| O | Notes | 40 |
-| P | Last Updated | 15 |
+**Document ID:** `ISMS-IMP-A.5.31.1`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 3: Summary_Metrics
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Regulatory Inventory |
+| 3 | Summary Dashboard |
+| 4 | Approval Sign-Off |
 
-## Sheet 4: Validations
+### Color Palette
 
-**Data Rows:** 999 (rows 2–1000)
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
+
+### Column Headers (All Sheets)
+
+| # | Column Header |
+|---|--------------|
+| 1 | REGULATORY INVENTORY |
+| 2 | FINAL DECISION: |
+
+### Data Validation Values
+
+All dropdown/list values used across sheets:
+
+```
+1-Mandatory, 2-Conditional, 3-Informational, Applicable, Conditional
+Not Applicable, Under Review, Approved, Approved with Conditions, Rejected
+Deferred, Draft, Final, Requires remediation, Re-assessment required
+```
+
+**Extracted:** 4 sheets, 2 columns, 15 validation values, 8 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

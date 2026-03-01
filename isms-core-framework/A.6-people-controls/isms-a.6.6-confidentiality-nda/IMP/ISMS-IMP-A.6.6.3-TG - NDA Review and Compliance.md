@@ -3,212 +3,171 @@
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.6.6: Confidentiality or Non-Disclosure Agreements
 
-## Document Control
+---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | NDA Review and Compliance |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.6.3-TG |
-| **Document Title** | NDA Review and Compliance Workbook Specification |
-| **Control Reference** | ISO/IEC 27001:2022 - Control A.6.6: Confidentiality or Non-Disclosure Agreements |
-| **Parent Policy** | ISMS-POL-A.6.6 (Confidentiality and Non-Disclosure Agreements) |
+| **Related Policy** | ISMS-POL-A.6.6 (Confidentiality Nda) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.6 (Confidentiality or Non-Disclosure Agreements) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
 | **Classification** | Internal |
+| **Status** | Draft |
 
 **Version History**:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO/ISO | Initial implementation specification for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.6 (Confidentiality Nda)
+- ISMS-IMP-A.6.6.1 (NDA Template Registry and Inventory)
+- ISMS-IMP-A.6.6.2 (NDA Execution and Tracking)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a66_3_nda_review_compliance.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.6.6.3` |
-| **Output Filename** | `ISMS-IMP-A.6.6.3_NDA_Review_and_Compliance_YYYYMMDD.xlsx` |
-| **Workbook Title** | NDA Review and Compliance |
-| **Total Sheets** | 9 (9 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Workbook
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Instructions
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a66_3_nda_review_compliance.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Periodic_Review
+**Document ID:** `ISMS-IMP-A.6.6.3`
 
-**Data Rows:** 48 (rows 3–50) | **Frozen Panes:** A3
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Columns
+### Sheet Structure
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Review_ID | 14 |
-| B | Review_Type | 20 |
-| C | Review_Scope | 30 |
-| D | Planned_Date | 14 |
-| E | Actual_Date | 14 |
-| F | Reviewer | 22 |
-| G | Findings_Count | 14 |
-| H | Gaps_Identified | 14 |
-| I | Status | 14 |
-| J | Next_Review | 14 |
-| K | Notes | 35 |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Summary Dashboard |
 
----
+### Color Palette
 
-## Sheet 4: Template_Adequacy
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-**Data Rows:** 48 (rows 3–50) | **Frozen Panes:** A3
+### Column Headers (All Sheets)
 
-### Columns
+| # | Column Header |
+|---|--------------|
+| 1 | Review ID |
+| 2 | Review Type |
+| 3 | Review Scope |
+| 4 | Planned Date |
+| 5 | Actual Date |
+| 6 | Reviewer |
+| 7 | Findings Count |
+| 8 | Gaps Identified |
+| 9 | Status |
+| 10 | Next Review |
+| 11 | Notes |
+| 12 | Template ID |
+| 13 | Template Name |
+| 14 | Last Legal Review |
+| 15 | Regulatory Current |
+| 16 | Covers All Info Types |
+| 17 | Post Term Adequate |
+| 18 | Remedies Adequate |
+| 19 | Jurisdiction Correct |
+| 20 | Overall Adequacy |
+| 21 | Score |
+| 22 | Action Required |
+| 23 | Stakeholder Category |
+| 24 | Total Count |
+| 25 | NDA Required |
+| 26 | NDA Signed |
+| 27 | Coverage Rate |
+| 28 | Expired NDAs |
+| 29 | Missing NDAs |
+| 30 | Gap Status |
+| 31 | Remediation Owner |
+| 32 | NDA ID |
+| 33 | Counterparty |
+| 34 | Correctly Executed |
+| 35 | Within Validity |
+| 36 | Appropriate Template |
+| 37 | All Parties Signed |
+| 38 | Securely Stored |
+| 39 | Overall Compliance |
+| 40 | Issues Found |
+| 41 | Gap ID |
+| 42 | Gap Type |
+| 43 | Description |
+| 44 | Affected Area |
+| 45 | Severity |
+| 46 | Identified Date |
+| 47 | Owner |
+| 48 | Remediation Action |
+| 49 | Target Date |
+| 50 | Closure Date |
+| 51 | Evidence ID |
+| 52 | Evidence Type |
+| 53 | Source / Location |
+| 54 | Collected By |
+| 55 | Collection Date |
+| 56 | Retention Date |
+| 57 | Assessment Area |
+| 58 | Total Items |
+| 59 | Compliant |
+| 60 | Partial |
+| 61 | Non-Compliant |
+| 62 | N/A |
+| 63 | Compliance % |
+| 64 | Category |
+| 65 | Finding |
+| 66 | Count |
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Template_ID | 14 |
-| B | Template_Name | 30 |
-| C | Last_Legal_Review | 16 |
-| D | Regulatory_Current | 16 |
-| E | Covers_All_Info_Types | 18 |
-| F | Post_Term_Adequate | 16 |
-| G | Remedies_Adequate | 16 |
-| H | Jurisdiction_Correct | 16 |
-| I | Overall_Adequacy | 16 |
-| J | Score | 10 |
-| K | Action_Required | 30 |
-| L | Notes | 30 |
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 5: Coverage_Analysis
+```
+Annual Full Review, Quarterly Check, Template Update Review, Triggered Review
+Ad-hoc Review, Scheduled, In Progress, Completed, Overdue, Cancelled, Adequate
+Partially Adequate, Inadequate, Not Assessed, No Gap, Gap Identified
+Remediation In Progress, Remediated, Yes, No, Partial, N/A, Compliant
+Partially Compliant, Non-Compliant, No Action Needed, Action Required
+Resolved, Missing NDA, Expired NDA, Inadequate Template, Unsigned
+Wrong Template, Storage Issue, Other, Critical, High, Medium, Low, Open
+Verified Closed, Risk Accepted, Policy Document, Procedure, Record
+Certificate, Report, Screenshot, Log, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
 
-**Data Rows:** 18 (rows 3–20) | **Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Stakeholder_Category | 22 |
-| B | Total_Count | 12 |
-| C | NDA_Required | 12 |
-| D | NDA_Signed | 12 |
-| E | Coverage_Rate | 14 |
-| F | Expired_NDAs | 12 |
-| G | Missing_NDAs | 12 |
-| H | Gap_Status | 14 |
-| I | Remediation_Owner | 20 |
-| J | Notes | 35 |
-
----
-
-## Sheet 6: Compliance_Check
-
-**Data Rows:** 98 (rows 3–100) | **Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | NDA_ID | 14 |
-| B | Counterparty | 25 |
-| C | Correctly_Executed | 16 |
-| D | Within_Validity | 14 |
-| E | Appropriate_Template | 18 |
-| F | All_Parties_Signed | 16 |
-| G | Securely_Stored | 14 |
-| H | Overall_Compliance | 16 |
-| I | Issues_Found | 35 |
-| J | Action_Required | 30 |
-| K | Status | 14 |
-
----
-
-## Sheet 7: Gap_Register
-
-**Data Rows:** 48 (rows 3–50) | **Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Gap_ID | 12 |
-| B | Gap_Type | 18 |
-| C | Description | 45 |
-| D | Affected_Area | 22 |
-| E | Severity | 12 |
-| F | Identified_Date | 14 |
-| G | Owner | 20 |
-| H | Remediation_Action | 40 |
-| I | Target_Date | 14 |
-| J | Status | 14 |
-| K | Closure_Date | 14 |
-| L | Notes | 30 |
-
----
-
-## Sheet 8: Evidence_Register
-
-**Data Rows:** 48 (rows 3–50) | **Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence_ID | 14 |
-| B | Review_Ref | 14 |
-| C | Evidence_Type | 22 |
-| D | Description | 40 |
-| E | Storage_Location | 35 |
-| F | Collected_Date | 14 |
-| G | Collected_By | 20 |
-| H | Retention_Until | 14 |
-
----
-
-## Sheet 9: Approval
-
-**Frozen Panes:** A3
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Approval_Type | 25 |
-| B | Approver_Role | 25 |
-| C | Approver_Name | 25 |
-| D | Signature | 20 |
-| E | Date | 14 |
-| F | Comments | 35 |
+**Extracted:** 2 sheets, 66 columns, 57 validation values, 6 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 
 *"In God we trust; all others must bring data."*
 — W. Edwards Deming
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

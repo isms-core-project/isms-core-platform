@@ -43,10 +43,8 @@
 - ISMS-IMP-A.5.34.1-UG/TG (PII Identification and Classification Assessment)
 - ISMS-IMP-A.5.34.2-UG/TG (Legal Basis and Lawful Processing Assessment)
 - ISMS-IMP-A.5.34.3-UG/TG (Data Subject Rights Management Assessment)
-- ISMS-IMP-A.5.34.4-UG/TG (Technical and Organizational Measures (TOMs) Assessment)
-- ISMS-IMP-A.5.34.5-UG/TG (DPIA Assessment)
+- ISMS-IMP-A.5.34.4-UG/TG (Technical and Organisational Measures (TOMs) Assessment)
 - ISMS-IMP-A.5.34.6-UG/TG (Cross Border Transfer Assessment)
-- ISMS-IMP-A.5.34.7-UG/TG (Privacy Compliance Dashboard)
 - ISMS-POL-A.5.9 (Inventory of Information and Assets)
 - ISMS-POL-A.5.12 (Classification of Information)
 - ISMS-POL-A.5.15-16-18 (Identity and Access Management)
@@ -61,11 +59,11 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for privacy and protection of personally identifiable information (PII) in accordance with ISO/IEC 27001:2022 Control A.5.34.
+This policy establishes [Organisation]'s requirements for privacy and protection of personally identifiable information (PII) in accordance with ISO/IEC 27001:2022 Control A.5.34.
 
 **Purpose**: Define WHAT privacy requirements must be met and WHO is accountable for privacy compliance. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.34 (UG/TG variants).
 
-**Scope**: All processing of personal data / PII by [Organization], including data relating to customers, employees, contractors, vendors, and other natural persons, regardless of format or location.
+**Scope**: All processing of personal data / PII by [Organisation], including data relating to customers, employees, contractors, vendors, and other natural persons, regardless of format or location.
 
 **Regulatory Alignment**: Addresses mandatory compliance requirements per ISMS-POL-00, including Swiss nDSG/FADP, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements apply where business activities trigger applicability.
 
@@ -77,16 +75,16 @@ This policy establishes [Organization]'s requirements for privacy and protection
 
 **ISO/IEC 27001:2022 Annex A.5.34 - Privacy and Protection of PII**
 
-> *The organization should identify and meet requirements regarding the preservation of privacy and protection of PII in accordance with applicable laws and regulations and contractual requirements.*
+> *The organisation should identify and meet requirements regarding the preservation of privacy and protection of PII in accordance with applicable laws and regulations and contractual requirements.*
 
-**Control Objective**: Ensure [Organization] identifies all applicable privacy requirements and implements appropriate measures to protect PII throughout its lifecycle, respecting data subject rights and meeting regulatory obligations.
+**Control Objective**: Ensure [Organisation] identifies all applicable privacy requirements and implements appropriate measures to protect PII throughout its lifecycle, respecting data subject rights and meeting regulatory obligations.
 
-**Control Type**: Organizational Control (People Controls - Section 5)
+**Control Type**: Organisational Control (People Controls - Section 5)
 
 **Information Security Properties**:
 
-- **Confidentiality** - PII protected from unauthorized disclosure
-- **Integrity** - PII accuracy maintained, unauthorized modification prevented
+- **Confidentiality** - PII protected from unauthorised disclosure
+- **Integrity** - PII accuracy maintained, unauthorised modification prevented
 - **Availability** - Data subject rights fulfilled within regulatory timeframes
 
 ## Policy Scope
@@ -106,20 +104,19 @@ This policy establishes [Organization]'s requirements for privacy and protection
 **This Policy Does NOT Provide**:
 
 - Detailed DSR handling procedures (see ISMS-IMP-A.5.34.3)
-- DPIA methodologies or templates (see ISMS-IMP-A.5.34.5)
 - Technical PII protection configurations (see ISMS-POL-A.8.11, A.8.24)
 - Data retention schedules (see ISMS-POL-A.5.33)
 
-**Geographical Scope**: All [Organization] operations, regardless of location. Specific regulatory requirements triggered based on location of data subjects, processing activities, and data infrastructure.
+**Geographical Scope**: All [Organisation] operations, regardless of location. Specific regulatory requirements triggered based on location of data subjects, processing activities, and data infrastructure.
 
-**Data Scope**: All PII processed by [Organization], including:
+**Data Scope**: All PII processed by [Organisation], including:
 
 - Customers, clients, and prospects
 - Employees and contractors
 - Vendors and suppliers
 - Job applicants
 - Website visitors
-- Other natural persons whose data [Organization] processes
+- Other natural persons whose data [Organisation] processes
 
 **Exclusions**: Anonymized data (genuinely anonymized per GDPR Recital 26), deceased persons where regulation excludes them.
 
@@ -131,9 +128,9 @@ This policy establishes [Organization]'s requirements for privacy and protection
 
 **Swiss Federal Act on Data Protection (FADP / nDSG)**
 
-[Organization] SHALL comply with FADP requirements including:
+[Organisation] SHALL comply with FADP requirements including:
 
-- Article 6: Principles of data processing (lawfulness, good faith, proportionality, purpose limitation, data minimization)
+- Article 6: Principles of data processing (lawfulness, good faith, proportionality, purpose limitation, data minimisation)
 - Article 8: Data security requirements
 - Articles 19-24: Duty to provide information when collecting personal data
 - Articles 25-32: Data subject rights
@@ -146,7 +143,7 @@ This policy establishes [Organization]'s requirements for privacy and protection
 
 **EU General Data Protection Regulation (GDPR)**
 
-[Organization] SHALL comply with GDPR requirements including:
+[Organisation] SHALL comply with GDPR requirements including:
 
 - Article 5: Principles of processing
 - Article 6: Legal bases for processing
@@ -168,16 +165,16 @@ This policy establishes [Organization]'s requirements for privacy and protection
 
 **ISO/IEC 27001:2022**
 
-[Organization] maintains ISO 27001:2022 certification with Control A.5.34 implemented per this policy.
+[Organisation] maintains ISO 27001:2022 certification with Control A.5.34 implemented per this policy.
 
 ## Tier 2: Conditional Applicability
 
 The following regulations apply based on specific business activities, assessed per ISMS-POL-00:
 
-- **FINMA Circulars**: If [Organization] is a FINMA-regulated entity
-- **DORA (Digital Operational Resilience Act)**: If [Organization] is an EU financial entity or designated critical ICT third-party service provider. Article 28 ICT third-party risk assessment of data processing arrangements satisfies GDPR Article 28 processor obligations when both apply
-- **NIS2 Directive**: If [Organization] is designated as essential or important entity. Article 21(2) risk management measures (including human resources security, access control) involve PII processing. GDPR/nDSG compliance satisfies NIS2 PII protection requirements. NIS2-specific incident reporting (Art. 23) integrates with ISMS-POL-A.5.24-28 without creating additional privacy requirements
-- **PCI DSS v4.0.1**: If [Organization] processes payment cardholder data. Cardholder data is PII subject to both GDPR/nDSG and PCI DSS v4.0.1. Where requirements conflict, [Organization] applies the stricter requirement. PCI DSS v4.0.1 compliance does not automatically satisfy GDPR - separate legal basis and data subject rights mechanisms required
+- **FINMA Circulars**: If [Organisation] is a FINMA-regulated entity
+- **DORA (Digital Operational Resilience Act)**: If [Organisation] is an EU financial entity or designated critical ICT third-party service provider. Article 28 ICT third-party risk assessment of data processing arrangements satisfies GDPR Article 28 processor obligations when both apply
+- **NIS2 Directive**: If [Organisation] is designated as essential or important entity. Article 21(2) risk management measures (including human resources security, access control) involve PII processing. GDPR/nDSG compliance satisfies NIS2 PII protection requirements. NIS2-specific incident reporting (Art. 23) integrates with ISMS-POL-A.5.24-28 without creating additional privacy requirements
+- **PCI DSS v4.0.1**: If [Organisation] processes payment cardholder data. Cardholder data is PII subject to both GDPR/nDSG and PCI DSS v4.0.1. Where requirements conflict, [Organisation] applies the stricter requirement. PCI DSS v4.0.1 compliance does not automatically satisfy GDPR - separate legal basis and data subject rights mechanisms required
 - **Health Data Regulations**: Based on products, services, and processing activities. If processing health data (GDPR Art. 9 special category), additional sectoral requirements may apply. Health data processing requires documented legal basis per ISMS-IMP-A.5.34.2 and enhanced security measures per ISMS-POL-A.8.24
 
 **Applicability Determination**: Legal/Compliance Officer and DPO jointly determine Tier 2 applicability annually. Applicability decisions documented in ISMS-POL-00 Regulatory Applicability Matrix. Material business changes (new markets, data categories, regulated clients) trigger immediate reassessment.
@@ -197,17 +194,17 @@ The following frameworks inform practices but are not mandatory unless contractu
 
 ## PII Classification
 
-[Organization] SHALL classify PII into the following categories:
+[Organisation] SHALL classify PII into the following categories:
 
 **Category 1: Basic PII** - Standard personal data requiring baseline protection measures (identification data, contact information, financial data, professional data, electronic identifiers, behavioral data, communications data).
 
 **Category 2: Sensitive PII** - Special category data requiring enhanced protection (GDPR Article 9: racial/ethnic origin, political opinions, religious beliefs, trade union membership, genetic data, biometric data, health data, sex life/sexual orientation; FADP Article 5(c): similar categories plus administrative/criminal proceedings data).
 
-**Category 3: Criminal Offense Data** - Data relating to criminal convictions, offenses, or security measures requiring specific legal authorization.
+**Category 3: Criminal Offense Data** - Data relating to criminal convictions, offenses, or security measures requiring specific legal authorisation.
 
 ## PII Discovery and Data Mapping
 
-[Organization] SHALL:
+[Organisation] SHALL:
 
 - Conduct PII discovery through automated and manual methods
 - Perform comprehensive discovery annually and for new systems before deployment
@@ -216,7 +213,7 @@ The following frameworks inform practices but are not mandatory unless contractu
 
 ## Record of Processing Activities (ROPA)
 
-[Organization] SHALL maintain a ROPA documenting all personal data processing operations per GDPR Article 30 and FADP requirements.
+[Organisation] SHALL maintain a ROPA documenting all personal data processing operations per GDPR Article 30 and FADP requirements.
 
 **ROPA SHALL include**: Controller/processor details, processing purposes, data subject categories, personal data categories, recipients, international transfers, retention periods, security measures description.
 
@@ -224,7 +221,7 @@ The following frameworks inform practices but are not mandatory unless contractu
 
 ## Legal Basis for Processing
 
-[Organization] SHALL:
+[Organisation] SHALL:
 
 - Determine and document a valid legal basis for each processing activity before processing begins
 - Process personal data only under one of the following GDPR Article 6 bases: consent, contract performance, legal obligation, vital interests, public task, or legitimate interests
@@ -233,7 +230,7 @@ The following frameworks inform practices but are not mandatory unless contractu
 
 ## Consent Management
 
-When consent is the legal basis, [Organization] SHALL ensure consent is:
+When consent is the legal basis, [Organisation] SHALL ensure consent is:
 
 - Freely given, specific, informed, and unambiguous
 - Obtained through clear affirmative action
@@ -242,16 +239,16 @@ When consent is the legal basis, [Organization] SHALL ensure consent is:
 
 ## Legitimate Interest Assessments
 
-When legitimate interests is the legal basis, [Organization] SHALL:
+When legitimate interests is the legal basis, [Organisation] SHALL:
 
 - Conduct and document a Legitimate Interest Assessment (LIA) before processing using standardized template in ISMS-IMP-A.5.34.2
-- Apply the three-part test: purpose test (is there a legitimate purpose?), necessity test (are less intrusive alternatives available?), and balancing test (organization interests vs. data subject rights, considering expectations, relationship, and data sensitivity)
+- Apply the three-part test: purpose test (is there a legitimate purpose?), necessity test (are less intrusive alternatives available?), and balancing test (organisation interests vs. data subject rights, considering expectations, relationship, and data sensitivity)
 - Obtain Legal/DPO approval before processing begins
 - Review LIAs annually or when processing changes materially
 
 ## Data Subject Rights
 
-[Organization] SHALL enable data subjects to exercise their rights under GDPR and FADP:
+[Organisation] SHALL enable data subjects to exercise their rights under GDPR and FADP:
 
 | Right | Requirement |
 |-------|-------------|
@@ -262,9 +259,9 @@ When legitimate interests is the legal basis, [Organization] SHALL:
 | **Object** | Cease processing upon objection unless compelling grounds exist; absolute right for marketing |
 | **Restriction** | Restrict processing when grounds exist |
 
-**Response Timeframes**: [Organization] SHALL respond to data subject requests within **1 month of receipt** (GDPR Art. 12(3), FADP Art. 25(4)).
+**Response Timeframes**: [Organisation] SHALL respond to data subject requests within **1 month of receipt** (GDPR Art. 12(3), FADP Art. 25(4)).
 
-**DSR Deadline Extensions**: If request complexity or volume requires extension, [Organization] SHALL:
+**DSR Deadline Extensions**: If request complexity or volume requires extension, [Organisation] SHALL:
 
 1. Notify data subject within initial 1-month period of reason for delay and expected completion date (maximum 3 months total per GDPR Art. 12(3))
 2. Document justification in DSR tracking system
@@ -276,16 +273,16 @@ Systematic DSR delays SHALL be investigated as potential process failure and rep
 
 ## Privacy by Design and by Default
 
-[Organization] SHALL:
+[Organisation] SHALL:
 
 - Implement data protection principles throughout system development and processing design
 - Consider state of the art, implementation costs, processing nature, and risks to data subjects
-- Configure systems with privacy-protective defaults (data minimization, limited processing scope, limited retention, limited accessibility)
+- Configure systems with privacy-protective defaults (data minimisation, limited processing scope, limited retention, limited accessibility)
 - Provide users with accessible privacy controls
 
 ## Data Protection Impact Assessments
 
-[Organization] SHALL conduct DPIAs before processing when:
+[Organisation] SHALL conduct DPIAs before processing when:
 
 - Processing is likely to result in high risk to data subject rights and freedoms
 - Processing involves systematic/extensive automated evaluation with legal effects
@@ -298,7 +295,7 @@ DPO SHALL be consulted on all DPIAs. Supervisory authority consultation required
 
 ## Cross-Border Data Transfers
 
-[Organization] SHALL NOT transfer personal data to third countries unless:
+[Organisation] SHALL NOT transfer personal data to third countries unless:
 
 - Adequacy decision exists (European Commission or Swiss Federal Council)
 - Appropriate safeguards are in place (Standard Contractual Clauses, Binding Corporate Rules, approved codes/certifications)
@@ -308,16 +305,16 @@ Transfer impact assessments SHALL be conducted for transfers not based on adequa
 
 ## Data Breach Notification
 
-[Organization] SHALL:
+[Organisation] SHALL:
 
 - Notify supervisory authority without undue delay (GDPR: within 72 hours, FADP: as quickly as possible) of breaches likely to result in risk to data subjects
 - Communicate breach to data subjects without undue delay when breach is likely to result in high risk
 - Document all breaches including facts, effects, and remedial actions
 - Maintain a breach register
 
-## Technical and Organizational Measures
+## Technical and Organisational Measures
 
-[Organization] SHALL implement appropriate security measures taking into account state of the art, implementation costs, processing nature, and risks, including:
+[Organisation] SHALL implement appropriate security measures taking into account state of the art, implementation costs, processing nature, and risks, including:
 
 - Pseudonymization and encryption of personal data
 - Measures to ensure ongoing confidentiality, integrity, availability, and resilience
@@ -362,7 +359,7 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 - Approve privacy policy and significant changes
 - Allocate resources for privacy program
 - Review privacy metrics and breach reports
-- Ensure organizational commitment to privacy
+- Ensure organisational commitment to privacy
 
 ## Chief Information Security Officer (CISO)
 
@@ -396,7 +393,7 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 - Define purpose and legal basis for processing
 - Classify data according to sensitivity
 - Determine retention requirements
-- Authorize access to data
+- Authorise access to data
 - Ensure policy compliance for their data domain
 
 ## Human Resources (HR)
@@ -417,7 +414,7 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 
 - Comply with this policy and privacy procedures
 - Complete mandatory privacy training
-- Handle personal data only for authorized purposes
+- Handle personal data only for authorised purposes
 - Report suspected data breaches or privacy violations immediately
 - Maintain confidentiality of personal data
 
@@ -437,7 +434,7 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 
 ## Privacy Metrics
 
-[Organization] SHALL track and report:
+[Organisation] SHALL track and report:
 
 - Data subject rights requests (volume, type, response time, completion rate)
 - Data breaches (number, severity, notification compliance)
@@ -445,7 +442,7 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 - Training compliance (completion rates)
 - Processor compliance (contract coverage, assessment completion)
 
-**Privacy Metrics Dashboard**: Privacy metrics integrated into [Organization] ISMS dashboard (see ISMS-POL-A.9.1 Monitoring), providing real-time visibility to DPO and quarterly rollup reports to Privacy Steering Committee. Metrics tracked via:
+**Privacy Metrics Dashboard**: Privacy metrics integrated into [Organisation] ISMS dashboard (see ISMS-POL-A.9.1 Monitoring), providing real-time visibility to DPO and quarterly rollup reports to Privacy Steering Committee. Metrics tracked via:
 
 - DSR tracking system (request volume, type, response time, completion rate)
 - Breach register (incident count, severity classification, notification compliance)
@@ -466,10 +463,10 @@ Dashboard reviewed monthly by DPO for trend analysis and early warning of compli
 
 ## Training Requirements
 
-[Organization] SHALL provide:
+[Organisation] SHALL provide:
 
 - **All Employees**: Annual general privacy awareness training
-- **PII Handlers**: Role-specific training on DSR handling, consent, data minimization
+- **PII Handlers**: Role-specific training on DSR handling, consent, data minimisation
 - **Special Category Data Handlers**: Enhanced training on legal basis and security
 - **New Hires**: Privacy training within 30 days of hire
 - **Developers/System Owners**: Privacy by Design training
@@ -477,7 +474,7 @@ Dashboard reviewed monthly by DPO for trend analysis and early warning of compli
 **Training Effectiveness**: Privacy training requirements integrate with ISMS-POL-A.7.2 (Competence) framework. Training effectiveness measured via:
 
 1. Post-training assessments (minimum 80% pass rate required)
-2. Role-specific competence verification (e.g., DSR handlers demonstrate procedure knowledge before authorization)
+2. Role-specific competence verification (e.g., DSR handlers demonstrate procedure knowledge before authorisation)
 3. Annual simulations for breach response team
 
 Training records maintained per A.7.2 requirements and reviewed during Privacy Steering Committee meetings.
@@ -494,7 +491,7 @@ Training records maintained per A.7.2 requirements and reviewed during Privacy S
 
 # Documentation Requirements
 
-[Organization] SHALL maintain documented information including:
+[Organisation] SHALL maintain documented information including:
 
 - This Policy (ISMS-POL-A.5.34)
 - Implementation Procedures (ISMS-IMP-A.5.34 suite)
@@ -521,7 +518,6 @@ Training records maintained per A.7.2 requirements and reviewed during Privacy S
 | ROPA | ISMS-IMP-A.5.34.1; maintained in [GRC Platform/Tool] | Quarterly update by DPO; annual validation by Legal and CISO |
 | DSR Records | DSR tracking system; ISMS-IMP-A.5.34.3-UG/TG | Monthly metrics review by DPO |
 | Legal Basis Documentation | ISMS-IMP-A.5.34.2-UG/TG | Audit sampling annually |
-| DPIA Records | ISMS-IMP-A.5.34.5-UG/TG | DPO review and approval per DPIA |
 | Transfer Impact Assessments | ISMS-IMP-A.5.34.6-UG/TG | Legal review before transfer |
 | Breach Register | CISO with ISMS-IMP-A.5.34.4-UG/TG | Quarterly review by Privacy Steering Committee |
 | Consent Records | Consent management system | Annual audit sampling |
@@ -542,11 +538,11 @@ This policy integrates with:
 | A.5.15-16-18 (IAM) | Access controls enforce least privilege for PII |
 | A.5.19-23 (Supplier Relationships) | Processor agreements required for vendors processing PII |
 | A.5.24-28 (Incident Management) | Data breaches involving PII trigger both privacy-specific notification requirements (GDPR Art. 33-34, nDSG Art. 24) and general incident response procedures. Incident classification includes privacy impact assessment (PII volume, sensitivity, affected data subjects). CISO leads technical containment; DPO determines supervisory authority and data subject notification requirements per ISMS-IMP-A.5.34.4. Breach register maintained by CISO with quarterly review by Privacy Steering Committee |
-| A.5.33 (Records) | Retention schedules comply with data minimization |
+| A.5.33 (Records) | Retention schedules comply with data minimisation |
 | A.6.3 (Training) | Privacy training mandatory for all employees |
 | A.8.10 (Deletion) | Secure deletion implements right to erasure |
 | A.8.11 (Masking) | Pseudonymization protects PII |
-| A.8.12 (DLP) | DLP detects unauthorized PII disclosure |
+| A.8.12 (DLP) | DLP detects unauthorised PII disclosure |
 | A.8.24 (Cryptography) | Encryption mandatory for sensitive PII |
 
 ---
@@ -585,8 +581,7 @@ Suspected violations SHALL be reported to DPO and investigated. Privacy violatio
 | ISMS-IMP-A.5.34.1-UG/TG | PII Identification and Classification Assessment |
 | ISMS-IMP-A.5.34.2-UG/TG | Legal Basis and Lawful Processing Assessment |
 | ISMS-IMP-A.5.34.3-UG/TG | Data Subject Rights Management |
-| ISMS-IMP-A.5.34.4-UG/TG | Technical and Organizational Measures Assessment |
-| ISMS-IMP-A.5.34.5-UG/TG | Data Protection Impact Assessment |
+| ISMS-IMP-A.5.34.4-UG/TG | Technical and Organisational Measures Assessment |
 | ISMS-IMP-A.5.34.6-UG/TG | Cross-Border Transfer Assessment |
 | ISMS-POL-A.5.33 | Protection of Records |
 | ISMS-POL-A.8.10 | Information Deletion |
@@ -613,4 +608,4 @@ Suspected violations SHALL be reported to DPO and investigated. Privacy violatio
 
 *This policy establishes requirements for privacy and protection of personally identifiable information. Implementation procedures are documented in ISMS-IMP-A.5.34 (UG/TG).1 through A.5.34.6.*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -8,26 +8,58 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-IMP-A.8.25-26-29-S2-UG |
+|-------|-------|
+| **Document Title** | SDLC Security Activities Assessment |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.25-26-29.S2-UG |
+| **Related Policy** | ISMS-POL-A.8.25-26-29 (Secure Development) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.25 (Secure Development Life Cycle) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | SDLC Security Activities Compliance (A.8.25) |
-| **Related Policy** | ISMS-POL-A.8.25-26-29 Section 3 |
-| **Purpose** | Assessment of security integration throughout the software development lifecycle, secure coding practices, code review, security tools, and defect management |
-| **Target Audience** | Development Managers, Security Champions, DevOps Leads, Security Assessors |
-| **Assessment Type** | Application-specific assessment (per application or team) |
-| **Review Cycle** | Quarterly for High-Risk applications, Semi-annually for Medium-Risk, Annually for Low-Risk |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial traditional implementation guide | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.25-26-29 (Secure Development)
+- ISMS-IMP-A.8.25-26-29.S1 (Security Requirements Assessment)
+- ISMS-IMP-A.8.25-26-29.S3 (Security Testing Results Assessment)
+- ISMS-IMP-A.8.25-26-29.S4 (Vulnerability Remediation Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.8.25-26-29-S2-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | SDLC Phase Activities | Assess security activities across each SDLC phase |
+| 3 | Secure Coding Standards | Document and assess adherence to secure coding standards |
+| 4 | Code Review Metrics | Track code review coverage and security findings |
+| 5 | Security Tools Deployment | Assess deployment of security tools across the SDLC |
+| 6 | Security Tools Usage | Measure effectiveness and usage of security tools |
+| 7 | Developer Training | Track security training completion and competency levels |
+| 8 | Security Defect Mgmt | Manage and track security defects through to remediation |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -59,7 +91,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 - Security requirements specification (see IMP-S1)
 - Security testing results (see IMP-S3)
 - Vulnerability remediation tracking (see IMP-S4)
-- Portfolio-wide dashboard (see IMP-S5)
+- Portfolio-wide status tracked in each workbook's Summary Dashboard (S1–S4)
 
 ## Assessment Workbook Structure
 
@@ -482,12 +514,12 @@ Check if standards address:
 
 - [ ] Input validation (SQL injection, XSS, command injection prevention)
 - [ ] Authentication (password hashing, MFA, session management)
-- [ ] Authorization (access control, privilege management)
+- [ ] Authorisation (access control, privilege management)
 - [ ] Cryptography (encryption algorithms, key management, TLS)
 - [ ] Error handling (secure error messages, no information disclosure)
 - [ ] Logging (security event logging, log protection)
 - [ ] Data protection (sensitive data handling, PII protection)
-- [ ] API security (authentication, authorization, input validation, rate limiting)
+- [ ] API security (authentication, authorisation, input validation, rate limiting)
 - [ ] Dependency management (third-party component security)
 - [ ] Language-specific secure coding (e.g., Java secure coding, Python secure coding)
 
@@ -578,7 +610,7 @@ Score = Average of:
 
 **High-Risk Code Examples** (if defined):
 
-- [ ] Authentication and authorization logic
+- [ ] Authentication and authorisation logic
 - [ ] Cryptography implementation
 - [ ] Input validation and sanitization
 - [ ] File upload and processing
@@ -1050,7 +1082,7 @@ If current maturity is <Level 3, provide phased roadmap:
 - Prioritize gaps by impact and effort (quick wins first)
 - Be specific in recommendations (not "improve security")
 - Consider dependencies (some improvements require others first)
-- Align recommendations with organizational maturity and resources
+- Align recommendations with organisational maturity and resources
 
 **Common Mistakes:**
 
@@ -1111,7 +1143,7 @@ If current maturity is <Level 3, provide phased roadmap:
 
 - Assessment Date
 - Assessed By (assessor name)
-- Organization
+- Organisation
 - Assessment Period (e.g., Q1 2025)
 - Total Applications Assessed
 
@@ -1240,7 +1272,7 @@ Required approvers:
 - Development Manager interview
 - Security Champion interview
 
-## Evidence Storage and Organization
+## Evidence Storage and Organisation
 
 **Folder Structure:**
 ```
@@ -1570,7 +1602,7 @@ Good luck! 📋✅
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Software security is a process, not a feature."*
+— Gary McGraw
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -8,25 +8,48 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Training Needs Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.3.1-UG |
+| **Related Policy** | ISMS-POL-A.6.3 (Awareness and Training) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.3 (Information Security Awareness, Education and Training) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Training Needs Analysis and Audience Classification |
-| **Related Policy** | ISMS-POL-A.6.3, Section 2.2 (Training Audience Classification) |
-| **Purpose** | Assess training needs by role classification, identify training gaps, and determine appropriate training requirements for all personnel |
-| **Target Audience** | HR Training Coordinators, Information Security Officers, Department Managers, Compliance Officers, Auditors |
-| **Assessment Type** | Process & Organizational Assessment |
-| **Review Cycle** | Annual (minimum) + upon significant organizational changes |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | Initial | Initial specification for Training Needs Assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.3 (Awareness and Training)
+- ISMS-IMP-A.6.3.2 (Training Program Design)
+- ISMS-IMP-A.6.3.3 (Training Delivery and Tracking)
 
 ---
 
-**Audience:** HR Training Coordinators, Department Managers, Information Security Officers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Role Inventory | Catalogue all roles requiring information security training |
+| 3 | Tier Classification | Classify roles into training tiers by sensitivity and responsibility |
+| 4 | Training Requirements | Map training requirements to each role and tier |
+| 5 | Gap Analysis | Identify training gaps against A.6.3 requirements |
+| 6 | Evidence Register | Store and reference evidence supporting assessments |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -34,7 +57,7 @@
 
 ## What This Assessment Measures
 
-This assessment evaluates [Organization]'s training needs to ensure all personnel receive appropriate information security awareness, education, and training in compliance with ISO/IEC 27001:2022 Control A.6.3 and related regulatory requirements.
+This assessment evaluates [Organisation]'s training needs to ensure all personnel receive appropriate information security awareness, education, and training in compliance with ISO/IEC 27001:2022 Control A.6.3 and related regulatory requirements.
 
 **Scope:** 4 assessment domains covering complete training needs analysis:
 1. **Role Inventory** - Complete inventory of roles requiring security training
@@ -58,11 +81,11 @@ This assessment evaluates [Organization]'s training needs to ensure all personne
 > *"Personnel of the organisation and relevant interested parties should receive appropriate information security awareness, education and training and regular updates of the organisation's information security policy, topic-specific policies and procedures, as relevant for their job function."*
 
 **ISO 27001:2022 Clause 7.2 - Competence:**
-> The organization shall determine the necessary competence of person(s) doing work under its control that affects its information security performance.
+> The organisation shall determine the necessary competence of person(s) doing work under its control that affects its information security performance.
 
 **Regulatory Context:**
 
-- **Swiss nDSG (Art. 8):** Requires appropriate organizational measures including staff competency
+- **Swiss nDSG (Art. 8):** Requires appropriate organisational measures including staff competency
 - **EU GDPR (Art. 29, 32):** Personnel processing personal data must act under appropriate instruction/training
 - **NIS2 Directive:** Cybersecurity practices must include staff training (Art. 21)
 - **DORA (Financial Services):** Digital operational resilience training required (Art. 13)
@@ -100,7 +123,7 @@ This assessment evaluates [Organization]'s training needs to ensure all personne
    - Identify role-specific training needs
 
 4. **HR Business Partners** - HR perspective
-   - Provide organization structure information
+   - Provide organisation structure information
    - Clarify employment types and relationships
    - Support onboarding/role change integration
 
@@ -112,7 +135,7 @@ This assessment evaluates [Organization]'s training needs to ensure all personne
 
 **Required Skills:**
 
-- Understanding of organizational structure and roles
+- Understanding of organisational structure and roles
 - Familiarity with ISMS-POL-A.6.3 training requirements
 - Access to role descriptions and job specifications
 - Knowledge of system/data access patterns
@@ -173,8 +196,8 @@ This assessment implements **ISMS-POL-A.6.3, Section 2.2 (Training Audience Clas
 
 Before starting this assessment, ensure you have access to:
 
-**Organizational Information:**
-- [ ] Complete organization chart with all departments
+**Organisational Information:**
+- [ ] Complete organisation chart with all departments
 - [ ] Role/job descriptions for all positions
 - [ ] Employment type classifications (permanent, contractor, temp)
 - [ ] Third-party personnel inventory (contractors with system access)
@@ -200,8 +223,8 @@ Before starting this assessment, ensure you have access to:
 
 **Essential Understanding:**
 
-1. **Organizational Structure:**
-   - Department and team organization
+1. **Organisational Structure:**
+   - Department and team organisation
    - Reporting relationships
    - Role responsibilities and scopes
 
@@ -229,7 +252,7 @@ Before starting this assessment, ensure you have access to:
 
 **Process:**
 
-1. **Export organizational data:**
+1. **Export organisational data:**
    - Pull role/job title list from HR system
    - Include all employment types (employees, contractors, temps)
    - Add third-party personnel with system access
@@ -324,10 +347,10 @@ Before starting this assessment, ensure you have access to:
 
 1. **Verify pre-populated requirements align with current policy**
 
-2. **Add organization-specific training:**
+2. **Add organisation-specific training:**
    - Industry-specific security topics
    - Regulatory training (PCI, HIPAA, GDPR as applicable)
-   - Organization-specific systems/procedures
+   - Organisation-specific systems/procedures
 
 3. **Document delivery method requirements:**
    - Some regulations mandate specific methods (e.g., annual classroom for PCI)
@@ -373,7 +396,7 @@ Before starting this assessment, ensure you have access to:
 
 | Category | Evidence Examples |
 |----------|-------------------|
-| Organizational | Org charts, role descriptions, employment data |
+| Organisational | Org charts, role descriptions, employment data |
 | System Access | Access reports, privilege lists, application matrices |
 | Training Records | LMS reports, completion certificates, attendance records |
 | Policy | POL-A.6.3, related policies referenced |
@@ -390,7 +413,7 @@ Before starting this assessment, ensure you have access to:
 
 2. **Approval Workflow:**
    - Assessor self-review and sign
-   - HR Director review (organizational accuracy)
+   - HR Director review (organisational accuracy)
    - Information Security Officer (classification accuracy)
    - CISO final approval
 
@@ -416,7 +439,7 @@ Before starting this assessment, ensure you have access to:
 
 | Evidence Type | Description | Source | Format |
 |---------------|-------------|--------|--------|
-| Organization Chart | Current org structure | HR System | PDF/PNG export |
+| Organisation Chart | Current org structure | HR System | PDF/PNG export |
 | Role Catalog | Complete job descriptions | HR System | Excel/PDF |
 | Headcount Report | Personnel count by role | HR System | Excel export |
 | Contractor Register | Third-party personnel list | Vendor Management | Excel |
@@ -523,9 +546,9 @@ Right: "Financial Analysis Role" → Tier 3 (both titles, same training needs)
 
 ## ❌ MISTAKE #4: Static Assessment (One and Done)
 
-**The Problem:** Completing assessment once and not updating when organization changes.
+**The Problem:** Completing assessment once and not updating when organisation changes.
 
-**Why It Matters:** Role changes, new hires, reorganizations, and new systems all affect training needs. Stale assessments lead to compliance gaps and untrained personnel.
+**Why It Matters:** Role changes, new hires, reorganisations, and new systems all affect training needs. Stale assessments lead to compliance gaps and untrained personnel.
 
 **The Fix:**
 - Review quarterly (minimum annually)
@@ -533,7 +556,7 @@ Right: "Financial Analysis Role" → Tier 3 (both titles, same training needs)
   - New roles created
   - Significant headcount changes (>20%)
   - New systems/data types introduced
-  - Organizational restructuring
+  - Organisational restructuring
   - Regulatory changes
 
 ## ❌ MISTAKE #5: No Gap Remediation Ownership
@@ -658,7 +681,7 @@ Before submitting for review, verify:
 
 - [ ] Training tiers match POL-A.6.3 Section 2.2 definitions
 - [ ] Training requirements align with POL-A.6.3 Section 2.3-2.4
-- [ ] Approval workflow follows organizational governance
+- [ ] Approval workflow follows organisational governance
 - [ ] Frequency requirements match policy minimums
 
 ## Audit Readiness Checks
@@ -697,7 +720,7 @@ Before submitting for review:
 **Step 2: HR Director Review**
 
 **Reviewer:** HR Director or HR Business Partner Lead
-**Focus:** Organizational accuracy
+**Focus:** Organisational accuracy
 
 **Review Points:**
 - Role inventory completeness and accuracy
@@ -709,7 +732,7 @@ Before submitting for review:
 **Duration:** 2-3 business days
 
 **Outcomes:**
-- Approved: No organizational concerns
+- Approved: No organisational concerns
 - Revisions Required: Specific corrections noted
 
 **Step 3: Information Security Officer Review**
@@ -745,7 +768,7 @@ Before submitting for review:
 **Duration:** 1-2 business days
 
 **Outcomes:**
-- Approved: Assessment complete, remediation authorized
+- Approved: Assessment complete, remediation authorised
 - Approved with Conditions: Specific follow-up required
 - Rejected: Significant issues, reassessment needed
 
@@ -795,7 +818,7 @@ Before submitting for review:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"An investment in knowledge pays the best interest."*
+— Benjamin Franklin
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

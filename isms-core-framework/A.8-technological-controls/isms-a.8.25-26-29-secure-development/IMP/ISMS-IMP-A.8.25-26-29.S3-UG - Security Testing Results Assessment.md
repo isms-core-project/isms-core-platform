@@ -8,26 +8,57 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-IMP-A.8.25-26-29-S3-UG |
+|-------|-------|
+| **Document Title** | Security Testing Results Assessment |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.25-26-29.S3-UG |
+| **Related Policy** | ISMS-POL-A.8.25-26-29 (Secure Development) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.25 (Secure Development Life Cycle) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Security Testing Results (A.8.29) |
-| **Related Policy** | ISMS-POL-A.8.25-26-29 Section 4 |
-| **Purpose** | Assessment of security testing execution, results analysis, and vulnerability management throughout SDLC including SAST, DAST, SCA, IAST, and penetration testing |
-| **Target Audience** | Security Engineers, QA Managers, Development Leads, Security Assessors |
-| **Assessment Type** | Application-specific or team-specific assessment |
-| **Review Cycle** | Quarterly for High-Risk applications, Semi-annually for Medium-Risk, Annually for Low-Risk |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial traditional implementation guide | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.25-26-29 (Secure Development)
+- ISMS-IMP-A.8.25-26-29.S1 (Security Requirements Assessment)
+- ISMS-IMP-A.8.25-26-29.S2 (SDLC Security Activities Assessment)
+- ISMS-IMP-A.8.25-26-29.S4 (Vulnerability Remediation Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.8.25-26-29-S3-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Security Testing Coverage | Assess coverage of security testing across applications |
+| 3 | SAST Scan Results | Static application security testing results and findings |
+| 4 | DAST Scan Results | Dynamic application security testing results and findings |
+| 5 | SCA Scan Results | Software composition analysis scan results and findings |
+| 6 | Penetration Testing Results | Penetration testing engagement findings and remediation status |
+| 7 | Security Acceptance Testing | Security acceptance testing criteria and results |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -60,7 +91,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 - Security requirements specification (see IMP-S1)
 - SDLC security activities process (see IMP-S2)
 - Vulnerability remediation tracking (see IMP-S4 - this focuses on remediation workflow)
-- Portfolio-wide dashboard (see IMP-S5)
+- Portfolio-wide status tracked in each workbook's Summary Dashboard (S1–S4)
 
 ## Assessment Workbook Structure
 
@@ -325,7 +356,7 @@ Based on risk level, what testing is required?
 
 ## Sheet 2: SAST Results
 
-**Purpose:** Assess SAST execution and analyze scan results.
+**Purpose:** Assess SAST execution and analyse scan results.
 
 **Completion Time:** 30-45 minutes
 
@@ -405,7 +436,7 @@ List top 5 vulnerability categories found:
 
 ## Sheet 3: DAST Results
 
-**Purpose:** Assess DAST execution and analyze scan results.
+**Purpose:** Assess DAST execution and analyse scan results.
 
 **Completion Time:** 30-45 minutes
 
@@ -669,7 +700,7 @@ For each security requirement category, assess test case coverage:
 | Category | Test Cases Defined? | Test Cases Executed? | Pass Rate |
 |----------|-------------------|---------------------|-----------|
 | Authentication | Yes/No | Yes/No | X% |
-| Authorization | Yes/No | Yes/No | X% |
+| Authorisation | Yes/No | Yes/No | X% |
 | Input Validation | Yes/No | Yes/No | X% |
 | Cryptography | Yes/No | Yes/No | X% |
 | Session Management | Yes/No | Yes/No | X% |
@@ -985,7 +1016,7 @@ For each gap, provide recommendation:
 - Test pass/fail summary
 - Security acceptance criteria checklist
 
-## Evidence Storage and Organization
+## Evidence Storage and Organisation
 
 **Folder Structure:**
 ```
@@ -1151,7 +1182,7 @@ For each gap, provide recommendation:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Every bug found before release is a breach prevented."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

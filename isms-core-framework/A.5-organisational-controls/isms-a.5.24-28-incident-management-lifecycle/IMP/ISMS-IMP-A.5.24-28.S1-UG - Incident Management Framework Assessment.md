@@ -12,14 +12,12 @@
 | **Document Title** | Incident Management Framework Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.24-28.S1-UG |
-| **Assessment Domain** | Domain 1 - Framework & Governance (A.5.24 Focus) |
 | **Related Policy** | ISMS-POL-A.5.24-28 (Incident Management Lifecycle) |
-| **Related Reference** | ISMS-REF-A.5.24-28 (Incident Response Reference Guide) |
-| **Document Owner** | Chief Information Security Officer (CISO) |
-| **Technical Authority** | Incident Response Team Lead / CSIRT Manager |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.24 (Information Security Incident Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
 | **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
 | **Status** | Draft |
 
@@ -27,21 +25,37 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CSIRT Manager | Initial framework assessment specification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Review Cycle**: Annual (or after major incident management changes)  
-**Next Review Date**: [Effective Date + 12 months]  
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-**Related Documents**: 
+**Related Documents**:
 
-- ISMS-POL-A.5.24-28 (Incident Management Lifecycle Policy)
-- ISMS-REF-A.5.24-28 (Incident Response Reference Guide)
-- ISMS-IMP-A.5.24-28.S2 (Detection & Classification Assessment)
+- ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
+- ISMS-IMP-A.5.24-28.S2 (Detection Classification Assessment)
 - ISMS-IMP-A.5.24-28.S3 (Response Capabilities Assessment)
 - ISMS-IMP-A.5.24-28.S4 (Forensic Evidence Assessment)
-- ISMS-IMP-A.5.24-28.S5 (Learning & Improvement Assessment)
-- ISO/IEC 27002:2022 Control A.5.24
-- NIST SP 800-61 Rev. 2 (Computer Security Incident Handling Guide)
+- ISMS-IMP-A.5.24-28.S5 (Learning & Continuous Improvement Assessment)
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 10 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Governance Assessment** | Incident management policy, governance structure, and mandate |
+| **Organisational Structure** | CSIRT/SOC organisational structure, roles, and responsibilities |
+| **Training & Competency** | Staff training records and incident response competency assessment |
+| **Tools & Technology** | SIEM, SOAR, and incident management tooling assessment |
+| **Integration Assessment** | Integration with business continuity, legal, and supplier processes |
+| **Gap Analysis** | Identified gaps and remediation action tracking |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -49,12 +63,12 @@
 
 ## Purpose
 
-This assessment evaluates [Organization]'s **incident management framework and governance structure**, focusing on the **planning and preparation** phase of incident management (A.5.24).
+This assessment evaluates [Organisation]'s **incident management framework and governance structure**, focusing on the **planning and preparation** phase of incident management (A.5.24).
 
 **What This Assessment Covers:**
 
 - Incident management governance (policies, procedures, authority)
-- CSIRT/SOC organizational structure and staffing
+- CSIRT/SOC organisational structure and staffing
 - Role definitions, responsibilities, and RACI clarity
 - Training and competency programs
 - Tools and technology capabilities
@@ -105,7 +119,7 @@ This assessment evaluates [Organization]'s **incident management framework and g
 
 **Required Knowledge:**
 
-- [Organization]'s incident management policies and procedures
+- [Organisation]'s incident management policies and procedures
 - CSIRT/SOC team structure and staffing model
 - Incident response training programs
 - Incident response tools and technologies in use
@@ -127,26 +141,26 @@ This assessment evaluates [Organization]'s **incident management framework and g
 
 ## Time Estimate
 
-**Total Assessment Time:** 8-12 hours (depending on organization size and complexity)
+**Total Assessment Time:** 8-12 hours (depending on organisation size and complexity)
 
 **Breakdown:**
 
 - **Information Gathering:** 3-4 hours
   - Review incident management policy and procedures
-  - Collect organizational charts, job descriptions, RACI matrices
+  - Collect organisational charts, job descriptions, RACI matrices
   - Gather training records, exercise logs
   - Inventory incident response tools and integrations
   
 - **Assessment Completion:** 3-4 hours
   - Complete governance assessment (policy, procedures, authority)
-  - Document organizational structure and staffing
+  - Document organisational structure and staffing
   - Assess training effectiveness
   - Evaluate tool capabilities
   - Complete integration assessment
   
 - **Evidence Collection:** 1-2 hours
   - Screenshots of CSIRT charter, procedures
-  - Organizational charts
+  - Organisational charts
   - Training records and certificates
   - Tool inventory and integration diagrams
   
@@ -157,9 +171,9 @@ This assessment evaluates [Organization]'s **incident management framework and g
 
 **Complexity Factors:**
 
-- **Simple (8 hours):** Small organization, dedicated CSIRT, well-documented procedures, mature tools
-- **Moderate (10 hours):** Mid-size organization, part-time incident response, some documentation gaps
-- **Complex (12+ hours):** Large organization, distributed teams, multiple locations, outsourced SOC, compliance complexity
+- **Simple (8 hours):** Small organisation, dedicated CSIRT, well-documented procedures, mature tools
+- **Moderate (10 hours):** Mid-size organisation, part-time incident response, some documentation gaps
+- **Complex (12+ hours):** Large organisation, distributed teams, multiple locations, outsourced SOC, compliance complexity
 
 ## Connection to Policy
 
@@ -173,7 +187,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Exception management process
 - Policy review and update cycle
 
-**Organizational Structure:**
+**Organisational Structure:**
 
 - CSIRT/SOC team established (dedicated, part-time, or outsourced)
 - Roles and responsibilities clearly defined
@@ -206,7 +220,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Third-Party Management (A.5.19-23): Supplier incidents escalated appropriately
 
 **Policy Authority:** Chief Information Security Officer (CISO)  
-**Compliance Status:** Mandatory for all [Organization] information security incidents
+**Compliance Status:** Mandatory for all [Organisation] information security incidents
 
 ## Assessment Scope
 
@@ -219,7 +233,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Authority matrix clarity
 - Review and update frequency
 
-✅ **Organizational Structure:**
+✅ **Organisational Structure:**
 
 - CSIRT/SOC team model (dedicated, virtual, outsourced)
 - Staffing levels and coverage (24/7, business hours, on-call)
@@ -253,7 +267,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 ❌ Response execution and effectiveness (see S3)
 ❌ Forensic evidence collection procedures (see S4)
 ❌ Post-incident review quality (see S5)
-❌ Individual incident investigations (historical incident data analyzed in S3)
+❌ Individual incident investigations (historical incident data analysed in S3)
 
 ## Prerequisites
 
@@ -269,7 +283,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
    - Incident management policy document
    - Incident response procedures/runbooks
    - CSIRT charter or SOC operating procedures
-   - Organizational charts showing CSIRT reporting structure
+   - Organisational charts showing CSIRT reporting structure
    - Job descriptions for incident response roles
    - RACI matrix (if exists)
    - Training records (courses, exercises, certifications)
@@ -306,13 +320,13 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 ```
 1. Information Gathering (3-4 hours)
    ├── Review incident management policy and procedures
-   ├── Collect organizational charts and role definitions
+   ├── Collect organisational charts and role definitions
    ├── Gather training records and exercise logs
    └── Inventory tools and integrations
 
 2. Assessment Completion (3-4 hours)
    ├── Section A: Governance Assessment (policy, procedures, authority)
-   ├── Section B: Organizational Structure (CSIRT model, staffing, roles)
+   ├── Section B: Organisational Structure (CSIRT model, staffing, roles)
    ├── Section C: Training & Competency (programs, exercises, tracking)
    ├── Section D: Tools & Technology (capabilities, integrations)
    └── Section E: Integration Assessment (logging, monitoring, BC/DR)
@@ -357,7 +371,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Policy review frequency
 - Regulatory compliance alignment
 
-**Sheet 3: Organizational Structure**
+**Sheet 3: Organisational Structure**
 
 - CSIRT/SOC team model (dedicated, virtual, hybrid, outsourced)
 - Staffing levels and coverage (24/7, business hours, on-call)
@@ -437,7 +451,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 
 **Q1: Policy_Exists**
 
-- **Question:** Does [Organization] have a documented incident management policy?
+- **Question:** Does [Organisation] have a documented incident management policy?
 - **Dropdown:** Yes / No / In Draft
 - **Evidence Expected:**
   - ISMS-POL-A.5.24-28 (or equivalent incident management policy document)
@@ -471,7 +485,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Approve policy updates
   - Allocate resources (budget, staffing)
   - Enforce compliance
-- **Evidence:** Policy document header, job description, organizational chart
+- **Evidence:** Policy document header, job description, organisational chart
 
 **Q4: Policy_Review_Frequency**
 
@@ -507,7 +521,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Procedures regularly updated
 - **Evidence Expected:**
   - Incident response runbooks/playbooks
-  - Procedures for common incident types (malware, data breach, DoS, unauthorized access)
+  - Procedures for common incident types (malware, data breach, DoS, unauthorised access)
   - Escalation procedures
   - Communication procedures (internal, external, regulatory)
   - Evidence collection procedures
@@ -608,7 +622,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Regulatory breach with potential fines or enforcement action
   - Systemic failure or control breakdown
   - Major data breach (>10,000 records, sensitive data)
-- **Note:** Many organizations include Board notification in BC/DR activation criteria
+- **Note:** Many organisations include Board notification in BC/DR activation criteria
 
 **Q15: External_Notification_Procedures**
 
@@ -760,7 +774,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 
 ---
 
-## Sheet 3: Organizational Structure
+## Sheet 3: Organisational Structure
 
 **Purpose:** Document CSIRT/SOC structure, staffing, roles, and responsibilities
 
@@ -772,7 +786,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 
 **Q26: Incident_Response_Model**
 
-- **Question:** What incident response organizational model does [Organization] use?
+- **Question:** What incident response organisational model does [Organisation] use?
 - **Dropdown:**
   - Dedicated CSIRT (full-time incident response team)
   - Virtual CSIRT (part-time, members from different departments)
@@ -787,33 +801,33 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - 24/7 coverage (shifts or on-call)
   - Deep expertise, fast response
   - Higher cost
-  - Best for: Large organizations, high incident volume, regulated industries
+  - Best for: Large organisations, high incident volume, regulated industries
   
   **Virtual CSIRT:**
 
   - IT, Security, Legal, HR members activated during incidents
   - Day jobs + incident response duties
   - Cost-effective but slower response
-  - Best for: Small/mid-size organizations, low incident volume
+  - Best for: Small/mid-size organisations, low incident volume
   
   **Hybrid:**
 
   - Core SOC team (detection, triage) + CSIRT (investigation, remediation)
   - Balances cost and capability
-  - Best for: Mid-large organizations
+  - Best for: Mid-large organisations
   
   **Outsourced SOC/MSSP:**
 
   - Third-party provides monitoring, detection, initial response
   - Internal team handles escalation, remediation, communication
   - Cost-effective for 24/7 coverage
-  - Best for: Organizations without resources for full SOC
+  - Best for: Organisations without resources for full SOC
   
   **Coordinated:**
 
   - Multiple regional/business unit teams
   - Central coordination (CISO office)
-  - Best for: Global organizations, decentralized IT
+  - Best for: Global organisations, decentralized IT
 
 **Q27: CSIRT_Establishment_Date**
 
@@ -836,7 +850,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - **Requirement:** Dependent on risk assessment, regulatory requirements, business criticality
 - **Best Practice:**
   - Critical systems, regulated industries → 24/7 coverage
-  - Small organizations, low risk → Business hours + on-call acceptable
+  - Small organisations, low risk → Business hours + on-call acceptable
 - **Auditor Will Verify:** Coverage aligns with risk assessment and business requirements
 
 **Q29: CSIRT_Staffing_Level**
@@ -1007,7 +1021,7 @@ For each role, document:
 - **Typical Responsibilities:**
   - Coordinate with MSSPs or outsourced SOC
   - Engage incident response retainers (if contracted)
-  - Manage vendor notifications (if supplier incident affects [Organization])
+  - Manage vendor notifications (if supplier incident affects [Organisation])
   - Track vendor SLAs for incident support
 - **RACI:** Responsible for third-party coordination
 - **Note:** May be Procurement, Vendor Management, or CISO office
@@ -1018,7 +1032,7 @@ For each role, document:
 - **Typical Role:** CISO, CIO, CRO (Chief Risk Officer)
 - **Typical Responsibilities:**
   - Provide CSIRT budget and resources
-  - Remove organizational blockers
+  - Remove organisational blockers
   - Escalation point for critical incidents
   - Board reporting for material incidents
 - **RACI:** Accountable for incident management capability
@@ -1036,7 +1050,7 @@ For each role, document:
 
 **Q45: Other_Roles**
 
-- **Question:** Are there additional incident response roles specific to [Organization]?
+- **Question:** Are there additional incident response roles specific to [Organisation]?
 - **Format:** Free text (list roles)
 - **Examples:**
   - Cloud Security Specialist (for cloud-native incidents)
@@ -1080,9 +1094,9 @@ For each role, document:
 
 - **Question:** When was the RACI matrix last reviewed/updated?
 - **Format:** Date (DD.MM.YYYY) or "Never updated"
-- **Best Practice:** Review annually + after organizational changes
+- **Best Practice:** Review annually + after organisational changes
 - **Trigger Events for RACI Update:**
-  - Staffing changes (new hires, departures, reorganization)
+  - Staffing changes (new hires, departures, reorganisation)
   - Process changes (new tools, procedures)
   - Major incidents revealing role confusion
 
@@ -1202,7 +1216,7 @@ For each role, document:
 
 **Q56: Training_Program_Exists**
 
-- **Question:** Does [Organization] have a documented incident response training program?
+- **Question:** Does [Organisation] have a documented incident response training program?
 - **Dropdown:** Yes - Comprehensive / Yes - Basic / No
 - **Comprehensive Program Includes:**
   - Training curriculum (awareness, role-specific, specialized)
@@ -1264,10 +1278,10 @@ For each role, document:
 
 **Q61: Tabletop_Exercise_Frequency**
 
-- **Question:** How often does [Organization] conduct incident response tabletop exercises?
+- **Question:** How often does [Organisation] conduct incident response tabletop exercises?
 - **Dropdown:** Quarterly / Semi-Annually / Annually / Bi-Annually / Never
 - **Requirement:** ISMS-POL-A.5.24-28 Section 2.1.3 - Minimum annually
-- **Best Practice:** Quarterly for CSIRT, annually for broader organization (including Legal, HR, Management)
+- **Best Practice:** Quarterly for CSIRT, annually for broader organisation (including Legal, HR, Management)
 - **Tabletop Exercise Purpose:**
   - Test procedures without actual incident
   - Identify gaps in response (roles, communication, tools)
@@ -1332,7 +1346,7 @@ For each role, document:
 
 **Q66: Full_Scale_Exercises**
 
-- **Question:** Does [Organization] conduct full-scale incident response exercises (beyond tabletop)?
+- **Question:** Does [Organisation] conduct full-scale incident response exercises (beyond tabletop)?
 - **Dropdown:** Yes - Regularly / Yes - Occasionally / No
 - **Full-Scale Exercise Types:**
   - **Red Team / Blue Team:** Simulated attack, CSIRT defends
@@ -1344,7 +1358,7 @@ For each role, document:
 
 **Q67: Breach_Simulation_Tools**
 
-- **Question:** Does [Organization] use breach simulation or attack simulation tools?
+- **Question:** Does [Organisation] use breach simulation or attack simulation tools?
 - **Dropdown:** Yes / No
 - **Tools Examples:**
   - **Breach and Attack Simulation (BAS):** Automated attack simulation (SafeBreach, AttackIQ)
@@ -1382,7 +1396,7 @@ For each role, document:
 
 **Q70: Certification_Tracking**
 
-- **Question:** Does [Organization] track security certifications for CSIRT members?
+- **Question:** Does [Organisation] track security certifications for CSIRT members?
 - **Dropdown:** Yes / Informal / No
 - **Common Incident Response Certifications:**
   - **GIAC (SANS):** GCIH, GCFA, GCFE, GREM
@@ -1466,7 +1480,7 @@ For each role, document:
 
 **Q76: Ticketing_System_Exists**
 
-- **Question:** Does [Organization] have a dedicated incident ticketing/tracking system?
+- **Question:** Does [Organisation] have a dedicated incident ticketing/tracking system?
 - **Dropdown:** Yes - Dedicated IR Platform / Yes - General IT Ticketing / No
 - **Platform Examples:**
   - **Dedicated IR:** TheHive, Cortex, RTIR (Request Tracker for Incident Response), Resilient (IBM)
@@ -1521,7 +1535,7 @@ For each role, document:
 
 **Q80: SIEM_Deployed**
 
-- **Question:** Does [Organization] have a Security Information and Event Management (SIEM) system?
+- **Question:** Does [Organisation] have a Security Information and Event Management (SIEM) system?
 - **Dropdown:** Yes - Fully Operational / Yes - Partial Deployment / No
 - **SIEM Purpose:**
   - Aggregate logs from multiple sources
@@ -1598,7 +1612,7 @@ For each role, document:
 
 **Q86: Forensic_Workstation**
 
-- **Question:** Does [Organization] have a dedicated forensic workstation or lab?
+- **Question:** Does [Organisation] have a dedicated forensic workstation or lab?
 - **Dropdown:** Yes - Dedicated Lab / Yes - Virtual Environment / No
 - **Forensic Workstation Requirements:**
   - Write blockers (hardware or software)
@@ -1671,7 +1685,7 @@ For each role, document:
 
 **Q91: Threat_Intel_Feeds**
 
-- **Question:** Does [Organization] subscribe to threat intelligence feeds?
+- **Question:** Does [Organisation] subscribe to threat intelligence feeds?
 - **Dropdown:** Yes - Multiple Feeds / Yes - Single Feed / No
 - **Threat Intel Feed Types:**
   - **Commercial:** Recorded Future, CrowdStrike, Mandiant, ThreatConnect
@@ -1950,12 +1964,12 @@ For each role, document:
 - **Question:** Are procedures defined for incidents involving third parties (suppliers, MSSPs)?
 - **Dropdown:** Yes - Documented / Informal / No
 - **Third-Party Incident Scenarios:**
-  - Supplier breach affecting [Organization] (e.g., cloud provider incident)
-  - MSSP-detected incident (outsourced SOC escalates to [Organization])
+  - Supplier breach affecting [Organisation] (e.g., cloud provider incident)
+  - MSSP-detected incident (outsourced SOC escalates to [Organisation])
   - Vendor software vulnerability requiring patch/mitigation
 - **Procedures Should Cover:**
   - Notification from third party
-  - Escalation to [Organization] CSIRT
+  - Escalation to [Organisation] CSIRT
   - Coordination and communication
   - Evidence collection (if third party provides logs, forensics)
 
@@ -1965,19 +1979,19 @@ For each role, document:
 - **Dropdown:** Yes / No / N/A (no MSSP)
 - **MSSP SLAs Should Include:**
   - Detection time (mean time to detect)
-  - Escalation time (how quickly MSSP notifies [Organization])
+  - Escalation time (how quickly MSSP notifies [Organisation])
   - Severity thresholds (what gets escalated immediately vs. daily report)
   - Communication protocols (phone, email, portal)
 - **Evidence:** MSSP contract, SLA document
 
 **Q114: Supplier_Incident_Notification_Process**
 
-- **Question:** Do suppliers know how to report security incidents to [Organization]?
+- **Question:** Do suppliers know how to report security incidents to [Organisation]?
 - **Dropdown:** Yes - Defined in Contracts / Informal / No
 - **Supplier Contract Language (A.5.19-20 integration):**
-  - Supplier must notify [Organization] of security incidents affecting [Organization] data or services
+  - Supplier must notify [Organisation] of security incidents affecting [Organisation] data or services
   - Notification timeline (within 24 hours)
-  - Contact: [Organization] Security Team (security@example.com)
+  - Contact: [Organisation] Security Team (security@example.com)
 - **Evidence:** Supplier contracts, supplier security requirements
 
 ---
@@ -2045,7 +2059,7 @@ For each role, document:
 **Prioritization Criteria:**
 1. **Regulatory Compliance:** GDPR, PCI DSS v4.0.1, sector-specific requirements
 2. **Operational Impact:** Does gap prevent effective incident response?
-3. **Risk Exposure:** Does gap leave organization vulnerable?
+3. **Risk Exposure:** Does gap leave organisation vulnerable?
 4. **Effort/Cost:** Quick wins vs. major projects
 
 ---
@@ -2059,7 +2073,7 @@ For each role, document:
 | Evidence_ID | Evidence_Type | Description | Related_Section | Storage_Location | Date_Collected | Collected_By | Verification_Status |
 |-------------|---------------|-------------|-----------------|------------------|----------------|--------------|-------------------|
 | EV-001 | Policy Document | ISMS-POL-A.5.24-28 | Governance | SharePoint:/Policies/ | [Date] | CSIRT Manager | Verified |
-| EV-002 | Org Chart | CSIRT Organizational Chart | Structure | /Evidence/S1/org_chart.pdf | [Date] | HR | Verified |
+| EV-002 | Org Chart | CSIRT Organisational Chart | Structure | /Evidence/S1/org_chart.pdf | [Date] | HR | Verified |
 | EV-003 | Training Records | 2025 Security Awareness Training Completion | Training | HR System Report | [Date] | HR | Verified |
 | [etc.] | | | | | | | |
 
@@ -2067,7 +2081,7 @@ For each role, document:
 
 - Policy Document
 - Procedure/Runbook
-- Organizational Chart
+- Organisational Chart
 - Job Description
 - RACI Matrix
 - Training Record
@@ -2098,7 +2112,7 @@ For each role, document:
 **B. Domain Scores**
 
 - Governance Compliance: [%]
-- Organizational Structure: [%]
+- Organisational Structure: [%]
 - Training Effectiveness: [%]
 - Tool Capabilities: [%]
 - Integration Completeness: [%]
@@ -2162,7 +2176,7 @@ Assessment Status: [Draft / Under Review / Approved]
 - PCI DSS v4.0.1 incident reporting procedure (export)
 - Contact lists (redact personal info if needed)
 
-## Organizational Structure Evidence
+## Organisational Structure Evidence
 
 **Org Charts:**
 
@@ -2239,13 +2253,13 @@ Assessment Status: [Draft / Under Review / Approved]
 **✅ Solution:** Honest self-assessment (auditors will verify, gaps are opportunities to improve)
 
 **❌ Mistake:** Ignoring "soft" elements (culture, communication) and focusing only on tools
-**✅ Solution:** Balance technical and organizational aspects (procedures, training, roles are as important as tools)
+**✅ Solution:** Balance technical and organisational aspects (procedures, training, roles are as important as tools)
 
 **❌ Mistake:** No evidence collected (claims without proof)
 **✅ Solution:** Systematic evidence collection (for every "Yes," have supporting evidence)
 
 **❌ Mistake:** Generic assessment (copy-paste from templates without customization)
-**✅ Solution:** Organization-specific assessment (reflect actual state, not aspirational state)
+**✅ Solution:** Organisation-specific assessment (reflect actual state, not aspirational state)
 
 ## Gap Analysis Mistakes
 
@@ -2263,7 +2277,7 @@ Assessment Status: [Draft / Under Review / Approved]
 
 ## Evidence Mistakes
 
-**❌ Mistake:** No evidence folder organization (random files, unclear naming)
+**❌ Mistake:** No evidence folder organisation (random files, unclear naming)
 **✅ Solution:** Structured folder (/Evidence/S1_Framework/ with subfolders)
 
 **❌ Mistake:** Evidence without context (screenshot with no explanation)
@@ -2369,7 +2383,7 @@ Assessment Status: [Draft / Under Review / Approved]
 **Triggers for Re-Assessment:**
 
 - Annual review (scheduled)
-- Major organizational change (merger, acquisition, restructuring)
+- Major organisational change (merger, acquisition, restructuring)
 - Major incident (lessons learned trigger assessment update)
 - Audit findings (ISO 27001 audit identifies gaps)
 - Regulatory changes (new requirements)
@@ -2387,7 +2401,7 @@ Assessment Status: [Draft / Under Review / Approved]
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The best crisis manager is the one who prevents the crisis."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

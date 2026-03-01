@@ -8,26 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Perimeter Security Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.1-2-3-S1-UG |
+| **Related Policy** | ISMS-POL-A.7.1-2-3-S1 (Physical Access Control) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.1 (Physical Security Perimeters) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Physical Security Perimeters - Zone Definition, Building Perimeter, Internal Perimeters |
-| **Related Policy** | ISMS-POL-A.7.1-2-3, Section 2.1 (Physical Security Perimeters) |
-| **Purpose** | Document security perimeter definitions, assess construction quality, verify monitoring coverage, and identify gaps |
-| **Target Audience** | Facilities Management, Physical Security, Building Services, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Annual or After Major Facility Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Perimeter Security assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.1-2-3-S1 (Physical Access Control)
+- ISMS-IMP-A.7.1-2-3-S2 (Entry Control Assessment)
+- ISMS-IMP-A.7.1-2-3-S3 (Secure Areas Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.1-2-3-S1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Security Zones | Define and document physical security zones |
+| 3 | Building Perimeter | Assess building perimeter physical security |
+| 4 | Internal Perimeters | Evaluate internal perimeter controls between security zones |
+| 5 | Perimeter Monitoring | Assess monitoring coverage for all perimeters |
+| 6 | Evidence Register | Store and reference evidence supporting assessments |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -98,7 +126,6 @@ This assessment is **facility-agnostic**. You document YOUR specific security zo
 | **ISMS-IMP-A.7.1-2-3-S1** | **Perimeter Security** | **WHERE are the security boundaries?** |
 | ISMS-IMP-A.7.1-2-3-S2 | Entry Control          | HOW do people enter secure areas? |
 | ISMS-IMP-A.7.1-2-3-S3 | Secure Areas           | WHAT happens inside secure areas? |
-| ISMS-IMP-A.7.1-2-3-S4 | Compliance Dashboard   | Overall physical access control posture |
 
 This assessment (A.7.1-2-3-S1) establishes the foundation by defining WHERE security zones are and their perimeters. Entry Control (S2) builds on this by documenting HOW access is controlled at these perimeters.
 
@@ -190,7 +217,6 @@ This assessment has NO dependencies on other assessments - it can be completed i
 However, outputs from this assessment are INPUT to:
 
 - ISMS-IMP-A.7.1-2-3-S2 (Entry Control Assessment) - Uses zone definitions
-- ISMS-IMP-A.7.1-2-3-S4 (Compliance Dashboard) - Consolidates with other assessments
 
 ---
 
@@ -792,7 +818,7 @@ Before submitting for Level 2 approval, complete this self-assessment:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Good fences make good neighbours."*
+— Robert Frost
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

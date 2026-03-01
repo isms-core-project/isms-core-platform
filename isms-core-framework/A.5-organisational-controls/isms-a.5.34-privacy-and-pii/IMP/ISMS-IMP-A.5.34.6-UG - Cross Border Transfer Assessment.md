@@ -3,24 +3,59 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Cross Border Transfer Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.34.6-UG |
+| **Related Policy** | ISMS-POL-A.5.34 (Privacy and Pii) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.34 (Privacy and Protection of PII) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Cross-Border Data Transfer Assessment and GDPR Chapter V Compliance |
-| **Related Policy** | ISMS-POL-A.5.34, Section 2.6 (Cross-Border Transfers) |
-| **Purpose** | Guide users through transfer inventory, Transfer Impact Assessments (TIAs), and compliance with GDPR Chapter V (Articles 44-50) and post-Schrems II requirements |
-| **Target Audience** | DPO/Privacy Officers, Legal Counsel, Procurement Teams, IT/Cloud Teams, Third-Party Risk Management, Compliance Officers, Auditors |
-| **Assessment Type** | Legal & Technical Compliance |
-| **Review Cycle** | Quarterly or upon new international transfers |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for Cross-Border Transfer assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.34 (Privacy and Pii)
+- ISMS-IMP-A.5.34.1 (PII Identification and Classification Assessment)
+- ISMS-IMP-A.5.34.2 (Legal Basis and Lawful Processing Assessment)
+- ISMS-IMP-A.5.34.3 (Data Subject Rights Management Assessment)
+- ISMS-IMP-A.5.34.4 (Technical and Organisational Measures (TOMs) Assessment)
+- ISMS-IMP-A.5.34.5 (DPIA Assessment)
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 8 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Transfer Register** | Inventory of all international personal data transfers with legal basis |
+| **TIA Register** | Transfer Impact Assessments for transfers to non-adequate countries |
+| **Processor Tracker** | Data Processing Agreements and transfer safeguard compliance per processor |
+| **Evidence Repository** | Evidence collected to support cross-border transfer compliance |
+| **Gap Analysis** | Identified gaps in transfer documentation and legal basis coverage |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+
 ---
 
 ## Purpose and Scope
@@ -203,7 +238,7 @@ python3 generate_a5346_cross_border_transfer_assessment.py
 
 - **Example:** EU processor (e.g., email service) using US subprocessor for spam filtering
 - **Transfer:** EU processor → US subprocessor = onward transfer
-- **Mechanism:** Verify processor's DPA includes subprocessor authorization, check if SCCs flow down
+- **Mechanism:** Verify processor's DPA includes subprocessor authorisation, check if SCCs flow down
 
 **Scenario 4: Marketing Tools and Analytics**
 
@@ -227,7 +262,7 @@ For each transfer, identify the legal mechanism per GDPR Article 44-46:
 
 **EU Adequacy Decisions (as of 2025):**
 
-- Andorra, Argentina, Canada (commercial organizations), Faroe Islands, Guernsey, Israel, Isle of Man, Japan, Jersey, New Zealand, Republic of Korea, Switzerland, United Kingdom, Uruguay
+- Andorra, Argentina, Canada (commercial organisations), Faroe Islands, Guernsey, Israel, Isle of Man, Japan, Jersey, New Zealand, Republic of Korea, Switzerland, United Kingdom, Uruguay
 - **EU-US Data Privacy Framework (DPF)**: US companies that self-certify (check https://www.dataprivacyframework.gov/s/participant-search)
 
 **Swiss Adequacy List (separate from EU):**
@@ -282,7 +317,7 @@ For each transfer, identify the legal mechanism per GDPR Article 44-46:
 - BCRs must cover all entities in group involved in processing
 - Document BCR approval date and approving authority
 
-**Rare:** Most organizations use SCCs instead of BCRs (BCRs require multi-year approval process)
+**Rare:** Most organisations use SCCs instead of BCRs (BCRs require multi-year approval process)
 
 #### 3.4 Derogations (GDPR Article 49)
 
@@ -351,7 +386,7 @@ If TIA reveals risks, implement supplementary measures:
 - **Encryption at rest:** AES-256 with customer-managed keys (not provider-managed)
 - **End-to-end encryption:** Provider cannot decrypt data (e.g., client-side encryption)
 - **Pseudonymization:** Replace identifiers with pseudonyms (reversible only by data exporter)
-- **Data minimization:** Transfer only necessary PII fields
+- **Data minimisation:** Transfer only necessary PII fields
 - **Access controls:** Restrict importer personnel access to minimum necessary
 - **Multi-party encryption:** Split key approach requiring multiple parties to decrypt
 
@@ -363,7 +398,7 @@ If TIA reveals risks, implement supplementary measures:
 - **Audit rights:** Exporter can audit importer's compliance with safeguards
 - **Data return/deletion:** Upon termination, importer returns or deletes all data
 
-**Organizational Measures:**
+**Organisational Measures:**
 
 - **Data governance:** Clear accountability for transfer compliance
 - **Staff training:** Importer personnel trained on GDPR obligations
@@ -384,7 +419,7 @@ If TIA reveals risks, implement supplementary measures:
 | **Data Access Requests History** | Check transparency report | "Provider publishes transparency report - no FISA requests disclosed (likely under gag order)" |
 | **Supplementary Measures (Technical)** | Encryption, pseudonymization | "TLS 1.3 in transit, AES-256 at rest with AWS KMS (customer-managed keys), access logging enabled" |
 | **Supplementary Measures (Contractual)** | DPA clauses | "AWS DPA includes obligation to challenge requests, notification clause (subject to gag order limitations)" |
-| **Supplementary Measures (Organizational)** | Governance, monitoring | "Quarterly review of AWS security bulletins, annual DPA compliance audit" |
+| **Supplementary Measures (Organisational)** | Governance, monitoring | "Quarterly review of AWS security bulletins, annual DPA compliance audit" |
 | **TIA Conclusion** | Pass/Fail with conditions | "PASS with supplementary measures: Transfer lawful subject to continued use of customer-managed encryption keys and quarterly monitoring" |
 | **TIA Approval** | DPO sign-off | "Approved by DPO [Name] on [Date]" |
 | **Review Date** | Next reassessment | "Review by Q1 2026 or upon legal/political change" |
@@ -702,7 +737,6 @@ Once Sheet 6 (Gap Analysis) is complete:
    - Train Legal, IT, Privacy teams on GDPR Chapter V updates
    - Educate business owners on cross-border transfer requirements
 
-### Integration with A.5.34.7 (Privacy Compliance Dashboard)
 
 Export key metrics from Sheet 7 (Dashboard) to feed into overall privacy program dashboard:
 
@@ -799,11 +833,11 @@ Consolidation script (`consolidate_a534_privacy_dashboard.py`) will read this wo
 | **Binding Corporate Rules (BCRs)** | Internal rules for multinational companies allowing intra-group transfers | Article 47 |
 | **Derogation** | Exception allowing transfer in specific situations (consent, contract necessity, etc.) - last resort | Article 49 |
 | **Transfer Impact Assessment (TIA)** | Assessment of risks to data subjects from transfer to third country (Schrems II requirement) | EDPB Recommendations 01/2020 |
-| **Supplementary Measures** | Additional technical/organizational measures beyond SCCs to ensure adequate protection | Schrems II + EDPB Recommendations 01/2020 |
-| **EU-US Data Privacy Framework (DPF)** | Adequacy framework for US organizations that self-certify compliance | Article 45 (via Commission Adequacy Decision) |
+| **Supplementary Measures** | Additional technical/organisational measures beyond SCCs to ensure adequate protection | Schrems II + EDPB Recommendations 01/2020 |
+| **EU-US Data Privacy Framework (DPF)** | Adequacy framework for US organisations that self-certify compliance | Article 45 (via Commission Adequacy Decision) |
 | **Onward Transfer** | Transfer by processor to subprocessor in third country | Article 46 (SCCs must flow down) |
 | **Third Country** | Country outside EU/EEA (Switzerland also considered third country relative to EU) | Article 4(26) |
-| **International Organization** | Organization subject to public international law (e.g., UN, WHO) | Article 4(26) |
+| **International Organisation** | Organisation subject to public international law (e.g., UN, WHO) | Article 4(26) |
 
 ---
 
@@ -811,7 +845,7 @@ Consolidation script (`consolidate_a534_privacy_dashboard.py`) will read this wo
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Data does not respect borders; but the law does."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -44,7 +44,6 @@
 - ISMS-IMP-A.8.30.1-UG/TG (Vendor Assessment and Registry)
 - ISMS-IMP-A.8.30.2-UG/TG (Contract Compliance)
 - ISMS-IMP-A.8.30.3-UG/TG (Security Testing and Acceptance)
-- ISMS-IMP-A.8.30.4-UG/TG (Monitoring and Exceptions Dashboard)
 - ISO/IEC 27001:2022 Control A.8.30
 - ISO/IEC 27002:2022 Control 8.30
 
@@ -52,7 +51,7 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for managing security in outsourced system and software development in accordance with ISO/IEC 27001:2022 Control A.8.30.
+This policy establishes [Organisation]'s requirements for managing security in outsourced system and software development in accordance with ISO/IEC 27001:2022 Control A.8.30.
 
 **Purpose**: Define WHAT security controls are required for outsourced development and WHO is accountable. Technical implementation details (HOW) are documented in ISMS-IMP-A.8.30 specifications.
 
@@ -73,11 +72,11 @@ This policy establishes [Organization]'s requirements for managing security in o
 ## ISO/IEC 27001:2022 Control A.8.30
 
 **Control Statement**:
-> *The organization shall direct, monitor and review the activities related to outsourced system development.*
+> *The organisation shall direct, monitor and review the activities related to outsourced system development.*
 
 **Control Type**: Preventive and Detective
 
-**Control Objective**: Ensure that information security measures required by [Organization] are effectively implemented when system and software development is outsourced to third parties.
+**Control Objective**: Ensure that information security measures required by [Organisation] are effectively implemented when system and software development is outsourced to third parties.
 
 **This Control Addresses**:
 
@@ -97,7 +96,7 @@ This policy establishes [Organization]'s requirements for managing security in o
 - Freelance/independent developers
 - Staff augmentation with development access
 - Acquired software requiring customization
-- Development platform providers (where [Organization] code is hosted)
+- Development platform providers (where [Organisation] code is hosted)
 - Managed development services
 
 **Out of Scope**:
@@ -123,7 +122,7 @@ This policy establishes [Organization]'s requirements for managing security in o
 
 **Pre-Engagement Assessment**:
 
-Prior to engaging any outsourced development vendor, [Organization] SHALL conduct security due diligence including:
+Prior to engaging any outsourced development vendor, [Organisation] SHALL conduct security due diligence including:
 
 | Assessment Area | Requirement | Evidence Required |
 |-----------------|-------------|-------------------|
@@ -145,7 +144,7 @@ Prior to engaging any outsourced development vendor, [Organization] SHALL conduc
 
 ## Approved Vendor Registry
 
-[Organization] SHALL maintain an approved vendor registry for outsourced development:
+[Organisation] SHALL maintain an approved vendor registry for outsourced development:
 
 - Vendors assessed and approved before engagement
 - Registry includes: vendor name, assessment date, risk tier, approved project types, renewal date
@@ -164,8 +163,8 @@ All outsourced development contracts SHALL include the following security requir
 
 **Security Standards Compliance**:
 
-- Adherence to [Organization]'s secure coding standards (ISMS-POL-A.8.28)
-- Compliance with [Organization]'s security policies and procedures
+- Adherence to [Organisation]'s secure coding standards (ISMS-POL-A.8.28)
+- Compliance with [Organisation]'s security policies and procedures
 - Use of approved development tools and environments
 - Security training completion requirements
 
@@ -173,7 +172,7 @@ All outsourced development contracts SHALL include the following security requir
 
 - Clear ownership of developed code and documentation
 - Source code escrow arrangements for critical projects
-- Protection of [Organization]'s proprietary information
+- Protection of [Organisation]'s proprietary information
 - Non-disclosure and confidentiality obligations
 
 **Security Verification Rights**:
@@ -194,7 +193,7 @@ All outsourced development contracts SHALL include the following security requir
 
 - Prior written approval required for subcontractors
 - Flow-down of security requirements to subcontractors
-- [Organization] right to reject subcontractors
+- [Organisation] right to reject subcontractors
 - Subcontractor audit rights
 
 ## Vulnerability Remediation SLAs
@@ -221,7 +220,7 @@ Contracts SHALL specify vulnerability remediation timeframes aligned with ISMS-P
 
 Contracts SHALL address security requirements for termination:
 
-- Return or secure destruction of [Organization] data
+- Return or secure destruction of [Organisation] data
 - Revocation of all access credentials within 24 hours
 - Transfer of documentation and source code
 - Knowledge transfer period for critical projects
@@ -234,14 +233,14 @@ Contracts SHALL address security requirements for termination:
 
 ## Development Standards
 
-Outsourced developers SHALL comply with [Organization]'s secure coding standards per ISMS-POL-A.8.28:
+Outsourced developers SHALL comply with [Organisation]'s secure coding standards per ISMS-POL-A.8.28:
 
 **Mandatory Requirements**:
 
 - Input validation for all user and external input
 - Output encoding appropriate to context
 - Secure authentication and session management
-- Server-side authorization enforcement
+- Server-side authorisation enforcement
 - Use of approved cryptographic methods
 - Secure error handling (no sensitive data in logs)
 - No hardcoded secrets in source code
@@ -273,10 +272,10 @@ Outsourced development environments SHALL meet minimum security requirements:
 
 ## Third-Party Developer Training
 
-Prior to accessing [Organization] systems or code, outsourced developers SHALL:
+Prior to accessing [Organisation] systems or code, outsourced developers SHALL:
 
-- Complete [Organization]'s secure coding awareness training (or equivalent)
-- Acknowledge [Organization]'s security policies and acceptable use requirements
+- Complete [Organisation]'s secure coding awareness training (or equivalent)
+- Acknowledge [Organisation]'s security policies and acceptable use requirements
 - Demonstrate understanding of project-specific security requirements
 
 **Training Verification**:
@@ -305,7 +304,7 @@ All outsourced code SHALL be subject to security review before acceptance:
 **Review Criteria** (per ISMS-REF-A.8.28):
 
 - Input validation and output encoding
-- Authentication and authorization logic
+- Authentication and authorisation logic
 - Cryptographic implementations
 - Error handling and logging
 - Third-party component usage
@@ -331,10 +330,10 @@ Outsourced deliverables SHALL undergo security testing before production deploym
 
 | Test Type | Primary Responsibility | Verification |
 |-----------|------------------------|--------------|
-| SAST | Vendor (with [Organization] tool access) or [Organization] | Scan reports reviewed |
-| SCA | Vendor or [Organization] | SBOM and vulnerability report |
-| DAST | [Organization] Application Security | Test report documented |
-| Penetration Test | [Organization] or approved third-party | Findings remediated before go-live |
+| SAST | Vendor (with [Organisation] tool access) or [Organisation] | Scan reports reviewed |
+| SCA | Vendor or [Organisation] | SBOM and vulnerability report |
+| DAST | [Organisation] Application Security | Test report documented |
+| Penetration Test | [Organisation] or approved third-party | Findings remediated before go-live |
 
 **Acceptance Criteria**:
 
@@ -346,7 +345,7 @@ Outsourced deliverables SHALL undergo security testing before production deploym
 
 ## Software Bill of Materials (SBOM)
 
-For all outsourced development, [Organization] SHALL receive:
+For all outsourced development, [Organisation] SHALL receive:
 
 - Complete SBOM listing all third-party components
 - Component versions and licenses
@@ -363,7 +362,7 @@ For all outsourced development, [Organization] SHALL receive:
 
 ## Active Oversight Requirements
 
-[Organization] SHALL maintain active involvement in outsourced development (not passive monitoring):
+[Organisation] SHALL maintain active involvement in outsourced development (not passive monitoring):
 
 **Directing**:
 
@@ -413,7 +412,7 @@ Security issues identified during monitoring SHALL be escalated:
 
 Outsourced development vendors SHALL NOT engage subcontractors without:
 
-- Prior written approval from [Organization]
+- Prior written approval from [Organisation]
 - Subcontractor security assessment (proportionate to risk)
 - Flow-down of all security requirements to subcontractor, including:
   - Secure coding standards (per ISMS-POL-A.8.28)
@@ -429,7 +428,7 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 
 | Subcontractor Scope | Approval Authority | Assessment Required |
 |---------------------|-------------------|---------------------|
-| Access to [Organization] systems/data | CISO | Full security questionnaire |
+| Access to [Organisation] systems/data | CISO | Full security questionnaire |
 | Development without direct access | IT Security Manager | Abbreviated questionnaire + vendor attestation |
 | Limited/specialized tasks | Project Manager + Security | Vendor attestation of security requirements flow-down |
 
@@ -579,7 +578,6 @@ Evidence required to demonstrate this policy is operationally effective:
 - ISMS-IMP-A.8.30.1: Vendor Assessment & Registry
 - ISMS-IMP-A.8.30.2: Contract Compliance
 - ISMS-IMP-A.8.30.3: Security Testing & Acceptance
-- ISMS-IMP-A.8.30.4: Monitoring & Exceptions Dashboard
 
 **Evidence Retention:**
 - Vendor assessment records: Duration of relationship + 3 years
@@ -614,7 +612,7 @@ Evidence required to demonstrate this policy is operationally effective:
 | Security testing | Art. 8 | Art. 32 | A.8.29 | Art. 24-25 |
 | Subcontractor management | Art. 8 | Art. 28(4) | A.5.21 | Art. 29 |
 
-*DORA applicable where [Organization] is classified as financial entity.
+*DORA applicable where [Organisation] is classified as financial entity.
 
 ---
 
@@ -636,4 +634,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for outsourced development security. Implementation procedures, assessment methodologies, and workbook specifications are documented in ISMS-IMP-A.8.30.1-4 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -5,24 +5,57 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | NDA Execution and Tracking |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.6.2-UG |
-| **Title** | NDA Execution and Tracking |
-| **Control Reference** | ISO/IEC 27001:2022 A.6.6 |
-| **Control Name** | Confidentiality or Non-Disclosure Agreements |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.6.6 (Confidentiality Nda) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.6) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Information Security Manager |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.6 (Confidentiality Nda)
+- ISMS-IMP-A.6.6.1 (NDA Template Registry and Inventory)
+- ISMS-IMP-A.6.6.3 (NDA Review and Compliance)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.6.6.2-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Active NDAs | Inventory of all active signed NDAs and confidentiality agreements |
+| 3 | Signatory Register | Track all parties who have signed NDAs |
+| 4 | Expiration Monitor | Monitor NDA expiry dates and renewal requirements |
+| 5 | Renewal Tracking | Manage NDA renewal and re-execution processes |
+| 6 | Evidence Register | Store and reference copies of executed agreements |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -60,7 +93,6 @@ This assessment covers the following components:
 **Out of Scope:**
 - NDA template management (covered in ISMS-IMP-A.6.6.1)
 - NDA compliance monitoring and auditing (covered in ISMS-IMP-A.6.6.3)
-- Compliance dashboards and metrics (covered in ISMS-IMP-A.6.6.4)
 - Contract negotiation processes
 - Legal dispute management
 
@@ -1181,7 +1213,6 @@ NDA execution must be integrated with procurement processes:
 |---------|--------------|-------------------|
 | **A.6.6.1** | Template Registry | Templates used for execution |
 | **A.6.6.3** | NDA Compliance | Compliance monitoring of executed NDAs |
-| **A.6.6.4** | Compliance Dashboard | Metrics derived from this data |
 | **A.6.1** | Screening | Background checks precede NDA |
 | **A.6.2** | Terms of Employment | Employment NDAs in onboarding |
 | **A.6.5** | Termination | Offboarding includes NDA reminder |
@@ -1207,7 +1238,7 @@ Procurement → A.6.6.2 NDA Execution → A.5.15 Vendor Access → Contract
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Words have weight; a signed agreement has the weight of law."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

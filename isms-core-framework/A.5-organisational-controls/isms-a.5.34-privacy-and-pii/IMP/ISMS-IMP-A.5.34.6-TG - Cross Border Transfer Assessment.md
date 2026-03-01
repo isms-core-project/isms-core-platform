@@ -3,267 +3,173 @@
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Cross Border Transfer Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.34.6-TG |
+| **Related Policy** | ISMS-POL-A.5.34 (Privacy and Pii) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.34 (Privacy and Protection of PII) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Cross-Border Data Transfer Assessment and GDPR Chapter V Compliance |
-| **Related Policy** | ISMS-POL-A.5.34, Section 2.6 (Cross-Border Transfers) |
-| **Purpose** | Guide users through transfer inventory, Transfer Impact Assessments (TIAs), and compliance with GDPR Chapter V (Articles 44-50) and post-Schrems II requirements |
-| **Target Audience** | DPO/Privacy Officers, Legal Counsel, Procurement Teams, IT/Cloud Teams, Third-Party Risk Management, Compliance Officers, Auditors |
-| **Assessment Type** | Legal & Technical Compliance |
-| **Review Cycle** | Quarterly or upon new international transfers |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for Cross-Border Transfer assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.34 (Privacy and Pii)
+- ISMS-IMP-A.5.34.1 (PII Identification and Classification Assessment)
+- ISMS-IMP-A.5.34.2 (Legal Basis and Lawful Processing Assessment)
+- ISMS-IMP-A.5.34.3 (Data Subject Rights Management Assessment)
+- ISMS-IMP-A.5.34.4 (Technical and Organisational Measures (TOMs) Assessment)
+- ISMS-IMP-A.5.34.5 (DPIA Assessment)
+
 ---
 
-
----
 # Technical Specification
-
-
-> Auto-generated from `generate_a5346_cross_border_transfer_assessment.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.34.6` |
-| **Output Filename** | `ISMS-IMP-A.5.34.6_Cross-Border_Transfer_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Cross-Border Transfer Assessment |
-| **Total Sheets** | 8 (8 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Sheet 1: Instructions
-
-**Data Rows:** 3 (rows 1–3)
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Transfer Register
+## Generator Alignment Reference
 
-**Data Rows:** 999 (rows 2–1000)
+> Auto-generated from `generate_a5346_cross_border_transfer_assessment.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.34.6`
 
-| Col | Header |
-|-----|--------|
-| A | Transfer ID |
-| B | Status |
-| C | Transfer Name |
-| D | Source System |
-| E | Destination System |
-| F | Destination Country |
-| G | Adequacy Status |
-| H | Transfer Mechanism |
-| I | SCC Version |
-| J | SCC Date |
-| K | DPF Cert? |
-| L | TIA Required? |
-| M | TIA ID |
-| N | PII Categories |
-| O | Transfer Volume |
-| P | Transfer Frequency |
-| Q | Purpose |
-| R | Legal Basis (Art.6) |
-| S | Last Updated |
-| T | Notes |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Formulas
+### Sheet Structure
 
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| A2 | `=TEXT(ROW()-1,` |  |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Transfer Register |
+| 2 | TIA Register |
+| 3 | Processor Tracker |
+| 4 | Evidence Repository |
+| 5 | Gap Analysis |
+| 6 | Summary Dashboard |
+| 7 | Approval Sign-Off |
+| 8 | Instructions & Legend |
 
----
+### Color Palette
 
-## Sheet 3: TIA Register
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-**Data Rows:** 999 (rows 2–1000)
+### Column Headers (All Sheets)
 
-### Columns
+| # | Column Header |
+|---|--------------|
+| 1 | Transfer ID |
+| 2 | Status |
+| 3 | Transfer Name |
+| 4 | Source System |
+| 5 | Destination System |
+| 6 | Destination Country |
+| 7 | Adequacy Status |
+| 8 | Transfer Mechanism |
+| 9 | SCC Version |
+| 10 | SCC Date |
+| 11 | DPF Cert? |
+| 12 | TIA Required? |
+| 13 | TIA ID |
+| 14 | PII Categories |
+| 15 | Transfer Volume |
+| 16 | Transfer Frequency |
+| 17 | Purpose |
+| 18 | Legal Basis (Art.6) |
+| 19 | Last Updated |
+| 20 | Notes |
+| 21 | Assessment Date |
+| 22 | Assessor |
+| 23 | Surveillance Laws |
+| 24 | Gov Access Risk |
+| 25 | Risk Justification |
+| 26 | Supplementary Measures |
+| 27 | Residual Risk |
+| 28 | TIA Conclusion |
+| 29 | DPO Approval |
+| 30 | Next Review Date |
+| 31 | Processor ID |
+| 32 | Processor Name |
+| 33 | Processor Location |
+| 34 | DPA Exists? |
+| 35 | DPA Date |
+| 36 | SCCs Included? |
+| 37 | Subprocessors? |
+| 38 | Compliance Status |
+| 39 | Gap Description |
+| 40 | Remediation Action |
+| 41 | Owner |
+| 42 | Deadline |
+| 43 | Evidence ID |
+| 44 | Evidence Type |
+| 45 | Description |
+| 46 | Document Name |
+| 47 | File Location |
+| 48 | Upload Date |
+| 49 | Gap ID |
+| 50 | Gap Type |
+| 51 | Risk Level |
+| 52 | Affected Data Subjects |
+| 53 | Discovery Date |
+| 54 | Target Date |
+| 55 | Assessment Area |
+| 56 | Total Items |
+| 57 | Compliant |
+| 58 | Partial |
+| 59 | Non-Compliant |
+| 60 | N/A |
+| 61 | Compliance % |
+| 62 | Metric |
+| 63 | Value |
+| 64 | Category |
+| 65 | Finding |
+| 66 | Count |
+| 67 | Severity |
+| 68 | Action Required |
 
-| Col | Header |
-|-----|--------|
-| A | TIA ID |
-| B | Transfer ID |
-| C | Status |
-| D | Destination Country |
-| E | Assessment Date |
-| F | Assessor |
-| G | Surveillance Laws |
-| H | Gov Access Risk |
-| I | Risk Justification |
-| J | Supplementary Measures |
-| K | Residual Risk |
-| L | TIA Conclusion |
-| M | DPO Approval |
-| N | Next Review Date |
-| O | Notes |
+### Data Validation Values
 
-### Formulas
+All dropdown/list values used across sheets:
 
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| A2 | `=TEXT(ROW()-1,` |  |
+```
+Draft, Final, Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
----
-
-## Sheet 4: Processor Tracker
-
-**Data Rows:** 999 (rows 2–1000)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Processor ID |
-| B | Transfer ID |
-| C | Processor Name |
-| D | Processor Location |
-| E | DPA Exists? |
-| F | DPA Date |
-| G | SCCs Included? |
-| H | SCC Version |
-| I | SCC Date |
-| J | Subprocessors? |
-| K | Compliance Status |
-| L | Gap Description |
-| M | Remediation Action |
-| N | Owner |
-| O | Deadline |
-| P | Notes |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| A2 | `=TEXT(ROW()-1,` |  |
-
----
-
-## Sheet 5: Evidence Repository
-
-**Data Rows:** 999 (rows 2–1000)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Transfer ID |
-| C | TIA ID |
-| D | Evidence Type |
-| E | Description |
-| F | Document Name |
-| G | File Location |
-| H | Upload Date |
-| I | Owner |
-| J | Status |
-| K | Notes |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| A2 | `=TEXT(ROW()-1,` |  |
-
----
-
-## Sheet 6: Gap Analysis
-
-**Data Rows:** 999 (rows 2–1000)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Gap ID |
-| B | Transfer ID |
-| C | Gap Type |
-| D | Description |
-| E | Risk Level |
-| F | Affected Data Subjects |
-| G | Discovery Date |
-| H | Remediation Action |
-| I | Owner |
-| J | Target Date |
-| K | Status |
-| L | Notes |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| E2:E1000 | equal  | Fill: light_red |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| A2 | `=TEXT(ROW()-1,` |  |
-
----
-
-## Sheet 7: Dashboard
-
-**Data Rows:** 3 (rows 1–3)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(` | Total Transfers |
-| — | `=COUNTIF(` | TIAs Required |
-
----
-
-## Sheet 8: Approvals
-
-**Data Rows:** 999 (rows 2–1000)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Approval ID |
-| B | Approval Type |
-| C | Transfer/TIA ID |
-| D | Description |
-| E | Approver Name |
-| F | Approver Role |
-| G | Approval Date |
-| H | Status |
-| I | Notes |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| A2 | `=TEXT(ROW()-1,` |  |
-
----
-
-## Data Validation Dropdown Lists
-
-All dropdown value lists defined in the generator:
-
-| Variable | Values |
-|----------|--------|
-| `EU_ADEQUACY_COUNTRIES` | Andorra, Argentina, Canada (Commercial), Faroe Islands, Guernsey, Israel, Isle of Man, Japan, Jer... |
-| `RISK_LEVELS` | Low, Medium, High, Critical |
-| `STATUS_OPTIONS` | Not Started, In Progress, Complete, Validated |
+**Extracted:** 8 sheets, 68 columns, 8 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

@@ -41,7 +41,7 @@
 
 **Purpose**
 
-This document provides the **authoritative reference registry** of cloud service providers and SaaS platforms commonly encountered in organizational IT environments.
+This document provides the **authoritative reference registry** of cloud service providers and SaaS platforms commonly encountered in organisational IT environments.
 
 **Usage:**
 
@@ -50,7 +50,7 @@ This document provides the **authoritative reference registry** of cloud service
 - Enable consistent vendor risk assessment
 - Support data deletion and retention compliance (A.8.10)
 
-**Key Principle:** This registry is **vendor-neutral for policy purposes** — it catalogs providers for assessment, not endorsement. Organizations document THEIR specific usage and configurations.
+**Key Principle:** This registry is **vendor-neutral for policy purposes** — it catalogs providers for assessment, not endorsement. Organisations document THEIR specific usage and configurations.
 
 ---
 
@@ -182,7 +182,7 @@ Dedicated backup, archive, and object storage providers.
 - Backup providers are CRITICAL for A.8.10 — data persists in backups after primary deletion
 - Verify backup retention periods align with deletion requirements
 - Immutable backup features may conflict with deletion obligations
-- Veeam has Swiss presence (favorable for Swiss organizations)
+- Veeam has Swiss presence (favorable for Swiss organisations)
 
 ---
 
@@ -441,7 +441,7 @@ Custom
 
 This registry SHALL be updated when:
 
-- New cloud provider is adopted by the organization
+- New cloud provider is adopted by the organisation
 - Provider undergoes significant change (acquisition, policy change)
 - New regulatory requirements affect provider assessment
 - Semi-annual review cycle

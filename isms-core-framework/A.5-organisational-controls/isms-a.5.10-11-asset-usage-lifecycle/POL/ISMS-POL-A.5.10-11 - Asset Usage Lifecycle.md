@@ -42,7 +42,6 @@
 - ISMS-IMP-A.5.10-11.S1-UG/TG (Acceptable Use Policy Assessment)
 - ISMS-IMP-A.5.10-11.S2-UG/TG (Usage Rules Inventory)
 - ISMS-IMP-A.5.10-11.S3-UG/TG (Asset Return and Offboarding Assessment)
-- ISMS-IMP-A.5.10-11.S4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Controls A.5.10, A.5.11
 
 ---
@@ -269,7 +268,7 @@ All personnel are informed that:
 | **Medium** (policy violation without breach) | Written warning; manager notification; monitoring | Line Manager |
 | **Low** (minor infraction, first occurrence) | Verbal warning; reminder of policy | Line Manager |
 
-**Verification**: Violations tracked in incident register; trends reported quarterly to CISO; patterns informing policy updates documented in ISMS-IMP-A.5.10-11.S4 (Compliance Dashboard).
+**Verification**: Violations tracked in incident register; trends reported quarterly to CISO; patterns informing policy updates documented in the Summary Dashboard.
 
 ---
 
@@ -418,12 +417,10 @@ If return is not completed:
 | AUP acknowledgment audit | Quarterly | HR | Acknowledgment reports |
 | Asset return compliance review | Quarterly | IT Security | Return completion statistics |
 | Exception register review | Quarterly | CISO | Exception register |
-| Compliance dashboard update | Monthly | IT Security | Dashboard metrics |
-
 **Compliance Scoring**:
 - AUP acknowledgment rate calculated by HR; reported monthly
 - Asset return completion rate calculated by IT; reported quarterly
-- Trends tracked in ISMS-IMP-A.5.10-11.S4 (Compliance Dashboard)
+- Trends tracked in the Summary Dashboard
 - Gaps >5% below target escalated to Executive Management
 
 **Policy Change Management**:
@@ -458,7 +455,6 @@ This policy is supported by the following assessment workbooks:
 | **ISMS-IMP-A.5.10-11.S1-UG/TG** | Acceptable Use Policy Assessment | Security Team, HR |
 | **ISMS-IMP-A.5.10-11.S2-UG/TG** | Usage Rules Inventory | IT Security, Asset Owners |
 | **ISMS-IMP-A.5.10-11.S3-UG/TG** | Asset Return & Offboarding Assessment | IT Operations, HR |
-| **ISMS-IMP-A.5.10-11.S4-UG/TG** | Compliance Dashboard | CISO, Management |
 
 **Assessment Components**:
 
@@ -536,4 +532,4 @@ This policy addresses asset management requirements from:
 
 *This policy establishes requirements for acceptable use and return of assets. Implementation procedures are documented in ISMS-IMP-A.5.10-11 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

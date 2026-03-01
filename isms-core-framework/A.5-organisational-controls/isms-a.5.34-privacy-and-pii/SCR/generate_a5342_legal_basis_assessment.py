@@ -276,9 +276,9 @@ Regulatory Updates:
 # IMPORTS
 # ============================================================================
 
-import argparse
 import os
 from datetime import datetime
+from pathlib import Path
 
 # Excel generation library
 from openpyxl import Workbook
@@ -324,10 +324,6 @@ COLOR_LOW = "9BC2E6"             # Light blue - low risk
 # Sheet Protection Password
 # CUSTOMIZE: Set a strong password for your organization
 PROTECTION_PASSWORD = "privacy2024"
-
-# File Naming
-# CUSTOMIZE: Adjust naming convention if needed
-FILE_PREFIX = "ISMS_A_5_34_2_Legal_Basis_Assessment"
 
 # Dropdown List Values
 # CUSTOMIZE: Add or modify legal bases based on applicable jurisdictions
@@ -628,8 +624,10 @@ def create_sheet1_instructions(wb):
     ws.title = "1. Instructions & Legend"
     
     # Title
-    ws['A1'] = "ISMS-IMP-A.5.34.2 - Legal Basis and Lawful Processing Assessment"
-    ws['A1'].font = Font(name='Calibri', size=14, bold=True)
+    ws['A1'] = "ISMS-IMP-A.5.34.2 - LEGAL BASIS AND LAWFUL PROCESSING ASSESSMENT"
+    ws['A1'].font = Font(name='Calibri', size=14, bold=True, color='FFFFFF')
+    ws['A1'].fill = PatternFill(start_color="003366", end_color="003366", fill_type='solid')
+    ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
     ws.merge_cells('A1:F1')
     
     ws['A2'] = "Assessment Instructions and Legal Basis Selection Framework"
@@ -867,7 +865,7 @@ def create_sheet2_legal_basis_inventory(wb):
     # Highlight invalid consent
     ws.conditional_formatting.add(
         f'I2:I{MAX_ROWS_INVENTORY}',
-        CellIsRule(operator='containsText', formula=['"Invalid"'], fill=PatternFill(start_color=COLOR_GAP, end_color=COLOR_GAP, fill_type='solid'))
+        CellIsRule(operator='equal', formula=['"Invalid"'], fill=PatternFill(start_color=COLOR_GAP, end_color=COLOR_GAP, fill_type='solid'))
     )
     
     # Protect sheet
@@ -1058,7 +1056,7 @@ def create_sheet4_consent_management(wb):
     )
     ws.conditional_formatting.add(
         f'K2:K{MAX_ROWS_CONSENT}',
-        CellIsRule(operator='containsText', formula=['"Invalid"'], fill=PatternFill(start_color=COLOR_GAP, end_color=COLOR_GAP, fill_type='solid'))
+        CellIsRule(operator='equal', formula=['"Invalid"'], fill=PatternFill(start_color=COLOR_GAP, end_color=COLOR_GAP, fill_type='solid'))
     )
     
     # GDPR Art. 7 compliance (F-J)
@@ -1231,10 +1229,12 @@ def create_sheet7_dashboard(wb):
     Compliance metrics and executive summary with auto-calculated KPIs.
     """
     ws = wb.create_sheet("7. Dashboard")
-    
+
     # Title
-    ws['A1'] = "Legal Basis Compliance Dashboard"
-    ws['A1'].font = Font(name='Calibri', size=14, bold=True, color='003366')
+    ws['A1'] = "LEGAL BASIS COMPLIANCE DASHBOARD"
+    ws['A1'].font = Font(name='Calibri', size=14, bold=True, color='FFFFFF')
+    ws['A1'].fill = PatternFill(start_color="003366", end_color="003366", fill_type='solid')
+    ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
     ws.merge_cells('A1:F1')
     
     ws['A2'] = f"Generated: {datetime.now().strftime('%d.%m.%Y %H:%M')}"
@@ -1410,10 +1410,12 @@ def create_sheet8_approval(wb):
     Stakeholder review and approval workflow.
     """
     ws = wb.create_sheet("8. Approval & Sign-Off")
-    
+
     # Title
-    ws['A1'] = "Legal Basis Assessment - Approval and Sign-Off"
-    ws['A1'].font = Font(name='Calibri', size=14, bold=True)
+    ws['A1'] = "LEGAL BASIS ASSESSMENT - APPROVAL AND SIGN-OFF"
+    ws['A1'].font = Font(name='Calibri', size=14, bold=True, color='FFFFFF')
+    ws['A1'].fill = PatternFill(start_color="003366", end_color="003366", fill_type='solid')
+    ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
     ws.merge_cells('A1:E1')
     
     # Section 1: Assessment Completion
@@ -1616,76 +1618,11 @@ def generate_legal_basis_assessment_workbook(output_file, date_str=None):
 # ============================================================================
 
 def main():
-    """Command-line interface for workbook generation."""
-    
-    parser = argparse.ArgumentParser(
-        description='Generate ISMS-IMP-A.5.34.2 Legal Basis Assessment Excel Workbook',
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-  # Generate with default filename
-  python3 generate_a5342_legal_basis_assessment.py
-  
-  # Generate with custom output path
-  python3 generate_a5342_legal_basis_assessment.py --output ./assessments/legal_basis.xlsx
-  
-  # Generate with custom date
-  python3 generate_a5342_legal_basis_assessment.py --date 20241231
-  
-  # Full custom
-  python3 generate_a5342_legal_basis_assessment.py --output ./legal_basis.xlsx --date 20241231
-
-File naming convention:
-  ISMS_A_5_34_2_Legal_Basis_Assessment_YYYYMMDD.xlsx
-
-For detailed instructions, see:
-  - ISMS-IMP-A.5.34.2-Part1-UserGuide.md
-  - ISMS-IMP-A.5.34.2-Part2-TechSpec.md
-        """
-    )
-    
-    parser.add_argument(
-        '--output',
-        type=str,
-        default=None,
-        help='Output file path (default: ISMS_A_5_34_2_Legal_Basis_Assessment_YYYYMMDD.xlsx)'
-    )
-    
-    parser.add_argument(
-        '--date',
-        type=str,
-        default=None,
-        help='Date string for filename in YYYYMMDD format (default: today\'s date)'
-    )
-    
-    args = parser.parse_args()
-    
-    # Determine date string
-    if args.date:
-        date_str = args.date
-    else:
-        date_str = datetime.now().strftime('%Y%m%d')
-    
-    # Determine output filename
-    if args.output:
-        output_file = args.output
-    else:
-        output_file = f"{FILE_PREFIX}_{date_str}.xlsx"
-    
-    # Ensure output directory exists
-    output_dir = os.path.dirname(output_file)
-    if output_dir and not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-    
-    # Generate workbook
     try:
-        generated_file = generate_legal_basis_assessment_workbook(output_file, date_str)
-        logger.info(f"SUCCESS: Workbook generated successfully")
-        logger.info(f"Location: {os.path.abspath(generated_file)}")
+        generate_legal_basis_assessment_workbook(_wkbk_dir / OUTPUT_FILENAME)
         return 0
     except Exception as e:
-        logger.error(f"ERROR: Failed to generate workbook")
-        logger.error(f"Error details: {str(e)}")
+        logger.error(f"Error generating workbook: {e}")
         import traceback
         traceback.print_exc()
         return 1
@@ -1708,13 +1645,17 @@ GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sorta
 # Output filename
 OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
 
+# Output directory
+_wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+_wkbk_dir.mkdir(exist_ok=True)
+
 
 if __name__ == '__main__':
     exit(main())
 
 # =============================================================================
-# QA_VERIFIED: 2026-01-31
-# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
-# QA_TOOL: Claude Code Standardization
-# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# QA_VERIFIED: 2026-03-01
+# QA_STATUS: PASSED
+# QA_TOOL: Claude Code Production Scripts QA Methodology
+# CHANGES: Full QA for Production Launch (see GitHub Repository for details)
 # =============================================================================

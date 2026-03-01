@@ -3,35 +3,41 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.8.9: Configuration Management
 
-**Document ID**: ISMS-IMP-A.8.9.2-UG  
-**Title**: Change Control Assessment Specification  
-**Version**: 1.0  
-**Date**: [Date]  
-**Classification**: Internal  
-**Owner**: Configuration Manager  
-**Status**: Draft  
-
 ---
 
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Change Control Assessment Specification |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.9.2-UG |
+| **Related Policy** | ISMS-POL-A.8.9 (Configuration Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.9 (Configuration Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Change Control and Configuration Updates - Change Classification, CAB Operations, Approval Workflows, Testing, Rollback |
-| **Related Policy** | ISMS-POL-A.8.9, Section 2.3 (Change Control & Configuration Updates) |
-| **Purpose** | Assess change control processes, CAB operations, approval workflows, testing procedures, and rollback capabilities for configuration changes to ensure controlled and authorized modifications |
-| **Target Audience** | Configuration Manager, CAB Members, Change Coordinators, System Administrators, IT Operations, Service Owners, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Change Control assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.9 (Configuration Management)
+- ISMS-IMP-A.8.9.1 (Baseline Configuration Assessment Specification)
+- ISMS-IMP-A.8.9.3 (Configuration Monitoring Assessment Specification)
+- ISMS-IMP-A.8.9.4 (Security Hardening Assessment Specification)
+
+---
 
 ### Approvers
 
@@ -48,15 +54,32 @@ Configuration management team, system administrators, IT operations, security en
 - ISMS-POL-A.8.9: Configuration Management Policy (Consolidated)
 - ISMS-CTX-A.8.9: Configuration Management Reference (NOT ISMS)
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Change Request Register | Record all configuration change requests |
+| 3 | Change Approval Workflow | Track approval workflow for configuration changes |
+| 4 | Impact Assessment | Document impact assessments for proposed changes |
+| 5 | Testing Validation | Record testing and validation results for configuration changes |
+| 6 | Implementation Log | Log all implemented configuration changes |
+| 7 | Rollback Capability | Document rollback plans and capability for each change |
+| 8 | Emergency Changes | Track emergency configuration changes and approvals |
+| 9 | Change Success Metrics | Measure change success rates and quality metrics |
+| 10 | Evidence Register | Store and reference evidence supporting assessments |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
+
 # Assessment Purpose
 
 ## Objective
 
-This assessment evaluates the effectiveness of configuration change management processes across [Organization]'s information assets. The assessment verifies that all configuration changes follow controlled procedures including impact assessment, approval workflows, testing validation, and rollback capability. This provides objective evidence of compliance with ISO 27001:2022 Control A.8.9 change control requirements.
+This assessment evaluates the effectiveness of configuration change management processes across [Organisation]'s information assets. The assessment verifies that all configuration changes follow controlled procedures including impact assessment, approval workflows, testing validation, and rollback capability. This provides objective evidence of compliance with ISO 27001:2022 Control A.8.9 change control requirements.
 
-**Implementer Perspective**: This workbook provides a systematic framework for tracking configuration changes from request through implementation, documenting the approval chain, validating testing procedures, and measuring change success rates. It enables [Organization] to demonstrate disciplined change management practices.
+**Implementer Perspective**: This workbook provides a systematic framework for tracking configuration changes from request through implementation, documenting the approval chain, validating testing procedures, and measuring change success rates. It enables [Organisation] to demonstrate disciplined change management practices.
 
-**Auditor Perspective**: This assessment generates quantitative metrics (change success rate, approval compliance, testing coverage, emergency change ratio) that demonstrate [Organization]'s capability to manage configuration changes in a controlled manner. Evidence collected supports verification that unauthorized or inadequately tested changes are prevented.
+**Auditor Perspective**: This assessment generates quantitative metrics (change success rate, approval compliance, testing coverage, emergency change ratio) that demonstrate [Organisation]'s capability to manage configuration changes in a controlled manner. Evidence collected supports verification that unauthorised or inadequately tested changes are prevented.
 
 ## Assessment Scope
 
@@ -65,7 +88,7 @@ This assessment addresses the change control domain of Control A.8.9, specifical
 **In Scope**:
 
 - Configuration change request documentation and tracking
-- Multi-tier approval workflows and authorization chains
+- Multi-tier approval workflows and authorisation chains
 - Impact and risk assessment for proposed changes
 - Pre-deployment testing and validation procedures
 - Change implementation execution and verification
@@ -106,7 +129,7 @@ This assessment tracks four primary change types, each with different approval r
 
 - Pre-approved, low-risk changes with documented procedures
 - Examples: Monthly security patching, routine configuration updates, scheduled maintenance
-- Approval: Pre-authorized by Change Advisory Board (CAB)
+- Approval: Pre-authorised by Change Advisory Board (CAB)
 - Timeline: Executed according to pre-defined schedule
 - Testing: Standard validation procedures apply
 
@@ -147,7 +170,7 @@ Changes are prioritized based on urgency and business impact:
 
 ## Approval Tiers
 
-[Organization] implements a risk-based approval framework:
+[Organisation] implements a risk-based approval framework:
 
 **Single-Tier Approval** (Low Risk):
 
@@ -209,7 +232,7 @@ Changes are prioritized based on urgency and business impact:
 
    - Review overall change management effectiveness
    - Approve change process compliance metrics
-   - Authorize remediation for process gaps
+   - Authorise remediation for process gaps
    - Sign off on assessment completion
    - Timeline: Quarterly or semi-annual approval
 
@@ -378,7 +401,7 @@ Changes are prioritized based on urgency and business impact:
 **Usage Notes**:
 
 - Preparer: Create new row for each configuration change request
-- Change ID should follow organizational convention (e.g., CHG-YYYY-NNN)
+- Change ID should follow organisational convention (e.g., CHG-YYYY-NNN)
 - Update Change Status as change progresses through lifecycle
 - Reference this Change ID in all other sheets for traceability
 
@@ -916,11 +939,11 @@ Changes are prioritized based on urgency and business impact:
 | B | Change Title | Text | Free text | Brief title |
 | C | Emergency Type | Text | Dropdown | Security Incident, Service Outage, Critical Bug, Vulnerability Remediation, Other |
 | D | Business Impact if Not Implemented | Text | Free text | Consequence of delaying change |
-| E | Emergency Declared By | Text | Free text | Person who authorized emergency process |
+| E | Emergency Declared By | Text | Free text | Person who authorised emergency process |
 | F | Emergency Declaration Time | DateTime | DateTime format | When emergency was declared |
 | G | Implementation Time | DateTime | DateTime format | When change was implemented |
 | H | Time to Implement (Hours) | Number | Formula | Hours from declaration to implementation |
-| I | Emergency Approval Method | Text | Dropdown | Verbal (CIO/CISO), Email (Expedited), CAB Chair Authorization |
+| I | Emergency Approval Method | Text | Dropdown | Verbal (CIO/CISO), Email (Expedited), CAB Chair Authorisation |
 | J | Emergency Approvers | Text | Free text | Names of approvers (minimum 2) |
 | K | Post-Implementation Documentation Completed | Text | Dropdown | Yes, No, In Progress |
 | L | CAB Retrospective Review Date | Date | Date format | Date emergency change was reviewed by full CAB |
@@ -942,7 +965,7 @@ Changes are prioritized based on urgency and business impact:
   - Allow blank: No
 
 - Column I (Emergency Approval Method): Dropdown list
-  - Values: "Verbal (CIO/CISO), Email (Expedited), CAB Chair Authorization"
+  - Values: "Verbal (CIO/CISO), Email (Expedited), CAB Chair Authorisation"
   - Allow blank: No
 
 - Column K (Post-Implementation Documentation Completed): Dropdown list
@@ -1248,7 +1271,7 @@ Changes are prioritized based on urgency and business impact:
 - Approval Decision (dropdown: Approved, Approved with Conditions, Not Approved)
 - Conditions/Comments
 - Next Assessment Due
-- Attestation: "I approve this change control assessment and authorize remediation activities for identified gaps."
+- Attestation: "I approve this change control assessment and authorise remediation activities for identified gaps."
 
 **Conditional Formatting**:
 
@@ -1307,7 +1330,7 @@ Changes are prioritized based on urgency and business impact:
 **Emergency_Changes**:
 
 - Emergency Type: Security Incident, Service Outage, Critical Bug, Vulnerability Remediation, Other
-- Emergency Approval Method: Verbal (CIO/CISO), Email (Expedited), CAB Chair Authorization
+- Emergency Approval Method: Verbal (CIO/CISO), Email (Expedited), CAB Chair Authorisation
 - Post-Implementation Documentation Completed: Yes, No, In Progress
 - CAB Review Outcome: Approved, Approved with Remediation, Disapproved (requires reversal), Not Yet Reviewed
 - Justification Valid: Yes, No, Questionable
@@ -1490,7 +1513,7 @@ Status:
 - Review overall change management effectiveness
 - Approve assessment and remediation plans
 - Complete Approver Sign-Off
-- Authorize process improvements
+- Authorise process improvements
 
 **Change Advisory Board (CAB)**:
 
@@ -1655,7 +1678,7 @@ Retain versions:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Every deviation from baseline is a question to be answered."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

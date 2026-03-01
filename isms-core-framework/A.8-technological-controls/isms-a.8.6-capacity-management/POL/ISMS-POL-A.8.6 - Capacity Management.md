@@ -47,11 +47,11 @@
 
 # Executive Summary
 
-This policy establishes [Organization]'s requirements for capacity management to ensure sufficient infrastructure and application capacity in accordance with ISO/IEC 27001:2022 Control A.8.6.
+This policy establishes [Organisation]'s requirements for capacity management to ensure sufficient infrastructure and application capacity in accordance with ISO/IEC 27001:2022 Control A.8.6.
 
-**Purpose**: Define organizational requirements for capacity management governance. This policy establishes WHAT capacity management controls are required, WHEN capacity planning must occur, and WHO is accountable. Implementation procedures (HOW monitoring, forecasting, and planning are performed) are documented in ISMS-IMP-A.8.6 series.
+**Purpose**: Define organisational requirements for capacity management governance. This policy establishes WHAT capacity management controls are required, WHEN capacity planning must occur, and WHO is accountable. Implementation procedures (HOW monitoring, forecasting, and planning are performed) are documented in ISMS-IMP-A.8.6 series.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including ISO/IEC 27001:2022 Control A.8.6. Conditional sector-specific requirements (FINMA Circular 2023/1, DORA Article 11, NIS2 Article 21) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including ISO/IEC 27001:2022 Control A.8.6. Conditional sector-specific requirements (FINMA Circular 2023/1, DORA Article 11, NIS2 Article 21) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -75,7 +75,7 @@ This policy establishes [Organization]'s requirements for capacity management to
 - All infrastructure supporting production business operations (mandatory)
 - Development, test, and quality assurance environments (recommended)
 - Business continuity and disaster recovery sites (per A.5.30)
-- Third-party hosted infrastructure (where [Organization] has capacity management responsibility)
+- Third-party hosted infrastructure (where [Organisation] has capacity management responsibility)
 
 **Personnel**:
 
@@ -114,7 +114,7 @@ This control integrates with:
 
 ## Capacity Monitoring Requirements
 
-[Organization] SHALL implement capacity monitoring for all infrastructure and application resources supporting business operations with the following characteristics:
+[Organisation] SHALL implement capacity monitoring for all infrastructure and application resources supporting business operations with the following characteristics:
 
 - **Metric collection frequency**: Minimum every 5 minutes for production systems, every 15 minutes for non-production systems
 - **Data completeness**: 99.5% metric availability (excluding planned maintenance windows)
@@ -137,7 +137,7 @@ This control integrates with:
 
 ## Capacity Threshold Requirements
 
-[Organization] SHALL define and implement capacity thresholds for all monitored resources.
+[Organisation] SHALL define and implement capacity thresholds for all monitored resources.
 
 **Threshold Framework**:
 
@@ -149,7 +149,7 @@ Thresholds SHALL be reviewed quarterly and tuned based on false positive rates, 
 
 ## Capacity Alerting Requirements
 
-[Organization] SHALL implement alerting for capacity threshold breaches with:
+[Organisation] SHALL implement alerting for capacity threshold breaches with:
 
 - Routing to appropriate teams based on severity
 - Escalation procedures for unacknowledged alerts
@@ -157,7 +157,7 @@ Thresholds SHALL be reviewed quarterly and tuned based on false positive rates, 
 
 ## Capacity Forecasting Requirements
 
-[Organization] SHALL develop capacity forecasts for all critical infrastructure and application resources.
+[Organisation] SHALL develop capacity forecasts for all critical infrastructure and application resources.
 
 **Forecasting Requirements**:
 
@@ -185,7 +185,7 @@ Thresholds SHALL be reviewed quarterly and tuned based on false positive rates, 
 
 ## Capacity Planning Requirements
 
-[Organization] SHALL implement a structured capacity planning process.
+[Organisation] SHALL implement a structured capacity planning process.
 
 **Planning Cycle Requirements**:
 
@@ -201,7 +201,7 @@ Thresholds SHALL be reviewed quarterly and tuned based on false positive rates, 
 
 ## Capacity Reporting Requirements
 
-[Organization] SHALL produce regular capacity reports:
+[Organisation] SHALL produce regular capacity reports:
 
 - **Monthly**: Utilization summary, incidents, forecast highlights, actions
 - **Quarterly**: Comprehensive forecasts, expansion plans, health scorecard
@@ -215,7 +215,7 @@ Thresholds SHALL be reviewed quarterly and tuned based on false positive rates, 
 
 ## Capacity Management Evidence Requirements
 
-[Organization] SHALL maintain verifiable evidence of capacity management activities to demonstrate control effectiveness per ISO/IEC 27001:2022 requirements.
+[Organisation] SHALL maintain verifiable evidence of capacity management activities to demonstrate control effectiveness per ISO/IEC 27001:2022 requirements.
 
 **Monitoring Evidence**:
 - Metric data: 30 days raw, 12 months aggregated, 36 months historical
@@ -280,7 +280,7 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
 **Accountabilities**:
 
 - Overall accountability for capacity management program effectiveness
-- Ensure capacity headroom meets organizational targets:
+- Ensure capacity headroom meets organisational targets:
   - Production systems: Minimum 20% headroom at peak utilization
   - Storage systems: Minimum 3 months headroom at current growth rate
   - Network bandwidth: Minimum 30% headroom during business hours
@@ -289,7 +289,7 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
 **Authorities**:
 
 - Approve capacity expansion plans within budget
-- Authorize emergency capacity procurement
+- Authorise emergency capacity procurement
 - Allocate IT resources for capacity planning
 
 ## Chief Information Security Officer (CISO)
@@ -470,7 +470,7 @@ KPIs SHALL be reported quarterly to IT Leadership Team and annually to Executive
 **Operational**: Service outages, performance degradation, emergency procurement
 **Financial**: Unbudgeted spending, lost revenue, contract penalties
 **Compliance**: ISO 27001 non-conformance, regulatory violations, audit findings
-**Organizational**: Performance management actions, executive escalation
+**Organisational**: Performance management actions, executive escalation
 
 ## Policy Review and Updates
 
@@ -550,4 +550,4 @@ KPIs SHALL be reported quarterly to IT Leadership Team and annually to Executive
 
 *This policy establishes capacity management requirements. Implementation procedures are documented in ISMS-IMP-A.8.6 (UG/TG).1 (Capacity Monitoring Implementation), ISMS-IMP-A.8.6.2 (Capacity Forecasting and Planning), and ISMS-IMP-A.8.6.3 (Capacity Management Assessment).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -8,191 +8,172 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-IMP-A.8.20-21-22-S1-TG |
+|-------|-------|
+| **Document Title** | Network Discovery |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.20-21-22.S1-TG |
+| **Related Policy** | ISMS-POL-A.8.20-21-22 (Network Security) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.20 (Networks Security) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Network Asset Discovery & Inventory |
-| **Related Policy** | ISMS-POL-A.8.20-21-22, Section 2.1 (Network Infrastructure Security - A.8.20), Section 2.2 (Network Services Security - A.8.21), Section 2.3 (Network Segmentation - A.8.22) |
-| **Purpose** | Provide systematic methodology for discovering and inventorying network infrastructure, services, and segments to support compliance assessment |
-| **Target Audience** | Network Administrators, Security Engineers, ISMS Implementation Teams, Infrastructure Teams, Auditors |
-| **Assessment Type** | Technical Discovery & Inventory |
-| **Review Cycle** | Annually or After Major Network Changes |
-| **Total Sheets** | 9 |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial implementation guidance for network discovery process | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.20-21-22 (Network Security)
+- ISMS-IMP-A.8.20-21-22.S2 (Architecture Documentation)
+- ISMS-IMP-A.8.20-21-22.S3 (Device Hardening)
+- ISMS-IMP-A.8.20-21-22.S4 (Services Security)
+- ISMS-IMP-A.8.20-21-22.S5 (Segmentation Implementation)
 
 ---
+
 # Technical Specification
 **Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
-
-> Auto-generated from `generate_a820_1_infrastructure_inventory.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.20-21-22.S1` |
-| **Workbook Title** | Network Infrastructure Inventory |
-| **Total Sheets** | 13 (13 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Controls A.8.20, A.8.21, A.8.22: Network Security |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #002060 | 002060 | Custom |
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #92D050 | 92D050 | Green (Complete) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #FF0000 | FF0000 | Red (Critical/Alert) |
-| #FFC000 | FFC000 | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFFF00 | FFFF00 | Yellow (Warning) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Data_Validations
-
 ---
 
-## Sheet 2: Instructions & Legend
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a820_1_infrastructure_inventory.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Device_Inventory
+**Document ID:** `ISMS-IMP-A.8.20-21-22.S1`
 
-**Frozen Panes:** A4
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Columns
+### Sheet Structure
 
-| Col | Header |
-|-----|--------|
-| A | Device ID |
-| B | Device Type |
-| C | Make/Model |
-| D | Hostname |
-| E | Primary IP |
-| F | Management IP |
-| G | Location |
-| H | Security Zone |
-| I | Purpose |
-| J | Criticality |
-| K | Owner |
-| L | Last Discovered |
-| M | Discovery Method |
-| N | Firmware Version |
-| O | Serial Number |
-| P | Compliance Status |
-| Q | Status |
-| R | Notes |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Evidence Register |
+| 2 | Approval Sign-Off |
+| 3 | Instructions & Legend |
+| 4 | Device Inventory |
+| 5 | Device Criticality Matrix |
+| 6 | Device Type Summary |
+| 7 | Discovery Metadata |
+| 8 | Gap Analysis |
+| 9 | Summary Dashboard |
+| 10 | Validation Rules |
 
-### Conditional Formatting
+### Color Palette
 
-| Range | Condition | Format |
-|-------|-----------|--------|
-| JN:JN | equal  |  |
-| JN:JN | equal  |  |
-| JN:JN | equal  |  |
-| JN:JN | equal  |  |
-| QN:QN | equal  |  |
-| QN:QN | equal  |  |
-| QN:QN | equal  |  |
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
----
+### Column Headers (All Sheets)
 
-## Sheet 4: Device_Criticality_Matrix
+| # | Column Header |
+|---|--------------|
+| 1 | Assessment Area |
+| 2 | Total |
+| 3 | Yes |
+| 4 | Partial |
+| 5 | N-A |
+| 6 | Compliance % |
+| 7 | IT Infrastructure Team |
+| 8 | Network Scan |
+| 9 | DEVICE CRITICALITY ASSESSMENT MATRIX |
+| 10 | DEVICE TYPE SUMMARY & STATISTICS |
+| 11 | NETWORK DISCOVERY PROCESS METADATA |
+| 12 | NETWORK DISCOVERY GAP ANALYSIS |
+| 13 | Missing Device |
+| 14 | Network Team |
+| 15 | What This Shows |
+| 16 | Critical Finding Type |
+| 17 | Filter Instructions |
+| 18 | DATA VALIDATION RULES & QUALITY CHECKS |
+| 19 | Device ID |
+| 20 | Device Type |
+| 21 | Make/Model |
+| 22 | Hostname |
+| 23 | Primary IP |
+| 24 | Management IP |
+| 25 | Location |
+| 26 | Security Zone |
+| 27 | Purpose |
+| 28 | Criticality |
+| 29 | Owner |
+| 30 | Last Discovered |
+| 31 | Discovery Method |
+| 32 | Firmware Version |
+| 33 | Serial Number |
+| 34 | Compliance Status |
+| 35 | Status |
+| 36 | Notes |
+| 37 | Service Impact |
+| 38 | Recovery Time |
+| 39 | User Impact |
+| 40 | Revenue Impact |
+| 41 | Redundancy |
+| 42 | Total Count |
+| 43 | Active |
+| 44 | Offline |
+| 45 | Critical Count |
+| 46 | Compliant Count |
+| 47 | Gap ID |
+| 48 | Gap Type |
+| 49 | Device/Location |
+| 50 | Description |
+| 51 | Severity |
+| 52 | Impact |
+| 53 | Remediation Plan |
+| 54 | Target Date |
+| 55 | Evidence ID |
+| 56 | Evidence Type |
+| 57 | Location/Path |
+| 58 | Date Collected |
+| 59 | Collected By |
+| 60 | Verification Status |
 
----
+### Data Validation Values
 
-## Sheet 5: Device_Type_Summary
+All dropdown/list values used across sheets:
 
----
+```
+Router, Switch, Firewall, Wireless AP, Load Balancer, VPN Concentrator
+IDS/IPS, Network Management, Other, Critical, High, Medium, Low, Active
+Offline, Decommissioned, Planned, Internet/DMZ, Internal, Management, Guest
+Datacenter, Branch, Cloud, Unknown, Nmap Scan, SNMP Walk, Cloud API
+Manual Entry, Documentation Review, Compliant, Non-Compliant, ⚠️ Partial
+❓ Not Assessed, ⭕ Open, In Progress, Resolved, ⚠️ Accepted Risk
+Configuration Backup, Discovery Report, Network Diagram, Scan Results
+Documentation, Screenshot, Collected, Pending, Missing, Not Applicable
+Configuration file, Network scan, Vendor spec, Certificate inventory
+Audit log, Compliance report, ✅ Verified, ⚠️ Pending, ❌ Not Verified, N/A
+Draft, Final, Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
-## Sheet 6: Device Distribution by Type
-
----
-
-## Sheet 7: Device Count by Criticality
-
----
-
-## Sheet 8: Count
-
----
-
-## Sheet 9: Criticality
-
----
-
-## Sheet 10: Discovery_Metadata
-
-**Data Rows:** 5 (rows 1–5)
-
----
-
-## Sheet 11: Gap_Analysis
-
-**Data Rows:** 9 (rows 2–10) | **Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Gap ID |
-| B | Gap Type |
-| C | Device/Location |
-| D | Description |
-| E | Severity |
-| F | Impact |
-| G | Remediation Plan |
-| H | Owner |
-| I | Status |
-| J | Target Date |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| EN:EN | equal  |  |
-| EN:EN | equal  |  |
-| EN:EN | equal  |  |
-| EN:EN | equal  |  |
-
----
-
-## Sheet 12: Evidence_Register
-
-**Data Rows:** 7 (rows 2–8) | **Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Evidence Type |
-| C | Description |
-| D | File Location |
-| E | Collection Date |
-| F | Collected By |
-| G | Status |
-| H | Notes |
-
----
-
-## Sheet 13: Validation_Rules
+**Extracted:** 10 sheets, 60 columns, 66 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

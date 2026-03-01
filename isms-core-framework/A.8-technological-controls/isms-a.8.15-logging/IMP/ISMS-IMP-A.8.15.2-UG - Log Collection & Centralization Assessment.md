@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Log Collection & Centralization Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.15.2-UG |
+| **Related Policy** | ISMS-POL-A.8.15 (Logging) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.15 (Logging) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Log Collection Infrastructure & SIEM Integration |
-| **Related Policy** | ISMS-POL-A.8.15, Section 2.2 (Log Protection & Integrity Requirements), Section 2.3 (Log Retention & Storage Requirements) |
-| **Purpose** | Assess SIEM/log management infrastructure, verify log collection coverage and reliability, validate centralized logging implementation |
-| **Target Audience** | Security Operations Center (SOC), SIEM Administrators, IT Operations, Network Team, Security Engineers, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Infrastructure & Operational |
-| **Review Cycle** | Annual (full assessment), Quarterly (reliability metrics) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
+| Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Initial technical specification for Log Collection assessment workbook | ISMS Implementation Team |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.15 (Logging)
+- ISMS-IMP-A.8.15.1 (Log Source Inventory Assessment)
+- ISMS-IMP-A.8.15.3 (Log Protection & Retention Assessment)
+- ISMS-IMP-A.8.15.4 (Log Analysis & Review Assessment)
+
+---
 
 ### Document Structure
 
@@ -32,6 +46,27 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 **Audience:** SOC Team, SIEM Administrators, IT Operations, Network Team
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | SIEM Platform Details | Document SIEM platform configuration and capabilities |
+| 3 | Log Forwarder Inventory | Inventory of log forwarders and collection agents |
+| 4 | Collection Reliability | Assess log collection reliability and coverage rates |
+| 5 | Integration Architecture | Document log collection integration architecture |
+| 6 | SIEM Storage & Capacity | Assess SIEM storage capacity and scaling |
+| 7 | Log Parsing & Normalisation | Assess log parsing and normalisation quality |
+| 8 | SIEM Performance Metrics | Track SIEM performance and ingestion metrics |
+| 9 | Data Quality Assessment | Assess centralised log data quality |
+| 10 | Encryption & Authentication | Verify log transmission encryption and authentication |
+| 11 | Gap Analysis | Identify collection and centralisation gaps |
+| 12 | Evidence Register | Store and reference evidence supporting assessments |
+| 13 | Summary Dashboard | Compliance status and key metrics overview |
+| 14 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -60,7 +95,7 @@ This is purely about the **INFRASTRUCTURE** and **DATA FLOW** - getting logs fro
 
 ## Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - **ISO/IEC 27001:2022 Control A.8.15**: Logs must be "kept" - centralized collection ensures logs aren't lost when systems fail or are compromised
 - **ISMS-POL-A.8.15, Section 2.2 (Log Protection)**: Immediate forwarding to centralized SIEM prevents local log deletion/tampering
@@ -131,10 +166,10 @@ IMP-A.8.15.4 (Analysis & Review)
     Verifies logs ANALYZED and REVIEWED
     |
     v
-IMP-A.8.15.5 (Compliance Dashboard)
+Summary Dashboards (per workbook)
     |
     v
-    Consolidates all assessments
+    Findings tracked in Summary Dashboards
 ```
 
 **Recommended Order**: Complete IMP-A.8.15.1 FIRST (know what log sources exist), then complete this assessment (verify they're forwarding logs).
@@ -231,7 +266,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 - Sheet 5: Log Source Coverage (import from IMP-A.8.15.1, verify forwarding status)
 - Sheet 6: Integration Methods (document how each source connects)
-- Sheet 7: Collection Reliability Metrics (analyze gaps, delays, failures)
+- Sheet 7: Collection Reliability Metrics (analyse gaps, delays, failures)
 
 **Phase 3: Security & Compliance (Sheets 8-9)**
 
@@ -795,7 +830,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 **Category 4: Weak or No Authentication**
 
 - Log sources sending unauthenticated logs, weak passwords, expired credentials
-- Gap Impact: Integrity risk - unauthorized log injection possible, log spoofing
+- Gap Impact: Integrity risk - unauthorised log injection possible, log spoofing
 - Priority: High (security-critical logs), Medium (operational logs)
 
 **Category 5: Insufficient Storage Capacity**
@@ -853,7 +888,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 **Remediation Tracking**:
 
-- Gaps should be tracked in organization's issue tracking system (Jira, ServiceNow, etc.)
+- Gaps should be tracked in organisation's issue tracking system (Jira, ServiceNow, etc.)
 - Reference tracking ticket ID in this sheet
 - Update status quarterly during assessment refreshes
 
@@ -941,7 +976,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Provide document name, version, location (network path, SharePoint, document management system)
 - Verify document is current (not outdated)
 
-**Evidence Organization**:
+**Evidence Organisation**:
 
 - Create evidence folder structure matching assessment sheets:
 
@@ -994,7 +1029,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 **Why This Happens**:
 
-- Organization has Security SIEM (Splunk), Operations SIEM (ELK), Compliance SIEM (LogRhythm)
+- Organisation has Security SIEM (Splunk), Operations SIEM (ELK), Compliance SIEM (LogRhythm)
 - Assumption that "logging is enabled" means "goes to security SIEM"
 - Reality: logs going to operations SIEM, security team has no visibility
 
@@ -1068,7 +1103,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 - Collect evidence **DURING assessment** (Sheet 10 - Evidence Register)
 - Take screenshots at time of verification (later screenshots may not match assessment date)
-- Store evidence securely (organized folder structure per section 5.2)
+- Store evidence securely (organised folder structure per section 5.2)
 - Evidence retention = audit readiness
 
 ---
@@ -1107,7 +1142,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - [ ] Evidence file naming clear and consistent
 - [ ] Evidence contains date/time metadata (to prove currency)
 - [ ] Sensitive information redacted (no exposed credentials, excessive internal details)
-- [ ] Evidence organized in folder structure (per section 5.2)
+- [ ] Evidence organised in folder structure (per section 5.2)
 - [ ] Evidence Register (Sheet 10) references match actual files (no broken references)
 
 ## Approval Readiness
@@ -1136,7 +1171,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 **Level 2: Management Review**
 
 - **Reviewer**: Information Security Manager
-- **Focus**: Gap prioritization correct, remediation plans aligned with organizational priorities, resource requirements reasonable
+- **Focus**: Gap prioritization correct, remediation plans aligned with organisational priorities, resource requirements reasonable
 - **Timeline**: 3-5 business days for review and discussion
 - **Outcome**: Remediation plans approved, resources committed, timelines realistic
 
@@ -1145,7 +1180,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Reviewer**: CISO
 - **Focus**: Strategic alignment, risk acceptance for unfixed gaps, budget approval for significant investments
 - **Timeline**: 1-2 weeks for review and final sign-off
-- **Outcome**: Assessment officially approved, gaps formally tracked, execution authorized
+- **Outcome**: Assessment officially approved, gaps formally tracked, execution authorised
 
 ## Approval Workflow
 
@@ -1153,7 +1188,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 - SIEM Administrator completes all sheets with SOC Lead input
 - Quality checklist (Section 7) fully checked
-- Evidence collected and organized
+- Evidence collected and organised
 
 **Step 2: Level 1 Technical Review**
 
@@ -1208,7 +1243,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Centralised logging is the nervous system of security operations."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

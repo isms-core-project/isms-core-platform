@@ -77,7 +77,7 @@ This document provides technical reference material for change management implem
 
 This document does NOT:
 
-- Define [Organization]'s binding change management requirements (see ISMS-POL-A.8.32)
+- Define [Organisation]'s binding change management requirements (see ISMS-POL-A.8.32)
 - Establish mandatory tool requirements
 - Create compliance obligations or audit criteria
 - Replace ISMS-POL-A.8.32 policy requirements
@@ -88,11 +88,11 @@ This document does NOT:
 
 This document is a **non-binding technical reference**. All change management requirements are defined exclusively in ISMS-POL-A.8.32 (Change Management Policy).
 
-Implementation decisions are documented through ISMS-IMP-A.8.32 assessment workbooks based on risk assessment, operational context, and organizational requirements.
+Implementation decisions are documented through ISMS-IMP-A.8.32 assessment workbooks based on risk assessment, operational context, and organisational requirements.
 
-## Content Organization
+## Content Organisation
 
-This reference organizes content into four sections:
+This reference organises content into four sections:
 
 1. **Section 2**: Tool Capability Requirements - Minimum capabilities for change management systems
 2. **Section 3**: Change Request Form Template - Standard template ensuring consistent information capture
@@ -105,7 +105,7 @@ This reference organizes content into four sections:
 
 ## Purpose
 
-Define minimum capabilities required from change management systems (ITSM tools, ticketing systems, workflow platforms). Organizations may use any system(s) meeting these capability requirements.
+Define minimum capabilities required from change management systems (ITSM tools, ticketing systems, workflow platforms). Organisations may use any system(s) meeting these capability requirements.
 
 **Important:** This document specifies CAPABILITIES, not specific products or vendors.
 
@@ -229,7 +229,7 @@ Define minimum capabilities required from change management systems (ITSM tools,
 
 ## Tool Evaluation Checklist
 
-Organizations evaluating change management tools can use this checklist:
+Organisations evaluating change management tools can use this checklist:
 
 - [ ] CAP-001: Change request management capabilities present
 - [ ] CAP-002: State management with lifecycle tracking
@@ -355,7 +355,7 @@ Provide detailed methodology for assessing change risk based on impact and likel
 | **Low** | Minimal impact, easily reversible | Single user, single non-critical system, <15 min recovery |
 | **Medium** | Moderate impact, rollback feasible | Team/multiple users, non-critical systems, <2 hour recovery |
 | **High** | Significant impact, complex rollback | Department, major system, business process disruption, <8 hour recovery |
-| **Critical** | Severe impact, difficult recovery | Organization-wide, mission-critical system, customer-facing, >8 hour recovery or irreversible |
+| **Critical** | Severe impact, difficult recovery | Organisation-wide, mission-critical system, customer-facing, >8 hour recovery or irreversible |
 
 ### Impact Assessment Dimensions
 
@@ -608,7 +608,7 @@ Provide detailed methodology for assessing change risk based on impact and likel
 [Acknowledge risks of expedited implementation]
 
 **Mitigation Measures:**
-[Describe how risks will be minimized despite urgency]
+[Describe how risks will be minimised despite urgency]
 
 **E-CAB Approval:**
 

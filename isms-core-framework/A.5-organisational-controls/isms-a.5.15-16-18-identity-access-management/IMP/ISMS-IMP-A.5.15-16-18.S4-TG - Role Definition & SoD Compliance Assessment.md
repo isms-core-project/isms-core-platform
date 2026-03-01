@@ -8,244 +8,162 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Role Definition & SoD Compliance Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.15-16-18.S4-TG |
+| **Related Policy** | ISMS-POL-A.5.15-16-18 (Identity Access Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.15 (Access Annex) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Role-Based Access Control (RBAC) Maturity & Segregation of Duties (SoD) Compliance |
-| **Related Policy** | ISMS-POL-A.5.15-16-18, Section 2.3 (Role Definition & RBAC - A.5.18), Section 2.1.4 (Segregation of Duties - A.5.15) |
-| **Purpose** | Assess RBAC adoption, verify role-based access implementation, detect segregation of duties violations, and identify role governance gaps |
-| **Target Audience** | IAM Team, Security Operations, Access Control Administrators, Internal Audit, Compliance Officers |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Quarterly (Critical Roles), Semi-Annual (All Roles), Annual (Comprehensive Role Governance Review) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for Role Definition & SoD Compliance assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.15-16-18 (Identity Access Management)
+- ISMS-IMP-A.5.15-16-18.S1 (User Inventory & Lifecycle Compliance Assessment)
+- ISMS-IMP-A.5.15-16-18.S2 (Access Rights Matrix Assessment)
+- ISMS-IMP-A.5.15-16-18.S3 (Access Review Results Assessment)
 
 ---
+
 # Technical Specification
-
-
-> Auto-generated from `generate_a515-16-18_4_role_compliance.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.15-16-18.S4` |
-| **Output Filename** | `ISMS-IMP-A.5.15-16-18.S4_Role_Compliance_SoD_YYYYMMDD.xlsx` |
-| **Workbook Title** | Role Compliance & Segregation of Duties Assessment |
-| **Total Sheets** | 10 (10 visible) |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #002060 | 002060 | Custom |
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FF0000 | FF0000 | Red (Critical/Alert) |
-| #FF6600 | FF6600 | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-
-## Sheet 1: Instructions & Legend
-
-**Data Rows:** 3 (rows 1–3)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Sheet |
-| B | Purpose |
-| C | Key Metrics |
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Role_Catalog
+## Generator Alignment Reference
 
-**Data Rows:** 9 (rows 1–9) | **Frozen Panes:** A6
+> Auto-generated from `generate_a515-16-18_4_role_compliance.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.15-16-18.S4`
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Role ID | 12 |
-| B | Role Name | 25 |
-| C | Department | 15 |
-| D | Description | 40 |
-| E | Systems/Access | 40 |
-| F | User Count | 12 |
-| G | Privileged | 12 |
-| H | Last Review | 12 |
-| I | Owner | 20 |
-| J | Status | 12 |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: Role_Assignments
+| # | Sheet Name |
+|---|-----------|
+| 1 | Role Catalog |
+| 2 | Role Assignments |
+| 3 | Direct Access Users |
+| 4 | SoD Matrix |
+| 5 | SoD Violations |
+| 6 | RBAC Metrics |
+| 7 | Gap Analysis |
+| 8 | Summary Dashboard |
+| 9 | Evidence Register |
+| 10 | Approval Sign-Off |
+| 11 | Instructions & Legend |
 
-**Data Rows:** 9 (rows 1–9) | **Frozen Panes:** A6
+### Color Palette
 
-### Columns
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FF0000 | Red (Critical/Alert) |
+| #FF6600 | Custom |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | User ID | 10 |
-| B | Username | 18 |
-| C | Full Name | 20 |
-| D | Department | 15 |
-| E | Assigned Role | 25 |
-| F | Assignment Date | 15 |
-| G | Assignment Type | 18 |
-| H | Role Appropriate | 18 |
-| I | Verified By | 20 |
-| J | Status | 12 |
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | ROLE CATALOG - RBAC ROLE DEFINITIONS |
+| 2 | ROLE ASSIGNMENTS - USER TO ROLE MAPPINGS |
+| 3 | DIRECT ACCESS USERS - NON-RBAC ACCESS |
+| 4 | SEGREGATION OF DUTIES MATRIX - CONFLICTING ROLE COMBINATIONS |
+| 5 | SOD VIOLATIONS - DETECTED CONFLICTING ROLE ASSIGNMENTS |
+| 6 | RBAC ADOPTION METRICS & KPIS |
+| 7 | Overall RBAC & SoD Compliance Score |
+| 8 | GAP ANALYSIS - RBAC & SOD NON-COMPLIANCE |
+| 9 | Role ID |
+| 10 | Role Name |
+| 11 | Department |
+| 12 | Description |
+| 13 | Systems/Access |
+| 14 | User Count |
+| 15 | Privileged |
+| 16 | Last Review |
+| 17 | Owner |
+| 18 | Status |
+| 19 | User ID |
+| 20 | Username |
+| 21 | Full Name |
+| 22 | Assigned Role |
+| 23 | Assignment Date |
+| 24 | Assignment Type |
+| 25 | Role Appropriate |
+| 26 | Verified By |
+| 27 | System |
+| 28 | Access Level |
+| 29 | Granted Date |
+| 30 | Justification |
+| 31 | Migration Plan |
+| 32 | Conflict ID |
+| 33 | Role A |
+| 34 | Role B |
+| 35 | Risk Level |
+| 36 | Rationale |
+| 37 | Compensating Controls |
+| 38 | Violation ID |
+| 39 | Detected Date |
+| 40 | Remediation Plan |
+| 41 | Due Date |
+| 42 | Metric |
+| 43 | Target |
+| 44 | Actual |
+| 45 | Gap |
+| 46 | Comments |
+| 47 | Gap ID |
+| 48 | Category |
+| 49 | Affected Items |
+| 50 | Root Cause |
+| 51 | Assessment Area |
+| 52 | Total Items |
+| 53 | Compliant / Active |
+| 54 | Partial / Under Review |
+| 55 | Non-Compliant / Inappropriate |
+| 56 | N/A |
+| 57 | Compliance % |
 
-## Sheet 4: Direct_Access_Users
+### Data Validation Values
 
-**Data Rows:** 9 (rows 1–9) | **Frozen Panes:** A6
+All dropdown/list values used across sheets:
 
-### Columns
+```
+Critical, High, Medium, Low, Open, In Progress, Resolved, Accepted, Active
+Archived, Superseded, Pending Review, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | User ID | 10 |
-| B | Username | 18 |
-| C | Full Name | 20 |
-| D | Department | 15 |
-| E | System | 20 |
-| F | Access Level | 15 |
-| G | Granted Date | 12 |
-| H | Justification | 40 |
-| I | Migration Plan | 35 |
-| J | Status | 18 |
-
----
-
-## Sheet 5: SoD_Matrix
-
-**Data Rows:** 7 (rows 1–7) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Conflict ID | 12 |
-| B | Role A | 22 |
-| C | Role B | 22 |
-| D | Risk Level | 12 |
-| E | Description | 45 |
-| F | Rationale | 45 |
-| G | Compensating Controls | 50 |
-| H | Status | 12 |
-
----
-
-## Sheet 6: SoD_Violations
-
-**Data Rows:** 10 (rows 1–10) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Violation ID | 12 |
-| B | User ID | 10 |
-| C | Username | 18 |
-| D | Conflict ID | 12 |
-| E | Role A | 22 |
-| F | Role B | 22 |
-| G | Risk Level | 12 |
-| H | Detected Date | 15 |
-| I | Remediation Plan | 45 |
-| J | Due Date | 12 |
-| K | Status | 22 |
-
----
-
-## Sheet 7: RBAC_Metrics
-
-**Data Rows:** 6 (rows 1–6)
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Metric | 30 |
-| B | Target | 15 |
-| C | Actual | 15 |
-| D | Status | 18 |
-| E | Gap | 10 |
-| F | Comments | 55 |
-
----
-
-## Sheet 8: Gap_Analysis
-
-**Data Rows:** 10 (rows 1–10) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Gap ID | 10 |
-| B | Category | 18 |
-| C | Description | 40 |
-| D | Risk Level | 12 |
-| E | Affected Items | 15 |
-| F | Root Cause | 40 |
-| G | Remediation Plan | 50 |
-| H | Owner | 20 |
-| I | Due Date | 12 |
-| J | Status | 15 |
-
----
-
-## Sheet 9: Evidence_Register
-
-**Data Rows:** 8 (rows 1–8) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence ID | 12 |
-| B | Requirement | 25 |
-| C | Evidence Type | 22 |
-| D | Evidence Location | 35 |
-| E | Collection Date | 18 |
-| F | Completeness | 15 |
-| G | Reviewed By | 20 |
-| H | Notes | 45 |
-
----
-
-## Sheet 10: Approval_Sign_Off
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Approval Level | 25 |
-| B | Role | 20 |
-| C | Name | 25 |
-| D | Signature | 20 |
-| E | Date | 15 |
-| F | Status | 15 |
+**Extracted:** 11 sheets, 57 columns, 20 validation values, 12 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

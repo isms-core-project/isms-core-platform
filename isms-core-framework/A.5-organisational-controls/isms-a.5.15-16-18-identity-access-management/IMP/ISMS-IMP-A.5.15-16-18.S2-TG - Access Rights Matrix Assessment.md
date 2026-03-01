@@ -8,247 +8,164 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Access Rights Matrix Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.15-16-18.S2-TG |
+| **Related Policy** | ISMS-POL-A.5.15-16-18 (Identity Access Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.15 (Access Annex) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Access Rights Matrix & Documentation |
-| **Related Policy** | ISMS-POL-A.5.15-16-18, Section 2.3 (Access Rights Management Requirements - A.5.18) |
-| **Purpose** | Document complete access rights matrix mapping users to systems/applications/data, assess access documentation completeness, and verify business justification in a technology-agnostic manner |
-| **Target Audience** | IAM Team, System Owners, IT Operations, Security Team, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Monthly (access rights updates), Quarterly (comprehensive access audit) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Access Rights Matrix assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.15-16-18 (Identity Access Management)
+- ISMS-IMP-A.5.15-16-18.S1 (User Inventory & Lifecycle Compliance Assessment)
+- ISMS-IMP-A.5.15-16-18.S3 (Access Review Results Assessment)
+- ISMS-IMP-A.5.15-16-18.S4 (Role Definition & SoD Compliance Assessment)
 
 ---
+
 # Technical Specification
-
-
-> Auto-generated from `generate_a515-16-18_2_access_rights_matrix.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.15-16-18.S2` |
-| **Output Filename** | `ISMS-IMP-A.5.15-16-18.S2_Access_Rights_Matrix_YYYYMMDD.xlsx` |
-| **Workbook Title** | Access Rights Matrix Assessment |
-| **Total Sheets** | 10 (10 visible) |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #002060 | 002060 | Custom |
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FF0000 | FF0000 | Red (Critical/Alert) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-
-## Sheet 1: Instructions & Legend
-
-**Data Rows:** 3 (rows 1–3)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Sheet |
-| B | Purpose |
-| C | Key Metrics |
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Access_Matrix
+## Generator Alignment Reference
 
-**Data Rows:** 10 (rows 1–10) | **Frozen Panes:** A6
+> Auto-generated from `generate_a515-16-18_2_access_rights_matrix.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.15-16-18.S2`
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | User ID | 10 |
-| B | Username | 18 |
-| C | Full Name | 20 |
-| D | Department | 15 |
-| E | System/Application | 30 |
-| F | Access Level | 15 |
-| G | Access Type | 15 |
-| H | Granted Date | 12 |
-| I | Granted By | 18 |
-| J | Last Used | 12 |
-| K | Status | 15 |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: Role_Assignments
+| # | Sheet Name |
+|---|-----------|
+| 1 | Access Matrix |
+| 2 | Role Assignments |
+| 3 | Group Memberships |
+| 4 | Privileged Access |
+| 5 | Access Documentation |
+| 6 | Coverage Analysis |
+| 7 | Gap Analysis |
+| 8 | Summary Dashboard |
+| 9 | Evidence Register |
+| 10 | Approval Sign-Off |
+| 11 | Instructions & Legend |
 
-**Data Rows:** 7 (rows 1–7) | **Frozen Panes:** A6
+### Color Palette
 
-### Columns
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FF0000 | Red (Critical/Alert) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | User ID | 10 |
-| B | Username | 18 |
-| C | Full Name | 20 |
-| D | Department | 15 |
-| E | Assigned Role | 25 |
-| F | Assignment Date | 15 |
-| G | Assignment Type | 18 |
-| H | Status | 12 |
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | ACCESS RIGHTS MATRIX - USER X SYSTEM MAPPING |
+| 2 | ROLE ASSIGNMENTS - RBAC IMPLEMENTATION |
+| 3 | GROUP MEMBERSHIP DETAILS |
+| 4 | PRIVILEGED ACCESS TRACKING - ADMIN & ELEVATED RIGHTS |
+| 5 | ACCESS DOCUMENTATION COMPLETENESS - BUSINESS JUSTIFICATION |
+| 6 | COVERAGE ANALYSIS - SYSTEM-LEVEL ACCESS STATISTICS |
+| 7 | GAP ANALYSIS - ACCESS RIGHTS NON-COMPLIANCE |
+| 8 | User ID |
+| 9 | Username |
+| 10 | Full Name |
+| 11 | Department |
+| 12 | System/Application |
+| 13 | Access Level |
+| 14 | Access Type |
+| 15 | Granted Date |
+| 16 | Granted By |
+| 17 | Last Used |
+| 18 | Status |
+| 19 | Assigned Role |
+| 20 | Assignment Date |
+| 21 | Assignment Type |
+| 22 | Group Name |
+| 23 | Group Type |
+| 24 | Purpose |
+| 25 | Owner |
+| 26 | Member Count |
+| 27 | Created Date |
+| 28 | Last Modified |
+| 29 | Nested Groups |
+| 30 | Review Frequency |
+| 31 | System |
+| 32 | Privilege Level |
+| 33 | Business Justification |
+| 34 | Approved By |
+| 35 | Last Review |
+| 36 | Access ID |
+| 37 | Approver |
+| 38 | Approval Date |
+| 39 | Documentation Quality |
+| 40 | Criticality |
+| 41 | Total Users |
+| 42 | Read Access |
+| 43 | Write Access |
+| 44 | Admin Access |
+| 45 | RBAC Adoption |
+| 46 | Gap ID |
+| 47 | Category |
+| 48 | Description |
+| 49 | Risk Level |
+| 50 | Affected Items |
+| 51 | Root Cause |
+| 52 | Remediation Plan |
+| 53 | Due Date |
+| 54 | Assessment Area |
+| 55 | Total Items |
+| 56 | Compliant |
+| 57 | Partial / Warning |
+| 58 | Non-Compliant |
+| 59 | N/A |
+| 60 | Compliance % |
 
-## Sheet 4: Group_Memberships
+### Data Validation Values
 
-**Data Rows:** 9 (rows 1–9) | **Frozen Panes:** A5
+All dropdown/list values used across sheets:
 
-### Columns
+```
+Critical, High, Medium, Low, Open, In Progress, Resolved, Accepted, Active
+Archived, Superseded, Pending Review, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
 
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Group Name | 35 |
-| B | Group Type | 15 |
-| C | Purpose | 40 |
-| D | Owner | 18 |
-| E | Member Count | 15 |
-| F | Created Date | 15 |
-| G | Last Modified | 15 |
-| H | Nested Groups | 15 |
-| I | Review Frequency | 18 |
-| J | Status | 12 |
-
----
-
-## Sheet 5: Privileged_Access
-
-**Data Rows:** 10 (rows 1–10) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | User ID | 10 |
-| B | Username | 18 |
-| C | Full Name | 20 |
-| D | Department | 15 |
-| E | System | 25 |
-| F | Privilege Level | 20 |
-| G | Granted Date | 12 |
-| H | Business Justification | 35 |
-| I | Approved By | 18 |
-| J | Last Review | 12 |
-| K | Status | 18 |
-
----
-
-## Sheet 6: Access_Documentation
-
-**Data Rows:** 9 (rows 1–9) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Access ID | 12 |
-| B | Username | 18 |
-| C | System | 30 |
-| D | Access Level | 15 |
-| E | Granted Date | 12 |
-| F | Business Justification | 50 |
-| G | Approver | 18 |
-| H | Approval Date | 15 |
-| I | Documentation Quality | 20 |
-| J | Status | 15 |
-
----
-
-## Sheet 7: Coverage_Analysis
-
-**Data Rows:** 8 (rows 1–8) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | System/Application | 30 |
-| B | Criticality | 15 |
-| C | Total Users | 12 |
-| D | Read Access | 15 |
-| E | Write Access | 15 |
-| F | Admin Access | 15 |
-| G | RBAC Adoption | 18 |
-| H | Review Frequency | 18 |
-
----
-
-## Sheet 8: Gap_Analysis
-
-**Data Rows:** 10 (rows 1–10) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Gap ID | 10 |
-| B | Category | 18 |
-| C | Description | 45 |
-| D | Risk Level | 12 |
-| E | Affected Items | 15 |
-| F | Root Cause | 40 |
-| G | Remediation Plan | 40 |
-| H | Owner | 18 |
-| I | Due Date | 12 |
-| J | Status | 15 |
-
----
-
-## Sheet 9: Evidence_Register
-
-**Data Rows:** 8 (rows 1–8) | **Frozen Panes:** A5
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence ID | 12 |
-| B | Requirement | 25 |
-| C | Evidence Type | 20 |
-| D | Evidence Location | 35 |
-| E | Collection Date | 18 |
-| F | Completeness | 15 |
-| G | Reviewed By | 20 |
-| H | Notes | 45 |
-
----
-
-## Sheet 10: Approval_Sign_Off
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Approval Level | 25 |
-| B | Role | 20 |
-| C | Name | 25 |
-| D | Signature | 20 |
-| E | Date | 15 |
-| F | Status | 15 |
+**Extracted:** 11 sheets, 60 columns, 20 validation values, 11 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

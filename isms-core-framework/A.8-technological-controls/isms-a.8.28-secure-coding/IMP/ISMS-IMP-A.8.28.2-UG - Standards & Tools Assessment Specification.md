@@ -8,29 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Standards & Tools Assessment Specification |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.28.2-UG |
+| **Related Policy** | ISMS-POL-A.8.28 (Secure Coding) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.28 (Secure Coding) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Secure Coding Standards & Security Tool Implementation |
-| **Related Policy** | ISMS-POL-A.8.28 Section 2.2 (Secure Coding Standards), Section 2.3 (Code Review & Testing) |
-| **Purpose** | Evaluate implementation and effectiveness of secure coding standards and security tools - deployment AND actual security improvement |
-| **Target Audience** | Application Security Team, Security Architects, Development Managers, DevOps Engineers, Tool Administrators, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major Tool Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
 **Version History**:
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | [Date] | Initial assessment specification |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Approvers**:
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-- Application Security Lead (Technical Review)
-- Development Manager / Engineering Lead (Engineering Perspective)
-- QA Manager / Test Lead (Testing Validation)
-- CISO / Security Director (Executive Approval)
+**Related Documents**:
+
+- ISMS-POL-A.8.28 (Secure Coding)
+- ISMS-IMP-A.8.28.1 (SDLC Assessment Specification)
+- ISMS-IMP-A.8.28.3 (Code Review & Testing Assessment Specification)
+- ISMS-IMP-A.8.28.4 (Third-Party & Open Source Software Assessment Specification)
+
+---
 
 ### Document Structure
 
@@ -39,6 +46,23 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 **Audience:** Application Security Team, Security Architects, Development Managers, DevOps Engineers
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Coding Standards Adoption | Assess adoption of and compliance with secure coding standards |
+| 3 | SAST SCA Tools | Evaluate deployment and effectiveness of SAST and SCA tools |
+| 4 | DAST Security Testing Tools | Evaluate deployment and effectiveness of DAST tools |
+| 5 | IDE Plugins Linters | Assess use of IDE security plugins and code linters |
+| 6 | Tool Effectiveness Metrics | Measure effectiveness of security tools in finding vulnerabilities |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Gap Analysis | Identify gaps in standards adoption and tool coverage |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -58,20 +82,20 @@ This assessment evaluates the **implementation and effectiveness** of secure cod
 
 ### Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - ISO/IEC 27001:2022 Control A.8.28: Secure Coding
 - ISMS-POL-A.8.28 Section 2.2: Secure Coding Standards
 - ISMS-POL-A.8.28 Section 2.3: Code Review & Testing Requirements
 
-Organizations with effective security tool implementation see:
+Organisations with effective security tool implementation see:
 
 - 60-80% reduction in security vulnerabilities reaching production
 - 40-60% faster vulnerability remediation (SAST findings vs. production incidents)
 - 70-90% reduction in secret leakage incidents (pre-commit hooks)
 - Developer productivity maintained or improved (shift-left approach)
 
-Organizations with ineffective tool implementation experience:
+Organisations with ineffective tool implementation experience:
 
 - Tools deployed but ignored ("alert fatigue" from false positives)
 - Security theater (tools report findings, nothing gets fixed)
@@ -261,7 +285,6 @@ Before starting this assessment, gather:
 
 - ISMS-IMP-A.8.28.3 (Code Review & Testing) - can be done in parallel
 - ISMS-IMP-A.8.28.4 (Third-Party & OSS) - overlaps with SCA assessment
-- ISMS-IMP-A.8.28.5 (Compliance Dashboard) - requires IMPs 1-4 completed first
 
 ---
 
@@ -461,7 +484,7 @@ This section provides detailed guidance for completing each assessment domain.
 
 **Assessment Question 1.1**: "Are secure coding standards documented and accessible to all developers?"
 
-**What This Asks**: Does [Organization] have published, accessible secure coding standards that developers can reference?
+**What This Asks**: Does [Organisation] have published, accessible secure coding standards that developers can reference?
 
 **Where to Find Evidence**:
 
@@ -526,16 +549,16 @@ This section provides detailed guidance for completing each assessment domain.
 
 **How to Answer**:
 
-- **✅ Compliant**: Guidelines exist for all primary languages used by [Organization] (80%+ of codebase)
+- **✅ Compliant**: Guidelines exist for all primary languages used by [Organisation] (80%+ of codebase)
 - **⚠️ Partial**: Guidelines for some languages (50-79% of codebase), missing others
 - **❌ Non-Compliant**: Generic guidelines only (<50% language-specific coverage), or no language-specific guidance
 - **🔄 Planned**: Language-specific guidelines being developed
-- **N/A**: [Organization] only uses one programming language (specify which - rare)
+- **N/A**: [Organisation] only uses one programming language (specify which - rare)
 
 **Examples**:
 
-- ✅ **Compliant**: [Organization] primary languages: Python (50%), JavaScript (30%), Java (20%); standards include Python SQL parameterization examples, JavaScript XSS prevention (DOMPurify, React auto-escaping), Java PreparedStatement usage
-- ❌ **Non-Compliant**: [Organization] uses Python, Java, Go; standards are generic ("use parameterized queries") without language-specific examples
+- ✅ **Compliant**: [Organisation] primary languages: Python (50%), JavaScript (30%), Java (20%); standards include Python SQL parameterization examples, JavaScript XSS prevention (DOMPurify, React auto-escaping), Java PreparedStatement usage
+- ❌ **Non-Compliant**: [Organisation] uses Python, Java, Go; standards are generic ("use parameterized queries") without language-specific examples
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.2.2 (Language-specific guidance required), ISMS-CTX-A.8.28 (technical reference)
 
@@ -545,7 +568,7 @@ This section provides detailed guidance for completing each assessment domain.
 
 **Assessment Question 2.1**: "Is SAST tool deployed and integrated into CI/CD pipelines?"
 
-**What This Asks**: Does [Organization] have Static Application Security Testing automated in build process?
+**What This Asks**: Does [Organisation] have Static Application Security Testing automated in build process?
 
 **Where to Find Evidence**:
 
@@ -560,7 +583,7 @@ This section provides detailed guidance for completing each assessment domain.
 - **⚠️ Partial**: SAST deployed but not all languages covered (70-99%), or manual scans only (not automated)
 - **❌ Non-Compliant**: No SAST tool, or SAST deployed but not used (<70% coverage)
 - **🔄 Planned**: SAST tool procured, integration in progress
-- **N/A**: Not applicable (justify - very rare for development organizations)
+- **N/A**: Not applicable (justify - very rare for development organisations)
 
 **Examples**:
 
@@ -628,7 +651,7 @@ This section provides detailed guidance for completing each assessment domain.
 
 **Assessment Question 2.4**: "Is SCA tool deployed to detect vulnerable dependencies?"
 
-**What This Asks**: Does [Organization] scan third-party libraries and dependencies for known vulnerabilities (CVEs)?
+**What This Asks**: Does [Organisation] scan third-party libraries and dependencies for known vulnerabilities (CVEs)?
 
 **Where to Find Evidence**:
 
@@ -643,7 +666,7 @@ This section provides detailed guidance for completing each assessment domain.
 - **⚠️ Partial**: SCA deployed for some languages (70-99%), or manual scans only
 - **❌ Non-Compliant**: No SCA tool, or SCA not effective (<70% coverage)
 - **🔄 Planned**: SCA tool procured, integration in progress
-- **N/A**: [Organization] has no third-party dependencies (justify - extremely rare)
+- **N/A**: [Organisation] has no third-party dependencies (justify - extremely rare)
 
 **Examples**:
 
@@ -658,7 +681,7 @@ This section provides detailed guidance for completing each assessment domain.
 
 **Assessment Question 3.1**: "Are DAST scans performed before production releases?"
 
-**What This Asks**: Does [Organization] perform dynamic (runtime) security testing before deploying to production?
+**What This Asks**: Does [Organisation] perform dynamic (runtime) security testing before deploying to production?
 
 **Where to Find Evidence**:
 
@@ -673,7 +696,7 @@ This section provides detailed guidance for completing each assessment domain.
 - **⚠️ Partial**: DAST scans performed for most releases (70-99%), or scans don't block releases
 - **❌ Non-Compliant**: No DAST scans, or scans <70% of releases
 - **🔄 Planned**: DAST tool procured, integration in progress
-- **N/A**: [Organization] has no web applications (justify - rare)
+- **N/A**: [Organisation] has no web applications (justify - rare)
 
 **Examples**:
 
@@ -701,7 +724,7 @@ This section provides detailed guidance for completing each assessment domain.
 - **⚠️ Partial**: Most images scanned (70-99%), or scans don't block deployment
 - **❌ Non-Compliant**: No container scanning, or <70% coverage
 - **🔄 Planned**: Container scanning being implemented
-- **N/A**: [Organization] doesn't use containers (verify - increasingly rare)
+- **N/A**: [Organisation] doesn't use containers (verify - increasingly rare)
 
 **Examples**:
 
@@ -731,7 +754,7 @@ This section provides detailed guidance for completing each assessment domain.
 - **⚠️ Partial**: Plugins available but adoption 40-69%, or not all IDEs supported
 - **❌ Non-Compliant**: No security plugins, or adoption <40%
 - **🔄 Planned**: Plugin evaluation in progress, rollout planned
-- **N/A**: [Organization] doesn't use IDEs (justify - very rare)
+- **N/A**: [Organisation] doesn't use IDEs (justify - very rare)
 
 **Examples**:
 
@@ -759,7 +782,7 @@ This section provides detailed guidance for completing each assessment domain.
 - **⚠️ Partial**: Hooks deployed to most repos (70-99%), or optional (can be bypassed)
 - **❌ Non-Compliant**: No pre-commit hooks, or <70% coverage
 - **🔄 Planned**: Pre-commit hook deployment in progress
-- **N/A**: [Organization] has no secrets in code (justify - very unlikely)
+- **N/A**: [Organisation] has no secrets in code (justify - very unlikely)
 
 **Examples**:
 
@@ -774,7 +797,7 @@ This section provides detailed guidance for completing each assessment domain.
 
 **Assessment Question 5.1**: "Are security tool KPIs defined and tracked quarterly?"
 
-**What This Asks**: Does [Organization] measure whether security tools are actually working?
+**What This Asks**: Does [Organisation] measure whether security tools are actually working?
 
 **Where to Find Evidence**:
 
@@ -802,7 +825,7 @@ This section provides detailed guidance for completing each assessment domain.
 
 **Assessment Question 5.2**: "Is Mean Time to Remediation (MTTR) measured and improving over time?"
 
-**What This Asks**: How quickly are security findings fixed, and is the organization getting faster?
+**What This Asks**: How quickly are security findings fixed, and is the organisation getting faster?
 
 **Where to Find Evidence**:
 
@@ -957,7 +980,7 @@ For each evidence item in the Evidence Register sheet:
 **Location**: Where evidence is stored
 
 - Example: "/Security/Evidence/ISMS-A.8.28.2/SonarQube_QualityGate_Config.pdf"
-- Or: "SonarQube UI > Quality Gates > [Organization] Gate > Screenshot"
+- Or: "SonarQube UI > Quality Gates > [Organisation] Gate > Screenshot"
 
 **Date Collected**: Date evidence was captured
 
@@ -998,7 +1021,7 @@ Learn from others' mistakes. Here are the 10 most common errors in Standards & T
 
 **Solution**: For EVERY tool, verify:
 1. License active and valid
-2. Configured for [Organization]'s languages and frameworks
+2. Configured for [Organisation]'s languages and frameworks
 3. Integrated into CI/CD (automated scans)
 4. Quality gates enforced (findings block deployment)
 5. Findings tracked and remediated
@@ -1107,7 +1130,7 @@ Standards without enforcement measurement = ⚠️ Partial at best.
 
 ## Mistake 8: Cherry-Picking Evidence
 
-**Problem**: Providing evidence for best-performing project, claiming organization-wide compliance.
+**Problem**: Providing evidence for best-performing project, claiming organisation-wide compliance.
 
 **Example**: "Project A" has 98% SAST coverage, all findings remediated within SLA. Assessor marks SAST as ✅ Compliant org-wide. Reality: Project A is pilot; 80% of projects have no SAST.
 
@@ -1117,7 +1140,7 @@ Standards without enforcement measurement = ⚠️ Partial at best.
 - % of production deployments with DAST scans
 - % of developers using IDE plugins
 
-Assess organization-wide reality, not showcase projects.
+Assess organisation-wide reality, not showcase projects.
 
 ---
 
@@ -1127,7 +1150,7 @@ Assess organization-wide reality, not showcase projects.
 
 **Example**: All application code scanned; Kubernetes deployments with vulnerable base images and insecure configurations go undetected.
 
-**Solution**: If [Organization] uses containers or IaC:
+**Solution**: If [Organisation] uses containers or IaC:
 
 - Container image scanning (Trivy, Snyk Container, ECR scanning)
 - IaC scanning (Checkov, tfsec, Terrascan for Terraform/CloudFormation)
@@ -1360,7 +1383,7 @@ Before submitting the assessment for approval, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A standard without a tool is a wish; a tool without a standard is a lottery."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

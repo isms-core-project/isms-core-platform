@@ -532,6 +532,38 @@ Run assessments outside quarterly cycle when:
 - ✅ BC/DR test results (last recovery drill report)
 - ❌ "We have a process" (not acceptable without proof!)
 
+## Assessment Sign-Off Criteria
+
+An assessment is **ready for ISO/CISO sign-off** only when all of the following conditions are met:
+
+| Criterion | Requirement |
+|-----------|-------------|
+| **Mandatory columns complete** | 100% of columns A–Q (base columns) filled for every row; N/A entries require a documented reason in the Gap Description field |
+| **Evidence location specified** | Every non-N/A row has an evidence location (file path, SharePoint URL, document ID, or contract reference) — "to be provided" is not acceptable |
+| **Gap descriptions specific** | All Partial or Non-Compliant rows have a Gap Description that names the specific missing control; generic text ("TBD", "under review", "in progress") is not accepted |
+| **Remediation dates realistic** | Target Dates are calendar dates ≤12 months out; "ASAP" or blank are not accepted |
+| **Responsible person assigned** | Every open gap has a named individual (not a team or role title), confirmed as aware of their assignment |
+| **Regulatory fields complete** | If the service is DORA- or NIS2-applicable (per ISMS-POL-A.5.19-23 Section 12), the corresponding regulatory fields are filled |
+| **Spot-check audit passed** | ISO performs a spot-check on a random sample of 10% of rows (minimum 5 rows) and confirms evidence is accessible and matches the stated status |
+
+**Sign-Off Process:**
+
+1. Assessor submits completed workbook to ISO via the document management system
+2. ISO runs completeness check against all criteria above
+3. Criteria met → ISO signs Approval Sign-Off sheet and records date
+4. Criteria not met → ISO returns workbook with specific deficiency notes; assessor has 5 business days to remediate and resubmit
+5. CISO signs off on all Level 1 supplier workbooks; ISO signs off on Level 2–4
+
+**Minimum Acceptable Evidence Formats:**
+
+| Evidence Type | Acceptable | Not Acceptable |
+|---------------|-----------|----------------|
+| Contract | Signed PDF, SharePoint link, contract ID in management system | Email thread, verbal confirmation |
+| Certification | Current certificate PDF or direct public registry link | Expired certificate, vendor's self-declaration |
+| Configuration | Screenshot with date and system name visible, or exported config file | Description without proof |
+| Audit/pen test | Signed report from accredited/licensed body | Summary slide, executive deck |
+| Training | LMS completion record with names and dates | "Training was conducted" |
+
 ---
 
 # Continuous Improvement
@@ -622,4 +654,4 @@ python3 generate_reg_a523_4_governance.py
 *— Richard Feynman*
 
 **Translation for ISMS:** Evidence-based compliance prevents cloud washing! ☁️🔍
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -7,257 +7,164 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Conflict Analysis |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.3.2-TG |
+| **Related Policy** | ISMS-POL-A.5.3 (Segregation of Duties) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.3 (Policies for Segregation of Duties) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.3 Segregation of Duties |
-| **Parent Policy** | ISMS-POL-A.5.3 - Segregation of Duties |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.3.2-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.3 (Segregation of Duties)
+- ISMS-IMP-A.5.3.1 (SoD Matrix Assessment)
+- ISMS-IMP-A.5.3.3 (Role-Function Mapping)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a53_2_conflict_analysis.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.3.2` |
-| **Output Filename** | `ISMS-IMP-A.5.3.2_Conflict_Analysis_YYYYMMDD.xlsx` |
-| **Workbook Title** | Conflict Analysis |
-| **Total Sheets** | 8 (8 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #1F4E79 | 1F4E79 | Custom |
-| #2F5496 | 2F5496 | Dark Blue (Alt Headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #F2F2F2 | F2F2F2 | Very Light Gray (Protected/Alternating) |
-| #FABF8F | FABF8F | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Conflict_Register
+## Generator Alignment Reference
 
-**Data Rows:** 199 (rows 2–200)
+> Auto-generated from `generate_a53_2_conflict_analysis.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.3.2`
 
-| Col | Header |
-|-----|--------|
-| A | Conflict_ID |
-| B | Gap_ID |
-| C | Conflict_Category |
-| D | Role_A |
-| E | Role_B |
-| F | Process |
-| G | Conflict_Type |
-| H | Persons_Affected |
-| I | Analysis_Status |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Data Validations
+### Sheet Structure
 
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C2:C200 | `category_dv` |
-| G | G2:G200 | `type_dv` |
-| I | I2:I200 | `status_dv` |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Conflict Register |
+| 3 | Impact Assessment |
+| 4 | Exploitation Scenarios |
+| 5 | Control Mapping |
+| 6 | Trend Analysis |
+| 7 | Prioritisation Matrix |
+| 8 | Evidence Register |
+| 9 | Summary Dashboard |
+| 10 | Approval Sign-Off |
 
----
+### Color Palette
 
-## Sheet 3: Impact_Assessment
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-**Data Rows:** 199 (rows 2–200)
+### Column Headers (All Sheets)
 
-### Columns
+| # | Column Header |
+|---|--------------|
+| 1 | Risk Officer |
+| 2 | Fictitious Vendor Fraud |
+| 3 | Dual Authorisation |
+| 4 | Risk Owner |
+| 5 | FINAL DECISION: |
+| 6 | Conflict ID |
+| 7 | Gap ID |
+| 8 | Conflict Category |
+| 9 | Role A |
+| 10 | Role B |
+| 11 | Process |
+| 12 | Conflict Type |
+| 13 | Persons Affected |
+| 14 | Analysis Status |
+| 15 | Financial Impact |
+| 16 | Operational Impact |
+| 17 | Reputational Impact |
+| 18 | Compliance Impact |
+| 19 | Data Impact |
+| 20 | Overall Impact |
+| 21 | Justification |
+| 22 | Assessor |
+| 23 | Assessment Date |
+| 24 | Scenario ID |
+| 25 | Scenario Name |
+| 26 | Threat Actor |
+| 27 | Motivation |
+| 28 | Method |
+| 29 | Detection Difficulty |
+| 30 | Historical Precedent |
+| 31 | Reference |
+| 32 | Mapping ID |
+| 33 | Control ID |
+| 34 | Control Name |
+| 35 | Control Type |
+| 36 | Effectiveness |
+| 37 | Implementation Status |
+| 38 | Gap Notes |
+| 39 | Period |
+| 40 | Total Conflicts |
+| 41 | Critical Conflicts |
+| 42 | High Conflicts |
+| 43 | Resolved Count |
+| 44 | New Conflicts |
+| 45 | Resolution Rate |
+| 46 | Trend Notes |
+| 47 | Impact Score |
+| 48 | Likelihood Score |
+| 49 | Control Effectiveness |
+| 50 | Priority Score |
+| 51 | Priority Level |
+| 52 | Action Timeline |
+| 53 | Assigned To |
+| 54 | Evidence ID |
+| 55 | Assessment Area |
+| 56 | Evidence Type |
+| 57 | Description |
+| 58 | Location / Path |
+| 59 | Date Collected |
+| 60 | Collected By |
+| 61 | Verification Status |
 
-| Col | Header |
-|-----|--------|
-| A | Conflict_ID |
-| B | Financial_Impact |
-| C | Operational_Impact |
-| D | Reputational_Impact |
-| E | Compliance_Impact |
-| F | Data_Impact |
-| G | Overall_Impact |
-| H | Justification |
-| I | Assessor |
-| J | Assessment_Date |
+### Data Validation Values
 
-### Data Validations
+All dropdown/list values used across sheets:
 
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| B | B2:F200 | `impact_dv` |
+```
+Yes, No, Unknown, Policy Document, Process Record, System Screenshot
+Configuration Export, Audit Log, Training Record, Test Result, Risk Assessment
+Meeting Minutes, Other, ✅ Verified, ⚠️ Pending, ❌ Not Verified, N/A, Approved
+Approved with Conditions, Rejected, Deferred, Draft, Final
+Requires remediation, Re-assessment required
+```
 
----
-
-## Sheet 4: Exploitation_Scenarios
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Scenario_ID |
-| B | Conflict_ID |
-| C | Scenario_Name |
-| D | Threat_Actor |
-| E | Motivation |
-| F | Method |
-| G | Detection_Difficulty |
-| H | Historical_Precedent |
-| I | Reference |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| D | D2:D200 | `actor_dv` |
-| G | G2:G200 | `detection_dv` |
-| H | H2:H200 | `precedent_dv` |
-
----
-
-## Sheet 5: Control_Mapping
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Mapping_ID |
-| B | Conflict_ID |
-| C | Control_ID |
-| D | Control_Name |
-| E | Control_Type |
-| F | Effectiveness |
-| G | Implementation_Status |
-| H | Gap_Notes |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| E | E2:E200 | `type_dv` |
-| F | F2:F200 | `eff_dv` |
-| G | G2:G200 | `status_dv` |
-
----
-
-## Sheet 6: Trend_Analysis
-
-**Data Rows:** 19 (rows 2–20)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Period |
-| B | Total_Conflicts |
-| C | Critical_Conflicts |
-| D | High_Conflicts |
-| E | Resolved_Count |
-| F | New_Conflicts |
-| G | Resolution_Rate |
-| H | Trend_Notes |
-
----
-
-## Sheet 7: Prioritisation_Matrix
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Conflict_ID |
-| B | Impact_Score |
-| C | Likelihood_Score |
-| D | Control_Effectiveness |
-| E | Priority_Score |
-| F | Priority_Level |
-| G | Action_Timeline |
-| H | Assigned_To |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C2:C200 | `likelihood_dv` |
-
----
-
-## Sheet 8: Evidence_Register
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence_ID |
-| B | Conflict_ID |
-| C | Evidence_Type |
-| D | Description |
-| E | Location |
-| F | Date_Collected |
-| G | Collected_By |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C2:C200 | `type_dv` |
-
----
-
-## Data Validation Dropdown Lists
-
-All dropdown value lists defined in the generator:
-
-| Variable | Values |
-|----------|--------|
-| `ANALYSIS_STATUSES` | Pending, In Progress, Complete |
-| `CONFLICT_CATEGORIES` | Maker-Checker, Requestor-Approver, Developer-Deployer, Administrator-Auditor, Creator-Reconciler,... |
-| `CONFLICT_TYPES` | X, C, M |
-| `CONTROL_EFFECTIVENESS` | High, Medium, Low |
-| `CONTROL_TYPES` | Preventive, Detective, Corrective, Compensating |
-| `DETECTION_DIFFICULTY` | Very High, High, Medium, Low, Very Low |
-| `EVIDENCE_TYPES` | Analysis Document, System Export, Interview Notes, Historical Incident, Control Evidence |
-| `IMPACT_LEVELS` | 1, 2, 3, 4, 5 |
-| `IMPLEMENTATION_STATUS` | Implemented, Partial, Planned, Not Implemented |
-| `PRIORITY_LEVELS` | Critical, High, Medium, Low |
-| `RISK_LEVELS` | Critical, High, Medium, Low |
-| `THREAT_ACTORS` | Insider-Malicious, Insider-Negligent, External-Attacker, Colluding-Parties |
+**Extracted:** 10 sheets, 61 columns, 25 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

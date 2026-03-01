@@ -5,91 +5,159 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Employment Exit Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.4-5.S2-TG |
-| **Title** | Employment Exit Assessment |
-| **Control Reference** | ISO/IEC 27001:2022 A.6.4, A.6.5 |
-| **Control Name** | Disciplinary Process / Responsibilities After Termination |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.6.4-5 (Employment Exit) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.4, A.6.5) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Chief Human Resources Officer (CHRO) |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.6.4-5.S2-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.4-5 (Employment Exit)
+- ISMS-IMP-A.6.4-5.S1 (Disciplinary Process Assessment)
+- ISMS-IMP-A.6.4-5.S3 (Post Employment Obligations)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a645_2_employment_exit.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.6.4-5.S2` |
-| **Output Filename** | `ISMS-IMP-A.6.4-5.S2_Employment_Exit_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Employment Exit Assessment |
-| **Total Sheets** | 9 (9 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #808080 | 808080 | Gray (Disabled) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E2EFDA | E2EFDA | Pale Green (Success Background) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Exit_Procedures
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a645_2_employment_exit.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Access_Revocation
+**Document ID:** `ISMS-IMP-A.6.4-5.S2`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Asset_Recovery
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Exit Procedures |
+| 3 | Access Revocation |
+| 4 | Asset Recovery |
+| 5 | Exit Tracker |
+| 6 | Leaver Reconciliation |
+| 7 | Evidence Register |
+| 8 | Summary Dashboard |
+| 9 | Approval Sign-Off |
 
-## Sheet 5: Exit_Tracker
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Leaver_Reconciliation
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Exit Type |
+| 2 | Notification Trigger |
+| 3 | HR Actions |
+| 4 | IT Actions |
+| 5 | Manager Actions |
+| 6 | Security Actions |
+| 7 | Timeline |
+| 8 | Documentation Required |
+| 9 | Access Type |
+| 10 | System Examples |
+| 11 | Revocation Method |
+| 12 | Timeline Standard |
+| 13 | Timeline Immediate |
+| 14 | Verification Method |
+| 15 | Responsible Party |
+| 16 | Dependencies |
+| 17 | Asset Category |
+| 18 | Asset Examples |
+| 19 | Return Method |
+| 20 | Verification Required |
+| 21 | Data Handling |
+| 22 | Non Return Action |
+| 23 | Exit ID |
+| 24 | Employee ID |
+| 25 | Last Working Day |
+| 26 | Access Revoked Date |
+| 27 | Assets Returned Date |
+| 28 | Exit Interview Date |
+| 29 | Checklist Complete |
+| 30 | Status |
+| 31 | Notes |
+| 32 | Review Date |
+| 33 | HR Leavers |
+| 34 | Accounts Disabled |
+| 35 | Discrepancies |
+| 36 | Orphaned Accounts |
+| 37 | Remediation Action |
+| 38 | Remediation Date |
+| 39 | Reviewer |
+| 40 | Employment Exit Processing |
+| 41 | Evidence ID |
+| 42 | Evidence Description |
+| 43 | Evidence Type |
+| 44 | Storage Location |
+| 45 | Collection Date |
+| 46 | Collected By |
+| 47 | Assessment Area |
+| 48 | Total Items |
+| 49 | Compliant |
+| 50 | Partial |
+| 51 | Non-Compliant |
+| 52 | N/A |
+| 53 | Compliance % |
 
-## Sheet 7: Evidence_Register
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Approval_SignOff
+```
+Voluntary Resignation, Involuntary Termination, Immediate Dismissal
+Retirement, Contract End, Role Change, Yes, Partial, No, Initiated
+In Progress, Pending Asset Return, Pending Verification, Complete
+Issues Outstanding, Exit Procedure, Access Revocation Log, Asset Return Form
+Exit Checklist, Reconciliation Report, Other, Draft, Final
+Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
----
-
-## Sheet 9: Approval_Signoff
+**Extracted:** 9 sheets, 53 columns, 29 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 
@@ -98,4 +166,4 @@ This is the **Technical Specification**. The companion User Completion Guide is 
 
 *Where bamboo antennas actually work.* 🎋
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

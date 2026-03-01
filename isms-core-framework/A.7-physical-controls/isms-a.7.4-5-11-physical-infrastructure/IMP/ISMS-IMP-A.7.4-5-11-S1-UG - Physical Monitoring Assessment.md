@@ -8,26 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Physical Monitoring Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.4-5-11-S1-UG |
+| **Related Policy** | ISMS-POL-A.7.4-5-11-S1 (Physical Infrastructure) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.4 (Physical Security Monitoring) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Physical Security Monitoring - Access Control, CCTV, Intrusion Detection |
-| **Related Policy** | ISMS-POL-A.7.4-5-11, Section 2 (Physical Security Monitoring) |
-| **Purpose** | Document deployed physical security monitoring systems, assess capabilities against policy requirements, and identify gaps |
-| **Target Audience** | Security Operations, Facilities Management, IT Operations, Security Engineers, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Physical Monitoring assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.4-5-11-S1 (Physical Infrastructure)
+- ISMS-IMP-A.7.4-5-11-S2 (Environmental Protection Implementation)
+- ISMS-IMP-A.7.4-5-11-S3 (Utility Resilience Implementation)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.4-5-11-S1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Access Control | Assess physical access control system coverage and effectiveness |
+| 3 | CCTV | Evaluate CCTV coverage, retention, and monitoring |
+| 4 | Intrusion Detection | Assess intrusion detection and alarm systems |
+| 5 | Incidents | Record and track physical security incidents |
+| 6 | Evidence Register | Store and reference evidence supporting assessments |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -46,7 +74,7 @@ This assessment documents the physical security MONITORING systems deployed in y
 - What intrusion detection systems are deployed? (sensors, alarm panels, monitoring)
 - What security personnel and operations are in place? (guards, patrols, SOC)
 - How are physical security systems integrated? (SIEM, dashboards, alerting)
-- What incidents have occurred? (unauthorized access, intrusions, system failures)
+- What incidents have occurred? (unauthorised access, intrusions, system failures)
 
 #### Key Principle
 
@@ -91,7 +119,7 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 
 **Incidents and Performance:**
 
-- Physical security incidents (unauthorized access, intrusions)
+- Physical security incidents (unauthorised access, intrusions)
 - System failures and downtime events
 - False alarm rates and trends
 - Response time metrics
@@ -103,7 +131,7 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 | **ISMS-IMP-A.7.4-5-11-S1** | **Physical Monitoring** | **WHAT monitoring systems exist** |
 | ISMS-IMP-A.7.4-5-11-S2 | Environmental Protection | Fire, flood, temperature protection systems |
 | ISMS-IMP-A.7.4-5-11-S3 | Utility Resilience      | UPS, generators, HVAC, ISP systems |
-| ISMS-IMP-A.7.4-5-11-S4 | Compliance Dashboard    | Consolidated view across all physical infrastructure |
+
 
 This assessment (A.7.4-5-11-S1) focuses specifically on Control A.7.4 (Physical Security Monitoring). It complements assessments for A.7.5 (Environmental Protection) and A.7.11 (Utility Resilience).
 
@@ -202,7 +230,6 @@ This assessment has NO dependencies on other assessments - it can be completed i
 
 However, outputs from this assessment are INPUT to:
 
-- ISMS-IMP-A.7.4-5-11-S4 (Compliance Dashboard) - Consolidates physical monitoring with environmental and utility assessments
 - SIEM integration assessment (if separate SIEM assessment exists)
 
 ---
@@ -246,7 +273,7 @@ However, outputs from this assessment are INPUT to:
 **Step 2: System Inventory (Day 1-2 - 4-6 hours)**
 
 - Open assessment workbook
-- Complete Sheet 1 (Instructions & Legend) - organization info, assessment date
+- Complete Sheet 1 (Instructions & Legend) - organisation info, assessment date
 - Complete Sheet 2 (Access Control) - inventory all badge readers, panels, users
 - Complete Sheet 3 (CCTV) - inventory all cameras, NVRs, coverage areas
 - Complete Sheet 4 (Intrusion Detection) - inventory all sensors, alarm panels, zones
@@ -326,7 +353,7 @@ However, outputs from this assessment are INPUT to:
 - **Document Information** (Rows 4-11):
   - Assessment Date: Date you started this assessment
   - Completed By: Your name and role
-  - Organization: [Organization] name
+  - Organisation: [Organisation] name
   - Leave other fields as-is (Document ID, Version, etc.)
 
 - **Status Legend** (Rows 14-17):
@@ -595,7 +622,7 @@ However, outputs from this assessment are INPUT to:
 
 **Column C - Incident Type:**
 
-- Dropdown: "Unauthorized Access", "Intrusion Alarm", "Tailgating", "Lost/Stolen Badge", "System Failure", "Other"
+- Dropdown: "Unauthorised Access", "Intrusion Alarm", "Tailgating", "Lost/Stolen Badge", "System Failure", "Other"
 
 **Column D - Facility/Location:**
 
@@ -608,7 +635,7 @@ However, outputs from this assessment are INPUT to:
 
 **Column F - Description:**
 
-- Brief description: "Unauthorized access attempt to server room, badge denied, person tailgated authorized employee"
+- Brief description: "Unauthorised access attempt to server room, badge denied, person tailgated authorised employee"
 
 **Column G - Detection Method:**
 
@@ -961,7 +988,7 @@ However, outputs from this assessment are INPUT to:
 
 - Minimum: 3 years (typical audit requirement)
 - Permanent: If evidence of significant incidents or major findings
-- Delete after retention period (GDPR/data minimization)
+- Delete after retention period (GDPR/data minimisation)
 
 **Backup:**
 
@@ -981,9 +1008,9 @@ However, outputs from this assessment are INPUT to:
 **How to Avoid:**
 
 - Create master facility list BEFORE starting assessment
-- Include ALL locations where [Organization] has equipment or personnel
+- Include ALL locations where [Organisation] has equipment or personnel
 - For colocation: Document customer-managed controls (cage access control, equipment-level monitoring)
-- For cloud-only organizations: Explicitly state "N/A - No on-premises infrastructure" in assessment
+- For cloud-only organisations: Explicitly state "N/A - No on-premises infrastructure" in assessment
 
 ### Pitfall 2: Vendor-Specific Language
 
@@ -1111,7 +1138,7 @@ Before submitting for Level 2 approval (Security Operations Manager), complete t
 
 - [ ] Assessment Date completed
 - [ ] Completed By (your name and role)
-- [ ] Organization name filled in
+- [ ] Organisation name filled in
 - [ ] All document information reviewed
 
 ### Sheet 2: Access Control
@@ -1219,7 +1246,7 @@ Before submitting for Level 2 approval (Security Operations Manager), complete t
 - [ ] Level 1 (Assessor) completed (your name, date, signature)
 - [ ] Assessment ready for submission to Level 2 (Security Operations Manager)
 - [ ] Assessment workbook saved with final data
-- [ ] Evidence folder organized and complete
+- [ ] Evidence folder organised and complete
 
 ### Overall Quality
 
@@ -1324,7 +1351,7 @@ Before submitting for Level 2 approval (Security Operations Manager), complete t
 - Overall compliance score acceptable (>60% minimum, prefer >75%)
 - Critical gaps have remediation plans
 - Resource requirements reasonable
-- Assessment aligns with organizational risk tolerance
+- Assessment aligns with organisational risk tolerance
 - No strategic concerns requiring escalation
 
 **Timeline:** 2-5 business days after Level 2 approval
@@ -1413,7 +1440,7 @@ Before submitting for Level 2 approval (Security Operations Manager), complete t
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Watch everything; trust selectively."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

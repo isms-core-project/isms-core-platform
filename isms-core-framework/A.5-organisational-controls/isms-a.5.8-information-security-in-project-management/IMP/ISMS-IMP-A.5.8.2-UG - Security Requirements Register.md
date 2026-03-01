@@ -8,25 +8,56 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Security Requirements Register |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.8.2-UG |
+| **Related Policy** | ISMS-POL-A.5.8 (Information Security in Project Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.8 (Information Security in Project Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Project Security Requirements Tracking & Traceability |
-| **Related Policy** | ISMS-POL-A.5.8, Section 2.4 (Security Requirements Identification) |
-| **Purpose** | Structured inventory and traceability of security requirements throughout project lifecycle, from identification through implementation and verification |
-| **Target Audience** | Business Analysts, Security Architects, Technical Leads, Project Managers, QA Teams, Auditors |
-| **Assessment Type** | Requirements Management & Verification |
-| **Review Cycle** | Updated continuously during Planning and Execution phases, reviewed at each gate |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | Initial | Initial specification for Security Requirements Register workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.8 (Information Security in Project Management)
+- ISMS-IMP-A.5.8.1 (Project Lifecycle Security Assessment)
+- ISMS-IMP-A.5.8.3 (Project Portfolio Dashboard)
 
 ---
 
-**Audience:** Business Analysts, Security Architects, Technical Leads, Project Managers, QA Teams
+### Workbook at a Glance
+
+This workbook contains the following 14 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Requirements Register** | Master registry of all security requirements for the project |
+| **App Security Examples** | Example requirements for application security |
+| **Data Protection Examples** | Example requirements for data protection and privacy |
+| **Access Control Examples** | Example requirements for access control and authentication |
+| **Infrastructure Examples** | Example requirements for infrastructure security |
+| **Third-Party Examples** | Example requirements for third-party and vendor management |
+| **Compliance Examples** | Example requirements for regulatory compliance |
+| **Traceability Matrix** | Mapping of requirements to implementation evidence |
+| **Verification Checklist** | Structured checklist for requirement verification activities |
+| **Gap Analysis** | Identification of unaddressed security requirement gaps |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -51,7 +82,6 @@ This assessment provides a **structured security requirements register** for doc
 - Implementation status tracking (Not Started → In Progress → Implemented → Verified)
 - Priority scoring (Must Have / Should Have / Nice to Have)
 - Verification evidence registry
-- Compliance dashboard showing implementation percentage
 
 ## Why This Matters
 
@@ -140,7 +170,7 @@ This assessment provides a **structured security requirements register** for doc
 
 - Requirements engineering fundamentals (clear, testable, traceable requirements)
 - Understanding of security concepts (CIA triad, OWASP Top 10, encryption, access control)
-- Familiarity with [Organization]'s:
+- Familiarity with [Organisation]'s:
   - Security policies (particularly ISMS-POL-A.5.8, A.8.24, A.5.15-18, A.8.25-28)
   - Data classification scheme
   - Testing standards and procedures
@@ -194,7 +224,7 @@ This assessment implements **ISMS-POL-A.5.8, Section 2.4 (Security Requirements 
 
 - Secure coding standards (OWASP, CERT)
 - Input validation and output encoding
-- Authentication and authorization mechanisms
+- Authentication and authorisation mechanisms
 - Session management and secure state handling
 - Cryptographic requirements (encryption, hashing, key management per A.8.24)
 - Secure error handling and logging
@@ -203,18 +233,18 @@ This assessment implements **ISMS-POL-A.5.8, Section 2.4 (Security Requirements 
 
 **Section 2.4.2: Data Protection Requirements**
 
-- Data classification application (per [Organization]'s data classification scheme)
+- Data classification application (per [Organisation]'s data classification scheme)
 - Encryption requirements (in transit per A.8.24, at rest for Confidential/Restricted)
 - Data retention and deletion (per A.8.10, A.8.11)
 - Data backup and recovery (per A.8.13-14)
-- Data minimization and purpose limitation (GDPR Art. 5 compliance)
+- Data minimisation and purpose limitation (GDPR Art. 5 compliance)
 - Data subject rights implementation (access, rectification, erasure per GDPR)
 - Cross-border data transfer controls (if applicable)
 
 **Section 2.4.3: Access Control and Authentication Requirements**
 
 - Authentication mechanism (password, MFA, SSO per A.8.5)
-- Authorization model (RBAC, ABAC, least privilege per A.5.15)
+- Authorisation model (RBAC, ABAC, least privilege per A.5.15)
 - Privileged access management (for administrative functions per A.8.2)
 - Account lifecycle (provisioning, deprovisioning per A.5.16)
 - Access logging and monitoring (per A.8.16)
@@ -233,7 +263,7 @@ This assessment implements **ISMS-POL-A.5.8, Section 2.4 (Security Requirements 
 
 - Vendor security assessment (per A.5.19-22)
 - Contractual security obligations (SLA, liability, data protection)
-- API security (authentication, authorization, rate limiting)
+- API security (authentication, authorisation, rate limiting)
 - Data sharing and segregation requirements
 - Third-party access controls and monitoring
 - Service level agreements for security (incident response times, patching SLAs)
@@ -281,7 +311,7 @@ Before starting this assessment, ensure you have access to:
 - [ ] OWASP Top 10 (for web application security requirements)
 - [ ] OWASP ASVS (Application Security Verification Standard) - comprehensive requirement library
 - [ ] CIS Benchmarks (for infrastructure security requirements)
-- [ ] NIST Cybersecurity Framework (if used by [Organization])
+- [ ] NIST Cybersecurity Framework (if used by [Organisation])
 - [ ] Industry-specific standards (PCI DSS v4.0.1 for payment cards, HIPAA for healthcare, etc.)
 
 **Tools and Systems:**
@@ -326,9 +356,9 @@ Before starting this assessment, ensure you have access to:
 **2. Security Concepts:**
 
 - **CIA Triad:**
-  - **Confidentiality:** Prevent unauthorized disclosure (encryption, access controls)
-  - **Integrity:** Prevent unauthorized modification (digital signatures, checksums, access controls)
-  - **Availability:** Ensure authorized access when needed (redundancy, backups, DDoS protection)
+  - **Confidentiality:** Prevent unauthorised disclosure (encryption, access controls)
+  - **Integrity:** Prevent unauthorised modification (digital signatures, checksums, access controls)
+  - **Availability:** Ensure authorised access when needed (redundancy, backups, DDoS protection)
 
 - **Defense in Depth:** Multiple layers of security controls (perimeter firewall + host firewall + application auth)
 
@@ -365,7 +395,7 @@ Certificate management: Public CA certificates with [validity ≤ 398 days until
 **Pattern 3: Logging Requirements**
 ```
 Log authentication events: [login success, login failure, logout, session timeout]
-Log authorization events: [access granted, access denied, privilege escalation]
+Log authorisation events: [access granted, access denied, privilege escalation]
 Log data access: [read, create, update, delete for Confidential/Restricted data]
 Log retention: [90 days online, 365 days archive for Confidential data access logs]
 Log protection: [logs encrypted, integrity-protected, access-restricted]
@@ -380,11 +410,11 @@ Key regulations and their security requirements:
 - Art. 25: Privacy by design and default
 - Art. 32: Technical measures (encryption, pseudonymization, access control, resilience)
 - Art. 33: Breach notification (within 72 hours)
-- Art. 5: Data minimization, purpose limitation, retention limits
+- Art. 5: Data minimisation, purpose limitation, retention limits
 
 **nDSG (Swiss data protection):**
 
-- Art. 8: Appropriate technical and organizational measures
+- Art. 8: Appropriate technical and organisational measures
 - Similar requirements to GDPR for Swiss data
 
 **PCI DSS v4.0.1 (if processing payment card data):**
@@ -484,7 +514,7 @@ For each of the 6 requirement categories, ask:
 - What secure coding standards will we follow? (OWASP, CERT, SANS)
 - How will we validate user inputs? (whitelist validation, parameterized queries)
 - What authentication mechanism? (password, MFA, SSO, OAuth, SAML)
-- What authorization model? (RBAC, ABAC, ACLs)
+- What authorisation model? (RBAC, ABAC, ACLs)
 - How will we manage sessions? (timeout, secure cookies, token-based)
 - What cryptographic requirements? (TLS version, cipher suites, encryption algorithms)
 - How will we handle errors securely? (generic error messages, detailed logs)
@@ -500,7 +530,7 @@ For each of the 6 requirement categories, ask:
 - What are retention requirements? (legal requirements, business needs)
 - What are deletion requirements? (secure deletion per A.8.10, right to erasure per GDPR)
 - What backup requirements? (RPO, RTO, backup encryption, test restores)
-- How to minimize data collection? (GDPR data minimization principle)
+- How to minimise data collection? (GDPR data minimisation principle)
 - What purpose limitations? (use data only for stated purpose)
 - Any cross-border data transfers? (adequacy decision, SCCs, BCRs for GDPR)
 - What data subject rights to implement? (access, rectification, erasure, portability)
@@ -510,12 +540,12 @@ For each of the 6 requirement categories, ask:
 - What authentication methods? (local accounts, AD, SSO, SAML, OAuth)
 - MFA required? (for which user types: all, privileged, remote, Confidential data access)
 - Password requirements? (complexity, length, expiration per policy)
-- Authorization model? (RBAC with defined roles, ABAC with attributes, ACLs)
+- Authorisation model? (RBAC with defined roles, ABAC with attributes, ACLs)
 - Least privilege enforcement? (users have minimum necessary access)
 - Privileged access management? (separate privileged accounts, MFA, session recording)
 - Account lifecycle? (provisioning process, deprovisioning within X hours of termination)
 - Access reviews? (quarterly reviews of user access, annual reviews of privileged access)
-- Access logging? (log all authentication and authorization events)
+- Access logging? (log all authentication and authorisation events)
 
 **Category 4: Infrastructure Security (if infrastructure changes)**
 
@@ -525,7 +555,7 @@ For each of the 6 requirement categories, ask:
 - Patch management? (critical patches within X days, standard patches within Y days)
 - Vulnerability management? (monthly vulnerability scans, remediation SLAs)
 - Web filtering? (if internet access, URL filtering per A.8.23)
-- DLP requirements? (if sensitive data, prevent unauthorized egress per A.8.12)
+- DLP requirements? (if sensitive data, prevent unauthorised egress per A.8.12)
 - Monitoring and logging? (SIEM integration, log retention, alerting)
 - Endpoint protection? (anti-malware, EDR, device encryption)
 
@@ -533,7 +563,7 @@ For each of the 6 requirement categories, ask:
 
 - Vendor security assessment? (questionnaire, certification review, audit)
 - Contractual security terms? (data protection, breach notification, audit rights)
-- API security? (authentication, authorization, rate limiting, encryption)
+- API security? (authentication, authorisation, rate limiting, encryption)
 - Data sharing controls? (data classification, encryption, access restrictions)
 - Third-party access management? (separate accounts, MFA, activity monitoring)
 - Service level agreements? (security incident response time, patching timeline)
@@ -610,7 +640,7 @@ Use security standards as requirement sources:
 
 **OWASP Top 10:2025:**
 
-- A01: Broken Access Control → Requirements for authorization, access controls
+- A01: Broken Access Control → Requirements for authorisation, access controls
 - A02: Cryptographic Failures → Requirements for encryption
 - A03: Injection → Requirements for input validation, parameterized queries
 - A04: Insecure Design → Requirements for threat modeling, secure architecture
@@ -743,7 +773,7 @@ REQ-010: "Follow security best practices."
 
 - Must Have requirements implemented first
 - Critical dependencies identified (Requirement B depends on Requirement A)
-- Foundational requirements early (authentication before authorization, encryption before data storage)
+- Foundational requirements early (authentication before authorisation, encryption before data storage)
 
 **3.3 Document Trade-offs**
 
@@ -1008,7 +1038,7 @@ If requirement fails verification:
 **Improvements for Next Project:**
 
 - Update requirement templates based on lessons
-- Add new requirements to organizational requirement library
+- Add new requirements to organisational requirement library
 - Refine verification methods based on testing experience
 
 **Deliverable:** Lessons learned document with recommendations for requirements process improvement
@@ -1054,7 +1084,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "Application must integrate with [Organization] SSO (SAML 2.0) for user authentication. Local accounts prohibited except emergency access." | ISMS-POL-A.5.15 Section 3.2 | Config Review + Functional Test |
+| "Application must integrate with [Organisation] SSO (SAML 2.0) for user authentication. Local accounts prohibited except emergency access." | ISMS-POL-A.5.15 Section 3.2 | Config Review + Functional Test |
 | "Administrative access requires multi-factor authentication (MFA) using TOTP or hardware token." | ISMS-POL-A.5.15 Section 3.4 | Functional Test |
 | "Password complexity: minimum 12 characters, uppercase+lowercase+number+special character. Password reuse: Cannot reuse last 5 passwords." | ISMS-POL-A.5.18 Section 4.1 | Functional Test |
 | "Failed login threshold: 5 attempts within 15 minutes → account lockout for 30 minutes. Failed login events logged." | OWASP ASVS V2.2.1 | Functional Test + Log Review |
@@ -1068,13 +1098,13 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Session tokens must be cryptographically random (minimum 128-bit entropy). Predictable session IDs prohibited." | OWASP ASVS V3.2.1 | Code Review + Pen Test |
 | "Logout must invalidate session server-side (not just client-side cookie deletion)." | OWASP ASVS V3.3.1 | Functional Test |
 
-### Subcategory 1.4: Authorization
+### Subcategory 1.4: Authorisation
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
 | "Application must implement Role-Based Access Control (RBAC) with roles: Admin, Manager, User, Read-Only." | ISMS-POL-A.5.15 Section 4.2 | Functional Test + Code Review |
-| "All sensitive operations require authorization check before execution (principle of complete mediation)." | OWASP ASVS V4.1.1 | SAST + Pen Test |
-| "Authorization must be enforced on server-side. Client-side authorization checks are insufficient." | OWASP Top 10 A01:2021 (Broken Access Control) | Code Review |
+| "All sensitive operations require authorisation check before execution (principle of complete mediation)." | OWASP ASVS V4.1.1 | SAST + Pen Test |
+| "Authorisation must be enforced on server-side. Client-side authorisation checks are insufficient." | OWASP Top 10 A01:2021 (Broken Access Control) | Code Review |
 | "Direct object references (IDs in URLs) must verify user has permission to access object before retrieval." | OWASP ASVS V4.1.2 | Functional Test + Pen Test |
 
 ### Subcategory 1.5: Cryptography
@@ -1091,9 +1121,9 @@ This section provides detailed guidance for each of the 6 requirement categories
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
 | "Error messages must not reveal sensitive information (stack traces, database details, file paths). Generic errors for users, detailed errors in logs only." | OWASP ASVS V7.4.1 | Functional Test (trigger errors) |
-| "Security events must be logged: authentication (success/failure), authorization (access granted/denied), data access (Confidential data read/write/delete), configuration changes." | ISMS-POL-A.8.16 Section 3.1 | Log Review |
+| "Security events must be logged: authentication (success/failure), authorisation (access granted/denied), data access (Confidential data read/write/delete), configuration changes." | ISMS-POL-A.8.16 Section 3.1 | Log Review |
 | "Logs must include: timestamp, user ID, source IP, action, outcome (success/failure), data classification if applicable." | OWASP ASVS V7.1.1 | Log Review |
-| "Logs must be protected: stored securely, integrity-protected (append-only or signed), access restricted to authorized personnel." | ISMS-POL-A.8.16 Section 4.2 | Config Review |
+| "Logs must be protected: stored securely, integrity-protected (append-only or signed), access restricted to authorised personnel." | ISMS-POL-A.8.16 Section 4.2 | Config Review |
 | "Logs retained: 90 days online, 365 days archived for Confidential data access logs." | ISMS-POL-A.8.10 Section 5.3 | Config Review |
 
 ### Subcategory 1.7: API Security
@@ -1117,7 +1147,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 **Total Example Requirements for Application Security:**
 
 - Low Risk Web App: 10-15 requirements (auth, input validation, HTTPS, logging)
-- Medium Risk Web App: 20-35 requirements (above + session mgmt, authorization, API security, SAST/DAST)
+- Medium Risk Web App: 20-35 requirements (above + session mgmt, authorisation, API security, SAST/DAST)
 - High Risk Web App: 40-60 requirements (comprehensive OWASP ASVS Level 2 coverage)
 
 ---
@@ -1141,10 +1171,10 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "All data must be classified per [Organization]'s data classification scheme: Restricted / Confidential / Internal / Public." | ISMS-POL-A.5.13-14 | Document Review (data inventory) |
+| "All data must be classified per [Organisation]'s data classification scheme: Restricted / Confidential / Internal / Public." | ISMS-POL-A.5.13-14 | Document Review (data inventory) |
 | "Data classification labels must be applied to: database tables, file shares, documents, emails containing Confidential/Restricted data." | ISMS-POL-A.5.13 Section 4.2 | Config Review |
-| "Restricted data: Trade secrets, health information, biometric data, payment card data (PCI)" | [Organization] Data Classification | Document Review |
-| "Confidential data: Personal data under GDPR/nDSG, financial records, customer data, employee data" | [Organization] Data Classification | Document Review |
+| "Restricted data: Trade secrets, health information, biometric data, payment card data (PCI)" | [Organisation] Data Classification | Document Review |
+| "Confidential data: Personal data under GDPR/nDSG, financial records, customer data, employee data" | [Organisation] Data Classification | Document Review |
 
 ### Subcategory 2.2: Encryption at Rest
 
@@ -1178,7 +1208,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "Data minimization: Collect only personal data necessary for stated purpose. No 'just in case' data collection." | GDPR Art. 5(1)(c) | Document Review (data inventory vs. purpose) |
+| "Data minimisation: Collect only personal data necessary for stated purpose. No 'just in case' data collection." | GDPR Art. 5(1)(c) | Document Review (data inventory vs. purpose) |
 | "Purpose limitation: Personal data used only for specified, explicit, legitimate purposes. No secondary use without new consent/legal basis." | GDPR Art. 5(1)(b) | Process Review |
 | "Purpose documented: Privacy notice clearly states what data collected, why, how used, how long retained." | GDPR Art. 13 | Document Review (privacy notice) |
 
@@ -1238,7 +1268,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "Application must integrate with [Organization] Single Sign-On (SSO) using SAML 2.0 or OAuth 2.0/OIDC. Local accounts prohibited except for emergency break-glass access." | ISMS-POL-A.5.15 Section 3.2 | Config Review + Functional Test |
+| "Application must integrate with [Organisation] Single Sign-On (SSO) using SAML 2.0 or OAuth 2.0/OIDC. Local accounts prohibited except for emergency break-glass access." | ISMS-POL-A.5.15 Section 3.2 | Config Review + Functional Test |
 | "Multi-factor authentication (MFA) required for: (1) all administrative access, (2) remote access to Confidential data, (3) privileged operations (data deletion, configuration changes)." | ISMS-POL-A.5.15 Section 3.4 | Functional Test (attempt admin login without MFA = blocked) |
 | "MFA implementation must use TOTP (Time-based One-Time Password) or hardware security keys (FIDO2/WebAuthn). SMS-based MFA not acceptable for Confidential data access." | ISMS-POL-A.5.15 Section 3.4.2 | Config Review + User Test |
 | "Password complexity requirements: minimum 12 characters, must include uppercase, lowercase, number, and special character. Enforce via authentication system (AD, Okta, Auth0)." | ISMS-POL-A.5.18 Section 4.1 | Functional Test (weak password rejected) |
@@ -1257,12 +1287,12 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Logout must invalidate session server-side (not just delete client-side cookie). Server session destroyed." | OWASP ASVS V3.3.1 | Functional Test (logout, reuse cookie = rejected) |
 | "Concurrent session control: Limit to [X] concurrent sessions per user account. Exceeding limit terminates oldest session." | ISMS-POL-A.5.15 Section 3.5 | Functional Test (open X+1 sessions) |
 
-### Subcategory 3.3: Authorization and Access Control
+### Subcategory 3.3: Authorisation and Access Control
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
 | "Implement Role-Based Access Control (RBAC) with defined roles: System Admin, Security Admin, Manager, User, Read-Only." | ISMS-POL-A.5.15 Section 4.2 | Config Review + Access Matrix |
-| "All sensitive operations must verify user authorization before execution (principle of complete mediation). No client-side only authorization." | OWASP ASVS V4.1.1 | Code Review + Pen Test (client-side bypass attempt) |
+| "All sensitive operations must verify user authorisation before execution (principle of complete mediation). No client-side only authorisation." | OWASP ASVS V4.1.1 | Code Review + Pen Test (client-side bypass attempt) |
 | "Direct object references (IDs in URLs, API parameters) must verify user has permission to access object before retrieval (no IDOR vulnerabilities)." | OWASP ASVS V4.1.2 | Functional Test + Pen Test (attempt access to other user's data) |
 | "Least privilege principle: Users granted minimum access necessary for job function. Default deny (no access unless explicitly granted)." | ISMS-POL-A.5.15 Section 4.1 | Access Matrix Review |
 | "Separation of duties: No single user account has both development and production deployment permissions. No single admin has all administrative privileges." | ISMS-POL-A.5.15 Section 4.3 | Access Matrix Review |
@@ -1294,7 +1324,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
 | "Log all authentication events: login success, login failure (with username/IP), logout, session timeout." | ISMS-POL-A.8.16 Section 3.1 | Log Sample Review |
-| "Log all authorization failures: access denied events (user attempted action without permission), privilege escalation attempts." | ISMS-POL-A.8.16 Section 3.1 | Log Sample Review (trigger denied access, verify logged) |
+| "Log all authorisation failures: access denied events (user attempted action without permission), privilege escalation attempts." | ISMS-POL-A.8.16 Section 3.1 | Log Sample Review (trigger denied access, verify logged) |
 | "Log privileged operations: create/modify/delete users, permission changes, configuration changes, data exports, administrative commands." | ISMS-POL-A.8.16 Section 3.2 | Log Sample Review (perform admin action, verify logged) |
 | "Failed login threshold alerting: ≥5 failed login attempts from same username or IP within 15 minutes triggers alert to security team." | ISMS-POL-A.8.16 Section 4.3 | SIEM Config Review + Test Alert |
 | "Anomalous access alerting: Login from unusual location (geographically distant from last login), unusual time (3am when user typically works 9-5), unusual device triggers alert." | ISMS-POL-A.8.16 Section 4.3 | SIEM Config Review (if implemented) |
@@ -1371,11 +1401,11 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "Web filtering for internet access: Block malicious sites (malware, phishing), inappropriate content, and unauthorized cloud storage (personal Dropbox, Google Drive)." | ISMS-POL-A.8.23 Section 3.1 | Web Filter Policy Review + Block Test |
+| "Web filtering for internet access: Block malicious sites (malware, phishing), inappropriate content, and unauthorised cloud storage (personal Dropbox, Google Drive)." | ISMS-POL-A.8.23 Section 3.1 | Web Filter Policy Review + Block Test |
 | "SSL/TLS inspection: Decrypt and inspect HTTPS traffic for malware and data exfiltration (with user privacy considerations and legal approval)." | ISMS-POL-A.8.23 Section 3.2 | SSL Inspection Config Review |
-| "Data Loss Prevention (DLP): Monitor and block unauthorized transmission of Confidential/Restricted data via email, web, USB, cloud services." | ISMS-POL-A.8.12 Section 3.1 | DLP Policy Config + Test (attempt email Confidential data) |
-| "DLP policy enforcement: Block transmission of sensitive data patterns (credit card numbers, social security numbers, trade secrets) outside organization." | ISMS-POL-A.8.12 Section 3.2 | DLP Test (attempt file upload with SSN pattern) |
-| "Removable media control: Restrict USB storage devices to authorized users/devices, block unauthorized USB, encrypt data on approved USB." | ISMS-POL-A.8.12 Section 4.1 | USB Control Policy + Endpoint Test |
+| "Data Loss Prevention (DLP): Monitor and block unauthorised transmission of Confidential/Restricted data via email, web, USB, cloud services." | ISMS-POL-A.8.12 Section 3.1 | DLP Policy Config + Test (attempt email Confidential data) |
+| "DLP policy enforcement: Block transmission of sensitive data patterns (credit card numbers, social security numbers, trade secrets) outside organisation." | ISMS-POL-A.8.12 Section 3.2 | DLP Test (attempt file upload with SSN pattern) |
+| "Removable media control: Restrict USB storage devices to authorised users/devices, block unauthorised USB, encrypt data on approved USB." | ISMS-POL-A.8.12 Section 4.1 | USB Control Policy + Endpoint Test |
 
 ### Subcategory 4.6: Monitoring, Logging, and Alerting
 
@@ -1414,7 +1444,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 - Cloud service usage (AWS, Azure, GCP, SaaS applications)
 - Outsourced development or managed services
 - Integration with partner systems
-- Any external party accessing or processing organizational data
+- Any external party accessing or processing organisational data
 
 **Applies To:**
 
@@ -1439,12 +1469,12 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "Data protection obligations in contract: Vendor must protect organizational data per data classification, implement encryption, restrict access, return/delete data upon termination." | ISMS-POL-A.5.20 Section 3.1 | Contract Review (data protection clauses present) |
-| "Security incident notification: Vendor must notify [Organization] within 24 hours of discovering security incident affecting organizational data." | ISMS-POL-A.5.20 Section 3.2 | Contract Review (notification timeline specified) |
-| "Audit rights: [Organization] reserves right to audit vendor's security controls annually or upon request (with reasonable notice)." | ISMS-POL-A.5.20 Section 3.3 | Contract Review (audit clause present) |
+| "Data protection obligations in contract: Vendor must protect organisational data per data classification, implement encryption, restrict access, return/delete data upon termination." | ISMS-POL-A.5.20 Section 3.1 | Contract Review (data protection clauses present) |
+| "Security incident notification: Vendor must notify [Organisation] within 24 hours of discovering security incident affecting organisational data." | ISMS-POL-A.5.20 Section 3.2 | Contract Review (notification timeline specified) |
+| "Audit rights: [Organisation] reserves right to audit vendor's security controls annually or upon request (with reasonable notice)." | ISMS-POL-A.5.20 Section 3.3 | Contract Review (audit clause present) |
 | "Data breach liability: Vendor liable for damages resulting from vendor security breach or negligence. Indemnification clause for regulatory fines." | ISMS-POL-A.5.20 Section 3.4 | Contract Review (liability/indemnification clauses) |
-| "Subcontractor restrictions: Vendor must obtain written approval before engaging subcontractors for [Organization] data processing. Subcontractors must meet same security requirements." | ISMS-POL-A.5.20 Section 3.5 | Contract Review (subcontractor approval clause) |
-| "Data return/deletion upon termination: Within 30 days of contract termination, vendor must return all organizational data or provide certified deletion attestation." | ISMS-POL-A.5.20 Section 3.6 | Contract Review (termination data handling clause) |
+| "Subcontractor restrictions: Vendor must obtain written approval before engaging subcontractors for [Organisation] data processing. Subcontractors must meet same security requirements." | ISMS-POL-A.5.20 Section 3.5 | Contract Review (subcontractor approval clause) |
+| "Data return/deletion upon termination: Within 30 days of contract termination, vendor must return all organisational data or provide certified deletion attestation." | ISMS-POL-A.5.20 Section 3.6 | Contract Review (termination data handling clause) |
 | "Security SLAs: Patching within 30 days of critical vulnerability disclosure, incident response time 4 hours, 99.9% uptime for critical services." | ISMS-POL-A.5.20 Section 3.7 | Contract Review (SLA definitions) |
 
 ### Subcategory 5.3: API and Integration Security
@@ -1452,7 +1482,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
 | "API authentication: Vendor APIs must use OAuth 2.0 or API keys (not Basic Auth with credentials in clear text). API keys rotated every 90 days." | ISMS-POL-A.5.21 Section 3.1 | API Documentation Review + Test |
-| "API authorization: Implement least privilege for API access, scope API keys to minimum necessary permissions (read-only vs. read-write)." | ISMS-POL-A.5.21 Section 3.2 | API Permission Review |
+| "API authorisation: Implement least privilege for API access, scope API keys to minimum necessary permissions (read-only vs. read-write)." | ISMS-POL-A.5.21 Section 3.2 | API Permission Review |
 | "API encryption: All API communications over HTTPS (TLS 1.2+), no unencrypted HTTP for Confidential data." | ISMS-POL-A.8.24 Section 6.2.1 | API Traffic Inspection |
 | "API rate limiting: Implement rate limiting to prevent abuse (100 requests/minute per API key, 1000 requests/hour per IP)." | ISMS-POL-A.5.21 Section 3.3 | API Load Test (exceed limits = 429 response) |
 | "API input validation: Vendor API validates all inputs (prevent injection attacks), rejects malformed requests with 400 Bad Request." | OWASP API Security Top 10 | API Fuzzing Test |
@@ -1463,19 +1493,19 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "Data minimization with vendors: Share only data necessary for vendor to perform service. Do not share entire customer database if vendor only needs email addresses." | GDPR Art. 5(1)(c) + ISMS-POL-A.5.21 | Data Sharing Agreement Review |
-| "Data segregation: Vendor must logically or physically segregate [Organization]'s data from other clients' data (multi-tenant SaaS)." | ISMS-POL-A.5.21 Section 4.1 | Vendor Architecture Review |
+| "Data minimisation with vendors: Share only data necessary for vendor to perform service. Do not share entire customer database if vendor only needs email addresses." | GDPR Art. 5(1)(c) + ISMS-POL-A.5.21 | Data Sharing Agreement Review |
+| "Data segregation: Vendor must logically or physically segregate [Organisation]'s data from other clients' data (multi-tenant SaaS)." | ISMS-POL-A.5.21 Section 4.1 | Vendor Architecture Review |
 | "Data transmission encryption: Confidential data transmitted to vendor must be encrypted in transit (SFTP, HTTPS, VPN) per ISMS-POL-A.8.24." | ISMS-POL-A.8.24 Section 6.2 | File Transfer Protocol Review |
-| "Data residency: Vendor must store [Organization] data in [specific region/country] to comply with data localization requirements (GDPR, nDSG, local laws)." | GDPR Art. 44-49 + ISMS-POL-00 | Vendor Data Center Location Confirmation |
+| "Data residency: Vendor must store [Organisation] data in [specific region/country] to comply with data localization requirements (GDPR, nDSG, local laws)." | GDPR Art. 44-49 + ISMS-POL-00 | Vendor Data Center Location Confirmation |
 | "Cross-border data transfer controls: If vendor transfers data outside [region], implement Standard Contractual Clauses (SCCs) or Binding Corporate Rules (BCRs) for GDPR compliance." | GDPR Art. 46 | Contract Review (SCCs attached) |
 
 ### Subcategory 5.5: Third-Party Access Management
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "Vendor access via dedicated accounts: Vendor personnel access [Organization] systems using dedicated vendor accounts (not shared with employees)." | ISMS-POL-A.5.21 Section 5.1 | Account Review (vendor accounts separate) |
-| "Vendor MFA requirement: Vendor administrative or remote access to [Organization] systems requires multi-factor authentication." | ISMS-POL-A.5.15 Section 3.4 | Access Test (vendor login without MFA blocked) |
-| "Vendor access logging and monitoring: All vendor access to [Organization] systems logged (who, what, when). Unusual activity triggers alert." | ISMS-POL-A.8.16 Section 3.2 | Access Logs Review |
+| "Vendor access via dedicated accounts: Vendor personnel access [Organisation] systems using dedicated vendor accounts (not shared with employees)." | ISMS-POL-A.5.21 Section 5.1 | Account Review (vendor accounts separate) |
+| "Vendor MFA requirement: Vendor administrative or remote access to [Organisation] systems requires multi-factor authentication." | ISMS-POL-A.5.15 Section 3.4 | Access Test (vendor login without MFA blocked) |
+| "Vendor access logging and monitoring: All vendor access to [Organisation] systems logged (who, what, when). Unusual activity triggers alert." | ISMS-POL-A.8.16 Section 3.2 | Access Logs Review |
 | "Vendor access review: Quarterly review of vendor access permissions, revoke unnecessary access, confirm still required for vendor personnel changes." | ISMS-POL-A.5.21 Section 5.2 | Access Review Reports |
 | "Vendor access termination: When vendor contract ends or personnel leave vendor, disable access within 24 hours of notification." | ISMS-POL-A.5.21 Section 5.3 | Access Termination SLA Verification |
 | "Just-in-time (JIT) vendor access: Vendor access granted on-demand for specific support sessions, auto-expires after session (e.g., 4 hours)." | ISMS-POL-A.5.21 Section 5.4 | Access Workflow Test |
@@ -1484,9 +1514,9 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "Vendor incident response timeline: Vendor must detect security incidents affecting [Organization] data within 24 hours, notify within 48 hours, contain within 72 hours." | ISMS-POL-A.5.22 Section 3.1 | Contract SLA Review |
-| "Vendor incident cooperation: Vendor must cooperate with [Organization]'s incident response, provide logs and forensic evidence, participate in root cause analysis." | ISMS-POL-A.5.22 Section 3.2 | Incident Response Plan Review |
-| "Vendor backup and recovery: Vendor must maintain backups of [Organization] data, test restores quarterly, meet Recovery Time Objective (RTO) 24 hours, Recovery Point Objective (RPO) 24 hours." | ISMS-POL-A.8.13 Section 5.1 | Vendor BCP/DR Documentation Review |
+| "Vendor incident response timeline: Vendor must detect security incidents affecting [Organisation] data within 24 hours, notify within 48 hours, contain within 72 hours." | ISMS-POL-A.5.22 Section 3.1 | Contract SLA Review |
+| "Vendor incident cooperation: Vendor must cooperate with [Organisation]'s incident response, provide logs and forensic evidence, participate in root cause analysis." | ISMS-POL-A.5.22 Section 3.2 | Incident Response Plan Review |
+| "Vendor backup and recovery: Vendor must maintain backups of [Organisation] data, test restores quarterly, meet Recovery Time Objective (RTO) 24 hours, Recovery Point Objective (RPO) 24 hours." | ISMS-POL-A.8.13 Section 5.1 | Vendor BCP/DR Documentation Review |
 | "Vendor business continuity: Vendor must have documented business continuity plan, tested annually, alternate site/failover capability for critical services." | ISMS-POL-A.5.22 Section 4.1 | Vendor BCP Documentation Review |
 | "Vendor availability SLA: 99.9% uptime for critical services (equals ~8.7 hours downtime/year), penalties for SLA violations." | ISMS-POL-A.5.22 Section 5.1 | Contract SLA Definitions + Historical Uptime Reports |
 
@@ -1537,7 +1567,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 |---------------------|--------|--------------|
 | "Build and Maintain Secure Network: Install and maintain firewall configuration to protect cardholder data environment (CDE)." | PCI DSS v4.0.1 Req. 1 | Firewall Config Review |
 | "Do not use vendor-supplied defaults: Change default passwords and security parameters on systems in CDE." | PCI DSS v4.0.1 Req. 2 | Config Review (no default passwords) |
-| "Protect stored cardholder data: Encrypt stored PAN (Primary Account Number) using strong cryptography (AES-256). Never store CVV2/CVC2/CID after authorization." | PCI DSS v4.0.1 Req. 3 | Database Encryption Review + Storage Audit (no CVV2) |
+| "Protect stored cardholder data: Encrypt stored PAN (Primary Account Number) using strong cryptography (AES-256). Never store CVV2/CVC2/CID after authorisation." | PCI DSS v4.0.1 Req. 3 | Database Encryption Review + Storage Audit (no CVV2) |
 | "Encrypt transmission of cardholder data: Use TLS 1.2+ for transmission of cardholder data over public networks." | PCI DSS v4.0.1 Req. 4 | Network Traffic Inspection (TLS version) |
 | "Use and regularly update anti-virus software: Deploy anti-malware on all systems in CDE, signatures updated daily." | PCI DSS v4.0.1 Req. 5 | Anti-malware Compliance Report |
 | "Develop secure systems and applications: Follow secure SDLC, train developers in secure coding (OWASP Top 10), conduct security testing before deployment." | PCI DSS v4.0.1 Req. 6 | Secure SDLC Process Documentation + Training Records |
@@ -1562,7 +1592,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "Comprehensive audit trail: Maintain audit logs for all security-relevant events (authentication, authorization, data access, configuration changes, administrative actions)." | ISO 27001 A.8.16 + ISMS-POL-A.8.16 | Log Inventory Review (all event types logged) |
+| "Comprehensive audit trail: Maintain audit logs for all security-relevant events (authentication, authorisation, data access, configuration changes, administrative actions)." | ISO 27001 A.8.16 + ISMS-POL-A.8.16 | Log Inventory Review (all event types logged) |
 | "Audit log retention: Retain audit logs per regulatory requirements - minimum 90 days online, 365 days archived (may be longer for financial, healthcare: 7 years)." | Regulatory requirements + ISMS-POL-A.8.16 | Log Retention Config Review |
 | "Audit log integrity protection: Protect audit logs from modification or deletion (append-only logs, log forwarding to SIEM, cryptographic hashing)." | ISO 27001 A.8.16 + ISMS-POL-A.8.16 | Log Protection Config Review |
 | "Records retention: Retain project security documentation per regulatory requirements: GDPR (3-7 years for accountability), financial records (7-10 years), healthcare (7+ years)." | Regulatory requirements + ISMS-POL-A.8.10 | Records Retention Schedule |
@@ -1572,9 +1602,9 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "Privacy by design and default: Implement privacy controls by default (data minimization, purpose limitation, retention limits) without user configuration required." | GDPR Art. 25 | Privacy Settings Review (secure defaults) |
+| "Privacy by design and default: Implement privacy controls by default (data minimisation, purpose limitation, retention limits) without user configuration required." | GDPR Art. 25 | Privacy Settings Review (secure defaults) |
 | "Purpose limitation: Use personal data only for specified, explicit purposes. Do not repurpose data without new lawful basis and user notification." | GDPR Art. 5(1)(b) | Data Usage Review + Privacy Notice |
-| "Data minimization: Collect only personal data necessary for stated purpose. Avoid 'just in case' data collection." | GDPR Art. 5(1)(c) | Data Collection Review (necessity assessment) |
+| "Data minimisation: Collect only personal data necessary for stated purpose. Avoid 'just in case' data collection." | GDPR Art. 5(1)(c) | Data Collection Review (necessity assessment) |
 | "Storage limitation: Retain personal data only as long as necessary for processing purpose. Delete or anonymize when no longer needed." | GDPR Art. 5(1)(e) | Retention Schedule + Deletion Procedures |
 | "Cookie consent: Obtain explicit consent before setting non-essential cookies (analytics, marketing). Essential cookies (authentication, security) exempt." | ePrivacy Directive + GDPR | Cookie Consent Banner Review + Cookie Audit |
 | "Consent withdrawal: Provide easy mechanism for users to withdraw consent. Withdrawal must be as easy as giving consent." | GDPR Art. 7(3) | Consent Withdrawal Functional Test |
@@ -1583,7 +1613,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "ISO 27001 certification: [Organization] will pursue ISO 27001 certification. Ensure all controls documented and implemented per ISO 27001 Annex A." | Organizational goal + ISO 27001 | Control Implementation Evidence |
+| "ISO 27001 certification: [Organisation] will pursue ISO 27001 certification. Ensure all controls documented and implemented per ISO 27001 Annex A." | Organisational goal + ISO 27001 | Control Implementation Evidence |
 | "SOC 2 Type II attestation: Obtain SOC 2 Type II report demonstrating security controls operating effectiveness over 6-12 month period (for B2B SaaS clients)." | Customer contractual requirements | SOC 2 Audit Engagement + Report |
 | "Industry-specific certifications: Obtain required certifications for industry (HITRUST for healthcare, FedRAMP for US government, Cyber Essentials for UK public sector)." | Customer/regulatory requirements | Certification Roadmap |
 
@@ -1595,11 +1625,21 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 ---
 
+## After Completing the Register
+
+**Summary Dashboard:** The Summary Dashboard is auto-populated from your completed data sheets and provides an at-a-glance compliance view. Review it after completing the Requirements Register, Traceability Matrix, Verification Checklist, and Gap Analysis sheets to confirm requirement coverage metrics and outstanding gaps.
+
+**Evidence Register:** Use the Evidence Register to log verification artifacts, test results, code review reports, and approval records that support your completed requirements. This sheet provides the audit trail linking each security requirement to its verification evidence.
+
+**Approval Sign-Off:** Once the CISO or Security Architect confirms that requirements are complete, traceable, and verified, capture formal sign-off in the Approval Sign-Off sheet before project handover.
+
+---
+
 **END OF USER GUIDE**
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A requirement unstated is a requirement unmet."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

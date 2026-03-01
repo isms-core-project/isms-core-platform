@@ -3,28 +3,59 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Data Subject Rights Management Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.34.3-UG |
+| **Related Policy** | ISMS-POL-A.5.34 (Privacy and Pii) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.34 (Privacy and Protection of PII) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Data Subject Rights (DSR) Request Management and GDPR Articles 15-22 Compliance |
-| **Related Policy** | ISMS-POL-A.5.34, Section 2.3 (Data Subject Rights Management) |
-| **Purpose** | Guide users through DSR request tracking, SLA compliance monitoring (30-day deadline per Article 12), identity verification, and exception handling for GDPR Articles 15-22 rights |
-| **Target Audience** | DPO/Privacy Officers, Privacy Team, Customer Service, Legal Counsel, IT Teams, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Monthly for SLA tracking, Annual for process assessment |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for DSR Management assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.34 (Privacy and Pii)
+- ISMS-IMP-A.5.34.1 (PII Identification and Classification Assessment)
+- ISMS-IMP-A.5.34.2 (Legal Basis and Lawful Processing Assessment)
+- ISMS-IMP-A.5.34.4 (Technical and Organisational Measures (TOMs) Assessment)
+- ISMS-IMP-A.5.34.5 (DPIA Assessment)
+- ISMS-IMP-A.5.34.6 (Cross Border Transfer Assessment)
 
 ---
 
-**Audience:** Data Protection Officer (DPO), Privacy Officers, Customer Service Teams
+### Workbook at a Glance
+
+This workbook contains the following 9 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **2. DSR Request Inventory** | Comprehensive tracking of all data subject rights requests |
+| **3. Request Process. Procedures** | Workflow, identity verification, and response generation procedures |
+| **4. SLA Compliance Tracking** | 30-day response timeline adherence monitoring (GDPR/FADP Article 12) |
+| **5. Exception & Reject. Tracking** | Tracking of refused or extended DSR requests with justifications |
+| **6. Rights-Specific Analysis** | Detailed analysis by rights type (access, erasure, portability, etc.) |
+| **7. Evidence Repository** | Evidence collected to support DSR management compliance |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -32,7 +63,7 @@
 
 ## What This Assessment Measures
 
-This assessment evaluates [Organization]'s **data subject rights (DSR) management framework** to ensure compliance with GDPR Articles 15-22, Swiss FADP, and ISO 27001:2022 Control A.5.34.
+This assessment evaluates [Organisation]'s **data subject rights (DSR) management framework** to ensure compliance with GDPR Articles 15-22, Swiss FADP, and ISO 27001:2022 Control A.5.34.
 
 **Core Assessment Components:**
 1. **DSR Request Inventory** - Comprehensive tracking of all data subject rights requests
@@ -42,7 +73,6 @@ This assessment evaluates [Organization]'s **data subject rights (DSR) managemen
 5. **Rights-Specific Analysis** - Breakdown by right type (access, erasure, portability, etc.)
 6. **Response Quality Assessment** - Completeness, clarity, legal accuracy
 7. **Evidence Repository** - Supporting documentation for audit readiness
-8. **Compliance Dashboard** - Executive metrics and KPIs
 
 **Assessment Scope:** All data subject rights requests received across all channels (email, web portal, phone, mail) for the assessment period (typically quarterly).
 
@@ -161,7 +191,7 @@ This assessment implements **ISMS-POL-A.5.34, Section 2.3 (Data Subject Rights)*
 
 **⚠️ IMPORTANT - Complete DSR Coverage Required:**
 
-Organizations must support ALL data subject rights under GDPR and Swiss FADP. Failure to implement even one right = compliance violation and regulatory risk.
+Organisations must support ALL data subject rights under GDPR and Swiss FADP. Failure to implement even one right = compliance violation and regulatory risk.
 
 **The 7 Core Data Subject Rights:**
 
@@ -219,7 +249,7 @@ Before starting this assessment, you must have:
 
 1. **DSR Request Data**
 
-   - Email inbox (e.g., privacy@organization.com, dpo@organization.com)
+   - Email inbox (e.g., privacy@organisation.com, dpo@organisation.com)
    - Web portal submissions
    - Customer service tickets (if DSRs logged as tickets)
    - Phone call logs (if requests received verbally)
@@ -363,7 +393,7 @@ You will need access to:
 1. Read this sheet first to understand DSR framework and the 7 rights
 2. Review SLA requirements (30-day deadline, extension rules)
 3. Understand dropdown options and validation rules
-4. Note any organization-specific customizations
+4. Note any organisation-specific customizations
 
 **No data entry required on this sheet.**
 
@@ -377,7 +407,7 @@ You will need access to:
 
 Gather all DSR requests from:
 
-- Email inbox (e.g., privacy@organization.com, dpo@organization.com)
+- Email inbox (e.g., privacy@organisation.com, dpo@organisation.com)
 - Web portal submissions (if online DSR form available)
 - Customer service tickets (if DSRs logged in ticketing system)
 - Phone call logs (if requests received verbally - GDPR allows oral requests)
@@ -443,7 +473,7 @@ Gather all DSR requests from:
 **GDPR Article 12(6) Requirement:**
 > *"Without prejudice to Article 11, where the controller has reasonable doubts concerning the identity of the natural person making the request referred to in Articles 15 to 21, the controller may request the provision of additional information necessary to confirm the identity of the data subject."*
 
-**Purpose:** Prevent unauthorized disclosure of personal data to wrong person.
+**Purpose:** Prevent unauthorised disclosure of personal data to wrong person.
 
 **Column I - Identity Verification Method:**
 
@@ -467,7 +497,7 @@ Gather all DSR requests from:
 - Format: YYYY-MM-DD
 - Date when identity verification completed
 
-**⚠️ CRITICAL:** Do NOT fulfill request until identity verified. Unauthorized disclosure = GDPR Art. 5(1)(f) violation (integrity and confidentiality principle).
+**⚠️ CRITICAL:** Do NOT fulfill request until identity verified. Unauthorised disclosure = GDPR Art. 5(1)(f) violation (integrity and confidentiality principle).
 
 ---
 
@@ -933,7 +963,7 @@ For each SLA breach, document:
 > "Transaction records (invoices, payment data) must be retained for 7 years per Swiss VAT Act (SR 641.20, Art. 70). Deletion would violate legal obligation. Financial authorities may audit transactions within 7-year period. Legal basis: GDPR Art. 17(3)(b) (compliance with legal obligation)."
 
 **Example (Objection Rejection - Fraud Prevention):**
-> "Data subject objected to fraud prevention processing. Controller has compelling legitimate grounds: Fraud prevention protects controller and other customers from financial crime. Without fraud monitoring, controller cannot detect fraudulent transactions, leading to financial losses and security risks. Safeguards in place: Data minimized to transaction patterns only, automated review with human oversight, data retention limited to 90 days. Legal basis: GDPR Art. 21(1) (compelling legitimate grounds override data subject's interests)."
+> "Data subject objected to fraud prevention processing. Controller has compelling legitimate grounds: Fraud prevention protects controller and other customers from financial crime. Without fraud monitoring, controller cannot detect fraudulent transactions, leading to financial losses and security risks. Safeguards in place: Data minimised to transaction patterns only, automated review with human oversight, data retention limited to 90 days. Legal basis: GDPR Art. 21(1) (compelling legitimate grounds override data subject's interests)."
 
 **Column E - Data Subject Notification:**
 
@@ -1115,8 +1145,8 @@ For each SLA breach, document:
 - Full path or URL to evidence file
 - Examples:
   - "SharePoint: /Privacy/DSR Requests/2026/Q1/DSR-2026-0001_Request.pdf"
-  - "Email: privacy@organization.com, subject 'DSR Request - John Doe', dated 2026-01-10"
-  - "Secure Portal: https://privacy.organization.com/requests/DSR-2026-0001"
+  - "Email: privacy@organisation.com, subject 'DSR Request - John Doe', dated 2026-01-10"
+  - "Secure Portal: https://privacy.organisation.com/requests/DSR-2026-0001"
 
 **Column E - Related Request IDs:**
 
@@ -1258,7 +1288,7 @@ Breakdown of rejection reasons:
 ## Identity Verification Issues
 
 **Pitfall:** Skipping identity verification for "low-risk" requests
-**Impact:** Unauthorized disclosure = GDPR Art. 5(1)(f) violation (integrity and confidentiality)
+**Impact:** Unauthorised disclosure = GDPR Art. 5(1)(f) violation (integrity and confidentiality)
 **Solution:** Always verify identity unless request from authenticated account with no reasonable doubts
 
 **Pitfall:** Requesting excessive identity verification documents
@@ -1384,7 +1414,7 @@ Breakdown of rejection reasons:
 **Sheet 8 (Dashboard):**
 
 - [ ] Executive summary metrics reviewed
-- [ ] Trends analyzed
+- [ ] Trends analysed
 - [ ] Recommendations documented
 
 **Sheet 9 (Approval & Sign-Off):**
@@ -1495,7 +1525,7 @@ Breakdown of rejection reasons:
 ## Quarterly Monitoring
 
 1. **Repeat Assessment Quarterly** - Track SLA compliance trends
-2. **Monitor Request Volume** - Increasing requests may indicate data minimization opportunity or process improvement needed
+2. **Monitor Request Volume** - Increasing requests may indicate data minimisation opportunity or process improvement needed
 3. **Track Rejection Rate** - High rejection rate (>10%) may indicate overly broad data collection
 4. **Review Effort Trends** - Increasing effort may indicate need for automation
 
@@ -1503,8 +1533,6 @@ Breakdown of rejection reasons:
 
 **Feeds Into:**
 
-- **ISMS-IMP-A.5.34.5 (DPIA):** Automated decision-making DSRs may trigger DPIA requirements
-- **ISMS-IMP-A.5.34.7 (Privacy Compliance Dashboard):** DSR metrics aggregate into master privacy dashboard
 
 **Depends On:**
 
@@ -1513,7 +1541,7 @@ Breakdown of rejection reasons:
 
 ## Prepare for Audits
 
-1. **Evidence Ready** - Sheet 7 (Evidence Repository) organized and accessible
+1. **Evidence Ready** - Sheet 7 (Evidence Repository) organised and accessible
 2. **Dashboard Metrics Current** - Sheet 8 updated with latest data
 3. **Approval Sign-Offs Complete** - Sheet 9 fully executed
 4. **Gap Remediation Progress** - Track corrective actions from SLA breaches
@@ -1524,7 +1552,7 @@ Breakdown of rejection reasons:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The right to be forgotten is the right to move forward."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

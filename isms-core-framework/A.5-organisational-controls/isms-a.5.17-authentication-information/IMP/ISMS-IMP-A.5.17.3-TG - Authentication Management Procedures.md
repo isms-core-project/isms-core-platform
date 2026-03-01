@@ -7,198 +7,163 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Authentication Management Procedures |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.17.3-TG |
+| **Related Policy** | ISMS-POL-A.5.17 (Authentication Information) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.17 (Authentication Information) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.17 Authentication Information |
-| **Parent Policy** | ISMS-POL-A.5.17 - Authentication Information |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.17.3-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.17 (Authentication Information)
+- ISMS-IMP-A.5.17.1 (Password Policy Implementation Guide)
+- ISMS-IMP-A.5.17.2 (MFA Deployment Assessment)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a517_3_password_system_assessment.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.17.3` |
-| **Output Filename** | `ISMS-IMP-A.5.17.3_Password_System_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Password System Assessment |
-| **Total Sheets** | 9 (9 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
-
-**Frozen Panes:** A3
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: System_Inventory
+## Generator Alignment Reference
 
-**Data Rows:** 10 (rows 1–10) | **Frozen Panes:** A4
+> Auto-generated from `generate_a517_3_password_system_assessment.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.17.3`
 
-| Col | Header |
-|-----|--------|
-| A | System Name |
-| B | System Type |
-| C | Vendor |
-| D | Version |
-| E | User Count |
-| F | Auth Method |
-| G | SSO Integrated |
-| H | MFA Enabled |
-| I | Owner |
-| J | Criticality |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 3: Security_Assessment
+| # | Sheet Name |
+|---|-----------|
+| 1 | System Inventory |
+| 2 | Security Assessment |
+| 3 | Storage Assessment |
+| 4 | Integration Assessment |
+| 5 | Gap Analysis |
+| 6 | Evidence Register |
+| 7 | Approval Sign-Off |
+| 8 | Summary Dashboard |
+| 9 | Instructions & Legend |
 
-**Data Rows:** 9 (rows 1–9) | **Frozen Panes:** A4
+### Color Palette
 
-### Columns
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-| Col | Header |
-|-----|--------|
-| A | System Name |
-| B | Control Area |
-| C | Requirement |
-| D | Expected State |
-| E | Actual State |
-| F | Status |
-| G | Gap Description |
-| H | Priority |
-| I | Notes |
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | AUTHENTICATION SYSTEM INVENTORY |
+| 2 | AUTHENTICATION SYSTEM SECURITY ASSESSMENT |
+| 3 | PASSWORD STORAGE SECURITY ASSESSMENT |
+| 4 | SSO AND FEDERATION INTEGRATION ASSESSMENT |
+| 5 | GAP ANALYSIS AND REMEDIATION TRACKING |
+| 6 | System Name |
+| 7 | System Type |
+| 8 | Vendor |
+| 9 | Version |
+| 10 | User Count |
+| 11 | Auth Method |
+| 12 | SSO Integrated |
+| 13 | MFA Enabled |
+| 14 | Owner |
+| 15 | Criticality |
+| 16 | Control Area |
+| 17 | Requirement |
+| 18 | Expected State |
+| 19 | Actual State |
+| 20 | Status |
+| 21 | Gap Description |
+| 22 | Priority |
+| 23 | Notes |
+| 24 | System/Application |
+| 25 | Storage Mechanism |
+| 26 | Hashing Algorithm |
+| 27 | Salting |
+| 28 | Key Protection |
+| 29 | Encryption at Rest |
+| 30 | Application |
+| 31 | SSO Protocol |
+| 32 | Identity Provider |
+| 33 | MFA Pass-through |
+| 34 | Session Timeout |
+| 35 | Token Encryption |
+| 36 | Provisioning |
+| 37 | Gap ID |
+| 38 | System/Area |
+| 39 | Risk Level |
+| 40 | Remediation Plan |
+| 41 | Target Date |
+| 42 | Evidence ID |
+| 43 | Assessment Area |
+| 44 | Evidence Type |
+| 45 | Description |
+| 46 | Location / Path |
+| 47 | Date Collected |
+| 48 | Collected By |
+| 49 | Verification Status |
+| 50 | Total Items |
+| 51 | Compliant |
+| 52 | Partial |
+| 53 | Non-Compliant |
+| 54 | N/A |
+| 55 | Compliance % |
+| 56 | Metric |
+| 57 | Value |
+| 58 | Category |
+| 59 | Finding |
+| 60 | Count |
+| 61 | Severity |
+| 62 | Action Required |
 
-## Sheet 4: Storage_Assessment
+### Data Validation Values
 
-**Data Rows:** 8 (rows 1–8) | **Frozen Panes:** A4
+All dropdown/list values used across sheets:
 
-### Columns
+```
+Policy Document, Process Record, System Screenshot, Configuration Export
+Audit Log, Training Record, Test Result, Risk Assessment, Meeting Minutes
+Other, ✅ Verified, ⚠️ Pending, ❌ Not Verified, N/A, Approved
+Approved with Conditions, Rejected, Deferred
+```
 
-| Col | Header |
-|-----|--------|
-| A | System/Application |
-| B | Storage Mechanism |
-| C | Hashing Algorithm |
-| D | Salting |
-| E | Key Protection |
-| F | Encryption at Rest |
-| G | Status |
-| H | Notes |
-
----
-
-## Sheet 5: Integration_Assessment
-
-**Data Rows:** 9 (rows 1–9) | **Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Application |
-| B | SSO Protocol |
-| C | Identity Provider |
-| D | MFA Pass-through |
-| E | Session Timeout |
-| F | Token Encryption |
-| G | Provisioning |
-| H | Status |
-| I | Notes |
-
----
-
-## Sheet 6: Gap_Analysis
-
-**Data Rows:** 9 (rows 1–9) | **Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Gap ID |
-| B | System/Area |
-| C | Gap Description |
-| D | Risk Level |
-| E | Remediation Plan |
-| F | Owner |
-| G | Target Date |
-| H | Status |
-| I | Notes |
-
----
-
-## Sheet 7: Evidence_Register
-
-**Data Rows:** 8 (rows 1–8) | **Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Evidence Type |
-| C | Description |
-| D | Related Assessment |
-| E | Location/Link |
-| F | Date Collected |
-| G | Collected By |
-| H | Status |
-
----
-
-## Sheet 8: Approval_SignOff
-
-**Data Rows:** 4 (rows 2–5) | **Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Role |
-| B | Name |
-| C | Signature |
-| D | Date |
-| E | Status |
-| F | Comments |
-
----
-
-## Sheet 9: Header_Row
+**Extracted:** 9 sheets, 62 columns, 18 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

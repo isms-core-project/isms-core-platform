@@ -21,18 +21,18 @@ ISO/IEC 27001:2022 Control A.5.9: Inventory of Information and Assets
 Assessment Domain 1 of 5: Asset Discovery & Completeness Verification
 
 --------------------------------------------------------------------------------
-SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
+SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANISATION
 --------------------------------------------------------------------------------
 
 This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
-your organization's specific asset landscape, discovery tools, and assessment
+your organisation's specific asset landscape, discovery tools, and assessment
 requirements.
 
 Key customization areas:
 1. Asset categories and types (match your business context and infrastructure)
 2. Discovery methods and tools (network scanning, HR systems, procurement, etc.)
 3. Completeness thresholds (what percentage is acceptable for your risk profile)
-4. Organization name, CISO details, contact information
+4. Organisation name, CISO details, contact information
 5. File paths and naming conventions
 6. Integration with existing asset management/CMDB systems
 
@@ -50,7 +50,7 @@ asset discovery completeness across all five asset categories defined in ISO
 27001:2022 Control A.5.9.
 
 **Purpose:**
-Enables systematic assessment of whether [Organization] has identified and
+Enables systematic assessment of whether [Organisation] has identified and
 documented all assets that store, process, transmit, or protect information.
 Measures discovery completeness against expected asset populations to identify
 gaps and guide remediation efforts.
@@ -83,7 +83,6 @@ gaps and guide remediation efforts.
 - Gap analysis with remediation recommendations
 
 **Integration:**
-This assessment feeds into the A.5.9.5 Compliance Dashboard, which consolidates
 data from all four assessment domains for executive oversight and audit readiness.
 
 --------------------------------------------------------------------------------
@@ -126,7 +125,7 @@ Post-Generation Steps:
     6. Review with stakeholders (IT, HR, Security, Asset Owners)
     7. Export metrics CSV for dashboard consolidation (Sheet 7)
     8. Store assessment workbook per retention policy (7 years minimum)
-    9. Update quarterly or after major infrastructure/organizational changes
+    9. Update quarterly or after major infrastructure/organisational changes
 
 --------------------------------------------------------------------------------
 METADATA
@@ -136,11 +135,11 @@ Control Reference:    ISO/IEC 27001:2022 Annex A Control A.5.9
 Assessment Domain:    1 of 5
 Framework Version:    1.0
 Script Version:       1.0
-Author:               [Organization] ISMS Implementation Team
+Author:               [Organisation] ISMS Implementation Team
 Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
-License:              [Organization License]
+License:              [Organisation License]
 
 Related Documents:
     - ISMS-POL-A.5.9: Inventory of Information and Assets (Policy)
@@ -148,7 +147,6 @@ Related Documents:
     - ISMS-IMP-A.5.9-2: Inventory Maintenance Assessment (Implementation Guide)
     - ISMS-IMP-A.5.9-3: Quality & Compliance Assessment (Implementation Guide)
     - ISMS-IMP-A.5.9-4: Owner Accountability Assessment (Implementation Guide)
-    - ISMS-IMP-A.5.9-5: Compliance Dashboard (Consolidation)
 
 --------------------------------------------------------------------------------
 CHANGE HISTORY
@@ -165,20 +163,46 @@ Version 1.0 - 22.01.2026
 [Future changes to be documented here]
 
 --------------------------------------------------------------------------------
+IMPORTANT NOTES
+--------------------------------------------------------------------------------
+
+**Audit Considerations:**
+This assessment generates audit evidence per ISO 27001:2022 requirements.
+Ensure all fields are completed accurately and evidence is properly linked.
+
+**Data Protection:**
+Assessment workbooks may contain sensitive asset inventory details. Handle
+in accordance with your organisation's data classification policies.
+
+**Maintenance:**
+Review asset inventory procedures and classification criteria annually or when
+new asset categories are introduced, system landscapes change, or audit findings
+identify inventory gaps.
+
+**Quality Assurance:**
+Have technical SMEs validate assessments before using results
+for compliance reporting or management decisions.
+
+================================================================================
 """
 
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Border, Side, Alignment, Protection
-from openpyxl.utils import get_column_letter
-from openpyxl.worksheet.datavalidation import DataValidation
-from openpyxl.formatting.rule import CellIsRule
+try:
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side, Protection
+    from openpyxl.utils import get_column_letter
+    from openpyxl.worksheet.datavalidation import DataValidation
+    from openpyxl.formatting.rule import CellIsRule
+except ImportError:
+    sys.exit("Error: openpyxl not installed. Install with: pip install openpyxl")
 from datetime import datetime
+from pathlib import Path
 import os
 
 # =============================================================================
 # LOGGING CONFIGURATION
 # =============================================================================
 import logging
+import sys
 
 logging.basicConfig(
     level=logging.INFO,
@@ -189,60 +213,53 @@ logger = logging.getLogger(__name__)
 
 
 # CUSTOMIZE: Configuration
-CONFIG = {
-    'organisation': '[Organisation]',
-    'ciso_name': '[CISO Name]',
-    'security_contact': '[security@organisation.ch]',
-    
-    # Color scheme (consistent with A.8.24 pattern)
-    'colors': {
-        'header_bg': '003366',      # Dark blue
-        'header_text': 'FFFFFF',     # White
-        'section_bg': '4472C4',      # Medium blue
-        'green_light': 'C6EFCE',     # Light green (pass)
-        'green_dark': '006100',      # Dark green (pass text)
-        'yellow_light': 'FFEB9C',    # Light yellow (warning)
-        'yellow_dark': '9C5700',     # Dark yellow (warning text)
-        'red_light': 'FFC7CE',       # Light red (fail)
-        'red_dark': '9C0006',        # Dark red (fail text)
-        'gray_light': 'D9D9D9',      # Light gray (locked cells)
-    },
-    
-    # Completeness targets (customize per organization risk appetite)
-    'targets': {
-        'Information Assets': 95,
-        'IT Infrastructure': 98,
-        'Applications': 90,
-        'Physical Assets': 90,
-        'Personnel Assets': 100,  # Critical - must know all key personnel
-    },
-    
-    # Discovery methods
-    'discovery_methods': [
-        'Network Scan (Automated)',
-        'CMDB/Asset Management System',
-        'Procurement Records',
-        'HR System Export',
-        'Manual Survey',
-        'License Audit',
-        'Physical Inspection',
-        'Department Interviews',
-        'Document Repository Scan',
-        'Cloud Provider API',
-        'Other (Specify)'
-    ],
-}
+_DISCOVERY_METHODS = [
+    'Network Scan (Automated)',
+    'CMDB/Asset Management System',
+    'Procurement Records',
+    'HR System Export',
+    'Manual Survey',
+    'License Audit',
+    'Physical Inspection',
+    'Department Interviews',
+    'Document Repository Scan',
+    'Cloud Provider API',
+    'Other (Specify)',
+]
 
 # Document identification constants
+
+# ============================================================================
+# DOCUMENT METADATA
+# ============================================================================
 DOCUMENT_ID = "ISMS-IMP-A.5.9.1"
 WORKBOOK_NAME = "Asset Discovery"
-CONTROL_REF = "ISO/IEC 27001:2022 - Control A.5.9: Inventory of Information and Assets"
+CONTROL_ID   = "A.5.9"
+CONTROL_NAME = "Inventory of Information and Assets"
+CONTROL_REF  = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+GENERATED_DATE = datetime.now().strftime("%Y%m%d")
 OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
+_wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+_wkbk_dir.mkdir(parents=True, exist_ok=True)
+
+# ============================================================================
+# UNICODE SYMBOLS - PROPER UTF-8 ENCODING
+# ============================================================================
+CHECK   = '\u2705'      # ✅ Green checkmark
+XMARK   = '\u274C'      # ❌ Red X
+WARNING = '\u26A0'      # ⚠  Warning sign
+BULLET  = '\u2022'      # •  Bullet point
+
+def finalize_validations(wb):
+    """Ensure all data validations are properly finalised for all worksheets."""
+    for ws in wb.worksheets:
+        for dv in ws.data_validations.dataValidation:
+            pass  # Ensures DVs are iterated and serialised correctly
 
 
-def main():
-    """Main execution function"""
+def create_workbook(output_path):
+    """Generate the complete assessment workbook."""
     logger.info("="*80)
     logger.info("ISMS Control A.5.9 - Asset Discovery Assessment Generator")
     logger.info("="*80)
@@ -252,10 +269,14 @@ def main():
     
     # Create workbook
     wb = Workbook()
+    wb.properties.title = f"{DOCUMENT_ID} — {WORKBOOK_NAME}"
+    wb.properties.creator = "ISMS Core Contributors"
+    wb.properties.description = f"ISMS Implementation Workbook — {DOCUMENT_ID}"
+    wb.properties.subject = f"ISO/IEC 27001:2022 — Control {CONTROL_ID}: {CONTROL_NAME}"
     
     # Remove default sheet
     if "Sheet" in wb.sheetnames:
-        wb.remove(wb["Sheet"])
+        wb.remove(wb.active)
     
     # Create sheets in order
     sheets = [
@@ -268,7 +289,7 @@ def main():
         "Discovery Metrics & Summary",
         "Evidence Register",
         "Summary Dashboard",
-        "Approval & Sign-Off",
+        "Approval Sign-Off",
     ]
     
     for sheet_name in sheets:
@@ -301,22 +322,26 @@ def main():
     create_discovery_metrics_sheet(wb["Discovery Metrics & Summary"])
     logger.info("  ✓ Discovery Metrics & Summary")
     
-    create_evidence_register_sheet(wb["Evidence Register"])
+    create_evidence_register(wb["Evidence Register"])
     logger.info("  ✓ Evidence Register")
     
     create_summary_dashboard_sheet(wb["Summary Dashboard"])
     logger.info("  ✓ Summary Dashboard")
     
-    create_approval_signoff_sheet(wb["Approval & Sign-Off"])
+    create_approval_sheet(wb["Approval Sign-Off"])
     logger.info("  ✓ Approval & Sign-Off")
     
-    # Save workbook
-    filename = f"ISMS-IMP-A.5.9.1_Asset_Discovery_{datetime.now().strftime('%Y%m%d')}.xlsx"
-    wb.save(filename)
-    
+    # Finalise data validations
+    finalize_validations(wb)
+
+    # Save workbook to WKBK directory
+    for ws in wb.worksheets:
+        ws.sheet_view.showGridLines = False
+    wb.save(output_path)
+
     logger.info("")
     logger.info("="*80)
-    logger.info(f"✅ SUCCESS: {filename}")
+    logger.info(f"SUCCESS: {output_path.name}")
     logger.info("="*80)
     logger.info("")
     logger.info("Next Steps:")
@@ -327,134 +352,115 @@ def main():
     logger.info("  5. Export CSV from Sheet 7 for dashboard consolidation")
     logger.info("  6. Obtain stakeholder review and approval")
     logger.info("")
-    logger.info(f"Output location: {os.path.abspath(filename)}")
+    logger.info(f"Output location: {output_path}")
     logger.info("")
 
 
+
+def main():
+    create_workbook(_wkbk_dir / OUTPUT_FILENAME)
+
+
 def create_instructions_sheet(ws):
-    """Create Instructions & Legend sheet"""
-    
-    # Title
-    ws.merge_cells('A1:H1')
-    ws['A1'] = f"{DOCUMENT_ID}  -  Asset Discovery Assessment\n{CONTROL_REF}"
-    ws['A1'].font = Font(size=16, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
-    ws['A1'].alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+    """Create GS-IL-compliant Instructions & Legend sheet (Sheet 1)."""
+    ws.title = "Instructions & Legend"
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill("solid", fgColor="003366")
+    _grey = PatternFill("solid", fgColor="D9D9D9")
+    _input = PatternFill("solid", fgColor="FFFFCC")
+    _green = PatternFill("solid", fgColor="C6EFCE")
+    _amber = PatternFill("solid", fgColor="FFEB9C")
+    _red   = PatternFill("solid", fgColor="FFC7CE")
+
+    # Row 1 — Title banner
+    ws.merge_cells("A1:G1")
+    ws["A1"] = f"{DOCUMENT_ID}  -  {WORKBOOK_NAME}\n{CONTROL_REF}"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = _navy
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.row_dimensions[1].height = 40
-    
-    # Subtitle
-    ws.merge_cells('A2:H2')
-    ws['A2'] = "Assessment Domain 1 of 5: Asset Discovery & Completeness Verification"
-    ws['A2'].font = Font(size=12, italic=True)
-    ws['A2'].alignment = Alignment(horizontal='center')
-    
-    # Purpose section
-    ws['A4'] = "PURPOSE"
-    ws['A4'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A4'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
-    
-    ws.merge_cells('A5:H8')
-    purpose_text = """This assessment evaluates whether [Organisation] has successfully identified and documented all assets that store, process, transmit, or protect information assets.
 
-The goal is to measure discovery COMPLETENESS - do we know what exists? This is the foundation for all other inventory activities (maintenance, quality, accountability).
+    # Row 3 — Document Information heading
+    ws["A3"] = "Document Information"
+    ws["A3"].font = Font(name="Calibri", size=12, bold=True)
 
-Five asset categories are assessed: Information Assets, IT Infrastructure, Applications, Physical Assets, and Personnel Assets."""
-    ws['A5'] = purpose_text
-    ws['A5'].alignment = Alignment(horizontal='left', vertical='top', wrap_text=True)
-    ws.row_dimensions[5].height = 60
-    
-    # Assessment Methodology
-    ws['A10'] = "ASSESSMENT METHODOLOGY"
-    ws['A10'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A10'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
-    
-    methodology_steps = [
-        ("1. EXPECTED POPULATION", "Estimate total expected assets in each category (from business context, org size, infrastructure)"),
-        ("2. DISCOVERED ASSETS", "Count assets actually identified and documented via discovery methods"),
-        ("3. COMPLETENESS %", "Calculate: (Discovered / Expected) × 100%"),
-        ("4. GAP ANALYSIS", "Identify categories <95% complete, prioritize additional discovery"),
-        ("5. DISCOVERY METHODS", "Document how assets were found (network scan, HR export, manual, etc.)"),
+    doc_info = [
+        ("Document ID",       DOCUMENT_ID),
+        ("Workbook Title",    WORKBOOK_NAME),
+        ("Control Reference", CONTROL_REF),
+        ("Version",           "1.0"),
+        ("Assessment Date",   ""),
+        ("Completed By",      ""),
+        ("Organisation",      ""),
     ]
-    
-    row = 11
-    for step, description in methodology_steps:
-        ws[f'A{row}'] = step
-        ws[f'A{row}'].font = Font(bold=True)
-        ws[f'B{row}'] = description
-        ws[f'B{row}'].alignment = Alignment(wrap_text=True)
-        ws.row_dimensions[row].height = 30
-        row += 1
-    
-    # Completeness Targets
-    ws[f'A{row+1}'] = "COMPLETENESS TARGETS"
-    ws[f'A{row+1}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{row+1}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
-    
-    row += 2
-    ws[f'A{row}'] = "Asset Category"
-    ws[f'B{row}'] = "Target Completeness"
-    ws[f'C{row}'] = "Rationale"
-    for col in ['A', 'B', 'C']:
-        ws[f'{col}{row}'].font = Font(bold=True)
-    
-    targets_data = [
-        ("Information Assets", "95%", "High criticality - must know sensitive data locations"),
-        ("IT Infrastructure", "98%", "Critical for security controls - servers, network devices"),
-        ("Applications", "90%", "Acceptable - shadow IT discovery ongoing"),
-        ("Physical Assets", "90%", "Facilities and equipment - manual discovery acceptable"),
-        ("Personnel Assets", "100%", "Critical - must know all key personnel and competencies"),
-    ]
-    
-    row += 1
-    for category, target, rationale in targets_data:
-        ws[f'A{row}'] = category
-        ws[f'B{row}'] = target
-        ws[f'C{row}'] = rationale
-        ws[f'C{row}'].alignment = Alignment(wrap_text=True)
-        row += 1
-    
-    # Traffic Light Legend
-    ws[f'A{row+2}'] = "TRAFFIC LIGHT LEGEND"
-    ws[f'A{row+2}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{row+2}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
-    
-    row += 3
-    # Green
-    ws[f'A{row}'] = "✅ GREEN - Compliant"
-    ws[f'A{row}'].fill = PatternFill(start_color=CONFIG['colors']['green_light'], fill_type='solid')
-    ws[f'B{row}'] = "Completeness ≥ Target (e.g., ≥95%)"
-    
-    # Yellow
-    row += 1
-    ws[f'A{row}'] = "⚠️ YELLOW - At Risk"
-    ws[f'A{row}'].fill = PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid')
-    ws[f'B{row}'] = "Completeness within 10% of target (e.g., 85-94%)"
-    
-    # Red
-    row += 1
-    ws[f'A{row}'] = "❌ RED - Non-Compliant"
-    ws[f'A{row}'].fill = PatternFill(start_color=CONFIG['colors']['red_light'], fill_type='solid')
-    ws[f'B{row}'] = "Completeness >10% below target (e.g., <85%)"
-    
-    # Column widths
-    ws.column_dimensions['A'].width = 25
-    ws.column_dimensions['B'].width = 40
-    ws.column_dimensions['C'].width = 50
-    
-    # Protect sheet (read-only, no password)
-    ws.protection.sheet = True  # No password needed for instructions
+    for i, (label, value) in enumerate(doc_info):
+        r = 4 + i
+        ws[f"A{r}"] = label
+        ws[f"A{r}"].font = Font(name="Calibri", bold=True)
+        ws[f"B{r}"] = value
+        if not value:
+            ws[f"B{r}"].fill = _input
+            ws[f"B{r}"].border = _border
 
+    # Row 12 — Instructions heading
+    ws["A12"] = "Instructions"
+    ws["A12"].font = Font(name="Calibri", size=12, bold=True)
+
+    _instructions = ['1. Complete the Information Assets Discovery sheet with all information asset subcategories.', '2. Complete the IT Infrastructure Discovery sheet with all IT infrastructure assets.', '3. Complete the Applications Discovery sheet with all application assets.', '4. Complete the Physical Assets Discovery sheet with all physical assets.', '5. Complete the Personnel Assets Discovery sheet with all personnel asset roles.', '6. Review the Discovery Metrics & Summary sheet for completeness scores.', '7. Link evidence in the Evidence Register sheet.', '8. Obtain approvals in the Approval Sign-Off sheet.']
+    for _i, _line in enumerate(_instructions):
+        ws[f"A{13 + _i}"] = _line
+
+    _leg_row = 22
+
+    # Status Legend — row position tracks after instructions
+    ws[f"A{_leg_row}"] = "Status Legend"
+    ws[f"A{_leg_row}"].font = Font(name="Calibri", size=12, bold=True)
+    for col_idx, header in enumerate(["Symbol", "Status", "Description"], start=1):
+        c = ws.cell(row=_leg_row + 1, column=col_idx, value=header)
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.fill = _grey
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = _border
+    legend_rows = [
+        ("\u2713", "Compliant / Complete",        "Requirement fully met",                   _green),
+        ("\u26a0", "Partial / In Progress",        "Partially met or in progress",            _amber),
+        ("\u2717", "Non-Compliant / Not Started",  "Requirement not met",                     _red),
+        ("\u2014", "Not Applicable",               "Not applicable to this assessment",        None),
+    ]
+    for i, (sym, status, desc, fill) in enumerate(legend_rows):
+        r = _leg_row + 2 + i
+        ws.cell(row=r, column=1, value=sym).border = _border
+        s = ws.cell(row=r, column=2, value=status)
+        d = ws.cell(row=r, column=3, value=desc)
+        if fill:
+            s.fill = fill
+        for cell in (s, d):
+            cell.border = _border
+            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+
+    ws.column_dimensions["A"].width = 28
+    ws.column_dimensions["B"].width = 45
+    ws.column_dimensions["C"].width = 70
+    ws.sheet_view.showGridLines = False
+    ws.freeze_panes = "A4"
 
 def create_information_assets_sheet(ws):
     """Create Information Assets Discovery sheet"""
     
     # Header
     ws.merge_cells('A1:M1')
-    ws['A1'] = "Information Assets Discovery Assessment"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+    ws['A1'] = "INFORMATION ASSETS DISCOVERY ASSESSMENT"
+    ws['A1'].font = Font(size=14, bold=True, color="FFFFFF")
+    ws['A1'].fill = PatternFill(start_color="003366", fill_type='solid')
     ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
+
+    ws.merge_cells('A2:M2')
+    ws['A2'] = CONTROL_REF
+    ws['A2'].font = Font(size=10, italic=True, color="003366")
+    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
+    ws.row_dimensions[2].height = 16
     
     # Column headers (row 3)
     headers = [
@@ -475,8 +481,8 @@ def create_information_assets_sheet(ws):
     
     for col, header, width in headers:
         ws[f'{col}3'] = header
-        ws[f'{col}3'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}3'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+        ws[f'{col}3'].font = Font(bold=True, color="FFFFFF")
+        ws[f'{col}3'].fill = PatternFill(start_color="003366", fill_type='solid')
         ws[f'{col}3'].alignment = Alignment(horizontal='center', wrap_text=True)
         ws.column_dimensions[col].width = width
     
@@ -504,12 +510,20 @@ def create_information_assets_sheet(ws):
     row = 4
     for subcategory in subcategories:
         ws[f'A{row}'] = subcategory
+        # FFFFCC fill + borders for data row; F2F2F2 for sample row 4
+        _fill_color = 'F2F2F2' if row == 4 else 'FFFFCC'
+        _yf = PatternFill(start_color=_fill_color, end_color=_fill_color, fill_type='solid')
+        from openpyxl.styles import Border as _Bdr, Side as _Sd
+        _ts = _Sd(style='thin')
+        _db = _Bdr(left=_ts, right=_ts, top=_ts, bottom=_ts)
+        for _lc in 'ABCDEFGHIJKLM':
+            ws[f'{_lc}{row}'].fill = _yf
+            ws[f'{_lc}{row}'].border = _db
+
         
         # Expected Count (user enters)
-        ws[f'C{row}'].protection = Protection(locked=False)
         
         # Discovered Count (user enters)
-        ws[f'D{row}'].protection = Protection(locked=False)
         
         # Completeness % (formula)
         ws[f'E{row}'] = f'=IFERROR(D{row}/C{row}*100,0)'
@@ -521,14 +535,14 @@ def create_information_assets_sheet(ws):
         
         # Unlocked user input cells
         for col in ['B', 'G', 'H', 'I', 'J', 'K', 'L', 'M']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
+            pass
         
         row += 1
     
     # Discovery Method dropdown (column B)
     dv_method = DataValidation(
         type="list",
-        formula1=f'"{",".join(CONFIG["discovery_methods"])}"',
+        formula1=f'"{",".join(_DISCOVERY_METHODS)}"',
         allow_blank=True
     )
     dv_method.add(f'B4:B{row-1}')
@@ -537,8 +551,8 @@ def create_information_assets_sheet(ws):
     # Summary section
     summary_row = row + 2
     ws[f'A{summary_row}'] = "INFORMATION ASSETS SUMMARY"
-    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{summary_row}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color="FFFFFF")
+    ws[f'A{summary_row}'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     
     summary_row += 1
     ws[f'A{summary_row}'] = "Total Expected"
@@ -571,17 +585,17 @@ def create_information_assets_sheet(ws):
     ws.conditional_formatting.add(
         f'E4:E{row-1}',
         CellIsRule(operator='greaterThanOrEqual', formula=['95'],
-                   fill=PatternFill(start_color=CONFIG['colors']['green_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="C6EFCE", fill_type='solid'))
     )
     ws.conditional_formatting.add(
         f'E4:E{row-1}',
         CellIsRule(operator='between', formula=['85', '94'],
-                   fill=PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="FFEB9C", fill_type='solid'))
     )
     ws.conditional_formatting.add(
         f'E4:E{row-1}',
         CellIsRule(operator='lessThan', formula=['85'],
-                   fill=PatternFill(start_color=CONFIG['colors']['red_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="FFC7CE", fill_type='solid'))
     )
     
     # Protect sheet (formulas locked, inputs unlocked)
@@ -593,11 +607,17 @@ def create_it_infrastructure_sheet(ws):
     # Same structure as Information Assets but with IT-specific subcategories
     # Header
     ws.merge_cells('A1:M1')
-    ws['A1'] = "IT Infrastructure Discovery Assessment"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+    ws['A1'] = "IT INFRASTRUCTURE DISCOVERY ASSESSMENT"
+    ws['A1'].font = Font(size=14, bold=True, color="FFFFFF")
+    ws['A1'].fill = PatternFill(start_color="003366", fill_type='solid')
     ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
+
+    ws.merge_cells('A2:M2')
+    ws['A2'] = CONTROL_REF
+    ws['A2'].font = Font(size=10, italic=True, color="003366")
+    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
+    ws.row_dimensions[2].height = 16
     
     # Column headers
     headers = [
@@ -618,8 +638,8 @@ def create_it_infrastructure_sheet(ws):
     
     for col, header, width in headers:
         ws[f'{col}3'] = header
-        ws[f'{col}3'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}3'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+        ws[f'{col}3'].font = Font(bold=True, color="FFFFFF")
+        ws[f'{col}3'].fill = PatternFill(start_color="003366", fill_type='solid')
         ws[f'{col}3'].alignment = Alignment(horizontal='center', wrap_text=True)
         ws.column_dimensions[col].width = width
     
@@ -646,21 +666,29 @@ def create_it_infrastructure_sheet(ws):
     row = 4
     for subcategory in subcategories:
         ws[f'A{row}'] = subcategory
-        ws[f'C{row}'].protection = Protection(locked=False)
-        ws[f'D{row}'].protection = Protection(locked=False)
+        # FFFFCC fill + borders for data row; F2F2F2 for sample row 4
+        _fill_color = 'F2F2F2' if row == 4 else 'FFFFCC'
+        _yf = PatternFill(start_color=_fill_color, end_color=_fill_color, fill_type='solid')
+        from openpyxl.styles import Border as _Bdr, Side as _Sd
+        _ts = _Sd(style='thin')
+        _db = _Bdr(left=_ts, right=_ts, top=_ts, bottom=_ts)
+        for _lc in 'ABCDEFGHIJKLM':
+            ws[f'{_lc}{row}'].fill = _yf
+            ws[f'{_lc}{row}'].border = _db
+
         ws[f'E{row}'] = f'=IFERROR(D{row}/C{row}*100,0)'
         ws[f'E{row}'].number_format = '0.0"%"'
         ws[f'F{row}'] = f'=IF(E{row}>=98,"✅ Compliant",IF(E{row}>=88,"⚠️ At Risk","❌ Non-Compliant"))'
         ws[f'F{row}'].alignment = Alignment(horizontal='center')
         
         for col in ['B', 'G', 'H', 'I', 'J', 'K', 'L', 'M']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
+            pass
         row += 1
     
     # Discovery Method dropdown
     dv_method = DataValidation(
         type="list",
-        formula1=f'"{",".join(CONFIG["discovery_methods"])}"',
+        formula1=f'"{",".join(_DISCOVERY_METHODS)}"',
         allow_blank=True
     )
     dv_method.add(f'B4:B{row-1}')
@@ -669,8 +697,8 @@ def create_it_infrastructure_sheet(ws):
     # Summary section (98% target for IT Infrastructure)
     summary_row = row + 2
     ws[f'A{summary_row}'] = "IT INFRASTRUCTURE SUMMARY"
-    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{summary_row}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color="FFFFFF")
+    ws[f'A{summary_row}'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     
     summary_row += 1
     ws[f'A{summary_row}'] = "Total Expected"
@@ -703,17 +731,17 @@ def create_it_infrastructure_sheet(ws):
     ws.conditional_formatting.add(
         f'E4:E{row-1}',
         CellIsRule(operator='greaterThanOrEqual', formula=['98'],
-                   fill=PatternFill(start_color=CONFIG['colors']['green_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="C6EFCE", fill_type='solid'))
     )
     ws.conditional_formatting.add(
         f'E4:E{row-1}',
         CellIsRule(operator='between', formula=['88', '97'],
-                   fill=PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="FFEB9C", fill_type='solid'))
     )
     ws.conditional_formatting.add(
         f'E4:E{row-1}',
         CellIsRule(operator='lessThan', formula=['88'],
-                   fill=PatternFill(start_color=CONFIG['colors']['red_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="FFC7CE", fill_type='solid'))
     )
 
 
@@ -722,10 +750,16 @@ def create_applications_sheet(ws):
     
     # Header
     ws.merge_cells('A1:M1')
-    ws['A1'] = "Applications Discovery Assessment"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+    ws['A1'] = "APPLICATIONS DISCOVERY ASSESSMENT"
+    ws['A1'].font = Font(size=14, bold=True, color="FFFFFF")
+    ws['A1'].fill = PatternFill(start_color="003366", fill_type='solid')
     ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
+
+    ws.merge_cells('A2:M2')
+    ws['A2'] = CONTROL_REF
+    ws['A2'].font = Font(size=10, italic=True, color="003366")
+    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
+    ws.row_dimensions[2].height = 16
     
     # Column headers
     headers = [
@@ -746,8 +780,8 @@ def create_applications_sheet(ws):
     
     for col, header, width in headers:
         ws[f'{col}3'] = header
-        ws[f'{col}3'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}3'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+        ws[f'{col}3'].font = Font(bold=True, color="FFFFFF")
+        ws[f'{col}3'].fill = PatternFill(start_color="003366", fill_type='solid')
         ws.column_dimensions[col].width = width
     
     # Application Subcategories
@@ -772,26 +806,34 @@ def create_applications_sheet(ws):
     row = 4
     for subcategory in subcategories:
         ws[f'A{row}'] = subcategory
-        ws[f'C{row}'].protection = Protection(locked=False)
-        ws[f'D{row}'].protection = Protection(locked=False)
+        # FFFFCC fill + borders for data row; F2F2F2 for sample row 4
+        _fill_color = 'F2F2F2' if row == 4 else 'FFFFCC'
+        _yf = PatternFill(start_color=_fill_color, end_color=_fill_color, fill_type='solid')
+        from openpyxl.styles import Border as _Bdr, Side as _Sd
+        _ts = _Sd(style='thin')
+        _db = _Bdr(left=_ts, right=_ts, top=_ts, bottom=_ts)
+        for _lc in 'ABCDEFGHIJKLM':
+            ws[f'{_lc}{row}'].fill = _yf
+            ws[f'{_lc}{row}'].border = _db
+
         ws[f'E{row}'] = f'=IFERROR(D{row}/C{row}*100,0)'
         ws[f'E{row}'].number_format = '0.0"%"'
         ws[f'F{row}'] = f'=IF(E{row}>=90,"✅ Compliant",IF(E{row}>=80,"⚠️ At Risk","❌ Non-Compliant"))'
         ws[f'F{row}'].alignment = Alignment(horizontal='center')
         
         for col in ['B', 'G', 'H', 'I', 'J', 'K', 'L', 'M']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
+            pass
         row += 1
     
-    dv_method = DataValidation(type="list", formula1=f'"{",".join(CONFIG["discovery_methods"])}"', allow_blank=True)
+    dv_method = DataValidation(type="list", formula1=f'"{",".join(_DISCOVERY_METHODS)}"', allow_blank=True)
     dv_method.add(f'B4:B{row-1}')
     ws.add_data_validation(dv_method)
     
     # Summary (90% target)
     summary_row = row + 2
     ws[f'A{summary_row}'] = "APPLICATIONS SUMMARY"
-    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{summary_row}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color="FFFFFF")
+    ws[f'A{summary_row}'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     
     ws[f'A{summary_row+1}'] = "Total Expected"
     ws[f'B{summary_row+1}'] = f'=SUM(C4:C{row-1})'
@@ -815,9 +857,9 @@ def create_applications_sheet(ws):
     ws[f'B{summary_row+5}'].number_format = '0.0"%"'
     
     # Conditional formatting
-    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='greaterThanOrEqual', formula=['90'], fill=PatternFill(start_color=CONFIG['colors']['green_light'], fill_type='solid')))
-    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='between', formula=['80', '89'], fill=PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid')))
-    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='lessThan', formula=['80'], fill=PatternFill(start_color=CONFIG['colors']['red_light'], fill_type='solid')))
+    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='greaterThanOrEqual', formula=['90'], fill=PatternFill(start_color="C6EFCE", fill_type='solid')))
+    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='between', formula=['80', '89'], fill=PatternFill(start_color="FFEB9C", fill_type='solid')))
+    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='lessThan', formula=['80'], fill=PatternFill(start_color="FFC7CE", fill_type='solid')))
 
 
 def create_physical_assets_sheet(ws):
@@ -825,10 +867,16 @@ def create_physical_assets_sheet(ws):
     
     # Similar structure with physical asset categories
     ws.merge_cells('A1:M1')
-    ws['A1'] = "Physical Assets Discovery Assessment"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+    ws['A1'] = "PHYSICAL ASSETS DISCOVERY ASSESSMENT"
+    ws['A1'].font = Font(size=14, bold=True, color="FFFFFF")
+    ws['A1'].fill = PatternFill(start_color="003366", fill_type='solid')
     ws['A1'].alignment = Alignment(horizontal='center')
+
+    ws.merge_cells('A2:M2')
+    ws['A2'] = CONTROL_REF
+    ws['A2'].font = Font(size=10, italic=True, color="003366")
+    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
+    ws.row_dimensions[2].height = 16
     
     # Column headers
     headers = [
@@ -849,8 +897,8 @@ def create_physical_assets_sheet(ws):
     
     for col, header, width in headers:
         ws[f'{col}3'] = header
-        ws[f'{col}3'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}3'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+        ws[f'{col}3'].font = Font(bold=True, color="FFFFFF")
+        ws[f'{col}3'].fill = PatternFill(start_color="003366", fill_type='solid')
         ws.column_dimensions[col].width = width
     
     subcategories = [
@@ -871,26 +919,34 @@ def create_physical_assets_sheet(ws):
     row = 4
     for subcategory in subcategories:
         ws[f'A{row}'] = subcategory
-        ws[f'C{row}'].protection = Protection(locked=False)
-        ws[f'D{row}'].protection = Protection(locked=False)
+        # FFFFCC fill + borders for data row; F2F2F2 for sample row 4
+        _fill_color = 'F2F2F2' if row == 4 else 'FFFFCC'
+        _yf = PatternFill(start_color=_fill_color, end_color=_fill_color, fill_type='solid')
+        from openpyxl.styles import Border as _Bdr, Side as _Sd
+        _ts = _Sd(style='thin')
+        _db = _Bdr(left=_ts, right=_ts, top=_ts, bottom=_ts)
+        for _lc in 'ABCDEFGHIJKLM':
+            ws[f'{_lc}{row}'].fill = _yf
+            ws[f'{_lc}{row}'].border = _db
+
         ws[f'E{row}'] = f'=IFERROR(D{row}/C{row}*100,0)'
         ws[f'E{row}'].number_format = '0.0"%"'
         ws[f'F{row}'] = f'=IF(E{row}>=90,"✅ Compliant",IF(E{row}>=80,"⚠️ At Risk","❌ Non-Compliant"))'
         ws[f'F{row}'].alignment = Alignment(horizontal='center')
         
         for col in ['B', 'G', 'H', 'I', 'J', 'K', 'L', 'M']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
+            pass
         row += 1
     
-    dv_method = DataValidation(type="list", formula1=f'"{",".join(CONFIG["discovery_methods"])}"', allow_blank=True)
+    dv_method = DataValidation(type="list", formula1=f'"{",".join(_DISCOVERY_METHODS)}"', allow_blank=True)
     dv_method.add(f'B4:B{row-1}')
     ws.add_data_validation(dv_method)
     
     # Summary (90% target)
     summary_row = row + 2
     ws[f'A{summary_row}'] = "PHYSICAL ASSETS SUMMARY"
-    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{summary_row}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color="FFFFFF")
+    ws[f'A{summary_row}'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     
     ws[f'A{summary_row+1}'] = "Total Expected"
     ws[f'B{summary_row+1}'] = f'=SUM(C4:C{row-1})'
@@ -907,19 +963,25 @@ def create_physical_assets_sheet(ws):
     ws[f'B{summary_row+5}'].number_format = '0.0"%"'
     
     # Conditional formatting
-    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='greaterThanOrEqual', formula=['90'], fill=PatternFill(start_color=CONFIG['colors']['green_light'], fill_type='solid')))
-    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='between', formula=['80', '89'], fill=PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid')))
-    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='lessThan', formula=['80'], fill=PatternFill(start_color=CONFIG['colors']['red_light'], fill_type='solid')))
+    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='greaterThanOrEqual', formula=['90'], fill=PatternFill(start_color="C6EFCE", fill_type='solid')))
+    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='between', formula=['80', '89'], fill=PatternFill(start_color="FFEB9C", fill_type='solid')))
+    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='lessThan', formula=['80'], fill=PatternFill(start_color="FFC7CE", fill_type='solid')))
 
 
 def create_personnel_assets_sheet(ws):
     """Create Personnel Assets Discovery sheet"""
     
     ws.merge_cells('A1:M1')
-    ws['A1'] = "Personnel Assets Discovery Assessment"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+    ws['A1'] = "PERSONNEL ASSETS DISCOVERY ASSESSMENT"
+    ws['A1'].font = Font(size=14, bold=True, color="FFFFFF")
+    ws['A1'].fill = PatternFill(start_color="003366", fill_type='solid')
     ws['A1'].alignment = Alignment(horizontal='center')
+
+    ws.merge_cells('A2:M2')
+    ws['A2'] = CONTROL_REF
+    ws['A2'].font = Font(size=10, italic=True, color="003366")
+    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
+    ws.row_dimensions[2].height = 16
     
     # Column headers
     headers = [
@@ -940,8 +1002,8 @@ def create_personnel_assets_sheet(ws):
     
     for col, header, width in headers:
         ws[f'{col}3'] = header
-        ws[f'{col}3'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}3'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+        ws[f'{col}3'].font = Font(bold=True, color="FFFFFF")
+        ws[f'{col}3'].fill = PatternFill(start_color="003366", fill_type='solid')
         ws.column_dimensions[col].width = width
     
     subcategories = [
@@ -965,8 +1027,16 @@ def create_personnel_assets_sheet(ws):
     row = 4
     for subcategory in subcategories:
         ws[f'A{row}'] = subcategory
-        ws[f'C{row}'].protection = Protection(locked=False)
-        ws[f'D{row}'].protection = Protection(locked=False)
+        # FFFFCC fill + borders for data row; F2F2F2 for sample row 4
+        _fill_color = 'F2F2F2' if row == 4 else 'FFFFCC'
+        _yf = PatternFill(start_color=_fill_color, end_color=_fill_color, fill_type='solid')
+        from openpyxl.styles import Border as _Bdr, Side as _Sd
+        _ts = _Sd(style='thin')
+        _db = _Bdr(left=_ts, right=_ts, top=_ts, bottom=_ts)
+        for _lc in 'ABCDEFGHIJKLM':
+            ws[f'{_lc}{row}'].fill = _yf
+            ws[f'{_lc}{row}'].border = _db
+
         ws[f'E{row}'] = f'=IFERROR(D{row}/C{row}*100,0)'
         ws[f'E{row}'].number_format = '0.0"%"'
         # 100% target for personnel - CRITICAL
@@ -974,18 +1044,18 @@ def create_personnel_assets_sheet(ws):
         ws[f'F{row}'].alignment = Alignment(horizontal='center')
         
         for col in ['B', 'G', 'H', 'I', 'J', 'K', 'L', 'M']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
+            pass
         row += 1
     
-    dv_method = DataValidation(type="list", formula1=f'"{",".join(CONFIG["discovery_methods"])}"', allow_blank=True)
+    dv_method = DataValidation(type="list", formula1=f'"{",".join(_DISCOVERY_METHODS)}"', allow_blank=True)
     dv_method.add(f'B4:B{row-1}')
     ws.add_data_validation(dv_method)
     
     # Summary (100% target - critical!)
     summary_row = row + 2
     ws[f'A{summary_row}'] = "PERSONNEL ASSETS SUMMARY"
-    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{summary_row}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws[f'A{summary_row}'].font = Font(size=12, bold=True, color="FFFFFF")
+    ws[f'A{summary_row}'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     
     ws[f'A{summary_row+1}'] = "Total Expected"
     ws[f'B{summary_row+1}'] = f'=SUM(C4:C{row-1})'
@@ -997,15 +1067,15 @@ def create_personnel_assets_sheet(ws):
     ws[f'B{summary_row+3}'].font = Font(bold=True, size=12)
     ws[f'A{summary_row+4}'] = "Target"
     ws[f'B{summary_row+4}'] = "100%"
-    ws[f'B{summary_row+4}'].font = Font(bold=True, color=CONFIG['colors']['red_dark'])
+    ws[f'B{summary_row+4}'].font = Font(bold=True, color="9C0006")
     ws[f'A{summary_row+5}'] = "Gap vs. Target"
     ws[f'B{summary_row+5}'] = f'=B{summary_row+3}-100'
     ws[f'B{summary_row+5}'].number_format = '0.0"%"'
     
     # Conditional formatting (stricter - 100% required)
-    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='equal', formula=['100'], fill=PatternFill(start_color=CONFIG['colors']['green_light'], fill_type='solid')))
-    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='between', formula=['90', '99'], fill=PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid')))
-    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='lessThan', formula=['90'], fill=PatternFill(start_color=CONFIG['colors']['red_light'], fill_type='solid')))
+    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='equal', formula=['100'], fill=PatternFill(start_color="C6EFCE", fill_type='solid')))
+    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='between', formula=['90', '99'], fill=PatternFill(start_color="FFEB9C", fill_type='solid')))
+    ws.conditional_formatting.add(f'E4:E{row-1}', CellIsRule(operator='lessThan', formula=['90'], fill=PatternFill(start_color="FFC7CE", fill_type='solid')))
 
 
 def create_discovery_metrics_sheet(ws):
@@ -1013,11 +1083,11 @@ def create_discovery_metrics_sheet(ws):
     
     # Title
     ws.merge_cells('A1:J1')
-    ws['A1'] = "Discovery Metrics & Summary - All Asset Categories"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+    ws['A1'] = "DISCOVERY METRICS & SUMMARY"
+    ws['A1'].font = Font(size=14, bold=True, color="FFFFFF")
+    ws['A1'].fill = PatternFill(start_color="003366", fill_type='solid')
     ws['A1'].alignment = Alignment(horizontal='center')
-    ws.row_dimensions[1].height = 25
+    ws.row_dimensions[1].height = 35
     
     # Column headers
     headers = [
@@ -1035,8 +1105,8 @@ def create_discovery_metrics_sheet(ws):
     
     for col, header, width in headers:
         ws[f'{col}3'] = header
-        ws[f'{col}3'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}3'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
+        ws[f'{col}3'].font = Font(bold=True, color="FFFFFF")
+        ws[f'{col}3'].fill = PatternFill(start_color="003366", fill_type='solid')
         ws.column_dimensions[col].width = width
     
     # Consolidate from other sheets
@@ -1081,20 +1151,18 @@ def create_discovery_metrics_sheet(ws):
         ws[f'G{row}'].alignment = Alignment(horizontal='center')
         
         # Priority (based on gap)
-        ws[f'H{row}'] = f'=IF(F{row}<-10,"🔴 Critical",IF(F{row}<0,"🟡 High","🟢 Low"))'
+        ws[f'H{row}'] = f'=IF(F{row}<-10,"[!] Critical",IF(F{row}<0,"[~] High","[OK] Low"))'
         ws[f'H{row}'].alignment = Alignment(horizontal='center')
         
         # Key Gaps and Next Actions (user enters)
-        ws[f'I{row}'].protection = Protection(locked=False)
-        ws[f'J{row}'].protection = Protection(locked=False)
         
         row += 1
     
     # Overall Discovery Summary
     overall_row = row + 2
     ws[f'A{overall_row}'] = "OVERALL DISCOVERY SUMMARY"
-    ws[f'A{overall_row}'].font = Font(size=12, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{overall_row}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws[f'A{overall_row}'].font = Font(size=12, bold=True, color="FFFFFF")
+    ws[f'A{overall_row}'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     ws.merge_cells(f'A{overall_row}:J{overall_row}')
     
     overall_row += 1
@@ -1112,7 +1180,7 @@ def create_discovery_metrics_sheet(ws):
     ws[f'B{overall_row}'] = f'=IFERROR(B{overall_row-1}/B{overall_row-2}*100,0)'
     ws[f'B{overall_row}'].number_format = '0.0"%"'
     ws[f'B{overall_row}'].font = Font(bold=True, size=14)
-    ws[f'B{overall_row}'].fill = PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid')
+    ws[f'B{overall_row}'].fill = PatternFill(start_color="FFEB9C", fill_type='solid')
     
     overall_row += 1
     ws[f'A{overall_row}'] = "Overall Target"
@@ -1128,8 +1196,8 @@ def create_discovery_metrics_sheet(ws):
     # CSV Export section for dashboard
     csv_row = overall_row + 3
     ws[f'A{csv_row}'] = "CSV EXPORT FOR DASHBOARD (Copy rows below)"
-    ws[f'A{csv_row}'].font = Font(size=11, bold=True, color=CONFIG['colors']['header_text'])
-    ws[f'A{csv_row}'].fill = PatternFill(start_color=CONFIG['colors']['section_bg'], fill_type='solid')
+    ws[f'A{csv_row}'].font = Font(size=11, bold=True, color="FFFFFF")
+    ws[f'A{csv_row}'].fill = PatternFill(start_color="4472C4", fill_type='solid')
     
     csv_row += 1
     ws[f'A{csv_row}'] = "Discovery_Category"
@@ -1149,280 +1217,459 @@ def create_discovery_metrics_sheet(ws):
     ws.conditional_formatting.add(
         'D4:D8',
         CellIsRule(operator='greaterThanOrEqual', formula=['95'],
-                   fill=PatternFill(start_color=CONFIG['colors']['green_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="C6EFCE", fill_type='solid'))
     )
     ws.conditional_formatting.add(
         'D4:D8',
         CellIsRule(operator='between', formula=['85', '94'],
-                   fill=PatternFill(start_color=CONFIG['colors']['yellow_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="FFEB9C", fill_type='solid'))
     )
     ws.conditional_formatting.add(
         'D4:D8',
         CellIsRule(operator='lessThan', formula=['85'],
-                   fill=PatternFill(start_color=CONFIG['colors']['red_light'], fill_type='solid'))
+                   fill=PatternFill(start_color="FFC7CE", fill_type='solid'))
     )
 
 
-def create_evidence_register_sheet(ws):
-    """Create Evidence Register sheet"""
-    
-    # Title
-    ws.merge_cells('A1:N1')
-    ws['A1'] = "Discovery Evidence Register"
-    ws['A1'].font = Font(size=14, bold=True, color=CONFIG['colors']['header_text'])
-    ws['A1'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
-    ws['A1'].alignment = Alignment(horizontal='center')
-    
-    # Column headers
-    headers = [
-        ('A', 'Evidence ID', 15),
-        ('B', 'Asset Category', 25),
-        ('C', 'Discovery Method', 30),
-        ('D', 'Evidence Type', 30),
-        ('E', 'Evidence Description', 50),
-        ('F', 'Evidence Location', 40),
-        ('G', 'Collection Date', 15),
-        ('H', 'Collected By', 25),
-        ('I', 'Validity Period', 20),
-        ('J', 'Review Date', 15),
-        ('K', 'Reviewed By', 25),
-        ('L', 'Review Status', 20),
-        ('M', 'Retention End Date', 18),
-        ('N', 'Notes', 40),
+def create_evidence_register(ws):
+    """Create the standard Evidence Register sheet."""
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+    from openpyxl.worksheet.datavalidation import DataValidation
+    from openpyxl.utils import get_column_letter
+
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    _grey_hdr = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
+    _grey_sample = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+    _input = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+
+    ws.merge_cells("A1:H1")
+    ws["A1"] = "EVIDENCE REGISTER"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = _navy
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
+    ws["A1"].border = _border
+    ws.row_dimensions[1].height = 35
+
+    ws.merge_cells("A2:H2")
+    ws["A2"] = CONTROL_REF
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True)
+    ws["A2"].alignment = Alignment(horizontal="center", vertical="center")
+    ws["A2"].border = _border
+
+    columns = [
+        ("Evidence ID", 14), ("Evidence Type", 20), ("Description", 45),
+        ("Related Control / Section", 28), ("Collection Date (DD.MM.YYYY)", 22),
+        ("Storage Location / Reference", 38), ("Collected By", 22), ("Verification Status", 14),
     ]
-    
-    for col, header, width in headers:
-        ws[f'{col}3'] = header
-        ws[f'{col}3'].font = Font(bold=True, color=CONFIG['colors']['header_text'])
-        ws[f'{col}3'].fill = PatternFill(start_color=CONFIG['colors']['header_bg'], fill_type='solid')
-        ws.column_dimensions[col].width = width
-    
-    # Add sample rows (user will add actual evidence)
-    sample_data = [
-        ("DISC-001", "Information Assets", "Database Query", "SQL Query Results", "List of production databases from CMDB query", "/evidence/database_inventory_20260122.xlsx", "22.01.2026"),
-        ("DISC-002", "IT Infrastructure", "Network Scan (Automated)", "Nmap Scan Results", "Network scan of 10.0.0.0/8 subnet", "/evidence/nmap_scan_20260122.xml", "22.01.2026"),
-        ("DISC-003", "Applications", "SaaS Audit", "SaaS License Report", "Okta application report - all SSO-integrated apps", "/evidence/okta_apps_20260122.csv", "22.01.2026"),
-        ("DISC-004", "Personnel Assets", "HR System Export", "HR Data Export", "Active employee list with roles and departments", "/evidence/hr_export_20260122.xlsx", "22.01.2026"),
-    ]
-    
-    row = 4
-    for evidence_id, category, method, evidence_type, description, location, date in sample_data:
-        ws[f'A{row}'] = evidence_id
-        ws[f'B{row}'] = category
-        ws[f'C{row}'] = method
-        ws[f'D{row}'] = evidence_type
-        ws[f'E{row}'] = description
-        ws[f'F{row}'] = location
-        ws[f'G{row}'] = date
-        
-        # Unlock cells for user input
-        for col in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
-        
-        row += 1
-    
-    # Add empty rows for additional evidence
-    for i in range(20):
-        for col in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']:
-            ws[f'{col}{row}'].protection = Protection(locked=False)
-        row += 1
-    
-    # Data validations
-    asset_categories = ["Information Assets", "IT Infrastructure", "Applications", "Physical Assets", "Personnel Assets", "All Categories"]
-    dv_category = DataValidation(type="list", formula1=f'"{",".join(asset_categories)}"', allow_blank=True)
-    dv_category.add(f'B4:B100')
-    ws.add_data_validation(dv_category)
-    
-    dv_method = DataValidation(type="list", formula1=f'"{",".join(CONFIG["discovery_methods"])}"', allow_blank=True)
-    dv_method.add(f'C4:C100')
-    ws.add_data_validation(dv_method)
-    
-    review_statuses = ["Pending Review", "Reviewed - Valid", "Reviewed - Update Needed", "Reviewed - Invalid"]
-    dv_status = DataValidation(type="list", formula1=f'"{",".join(review_statuses)}"', allow_blank=True)
-    dv_status.add(f'L4:L100')
+    for col_idx, (col_name, col_width) in enumerate(columns, start=1):
+        cell = ws.cell(row=4, column=col_idx, value=col_name)
+        cell.font = Font(name="Calibri", size=10, bold=True, color="FFFFFF")
+        cell.fill = _navy
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.border = _border
+        ws.column_dimensions[get_column_letter(col_idx)].width = col_width
+
+    sample_data = ["EV-001", "Document", "Sample evidence entry — replace with actual evidence",
+                   "A.5.9 All Domains", "01.01.2026", "SharePoint/ISMS/Evidence/", "ISMS Team", "Not verified"]
+    for col_idx, val in enumerate(sample_data, start=1):
+        cell = ws.cell(row=5, column=col_idx, value=val)
+        cell.font = Font(name="Calibri", size=10, italic=True, color="808080")
+        cell.fill = _grey_sample
+        cell.border = _border
+
+    dv_status = DataValidation(
+        type="list",
+        formula1='"Verified,Not verified,In Review"',
+        allow_blank=True
+    )
     ws.add_data_validation(dv_status)
 
+    for r in range(6, 106):
+        for col_idx in range(1, 9):
+            cell = ws.cell(row=r, column=col_idx)
+            cell.fill = _input
+            cell.border = _border
+            cell.alignment = Alignment(vertical="center", wrap_text=False)
+        dv_status.add(ws.cell(row=r, column=8))
 
-# Execute main function
-
+    ws.freeze_panes = "A5"
 
 def create_summary_dashboard_sheet(ws):
-    """Create Summary Dashboard sheet"""
-    CHECK = "✅"
-    WARNING = "⚠️"
-    XMARK = "❌"
-    TARGET = "🎯"
-    CHART = "📊"
-    
-    metrics_sheet = "Discovery Metrics & Summary"
-    assessment_name = "Asset Discovery Assessment"
-    compliance_ref = "D4"
-    key_metrics = [
-        ('Information Assets Discovered', 'B4', '100%', 'number'),
-        ('IT Infrastructure Discovered', 'B5', '100%', 'number'),
-        ('Applications Discovered', 'B6', '100%', 'number'),
-        ('Physical Assets Discovered', 'B7', '100%', 'number'),
-        ('Personnel Assets Discovered', 'B8', '100%', 'number'),
-    ]
-    
-    ws.merge_cells('A1:F1')
-    ws['A1'] = f"{CHART} {assessment_name.upper()} - SUMMARY DASHBOARD"
-    ws['A1'].font = Font(size=16, bold=True, color='FFFFFF')
-    ws['A1'].fill = PatternFill(start_color='003366', fill_type='solid')
-    ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
+    """Create Gold Standard Summary Dashboard — TABLE 1/2/3 (A.5.9.1 Asset Discovery)."""
+    from openpyxl.styles import Border, Side
+
+    CHECK = "\u2705"
+    XMARK = "\u274c"
+
+    _thin = Side(style="thin")
+    _bdr = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    _blue = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+    _grey = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
+    _red_b = PatternFill(start_color="C00000", end_color="C00000", fill_type="solid")
+    _crit = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
+    _high = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
+    _med = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
+
+    ws.column_dimensions["A"].width = 45
+    ws.column_dimensions["B"].width = 14
+    ws.column_dimensions["C"].width = 16
+    ws.column_dimensions["D"].width = 12
+    ws.column_dimensions["E"].width = 14
+
+    def _merge_row(row, fill, text, font_kw, align="left"):
+        ws.merge_cells(f"A{row}:E{row}")
+        c = ws[f"A{row}"]
+        c.value = text
+        c.fill = fill
+        c.font = Font(**font_kw)
+        c.alignment = Alignment(horizontal=align, vertical="center")
+        c.border = _bdr
+        for col in "BCDE":
+            ws[f"{col}{row}"].border = _bdr
+
+    # Row 1: Title
+    _merge_row(1, _navy, "ASSET DISCOVERY ASSESSMENT \u2014 SUMMARY DASHBOARD",
+               {"name": "Calibri", "size": 14, "bold": True, "color": "FFFFFF"}, align="center")
     ws.row_dimensions[1].height = 35
-    
-    ws.merge_cells('A2:F2')
-    ws['A2'] = "Quick overview of key metrics and compliance status"
-    ws['A2'].font = Font(size=10, italic=True)
-    ws['A2'].fill = PatternFill(start_color='E7E6E6', fill_type='solid')
-    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
-    
-    row = 4
-    ws.merge_cells(f'A{row}:F{row}')
-    ws[f'A{row}'] = f"{TARGET} OVERALL COMPLIANCE"
-    ws[f'A{row}'].font = Font(size=13, bold=True, color='FFFFFF')
-    ws[f'A{row}'].fill = PatternFill(start_color='2E75B5', fill_type='solid')
-    ws[f'A{row}'].alignment = Alignment(horizontal='center', vertical='center')
-    row += 1
-    
-    ws.merge_cells(f'A{row}:C{row}')
-    ws[f'A{row}'] = "Overall Compliance:"
-    ws[f'A{row}'].font = Font(size=12, bold=True)
-    ws.merge_cells(f'D{row}:F{row}')
-    ws[f'D{row}'] = f"='{metrics_sheet}'!{compliance_ref}"
-    ws[f'D{row}'].font = Font(size=18, bold=True)
-    ws[f'D{row}'].number_format = '0.0"%"'
-    ws[f'D{row}'].alignment = Alignment(horizontal='center', vertical='center')
-    row += 2
-    
-    ws.merge_cells(f'A{row}:F{row}')
-    ws[f'A{row}'] = f"{CHART} KEY METRICS"
-    ws[f'A{row}'].font = Font(size=13, bold=True, color='FFFFFF')
-    ws[f'A{row}'].fill = PatternFill(start_color='2E75B5', fill_type='solid')
-    ws[f'A{row}'].alignment = Alignment(horizontal='center', vertical='center')
-    row += 1
-    
-    for col_idx, header in enumerate(["Metric", "Current", "Target", "Status"], start=1):
-        ws.cell(row=row, column=col_idx, value=header)
-        ws.cell(row=row, column=col_idx).font = Font(size=11, bold=True, color='FFFFFF')
-        ws.cell(row=row, column=col_idx).fill = PatternFill(start_color='4472C4', fill_type='solid')
-    row += 1
-    
-    for metric_label, cell_ref, target, format_type in key_metrics:
-        ws.cell(row=row, column=1, value=metric_label)
-        ws.cell(row=row, column=2, value=f"='{metrics_sheet}'!{cell_ref}")
-        if format_type == 'number':
-            ws.cell(row=row, column=2).number_format = '#,##0'
-        ws.cell(row=row, column=3, value=target)
-        ws.cell(row=row, column=4, value=f'=IF(B{row}>0,"{CHECK}","{XMARK}")')
-        row += 1
-    
-    ws.column_dimensions['A'].width = 35
-    ws.column_dimensions['B'].width = 15
-    ws.column_dimensions['C'].width = 15
-    ws.column_dimensions['D'].width = 15
 
+    # Row 2: Subtitle
+    _merge_row(2, _blue, "ISO 27001:2022 \u00b7 Control A.5.9 \u00b7 Inventory of Information and Assets",
+               {"name": "Calibri", "size": 10, "italic": True, "color": "FFFFFF"})
+    ws.row_dimensions[2].height = 18
 
-def create_approval_signoff_sheet(ws):
-    """Create Approval & Sign-Off sheet"""
-    CHECK = "✅"
-    CLOCK = "⏳"
-    XMARK = "❌"
-    
-    assessment_name = "Asset Discovery Assessment"
-    checklist_items = [
-        'All asset categories scanned/assessed',
-        'Information assets documented completely',
-        'IT infrastructure assets documented completely',
-        'Applications inventory completed',
-        'Physical assets inventory completed',
-        'Personnel assets inventory completed',
-        'Discovery metrics calculated and reviewed',
-        'Evidence collected and registered',
-        'Quality review completed',
-        'Gap analysis performed',
-        'Assessment reviewed by Information Security'
+    # Row 3: blank spacer
+    ws.row_dimensions[3].height = 6
+
+    # ── TABLE 1 ────────────────────────────────────────────────────────────────
+    _merge_row(4, _blue, "TABLE 1: COMPLIANCE ASSESSMENT",
+               {"name": "Calibri", "size": 11, "bold": True, "color": "FFFFFF"})
+
+    # Row 5: headers
+    for col, label in enumerate(["Assessment Area", "Compliant", "Non-Compliant", "Total Items", "Compliance %"], 1):
+        c = ws.cell(row=5, column=col, value=label)
+        c.fill = _grey
+        c.font = Font(name="Calibri", size=10, bold=True, color="000000")
+        c.alignment = Alignment(horizontal="center", vertical="center")
+        c.border = _bdr
+
+    # Rows 6–10: assessment areas
+    t1_rows = [
+        (6, "Information Asset Discovery Coverage",
+         "=COUNTIF(\'Information Assets Discovery\'!F4:F18,\"\u2705 Compliant\")",
+         "=COUNTA(\'Information Assets Discovery\'!A4:A18)"),
+        (7, "IT Infrastructure Discovery Coverage",
+         "=COUNTIF(\'IT Infrastructure Discovery\'!F4:F19,\"\u2705 Compliant\")",
+         "=COUNTA(\'IT Infrastructure Discovery\'!A4:A19)"),
+        (8, "Application Discovery Coverage",
+         "=COUNTIF(\'Applications Discovery\'!F4:F18,\"\u2705 Compliant\")",
+         "=COUNTA(\'Applications Discovery\'!A4:A18)"),
+        (9, "Physical Assets Discovery Coverage",
+         "=COUNTIF(\'Physical Assets Discovery\'!F4:F15,\"\u2705 Compliant\")",
+         "=COUNTA(\'Physical Assets Discovery\'!A4:A15)"),
+        (10, "Personnel Assets Discovery Coverage",
+         "=COUNTIF(\'Personnel Assets Discovery\'!F4:F18,\"\u2705 Compliant\")",
+         "=COUNTA(\'Personnel Assets Discovery\'!A4:A18)"),
     ]
-    
-    ws.merge_cells('A1:F1')
-    ws['A1'] = f"{assessment_name.upper()} - APPROVAL & SIGN-OFF"
-    ws['A1'].font = Font(size=14, bold=True, color='FFFFFF')
-    ws['A1'].fill = PatternFill(start_color='003366', fill_type='solid')
-    ws['A1'].alignment = Alignment(horizontal='center', vertical='center')
-    ws.row_dimensions[1].height = 30
-    
-    ws.merge_cells('A2:F2')
-    ws['A2'] = "Complete when assessment is finished and ready for approval"
-    ws['A2'].font = Font(size=10, italic=True)
-    ws['A2'].alignment = Alignment(horizontal='center', vertical='center')
-    
+    for row, label, b_fml, d_fml in t1_rows:
+        ws.cell(row=row, column=1, value=label).border = _bdr
+        ws.cell(row=row, column=1).font = Font(name="Calibri", size=10)
+        ws.cell(row=row, column=1).alignment = Alignment(horizontal="left", vertical="center")
+        ws[f"B{row}"] = b_fml
+        ws[f"B{row}"].border = _bdr
+        ws[f"B{row}"].alignment = Alignment(horizontal="center")
+        ws[f"C{row}"] = f"=D{row}-B{row}"
+        ws[f"C{row}"].border = _bdr
+        ws[f"C{row}"].alignment = Alignment(horizontal="center")
+        ws[f"D{row}"] = d_fml
+        ws[f"D{row}"].border = _bdr
+        ws[f"D{row}"].alignment = Alignment(horizontal="center")
+        ws[f"E{row}"] = f"=IFERROR(B{row}/D{row},0)"
+        ws[f"E{row}"].number_format = "0.0%"
+        ws[f"E{row}"].border = _bdr
+        ws[f"E{row}"].alignment = Alignment(horizontal="center")
+
+    # Row 11: TOTAL
+    for col, val in enumerate(["TOTAL", "=SUM(B6:B10)", "=SUM(C6:C10)", "=SUM(D6:D10)", "=IFERROR(B11/D11,0)"], 1):
+        c = ws.cell(row=11, column=col, value=val)
+        c.fill = _grey
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.alignment = Alignment(horizontal="center" if col > 1 else "left", vertical="center")
+        c.border = _bdr
+    ws["E11"].number_format = "0.0%"
+
+    # Row 12: blank spacer
+    ws.row_dimensions[12].height = 6
+
+    # ── TABLE 2 ────────────────────────────────────────────────────────────────
+    _merge_row(13, _blue, "TABLE 2: KEY PERFORMANCE INDICATORS",
+               {"name": "Calibri", "size": 11, "bold": True, "color": "FFFFFF"})
+
+    def _subhdr(row, label):
+        ws.merge_cells(f"A{row}:E{row}")
+        c = ws[f"A{row}"]
+        c.value = label
+        c.fill = _grey
+        c.font = Font(name="Calibri", size=10, bold=True, color="000000")
+        c.alignment = Alignment(horizontal="left", vertical="center")
+        c.border = _bdr
+        for col in "BCDE":
+            ws[f"{col}{row}"].border = _bdr
+
+    def _metric(row, label, formula, fmt=None):
+        ws[f"A{row}"] = label
+        ws[f"A{row}"].font = Font(name="Calibri", size=10)
+        ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
+        ws[f"A{row}"].border = _bdr
+        ws[f"B{row}"] = formula
+        ws[f"B{row}"].font = Font(name="Calibri", size=10, bold=True)
+        ws[f"B{row}"].alignment = Alignment(horizontal="center")
+        ws[f"B{row}"].border = _bdr
+        if fmt:
+            ws[f"B{row}"].number_format = fmt
+        for col in "CDE":
+            ws[f"{col}{row}"].border = _bdr
+
+    _subhdr(14, "Discovery Overview")
+    _metric(15, "Information Assets Discovered", "=COUNTA(\'Information Assets Discovery\'!A4:A18)")
+    _metric(16, "IT Infrastructure Discovered", "=COUNTA(\'IT Infrastructure Discovery\'!A4:A19)")
+    _metric(17, "Applications Discovered", "=COUNTA(\'Applications Discovery\'!A4:A18)")
+    _subhdr(18, "Discovery Coverage")
+    _metric(19, "Physical Assets Discovered", "=COUNTA(\'Physical Assets Discovery\'!A4:A15)")
+    _metric(20, "Personnel Assets Discovered", "=COUNTA(\'Personnel Assets Discovery\'!A4:A18)")
+    _metric(21, "Total Asset Subcategories Assessed", "=B15+B16+B17+B19+B20")
+    _subhdr(22, "Compliance Status")
+    _metric(23, "Non-Compliant Information Asset Types", "=COUNTIF(\'Information Assets Discovery\'!F4:F18,\"\u274c Non-Compliant\")")
+    _metric(24, "Non-Compliant IT Infrastructure Types", "=COUNTIF(\'IT Infrastructure Discovery\'!F4:F19,\"\u274c Non-Compliant\")")
+    _metric(25, "Non-Compliant Application Types", "=COUNTIF(\'Applications Discovery\'!F4:F18,\"\u274c Non-Compliant\")")
+    _subhdr(26, "Gaps & Evidence")
+    _metric(27, "Non-Compliant Physical Asset Types", "=COUNTIF(\'Physical Assets Discovery\'!F4:F15,\"\u274c Non-Compliant\")")
+    _metric(28, "Non-Compliant Personnel Asset Types", "=COUNTIF(\'Personnel Assets Discovery\'!F4:F18,\"\u274c Non-Compliant\")")
+    _metric(29, "Unverified Evidence Items", "=COUNTIF(\'Evidence Register\'!H6:H105,\"Not verified\")")
+
+    # Row 30: blank spacer
+    ws.row_dimensions[30].height = 6
+
+    # ── TABLE 3 ────────────────────────────────────────────────────────────────
+    _merge_row(31, _red_b, "TABLE 3: CRITICAL FINDINGS & RISK INDICATORS",
+               {"name": "Calibri", "size": 11, "bold": True, "color": "FFFFFF"})
+
+    # Row 32: header
+    for col, label in enumerate(["Critical Finding", "Count", "Severity", "ISO Reference", "Action Required"], 1):
+        c = ws.cell(row=32, column=col, value=label)
+        c.fill = _grey
+        c.font = Font(name="Calibri", size=10, bold=True, color="000000")
+        c.alignment = Alignment(horizontal="center", vertical="center")
+        c.border = _bdr
+
+    def _finding(row, label, formula, severity, iso_ref, action, fill, text_color):
+        ws[f"A{row}"] = label
+        ws[f"A{row}"].fill = fill
+        ws[f"A{row}"].font = Font(name="Calibri", size=10, bold=True, color=text_color)
+        ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        ws[f"A{row}"].border = _bdr
+        ws[f"B{row}"] = formula
+        ws[f"B{row}"].fill = fill
+        ws[f"B{row}"].font = Font(name="Calibri", size=10, bold=True, color=text_color)
+        ws[f"B{row}"].alignment = Alignment(horizontal="center")
+        ws[f"B{row}"].border = _bdr
+        ws[f"C{row}"] = severity
+        ws[f"C{row}"].fill = fill
+        ws[f"C{row}"].font = Font(name="Calibri", size=10, bold=True, color=text_color)
+        ws[f"C{row}"].alignment = Alignment(horizontal="center")
+        ws[f"C{row}"].border = _bdr
+        ws[f"D{row}"] = iso_ref
+        ws[f"D{row}"].fill = fill
+        ws[f"D{row}"].font = Font(name="Calibri", size=10, bold=True, color=text_color)
+        ws[f"D{row}"].alignment = Alignment(horizontal="center")
+        ws[f"D{row}"].border = _bdr
+        ws[f"E{row}"] = action
+        ws[f"E{row}"].fill = fill
+        ws[f"E{row}"].font = Font(name="Calibri", size=10, bold=True, color=text_color)
+        ws[f"E{row}"].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        ws[f"E{row}"].border = _bdr
+
+    _finding(33, "Non-compliant information asset types",
+             "=COUNTIF(\'Information Assets Discovery\'!F4:F18,\"\u274c Non-Compliant\")",
+             "CRITICAL", "A.5.9 §2.1",
+             "Immediate — missing information assets create data blind spots and unquantified risk",
+             _crit, "C00000")
+    _finding(34, "Non-compliant IT infrastructure types",
+             "=COUNTIF(\'IT Infrastructure Discovery\'!F4:F19,\"\u274c Non-Compliant\")",
+             "CRITICAL", "A.5.9 §2.2",
+             "Immediate — undiscovered IT assets cannot be patched, monitored, or protected",
+             _crit, "C00000")
+    _finding(35, "Non-compliant application types",
+             "=COUNTIF(\'Applications Discovery\'!F4:F18,\"\u274c Non-Compliant\")",
+             "HIGH", "A.5.9 §2.2",
+             "Urgent — unknown applications may process data without appropriate controls",
+             _high, "9C5700")
+    _finding(36, "Non-compliant physical asset types",
+             "=COUNTIF(\'Physical Assets Discovery\'!F4:F15,\"\u274c Non-Compliant\")",
+             "HIGH", "A.5.9 §2.2",
+             "Urgent — undiscovered physical assets may contain sensitive data without protection",
+             _high, "9C5700")
+    _finding(37, "Non-compliant personnel asset types",
+             "=COUNTIF(\'Personnel Assets Discovery\'!F4:F18,\"\u274c Non-Compliant\")",
+             "HIGH", "A.5.9 §2.2",
+             "Urgent — unmapped personnel create succession and knowledge transfer risk",
+             _high, "9C5700")
+    _finding(38, "Asset subcategories at-risk of non-compliance",
+             "=COUNTIF(\'Information Assets Discovery\'!F4:F18,\"\u26a0\ufe0f At Risk\")+COUNTIF(\'IT Infrastructure Discovery\'!F4:F19,\"\u26a0\ufe0f At Risk\")+COUNTIF(\'Applications Discovery\'!F4:F18,\"\u26a0\ufe0f At Risk\")",
+             "HIGH", "A.5.9 §3",
+             "Plan — subcategories approaching threshold require enhanced discovery activity",
+             _high, "9C5700")
+    _finding(39, "Open discovery gaps (non-compliant physical + personnel)",
+             "=COUNTIF(\'Physical Assets Discovery\'!F4:F15,\"\u274c Non-Compliant\")+COUNTIF(\'Personnel Assets Discovery\'!F4:F18,\"\u274c Non-Compliant\")",
+             "MEDIUM", "A.5.9 §3",
+             "Plan — remediation required for all non-compliant subcategories",
+             _med, "276221")
+    _finding(40, "Unverified evidence items",
+             "=COUNTIF(\'Evidence Register\'!H6:H105,\"Not verified\")",
+             "MEDIUM", "A.5.9 §3",
+             "Plan — evidence requires verification before next audit",
+             _med, "276221")
+
+
+
+def create_approval_sheet(ws):
+    """Create the Approval Sign-Off sheet — Gold Standard (GS-AS-001..015)."""
+    thin = Side(style="thin")
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+    navy = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    blue = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+    yellow = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+
+    # Row 1: Title
+    ws.merge_cells("A1:E1")
+    ws["A1"] = "ASSESSMENT APPROVAL AND SIGN-OFF"
+    ws["A1"].font = Font(name="Calibri", bold=True, size=14, color="FFFFFF")
+    ws["A1"].fill = navy
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    for c in range(1, 6):
+        ws.cell(row=1, column=c).border = border
+    ws.row_dimensions[1].height = 35
+
+    # Row 2: Control reference
+    ws.merge_cells("A2:E2")
+    ws["A2"] = CONTROL_REF
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
+    ws["A2"].alignment = Alignment(horizontal="center", vertical="center")
+    for c in range(1, 6):
+        ws.cell(row=2, column=c).border = border
+
+    # Row 3: ASSESSMENT SUMMARY banner
+    ws.merge_cells("A3:E3")
+    ws["A3"] = "ASSESSMENT SUMMARY"
+    ws["A3"].font = Font(name="Calibri", bold=True, size=11, color="FFFFFF")
+    ws["A3"].fill = blue
+    for c in range(1, 6):
+        ws.cell(row=3, column=c).border = border
+
+    # Summary fields (rows 4-8); Overall Compliance Rating at B6 (GS-AS-015)
+    summary_fields = [
+        ("Document:", f"{DOCUMENT_ID} - {WORKBOOK_NAME}"),
+        ("Assessment Period:", ""),
+        ("Overall Compliance Rating:", "=IFERROR(AVERAGE('Summary Dashboard'!G6:G10),\"\")"),
+        ("Assessment Status:", ""),
+        ("Assessed By:", ""),
+    ]
     row = 4
-    ws.merge_cells(f'A{row}:F{row}')
-    ws[f'A{row}'] = "COMPLETION CHECKLIST"
-    ws[f'A{row}'].font = Font(size=12, bold=True, color='FFFFFF')
-    ws[f'A{row}'].fill = PatternFill(start_color='2E75B5', fill_type='solid')
-    ws[f'A{row}'].alignment = Alignment(horizontal='center', vertical='center')
-    row += 1
-    
-    for col_idx, header in enumerate(["Item", "Status", "Completed By", "Date", "Notes"], start=1):
-        ws.cell(row=row, column=col_idx, value=header)
-        ws.cell(row=row, column=col_idx).font = Font(size=11, bold=True, color='FFFFFF')
-        ws.cell(row=row, column=col_idx).fill = PatternFill(start_color='4472C4', fill_type='solid')
-    row += 1
-    
-    checklist_start = row
-    for item in checklist_items:
-        ws.cell(row=row, column=1, value=item)
-        ws.cell(row=row, column=1).font = Font(size=10)
-        for col in range(2, 6):
-            ws.cell(row=row, column=col).fill = PatternFill(start_color='FFF2CC', fill_type='solid')
-            ws.cell(row=row, column=col).protection = Protection(locked=False)
+    for label, value in summary_fields:
+        ws[f"A{row}"] = label
+        ws[f"A{row}"].font = Font(name="Calibri", bold=True)
+        ws.merge_cells(f"B{row}:E{row}")
+        ws[f"B{row}"] = value
+        if value == "":
+            ws[f"B{row}"].fill = yellow
+        for c in range(2, 6):
+            ws.cell(row=row, column=c).border = border
         row += 1
-    
-    from openpyxl.worksheet.datavalidation import DataValidation
-    status_options = [f"{CHECK} Complete", f"{CLOCK} In Progress", f"{XMARK} Not Done"]
-    dv = DataValidation(type="list", formula1=f'"{",".join(status_options)}"', allow_blank=True)
-    dv.add(f'B{checklist_start}:B{row-1}')
-    ws.add_data_validation(dv)
-    
-    row += 2
-    ws.merge_cells(f'A{row}:F{row}')
-    ws[f'A{row}'] = "APPROVALS"
-    ws[f'A{row}'].font = Font(size=12, bold=True, color='FFFFFF')
-    ws[f'A{row}'].fill = PatternFill(start_color='2E75B5', fill_type='solid')
-    ws[f'A{row}'].alignment = Alignment(horizontal='center', vertical='center')
-    row += 1
-    
-    for col_idx, header in enumerate(["Role", "Name", "Signature", "Date", "Comments"], start=1):
-        ws.cell(row=row, column=col_idx, value=header)
-        ws.cell(row=row, column=col_idx).font = Font(size=11, bold=True, color='FFFFFF')
-        ws.cell(row=row, column=col_idx).fill = PatternFill(start_color='4472C4', fill_type='solid')
-    row += 1
-    
-    for approver in ["Asset Management Lead", "Information Security Manager", "CISO"]:
-        ws.cell(row=row, column=1, value=approver)
-        ws.cell(row=row, column=1).font = Font(size=10, bold=True)
-        ws.cell(row=row, column=1).fill = PatternFill(start_color='D8E4F8', fill_type='solid')
-        for col in range(2, 6):
-            ws.cell(row=row, column=col).fill = PatternFill(start_color='FFF2CC', fill_type='solid')
-            ws.cell(row=row, column=col).protection = Protection(locked=False)
+    ws["B6"].number_format = "0.0%"  # GS-AS-015
+
+    # Assessment Status dropdown (row 7)
+    status_dv = DataValidation(
+        type="list",
+        formula1='"Draft,Final,Requires remediation,Re-assessment required"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(status_dv)
+    status_dv.add("B7")
+
+    # 3 Approver sections (start at row 11)
+    approvers = [
+        ("COMPLETED BY (ASSESSOR)", "4472C4"),
+        ("REVIEWED BY (INFORMATION SECURITY OFFICER)", "4472C4"),
+        ("APPROVED BY (CISO)", "003366"),
+    ]
+    row += 2  # row = 11
+    for title, color in approvers:
+        ws.merge_cells(f"A{row}:E{row}")
+        ws[f"A{row}"] = title
+        ws[f"A{row}"].font = Font(name="Calibri", bold=True, color="FFFFFF", size=11)
+        ws[f"A{row}"].fill = PatternFill(start_color=color, end_color=color, fill_type="solid")
+        for c in range(1, 6):
+            ws.cell(row=row, column=c).border = border
         row += 1
-    
-    ws.column_dimensions['A'].width = 40
-    ws.column_dimensions['B'].width = 18
-    ws.column_dimensions['C'].width = 18
-    ws.column_dimensions['D'].width = 15
-    ws.column_dimensions['E'].width = 30
+        for field in ["Name:", "Title:", "Date:", "Signature:", "Comments:"]:
+            ws[f"A{row}"] = field
+            ws[f"A{row}"].font = Font(name="Calibri", bold=True)
+            ws.merge_cells(f"B{row}:E{row}")
+            ws[f"B{row}"].fill = yellow
+            for c in range(2, 6):
+                ws.cell(row=row, column=c).border = border
+            row += 1
+        row += 1  # gap between approver sections
 
+    # FINAL DECISION (GS-AS-004/012: col A plain bold, no dark fill)
+    ws[f"A{row}"] = "FINAL DECISION:"
+    ws[f"A{row}"].font = Font(name="Calibri", bold=True)
+    ws.merge_cells(f"B{row}:E{row}")
+    ws[f"B{row}"].fill = yellow
+    for c in range(2, 6):
+        ws.cell(row=row, column=c).border = border
+    dv_dec = DataValidation(
+        type="list",
+        formula1='"Approved,Approved with Conditions,Rejected,Deferred"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(dv_dec)
+    dv_dec.add(f"B{row}")
 
+    # NEXT REVIEW DETAILS (GS-AS-005/013: 4472C4 banner, borders on all)
+    row += 3
+    ws.merge_cells(f"A{row}:E{row}")
+    ws[f"A{row}"] = "NEXT REVIEW DETAILS"
+    ws[f"A{row}"].font = Font(name="Calibri", bold=True, size=11, color="FFFFFF")
+    ws[f"A{row}"].fill = blue
+    for c in range(1, 6):
+        ws.cell(row=row, column=c).border = border
+    row += 1
+    for label in ["Next Review Date:", "Review Responsible:", "Special Considerations:"]:
+        ws[f"A{row}"] = label
+        ws[f"A{row}"].font = Font(name="Calibri", bold=True)
+        ws.merge_cells(f"B{row}:E{row}")
+        ws[f"B{row}"].fill = yellow
+        for c in range(2, 6):
+            ws.cell(row=row, column=c).border = border
+        row += 1
+
+    ws.column_dimensions["A"].width = 32
+    ws.column_dimensions["B"].width = 25
+    ws.column_dimensions["C"].width = 20
+    ws.column_dimensions["D"].width = 20
+    ws.column_dimensions["E"].width = 20
+    ws.freeze_panes = "A3"
+    logger.info("Created Approval Sign-Off sheet")
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
 
 # =============================================================================
-# QA_VERIFIED: 2026-01-31
-# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
-# QA_TOOL: Claude Code Standardization
-# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# QA_VERIFIED: 2026-03-01
+# QA_STATUS: PASSED
+# QA_TOOL: Claude Code Production Scripts QA Methodology
+# CHANGES: Full QA for Production Launch (see GitHub Repository for details)
 # =============================================================================

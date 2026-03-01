@@ -8,26 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Maintenance Schedule Tracking |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.12-13.S3-UG |
+| **Related Policy** | ISMS-POL-A.7.12-13 (Infrastructure Maintenance) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.13 (Equipment Maintenance) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Maintenance Schedule Tracking - Preventive Maintenance Planning, Schedule Compliance, Overdue Tracking |
-| **Related Policy** | ISMS-POL-A.7.12-13, Section 2.2.1 (Maintenance Programme) |
-| **Purpose** | Track preventive maintenance schedules, monitor compliance, identify overdue items, and ensure equipment reliability |
-| **Target Audience** | IT Operations, Facilities Management, System Administrators, Asset Managers, Compliance Officers |
-| **Assessment Type** | Operational Tracking |
-| **Review Cycle** | Monthly Review, Quarterly Full Assessment |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Maintenance Schedule Tracking workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.12-13 (Infrastructure Maintenance)
+- ISMS-IMP-A.7.12-13.S1 (Cabling Security Assessment)
+- ISMS-IMP-A.7.12-13.S2 (Equipment Maintenance Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.12-13.S3-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Equipment Schedule | Maintain scheduled maintenance calendar per equipment |
+| 3 | Overdue Tracking | Track and escalate overdue maintenance tasks |
+| 4 | Upcoming Maintenance | View upcoming maintenance in planning horizon |
+| 5 | Maintenance Log | Record completed maintenance activities and outcomes |
+| 6 | Evidence Register | Store and reference evidence supporting assessments |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -112,9 +140,7 @@ This workbook is an **operational tool** used on an ongoing basis, not a one-tim
 | ISMS-IMP-A.7.12-13.S1 | Cabling Security | Cable protection (separate tracking) |
 | ISMS-IMP-A.7.12-13.S2 | Equipment Maintenance | Overall maintenance programme assessment |
 | **ISMS-IMP-A.7.12-13.S3** | **Maintenance Schedule** | **Detailed schedule tracking tool** |
-| ISMS-IMP-A.7.12-13.S4 | Compliance Dashboard | Pulls schedule compliance metrics from S3 |
 
-This workbook (A.7.12-13.S3) is an **operational tracking tool** that supports the programme assessment in S2 and provides data to the compliance dashboard in S4.
 
 ### Who Should Use This Workbook
 
@@ -291,7 +317,6 @@ Using this workbook provides:
    ↓
 8. Verify decommissioned equipment removed
    ↓
-9. Prepare quarterly compliance report for S4 dashboard
    ↓
 10. Management review and sign-off
 ```
@@ -1038,7 +1063,6 @@ Using this workbook provides:
 - [ ] CMMS ticket references valid and accessible
 - [ ] Evidence storage locations confirmed accessible
 - [ ] Maintenance procedures referenced exist and are current
-- [ ] Integration with S4 Dashboard tested and working
 
 ### Data Integrity Checks
 
@@ -1082,7 +1106,6 @@ Using this workbook provides:
 3. Review vendor performance
 4. Verify evidence sample (10%)
 5. Check for recurring issues
-6. Update S4 Compliance Dashboard
 7. Present to IT Management
 8. Document improvement actions
 
@@ -1113,7 +1136,7 @@ Using this workbook provides:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A scheduled maintenance is a prevented disaster."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

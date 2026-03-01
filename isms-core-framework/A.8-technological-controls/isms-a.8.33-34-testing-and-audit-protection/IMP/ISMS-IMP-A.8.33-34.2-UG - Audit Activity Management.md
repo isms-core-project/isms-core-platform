@@ -3,6 +3,40 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Controls A.8.33: Test Information & A.8.34: Protection of Information Systems During Audit Testing
 
+---
+
+**Document Control**
+
+| Attribute | Value |
+|-------|-------|
+| **Document Title** | Audit Activity Management |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.33-34.2-UG |
+| **Related Policy** | ISMS-POL-A.8.33-34 (Testing and Audit Protection) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.33 (Test Information) & A.8.34 (Protection of Information Systems During Audit Testing) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.33-34 (Testing and Audit Protection)
+- ISMS-IMP-A.8.33-34.1 (Test Data Protection)
+
+---
+
 ### ISO/IEC 27001:2022 Controls A.8.33: Test Information & A.8.34: Protection of Information Systems During Audit Testing
 
 ---
@@ -15,7 +49,7 @@
 | **Version** | 1.0 |
 | **Assessment Area** | Audit Activity Governance & System Protection |
 | **Related Policy** | ISMS-POL-A.8.33-34, Section 2.2 (Audit Activity Management) |
-| **Purpose** | Assess organizational compliance with audit testing governance including activity planning, tool authorization, access control, disruption mitigation, and evidence protection |
+| **Purpose** | Assess organisational compliance with audit testing governance including activity planning, tool authorisation, access control, disruption mitigation, and evidence protection |
 | **Target Audience** | Internal Audit, External Auditors, IT Security, Penetration Testers, Compliance Officers, IT Operations, Risk Management, Legal |
 | **Assessment Type** | Process & Operational Compliance |
 | **Review Cycle** | Annual (minimum) or After Major Audits |
@@ -33,21 +67,37 @@
 
 ---
 
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Audit Activity Register | Registry of all planned and completed audit activities |
+| 3 | Audit Tool Authorisation | Governance of audit tools and testing techniques |
+| 4 | Audit Access Tracking | Track access granted during audit activities |
+| 5 | Disruption Mitigation Plans | Plans to mitigate system disruption during audits |
+| 6 | Audit Evidence Protection | Assess protection of audit evidence and findings |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
+
+---
+
 # Assessment Overview
 
 ## What This Assessment Measures
 
-This assessment evaluates [Organization]'s implementation of **audit testing governance and system protection mechanisms** to ensure compliance with ISO/IEC 27001:2022 Control A.8.34 (Protection of Information Systems During Audit Testing) and related requirements for protecting operational systems during assurance activities.
+This assessment evaluates [Organisation]'s implementation of **audit testing governance and system protection mechanisms** to ensure compliance with ISO/IEC 27001:2022 Control A.8.34 (Protection of Information Systems During Audit Testing) and related requirements for protecting operational systems during assurance activities.
 
 **Scope:** Complete audit activity lifecycle management across 5 critical areas:
 
 1. **Audit Activity Register** - Registry of all planned and completed audit activities
-2. **Audit Tool Authorization** - Governance of audit tools and testing techniques
+2. **Audit Tool Authorisation** - Governance of audit tools and testing techniques
 3. **Audit Access Tracking** - Management of auditor access to systems and data
 4. **Disruption Mitigation Plans** - Protection measures for production systems during testing
 5. **Audit Evidence Protection** - Secure handling and retention of audit evidence
 
-**Assessment Output:** Excel workbook with ~200-300 data points documenting current audit governance posture, tool authorization status, access controls, system protection measures, and remediation plans for identified gaps.
+**Assessment Output:** Excel workbook with ~200-300 data points documenting current audit governance posture, tool authorisation status, access controls, system protection measures, and remediation plans for identified gaps.
 
 ## Why This Matters
 
@@ -60,7 +110,7 @@ This assessment evaluates [Organization]'s implementation of **audit testing gov
 - Ensure audit tools do not introduce security vulnerabilities
 - Maintain confidentiality of sensitive information accessed during audits
 - Protect audit evidence integrity
-- Ensure proper authorization for all testing activities
+- Ensure proper authorisation for all testing activities
 
 **Regulatory Context:**
 
@@ -84,9 +134,9 @@ This assessment evaluates [Organization]'s implementation of **audit testing gov
 
 **Required Knowledge:**
 
-- [Organization]'s complete audit program and schedule
+- [Organisation]'s complete audit program and schedule
 - Penetration testing and vulnerability assessment practices
-- Audit tool inventory and authorization processes
+- Audit tool inventory and authorisation processes
 - Access control mechanisms for audit activities
 - Evidence handling and retention procedures
 
@@ -105,7 +155,7 @@ This assessment evaluates [Organization]'s implementation of **audit testing gov
 **Breakdown:**
 
 - **Audit Activity Register (2-3 hours):** Document all planned and completed audits
-- **Tool Authorization Review (2-3 hours):** Assess audit tool governance
+- **Tool Authorisation Review (2-3 hours):** Assess audit tool governance
 - **Access Control Assessment (1-2 hours):** Document auditor access management
 - **Disruption Mitigation (1-2 hours):** Review system protection measures
 - **Evidence Protection (1-2 hours):** Assess evidence handling procedures
@@ -115,7 +165,7 @@ This assessment evaluates [Organization]'s implementation of **audit testing gov
 
 This assessment implements **ISMS-POL-A.8.33-34, Section 2.2 (Audit Activity Management)** which defines mandatory requirements for:
 
-- **Audit Planning:** All audit activities must be planned and authorized
+- **Audit Planning:** All audit activities must be planned and authorised
 - **Tool Control:** Audit tools must be approved before use
 - **Access Management:** Auditor access must be controlled and logged
 - **System Protection:** Production systems must be protected during testing
@@ -162,7 +212,7 @@ Complete these tasks before beginning the assessment:
 
 - [ ] **Gather annual audit plan** and schedule
 - [ ] **Collect penetration testing** scoping documents and reports
-- [ ] **Review audit tool inventory** and authorization records
+- [ ] **Review audit tool inventory** and authorisation records
 - [ ] **Document auditor access** request and approval processes
 - [ ] **Identify any audit-related incidents** in last 12 months
 - [ ] **Review evidence retention** policies and storage
@@ -178,7 +228,7 @@ Complete these tasks before beginning the assessment:
 ```
 Step 1: Audit Activity Register (Sheet 2)
    |
-Step 2: Audit Tool Authorization (Sheet 3)
+Step 2: Audit Tool Authorisation (Sheet 3)
    |
 Step 3: Audit Access Tracking (Sheet 4)
    |
@@ -225,20 +275,20 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Quality Check:**
 
 - Are ALL planned audit activities documented?
-- Is every audit authorized by management?
+- Is every audit authorised by management?
 - Are audit scopes clearly defined?
 - Are start/end dates accurate?
 
-### Step 2: Audit Tool Authorization (Sheet 3)
+### Step 2: Audit Tool Authorisation (Sheet 3)
 
-**Objective:** Track authorization and control of audit testing tools
+**Objective:** Track authorisation and control of audit testing tools
 
 **Instructions:**
 1. List all audit tools in Column A (e.g., "Nessus", "Burp Suite", "Nmap", "Metasploit")
 2. Classify Tool Category in Column B (Vulnerability Scanner, Penetration Tool, Network Analyzer, Forensic Tool)
 3. Document Tool Owner in Column C (who is responsible for the tool)
-4. Record Authorization Status in Column D (Authorized, Pending, Unauthorized, Prohibited)
-5. Specify Authorized Use Cases in Column E (what the tool may be used for)
+4. Record Authorisation Status in Column D (Authorised, Pending, Unauthorised, Prohibited)
+5. Specify Authorised Use Cases in Column E (what the tool may be used for)
 6. Document Version/Configuration in Column F
 7. Record Last Security Review in Column G
 8. Identify Risk Level in Column H (High, Medium, Low)
@@ -254,7 +304,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - **Forensic Tools:** EnCase, FTK, Autopsy
 - **Credential Testing:** John the Ripper, Hashcat, Hydra
 
-**Authorization Requirements:**
+**Authorisation Requirements:**
 
 - Tool purpose and use cases defined
 - Security review of tool completed
@@ -265,7 +315,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Quality Check:**
 
 - Are ALL audit tools in use documented?
-- Is every tool properly authorized?
+- Is every tool properly authorised?
 - Are high-risk tools subject to additional controls?
 - Are tool versions and configurations current?
 
@@ -306,7 +356,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Quality Check:**
 
 - Is every auditor access grant documented?
-- Are all access grants properly authorized?
+- Are all access grants properly authorised?
 - Is access revoked promptly after audit completion?
 - Are access activities logged?
 
@@ -406,7 +456,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Evidence Types:**
 
 - **Policy Documents:** Audit policies, testing procedures
-- **Authorization Records:** Audit approvals, tool authorizations
+- **Authorisation Records:** Audit approvals, tool authorisations
 - **Access Records:** Access request forms, access logs
 - **Mitigation Plans:** System protection documentation
 - **Audit Reports:** Completed audit deliverables
@@ -419,7 +469,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 **The Summary Dashboard auto-calculates:**
 
 - Overall audit governance compliance percentage
-- Count of authorized vs. unauthorized audits/tools
+- Count of authorised vs. unauthorised audits/tools
 - Critical gaps requiring immediate attention
 - Access control compliance status
 - Evidence protection status
@@ -432,7 +482,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Self-Check Before Submitting for Approval:**
 
 - [ ] All audit activities documented
-- [ ] All audit tools authorized
+- [ ] All audit tools authorised
 - [ ] All auditor access tracked
 - [ ] Disruption mitigation plans in place
 - [ ] Evidence protection measures documented
@@ -460,16 +510,16 @@ A: Document continuous monitoring programs as ongoing activities with annual rev
 **Q: How do we handle multi-phase audits?**
 A: Document as single audit entry with overall scope, or separate entries for distinct phases if they have different scopes/teams.
 
-## Audit Tool Authorization (Sheet 3)
+## Audit Tool Authorisation (Sheet 3)
 
 **Q: What about built-in OS tools like ping, traceroute?**
-A: Document only tools that could cause harm or access sensitive data. Standard diagnostic tools typically don't need authorization.
+A: Document only tools that could cause harm or access sensitive data. Standard diagnostic tools typically don't need authorisation.
 
-**Q: Who authorizes audit tools?**
-A: IT Security should authorize tools based on risk assessment. High-risk tools (exploitation frameworks) may require CISO approval.
+**Q: Who authorises audit tools?**
+A: IT Security should authorise tools based on risk assessment. High-risk tools (exploitation frameworks) may require CISO approval.
 
 **Q: What about auditor-provided tools?**
-A: External auditors must submit tools for review before use. Document in authorization register with "External Auditor" as requestor.
+A: External auditors must submit tools for review before use. Document in authorisation register with "External Auditor" as requestor.
 
 ## Audit Access Tracking (Sheet 4)
 
@@ -500,12 +550,12 @@ A: Activate incident response, notify audit sponsor, implement rollback. Documen
 
 - Annual audit plan and schedule
 - Audit engagement letters
-- Management authorization emails
+- Management authorisation emails
 - Audit completion reports
 
-**Tool Authorization:**
+**Tool Authorisation:**
 
-- Tool authorization request forms
+- Tool authorisation request forms
 - Tool security assessments
 - Configuration documentation
 - Usage policies
@@ -534,7 +584,7 @@ A: Activate incident response, notify audit sponsor, implement rollback. Documen
 ## Audit-Readiness Tips
 
 **What Auditors Will Look For:**
-1. **Authorization:** Is every audit activity authorized?
+1. **Authorisation:** Is every audit activity authorised?
 2. **Tool Control:** Are audit tools properly governed?
 3. **Access Management:** Is auditor access controlled and logged?
 4. **System Protection:** Are production systems protected during testing?
@@ -542,8 +592,8 @@ A: Activate incident response, notify audit sponsor, implement rollback. Documen
 
 **Common Audit Findings (And How to Avoid Them):**
 
-- "Unauthorized penetration testing" - Implement authorization workflow
-- "Audit tools not inventoried" - Complete tool authorization register
+- "Unauthorised penetration testing" - Implement authorisation workflow
+- "Audit tools not inventoried" - Complete tool authorisation register
 - "Auditor access not revoked" - Implement automatic expiration
 - "No disruption mitigation for critical systems" - Document protection plans
 - "Audit evidence not encrypted" - Implement encryption requirements
@@ -554,7 +604,7 @@ A: Activate incident response, notify audit sponsor, implement rollback. Documen
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"An audit is only as credible as the independence of those conducting it."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

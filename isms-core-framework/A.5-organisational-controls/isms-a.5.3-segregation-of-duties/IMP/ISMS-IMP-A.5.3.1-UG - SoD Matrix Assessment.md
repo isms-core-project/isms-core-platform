@@ -7,15 +7,34 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | SoD Matrix Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.3.1-UG |
+| **Related Policy** | ISMS-POL-A.5.3 (Segregation of Duties) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.3 (Policies for Segregation of Duties) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.3 Segregation of Duties |
-| **Parent Policy** | ISMS-POL-A.5.3 - Segregation of Duties |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.3 (Segregation of Duties)
+- ISMS-IMP-A.5.3.2 (Conflict Analysis)
+- ISMS-IMP-A.5.3.3 (Role-Function Mapping)
 
 ---
 
@@ -84,6 +103,22 @@ A well-maintained SoD matrix delivers:
 | Gap Status Update | Monthly | Remediation progress tracking |
 | Exception Review | Quarterly | Compensating control effectiveness |
 | Ad-hoc Review | As needed | Incident investigation, audit finding |
+
+### Workbook at a Glance
+
+This workbook contains the following sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, status definitions, and field descriptions |
+| **Role Inventory** | Catalogue of all organisational roles in scope for assessment |
+| **Conflict Matrix** | Role-by-role conflict definitions (X / C / M classifications) |
+| **Current Assignments** | Current role assignments per person |
+| **Gap Analysis** | Identified conflicts based on current assignments vs conflict matrix |
+| **Remediation Tracker** | Action plans to resolve identified gaps |
+| **Exception Register** | Formal exceptions where full SoD is not feasible |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -481,6 +516,12 @@ Per ISO 27001 guidance, when segregation is not possible:
 | EXC-2026-001 | GAP-2026-002 | Finance team of 3; cannot separate GL and AP | Enhanced logging, CFO weekly review, Internal Audit quarterly | 10.05.2026 | Active |
 | EXC-2026-002 | GAP-2026-004 | Emergency access for on-call engineer | All access logged, reviewed within 24hrs, time-limited to incident | N/A (per incident) | Active |
 
+### After Completing the Data Sheets
+
+Once Steps 1–6 are complete, open the **Summary Dashboard** sheet. It automatically calculates compliance scores, highlights open gaps, and provides an executive summary of your organisation's SoD posture. Review the dashboard before initiating the sign-off workflow to confirm all critical findings are captured and the compliance indicators accurately reflect your current state.
+
+> **Note:** The Summary Dashboard is read-only — all data entry is performed in the sheets above. If any metrics look incorrect, return to the relevant sheet and verify the data entered.
+
 ---
 
 ## Evidence Collection
@@ -783,7 +824,7 @@ Upon approval:
 4. Communicate any identified gaps to relevant parties
 5. Initiate remediation tracking for all open gaps
 6. Set calendar reminders for exception reviews
-7. Update related controls (A.5.3.2, A.5.3.4) as needed
+7. Update related controls (A.5.3.2 and A.5.3.3) as needed
 
 ---
 
@@ -791,7 +832,7 @@ Upon approval:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"No one should be judge in his own cause."*
+— Nemo judex in causa sua
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

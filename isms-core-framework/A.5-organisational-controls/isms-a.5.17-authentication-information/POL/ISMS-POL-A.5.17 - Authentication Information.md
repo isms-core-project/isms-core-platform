@@ -43,21 +43,19 @@
 - ISMS-IMP-A.5.17.1-UG/TG (Password Policy Implementation Guide)
 - ISMS-IMP-A.5.17.2-UG/TG (MFA Deployment Assessment)
 - ISMS-IMP-A.5.17.3-UG/TG (Authentication Management Procedures)
-- ISMS-IMP-A.5.17.4-UG/TG (Compliance and Audit Dashboard)
-- ISMS-IMP-A.5.17.5-UG/TG (Consolidation Dashboard)
 - ISO/IEC 27001:2022 Control A.5.17
 
 ---
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for the management and protection of authentication information to prevent unauthorized access to information systems and data.
+This policy establishes [Organisation]'s requirements for the management and protection of authentication information to prevent unauthorised access to information systems and data.
 
-**Scope**: This policy applies to all authentication information including passwords, PINs, cryptographic keys, tokens, biometric templates, and other authentication secrets used to access [Organization]'s systems and data.
+**Scope**: This policy applies to all authentication information including passwords, PINs, cryptographic keys, tokens, biometric templates, and other authentication secrets used to access [Organisation]'s systems and data.
 
-**Purpose**: Define organizational requirements for authentication information management. This policy establishes WHAT authentication controls are required and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.17 (UG/TG variants).
+**Purpose**: Define organisational requirements for authentication information management. This policy establishes WHAT authentication controls are required and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.17 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS v4.0.1, NIS2, DORA) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS v4.0.1, NIS2, DORA) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -73,11 +71,11 @@ Authentication information is issued, managed, protected, and revoked through de
 
 - Ensure authentication information is securely allocated through verified processes
 - Protect authentication information throughout its lifecycle
-- Prevent unauthorized access through credential compromise
+- Prevent unauthorised access through credential compromise
 - Maintain accountability for authentication credential usage
 
 **Control Type**: Preventive
-**Control Category**: Organizational
+**Control Category**: Organisational
 
 **This Policy Addresses**:
 
@@ -122,7 +120,7 @@ This policy does NOT:
 
 **Out of Scope**:
 
-- Personal accounts unrelated to organizational systems
+- Personal accounts unrelated to organisational systems
 - Authentication mechanism design and engineering (covered by A.8.5)
 - Cryptographic key management lifecycle (key generation standards, cryptographic parameters, HSM/KMS controls, enterprise PKI operations) - governed by ISMS-POL-A.8.24
 
@@ -160,7 +158,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - OWASP Authentication Guidelines
 - Microsoft Security Baseline recommendations
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent authentication requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent authentication requirements apply where multiple regulations overlap.
 
 ---
 
@@ -170,7 +168,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ### Initial Allocation Requirements
 
-[Organization] SHALL allocate authentication information through controlled processes:
+[Organisation] SHALL allocate authentication information through controlled processes:
 
 **Identity Verification**:
 
@@ -195,7 +193,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ### Default Credential Management
 
-[Organization] SHALL NOT use default authentication information:
+[Organisation] SHALL NOT use default authentication information:
 
 - All vendor/manufacturer default passwords SHALL be changed before production deployment
 - Default accounts SHALL be disabled or renamed where technically feasible
@@ -207,7 +205,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ### Password Complexity Standards
 
-[Organization] SHALL enforce the following password requirements:
+[Organisation] SHALL enforce the following password requirements:
 
 | Requirement | Standard Access | Privileged Access | Service Accounts |
 |-------------|-----------------|-------------------|------------------|
@@ -219,7 +217,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Character Types**: Uppercase, lowercase, numbers, special characters.
 
-**Password Age Justification**: Time-based rotation is supplemented by event-based rotation triggers: (1) suspected compromise, (2) shared credential discovery, (3) absence of MFA protection, (4) personnel role change affecting access scope. Where strong MFA and continuous monitoring are verified, rotation may be extended via documented exception with CISO approval. The specified intervals (60/90 days) reflect [Organization]'s risk treatment decisions balancing security with usability.
+**Password Age Justification**: Time-based rotation is supplemented by event-based rotation triggers: (1) suspected compromise, (2) shared credential discovery, (3) absence of MFA protection, (4) personnel role change affecting access scope. Where strong MFA and continuous monitoring are verified, rotation may be extended via documented exception with CISO approval. The specified intervals (60/90 days) reflect [Organisation]'s risk treatment decisions balancing security with usability.
 
 ### Prohibited Password Practices
 
@@ -234,7 +232,7 @@ Personnel SHALL NOT:
 
 ### Password Storage
 
-[Organization] SHALL store passwords securely:
+[Organisation] SHALL store passwords securely:
 
 - Passwords SHALL be stored using approved one-way cryptographic hashing with salt
 - Password hashing algorithms: bcrypt, Argon2, PBKDF2 (with appropriate parameters)
@@ -245,7 +243,7 @@ Personnel SHALL NOT:
 
 ### MFA Requirements
 
-[Organization] SHALL require multi-factor authentication for:
+[Organisation] SHALL require multi-factor authentication for:
 
 | Access Type | MFA Requirement |
 |-------------|-----------------|
@@ -302,7 +300,7 @@ Shared authentication information is DISCOURAGED. Where required:
 - Check-out logging with user identification and timestamp
 - Session recording for privileged shared accounts where technically feasible
 - Individual accountability maintained through audit logging
-- Quarterly review of access and usage; annual reauthorization required
+- Quarterly review of access and usage; annual reauthorisation required
 - Procedures documented in ISMS-IMP-A.5.17
 
 ## Password Reset and Recovery
@@ -415,17 +413,17 @@ Nonconformities related to this policy (e.g., weak password configurations, MFA 
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
-- Authentication controls selected based on [Organization]'s risk assessment
+- Authentication controls selected based on [Organisation]'s risk assessment
 - Credential compromise threats inform password and MFA requirements
 - Risk treatment plans document authentication control implementation
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Control A.5.17 applicability justified in [Organization]'s SoA
+- Control A.5.17 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 
 **Related Controls**:
@@ -525,4 +523,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for authentication information management. Implementation procedures are documented in ISMS-IMP-A.5.17 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

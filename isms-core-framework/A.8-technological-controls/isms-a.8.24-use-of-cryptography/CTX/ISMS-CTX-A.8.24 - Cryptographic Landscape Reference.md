@@ -76,7 +76,7 @@ This document provides a technical overview of the cryptographic algorithm lands
 
 This document does NOT:
 
-- Define [Organization]'s approved or prohibited algorithms
+- Define [Organisation]'s approved or prohibited algorithms
 - Establish mandatory implementation requirements
 - Create compliance obligations or audit criteria
 - Replace ISMS-POL-A.8.24 policy requirements
@@ -89,9 +89,9 @@ This document is a **non-binding technical reference**. All cryptographic contro
 
 Implementation decisions are documented through separate procedures based on risk assessment, operational context, and regulatory requirements.
 
-## Content Organization
+## Content Organisation
 
-This reference organizes cryptographic algorithms by function:
+This reference organises cryptographic algorithms by function:
 
 - Symmetric encryption (data confidentiality)
 - Asymmetric encryption (key exchange, digital signatures)
@@ -252,7 +252,7 @@ Specialized functions for password storage:
 # TLS/SSL Cipher Suites
 
 **Important Note on Cipher Suite Listings**:
-The TLS cipher suite examples below are illustrative and non-exhaustive. They are provided to explain common industry constructions and naming conventions only. They do not represent approved, required, or expected configurations within [Organization].
+The TLS cipher suite examples below are illustrative and non-exhaustive. They are provided to explain common industry constructions and naming conventions only. They do not represent approved, required, or expected configurations within [Organisation].
 
 ## TLS 1.3 Cipher Suites
 
@@ -390,7 +390,7 @@ CA/Browser Forum Ballot SC-081v3 (passed April 2025):
 - Shorter lifetimes increase importance of automated lifecycle management
 - Private/internal PKI not subject to CA/Browser Forum requirements
 
-**Note on Internal PKI**: Internal certificate policies are determined by risk assessment and operational context and are not derived automatically from public-trust requirements. Organizations may choose shorter or longer lifetimes based on their specific security posture and operational needs.
+**Note on Internal PKI**: Internal certificate policies are determined by risk assessment and operational context and are not derived automatically from public-trust requirements. Organisations may choose shorter or longer lifetimes based on their specific security posture and operational needs.
 
 ---
 
@@ -398,7 +398,7 @@ CA/Browser Forum Ballot SC-081v3 (passed April 2025):
 
 ## Authoritative Standards Bodies
 
-| Organization | Focus Area | Key Publications |
+| Organisation | Focus Area | Key Publications |
 |--------------|------------|------------------|
 | **NIST** (National Institute of Standards and Technology) | Cryptographic standards (US) | FIPS 140-2/3, SP 800-series |
 | **BSI** (Bundesamt für Sicherheit in der Informationstechnik) | Cryptographic standards (Germany) | TR-02102-1 through TR-02102-4 |
@@ -440,7 +440,7 @@ CA/Browser Forum Ballot SC-081v3 (passed April 2025):
 
 ## Algorithm Deprecation Tracking
 
-Organizations commonly monitor algorithm status through:
+Organisations commonly monitor algorithm status through:
 
 - NIST Cryptographic Algorithm Validation Program (CAVP)
 - NIST Deprecated Algorithm List
@@ -484,7 +484,7 @@ This document does NOT:
 - Override or extend ISMS-POL-A.8.24 requirements
 - Establish mandatory algorithm selections
 - Create compliance obligations
-- Define approved/prohibited algorithms for [Organization]
+- Define approved/prohibited algorithms for [Organisation]
 
 All cryptographic control requirements are defined exclusively in ISMS-POL-A.8.24 and implemented through separate procedures based on risk assessment and operational context.
 

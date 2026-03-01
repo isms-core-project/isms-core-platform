@@ -51,7 +51,7 @@ requirements.
 **Purpose:**
 Enables systematic assessment of Development, Test/QA, and Production environment
 isolation, access controls, data protection measures, and change promotion
-workflows to prevent unauthorized changes to production systems.
+workflows to prevent unauthorised changes to production systems.
 
 **Assessment Scope:**
 - Development environment configuration and access controls
@@ -82,10 +82,8 @@ workflows to prevent unauthorized changes to production systems.
 - Production data protection in non-prod environments (Control 8.33)
 - Automated compliance calculations
 - Evidence linkage for audit traceability
-- Integration with A.8.32.5 Compliance Dashboard
 
 **Integration:**
-This assessment feeds into the A.8.32.5 Compliance Dashboard and integrates
 with related controls 8.31 (Separation of Environments) and 8.33 (Test Information).
 
 --------------------------------------------------------------------------------
@@ -126,7 +124,6 @@ Post-Generation Steps:
     5. Review access segregation between environments
     6. Assess production data usage in test environments
     7. Review Summary Dashboard for compliance metrics
-    8. Feed results into A.8.32.5 Compliance Dashboard
 
 --------------------------------------------------------------------------------
 METADATA
@@ -148,7 +145,6 @@ Related Documents:
     - ISMS-IMP-A.8.32.1: Change Process Assessment (Domain 1)
     - ISMS-IMP-A.8.32.2: Change Types & Categories Assessment (Domain 2)
     - ISMS-IMP-A.8.32.4: Testing & Validation Assessment (Domain 4)
-    - ISMS-IMP-A.8.32.5: Compliance Dashboard (Consolidation)
     - ISMS-POL-A.8.31: Separation of Development, Test and Production Environments
 
 --------------------------------------------------------------------------------
@@ -159,7 +155,6 @@ Version 1.0 - [Date to be set]
     - Initial release
     - Implements full assessment framework per ISMS-IMP-A.8.32.3 specification
     - Supports comprehensive environment separation evaluation
-    - Integrated with A.8.32.5 Compliance Dashboard
 
 [Future changes to be documented here]
 
@@ -189,13 +184,14 @@ and data protection measures in non-production environments.
 """
 
 # =============================================================================
-# Standard Library Imports
+# STANDARD LIBRARY IMPORTS
 # =============================================================================
 import logging
+from pathlib import Path
 import sys
 
 # =============================================================================
-# Logging Configuration
+# LOGGING CONFIGURATION
 # =============================================================================
 logging.basicConfig(
     level=logging.INFO,
@@ -215,23 +211,26 @@ CONTROL_ID = "A.8.32"
 CONTROL_NAME = "Change Management"
 CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
 
+# Row configuration
+MAX_DATA_ROWS = 50  # Standard maximum data rows per DS-005
+
 # Timestamps
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
-GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
 
 # Output filename
 OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
+_wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+_wkbk_dir.mkdir(exist_ok=True)
 
 
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.utils import get_column_letter
-from openpyxl.worksheet.datavalidation import DataValidation
-
-
-# ============================================================================
-# SECTION 1: WORKBOOK CREATION & STYLE DEFINITIONS
-# ============================================================================
+try:
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+    from openpyxl.utils import get_column_letter
+    from openpyxl.worksheet.datavalidation import DataValidation
+except ImportError:
+    sys.exit("Error: openpyxl not installed. Install with: pip install openpyxl")
 
 
 # ============================================================================
@@ -240,25 +239,26 @@ from openpyxl.worksheet.datavalidation import DataValidation
 
 CHECK = '\u2705'      # ✅ Green checkmark
 XMARK = '\u274C'      # ❌ Red X
-WARNING = '\u26A0'    # ⚠️  Warning sign
-CHART = '\U0001F4CA' # 📊 Chart
-TARGET = '\U0001F3AF' # 🎯 Target
-SHIELD = '\U0001F6E1' # 🛡️  Shield
-LOCK = '\U0001F512'   # 🔒 Lock
-CLOCK = '\U0001F552'  # 🕒 Clock
-WRENCH = '\U0001F527' # 🔧 Wrench
-ROCKET = '\U0001F680' # 🚀 Rocket
-GEAR = '\u2699'       # ⚙️  Gear
+WARNING = '\u26A0'    # ⚠  Warning sign
+GEAR = '\u2699'       # ⚙  Gear
 BULLET = '\u2022'     # • Bullet point
 ARROW = '\u2192'      # → Right arrow
+
+# ============================================================================
+# SECTION 1: WORKBOOK CREATION & STYLE DEFINITIONS
+# ============================================================================
 
 def create_workbook() -> Workbook:
     """Create workbook with all required sheets matching IMP-A.8.32.3 spec."""
     wb = Workbook()
+    wb.properties.title = f"{DOCUMENT_ID} — {WORKBOOK_NAME}"
+    wb.properties.subject = f"ISO/IEC 27001:2022 — Control {CONTROL_ID}: {CONTROL_NAME}"
+    wb.properties.creator = "ISMS Core Contributors"
+    wb.properties.description = f"ISMS Implementation Workbook — {DOCUMENT_ID}"
 
     # Remove default sheet
     if "Sheet" in wb.sheetnames:
-        wb.remove(wb["Sheet"])
+        wb.remove(wb.active)
 
     # Sheet structure matches ISMS-IMP-A.8.32.3 specification (10 sheets)
     sheets = [
@@ -299,12 +299,12 @@ def setup_styles():
         },
         "subheader": {
             "font": Font(name="Calibri", size=11, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid"),
+            "fill": PatternFill(start_color="003366", end_color="003366", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
         },
         "section_header": {
             "font": Font(name="Calibri", size=11, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid"),
+            "fill": PatternFill(start_color="003366", end_color="003366", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
         },
         "column_header": {
@@ -319,7 +319,7 @@ def setup_styles():
             "border": border_thin,
         },
         "calculated_cell": {
-            "fill": PatternFill(start_color="E0E0E0", end_color="E0E0E0", fill_type="solid"),
+            "fill": PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center"),
             "border": border_thin,
         },
@@ -328,6 +328,8 @@ def setup_styles():
     return styles
 
 
+
+_STYLES = setup_styles()
 def apply_style(cell, style_dict):
     """
     Apply style dictionary to a cell.
@@ -379,22 +381,22 @@ def create_base_validations(ws):
         ),
         'yes_partial_no': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Yes,⚠️ Partial,❌ No"',
+            formula1=f'"{CHECK} Yes,⚠ Partial,❌ No"',
             allow_blank=False
         ),
         'yes_partial_no_na': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Yes,⚠️ Partial,❌ No,N/A"',
+            formula1=f'"{CHECK} Yes,⚠ Partial,❌ No,N/A"',
             allow_blank=False
         ),
         'implementation_status': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Implemented,⚠️ Partial,❌ Not Implemented,📋 Planned,N/A"',
+            formula1=f'"{CHECK} Implemented,⚠ Partial,❌ Not Implemented, Planned,N/A"',
             allow_blank=False
         ),
         'compliance_status': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Compliant,⚠️ Partial,❌ Non-Compliant,📋 Pending"',
+            formula1=f'"{CHECK} Compliant,⚠ Partial,❌ Non-Compliant, Pending"',
             allow_blank=False
         ),
         'environment_type': DataValidation(
@@ -419,12 +421,12 @@ def create_base_validations(ws):
         ),
         'mfa_required': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Yes - All Access,✅ Yes - Production Only,⚠️ Partial,❌ No"',
+            formula1=f'"{CHECK} Yes - All Access,✅ Yes - Production Only,⚠ Partial,❌ No"',
             allow_blank=False
         ),
         'approval_required': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Yes - Manager,✅ Yes - Security,✅ Yes - Both,⚠️ Informal,❌ No"',
+            formula1=f'"{CHECK} Yes - Manager,✅ Yes - Security,✅ Yes - Both,⚠ Informal,❌ No"',
             allow_blank=False
         ),
         'access_review_frequency': DataValidation(
@@ -454,37 +456,37 @@ def create_base_validations(ws):
         ),
         'testing_required': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Mandatory,⚠️ Recommended,❌ Optional"',
+            formula1=f'"{CHECK} Mandatory,⚠ Recommended,❌ Optional"',
             allow_blank=False
         ),
         'rollback_capability': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Automated,⚠️ Manual,❌ Limited,❌ None"',
+            formula1=f'"{CHECK} Automated,⚠ Manual,❌ Limited,❌ None"',
             allow_blank=False
         ),
         'evidence_type': DataValidation(
             type="list",
-            formula1='"Network Diagram,Access Matrix,Procedure,Config Export,Policy,Approval,Test Results,Audit Report,Other"',
-            allow_blank=False
+            formula1='"Change Request,Policy Document,Process Record,System Screenshot,Configuration Export,Audit Log,Training Record,Test Result,Risk Assessment,Meeting Minutes,Other,N/A"',
+            allow_blank=True
         ),
         'verification_status': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Verified,⚠️ Pending,❌ Not Verified"',
+            formula1=f'"{CHECK} Verified,⚠ Pending,❌ Not Verified"',
             allow_blank=False
         ),
         'assessment_status': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Final,⚠️ Requires Remediation,📋 Draft,❌ Re-assessment Required"',
+            formula1=f'"{CHECK} Final,⚠ Requires Remediation, Draft,❌ Re-assessment Required"',
             allow_blank=False
         ),
         'review_recommendation': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Approve,⚠️ Approve with Conditions,❌ Reject,📋 Require Rework"',
+            formula1=f'"{CHECK} Approve,⚠ Approve with Conditions,❌ Reject, Require Rework"',
             allow_blank=False
         ),
         'approval_decision': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Approved,⚠️ Approved with Conditions,❌ Rejected"',
+            formula1=f'"{CHECK} Approved,⚠ Approved with Conditions,❌ Rejected"',
             allow_blank=False
         ),
         'backup_frequency': DataValidation(
@@ -494,17 +496,17 @@ def create_base_validations(ws):
         ),
         'monitoring_level': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Comprehensive,⚠️ Basic,❌ Minimal,❌ None"',
+            formula1=f'"{CHECK} Comprehensive,⚠ Basic,❌ Minimal,❌ None"',
             allow_blank=False
         ),
         'dpo_approval': DataValidation(
             type="list",
-            formula1=f'"{CHECK} With Approval,⚠️ Pending,❌ Not Required,❌ Required but Missing"',
+            formula1=f'"{CHECK} With Approval,⚠ Pending,❌ Not Required,❌ Required but Missing"',
             allow_blank=False
         ),
         'usage_justification': DataValidation(
             type="list",
-            formula1=f'"{CHECK} Primary,⚠️ Supplemental,❌ Not Used"',
+            formula1=f'"{CHECK} Primary,⚠ Supplemental,❌ Not Used"',
             allow_blank=False
         ),
     }
@@ -512,212 +514,88 @@ def create_base_validations(ws):
     return validations
 
 
-def finalize_validations(ws, validations):
-    """Add only data validations that have cells assigned to avoid Excel repair."""
-    for dv in validations.values():
-        if dv.sqref:
-            ws.add_data_validation(dv)
-
-
+def finalize_validations(wb):
+    """Ensure all data validations are properly finalised for all worksheets."""
+    for ws in wb.worksheets:
+        for dv in ws.data_validations.dataValidation:
+            pass  # Ensures DVs are iterated and serialised correctly
 # ============================================================================
 # SECTION 3: INSTRUCTIONS & LEGEND SHEET
 # ============================================================================
 
-def create_instructions_sheet(ws, styles):
-    """Create Instructions & Legend sheet with usage guidance."""
-    
-    # Header
+
+def create_instructions_sheet(ws):
+    """Create GS-IL-compliant Instructions & Legend sheet (Sheet 1)."""
+    ws.title = "Instructions & Legend"
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _navy = PatternFill("solid", fgColor="003366")
+    _grey = PatternFill("solid", fgColor="D9D9D9")
+    _input = PatternFill("solid", fgColor="FFFFCC")
+    _green = PatternFill("solid", fgColor="C6EFCE")
+    _amber = PatternFill("solid", fgColor="FFEB9C")
+    _red   = PatternFill("solid", fgColor="FFC7CE")
     ws.merge_cells("A1:G1")
-    ws["A1"] = "ISMS-IMP-A.8.32.3  -  Environment Separation Assessment\nISO/IEC 27001:2022 - Control A.8.32: Change Management"
+    ws["A1"] = f"{DOCUMENT_ID}  -  {WORKBOOK_NAME}\n{CONTROL_REF}"
     ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
-    ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws["A1"].fill = _navy
     ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.row_dimensions[1].height = 40
+    ws["A3"] = "Document Information"
+    ws["A3"].font = Font(name="Calibri", size=12, bold=True)
+    for i, (label, value) in enumerate([
+        ("Document ID",       DOCUMENT_ID),
+        ("Workbook Title",    WORKBOOK_NAME),
+        ("Control Reference", CONTROL_REF),
+        ("Version",           "1.0"),
+        ("Assessment Date",   ""),
+        ("Completed By",      ""),
+        ("Organisation",      ""),
+    ]):
+        r = 4 + i
+        ws[f"A{r}"] = label
+        ws[f"A{r}"].font = Font(name="Calibri", bold=True)
+        ws[f"B{r}"] = value
+        if not value:
+            ws[f"B{r}"].fill = _input
+            ws[f"B{r}"].border = _border
+    ws["A12"] = "Instructions"
+    ws["A12"].font = Font(name="Calibri", size=12, bold=True)
 
-    # Document Information Block
-    row = 4
-    ws[f"A{row}"] = "DOCUMENT INFORMATION"
-    ws[f"A{row}"].font = Font(bold=True, size=11)
-    
-    doc_info = [
-        ("Document ID:", "ISMS-IMP-A.8.32.3"),
-        ("Assessment Area:", "Environment Separation (Dev/Test/Prod)"),
-        ("Related Policy:", "ISMS-POL-A.8.32"),
-        ("Related Controls:", "ISO 27001:2022 Control 8.31, 8.33"),
-        ("Version:", "1.0"),
-        ("Assessment Date:", "[USER INPUT]"),
-        ("Completed By:", "[USER INPUT]"),
-        ("Organisation:", "[Organisation]"),
-        ("Review Cycle:", "Quarterly"),
-    ]
-    
-    row += 1
-    for label, value in doc_info:
-        ws[f"A{row}"] = label
-        ws[f"A{row}"].font = Font(bold=True)
-        ws[f"B{row}"] = value
-        if "USER INPUT" in value:
-            ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        row += 1
+    _instructions = ['1. Document YOUR development environment configuration and controls.', '2. Document YOUR test/QA environment configuration and controls.', '3. Document YOUR production environment configuration and controls.', '4. Define YOUR environment promotion procedures.', '5. Assess YOUR production data usage in non-production environments (Control 8.33).', '6. Review the Summary Dashboard for compliance metrics.', '7. Maintain the Evidence Register for audit traceability.', '8. Obtain final approval via Approval Sign-Off sheet.']
+    for _i, _line in enumerate(_instructions):
+        ws[f"A{13 + _i}"] = _line
 
-    # How to Use This Workbook
-    row += 2
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "HOW TO USE THIS WORKBOOK"
-    ws[f"A{row}"].font = Font(bold=True, size=12, color="FFFFFF")
-    ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
-    ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
+    _leg_row = 22
 
-    instructions = [
-        "1. Document YOUR development environment configuration and controls",
-        "2. Document YOUR test/QA environment configuration and controls",
-        "3. Document YOUR production environment configuration and controls",
-        "4. Define YOUR environment promotion procedures",
-        "5. Assess YOUR production data usage in non-production environments (Control 8.33)",
-        "6. Review the Summary Dashboard for compliance metrics",
-        "7. Maintain the Evidence Register for audit traceability",
-        "8. Obtain final approval via Approval Sign-Off sheet",
-    ]
-
-    row += 1
-    for instruction in instructions:
-        ws[f"A{row}"] = instruction
-        ws[f"A{row}"].alignment = Alignment(wrap_text=True)
-        ws.row_dimensions[row].height = 25
-        row += 1
-
-    # Environment Separation Principles
-    row += 2
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "ENVIRONMENT SEPARATION PRINCIPLES (Control 8.31)"
-    ws[f"A{row}"].font = Font(bold=True, size=12, color="FFFFFF")
-    ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
-    ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
-
-    principles = [
-        "✓ Development: Developers have broad access, untested code, frequent changes",
-        "✓ Test/QA: Controlled access, stable builds, testing validation",
-        "✓ Production: Restricted access, change control enforced, business-critical",
-        "✓ Network Isolation: Physical or logical separation between environments",
-        "✓ Access Controls: Different authentication/authorization per environment",
-        "✓ Data Protection: Production data NEVER in non-prod without anonymization (Control 8.33)",
-        "✓ Promotion Process: Formal workflow from Dev → Test → Production",
-        "✓ Change Validation: All changes tested before production deployment",
-        "✓ Audit Trail: Complete documentation of promotions and access",
-    ]
-
-    row += 1
-    for principle in principles:
-        ws[f"A{row}"] = principle
-        ws[f"A{row}"].alignment = Alignment(wrap_text=True)
-        ws.row_dimensions[row].height = 20
-        row += 1
-
-    # Status Legend
-    row += 2
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "STATUS LEGEND"
-    ws[f"A{row}"].font = Font(bold=True, size=12, color="FFFFFF")
-    ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
-    ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
-
-    row += 1
-    legend_headers = ["Symbol", "Status", "Description", "Color Code"]
-    for col_idx, header in enumerate(legend_headers, start=1):
-        cell = ws.cell(row=row, column=col_idx, value=header)
-        cell.font = Font(bold=True)
-        cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
-
-    legend_data = [
-        ("{CHECK}", "Implemented/Yes", "Control implemented and operational", "Green"),
-        ("{WARNING}", "Partial", "Partially implemented or needs improvement", "Yellow"),
-        ("{XMARK}", "Not Implemented/No", "Control not implemented", "Red"),
-        ("📋", "Planned", "Implementation planned with target date", "Blue"),
-        ("N/A", "Not Applicable", "Not applicable to this environment", "Gray"),
-    ]
-
-    row += 1
-    for symbol, status, desc, color in legend_data:
-        ws[f"A{row}"] = symbol
-        ws[f"B{row}"] = status
-        ws[f"C{row}"] = desc
-        ws[f"D{row}"] = color
-        
-        # Apply color coding
-        if color == "Green":
-            ws[f"D{row}"].fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
-        elif color == "Yellow":
-            ws[f"D{row}"].fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
-        elif color == "Red":
-            ws[f"D{row}"].fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
-        elif color == "Blue":
-            ws[f"D{row}"].fill = PatternFill(start_color="B4C7E7", end_color="B4C7E7", fill_type="solid")
-        
-        row += 1
-
-    # Compliance Levels
-    row += 2
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "COMPLIANCE LEVELS"
-    ws[f"A{row}"].font = Font(bold=True, size=12, color="FFFFFF")
-    ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
-    ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
-
-    compliance_levels = [
-        ("{CHECK} Compliant (≥85%)", "Strong environment separation, audit-ready"),
-        ("{WARNING} Needs Improvement (70-84%)", "Basic separation exists, gaps identified"),
-        ("{XMARK} Non-Compliant (<70%)", "Significant gaps, immediate remediation required"),
-        ("📋 In Progress", "Assessment ongoing or remediation in progress"),
-    ]
-
-    row += 1
-    for level, desc in compliance_levels:
-        ws[f"A{row}"] = level
-        ws[f"A{row}"].font = Font(bold=True)
-        ws[f"B{row}"] = desc
-        ws.merge_cells(f"B{row}:F{row}")
-        row += 1
-
-    # Acceptable Evidence
-    row += 2
-    ws.merge_cells(f"A{row}:F{row}")
-    ws[f"A{row}"] = "ACCEPTABLE EVIDENCE (Examples)"
-    ws[f"A{row}"].font = Font(bold=True, size=12, color="FFFFFF")
-    ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
-    ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
-
-    evidence_examples = [
-        "✓ Network architecture diagrams showing environment isolation",
-        "✓ Access control matrices (RBAC/ACL) per environment",
-        "✓ Firewall rules/VLAN configurations for network separation",
-        "✓ IAM policy exports showing differentiated access rights",
-        "✓ MFA configuration screenshots for production access",
-        "✓ CI/CD pipeline configuration (promotion workflows)",
-        "✓ Production data anonymization procedures and test results",
-        "✓ DPO approval for production data usage in non-prod environments",
-        "✓ Access review logs (quarterly reviews of environment access)",
-        "✓ Change management records showing environment promotion approvals",
-        "✓ Penetration test reports validating environment isolation",
-        "✓ Audit logs of production access (who, when, what, why)",
-    ]
-
-    row += 1
-    for evidence in evidence_examples:
-        ws[f"A{row}"] = evidence
-        ws.merge_cells(f"A{row}:F{row}")
-        row += 1
-
-    # Column widths
+    ws[f"A{_leg_row}"] = "Status Legend"
+    ws[f"A{_leg_row}"].font = Font(name="Calibri", size=12, bold=True)
+    for col_idx, header in enumerate(["Symbol", "Status", "Description"], start=1):
+        c = ws.cell(row=_leg_row + 1, column=col_idx, value=header)
+        c.font = Font(name="Calibri", size=10, bold=True)
+        c.fill = _grey
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = _border
+    for i, (sym, status, desc, fill) in enumerate([
+        ("\u2713", "Compliant / Complete",        "Requirement fully met",                   _green),
+        ("\u26a0", "Partial / In Progress",        "Partially met or in progress",            _amber),
+        ("\u2717", "Non-Compliant / Not Started",  "Requirement not met",                     _red),
+        ("\u2014", "Not Applicable",               "Not applicable to this assessment",        None),
+    ]):
+        r = _leg_row + 2 + i
+        ws.cell(row=r, column=1, value=sym).border = _border
+        s = ws.cell(row=r, column=2, value=status)
+        d = ws.cell(row=r, column=3, value=desc)
+        if fill:
+            s.fill = fill
+        for cell in (s, d):
+            cell.border = _border
+            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
     ws.column_dimensions["A"].width = 28
     ws.column_dimensions["B"].width = 45
     ws.column_dimensions["C"].width = 70
-
+    ws.sheet_view.showGridLines = False
     ws.freeze_panes = "A4"
-
-
-# ============================================================================
-# SECTION 4: DEVELOPMENT_ENVIRONMENT SHEET
-# ============================================================================
 
 def create_development_environment(ws, styles):
     """Create Development_Environment assessment sheet."""
@@ -727,7 +605,7 @@ def create_development_environment(ws, styles):
     ws.merge_cells("A1:E1")
     ws["A1"] = "DEVELOPMENT ENVIRONMENT ASSESSMENT"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:E2")
     ws["A2"] = "Document development environment configuration and controls"
@@ -770,18 +648,23 @@ def create_development_environment(ws, styles):
         
         # Value cell
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         if validation_key and validation_key in validations:
             validations[validation_key].add(ws[f"B{row}"])
-        
+
         # Compliance cell
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"C{row}"])
-        
+
         # Evidence cell
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"D{row}"].border = styles["border"]
+        validations['evidence_type'].add(ws[f"D{row}"])
+
         # Notes cell
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         
         row += 1
 
@@ -816,18 +699,23 @@ def create_development_environment(ws, styles):
         
         # Value cell
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         if validation_key and validation_key in validations:
             validations[validation_key].add(ws[f"B{row}"])
-        
+
         # Compliance cell
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"C{row}"])
-        
+
         # Evidence cell
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"D{row}"].border = styles["border"]
+        validations['evidence_type'].add(ws[f"D{row}"])
+
         # Notes cell
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         
         row += 1
 
@@ -859,18 +747,23 @@ def create_development_environment(ws, styles):
         
         # Value cell
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         if validation_key and validation_key in validations:
             validations[validation_key].add(ws[f"B{row}"])
-        
+
         # Compliance cell
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"C{row}"])
-        
+
         # Evidence cell
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"D{row}"].border = styles["border"]
+        validations['evidence_type'].add(ws[f"D{row}"])
+
         # Notes cell
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         
         row += 1
 
@@ -899,18 +792,23 @@ def create_development_environment(ws, styles):
         
         # Value cell
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         if validation_key and validation_key in validations:
             validations[validation_key].add(ws[f"B{row}"])
-        
+
         # Compliance cell
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"C{row}"])
-        
+
         # Evidence cell
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"D{row}"].border = styles["border"]
+        validations['evidence_type'].add(ws[f"D{row}"])
+
         # Notes cell
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         
         row += 1
 
@@ -922,8 +820,9 @@ def create_development_environment(ws, styles):
     ws.column_dimensions["E"].width = 30
 
     ws.freeze_panes = "A5"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
 # SECTION 5: TEST_QA_ENVIRONMENT SHEET
@@ -937,7 +836,7 @@ def create_test_qa_environment(ws, styles):
     ws.merge_cells("A1:E1")
     ws["A1"] = "TEST/QA ENVIRONMENT ASSESSMENT"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:E2")
     ws["A2"] = "Document test/QA environment configuration and controls"
@@ -978,14 +877,18 @@ def create_test_qa_environment(ws, styles):
         ws[f"A{row}"].font = Font(bold=True)
         
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         if validation_key and validation_key in validations:
             validations[validation_key].add(ws[f"B{row}"])
-        
+
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"C{row}"])
-        
+
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         
         row += 1
 
@@ -1019,14 +922,18 @@ def create_test_qa_environment(ws, styles):
         ws[f"A{row}"] = control_name
         
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         if validation_key and validation_key in validations:
             validations[validation_key].add(ws[f"B{row}"])
-        
+
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"C{row}"])
-        
+
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         
         row += 1
 
@@ -1062,14 +969,18 @@ def create_test_qa_environment(ws, styles):
         ws[f"A{row}"] = control_name
         
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         if validation_key and validation_key in validations:
             validations[validation_key].add(ws[f"B{row}"])
-        
+
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"C{row}"])
-        
+
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         
         row += 1
 
@@ -1098,14 +1009,18 @@ def create_test_qa_environment(ws, styles):
         ws[f"A{row}"] = control_name
         
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         if validation_key and validation_key in validations:
             validations[validation_key].add(ws[f"B{row}"])
-        
+
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"C{row}"])
-        
+
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         
         row += 1
 
@@ -1117,8 +1032,9 @@ def create_test_qa_environment(ws, styles):
     ws.column_dimensions["E"].width = 30
 
     ws.freeze_panes = "A5"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
 # SECTION 6: PRODUCTION_ENVIRONMENT SHEET
@@ -1132,7 +1048,7 @@ def create_production_environment(ws, styles):
     ws.merge_cells("A1:E1")
     ws["A1"] = "PRODUCTION ENVIRONMENT ASSESSMENT"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:E2")
     ws["A2"] = "Document production environment configuration and controls (HIGHEST SECURITY)"
@@ -1177,14 +1093,18 @@ def create_production_environment(ws, styles):
         ws[f"A{row}"].font = Font(bold=True)
         
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         if validation_key and validation_key in validations:
             validations[validation_key].add(ws[f"B{row}"])
-        
+
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"C{row}"])
-        
+
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         
         row += 1
 
@@ -1221,14 +1141,18 @@ def create_production_environment(ws, styles):
         ws[f"A{row}"] = control_name
         
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         if validation_key and validation_key in validations:
             validations[validation_key].add(ws[f"B{row}"])
-        
+
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"C{row}"])
-        
+
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         
         row += 1
 
@@ -1263,14 +1187,18 @@ def create_production_environment(ws, styles):
         ws[f"A{row}"] = control_name
         
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         if validation_key and validation_key in validations:
             validations[validation_key].add(ws[f"B{row}"])
-        
+
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"C{row}"])
-        
+
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         
         row += 1
 
@@ -1300,14 +1228,18 @@ def create_production_environment(ws, styles):
         ws[f"A{row}"] = aspect_name
         
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         if validation_key and validation_key in validations:
             validations[validation_key].add(ws[f"B{row}"])
-        
+
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"C{row}"])
-        
+
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         
         row += 1
 
@@ -1319,8 +1251,9 @@ def create_production_environment(ws, styles):
     ws.column_dimensions["E"].width = 30
 
     ws.freeze_panes = "A5"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
 # SECTION 7: ENVIRONMENT_PROMOTION_PROCESS SHEET
@@ -1334,7 +1267,7 @@ def create_environment_promotion_process(ws, styles):
     ws.merge_cells("A1:F1")
     ws["A1"] = "ENVIRONMENT PROMOTION PROCESS"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:F2")
     ws["A2"] = "Document promotion workflows between environments (Dev → Test → Prod)"
@@ -1369,19 +1302,23 @@ def create_environment_promotion_process(ws, styles):
         
         # Method dropdown
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['promotion_method'].add(ws[f"C{row}"])
-        
+
         # Approval dropdown
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         validations['approval_required'].add(ws[f"D{row}"])
-        
+
         # Frequency dropdown
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         validations['promotion_frequency'].add(ws[f"E{row}"])
-        
+
         # Notes
         ws[f"F{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"F{row}"].border = styles["border"]
+
         row += 1
 
     # Promotion Controls
@@ -1421,23 +1358,29 @@ def create_environment_promotion_process(ws, styles):
         
         # Dev→Test
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         validations['testing_required'].add(ws[f"B{row}"])
-        
+
         # Test→QA
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         validations['testing_required'].add(ws[f"C{row}"])
-        
+
         # QA→Prod
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         validations['testing_required'].add(ws[f"D{row}"])
-        
+
         # Compliance
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"E{row}"])
-        
+
         # Evidence
         ws[f"F{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"F{row}"].border = styles["border"]
+        validations['evidence_type'].add(ws.cell(row=row, column=6))
+
         row += 1
 
     # CI/CD Pipeline Assessment
@@ -1473,21 +1416,26 @@ def create_environment_promotion_process(ws, styles):
         
         # Implemented?
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         validations['implementation_status'].add(ws[f"B{row}"])
-        
+
         # Tool/Method
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"C{row}"].border = styles["border"]
+
         # Automated?
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         validations['yes_partial_no'].add(ws[f"D{row}"])
-        
+
         # Compliance
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"E{row}"])
-        
+
         # Notes
         ws[f"F{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"F{row}"].border = styles["border"]
         
         row += 1
 
@@ -1500,8 +1448,9 @@ def create_environment_promotion_process(ws, styles):
     ws.column_dimensions["F"].width = 30
 
     ws.freeze_panes = "A5"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
 # SECTION 8: PRODUCTION_DATA_IN_NONPROD SHEET
@@ -1515,7 +1464,7 @@ def create_production_data_in_nonprod(ws, styles):
     ws.merge_cells("A1:G1")
     ws["A1"] = "PRODUCTION DATA IN NON-PRODUCTION ENVIRONMENTS"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:G2")
     ws["A2"] = "Control 8.33: Test Information - Production data protection assessment"
@@ -1523,7 +1472,7 @@ def create_production_data_in_nonprod(ws, styles):
 
     # Policy & Governance
     row = 4
-    ws.merge_cells(f"A{row}:G{row}")
+    ws.merge_cells(f"A{row}:F{row}")
     ws[f"A{row}"] = "POLICY & GOVERNANCE"
     apply_style(ws[f"A{row}"], styles["section_header"])
 
@@ -1549,26 +1498,32 @@ def create_production_data_in_nonprod(ws, styles):
         
         # Implemented?
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         validations['yes_partial_no'].add(ws[f"B{row}"])
-        
+
         # Details
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"C{row}"].border = styles["border"]
+
         # Compliance
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"D{row}"])
-        
+
         # Evidence
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"E{row}"].border = styles["border"]
+        validations['evidence_type'].add(ws.cell(row=row, column=5))
+
         # Notes
         ws[f"F{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"F{row}"].border = styles["border"]
+
         row += 1
 
     # Data Anonymization Controls
     row += 1
-    ws.merge_cells(f"A{row}:G{row}")
+    ws.merge_cells(f"A{row}:F{row}")
     ws[f"A{row}"] = "DATA ANONYMIZATION CONTROLS"
     apply_style(ws[f"A{row}"], styles["section_header"])
 
@@ -1602,20 +1557,26 @@ def create_production_data_in_nonprod(ws, styles):
         ws[f"A{row}"] = control_name
         
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         validations['yes_partial_no_na'].add(ws[f"B{row}"])
-        
+
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"C{row}"].border = styles["border"]
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"D{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"D{row}"])
-        
+
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
+        validations['evidence_type'].add(ws.cell(row=row, column=5))
         ws[f"F{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"F{row}"].border = styles["border"]
+
         row += 1
 
     # Current Production Data Usage
     row += 1
-    ws.merge_cells(f"A{row}:G{row}")
+    ws.merge_cells(f"A{row}:I{row}")
     ws[f"A{row}"] = "CURRENT PRODUCTION DATA USAGE IN NON-PRODUCTION"
     apply_style(ws[f"A{row}"], styles["section_header"])
 
@@ -1625,39 +1586,45 @@ def create_production_data_in_nonprod(ws, styles):
         cell = ws.cell(row=row, column=col_idx, value=header)
         apply_style(cell, styles["column_header"])
 
-    # 15 rows for documenting systems
+    # Sample row with example data
     row += 1
-    for i in range(15):
-        # System/Application
-        ws[f"A{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
-        # Contains Prod Data?
-        ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+    sample_data = {
+        1: "CRM Test Environment",
+        2: "No",
+        3: "Synthetic customer data",
+        4: "N/A",
+        5: "15.01.2026",
+        6: "Test Manager",
+        7: "15.07.2026",
+        8: "Compliant",
+        9: "EV-DATA-001",
+    }
+    for col_idx, value in sample_data.items():
+        cell = ws.cell(row=row, column=col_idx, value=value)
+        cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        cell.border = styles["border"]
+
+    # Add dropdowns to sample row
+    validations['yes_no'].add(ws[f"B{row}"])
+    validations['yes_partial_no'].add(ws[f"D{row}"])
+    validations['compliance_status'].add(ws[f"H{row}"])
+    validations['evidence_type'].add(ws.cell(row=row, column=9))
+
+    # Empty data rows (50 rows for user data)
+    row += 1
+    for i in range(50):
+        for col_idx in range(1, 10):  # Columns A-I
+            cell = ws.cell(row=row, column=col_idx)
+            cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            cell.border = styles["border"]
+            cell.value = None  # Empty - users document their own systems
+
+        # Add dropdowns to empty rows
         validations['yes_no'].add(ws[f"B{row}"])
-        
-        # Data Type
-        ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
-        # Anonymized?
-        ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
         validations['yes_partial_no'].add(ws[f"D{row}"])
-        
-        # Approval Date
-        ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
-        # Approved By
-        ws[f"F{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
-        # Review Date
-        ws[f"G{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
-        # Compliant?
-        ws[f"H{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
         validations['compliance_status'].add(ws[f"H{row}"])
-        
-        # Evidence
-        ws[f"I{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        validations['evidence_type'].add(ws.cell(row=row, column=9))
+
         row += 1
 
     # Synthetic Data Generation
@@ -1686,25 +1653,32 @@ def create_production_data_in_nonprod(ws, styles):
         
         # Available?
         ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{row}"].border = styles["border"]
         validations['yes_partial_no'].add(ws[f"B{row}"])
-        
+
         # Tool/Method
         ws[f"C{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"C{row}"].border = styles["border"]
+
         # Data Types Supported
         ws[f"D{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"D{row}"].border = styles["border"]
+
         # Usage
         ws[f"E{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"E{row}"].border = styles["border"]
         validations['usage_justification'].add(ws[f"E{row}"])
-        
+
         # Compliance
         ws[f"F{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"F{row}"].border = styles["border"]
         validations['compliance_status'].add(ws[f"F{row}"])
-        
+
         # Evidence
         ws[f"G{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        
+        ws[f"G{row}"].border = styles["border"]
+        validations['evidence_type'].add(ws.cell(row=row, column=7))
+
         row += 1
 
     # Column widths
@@ -1717,8 +1691,9 @@ def create_production_data_in_nonprod(ws, styles):
     ws.column_dimensions["G"].width = 25
 
     ws.freeze_panes = "A5"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
 # SECTION 8.5: SEPARATION CONTROLS SHEET
@@ -1732,7 +1707,7 @@ def create_separation_controls(ws, styles):
     ws.merge_cells("A1:H1")
     ws["A1"] = "ENVIRONMENT SEPARATION CONTROLS"
     apply_style(ws["A1"], styles["header"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:H2")
     ws["A2"] = "Document technical controls enforcing environment separation"
@@ -1767,12 +1742,18 @@ def create_separation_controls(ws, styles):
             cell = ws.cell(row=row, column=col_idx, value=value)
             if col_idx > 2:
                 apply_style(cell, styles["input_cell"])
+            # Add compliance DV to Implementation Status column (D)
+            if col_idx == 4:
+                validations['compliance_status'].add(cell)
+            # Add evidence DV to Evidence column (H=8)
+            if col_idx == 8:
+                validations['evidence_type'].add(cell)
         row += 1
 
     row += 2
 
     # ==================== CONTROL EFFECTIVENESS ====================
-    ws.merge_cells(f"A{row}:H{row}")
+    ws.merge_cells(f"A{row}:F{row}")
     ws[f"A{row}"] = "CONTROL EFFECTIVENESS ASSESSMENT"
     apply_style(ws[f"A{row}"], styles["section_header"])
     row += 1
@@ -1808,21 +1789,22 @@ def create_separation_controls(ws, styles):
     ws.column_dimensions["H"].width = 20
 
     ws.freeze_panes = "A6"
-    finalize_validations(ws, validations)
-
+    for _dv in validations.values():
+        if _dv.sqref:
+            ws.add_data_validation(_dv)
 
 # ============================================================================
 # SECTION 9: SUMMARY_DASHBOARD SHEET
 # ============================================================================
 
-def create_summary_dashboard(ws, styles):
+def create_summary_dashboard_sheet(ws, styles):
     """Create Summary Dashboard with standard compliance table and metrics."""
     thin = Side(style="thin")
     border = Border(left=thin, right=thin, top=thin, bottom=thin)
 
     # Header
     ws.merge_cells("A1:G1")
-    ws["A1"] = "ENVIRONMENT SEPARATION ASSESSMENT - COMPLIANCE SUMMARY"
+    ws["A1"] = "ENVIRONMENT SEPARATION ASSESSMENT — SUMMARY DASHBOARD"
     ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
     ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
@@ -1830,21 +1812,21 @@ def create_summary_dashboard(ws, styles):
 
     ws.merge_cells("A2:G2")
     ws["A2"] = "ISO/IEC 27001:2022 \u2014 Control A.8.32: Change Management"
-    ws["A2"].font = Font(name="Calibri", size=11, italic=True)
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
     ws["A2"].alignment = Alignment(horizontal="left", vertical="center")
 
-    # --- TABLE 1: COMPLIANCE OVERVIEW ---
-    row = 3
+    # --- TABLE 1: ASSESSMENT AREA COMPLIANCE OVERVIEW ---
+    row = 4
     ws.merge_cells(f"A{row}:G{row}")
-    ws[f"A{row}"] = "TABLE 1: COMPLIANCE OVERVIEW"
+    ws[f"A{row}"] = "TABLE 1: ASSESSMENT AREA COMPLIANCE OVERVIEW"
     ws[f"A{row}"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
     ws[f"A{row}"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
 
-    headers = ["Assessment Area", "Total Requirements", "Compliant", "Partially Compliant", "Non-Compliant", "N/A", "Compliance %"]
+    headers = ["Assessment Area", "Total Items", "Compliant", "Partial", "Non-Compliant", "N/A", "Compliance %"]
     for col_idx, header in enumerate(headers, start=1):
-        cell = ws.cell(row=4, column=col_idx, value=header)
-        cell.font = Font(name="Calibri", size=10, bold=True)
+        cell = ws.cell(row=5, column=col_idx, value=header)
+        cell.font = Font(name="Calibri", size=10, bold=True, color="000000")
         cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
         cell.border = border
@@ -1852,39 +1834,108 @@ def create_summary_dashboard(ws, styles):
     assessment_areas = [
         "Environment Inventory",
         "Access Controls",
-        "Promotion Workflows",
+        "Promotion Workflows - Controls & Gates",
+        "Promotion Workflows - CI/CD Pipeline",
         "Data Protection",
         "Environment Config",
         "Separation Controls",
     ]
 
-    for i, area in enumerate(assessment_areas):
-        r = 5 + i
-        ws[f"A{r}"] = area
+    # Area configurations: (sheet_name, status_col, [compliant, partial, non_compliant], row_start, row_end)
+    # None = manual entry area
+    area_configs = [
+        ('Environment Inventory', 'C', ['✅ Compliant', '⚠ Partial', '❌ Non-Compliant'], 6, 55),
+        ('Access Controls', 'C', ['✅ Compliant', '⚠ Partial', '❌ Non-Compliant'], 6, 58),  # Multiple sections: Env ID, Access, Data, Testing
+        # Promotion Workflows - 2 sections with formulas
+        ('Promotion Workflows', 'E', ['✅ Compliant', '⚠ Partial', '❌ Non-Compliant'], 14, 44),  # Controls & Gates section (extended to cover all data)
+        ('Promotion Workflows', 'E', ['✅ Compliant', '⚠ Partial', '❌ Non-Compliant'], 33, 44),  # CI/CD Pipeline section
+        ('Data Protection', 'D', ['✅ Yes', '⚠ Partial', '❌ No'], 6, 95),  # Multiple data protection sections
+        ('Environment Config', 'C', ['✅ Compliant', '⚠ Partial', '❌ Non-Compliant'], 6, 65),  # Extended configuration assessment
+        ('Separation Controls', 'D', ['✅ Compliant', '⚠ Partial', '❌ Non-Compliant'], 6, 21),  # Technical separation controls (8 controls + effectiveness section)
+    ]
+
+    for i, area_name in enumerate(assessment_areas):
+        r = 6 + i
+        ws[f"A{r}"] = area_name
         ws[f"A{r}"].font = Font(name="Calibri", size=10)
         ws[f"A{r}"].border = border
-        for col in "BCDEF":
-            cell = ws[f"{col}{r}"]
-            cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-            cell.border = border
-            cell.alignment = Alignment(horizontal="center", vertical="center")
+
+        if area_configs[i] is None:
+            # MANUAL ENTRY - use placeholder cells
+            for col in "BCDEF":
+                cell = ws[f"{col}{r}"]
+                cell.fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+                cell.border = border
+                cell.alignment = Alignment(horizontal="center", vertical="center")
+            # Manual areas get placeholder in column G
+            ws[f"G{r}"] = "[enter %]"
+            ws[f"G{r}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        else:
+            # FORMULA-BASED - generate compliance formulas
+            sheet_name, status_col, status_values, row_start, row_end = area_configs[i]
+            compliant_val, partial_val, non_compliant_val = status_values
+
+            # B: Total items (count non-empty rows in column A)
+            ws[f"B{r}"] = f"=COUNTA('{sheet_name}'!A{row_start}:A{row_end})"
+            ws[f"B{r}"].fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+            ws[f"B{r}"].border = border
+            ws[f"B{r}"].alignment = Alignment(horizontal="center", vertical="center")
+
+            # C: Compliant
+            ws[f"C{r}"] = f"=COUNTIF('{sheet_name}'!{status_col}{row_start}:{status_col}{row_end},\"{compliant_val}\")"
+            ws[f"C{r}"].fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+            ws[f"C{r}"].border = border
+            ws[f"C{r}"].alignment = Alignment(horizontal="center", vertical="center")
+
+            # D: Partially Compliant
+            ws[f"D{r}"] = f"=COUNTIF('{sheet_name}'!{status_col}{row_start}:{status_col}{row_end},\"{partial_val}\")"
+            ws[f"D{r}"].fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+            ws[f"D{r}"].border = border
+            ws[f"D{r}"].alignment = Alignment(horizontal="center", vertical="center")
+
+            # E: Non-Compliant (including "Pending" for sheets that have it in DV)
+            if area_name == "Data Protection":
+                # Data Protection uses Yes/Partial/No - no "Pending" status
+                ws[f"E{r}"] = f"=COUNTIF('{sheet_name}'!{status_col}{row_start}:{status_col}{row_end},\"{non_compliant_val}\")"
+            elif "Promotion Workflows" in area_name:
+                # Promotion Workflows uses "Pending" for compliance_status DV
+                ws[f"E{r}"] = f"=COUNTIF('{sheet_name}'!{status_col}{row_start}:{status_col}{row_end},\"{non_compliant_val}\")+COUNTIF('{sheet_name}'!{status_col}{row_start}:{status_col}{row_end},\"Pending\")"
+            else:
+                # Other sheets use Compliant/Partial/Non-Compliant/Pending
+                ws[f"E{r}"] = f"=COUNTIF('{sheet_name}'!{status_col}{row_start}:{status_col}{row_end},\"{non_compliant_val}\")+COUNTIF('{sheet_name}'!{status_col}{row_start}:{status_col}{row_end},\"Pending\")"
+            ws[f"E{r}"].fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+            ws[f"E{r}"].border = border
+            ws[f"E{r}"].alignment = Alignment(horizontal="center", vertical="center")
+
+            # F: N/A (placeholder - no N/A status in these DVs)
+            ws[f"F{r}"] = 0
+            ws[f"F{r}"].fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+            ws[f"F{r}"].border = border
+            ws[f"F{r}"].alignment = Alignment(horizontal="center", vertical="center")
+
+            # G: Compliance % = Compliant / (Total - N/A) * 100
+            ws[f"G{r}"] = f'=IF((B{r}-F{r})=0,0,C{r}/(B{r}-F{r}))'
+            ws[f"G{r}"].number_format = "0.0%"
+
+        # Apply border and alignment to G column (all rows)
         ws[f"G{r}"].border = border
         ws[f"G{r}"].alignment = Alignment(horizontal="center", vertical="center")
 
     # TOTAL row with SUM formulas
-    total_row = 5 + len(assessment_areas)
+    total_row = 6 + len(assessment_areas)
     ws[f"A{total_row}"] = "TOTAL"
     ws[f"A{total_row}"].font = Font(name="Calibri", size=10, bold=True)
     ws[f"A{total_row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
     ws[f"A{total_row}"].border = border
     for col_letter in "BCDEF":
         cell = ws[f"{col_letter}{total_row}"]
-        cell.value = f"=SUM({col_letter}5:{col_letter}{total_row - 1})"
-        cell.font = Font(name="Calibri", size=10, bold=True)
+        cell.value = f"=SUM({col_letter}6:{col_letter}{total_row - 1})"
+        cell.font = Font(name="Calibri", size=10, bold=True, color="000000")
         cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         cell.border = border
         cell.alignment = Alignment(horizontal="center", vertical="center")
-    ws[f"G{total_row}"] = f'=IF((B{total_row}-F{total_row})=0,"0%",ROUND(C{total_row}/(B{total_row}-F{total_row})*100,1)&"%")'
+    ws[f"G{total_row}"] = f'=IF((B{total_row}-F{total_row})=0,0,C{total_row}/(B{total_row}-F{total_row}))'
+    ws[f"G{total_row}"].number_format = "0.0%"
     ws[f"G{total_row}"].font = Font(name="Calibri", size=10, bold=True)
     ws[f"G{total_row}"].fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
     ws[f"G{total_row}"].border = border
@@ -1895,49 +1946,119 @@ def create_summary_dashboard(ws, styles):
     ws.merge_cells(f"A{met_row}:G{met_row}")
     ws[f"A{met_row}"] = "TABLE 2: KEY METRICS"
     ws[f"A{met_row}"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
-    ws[f"A{met_row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+    ws[f"A{met_row}"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     ws[f"A{met_row}"].alignment = Alignment(horizontal="left", vertical="center")
+    for col in range(1, 8):
+        ws.cell(row=met_row, column=col).border = border
 
+    # TABLE 2 column headers (D9D9D9 grey)
+    t2_hdr_row = met_row + 1
+    t2_headers = ["Metric", "Value", "", "", "", "", ""]
+    for col_idx, hdr in enumerate(t2_headers, 1):
+        hcell = ws.cell(row=t2_hdr_row, column=col_idx, value=hdr)
+        hcell.font = Font(name="Calibri", size=10, bold=True, color="000000")
+        hcell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
+        hcell.border = border
+        hcell.alignment = Alignment(horizontal="center", vertical="center")
+
+    # Metrics with formulas or placeholders
     metrics = [
-        ("Network Isolation Coverage", "[enter %]"),
-        ("MFA Enforcement (Production)", "[enter %]"),
-        ("Developer Direct Production Access", "[enter count]"),
-        ("Change Promotion Success Rate", "[enter %]"),
+        ("Network Isolation Coverage", "='Separation Controls'!D6"),
+        ("MFA Enforcement (Production)", "='Access Controls'!C30"),
+        ("Developer Direct Production Access", "='Access Controls'!C35"),
+        ("Change Promotion Success Rate", "='Promotion Workflows'!E14"),
     ]
-    for i, (metric, placeholder) in enumerate(metrics):
-        r = met_row + 1 + i
+    r = t2_hdr_row
+    for metric, value in metrics:
+        r += 1
         ws[f"A{r}"] = metric
-        ws[f"A{r}"].font = Font(name="Calibri", size=10, bold=True)
+        ws[f"A{r}"].font = Font(name="Calibri", size=10, color="000000")
         ws[f"A{r}"].border = border
-        ws.merge_cells(f"B{r}:G{r}")
-        ws[f"B{r}"] = placeholder
-        ws[f"B{r}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"B{r}"] = value
+        ws[f"B{r}"].font = Font(name="Calibri", size=10, color="000000")
         ws[f"B{r}"].border = border
+        for col in range(3, 8):
+            ws.cell(row=r, column=col).border = border
+
+    # TABLE 2 buffer rows (2 empty white rows)
+    for _ in range(2):
+        r += 1
+        for col in range(1, 8):
+            ws.cell(row=r, column=col).border = border
 
     # --- TABLE 3: CRITICAL FINDINGS ---
-    crit_row = met_row + 1 + len(metrics) + 1
-    ws.merge_cells(f"A{crit_row}:G{crit_row}")
-    ws[f"A{crit_row}"] = "TABLE 3: CRITICAL FINDINGS"
-    ws[f"A{crit_row}"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
-    ws[f"A{crit_row}"].fill = PatternFill(start_color="C00000", end_color="C00000", fill_type="solid")
-    ws[f"A{crit_row}"].alignment = Alignment(horizontal="left", vertical="center")
+    crit_start = r + 2
+    ws.merge_cells(f"A{crit_start}:G{crit_start}")
+    ws[f"A{crit_start}"] = "TABLE 3: CRITICAL FINDINGS"
+    ws[f"A{crit_start}"].font = Font(bold=True, size=11, color="FFFFFF")
+    ws[f"A{crit_start}"].fill = PatternFill(start_color="C00000", end_color="C00000", fill_type="solid")
+    ws[f"A{crit_start}"].alignment = Alignment(horizontal="left", vertical="center")
+    for col in range(1, 8):
+        ws.cell(row=crit_start, column=col).border = border
 
-    find_headers = ["Finding", "Severity", "Owner", "Due Date", "Status"]
-    for col_idx, h in enumerate(find_headers, start=1):
-        cell = ws.cell(row=crit_row + 1, column=col_idx, value=h)
-        cell.font = Font(name="Calibri", size=10, bold=True)
+    findings_headers = ["Category", "Finding", "Count", "Severity", "Action Required", "", ""]
+    for col_idx, header in enumerate(findings_headers, 1):
+        cell = ws.cell(row=crit_start + 1, column=col_idx, value=header)
+        cell.font = Font(bold=True, color="000000")
         cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
         cell.border = border
-        cell.alignment = Alignment(horizontal="center", vertical="center")
-    for i in range(5):
-        r = crit_row + 2 + i
-        for col in range(1, 6):
-            cell = ws.cell(row=r, column=col)
-            cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-            cell.border = border
+        cell.alignment = Alignment(horizontal="center")
 
-    # Column widths (standard)
-    for col, w in [("A", 40), ("B", 16), ("C", 16), ("D", 18), ("E", 18), ("F", 12), ("G", 15)]:
+    findings = [
+        ("Environment Separation", "Production changes without separate test", '=COUNTIF(\'Environment Inventory\'!F6:F55,"❌ Not Implemented")', "Critical", "Immediate"),
+        ("Environment Separation", "Missing environment isolation controls", '=COUNTIF(\'Environment Inventory\'!J6:J55,"❌ Not Implemented")', "Critical", "Immediate"),
+        ("Promotion Process", "Production promotions without testing", '=COUNTIF(\'Promotion Workflows\'!E14:E44,"❌ Non-Compliant")', "Critical", "Immediate"),
+        ("Production Access", "Unauthorised production access", '=COUNTIF(\'Access Controls\'!I6:I58,"❌ Not Implemented")', "Critical", "Immediate"),
+        ("Data Sync", "Production data in lower environments", '=COUNTIF(\'Data Protection\'!K6:K94,"❌ Not Implemented")', "Critical", "Immediate"),
+        ("Environment Separation", "Partial environment separation", '=COUNTIF(\'Environment Inventory\'!F6:F55,"⚠ Partial")', "High", "Urgent"),
+        ("Promotion Process", "Incomplete promotion controls", '=COUNTIF(\'Promotion Workflows\'!E33:E44,"❌ Non-Compliant")', "High", "Urgent"),
+        ("Production Access", "Production access control gaps", '=COUNTIF(\'Access Controls\'!I6:I58,"⚠ Partial")', "High", "Urgent"),
+        ("Data Sync", "Data synchronization gaps", '=COUNTIF(\'Data Protection\'!K6:K94,"⚠ Partial")', "Medium", "Plan"),
+        ("Environment Separation", "Environment monitoring gaps", '=COUNTIF(\'Environment Inventory\'!N6:N55,"Gap")', "Medium", "Plan"),
+    ]
+
+    ffffcc_fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+    row = crit_start + 1
+    for cat, finding, formula, severity, action in findings:
+        row += 1
+        ws.cell(row=row, column=1, value=cat).border = border
+        ws.cell(row=row, column=1).font = Font(color="000000")
+        ws.cell(row=row, column=1).fill = ffffcc_fill
+        ws.cell(row=row, column=2, value=finding).border = border
+        ws.cell(row=row, column=2).font = Font(color="000000")
+        ws.cell(row=row, column=2).fill = ffffcc_fill
+        cell_count = ws.cell(row=row, column=3)
+        cell_count.value = formula
+        cell_count.border = border
+        cell_count.alignment = Alignment(horizontal="center")
+        cell_count.font = Font(color="000000")
+        cell_count.fill = ffffcc_fill
+        ws.cell(row=row, column=4, value=severity).border = border
+        ws.cell(row=row, column=4).font = Font(color="000000")
+        ws.cell(row=row, column=4).fill = ffffcc_fill
+        ws.cell(row=row, column=5, value=action).border = border
+        ws.cell(row=row, column=5).font = Font(color="000000")
+        ws.cell(row=row, column=5).fill = ffffcc_fill
+        ws.cell(row=row, column=6).border = border
+        ws.cell(row=row, column=6).fill = ffffcc_fill
+        ws.cell(row=row, column=7).border = border
+        ws.cell(row=row, column=7).fill = ffffcc_fill
+
+    # TABLE 3 buffer rows (2 empty FFFFCC rows)
+    for _ in range(2):
+        row += 1
+        for col in range(1, 8):
+            ws.cell(row=row, column=col).fill = ffffcc_fill
+            ws.cell(row=row, column=col).border = border
+
+    # Column widths (19 columns)
+    gap_widths = [
+        ("A", 15), ("B", 20), ("C", 40), ("D", 30), ("E", 30),
+        ("F", 10), ("G", 12), ("H", 12), ("I", 12), ("J", 35),
+        ("K", 20), ("L", 15), ("M", 15), ("N", 12), ("O", 15),
+        ("P", 25), ("Q", 25), ("R", 30), ("S", 20)
+    ]
+    for col, w in gap_widths:
         ws.column_dimensions[col].width = w
 
     ws.freeze_panes = "A4"
@@ -1963,7 +2084,7 @@ def create_evidence_register(ws, styles):
     # Subtitle
     ws.merge_cells("A2:H2")
     ws["A2"] = "Document all evidence collected during this assessment"
-    ws["A2"].font = Font(name="Calibri", size=11, italic=True)
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
     ws["A2"].alignment = Alignment(horizontal="left", vertical="center")
 
     # Column headers (row 4)
@@ -1973,8 +2094,8 @@ def create_evidence_register(ws, styles):
     ]
     for col_idx, header in enumerate(headers, start=1):
         cell = ws.cell(row=4, column=col_idx, value=header)
-        cell.font = Font(name="Calibri", size=10, bold=True)
-        cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
+        cell.font = Font(name="Calibri", size=10, bold=True, color="FFFFFF")
+        cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
         cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
         cell.border = border
 
@@ -1998,20 +2119,34 @@ def create_evidence_register(ws, styles):
     ver_status_dv.errorTitle = "Invalid Status"
     ws.add_data_validation(ver_status_dv)
 
-    # 100 data rows (5-104)
-    for i in range(1, 101):
-        row = 4 + i
-        # Evidence ID (gray font, no fill)
-        ws[f"A{row}"] = f"EV-{i:03d}"
-        ws[f"A{row}"].font = Font(name="Calibri", size=10, color="808080")
-        ws[f"A{row}"].border = border
-        ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
-        # Cols B-H: yellow fill + border
-        for col in range(2, 9):
+    # Sample row (row 5) with example data (grey fill per Option B standard)
+    sample_data = {
+        1: "EV-001",
+        2: "Environment Separation",
+        3: "Configuration Export",
+        4: "Network segmentation configuration from firewall",
+        5: "\\\\fileserver\\evidence\\firewall_rules_export_20260115.csv",
+        6: "15.01.2026",
+        7: "Network Administrator",
+        8: f"{CHECK} Verified",
+    }
+    for col, value in sample_data.items():
+        cell = ws.cell(row=5, column=col, value=value)
+        cell.fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+        cell.border = border
+        cell.alignment = Alignment(horizontal="center" if col == 1 else "left", vertical="center", wrap_text=True)
+        cell.font = Font(name="Calibri", size=10)
+    ev_type_dv.add(ws["C5"])
+    ver_status_dv.add(ws["H5"])
+
+    # Empty data rows (rows 6-105) - 100 empty rows for user data (MAX-002 standard)
+    for row in range(6, 106):
+        for col in range(1, 9):
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
             cell.border = border
-            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+            cell.alignment = Alignment(horizontal="center" if col == 1 else "left", vertical="center", wrap_text=True)
+            cell.value = None  # Empty - users choose their own evidence IDs
         # Dropdowns
         ev_type_dv.add(ws[f"C{row}"])
         ver_status_dv.add(ws[f"H{row}"])
@@ -2027,7 +2162,7 @@ def create_evidence_register(ws, styles):
 # SECTION 11: APPROVAL_SIGN_OFF SHEET
 # ============================================================================
 
-def create_approval_signoff(ws, styles):
+def create_approval_sheet(ws, styles):
     """Create standard Approval Sign-Off with 3-section approval workflow."""
     thin = Side(style="thin")
     border = Border(left=thin, right=thin, top=thin, bottom=thin)
@@ -2039,6 +2174,18 @@ def create_approval_signoff(ws, styles):
     ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws.row_dimensions[1].height = 35
+    # Apply borders to all merged cells in header row
+    for col in ["A", "B", "C", "D", "E"]:
+        ws[f"{col}1"].border = border
+
+    # Control reference (row 2)
+    ws.merge_cells("A2:E2")
+    ws["A2"] = CONTROL_REF
+    ws["A2"].font = Font(name="Calibri", size=10, italic=True, color="003366")
+    ws["A2"].alignment = Alignment(horizontal="center", vertical="center")
+    # Apply borders to all cells in merged range
+    for col in ["A", "B", "C", "D", "E"]:
+        ws[f"{col}2"].border = border
 
     # --- ASSESSMENT SUMMARY ---
     row = 3
@@ -2047,6 +2194,9 @@ def create_approval_signoff(ws, styles):
     ws[f"A{row}"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
     ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
     ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
+    # Apply borders to all merged cells in section title
+    for col in ["A", "B", "C", "D", "E"]:
+        ws[f"{col}{row}"].border = border
 
     # Assessment Status dropdown
     status_dv = DataValidation(
@@ -2057,23 +2207,32 @@ def create_approval_signoff(ws, styles):
     ws.add_data_validation(status_dv)
 
     summary_fields = [
-        ("Assessment Document:", "ISMS-IMP-A.8.32.3 \u2014 Environment Separation Assessment", False),
+        ("Document:", "ISMS-IMP-A.8.32.3 \u2014 Environment Separation Assessment", False),
         ("Assessment Period:", "", True),
-        ("Assessment Scope:", "", True),
-        ("Overall Compliance:", "", True),
+        ("Overall Compliance Rating:", "='Summary Dashboard'!G13", False),  # TABLE 1 TOTAL row
+        ("Assessed By:", "", True),
         ("Assessment Status:", "", "dropdown"),
     ]
     row = 4
     for label, value, editable in summary_fields:
         ws[f"A{row}"] = label
         ws[f"A{row}"].font = Font(name="Calibri", size=10, bold=True)
+        ws[f"A{row}"].border = border
         ws.merge_cells(f"B{row}:E{row}")
         ws[f"B{row}"] = value
         if editable == "dropdown":
             status_dv.add(ws[f"B{row}"])
-            ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            for col in ["B", "C", "D", "E"]:
+                ws[f"{col}{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+                ws[f"{col}{row}"].border = border
         elif editable:
-            ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            for col in ["B", "C", "D", "E"]:
+                ws[f"{col}{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+                ws[f"{col}{row}"].border = border
+        else:
+            # Non-editable fields still need borders
+            for col in ["B", "C", "D", "E"]:
+                ws[f"{col}{row}"].border = border
         row += 1
 
     # --- Helper for approver sections ---
@@ -2083,34 +2242,43 @@ def create_approval_signoff(ws, styles):
         ws[f"A{start_row}"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
         ws[f"A{start_row}"].fill = PatternFill(start_color=fill_color, end_color=fill_color, fill_type="solid")
         ws[f"A{start_row}"].alignment = Alignment(horizontal="left", vertical="center")
+        # Apply borders to all merged cells in section title
+        for col in ["A", "B", "C", "D", "E"]:
+            ws[f"{col}{start_row}"].border = border
         r = start_row + 1
         for field in ["Name:", "Title:", "Date:", "Signature:", "Comments:"]:
             ws[f"A{r}"] = field
             ws[f"A{r}"].font = Font(name="Calibri", size=10, bold=True)
+            ws[f"A{r}"].border = border
             ws.merge_cells(f"B{r}:E{r}")
-            ws[f"B{r}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-            ws[f"B{r}"].border = border
+            # Apply borders and fill to all merged cells B-E
+            for col in ["B", "C", "D", "E"]:
+                ws[f"{col}{r}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+                ws[f"{col}{r}"].border = border
             r += 1
         return r
 
     # COMPLETED BY
     row += 1
-    row = _approver_section(row, "COMPLETED BY", "4472C4")
+    row = _approver_section(row, "COMPLETED BY (ASSESSOR)", "4472C4")
 
     # REVIEWED BY
     row += 1
-    row = _approver_section(row, "REVIEWED BY", "4472C4")
+    row = _approver_section(row, "REVIEWED BY (INFORMATION SECURITY OFFICER)", "4472C4")
 
-    # APPROVED BY -- CISO
+    # APPROVED BY (CISO)
     row += 1
     row = _approver_section(row, "APPROVED BY \u2014 CISO", "003366")
 
     # --- FINAL DECISION ---
     ws[f"A{row}"] = "FINAL DECISION:"
     ws[f"A{row}"].font = Font(name="Calibri", size=10, bold=True)
+    ws[f"A{row}"].border = border
     ws.merge_cells(f"B{row}:E{row}")
-    ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-    ws[f"B{row}"].border = border
+    # Apply borders and fill to all merged cells B-E
+    for col in ["B", "C", "D", "E"]:
+        ws[f"{col}{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        ws[f"{col}{row}"].border = border
     decision_dv = DataValidation(
         type="list",
         formula1='"Approved,Approved with Conditions,Rejected,Deferred"',
@@ -2126,14 +2294,20 @@ def create_approval_signoff(ws, styles):
     ws[f"A{row}"].font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
     ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
     ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="center")
+    # Apply borders to all merged cells in section title
+    for col in ["A", "B", "C", "D", "E"]:
+        ws[f"{col}{row}"].border = border
 
-    for field in ["Next Review Date:", "Review Frequency:", "Scheduled Reviewer:"]:
+    for field in ["Next Review Date:", "Review Responsible:", "Special Considerations:"]:
         row += 1
         ws[f"A{row}"] = field
         ws[f"A{row}"].font = Font(name="Calibri", size=10, bold=True)
+        ws[f"A{row}"].border = border
         ws.merge_cells(f"B{row}:E{row}")
-        ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-        ws[f"B{row}"].border = border
+        # Apply borders and fill to all merged cells B-E
+        for col in ["B", "C", "D", "E"]:
+            ws[f"{col}{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            ws[f"{col}{row}"].border = border
 
     # Column widths
     for col, w in [("A", 32), ("B", 25), ("C", 20), ("D", 20), ("E", 20)]:
@@ -2160,24 +2334,24 @@ def main():
     logger.info("ISO/IEC 27001:2022 Control A.8.32: Change Management")
     logger.info("Related Controls: 8.31 (Environment Separation), 8.33 (Test Information)")
     logger.info("=" * 78)
-    logger.info("\n🎯 Systems Engineering Approach: Evidence-Based Compliance")
-    logger.info(f"{LOCK} Control 8.31: Dev/Test/Prod Isolation")
-    logger.info(f"{LOCK} Control 8.33: Production Data Protection in Non-Prod")
-    logger.info(f"{CHART} Technology-Agnostic: Works with ANY infrastructure")
-    logger.info("🔍 Audit-Ready: Comprehensive evidence collection")
+    logger.info("\n Systems Engineering Approach: Evidence-Based Compliance")
+    logger.info(f" Control 8.31: Dev/Test/Prod Isolation")
+    logger.info(f" Control 8.33: Production Data Protection in Non-Prod")
+    logger.info(f" Technology-Agnostic: Works with ANY infrastructure")
+    logger.info(" Audit-Ready: Comprehensive evidence collection")
     logger.info("\n" + "─" * 78)
 
     # Create workbook and setup styles
     logger.info("\n[Phase 1] Initializing workbook structure...")
     wb = create_workbook()
-    styles = setup_styles()
+    styles = _STYLES
     logger.info("{CHECK} Workbook created with 10 sheets (per IMP specification)")
 
     # Create all sheets (per IMP specification - 10 sheets)
     logger.info("\n[Phase 2] Generating assessment sheets...")
 
     logger.info("  [1/10] Creating Instructions & Legend...")
-    create_instructions_sheet(wb["Instructions & Legend"], styles)
+    create_instructions_sheet(wb["Instructions & Legend"])
     logger.info("  ✅ Instructions complete")
 
     logger.info("  [2/10] Creating Environment Inventory...")
@@ -2209,11 +2383,11 @@ def main():
     logger.info("  ✅ Evidence register complete (100 evidence rows)")
 
     logger.info("  [9/10] Creating Summary Dashboard...")
-    create_summary_dashboard(wb["Summary Dashboard"], styles)
+    create_summary_dashboard_sheet(wb["Summary Dashboard"], styles)
     logger.info("  ✅ Summary dashboard complete")
 
     logger.info("  [10/10] Creating Approval Sign-Off...")
-    create_approval_signoff(wb["Approval Sign-Off"], styles)
+    create_approval_sheet(wb["Approval Sign-Off"], styles)
     logger.info("  ✅ Approval workflow complete")
 
     # Save workbook
@@ -2221,7 +2395,11 @@ def main():
     filename = f"ISMS-IMP-A.8.32.3_Environment_Separation_Assessment_{datetime.now().strftime('%Y%m%d')}.xlsx"
     
     try:
-        wb.save(filename)
+        for ws in wb.worksheets:
+            ws.sheet_view.showGridLines = False
+        output_path = _wkbk_dir / OUTPUT_FILENAME
+        finalize_validations(wb)
+        wb.save(output_path)
         logger.info(f"{CHECK} SUCCESS: {filename}")
     except Exception as e:
         logger.error(f"{XMARK} ERROR saving workbook: {e}")
@@ -2229,21 +2407,21 @@ def main():
 
     # Summary
     logger.info("\n" + "=" * 78)
-    logger.info("📋 WORKBOOK STRUCTURE SUMMARY")
+    logger.info(" WORKBOOK STRUCTURE SUMMARY")
     logger.info("=" * 78)
-    logger.info("\n📄 Assessment Sheets:")
+    logger.info("\n Assessment Sheets:")
     logger.info("  • Instructions & Legend (usage guidance, Control 8.31 & 8.33 principles)")
     logger.info("  • Development_Environment (14 attributes, 11 access controls, 8 data controls)")
     logger.info("  • Test_QA_Environment (14 attributes, 11 access controls, 13 data controls)")
     logger.info("  • Production_Environment (18 attributes, 14 access restrictions, 12 data controls)")
     logger.info("  • Environment_Promotion_Process (5 promotion paths, 16 controls, 12 CI/CD stages)")
     logger.info("  • Production_Data_in_NonProd (Control 8.33 - 7 policy requirements, 17 anonymization controls)")
-    logger.info("\n📊 Analysis & Governance:")
+    logger.info("\n Analysis & Governance:")
     logger.info("  • Summary Dashboard (6 assessment areas, 10 control mappings, 6 metrics, audit readiness)")
     logger.info("  • Evidence Register (100 evidence entries)")
     logger.info("  • Approval Sign-Off (3-level approval workflow)")
     logger.info("\n" + "─" * 78)
-    logger.info("📈 ASSESSMENT CAPABILITIES:")
+    logger.info(" ASSESSMENT CAPABILITIES:")
     logger.info("  • Environment identification and configuration")
     logger.info("  • Access control assessment (RBAC, MFA, reviews)")
     logger.info("  • Network isolation verification")
@@ -2254,7 +2432,7 @@ def main():
     logger.info("  • 100 evidence documentation entries")
     logger.info("  • Automated compliance calculations")
     logger.info("\n" + "─" * 78)
-    logger.info(f"{TARGET} KEY FEATURES:")
+    logger.info(f" KEY FEATURES:")
     logger.info("  ✅ Technology-agnostic (works with ANY infrastructure)")
     logger.info("  ✅ Control 8.31 (Environment Separation) assessment")
     logger.info("  ✅ Control 8.33 (Test Information) assessment")
@@ -2264,7 +2442,7 @@ def main():
     logger.info("  ✅ Multi-level approval workflow")
     logger.info("  ✅ Quarterly review cycle support")
     logger.info("\n" + "=" * 78)
-    logger.info(f"{ROCKET} NEXT STEPS:")
+    logger.info(f" NEXT STEPS:")
     logger.info("  1. Open the generated workbook")
     logger.info("  2. Complete Instructions & Legend sheet first")
     logger.info("  3. Document each environment (Dev, Test, Production)")
@@ -2273,25 +2451,24 @@ def main():
     logger.info("  6. Review Summary Dashboard for compliance metrics")
     logger.info("  7. Document evidence in Evidence Register")
     logger.info("  8. Obtain final approval via Approval Sign-Off")
-    logger.info("\n💡 PRO TIP:")
+    logger.info("\n PRO TIP:")
     logger.info("  Control 8.33 is CRITICAL: Production data in non-production environments")
     logger.info("  MUST be anonymized or explicitly approved by DPO. This is a common audit")
     logger.info("  finding. Document your anonymization procedures and test their effectiveness.")
     logger.info("\n" + "=" * 78)
     logger.info('\n"The first principle is that you must not fool yourself')
-    logger.info('— and you are the easiest person to fool." - Richard Feynman')
-    logger.info("\n🎖️ This is not cargo cult ISMS. This is evidence-based compliance.")
+    logger.info("\n This is not cargo cult ISMS. This is evidence-based compliance.")
     logger.info("=" * 78 + "\n")
 
     return 0
 
 
 if __name__ == "__main__":
-    exit(main())
+    sys.exit(main())
 
 # =============================================================================
-# QA_VERIFIED: 2026-02-10
-# QA_STATUS: PASSED - STANDARDISATION COMPLETE
-# QA_TOOL: Claude Code Standardisation
-# CHANGES: tab names, policy ref, British English, summary/evidence/approval rewrite
+# QA_VERIFIED: 2026-03-01
+# QA_STATUS: PASSED
+# QA_TOOL: Claude Code Production Scripts QA Methodology
+# CHANGES: Full QA for Production Launch (see GitHub Repository for details)
 # =============================================================================

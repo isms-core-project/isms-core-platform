@@ -43,7 +43,6 @@
 - ISMS-IMP-A.8.9.2-UG/TG (Change Control Assessment)
 - ISMS-IMP-A.8.9.3-UG/TG (Configuration Monitoring Assessment)
 - ISMS-IMP-A.8.9.4-UG/TG (Security Hardening Assessment)
-- ISMS-IMP-A.8.9.5-UG/TG (Compliance Dashboard)
 - ISMS-CTX-A.8.9 (Configuration Management Reference - NOT ISMS)
 - ISO/IEC 27001:2022 Control A.8.9
 
@@ -51,13 +50,13 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for configuration management controls in accordance with ISO/IEC 27001:2022 Control A.8.9.
+This policy establishes [Organisation]'s requirements for configuration management controls in accordance with ISO/IEC 27001:2022 Control A.8.9.
 
 **Scope**: This policy applies to all IT assets requiring configuration management (compute infrastructure, network devices, storage systems, cloud services, applications, security tools, IoT/OT systems) across all environments (production, non-production, cloud, on-premises) and all lifecycle stages (deployment, operation, change, decommissioning).
 
-**Purpose**: Define organizational requirements for configuration management. This policy establishes WHAT must be configured, WHEN changes require approval, WHO is accountable, and WHICH standards apply. Implementation procedures (HOW) are in ISMS-IMP-A.8.9. Technical reference is in ISMS-CTX-A.8.9 (NOT ISMS).
+**Purpose**: Define organisational requirements for configuration management. This policy establishes WHAT must be configured, WHEN changes require approval, WHO is accountable, and WHICH standards apply. Implementation procedures (HOW) are in ISMS-IMP-A.8.9. Technical reference is in ISMS-CTX-A.8.9 (NOT ISMS).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance per ISMS-POL-00, including Swiss nDSG, EU GDPR (where applicable), and ISO/IEC 27001:2022. Conditional requirements (PCI DSS v4.0.1, HIPAA, FINMA, DORA, NIS2) apply where [Organization]'s activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance per ISMS-POL-00, including Swiss nDSG, EU GDPR (where applicable), and ISO/IEC 27001:2022. Conditional requirements (PCI DSS v4.0.1, HIPAA, FINMA, DORA, NIS2) apply where [Organisation]'s activities trigger applicability.
 
 ---
 
@@ -73,7 +72,7 @@ This policy establishes [Organization]'s requirements for configuration manageme
 
 > *"Konfigurationen, einschließlich Sicherheitskonfigurationen, von Hardware, Software, Diensten und Netzwerken müssen festgelegt, dokumentiert, umgesetzt, überwacht und überprüft werden."*
 
-**Control Objective**: Establish secure baseline configurations, prevent unauthorized changes, detect configuration drift, enforce security hardening, and enable rapid recovery while supporting business operations.
+**Control Objective**: Establish secure baseline configurations, prevent unauthorised changes, detect configuration drift, enforce security hardening, and enable rapid recovery while supporting business operations.
 
 **This Policy Addresses**:
 
@@ -99,11 +98,11 @@ This policy:
 
 This policy does NOT:
 
-- **Specify tools or vendors** (selection based on [Organization]'s assessment)
+- **Specify tools or vendors** (selection based on [Organisation]'s assessment)
 - **Define system-specific baselines** (see ISMS-CTX-A.8.9 for technical standards)
 - **Provide step-by-step procedures** (see ISMS-IMP-A.8.9 assessments)
 - **Replace asset management** (builds on A.5.9 asset inventory)
-- **Define change system workflows** (organizations adapt to existing ITIL/ServiceNow/Jira)
+- **Define change system workflows** (organisations adapt to existing ITIL/ServiceNow/Jira)
 
 **Rationale**: Policy stability despite evolving technologies; technical agility without policy revision; clear governance vs execution separation; focused audit scope; adaptability across contexts.
 
@@ -115,9 +114,9 @@ This policy does NOT:
 
 **Lifecycle Stages**: Baseline definition, deployment, operational changes, monitoring, decommissioning
 
-**Organizational**: All [Organization] personnel, contractors, third parties, cloud providers
+**Organisational**: All [Organisation] personnel, contractors, third parties, cloud providers
 
-**Out of Scope**: BYOD not managed by [Organization], public systems requiring no security, temporary systems <24h lifecycle (unless processing sensitive data), risk-assessed exclusions with CISO approval
+**Out of Scope**: BYOD not managed by [Organisation], public systems requiring no security, temporary systems <24h lifecycle (unless processing sensitive data), risk-assessed exclusions with CISO approval
 
 ## Regulatory Applicability
 
@@ -151,24 +150,24 @@ NIST SP 800-53/128, CIS Controls v8.1, ITIL 4, COBIT 2019, CIS Benchmarks, DISA 
 
 ## Four-Domain Framework
 
-[Organization] implements configuration management through **four domains**:
+[Organisation] implements configuration management through **four domains**:
 
 1. **Baseline Configuration** - Define secure baselines
 2. **Change Control** - Approve configuration changes
-3. **Configuration Monitoring** - Detect unauthorized changes
+3. **Configuration Monitoring** - Detect unauthorised changes
 4. **Security Hardening** - Enforce security standards
 
 Each domain has policy requirements (this document), implementation assessment (ISMS-IMP-A.8.9.X), Excel workbooks, evidence registers (100+ rows), and three-tier approval.
 
 ## Baseline Configuration Management
 
-[Organization] establishes, documents, and maintains secure baseline configurations.
+[Organisation] establishes, documents, and maintains secure baseline configurations.
 
 **2.2.1 Baseline Definition**
 
 **Coverage**:
 
-[Organization] SHALL define baselines for:
+[Organisation] SHALL define baselines for:
 
 - Asset types in active use (not individual assets)
 - Critical system configurations
@@ -219,7 +218,7 @@ Golden images SHALL:
 - Be versioned and tracked
 - Be refreshed quarterly
 
-**Approval**: Created by authorized personnel, validated by Security, approved by Configuration Manager
+**Approval**: Created by authorised personnel, validated by Security, approved by Configuration Manager
 
 **2.2.4 Documentation**
 
@@ -238,7 +237,7 @@ Baselines SHALL be documented with:
 
 **2.2.4.1 Baseline Inventory Status**
 
-[Organization] maintains baseline documentation for production asset types:
+[Organisation] maintains baseline documentation for production asset types:
 
 - **Baseline Coverage Target**: ≥90% of production asset types
 - **Critical Systems** (Tier 1/2): Priority baselines for OS, network devices, cloud services, security tools
@@ -257,7 +256,7 @@ When asset type is decommissioned or replaced:
 
 **2.2.5 Infrastructure as Code**
 
-[Organization] SHOULD adopt IaC where feasible:
+[Organisation] SHOULD adopt IaC where feasible:
 
 - Define baselines as code (Terraform, Ansible, CloudFormation, Kubernetes)
 - Store in version control (Git)
@@ -267,13 +266,9 @@ When asset type is decommissioned or replaced:
 
 **Governance**: IaC SHALL require code review, branch protection, automated testing, change control integration
 
-# ISMS-POL-A.8.9 – Configuration Management (Part 2)
-
-**[CONTINUATION FROM PART 1]**
-
 ## Change Control & Configuration Updates
 
-[Organization] ensures all configuration changes follow approved processes with authorization, testing, and documentation.
+[Organisation] ensures all configuration changes follow approved processes with authorisation, testing, and documentation.
 
 **2.3.1 Change Classification**
 
@@ -422,11 +417,11 @@ Changes SHALL include rollback plan documenting:
 | **CAB Attendance** | ≥80% | Average required member attendance |
 | **PIR Completion** | 100% | % with completed PIR within 5 days |
 
-**Reporting**: Calculated monthly, reported to CISO/CIO, analyzed quarterly, process improvements for declining metrics
+**Reporting**: Calculated monthly, reported to CISO/CIO, analysed quarterly, process improvements for declining metrics
 
 ## Configuration Monitoring & Drift Detection
 
-[Organization] continuously monitors configurations and detects unauthorized changes.
+[Organisation] continuously monitors configurations and detects unauthorised changes.
 
 **2.4.1 Continuous Monitoring**
 
@@ -455,11 +450,11 @@ Monitoring SHOULD:
 - Integrate with SIEM for centralized alerting
 - Align frequency with asset criticality
 
-**Tool Selection**: [Organization] selects tools based on technical environment and risk assessment; tools MUST support baseline comparison and drift detection
+**Tool Selection**: [Organisation] selects tools based on technical environment and risk assessment; tools MUST support baseline comparison and drift detection
 
 **2.4.1.1 Monitoring Tool Implementation Status**
 
-[Organization] has implemented configuration monitoring for:
+[Organisation] has implemented configuration monitoring for:
 - **Tier 1 Assets**: Target 100% coverage with real-time or hourly monitoring
 - **Tier 2 Assets**: Target ≥95% coverage with daily monitoring
 
@@ -476,8 +471,8 @@ Monitoring SHOULD:
 
 | Severity | Definition | Response SLA | Example |
 |----------|------------|--------------|---------|
-| **Critical** | Security control disabled | <1 hour | Firewall disabled, unauthorized admin account, encryption off |
-| **High** | Security-relevant change | <4 hours | Password policy weakened, logging disabled, unauthorized service |
+| **Critical** | Security control disabled | <1 hour | Firewall disabled, unauthorised admin account, encryption off |
+| **High** | Security-relevant change | <4 hours | Password policy weakened, logging disabled, unauthorised service |
 | **Medium** | Non-security drift | <24 hours | Service port changed, non-critical setting, documentation mismatch |
 | **Low** | Informational drift | <5 business days | Cosmetic changes, non-functional settings |
 
@@ -500,11 +495,11 @@ Alert routing:
 **Remediation Workflow**:
 1. **Detection**: Automated monitoring detects drift
 2. **Triage**: Configuration Manager investigates cause
-3. **Classification**: Authorized, unauthorized, or false positive
+3. **Classification**: Authorised, unauthorised, or false positive
 4. **Action**:
 
-   - Authorized: Update baseline, close incident
-   - Unauthorized: Remediate to baseline, investigate root cause, close incident
+   - Authorised: Update baseline, close incident
+   - Unauthorised: Remediate to baseline, investigate root cause, close incident
    - False positive: Tune monitoring, close incident
 
 **Remediation Timeline**:
@@ -516,7 +511,7 @@ Alert routing:
 | **Medium** | <5 business days | Escalate to IT Operations Manager |
 | **Low** | <30 days | Best effort |
 
-**Tracking**: All drift incidents logged in incident management, tracked until closure, recurring drift triggers root cause analysis, trends analyzed monthly
+**Tracking**: All drift incidents logged in incident management, tracked until closure, recurring drift triggers root cause analysis, trends analysed monthly
 
 **2.4.3.1 Drift Remediation Escalation Authority**
 
@@ -534,11 +529,11 @@ If drift remediation SLA is not met:
 
 ## Security Hardening & Compliance
 
-[Organization] applies industry-standard security hardening and maintains compliance.
+[Organisation] applies industry-standard security hardening and maintains compliance.
 
 **2.5.1 Hardening Standard Selection**
 
-**Selection Criteria**: Asset type/technology, regulatory requirements (per ISMS-POL-00), industry best practices, organizational risk appetite, operational feasibility
+**Selection Criteria**: Asset type/technology, regulatory requirements (per ISMS-POL-00), industry best practices, organisational risk appetite, operational feasibility
 
 **Recognized Standards** (Examples):
 
@@ -623,7 +618,7 @@ Hardening compliance SHALL:
 
 # Roles and Responsibilities
 
-[Organization] defines clear accountability for configuration management.
+[Organisation] defines clear accountability for configuration management.
 
 **3.1 RACI Matrix**
 
@@ -648,7 +643,7 @@ Hardening compliance SHALL:
 
 - **Accountable** for configuration management policy and program
 - Approves baselines, hardening standards, and exceptions
-- Reviews compliance metrics and authorizes remediation priorities
+- Reviews compliance metrics and authorises remediation priorities
 - Final escalation point for configuration incidents
 
 **Chief Information Officer (CIO) / Chief Technology Officer (CTO)**:
@@ -758,7 +753,7 @@ Exceptions to configuration requirements SHALL:
 - **Severe Violations**: Disciplinary action per HR policy
 - **Systemic Non-Compliance**: Program audit and process improvement
 
-**Severe Violations**: Unauthorized changes to Tier 1 systems, disabling security controls, bypassing change control, concealing configuration drift
+**Severe Violations**: Unauthorised changes to Tier 1 systems, disabling security controls, bypassing change control, concealing configuration drift
 
 **4.5 Continuous Improvement**
 
@@ -778,11 +773,11 @@ Exceptions to configuration requirements SHALL:
 
 **Baseline Configuration**: Documented set of security and operational configuration parameters for an asset type, serving as reference for deployment and compliance verification.
 
-**Change Advisory Board (CAB)**: Cross-functional team responsible for assessing, approving, and reviewing configuration changes to minimize risk and ensure coordination.
+**Change Advisory Board (CAB)**: Cross-functional team responsible for assessing, approving, and reviewing configuration changes to minimise risk and ensure coordination.
 
 **Change Success Rate**: Percentage of implemented changes that achieve intended outcome without requiring rollback, used to measure change process effectiveness.
 
-**Configuration Drift**: Deviation of actual system configuration from approved baseline, potentially indicating unauthorized changes or baseline documentation gaps.
+**Configuration Drift**: Deviation of actual system configuration from approved baseline, potentially indicating unauthorised changes or baseline documentation gaps.
 
 **Configuration Item (CI)**: Asset, service, or component managed through configuration management, tracked in CMDB with defined attributes and relationships.
 
@@ -822,4 +817,4 @@ Exceptions to configuration requirements SHALL:
 
 *This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.9 (UG/TG). Technical reference information is provided in ISMS-CTX-A.8.9 (NOT ISMS).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -5,24 +5,61 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Recovery Security Verification |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.29.3-UG |
-| **Title** | Recovery Security Verification |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.29 |
-| **Control Name** | Information Security During Disruption |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.5.29 (Security During Disruption) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.29) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Chief Information Security Officer (CISO) |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.29 (Security During Disruption)
+- ISMS-IMP-A.5.29.1 (Security Controls During Disruption Assessment)
+- ISMS-IMP-A.5.29.2 (Degraded Mode Security Requirements)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.29.3-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 10 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Recovery Checklist** | Security verification checklist for post-disruption recovery |
+| **Emergency Access Closure** | Closure of emergency access grants and break-glass accounts |
+| **Control Validation** | Re-validation of security controls after recovery |
+| **Anomaly Detection** | Detection of anomalies introduced during the disruption period |
+| **Security Debt Closure** | Resolution of security debt accumulated during degraded operation |
+| **Lessons Learned** | Security lessons learned and improvement actions from the event |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -62,7 +99,6 @@ This assessment covers the following components:
 **Out of Scope:**
 - Security control inventory (covered in ISMS-IMP-A.5.29.1)
 - Degraded mode procedures (covered in ISMS-IMP-A.5.29.2)
-- Compliance dashboards (covered in ISMS-IMP-A.5.29.4)
 - Operational recovery procedures (covered in A.5.30, A.8.13-14)
 
 ### Business Value
@@ -459,7 +495,6 @@ Return to Normal Operations Declared
 |----------|--------------|
 | **ISMS-IMP-A.5.29.1** | Security control baseline for validation |
 | **ISMS-IMP-A.5.29.2** | Emergency access records, security debt register |
-| **ISMS-IMP-A.5.29.4** | Compliance dashboard for recovery metrics |
 
 ---
 
@@ -467,7 +502,7 @@ Return to Normal Operations Declared
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Verification is the proof that recovery is more than a plan."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

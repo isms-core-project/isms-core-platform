@@ -50,11 +50,11 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for remote working security and information security event reporting in accordance with ISO/IEC 27001:2022 Controls A.6.7 and A.6.8.
+This policy establishes [Organisation]'s requirements for remote working security and information security event reporting in accordance with ISO/IEC 27001:2022 Controls A.6.7 and A.6.8.
 
-**Scope**: This policy applies to all personnel who work remotely or outside [Organization]'s premises, all devices used for remote work (corporate and personal), all information accessed or processed remotely, and all personnel responsible for reporting security events regardless of work location.
+**Scope**: This policy applies to all personnel who work remotely or outside [Organisation]'s premises, all devices used for remote work (corporate and personal), all information accessed or processed remotely, and all personnel responsible for reporting security events regardless of work location.
 
-**Purpose**: Define organizational requirements for secure remote working and timely security event reporting. This policy establishes WHAT security measures are required for remote work, WHO may work remotely and under what conditions, WHAT constitutes a reportable security event, and WHO is responsible for reporting and responding. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.6.7-8 (UG/TG variants).S1 through .S5.
+**Purpose**: Define organisational requirements for secure remote working and timely security event reporting. This policy establishes WHAT security measures are required for remote work, WHO may work remotely and under what conditions, WHAT constitutes a reportable security event, and WHO is responsible for reporting and responding. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.6.7-8 (UG/TG variants).S1 through .S5.
 
 **Combined Control Framework**: These two controls are implemented as a unified framework because:
 
@@ -67,7 +67,7 @@ This policy establishes [Organization]'s requirements for remote working securit
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG (data protection), EU GDPR (where applicable), ISO/IEC 27001:2022, and industry-specific requirements where applicable.
 
-**Why This Matters**: Remote work has become standard practice, expanding the organizational attack surface beyond traditional perimeter defenses. Industry research indicates that remote workers face 3x higher phishing exposure, and the average time to detect a breach increases significantly when personnel work outside monitored networks. This framework addresses these risks through systematic security requirements and robust event reporting mechanisms.
+**Why This Matters**: Remote work has become standard practice, expanding the organisational attack surface beyond traditional perimeter defenses. Industry research indicates that remote workers face 3x higher phishing exposure, and the average time to detect a breach increases significantly when personnel work outside monitored networks. This framework addresses these risks through systematic security requirements and robust event reporting mechanisms.
 
 ---
 
@@ -77,9 +77,9 @@ This policy establishes [Organization]'s requirements for remote working securit
 
 **ISO/IEC 27001:2022 Annex A.6.7 - Remote Working**
 
-> *Security measures shall be implemented when personnel are working remotely to protect information accessed, processed, or stored outside the organization's premises.*
+> *Security measures shall be implemented when personnel are working remotely to protect information accessed, processed, or stored outside the organisation's premises.*
 
-**Control Objective**: Ensure that remote personnel have the necessary security controls in place to safeguard the confidentiality, integrity, and availability of organizational information, procedures, and systems from unauthorized access or disclosure when working outside [Organization]'s premises.
+**Control Objective**: Ensure that remote personnel have the necessary security controls in place to safeguard the confidentiality, integrity, and availability of organisational information, procedures, and systems from unauthorised access or disclosure when working outside [Organisation]'s premises.
 
 **Control Type**: Preventive
 **Control Category**: People Control
@@ -89,7 +89,7 @@ This policy establishes [Organization]'s requirements for remote working securit
 
 - Remote working policy defines conditions and restrictions
 - Physical security of remote working site addressed
-- Risk of unauthorized access from persons sharing the space
+- Risk of unauthorised access from persons sharing the space
 - Secure communication channels required
 - Multi-factor authentication for remote access
 - Encryption of data in transit and at rest
@@ -102,7 +102,7 @@ This policy establishes [Organization]'s requirements for remote working securit
 
 **ISO/IEC 27001:2022 Annex A.6.8 - Information Security Event Reporting**
 
-> *The organization shall provide a mechanism for personnel to report observed or suspected information security events through appropriate channels in a timely manner.*
+> *The organisation shall provide a mechanism for personnel to report observed or suspected information security events through appropriate channels in a timely manner.*
 
 **Control Objective**: Support timely, consistent, and effective reporting of information security events that can be identified by personnel, ensuring that events are documented accurately to support incident response activities and other security management responsibilities.
 
@@ -123,7 +123,7 @@ This policy establishes [Organization]'s requirements for remote working securit
 
 ## Combined Control Framework Rationale
 
-[Organization] implements these two controls as a unified framework because they represent complementary aspects of personnel security responsibilities:
+[Organisation] implements these two controls as a unified framework because they represent complementary aspects of personnel security responsibilities:
 
 **Operational Integration**:
 
@@ -151,7 +151,7 @@ This policy establishes [Organization]'s requirements for remote working securit
 This policy:
 
 - **Defines** requirements for secure remote working arrangements
-- **Establishes** authorization requirements for remote work
+- **Establishes** authorisation requirements for remote work
 - **Specifies** physical security requirements for remote work environments
 - **Mandates** technical security controls for remote access
 - **Defines** data handling requirements when working remotely
@@ -180,7 +180,7 @@ This policy does NOT:
 - Policy stability despite evolving remote work technologies
 - Technical flexibility for platform and tool updates
 - Clear distinction between governance (policy) and execution (implementation)
-- Organization-agnostic approach applicable to any ISMS implementation
+- Organisation-agnostic approach applicable to any ISMS implementation
 
 ## Scope
 
@@ -189,9 +189,9 @@ This policy does NOT:
 **Personnel**:
 
 - All employees working remotely (full-time, part-time, occasional)
-- All contractors and consultants working from non-[Organization] premises
-- All third-party personnel with remote access to [Organization]'s systems
-- All personnel traveling for business who access organizational resources
+- All contractors and consultants working from non-[Organisation] premises
+- All third-party personnel with remote access to [Organisation]'s systems
+- All personnel traveling for business who access organisational resources
 - All personnel who may observe or report security events
 
 **Remote Work Arrangements**:
@@ -200,26 +200,26 @@ This policy does NOT:
 - Work from co-working spaces or shared offices
 - Work from client or partner premises
 - Work while traveling (hotels, airports, public spaces)
-- Any work performed outside [Organization]'s controlled premises
+- Any work performed outside [Organisation]'s controlled premises
 
 **Devices and Equipment**:
 
 - Corporate-issued laptops, tablets, and mobile devices
 - Personal devices used for work (BYOD) where permitted
-- Portable storage media containing organizational data
-- Communication devices used for organizational purposes
+- Portable storage media containing organisational data
+- Communication devices used for organisational purposes
 
 **Information and Systems**:
 
-- All organizational data accessed remotely
-- All organizational systems accessed via remote connections
-- All communications containing organizational information
-- All documents and materials processed outside [Organization]'s premises
+- All organisational data accessed remotely
+- All organisational systems accessed via remote connections
+- All communications containing organisational information
+- All documents and materials processed outside [Organisation]'s premises
 
 **Out of Scope**:
 
-- On-premises work performed at [Organization]'s controlled facilities
-- Personal activities on personal devices without organizational data
+- On-premises work performed at [Organisation]'s controlled facilities
+- Personal activities on personal devices without organisational data
 - HR aspects of remote work (eligibility, work-life balance, scheduling)
 - Compensation and expense policies (separate HR domain)
 
@@ -231,7 +231,7 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 
 | Regulation | Applicability | Key Requirements |
 |------------|---------------|------------------|
-| **Swiss nDSG** | All Swiss operations | Art. 8 - Appropriate technical and organizational measures for data protection in remote environments |
+| **Swiss nDSG** | All Swiss operations | Art. 8 - Appropriate technical and organisational measures for data protection in remote environments |
 | **EU GDPR** | When processing EU personal data | Art. 32 - Security of processing must extend to remote work; Art. 33 - Breach notification within 72 hours requires timely event detection |
 | **ISO/IEC 27001:2022** | Certification scope | Controls A.6.7 (Remote Working), A.6.8 (Event Reporting) |
 
@@ -255,31 +255,31 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - CIS Controls v8.1 - Control 4 (Secure Configuration), Control 17 (Incident Response)
 - ENISA - Teleworking Security Guidelines
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment per ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment per ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.
 
 ---
 
 # Remote Working Requirements (Control A.6.7)
 
-## Remote Work Authorization
+## Remote Work Authorisation
 
-[Organization] SHALL establish a formal authorization process for remote working arrangements.
+[Organisation] SHALL establish a formal authorisation process for remote working arrangements.
 
-**2.1.1 Authorization Requirements**
+**2.1.1 Authorisation Requirements**
 
 | Requirement | Description |
 |-------------|-------------|
 | **Formal Approval** | All regular remote work arrangements SHALL be formally approved before commencement |
-| **Authorization Authority** | Line managers authorize remote work; IT Security approves technical access |
+| **Authorisation Authority** | Line managers authorise remote work; IT Security approves technical access |
 | **Risk Assessment** | Risk assessment SHALL be performed for roles handling sensitive data remotely |
 | **Risk Assessment Criteria** | Assessment SHALL evaluate at minimum: (a) Classification level of data accessed remotely (per A.5.12); (b) Physical security capability of remote location; (c) Network security posture; (d) Device security baseline compliance; (e) Regulatory or contractual restrictions |
-| **Risk Assessment Verification** | Assessment adequacy is verified through documented criteria aligned with organizational risk methodology (per A.5.7). Detailed assessment procedures in ISMS-IMP-A.6.7-8.S1 |
+| **Risk Assessment Verification** | Assessment adequacy is verified through documented criteria aligned with organisational risk methodology (per A.5.7). Detailed assessment procedures in ISMS-IMP-A.6.7-8.S1 |
 | **Documented Agreement** | Remote workers SHALL acknowledge remote work security requirements |
-| **Periodic Review** | Remote work authorizations SHALL be reviewed at least annually |
+| **Periodic Review** | Remote work authorisations SHALL be reviewed at least annually |
 
-**2.1.2 Authorization Criteria**
+**2.1.2 Authorisation Criteria**
 
-Remote work authorization SHALL consider:
+Remote work authorisation SHALL consider:
 
 - Role suitability for remote work
 - Data classification of information to be accessed
@@ -290,7 +290,7 @@ Remote work authorization SHALL consider:
 
 **2.1.3 Revocation**
 
-Remote work authorization SHALL be revoked when:
+Remote work authorisation SHALL be revoked when:
 
 - Employment or contract terminates
 - Role changes to one unsuitable for remote work
@@ -300,20 +300,20 @@ Remote work authorization SHALL be revoked when:
 
 ## Physical Security Requirements
 
-[Organization] SHALL define physical security requirements for remote work environments.
+[Organisation] SHALL define physical security requirements for remote work environments.
 
 **2.2.1 Workspace Requirements**
 
 Remote workers SHALL:
 
-- Position screens to prevent unauthorized viewing by others
+- Position screens to prevent unauthorised viewing by others
 - Use privacy screens when working in shared or public spaces
 - Secure work equipment when workspace is unattended
-- Prevent access to work devices by family members, visitors, or other unauthorized persons
+- Prevent access to work devices by family members, visitors, or other unauthorised persons
 - Store sensitive documents securely when not in active use
 - Dispose of sensitive documents using approved methods (shredding)
 
-**Verification**: Physical security compliance is verified through annual self-assessment checklist completion, triggered reassessment following security events or significant workspace changes, or attestation during authorization renewal.
+**Verification**: Physical security compliance is verified through annual self-assessment checklist completion, triggered reassessment following security events or significant workspace changes, or attestation during authorisation renewal.
 
 **2.2.2 Equipment Security**
 
@@ -335,23 +335,23 @@ The clear desk policy (per A.7.7) SHALL extend to remote work environments:
 
 ## Technical Security Requirements
 
-[Organization] SHALL mandate technical security controls for all remote access.
+[Organisation] SHALL mandate technical security controls for all remote access.
 
 **2.3.1 Secure Connection Requirements**
 
 | Requirement | Mandatory For |
 |-------------|---------------|
 | **VPN or Zero Trust Access** | All connections to internal resources |
-| **Multi-Factor Authentication** | All remote access to organizational systems |
+| **Multi-Factor Authentication** | All remote access to organisational systems |
 | **Encrypted Communications** | All data transmission (TLS 1.2+ minimum) |
-| **Corporate DNS** | Resolution through organizational DNS when connected |
+| **Corporate DNS** | Resolution through organisational DNS when connected |
 
 **2.3.2 Authentication Requirements**
 
 Remote access authentication SHALL require:
 
 - Multi-factor authentication (MFA) for all system access
-- Strong passwords per organizational password policy (A.5.17)
+- Strong passwords per organisational password policy (A.5.17)
 - No credential sharing or storage in insecure locations
 - Immediate password change if compromise is suspected
 - Session timeout after period of inactivity
@@ -361,22 +361,22 @@ Remote access authentication SHALL require:
 Remote workers SHALL:
 
 - Use only secure, encrypted wireless networks (WPA2/WPA3 minimum)
-- Avoid public, unsecured Wi-Fi for organizational work without VPN protection
+- Avoid public, unsecured Wi-Fi for organisational work without VPN protection
 - Not disable or circumvent security controls
 - Report network security concerns or anomalies
 
-**Verification**: Network security compliance may be monitored through endpoint management telemetry (network SSID, encryption type, VPN connection status, certificate validity), VPN connection enforcement, or user attestation during periodic reviews. Where telemetry is not technically feasible, user attestation during authorization renewal provides reasonable assurance.
+**Verification**: Network security compliance may be monitored through endpoint management telemetry (network SSID, encryption type, VPN connection status, certificate validity), VPN connection enforcement, or user attestation during periodic reviews. Where telemetry is not technically feasible, user attestation during authorisation renewal provides reasonable assurance.
 
 ## Data Handling Requirements
 
-[Organization] SHALL define data handling requirements for remote work contexts.
+[Organisation] SHALL define data handling requirements for remote work contexts.
 
 **2.4.1 Data Classification Compliance**
 
 Remote workers SHALL:
 
 - Handle data according to its classification level (per A.5.12-13)
-- Not process Restricted data remotely unless specifically authorized
+- Not process Restricted data remotely unless specifically authorised
 - Apply appropriate protection for Confidential data
 - Follow secure information transfer procedures (per A.5.14)
 
@@ -389,7 +389,7 @@ Remote workers SHALL:
 | **Confidential** | Conditional | Encrypted, approved devices only, business justification |
 | **Restricted** | No (default) | Requires explicit CISO approval, enhanced controls |
 
-**Conditional Authorization Process**: Confidential data remote storage requires: (a) Written business justification from Line Manager; (b) Technical controls verification (device encryption, secure storage location); (c) Approval by IT Security Manager. Restricted data requires written CISO approval with documented compensating controls. All approvals SHALL be logged in the exception register (Section 5.4).
+**Conditional Authorisation Process**: Confidential data remote storage requires: (a) Written business justification from Line Manager; (b) Technical controls verification (device encryption, secure storage location); (c) Approval by IT Security Manager. Restricted data requires written CISO approval with documented compensating controls. All approvals SHALL be logged in the exception register (Section 5.4).
 
 **2.4.3 Data Backup**
 
@@ -397,51 +397,51 @@ Remote workers SHALL:
 
 - Store work files in approved cloud or network locations
 - Not rely solely on local device storage for critical data
-- Follow organizational backup policies
+- Follow organisational backup policies
 
 ## Device and Equipment Security
 
-[Organization] SHALL define security requirements for devices used in remote work.
+[Organisation] SHALL define security requirements for devices used in remote work.
 
 **2.5.1 Corporate Device Requirements**
 
 Corporate-issued devices used for remote work SHALL:
 
-- Be configured per organizational security baseline (per A.8.9)
+- Be configured per organisational security baseline (per A.8.9)
 - Have full-disk encryption enabled
 - Have current endpoint protection software (per A.8.7)
-- Be patched and updated per organizational schedule (per A.8.8)
+- Be patched and updated per organisational schedule (per A.8.8)
 - Have remote wipe capability enabled
 - Be registered in device inventory (per A.5.9)
 
 **2.5.2 Personal Device (BYOD) Requirements**
 
-Where personal devices are permitted for organizational work, they SHALL:
+Where personal devices are permitted for organisational work, they SHALL:
 
 - Meet minimum security requirements defined by IT Security
-- Have organizational MDM/EMM solution installed (if required)
+- Have organisational MDM/EMM solution installed (if required)
 - Maintain separation between personal and work data (containerization)
-- Be subject to remote wipe of organizational data upon termination
-- Not store organizational data after access is revoked
+- Be subject to remote wipe of organisational data upon termination
+- Not store organisational data after access is revoked
 
 **2.5.3 Prohibited Devices**
 
-The following SHALL NOT be used for organizational work:
+The following SHALL NOT be used for organisational work:
 
 - Jailbroken or rooted devices
 - Devices with disabled security features
 - Shared devices not under user's control
 - Devices that cannot meet security requirements
 - Devices running end-of-life operating systems without security updates
-- Devices owned or controlled by third parties not subject to organizational security policies
+- Devices owned or controlled by third parties not subject to organisational security policies
 
 ## Remote Work Termination
 
-[Organization] SHALL define requirements for terminating remote work arrangements.
+[Organisation] SHALL define requirements for terminating remote work arrangements.
 
 **2.6.1 Access Revocation**
 
-Upon termination of remote work authorization:
+Upon termination of remote work authorisation:
 
 - Remote access credentials SHALL be revoked immediately
 - VPN and remote access tokens SHALL be disabled
@@ -451,8 +451,8 @@ Upon termination of remote work authorization:
 
 Upon termination of employment or contract:
 
-- All organizational equipment SHALL be returned per A.5.11
-- All organizational data SHALL be removed from personal devices
+- All organisational equipment SHALL be returned per A.5.11
+- All organisational data SHALL be removed from personal devices
 - Return SHALL be verified and documented
 
 ---
@@ -461,7 +461,7 @@ Upon termination of employment or contract:
 
 ## Reporting Mechanisms
 
-[Organization] SHALL provide accessible mechanisms for reporting security events.
+[Organisation] SHALL provide accessible mechanisms for reporting security events.
 
 **3.1.1 Reporting Channel Requirements**
 
@@ -477,7 +477,7 @@ Upon termination of employment or contract:
 
 **3.1.2 Standard Reporting Channels**
 
-[Organization] SHALL maintain the following reporting channels:
+[Organisation] SHALL maintain the following reporting channels:
 
 - **Security Email**: Dedicated email address for security event reports
 - **Phone/Hotline**: Contact number for urgent security matters
@@ -497,7 +497,7 @@ Reporting channels SHALL be:
 
 ## Reportable Events
 
-[Organization] SHALL define what constitutes a reportable security event.
+[Organisation] SHALL define what constitutes a reportable security event.
 
 **3.2.1 Event vs. Incident Distinction**
 
@@ -525,7 +525,7 @@ Personnel SHALL report the following event categories:
 - Suspected malware infection (NEW in ISO 27002:2022)
 - Ransomware indicators
 
-**Unauthorized Access**:
+**Unauthorised Access**:
 
 - Unknown or unexpected login attempts to your accounts
 - Unfamiliar devices logged into your accounts
@@ -535,14 +535,14 @@ Personnel SHALL report the following event categories:
 **Data Breach and Leakage**:
 
 - Misdirected emails containing sensitive information
-- Unauthorized data access or exposure
-- Lost or stolen documents containing organizational data
+- Unauthorised data access or exposure
+- Lost or stolen documents containing organisational data
 - Suspected data exfiltration
 
 **Physical Security**:
 
 - Lost or stolen devices (laptops, phones, USB drives)
-- Tailgating or unauthorized physical access
+- Tailgating or unauthorised physical access
 - Missing equipment
 - Suspicious persons in secure areas
 
@@ -555,17 +555,17 @@ Personnel SHALL report the following event categories:
 **Remote Work Specific**:
 
 - Suspected compromise of home network
-- Unauthorized access to work device by others
+- Unauthorised access to work device by others
 - VPN or remote access issues suggesting attack
 - Suspicious activity while working from public locations
-- Attempts to access organizational systems from unapproved devices
+- Attempts to access organisational systems from unapproved devices
 - Suspicious IT support requests for remote access credentials
 - Home router configuration changes not initiated by user
-- Physical observation of work materials by unauthorized persons
+- Physical observation of work materials by unauthorised persons
 
 ## Reporting Procedures
 
-[Organization] SHALL define clear reporting procedures.
+[Organisation] SHALL define clear reporting procedures.
 
 **3.3.1 What to Report**
 
@@ -602,7 +602,7 @@ Personnel reporting events SHALL:
 
 ## Non-Blame Culture
 
-[Organization] SHALL foster a non-punitive environment for security event reporting.
+[Organisation] SHALL foster a non-punitive environment for security event reporting.
 
 **3.4.1 Non-Blame Principles**
 
@@ -615,14 +615,14 @@ Personnel reporting events SHALL:
 
 **3.4.2 Encouraging Reporting**
 
-[Organization] SHALL:
+[Organisation] SHALL:
 
 - Recognize personnel who demonstrate exemplary reporting behavior
 - Use reported events as learning opportunities, not punishment triggers
 - Communicate the value of reporting through awareness programs
 - Provide feedback on reported events to demonstrate action is taken
 
-**Verification**: Non-blame culture effectiveness may be assessed through reporting volume trends (declining volumes may indicate fear of consequences and trigger culture review), anonymous personnel surveys on reporting comfort, or analysis of time-to-report metrics. Peer organization benchmarking or industry averages may inform adequacy assessment.
+**Verification**: Non-blame culture effectiveness may be assessed through reporting volume trends (declining volumes may indicate fear of consequences and trigger culture review), anonymous personnel surveys on reporting comfort, or analysis of time-to-report metrics. Peer organisation benchmarking or industry averages may inform adequacy assessment.
 
 **3.4.3 Exceptions**
 
@@ -635,7 +635,7 @@ Non-blame principles do NOT protect:
 
 ## Response and Feedback
 
-[Organization] SHALL respond to security event reports.
+[Organisation] SHALL respond to security event reports.
 
 **3.5.1 Response Timeframes**
 
@@ -650,13 +650,13 @@ Non-blame principles do NOT protect:
 
 **3.5.2 Feedback to Reporters**
 
-[Organization] SHALL:
+[Organisation] SHALL:
 
 - Acknowledge receipt of all reports
 - Provide status updates on reported events
 - Communicate outcomes where appropriate and permitted
 - Use lessons learned to improve the reporting process
-- Thank reporters for their contribution to organizational security
+- Thank reporters for their contribution to organisational security
 
 **3.5.3 Escalation**
 
@@ -676,11 +676,11 @@ Events SHALL be escalated per ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
 | Role | Remote Work (A.6.7) | Event Reporting (A.6.8) |
 |------|---------------------|------------------------|
 | **Executive Management** | Approve remote work policy; Provide resources | Champion non-blame culture; Receive critical incident briefings |
-| **CISO** | Define security requirements; Authorize exceptions; Review compliance | Define reporting mechanisms; Oversee response; Report to management |
+| **CISO** | Define security requirements; Authorise exceptions; Review compliance | Define reporting mechanisms; Oversee response; Report to management |
 | **IT Security Team** | Implement technical controls; Monitor compliance; Assess risks | Receive reports; Assess events; Coordinate response; Provide feedback |
 | **IT Operations** | Provision remote access; Maintain VPN/MFA; Support devices | Support reporting channels; Implement containment actions |
 | **HR** | Manage remote work agreements; Coordinate terminations | Include reporting in onboarding; Address personnel-related incidents |
-| **Line Managers** | Authorize remote work; Ensure team compliance | Encourage reporting; Escalate team concerns |
+| **Line Managers** | Authorise remote work; Ensure team compliance | Encourage reporting; Escalate team concerns |
 | **All Personnel** | Comply with remote work requirements; Secure devices and data | Report events promptly; Preserve evidence; Cooperate with investigations |
 
 ## Key Role Definitions
@@ -712,7 +712,7 @@ Responsibilities:
 
 Responsibilities:
 
-- Authorize remote work for team members
+- Authorise remote work for team members
 - Ensure team members understand remote work requirements
 - Foster a culture of security awareness and reporting
 - Escalate security concerns to IT Security
@@ -723,7 +723,7 @@ Responsibilities:
 
 Responsibilities:
 
-- Obtain authorization before working remotely
+- Obtain authorisation before working remotely
 - Comply with all remote work security requirements
 - Maintain physical and technical security of work environment
 - Report security events promptly through designated channels
@@ -741,16 +741,16 @@ Responsibilities:
 |--------|-------------|
 | **Review Frequency** | Annual, or upon significant change |
 | **Review Authority** | CISO with Executive Management approval |
-| **Triggered Reviews** | Major security incident, regulatory change, technology change, organizational restructuring |
+| **Triggered Reviews** | Major security incident, regulatory change, technology change, organisational restructuring |
 | **Review Scope** | Policy effectiveness, compliance metrics, incident trends, regulatory alignment |
 
 ## Compliance Monitoring
 
-[Organization] SHALL monitor compliance with this policy through:
+[Organisation] SHALL monitor compliance with this policy through:
 
 **Remote Work Compliance**:
 
-- Periodic review of remote work authorizations
+- Periodic review of remote work authorisations
 - Technical compliance checks (VPN usage, MFA status, device encryption)
 - Security baseline assessments for remote devices
 - Audit of remote access logs
@@ -810,17 +810,17 @@ Exceptions to this policy require:
 
 ## ISMS Integration
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
-- Remote work risks assessed as part of organizational risk assessment
+- Remote work risks assessed as part of organisational risk assessment
 - Event reporting effectiveness evaluated in risk treatment
 - Risk treatment plans document control implementation
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Controls A.6.7 and A.6.8 applicability justified in [Organization]'s SoA
+- Controls A.6.7 and A.6.8 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported separately for each control
 
 ## Related Controls
@@ -842,11 +842,10 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 **Implementation Guidance** (ISMS-IMP-A.6.7-8 Suite):
 
-- ISMS-IMP-A.6.7-8.S1: Remote Work Authorization & Policy Assessment
+- ISMS-IMP-A.6.7-8.S1: Remote Work Authorisation & Policy Assessment
 - ISMS-IMP-A.6.7-8.S2: Technical Controls Assessment (VPN, MFA, Encryption)
 - ISMS-IMP-A.6.7-8.S3: Endpoint & Physical Security Assessment
 - ISMS-IMP-A.6.7-8.S4: Event Reporting Mechanisms Assessment
-- ISMS-IMP-A.6.7-8.S5: Compliance Dashboard
 
 **Assessment Tools**:
 
@@ -865,7 +864,7 @@ Evidence required to demonstrate this policy is adequately documented and approv
 
 - ✅ This policy document (ISMS-POL-A.6.7-8 v1.0)
 - ✅ Approval signatures from CISO, HR Director, Executive Management
-- ✅ Remote work authorization procedure documented
+- ✅ Remote work authorisation procedure documented
 - ✅ Reporting channel documentation published
 - ✅ Training materials for remote work and event reporting
 - ✅ Exception register with documented approvals
@@ -875,7 +874,7 @@ Evidence required to demonstrate this policy is adequately documented and approv
 
 Evidence required to demonstrate this policy is operationally effective:
 
-- Remote work authorization samples (approved arrangements)
+- Remote work authorisation samples (approved arrangements)
 - Policy acknowledgment records from personnel
 - Training completion records for remote work/reporting training
 - Technical compliance reports (VPN usage, MFA enrollment, device encryption status)
@@ -886,7 +885,7 @@ Evidence required to demonstrate this policy is operationally effective:
 **Evidence Retention:**
 
 - Policy versions: Life of ISMS + 3 years
-- Authorization records: Duration of arrangement + 2 years
+- Authorisation records: Duration of arrangement + 2 years
 - Training records: Duration of employment + 2 years
 - Event reports: 3 years minimum (or per regulatory requirement)
 - Compliance assessments: 3 years minimum
@@ -895,13 +894,13 @@ Evidence required to demonstrate this policy is operationally effective:
 
 # Annex A: Supporting Documentation Requirements
 
-This policy requires the following supporting documentation to be developed and maintained by [Organization]. These are operational documents owned by the respective process owners, not part of the core ISMS policy framework.
+This policy requires the following supporting documentation to be developed and maintained by [Organisation]. These are operational documents owned by the respective process owners, not part of the core ISMS policy framework.
 
 ## A.1 Remote Work Documentation
 
 | Document Type | Purpose | Owner |
 |---------------|---------|-------|
-| **Remote Work Authorization Form** | Formal request and approval for remote work arrangements | HR |
+| **Remote Work Authorisation Form** | Formal request and approval for remote work arrangements | HR |
 | **Remote Work Security Acknowledgment** | Personnel acknowledgment of security requirements | HR/IT Security |
 | **Remote Work Agreement** | Terms and conditions for remote work arrangements | HR/Legal |
 | **Home Office Security Self-Assessment** | Checklist for personnel to assess workspace security | IT Security |
@@ -920,10 +919,10 @@ This policy requires the following supporting documentation to be developed and 
 Optional reference templates and examples may be provided in:
 
 - ISMS-REF-A.6.7-8 (Reference Materials - if created)
-- Organizational intranet or document management system
+- Organisational intranet or document management system
 - HR onboarding materials
 
-**Note**: The specific format and content of operational forms and templates are determined by [Organization] based on its operational requirements, technology platforms, and organizational culture. This policy defines WHAT documentation is required, not the specific format.
+**Note**: The specific format and content of operational forms and templates are determined by [Organisation] based on its operational requirements, technology platforms, and organisational culture. This policy defines WHAT documentation is required, not the specific format.
 
 ---
 
@@ -945,4 +944,4 @@ Optional reference templates and examples may be provided in:
 
 *This policy establishes requirements for remote working and information security event reporting. Implementation procedures, assessment templates, and detailed guidance are documented in ISMS-IMP-A.6.7-8 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

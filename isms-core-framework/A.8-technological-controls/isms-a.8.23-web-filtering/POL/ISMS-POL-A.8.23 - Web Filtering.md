@@ -47,13 +47,13 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for web filtering controls to protect users and organizational information from web-based threats in accordance with ISO/IEC 27001:2022 Control A.8.23.
+This policy establishes [Organisation]'s requirements for web filtering controls to protect users and organisational information from web-based threats in accordance with ISO/IEC 27001:2022 Control A.8.23.
 
-**Scope**: This policy applies to all network segments where users access internet resources, all organizational personnel, and all web filtering technologies regardless of deployment model.
+**Scope**: This policy applies to all network segments where users access internet resources, all organisational personnel, and all web filtering technologies regardless of deployment model.
 
-**Purpose**: Define organizational requirements for web filtering control implementation and governance. This policy establishes WHAT web filtering protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.23 (UG/TG variants).
+**Purpose**: Define organisational requirements for web filtering control implementation and governance. This policy establishes WHAT web filtering protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.23 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -65,21 +65,21 @@ This policy establishes [Organization]'s requirements for web filtering controls
 
 > *Access to external websites shall be managed to reduce exposure to malicious content.*
 
-**Control Objective**: Establish organizational policy for web filtering controls protecting users and information from web-based threats throughout the organization's network infrastructure.
+**Control Objective**: Establish organisational policy for web filtering controls protecting users and information from web-based threats throughout the organisation's network infrastructure.
 
 **This Policy Addresses**:
 
-- Web filtering control requirements based on threat landscape and organizational risk appetite
+- Web filtering control requirements based on threat landscape and organisational risk appetite
 - Network coverage requirements ensuring comprehensive protection
-- Organizational roles and responsibilities for web filtering governance
+- Organisational roles and responsibilities for web filtering governance
 - Exception and incident management frameworks
-- Integration with [Organization]'s risk assessment and treatment processes
+- Integration with [Organisation]'s risk assessment and treatment processes
 
 ## What This Policy Does
 
 This policy:
 
-- **Defines** web filtering control requirements aligned with organizational risk assessment
+- **Defines** web filtering control requirements aligned with organisational risk assessment
 - **Establishes** governance framework for web filtering decision-making
 - **Specifies** accountability for web filtering control implementation
 - **References** applicable regulatory requirements per ISMS-POL-00
@@ -91,8 +91,8 @@ This policy does NOT:
 - **Specify technical implementation details** (see ISMS-IMP-A.8.23 Implementation Guides)
 - **Define specific filtering categories or URL lists** (see ISMS-IMP-A.8.23 Policy Configuration Assessment)
 - **Provide system-specific configuration procedures** (see ISMS-IMP-A.8.23 Assessment Guides)
-- **Select filtering technologies or vendors** (technology selection based on [Organization]'s risk assessment)
-- **Replace risk assessment** (web filtering controls selected based on [Organization]'s risk treatment)
+- **Select filtering technologies or vendors** (technology selection based on [Organisation]'s risk assessment)
+- **Replace risk assessment** (web filtering controls selected based on [Organisation]'s risk treatment)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
@@ -106,7 +106,7 @@ This policy does NOT:
 
 - All network segments providing internet connectivity (on-premises, wireless, remote access, cloud)
 - All users (employees, contractors, temporary staff, guests where applicable)
-- All devices accessing organizational network resources
+- All devices accessing organisational network resources
 - All web filtering implementations regardless of deployment model (gateway, cloud-based, endpoint, DNS-based)
 - All third-party services providing network access
 
@@ -125,7 +125,7 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 
 | Regulation | Applicability | Key Requirements |
 |------------|---------------|------------------|
-| **Swiss nDSG** | All Swiss operations | Art. 8 - Appropriate technical and organizational measures |
+| **Swiss nDSG** | All Swiss operations | Art. 8 - Appropriate technical and organisational measures |
 | **EU GDPR** | When processing EU personal data | Art. 32 - Security measures including access controls |
 | **ISO/IEC 27001:2022** | Certification scope | Control A.8.23 - Documented policy and implementation |
 
@@ -136,7 +136,7 @@ Apply only when specific business conditions trigger applicability:
 | Regulation | Trigger Condition | Web Filtering Requirements |
 |-----------|-------------------|----------------------------|
 | **PCI DSS v4.0.1** | Processing payment card data | Network security controls, malware protection |
-| **FINMA** | Swiss regulated financial institution | Technical and organizational measures per risk assessment |
+| **FINMA** | Swiss regulated financial institution | Technical and organisational measures per risk assessment |
 | **DORA** | EU financial services entity | Network security controls, cyber resilience |
 | **NIS2** | Essential/important entity (EU) | Security measures for network and information systems |
 
@@ -149,7 +149,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - MITRE ATT&CK Framework (Defense techniques)
 - OWASP (Web Security Testing Guide)
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
 
 ---
 
@@ -157,7 +157,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ## Threat Protection Requirements (Mandatory)
 
-[Organization] implements web filtering capabilities to protect against web-based threats.
+[Organisation] implements web filtering capabilities to protect against web-based threats.
 
 **Required Protection Categories**:
 
@@ -170,15 +170,15 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Implementation Note**: Specific threat intelligence feeds, update frequencies, and blocking mechanisms are defined in ISMS-IMP-A.8.23-1 (Filtering Infrastructure Assessment) and ISMS-IMP-A.8.23-3 (Policy Configuration Assessment).
 
-**Threat Intelligence**: [Organization] SHALL utilize threat intelligence from reputable sources to maintain current protection against emerging threats. Threat intelligence integration procedures documented in ISMS-IMP-A.8.23-3.
+**Threat Intelligence**: [Organisation] SHALL utilize threat intelligence from reputable sources to maintain current protection against emerging threats. Threat intelligence integration procedures documented in ISMS-IMP-A.8.23-3.
 
 ## Category Filtering Approach (Risk-Based)
 
-[Organization] defines web filtering category approach based on organizational risk appetite and compliance requirements.
+[Organisation] defines web filtering category approach based on organisational risk appetite and compliance requirements.
 
-**Organizational Approach Options**:
+**Organisational Approach Options**:
 
-[Organization] SHALL document one of the following approaches:
+[Organisation] SHALL document one of the following approaches:
 
 1. **Restrictive Blocking**: Specific website categories blocked based on risk assessment and compliance requirements
 2. **Trust-Based Monitoring**: Most categories permitted with activity monitoring and acceptable use policy enforcement
@@ -186,7 +186,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Implementation Note**: Selected approach, specific blocked/monitored categories, and risk classification criteria are documented in ISMS-IMP-A.8.23-3 (Policy Configuration Assessment). Category decisions reviewed based on risk assessment and communicated to all users.
 
-**Adopted Organizational Approach:** [Organization] implements a **Hybrid Risk-Based** approach:
+**Adopted Organisational Approach:** [Organisation] implements a **Hybrid Risk-Based** approach:
 
 - **Blocked (High-Risk):** Malware distribution, phishing, C2/botnets, exploit kits, illegal content, anonymizers/open proxies
 - **Monitored (Medium-Risk):** File sharing, streaming media, social networking, personal webmail
@@ -196,9 +196,9 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 
 ## Network Coverage Requirements
 
-[Organization] implements web filtering controls to achieve comprehensive coverage.
+[Organisation] implements web filtering controls to achieve comprehensive coverage.
 
-**Coverage Principle**: All paths to internet from organizational devices SHALL traverse web filtering controls.
+**Coverage Principle**: All paths to internet from organisational devices SHALL traverse web filtering controls.
 
 **Required Coverage**:
 
@@ -210,7 +210,7 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 
 **Implementation Note**: Network topology documentation, coverage verification procedures, and gap identification methods are defined in ISMS-IMP-A.8.23-2 (Network Coverage Assessment).
 
-**Coverage Verification**: [Organization] SHALL verify filtering coverage through technical testing. Testing methodology and frequency defined in ISMS-IMP-A.8.23-2.
+**Coverage Verification**: [Organisation] SHALL verify filtering coverage through technical testing. Testing methodology and frequency defined in ISMS-IMP-A.8.23-2.
 
 **Acceptable Coverage Exceptions**:
 
@@ -221,7 +221,7 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 
 ## Logging and Monitoring
 
-[Organization] implements logging of web filtering events to support security monitoring and incident investigation.
+[Organisation] implements logging of web filtering events to support security monitoring and incident investigation.
 
 **Logging Requirements**:
 
@@ -240,7 +240,7 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 
 **Implementation Note**: Specific logging fields, retention periods, storage requirements, and monitoring procedures are defined in ISMS-IMP-A.8.23-4 (Monitoring & Response Assessment).
 
-**Privacy Compliance**: Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users informed of monitoring through acceptable use policy. Access to logs restricted to authorized personnel with legitimate need.
+**Privacy Compliance**: Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users informed of monitoring through acceptable use policy. Access to logs restricted to authorised personnel with legitimate need.
 
 ---
 
@@ -259,7 +259,7 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 
 - Accountable for overall web filtering policy and program effectiveness
 - Approving high-risk exceptions and policy changes
-- Defining organizational risk appetite for web filtering
+- Defining organisational risk appetite for web filtering
 - Escalating critical issues to Executive Management
 - Annual policy review and approval
 
@@ -290,14 +290,14 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 
 ## Assessment and Verification
 
-[Organization] verifies web filtering control effectiveness through structured assessment.
+[Organisation] verifies web filtering control effectiveness through structured assessment.
 
 **Assessment Domains**:
 1. Filtering Infrastructure: Deployed technologies and capabilities
 2. Network Coverage: Topology mapping and coverage verification
 3. Policy Configuration: Filtering rules, categories, and threat feeds
 4. Monitoring & Response: Logging, alerting, and incident response capabilities
-5. Compliance Summary: Consolidated metrics and gap analysis
+5. Monitoring & Response: Summary metrics and gap analysis across all assessment areas
 
 **Implementation Note**: Assessment methodology, evidence requirements, workbooks, and compliance calculation procedures are defined in ISMS-IMP-A.8.23 (Implementation Guidance Suite). Assessment tools maintained separately from policy to enable frequent updates.
 
@@ -362,7 +362,7 @@ Exceptions to web filtering policy requirements require:
 **Policy Review**:
 
 - **Frequency**: Annual minimum
-- **Triggers**: Regulatory changes, major incidents, significant threat landscape changes, organizational changes, audit findings
+- **Triggers**: Regulatory changes, major incidents, significant threat landscape changes, organisational changes, audit findings
 - **Reviewers**: CISO, IT Security Team, Legal/Compliance, IT Operations
 - **Approval**: CISO (technical), Executive Management (strategic)
 
@@ -378,7 +378,7 @@ Exceptions to web filtering policy requirements require:
 - **Major** (scope changes, new requirements): Full approval chain, implementation timeline per change management
 - **Emergency** (critical threats): CISO approval, immediate communication and implementation
 
-**Communication**: Policy published in ISMS document repository. Changes communicated organization-wide. Training provided for significant changes affecting user behavior or responsibilities.
+**Communication**: Policy published in ISMS document repository. Changes communicated organisation-wide. Training provided for significant changes affecting user behavior or responsibilities.
 
 ---
 
@@ -386,17 +386,17 @@ Exceptions to web filtering policy requirements require:
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
-- Web filtering controls selected based on [Organization]'s risk assessment
+- Web filtering controls selected based on [Organisation]'s risk assessment
 - Threat landscape assessment determines protection requirements
 - Risk treatment plans document web filtering control implementation
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Control A.8.23 applicability justified in [Organization]'s SoA
+- Control A.8.23 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 
 **Related Controls**:
@@ -416,7 +416,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - ISMS-IMP-A.8.23-2: Network Coverage Assessment (topology mapping, coverage verification)
 - ISMS-IMP-A.8.23-3: Policy Configuration Assessment (categories, rules, blocking policies)
 - ISMS-IMP-A.8.23-4: Monitoring & Response Assessment (logging, alerting, incident procedures)
-- ISMS-IMP-A.8.23-5: Compliance Dashboard (consolidated compliance reporting)
 
 **Assessment Tools**:
 
@@ -445,7 +444,7 @@ This policy addresses web filtering requirements from:
 
 *Conditional applicability per ISMS-POL-00
 
-**Note**: Specific regulatory interpretation and compliance verification procedures are documented in ISMS-IMP-A.8.23-5 (Compliance Dashboard).
+**Note**: Specific regulatory interpretation and compliance verification procedures are documented in ISMS-IMP-A.8.23 (Implementation Guidance Suite).
 
 ## Training & Awareness
 
@@ -472,11 +471,11 @@ This policy addresses web filtering requirements from:
 
 # Definitions
 
-**Web Filtering**: Technology-based controls that monitor, restrict, or block access to web resources based on defined security policies. Web filtering analyzes URLs, domains, content, and protocols to permit, deny, or log access attempts.
+**Web Filtering**: Technology-based controls that monitor, restrict, or block access to web resources based on defined security policies. Web filtering analyses URLs, domains, content, and protocols to permit, deny, or log access attempts.
 
 **Threat Protection**: Capabilities to block access to known malicious websites including malware distribution sites, phishing pages, command-and-control infrastructure, and exploit delivery mechanisms.
 
-**Category Filtering**: Capability to block or monitor access to website categories (e.g., social media, gambling, streaming) based on organizational acceptable use policies and risk appetite.
+**Category Filtering**: Capability to block or monitor access to website categories (e.g., social media, gambling, streaming) based on organisational acceptable use policies and risk appetite.
 
 **Network Coverage**: The extent to which web filtering controls are deployed across all network segments and access methods where users can reach the internet.
 
@@ -494,7 +493,7 @@ This policy addresses web filtering requirements from:
 
 # Annex A: Guest Network Filtering Requirements
 
-**Scope:** This annex defines web filtering requirements for guest network segments providing internet access to non-organizational users (visitors, contractors without corporate credentials, BYOD on guest SSID).
+**Scope:** This annex defines web filtering requirements for guest network segments providing internet access to non-organisational users (visitors, contractors without corporate credentials, BYOD on guest SSID).
 
 **Filtering Approach:** Guest networks implement a **Restrictive Blocking** approach:
 
@@ -528,4 +527,4 @@ This policy addresses web filtering requirements from:
 ---
 
 *This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.23 (UG/TG).*
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

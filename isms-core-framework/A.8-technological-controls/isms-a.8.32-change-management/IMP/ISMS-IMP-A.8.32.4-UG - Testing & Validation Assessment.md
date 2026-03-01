@@ -8,29 +8,42 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Testing & Validation Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.32.4-UG |
+| **Related Policy** | ISMS-POL-A.8.32 (Change Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.32 (Change Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Testing & Validation Procedures for Change Management |
-| **Related Policy** | ISMS-POL-A.8.32, Section 2.3 (Testing & Validation Requirements), ISO/IEC 27001:2022 Control 8.29 |
-| **Purpose** | Assess testing procedures, validation processes, acceptance criteria, and rollback capabilities to ensure changes are properly tested before production deployment |
-| **Target Audience** | QA Team, Test Managers, DevOps Engineers, Security Team, Application Owners, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Process & Quality Assurance |
-| **Review Cycle** | Quarterly or After Major Testing Process Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
+| Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Initial assessment specification for Testing & Validation workbook | ISMS Implementation Team |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.32 (Change Management)
+- ISMS-IMP-A.8.32.1 (Change Process Assessment)
+- ISMS-IMP-A.8.32.2 (Change Types & Categories Assessment)
+- ISMS-IMP-A.8.32.3 (Environment Separation Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.8.32.4-TG.
 
 ---
-
 
 
 **Audience:** QA Team, Test Managers, DevOps Engineers, Security Team, Application Owners

@@ -8,22 +8,36 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Inventory Structure & Maintenance |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.9.2-UG |
+| **Related Policy** | ISMS-POL-A.5.9 (Inventory of Information and Assets) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.9 (Inventory of Information and Other Associated Assets) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Inventory Structure & Maintenance Procedures |
-| **Related Policy** | ISMS-POL-A.5.9, Section 2.2 (Asset Categorization), Section 2.3 (Mandatory Inventory Attributes), Section 2.5 (Inventory Quality Standards), Section 2.6 (Integration Requirements) |
-| **Purpose** | Document inventory structure, update procedures, integration mechanisms, and maintenance workflows |
-| **Target Audience** | Security Team, IT Operations, System Owners, Information Owners, CMDB Administrators, Integration Engineers |
-| **Assessment Type** | Operational & Technical |
-| **Review Cycle** | Quarterly or After Inventory Structure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|--------|--------|
-| 1.0 | [Date] | Initial assessment specification following consolidated policy structure | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.9 (Inventory of Information and Assets)
+- ISMS-IMP-A.5.9.1 (Asset Identification & Discovery)
+- ISMS-IMP-A.5.9.3 (Assessment Specifications)
+- ISMS-IMP-A.5.9.4 (Owner Accountability Assessment)
+
+---
 
 ### Document Structure
 
@@ -35,13 +49,31 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
+### Workbook at a Glance
+
+This workbook contains the following 9 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Inventory Structure & Access** | Documentation of inventory systems, access controls, and data organisation |
+| **Update Triggers & Workflows** | Triggers for inventory updates and the workflows to action them |
+| **Integration Architecture** | Integration points with CMDB, HR, ITSM, and other source systems |
+| **Quality Control Processes** | Quality control activities ensuring inventory accuracy and completeness |
+| **Maintenance Metrics** | Measurement of inventory maintenance effectiveness and SLA compliance |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+
+---
+
 ## Assessment Overview
 
 ### What This Assessment Evaluates
 
-This assessment documents HOW [Organization] structures and maintains its asset inventory. This is the "HOW is it organized and kept current?" assessment that answers:
+This assessment documents HOW [Organisation] structures and maintains its asset inventory. This is the "HOW is it organised and kept current?" assessment that answers:
 
-- **Inventory Structure**: What systems hold inventory data? How is it organized?
+- **Inventory Structure**: What systems hold inventory data? How is it organised?
 - **Update Procedures**: How are changes captured? What triggers updates?
 - **Integration**: How does inventory integrate with CMDB, HR, procurement?
 - **Maintenance Workflows**: Who updates what? When? How?
@@ -51,7 +83,7 @@ This assessment documents HOW [Organization] structures and maintains its asset 
 
 ### Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - **ISO/IEC 27001:2022 Control A.5.9**: "...inventory...should be created and **maintained**"
 - **ISMS-POL-A.5.9, Requirement A.5.9-R2**: Asset categorization requirements
@@ -61,7 +93,7 @@ This assessment verifies [Organization]'s compliance with:
 
 **From Implementer Perspective**: Provides systematic procedures to keep inventory current without excessive manual effort.
 
-**From Auditor Perspective**: Demonstrates [Organization] has sustainable processes to maintain inventory accuracy over time.
+**From Auditor Perspective**: Demonstrates [Organisation] has sustainable processes to maintain inventory accuracy over time.
 
 ### Assessment Domains
 
@@ -69,7 +101,7 @@ This assessment covers **4 maintenance domains**:
 
 | Domain | Focus | What You'll Document |
 |--------|-------|---------------------|
-| **1. Inventory Structure** | Systems, schemas, organization | Where inventory lives, how it's structured, access controls |
+| **1. Inventory Structure** | Systems, schemas, organisation | Where inventory lives, how it's structured, access controls |
 | **2. Update Procedures** | Triggers, workflows, timing | What triggers updates, who performs them, SLAs |
 | **3. Integration Mechanisms** | CMDB, HR, procurement sync | Automated feeds, API integration, reconciliation |
 | **4. Data Quality Maintenance** | Validation, reviews, cleansing | How quality is maintained, error correction, periodic reviews |
@@ -80,7 +112,7 @@ This assessment covers **4 maintenance domains**:
 
 **Sheets** (7 total):
 1. **Instructions**: How to complete this assessment
-2. **Inventory Structure**: Systems, schemas, organization, access
+2. **Inventory Structure**: Systems, schemas, organisation, access
 3. **Update Triggers & Workflows**: What triggers updates, procedures, SLAs
 4. **Integration Architecture**: CMDB, HR, procurement integration
 5. **Data Quality Controls**: Validation rules, review processes, error handling
@@ -181,7 +213,6 @@ Phase 6: Review & Approval (Day 16)
 ├─ Quality check against checklist
 ├─ Security Team review
 ├─ CISO approval
-└─ Submit to compliance dashboard
 ```
 
 **Timeline**: 16 working days for initial assessment, 4-6 days for quarterly updates
@@ -207,7 +238,7 @@ Phase 6: Review & Approval (Day 16)
 
 ### Sheet 2: Inventory Structure
 
-**Purpose**: Document where inventory data is stored and how it's organized.
+**Purpose**: Document where inventory data is stored and how it's organised.
 
 **What This Sheet Captures**:
 
@@ -225,7 +256,7 @@ Phase 6: Review & Approval (Day 16)
 | **System Type** | Category of system | Dropdown: CMDB / Database / Spreadsheet / Document Repository / Custom Application / SaaS Platform |
 | **Asset Categories Stored** | Which asset types in this system | Free text: List categories (e.g., "IT Infrastructure, Applications") |
 | **Primary/Secondary** | Is this the authoritative source? | Dropdown: Primary (authoritative) / Secondary (copy/cache) / Reference Only |
-| **Data Structure** | How data is organized | Free text: Description (e.g., "SQL tables: ci_server, ci_storage, ci_network") |
+| **Data Structure** | How data is organised | Free text: Description (e.g., "SQL tables: ci_server, ci_storage, ci_network") |
 | **Mandatory Attributes Coverage** | Which policy attributes included | Free text: List attributes from Policy Section 2.3 |
 | **Missing Attributes** | Which policy attributes NOT included | Free text: List gaps |
 | **Access Controls** | Who can view/edit | Free text: Role-based access description |
@@ -1087,10 +1118,8 @@ Before submitting this assessment, verify:
 - Escalate significant gaps to Executive Management if necessary
 - Sign approval
 
-**Step 5: Submission to Compliance Dashboard**
 
 - Export metrics to dashboard consolidation workbook
-- Update ISMS-IMP-A.5.9.5 (Compliance Dashboard)
 - Archive assessment workbook
 - Store evidence per retention policy
 
@@ -1137,7 +1166,7 @@ Document approval in assessment workbook:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Without structure, a list is just noise with commas."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -3,24 +3,58 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | DPIA Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.34.5-UG |
+| **Related Policy** | ISMS-POL-A.5.34 (Privacy and Pii) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.34 (Privacy and Protection of PII) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Data Protection Impact Assessment (DPIA) for High-Risk Processing Activities |
-| **Related Policy** | ISMS-POL-A.5.34, Section 2.5 (Data Protection Impact Assessment) |
-| **Purpose** | Guide users through DPIA trigger assessment, systematic risk evaluation, and compliance with GDPR Article 35 requirements for high-risk processing activities |
-| **Target Audience** | DPO/Privacy Officers, Legal Counsel, Business Owners, Product Managers, IT/Security Teams, Compliance Officers, Auditors |
-| **Assessment Type** | Risk Assessment & Compliance |
-| **Review Cycle** | Annual or upon introduction of new high-risk processing activities |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for DPIA assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.34 (Privacy and Pii)
+- ISMS-IMP-A.5.34.1 (PII Identification and Classification Assessment)
+- ISMS-IMP-A.5.34.2 (Legal Basis and Lawful Processing Assessment)
+- ISMS-IMP-A.5.34.3 (Data Subject Rights Management Assessment)
+- ISMS-IMP-A.5.34.4 (Technical and Organisational Measures (TOMs) Assessment)
+- ISMS-IMP-A.5.34.6 (Cross Border Transfer Assessment)
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 8 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions** | Assessment guidance, DPIA methodology reference, and field descriptions |
+| **Trigger Assessment** | Assessment of whether processing activities meet GDPR Article 35 DPIA thresholds |
+| **DPIA Register** | Register of all DPIAs conducted with status and outcomes |
+| **Risk Assessment** | Systematic risk evaluation for identified high-risk processing activities |
+| **Mitigation Measures** | Documentation of risk mitigation measures and residual risk acceptance |
+| **Stakeholder Consultation** | DPO, data subject, and supervisory authority consultation records |
+| **Gap Analysis** | Identified gaps in DPIA coverage and process compliance |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
 
 ---
 
@@ -853,7 +887,7 @@ Assess severity of harm to data subjects if risk materializes:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Risk assessment is not about eliminating risk, but about understanding it."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

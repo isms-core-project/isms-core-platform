@@ -8,26 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Clear Desk Screen Compliance |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.6-7-14-S2-UG |
+| **Related Policy** | ISMS-POL-A.7.6-7-14-S2 (Information Media Handling) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.7 (Clear Desk and Clear Screen) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Clear Desk and Clear Screen - Workspace Information Protection |
-| **Related Policy** | ISMS-POL-A.7.6-7-14, Section 2.2 (Clear Desk and Clear Screen) |
-| **Purpose** | Document clear desk/screen requirements, assess workspace compliance, track audit results and enforcement |
-| **Target Audience** | Facilities Management, IT Operations, Line Managers, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Procedural |
-| **Review Cycle** | Monthly (Audits) / Quarterly (Full Assessment) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Clear Desk/Screen Compliance assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.6-7-14-S2 (Information Media Handling)
+- ISMS-IMP-A.7.6-7-14-S1 (Secure Areas Working Assessment)
+- ISMS-IMP-A.7.6-7-14-S3 (Equipment Disposal Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.6-7-14-S2-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Requirements Matrix | Map clear desk and screen requirements by area and role |
+| 3 | Screen Lock Configuration | Verify screen lock timeout settings across all systems |
+| 4 | Audit Results | Record results of clear desk and screen audits |
+| 5 | Workspace Assessment | Assess individual workspace compliance |
+| 6 | Evidence Register | Store and reference evidence supporting assessments |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -97,7 +125,6 @@ This assessment covers BOTH physical workspace (clear desk) and digital workspac
 | ISMS-IMP-A.7.6-7-14-S1 | Secure Areas Working | Clean desk requirements in secure areas feed into S1 |
 | **ISMS-IMP-A.7.6-7-14-S2** | **Clear Desk/Screen Compliance** | **WHAT rules exist, HOW are they enforced** |
 | ISMS-IMP-A.7.6-7-14-S3 | Equipment Disposal Assessment | Removable media disposal links to S3 |
-| ISMS-IMP-A.7.6-7-14-S4 | Compliance Dashboard | Consolidated view across all controls |
 
 ### Who Should Complete This Assessment
 
@@ -182,9 +209,6 @@ Before starting this assessment, gather:
 ### Dependencies
 
 This assessment has NO dependencies on other assessments - it can be completed independently.
-
-Outputs feed into:
-- ISMS-IMP-A.7.6-7-14-S4 (Compliance Dashboard)
 
 ---
 
@@ -629,7 +653,7 @@ Outputs feed into:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Visible information is vulnerable information."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

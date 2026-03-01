@@ -91,8 +91,8 @@ Diese Richtlinie:
 
 Diese Richtlinie tut NICHT:
 
-- **Spezifizieren technischer NTP-Server-Konfigurationen** (siehe ISMS-IMP-A.8.17-S1 Time Source Configuration)
-- **Bereitstellen plattformspezifischer Synchronisations-Prozeduren** (siehe ISMS-IMP-A.8.17-S2 Synchronization Verification)
+- **Spezifizieren technischer NTP-Server-Konfigurationen** (siehe ISMS-IMP-A.8.17.1 Time Source Configuration)
+- **Bereitstellen plattformspezifischer Synchronisations-Prozeduren** (siehe ISMS-IMP-A.8.17.2 Synchronization Verification)
 - **Definieren spezifischer NTP-Technologien** (chrony, ntpd, W32Time, Cloud Time Services)
 - **Auswählen von Zeitquellen-Anbietern** (NIST, Cloudflare, NTP Pool, GPS - basierend auf organisatorischem Assessment)
 - **Ersetzen von Risk Assessment** (Zeitabweichungs-Schwellenwerte basierend auf System-Kritikalität und Risk Treatment)
@@ -178,7 +178,7 @@ Gemäss ISMS-POL-00 (Regulatory Applicability Framework) sind regulatorische Anf
 
 **Hinweis**: Interne NTP-Infrastruktur MUSS mit mindestens zwei primären (Stratum 0/1) Quellen synchronisieren. NTP Pool und Cloud-Provider-Services können als ergänzende Quellen für Redundanz dienen, SOLLEN aber NICHT die einzige autoritative Referenz sein.
 
-**Implementierungs-Hinweis**: Spezifische Zeitquellen-Auswahl, -Konfiguration und Verfügbarkeitsmonitoring-Prozeduren sind in ISMS-IMP-A.8.17-S1 (Time Source Configuration) definiert.
+**Implementierungs-Hinweis**: Spezifische Zeitquellen-Auswahl, -Konfiguration und Verfügbarkeitsmonitoring-Prozeduren sind in ISMS-IMP-A.8.17.1 (Time Source Configuration) definiert.
 
 ## Interne Zeitsynchronisations-Infrastruktur (Obligatorisch)
 
@@ -202,7 +202,7 @@ Gemäss ISMS-POL-00 (Regulatory Applicability Framework) sind regulatorische Anf
 - Zeitsynchronisations-Service per ISMS-POL-A.8.21 (Network Services Security) gesichert
 - UDP Port 123 Traffic-Filterung und Access Control konfiguriert
 
-**Implementierungs-Hinweis**: Spezifische NTP-Server-Deployment, -Konfiguration und -Management-Prozeduren sind in ISMS-IMP-A.8.17-S1 (Time Source Configuration) definiert.
+**Implementierungs-Hinweis**: Spezifische NTP-Server-Deployment, -Konfiguration und -Management-Prozeduren sind in ISMS-IMP-A.8.17.1 (Time Source Configuration) definiert.
 
 ## Systemsynchronisations-Anforderungen (Obligatorisch)
 
@@ -249,7 +249,7 @@ Alle in-scope Systeme MÜSSEN für Zeitsynchronisation zu genehmigten internen N
 - Können SNTP (Simplified Network Time Protocol) verwenden
 - Unterliegen denselben Zeitabweichungs-Anforderungen basierend auf Funktionalität
 
-**Implementierungs-Hinweis**: Plattformspezifische NTP-Client-Konfigurationsprozeduren (Linux, Windows, Netzwerkgeräte, Cloud-Plattformen) sind in ISMS-IMP-A.8.17-S1 (Time Source Configuration) definiert.
+**Implementierungs-Hinweis**: Plattformspezifische NTP-Client-Konfigurationsprozeduren (Linux, Windows, Netzwerkgeräte, Cloud-Plattformen) sind in ISMS-IMP-A.8.17.1 (Time Source Configuration) definiert.
 
 ## Synchronisationsverifizierungs-Anforderungen (Obligatorisch)
 
@@ -271,7 +271,7 @@ Alle in-scope Systeme MÜSSEN für Zeitsynchronisation zu genehmigten internen N
 - Automatisierte Sync-Status-Collection via Configuration Management oder Monitoring-Systeme
 - Regelmässige System-Inventar-Abgleiche mit Asset Management (ISMS-POL-A.5.9)
 
-**Implementierungs-Hinweis**: Detaillierte Verifizierungsprozeduren, plattformspezifische Commands und Assessment-Templates sind in ISMS-IMP-A.8.17-S2 (Synchronization Verification Process) definiert.
+**Implementierungs-Hinweis**: Detaillierte Verifizierungsprozeduren, plattformspezifische Commands und Assessment-Templates sind in ISMS-IMP-A.8.17.2 (Synchronization Verification Process) definiert.
 
 ---
 
@@ -379,7 +379,7 @@ Legende: A = Accountable (Rechenschaftspflichtig), R = Responsible (Verantwortli
 - **Format**: Compliance-Dashboard zeigend Sync-Status, Drift-Metriken, Gaps und Remediation Tracking
 - **Eskalation**: Sofortige Benachrichtigung für critical System Sync Failures, Infrastruktur-Ausfälle oder Compliance fallend unter 90%
 
-**Detaillierte Prozeduren**: ISMS-IMP-A.8.17-S2 (Synchronization Verification Process) bietet Monitoring-Konfiguration, Verifizierungsprozeduren, Metrik-Berechnungen und Reporting-Templates.
+**Detaillierte Prozeduren**: ISMS-IMP-A.8.17.2 (Synchronization Verification Process) bietet Monitoring-Konfiguration, Verifizierungsprozeduren, Metrik-Berechnungen und Reporting-Templates.
 
 ## Exception Management
 
@@ -450,7 +450,7 @@ Exceptions von Clock Synchronization Policy Anforderungen erfordern:
 
 Infrastruktur-Ausfälle werden eskaliert zu IT Management und CISO sofort bei Erkennung due zu kaskadierendem Impact auf alle abhängigen Systeme.
 
-**Detaillierte Prozeduren**: ISMS-IMP-A.8.17-S2 (Synchronization Verification Process) bietet Incident Classification Criteria, Response Workflows, Eskalationsprozeduren und Koordination mit Endpoint Security und Infrastructure Teams.
+**Detaillierte Prozeduren**: ISMS-IMP-A.8.17.2 (Synchronization Verification Process) bietet Incident Classification Criteria, Response Workflows, Eskalationsprozeduren und Koordination mit Endpoint Security und Infrastructure Teams.
 
 ## Policy Governance
 
@@ -510,7 +510,7 @@ Diese Policy integriert mit folgenden ISMS Komponenten:
 
 **Implementation Guidance verfügbar in**:
 
-- **ISMS-IMP-A.8.17-S1** (Time Source Configuration):
+- **ISMS-IMP-A.8.17.1** (Time Source Configuration):
   - Auswahl externer autoritativer Zeitquellen (NIST, NTP Pool, Cloudflare, GPS)
   - Deployment interner NTP-Server (Redundanz, High Availability, Geographic Distribution)
   - NTP-Server-Konfiguration (chrony, ntpd, W32Time)
@@ -518,7 +518,7 @@ Diese Policy integriert mit folgenden ISMS Komponenten:
   - Cloud-Zeitservices (AWS Time Sync, Azure NTP, GCP NTP)
   - Spezialfälle (Container, IoT, air-gapped Systeme)
 
-- **ISMS-IMP-A.8.17-S2** (Synchronization Verification Process):
+- **ISMS-IMP-A.8.17.2** (Synchronization Verification Process):
   - Plattformspezifische Verifizierungs-Commands (chronyc, ntpq, w32tm)
   - Zeitabweichungs-Messmethodik
   - Automatisierte Sync-Status-Collection-Ansätze
@@ -540,7 +540,7 @@ Diese Policy adressiert folgende regulatorische Anforderungen:
 
 **Compliance-Posture**: Diese Policy etabliert Framework für Clock Synchronization Compliance. Tatsächlicher Compliance-Status gemessen durch:
 
-- System Synchronization Status Assessment (monatlich via ISMS-IMP-A.8.17-S2)
+- System Synchronization Status Assessment (monatlich via ISMS-IMP-A.8.17.2)
 - NTP-Infrastruktur-Compliance-Review (quartalsweise)
 - Audit Findings und Corrective Actions
 - Regulatory Assessment Results
@@ -601,4 +601,4 @@ Diese Policy adressiert folgende regulatorische Anforderungen:
 
 **END OF DOCUMENT**
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

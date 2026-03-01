@@ -8,359 +8,169 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Monitoring & Response Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.23.4-TG |
+| **Related Policy** | ISMS-POL-A.8.23 (Web Filtering) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.23 (Web Filtering) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Web Filtering Monitoring, Logging & Incident Response |
-| **Related Policy** | ISMS-POL-A.8.23, Section 2.4 (Logging and Monitoring), ISMS-POL-A.8.23, Section 3.4 (Incident Response) |
-| **Purpose** | Assess operational monitoring, alerting, logging, and incident response capabilities for web filtering infrastructure |
-| **Target Audience** | SOC Analysts, Security Engineers, IT Operations, Incident Responders, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Technical |
-| **Review Cycle** | Quarterly or After Major Incidents/Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Web Filtering Monitoring & Incident Response assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.23 (Web Filtering)
+- ISMS-IMP-A.8.23.1 (Filtering Infrastructure Assessment)
+- ISMS-IMP-A.8.23.2 (Network Coverage Assessment)
+- ISMS-IMP-A.8.23.3 (Policy Configuration Assessment)
 
 ---
+
 # Technical Specification
-
-
-> Auto-generated from `generate_a823_4_monitoring_response.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.23.4` |
-| **Output Filename** | `ISMS-IMP-A.8.23.4_Monitoring_&_Response_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Monitoring & Response Assessment |
-| **Total Sheets** | 11 (11 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | header_dark | Dark Blue (Headers) |
-| #4472C4 | header_medium | Medium Blue (Sub-headers) |
-| #666666 | 666666 | Dark Gray (Secondary Text) |
-| #8FAADC | header_light | Custom |
-| #BDD7EE | status_blue | Light Blue (Alt) |
-| #C6EFCE | status_green | Light Green (Compliant/Pass) |
-| #D9D9D9 | status_gray | Light Gray (Column Headers) |
-| #F2F2F2 | light_gray | Very Light Gray (Protected/Alternating) |
-| #FFC7CE | status_red | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | status_yellow | Light Yellow/Amber (Partial) |
-| #FFFFCC | input_yellow | Light Yellow (User Input) |
-
-## Sheet 1: Instructions_Legend
-
-**Frozen Panes:** A4
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Log_Collection
-
-**Data Rows:** 30 (rows 6–35) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A |  | 14 |
-| B |  | 28 |
-| C |  | 22 |
-| D |  | 25 |
-| E |  | 20 |
-| F |  | 22 |
-| G |  | 14 |
-| H |  | 16 |
-| I |  | 18 |
-| J |  | 18 |
-| K |  | 14 |
-| L |  | 18 |
-| M |  | 35 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(B6:B35)` | Total log sources configured: |
-| — | `=COUNTIF(C6:C35,` | Blocked request log sources: |
-| — | `=COUNTIF(I6:I35,` | Sources meeting retention: |
-| — | `=IF(COUNTA(I6:I35)>0,COUNTIF(I6:I35,` | Retention compliance rate: |
-| — | `=COUNTIF(K6:K35,` | Implemented sources: |
-
----
-
-## Sheet 3: Alert_Configuration
-
-**Data Rows:** 40 (rows 6–45) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A |  | 12 |
-| B |  | 32 |
-| C |  | 20 |
-| D |  | 38 |
-| E |  | 18 |
-| F |  | 14 |
-| G |  | 22 |
-| H |  | 25 |
-| I |  | 20 |
-| J |  | 25 |
-| K |  | 15 |
-| L |  | 14 |
-| M |  | 14 |
-| N |  | 15 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=COUNTIF(C6:C45,` |  |
-| CN | `=COUNTIFS(C6:C45,` |  |
-| — | `=COUNTA(B6:B45)` | Total alert rules configured: |
-| — | `=COUNTIF(L6:L45,` | Implemented alerts: |
-| — | `=COUNTIF(F6:F45,` | Critical severity alerts: |
-| — | `=COUNTIF(K6:K45,` | Alerts with auto-response: |
-| — | `=IF(COUNTA(B6:B45)>0,COUNTIF(L6:L45,` | Alert coverage score: |
-
----
-
-## Sheet 4: Monitoring_Dashboard
-
-**Data Rows:** 20 (rows 6–25) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A |  | 14 |
-| B |  | 32 |
-| C |  | 20 |
-| D |  | 20 |
-| E |  | 18 |
-| F |  | 18 |
-| G |  | 45 |
-| H |  | 18 |
-| I |  | 14 |
-| J |  | 18 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(B6:B25)` | Total dashboards configured: |
-| — | `=COUNTIF(H6:H25,` | Dashboards with alerting: |
-| — | `=COUNTIF(E6:E25,` | Real-time dashboards: |
-| — | `=COUNTA(B30:B49)` | KPIs defined: |
-
----
-
-## Sheet 5: Incident_Response
-
-**Data Rows:** 15 (rows 6–20) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A |  | 14 |
-| B |  | 32 |
-| C |  | 16 |
-| D |  | 20 |
-| E |  | 20 |
-| F |  | 20 |
-| G |  | 30 |
-| H |  | 20 |
-| I |  | 14 |
-| J |  | 20 |
-
----
-
-## Sheet 6: Blocked_Events_Analysis
-
-**Data Rows:** 20 (rows 6–25) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A |  | 14 |
-| B |  | 30 |
-| C |  | 20 |
-| D |  | 20 |
-| E |  | 16 |
-| F |  | 25 |
-| G |  | 14 |
-| H |  | 16 |
-| I |  | 35 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(B6:B25)` | Categories tracked: |
-| — | `=COUNTIF(H6:H25,` | Categories requiring action: |
-| — | `=COUNTIF(G6:G25,` | High-risk categories: |
-| — | `=COUNTIF(E6:E25,` | Categories with increasing trend: |
-
----
-
-## Sheet 7: False_Positive_Mgmt
-
-**Data Rows:** 50 (rows 6–55) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A |  | 12 |
-| B |  | 14 |
-| C |  | 20 |
-| D |  | 28 |
-| E |  | 35 |
-| F |  | 20 |
-| G |  | 22 |
-| H |  | 14 |
-| I |  | 20 |
-| J |  | 14 |
-| K |  | 14 |
-| L |  | 15 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(B6:B55)` | Total FPs reported (last 90 days) |
-| — | `=IFERROR(AVERAGE(I6:I55),` | Average resolution time (hours) |
-| — | `=COUNTIF(K6:K55,` | Open FPs |
-| — | `=IFERROR(COUNTIF(F6:F55,` | Confirmed FP rate |
-| — | `=IFERROR((COUNTIF(J6:J55,` | Recurring FP percentage |
-| — | `=COUNTIF(G6:G55,` | FPs resolved via whitelist |
-
----
-
-## Sheet 8: Reporting_Schedule
-
-**Data Rows:** 20 (rows 6–25) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A |  | 12 |
-| B |  | 32 |
-| C |  | 18 |
-| D |  | 14 |
-| E |  | 18 |
-| F |  | 28 |
-| G |  | 18 |
-| H |  | 40 |
-| I |  | 14 |
-| J |  | 14 |
-| K |  | 15 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| DN | `=IFERROR(C{0}/B{0},0)` |  |
-| — | `=COUNTA(B6:B25)` | Total reports configured: |
-| — | `=COUNTIF(E6:E25,` | Automated reports: |
-| — | `=COUNTIF(J6:J25,` | Reports implemented: |
-| — | `=COUNTIF(D6:D25,` | Daily reports: |
-| — | `=COUNTIF(D30:D37,` | Stakeholders with full coverage: |
-
----
-
-## Sheet 9: Gap_Analysis
-
-**Data Rows:** 30 (rows 6–35) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A |  | 14 |
-| B |  | 18 |
-| C |  | 40 |
-| D |  | 30 |
-| E |  | 30 |
-| F |  | 14 |
-| G |  | 25 |
-| H |  | 35 |
-| I |  | 20 |
-| J |  | 14 |
-| K |  | 15 |
-| L |  | 12 |
-| M |  | 15 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(C6:C35)` | Total gaps identified: |
-| — | `=COUNTIF(F6:F35,` | Critical gaps: |
-| — | `=COUNTIF(K6:K35,` | Open gaps: |
-| — | `=COUNTIFS(K6:K35,` | Gaps past target date: |
-| BN | `=COUNTIF(B6:B35,` |  |
-| CN | `=COUNTIFS(B6:B35,` |  |
-
----
-
-## Sheet 10: Evidence_Register
-
-**Data Rows:** 100 (rows 6–105) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A |  | 14 |
-| B |  | 35 |
-| C |  | 22 |
-| D |  | 20 |
-| E |  | 16 |
-| F |  | 14 |
-| G |  | 18 |
-| H |  | 40 |
-| I |  | 14 |
-| J |  | 18 |
-| K |  | 30 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(B6:B105)` | Total evidence items: |
-| — | `=COUNTIF(J6:J105,` | Verified evidence: |
-| — | `=COUNTIF(D6:D105,` | Evidence by Log_Collection: |
-
----
-
-## Sheet 11: Approval_Sign_Off
-
-**Data Rows:** 20 (rows 40–59) | **Frozen Panes:** A4
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTIF(Incident_Response!G40:G59,` | Open Incidents: |
+## Generator Alignment Reference
+
+> Auto-generated from `generate_a823_4_monitoring_response.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
+
+**Document ID:** `ISMS-IMP-A.8.23.4`
+
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
+
+### Sheet Structure
+
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Log Collection |
+| 3 | Alert Configuration |
+| 4 | Monitoring Dashboard |
+| 5 | Incident Response |
+| 6 | Blocked Events Analysis |
+| 7 | False Positive Mgmt |
+| 8 | Reporting Schedule |
+| 9 | Gap Analysis |
+| 10 | Evidence Register |
+| 11 | Summary Dashboard |
+| 12 | Approval Sign-Off |
+
+### Color Palette
+
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
+
+### Column Headers (All Sheets)
+
+| # | Column Header |
+|---|--------------|
+| 1 | Category |
+| 2 | Count |
+| 3 | Active |
+| 4 | Critical_Count |
+| 5 | Notes |
+| 6 | KPI_ID |
+| 7 | KPI_Name |
+| 8 | Measurement_Unit |
+| 9 | Target_Value |
+| 10 | Current_Value |
+| 11 | Trend |
+| 12 | Review_Freq |
+| 13 | Owner_Role |
+| 14 | Status |
+| 15 | Metric |
+| 16 | Target |
+| 17 | Actual |
+| 18 | Incident_ID |
+| 19 | Date_Detected |
+| 20 | Severity |
+| 21 | Response_Time_Min |
+| 22 | Resolution_Time_Hrs |
+| 23 | SLA_Met |
+| 24 | Root_Cause |
+| 25 | Lessons_Learned |
+| 26 | Evidence_Ref |
+| 27 | Rank |
+| 28 | Threat_Type/URL |
+| 29 | Count_30_Days |
+| 30 | Percentage |
+| 31 | Mitigation_Status |
+| 32 | Month |
+| 33 | Total_Blocked |
+| 34 | Malware |
+| 35 | Phishing |
+| 36 | Policy_Violation |
+| 37 | Other |
+| 38 | Value |
+| 39 | Stakeholder |
+| 40 | Required_Reports |
+| 41 | Reports_Received |
+| 42 | Coverage_% |
+| 43 | Gap ID |
+| 44 | Gap Category |
+| 45 | Gap Description |
+| 46 | Current State |
+| 47 | Target State |
+| 48 | Risk Impact |
+| 49 | Affected Systems |
+| 50 | Remediation Action |
+| 51 | Owner |
+| 52 | Target Date |
+| 53 | Priority |
+| 54 | Evidence Ref |
+| 55 | Open |
+| 56 | Critical/High |
+| 57 | Evidence ID |
+| 58 | Assessment Area |
+| 59 | Evidence Type |
+| 60 | Description |
+| 61 | Location/Path |
+| 62 | Date Collected |
+| 63 | Collected By |
+| 64 | Verification Status |
+
+### Data Validation Values
+
+All dropdown/list values used across sheets:
+
+```
+Regulatory, Policy, Contractual, Best_Practice, Configuration file, Screenshot
+Network scan, Documentation, '
+                 'Vendor spec
+Certificate inventory, Audit log, Compliance report, Other, ✅ Verified
+⚠️ Pending, ❌ Not Verified, N/A, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
+
+**Extracted:** 12 sheets, 64 columns, 25 validation values, 8 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

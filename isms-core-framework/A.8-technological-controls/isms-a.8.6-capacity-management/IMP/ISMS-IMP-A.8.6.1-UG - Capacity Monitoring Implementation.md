@@ -8,26 +8,56 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Capacity Monitoring Implementation |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.6.1-UG |
+| **Related Policy** | ISMS-POL-A.8.6 (Capacity Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.6 (Capacity Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Infrastructure Capacity Utilization & Resource Monitoring |
-| **Related Policy** | ISMS-POL-A.8.6 (Capacity Management Policy) |
-| **Purpose** | Document current capacity utilization across all infrastructure resources, assess against policy thresholds, and identify capacity risks in a vendor-agnostic manner |
-| **Target Audience** | Infrastructure Engineers, IT Operations, Capacity Planning Team, System Administrators, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Monthly (with quarterly deep reviews) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Capacity Utilization assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.6 (Capacity Management)
+- ISMS-IMP-A.8.6.2 (Capacity Forecasting Planning)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.8.6.1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Compute Resources | Monitor CPU and memory utilisation across compute infrastructure |
+| 3 | Storage Resources | Track storage capacity utilisation and availability |
+| 4 | Network Resources | Assess network bandwidth and link utilisation |
+| 5 | Application Resources | Monitor application-level resource consumption |
+| 6 | Cloud Resources | Track cloud service capacity and usage limits |
+| 7 | Threshold Summary | Consolidated view of all resources against policy thresholds |
+| 8 | Coverage Analysis | Assess monitoring coverage across the infrastructure |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -70,7 +100,6 @@ This assessment is **completely vendor-agnostic and platform-independent**. You 
 |-----------------------|------------------------|------------------------------------|
 | **ISMS-IMP-A.8.6.1** | **Current Utilization** | **WHERE are we now - current capacity status** |
 | ISMS-IMP-A.8.6.2     | Forecasting & Planning | WHERE will we be - future capacity needs |
-| ISMS-IMP-A.8.6.3     | Compliance Dashboard   | Consolidated view across current + future |
 
 This assessment (A.8.6.1) MUST be completed first - you can't forecast future capacity until you know current utilization!
 
@@ -90,7 +119,7 @@ This assessment (A.8.6.1) MUST be completed first - you can't forecast future ca
 - Familiarity with monitoring tools (Prometheus, Datadog, CloudWatch, etc.)
 - Access to monitoring dashboards and metric sources
 - Understanding of resource types and utilization metrics
-- Knowledge of organizational threshold policies
+- Knowledge of organisational threshold policies
 
 #### Time Commitment
 
@@ -152,7 +181,7 @@ Before starting this assessment, gather:
 - ISMS-POL-A.8.6, Section 2 (Resource Types to Monitor)
 - ISMS-POL-A.8.6, Section 3 (Capacity Monitoring Requirements)
 - ISMS-POL-A.8.6, Section 4 (Capacity Thresholds and Alerting)
-- Organizational threshold definitions (warning, critical)
+- Organisational threshold definitions (warning, critical)
 
 ### Required Tools
 
@@ -169,7 +198,7 @@ This assessment has NO dependencies - it's the first assessment in the A.8.6 ser
 However, outputs from this assessment are INPUT to:
 
 - A.8.6.2 (Forecasting & Planning) - Needs utilization data from this assessment
-- A.8.6.3 (Compliance Dashboard) - Consolidates data from all A.8.6 assessments
+- A.8.6.3 - Consolidates data from all A.8.6 assessments into the Summary Dashboard
 
 ---
 
@@ -1783,7 +1812,7 @@ Use this checklist to verify assessment completeness and quality before submitti
 
 ### Sheet 6: Threshold Status Summary
 
-- [ ] All resources from Sheets 2-5 summarized
+- [ ] All resources from Sheets 2-5 summarised
 - [ ] Threshold status counts accurate
 - [ ] Percentages calculated correctly
 - [ ] Breakdown by resource type included
@@ -1826,7 +1855,7 @@ Use this checklist to verify assessment completeness and quality before submitti
 ### Sheet 9: Evidence Registry
 
 - [ ] All evidence collected during assessment listed
-- [ ] Evidence organized by category (folder structure)
+- [ ] Evidence organised by category (folder structure)
 - [ ] Evidence IDs assigned systematically
 - [ ] Metadata documented (description, source, date, location)
 - [ ] Sensitive data sanitized
@@ -2066,7 +2095,7 @@ Once assessment is approved:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Running out of capacity is never sudden; it is always a failure to plan ahead."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

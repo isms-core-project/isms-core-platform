@@ -8,22 +8,34 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Repository Access Control Implementation |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.4.1-UG |
+| **Related Policy** | ISMS-POL-A.8.4 (Access to Source Code) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.4 (Access to Source Code) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Repository Access Control and Compliance |
-| **Related Policy** | ISMS-POL-A.8.4, Section 2.1 (Repository Access Management), Section 2.2 (Repository Classification), Section 2.3 (Role-Based Access Control) |
-| **Purpose** | Document repository inventory, access permissions, and access control compliance in a technology-independent manner |
-| **Target Audience** | Repository Owners, Development Team Leads, Information Security Team, IT Operations, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Repository Access Control assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.4 (Access to Source Code)
+- ISMS-IMP-A.8.4.2 (Branch Protection Configuration)
+
+---
 
 ### Document Structure
 
@@ -32,6 +44,25 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 **Audience:** Repository Owners, Development Team Leads, Security Team, IT Operations
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Repository Inventory | Catalogue all repositories and their classification |
+| 3 | User Access Matrix | Document user access permissions per repository |
+| 4 | Access Approval Records | Track access requests and approvals |
+| 5 | Access Review Log | Record periodic access review results |
+| 6 | Deprovisioning Log | Track access removal on role/employment change |
+| 7 | Third Party Access | Document and monitor third-party repository access |
+| 8 | Service Accounts | Manage service account access to repositories |
+| 9 | Gap Analysis | Identify gaps in repository access controls |
+| 10 | Evidence Register | Store and reference evidence supporting assessments |
+| 11 | Summary Dashboard | Compliance status and key metrics overview |
+| 12 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -45,7 +76,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 This assessment documents source code repository ACCESS CONTROL - WHO has access to WHICH repositories with WHAT permissions. This is the foundational assessment that answers:
 
-- What repositories exist in the organization?
+- What repositories exist in the organisation?
 - Who has access to each repository?
 - What access level does each user have? (read, write, admin)
 - Is access appropriately justified?
@@ -88,9 +119,9 @@ This assessment is **completely technology-agnostic and platform-independent**. 
 |-----------------------|--------------------------|--------------------------------------|
 | **ISMS-IMP-A.8.4.1** | **Access Control**       | **WHO can access WHAT repositories** |
 | ISMS-IMP-A.8.4.2     | Branch Protection        | Code review and merge controls       |
-| ISMS-IMP-A.8.4.3     | Overall Assessment       | Consolidated compliance view         |
+| ISMS-IMP-A.8.4.3     | Overall Assessment       | Summary Dashboard (aggregated metrics) |
 
-This assessment (A.8.4.1) focuses specifically on ACCESS MANAGEMENT. Complete this first before assessing branch protection or consolidated compliance.
+This assessment (A.8.4.1) focuses specifically on ACCESS MANAGEMENT. Complete this first before assessing branch protection.
 
 ### Who Should Complete This Assessment
 
@@ -104,9 +135,9 @@ This assessment (A.8.4.1) focuses specifically on ACCESS MANAGEMENT. Complete th
 
 #### Required Skills
 
-- Understanding of your organization's repository platforms
+- Understanding of your organisation's repository platforms
 - Administrator access to repository platforms (for exports)
-- Familiarity with organizational roles and teams
+- Familiarity with organisational roles and teams
 - Understanding of least privilege principle
 - Ability to identify appropriate vs. excessive access
 
@@ -146,9 +177,9 @@ Before starting this assessment, gather:
 - **Audit log access** for access change history
 - **User management console** access
 
-#### 2. Organizational Information
+#### 2. Organisational Information
 
-- **Organization chart** showing teams and reporting structure
+- **Organisation chart** showing teams and reporting structure
 - **Employee roster** with roles and departments
 - **Contractor list** with contract dates and assigned repositories
 - **HR termination list** (last 90 days) to verify deprovisioning
@@ -166,14 +197,14 @@ Before starting this assessment, gather:
 - **Excel or compatible spreadsheet application**
 - **Repository platform admin console** (GitHub Settings, GitLab Admin, etc.)
 - **Command line tools** (GitHub CLI, GitLab CLI - optional but helpful)
-- **API scripts** (optional - for large organizations with 100+ repos)
+- **API scripts** (optional - for large organisations with 100+ repos)
 
 ### Common Data Sources
 
 #### GitHub
 
-- Organization Settings → People (user list)
-- Organization Settings → Repositories (repository list)
+- Organisation Settings → People (user list)
+- Organisation Settings → Repositories (repository list)
 - Repository → Settings → Collaborators and teams (per-repo access)
 - GitHub CLI: `gh repo list <org> --limit 1000`
 - GitHub CLI: `gh api /orgs/<org>/repos` (API export)
@@ -194,7 +225,7 @@ Before starting this assessment, gather:
 
 #### Azure DevOps
 
-- Organization Settings → Users
+- Organisation Settings → Users
 - Project Settings → Repositories
 - Azure DevOps CLI: `az repos list`
 
@@ -441,7 +472,7 @@ Step 10: Obtain Approvals
    - Deprovisioning logs
    - Configuration screenshots
 
-2. Save evidence files in organized structure:
+2. Save evidence files in organised structure:
    ```
    Evidence/
    ├── Platform_Exports/
@@ -478,7 +509,7 @@ Step 10: Obtain Approvals
 - User access matrix reflects current state
 - Compliance score is calculated correctly
 - Gaps are documented with remediation plans
-- Evidence is collected and organized
+- Evidence is collected and organised
 
 ---
 
@@ -495,7 +526,7 @@ Complete this sheet FIRST - you need the repository inventory before assessing a
 
 **Option 1: Platform Web UI Export**
 
-- GitHub: Organization Settings → Repositories → Export (if available)
+- GitHub: Organisation Settings → Repositories → Export (if available)
 - GitLab: Admin Area → Projects → Export list
 - Bitbucket: Settings → Export projects
 - Azure DevOps: Project Settings → Repositories → Export
@@ -509,10 +540,10 @@ gh repo list myorg --limit 1000 --json name,owner,visibility,pushedAt > github_r
 glab repo list --output-format json > gitlab_projects.json
 
 # Azure DevOps
-az repos list --organization https://dev.azure.com/myorg --output table > azdo_repos.txt
+az repos list --organisation https://dev.azure.com/myorg --output table > azdo_repos.txt
 ```
 
-**Option 3: Manual Inventory** (Only for small organizations <10 repos)
+**Option 3: Manual Inventory** (Only for small organisations <10 repos)
 
 - Navigate to each platform
 - List repositories manually in spreadsheet
@@ -639,13 +670,13 @@ glab api /projects/:id/members --paginate > project_members.json
 # Manual consolidation required - no single export
 ```
 
-**Option 2: Manual Platform Review** (Small organizations)
+**Option 2: Manual Platform Review** (Small organisations)
 
 - For each repository, navigate to Settings → Access
 - List each user with their permission level
 - Consolidate into spreadsheet
 
-**Important:** This sheet can become VERY large (users × repositories). For organizations with 100+ users and 100+ repositories, consider breaking into multiple sheets by platform or team.
+**Important:** This sheet can become VERY large (users × repositories). For organisations with 100+ users and 100+ repositories, consider breaking into multiple sheets by platform or team.
 
 #### Completing the Columns
 
@@ -672,7 +703,7 @@ glab api /projects/:id/members --paginate > project_members.json
 - **Source:** HR system, org chart
 - **Why:** Helps justify access level
 
-**Column E - Department/Team**: Organizational unit
+**Column E - Department/Team**: Organisational unit
 
 - Example: Engineering - Platform Team
 - **Why:** Team-based access patterns
@@ -975,7 +1006,7 @@ Complete this DURING and AFTER quarterly access reviews.
 
 ### Sheet 5: Deprovisioning_Log
 
-**Purpose:** Verify access is removed when people leave the organization.
+**Purpose:** Verify access is removed when people leave the organisation.
 
 #### When to Complete
 Complete this AFTER obtaining HR termination list and verifying access removal.
@@ -1066,7 +1097,7 @@ Complete this CONCURRENTLY with User_Access_Matrix for all non-employee access.
 
 - Format: TP-001, TP-002
 
-**Column B - Company Name**: Contracting organization
+**Column B - Company Name**: Contracting organisation
 
 - Example: Acme Consulting, ISO Auditing Services
 
@@ -1391,7 +1422,7 @@ Complete this AFTER reviewing all other sheets and identifying non-compliant ite
 
 **Column C - Evidence Description**: What is this evidence
 
-- Example: "GitHub organization user access export for Q4 2025"
+- Example: "GitHub organisation user access export for Q4 2025"
 
 **Column D - Related Requirement**: Which policy requirement
 
@@ -1579,7 +1610,7 @@ Before submitting for approval, complete quality checklist (see section below).
 
 ### Evidence Naming Conventions
 
-Use consistent naming for easy organization:
+Use consistent naming for easy organisation:
 
 ```
 Format: [Platform]_[Type]_[Date].[ext]
@@ -1682,7 +1713,7 @@ Evidence_A.8.4_Repository_Access_Control/
 
 **Why It Happens:**
 
-- Only checking main organization
+- Only checking main organisation
 - Missing personal forks
 - Forgetting archived repos
 - Not checking all platforms (GitHub AND GitLab AND Bitbucket)
@@ -1710,7 +1741,7 @@ Evidence_A.8.4_Repository_Access_Control/
 - Fear of questioning developers
 
 **Reality Check:**
-In every organization with >50 employees:
+In every organisation with >50 employees:
 
 - ~10-20% of access is excessive (admin when write would do)
 - ~5-10% of orphaned accounts exist (former employees)
@@ -1739,7 +1770,7 @@ In every organization with >50 employees:
 - Manual process prone to error
 
 **Reality Check:**
-In organizations WITHOUT automated deprovisioning:
+In organisations WITHOUT automated deprovisioning:
 
 - ~50% of terminations result in repository access NOT being removed
 - Access lingers for weeks or months
@@ -1933,9 +1964,9 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 
 ---
 
-### Pitfall 10: Copy-Paste From Other Organizations
+### Pitfall 10: Copy-Paste From Other Organisations
 
-**Problem:** Using another organization's assessment without adapting to YOUR environment.
+**Problem:** Using another organisation's assessment without adapting to YOUR environment.
 
 **Why It Happens:**
 
@@ -2035,7 +2066,7 @@ Before submitting assessment for approval, verify:
 **Evidence Register:**
 
 - [ ] All required evidence is collected
-- [ ] Files are saved in organized structure
+- [ ] Files are saved in organised structure
 - [ ] File locations are documented
 - [ ] Evidence is dated within assessment period
 
@@ -2065,7 +2096,7 @@ Before submitting assessment for approval, verify:
 ### Auditability
 
 - [ ] All claims can be verified with evidence
-- [ ] Evidence is organized and labeled
+- [ ] Evidence is organised and labeled
 - [ ] Approval records are accessible
 - [ ] Formulas and calculations are transparent
 - [ ] Assessment tells coherent story
@@ -2093,7 +2124,7 @@ Before submitting for approval:
    - [ ] Verify repository inventory completeness
    - [ ] Review gap analysis for realism
 
-3. **Evidence Organization:**
+3. **Evidence Organisation:**
 
    - [ ] All evidence files saved in folder structure
    - [ ] Evidence_Register sheet is complete
@@ -2173,7 +2204,7 @@ Once approved:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Source code is the crown jewel; protect it accordingly."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

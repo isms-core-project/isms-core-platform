@@ -8,26 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Equipment Siting Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.8-9-S1-UG |
+| **Related Policy** | ISMS-POL-A.7.8-9-S1 (Equipment Location Security) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.8 (Equipment Siting and Protection) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Equipment Siting - Location Assessment, Environmental Protection, Security Measures |
-| **Related Policy** | ISMS-POL-A.7.8-9, Section 2.1 (Equipment Siting Requirements) |
-| **Purpose** | Document equipment siting locations, assess environmental risks, evaluate physical security measures, and identify gaps |
-| **Target Audience** | Facilities Management, IT Operations, Security Operations, Data Centre Managers, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Annual or After Major Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Equipment Siting assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.8-9-S1 (Equipment Location Security)
+- ISMS-IMP-A.7.8-9-S2 (Off-Premises Asset Security)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.8-9-S1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Equipment Locations | Catalogue all equipment siting locations |
+| 3 | Environmental | Assess environmental risks at each equipment location |
+| 4 | Physical Security | Evaluate physical security measures at equipment locations |
+| 5 | Power Infrastructure | Assess power supply quality and protection at locations |
+| 6 | Workstation Security | Evaluate workstation siting and screen visibility controls |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Summary Dashboard | Compliance status and key metrics overview |
+| 9 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -98,7 +126,6 @@ This assessment is **completely vendor-agnostic and facility-independent**. You 
 |-----------------------|------------------------|---------------------------------|
 | **ISMS-IMP-A.7.8-9-S1** | **Equipment Siting** | **WHERE equipment is located and protected** |
 | ISMS-IMP-A.7.8-9-S2 | Off-Premises Assets | Equipment removed from premises or permanently off-site |
-| ISMS-IMP-A.7.8-9-S3 | Compliance Dashboard | Consolidated view across all equipment siting and protection |
 
 This assessment (A.7.8-9-S1) focuses specifically on Control A.7.8 (Equipment Siting and Protection). It complements the off-premises asset security assessment (A.7.9) in A.7.8-9-S2.
 
@@ -194,7 +221,6 @@ This assessment has NO dependencies on other assessments - it can be completed i
 
 However, outputs from this assessment are INPUT to:
 
-- ISMS-IMP-A.7.8-9-S3 (Compliance Dashboard) - Consolidates equipment siting with off-premises asset security
 - ISMS-IMP-A.7.4-5-11 (Physical Infrastructure) - Related environmental protection controls
 
 ---
@@ -1190,7 +1216,7 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Location matters as much for servers as it does for property."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -8,26 +8,53 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Utility Resilience Implementation |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.4-5-11-S3-UG |
+| **Related Policy** | ISMS-POL-A.7.4-5-11-S3 (Physical Infrastructure) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.4 (Physical Security Monitoring) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Utility Resilience - Power (UPS/Generators), HVAC, Telecommunications (ISP) |
-| **Related Policy** | ISMS-POL-A.7.4-5-11, Section 4 (Utility Resilience Requirements) |
-| **Purpose** | Document deployed utility resilience infrastructure, assess capabilities against policy requirements, and identify gaps |
-| **Target Audience** | Facilities Management, Electricians, HVAC Technicians, IT Operations, Network Engineers, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major Infrastructure Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Utility Resilience assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.4-5-11-S3 (Physical Infrastructure)
+- ISMS-IMP-A.7.4-5-11-S1 (Physical Monitoring Assessment)
+- ISMS-IMP-A.7.4-5-11-S2 (Environmental Protection Implementation)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.4-5-11-S3-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Power Infrastructure | Assess power supply resilience and backup systems |
+| 3 | HVAC | Evaluate heating, ventilation, and air conditioning systems |
+| 4 | Telecommunications | Assess telecommunications resilience and redundancy |
+| 5 | Evidence Register | Store and reference evidence supporting assessments |
+| 6 | Summary Dashboard | Compliance status and key metrics overview |
+| 7 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -99,7 +126,6 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 | ISMS-IMP-A.7.4-5-11-S1 | Physical Monitoring | Access control, CCTV, intrusion detection systems |
 | ISMS-IMP-A.7.4-5-11-S2 | Environmental Protection | Fire, water, temperature protection systems |
 | **ISMS-IMP-A.7.4-5-11-S3** | **Utility Resilience** | **UPS, generators, HVAC, ISP backup systems** |
-| ISMS-IMP-A.7.4-5-11-S4 | Compliance Dashboard | Consolidated view across all physical infrastructure |
 
 This assessment (A.7.4-5-11-S3) focuses specifically on Control A.7.11 (Supporting Utilities). It complements assessments for A.7.4 (Physical Monitoring) and A.7.5 (Environmental Protection).
 
@@ -206,7 +232,6 @@ This assessment has NO dependencies on other assessments - it can be completed i
 
 However, outputs from this assessment are INPUT to:
 
-- ISMS-IMP-A.7.4-5-11-S4 (Compliance Dashboard) - Consolidates utility resilience with physical monitoring and environmental protection
 - ISMS-IMP-A.7.4-5-11-S2 (Environmental Protection) - HVAC systems documented in both (temperature control in S2, HVAC resilience here in S3)
 
 ---
@@ -254,7 +279,7 @@ However, outputs from this assessment are INPUT to:
 **Step 2: System Inventory (Day 1-3 - 4-6 hours)**
 
 - Open assessment workbook
-- Complete Sheet 1 (Instructions & Legend) - organization info, assessment date
+- Complete Sheet 1 (Instructions & Legend) - organisation info, assessment date
 - Complete Sheet 2 (Power Infrastructure) - inventory all UPS systems, generators, power redundancy
 - Complete Sheet 3 (HVAC) - inventory all HVAC units, cooling capacity, redundancy
 - Complete Sheet 4 (Telecommunications) - inventory all ISP circuits, bandwidth, diverse paths
@@ -348,7 +373,7 @@ However, outputs from this assessment are INPUT to:
 
 **What to Complete:**
 
-- Assessment Date, Completed By, Organization name
+- Assessment Date, Completed By, Organisation name
 - Review status legend (green/amber/red)
 
 **Time Required:** 5 minutes
@@ -530,7 +555,7 @@ However, outputs from this assessment are INPUT to:
 
 **Location:** \\server\ISMS\Assessments\A.7.4.3_Utility_Resilience\Evidence or SharePoint
 
-**Organization:** Evidence/Sheet2_Power/, Evidence/Sheet3_HVAC/, Evidence/Sheet4_Telecom/
+**Organisation:** Evidence/Sheet2_Power/, Evidence/Sheet3_HVAC/, Evidence/Sheet4_Telecom/
 
 **Retention:** 3 years minimum
 
@@ -666,7 +691,7 @@ However, outputs from this assessment are INPUT to:
 
 - [ ] Assessment Date completed
 - [ ] Completed By (name and role)
-- [ ] Organization name filled in
+- [ ] Organisation name filled in
 
 ### Sheet 2: Power Infrastructure
 
@@ -823,7 +848,7 @@ However, outputs from this assessment are INPUT to:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Power is the foundation upon which all other controls rest."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -5,25 +5,54 @@
 
 ---
 
-## Document Control
+**Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Transfer Rules and Procedures |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.14.1-UG |
-| **Document Type** | Implementation Guide |
-| **Parent Policy** | ISMS-POL-A.5.14 (Information Transfer) |
-| **Control Reference** | ISO/IEC 27001:2022 Control A.5.14 |
+| **Related Policy** | ISMS-POL-A.5.14 (Information Transfer) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.14) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
 | **Classification** | Internal |
-| **Owner** | Information Security Officer |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
-**Related Documents:**
-- ISMS-POL-A.5.14 (Information Transfer Policy)
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.14 (Information Transfer)
 - ISMS-IMP-A.5.14.2 (Channel Security Assessment)
 - ISMS-IMP-A.5.14.3 (Transfer Agreements Register)
-- ISMS-POL-A.5.12-13 (Information Classification and Labelling)
-- ISMS-POL-A.8.24 (Use of Cryptography)
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 9 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Transfer Policy** | Documentation of transfer policy elements and rules by classification level |
+| **Transfer Methods** | Transfer method matrix mapping acceptable methods to classification levels |
+| **Electronic Transfer** | Rules and controls for electronic transfers (email, cloud, messaging) |
+| **Physical Transfer** | Procedures for physical media transfer, courier, and document handling |
+| **Verbal Transfer** | Protocols for verbal information exchange in meetings, calls, and discussions |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -56,7 +85,7 @@ Completing this assessment delivers:
 
 > *ISO/IEC 27001:2022 Annex A.5.14 — Information Transfer*
 >
-> "Information transfer rules, procedures, or agreements should be in place for all types of transfer facilities within the organization and between the organization and other parties."
+> "Information transfer rules, procedures, or agreements should be in place for all types of transfer facilities within the organisation and between the organisation and other parties."
 
 ---
 
@@ -112,7 +141,7 @@ Before starting this assessment, ensure you have:
 - Classification Alignment
 - Encryption Standards
 - Authentication Requirements
-- Authorization Process
+- Authorisation Process
 - Chain of Custody
 - Third-Party Requirements
 - Incident Reporting
@@ -421,7 +450,7 @@ Before submitting the completed workbook, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Information is the oil of the 21st century, and analytics is the combustion engine."*
+— Peter Sondergaard
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

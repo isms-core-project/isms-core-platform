@@ -8,25 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Project Portfolio Dashboard |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.8.3-UG |
+| **Related Policy** | ISMS-POL-A.5.8 (Information Security in Project Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.8 (Information Security in Project Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Project Portfolio Security Status & Executive Visibility |
-| **Related Policy** | ISMS-POL-A.5.8 (All Sections - Portfolio-Wide View) |
-| **Purpose** | Consolidated executive dashboard aggregating security status across all organizational projects, providing portfolio-wide visibility, trend analysis, gap identification, and lessons learned synthesis for strategic decision-making |
-| **Target Audience** | CISO, Executive Management, PMO Director, Board of Directors, Internal Auditors, External Auditors |
-| **Assessment Type** | Consolidated Dashboard & Portfolio Analysis (Layer 2 - consolidates multiple A.5.8.1 assessments) |
-| **Review Cycle** | Quarterly (minimum) or After Major Project Milestones |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | Initial | Initial specification for Project Portfolio Dashboard workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.8 (Information Security in Project Management)
+- ISMS-IMP-A.5.8.1 (Project Lifecycle Security Assessment)
+- ISMS-IMP-A.5.8.2 (Security Requirements Register)
 
 ---
 
-**Audience:** CISO, Executive Management, PMO Director, Board of Directors, Auditors
+### Workbook at a Glance
+
+This workbook contains the following 12 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Project Data** | Source data table for project security status across the portfolio |
+| **Summary Dashboard** | Portfolio-level executive compliance dashboard (auto-populated from Project Data) |
+| **Project Status** | Project-by-project security status breakdown |
+| **Gap Analysis** | Portfolio-wide gap identification and prioritisation |
+| **Trend Analysis** | Quarter-over-quarter trend data for portfolio security posture |
+| **Risk Prioritisation** | Risk-based project prioritisation matrix |
+| **Lessons Learned** | Synthesis of lessons learned across the portfolio |
+| **Regulatory Compliance** | Regulatory compliance status across the portfolio |
+| **Resources & Budget** | Resource allocation and budget analysis for security activities |
+| **Charts** | Visual charts and graphs for executive presentations |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -34,7 +63,7 @@
 
 ## What This Dashboard Provides
 
-This dashboard provides **executive-level visibility into project security integration across the entire organizational project portfolio**.
+This dashboard provides **executive-level visibility into project security integration across the entire organisational project portfolio**.
 
 **Key Questions Answered:**
 1. **Portfolio Health:** How are we doing on project security integration overall?
@@ -72,7 +101,7 @@ This dashboard provides **executive-level visibility into project security integ
 **ISO 27001:2022 Management System Requirements:**
 
 **Clause 9.3 - Management Review:**
-> *"Top management shall review the organization's information security management system at planned intervals to ensure its continuing suitability, adequacy and effectiveness."*
+> *"Top management shall review the organisation's information security management system at planned intervals to ensure its continuing suitability, adequacy and effectiveness."*
 
 **Management review must include:**
 
@@ -100,7 +129,7 @@ This dashboard provides **executive-level visibility into project security integ
 
 **GDPR Article 24 & 32:**
 
-- Controller must demonstrate appropriate technical and organizational measures
+- Controller must demonstrate appropriate technical and organisational measures
 - Portfolio dashboard proves systematic data protection integration in projects
 
 **Business Value:**
@@ -245,9 +274,9 @@ This dashboard provides **executive-level visibility into project security integ
 - Board presentation preparation: 3-4 hours
 - **Total Annual:** 7-10 hours (in addition to quarterly updates)
 
-**Effort by Organization Size:**
+**Effort by Organisation Size:**
 
-| Organization Size | Projects/Year | Quarterly Effort | Annual Effort |
+| Organisation Size | Projects/Year | Quarterly Effort | Annual Effort |
 |-------------------|---------------|------------------|---------------|
 | **Small** (5-15 projects) | 5-15 | 2-3 hours | 5-6 hours |
 | **Medium** (15-50 projects) | 15-50 | 3-5 hours | 8-12 hours |
@@ -287,7 +316,7 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 
 **ISO 27002:2022 Guidance on Control A.5.8:**
 
-- *"The organization should regularly review the security aspects of projects to ensure information security is integrated."*
+- *"The organisation should regularly review the security aspects of projects to ensure information security is integrated."*
 - Dashboard enables systematic review across portfolio
 
 **Regulatory Alignment:**
@@ -306,7 +335,7 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 **GDPR:**
 
 - Article 24: Controller demonstrates appropriate measures
-- Article 32: Appropriate technical and organizational measures
+- Article 32: Appropriate technical and organisational measures
 - Portfolio dashboard proves systematic data protection integration
 
 ---
@@ -328,7 +357,7 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - **Minimum data needed:** 3-5 project assessments for meaningful portfolio view
 - **Recommended:** 10+ projects for robust trend analysis
 
-**File Organization Best Practice:**
+**File Organisation Best Practice:**
 ```
 /isms/assessments/a58_1/
   ├── 2024_Q1/
@@ -438,7 +467,7 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - Error-prone (copy/paste mistakes)
 - Tedious to update quarterly
 
-**Best For:** Small portfolios (<15 projects), organizations without scripting capability
+**Best For:** Small portfolios (<15 projects), organisations without scripting capability
 
 ---
 
@@ -462,7 +491,7 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - Requires Python skills (or IT support to set up)
 - Initial setup time (4-8 hours to develop/customize script)
 
-**Best For:** Medium/large portfolios (15+ projects), organizations with technical capability
+**Best For:** Medium/large portfolios (15+ projects), organisations with technical capability
 
 ---
 
@@ -486,7 +515,7 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - Learning curve (dashboard design skills)
 - Setup complexity (data modeling, refresh schedules)
 
-**Best For:** Large portfolios (50+ projects), organizations with BI infrastructure
+**Best For:** Large portfolios (50+ projects), organisations with BI infrastructure
 
 ---
 
@@ -540,7 +569,7 @@ Determine which projects to include in dashboard:
 
 **From Centralized Repository:**
 
-- If organization has central ISMS documentation repository:
+- If organisation has central ISMS documentation repository:
   - Navigate to `/isms/assessments/a58_1/YYYY_QX/`
   - Copy all A.5.8.1 workbooks to working folder
 
@@ -574,7 +603,7 @@ Create working folder structure:
 
 ## Step 2: Run Consolidation Process (15 min - 2 hours depending on method)
 
-**Objective:** Extract key data from all A.5.8.1 workbooks and consolidate into dashboard
+**Objective:** Extract key data from all A.5.8.1 workbooks and track in Summary Dashboards
 
 **Method A: Manual Excel Consolidation (2-4 hours for 10 projects)**
 
@@ -604,7 +633,7 @@ Create working folder structure:
 
    - Discovers all .xlsx files in source folder
    - Extracts data from specific cells (Sheet 2: B5, H58, B7; Sheet 8: compliance score, etc.)
-   - Builds consolidated data table
+   - Builds data table tracked in Summary Dashboards
    - Generates dashboard workbook in `output/` folder
 
 4. Review script output for errors or warnings
@@ -628,7 +657,7 @@ Create working folder structure:
 
 **Refresh Time:** 2-10 minutes (depends on data volume)
 
-**Deliverable:** Consolidated data table with all projects
+**Deliverable:** Data table with all projects tracked in Summary Dashboards
 
 ---
 
@@ -668,7 +697,7 @@ Create working folder structure:
 - **Moderate (missing data fields):** Contact PM for clarification
 - **Major (entire project missing, data clearly wrong):** Re-collect data before proceeding
 
-**Deliverable:** Validated consolidated data table, quality issues resolved
+**Deliverable:** Validated data table with all projects tracked in Summary Dashboards, quality issues resolved
 
 ---
 
@@ -1688,7 +1717,7 @@ Q3-Q4 2025:
 
 **Step 1: Identify Applicable Regulations**
 
-From project assessments and organizational context:
+From project assessments and organisational context:
 
 - **GDPR (EU General Data Protection Regulation):** If processing EU personal data
 - **nDSG (Swiss Data Protection Act):** If processing Swiss personal data
@@ -1762,7 +1791,7 @@ For each regulation, specific requirements from ISMS-IMP-A.5.8.2 Category 6:
 
 **Overall FINMA Compliance:** 89% (Good)
 
-**Step 4: Regulatory Compliance Dashboard**
+**Step 4: Regulatory Summary Dashboard**
 
 **Visual: Compliance Score by Regulation (Bar Chart)**
 
@@ -2146,7 +2175,7 @@ Total ask: $60K/year for headcount, offset by $22K savings = net $38K increase.
 ---
 
 **Closing:**
-"To summarize: Portfolio is healthy and improving. 2 projects need decisions today (CustomerPortal delay approval). 3 process improvements recommended for Q1 ($60K investment, $22K savings). Any questions?"
+"To summarise: Portfolio is healthy and improving. 2 projects need decisions today (CustomerPortal delay approval). 3 process improvements recommended for Q1 ($60K investment, $22K savings). Any questions?"
 
 ---
 
@@ -2210,7 +2239,7 @@ Full Year 2024 Highlights:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A portfolio is only as secure as its least secure project."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

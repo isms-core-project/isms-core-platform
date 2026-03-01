@@ -8,29 +8,51 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Code Review & Testing Assessment Specification |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.28.3-UG |
+| **Related Policy** | ISMS-POL-A.8.28 (Secure Coding) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.28 (Secure Coding) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Code Review & Security Testing |
-| **Related Policy** | ISMS-POL-A.8.28 Section 2.3 (Code Review & Testing Requirements), Annex B (Code Review Checklist) |
-| **Purpose** | Evaluate effectiveness of code review practices and security testing activities throughout SDLC, focusing on whether security is genuinely evaluated before production |
-| **Target Audience** | Application Security Team, QA Managers, Security Champions, Development Team Leads, Test Engineers, Auditors |
-| **Assessment Type** | Process & Technical |
-| **Review Cycle** | Quarterly or After Security Incidents Revealing Review/Testing Gaps |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
 **Version History**:
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | [Date] | Initial assessment specification |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Approvers**:
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-- Application Security Lead (Technical Review)
-- Development Manager / Engineering Lead (Engineering Perspective)
-- QA Manager / Test Lead (Testing Validation)
-- CISO / Security Director (Executive Approval)
+**Related Documents**:
+
+- ISMS-POL-A.8.28 (Secure Coding)
+- ISMS-IMP-A.8.28.1 (SDLC Assessment Specification)
+- ISMS-IMP-A.8.28.2 (Standards & Tools Assessment Specification)
+- ISMS-IMP-A.8.28.4 (Third-Party & Open Source Software Assessment Specification)
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Code Review Process | Assess the code review process and security coverage |
+| 3 | Security Champion Review | Evaluate security champion involvement in code reviews |
+| 4 | Unit Integration Testing | Assess security in unit and integration testing |
+| 5 | API Application Testing | Evaluate API and application-level security testing |
+| 6 | External Testing Validation | Track external penetration testing and validation results |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Gap Analysis | Identify gaps in code review and testing coverage |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -392,7 +414,7 @@ Read the complete instructions including:
 - **Anti-Pattern**: "We test APIs" without security focus
 - **Good Practice**: Comprehensive API security test matrix
 
-**Q4.7-Q4.12: Authentication & Authorization Testing**
+**Q4.7-Q4.12: Authentication & Authorisation Testing**
 
 - **Critical**: Every endpoint tested for proper access control
 - **Test Cases**: Missing auth, privilege escalation, broken access control
@@ -554,9 +576,8 @@ Ask yourself honestly:
 
 **After Approval**:
 1. Save final workbook to secure location
-2. Add to IMP-A.8.28.5 (Compliance Dashboard) as source data
-3. Schedule quarterly refresh
-4. Track gap remediation progress
+2. Schedule quarterly refresh
+3. Track gap remediation progress
 5. Update evidence register as gaps are closed
 
 ---
@@ -593,7 +614,7 @@ Pull 10 random recent reviews. Count:
 
 - Tests that always pass
 - Security tests disabled or skipped
-- No testing of authentication/authorization
+- No testing of authentication/authorisation
 - Test coverage metrics without security coverage
 
 **✅ Good Practice**:
@@ -768,7 +789,6 @@ If answer is "no", you have process theater, not effective security.
 
 **Feed Results Into**:
 
-- **IMP-A.8.28.5 (Dashboard)**: Aggregate review/testing metrics
 - **IMP-A.8.28.1 (SDLC)**: SDLC process improvement inputs
 - **IMP-A.8.28.2 (Tools)**: Tool effectiveness validation
 
@@ -840,7 +860,7 @@ If answer is "no", you have process theater, not effective security.
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Code that has not been reviewed has not been secured; it has merely been written."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

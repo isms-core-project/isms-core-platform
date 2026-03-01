@@ -8,25 +8,52 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Project Lifecycle Security Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.8.1-UG |
+| **Related Policy** | ISMS-POL-A.5.8 (Information Security in Project Management) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.8 (Information Security in Project Management) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Project Lifecycle Security Integration |
-| **Related Policy** | ISMS-POL-A.5.8, Section 2.3 (Security Activities Across Project Lifecycle) |
-| **Purpose** | Assess integration of information security activities across all project phases (Initiation → Planning → Execution → Monitoring → Closure) with phase-by-phase compliance verification and gate review documentation |
-| **Target Audience** | Project Managers, Project Security Coordinators, PMO Staff, Information Security Officers, Project Steering Committees, Auditors |
-| **Assessment Type** | Process & Procedural Compliance |
-| **Review Cycle** | Per Project Phase (at each gate review) + Annual Post-Project Review for lessons learned |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | Initial | Initial specification for Project Lifecycle Security Assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.8 (Information Security in Project Management)
+- ISMS-IMP-A.5.8.2 (Security Requirements Register)
+- ISMS-IMP-A.5.8.3 (Project Portfolio Dashboard)
 
 ---
 
-**Audience:** Project Managers, Project Security Coordinators, PMO Staff, Information Security Officers
+### Workbook at a Glance
+
+This workbook contains the following 10 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **2. Project Classification** | Classify project risk and scope to determine security requirements |
+| **3. Initiation Phase** | Document security activities and gate review for project initiation |
+| **4. Planning Phase** | Capture security planning activities, risk assessment, and gate sign-off |
+| **5. Execution Phase** | Track security implementation, testing, and controls during delivery |
+| **6. Monitoring Phase** | Ongoing security monitoring and compliance status during execution |
+| **7. Closure Phase** | Final security verification, lessons learned, and closure certification |
+| **Evidence Register** | Tracking of supporting evidence for all phase gate reviews |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -34,7 +61,7 @@
 
 ## What This Assessment Measures
 
-This assessment evaluates [Organization]'s implementation of **information security integration throughout the project lifecycle** to ensure compliance with ISO/IEC 27001:2022 Control A.5.8 and support systematic risk management in all organizational projects.
+This assessment evaluates [Organisation]'s implementation of **information security integration throughout the project lifecycle** to ensure compliance with ISO/IEC 27001:2022 Control A.5.8 and support systematic risk management in all organisational projects.
 
 **Scope:** 5 project phases covering complete project lifecycle:
 1. **Initiation Phase** - Security classification, stakeholder identification, initial risk assessment
@@ -67,7 +94,7 @@ This assessment evaluates [Organization]'s implementation of **information secur
 
 **Regulatory Context:**
 
-- **Swiss nDSG (Art. 8):** Requires appropriate technical and organizational measures (includes security in system design)
+- **Swiss nDSG (Art. 8):** Requires appropriate technical and organisational measures (includes security in system design)
 - **EU GDPR (Art. 25):** Data protection by design and by default - requires security integration from project start
 - **NIS2 Directive (if applicable):** ICT risk management measures must be integrated into development and acquisition
 - **DORA (financial sector):** ICT project and change management must include risk assessment and testing
@@ -127,7 +154,7 @@ This assessment evaluates [Organization]'s implementation of **information secur
 
 - Project management methodology knowledge (Waterfall, Agile, PRINCE2, hybrid)
 - Understanding of information security fundamentals (CIA triad, risk management)
-- Familiarity with [Organization]'s:
+- Familiarity with [Organisation]'s:
   - Project governance and gate review process
   - Data classification scheme
   - Security policies (particularly ISMS-POL-A.5.8)
@@ -247,7 +274,7 @@ Before starting this assessment, ensure you have access to:
 
 - [ ] ISMS-POL-A.5.8 (Information Security in Project Management) - full policy document
 - [ ] ISMS-POL-00 (Regulatory Applicability Framework) - to determine applicable regulations
-- [ ] [Organization]'s data classification guide (Public/Internal/Confidential/Restricted definitions)
+- [ ] [Organisation]'s data classification guide (Public/Internal/Confidential/Restricted definitions)
 - [ ] Security requirements templates or libraries (if available)
 - [ ] Security testing standards and procedures
 - [ ] Vendor security assessment questionnaire/process
@@ -260,7 +287,7 @@ Before starting this assessment, ensure you have access to:
 - [ ] Document repository (SharePoint, Confluence, Google Drive, etc.)
 - [ ] Contact information for Information Security Officer
 
-**Organizational Context:**
+**Organisational Context:**
 
 - [ ] PMO gate review schedule and requirements
 - [ ] Security escalation paths and contacts
@@ -273,7 +300,7 @@ Before starting this assessment, ensure you have access to:
 
 **1. Project Management Methodology:**
 
-- Which methodology is your organization using? (Waterfall, Agile, Hybrid, PRINCE2, etc.)
+- Which methodology is your organisation using? (Waterfall, Agile, Hybrid, PRINCE2, etc.)
 - How do security activities map to your methodology?
   - **Waterfall:** Security activities align with sequential phases
   - **Agile:** Security requirements in backlog, security in Definition of Done, security testing per sprint
@@ -284,7 +311,7 @@ Before starting this assessment, ensure you have access to:
 **2. Data Classification:**
 
 - What data will this project's deliverable process, store, or transmit?
-- How is data classified in your organization?
+- How is data classified in your organisation?
   - **Restricted:** Highest sensitivity (trade secrets, highly sensitive personal data, payment card data)
   - **Confidential:** High sensitivity (business confidential, personal data, financial records)
   - **Internal:** Medium sensitivity (internal-only, not for external distribution)
@@ -302,9 +329,9 @@ Before starting this assessment, ensure you have access to:
 - **Security Controls:** Types of controls (preventive, detective, corrective, compensating)
 - **Security Testing:** Difference between vulnerability scanning, penetration testing, code review, config review
 
-**4. Organizational Security:**
+**4. Organisational Security:**
 
-- Who is the Information Security Officer at your organization?
+- Who is the Information Security Officer at your organisation?
 - What security policies apply to your project? (beyond A.5.8)
   - If software development: ISMS-POL-A.8.25-28 (Secure Development)
   - If third-party vendors: ISMS-POL-A.5.19-22 (Supplier Management)
@@ -323,7 +350,7 @@ Before starting this assessment, ensure you have access to:
 
 **2. Project Management Tools:**
 
-- Access to your organization's project management platform
+- Access to your organisation's project management platform
 - Ability to create/update project risk register
 - Access to requirements tracking system (or this assessment can serve as requirements register for simple projects)
 
@@ -431,7 +458,7 @@ Phase 0: Classification → Phase 1: Initiation → Phase 2: Planning → Phase 
     - Critical regulatory deadline → upgrade to High
     - Pilot project with limited scope → downgrade to Medium
     - Novel technology with unknown risks → upgrade to High
-    - Vendor-managed SaaS with minimal organizational control → assess carefully
+    - Vendor-managed SaaS with minimal organisational control → assess carefully
 
 **Step 4: Obtain Approval** (0 minutes - several days depending on approval process)
 
@@ -563,7 +590,7 @@ Complete Sheet 3, Section B: Initial Risk Identification
   - Data security: Could data be leaked, stolen, corrupted?
   - System availability: Could the system be taken offline or degraded?
   - Compliance: Could we violate regulations or contractual obligations?
-  - Access control: Could unauthorized users gain access?
+  - Access control: Could unauthorised users gain access?
   - Third-party risks: Could vendors/partners introduce vulnerabilities?
 
 **Step 2: Document Risks in Risk Register** (30-60 min)
@@ -751,12 +778,12 @@ Regardless of approach, document requirements in these categories (see ISMS-POL-
 
 1. **Application Security** (if software development project)
 
-   - Examples: Input validation, authentication, authorization, session management, crypto, error handling, logging, secure coding, SAST/DAST testing
+   - Examples: Input validation, authentication, authorisation, session management, crypto, error handling, logging, secure coding, SAST/DAST testing
    - Minimum: 3-5 requirements for Medium, 8-15 for High
 
 2. **Data Protection** (if processing Confidential/Restricted data)
 
-   - Examples: Encryption at rest/transit, data classification, retention, deletion, backup encryption, minimization, GDPR compliance
+   - Examples: Encryption at rest/transit, data classification, retention, deletion, backup encryption, minimisation, GDPR compliance
    - Minimum: 2-4 requirements for Medium, 5-10 for High
 
 3. **Access Control & Authentication** (if user-facing system)
@@ -825,11 +852,11 @@ STRIDE = Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Ser
 2. For each element, brainstorm STRIDE threats:
 
    - **Spoofing:** Can attacker impersonate user/system?
-   - **Tampering:** Can data be modified without authorization?
+   - **Tampering:** Can data be modified without authorisation?
    - **Repudiation:** Can user deny performing action?
    - **Information Disclosure:** Can sensitive data be exposed?
    - **Denial of Service:** Can service be disrupted?
-   - **Elevation of Privilege:** Can user gain unauthorized permissions?
+   - **Elevation of Privilege:** Can user gain unauthorised permissions?
 
 3. Document threats, rate severity, define mitigations
 4. High severity threats → security requirements
@@ -979,7 +1006,7 @@ Complete Sheet 4, Section D: Security Test Plan
 
 Complete Sheet 4, Section E: Vendor Security Assessment
 
-**When Required:** If project involves third-party vendors, contractors, SaaS providers, cloud services, outsourced development, or any external party handling organizational data
+**When Required:** If project involves third-party vendors, contractors, SaaS providers, cloud services, outsourced development, or any external party handling organisational data
 
 **Vendor Security Assessment Process** (per ISMS-POL-A.5.19-22):
 
@@ -1042,7 +1069,7 @@ Ensure vendor contracts include:
 
 - Data protection obligations (encryption, access controls, retention, deletion)
 - Security incident notification (timeline: within 24-48 hours)
-- Audit rights (organization can audit vendor security)
+- Audit rights (organisation can audit vendor security)
 - Data breach liability (vendor liable for breaches on their end)
 - Data return/deletion upon contract termination
 - Subcontractor restrictions (vendor must get approval for subcontractors)
@@ -1095,7 +1122,7 @@ DPIA must address:
 
    - Is processing necessary for stated purpose?
    - Is there a less privacy-invasive way?
-   - Is data minimization applied? (only collect what's needed)
+   - Is data minimisation applied? (only collect what's needed)
 
 3. **Risk Assessment:**
 
@@ -1105,7 +1132,7 @@ DPIA must address:
 
 4. **Mitigation Measures:**
 
-   - What technical/organizational measures will reduce risks?
+   - What technical/organisational measures will reduce risks?
    - Encryption, pseudonymization, access controls, retention limits, etc.
 
 5. **Residual Risk:**
@@ -1362,7 +1389,7 @@ Complete Sheet 5, Section B: Security Testing Results
 
 - **When:** During User Acceptance Testing (UAT)
 - **Who:** QA team with security test cases
-- **Scope:** Security features (authentication, authorization, encryption, logging)
+- **Scope:** Security features (authentication, authorisation, encryption, logging)
 - **Process:**
 
   1. Execute security test cases from test plan
@@ -1467,7 +1494,7 @@ If finding cannot be fixed before deployment:
   - Critical findings: CISO + Executive Management approval (very rare, requires strong business justification)
 - **Document residual risk:**
   - Add to project risk register
-  - Track in [Organization]'s enterprise risk register if High residual risk
+  - Track in [Organisation]'s enterprise risk register if High residual risk
 
 **Remediation Status Summary:**
 
@@ -1991,7 +2018,7 @@ Open security findings at closure (from Sheet 5, Section C):
 | Finding ID | Severity | Description | Why Not Fixed | Compensating Controls | Risk Level | Accepted By | Acceptance Date |
 |------------|----------|-------------|---------------|----------------------|------------|-------------|-----------------|
 | F-042 | Medium | Missing security header (X-Frame-Options) | Low priority, no actual exploitability in our environment | WAF implements clickjacking protection | Low | InfoSec Officer | [Date] |
-| F-055 | Low | Verbose error messages in non-production logs | Informational only, not user-facing | Access to logs restricted to authorized personnel | Very Low | PM | [Date] |
+| F-055 | Low | Verbose error messages in non-production logs | Informational only, not user-facing | Access to logs restricted to authorised personnel | Very Low | PM | [Date] |
 | F-061 | Medium | Third-party library v2.3 has known CVE (Medium severity) | Vendor patch not yet released, awaiting v2.4 | Network segmentation limits exposure, monitoring for exploitation attempts | Medium | InfoSec Officer | [Date] |
 
 **Residual Risks from Project Risk Register:**
@@ -2024,7 +2051,7 @@ Risks not fully mitigated:
 
 Complete Sheet 7, Section C: Asset Registration
 
-**Objective:** Register all project deliverables in [Organization]'s ISMS asset inventory per A.5.9
+**Objective:** Register all project deliverables in [Organisation]'s ISMS asset inventory per A.5.9
 
 **Assets Created or Modified by Project:**
 
@@ -2097,7 +2124,7 @@ Examples:
 - "Use DAST tool's API mode for better accuracy. Tune out false positive categories after first scan"
 - "Start security handover documentation template at project kickoff. Update incrementally, not all at end"
 
-**4. What Should Be Standardized Across [Organization]'s Projects?**
+**4. What Should Be Standardized Across [Organisation]'s Projects?**
 
 [Recommendations for policy/procedure updates, templates, tools]
 
@@ -2254,7 +2281,7 @@ Verify before requesting approval:
 
 **Issue:** "Assets not registered because asset inventory system is manual/outdated"
 
-- **Root Cause:** Organizational process issue (asset management not automated)
+- **Root Cause:** Organisational process issue (asset management not automated)
 - **Impact:** Delays project closure
 - **Remediation:** Manual registration, escalate process improvement to IT management
 - **Prevention:** Asset inventory should be maintained during project, not at end
@@ -2268,7 +2295,7 @@ Verify before requesting approval:
 
 ---
 
-# Overall Assessment Summary (Sheet 8: Compliance Dashboard)
+# Overall Assessment Summary (Sheet 8: Summary Dashboard)
 
 **This section explains how the automated dashboard works - auto-populated from phase sheets**
 
@@ -2509,7 +2536,7 @@ Centralized tracking of all security evidence for audit trail, compliance verifi
 
 **4. Evidence Retention**
 
-- Follow [Organization]'s records retention policy
+- Follow [Organisation]'s records retention policy
 - Typical: 7 years for projects involving Confidential data or regulatory requirements
 - Minimum: 3 years for audit purposes (ISO 27001 audit cycle)
 
@@ -2746,7 +2773,7 @@ Once approved:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Security built in from the start costs a fraction of security bolted on at the end."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

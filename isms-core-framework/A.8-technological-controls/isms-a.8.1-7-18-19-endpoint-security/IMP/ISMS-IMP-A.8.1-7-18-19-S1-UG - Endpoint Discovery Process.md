@@ -8,26 +8,57 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Endpoint Discovery Process |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.1-7-18-19-S1-UG |
+| **Related Policy** | ISMS-POL-A.8.1-7-18-19-S1 (Endpoint Security) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.1 (User Endpoint Devices) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Endpoint Discovery and Inventory Management |
-| **Related Policy** | ISMS-POL-A.8.1-7-18-19, Section 2.1.1 (Endpoint Inventory), Section 2.1.2 (Endpoint Classification) |
-| **Purpose** | Document comprehensive endpoint discovery process, establish endpoint inventory, and classify endpoints to support all four endpoint security controls |
-| **Target Audience** | Endpoint Administrators, Security Engineers, IT Operations, Asset Management, System Administrators, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Monthly (inventory updates), Quarterly (process review) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial implementation guide for endpoint discovery and inventory | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.1-7-18-19-S1 (Endpoint Security)
+- ISMS-IMP-A.8.1-7-18-19-S2 (Malware Protection Deployment)
+- ISMS-IMP-A.8.1-7-18-19-S3 (Software Control Process)
+- ISMS-IMP-A.8.1-7-18-19-S4 (Privileged Utility Management)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.8.1-7-18-19-S1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Inventory | Catalogue all discovered endpoint devices |
+| 3 | Baseline Compliance | Assess endpoint compliance against security baselines |
+| 4 | Encryption Status | Track disk encryption status across all endpoints |
+| 5 | Management Enrollment | Record MDM and domain enrollment status per endpoint |
+| 6 | Capability Requirements | Define required security capabilities per endpoint type |
+| 7 | Gap Analysis | Identify gaps between current and required endpoint security |
+| 8 | Evidence Register | Store and reference evidence supporting assessments |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -60,8 +91,7 @@ This assessment establishes the FOUNDATION for all endpoint security controls by
 
 #### What You'll Document
 
-- **Endpoint Inventory** (Inventory worksheet): Complete list of all discovered endpoints with mandatory attributes
-- **Endpoint Classification** (Classification worksheet): Classification by device type, ownership model, and criticality
+- **Endpoint Inventory** (Inventory worksheet): Complete list of all discovered endpoints with mandatory attributes, including device type (col D), ownership model (col H), and criticality (col M)
 - **Discovery Methods** (Discovery_Methods worksheet): All discovery methods used and their coverage
 - **Inventory Quality Metrics** (Quality_Metrics worksheet): Coverage rate, accuracy, staleness
 - **Evidence Register** (Evidence worksheet): Supporting documentation for inventory accuracy
@@ -72,11 +102,9 @@ This assessment establishes the FOUNDATION for all endpoint security controls by
 | Assessment | Focus | Relationship to S1 |
 |------------|-------|-------------------|
 | **ISMS-IMP-A.8.1-7-18-19-S1** | **Endpoint Discovery** | **WHAT endpoints exist** |
-| ISMS-IMP-A.8.1-7-18-19-S2 | Security Baselines | Applies security configurations to discovered endpoints |
-| ISMS-IMP-A.8.1-7-18-19-S3 | Malware Protection | Verifies protection coverage on discovered endpoints |
-| ISMS-IMP-A.8.1-7-18-19-S4 | Software Controls | Manages software on discovered endpoints |
-| ISMS-IMP-A.8.1-7-18-19-S5 | Privileged Utilities | Monitors privileged tools on discovered endpoints |
-| ISMS-IMP-A.8.1-7-18-19-S6 | Assessment & Compliance | Consolidated compliance view across all endpoints |
+| ISMS-IMP-A.8.1-7-18-19-S2 | Malware Protection | Verifies protection coverage on discovered endpoints |
+| ISMS-IMP-A.8.1-7-18-19-S3 | Software Controls | Manages software on discovered endpoints |
+| ISMS-IMP-A.8.1-7-18-19-S4 | Privileged Utilities | Monitors privileged tools on discovered endpoints |
 
 This assessment (S1) MUST be completed first - you cannot assess baselines, protection, or software controls until you know what endpoints exist!
 
@@ -128,7 +156,7 @@ Before starting this assessment, gather:
 
 - **MDM/UEM Platform Access**: Administrator access to Intune, Jamf, SCCM, Google Workspace MDM, VMware Workspace ONE, or other MDM platform
 - **Active Directory Access**: Read access to Active Directory, Entra ID, or LDAP
-- **Network Access**: Administrator access for network scanning (authorized network scans)
+- **Network Access**: Administrator access for network scanning (authorised network scans)
 - **DHCP Server Access**: Access to DHCP lease databases
 - **Cloud Platform Access**: Azure Portal, AWS Console, GCP Console (if endpoints hosted in cloud)
 - **Asset Management System**: Access to hardware asset tracking system (ServiceNow, Asset Panda, etc.)
@@ -147,11 +175,11 @@ Before starting this assessment, gather:
 - **PowerShell/Bash/Python**: For scripting and automation (optional but recommended)
 - **Excel Workbook**: Endpoint_Inventory.xlsx (generated by generate_a817_1_endpoint_inventory.py script)
 
-#### 4. Approvals & Authorizations
+#### 4. Approvals & Authorisations
 
-- **Network Scanning Authorization**: Documented approval for active network scanning (may trigger IDS/IPS alerts)
+- **Network Scanning Authorisation**: Documented approval for active network scanning (may trigger IDS/IPS alerts)
 - **Privacy Approval**: BYOD discovery must comply with employee privacy requirements (GDPR, FADP)
-- **Data Access Authorization**: Permission to access endpoint management systems and user data
+- **Data Access Authorisation**: Permission to access endpoint management systems and user data
 
 ---
 
@@ -184,7 +212,7 @@ Phase 6: Ongoing Maintenance & Updates
 **Activities:**
 1. Define endpoint discovery scope (device types, locations, ownership models)
 2. Identify discovery methods appropriate for your environment
-3. Obtain necessary access and authorizations
+3. Obtain necessary access and authorisations
 4. Schedule network scanning windows (if required)
 5. Communicate with stakeholders (users, managers, compliance)
 
@@ -299,9 +327,9 @@ Phase 6: Ongoing Maintenance & Updates
 
 **Quality Target:** ≥95% of expected endpoints discovered, <5% duplicate records
 
-### Sheet 2: Classification
+### Classification Guidance
 
-**Purpose:** Classify endpoints by device type, ownership model, and criticality
+**Purpose:** Classify endpoints by device type, ownership model, and criticality. Classification is recorded directly in the Inventory sheet — column D (Device Type), column H (Ownership Model), column M (Criticality). No separate Classification sheet is used.
 
 **Completion Steps:**
 
@@ -314,7 +342,7 @@ Phase 6: Ongoing Maintenance & Updates
 
 2. **Ownership Model Classification** (for each endpoint):
 
-   - **Corporate-Owned**: Device purchased by organization (check asset database)
+   - **Corporate-Owned**: Device purchased by organisation (check asset database)
    - **BYOD**: Personal device used for work (check MDM enrollment type, user survey)
    - **Contractor**: Device owned by contractor/consultant (check user account type)
    - **Guest**: Temporary visitor device (check guest network access logs)
@@ -341,7 +369,7 @@ Phase 6: Ongoing Maintenance & Updates
 
 **Ownership Model:**
 ```
-1. Is device in asset database as purchased by organization?
+1. Is device in asset database as purchased by organisation?
    YES → Corporate-Owned
    NO → Go to step 2
 
@@ -373,7 +401,7 @@ Phase 6: Ongoing Maintenance & Updates
    NO → Low
 ```
 
-**Quality Target:** 100% of endpoints classified
+**Quality Target:** 100% of endpoints classified (columns D, H, M populated in Inventory sheet)
 
 ### Sheet 3: Discovery_Methods
 
@@ -632,7 +660,7 @@ For audit purposes, maintain the following evidence:
 
 - **Retention Period**: 12 months minimum
 - **Storage Location**: Centralized repository (SharePoint, network share, document management system)
-- **Access Controls**: Restrict access to authorized personnel (endpoint administrators, auditors)
+- **Access Controls**: Restrict access to authorised personnel (endpoint administrators, auditors)
 
 ---
 
@@ -741,7 +769,7 @@ For audit purposes, maintain the following evidence:
 - [ ] 29. Air-gapped devices: Manually inventoried (or none exist)
 - [ ] 30. Lab/test devices: Documented (or none exist)
 
-### Classification (10 Items)
+### Classification — Inventory Columns D/H/M (10 Items)
 
 - [ ] 31. 100% of endpoints classified by Device_Type
 - [ ] 32. 100% of endpoints classified by Ownership_Model
@@ -862,7 +890,7 @@ For audit purposes, maintain the following evidence:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"You cannot defend what you have not catalogued."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

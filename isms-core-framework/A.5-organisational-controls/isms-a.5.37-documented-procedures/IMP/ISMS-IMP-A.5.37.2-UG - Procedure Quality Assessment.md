@@ -5,18 +5,36 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Procedure Quality Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.37.2-UG |
-| **Title** | Procedure Quality Assessment |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.37 |
-| **Control Name** | Documented Operating Procedures |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.5.37 (Documented Procedures) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.37) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Information Security Manager |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.37 (Documented Procedures)
+- ISMS-IMP-A.5.37.1 (Procedure Inventory Assessment)
+- ISMS-IMP-A.5.37.3 (Procedure Review and Update Tracking)
 
 ---
 
@@ -47,6 +65,19 @@
    - [2.7 Generator Script Reference](#27-generator-script-reference)
 
 ---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Quality Assessment | Evaluate each procedure against defined quality standards |
+| 3 | Quality Checklist | Detailed quality checklist items per procedure |
+| 4 | Improvement Actions | Track remediation actions for quality gaps identified |
+| 5 | Trend Analysis | Monitor quality improvement trends over time |
+| 6 | Evidence Register | Store and reference evidence supporting quality ratings |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -84,7 +115,6 @@ This assessment covers the following components:
 **Out of Scope:**
 - Procedure inventory management (covered in ISMS-IMP-A.5.37.1)
 - Procedure review scheduling (covered in ISMS-IMP-A.5.37.3)
-- Compliance dashboards and metrics aggregation (covered in ISMS-IMP-A.5.37.4)
 - Actual procedure content creation or rewriting
 - Technical validation of procedure steps (subject matter expert responsibility)
 
@@ -922,7 +952,7 @@ Control A.5.37 quality assessment relates to:
 |---------|--------------|-------------------|
 | **A.5.37.1** | Procedure Inventory | Procedures to assess |
 | **A.5.37.3** | Review Tracking | Quality drives review priority |
-| **A.5.37.4** | Compliance Dashboard | Quality metrics aggregation |
+| **A.5.37.4** | Summary Dashboard | Quality metrics aggregation |
 | **A.5.1** | Policies | Quality standards for policy procedures |
 | **A.7.2** | Competence | Training on procedure quality |
 | **A.5.24** | Incident Management | Quality of incident procedures |
@@ -955,7 +985,6 @@ A.5.37.4 Dashboard
 |-------------|-------|--------------|
 | ISMS-IMP-A.5.37.1 | Procedure Inventory | Source of procedures to assess |
 | ISMS-IMP-A.5.37.3 | Review and Update Tracking | Quality drives review scheduling |
-| ISMS-IMP-A.5.37.4 | Compliance Dashboard | Quality metrics reported |
 
 ---
 
@@ -963,7 +992,7 @@ A.5.37.4 Dashboard
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Quality means doing it right when no one is looking."*
+— Henry Ford
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

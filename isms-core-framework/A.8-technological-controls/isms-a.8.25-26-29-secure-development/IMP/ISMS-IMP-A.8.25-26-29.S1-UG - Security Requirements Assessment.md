@@ -8,26 +8,57 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-IMP-A.8.25-26-29-S1-UG |
+|-------|-------|
+| **Document Title** | Security Requirements Assessment |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.25-26-29.S1-UG |
+| **Related Policy** | ISMS-POL-A.8.25-26-29 (Secure Development) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.25 (Secure Development Life Cycle) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Security Requirements Compliance (A.8.26) |
-| **Related Policy** | ISMS-POL-A.8.25-26-29 Section 2 (Application Security Requirements) |
-| **Purpose** | Assessment workbook for evaluating application security requirements specification, threat modeling, and architecture review compliance |
-| **Target Audience** | Security Architects, Product Managers, Application Owners, Compliance Officers |
-| **Assessment Type** | Application-by-Application Security Requirements Verification |
-| **Review Cycle** | Quarterly (High-Risk), Annually (Medium/Low-Risk) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial implementation guide format | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.25-26-29 (Secure Development)
+- ISMS-IMP-A.8.25-26-29.S2 (SDLC Security Activities Assessment)
+- ISMS-IMP-A.8.25-26-29.S3 (Security Testing Results Assessment)
+- ISMS-IMP-A.8.25-26-29.S4 (Vulnerability Remediation Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.8.25-26-29-S1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Application Inventory | Inventory of applications requiring security requirements assessment |
+| 3 | Requirements Documentation | Document and track security requirements per application |
+| 4 | Threat Modelling | Record threat modelling activities and findings per application |
+| 5 | Architecture Review | Document security architecture review results and approvals |
+| 6 | Traceability Matrix | Map security requirements to implementation and test evidence |
+| 7 | Evidence Register | Store and reference evidence supporting assessments |
+| 8 | Gap Analysis | Identify gaps in security requirements coverage |
+| 9 | Summary Dashboard | Compliance status and key metrics overview |
+| 10 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -153,7 +184,7 @@ This workbook assesses whether **application security requirements are properly 
 - Security requirements specification best practices
 - Threat modeling methodologies (STRIDE, PASTA, etc.)
 - Application security principles (OWASP Top 10, secure design)
-- Organizational security policies and standards
+- Organisational security policies and standards
 - Relevant regulations (GDPR, PCI DSS v4.0.1, etc.)
 
 **If you lack this knowledge:**
@@ -339,7 +370,7 @@ This section provides detailed guidance for completing each assessment question 
 ### Question 1.1: Application Name
 **Column B: Application Name**
 
-*What to enter:* Official application name as it appears in organizational records.
+*What to enter:* Official application name as it appears in organisational records.
 
 *Examples:*
 
@@ -355,7 +386,7 @@ This section provides detailed guidance for completing each assessment question 
 
 **Column C: Application ID**
 
-*What to enter:* Unique identifier (format: APP-XXX or organizational standard)
+*What to enter:* Unique identifier (format: APP-XXX or organisational standard)
 
 *Examples:*
 
@@ -368,13 +399,13 @@ This section provides detailed guidance for completing each assessment question 
 
 **Column C: Department**
 
-*What to enter:* Organizational unit owning the application
+*What to enter:* Organisational unit owning the application
 
 **Column D: Contact Email**
 
 *What to enter:* How to reach the Application Owner
 
-*Evidence:* Application inventory record, organizational chart
+*Evidence:* Application inventory record, organisational chart
 
 ### Question 1.3: Application Description
 **Column B: Business Purpose**
@@ -419,7 +450,7 @@ This section provides detailed guidance for completing each assessment question 
 
 **Column C: Data Classification (Highest)**
 
-*What to enter:* Highest data classification level processed (per organizational data classification policy)
+*What to enter:* Highest data classification level processed (per organisational data classification policy)
 
 *Typical classifications:*
 
@@ -459,7 +490,7 @@ Data classification drives security requirements. Confidential data requires enc
 
 *Options:*
 
-- On-Premises (organization's data center)
+- On-Premises (organisation's data center)
 - Cloud (AWS, Azure, GCP, etc.)
 - Hybrid (mix of on-prem and cloud)
 - SaaS (vendor-hosted)
@@ -741,12 +772,12 @@ SRS includes requirements for:
 - Application has no authentication (public read-only content)
 - Authentication handled by separate identity system (but should reference it)
 
-**Column C: Authorization Requirements Specified? (Yes/No/N/A)**
+**Column C: Authorisation Requirements Specified? (Yes/No/N/A)**
 
 *Answer Yes if:*
 SRS includes requirements for:
 
-- Authorization model (RBAC, ABAC, etc.)
+- Authorisation model (RBAC, ABAC, etc.)
 - Role definitions
 - Access control matrix (who can access what)
 - Privilege escalation prevention
@@ -757,13 +788,13 @@ SRS includes requirements for:
 
 *Answer No if:*
 
-- No authorization requirements documented
+- No authorisation requirements documented
 - Only vague statement ("must control access")
 
 *Answer N/A if:*
 
 - Public application with no protected resources
-- Authorization handled by separate system (but should reference it)
+- Authorisation handled by separate system (but should reference it)
 
 **Column D: Input Validation Requirements Specified? (Yes/No/N/A)**
 
@@ -817,14 +848,14 @@ SRS includes requirements for:
 *Answer Yes if:*
 SRS includes requirements for:
 
-- Security events to log (authentication, authorization, data access, configuration changes)
+- Security events to log (authentication, authorisation, data access, configuration changes)
 - Log content (who, what, when, where, result)
 - Log retention period
 - Log integrity protection
 - Centralized logging (SIEM integration for High-Risk apps)
 
 *Example requirement:*
-"The application SHALL log all authentication attempts (successful and failed), authorization decisions (grants and denials), administrative actions, and data modifications. Logs SHALL include timestamp, user ID, source IP, action, and result. Logs SHALL be retained for 12 months and protected from tampering."
+"The application SHALL log all authentication attempts (successful and failed), authorisation decisions (grants and denials), administrative actions, and data modifications. Logs SHALL include timestamp, user ID, source IP, action, and result. Logs SHALL be retained for 12 months and protected from tampering."
 
 *Answer No if:*
 
@@ -841,7 +872,7 @@ SRS includes requirements for:
 SRS includes requirements for:
 
 - API authentication (API keys, OAuth 2.0, JWT)
-- API authorization (scope-based access control)
+- API authorisation (scope-based access control)
 - API rate limiting
 - API input validation
 - API documentation (OpenAPI/Swagger)
@@ -907,7 +938,7 @@ SRS includes requirements for:
 - Resource exhaustion handling
 
 *Example:*
-"The application SHALL fail-closed on authorization errors (deny access if cannot determine authorization). The application SHALL implement rate limiting to prevent resource exhaustion attacks."
+"The application SHALL fail-closed on authorisation errors (deny access if cannot determine authorisation). The application SHALL implement rate limiting to prevent resource exhaustion attacks."
 
 *Answer No if:*
 
@@ -1223,7 +1254,7 @@ Critical and High findings MUST be remediated before production deployment for H
 *Answer Yes if:*
 
 - Authentication architecture validated
-- Authorization model validated
+- Authorisation model validated
 - Data protection architecture validated (encryption, key management)
 - API security architecture validated (if applicable)
 - Logging architecture validated
@@ -1453,7 +1484,7 @@ This sheet is auto-populated based on your answers in previous sheets. Review fo
 - [ ] Application risk classified (High/Medium/Low)
 - [ ] Risk classification approved by Security Architect
 - [ ] Security Requirements Specification (SRS) exists
-- [ ] SRS includes functional security requirements (authentication, authorization, input validation, crypto, logging)
+- [ ] SRS includes functional security requirements (authentication, authorisation, input validation, crypto, logging)
 - [ ] SRS includes non-functional security requirements (performance, resilience, secure defaults)
 - [ ] SRS includes data protection requirements (encryption, retention, deletion, privacy)
 - [ ] Threat modeling conducted (if High-Risk or Medium-Risk)
@@ -1883,7 +1914,7 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 **Solution:**
 
 - Look for SHALL statements about security controls
-- Look for authentication, authorization, encryption, validation, logging requirements
+- Look for authentication, authorisation, encryption, validation, logging requirements
 - If requirements doc doesn't have a "Security" section, probably no security requirements
 
 **Example:**
@@ -2236,7 +2267,7 @@ After assessment approved:
 1. **Risk Acceptance:** Comfortable with identified gaps and residual risk?
 2. **Remediation Plans:** Adequate given application risk?
 3. **Policy Compliance:** High-Risk requirements met?
-4. **Strategic Alignment:** Fits organizational security strategy?
+4. **Strategic Alignment:** Fits organisational security strategy?
 
 **Approval Outputs:**
 
@@ -2303,7 +2334,7 @@ Good luck with your assessment!
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A requirement written in a specification costs pennies; a vulnerability found in production costs millions."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

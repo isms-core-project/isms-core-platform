@@ -8,207 +8,139 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Third-Party & Open Source Software Assessment Specification |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.28.4-TG |
+| **Related Policy** | ISMS-POL-A.8.28 (Secure Coding) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.28 (Secure Coding) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Third-Party Dependencies & Open Source Software Management |
-| **Related Policy** | ISMS-POL-A.8.28 Section 2.4 (Third-Party & OSS Management), Section 3 (Roles & Responsibilities) |
-| **Purpose** | Evaluate supply chain security practices for third-party dependencies, open source software, vendor security, and license compliance |
-| **Target Audience** | Application Security Team, Engineering Managers, Software Architects, Legal/Compliance Team, Procurement Team, Auditors |
-| **Assessment Type** | Process, Technical & Legal |
-| **Review Cycle** | Annually or After Major Supply Chain Security Incidents |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
 **Version History**:
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | [Date] | Initial assessment specification |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Approvers**:
-
-- Application Security Lead (Technical Review)
-- Chief Information Security Officer (Final Approval)
-- Legal Counsel (License Compliance Review)
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
 **Related Documents**:
 
-- ISMS-POL-A.8.28 - Secure Coding Policy (Master Policy)
-- ISMS-POL-A.8.28-S2.4 - Third-Party & Open Source Software Management  
-- ISMS-IMP-A.8.28.1 - SDLC Assessment
-- ISMS-IMP-A.8.28.2 - Standards & Tools Assessment
+- ISMS-POL-A.8.28 (Secure Coding)
+- ISMS-IMP-A.8.28.1 (SDLC Assessment Specification)
+- ISMS-IMP-A.8.28.2 (Standards & Tools Assessment Specification)
+- ISMS-IMP-A.8.28.3 (Code Review & Testing Assessment Specification)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a828_4_third_party_oss.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.28.4` |
-| **Output Filename** | `ISMS-IMP-A.8.28.4_Third-Party_Code_and_Open_Source_Component_Security_YYYYMMDD.xlsx` |
-| **Workbook Title** | Third-Party Code and Open Source Component Security |
-| **Total Sheets** | 8 (8 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #70AD47 | 70AD47 | Medium Green (On Track) |
-| #C00000 | C00000 | Dark Red (Blocked) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #FF6666 | FF6666 | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: ISMS Control A.8.28.4 - Third-Party & OSS Assessment
-
-**Purpose:** Initialize workbook with proper metadata.
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | A | 8 |
-| B | B | 55 |
-| C | C | 22 |
-| D | D | 35 |
-| E | E | 40 |
-| F | F | 12 |
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Data_Validations
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a828_4_third_party_oss.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Instructions
+**Document ID:** `ISMS-IMP-A.8.28.4`
 
-**Purpose:** This sheet provides:
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
----
+### Sheet Structure
 
-## Sheet 4: Domain_Assessment
+| # | Sheet Name |
+|---|-----------|
+| 1 | Summary Dashboard |
+| 2 | Evidence Register |
+| 3 | Gap Analysis |
+| 4 | Approval Sign-Off |
+| 5 | Vendor Security Assessment |
+| 6 | OSS Management |
+| 7 | Dependency Vulnerability Mgmt |
+| 8 | Third-Party Code & Integration |
+| 9 | License Compliance & Legal Risk |
+| 10 | Instructions & Legend |
 
-### Columns
+### Color Palette
 
-| Col | Header |
-|-----|--------|
-| A | ID |
-| B | Requirement |
-| C | Implementation Status |
-| D | Evidence Reference |
-| E | Comments |
-| F | ✓ |
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #666666 | Dark Gray (Secondary Text) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-### Conditional Formatting
+### Column Headers (All Sheets)
 
-| Range | Condition | Format |
-|-------|-----------|--------|
-| FN:FN | equal  |  |
-| FN:FN | equal  |  |
-| FN:FN | equal  |  |
-| FN:FN | equal  |  |
+| # | Column Header |
+|---|--------------|
+| 1 | GAP ANALYSIS & REMEDIATION PLAN |
+| 2 | Requirement |
+| 3 | Implementation Status |
+| 4 | Evidence Reference |
+| 5 | Comments |
+| 6 | Assessment Area |
+| 7 | Total Items |
+| 8 | Compliant |
+| 9 | Partial |
+| 10 | Non-Compliant |
+| 11 | N/A |
+| 12 | Compliance % |
+| 13 | Evidence ID |
+| 14 | Evidence Type |
+| 15 | Description |
+| 16 | Location/Path |
+| 17 | Date Collected |
+| 18 | Collected By |
+| 19 | Verification Status |
+| 20 | Gap ID |
+| 21 | Domain |
+| 22 | Requirement ID |
+| 23 | Requirement Description |
+| 24 | Current State |
+| 25 | Target State |
+| 26 | Priority |
+| 27 | Owner |
+| 28 | Target Date |
+| 29 | Status |
 
----
+### Data Validation Values
 
-## Sheet 5: Summary_Dashboard
+All dropdown/list values used across sheets:
 
-**Data Rows:** 199 (rows 2–200)
+```
+✅ Implemented, ⚠️ Partially Implemented, ❌ Not Implemented, N/A, Yes, No
+Critical, High, Medium, Low, Open, In Progress, Resolved, Closed, Deferred
+Document, Screenshot, Report, Configuration, URL, Recording, Database Query
+Log File, Other, Pending, Verified, Rejected, Approved
+Approved with Conditions, Pending Review, Vendor Security Assessment
+OSS Management, Dependency Vulnerability Mgmt, Third-Party Code & Integration
+License Compliance & Legal Risk, Configuration file, Network scan
+Documentation, Vendor spec, Certificate inventory, Audit log
+Compliance report, Pending verification, Not verified, Requires update, Draft
+Final, Requires remediation, Re-assessment required
+```
 
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Domain |
-| B | Total |
-| C | Impl. |
-| D | Partial |
-| E | Not Impl. |
-| F | N/A |
-| G | Compliance % |
-| H | Status |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| CN | `=COUNTIF({sheet_name}!C4:C21,` |  |
-| GN | `=IF((B{current_row}-F{current_row})=0,0,(C{current_row}+D{current_row}*0.5)/(B{c` |  |
-| HN | `=IF(G{current_row}>=0.8,` |  |
-| BN | `=SUM(B{domain_start_row}:B{domain_end_row})` |  |
-| CN | `=SUM(C{domain_start_row}:C{domain_end_row})` |  |
-| DN | `=SUM(D{domain_start_row}:D{domain_end_row})` |  |
-| EN | `=SUM(E{domain_start_row}:E{domain_end_row})` |  |
-| FN | `=SUM(F{domain_start_row}:F{domain_end_row})` |  |
-| HN | `=IF(G{current_row}>=0.7,` |  |
-| — | `=COUNTA(Evidence_Register!D2:D200)/COUNTA(Evidence_Register!A2:A200)` | Evidence Completeness: |
-
----
-
-## Sheet 6: Evidence_Register
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A |  | 10 |
-| B |  | 40 |
-| C |  | 15 |
-| D |  | 35 |
-| E |  | 12 |
-| F |  | 20 |
-| G |  | 15 |
-| H |  | 20 |
-| I |  | 12 |
-| J |  | 30 |
-
----
-
-## Sheet 7: Gap_Analysis
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A |  | 10 |
-| B |  | 25 |
-| C |  | 10 |
-| D |  | 35 |
-| E |  | 30 |
-| F |  | 30 |
-| G |  | 12 |
-| H |  | 35 |
-| I |  | 20 |
-| J |  | 12 |
-| K |  | 15 |
-| L |  | 12 |
-| M |  | 30 |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| JN:JN | lessThan TODAY() |  |
-
----
-
-## Sheet 8: Approval_Sign_Off
+**Extracted:** 10 sheets, 29 columns, 49 validation values, 11 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

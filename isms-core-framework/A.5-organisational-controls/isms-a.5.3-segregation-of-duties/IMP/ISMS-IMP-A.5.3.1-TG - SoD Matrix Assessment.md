@@ -7,242 +7,142 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | SoD Matrix Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.3.1-TG |
+| **Related Policy** | ISMS-POL-A.5.3 (Segregation of Duties) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.3 (Policies for Segregation of Duties) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.3 Segregation of Duties |
-| **Parent Policy** | ISMS-POL-A.5.3 - Segregation of Duties |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.3.1-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.3 (Segregation of Duties)
+- ISMS-IMP-A.5.3.2 (Conflict Analysis)
+- ISMS-IMP-A.5.3.3 (Role-Function Mapping)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a53_1_sod_matrix.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.3.1` |
-| **Output Filename** | `ISMS-IMP-A.5.3.1_SoD_Matrix_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | SoD Matrix Assessment |
-| **Total Sheets** | 8 (8 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #1F4E79 | 1F4E79 | Custom |
-| #2F5496 | 2F5496 | Dark Blue (Alt Headers) |
-| #D6DCE4 | D6DCE4 | Silver (Neutral) |
-| #F2F2F2 | F2F2F2 | Very Light Gray (Protected/Alternating) |
-| #FABF8F | FABF8F | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Role_Inventory
+## Generator Alignment Reference
 
-**Data Rows:** 199 (rows 2–200)
+> Auto-generated from `generate_a53_1_sod_matrix.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.3.1`
 
-| Col | Header |
-|-----|--------|
-| A | Role_ID |
-| B | Role_Name |
-| C | Department |
-| D | Process_Domain |
-| E | Risk_Level |
-| F | Description |
-| G | Key_Duties |
-| H | System_Access |
-| I | Active |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Data Validations
+### Sheet Structure
 
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C2:C200 | `dept_dv` |
-| D | D2:D200 | `domain_dv` |
-| E | E2:E200 | `risk_dv` |
-| I | I2:I200 | `active_dv` |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Role Inventory |
+| 3 | Conflict Matrix |
+| 4 | Current Assignments |
+| 5 | Gap Analysis |
+| 6 | Remediation Tracker |
+| 7 | Exception Register |
+| 8 | Approval Sign-Off |
+| 9 | Summary Dashboard |
 
----
+### Color Palette
 
-## Sheet 3: Conflict_Matrix
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-**Data Rows:** 199 (rows 2–200)
+### Column Headers (All Sheets)
 
-### Data Validations
+| # | Column Header |
+|---|--------------|
+| 1 | Jane Smith |
+| 2 | AP Clerk |
+| 3 | J. Manager |
+| 4 | ROLE-FIN-001, ROLE-FIN-003 |
+| 5 | Role Removal |
+| 6 | IT Manager |
+| 7 | In Progress |
+| 8 | FINAL DECISION: |
+| 9 | Role ID |
+| 10 | Role Name |
+| 11 | Department |
+| 12 | Process Domain |
+| 13 | Risk Level |
+| 14 | Description |
+| 15 | Key Duties |
+| 16 | System Access |
+| 17 | Active |
+| 18 | Person ID |
+| 19 | Name |
+| 20 | Primary Role |
+| 21 | Additional Roles |
+| 22 | Assignment Date |
+| 23 | Last Review |
+| 24 | Manager |
+| 25 | Notes |
+| 26 | Gap ID |
+| 27 | Conflicting Roles |
+| 28 | Conflict Type |
+| 29 | Identified Date |
+| 30 | Status |
+| 31 | Remediation ID |
+| 32 | Action Type |
+| 33 | Owner |
+| 34 | Target Date |
+| 35 | Completion Date |
+| 36 | Evidence Ref |
+| 37 | Exception ID |
+| 38 | Justification |
+| 39 | Compensating Controls |
+| 40 | Risk Acceptance |
+| 41 | Approval Date |
+| 42 | Expiry Date |
+| 43 | Review Frequency |
 
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| B | B2:Z200 | `conflict_dv` |
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 4: Current_Assignments
+```
+Yes, No, X, C, M, Draft, Final, Requires remediation, Re-assessment required
+Approved, Approved with Conditions, Rejected, Deferred
+```
 
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Person_ID |
-| B | Name |
-| C | Department |
-| D | Primary_Role |
-| E | Additional_Roles |
-| F | Assignment_Date |
-| G | Last_Review |
-| H | Manager |
-| I | Notes |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C2:C200 | `dept_dv` |
-
----
-
-## Sheet 5: Gap_Analysis
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Gap_ID |
-| B | Person_ID |
-| C | Name |
-| D | Conflicting_Roles |
-| E | Conflict_Type |
-| F | Risk_Level |
-| G | Identified_Date |
-| H | Status |
-| I | Notes |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| E | E2:E200 | `conflict_type_dv` |
-| F | F2:F200 | `risk_dv` |
-| H | H2:H200 | `status_dv` |
-
----
-
-## Sheet 6: Remediation_Tracker
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Remediation_ID |
-| B | Gap_ID |
-| C | Action_Type |
-| D | Description |
-| E | Owner |
-| F | Target_Date |
-| G | Status |
-| H | Completion_Date |
-| I | Evidence_Ref |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C2:C200 | `type_dv` |
-| G | G2:G200 | `status_dv` |
-
----
-
-## Sheet 7: Exception_Register
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Exception_ID |
-| B | Gap_ID |
-| C | Justification |
-| D | Compensating_Controls |
-| E | Risk_Acceptance |
-| F | Approval_Date |
-| G | Expiry_Date |
-| H | Review_Frequency |
-| I | Last_Review |
-| J | Status |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| H | H2:H200 | `freq_dv` |
-| J | J2:J200 | `status_dv` |
-
----
-
-## Sheet 8: Approval_SignOff
-
-**Data Rows:** 5 (rows 1–5)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Role |
-| B | Name |
-| C | Date |
-| D | Signature |
-| E | Comments |
-
----
-
-## Data Validation Dropdown Lists
-
-All dropdown value lists defined in the generator:
-
-| Variable | Values |
-|----------|--------|
-| `CONFLICT_TYPES` | X, C, M, - |
-| `DEPARTMENTS` | Executive, Finance, IT, Operations, HR, Legal, Sales, Marketing, Engineering, Support, Procuremen... |
-| `EXCEPTION_STATUSES` | Active, Expired, Revoked |
-| `GAP_STATUSES` | Open, Mitigated, Resolved, Accepted |
-| `PROCESS_DOMAINS` | Financial, IT Operations, HR, Procurement, Security, Change Management, Other |
-| `REMEDIATION_STATUSES` | Not Started, In Progress, Completed, Cancelled |
-| `REMEDIATION_TYPES` | Role Removal, Role Reassignment, Process Redesign, Compensating Control |
-| `REVIEW_FREQUENCIES` | Monthly, Quarterly, Semi-Annual, Annual |
-| `RISK_LEVELS` | Critical, High, Medium, Low |
+**Extracted:** 9 sheets, 43 columns, 13 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

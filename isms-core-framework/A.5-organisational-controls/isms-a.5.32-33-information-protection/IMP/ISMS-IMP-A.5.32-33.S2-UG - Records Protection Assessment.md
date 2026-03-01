@@ -3,24 +3,38 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.33: Protection of Records
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Records Protection Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.32-33.S2-UG |
+| **Related Policy** | ISMS-POL-A.5.32-33 (Information Protection) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.33 (Protection of Records) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Records Identification, Classification, Protection Controls, and Integrity Verification |
-| **Related Policy** | ISMS-POL-A.5.32-33, Section 2.2 (Records Protection) |
-| **Purpose** | Guide users through systematic records inventory, classification, protection assessment, and integrity verification |
-| **Target Audience** | Records Manager, CISO, Legal Counsel, System Owners, IT Teams, Compliance Officers, Auditors |
-| **Assessment Type** | Operational & Compliance |
-| **Review Cycle** | Annual or After Significant System Changes |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for Records Protection assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.32-33 (Information Protection)
+- ISMS-IMP-A.5.32-33.S1 (IP Rights Inventory and Compliance Assessment)
+- ISMS-IMP-A.5.32-33.S3 (Retention and Disposal Schedule Assessment)
 
 ---
 
@@ -31,6 +45,26 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 ---
 
 **Audience:** Records Manager, CISO, Legal Counsel, System Owners, IT Teams, Compliance Officers
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 11 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Records Category Inventory** | Inventory of all record categories with classification and ownership |
+| **Protection Controls** | Assessment of controls applied to protect each record category |
+| **Integrity Verification** | Verification of records integrity and authenticity mechanisms |
+| **Access Control Review** | Review of access controls applied to records |
+| **Legal Hold Register** | Register of records placed under legal hold and their status |
+| **Backup Verification** | Verification that records are adequately backed up and recoverable |
+| **Gap Analysis** | Identified gaps in records protection controls |
+| **Evidence Register** | Evidence collected to support records protection compliance |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -83,7 +117,6 @@ This assessment focuses on **records protection** - the technical and administra
 | ISMS-IMP-A.5.32-33.S1 | IP Rights Inventory | Provides IP classification that may apply to records |
 | **ISMS-IMP-A.5.32-33.S2** | **Records Protection** | **Core - HOW records are protected** |
 | ISMS-IMP-A.5.32-33.S3 | Retention & Disposal | Uses protection assessment to inform disposal decisions |
-| ISMS-IMP-A.5.32-33.S4 | Compliance Dashboard | Aggregates metrics from all assessments |
 
 ## Who Should Complete This Assessment
 
@@ -770,7 +803,7 @@ Before submitting for approval, verify:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Records are the institutional memory of organisations."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

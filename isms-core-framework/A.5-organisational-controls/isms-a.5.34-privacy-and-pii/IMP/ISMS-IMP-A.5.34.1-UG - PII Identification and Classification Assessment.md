@@ -3,24 +3,41 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
+---
+
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | PII Identification and Classification Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.34.1-UG |
+| **Related Policy** | ISMS-POL-A.5.34 (Privacy and Pii) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.34 (Privacy and Protection of PII) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | PII Identification, Classification, Data Flow Mapping, and ROPA Maintenance |
-| **Related Policy** | ISMS-POL-A.5.34, Section 2.1 (PII Classification and Identification) |
-| **Purpose** | Guide users through systematic PII discovery, classification, data mapping, and GDPR Article 30 compliant Record of Processing Activities (ROPA) maintenance |
-| **Target Audience** | DPO/Privacy Officers, Data Owners, System Owners, IT Teams, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major System Changes |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial specification for PII Identification assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.34 (Privacy and Pii)
+- ISMS-IMP-A.5.34.2 (Legal Basis and Lawful Processing Assessment)
+- ISMS-IMP-A.5.34.3 (Data Subject Rights Management Assessment)
+- ISMS-IMP-A.5.34.4 (Technical and Organisational Measures (TOMs) Assessment)
+- ISMS-IMP-A.5.34.5 (DPIA Assessment)
+- ISMS-IMP-A.5.34.6 (Cross Border Transfer Assessment)
 
 ---
 
@@ -34,6 +51,23 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
+### Workbook at a Glance
+
+This workbook contains the following 8 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **2. PII System Inventory** | Inventory of all systems processing personal data with classification |
+| **3. PII Data Flow Mapping** | Mapping of personal data flows between systems, processes, and parties |
+| **4. ROPA (Record of Processing)** | GDPR Article 30 compliant Record of Processing Activities |
+| **5. PII Discovery Gaps** | Auto-identified gaps in PII discovery and classification coverage |
+| **Evidence Register** | Evidence collected to support PII identification compliance |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
+
+---
+
 # Assessment Overview
 
 ## Purpose & Scope
@@ -44,10 +78,10 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 This assessment documents the **WHAT** and **WHERE** of PII processing - the foundational inventory that answers:
 
-- What personal data / PII does [Organization] process?
+- What personal data / PII does [Organisation] process?
 - Where is this PII located (systems, databases, applications, files)?
 - How is PII classified (Basic, Sensitive, Criminal Offense Data)?
-- How does PII flow through organizational boundaries?
+- How does PII flow through organisational boundaries?
 - What processing activities are conducted (collection, storage, sharing, deletion)?
 - What legal basis justifies each processing activity?
 - What safeguards protect PII during cross-border transfers?
@@ -60,7 +94,7 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 
 - ✅ **Complete PII system inventory** listing all systems containing personal data
 - ✅ **PII classification** for each system (Basic/Sensitive/Criminal Offense)
-- ✅ **Data flow diagrams** showing PII movement across organizational boundaries
+- ✅ **Data flow diagrams** showing PII movement across organisational boundaries
 - ✅ **Cross-border transfer identification** with safeguard documentation
 - ✅ **Record of Processing Activities (ROPA)** compliant with GDPR Article 30
 - ✅ **Legal basis documentation** for all processing activities
@@ -75,8 +109,7 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 | **ISMS-IMP-A.5.34.1** | **PII Identification & ROPA** | **Foundation - WHAT and WHERE** |
 | ISMS-IMP-A.5.34.2 | Legal Basis & Lawful Processing | Requires ROPA from A.5.34.1 for legal basis mapping |
 | ISMS-IMP-A.5.34.3 | Data Subject Rights Management | Requires PII inventory to fulfill access/erasure requests |
-| ISMS-IMP-A.5.34.4 | Technical & Organizational Measures | Requires PII classification to determine appropriate controls |
-| ISMS-IMP-A.5.34.5 | Data Protection Impact Assessment | Triggered by high-risk processing identified in ROPA |
+| ISMS-IMP-A.5.34.4 | Technical & Organisational Measures | Requires PII classification to determine appropriate controls |
 | ISMS-IMP-A.5.34.6 | Cross-Border Transfer Assessment | Requires transfer flows from A.5.34.1 data flow mapping |
 
 **Context Note:** This assessment (A.5.34.1) MUST be completed first - it provides the foundational PII inventory and ROPA that all other privacy assessments depend on.
@@ -94,17 +127,17 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 ### Required Skills
 
 - Understanding of GDPR Article 30 and Swiss FADP requirements
-- Knowledge of [Organization]'s IT infrastructure and system landscape
-- Familiarity with data protection principles (purpose limitation, data minimization, storage limitation)
+- Knowledge of [Organisation]'s IT infrastructure and system landscape
+- Familiarity with data protection principles (purpose limitation, data minimisation, storage limitation)
 - Ability to interview system owners and business stakeholders
 - Technical understanding to read system documentation and data flow diagrams
 
 ### Time Commitment
 
-- **Initial assessment:** 20-40 hours (depending on organization size and system complexity)
-  - Small organization (1-10 systems, 1-50 employees): 10-20 hours
-  - Medium organization (10-50 systems, 50-250 employees): 20-40 hours
-  - Large organization (50+ systems, 250+ employees): 40-80+ hours
+- **Initial assessment:** 20-40 hours (depending on organisation size and system complexity)
+  - Small organisation (1-10 systems, 1-50 employees): 10-20 hours
+  - Medium organisation (10-50 systems, 50-250 employees): 20-40 hours
+  - Large organisation (50+ systems, 250+ employees): 40-80+ hours
 - **Quarterly updates:** 2-4 hours (verify no changes, update for new systems)
 
 ## Expected Outputs
@@ -118,7 +151,6 @@ Upon completion, you will have:
 5. ✅ **Cross-Border Transfer Register** - All international data transfers with safeguard mechanisms
 6. ✅ **PII Discovery Gap Analysis** - Identified gaps with risk ratings and remediation plans
 7. ✅ **Evidence Register** - Supporting documentation linked to audit artifacts
-8. ✅ **Compliance Dashboard** - Executive summary with metrics and KPIs
 9. ✅ **Approved Assessment** - DPO and stakeholder sign-offs confirming accuracy
 
 ---
@@ -223,7 +255,7 @@ You will need access to:
 - ISMS-POL-A.5.34 Section 2.1 (PII classification framework)
 - ISMS-CTX-A.5.34 (Privacy regulatory landscape - GDPR/FADP guidance)
 - GDPR Article 30 text (ROPA requirements)
-- [Organization]'s data classification policy (ISMS-POL-A.5.12)
+- [Organisation]'s data classification policy (ISMS-POL-A.5.12)
 - ICO Guidance: ["Guide to the GDPR - Documentation"](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/documentation/)
 - EDPB Guidelines 07/2020 on Article 30 ROPA
 
@@ -352,7 +384,7 @@ Does system contain names, contact details, generic user data?
 
 ### Phase 4: Data Flow Mapping (4-8 hours)
 
-**Objective:** Document how PII moves through and across organizational boundaries
+**Objective:** Document how PII moves through and across organisational boundaries
 
 **Steps:**
 1. For EACH system in Sheet 2, identify:
@@ -362,13 +394,13 @@ Does system contain names, contact details, generic user data?
      - Other internal systems (API, database sync, file transfer)
      - Third-party sources (vendor provides data, data enrichment services)
    
-   - **Internal flows:** Where does PII move within [Organization]?
+   - **Internal flows:** Where does PII move within [Organisation]?
      - System-to-system integrations
      - Database replication
      - Backup processes
      - Reporting/analytics extracts
    
-   - **Outbound flows:** Where does PII go outside [Organization]?
+   - **Outbound flows:** Where does PII go outside [Organisation]?
      - Processors (cloud services, vendors performing work on behalf)
      - Third parties (marketing partners, analytics providers)
      - Cross-border transfers (data leaving CH/EU)
@@ -412,7 +444,7 @@ The ROPA must document:
 - Categories of recipients (internal departments, external processors, third parties)
 - Transfers to third countries (if applicable)
 - Retention periods (or criteria to determine)
-- Technical and organizational measures (general description)
+- Technical and organisational measures (general description)
 
 **Steps:**
 1. **Group systems into processing activities:**
@@ -509,7 +541,7 @@ The ROPA must document:
    - **Cross-border transfers:** SCCs signed with vendors, adequacy decision documentation
    - **Legal basis:** Legitimate Interest Assessments (LIAs), consent records, legal obligations register
 
-2. Store evidence in organized structure:
+2. Store evidence in organised structure:
    ```
    Evidence Repository/
    ├── System_Inventory/
@@ -607,7 +639,7 @@ Systematically identify systems by category:
 - **Marketing Automation:** Mailchimp, Marketo, Pardot, ActiveCampaign
 - **Analytics:** Google Analytics, Mixpanel, Amplitude, Adobe Analytics
 - **E-Commerce / Shopping Cart:** Shopify, WooCommerce, Magento, custom
-- **Payment Processing:** Stripe, PayPal, Authorize.Net, Square
+- **Payment Processing:** Stripe, PayPal, Authorise.Net, Square
 - **Customer Support:** Zendesk, Freshdesk, Intercom, custom ticketing
 - **Backup Systems:** Veeam, Acronis, cloud backup services
 - **Databases:** PostgreSQL, MySQL, SQL Server, MongoDB, etc.
@@ -677,13 +709,13 @@ For EACH system in Sheet 2, trace:
    - Other internal systems (API integration, database sync)
    - Third-party sources (vendor provides data, enrichment services)
 
-2. **Where does PII go within [Organization]?** (Internal flows)
+2. **Where does PII go within [Organisation]?** (Internal flows)
 
    - System-to-system transfers (CRM → Marketing Automation)
    - Reporting/analytics (production DB → data warehouse)
    - Backup processes (live system → backup storage)
 
-3. **Where does PII go outside [Organization]?** (Outbound flows)
+3. **Where does PII go outside [Organisation]?** (Outbound flows)
 
    - Processors (cloud SaaS, vendors performing services)
    - Third parties (marketing partners, analytics providers)
@@ -729,7 +761,7 @@ For ANY flow where **Cross-Border? = Yes**:
 - ❌ **Missing flows:** Forgetting backups, logs, crash reports sent to vendors
 - ❌ **Vague mechanisms:** "Cloud sync" → Should specify "Salesforce API REST POST /contacts"
 - ❌ **Assuming adequacy:** "US cloud provider" → Check if data residency in EU/CH or needs SCCs
-- ❌ **No minimization check:** Transferring entire customer database when only email needed
+- ❌ **No minimisation check:** Transferring entire customer database when only email needed
 
 ---
 
@@ -791,7 +823,7 @@ For EACH processing activity, document:
 - **Retention Rationale:** Why this period? (Legal requirement, Business need, Consent duration)
 - **Deletion Process:** How is data deleted? (Automated purge, Manual deletion request, End-of-life system decommissioning)
 
-**Technical and Organizational Measures:**
+**Technical and Organisational Measures:**
 
 - **Security Measures Summary:** High-level description (NOT detailed technical specs)
   - Example: "Encryption in transit (TLS 1.3) and at rest (AES-256), role-based access control, audit logging, annual security audits"
@@ -840,7 +872,7 @@ Common gap categories:
 - **Classification Issues:** PII sensitivity not properly identified
 - **Retention Violations:** Data kept longer than legally permitted or without justification
 - **Undocumented Processing:** Shadow IT discovered, not in ROPA
-- **Access Control Deficiencies:** Unauthorized access to PII systems
+- **Access Control Deficiencies:** Unauthorised access to PII systems
 - **Missing Processor Agreements:** Third parties processing PII without DPA
 
 **Step 2: Document Each Gap**
@@ -879,7 +911,7 @@ For EACH gap identified, enter:
 
 - Incomplete documentation (missing evidence)
 - Access control issues (too broad access permissions)
-- Data minimization failures (collecting more than necessary)
+- Data minimisation failures (collecting more than necessary)
 - Shadow IT without risk assessment
 
 **Low Risk (Action within 180 days):**
@@ -1175,7 +1207,7 @@ For EACH approver, record:
 - Use document management system with audit trails (SharePoint, Confluence)
 - Don't email evidence - use secure file sharing links
 
-**Organization:**
+**Organisation:**
 
 - Use consistent folder structure (see Sheet 6 guidance)
 - Name files descriptively (System_EvidenceType_Date.ext)
@@ -1217,7 +1249,7 @@ For EACH approver, record:
 - **Problem:** Screenshot shows employee SSNs or customer payment data
 - **Solution:** Re-capture with sensitive data masked/redacted
 
-**Gap 5: Evidence not organized**
+**Gap 5: Evidence not organised**
 
 - **Problem:** Random files scattered across email, personal folders
 - **Solution:** Centralize in structured repository, register in Sheet 6
@@ -1358,7 +1390,7 @@ For EACH approver, record:
 
 - **Define retention period for EACH ROPA entry:** Based on legal requirement or business need
 - **Be specific:** "7 years after contract termination" not "as long as needed"
-- **Balance requirements:** Legal retention (tax law) vs. data minimization (delete when no longer needed)
+- **Balance requirements:** Legal retention (tax law) vs. data minimisation (delete when no longer needed)
 - **Implement deletion processes:** Automated purging, manual review cycles, system decommissioning
 - **Document exceptions:** If legal hold or litigation prevents deletion, document why
 
@@ -1406,7 +1438,7 @@ For EACH approver, record:
 **Why It Happens:**
 
 - Treating system ownership as administrative detail
-- Not establishing clear accountability in organization
+- Not establishing clear accountability in organisation
 - Legacy systems where original owner is long gone
 - Shadow IT discovered with no clear owner
 
@@ -1627,7 +1659,7 @@ After all reviews complete and corrections made:
 
 3. **Publish Approved ROPA**
 
-   - Make available to authorized personnel (DPO, Legal, Compliance, Audit)
+   - Make available to authorised personnel (DPO, Legal, Compliance, Audit)
    - Restrict access (ROPA contains sensitive processing details)
    - Establish update process (how to add new processing activities)
 
@@ -1637,8 +1669,7 @@ This assessment (A.5.34.1) provides foundational data for:
 
 - **ISMS-IMP-A.5.34.2 (Legal Basis):** Uses ROPA (Sheet 4) as input for detailed legal basis validation and Legitimate Interest Assessments
 - **ISMS-IMP-A.5.34.3 (Data Subject Rights):** Uses PII inventory (Sheet 2) to identify systems for access/erasure request fulfillment
-- **ISMS-IMP-A.5.34.4 (TOMs):** Uses PII classification (Sheet 2) to determine appropriate technical and organizational security measures
-- **ISMS-IMP-A.5.34.5 (DPIA):** Uses ROPA (Sheet 4) to identify high-risk processing requiring Data Protection Impact Assessment
+- **ISMS-IMP-A.5.34.4 (TOMs):** Uses PII classification (Sheet 2) to determine appropriate technical and organisational security measures
 - **ISMS-IMP-A.5.34.6 (Cross-Border Transfers):** Uses data flows (Sheet 3) for detailed Transfer Impact Assessments (TIAs)
 
 **Sequence:** Complete A.5.34.1 first, then proceed with other assessments in parallel or sequence.
@@ -1697,7 +1728,7 @@ This assessment (A.5.34.1) provides foundational data for:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Privacy is not something that I'm merely entitled to, it's an absolute prerequisite."*
+— Marlon Brando
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

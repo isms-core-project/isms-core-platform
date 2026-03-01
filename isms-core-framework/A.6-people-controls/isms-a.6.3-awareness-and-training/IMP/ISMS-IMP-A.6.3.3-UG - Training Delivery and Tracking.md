@@ -8,25 +8,51 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Training Delivery and Tracking |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.3.3-UG |
+| **Related Policy** | ISMS-POL-A.6.3 (Awareness and Training) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.3 (Information Security Awareness, Education and Training) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Training Completion Tracking and Effectiveness Measurement |
-| **Related Policy** | ISMS-POL-A.6.3, Section 2.5 (Delivery Requirements), Section 2.6 (Competency Assessment) |
-| **Purpose** | Track training completion, measure assessment results, manage remediation, and verify competency across all personnel |
-| **Target Audience** | HR Training Administrators, LMS Administrators, Department Managers, Information Security Officers |
-| **Assessment Type** | Operational Tracking & Compliance Monitoring |
-| **Review Cycle** | Continuous tracking + Monthly reporting + Quarterly analysis |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | Initial | Initial specification for Training Delivery and Tracking workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.3 (Awareness and Training)
+- ISMS-IMP-A.6.3.1 (Training Needs Assessment)
+- ISMS-IMP-A.6.3.2 (Training Program Design)
 
 ---
 
-**Audience:** HR Training Administrators, LMS Administrators, Department Managers
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Personnel Register | Register all personnel requiring security training |
+| 3 | Completion Tracking | Track training completion status per person and module |
+| 4 | Assessment Results | Record and analyse training assessment scores |
+| 5 | Simulation Results | Track phishing simulation and exercise results |
+| 6 | Remediation Tracking | Manage remediation for non-compliant personnel |
+| 7 | Compliance Summary | Summarise training compliance by department and role |
+| 8 | Overdue Alerts | Identify and escalate overdue training requirements |
+| 9 | Evidence Register | Store and reference evidence supporting assessments |
+| 10 | Summary Dashboard | Compliance status and key metrics overview |
+| 11 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -48,14 +74,14 @@ This workbook tracks training delivery, completion status, assessment results, a
 - Assessment scores and pass/fail status
 - Simulation campaign results
 - Remediation cases and outcomes
-- Department and organizational compliance metrics
+- Department and organisational compliance metrics
 - Overdue training alerts
 
 ## Why This Matters
 
 **Regulatory Requirements:**
 - ISO 27001:2022 Clause 7.2(d): "retain appropriate documented information as evidence of competence"
-- GDPR Art. 32: Evidence that appropriate technical and organizational measures are in place
+- GDPR Art. 32: Evidence that appropriate technical and organisational measures are in place
 - Most regulatory frameworks require training completion records as audit evidence
 
 **Business Impact:**
@@ -415,7 +441,7 @@ At month end, create snapshot:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Education is not the filling of a pail, but the lighting of a fire."*
+— W.B. Yeats
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

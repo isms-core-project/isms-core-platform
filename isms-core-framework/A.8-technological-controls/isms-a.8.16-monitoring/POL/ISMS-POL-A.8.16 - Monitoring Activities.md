@@ -23,7 +23,7 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO | Initial consolidated policy for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial policy for ISO 27001:2022 first certification |
 
 **Review Cycle**: Annual  
 **Next Review Date**: [Effective Date + 12 months]  
@@ -45,7 +45,6 @@
 - ISMS-IMP-A.8.16.2-UG/TG (Baseline & Detection Assessment)
 - ISMS-IMP-A.8.16.3-UG/TG (Coverage Assessment)
 - ISMS-IMP-A.8.16.4-UG/TG (Alert Management & Response Assessment)
-- ISMS-IMP-A.8.16.5-UG/TG (Compliance Dashboard Specification)
 - ISO/IEC 27001:2022 Control A.8.16
 - ISO/IEC 27002:2022 Control 8.16
 
@@ -53,13 +52,13 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for monitoring activities to detect anomalous behavior and potential information security incidents in accordance with ISO/IEC 27001:2022 Control A.8.16.
+This policy establishes [Organisation]'s requirements for monitoring activities to detect anomalous behavior and potential information security incidents in accordance with ISO/IEC 27001:2022 Control A.8.16.
 
 **Scope**: This policy applies to all networks, systems, and applications where monitoring is technically feasible; all users (employees, contractors, service accounts); and all monitoring technologies regardless of vendor or deployment model.
 
-**Purpose**: Define organizational requirements for monitoring activities control implementation and governance. This policy establishes WHAT monitoring is required, WHERE monitoring must be implemented, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.16 (UG/TG variants).
+**Purpose**: Define organisational requirements for monitoring activities control implementation and governance. This policy establishes WHAT monitoring is required, WHERE monitoring must be implemented, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.16 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
 **Philosophy**: As Richard Feynman wisely noted: *"The first principle is that you must not fool yourself—and you are the easiest person to fool."* This framework prevents **cargo cult monitoring**—having SIEM dashboards that no one reads, alerts that everyone ignores, and "baselines" that are just guesses. True monitoring requires documented baselines, measurable thresholds, evidenced response procedures, and quantifiable effectiveness metrics.
 
@@ -73,7 +72,7 @@ This policy establishes [Organization]'s requirements for monitoring activities 
 
 > *Networks, systems and applications should be monitored for anomalous behavior and appropriate actions taken to evaluate potential information security incidents.*
 
-**Control Objective**: Establish organizational policy for monitoring activities to detect abnormal behavior and potential information security incidents through systematic observation, baseline establishment, anomaly detection, and integration with incident management processes.
+**Control Objective**: Establish organisational policy for monitoring activities to detect abnormal behavior and potential information security incidents through systematic observation, baseline establishment, anomaly detection, and integration with incident management processes.
 
 **This Policy Addresses**:
 
@@ -83,9 +82,9 @@ This policy establishes [Organization]'s requirements for monitoring activities 
 - Alert generation, classification, and response requirements
 - Monitoring infrastructure requirements (tools, capabilities, integration)
 - Log data retention and archival for compliance and forensics
-- Organizational roles and responsibilities for monitoring governance
+- Organisational roles and responsibilities for monitoring governance
 - Exception and incident management frameworks
-- Integration with [Organization]'s risk assessment and incident response processes
+- Integration with [Organisation]'s risk assessment and incident response processes
 
 ## What This Policy Does
 
@@ -95,7 +94,7 @@ This policy:
 - **Establishes** governance framework for monitoring decision-making and accountability
 - **Specifies** mandatory monitoring scope based on risk assessment and business requirements
 - **References** applicable regulatory requirements per ISMS-POL-00
-- **Identifies** organizational roles and responsibilities for monitoring controls
+- **Identifies** organisational roles and responsibilities for monitoring controls
 - **Provides** framework for managing exceptions and monitoring gaps
 
 ## What This Policy Does NOT Do
@@ -104,10 +103,10 @@ This policy does NOT:
 
 - **Specify technical monitoring procedures** (see ISMS-IMP-A.8.16 Implementation Guides)
 - **Define specific SIEM configurations or detection rules** (see ISMS-IMP-A.8.16.2 Baseline & Detection Assessment)
-- **List approved monitoring tools or vendors** (technology selection based on [Organization]'s risk assessment and technical environment)
+- **List approved monitoring tools or vendors** (technology selection based on [Organisation]'s risk assessment and technical environment)
 - **Provide step-by-step alert response playbooks** (see ISMS-IMP-A.8.16 Alert Response Procedures)
-- **Select specific monitoring technologies** (technology selection based on [Organization]'s architecture, risk profile, and operational needs)
-- **Replace risk assessment** (monitoring controls selected based on [Organization]'s risk treatment decisions)
+- **Select specific monitoring technologies** (technology selection based on [Organisation]'s architecture, risk profile, and operational needs)
+- **Replace risk assessment** (monitoring controls selected based on [Organisation]'s risk treatment decisions)
 - **Define detailed incident response procedures** (see ISMS-POL-A.5.24-5.28 Incident Management)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
@@ -124,9 +123,9 @@ This policy does NOT:
 - All network segments where monitoring is technically feasible (on-premises, cloud, hybrid, remote access)
 - All systems requiring monitoring per risk assessment (servers, workstations, network devices, security appliances)
 - All applications assessed as business-critical or security-sensitive
-- All users accessing organizational resources (employees, contractors, service accounts, automated systems)
+- All users accessing organisational resources (employees, contractors, service accounts, automated systems)
 - All monitoring technologies regardless of vendor or deployment model (SIEM, IDS/IPS, NDR, EDR, UEBA, log management)
-- All third-party service providers with access to organizational systems or data
+- All third-party service providers with access to organisational systems or data
 
 **Out of Scope**:
 
@@ -144,7 +143,7 @@ This policy does NOT:
 - Email servers and messaging infrastructure
 - File servers containing business-critical or sensitive data
 - Security monitoring infrastructure itself (SIEM, IDS/IPS, EDR)
-- Cloud infrastructure and platform services (where [Organization] has monitoring visibility)
+- Cloud infrastructure and platform services (where [Organisation] has monitoring visibility)
 
 ## Regulatory Applicability
 
@@ -154,7 +153,7 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 
 | Regulation | Applicability | Key Monitoring Requirements |
 |------------|---------------|----------------------------|
-| **Swiss nDSG** | All Swiss operations | Art. 8 - Technical and organizational measures including monitoring for data protection |
+| **Swiss nDSG** | All Swiss operations | Art. 8 - Technical and organisational measures including monitoring for data protection |
 | **EU GDPR** | When processing EU personal data | Art. 32 - Security measures including monitoring and detection capabilities |
 | **ISO/IEC 27001:2022** | Certification scope | Control A.8.16 - Documented policy, implemented controls, evidence of effectiveness |
 
@@ -180,7 +179,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - MITRE ATT&CK Framework (Detection tactics and techniques)
 - SANS Critical Security Controls
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment documented in ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment documented in ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.
 
 ## Integration with ISMS
 
@@ -196,12 +195,12 @@ These frameworks inform implementation but do not constitute mandatory complianc
 | Control | Integration Point | Monitoring Role |
 |---------|-------------------|----------------|
 | **A.5.7** | Threat Intelligence | Monitoring generates intelligence from observed attacks; threat intel informs detection rules |
-| **A.5.16** | Identity Management | User and entity behavior monitoring analyzes identity-based access patterns |
+| **A.5.16** | Identity Management | User and entity behavior monitoring analyses identity-based access patterns |
 | **A.5.24-5.28** | Incident Management | Monitoring alerts trigger incident response workflow; incidents inform monitoring improvements |
 | **A.8.7** | Malware Protection | Malware detection alerts feed monitoring; monitoring detects malware behavior patterns |
 | **A.8.8** | Vulnerability Management | Monitoring identifies exploitation attempts; prioritizes patching based on observed attacks |
-| **A.8.12** | Data Leakage Prevention | Monitoring detects data exfiltration patterns and unauthorized data transfers |
-| **A.8.15** | Logging | Monitoring analyzes log data generated by logging controls; logging provides monitoring data |
+| **A.8.12** | Data Leakage Prevention | Monitoring detects data exfiltration patterns and unauthorised data transfers |
+| **A.8.15** | Logging | Monitoring analyses log data generated by logging controls; logging provides monitoring data |
 | **A.8.17** | Clock Synchronization | Accurate timestamps essential for event correlation and timeline reconstruction |
 | **A.8.20** | Network Security | Network security controls generate monitored events; monitoring validates control effectiveness |
 | **A.8.23** | Web Filtering | Web filtering logs feed monitoring as log source; monitoring detects web-based threats |
@@ -212,7 +211,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ## Monitoring Infrastructure Requirements
 
-[Organization] SHALL implement monitoring infrastructure with adequate capabilities to collect, analyze, store, and act upon security-relevant events.
+[Organisation] SHALL implement monitoring infrastructure with adequate capabilities to collect, analyse, store, and act upon security-relevant events.
 
 ### Monitoring Platform Capabilities
 
@@ -224,7 +223,7 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 - Protocol support for common log formats (CEF, LEEF, JSON, XML, syslog RFC)
 - Real-time and batch log collection methods
 - Secure log transmission (encrypted channels, authenticated sources)
-- Scalable collection supporting organizational growth
+- Scalable collection supporting organisational growth
 
 **Analysis Capabilities**:
 
@@ -261,7 +260,7 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 
 ### Log Source Coverage
 
-[Organization] SHALL monitor log sources from:
+[Organisation] SHALL monitor log sources from:
 
 **Network Infrastructure**:
 
@@ -300,7 +299,7 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 
 ### Monitoring Coverage Assessment
 
-[Organization] SHALL:
+[Organisation] SHALL:
 
 - Document all critical systems and their monitoring status (ISMS-IMP-A.8.16.3 Coverage Assessment)
 - Calculate monitoring coverage percentage: (Monitored Critical Systems / Total Critical Systems) × 100
@@ -320,7 +319,7 @@ Monitoring infrastructure SHALL be:
 
 ## Baseline & Anomaly Detection Requirements
 
-[Organization] SHALL establish baselines for normal behavior and configure anomaly detection capabilities.
+[Organisation] SHALL establish baselines for normal behavior and configure anomaly detection capabilities.
 
 ### Baseline Philosophy
 
@@ -393,7 +392,7 @@ Monitoring systems SHALL be configured to detect anomalous behavior including:
 - Unexpected process termination or service failures
 - Unusual resource consumption (CPU spikes, memory exhaustion, disk space depletion)
 - Configuration changes outside approved change windows
-- Unauthorized software installation or execution
+- Unauthorised software installation or execution
 - Unusual network connections (new destinations, protocols, ports)
 
 **Malicious Activity Indicators**:
@@ -402,7 +401,7 @@ Monitoring systems SHALL be configured to detect anomalous behavior including:
 - Traffic to/from known malicious IPs, domains, or botnets (C2 infrastructure)
 - Exploit attempt signatures (buffer overflows, injection attacks, privilege escalation)
 - Lateral movement patterns (internal reconnaissance, credential dumping, pass-the-hash)
-- Data exfiltration indicators (large outbound transfers, unauthorized cloud uploads, DNS tunneling)
+- Data exfiltration indicators (large outbound transfers, unauthorised cloud uploads, DNS tunneling)
 
 **Attack Signatures**:
 
@@ -422,17 +421,17 @@ Monitoring systems SHALL be configured to detect anomalous behavior including:
 - Privilege escalation outside normal workflows
 - Disabled logging or monitoring on systems (anti-forensics indicators)
 
-**Unauthorized Access**:
+**Unauthorised Access**:
 
 - Successful authentication with compromised credentials
-- Unauthorized access attempts to protected resources
+- Unauthorised access attempts to protected resources
 - Privilege escalation without approval
 - Access to systems/data outside user's job function
 - After-hours access to business-critical systems without approval
 
 ### Detection Effectiveness Requirements
 
-[Organization] SHALL:
+[Organisation] SHALL:
 
 - Test detection rules quarterly using simulated attacks or purple team exercises
 - Track detection effectiveness metrics: True Positives, False Positives, False Negatives
@@ -443,7 +442,7 @@ Monitoring systems SHALL be configured to detect anomalous behavior including:
 
 ## Alert Management & Response Requirements
 
-[Organization] SHALL implement alert management and response capabilities ensuring timely and effective action on security events.
+[Organisation] SHALL implement alert management and response capabilities ensuring timely and effective action on security events.
 
 ### Alert Classification
 
@@ -452,14 +451,14 @@ Alerts SHALL be classified by severity:
 | Severity | Definition | Response Time SLA | Examples |
 |----------|------------|-------------------|----------|
 | **Critical** | Active attack in progress, imminent data loss, or complete service disruption | 15 minutes | Ransomware detected, active data exfiltration, root compromise, critical infrastructure failure |
-| **High** | Significant security incident with potential for major impact | 1 hour | Malware infection, successful privilege escalation, sensitive data access by unauthorized user, brute force attack success |
+| **High** | Significant security incident with potential for major impact | 1 hour | Malware infection, successful privilege escalation, sensitive data access by unauthorised user, brute force attack success |
 | **Medium** | Security concern requiring investigation, potential incident | 4 hours | Failed privilege escalation attempts, anomalous behavior patterns, policy violations, suspicious authentication activity |
 | **Low** | Informational event, minor policy violation, or low-impact anomaly | 24 hours | Minor configuration deviations, low-severity policy violations, informational security events |
 | **Informational** | Logged for awareness, no immediate action required | Review during business hours | Routine administrative actions, expected security events, compliance logging |
 
 ### Alert Response SLAs
 
-For each severity level, [Organization] defines:
+For each severity level, [Organisation] defines:
 
 - **Acknowledgment SLA**: Maximum time to acknowledge alert receipt (confirm SOC analyst awareness)
 - **Triage SLA**: Maximum time to perform initial assessment (determine if incident)
@@ -476,7 +475,7 @@ For each severity level, [Organization] defines:
 | **Medium** | 1 hour | 4 hours | 24 hours | 24 hours | 10 business days |
 | **Low** | 4 hours | 24 hours | 5 business days | N/A | 20 business days |
 
-[Organization] MAY define more aggressive SLAs based on risk appetite and operational capabilities.
+[Organisation] MAY define more aggressive SLAs based on risk appetite and operational capabilities.
 
 ### Alert Handling Procedures
 
@@ -506,7 +505,7 @@ For each severity level, [Organization] defines:
 
 ### Alert Tuning and Optimization
 
-[Organization] SHALL:
+[Organisation] SHALL:
 
 - Review alert volume and false positive rates monthly
 - Tune detection rules to reduce false positives while maintaining detection coverage
@@ -525,7 +524,7 @@ For each severity level, [Organization] defines:
 
 ## Retention & Archival Requirements
 
-[Organization] SHALL retain monitoring data for compliance, forensics, and operational requirements.
+[Organisation] SHALL retain monitoring data for compliance, forensics, and operational requirements.
 
 ### Retention Periods
 
@@ -562,7 +561,7 @@ Monitoring data archival SHALL:
 
 Monitoring data SHALL be:
 
-- **Access Controlled**: Only authorized SOC, security team, CISO, and DPO have access
+- **Access Controlled**: Only authorised SOC, security team, CISO, and DPO have access
 - **Encrypted**: At rest and in transit
 - **Anonymized/Pseudonymized**: Where feasible for privacy protection (while maintaining forensic value)
 - **Protected from Tampering**: Write-once-read-many (WORM) storage or equivalent integrity protection
@@ -573,7 +572,7 @@ Monitoring data SHALL be:
 - Monitoring scope limited to security and compliance objectives (no performance management, personal activity surveillance)
 - Employees informed of monitoring through employment contracts, privacy notices, acceptable use policies
 - Proportionality assessed: monitoring breadth and depth justified by security needs
-- Data minimization: collect only security-relevant events, limit log verbosity to necessary fields
+- Data minimisation: collect only security-relevant events, limit log verbosity to necessary fields
 - Purpose limitation: monitoring data not used for HR performance evaluations without separate legal basis
 
 ---
@@ -582,7 +581,7 @@ Monitoring data SHALL be:
 
 ## Roles & Responsibilities
 
-Monitoring activities require clear accountability across organizational roles.
+Monitoring activities require clear accountability across organisational roles.
 
 **Accountability Matrix (RACI)**:
 
@@ -606,7 +605,7 @@ Monitoring activities require clear accountability across organizational roles.
 This policy SHALL be reviewed:
 
 - **Annually** as part of ISMS policy review cycle
-- **Upon significant changes** to organizational risk profile, IT infrastructure, or threat landscape
+- **Upon significant changes** to organisational risk profile, IT infrastructure, or threat landscape
 - **Following major security incidents** where monitoring gaps are identified
 - **When new monitoring technologies** are deployed or existing tools are significantly upgraded
 - **Upon regulatory changes** affecting monitoring requirements (new laws, updated standards, guidance publications)
@@ -699,7 +698,6 @@ Compliance with monitoring requirements SHALL be verified through:
 | **ISMS-IMP-A.8.16.2** | Baseline & Detection Assessment | SOC, Security Team, Threat Intelligence | Quarterly |
 | **ISMS-IMP-A.8.16.3** | Coverage Assessment | System Owners, Network Team, Security Team | Quarterly |
 | **ISMS-IMP-A.8.16.4** | Alert Management & Response Assessment | SOC, Incident Response, Security Team | Quarterly |
-| **ISMS-IMP-A.8.16.5** | Compliance Dashboard | CISO, Security Managers, Auditors | Continuous |
 
 **Assessment Tools**:
 
@@ -711,7 +709,7 @@ Compliance with monitoring requirements SHALL be verified through:
 **Supporting Materials** (ISMS-IMP-A.8.16 Annexes):
 
 - Alert Response Procedures (operational incident handling playbooks, documented within ISMS-IMP-A.8.16.4 Alert Management & Response Assessment, Annex A)
-- Detection Rule Library (organization-specific detection rules and use cases)
+- Detection Rule Library (organisation-specific detection rules and use cases)
 - Tuning Playbook (procedures for alert tuning and optimization)
 - Baseline Review Template (structured baseline review process)
 
@@ -797,7 +795,7 @@ Network security technology that monitors traffic for malicious activity or poli
 Security solution deployed on endpoints (workstations, servers) that monitors system behavior, detects threats, and enables response actions (isolation, remediation).
 
 **Network Detection and Response (NDR)**  
-Security solution that analyzes network traffic to detect threats, lateral movement, and anomalous communication patterns.
+Security solution that analyses network traffic to detect threats, lateral movement, and anomalous communication patterns.
 
 **User and Entity Behavior Analytics (UEBA)**  
 Analytics technology that establishes behavioral baselines for users and entities (systems, applications), detecting deviations that may indicate compromised accounts or insider threats.
@@ -836,7 +834,7 @@ The process of adjusting detection rules, baselines, and alert thresholds to red
 
 # Annex A: Monitoring Capability Standards (Decision Framework)
 
-**Purpose**: This annex defines capability requirements and selection criteria for monitoring technologies. Organizations use this framework to evaluate monitoring solutions during procurement and validate existing tool capabilities.
+**Purpose**: This annex defines capability requirements and selection criteria for monitoring technologies. Organisations use this framework to evaluate monitoring solutions during procurement and validate existing tool capabilities.
 
 ## A.1 Monitoring Technology Categories
 
@@ -857,7 +855,7 @@ Regardless of technology category, monitoring solutions SHALL provide:
 
 - Multi-protocol log ingestion (syslog, agent-based, API, file-based)
 - Secure log transmission (TLS encryption, authenticated sources)
-- Scalable collection (support organizational growth without architecture redesign)
+- Scalable collection (support organisational growth without architecture redesign)
 - Reliable delivery (acknowledgment, retry mechanisms, queue management)
 
 **Analysis**:
@@ -875,7 +873,7 @@ Regardless of technology category, monitoring solutions SHALL provide:
 
 **Alerting**:
 
-- Configurable rules (custom alert creation based on organizational needs)
+- Configurable rules (custom alert creation based on organisational needs)
 - Severity classification (Critical, High, Medium, Low, Informational)
 - Multi-channel notification (email, SMS, ticketing system, SOAR integration)
 - Alert deduplication (prevent alert storms from single event)
@@ -888,7 +886,7 @@ Regardless of technology category, monitoring solutions SHALL provide:
 
 ## A.3 Recommended Capabilities (Enhanced Monitoring)
 
-Organizations SHOULD consider solutions providing:
+Organisations SHOULD consider solutions providing:
 
 **Advanced Correlation**:
 
@@ -916,12 +914,12 @@ Organizations SHOULD consider solutions providing:
 
 ## A.4 Technology Selection Criteria
 
-When evaluating monitoring technologies, [Organization] SHALL assess:
+When evaluating monitoring technologies, [Organisation] SHALL assess:
 
 **Technical Fit**:
 
 - Compatibility with existing infrastructure (on-premises, cloud, hybrid)
-- Log source coverage (supports organizational systems and applications)
+- Log source coverage (supports organisational systems and applications)
 - Scalability (handles current and projected log volumes)
 - Integration capabilities (APIs, SIEM connectors, third-party tools)
 
@@ -950,11 +948,11 @@ When evaluating monitoring technologies, [Organization] SHALL assess:
 - Product maturity and roadmap
 - Support quality and responsiveness
 - Community and documentation
-- Strategic alignment with organizational technology direction
+- Strategic alignment with organisational technology direction
 
 ## A.5 Capability Maturity Assessment
 
-Organizations SHOULD assess monitoring capability maturity:
+Organisations SHOULD assess monitoring capability maturity:
 
 **Level 1 - Initial (Ad Hoc)**:
 
@@ -1153,7 +1151,7 @@ If behavior differs significantly by time period, document separate baselines:
 **Update Triggers**:  
 
 - [ ] System configuration changes (hardware, software, capacity upgrades)
-- [ ] Business process changes (new workflows, organizational restructuring)
+- [ ] Business process changes (new workflows, organisational restructuring)
 - [ ] Persistent deviations from baseline (sustained shift in normal behavior)
 - [ ] Seasonal variations (adjust baselines for known seasonal patterns)
 
@@ -1182,7 +1180,7 @@ If behavior differs significantly by time period, document separate baselines:
 **Example Notes**:
 
 - "This baseline excludes month-end batch processing (typically 28th-3rd). Separate baseline BL-20260115-002 covers month-end period."
-- "Baseline reflects current 100-user organization. Re-baseline required if user count increases >20%."
+- "Baseline reflects current 100-user organisation. Re-baseline required if user count increases >20%."
 - "Application version 2.5 deployed during observation period. Baseline may need adjustment if performance characteristics change in future versions."
 
 ---
@@ -1225,7 +1223,7 @@ Monitoring is the continuous observation of networks, systems, and applications 
 
 **Executive/Management**:
 
-- ✅ Review quarterly compliance dashboards
+- ✅ Review quarterly Summary Dashboards
 - ✅ Allocate resources for monitoring program
 - ✅ Accept residual risks from monitoring gaps
 
@@ -1279,7 +1277,6 @@ All stakeholders SHALL complete quarterly monitoring assessments:
 - **ISMS-IMP-A.8.16.2-UG/TG**: Baselines & Detection (SOC, Security Team)
 - **ISMS-IMP-A.8.16.3-UG/TG**: Coverage (System Owners, Network Team)
 - **ISMS-IMP-A.8.16.4-UG/TG**: Alert Management & Response (SOC, Incident Response)
-- **ISMS-IMP-A.8.16.5-UG/TG**: Compliance Dashboard (CISO, Management)
 
 ## Remember
 
@@ -1312,4 +1309,4 @@ All stakeholders SHALL complete quarterly monitoring assessments:
 
 *This policy establishes requirements for monitoring activities. Implementation procedures, technical standards, and assessment workbooks are documented in ISMS-IMP-A.8.16 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

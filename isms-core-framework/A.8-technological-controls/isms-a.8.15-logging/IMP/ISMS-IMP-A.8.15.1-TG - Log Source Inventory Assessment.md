@@ -8,344 +8,260 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Log Source Inventory Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.15.1-TG |
+| **Related Policy** | ISMS-POL-A.8.15 (Logging) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.15 (Logging) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Log Source Inventory & Event Logging Completeness |
-| **Related Policy** | ISMS-POL-A.8.15, Section 2.1 (Event Logging Requirements) |
-| **Purpose** | Catalog all systems generating logs, verify logging completeness against policy requirements, and identify gaps in event logging coverage |
-| **Target Audience** | IT Operations, System Owners, Application Owners, Security Team, Compliance Officers, Auditors, Workbook Developers (Python/Excel script maintainers) |
-| **Assessment Type** | Inventory & Compliance Verification |
-| **Review Cycle** | Annual (full inventory), Quarterly (new systems update) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
+| Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Initial technical specification for Log Source Inventory assessment workbook | ISMS Implementation Team |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.15 (Logging)
+- ISMS-IMP-A.8.15.2 (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.3 (Log Protection & Retention Assessment)
+- ISMS-IMP-A.8.15.4 (Log Analysis & Review Assessment)
 
 ---
+
 # Technical Specification
-**Audience:** Workbook Developers (Python/Excel Script Maintainers)
-
-
-> Auto-generated from `generate_a815_1_log_source_inventory.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.15.1` |
-| **Output Filename** | `ISMS-IMP-A.8.15.1_Log_Source_Inventory_YYYYMMDD.xlsx` |
-| **Total Sheets** | 27 (27 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control A.8.15: Logging |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #666666 | 666666 | Dark Gray (Secondary Text) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E7E6E6 | end_color | Light Gray (Example Rows) |
-| #FFC000 | FFC000 | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: System Inventory
-
----
-
-## Sheet 3: Log Event Types by System
-
----
-
-## Sheet 4: Authentication Logging
-
----
-
-## Sheet 5: Authorization & Access
-
----
-
-## Sheet 6: Administrative Activity
-
----
-
-## Sheet 7: Security Event Logging
-
----
-
-## Sheet 8: Application & Database
-
----
-
-## Sheet 9: Network Device Logging
-
----
-
-## Sheet 10: Gap Analysis
-
----
-
-## Sheet 11: Evidence Register
-
----
-
-## Sheet 12: Summary Dashboard
-
----
-
-## Sheet 13: Approval & Sign-Off
-
----
-
-## Sheet 14: Instructions
-
-**Purpose:** "If you can't explain it simply, you don't understand it well enough"
-
-**Frozen Panes:** A3
-
----
-
-## Sheet 15: System_Inventory
-
-**Purpose:** "You can't improve what you don't measure, and you can't measure
-
-**Data Rows:** 92 (rows 9–100) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | System ID | 15 |
-| B | System Name | 30 |
-| C | System Type | 20 |
-| D | Operating System / Platform | 25 |
-| E | Environment | 15 |
-| F | Data Classification | 18 |
-| G | Business Criticality | 18 |
-| H | Regulatory Scope | 20 |
-| I | Logging Priority | 15 |
-| J | System Owner | 25 |
-| K | Owner Email | 30 |
-| L | Hostname / FQDN | 30 |
-| M | Primary IP | 15 |
-| N | Location | 20 |
-| O | Logging Enabled | 15 |
-| P | Forwarding to SIEM | 18 |
-| Q | Compliance Status | 18 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=IF(B{data_row}<>` |  |
-| QN | `=IF(B{data_row}=` |  |
-
----
-
-## Sheet 16: Log_Event_Types
-
-**Purpose:** "The devil is in the details, but so is salvation." - Hyman Rickover
-
-**Data Rows:** 92 (rows 9–100) | **Frozen Panes:** C8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | System ID | 15 |
-| B | System Name | 30 |
-| C | Authentication Events | 15 |
-| D | Authorization Events | 15 |
-| E | Administrative Actions | 15 |
-| F | Security Events | 15 |
-| G | Application Events | 15 |
-| H | System Events | 15 |
-| I | Network Events | 15 |
-| J | Database Events | 15 |
-| K | Log Format | 15 |
-| L | Timestamp Format | 18 |
-| M | Timezone | 15 |
-| N | Est. Daily Volume (MB) | 20 |
-| O | Retention Period (months) | 20 |
-| P | Storage Tier | 15 |
-| Q | Protection Mechanisms | 20 |
-| R | Event Types Completeness | 20 |
-| S | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C9:J100 | `yes_no_dv` |
-| K | K9:K100 | `log_format_dv` |
-| L | L9:L100 | `timestamp_format_dv` |
-| M | M9:M100 | `timezone_dv` |
-| P | P9:P100 | `storage_tier_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=IF(A{data_row}=` |  |
-
----
-
-## Sheet 17: Authentication_Logging
-
-**Purpose:** Per ISMS-POL-A.8.15-S2.1.2 - Authentication events.
-
----
-
-## Sheet 18: Authorization_Logging
-
-**Purpose:** Per ISMS-POL-A.8.15-S2.1.3 - Authorization and access control events.
-
----
-
-## Sheet 19: Administrative_Activity
-
-**Purpose:** Per ISMS-POL-A.8.15-S2.1.4 - Administrative actions.
-
----
-
-## Sheet 20: Security_Event_Logging
-
-**Purpose:** Per ISMS-POL-A.8.15-S2.1.5 - Security tool and event logging.
-
----
-
-## Sheet 21: Application_Database_Logging
-
-**Purpose:** Per ISMS-POL-A.8.15-S2.1.7 - Application and database events.
-
----
-
-## Sheet 22: Network_Device_Logging
-
-**Purpose:** Per ISMS-POL-A.8.15-S2.1.8 - Network infrastructure logging.
-
----
-
-## Sheet 23: Gap_Analysis
-
-**Purpose:** "The gap between where you are and where you want to be is called a plan."
-
-**Data Rows:** 92 (rows 9–100) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Gap ID | 12 |
-| B | System ID | 15 |
-| C | System Name | 30 |
-| D | Gap Category | 25 |
-| E | Gap Description | 50 |
-| F | Policy Requirement | 30 |
-| G | Impact / Risk | 20 |
-| H | Remediation Action | 50 |
-| I | Responsible Party | 25 |
-| J | Target Date | 15 |
-| K | Status | 15 |
-| L | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| D | D9:D100 | `gap_category_dv` |
-| G | G9:G100 | `risk_dv` |
-| K | K9:K100 | `status_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=IF(B{data_row}<>` |  |
-| CN | `=IF(B{data_row}=` |  |
-
----
-
-## Sheet 24: Evidence_Register
-
-**Purpose:** "In God we trust. All others must bring data." - W. Edwards Deming
-
-**Data Rows:** 100 (rows 9–108) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence ID | 15 |
-| B | Evidence Type | 25 |
-| C | Description | 40 |
-| D | Related System(s) | 30 |
-| E | Related Policy Req | 25 |
-| F | File Name / Location | 40 |
-| G | Collected By | 25 |
-| H | Collection Date | 15 |
-| I | Retention Period | 20 |
-| J | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| B | B9:B108 | `evidence_type_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=IF(B{data_row}<>` |  |
-
----
-
-## Sheet 25: Summary_Dashboard
-
-**Purpose:** "What gets measured gets managed." - Peter Drucker
-
-**Data Rows:** 92 (rows 9–100)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(` | Total Systems Assessed |
-| — | `=COUNTIF(` | Systems with Logging Enabled |
-| — | `=COUNTIFS(` | Critical Systems Compliant (P1) |
-| DN | `=IF(B{row}>={target[1:]},` |  |
-| DN | `=IF(B{row}>0,` |  |
-| CN | `=B{row}/COUNTA(\` |  |
-| EN | `=IF(C{row}>={target[1:]},` |  |
-
----
-
-## Sheet 26: Approval_Signoff
-
-**Purpose:** "Trust, but verify. And get signatures." - Modified Russian proverb
-
----
-
-## Sheet 27: Assessment
-
-**Data Rows:** 92 (rows 9–100)
+## Generator Alignment Reference
+
+> Auto-generated from `generate_a815_1_log_source_inventory.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
+
+**Document ID:** `ISMS-IMP-A.8.15.1`
+
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
+
+### Sheet Structure
+
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | System Inventory |
+| 3 | Log Event Types by System |
+| 4 | Authentication Logging |
+| 5 | Authorisation & Access |
+| 6 | Administrative Activity |
+| 7 | Security Event Logging |
+| 8 | Application & Database |
+| 9 | Network Device Logging |
+| 10 | Gap Analysis |
+| 11 | Evidence Register |
+| 12 | Summary Dashboard |
+| 13 | Approval Sign-Off |
+
+### Color Palette
+
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
+
+### Column Headers (All Sheets)
+
+| # | Column Header |
+|---|--------------|
+| 1 | System ID |
+| 2 | System Name |
+| 3 | System Type |
+| 4 | Operating System / Platform |
+| 5 | Environment |
+| 6 | Data Classification |
+| 7 | Business Criticality |
+| 8 | Regulatory Scope |
+| 9 | Logging Priority |
+| 10 | System Owner |
+| 11 | Owner Email |
+| 12 | Hostname / FQDN |
+| 13 | Primary IP |
+| 14 | Location |
+| 15 | Logging Enabled |
+| 16 | Forwarding to SIEM |
+| 17 | Compliance Status |
+| 18 | Authentication Events |
+| 19 | Authorisation Events |
+| 20 | Administrative Actions |
+| 21 | Security Events |
+| 22 | Application Events |
+| 23 | System Events |
+| 24 | Network Events |
+| 25 | Database Events |
+| 26 | Log Format |
+| 27 | Timestamp Format |
+| 28 | Timezone |
+| 29 | Est. Daily Volume (MB) |
+| 30 | Retention Period (months) |
+| 31 | Storage Tier |
+| 32 | Protection Mechanisms |
+| 33 | Event Types Completeness |
+| 34 | Notes |
+| 35 | Logs Successful Logins |
+| 36 | Logs Failed Logins |
+| 37 | Logs Account Lockouts |
+| 38 | Logs Password Changes |
+| 39 | Logs Session Start/End |
+| 40 | Includes User ID |
+| 41 | Includes Timestamp |
+| 42 | Includes Source IP |
+| 43 | Includes Auth Method |
+| 44 | MFA Events Logged |
+| 45 | SSO Events Logged |
+| 46 | Service Account Auth |
+| 47 | Privileged Auth Logged |
+| 48 | Compliance Score |
+| 49 | Gap Description |
+| 50 | Remediation Plan |
+| 51 | Logs Access Grants |
+| 52 | Logs Access Denials |
+| 53 | Logs Permission Changes |
+| 54 | Logs Privilege Escalation |
+| 55 | Logs Data Access (Sensitive) |
+| 56 | Includes Resource Accessed |
+| 57 | Includes Action Type |
+| 58 | Includes Outcome |
+| 59 | Includes Reason (denied) |
+| 60 | Includes Before/After State |
+| 61 | Logs Group Membership |
+| 62 | Logs Role Assignment |
+| 63 | User Account Management |
+| 64 | Group/Role Management |
+| 65 | Configuration Changes |
+| 66 | Security Policy Changes |
+| 67 | Software Install/Uninstall |
+| 68 | Service Start/Stop |
+| 69 | Patch Application |
+| 70 | Bulk Data Operations |
+| 71 | Privileged Session Logging |
+| 72 | Includes Administrator ID |
+| 73 | Includes Before/After Values |
+| 74 | Includes Change Reason |
+| 75 | Firewall Events |
+| 76 | IDS/IPS Alerts |
+| 77 | Anti-malware Events |
+| 78 | DLP Events |
+| 79 | Web Filtering Events |
+| 80 | Email Gateway Events |
+| 81 | EDR Events |
+| 82 | Vulnerability Scan Results |
+| 83 | Security Incident Events |
+| 84 | Includes Severity Level |
+| 85 | Includes Threat Indicators |
+| 86 | Includes Response Actions |
+| 87 | Automated Response Logged |
+| 88 | Web App Access Logging |
+| 89 | API Call Logging |
+| 90 | Transaction Logging |
+| 91 | Application Errors |
+| 92 | Database Connections |
+| 93 | Database Queries (Sensitive) |
+| 94 | Schema Changes (DDL) |
+| 95 | Permission Grants |
+| 96 | Backup/Restore Operations |
+| 97 | Includes User/App Identity |
+| 98 | Includes Data Modified |
+| 99 | Includes Query Text |
+| 100 | Includes Row Count |
+| 101 | Device ID |
+| 102 | Device Name |
+| 103 | Connection Logging |
+| 104 | Rule Match Logging |
+| 105 | Interface Up/Down Events |
+| 106 | Routing Changes |
+| 107 | VPN Session Logging |
+| 108 | DHCP/DNS Events |
+| 109 | Wireless Events |
+| 110 | NAT Translations |
+| 111 | Includes Source/Dest IP |
+| 112 | Includes Ports/Protocols |
+| 113 | Includes Action (allow/deny) |
+| 114 | Includes Bytes Transferred |
+| 115 | Gap ID |
+| 116 | Gap Category |
+| 117 | Policy Requirement |
+| 118 | Impact / Risk |
+| 119 | Remediation Action |
+| 120 | Responsible Party |
+| 121 | Target Date |
+| 122 | Status |
+| 123 | Evidence ID |
+| 124 | Assessment Area |
+| 125 | Evidence Type |
+| 126 | Description |
+| 127 | Location/Path |
+| 128 | Date Collected |
+| 129 | Collected By |
+| 130 | Verification Status |
+| 131 | Total Items |
+| 132 | Compliant |
+| 133 | Partial |
+| 134 | Non-Compliant |
+| 135 | N/A |
+| 136 | Compliance % |
+| 137 | Metric |
+| 138 | Value |
+| 139 | Target |
+| 140 | Finding Type |
+| 141 | Risk Level |
+| 142 | Associated Sheet |
+| 143 | Recommended Action |
+| 144 | ISO Clause |
+
+### Data Validation Values
+
+All dropdown/list values used across sheets:
+
+```
+Server, Network Device, Security Appliance, Application, Cloud Service
+Database, Other, Windows, Linux, Unix, Network OS, Cloud, Application Platform
+Production, Staging, Development, Test, Public, Internal, Confidential
+Restricted, Critical (T1), High (T2), Medium (T3), Low (T4), P1-Critical
+P2-High, P3-Medium, P4-Low, \u2705 Yes, \u274C No, \u26A0\uFE0F Partial
+\u2753 Unknown, \u231B Planned, \u2796 N/A, Syslog, CEF, JSON, EVTX, Custom
+Unknown, ISO 8601, RFC 3339, Unix Epoch, UTC, Local, Hot, Warm, Cold
+Log Source Missing, Event Type Not Logged, Incomplete Fields
+Format Non-Standard, Protection Inadequate, Critical, High, Medium, Low
+\u274C Open, \u231B In Progress, \u2705 Resolved, \u2B55 Deferred, Log sample
+Configuration file, Screenshot, SIEM query result, Documentation
+Policy document, Audit log, Compliance report, Verified, Pending verification
+Not verified, Requires update, Draft, Final, Requires remediation
+Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
+```
+
+**Extracted:** 13 sheets, 144 columns, 82 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

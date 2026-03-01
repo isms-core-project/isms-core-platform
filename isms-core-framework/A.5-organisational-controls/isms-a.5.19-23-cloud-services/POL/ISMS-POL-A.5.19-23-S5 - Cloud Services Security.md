@@ -58,16 +58,16 @@
 This section defines requirements for the secure acquisition, use, management, and exit from cloud services. It establishes the cloud service lifecycle framework and cloud-specific security controls.
 
 **Control Objective (ISO 27002:2022):**
-> "Processes for acquisition, use, management and exit from cloud services shall be established in accordance with the organization's information security requirements."
+> "Processes for acquisition, use, management and exit from cloud services shall be established in accordance with the organisation's information security requirements."
 
-**Critical Principle - "The Cloud is Someone Else's Computer"**: Cloud services operate on infrastructure you don't control, in jurisdictions you don't govern, with access by personnel you haven't vetted. The shared responsibility model means security failures can occur in either party's domain - but the compliance and reputational consequences fall on [Organization]. This policy requires systematic cloud lifecycle management from selection through exit, with continuous verification that provider security claims match operational reality.
+**Critical Principle - "The Cloud is Someone Else's Computer"**: Cloud services operate on infrastructure you don't control, in jurisdictions you don't govern, with access by personnel you haven't vetted. The shared responsibility model means security failures can occur in either party's domain - but the compliance and reputational consequences fall on [Organisation]. This policy requires systematic cloud lifecycle management from selection through exit, with continuous verification that provider security claims match operational reality.
 
 **ISO/IEC 27002:2022 Guidance Summary**:
 
 - Cloud service acquisition shall follow risk-based selection process with comprehensive security evaluation
 - Cloud service agreements shall address information security requirements and clearly define shared responsibility model
 - Shared responsibility model shall be explicitly understood, documented, and managed (provider vs customer controls)
-- Cloud service configuration shall be secured according to vendor security baselines and organizational requirements
+- Cloud service configuration shall be secured according to vendor security baselines and organisational requirements
 - Cloud data residency and sovereignty requirements shall be enforced per regulatory obligations (GDPR, nDSG)
 - Cloud service monitoring and logging shall be implemented with appropriate retention and review
 - Cloud service exit strategy shall be planned and tested including data export, portability, and transition procedures
@@ -80,7 +80,7 @@ This section defines requirements for the secure acquisition, use, management, a
 
 ## Cloud Service Models
 
-| Model | Description | Organization Responsibility |
+| Model | Description | Organisation Responsibility |
 |-------|-------------|----------------------------|
 | **IaaS** | Infrastructure as a Service | OS, middleware, applications, data |
 | **PaaS** | Platform as a Service | Applications, data |
@@ -103,10 +103,10 @@ This section defines requirements for the secure acquisition, use, management, a
 
 This section applies to all cloud services that:
 
-- Process, store, or transmit organizational data
-- Provide infrastructure for organizational systems
-- Are accessed by organizational users
-- Integrate with organizational systems
+- Process, store, or transmit organisational data
+- Provide infrastructure for organisational systems
+- Are accessed by organisational users
+- Integrate with organisational systems
 
 ---
 
@@ -268,12 +268,12 @@ Prior to approval, conduct risk assessment covering:
 
 ## Change Management
 
-Cloud service changes shall follow organizational change management:
+Cloud service changes shall follow organisational change management:
 
 | Change Type | Process |
 |-------------|---------|
 | Provider-initiated | Review notification, assess impact, approve/escalate |
-| Organization-initiated | Change request, security review, approval, implementation |
+| Organisation-initiated | Change request, security review, approval, implementation |
 | Emergency | Expedited approval, post-implementation review |
 
 ## Incident Management
@@ -319,7 +319,7 @@ Cloud service changes shall follow organizational change management:
 │ Infrastructure    │ PROVIDER │ PROVIDER │ PROVIDER │            │
 │ Physical          │ PROVIDER │ PROVIDER │ PROVIDER │            │
 │                                                                 │
-│ YOU = Organization responsibility                               │
+│ YOU = Organisation responsibility                               │
 │ PROVIDER = Cloud service provider responsibility                │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -331,7 +331,7 @@ For each cloud service, document:
 | Element | Documentation |
 |---------|---------------|
 | Provider responsibilities | What provider commits to |
-| Organization responsibilities | What we must do |
+| Organisation responsibilities | What we must do |
 | Shared responsibilities | Joint activities |
 | Gaps | Areas not covered by either party |
 | Compensating controls | How gaps are addressed |
@@ -356,7 +356,7 @@ For each cloud service, document:
 
 ## Exit Strategy Options
 
-Exit strategies SHALL evaluate three primary transition paths based on service criticality, cost, timeline, and regulatory requirements. [Organization] shall document which exit strategy is appropriate for each cloud service during initial risk assessment and review annually.
+Exit strategies SHALL evaluate three primary transition paths based on service criticality, cost, timeline, and regulatory requirements. [Organisation] shall document which exit strategy is appropriate for each cloud service during initial risk assessment and review annually.
 
 **Exit Strategy Selection Principles:**
 
@@ -421,7 +421,7 @@ Migration to alternative cloud provider is the **default exit strategy** for mos
 
 ✅ **Service is cloud-native** (containers, microservices, serverless, managed databases)  
 ✅ **Workload has variable demand** (traffic spikes, seasonal patterns, unpredictable growth)  
-✅ **Organization lacks on-premises capacity** (no data center, limited infrastructure staff)  
+✅ **Organisation lacks on-premises capacity** (no data center, limited infrastructure staff)  
 ✅ **No regulatory mandate** for physical on-premises hosting  
 ✅ **Cloud TCO remains favorable** vs. on-premises over 3-5 year horizon  
 ✅ **Geographic distribution required** (multi-region, low-latency global access)  
@@ -504,7 +504,7 @@ Hybrid approach maintains some workloads in cloud while repatriating selected co
 
 ✅ **Regulatory requirements** mandate some on-premises data storage (FADP Art. 16, sector-specific)  
 ✅ **Specific workloads** have extreme latency sensitivity (<10ms requirements)  
-✅ **Organization has existing on-premises capacity** with available headroom  
+✅ **Organisation has existing on-premises capacity** with available headroom  
 ✅ **Workload characteristics support segmentation** (stateless app tier vs. stateful database)  
 ✅ **Gradual transition strategy** preferred (spread cost/risk over 12-24 months)  
 ✅ **Cost profile mixed** (some workloads cheaper on-prem, others in cloud)  
@@ -524,7 +524,7 @@ Hybrid approach maintains some workloads in cloud while repatriating selected co
 
 ### On-Premises Repatriation (Full Build-Back)
 
-Complete migration from cloud to [Organization]-owned infrastructure. This is the **highest-risk, highest-cost** exit strategy and should be considered only when justified by regulatory mandates or extraordinary circumstances.
+Complete migration from cloud to [Organisation]-owned infrastructure. This is the **highest-risk, highest-cost** exit strategy and should be considered only when justified by regulatory mandates or extraordinary circumstances.
 
 **⚠️ CRITICAL: On-premises repatriation is economically justified in <5% of cloud exit scenarios.**
 
@@ -553,7 +553,7 @@ Complete migration from cloud to [Organization]-owned infrastructure. This is th
 | **Technology refresh** | Hardware refresh cycles (3-5 years), technology debt risk | Technology roadmap |
 | **Elasticity loss** | Impact of losing cloud burst capacity on business | Business impact analysis |
 
-**Capital & Operational Cost Estimates (Mid-Sized Organization, ~300 Staff):**
+**Capital & Operational Cost Estimates (Mid-Sized Organisation, ~300 Staff):**
 
 **CAPEX (Year 0) - Infrastructure Build-Out:**
 
@@ -755,7 +755,7 @@ Use this decision tree for exit strategy selection:
 | **Operational Complexity** | ✅ Low (single platform) | 🟡 Medium (multi-platform) | ❌ High (full lifecycle) |
 | **Regulatory Flexibility** | 🟡 Provider-dependent | ✅ High (flexible placement) | ✅ Full control |
 | **Technology Refresh** | ✅ Provider managed | 🟡 Partial responsibility | ❌ Full responsibility |
-| **Business Continuity** | ✅ Provider SLA + geo-redundancy | 🟡 Complex (multi-site) | ❌ Organization responsible |
+| **Business Continuity** | ✅ Provider SLA + geo-redundancy | 🟡 Complex (multi-site) | ❌ Organisation responsible |
 | **Innovation Access** | ✅ Latest cloud services (AI/ML, IoT) | 🟡 Cloud services only | ❌ Limited (vendor cycles) |
 
 **Recommendation Priority (90-5-5 Rule):**
@@ -793,7 +793,7 @@ Exit strategies address **planned, voluntary transitions** from cloud services. 
 
 > "The contractual arrangements on the use of ICT services supporting critical or important functions shall include [...] exit strategies, particularly for critical or important functions [...] as well as an obligation for the ICT third-party service provider to cooperate with the financial entity and with competent authorities during exit processes."
 
-[Organization] shall document **both**:
+[Organisation] shall document **both**:
 1. **Planned exit strategies** (this section) for voluntary transitions
 2. **Emergency exit procedures** (BC/DR policy) for provider failure scenarios
 
@@ -819,7 +819,7 @@ Exit strategy viability SHALL be reviewed and tested annually to ensure assumpti
 | **Regulatory Changes** | Assess impact of new regulations on exit strategy | Regulatory impact assessment |
 | **Technology Changes** | Evaluate new exit-enabling technologies (data portability tools, multi-cloud platforms) | Technology evaluation |
 | **Contract Terms** | Review termination clauses, notice periods, data deletion requirements | Contract review checklist |
-| **Organizational Changes** | Assess changes in risk appetite, business strategy, staffing | Strategic alignment doc |
+| **Organisational Changes** | Assess changes in risk appetite, business strategy, staffing | Strategic alignment doc |
 
 **Annual Testing Requirements (DORA Article 28.6 Compliant):**
 
@@ -928,7 +928,7 @@ Exit strategy reviews and testing results shall be retained for audit purposes:
 
 | Requirement | Implementation |
 |-------------|----------------|
-| Federated identity | SSO via organizational identity provider |
+| Federated identity | SSO via organisational identity provider |
 | MFA enforcement | Required for all users, mandatory for admins |
 | Privileged access | Just-in-time, time-limited, monitored |
 | Service accounts | Inventory, rotate credentials, least privilege |
@@ -950,10 +950,10 @@ Exit strategy reviews and testing results shall be retained for audit purposes:
 | Requirement | Implementation |
 |-------------|----------------|
 | Audit logging | All security-relevant events logged |
-| Log centralization | Logs exported to organizational SIEM |
+| Log centralization | Logs exported to organisational SIEM |
 | Alerting | Security events trigger appropriate alerts |
 | Retention | Logs retained per policy (minimum 12 months) |
-| Threat detection | Provider and organizational detection |
+| Threat detection | Provider and organisational detection |
 
 ---
 
@@ -1000,4 +1000,4 @@ Exit strategy reviews and testing results shall be retained for audit purposes:
 ---
 
 *"The cloud is just someone else's computer — but you're still responsible for your data."*
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

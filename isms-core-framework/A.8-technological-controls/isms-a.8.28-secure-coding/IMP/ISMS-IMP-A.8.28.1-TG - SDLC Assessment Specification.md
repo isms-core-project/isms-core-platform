@@ -8,162 +8,144 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | SDLC Assessment Specification |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.28.1-TG |
+| **Related Policy** | ISMS-POL-A.8.28 (Secure Coding) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.28 (Secure Coding) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Secure Development Lifecycle (SDLC) Integration |
-| **Related Policy** | ISMS-POL-A.8.28 Section 2.1 (Pre-Development Requirements), Section 3.1 (Roles & Responsibilities) |
-| **Purpose** | Evaluate integration of security practices into SDLC, focusing on pre-development activities and process-level controls that prevent vulnerabilities |
-| **Target Audience** | Application Security Lead, Development Managers, Security Architects, Project Managers, Auditors |
-| **Assessment Type** | Process & Organizational |
-| **Review Cycle** | Quarterly or After Major SDLC Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
 **Version History**:
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | [Date] | Initial assessment specification |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Approvers**:
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-- Application Security Lead (Technical Review)
-- Development Manager / Engineering Lead (Engineering Perspective)
-- QA Manager / Test Lead (Testing Validation)
-- CISO / Security Director (Executive Approval)
+**Related Documents**:
 
-### Document Structure
-
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.8.28.1-UG.
-
----
+- ISMS-POL-A.8.28 (Secure Coding)
+- ISMS-IMP-A.8.28.2 (Standards & Tools Assessment Specification)
+- ISMS-IMP-A.8.28.3 (Code Review & Testing Assessment Specification)
+- ISMS-IMP-A.8.28.4 (Third-Party & Open Source Software Assessment Specification)
 
 ---
 
-
-> Auto-generated from `generate_a828_1_sdlc_assessment.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.28.1` |
-| **Output Filename** | `ISMS-IMP-A.8.28.1_Secure_Development_Lifecycle_Integration_YYYYMMDD.xlsx` |
-| **Workbook Title** | Secure Development Lifecycle Integration |
-| **Total Sheets** | 13 (13 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #666666 | 666666 | Dark Gray (Secondary Text) |
-| #70AD47 | 70AD47 | Medium Green (On Track) |
-| #C00000 | C00000 | Dark Red (Blocked) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #FF6666 | FF6666 | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+# Technical Specification
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Security_Requirements_Design
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a828_1_sdlc_assessment.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Development_Environment
+**Document ID:** `ISMS-IMP-A.8.28.1`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Build_Deployment_Pipeline
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Security Requirements Design |
+| 3 | Development Environment |
+| 4 | Build Deployment Pipeline |
+| 5 | Security Testing Integration |
+| 6 | Release Change Management |
+| 7 | Evidence Register |
+| 8 | Gap Analysis |
+| 9 | Summary Dashboard |
+| 10 | Approval Sign-Off |
 
-## Sheet 5: Security_Testing_Integration
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #666666 | Dark Gray (Secondary Text) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Release_Change_Management
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Requirement |
+| 2 | Implementation Status |
+| 3 | Evidence Reference |
+| 4 | Comments |
+| 5 | Assessment Area |
+| 6 | Total Items |
+| 7 | Compliant |
+| 8 | Partial |
+| 9 | Non-Compliant |
+| 10 | N/A |
+| 11 | Compliance % |
+| 12 | Evidence ID |
+| 13 | Evidence Type |
+| 14 | Description |
+| 15 | Location/Path |
+| 16 | Date Collected |
+| 17 | Collected By |
+| 18 | Verification Status |
+| 19 | Gap ID |
+| 20 | Domain |
+| 21 | Requirement ID |
+| 22 | Requirement Description |
+| 23 | Current State |
+| 24 | Target State |
+| 25 | Priority |
+| 26 | Owner |
+| 27 | Target Date |
+| 28 | Status |
 
-## Sheet 7: Summary_Dashboard
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Evidence_Register
+```
+✅ Implemented, ⚠️ Partially Implemented, ❌ Not Implemented, N/A, Yes, No
+Partial, Unknown, Planned, Critical, High, Medium, Low, Negligible, Open
+In Progress, Resolved, Closed, Deferred, Document, Screenshot, Report
+Configuration, URL, Log File, Diagram, Policy, Procedure, Test Result
+Scan Result, Other, Verified, Pending, Not Verified, Approved
+Approved with Conditions, Rejected, Pending Review, Requirements, Design
+Development, Testing, Deployment, Maintenance, SAST, SCA, DAST, Secret Scanner
+Container Scanner, IaC Scanner, IDE Plugin, Unit, Integration, API, Security
+Penetration, Performance, Regression, Continuous, Daily, Weekly, Monthly
+Quarterly, On-Demand, Initial, Repeatable, Defined, Managed, Optimizing
+Completed, Not Started, Staging, Production, All, Fully Automated
+Partially Automated, Manual, Not Applicable, Fully Compliant, Mostly Compliant
+Partially Compliant, Non-Compliant, Configuration file, Network scan
+Documentation, Vendor spec, Certificate inventory, Audit log
+Compliance report, Pending verification, Requires update, Draft, Final
+Requires remediation, Re-assessment required
+```
 
----
-
-## Sheet 9: Gap_Analysis
-
----
-
-## Sheet 10: Approval_Sign_Off
-
----
-
-## Sheet 11: Domain
-
-**Purpose:** Each domain sheet follows the same structure:
-
-**Frozen Panes:** A3
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | ID |
-| B | Requirement |
-| C | Implementation Status |
-| D | Evidence Reference |
-| E | Comments |
-| F | Compliance |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| FN | `=IF(C{row}=` |  |
-
----
-
-## Sheet 12: Approval
-
-**Purpose:** Assessment isn't complete until it's reviewed and approved.
-
-**Data Rows:** 6 (rows 30–35)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| B6 | `=Instructions!B8` |  |
-| B7 | `=Instructions!B9` |  |
-| B8 | `=Instructions!B10` |  |
-| B9 | `=Summary_Dashboard!C7` |  |
-| B10 | `=Summary_Dashboard!D7` |  |
-| B15 | `=Summary_Dashboard!B19` |  |
-| B16 | `=Summary_Dashboard!B20` |  |
-| B17 | `=Summary_Dashboard!B21` |  |
-| B18 | `=Summary_Dashboard!B22` |  |
-| B19 | `=Summary_Dashboard!B23` |  |
-
----
-
-## Sheet 13: Base_Validations
+**Extracted:** 10 sheets, 28 columns, 95 validation values, 11 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

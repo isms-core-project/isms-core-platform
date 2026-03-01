@@ -8,152 +8,166 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Equipment Disposal Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.7.6-7-14-S3-TG |
+| **Related Policy** | ISMS-POL-A.7.6-7-14-S3 (Information Media Handling) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.7.14 (Secure Disposal or Re-Use of Equipment) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Secure Disposal and Re-Use of Equipment - Data Sanitisation and Destruction |
-| **Related Policy** | ISMS-POL-A.7.6-7-14, Section 2.3 (Secure Disposal or Re-Use of Equipment) |
-| **Purpose** | Document disposal procedures, assess data sanitisation practices, track disposal records and certificates |
-| **Target Audience** | IT Operations, Asset Management, Procurement, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Procedural |
-| **Review Cycle** | Semi-Annual or After Major Disposal Events |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial technical specification for Equipment Disposal assessment workbook | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.7.6-7-14-S3 (Information Media Handling)
+- ISMS-IMP-A.7.6-7-14-S1 (Secure Areas Working Assessment)
+- ISMS-IMP-A.7.6-7-14-S2 (Clear Desk Screen Compliance)
 
 ---
+
 # Technical Specification
-
-
-> Auto-generated from `generate_a76_3_equipment_disposal.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.7.14.S3` |
-| **Output Filename** | `ISMS-IMP-A.7.14.S3_Equipment_Disposal_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Equipment Disposal Assessment |
-| **Total Sheets** | 16 (16 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #0000FF | 0000FF | Custom |
-| #003366 | 003366 | Dark Blue (Headers) |
-| #808080 | 808080 | Gray (Disabled) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Disposal Requirements
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a76_3_equipment_disposal.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Disposal Tools
+**Document ID:** `ISMS-IMP-A.7.14.S3`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Service Providers
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Disposal Requirements |
+| 3 | Disposal Tools |
+| 4 | Service Providers |
+| 5 | Disposal Log |
+| 6 | Evidence Register |
+| 7 | Summary Dashboard |
+| 8 | Approval Sign-Off |
 
-## Sheet 5: Disposal Log
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Summary Dashboard
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Equipment Type |
+| 2 | Storage Type |
+| 3 | CONFIDENTIAL Method |
+| 4 | INTERNAL Method |
+| 5 | PUBLIC Method |
+| 6 | Verification Required |
+| 7 | Certificate Required |
+| 8 | Implementation Status |
+| 9 | Notes |
+| 10 | Tool/Method Name |
+| 11 | Tool Type |
+| 12 | Applicable Equipment |
+| 13 | Standard/Method |
+| 14 | Verification Method |
+| 15 | Approved Version |
+| 16 | Last Tested |
+| 17 | Compliant |
+| 18 | Provider Name |
+| 19 | Service Type |
+| 20 | Contract Status |
+| 21 | Contract Expiry |
+| 22 | Certificate Provided |
+| 23 | On-Site Option |
+| 24 | Chain of Custody |
+| 25 | Last Audit/Review |
+| 26 | Status |
+| 27 | Disposal ID |
+| 28 | Date |
+| 29 | Asset Tag |
+| 30 | Make/Model |
+| 31 | Serial Number |
+| 32 | Data Classification |
+| 33 | Disposal Method |
+| 34 | Destination |
+| 35 | Certificate Obtained |
+| 36 | Certificate Ref |
+| 37 | Verified By |
+| 38 | Asset Updated |
+| 39 | Disposal Requirements |
+| 40 | Service Providers |
+| 41 | Assessment Area |
+| 42 | Total Items |
+| 43 | Partial |
+| 44 | Non-Compliant |
+| 45 | N/A |
+| 46 | Compliance % |
+| 47 | Evidence ID |
+| 48 | Evidence Type |
+| 49 | Description |
+| 50 | Location/Path |
+| 51 | Date Collected |
+| 52 | Collected By |
+| 53 | Verification Status |
 
-## Sheet 7: Evidence Register
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Approval Sign-Off
+```
+HDD, SSD, Flash, Memory, Config, Mixed, Physical Destruction, Crypto Erase
+Secure Overwrite, 3-Pass Overwrite, Factory Reset, Format, Config Wipe, N/A
+Yes, No, Implemented, Partial, Not Implemented, Software - Overwrite
+Software - Crypto Erase, Hardware - Degausser, Hardware - Shredder
+Manual Process, On-site Destruction, Off-site Destruction
+Recycling with Destruction, Certificate Only, Active, Expired, Under Review
+Pending, Yes - Per Item, Yes - Per Batch, Documented, Not Documented, Laptop
+Desktop, Server, Mobile, Printer, Network, Storage, USB/Media, Other
+CONFIDENTIAL, INTERNAL, PUBLIC, Unknown, Vendor Destruction, Internal Re-Use
+Donation, Sale, Recycling, Approved, Approved with Conditions, Rejected
+Deferred, Policy document, Procedure document, Screenshot, Photograph
+Audit report, Training record, Configuration file, Verified
+Pending verification, Not verified, Requires update, Draft, Final
+Requires remediation, Re-assessment required
+```
 
----
-
-## Sheet 9: Instructions
-
----
-
-## Sheet 10: Disposal_Requirements
-
-**Data Rows:** 9 (rows 1–9)
-
----
-
-## Sheet 11: Disposal_Tools
-
-**Data Rows:** 9 (rows 1–9)
-
----
-
-## Sheet 12: Service_Providers
-
-**Data Rows:** 50 (rows 4–53)
-
----
-
-## Sheet 13: Disposal_Log
-
-**Data Rows:** 200 (rows 4–203)
-
----
-
-## Sheet 14: Summary_Dashboard
-
-**Data Rows:** 200 (rows 4–203)
-
----
-
-## Sheet 15: Evidence_Register
-
-**Data Rows:** 200 (rows 5–204)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Evidence ID |
-| B | Evidence Type |
-| C | Description |
-| D | Related Disposal ID |
-| E | File Name |
-| F | File Location |
-| G | Collection Date |
-| H | Collected By |
-| I | Retention Period |
-| J | Notes |
-
----
-
-## Sheet 16: Approval_Signoff
-
-**Data Rows:** 3 (rows 2–4)
+**Extracted:** 8 sheets, 53 columns, 73 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 
 *"The data you don't properly destroy is the data that will come back to haunt you."*
 — Unknown
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

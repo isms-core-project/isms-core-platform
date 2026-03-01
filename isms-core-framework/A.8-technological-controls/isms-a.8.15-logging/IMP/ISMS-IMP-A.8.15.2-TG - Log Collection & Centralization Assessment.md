@@ -8,553 +8,284 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Log Collection & Centralization Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.15.2-TG |
+| **Related Policy** | ISMS-POL-A.8.15 (Logging) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.15 (Logging) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Log Collection Infrastructure & SIEM Integration |
-| **Related Policy** | ISMS-POL-A.8.15, Section 2.2 (Log Protection & Integrity Requirements), Section 2.3 (Log Retention & Storage Requirements) |
-| **Purpose** | Assess SIEM/log management infrastructure, verify log collection coverage and reliability, validate centralized logging implementation |
-| **Target Audience** | Security Operations Center (SOC), SIEM Administrators, IT Operations, Network Team, Security Engineers, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Infrastructure & Operational |
-| **Review Cycle** | Annual (full assessment), Quarterly (reliability metrics) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
+| Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Initial technical specification for Log Collection assessment workbook | ISMS Implementation Team |
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.15 (Logging)
+- ISMS-IMP-A.8.15.1 (Log Source Inventory Assessment)
+- ISMS-IMP-A.8.15.3 (Log Protection & Retention Assessment)
+- ISMS-IMP-A.8.15.4 (Log Analysis & Review Assessment)
 
 ---
+
 # Technical Specification
-**Audience:** Workbook Developers (Python/Excel script maintainers)
-
-
-> Auto-generated from `generate_a815_2_log_collection_centralization.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.15.2` |
-| **Output Filename** | `ISMS-IMP-A.8.15.2_Log_Collection_Centralization_YYYYMMDD.xlsx` |
-| **Total Sheets** | 28 (28 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control A.8.15: Logging |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #4472C4 | end_color | Medium Blue (Sub-headers) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #FFC000 | FFC000 | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions & Legend
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: SIEM Platform Details
-
----
-
-## Sheet 3: Log Forwarder Inventory
-
----
-
-## Sheet 4: Collection Reliability
-
----
-
-## Sheet 5: Integration Architecture
-
----
-
-## Sheet 6: SIEM Storage & Capacity
-
----
-
-## Sheet 7: Log Parsing & Normalization
-
----
-
-## Sheet 8: SIEM Performance Metrics
-
----
-
-## Sheet 9: Data Quality Assessment
-
----
-
-## Sheet 10: Encryption & Authentication
-
----
-
-## Sheet 11: Gap Analysis & Remediation
-
----
-
-## Sheet 12: Evidence Register
-
----
-
-## Sheet 13: Summary Dashboard
-
----
-
-## Sheet 14: Approval & Sign-Off
-
----
-
-## Sheet 15: Instructions
-
-**Frozen Panes:** A3
-
----
-
-## Sheet 16: Siem_Platform
-
-**Data Rows:** 22 (rows 9–30) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Platform Component | 25 |
-| B | Product/Vendor | 25 |
-| C | Version | 15 |
-| D | Hostname/FQDN | 30 |
-| E | IP Address | 15 |
-| F | Role | 20 |
-| G | OS/Platform | 20 |
-| H | CPU Cores | 10 |
-| I | Memory (GB) | 15 |
-| J | Storage Capacity (TB) | 20 |
-| K | Storage Used (TB) | 20 |
-| L | Storage % Used | 15 |
-| M | Availability | 15 |
-| N | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| A | A9:A30 | `component_dv` |
-| B | B9:B30 | `vendor_dv` |
-| F | F9:F30 | `role_dv` |
-| M | M9:M30 | `availability_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| LN | `=IF(J{data_row}=0,0,K{data_row}/J{data_row})` |  |
-
----
-
-## Sheet 17: Log_Forwarder_Inventory
-
-**Data Rows:** 192 (rows 9–200) | **Frozen Panes:** C8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Forwarder ID | 15 |
-| B | Forwarder Type | 20 |
-| C | Version | 12 |
-| D | Installed On System | 30 |
-| E | System Hostname | 30 |
-| F | Destination SIEM | 25 |
-| G | Transport Protocol | 18 |
-| H | Port | 10 |
-| I | Encryption | 15 |
-| J | Buffer Enabled | 15 |
-| K | Buffer Size (MB) | 18 |
-| L | Install Date | 15 |
-| M | Last Updated | 15 |
-| N | Status | 15 |
-| O | Events/Day | 20 |
-| P | Data/Day (MB) | 20 |
-| Q | Last Health Check | 15 |
-| R | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| B | B9:B200 | `forwarder_type_dv` |
-| F | F9:F200 | `destination_dv` |
-| G | G9:G200 | `protocol_dv` |
-| I | I9:I200 | `encryption_dv` |
-| J | J9:J200 | `buffer_dv` |
-| N | N9:N200 | `status_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=IF(B{data_row}<>` |  |
-
----
-
-## Sheet 18: Collection_Reliability
-
-**Data Rows:** 192 (rows 9–200) | **Frozen Panes:** C8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Source System ID | 15 |
-| B | Source System Name | 30 |
-| C | Expected Events/Day | 20 |
-| D | Actual Events/Day | 20 |
-| E | Collection Rate % | 18 |
-| F | Status | 15 |
-| G | Last Event Received | 18 |
-| H | Gap Detected | 15 |
-| I | Gap Start Time | 18 |
-| J | Gap End Time | 18 |
-| K | Gap Duration (hours) | 20 |
-| L | Gap Reason | 30 |
-| M | Resolution Actions | 40 |
-| N | Resolved By | 20 |
-| O | Resolved Date | 15 |
-| P | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| H | H9:H200 | `gap_detected_dv` |
-| L | L9:L200 | `gap_reason_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| BN | `=IF(A{data_row}=` |  |
-| EN | `=IF(C{data_row}=0,0,D{data_row}/C{data_row})` |  |
-| KN | `=IF(AND(I{data_row}<>` |  |
-
----
-
-## Sheet 19: Integration_Architecture
-
-**Purpose:** "Architecture is politics" - Mitch Kapor
-
-**Data Rows:** 42 (rows 9–50) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Integration Point | 25 |
-| B | Source Type | 20 |
-| C | Source Count | 15 |
-| D | Collection Method | 25 |
-| E | Intermediate Hops | 20 |
-| F | Network Path | 30 |
-| G | Bandwidth Required | 20 |
-| H | Latency Target | 15 |
-| I | Current Latency | 15 |
-| J | Redundancy | 15 |
-| K | Single Point of Failure | 20 |
-| L | DR Capability | 15 |
-| M | Bottleneck Risk | 15 |
-| N | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| B | B9:B50 | `source_type_dv` |
-| D | D9:D50 | `method_dv` |
-| J | J9:J50 | `redundancy_dv` |
-| K | K9:K50 | `spof_dv` |
-| L | L9:L50 | `dr_dv` |
-| M | M9:M50 | `bottleneck_dv` |
-
----
-
-## Sheet 20: Siem_Storage_Capacity
-
-**Data Rows:** 12 (rows 9–20) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Storage Component | 25 |
-| B | Technology | 20 |
-| C | Total Capacity (TB) | 20 |
-| D | Used Capacity (TB) | 20 |
-| E | Free Capacity (TB) | 20 |
-| F | % Used | 12 |
-| G | Status | 15 |
-| H | Retention Period | 20 |
-| I | Avg Daily Ingest (GB) | 20 |
-| J | Growth Rate %/Month | 20 |
-| K | Days Until Full | 15 |
-| L | Expansion Plan | 30 |
-| M | Expansion Date | 15 |
-| N | Cost per TB/Month | 20 |
-| O | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| A | A9:A20 | `storage_component_dv` |
-| B | B9:B20 | `technology_dv` |
-| L | L9:L20 | `expansion_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| EN | `=IF(C{data_row}=` |  |
-| FN | `=IF(C{data_row}=0,0,D{data_row}/C{data_row})` |  |
-| GN | `=IF(A{data_row}=` |  |
-| KN | `=IF(OR(I{data_row}=0,E{data_row}=` |  |
-| — | `=SUM(D9:D20)` | Current |
-| — | `=SUM(I9:I20)*180/1024` | 6 months |
-| — | `=SUM(I9:I20)*365/1024` | 12 months |
-| — | `=SUM(I9:I20)*730/1024` | 24 months |
-
----
-
-## Sheet 21: Log_Parsing_Normalization
-
-**Data Rows:** 92 (rows 9–100) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Log Source Type | 25 |
-| B | Log Format | 20 |
-| C | Parsing Method | 20 |
-| D | Parser Status | 15 |
-| E | Parse Success Rate % | 20 |
-| F | Unparsed Events/Day | 20 |
-| G | Fields Extracted | 20 |
-| H | Required Fields Present | 20 |
-| I | Timestamp Parsing | 18 |
-| J | Timezone Handling | 18 |
-| K | Last Parser Update | 15 |
-| L | Issues Identified | 40 |
-| M | Tuning Required | 15 |
-| N | Owner | 20 |
-| O | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| B | B9:B100 | `log_format_dv` |
-| C | C9:C100 | `parsing_method_dv` |
-| D | D9:D100 | `parser_status_dv` |
-| H | H9:H100 | `required_fields_dv` |
-| I | I9:I100 | `timestamp_dv` |
-| J | J9:J100 | `timezone_dv` |
-| M | M9:M100 | `tuning_dv` |
-
----
-
-## Sheet 22: Siem_Performance_Metrics
-
-**Data Rows:** 82 (rows 9–90) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Metric Date | 15 |
-| B | Daily Events Indexed | 20 |
-| C | Peak Events/Second | 20 |
-| D | Indexing Lag (minutes) | 20 |
-| E | Search Performance (sec) | 20 |
-| F | Dashboard Load Time (sec) | 20 |
-| G | CPU Utilization % | 18 |
-| H | Memory Utilization % | 18 |
-| I | Disk I/O % | 15 |
-| J | Network Throughput (Gbps) | 20 |
-| K | Uptime % | 12 |
-| L | Incidents | 15 |
-| M | Performance Status | 18 |
-| N | Notes | 40 |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| MN | `=IF(A{data_row}=` |  |
-| — | `=SUM(L9:L38)` | Total Incidents: |
-| — | `=COUNTIF(M9:M38,\` | Days with Healthy Status: |
-
----
-
-## Sheet 23: Data_Quality_Assessment
-
-**Data Rows:** 42 (rows 9–50) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Quality Dimension | 25 |
-| B | Log Source Type | 25 |
-| C | Assessment Method | 30 |
-| D | Sample Size | 15 |
-| E | Pass Count | 15 |
-| F | Fail Count | 15 |
-| G | Quality Score % | 18 |
-| H | Status | 15 |
-| I | Common Issues | 40 |
-| J | Impact | 20 |
-| K | Remediation Action | 40 |
-| L | Responsible Party | 25 |
-| M | Target Date | 15 |
-| N | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| A | A9:A50 | `quality_dimension_dv` |
-| J | J9:J50 | `impact_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| GN | `=IF(AND(D{data_row}<>` |  |
-| HN | `=IF(G{data_row}=` |  |
-
----
-
-## Sheet 24: Encryption_Authentication
-
-**Frozen Panes:** A6
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Log Source/Path |
-| B | Protocol |
-| C | TLS Version |
-| D | Cipher Suite |
-| E | Certificate Valid |
-| F | Certificate Expiry |
-| G | Mutual TLS |
-| H | Compliance Status |
-| I | Last Verified |
-| J | Evidence Ref |
-| K | Notes |
-
----
-
-## Sheet 25: Gap_Analysis
-
-**Data Rows:** 92 (rows 9–100) | **Frozen Panes:** A8
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Gap ID | 12 |
-| B | Gap Category | 25 |
-| C | Description | 50 |
-| D | Affected Systems | 30 |
-| E | Impact | 20 |
-| F | Current State | 40 |
-| G | Target State | 40 |
-| H | Remediation Action | 50 |
-| I | Owner | 25 |
-| J | Target Date | 15 |
-| K | Status | 15 |
-| L | Notes | 40 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| B | B9:B100 | `gap_category_dv` |
-| E | E9:E100 | `impact_dv` |
-| K | K9:K100 | `status_dv` |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| AN | `=IF(B{data_row}<>` |  |
-
----
-
-## Sheet 26: Evidence_Register
-
-**Data Rows:** 95 (rows 6–100) | **Frozen Panes:** A6
-
-### Columns
-
-| Col | Header | Width |
-|-----|--------|-------|
-| A | Evidence ID | 12 |
-| B | Assessment Sheet | 22 |
-| C | Evidence Type | 20 |
-| D | Evidence Title | 35 |
-| E | Description | 40 |
-| F | File Location/Link | 35 |
-| G | Date Collected | 14 |
-| H | Collected By | 18 |
-| I | Retention Period | 15 |
-| J | Review Date | 14 |
-| K | Status | 12 |
-| L | Notes | 30 |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C6:C100 | `type_dv` |
-| B | B6:B100 | `sheet_dv` |
-| K | K6:K100 | `status_dv` |
-
----
-
-## Sheet 27: Summary_Dashboard
-
-**Purpose:** "Simplicity is the ultimate sophistication." - Leonardo da Vinci
-
-**Data Rows:** 192 (rows 9–200)
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| — | `=COUNTA(` | Total Systems Monitored |
-| — | `=COUNTIF(` | Systems Collecting >95% |
-| DN | `=IF(B{row}>0,\` |  |
-| BN | `=COUNTIF(\` |  |
-| CN | `=COUNTIFS(\` |  |
-| DN | `=AVERAGEIF(\` |  |
-| EN | `=SUMPRODUCT((\` |  |
-
----
-
-## Sheet 28: Approval_Signoff
+## Generator Alignment Reference
+
+> Auto-generated from `generate_a815_2_log_collection_centralization.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
+
+**Document ID:** `ISMS-IMP-A.8.15.2`
+
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
+
+### Sheet Structure
+
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | SIEM Platform Details |
+| 3 | Log Forwarder Inventory |
+| 4 | Collection Reliability |
+| 5 | Integration Architecture |
+| 6 | SIEM Storage & Capacity |
+| 7 | Log Parsing & Normalisation |
+| 8 | SIEM Performance Metrics |
+| 9 | Data Quality Assessment |
+| 10 | Encryption & Authentication |
+| 11 | Gap Analysis |
+| 12 | Evidence Register |
+| 13 | Summary Dashboard |
+| 14 | Approval Sign-Off |
+
+### Color Palette
+
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
+
+### Column Headers (All Sheets)
+
+| # | Column Header |
+|---|--------------|
+| 1 | Platform Component |
+| 2 | Product/Vendor |
+| 3 | Version |
+| 4 | Hostname/FQDN |
+| 5 | IP Address |
+| 6 | Role |
+| 7 | OS/Platform |
+| 8 | CPU Cores |
+| 9 | Memory (GB) |
+| 10 | Storage Capacity (TB) |
+| 11 | Storage Used (TB) |
+| 12 | Storage % Used |
+| 13 | Availability |
+| 14 | Notes |
+| 15 | Forwarder ID |
+| 16 | Forwarder Type |
+| 17 | Installed On System |
+| 18 | System Hostname |
+| 19 | Destination SIEM |
+| 20 | Transport Protocol |
+| 21 | Port |
+| 22 | Encryption |
+| 23 | Buffer Enabled |
+| 24 | Buffer Size (MB) |
+| 25 | Install Date |
+| 26 | Last Updated |
+| 27 | Status |
+| 28 | Events/Day |
+| 29 | Data/Day (MB) |
+| 30 | Last Health Check |
+| 31 | Source System ID |
+| 32 | Source System Name |
+| 33 | Expected Events/Day |
+| 34 | Actual Events/Day |
+| 35 | Collection Rate % |
+| 36 | Last Event Received |
+| 37 | Gap Detected |
+| 38 | Gap Start Time |
+| 39 | Gap End Time |
+| 40 | Gap Duration (hours) |
+| 41 | Gap Reason |
+| 42 | Resolution Actions |
+| 43 | Resolved By |
+| 44 | Resolved Date |
+| 45 | Integration Point |
+| 46 | Source Type |
+| 47 | Source Count |
+| 48 | Collection Method |
+| 49 | Intermediate Hops |
+| 50 | Network Path |
+| 51 | Bandwidth Required |
+| 52 | Latency Target |
+| 53 | Current Latency |
+| 54 | Redundancy |
+| 55 | Single Point of Failure |
+| 56 | DR Capability |
+| 57 | Bottleneck Risk |
+| 58 | Storage Component |
+| 59 | Technology |
+| 60 | Total Capacity (TB) |
+| 61 | Used Capacity (TB) |
+| 62 | Free Capacity (TB) |
+| 63 | % Used |
+| 64 | Retention Period |
+| 65 | Avg Daily Ingest (GB) |
+| 66 | Growth Rate %/Month |
+| 67 | Days Until Full |
+| 68 | Expansion Plan |
+| 69 | Expansion Date |
+| 70 | Cost per TB/Month |
+| 71 | Log Source Type |
+| 72 | Log Format |
+| 73 | Parsing Method |
+| 74 | Parser Status |
+| 75 | Parse Success Rate % |
+| 76 | Unparsed Events/Day |
+| 77 | Fields Extracted |
+| 78 | Required Fields Present |
+| 79 | Timestamp Parsing |
+| 80 | Timezone Handling |
+| 81 | Last Parser Update |
+| 82 | Issues Identified |
+| 83 | Tuning Required |
+| 84 | Owner |
+| 85 | Metric Date |
+| 86 | Daily Events Indexed |
+| 87 | Peak Events/Second |
+| 88 | Indexing Lag (minutes) |
+| 89 | Search Performance (sec) |
+| 90 | Dashboard Load Time (sec) |
+| 91 | CPU Utilization % |
+| 92 | Memory Utilization % |
+| 93 | Disk I/O % |
+| 94 | Network Throughput (Gbps) |
+| 95 | Uptime % |
+| 96 | Incidents |
+| 97 | Performance Status |
+| 98 | Quality Dimension |
+| 99 | Assessment Method |
+| 100 | Sample Size |
+| 101 | Pass Count |
+| 102 | Fail Count |
+| 103 | Quality Score % |
+| 104 | Common Issues |
+| 105 | Impact |
+| 106 | Remediation Action |
+| 107 | Responsible Party |
+| 108 | Target Date |
+| 109 | Gap ID |
+| 110 | Gap Category |
+| 111 | Description |
+| 112 | Affected Systems |
+| 113 | Current State |
+| 114 | Target State |
+| 115 | Timeframe |
+| 116 | Projected Ingest (TB) |
+| 117 | Capacity Needed (TB) |
+| 118 | Gap (TB) |
+| 119 | Estimated Cost |
+| 120 | Log Source/Path |
+| 121 | Protocol |
+| 122 | TLS Version |
+| 123 | Cipher Suite |
+| 124 | Certificate Valid |
+| 125 | Certificate Expiry |
+| 126 | Mutual TLS |
+| 127 | Compliance Status |
+| 128 | Last Verified |
+| 129 | Evidence Ref |
+| 130 | Auth Type |
+| 131 | Credential Storage |
+| 132 | Rotation Frequency |
+| 133 | Last Rotated |
+| 134 | Service Account |
+| 135 | MFA Enabled |
+| 136 | Compliance |
+| 137 | Evidence ID |
+| 138 | Assessment Area |
+| 139 | Evidence Type |
+| 140 | Location/Path |
+| 141 | Date Collected |
+| 142 | Collected By |
+| 143 | Verification Status |
+| 144 | Total Items |
+| 145 | Compliant |
+| 146 | Partial |
+| 147 | Non-Compliant |
+| 148 | N/A |
+| 149 | Compliance % |
+| 150 | Metric |
+| 151 | Value |
+| 152 | Target |
+| 153 | Finding Type |
+| 154 | Risk Level |
+| 155 | Associated Sheet |
+| 156 | Recommended Action |
+| 157 | ISO Clause |
+
+### Data Validation Values
+
+All dropdown/list values used across sheets:
+
+```
+SIEM Core, Indexer, Search Head, Forwarder Management, Storage, API Gateway
+Other, Splunk, QRadar, Sentinel, LogRhythm, ELK Stack, Graylog, Custom
+Primary, Secondary, DR, Dev/Test, Active, Standby, Offline, Degraded
+Splunk UF, Fluentd, Logstash, rsyslog, syslog-ng, Filebeat, Winlogbeat
+Windows Event Forwarder, Cloud Connector, Both, Load Balanced, Syslog/TLS
+Syslog/TCP, Syslog/UDP, HTTPS, gRPC, Proprietary, Yes (TLS 1.3), Yes (TLS 1.2)
+No, N/A, Yes, Running, Stopped, Error, Unknown, Network Issue, Forwarder Down
+Source Down, SIEM Issue, Configuration Error, Server, Network Device
+Application, Cloud Service, Security Tool, Container, Agent-based
+Agentless/Syslog, API Pull, API Push, File Collection, Stream Processing, None
+Active/Passive, Active/Active, Mitigated, Partial, High, Medium, Low
+Hot Storage, Warm Storage, Cold Storage, Archive, Backup, Local Disk/SSD, SAN
+NAS, Object Storage (S3/Azure), Tape, Cloud, Not Needed, Planned, In Progress
+Urgent, Syslog, CEF, JSON, EVTX, LEEF, Built-in, Custom Regex, Grok
+Logstash Filter, Custom Script, ML-based, Working, Needs Tuning, Broken
+Not Configured, All, Most, Some, Few, Correct, Incorrect, Missing
+Completeness, Accuracy, Consistency, Timeliness, Validity, Critical
+Coverage Gap, Reliability Issue, Performance Issue, Parsing Error
+Capacity Constraint, Redundancy Gap, DR Gap, Data Quality Issue, Open
+Resolved, Deferred, Configuration file, Screenshot, Network scan
+Documentation, Vendor spec, Certificate inventory, Audit log
+Compliance report, Verified, Pending verification, Not verified
+Requires update, Draft, Final, Requires remediation, Re-assessment required
+Approved, Approved with Conditions, Rejected
+```
+
+**Extracted:** 14 sheets, 157 columns, 146 validation values, 10 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

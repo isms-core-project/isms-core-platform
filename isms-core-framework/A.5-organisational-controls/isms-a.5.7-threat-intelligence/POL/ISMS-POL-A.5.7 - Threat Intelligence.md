@@ -42,27 +42,25 @@
 - ISMS-IMP-A.5.7.1-UG/TG (Threat Intelligence Sources Assessment)
 - ISMS-IMP-A.5.7.2-UG/TG (Intelligence Collection & Analysis Assessment)
 - ISMS-IMP-A.5.7.3-UG/TG (Intelligence Integration & Distribution Assessment)
-- ISMS-IMP-A.5.7.4-UG/TG (Threat Intelligence Effectiveness Dashboard)
-- ISMS-IMP-A.5.7.5-UG/TG (Threat Intelligence Standalone Dashboard)
 - ISO/IEC 27001:2022 Control A.5.7
 
 ---
 
 # Executive Summary
 
-This policy establishes [Organization]'s requirements for threat intelligence to enable proactive defense, inform risk management, and enhance security operations in accordance with ISO/IEC 27001:2022 Control A.5.7.
+This policy establishes [Organisation]'s requirements for threat intelligence to enable proactive defense, inform risk management, and enhance security operations in accordance with ISO/IEC 27001:2022 Control A.5.7.
 
-**Purpose**: Define organizational requirements for threat intelligence governance. This policy establishes WHAT threat intelligence capabilities are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.7 (UG/TG variants).
+**Purpose**: Define organisational requirements for threat intelligence governance. This policy establishes WHAT threat intelligence capabilities are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.7 (UG/TG variants).
 
 **Scope**: This policy applies to:
 
 - All threat intelligence activities (collection, analysis, production, dissemination)
 - All intelligence types (strategic, tactical, operational)
 - All intelligence sources (commercial platforms, OSINT, government feeds, internal telemetry)
-- All organizational personnel involved in security operations
+- All organisational personnel involved in security operations
 - All security tools integrating threat intelligence
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00, including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00, including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -74,7 +72,7 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 
 > *Information relating to information security threats should be collected and analysed to produce threat intelligence.*
 
-**Control Objective**: Establish organizational policy for threat intelligence controls enabling proactive threat detection, informing risk management decisions, prioritizing security investments, and enhancing incident response effectiveness.
+**Control Objective**: Establish organisational policy for threat intelligence controls enabling proactive threat detection, informing risk management decisions, prioritizing security investments, and enhancing incident response effectiveness.
 
 ## Policy Boundaries
 
@@ -85,7 +83,7 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 - Intelligence dissemination requirements to stakeholders
 - Integration requirements with risk assessment (ISO 27001 Clause 6.1)
 - Integration requirements with incident management (Controls A.5.24-5.28)
-- Organizational roles and responsibilities
+- Organisational roles and responsibilities
 - Exception and governance frameworks
 
 **This Policy Does NOT Address** (HOW - see ISMS-IMP-A.5.7):
@@ -97,7 +95,7 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 - IOC deployment procedures
 - Source evaluation scoring criteria
 
-## Organizational Coverage
+## Organisational Coverage
 
 **In Scope**:
 
@@ -105,7 +103,7 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 - All security operations and incident response teams
 - All risk management and compliance functions
 - Third-party service providers with access to threat intelligence
-- All organizational locations and business units
+- All organisational locations and business units
 
 **Out of Scope**:
 
@@ -120,7 +118,7 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 
 ## Threat Intelligence Collection
 
-[Organization] SHALL implement threat intelligence collection from multiple source categories to ensure comprehensive threat visibility.
+[Organisation] SHALL implement threat intelligence collection from multiple source categories to ensure comprehensive threat visibility.
 
 **Required Source Categories**:
 
@@ -141,7 +139,7 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 
 ## Threat Intelligence Analysis and Production
 
-[Organization] SHALL implement structured intelligence analysis to transform raw threat data into actionable intelligence.
+[Organisation] SHALL implement structured intelligence analysis to transform raw threat data into actionable intelligence.
 
 **Intelligence Production Requirements**:
 
@@ -167,7 +165,7 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 
 - All intelligence products SHALL cite sources with reliability assessment
 - Intelligence SHALL be validated through multiple sources where possible
-- Intelligence SHALL be connected to [Organization]'s threat model and assets
+- Intelligence SHALL be connected to [Organisation]'s threat model and assets
 - Intelligence SHALL include actionable recommendations or detection guidance
 - Intelligence SHALL be classified using TLP and internal classification schemes
 
@@ -175,7 +173,7 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 
 ## Threat Intelligence Dissemination
 
-[Organization] SHALL implement structured intelligence dissemination ensuring the right intelligence reaches the right stakeholders.
+[Organisation] SHALL implement structured intelligence dissemination ensuring the right intelligence reaches the right stakeholders.
 
 **Dissemination Requirements**:
 
@@ -195,12 +193,12 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 
 ## Risk Assessment Integration (MANDATORY)
 
-Threat intelligence SHALL inform [Organization]'s risk assessment process per ISO 27001:2022 Clause 6.1.
+Threat intelligence SHALL inform [Organisation]'s risk assessment process per ISO 27001:2022 Clause 6.1.
 
 **Integration Requirements**:
 
 - Threat intelligence findings SHALL inform likelihood estimates for security risks
-- Emerging threat campaigns SHALL trigger risk reassessment when targeting [Organization]'s sector
+- Emerging threat campaigns SHALL trigger risk reassessment when targeting [Organisation]'s sector
 - Vulnerability exploitation intelligence SHALL inform impact assessments
 - Threat intelligence recommendations SHALL inform control selection and prioritization
 - Risk register updates SHALL cross-reference supporting threat intelligence reports
@@ -228,7 +226,7 @@ Threat intelligence SHALL enhance incident detection, investigation, and respons
 
 ## Vulnerability Management Integration (OPTIONAL)
 
-When [Organization] implements Control A.8.8 (Management of Technical Vulnerabilities), threat intelligence integration is OPTIONAL but recommended.
+When [Organisation] implements Control A.8.8 (Management of Technical Vulnerabilities), threat intelligence integration is OPTIONAL but recommended.
 
 **If Implemented**:
 
@@ -240,7 +238,7 @@ When [Organization] implements Control A.8.8 (Management of Technical Vulnerabil
 
 ## Effectiveness Measurement
 
-[Organization] SHALL measure threat intelligence program effectiveness through objective metrics.
+[Organisation] SHALL measure threat intelligence program effectiveness through objective metrics.
 
 **Required Measurement Areas**:
 
@@ -253,10 +251,10 @@ When [Organization] implements Control A.8.8 (Management of Technical Vulnerabil
 
 **Program Maturity**:
 
-- [Organization] SHALL assess threat intelligence program maturity annually
+- [Organisation] SHALL assess threat intelligence program maturity annually
 - Assessment SHALL cover collection, analysis, dissemination, operationalization, and governance
 
-**Implementation Reference**: Effectiveness metrics and KPI tracking documented in ISMS-IMP-A.5.7.4.
+**Implementation Reference**: Effectiveness metrics and KPI tracking documented in Summary Dashboard.
 
 ---
 
@@ -295,7 +293,7 @@ When [Organization] implements Control A.8.8 (Management of Technical Vulnerabil
 
 ## Business Continuity
 
-[Organization] SHALL ensure continuity of critical threat intelligence capabilities:
+[Organisation] SHALL ensure continuity of critical threat intelligence capabilities:
 
 - Primary and backup analysts designated for each intelligence function
 - Source redundancy for critical intelligence categories
@@ -312,7 +310,7 @@ When [Organization] implements Control A.8.8 (Management of Technical Vulnerabil
 
 | Regulation | Key Requirements |
 |------------|------------------|
-| **Swiss nDSG** | Art. 8 - Technical and organizational measures for threat detection |
+| **Swiss nDSG** | Art. 8 - Technical and organisational measures for threat detection |
 | **EU GDPR** | Art. 32 - Security measures including threat monitoring |
 | **ISO/IEC 27001:2022** | Control A.5.7 - Threat intelligence collection and analysis |
 
@@ -324,7 +322,7 @@ When [Organization] implements Control A.8.8 (Management of Technical Vulnerabil
 | **DORA** | EU financial services entity |
 | **NIS2** | Essential/important entity (EU) |
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
 
 ## Exception Management
 
@@ -374,7 +372,7 @@ When threat intelligence identifies imminent or active threats, incident respons
 ## Policy Review
 
 - **Frequency**: Annual minimum
-- **Triggers**: Regulatory changes, major incidents, significant threat landscape changes, organizational changes, audit findings
+- **Triggers**: Regulatory changes, major incidents, significant threat landscape changes, organisational changes, audit findings
 - **Reviewers**: CISO, Threat Intelligence Team Lead, Security Team, Risk Management, Compliance
 - **Approval**: CISO (technical), Executive Management (strategic)
 
@@ -394,7 +392,7 @@ Implementation standard updates (ISMS-IMP-A.5.7) do not require policy revision.
 
 ## ISMS Integration
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 - **Risk Assessment** (Clause 6.1): Threat intelligence informs risk identification and analysis
 - **Statement of Applicability** (Clause 6.1.3): Control A.5.7 applicability documented
@@ -417,8 +415,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - **ISMS-IMP-A.5.7.1-UG/TG**: Threat Intelligence Sources Assessment
 - **ISMS-IMP-A.5.7.2-UG/TG**: Intelligence Collection & Analysis Assessment
 - **ISMS-IMP-A.5.7.3-UG/TG**: Intelligence Integration & Distribution Assessment
-- **ISMS-IMP-A.5.7.4-UG/TG**: Effectiveness Dashboard
-- **ISMS-IMP-A.5.7.5-UG/TG**: Standalone Executive Dashboard
 
 ---
 
@@ -440,7 +436,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 **CVSS (Common Vulnerability Scoring System)**: Standard for assessing vulnerability severity (0.0-10.0). CVSS 4.0 is current standard; CVSS 3.1 remains widely deployed.
 
-**Threat Actor**: Individual, group, or organization conducting malicious cyber activities.
+**Threat Actor**: Individual, group, or organisation conducting malicious cyber activities.
 
 ---
 
@@ -480,7 +476,7 @@ Evidence required to demonstrate this policy is operationally effective:
 - Business continuity test results for threat intelligence program (annual)
 - Exception approvals for threat intelligence deviations (if applicable)
 - Training completion records for threat intelligence personnel
-- Effectiveness dashboard (ISMS-IMP-A.5.7.4) showing consolidated metrics and KPIs
+- Effectiveness metrics tracked in Summary Dashboards
 
 **Clarification on Compliance Evidence:**
 
@@ -490,7 +486,7 @@ This policy establishes threat intelligence governance framework (collection, an
 - **Incident response procedures** (addressed in A.5.24-5.28 Incident Management - threat intelligence enhances investigation)
 - **Vulnerability prioritization** (addressed in A.8.8 Vulnerability Management - VulnerabilityThreatLink integration is optional)
 - **Specific threat actor profiles** (operational intelligence maintained in threat intelligence platform, not policy)
-- **Tool selection or platform configuration** (implementation decisions based on organizational requirements)
+- **Tool selection or platform configuration** (implementation decisions based on organisational requirements)
 
 The boundary is: POL-A.5.7 defines governance framework for threat intelligence capabilities → ISMS-IMP-A.5.7 suite provides assessment procedures → Threat intelligence platform implements technical collection/analysis → Other controls (A.8.16, A.5.24-28, A.8.8) consume threat intelligence outputs for their respective purposes.
 
@@ -514,4 +510,4 @@ The boundary is: POL-A.5.7 defines governance framework for threat intelligence 
 
 *This policy establishes requirements for threat intelligence. Implementation procedures are documented in ISMS-IMP-A.5.7 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -8,43 +8,54 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Masking Technique Selection & Requirements |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.11.2-UG |
+| **Related Policy** | ISMS-POL-A.8.11 (Data Masking) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.11 (Data Masking) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Masking Technique Selection & Implementation Requirements |
-| **Related Policy** | ISMS-POL-A.8.11, Section 2.2 (Masking Technique Standards) |
-| **Purpose** | Guide users through selecting appropriate masking techniques for different data types, use cases, and regulatory requirements |
-| **Target Audience** | Data Protection Officers, Security Engineers, Database Administrators, Application Developers, Compliance Officers |
-| **Assessment Type** | Technical & Operational Decision Framework |
-| **Review Cycle** | Semi-Annual (every 6 months) or After Major System Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial user guide for masking technique selection assessment | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.11 (Data Masking)
+- ISMS-IMP-A.8.11.1 (Data Inventory & Classification Assessment)
+- ISMS-IMP-A.8.11.3 (Environment Coverage Assessment)
+- ISMS-IMP-A.8.11.4 (Testing & Validation Framework)
 
 ---
 
-**Target Audience:** Data Protection Officers, Security Engineers, Database Administrators, Application Developers, Compliance Officers, Data Governance Teams
+## Workbook at a Glance
 
-**Purpose of This Guide:** Enable autonomous selection of appropriate data masking techniques based on data type, use case, regulatory requirements, and technical constraints.
-
-**What This Document Does:**
-
-- Explains masking technique taxonomy (SDM, DDM, tokenization, encryption, etc.)
-- Provides decision frameworks for technique selection
-- Guides through assessment workbook completion
-- Defines validation criteria for technique effectiveness
-- Establishes evidence collection requirements
-
-**What This Document Does NOT Do:**
-
-- Recommend specific vendor products or tools (vendor-agnostic approach)
-- Provide implementation tutorials for masking tools (see vendor documentation)
-- Replace data inventory assessment (prerequisite: complete IMP-A.8.11.1 first)
-- Define data classification (prerequisite: complete IMP-A.8.11.1 first)
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Approved Techniques | Register of approved masking techniques |
+| 3 | Technique Selection Matrix | Framework for selecting appropriate masking techniques |
+| 4 | Static Masking SDM | Static Data Masking implementation assessment |
+| 5 | Dynamic Masking DDM | Dynamic Data Masking implementation assessment |
+| 6 | Tokenisation Implementation | Tokenisation technique implementation details |
+| 7 | Encryption for Masking | Encryption-based masking approach assessment |
+| 8 | Masking Tool Inventory | Inventory of masking tools in use |
+| 9 | Configuration Standards | Masking configuration standards compliance |
+| 10 | Gap Analysis | Identify technique coverage gaps |
+| 11 | Evidence Register | Store and reference evidence supporting assessments |
+| 12 | Summary Dashboard | Compliance status and key metrics overview |
+| 13 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -52,7 +63,7 @@
 
 ## What This Assessment Measures
 
-This assessment evaluates [Organization]'s **masking technique selection and implementation** to ensure:
+This assessment evaluates [Organisation]'s **masking technique selection and implementation** to ensure:
 1. Appropriate techniques are chosen for each data type and use case
 2. Techniques are properly configured to achieve masking objectives
 3. Irreversibility is validated where required
@@ -75,7 +86,7 @@ This assessment evaluates [Organization]'s **masking technique selection and imp
 ## Why This Matters
 
 **ISO 27001:2022 Control A.8.11 Requirement:**
-> *"Data masking should be used in accordance with the organization's topic-specific policy on access control and other related topic-specific policies, and business requirements, taking applicable legislation into consideration."*
+> *"Data masking should be used in accordance with the organisation's topic-specific policy on access control and other related topic-specific policies, and business requirements, taking applicable legislation into consideration."*
 
 **Key Success Criteria:**
 
@@ -97,7 +108,7 @@ This assessment evaluates [Organization]'s **masking technique selection and imp
 
 **Required Knowledge:**
 
-- Understanding of [Organization]'s data classification scheme (from IMP-A.8.11.1)
+- Understanding of [Organisation]'s data classification scheme (from IMP-A.8.11.1)
 - Familiarity with database structures and data relationships
 - Knowledge of application functionality requirements
 - Understanding of regulatory requirements (GDPR, FADP, PCI-DSS, HIPAA as applicable)
@@ -129,7 +140,7 @@ This assessment evaluates [Organization]'s **masking technique selection and imp
 - **Evidence Collection:** 1 hour
 - **Quality Review:** 30-60 minutes
 
-**Pro Tip:** For organizations with multiple data domains (finance, HR, customer data, etc.), assign different team members to assess their respective domains in parallel, then consolidate results.
+**Pro Tip:** For organisations with multiple data domains (finance, HR, customer data, etc.), assign different team members to assess their respective domains in parallel, then consolidate results.
 
 ## Connection to Policy and Other Assessments
 
@@ -153,7 +164,6 @@ ISMS-POL-A.8.11 (Data Masking Policy)
 
 - ➡️ **ISMS-IMP-A.8.11.3** (Environment Coverage Assessment) - Uses technique selections to verify implementation across environments
 - ➡️ **ISMS-IMP-A.8.11.4** (Testing & Validation Framework) - Tests effectiveness of selected techniques
-- ➡️ **ISMS-IMP-A.8.11.5** (Compliance Dashboard) - Consolidates all assessment results
 
 **Integration Point:** This assessment uses data inventory from IMP-A.8.11.1 to map data elements → masking techniques → implementation status.
 
@@ -272,7 +282,7 @@ This assessment focuses on **WHICH masking techniques** are appropriate for your
 **Testing Tools:**
 
 - **SQL Query Tools:** For testing masked data, checking for reversibility
-- **Data Profiling Tools:** To analyze masked data distribution (optional)
+- **Data Profiling Tools:** To analyse masked data distribution (optional)
 - **Application Test Environment:** To validate functionality with masked data
 
 **Reference Materials:**
@@ -385,7 +395,7 @@ For each data element, identify:
 
 - **Reversibility Requirements:** Must data be un-masked?
   - Never (irreversible)?
-  - Authorized users only (DDM or tokenization)?
+  - Authorised users only (DDM or tokenization)?
   - Specific scenarios (decryption with key)?
 
 **2.3 Apply Selection Criteria (1-2 hours)**
@@ -407,7 +417,7 @@ Specific Method: Format-preserving tokenization (XXXX-XXXX-XXXX-1234), secure va
 Alternative Technique: Static Data Masking with format preservation
 Selection Rationale: Tokenization chosen because:
   1. PCI-DSS Req.3.4 allows tokenization as masking method
-  2. Reversibility required for authorized payment processors (with vault access)
+  2. Reversibility required for authorised payment processors (with vault access)
   3. Format preservation required (16 digits, Luhn valid)
   4. Referential integrity maintained (same card → same token)
   5. Lower performance impact than encryption
@@ -455,7 +465,7 @@ Selection Rationale: Tokenization chosen because:
   - Which data elements are tokenized?
   - Token vault architecture (external service, internal vault, etc.)
   - Token format (format-preserving or random?)
-  - De-tokenization process and authorization
+  - De-tokenization process and authorisation
 
 **3.4 Other Techniques - 30 minutes**
 
@@ -470,7 +480,7 @@ Selection Rationale: Tokenization chosen because:
 
 ### Step 4: Define Configuration Standards (1 hour)
 
-**Action:** Open "Configuration_Standards" sheet and define organization-specific configuration rules.
+**Action:** Open "Configuration_Standards" sheet and define organisation-specific configuration rules.
 
 **What to Document:**
 
@@ -492,7 +502,7 @@ Selection Rationale: Tokenization chosen because:
 
 - Token format standards (format-preserving vs. random)
 - Vault security requirements (encryption, access control, backup)
-- De-tokenization authorization workflow
+- De-tokenization authorisation workflow
 - Token lifecycle (expiration, rotation policies)
 
 **Example Standard:**
@@ -662,7 +672,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 ---
 
-**Question 1: Must the data be reversible (un-maskable by authorized users)?**
+**Question 1: Must the data be reversible (un-maskable by authorised users)?**
 
 ➡️ **YES** → Continue to Question 2 (Reversible Techniques)  
 ➡️ **NO** → Continue to Question 3 (Irreversible Techniques)
@@ -681,7 +691,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 **Option B: Secure vault with tokenization**
 
 - ✅ **Technique:** Tokenization
-- **Use Case:** Payment cards, reversible for authorized payment processing
+- **Use Case:** Payment cards, reversible for authorised payment processing
 - **Pros:** PCI-DSS compliant, format-preserving optional
 - **Cons:** Vault infrastructure required, vault is single point of failure
 
@@ -695,7 +705,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 **Decision Criteria:**
 
 - Choose **DDM** if: Production system, role-based access control required
-- Choose **Tokenization** if: Format preservation critical, PCI-DSS scope, limited authorized de-masking
+- Choose **Tokenization** if: Format preservation critical, PCI-DSS scope, limited authorised de-masking
 - Choose **Encryption** if: Regulatory requirement (HIPAA), batch de-masking acceptable
 
 ➡️ **SELECTED TECHNIQUE** → Document in Technique_Selection_Matrix
@@ -748,7 +758,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 - ✅ **Technique:** Redaction/Nullification
 - **Configuration:** Replace with NULL, blank, or fixed string (e.g., "REDACTED")
-- **Use Case:** GDPR Right to Erasure, data minimization
+- **Use Case:** GDPR Right to Erasure, data minimisation
 - **Validation:** Original data cannot be recovered
 
 **Option B: One-way transformation for verification**
@@ -828,7 +838,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 **Validation Criteria:**
 
 - ✅ Correct role sees correctly masked data
-- ✅ Unauthorized role cannot bypass DDM
+- ✅ Unauthorised role cannot bypass DDM
 - ✅ Performance impact measured and acceptable
 - ✅ Audit logs capture DDM policy evaluations
 
@@ -851,7 +861,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 - Format-preserving tokens (16 digits, Luhn-valid)
 - Secure token vault (PCI-DSS compliant)
-- De-tokenization only for authorized payment processing
+- De-tokenization only for authorised payment processing
 - Token lifecycle: Expire tokens on card expiration date
 
 **Configuration Standards (SDM Alternative):**
@@ -950,11 +960,11 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 **Recommended Techniques:**
 1. **Primary:** Redaction + Data Substitution
-2. **Alternative:** Tokenization (if reversibility needed with authorized partner)
+2. **Alternative:** Tokenization (if reversibility needed with authorised partner)
 
 **Configuration Standards:**
 
-- Data minimization: Share ONLY fields required by partner
+- Data minimisation: Share ONLY fields required by partner
 - Sensitive fields: Redact (NULL/blank) or substitute with synthetic values
 - Identifiers: Replace with pseudonyms (random IDs)
 - Audit trail: Log what data was shared, when, with whom
@@ -971,7 +981,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 **Validation Criteria:**
 
 - ✅ Data sharing agreement (DPA) signed with partner
-- ✅ Only necessary fields shared (data minimization)
+- ✅ Only necessary fields shared (data minimisation)
 - ✅ Sensitive fields masked or removed
 - ✅ Legal/Compliance review approved data sharing
 
@@ -1129,7 +1139,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 - **Dropdown Options:**
   - Never (Irreversible)
-  - Authorized Users Only (DDM)
+  - Authorised Users Only (DDM)
   - Specific Scenarios (Tokenization/Encryption)
   - Emergency Only (Break-Glass)
 
@@ -1139,9 +1149,9 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 - Non-production testing (no need to see real data)
 - Regulatory requirement (GDPR pseudonymization)
-- Data minimization principle
+- Data minimisation principle
 
-**Select "Authorized Users Only (DDM)" if:**
+**Select "Authorised Users Only (DDM)" if:**
 
 - Production environment with role-based access
 - Customer service needs conditional access
@@ -1149,8 +1159,8 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 **Select "Specific Scenarios (Tokenization/Encryption)" if:**
 
-- Payment processing (authorized payment gateway can de-tokenize)
-- Compliance requirement (auditor needs access with proper authorization)
+- Payment processing (authorised payment gateway can de-tokenize)
+- Compliance requirement (auditor needs access with proper authorisation)
 - Batch processing (decrypt for processing, re-encrypt after)
 
 **Select "Emergency Only (Break-Glass)" if:**
@@ -1186,7 +1196,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 | Data Type | Use Case | Reversibility | Primary Technique | Why? |
 |-----------|----------|--------------|-------------------|------|
 | Credit Card PAN | Non-prod testing | Never | Tokenization (format-preserving) | PCI-DSS compliant, maintains format, supports testing |
-| Customer SSN | Prod role-based access | Authorized only | Dynamic Data Masking (DDM) | Real-time access control, no data duplication |
+| Customer SSN | Prod role-based access | Authorised only | Dynamic Data Masking (DDM) | Real-time access control, no data duplication |
 | Patient Names | HIPAA research | Never | Data Substitution (Synthetic) | Safe Harbor compliance, realistic for analytics |
 | Passwords | Authentication | Never | Hashing (bcrypt) | Industry standard, irreversible, verification-only |
 | Account Balances | Analytics | Never | Data Shuffling | Preserves distribution, anonymizes individuals |
@@ -1281,7 +1291,7 @@ ALTERNATIVES CONSIDERED:
 TRADE-OFFS ACCEPTED:
 
 - Token vault is single point of failure (mitigated with HA architecture, backup vault)
-- De-tokenization process adds latency (acceptable for infrequent authorized access)
+- De-tokenization process adds latency (acceptable for infrequent authorised access)
 - Vault infrastructure cost (justified by PCI scope reduction and security benefits)
 
 APPROVAL: CFO approved as data owner for financial data category (approval email dated 15.01.2026)
@@ -1653,11 +1663,11 @@ Credit card PAN masking:
 
 ## Sheet: Tokenization_Implementation
 
-**Purpose:** Document tokenization implementations (if applicable to [Organization])
+**Purpose:** Document tokenization implementations (if applicable to [Organisation])
 
 **Time to Complete:** 30 minutes (or skip if tokenization not used)
 
-**⚠️ NOTE:** If [Organization] does NOT use tokenization, mark this sheet as "N/A - Not Applicable" and skip.
+**⚠️ NOTE:** If [Organisation] does NOT use tokenization, mark this sheet as "N/A - Not Applicable" and skip.
 
 **Step-by-Step Instructions:**
 
@@ -1738,7 +1748,7 @@ Credit card PAN masking:
 - "Tokens rotated annually"
 - "Indefinite (no expiration)"
 
-**Column H: De-tokenization Authorization**
+**Column H: De-tokenization Authorisation**
 
 - **Text Field** - Who can de-tokenize and how?
 
@@ -2006,7 +2016,7 @@ For SDM:
   ❌ FAIL if: Simple base64 encoding (easily reversed)
 
 For Tokenization:
-  ✅ PASS if: Vault access requires authentication + authorization (logged)
+  ✅ PASS if: Vault access requires authentication + authorisation (logged)
   ❌ FAIL if: Token-to-value mapping stored in same database as tokens
 
 For Encryption:
@@ -2285,7 +2295,7 @@ Non-production database credentials:
 **Quality Questions:**
 
 - Can an auditor understand WHY each technique was chosen by reading the rationale?
-- Would this technique selection still be valid if [Organization] changed masking tools?
+- Would this technique selection still be valid if [Organisation] changed masking tools?
 - Are regulatory requirements explicitly referenced (not just "compliance required")?
 
 ---
@@ -2311,7 +2321,7 @@ Non-production database credentials:
 
 - [ ] Token vault architecture documented
 - [ ] Token format specified (format-preserving or random)
-- [ ] De-tokenization authorization process defined
+- [ ] De-tokenization authorisation process defined
 - [ ] Vault security controls documented (encryption, access control, backup)
 
 **Other Techniques:**
@@ -2385,7 +2395,7 @@ Non-production database credentials:
 ### Section F: Summary Dashboard
 
 - [ ] Overall compliance metrics calculated correctly
-- [ ] Technique coverage by data category summarized
+- [ ] Technique coverage by data category summarised
 - [ ] Gaps prioritized and visible
 - [ ] Approval sign-off section complete
 
@@ -2400,7 +2410,7 @@ Non-production database credentials:
 ✅ Good: "Tokenization selected for credit card PAN based on:
   1. PCI-DSS Req.3.4 explicitly allows tokenization
   2. Format-preserving tokens maintain 16-digit Luhn-valid format for application compatibility
-  3. Reversibility required for authorized payment processor integration testing
+  3. Reversibility required for authorised payment processor integration testing
   4. Token vault architecture segregates sensitive data from application database
   5. CFO approved as data owner for financial data (approval email 15.01.2026)
 Alternatives considered: SDM rejected due to irreversibility (need de-tokenization for payment gateway testing)"
@@ -2556,7 +2566,7 @@ Owner: Jane Doe (Database Administrator), john.smith@example.com
 - `DataOwner_Approvals_All_Domains_20260115.pdf` - Consolidated approval matrix
 - `Security_Review_Signoff_20260115.pdf` - Security team approval of technique selections
 - `Compliance_Officer_Review_20260115.pdf` - Compliance confirmation of regulatory alignment
-- `CISO_Final_Approval_20260115.pdf` - CISO sign-off for deployment authorization
+- `CISO_Final_Approval_20260115.pdf` - CISO sign-off for deployment authorisation
 
 ---
 
@@ -2706,7 +2716,7 @@ Problem: Vague description, inaccessible location, no context
 - Backup retention matches evidence retention period (7 years)
 - Test restore process quarterly
 
-**Organization:**
+**Organisation:**
 ```
 /compliance/data-masking/
   ├── technique-selection/
@@ -2799,7 +2809,7 @@ Problem: Vague description, inaccessible location, no context
 **Step 4: CISO Final Approval**
 
 - **When:** After all above approvals obtained
-- **What:** CISO authorizes deployment of masking implementations
+- **What:** CISO authorises deployment of masking implementations
 - **Evidence:** CISO sign-off in Summary_Dashboard sheet
 
 ---
@@ -2846,11 +2856,6 @@ Problem: Vague description, inaccessible location, no context
 - Implement comprehensive testing (irreversibility, functionality, performance)
 - Document test results
 
-➡️ **ISMS-IMP-A.8.11.5 (Compliance Dashboard)**
-
-- Technique selection status feeds into overall compliance score
-- Gap analysis feeds into remediation roadmap
-- Evidence register consolidates with other assessments
 
 ---
 
@@ -2902,7 +2907,7 @@ Problem: Vague description, inaccessible location, no context
 
 ---
 
-*"The right masking technique is the one that protects data, maintains functionality, meets regulations, and can be validated. If you can't prove it works, it doesn't work."*
-— Data Protection Maxim
+*"The right mask protects the sensitive without destroying the useful."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

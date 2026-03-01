@@ -7,282 +7,156 @@
 
 **Document Control**
 
-| Field | Value |
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Role-Function Mapping |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.3.3-TG |
+| **Related Policy** | ISMS-POL-A.5.3 (Segregation of Duties) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.3 (Policies for Segregation of Duties) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Control Reference** | ISO/IEC 27001:2022 - A.5.3 Segregation of Duties |
-| **Parent Policy** | ISMS-POL-A.5.3 - Segregation of Duties |
-| **Owner** | CISO |
 | **Classification** | Internal |
-| **Last Updated** | [Date to be set] |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.3.3-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.3 (Segregation of Duties)
+- ISMS-IMP-A.5.3.1 (SoD Matrix Assessment)
+- ISMS-IMP-A.5.3.2 (Conflict Analysis)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a53_3_role_function_mapping.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.3.3` |
-| **Output Filename** | `ISMS-IMP-A.5.3.3_Role_Function_Mapping_YYYYMMDD.xlsx` |
-| **Workbook Title** | Role Function Mapping |
-| **Total Sheets** | 9 (9 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #1F4E79 | 1F4E79 | Custom |
-| #2F5496 | 2F5496 | Dark Blue (Alt Headers) |
-| #F2F2F2 | F2F2F2 | Very Light Gray (Protected/Alternating) |
-| #FABF8F | FABF8F | Custom |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Business_Roles
+## Generator Alignment Reference
 
-**Data Rows:** 199 (rows 2–200)
+> Auto-generated from `generate_a53_3_role_function_mapping.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-### Columns
+**Document ID:** `ISMS-IMP-A.5.3.3`
 
-| Col | Header |
-|-----|--------|
-| A | Business_Role_ID |
-| B | Role_Name |
-| C | Department |
-| D | Process_Domain |
-| E | Role_Owner |
-| F | Description |
-| G | Risk_Level |
-| H | Last_Reviewed |
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Data Validations
+### Sheet Structure
 
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C2:C200 | `dept_dv` |
-| D | D2:D200 | `domain_dv` |
-| G | G2:G200 | `risk_dv` |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Business Roles |
+| 3 | Application Roles |
+| 4 | Functions |
+| 5 | Permissions |
+| 6 | Role Function Map |
+| 7 | Function Conflicts |
+| 8 | Validation Status |
+| 9 | Change Log |
+| 10 | Summary Dashboard |
+| 11 | Approval Sign-Off |
 
----
+### Color Palette
 
-## Sheet 3: Application_Roles
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-**Data Rows:** 199 (rows 2–200)
+### Column Headers (All Sheets)
 
-### Columns
+| # | Column Header |
+|---|--------------|
+| 1 | SAP ERP |
+| 2 | T-Code FK01 |
+| 3 | Risk Officer |
+| 4 | Permission Added |
+| 5 | Finance Director |
+| 6 | FINAL DECISION: |
+| 7 | Business Role ID |
+| 8 | Role Name |
+| 9 | Department |
+| 10 | Process Domain |
+| 11 | Role Owner |
+| 12 | Description |
+| 13 | Risk Level |
+| 14 | Last Reviewed |
+| 15 | App Role ID |
+| 16 | Application |
+| 17 | Role Type |
+| 18 | Business Roles |
+| 19 | Criticality |
+| 20 | Review Frequency |
+| 21 | Function ID |
+| 22 | Function Name |
+| 23 | Category |
+| 24 | Process |
+| 25 | SoD Sensitive |
+| 26 | Permission ID |
+| 27 | Permission Name |
+| 28 | Permission Type |
+| 29 | Data Scope |
+| 30 | Special Conditions |
+| 31 | Mapping ID |
+| 32 | Grant Type |
+| 33 | Justification |
+| 34 | Effective Date |
+| 35 | Expiry Date |
+| 36 | Conflict ID |
+| 37 | Function A |
+| 38 | Function B |
+| 39 | Conflict Type |
+| 40 | Mitigation |
+| 41 | Validation ID |
+| 42 | Role ID |
+| 43 | Validation Date |
+| 44 | Validator |
+| 45 | Documented Functions |
+| 46 | Actual Functions |
+| 47 | Discrepancies |
+| 48 | Status |
+| 49 | Resolution |
+| 50 | Change ID |
+| 51 | Change Date |
+| 52 | Change Type |
+| 53 | Requested By |
+| 54 | Approved By |
+| 55 | Ticket Reference |
 
-| Col | Header |
-|-----|--------|
-| A | App_Role_ID |
-| B | Application |
-| C | Role_Name |
-| D | Role_Type |
-| E | Description |
-| F | Business_Roles |
-| G | Criticality |
-| H | Review_Frequency |
+### Data Validation Values
 
-### Data Validations
+All dropdown/list values used across sheets:
 
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| D | D2:D200 | `type_dv` |
-| G | G2:G200 | `crit_dv` |
-| H | H2:H200 | `freq_dv` |
+```
+Yes, No, Approved, Approved with Conditions, Rejected, Deferred, Draft, Final
+Requires remediation, Re-assessment required
+```
 
----
-
-## Sheet 4: Functions
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Function_ID |
-| B | Function_Name |
-| C | Category |
-| D | Application |
-| E | Process |
-| F | Description |
-| G | Risk_Level |
-| H | SoD_Sensitive |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| C | C2:C200 | `cat_dv` |
-| G | G2:G200 | `risk_dv` |
-| H | H2:H200 | `sod_dv` |
-
----
-
-## Sheet 5: Permissions
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Permission_ID |
-| B | Function_ID |
-| C | Application |
-| D | Permission_Name |
-| E | Permission_Type |
-| F | Description |
-| G | Data_Scope |
-| H | Special_Conditions |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| E | E2:E200 | `type_dv` |
-
----
-
-## Sheet 6: Role_Function_Map
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Mapping_ID |
-| B | Business_Role_ID |
-| C | App_Role_ID |
-| D | Function_ID |
-| E | Grant_Type |
-| F | Justification |
-| G | Effective_Date |
-| H | Expiry_Date |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| E | E2:E200 | `grant_dv` |
-
----
-
-## Sheet 7: Function_Conflicts
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Conflict_ID |
-| B | Function_A |
-| C | Function_B |
-| D | Conflict_Type |
-| E | Risk_Level |
-| F | Justification |
-| G | Mitigation |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| D | D2:D200 | `type_dv` |
-| E | E2:E200 | `risk_dv` |
-
----
-
-## Sheet 8: Validation_Status
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Validation_ID |
-| B | Role_ID |
-| C | Validation_Date |
-| D | Validator |
-| E | Documented_Functions |
-| F | Actual_Functions |
-| G | Discrepancies |
-| H | Status |
-| I | Resolution |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| H | H2:H200 | `status_dv` |
-
----
-
-## Sheet 9: Change_Log
-
-**Data Rows:** 199 (rows 2–200)
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Change_ID |
-| B | Change_Date |
-| C | Role_ID |
-| D | Change_Type |
-| E | Description |
-| F | Requested_By |
-| G | Approved_By |
-| H | Ticket_Reference |
-
-### Data Validations
-
-| Column | Range | Validation Variable |
-|--------|-------|---------------------|
-| D | D2:D200 | `type_dv` |
-
----
-
-## Data Validation Dropdown Lists
-
-All dropdown value lists defined in the generator:
-
-| Variable | Values |
-|----------|--------|
-| `CHANGE_TYPES` | Permission Added, Permission Removed, Function Modified, Role Created, Role Deleted |
-| `CONFLICT_TYPES` | X, C, M |
-| `DEPARTMENTS` | Executive, Finance, IT, Operations, HR, Legal, Sales, Marketing, Engineering, Support, Procuremen... |
-| `FUNCTION_CATEGORIES` | Create, Read, Update, Delete, Approve, Execute, Admin |
-| `GRANT_TYPES` | Direct, Inherited, Delegated, Emergency |
-| `PERMISSION_TYPES` | Transaction, Report, API, Config, Data |
-| `PROCESS_DOMAINS` | Financial, IT Operations, HR, Procurement, Security, Change Management, Other |
-| `REVIEW_FREQUENCIES` | Monthly, Quarterly, Semi-Annual, Annual |
-| `RISK_LEVELS` | Critical, High, Medium, Low |
-| `ROLE_TYPES` | Composite, Single |
-| `VALIDATION_STATUSES` | Validated, Requires Investigation, Remediated, Deferred |
+**Extracted:** 11 sheets, 55 columns, 10 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

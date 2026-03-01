@@ -8,26 +8,59 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Secure Configuration & Deployment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.23.S3-UG |
+| **Related Policy** | ISMS-POL-A.5.23 (Cloud Services) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.23 (Information Security for Use of Cloud Services) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Secure Configuration & Deployment |
-| **Related Policy** | ISMS-POL-A.5.19-23-S5 (Cloud Services Security - Sections 5, 9) |
-| **Purpose** | Assess and document secure configuration of cloud services across identity, data protection, network, logging, and backup controls |
-| **Target Audience** | IT Operations, Cloud Operations, DevOps Engineers, Cloud Security Engineers, Platform Engineering |
-| **Assessment Type** | Technical Configuration Assessment |
-| **Review Cycle** | Quarterly (with continuous monitoring) |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial Excel workbook specification | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.23 (Cloud Services)
+- ISMS-IMP-A.5.23.S1 (Cloud Service Inventory & Classification)
+- ISMS-IMP-A.5.23.S2 (Vendor Due Diligence & Contracts)
+- ISMS-IMP-A.5.23.S4 (Ongoing Governance & Risk Management)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.23.S3-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 10 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **2. Configuration Baseline** | Baseline security configuration requirements and compliance status |
+| **3. Access Control Setup** | Cloud access control configuration and IAM assessment |
+| **4. Network Security** | Network segmentation, firewall, and connectivity security settings |
+| **5. Encryption Configuration** | Encryption-at-rest and in-transit configuration assessment |
+| **6. Deployment Checklist** | Security checklist for cloud service deployment and go-live |
+| **7. Jurisdictional Risk** | Legal and regulatory risk by deployment jurisdiction |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -438,7 +471,7 @@ For EACH cloud service, across 5 security layers:
 
 ### Evidence Repository Structure
 
-**Folder Organization:**
+**Folder Organisation:**
 ```
 /ISMS/Evidence/A.5.23.3/
     ├── AWS_Cloud/
@@ -635,7 +668,7 @@ This section provides configuration assessment guidance for each security layer 
 
 ### Purpose
 
-Verify that identity and access controls are properly configured to prevent unauthorized access. Strong IAM is the first line of defense - even encrypted data is useless if attackers can log in with stolen credentials.
+Verify that identity and access controls are properly configured to prevent unauthorised access. Strong IAM is the first line of defense - even encrypted data is useless if attackers can log in with stolen credentials.
 
 **Success Criterion:** All Critical/High services enforce MFA for all users, use SSO for centralized identity, implement RBAC with least privilege, and conduct quarterly access reviews.
 
@@ -880,7 +913,7 @@ For each service:
 
 ### Purpose
 
-Verify network controls prevent unauthorized access and lateral movement. Defense-in-depth requires network segmentation, even with strong IAM.
+Verify network controls prevent unauthorised access and lateral movement. Defense-in-depth requires network segmentation, even with strong IAM.
 
 **Success Criterion:** All Critical services restrict access to corporate IP ranges or VPN, implement API security controls, and log all network events.
 
@@ -890,7 +923,7 @@ For each service:
 
 - IP allowlisting/denylisting (restrict source IPs)
 - VPN/private connectivity requirements
-- API authentication and authorization
+- API authentication and authorisation
 - API rate limiting (prevent abuse)
 - Network segmentation (isolation between environments)
 - Network logging and monitoring
@@ -927,7 +960,7 @@ For each service:
 | API Control | What to Check | Evidence |
 |-------------|---------------|----------|
 | **Authentication** | API keys, OAuth tokens, mTLS | Auth config screenshot |
-| **Authorization** | Scope limits, RBAC for APIs | Permission model export |
+| **Authorisation** | Scope limits, RBAC for APIs | Permission model export |
 | **Rate Limiting** | Requests/second limits | Rate limit config |
 | **Input Validation** | Reject malformed requests | WAF rules, API gateway config |
 | **TLS for APIs** | All API calls over HTTPS | API endpoint test |
@@ -1276,7 +1309,7 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
 
 ### Evidence Repository Structure
 
-**Folder Organization:**
+**Folder Organisation:**
 ```
 /ISMS/Evidence/A.5.23.3/
     ├── [Service_Name]/
@@ -1457,7 +1490,7 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
     ☐ All evidence is current (<30 days old)
     ☐ Config exports show complete settings (not partial)
     ☐ Screenshots show URL + timestamp
-    ☐ Evidence organized in folder structure
+    ☐ Evidence organised in folder structure
 
 ☐ CONFIGURATION ACCURACY
     ☐ IaC (Terraform/CloudFormation) matches actual deployed config
@@ -1727,7 +1760,7 @@ Step 5: Archive & Implement (Config remediation, IaC updates)
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Security is always excessive until it is not enough."*
+— Robbie Sinclair
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

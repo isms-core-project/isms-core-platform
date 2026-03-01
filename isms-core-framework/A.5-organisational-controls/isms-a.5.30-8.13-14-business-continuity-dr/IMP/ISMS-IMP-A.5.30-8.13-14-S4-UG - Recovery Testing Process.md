@@ -8,21 +8,51 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Recovery Testing Process |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.30-8.13-14-S4-UG |
+| **Related Policy** | ISMS-POL-A.5.30-8.13-14-S4 (Business Continuity Dr) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.13 (Information Backup) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Business Continuity & Disaster Recovery Testing |
-| **Related Policy** | ISMS-POL-A.5.30-8.13-14, Section 2.4 (Testing Requirements) |
-| **Related Assessments** | IMP-S1 (BIA), IMP-S2 (Backup), IMP-S3 (Redundancy) |
-| **Purpose** | Define comprehensive testing methodology for backup restoration, failover validation, and full DR scenario exercises |
-| **Target Audience** | BC/DR Coordinator, IT Operations, System Administrators, DBAs, Management |
-| **Assessment Type** | Operational Testing |
-| **Review Cycle** | After Each Test + Annual Methodology Review |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.30-8.13-14-S4 (Business Continuity Dr)
+- ISMS-IMP-A.5.30-8.13-14-S1 (BIA and RPO:RTO Process)
+- ISMS-IMP-A.5.30-8.13-14-S2 (Backup Implementation)
+- ISMS-IMP-A.5.30-8.13-14-S3 (Redundancy Implementation)
 
 ---
 
-**Audience:** Security assessors, Control owners, Compliance officers
+### Workbook at a Glance
+
+This workbook contains the following 8 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Test Schedule** | BC/DR test schedule, planned exercises, and assignments |
+| **Test Results Log** | Results log for completed BC/DR tests and exercises |
+| **Issue Remediation** | Issues identified during testing with remediation tracking |
+| **Testing Compliance** | Compliance metrics for test frequency and coverage requirements |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -61,7 +91,7 @@ Level 3: Full DR Scenario (IMP-S4)
 
 **Testing Outputs:**
 
-Upon completion, [Organization] will have:
+Upon completion, [Organisation] will have:
 
 1. **Tested Recovery Capability** - Proven ability to recover from disasters
 2. **Documented Test Results** - Evidence for audits and compliance
@@ -356,7 +386,7 @@ Approved: [CISO] [Date]
 
 ## DR Scenario Overview
 
-**Purpose:** Simulate site-wide disaster and complete organizational recovery
+**Purpose:** Simulate site-wide disaster and complete organisational recovery
 
 **Frequency:** Annual (Tier 1 systems)
 
@@ -610,7 +640,7 @@ This section describes the 6 sheets in the **Recovery Testing Assessment Workboo
 - **Average RPO Achievement:** Are we meeting RPO requirements? (% of tests that met RPO)
 - **Issues Identified (Open vs Closed):** How many issues from tests are still pending?
 - **Tier 1 Test Coverage:** What % of Tier 1 systems have been tested in last 12 months?
-- **DR Scenario Readiness Score:** Overall organization readiness (calculated from test results)
+- **DR Scenario Readiness Score:** Overall organisation readiness (calculated from test results)
 
 **Instructions:**
 1. Dashboard auto-populates from Sheet 2 (Test_Results)
@@ -763,11 +793,6 @@ This section describes the 6 sheets in the **Recovery Testing Assessment Workboo
 - Component tests prove failover works
 - Integration tests prove redundant systems function together
 
-**To IMP-S5 (Assessment):**
-
-- Testing results feed BC/DR maturity score
-- Gap identification drives improvement priorities
-
 ---
 
 # Regulatory Compliance Evidence
@@ -791,7 +816,7 @@ This section describes the 6 sheets in the **Recovery Testing Assessment Workboo
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Untested plans are merely untested assumptions."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

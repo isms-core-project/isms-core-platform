@@ -45,7 +45,6 @@
 - ISMS-IMP-A.8.27.2-UG/TG (Threat Modelling Methodology)
 - ISMS-IMP-A.8.27.3-UG/TG (Secure Architecture Pattern Catalogue)
 - ISMS-IMP-A.8.27.4-UG/TG (Zero Trust Implementation Assessment)
-- ISMS-IMP-A.8.27.5-UG/TG (SSE Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.8.27
 - INCOSE Systems Engineering Handbook, 5th Edition (2023)
 - NIST SP 800-160 Vol. 1 Rev. 1 - Engineering Trustworthy Secure Systems
@@ -519,7 +518,6 @@ Architecture policy exceptions require:
 | **ISMS-IMP-A.8.27.2-UG/TG** | Threat Modelling Methodology |
 | **ISMS-IMP-A.8.27.3-UG/TG** | Secure Architecture Pattern Catalogue |
 | **ISMS-IMP-A.8.27.4-UG/TG** | Zero Trust Implementation Assessment |
-| **ISMS-IMP-A.8.27.5-UG/TG** | SSE Compliance Dashboard |
 
 ## External References
 
@@ -606,5 +604,5 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes [Organisation]'s foundational requirements for Secure Systems Engineering — the cornerstone of ISMS CORE. Implementation procedures are documented in ISMS-IMP-A.8.27 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->
 

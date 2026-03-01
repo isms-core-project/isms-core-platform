@@ -70,7 +70,7 @@ This document provides technical reference for log format standards, field namin
 - Technical implementation of logging requirements per ISMS-POL-A.8.15
 - Selection of appropriate log formats based on system type and integration requirements
 - Development of log parsing rules and SIEM integration
-- Standardization of field names across organizational log sources
+- Standardization of field names across organisational log sources
 - Understanding of industry standard log formats (Syslog, CEF, JSON)
 - Future log format evolution and parser maintenance
 
@@ -78,7 +78,7 @@ This document provides technical reference for log format standards, field namin
 
 This document does NOT:
 
-- Define [Organization]'s approved or prohibited log formats
+- Define [Organisation]'s approved or prohibited log formats
 - Establish mandatory implementation requirements or technical controls
 - Create compliance obligations or audit criteria
 - Replace ISMS-POL-A.8.15 policy requirements
@@ -91,9 +91,9 @@ This document is a **non-binding technical reference**. All logging control requ
 
 Implementation decisions are documented through ISMS-IMP-A.8.15 procedures based on risk assessment, operational context, and regulatory requirements.
 
-## Content Organization
+## Content Organisation
 
-This reference organizes log format standards by:
+This reference organises log format standards by:
 
 - Syslog format (RFC 5424) for infrastructure and network devices
 - Common Event Format (CEF) for security tools and SIEM integration
@@ -150,7 +150,7 @@ This reference organizes log format standards by:
 | 3 | daemon | System daemons |
 | 4 | auth | Security/authentication |
 | 5 | syslog | Syslog internal |
-| 10 | authpriv | Security/authorization (private) |
+| 10 | authpriv | Security/authorisation (private) |
 | 16 | local0-7 | Local use (custom applications) |
 
 **Severity Levels**:
@@ -423,7 +423,7 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 **Production Logging Recommendation**:
 
 - **Security logs**: INFO and above (INFO for success, WARN for policy violations, ERROR for attacks)
-- **Application logs**: WARN and above (minimize noise while capturing issues)
+- **Application logs**: WARN and above (minimise noise while capturing issues)
 - **DEBUG/TRACE**: Disabled in production (enable temporarily for troubleshooting with performance consideration)
 
 ## Structured Context
@@ -575,7 +575,7 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - Eliminates timezone conversion errors
 - Simplifies correlation across geographic locations
 - Avoids daylight saving time complications
-- Universal reference for multi-site organizations
+- Universal reference for multi-site organisations
 
 **Local Time with Offset** (Alternative):
 
@@ -630,7 +630,7 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 | **camelCase** | `sourceIp`, `userId`, `eventType` | JavaScript applications, some SIEMs |
 | **dot.notation** | `event.type`, `user.id`, `source.ip` | ECS (Elastic Common Schema), nested fields |
 
-**Recommendation**: Choose ONE convention and use consistently across organization. snake_case is increasingly common for security logging.
+**Recommendation**: Choose ONE convention and use consistently across organisation. snake_case is increasingly common for security logging.
 
 ## Standard Field Names
 
@@ -655,7 +655,7 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 **Action Fields**:
 
 - `action` / `event_action` - Action performed (login, create, delete, read, update)
-- `event_type` / `event_category` - Event category (authentication, authorization, configuration)
+- `event_type` / `event_category` - Event category (authentication, authorisation, configuration)
 - `outcome` / `result` - Result (success, failure, error)
 - `reason` - Reason for outcome or action
 - `severity` / `level` - Severity level
@@ -701,7 +701,7 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 **USE**:
 
 - Descriptive, self-documenting names
-- Consistent terminology across organization
+- Consistent terminology across organisation
 - Standard names from ECS (Elastic Common Schema) where applicable
 
 ---
@@ -886,7 +886,7 @@ This document provides **technical implementation guidance** that may inform:
 
 - Log format selection during system onboarding (ISMS-IMP-A.8.15.1)
 - Log parser development for SIEM integration (ISMS-IMP-A.8.15.2)
-- Field name standardization across organizational log sources
+- Field name standardization across organisational log sources
 - Training for developers and system administrators on logging standards
 
 This document does NOT:

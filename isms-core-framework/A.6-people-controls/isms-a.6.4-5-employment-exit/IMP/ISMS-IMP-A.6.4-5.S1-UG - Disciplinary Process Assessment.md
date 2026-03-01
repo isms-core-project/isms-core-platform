@@ -5,24 +5,57 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Disciplinary Process Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.4-5.S1-UG |
-| **Title** | Disciplinary Process Assessment |
-| **Control Reference** | ISO/IEC 27001:2022 A.6.4, A.6.5 |
-| **Control Name** | Disciplinary Process / Responsibilities After Termination |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.6.4-5 (Employment Exit) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.4, A.6.5) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Chief Human Resources Officer (CHRO) |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.4-5 (Employment Exit)
+- ISMS-IMP-A.6.4-5.S2 (Employment Exit Assessment)
+- ISMS-IMP-A.6.4-5.S3 (Post Employment Obligations)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.6.4-5.S1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Violation Categories | Define and classify information security violation types |
+| 3 | Response Matrix | Map violation categories to graduated disciplinary responses |
+| 4 | Investigation Process | Document investigation procedures and evidence standards |
+| 5 | Case Tracker | Track active and resolved disciplinary cases |
+| 6 | Evidence Register | Store and reference evidence from disciplinary proceedings |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -292,7 +325,7 @@ Document all information security violation categories:
 #### Column B: Category_Name
 
 - **Format:** Descriptive name
-- **Example:** Unauthorized Data Sharing
+- **Example:** Unauthorised Data Sharing
 - **Rules:** Clear, unambiguous terminology
 
 #### Column C: Severity_Level
@@ -879,7 +912,7 @@ Upon approval:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Discipline is the bridge between goals and accomplishment."*
+— Jim Rohn
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

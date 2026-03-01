@@ -3,26 +3,53 @@
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.8.30: Outsourced Development
 
-## Document Control
+---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Vendor Assessment and Registry |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.30.1-UG |
-| **Document Title** | Vendor Assessment and Registry Workbook Specification |
-| **Control Reference** | ISO/IEC 27001:2022 - Control A.8.30: Outsourced Development |
-| **Parent Policy** | ISMS-POL-A.8.30 (Outsourced Development) |
+| **Related Policy** | ISMS-POL-A.8.30 (Outsourced Development) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.30 (Outsourced Development) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
 | **Classification** | Internal |
+| **Status** | Draft |
 
 **Version History**:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | CISO/ISO | Initial implementation specification for ISO 27001:2022 first certification |
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.30 (Outsourced Development)
+- ISMS-IMP-A.8.30.2 (Contract Compliance)
+- ISMS-IMP-A.8.30.3 (Security Testing and Acceptance)
 
 ---
 
-This section provides step-by-step guidance for completing the Vendor Assessment and Registry workbook. Follow this guide to ensure comprehensive vendor security evaluations that satisfy ISO 27001:2022 audit requirements.
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Vendor Registry | Central registry of all outsourced development vendors |
+| 3 | Security Assessment | Vendor security posture assessment and scoring |
+| 4 | Due Diligence | Due diligence records and evidence for each vendor |
+| 5 | Environment Security | Assessment of vendor development environment security |
+| 6 | Evidence Register | Store and reference evidence supporting assessments |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -91,7 +118,7 @@ Upon completion, this workbook provides:
 | Risk Tier Classifications | Risk-based engagement requirements | IT Security, Project Leads |
 | Due Diligence Records | Audit evidence of vendor evaluation | Internal/External Auditors |
 | Assessment Recommendations | Approval/conditional/rejection decisions | Management, Procurement |
-| Compliance Dashboard Data | Metrics for security monitoring | CISO, Management |
+| Summary Dashboard Data | Metrics for security monitoring | CISO, Management |
 | Evidence Package | ISO 27001 audit documentation | External Auditors |
 
 ---
@@ -794,7 +821,7 @@ Submit to Approval Authority
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"You cannot outsource accountability."*
+— Anon
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

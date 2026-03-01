@@ -25,7 +25,7 @@
 |---------|------|--------|---------|
 | 1.0 | [Date] | CISO / Endpoint Security Manager | Initial framework - Combined controls A.8.1, A.8.7, A.8.18, A.8.19 |
 
-**Review Cycle**: Annual (or upon significant organizational/regulatory/technology changes)  
+**Review Cycle**: Annual (or upon significant organisational/regulatory/technology changes)  
 **Next Review Date**: [Effective Date + 12 months]
 
 **Approval Chain**:
@@ -40,11 +40,9 @@
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-IMP-A.8.1-7-18-19-S1-UG/TG (Endpoint Discovery Process)
-- ISMS-IMP-A.8.1-7-18-19-S2-UG/TG (Security Baseline Implementation)
-- ISMS-IMP-A.8.1-7-18-19-S3-UG/TG (Malware Protection Deployment)
-- ISMS-IMP-A.8.1-7-18-19-S4-UG/TG (Software Control Process)
-- ISMS-IMP-A.8.1-7-18-19-S5-UG/TG (Privileged Utility Management)
-- ISMS-IMP-A.8.1-7-18-19-S6-UG/TG (Endpoint Security Assessment)
+- ISMS-IMP-A.8.1-7-18-19-S2-UG/TG (Malware Protection Deployment)
+- ISMS-IMP-A.8.1-7-18-19-S3-UG/TG (Software Control Process)
+- ISMS-IMP-A.8.1-7-18-19-S4-UG/TG (Privileged Utility Management)
 - ISMS-POL-A.5.9 (Asset Inventory)
 - ISMS-POL-A.8.2 (Privileged Access Rights)
 - ISMS-POL-A.8.8 (Vulnerability Management)
@@ -57,11 +55,11 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for endpoint security, implementing ISO/IEC 27001:2022 Controls A.8.1 (User Endpoint Devices), A.8.7 (Protection Against Malware), A.8.18 (Use of Privileged Utility Programs), and A.8.19 (Installation of Software on Operational Systems) as a unified security framework.
+This policy establishes [Organisation]'s requirements for endpoint security, implementing ISO/IEC 27001:2022 Controls A.8.1 (User Endpoint Devices), A.8.7 (Protection Against Malware), A.8.18 (Use of Privileged Utility Programs), and A.8.19 (Installation of Software on Operational Systems) as a unified security framework.
 
 **Scope**: This policy applies to all user endpoint devices regardless of type (laptops, desktops, mobile devices, tablets, IoT devices), operating system (Windows, macOS, Linux, iOS, Android, ChromeOS), or ownership model (corporate-owned, BYOD, contractor, guest).
 
-**Purpose**: Define organizational requirements for endpoint security control implementation and governance. This policy establishes WHAT endpoint security protection is required, WHEN it must be implemented, and WHO is accountable. Implementation procedures (HOW controls are implemented) are documented separately in ISMS-IMP-A.8.1-7-18-19 (UG/TG variants).
+**Purpose**: Define organisational requirements for endpoint security control implementation and governance. This policy establishes WHAT endpoint security protection is required, WHEN it must be implemented, and WHO is accountable. Implementation procedures (HOW controls are implemented) are documented separately in ISMS-IMP-A.8.1-7-18-19 (UG/TG variants).
 
 **Combined Control Rationale**: A.8.1 (endpoint devices), A.8.7 (malware protection), A.8.18 (privileged utilities), and A.8.19 (software installation) are implemented as a unified framework because:
 
@@ -73,7 +71,7 @@ This policy establishes [Organization]'s requirements for endpoint security, imp
 
 **Statement of Applicability Independence**: Despite unified implementation and documentation, Controls A.8.1, A.8.7, A.8.18, and A.8.19 are assessed independently in the Statement of Applicability. Each control maintains distinct requirements, evidence collection, and compliance scoring for audit purposes.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss Federal Data Protection Act (nDSG/FADP), EU GDPR where applicable, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, HIPAA, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss Federal Data Protection Act (nDSG/FADP), EU GDPR where applicable, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, HIPAA, FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -83,13 +81,13 @@ This policy establishes [Organization]'s requirements for endpoint security, imp
 
 **ISO/IEC 27001:2022 Annex A.8.1, A.8.7, A.8.18, A.8.19 – Endpoint Security**
 
-This policy framework provides organizational governance for four related controls covering the complete endpoint security ecosystem:
+This policy framework provides organisational governance for four related controls covering the complete endpoint security ecosystem:
 
 ### A.8.1 - User Endpoint Devices
 
 > *Information stored on, processed by or accessible via user endpoint devices shall be protected.*
 
-**Control Objective**: Ensure that information on user endpoint devices is protected against risks arising from endpoint usage, including loss, theft, unauthorized access, malware infection, and inadequate security configurations.
+**Control Objective**: Ensure that information on user endpoint devices is protected against risks arising from endpoint usage, including loss, theft, unauthorised access, malware infection, and inadequate security configurations.
 
 **This Policy Addresses** (A.8.1):
 
@@ -122,7 +120,7 @@ This policy framework provides organizational governance for four related contro
 
 > *Use of utility programs that might be capable of overriding system and application controls shall be restricted and tightly controlled.*
 
-**Control Objective**: Ensure that privileged utilities that can bypass or override security controls are identified, restricted to authorized users only, used appropriately, and their usage is monitored and logged.
+**Control Objective**: Ensure that privileged utilities that can bypass or override security controls are identified, restricted to authorised users only, used appropriately, and their usage is monitored and logged.
 
 **This Policy Addresses** (A.8.18):
 
@@ -136,14 +134,14 @@ This policy framework provides organizational governance for four related contro
 
 > *Procedures and measures shall be implemented to securely manage the installation of software on operational systems.*
 
-**Control Objective**: Ensure that software installations on operational systems are controlled, authorized, and do not introduce security vulnerabilities or malware.
+**Control Objective**: Ensure that software installations on operational systems are controlled, authorised, and do not introduce security vulnerabilities or malware.
 
 **This Policy Addresses** (A.8.19):
 
 - Approved software list requirements
 - Software approval process requirements
 - Change control integration requirements
-- Unauthorized software detection and removal requirements
+- Unauthorised software detection and removal requirements
 - Application control technology requirements
 - Software vulnerability management requirements
 - BYOD software control requirements
@@ -152,11 +150,11 @@ This policy framework provides organizational governance for four related contro
 
 This policy:
 
-- **Defines** endpoint security control requirements aligned with data classification, organizational risk appetite, and regulatory obligations
+- **Defines** endpoint security control requirements aligned with data classification, organisational risk appetite, and regulatory obligations
 - **Establishes** governance framework for endpoint security decision-making and accountability
 - **Specifies** mandatory control implementation requirements (WHAT must be implemented)
 - **References** applicable regulatory requirements per ISMS-POL-00
-- **Identifies** organizational roles and responsibilities for endpoint security governance
+- **Identifies** organisational roles and responsibilities for endpoint security governance
 - **Provides** framework for managing exceptions and incidents
 
 ## What This Policy Does NOT Do
@@ -165,13 +163,12 @@ This policy does NOT:
 
 - **Specify technical implementation procedures** (see ISMS-IMP-A.8.1-7-18-19 Implementation Guides)
 - **Define specific endpoint discovery methods** (see ISMS-IMP-A.8.1-7-18-19-S1 Endpoint Discovery Process)
-- **List security baseline configurations** (see ISMS-IMP-A.8.1-7-18-19-S2 Security Baseline Implementation)
-- **Provide anti-malware deployment procedures** (see ISMS-IMP-A.8.1-7-18-19-S3 Malware Protection Deployment)
-- **Detail software approval workflows** (see ISMS-IMP-A.8.1-7-18-19-S4 Software Control Process)
-- **Specify privileged utility access controls** (see ISMS-IMP-A.8.1-7-18-19-S5 Privileged Utility Management)
-- **Define assessment methodologies** (see ISMS-IMP-A.8.1-7-18-19-S6 Endpoint Security Assessment)
-- **Select specific technologies or vendors** (technology selection based on [Organization]'s risk assessment, technical environment, and budget)
-- **Replace risk assessment** (endpoint security controls selected based on [Organization]'s risk treatment decisions)
+- **List security baseline configurations** (see ISMS-IMP-A.8.1-7-18-19-S1 Endpoint Discovery Process)
+- **Provide anti-malware deployment procedures** (see ISMS-IMP-A.8.1-7-18-19-S2 Malware Protection Deployment)
+- **Detail software approval workflows** (see ISMS-IMP-A.8.1-7-18-19-S3 Software Control Process)
+- **Specify privileged utility access controls** (see ISMS-IMP-A.8.1-7-18-19-S4 Privileged Utility Management)
+- **Select specific technologies or vendors** (technology selection based on [Organisation]'s risk assessment, technical environment, and budget)
+- **Replace risk assessment** (endpoint security controls selected based on [Organisation]'s risk treatment decisions)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
@@ -188,7 +185,7 @@ This policy does NOT:
 - Laptops and desktops (corporate-owned and BYOD, all operating systems)
 - Mobile devices (smartphones and tablets - iOS, Android, other mobile OS)
 - Specialized endpoints (thin clients, chromebooks, kiosks, point-of-sale terminals)
-- IoT devices that store, process, or access organizational information
+- IoT devices that store, process, or access organisational information
 - Virtual desktop infrastructure (VDI/DaaS client-side security components)
 
 **Operating Systems**:
@@ -202,7 +199,7 @@ This policy does NOT:
 
 **Ownership Models**:
 
-- Corporate-Owned: Devices purchased and managed by [Organization]
+- Corporate-Owned: Devices purchased and managed by [Organisation]
 - BYOD (Bring Your Own Device): Personal devices used for work purposes
 - Contractor Devices: Devices owned by contractors, consultants, temporary staff
 - Guest Devices: Temporary visitor devices with limited network access
@@ -257,7 +254,7 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 
 | Regulation | Applicability | Key Requirements |
 |------------|---------------|------------------|
-| **Swiss nDSG** | All Swiss operations | Art. 8 - Appropriate technical and organizational measures for data protection |
+| **Swiss nDSG** | All Swiss operations | Art. 8 - Appropriate technical and organisational measures for data protection |
 | **EU GDPR** | When processing EU personal data | Art. 32 - Security measures including encryption, access controls, malware protection |
 | **ISO/IEC 27001:2022** | Certification scope | Controls A.8.1, A.8.7, A.8.18, A.8.19 - Documented policy and implementation |
 
@@ -269,7 +266,7 @@ Apply only when specific business conditions trigger applicability:
 |-----------|-------------------|-------------------------------|
 | **PCI DSS v4.0.1** | Processing payment card data | Endpoint security for systems accessing cardholder data (Requirements 2, 5, 6, 10, 11) |
 | **HIPAA** | Processing protected health information (ePHI) | Technical safeguards including encryption, access controls, audit logging (45 CFR § 164.312) |
-| **FINMA** | Swiss regulated financial institution | Technical and organizational measures per risk assessment, operational risk management |
+| **FINMA** | Swiss regulated financial institution | Technical and organisational measures per risk assessment, operational risk management |
 | **DORA** | EU financial services entity | ICT risk management including endpoint security controls |
 | **NIS2** | Essential/important entity (EU) | Security measures for network and information systems including endpoints |
 
@@ -282,7 +279,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - CIS Controls v8.1 (Controls 1, 2, 4, 5, 7, 10, 16)
 - MITRE ATT&CK Framework
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment documented in ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment documented in ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.
 
 ---
 
@@ -294,7 +291,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ### Endpoint Inventory (Mandatory)
 
-[Organization] SHALL maintain a complete and current inventory of all user endpoint devices that store, process, or access organizational information.
+[Organisation] SHALL maintain a complete and current inventory of all user endpoint devices that store, process, or access organisational information.
 
 **Minimum Inventory Coverage**: ≥95% of network-connected endpoints (target: 100%)
 
@@ -304,7 +301,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ### Endpoint Classification (Mandatory)
 
-[Organization] SHALL classify endpoints by device type, ownership model, and criticality to apply appropriate security controls.
+[Organisation] SHALL classify endpoints by device type, ownership model, and criticality to apply appropriate security controls.
 
 **Classification Dimensions**:
 
@@ -316,7 +313,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ### Security Baselines (Mandatory)
 
-[Organization] SHALL implement security baselines appropriate to endpoint type and ownership model.
+[Organisation] SHALL implement security baselines appropriate to endpoint type and ownership model.
 
 **Universal Baseline Requirements** (all endpoints):
 
@@ -329,11 +326,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Baseline Compliance Monitoring**: Weekly automated compliance scanning minimum (daily preferred), monthly compliance reporting, ≥90% compliance target across all endpoints.
 
-**Implementation Note**: Detailed baseline specifications, enforcement mechanisms, and compliance monitoring procedures are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Security Baseline Implementation).
+**Implementation Note**: Detailed baseline specifications, enforcement mechanisms, and compliance monitoring procedures are defined in ISMS-IMP-A.8.1-7-18-19-S1 (Endpoint Discovery Process).
 
 ### Encryption (Mandatory)
 
-[Organization] SHALL implement encryption to protect data at rest on endpoints.
+[Organisation] SHALL implement encryption to protect data at rest on endpoints.
 
 **Full Disk Encryption Requirements**:
 
@@ -354,11 +351,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Exceptions**: Desktop computers in secure facilities MAY be exempted with CISO approval and compensating controls. Secure facilities are defined as: (a) Physically access-controlled areas with badge/biometric entry; (b) 24/7 monitoring or staffed reception; (c) No public access; (d) Documented in physical security register per A.7.1-4.
 
-**Implementation Note**: Encryption deployment procedures, key management, and verification methods are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Security Baseline Implementation).
+**Implementation Note**: Encryption deployment procedures, key management, and verification methods are defined in ISMS-IMP-A.8.1-7-18-19-S1 (Endpoint Discovery Process).
 
 ### Endpoint Management (Mandatory)
 
-[Organization] SHALL enroll all corporate-owned endpoints in an endpoint management system (MDM for mobile, agent-based for laptops/desktops).
+[Organisation] SHALL enroll all corporate-owned endpoints in an endpoint management system (MDM for mobile, agent-based for laptops/desktops).
 
 **Required Management Capabilities**:
 
@@ -376,21 +373,21 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Configuration Drift Management**: Weekly configuration compliance scans, automatic remediation where possible, drift remediated within 7 days.
 
-**Implementation Note**: Management platform selection, enrollment procedures, and configuration drift detection are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Security Baseline Implementation).
+**Implementation Note**: Management platform selection, enrollment procedures, and configuration drift detection are defined in ISMS-IMP-A.8.1-7-18-19-S1 (Endpoint Discovery Process).
 
 ### Lost/Stolen Device Response (Mandatory)
 
-[Organization] SHALL implement procedures for responding to lost or stolen endpoint devices.
+[Organisation] SHALL implement procedures for responding to lost or stolen endpoint devices.
 
 **Reporting Requirements**: Users SHALL report lost/stolen devices immediately (target: within 1 hour of discovery).
 
 **Remote Wipe Requirements**: Remote wipe capability SHALL be available for all corporate-owned endpoints, initiated within 4 hours of report (1 hour for critical devices).
 
-**Implementation Note**: Lost/stolen device reporting procedures, remote wipe workflows, and incident response are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Security Baseline Implementation).
+**Implementation Note**: Lost/stolen device reporting procedures, remote wipe workflows, and incident response are defined in ISMS-IMP-A.8.1-7-18-19-S1 (Endpoint Discovery Process).
 
 ### Secure Disposal (Mandatory)
 
-[Organization] SHALL securely dispose of endpoints when decommissioned to prevent data leakage.
+[Organisation] SHALL securely dispose of endpoints when decommissioned to prevent data leakage.
 
 **Disposal Requirements**:
 
@@ -404,11 +401,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Degaussing: For magnetic hard drives
 - Physical Destruction: Shredding, crushing, or incineration (certified vendor)
 
-**Implementation Note**: Disposal procedures, sanitization methods, and vendor selection are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Security Baseline Implementation) and ISMS-REF-A.8.10 (Deletion Methods Reference).
+**Implementation Note**: Disposal procedures, sanitization methods, and vendor selection are defined in ISMS-IMP-A.8.1-7-18-19-S1 (Endpoint Discovery Process) and ISMS-REF-A.8.10 (Deletion Methods Reference).
 
 ### BYOD Program (Conditional)
 
-[Organization] MAY implement a BYOD program allowing personal devices for work purposes, subject to security requirements and user privacy protections.
+[Organisation] MAY implement a BYOD program allowing personal devices for work purposes, subject to security requirements and user privacy protections.
 
 **BYOD Security Requirements**:
 
@@ -419,7 +416,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **BYOD Privacy Protections**: No personal data access, no personal app inventory, no full device control, container-only management, transparent privacy notice.
 
-**Implementation Note**: BYOD program design, user agreement templates, MAM configuration, and privacy protections are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Security Baseline Implementation).
+**Implementation Note**: BYOD program design, user agreement templates, MAM configuration, and privacy protections are defined in ISMS-IMP-A.8.1-7-18-19-S1 (Endpoint Discovery Process).
 
 ## Malware Protection (A.8.7)
 
@@ -427,7 +424,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ### Anti-Malware/EDR Solution (Mandatory)
 
-[Organization] SHALL deploy anti-malware or EDR solutions with multi-layered detection capabilities.
+[Organisation] SHALL deploy anti-malware or EDR solutions with multi-layered detection capabilities.
 
 **Required Detection Mechanisms**:
 
@@ -441,11 +438,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Tamper Protection**: Anti-malware/EDR agents SHALL have tamper protection enabled to prevent malware from disabling protection.
 
-**Implementation Note**: Solution selection, deployment architecture, and feature configuration are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Malware Protection Deployment).
+**Implementation Note**: Solution selection, deployment architecture, and feature configuration are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Malware Protection Deployment).
 
 ### Protection Coverage (Mandatory)
 
-[Organization] SHALL achieve malware protection coverage across endpoint landscape.
+[Organisation] SHALL achieve malware protection coverage across endpoint landscape.
 
 **Coverage Requirements**:
 
@@ -456,11 +453,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Gap Remediation**: Unprotected endpoint identified → protection deployed within 24 hours.
 
-**Implementation Note**: Coverage monitoring procedures, gap identification, and remediation workflows are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Malware Protection Deployment).
+**Implementation Note**: Coverage monitoring procedures, gap identification, and remediation workflows are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Malware Protection Deployment).
 
 ### Real-Time Protection and Scanning (Mandatory)
 
-[Organization] SHALL implement real-time protection and periodic scanning.
+[Organisation] SHALL implement real-time protection and periodic scanning.
 
 **Real-Time Protection**: On-access scanning SHALL be enabled on all protected endpoints (files scanned when opened, executed, or copied).
 
@@ -468,11 +465,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Quick Scans**: Quick scans SHOULD be performed daily on all protected endpoints.
 
-**Implementation Note**: Scan configuration, scheduling, and result monitoring are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Malware Protection Deployment).
+**Implementation Note**: Scan configuration, scheduling, and result monitoring are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Malware Protection Deployment).
 
 ### Signature Updates (Mandatory)
 
-[Organization] SHALL keep anti-malware signatures/definitions current.
+[Organisation] SHALL keep anti-malware signatures/definitions current.
 
 **Update Frequency**: Daily minimum (real-time updates strongly preferred for cloud-delivered protection).
 
@@ -480,21 +477,21 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Agent Currency**: Anti-malware/EDR agent software SHALL be kept current (latest version or N-1), ≥90% of endpoints on latest or N-1 version.
 
-**Implementation Note**: Update deployment, verification procedures, and agent version management are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Malware Protection Deployment).
+**Implementation Note**: Update deployment, verification procedures, and agent version management are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Malware Protection Deployment).
 
 ### Quarantine and Remediation (Mandatory)
 
-[Organization] SHALL implement automatic malware quarantine and remediation procedures.
+[Organisation] SHALL implement automatic malware quarantine and remediation procedures.
 
 **Automatic Quarantine**: Detected malware SHALL be automatically quarantined without user interaction.
 
 **Remediation Requirements**: Malware remediation SHALL include cleanup, verification, and recovery (restore files from backup, reset compromised credentials, re-image if necessary for severe infections).
 
-**Implementation Note**: Quarantine configuration, remediation workflows, and recovery procedures are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Malware Protection Deployment).
+**Implementation Note**: Quarantine configuration, remediation workflows, and recovery procedures are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Malware Protection Deployment).
 
 ### Malware Incident Response (Mandatory)
 
-[Organization] SHALL implement incident response procedures for malware infections.
+[Organisation] SHALL implement incident response procedures for malware infections.
 
 **Detection Triggers**: Malware detected by anti-malware/EDR (automatic alerting), behavioral anomalies detected, user reports suspicious behavior.
 
@@ -502,11 +499,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Incident Logging**: All malware detections logged centrally (SIEM per ISMS-POL-A.8.15), incident tickets created, 12-month retention minimum.
 
-**Implementation Note**: Incident classification, response workflows, and escalation procedures are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Malware Protection Deployment).
+**Implementation Note**: Incident classification, response workflows, and escalation procedures are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Malware Protection Deployment).
 
 ### User Awareness (Mandatory)
 
-[Organization] SHALL provide user security awareness training on malware threats.
+[Organisation] SHALL provide user security awareness training on malware threats.
 
 **Training Requirements**:
 
@@ -516,7 +513,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Effectiveness measurement: ≥95% training completion annually, ≤10% phishing simulation click rate target
 - Repeat failure remediation: Personnel failing two consecutive phishing simulations SHALL receive targeted remediation training within 14 days; three or more consecutive failures triggers manager notification and enhanced monitoring per HR policy
 
-**Implementation Note**: Training content, delivery methods, and effectiveness measurement are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Malware Protection Deployment).
+**Implementation Note**: Training content, delivery methods, and effectiveness measurement are defined in ISMS-IMP-A.8.1-7-18-19-S2 (Malware Protection Deployment).
 
 ## Privileged Utility Management (A.8.18)
 
@@ -524,7 +521,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ### Privileged Utility Inventory (Mandatory)
 
-[Organization] SHALL maintain an inventory of privileged utility programs capable of overriding system and application controls.
+[Organisation] SHALL maintain an inventory of privileged utility programs capable of overriding system and application controls.
 
 **Privileged Utilities Include**:
 
@@ -533,17 +530,17 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Debugging and development tools (debuggers, decompilers, hex editors)
 - Disk and file utilities (disk formatters, partition managers, secure delete tools)
 - Password and security tools (password recovery, encryption bypass tools)
-- Network utilities (packet sniffers, port scanners, network analyzers)
+- Network utilities (packet sniffers, port scanners, network analysers)
 - Virtualization tools (hypervisors, VM management tools)
 - Any tools that can bypass security controls (disable antivirus, modify audit logs)
 
 **Inventory Maintenance**: Quarterly review of privileged utility inventory, new utilities assessed before deployment.
 
-**Implementation Note**: Privileged utility identification, inventory procedures, and classification are defined in ISMS-IMP-A.8.1-7-18-19-S5 (Privileged Utility Management).
+**Implementation Note**: Privileged utility identification, inventory procedures, and classification are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Privileged Utility Management).
 
 ### Access Control (Mandatory)
 
-[Organization] SHALL restrict access to privileged utilities to authorized personnel only.
+[Organisation] SHALL restrict access to privileged utilities to authorised personnel only.
 
 **Role-Based Access Control (RBAC)**: Access to privileged utilities SHALL be restricted based on job role and business need.
 
@@ -553,15 +550,15 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Privileged Access Management (PAM): Just-in-time access, session recording for highly privileged utilities
 - Group Policy (Windows): Disable Task Manager, Registry Editor for standard users
 - MDM restrictions (macOS/mobile): Restrict access to developer tools, system settings
-- sudo restrictions (Linux): Limit sudo access to authorized users only
+- sudo restrictions (Linux): Limit sudo access to authorised users only
 
 **Multi-Factor Authentication**: Access to critical privileged utilities SHALL require multi-factor authentication.
 
-**Implementation Note**: Access control implementation, RBAC configuration, and MFA enforcement are defined in ISMS-IMP-A.8.1-7-18-19-S5 (Privileged Utility Management).
+**Implementation Note**: Access control implementation, RBAC configuration, and MFA enforcement are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Privileged Utility Management).
 
 ### Approval Workflows (Mandatory)
 
-[Organization] SHALL implement approval workflows for privileged utility access requests.
+[Organisation] SHALL implement approval workflows for privileged utility access requests.
 
 **Access Request Types**:
 
@@ -571,44 +568,44 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Approval Documentation**: Request ticket, business justification, approval authority, approval date, access duration (if temporary).
 
-**Implementation Note**: Approval workflow design, request forms, and recertification procedures are defined in ISMS-IMP-A.8.1-7-18-19-S5 (Privileged Utility Management).
+**Implementation Note**: Approval workflow design, request forms, and recertification procedures are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Privileged Utility Management).
 
 ### Usage Monitoring and Logging (Mandatory)
 
-[Organization] SHALL log and monitor privileged utility usage.
+[Organisation] SHALL log and monitor privileged utility usage.
 
 **Logging Requirements**: User identity, utility name, timestamp, duration, endpoint identifier, actions performed (if available - session recording).
 
 **Log Retention**: 12 months minimum.
 
-**Monitoring Requirements**: Real-time alerting for unauthorized privileged utility usage attempts, daily review of privileged utility usage logs (automated anomaly detection), quarterly usage audit.
+**Monitoring Requirements**: Real-time alerting for unauthorised privileged utility usage attempts, daily review of privileged utility usage logs (automated anomaly detection), quarterly usage audit.
 
 **SIEM Integration**: Privileged utility usage logs forwarded to centralized SIEM (per ISMS-POL-A.8.15).
 
-**Implementation Note**: Logging configuration, monitoring procedures, and SIEM integration are defined in ISMS-IMP-A.8.1-7-18-19-S5 (Privileged Utility Management).
+**Implementation Note**: Logging configuration, monitoring procedures, and SIEM integration are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Privileged Utility Management).
 
 ### Security Bypass Tool Management (Mandatory)
 
-[Organization] SHALL identify and tightly restrict tools capable of bypassing security controls.
+[Organisation] SHALL identify and tightly restrict tools capable of bypassing security controls.
 
 **Security Bypass Tools Include**: Anti-malware disablers, audit log editing tools, encryption bypass tools (password crackers), rootkit tools, tools that disable Windows Defender or tamper protection, tools that modify system integrity protection (macOS SIP).
 
 **Control Approach**:
 
-- Prohibited: Security bypass tools prohibited on production endpoints (unless authorized for security testing)
-- Detection: Application control detects unauthorized security bypass tools (see Section 2.4)
+- Prohibited: Security bypass tools prohibited on production endpoints (unless authorised for security testing)
+- Detection: Application control detects unauthorised security bypass tools (see Section 2.4)
 - Automatic remediation: Detected tools automatically quarantined/removed
-- Authorized use: Security team only, isolated security lab environment, approval required
+- Authorised use: Security team only, isolated security lab environment, approval required
 
-**Implementation Note**: Security bypass tool identification, detection rules, and authorized usage procedures are defined in ISMS-IMP-A.8.1-7-18-19-S5 (Privileged Utility Management).
+**Implementation Note**: Security bypass tool identification, detection rules, and authorised usage procedures are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Privileged Utility Management).
 
 ## Software Installation Controls (A.8.19)
 
-**Objective**: Securely manage software installation on operational systems through controls, authorization, and vulnerability management.
+**Objective**: Securely manage software installation on operational systems through controls, authorisation, and vulnerability management.
 
 ### Approved Software List (Mandatory)
 
-[Organization] SHALL maintain an approved software list.
+[Organisation] SHALL maintain an approved software list.
 
 **Approved Software List Contents**: Software name and vendor, approved version(s), purpose/business justification, security review status, installation method, approval authority, license compliance status.
 
@@ -621,11 +618,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **List Maintenance**: Annual review of approved software list, quarterly additions/removals as needed, security review required before approval.
 
-**Implementation Note**: Approved software list management, category definitions, and review procedures are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Software Control Process).
+**Implementation Note**: Approved software list management, category definitions, and review procedures are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Software Control Process).
 
 ### Software Approval Process (Mandatory)
 
-[Organization] SHALL implement software approval process before deployment.
+[Organisation] SHALL implement software approval process before deployment.
 
 **Approval Process Components**:
 
@@ -636,33 +633,33 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Approval SLA**: Standard request 5 business days, urgent request 2 business days (manager approval), emergency request 1 business day (CISO approval). When CISO is unavailable, emergency approval authority delegates to: (1) Deputy CISO, (2) IT Director, or (3) designated Security Manager, with retrospective CISO review within 5 business days.
 
-**Implementation Note**: Approval workflow design, security review procedures, and deployment methods are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Software Control Process).
+**Implementation Note**: Approval workflow design, security review procedures, and deployment methods are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Software Control Process).
 
 ### Change Control Integration (Mandatory)
 
-[Organization] SHALL subject software installations on production systems to change control procedures.
+[Organisation] SHALL subject software installations on production systems to change control procedures.
 
 **Change Control Requirements**: Software deployment classified as change, change request submitted, impact assessment required, approval required (Change Advisory Board for significant changes), testing required (pilot deployment), rollback plan documented.
 
 **Exceptions**: Emergency security patches (expedited change), pre-approved standard changes (OS updates, anti-malware updates), user-installed approved software (already approved, low impact).
 
-**Implementation Note**: Change control integration, change classification, and approval workflows are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Software Control Process).
+**Implementation Note**: Change control integration, change classification, and approval workflows are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Software Control Process).
 
-### Unauthorized Software Detection (Mandatory)
+### Unauthorised Software Detection (Mandatory)
 
-[Organization] SHALL detect and remove unauthorized software.
+[Organisation] SHALL detect and remove unauthorised software.
 
-**Detection Methods**: Software inventory scans (daily via endpoint management platform), application control alerts (unauthorized execution attempts), network traffic analysis, user reports.
+**Detection Methods**: Software inventory scans (daily via endpoint management platform), application control alerts (unauthorised execution attempts), network traffic analysis, user reports.
 
-**Unauthorized Software Includes**: Software not on approved list, prohibited software (explicitly forbidden), malware, unapproved versions of approved software, shadow IT (unapproved cloud services).
+**Unauthorised Software Includes**: Software not on approved list, prohibited software (explicitly forbidden), malware, unapproved versions of approved software, shadow IT (unapproved cloud services).
 
 **Remediation Timeline**: Prohibited/malicious software removed within 24 hours, unapproved software removed within 7 days (or approved if legitimate business need).
 
-**Implementation Note**: Detection procedures, remediation workflows, and root cause analysis are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Software Control Process).
+**Implementation Note**: Detection procedures, remediation workflows, and root cause analysis are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Software Control Process).
 
 ### Application Control Technology (Mandatory)
 
-[Organization] SHALL implement application control technologies to restrict software execution.
+[Organisation] SHALL implement application control technologies to restrict software execution.
 
 **Application Control Approaches**:
 
@@ -677,11 +674,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - BYOD devices: Containerized apps only (corporate container whitelisting)
 - Servers: Strict whitelisting (change control required for new software)
 
-**Implementation Note**: Application control technology selection, whitelisting rule configuration, and enforcement mechanisms are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Software Control Process).
+**Implementation Note**: Application control technology selection, whitelisting rule configuration, and enforcement mechanisms are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Software Control Process).
 
 ### Software Vulnerability Management (Mandatory)
 
-[Organization] SHALL keep installed software current with security patches and updates.
+[Organisation] SHALL keep installed software current with security patches and updates.
 
 **Patching Requirements**:
 
@@ -694,20 +691,20 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Integration**: Software vulnerability management integrates with ISMS-POL-A.8.8 (Vulnerability Management).
 
-**Implementation Note**: Patch management procedures, testing requirements, and lifecycle tracking are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Software Control Process) and ISMS-POL-A.8.8.
+**Implementation Note**: Patch management procedures, testing requirements, and lifecycle tracking are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Software Control Process) and ISMS-POL-A.8.8.
 
 ### BYOD Software Control (Conditional)
 
-[Organization] SHALL implement software controls for corporate data access on BYOD devices (if BYOD program implemented).
+[Organisation] SHALL implement software controls for corporate data access on BYOD devices (if BYOD program implemented).
 
 **BYOD Software Approach**:
 
 - Containerized apps: Corporate apps installed in managed container (MAM solution)
-- No personal app inventory: [Organization] does not inventory or control personal apps (privacy)
+- No personal app inventory: [Organisation] does not inventory or control personal apps (privacy)
 - Container-only controls: Application control applied to corporate container only
 - Personal app restrictions: No restrictions on personal app installation (user privacy), corporate data cannot be copied to personal apps (DLP controls)
 
-**Implementation Note**: BYOD software control design, MAM configuration, and DLP integration are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Software Control Process).
+**Implementation Note**: BYOD software control design, MAM configuration, and DLP integration are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Software Control Process).
 
 ---
 
@@ -798,18 +795,14 @@ These frameworks inform implementation but do not constitute mandatory complianc
 | **A.6.7 - Remote Working** | Remote endpoints have additional security requirements | VPN enforcement, stronger encryption |
 | **A.5.23 - Cloud Services** | Cloud-delivered anti-malware/EDR are cloud services | Cloud security policy defines approval process |
 
-**Implementation Note**: Detailed integration mapping, evidence overlap, and coordination procedures are defined in ISMS-IMP-A.8.1-7-18-19-S6 (Endpoint Security Assessment).
-
 ## Implementation Resources
 
 **Implementation Guidance** (ISMS-IMP-A.8.1-7-18-19 Suite):
 
 - **ISMS-IMP-A.8.1-7-18-19-S1**: Endpoint Discovery Process
-- **ISMS-IMP-A.8.1-7-18-19-S2**: Security Baseline Implementation
-- **ISMS-IMP-A.8.1-7-18-19-S3**: Malware Protection Deployment
-- **ISMS-IMP-A.8.1-7-18-19-S4**: Software Control Process
-- **ISMS-IMP-A.8.1-7-18-19-S5**: Privileged Utility Management
-- **ISMS-IMP-A.8.1-7-18-19-S6**: Endpoint Security Assessment
+- **ISMS-IMP-A.8.1-7-18-19-S2**: Malware Protection Deployment
+- **ISMS-IMP-A.8.1-7-18-19-S3**: Software Control Process
+- **ISMS-IMP-A.8.1-7-18-19-S4**: Privileged Utility Management
 
 **Assessment Workbooks** (Generated by Python scripts):
 
@@ -817,9 +810,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Protection_Coverage.xlsx (via generate_a817_2_protection_coverage.py)
 - Software_Controls.xlsx (via generate_a817_3_software_controls.py)
 - Privileged_Utilities.xlsx (via generate_a817_4_privileged_utilities.py)
-- Endpoint_Security_Compliance_Matrix.xlsx (via generate_a817_5_compliance_matrix.py)
-- Endpoint_Security_Dashboard.xlsx (via generate_a817_6_compliance_dashboard.py)
-
 **Note**: Implementation resource updates (ISMS-IMP suite, assessment scripts) do not require policy revision.
 
 **Script Accuracy Verification Controls**:
@@ -842,7 +832,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Quarterly: Executive dashboard and trend analysis
 - Annual: Full assessment, auditor review, policy review
 
-**Compliance Scoring**: Per-control scoring for A.8.1, A.8.7, A.8.18, A.8.19 enables independent SoA assessment. Overall endpoint security score provides consolidated view for executive reporting.
+**Compliance Scoring**: Per-control scoring for A.8.1, A.8.7, A.8.18, A.8.19 enables independent SoA assessment. Overall endpoint security score is tracked in Summary Dashboards for executive reporting.
 
 **Compliance Thresholds**:
 
@@ -850,9 +840,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - ⚠️ Partial Compliance (Yellow): 70-89%
 - ❌ Non-Compliant (Red): <70%
 
-**Evidence Requirements**: Mandatory evidence artifacts documented in ISMS-IMP-A.8.1-7-18-19-S6 (Endpoint Security Assessment).
-
-**Implementation Note**: Assessment methodology, scoring formulas, evidence collection procedures, and gap management are defined in ISMS-IMP-A.8.1-7-18-19-S6 (Endpoint Security Assessment).
+**Evidence Requirements**: Mandatory evidence artifacts are documented in the individual assessment workbooks (S1–S4) and tracked in each workbook's Summary Dashboard.
 
 ## Exception Management
 
@@ -869,8 +857,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Exception Tracking and Review**: All approved exceptions documented in centralized exception register, temporary exceptions reviewed monthly, permanent exceptions reviewed annually, high-risk exceptions reviewed quarterly.
 
-**Implementation Note**: Exception request procedures, approval workflows, compensating control requirements, and exception tracking are defined in ISMS-IMP-A.8.1-7-18-19-S6 (Endpoint Security Assessment).
-
 ## Regulatory Mapping
 
 This policy addresses endpoint security requirements from multiple regulatory frameworks:
@@ -885,8 +871,6 @@ This policy addresses endpoint security requirements from multiple regulatory fr
 | **Logging & Monitoring** | Art. 8 | Art. 32 | A.8.15, A.8.16 | Req. 10 | §164.308(a)(1)(ii)(D) | Risk-Based | Security Monitoring |
 
 *Conditional applicability per ISMS-POL-00
-
-**Note**: Specific regulatory interpretation and compliance verification procedures are documented in ISMS-IMP-A.8.1-7-18-19-S6 (Endpoint Security Assessment).
 
 ## Training & Awareness
 
@@ -907,7 +891,7 @@ This policy addresses endpoint security requirements from multiple regulatory fr
 **Privacy Training** (DPO Office, Legal/Compliance):
 
 - BYOD program privacy protections
-- User privacy rights and organizational limitations
+- User privacy rights and organisational limitations
 - Data subject erasure request handling (endpoint data removal)
 
 **Management Training** (Data Owners, System Owners, Management):
@@ -922,7 +906,7 @@ This policy addresses endpoint security requirements from multiple regulatory fr
 
 # Definitions
 
-**Endpoint Device**: Any user-facing device that stores, processes, or accesses organizational information (laptops, desktops, mobile devices, tablets, IoT devices).
+**Endpoint Device**: Any user-facing device that stores, processes, or accesses organisational information (laptops, desktops, mobile devices, tablets, IoT devices).
 
 **EDR (Endpoint Detection and Response)**: Advanced endpoint security solution providing real-time monitoring, threat detection, investigation, and automated response capabilities beyond traditional antivirus.
 
@@ -938,9 +922,9 @@ This policy addresses endpoint security requirements from multiple regulatory fr
 
 **Application Control (Whitelisting)**: Security control that allows only explicitly approved software to execute, blocking all other executables by default.
 
-**Full Disk Encryption (FDE)**: Encryption of entire disk volume(s), protecting data at rest from unauthorized physical access.
+**Full Disk Encryption (FDE)**: Encryption of entire disk volume(s), protecting data at rest from unauthorised physical access.
 
-**Tamper Protection**: Anti-malware feature preventing malware or unauthorized users from disabling, modifying, or uninstalling security software.
+**Tamper Protection**: Anti-malware feature preventing malware or unauthorised users from disabling, modifying, or uninstalling security software.
 
 **Zero-Day Threat**: Previously unknown malware or exploit, not yet detected by signature-based antivirus, requiring behavioral or ML-based detection.
 
@@ -965,4 +949,4 @@ This policy addresses endpoint security requirements from multiple regulatory fr
 ---
 
 *This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.1-7-18-19 (UG/TG).*
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

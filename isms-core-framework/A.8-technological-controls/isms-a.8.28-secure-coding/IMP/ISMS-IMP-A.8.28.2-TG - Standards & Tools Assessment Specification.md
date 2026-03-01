@@ -8,150 +8,146 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Standards & Tools Assessment Specification |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.28.2-TG |
+| **Related Policy** | ISMS-POL-A.8.28 (Secure Coding) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.28 (Secure Coding) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Secure Coding Standards & Security Tool Implementation |
-| **Related Policy** | ISMS-POL-A.8.28 Section 2.2 (Secure Coding Standards), Section 2.3 (Code Review & Testing) |
-| **Purpose** | Evaluate implementation and effectiveness of secure coding standards and security tools - deployment AND actual security improvement |
-| **Target Audience** | Application Security Team, Security Architects, Development Managers, DevOps Engineers, Tool Administrators, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly or After Major Tool Changes |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
 **Version History**:
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | [Date] | Initial assessment specification |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-**Approvers**:
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
 
-- Application Security Lead (Technical Review)
-- Development Manager / Engineering Lead (Engineering Perspective)
-- QA Manager / Test Lead (Testing Validation)
-- CISO / Security Director (Executive Approval)
+**Related Documents**:
 
-### Document Structure
-
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.8.28.2-UG.
+- ISMS-POL-A.8.28 (Secure Coding)
+- ISMS-IMP-A.8.28.1 (SDLC Assessment Specification)
+- ISMS-IMP-A.8.28.3 (Code Review & Testing Assessment Specification)
+- ISMS-IMP-A.8.28.4 (Third-Party & Open Source Software Assessment Specification)
 
 ---
 
 # Technical Specification
-**Audience:** Workbook developers (Python/Excel script maintainers)
-
-
-> Auto-generated from `generate_a828_2_standards_tools.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.28.2` |
-| **Output Filename** | `ISMS-IMP-A.8.28.2_Coding_Standards_and_Development_Tool_Security_YYYYMMDD.xlsx` |
-| **Workbook Title** | Coding Standards and Development Tool Security |
-| **Total Sheets** | 13 (13 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #666666 | 666666 | Dark Gray (Secondary Text) |
-| #70AD47 | 70AD47 | Medium Green (On Track) |
-| #C00000 | C00000 | Dark Red (Blocked) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #FF6666 | FF6666 | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Coding_Standards_Adoption
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a828_2_standards_tools.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: SAST_SCA_Tools
+**Document ID:** `ISMS-IMP-A.8.28.2`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: DAST_Security_Testing_Tools
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Coding Standards Adoption |
+| 3 | SAST SCA Tools |
+| 4 | DAST Security Testing Tools |
+| 5 | IDE Plugins Linters |
+| 6 | Tool Effectiveness Metrics |
+| 7 | Evidence Register |
+| 8 | Gap Analysis |
+| 9 | Summary Dashboard |
+| 10 | Approval Sign-Off |
 
-## Sheet 5: IDE_Plugins_Linters
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #666666 | Dark Gray (Secondary Text) |
+| #808080 | Gray (Disabled) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Tool_Effectiveness_Metrics
+### Column Headers (All Sheets)
 
----
+| # | Column Header |
+|---|--------------|
+| 1 | Requirement |
+| 2 | Implementation Status |
+| 3 | Evidence Reference |
+| 4 | Comments |
+| 5 | Assessment Area |
+| 6 | Total Items |
+| 7 | Compliant |
+| 8 | Partial |
+| 9 | Non-Compliant |
+| 10 | N/A |
+| 11 | Compliance % |
+| 12 | Evidence ID |
+| 13 | Evidence Type |
+| 14 | Description |
+| 15 | Location/Path |
+| 16 | Date Collected |
+| 17 | Collected By |
+| 18 | Verification Status |
+| 19 | Gap ID |
+| 20 | Domain |
+| 21 | Requirement ID |
+| 22 | Requirement Description |
+| 23 | Current State |
+| 24 | Target State |
+| 25 | Priority |
+| 26 | Owner |
+| 27 | Target Date |
+| 28 | Status |
 
-## Sheet 7: Summary_Dashboard
+### Data Validation Values
 
----
+All dropdown/list values used across sheets:
 
-## Sheet 8: Evidence_Register
+```
+✅ Implemented, ⚠️ Partially Implemented, ❌ Not Implemented, N/A, Deployed
+Pilot, Planned, Not Deployed, Yes, No, Partial, Unknown, Mature, Operational
+Developing, Initial, Excellent, Good, Fair, Poor, Not Assessed, 90-100%
+70-89%, 50-69%, Below 50%, Complete, High (>75%), Medium (50-75%), Low (<50%)
+None, Critical, High, Medium, Low, Negligible, Fully Integrated
+Partially Integrated, Standalone, Not Integrated, Fully Automated
+Partially Automated, Manual, Not Applicable, Open, In Progress, Resolved
+Closed, Deferred, Document, Screenshot, Report, Configuration, URL
+Tool Output, Dashboard, Policy, Other, SonarQube, Semgrep, Checkmarx, Fortify
+Veracode, CodeQL, Snyk, WhiteSource, Dependabot, Black Duck
+OWASP Dependency-Check, OWASP ZAP, Burp Suite, Acunetix, Netsparker, AppScan
+TruffleHog, GitGuardian, git-secrets, detect-secrets, Gitleaks, Every Commit
+Daily, Weekly, On-Demand, Never, Fully Compliant, Mostly Compliant
+Partially Compliant, Non-Compliant, Completed, Not Started, Approved
+Approved with Conditions, Rejected, Pending Review, Configuration file
+Network scan, Documentation, Vendor spec, Certificate inventory, Audit log
+Compliance report, Verified, Pending verification, Not verified
+Requires update, Draft, Final, Requires remediation, Re-assessment required
+```
 
----
-
-## Sheet 9: Gap_Analysis
-
----
-
-## Sheet 10: Approval_Sign_Off
-
----
-
-## Sheet 11: Domain
-
-**Frozen Panes:** A3
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | ID |
-| B | Requirement |
-| C | Implementation Status |
-| D | Evidence Reference |
-| E | Comments |
-| F | Compliance |
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| FN | `=IF(C{row}=` |  |
-
----
-
-## Sheet 12: Approval
-
-### Formulas
-
-| Cell | Formula | Purpose |
-|------|---------|---------|
-| B6 | `=Instructions!B8` |  |
-| B7 | `=Instructions!B9` |  |
-| B8 | `=Summary_Dashboard!C7` |  |
-
----
-
-## Sheet 13: Base_Validations
+**Extracted:** 10 sheets, 28 columns, 108 validation values, 11 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

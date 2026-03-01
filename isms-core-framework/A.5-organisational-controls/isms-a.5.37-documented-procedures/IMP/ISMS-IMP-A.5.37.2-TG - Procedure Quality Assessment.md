@@ -5,82 +5,116 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Procedure Quality Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.37.2-TG |
-| **Title** | Procedure Quality Assessment |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.37 |
-| **Control Name** | Documented Operating Procedures |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.5.37 (Documented Procedures) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.37) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Information Security Manager |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
 
----
+**Version History**:
 
-### Document Structure
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.37.2-UG.
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.37 (Documented Procedures)
+- ISMS-IMP-A.5.37.1 (Procedure Inventory Assessment)
+- ISMS-IMP-A.5.37.3 (Procedure Review and Update Tracking)
 
 ---
 
 # Technical Specification
-
-
-> Auto-generated from `generate_a537_2_quality_assessment.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.5.37.2` |
-| **Output Filename** | `ISMS-IMP-A.5.37.2_Procedure_Quality_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Procedure Quality Assessment |
-| **Total Sheets** | 6 (6 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #003366 | 003366 | Dark Blue (Headers) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #808080 | 808080 | Gray (Disabled) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E2EFDA | E2EFDA | Pale Green (Success Background) |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Instructions
+**Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
 ---
 
-## Sheet 2: Quality_Assessment
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a537_2_quality_assessment.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Quality_Checklist
+**Document ID:** `ISMS-IMP-A.5.37.2`
 
----
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-## Sheet 4: Improvement_Actions
+### Sheet Structure
 
----
+| # | Sheet Name |
+|---|-----------|
+| 1 | Instructions & Legend |
+| 2 | Quality Assessment |
+| 3 | Quality Checklist |
+| 4 | Improvement Actions |
+| 5 | Trend Analysis |
+| 6 | Evidence Register |
+| 7 | Summary Dashboard |
+| 8 | Approval Sign-Off |
 
-## Sheet 5: Trend_Analysis
+### Color Palette
 
----
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
-## Sheet 6: Evidence_Register
+### Column Headers (All Sheets)
+
+| # | Column Header |
+|---|--------------|
+| 1 | Assessment Area |
+| 2 | Total Items |
+| 3 | Compliant |
+| 4 | Partial |
+| 5 | Non-Compliant |
+| 6 | N/A |
+| 7 | Compliance % |
+| 8 | Category |
+| 9 | Finding |
+| 10 | Count |
+| 11 | Severity |
+| 12 | Action Required |
+
+### Data Validation Values
+
+All dropdown/list values used across sheets:
+
+```
+Pass, Partial, Fail, N/A, Clarity, Completeness, Accuracy, Usability
+Maintainability, Critical, High, Medium, Low, Open, In Progress, Completed
+Cancelled, Policy Document, Process Record, System Screenshot
+Configuration Export, Audit Log, Training Record, Test Result, Risk Assessment
+Meeting Minutes, Other, Verified, Pending verification, Not verified, Approved
+Approved with Conditions, Rejected, Deferred
+```
+
+**Extracted:** 8 sheets, 12 columns, 34 validation values, 9 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

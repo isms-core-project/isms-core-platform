@@ -44,7 +44,7 @@
 - ISMS-IMP-A.8.15.2-UG/TG (Log Collection & Centralization Assessment)
 - ISMS-IMP-A.8.15.3-UG/TG (Log Protection & Retention Assessment)
 - ISMS-IMP-A.8.15.4-UG/TG (Log Analysis & Review Assessment)
-- ISMS-IMP-A.8.15.5-UG/TG (Logging Compliance Dashboard)
+
 - ISMS-REF-A.8.15 (Logging Standards Reference)
 - ISMS-POL-A.8.16 (Monitoring Activities)
 - ISMS-POL-A.8.17 (Clock Synchronization)
@@ -54,9 +54,9 @@
 
 # Executive Summary
 
-This policy establishes [Organization]'s requirements for event logging to support incident detection, forensic investigation, compliance obligations, and accountability in accordance with ISO/IEC 27001:2022 Control A.8.15.
+This policy establishes [Organisation]'s requirements for event logging to support incident detection, forensic investigation, compliance obligations, and accountability in accordance with ISO/IEC 27001:2022 Control A.8.15.
 
-**Purpose**: Define organizational requirements for event logging control implementation and governance. This policy establishes:
+**Purpose**: Define organisational requirements for event logging control implementation and governance. This policy establishes:
 
 - WHAT events must be logged
 - HOW LONG logs must be retained
@@ -102,12 +102,12 @@ Implementation procedures (HOW logs are technically configured) are documented s
 
 ## Event Logging Requirements
 
-[Organization] SHALL log security-relevant events across all in-scope systems.
+[Organisation] SHALL log security-relevant events across all in-scope systems.
 
 **Mandatory event categories**:
 
 - **Authentication events**: Login attempts (success and failure), logout, account lockouts, password changes, MFA events
-- **Authorization events**: Access to sensitive data, privilege escalation, access control changes
+- **Authorisation events**: Access to sensitive data, privilege escalation, access control changes
 - **Administrative actions**: Configuration changes, user account management, privilege grants, security policy changes
 - **Security events**: Malware detection, intrusion alerts, firewall blocks, DLP alerts
 - **System events**: Startup/shutdown, service status changes, errors, resource exhaustion
@@ -118,11 +118,11 @@ Implementation procedures (HOW logs are technically configured) are documented s
 
 ## Log Protection Requirements
 
-[Organization] SHALL protect logs from unauthorized access, modification, and deletion.
+[Organisation] SHALL protect logs from unauthorised access, modification, and deletion.
 
 **Access control principles**:
 
-- Read access limited to authorized personnel with legitimate need
+- Read access limited to authorised personnel with legitimate need
 - Write access restricted to logging services only
 - Administrative access requires elevated privileges with separation of duties
 - Log administrator actions SHALL be logged separately
@@ -139,7 +139,7 @@ Implementation procedures (HOW logs are technically configured) are documented s
 
 ## Log Retention Requirements
 
-[Organization] SHALL retain logs for periods sufficient to support investigation and compliance.
+[Organisation] SHALL retain logs for periods sufficient to support investigation and compliance.
 
 | Log Category | Online Storage | Archive Storage | Total Retention |
 |--------------|----------------|-----------------|-----------------|
@@ -163,7 +163,7 @@ Implementation procedures (HOW logs are technically configured) are documented s
 
 ## Log Review Requirements
 
-[Organization] SHALL regularly review and analyze logs to detect security incidents.
+[Organisation] SHALL regularly review and analyse logs to detect security incidents.
 
 | Review Type | Frequency | Responsibility |
 |-------------|-----------|----------------|
@@ -191,7 +191,7 @@ Implementation procedures (HOW logs are technically configured) are documented s
 
 ## Privacy and Data Protection
 
-[Organization] SHALL implement logging in compliance with privacy regulations.
+[Organisation] SHALL implement logging in compliance with privacy regulations.
 
 **Prohibited data in logs**:
 
@@ -296,7 +296,7 @@ The following SHALL be classified as security incidents:
 
 - Log tampering detected
 - Log collection failure exceeding 15 minutes for critical systems
-- Unauthorized log access
+- Unauthorised log access
 - Log storage capacity exhaustion
 - SIEM platform compromise
 
@@ -306,7 +306,7 @@ The following SHALL be classified as security incidents:
 |---------------|----------|----------------------|-----------------|
 | Log tampering detected | Critical | Immediate (5 min) | SOC → Info Sec Manager → CISO → Exec Mgmt |
 | Log collection failure (critical systems) | High | 15 minutes | SOC → Info Sec Manager → CISO (if >1 hour) |
-| Unauthorized log access | High | 30 minutes | SOC → Info Sec Manager |
+| Unauthorised log access | High | 30 minutes | SOC → Info Sec Manager |
 | SIEM platform compromise | Critical | Immediate (5 min) | SOC → CISO → Exec Mgmt |
 | Log storage 90% full | Medium | 4 hours | Log Administrators → IT Ops Manager |
 
@@ -333,7 +333,7 @@ The following SHALL be classified as security incidents:
 
 - Regulatory changes
 - Major logging incidents
-- Organizational changes
+- Organisational changes
 - Audit findings
 - Technology changes
 
@@ -357,7 +357,7 @@ The following SHALL be classified as security incidents:
 | **ISMS-IMP-A.8.15.2-UG/TG** | Log Collection & Centralization Assessment |
 | **ISMS-IMP-A.8.15.3-UG/TG** | Log Protection & Retention Assessment |
 | **ISMS-IMP-A.8.15.4-UG/TG** | Log Analysis & Review Assessment |
-| **ISMS-IMP-A.8.15.5-UG/TG** | Compliance Dashboard |
+
 | **ISMS-REF-A.8.15** | Logging Standards Reference (formats, schemas, technical specifications) |
 
 ## Related Controls
@@ -367,7 +367,7 @@ The following SHALL be classified as security incidents:
 | **A.8.16 (Monitoring)** | Real-time monitoring consumes logs for alerting |
 | **A.8.17 (Clock Synchronization)** | Accurate timestamps for log correlation |
 | **A.5.24 (Incident Management)** | Logs provide incident detection and investigation evidence |
-| **A.5.17-18 (Authentication/Access)** | Authentication and authorization events logged |
+| **A.5.17-18 (Authentication/Access)** | Authentication and authorisation events logged |
 
 ---
 
@@ -381,7 +381,7 @@ The following SHALL be classified as security incidents:
 | Collection & Centralization | Annual (quarterly metrics) | ISMS-IMP-A.8.15.2-UG/TG | Forwarding compliance report |
 | Protection & Retention | Semi-annual | ISMS-IMP-A.8.15.3-UG/TG | Retention compliance workbook |
 | Analysis & Review | Quarterly | ISMS-IMP-A.8.15.4-UG/TG | Review completion records |
-| Compliance Dashboard | Quarterly | ISMS-IMP-A.8.15.5-UG/TG | Executive dashboard report |
+
 
 ## Evidence Location and Access
 
@@ -404,7 +404,7 @@ The following SHALL be classified as security incidents:
 ## Gap and Finding Management
 
 **Gap Identification and Recording**:
-- Findings from log assessments (IMP-A.8.15.1-5) SHALL be recorded in organizational Gap Register (ISMS-REG-GAPS or GRC Platform equivalent)
+- Findings from log assessments (IMP-A.8.15.1-5) SHALL be recorded in organisational Gap Register (ISMS-REG-GAPS or GRC Platform equivalent)
 - Each finding SHALL include:
   - Control ID: A.8.15
   - Finding description (specific requirement not met)
@@ -453,4 +453,4 @@ The following SHALL be classified as security incidents:
 
 *This policy establishes requirements for event logging controls. Implementation procedures are documented in ISMS-IMP-A.8.15 (UG/TG). Technical standards are documented in ISMS-REF-A.8.15.*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

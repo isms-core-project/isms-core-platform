@@ -8,201 +8,157 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-IMP-A.8.20-21-22-S2-TG |
+|-------|-------|
+| **Document Title** | Architecture Documentation |
+| **Document Type** | Implementation Specification |
+| **Document ID** | ISMS-IMP-A.8.20-21-22.S2-TG |
+| **Related Policy** | ISMS-POL-A.8.20-21-22 (Network Security) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.20 (Networks Security) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Network Topology & Architecture Documentation |
-| **Related Policy** | ISMS-POL-A.8.20-21-22, Section 2.1 (Network Infrastructure Security - A.8.20), Section 2.3 (Network Segmentation - A.8.22), Section 4.2 (Implementation Resources) |
-| **Purpose** | Define standards and procedures for creating, maintaining, and validating network architecture documentation including topology diagrams, security zones, and trust boundaries |
-| **Target Audience** | Network Architects, Network Engineers, Security Engineers, IT Operations, System Administrators, Auditors |
-| **Assessment Type** | Technical Documentation & Architecture Validation |
-| **Review Cycle** | Quarterly or After Major Network Architecture Changes |
-| **Total Sheets** | 9 |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial implementation guidance for network architecture documentation | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.8.20-21-22 (Network Security)
+- ISMS-IMP-A.8.20-21-22.S1 (Network Discovery)
+- ISMS-IMP-A.8.20-21-22.S3 (Device Hardening)
+- ISMS-IMP-A.8.20-21-22.S4 (Services Security)
+- ISMS-IMP-A.8.20-21-22.S5 (Segmentation Implementation)
 
 ---
+
 # Technical Specification
 **Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
-
-> Auto-generated from `generate_a820_2_device_security_assessment.py`
-> Re-generate with: `python3 generate_tg_from_scr.py --apply`
-
-## Workbook Overview
-
-| Property | Value |
-|----------|-------|
-| **Document ID** | `ISMS-IMP-A.8.20-21-22.S2` |
-| **Output Filename** | `ISMS-IMP-A.8.20-21-22.S2_Network_Device_Security_Assessment_YYYYMMDD.xlsx` |
-| **Workbook Title** | Network Device Security Assessment |
-| **Total Sheets** | 16 (16 visible) |
-| **Control Reference** | ISO/IEC 27001:2022 - Controls A.8.20, A.8.21, A.8.22: Network Security |
-
-## Color Palette
-
-| Hex Code | Style Name | Description |
-|----------|-----------|-------------|
-| #002060 | 002060 | Custom |
-| #003366 | 003366 | Dark Blue (Headers) |
-| #006100 | 006100 | Dark Green (Pass) |
-| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
-| #7F7F7F | 7F7F7F | Custom |
-| #92D050 | 92D050 | Green (Complete) |
-| #9C0006 | 9C0006 | Dark Red (Error) |
-| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
-| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
-| #E7E6E6 | E7E6E6 | Light Gray (Example Rows) |
-| #FF0000 | FF0000 | Red (Critical/Alert) |
-| #FFC000 | FFC000 | Custom |
-| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
-| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
-| #FFFF00 | FFFF00 | Yellow (Warning) |
-| #FFFFCC | FFFFCC | Light Yellow (User Input) |
-
-## Sheet 1: Data_Validations
-
 ---
 
-## Sheet 2: Instructions & Guide
+## Generator Alignment Reference
 
----
+> Auto-generated from `generate_a820_2_device_security_assessment.py` — DO NOT EDIT MANUALLY.
+> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-## Sheet 3: Device_Hardening_Assessment
+**Document ID:** `ISMS-IMP-A.8.20-21-22.S2`
 
-**Data Rows:** 5 (rows 1–5) | **Frozen Panes:** F4
+**Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
-### Columns
+### Sheet Structure
 
-| Col | Header |
-|-----|--------|
-| A | Device ID |
-| B | Device Type |
-| C | Hostname |
-| D | Primary IP |
-| E | Criticality |
+| # | Sheet Name |
+|---|-----------|
+| 1 | Evidence Register |
+| 2 | Approval Sign-Off |
+| 3 | Instructions & Legend |
+| 4 | Device Hardening Assessment |
+| 5 | Hardening Baseline Reference |
+| 6 | Gap Analysis |
+| 7 | Summary Dashboard |
+| 8 | Device Type Compliance |
+| 9 | Average Compliance Score by Device Type |
+| 10 | Compliance Score (%) |
+| 11 | Device Type |
+| 12 | Top Gaps Analysis |
+| 13 | Most Common Hardening Failures |
+| 14 | Failure Count |
+| 15 | Requirement |
+| 16 | Remediation Roadmap |
 
----
+### Color Palette
 
-## Sheet 4: Hardening_Baseline_Reference
+| Hex Code | Color Name |
+|----------|------------|
+| #003366 | Dark Blue (Headers) |
+| #006100 | Dark Green (Pass) |
+| #4472C4 | Medium Blue (Sub-headers) |
+| #7F7F7F | Custom |
+| #808080 | Gray (Disabled) |
+| #9C0006 | Dark Red (Error) |
+| #C00000 | Dark Red (Blocked) |
+| #C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | Light Gray (Column Headers) |
+| #F2F2F2 | Very Light Gray (Alternating Rows) |
+| #FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | Light Yellow (User Input) |
 
----
+### Column Headers (All Sheets)
 
-## Sheet 5: Gap_Summary
+| # | Column Header |
+|---|--------------|
+| 1 | Assessment Area |
+| 2 | Total |
+| 3 | Yes |
+| 4 | Partial |
+| 5 | N-A |
+| 6 | Compliance % |
+| 7 | DEVICE HARDENING BASELINE REFERENCE |
+| 8 | DEVICE HARDENING GAPS - SUMMARY & REMEDIATION TRACKING |
+| 9 | Network Security Team |
+| 10 | What This Shows |
+| 11 | Critical Finding Type |
+| 12 | Filter Instructions |
+| 13 | COMPLIANCE ANALYSIS BY DEVICE TYPE |
+| 14 | TOP HARDENING GAPS - MOST COMMON FAILURES |
+| 15 | HARDENING REMEDIATION ROADMAP |
+| 16 | Device ID |
+| 17 | Device Type |
+| 18 | Hostname |
+| 19 | Primary IP |
+| 20 | Criticality |
+| 21 | Gap ID |
+| 22 | Hardening Requirement |
+| 23 | Current State |
+| 24 | Gap Severity |
+| 25 | Remediation Plan |
+| 26 | Owner |
+| 27 | Status |
+| 28 | Target Date |
+| 29 | Priority |
+| 30 | Severity |
+| 31 | Gap Description |
+| 32 | Affected Devices |
+| 33 | Remediation Action |
+| 34 | Evidence ID |
+| 35 | Evidence Type |
+| 36 | Description |
+| 37 | Location/Path |
+| 38 | Date Collected |
+| 39 | Collected By |
+| 40 | Verification Status |
 
-**Data Rows:** 10 (rows 2–11) | **Frozen Panes:** A4
+### Data Validation Values
 
-### Columns
+All dropdown/list values used across sheets:
 
-| Col | Header |
-|-----|--------|
-| A | Gap ID |
-| B | Device ID |
-| C | Device Type |
-| D | Hostname |
-| E | Hardening Requirement |
-| F | Current State |
-| G | Gap Severity |
-| H | Remediation Plan |
-| I | Owner |
-| J | Status |
-| K | Target Date |
+```
+Yes, No, N/A, Router, Switch, Firewall, Wireless AP, Load Balancer
+VPN Concentrator, IDS/IPS, Network Management, Other, Critical, High, Medium
+Low, Open, In Progress, Completed, Accepted Risk, Deferred, Compliant
+Non-Compliant, Partially Compliant, Not Assessed, Configuration file
+Screenshot, Network scan, Documentation, Vendor spec, Certificate inventory
+Audit log, Compliance report, ✅ Verified, ⚠️ Pending, ❌ Not Verified, Draft
+Final, Requires remediation, Re-assessment required, Approved
+Approved with Conditions, Rejected
+```
 
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| GN:GN | equal  |  |
-| GN:GN | equal  |  |
-| GN:GN | equal  |  |
-| GN:GN | equal  |  |
-
----
-
-## Sheet 6: Compliance_Scoring
-
----
-
-## Sheet 7: Compliance Status Distribution
-
----
-
-## Sheet 8: Device_Type_Compliance
-
----
-
-## Sheet 9: Average Compliance Score by Device Type
-
----
-
-## Sheet 10: Compliance Score (%)
-
----
-
-## Sheet 11: Device Type
-
----
-
-## Sheet 12: Top_Gaps_Analysis
-
----
-
-## Sheet 13: Most Common Hardening Failures
-
----
-
-## Sheet 14: Failure Count
-
----
-
-## Sheet 15: Requirement
-
----
-
-## Sheet 16: Remediation_Roadmap
-
-**Data Rows:** 7 (rows 2–8) | **Frozen Panes:** A4
-
-### Columns
-
-| Col | Header |
-|-----|--------|
-| A | Priority |
-| B | Severity |
-| C | Gap Description |
-| D | Affected Devices |
-| E | Remediation Action |
-| F | Owner |
-| G | Target Date |
-| H | Status |
-
-### Conditional Formatting
-
-| Range | Condition | Format |
-|-------|-----------|--------|
-| BN:BN | equal  |  |
-| BN:BN | equal  |  |
-| BN:BN | equal  |  |
-| BN:BN | equal  |  |
-
----
-
-## Data Validation Dropdown Lists
-
-All dropdown value lists defined in the generator:
-
-| Variable | Values |
-|----------|--------|
-| `HARDENING_REQUIREMENTS` | Default Credentials Disabled, Strong Password Policy, Multi-Factor Authentication (MFA), Unnecess... |
+**Extracted:** 16 sheets, 40 columns, 43 validation values, 13 colors
 
 ---
 
 **END OF SPECIFICATION**
+
 
 ---
 

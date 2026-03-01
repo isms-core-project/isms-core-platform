@@ -5,23 +5,57 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Asset Return and Offboarding Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.10-11.S3-UG |
-| **Title** | Asset Return and Offboarding Assessment |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.11 |
-| **Control Name** | Return of Assets |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.5.10-11 (Asset Usage Lifecycle) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.11) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Information Security Manager |
 | **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.10-11 (Asset Usage Lifecycle)
+- ISMS-IMP-A.5.10-11.S1 (Acceptable Use Policy Assessment)
+- ISMS-IMP-A.5.10-11.S2 (Usage Rules Inventory)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.10-11.S3-TG.
+
+### Workbook at a Glance
+
+This workbook contains the following 8 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Return Process** | Documentation of asset return procedures and responsibilities |
+| **Asset Checklist** | Checklists for asset return verification by asset category |
+| **Offboarding Tracking** | Tracking of individual offboarding cases and completion status |
+| **Access Revocation** | Documentation and verification of access revocation activities |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -667,7 +701,7 @@ Before submitting this assessment:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Every exit is an entry somewhere else."*
+— Tom Stoppard
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

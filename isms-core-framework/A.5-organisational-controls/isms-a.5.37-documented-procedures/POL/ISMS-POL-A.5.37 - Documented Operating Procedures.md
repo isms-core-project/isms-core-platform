@@ -42,7 +42,6 @@
 - ISMS-IMP-A.5.37.1-UG/TG (Procedure Inventory Assessment)
 - ISMS-IMP-A.5.37.2-UG/TG (Procedure Quality Assessment)
 - ISMS-IMP-A.5.37.3-UG/TG (Procedure Review and Update Tracking)
-- ISMS-IMP-A.5.37.4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.5.37
 - ISO/IEC 27001:2022 Clause 7.5 (Documented Information)
 
@@ -50,13 +49,13 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for documenting and maintaining operating procedures for information processing facilities, ensuring consistent, secure, and auditable operations.
+This policy establishes [Organisation]'s requirements for documenting and maintaining operating procedures for information processing facilities, ensuring consistent, secure, and auditable operations.
 
-**Scope**: This policy applies to all operating procedures for information processing facilities, systems, applications, and security controls operated by or on behalf of [Organization].
+**Scope**: This policy applies to all operating procedures for information processing facilities, systems, applications, and security controls operated by or on behalf of [Organisation].
 
 **Purpose**: Define organisational requirements for procedure documentation. This policy establishes WHAT procedures must be documented and WHO is responsible for maintaining them. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.37 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including ISO/IEC 27001:2022 and quality management principles. Conditional sector-specific requirements (FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including ISO/IEC 27001:2022 and quality management principles. Conditional sector-specific requirements (FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -156,7 +155,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - NIST SP 800-53 documentation requirements
 - Industry runbook best practices
 
-**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent documentation requirements apply where multiple regulations overlap.
+**Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent documentation requirements apply where multiple regulations overlap.
 
 ---
 
@@ -420,7 +419,7 @@ Nonconformities related to this policy (e.g., outdated procedures, missing docum
 
 ## Integration with ISMS
 
-This policy integrates with [Organization]'s Information Security Management System:
+This policy integrates with [Organisation]'s Information Security Management System:
 
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
@@ -430,7 +429,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-- Control A.5.37 applicability justified in [Organization]'s SoA
+- Control A.5.37 applicability justified in [Organisation]'s SoA
 - Implementation status tracked and reported
 
 **Related Controls**:
@@ -464,7 +463,6 @@ Assessment of A.5.37 should reference stacked control assessments for complete c
 | **ISMS-IMP-A.5.37.1-UG/TG** | Procedure Inventory Assessment | Identify and track all procedures |
 | **ISMS-IMP-A.5.37.2-UG/TG** | Procedure Quality Assessment | Verify documentation standards |
 | **ISMS-IMP-A.5.37.3-UG/TG** | Review Tracking Assessment | Monitor review compliance |
-| **ISMS-IMP-A.5.37.4-UG/TG** | Compliance Dashboard | Consolidated reporting |
 
 ---
 
@@ -527,4 +525,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for documented operating procedures. Implementation procedures are documented in ISMS-IMP-A.5.37 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-04 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

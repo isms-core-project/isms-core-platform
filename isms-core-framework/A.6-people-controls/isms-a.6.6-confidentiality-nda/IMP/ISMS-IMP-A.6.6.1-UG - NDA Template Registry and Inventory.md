@@ -5,24 +5,57 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | NDA Template Registry and Inventory |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.6.6.1-UG |
-| **Title** | NDA Template Registry and Inventory |
-| **Control Reference** | ISO/IEC 27001:2022 A.6.6 |
-| **Control Name** | Confidentiality or Non-Disclosure Agreements |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.6.6 (Confidentiality Nda) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.6.6) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Information Security Manager |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.6.6 (Confidentiality Nda)
+- ISMS-IMP-A.6.6.2 (NDA Execution and Tracking)
+- ISMS-IMP-A.6.6.3 (NDA Review and Compliance)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.6.6.1-TG.
+
+---
+
+## Workbook at a Glance
+
+| # | Sheet Name | Purpose |
+|---|-----------|---------|
+| 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
+| 2 | Template Registry | Catalogue all approved NDA and confidentiality templates |
+| 3 | Template Versions | Track version history and change log for each template |
+| 4 | Applicability Matrix | Map templates to stakeholder categories and use cases |
+| 5 | Clause Library | Manage standardised clauses for consistent NDA drafting |
+| 6 | Evidence Register | Store and reference evidence of template management |
+| 7 | Summary Dashboard | Compliance status and key metrics overview |
+| 8 | Approval Sign-Off | Management review sign-off and certification |
 
 ---
 
@@ -61,7 +94,6 @@ This assessment covers the following components:
 **Out of Scope:**
 - Execution of individual agreements (covered in ISMS-IMP-A.6.6.2)
 - NDA compliance tracking and monitoring (covered in ISMS-IMP-A.6.6.3)
-- Compliance dashboards and metrics (covered in ISMS-IMP-A.6.6.4)
 - Specific agreement instances (only templates, not executed agreements)
 
 ### Business Value
@@ -1223,7 +1255,6 @@ Control A.6.6 works in conjunction with these ISO 27001:2022 controls:
 |-------------|-------|--------------|
 | ISMS-IMP-A.6.6.2 | NDA Execution and Tracking | Execution of templates defined here |
 | ISMS-IMP-A.6.6.3 | NDA Review and Compliance | Compliance monitoring of executed NDAs |
-| ISMS-IMP-A.6.6.4 | NDA Compliance Dashboard | Metrics and reporting |
 | ISMS-IMP-A.5.31.1 | Regulatory Inventory | Legal requirements affecting NDAs |
 | ISMS-IMP-A.5.14.x | Information Transfer | Transfer agreements using NDAs |
 
@@ -1233,7 +1264,7 @@ Control A.6.6 works in conjunction with these ISO 27001:2022 controls:
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"A secret is only a secret as long as it is kept."*
+— Traditional proverb
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

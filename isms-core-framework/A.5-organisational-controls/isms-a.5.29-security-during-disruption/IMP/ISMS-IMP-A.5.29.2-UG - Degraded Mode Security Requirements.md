@@ -5,24 +5,61 @@
 
 ---
 
-| Field | Value |
+**Document Control**
+
+| Attribute | Value |
 |-------|-------|
+| **Document Title** | Degraded Mode Security Requirements |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.29.2-UG |
-| **Title** | Degraded Mode Security Requirements |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.29 |
-| **Control Name** | Information Security During Disruption |
-| **Document Type** | Implementation Guide |
+| **Related Policy** | ISMS-POL-A.5.29 (Security During Disruption) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.29) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
-| **Owner** | Chief Information Security Officer (CISO) |
 | **Classification** | Internal |
-| **Framework Version** | 1.0 |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.29 (Security During Disruption)
+- ISMS-IMP-A.5.29.1 (Security Controls During Disruption Assessment)
+- ISMS-IMP-A.5.29.3 (Recovery Security Verification)
 
 ---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.29.2-TG.
+
+---
+
+### Workbook at a Glance
+
+This workbook contains the following 10 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, rating definitions, and field descriptions |
+| **Degradation Scenarios** | Defined degradation scenarios and security mode triggers |
+| **BreakGlass Accounts** | Emergency break-glass account inventory and controls |
+| **BreakGlass Activation** | Break-glass activation procedures and audit trail requirements |
+| **Elevated Monitoring** | Enhanced monitoring requirements during degraded operations |
+| **Personnel Availability** | Security personnel availability and on-call arrangements |
+| **Security Debt Register** | Tracking of security debt incurred during degraded operation |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -58,7 +95,6 @@ This assessment covers the following components:
 **Out of Scope:**
 - Security control inventory (covered in ISMS-IMP-A.5.29.1)
 - Recovery verification procedures (covered in ISMS-IMP-A.5.29.3)
-- Compliance dashboards (covered in ISMS-IMP-A.5.29.4)
 - Incident response procedures (covered in A.5.24-28)
 
 ### Business Value
@@ -536,7 +572,6 @@ Assessment Published to ISMS Evidence Library
 |----------|--------------|
 | **ISMS-IMP-A.5.29.1** | Security control inventory (what can be degraded) |
 | **ISMS-IMP-A.5.29.3** | Recovery verification (resolving security debt) |
-| **ISMS-IMP-A.5.29.4** | Compliance dashboard (tracking degradation metrics) |
 
 ---
 
@@ -544,7 +579,7 @@ Assessment Published to ISMS Evidence Library
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Adversity is the first path to truth."*
+— Lord Byron
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

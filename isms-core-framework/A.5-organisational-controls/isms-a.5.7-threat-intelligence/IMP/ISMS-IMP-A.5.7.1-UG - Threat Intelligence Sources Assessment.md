@@ -8,26 +8,61 @@
 **Document Control**
 
 | Attribute | Value |
-|-----------|-------|
+|-------|-------|
+| **Document Title** | Threat Intelligence Sources Assessment |
+| **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.5.7.1-UG |
+| **Related Policy** | ISMS-POL-A.5.7 (Threat Intelligence) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.5.7 (Threat Intelligence) |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | CISO |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
-| **Assessment Area** | Threat Intelligence Source Portfolio Management |
-| **Related Policy** | ISMS-POL-A.5.7, Section 2.1 (Intelligence Collection Requirements), Section 2.7 (Effectiveness Measurement Requirements) |
-| **Purpose** | Document threat intelligence source portfolio, assess source reliability using Admiralty Code, verify CVSS capability, and maintain audit evidence for quarterly validation |
-| **Target Audience** | Threat Intelligence Analysts, Security Engineers, CISO, Compliance Officers, Auditors |
-| **Assessment Type** | Technical & Operational |
-| **Review Cycle** | Quarterly |
-| **Date** | [Date] |
+| **Classification** | Internal |
+| **Status** | Draft |
 
-### Version History
+**Version History**:
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [Date] | Initial consolidated specification (15 sheets) | ISMS Implementation Team |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO | Initial implementation specification |
+
+**Review Cycle**: Quarterly  
+**Next Review Date**: [Effective Date + 90 days]
+
+**Related Documents**:
+
+- ISMS-POL-A.5.7 (Threat Intelligence)
+- ISMS-IMP-A.5.7.2 (Intelligence Collection & Analysis Assessment)
+- ISMS-IMP-A.5.7.3 (Intelligence Integration & Distribution Assessment)
+
+---
 
 ### Document Structure
 
 This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.7.1-TG.
+
+### Workbook at a Glance
+
+This workbook contains the following 15 sheets:
+
+| Sheet | Purpose |
+|-------|---------|
+| **Instructions & Legend** | Assessment guidance, control requirements, and field descriptions |
+| **Source Inventory** | Complete inventory of all threat intelligence sources |
+| **Source Evaluation** | Source reliability assessment using the Admiralty Code |
+| **Coverage Matrix** | Mapping of source coverage across threat categories and geographic scope |
+| **Cost Analysis** | Cost tracking and ROI analysis for intelligence sources |
+| **Compliance Check** | Verification of regulatory compliance for intelligence processing |
+| **Action Items** | Gap tracking and remediation tasks |
+| **Metadata** | Data classification and handling requirements for intelligence |
+| **Update Frequency** | SLA compliance tracking for source update cycles |
+| **Source Contacts** | Vendor escalation contacts and relationship management |
+| **Vendor SLAs** | SLA performance tracking and exception management |
+| **Source Performance Validation** | Quarterly validation audit — audit critical |
+| **Evidence Register** | Tracking of supporting evidence for audit purposes |
+| **Summary Dashboard** | Compliance overview auto-populated from your input data |
+| **Approval Sign-Off** | Stakeholder sign-off and approval workflow |
 
 ---
 
@@ -39,7 +74,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 #### What This Assessment Covers
 
-This assessment documents the threat intelligence SOURCE PORTFOLIO deployed in [Organization]'s environment. This is the foundational "WHERE does our intelligence come from?" assessment that answers:
+This assessment documents the threat intelligence SOURCE PORTFOLIO deployed in [Organisation]'s environment. This is the foundational "WHERE does our intelligence come from?" assessment that answers:
 
 - What threat intelligence sources are used? (commercial platforms, OSINT, government feeds, ISACs)
 - How reliable are these sources? (Admiralty Code methodology)
@@ -73,10 +108,8 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 | Assessment | Focus | Relationship to A.5.7.1 |
 |------------|-------|-------------------------|
 | **ISMS-IMP-A.5.7.1** | **Source Portfolio** | **WHERE intelligence comes from (this assessment)** |
-| ISMS-IMP-A.5.7.2 | Collection & Analysis | HOW intelligence is collected and analyzed |
+| ISMS-IMP-A.5.7.2 | Collection & Analysis | HOW intelligence is collected and analysed |
 | ISMS-IMP-A.5.7.3 | Integration & Distribution | WHERE intelligence is deployed and WHO receives it |
-| ISMS-IMP-A.5.7.4 | Effectiveness Dashboard | OVERALL program metrics consolidation |
-| ISMS-IMP-A.5.7.5 | Standalone Dashboard | EXECUTIVE summary (self-contained) |
 
 This assessment (A.5.7.1) MUST be completed first - you can't assess collection, analysis, or distribution until you know what sources you have!
 
@@ -176,8 +209,6 @@ However, outputs from this assessment are INPUT to:
 
 - A.5.7.2 (Collection & Analysis) - Needs source list and CVSS capabilities from Sheets 2, 3
 - A.5.7.3 (Integration & Distribution) - Needs integration points from Sheets 9, 13
-- A.5.7.4 (Effectiveness Dashboard) - Consolidates validation data from Sheet 14
-- A.5.7.5 (Standalone Dashboard) - Uses source performance metrics
 
 ---
 
@@ -281,7 +312,7 @@ For each source in Sheet 2:
 3. **Score Quality Dimensions** (1-5 scale each):
 
    - Timeliness: How quickly does intelligence arrive?
-   - Relevance: How relevant to [Organization]'s threat model?
+   - Relevance: How relevant to [Organisation]'s threat model?
    - Actionability: Can we operationalize this intelligence?
    
 4. **Assess CVSS Accuracy** (if source provides CVSS):
@@ -324,19 +355,19 @@ For each source in Sheet 2:
 
    - Mark which regions each source covers (Global, North America, Europe, Asia-Pacific, Middle East, Latin America, Africa)
    - Identify gaps (regions with <2 sources)
-   - Prioritize gaps based on [Organization]'s operating regions
+   - Prioritize gaps based on [Organisation]'s operating regions
    
 2. **Sector Coverage Assessment**:
 
    - Mark which industry sectors each source covers (Financial, Healthcare, Government, Critical Infrastructure, Technology, Education, Retail, Manufacturing, All Sectors)
    - Identify gaps (sectors with <2 sources)
-   - Prioritize gaps based on [Organization]'s business focus
+   - Prioritize gaps based on [Organisation]'s business focus
    
 3. **Threat Type Coverage Assessment**:
 
    - Mark which threat types each source covers (Malware, Phishing, Ransomware, Data Breach, DDoS, Insider, Supply Chain, Zero-Day, APT, Vulnerabilities)
    - Identify gaps (threat types with <2 sources)
-   - Prioritize gaps based on [Organization]'s risk assessment
+   - Prioritize gaps based on [Organisation]'s risk assessment
    
 4. **MITRE ATT&CK Coverage Assessment**:
 
@@ -344,7 +375,7 @@ For each source in Sheet 2:
    - Document how many ATT&CK techniques (0-200) each source covers
    - Calculate coverage percentage
    - Identify techniques with <2 sources
-   - Prioritize based on organizational threat model
+   - Prioritize based on organisational threat model
 
 **Deliverable:** Complete Sheet 4 with coverage analysis and gap identification
 
@@ -399,7 +430,7 @@ For each source in Sheet 2:
 3. **TLP Classification Compliance**:
 
    - Verify source properly marks intelligence with TLP (RED, AMBER, AMBER+STRICT, GREEN, CLEAR)
-   - Confirm [Organization] follows TLP sharing restrictions
+   - Confirm [Organisation] follows TLP sharing restrictions
    - Document any TLP violations and remediation
    
 4. **Export Control Compliance** (if applicable):
@@ -409,9 +440,9 @@ For each source in Sheet 2:
    
 5. **Contractual Compliance**:
 
-   - Verify [Organization] complies with vendor terms of service
+   - Verify [Organisation] complies with vendor terms of service
    - Document any usage restrictions
-   - Check for unauthorized sharing of intelligence
+   - Check for unauthorised sharing of intelligence
 
 **Deliverable:** Complete Sheet 6 with compliance verification
 
@@ -572,7 +603,7 @@ For each source in Sheet 2:
 
 **Deliverable:** Complete Sheet 15 with business continuity documentation and approvals
 
-**Audit Note:** Sheet 15 is PRIMARY EVIDENCE for ISO 27001 certification audits. Demonstrates organizational resilience and risk management.
+**Audit Note:** Sheet 15 is PRIMARY EVIDENCE for ISO 27001 certification audits. Demonstrates organisational resilience and risk management.
 
 **Quality Check:**
 
@@ -897,7 +928,7 @@ For each source in Sheet 2:
 **Gap Analysis:**
 
 - Identify tactics/techniques with <2 sources
-- Prioritize based on [Organization]'s threat model
+- Prioritize based on [Organisation]'s threat model
 - Create action items for critical gaps (Sheet 7)
 
 ---
@@ -1013,8 +1044,8 @@ For each source in Sheet 2:
 **TLP Compliance:**
 
 - Verify source marks intelligence with TLP (RED, AMBER, AMBER+STRICT, GREEN, CLEAR)
-- Verify [Organization] follows TLP sharing restrictions
-- Track any TLP violations (unauthorized sharing, incorrect marking)
+- Verify [Organisation] follows TLP sharing restrictions
+- Track any TLP violations (unauthorised sharing, incorrect marking)
 - TLP violations trigger security incident response
 
 **Conditional Formatting:**
@@ -1321,7 +1352,7 @@ Per **ISMS-POL-A.5.7, Section 3.1 (Roles & Responsibilities):**
 **Audit Evidence:**
 
 - Sheet 15 is PRIMARY EVIDENCE for ISO 27001 audits
-- Demonstrates organizational resilience
+- Demonstrates organisational resilience
 - Shows risk management for key personnel dependencies
 - Approvals required (Team Lead + CISO)
 - Missing business continuity plan is MAJOR NON-CONFORMANCE
@@ -1385,7 +1416,7 @@ Per **ISMS-POL-A.5.7, Section 3.1 (Roles & Responsibilities):**
 
 ### Evidence Storage
 
-**Organization:**
+**Organisation:**
 ```
 Evidence/
 ├── 2026-Q1/
@@ -1581,7 +1612,7 @@ Evidence/
 **Symptoms:**
 
 - Critical threat types with 0 sources
-- Geographic regions with no coverage but organization operates there
+- Geographic regions with no coverage but organisation operates there
 - MITRE ATT&CK coverage <50%
 - Gaps identified but Sheet 7 (Action Items) empty
 
@@ -1627,7 +1658,7 @@ Evidence/
 ### Evidence
 
 - [ ] Evidence collected for each source (screenshots, contracts, validation reports)
-- [ ] Evidence organized in folder structure
+- [ ] Evidence organised in folder structure
 - [ ] File naming convention consistent
 - [ ] Evidence accessible to auditors
 - [ ] **Sheet 14:** Validation evidence complete (IOC testing, CVSS validation)
@@ -1657,7 +1688,6 @@ Evidence/
 
 - [ ] Assessment ready for use by ISMS-IMP-A.5.7.2 (Collection & Analysis)
 - [ ] Assessment ready for use by ISMS-IMP-A.5.7.3 (Integration & Distribution)
-- [ ] Assessment ready for consolidation in ISMS-IMP-A.5.7.4 (Effectiveness Dashboard)
 
 ---
 
@@ -1758,7 +1788,7 @@ Evidence/
 3. Update assessment register with approval date
 4. Schedule quarterly review (3 months from approval)
 5. Track action items in project management system
-6. Provide assessment data to A.5.7.4 Dashboard consolidation
+6. Provide assessment data to Summary Dashboard tracking
 
 ---
 
@@ -1766,7 +1796,7 @@ Evidence/
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"Know your enemy and know yourself; in a hundred battles, you will never be defeated."*
+— Sun Tzu
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

@@ -54,15 +54,15 @@
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for network security controls to protect information assets through secure network infrastructure, services, and segmentation in accordance with ISO/IEC 27001:2022 Controls A.8.20, A.8.21, and A.8.22.
+This policy establishes [Organisation]'s requirements for network security controls to protect information assets through secure network infrastructure, services, and segmentation in accordance with ISO/IEC 27001:2022 Controls A.8.20, A.8.21, and A.8.22.
 
 **Scope**: This policy applies to all network infrastructure, network devices, network services, and network segments regardless of deployment model (on-premises, cloud, hybrid) or technology (traditional networking, software-defined networking).
 
-**Purpose**: Define organizational requirements for network security control implementation and governance. This policy establishes WHAT network security protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.20-21-22 (UG/TG variants). Technical standards and configurations are intentionally defined outside this policy to preserve technological agility.
+**Purpose**: Define organisational requirements for network security control implementation and governance. This policy establishes WHAT network security protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.20-21-22 (UG/TG variants). Technical standards and configurations are intentionally defined outside this policy to preserve technological agility.
 
 **Combined Control Approach**: These three controls are implemented as a unified framework because they operate on the same network infrastructure and share common discovery, assessment, and evidence collection processes. Despite unified implementation, each control maintains distinct requirements for Statement of Applicability (SoA) purposes.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -74,7 +74,7 @@ This policy establishes [Organization]'s requirements for network security contr
 
 > *Networks and network devices should be secured, managed and controlled to protect information in systems and applications.*
 
-**Control Objective**: Ensure network infrastructure and devices are hardened, monitored, and configured to prevent unauthorized access and protect information in transit.
+**Control Objective**: Ensure network infrastructure and devices are hardened, monitored, and configured to prevent unauthorised access and protect information in transit.
 
 **ISO/IEC 27001:2022 Annex A.8.21 - Security of Network Services**
 
@@ -84,7 +84,7 @@ This policy establishes [Organization]'s requirements for network security contr
 
 **ISO/IEC 27001:2022 Annex A.8.22 - Segregation of Networks**
 
-> *Groups of information services, users and information systems should be segregated in the organization's networks.*
+> *Groups of information services, users and information systems should be segregated in the organisation's networks.*
 
 **Control Objective**: Implement network segmentation to limit blast radius, enforce least privilege network access, and comply with regulatory requirements for data isolation.
 
@@ -95,15 +95,15 @@ This policy establishes [Organization]'s requirements for network security contr
 - Network infrastructure security requirements (A.8.20)
 - Network services security requirements (A.8.21)
 - Network segmentation requirements (A.8.22)
-- Organizational roles and responsibilities for network security governance
+- Organisational roles and responsibilities for network security governance
 - Exception and incident management frameworks
-- Integration with [Organization]'s risk assessment and treatment processes
+- Integration with [Organisation]'s risk assessment and treatment processes
 
 ## What This Policy Does
 
 This policy:
 
-- **Defines** network security control requirements aligned with organizational risk assessment
+- **Defines** network security control requirements aligned with organisational risk assessment
 - **Establishes** governance framework for network security decision-making
 - **Specifies** accountability for network security control implementation
 - **References** applicable regulatory requirements per ISMS-POL-00
@@ -117,8 +117,8 @@ This policy does NOT:
 - **Define network topology or architecture** (see ISMS-IMP-A.8.20-21-22-S2 Architecture Documentation)
 - **Provide device-specific configuration procedures** (see ISMS-IMP-A.8.20-21-22-S3 Device Hardening)
 - **Define firewall rules or ACLs** (see ISMS-IMP-A.8.20-21-22-S5 Segmentation Implementation)
-- **Select network technologies or vendors** (technology selection based on [Organization]'s risk assessment)
-- **Replace risk assessment** (network security controls selected based on [Organization]'s risk treatment)
+- **Select network technologies or vendors** (technology selection based on [Organisation]'s risk assessment)
+- **Replace risk assessment** (network security controls selected based on [Organisation]'s risk treatment)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
@@ -198,8 +198,8 @@ This policy implements network security requirements to comply with regulations 
 
 | Regulation | Requirement | Applicability |
 |------------|-------------|---------------|
-| **Swiss nDSG (Federal Data Protection Act)** | Technical and organizational measures to protect personal data | All [Organization] processing of personal data |
-| **EU GDPR** | Technical and organizational measures (Art. 32) | When processing EU personal data |
+| **Swiss nDSG (Federal Data Protection Act)** | Technical and organisational measures to protect personal data | All [Organisation] processing of personal data |
+| **EU GDPR** | Technical and organisational measures (Art. 32) | When processing EU personal data |
 | **ISO/IEC 27001:2022** | Controls A.8.20, A.8.21, A.8.22 | Certification scope |
 
 **Tier 2: Conditional Applicability**
@@ -219,9 +219,9 @@ Best practice frameworks referenced but not mandatory compliance requirements:
 - NIST CSF 2.0 (Cybersecurity Framework)
 - CIS Controls (network device hardening benchmarks)
 
-**United States Federal Requirements**: References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity requirements) apply only where [Organization] has explicit US federal contractual obligations, as defined in ISMS-POL-00.
+**United States Federal Requirements**: References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity requirements) apply only where [Organisation] has explicit US federal contractual obligations, as defined in ISMS-POL-00.
 
-**Compliance Determination**: Legal/Compliance Officer determines applicability of Tier 2 regulations based on [Organization]'s business activities and regulatory status.
+**Compliance Determination**: Legal/Compliance Officer determines applicability of Tier 2 regulations based on [Organisation]'s business activities and regulatory status.
 
 ---
 
@@ -229,11 +229,11 @@ Best practice frameworks referenced but not mandatory compliance requirements:
 
 ## Network Infrastructure Security (A.8.20)
 
-[Organization] **MUST** implement the following network infrastructure security controls:
+[Organisation] **MUST** implement the following network infrastructure security controls:
 
 | Requirement Category | Mandatory Controls | Implementation Reference |
 |---------------------|-------------------|-------------------------|
-| **Network Topology Documentation** | Maintain current network diagrams (physical, logical, security views); Update documentation based on organizational change management | ISMS-IMP-A.8.20-21-22-S2 |
+| **Network Topology Documentation** | Maintain current network diagrams (physical, logical, security views); Update documentation based on organisational change management | ISMS-IMP-A.8.20-21-22-S2 |
 | **Network Device Inventory** | Comprehensive inventory of all network devices with ownership, criticality, compliance status; Updated from automated discovery | ISMS-IMP-A.8.20-21-22-S1 |
 | **Device Hardening** | Disable default credentials; Remove unnecessary services; Implement secure configurations per CIS benchmarks or vendor hardening guides | ISMS-IMP-A.8.20-21-22-S3 |
 | **Perimeter Controls** | Firewalls at network perimeter; IPS/IDS for threat detection; DDoS protection for internet-facing services | ISMS-IMP-A.8.20-21-22-S3 |
@@ -249,7 +249,7 @@ Best practice frameworks referenced but not mandatory compliance requirements:
 
 ## Network Services Security (A.8.21)
 
-[Organization] **MUST** implement the following network services security controls:
+[Organisation] **MUST** implement the following network services security controls:
 
 | Service Type | Mandatory Security Mechanisms | Implementation Reference |
 |-------------|------------------------------|-------------------------|
@@ -276,7 +276,7 @@ Service-specific SLA determination guidance is provided in ISMS-IMP-A.8.20-21-22
 
 ## Network Segmentation (A.8.22)
 
-[Organization] **MUST** implement the following network segmentation controls:
+[Organisation] **MUST** implement the following network segmentation controls:
 
 | Requirement Category | Mandatory Controls | Implementation Reference |
 |---------------------|-------------------|-------------------------|
@@ -393,7 +393,7 @@ Rules lacking documented business justification identified during review must be
 
 - Network security controls monitored through automated and manual mechanisms
 - Network device logs monitored via centralized logging system
-- Network traffic analyzed for security anomalies
+- Network traffic analysed for security anomalies
 - Security events trigger alerts and incident response procedures
 
 **Periodic Reporting**:
@@ -409,7 +409,7 @@ Rules lacking documented business justification identified during review must be
 
 - Network security compliance metrics defined in assessment framework
 - Key performance indicators (KPIs) documented in implementation guidance
-- Targets and thresholds established based on organizational risk tolerance
+- Targets and thresholds established based on organisational risk tolerance
 - Gap remediation prioritized based on risk assessment
 - Trend analysis conducted to identify security improvements
 
@@ -425,7 +425,7 @@ Rules lacking documented business justification identified during review must be
 | Mean time to patch critical vulnerabilities (network devices) | ≤14 days | Monthly | >30 days triggers exception request | **Vulnerability scanner reports + patch logs** |
 | Exception backlog | ≤5 active exceptions | Quarterly | >10 triggers executive review | **Exception register in GRC platform** |
 
-**Metric Governance**: Detailed metric definitions, collection methods, and trending analysis documented in ISMS-IMP-A.8.20-21-22-S6. Targets reviewed annually and adjusted based on organizational risk tolerance and operational maturity.
+**Metric Governance**: Detailed metric definitions, collection methods, and trending analysis documented in ISMS-IMP-A.8.20-21-22-S6. Targets reviewed annually and adjusted based on organisational risk tolerance and operational maturity.
 
 **Reporting Audience**:
 
@@ -482,12 +482,12 @@ When network security requirements cannot be met due to technical, operational, 
 
 **Network Security Incidents** (triggering this policy):
 
-- Unauthorized access to network devices or management interfaces
-- Network device compromise (malware, backdoor, unauthorized changes)
+- Unauthorised access to network devices or management interfaces
+- Network device compromise (malware, backdoor, unauthorised changes)
 - Network-based attacks (DDoS, ARP poisoning, VLAN hopping, man-in-the-middle)
 - Network service compromise (DNS poisoning, rogue DHCP, NTP attacks)
 - Segmentation bypass or flat network exploitation
-- Configuration tampering or unauthorized firewall rule changes
+- Configuration tampering or unauthorised firewall rule changes
 - Network traffic anomalies indicating data exfiltration or lateral movement
 
 **Incident Severity Classification**:
@@ -496,8 +496,8 @@ When network security requirements cannot be met due to technical, operational, 
 |----------|------------|-----------------|-------------|----------------|
 | **Low** | Contained issue with minimal security impact | Single device or user affected | No data exposure confirmed | No service degradation |
 | **Medium** | Potential for spread or escalation; requires prompt attention | Multiple devices or single network segment affected | Potential data exposure; no confirmation | Minor service degradation (<10% users) |
-| **High** | Active threat or confirmed unauthorized access requiring urgent response | Multiple segments affected or critical systems targeted | Confirmed data exposure (limited scope) or access to sensitive systems | Significant service degradation (10-50% users) |
-| **Critical** | Severe incident with organization-wide impact or active data exfiltration | Network-wide impact or management infrastructure compromised | Active data exfiltration or exposure of high-sensitivity data | Major service disruption (>50% users) |
+| **High** | Active threat or confirmed unauthorised access requiring urgent response | Multiple segments affected or critical systems targeted | Confirmed data exposure (limited scope) or access to sensitive systems | Significant service degradation (10-50% users) |
+| **Critical** | Severe incident with organisation-wide impact or active data exfiltration | Network-wide impact or management infrastructure compromised | Active data exfiltration or exposure of high-sensitivity data | Major service disruption (>50% users) |
 
 **Severity Examples (Network Security)**:
 
@@ -505,7 +505,7 @@ When network security requirements cannot be met due to technical, operational, 
 |----------|-------------------|
 | **Low** | Failed authentication attempts on single network device; minor configuration drift detected; single rogue AP detected and contained |
 | **Medium** | Misconfigured firewall rule allowing unintended traffic (no exploitation confirmed); VLAN misconfiguration affecting non-critical segment; network service degradation from capacity issue |
-| **High** | Compromised network device with evidence of reconnaissance; successful VLAN hopping attempt; unauthorized access to network management interface; segmentation bypass confirmed |
+| **High** | Compromised network device with evidence of reconnaissance; successful VLAN hopping attempt; unauthorised access to network management interface; segmentation bypass confirmed |
 | **Critical** | Network device compromise affecting critical infrastructure; active lateral movement across segments; compromise of centralized authentication (RADIUS/TACACS+); network-wide DDoS with sustained impact; evidence of data exfiltration via network channels |
 
 **Incident Response Process**:
@@ -536,14 +536,14 @@ When network security requirements cannot be met due to technical, operational, 
 
 **Incident Logging**: All network security incidents logged in incident management system with timeline, actions taken, root cause, and remediation.
 
-**Reference**: Detailed incident response procedures in organizational incident response plan and ISMS-IMP-A.8.20-21-22-S6.
+**Reference**: Detailed incident response procedures in organisational incident response plan and ISMS-IMP-A.8.20-21-22-S6.
 
 ## Policy Governance
 
 **Policy Review**:
 
 - **Frequency**: Annual review cycle
-- **Triggers**: Regulatory changes, significant security incidents, technology changes, organizational changes, audit findings
+- **Triggers**: Regulatory changes, significant security incidents, technology changes, organisational changes, audit findings
 - **Reviewers**: CISO (primary), CIO, Network Operations Manager, Legal/Compliance Officer
 - **Approval**: Executive Management (final authority)
 
@@ -597,7 +597,7 @@ When network security requirements cannot be met due to technical, operational, 
 
 **ISO/IEC 27001:2022 Clause 6.1 - Risk Assessment**:
 
-Network security controls implemented based on [Organization]'s risk assessment:
+Network security controls implemented based on [Organisation]'s risk assessment:
 
 - Network infrastructure risks (A.8.20) identified and assessed
 - Network services risks (A.8.21) identified and assessed
@@ -610,9 +610,9 @@ This policy supports the following SoA entries:
 
 | Control | Status | Justification | Implementation |
 |---------|--------|---------------|----------------|
-| **A.8.20 - Networks Security** | ☑ Applicable | [Organization] operates network infrastructure requiring security controls | Section 2.1, ISMS-IMP-A.8.20-21-22-UG/TG |
-| **A.8.21 - Security of Network Services** | ☑ Applicable | [Organization] operates critical network services requiring security controls | Section 2.2, ISMS-IMP-A.8.20-21-22-UG/TG |
-| **A.8.22 - Segregation of Networks** | ☑ Applicable | [Organization] requires network segmentation to limit risk and meet regulatory requirements | Section 2.3, ISMS-IMP-A.8.20-21-22-UG/TG |
+| **A.8.20 - Networks Security** | ☑ Applicable | [Organisation] operates network infrastructure requiring security controls | Section 2.1, ISMS-IMP-A.8.20-21-22-UG/TG |
+| **A.8.21 - Security of Network Services** | ☑ Applicable | [Organisation] operates critical network services requiring security controls | Section 2.2, ISMS-IMP-A.8.20-21-22-UG/TG |
+| **A.8.22 - Segregation of Networks** | ☑ Applicable | [Organisation] requires network segmentation to limit risk and meet regulatory requirements | Section 2.3, ISMS-IMP-A.8.20-21-22-UG/TG |
 
 **Related Controls** (integration points):
 
@@ -628,7 +628,7 @@ This policy supports the following SoA entries:
 - Network traffic monitored for anomalies (NetFlow/sFlow, IDS/IPS)
 - Network services monitored for availability and performance
 - Security events trigger alerts
-- Integration: Network monitoring integrated with organizational monitoring framework per A.8.16
+- Integration: Network monitoring integrated with organisational monitoring framework per A.8.16
 
 **A.8.8 - Technical Vulnerability Management**:
 
@@ -681,7 +681,6 @@ This policy supports the following SoA entries:
 | **Workbook 3 - Network Services Catalog** | Services inventory with security mechanisms, availability, monitoring status | Per implementation guidance |
 | **Workbook 4 - Network Segmentation Matrix** | Security zones, trust relationships, inter-zone policies, effectiveness tests | Per implementation guidance |
 | **Workbook 5 - Security Controls Coverage** | Master controls matrix showing which controls protect which segments | Per implementation guidance |
-| **Dashboard - Network Security Compliance** | Consolidated compliance view with metrics and trends | Per implementation guidance |
 
 **Supporting Materials**:
 
@@ -827,4 +826,4 @@ Frequency reductions require CISO approval and documented risk acceptance.
 
 *This policy establishes requirements for network security controls covering network infrastructure (A.8.20), network services (A.8.21), and network segmentation (A.8.22). Implementation procedures are documented in ISMS-IMP-A.8.20-21-22 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-02-02 -->
+<!-- QA_VERIFIED: 2026-03-01 -->
