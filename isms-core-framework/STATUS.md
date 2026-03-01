@@ -7,12 +7,12 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Control_Packs-53_of_53-00AA00?style=flat-square" alt="Control Packs"/>
   <img src="https://img.shields.io/badge/Annex_A_Controls-93_Mapped-32CD32?style=flat-square" alt="93 Mapped"/>
-  <img src="https://img.shields.io/badge/Generators-253_Validated-3776AB?style=flat-square" alt="253 Generators"/>
+  <img src="https://img.shields.io/badge/Generators-188_Validated-3776AB?style=flat-square" alt="188 Generators"/>
   <img src="https://img.shields.io/badge/ISMS_Copilot-100%25_Audited-00AA00?style=flat-square" alt="Copilot Audited"/>
 </p>
 
 <p align="center">
-  <strong>Last Updated:</strong> 2026-02-10
+  <strong>Last Updated:</strong> 2026-03-01
 </p>
 
 ---
@@ -51,12 +51,12 @@ This status file tracks **control packs**, not ISO certification status.
 </tr>
 <tr>
 <td>Generator Scripts</td>
-<td><strong>xxx</strong></td>
+<td><strong>188</strong></td>
 <td><img src="https://img.shields.io/badge/QA_Validated-3776AB?style=flat-square" alt="Validated"/></td>
 </tr>
 <tr>
 <td>IMP Documents (UG + TG)</td>
-<td><strong>372</strong> (186 UG + 186 TG)</td>
+<td><strong>376</strong> (188 UG + 188 TG)</td>
 <td><img src="https://img.shields.io/badge/UG%2FTG_Split-9400D3?style=flat-square" alt="UG/TG Split"/></td>
 </tr>
 </table>

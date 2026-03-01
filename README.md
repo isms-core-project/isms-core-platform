@@ -64,7 +64,7 @@ The platform provides **two products** at different levels of depth:
 </tr>
 <tr>
 <td><strong>Artifacts</strong></td>
-<td>372 IMP docs, xxx Python scripts, xxx Excel workbooks</td>
+<td>376 IMP docs, 188 Python scripts, 237 Excel workbooks</td>
 <td>53 operational policies, compliance checklist scripts and workbooks</td>
 </tr>
 </table>
@@ -261,8 +261,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | Framework control packs | **53 of 53** | ![100%](https://img.shields.io/badge/100%25-00AA00?style=flat-square) |
 | Operational policies | **53 of 53** | ![100%](https://img.shields.io/badge/100%25-00AA00?style=flat-square) |
 | Annex A controls mapped | **93 of 93** | ![Mapped](https://img.shields.io/badge/Mapped-32CD32?style=flat-square) |
-| Python scripts (Framework) | **xxx** (xxxK+ lines) | ![Validated](https://img.shields.io/badge/Validated-0066CC?style=flat-square) |
-| IMP documents (Framework) | **372** (186 UG + 186 TG) | ![Split](https://img.shields.io/badge/UG%2FTG-9400D3?style=flat-square) |
+| Python scripts (Framework) | **188** (307K+ lines) | ![Validated](https://img.shields.io/badge/Validated-0066CC?style=flat-square) |
+| IMP documents (Framework) | **376** (188 UG + 188 TG) | ![Split](https://img.shields.io/badge/UG%2FTG-9400D3?style=flat-square) |
 
 See [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) for detailed Framework metrics.
 
