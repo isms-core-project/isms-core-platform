@@ -1,5 +1,5 @@
 <!-- ISMS-CORE:POLICY:ISMS-POL-A.5.24-28:framework:POL:a.5.24-28 -->
-**ISMS-POL-A.5.24-28 - Incident Management Lifecycle**
+**ISMS-POL-A.5.24-28 — Incident Management Lifecycle**
 
 ---
 

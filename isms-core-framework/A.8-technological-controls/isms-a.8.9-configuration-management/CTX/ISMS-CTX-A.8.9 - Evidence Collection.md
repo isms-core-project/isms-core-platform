@@ -1,5 +1,5 @@
 <!-- ISMS-CORE:CTX:ISMS-CTX-A.8.9-Evidence-Collection:framework:CTX:a.8.9-evidence-collection -->
-**ISMS-CTX-A.8.9-Evidence-Collection**
+**ISMS-CTX-A.8.9 — Evidence Collection**
 
 **Document Control**
 
@@ -83,7 +83,6 @@ Evidence/
   ISMS-A.8.9-Change-Control/
   ISMS-A.8.9-Configuration-Monitoring/
   ISMS-A.8.9-Security-Hardening/
-  ISMS-A.8.9-Consolidated-Compliance/
 ```
 
 ---
@@ -478,51 +477,6 @@ Contains regular compliance reporting.
 
 ---
 
-## A.8.9.5 - Consolidated Compliance Evidence
-
-**Assessment File**: ISMS-IMP-A.8.9.5.xlsx (generated from Python script)
-
-### Directory Structure
-
-**Evidence/ISMS-A.8.9-Consolidated-Compliance/**
-
-#### 1. Executive-Dashboards/
-Contains consolidated compliance reporting for leadership.
-
-**Required Files** (Quarterly):
-
-- `A.8.9-Compliance-Dashboard-Q1-2024.pdf` - Consolidated metrics across all domains
-- `A.8.9-Maturity-Scorecard-Q1-2024.pdf` - Maturity assessment
-- `A.8.9-Risk-Heatmap-Q1-2024.pdf` - Risk visualization
-- `A.8.9-Trend-Analysis-Q1-2024.xlsx` - Historical performance
-
-#### 2. Audit-Packages/
-Contains prepared audit evidence packages.
-
-**Per Audit**:
-
-- `Internal-Audit-2024-Q1/` - All evidence for internal audit
-- `External-Audit-ISO27001-2024/` - All evidence for certification audit
-- `Regulatory-Audit-FINMA-2024/` - Sector-specific audit evidence
-
-#### 3. Continuous-Improvement/
-Contains improvement initiatives and lessons learned.
-
-**Required Files**:
-
-- `Lessons-Learned-Register.xlsx` - Issues and resolutions
-- `Process-Improvement-Initiatives.xlsx` - Active improvement projects
-- `Policy-Update-Proposals.pdf` - Proposed policy changes
-- `Tool-Enhancement-Requests.xlsx` - Monitoring/scanning tool improvements
-
-#### 4. Assessment-Reports/
-
-- `Consolidated-Compliance-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9.5 workbook
-- `Annual-Compliance-Report-2024.pdf` - Comprehensive annual report
-- `Evidence-Register-Master-Index.pdf` - Complete evidence inventory
-
----
-
 ## Evidence Collection Best Practices
 
 ### Naming Conventions Summary
@@ -670,4 +624,4 @@ Before filing evidence, verify:
 
 *For binding policy requirements, refer to ISMS-POL-A.8.9 Configuration Management Policy.*
 
-<!-- QA_VERIFIED: 2026-01-31 -->
+<!-- QA_VERIFIED: 2026-03-02 -->

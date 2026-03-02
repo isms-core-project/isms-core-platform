@@ -1,5 +1,5 @@
 <!-- ISMS-CORE:POLICY:ISMS-POL-A.5.31.4:framework:POL:a.5.31.4 -->
-**ISMS-POL-A.5.31.4: Change Management & Evidence Framework**
+**ISMS-POL-A.5.31.4 — Change Management & Evidence Framework**
 **Legal, Statutory, Regulatory and Contractual Requirements**
 
 **Document Control**

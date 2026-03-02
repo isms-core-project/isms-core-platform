@@ -1,5 +1,5 @@
 <!-- ISMS-CORE:POLICY:ISMS-POL-A.6.6:framework:POL:a.6.6 -->
-**ISMS-POL-A.6.6 - Confidentiality and Non-Disclosure Agreements**
+**ISMS-POL-A.6.6 — Confidentiality and Non-Disclosure Agreements**
 
 ---
 

@@ -1,5 +1,5 @@
 <!-- ISMS-CORE:POLICY:ISMS-POL-A.8.31:framework:POL:a.8.31 -->
-**ISMS-POL-A.8.31 - Separation of Development, Test and Production Environments**
+**ISMS-POL-A.8.31 — Separation of Development, Test and Production Environments**
 
 ---
 

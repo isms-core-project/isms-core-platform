@@ -1,5 +1,5 @@
 <!-- ISMS-CORE:POLICY:ISMS-POL-A.8.33-34:framework:POL:a.8.33-34 -->
-**ISMS-POL-A.8.33-34 - Testing and Audit Protection**
+**ISMS-POL-A.8.33-34 — Testing and Audit Protection**
 
 ---
 

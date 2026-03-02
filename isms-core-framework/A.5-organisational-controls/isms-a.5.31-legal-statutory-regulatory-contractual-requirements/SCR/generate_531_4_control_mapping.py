@@ -1109,7 +1109,7 @@ def populate_gap_summary(wb):
     title_cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     title_cell.alignment = Alignment(horizontal="center", vertical="center")
     ws.row_dimensions[1].height = 35
-    
+
     # Headers
     headers = ["Requirement ID", "Requirement Text", "Category", "Priority", "Gap Type", "Notes"]
     for col_idx, header in enumerate(headers, start=1):
@@ -1117,92 +1117,58 @@ def populate_gap_summary(wb):
         cell.font = Font(bold=True, size=10, color="FFFFFF")
         cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
         cell.alignment = Alignment(horizontal="center", vertical="center")
-    
-    # Set column widths
+
+    # Column widths
     ws.column_dimensions["A"].width = 18
     ws.column_dimensions["B"].width = 45
     ws.column_dimensions["C"].width = 15
     ws.column_dimensions["D"].width = 12
     ws.column_dimensions["E"].width = 18
     ws.column_dimensions["F"].width = 50
-    
-    # Sample gap data (requirements with no or insufficient mappings)
+
+    # Sample row (row 3) — grey D9D9D9, does not count in SD (COUNTA starts at A4)
+    _grey_fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
+    _thin = Side(style="thin")
     gap_data = [
-        ("REG-ISO27001-8.1-001", "Implement Annex A controls", "Technical", "High", f"{XMARK} Complete Gap", 
+        ("REG-ISO27001-8.1-001", "Implement Annex A controls", "Technical", "High",
+         f"{XMARK} Complete Gap",
          "This is a meta-requirement covering all 93 controls. Gap analysis shows 28 controls not yet implemented."),
-        # Note: Other sample requirements have mappings, so no gaps
     ]
-    
     for row_idx, data in enumerate(gap_data, start=3):
         for col_idx, value in enumerate(data, start=1):
             cell = ws.cell(row=row_idx, column=col_idx, value=value)
             cell.font = Font(size=9)
+            cell.fill = _grey_fill
             cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
-            thin = Side(style="thin")
-            cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
-            
-            # Color-code priority column
-            if col_idx == 4 and "High" in str(value):
-                cell.fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
-            elif col_idx == 4 and "Medium" in str(value):
-                cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-            
-            # Color-code gap type column
-            if col_idx == 5 and f"{XMARK}" in str(value):
-                cell.fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
-            elif col_idx == 5 and f"{WARNING}" in str(value):
-                cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-    
-    # Add summary section
-    row = len(gap_data) + 5
-    
-    ws.merge_cells(f"A{row}:F{row}")
-    summary_cell = ws.cell(row=row, column=1, value="GAP SUMMARY STATISTICS")
-    summary_cell.font = Font(bold=True, size=12)
-    summary_cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
-    
-    row += 2
-    ws.cell(row=row, column=1, value="Total Requirements Mapped:").font = Font(bold=True)
-    ws.cell(row=row, column=2, value="10")  # From sample data
-    
-    row += 1
-    ws.cell(row=row, column=1, value="Complete Gaps (No Primary Mapping):").font = Font(bold=True)
-    ws.cell(row=row, column=2, value="1")
-    ws.cell(row=row, column=2).font = Font(color="C00000", bold=True)
-    
-    row += 1
-    ws.cell(row=row, column=1, value="Partial Gaps (Only Secondary/Supporting):").font = Font(bold=True)
-    ws.cell(row=row, column=2, value="0")
-    ws.cell(row=row, column=2).font = Font(color="FF9900", bold=True)
-    
-    row += 1
-    ws.cell(row=row, column=1, value="No Gaps (Primary Mapping Exists):").font = Font(bold=True)
-    ws.cell(row=row, column=2, value="9")
-    ws.cell(row=row, column=2).font = Font(color="00B050", bold=True)
-    
-    row += 2
-    ws.cell(row=row, column=1, value="High High Priority Gaps:").font = Font(bold=True)
-    ws.cell(row=row, column=2, value="1")
-    ws.cell(row=row, column=2).font = Font(color="C00000", bold=True, size=12)
-    
-    row += 1
-    ws.cell(row=row, column=1, value="Medium Medium Priority Gaps:").font = Font(bold=True)
-    ws.cell(row=row, column=2, value="0")
-    
-    row += 1
-    ws.cell(row=row, column=1, value="Low Low Priority Gaps:").font = Font(bold=True)
-    ws.cell(row=row, column=2, value="0")
-    
-    row += 3
-    ws.merge_cells(f"A{row}:F{row}")
-    note_cell = ws.cell(row=row, column=1, value="NOTE: This is sample data. In production use, formulas would auto-calculate gaps from the mapping matrix.")
-    note_cell.font = Font(italic=True, size=9, color="808080")
-    note_cell.alignment = Alignment(horizontal="left", wrap_text=True)
-    
-    # Freeze panes
+            cell.border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+
+    # Data validations — applied to data rows (row 4+), skipping grey sample at row 3
+    dv_category = DataValidation(
+        type="list",
+        formula1='"Technical,Organisational,Legal/Regulatory,Operational,Physical"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(dv_category)
+    dv_category.add("C4:C1000")
+
+    dv_priority = DataValidation(
+        type="list",
+        formula1='"High,Medium,Low"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(dv_priority)
+    dv_priority.add("D4:D1000")
+
+    dv_gap_type = DataValidation(
+        type="list",
+        formula1=f'"{XMARK} Complete Gap,{WARNING} Partial Gap,{CHECK} No Gap"',
+        allow_blank=True,
+    )
+    ws.add_data_validation(dv_gap_type)
+    dv_gap_type.add("E4:E1000")
+
+    # Freeze panes and auto-filter
     ws.freeze_panes = "A3"
-    
-    # Auto-filter
     ws.auto_filter.ref = "A2:F2"
 
 
@@ -1461,7 +1427,7 @@ def create_summary_dashboard_sheet(wb):
 
     # C: Compliant = Total minus gap items
     cell_c = ws.cell(row=row, column=3,
-        value=f"=B{row}-COUNTA('Gap Summary'!A3:A1000)")
+        value=f"=B{row}-COUNTA('Gap Summary'!A4:A1000)")
     cell_c.border = _b; cell_c.alignment = Alignment(horizontal="center")
     cell_c.font = Font(color="000000", name="Calibri", size=10)
 
@@ -1472,7 +1438,7 @@ def create_summary_dashboard_sheet(wb):
 
     # E: Non-Compliant = gap items
     cell_e = ws.cell(row=row, column=5,
-        value="=COUNTA('Gap Summary'!A3:A1000)")
+        value="=COUNTA('Gap Summary'!A4:A1000)")
     cell_e.border = _b; cell_e.alignment = Alignment(horizontal="center")
     cell_e.font = Font(color="000000", name="Calibri", size=10)
 
@@ -1533,9 +1499,9 @@ def create_summary_dashboard_sheet(wb):
         ("Total requirements in scope",
          "=COUNTA('Control Mapping Matrix'!A3:A1000)"),
         ("Requirements with Primary control mapped",
-         f"=B{6}-COUNTA('Gap Summary'!A3:A1000)"),
+         f"=B{6}-COUNTA('Gap Summary'!A4:A1000)"),
         ("Requirements in gap analysis",
-         "=COUNTA('Gap Summary'!A3:A1000)"),
+         "=COUNTA('Gap Summary'!A4:A1000)"),
         ("Total ISO 27001 controls referenced",
          "=COUNTA('ISO27001 Controls Reference'!A3:A1000)"),
     ]
@@ -1577,7 +1543,7 @@ def create_summary_dashboard_sheet(wb):
     _yell_fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     findings = [
         ("Requirements in gap analysis (no adequate control)",
-         "=COUNTA('Gap Summary'!A3:A1000)",
+         "=COUNTA('Gap Summary'!A4:A1000)",
          "Review Gap Summary sheet \u2014 implement controls or accept risk for each gap item"),
         ("Total requirements not yet mapped",
          "=COUNTA('Control Mapping Matrix'!A3:A1000)-COUNTA('Mapping Guidelines'!A3:A1000)",

@@ -1,5 +1,5 @@
 <!-- ISMS-CORE:POLICY:ISMS-POL-A.5.8:framework:POL:a.5.8 -->
-**ISMS-POL-A.5.8 - Information Security in Project Management**
+**ISMS-POL-A.5.8 — Information Security in Project Management**
 
 ---
 
