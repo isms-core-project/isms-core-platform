@@ -42,7 +42,7 @@
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.19-23 (Parent Policy - Supplier & Cloud Services Security)
 - ISMS-POL-A.5.19-23-S2 (Supplier Agreement Requirements)
-- ISMS-IMP-A.5.23-1-UG/TG (Cloud Service Inventory & Classification)
+- ISMS-IMP-A.5.19-23.S1-UG/TG (Cloud Service Inventory & Classification)
 - ISMS-REF-A.5.23 (Cloud Service Provider Registry)
 - ISO/IEC 27001:2022 Control A.5.19
 - ISO/IEC 27036-1 (Information security for supplier relationships - Overview and concepts)
@@ -444,7 +444,7 @@ Security requirements shall be communicated to suppliers through:
 - Dedicated GRC (Governance, Risk, Compliance) platform
 - Procurement management system with security module
 - Excel/database with version control (minimum acceptable)
-- Assessment workbook ISMS-IMP-A.5.23-1 (Cloud Service Inventory)
+- Assessment workbook ISMS-IMP-A.5.19-23-1 (Cloud Service Inventory)
 
 **Register Reporting**: Quarterly supplier summary reports shall include:
 
@@ -529,8 +529,8 @@ Security requirements shall be communicated to suppliers through:
 | **ISMS-POL-A.5.19-23** | Parent policy framework |
 | **ISMS-POL-A.5.19-23-S2** | Supplier agreement requirements (Control A.5.20) |
 | **ISMS-POL-A.5.19-23-S3** | ICT supply chain security (Control A.5.21) |
-| **ISMS-IMP-A.5.23-1-UG/TG** | Cloud service inventory assessment workbook |
-| **ISMS-IMP-A.5.23-2-UG/TG** | Supplier due diligence assessment workbook |
+| **ISMS-IMP-A.5.19-23.S1-UG/TG** | Cloud service inventory assessment workbook |
+| **ISMS-IMP-A.5.19-23.S2-UG/TG** | Supplier due diligence assessment workbook |
 | **ISO/IEC 27036-1:2021** | Information security for supplier relationships - Overview |
 | **NIST SP 800-161** | Cybersecurity Supply Chain Risk Management |
 

@@ -46,10 +46,10 @@
 - ISMS-POL-A.5.19-23-S4 (Supplier Monitoring & Change Management)
 - ISMS-POL-A.5.19-23-S5 (Cloud Services Security)
 - ISMS-POL-A.5.19-23-S6 (Assessment Methodology & Automation)
-- ISMS-IMP-A.5.23.S1-UG/TG (Cloud Service Inventory & Classification)
-- ISMS-IMP-A.5.23.S2-UG/TG (Vendor Due Diligence & Contracts)
-- ISMS-IMP-A.5.23.S3-UG/TG (Secure Configuration & Deployment)
-- ISMS-IMP-A.5.23.S4-UG/TG (Ongoing Governance & Risk Management)
+- ISMS-IMP-A.5.19-23.S1-UG/TG (Cloud Service Inventory & Classification)
+- ISMS-IMP-A.5.19-23.S2-UG/TG (Vendor Due Diligence & Contracts)
+- ISMS-IMP-A.5.19-23.S3-UG/TG (Secure Configuration & Deployment)
+- ISMS-IMP-A.5.19-23.S4-UG/TG (Ongoing Governance & Risk Management)
 - ISMS-REF-A.5.23 (Cloud Service Provider Registry)
 - ISO/IEC 27001:2022 Controls A.5.19-23
 - ISO/IEC 27036 (Supplier Relationships)
@@ -263,11 +263,11 @@ ISMS-POL-A.5.19-23 (Master Index) ← You are here
     └── Defines: Excel workbooks, Python scripts, validation
 
 Implementation Layer (Separate Documents):
-├── ISMS-IMP-A.5.23.0 (Regulatory Update Specification - DORA/NIS2/AI Act/CLOUD Act)
-├── ISMS-IMP-A.5.23.1 (Cloud Service Inventory & Classification)
-├── ISMS-IMP-A.5.23.2 (Vendor Due Diligence & Contracts)
-├── ISMS-IMP-A.5.23.3 (Secure Configuration & Deployment)
-└── ISMS-IMP-A.5.23.4 (Ongoing Governance & Risk Management)
+├── ISMS-IMP-A.5.19-23.0 (Regulatory Update Specification - DORA/NIS2/AI Act/CLOUD Act)
+├── ISMS-IMP-A.5.19-23.1 (Cloud Service Inventory & Classification)
+├── ISMS-IMP-A.5.19-23.2 (Vendor Due Diligence & Contracts)
+├── ISMS-IMP-A.5.19-23.3 (Secure Configuration & Deployment)
+└── ISMS-IMP-A.5.19-23.4 (Ongoing Governance & Risk Management)
 
 Reference Data:
 └── ISMS-REF-A.5.23 (Cloud Service Provider Registry)
@@ -283,13 +283,13 @@ The framework includes comprehensive assessment specifications defining structur
 
 | Document ID | Title | Purpose | Sheets |
 |-------------|-------|---------|--------|
-| **ISMS-IMP-A.5.23.0** | Regulatory Update Specification | DORA, NIS2, AI Act, CLOUD Act enhancements | N/A (spec) |
-| **ISMS-IMP-A.5.23.1** | Cloud Service Inventory & Classification | Authoritative inventory with data classification and criticality | ~10 |
-| **ISMS-IMP-A.5.23.2** | Vendor Due Diligence & Contracts | Due diligence criteria, contract security clauses | ~8 |
-| **ISMS-IMP-A.5.23.3** | Secure Configuration & Deployment | Cloud service configuration baselines and deployment | ~8 |
-| **ISMS-IMP-A.5.23.4** | Ongoing Governance & Risk Management | Monitoring, review cycles, incident management | ~8 |
+| **ISMS-IMP-A.5.19-23.0** | Regulatory Update Specification | DORA, NIS2, AI Act, CLOUD Act enhancements | N/A (spec) |
+| **ISMS-IMP-A.5.19-23.1** | Cloud Service Inventory & Classification | Authoritative inventory with data classification and criticality | ~10 |
+| **ISMS-IMP-A.5.19-23.2** | Vendor Due Diligence & Contracts | Due diligence criteria, contract security clauses | ~8 |
+| **ISMS-IMP-A.5.19-23.3** | Secure Configuration & Deployment | Cloud service configuration baselines and deployment | ~8 |
+| **ISMS-IMP-A.5.19-23.4** | Ongoing Governance & Risk Management | Monitoring, review cycles, incident management | ~8 |
 
-**Note**: ISMS-IMP-A.5.23.0 is a specification document for updating workbooks 1-4 with regulatory enhancements, not a standalone workbook.
+**Note**: ISMS-IMP-A.5.19-23.0 is a specification document for updating workbooks 1-4 with regulatory enhancements, not a standalone workbook.
 
 ## Generated Excel Workbooks
 
@@ -397,12 +397,12 @@ When Python generators are executed, they produce:
 
 | Script | Output Workbook | Purpose |
 |--------|-----------------|---------|
-| `generate_reg_a523_1_inventory.py` | ISMS-IMP-A.5.23.1_Inventory_{YYYYMMDD}.xlsx | Cloud service inventory and classification |
-| `generate_reg_a523_2_vendor_dd.py` | ISMS-IMP-A.5.23.2_VendorDD_{YYYYMMDD}.xlsx | Vendor evaluation and contract review |
-| `generate_reg_a523_3_secure_config.py` | ISMS-IMP-A.5.23.3_SecureConfig_{YYYYMMDD}.xlsx | Secure configuration and deployment |
-| `generate_reg_a523_4_governance.py` | ISMS-IMP-A.5.23.4_Governance_{YYYYMMDD}.xlsx | Ongoing monitoring and risk management |
+| `generate_reg_a523_1_inventory.py` | ISMS-IMP-A.5.19-23.1_Inventory_{YYYYMMDD}.xlsx | Cloud service inventory and classification |
+| `generate_reg_a523_2_vendor_dd.py` | ISMS-IMP-A.5.19-23.2_VendorDD_{YYYYMMDD}.xlsx | Vendor evaluation and contract review |
+| `generate_reg_a523_3_secure_config.py` | ISMS-IMP-A.5.19-23.3_SecureConfig_{YYYYMMDD}.xlsx | Secure configuration and deployment |
+| `generate_reg_a523_4_governance.py` | ISMS-IMP-A.5.19-23.4_Governance_{YYYYMMDD}.xlsx | Ongoing monitoring and risk management |
 
-**Regulatory Enhancement**: All generators incorporate fields from ISMS-IMP-A.5.23.0 specification for DORA, NIS2, AI Act, and CLOUD Act compliance requirements.
+**Regulatory Enhancement**: All generators incorporate fields from ISMS-IMP-A.5.19-23.0 specification for DORA, NIS2, AI Act, and CLOUD Act compliance requirements.
 
 ## Supporting Scripts
 
@@ -751,7 +751,7 @@ This framework covers five related controls that work together across the suppli
 - Exit plans for **Level 1 (Critical)** suppliers SHALL be tested annually (DORA Art. 28.6 where applicable)
 - Exit plans for **Level 2 (High)** suppliers SHALL be tested biennially or upon major service change
 - Exit plan testing includes: data export validation, service migration simulation, BC/DR integration verification
-- Test results documented in ISMS-IMP-A.5.23.4 (Governance workbook) and reported to CISO
+- Test results documented in ISMS-IMP-A.5.19-23.4 (Governance workbook) and reported to CISO
 
 ## Review Cycles
 
@@ -1165,7 +1165,7 @@ Supplier and cloud services security integrates with multiple ISO 27001 controls
 
 **Documentation:** Exit planning integration documented in:
 
-- ISMS-IMP-A.5.23.4 (Governance workbook - Exit Strategy sheet)
+- ISMS-IMP-A.5.19-23.4 (Governance workbook - Exit Strategy sheet)
 - ISMS-POL-A.5.30-8.13-14 (BC/DR Policy - Supplier exit scenarios)
 
 **Reference:** See "A.5.19-23 ↔ BC/DR Integration - Critical for Exit Scenarios" alignment document for detailed integration requirements.
@@ -1309,8 +1309,8 @@ Material services outsourced by a bank to a service provider, where the service 
 - Right to audit sub-outsourcers (direct or via service provider)
 
 **Implementation:**
-- Sub-outsourcing register maintained in ISMS-IMP-A.5.23.2 (Due Diligence workbook - Sub-Supplier Sheet)
-- Sub-outsourcer risk assessment documented in ISMS-IMP-A.5.23.4 (Governance workbook)
+- Sub-outsourcing register maintained in ISMS-IMP-A.5.19-23.2 (Due Diligence workbook - Sub-Supplier Sheet)
+- Sub-outsourcer risk assessment documented in ISMS-IMP-A.5.19-23.4 (Governance workbook)
 - Approval workflow integrated with supplier onboarding process (Section 8: Lifecycle Management)
 
 ## Data Sovereignty & Cross-Border Considerations
@@ -1429,12 +1429,12 @@ Evidence required to demonstrate this policy framework is adequately documented 
 
 Evidence required to demonstrate this policy framework is operationally effective:
 
-- **Cloud Service Inventory**: ISMS-IMP-A.5.23.1 workbook showing complete inventory with data classification, criticality ratings, residency, and exit feasibility
-- **Vendor Due Diligence Records**: ISMS-IMP-A.5.23.2 workbook documenting due diligence evaluations, certifications reviewed, security questionnaire responses
+- **Cloud Service Inventory**: ISMS-IMP-A.5.19-23.1 workbook showing complete inventory with data classification, criticality ratings, residency, and exit feasibility
+- **Vendor Due Diligence Records**: ISMS-IMP-A.5.19-23.2 workbook documenting due diligence evaluations, certifications reviewed, security questionnaire responses
 - **Signed Contracts with Security Clauses**: Supplier agreements containing required security provisions (GDPR Art. 28, audit rights, incident notification, exit provisions)
-- **Configuration Baselines**: ISMS-IMP-A.5.23.3 workbook showing security configuration compliance against CIS benchmarks or vendor hardening guides
+- **Configuration Baselines**: ISMS-IMP-A.5.19-23.3 workbook showing security configuration compliance against CIS benchmarks or vendor hardening guides
 - **Supplier Review Meeting Minutes**: Quarterly/semi-annual/annual review documentation showing SLA performance, compliance status, remediation tracking
-- **Ongoing Governance Records**: ISMS-IMP-A.5.23.4 workbook tracking monitoring results, change management, incident history, risk assessments
+- **Ongoing Governance Records**: ISMS-IMP-A.5.19-23.4 workbook tracking monitoring results, change management, incident history, risk assessments
 - **Supplier Certification Evidence**: Current SOC 2 Type II, ISO 27001, CSA STAR certificates for critical/high-risk suppliers (within 12 months)
 - **SLA Performance Reports**: Monthly/quarterly reports showing uptime, support response times, incident resolution metrics
 - **Incident Notifications from Suppliers**: Documented security incidents per contractual notification requirements with response evidence
@@ -1466,5 +1466,5 @@ The boundary is: **This policy governs EXTERNAL supplier/cloud relationships** (
 
 ---
 
-*This master index provides comprehensive governance for supplier and cloud services security. Detailed requirements for each control are documented in sections S1-S6. Assessment tools and implementation guidance are provided in the ISMS-IMP-A.5.23 document suite.*
+*This master index provides comprehensive governance for supplier and cloud services security. Detailed requirements for each control are documented in sections S1-S6. Assessment tools and implementation guidance are provided in the ISMS-IMP-A.5.19-23 document suite.*
 <!-- QA_VERIFIED: 2026-03-01 -->

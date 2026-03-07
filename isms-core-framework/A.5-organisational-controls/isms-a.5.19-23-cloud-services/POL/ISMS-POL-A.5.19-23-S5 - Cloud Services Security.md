@@ -41,11 +41,11 @@
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.19-23 (Parent Policy - Supplier & Cloud Services Security)
-- ISMS-IMP-A.5.23-1-UG/TG (Cloud Service Inventory & Classification)
-- ISMS-IMP-A.5.23-2-UG/TG (Vendor Due Diligence & Contracts)
-- ISMS-IMP-A.5.23-3-UG/TG (Secure Configuration & Deployment)
-- ISMS-IMP-A.5.23-4-UG/TG (Ongoing Governance & Risk Management)
-- ISMS-IMP-A.5.23-5-UG/TG (Compliance Monitoring Dashboard)
+- ISMS-IMP-A.5.19-23.S1-UG/TG (Cloud Service Inventory & Classification)
+- ISMS-IMP-A.5.19-23.S2-UG/TG (Vendor Due Diligence & Contracts)
+- ISMS-IMP-A.5.19-23.S3-UG/TG (Secure Configuration & Deployment)
+- ISMS-IMP-A.5.19-23.S4-UG/TG (Ongoing Governance & Risk Management)
+- ISMS-IMP-A.5.19-23.S5-UG/TG (Compliance Monitoring Dashboard)
 - ISMS-REF-A.5.23 (Cloud Service Provider Registry)
 - ISO/IEC 27001:2022 Control A.5.23
 - ISO/IEC 27017:2015 (Cloud security controls)
@@ -802,7 +802,7 @@ Exit strategies address **planned, voluntary transitions** from cloud services. 
 - **Data Backup Strategy**: BC/DR backup location serves as exit data source (e.g., on-prem backup appliance or alternative cloud)
 - **Alternative Provider Standby**: For Critical services, maintain hot/warm standby in alternative cloud (BC/DR + exit strategy)
 - **Annual Failover Testing**: BC/DR testing validates exit data portability and alternative provider readiness
-- **Documentation Consolidation**: Exit plans in ISMS-IMP-A.5.23.4 workbook cross-reference BC/DR runbooks
+- **Documentation Consolidation**: Exit plans in ISMS-IMP-A.5.19-23.4 workbook cross-reference BC/DR runbooks
 
 ---
 
@@ -842,7 +842,7 @@ Exit strategy viability SHALL be reviewed and tested annually to ensure assumpti
 
 All testing results SHALL be documented in:
 
-- **ISMS-IMP-A.5.23.4-UG/TG** (Governance & Risk Management workbook) - "Exit Strategy" sheet
+- **ISMS-IMP-A.5.19-23.4-UG/TG** (Governance & Risk Management workbook) - "Exit Strategy" sheet
 
 **Required Evidence:**
 

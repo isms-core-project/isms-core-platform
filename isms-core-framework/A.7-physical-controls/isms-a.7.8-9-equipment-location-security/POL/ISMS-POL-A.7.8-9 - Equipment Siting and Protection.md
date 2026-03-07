@@ -37,7 +37,7 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-POL-A.7.1-2-3 (Physical Access Control)
+- ISMS-POL-A.7.1-3 (Physical Access Control)
 - ISMS-POL-A.7.4-5-11 (Physical Infrastructure Security)
 - ISMS-IMP-A.7.8-9-S1-UG/TG (Equipment Siting Assessment)
 - ISMS-IMP-A.7.8-9-S2-UG/TG (Off-Premises Asset Security)
@@ -101,7 +101,7 @@ This policy:
 
 This policy does NOT:
 
-- **Define physical access control to equipment areas** (see ISMS-POL-A.7.1-2-3)
+- **Define physical access control to equipment areas** (see ISMS-POL-A.7.1-3)
 - **Specify environmental monitoring systems** (see ISMS-POL-A.7.4-5-11)
 - **Detail remote working security procedures** (see ISMS-POL-A.6.7-8)
 - **Provide equipment procurement specifications** (see ISMS-IMP-A.7.8-9)
@@ -123,7 +123,7 @@ This policy does NOT:
 
 **Out of Scope**:
 
-- Physical access control to equipment areas (covered by A.7.1-2-3)
+- Physical access control to equipment areas (covered by A.7.1-3)
 - Environmental monitoring and protection systems (covered by A.7.4-5-11)
 - Equipment disposal (covered by A.7.14)
 
@@ -389,7 +389,7 @@ This policy integrates with [Organisation]'s Information Security Management Sys
 
 | Control | Relationship |
 |---------|--------------|
-| **A.7.1-2-3** | Physical access control for areas where equipment is sited |
+| **A.7.1-3** | Physical access control for areas where equipment is sited |
 | **A.7.4-5-11** | Physical monitoring and environmental protection for equipment |
 | **A.8.1** | User endpoint device security policies |
 | **A.6.7** | Remote working security requirements |
@@ -401,7 +401,7 @@ A.7.8-9 (Equipment Siting and Protection) stacks with related controls:
 
 | Stacked Control | Integration Point | A.7.8-9 Contribution |
 |-----------------|-------------------|----------------------|
-| **A.7.1-2-3** (Physical Access) | Equipment areas | A.7.1-2-3 controls area access; A.7.8-9 defines siting requirements |
+| **A.7.1-3** (Physical Access) | Equipment areas | A.7.1-3 controls area access; A.7.8-9 defines siting requirements |
 | **A.7.4-5-11** (Infrastructure) | Environmental protection | A.7.4-5-11 provides monitoring; A.7.8-9 specifies equipment needs |
 | **A.6.7** (Remote Working) | Off-premises equipment | A.6.7 defines working procedures; A.7.9 specifies equipment protection |
 

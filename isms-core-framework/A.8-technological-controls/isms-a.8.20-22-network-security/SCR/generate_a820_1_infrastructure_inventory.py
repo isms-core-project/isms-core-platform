@@ -14,7 +14,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.8.20-21-22.S1 - Network Infrastructure Inventory Generator
+ISMS-IMP-A.8.20-22.S1 - Network Infrastructure Inventory Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Controls A.8.20, A.8.21, A.8.22: Network Security Framework
@@ -38,7 +38,7 @@ Key customization areas:
 DO NOT use this script without reviewing and adapting all sections marked
 with "# CUSTOMIZE:" comments throughout the code.
 
-Reference Pattern: Based on ISMS-POL-A.8.20-21-22 Network Security Framework
+Reference Pattern: Based on ISMS-POL-A.8.20-22 Network Security Framework
 
 --------------------------------------------------------------------------------
 DESCRIPTION
@@ -164,18 +164,18 @@ Python Version:       3.8+
 License:              [Organisation License/Terms]
 
 Related Documents:
-    - ISMS-POL-A.8.20-21-22: Network Security Framework (Master Policy)
-    - ISMS-POL-A.8.20-21-22-S1: Executive Summary & Control Alignment
-    - ISMS-POL-A.8.20-21-22-S2: Network Security Requirements (A.8.20)
-    - ISMS-POL-A.8.20-21-22-S3: Network Services Requirements (A.8.21)
-    - ISMS-POL-A.8.20-21-22-S4: Network Segregation Requirements (A.8.22)
-    - ISMS-POL-A.8.20-21-22-S5: Assessment & Evidence Framework
-    - ISMS-IMP-A.8.20-21-22-S1: Network Discovery Process
-    - ISMS-IMP-A.8.20-21-22-S2: Network Architecture Documentation
-    - ISMS-IMP-A.8.20-21-22-S3: Device Hardening Process
-    - ISMS-IMP-A.8.20-21-22-S4: Services Security Process
-    - ISMS-IMP-A.8.20-21-22-S5: Segmentation Implementation
-    - ISMS-IMP-A.8.20-21-22-S6: Network Security Testing
+    - ISMS-POL-A.8.20-22: Network Security Framework (Master Policy)
+    - ISMS-POL-A.8.20-22-S1: Executive Summary & Control Alignment
+    - ISMS-POL-A.8.20-22-S2: Network Security Requirements (A.8.20)
+    - ISMS-POL-A.8.20-22-S3: Network Services Requirements (A.8.21)
+    - ISMS-POL-A.8.20-22-S4: Network Segregation Requirements (A.8.22)
+    - ISMS-POL-A.8.20-22-S5: Assessment & Evidence Framework
+    - ISMS-IMP-A.8.20-22-S1: Network Discovery Process
+    - ISMS-IMP-A.8.20-22-S2: Network Architecture Documentation
+    - ISMS-IMP-A.8.20-22-S3: Device Hardening Process
+    - ISMS-IMP-A.8.20-22-S4: Services Security Process
+    - ISMS-IMP-A.8.20-22-S5: Segmentation Implementation
+    - ISMS-IMP-A.8.20-22-S6: Network Security Testing
 
 Related Scripts:
     - generate_a820_1_infrastructure_inventory.py (WB1: Device Inventory)
@@ -192,9 +192,9 @@ CHANGE HISTORY
 
 Version 1.0 - [Date to be set]
     - Initial release
-    - Implements full assessment framework per ISMS-IMP-A.8.20-21-22 specification
+    - Implements full assessment framework per ISMS-IMP-A.8.20-22 specification
     - Supports comprehensive network device inventory
-    - Integrated with A.8.20-21-22 Compliance Dashboard
+    - Integrated with A.8.20-22 Compliance Dashboard
 
 [Future changes to be documented here]
 
@@ -316,8 +316,8 @@ except ImportError:
 # DOCUMENT METADATA
 # ============================================================================
 WORKBOOK_NAME = "Network Infrastructure Inventory"
-DOCUMENT_ID = "ISMS-IMP-A.8.20-21-22.S1"
-CONTROL_ID   = "A.8.20-21-22"
+DOCUMENT_ID = "ISMS-IMP-A.8.20-22.S1"
+CONTROL_ID   = "A.8.20-22"
 CONTROL_NAME = "Network Security"
 CONTROL_REF  = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
 

@@ -37,7 +37,7 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-POL-A.7.1-2-3 (Physical Access Control)
+- ISMS-POL-A.7.1-3 (Physical Access Control)
 - ISMS-POL-A.7.10 (Storage Media)
 - ISMS-POL-A.8.10 (Information Deletion)
 - ISMS-IMP-A.7.6-7-14-S1-UG/TG (Secure Areas Working Assessment)
@@ -107,7 +107,7 @@ This policy:
 
 This policy does NOT:
 
-- **Define physical access control to secure areas** (see ISMS-POL-A.7.1-2-3)
+- **Define physical access control to secure areas** (see ISMS-POL-A.7.1-3)
 - **Specify storage media management lifecycle** (see ISMS-POL-A.7.10)
 - **Detail information deletion procedures** (see ISMS-POL-A.8.10)
 - **Provide disposal vendor selection criteria** (see ISMS-IMP-A.7.6-7-14)
@@ -129,7 +129,7 @@ This policy does NOT:
 
 **Out of Scope**:
 
-- Physical access control (covered by A.7.1-2-3)
+- Physical access control (covered by A.7.1-3)
 - Storage media lifecycle management (covered by A.7.10)
 - Information classification scheme (covered by A.5.12-13)
 
@@ -453,7 +453,7 @@ This policy integrates with [Organisation]'s Information Security Management Sys
 
 | Control | Relationship |
 |---------|--------------|
-| **A.7.1-2-3** | Physical access control for secure areas |
+| **A.7.1-3** | Physical access control for secure areas |
 | **A.7.10** | Storage media management lifecycle |
 | **A.8.10** | Information deletion requirements |
 | **A.5.10-11** | Asset lifecycle including disposal |
@@ -465,7 +465,7 @@ A.7.6-7-14 (Secure Areas and Media Handling) stacks with related controls:
 
 | Stacked Control | Integration Point | A.7.6-7-14 Contribution |
 |-----------------|-------------------|-------------------------|
-| **A.7.1-2-3** (Physical Access) | Secure area protection | A.7.1-2-3 controls access; A.7.6 defines working procedures |
+| **A.7.1-3** (Physical Access) | Secure area protection | A.7.1-3 controls access; A.7.6 defines working procedures |
 | **A.7.10** (Storage Media) | Media lifecycle | A.7.10 manages lifecycle; A.7.14 handles end-of-life |
 | **A.5.12-13** (Classification) | Disposal requirements | Classification drives A.7.14 disposal method selection |
 

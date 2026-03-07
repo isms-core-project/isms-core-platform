@@ -37,7 +37,7 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-POL-A.7.1-2-3 (Physical Access Control)
+- ISMS-POL-A.7.1-3 (Physical Access Control)
 - ISMS-POL-A.5.19-23 (Cloud Services)
 - ISMS-POL-A.5.24-28 (Incident Management)
 - ISMS-POL-A.5.30-8.13-14 (Business Continuity)
@@ -354,7 +354,7 @@ Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulator
 
 | Control | Relationship |
 |---------|--------------|
-| **A.7.1-2-3** | Physical access control (prerequisite for monitoring) |
+| **A.7.1-3** | Physical access control (prerequisite for monitoring) |
 | **A.7.8-9** | Equipment siting and off-premises security |
 | **A.5.19-23** | Cloud provider physical security assessment |
 | **A.5.24-28** | Incident management for physical security events |

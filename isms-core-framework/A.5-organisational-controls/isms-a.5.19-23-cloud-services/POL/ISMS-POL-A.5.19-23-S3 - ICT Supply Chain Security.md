@@ -613,7 +613,7 @@ For entities covered by NIS2, supply chain security measures shall include:
 | **ISMS-POL-A.5.19-23** | Parent policy framework |
 | **ISMS-POL-A.5.19-23-S1** | Supplier classification and due diligence |
 | **ISMS-POL-A.5.19-23-S2** | Subcontractor contract requirements and flow-down clauses |
-| **ISMS-IMP-A.5.23-1-UG/TG** | Supplier inventory (includes sub-suppliers and dependencies) |
+| **ISMS-IMP-A.5.19-23.S1-UG/TG** | Supplier inventory (includes sub-suppliers and dependencies) |
 | **ISO/IEC 27036-3:2023** | Guidelines for ICT supply chain security |
 | **NIST SP 800-161r1** | Cybersecurity Supply Chain Risk Management Practices |
 

@@ -104,7 +104,7 @@ This policy:
 
 This policy does NOT:
 
-- **Define physical access control to infrastructure areas** (see ISMS-POL-A.7.1-2-3)
+- **Define physical access control to infrastructure areas** (see ISMS-POL-A.7.1-3)
 - **Specify environmental monitoring requirements** (see ISMS-POL-A.7.4-5-11)
 - **Detail equipment siting requirements** (see ISMS-POL-A.7.8-9)
 - **Provide maintenance schedules and checklists** (see ISMS-IMP-A.7.12-13)
@@ -126,7 +126,7 @@ This policy does NOT:
 
 **Out of Scope**:
 
-- Physical access control to infrastructure (covered by A.7.1-2-3)
+- Physical access control to infrastructure (covered by A.7.1-3)
 - Environmental monitoring systems (covered by A.7.4-5-11)
 - Equipment disposal (covered by A.7.14)
 
