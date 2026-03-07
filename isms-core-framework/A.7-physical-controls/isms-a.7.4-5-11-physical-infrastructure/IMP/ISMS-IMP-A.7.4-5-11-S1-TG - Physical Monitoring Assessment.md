@@ -1,5 +1,5 @@
-<!-- ISMS-CORE:IMP:ISMS-IMP-A.7.4.S1-TG:framework:TG:a.7.4-5-11 -->
-**ISMS-IMP-A.7.4.S1-TG - Physical Monitoring Assessment**
+<!-- ISMS-CORE:IMP:ISMS-IMP-A.7.4-5-11-S1-TG:framework:TG:a.7.4-5-11 -->
+**ISMS-IMP-A.7.4-5-11-S1-TG - Physical Monitoring Assessment**
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.7.4: Physical Security Monitoring
 
@@ -11,7 +11,7 @@
 |-------|-------|
 | **Document Title** | Physical Monitoring Assessment |
 | **Document Type** | Implementation Specification |
-| **Document ID** | ISMS-IMP-A.7.4.S1-TG |
+| **Document ID** | ISMS-IMP-A.7.4-5-11-S1-TG |
 | **Related Policy** | ISMS-POL-A.7.4-5-11 (Physical Infrastructure) |
 | **Control Reference** | ISO/IEC 27001:2022 Annex A.7.4 (Physical Security Monitoring) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
@@ -33,8 +33,8 @@
 **Related Documents**:
 
 - ISMS-POL-A.7.4-5-11 (Physical Infrastructure)
-- ISMS-IMP-A.7.5.S1 (Environmental Protection Implementation)
-- ISMS-IMP-A.7.11.S1 (Utility Resilience Implementation)
+- ISMS-IMP-A.7.4-5-11-S2 (Environmental Protection Implementation)
+- ISMS-IMP-A.7.4-5-11-S3 (Utility Resilience Implementation)
 
 ---
 
@@ -48,7 +48,7 @@
 > Auto-generated from `generate_a74_1_access_monitoring.py` — DO NOT EDIT MANUALLY.
 > Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-**Document ID:** `ISMS-IMP-A.7.4.S1`
+**Document ID:** `ISMS-IMP-A.7.4-5-11-S1`
 
 **Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 

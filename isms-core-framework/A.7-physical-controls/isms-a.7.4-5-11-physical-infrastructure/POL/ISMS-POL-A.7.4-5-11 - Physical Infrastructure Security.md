@@ -41,9 +41,9 @@
 - ISMS-POL-A.5.19-23 (Cloud Services)
 - ISMS-POL-A.5.24-28 (Incident Management)
 - ISMS-POL-A.5.30-8.13-14 (Business Continuity)
-- ISMS-IMP-A.7.4.S1-UG/TG (Physical Monitoring Assessment)
-- ISMS-IMP-A.7.5.S1-UG/TG (Environmental Protection Implementation)
-- ISMS-IMP-A.7.11.S1-UG/TG (Utility Resilience Implementation)
+- ISMS-IMP-A.7.4-5-11-S1-UG/TG (Physical Monitoring Assessment)
+- ISMS-IMP-A.7.4-5-11-S2-UG/TG (Environmental Protection Implementation)
+- ISMS-IMP-A.7.4-5-11-S3-UG/TG (Utility Resilience Implementation)
 - ISMS-IMP-A.7.4-5-11-S4-UG/TG (Facilities Assessment)
 - ISO/IEC 27001:2022 Controls A.7.4, A.7.5, A.7.11
 
@@ -118,7 +118,7 @@ When utilising colocation datacenter space, physical infrastructure responsibili
 5. **Access Review**: Conduct periodic access reviews to identify and revoke stale or unauthorised access rights
 6. **Security Integration**: Integrate physical security events with SIEM (ISMS-POL-A.8.16) for correlation with logical security events and incident response
 
-**Evidence of Compliance**: Physical security monitoring compliance is demonstrated through ISMS-IMP-A.7.4.S1 (Physical Monitoring Assessment), which generates monthly workbooks containing:
+**Evidence of Compliance**: Physical security monitoring compliance is demonstrated through ISMS-IMP-A.7.4-5-11-S1 (Physical Monitoring Assessment), which generates monthly workbooks containing:
 - Electronic access control logs with authentication success/failure rates
 - CCTV system uptime and coverage verification
 - Intrusion detection system alerts and response times
@@ -140,7 +140,7 @@ When utilising colocation datacenter space, physical infrastructure responsibili
 5. **Structural Protection**: Ensure building integrity and implement physical barriers appropriate to identified threats
 6. **Emergency Response**: Document and test emergency response procedures for environmental incidents
 
-**Evidence of Compliance**: Environmental protection compliance is demonstrated through ISMS-IMP-A.7.5.S1 (Environmental Protection Assessment), which generates quarterly workbooks containing:
+**Evidence of Compliance**: Environmental protection compliance is demonstrated through ISMS-IMP-A.7.4-5-11-S2 (Environmental Protection Assessment), which generates quarterly workbooks containing:
 - Fire system test results and inspection certificates
 - Water detection system logs and maintenance records
 - Temperature/humidity monitoring data with threshold compliance
@@ -166,7 +166,7 @@ When utilising colocation datacenter space, physical infrastructure responsibili
    - Cooling redundancy verification: Quarterly
    - Telecommunications failover: Annually
 
-**Evidence of Compliance**: Utility resilience compliance is demonstrated through ISMS-IMP-A.7.11.S1 (Utility Resilience Assessment), which generates quarterly workbooks containing:
+**Evidence of Compliance**: Utility resilience compliance is demonstrated through ISMS-IMP-A.7.4-5-11-S3 (Utility Resilience Assessment), which generates quarterly workbooks containing:
 - UPS test logs with failover success/failure results
 - Generator load test reports with fuel consumption verification
 - Cooling system redundancy verification records
@@ -326,9 +326,9 @@ Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulator
 
 | Document | Purpose |
 |----------|---------|
-| ISMS-IMP-A.7.4.S1 | Physical Monitoring Assessment |
-| ISMS-IMP-A.7.5.S1 | Environmental Protection Assessment |
-| ISMS-IMP-A.7.11.S1 | Utility Resilience Assessment |
+| ISMS-IMP-A.7.4-5-11-S1 | Physical Monitoring Assessment |
+| ISMS-IMP-A.7.4-5-11-S2 | Environmental Protection Assessment |
+| ISMS-IMP-A.7.4-5-11-S3 | Utility Resilience Assessment |
 
 ## External Standards
 
@@ -346,9 +346,9 @@ Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulator
 
 | Control | Status | Implementation Reference |
 |---------|--------|-------------------------|
-| **A.7.4 - Physical Security Monitoring** | Applicable | This policy, ISMS-IMP-A.7.4.S1 |
-| **A.7.5 - Protecting Against Physical and Environmental Threats** | Applicable | This policy, ISMS-IMP-A.7.5.S1 |
-| **A.7.11 - Supporting Utilities** | Applicable | This policy, ISMS-IMP-A.7.11.S1 |
+| **A.7.4 - Physical Security Monitoring** | Applicable | This policy, ISMS-IMP-A.7.4-5-11-S1 |
+| **A.7.5 - Protecting Against Physical and Environmental Threats** | Applicable | This policy, ISMS-IMP-A.7.4-5-11-S2 |
+| **A.7.11 - Supporting Utilities** | Applicable | This policy, ISMS-IMP-A.7.4-5-11-S3 |
 
 ## Related Controls
 
@@ -397,9 +397,9 @@ Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulator
 
 | Evidence Type | Repository Location | Generation Method | Owner | Retention |
 |---------------|-------------------|-------------------|-------|-----------|
-| Physical Monitoring Workbook | [GRC Platform] - Physical Security Module | Monthly automated collection via ISMS-IMP-A.7.4.S1 | Security Operations Manager | 3 years |
-| Environmental Protection Assessment | [GRC Platform] - Physical Security Module | Quarterly assessment via ISMS-IMP-A.7.5.S1 | Facilities Manager | 3 years |
-| Utility Resilience Assessment | [GRC Platform] - Physical Security Module | Quarterly testing via ISMS-IMP-A.7.11.S1 | Facilities Manager | 3 years |
+| Physical Monitoring Workbook | [GRC Platform] - Physical Security Module | Monthly automated collection via ISMS-IMP-A.7.4-5-11-S1 | Security Operations Manager | 3 years |
+| Environmental Protection Assessment | [GRC Platform] - Physical Security Module | Quarterly assessment via ISMS-IMP-A.7.4-5-11-S2 | Facilities Manager | 3 years |
+| Utility Resilience Assessment | [GRC Platform] - Physical Security Module | Quarterly testing via ISMS-IMP-A.7.4-5-11-S3 | Facilities Manager | 3 years |
 | Physical Security Gap Register | [GRC Platform] - Risk Register | Continuous tracking, monthly review | Security Operations Manager | Active + 2 years |
 | Access Control Logs | [Physical Access System] | Automated logging | Security Operations | 12 months |
 | CCTV Recordings | [Video Management System] | Continuous recording | Security Operations | 30-90 days per policy |

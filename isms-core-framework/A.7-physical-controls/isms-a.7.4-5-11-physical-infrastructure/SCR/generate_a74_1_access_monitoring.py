@@ -14,7 +14,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.7.4.S1 - Physical Access Monitoring Assessment Excel Generator
+ISMS-IMP-A.7.4-5-11-S1 - Physical Access Monitoring Assessment Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.7.4: Physical Security Monitoring
@@ -115,7 +115,7 @@ Advanced Usage:
     python3 generate_a74_1_access_monitoring.py --date 20250115
 
 Output:
-    File: ISMS-IMP-A.7.4.S1_Physical_Access_Monitoring_Assessment_YYYYMMDD.xlsx
+    File: ISMS-IMP-A.7.4-5-11-S1_Physical_Access_Monitoring_Assessment_YYYYMMDD.xlsx
     Location: Current directory (or specified output path)
 
 Post-Generation Steps:
@@ -144,7 +144,7 @@ License:              [Organisation License/Terms]
 
 Related Documents:
     - ISMS-POL-A.7.4: Physical Security Monitoring Policy (Governance)
-    - ISMS-IMP-A.7.4.S1: Physical Access Monitoring Assessment (Domain 1)
+    - ISMS-IMP-A.7.4-5-11-S1: Physical Access Monitoring Assessment (Domain 1)
     - ISMS-IMP-A.7.4.S2: Physical Environmental Protection Assessment (Domain 2)
     - ISMS-IMP-A.7.4.S3: Physical Utility Resilience Assessment (Domain 3)
 
@@ -154,7 +154,7 @@ CHANGE HISTORY
 
 Version 1.0 - [Date to be set]
     - Initial release
-    - Implements full assessment framework per ISMS-IMP-A.7.4.S1 specification
+    - Implements full assessment framework per ISMS-IMP-A.7.4-5-11-S1 specification
     - Supports compliance tracking and gap identification
     - Supports integrated Summary Dashboard reporting
 
@@ -210,7 +210,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.7.4.S1"
+DOCUMENT_ID = "ISMS-IMP-A.7.4-5-11-S1"
 WORKBOOK_NAME = "Physical Access Monitoring Assessment"
 CONTROL_ID = "A.7.4"
 CONTROL_NAME = "Physical Security Monitoring"
@@ -1215,7 +1215,7 @@ def main():
         logger.info("=" * 70)
 
         wb = create_workbook()
-        filename = f"ISMS-IMP-A.7.4.S1_Access_Monitoring_{datetime.now().strftime('%Y%m%d')}.xlsx"
+        filename = f"ISMS-IMP-A.7.4-5-11-S1_Access_Monitoring_{datetime.now().strftime('%Y%m%d')}.xlsx"
         finalize_validations(wb)
         output_path = _wkbk_dir / OUTPUT_FILENAME
         wb.save(output_path)

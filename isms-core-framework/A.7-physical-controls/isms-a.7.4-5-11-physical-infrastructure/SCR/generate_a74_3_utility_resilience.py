@@ -143,7 +143,7 @@ License:              [Organisation License/Terms]
 
 Related Documents:
     - ISMS-POL-A.7.4: Physical Security Monitoring Policy (Governance)
-    - ISMS-IMP-A.7.4.S1: Physical Access Monitoring Assessment (Domain 1)
+    - ISMS-IMP-A.7.4-5-11-S1: Physical Access Monitoring Assessment (Domain 1)
     - ISMS-IMP-A.7.4.S2: Physical Environmental Protection Assessment (Domain 2)
     - ISMS-IMP-A.7.4.S3: Physical Utility Resilience Assessment (Domain 3)
 
@@ -209,7 +209,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.7.11.S1"
+DOCUMENT_ID = "ISMS-IMP-A.7.4-5-11-S3"
 WORKBOOK_NAME = "Physical Utility Resilience Assessment"
 CONTROL_ID = "A.7.11"
 CONTROL_NAME = "Supporting Utilities"
