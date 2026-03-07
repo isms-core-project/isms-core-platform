@@ -214,7 +214,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.7.14.S3"
+DOCUMENT_ID = "ISMS-IMP-A.7.6-7-14-S3"
 WORKBOOK_NAME = "Equipment Disposal Assessment"
 CONTROL_ID = "A.7.14"
 CONTROL_NAME = "Secure Disposal or Re-Use of Equipment"

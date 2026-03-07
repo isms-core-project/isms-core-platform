@@ -1,7 +1,7 @@
-<!-- ISMS-CORE:IMP:ISMS-IMP-A.7.4-5-11-S3-TG:framework:TG:a.7.4-5-11-s3 -->
-**ISMS-IMP-A.7.4-5-11-S3-TG - Utility Resilience Assessment**
+<!-- ISMS-CORE:IMP:ISMS-IMP-A.7.11.S1-TG:framework:TG:a.7.4-5-11 -->
+**ISMS-IMP-A.7.11.S1-TG - Utility Resilience Assessment**
 **Technical Specification**
-### ISO/IEC 27001:2022 Control A.7.4: Physical Security Monitoring
+### ISO/IEC 27001:2022 Control A.7.11: Supporting Utilities
 
 ---
 
@@ -33,7 +33,7 @@
 **Related Documents**:
 
 - ISMS-POL-A.7.4-5-11-S3 (Physical Infrastructure)
-- ISMS-IMP-A.7.4-5-11-S1 (Physical Monitoring Assessment)
+- ISMS-IMP-A.7.4.S1 (Physical Monitoring Assessment)
 - ISMS-IMP-A.7.4-5-11-S2 (Environmental Protection Implementation)
 
 ---

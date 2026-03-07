@@ -215,7 +215,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.7.9.S2"
+DOCUMENT_ID = "ISMS-IMP-A.7.8-9-S2"
 WORKBOOK_NAME = "Off-Premises Asset Security"
 CONTROL_ID = "A.7.9"
 CONTROL_NAME = "Security of Assets Off-Premises"

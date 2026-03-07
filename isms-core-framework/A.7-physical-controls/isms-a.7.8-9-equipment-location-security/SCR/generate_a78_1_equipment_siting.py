@@ -214,7 +214,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.7.8.S1"
+DOCUMENT_ID = "ISMS-IMP-A.7.8-9-S1"
 WORKBOOK_NAME = "Equipment Siting Assessment"
 CONTROL_ID = "A.7.8"
 CONTROL_NAME = "Equipment Siting and Protection"

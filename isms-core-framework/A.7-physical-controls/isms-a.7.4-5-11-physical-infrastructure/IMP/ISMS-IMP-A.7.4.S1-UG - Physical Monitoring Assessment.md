@@ -1,5 +1,5 @@
-<!-- ISMS-CORE:IMP:ISMS-IMP-A.7.4-5-11-S1-UG:framework:UG:a.7.4-5-11-s1 -->
-**ISMS-IMP-A.7.4-5-11-S1-UG - Physical Monitoring Assessment**
+<!-- ISMS-CORE:IMP:ISMS-IMP-A.7.4.S1-UG:framework:UG:a.7.4-5-11 -->
+**ISMS-IMP-A.7.4.S1-UG - Physical Monitoring Assessment**
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.7.4: Physical Security Monitoring
 
@@ -11,8 +11,8 @@
 |-------|-------|
 | **Document Title** | Physical Monitoring Assessment |
 | **Document Type** | Implementation Specification |
-| **Document ID** | ISMS-IMP-A.7.4-5-11-S1-UG |
-| **Related Policy** | ISMS-POL-A.7.4-5-11-S1 (Physical Infrastructure) |
+| **Document ID** | ISMS-IMP-A.7.4.S1-UG |
+| **Related Policy** | ISMS-POL-A.7.4-5-11 (Physical Infrastructure) |
 | **Control Reference** | ISO/IEC 27001:2022 Annex A.7.4 (Physical Security Monitoring) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
 | **Document Owner** | CISO |
@@ -32,15 +32,15 @@
 
 **Related Documents**:
 
-- ISMS-POL-A.7.4-5-11-S1 (Physical Infrastructure)
-- ISMS-IMP-A.7.4-5-11-S2 (Environmental Protection Implementation)
-- ISMS-IMP-A.7.4-5-11-S3 (Utility Resilience Implementation)
+- ISMS-POL-A.7.4-5-11 (Physical Infrastructure)
+- ISMS-IMP-A.7.5.S1 (Environmental Protection Implementation)
+- ISMS-IMP-A.7.11.S1 (Utility Resilience Implementation)
 
 ---
 
 ### Document Structure
 
-This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.4-5-11-S1-TG.
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.7.4.S1-TG.
 
 ---
 
@@ -63,7 +63,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ### Purpose & Scope
 
-**Assessment Name:** ISMS-IMP-A.7.4-5-11-S1 - Physical Monitoring Assessment
+**Assessment Name:** ISMS-IMP-A.7.4.S1 - Physical Monitoring Assessment
 
 #### What This Assessment Covers
 
@@ -126,14 +126,14 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 
 #### How This Relates to Other A.7.4-5-11 Assessments
 
-| Assessment            | Focus                  | Relationship to A.7.4-5-11-S1      |
+| Assessment            | Focus                  | Relationship to A.7.4.S1      |
 |-----------------------|------------------------|------------------------------------|
-| **ISMS-IMP-A.7.4-5-11-S1** | **Physical Monitoring** | **WHAT monitoring systems exist** |
-| ISMS-IMP-A.7.4-5-11-S2 | Environmental Protection | Fire, flood, temperature protection systems |
-| ISMS-IMP-A.7.4-5-11-S3 | Utility Resilience      | UPS, generators, HVAC, ISP systems |
+| **ISMS-IMP-A.7.4.S1** | **Physical Monitoring** | **WHAT monitoring systems exist** |
+| ISMS-IMP-A.7.5.S1 | Environmental Protection | Fire, flood, temperature protection systems |
+| ISMS-IMP-A.7.11.S1 | Utility Resilience      | UPS, generators, HVAC, ISP systems |
 
 
-This assessment (A.7.4-5-11-S1) focuses specifically on Control A.7.4 (Physical Security Monitoring). It complements assessments for A.7.5 (Environmental Protection) and A.7.11 (Utility Resilience).
+This assessment (A.7.4.S1) focuses specifically on Control A.7.4 (Physical Security Monitoring). It complements assessments for A.7.5 (Environmental Protection) and A.7.11 (Utility Resilience).
 
 ### Who Should Complete This Assessment
 

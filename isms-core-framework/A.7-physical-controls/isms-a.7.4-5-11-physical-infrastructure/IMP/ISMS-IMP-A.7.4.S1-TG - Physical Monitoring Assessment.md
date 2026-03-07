@@ -1,5 +1,5 @@
-<!-- ISMS-CORE:IMP:ISMS-IMP-A.7.4-5-11-S2-TG:framework:TG:a.7.4-5-11-s2 -->
-**ISMS-IMP-A.7.4-5-11-S2-TG - Environmental Protection Assessment**
+<!-- ISMS-CORE:IMP:ISMS-IMP-A.7.4.S1-TG:framework:TG:a.7.4-5-11 -->
+**ISMS-IMP-A.7.4.S1-TG - Physical Monitoring Assessment**
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.7.4: Physical Security Monitoring
 
@@ -9,10 +9,10 @@
 
 | Attribute | Value |
 |-------|-------|
-| **Document Title** | Environmental Protection Implementation |
+| **Document Title** | Physical Monitoring Assessment |
 | **Document Type** | Implementation Specification |
-| **Document ID** | ISMS-IMP-A.7.4-5-11-S2-TG |
-| **Related Policy** | ISMS-POL-A.7.4-5-11-S2 (Physical Infrastructure) |
+| **Document ID** | ISMS-IMP-A.7.4.S1-TG |
+| **Related Policy** | ISMS-POL-A.7.4-5-11 (Physical Infrastructure) |
 | **Control Reference** | ISO/IEC 27001:2022 Annex A.7.4 (Physical Security Monitoring) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
 | **Document Owner** | CISO |
@@ -32,9 +32,9 @@
 
 **Related Documents**:
 
-- ISMS-POL-A.7.4-5-11-S2 (Physical Infrastructure)
-- ISMS-IMP-A.7.4-5-11-S1 (Physical Monitoring Assessment)
-- ISMS-IMP-A.7.4-5-11-S3 (Utility Resilience Implementation)
+- ISMS-POL-A.7.4-5-11 (Physical Infrastructure)
+- ISMS-IMP-A.7.5.S1 (Environmental Protection Implementation)
+- ISMS-IMP-A.7.11.S1 (Utility Resilience Implementation)
 
 ---
 
@@ -45,10 +45,10 @@
 
 ## Generator Alignment Reference
 
-> Auto-generated from `generate_a74_2_environmental_protection.py` — DO NOT EDIT MANUALLY.
+> Auto-generated from `generate_a74_1_access_monitoring.py` — DO NOT EDIT MANUALLY.
 > Re-generate with: `python3 align_tg_to_scr.py --apply`
 
-**Document ID:** `ISMS-IMP-A.7.4.S2`
+**Document ID:** `ISMS-IMP-A.7.4.S1`
 
 **Output Filename Pattern:** `{DOCUMENT_ID}_{WORKBOOK_NAME.replace(`
 
@@ -57,12 +57,13 @@
 | # | Sheet Name |
 |---|-----------|
 | 1 | Instructions & Legend |
-| 2 | Fire Detection |
-| 3 | Water Detection |
-| 4 | Temperature & Humidity |
-| 5 | Evidence Register |
-| 6 | Summary Dashboard |
-| 7 | Approval Sign-Off |
+| 2 | Access Control |
+| 3 | CCTV |
+| 4 | Intrusion Detection |
+| 5 | Incidents |
+| 6 | Evidence Register |
+| 7 | Summary Dashboard |
+| 8 | Approval Sign-Off |
 
 ### Color Palette
 
@@ -82,35 +83,40 @@
 
 | # | Column Header |
 |---|--------------|
-| 1 | Detector ID |
-| 2 | Type |
-| 3 | Location |
+| 1 | Door ID |
+| 2 | Location/Building |
+| 3 | Reader Type |
 | 4 | Last Tested |
 | 5 | Status |
-| 6 | Evidence Location |
-| 7 | Sensor ID |
-| 8 | Temp Range (°C) |
-| 9 | Humidity Range (%) |
-| 10 | Incident ID |
-| 11 | Date |
-| 12 | Severity |
-| 13 | Response Time (min) |
-| 14 | Resolved |
-| 15 | Notes |
-| 16 | Assessment Area |
-| 17 | Total Items |
-| 18 | Compliant |
-| 19 | Partial |
-| 20 | Non-Compliant |
-| 21 | N/A |
-| 22 | Compliance % |
-| 23 | Evidence ID |
-| 24 | Evidence Type |
-| 25 | Description |
-| 26 | Location/Path |
-| 27 | Date Collected |
-| 28 | Collected By |
-| 29 | Verification Status |
+| 6 | Notes |
+| 7 | Evidence Location |
+| 8 | Camera ID |
+| 9 | Location |
+| 10 | Coverage Area |
+| 11 | Recording |
+| 12 | Retention (Days) |
+| 13 | Sensor ID |
+| 14 | Type |
+| 15 | Armed |
+| 16 | Incident ID |
+| 17 | Date |
+| 18 | Severity |
+| 19 | Response Time (min) |
+| 20 | Resolved |
+| 21 | Assessment Area |
+| 22 | Total Items |
+| 23 | Compliant |
+| 24 | Partial |
+| 25 | Non-Compliant |
+| 26 | N/A |
+| 27 | Compliance % |
+| 28 | Evidence ID |
+| 29 | Evidence Type |
+| 30 | Description |
+| 31 | Location/Path |
+| 32 | Date Collected |
+| 33 | Collected By |
+| 34 | Verification Status |
 
 ### Data Validation Values
 
@@ -125,7 +131,7 @@ Draft, Final, Requires remediation, Re-assessment required, Approved
 Approved with Conditions, Rejected, Deferred
 ```
 
-**Extracted:** 7 sheets, 29 columns, 31 validation values, 9 colors
+**Extracted:** 8 sheets, 34 columns, 31 validation values, 9 colors
 
 ---
 
@@ -134,7 +140,7 @@ Approved with Conditions, Rejected, Deferred
 
 ---
 
-*"Both the man of science and the man of action live always at the edge of mystery, surrounded by it."*
+*"There must be no barriers to freedom of inquiry. There is no place for dogma in science."*
 — J. Robert Oppenheimer
 
 <!-- QA_VERIFIED: 2026-03-01 -->

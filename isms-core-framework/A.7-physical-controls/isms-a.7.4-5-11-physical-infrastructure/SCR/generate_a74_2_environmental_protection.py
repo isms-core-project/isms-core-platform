@@ -209,10 +209,10 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.7.4.S2"
+DOCUMENT_ID = "ISMS-IMP-A.7.5.S1"
 WORKBOOK_NAME = "Physical Environmental Protection Assessment"
-CONTROL_ID = "A.7.4"
-CONTROL_NAME = "Physical Security Monitoring"
+CONTROL_ID = "A.7.5"
+CONTROL_NAME = "Protecting Against Physical and Environmental Threats"
 CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
 
 # Timestamps

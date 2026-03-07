@@ -214,7 +214,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.7.7.S2"
+DOCUMENT_ID = "ISMS-IMP-A.7.6-7-14-S2"
 WORKBOOK_NAME = "Clear Desk Screen Compliance"
 CONTROL_ID = "A.7.7"
 CONTROL_NAME = "Clear Desk and Clear Screen"

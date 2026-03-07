@@ -214,7 +214,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.7.6.S1"
+DOCUMENT_ID = "ISMS-IMP-A.7.6-7-14-S1"
 WORKBOOK_NAME = "Secure Areas Working Assessment"
 CONTROL_ID = "A.7.6"
 CONTROL_NAME = "Working in Secure Areas"
