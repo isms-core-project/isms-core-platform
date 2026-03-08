@@ -146,9 +146,11 @@ Open `http://localhost:3000` in your browser.
 
 On first boot, the database is empty. You need to load the reference frameworks and import your ISMS content.
 
+> All steps below can be run via the WebUI: **Admin → System → Initial Data Import section**. Use the API if you prefer scripting.
+
 ### 1. Load reference frameworks
 
-The platform ships 18 pre-built reference framework bundles (ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, etc.). Load them via the API:
+The platform ships 18 pre-built reference framework bundles (ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, etc.).
 
 ```bash
 # Authenticate first — get your token
@@ -157,44 +159,45 @@ TOKEN=$(curl -s -X POST http://localhost:8000/api/v1/auth/login \
   -d '{"email":"admin@isms-core.dev","password":"admin123"}' \
   | python3 -c "import sys,json; print(json.load(sys.stdin)['access_token'])")
 
-# Load all framework datasets
-curl -s -X POST http://localhost:8000/api/v1/admin/import/frameworks \
+# Load all 18 framework bundles
+curl -s -X POST http://localhost:8000/api/v1/admin/load \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json"
 ```
-
-Or via the WebUI: **Admin → System → Import Frameworks**
 
 ### 2. Import policies and implementation guides
 
 ```bash
 # Import all policies (POL, OP-POL, INS, REF, CTX, FORM)
-curl -s -X POST http://localhost:8000/api/v1/admin/import/policies \
+curl -s -X POST http://localhost:8000/api/v1/admin/import-policies \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json"
 
-# Import IMP documents (UG + TG) — indexes into OpenSearch for full-text search
-curl -s -X POST http://localhost:8000/api/v1/admin/import/imps \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json"
-```
-
-### 3. Import assessment workbooks (optional)
-
-```bash
-# Import all Excel workbooks (Framework assessments + Operational checklists)
-curl -s -X POST http://localhost:8000/api/v1/admin/import/workbooks \
+# Import IMP documents (UG + TG) — also indexes into OpenSearch for full-text search
+curl -s -X POST http://localhost:8000/api/v1/admin/import-implementations \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json"
 ```
 
-> Import runs as a background Celery task. For 241 workbooks, expect 3–8 minutes. Watch progress: **Admin → System → Task Status**
-
-### 4. Run the correlation engine
+### 3. Import assessment workbook structures
 
 ```bash
-# Calculate crosswalk mappings and compliance scores
-curl -s -X POST http://localhost:8000/api/v1/admin/correlate \
+# Import 188 framework assessment workbook structures (from generator scripts)
+curl -s -X POST http://localhost:8000/api/v1/admin/import-framework-workbooks \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json"
+
+# Import 53 operational compliance checklist structures
+curl -s -X POST http://localhost:8000/api/v1/admin/import-operational \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json"
+```
+
+### 4. Or run all importers in one shot
+
+```bash
+# Full sync — runs all four importers (policies, IMPs, operational, workbooks) in sequence
+curl -s -X POST http://localhost:8000/api/v1/sync/full \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json"
 ```
@@ -207,8 +210,8 @@ curl -s -X POST http://localhost:8000/api/v1/admin/correlate \
 |---------|-------------|
 | **Dashboard** | Compliance overview, audit readiness score, top gaps |
 | **Controls** | 53 control groups with policy/assessment/gap status |
-| **Policies** | 143 imported documents (53 POL + 53 OP-POL + foundation + REF/CTX) |
-| **Assessments** | Up to 241 imported workbooks with per-item compliance status |
+| **Policies** | Imported documents (53 POL + 53 OP-POL + foundation + REF/CTX/INS) |
+| **Assessments** | 188 framework + 53 operational workbook structures with per-item compliance status |
 | **Gaps** | Identified compliance gaps — create, assign, track |
 | **Evidence** | Upload and link evidence to control groups and requirements |
 | **Coverage** | Heatmap of Framework and Operational coverage |
