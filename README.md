@@ -34,42 +34,54 @@ ISMS CORE is a production-grade **control engineering** platform for building an
 
 > **New here?** Read [PARADIGM.md](PARADIGM.md) first — it explains how ISMS CORE differs from traditional ISMS approaches, how to choose between the two products, and what to expect.
 
-The platform provides **two products** at different levels of depth:
+ISMS CORE provides **three layers** — content products that work standalone, and a Platform that makes them live:
 
 <table>
 <tr>
 <th></th>
 <th>🏗️ <a href="isms-core-framework/">ISMS CORE Framework</a></th>
 <th>⚡ <a href="isms-core-operational/">ISMS CORE Operational</a></th>
+<th>🖥️ <a href="PLATFORM.md">ISMS CORE Platform</a></th>
 </tr>
 <tr>
 <td><strong>What</strong></td>
 <td>Full SSE engineering product — governance policies with implementation guides, assessment scripts, and generated workbooks</td>
 <td>Foundation ISMS for SMEs — operational policies with compliance checklists per control group</td>
+<td>API + WebUI layer — turns the content products into a live compliance management system</td>
 </tr>
 <tr>
 <td><strong>For</strong></td>
 <td>Mature security teams, consultants, auditors</td>
 <td>SMEs and startups</td>
+<td>Any ISMS CORE user who needs dashboards, gap tracking, and audit management</td>
 </tr>
 <tr>
 <td><strong>Per control</strong></td>
 <td>POL + IMP (UG/TG) + SCR + WKBK + REF + FORM + INS + CTX</td>
 <td>OP-POL + SCR + WKBK</td>
+<td>Ingests both products — no content of its own</td>
 </tr>
 <tr>
 <td><strong>Coverage</strong></td>
 <td>53 control packs / 93 Annex A controls</td>
 <td>53 control groups / 93 Annex A controls</td>
+<td>All 53 control groups from both products + 18 reference framework datasets</td>
 </tr>
 <tr>
 <td><strong>Artifacts</strong></td>
 <td>376 IMP docs, 188 Python scripts, 188 Excel workbooks</td>
 <td>53 operational policies, compliance checklist scripts and workbooks</td>
+<td>FastAPI + PostgreSQL + Redis + OpenSearch + React WebUI</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
+<td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
+<td><img src="https://img.shields.io/badge/In_Development-FF6600?style=flat-square" alt="In Development"/></td>
 </tr>
 </table>
 
-Both products cover **all 93 ISO 27001:2022 Annex A controls** organised into the same 53 control groups.
+Both content products cover **all 93 ISO 27001:2022 Annex A controls** organised into the same 53 control groups. The Platform ingests and correlates both.
 
 ### 🧭 Who this is for (and not for)
 
@@ -89,15 +101,25 @@ Both products cover **all 93 ISO 27001:2022 Annex A controls** organised into th
 ## 📂 Repository Structure
 
 ```
-isms-core-platform/
+factory_isms/
 ├── README.md                           # This file
 ├── PARADIGM.md                         # Product overview and paradigm shift guide
+├── PLATFORM.md                         # Platform architecture and features
+├── GETTING-STARTED.md                  # How to run the Platform (Docker setup)
 ├── CONTRIBUTING.md                     # QA process and standards
 ├── PHILOSOPHY.md                       # Anti-cargo-cult methodology
 ├── CODE_OF_CONDUCT.md                  # Community standards
 ├── SECURITY.md                         # Vulnerability reporting
 ├── LICENSE                             # AGPL-3.0
 ├── COPYRIGHT
+│
+├── platform/                           # 🖥️ ISMS CORE Platform (in development)
+│   ├── docker-compose.yml              # Six-service stack
+│   ├── .env.example                    # Environment variable template
+│   ├── backend/                        # FastAPI + Celery
+│   ├── frontend/                       # React 19 + MUI 6
+│   ├── schemas/init_db.sql             # Full DB schema
+│   └── datasets/data/                  # 18 reference framework JSON bundles
 │
 ├── isms-core-framework/                # 🏗️ Full Engineering Product
 │   ├── README.md                       # Framework overview
@@ -106,7 +128,7 @@ isms-core-platform/
 │   ├── STATUS.md                       # Implementation metrics
 │   ├── STACKING.md                     # Control grouping methodology
 │   ├── CHANGELOG.md                    # Version history
-│   ├── 00-foundation-policies/         # Regulatory framework
+│   ├── 00-foundation-policies/         # Regulatory framework (POL-00, POL-01)
 │   ├── A.5-organizational-controls/    # 21 control packs
 │   ├── A.6-people-controls/            # 4 control packs
 │   ├── A.7-physical-controls/          # 6 control packs
@@ -119,7 +141,7 @@ isms-core-platform/
     ├── CHANGELOG.md                    # Version history
     ├── OP-POL-AUDIT-LOG.md             # Per-policy review log
     ├── 00-checklist-engine/            # Shared checklist generator engine
-    │   └── op_checklist_engine.py      # Common engine (642 lines)
+    │   └── op_checklist_engine.py      # Common engine
     ├── A.5-organizational-controls/    # 21 control groups
     │   └── isms-a.X.X-control-name/
     │       ├── POL/                    # Operational policy (1 OP-POL)
@@ -153,6 +175,15 @@ python3 generate_a824_1_data_transmission_assessment.py
 2. Navigate to a control folder and read POL
 3. Generate the compliance checklist and work through each requirement
 4. Record status, evidence, and owners — that's your audit evidence
+
+### Platform (Live Compliance Dashboard)
+
+1. Read [GETTING-STARTED.md](GETTING-STARTED.md) — full setup instructions
+2. Ensure Docker 24+ and Docker Compose v2 are installed
+3. Copy `.env.example` → `.env` and set your three secrets
+4. `docker compose up -d`
+5. Open `http://localhost:3000` — login: `admin@isms-core.dev` / `admin123`
+6. Run initial import from Admin → System
 
 ---
 
@@ -230,24 +261,17 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full methodology.
 
 ## 🔬 Quality Assurance
 
-Every control pack undergoes **adversarial multi-model validation** — controls are reviewed by competing AI models to ensure no single model's blind spots compromise quality.
+Every control pack undergoes a structured multi-stage validation process:
 
 ```
 ┌──────────────────┐     ┌──────────────────┐     ┌──────────────────────┐
-│  Claude Code     │────▶│  ISMS Copilot X  │────▶│  GPT-5.x Red Team    │
-│  (Build + QA)    │     │ (Blue Team Audit)│     │  (Attack Surface)    │
+│  Claude Code     │────▶│  ISMS Copilot X  │────▶│   Gregory Griffin    │
+│  (Build + QA)    │     │ (Documentation   │     │   (Final Approval)   │
+│                  │     │  Audit)          │     │                      │
 └──────────────────┘     └──────────────────┘     └──────────────────────┘
-         │                        │                         │
-         ▼                        ▼                         ▼
-   Implementation           Stage 1: Docs             Stage 2: Gaps
-   + Code Review            adequacy review            + adversarial test
-                                  │                         │
-                                  └────────────┬────────────┘
-                                               ▼
-                                  ┌──────────────────────┐
-                                  │   Gregory Griffin    │
-                                  │   (Final Approval)   │
-                                  └──────────────────────┘
+   Implementation           Stage 1: Docs              Final gate
+   + Code Review            adequacy review
+                            Stage 2: Effectiveness
 ```
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
@@ -263,8 +287,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | Annex A controls mapped | **93 of 93** | ![Mapped](https://img.shields.io/badge/Mapped-32CD32?style=flat-square) |
 | Python scripts (Framework) | **188** (307K+ lines) | ![Validated](https://img.shields.io/badge/Validated-0066CC?style=flat-square) |
 | IMP documents (Framework) | **376** (188 UG + 188 TG) | ![Split](https://img.shields.io/badge/UG%2FTG-9400D3?style=flat-square) |
+| Platform (API + WebUI) | Phases 0–5 complete | ![In Development](https://img.shields.io/badge/In_Development-FF6600?style=flat-square) |
 
-See [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) for detailed Framework metrics.
+See [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) for detailed Framework metrics. See [PLATFORM.md](PLATFORM.md) for Platform status.
 
 ---
 
@@ -281,6 +306,8 @@ See [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) for detailed 
 | Document | Description |
 |----------|-------------|
 | [PARADIGM.md](PARADIGM.md) | 🧭 Product overview and paradigm shift guide |
+| [PLATFORM.md](PLATFORM.md) | 🖥️ Platform architecture, features, and design decisions |
+| [GETTING-STARTED.md](GETTING-STARTED.md) | 🚀 How to run the Platform (Docker Compose setup guide) |
 | [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 Control pack index (Framework) |
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A → 53 pack mapping |
 | [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) | 📊 Framework metrics |

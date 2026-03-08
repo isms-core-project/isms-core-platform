@@ -11,8 +11,8 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Control_Packs-53-0066CC?style=flat-square" alt="53 Control Packs"/>
   <img src="https://img.shields.io/badge/Annex_A_Controls-93-32CD32?style=flat-square" alt="93 Annex A Controls"/>
-  <img src="https://img.shields.io/badge/IMP_Documents-504-9400D3?style=flat-square" alt="504 IMP Documents"/>
-  <img src="https://img.shields.io/badge/Python_Scripts-454-3776AB?style=flat-square" alt="454 Scripts"/>
+  <img src="https://img.shields.io/badge/IMP_Documents-376-9400D3?style=flat-square" alt="376 IMP Documents"/>
+  <img src="https://img.shields.io/badge/Python_Scripts-188-3776AB?style=flat-square" alt="188 Scripts"/>
 </p>
 
 ---

@@ -104,7 +104,7 @@ isms-a.X.X-control-name/
 
 | Control | Name | Artifacts |
 |---------|------|-----------|
-| [A.7.1-2-3](A.7-physical-controls/isms-a.7.1-2-3-physical-access-control/) | Physical Access Control | POL, SCR, WKBK |
+| [A.7.1-3](A.7-physical-controls/isms-A.7.1-3-physical-access-control/) | Physical Access Control | POL, SCR, WKBK |
 | [A.7.4-5, 11](A.7-physical-controls/isms-a.7.4-5-11-physical-infrastructure/) | Physical Infrastructure | POL, SCR, WKBK |
 | [A.7.6-7, 14](A.7-physical-controls/isms-a.7.6-7-14-information-media-handling/) | Information & Media Handling | POL, SCR, WKBK |
 | [A.7.8-9](A.7-physical-controls/isms-a.7.8-9-equipment-location-security/) | Equipment Location Security | POL, SCR, WKBK |

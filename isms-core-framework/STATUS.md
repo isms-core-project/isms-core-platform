@@ -176,12 +176,12 @@ This status file tracks **control packs**, not ISO certification status.
 </tr>
 <tr>
 <td>🐍 SCR (Scripts)</td>
-<td align="center"><strong>53</strong></td>
+<td align="center"><strong>188</strong></td>
 <td><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/></td>
 </tr>
 <tr>
 <td>📋 IMP (Implementation)</td>
-<td align="center"><strong>53</strong></td>
+<td align="center"><strong>376</strong> (188 UG + 188 TG)</td>
 <td><img src="https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white" alt="Markdown"/></td>
 </tr>
 <tr>
@@ -255,13 +255,13 @@ This is an internal target timeline and not a guarantee.
 </tr>
 <tr>
 <td>ISMS CORE Platform</td>
-<td>Q4 2026</td>
-<td><img src="https://img.shields.io/badge/Goal-00AA00?style=flat-square" alt="Goal"/></td>
+<td>Q2-Q3 2026</td>
+<td><img src="https://img.shields.io/badge/In_Development-FF6600?style=flat-square" alt="In Development"/></td>
 </tr>
 <tr>
 <td>ISMS CORE Console</td>
 <td>Q1 2027</td>
-<td><img src="https://img.shields.io/badge/Goal-00AA00?style=flat-square" alt="Goal"/></td>
+<td><img src="https://img.shields.io/badge/Planned-0066CC?style=flat-square" alt="Planned"/></td>
 </tr>
 </table>
 

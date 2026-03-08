@@ -9,7 +9,7 @@ We expect everyone to:
 - Assume good intent and focus on facts
 - Keep discussions technical and evidence-based
 - Respect privacy and confidentiality
-- Avoid harassment, discrimination, or hostile behavior
+- Avoid harassment, discrimination, or hostile behaviour
 
 ## Scope
 

@@ -37,7 +37,7 @@ Tracks which OP-POLs have been reviewed by ISMS Copilot and fixes applied.
 | 27 | ISMS-OP-POL-A.5.17 | Authentication Information | — | New OP-POL (463 lines) from IS 02 (partial) + Framework POL | Awaiting S2 review | Written |
 | 28 | ISMS-OP-POL-A.6.6 | Confidentiality and Non-Disclosure Agreements | — | New OP-POL (558 lines) from IS 02 (partial) + Framework POL | Awaiting S2 review | Written |
 | 29 | ISMS-OP-POL-A.5.29 | Information Security During Disruption | — | New OP-POL (432 lines) from IS 10 (partial) + Framework POL | Awaiting S2 review | Written |
-| 30 | ISMS-OP-POL-A.7.1-2-3 | Physical Access Control | — | New OP-POL (466 lines) from IS 20 + Framework POL | Awaiting S2 review | Written |
+| 30 | ISMS-OP-POL-A.7.1-3 | Physical Access Control | — | New OP-POL (466 lines) from IS 20 + Framework POL | Awaiting S2 review | Written |
 | 31 | ISMS-OP-POL-A.7.4-5-11 | Physical Infrastructure Security | — | New OP-POL (457 lines) from IS 20 (partial) + Framework POL | Awaiting S2 review | Written |
 | 32 | ISMS-OP-POL-A.7.6-7-14 | Secure Areas and Media Handling | — | New OP-POL (465 lines) from IS 05 (partial) + Framework POL | Awaiting S2 review | Written |
 | 33 | ISMS-OP-POL-A.7.8-9 | Equipment Siting and Protection | — | New OP-POL (459 lines) from IS 08 + IS 20 + Framework POL | Awaiting S2 review | Written |

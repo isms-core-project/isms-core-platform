@@ -5,7 +5,7 @@
 <h1 align="center">🧭 Understanding the Paradigm</h1>
 
 <p align="center">
-  <strong>Why ISMS CORE is engineered differently — and how to choose between its two products</strong>
+  <strong>Why ISMS CORE is engineered differently — and how to choose between its products</strong>
 </p>
 
 <p align="center">
@@ -18,6 +18,16 @@
 <p align="center">
   <em>Grows fast. Bends, doesn't break. Built to last.</em> 🎋
 </p>
+
+---
+
+> **TL;DR for people who skim:**
+> - ISMS CORE moves compliance judgment from audit time to design time — policies state explicit, testable requirements; auditors verify documented decisions rather than making them for you
+> - Two content products: **Framework** (full SSE engineering, regulated industries, multi-framework) and **Operational** (SME-focused, ISO 27001 + GDPR, practical checklists)
+> - Both cover all 93 ISO 27001:2022 Annex A controls in 53 control packs
+> - A **Platform** (WebUI + API) sits on top and turns the static files into a live compliance management system
+> - Self-hosted, on-premises by design — your compliance evidence stays under your control and jurisdiction
+> - This is not plug-and-play. You need a qualified CISO, Python execution capability, and willingness to make documented decisions
 
 ---
 
@@ -538,6 +548,29 @@ The regulatory framework is Swiss-primary (nFADP, FINMA) because that is the des
 **"I found a mistake in a policy or a script error."**
 
 Open an issue with: (1) the specific document or script, (2) the exact error or incorrect text, (3) the correct text or expected behaviour with a reference (ISO 27001 clause, regulation article, etc.). Issues without a specific reference will be closed. "This doesn't look right" is not actionable.
+
+---
+
+## 🖥️ The Third Layer: ISMS CORE Platform
+
+Framework and Operational are **content products** — policies, workbooks, and guides that work perfectly as static files. You can clone this repository, run the Python generators, fill in the Excel workbooks, and have a fully functional, audit-ready ISMS without anything else.
+
+The **ISMS CORE Platform** is the operational layer built on top. It ingests both products and turns them into a live compliance management system:
+
+| Without Platform | With Platform |
+|-----------------|---------------|
+| Read policies as files | Search across all policies by keyword or control |
+| Open individual Excel workbooks | See aggregated compliance scores per section and control group |
+| Manually track gaps in a spreadsheet | Gap lifecycle management with severity, owner, SLA, and remediation tracking |
+| No cross-framework visibility | ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK ↔ GDPR ↔ DORA mappings, live |
+| Manual evidence collection | Evidence items with expiry tracking and freshness alerts |
+| No audit trail | Full immutable log of who did what and when |
+
+The Platform is a six-service Docker Compose stack (FastAPI + PostgreSQL + Redis + OpenSearch + Celery + React) deployed on-premises. Same data sovereignty principle applies — your compliance data does not leave your infrastructure.
+
+**Platform is additive, never mandatory.** Framework and Operational are the product. Platform is the engine that makes it operational at scale.
+
+See [PLATFORM.md](PLATFORM.md) for architecture details and [GETTING-STARTED.md](GETTING-STARTED.md) for setup instructions.
 
 ---
 

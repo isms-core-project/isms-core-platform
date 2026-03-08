@@ -275,13 +275,13 @@ isms-a.X.X-control-name/
 
 ---
 
-## 🔬 Triple-Validation Process
+## 🔬 Validation Process
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Adversarial-Multi--Model_QA-DC143C?style=for-the-badge" alt="Adversarial Multi-Model QA"/>
+  <img src="https://img.shields.io/badge/Multi--Stage-QA_Process-DC143C?style=for-the-badge" alt="Multi-Stage QA Process"/>
 </p>
 
-Every control pack undergoes adversarial multi-model validation. Controls are reviewed by competing AI models to ensure no single model's blind spots compromise quality.
+Every control pack undergoes a structured multi-stage validation process to ensure quality and correctness.
 
 ```
   ┌─────────────────────────┐
@@ -295,15 +295,12 @@ Every control pack undergoes adversarial multi-model validation. Controls are re
   │   Build + Code Review   │     POL, IMP, SCR, REF, CTX
   └────────────┬────────────┘
                │
-       ┌───────┴───────┐
-       ▼               ▼
- ┌───────────┐   ┌───────────┐
- │ Copilot X │   │   GPT-5   │
- │ Blue Team │   │ Red Team  │
- │  (Audit)  │   │ (Attack)  │
- └─────┬─────┘   └─────┬─────┘
-       │               │
-       └───────┬───────┘
+               ▼
+  ┌─────────────────────────┐
+  │    ISMS Copilot X       │──── Audit Review
+  │  (Documentation + QA)   │     Stage 1: adequacy, Stage 2: effectiveness
+  └────────────┬────────────┘
+               │
                ▼
   ┌─────────────────────────┐
   │     Gregory Griffin     │
@@ -311,14 +308,13 @@ Every control pack undergoes adversarial multi-model validation. Controls are re
   └─────────────────────────┘
 ```
 
-| Model | Role | Focus |
-|-------|------|-------|
+| Contributor | Role | Focus |
+|-------------|------|-------|
 | **Claude Code (Opus)** | Implementation + QA | Policy writing, Python generators, code review, pattern analysis |
-| **ISMS Copilot X** | Blue Team Audit | Stage 1 documentation adequacy, Stage 2 implementation effectiveness |
-| **ChatGPT GPT-5** | Red Team Auditor | Attack surface review, gap identification, adversarial testing |
+| **ISMS Copilot X** | Documentation Audit | Stage 1 documentation adequacy, Stage 2 implementation effectiveness |
 | **Gregory Griffin** | Architect + Final Gate | Methodology, domain expertise, IP ownership, approval authority |
 
-Each model operates under **purpose-built instruction sets** authored by Gregory Griffin — structured prompts defining scope, constraints, output format, and audit criteria. These aren't casual prompts; they are controlled operational documents specifying exactly what each model must check, what to ignore (e.g., placeholder dates), and how to classify findings. The instruction sets themselves represent a reusable methodology for AI-governed compliance engineering.
+Each stage operates under **purpose-built instruction sets** authored by Gregory Griffin — structured prompts defining scope, constraints, output format, and audit criteria. These are controlled operational documents specifying exactly what must be checked, what to ignore (e.g., placeholder dates), and how to classify findings.
 
 ### Finding Classification
 
@@ -348,11 +344,7 @@ Each model operates under **purpose-built instruction sets** authored by Gregory
 </tr>
 <tr>
 <td><strong>ISMS Copilot X</strong></td>
-<td>Blue team audit, documentation adequacy, implementation review</td>
-</tr>
-<tr>
-<td><strong>ChatGPT GPT-5</strong></td>
-<td>Red team audit, adversarial testing, gap identification</td>
+<td>Documentation audit, adequacy review, implementation effectiveness</td>
 </tr>
 </table>
 
@@ -382,27 +374,27 @@ Claude Code (Anthropic, Opus model family) has been the primary implementation p
 <tr>
 <td><strong>Python Scripts</strong></td>
 <td>Workbook Generators</td>
-<td><strong>xxx</strong> scripts, <strong>xxxK+</strong> lines</td>
+<td><strong>188</strong> scripts (FRAMEWORK) + 53 (OPERATIONAL)</td>
 </tr>
 <tr>
 <td><strong>IMP Documents</strong></td>
 <td>User Guides (UG) + Technical Specifications (TG) for every assessment</td>
-<td><strong>372</strong> files (186 UG + 186 TG)</td>
+<td><strong>376</strong> files (188 UG + 188 TG)</td>
 </tr>
 <tr>
 <td><strong>POL Documents</strong></td>
 <td>Policy framework with "WITH WHAT" verification methodology</td>
-<td><strong>100+</strong> policies, all audited</td>
+<td><strong>53</strong> framework POLs + <strong>53</strong> operational OP-POLs</td>
 </tr>
 <tr>
 <td><strong>Excel Workbooks</strong></td>
 <td>Assessment workbooks with data validation, formulas, conditional formatting</td>
-<td><strong>xxx+</strong> generated</td>
+<td><strong>188</strong> (FRAMEWORK) + <strong>53</strong> (OPERATIONAL)</td>
 </tr>
 <tr>
 <td><strong>Factory Automation</strong></td>
 <td>Assembly, promotion, backup, sync, splitting, normalization scripts</td>
-<td><strong>xx</strong> major tools</td>
+<td>10+ major tools</td>
 </tr>
 <tr>
 <td><strong>QA Infrastructure</strong></td>
@@ -417,12 +409,12 @@ Claude Code (Anthropic, Opus model family) has been the primary implementation p
 December 31st 2025: Pilot Control Creation -> A.8.24
 January 31st 2026: ISMS CORE Framework -> 93 Controls Completed in 53 Control Packs
 February 7th 2026: ISMS CORE Operational -> 93 Controls Completed in 53 Control Packs
-Februray 8th 2026: Python Scripts QA (Ongoing)
+February 8th 2026: Python Scripts QA (Ongoing)
 ```
 
 ### What's next
 
-The **ISMS CORE Platform** (`60-isms-core-api/`) is architected and ready for implementation — a FastAPI backend with PostgreSQL, Docker Compose deployment, and framework correlation engine inspired by [OpenCTI](https://github.com/OpenCTI-Platform/opencti). This will transform the current file-based framework into a live compliance platform with knowledge graph capabilities.
+The **ISMS CORE Platform** (`60-isms-core-api/`) is in active development — a FastAPI backend with PostgreSQL, Docker Compose deployment, and framework correlation engine. It transforms the file-based framework into a live compliance platform: DB-driven, WebUI-editable, with evidence tracking, gap management, and crosswalk mapping across 18+ regulatory frameworks.
 
 <p align="center">
   <em>Built with the conviction that security compliance should be engineering discipline, not checkbox theater.</em>
