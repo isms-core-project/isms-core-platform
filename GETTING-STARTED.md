@@ -71,7 +71,7 @@ POSTGRES_PASSWORD=your_strong_database_password
 REDIS_PASSWORD=your_strong_redis_password
 SECRET_KEY=your_random_secret_key_min_32_chars
 
-# Optional — only needed for ISMS Copilot (Phase 8, AI gap analysis)
+# Optional — only needed for ISMS Compass (Phase 8, AI gap analysis)
 ANTHROPIC_API_KEY=
 ```
 
@@ -376,7 +376,7 @@ The backend auto-generates OpenAPI documentation. Once running:
 | `POSTGRES_PASSWORD` | `change_this...` | **Yes** | PostgreSQL password |
 | `REDIS_PASSWORD` | `change_this...` | **Yes** | Redis password |
 | `SECRET_KEY` | `change_this...` | **Yes** | JWT signing secret (min 32 chars) |
-| `ANTHROPIC_API_KEY` | *(empty)* | No | Required for ISMS Copilot (Phase 8) |
+| `ANTHROPIC_API_KEY` | *(empty)* | No | Required for ISMS Compass (Phase 8) |
 | `DEBUG` | `true` | No | Set `false` in production |
 | `LOG_LEVEL` | `INFO` | No | `DEBUG` / `INFO` / `WARNING` / `ERROR` |
 | `CORS_ORIGINS` | `http://localhost:3000,...` | No | Comma-separated allowed origins |

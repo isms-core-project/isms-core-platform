@@ -128,7 +128,7 @@ Platform supports two content authority models, set per organisation at onboardi
 |---------|-------|-------------|
 | **External Document Support** | Phase 6 | Import third-party documents (`ProductType.EXTERNAL`) alongside FRAMEWORK/OPERATIONAL |
 | **Assessment Content Bootstrap** | Phase 7 | 188 generators → DB schema; WebUI forms for assessment data entry; script regeneration |
-| **ISMS Copilot** | Phase 8 | AI gap analysis against Gold Standard (depends on pgvector + Anthropic API key) |
+| **ISMS Compass** | Phase 8 | AI gap analysis against Gold Standard (depends on pgvector + Anthropic API key) |
 
 ---
 
