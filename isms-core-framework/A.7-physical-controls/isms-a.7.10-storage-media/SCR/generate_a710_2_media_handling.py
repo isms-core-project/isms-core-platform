@@ -1131,13 +1131,13 @@ def main():
         logger.info(f"Output file: {OUTPUT_FILENAME}")
         logger.info("=" * 60)
 
-        return True
+        return 0
 
     except Exception as e:
         logger.error(f"Failed to generate workbook: {e}")
         import traceback
         logger.error(traceback.format_exc())
-        return False
+        return 1
 
 
 if __name__ == "__main__":

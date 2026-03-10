@@ -2350,7 +2350,7 @@ def create_workbook(output_path):
     logger.info("✓ Workbook generated successfully!")
     logger.info("=" * 70)
     logger.info(f"Output File: {FILENAME}")
-    logger.info(f"File Size: {os.path.getsize(_wkbk_dir / FILENAME) / 1024:.1f} KB")  
+    logger.info(f"File Size: {os.path.getsize(_wkbk_dir / OUTPUT_FILENAME) / 1024:.1f} KB")  
     logger.info(f"Total Sheets: 13 (12 visible + 1 hidden lookup table)")
     logger.info("-" * 70)
     logger.info("\nWorkbook Structure:")
