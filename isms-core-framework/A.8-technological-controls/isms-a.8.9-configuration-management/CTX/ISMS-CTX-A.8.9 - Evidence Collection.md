@@ -1,11 +1,11 @@
-<!-- ISMS-CORE:CTX:ISMS-CTX-A.8.9-Evidence-Collection:framework:CTX:a.8.9-evidence-collection -->
+<!-- ISMS-CORE:CTX:ISMS-CTX-A.8.9-evidence-collection:framework:CTX:a.8.9 -->
 **ISMS-CTX-A.8.9 — Evidence Collection**
 
 **Document Control**
 
 | Attribute | Value |
 |-----------|-------|
-| **Document ID** | ISMS-CTX-A.8.9-Evidence-Collection |
+| **Document ID** | ISMS-CTX-A.8.9-evidence-collection |
 | **Version** | 1.0 |
 | **Document Type** | Technical Reference (NOT ISMS) |
 | **Related Policy** | ISMS-POL-A.8.9 (All Sections) |
@@ -34,10 +34,8 @@ Configuration management team, system administrators, IT operations, security en
 
 - ISMS-POL-A.8.9: Configuration Management Policy (Consolidated)
 - ISMS-CTX-A.8.9: Configuration Management Reference (NOT ISMS)
-- ISMS-IMP-A.8.9.1: Baseline Configuration Assessment
-- ISMS-IMP-A.8.9.2: Change Control Assessment
-- ISMS-IMP-A.8.9.3: Configuration Monitoring Assessment
-- ISMS-IMP-A.8.9.4: Security Hardening Assessment
+- ISMS-IMP-A.8.9-UG: Configuration Management Implementation Guide (User)
+- ISMS-IMP-A.8.9-TG: Configuration Management Implementation Guide (Technical)
 
 ---
 
@@ -53,7 +51,7 @@ Configuration management team, system administrators, IT operations, security en
 
 **This is technical reference and operational guidance for evidence collection, organisation, and audit preparation only.**
 
-**Purpose**: Provide practical guidance for organising evidence to demonstrate Control A.8.9 compliance during ISO 27001:2022 audits. This document supplements ISMS-POL-A.8.9 and ISMS-IMP-A.8.9.1-5 but does NOT replace policy requirements.
+**Purpose**: Provide practical guidance for organising evidence to demonstrate Control A.8.9 compliance during ISO 27001:2022 audits. This document supplements ISMS-POL-A.8.9 and ISMS-IMP-A.8.9 but does NOT replace policy requirements.
 
 **Audience**: Evidence custodians, audit coordinators, configuration managers responsible for preparing audit evidence packages.
 
@@ -87,9 +85,9 @@ Evidence/
 
 ---
 
-## A.8.9.1 - Baseline Configuration Evidence
+## Baseline Configuration Evidence
 
-**Assessment File**: ISMS-IMP-A.8.9.1.xlsx (generated from Python script)
+**Assessment File**: ISMS-IMP-A.8.9.xlsx (generated from Python script)
 
 ### Directory Structure
 
@@ -229,7 +227,7 @@ Contains completed assessment workbooks and summary reports.
 
 **Required Files**:
 
-- `Baseline-Assessment-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9.1 workbook
+- `Baseline-Assessment-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9 workbook
 - `Assessment-Summary-Presentation.pptx` - Executive summary
 - `Evidence-Register-Index.pdf` - Index of all evidence collected
 - `Gap-Remediation-Plan.xlsx` - Action plan for identified gaps
@@ -238,9 +236,9 @@ Contains completed assessment workbooks and summary reports.
 
 ---
 
-## A.8.9.2 - Change Control Evidence
+## Change Control Evidence
 
-**Assessment File**: ISMS-IMP-A.8.9.2.xlsx (generated from Python script)
+**Assessment File**: ISMS-IMP-A.8.9.xlsx (generated from Python script)
 
 ### Directory Structure
 
@@ -313,15 +311,15 @@ Contains change management KPI reports.
 
 #### 6. Assessment-Reports/
 
-- `Change-Control-Assessment-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9.2 workbook
+- `Change-Control-Assessment-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9 workbook
 - `Assessment-Summary-Presentation.pptx` - Executive summary
 - `Evidence-Register-Index.pdf` - Evidence collected
 
 ---
 
-## A.8.9.3 - Configuration Monitoring Evidence
+## Configuration Monitoring Evidence
 
-**Assessment File**: ISMS-IMP-A.8.9.3.xlsx (generated from Python script)
+**Assessment File**: ISMS-IMP-A.8.9.xlsx (generated from Python script)
 
 ### Directory Structure
 
@@ -385,15 +383,15 @@ Contains monitoring tool health and reliability evidence.
 
 #### 6. Assessment-Reports/
 
-- `Monitoring-Assessment-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9.3 workbook
+- `Monitoring-Assessment-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9 workbook
 - `Assessment-Summary-Presentation.pptx` - Executive summary
 - `Evidence-Register-Index.pdf` - Evidence collected
 
 ---
 
-## A.8.9.4 - Security Hardening Evidence
+## Security Hardening Evidence
 
-**Assessment File**: ISMS-IMP-A.8.9.4.xlsx (generated from Python script)
+**Assessment File**: ISMS-IMP-A.8.9.xlsx (generated from Python script)
 
 ### Directory Structure
 
@@ -471,7 +469,7 @@ Contains regular compliance reporting.
 
 #### 7. Assessment-Reports/
 
-- `Hardening-Assessment-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9.4 workbook
+- `Hardening-Assessment-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9 workbook
 - `Assessment-Summary-Presentation.pptx` - Executive summary
 - `Evidence-Register-Index.pdf` - Evidence collected
 
@@ -624,4 +622,4 @@ Before filing evidence, verify:
 
 *For binding policy requirements, refer to ISMS-POL-A.8.9 Configuration Management Policy.*
 
-<!-- QA_VERIFIED: 2026-03-02 -->
+<!-- QA_VERIFIED: 2026-03-08 -->
