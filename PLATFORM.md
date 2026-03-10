@@ -121,16 +121,14 @@ Platform supports two content authority models, set per organisation at onboardi
 | **Full-Text Search** | Search across all policy and IMP document content via OpenSearch (product-filtered) |
 | **RBAC** | Role-based access: Admin / ISMS Manager / Auditor / Control Owner / Viewer |
 | **Approval Workflow** | Content state lifecycle: draft → review → approved → published |
-| **Privacy Product** | 21 ISO 27701:2025 control groups — policies imported, compliance checklists in Assessments |
-| **Cloud Product** | 12 ISO 27018:2025 control groups — policies imported, compliance checklists in Assessments |
+| **Privacy Product** | 21 ISO 27701:2025 control groups — 23 PRIV-POL + 42 PRIV-IMP (UG/TG) imported; 21 SCR generators; compliance checklists in Assessments |
+| **Cloud Product** | 12 ISO 27018:2025 control groups — 12 CLD-POL + 24 CLD-IMP (UG/TG) imported; 12 SCR generators; compliance checklists in Assessments |
 | **ISMS Compass** | AI gap analysis against Gold Standard (Anthropic API — Phase 8) |
 
 ### Planned
 
 | Feature | Phase | Description |
 |---------|-------|-------------|
-| **PRIV/CLD IMP Documents** | Phase 9 | ISO 27701 + 27018 implementation guides (UG/TG) for full QA keyword/semantic coverage |
-| **PRIV/CLD SCR Generators** | Phase 9 | Python checklist generators for all 21 PRIV + 12 CLD control groups |
 | **Script Regeneration** | Phase 10 | Jinja2 template × DB payload → .py per control group |
 
 ---
