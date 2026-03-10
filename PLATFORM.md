@@ -5,31 +5,31 @@
 <h1 align="center">🎋 ISMS CORE Platform</h1>
 
 <p align="center">
-  <strong>The API and WebUI layer on top of ISMS CORE Framework and Operational</strong>
+  <strong>The API and WebUI layer on top of all four ISMS CORE products</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-In_Development-FF6600?style=for-the-badge" alt="In Development"/>
+  <img src="https://img.shields.io/badge/Status-Live_(Phase_8)-00AA00?style=for-the-badge" alt="Live"/>
   <img src="https://img.shields.io/badge/Backend-FastAPI_+_PostgreSQL-0066CC?style=flat-square" alt="FastAPI"/>
   <img src="https://img.shields.io/badge/Frontend-React_19_+_MUI_6-61DAFB?style=flat-square" alt="React"/>
   <img src="https://img.shields.io/badge/Deployment-Docker_Compose-2496ED?style=flat-square" alt="Docker"/>
 </p>
 
 <p align="center">
-  <em>FRAMEWORK and OPERATIONAL are the product. Platform makes it live.</em>
+  <em>Four products. One platform. All live.</em>
 </p>
 
 ---
 
 ## What is ISMS CORE Platform?
 
-ISMS CORE Platform is the **API and WebUI layer** that transforms the static file-based FRAMEWORK and OPERATIONAL products into a live compliance management system. The policies, assessment workbooks, and implementation guides are the content — Platform is the engine that ingests, correlates, and presents them as a unified operational dashboard.
+ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS CORE products (Framework, Operational, Privacy, Cloud) into a live compliance management system. The policies, assessment workbooks, and implementation guides are the content — Platform is the engine that ingests, correlates, and presents them as a unified operational dashboard covering ISO 27001:2022, ISO 27701:2025, and ISO 27018:2025.
 
 **Without Platform:** You have policy files + Excel workbooks on disk. Excellent paperwork.
 
-**With Platform:** You have a live compliance system — searchable, scored, gap-tracked, evidence-linked, and audit-ready.
+**With Platform:** You have a live compliance system — searchable, scored, gap-tracked, evidence-linked, and audit-ready across all three ISO standards.
 
-> **Important:** Platform is additive. FRAMEWORK and OPERATIONAL products work perfectly without it. Platform is the premium operational layer for teams who need continuous compliance management rather than periodic file reviews.
+> **Important:** Platform is additive. All four products work perfectly without it. Platform is the operational layer for teams who need continuous compliance management rather than periodic file reviews.
 
 ---
 
@@ -78,10 +78,10 @@ The platform's canonical data model covers:
 
 | Entity | Description |
 |--------|-------------|
-| **Control Groups** | 53 groups mapping to all 93 ISO 27001:2022 Annex A controls |
-| **Policies** | POL, OP-POL, INS, REF, CTX, FORM — typed, product-tagged, state-tracked |
+| **Control Groups** | 87 groups — 54 ISMS (ISO 27001), 21 Privacy (ISO 27701), 12 Cloud (ISO 27018) |
+| **Policies** | POL, OP-POL, PRIV-POL, CLD-POL, INS, REF, CTX, FORM — typed, product-tagged, state-tracked |
 | **Implementations** | IMP-UG/TG documents, indexed into OpenSearch for full-text search |
-| **Assessments** | Excel workbook contents: sheets, items, compliance status per item |
+| **Assessments** | Excel workbook contents: sheets, items, compliance status per item; Framework, Operational, Privacy, and Cloud checklists |
 | **Gaps** | Identified compliance gaps with severity, owner, SLA, remediation tracking |
 | **Evidence** | Evidence items linked to control groups, requirements, and/or assessment items |
 | **Frameworks** | 18 reference datasets: ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2... |
@@ -103,32 +103,35 @@ Platform supports two content authority models, set per organisation at onboardi
 
 ## Features
 
-### Current (Phases 0–5 complete as of 2026-03-08)
+### Current (Phases 0–8 complete as of 2026-03-09)
 
 | Feature | Description |
 |---------|-------------|
-| **Control Explorer** | Browse all 53 control groups with compliance scores, policy status, assessment history |
-| **Compliance Dashboard** | Aggregated scores across Framework and Operational products with section breakdown |
+| **Control Explorer** | Browse all 87 control groups (ISMS + Privacy + Cloud) with compliance scores, policy status, assessment history |
+| **Compliance Dashboard** | Aggregated scores across all four products with section breakdown; ISMS / Privacy / Cloud product switcher |
 | **Coverage Heatmap** | Policy and assessment coverage by control group and section |
-| **Policy Manager** | Browse, filter, preview, and manage all POL/OP-POL/INS/REF/CTX documents |
-| **Assessment Tracker** | All imported workbook assessments with compliance status breakdown |
+| **Policy Manager** | Browse, filter, preview, and manage all POL/OP-POL/PRIV-POL/CLD-POL/INS/REF/CTX documents |
+| **Assessment Tracker** | Framework (188 workbooks), Operational (53 checklists), Privacy (21 checklists), Cloud (12 checklists) with per-item compliance status |
 | **Gap Management** | Full gap lifecycle: create, assign, track, close with severity and SLA monitoring |
 | **Evidence Tracker** | Evidence items with expiry tracking, verification status, and freshness alerts |
 | **Crosswalk Viewer** | Cross-framework mappings: ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK ↔ GDPR ↔ DORA and more |
-| **QA / Existence Checker** | Validate that all expected artifacts are present (Framework and Operational) |
+| **QA / Existence Checker** | Validate that all expected artifacts are present (Framework, Operational, Privacy, Cloud) |
 | **Audit Trail** | Full audit log of all platform actions |
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats |
-| **Full-Text Search** | Search across all policy and IMP document content via OpenSearch |
+| **Full-Text Search** | Search across all policy and IMP document content via OpenSearch (product-filtered) |
 | **RBAC** | Role-based access: Admin / ISMS Manager / Auditor / Control Owner / Viewer |
 | **Approval Workflow** | Content state lifecycle: draft → review → approved → published |
+| **Privacy Product** | 21 ISO 27701:2025 control groups — policies imported, compliance checklists in Assessments |
+| **Cloud Product** | 12 ISO 27018:2025 control groups — policies imported, compliance checklists in Assessments |
+| **ISMS Compass** | AI gap analysis against Gold Standard (Anthropic API — Phase 8) |
 
-### In Development / Planned
+### Planned
 
 | Feature | Phase | Description |
 |---------|-------|-------------|
-| **External Document Support** | Phase 6 | Import third-party documents (`ProductType.EXTERNAL`) alongside FRAMEWORK/OPERATIONAL |
-| **Assessment Content Bootstrap** | Phase 7 | 188 generators → DB schema; WebUI forms for assessment data entry; script regeneration |
-| **ISMS Compass** | Phase 8 | AI gap analysis against Gold Standard (depends on pgvector + Anthropic API key) |
+| **PRIV/CLD IMP Documents** | Phase 9 | ISO 27701 + 27018 implementation guides (UG/TG) for full QA keyword/semantic coverage |
+| **PRIV/CLD SCR Generators** | Phase 9 | Python checklist generators for all 21 PRIV + 12 CLD control groups |
+| **Script Regeneration** | Phase 10 | Jinja2 template × DB payload → .py per control group |
 
 ---
 
@@ -138,8 +141,10 @@ The platform ingests from two sources:
 
 **1. Content files (read-only mounts):**
 ```
-/app/isms-framework/    → 50-isms-core-framework/   (POL, IMP, SCR, WKBK, REF, CTX, FORM)
-/app/isms-operational/  → 10-isms-core-operational/ (OP-POL, SCR, WKBK)
+/app/isms-framework/    → isms-core-framework/   (POL, IMP, SCR, WKBK, REF, CTX, FORM)
+/app/isms-operational/  → isms-core-operational/ (OP-POL, SCR, WKBK)
+/app/isms-privacy/      → isms-core-privacy/     (PRIV-POL, SCR, WKBK)
+/app/isms-cloud/        → isms-core-cloud/       (CLD-POL, SCR, WKBK)
 ```
 
 **2. Reference datasets (bundled):**

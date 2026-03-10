@@ -41,10 +41,12 @@ The Platform expects ISMS CORE content repositories to sit **alongside** the pla
 ├── factory_isms/                    ← this repository (content + platform)
 │   ├── platform/                    ← Platform source (docker-compose.yml lives here)
 │   ├── isms-core-framework/         ← FRAMEWORK content (mounted read-only)
-│   └── isms-core-operational/       ← OPERATIONAL content (mounted read-only)
+│   ├── isms-core-operational/       ← OPERATIONAL content (mounted read-only)
+│   ├── isms-core-privacy/           ← PRIVACY content — ISO 27701:2025 (mounted read-only)
+│   └── isms-core-cloud/             ← CLOUD content — ISO 27018:2025 (mounted read-only)
 ```
 
-The `docker-compose.yml` mounts framework and operational content as read-only volumes. **The platform never modifies these files.**
+The `docker-compose.yml` mounts all four product directories as read-only volumes. **The platform never modifies these files.**
 
 ---
 
@@ -191,12 +193,17 @@ curl -s -X POST http://localhost:8000/api/v1/admin/import-framework-workbooks \
 curl -s -X POST http://localhost:8000/api/v1/admin/import-operational \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json"
+
+# Import Privacy (ISO 27701) + Cloud (ISO 27018) compliance checklists
+curl -s -X POST http://localhost:8000/api/v1/admin/import-privacy \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json"
 ```
 
 ### 4. Or run all importers in one shot
 
 ```bash
-# Full sync — runs all four importers (policies, IMPs, operational, workbooks) in sequence
+# Full sync — runs all importers (policies, IMPs, operational, privacy/cloud, workbooks) in sequence
 curl -s -X POST http://localhost:8000/api/v1/sync/full \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json"
@@ -208,14 +215,14 @@ curl -s -X POST http://localhost:8000/api/v1/sync/full \
 
 | Section | What's there |
 |---------|-------------|
-| **Dashboard** | Compliance overview, audit readiness score, top gaps |
-| **Controls** | 53 control groups with policy/assessment/gap status |
-| **Policies** | Imported documents (53 POL + 53 OP-POL + foundation + REF/CTX/INS) |
-| **Assessments** | 188 framework + 53 operational workbook structures with per-item compliance status |
+| **Dashboard** | Compliance overview, audit readiness score, top gaps; ISMS / Privacy / Cloud product switcher |
+| **Controls** | 87 control groups (54 ISMS + 21 Privacy + 12 Cloud) with policy/assessment/gap status |
+| **Policies** | Imported documents (POL + OP-POL + PRIV-POL + CLD-POL + foundation + REF/CTX/INS) |
+| **Assessments** | 188 framework + 53 operational + 21 privacy + 12 cloud workbook structures with per-item compliance status |
 | **Gaps** | Identified compliance gaps — create, assign, track |
 | **Evidence** | Upload and link evidence to control groups and requirements |
 | **Coverage** | Heatmap of Framework and Operational coverage |
-| **QA** | Existence checker — validates artifact completeness |
+| **QA** | Existence checker — validates artifact completeness across all four products |
 | **Admin** | User management, system health, import controls |
 
 ---
@@ -338,13 +345,15 @@ TOKEN=$(curl -s -X POST http://localhost:8000/api/v1/auth/login \
 
 ### Workbook import finds 0 files
 
-Check that the framework and operational directories are correctly mounted. Verify inside the container:
+Check that all content directories are correctly mounted. Verify inside the container:
 ```bash
 docker exec isms-core-backend ls /app/isms-framework
 docker exec isms-core-backend ls /app/isms-operational
+docker exec isms-core-backend ls /app/isms-privacy
+docker exec isms-core-backend ls /app/isms-cloud
 ```
 
-If empty, check the volume mounts in `docker-compose.yml` point to the correct paths on your host.
+If empty, check the volume mounts in `docker-compose.yml` point to the correct paths on your host. Also ensure `POLICY_EXTRA_PATHS=/app/isms-cloud,/app/isms-privacy` is set in your `.env` file.
 
 ### Frontend shows "Network Error" on all API calls
 
@@ -377,6 +386,7 @@ The backend auto-generates OpenAPI documentation. Once running:
 | `REDIS_PASSWORD` | `change_this...` | **Yes** | Redis password |
 | `SECRET_KEY` | `change_this...` | **Yes** | JWT signing secret (min 32 chars) |
 | `ANTHROPIC_API_KEY` | *(empty)* | No | Required for ISMS Compass (Phase 8) |
+| `POLICY_EXTRA_PATHS` | `/app/isms-cloud,/app/isms-privacy` | No | Comma-separated extra mount paths for Privacy + Cloud content |
 | `DEBUG` | `true` | No | Set `false` in production |
 | `LOG_LEVEL` | `INFO` | No | `DEBUG` / `INFO` / `WARNING` / `ERROR` |
 | `CORS_ORIGINS` | `http://localhost:3000,...` | No | Comma-separated allowed origins |
