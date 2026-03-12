@@ -154,18 +154,14 @@ The top of each TG's technical content shows its source:
   <img src="https://img.shields.io/badge/Gate-Pass_Required-00AA00?style=for-the-badge" alt="Gate Pass Required"/>
 </p>
 
-Content is promoted to the main repository **only when QA gates pass**:
+Content is promoted to this repository **only when QA gates pass**. Each document type carries a QA marker that must be present before promotion:
 
-```bash
-# Check QA status
-./promote_control.sh --status
+| Document | QA marker required |
+|----------|--------------------|
+| POL / IMP / REF / CTX / FORM | `<!-- QA_VERIFIED: YYYY-MM-DD -->` at end of file |
+| SCR (Python scripts) | `# QA_VERIFIED: YYYY-MM-DD` footer block |
 
-# Dry-run promotion
-./promote_control.sh --dry-run isms-a.8.24-use-of-cryptography
-
-# Promote verified content
-./promote_control.sh isms-a.8.24-use-of-cryptography
-```
+> **Note for maintainers:** Promotion is handled by the internal development tooling in the private `factory_claude_ai` repository (`95-isms-core-factory/promote_control.sh`). Content in this repository has already passed all QA gates before being published here.
 
 ---
 
