@@ -85,7 +85,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td>53 control groups / 93 Annex A controls</td>
 <td>21 control groups (8 controller + 5 processor + 8 shared)</td>
 <td>12 Annex A control groups</td>
-<td>86 total groups across all products</td>
+<td>87 total groups across all products</td>
 </tr>
 <tr>
 <td><strong>Artifacts</strong></td>
@@ -98,7 +98,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <tr>
 <td><strong>Status</strong></td>
 <td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
-<td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
+<td><img src="https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square" alt="Complete"/></td>
 <td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
 <td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
 <td><img src="https://img.shields.io/badge/Live-2E8B57?style=flat-square" alt="Live"/></td>

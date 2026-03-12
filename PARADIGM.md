@@ -58,7 +58,7 @@ But within the domain of ISMS *implementation*, there is a genuine architectural
 <img src="https://img.shields.io/badge/⚡_OPERATIONAL-SME_Foundation-FF6600?style=flat-square" alt="OPERATIONAL"/>
 <img src="https://img.shields.io/badge/🔒_PRIVACY-ISO_27701_2025-7030A0?style=flat-square" alt="PRIVACY"/>
 <img src="https://img.shields.io/badge/☁️_CLOUD-ISO_27018_2025-00897B?style=flat-square" alt="CLOUD"/>
-<img src="https://img.shields.io/badge/Controls-86_Groups_/_3_Standards-32CD32?style=flat-square" alt="86 Groups"/>
+<img src="https://img.shields.io/badge/Controls-87_Groups_/_3_Standards-32CD32?style=flat-square" alt="87 Groups"/>
 </p>
 
 ISMS CORE provides **four distinct compliance products** designed for different organisational needs:

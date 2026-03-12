@@ -1,6 +1,6 @@
 # ISMS CORE Privacy Extension Pack
 
-**Status:** PLANNING / IN DEVELOPMENT (Phase 10)
+**Status:** v1.0 Complete (2026-03-09)
 **Standards:** ISO/IEC 27701:2025 (Ed. 2) + ISO/IEC 27018:2025 (Annex A overlay)
 **Prerequisite:** ISMS CORE Framework (50-isms-core-framework/) must be installed
 
@@ -16,7 +16,7 @@
 | Privacy-Processor | `privacy-processor/` | 5 | A.2.x (18 controls) |
 | Privacy-Shared | `privacy-shared/` | 8 | A.3.x (29 controls) |
 
-Plus 2 foundation policy documents in `00-foundation-policies/`.
+Plus 2 foundation policy documents in `00-priv-foundation-policies/`.
 
 ## ISO 27018:2025
 
