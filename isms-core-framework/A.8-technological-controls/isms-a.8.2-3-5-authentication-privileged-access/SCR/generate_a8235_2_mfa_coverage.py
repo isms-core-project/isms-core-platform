@@ -654,6 +654,7 @@ def create_summary_dashboard_sheet(ws):
     ws['A1'].fill = PatternFill(patternType='solid', fgColor='003366')
     ws['A1'].alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
     ws.merge_cells('A1:G1')
+    ws["A1"].border = border
     ws.row_dimensions[1].height = 35
 
     # A2: Subtitle

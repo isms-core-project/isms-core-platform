@@ -544,6 +544,7 @@ def create_summary_dashboard_sheet(wb):
     apply_style(ws['A1'], font=Font(name='Calibri', size=16, bold=True, color='FFFFFF'),
                 fill=HEADER_FILL,
                 alignment=Alignment(horizontal='center', vertical='center'))
+    ws["A1"].border = border
     ws.row_dimensions[1].height = 35
 
     ws.merge_cells('A2:E2')

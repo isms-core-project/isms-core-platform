@@ -1272,6 +1272,7 @@ def create_8_summary_dashboard(ws, styles):
     ws.merge_cells("A1:G1")
     ws["A1"] = "SECURE CONFIGURATION — SUMMARY DASHBOARD"
     apply_style(ws["A1"], styles["header"], "header")
+    ws["A1"].border = thin_border
     ws.row_dimensions[1].height = 35
 
     # Row 2: CONTROL_REF subtitle (Gold Standard)

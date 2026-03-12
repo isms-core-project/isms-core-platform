@@ -1808,6 +1808,7 @@ def create_summary_dashboard_sheet(ws, styles):
     ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
     ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
+    ws["A1"].border = border
     ws.row_dimensions[1].height = 35
 
     ws.merge_cells("A2:G2")

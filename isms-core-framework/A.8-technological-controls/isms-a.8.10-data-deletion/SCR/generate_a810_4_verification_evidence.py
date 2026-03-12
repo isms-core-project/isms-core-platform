@@ -1749,6 +1749,7 @@ def populate_dashboard_sheet(ws, styles):
     title.font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
     title.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     title.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    ws["A1"].border = border
     ws.row_dimensions[1].height = 35
 
     # ── A2:G2 subtitle ───────────────────────────────────────────────────────

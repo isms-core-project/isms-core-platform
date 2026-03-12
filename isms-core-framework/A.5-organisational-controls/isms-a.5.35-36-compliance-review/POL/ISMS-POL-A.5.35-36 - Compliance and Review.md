@@ -1,5 +1,5 @@
 <!-- ISMS-CORE:POLICY:ISMS-POL-A.5.35-36:framework:POL:a.5.35-36 -->
-**ISMS-POL-A.5.35-36 - Compliance and Review**
+**ISMS-POL-A.5.35-36 — Compliance and Review**
 
 ---
 

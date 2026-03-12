@@ -1338,6 +1338,7 @@ def create_summary_dashboard_sheet(ws, styles):
     ws.merge_cells("A1:G1")
     ws["A1"] = "CLOUD SERVICE INVENTORY — SUMMARY DASHBOARD"
     apply_style(ws["A1"], styles["header"], "header")
+    ws["A1"].border = border_thin
     ws.row_dimensions[1].height = 35
 
     # Row 2: CONTROL_REF subtitle (Gold Standard)

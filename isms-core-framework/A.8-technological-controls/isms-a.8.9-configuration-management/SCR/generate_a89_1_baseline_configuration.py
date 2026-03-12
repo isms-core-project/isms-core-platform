@@ -1848,6 +1848,7 @@ def create_summary_dashboard_sheet(wb, styles):
         ws.column_dimensions[col_letter].width = width
 
     # ROW 1 — Title
+    ws["A1"].border = border_thin
     ws.row_dimensions[1].height = 35
     ws.merge_cells("A1:G1")
     ws["A1"] = "BASELINE CONFIGURATION \u2014 SUMMARY DASHBOARD"

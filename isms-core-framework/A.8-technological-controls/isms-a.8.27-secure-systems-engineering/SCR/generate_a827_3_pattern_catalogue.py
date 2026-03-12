@@ -439,6 +439,7 @@ def create_summary_dashboard_sheet(ws):
     ws["A1"].font = Font(bold=True, color="FFFFFF", size=14, name="Calibri")
     ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
+    ws["A1"].border = border
     ws.row_dimensions[1].height = 35
 
     # --- CONTROL_REF (Row 2) ---

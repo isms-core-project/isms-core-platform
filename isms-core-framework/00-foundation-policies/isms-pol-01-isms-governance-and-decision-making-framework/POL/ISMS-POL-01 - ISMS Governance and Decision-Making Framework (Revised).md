@@ -1,5 +1,5 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-01:framework:POL:01 -->
-**ISMS-POL-01 — ISMS Governance and Decision-Making Framework**
+<!-- ISMS-CORE:POLICY:ISMS-POL-01-REV:framework:POL:01 -->
+**ISMS-POL-01-REV — ISMS Governance and Decision-Making Framework (Revised)**
 
 ---
 

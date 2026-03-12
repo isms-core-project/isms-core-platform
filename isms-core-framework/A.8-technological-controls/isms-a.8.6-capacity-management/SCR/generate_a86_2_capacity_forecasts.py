@@ -1175,6 +1175,7 @@ def create_summary_dashboard_sheet(wb, styles):
     ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
     ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
     ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
+    ws["A1"].border = border_thin
     ws.row_dimensions[1].height = 35
 
     # Row 2: Subtitle (left-aligned)
