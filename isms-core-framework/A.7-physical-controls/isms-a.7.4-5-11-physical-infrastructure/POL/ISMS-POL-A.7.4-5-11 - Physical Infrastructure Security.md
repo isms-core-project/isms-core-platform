@@ -32,7 +32,7 @@
 
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Facilities Manager
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -417,7 +417,7 @@ Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulator
 |------|------|------|
 | **Chief Information Security Officer (CISO)** | [Name] | [Date to be set] |
 | **Facilities Manager** | [Name] | [Date to be set] |
-| **Executive Management (GL)** | [Name] | [Date to be set] |
+| **Executive Management** | [Name] | [Date to be set] |
 
 ---
 

@@ -33,7 +33,7 @@
 - Primary: Chief Human Resources Officer (CHRO)
 - Secondary: Chief Information Security Officer (CISO)
 - Legal: Legal Counsel
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -510,7 +510,7 @@ Evidence required to demonstrate this policy is operationally effective:
 | **Chief Human Resources Officer (CHRO)** | [Name] | [Date to be set] |
 | **Chief Information Security Officer (CISO)** | [Name] | [Date to be set] |
 | **Legal Counsel** | [Name] | [Date to be set] |
-| **Executive Management (GL)** | [Name] | [Date to be set] |
+| **Executive Management** | [Name] | [Date to be set] |
 
 ---
 

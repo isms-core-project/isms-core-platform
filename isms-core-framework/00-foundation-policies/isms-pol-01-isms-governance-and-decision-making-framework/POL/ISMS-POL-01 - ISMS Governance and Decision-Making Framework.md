@@ -32,7 +32,7 @@
 
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 

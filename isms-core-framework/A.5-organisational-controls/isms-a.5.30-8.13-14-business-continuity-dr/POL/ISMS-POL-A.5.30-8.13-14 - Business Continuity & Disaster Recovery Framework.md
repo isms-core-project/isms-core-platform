@@ -34,7 +34,7 @@
 - Secondary: Chief Information Officer (CIO)
 - Technical: IT Operations Manager / BC/DR Coordinator
 - Compliance: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**: 
 
@@ -1497,7 +1497,7 @@ This policy addresses BC/DR requirements from applicable regulations:
 | **Chief Information Officer (CIO)** | [Name] | [Date] |
 | **BC/DR Coordinator** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management (GL)** | [Name] | [Date] |
+| **Executive Management** | [Name] | [Date] |
 
 ---
 

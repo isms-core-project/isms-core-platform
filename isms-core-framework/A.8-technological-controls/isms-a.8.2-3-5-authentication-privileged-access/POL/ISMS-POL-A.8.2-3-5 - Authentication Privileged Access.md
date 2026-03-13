@@ -35,7 +35,7 @@
 - Security Operations: Security Operations Manager
 - IT Operations: IT Operations Manager
 - Compliance: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -624,7 +624,7 @@ All tier violations generate CRITICAL alerts. Repeated violations result in:
 | **Chief Information Officer (CIO)** | [Name] | [Date] |
 | **IT Operations Manager** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management (GL)** | [Name] | [Date] |
+| **Executive Management** | [Name] | [Date] |
 
 ---
 

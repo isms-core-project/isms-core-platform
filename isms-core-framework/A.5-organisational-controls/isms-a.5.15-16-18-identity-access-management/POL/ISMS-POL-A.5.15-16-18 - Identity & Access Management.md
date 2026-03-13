@@ -34,7 +34,7 @@
 - Secondary: Chief Information Officer (CIO)
 - HR Integration: Chief Human Resources Officer (CHRO)
 - Compliance: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -471,7 +471,7 @@ Policy changes require CISO approval; major revisions require Executive Manageme
 | **Chief Information Officer (CIO)** | [Name] | [Date] |
 | **Chief Human Resources Officer (CHRO)** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management (GL)** | [Name] | [Date] |
+| **Executive Management** | [Name] | [Date] |
 
 ---
 

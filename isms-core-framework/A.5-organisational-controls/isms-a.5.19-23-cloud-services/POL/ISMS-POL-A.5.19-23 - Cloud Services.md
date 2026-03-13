@@ -35,7 +35,7 @@
 - Secondary: Chief Information Officer (CIO)
 - Compliance: Legal/Compliance Officer
 - Procurement: Procurement Director
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**: 
 
@@ -1396,7 +1396,7 @@ In all other cases, these references are informational only and do not constitut
 | **Chief Information Officer (CIO)** | [Name] | [Date] |
 | **Procurement Director** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management (GL)** | [Name] | [Date] |
+| **Executive Management** | [Name] | [Date] |
 
 ---
 

@@ -32,7 +32,7 @@
 
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Legal Counsel
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -461,7 +461,7 @@ Where no notifiable incidents occurred in the audit period, evidence may include
 |------|------|------|
 | **Chief Information Security Officer (CISO)** | [Name] | [Date to be set] |
 | **Legal Counsel** | [Name] | [Date to be set] |
-| **Executive Management (GL)** | [Name] | [Date to be set] |
+| **Executive Management** | [Name] | [Date to be set] |
 
 ---
 

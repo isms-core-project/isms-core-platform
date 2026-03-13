@@ -35,7 +35,7 @@
 - Secondary: Information Security Officer (ISO)
 - Compliance: Legal/Compliance Officer
 - Operations: Chief Information Officer (CIO)
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**: 
 

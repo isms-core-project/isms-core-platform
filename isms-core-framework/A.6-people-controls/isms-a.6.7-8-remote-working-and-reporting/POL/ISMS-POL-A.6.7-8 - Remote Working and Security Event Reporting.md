@@ -33,7 +33,7 @@
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Chief Human Resources Officer (CHRO)
 - Technical: IT Director / CTO
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -934,7 +934,7 @@ Optional reference templates and examples may be provided in:
 | **Chief Information Officer (CIO)** | [Name] | [Date] |
 | **Human Resources Director** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management (GL)** | [Name] | [Date] |
+| **Executive Management** | [Name] | [Date] |
 
 ---
 

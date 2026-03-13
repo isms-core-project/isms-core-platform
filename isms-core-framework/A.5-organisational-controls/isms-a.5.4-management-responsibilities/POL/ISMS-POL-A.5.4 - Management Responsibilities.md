@@ -32,7 +32,7 @@
 
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Chief Information Officer (CIO)
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -52,7 +52,7 @@ This policy establishes [Organisation]'s requirements for management responsibil
 
 **Purpose**: Define WHAT management responsibilities exist and WHO is accountable for security leadership. Implementation procedures (HOW) are documented in ISMS-IMP-A.5.4.
 
-**Scope**: This policy applies to all management personnel with supervisory or decision-making authority, including Executive Management (GL), department heads, team leads, and project managers.
+**Scope**: This policy applies to all management personnel with supervisory or decision-making authority, including Executive Management, department heads, team leads, and project managers.
 
 **Key Principle**: Information security is a business enabler, not an obstacle. Management leads by example.
 
@@ -234,7 +234,7 @@ Participation tracked in ISMS-IMP-A.5.4.3 Leadership Dashboard.
 
 | Role | Security Leadership Responsibilities |
 |------|--------------------------------------|
-| **Executive Management (GL)** | Strategic direction, resource approval, risk acceptance authority, ISMS governance |
+| **Executive Management** | Strategic direction, resource approval, risk acceptance authority, ISMS governance |
 | **CISO** | Policy ownership, security program management, management advisory, compliance monitoring |
 | **Department Heads** | Department security posture, resource allocation, policy enforcement within department |
 | **Team Leads/Managers** | Team compliance oversight, security culture, incident escalation, training completion |
@@ -384,7 +384,7 @@ Evidence required to demonstrate this policy is operationally effective:
 |------|------|------|
 | **Chief Information Security Officer (CISO)** | [Name] | [Date to be set] |
 | **Chief Information Officer (CIO)** | [Name] | [Date to be set] |
-| **Executive Management (GL)** | [Name] | [Date to be set] |
+| **Executive Management** | [Name] | [Date to be set] |
 
 ---
 

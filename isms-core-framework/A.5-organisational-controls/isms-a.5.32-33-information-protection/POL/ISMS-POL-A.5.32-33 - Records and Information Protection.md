@@ -33,7 +33,7 @@
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Legal Counsel
 - Integration: Data Protection Officer (DPO)
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -517,7 +517,7 @@ Evidence required to demonstrate this policy is operationally effective:
 | **Chief Information Security Officer (CISO)** | [Name] | [Date to be set] |
 | **Legal Counsel** | [Name] | [Date to be set] |
 | **Data Protection Officer (DPO)** | [Name] | [Date to be set] |
-| **Executive Management (GL)** | [Name] | [Date to be set] |
+| **Executive Management** | [Name] | [Date to be set] |
 
 ---
 

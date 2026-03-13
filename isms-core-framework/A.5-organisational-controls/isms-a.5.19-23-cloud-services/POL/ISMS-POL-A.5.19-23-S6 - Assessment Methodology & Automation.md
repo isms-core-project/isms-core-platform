@@ -35,7 +35,7 @@
 - Secondary: Information Security Officer (ISO)
 - Technical: System Engineering Team Lead
 - Quality: Quality Assurance Manager
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**: 
 

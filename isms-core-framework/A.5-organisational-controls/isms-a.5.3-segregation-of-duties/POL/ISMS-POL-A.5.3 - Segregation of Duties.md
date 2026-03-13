@@ -32,7 +32,7 @@
 
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Chief Financial Officer (CFO)
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -286,7 +286,7 @@ All exceptions SHALL be recorded in the Exception Register (ISMS-REG-EXCEPTIONS)
 
 | Role | Segregation Responsibilities |
 |------|------------------------------|
-| **Executive Management (GL)** | Approve segregation policy, accept residual risks, approve compensating controls |
+| **Executive Management** | Approve segregation policy, accept residual risks, approve compensating controls |
 | **CISO** | Define segregation requirements, monitor compliance, approve exceptions |
 | **CFO** | Financial process segregation oversight, approve financial control exceptions |
 | **Department Heads** | Implement segregation within departments, identify conflicts, request exceptions |
@@ -426,7 +426,7 @@ Evidence required to demonstrate this policy is operationally effective:
 |------|------|------|
 | **Chief Information Security Officer (CISO)** | [Name] | [Date to be set] |
 | **Chief Financial Officer (CFO)** | [Name] | [Date to be set] |
-| **Executive Management (GL)** | [Name] | [Date to be set] |
+| **Executive Management** | [Name] | [Date to be set] |
 
 ---
 

@@ -33,7 +33,7 @@
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Human Resources Director / Chief People Officer
 - Compliance: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -1101,7 +1101,7 @@ The boundary is: POL-A.6.3 defines WHAT training is required and WHO must comple
 | **Chief Information Security Officer (CISO)** | [Name] | [Date] |
 | **Human Resources Director** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management (GL)** | [Name] | [Date] |
+| **Executive Management** | [Name] | [Date] |
 
 ---
 

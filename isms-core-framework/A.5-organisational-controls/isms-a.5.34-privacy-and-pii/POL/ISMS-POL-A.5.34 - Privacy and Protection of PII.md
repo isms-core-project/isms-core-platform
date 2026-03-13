@@ -34,7 +34,7 @@
 - Secondary: Chief Information Security Officer (CISO)
 - Legal Review: Legal/Compliance Officer (mandatory)
 - HR Integration: Chief Human Resources Officer (CHRO) - employee PII aspects
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 

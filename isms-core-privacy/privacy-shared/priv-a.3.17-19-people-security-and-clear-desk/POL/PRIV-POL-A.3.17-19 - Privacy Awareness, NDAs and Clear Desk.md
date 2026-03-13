@@ -34,7 +34,7 @@
 - Primary: Data Protection Officer (DPO)
 - Secondary: Chief Information Security Officer (CISO)
 - Human Resources: HR Manager
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 

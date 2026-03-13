@@ -33,7 +33,7 @@
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Human Resources Director
 - Compliance: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -522,7 +522,7 @@ This policy addresses asset management requirements from:
 | **Chief Information Security Officer (CISO)** | [Name] | [Date] |
 | **Human Resources Director** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management (GL)** | [Name] | [Date] |
+| **Executive Management** | [Name] | [Date] |
 
 ---
 

@@ -33,7 +33,7 @@
 
 - Primary: Data Protection Officer (DPO)
 - Secondary: CISO / Cloud Security Manager
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 

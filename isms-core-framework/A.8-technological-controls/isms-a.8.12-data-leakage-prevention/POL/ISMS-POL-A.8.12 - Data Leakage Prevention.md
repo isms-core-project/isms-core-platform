@@ -42,7 +42,7 @@
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Chief Information Officer (CIO)
 - Compliance: Data Protection Officer (DPO) / Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**: 
 
@@ -1164,7 +1164,7 @@ Data Leakage Prevention (DLP) protects [Organisation]'s sensitive information fr
 | **Chief Information Officer (CIO)** | [Name] | [Date] |
 | **Data Protection Officer (DPO)** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management (GL)** | [Name] | [Date] |
+| **Executive Management** | [Name] | [Date] |
 
 ---
 

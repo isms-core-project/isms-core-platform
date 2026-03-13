@@ -33,7 +33,7 @@
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Chief Technology Officer (CTO)
 - Compliance: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -601,7 +601,7 @@ Evidence required to demonstrate this policy is operationally effective:
 | **Chief Information Security Officer (CISO)** | [Name] | [Date] |
 | **Chief Technology Officer (CTO)** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management (GL)** | [Name] | [Date] |
+| **Executive Management** | [Name] | [Date] |
 
 ---
 

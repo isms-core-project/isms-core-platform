@@ -34,7 +34,7 @@
 - Secondary: Chief Information Officer (CIO)
 - Privacy: Data Protection Officer (DPO)
 - Compliance: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**: 
 
@@ -2857,7 +2857,7 @@ Evidence required to demonstrate this policy is operationally effective:
 | **Chief Information Officer (CIO)** | [Name] | [Date] |
 | **Data Protection Officer (DPO)** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management (GL)** | [Name] | [Date] |
+| **Executive Management** | [Name] | [Date] |
 
 ---
 

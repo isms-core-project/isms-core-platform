@@ -34,7 +34,7 @@
 - Secondary: Chief Information Officer (CIO)
 - Operational Review: Security Operations Center (SOC) Lead
 - Compliance: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**: 
 
@@ -1299,7 +1299,7 @@ All stakeholders SHALL complete quarterly monitoring assessments:
 | **Chief Information Officer (CIO)** | [Name] | [Date] |
 | **Security Operations Center (SOC) Lead** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management (GL)** | [Name] | [Date] |
+| **Executive Management** | [Name] | [Date] |
 
 ---
 

@@ -33,7 +33,7 @@
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Business Continuity Manager
 - Integration: Chief Information Officer (CIO)
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -535,7 +535,7 @@ Evidence required to demonstrate this policy is operationally effective:
 | **Chief Information Security Officer (CISO)** | [Name] | [Date to be set] |
 | **Business Continuity Manager** | [Name] | [Date to be set] |
 | **Chief Information Officer (CIO)** | [Name] | [Date to be set] |
-| **Executive Management (GL)** | [Name] | [Date to be set] |
+| **Executive Management** | [Name] | [Date to be set] |
 
 ---
 

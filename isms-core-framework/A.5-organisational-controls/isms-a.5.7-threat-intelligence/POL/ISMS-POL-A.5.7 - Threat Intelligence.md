@@ -34,7 +34,7 @@
 - Secondary: Chief Information Officer (CIO)
 - Risk: Chief Risk Officer (CRO)
 - Compliance: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -264,7 +264,7 @@ When [Organisation] implements Control A.8.8 (Management of Technical Vulnerabil
 
 | Role | Accountabilities |
 |------|------------------|
-| **Executive Management (GL)** | Strategic approval, resource allocation, policy approval |
+| **Executive Management** | Strategic approval, resource allocation, policy approval |
 | **Chief Information Security Officer (CISO)** | Policy ownership, program oversight, exception approval |
 | **Chief Risk Officer (CRO)** | Risk assessment integration, TI-driven risk updates approval |
 | **Threat Intelligence Team Lead** | Program management, intelligence production, source management |
@@ -500,7 +500,7 @@ The boundary is: POL-A.5.7 defines governance framework for threat intelligence 
 | **Chief Information Officer (CIO)** | [Name] | [Date to be set] |
 | **Chief Risk Officer (CRO)** | [Name] | [Date to be set] |
 | **Legal/Compliance Officer** | [Name] | [Date to be set] |
-| **Executive Management (GL)** | [Name] | [Date to be set] |
+| **Executive Management** | [Name] | [Date to be set] |
 
 ---
 

@@ -35,7 +35,7 @@
 - Secondary: Chief Human Resources Officer (CHRO)
 - Legal: Legal/Compliance Officer
 - Privacy: Data Protection Officer (DPO)
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 

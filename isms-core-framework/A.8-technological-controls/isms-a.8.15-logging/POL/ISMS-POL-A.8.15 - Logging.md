@@ -35,7 +35,7 @@
 - Operational Review: Security Operations Center (SOC) Lead / IT Operations Manager
 - Privacy Review: Data Protection Officer (DPO)
 - Compliance Review: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -443,7 +443,7 @@ The following SHALL be classified as security incidents:
 | **IT Operations Manager** | [Name] | | [Date] |
 | **Data Protection Officer (DPO)** | [Name] | | [Date] |
 | **Legal/Compliance Officer** | [Name] | | [Date] |
-| **Executive Management (GL)** | [Name] | | [Date] |
+| **Executive Management** | [Name] | | [Date] |
 
 ---
 

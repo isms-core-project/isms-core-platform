@@ -38,7 +38,7 @@
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Legal/Compliance Officer
 - Compliance: Data Protection Officer (DPO)
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
@@ -1146,7 +1146,7 @@ This section documents the organisation's current regulatory compliance obligati
 - **Scheduled:** Q4 annually (December)
 - **Participants:** CISO (lead), Legal Counsel, DPO, Compliance Officer
 - **Deliverable:** Updated Section 8 + Executive Management briefing
-- **Approval:** Executive Management (GL)
+- **Approval:** Executive Management
 
 **Quarterly Monitoring Review:**
 

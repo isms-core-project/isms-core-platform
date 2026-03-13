@@ -34,7 +34,7 @@
 - Technical: Chief Information Officer (CIO)
 - Operations: Chief Technology Officer (CTO)
 - Governance: Configuration Manager
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**: 
 
@@ -807,7 +807,7 @@ Exceptions to configuration requirements SHALL:
 | **Chief Information Officer (CIO)** | [Name] | [Date] |
 | **Chief Technology Officer (CTO)** | [Name] | [Date] |
 | **Configuration Manager** | [Name] | [Date] |
-| **Executive Management (GL)** | [Name] | [Date] |
+| **Executive Management** | [Name] | [Date] |
 
 ---
 

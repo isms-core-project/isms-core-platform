@@ -34,7 +34,7 @@
 - Secondary: Chief Information Officer (CIO)
 - Technical: Incident Response Manager / CSIRT Lead
 - Legal: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 

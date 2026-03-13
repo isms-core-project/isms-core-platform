@@ -35,7 +35,7 @@
 - Secondary: Information Security Officer (ISO)
 - Technical: Cloud Architecture Team Lead
 - Compliance: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**: 
 

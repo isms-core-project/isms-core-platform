@@ -35,7 +35,7 @@
 - Secondary: Information Security Officer (ISO)
 - Compliance: Legal/Compliance Officer
 - Procurement: Procurement Director
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**: 
 

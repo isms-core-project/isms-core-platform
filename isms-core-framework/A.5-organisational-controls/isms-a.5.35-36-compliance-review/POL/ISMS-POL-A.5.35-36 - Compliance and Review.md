@@ -34,7 +34,7 @@
 - Secondary: Chief Information Officer (CIO)
 - Technical: IT Operations Manager / Compliance Manager
 - Legal: Legal/Compliance Officer
-- Final Authority: Executive Management (GL)
+- Final Authority: Executive Management
 
 **Related Documents**:
 
