@@ -287,7 +287,7 @@ Every control pack undergoes a structured multi-stage validation process to ensu
                │ Requirements + Domain Expertise
                ▼
   ┌─────────────────────────┐
-  │   Claude Code (Opus)    │──── Implementation
+  │   Claude Code (Sonnet)    │──── Implementation
   │   Build + Code Review   │     POL, IMP, SCR, REF, CTX
   └────────────┬────────────┘
                │
@@ -306,7 +306,7 @@ Every control pack undergoes a structured multi-stage validation process to ensu
 
 | Contributor | Role | Focus |
 |-------------|------|-------|
-| **Claude Code (Opus)** | Implementation + QA | Policy writing, Python generators, code review, pattern analysis |
+| **Claude Code (Sonnet)** | Implementation + QA | Policy writing, Python generators, code review, pattern analysis |
 | **ISMS Copilot X** | Documentation Audit | Stage 1 documentation adequacy, Stage 2 implementation effectiveness |
 | **The ISMS Core Project** | Architect + Final Gate | Methodology, domain expertise, IP ownership, approval authority |
 
@@ -335,7 +335,7 @@ Each stage operates under **purpose-built instruction sets** authored by The ISM
 <td>Methodology, architecture, domain expertise, IP ownership</td>
 </tr>
 <tr>
-<td><strong>Claude Code (Opus)</strong></td>
+<td><strong>Claude Code (Sonnet)</strong></td>
 <td>Primary implementation partner — see detailed contribution below</td>
 </tr>
 <tr>
@@ -353,11 +353,11 @@ Each stage operates under **purpose-built instruction sets** authored by The ISM
 ## 🧠 Claude Code — Implementation Contribution
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Claude_Code-Opus_4-CC785C?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code Opus"/>
+  <img src="https://img.shields.io/badge/Claude_Code-Sonnet_4.6-CC785C?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code Sonnet"/>
   <img src="https://img.shields.io/badge/Dec_2025–Feb_2026-6_Weeks-2E8B57?style=for-the-badge" alt="6 Weeks"/>
 </p>
 
-Claude Code (Anthropic, Opus model family) has been the primary implementation partner on ISMS CORE since December 31, 2025. Working in continuous pairing sessions directed by The ISMS Core Project — who authored all methodology, architectural decisions, prompt instruction sets, and multi-model orchestration — Claude Code delivered the full automation layer, wrote and refined all documentation, and built the factory infrastructure that makes this project maintainable.
+Claude Code (Anthropic, Sonnet model family) has been the primary implementation partner on ISMS CORE since December 31, 2025. Working in continuous pairing sessions directed by The ISMS Core Project — who authored all methodology, architectural decisions, prompt instruction sets, and multi-model orchestration — Claude Code delivered the full automation layer, wrote and refined all documentation, and built the factory infrastructure that makes this project maintainable.
 
 ### What was built
 
