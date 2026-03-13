@@ -49,7 +49,7 @@
 - All PIMS policy documents (mandatory reference)
 
 **Distribution**: All PIMS stakeholders, privacy officers, policy authors, system owners, auditors, processors
-**Referenced By**: All PIMS policy documents (PRIV-POL-01, all 21 control group POLs)
+**Referenced By**: All PIMS policy documents (PRIV-POL-01, all PRIV-POL-A.x.x control group POLs)
 
 **Language Strategy**: Where technical or regulatory terms are internationally established (e.g., GDPR, ISO/IEC, FADP, PII), English terminology is retained to preserve precision and facilitate cross-border regulatory reference.
 
@@ -99,7 +99,7 @@ This policy defines the **identification and applicability** of legal, statutory
 
 The outcome of the privacy regulatory applicability assessment serves as **input** for:
 
-- Control scoping decisions across all 21 PIMS control groups
+- Control scoping decisions across all PIMS control groups
 - Privacy risk assessment and treatment prioritisation
 - Proportionality decisions for control implementation (controller vs. processor obligations)
 - Audit planning and compliance verification
@@ -160,9 +160,10 @@ Frameworks and standards used for technical and organisational guidance, benchma
 │  TIER 1: MANDATORY (Legal/Contractual)                          │
 │  • EU GDPR (where processing EU personal data)                  │
 │  • Swiss Federal Data Protection Act (FADP/nDSG)               │
-│  • ISO/IEC 27701:2025 (where certification sought)             │
 │                                                                 │
 │  TIER 2: CONDITIONAL (Context-Dependent)                        │
+│  • ISO/IEC 27701:2025 (where certification sought or           │
+│    contractually required)                                      │
 │  • ISO/IEC 27018:2025 (cloud PII processors)                   │
 │  • UK GDPR (if processing UK personal data post-Brexit)         │
 │  • LGPD (if processing Brazilian personal data)                 │
@@ -172,7 +173,7 @@ Frameworks and standards used for technical and organisational guidance, benchma
 │  TIER 3: INFORMATIONAL (Best Practice / Technical Guidance)     │
 │  • ISO/IEC 27017:2019 (cloud security baseline for 27018)      │
 │  • ISO/IEC 27002:2022 (security control implementation)        │
-│  • NIST Privacy Framework 1.0 (privacy risk management)        │
+│  • NIST Privacy Framework 2.0 (privacy risk management)        │
 │                                                                 │
 │  FORTHCOMING (Monitor — Adopt on Publication)                   │
 │  • ISO/IEC 27017:2025 (cloud security — not yet published)     │
@@ -184,6 +185,8 @@ Frameworks and standards used for technical and organisational guidance, benchma
 ---
 
 # Mandatory Compliance (Tier 1)
+
+> **Note on ISO/IEC 27701:2025 classification**: ISO/IEC 27701:2025 is classified as **Tier 2 (Conditional)** in this framework. It is not a legally enforceable regulation. It becomes obligatory for [Organisation] where certification is actively sought or where a customer contract explicitly requires PIMS compliance. Where neither condition applies, it functions as a voluntary best-practice framework. See the ISO/IEC 27701:2025 section under Tier 2 for full details.
 
 ## EU General Data Protection Regulation (GDPR)
 
@@ -259,9 +262,20 @@ Frameworks and standards used for technical and organisational guidance, benchma
 
 ---
 
-## ISO/IEC 27701:2025 (Where Certification Sought)
+# Conditional Applicability (Tier 2)
 
-**Applicability**: Where the organisation seeks ISO/IEC 27701:2025 certification, or where customers contractually require PIMS compliance with this standard.
+These regulations and standards apply **only when specific conditions are met**.
+
+## ISO/IEC 27701:2025 — Privacy Information Management System
+
+**Standard**: ISO/IEC 27701:2025 (Second Edition) — Privacy information management system
+
+**Applicability Triggers**:
+
+- The organisation **seeks ISO/IEC 27701:2025 certification** (either standalone or combined with ISO 27001 certification)
+- A customer contract **explicitly requires** PIMS compliance with this standard
+
+**Classification Note**: ISO/IEC 27701:2025 is classified Tier 2 (Conditional) in this framework. It is not a legally enforceable regulation. It does not become mandatory simply because the organisation processes PII — GDPR and FADP fulfil that role. Where certification is sought or contractually required, it is treated as a binding operational commitment equivalent to Tier 1 for the duration of certification.
 
 **Key Requirements**:
 
@@ -279,7 +293,7 @@ Frameworks and standards used for technical and organisational guidance, benchma
 
 **PIMS Impact**:
 
-- Full implementation of all 21 control groups in 51-isms-core-privacy/
+- Full implementation of all PRIV-POL-A.x.x control group policies in 51-isms-core-privacy/
 - Role determination documented (controller, processor, or both per processing activity)
 - PIMS integrated with or layered on top of ISO 27001 ISMS
 
@@ -288,10 +302,6 @@ Frameworks and standards used for technical and organisational guidance, benchma
 **Reference**: ISO/IEC 27701:2025, Information security, cybersecurity and privacy protection — Privacy information management system
 
 ---
-
-# Conditional Applicability (Tier 2)
-
-These regulations and standards apply **only when specific conditions are met**.
 
 ## ISO/IEC 27018:2025 — Cloud PII Processors
 
@@ -320,7 +330,7 @@ ISO 27018:2025 comprises two distinct parts:
 
 ## UK General Data Protection Regulation (UK GDPR)
 
-**Regulation**: UK GDPR (retained EU law as amended by Data Protection, Privacy and Electronic Communications (Amendments etc) (EU Exit) Regulations 2019) + Data Protection Act 2018
+**Regulation**: UK GDPR (retained EU law as amended by Data Protection, Privacy and Electronic Communications (Amendments etc) (EU Exit) Regulations 2019) + Data Protection Act 2018, as further amended by the **Data (Use and Access) Act 2025**
 
 **Applicability Triggers**:
 
@@ -333,10 +343,11 @@ ISO 27018:2025 comprises two distinct parts:
 - Supervisory authority: Information Commissioner's Office (ICO), not EU DPAs
 - International transfers: UK adequacy regulations (not EU adequacy decisions); EU→UK transfer covered by EU adequacy decision for UK (current at time of writing — monitor for review)
 - UK Standard Contractual Clauses (IDTA) or UK Addendum to EU SCCs required for transfers to third countries
+- **Data (Use and Access) Act 2025**: Introduces targeted UK-specific changes to data protection obligations; DPO assesses impact for organisations with UK operations on an ongoing basis
 
-**Assessment**: If organisation processes UK personal data → UK GDPR compliance required in parallel with EU GDPR. For most CH/EU organisations with UK operations or UK customers, this will be mandatory.
+**Assessment**: If organisation processes UK personal data → UK GDPR compliance required in parallel with EU GDPR. For most CH/EU organisations with UK operations or UK customers, this will be mandatory. Monitor ICO guidance on Data (Use and Access) Act 2025 implementation.
 
-**Reference**: UK GDPR; Data Protection Act 2018 (UK)
+**Reference**: UK GDPR; Data Protection Act 2018 (UK); Data (Use and Access) Act 2025
 
 ---
 
@@ -380,7 +391,7 @@ ISO 27018:2025 comprises two distinct parts:
 
 - Consent as primary legal basis (narrower legitimate interest scope than GDPR)
 - Data localisation: Personal information of Chinese individuals collected in China may require local storage
-- Cross-border transfer: Security assessment by CAC required for transfers above volume thresholds; Standard Contract (SCC) for smaller volumes
+- Cross-border transfer: Three mechanisms available — (1) Security assessment by CAC required for transfers above volume thresholds; (2) Standard Contract (SCC) for smaller volumes; (3) Personal Information Protection Certification by a recognised body (for transfers within multinational groups — see CAC implementing provisions)
 - Data Protection Officer: Required if processing above thresholds
 - Breach notification within 24 hours to regulator
 
@@ -461,15 +472,13 @@ ISO/IEC 27017:2025 is under development as the second edition of the cloud secur
 
 ---
 
-## NIST Privacy Framework 1.0
+## NIST Privacy Framework 2.0
 
-**Framework**: NIST Privacy Framework: A Tool for Improving Privacy Through Enterprise Risk Management, Version 1.0 (January 2020)
+**Framework**: NIST Privacy Framework: A Tool for Improving Privacy Through Enterprise Risk Management, Version 2.0 (2024)
 
-**Role in PRIV-POL-00**: Informational reference for privacy risk management methodology. Provides a function-based (Identify-P, Govern-P, Control-P, Communicate-P, Protect-P) vocabulary for privacy programme maturity assessment. May be used for gap analysis and privacy risk assessment benchmarking.
+**Role in PRIV-POL-00**: Informational reference for privacy risk management methodology. Provides a function-based (Identify-P, Govern-P, Control-P, Communicate-P, Protect-P) vocabulary for privacy programme maturity assessment. Version 2.0 aligns more closely with the NIST Cybersecurity Framework 2.0, adding the Govern-P function and strengthening supply chain privacy risk guidance. May be used for gap analysis and privacy risk assessment benchmarking.
 
-**Note**: NIST Privacy Framework 2.0 is anticipated. Monitor NIST publications and update reference when published.
-
-**Reference**: NIST Privacy Framework v1.0, NIST, January 2020
+**Reference**: NIST Privacy Framework v2.0, NIST, 2024
 
 ---
 
@@ -552,7 +561,7 @@ Use this template to document applicability for each regulation:
 
 ## Standard Reference Language
 
-All PIMS control group policies (PRIV-POL-01 through all 21 control group POLs) SHALL include a **Regulatory Framework** section using this standard reference:
+All PIMS control group policies (PRIV-POL-01 and all PRIV-POL-A.x.x control group POLs) SHALL include a **Regulatory Framework** section using this standard reference:
 
 ```
 ## Regulatory Framework
@@ -588,16 +597,16 @@ Control group policies SHALL clearly state the organisational role addressed:
 
 | Regulation | Version | Status | PIMS Control Relevance |
 |-----------|---------|--------|------------------------|
-| EU GDPR | 2016/679 | Active — Mandatory | All 21 control groups |
-| CH FADP/nDSG | SR 235.1 (2023) | Active — Mandatory | All 21 control groups |
-| ISO/IEC 27701:2025 | Ed. 2, 2025 | Mandatory (certification scope) | All 21 control groups |
+| EU GDPR | 2016/679 | Active — Mandatory | All PRIV-POL-A.x.x control groups |
+| CH FADP/nDSG | SR 235.1 (2023) | Active — Mandatory | All PRIV-POL-A.x.x control groups |
 
 ## Conditional Applicability
 
 | Regulation | Version | Status | Trigger |
 |-----------|---------|--------|---------|
+| ISO/IEC 27701:2025 | Ed. 2, 2025 | Conditional | Certification sought or contractually required |
 | ISO/IEC 27018:2025 | Ed. 3, 2025 | Conditional | Cloud PII processor services |
-| UK GDPR | 2018/2021 | Conditional | UK data subjects |
+| UK GDPR + DUA Act 2025 | 2018/2021/2025 | Conditional | UK data subjects |
 | LGPD | 2018 | Conditional | Brazilian data subjects |
 | PIPL | 2021 | Conditional | Chinese data subjects |
 
@@ -608,7 +617,7 @@ Control group policies SHALL clearly state the organisational role addressed:
 | ISO/IEC 27017:2019 | 2019 | Active — Tier 3 | Cloud security baseline (supports 27018 implementation) |
 | ISO/IEC 27017:2025 | Not yet published | Forthcoming | Adopt on publication |
 | ISO/IEC 27002:2022 | 2022 | Active — Tier 3 | Security control guidance for A.3 shared controls |
-| NIST Privacy Framework | 1.0, 2020 | Active — Tier 3 | Privacy risk management methodology |
+| NIST Privacy Framework | 2.0, 2024 | Active — Tier 3 | Privacy risk management methodology |
 
 ## Audit References
 
@@ -630,14 +639,14 @@ Control group policies SHALL clearly state the organisational role addressed:
 |-----------|---------------------|-----------|-------------|
 | EU GDPR | Processing EU personal data | [Date] | [Date + 12M] |
 | CH FADP | Swiss-based operations | [Date] | [Date + 12M] |
-| ISO 27701:2025 | Certification programme | [Date] | [Date + 12M] |
 
 ## Tier 2: Conditional Applicability
 
 | Regulation | Current Status | Trigger Status | Action |
 |-----------|---------------|---------------|--------|
+| ISO 27701:2025 | [Applicable / Not Applicable] | [Certification sought or contractually required?] | [Treat as binding commitment if applicable] |
 | ISO 27018:2025 | [Applicable / Not Applicable] | [Cloud PII processor services in scope?] | [Implement Annex A overlay if applicable] |
-| UK GDPR | [Applicable / Not Applicable] | [UK data subjects in scope?] | [Document if applicable] |
+| UK GDPR + DUA Act 2025 | [Applicable / Not Applicable] | [UK data subjects in scope?] | [Document if applicable; monitor ICO DUA guidance] |
 | LGPD | [Applicable / Not Applicable] | [Brazilian data subjects in scope?] | [Assess if applicable] |
 | PIPL | [Applicable / Not Applicable] | [Chinese data subjects in scope?] | [Assess if applicable] |
 
@@ -647,7 +656,7 @@ Control group policies SHALL clearly state the organisational role addressed:
 |---------|-------|--------------|
 | ISO/IEC 27017:2019 | Cloud security baseline | priv-a.2.4 and priv-a.2.5 processor packs |
 | ISO/IEC 27002:2022 | Security control guidance | All A.3 shared control packs |
-| NIST Privacy Framework | Risk methodology reference | PIMS risk assessment documentation |
+| NIST Privacy Framework 2.0 | Risk methodology reference | PIMS risk assessment documentation |
 
 ---
 
@@ -718,6 +727,7 @@ Changes to this policy SHALL be communicated to:
 | **Tier 3** | Informational reference (best practice, voluntary) |
 | **Applicability Trigger** | Event or condition that causes a Tier 2 regulation to become applicable |
 | **Regulatory Monitoring** | Systematic quarterly review of regulatory changes and organisational activities to detect applicability changes |
+| **GL** | Geschäftsleitung — the German/Swiss term for executive management or managing board; used interchangeably with "Executive Management" in PIMS documentation. Any reference to "GL" in PIMS policies means the senior executive body accountable for governance of the organisation |
 
 ---
 
@@ -734,7 +744,7 @@ This policy establishes privacy regulatory applicability for the organisation's 
 **What this policy does NOT establish:**
 
 - Privacy risk treatment decisions (addressed in PIMS risk management and control group IMPs)
-- Control implementation requirements (addressed in 21 control group POLs and IMPs)
+- Control implementation requirements (addressed in PRIV-POL-A.x.x control group POLs and IMPs)
 - Compliance status or verification (addressed in compliance monitoring processes)
 - Information security obligations (addressed in ISMS-POL-00)
 
@@ -742,7 +752,7 @@ This policy establishes privacy regulatory applicability for the organisation's 
 
 - **This Policy (PRIV-POL-00)**: Defines WHICH privacy regulations apply
 - **PRIV-POL-01**: Defines HOW the PIMS is governed and decisions are made
-- **Control Group POLs (21 packs)**: Define WHAT the organisation must do per control domain
+- **Control Group POLs (PRIV-POL-A.x.x)**: Define WHAT the organisation must do per control domain
 - **Control Group IMPs**: Define HOW to implement the control requirements
 - **Compliance Monitoring**: Verifies and tracks COMPLIANCE status
 

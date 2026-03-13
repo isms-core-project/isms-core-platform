@@ -43,7 +43,7 @@
 - CLD-POL-A.2 (Consent and Choice)
 - CLD-POL-A.4 (Collection Limitation)
 - ISO/IEC 27018:2025 Annex A, Section A.3 and Controls A.3.1–A.3.2
-- ISO/IEC 27701:2025 Controls A.2.3.1–A.2.3.3 (processor — purpose)
+- ISO/IEC 27701:2025 Controls A.2.2.3 (processor — organisation's purposes) and A.2.2.4 (processor — marketing and advertising use)
 - GDPR Article 28(3)(a) (instruction-only processing); Article 5(1)(b) (purpose limitation)
 - CH FADP Article 6(3) (purpose limitation); Article 9 (processor obligations)
 
@@ -64,13 +64,16 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 ## ISO/IEC 27018:2025 Control Statements
 
 **Section A.3 — Purpose legitimacy and specification (principle)**
-> *The cloud service provider shall process PII only for the purposes specified in the contract with the PII controller. Any proposed new processing purpose shall be documented and approved by the PII controller prior to implementation.*
+
+Section A.3 establishes the principle that a public cloud PII processor must restrict all processing to the purposes specified in its agreement with the PII controller, and must obtain controller approval before implementing any new processing purpose.
 
 **Control A.3.1 — Public cloud PII processor's purpose**
-> *The public cloud PII processor shall process PII only for the documented purposes agreed with the PII controller. Processing for other purposes — including the processor's own operational, analytical, or commercial purposes — is prohibited unless explicitly authorised in writing by the PII controller.*
+
+Control A.3.1 requires the processor to process PII only for the documented purposes agreed with the controller, and prohibits processing for the processor's own purposes unless the controller has explicitly authorised it in writing.
 
 **Control A.3.2 — Public cloud PII processor's commercial use**
-> *The public cloud PII processor shall not use PII processed on behalf of the PII controller for its own commercial purposes, including advertising, profiling, sale of data, or product improvement, without the explicit prior written consent of the PII controller. Any such commercial use shall be disclosed in the service agreement.*
+
+Control A.3.2 prohibits the processor from using controller-owned PII for its own commercial benefit — including advertising, profiling, data sales, or product improvement — without documented written controller authorisation, and requires any such arrangement to be disclosed in the service agreement.
 
 ## What This Policy Does NOT Cover
 
@@ -112,12 +115,14 @@ Where [Organisation] identifies an operational need to process PII for a purpose
 3. Record the authorisation in the Processor Agreement Register
 4. Cease the additional processing if authorisation is withheld or withdrawn
 
+Where a controller does not respond within 15 business days of receiving a written new purpose request, [Organisation] treats the request as denied and does not proceed with the additional processing.
+
 ## Operational Telemetry
 
 [Organisation] may collect service telemetry and operational metadata (e.g., performance metrics, error logs) as necessary for service delivery. Where such telemetry incidentally contains PII:
 
 - It SHALL be treated as PII subject to this policy
-- Retention SHALL be limited to the minimum period necessary for operational purposes
+- Retention SHALL be limited to the minimum period necessary for operational purposes, not to exceed 90 days unless operationally justified and documented with CISO and DPO approval
 - It SHALL NOT be used for analytics, product improvement, or commercial purposes without controller authorisation
 
 ---
@@ -131,7 +136,7 @@ Where [Organisation] identifies an operational need to process PII for a purpose
 - Targeted advertising or ad profiling
 - Sale or licensing of PII or derived data sets to third parties
 - Training or improving machine learning models using PII
-- Competitive intelligence gathering
+- Use of controller PII for competitive intelligence or market positioning purposes
 - Market research or customer analytics not directly supporting the contracted service
 
 This prohibition applies regardless of whether the PII has been aggregated, pseudonymised, or de-identified, unless [Organisation]'s DPO has confirmed in writing that the data is genuinely and irreversibly anonymised.
@@ -150,7 +155,7 @@ To enforce the commercial use prohibition, [Organisation] SHALL:
 
 - Implement technical access controls separating controller PII from [Organisation]'s internal product and analytics systems
 - Prohibit [Organisation]'s marketing and commercial teams from accessing controller PII without DPO authorisation
-- Include the commercial use prohibition in employee training and confidentiality agreements
+- Include the commercial use prohibition in the employee security awareness training programme (see ISMS-POL-A.6.3) and in standard confidentiality agreements used in employment and contractor contracts
 
 ---
 

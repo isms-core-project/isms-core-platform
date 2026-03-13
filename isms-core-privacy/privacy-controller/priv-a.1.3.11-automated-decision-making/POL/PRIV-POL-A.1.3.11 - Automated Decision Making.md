@@ -65,11 +65,11 @@ This policy establishes [Organisation]'s requirements for identifying, documenti
 ## ISO/IEC 27701:2025 Control Statement
 
 **Control A.1.3.11 — Automated decision making**
-> *The organization shall identify obligations, including legal obligations, to the PII principals resulting from decisions made by the organization which are related to the PII principal based solely on automated processing of PII, and be able to demonstrate how it addresses these obligations.*
+Control A.1.3.11 requires [Organisation] to identify the obligations — including legal obligations — it holds towards PII principals in connection with decisions made solely through automated processing of their PII, and to demonstrate how those obligations are addressed.
 
 ## What This Policy Covers
 
-- Automated decision-making activities that produce legal or significantly significant effects on data subjects
+- Automated decision-making activities that produce legal or similarly significant effects on data subjects
 - Profiling activities that feed automated decisions
 - Obligations to data subjects arising from such processing
 - Demonstrability of how [Organisation] addresses those obligations
@@ -102,7 +102,7 @@ This policy establishes [Organisation]'s requirements for identifying, documenti
 Examples of significant effects include: denial of credit, automatic rejection of employment applications, insurance pricing, personalised pricing with material financial impact, automated exclusion from services.
 
 **Not in scope** (though transparency obligations may still apply):
-- Decision support tools where a human reviews and makes the final determination
+- Decision support tools where a human reviews and makes the final determination — provided the review is meaningful, i.e., the reviewer has the information and ability to override the automated output
 - Automated filtering that provides options but does not make the final decision
 
 The DPO maintains an **ADM Register** listing all in-scope automated decision-making activities.
@@ -120,7 +120,7 @@ For each ADM activity, [Organisation] SHALL identify and document obligations to
 
 Where ADM produces significant effects and an exception to Article 22 is invoked, [Organisation] SHALL implement:
 
-1. **Human review right**: A mechanism for data subjects to request human intervention in a decision — i.e., a named person reviews the automated output before the decision is finalised or reconsidered
+1. **Human review right**: A mechanism for data subjects to request human intervention — either (a) before the decision is acted upon, or (b) as part of contesting a decision already communicated. The reviewer must have the information and authority to override the automated output; perfunctory review does not satisfy this safeguard
 2. **Point of view**: A mechanism for data subjects to express their point of view about the automated decision
 3. **Contestation**: A mechanism for data subjects to contest the automated decision
 

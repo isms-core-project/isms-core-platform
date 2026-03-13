@@ -66,13 +66,13 @@ This policy establishes [Organisation]'s requirements for determining and fulfil
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.1.3.2 — Determining and fulfilling obligations to PII principals**
-> *The organization shall determine and document its legal, regulatory and business obligations to PII principals related to the processing of their PII and provide the means to meet these obligations.*
+Control A.1.3.2 requires [Organisation] to identify and document the legal, regulatory, and business obligations it holds towards PII principals in connection with the processing of their PII, and to put in place the means to meet those obligations.
 
 **Control A.1.3.3 — Determining information for PII principals**
-> *The organization shall determine and document the information to be provided to PII principals regarding the processing of their PII and the timing of such a provision.*
+Control A.1.3.3 requires [Organisation] to identify and document the specific information that must be provided to PII principals about the processing of their PII, including when that information must be provided.
 
 **Control A.1.3.4 — Providing information to PII principals**
-> *The organization shall provide PII principals with clear and easily accessible information identifying the PII controller and describing the processing of their PII.*
+Control A.1.3.4 requires [Organisation] to provide PII principals with clear and easily accessible information that identifies [Organisation] as the controller and describes how their PII is processed.
 
 ## What This Policy Does NOT Cover
 
@@ -101,7 +101,7 @@ This policy establishes [Organisation]'s requirements for determining and fulfil
 - Notification obligations (breach notification to data subjects where applicable)
 - Other jurisdiction-specific obligations as determined per PRIV-POL-00
 
-The DPO maintains a **PII Principal Obligations Register** (part of the broader PLRR per PRIV-POL-A.3.13-16) that maps each applicable obligation to the relevant processing activities and describes how [Organisation] meets each obligation.
+The DPO maintains a **PII Principal Obligations Register** (part of the broader Privacy Legal Requirements Register (PLRR) per PRIV-POL-A.3.13-16) that maps each applicable obligation to the relevant processing activities and describes how [Organisation] meets each obligation.
 
 ---
 
@@ -127,8 +127,9 @@ For PII collected **directly from data subjects** (GDPR Article 13), the followi
 - Right to lodge a complaint with the supervisory authority
 - Whether provision of PII is statutory or contractual, and consequences of not providing
 - Existence of automated decision-making (including profiling) with meaningful information about logic, significance, and consequences
+- Where processing is based on legitimate interests or public task: the right to object shall be explicitly brought to the data subject's attention at the latest at the time of first communication, in a clear and separate manner from other information (GDPR Article 21(4))
 
-For PII obtained **indirectly** (GDPR Article 14), the same elements apply, plus the source of the PII and whether it came from publicly available sources — provided within 1 month of obtaining the PII (or at first communication with the data subject, or at time of disclosure to another recipient, whichever is earliest).
+For PII obtained **indirectly** (GDPR Article 14), the same elements apply, plus the source of the PII and whether it came from publicly available sources — provided within 1 month of obtaining the PII (or at first communication with the data subject, or at time of first disclosure to a third party — whichever is earliest).
 
 ### Information Content Review
 
@@ -191,7 +192,7 @@ Information provided to PII principals SHALL be:
 | PII Principal Obligations Register | Documented transparency and other obligations per processing activity | Current + 3 years |
 | Privacy Notice Versions | Version-controlled privacy notices with effective dates | 3 years after version retirement |
 | Collection Point Documentation | Evidence of where and how privacy information is provided at each collection point | Current + 3 years |
-| Notice Review Records | Evidence of annual and trigger-based notice reviews | 3 years |
+| Notice Review Records | Evidence of annual and trigger-based notice reviews | 3 years from the date of the review |
 
 ---
 

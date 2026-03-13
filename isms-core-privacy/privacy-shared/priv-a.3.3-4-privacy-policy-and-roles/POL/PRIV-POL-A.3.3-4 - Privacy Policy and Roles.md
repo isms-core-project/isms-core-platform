@@ -43,6 +43,7 @@
 - PRIV-IMP-A.3.3-4-UG (Privacy Policy and Roles — User Guide)
 - PRIV-IMP-A.3.3-4-TG (Privacy Policy and Roles — Technical Guide)
 - ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles — ISMS parallel)
+- PRIV-POL-A.3.17-19 (Privacy Awareness, NDAs and Clear Desk — training and awareness procedures)
 - ISO/IEC 27701:2025 Controls A.3.3, A.3.4
 - ISO/IEC 27701:2025 Annex B (Implementation guidance B.3.3, B.3.4)
 - GDPR Article 24 (Controller responsibilities), Article 28 (Processor obligations)
@@ -74,10 +75,10 @@ This policy establishes **WHAT** policy governance structures are required, **WH
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.3.3 — Policies for information security**
-> *Information security policies related to PII processing shall be defined, approved by management, published, communicated to and acknowledged by relevant personnel and relevant interested parties, and reviewed at planned intervals and if significant changes occur.*
+Control A.3.3 requires [Organisation] to define, approve, publish, communicate, and have acknowledged information security policies that relate to PII processing, and to review those policies at planned intervals and whenever significant changes occur.
 
 **Control A.3.4 — Information security roles and responsibilities**
-> *Information security roles and responsibilities related to PII processing shall be defined and allocated according to the organisational needs.*
+Control A.3.4 requires [Organisation] to define and allocate information security roles and responsibilities as they relate to PII processing, in line with organisational needs.
 
 ## What This Policy Covers
 
@@ -91,7 +92,7 @@ This policy establishes **WHAT** policy governance structures are required, **WH
 
 - All information security policies that govern, directly or indirectly, the security of PII processing
 - Topic-specific policies addressing PII processing controls (this policy series: PRIV-POL-A.x.x)
-- The PIMS policy framework (PRIV-POL-00, PRIV-POL-01, and all 21 control group POLs)
+- The PIMS policy framework (PRIV-POL-00, PRIV-POL-01, and all PRIV-POL-A.x.x control group policies)
 
 **Roles**:
 
@@ -112,7 +113,7 @@ This policy establishes **WHAT** policy governance structures are required, **WH
 **Tier 1: Mandatory Compliance** (per PRIV-POL-00):
 
 - **EU GDPR**: Article 24 (controller accountability for TOMs); Article 32 (security of processing); Article 37–39 (DPO obligations); Article 28 (processor security obligations)
-- **CH FADP**: Article 7 (technical and organisational security measures); Article 8 (processor agreements including role clarity)
+- **CH FADP**: Article 7 (technical and organisational security measures — the primary FADP anchor for TOMs and role clarity)
 - **ISO/IEC 27701:2025**: Controls A.3.3, A.3.4 (normative)
 
 **Tier 2: Conditional Applicability** (per PRIV-POL-00):
@@ -170,7 +171,7 @@ PII-scoped information security policies SHALL be managed through the following 
 | Tier | Type | Approval Authority | Review Frequency |
 |------|------|-------------------|------------------|
 | 1 | PIMS Foundation (PRIV-POL-00, PRIV-POL-01) | Executive Management | Annual |
-| 2 | Control Group Policies (21 PRIV-POL-A.x.x) | DPO | Annual |
+| 2 | Control Group Policies (all PRIV-POL-A.x.x) | DPO | Annual |
 | 3 | Implementation Guides (UG/TG per control group) | DPO + CISO | Annual or on change |
 | 4 | Operational Procedures and Work Instructions | Process Owner (DPO oversight) | Semi-annual or on change |
 
@@ -191,7 +192,7 @@ The following roles SHALL be defined and assigned:
 | Role | Responsibility | Appointment Basis |
 |------|---------------|------------------|
 | **Data Protection Officer (DPO)** | Primary accountability for PIMS; regulatory interface; DPIA authority; data subject rights oversight; privacy policy ownership | GDPR Article 37 (mandatory where applicable); FADP (recommended); appointed in writing with independence per GDPR Article 38 |
-| **Privacy Champion** (per business unit or processing domain) | First-line privacy support; escalation to DPO; privacy awareness facilitation within their domain | Appointed by DPO in consultation with business unit management |
+| **Privacy Champion** (per business unit or processing domain) | First-line privacy support; escalation to DPO; privacy awareness facilitation within their domain | Appointed by DPO in consultation with business unit management; minimum competence: completion of privacy awareness training and demonstrated familiarity with PII processing activities in their domain (per PRIV-POL-A.3.17-19) |
 | **Data Owner** (per processing activity or data category) | Accountable for the PII within their domain; approves access; participates in DPIA; ensures accuracy | Appointed by Executive Management on recommendation of DPO |
 | **PIMS Internal Auditor** | Independent audit of PIMS effectiveness; reports to Executive Management | Appointed per Clause 9.2; must be independent from audited activities |
 
@@ -243,9 +244,9 @@ The following evidence demonstrates operation of this policy:
 | Policy Acknowledgment Register | Personnel acknowledgment records per policy per person | Duration of employment + 3 years |
 | Privacy Roles Register | Documented role assignments with incumbent, responsibilities, appointment date | Duration of role + 3 years |
 | DPO Appointment Record | Written DPO appointment with independence statement | Duration of appointment + 3 years |
-| DPO Role Conflict Assessment | Annual documented assessment confirming no DPO role conflicts per GDPR Article 38.6 | Duration of appointment + 3 years |
-| Policy Review Records | Evidence of annual review (or trigger-based review) per policy | 3 years |
-| Communication Records | Evidence of policy communication to relevant personnel and interested parties | 3 years |
+| DPO Role Conflict Assessment | Annual documented assessment confirming no DPO role conflicts per GDPR Article 38(6) — conducted by Legal/Compliance or Executive Management (not the DPO), reviewing whether the DPO holds or has been asked to hold any role involving determination of processing purposes or means | Duration of appointment + 3 years |
+| Policy Review Records | Evidence of annual review (or trigger-based review) per policy | 3 years from the date of the review |
+| Communication Records | Evidence of policy communication to relevant personnel and interested parties | 3 years from the date of communication |
 
 ---
 

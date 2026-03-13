@@ -68,16 +68,16 @@ This policy establishes [Organisation]'s requirements for identifying and docume
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.1.2.2 — Identify and document purpose**
-> *The organization shall identify and document the specific purposes for which the PII will be processed.*
+Control A.1.2.2 requires [Organisation] to identify and document the specific purposes behind each PII processing activity before processing begins.
 
 **Control A.1.2.3 — Identify lawful basis**
-> *The organization shall determine, document and be able to demonstrate compliance with the relevant lawful basis for the processing of PII for the identified purposes.*
+Control A.1.2.3 requires [Organisation] to determine and document the lawful basis for each identified processing purpose, and to be able to demonstrate that compliance to supervisory authorities on request.
 
 **Control A.1.2.4 — Determine when and how consent is to be obtained**
-> *The organization shall determine and document a process by which it can demonstrate if, when and how consent for the processing of PII was obtained from PII principals.*
+Control A.1.2.4 requires [Organisation] to establish and document a process that records whether, when, and how consent was obtained from PII principals for each consent-based processing activity.
 
 **Control A.1.2.5 — Obtain and record consent**
-> *The organization shall obtain and record consent from PII principals according to the documented processes.*
+Control A.1.2.5 requires [Organisation] to obtain consent from PII principals in line with the documented consent process, and to maintain records of that consent.
 
 ## What This Policy Covers
 
@@ -225,7 +225,7 @@ Consent records constitute evidence of lawful basis. They SHALL be:
 
 ### Child Consent
 
-Where PII of children (under 16 for GDPR; applicable age threshold per CH FADP) is processed on a consent basis:
+Where PII of children (under 16 for GDPR; under 16 for CH FADP in the context of information society services, mirroring GDPR Article 8) is processed on a consent basis:
 
 - Parental or guardian consent is required
 - Age verification measures SHALL be in place (proportionate to the risk of the service)

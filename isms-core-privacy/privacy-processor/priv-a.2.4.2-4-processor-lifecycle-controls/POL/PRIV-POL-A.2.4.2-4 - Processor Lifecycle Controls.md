@@ -66,13 +66,13 @@ This policy establishes [Organisation]'s requirements when acting as PII Process
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.2.4.2 — Temporary files**
-> *The organization shall ensure that temporary files created as a result of the processing of PII are disposed of (e.g. erased or destroyed) following documented procedures within a specified, documented period.*
+Control A.2.4.2 requires [Organisation] to ensure that temporary files created during PII processing are disposed of within a defined, documented period using documented procedures.
 
 **Control A.2.4.3 — Return, transfer or disposal of PII**
-> *The organization shall be able to return, transfer or dispose of PII in a secure manner. It shall also make its policy available to the customer.*
+Control A.2.4.3 requires [Organisation] to be capable of returning, transferring, or securely disposing of customer PII, and to make its return/disposal policy available to customers.
 
 **Control A.2.4.4 — PII transmission controls**
-> *The organization shall subject PII transmitted over a data-transmission network to appropriate controls, which are designed to ensure that the data reaches its intended destination.*
+Control A.2.4.4 requires [Organisation] to apply appropriate controls to PII transmitted over data networks on behalf of customers, to ensure data reaches its intended destination.
 
 ## Regulatory Framework
 
@@ -116,9 +116,11 @@ PII disposal at contract end follows the methods defined in PRIV-POL-A.1.4.6-10 
 
 - Database records: SQL DELETE or equivalent; or cryptographic erasure for encrypted stores
 - File system: cryptographic erasure or approved overwrite
-- Backup media: aligned to backup retention schedule; expired backups purged per schedule; or out-of-cycle deletion upon customer instruction with confirmation
+- Backup media: aligned to backup retention schedule; expired backups purged per schedule; or out-of-cycle deletion upon customer instruction with confirmation. Where the next scheduled backup expiry does not occur within the customer's required deletion window, [Organisation] SHALL immediately isolate and restrict access to backups containing that customer's PII as an interim measure, pending physical deletion at next expiry
 
-Disposal SHALL be confirmed in writing to the customer within the timeframe specified in the processor agreement (typically within 30 days of service end).
+Disposal SHALL be confirmed in writing to the customer within the timeframe specified in the processor agreement; the organisational default is within 30 days of service end unless the agreement specifies otherwise.
+
+**Default at contract end**: Where no customer instruction is received and the processor agreement does not specify a default, [Organisation] SHALL request instructions from the customer within 5 business days of service end. If no response is received within 30 days of that notification, [Organisation] will securely delete all customer PII and confirm deletion to the customer in writing.
 
 ### Policy Availability
 
@@ -153,7 +155,7 @@ Transmission controls are consistent with PRIV-POL-A.3.5-7 (transfer rules) and 
 
 | Evidence | Description | Retention |
 |---------|-------------|-----------|
-| Temporary File Purge Records | Automated/manual purge confirmation for customer PII temp files | 3 years |
+| Temporary File Purge Records | Automated/manual purge confirmation for customer PII temp files | 3 years from the date of purge |
 | End-of-Service Disposal Records | Written confirmation of PII return/transfer/disposal per customer | 5 years |
 | Customer PII Disposal Confirmation | Written confirmation sent to customers at contract end | 5 years |
 | Transmission Encryption Configuration | TLS configuration records for customer PII transmission | Current + 3 years |

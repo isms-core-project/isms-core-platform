@@ -77,16 +77,16 @@ This policy establishes **WHAT** requirements apply, **WHO** holds accountabilit
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.3.13 — Legal, statutory, regulatory and contractual requirements**
-> *Legal, statutory, regulatory and contractual requirements relevant to information security related to PII processing and the organization's approach to meet these requirements shall be documented and this documentation kept up to date.*
+Control A.3.13 requires [Organisation] to identify, document, and keep current all legal, statutory, regulatory, and contractual requirements relevant to the information security of its PII processing activities, along with its documented approach to meeting each requirement.
 
 **Control A.3.14 — Protection of records**
-> *Records related to PII processing shall be protected from loss, destruction, falsification, unauthorized access and unauthorized release.*
+Control A.3.14 requires [Organisation] to protect records related to PII processing against loss, destruction, falsification, unauthorised access, and unauthorised release.
 
 **Control A.3.15 — Independent review of information security**
-> *The organization's approach to managing information security related to PII processing and its implementation including people, processes and technologies shall be reviewed independently at planned intervals, or when significant changes occur.*
+Control A.3.15 requires [Organisation] to have its approach to managing information security for PII processing — including people, processes, and technologies — reviewed independently at planned intervals and when significant changes occur.
 
 **Control A.3.16 — Compliance with policies, rules and standards for information security**
-> *Compliance with the organization's information security policy, topic-specific policies, rules and standards related to PII processing shall be regularly reviewed.*
+Control A.3.16 requires [Organisation] to regularly review compliance with its information security policy, topic-specific policies, rules, and standards as they relate to PII processing.
 
 ## What This Policy Covers
 
@@ -116,7 +116,7 @@ This policy establishes **WHAT** requirements apply, **WHO** holds accountabilit
 
 ## What This Policy Does NOT Cover
 
-- Privacy risk assessment procedures (see PRIV-POL-01 and DPIA procedures in PRIV-POL-A.1.3.2-4)
+- Privacy risk assessment procedures (see PRIV-POL-01 and DPIA procedures in PRIV-POL-A.1.2.6-9)
 - Incident management and breach reporting (see PRIV-POL-A.3.11-12)
 - Data subject rights compliance procedures (see PRIV-POL-A.1.3.5-10)
 - ISMS-wide legal requirements management (see ISMS-POL-A.5.31.2)
@@ -197,6 +197,9 @@ The following records SHALL be created, maintained, and protected:
 | International Transfer Register (TIA records) | DPO | Duration of transfer activity + 3 years | CONFIDENTIAL |
 | Privacy Breach Register | DPO | 5 years | CONFIDENTIAL |
 | Training and acknowledgment records | HR / DPO | Duration of employment + 3 years | INTERNAL |
+| Legitimate Interest Assessment (LIA) records | DPO | Duration of reliance on LI basis + 3 years | CONFIDENTIAL |
+| Automated Decision-Making (ADM) Register | DPO | Duration of ADM activity + 3 years | CONFIDENTIAL |
+| Sub-processor Register | DPO | Current + 3 years | CONFIDENTIAL |
 | PIMS internal audit reports | PIMS Internal Auditor | 3 years | CONFIDENTIAL |
 | PIMS management review records | DPO | 3 years | CONFIDENTIAL |
 
@@ -276,7 +279,7 @@ Review reports are maintained in the PIMS records (classified CONFIDENTIAL) for 
 
 The DPO SHALL maintain an ongoing compliance review programme that covers:
 
-- All 21 PIMS control group policies (this policy series: PRIV-POL-A.x.x)
+- All PRIV-POL-A.x.x control group policies (this policy series)
 - The Record of Processing Activities (RoPA) — currency and accuracy
 - Processor agreement compliance (is each processor performing per the agreement?)
 - Technical security control compliance for PII processing environments

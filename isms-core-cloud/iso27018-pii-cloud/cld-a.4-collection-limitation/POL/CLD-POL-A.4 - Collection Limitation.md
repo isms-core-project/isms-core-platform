@@ -43,7 +43,7 @@
 - CLD-POL-A.5 (Data Minimisation)
 - CLD-POL-A.6 (Use, Retention and Disclosure Limitation)
 - ISO/IEC 27018:2025 Annex A, Section A.4 (Collection Limitation — principle)
-- ISO/IEC 27701:2025 Controls A.2.3.4–A.2.3.5 (processor — collection limitation)
+- ISO/IEC 27701:2025 Controls A.2.4.2 (processor — temporary files) and A.2.4.3 (processor — return, transfer or disposal of PII)
 - GDPR Article 5(1)(c) (data minimisation principle); Article 28(3)(a) (instruction-only)
 - CH FADP Article 6(2) (proportionality); Article 9 (processor obligations)
 
@@ -55,7 +55,7 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 
 **Scope**: All PII collected, received, or otherwise obtained by [Organisation] in the course of providing cloud services to PII controllers.
 
-**Principle Note**: ISO/IEC 27018:2025 Annex A, Section A.4 is a principle-level section with no additional sub-controls beyond the main body of the standard. This policy implements the principle as an organisational commitment. Practical data minimisation at the technical level is addressed in CLD-POL-A.5.
+**Principle Note**: Section A.4 operates at the principle level. This policy translates that principle into specific operational obligations for [Organisation]'s cloud services. Technical data minimisation methods — including anonymisation, pseudonymisation, and temporary file management — are addressed in CLD-POL-A.5.
 
 ---
 
@@ -64,7 +64,8 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 ## ISO/IEC 27018:2025 — Section A.4
 
 **Section A.4 — Collection limitation (principle)**
-> *The cloud service provider shall collect only the minimum PII necessary to fulfil the contracted service. Collection practices shall be documented and reviewed. Excess PII collected during service provision shall be promptly deleted or returned to the PII controller.*
+
+Section A.4 establishes the principle that a public cloud PII processor should collect only the PII that is necessary for the contracted service, document its collection practices, and promptly address any excess PII that arises during service provision.
 
 ## What This Policy Does NOT Cover
 
@@ -89,7 +90,7 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 
 - Request or accept PII categories from the PII controller beyond what is required for service delivery
 - Store PII in system components, logs, or operational databases beyond the operational necessity of the processing
-- Replicate PII across environments (development, test, staging, production) without explicit controller authorisation
+- Replicate PII across environments (development, test, staging, production) for purposes other than service delivery and resilience without explicit controller authorisation
 
 ## Documentation of Collection Practices
 
@@ -100,20 +101,20 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 - The system components, logs, and storage locations where PII may be present
 - Retention periods applicable to each collection type
 
-This documentation SHALL be reviewed annually and upon material changes to service architecture.
+This documentation SHALL be maintained in the ISMS document management system (or designated GRC platform), reviewed annually, and updated upon material changes to service architecture. The CISO is the designated owner of collection practice documentation.
 
 ## Excess PII
 
 Where [Organisation] determines that PII has been collected that exceeds the scope of the contracted service (e.g., a controller uploads a data set containing PII categories beyond the service scope), [Organisation] SHALL:
 
-1. Notify the PII controller of the excess PII without undue delay
+1. Notify the PII controller of the excess PII within 3 business days of identification
 2. Agree with the controller whether the excess PII is to be returned or securely deleted
 3. Complete the agreed action within the timeframe agreed with the controller
 4. Document the event and outcome
 
 ## Development and Test Environments
 
-PII from production environments SHALL NOT be used in development, testing, or staging environments without explicit written authorisation from the PII controller. Where controller authorisation is obtained, the minimum necessary PII SHALL be used and the same security controls applicable in production SHALL apply.
+[Organisation] SHOULD use anonymised or synthetic data in non-production environments wherever technically feasible, and SHALL treat production PII use as a last resort. PII from production environments SHALL NOT be used in development, testing, or staging environments without explicit written authorisation from the PII controller. Where controller authorisation is obtained, the minimum necessary PII SHALL be used, the same security controls applicable in production SHALL apply (in accordance with CLD-POL-A.11), and access SHALL be restricted to the minimum personnel required for the specific purpose.
 
 ---
 

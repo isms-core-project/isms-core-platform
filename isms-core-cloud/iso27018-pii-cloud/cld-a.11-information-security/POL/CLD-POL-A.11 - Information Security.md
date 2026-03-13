@@ -48,9 +48,10 @@
 - CLD-POL-A.8 (Openness, Transparency — sub-processor disclosure)
 - CLD-POL-A.10 (Accountability — breach notification)
 - ISO/IEC 27018:2025 Annex A, Section A.11 and Controls A.11.1–A.11.13
+- ISO/IEC 27701:2025 Annex A.3 (Information security controls — A.3.3 through A.3.31, applicable to both controllers and processors and implemented through this policy)
 - ISO/IEC 27002:2022 Controls 6.2 (terms and conditions), 8.11 (data masking), 8.12 (data leakage), 8.24 (cryptography)
-- GDPR Article 28(3)(c) (processor security obligations); Article 32 (security of processing)
-- CH FADP Article 8 (data security)
+- GDPR Article 28(3)(c) (processor implements appropriate technical and organisational measures per Article 32); Article 32 (security of processing)
+- CH FADP Article 9 (processor engagement and associated data security obligations)
 
 ---
 
@@ -99,7 +100,7 @@ This policy establishes [Organisation]'s information security requirements for t
 **Tier 1: Mandatory Compliance** (per PRIV-POL-00):
 
 - **EU GDPR**: Article 28(3)(c) (processor implements appropriate technical and organisational measures per Article 32); Article 32 (security of processing — pseudonymisation, encryption, resilience, restoration, testing)
-- **CH FADP**: Article 8 (appropriate technical and organisational security measures for PII)
+- **CH FADP**: Article 9 (processor engagement conditions and associated data security obligations)
 - **ISO/IEC 27018:2025**: Controls A.11.1–A.11.13
 
 ---
@@ -124,7 +125,7 @@ Creation of hardcopy (printed) material containing PII is **restricted**. Printi
 - Authorisation from the relevant team lead and DPO notation for large-volume prints
 - Immediate collection from printer; PII material not left unattended in shared areas
 
-Printed PII SHALL be handled under secure-desk procedures and disposed of per CLD-POL-A.11.7 (secure hardcopy disposal).
+Printed PII SHALL be handled under secure-desk procedures and disposed of per §11.7 (secure hardcopy disposal). Where technically feasible, print management software or DLP controls SHALL be configured to flag or restrict print jobs containing PII; where technical enforcement is not implemented, the reliance on procedural controls SHALL be documented by the CISO with compensating monitoring identified.
 
 ---
 
@@ -137,7 +138,7 @@ Restoration of PII from backup or archive is a **controlled operation** requirin
 - Restoration logs protected against tampering (write-once or cryptographically signed)
 - Quarterly review of restoration logs by CISO
 
-Unplanned or unauthorised restoration attempts SHALL be treated as security events and investigated under ISMS-POL-A.5.24-28.
+Automated alerting SHALL be configured to notify the CISO of restoration events in real time, enabling detection of out-of-pattern restorations without waiting for the quarterly log review. Unplanned or unauthorised restoration attempts SHALL be treated as security events and investigated under ISMS-POL-A.5.24-28.
 
 ---
 
@@ -172,7 +173,7 @@ Where portable devices are authorised for PII:
 
 PII transmitted over public networks SHALL be encrypted. Requirements:
 
-- **TLS 1.2 minimum** for all PII in transit; **TLS 1.3 preferred** for new implementations
+- **TLS 1.3 required** for all new implementations; **TLS 1.2 permitted only for existing integrations** where TLS 1.3 is not yet technically feasible, subject to a documented remediation plan and CISO approval
 - **HTTPS enforced** on all web interfaces and API endpoints handling PII; HTTP redirect to HTTPS mandatory
 - TLS certificates SHALL be issued by trusted certificate authorities and renewed before expiry (automated renewal preferred)
 - **Unencrypted transmission** (plain HTTP, FTP, SMTP without STARTTLS) of PII is prohibited
@@ -185,7 +186,7 @@ Cipher suite configurations SHALL be reviewed annually against current best prac
 
 Hardcopy materials containing PII SHALL be disposed of securely:
 
-- **Individual disposal**: Cross-cut shredding to DIN 66399 Level P-4 or equivalent
+- **Individual disposal**: Cross-cut shredding to DIN 66399 Level P-5 (max 30mm² particle size) for documents containing PII or sensitive categories; P-4 is acceptable for general internal documents not containing PII
 - **Bulk disposal**: Certified destruction services with certificate of destruction provided to requester
 - **Disposal bins**: Locked, access-controlled bins for PII material in all work areas containing PII
 
@@ -211,7 +212,7 @@ User identifiers for PII systems SHALL be managed through a documented lifecycle
 | **Access review** | All PII system accounts reviewed at least quarterly |
 | **Role change** | Access updated within 1 business day of confirmed role change |
 | **Termination** | Account deactivated within 4 hours of HR-confirmed departure |
-| **Dormant accounts** | Accounts inactive for 90 days reviewed; suspended pending review; deleted if no business justification |
+| **Dormant accounts** | Accounts inactive for 30 days on PII-critical systems (45 days on lower-sensitivity PII systems) reviewed; suspended pending review; deleted if no business justification |
 
 User ID lifecycle management integrates with ISMS-POL-A.5.15-16-18 (IAM).
 
@@ -228,7 +229,7 @@ User ID lifecycle management integrates with ISMS-POL-A.5.15-16-18 (IAM).
 
 The Authorised User Register SHALL be:
 - Reviewed and attested by system owners at least **quarterly**
-- Made available to any PII controller upon request (for access to their PII)
+- Made available to any PII controller upon request — [Organisation] SHALL provide each controller with a **scoped extract** showing only personnel with access to that controller's PII data, not the full register across all customers
 - Updated within 1 business day of any access change
 
 ---
@@ -241,7 +242,7 @@ Service agreements between [Organisation] and PII controllers SHALL include prov
 - Security obligations aligned with GDPR Article 32 and this policy
 - Breach notification requirements (controller notification within 24 hours per CLD-POL-A.10.1)
 - Data subject rights assistance obligations (per CLD-POL-A.2.1 and CLD-POL-A.9)
-- Audit rights: controller (or appointed auditor) may audit [Organisation]'s compliance
+- Audit rights: controller (or appointed auditor) may audit [Organisation]'s compliance, exercisable with not less than 30 days' advance notice, no more than once per calendar year unless a confirmed security incident justifies additional audit, and at the controller's cost unless non-compliance is demonstrated
 - Sub-processor approval requirements (per CLD-POL-A.8.1)
 - PII return or deletion upon termination (per CLD-POL-A.10.3)
 - Applicable law and jurisdiction
@@ -257,7 +258,7 @@ Contract terms SHALL be reviewed when regulatory requirements change materially.
 - Mirror the data protection obligations from the controller–processor agreement
 - Require prior written consent from [Organisation] (and by extension, from the PII controller) before any further sub-processing
 - Include audit rights for [Organisation] over sub-processor compliance
-- Require breach notification to [Organisation] within 12 hours of detection (enabling [Organisation]'s 24-hour controller notification obligation under CLD-POL-A.10.1)
+- Require breach notification to [Organisation] within 12 hours of detection (enabling [Organisation]'s 24-hour controller notification obligation under CLD-POL-A.10.1) — this 12-hour requirement is a **mandatory clause** in all sub-processor agreements; Legal/Compliance maintains the standard sub-processor agreement template
 - Require PII return or disposal upon sub-processor engagement termination
 
 [Organisation] SHALL audit sub-processors at least annually (via questionnaire, document review, or on-site audit) and remains **fully accountable** to PII controllers for sub-processor compliance failures. Sub-processor audit results SHALL be documented and available to controllers upon request.
@@ -302,9 +303,9 @@ This control is the foundation of multi-tenant PII isolation. Any failure SHALL 
 | Print Authorisation Logs | Records of authorised PII print operations | 3 years |
 | Backup Restoration Logs | Logged restoration events with authorisation records | 3 years |
 | Media Movement Register | Physical media movement log with chain of custody | 3 years |
-| TLS / Encryption Configuration Records | Current cipher suite and TLS configuration documentation | Current + previous versions 3 years |
+| TLS / Encryption Configuration Records | Current cipher suite and TLS configuration documentation | Current + previous versions 5 years |
 | Destruction Certificates | Hardcopy and media disposal certificates | 3 years |
-| Authorised User Register | Quarterly-attested access records per PII system | 3 years |
+| Authorised User Register | Quarterly-attested access records per PII system | 5 years |
 | Sub-Processor Audit Records | Annual audit results for each sub-processor | 5 years |
 | Storage Decommissioning Records | Records of cryptographic erasure per storage decommission event | 3 years |
 | Decommissioning Test Results | Annual test results confirming no residual data in reallocated storage | 3 years |

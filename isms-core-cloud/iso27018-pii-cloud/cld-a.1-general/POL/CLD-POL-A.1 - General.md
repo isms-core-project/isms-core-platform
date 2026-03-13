@@ -56,7 +56,7 @@
 
 This policy establishes the scope, applicability, and general obligations of [Organisation] acting as a **public cloud PII processor** in accordance with ISO/IEC 27018:2025 Annex A, Section A.1.
 
-**Scope**: All cloud services provided by [Organisation] where [Organisation] processes personally identifiable information (PII) on behalf of, and under the instructions of, a PII controller. This applies regardless of the cloud service model (IaaS, PaaS, SaaS) or deployment model (public, hybrid).
+**Scope**: All cloud services provided by [Organisation] where [Organisation] processes personally identifiable information (PII) on behalf of, and under the instructions of, a PII controller. This applies regardless of the cloud service model (IaaS, PaaS, SaaS) or deployment model (public, hybrid). Hybrid deployments are in scope to the extent that the public cloud component involves PII processing on behalf of a controller.
 
 **Role Clarification**: ISO/IEC 27018:2025 applies to [Organisation] in its capacity as a **PII processor** — an entity that processes PII on behalf of and under the authority of a PII controller. [Organisation] does not determine the purposes and means of such processing; that responsibility rests with the PII controller.
 
@@ -69,7 +69,8 @@ This policy establishes the scope, applicability, and general obligations of [Or
 ## ISO/IEC 27018:2025 — Section A.1
 
 **Section A.1 — General**
-> *These controls apply to public cloud service providers acting as PII processors. Processors shall implement all applicable controls and document how they address each requirement in their service agreements with PII controllers.*
+
+Section A.1 of ISO/IEC 27018:2025 Annex A establishes the general applicability of the control set, defining the role of the public cloud PII processor and the foundational obligations that underpin all subsequent controls in the Annex A extended control set.
 
 ## Applicability
 
@@ -84,7 +85,7 @@ This policy and the CLD-POL-A.X policy suite applies to:
 **Tier 1: Mandatory Compliance** (per PRIV-POL-00):
 
 - **EU GDPR**: Article 28 (processor obligations — written contract, instruction-only processing, security, sub-processors, assistance, return/deletion, audit rights); Article 32 (security of processing)
-- **CH FADP**: Article 9 (processor engagement conditions); Article 8 (data security)
+- **CH FADP**: Article 9 (processor engagement conditions and associated data security obligations)
 - **ISO/IEC 27018:2025**: Annex A extended control set — implemented as organisational commitment
 
 ---
@@ -101,7 +102,7 @@ This policy and the CLD-POL-A.X policy suite applies to:
 
 ## Contract Requirement
 
-[Organisation] SHALL process PII only where a written contract with the PII controller is in place. That contract SHALL address, at minimum, the scope of processing, security obligations, breach notification, sub-processor arrangements, data return/deletion, and audit rights — in accordance with CLD-POL-A.11.11.
+[Organisation] SHALL process PII only where a written contract with the PII controller is in place. That contract SHALL address, at minimum, the scope of processing, security obligations, breach notification, sub-processor arrangements, data return/deletion, and audit rights — in accordance with CLD-POL-A.11 (§11.11 — Contract Requirements).
 
 ## Documentation of Controls
 
@@ -113,7 +114,7 @@ This policy and the CLD-POL-A.X policy suite applies to:
 
 ## Sub-Processor Management
 
-[Organisation] SHALL engage sub-processors only with the prior written consent of the PII controller. All sub-processors SHALL be bound by equivalent data protection obligations. [Organisation] remains accountable to the controller for sub-processor compliance. Sub-processor arrangements are governed in detail by CLD-POL-A.11.12.
+[Organisation] SHALL engage sub-processors only with the prior written consent of the PII controller. All sub-processors SHALL be bound by equivalent data protection obligations. [Organisation] remains accountable to the controller for sub-processor compliance. Sub-processor arrangements are governed in detail by CLD-POL-A.11 (§11.12 — Sub-Processor Obligations).
 
 ---
 
@@ -133,10 +134,12 @@ This policy and the CLD-POL-A.X policy suite applies to:
 
 | Evidence | Description | Retention |
 |---------|-------------|-----------|
-| Processor Agreement Register | List of all active PII controller agreements with scope, status, and review date | Current + 3 years |
-| Control Implementation Documentation | Documentation of how each CLD-POL-A.X control is implemented per service | Current version + previous versions for 3 years |
-| Sub-Processor Register | List of approved sub-processors with controller consent records | Current + 3 years |
+| Processor Agreement Register | List of all active PII controller agreements with scope, status, and review date | Current + 3 years from contract end |
+| Control Implementation Documentation | Documentation of how each CLD-POL-A.X control is implemented per service | Current version + previous versions for 3 years from supersession |
+| Sub-Processor Register | List of approved sub-processors with controller consent records | Current + 3 years from engagement end |
 | Instruction Records | Records of documented controller processing instructions and any deviations | Duration of contract + 3 years |
+
+> **Retention basis**: 3-year periods align with applicable statute of limitations under EU and Swiss law for processor agreement disputes. Longer periods may apply where regulatory audit requirements or contract terms specify otherwise.
 
 ---
 

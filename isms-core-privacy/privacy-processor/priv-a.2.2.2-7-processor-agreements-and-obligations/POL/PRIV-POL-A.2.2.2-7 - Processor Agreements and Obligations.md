@@ -67,22 +67,22 @@ This policy establishes [Organisation]'s requirements when acting as a PII Proce
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.2.2.2 — Customer agreement**
-> *The organization shall ensure, where relevant, that the contract to process PII addresses the organization's role in providing assistance with the customer's obligations (taking into account the nature of processing and the information available to the organization).*
+Control A.2.2.2 requires [Organisation] to ensure that its processor agreements, where relevant, address how [Organisation] will assist the customer in fulfilling the customer's own obligations — taking into account the nature of the processing and the information available to [Organisation].
 
-**Control A.2.2.3 — Organization's purposes**
-> *The organization shall ensure that PII processed on behalf of a customer are only processed for the purposes expressed in the documented instructions of the customer.*
+**Control A.2.2.3 — Organisation's purposes**
+Control A.2.2.3 requires [Organisation] to process customer PII only for the purposes set out in the customer's documented instructions — not for any purpose of [Organisation]'s own.
 
 **Control A.2.2.4 — Marketing and advertising use**
-> *The organization shall not use PII processed under a contract for the purposes of marketing and advertising without establishing that prior consent was obtained from the appropriate PII principal. The organization shall not make providing such consent a condition for receiving the service.*
+Control A.2.2.4 prohibits [Organisation] from using customer PII for marketing or advertising unless the relevant PII principal has given prior consent, and prohibits making that consent a condition of service.
 
 **Control A.2.2.5 — Infringing instruction**
-> *The organization shall inform the customer if, in its opinion, a processing instruction infringes applicable legal requirements.*
+Control A.2.2.5 requires [Organisation] to inform the customer if [Organisation] considers that a customer processing instruction would infringe applicable legal requirements.
 
 **Control A.2.2.6 — Customer obligations**
-> *The organization shall provide the customer with the appropriate information such that the customer can demonstrate compliance with their obligations.*
+Control A.2.2.6 requires [Organisation] to provide customers with the information they need to demonstrate their own compliance with applicable data protection obligations.
 
 **Control A.2.2.7 — Records related to processing PII**
-> *The organization shall determine and maintain the necessary records in support of demonstrating compliance with its obligations (as specified in the applicable contract) for the processing of PII carried out on behalf of a customer.*
+Control A.2.2.7 requires [Organisation] to identify and maintain the records needed to demonstrate compliance with its obligations under each customer processor agreement.
 
 ## Regulatory Framework
 
@@ -100,6 +100,8 @@ This policy establishes [Organisation]'s requirements when acting as a PII Proce
 
 When [Organisation] acts as PII Processor, the processor agreement SHALL address, where relevant, [Organisation]'s role in:
 
+- Processing only on documented instructions from the customer (explicit in the agreement per GDPR Article 28(3)(a))
+- Maintaining confidentiality obligations for all personnel with access to customer PII (GDPR Article 28(3)(b))
 - Implementing appropriate technical and organisational security measures (Article 32)
 - Assisting the customer with data subject rights obligations (access, rectification, erasure, restriction, portability, objection)
 - Assisting with security obligations, breach notification, DPIA, and prior consultation
@@ -117,8 +119,9 @@ The DPO reviews all processor agreements before execution to confirm these oblig
 
 ### Instruction Compliance
 
-- PII shall not be used for [Organisation]'s own purposes (including product improvement, service enhancement, or benchmarking) unless explicitly authorised by the customer in writing
+- PII shall not be used for [Organisation]'s own purposes (including product improvement, service enhancement, or benchmarking, or any other purpose not specified in the customer's documented instructions) unless explicitly authorised by the customer in writing
 - All processing operations applied to customer PII must be traceable to a customer instruction (contract, SLA, or written instruction)
+- Verbal or informal instructions (email, support ticket, or similar) must be confirmed in writing by the customer before [Organisation] acts on them; the DPO or Customer Success team is responsible for obtaining and filing that confirmation
 - Where [Organisation]'s personnel seek to use customer PII for a purpose not covered by the contract, they SHALL escalate to the DPO for assessment before proceeding
 
 ---
@@ -130,7 +133,6 @@ The DPO reviews all processor agreements before execution to confirm these oblig
 - Such consent SHALL be separately obtained and not bundled with the service agreement
 - Providing consent for marketing SHALL NOT be a condition of receiving the service
 - [Organisation] SHALL maintain records of any marketing consent obtained and shall not send marketing to individuals who have not consented
-- This prohibition applies to [Organisation]'s own marketing to the customer's data subjects; it does not restrict the customer's own marketing activities using their own data under their own controller responsibilities
 
 ---
 
@@ -174,6 +176,7 @@ The DPO maintains a **Customer Compliance Support Register** that tracks what ha
 
 [Organisation] maintains a processor-side **Record of Processing Activities (RoPA)** per GDPR Article 30(2), which includes for each processing activity performed on behalf of customers:
 
+- Name and contact details of the customer controller (and the controller's DPO where applicable) — required by GDPR Article 30(2)
 - Name and contact details of the processor (and DPO)
 - Categories of processing carried out on behalf of each customer
 - Transfers to third countries (where applicable) and safeguards
@@ -209,7 +212,7 @@ In addition to the processor RoPA, [Organisation] maintains:
 | Processor Agreement Register | All active customer processor agreements | Current + 3 years |
 | Signed Processor Agreements | Executed agreements with customers | Duration + 3 years |
 | Infringing Instruction Register | All notifications and customer responses | 5 years |
-| Customer Compliance Support Register | Documentation provided to each customer | 3 years |
+| Customer Compliance Support Register | Documentation provided to each customer | Duration of engagement + 3 years |
 
 ---
 

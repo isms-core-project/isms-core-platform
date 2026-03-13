@@ -68,13 +68,13 @@ This policy establishes [Organisation]'s requirements when acting as PII Process
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.2.5.7 — Disclosure of subcontractors used to process PII**
-> *Before use, the organization shall disclose whether any subcontractors are used to process PII to the customer.*
+Control A.2.5.7 requires [Organisation] to disclose to the customer, before processing commences, whether any sub-processors will be used to process the customer's PII.
 
 **Control A.2.5.8 — Engagement of a subcontractor to process PII**
-> *The organization shall only engage a subcontractor to process PII according to the customer contract.*
+Control A.2.5.8 requires [Organisation] to engage sub-processors only in accordance with the customer contract — meaning only with the customer's authorisation and with equivalent data protection obligations flowing down to the sub-processor.
 
 **Control A.2.5.9 — Change of subcontractor to process PII**
-> *The organization shall, in the case of having general written authorization, inform the customer of any intended changes concerning the addition or replacement of subcontractors to process PII, thereby giving the customer the opportunity to object to such changes.*
+Control A.2.5.9 requires [Organisation], where it operates under a general written authorisation for sub-processor use, to inform customers of any intended addition or replacement of sub-processors in advance, giving customers the opportunity to object.
 
 ## Regulatory Framework
 
@@ -119,7 +119,7 @@ Before engaging any sub-processor with access to customer PII, [Organisation] SH
    - Processing only on [Organisation]'s instructions
    - Implementing appropriate security measures (GDPR Article 32 standard)
    - Confidentiality obligations
-   - Sub-sub-processor restrictions
+   - Sub-sub-processor restrictions: sub-processors may only engage sub-sub-processors with [Organisation]'s prior written consent, and the same obligation flow-down applies; [Organisation] includes sub-sub-processor visibility in its sub-processor due diligence and change notification processes
    - Breach notification to [Organisation] without undue delay
    - Return or deletion of PII at end of engagement
    - Cooperation with audits
@@ -128,6 +128,10 @@ Before engaging any sub-processor with access to customer PII, [Organisation] SH
 ### Processor Liability
 
 [Organisation] remains fully liable to customers for the performance of sub-processors' obligations. If a sub-processor fails to fulfil its data protection obligations, [Organisation] remains responsible to the customer as if it had processed the PII itself (GDPR Article 28(4)).
+
+### Sub-processor Breach Notifications
+
+When [Organisation] receives a breach notification from a sub-processor, it shall treat that notification as its own breach event for the purposes of the customer notification timeline. [Organisation] shall notify the affected customer(s) without undue delay in accordance with PRIV-POL-A.3.11-12. The fact that the breach originated at a sub-processor does not extend [Organisation]'s notification window.
 
 ---
 
@@ -139,7 +143,7 @@ Where [Organisation]'s customer agreements include a general written authorisati
 
 1. [Organisation] identifies an intended sub-processor change (addition or replacement)
 2. DPO reviews the change for compliance impact and updates the Sub-processor Register
-3. Customers are notified in advance of the effective date — notification period per processor agreement (typically minimum 30 days)
+3. Customers are notified in advance of the effective date — notification period as specified in the processor agreement; the organisational default is a minimum 30 days; the processor agreement may specify a different period
 4. Customers may object to the change — [Organisation] SHALL have a process for handling objections, which may include:
    - Implementing alternative technical measures that do not require the new sub-processor
    - Allowing the customer to terminate the service without penalty
@@ -166,7 +170,7 @@ Where [Organisation]'s customer agreements include a general written authorisati
 | Sub-processor Register | Current list of all sub-processors with details and applicable customers | Current + 3 years |
 | Sub-processor Agreements | Executed agreements with same obligations as main processor agreement | Duration + 3 years |
 | Customer Authorisation Records | Written customer authorisation (specific or general) for sub-processor use | Duration of engagement + 3 years |
-| Sub-processor Change Notifications | Records of customer notifications for sub-processor changes with acknowledgments | 3 years |
+| Sub-processor Change Notifications | Records of customer notifications for sub-processor changes with acknowledgments | 3 years from the date of notification |
 | Sub-processor Due Diligence Records | Security assessments for each sub-processor | Duration of engagement + 3 years |
 
 ---

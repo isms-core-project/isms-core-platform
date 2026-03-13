@@ -194,7 +194,7 @@ This status file tracks **control packs**, not ISO certification status.
 ---
 
 <p align="center">
-<strong>Copyright © 2025-2026 Gregory Griffin. All rights reserved.</strong>
+<strong>Copyright © 2025-2026 The ISMS Core Project. All rights reserved.</strong>
 </p>
 
 <p align="center">

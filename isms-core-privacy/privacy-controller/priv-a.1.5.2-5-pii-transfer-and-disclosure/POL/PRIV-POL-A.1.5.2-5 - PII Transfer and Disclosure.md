@@ -68,16 +68,16 @@ This policy establishes [Organisation]'s requirements for identifying the legal 
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.1.5.2 — Identify basis for PII transfer between jurisdictions**
-> *The organization shall identify and document the relevant basis for transfers of PII between jurisdictions.*
+Control A.1.5.2 requires [Organisation] to identify and document the legal basis applicable to each transfer of PII across jurisdictional boundaries.
 
-**Control A.1.5.3 — Countries and international organizations to which PII can be transferred**
-> *The organization shall specify and document the countries and international organizations to which PII can possibly be transferred.*
+**Control A.1.5.3 — Countries and international organisations to which PII can be transferred**
+Control A.1.5.3 requires [Organisation] to specify and document the countries and international organisations to which PII may be transferred.
 
 **Control A.1.5.4 — Records of transfer of PII**
-> *The organization shall record transfers of PII to or from third parties and ensure cooperation with those parties to support future requests related to obligations to the PII principals.*
+Control A.1.5.4 requires [Organisation] to record transfers of PII to or from third parties, and to ensure that those third parties will cooperate with future obligations towards PII principals.
 
 **Control A.1.5.5 — Records of PII disclosures to third parties**
-> *The organization shall record disclosures of PII to third parties, including which PII has been disclosed, to whom and at what time.*
+Control A.1.5.5 requires [Organisation] to record all disclosures of PII to third parties, including which PII was disclosed, to whom, and when.
 
 ## Regulatory Framework
 
@@ -100,9 +100,9 @@ This policy establishes [Organisation]'s requirements for identifying the legal 
 | Mechanism | Applicability |
 |-----------|--------------|
 | **Adequacy decision** (EU Commission / Swiss FDPIC) | Transfers to countries with adequate protection — no additional safeguards required |
-| **Standard Contractual Clauses (SCCs)** | EU SCCs (2021) for transfers from EEA; Swiss SCCs (FDPIC approved) for transfers from Switzerland |
-| **Binding Corporate Rules (BCRs)** | Intra-group transfers with DPA-approved BCRs |
-| **Article 49 derogations** | Exceptional use: explicit consent, vital interests, important public interest, legal claims, public register data — NOT for systematic transfers |
+| **Standard Contractual Clauses (SCCs)** | EU SCCs (2021) for transfers from EEA; for transfers from Switzerland, the EU SCCs with appropriate adaptations recognised by the FDPIC, or FDPIC standard data protection clauses, are used (Switzerland does not maintain a separate SCC instrument equivalent to the EU 2021 SCCs) |
+| **Binding Corporate Rules (BCRs)** | Intra-group transfers with DPA-approved BCRs — applicable only to corporate groups that have obtained DPA approval; this mechanism is not currently in use by [Organisation] |
+| **Article 49 derogations** | Exceptional use only: explicit consent, vital interests, important public interest, legal claims, public register data — NOT for systematic transfers. Derogations require DPO pre-approval, are documented in the International Transfer Register with the specific derogation invoked, and are not used as a substitute for a primary transfer mechanism where one is available |
 
 ### Transfer Impact Assessment (TIA)
 
@@ -194,8 +194,8 @@ Disclosure records support data subject access requests (data subjects have the 
 | RoPA — Transfer Section | Countries, international organisations, safeguards per processing activity | Current + 3 years |
 | International Transfer Register | TIA records, SCC references, adequacy assessments | Duration of transfer + 3 years |
 | Transfer Country Register | Approved transfer destinations with mechanism and basis | Current + 3 years |
-| Transfer Records | Logs of PII transfers to/from third parties | 3 years |
-| Disclosure Register | All PII disclosures to third parties with details | 3 years |
+| Transfer Records | Logs of PII transfers to/from third parties | 3 years from the date of transfer |
+| Disclosure Register | All PII disclosures to third parties with details | 3 years from the date of disclosure |
 
 ---
 

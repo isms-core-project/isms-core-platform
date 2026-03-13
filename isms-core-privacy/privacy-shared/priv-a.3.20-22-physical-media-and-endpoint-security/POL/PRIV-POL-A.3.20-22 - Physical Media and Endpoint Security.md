@@ -77,13 +77,13 @@ This policy establishes **WHAT** media lifecycle, equipment disposal, and endpoi
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.3.20 — Storage media**
-> *Storage media with PII shall be managed through its life cycle of acquisition, use, transportation and disposal in accordance with the organization's classification scheme and handling requirements.*
+Control A.3.20 requires [Organisation] to manage storage media containing PII across its full lifecycle — acquisition, use, transportation, and disposal — in accordance with the organisation's classification scheme and associated handling requirements.
 
 **Control A.3.21 — Secure disposal or re-use of equipment**
-> *Items of equipment containing storage media with PII shall be verified to ensure that any sensitive data and licensed software has been removed or securely overwritten prior to disposal or re-use.*
+Control A.3.21 requires [Organisation] to verify, before any item of equipment containing storage media is disposed of or re-used, that any PII (and licensed software) stored on that media has been removed or securely overwritten.
 
 **Control A.3.22 — User endpoint devices**
-> *PII stored on, processed by or accessible via user endpoint devices shall be protected.*
+Control A.3.22 requires [Organisation] to protect PII that is stored on, processed by, or accessible via user endpoint devices.
 
 ## What This Policy Covers
 
@@ -155,7 +155,7 @@ For complete regulatory categorisation, refer to PRIV-POL-00.
 ### Media Disposal
 
 - Storage media containing PII SHALL NOT be disposed of through standard waste streams
-- Before disposal, PII SHALL be irreversibly removed by cryptographic erasure (for encrypted media) or secure overwrite (DoD 5220.22-M or equivalent standard), or physical destruction
+- Before disposal, PII SHALL be irreversibly removed using a method appropriate to the media type: cryptographic erasure (for fully encrypted media, subject to the conditions in A.3.21), secure overwrite per NIST SP 800-88 (the primary reference standard for media sanitisation), or physical destruction. Note: multi-pass overwrite standards such as DoD 5220.22-M are not reliable for flash-based media (SSDs, USB drives, eMMC); NIST SP 800-88 cryptographic erasure or physical destruction SHALL be used for such media
 - Disposal method SHALL be documented in the Media Register, including method used, date, and responsible person
 - Third-party media destruction service disposal SHALL produce a certificate of destruction, retained as evidence
 
@@ -178,9 +178,11 @@ All equipment scheduled for disposal or re-assignment SHALL undergo:
 
 ### Erasure Standards
 
-- **Software erasure**: Industry-standard overwrite (minimum DoD 5220.22-M single pass; NIST SP 800-88 Guidelines for Media Sanitisation provides authoritative guidance)
-- **Cryptographic erasure**: Destruction of encryption keys for fully encrypted media (acceptable where full-disk encryption is confirmed active throughout the media's life)
-- **Physical destruction**: Shredding or degaussing of storage media for RESTRICTED PII or where software erasure is technically impractical; destruction must be documented
+The primary reference for media sanitisation is **NIST SP 800-88 (Guidelines for Media Sanitization)**. The following methods apply:
+
+- **Software erasure (magnetic media / HDDs)**: Secure overwrite using NIST SP 800-88 Clear or Purge techniques as appropriate to the data sensitivity. Multi-pass overwrite techniques (e.g., DoD 5220.22-M) are acceptable for HDDs but SHALL NOT be used as the primary erasure method for flash-based media (SSDs, USB drives, eMMC) where wear-levelling renders overwrite unreliable
+- **Cryptographic erasure**: Destruction of encryption keys is acceptable as an erasure method only where full-disk encryption was confirmed active from the point of first data write on that media, and where the encryption implementation is validated (e.g., hardware AES-256). Where there is uncertainty about encryption coverage, physical destruction SHALL be used instead
+- **Physical destruction**: Shredding or degaussing of storage media — required for RESTRICTED PII on flash-based media, and for any media where software erasure cannot be verified; destruction must be documented with method and confirming person
 
 ### Re-use Within [Organisation]
 
@@ -237,7 +239,7 @@ Loss or theft of an endpoint device containing or with access to PII SHALL be:
 
 - Reported immediately to IT Security Team and DPO
 - Treated as a suspected PII incident and managed per PRIV-POL-A.3.11-12
-- Remote wipe initiated for the device within 4 hours of confirmed loss (or as soon as practical)
+- Remote wipe initiated for the device as soon as possible and within 4 hours of confirmed loss being reported to IT Security Team. Where remote wipe is not technically feasible within 4 hours (e.g., device is offline), the DPO shall be notified immediately and the delay shall be documented; compensating action (password reset, account suspension, PII access revocation) shall be taken at once pending wipe confirmation
 
 ---
 

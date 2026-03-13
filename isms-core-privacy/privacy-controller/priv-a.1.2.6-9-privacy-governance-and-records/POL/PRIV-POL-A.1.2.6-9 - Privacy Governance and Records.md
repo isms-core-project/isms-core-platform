@@ -67,16 +67,16 @@ This policy establishes [Organisation]'s requirements for Privacy Impact Assessm
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.1.2.6 — Privacy impact assessment**
-> *The organization shall assess the need for, and implement where appropriate, a privacy impact assessment whenever new processing of PII or changes to existing processing of PII is planned.*
+Control A.1.2.6 requires [Organisation] to assess whether a privacy impact assessment is needed whenever new PII processing is planned or existing processing is changed, and to conduct that assessment where appropriate.
 
 **Control A.1.2.7 — Contracts with PII processors**
-> *The organization shall have a written contract with any PII processor that it uses, and shall ensure that their contracts with PII processors address the implementation of the appropriate controls in Annex A (see Table A.2).*
+Control A.1.2.7 requires [Organisation] to hold a written contract with every PII processor it engages, and to ensure those contracts require the processor to implement the appropriate controls from ISO/IEC 27701:2025 Annex A, Table A.2.
 
 **Control A.1.2.8 — Joint PII controller**
-> *The organization shall determine respective roles and responsibilities for the processing of PII (including PII protection and security requirements) with any joint PII controller.*
+Control A.1.2.8 requires [Organisation] to agree with any joint PII controller on the respective roles, responsibilities, and security requirements for the shared processing of PII.
 
 **Control A.1.2.9 — Records related to processing PII**
-> *The organization shall determine and securely maintain the necessary records in support of its obligations for the processing of PII.*
+Control A.1.2.9 requires [Organisation] to identify the records necessary to demonstrate compliance with its PII controller obligations, and to maintain those records securely.
 
 ## What This Policy Does NOT Cover
 
@@ -103,6 +103,8 @@ This policy establishes [Organisation]'s requirements for Privacy Impact Assessm
 ### DPIA Screening
 
 All new processing activities and material changes to existing activities SHALL undergo a DPIA screening by the DPO to determine whether a full DPIA is required. Screening decisions shall be documented.
+
+A **material change** includes any change to: processing purpose, categories of PII processed, data volumes, third-party sharing arrangements, or technology used to process PII.
 
 **Full DPIA is mandatory where processing is likely to result in high risk**, including:
 
@@ -137,7 +139,7 @@ Processor agreements SHALL address, at minimum, the obligations required by GDPR
 - Processing only on documented instructions from [Organisation]
 - Confidentiality obligations for personnel with PII access
 - Implementation of appropriate security measures (GDPR Article 32)
-- Sub-processor engagement restrictions (prior written consent; flow-down of obligations)
+- Sub-processor engagement restrictions (prior written consent; flow-down of obligations; obligation to notify [Organisation] of intended sub-processor changes so that [Organisation] may exercise its right to object)
 - Assisting [Organisation] with data subject rights obligations
 - Assisting with security, breach notification, DPIA, and prior consultation obligations
 - Return or deletion of all PII at end of service

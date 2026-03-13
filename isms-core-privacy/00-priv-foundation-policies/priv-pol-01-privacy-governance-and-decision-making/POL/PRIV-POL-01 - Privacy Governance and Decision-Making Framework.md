@@ -98,7 +98,7 @@ This policy defines **decision-making authority** for PIMS governance, ensuring:
 
 **This policy does NOT establish:**
 
-- Specific privacy control implementation requirements (addressed in 21 control group POLs and IMPs)
+- Specific privacy control implementation requirements (addressed in PRIV-POL-A.x.x control group POLs and IMPs)
 - Privacy risk assessment methodologies (addressed in PIMS Risk Assessment Procedure)
 - Document control procedures (addressed in Document Control Procedure per Clause 7.5)
 - Internal audit programme (addressed in Internal Audit Procedure per Clause 9.2)
@@ -131,15 +131,17 @@ This policy defines **decision-making authority** for PIMS governance, ensuring:
 
 **DPO Independence**:
 
-The DPO SHALL operate with independence per GDPR Article 38.3 and ISO 27701:2025:
+The DPO SHALL operate with independence per GDPR Article 38(3) (non-dismissal/non-penalisation), Article 38(5) (professional secrecy), and Article 38(6) (conflict of interest prohibition):
 
 - The DPO reports directly to the highest level of management
 - The DPO is not instructed how to perform DPO tasks
 - The DPO is not dismissed or penalised for performing DPO duties
-- The DPO has no conflict of interest (does not hold a position that requires determining purposes and means of processing)
+- The DPO has no conflict of interest per Article 38(6) — the DPO does not hold any position that determines the purposes or means of PII processing (e.g., Head of Marketing, CTO with processing system decisions authority, COO)
 - The organisation provides resources and access necessary to perform DPO duties
 
-**DPO independence verification** is documented in the organisational chart and DPO appointment letter maintained in the PIMS document repository.
+**DPO conflict of interest assessment**: An annual documented assessment SHALL be conducted to confirm that the DPO does not hold — and has not been asked to hold — any role that involves determining the purposes or means of PII processing. This assessment SHALL be conducted by Legal/Compliance or Executive Management (not the DPO). The assessment reviews: the DPO's current organisational roles and responsibilities; any ad hoc roles or responsibilities assigned during the year; and any reporting lines or secondary accountabilities that could create a conflict. The outcome is recorded in the DPO Conflict of Interest Assessment record and retained as evidence.
+
+**DPO independence verification** is documented in the organisational chart, DPO appointment letter, and annual conflict of interest assessment, all maintained in the PIMS document repository.
 
 **Decision Escalation Path**:
 
@@ -269,9 +271,9 @@ Professional judgment exercised by the auditor includes:
 
 **Framework**: Privacy regulatory applicability is determined per **PRIV-POL-00**, which establishes:
 
-- **Tier 1 (Mandatory)**: EU GDPR, CH FADP, ISO 27701:2025 (for certification)
-- **Tier 2 (Conditional)**: ISO 27018:2025, UK GDPR, LGPD, PIPL, other jurisdictions
-- **Tier 3 (Informational)**: ISO 27017:2019, ISO 27002:2022, NIST Privacy Framework
+- **Tier 1 (Mandatory)**: EU GDPR, CH FADP
+- **Tier 2 (Conditional)**: ISO 27701:2025 (where certification sought or contractually required), ISO 27018:2025, UK GDPR, LGPD, PIPL, other jurisdictions
+- **Tier 3 (Informational)**: ISO 27017:2019, ISO 27002:2022, NIST Privacy Framework 2.0
 
 **Decision Authority**:
 
@@ -363,7 +365,7 @@ For each Annex A control (78 total across A.1/A.2/A.3):
 | Executive Approval | Signature of CEO or delegated Executive Management member |
 | Review Date | Maximum 12 months; sooner if processing activity changes |
 
-**Escalation Trigger**: Where residual risk remains HIGH after compensating controls, the DPO **shall** assess whether GDPR Article 36 prior consultation with the supervisory DPA is required before proceeding.
+**Escalation Trigger**: Where a DPIA indicates that residual risk remains HIGH after all feasible compensating controls have been applied and the risk cannot be brought to an acceptable level, GDPR Article 36 prior consultation with the competent supervisory authority is **mandatory** — this is not a discretionary assessment. The DPO does not have the authority to decide whether to consult; the obligation arises automatically from the DPIA outcome. The DPO's role is to manage the prior consultation process, prepare the submission to the supervisory authority, and ensure the organisation does not commence the high-risk processing until the consultation is concluded or the supervisory authority's opinion has been received.
 
 ---
 
@@ -441,7 +443,7 @@ All PIMS policy documents follow the version control standard established in ISM
 | Breach notification compliance | 100% within 72 hours to DPA (where required) | Incident log |
 | Processor agreement coverage | 100% of processors under Art. 28 DPA | Processor register |
 | Privacy training completion | 100% of staff with PII access annually | Training records |
-| PIMS internal audit completion | Full coverage of all 21 control groups within each 3-year certification cycle (rolling schedule); at minimum 7 control groups per year | Audit schedule |
+| PIMS internal audit completion | Full coverage of all PRIV-POL-A.x.x control groups within each 3-year certification cycle (rolling schedule); at minimum one-third of in-scope control groups per year | Audit schedule |
 
 ### Quarterly DPO Monitoring
 
@@ -488,8 +490,8 @@ All PIMS policy documents follow the version control standard established in ISM
 | Approve DPIA methodology | DPO |
 | Sign off completed DPIA | DPO + relevant data owner |
 | Approve residual high risk acceptance | Executive Management |
-| Assess whether Art. 36 prior consultation required (where DPIA identifies unmitigatable residual high risk) | DPO |
-| Decide whether prior DPA consultation required | DPO |
+| Manage Art. 36 prior consultation process (where DPIA identifies unmitigatable residual high risk — consultation is mandatory, not discretionary) | DPO |
+| Confirm DPIA outcome and whether prior consultation threshold is met (note: if residual risk is HIGH and cannot be mitigated, prior consultation is mandatory) | DPO + Legal |
 
 **DPIA Trigger Criteria** (mandatory per GDPR Art. 35):
 
@@ -542,7 +544,7 @@ The following evidence demonstrates operation of PIMS governance per this policy
 | Privacy Risk Acceptance Register | Entries with Executive Management signatures | 3 years minimum |
 | DPIA register | List of all DPIAs conducted with status and outcome | Life of processing + 3 years |
 | Data subject rights log | All rights requests with response dates and outcomes | 3 years |
-| Quarterly DPO monitoring logs | DPO monitoring records (regulatory changes, trigger events) | 3 years |
+| Quarterly DPO monitoring logs | DPO monitoring records (regulatory changes, trigger events) | 3 years from the date of the relevant quarterly review |
 | Annual management review records | Signed management review minutes | 3 years |
 | Privacy training records | Training completion by role | 3 years |
 | Processor register + DPAs | List of processors + signed Art. 28 agreements | Duration of processing + 3 years |
@@ -565,7 +567,7 @@ This policy establishes the governance framework for the organisation's Privacy 
 
 **What this policy does NOT establish:**
 
-- Specific privacy control implementation requirements (addressed in 21 control group POLs and IMPs)
+- Specific privacy control implementation requirements (addressed in PRIV-POL-A.x.x control group POLs and IMPs)
 - Privacy risk assessment methodology (addressed in PIMS Risk Assessment Procedure)
 - Document control (addressed in Document Control Procedure per Clause 7.5)
 - Internal audit programme (addressed in Internal Audit Procedure per Clause 9.2)
@@ -574,7 +576,7 @@ This policy establishes the governance framework for the organisation's Privacy 
 
 - **PRIV-POL-00**: Defines WHICH privacy regulations apply
 - **This Policy (PRIV-POL-01)**: Defines WHO decides, HOW decisions are made, and HOW the PIMS evolves
-- **Control Group POLs (21 packs)**: Define WHAT the organisation must do per control domain
+- **Control Group POLs (PRIV-POL-A.x.x)**: Define WHAT the organisation must do per control domain
 - **Control Group IMPs**: Define HOW to implement the control requirements
 - **Compliance Monitoring**: Verifies and tracks COMPLIANCE status
 

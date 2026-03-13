@@ -65,7 +65,7 @@ This policy establishes [Organisation]'s requirements when acting as PII Process
 ## ISO/IEC 27701:2025 Control Statement
 
 **Control A.2.3.2 — Comply with obligations to PII principals**
-> *The organization shall provide the customer with the means to comply with its obligations related to PII principals.*
+Control A.2.3.2 requires [Organisation], as PII Processor, to provide customers with the operational means to fulfil their obligations towards PII principals.
 
 ## Regulatory Framework
 
@@ -91,7 +91,7 @@ When [Organisation] processes PII on behalf of a customer controller, [Organisat
 
 **Rectification**: Update or correct PII for a specific data subject upon customer instruction.
 
-**Erasure**: Delete all PII for a specific data subject across all systems where [Organisation] processes that customer's PII, upon customer instruction — including backups, within the timeframe defined in the processor agreement.
+**Erasure**: Delete all PII for a specific data subject across all systems where [Organisation] processes that customer's PII, upon customer instruction — including backups, within the timeframe defined in the processor agreement. Where backup erasure cannot be completed within the customer's regulatory response window, [Organisation] SHALL apply a restriction flag to the affected data immediately and complete physical deletion at the next scheduled backup expiry. This compensating approach must be disclosed to the customer and documented in the processor agreement.
 
 **Restriction of processing**: Mark specific data subjects' PII as restricted and ensure no further processing occurs (storage only) upon customer instruction.
 
@@ -107,7 +107,7 @@ The means to fulfil the above SHALL be:
 
 ### Notification to Customers
 
-[Organisation] SHALL forward to the customer, without undue delay, any data subject rights requests received directly by [Organisation] (e.g., a data subject contacting [Organisation] directly). [Organisation] shall NOT respond directly to data subject rights requests without explicit customer authorisation, as the customer is the controller.
+[Organisation] SHALL forward to the customer, on the same business day of receipt and in any event within 2 business days, any data subject rights requests received directly by [Organisation] (e.g., a data subject contacting [Organisation] directly). [Organisation] shall NOT respond directly to data subject rights requests without explicit customer authorisation, as the customer is the controller.
 
 ---
 

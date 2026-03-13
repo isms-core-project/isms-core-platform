@@ -110,5 +110,5 @@ https://calteches.library.caltech.edu/51/2/CargoCult.htm
 
 ---
 
-**Copyright © 2025–2026 Gregory Griffin. All rights reserved.**
+**Copyright © 2025–2026 The ISMS Core Project. All rights reserved.**
 *Where bamboo antennas actually work.* 🎋

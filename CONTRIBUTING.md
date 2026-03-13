@@ -281,7 +281,7 @@ Every control pack undergoes a structured multi-stage validation process to ensu
 
 ```
   ┌─────────────────────────┐
-  │     Gregory Griffin     │
+  │     The ISMS Core Project     │
   │   (Architect / Owner)   │
   └────────────┬────────────┘
                │ Requirements + Domain Expertise
@@ -299,7 +299,7 @@ Every control pack undergoes a structured multi-stage validation process to ensu
                │
                ▼
   ┌─────────────────────────┐
-  │     Gregory Griffin     │
+  │     The ISMS Core Project     │
   │   Final Approval Gate   │
   └─────────────────────────┘
 ```
@@ -308,9 +308,9 @@ Every control pack undergoes a structured multi-stage validation process to ensu
 |-------------|------|-------|
 | **Claude Code (Opus)** | Implementation + QA | Policy writing, Python generators, code review, pattern analysis |
 | **ISMS Copilot X** | Documentation Audit | Stage 1 documentation adequacy, Stage 2 implementation effectiveness |
-| **Gregory Griffin** | Architect + Final Gate | Methodology, domain expertise, IP ownership, approval authority |
+| **The ISMS Core Project** | Architect + Final Gate | Methodology, domain expertise, IP ownership, approval authority |
 
-Each stage operates under **purpose-built instruction sets** authored by Gregory Griffin — structured prompts defining scope, constraints, output format, and audit criteria. These are controlled operational documents specifying exactly what must be checked, what to ignore (e.g., placeholder dates), and how to classify findings.
+Each stage operates under **purpose-built instruction sets** authored by The ISMS Core Project — structured prompts defining scope, constraints, output format, and audit criteria. These are controlled operational documents specifying exactly what must be checked, what to ignore (e.g., placeholder dates), and how to classify findings.
 
 ### Finding Classification
 
@@ -331,7 +331,7 @@ Each stage operates under **purpose-built instruction sets** authored by Gregory
 <th>Role</th>
 </tr>
 <tr>
-<td><strong>Gregory Griffin</strong></td>
+<td><strong>The ISMS Core Project</strong></td>
 <td>Methodology, architecture, domain expertise, IP ownership</td>
 </tr>
 <tr>
@@ -357,7 +357,7 @@ Each stage operates under **purpose-built instruction sets** authored by Gregory
   <img src="https://img.shields.io/badge/Dec_2025–Feb_2026-6_Weeks-2E8B57?style=for-the-badge" alt="6 Weeks"/>
 </p>
 
-Claude Code (Anthropic, Opus model family) has been the primary implementation partner on ISMS CORE since December 31, 2025. Working in continuous pairing sessions directed by Gregory Griffin — who authored all methodology, architectural decisions, prompt instruction sets, and multi-model orchestration — Claude Code delivered the full automation layer, wrote and refined all documentation, and built the factory infrastructure that makes this project maintainable.
+Claude Code (Anthropic, Opus model family) has been the primary implementation partner on ISMS CORE since December 31, 2025. Working in continuous pairing sessions directed by The ISMS Core Project — who authored all methodology, architectural decisions, prompt instruction sets, and multi-model orchestration — Claude Code delivered the full automation layer, wrote and refined all documentation, and built the factory infrastructure that makes this project maintainable.
 
 ### What was built
 
@@ -419,7 +419,7 @@ The **ISMS CORE Platform** (`60-isms-core-api/`) is in active development — a 
 ---
 
 <p align="center">
-  <strong>Copyright © 2025-2026 Gregory Griffin. All rights reserved.</strong>
+  <strong>Copyright © 2025-2026 The ISMS Core Project. All rights reserved.</strong>
 </p>
 
 <p align="center">

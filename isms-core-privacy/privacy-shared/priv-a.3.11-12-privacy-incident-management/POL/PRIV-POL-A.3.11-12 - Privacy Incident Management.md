@@ -75,10 +75,10 @@ This policy establishes **WHAT** privacy incident management structures and noti
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.3.11 — Information security incident management planning and preparation**
-> *The organization shall plan and prepare for managing information security incidents related to PII processing by defining, establishing, and communicating incident management processes, roles and responsibilities.*
+Control A.3.11 requires [Organisation] to plan and prepare for information security incidents that relate to PII processing by defining, establishing, and communicating the incident management processes, roles, and responsibilities that will govern the privacy-specific response.
 
 **Control A.3.12 — Response to information security incidents**
-> *Responses to information security incidents related to PII processing shall be according to the documented procedures.*
+Control A.3.12 requires [Organisation] to respond to information security incidents that relate to PII processing in accordance with its documented incident response procedures.
 
 ## What This Policy Covers
 
@@ -211,7 +211,9 @@ When [Organisation] acts as PII Controller and a personal data breach is confirm
 
 **GDPR — Notification to Supervisory Authority (Article 33)**:
 
-- WHERE the breach is likely to result in a risk to the rights and freedoms of natural persons: notify the competent supervisory authority **without undue delay and, where feasible, no later than 72 hours** after becoming aware
+The 72-hour notification clock begins when [Organisation] has reasonable certainty that a personal data breach has occurred — not at the point of first suspicion. Where the initial investigation is inconclusive, the clock starts when sufficient facts are established to confirm that a breach has occurred. Protracted investigation without a preliminary determination is not acceptable; where a breach cannot be ruled out within 24 hours, the DPO shall make a provisional notification to the supervisory authority and supplement it as further information becomes available.
+
+- WHERE the breach is likely to result in a risk to the rights and freedoms of natural persons: notify the competent supervisory authority **without undue delay and, where feasible, no later than 72 hours** after becoming aware of the breach
 - WHERE notification is made after 72 hours: include a reasoned justification for the delay
 - WHERE the breach is unlikely to result in a risk: notification to the supervisory authority is not required, but the breach SHALL be documented internally (breach register)
 - Notification content: nature of breach; categories and approximate number of data subjects; categories and approximate number of records; name/contact of DPO; likely consequences; measures taken or proposed to address the breach
@@ -231,9 +233,10 @@ When [Organisation] acts as PII Controller and a personal data breach is confirm
 
 When [Organisation] acts as PII Processor and a personal data breach (or potential breach) affecting a customer's PII is detected:
 
-- Notify the PII Controller (customer) **without undue delay** (timeframes per processor agreement, maximum 24 hours from confirmed awareness)
+- Notify the PII Controller (customer) **without undue delay** upon becoming aware of a confirmed or suspected breach — notification is not contingent on completing the internal investigation. Processor notification enables the Controller to start its own 72-hour supervisory authority clock; [Organisation] shall not delay processor notification pending full confirmation. Maximum notification timeframe: 24 hours from the point [Organisation] becomes aware that a breach has occurred or is reasonably suspected
+- The notification shall include all information available at the time, with supplementary updates as the investigation progresses; notifications shall be made to the customer's designated security or data protection contact specified in the processor agreement
 - Provide all available information to enable the Controller to fulfil its Article 33 notification obligations
-- Do NOT notify the supervisory authority or data subjects directly unless explicitly authorised by the Controller (except where legally required)
+- Do NOT notify the supervisory authority or data subjects directly unless explicitly authorised by the Controller or unless [Organisation] is independently required to do so by applicable law
 - Cooperate fully with the Controller's investigation
 
 ### Incident Response Actions

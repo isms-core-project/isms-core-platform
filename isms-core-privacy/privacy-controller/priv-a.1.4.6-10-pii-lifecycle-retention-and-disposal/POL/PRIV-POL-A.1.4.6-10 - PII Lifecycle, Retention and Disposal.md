@@ -65,19 +65,19 @@ This policy establishes [Organisation]'s requirements for PII de-identification 
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.1.4.6 — PII de-identification and deletion at the end of processing**
-> *The organization shall either delete PII or render it in a form which does not permit identification or re-identification of PII principals, as soon as the original PII is no longer necessary for the identified purpose(s).*
+Control A.1.4.6 requires [Organisation] to delete PII or render it non-identifiable as soon as it is no longer needed for the purpose for which it was processed.
 
 **Control A.1.4.7 — Temporary files**
-> *The organization shall ensure that temporary files created as a result of the processing of PII are disposed of (e.g. erased or destroyed) following documented procedures within a specified, documented period.*
+Control A.1.4.7 requires [Organisation] to dispose of temporary files created during PII processing within a defined, documented period, using documented procedures.
 
 **Control A.1.4.8 — Retention**
-> *The organization shall not retain PII for longer than is necessary for the purposes for which the PII is processed.*
+Control A.1.4.8 requires [Organisation] not to retain PII for longer than is necessary for the purposes for which it is processed.
 
 **Control A.1.4.9 — Disposal**
-> *The organization shall have documented policies, procedures or mechanisms for the disposal of PII.*
+Control A.1.4.9 requires [Organisation] to have documented policies, procedures, and mechanisms for the disposal of PII.
 
 **Control A.1.4.10 — PII transmission controls**
-> *The organization shall subject PII transmitted (e.g. sent to another organization) over a data-transmission network to appropriate controls, which are designed to ensure that the data reaches its intended destination.*
+Control A.1.4.10 requires [Organisation] to apply appropriate controls to PII transmitted over data networks, designed to ensure that data reaches its intended destination.
 
 ## Regulatory Framework
 
@@ -122,7 +122,7 @@ Where a legal obligation requires retention beyond the processing purpose (e.g.,
 | Export files generated for data subject access requests | 72 hours after transmission to data subject | Secure deletion |
 | Batch processing staging files | 48 hours after batch completion | Secure deletion |
 | Debugging / error log files containing PII | 30 days | Automated rotation with secure deletion |
-| Temporary development copies with real PII | Immediately after use (per PRIV-POL-A.3.23-31 ADM.31) | DPO-approved secure deletion with confirmation |
+| Temporary development copies with real PII | Immediately after use (per PRIV-POL-A.3.23-31 test data requirements) | DPO-approved secure deletion with confirmation |
 
 Specific disposal periods for additional temporary file types are documented in PRIV-IMP-A.1.4.6-10-TG. Automated purge mechanisms are preferred over manual deletion.
 
@@ -142,6 +142,17 @@ The DPO maintains a **PII Retention Schedule** that specifies:
 - Disposal method upon expiry
 
 The Retention Schedule is published internally and forms part of the RoPA. It is reviewed at minimum annually and upon changes to regulatory requirements or processing activities.
+
+### Legal Holds
+
+Where Legal/Compliance identifies a legal hold requirement, PII subject to the hold SHALL be retained regardless of its scheduled disposal date. Legal holds SHALL be:
+
+- Authorised in writing by Legal/Compliance or Executive Management
+- Documented in the Retention Schedule with the hold basis and expected end date
+- Reviewed at minimum quarterly; lifted promptly once the hold basis no longer applies
+- Applied narrowly to the minimum scope of PII necessary
+
+Legal holds that are not formally reviewed and lifted become a source of unlawful retention. The DPO monitors all active legal holds.
 
 ### Retention Principles
 
@@ -221,9 +232,9 @@ Technical transmission standards are specified in PRIV-IMP-A.1.4.6-10-TG, consis
 |---------|-------------|-----------|
 | PII Retention Schedule | Documented retention periods per PII category, with legal basis | Current + 3 years |
 | Disposal Logs | Records of PII disposal actions with date, method, and scope | 5 years |
-| Temporary File Purge Confirmation | Automated or manual confirmation of temporary file disposal | 3 years |
+| Temporary File Purge Confirmation | Automated or manual confirmation of temporary file disposal | 3 years from the date of purge |
 | Transmission Encryption Configuration | TLS configuration records for PII-carrying systems | Current + 3 years |
-| Retention Schedule Review Records | Annual review evidence | 3 years |
+| Retention Schedule Review Records | Annual review evidence | 3 years from the date of the review |
 
 ---
 

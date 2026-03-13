@@ -67,16 +67,16 @@ This policy establishes [Organisation]'s requirements for limiting PII collectio
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.1.4.2 — Limit collection**
-> *The organization shall limit the collection of PII to the minimum that is relevant, proportional and necessary for the identified purposes.*
+Control A.1.4.2 requires [Organisation] to collect only the PII that is relevant, proportional, and necessary for the identified processing purpose — no more.
 
 **Control A.1.4.3 — Limit processing**
-> *The organization shall limit the processing of PII to that which is adequate, relevant and necessary for the identified purposes.*
+Control A.1.4.3 requires [Organisation] to limit the processing of PII to what is adequate, relevant, and necessary for the identified purposes, and not to process PII beyond those bounds.
 
 **Control A.1.4.4 — Accuracy and quality**
-> *The organization shall ensure and document that PII is as accurate, complete and up to date as necessary for the purposes for which it is processed, throughout the life cycle of the PII.*
+Control A.1.4.4 requires [Organisation] to ensure that PII is as accurate, complete, and up to date as the processing purpose demands, and to maintain that standard throughout the PII lifecycle.
 
-**Control A.1.4.5 — PII minimization objectives**
-> *The organization shall define and document data minimization objectives and what mechanisms (such as de-identification) are used to meet those objectives.*
+**Control A.1.4.5 — PII minimisation objectives**
+Control A.1.4.5 requires [Organisation] to define and document its data minimisation objectives, along with the mechanisms — such as de-identification — it uses to achieve them.
 
 ## Regulatory Framework
 
@@ -99,7 +99,7 @@ This policy establishes [Organisation]'s requirements for limiting PII collectio
 - PII fields collected in any form (online, physical, telephone, third-party import) SHALL be reviewed and justified before collection commences
 - Each data field collected SHALL be traceable to a specific documented purpose; fields without a documented purpose SHALL NOT be collected
 - New data collection points (forms, APIs, integrations) require DPO review of the fields to be collected before deployment
-- "Nice to have" data collection is not a valid justification; data minimisation shall be the default at the design stage (privacy by design per GDPR Article 25)
+- Collection of PII that is not necessary for a documented purpose is not permitted, regardless of potential future utility; data minimisation shall be the default at the design stage (privacy by design per GDPR Article 25)
 
 ---
 
@@ -149,7 +149,7 @@ This policy establishes [Organisation]'s requirements for limiting PII collectio
 [Organisation] uses the following de-identification mechanisms (documented in detail in PRIV-IMP-A.1.4.2-5-TG):
 
 - **Pseudonymisation**: Replace direct identifiers with pseudonyms — dataset can be re-identified with the key; classified as PII under GDPR
-- **Anonymisation**: Irreversible removal of identifying information such that re-identification is not reasonably possible — confirmed by DPO; output is no longer PII
+- **Anonymisation**: Irreversible removal of identifying information such that re-identification is not reasonably possible — confirmed by the DPO using a documented methodology (referenced in PRIV-IMP-A.1.4.2-5-TG) that assesses singling out, linkability, and inference as re-identification risk vectors; output confirmed by DPO is no longer PII
 
 ---
 
@@ -169,8 +169,8 @@ This policy establishes [Organisation]'s requirements for limiting PII collectio
 | Evidence | Description | Retention |
 |---------|-------------|-----------|
 | RoPA — Data Fields Section | Documentation of PII fields collected per activity with purpose justification | Current + 3 years |
-| Privacy by Design Review Records | DPO sign-off on new data collection points | 3 years |
-| Anonymisation Confirmation Records | DPO confirmation that a dataset is truly anonymised | 3 years |
+| Privacy by Design Review Records | DPO sign-off on new data collection points | Current + 3 years |
+| Anonymisation Confirmation Records | DPO confirmation that a dataset is truly anonymised | Duration of reliance on the anonymisation determination + 3 years |
 | Minimisation Objectives Document | Documented objectives and mechanisms | Current + 3 years |
 
 ---

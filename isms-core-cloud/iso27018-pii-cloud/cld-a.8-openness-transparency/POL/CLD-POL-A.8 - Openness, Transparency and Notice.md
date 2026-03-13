@@ -40,10 +40,10 @@
 - PRIV-POL-00 (Privacy Regulatory Applicability Framework)
 - ISMS-POL-A.5.34 (Privacy and Protection of PII)
 - CLD-POL-A.1 (General)
-- CLD-POL-A.11.12 (Sub-contracted PII processing)
+- CLD-POL-A.11 (Information Security — §11.12: Sub-contracted PII processing)
 - CLD-POL-A.12 (Privacy Compliance — geographical disclosure)
 - ISO/IEC 27018:2025 Annex A, Section A.8 and Control A.8.1
-- ISO/IEC 27701:2025 Controls A.2.3.11–A.2.3.12 (processor — transparency)
+- ISO/IEC 27701:2025 Controls A.2.5.7 (disclosure of subcontractors used to process PII), A.2.5.8 (engagement of a subcontractor to process PII) and A.2.5.9 (change of subcontractor to process PII)
 - GDPR Article 28(2) (sub-processor authorisation and flow-down); Article 28(3)(d) (processor informs controller of sub-processors)
 - CH FADP Article 9(3) (sub-processor disclosure obligations)
 
@@ -64,14 +64,16 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 ## ISO/IEC 27018:2025 Control Statements
 
 **Section A.8 — Openness, transparency and notice (principle)**
-> *The cloud service provider shall make available to the PII controller information about the geographic location of data processing, applicable sub-processors, and any changes to processing arrangements. Privacy notices shall be maintained and kept current.*
+
+Section A.8 establishes the principle that a public cloud PII processor should make available to PII controllers information about where PII is processed, which sub-processors are engaged, and any changes to processing arrangements, and should keep its privacy notices current.
 
 **Control A.8.1 — Disclosure of sub-contracted PII processing**
-> *The public cloud PII processor shall disclose to the PII controller the identity of all sub-processors engaged to process PII on the processor's behalf, and shall provide advance notice of any intended changes to sub-processor arrangements (additions or replacements). The controller shall have the opportunity to object to such changes.*
+
+Control A.8.1 requires the processor to disclose to PII controllers the identity of all sub-processors handling PII on its behalf, and to give advance notice of any intended additions or replacements, providing the controller with an opportunity to object.
 
 ## What This Policy Does NOT Cover
 
-- Sub-processor contract content and security flow-down — addressed in CLD-POL-A.11.12
+- Sub-processor contract content and security flow-down — addressed in CLD-POL-A.11 (§11.12)
 - Geographic location of PII processing — addressed in CLD-POL-A.12.1
 - Legally compelled disclosure notifications — addressed in CLD-POL-A.6.1
 
@@ -101,7 +103,9 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 | **Controller consent status** | Date controller general/specific consent was obtained |
 | **Date added / last reviewed** | Onboarding date and most recent review date |
 
-The Sub-Processor Register SHALL be maintained by the DPO and made available to all PII controllers upon request. [Organisation] SHALL also publish a current Sub-Processor List on its website or trust portal for controllers operating under general authorisation.
+The Sub-Processor Register SHALL be maintained by the DPO and made available to all PII controllers upon request. [Organisation] SHALL also publish a current Sub-Processor List on its website or trust portal for controllers operating under general authorisation. Controllers operating under specific sub-processor authorisation shall receive direct notification rather than relying on the public list. Existing Sub-Processor Register entries SHALL be reviewed at minimum annually, and upon any material change to a sub-processor's operations, to ensure the register remains current.
+
+[Organisation] SHALL conduct a documented security and privacy due diligence assessment of each sub-processor before engagement. The results SHALL be referenced in the Sub-Processor Register and the assessment methodology is addressed in CLD-POL-A.11 (§11.12).
 
 ## Advance Notice of Changes
 
@@ -124,15 +128,15 @@ PII controllers operating under general sub-processor authorisation (GDPR Articl
 3. If the objection is upheld: identify and implement an alternative processing arrangement before the change
 4. If the objection cannot be accommodated: notify the controller and allow contract termination on reasonable terms without penalty
 
-Controllers who do not object within the notice period are deemed to have accepted the change.
+Controllers who do not object within the notice period are deemed to have accepted the change, where general sub-processor authorisation applies. This deemed acceptance mechanism applies only under the general authorisation model; controllers operating under specific sub-processor authorisation may require a positive confirmation rather than silence as acceptance — Legal/Compliance Officer SHALL confirm which model applies to each controller relationship.
 
 ## Emergency Sub-Processor Changes
 
 Where [Organisation] must engage a replacement sub-processor urgently (e.g., due to sub-processor insolvency or security incident), [Organisation] SHALL:
 
-- Notify affected PII controllers without undue delay
+- Notify affected PII controllers within 72 hours of the decision to engage the replacement sub-processor
 - Provide the controller with written justification for the emergency change
-- Implement equivalent security and privacy controls on the replacement sub-processor before PII transfer
+- Implement equivalent security and privacy controls on the replacement sub-processor before PII transfer. Where full security verification cannot be completed before an emergency transfer, a risk acceptance document signed by the CISO and DPO is required, with a defined remediation timeframe for any gaps identified post-transfer
 - Formally close the emergency notification and update the Sub-Processor Register within 5 business days
 
 ---
@@ -152,7 +156,7 @@ Where [Organisation] must engage a replacement sub-processor urgently (e.g., due
 
 | Evidence | Description | Retention |
 |---------|-------------|-----------|
-| Sub-Processor Register | Complete and current register with mandatory fields | Current + previous versions for 5 years |
+| Sub-Processor Register | Complete and current register with mandatory fields | Current + previous versions for 5 years from engagement end — 5-year retention reflects the standard contractual limitation period under EU and Swiss law |
 | Controller Advance Notices | Records of sub-processor change notifications sent to each controller | 5 years |
 | Controller Objection Records | Any controller objections received, [Organisation]'s response, and resolution | 5 years |
 | Published Sub-Processor List | Timestamped copies of the publicly available sub-processor list at each version | 5 years |

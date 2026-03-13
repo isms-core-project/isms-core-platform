@@ -45,7 +45,7 @@
 - CLD-POL-A.6 (Use, Retention and Disclosure Limitation)
 - CLD-POL-A.11 (Information Security)
 - ISO/IEC 27018:2025 Annex A, Section A.10 and Controls A.10.1–A.10.3
-- ISO/IEC 27701:2025 Controls A.2.3.15–A.2.3.17 (processor — accountability)
+- ISO/IEC 27701:2025 Controls A.3.11–A.3.12 (incident management planning and response — breach notification); clause 7.5 (documented information — document retention); A.2.4.3 (return, transfer or disposal of PII)
 - GDPR Article 33 (notification to supervisory authority — 72 hours); Article 34 (communication to data subjects); Article 28(3)(f) (processor assists with breach notification); Article 28(3)(g) (processor provides compliance information)
 - CH FADP Article 24 (data breach notification to FDPIC)
 
@@ -66,16 +66,20 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 ## ISO/IEC 27018:2025 Control Statements
 
 **Section A.10 — Accountability (principle)**
-> *The cloud service provider shall maintain records of all PII processing activities including categories of PII, purposes, recipients, retention periods, and security measures. These records shall be made available to the PII controller and competent supervisory authorities upon request.*
+
+Section A.10 establishes the principle that a public cloud PII processor must maintain accountability to PII controllers through timely breach notification, retention of compliance documentation, and secure return or disposal of PII at the end of a service engagement.
 
 **Control A.10.1 — Notification of a data breach involving PII**
-> *The public cloud PII processor shall notify the PII controller of confirmed or suspected PII security incidents without undue delay, and within a timeframe enabling the controller to fulfil any regulatory breach notification obligations (e.g. 72-hour GDPR notification). Notifications shall include the nature of the breach, categories and approximate number of data subjects affected, categories of PII concerned, likely consequences, and measures taken or proposed.*
+
+Control A.10.1 requires the processor to notify the PII controller of confirmed or suspected PII security incidents without undue delay and within a timeframe that enables the controller to meet its own regulatory notification obligations.
 
 **Control A.10.2 — Retention period for administrative security policies and guidelines**
-> *The public cloud PII processor shall retain administrative security policies, guidelines, and related PII processing documentation for a period sufficient to demonstrate compliance with applicable obligations. Minimum retention periods shall be defined. Version history of policies shall be maintained to support retrospective audit and incident investigation.*
+
+Control A.10.2 requires the processor to retain administrative security policies and related documentation for a sufficient period to demonstrate compliance and support retrospective audit and investigation.
 
 **Control A.10.3 — PII return, transfer and disposal**
-> *Upon termination of the service agreement, the public cloud PII processor shall return all PII to the PII controller in a documented, machine-readable format, or securely dispose of it as instructed. Where disposal is chosen, certification of secure destruction shall be provided. Copies retained in backups or replicated systems shall be disposed of within a defined timeframe. The processor shall confirm completion of return or disposal in writing.*
+
+Control A.10.3 requires the processor to return or securely dispose of all PII upon contract termination, as instructed by the controller, and to confirm completion in writing.
 
 ## Regulatory Framework
 
@@ -91,7 +95,7 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 
 ## Notification Obligation
 
-[Organisation] SHALL notify the relevant PII controller of any confirmed or reasonably suspected PII security incident **without undue delay**, and in any case within **24 hours** of detection. This timeframe ensures the controller has sufficient time to fulfil its own 72-hour GDPR supervisory authority notification obligation.
+[Organisation] SHALL notify the relevant PII controller of any confirmed or reasonably suspected PII security incident **without undue delay**, and in any case within **24 hours** of detection. Reasonable suspicion arises where initial evidence indicates unauthorised access to a system containing PII, even where the full scope of impact has not yet been determined. This timeframe ensures the controller has sufficient time to fulfil its own 72-hour GDPR supervisory authority notification obligation.
 
 ## Notification Content
 
@@ -107,7 +111,7 @@ Breach notifications to PII controllers SHALL include the following information,
 | **Incident reference** | [Organisation] internal incident reference number |
 | **Contact point** | DPO or security contact for the controller to direct follow-up queries |
 
-Where information is not fully available at the time of the initial notification, [Organisation] SHALL provide the information as it becomes available in phased updates, without further undue delay.
+Where information is not fully available at the time of the initial notification, [Organisation] SHALL provide the information as it becomes available in phased updates, without further undue delay and in any case at intervals of no more than 24 hours until the incident is fully characterised.
 
 ## Escalation and Coordination
 
@@ -152,15 +156,38 @@ Upon termination or expiry of a cloud service agreement under which [Organisatio
 
 **Option A — Return**: Return all PII to the PII controller in a structured, machine-readable format (JSON, CSV, or standard database export as agreed), within the timeframe specified in the service agreement or, absent such specification, within **30 calendar days** of termination.
 
-**Option B — Disposal**: Securely destroy all PII (including primary stores, backups, replicated copies, and any sub-processor copies) using methods that prevent recovery, within **30 calendar days** of termination. [Organisation] SHALL provide the PII controller with a **written certificate of destruction** confirming completion, the disposal method used, and the scope of data destroyed.
+**Option B — Disposal**: Securely destroy all PII (including primary stores, backups, replicated copies, and any sub-processor copies) using methods that prevent recovery, within **30 calendar days** of termination. [Organisation] SHALL provide the PII controller with a **written certificate of destruction** (see Certificate of Destruction section below) confirming completion.
+
+Where the volume or complexity of PII held makes completion within 30 calendar days impractical, [Organisation] MAY agree an extended timeline with the PII controller **in writing before the 30-day period lapses**. Any agreed extension must specify a revised completion date and interim milestone confirmations.
 
 ## Backup and Replicated Copies
 
 Where PII exists in backup or replicated copies at the time of contract termination, [Organisation] SHALL:
 
-- Include backup copies in the return or disposal process
+- Include backup copies in the return or disposal process within the same 30-day window (or agreed extended period)
 - Define in the service agreement the maximum timeframe for backup disposal (accounting for backup rotation cycles)
 - Confirm in writing when backup disposal is complete
+
+## Sub-Processor Disposal
+
+Where [Organisation] engages sub-processors that hold PII, [Organisation] SHALL:
+
+- Instruct sub-processors to return or destroy PII within the same 30-day window (or agreed extended period)
+- Obtain a written certificate of destruction from each sub-processor and forward it to the PII controller as part of [Organisation]'s own confirmation record
+- [Organisation] remains accountable to the PII controller for sub-processor disposal — the sub-processor certificates are supporting evidence, not a discharge of [Organisation]'s obligation
+
+## Certificate of Destruction
+
+Where PII disposal is chosen (Option B), the written certificate of destruction provided to the PII controller SHALL include as a minimum:
+
+| Field | Description |
+|-------|-------------|
+| **Date of completion** | Date on which disposal was completed |
+| **Scope** | Categories of PII destroyed and approximate volume (number of records or data subjects) |
+| **Systems covered** | Primary stores, backup media, replicated data stores, and any other systems confirmed as purged |
+| **Disposal method** | Technical method used (e.g., cryptographic erasure, secure overwrite to NIST SP 800-88 standard, physical destruction) |
+| **Sub-processor confirmation** | Confirmation that sub-processor copies have also been destroyed (with sub-processor certificates attached or referenced) |
+| **Certifying officer** | Name and role of [Organisation] officer certifying completion |
 
 ## Confirmation Record
 
@@ -188,12 +215,14 @@ Where PII exists in backup or replicated copies at the time of contract terminat
 
 | Evidence | Description | Retention |
 |---------|-------------|-----------|
-| Breach Notification Records | All notifications sent to PII controllers with timestamps and content | 5 years |
-| Incident Reports | Final post-incident reports for all PII security events | 5 years |
-| Document Version Archive | All previous versions of CLD-POL-A.X policies | 5 years from supersession |
-| End-of-Contract Confirmations | Written confirmations of PII return or disposal per contract | 5 years |
-| Certificates of Destruction | Certificates confirming secure disposal with method and scope | 5 years |
-| Backup Disposal Confirmations | Written confirmation that backup copies of PII have been purged | 5 years |
+| Breach Notification Records | All notifications sent to PII controllers with timestamps and content | 5 years from incident closure |
+| Incident Reports | Final post-incident reports for all PII security events | 5 years from incident closure |
+| Document Version Archive | All previous versions of CLD-POL-A.X policies | 5 years from version supersession |
+| End-of-Contract Confirmations | Written confirmations of PII return or disposal per contract | 5 years from completion |
+| Certificates of Destruction | Certificates confirming secure disposal with method and scope | 5 years from completion |
+| Backup Disposal Confirmations | Written confirmation that backup copies of PII have been purged | 5 years from completion |
+
+5-year retention periods reflect the standard contractual limitation period applicable in EU and Swiss jurisdictions for processor agreement disputes, and support retrospective regulatory audit requirements.
 
 ---
 

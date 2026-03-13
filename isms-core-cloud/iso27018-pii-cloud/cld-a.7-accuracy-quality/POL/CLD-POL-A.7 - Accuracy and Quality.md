@@ -43,7 +43,7 @@
 - CLD-POL-A.6 (Use, Retention and Disclosure Limitation)
 - CLD-POL-A.9 (Individual Participation and Access)
 - ISO/IEC 27018:2025 Annex A, Section A.7 (Accuracy and Quality — principle)
-- ISO/IEC 27701:2025 Controls A.2.3.10 (processor — accuracy)
+- ISO/IEC 27701:2025 Control A.2.3.2 (processor — comply with obligations to PII principals, including rectification support)
 - GDPR Article 5(1)(d) (accuracy principle); Article 16 (right to rectification); Article 28(3)(e) (processor assists with data subject rights)
 - CH FADP Article 6(4) (accuracy); Article 9(2)(c) (processor cooperation on data subject requests)
 
@@ -64,7 +64,8 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 ## ISO/IEC 27018:2025 — Section A.7
 
 **Section A.7 — Accuracy and quality (principle)**
-> *The cloud service provider shall implement controls to maintain the accuracy and completeness of PII. Mechanisms shall be provided to allow the PII controller to correct, update, or delete inaccurate PII. Quality checks shall be performed on PII stored or processed.*
+
+Section A.7 establishes the principle that a public cloud PII processor should implement controls to maintain the accuracy and completeness of PII it processes on behalf of controllers, provide mechanisms for the controller to correct or update inaccurate PII, and avoid introducing quality degradation through its processing operations.
 
 ## What This Policy Does NOT Cover
 
@@ -88,7 +89,7 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 [Organisation] SHALL implement technical controls ensuring that PII stored in cloud systems is not degraded, corrupted, or altered through processing operations except as authorised by the PII controller. Specifically:
 
 - Storage systems SHALL implement integrity checking (e.g., checksums, cryptographic hashes) for PII data stores to detect unauthorised or accidental modification
-- Transformation operations performed on PII during processing SHALL be reversible or logged, ensuring the original data can be verified or restored
+- Transformation operations performed on PII during processing SHALL be reversible where technically feasible; where irreversible, the original PII state SHALL be preserved in a separate record or backup prior to transformation
 - Backup and replication operations SHALL preserve PII accuracy and completeness without data loss
 
 ## Mechanisms for Controller Correction
@@ -96,7 +97,7 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 [Organisation] SHALL provide PII controllers with technical capabilities to correct, update, and delete PII within cloud storage. These mechanisms SHALL:
 
 - Allow field-level correction or full record update for structured PII data stores
-- Propagate corrections to replicated copies (backups, read replicas, caches) within a reasonable timeframe — and in any case within the timeframe required for the controller to fulfil data subject rights obligations
+- Propagate corrections to active replicas and read replicas within 24 hours, and to backup copies within 72 hours, of the correction being applied — and in any case within the timeframe required for the controller to fulfil data subject rights obligations
 - Generate a confirmation record when corrections are completed, including which records were modified and the timestamp
 
 ## Quality Checks
@@ -105,16 +106,16 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 
 - **Data completeness checks**: Identify and flag records with missing mandatory fields that may indicate data corruption or incomplete transfer
 - **Data consistency checks**: Verify PII consistency across replicated or distributed data stores to detect replication errors
-- **Backup integrity verification**: Periodically restore and verify backup PII data to confirm backup integrity
+- **Backup integrity verification**: Restore and verify backup PII data at minimum quarterly for critical PII data stores, to confirm backup integrity
 
-Quality check results SHALL be logged and reviewed quarterly by the Cloud Engineering team. Material data quality issues SHALL be reported to the PII controller without undue delay.
+Quality check results SHALL be logged and reviewed quarterly by the Cloud Engineering team. A summary of quarterly quality check results SHALL also be provided to the DPO. Material data quality issues — defined as issues affecting more than 1% of records in a data store, or any issue that may have affected a data subject rights decision or caused inaccurate PII to be disclosed to a third party — SHALL be reported to the PII controller within 3 business days of identification. Where a data integrity failure is detected, the incident SHALL be escalated in accordance with CLD-POL-A.11 (Information Security).
 
 ## Processing-Induced Inaccuracy
 
 Where [Organisation] performs data transformation, enrichment, or processing operations on PII on behalf of a controller, [Organisation] SHALL:
 
 - Document the transformation logic and its effect on PII accuracy
-- Obtain controller authorisation for any transformation that modifies PII attributes
+- Obtain controller authorisation for any transformation that modifies PII attributes and is not already covered by the service agreement or documented processing description
 - Alert the controller if a processing operation produces results that indicate potential inaccuracy in the source data
 
 ---

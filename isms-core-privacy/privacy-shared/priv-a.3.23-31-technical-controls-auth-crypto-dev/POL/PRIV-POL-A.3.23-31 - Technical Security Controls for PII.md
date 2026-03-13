@@ -74,31 +74,31 @@ This policy establishes [Organisation]'s requirements for technical security con
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.3.23 — Secure authentication**
-> *Secure authentication technologies and procedures related to PII processing shall be implemented based on information access restrictions.*
+Control A.3.23 requires [Organisation] to implement secure authentication technologies and procedures for PII processing systems, calibrated to the access restrictions applicable to each system or dataset.
 
 **Control A.3.24 — Information backup**
-> *Backup copies of PII, and software and systems related to PII processing shall be maintained and regularly tested.*
+Control A.3.24 requires [Organisation] to maintain backup copies of PII and of the software and systems involved in PII processing, and to test those backups regularly.
 
 **Control A.3.25 — Logging**
-> *Logs that record activities, exceptions, faults and other relevant events related to PII processing shall be produced, stored, protected and analysed.*
+Control A.3.25 requires [Organisation] to produce, store, protect, and analyse logs that capture activities, exceptions, faults, and other relevant events related to PII processing.
 
 **Control A.3.26 — Use of cryptography**
-> *Rules for the effective use of cryptography related to PII processing, including cryptographic key management, shall be defined and implemented.*
+Control A.3.26 requires [Organisation] to define and implement rules for the effective use of cryptography in PII processing contexts, including cryptographic key management.
 
 **Control A.3.27 — Secure development life cycle**
-> *Rules for the secure development of software and systems related to PII processing shall be established and applied.*
+Control A.3.27 requires [Organisation] to establish and apply rules for the secure development of software and systems that are involved in PII processing.
 
 **Control A.3.28 — Application security requirements**
-> *Information security requirements related to PII processing shall be identified, specified and approved when developing or acquiring applications.*
+Control A.3.28 requires [Organisation] to identify, specify, and approve information security requirements related to PII processing when developing or acquiring applications.
 
 **Control A.3.29 — Secure system architecture and engineering principles**
-> *Principles for engineering secure systems related to processing PII shall be established, documented, maintained and applied to any information system development activities.*
+Control A.3.29 requires [Organisation] to establish, document, maintain, and apply principles for engineering secure systems in the context of PII processing, across all information system development activities.
 
 **Control A.3.30 — Outsourced development**
-> *The organization shall direct, monitor and review the activities related to outsourced PII processing system development.*
+Control A.3.30 requires [Organisation] to direct, monitor, and review activities related to the outsourced development of systems used for PII processing.
 
 **Control A.3.31 — Test information**
-> *Test information related to PII processing shall be appropriately selected, protected and managed.*
+Control A.3.31 requires [Organisation] to appropriately select, protect, and manage test information used in the context of PII processing systems.
 
 ## What This Policy Covers
 
@@ -203,7 +203,7 @@ Logs containing PII processing activity SHALL be:
 - Protected against modification and deletion (tamper-evident storage)
 - Classified at minimum CONFIDENTIAL
 - Accessible only to authorised personnel (IT Security Team, CISO, DPO for privacy investigation purposes)
-- Retained for minimum 12 months (or longer where required by applicable regulation or contract)
+- Retained for minimum 12 months as an operational floor, with a minimum of 3 years for logs that may be required as evidence of GDPR accountability compliance (e.g., access logs for data subject rights fulfilment, bulk deletion and anonymisation operations, and privileged access to PII systems). The CISO and DPO shall agree specific retention periods per log category in PRIV-IMP-A.3.23-31-TG, taking into account applicable regulatory requirements and contractual obligations
 
 ### Log Analysis
 
@@ -227,7 +227,7 @@ Log analysis standards and tools are defined in PRIV-IMP-A.3.23-31-TG, consisten
 - **Encryption at rest**: All CONFIDENTIAL and RESTRICTED PII stored in databases, files, or on media SHALL be encrypted at rest using an approved algorithm (minimum AES-256 or equivalent per ISMS-POL-A.8.24)
 - **Encryption in transit**: All PII transmitted across networks SHALL be encrypted in transit using current TLS standards (minimum TLS 1.2; TLS 1.3 preferred)
 - **Pseudonymisation**: Where PII is used for analytics, testing, research, or secondary purposes, pseudonymisation SHALL be applied to reduce re-identification risk where technically feasible
-- **Anonymisation**: Where irreversible anonymisation is applied (such that re-identification is not reasonably possible), the result is no longer PII — anonymisation decisions require DPO confirmation
+- **Anonymisation**: Where irreversible anonymisation is applied, the result is no longer PII subject to GDPR — but anonymisation must be robust: the DPO shall confirm, using a documented methodology, that re-identification is not reasonably possible by any means reasonably likely to be used, considering the risks of singling out (isolating an individual in a dataset), linkability (linking records across datasets to identify an individual), and inference (deriving attributes about an individual from remaining data). Anonymisation that does not withstand this assessment shall be treated as pseudonymisation, and the underlying data continues to be PII
 
 ### Key Management for PII Encryption
 
@@ -255,7 +255,7 @@ The secure development rules for systems involving PII processing SHALL include:
 
 ### GDPR Article 25 Compliance
 
-Systems involving PII processing SHALL be documented as privacy-by-design compliant before production deployment. The DPIA process (PRIV-POL-A.1.3.2-4) SHALL be triggered for high-risk processing systems during the design phase, not after deployment.
+Systems involving PII processing SHALL be documented as privacy-by-design compliant before production deployment. The DPIA process (PRIV-POL-A.1.2.6-9) SHALL be triggered for high-risk processing systems during the design phase, not after deployment.
 
 ---
 

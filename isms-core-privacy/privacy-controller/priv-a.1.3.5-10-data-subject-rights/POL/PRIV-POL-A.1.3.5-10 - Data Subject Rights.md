@@ -66,22 +66,22 @@ This policy establishes [Organisation]'s requirements for providing PII principa
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.1.3.5 — Providing mechanism to modify or withdraw consent**
-> *The organization shall provide a mechanism for PII principals to modify or withdraw their consent.*
+Control A.1.3.5 requires [Organisation] to give PII principals a functional mechanism through which they can modify or withdraw consent at any time.
 
 **Control A.1.3.6 — Providing mechanism to object to PII processing**
-> *The organization shall provide a mechanism for PII principals to object to the processing of their PII.*
+Control A.1.3.6 requires [Organisation] to give PII principals a mechanism to object to the processing of their PII.
 
 **Control A.1.3.7 — Access, correction or erasure**
-> *The organization shall implement policies, procedures or mechanisms to meet its obligations to PII principals to access, correct or erase their PII.*
+Control A.1.3.7 requires [Organisation] to put in place policies, procedures, and mechanisms that enable it to respond to requests from PII principals to access, correct, or erase their PII.
 
 **Control A.1.3.8 — PII controllers' obligations to inform third parties**
-> *The organization shall inform third parties with whom PII has been shared of any modification, withdrawal or objections pertaining to the shared PII, and implement appropriate policies, procedures or mechanisms to do so.*
+Control A.1.3.8 requires [Organisation] to notify third parties with whom PII has been shared whenever a modification, withdrawal, or objection affects that shared PII, and to have mechanisms in place to do so.
 
 **Control A.1.3.9 — Providing copy of PII processed**
-> *The organization shall be able to provide a copy of the PII that is processed, when requested by the PII principal.*
+Control A.1.3.9 requires [Organisation] to be capable of providing PII principals with a copy of their PII when requested.
 
 **Control A.1.3.10 — Handling requests**
-> *The organization shall define and document policies and procedures for handling and responding to legitimate requests from PII principals.*
+Control A.1.3.10 requires [Organisation] to define and document the policies and procedures it uses to receive, assess, and respond to legitimate requests from PII principals.
 
 ## What This Policy Does NOT Cover
 
@@ -147,6 +147,7 @@ Upon a valid access request, [Organisation] SHALL provide:
 - Confirmation of whether PII concerning the data subject is being processed
 - A copy of the personal data being processed
 - The supplementary information required by GDPR Article 15(1): purposes, categories, recipients, transfers, retention periods, rights, right to complain, data source, automated decision-making
+- Where CH FADP applies: the origin of the PII (i.e., from whom [Organisation] obtained it), as required by FADP Article 25. FADP-specific right variations are further addressed in PRIV-POL-00.
 
 ### Right to Rectification
 
@@ -167,6 +168,8 @@ Erasure requests that cannot be fulfilled (due to a countervailing legal obligat
 ### Right to Restriction of Processing
 
 Upon a valid restriction request (where accuracy is contested, processing is unlawful but deletion not wanted, retention needed for legal claims, or objection pending), [Organisation] SHALL restrict processing to storage only until the restriction condition resolves.
+
+While restriction is in place, PII shall not be processed beyond storage without the data subject's consent, unless processing is required for legal claims, protection of another person's rights, or important public interest reasons. [Organisation] SHALL inform the data subject before lifting any restriction.
 
 ---
 
@@ -204,7 +207,7 @@ Before fulfilling a rights request involving disclosure of PII, [Organisation] S
 
 ### Manifestly Unfounded or Excessive Requests
 
-[Organisation] may refuse requests that are manifestly unfounded or excessive (including repetitive requests). Refusals SHALL be documented with reasoning, and the data subject SHALL be informed of their right to complain to the supervisory authority.
+[Organisation] may refuse requests that are manifestly unfounded or excessive (including repetitive requests), or may charge a reasonable administrative fee as an alternative to refusal where appropriate. Refusals SHALL be documented with reasoning, and the data subject SHALL be informed of their right to complain to the supervisory authority.
 
 ### Data Subject Rights Register
 
@@ -220,7 +223,7 @@ All rights requests SHALL be logged in the **Data Subject Rights Register**, rec
 | **Legal/Compliance** | Advises on exemptions to rights; reviews refusal decisions; manages supervisory authority complaints arising from rights requests |
 | **IT Security Team** | Supports technical fulfilment of access and portability requests; implements erasure and restriction at technical level |
 | **Privacy Champions** | First point of contact for rights requests received in their business unit; escalate to DPO promptly |
-| **All Personnel** | Forward rights requests received via any channel to the DPO immediately |
+| **All Personnel** | Forward rights requests received via any channel to the DPO on the same business day of receipt |
 
 ---
 
@@ -231,7 +234,7 @@ All rights requests SHALL be logged in the **Data Subject Rights Register**, rec
 | Data Subject Rights Register | Log of all rights requests with dates, type, outcome | 5 years |
 | Request Response Records | Copies of responses sent to data subjects | 5 years |
 | Refusal Documentation | Documented reasoning for any refusal or extension | 5 years |
-| Third Party Notification Records | Evidence of informing third parties per A.1.3.8 | 3 years |
+| Third Party Notification Records | Evidence of informing third parties per A.1.3.8 | 5 years |
 | Consent Withdrawal Records | Log of consent withdrawals and cessation of processing | 3 years |
 
 ---

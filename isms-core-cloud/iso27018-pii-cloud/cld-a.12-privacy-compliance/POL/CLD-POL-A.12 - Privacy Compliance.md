@@ -42,9 +42,9 @@
 - ISMS-POL-A.5.19-23 (Supplier and Third-Party Relationships)
 - CLD-POL-A.1 (General)
 - CLD-POL-A.8 (Openness, Transparency — sub-processor disclosure)
-- CLD-POL-A.11.12 (Sub-contracted PII processing)
+- CLD-POL-A.11 (§11.12 — Sub-contracted PII processing)
 - ISO/IEC 27018:2025 Annex A, Section A.12 and Controls A.12.1–A.12.2
-- ISO/IEC 27701:2025 Controls A.2.3.11–A.2.3.12 (processor — transparency on processing locations)
+- ISO/IEC 27701:2025 Controls A.2.5.2 (basis for PII transfer between jurisdictions) and A.2.5.3 (countries and international organisations to which PII can be transferred)
 - GDPR Article 28(3)(a) (processor processes only on documented controller instructions); Article 44–49 (transfers to third countries); Article 46 (appropriate safeguards for international transfers)
 - CH FADP Article 16–17 (international transfers of personal data); Article 9(3) (processor obligations on sub-processors and locations)
 
@@ -65,13 +65,16 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 ## ISO/IEC 27018:2025 Control Statements
 
 **Section A.12 — Privacy compliance (principle)**
-> *The cloud service provider shall maintain and disclose to PII controllers information about the geographic locations at which PII is stored, processed, or transmitted. The provider shall implement mechanisms to enforce data residency requirements, obtain controller consent before relocating PII to new jurisdictions, and document the legal basis and safeguards for all cross-border transfers.*
+
+Section A.12 establishes the principle that a public cloud PII processor should maintain and disclose to controllers the geographic locations where PII is stored, processed, or transmitted, implement mechanisms to enforce data residency requirements, and document the legal basis for any cross-border transfers.
 
 **Control A.12.1 — Geographical location of PII**
-> *The public cloud PII processor shall disclose to the PII controller all countries and regions in which PII is stored, processed, or transits as part of cloud service delivery — including sub-processor locations. Any change to geographic location of PII processing shall require prior controller notification and, where required, consent. Data residency restrictions imposed by the controller in the service agreement shall be technically enforced.*
+
+Control A.12.1 requires the processor to disclose all countries and regions involved in PII processing — including sub-processor locations — to provide advance notice before changing those locations, and to technically enforce any residency restrictions agreed with the controller.
 
 **Control A.12.2 — Intended destination of PII**
-> *The public cloud PII processor shall, upon request or proactively where required, inform the PII controller of all intended destinations to which PII may be transferred, including jurisdictions outside the controller's home country. For each cross-border or cross-jurisdiction transfer, [Organisation] shall document the applicable transfer mechanism (e.g., adequacy decision, standard contractual clauses, binding corporate rules) and make this information available to the controller.*
+
+Control A.12.2 requires the processor to document and communicate all intended destinations for PII transfers, including the applicable transfer mechanism and safeguards for each cross-border or cross-jurisdiction flow.
 
 ## Regulatory Framework
 
@@ -92,9 +95,9 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 - **Primary storage locations**: Data centres and cloud regions where PII at rest resides
 - **Processing locations**: Compute regions where PII is actively processed
 - **Transit routes**: Regions through which PII may pass during replication, backup, or delivery operations
-- **Sub-processor locations**: All geographic locations of sub-processors engaged under CLD-POL-A.11.12
+- **Sub-processor locations**: All geographic locations of sub-processors engaged under CLD-POL-A.11 (§11.12)
 
-The PII Processing Locations Register SHALL be made available to PII controllers upon request and SHALL be publicly accessible for controllers operating under general authorisation (e.g., linked from [Organisation]'s trust portal or DPA annex).
+The PII Processing Locations Register SHALL be made available to PII controllers upon request. A summary version — covering primary storage and processing locations and sub-processor countries, but omitting detailed transit route information — SHALL be published on [Organisation]'s trust portal for controllers operating under general authorisation. Authenticated controllers may request the full register via the trust portal or directly from the DPO. Transit route details are provided to authenticated controllers only, given the security implications of full public disclosure.
 
 ## Data Residency Enforcement
 
@@ -113,7 +116,7 @@ Before changing the geographic location of PII processing — including opening 
 3. Obtain prior consent from controllers whose service agreements require specific consent (not merely general authorisation) for location changes
 4. Update the PII Processing Locations Register within 5 business days of the change taking effect
 
-Emergency location changes (e.g., due to data centre failure or force majeure) SHALL be notified to affected controllers without undue delay, with retroactive documentation of the change and its justification.
+Emergency location changes (e.g., due to data centre failure or force majeure) SHALL be notified to affected controllers without undue delay. [Organisation] SHALL additionally provide affected controllers with an interim written acknowledgment of the deviation — including the new temporary location, the expected duration of the deviation, and any temporary residency gap — so that controllers can make informed decisions about their own notification obligations during the gap period. Retroactive formal documentation of the change and its justification SHALL be completed within 5 business days.
 
 ---
 
@@ -126,7 +129,7 @@ Emergency location changes (e.g., due to data centre failure or force majeure) S
 - Sub-processors (whether within the EEA or outside)
 - Backup and disaster recovery sites in third countries
 - Cloud provider infrastructure in jurisdictions outside the controller's home country
-- Support or operations personnel accessing PII remotely from outside the processing region
+- Support or operations personnel accessing PII remotely from outside the processing region (handled via jump server architecture keeping data in-region, or via SCCs incorporated in employment or contractor agreements — [Organisation]'s specific mechanism SHALL be documented in the transfer destination records)
 
 For each identified destination, [Organisation] SHALL document:
 
@@ -143,12 +146,26 @@ For each identified destination, [Organisation] SHALL document:
 For transfers of PII to countries outside the EEA or Switzerland that lack an adequacy decision, [Organisation] SHALL implement one of the following approved transfer mechanisms:
 
 - **Standard Contractual Clauses (SCCs)**: EC-approved SCCs (2021 set) incorporated into sub-processor and data processing agreements
-- **UK International Data Transfer Agreement (IDTA)**: For transfers to/from the United Kingdom
-- **Swiss Standard Data Protection Clauses**: For transfers subject to CH FADP
+- **UK International Data Transfer Agreement (IDTA)**: For transfers to/from the United Kingdom — Legal/Compliance Officer to verify current ICO guidance on IDTA versions before execution
+- **Swiss FDPIC Standard Data Protection Clauses**: For transfers subject to CH FADP — Legal/Compliance Officer to confirm exact instrument title and publication date from the FDPIC website before execution
 - **Adequacy decision**: Where the destination country has an EU or Swiss adequacy decision in force at the time of transfer
 - **Binding Corporate Rules (BCRs)**: Where applicable for intra-group transfers
 
-[Organisation] SHALL NOT transfer PII to a third country unless one of the above mechanisms is in place and documented. Where the adequacy status of a destination country changes, [Organisation] SHALL review and implement alternative mechanisms within 30 days of the change taking effect.
+[Organisation] SHALL NOT transfer PII to a third country unless one of the above mechanisms is in place and documented. Where the adequacy status of a destination country changes, [Organisation] SHALL:
+
+1. **Cease new transfers** to the affected country within **5 business days** of the adequacy decision lapsing or being invalidated
+2. **Implement alternative transfer mechanisms** (e.g., SCCs) within **60 days**, with DPO oversight and controller notification throughout
+3. **Notify affected PII controllers** upon becoming aware of the adequacy change, confirming the cessation date and intended alternative mechanism
+
+Separating the cessation obligation from the alternative mechanism implementation reflects the practical reality of renegotiating instruments with multiple sub-processors simultaneously while protecting data subjects from ongoing unsafeguarded transfers.
+
+## Transfer Impact Assessments
+
+A Transfer Impact Assessment (TIA) is required before transferring PII to any country where there is reason to believe the local legal framework does not provide substantially equivalent protections to the GDPR. Indicators triggering a TIA include: countries with documented mass surveillance programmes, no independent data protection authority, or no rule of law protections for foreign nationals' data. The DPO SHALL maintain a list of jurisdictions currently designated as requiring a TIA. TIA methodology follows EDPB Recommendations 01/2020 on supplementary measures. Completed TIAs are retained per the evidence schedule and made available to controllers upon request.
+
+## Sub-Processor Location Changes
+
+Sub-processors are contractually required to notify [Organisation] of any change to the geographic location of their PII processing operations within 10 business days of the change (per CLD-POL-A.11 §11.12 sub-processor agreement requirements). [Organisation] SHALL review sub-processor location data at minimum annually as part of the annual sub-processor audit under CLD-POL-A.11 §11.12, and update the PII Processing Locations Register accordingly.
 
 ## Controller Information
 

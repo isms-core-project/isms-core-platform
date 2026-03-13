@@ -42,7 +42,7 @@
 - CLD-POL-A.2 (Consent and Choice — A.2.1 co-operation on rights)
 - CLD-POL-A.7 (Accuracy and Quality — rectification capability)
 - ISO/IEC 27018:2025 Annex A, Section A.9 (Individual Participation and Access — principle)
-- ISO/IEC 27701:2025 Controls A.2.3.13–A.2.3.14 (processor — rights assistance)
+- ISO/IEC 27701:2025 Control A.2.3.2 (processor — comply with obligations to PII principals, including supporting the fulfilment of data subject rights)
 - GDPR Articles 15–22 (data subject rights); Article 28(3)(e) (processor assists with rights)
 - CH FADP Articles 25–32 (data subject rights); Article 9(2)(c) (processor assists controller)
 
@@ -50,7 +50,7 @@
 
 ## Executive Summary
 
-This policy establishes [Organisation]'s requirements as a public cloud PII processor with regard to individual participation and access — specifically the obligation to provide PII controllers with technical mechanisms and operational support to enable fulfilment of data subject access requests (DSARs) and other data subject rights within statutory timeframes — in accordance with ISO/IEC 27018:2025 Annex A, Section A.9.
+This policy establishes [Organisation]'s requirements as a public cloud PII processor with regard to individual participation and access — specifically the obligation to provide PII controllers with technical mechanisms and operational support to enable fulfilment of data subject rights requests and other data subject rights within statutory timeframes — in accordance with ISO/IEC 27018:2025 Annex A, Section A.9.
 
 **Scope**: All cloud services provided by [Organisation] that store or process PII on behalf of PII controllers.
 
@@ -65,7 +65,8 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 ## ISO/IEC 27018:2025 — Section A.9
 
 **Section A.9 — Individual participation and access (principle)**
-> *The cloud service provider shall provide mechanisms to the PII controller to support fulfilment of data subject access requests (DSAR). Response capabilities shall be tested and documented. The provider shall assist the controller in responding to DSARs within statutory timeframes.*
+
+Section A.9 establishes the principle that a public cloud PII processor should provide PII controllers with mechanisms to support the fulfilment of data subject access and other rights requests, ensure those capabilities are tested and documented, and assist controllers in meeting their statutory response obligations.
 
 ## What This Policy Does NOT Cover
 
@@ -92,14 +93,14 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 |-------|-------------------------------------|
 | **Access (Art. 15 GDPR)** | Provide capability to export all PII associated with a data subject in structured, readable format |
 | **Rectification (Art. 16)** | Provide capability to update or correct PII records including replication propagation |
-| **Erasure (Art. 17)** | Provide confirmed deletion of PII including backups and replicated copies within defined timeframe |
-| **Restriction (Art. 18)** | Provide capability to isolate PII from active processing without deleting it |
+| **Erasure (Art. 17)** | Provide deletion of PII from all active storage within 5 business days; backup and replicated copies purged within 15 business days |
+| **Restriction (Art. 18)** | Isolate PII from active processing within 1 business day ("functional restriction"); full propagation to replicated data stores within 5 business days |
 | **Portability (Art. 20)** | Provide PII export in machine-readable, commonly used format (JSON, CSV) |
-| **Objection (Art. 21)** | Provide capability to flag and suspend automated processing involving specific PII |
+| **Objection (Art. 21)** | Provide capability to suspend or restrict processing of specific PII records upon controller instruction |
 
 ## Capability Testing
 
-[Organisation] SHALL test data subject rights fulfilment capabilities at least **annually** and upon any material change to service architecture. Testing SHALL:
+[Organisation] SHALL test data subject rights fulfilment capabilities at least **annually** and upon any material change to service architecture — including changes to data storage infrastructure, backup architecture, replication topology, or API interfaces used for rights fulfilment. Testing SHALL:
 
 - Cover each right listed in the table above for each service category
 - Verify that data export, deletion, and restriction operations complete within the defined response timeframe
@@ -115,7 +116,7 @@ Material gaps identified during testing SHALL be tracked as remediation items an
 - **Acknowledge** controller DSAR-related request: within 1 business day
 - **Complete** data access exports and rectification requests: within 5 business days
 - **Complete** erasure requests (including propagation to backups): within 15 business days
-- **Complete** restriction requests: within 1 business day (functional; full propagation within 5)
+- **Complete** restriction requests: within 1 business day (functional — PII isolated from active processing); full propagation to replicated data stores within 5 business days
 
 Where a specific service agreement defines shorter timeframes, those timeframes prevail.
 
@@ -128,7 +129,7 @@ Where a specific service agreement defines shorter timeframes, those timeframes 
 - Any limitations on rights fulfilment (e.g., backup deletion timelines)
 - The escalation path for requesting [Organisation] assistance where self-service is insufficient
 
-This documentation SHALL be kept current and updated within 30 days of any material capability change.
+This documentation SHALL be kept current and updated within 30 days of any material capability change — including changes to data storage infrastructure, backup architecture, replication topology, or API interfaces. Where a data subject rights capability is temporarily unavailable, [Organisation] SHALL notify affected controllers of the outage and the expected restoration timeframe, and shall provide manual assistance (e.g., staff-assisted export) where a controller faces a statutory deadline during the outage period. Manual fallback procedures are documented in [Organisation]'s incident response plan.
 
 ---
 

@@ -76,13 +76,13 @@ This policy establishes **WHAT** classification criteria and transfer rules appl
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.3.5 — Classification of information**
-> *Information shall be classified according to the information security needs of the organization, taking into consideration PII, based on confidentiality, integrity, availability and relevant interested party requirements.*
+Control A.3.5 requires [Organisation] to classify information according to its information security needs, taking PII content into account alongside confidentiality, integrity, availability, and the requirements of relevant interested parties.
 
 **Control A.3.6 — Labelling of information**
-> *An appropriate set of procedures for information labelling that considers PII shall be developed and implemented in accordance with the information classification scheme adopted by the organization.*
+Control A.3.6 requires [Organisation] to develop and implement information labelling procedures that recognise PII, consistent with the organisation's classification scheme.
 
 **Control A.3.7 — Information transfer**
-> *Information transfer rules, procedures, or agreements related to processing PII shall be in place for all types of transfer facilities within the organization and between the organization and other parties.*
+Control A.3.7 requires [Organisation] to have in place rules, procedures, and agreements governing the transfer of PII through all types of transfer facilities, both within and outside the organisation.
 
 ## What This Policy Covers
 
@@ -156,14 +156,15 @@ The following minimum classification levels SHALL apply to information containin
 | **Ordinary personal data** (name, address, contact details, employment record) | CONFIDENTIAL |
 | **Financial personal data** (bank accounts, payment records, salary, credit information) | CONFIDENTIAL |
 | **Special category PII** (health/medical, biometric, genetic, racial/ethnic origin, religious belief, political opinion, sexual life/orientation, trade union membership) | RESTRICTED |
-| **Sensitive personal data** (children's data, criminal records, national ID numbers, authentication credentials) | RESTRICTED |
+| **Sensitive personal data** (children's data, criminal records, national ID numbers) | RESTRICTED |
+| **Authentication credentials** (passwords, tokens, cryptographic keys associated with individual identities) | RESTRICTED — included for operational convenience as they commonly co-exist with PII in identity records; classified RESTRICTED on information security grounds per ISMS-POL-A.5.12-13 |
 | **PII of high-risk individuals** (vulnerable persons, whistleblowers, data subjects under protective measures) | RESTRICTED |
 
 ### PII Aggregation Rule
 
 Where information individually classified below CONFIDENTIAL is combined such that PII can be derived, identified, or inferred, the aggregated dataset SHALL be classified at minimum CONFIDENTIAL. Where the aggregated dataset contains or enables derivation of special category PII, it SHALL be classified RESTRICTED.
 
-The Data Owner (or DPO where no Data Owner is assigned) SHALL make the aggregation classification determination and document it in the Classification Register.
+The Data Owner (or DPO where no Data Owner is assigned) SHALL make the aggregation classification determination and document it in the Classification Register. The DPO owns the Classification Register.
 
 ### Classification Authority for PII
 
@@ -271,7 +272,7 @@ Transfers of PII to countries or international organisations outside the EEA (fo
 |-----------|--------------|
 | Adequacy decision (EU Commission / Swiss FDPIC) | Transfers to countries with recognised adequate protection — no additional measures required |
 | Standard Contractual Clauses (SCCs) | Transfers to countries without adequacy — EU SCCs (2021) or Swiss SCCs as applicable |
-| Binding Corporate Rules (BCRs) | Intra-group transfers where BCRs are approved by competent DPA |
+| Binding Corporate Rules (BCRs) | Intra-group transfers where BCRs are approved by competent DPA — requires DPA approval and is applicable only to corporate groups that have undergone the BCR approval process; this mechanism is included for completeness; its availability to [Organisation] depends on corporate structure |
 | Article 49 derogations | Exceptional circumstances only (data subject consent, vital interests, important public interest, legal claims) — not for systematic transfers |
 
 **Transfer Impact Assessment**:
@@ -333,12 +334,12 @@ The following evidence demonstrates operation of this policy:
 
 | Evidence | Description | Retention |
 |---------|-------------|-----------|
-| Classification Register | Record of PII dataset classifications, including aggregation decisions and classification authority | 3 years |
+| Classification Register | Record of PII dataset classifications, including aggregation decisions and classification authority | 3 years from the date the classification is superseded or the dataset is disposed of |
 | Data Asset Register | System-level PII labelling records (pii_present, pii_categories, jurisdictional scope) | Current + 3 years |
 | International Transfer Register | TIA records, SCCs, adequacy decision references, DPO approvals for cross-border PII transfers | Duration of transfer activity + 3 years |
 | Transfer Agreement Register | Signed processor agreements, joint controller arrangements, recipient agreements | Duration of agreement + 3 years |
-| Internal Transfer Logs | Logs of RESTRICTED PII internal transfers, including purpose and authorisation | 3 years |
-| Classification Review Records | Evidence of periodic classification review and trigger-based reviews | 3 years |
+| Internal Transfer Logs | Logs of RESTRICTED PII internal transfers, including purpose and authorisation | 3 years from the date of the transfer |
+| Classification Review Records | Evidence of periodic classification review and trigger-based reviews | 3 years from the date of the review |
 
 ---
 

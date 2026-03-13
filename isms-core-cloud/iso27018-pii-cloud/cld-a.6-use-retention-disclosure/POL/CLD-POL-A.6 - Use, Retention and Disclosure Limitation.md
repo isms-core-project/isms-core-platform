@@ -44,7 +44,7 @@
 - CLD-POL-A.5 (Data Minimisation)
 - CLD-POL-A.10 (Accountability — breach notification, return/disposal)
 - ISO/IEC 27018:2025 Annex A, Section A.6 and Controls A.6.1–A.6.2
-- ISO/IEC 27701:2025 Controls A.2.3.7–A.2.3.9 (processor — use, retention, disclosure)
+- ISO/IEC 27701:2025 Controls A.2.5.4 (records of PII disclosures to third parties), A.2.5.5 (notification of PII disclosure requests) and A.2.5.6 (legally binding PII disclosures)
 - GDPR Article 5(1)(b) and (e) (purpose limitation, storage limitation); Article 28(3)(a) (instruction-only); Article 28(3)(f) (assist with regulatory obligations)
 - CH FADP Article 6(3) (purpose limitation); Article 9(2)(d) (processor duty to assist)
 
@@ -65,24 +65,27 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 ## ISO/IEC 27018:2025 Control Statements
 
 **Section A.6 — Use, retention and disclosure limitation (principle)**
-> *PII shall be retained only for as long as necessary for the specified purpose. Retention schedules shall be documented and enforced. PII shall be disclosed only to authorised parties. Third-party disclosures shall be documented and restricted to the minimum necessary.*
+
+Section A.6 establishes the principle that PII should be retained only as long as necessary for its specified purpose, with documented and enforced retention schedules, and that disclosures to third parties should be restricted to authorised recipients and limited to the minimum necessary.
 
 **Control A.6.1 — PII disclosure notification**
-> *Where the public cloud PII processor is legally compelled to disclose PII to a third party (e.g. law enforcement, regulatory authority), the processor shall notify the PII controller of this requirement prior to disclosure unless prohibited by law. Where prior notification is prohibited, the processor shall notify the controller at the earliest opportunity after the legal prohibition lapses.*
+
+Control A.6.1 requires the processor to notify the PII controller when legally compelled to disclose PII to a third party — before disclosure where possible, or at the earliest opportunity after any legal prohibition on notification lapses.
 
 **Control A.6.2 — Recording of PII disclosures**
-> *The public cloud PII processor shall maintain records of all disclosures of PII to third parties, including: the recipient, date, categories of PII disclosed, legal basis for disclosure, and whether the PII controller was notified. These records shall be made available to the PII controller on request and retained for a period sufficient to demonstrate compliance.*
+
+Control A.6.2 requires the processor to maintain records of all third-party PII disclosures, capturing the recipient, date, PII categories, legal basis, and whether the controller was notified, and to make those records available to the controller on request.
 
 ## What This Policy Does NOT Cover
 
-- Primary data retention periods for PII at rest — these are set by the PII controller's instructions and included in service agreements
+- Primary data retention periods for PII at rest — these are set by the PII controller's instructions and included in service agreements. Where a retention instruction conflicts with a legal hold or compelled retention order, [Organisation] retains PII for the legally required period and notifies the controller. See CLD-POL-A.10.3 for end-of-contract return and disposal.
 - Return or disposal of PII upon contract termination — addressed in CLD-POL-A.10.3
 
 ## Regulatory Framework
 
 **Tier 1: Mandatory Compliance** (per PRIV-POL-00):
 
-- **EU GDPR**: Article 5(1)(b) (purpose limitation); Article 5(1)(e) (storage limitation); Article 28(3)(a) (instruction-only processing); Article 28(3)(f) (processor assists with controller's regulatory obligations, including breach notification)
+- **EU GDPR**: Article 5(1)(b) (purpose limitation); Article 5(1)(e) (storage limitation); Article 28(3)(a) (instruction-only processing); Article 28(3)(f) (processor assists the controller in fulfilling obligations under Articles 32–36 — security, breach notification, and DPIA)
 - **CH FADP**: Article 6(3) (purpose limitation); Article 9(2)(d) (processor assists controller)
 - **ISO/IEC 27018:2025**: Controls A.6.1 and A.6.2
 
@@ -110,7 +113,7 @@ Where [Organisation] receives a legally binding request from a law enforcement a
    - The legal basis cited for the request
    - The requested disclosure deadline
 
-2. Allow the PII controller a reasonable opportunity to seek legal challenge or injunctive relief before disclosure, where the disclosure deadline permits
+2. Allow the PII controller at least 5 business days to seek legal challenge or injunctive relief before disclosure, where the disclosure deadline permits. Where the deadline does not allow 5 business days, [Organisation] provides the maximum time available
 
 3. Process the disclosure only after:
    - Controller notification has been given and the response period has lapsed, or
@@ -122,11 +125,11 @@ Where applicable law prohibits [Organisation] from notifying the PII controller 
 
 - Document the legal prohibition and the date from which notification is restricted
 - Notify the PII controller at the **earliest opportunity** after the legal prohibition lapses
-- If [Organisation] is permanently prohibited from notifying the controller (e.g., ongoing national security order), [Organisation] SHALL publish a transparency report or warrant canary to the maximum extent legally permissible
+- If [Organisation] is permanently prohibited from notifying the controller (e.g., ongoing national security order), [Organisation] SHALL publish a transparency report or warrant canary to the maximum extent legally permissible. The warrant canary SHALL be reviewed and updated at minimum quarterly, with the Legal/Compliance Officer responsible for maintaining its accuracy
 
 ## Minimum Disclosure
 
-All legally compelled disclosures SHALL be limited to the minimum PII required to satisfy the legal obligation. [Organisation] SHALL not provide broader access or data sets than specifically required by the legal order.
+All legally compelled disclosures SHALL be limited to the minimum PII required to satisfy the legal obligation. [Organisation] SHALL NOT provide broader access or data sets than specifically required by the legal order. The CISO SHALL confirm that [Organisation] has technical capability to produce scoped PII extracts prior to any disclosure, and SHALL use that capability to limit the scope of data provided.
 
 ---
 
@@ -144,7 +147,7 @@ All legally compelled disclosures SHALL be limited to the minimum PII required t
 | **Volume** | Approximate number of data subjects affected |
 | **Legal basis** | Legal authority or controller instruction authorising the disclosure |
 | **Controller notified** | Yes / No — and if No, reason and date of subsequent notification |
-| **Authorised by** | [Organisation] officer who authorised the disclosure |
+| **Authorised by** | [Organisation] officer who authorised the disclosure. Where pre-authorisation was not possible due to urgency, the authorising officer SHALL be documented within 24 hours of the disclosure |
 
 ## Access and Retention
 
@@ -152,7 +155,7 @@ The PII Disclosure Register SHALL be:
 
 - Maintained by the DPO and protected against unauthorised modification
 - Made available to any PII controller upon request (for records pertaining to their PII)
-- Retained for a minimum of **5 years** from the date of each recorded disclosure
+- Retained for a minimum of **5 years** from the date of each recorded disclosure — 5-year retention reflects the standard contractual limitation period applicable in EU and Swiss jurisdictions for processor agreement disputes, and supports retrospective regulatory audit requirements
 - Subject to quarterly review by the DPO
 
 ---

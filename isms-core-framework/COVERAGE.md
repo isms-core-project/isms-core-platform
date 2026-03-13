@@ -222,7 +222,7 @@ Any change that affects naming, stacking, mapping, or counts must update:
 
 | Date | Change | Author |
 |---|---|---|
-| 2026-02-04 | Initial coverage map created from current pack list (53 packs) | Gregory Griffin |
+| 2026-02-04 | Initial coverage map created from current pack list (53 packs) | The ISMS Core Project |
 
 ---
 

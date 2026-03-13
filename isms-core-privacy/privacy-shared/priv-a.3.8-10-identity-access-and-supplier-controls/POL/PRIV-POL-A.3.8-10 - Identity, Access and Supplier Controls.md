@@ -76,13 +76,13 @@ This policy establishes **WHAT** identity lifecycle, access rights, and supplier
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.3.8 — Identity management**
-> *The full life cycle of identities related to PII processing shall be managed.*
+Control A.3.8 requires [Organisation] to manage the full lifecycle of all identities that have a relationship to PII processing — covering provisioning, modification, suspension, and decommissioning of both human and non-human identities.
 
 **Control A.3.9 — Access rights**
-> *Access rights to PII and other associated assets related to PII processing shall be provisioned, reviewed, modified and removed in accordance with the organization's topic-specific policy on and rules for access control.*
+Control A.3.9 requires [Organisation] to provision, review, modify, and remove access rights to PII and other associated assets in accordance with its topic-specific access control policy and rules.
 
 **Control A.3.10 — Addressing information security within supplier agreements**
-> *Relevant information security requirements related to PII processing shall be established and agreed with each supplier based on the type of supplier relationship.*
+Control A.3.10 requires [Organisation] to establish and agree relevant information security requirements for PII processing with each supplier, calibrated to the type of supplier relationship.
 
 ## What This Policy Covers
 
@@ -165,8 +165,9 @@ Where a role changes, an individual transfers to a different function, or circum
 When an individual's employment or engagement ends, or a service account's purpose is terminated:
 
 - PII access rights SHALL be removed on or before the last day of access (employee departure, contract end)
-- Identity decommissioning records SHALL be retained for the period specified in PRIV-IMP-A.3.8-10-TG, to support audit and investigation
-- Where decommissioning is delayed for technical reasons, access SHALL be suspended immediately and decommissioning completed within the timeframe specified in PRIV-IMP-A.3.8-10-TG
+- Identity decommissioning records SHALL be retained for 3 years from the date of decommissioning, to support audit and investigation
+- Where decommissioning is delayed for technical reasons, access SHALL be suspended immediately and decommissioning completed within 5 business days
+- To ensure timely decommissioning where HR notification is not received, IT Security SHALL perform a monthly reconciliation of active identities with PII access against current HR records; any identity without a current active employment or engagement record SHALL be suspended pending DPO confirmation
 
 ### Non-Human Identity Management
 
@@ -191,7 +192,7 @@ Access rights to PII SHALL be governed by:
 
 1. **Minimum necessary access**: Access granted shall be limited to the minimum PII and associated assets required to fulfil the documented processing purpose
 2. **Need-to-process**: Access is only granted where there is a documented and current need to process the specific PII
-3. **Segregation of duties**: Where PII processing involves high-risk operations (deletion, export, bulk access), segregation of duties controls SHALL be implemented to prevent single-actor abuse
+3. **Segregation of duties**: Where PII processing involves high-risk operations (deletion, export, bulk access), segregation of duties controls SHALL be implemented to prevent single-actor abuse. The minimum standard is that no single identity may both initiate and approve a high-risk PII operation
 4. **Time-limited access**: Where access is granted for a specific project, task, or temporary purpose, access rights SHALL be time-limited and automatically reviewed at expiry
 
 ### Access Rights Review for PII
@@ -204,7 +205,7 @@ Access rights to PII and PII processing systems SHALL be reviewed:
 - **Following a privacy incident** that involved unauthorised or inappropriate access to PII
 - **Upon Data Owner request** for the relevant PII dataset
 
-Access rights reviews SHALL be documented. Rights confirmed as no longer necessary SHALL be removed within the timeframe specified in PRIV-IMP-A.3.8-10-TG. Review records SHALL be maintained as evidence.
+Access rights reviews SHALL be documented. Rights confirmed as no longer necessary SHALL be removed within 5 business days for standard access and immediately for privileged access. Review records SHALL be maintained as evidence.
 
 ### Privileged Access to PII
 
@@ -291,6 +292,7 @@ PII-related supplier agreements SHALL be reviewed:
 - Upon material change to the nature of PII processed by the supplier
 - Following a security incident involving the supplier
 - Upon significant change to applicable regulatory requirements
+- Upon notification of a change to the supplier's sub-processor arrangements
 
 ---
 
@@ -318,11 +320,11 @@ The following evidence demonstrates operation of this policy:
 |---------|-------------|-----------|
 | Identity Register | All identities (human and non-human) with PII access, including lifecycle status | Current + 3 years |
 | Access Rights Register | PII access rights by identity, dataset, and system; approval and review records | Current + 3 years |
-| Access Rights Review Records | Documented evidence of periodic access rights certification, including removed rights | 3 years |
+| Access Rights Review Records | Documented evidence of periodic access rights certification, including removed rights | 3 years from the date of the review |
 | Supplier Agreement Inventory | List of all supplier agreements with PII categorisation and PII security clause reference | Current + 3 years |
 | Supplier Agreement Copies | Signed agreements (or agreement schedules) containing PII security obligations | Duration of agreement + 3 years |
-| Privileged Access Approval Records | DPO notifications and Data Owner approvals for privileged PII access | 3 years |
-| Identity Decommissioning Records | Evidence of timely access removal upon departure or role change | 3 years |
+| Privileged Access Approval Records | DPO notifications and Data Owner approvals for privileged PII access | 3 years from the date access was revoked |
+| Identity Decommissioning Records | Evidence of timely access removal upon departure or role change | 3 years from the date of decommissioning |
 
 ---
 

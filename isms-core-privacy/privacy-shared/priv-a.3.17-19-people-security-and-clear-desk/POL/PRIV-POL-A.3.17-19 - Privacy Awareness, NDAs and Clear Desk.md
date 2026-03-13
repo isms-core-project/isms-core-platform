@@ -47,7 +47,7 @@
 - ISMS-POL-A.7.7 (Clear Desk and Clear Screen — ISMS parallel)
 - ISO/IEC 27701:2025 Controls A.3.17, A.3.18, A.3.19
 - ISO/IEC 27701:2025 Annex B (Implementation guidance B.3.17, B.3.18, B.3.19)
-- GDPR Article 29 (Processing under the authority of controller or processor — bound personnel); Article 32(4) (Ensuring bound persons act only on instruction); Article 38(6) (DPO independence from data processing decisions)
+- GDPR Article 29 (Processing under the authority of controller or processor — bound personnel); Article 32(4) (Ensuring bound persons act only on instruction); Article 38(5) (DPO professional secrecy obligation); Article 38(6) (DPO independence — prohibition on role conflicts)
 - CH FADP Article 7 (Technical and organisational measures for personnel)
 
 ---
@@ -77,13 +77,13 @@ This policy establishes **WHAT** awareness, confidentiality, and physical contro
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.3.17 — Information security awareness, education and training**
-> *Personnel of the organization and relevant interested parties shall receive appropriate information security awareness education and training, and regular updates of the organization's information security policy, topic-specific policies and procedures, as relevant for their job function, as they relate to PII processing.*
+Control A.3.17 requires [Organisation] to provide all personnel and relevant interested parties with appropriate information security awareness, education, and training — including regular updates on policies and procedures — to the extent relevant to their role in PII processing.
 
 **Control A.3.18 — Confidentiality or non-disclosure agreements**
-> *Confidentiality or non-disclosure agreements reflecting the organization's needs for the protection of PII shall be identified, documented, regularly reviewed and signed by personnel and other relevant interested parties.*
+Control A.3.18 requires [Organisation] to identify, document, review, and obtain signatures on confidentiality or non-disclosure agreements that reflect its requirements for protecting PII, from all personnel and other relevant interested parties.
 
 **Control A.3.19 — Clear desk and clear screen**
-> *Clear desk rules for papers and removable storage media and clear screen rules for information processing facilities shall be defined and appropriately enforced.*
+Control A.3.19 requires [Organisation] to define and appropriately enforce clear desk rules for papers and removable storage media, and clear screen rules for information processing facilities, in the context of PII protection.
 
 ## What This Policy Covers
 
@@ -145,7 +145,7 @@ For complete regulatory categorisation, refer to PRIV-POL-00.
 | **Personnel with elevated PII responsibility** (Data Owners, Privacy Champions, System Owners for PII systems) | Role-specific privacy training covering PIMS controls for their domain (on appointment + annual) |
 | **DPO and privacy function** | Advanced training; professional development; regulatory updates (ongoing) |
 | **Contractors and temporary workers** | Minimum: general privacy awareness before PII access is granted |
-| **Relevant processors** | Notification of applicable PIMS policies per processor agreement; training obligation flowing through agreement |
+| **Relevant processors** | Processor agreements SHALL require the processor to ensure its personnel who handle [Organisation]'s PII receive privacy training commensurate with the sensitivity of the PII processed; [Organisation] shall provide relevant PIMS policy summaries to processors upon request; processors must confirm training compliance as part of the annual processor review |
 
 ### Privacy Awareness Content Requirements
 
@@ -198,7 +198,7 @@ The following persons and parties SHALL be bound by a signed confidentiality or 
 | **Temporary workers** | Staffing agency agreement or standalone NDA before PII access |
 | **PII processors** | Processor agreement (Article 28 GDPR) — includes confidentiality obligations |
 | **Professional advisors** (legal, audit, insurance) with PII access | Engagement letter or standalone NDA |
-| **DPO** | Independence per GDPR Article 38.6; DPO may not hold conflicting roles but is bound by professional secrecy under Article 38.5 |
+| **DPO** | The DPO is bound by professional secrecy per GDPR Article 38(5); the DPO may not hold roles that create a conflict of interest per GDPR Article 38(6). A formal confidentiality agreement is not required given these statutory obligations, but the DPO appointment letter SHALL confirm secrecy obligations explicitly |
 
 ### Minimum PII Content in Confidentiality Agreements
 
@@ -247,7 +247,7 @@ The DPO maintains a Confidentiality Agreement Register recording agreement statu
 
 **Mandatory clear screen requirements**:
 
-- Workstations accessing PII SHALL lock automatically after a maximum idle period (configured per PRIV-IMP-A.3.17-19-TG)
+- Workstations accessing PII SHALL lock automatically after a maximum idle period of 5 minutes; the technical configuration SHALL enforce this ceiling (specific settings documented in PRIV-IMP-A.3.17-19-TG)
 - Personnel SHALL manually lock their screen before leaving a workstation unattended, even briefly
 - Screens displaying PII SHALL be positioned to minimise visibility to unauthorised persons; privacy screens SHALL be used in open-plan, public-facing, or shared environments where PII is routinely displayed
 - Meeting rooms and shared display screens: PII SHALL NOT be projected or displayed in meeting rooms unless all attendees are authorised to view the PII; PII SHALL be closed or screened before external participants join

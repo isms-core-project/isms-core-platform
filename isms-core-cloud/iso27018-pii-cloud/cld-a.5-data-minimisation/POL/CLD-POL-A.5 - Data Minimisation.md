@@ -44,7 +44,7 @@
 - CLD-POL-A.6 (Use, Retention and Disclosure Limitation)
 - CLD-POL-A.11 (Information Security — covers portable media, encryption, disposal)
 - ISO/IEC 27018:2025 Annex A, Section A.5 and Control A.5.1
-- ISO/IEC 27701:2025 Controls A.2.3.4–A.2.3.6 (processor — minimisation)
+- ISO/IEC 27701:2025 Controls A.2.4.2 (processor — temporary files) and A.2.4.3 (processor — return, transfer or disposal of PII)
 - GDPR Article 5(1)(c) (data minimisation); Article 5(1)(e) (storage limitation)
 - CH FADP Article 6(2) (proportionality)
 
@@ -65,10 +65,12 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 ## ISO/IEC 27018:2025 Control Statements
 
 **Section A.5 — Data minimisation (principle)**
-> *The cloud service provider shall anonymise, pseudonymise, or aggregate PII where full identification is not required for the processing purpose. Anonymisation and pseudonymisation techniques shall be documented and reviewed for effectiveness.*
+
+Section A.5 establishes the principle that full identification of data subjects should be avoided where processing can be performed using anonymised, pseudonymised, or aggregated data, and that the techniques used should be documented and reviewed.
 
 **Control A.5.1 — Secure erasure of temporary files**
-> *The public cloud PII processor shall ensure that temporary files containing PII — including cache files, swap files, work files, and log files generated during processing — are securely erased after the processing operation is complete. Erasure shall be performed using methods that prevent recovery. Procedures shall cover both persistent and ephemeral storage used during processing.*
+
+Control A.5.1 addresses the specific risk of PII persisting in temporary storage after processing completes. It requires the processor to implement secure erasure of temporary files — including cache, swap, work files, and logs — using methods that prevent recovery, covering both persistent and ephemeral storage.
 
 ## What This Policy Does NOT Cover
 
@@ -80,7 +82,7 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 **Tier 1: Mandatory Compliance** (per PRIV-POL-00):
 
 - **EU GDPR**: Article 5(1)(c) (data minimisation); Article 5(1)(e) (storage limitation — no longer than necessary); Article 32(1)(a) (pseudonymisation and encryption as appropriate security measures)
-- **CH FADP**: Article 6(2) (proportionality); Article 8(1) (appropriate technical measures)
+- **CH FADP**: Article 6(2) (proportionality); Article 9 (processor obligations — appropriate technical measures)
 - **ISO/IEC 27018:2025**: Controls A.5 (principle) and A.5.1
 
 ---
@@ -95,7 +97,7 @@ Where the processing purpose can be fulfilled without direct identification of d
 - Logging and telemetry systems SHALL minimise PII capture to the operationally necessary minimum
 - Test and development environments SHALL use synthetic data or anonymised data sets wherever possible
 
-Anonymisation techniques applied to controller PII SHALL be documented and subject to DPO review prior to implementation to confirm the result is genuinely anonymised.
+Anonymisation techniques applied to controller PII SHALL be documented and subject to DPO review prior to implementation to confirm the result is genuinely and irreversibly anonymised. The DPO assessment SHALL be conducted in accordance with applicable supervisory authority guidance (including EDPB Opinion 05/2014 on anonymisation techniques, or its successor).
 
 ---
 
@@ -113,9 +115,9 @@ Anonymisation techniques applied to controller PII SHALL be documented and subje
 
 ## Erasure Requirement
 
-[Organisation] SHALL implement secure erasure of all temporary storage categories listed above once the processing operation for which they were created is complete. Erasure SHALL be performed using methods that prevent data recovery, including:
+[Organisation] SHALL implement secure erasure of all temporary storage categories listed above once the processing operation for which they were created is complete. Erasure SHALL be performed using methods that prevent data recovery, in accordance with NIST SP 800-88 (Guidelines for Media Sanitization) or equivalent, including:
 
-- Cryptographic erasure (encryption key deletion for encrypted volumes)
+- Cryptographic erasure (encryption key deletion for encrypted volumes) — only effective where the data was encrypted with a dedicated key not replicated or backed up outside the deletion scope
 - Multi-pass overwrite for persistent storage where cryptographic erasure is not applicable
 - Secure memory zeroing for in-memory PII after use
 
@@ -126,7 +128,7 @@ The erasing mechanism SHALL be automated within the service pipeline wherever te
 Application and infrastructure logs that capture PII SHALL be subject to:
 
 - **Minimum capture**: Log configurations SHALL be reviewed to ensure PII in payloads, headers, or parameters is masked or excluded unless operationally essential
-- **Retention limits**: Logs containing PII SHALL be retained for no longer than the operational period required, and in any case no longer than the maximum defined in service agreements with the PII controller
+- **Retention limits**: Logs containing PII SHALL be retained for no longer than the operational period required, and in any case no longer than 30 days unless operationally justified and documented — or the maximum defined in service agreements with the PII controller if shorter
 - **Automated deletion**: Log retention policies SHALL be implemented as automated deletion rules, not manual processes
 
 ## Multi-Tenant Storage Isolation
@@ -137,14 +139,14 @@ In multi-tenant environments, [Organisation] SHALL ensure that temporary storage
 - Securely erased before reallocation to any other tenant or workload
 - Auditable — reallocation events SHALL be logged and available for inspection
 
-This is addressed in detail in CLD-POL-A.11.13 (Access to data on pre-used data storage space).
+This is addressed in detail in CLD-POL-A.11 (§11.13 — Access to data on pre-used data storage space). Multi-tenant isolation tests SHALL be performed at minimum annually and following any material change to storage infrastructure.
 
 ## Procedure Coverage
 
 Temporary file erasure procedures SHALL explicitly cover:
 
 - Both persistent storage (SSD, HDD, NVMe) and ephemeral storage (instance store, container ephemeral)
-- All compute layers: bare metal, virtual machine, container, serverless function
+- All compute layers: bare metal, virtual machine, container, serverless function (serverless-specific erasure considerations, including /tmp storage and layer caching, are addressed in the service-level erasure procedures)
 - All geographic regions in which [Organisation] operates cloud infrastructure
 
 ---

@@ -66,19 +66,19 @@ This policy establishes [Organisation]'s requirements when acting as PII Process
 ## ISO/IEC 27701:2025 Control Statements
 
 **Control A.2.5.2 — Basis for PII transfer between jurisdictions**
-> *The organization shall inform the customer in a timely manner of the basis for PII transfers between jurisdictions and of any intended changes in this regard, so that the customer can object to such changes or terminate the contract.*
+Control A.2.5.2 requires [Organisation] to inform customers in a timely manner of the legal basis for cross-border transfers of their PII, and of any intended changes to that basis — giving customers the opportunity to object or terminate.
 
-**Control A.2.5.3 — Countries and international organizations to which PII can be transferred**
-> *The organization shall specify and document the countries and international organizations to which PII can possibly be transferred.*
+**Control A.2.5.3 — Countries and international organisations to which PII can be transferred**
+Control A.2.5.3 requires [Organisation] to specify and document the countries and international organisations to which customer PII may be transferred.
 
 **Control A.2.5.4 — Records of PII disclosures to third parties**
-> *The organization shall record disclosures of PII to third parties, including which PII has been disclosed, to whom and when.*
+Control A.2.5.4 requires [Organisation] to record all disclosures of customer PII to third parties, including which PII was disclosed, to whom, and when.
 
 **Control A.2.5.5 — Notification of PII disclosure requests**
-> *The organization shall notify the customer of any legally binding requests for disclosure of PII.*
+Control A.2.5.5 requires [Organisation] to notify customers when it receives a legally binding request to disclose their PII.
 
 **Control A.2.5.6 — Legally binding PII disclosures**
-> *The organization shall reject any requests for PII disclosures that are not legally binding, consult the corresponding customer before making any PII disclosures and accept any contractually agreed requests for PII disclosures that are authorized by the corresponding customer.*
+Control A.2.5.6 requires [Organisation] to reject non-legally-binding disclosure requests, to consult the relevant customer before making disclosures in response to legally binding requests, and to act on contractually authorised disclosure requests.
 
 ## Regulatory Framework
 
@@ -98,7 +98,7 @@ This policy establishes [Organisation]'s requirements when acting as PII Process
 
 - The transfer basis (adequacy, SCCs, BCRs, etc.) for each transfer destination SHALL be documented and provided to customers in the processor agreement or associated data processing schedule
 - Where [Organisation] intends to change a transfer basis or add a new transfer destination, customers SHALL be notified in advance with sufficient time to object or terminate the contract
-- The notification period for transfer changes SHALL be as specified in the processor agreement (typically minimum 30 days for non-urgent changes)
+- The notification period for transfer changes SHALL be as specified in the processor agreement; the organisational default is a minimum 30 days for non-urgent changes; the processor agreement may specify a different period
 
 ---
 
@@ -129,13 +129,15 @@ When [Organisation] receives a legally binding request for disclosure of custome
 
 - [Organisation] SHALL notify the customer without undue delay, unless prohibited from doing so by law (e.g., a non-disclosure order)
 - Notification SHALL include the nature of the request, the PII categories requested, and the legal authority cited — to the extent legally permissible
-- Where notification is legally prohibited: [Organisation] SHALL document this constraint, seek legal advice on challenging the prohibition, and notify the customer as soon as the prohibition is lifted
+- Where notification is legally prohibited: [Organisation] SHALL document the constraint with Legal/Compliance sign-off, comply with the minimum necessary disclosure, maintain a sealed record for later customer notification, seek legal advice on challenging the prohibition where possible, and notify the customer as soon as the prohibition is lifted
 
 ---
 
 ## A.2.5.6 — Legally Binding and Non-Binding Disclosure Requests
 
 **Non-legally-binding requests**: [Organisation] SHALL reject any requests for disclosure of customer PII that are not legally binding. If uncertain whether a request is legally binding, [Organisation] SHALL seek legal advice before responding.
+
+**Foreign government requests (GDPR Article 48)**: Where a disclosure request from a foreign (non-EU/non-EEA) authority is not based on an applicable international agreement, [Organisation] will not comply without first assessing, with Legal/Compliance guidance, whether a GDPR-compatible transfer mechanism applies. This connects foreign disclosure requests to the transfer framework in A.2.5.2 and A.2.5.3.
 
 **Legally binding requests**: [Organisation] SHALL consult with the customer before making any disclosure pursuant to a legally binding request — except where law prohibits notification. Upon consultation, [Organisation] shall:
 
@@ -162,8 +164,8 @@ When [Organisation] receives a legally binding request for disclosure of custome
 | Evidence | Description | Retention |
 |---------|-------------|-----------|
 | Transfer Destination Register | Countries and mechanisms per service | Current + 3 years |
-| Processor Disclosure Register | Disclosures of customer PII to third parties | 3 years |
-| Transfer Change Notifications | Customer notifications of transfer basis changes | 3 years |
+| Processor Disclosure Register | Disclosures of customer PII to third parties | 5 years |
+| Transfer Change Notifications | Customer notifications of transfer basis changes | 3 years from the date of notification |
 | Legally Binding Disclosure Records | Requests received, assessments, customer notifications, disclosures made | 5 years |
 
 ---

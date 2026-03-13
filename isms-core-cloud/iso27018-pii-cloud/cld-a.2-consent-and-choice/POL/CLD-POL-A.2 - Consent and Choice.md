@@ -43,7 +43,7 @@
 - CLD-POL-A.3 (Purpose Legitimacy and Specification)
 - CLD-POL-A.9 (Individual Participation and Access)
 - ISO/IEC 27018:2025 Annex A, Section A.2 and Control A.2.1
-- ISO/IEC 27701:2025 Controls A.2.3.3 (processor — no secondary use without consent)
+- ISO/IEC 27701:2025 Controls A.2.2.3 (processor — organisation's purposes) and A.2.2.4 (processor — marketing and advertising use)
 - GDPR Article 28(3)(a) (instruction-only processing); Article 7 (conditions for consent)
 - CH FADP Article 9 (processor obligations)
 
@@ -64,10 +64,12 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 ## ISO/IEC 27018:2025 Control Statements
 
 **Section A.2 — Consent and choice (principle)**
-> *The public cloud PII processor shall not process PII for any purpose other than the documented instructions of the PII controller, unless required by applicable law. The processor shall not use PII for marketing, advertising, or profiling without explicit authorisation from the PII controller.*
+
+Section A.2 establishes the principle that a public cloud PII processor may only process PII in accordance with documented controller instructions, and must not use PII for secondary purposes such as marketing or profiling without documented controller authorisation.
 
 **Control A.2.1 — Obligation to co-operate regarding PII principals' rights**
-> *The public cloud PII processor shall co-operate with the PII controller to enable the controller to fulfil data subject rights requests, including access, rectification, erasure, restriction, portability, and objection. The processor shall implement technical capabilities to support these obligations and respond to controller requests within timeframes enabling statutory compliance.*
+
+Control A.2.1 requires the processor to cooperate with the PII controller in supporting the fulfilment of data subject rights, and to maintain the technical capabilities necessary to do so within timeframes enabling statutory compliance.
 
 ## What This Policy Does NOT Cover
 
@@ -94,9 +96,9 @@ This policy establishes [Organisation]'s requirements as a public cloud PII proc
 - Marketing, advertising, or audience profiling using controller-owned PII
 - Data analytics or product improvement activities using PII beyond service delivery telemetry agreed with the controller
 - Sale, licensing, or sharing of PII with third parties for commercial purposes
-- Training machine learning models on PII without explicit written controller authorisation
+- Training machine learning models on PII without documented written controller authorisation
 
-Where [Organisation] wishes to use aggregated or anonymised data derived from PII for service improvement, [Organisation] SHALL document the anonymisation methodology and obtain confirmation from the DPO that the result is genuinely anonymised before proceeding.
+Where [Organisation] wishes to use aggregated or anonymised data derived from PII for service improvement, [Organisation] SHALL document the anonymisation methodology — assessed in accordance with applicable supervisory authority guidance (including EDPB Opinion 05/2014 on anonymisation techniques, or its successor) — and obtain written confirmation from the DPO that the result is genuinely and irreversibly anonymised before proceeding.
 
 ## Legally Compelled Processing
 
@@ -119,18 +121,22 @@ Where applicable law requires [Organisation] to process PII beyond controller in
 |-------|-------------------------------|
 | **Access** | Export of all PII associated with a data subject in machine-readable format |
 | **Rectification** | Mechanisms to update or correct specific PII fields |
-| **Erasure** | Confirmed deletion of PII and all replicated or cached copies |
+| **Erasure** | Deletion of PII from all active storage, with cached and replicated copies purged within the next scheduled purge cycle, not to exceed 15 business days |
 | **Restriction** | Ability to flag and isolate PII from active processing without deletion |
 | **Portability** | Export of PII in structured, commonly used format (CSV, JSON) |
-| **Objection** | Ability to suspend automated processing involving specific PII |
+| **Objection** | Ability to suspend or restrict processing of specific PII records upon controller instruction |
 
 ## Response Timeframes
 
 [Organisation] SHALL respond to PII controller requests for data subject rights assistance within timeframes that enable the controller to meet its regulatory obligations. Unless the service agreement specifies shorter timeframes, [Organisation] SHALL:
 
 - Acknowledge controller requests within **1 business day**
-- Complete data subject rights fulfilment requests within **5 business days** for standard requests
+- Complete data subject rights fulfilment requests within **5 business days** for standard requests, or longer timeframes agreed in writing where the service agreement provides
 - Notify the controller immediately of any technical constraint preventing fulfilment within this period
+
+Where a service agreement is silent on timeframes, [Organisation] treats the 5-business-day standard as the default. If a controller does not respond to a cooperation request within 10 business days, [Organisation] documents the request as pending and escalates to the DPO.
+
+All sub-processors engaged by [Organisation] SHALL be contractually required to provide equivalent data subject rights cooperation capabilities and response timeframes — in accordance with CLD-POL-A.11 (§11.12 — Sub-Processor Obligations).
 
 ## Documentation of Cooperation
 

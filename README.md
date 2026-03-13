@@ -331,7 +331,7 @@ Every control pack undergoes a structured multi-stage validation process before 
 
 ```
 ┌──────────────────┐     ┌──────────────────┐     ┌──────────────────────┐
-│  Claude Code     │────▶│  ISMS QA Engine  │────▶│   Gregory Griffin    │
+│  Claude Code     │────▶│  ISMS QA Engine  │────▶│   The ISMS Core Project    │
 │  (Build + QA)    │     │  (Existence +    │     │   (Final Approval)   │
 │                  │     │   Keyword +      │     │                      │
 └──────────────────┘     │   Semantic)      │     └──────────────────────┘
@@ -439,13 +439,12 @@ Commercial licensing: **info@isms-core.com**
 <p align="center">
   <a href="mailto:info@isms-core.com"><img src="https://img.shields.io/badge/Email-info@isms--core.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
   <a href="https://github.com/isms-core-project"><img src="https://img.shields.io/badge/GitHub-isms--core--project-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/></a>
-  <a href="https://www.linkedin.com/in/ggriffinorg/"><img src="https://img.shields.io/badge/LinkedIn-ggriffinorg-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
 </p>
 
 ---
 
 <p align="center">
-  <strong>Copyright © 2025–2026 Gregory Griffin. All rights reserved.</strong>
+  <strong>Copyright © 2025–2026 The ISMS Core Project. All rights reserved.</strong>
 </p>
 
 <p align="center">
