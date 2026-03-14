@@ -408,9 +408,9 @@ February 7th 2026: ISMS CORE Operational -> 93 Controls Completed in 53 Control 
 February 8th 2026: Python Scripts QA (Ongoing)
 ```
 
-### What's next
+### Platform
 
-The **ISMS CORE Platform** (`60-isms-core-api/`) is in active development — a FastAPI backend with PostgreSQL, Docker Compose deployment, and framework correlation engine. It transforms the file-based framework into a live compliance platform: DB-driven, WebUI-editable, with evidence tracking, gap management, and crosswalk mapping across 18+ regulatory frameworks.
+The **ISMS CORE Platform** (`isms-core-platform/`) is live — a FastAPI backend with PostgreSQL, Docker Compose deployment, nginx TLS, and framework correlation engine. It transforms the file-based framework into a live compliance platform: DB-driven, WebUI-editable, with evidence tracking, gap management, crosswalk mapping across 18+ regulatory frameworks, and 44 automated evidence connectors.
 
 <p align="center">
   <em>Built with the conviction that security compliance should be engineering discipline, not checkbox theater.</em>
