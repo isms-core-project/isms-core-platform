@@ -101,7 +101,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td><img src="https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square" alt="Complete"/></td>
 <td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
 <td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
-<td><img src="https://img.shields.io/badge/Live_(v2.0)-2E8B57?style=flat-square" alt="Live (v2.0)"/></td>
+<td><img src="https://img.shields.io/badge/Live_(v1.0)-2E8B57?style=flat-square" alt="Live (v1.0)"/></td>
 </tr>
 </table>
 
@@ -420,7 +420,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | Metric | Value | Status |
 |--------|-------|--------|
 | Platform (API + WebUI) | v1.0 live — 44 connectors | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| Products integrated | ISMS + Privacy + Cloud | ![v2.0](https://img.shields.io/badge/v2.0-2E8B57?style=flat-square) |
+| Products integrated | ISMS + Privacy + Cloud | ![v1.0](https://img.shields.io/badge/v1.0-2E8B57?style=flat-square) |
 
 ---
 

@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Live_(v2.0)-00AA00?style=for-the-badge" alt="Live"/>
+  <img src="https://img.shields.io/badge/Status-Live_(v1.0)-00AA00?style=for-the-badge" alt="Live"/>
   <img src="https://img.shields.io/badge/Backend-FastAPI_+_PostgreSQL-0066CC?style=flat-square" alt="FastAPI"/>
   <img src="https://img.shields.io/badge/Frontend-React_19_+_MUI_6-61DAFB?style=flat-square" alt="React"/>
   <img src="https://img.shields.io/badge/Deployment-Docker_Compose-2496ED?style=flat-square" alt="Docker"/>
@@ -262,7 +262,7 @@ ADMIN_PASSWORD=               # REQUIRED — no default in production, you must 
 # ─── Optional: AI Gap Analysis ─────────────────────────────────────────────
 ANTHROPIC_API_KEY=            # Leave empty to disable ISMS Compass
 
-# ─── Optional: Connector Runner (v2.0) ─────────────────────────────────────
+# ─── Optional: Connector Runner ─────────────────────────────────────────────
 CONNECTORS_WORKER_SECRET=     # Required only if starting the connector runner
 
 # ─── Optional: Email ───────────────────────────────────────────────────────
@@ -453,7 +453,7 @@ docker compose --profile smtp-bridge up -d
 
 ## Connectors — Automated Evidence
 
-ISMS CORE v2.0 includes an automated evidence ingestion layer. A single connector runner container loads all 44 connectors dynamically and pushes evidence directly into the `connector_evidence` table in PostgreSQL. Evidence appears in the **Automated Evidence** tab of each control group's detail view and refreshes every 60 seconds.
+ISMS CORE includes an automated evidence ingestion layer. A single connector runner container loads all 44 connectors dynamically and pushes evidence directly into the `connector_evidence` table in PostgreSQL. Evidence appears in the **Automated Evidence** tab of each control group's detail view and refreshes every 60 seconds.
 
 ### Setup
 
