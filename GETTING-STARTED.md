@@ -1,7 +1,7 @@
 <h1 align="center">🎋 ISMS CORE Platform — Getting Started</h1>
 
 <p align="center">
-  <strong>How to run the ISMS CORE Platform locally</strong>
+  <strong>How to deploy and run the ISMS CORE Platform</strong>
 </p>
 
 <p align="center">
@@ -22,6 +22,7 @@
 | **RAM** | 4 GB available | OpenSearch requires ~1.5 GB alone |
 | **Disk** | 10 GB free | PostgreSQL + OpenSearch + images |
 | **OS** | Linux, macOS, or Windows (WSL2) | Native Linux or macOS recommended |
+| **nginx** | — | Production: nginx handles TLS on ports 80/443 automatically. No separate nginx install needed — it's a Docker container. |
 
 > **Linux only:** OpenSearch requires `vm.max_map_count=262144`. If not already set:
 > ```bash
@@ -29,6 +30,12 @@
 > # Make permanent:
 > echo "vm.max_map_count=262144" | sudo tee -a /etc/sysctl.conf
 > ```
+
+> **Production vs Development:**
+> - **Production** (recommended): access via `https://{HOST_IP}` — nginx handles TLS automatically. This is what `62-isms-core-api-prod/` is configured for.
+> - **Development**: backend on `:8000`, frontend on `:3000`, no TLS. For local development only.
+>
+> This guide covers **production deployment**. For development, see the `docker-compose.yml` in `60-isms-core-api-factory/`.
 
 ---
 
@@ -91,7 +98,7 @@ cd platform
 docker compose up -d
 ```
 
-This starts 6 services: PostgreSQL, Redis, OpenSearch, Backend API, Celery Worker, and React Frontend.
+This starts 8 services: PostgreSQL, Redis, OpenSearch, Backend API, Celery Worker, Celery Beat, nginx, and React Frontend.
 
 **First boot takes longer** (~2–3 minutes) — OpenSearch needs to initialise before the backend will accept connections. Watch progress:
 
@@ -102,7 +109,7 @@ docker compose logs -f
 All services healthy when you see no more errors and:
 ```
 isms-core-backend  | INFO:     Application startup complete.
-isms-core-frontend | ... ready in ... ms
+isms-core-nginx    | ... start worker processes
 ```
 
 ### Step 4 — Verify services are running
@@ -111,7 +118,7 @@ isms-core-frontend | ... ready in ... ms
 docker compose ps
 ```
 
-All six services should show `healthy` or `running`:
+All eight services should show `healthy` or `running`:
 
 ```
 NAME                    STATUS          PORTS
@@ -120,8 +127,12 @@ isms-core-redis         healthy         0.0.0.0:6379->6379/tcp
 isms-core-opensearch    healthy         0.0.0.0:9200->9200/tcp
 isms-core-backend       healthy         0.0.0.0:8000->8000/tcp
 isms-core-worker        running
+isms-core-beat          Up
+isms-core-nginx         healthy         0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp
 isms-core-frontend      running         0.0.0.0:3000->3000/tcp
 ```
+
+> **Note:** `isms-core-beat` shows no healthcheck status — just "Up". This is normal. Celery Beat runs no web server, so there is nothing to health-check. "Up" is correct.
 
 **Health check endpoints:**
 - Backend API: `http://localhost:8000/health`
@@ -131,83 +142,39 @@ isms-core-frontend      running         0.0.0.0:3000->3000/tcp
 
 ## First Login
 
-Open `http://localhost:3000` in your browser.
+Open `https://{HOST_IP}` in your browser (replace with your server IP or FQDN).
 
-**Default admin credentials:**
+**Self-signed certificate warning:** On first access, your browser will warn about the certificate. This is expected — nginx auto-generates a self-signed cert on first boot. Click "Advanced" → "Proceed" (Chrome) or "Accept the Risk" (Firefox). See [PLATFORM.md](PLATFORM.md) for TLS upgrade options.
 
-| Field | Value |
-|-------|-------|
-| Email | `admin@isms-core.dev` |
-| Password | `admin123` |
-
-> ⚠️ **Change the admin password immediately after first login.** Go to Admin → Users → Edit.
+**Default admin credentials are set in your `.env`:**
+- Email: value of `ADMIN_EMAIL`
+- Password: value of `ADMIN_PASSWORD`
 
 ---
 
 ## Initial Data Import
 
-On first boot, the database is empty. You need to load the reference frameworks and import your ISMS content.
-
-> All steps below can be run via the WebUI: **Admin → System → Initial Data Import section**. Use the API if you prefer scripting.
-
-### 1. Load reference frameworks
-
-The platform ships 18 pre-built reference framework bundles (ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, etc.).
+Run `bootstrap.sh` once after first boot. It handles everything automatically:
 
 ```bash
-# Authenticate first — get your token
-TOKEN=$(curl -s -X POST http://localhost:8000/api/v1/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"admin@isms-core.dev","password":"admin123"}' \
-  | python3 -c "import sys,json; print(json.load(sys.stdin)['access_token'])")
-
-# Load all 18 framework bundles
-curl -s -X POST http://localhost:8000/api/v1/admin/load \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json"
+chmod +x bootstrap.sh
+bash bootstrap.sh
 ```
 
-### 2. Import policies and implementation guides
+The script: waits for the stack to be healthy → authenticates → runs all 6 import steps in the correct order → shows import stats on completion.
 
-```bash
-# Import all policies (POL, OP-POL, INS, REF, CTX, FORM)
-curl -s -X POST http://localhost:8000/api/v1/admin/import-policies \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json"
+**Import order (handled automatically by bootstrap.sh):**
+1. `POST /admin/load` — seeds ISMS control groups (must run first)
+2. `POST /admin/import-policies`
+3. `POST /admin/import-implementations`
+4. `POST /admin/import-operational`
+5. `POST /admin/import-privacy`
+6. `POST /admin/import-framework-workbooks`
+7. `POST /admin/reindex`
 
-# Import IMP documents (UG + TG) — also indexes into OpenSearch for full-text search
-curl -s -X POST http://localhost:8000/api/v1/admin/import-implementations \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json"
-```
+> ⚠️ **Do not skip bootstrap.sh.** If importers run before `/admin/load`, all content will be misrouted to wrong control groups.
 
-### 3. Import assessment workbook structures
-
-```bash
-# Import 188 framework assessment workbook structures (from generator scripts)
-curl -s -X POST http://localhost:8000/api/v1/admin/import-framework-workbooks \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json"
-
-# Import 53 operational compliance checklist structures
-curl -s -X POST http://localhost:8000/api/v1/admin/import-operational \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json"
-
-# Import Privacy (ISO 27701) + Cloud (ISO 27018) compliance checklists
-curl -s -X POST http://localhost:8000/api/v1/admin/import-privacy \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json"
-```
-
-### 4. Or run all importers in one shot
-
-```bash
-# Full sync — runs all importers (policies, IMPs, operational, privacy/cloud, workbooks) in sequence
-curl -s -X POST http://localhost:8000/api/v1/sync/full \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json"
-```
+**Re-running is safe** — all importers are idempotent (content-hashed, only changed files re-processed).
 
 ---
 
@@ -262,53 +229,9 @@ The importer uses content hashing — only changed files are re-processed.
 
 ---
 
-## Production Deployment (NUC / Server)
+## Production Deployment
 
-For deployment on a dedicated server (e.g., nuc-01 at `10.0.0.110`):
-
-### 1. Set strong secrets in `.env`
-
-All three secrets **must** be changed from defaults. Use `openssl rand -hex 32` for each.
-
-### 2. Set DEBUG=false
-
-In `docker-compose.yml`, change the backend environment:
-```yaml
-- DEBUG=false
-- LOG_LEVEL=WARNING
-```
-
-### 3. Configure CORS for your hostname
-
-```yaml
-- CORS_ORIGINS=https://your-domain.com,http://your-server-ip:3000
-```
-
-### 4. Restrict port exposure (optional)
-
-For internal-only access, change port bindings to bind to localhost only:
-```yaml
-ports:
-  - "127.0.0.1:5432:5432"   # PostgreSQL — localhost only
-  - "127.0.0.1:6379:6379"   # Redis — localhost only
-  - "127.0.0.1:9200:9200"   # OpenSearch — localhost only
-  - "0.0.0.0:8000:8000"     # API — network accessible
-  - "0.0.0.0:3000:3000"     # Frontend — network accessible
-```
-
-### 5. Data persistence
-
-Docker volumes (`postgres-data`, `redis-data`, `opensearch-data`) are stored in `/var/lib/docker/volumes/` by default. On NUC deployments with a dedicated data disk (`/mnt/data`), specify custom volume paths:
-
-```yaml
-volumes:
-  postgres-data:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /mnt/data/isms-postgres
-```
+See [PLATFORM.md](PLATFORM.md) for the complete production deployment guide including nginx TLS setup, `bootstrap.sh` usage, email profiles, and Go-Live Checklist.
 
 ---
 
@@ -364,6 +287,10 @@ curl http://localhost:8000/health
 
 If the backend container is still starting, wait for it to be healthy and reload the browser.
 
+### beat container shows no healthcheck status (just "Up")
+
+Normal — the beat healthcheck is intentionally disabled. Celery Beat runs no web server, so there's nothing to health-check. "Up" is correct.
+
 ---
 
 ## API Documentation
@@ -372,9 +299,9 @@ The backend auto-generates OpenAPI documentation. Once running:
 
 | URL | Description |
 |-----|-------------|
-| `http://localhost:8000/docs` | Swagger UI — interactive API explorer |
-| `http://localhost:8000/redoc` | ReDoc — clean reference documentation |
-| `http://localhost:8000/openapi.json` | Raw OpenAPI schema |
+| `https://{HOST_IP}/api/docs` | Swagger UI — interactive API explorer |
+| `https://{HOST_IP}/api/redoc` | ReDoc — clean reference documentation |
+| `https://{HOST_IP}/api/openapi.json` | Raw OpenAPI schema |
 
 ---
 
@@ -385,7 +312,14 @@ The backend auto-generates OpenAPI documentation. Once running:
 | `POSTGRES_PASSWORD` | `change_this...` | **Yes** | PostgreSQL password |
 | `REDIS_PASSWORD` | `change_this...` | **Yes** | Redis password |
 | `SECRET_KEY` | `change_this...` | **Yes** | JWT signing secret (min 32 chars) |
+| `ADMIN_EMAIL` | `admin@isms-core.dev` | No (has default) | Admin account email — created/updated on startup |
+| `ADMIN_PASSWORD` | *(no default in prod)* | **Yes (prod)** | Admin account password — no default in production |
 | `ANTHROPIC_API_KEY` | *(empty)* | No | Required for ISMS Compass (Phase 8) |
+| `CONNECTORS_WORKER_SECRET` | *(empty)* | No | Shared secret for connector runner |
+| `FQDN` | *(empty)* | No | Domain for Let's Encrypt TLS (leave empty for self-signed) |
+| `HOST_IP` | *(your server IP)* | No | Server IP for nginx SAN + VITE_BACKEND_URL |
+| `MAIL_HOST` | *(empty)* | No | `isms-core-mailhog` (Mailpit profile) or `isms-core-smtp-bridge` |
+| `MAIL_PORT` | `1025` | No | SMTP port (default 1025 for both email profiles) |
 | `POLICY_EXTRA_PATHS` | `/app/isms-cloud,/app/isms-privacy` | No | Comma-separated extra mount paths for Privacy + Cloud content |
 | `DEBUG` | `true` | No | Set `false` in production |
 | `LOG_LEVEL` | `INFO` | No | `DEBUG` / `INFO` / `WARNING` / `ERROR` |

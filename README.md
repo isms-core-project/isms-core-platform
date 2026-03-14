@@ -101,7 +101,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td><img src="https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square" alt="Complete"/></td>
 <td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
 <td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
-<td><img src="https://img.shields.io/badge/Live-2E8B57?style=flat-square" alt="Live"/></td>
+<td><img src="https://img.shields.io/badge/Live_(v2.0)-2E8B57?style=flat-square" alt="Live (v2.0)"/></td>
 </tr>
 </table>
 
@@ -236,12 +236,32 @@ python3 generate_cld_checklist_a11.py
 
 ### Platform (Live Compliance Dashboard — All Products)
 
-1. Read [GETTING-STARTED.md](GETTING-STARTED.md)
+1. Read [PLATFORM.md](PLATFORM.md) — the full deployment guide
 2. Ensure Docker 24+ and Docker Compose v2 are installed
-3. Copy `.env.example` → `.env` and set your three secrets
+3. Copy `.env.example` → `.env`, set all required secrets + `ADMIN_PASSWORD`
 4. `docker compose up -d`
-5. Open `http://localhost:3000` — login: `admin@isms-core.dev` / `admin123`
-6. Run initial import from Admin → System
+5. `bash bootstrap.sh` — run once, imports all content automatically
+6. Open `https://{HOST_IP}` — accept self-signed cert (or configure TLS in PLATFORM.md)
+7. Login: `ADMIN_EMAIL` / `ADMIN_PASSWORD` from your `.env`
+
+---
+
+## 📸 Platform Screenshots
+
+<table>
+<tr>
+<td align="center"><strong>Login</strong><br/><img src="screenshots/01_isms-core_logon.png" width="380" alt="Login screen"/></td>
+<td align="center"><strong>Home Dashboard</strong><br/><img src="screenshots/02_isms-core_home.png" width="380" alt="Home dashboard — ISMS + Privacy + Cloud product switcher"/></td>
+</tr>
+<tr>
+<td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core-oveview.png" width="380" alt="Compliance overview — 54 controls, 100% coverage, 77.4% audit readiness"/></td>
+<td align="center"><strong>Connectors (v2.0)</strong><br/><img src="screenshots/07_isms-core_connectors.png" width="380" alt="Automated evidence connectors — MS Entra ID, Defender, M365, Azure CSPM"/></td>
+</tr>
+<tr>
+<td align="center"><strong>ISMS Compass (AI Gap Analysis)</strong><br/><img src="screenshots/05_isms-core_compass.png" width="380" alt="ISMS Compass — AI-powered gap analysis against Gold Standard"/></td>
+<td align="center"><strong>System Status</strong><br/><img src="screenshots/08_isms-core_system.png" width="380" alt="System status — all services healthy, 87 groups, OpenSearch green"/></td>
+</tr>
+</table>
 
 ---
 
@@ -387,8 +407,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Platform (API + WebUI) | All core phases complete | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| Products integrated | ISMS + Privacy + Cloud | ![3 Standards](https://img.shields.io/badge/3_Standards-2E8B57?style=flat-square) |
+| Platform (API + WebUI) | v1.0 live — 44 connectors | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| Products integrated | ISMS + Privacy + Cloud | ![v2.0](https://img.shields.io/badge/v2.0-2E8B57?style=flat-square) |
 
 ---
 
