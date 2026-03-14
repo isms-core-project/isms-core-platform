@@ -65,7 +65,7 @@ ISMS CORE provides **four distinct compliance products** designed for different 
 
 - **FRAMEWORK (SSE — Secure Systems Engineering)**: Engineered compliance system for regulated industries with complex multi-regulatory requirements (ISO 27001:2022)
 - **OPERATIONAL**: Classical ISMS for SMEs seeking ISO 27001 certification with automation-assisted compliance (ISO 27001:2022)
-- **PRIVACY**: Privacy Information Management System extension covering all 49 ISO 27701:2025 controls across controller, processor, and shared responsibility domains
+- **PRIVACY**: Privacy Information Management System extension covering 21 control groups (ISO 27701:2025) across controller, processor, and shared responsibility domains
 - **CLOUD**: PII protection in cloud services extension covering 12 ISO 27018:2025 Annex A control groups for cloud service providers and processors
 
 All four products use code-driven, evidence-automated, engineer-designed approaches. If you are looking for Word document templates, generic guidance like "implement appropriate security measures", or annual compliance snapshots with manual evidence collection — this is not the right tool for you.
@@ -241,7 +241,7 @@ FRAMEWORK prioritises rigour across all scores. Higher-score controls produce wo
 
 **What you get:**
 - **Architecture**: PRIV-POL (policy) → Compliance Checklist Workbook (Python-generated)
-- **Coverage**: 21 control groups covering all 49 ISO 27701:2025 controls
+- **Coverage**: 21 control groups (ISO 27701:2025)
   - Controller (8 groups): A.1.x — consent, purpose legitimacy, collection, data subject rights
   - Processor (5 groups): A.2.x — processing obligations, sub-processors, records
   - Shared (8 groups): A.3.x — data minimisation, accuracy, transparency, security controls
@@ -294,7 +294,7 @@ FRAMEWORK prioritises rigour across all scores. Higher-score controls produce wo
 |---------|----------------|-------------|---------|-------|
 | **Standard** | ISO 27001:2022 | ISO 27001:2022 | ISO 27701:2025 | ISO 27018:2025 |
 | **Target** | Regulated industries | SMEs | PII controllers/processors | Cloud PII processors |
-| **Control Groups** | 53 groups / 93 controls | 53 groups / 93 controls | 21 groups / 49 controls | 12 groups |
+| **Control Groups** | 53 groups / 93 controls | 53 groups / 93 controls | 21 groups | 12 groups |
 | **Policy Format** | POL + IMP (UG/TG) | OP-POL | PRIV-POL | CLD-POL |
 | **Workbook Type** | Control-derived assessment workbooks | Policy-derived checklists | Privacy compliance checklists | Cloud PII compliance checklists |
 | **Foundation Governance** | POL-00 + POL-01 (Tier 1/2/3, authority boundaries, exception handling) | Classical ISMS (no meta-layer) | PRIV-POL-00 + PRIV-POL-01 | Embedded in CLD-POL |
@@ -635,7 +635,9 @@ The **ISMS CORE Platform** is the operational layer built on top. It ingests bot
 | Manual evidence collection | Evidence items with expiry tracking and freshness alerts |
 | No audit trail | Full immutable log of who did what and when |
 
-The Platform is a six-service Docker Compose stack (FastAPI + PostgreSQL + Redis + OpenSearch + Celery + React) deployed on-premises. Same data sovereignty principle applies — your compliance data does not leave your infrastructure.
+The Platform is an eight-service Docker Compose stack (FastAPI + PostgreSQL + Redis + OpenSearch + Celery + React 19 + nginx TLS + Celery Beat) deployed on-premises. **v1.0 is live.** Same data sovereignty principle applies — your compliance data does not leave your infrastructure.
+
+The Platform also includes 44 native connectors (Microsoft, network, identity, vulnerability, ITSM, monitoring, cloud posture, threat intel) that push live evidence directly into the compliance database — no manual evidence collection for supported systems.
 
 **Platform is additive, never mandatory.** Framework and Operational are the product. Platform is the engine that makes it operational at scale.
 
