@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/🎋_ISMS_CORE-Platform-2E8B57?style=for-the-badge" alt="ISMS CORE Platform"/>
+  <img src="https://img.shields.io/badge/🎋_ISMS_CORE-Project-2E8B57?style=for-the-badge" alt="ISMS CORE Project"/>
 </p>
 
-<h1 align="center">🎋 ISMS CORE Platform</h1>
+<h1 align="center">🎋 ISMS CORE Project</h1>
 
 <p align="center">
   <strong>Control-Oriented Real-world Engineering — ISO 27001 · ISO 27701 · ISO 27018</strong>
