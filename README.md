@@ -385,7 +385,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 |--------|-------|--------|
 | Control packs | **53 of 53** | ![100%](https://img.shields.io/badge/100%25-00AA00?style=flat-square) |
 | Annex A controls mapped | **93 of 93** | ![Mapped](https://img.shields.io/badge/Mapped-32CD32?style=flat-square) |
-| Python generators | **188** (307K+ lines) | ![Validated](https://img.shields.io/badge/Validated-0066CC?style=flat-square) |
+| Python generators | **188** (377K+ lines total across all products) | ![Validated](https://img.shields.io/badge/Validated-0066CC?style=flat-square) |
 | IMP documents | **376** (188 UG + 188 TG) | ![Complete](https://img.shields.io/badge/Complete-0066CC?style=flat-square) |
 
 ### ISO 27001:2022 — ISMS Operational

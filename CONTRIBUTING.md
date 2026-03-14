@@ -370,12 +370,12 @@ Claude Code (Anthropic, Sonnet model family) has been the primary implementation
 <tr>
 <td><strong>Python Scripts</strong></td>
 <td>Workbook Generators</td>
-<td><strong>188</strong> scripts (FRAMEWORK) + 53 (OPERATIONAL)</td>
+<td><strong>274</strong> scripts total — 188 (FW) + 53 (OP) + 21 (PRIV) + 12 (CLD)</td>
 </tr>
 <tr>
 <td><strong>IMP Documents</strong></td>
 <td>User Guides (UG) + Technical Specifications (TG) for every assessment</td>
-<td><strong>376</strong> files (188 UG + 188 TG)</td>
+<td><strong>442</strong> files — 376 FW (188 UG + 188 TG) + 42 PRIV + 24 CLD</td>
 </tr>
 <tr>
 <td><strong>POL Documents</strong></td>
