@@ -1,0 +1,133 @@
+{
+  "bundle_id": "bundle--cc1e10c4-1157-5fb7-9ec2-bac060a52358",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "9ca36b43-4c98-5f1f-8d83-24550e1debe8",
+    "code": "SWISS_NDSG",
+    "name": "Swiss Federal Act on Data Protection (nFADP/nDSG)",
+    "version": "2023",
+    "publisher": "Swiss Confederation",
+    "source_url": "https://www.fedlex.admin.ch/eli/cc/2022/491/en",
+    "jurisdiction": "CH",
+    "description": "Swiss Federal Act on Data Protection (nFADP/nDSG)"
+  },
+  "generated_at": "2026-03-07T09:32:16Z",
+  "generator": "generate_regulatory.py",
+  "content_hash": "da60e2a0fa1374fee4e3956216180cee937661dd5fddf6bd474584869f41571a",
+  "objects_count": 11,
+  "relationships_count": 0,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "d06d9df6-b12a-5b70-94d5-424762364f1e",
+      "framework_id": "9ca36b43-4c98-5f1f-8d83-24550e1debe8",
+      "control_id": "Art. 5",
+      "title": "Principles",
+      "description": "Personal data may only be processed lawfully, in good faith, and proportionally. Collection must be for a defined purpose recognisable to the data subject.",
+      "level": 0,
+      "sort_order": 100
+    },
+    {
+      "type": "framework_control",
+      "id": "3b556098-d382-59f2-bb64-7d2ba9096f91",
+      "framework_id": "9ca36b43-4c98-5f1f-8d83-24550e1debe8",
+      "control_id": "Art. 6",
+      "title": "Personality and fundamental rights",
+      "description": "Data processing must not unlawfully breach the personality of the data subject. Processing is unlawful if it violates Art. 5 principles or occurs against the explicit will of the data subject.",
+      "level": 0,
+      "sort_order": 200
+    },
+    {
+      "type": "framework_control",
+      "id": "ac3f2992-0eba-50f7-b5e8-6c37692b9d36",
+      "framework_id": "9ca36b43-4c98-5f1f-8d83-24550e1debe8",
+      "control_id": "Art. 7",
+      "title": "Data security",
+      "description": "The controller and processor shall ensure appropriate technical and organisational measures (TOMs) to ensure data security proportionate to the risk. Measures must protect against unauthorised or accidental destruction, loss, alteration, and unauthorised disclosure or access.",
+      "level": 0,
+      "sort_order": 300
+    },
+    {
+      "type": "framework_control",
+      "id": "ea39d8d7-6f94-5977-a07f-080f1577ca12",
+      "framework_id": "9ca36b43-4c98-5f1f-8d83-24550e1debe8",
+      "control_id": "Art. 8",
+      "title": "Data protection by design and by default",
+      "description": "The controller shall design data processing so that data protection principles (especially minimisation) are implemented from the outset. Default settings must limit processing to the minimum required.",
+      "level": 0,
+      "sort_order": 400
+    },
+    {
+      "type": "framework_control",
+      "id": "d6992259-8e7b-5b87-91b6-c5514c849e73",
+      "framework_id": "9ca36b43-4c98-5f1f-8d83-24550e1debe8",
+      "control_id": "Art. 9",
+      "title": "Processing by processors",
+      "description": "Processing may be outsourced to a processor by agreement or law, provided the processor processes data only in ways the controller could themselves. The controller must ensure the processor maintains data security.",
+      "level": 0,
+      "sort_order": 500
+    },
+    {
+      "type": "framework_control",
+      "id": "8b527b11-4a0d-5bf7-b3ad-e3cda199f53d",
+      "framework_id": "9ca36b43-4c98-5f1f-8d83-24550e1debe8",
+      "control_id": "Art. 16",
+      "title": "Cross-border disclosure — Principles",
+      "description": "Personal data may be disclosed abroad if the Federal Council has determined the destination state ensures adequate protection. Without adequacy, appropriate safeguards (SCCs, BCRs) are required.",
+      "level": 0,
+      "sort_order": 600
+    },
+    {
+      "type": "framework_control",
+      "id": "e4c5f872-ea60-5318-8d45-3e0e9d67ff81",
+      "framework_id": "9ca36b43-4c98-5f1f-8d83-24550e1debe8",
+      "control_id": "Art. 17",
+      "title": "Cross-border disclosure — Exceptions",
+      "description": "Data may be disclosed abroad without adequate-level protection in specific situations: express consent, contract performance, overriding public interest, or protection of life/physical integrity.",
+      "level": 0,
+      "sort_order": 700
+    },
+    {
+      "type": "framework_control",
+      "id": "c3f8ff0d-a113-5bab-8a3c-47fa8410ed63",
+      "framework_id": "9ca36b43-4c98-5f1f-8d83-24550e1debe8",
+      "control_id": "Art. 19",
+      "title": "Duty to inform",
+      "description": "The controller must inform the data subject of collection of personal data, providing identity of controller, processing purpose, recipients, and (for cross-border transfers) destination state and applicable safeguards.",
+      "level": 0,
+      "sort_order": 800
+    },
+    {
+      "type": "framework_control",
+      "id": "a4e9cdf5-66ac-5a1f-a959-81a58061de51",
+      "framework_id": "9ca36b43-4c98-5f1f-8d83-24550e1debe8",
+      "control_id": "Art. 22",
+      "title": "Data protection impact assessment",
+      "description": "The controller must carry out a DPIA where processing is likely to result in high risk to personality or fundamental rights. Must describe planned processing, assess risks, and identify mitigation measures.",
+      "level": 0,
+      "sort_order": 900
+    },
+    {
+      "type": "framework_control",
+      "id": "d3743ec1-aa3d-5ae5-8120-c96a94b97fed",
+      "framework_id": "9ca36b43-4c98-5f1f-8d83-24550e1debe8",
+      "control_id": "Art. 24",
+      "title": "Notification of data security breaches",
+      "description": "The controller must notify the FDPIC as quickly as possible of any breach likely to result in high risk. Must state nature of breach, consequences, and measures taken. Must inform affected data subjects if necessary.",
+      "level": 0,
+      "sort_order": 1000
+    },
+    {
+      "type": "framework_control",
+      "id": "0bc47740-b1ef-5349-8d1e-7bd6e0faa522",
+      "framework_id": "9ca36b43-4c98-5f1f-8d83-24550e1debe8",
+      "control_id": "Art. 25",
+      "title": "Right of access",
+      "description": "Every person may request whether personal data concerning them is being processed, and receive all information necessary to assert their data protection rights.",
+      "level": 0,
+      "sort_order": 1100
+    }
+  ],
+  "relationships": []
+}

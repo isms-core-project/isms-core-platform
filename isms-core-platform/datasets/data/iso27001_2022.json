@@ -1,0 +1,3629 @@
+{
+  "bundle_id": "bundle--d34fa874-e288-52d4-ae83-414de24e33d9",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+    "code": "ISO27001_2022",
+    "name": "ISO/IEC 27001:2022 (incl. Amd. 1:2024)",
+    "version": "2022+Amd1:2024",
+    "publisher": "ISO/IEC",
+    "source_url": "https://www.iso.org/standard/27001",
+    "description": "Information security, cybersecurity and privacy protection — Information security management systems — Requirements. Annex A reference controls. Includes Amendment 1:2024 (climate change considerations in clauses 4.1 and 4.2).",
+    "amendment": {
+      "ref": "ISO/IEC 27001:2022/Amd. 1:2024",
+      "published": "2024",
+      "clauses_affected": ["4.1", "4.2"],
+      "summary": "Clause 4.1: organisations shall determine whether climate change is a relevant issue. Clause 4.2 NOTE 2: relevant interested parties can have requirements related to climate change."
+    }
+  },
+  "generated_at": "2026-02-08T19:13:13Z",
+  "generator": "generate_iso27001.py",
+  "content_hash": "b42e8f67cf7829ca63a854d48f26f02c302ac73042506029a79b3b9cb1b69f25",
+  "objects_count": 97,
+  "relationships_count": 93,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "control_id": "A.5",
+      "title": "Organisational controls",
+      "level": 0,
+      "sort_order": 1000,
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "controls_count": 37
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bf7b6dd3-0db9-5a01-a9eb-2ee02bef9e4e",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.1",
+      "title": "Policies for information security",
+      "level": 1,
+      "sort_order": 1001,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify"
+        ],
+        "operational_capabilities": [
+          "Governance"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "479d803f-735c-5a64-8853-bb785fc45ca7",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.2",
+      "title": "Information security roles and responsibilities",
+      "level": 1,
+      "sort_order": 1002,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify"
+        ],
+        "operational_capabilities": [
+          "Governance"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "dd4a9504-721b-5c36-b08b-a9fb4d3a88e7",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.3",
+      "title": "Segregation of duties",
+      "level": 1,
+      "sort_order": 1003,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Governance",
+          "Identity_and_access_management"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "edc37609-df2a-52ca-8b80-cb5f16398712",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.4",
+      "title": "Management responsibilities",
+      "level": 1,
+      "sort_order": 1004,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify"
+        ],
+        "operational_capabilities": [
+          "Governance"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "10d40c28-4652-5862-a7e1-e153b629a213",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.5",
+      "title": "Contact with authorities",
+      "level": 1,
+      "sort_order": 1005,
+      "control_type": [
+        "Preventive",
+        "Detective",
+        "Corrective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect",
+          "Respond",
+          "Recover"
+        ],
+        "operational_capabilities": [
+          "Governance"
+        ],
+        "security_domains": [
+          "Defence",
+          "Resilience"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "85e83d83-41b1-59ce-9c8a-0024e4ff63ba",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.6",
+      "title": "Contact with special interest groups",
+      "level": 1,
+      "sort_order": 1006,
+      "control_type": [
+        "Preventive",
+        "Detective",
+        "Corrective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect",
+          "Detect",
+          "Respond",
+          "Recover"
+        ],
+        "operational_capabilities": [
+          "Governance"
+        ],
+        "security_domains": [
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1f61ec56-15ec-5973-a547-801aa9302349",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.7",
+      "title": "Threat intelligence",
+      "level": 1,
+      "sort_order": 1007,
+      "control_type": [
+        "Preventive",
+        "Detective",
+        "Corrective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Detect",
+          "Respond"
+        ],
+        "operational_capabilities": [
+          "Threat_and_vulnerability_management"
+        ],
+        "security_domains": [
+          "Defence",
+          "Resilience"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "af64d8ab-b324-5965-8989-c3593b1c7f11",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.8",
+      "title": "Information security in project management",
+      "level": 1,
+      "sort_order": 1008,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Governance"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9b3ff9b4-0036-566d-9f5d-738f15728212",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.9",
+      "title": "Inventory of information and other associated assets",
+      "level": 1,
+      "sort_order": 1009,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify"
+        ],
+        "operational_capabilities": [
+          "Asset_management"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem",
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a4ea6a1c-a6f4-586b-a636-98dae2931b93",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.10",
+      "title": "Acceptable use of information and other associated assets",
+      "level": 1,
+      "sort_order": 1010,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Asset_management",
+          "Information_protection"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "55594a02-5238-54d0-8baa-40cba9241fe0",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.11",
+      "title": "Return of assets",
+      "level": 1,
+      "sort_order": 1011,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Asset_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7ae6bcff-5e66-53f2-b03f-d82a2e909ecd",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.12",
+      "title": "Classification of information",
+      "level": 1,
+      "sort_order": 1012,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify"
+        ],
+        "operational_capabilities": [
+          "Information_protection"
+        ],
+        "security_domains": [
+          "Protection",
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6108f5d1-7ec2-5677-86b6-0db3610bc4a1",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.13",
+      "title": "Labelling of information",
+      "level": 1,
+      "sort_order": 1013,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Information_protection"
+        ],
+        "security_domains": [
+          "Protection",
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "eb3fd718-4adf-55f9-aa70-c3011db04283",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.14",
+      "title": "Information transfer",
+      "level": 1,
+      "sort_order": 1014,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Asset_management",
+          "Information_protection"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e4cf1da7-77e4-5bf0-84b7-744c2b752cab",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.15",
+      "title": "Access control",
+      "level": 1,
+      "sort_order": 1015,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Identity_and_access_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b4ad0b30-90b6-50fc-9b26-6971d2a74b23",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.16",
+      "title": "Identity management",
+      "level": 1,
+      "sort_order": 1016,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Identity_and_access_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b90ed459-e547-5648-9651-8f4c7b6df9ea",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.17",
+      "title": "Authentication information",
+      "level": 1,
+      "sort_order": 1017,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Identity_and_access_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4f6f8fd4-d8dd-5340-94b5-e21c48efd6e5",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.18",
+      "title": "Access rights",
+      "level": 1,
+      "sort_order": 1018,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Identity_and_access_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4e3f8288-3ead-57ec-9e1e-ee9236be832a",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.19",
+      "title": "Information security in supplier relationships",
+      "level": 1,
+      "sort_order": 1019,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Supplier_relationships_security"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "169f398e-c5af-568c-80ae-87d134949905",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.20",
+      "title": "Addressing information security within supplier agreements",
+      "level": 1,
+      "sort_order": 1020,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Supplier_relationships_security"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8be6799e-bd83-564d-979f-11342b9093bd",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.21",
+      "title": "Managing information security in the ICT supply chain",
+      "level": 1,
+      "sort_order": 1021,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Supplier_relationships_security"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "20127c18-eadf-52b0-9ef8-33cae8abfa9b",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.22",
+      "title": "Monitoring, review and change management of supplier services",
+      "level": 1,
+      "sort_order": 1022,
+      "control_type": [
+        "Preventive",
+        "Detective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect",
+          "Detect"
+        ],
+        "operational_capabilities": [
+          "Supplier_relationships_security"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem",
+          "Protection",
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fb6e0545-7144-520f-91c6-14c55373ed92",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.23",
+      "title": "Information security for use of cloud services",
+      "level": 1,
+      "sort_order": 1023,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Supplier_relationships_security"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem",
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "232752b3-42e1-5971-9454-ef8dfd2ce554",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.24",
+      "title": "Information security incident management planning and preparation",
+      "level": 1,
+      "sort_order": 1024,
+      "control_type": [
+        "Preventive",
+        "Corrective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Respond",
+          "Recover"
+        ],
+        "operational_capabilities": [
+          "Information_security_event_management"
+        ],
+        "security_domains": [
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ba07d327-2210-52ab-992c-03b4efca73bf",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.25",
+      "title": "Assessment and decision on information security events",
+      "level": 1,
+      "sort_order": 1025,
+      "control_type": [
+        "Detective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Detect",
+          "Respond"
+        ],
+        "operational_capabilities": [
+          "Information_security_event_management"
+        ],
+        "security_domains": [
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ce5365bc-4992-5532-9d50-a6e8fa3a9c80",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.26",
+      "title": "Response to information security incidents",
+      "level": 1,
+      "sort_order": 1026,
+      "control_type": [
+        "Corrective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Respond",
+          "Recover"
+        ],
+        "operational_capabilities": [
+          "Information_security_event_management"
+        ],
+        "security_domains": [
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5a02bba4-71df-5d41-a003-5d0de6bd1d03",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.27",
+      "title": "Learning from information security incidents",
+      "level": 1,
+      "sort_order": 1027,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Information_security_event_management"
+        ],
+        "security_domains": [
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "78c86bb6-9db5-5204-a0d3-5e4210d99158",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.28",
+      "title": "Collection of evidence",
+      "level": 1,
+      "sort_order": 1028,
+      "control_type": [
+        "Detective",
+        "Corrective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Detect",
+          "Respond"
+        ],
+        "operational_capabilities": [
+          "Information_security_event_management"
+        ],
+        "security_domains": [
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b6848e89-21b1-509e-a12a-5029baddcc48",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.29",
+      "title": "Information security during disruption",
+      "level": 1,
+      "sort_order": 1029,
+      "control_type": [
+        "Preventive",
+        "Corrective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Protect",
+          "Respond"
+        ],
+        "operational_capabilities": [
+          "Continuity"
+        ],
+        "security_domains": [
+          "Protection",
+          "Resilience"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "19fad22b-ec0c-5c20-b047-1705664d7ae1",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.30",
+      "title": "ICT readiness for business continuity",
+      "level": 1,
+      "sort_order": 1030,
+      "control_type": [
+        "Corrective"
+      ],
+      "security_properties": [
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Respond",
+          "Recover"
+        ],
+        "operational_capabilities": [
+          "Continuity"
+        ],
+        "security_domains": [
+          "Resilience"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8780c3b5-8488-5028-8517-7926f15d4e63",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.31",
+      "title": "Legal, statutory, regulatory and contractual requirements",
+      "level": 1,
+      "sort_order": 1031,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify"
+        ],
+        "operational_capabilities": [
+          "Legal_and_compliance"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2f574ec3-94a7-5b65-a9d2-7730a2e3834a",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.32",
+      "title": "Intellectual property rights",
+      "level": 1,
+      "sort_order": 1032,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify"
+        ],
+        "operational_capabilities": [
+          "Legal_and_compliance"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5b6481af-1198-5b22-a460-5887569b59a7",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.33",
+      "title": "Protection of records",
+      "level": 1,
+      "sort_order": 1033,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Legal_and_compliance",
+          "Asset_management",
+          "Information_protection"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d6fa2203-186a-5f0f-a3a4-7e425ff682f9",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.34",
+      "title": "Privacy and protection of PII",
+      "level": 1,
+      "sort_order": 1034,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Information_protection",
+          "Legal_and_compliance"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "39e9facb-90be-5b7a-9b5c-6ffbef2b6ef6",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.35",
+      "title": "Independent review of information security",
+      "level": 1,
+      "sort_order": 1035,
+      "control_type": [
+        "Detective",
+        "Corrective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Detect"
+        ],
+        "operational_capabilities": [
+          "Information_security_assurance"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6e32ec3a-a457-5a4e-aa6a-92f3cf3fa18a",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.36",
+      "title": "Compliance with policies, rules and standards for information security",
+      "level": 1,
+      "sort_order": 1036,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Identify"
+        ],
+        "operational_capabilities": [
+          "Legal_and_compliance",
+          "Information_security_assurance"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f023cb25-98bc-5b18-b95a-842a4d96f42a",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "control_id": "A.5.37",
+      "title": "Documented operating procedures",
+      "level": 1,
+      "sort_order": 1037,
+      "control_type": [
+        "Preventive",
+        "Corrective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.5",
+        "category": "Organisational controls",
+        "cybersecurity_concepts": [
+          "Protect",
+          "Recover"
+        ],
+        "operational_capabilities": [
+          "Asset_management",
+          "Physical_security",
+          "System_and_network_security"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem",
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "control_id": "A.6",
+      "title": "People controls",
+      "level": 0,
+      "sort_order": 2000,
+      "metadata": {
+        "section": "A.6",
+        "category": "People controls",
+        "controls_count": 8
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4120d181-f40b-51e6-9890-7f5a0452336c",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "control_id": "A.6.1",
+      "title": "Screening",
+      "level": 1,
+      "sort_order": 2001,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.6",
+        "category": "People controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Human_resource_security"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "79c7e28a-d503-5f8c-896f-9b4dd47e2a3f",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "control_id": "A.6.2",
+      "title": "Terms and conditions of employment",
+      "level": 1,
+      "sort_order": 2002,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.6",
+        "category": "People controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Human_resource_security"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2364c1b1-90ae-5dc5-b5c7-2225b0da005f",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "control_id": "A.6.3",
+      "title": "Information security awareness, education and training",
+      "level": 1,
+      "sort_order": 2003,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.6",
+        "category": "People controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Human_resource_security"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "278f2ffb-1a1d-51d3-b1b1-3c782aaf5f31",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "control_id": "A.6.4",
+      "title": "Disciplinary process",
+      "level": 1,
+      "sort_order": 2004,
+      "control_type": [
+        "Preventive",
+        "Corrective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.6",
+        "category": "People controls",
+        "cybersecurity_concepts": [
+          "Protect",
+          "Respond"
+        ],
+        "operational_capabilities": [
+          "Human_resource_security"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "95087d18-fdc9-5e27-81c5-25080aeef1d0",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "control_id": "A.6.5",
+      "title": "Responsibilities after termination or change of employment",
+      "level": 1,
+      "sort_order": 2005,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.6",
+        "category": "People controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Human_resource_security",
+          "Asset_management"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8a4d6c41-b8ab-5015-8ff8-0b65f47652b5",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "control_id": "A.6.6",
+      "title": "Confidentiality or non-disclosure agreements",
+      "level": 1,
+      "sort_order": 2006,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality"
+      ],
+      "metadata": {
+        "section": "A.6",
+        "category": "People controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Human_resource_security",
+          "Information_protection"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "eac0e3ac-0504-5ce1-a540-e9c90ada197a",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "control_id": "A.6.7",
+      "title": "Remote working",
+      "level": 1,
+      "sort_order": 2007,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.6",
+        "category": "People controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Asset_management",
+          "Physical_security",
+          "System_and_network_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9d75d476-828e-5850-8852-24e9034dcc1e",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "control_id": "A.6.8",
+      "title": "Information security event reporting",
+      "level": 1,
+      "sort_order": 2008,
+      "control_type": [
+        "Detective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.6",
+        "category": "People controls",
+        "cybersecurity_concepts": [
+          "Detect"
+        ],
+        "operational_capabilities": [
+          "Information_security_event_management"
+        ],
+        "security_domains": [
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "control_id": "A.7",
+      "title": "Physical controls",
+      "level": 0,
+      "sort_order": 3000,
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "controls_count": 14
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "cbbbc2eb-511a-5eca-adb3-661ed0443f0f",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.1",
+      "title": "Physical security perimeters",
+      "level": 1,
+      "sort_order": 3001,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Physical_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3ce3578f-d56c-5e73-96ac-c381e7c00d4b",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.2",
+      "title": "Physical entry",
+      "level": 1,
+      "sort_order": 3002,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Physical_security",
+          "Identity_and_access_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c0204af4-36a1-5eff-8531-c16f43362c70",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.3",
+      "title": "Securing offices, rooms and facilities",
+      "level": 1,
+      "sort_order": 3003,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Physical_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3e16fb84-3dda-5f53-bd3a-65dee12c1dcd",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.4",
+      "title": "Physical security monitoring",
+      "level": 1,
+      "sort_order": 3004,
+      "control_type": [
+        "Preventive",
+        "Detective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect",
+          "Detect"
+        ],
+        "operational_capabilities": [
+          "Physical_security"
+        ],
+        "security_domains": [
+          "Protection",
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f75a3c13-ff52-58f2-9ef6-dc71c480d370",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.5",
+      "title": "Protecting against physical and environmental threats",
+      "level": 1,
+      "sort_order": 3005,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Physical_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "137e704b-6ddb-527e-a405-db679d586ec8",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.6",
+      "title": "Working in secure areas",
+      "level": 1,
+      "sort_order": 3006,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Physical_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "cf3a6842-4305-514e-9ec7-f2739e9082b6",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.7",
+      "title": "Clear desk and clear screen",
+      "level": 1,
+      "sort_order": 3007,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Physical_security",
+          "Information_protection"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0fadca7c-f2bd-5128-85f0-f5cd1de14e2e",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.8",
+      "title": "Equipment siting and protection",
+      "level": 1,
+      "sort_order": 3008,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Physical_security",
+          "Asset_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "82e0c495-a863-5e8f-aecb-1685396fbddd",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.9",
+      "title": "Security of assets off-premises",
+      "level": 1,
+      "sort_order": 3009,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Physical_security",
+          "Asset_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4131edbc-8827-5755-8e31-be8eaf783222",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.10",
+      "title": "Storage media",
+      "level": 1,
+      "sort_order": 3010,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Physical_security",
+          "Asset_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bf0dad14-bb6d-5c72-b0b9-b1de477723d8",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.11",
+      "title": "Supporting utilities",
+      "level": 1,
+      "sort_order": 3011,
+      "control_type": [
+        "Preventive",
+        "Detective"
+      ],
+      "security_properties": [
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect",
+          "Detect"
+        ],
+        "operational_capabilities": [
+          "Physical_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c3ac2bba-ea47-56fa-9ba4-4cdce0c72587",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.12",
+      "title": "Cabling security",
+      "level": 1,
+      "sort_order": 3012,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Physical_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3cf4f484-7cc2-50ca-8992-4bfdeb240669",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.13",
+      "title": "Equipment maintenance",
+      "level": 1,
+      "sort_order": 3013,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Physical_security",
+          "Asset_management"
+        ],
+        "security_domains": [
+          "Protection",
+          "Resilience"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b5465088-4efc-5387-b763-6f5d345ca883",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "control_id": "A.7.14",
+      "title": "Secure disposal or re-use of equipment",
+      "level": 1,
+      "sort_order": 3014,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality"
+      ],
+      "metadata": {
+        "section": "A.7",
+        "category": "Physical controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Physical_security",
+          "Asset_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "control_id": "A.8",
+      "title": "Technological controls",
+      "level": 0,
+      "sort_order": 4000,
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "controls_count": 34
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f97a1e14-f052-5d8f-85f0-2ba7cbe026c8",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.1",
+      "title": "User endpoint devices",
+      "level": 1,
+      "sort_order": 4001,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Asset_management",
+          "Information_protection"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "42ec03e6-e427-5e3d-ad2c-042cb1dccb25",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.2",
+      "title": "Privileged access rights",
+      "level": 1,
+      "sort_order": 4002,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Identity_and_access_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "da5714b2-2718-5519-be8a-6469b1b13471",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.3",
+      "title": "Information access restriction",
+      "level": 1,
+      "sort_order": 4003,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Identity_and_access_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a50a6a1e-2026-5c02-b5d7-794a3fdd9c05",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.4",
+      "title": "Access to source code",
+      "level": 1,
+      "sort_order": 4004,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Identity_and_access_management",
+          "Application_security",
+          "Secure_configuration"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1e20dd91-b7e6-5722-988f-a62c511c4d82",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.5",
+      "title": "Secure authentication",
+      "level": 1,
+      "sort_order": 4005,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Identity_and_access_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bed7441a-b17e-5e12-9d84-9b6866330c17",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.6",
+      "title": "Capacity management",
+      "level": 1,
+      "sort_order": 4006,
+      "control_type": [
+        "Preventive",
+        "Detective"
+      ],
+      "security_properties": [
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect",
+          "Detect"
+        ],
+        "operational_capabilities": [
+          "Continuity"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem",
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "310c9d4d-2c6f-50a7-8bac-69f2eab6cac5",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.7",
+      "title": "Protection against malware",
+      "level": 1,
+      "sort_order": 4007,
+      "control_type": [
+        "Preventive",
+        "Detective",
+        "Corrective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect",
+          "Detect"
+        ],
+        "operational_capabilities": [
+          "System_and_network_security",
+          "Information_protection"
+        ],
+        "security_domains": [
+          "Protection",
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7e255d5f-e3ec-5bec-b060-9ef8e19666ff",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.8",
+      "title": "Management of technical vulnerabilities",
+      "level": 1,
+      "sort_order": 4008,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Threat_and_vulnerability_management"
+        ],
+        "security_domains": [
+          "Protection",
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5073eb61-0cab-5821-aba2-b70548384bb4",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.9",
+      "title": "Configuration management",
+      "level": 1,
+      "sort_order": 4009,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Secure_configuration"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e8184ce9-38bd-5ac7-821e-d7962134279d",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.10",
+      "title": "Information deletion",
+      "level": 1,
+      "sort_order": 4010,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Information_protection",
+          "Legal_and_compliance"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f71f274e-0216-5854-91cc-85bab181be3c",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.11",
+      "title": "Data masking",
+      "level": 1,
+      "sort_order": 4011,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Information_protection"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a90259b8-e088-5a34-906d-51b09259e85a",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.12",
+      "title": "Data leakage prevention",
+      "level": 1,
+      "sort_order": 4012,
+      "control_type": [
+        "Preventive",
+        "Detective"
+      ],
+      "security_properties": [
+        "Confidentiality"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect",
+          "Detect"
+        ],
+        "operational_capabilities": [
+          "Information_protection"
+        ],
+        "security_domains": [
+          "Protection",
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "367ef7db-e188-5d32-8844-3cc56978ae71",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.13",
+      "title": "Information backup",
+      "level": 1,
+      "sort_order": 4013,
+      "control_type": [
+        "Corrective"
+      ],
+      "security_properties": [
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Recover"
+        ],
+        "operational_capabilities": [
+          "Continuity"
+        ],
+        "security_domains": [
+          "Protection",
+          "Resilience"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2f153046-5ac5-56d3-87cb-4a71d2cb2b49",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.14",
+      "title": "Redundancy of information processing facilities",
+      "level": 1,
+      "sort_order": 4014,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Continuity",
+          "Asset_management"
+        ],
+        "security_domains": [
+          "Protection",
+          "Resilience"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "97693c79-2814-57ee-8270-403ff655a7a8",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.15",
+      "title": "Logging",
+      "level": 1,
+      "sort_order": 4015,
+      "control_type": [
+        "Detective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Detect"
+        ],
+        "operational_capabilities": [
+          "Information_security_event_management"
+        ],
+        "security_domains": [
+          "Protection",
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ff9e9f9a-3d1d-5cc4-bbc2-cf16c74e9a6b",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.16",
+      "title": "Monitoring activities",
+      "level": 1,
+      "sort_order": 4016,
+      "control_type": [
+        "Detective",
+        "Corrective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Detect",
+          "Respond"
+        ],
+        "operational_capabilities": [
+          "Information_security_event_management"
+        ],
+        "security_domains": [
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2803e741-85bb-5597-9233-31a833ec963e",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.17",
+      "title": "Clock synchronisation",
+      "level": 1,
+      "sort_order": 4017,
+      "control_type": [
+        "Detective"
+      ],
+      "security_properties": [
+        "Integrity"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect",
+          "Detect"
+        ],
+        "operational_capabilities": [
+          "Information_security_event_management"
+        ],
+        "security_domains": [
+          "Protection",
+          "Defence"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7cd4c6aa-cf0b-5374-a5ad-d663142722c5",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.18",
+      "title": "Use of privileged utility programs",
+      "level": 1,
+      "sort_order": 4018,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "System_and_network_security",
+          "Secure_configuration",
+          "Identity_and_access_management"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "dbdf7ce9-689a-54d5-80ed-57cfbbbb947f",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.19",
+      "title": "Installation of software on operational systems",
+      "level": 1,
+      "sort_order": 4019,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Secure_configuration",
+          "Application_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f590ebc3-2711-5b55-81c4-40a432f4834f",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.20",
+      "title": "Networks security",
+      "level": 1,
+      "sort_order": 4020,
+      "control_type": [
+        "Preventive",
+        "Detective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect",
+          "Detect"
+        ],
+        "operational_capabilities": [
+          "System_and_network_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "af8440f3-613e-5842-b0e5-f2e6c20272eb",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.21",
+      "title": "Security of network services",
+      "level": 1,
+      "sort_order": 4021,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "System_and_network_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bf3f6fb8-f4ad-5aeb-8447-50757f32ecc9",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.22",
+      "title": "Segregation of networks",
+      "level": 1,
+      "sort_order": 4022,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "System_and_network_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "34ffdb5e-d8ed-5a7b-94e5-6a0ca3eaf495",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.23",
+      "title": "Web filtering",
+      "level": 1,
+      "sort_order": 4023,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "System_and_network_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5f02f6c7-2afa-51b2-8004-3991cdef4cfa",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.24",
+      "title": "Use of cryptography",
+      "level": 1,
+      "sort_order": 4024,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Secure_configuration"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bcbca6ce-b56a-5250-85ec-d7a5c19a089b",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.25",
+      "title": "Secure development life cycle",
+      "level": 1,
+      "sort_order": 4025,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Application_security",
+          "System_and_network_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8d8733cf-9d63-5c0b-8b29-68c9d8fb7289",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.26",
+      "title": "Application security requirements",
+      "level": 1,
+      "sort_order": 4026,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Application_security",
+          "System_and_network_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0cde2ea2-abc6-58ae-8bcd-46668f3be41e",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.27",
+      "title": "Secure system architecture and engineering principles",
+      "level": 1,
+      "sort_order": 4027,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Application_security",
+          "System_and_network_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3641a88d-5e0f-5893-aa56-daabe4fdecc1",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.28",
+      "title": "Secure coding",
+      "level": 1,
+      "sort_order": 4028,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Application_security",
+          "System_and_network_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "58a58cc9-2b34-53ca-ab1f-588792471e66",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.29",
+      "title": "Security testing in development and acceptance",
+      "level": 1,
+      "sort_order": 4029,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Application_security",
+          "Information_security_assurance"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "db5ae63e-a87a-58ba-964b-62f41c96141f",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.30",
+      "title": "Outsourced development",
+      "level": 1,
+      "sort_order": 4030,
+      "control_type": [
+        "Preventive",
+        "Detective"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Identify",
+          "Protect",
+          "Detect"
+        ],
+        "operational_capabilities": [
+          "System_and_network_security",
+          "Application_security",
+          "Supplier_relationships_security"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem",
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5d0483eb-4e00-558d-92f5-fccaad697882",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.31",
+      "title": "Separation of development, test and production environments",
+      "level": 1,
+      "sort_order": 4031,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Application_security",
+          "System_and_network_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c877da5a-6b4d-5dc4-bfa7-c253c7248dea",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.32",
+      "title": "Change management",
+      "level": 1,
+      "sort_order": 4032,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Application_security",
+          "System_and_network_security"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fcda21bb-bd5e-5710-aa27-732fa38bb26f",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.33",
+      "title": "Test information",
+      "level": 1,
+      "sort_order": 4033,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "Information_protection"
+        ],
+        "security_domains": [
+          "Protection"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fc956c41-0209-537c-8554-57b3af4d7ee8",
+      "framework_id": "e60d21bc-53a7-5c93-bffa-d8be6f085971",
+      "parent_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "control_id": "A.8.34",
+      "title": "Protection of information systems during audit testing",
+      "level": 1,
+      "sort_order": 4034,
+      "control_type": [
+        "Preventive"
+      ],
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "metadata": {
+        "section": "A.8",
+        "category": "Technological controls",
+        "cybersecurity_concepts": [
+          "Protect"
+        ],
+        "operational_capabilities": [
+          "System_and_network_security",
+          "Information_security_assurance"
+        ],
+        "security_domains": [
+          "Governance_and_Ecosystem",
+          "Protection"
+        ]
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "type": "hierarchy",
+      "source_id": "bf7b6dd3-0db9-5a01-a9eb-2ee02bef9e4e",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "479d803f-735c-5a64-8853-bb785fc45ca7",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "dd4a9504-721b-5c36-b08b-a9fb4d3a88e7",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "edc37609-df2a-52ca-8b80-cb5f16398712",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "10d40c28-4652-5862-a7e1-e153b629a213",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "85e83d83-41b1-59ce-9c8a-0024e4ff63ba",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "1f61ec56-15ec-5973-a547-801aa9302349",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "af64d8ab-b324-5965-8989-c3593b1c7f11",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9b3ff9b4-0036-566d-9f5d-738f15728212",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a4ea6a1c-a6f4-586b-a636-98dae2931b93",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "55594a02-5238-54d0-8baa-40cba9241fe0",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "7ae6bcff-5e66-53f2-b03f-d82a2e909ecd",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "6108f5d1-7ec2-5677-86b6-0db3610bc4a1",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "eb3fd718-4adf-55f9-aa70-c3011db04283",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e4cf1da7-77e4-5bf0-84b7-744c2b752cab",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b4ad0b30-90b6-50fc-9b26-6971d2a74b23",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b90ed459-e547-5648-9651-8f4c7b6df9ea",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "4f6f8fd4-d8dd-5340-94b5-e21c48efd6e5",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "4e3f8288-3ead-57ec-9e1e-ee9236be832a",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "169f398e-c5af-568c-80ae-87d134949905",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8be6799e-bd83-564d-979f-11342b9093bd",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "20127c18-eadf-52b0-9ef8-33cae8abfa9b",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "fb6e0545-7144-520f-91c6-14c55373ed92",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "232752b3-42e1-5971-9454-ef8dfd2ce554",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ba07d327-2210-52ab-992c-03b4efca73bf",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ce5365bc-4992-5532-9d50-a6e8fa3a9c80",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "5a02bba4-71df-5d41-a003-5d0de6bd1d03",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "78c86bb6-9db5-5204-a0d3-5e4210d99158",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b6848e89-21b1-509e-a12a-5029baddcc48",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "19fad22b-ec0c-5c20-b047-1705664d7ae1",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8780c3b5-8488-5028-8517-7926f15d4e63",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2f574ec3-94a7-5b65-a9d2-7730a2e3834a",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "5b6481af-1198-5b22-a460-5887569b59a7",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d6fa2203-186a-5f0f-a3a4-7e425ff682f9",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "39e9facb-90be-5b7a-9b5c-6ffbef2b6ef6",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "6e32ec3a-a457-5a4e-aa6a-92f3cf3fa18a",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f023cb25-98bc-5b18-b95a-842a4d96f42a",
+      "target_id": "3f939423-14dc-583a-9453-b1adafb6acd0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "4120d181-f40b-51e6-9890-7f5a0452336c",
+      "target_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "79c7e28a-d503-5f8c-896f-9b4dd47e2a3f",
+      "target_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2364c1b1-90ae-5dc5-b5c7-2225b0da005f",
+      "target_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "278f2ffb-1a1d-51d3-b1b1-3c782aaf5f31",
+      "target_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "95087d18-fdc9-5e27-81c5-25080aeef1d0",
+      "target_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8a4d6c41-b8ab-5015-8ff8-0b65f47652b5",
+      "target_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "eac0e3ac-0504-5ce1-a540-e9c90ada197a",
+      "target_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9d75d476-828e-5850-8852-24e9034dcc1e",
+      "target_id": "4242900b-7690-5a3d-b1a1-4a365b82ee58",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "cbbbc2eb-511a-5eca-adb3-661ed0443f0f",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "3ce3578f-d56c-5e73-96ac-c381e7c00d4b",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c0204af4-36a1-5eff-8531-c16f43362c70",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "3e16fb84-3dda-5f53-bd3a-65dee12c1dcd",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f75a3c13-ff52-58f2-9ef6-dc71c480d370",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "137e704b-6ddb-527e-a405-db679d586ec8",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "cf3a6842-4305-514e-9ec7-f2739e9082b6",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0fadca7c-f2bd-5128-85f0-f5cd1de14e2e",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "82e0c495-a863-5e8f-aecb-1685396fbddd",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "4131edbc-8827-5755-8e31-be8eaf783222",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "bf0dad14-bb6d-5c72-b0b9-b1de477723d8",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c3ac2bba-ea47-56fa-9ba4-4cdce0c72587",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "3cf4f484-7cc2-50ca-8992-4bfdeb240669",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b5465088-4efc-5387-b763-6f5d345ca883",
+      "target_id": "9e3554d6-0357-52e8-93e7-16a7a38dd12f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f97a1e14-f052-5d8f-85f0-2ba7cbe026c8",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "42ec03e6-e427-5e3d-ad2c-042cb1dccb25",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "da5714b2-2718-5519-be8a-6469b1b13471",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a50a6a1e-2026-5c02-b5d7-794a3fdd9c05",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "1e20dd91-b7e6-5722-988f-a62c511c4d82",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "bed7441a-b17e-5e12-9d84-9b6866330c17",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "310c9d4d-2c6f-50a7-8bac-69f2eab6cac5",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "7e255d5f-e3ec-5bec-b060-9ef8e19666ff",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "5073eb61-0cab-5821-aba2-b70548384bb4",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e8184ce9-38bd-5ac7-821e-d7962134279d",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f71f274e-0216-5854-91cc-85bab181be3c",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a90259b8-e088-5a34-906d-51b09259e85a",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "367ef7db-e188-5d32-8844-3cc56978ae71",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2f153046-5ac5-56d3-87cb-4a71d2cb2b49",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "97693c79-2814-57ee-8270-403ff655a7a8",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ff9e9f9a-3d1d-5cc4-bbc2-cf16c74e9a6b",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2803e741-85bb-5597-9233-31a833ec963e",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "7cd4c6aa-cf0b-5374-a5ad-d663142722c5",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "dbdf7ce9-689a-54d5-80ed-57cfbbbb947f",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f590ebc3-2711-5b55-81c4-40a432f4834f",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "af8440f3-613e-5842-b0e5-f2e6c20272eb",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "bf3f6fb8-f4ad-5aeb-8447-50757f32ecc9",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "34ffdb5e-d8ed-5a7b-94e5-6a0ca3eaf495",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "5f02f6c7-2afa-51b2-8004-3991cdef4cfa",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "bcbca6ce-b56a-5250-85ec-d7a5c19a089b",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8d8733cf-9d63-5c0b-8b29-68c9d8fb7289",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0cde2ea2-abc6-58ae-8bcd-46668f3be41e",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "3641a88d-5e0f-5893-aa56-daabe4fdecc1",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "58a58cc9-2b34-53ca-ab1f-588792471e66",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "db5ae63e-a87a-58ba-964b-62f41c96141f",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "5d0483eb-4e00-558d-92f5-fccaad697882",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c877da5a-6b4d-5dc4-bfa7-c253c7248dea",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "fcda21bb-bd5e-5710-aa27-732fa38bb26f",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "fc956c41-0209-537c-8554-57b3af4d7ee8",
+      "target_id": "450f75a1-15eb-5a94-aa33-4e5af29b344d",
+      "relationship_type": "part-of"
+    }
+  ]
+}

@@ -1,0 +1,2716 @@
+{
+  "bundle_id": "bundle--6db49bd6-0fa2-532a-b1ac-1d44be195e6c",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+    "code": "NIST_CSF_2.0",
+    "name": "NIST Cybersecurity Framework",
+    "version": "2.0",
+    "publisher": "NIST",
+    "source_url": "https://doi.org/10.6028/NIST.CSWP.29",
+    "description": "NIST Cybersecurity Framework 2.0 — Functions, Categories, and Subcategories"
+  },
+  "generated_at": "2026-02-08T19:25:15Z",
+  "generator": "generate_nist_csf.py",
+  "content_hash": "a207d858168a18f43878c759244ac6f02d76df3f3893e0c4221c9ba16ac8448f",
+  "statistics": {
+    "functions": 6,
+    "categories": 22,
+    "subcategories": 106
+  },
+  "objects_count": 134,
+  "relationships_count": 128,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "control_id": "GV",
+      "title": "Govern",
+      "description": "The organization's cybersecurity risk management strategy, expectations, and policy are established, communicated, and monitored",
+      "level": 0,
+      "sort_order": 10000,
+      "metadata": {
+        "function": "GV",
+        "function_name": "Govern"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1766519e-950e-5c87-919c-b158b075e534",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "control_id": "GV.OC",
+      "title": "Organizational Context",
+      "description": "The circumstances - mission, stakeholder expectations, dependencies, and legal, regulatory, and contractual requirements - surrounding the organization's cybersecurity risk management decisions are understood",
+      "level": 1,
+      "sort_order": 200,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.OC",
+        "category_name": "Organizational Context"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "27ef8649-d875-5bb7-9731-728c6d7a8006",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "1766519e-950e-5c87-919c-b158b075e534",
+      "control_id": "GV.OC-01",
+      "title": "The organizational mission is understood and informs cybersecurity risk management",
+      "level": 2,
+      "sort_order": 3,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.OC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "388edb84-8e73-57bb-8b92-382d73498597",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "1766519e-950e-5c87-919c-b158b075e534",
+      "control_id": "GV.OC-02",
+      "title": "Internal and external stakeholders are understood, and their needs and expectations regarding cybersecurity risk management are understood and considered",
+      "level": 2,
+      "sort_order": 4,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.OC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f894bde4-6732-525c-b120-37928496b3a8",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "1766519e-950e-5c87-919c-b158b075e534",
+      "control_id": "GV.OC-03",
+      "title": "Legal, regulatory, and contractual requirements regarding cybersecurity - including privacy and civil liberties obligations - are understood and managed",
+      "level": 2,
+      "sort_order": 5,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.OC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "278219f8-69ac-5b33-b5d8-a427e5cf8ff8",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "1766519e-950e-5c87-919c-b158b075e534",
+      "control_id": "GV.OC-04",
+      "title": "Critical objectives, capabilities, and services that stakeholders depend on or expect from the organization are understood and communicated",
+      "level": 2,
+      "sort_order": 6,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.OC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d5720371-66e2-52e9-b648-0e191b242aea",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "1766519e-950e-5c87-919c-b158b075e534",
+      "control_id": "GV.OC-05",
+      "title": "Outcomes, capabilities, and services that the organization depends on are understood and communicated",
+      "level": 2,
+      "sort_order": 7,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.OC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "control_id": "GV.RM",
+      "title": "Risk Management Strategy",
+      "description": "The organization's priorities, constraints, risk tolerance and appetite statements, and assumptions are established, communicated, and used to support operational risk decisions",
+      "level": 1,
+      "sort_order": 800,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RM",
+        "category_name": "Risk Management Strategy"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e9e91934-be3a-5ad5-ad07-87196c636bfd",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "control_id": "GV.RM-01",
+      "title": "Risk management objectives are established and agreed to by organizational stakeholders",
+      "level": 2,
+      "sort_order": 9,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4f568172-03cf-5534-ada4-930bf207a28e",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "control_id": "GV.RM-02",
+      "title": "Risk appetite and risk tolerance statements are established, communicated, and maintained",
+      "level": 2,
+      "sort_order": 10,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9d8f61dc-6eb1-51bf-8592-26c930f681d4",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "control_id": "GV.RM-03",
+      "title": "Cybersecurity risk management activities and outcomes are included in enterprise risk management processes",
+      "level": 2,
+      "sort_order": 11,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e1fd2f33-e282-58d4-b27e-a57e619f7987",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "control_id": "GV.RM-04",
+      "title": "Strategic direction that describes appropriate risk response options is established and communicated",
+      "level": 2,
+      "sort_order": 12,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6662b5b6-1b6a-5008-9529-1f605c6da2a5",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "control_id": "GV.RM-05",
+      "title": "Lines of communication across the organization are established for cybersecurity risks, including risks from suppliers and other third parties",
+      "level": 2,
+      "sort_order": 13,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fe73d408-d12d-555c-99ff-eb659c750986",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "control_id": "GV.RM-06",
+      "title": "A standardized method for calculating, documenting, categorizing, and prioritizing cybersecurity risks is established and communicated",
+      "level": 2,
+      "sort_order": 14,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8fd11dad-5c49-5db5-a9c4-7680b54febac",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "control_id": "GV.RM-07",
+      "title": "Strategic opportunities (i.e., positive risks) are characterized and are included in organizational cybersecurity risk discussions",
+      "level": 2,
+      "sort_order": 15,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a566943e-a57a-5367-947f-850ce50cc123",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "control_id": "GV.RR",
+      "title": "Roles, Responsibilities, and Authorities",
+      "description": "Cybersecurity roles, responsibilities, and authorities to foster accountability, performance assessment, and continuous improvement are established and communicated",
+      "level": 1,
+      "sort_order": 1600,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RR",
+        "category_name": "Roles, Responsibilities, and Authorities"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "32ed2481-83bf-57f0-86d3-8f713b670afb",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "a566943e-a57a-5367-947f-850ce50cc123",
+      "control_id": "GV.RR-01",
+      "title": "Organizational leadership is responsible and accountable for cybersecurity risk and fosters a culture that is risk-aware, ethical, and continually improving",
+      "level": 2,
+      "sort_order": 17,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RR"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "74528876-f093-5325-84bc-05f373e44c01",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "a566943e-a57a-5367-947f-850ce50cc123",
+      "control_id": "GV.RR-02",
+      "title": "Roles, responsibilities, and authorities related to cybersecurity risk management are established, communicated, understood, and enforced",
+      "level": 2,
+      "sort_order": 18,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RR"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "741aaaea-8af6-5e11-83a6-c2335275b52a",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "a566943e-a57a-5367-947f-850ce50cc123",
+      "control_id": "GV.RR-03",
+      "title": "Adequate resources are allocated commensurate with the cybersecurity risk strategy, roles, responsibilities, and policies",
+      "level": 2,
+      "sort_order": 19,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RR"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0ccb81ff-abda-5d7b-b9a9-6de76eb690d7",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "a566943e-a57a-5367-947f-850ce50cc123",
+      "control_id": "GV.RR-04",
+      "title": "Cybersecurity is included in human resources practices",
+      "level": 2,
+      "sort_order": 20,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.RR"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0673aa83-b663-514a-97f4-614942aa82f9",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "control_id": "GV.PO",
+      "title": "Policy",
+      "description": "Organizational cybersecurity policy is established, communicated, and enforced",
+      "level": 1,
+      "sort_order": 2100,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.PO",
+        "category_name": "Policy"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a81733a9-4e27-58f7-a662-db7e37c30e16",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0673aa83-b663-514a-97f4-614942aa82f9",
+      "control_id": "GV.PO-01",
+      "title": "Policy for managing cybersecurity risks is established based on organizational context, cybersecurity strategy, and priorities and is communicated and enforced",
+      "level": 2,
+      "sort_order": 22,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.PO"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "eaa67ab3-cb33-55e4-8b6a-7630d8a1eca3",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0673aa83-b663-514a-97f4-614942aa82f9",
+      "control_id": "GV.PO-02",
+      "title": "Policy for managing cybersecurity risks is reviewed, updated, communicated, and enforced to reflect changes in requirements, threats, technology, and organizational mission",
+      "level": 2,
+      "sort_order": 23,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.PO"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5db8d540-3de4-5c44-a099-ae7006e5d2bd",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "control_id": "GV.OV",
+      "title": "Oversight",
+      "description": "Results of organization-wide cybersecurity risk management activities and performance are used to inform, improve, and adjust the risk management strategy",
+      "level": 1,
+      "sort_order": 2400,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.OV",
+        "category_name": "Oversight"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6bc3237e-17cb-52de-b8b9-8996c4db053b",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "5db8d540-3de4-5c44-a099-ae7006e5d2bd",
+      "control_id": "GV.OV-01",
+      "title": "Cybersecurity risk management strategy outcomes are reviewed to inform and adjust strategy and direction",
+      "level": 2,
+      "sort_order": 25,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.OV"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "59ee99ae-4b5c-558c-9cc2-7f6785e1fb50",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "5db8d540-3de4-5c44-a099-ae7006e5d2bd",
+      "control_id": "GV.OV-02",
+      "title": "The cybersecurity risk management strategy is reviewed and adjusted to ensure coverage of organizational requirements and risks",
+      "level": 2,
+      "sort_order": 26,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.OV"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "77d03f75-7578-52d9-88e4-d9c972e88c4d",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "5db8d540-3de4-5c44-a099-ae7006e5d2bd",
+      "control_id": "GV.OV-03",
+      "title": "Organizational cybersecurity risk management performance is evaluated and reviewed for adjustments needed",
+      "level": 2,
+      "sort_order": 27,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.OV"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "control_id": "GV.SC",
+      "title": "Cybersecurity Supply Chain Risk Management",
+      "description": "Cyber supply chain risk management processes are identified, established, managed, monitored, and improved by organizational stakeholders",
+      "level": 1,
+      "sort_order": 2800,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.SC",
+        "category_name": "Cybersecurity Supply Chain Risk Management"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f5bf4584-47fb-5fc0-b4ba-d43a8e1ce773",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "control_id": "GV.SC-01",
+      "title": "A cybersecurity supply chain risk management program, strategy, objectives, policies, and processes are established and agreed to by organizational stakeholders",
+      "level": 2,
+      "sort_order": 29,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.SC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8c0c72bc-ccf5-5dee-87ef-2c00dbffa671",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "control_id": "GV.SC-02",
+      "title": "Cybersecurity roles and responsibilities for suppliers, customers, and partners are established, communicated, and coordinated internally and externally",
+      "level": 2,
+      "sort_order": 30,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.SC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9f4a95e7-bc0a-5d07-9da6-48371bdb1597",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "control_id": "GV.SC-03",
+      "title": "Cybersecurity supply chain risk management is integrated into cybersecurity and enterprise risk management, risk assessment, and improvement processes",
+      "level": 2,
+      "sort_order": 31,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.SC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "dd147571-b7a3-5dc3-8ee9-350e2f2c67e0",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "control_id": "GV.SC-04",
+      "title": "Suppliers are known and prioritized by criticality",
+      "level": 2,
+      "sort_order": 32,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.SC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "07a25f67-a2d7-5127-ba5c-6b0629f11497",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "control_id": "GV.SC-05",
+      "title": "Requirements to address cybersecurity risks in supply chains are established, prioritized, and integrated into contracts and other types of agreements with suppliers and other relevant third parties",
+      "level": 2,
+      "sort_order": 33,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.SC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "96120d06-7640-5d46-ab5c-a9b39c62f1ef",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "control_id": "GV.SC-06",
+      "title": "Planning and due diligence are performed to reduce risks before entering into formal supplier or other third-party relationships",
+      "level": 2,
+      "sort_order": 34,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.SC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4fe13ad3-99f4-5de6-9f35-b97375182308",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "control_id": "GV.SC-07",
+      "title": "The risks posed by a supplier, their products and services, and other third parties are understood, recorded, prioritized, assessed, responded to, and monitored over the course of the relationship",
+      "level": 2,
+      "sort_order": 35,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.SC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "61a71eee-be0b-5285-bfcc-465f346b999c",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "control_id": "GV.SC-08",
+      "title": "Relevant suppliers and other third parties are included in incident planning, response, and recovery activities",
+      "level": 2,
+      "sort_order": 36,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.SC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3609569f-296d-52b2-84a4-7f3f3d117d15",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "control_id": "GV.SC-09",
+      "title": "Supply chain security practices are integrated into cybersecurity and enterprise risk management programs, and their performance is monitored throughout the technology product and service life cycle",
+      "level": 2,
+      "sort_order": 37,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.SC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "abed9cca-5155-5dbb-b6a8-324c379bcbfb",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "control_id": "GV.SC-10",
+      "title": "Cybersecurity supply chain risk management plans include provisions for activities that occur after the conclusion of a partnership or service agreement",
+      "level": 2,
+      "sort_order": 38,
+      "metadata": {
+        "function": "GV",
+        "category": "GV.SC"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "65e22614-5397-51b0-92a7-82cffd6d1310",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "control_id": "ID",
+      "title": "Identify",
+      "description": "The organization's current cybersecurity risks are understood",
+      "level": 0,
+      "sort_order": 390000,
+      "metadata": {
+        "function": "ID",
+        "function_name": "Identify"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "47887de4-7319-5270-938a-7c552ef71872",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "65e22614-5397-51b0-92a7-82cffd6d1310",
+      "control_id": "ID.AM",
+      "title": "Asset Management",
+      "description": "Assets (e.g., data, hardware, software, systems, facilities, services, people) that enable the organization to achieve business purposes are identified and managed consistent with their relative importance to organizational objectives and the organization's risk strategy",
+      "level": 1,
+      "sort_order": 4000,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.AM",
+        "category_name": "Asset Management"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5f56c896-1b03-5c58-81c0-9d4f7ed36df5",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "control_id": "ID.AM-01",
+      "title": "Inventories of hardware managed by the organization are maintained",
+      "level": 2,
+      "sort_order": 41,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.AM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c66cf89f-cbcf-557b-9498-28e491e08baf",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "control_id": "ID.AM-02",
+      "title": "Inventories of software, services, and systems managed by the organization are maintained",
+      "level": 2,
+      "sort_order": 42,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.AM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f3255de9-aa9a-5090-a1a3-51c86a5016e8",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "control_id": "ID.AM-03",
+      "title": "Representations of the organization's authorized network communication and internal and external network data flows are maintained",
+      "level": 2,
+      "sort_order": 43,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.AM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "368f2136-bd7c-5b02-b092-73007ea378d3",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "control_id": "ID.AM-04",
+      "title": "Inventories of services provided by suppliers are maintained",
+      "level": 2,
+      "sort_order": 44,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.AM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8c8e5537-0fea-582d-87d7-6785839fa745",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "control_id": "ID.AM-05",
+      "title": "Assets are prioritized based on classification, criticality, resources, and impact on the mission",
+      "level": 2,
+      "sort_order": 45,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.AM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9a5c3f42-646e-5ab0-9dab-bca59e4fca61",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "control_id": "ID.AM-07",
+      "title": "Inventories of data and corresponding metadata for designated data types are maintained",
+      "level": 2,
+      "sort_order": 46,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.AM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0ea2ad7b-cbca-59ec-bb0f-bc84e045151b",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "control_id": "ID.AM-08",
+      "title": "Systems, hardware, software, services, and data are managed throughout their life cycles",
+      "level": 2,
+      "sort_order": 47,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.AM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "65e22614-5397-51b0-92a7-82cffd6d1310",
+      "control_id": "ID.RA",
+      "title": "Risk Assessment",
+      "description": "The cybersecurity risk to the organization, assets, and individuals is understood by the organization",
+      "level": 1,
+      "sort_order": 4800,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.RA",
+        "category_name": "Risk Assessment"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9442809c-9c64-59f2-97ca-a30e39eaba00",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "control_id": "ID.RA-01",
+      "title": "Vulnerabilities in assets are identified, validated, and recorded",
+      "level": 2,
+      "sort_order": 49,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.RA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f4bba68f-31fc-5182-8219-e0967c442176",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "control_id": "ID.RA-02",
+      "title": "Cyber threat intelligence is received from information sharing forums and sources",
+      "level": 2,
+      "sort_order": 50,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.RA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8642929d-7cfe-5fd4-9543-12cb3848c417",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "control_id": "ID.RA-03",
+      "title": "Internal and external threats to the organization are identified and recorded",
+      "level": 2,
+      "sort_order": 51,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.RA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8c1c0470-67ec-5f56-9ef1-490aa88cf0ac",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "control_id": "ID.RA-04",
+      "title": "Potential impacts and likelihoods of threats exploiting vulnerabilities are identified and recorded",
+      "level": 2,
+      "sort_order": 52,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.RA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2d7045c6-8b16-59e6-946c-afe55d5e7b18",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "control_id": "ID.RA-05",
+      "title": "Threats, vulnerabilities, likelihoods, and impacts are used to understand inherent risk and inform risk response prioritization",
+      "level": 2,
+      "sort_order": 53,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.RA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c53506ee-6e91-5d7f-b9c5-21839db581f6",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "control_id": "ID.RA-06",
+      "title": "Risk responses are chosen, prioritized, planned, tracked, and communicated",
+      "level": 2,
+      "sort_order": 54,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.RA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "881a7ce9-c5cd-5dd9-a2d1-e628710118ce",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "control_id": "ID.RA-07",
+      "title": "Changes and exceptions are managed, assessed for risk impact, recorded, and tracked",
+      "level": 2,
+      "sort_order": 55,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.RA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d5396f3a-6b7a-5cc0-9dca-7fdd1603159c",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "control_id": "ID.RA-08",
+      "title": "Processes for receiving, analyzing, and responding to vulnerability disclosures are established",
+      "level": 2,
+      "sort_order": 56,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.RA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0d9e30e7-65de-5102-aeac-4f5b949e8757",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "control_id": "ID.RA-09",
+      "title": "The authenticity and integrity of hardware and software are assessed prior to acquisition and use",
+      "level": 2,
+      "sort_order": 57,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.RA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "32e38cce-dff5-5240-95fa-ba8b13cad344",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "control_id": "ID.RA-10",
+      "title": "Critical suppliers are assessed prior to acquisition",
+      "level": 2,
+      "sort_order": 58,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.RA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "907cebb3-861c-556c-8401-7e7270b22502",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "65e22614-5397-51b0-92a7-82cffd6d1310",
+      "control_id": "ID.IM",
+      "title": "Improvement",
+      "description": "Improvements to organizational cybersecurity risk management processes, procedures and activities are identified across all CSF Functions",
+      "level": 1,
+      "sort_order": 5900,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.IM",
+        "category_name": "Improvement"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9772ea44-090e-5640-a1f3-9426976e14d1",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "907cebb3-861c-556c-8401-7e7270b22502",
+      "control_id": "ID.IM-01",
+      "title": "Improvements are identified from evaluations",
+      "level": 2,
+      "sort_order": 60,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.IM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d51ea00a-3e21-509e-b359-b7a08289be77",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "907cebb3-861c-556c-8401-7e7270b22502",
+      "control_id": "ID.IM-02",
+      "title": "Improvements are identified from security tests and exercises, including those done in coordination with suppliers and relevant third parties",
+      "level": 2,
+      "sort_order": 61,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.IM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "15a31238-2a0b-5fcc-a777-f28d7418017c",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "907cebb3-861c-556c-8401-7e7270b22502",
+      "control_id": "ID.IM-03",
+      "title": "Improvements are identified from execution of operational processes, procedures, and activities",
+      "level": 2,
+      "sort_order": 62,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.IM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2c5b9fae-9a15-57e8-a4c7-a7a81e7fa771",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "907cebb3-861c-556c-8401-7e7270b22502",
+      "control_id": "ID.IM-04",
+      "title": "Incident response plans and other cybersecurity plans that affect operations are established, communicated, maintained, and improved",
+      "level": 2,
+      "sort_order": 63,
+      "metadata": {
+        "function": "ID",
+        "category": "ID.IM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0c0e8455-7247-56cd-a225-d262bb905605",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "control_id": "PR",
+      "title": "Protect",
+      "description": "Safeguards to manage the organization's cybersecurity risks are used",
+      "level": 0,
+      "sort_order": 640000,
+      "metadata": {
+        "function": "PR",
+        "function_name": "Protect"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0c0e8455-7247-56cd-a225-d262bb905605",
+      "control_id": "PR.AA",
+      "title": "Identity Management, Authentication, and Access Control",
+      "description": "Access to physical and logical assets is limited to authorized users, services, and hardware and managed commensurate with the assessed risk of unauthorized access",
+      "level": 1,
+      "sort_order": 6500,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "00e15a14-8701-5658-a168-e593306309de",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "control_id": "PR.AA-01",
+      "title": "Identities and credentials for authorized users, services, and hardware are managed by the organization",
+      "level": 2,
+      "sort_order": 66,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.AA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "479adb38-e332-57ac-85a9-39635a6043a8",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "control_id": "PR.AA-02",
+      "title": "Identities are proofed and bound to credentials based on the context of interactions",
+      "level": 2,
+      "sort_order": 67,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.AA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "76a39da5-b48a-5b39-96a5-3ffa8aa0e646",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "control_id": "PR.AA-03",
+      "title": "Users, services, and hardware are authenticated",
+      "level": 2,
+      "sort_order": 68,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.AA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ecd337e3-c557-5f99-9523-8a48d14506ad",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "control_id": "PR.AA-04",
+      "title": "Identity assertions are protected, conveyed, and verified",
+      "level": 2,
+      "sort_order": 69,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.AA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d4d8dced-0bf3-5282-a851-15f2fcd12941",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "control_id": "PR.AA-05",
+      "title": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties",
+      "level": 2,
+      "sort_order": 70,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.AA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "39d2a3ca-bc90-5219-bb1c-2361d27cd7be",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "control_id": "PR.AA-06",
+      "title": "Physical access to assets is managed, monitored, and enforced commensurate with risk",
+      "level": 2,
+      "sort_order": 71,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.AA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0291b0d2-85e0-535a-89c5-4baef432e612",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0c0e8455-7247-56cd-a225-d262bb905605",
+      "control_id": "PR.AT",
+      "title": "Awareness and Training",
+      "description": "The organization's personnel are provided with cybersecurity awareness and training so that they can perform their cybersecurity-related tasks",
+      "level": 1,
+      "sort_order": 7200,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.AT",
+        "category_name": "Awareness and Training"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "912b2075-8f36-5e40-b136-75393bf45b47",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0291b0d2-85e0-535a-89c5-4baef432e612",
+      "control_id": "PR.AT-01",
+      "title": "Personnel are provided with awareness and training so that they possess the knowledge and skills to perform general tasks with cybersecurity risks in mind",
+      "level": 2,
+      "sort_order": 73,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.AT"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fff0a28f-8bcc-5394-81db-4013f3d92546",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0291b0d2-85e0-535a-89c5-4baef432e612",
+      "control_id": "PR.AT-02",
+      "title": "Individuals in specialized roles are provided with awareness and training so that they possess the knowledge and skills to perform relevant tasks with cybersecurity risks in mind",
+      "level": 2,
+      "sort_order": 74,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.AT"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6bf5f771-b3ff-5594-95c7-883e90e77a65",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0c0e8455-7247-56cd-a225-d262bb905605",
+      "control_id": "PR.DS",
+      "title": "Data Security",
+      "description": "Data are managed consistent with the organization's risk strategy to protect the confidentiality, integrity, and availability of information",
+      "level": 1,
+      "sort_order": 7500,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.DS",
+        "category_name": "Data Security"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "51c35cc5-eedb-5659-83da-2dcaa3e0f8ec",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "6bf5f771-b3ff-5594-95c7-883e90e77a65",
+      "control_id": "PR.DS-01",
+      "title": "The confidentiality, integrity, and availability of data-at-rest are protected",
+      "level": 2,
+      "sort_order": 76,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.DS"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d61f86a8-5091-5d24-9dd7-7c2a25c55338",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "6bf5f771-b3ff-5594-95c7-883e90e77a65",
+      "control_id": "PR.DS-02",
+      "title": "The confidentiality, integrity, and availability of data-in-transit are protected",
+      "level": 2,
+      "sort_order": 77,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.DS"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d3ea88d2-9073-51d4-8fdc-3344284424c8",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "6bf5f771-b3ff-5594-95c7-883e90e77a65",
+      "control_id": "PR.DS-10",
+      "title": "The confidentiality, integrity, and availability of data-in-use are protected",
+      "level": 2,
+      "sort_order": 78,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.DS"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8e530776-a5c8-5b67-a7b5-bfdfa1e8d7e4",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "6bf5f771-b3ff-5594-95c7-883e90e77a65",
+      "control_id": "PR.DS-11",
+      "title": "Backups of data are created, protected, maintained, and tested",
+      "level": 2,
+      "sort_order": 79,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.DS"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0c0e8455-7247-56cd-a225-d262bb905605",
+      "control_id": "PR.PS",
+      "title": "Platform Security",
+      "description": "The hardware, software (e.g., firmware, operating systems, applications), and services of physical and virtual platforms are managed consistent with the organization's risk strategy to protect their confidentiality, integrity, and availability",
+      "level": 1,
+      "sort_order": 8000,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.PS",
+        "category_name": "Platform Security"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "35011600-ddaf-52dd-af89-58354c8ceba9",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "control_id": "PR.PS-01",
+      "title": "Configuration management practices are established and applied",
+      "level": 2,
+      "sort_order": 81,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.PS"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "88464f48-f03a-5706-97f1-f93312bc6513",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "control_id": "PR.PS-02",
+      "title": "Software is maintained, replaced, and removed commensurate with risk",
+      "level": 2,
+      "sort_order": 82,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.PS"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e7725057-dd50-5927-b3cd-13702ef80249",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "control_id": "PR.PS-03",
+      "title": "Hardware is maintained, replaced, and removed commensurate with risk",
+      "level": 2,
+      "sort_order": 83,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.PS"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "81c4c030-f49f-5216-b7c4-89bdccf059de",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "control_id": "PR.PS-04",
+      "title": "Log records are generated and made available for continuous monitoring",
+      "level": 2,
+      "sort_order": 84,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.PS"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "58fa592f-e918-5052-9711-78cfbb07c616",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "control_id": "PR.PS-05",
+      "title": "Installation and execution of unauthorized software are prevented",
+      "level": 2,
+      "sort_order": 85,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.PS"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2d0057d6-e1d7-55bd-888d-9ec01c7cc5b0",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "control_id": "PR.PS-06",
+      "title": "Secure software development practices are integrated, and their performance is monitored throughout the software development life cycle",
+      "level": 2,
+      "sort_order": 86,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.PS"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b94e4ef9-f939-54ae-9f15-7a1ac2796e6e",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0c0e8455-7247-56cd-a225-d262bb905605",
+      "control_id": "PR.IR",
+      "title": "Technology Infrastructure Resilience",
+      "description": "Security architectures are managed with the organization's risk strategy to protect asset confidentiality, integrity, and availability, and organizational resilience",
+      "level": 1,
+      "sort_order": 8700,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "cae2b472-35dd-55f5-8c37-4ef31e46e6e4",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "b94e4ef9-f939-54ae-9f15-7a1ac2796e6e",
+      "control_id": "PR.IR-01",
+      "title": "Networks and environments are protected from unauthorized logical access and usage",
+      "level": 2,
+      "sort_order": 88,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.IR"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2fc23995-7774-58e6-aab8-f1006dc6be21",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "b94e4ef9-f939-54ae-9f15-7a1ac2796e6e",
+      "control_id": "PR.IR-02",
+      "title": "The organization's technology assets are protected from environmental threats",
+      "level": 2,
+      "sort_order": 89,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.IR"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b83d2532-9922-53e3-ad6d-b178f1fc1e2f",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "b94e4ef9-f939-54ae-9f15-7a1ac2796e6e",
+      "control_id": "PR.IR-03",
+      "title": "Mechanisms are implemented to achieve resilience requirements in normal and adverse situations",
+      "level": 2,
+      "sort_order": 90,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.IR"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "80e68839-5f8b-578c-8c25-e90d38a51eca",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "b94e4ef9-f939-54ae-9f15-7a1ac2796e6e",
+      "control_id": "PR.IR-04",
+      "title": "Adequate resource capacity to ensure availability is maintained",
+      "level": 2,
+      "sort_order": 91,
+      "metadata": {
+        "function": "PR",
+        "category": "PR.IR"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "653f6252-ee9e-5ea9-981c-1bc1a82d4686",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "control_id": "DE",
+      "title": "Detect",
+      "description": "Possible cybersecurity attacks and compromises are found and analyzed",
+      "level": 0,
+      "sort_order": 920000,
+      "metadata": {
+        "function": "DE",
+        "function_name": "Detect"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "80114661-3e14-5be9-b6e3-6e5269d1eabf",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "653f6252-ee9e-5ea9-981c-1bc1a82d4686",
+      "control_id": "DE.CM",
+      "title": "Continuous Monitoring",
+      "description": "Assets are monitored to find anomalies, indicators of compromise, and other potentially adverse events",
+      "level": 1,
+      "sort_order": 9300,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fee02973-37be-5b18-937c-c1a0b6b81675",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "80114661-3e14-5be9-b6e3-6e5269d1eabf",
+      "control_id": "DE.CM-01",
+      "title": "Networks and network services are monitored to find potentially adverse events",
+      "level": 2,
+      "sort_order": 94,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.CM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ce3dbcd8-938e-5b2d-a72a-a22e7f330c73",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "80114661-3e14-5be9-b6e3-6e5269d1eabf",
+      "control_id": "DE.CM-02",
+      "title": "The physical environment is monitored to find potentially adverse events",
+      "level": 2,
+      "sort_order": 95,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.CM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "32fa8924-4893-555b-bda5-316068d7ea50",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "80114661-3e14-5be9-b6e3-6e5269d1eabf",
+      "control_id": "DE.CM-03",
+      "title": "Personnel activity and technology usage are monitored to find potentially adverse events",
+      "level": 2,
+      "sort_order": 96,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.CM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d21c07b0-ee1f-5981-bc90-d85554d39e2a",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "80114661-3e14-5be9-b6e3-6e5269d1eabf",
+      "control_id": "DE.CM-06",
+      "title": "External service provider activities and services are monitored to find potentially adverse events",
+      "level": 2,
+      "sort_order": 97,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.CM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "350aaa1e-cb42-56d9-8f11-bf6d63a8d904",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "80114661-3e14-5be9-b6e3-6e5269d1eabf",
+      "control_id": "DE.CM-09",
+      "title": "Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events",
+      "level": 2,
+      "sort_order": 98,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.CM"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "653f6252-ee9e-5ea9-981c-1bc1a82d4686",
+      "control_id": "DE.AE",
+      "title": "Adverse Event Analysis",
+      "description": "Anomalies, indicators of compromise, and other potentially adverse events are analyzed to characterize the events and detect cybersecurity incidents",
+      "level": 1,
+      "sort_order": 9900,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.AE",
+        "category_name": "Adverse Event Analysis"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "87a78f18-29cc-55f4-a6c9-e8eb699e07a3",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "control_id": "DE.AE-02",
+      "title": "Potentially adverse events are analyzed to better understand associated activities",
+      "level": 2,
+      "sort_order": 100,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.AE"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "48596efa-e120-5fcd-a8f8-3bb5457eed4c",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "control_id": "DE.AE-03",
+      "title": "Information is correlated from multiple sources",
+      "level": 2,
+      "sort_order": 101,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.AE"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "968262ef-3561-516b-a9ee-0ab08539ae84",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "control_id": "DE.AE-04",
+      "title": "The estimated impact and scope of adverse events are understood",
+      "level": 2,
+      "sort_order": 102,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.AE"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9f5d3f27-d103-580b-b990-54621159d889",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "control_id": "DE.AE-06",
+      "title": "Information on adverse events is provided to authorized staff and tools",
+      "level": 2,
+      "sort_order": 103,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.AE"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7fe9829d-c622-509e-966a-dbb5e7351f38",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "control_id": "DE.AE-07",
+      "title": "Cyber threat intelligence and other contextual information are integrated into the analysis",
+      "level": 2,
+      "sort_order": 104,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.AE"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b1e2c746-7e10-5904-bdb1-6d495559b7af",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "control_id": "DE.AE-08",
+      "title": "Incidents are declared when adverse events meet the defined incident criteria",
+      "level": 2,
+      "sort_order": 105,
+      "metadata": {
+        "function": "DE",
+        "category": "DE.AE"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "88be9575-c80c-5f0f-b4de-79e48a6a3cc0",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "control_id": "RS",
+      "title": "Respond",
+      "description": "Actions regarding a detected cybersecurity incident are taken",
+      "level": 0,
+      "sort_order": 1060000,
+      "metadata": {
+        "function": "RS",
+        "function_name": "Respond"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f2c36263-964b-5313-81d5-c5a6905ed60a",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "88be9575-c80c-5f0f-b4de-79e48a6a3cc0",
+      "control_id": "RS.MA",
+      "title": "Incident Management",
+      "description": "Responses to detected cybersecurity incidents are managed",
+      "level": 1,
+      "sort_order": 10700,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.MA",
+        "category_name": "Incident Management"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ebf3f799-2621-5c5d-9e8e-1e5a50198517",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "f2c36263-964b-5313-81d5-c5a6905ed60a",
+      "control_id": "RS.MA-01",
+      "title": "The incident response plan is executed in coordination with relevant third parties once an incident is declared",
+      "level": 2,
+      "sort_order": 108,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.MA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1aa7de87-9f79-5808-b476-7689e69d1465",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "f2c36263-964b-5313-81d5-c5a6905ed60a",
+      "control_id": "RS.MA-02",
+      "title": "Incident reports are triaged and validated",
+      "level": 2,
+      "sort_order": 109,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.MA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "04b2fa38-3db1-583a-b5fb-ee3b502d5ace",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "f2c36263-964b-5313-81d5-c5a6905ed60a",
+      "control_id": "RS.MA-03",
+      "title": "Incidents are categorized and prioritized",
+      "level": 2,
+      "sort_order": 110,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.MA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "60c72fa9-1a03-5b54-ae87-e9ac18ed326f",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "f2c36263-964b-5313-81d5-c5a6905ed60a",
+      "control_id": "RS.MA-04",
+      "title": "Incidents are escalated or elevated as needed",
+      "level": 2,
+      "sort_order": 111,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.MA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "855ce281-8b5c-5d71-9ec8-9584aa1595e3",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "f2c36263-964b-5313-81d5-c5a6905ed60a",
+      "control_id": "RS.MA-05",
+      "title": "The criteria for initiating incident recovery are applied",
+      "level": 2,
+      "sort_order": 112,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.MA"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "142aba6a-d0bc-5fdc-8dcb-6501d5dba90c",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "88be9575-c80c-5f0f-b4de-79e48a6a3cc0",
+      "control_id": "RS.AN",
+      "title": "Incident Analysis",
+      "description": "Investigations are conducted to ensure effective response and support forensics and recovery activities",
+      "level": 1,
+      "sort_order": 11300,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.AN",
+        "category_name": "Incident Analysis"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "21a5da08-320a-5c6f-830a-a5e91af41526",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "142aba6a-d0bc-5fdc-8dcb-6501d5dba90c",
+      "control_id": "RS.AN-03",
+      "title": "Analysis is performed to establish what has taken place during an incident and the root cause of the incident",
+      "level": 2,
+      "sort_order": 114,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.AN"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "00874c05-6a6e-5aa0-a2f8-7f881fae8136",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "142aba6a-d0bc-5fdc-8dcb-6501d5dba90c",
+      "control_id": "RS.AN-06",
+      "title": "Actions performed during an investigation are recorded, and the records' integrity and provenance are preserved",
+      "level": 2,
+      "sort_order": 115,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.AN"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9fc20229-249d-5806-9ea6-c7b95c05ff94",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "142aba6a-d0bc-5fdc-8dcb-6501d5dba90c",
+      "control_id": "RS.AN-07",
+      "title": "Incident data and metadata are collected, and their integrity and provenance are preserved",
+      "level": 2,
+      "sort_order": 116,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.AN"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ef6a714a-7284-5f73-8596-cd7d2734f775",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "142aba6a-d0bc-5fdc-8dcb-6501d5dba90c",
+      "control_id": "RS.AN-08",
+      "title": "An incident's magnitude is estimated and validated",
+      "level": 2,
+      "sort_order": 117,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.AN"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "664ce58b-a324-581d-b920-e6f3ea8e9440",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "88be9575-c80c-5f0f-b4de-79e48a6a3cc0",
+      "control_id": "RS.CO",
+      "title": "Incident Response Reporting and Communication",
+      "description": "Response activities are coordinated with internal and external stakeholders as required by laws, regulations, or policies",
+      "level": 1,
+      "sort_order": 11800,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.CO",
+        "category_name": "Incident Response Reporting and Communication"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c9d6ed2e-3578-5130-b995-be734becc20b",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "664ce58b-a324-581d-b920-e6f3ea8e9440",
+      "control_id": "RS.CO-02",
+      "title": "Internal and external stakeholders are notified of incidents",
+      "level": 2,
+      "sort_order": 119,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.CO"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "73446e49-bdd2-556d-80c2-ec92274515db",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "664ce58b-a324-581d-b920-e6f3ea8e9440",
+      "control_id": "RS.CO-03",
+      "title": "Information is shared with designated internal and external stakeholders",
+      "level": 2,
+      "sort_order": 120,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.CO"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "356d7ff9-7257-58d9-982d-4f9f7d192102",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "88be9575-c80c-5f0f-b4de-79e48a6a3cc0",
+      "control_id": "RS.MI",
+      "title": "Incident Mitigation",
+      "description": "Activities are performed to prevent expansion of an event and mitigate its effects",
+      "level": 1,
+      "sort_order": 12100,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.MI",
+        "category_name": "Incident Mitigation"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b56edbe0-3daa-570d-a49e-5da23a1084ae",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "356d7ff9-7257-58d9-982d-4f9f7d192102",
+      "control_id": "RS.MI-01",
+      "title": "Incidents are contained",
+      "level": 2,
+      "sort_order": 122,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.MI"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "66c6c2a2-f875-51ed-a7a2-13b463f8c457",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "356d7ff9-7257-58d9-982d-4f9f7d192102",
+      "control_id": "RS.MI-02",
+      "title": "Incidents are eradicated",
+      "level": 2,
+      "sort_order": 123,
+      "metadata": {
+        "function": "RS",
+        "category": "RS.MI"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6c6c58b9-bc21-56b9-97c9-7a428f33ecf0",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "control_id": "RC",
+      "title": "Recover",
+      "description": "Assets and operations affected by a cybersecurity incident are restored",
+      "level": 0,
+      "sort_order": 1240000,
+      "metadata": {
+        "function": "RC",
+        "function_name": "Recover"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "6c6c58b9-bc21-56b9-97c9-7a428f33ecf0",
+      "control_id": "RC.RP",
+      "title": "Incident Recovery Plan Execution",
+      "description": "Restoration activities are performed to ensure operational availability of systems and services affected by cybersecurity incidents",
+      "level": 1,
+      "sort_order": 12500,
+      "metadata": {
+        "function": "RC",
+        "category": "RC.RP",
+        "category_name": "Incident Recovery Plan Execution"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0ce6e2f5-e01b-552c-bd80-81b28a5584d5",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "control_id": "RC.RP-01",
+      "title": "The recovery portion of the incident response plan is executed once initiated from the incident response process",
+      "level": 2,
+      "sort_order": 126,
+      "metadata": {
+        "function": "RC",
+        "category": "RC.RP"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fc83a168-f426-52f5-832a-1cdb665cea5a",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "control_id": "RC.RP-02",
+      "title": "Recovery actions are selected, scoped, prioritized, and performed",
+      "level": 2,
+      "sort_order": 127,
+      "metadata": {
+        "function": "RC",
+        "category": "RC.RP"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a346c2d0-ad9a-5c61-a95c-9b3d83591d5c",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "control_id": "RC.RP-03",
+      "title": "The integrity of backups and other restoration assets is verified before using them for restoration",
+      "level": 2,
+      "sort_order": 128,
+      "metadata": {
+        "function": "RC",
+        "category": "RC.RP"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c99b89b4-134d-5946-b29e-87a222d83634",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "control_id": "RC.RP-04",
+      "title": "Critical mission functions and cybersecurity risk management are considered to establish post-incident operational norms",
+      "level": 2,
+      "sort_order": 129,
+      "metadata": {
+        "function": "RC",
+        "category": "RC.RP"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d60b1d9e-4510-56eb-9f1b-c3fb62fb921a",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "control_id": "RC.RP-05",
+      "title": "The integrity of restored assets is verified, systems and services are restored, and normal operating status is confirmed",
+      "level": 2,
+      "sort_order": 130,
+      "metadata": {
+        "function": "RC",
+        "category": "RC.RP"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "cf869fea-fbae-5487-bab8-af81191eabe3",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "control_id": "RC.RP-06",
+      "title": "The end of incident recovery is declared based on criteria, and incident-related documentation is completed",
+      "level": 2,
+      "sort_order": 131,
+      "metadata": {
+        "function": "RC",
+        "category": "RC.RP"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "506edb5c-f12f-5340-9c3b-11017f4199fd",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "6c6c58b9-bc21-56b9-97c9-7a428f33ecf0",
+      "control_id": "RC.CO",
+      "title": "Incident Recovery Communication",
+      "description": "Restoration activities are coordinated with internal and external parties",
+      "level": 1,
+      "sort_order": 13200,
+      "metadata": {
+        "function": "RC",
+        "category": "RC.CO",
+        "category_name": "Incident Recovery Communication"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5e03ea85-31bd-5ad2-87d7-777a7170c69b",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "506edb5c-f12f-5340-9c3b-11017f4199fd",
+      "control_id": "RC.CO-03",
+      "title": "Recovery activities and progress in restoring operational capabilities are communicated to designated internal and external stakeholders",
+      "level": 2,
+      "sort_order": 133,
+      "metadata": {
+        "function": "RC",
+        "category": "RC.CO"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "576ce9e3-95bf-54b5-b1c8-f3db68f8008c",
+      "framework_id": "d146da6e-e62f-58aa-9095-4227b5d8c3b1",
+      "parent_id": "506edb5c-f12f-5340-9c3b-11017f4199fd",
+      "control_id": "RC.CO-04",
+      "title": "Public updates on incident recovery are shared using approved methods and messaging",
+      "level": 2,
+      "sort_order": 134,
+      "metadata": {
+        "function": "RC",
+        "category": "RC.CO"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "type": "hierarchy",
+      "source_id": "1766519e-950e-5c87-919c-b158b075e534",
+      "target_id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "27ef8649-d875-5bb7-9731-728c6d7a8006",
+      "target_id": "1766519e-950e-5c87-919c-b158b075e534",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "388edb84-8e73-57bb-8b92-382d73498597",
+      "target_id": "1766519e-950e-5c87-919c-b158b075e534",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f894bde4-6732-525c-b120-37928496b3a8",
+      "target_id": "1766519e-950e-5c87-919c-b158b075e534",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "278219f8-69ac-5b33-b5d8-a427e5cf8ff8",
+      "target_id": "1766519e-950e-5c87-919c-b158b075e534",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d5720371-66e2-52e9-b648-0e191b242aea",
+      "target_id": "1766519e-950e-5c87-919c-b158b075e534",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "target_id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e9e91934-be3a-5ad5-ad07-87196c636bfd",
+      "target_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "4f568172-03cf-5534-ada4-930bf207a28e",
+      "target_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9d8f61dc-6eb1-51bf-8592-26c930f681d4",
+      "target_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e1fd2f33-e282-58d4-b27e-a57e619f7987",
+      "target_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "6662b5b6-1b6a-5008-9529-1f605c6da2a5",
+      "target_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "fe73d408-d12d-555c-99ff-eb659c750986",
+      "target_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8fd11dad-5c49-5db5-a9c4-7680b54febac",
+      "target_id": "d8cc5fc7-2420-56e3-af0e-fccb447cea59",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a566943e-a57a-5367-947f-850ce50cc123",
+      "target_id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "32ed2481-83bf-57f0-86d3-8f713b670afb",
+      "target_id": "a566943e-a57a-5367-947f-850ce50cc123",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "74528876-f093-5325-84bc-05f373e44c01",
+      "target_id": "a566943e-a57a-5367-947f-850ce50cc123",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "741aaaea-8af6-5e11-83a6-c2335275b52a",
+      "target_id": "a566943e-a57a-5367-947f-850ce50cc123",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0ccb81ff-abda-5d7b-b9a9-6de76eb690d7",
+      "target_id": "a566943e-a57a-5367-947f-850ce50cc123",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0673aa83-b663-514a-97f4-614942aa82f9",
+      "target_id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a81733a9-4e27-58f7-a662-db7e37c30e16",
+      "target_id": "0673aa83-b663-514a-97f4-614942aa82f9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "eaa67ab3-cb33-55e4-8b6a-7630d8a1eca3",
+      "target_id": "0673aa83-b663-514a-97f4-614942aa82f9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "5db8d540-3de4-5c44-a099-ae7006e5d2bd",
+      "target_id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "6bc3237e-17cb-52de-b8b9-8996c4db053b",
+      "target_id": "5db8d540-3de4-5c44-a099-ae7006e5d2bd",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "59ee99ae-4b5c-558c-9cc2-7f6785e1fb50",
+      "target_id": "5db8d540-3de4-5c44-a099-ae7006e5d2bd",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "77d03f75-7578-52d9-88e4-d9c972e88c4d",
+      "target_id": "5db8d540-3de4-5c44-a099-ae7006e5d2bd",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "target_id": "9ec89202-3bee-5c53-8349-f3f80c396863",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f5bf4584-47fb-5fc0-b4ba-d43a8e1ce773",
+      "target_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8c0c72bc-ccf5-5dee-87ef-2c00dbffa671",
+      "target_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9f4a95e7-bc0a-5d07-9da6-48371bdb1597",
+      "target_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "dd147571-b7a3-5dc3-8ee9-350e2f2c67e0",
+      "target_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "07a25f67-a2d7-5127-ba5c-6b0629f11497",
+      "target_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "96120d06-7640-5d46-ab5c-a9b39c62f1ef",
+      "target_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "4fe13ad3-99f4-5de6-9f35-b97375182308",
+      "target_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "61a71eee-be0b-5285-bfcc-465f346b999c",
+      "target_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "3609569f-296d-52b2-84a4-7f3f3d117d15",
+      "target_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "abed9cca-5155-5dbb-b6a8-324c379bcbfb",
+      "target_id": "2e4aa102-b3b2-5686-8e5b-01e352a2879e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "target_id": "65e22614-5397-51b0-92a7-82cffd6d1310",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "5f56c896-1b03-5c58-81c0-9d4f7ed36df5",
+      "target_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c66cf89f-cbcf-557b-9498-28e491e08baf",
+      "target_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f3255de9-aa9a-5090-a1a3-51c86a5016e8",
+      "target_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "368f2136-bd7c-5b02-b092-73007ea378d3",
+      "target_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8c8e5537-0fea-582d-87d7-6785839fa745",
+      "target_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9a5c3f42-646e-5ab0-9dab-bca59e4fca61",
+      "target_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0ea2ad7b-cbca-59ec-bb0f-bc84e045151b",
+      "target_id": "47887de4-7319-5270-938a-7c552ef71872",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "target_id": "65e22614-5397-51b0-92a7-82cffd6d1310",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9442809c-9c64-59f2-97ca-a30e39eaba00",
+      "target_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f4bba68f-31fc-5182-8219-e0967c442176",
+      "target_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8642929d-7cfe-5fd4-9543-12cb3848c417",
+      "target_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8c1c0470-67ec-5f56-9ef1-490aa88cf0ac",
+      "target_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2d7045c6-8b16-59e6-946c-afe55d5e7b18",
+      "target_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c53506ee-6e91-5d7f-b9c5-21839db581f6",
+      "target_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "881a7ce9-c5cd-5dd9-a2d1-e628710118ce",
+      "target_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d5396f3a-6b7a-5cc0-9dca-7fdd1603159c",
+      "target_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0d9e30e7-65de-5102-aeac-4f5b949e8757",
+      "target_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "32e38cce-dff5-5240-95fa-ba8b13cad344",
+      "target_id": "52ce07cc-c347-5587-889d-43ab49d8a7fb",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "907cebb3-861c-556c-8401-7e7270b22502",
+      "target_id": "65e22614-5397-51b0-92a7-82cffd6d1310",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9772ea44-090e-5640-a1f3-9426976e14d1",
+      "target_id": "907cebb3-861c-556c-8401-7e7270b22502",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d51ea00a-3e21-509e-b359-b7a08289be77",
+      "target_id": "907cebb3-861c-556c-8401-7e7270b22502",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "15a31238-2a0b-5fcc-a777-f28d7418017c",
+      "target_id": "907cebb3-861c-556c-8401-7e7270b22502",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2c5b9fae-9a15-57e8-a4c7-a7a81e7fa771",
+      "target_id": "907cebb3-861c-556c-8401-7e7270b22502",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "target_id": "0c0e8455-7247-56cd-a225-d262bb905605",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "00e15a14-8701-5658-a168-e593306309de",
+      "target_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "479adb38-e332-57ac-85a9-39635a6043a8",
+      "target_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "76a39da5-b48a-5b39-96a5-3ffa8aa0e646",
+      "target_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ecd337e3-c557-5f99-9523-8a48d14506ad",
+      "target_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d4d8dced-0bf3-5282-a851-15f2fcd12941",
+      "target_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "39d2a3ca-bc90-5219-bb1c-2361d27cd7be",
+      "target_id": "8ab7deeb-f64d-555f-b4b2-fac3c85d4f6d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0291b0d2-85e0-535a-89c5-4baef432e612",
+      "target_id": "0c0e8455-7247-56cd-a225-d262bb905605",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "912b2075-8f36-5e40-b136-75393bf45b47",
+      "target_id": "0291b0d2-85e0-535a-89c5-4baef432e612",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "fff0a28f-8bcc-5394-81db-4013f3d92546",
+      "target_id": "0291b0d2-85e0-535a-89c5-4baef432e612",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "6bf5f771-b3ff-5594-95c7-883e90e77a65",
+      "target_id": "0c0e8455-7247-56cd-a225-d262bb905605",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "51c35cc5-eedb-5659-83da-2dcaa3e0f8ec",
+      "target_id": "6bf5f771-b3ff-5594-95c7-883e90e77a65",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d61f86a8-5091-5d24-9dd7-7c2a25c55338",
+      "target_id": "6bf5f771-b3ff-5594-95c7-883e90e77a65",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d3ea88d2-9073-51d4-8fdc-3344284424c8",
+      "target_id": "6bf5f771-b3ff-5594-95c7-883e90e77a65",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8e530776-a5c8-5b67-a7b5-bfdfa1e8d7e4",
+      "target_id": "6bf5f771-b3ff-5594-95c7-883e90e77a65",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "target_id": "0c0e8455-7247-56cd-a225-d262bb905605",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "35011600-ddaf-52dd-af89-58354c8ceba9",
+      "target_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "88464f48-f03a-5706-97f1-f93312bc6513",
+      "target_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e7725057-dd50-5927-b3cd-13702ef80249",
+      "target_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "81c4c030-f49f-5216-b7c4-89bdccf059de",
+      "target_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "58fa592f-e918-5052-9711-78cfbb07c616",
+      "target_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2d0057d6-e1d7-55bd-888d-9ec01c7cc5b0",
+      "target_id": "8665dc0f-7fed-5ad4-84fe-2b8a0e2c250f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b94e4ef9-f939-54ae-9f15-7a1ac2796e6e",
+      "target_id": "0c0e8455-7247-56cd-a225-d262bb905605",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "cae2b472-35dd-55f5-8c37-4ef31e46e6e4",
+      "target_id": "b94e4ef9-f939-54ae-9f15-7a1ac2796e6e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2fc23995-7774-58e6-aab8-f1006dc6be21",
+      "target_id": "b94e4ef9-f939-54ae-9f15-7a1ac2796e6e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b83d2532-9922-53e3-ad6d-b178f1fc1e2f",
+      "target_id": "b94e4ef9-f939-54ae-9f15-7a1ac2796e6e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "80e68839-5f8b-578c-8c25-e90d38a51eca",
+      "target_id": "b94e4ef9-f939-54ae-9f15-7a1ac2796e6e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "80114661-3e14-5be9-b6e3-6e5269d1eabf",
+      "target_id": "653f6252-ee9e-5ea9-981c-1bc1a82d4686",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "fee02973-37be-5b18-937c-c1a0b6b81675",
+      "target_id": "80114661-3e14-5be9-b6e3-6e5269d1eabf",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ce3dbcd8-938e-5b2d-a72a-a22e7f330c73",
+      "target_id": "80114661-3e14-5be9-b6e3-6e5269d1eabf",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "32fa8924-4893-555b-bda5-316068d7ea50",
+      "target_id": "80114661-3e14-5be9-b6e3-6e5269d1eabf",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d21c07b0-ee1f-5981-bc90-d85554d39e2a",
+      "target_id": "80114661-3e14-5be9-b6e3-6e5269d1eabf",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "350aaa1e-cb42-56d9-8f11-bf6d63a8d904",
+      "target_id": "80114661-3e14-5be9-b6e3-6e5269d1eabf",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "target_id": "653f6252-ee9e-5ea9-981c-1bc1a82d4686",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "87a78f18-29cc-55f4-a6c9-e8eb699e07a3",
+      "target_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "48596efa-e120-5fcd-a8f8-3bb5457eed4c",
+      "target_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "968262ef-3561-516b-a9ee-0ab08539ae84",
+      "target_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9f5d3f27-d103-580b-b990-54621159d889",
+      "target_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "7fe9829d-c622-509e-966a-dbb5e7351f38",
+      "target_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b1e2c746-7e10-5904-bdb1-6d495559b7af",
+      "target_id": "0b1f4876-712b-5fa2-a6eb-0fd5b865b66f",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f2c36263-964b-5313-81d5-c5a6905ed60a",
+      "target_id": "88be9575-c80c-5f0f-b4de-79e48a6a3cc0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ebf3f799-2621-5c5d-9e8e-1e5a50198517",
+      "target_id": "f2c36263-964b-5313-81d5-c5a6905ed60a",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "1aa7de87-9f79-5808-b476-7689e69d1465",
+      "target_id": "f2c36263-964b-5313-81d5-c5a6905ed60a",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "04b2fa38-3db1-583a-b5fb-ee3b502d5ace",
+      "target_id": "f2c36263-964b-5313-81d5-c5a6905ed60a",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "60c72fa9-1a03-5b54-ae87-e9ac18ed326f",
+      "target_id": "f2c36263-964b-5313-81d5-c5a6905ed60a",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "855ce281-8b5c-5d71-9ec8-9584aa1595e3",
+      "target_id": "f2c36263-964b-5313-81d5-c5a6905ed60a",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "142aba6a-d0bc-5fdc-8dcb-6501d5dba90c",
+      "target_id": "88be9575-c80c-5f0f-b4de-79e48a6a3cc0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "21a5da08-320a-5c6f-830a-a5e91af41526",
+      "target_id": "142aba6a-d0bc-5fdc-8dcb-6501d5dba90c",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "00874c05-6a6e-5aa0-a2f8-7f881fae8136",
+      "target_id": "142aba6a-d0bc-5fdc-8dcb-6501d5dba90c",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9fc20229-249d-5806-9ea6-c7b95c05ff94",
+      "target_id": "142aba6a-d0bc-5fdc-8dcb-6501d5dba90c",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ef6a714a-7284-5f73-8596-cd7d2734f775",
+      "target_id": "142aba6a-d0bc-5fdc-8dcb-6501d5dba90c",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "664ce58b-a324-581d-b920-e6f3ea8e9440",
+      "target_id": "88be9575-c80c-5f0f-b4de-79e48a6a3cc0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c9d6ed2e-3578-5130-b995-be734becc20b",
+      "target_id": "664ce58b-a324-581d-b920-e6f3ea8e9440",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "73446e49-bdd2-556d-80c2-ec92274515db",
+      "target_id": "664ce58b-a324-581d-b920-e6f3ea8e9440",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "356d7ff9-7257-58d9-982d-4f9f7d192102",
+      "target_id": "88be9575-c80c-5f0f-b4de-79e48a6a3cc0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b56edbe0-3daa-570d-a49e-5da23a1084ae",
+      "target_id": "356d7ff9-7257-58d9-982d-4f9f7d192102",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "66c6c2a2-f875-51ed-a7a2-13b463f8c457",
+      "target_id": "356d7ff9-7257-58d9-982d-4f9f7d192102",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "target_id": "6c6c58b9-bc21-56b9-97c9-7a428f33ecf0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0ce6e2f5-e01b-552c-bd80-81b28a5584d5",
+      "target_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "fc83a168-f426-52f5-832a-1cdb665cea5a",
+      "target_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a346c2d0-ad9a-5c61-a95c-9b3d83591d5c",
+      "target_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c99b89b4-134d-5946-b29e-87a222d83634",
+      "target_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d60b1d9e-4510-56eb-9f1b-c3fb62fb921a",
+      "target_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "cf869fea-fbae-5487-bab8-af81191eabe3",
+      "target_id": "27aa77e5-4a9c-5b79-b05f-bf408c8d0f7d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "506edb5c-f12f-5340-9c3b-11017f4199fd",
+      "target_id": "6c6c58b9-bc21-56b9-97c9-7a428f33ecf0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "5e03ea85-31bd-5ad2-87d7-777a7170c69b",
+      "target_id": "506edb5c-f12f-5340-9c3b-11017f4199fd",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "576ce9e3-95bf-54b5-b1c8-f3db68f8008c",
+      "target_id": "506edb5c-f12f-5340-9c3b-11017f4199fd",
+      "relationship_type": "part-of"
+    }
+  ]
+}

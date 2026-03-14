@@ -1,0 +1,492 @@
+{
+  "bundle_id": "bundle--a4f985d1-6fad-5e6c-ae0f-9a1d1bfc6d1d",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+    "code": "FINMA",
+    "name": "FINMA Regulatory Requirements",
+    "version": "2024",
+    "publisher": "Swiss Financial Market Supervisory Authority (FINMA)",
+    "source_url": "https://www.finma.ch/en/documentation/",
+    "jurisdiction": "CH",
+    "description": "FINMA circulars and guidance for operational resilience, outsourcing, and cyber risks"
+  },
+  "generated_at": "2026-03-07T09:32:16Z",
+  "generator": "generate_regulatory.py",
+  "content_hash": "2d4e3cebf214f4fdf982d2d00b4ea11a8b32c4af637d9502a8825fbe91b03cbd",
+  "objects_count": 24,
+  "relationships_count": 21,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "control_id": "FINMA_2023_1",
+      "title": "FINMA Circular 2023/1 — Operational Risks and Resilience",
+      "description": "FINMA Circular 2023/1 — Operational Risks and Resilience (2023/1)",
+      "level": 0,
+      "sort_order": 10000,
+      "metadata": {
+        "sub_framework": "FINMA_2023_1",
+        "version": "2023/1",
+        "effective_date": "2024-01-01",
+        "source_url": "https://www.finma.ch/en/documentation/circulars/"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "813c466e-f7e7-505b-8fe6-be100d290448",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "control_id": "P1",
+      "title": "Operational Risk Management",
+      "description": "Board approves risk tolerance; executive board implements procedures, processes, controls. Independent audit function. Regular risk reporting. Separation of operational management from independent control functions.",
+      "level": 1,
+      "sort_order": 200,
+      "metadata": {
+        "sub_framework": "FINMA_2023_1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "cb28be68-7163-5a35-bd5c-fc37e916b921",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "control_id": "P2",
+      "title": "ICT Risk Management",
+      "description": "ICT strategy and governance aligned to business strategy. Change management, ICT operations, incident management. Comprehensive ICT asset inventory. Annual ICT risk reporting.",
+      "level": 1,
+      "sort_order": 300,
+      "metadata": {
+        "sub_framework": "FINMA_2023_1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2bdf3038-a2d5-5687-9732-1eff5b6c908e",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "control_id": "P3",
+      "title": "Cyber Risk Management",
+      "description": "Threat identification and asset protection. Vulnerability analyses and penetration testing. Systematic monitoring of ICT systems. Incident response plans tested. Cyber attacks reported to FINMA within 24 hours.",
+      "level": 1,
+      "sort_order": 400,
+      "metadata": {
+        "sub_framework": "FINMA_2023_1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8a15e863-7351-51bb-89cc-3b93c223ae90",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "control_id": "P4",
+      "title": "Critical Data Risk Management",
+      "description": "Protection of confidentiality, integrity, and availability of critical data. Data strategy. Service provider due diligence. Potential dual reporting obligations (FINMA + data protection).",
+      "level": 1,
+      "sort_order": 500,
+      "metadata": {
+        "sub_framework": "FINMA_2023_1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2e5e12b5-0732-5b73-bbe5-3b723ff944f1",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "control_id": "P5",
+      "title": "Business Continuity Management",
+      "description": "Identification of critical business processes with RTO/RPO. Mandatory BCP and DRP. Annual review plus ad hoc updates. Testing against severe but plausible scenarios.",
+      "level": 1,
+      "sort_order": 600,
+      "metadata": {
+        "sub_framework": "FINMA_2023_1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a78e36b2-0985-5079-8b61-ce0aa0d35c69",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "control_id": "P6",
+      "title": "International Service Business Risks",
+      "description": "Management of risks from cross-border financial services. Legal, regulatory, and reputational risk assessment for international operations.",
+      "level": 1,
+      "sort_order": 700,
+      "metadata": {
+        "sub_framework": "FINMA_2023_1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ac92a71b-0485-5c03-83b3-f4e864cb6fa2",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "control_id": "P7",
+      "title": "Operational Resilience",
+      "description": "Ability to restore critical functions within defined disruption tolerance. Board-approved tolerance thresholds per critical function. Regular testing under severe scenarios.",
+      "level": 1,
+      "sort_order": 800,
+      "metadata": {
+        "sub_framework": "FINMA_2023_1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "control_id": "FINMA_2018_3",
+      "title": "FINMA Circular 2018/3 — Outsourcing",
+      "description": "FINMA Circular 2018/3 — Outsourcing (2018/3)",
+      "level": 0,
+      "sort_order": 90000,
+      "metadata": {
+        "sub_framework": "FINMA_2018_3",
+        "version": "2018/3",
+        "effective_date": "2018-04-01",
+        "source_url": "https://www.finma.ch/en/documentation/circulars/"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "24307ec9-1452-5891-9d45-fb6083656155",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "control_id": "DEF",
+      "title": "Outsourcing definition",
+      "description": "Mandating a service provider to carry out independently and permanently an essential function on which regulatory compliance significantly depends.",
+      "level": 1,
+      "sort_order": 1000,
+      "metadata": {
+        "sub_framework": "FINMA_2018_3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2838c5ea-699c-584a-b416-f462c62b07ab",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "control_id": "V.A",
+      "title": "Inventory of outsourced functions",
+      "description": "Maintain current lists of outsourced functions showing service provider details, subcontractors, and responsible internal units.",
+      "level": 1,
+      "sort_order": 1100,
+      "metadata": {
+        "sub_framework": "FINMA_2018_3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9890c462-98cb-5856-87c3-412740feab77",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "control_id": "V.B",
+      "title": "Selection, instruction and monitoring",
+      "description": "Service providers must have professional experience. Companies must provide proper instruction and monitor performance continuously.",
+      "level": 1,
+      "sort_order": 1200,
+      "metadata": {
+        "sub_framework": "FINMA_2018_3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c7e0cadc-5b7d-5d00-ad7c-ce106e2d457d",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "control_id": "V.C",
+      "title": "Outsourcing within group/conglomerate",
+      "description": "No blanket exemptions, but requirements may be adjusted based on affiliate relationships and lower applicable risks.",
+      "level": 1,
+      "sort_order": 1300,
+      "metadata": {
+        "sub_framework": "FINMA_2018_3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8ba3bc8a-5cac-599e-b55b-be5b3ba8e382",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "control_id": "V.D",
+      "title": "Responsibility",
+      "description": "Outsourcing companies remain fully responsible to FINMA. Outsourced function integrated into internal control system. Main risks systematically identified, monitored, and controlled.",
+      "level": 1,
+      "sort_order": 1400,
+      "metadata": {
+        "sub_framework": "FINMA_2018_3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "88a9178d-4c3d-5d39-be37-6eb01373da6b",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "control_id": "V.E",
+      "title": "Security",
+      "description": "Adequate security measures must be maintained for outsourced functions.",
+      "level": 1,
+      "sort_order": 1500,
+      "metadata": {
+        "sub_framework": "FINMA_2018_3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "433c5ef8-b703-5551-9b8a-a434b2a7f80c",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "control_id": "V.F",
+      "title": "Audit and supervision",
+      "description": "The company, audit firm, and FINMA must be able to verify compliance at any time. Contractual audit and inspection rights guaranteed.",
+      "level": 1,
+      "sort_order": 1600,
+      "metadata": {
+        "sub_framework": "FINMA_2018_3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6ab37229-e45c-591a-86ab-8eac85177a06",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "control_id": "V.G",
+      "title": "Outsourcing to another country",
+      "description": "Permissible if inspection/audit rights guaranteed. Must not hinder recovery/resolution. Data access in Switzerland guaranteed.",
+      "level": 1,
+      "sort_order": 1700,
+      "metadata": {
+        "sub_framework": "FINMA_2018_3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7948654c-1d96-5383-8beb-2117426273f7",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "control_id": "V.H",
+      "title": "Agreement",
+      "description": "Written contracts required for essential functions. Must grant instruction/control rights, require approval before subcontracting, and enable audit access.",
+      "level": 1,
+      "sort_order": 1800,
+      "metadata": {
+        "sub_framework": "FINMA_2018_3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "549c9622-aa87-5c79-b2d4-4809b29f64c6",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "control_id": "FINMA_GUIDANCE_2024",
+      "title": "FINMA Guidance 03/2024 — Cyber Risks",
+      "description": "FINMA Guidance 03/2024 — Cyber Risks (03/2024)",
+      "level": 0,
+      "sort_order": 190000,
+      "metadata": {
+        "sub_framework": "FINMA_GUIDANCE_2024",
+        "version": "03/2024",
+        "effective_date": "2024-06-07",
+        "source_url": "https://www.finma.ch/en/documentation/finma-guidance/"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "230b91a3-7806-5443-9b12-90796c59fb5b",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "549c9622-aa87-5c79-b2d4-4809b29f64c6",
+      "control_id": "G1",
+      "title": "Governance",
+      "description": "Cyber risks as separate risk category within operational risk management. Appropriate risk appetite and tolerance defined. Key controls integrated into ICS. Operational management separated from independent control functions.",
+      "level": 1,
+      "sort_order": 2000,
+      "metadata": {
+        "sub_framework": "FINMA_GUIDANCE_2024"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7acb9540-8ae3-5c6c-9489-31a31decd749",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "549c9622-aa87-5c79-b2d4-4809b29f64c6",
+      "control_id": "G2",
+      "title": "Protective measures",
+      "description": "Effective DDoS protection. DLP covering sensitive data, business secrets, IP. Supply chain security (50%+ of attacks target service provider chains). Service providers must inform about cyber incidents.",
+      "level": 1,
+      "sort_order": 2100,
+      "metadata": {
+        "sub_framework": "FINMA_GUIDANCE_2024"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0711dc78-971d-59e7-a552-9585ed99e600",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "549c9622-aa87-5c79-b2d4-4809b29f64c6",
+      "control_id": "G3",
+      "title": "Detection, response, and recovery",
+      "description": "Realistic incident response plans created and tested. Lessons learned documented. Timely improvements based on incident analysis. Systematic and prompt monitoring.",
+      "level": 1,
+      "sort_order": 2200,
+      "metadata": {
+        "sub_framework": "FINMA_GUIDANCE_2024"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4fb6da73-3a88-5fe4-ba2e-1003ab24c490",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "549c9622-aa87-5c79-b2d4-4809b29f64c6",
+      "control_id": "G4",
+      "title": "Reporting obligations",
+      "description": "Cyber attacks reported to FINMA key account manager within 24 hours of discovery. Initial report with severity assessment and factual description. May be withdrawn if not material.",
+      "level": 1,
+      "sort_order": 2300,
+      "metadata": {
+        "sub_framework": "FINMA_GUIDANCE_2024"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "720fe822-b5b5-529f-83db-51c26bf663db",
+      "framework_id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
+      "parent_id": "549c9622-aa87-5c79-b2d4-4809b29f64c6",
+      "control_id": "G5",
+      "title": "Cyber exercises",
+      "description": "Risk-based and scenario-based cyber exercises required. Red teaming for systemically important institutions. Non-systemic: minimum one tabletop exercise annually. Proportionality applies.",
+      "level": 1,
+      "sort_order": 2400,
+      "metadata": {
+        "sub_framework": "FINMA_GUIDANCE_2024"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "type": "hierarchy",
+      "source_id": "813c466e-f7e7-505b-8fe6-be100d290448",
+      "target_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "cb28be68-7163-5a35-bd5c-fc37e916b921",
+      "target_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2bdf3038-a2d5-5687-9732-1eff5b6c908e",
+      "target_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8a15e863-7351-51bb-89cc-3b93c223ae90",
+      "target_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2e5e12b5-0732-5b73-bbe5-3b723ff944f1",
+      "target_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a78e36b2-0985-5079-8b61-ce0aa0d35c69",
+      "target_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ac92a71b-0485-5c03-83b3-f4e864cb6fa2",
+      "target_id": "60494a0d-3bbc-576e-8d1b-220533af6919",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "24307ec9-1452-5891-9d45-fb6083656155",
+      "target_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2838c5ea-699c-584a-b416-f462c62b07ab",
+      "target_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9890c462-98cb-5856-87c3-412740feab77",
+      "target_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c7e0cadc-5b7d-5d00-ad7c-ce106e2d457d",
+      "target_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8ba3bc8a-5cac-599e-b55b-be5b3ba8e382",
+      "target_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "88a9178d-4c3d-5d39-be37-6eb01373da6b",
+      "target_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "433c5ef8-b703-5551-9b8a-a434b2a7f80c",
+      "target_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "6ab37229-e45c-591a-86ab-8eac85177a06",
+      "target_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "7948654c-1d96-5383-8beb-2117426273f7",
+      "target_id": "5e9cc636-c3c5-5e35-8cca-b6bbd5c98430",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "230b91a3-7806-5443-9b12-90796c59fb5b",
+      "target_id": "549c9622-aa87-5c79-b2d4-4809b29f64c6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "7acb9540-8ae3-5c6c-9489-31a31decd749",
+      "target_id": "549c9622-aa87-5c79-b2d4-4809b29f64c6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0711dc78-971d-59e7-a552-9585ed99e600",
+      "target_id": "549c9622-aa87-5c79-b2d4-4809b29f64c6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "4fb6da73-3a88-5fe4-ba2e-1003ab24c490",
+      "target_id": "549c9622-aa87-5c79-b2d4-4809b29f64c6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "720fe822-b5b5-529f-83db-51c26bf663db",
+      "target_id": "549c9622-aa87-5c79-b2d4-4809b29f64c6",
+      "relationship_type": "part-of"
+    }
+  ]
+}

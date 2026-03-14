@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to ISMS CORE{% endblock %}
+
+{% block content %}
+<h2>Welcome to ISMS CORE</h2>
+<p>Hi {% if full_name %}{{ full_name }}{% else %}{{ email }}{% endif %},</p>
+<p>Your ISMS CORE account has been created. You can now log in and start working with your organisation's information security management system.</p>
+
+<div class="callout">
+  <p class="label">Your account details</p>
+  <p><strong>Email:</strong> {{ email }}<br>
+  <strong>Role:</strong> {{ role }}<br>
+  <strong>Platform:</strong> {{ platform_url }}</p>
+</div>
+
+<p>
+  <a href="{{ platform_url }}" class="btn">Log in to ISMS CORE</a>
+</p>
+
+<p style="margin-top: 20px;">If you did not expect this account, please contact your ISMS administrator immediately.</p>
+{% endblock %}
+
+{% block footer_extra %}
+<p>Account created by: {{ created_by }}</p>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Gap Assigned — ISMS CORE{% endblock %}
+
+{% block content %}
+<h2>Compliance Gap Assigned to You</h2>
+<p>Hi {% if full_name %}{{ full_name }}{% else %}{{ email }}{% endif %},</p>
+<p>A compliance gap has been assigned to you in ISMS CORE and requires your attention.</p>
+
+<div class="callout">
+  <p class="label">Gap details</p>
+  <p>
+    <strong>Title:</strong> {{ gap_title }}<br>
+    <strong>Control:</strong> {{ control_ref }} — {{ control_name }}<br>
+    <strong>Severity:</strong>
+    {% if severity == 'critical' %}<span class="badge badge-red">Critical</span>
+    {% elif severity == 'high' %}<span class="badge badge-red">High</span>
+    {% elif severity == 'medium' %}<span class="badge badge-amber">Medium</span>
+    {% else %}<span class="badge badge-blue">Low</span>{% endif %}
+    <br>
+    {% if due_date %}<strong>Due date:</strong> {{ due_date }}<br>{% endif %}
+    {% if assigned_by %}<strong>Assigned by:</strong> {{ assigned_by }}{% endif %}
+  </p>
+</div>
+
+{% if description %}
+<p><strong>Description:</strong><br>{{ description }}</p>
+{% endif %}
+
+<p>
+  <a href="{{ gap_url }}" class="btn">View Gap in ISMS CORE</a>
+</p>
+{% endblock %}

@@ -1,0 +1,113 @@
+{
+  "bundle_id": "bundle--58404c12-d280-511b-8e57-fefe8655a9ee",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "38ed2337-9b81-5a49-bcc6-5a82998a50c7",
+    "code": "EU_AI_ACT",
+    "name": "EU Artificial Intelligence Act",
+    "version": "2024/1689",
+    "publisher": "European Union",
+    "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+    "jurisdiction": "EU",
+    "description": "EU Artificial Intelligence Act"
+  },
+  "generated_at": "2026-03-07T09:32:16Z",
+  "generator": "generate_regulatory.py",
+  "content_hash": "7a0808346b82b53e2eb7ef02fcbbb2843d2204372089cf7abe43633858be782e",
+  "objects_count": 9,
+  "relationships_count": 0,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "3dde6194-e213-589f-a5f7-af9fc8d17768",
+      "framework_id": "38ed2337-9b81-5a49-bcc6-5a82998a50c7",
+      "control_id": "Art. 8",
+      "title": "Compliance with requirements",
+      "description": "High-risk AI systems shall satisfy all applicable Chapter 3 requirements (Art. 9-15) before being placed on market. Providers must ensure conformity through quality management and conformity assessment.",
+      "level": 0,
+      "sort_order": 100
+    },
+    {
+      "type": "framework_control",
+      "id": "78b79267-f057-567f-be8d-68128dd7ce54",
+      "framework_id": "38ed2337-9b81-5a49-bcc6-5a82998a50c7",
+      "control_id": "Art. 9",
+      "title": "Risk management system",
+      "description": "Providers shall establish, implement, document, and maintain a risk management system throughout AI lifecycle. Must include: identification/analysis of risks; estimation/evaluation; adoption of mitigation measures; testing. Residual risk communicated to deployers.",
+      "level": 0,
+      "sort_order": 200
+    },
+    {
+      "type": "framework_control",
+      "id": "0fe87ada-3b35-519b-bcbe-a462454232d5",
+      "framework_id": "38ed2337-9b81-5a49-bcc6-5a82998a50c7",
+      "control_id": "Art. 10",
+      "title": "Data and data governance",
+      "description": "Training, validation, and testing datasets shall be subject to data governance covering: design choices, collection processes, preparation operations, bias examination, gap identification.",
+      "level": 0,
+      "sort_order": 300
+    },
+    {
+      "type": "framework_control",
+      "id": "ae2a4697-90f5-5897-b93a-43b40b7f3560",
+      "framework_id": "38ed2337-9b81-5a49-bcc6-5a82998a50c7",
+      "control_id": "Art. 11",
+      "title": "Technical documentation",
+      "description": "Providers must draw up technical documentation before market placement, including: general description, development process, monitoring/control, risk management system, and lifecycle changes.",
+      "level": 0,
+      "sort_order": 400
+    },
+    {
+      "type": "framework_control",
+      "id": "5c86a5fc-9f4d-5974-ada3-aa57933bfe20",
+      "framework_id": "38ed2337-9b81-5a49-bcc6-5a82998a50c7",
+      "control_id": "Art. 12",
+      "title": "Record-keeping",
+      "description": "High-risk AI systems shall technically allow for automatic recording of events (logs) throughout their lifetime. Logging capabilities shall conform to recognised standards or common specifications. Shall enable tracing of system operation, identification of risks, and post-market monitoring.",
+      "level": 0,
+      "sort_order": 500
+    },
+    {
+      "type": "framework_control",
+      "id": "ab258298-22be-52a7-804f-c7d5af036b37",
+      "framework_id": "38ed2337-9b81-5a49-bcc6-5a82998a50c7",
+      "control_id": "Art. 13",
+      "title": "Transparency and information to deployers",
+      "description": "High-risk AI systems shall be designed for sufficient operational transparency. Instructions must include: provider identity, system characteristics, intended purpose, accuracy/robustness/cybersecurity levels.",
+      "level": 0,
+      "sort_order": 600
+    },
+    {
+      "type": "framework_control",
+      "id": "8004ee8a-e90f-5735-9a55-cc053b670117",
+      "framework_id": "38ed2337-9b81-5a49-bcc6-5a82998a50c7",
+      "control_id": "Art. 14",
+      "title": "Human oversight",
+      "description": "High-risk AI systems must allow effective human oversight: understand capabilities/limitations, interpret outputs, decide not to use, intervene/interrupt, and apply stop procedures.",
+      "level": 0,
+      "sort_order": 700
+    },
+    {
+      "type": "framework_control",
+      "id": "d002214d-e999-5c07-ab44-fc965b0af56e",
+      "framework_id": "38ed2337-9b81-5a49-bcc6-5a82998a50c7",
+      "control_id": "Art. 15",
+      "title": "Accuracy, robustness and cybersecurity",
+      "description": "Appropriate levels of accuracy, robustness, and cybersecurity throughout lifecycle. Cybersecurity measures must resist: data poisoning, model poisoning, adversarial examples, confidentiality attacks, and model flaws.",
+      "level": 0,
+      "sort_order": 800
+    },
+    {
+      "type": "framework_control",
+      "id": "5ec39387-1f46-51f3-9537-3b82eaa5fde5",
+      "framework_id": "38ed2337-9b81-5a49-bcc6-5a82998a50c7",
+      "control_id": "Art. 27",
+      "title": "Fundamental rights impact assessment",
+      "description": "Deployers must assess impact on fundamental rights before deploying high-risk AI: processes, intended purpose, timeframe, affected persons, specific risks, and human oversight measures.",
+      "level": 0,
+      "sort_order": 900
+    }
+  ],
+  "relationships": []
+}

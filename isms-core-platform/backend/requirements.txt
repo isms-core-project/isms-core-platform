@@ -1,0 +1,49 @@
+# Core Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic[email]==2.5.3
+pydantic-settings==2.1.0
+
+# Database
+sqlalchemy==2.0.25
+alembic==1.13.1
+psycopg2-binary==2.9.9
+
+# Redis
+redis==5.0.1
+hiredis==2.3.2
+
+# OpenSearch
+opensearch-py==3.1.0
+
+# Excel & Data Processing
+pandas==2.2.0
+openpyxl==3.1.2
+
+# File Handling
+python-multipart==0.0.6
+
+# Document Parsing (Policy Importer)
+python-docx==1.1.0
+pdfplumber==0.11.0
+
+# Authentication & Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+cryptography==42.0.0
+
+# Monitoring & Logging
+prometheus-client==0.19.0
+python-json-logger==2.0.7
+
+# Background Tasks
+celery[redis]==5.3.6
+
+# AI
+anthropic>=0.40.0
+sentence-transformers>=2.7.0
+
+# Utilities
+python-dateutil==2.8.2
+
+jinja2>=3.1

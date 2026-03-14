@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}QA Check Failed — ISMS CORE{% endblock %}
+
+{% block content %}
+<h2>QA Check Completed — Failures Detected</h2>
+<p>Hi {% if full_name %}{{ full_name }}{% else %}{{ email }}{% endif %},</p>
+<p>An ISMS CORE QA existence check has completed and identified controls that require attention.</p>
+
+<div class="callout">
+  <p class="label">Check summary</p>
+  <p>
+    <strong>Product:</strong> {{ product }}<br>
+    <strong>Checked:</strong> {{ checked_at }}<br>
+    <strong>Pass rate:</strong>
+    {% if pass_pct >= 90 %}<span class="badge badge-green">{{ pass_pct }}%</span>
+    {% elif pass_pct >= 70 %}<span class="badge badge-amber">{{ pass_pct }}%</span>
+    {% else %}<span class="badge badge-red">{{ pass_pct }}%</span>{% endif %}
+    <br>
+    <strong>Failed / Warning:</strong> {{ fail_count }} / {{ warning_count }} controls
+  </p>
+</div>
+
+{% if failures %}
+<div class="table-wrap">
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Control</th>
+        <th>Status</th>
+        <th>Missing artefacts</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for f in failures[:20] %}
+      <tr>
+        <td>{{ f.control_ref }}</td>
+        <td>
+          {% if f.status == 'FAIL' %}<span class="badge badge-red">FAIL</span>
+          {% else %}<span class="badge badge-amber">WARN</span>{% endif %}
+        </td>
+        <td>{{ f.missing | join(', ') }}</td>
+      </tr>
+      {% endfor %}
+      {% if failures | length > 20 %}
+      <tr><td colspan="3" style="color:#888; font-style:italic;">… and {{ failures | length - 20 }} more</td></tr>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+<p>
+  <a href="{{ qa_url }}" class="btn">View Full QA Report</a>
+</p>
+{% endblock %}

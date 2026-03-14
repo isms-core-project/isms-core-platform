@@ -1,0 +1,4286 @@
+{
+  "bundle_id": "bundle--def8c7d6-e121-54c1-a687-2d3af8bb6485",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+    "code": "CIS_V8",
+    "name": "CIS Critical Security Controls",
+    "version": "8.1",
+    "publisher": "CIS",
+    "source_url": "https://www.cisecurity.org/controls/v8-1",
+    "description": "CIS Critical Security Controls — prioritised set of actions for cyber defence"
+  },
+  "generated_at": "2026-02-08T19:38:28Z",
+  "generator": "generate_cis_v8.py",
+  "content_hash": "05acc9f5059acee43bf523fe391b61bed9deb3c20f01ad6a113c05d951a4ec95",
+  "objects_count": 171,
+  "relationships_count": 153,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "14e7341a-0dff-5e47-a585-0af550dec7fc",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 1",
+      "title": "Inventory and Control of Enterprise Assets",
+      "description": "Actively manage (inventory, track, and correct) all enterprise assets (end-user devices, including portable and mobile; network devices; non-computing/IoT devices; and servers) connected to the infrastructure, physically, virtually, remotely, and those within cloud environments, to accurately know the totality of assets that need to be monitored and protected within the enterprise. This will also support identifying unauthorized and unmanaged assets to remove or remediate.",
+      "level": 0,
+      "sort_order": 1000,
+      "metadata": {
+        "control_number": 1,
+        "safeguard_count": 5
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6dd8bd91-7743-5ae8-a5ef-a5272bd31e13",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "14e7341a-0dff-5e47-a585-0af550dec7fc",
+      "control_id": "CIS 1.1",
+      "title": "Establish and Maintain Detailed Enterprise Asset Inventory",
+      "description": "Establish and maintain an accurate, detailed, and up-to-date inventory of all enterprise assets with the potential to store or process data, to include: end-user devices (including portable and mobile), network devices, non-computing/IoT devices, and servers. Ensure the inventory records the network address (if static), hardware address, machine name, data asset owner, department for each asset, and whether the asset has been approved to connect to the network. For mobile end-user devices, MDM type tools can support this process, where appropriate. This inventory includes assets connected to the infrastructure physically, virtually, remotely, and those within cloud environments. Additionally, it includes assets that are regularly connected to the enterprise's network infrastructure, even if they are not under control of the enterprise. Review and update the inventory of all enterprise assets bi-annually, or more frequently.",
+      "level": 1,
+      "sort_order": 1100,
+      "metadata": {
+        "safeguard_id": "1.1",
+        "asset_type": "Devices",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "94682200-111b-5599-885b-885079c75979",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "14e7341a-0dff-5e47-a585-0af550dec7fc",
+      "control_id": "CIS 1.2",
+      "title": "Address Unauthorized Assets",
+      "description": "Ensure that a process exists to address unauthorized assets on a weekly basis. The enterprise may choose to remove the asset from the network, deny the asset from connecting remotely to the network, or quarantine the asset.",
+      "level": 1,
+      "sort_order": 1200,
+      "metadata": {
+        "safeguard_id": "1.2",
+        "asset_type": "Devices",
+        "security_function": "Respond",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "cb633f30-c62f-5df3-8976-e815ab2da821",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "14e7341a-0dff-5e47-a585-0af550dec7fc",
+      "control_id": "CIS 1.3",
+      "title": "Utilize an Active Discovery Tool",
+      "description": "Utilize an active discovery tool to identify assets connected to the enterprise's network. Configure the active discovery tool to execute daily, or more frequently.",
+      "level": 1,
+      "sort_order": 1300,
+      "metadata": {
+        "safeguard_id": "1.3",
+        "asset_type": "Devices",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b279929f-d169-52ea-afff-40926256b114",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "14e7341a-0dff-5e47-a585-0af550dec7fc",
+      "control_id": "CIS 1.4",
+      "title": "Use Dynamic Host Configuration Protocol (DHCP) Logging to Update Enterprise Asset Inventory",
+      "description": "Use DHCP logging on all DHCP servers or Internet Protocol (IP) address management tools to update the enterprise's asset inventory. Review and use logs to update the enterprise's asset inventory weekly, or more frequently.",
+      "level": 1,
+      "sort_order": 1400,
+      "metadata": {
+        "safeguard_id": "1.4",
+        "asset_type": "Devices",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c24215ca-707c-5fce-8b18-4cdade826c95",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "14e7341a-0dff-5e47-a585-0af550dec7fc",
+      "control_id": "CIS 1.5",
+      "title": "Use a Passive Asset Discovery Tool",
+      "description": "Use a passive discovery tool to identify assets connected to the enterprise's network. Review and use scans to update the enterprise's asset inventory at least weekly, or more frequently.",
+      "level": 1,
+      "sort_order": 1500,
+      "metadata": {
+        "safeguard_id": "1.5",
+        "asset_type": "Devices",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 2",
+      "title": "Inventory and Control of Software Assets",
+      "description": "Actively manage (inventory, track, and correct) all software (operating systems and applications) on the network so that only authorized software is installed and can execute, and that unauthorized and unmanaged software is found and prevented from installation or execution.",
+      "level": 0,
+      "sort_order": 2000,
+      "metadata": {
+        "control_number": 2,
+        "safeguard_count": 7
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e061318a-d6da-52a8-a141-0876dd7a38ec",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "control_id": "CIS 2.1",
+      "title": "Establish and Maintain a Software Inventory",
+      "description": "Establish and maintain a detailed inventory of all licensed software installed on enterprise assets. The software inventory must document the title, publisher, initial install/use date, and business purpose for each entry; where appropriate, include the Uniform Resource Locator (URL), app store(s), version(s), deployment mechanism, and decommission date. Review and update the software inventory bi-annually, or more frequently.",
+      "level": 1,
+      "sort_order": 2100,
+      "metadata": {
+        "safeguard_id": "2.1",
+        "asset_type": "Software",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "04e7abb3-237c-553a-86d3-d3233c1f500d",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "control_id": "CIS 2.2",
+      "title": "Ensure Authorized Software is Currently Supported",
+      "description": "Ensure that only currently supported software is designated as authorized in the software inventory for enterprise assets. If software is unsupported, yet necessary for the fulfillment of the enterprise's mission, document an exception detailing mitigating controls and residual risk acceptance. For any unsupported software without an exception, designate as unauthorized. Review the software list to verify software support at least monthly, or more frequently.",
+      "level": 1,
+      "sort_order": 2200,
+      "metadata": {
+        "safeguard_id": "2.2",
+        "asset_type": "Software",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "95469060-4155-5463-ae61-7ab1ae7bf47b",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "control_id": "CIS 2.3",
+      "title": "Address Unauthorized Software",
+      "description": "Ensure that unauthorized software is either removed from use on enterprise assets or receives a documented exception. Review monthly, or more frequently.",
+      "level": 1,
+      "sort_order": 2300,
+      "metadata": {
+        "safeguard_id": "2.3",
+        "asset_type": "Software",
+        "security_function": "Respond",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a9e922c6-e01e-51bc-a138-88ebe4282a3c",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "control_id": "CIS 2.4",
+      "title": "Utilize Automated Software Inventory Tools",
+      "description": "Utilize software inventory tools, when possible, throughout the enterprise to automate the discovery and documentation of installed software.",
+      "level": 1,
+      "sort_order": 2400,
+      "metadata": {
+        "safeguard_id": "2.4",
+        "asset_type": "Software",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7a51a8ec-285a-560d-b95a-1661cdf74664",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "control_id": "CIS 2.5",
+      "title": "Allowlist Authorized Software",
+      "description": "Use technical controls, such as application allowlisting, to ensure that only authorized software can execute or be accessed. Reassess bi-annually, or more frequently.",
+      "level": 1,
+      "sort_order": 2500,
+      "metadata": {
+        "safeguard_id": "2.5",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e70fc4fb-e258-5ddf-ad4a-4f50a442576d",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "control_id": "CIS 2.6",
+      "title": "Allowlist Authorized Libraries",
+      "description": "Use technical controls to ensure that only authorized software libraries, such as specific .dll, .ocx, .so, etc. files, are allowed to load into a system process.",
+      "level": 1,
+      "sort_order": 2600,
+      "metadata": {
+        "safeguard_id": "2.6",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9187d97c-4f81-5ee3-b596-f1a139b4a272",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "control_id": "CIS 2.7",
+      "title": "Allowlist Authorized Scripts",
+      "description": "Use technical controls, such as digital signatures and version control, to ensure that only authorized scripts, such as specific .ps1, .py, etc. files, are allowed to execute. Block unauthorized scripts from executing. Reassess bi-annually, or more frequently.",
+      "level": 1,
+      "sort_order": 2700,
+      "metadata": {
+        "safeguard_id": "2.7",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 3",
+      "title": "Data Protection",
+      "description": "Develop processes and technical controls to identify, classify, securely handle, retain, and dispose of data.",
+      "level": 0,
+      "sort_order": 3000,
+      "metadata": {
+        "control_number": 3,
+        "safeguard_count": 14
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "509fd6a0-6f75-5657-a83b-b25d98ef23be",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.1",
+      "title": "Establish and Maintain a Data Management Process",
+      "description": "Establish and maintain a data management process. In the process, address data sensitivity, data owner, handling of data, data retention limits, and disposal requirements, based on sensitivity and retention standards for the enterprise. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 3100,
+      "metadata": {
+        "safeguard_id": "3.1",
+        "asset_type": "Data",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b4c6745d-2921-55c2-96ea-123d2441d1d5",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.2",
+      "title": "Establish and Maintain a Data Inventory",
+      "description": "Establish and maintain a data inventory, based on the enterprise's data management process. Inventory sensitive data, at a minimum. Review and update inventory annually, at a minimum, with a priority on sensitive data.",
+      "level": 1,
+      "sort_order": 3200,
+      "metadata": {
+        "safeguard_id": "3.2",
+        "asset_type": "Data",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "543fb87a-ab84-5bc1-95c0-b71bc6a6df79",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.3",
+      "title": "Configure Data Access Control Lists",
+      "description": "Configure data access control lists based on a user's need to know. Apply data access control lists, also known as access permissions, to local and remote file systems, databases, and applications.",
+      "level": 1,
+      "sort_order": 3300,
+      "metadata": {
+        "safeguard_id": "3.3",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d8dd6236-3b5c-53ca-8788-b253c75f9d6c",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.4",
+      "title": "Enforce Data Retention",
+      "description": "Retain data according to the enterprise's data management process. Data retention must include both minimum and maximum timelines.",
+      "level": 1,
+      "sort_order": 3400,
+      "metadata": {
+        "safeguard_id": "3.4",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5b49bfb5-2900-5fd2-bd08-cdb831bfd966",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.5",
+      "title": "Securely Dispose of Data",
+      "description": "Securely dispose of data as outlined in the enterprise's data management process. Ensure the disposal process and method are commensurate with the data sensitivity.",
+      "level": 1,
+      "sort_order": 3500,
+      "metadata": {
+        "safeguard_id": "3.5",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ad40a094-1ffc-5199-a378-b4d915ad0d48",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.6",
+      "title": "Encrypt Data on End-User Devices",
+      "description": "Encrypt data on end-user devices containing sensitive data. Example implementations can include: Windows BitLocker, Apple FileVault, Linux dm-crypt.",
+      "level": 1,
+      "sort_order": 3600,
+      "metadata": {
+        "safeguard_id": "3.6",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d2ffe275-618e-5d05-b3aa-4e26bac548fa",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.7",
+      "title": "Establish and Maintain a Data Classification Scheme",
+      "description": "Establish and maintain an overall data classification scheme for the enterprise. Enterprises may use labels, such as 'Sensitive', 'Confidential', and 'Public', and classify their data according to those labels. Review and update the classification scheme annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 3700,
+      "metadata": {
+        "safeguard_id": "3.7",
+        "asset_type": "Data",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9ce58e53-69e9-5c0a-99ac-e7bb72bacc2d",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.8",
+      "title": "Document Data Flows",
+      "description": "Document data flows. Data flow documentation includes service provider data flows and should be based on the enterprise's data management process. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 3800,
+      "metadata": {
+        "safeguard_id": "3.8",
+        "asset_type": "Data",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "61fa0cc1-cea7-5955-90a3-ac231893b5db",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.9",
+      "title": "Encrypt Data on Removable Media",
+      "description": "Encrypt data on removable media.",
+      "level": 1,
+      "sort_order": 3900,
+      "metadata": {
+        "safeguard_id": "3.9",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a044d2c6-69d5-5475-9b16-9a537ec0ff5d",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.10",
+      "title": "Encrypt Sensitive Data in Transit",
+      "description": "Encrypt sensitive data in transit. Example implementations can include: Transport Layer Security (TLS) and Open Secure Shell (OpenSSH).",
+      "level": 1,
+      "sort_order": 3100,
+      "metadata": {
+        "safeguard_id": "3.10",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fe83f322-2774-551a-9f5d-ab7b48433cce",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.11",
+      "title": "Encrypt Sensitive Data at Rest",
+      "description": "Encrypt sensitive data at rest on servers, applications, and databases containing sensitive data. Storage-layer encryption, also known as server-side encryption, meets the minimum requirement of this Safeguard. Additional encryption methods may include application-layer encryption, also known as client-side encryption, where access to the data storage device(s) does not facilitate access to the plain-text data.",
+      "level": 1,
+      "sort_order": 3110,
+      "metadata": {
+        "safeguard_id": "3.11",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "19e1624e-951d-5589-af3c-104f4621194f",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.12",
+      "title": "Segment Data Processing and Storage Based on Sensitivity",
+      "description": "Segment data processing and storage based on the sensitivity level of the data. Do not process sensitive data on enterprise assets intended for lower sensitivity data.",
+      "level": 1,
+      "sort_order": 3120,
+      "metadata": {
+        "safeguard_id": "3.12",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b2b8b486-59ed-5512-bf87-9b4cfaecc998",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.13",
+      "title": "Deploy a Data Loss Prevention Solution",
+      "description": "Implement an automated tool, such as a host-based Data Loss Prevention (DLP) tool to identify all sensitive data stored, processed, or transmitted through enterprise assets, including those located onsite or at a remote service provider, and update the enterprise's sensitive data inventory.",
+      "level": 1,
+      "sort_order": 3130,
+      "metadata": {
+        "safeguard_id": "3.13",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9285a695-86a3-51be-926b-2f98746d8c29",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "control_id": "CIS 3.14",
+      "title": "Log Sensitive Data Access",
+      "description": "Log sensitive data access, including modification and disposal.",
+      "level": 1,
+      "sort_order": 3140,
+      "metadata": {
+        "safeguard_id": "3.14",
+        "asset_type": "Data",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 4",
+      "title": "Secure Configuration of Enterprise Assets and Software",
+      "description": "Establish and maintain the secure configuration of enterprise assets (end-user devices, including portable and mobile; network devices; non-computing/IoT devices; and servers) and software (operating systems and applications).",
+      "level": 0,
+      "sort_order": 4000,
+      "metadata": {
+        "control_number": 4,
+        "safeguard_count": 12
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d3d04e8b-0b9c-5d5c-917d-4193907b1c68",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "control_id": "CIS 4.1",
+      "title": "Establish and Maintain a Secure Configuration Process",
+      "description": "Establish and maintain a secure configuration process for enterprise assets (end-user devices, including portable and mobile, non-computing/IoT devices, and servers) and software (operating systems and applications). Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 4100,
+      "metadata": {
+        "safeguard_id": "4.1",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ffd6dda7-cc55-5910-b0b9-2409bbb4f60c",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "control_id": "CIS 4.2",
+      "title": "Establish and Maintain a Secure Configuration Process for Network Infrastructure",
+      "description": "Establish and maintain a secure configuration process for network devices. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 4200,
+      "metadata": {
+        "safeguard_id": "4.2",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2add2ed6-fcf2-5f67-b916-778024949d63",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "control_id": "CIS 4.3",
+      "title": "Configure Automatic Session Locking on Enterprise Assets",
+      "description": "Configure automatic session locking on enterprise assets after a defined period of inactivity. For general purpose operating systems, the period must not exceed 15 minutes. For mobile end-user devices, the period must not exceed 2 minutes.",
+      "level": 1,
+      "sort_order": 4300,
+      "metadata": {
+        "safeguard_id": "4.3",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e2b06bad-23e3-570b-85ff-54831faee344",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "control_id": "CIS 4.4",
+      "title": "Implement and Manage a Firewall on Servers",
+      "description": "Implement and manage a firewall on servers, where supported. Example implementations include a virtual firewall, operating system firewall, or a third-party firewall agent.",
+      "level": 1,
+      "sort_order": 4400,
+      "metadata": {
+        "safeguard_id": "4.4",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e1d5d9c2-d2f4-552f-96ef-a92a26d92f69",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "control_id": "CIS 4.5",
+      "title": "Implement and Manage a Firewall on End-User Devices",
+      "description": "Implement and manage a host-based firewall or port-filtering tool on end-user devices, with a default-deny rule that drops all traffic except those services and ports that are explicitly allowed.",
+      "level": 1,
+      "sort_order": 4500,
+      "metadata": {
+        "safeguard_id": "4.5",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2abd9aeb-7090-58e5-a914-666dd84de921",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "control_id": "CIS 4.6",
+      "title": "Securely Manage Enterprise Assets and Software",
+      "description": "Securely manage enterprise assets and software. Example implementations include managing configuration through version-controlled-infrastructure-as-code and accessing administrative interfaces over secure network protocols, such as Secure Shell (SSH) and Hypertext Transfer Protocol Secure (HTTPS). Do not use insecure management protocols, such as Telnet and HTTP, unless operationally essential.",
+      "level": 1,
+      "sort_order": 4600,
+      "metadata": {
+        "safeguard_id": "4.6",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1819aeca-ef3b-54d1-a5a6-385467a20af0",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "control_id": "CIS 4.7",
+      "title": "Manage Default Accounts on Enterprise Assets and Software",
+      "description": "Manage default accounts on enterprise assets and software, such as root, administrator, and other pre-configured vendor accounts. Example implementations can include: disabling default accounts or making them unusable.",
+      "level": 1,
+      "sort_order": 4700,
+      "metadata": {
+        "safeguard_id": "4.7",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b6e83fb2-1b70-5606-a65a-3420d67e661b",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "control_id": "CIS 4.8",
+      "title": "Uninstall or Disable Unnecessary Services on Enterprise Assets and Software",
+      "description": "Uninstall or disable unnecessary services on enterprise assets and software, such as an unused file sharing service, web application module, or service function.",
+      "level": 1,
+      "sort_order": 4800,
+      "metadata": {
+        "safeguard_id": "4.8",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "75bd6b80-e00a-5c05-bd0e-91723ff30852",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "control_id": "CIS 4.9",
+      "title": "Configure Trusted DNS Servers on Enterprise Assets",
+      "description": "Configure trusted DNS servers on enterprise assets. Example implementations include: configuring assets to use enterprise-controlled DNS servers and/or reputable externally accessible DNS servers.",
+      "level": 1,
+      "sort_order": 4900,
+      "metadata": {
+        "safeguard_id": "4.9",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d11bc388-2442-5cfc-8de5-be873325563f",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "control_id": "CIS 4.10",
+      "title": "Enforce Automatic Device Lockout on Portable End-User Devices",
+      "description": "Enforce automatic device lockout following a predetermined threshold of local failed authentication attempts on portable end-user devices, where supported. For laptops, do not allow more than 20 failed authentication attempts; for tablets and smartphones, no more than 10 failed authentication attempts. Example implementations include Microsoft InTune Device Lock and Apple Configuration Profile maxFailedAttempts.",
+      "level": 1,
+      "sort_order": 4100,
+      "metadata": {
+        "safeguard_id": "4.10",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "afea5f4b-337a-512f-a202-899c2ed744cf",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "control_id": "CIS 4.11",
+      "title": "Enforce Remote Wipe Capability on Portable End-User Devices",
+      "description": "Remotely wipe enterprise data from enterprise-owned portable end-user devices when deemed appropriate such as lost or stolen devices, or when an individual no longer supports the enterprise.",
+      "level": 1,
+      "sort_order": 4110,
+      "metadata": {
+        "safeguard_id": "4.11",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "23647c0e-7414-55af-908c-b1cd54b8b709",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "control_id": "CIS 4.12",
+      "title": "Separate Enterprise Workspaces on Mobile End-User Devices",
+      "description": "Ensure separate enterprise workspaces are used on mobile end-user devices, where supported. Example implementations include using an Apple Configuration Profile or Android Work Profile to separate enterprise applications and data from personal applications and data.",
+      "level": 1,
+      "sort_order": 4120,
+      "metadata": {
+        "safeguard_id": "4.12",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 5",
+      "title": "Account Management",
+      "description": "Use processes and tools to assign and manage authorization to credentials for user accounts, including administrator accounts, as well as service accounts, to enterprise assets and software.",
+      "level": 0,
+      "sort_order": 5000,
+      "metadata": {
+        "control_number": 5,
+        "safeguard_count": 6
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "76f8defe-d3b7-5663-a325-c9a15111aba8",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "control_id": "CIS 5.1",
+      "title": "Establish and Maintain an Inventory of Accounts",
+      "description": "Establish and maintain an inventory of all accounts managed in the enterprise. The inventory must include both user and administrator accounts. The inventory, at a minimum, should contain the person's name, username, start/stop dates, and department. Validate that all active accounts are authorized, on a recurring schedule at a minimum quarterly, or more frequently.",
+      "level": 1,
+      "sort_order": 5100,
+      "metadata": {
+        "safeguard_id": "5.1",
+        "asset_type": "Users",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "45534154-518c-5dfc-bba7-b47dda817081",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "control_id": "CIS 5.2",
+      "title": "Use Unique Passwords",
+      "description": "Use unique passwords for all enterprise assets. Best practice implementation includes, at a minimum, an 8-character password for accounts using MFA and a 14-character password for accounts not using MFA.",
+      "level": 1,
+      "sort_order": 5200,
+      "metadata": {
+        "safeguard_id": "5.2",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e0bc0c07-de5e-5747-b14a-ac8fbb072f0d",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "control_id": "CIS 5.3",
+      "title": "Disable Dormant Accounts",
+      "description": "Delete or disable any dormant accounts after a period of 45 days of inactivity, where supported.",
+      "level": 1,
+      "sort_order": 5300,
+      "metadata": {
+        "safeguard_id": "5.3",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e599280c-2bc6-5c39-b31c-cc1b189101ba",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "control_id": "CIS 5.4",
+      "title": "Restrict Administrator Privileges to Dedicated Administrator Accounts",
+      "description": "Restrict administrator privileges to dedicated administrator accounts on enterprise assets. Conduct general computing activities, such as internet browsing, email, and productivity suite use, from the user's primary, non-privileged account.",
+      "level": 1,
+      "sort_order": 5400,
+      "metadata": {
+        "safeguard_id": "5.4",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "80ff0e64-d3a0-5640-8cb9-339be36a65f0",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "control_id": "CIS 5.5",
+      "title": "Establish and Maintain an Inventory of Service Accounts",
+      "description": "Establish and maintain an inventory of service accounts. The inventory, at a minimum, must contain department owner, review date, and purpose. Perform service account reviews to validate that all active accounts are authorized, on a recurring schedule at a minimum quarterly, or more frequently.",
+      "level": 1,
+      "sort_order": 5500,
+      "metadata": {
+        "safeguard_id": "5.5",
+        "asset_type": "Users",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f203672c-72a1-5b8d-8b3a-2c2e0bf9cb8f",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "control_id": "CIS 5.6",
+      "title": "Centralize Account Management",
+      "description": "Centralize account management through a directory or identity service.",
+      "level": 1,
+      "sort_order": 5600,
+      "metadata": {
+        "safeguard_id": "5.6",
+        "asset_type": "Users",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 6",
+      "title": "Access Control Management",
+      "description": "Use processes and tools to create, assign, manage, and revoke access credentials and privileges for user, administrator, and service accounts for enterprise assets and software.",
+      "level": 0,
+      "sort_order": 6000,
+      "metadata": {
+        "control_number": 6,
+        "safeguard_count": 8
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "acd258e5-0a84-5fa1-8cf3-5336ac45fec3",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "control_id": "CIS 6.1",
+      "title": "Establish an Access Granting Process",
+      "description": "Establish and follow a process, preferably automated, for granting access to enterprise assets upon new hire, rights grant, or role change of a user.",
+      "level": 1,
+      "sort_order": 6100,
+      "metadata": {
+        "safeguard_id": "6.1",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e5edb698-0114-5f5a-b3b8-58c45da8a4e8",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "control_id": "CIS 6.2",
+      "title": "Establish an Access Revoking Process",
+      "description": "Establish and follow a process, preferably automated, for revoking access to enterprise assets, through disabling accounts immediately upon termination, rights revocation, or role change of a user. Disabling accounts, instead of deleting accounts, may be necessary to preserve audit trails.",
+      "level": 1,
+      "sort_order": 6200,
+      "metadata": {
+        "safeguard_id": "6.2",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fd4ea294-305b-50eb-b0e8-88ff85607f24",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "control_id": "CIS 6.3",
+      "title": "Require MFA for Externally-Exposed Applications",
+      "description": "Require all externally-exposed enterprise or third-party applications to enforce MFA, where supported. Enforcing MFA through a directory service or SSO provider is a satisfactory implementation of this Safeguard.",
+      "level": 1,
+      "sort_order": 6300,
+      "metadata": {
+        "safeguard_id": "6.3",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b5df60f4-9a20-5f3f-ac7a-004297d6e058",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "control_id": "CIS 6.4",
+      "title": "Require MFA for Remote Network Access",
+      "description": "Require MFA for remote network access.",
+      "level": 1,
+      "sort_order": 6400,
+      "metadata": {
+        "safeguard_id": "6.4",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7f88c99e-a458-520c-aa6e-96dafe56d804",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "control_id": "CIS 6.5",
+      "title": "Require MFA for Administrative Access",
+      "description": "Require MFA for all administrative access accounts, where supported, on all enterprise assets, whether managed on-site or through a third-party provider.",
+      "level": 1,
+      "sort_order": 6500,
+      "metadata": {
+        "safeguard_id": "6.5",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f4617711-a6e8-552e-802d-e7670a21ec38",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "control_id": "CIS 6.6",
+      "title": "Establish and Maintain an Inventory of Authentication and Authorization Systems",
+      "description": "Establish and maintain an inventory of the enterprise's authentication and authorization systems, including those hosted on-site or at a remote service provider. Review and update the inventory, at a minimum, annually, or more frequently.",
+      "level": 1,
+      "sort_order": 6600,
+      "metadata": {
+        "safeguard_id": "6.6",
+        "asset_type": "Software",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5bd6e857-706d-5b44-8b3f-04b0754242a9",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "control_id": "CIS 6.7",
+      "title": "Centralize Access Control",
+      "description": "Centralize access control for all enterprise assets through a directory service or SSO provider, where supported.",
+      "level": 1,
+      "sort_order": 6700,
+      "metadata": {
+        "safeguard_id": "6.7",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b5f9deb2-208a-5d85-af2c-96904cc674a9",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "control_id": "CIS 6.8",
+      "title": "Define and Maintain Role-Based Access Control",
+      "description": "Define and maintain role-based access control, through determining and documenting the access rights necessary for each role within the enterprise to successfully carry out its assigned duties. Perform access control reviews of enterprise assets to validate that all privileges are authorized, on a recurring schedule at a minimum annually, or more frequently.",
+      "level": 1,
+      "sort_order": 6800,
+      "metadata": {
+        "safeguard_id": "6.8",
+        "asset_type": "Users",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 7",
+      "title": "Continuous Vulnerability Management",
+      "description": "Develop a plan to continuously assess and track vulnerabilities on all enterprise assets within the enterprise's infrastructure, in order to remediate, and minimize, the window of opportunity for attackers. Monitor public and private industry sources for new threat and vulnerability information.",
+      "level": 0,
+      "sort_order": 7000,
+      "metadata": {
+        "control_number": 7,
+        "safeguard_count": 7
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0edd4f1f-00c1-57ad-9706-b88e43470a40",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "control_id": "CIS 7.1",
+      "title": "Establish and Maintain a Vulnerability Management Process",
+      "description": "Establish and maintain a documented vulnerability management process for enterprise assets. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 7100,
+      "metadata": {
+        "safeguard_id": "7.1",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8561609b-7101-5e95-b701-c5c5f5fc37cd",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "control_id": "CIS 7.2",
+      "title": "Establish and Maintain a Remediation Process",
+      "description": "Establish and maintain a risk-based remediation strategy documented in a remediation process, with monthly, or more frequent, parsimony and focus on critical items for action. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 7200,
+      "metadata": {
+        "safeguard_id": "7.2",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "67ecb952-825d-54e9-b905-d5521b03957c",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "control_id": "CIS 7.3",
+      "title": "Perform Automated Operating System Patch Management",
+      "description": "Perform operating system updates on enterprise assets through automated patch management on a monthly, or more frequent, basis.",
+      "level": 1,
+      "sort_order": 7300,
+      "metadata": {
+        "safeguard_id": "7.3",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a5d360ea-b6ac-5fd6-98aa-ade0c7209322",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "control_id": "CIS 7.4",
+      "title": "Perform Automated Application Patch Management",
+      "description": "Perform application updates on enterprise assets through automated patch management on a monthly, or more frequent, basis.",
+      "level": 1,
+      "sort_order": 7400,
+      "metadata": {
+        "safeguard_id": "7.4",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9c2be38d-cb08-5f6b-b691-91d4af28ae54",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "control_id": "CIS 7.5",
+      "title": "Perform Automated Vulnerability Scans of Internal Enterprise Assets",
+      "description": "Perform automated vulnerability scans of internal enterprise assets on a quarterly, or more frequent, basis. Conduct both authenticated and unauthenticated scans, using a SCAP-compliant vulnerability scanning tool.",
+      "level": 1,
+      "sort_order": 7500,
+      "metadata": {
+        "safeguard_id": "7.5",
+        "asset_type": "Software",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "03e068f3-3ba1-5585-80c9-cc9549c9c67b",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "control_id": "CIS 7.6",
+      "title": "Perform Automated Vulnerability Scans of Externally-Exposed Enterprise Assets",
+      "description": "Perform automated vulnerability scans of externally-exposed enterprise assets using a SCAP-compliant vulnerability scanning tool. Perform scans on a monthly, or more frequent, basis.",
+      "level": 1,
+      "sort_order": 7600,
+      "metadata": {
+        "safeguard_id": "7.6",
+        "asset_type": "Software",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1ffd17a8-4279-5657-b178-3a91949ae48a",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "control_id": "CIS 7.7",
+      "title": "Remediate Detected Vulnerabilities",
+      "description": "Remediate detected vulnerabilities in software through processes and tooling on a monthly, or more frequent, basis, based on the remediation process.",
+      "level": 1,
+      "sort_order": 7700,
+      "metadata": {
+        "safeguard_id": "7.7",
+        "asset_type": "Software",
+        "security_function": "Respond",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 8",
+      "title": "Audit Log Management",
+      "description": "Collect, alert, review, and retain audit logs of events that could help detect, understand, or recover from an attack.",
+      "level": 0,
+      "sort_order": 8000,
+      "metadata": {
+        "control_number": 8,
+        "safeguard_count": 12
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3bdc5b3e-aa21-58e1-a73e-2eab16652ff3",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "control_id": "CIS 8.1",
+      "title": "Establish and Maintain an Audit Log Management Process",
+      "description": "Establish and maintain an audit log management process that defines the enterprise's logging requirements. At a minimum, address the collection, review, and retention of audit logs for enterprise assets. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 8100,
+      "metadata": {
+        "safeguard_id": "8.1",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8ed6116e-8260-5608-9ea8-33e084157bc9",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "control_id": "CIS 8.2",
+      "title": "Collect Audit Logs",
+      "description": "Collect audit logs. Ensure that logging, per the enterprise's audit log management process, has been enabled across enterprise assets.",
+      "level": 1,
+      "sort_order": 8200,
+      "metadata": {
+        "safeguard_id": "8.2",
+        "asset_type": "Data",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4a672933-7245-5dfa-8fe4-8562a9a8580e",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "control_id": "CIS 8.3",
+      "title": "Ensure Adequate Audit Log Storage",
+      "description": "Ensure that logging destinations maintain adequate storage to comply with the enterprise's audit log management process.",
+      "level": 1,
+      "sort_order": 8300,
+      "metadata": {
+        "safeguard_id": "8.3",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2665aad0-4edc-548f-b951-e7d54933ee37",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "control_id": "CIS 8.4",
+      "title": "Standardize Time Synchronization",
+      "description": "Standardize time synchronization. Configure at least two synchronized time sources across enterprise assets, where supported.",
+      "level": 1,
+      "sort_order": 8400,
+      "metadata": {
+        "safeguard_id": "8.4",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1ebfb10d-7be5-5752-928d-d1289c65a6a9",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "control_id": "CIS 8.5",
+      "title": "Collect Detailed Audit Logs",
+      "description": "Configure detailed audit logging for enterprise assets containing sensitive data. Include event source, date, username, timestamp, source addresses, destination addresses, and other useful elements that could assist in a forensic investigation.",
+      "level": 1,
+      "sort_order": 8500,
+      "metadata": {
+        "safeguard_id": "8.5",
+        "asset_type": "Data",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a5a261ef-2975-56a7-8db3-6355c1f73a0d",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "control_id": "CIS 8.6",
+      "title": "Collect DNS Query Audit Logs",
+      "description": "Collect DNS query audit logs on enterprise assets, where appropriate and supported.",
+      "level": 1,
+      "sort_order": 8600,
+      "metadata": {
+        "safeguard_id": "8.6",
+        "asset_type": "Data",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "02b24382-6700-5bc9-a5a7-f12a33c501c6",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "control_id": "CIS 8.7",
+      "title": "Collect URL Request Audit Logs",
+      "description": "Collect URL request audit logs on enterprise assets, where appropriate and supported.",
+      "level": 1,
+      "sort_order": 8700,
+      "metadata": {
+        "safeguard_id": "8.7",
+        "asset_type": "Data",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c8b02845-d552-5c94-a8d5-967613f6868b",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "control_id": "CIS 8.8",
+      "title": "Collect Command-Line Audit Logs",
+      "description": "Collect command-line audit logs. Example implementations include collecting audit logs from PowerShell, BASH, and remote administrative terminals.",
+      "level": 1,
+      "sort_order": 8800,
+      "metadata": {
+        "safeguard_id": "8.8",
+        "asset_type": "Data",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f987fae9-fb99-512c-a077-e40c9e8b6b89",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "control_id": "CIS 8.9",
+      "title": "Centralize Audit Logs",
+      "description": "Centralize, to the extent possible, audit log collection and retention across enterprise assets.",
+      "level": 1,
+      "sort_order": 8900,
+      "metadata": {
+        "safeguard_id": "8.9",
+        "asset_type": "Data",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "595ad4a8-e24d-5658-8337-b93730471b6d",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "control_id": "CIS 8.10",
+      "title": "Retain Audit Logs",
+      "description": "Retain audit logs across enterprise assets for a minimum of 90 days.",
+      "level": 1,
+      "sort_order": 8100,
+      "metadata": {
+        "safeguard_id": "8.10",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ca58f547-ab94-515c-b8e0-bf61bb878fb1",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "control_id": "CIS 8.11",
+      "title": "Conduct Audit Log Reviews",
+      "description": "Conduct reviews of audit logs to detect anomalies or abnormal events that could indicate a potential threat. Conduct reviews on a weekly, or more frequent, basis.",
+      "level": 1,
+      "sort_order": 8110,
+      "metadata": {
+        "safeguard_id": "8.11",
+        "asset_type": "Data",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ee62cea0-6ae4-59bd-8e77-84948bf84aa9",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "control_id": "CIS 8.12",
+      "title": "Collect Service Provider Logs",
+      "description": "Collect service provider logs, where supported. Example implementations include collecting authentication and authorization events, data creation and disposal events, and user management events.",
+      "level": 1,
+      "sort_order": 8120,
+      "metadata": {
+        "safeguard_id": "8.12",
+        "asset_type": "Data",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 9",
+      "title": "Email and Web Browser Protections",
+      "description": "Improve protections and detections of threats from email and web vectors, as these are opportunities for attackers to manipulate human behavior through direct engagement.",
+      "level": 0,
+      "sort_order": 9000,
+      "metadata": {
+        "control_number": 9,
+        "safeguard_count": 7
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bd24adeb-a234-5f4d-a76a-998d85865783",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "control_id": "CIS 9.1",
+      "title": "Ensure Use of Only Fully Supported Browsers and Email Clients",
+      "description": "Ensure only fully supported browsers and email clients are allowed to execute in the enterprise, only using the latest version of browsers and email clients provided through the vendor.",
+      "level": 1,
+      "sort_order": 9100,
+      "metadata": {
+        "safeguard_id": "9.1",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7e5fd6ca-a148-54fe-affd-c903f2b95d62",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "control_id": "CIS 9.2",
+      "title": "Use DNS Filtering Services",
+      "description": "Use DNS filtering services on all enterprise assets to block access to known malicious domains.",
+      "level": 1,
+      "sort_order": 9200,
+      "metadata": {
+        "safeguard_id": "9.2",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8f551957-99c4-568b-9d3b-2c5b3c992923",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "control_id": "CIS 9.3",
+      "title": "Maintain and Enforce Network-Based URL Filters",
+      "description": "Enforce and update network-based URL filters to limit an enterprise asset from connecting to potentially malicious or unapproved websites. Example implementations include category-based filtering, reputation-based filtering, or through the use of block lists. Enforce filters for all enterprise assets.",
+      "level": 1,
+      "sort_order": 9300,
+      "metadata": {
+        "safeguard_id": "9.3",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e1eda980-1f1f-5943-be92-c4fa539a591f",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "control_id": "CIS 9.4",
+      "title": "Restrict Unnecessary or Unauthorized Browser and Email Client Extensions",
+      "description": "Restrict, either through uninstalling or disabling, any unauthorized or unnecessary browser or email client plugins, extensions, and add-on applications.",
+      "level": 1,
+      "sort_order": 9400,
+      "metadata": {
+        "safeguard_id": "9.4",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4ea44e44-00fe-54f9-93bc-644f858fa6fd",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "control_id": "CIS 9.5",
+      "title": "Implement DMARC",
+      "description": "To lower the chance of spoofed or modified emails from valid domains, implement DMARC policy and verification, starting with implementing the Sender Policy Framework (SPF) and the DomainKeys Identified Mail (DKIM) standards.",
+      "level": 1,
+      "sort_order": 9500,
+      "metadata": {
+        "safeguard_id": "9.5",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "36d0eba7-ac14-5b2a-add7-22fb476e8b38",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "control_id": "CIS 9.6",
+      "title": "Block Unnecessary File Types",
+      "description": "Block unnecessary file types attempting to enter the enterprise's email gateway.",
+      "level": 1,
+      "sort_order": 9600,
+      "metadata": {
+        "safeguard_id": "9.6",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e4f60446-ec14-588c-a93e-2a9b0856c403",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "control_id": "CIS 9.7",
+      "title": "Deploy and Maintain Email Server Anti-Malware Protections",
+      "description": "Deploy and maintain email server anti-malware protections, such as attachment scanning and/or sandboxing.",
+      "level": 1,
+      "sort_order": 9700,
+      "metadata": {
+        "safeguard_id": "9.7",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 10",
+      "title": "Malware Defenses",
+      "description": "Prevent or control the installation, spread, and execution of malicious applications, code, or scripts on enterprise assets.",
+      "level": 0,
+      "sort_order": 10000,
+      "metadata": {
+        "control_number": 10,
+        "safeguard_count": 7
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "16dc4d20-453d-5379-97b4-8f1cc33529cc",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "control_id": "CIS 10.1",
+      "title": "Deploy and Maintain Anti-Malware Software",
+      "description": "Deploy and maintain anti-malware software on all enterprise assets.",
+      "level": 1,
+      "sort_order": 1010,
+      "metadata": {
+        "safeguard_id": "10.1",
+        "asset_type": "Devices",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9acfc581-22da-5d4f-a2a3-45558fa6ecf5",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "control_id": "CIS 10.2",
+      "title": "Configure Automatic Anti-Malware Signature Updates",
+      "description": "Configure automatic updates for anti-malware signature files on all enterprise assets.",
+      "level": 1,
+      "sort_order": 1020,
+      "metadata": {
+        "safeguard_id": "10.2",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7df1354e-8269-5491-92d2-bc41c3c0f20a",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "control_id": "CIS 10.3",
+      "title": "Disable Autorun and Autoplay for Removable Media",
+      "description": "Disable autorun and autoplay auto-execute functionality for removable media.",
+      "level": 1,
+      "sort_order": 1030,
+      "metadata": {
+        "safeguard_id": "10.3",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d5289bf8-7f53-5d34-9bb8-c2991122709e",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "control_id": "CIS 10.4",
+      "title": "Configure Automatic Anti-Malware Scanning of Removable Media",
+      "description": "Configure anti-malware software to automatically scan removable media.",
+      "level": 1,
+      "sort_order": 1040,
+      "metadata": {
+        "safeguard_id": "10.4",
+        "asset_type": "Devices",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bc62a367-f866-5c95-b466-577752c57540",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "control_id": "CIS 10.5",
+      "title": "Enable Anti-Exploitation Features",
+      "description": "Enable anti-exploitation features on enterprise assets and software, where possible, such as Microsoft Data Execution Prevention (DEP), Windows Defender Exploit Guard (WDEG), or Apple System Integrity Protection (SIP) and Gatekeeper.",
+      "level": 1,
+      "sort_order": 1050,
+      "metadata": {
+        "safeguard_id": "10.5",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c7424066-6dcb-590a-8889-6e2896ef2706",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "control_id": "CIS 10.6",
+      "title": "Centrally Manage Anti-Malware Software",
+      "description": "Centrally manage anti-malware software.",
+      "level": 1,
+      "sort_order": 1060,
+      "metadata": {
+        "safeguard_id": "10.6",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1912ea43-1053-5279-a241-5d4f11f4fdbc",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "control_id": "CIS 10.7",
+      "title": "Use Behavior-Based Anti-Malware Software",
+      "description": "Use behavior-based anti-malware software.",
+      "level": 1,
+      "sort_order": 1070,
+      "metadata": {
+        "safeguard_id": "10.7",
+        "asset_type": "Devices",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "08a82d99-4649-5cfb-9649-f976493df012",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 11",
+      "title": "Data Recovery",
+      "description": "Establish and maintain data recovery practices sufficient to restore in-scope enterprise assets to a pre-incident and trusted state.",
+      "level": 0,
+      "sort_order": 11000,
+      "metadata": {
+        "control_number": 11,
+        "safeguard_count": 5
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0092db54-0a2f-5e1e-9824-415737ff3df2",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "08a82d99-4649-5cfb-9649-f976493df012",
+      "control_id": "CIS 11.1",
+      "title": "Establish and Maintain a Data Recovery Process",
+      "description": "Establish and maintain a data recovery process. In the process, address the scope of data recovery activities, recovery prioritization, and the security of backup data. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1110,
+      "metadata": {
+        "safeguard_id": "11.1",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9013ad5a-a420-538f-a644-fb3c30fc53c5",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "08a82d99-4649-5cfb-9649-f976493df012",
+      "control_id": "CIS 11.2",
+      "title": "Perform Automated Backups",
+      "description": "Perform automated backups of in-scope enterprise assets. Run backups weekly, or more frequently, based on the sensitivity and criticality of the enterprise asset.",
+      "level": 1,
+      "sort_order": 1120,
+      "metadata": {
+        "safeguard_id": "11.2",
+        "asset_type": "Data",
+        "security_function": "Recover",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d09c330e-b883-559f-b18d-026b2bdf9167",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "08a82d99-4649-5cfb-9649-f976493df012",
+      "control_id": "CIS 11.3",
+      "title": "Protect Recovery Data",
+      "description": "Protect recovery data with equivalent controls to the original data. Reference encryption or data separation, based on requirements.",
+      "level": 1,
+      "sort_order": 1130,
+      "metadata": {
+        "safeguard_id": "11.3",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1f1d8d84-b22e-50a3-8582-712eaba93347",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "08a82d99-4649-5cfb-9649-f976493df012",
+      "control_id": "CIS 11.4",
+      "title": "Establish and Maintain an Isolated Instance of Recovery Data",
+      "description": "Establish and maintain an isolated instance of recovery data using out-of-band transport mechanisms. Example implementations include cloud-based or physical offsite storage of encrypted backup data.",
+      "level": 1,
+      "sort_order": 1140,
+      "metadata": {
+        "safeguard_id": "11.4",
+        "asset_type": "Data",
+        "security_function": "Recover",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0fcf7876-305c-5895-87e4-c821dcac8356",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "08a82d99-4649-5cfb-9649-f976493df012",
+      "control_id": "CIS 11.5",
+      "title": "Test Data Recovery",
+      "description": "Test backup recovery quarterly, or more frequently, for a sampling of in-scope enterprise assets.",
+      "level": 1,
+      "sort_order": 1150,
+      "metadata": {
+        "safeguard_id": "11.5",
+        "asset_type": "Data",
+        "security_function": "Recover",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 12",
+      "title": "Network Infrastructure Management",
+      "description": "Establish, implement, and actively manage (track, report, correct) network devices, in order to prevent attackers from exploiting vulnerable network services and access points.",
+      "level": 0,
+      "sort_order": 12000,
+      "metadata": {
+        "control_number": 12,
+        "safeguard_count": 8
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "eef9bb8c-5d67-59ae-94d7-d619bf7e3205",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "control_id": "CIS 12.1",
+      "title": "Ensure Network Infrastructure is Up-to-Date",
+      "description": "Ensure network infrastructure is kept up-to-date. Example implementations include running the latest stable release of software and/or using currently supported network-as-a-service (NaaS) offerings. Review software versions monthly, or more frequently, to verify software support.",
+      "level": 1,
+      "sort_order": 1210,
+      "metadata": {
+        "safeguard_id": "12.1",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a76f4272-1349-50c8-82e9-816348b97103",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "control_id": "CIS 12.2",
+      "title": "Establish and Maintain a Secure Network Architecture",
+      "description": "Establish and maintain a secure network architecture. A secure network architecture must address segmentation, least privilege, and availability, at a minimum.",
+      "level": 1,
+      "sort_order": 1220,
+      "metadata": {
+        "safeguard_id": "12.2",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "36fa67ae-e88b-5721-9776-8a0f781a6683",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "control_id": "CIS 12.3",
+      "title": "Securely Manage Network Infrastructure",
+      "description": "Securely manage network infrastructure. Example implementations include version-controlled-infrastructure-as-code, and the use of secure network protocols, such as SSH and HTTPS.",
+      "level": 1,
+      "sort_order": 1230,
+      "metadata": {
+        "safeguard_id": "12.3",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "92c7177a-89cd-5793-aef9-a4c47088e9c6",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "control_id": "CIS 12.4",
+      "title": "Establish and Maintain Architecture Diagram(s)",
+      "description": "Establish and maintain architecture diagram(s) and/or other network system documentation. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1240,
+      "metadata": {
+        "safeguard_id": "12.4",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1f9a609e-b71b-5192-9a18-ab831a078544",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "control_id": "CIS 12.5",
+      "title": "Centralize Network Authentication, Authorization, and Auditing (AAA)",
+      "description": "Centralize network AAA.",
+      "level": 1,
+      "sort_order": 1250,
+      "metadata": {
+        "safeguard_id": "12.5",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c507672c-ba9e-5ed0-9472-b5962b92ae7b",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "control_id": "CIS 12.6",
+      "title": "Use of Secure Network Management and Communication Protocols",
+      "description": "Use secure network management and communication protocols (e.g., 802.1X, Wi-Fi Protected Access 2 (WPA2) Enterprise or greater).",
+      "level": 1,
+      "sort_order": 1260,
+      "metadata": {
+        "safeguard_id": "12.6",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a1b85087-c4eb-5134-84ca-fe3a71ae5667",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "control_id": "CIS 12.7",
+      "title": "Ensure Remote Devices Utilize a VPN and are Connecting to an Enterprise's AAA Infrastructure",
+      "description": "Require users to authenticate to enterprise-managed VPN and authentication infrastructure prior to accessing enterprise resources on end-user devices.",
+      "level": 1,
+      "sort_order": 1270,
+      "metadata": {
+        "safeguard_id": "12.7",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "83c2dc37-1f21-5228-ae64-ed1e23361532",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "control_id": "CIS 12.8",
+      "title": "Establish and Maintain Dedicated Computing Resources for All Administrative Work",
+      "description": "Establish and maintain dedicated computing resources, either physically or logically separated, for all administrative tasks or tasks requiring elevated access. The computing resources should be segmented from the enterprise's primary network and not be allowed internet access.",
+      "level": 1,
+      "sort_order": 1280,
+      "metadata": {
+        "safeguard_id": "12.8",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 13",
+      "title": "Network Monitoring and Defense",
+      "description": "Operate processes and tooling to establish and maintain comprehensive network monitoring and defense against security threats across the enterprise's network infrastructure and user base.",
+      "level": 0,
+      "sort_order": 13000,
+      "metadata": {
+        "control_number": 13,
+        "safeguard_count": 11
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ca9dad65-edb8-536e-8dc1-e1f9e58a4fda",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "control_id": "CIS 13.1",
+      "title": "Centralize Security Event Alerting",
+      "description": "Centralize security event alerting across enterprise assets for log correlation and analysis. Best practice implementation requires the use of a SIEM, which includes vendor-defined event correlation alerts. A log analytics platform configured with security-relevant correlation alerts also satisfies this Safeguard.",
+      "level": 1,
+      "sort_order": 1310,
+      "metadata": {
+        "safeguard_id": "13.1",
+        "asset_type": "Network",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "65d17c03-5a90-5bc4-a4d2-379a936c1ecd",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "control_id": "CIS 13.2",
+      "title": "Deploy a Host-Based Intrusion Detection Solution",
+      "description": "Deploy a host-based intrusion detection solution on enterprise assets, where appropriate and/or supported.",
+      "level": 1,
+      "sort_order": 1320,
+      "metadata": {
+        "safeguard_id": "13.2",
+        "asset_type": "Devices",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "10e0e473-a432-5392-83aa-d48298679460",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "control_id": "CIS 13.3",
+      "title": "Deploy a Network Intrusion Detection Solution",
+      "description": "Deploy a network intrusion detection solution on enterprise assets, where appropriate. Example implementations include the use of a Network Intrusion Detection System (NIDS) or equivalent cloud service provider (CSP) service.",
+      "level": 1,
+      "sort_order": 1330,
+      "metadata": {
+        "safeguard_id": "13.3",
+        "asset_type": "Network",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a4175577-6b9e-5f33-88df-295661aa04d9",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "control_id": "CIS 13.4",
+      "title": "Perform Traffic Filtering Between Network Segments",
+      "description": "Perform traffic filtering between network segments, where appropriate.",
+      "level": 1,
+      "sort_order": 1340,
+      "metadata": {
+        "safeguard_id": "13.4",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c6c55c5e-b4bc-5a70-ba4a-69b5f29d5da6",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "control_id": "CIS 13.5",
+      "title": "Manage Access Control for Remote Assets",
+      "description": "Manage access control for assets remotely connecting to enterprise resources. Determine amount of access to enterprise resources based on: up-to-date anti-malware software installed, configuration compliance with the enterprise's secure configuration process, and ensuring the operating system and applications are up-to-date.",
+      "level": 1,
+      "sort_order": 1350,
+      "metadata": {
+        "safeguard_id": "13.5",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "aa4784f7-452e-57ef-96cc-f3991129b010",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "control_id": "CIS 13.6",
+      "title": "Collect Network Traffic Flow Logs",
+      "description": "Collect network traffic flow logs and/or network traffic to review and alert upon from network devices.",
+      "level": 1,
+      "sort_order": 1360,
+      "metadata": {
+        "safeguard_id": "13.6",
+        "asset_type": "Network",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ff9fb64c-1115-57b6-a051-73a1237cf977",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "control_id": "CIS 13.7",
+      "title": "Deploy a Host-Based Intrusion Prevention Solution",
+      "description": "Deploy a host-based intrusion prevention solution on enterprise assets, where appropriate and/or supported. Example implementations include use of an Endpoint Detection and Response (EDR) client or host-based IPS agent.",
+      "level": 1,
+      "sort_order": 1370,
+      "metadata": {
+        "safeguard_id": "13.7",
+        "asset_type": "Devices",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d6e2ee07-6efa-517e-97c5-90eda396c541",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "control_id": "CIS 13.8",
+      "title": "Deploy a Network Intrusion Prevention Solution",
+      "description": "Deploy a network intrusion prevention solution, where appropriate. Example implementations include the use of a Network Intrusion Prevention System (NIPS) or equivalent CSP service.",
+      "level": 1,
+      "sort_order": 1380,
+      "metadata": {
+        "safeguard_id": "13.8",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bf8b6329-3fd1-5763-b227-57b892b32d48",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "control_id": "CIS 13.9",
+      "title": "Deploy Port-Level Access Control",
+      "description": "Deploy port-level access control. Port-level access control utilizes 802.1x, or similar network access control protocols, such as certificates, and may incorporate user and/or device authentication.",
+      "level": 1,
+      "sort_order": 1390,
+      "metadata": {
+        "safeguard_id": "13.9",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5821df2b-61ff-59db-81c6-09496717f474",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "control_id": "CIS 13.10",
+      "title": "Perform Application Layer Filtering",
+      "description": "Perform application layer filtering. Example implementations include a filtering proxy, application layer firewall, or gateway.",
+      "level": 1,
+      "sort_order": 1310,
+      "metadata": {
+        "safeguard_id": "13.10",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "872c755a-8de0-5d6e-b6aa-fea7f4e17af0",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "control_id": "CIS 13.11",
+      "title": "Tune Security Event Alerting Thresholds",
+      "description": "Tune security event alerting thresholds monthly, or more frequently.",
+      "level": 1,
+      "sort_order": 1311,
+      "metadata": {
+        "safeguard_id": "13.11",
+        "asset_type": "Network",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 14",
+      "title": "Security Awareness and Skills Training",
+      "description": "Establish and maintain a security awareness program to influence behavior among the workforce to be security conscious and properly skilled to reduce cybersecurity risks to the enterprise.",
+      "level": 0,
+      "sort_order": 14000,
+      "metadata": {
+        "control_number": 14,
+        "safeguard_count": 9
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "de771e07-2623-5161-8e34-fa71d355a1a9",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "control_id": "CIS 14.1",
+      "title": "Establish and Maintain a Security Awareness Program",
+      "description": "Establish and maintain a security awareness program. The purpose of a security awareness program is to educate the enterprise's workforce on how to interact with enterprise assets and data in a secure manner. Conduct training at hire and, at a minimum, annually. Review and update content annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1410,
+      "metadata": {
+        "safeguard_id": "14.1",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "432ce122-1eba-52b0-aa88-750d817b98bd",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "control_id": "CIS 14.2",
+      "title": "Train Workforce Members to Recognize Social Engineering Attacks",
+      "description": "Train workforce members to recognize social engineering attacks, such as phishing, pre-texting, and tailgating.",
+      "level": 1,
+      "sort_order": 1420,
+      "metadata": {
+        "safeguard_id": "14.2",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "632661eb-9c3a-5d90-aec8-65595a5eb58e",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "control_id": "CIS 14.3",
+      "title": "Train Workforce Members on Authentication Best Practices",
+      "description": "Train workforce members on authentication best practices. Example topics include MFA, password composition, and credential management.",
+      "level": 1,
+      "sort_order": 1430,
+      "metadata": {
+        "safeguard_id": "14.3",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "05e6bace-de8f-579b-a0a6-e23b030b036e",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "control_id": "CIS 14.4",
+      "title": "Train Workforce on Data Handling Best Practices",
+      "description": "Train workforce members on how to identify and properly store, transfer, archive, and destroy sensitive data. This also includes training workforce members on clear screen and clear desk best practices, such as locking their screen when they step away from their enterprise asset, erasing physical and virtual whiteboards at the end of meetings, and storing data and assets securely.",
+      "level": 1,
+      "sort_order": 1440,
+      "metadata": {
+        "safeguard_id": "14.4",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0b9a2caf-68fa-529f-b82e-2705552e33d4",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "control_id": "CIS 14.5",
+      "title": "Train Workforce Members on Causes of Unintentional Data Exposure",
+      "description": "Train workforce members to be aware of causes for unintentional data exposure. Example topics include mis-delivery of sensitive data, losing a portable end-user device, or publishing data to unintended audiences.",
+      "level": 1,
+      "sort_order": 1450,
+      "metadata": {
+        "safeguard_id": "14.5",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d77b2e9b-ed9a-5b1a-bd4e-4304f3d86317",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "control_id": "CIS 14.6",
+      "title": "Train Workforce Members on Recognizing and Reporting Security Incidents",
+      "description": "Train workforce members to be able to recognize a potential incident and be able to report such an incident.",
+      "level": 1,
+      "sort_order": 1460,
+      "metadata": {
+        "safeguard_id": "14.6",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0a3684af-50f3-58a4-bb1f-dccca34b1af0",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "control_id": "CIS 14.7",
+      "title": "Train Workforce on How to Identify and Report if Their Enterprise Assets are Missing Security Updates",
+      "description": "Train workforce to understand how to verify and report out-of-date software patches or any failures in automated processes and tools. Part of this training should include notifying IT personnel of any failures in automated processes and tools.",
+      "level": 1,
+      "sort_order": 1470,
+      "metadata": {
+        "safeguard_id": "14.7",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "41ca9dd9-f7ce-52bf-8906-485613dc801f",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "control_id": "CIS 14.8",
+      "title": "Train Workforce on the Dangers of Connecting to and Transmitting Enterprise Data Over Insecure Networks",
+      "description": "Train workforce members on the dangers of connecting to, and transmitting data over, insecure networks for enterprise activities. If the enterprise has remote workers, training must include guidance to ensure that all users securely configure their home network infrastructure.",
+      "level": 1,
+      "sort_order": 1480,
+      "metadata": {
+        "safeguard_id": "14.8",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "49e99d31-d509-5e94-a3c6-fc553438611a",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "control_id": "CIS 14.9",
+      "title": "Conduct Role-Specific Security Awareness and Skills Training",
+      "description": "Conduct role-specific security awareness and skills training. Example implementations include secure system administration courses for IT professionals, OWASP Top 10 vulnerability awareness and prevention training for web application developers, and advanced social engineering awareness training for high-profile roles.",
+      "level": 1,
+      "sort_order": 1490,
+      "metadata": {
+        "safeguard_id": "14.9",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 15",
+      "title": "Service Provider Management",
+      "description": "Develop a process to evaluate service providers who hold sensitive data, or are responsible for an enterprise's critical IT platforms or processes, to ensure these providers are protecting those platforms and data appropriately.",
+      "level": 0,
+      "sort_order": 15000,
+      "metadata": {
+        "control_number": 15,
+        "safeguard_count": 7
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6bb0dec8-8bb8-5193-93c2-85107848db21",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "control_id": "CIS 15.1",
+      "title": "Establish and Maintain an Inventory of Service Providers",
+      "description": "Establish and maintain an inventory of service providers. The inventory is to list all known service providers, include classification(s), and designate an enterprise contact for each service provider. Review and update the inventory annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1510,
+      "metadata": {
+        "safeguard_id": "15.1",
+        "asset_type": "Users",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7cb84158-11f4-560c-93bc-17660aa9795f",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "control_id": "CIS 15.2",
+      "title": "Establish and Maintain a Service Provider Management Policy",
+      "description": "Establish and maintain a service provider management policy. Ensure the policy addresses the classification, inventory, assessment, monitoring, and decommissioning of service providers. Review and update the policy annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1520,
+      "metadata": {
+        "safeguard_id": "15.2",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "caff3b77-ca73-5eff-9181-ca60d38491ab",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "control_id": "CIS 15.3",
+      "title": "Classify Service Providers",
+      "description": "Classify service providers. Classification consideration may include one or more characteristics, such as data sensitivity, data volume, availability requirements, applicable regulations, inherent risk, and mitigated risk. Update and review classifications annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1530,
+      "metadata": {
+        "safeguard_id": "15.3",
+        "asset_type": "Users",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "102c18e0-e4c9-553c-a356-cfe030c8f046",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "control_id": "CIS 15.4",
+      "title": "Ensure Service Provider Contracts Include Security Requirements",
+      "description": "Ensure service provider contracts include security requirements. Example requirements may include minimum security program requirements, security incident and/or data breach notification and response, data encryption requirements, and data disposal commitments. These security requirements must be consistent with the enterprise's service provider management policy. Review service provider contracts annually to ensure contracts are not missing security requirements.",
+      "level": 1,
+      "sort_order": 1540,
+      "metadata": {
+        "safeguard_id": "15.4",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f5ab5942-4c1f-51ff-be7d-e94f0e29033c",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "control_id": "CIS 15.5",
+      "title": "Assess Service Providers",
+      "description": "Assess service providers consistent with the enterprise's service provider management policy. Assessment may vary based on classification(s), and may include review of standardized assessment reports, such as Service Organization Control 2 (SOC 2) and Payment Card Industry (PCI) Attestation of Compliance (AoC), customized questionnaires, or other appropriately rigorous processes. Reassess service providers annually, at a minimum, or with new and renewed contracts.",
+      "level": 1,
+      "sort_order": 1550,
+      "metadata": {
+        "safeguard_id": "15.5",
+        "asset_type": "Users",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "30782e85-0adc-5580-98a8-52946a9545c5",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "control_id": "CIS 15.6",
+      "title": "Monitor Service Providers",
+      "description": "Monitor service providers consistent with the enterprise's service provider management policy. Monitoring may include periodic reassessment of service provider compliance, monitoring service provider release notes, and dark web monitoring.",
+      "level": 1,
+      "sort_order": 1560,
+      "metadata": {
+        "safeguard_id": "15.6",
+        "asset_type": "Data",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0e865321-f819-5818-96fd-c7417ead326e",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "control_id": "CIS 15.7",
+      "title": "Securely Decommission Service Providers",
+      "description": "Securely decommission service providers. Example considerations include user and service account deactivation, termination of data flows, and secure disposal of enterprise data within service provider systems.",
+      "level": 1,
+      "sort_order": 1570,
+      "metadata": {
+        "safeguard_id": "15.7",
+        "asset_type": "Data",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 16",
+      "title": "Application Software Security",
+      "description": "Manage the security life cycle of in-house developed, hosted, or acquired software to prevent, detect, and remediate security weaknesses before they can impact the enterprise.",
+      "level": 0,
+      "sort_order": 16000,
+      "metadata": {
+        "control_number": 16,
+        "safeguard_count": 14
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "68931419-5b7f-505a-8c75-e4423e28ba5a",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.1",
+      "title": "Establish and Maintain a Secure Application Development Process",
+      "description": "Establish and maintain a secure application development process. In the process, address such items as: secure application design standards, secure coding practices, developer training, vulnerability management, security of third-party code, and application security testing procedures. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1610,
+      "metadata": {
+        "safeguard_id": "16.1",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e71c7bd9-1633-5e0e-8c32-a5a67c2816e2",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.2",
+      "title": "Establish and Maintain a Process to Accept and Address Software Vulnerabilities",
+      "description": "Establish and maintain a process to accept and address reports of software vulnerabilities, including providing a means for external entities to report. The process is to include such items as: a vulnerability handling policy that identifies reporting process, responsible party for handling vulnerability reports, and a process for intake, assignment, remediation, and remediation verification. As part of the process, use a vulnerability tracking system that includes severity ratings, and metrics for measuring timing for identification, analysis, and remediation of software vulnerabilities. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard. Third-party application developers need to consider this an externally-facing policy that helps to set expectations for outside stakeholders.",
+      "level": 1,
+      "sort_order": 1620,
+      "metadata": {
+        "safeguard_id": "16.2",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "92df27f3-6db7-57a0-a352-4199b4a6dcf2",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.3",
+      "title": "Perform Root Cause Analysis on Security Vulnerabilities",
+      "description": "Perform root cause analysis on security vulnerabilities. When reviewing vulnerabilities, root cause analysis is the task of evaluating underlying issues that create vulnerabilities in code, and allows development teams to move beyond just fixing individual vulnerabilities as they arise.",
+      "level": 1,
+      "sort_order": 1630,
+      "metadata": {
+        "safeguard_id": "16.3",
+        "asset_type": "Software",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c284ac62-9bfc-510b-b471-4afd1a9e23cb",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.4",
+      "title": "Establish and Manage an Inventory of Third-Party Software Components",
+      "description": "Establish and manage an updated inventory of third-party components used in development, often referred to as a 'bill of materials,' as well as components scheduled for future use. This inventory is to include any risks that each third-party component could pose. Evaluate the list at least monthly to identify any changes or updates to these components, and validate that the component is still supported.",
+      "level": 1,
+      "sort_order": 1640,
+      "metadata": {
+        "safeguard_id": "16.4",
+        "asset_type": "Software",
+        "security_function": "Identify",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e5254252-7789-5eab-9217-5c39f1fccabb",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.5",
+      "title": "Use Up-to-Date and Trusted Third-Party Software Components",
+      "description": "Use up-to-date and trusted third-party software components. When possible, choose established and proven frameworks and libraries that provide adequate security. Acquire these components from trusted sources or evaluate the software for vulnerabilities before use.",
+      "level": 1,
+      "sort_order": 1650,
+      "metadata": {
+        "safeguard_id": "16.5",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "795b5cad-7d8e-5f4d-a652-5b1f24b95775",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.6",
+      "title": "Establish and Maintain a Severity Rating System and Process for Application Vulnerabilities",
+      "description": "Establish and maintain a severity rating system and process for application vulnerabilities that facilitates prioritizing the order in which discovered vulnerabilities are fixed. This process includes setting a minimum level of security acceptability for releasing code or applications. Severity ratings bring a systematic approach to triage. This, in combination with the established remediation process, establishes a clear picture of threats faced by the enterprise and allows for informed decision making when prioritizing. Review and update the rating system and the process annually.",
+      "level": 1,
+      "sort_order": 1660,
+      "metadata": {
+        "safeguard_id": "16.6",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e45da519-056d-5e58-9323-ab7f0cdf7b26",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.7",
+      "title": "Use Standard Hardening Configuration Templates for Application Infrastructure",
+      "description": "Use standard, industry-recommended hardening configuration templates for application infrastructure components. This includes underlying servers, databases, and web servers, and applies to cloud containers, Platform as a Service (PaaS) components, and SaaS components. Do not allow in-house developed software to weaken configuration hardening.",
+      "level": 1,
+      "sort_order": 1670,
+      "metadata": {
+        "safeguard_id": "16.7",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bf783c21-392a-588d-bc13-22683404d52c",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.8",
+      "title": "Separate Production and Non-Production Systems",
+      "description": "Maintain separate environments for production and non-production systems.",
+      "level": 1,
+      "sort_order": 1680,
+      "metadata": {
+        "safeguard_id": "16.8",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "50e92142-1f88-5ce9-9f73-2333ab8b5407",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.9",
+      "title": "Train Developers in Application Security Concepts and Secure Coding",
+      "description": "Ensure that all software development personnel receive training in writing secure code for their specific development environment and responsibilities. Training can include general security principles and application security standard practices. Conduct training at least annually and design in a way that promotes security within the development team, and builds a culture of security among the developers.",
+      "level": 1,
+      "sort_order": 1690,
+      "metadata": {
+        "safeguard_id": "16.9",
+        "asset_type": "Users",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2527a18e-00fe-55ac-a68d-3d03eacf703f",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.10",
+      "title": "Apply Secure Design Principles in Application Architectures",
+      "description": "Apply secure design principles in application architectures. Secure design principles include the concept of least privilege and enforcing mediation to validate every operation that the user makes, promoting the concept of 'never trust user input.' Examples include ensuring that explicit error checking is performed and documented for all input, including for size, data type, and acceptable ranges or formats. Secure design also means minimizing the attack surface by limiting the application's functionality to only the required functionality.",
+      "level": 1,
+      "sort_order": 1610,
+      "metadata": {
+        "safeguard_id": "16.10",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "942d2539-5453-5880-b6c4-f876e8449058",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.11",
+      "title": "Leverage Vetted Modules or Services for Application Security Components",
+      "description": "Leverage vetted modules or services for application security components, such as identity management, encryption, and auditing and logging. Using platform features in critical security functions will reduce developers' workload and minimize the likelihood of design or implementation errors. Modern operating systems provide effective mechanisms for identification, authentication, and authorization and make those mechanisms available to applications. Use only standardized, currently accepted, and extensively reviewed encryption algorithms. Operating systems also provide mechanisms to create and maintain secure audit logs.",
+      "level": 1,
+      "sort_order": 1611,
+      "metadata": {
+        "safeguard_id": "16.11",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4bfde64a-8a08-5caf-81fd-a0cfe87d8349",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.12",
+      "title": "Implement Code-Level Security Checks",
+      "description": "Apply static and dynamic analysis tools within the application life cycle to verify that secure coding practices are being followed.",
+      "level": 1,
+      "sort_order": 1612,
+      "metadata": {
+        "safeguard_id": "16.12",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1797f34f-e1cd-561e-92e0-890be2ed5d6b",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.13",
+      "title": "Conduct Application Penetration Testing",
+      "description": "Conduct application penetration testing. For critical applications, authenticated penetration testing is better suited to finding business logic vulnerabilities than code scanning and automated security testing. Penetration testing relies on the skill of the tester to manually manipulate an application as an authenticated and unauthenticated user.",
+      "level": 1,
+      "sort_order": 1613,
+      "metadata": {
+        "safeguard_id": "16.13",
+        "asset_type": "Software",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "735bf4bf-c6ab-529e-b4e3-9f84b8896f67",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "control_id": "CIS 16.14",
+      "title": "Conduct Threat Modeling",
+      "description": "Conduct threat modeling. Threat modeling is the process of identifying and addressing application security design flaws within a design, before code is created. It is conducted through specially trained individuals who evaluate the application design and gauge security risks for each entry point and access level. The goal is to map out the application, architecture, and infrastructure in a structured way to understand its weaknesses.",
+      "level": 1,
+      "sort_order": 1614,
+      "metadata": {
+        "safeguard_id": "16.14",
+        "asset_type": "Software",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 17",
+      "title": "Incident Response Management",
+      "description": "Establish a program to develop and maintain an incident response capability (e.g., policies, plans, procedures, defined roles, training, and communications) to prepare, detect, and quickly respond to an attack.",
+      "level": 0,
+      "sort_order": 17000,
+      "metadata": {
+        "control_number": 17,
+        "safeguard_count": 9
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e72bde57-a97b-5eaf-9fe2-c457742419b3",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "control_id": "CIS 17.1",
+      "title": "Designate Personnel to Manage Incident Handling",
+      "description": "Designate one key person, and at least one backup, who will manage the enterprise's incident handling process. Management personnel are responsible for the coordination and documentation of incident response and recovery efforts and can consist of employees internal to the enterprise, third-party vendors, or a hybrid approach. If using a third-party vendor, designate at least one person internal to the enterprise to oversee any third-party work. Review annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1710,
+      "metadata": {
+        "safeguard_id": "17.1",
+        "asset_type": "Users",
+        "security_function": "Respond",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7bffdf7d-8e7a-51e9-bbd6-6f6b13f98d23",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "control_id": "CIS 17.2",
+      "title": "Establish and Maintain Contact Information for Reporting Security Incidents",
+      "description": "Establish and maintain contact information for parties that need to be informed of security incidents. Contacts may include internal staff, third-party vendors, law enforcement, cyber insurance providers, relevant government agencies, Information Sharing and Analysis Center (ISAC) partners, or other stakeholders. Verify contacts annually to ensure that information is up-to-date.",
+      "level": 1,
+      "sort_order": 1720,
+      "metadata": {
+        "safeguard_id": "17.2",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c1eeb7a5-fb7d-551d-99fd-e38bcb469af5",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "control_id": "CIS 17.3",
+      "title": "Establish and Maintain an Enterprise Process for Reporting Incidents",
+      "description": "Establish and maintain an enterprise process for the workforce to report security incidents. The process includes reporting timeframe, personnel to report to, mechanism for reporting, and the minimum information to be reported. Ensure the process is publicly available to all of the workforce. Review annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1730,
+      "metadata": {
+        "safeguard_id": "17.3",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG1",
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "042269c9-8b6a-584a-892a-e357306ebb2d",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "control_id": "CIS 17.4",
+      "title": "Establish and Maintain an Incident Response Process",
+      "description": "Establish and maintain an incident response process that addresses roles and responsibilities, compliance requirements, and a communication plan. Review annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1740,
+      "metadata": {
+        "safeguard_id": "17.4",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "904e8081-cf21-5e16-97b6-d0dce6cea9f0",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "control_id": "CIS 17.5",
+      "title": "Assign Key Roles and Responsibilities",
+      "description": "Assign key roles and responsibilities for incident response, including staff from legal, IT, information security, facilities, public relations, human resources, incident responders, and analysts, as applicable. Review annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1750,
+      "metadata": {
+        "safeguard_id": "17.5",
+        "asset_type": "Users",
+        "security_function": "Respond",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5a84c631-8c4e-5087-909c-285da7d29177",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "control_id": "CIS 17.6",
+      "title": "Define Mechanisms for Communicating During Incident Response",
+      "description": "Determine which primary and secondary mechanisms will be used to communicate and report during a security incident. Mechanisms can include phone calls, emails, or letters. Keep in mind that certain mechanisms, such as emails, can be affected during a security incident. Review annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1760,
+      "metadata": {
+        "safeguard_id": "17.6",
+        "asset_type": "Users",
+        "security_function": "Respond",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fb347555-3069-55a2-ab71-7a40ff4f6f0e",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "control_id": "CIS 17.7",
+      "title": "Conduct Routine Incident Response Exercises",
+      "description": "Plan and conduct routine incident response exercises and scenarios for key personnel involved in the incident response process to prepare for responding to real-world incidents. Exercises need to test communication channels, decision making, and workflows. Conduct testing on an annual basis, at a minimum.",
+      "level": 1,
+      "sort_order": 1770,
+      "metadata": {
+        "safeguard_id": "17.7",
+        "asset_type": "Users",
+        "security_function": "Recover",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6a353325-aa6c-5b7f-9aec-918dd33df0f6",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "control_id": "CIS 17.8",
+      "title": "Conduct Post-Incident Reviews",
+      "description": "Conduct post-incident reviews. Post-incident reviews help prevent incident recurrence through identifying lessons learned and follow-up action.",
+      "level": 1,
+      "sort_order": 1780,
+      "metadata": {
+        "safeguard_id": "17.8",
+        "asset_type": "Users",
+        "security_function": "Recover",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "05caaed2-6a2c-552f-9642-a4e753e4540f",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "control_id": "CIS 17.9",
+      "title": "Establish and Maintain Security Incident Thresholds",
+      "description": "Establish and maintain security incident thresholds, including, at a minimum, differentiating between an incident and an event. Examples can include: abnormal activity, security vulnerability, security weakness, data breach, privacy incident, etc. Review annually, or when significant enterprise changes occur that could impact this Safeguard.",
+      "level": 1,
+      "sort_order": 1790,
+      "metadata": {
+        "safeguard_id": "17.9",
+        "asset_type": "Documentation",
+        "security_function": "Recover",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bd404c09-649b-5e1c-9786-eac8ca2247b2",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "control_id": "CIS 18",
+      "title": "Penetration Testing",
+      "description": "Test the effectiveness and resiliency of enterprise assets through identifying and exploiting weaknesses in controls (people, processes, and technology), and simulating the objectives and actions of an attacker.",
+      "level": 0,
+      "sort_order": 18000,
+      "metadata": {
+        "control_number": 18,
+        "safeguard_count": 5
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "20aeab2e-ff9a-52b2-83b6-10c3592482e1",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bd404c09-649b-5e1c-9786-eac8ca2247b2",
+      "control_id": "CIS 18.1",
+      "title": "Establish and Maintain a Penetration Testing Program",
+      "description": "Establish and maintain a penetration testing program appropriate to the size, complexity, and maturity of the enterprise. Penetration testing program characteristics include scope, such as network, web application, Application Programming Interface (API), hosted services, and physical premise controls; frequency; limitations, such as acceptable hours, and excluded attack types; point of contact information; remediation, such as how findings will be routed internally; and retrospective requirements.",
+      "level": 1,
+      "sort_order": 1810,
+      "metadata": {
+        "safeguard_id": "18.1",
+        "asset_type": "Documentation",
+        "security_function": "Govern",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a57c3bb8-b32e-5159-a688-389feec986c2",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bd404c09-649b-5e1c-9786-eac8ca2247b2",
+      "control_id": "CIS 18.2",
+      "title": "Perform Periodic External Penetration Tests",
+      "description": "Perform periodic external penetration tests based on program requirements, no less than annually. External penetration testing must include enterprise and environmental reconnaissance to detect exploitable information. Penetration testing requires specialized skills and experience and must be conducted through a qualified party. The testing may be clear box or opaque box.",
+      "level": 1,
+      "sort_order": 1820,
+      "metadata": {
+        "safeguard_id": "18.2",
+        "asset_type": "Network",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b62a6406-e6cd-509f-9638-fb120e91e475",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bd404c09-649b-5e1c-9786-eac8ca2247b2",
+      "control_id": "CIS 18.3",
+      "title": "Remediate Penetration Test Findings",
+      "description": "Remediate penetration test findings based on the enterprise's policy for remediation scope and prioritization.",
+      "level": 1,
+      "sort_order": 1830,
+      "metadata": {
+        "safeguard_id": "18.3",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG2",
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f8a99003-89b6-5593-9027-6571cae60859",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bd404c09-649b-5e1c-9786-eac8ca2247b2",
+      "control_id": "CIS 18.4",
+      "title": "Validate Security Measures",
+      "description": "Validate security measures after each penetration test. If deemed necessary, modify rulesets and capabilities to detect the techniques used during testing.",
+      "level": 1,
+      "sort_order": 1840,
+      "metadata": {
+        "safeguard_id": "18.4",
+        "asset_type": "Network",
+        "security_function": "Protect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a9eb419a-a122-5d62-af64-e094dc68db61",
+      "framework_id": "98442a36-9d9c-520f-bd46-72ab3d3067c8",
+      "parent_id": "bd404c09-649b-5e1c-9786-eac8ca2247b2",
+      "control_id": "CIS 18.5",
+      "title": "Perform Periodic Internal Penetration Tests",
+      "description": "Perform periodic internal penetration tests based on program requirements, no less than annually. The testing may be clear box or opaque box.",
+      "level": 1,
+      "sort_order": 1850,
+      "metadata": {
+        "safeguard_id": "18.5",
+        "asset_type": "Network",
+        "security_function": "Detect",
+        "implementation_groups": [
+          "IG3"
+        ]
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "type": "hierarchy",
+      "source_id": "6dd8bd91-7743-5ae8-a5ef-a5272bd31e13",
+      "target_id": "14e7341a-0dff-5e47-a585-0af550dec7fc",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "94682200-111b-5599-885b-885079c75979",
+      "target_id": "14e7341a-0dff-5e47-a585-0af550dec7fc",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "cb633f30-c62f-5df3-8976-e815ab2da821",
+      "target_id": "14e7341a-0dff-5e47-a585-0af550dec7fc",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b279929f-d169-52ea-afff-40926256b114",
+      "target_id": "14e7341a-0dff-5e47-a585-0af550dec7fc",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c24215ca-707c-5fce-8b18-4cdade826c95",
+      "target_id": "14e7341a-0dff-5e47-a585-0af550dec7fc",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e061318a-d6da-52a8-a141-0876dd7a38ec",
+      "target_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "04e7abb3-237c-553a-86d3-d3233c1f500d",
+      "target_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "95469060-4155-5463-ae61-7ab1ae7bf47b",
+      "target_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a9e922c6-e01e-51bc-a138-88ebe4282a3c",
+      "target_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "7a51a8ec-285a-560d-b95a-1661cdf74664",
+      "target_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e70fc4fb-e258-5ddf-ad4a-4f50a442576d",
+      "target_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9187d97c-4f81-5ee3-b596-f1a139b4a272",
+      "target_id": "b8e0bb97-daea-57dd-b1f0-3f41fe9d2d31",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "509fd6a0-6f75-5657-a83b-b25d98ef23be",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b4c6745d-2921-55c2-96ea-123d2441d1d5",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "543fb87a-ab84-5bc1-95c0-b71bc6a6df79",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d8dd6236-3b5c-53ca-8788-b253c75f9d6c",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "5b49bfb5-2900-5fd2-bd08-cdb831bfd966",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ad40a094-1ffc-5199-a378-b4d915ad0d48",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d2ffe275-618e-5d05-b3aa-4e26bac548fa",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9ce58e53-69e9-5c0a-99ac-e7bb72bacc2d",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "61fa0cc1-cea7-5955-90a3-ac231893b5db",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a044d2c6-69d5-5475-9b16-9a537ec0ff5d",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "fe83f322-2774-551a-9f5d-ab7b48433cce",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "19e1624e-951d-5589-af3c-104f4621194f",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b2b8b486-59ed-5512-bf87-9b4cfaecc998",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9285a695-86a3-51be-926b-2f98746d8c29",
+      "target_id": "4c776477-d297-5bc0-bd76-bdd9b6ae38d1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d3d04e8b-0b9c-5d5c-917d-4193907b1c68",
+      "target_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ffd6dda7-cc55-5910-b0b9-2409bbb4f60c",
+      "target_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2add2ed6-fcf2-5f67-b916-778024949d63",
+      "target_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e2b06bad-23e3-570b-85ff-54831faee344",
+      "target_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e1d5d9c2-d2f4-552f-96ef-a92a26d92f69",
+      "target_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2abd9aeb-7090-58e5-a914-666dd84de921",
+      "target_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "1819aeca-ef3b-54d1-a5a6-385467a20af0",
+      "target_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b6e83fb2-1b70-5606-a65a-3420d67e661b",
+      "target_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "75bd6b80-e00a-5c05-bd0e-91723ff30852",
+      "target_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d11bc388-2442-5cfc-8de5-be873325563f",
+      "target_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "afea5f4b-337a-512f-a202-899c2ed744cf",
+      "target_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "23647c0e-7414-55af-908c-b1cd54b8b709",
+      "target_id": "e57f9153-ec59-59ed-a1b5-039f9dcf57d6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "76f8defe-d3b7-5663-a325-c9a15111aba8",
+      "target_id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "45534154-518c-5dfc-bba7-b47dda817081",
+      "target_id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e0bc0c07-de5e-5747-b14a-ac8fbb072f0d",
+      "target_id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e599280c-2bc6-5c39-b31c-cc1b189101ba",
+      "target_id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "80ff0e64-d3a0-5640-8cb9-339be36a65f0",
+      "target_id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f203672c-72a1-5b8d-8b3a-2c2e0bf9cb8f",
+      "target_id": "1b8c109e-d53c-5676-b530-5c1a421b3879",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "acd258e5-0a84-5fa1-8cf3-5336ac45fec3",
+      "target_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e5edb698-0114-5f5a-b3b8-58c45da8a4e8",
+      "target_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "fd4ea294-305b-50eb-b0e8-88ff85607f24",
+      "target_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b5df60f4-9a20-5f3f-ac7a-004297d6e058",
+      "target_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "7f88c99e-a458-520c-aa6e-96dafe56d804",
+      "target_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f4617711-a6e8-552e-802d-e7670a21ec38",
+      "target_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "5bd6e857-706d-5b44-8b3f-04b0754242a9",
+      "target_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b5f9deb2-208a-5d85-af2c-96904cc674a9",
+      "target_id": "dd1ddb26-edde-562c-8744-61108806ec9b",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0edd4f1f-00c1-57ad-9706-b88e43470a40",
+      "target_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8561609b-7101-5e95-b701-c5c5f5fc37cd",
+      "target_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "67ecb952-825d-54e9-b905-d5521b03957c",
+      "target_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a5d360ea-b6ac-5fd6-98aa-ade0c7209322",
+      "target_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9c2be38d-cb08-5f6b-b691-91d4af28ae54",
+      "target_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "03e068f3-3ba1-5585-80c9-cc9549c9c67b",
+      "target_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "1ffd17a8-4279-5657-b178-3a91949ae48a",
+      "target_id": "6c8e2725-1fec-5a0a-90dc-f76eac617466",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "3bdc5b3e-aa21-58e1-a73e-2eab16652ff3",
+      "target_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8ed6116e-8260-5608-9ea8-33e084157bc9",
+      "target_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "4a672933-7245-5dfa-8fe4-8562a9a8580e",
+      "target_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2665aad0-4edc-548f-b951-e7d54933ee37",
+      "target_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "1ebfb10d-7be5-5752-928d-d1289c65a6a9",
+      "target_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a5a261ef-2975-56a7-8db3-6355c1f73a0d",
+      "target_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "02b24382-6700-5bc9-a5a7-f12a33c501c6",
+      "target_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c8b02845-d552-5c94-a8d5-967613f6868b",
+      "target_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f987fae9-fb99-512c-a077-e40c9e8b6b89",
+      "target_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "595ad4a8-e24d-5658-8337-b93730471b6d",
+      "target_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ca58f547-ab94-515c-b8e0-bf61bb878fb1",
+      "target_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ee62cea0-6ae4-59bd-8e77-84948bf84aa9",
+      "target_id": "dc5bfe7e-69ba-53b6-a9c7-274b39afc9c9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "bd24adeb-a234-5f4d-a76a-998d85865783",
+      "target_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "7e5fd6ca-a148-54fe-affd-c903f2b95d62",
+      "target_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8f551957-99c4-568b-9d3b-2c5b3c992923",
+      "target_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e1eda980-1f1f-5943-be92-c4fa539a591f",
+      "target_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "4ea44e44-00fe-54f9-93bc-644f858fa6fd",
+      "target_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "36d0eba7-ac14-5b2a-add7-22fb476e8b38",
+      "target_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e4f60446-ec14-588c-a93e-2a9b0856c403",
+      "target_id": "603d9e6e-9957-5390-9c30-c3fbd7cfa8f8",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "16dc4d20-453d-5379-97b4-8f1cc33529cc",
+      "target_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9acfc581-22da-5d4f-a2a3-45558fa6ecf5",
+      "target_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "7df1354e-8269-5491-92d2-bc41c3c0f20a",
+      "target_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d5289bf8-7f53-5d34-9bb8-c2991122709e",
+      "target_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "bc62a367-f866-5c95-b466-577752c57540",
+      "target_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c7424066-6dcb-590a-8889-6e2896ef2706",
+      "target_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "1912ea43-1053-5279-a241-5d4f11f4fdbc",
+      "target_id": "04fdb576-8ec3-544b-9b6d-b38a9cd44163",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0092db54-0a2f-5e1e-9824-415737ff3df2",
+      "target_id": "08a82d99-4649-5cfb-9649-f976493df012",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9013ad5a-a420-538f-a644-fb3c30fc53c5",
+      "target_id": "08a82d99-4649-5cfb-9649-f976493df012",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d09c330e-b883-559f-b18d-026b2bdf9167",
+      "target_id": "08a82d99-4649-5cfb-9649-f976493df012",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "1f1d8d84-b22e-50a3-8582-712eaba93347",
+      "target_id": "08a82d99-4649-5cfb-9649-f976493df012",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0fcf7876-305c-5895-87e4-c821dcac8356",
+      "target_id": "08a82d99-4649-5cfb-9649-f976493df012",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "eef9bb8c-5d67-59ae-94d7-d619bf7e3205",
+      "target_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a76f4272-1349-50c8-82e9-816348b97103",
+      "target_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "36fa67ae-e88b-5721-9776-8a0f781a6683",
+      "target_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "92c7177a-89cd-5793-aef9-a4c47088e9c6",
+      "target_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "1f9a609e-b71b-5192-9a18-ab831a078544",
+      "target_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c507672c-ba9e-5ed0-9472-b5962b92ae7b",
+      "target_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a1b85087-c4eb-5134-84ca-fe3a71ae5667",
+      "target_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "83c2dc37-1f21-5228-ae64-ed1e23361532",
+      "target_id": "bb0eda99-9328-58ca-bbba-35f4ef8aa167",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ca9dad65-edb8-536e-8dc1-e1f9e58a4fda",
+      "target_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "65d17c03-5a90-5bc4-a4d2-379a936c1ecd",
+      "target_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "10e0e473-a432-5392-83aa-d48298679460",
+      "target_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a4175577-6b9e-5f33-88df-295661aa04d9",
+      "target_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c6c55c5e-b4bc-5a70-ba4a-69b5f29d5da6",
+      "target_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "aa4784f7-452e-57ef-96cc-f3991129b010",
+      "target_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ff9fb64c-1115-57b6-a051-73a1237cf977",
+      "target_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d6e2ee07-6efa-517e-97c5-90eda396c541",
+      "target_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "bf8b6329-3fd1-5763-b227-57b892b32d48",
+      "target_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "5821df2b-61ff-59db-81c6-09496717f474",
+      "target_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "872c755a-8de0-5d6e-b6aa-fea7f4e17af0",
+      "target_id": "e05bb675-7bc3-584a-b4bf-93ccb660c522",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "de771e07-2623-5161-8e34-fa71d355a1a9",
+      "target_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "432ce122-1eba-52b0-aa88-750d817b98bd",
+      "target_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "632661eb-9c3a-5d90-aec8-65595a5eb58e",
+      "target_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "05e6bace-de8f-579b-a0a6-e23b030b036e",
+      "target_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0b9a2caf-68fa-529f-b82e-2705552e33d4",
+      "target_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d77b2e9b-ed9a-5b1a-bd4e-4304f3d86317",
+      "target_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0a3684af-50f3-58a4-bb1f-dccca34b1af0",
+      "target_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "41ca9dd9-f7ce-52bf-8906-485613dc801f",
+      "target_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "49e99d31-d509-5e94-a3c6-fc553438611a",
+      "target_id": "f1ff563d-e527-5ce4-b7dd-6512b32ca9d9",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "6bb0dec8-8bb8-5193-93c2-85107848db21",
+      "target_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "7cb84158-11f4-560c-93bc-17660aa9795f",
+      "target_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "caff3b77-ca73-5eff-9181-ca60d38491ab",
+      "target_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "102c18e0-e4c9-553c-a356-cfe030c8f046",
+      "target_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f5ab5942-4c1f-51ff-be7d-e94f0e29033c",
+      "target_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "30782e85-0adc-5580-98a8-52946a9545c5",
+      "target_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0e865321-f819-5818-96fd-c7417ead326e",
+      "target_id": "94b97918-91fb-5808-8b4f-74a595b06b6c",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "68931419-5b7f-505a-8c75-e4423e28ba5a",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e71c7bd9-1633-5e0e-8c32-a5a67c2816e2",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "92df27f3-6db7-57a0-a352-4199b4a6dcf2",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c284ac62-9bfc-510b-b471-4afd1a9e23cb",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e5254252-7789-5eab-9217-5c39f1fccabb",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "795b5cad-7d8e-5f4d-a652-5b1f24b95775",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e45da519-056d-5e58-9323-ab7f0cdf7b26",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "bf783c21-392a-588d-bc13-22683404d52c",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "50e92142-1f88-5ce9-9f73-2333ab8b5407",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "2527a18e-00fe-55ac-a68d-3d03eacf703f",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "942d2539-5453-5880-b6c4-f876e8449058",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "4bfde64a-8a08-5caf-81fd-a0cfe87d8349",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "1797f34f-e1cd-561e-92e0-890be2ed5d6b",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "735bf4bf-c6ab-529e-b4e3-9f84b8896f67",
+      "target_id": "d9452da2-1de5-5b6a-b92e-94ea93bdfff2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "e72bde57-a97b-5eaf-9fe2-c457742419b3",
+      "target_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "7bffdf7d-8e7a-51e9-bbd6-6f6b13f98d23",
+      "target_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "c1eeb7a5-fb7d-551d-99fd-e38bcb469af5",
+      "target_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "042269c9-8b6a-584a-892a-e357306ebb2d",
+      "target_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "904e8081-cf21-5e16-97b6-d0dce6cea9f0",
+      "target_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "5a84c631-8c4e-5087-909c-285da7d29177",
+      "target_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "fb347555-3069-55a2-ab71-7a40ff4f6f0e",
+      "target_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "6a353325-aa6c-5b7f-9aec-918dd33df0f6",
+      "target_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "05caaed2-6a2c-552f-9642-a4e753e4540f",
+      "target_id": "92e3ede7-48be-5cd1-812d-2af6f2770bc3",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "20aeab2e-ff9a-52b2-83b6-10c3592482e1",
+      "target_id": "bd404c09-649b-5e1c-9786-eac8ca2247b2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a57c3bb8-b32e-5159-a688-389feec986c2",
+      "target_id": "bd404c09-649b-5e1c-9786-eac8ca2247b2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "b62a6406-e6cd-509f-9638-fb120e91e475",
+      "target_id": "bd404c09-649b-5e1c-9786-eac8ca2247b2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f8a99003-89b6-5593-9027-6571cae60859",
+      "target_id": "bd404c09-649b-5e1c-9786-eac8ca2247b2",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a9eb419a-a122-5d62-af64-e094dc68db61",
+      "target_id": "bd404c09-649b-5e1c-9786-eac8ca2247b2",
+      "relationship_type": "part-of"
+    }
+  ]
+}

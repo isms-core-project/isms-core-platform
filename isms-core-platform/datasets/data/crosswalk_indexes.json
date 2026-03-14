@@ -1,0 +1,1428 @@
+{
+  "$schema": "isms-core/crosswalk-indexes/v1",
+  "title": "ISMS CORE — Privacy Crosswalk Indexes",
+  "description": "Consolidated crosswalk reference for ISO/IEC 27701:2025 (Ed. 2) and ISO/IEC 27018:2025 (Ed. 3), and the EU General Data Protection Regulation (GDPR). Three index directions: 27701→27018, 27018→27701, GDPR→both standards. ISO 27701 control IDs use the 2025 three-table structure: A.1.x.x (PII controller), A.2.x.x (PII processor), A.3.x (both). Management clause IDs (4.x–10.x) are identical in 2019 and 2025 editions.",
+  "generated": "2026-03-08",
+  "source_datasets": {
+    "iso_27701": "datasets/data/iso27701_privacy.json",
+    "iso_27018_2025": "datasets/data/iso27018_pii_cloud.json"
+  },
+  "indexes": {
+    "iso_27701_to_iso_27018": {
+      "description": "For each ISO 27701 control that maps to ISO 27018:2025, lists the relevant 27018:2025 control IDs.",
+      "count": 84,
+      "entries": {
+        "7.5.1": {
+          "title": "Access control for PII (controller)",
+          "iso_27018_2025": [
+            "A.10.2"
+          ]
+        },
+        "4.2": {
+          "title": "Understanding the needs and expectations of interested parties",
+          "iso_27018_2025": [
+            "A.8"
+          ]
+        },
+        "4.3": {
+          "title": "Determining the scope of the PIMS",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "5.1": {
+          "title": "Leadership and commitment to PIMS",
+          "iso_27018_2025": [
+            "A.8"
+          ]
+        },
+        "5.2": {
+          "title": "Privacy Policy",
+          "iso_27018_2025": [
+            "A.8",
+            "A.6"
+          ]
+        },
+        "5.3": {
+          "title": "Roles, responsibilities and authorities for PIMS",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "7.2": {
+          "title": "Competence for PIMS",
+          "iso_27018_2025": [
+            "A.11.1"
+          ]
+        },
+        "7.3": {
+          "title": "Awareness of PIMS",
+          "iso_27018_2025": [
+            "A.11.1"
+          ]
+        },
+        "7.4": {
+          "title": "Communication on PIMS",
+          "iso_27018_2025": [
+            "A.8"
+          ]
+        },
+        "8.1": {
+          "title": "Operational planning and control",
+          "iso_27018_2025": [
+            "A.6",
+            "A.6.2"
+          ]
+        },
+        "9.1": {
+          "title": "Monitoring, measurement, analysis and evaluation",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "9.2.1": {
+          "title": "Internal audit — General",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "9.2.2": {
+          "title": "Internal audit programme",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "A.1.2.2": {
+          "title": "Identify and document purpose",
+          "iso_27018_2025": [
+            "A.6",
+            "A.8"
+          ]
+        },
+        "A.1.2.3": {
+          "title": "Identify lawful basis",
+          "iso_27018_2025": [
+            "A.6"
+          ]
+        },
+        "A.1.2.4": {
+          "title": "Determine when and how consent is to be obtained",
+          "iso_27018_2025": [
+            "A.2"
+          ]
+        },
+        "A.1.2.5": {
+          "title": "Obtain and record consent",
+          "iso_27018_2025": [
+            "A.2",
+            "A.6.2"
+          ]
+        },
+        "A.1.2.7": {
+          "title": "Contracts with PII processors",
+          "iso_27018_2025": [
+            "A.11.12"
+          ]
+        },
+        "A.1.2.9": {
+          "title": "Records related to processing PII",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "A.1.3.2": {
+          "title": "Determining and fulfilling obligations to PII principals",
+          "iso_27018_2025": [
+            "A.2.1"
+          ]
+        },
+        "A.1.3.3": {
+          "title": "Determining information for PII principals",
+          "iso_27018_2025": [
+            "A.8"
+          ]
+        },
+        "A.1.3.4": {
+          "title": "Providing information to PII principals",
+          "iso_27018_2025": [
+            "A.8"
+          ]
+        },
+        "A.1.3.5": {
+          "title": "Providing mechanism to modify or withdraw consent",
+          "iso_27018_2025": [
+            "A.2"
+          ]
+        },
+        "A.1.3.6": {
+          "title": "Providing mechanism to object to PII processing",
+          "iso_27018_2025": [
+            "A.6"
+          ]
+        },
+        "A.1.3.7": {
+          "title": "Access, correction or erasure",
+          "iso_27018_2025": [
+            "A.9"
+          ]
+        },
+        "A.1.3.8": {
+          "title": "PII controllers' obligations to inform third parties",
+          "iso_27018_2025": [
+            "A.8"
+          ]
+        },
+        "A.1.3.9": {
+          "title": "Providing copy of PII processed",
+          "iso_27018_2025": [
+            "A.9"
+          ]
+        },
+        "A.1.3.10": {
+          "title": "Handling requests",
+          "iso_27018_2025": [
+            "A.2.1"
+          ]
+        },
+        "A.1.4.2": {
+          "title": "Limit collection",
+          "iso_27018_2025": [
+            "A.4"
+          ]
+        },
+        "A.1.4.3": {
+          "title": "Limit processing",
+          "iso_27018_2025": [
+            "A.6"
+          ]
+        },
+        "A.1.4.4": {
+          "title": "Accuracy and quality",
+          "iso_27018_2025": [
+            "A.7"
+          ]
+        },
+        "A.1.4.5": {
+          "title": "PII minimization objectives",
+          "iso_27018_2025": [
+            "A.4",
+            "A.5"
+          ]
+        },
+        "A.1.4.6": {
+          "title": "PII de-identification and deletion at end of processing",
+          "iso_27018_2025": [
+            "A.10.3"
+          ]
+        },
+        "A.1.4.7": {
+          "title": "Temporary files",
+          "iso_27018_2025": [
+            "A.5.1"
+          ]
+        },
+        "A.1.4.8": {
+          "title": "Retention",
+          "iso_27018_2025": [
+            "A.10.2"
+          ]
+        },
+        "A.1.4.9": {
+          "title": "Disposal",
+          "iso_27018_2025": [
+            "A.10.3"
+          ]
+        },
+        "A.1.4.10": {
+          "title": "PII transmission controls",
+          "iso_27018_2025": [
+            "A.11.6"
+          ]
+        },
+        "A.1.5.2": {
+          "title": "Identify basis for PII transfer between jurisdictions",
+          "iso_27018_2025": [
+            "A.8"
+          ]
+        },
+        "A.1.5.3": {
+          "title": "Countries and international organizations to which PII can be transferred",
+          "iso_27018_2025": [
+            "A.8"
+          ]
+        },
+        "A.1.5.4": {
+          "title": "Records of transfer of PII",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "A.1.5.5": {
+          "title": "Records of PII disclosures to third parties",
+          "iso_27018_2025": [
+            "A.6.2",
+            "A.6.1"
+          ]
+        },
+        "A.2.2.2": {
+          "title": "Customer agreement",
+          "iso_27018_2025": [
+            "A.3.1"
+          ]
+        },
+        "A.2.2.3": {
+          "title": "Organisation's purposes",
+          "iso_27018_2025": [
+            "A.3.1"
+          ]
+        },
+        "A.2.2.4": {
+          "title": "Marketing and advertising use",
+          "iso_27018_2025": [
+            "A.3.2"
+          ]
+        },
+        "A.2.2.5": {
+          "title": "Infringing instruction",
+          "iso_27018_2025": [
+            "A.3.1"
+          ]
+        },
+        "A.2.2.6": {
+          "title": "Customer obligations",
+          "iso_27018_2025": [
+            "A.8"
+          ]
+        },
+        "A.2.2.7": {
+          "title": "Records related to processing PII",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "A.2.3.2": {
+          "title": "Comply with obligations to PII principals",
+          "iso_27018_2025": [
+            "A.2.1",
+            "A.9"
+          ]
+        },
+        "A.2.4.2": {
+          "title": "Temporary files",
+          "iso_27018_2025": [
+            "A.5",
+            "A.5.1"
+          ]
+        },
+        "A.2.4.3": {
+          "title": "Return, transfer or disposal of PII",
+          "iso_27018_2025": [
+            "A.10.3"
+          ]
+        },
+        "A.2.4.4": {
+          "title": "PII transmission controls",
+          "iso_27018_2025": [
+            "A.12.2"
+          ]
+        },
+        "A.2.5.2": {
+          "title": "Basis for PII transfer between jurisdictions",
+          "iso_27018_2025": [
+            "A.8"
+          ]
+        },
+        "A.2.5.3": {
+          "title": "Countries and international organizations to which PII can be transferred",
+          "iso_27018_2025": [
+            "A.12.1"
+          ]
+        },
+        "A.2.5.4": {
+          "title": "Records of PII disclosures to third parties",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "A.2.5.5": {
+          "title": "Notification of PII disclosure requests",
+          "iso_27018_2025": [
+            "A.6.1"
+          ]
+        },
+        "A.2.5.6": {
+          "title": "Legally binding PII disclosures",
+          "iso_27018_2025": [
+            "A.6.1"
+          ]
+        },
+        "A.2.5.7": {
+          "title": "Disclosure of subcontractors used to process PII",
+          "iso_27018_2025": [
+            "A.8.1"
+          ]
+        },
+        "A.2.5.8": {
+          "title": "Engagement of a subcontractor to process PII",
+          "iso_27018_2025": [
+            "A.8.1"
+          ]
+        },
+        "A.2.5.9": {
+          "title": "Change of subcontractor to process PII",
+          "iso_27018_2025": [
+            "A.8.1"
+          ]
+        },
+        "A.3.3": {
+          "title": "Policies for information security",
+          "iso_27018_2025": [
+            "A.6"
+          ]
+        },
+        "A.3.4": {
+          "title": "Information security roles and responsibilities",
+          "iso_27018_2025": [
+            "A.11.1"
+          ]
+        },
+        "A.3.5": {
+          "title": "Classification of information",
+          "iso_27018_2025": [
+            "A.5"
+          ]
+        },
+        "A.3.6": {
+          "title": "Labelling of information",
+          "iso_27018_2025": [
+            "A.5"
+          ]
+        },
+        "A.3.7": {
+          "title": "Information transfer",
+          "iso_27018_2025": [
+            "A.11.6"
+          ]
+        },
+        "A.3.8": {
+          "title": "Identity management",
+          "iso_27018_2025": [
+            "A.11.8",
+            "A.11.9",
+            "A.11.10"
+          ]
+        },
+        "A.3.9": {
+          "title": "Access rights",
+          "iso_27018_2025": [
+            "A.11.8",
+            "A.11.9",
+            "A.11.10"
+          ]
+        },
+        "A.3.10": {
+          "title": "Information security in supplier agreements",
+          "iso_27018_2025": [
+            "A.11.12"
+          ]
+        },
+        "A.3.11": {
+          "title": "Information security incident management planning",
+          "iso_27018_2025": [
+            "A.10.1"
+          ]
+        },
+        "A.3.12": {
+          "title": "Response to information security incidents",
+          "iso_27018_2025": [
+            "A.10.1"
+          ]
+        },
+        "A.3.13": {
+          "title": "Legal, statutory, regulatory and contractual requirements",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "A.3.14": {
+          "title": "Protection of records",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "A.3.15": {
+          "title": "Independent review of information security",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "A.3.16": {
+          "title": "Compliance with policies, rules and standards",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "A.3.17": {
+          "title": "Information security awareness, education and training",
+          "iso_27018_2025": [
+            "A.11.1"
+          ]
+        },
+        "A.3.18": {
+          "title": "Confidentiality or non-disclosure agreements",
+          "iso_27018_2025": [
+            "A.11.1"
+          ]
+        },
+        "A.3.19": {
+          "title": "Clear desk and clear screen",
+          "iso_27018_2025": [
+            "A.11.2"
+          ]
+        },
+        "A.3.20": {
+          "title": "Storage media",
+          "iso_27018_2025": [
+            "A.10.3"
+          ]
+        },
+        "A.3.21": {
+          "title": "Secure disposal or re-use of equipment",
+          "iso_27018_2025": [
+            "A.10.3"
+          ]
+        },
+        "A.3.22": {
+          "title": "User endpoint devices",
+          "iso_27018_2025": [
+            "A.11.8",
+            "A.11.9",
+            "A.11.10"
+          ]
+        },
+        "A.3.23": {
+          "title": "Secure authentication",
+          "iso_27018_2025": [
+            "A.11.8",
+            "A.11.9",
+            "A.11.10"
+          ]
+        },
+        "A.3.25": {
+          "title": "Logging",
+          "iso_27018_2025": [
+            "A.6.2"
+          ]
+        },
+        "A.3.26": {
+          "title": "Use of cryptography",
+          "iso_27018_2025": [
+            "A.11.6"
+          ]
+        },
+        "A.3.30": {
+          "title": "Outsourced development",
+          "iso_27018_2025": [
+            "A.11.12"
+          ]
+        },
+        "A.3.31": {
+          "title": "Test information",
+          "iso_27018_2025": [
+            "A.5"
+          ]
+        }
+      }
+    },
+    "iso_27018_to_iso_27701": {
+      "description": "For each ISO 27018:2025 control that appears in a 27701 mapping, lists the relevant 27701 control IDs. Derived by inverting the 27701→27018 index.",
+      "count": 26,
+      "entries": {
+        "A.10.1": {
+          "title": "Notification of a data breach involving PII",
+          "iso_27701": [
+            "A.3.11",
+            "A.3.12"
+          ]
+        },
+        "A.10.2": {
+          "title": "Retention period for administrative security policies and guidelines",
+          "iso_27701": [
+            "7.5.1",
+            "A.1.4.8"
+          ]
+        },
+        "A.10.3": {
+          "title": "PII return, transfer and disposal",
+          "iso_27701": [
+            "A.1.4.6",
+            "A.1.4.9",
+            "A.2.4.3",
+            "A.3.20",
+            "A.3.21"
+          ]
+        },
+        "A.11.1": {
+          "title": "Confidentiality or non-disclosure agreements",
+          "iso_27701": [
+            "7.2",
+            "7.3",
+            "A.3.4",
+            "A.3.17",
+            "A.3.18"
+          ]
+        },
+        "A.11.10": {
+          "title": "Records of authorized users",
+          "iso_27701": [
+            "A.3.8",
+            "A.3.9",
+            "A.3.22",
+            "A.3.23"
+          ]
+        },
+        "A.11.12": {
+          "title": "Sub-contracted PII processing",
+          "iso_27701": [
+            "A.1.2.7",
+            "A.3.10",
+            "A.3.30"
+          ]
+        },
+        "A.11.2": {
+          "title": "Restriction of the creation of hardcopy material",
+          "iso_27701": [
+            "A.3.19"
+          ]
+        },
+        "A.11.6": {
+          "title": "Encryption of PII transmitted over public data-transmission networks",
+          "iso_27701": [
+            "A.1.4.10",
+            "A.3.7",
+            "A.3.26"
+          ]
+        },
+        "A.11.8": {
+          "title": "Unique use of user IDs",
+          "iso_27701": [
+            "A.3.8",
+            "A.3.9",
+            "A.3.22",
+            "A.3.23"
+          ]
+        },
+        "A.11.9": {
+          "title": "User ID management",
+          "iso_27701": [
+            "A.3.8",
+            "A.3.9",
+            "A.3.22",
+            "A.3.23"
+          ]
+        },
+        "A.2": {
+          "title": "Consent and choice",
+          "iso_27701": [
+            "A.1.2.4",
+            "A.1.2.5",
+            "A.1.3.5"
+          ]
+        },
+        "A.2.1": {
+          "title": "Obligation to co-operate regarding PII principals' rights",
+          "iso_27701": [
+            "A.1.3.2",
+            "A.1.3.10",
+            "A.2.3.2"
+          ]
+        },
+        "A.3.1": {
+          "title": "Public cloud PII processor's purpose",
+          "iso_27701": [
+            "A.2.2.2",
+            "A.2.2.3",
+            "A.2.2.5"
+          ]
+        },
+        "A.3.2": {
+          "title": "Public cloud PII processor's commercial use",
+          "iso_27701": [
+            "A.2.2.4"
+          ]
+        },
+        "A.4": {
+          "title": "Collection limitation",
+          "iso_27701": [
+            "A.1.4.2",
+            "A.1.4.5"
+          ]
+        },
+        "A.5": {
+          "title": "Data minimization",
+          "iso_27701": [
+            "A.1.4.5",
+            "A.2.4.2",
+            "A.3.5",
+            "A.3.6",
+            "A.3.31"
+          ]
+        },
+        "A.5.1": {
+          "title": "Secure erasure of temporary files",
+          "iso_27701": [
+            "A.1.4.7",
+            "A.2.4.2"
+          ]
+        },
+        "A.6": {
+          "title": "Use, retention and disclosure limitation",
+          "iso_27701": [
+            "5.2",
+            "8.1",
+            "A.1.2.2",
+            "A.1.2.3",
+            "A.1.3.6",
+            "A.1.4.3",
+            "A.3.3"
+          ]
+        },
+        "A.6.1": {
+          "title": "PII disclosure notification",
+          "iso_27701": [
+            "A.1.5.5",
+            "A.2.5.5",
+            "A.2.5.6"
+          ]
+        },
+        "A.6.2": {
+          "title": "Recording of PII disclosures",
+          "iso_27701": [
+            "4.3",
+            "5.3",
+            "8.1",
+            "9.1",
+            "9.2.1",
+            "9.2.2",
+            "A.1.2.5",
+            "A.1.2.9",
+            "A.1.5.4",
+            "A.1.5.5",
+            "A.2.2.7",
+            "A.2.5.4",
+            "A.3.13",
+            "A.3.14",
+            "A.3.15",
+            "A.3.16",
+            "A.3.25"
+          ]
+        },
+        "A.7": {
+          "title": "Accuracy and quality",
+          "iso_27701": [
+            "A.1.4.4"
+          ]
+        },
+        "A.8": {
+          "title": "Openness, transparency and notice",
+          "iso_27701": [
+            "4.2",
+            "5.1",
+            "5.2",
+            "7.4",
+            "A.1.2.2",
+            "A.1.3.3",
+            "A.1.3.4",
+            "A.1.3.8",
+            "A.1.5.2",
+            "A.1.5.3",
+            "A.2.2.6",
+            "A.2.5.2"
+          ]
+        },
+        "A.8.1": {
+          "title": "Disclosure of sub-contracted PII processing",
+          "iso_27701": [
+            "A.2.5.7",
+            "A.2.5.8",
+            "A.2.5.9"
+          ]
+        },
+        "A.9": {
+          "title": "Individual participation and access",
+          "iso_27701": [
+            "A.1.3.7",
+            "A.1.3.9",
+            "A.2.3.2"
+          ]
+        },
+        "A.12.1": {
+          "title": "Geographical location of PII",
+          "iso_27701": [
+            "A.2.5.3"
+          ]
+        },
+        "A.12.2": {
+          "title": "Intended destination of PII",
+          "iso_27701": [
+            "A.2.4.4"
+          ]
+        }
+      }
+    },
+    "gdpr_to_iso_27701_and_27018": {
+      "description": "For each GDPR article, lists mapped ISO 27701 controls and ISO 27018:2025 controls. Articles with no 27018:2025 mapping include a coverage_note.",
+      "count": 55,
+      "entries": [
+        {
+          "gdpr_article": "Art. 5(1)(a)",
+          "mapped_iso_27701": [
+            "5.2",
+            "7.5.1",
+            "A.1.2.2"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 5(1)(c)",
+          "mapped_iso_27701": [
+            "A.1.4.2",
+            "A.1.4.3",
+            "A.1.4.4",
+            "A.1.4.5",
+            "A.1.4.7",
+            "A.3.5",
+            "A.3.6",
+            "A.3.31"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.4",
+            "A.5",
+            "A.5.1"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 5(1)(e)",
+          "mapped_iso_27701": [
+            "A.1.4.6",
+            "A.1.4.7",
+            "A.1.4.8",
+            "A.1.4.9",
+            "A.2.4.2",
+            "A.3.14"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.5.1",
+            "A.10.2",
+            "A.10.3"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 5(1)(f)",
+          "mapped_iso_27701": [
+            "A.3.5",
+            "A.3.6",
+            "A.3.14",
+            "A.3.20",
+            "A.3.21"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 6",
+          "mapped_iso_27701": [
+            "A.1.2.2",
+            "A.1.2.3"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.3.2"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 7",
+          "mapped_iso_27701": [
+            "A.1.2.3",
+            "A.1.2.4",
+            "A.1.2.5",
+            "A.1.3.5"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.3.2"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 8",
+          "mapped_iso_27701": [
+            "A.1.2.4"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 9(2)",
+          "mapped_iso_27701": [
+            "A.1.2.3"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 9(2)(a)",
+          "mapped_iso_27701": [
+            "A.1.2.5"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 12(3)",
+          "mapped_iso_27701": [
+            "A.1.3.2",
+            "A.1.3.10"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.2.1"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 13",
+          "mapped_iso_27701": [
+            "A.1.2.2",
+            "A.1.3.2",
+            "A.1.3.3",
+            "A.1.3.4"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 14",
+          "mapped_iso_27701": [
+            "A.1.2.2",
+            "A.1.3.2",
+            "A.1.3.3",
+            "A.1.3.4"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 15",
+          "mapped_iso_27701": [
+            "A.1.3.7",
+            "A.1.3.9",
+            "A.1.3.10",
+            "A.2.3.2"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.2.1",
+            "A.9"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 16",
+          "mapped_iso_27701": [
+            "A.1.3.7",
+            "A.1.3.10",
+            "A.1.4.4",
+            "A.2.3.2"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.7",
+            "A.9"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 17",
+          "mapped_iso_27701": [
+            "A.1.3.5",
+            "A.1.3.7",
+            "A.1.3.8",
+            "A.1.3.10",
+            "A.1.4.6",
+            "A.1.4.9",
+            "A.2.4.3",
+            "A.3.21"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.9",
+            "A.10.3"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 18",
+          "mapped_iso_27701": [
+            "A.1.3.6",
+            "A.1.3.10"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 19",
+          "mapped_iso_27701": [
+            "A.1.3.8",
+            "A.1.3.10"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 20",
+          "mapped_iso_27701": [
+            "A.1.3.9",
+            "A.1.3.10"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.9"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 21",
+          "mapped_iso_27701": [
+            "A.1.3.5",
+            "A.1.3.6",
+            "A.1.3.10"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 22",
+          "mapped_iso_27701": [
+            "A.1.3.11"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 24",
+          "mapped_iso_27701": [
+            "4.1",
+            "4.2",
+            "4.3",
+            "4.4",
+            "5.1",
+            "5.2",
+            "5.3",
+            "6.1.1",
+            "6.2",
+            "7.1",
+            "7.2",
+            "7.3",
+            "7.4",
+            "7.5.1",
+            "7.5.2",
+            "7.5.3",
+            "9.1",
+            "9.2.1",
+            "9.2.2",
+            "9.3.1",
+            "9.3.2",
+            "9.3.3",
+            "10.1",
+            "10.2",
+            "A.3.3",
+            "A.3.13",
+            "A.3.15",
+            "A.3.16",
+            "A.3.17"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 25(1)",
+          "mapped_iso_27701": [
+            "4.4",
+            "6.1.1",
+            "6.1.3",
+            "6.2",
+            "6.3",
+            "8.1",
+            "8.3",
+            "A.1.4.3",
+            "A.1.4.5",
+            "A.3.9",
+            "A.3.23",
+            "A.3.27",
+            "A.3.28",
+            "A.3.29"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 25(2)",
+          "mapped_iso_27701": [
+            "A.1.4.2",
+            "A.1.4.5"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.4",
+            "A.5"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 26",
+          "mapped_iso_27701": [
+            "A.1.2.8"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 28",
+          "mapped_iso_27701": [
+            "4.1",
+            "4.2",
+            "A.1.2.7",
+            "A.2.2.2",
+            "A.2.2.3",
+            "A.2.2.5",
+            "A.2.2.6",
+            "A.2.5.2",
+            "A.2.5.7",
+            "A.2.5.8",
+            "A.2.5.9",
+            "A.3.10",
+            "A.3.30"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.3.1",
+            "A.3.2",
+            "A.8.1"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 28(1)",
+          "mapped_iso_27701": [
+            "A.3.10"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 28(3)",
+          "mapped_iso_27701": [
+            "A.1.2.7",
+            "A.2.2.2",
+            "A.2.2.6",
+            "A.2.2.7",
+            "A.2.4.3",
+            "A.2.5.2",
+            "A.2.5.7",
+            "A.2.5.8",
+            "A.2.5.9",
+            "A.3.18"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.3.1",
+            "A.8.1",
+            "A.10.3",
+            "A.11.1"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 29",
+          "mapped_iso_27701": [
+            "7.2",
+            "7.3",
+            "A.2.2.2",
+            "A.2.2.3",
+            "A.2.2.5",
+            "A.3.4",
+            "A.3.17",
+            "A.3.18"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 30",
+          "mapped_iso_27701": [
+            "7.5.1",
+            "7.5.2",
+            "7.5.3",
+            "A.1.2.9",
+            "A.1.5.4",
+            "A.1.5.5",
+            "A.2.2.7",
+            "A.2.5.4",
+            "A.3.14"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.6.2",
+            "A.10.2"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 30(1)",
+          "mapped_iso_27701": [
+            "A.1.2.9"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 31",
+          "mapped_iso_27701": [
+            "7.4"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 32(1)",
+          "mapped_iso_27701": [
+            "6.1.3",
+            "8.1",
+            "8.3",
+            "A.3.3",
+            "A.3.14",
+            "A.3.20",
+            "A.3.21",
+            "A.3.27",
+            "A.3.28",
+            "A.3.29",
+            "A.3.30"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 32(1)(a)",
+          "mapped_iso_27701": [
+            "A.1.4.10",
+            "A.2.4.4",
+            "A.3.7",
+            "A.3.26"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 32(1)(b)",
+          "mapped_iso_27701": [
+            "A.3.8",
+            "A.3.9",
+            "A.3.19",
+            "A.3.22",
+            "A.3.23",
+            "A.3.24",
+            "A.3.25"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 32(1)(c)",
+          "mapped_iso_27701": [
+            "A.3.24"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 32(1)(d)",
+          "mapped_iso_27701": [
+            "9.1",
+            "9.2.1",
+            "9.2.2",
+            "9.3.2",
+            "A.3.15",
+            "A.3.16",
+            "A.3.25"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 32(2)",
+          "mapped_iso_27701": [
+            "6.1.2",
+            "8.2"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 32(4)",
+          "mapped_iso_27701": [
+            "A.3.17",
+            "A.3.18"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 33",
+          "mapped_iso_27701": [
+            "A.3.11",
+            "A.3.12"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.10.1"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 33(1)",
+          "mapped_iso_27701": [
+            "A.3.12"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.10.1"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 33(3)",
+          "mapped_iso_27701": [
+            "A.3.12"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.10.1"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 33(5)",
+          "mapped_iso_27701": [
+            "10.2"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 34",
+          "mapped_iso_27701": [
+            "A.3.11",
+            "A.3.12"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.10.1"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 35(1)",
+          "mapped_iso_27701": [
+            "6.1.2",
+            "8.2",
+            "A.1.2.6"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 35(7)",
+          "mapped_iso_27701": [
+            "6.1.2",
+            "6.1.3",
+            "8.2",
+            "8.3",
+            "A.1.2.6"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 36",
+          "mapped_iso_27701": [
+            "A.1.2.6"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 37",
+          "mapped_iso_27701": [
+            "4.2",
+            "5.3"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 38",
+          "mapped_iso_27701": [
+            "5.3"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 39",
+          "mapped_iso_27701": [
+            "5.3"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 44",
+          "mapped_iso_27701": [
+            "A.1.5.2",
+            "A.1.5.3",
+            "A.1.5.4",
+            "A.2.5.2",
+            "A.2.5.3",
+            "A.3.13"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 45",
+          "mapped_iso_27701": [
+            "A.1.5.3",
+            "A.2.5.3"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 46",
+          "mapped_iso_27701": [
+            "A.1.5.2",
+            "A.1.5.3",
+            "A.1.5.4",
+            "A.2.5.2",
+            "A.2.5.3"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 47",
+          "mapped_iso_27701": [
+            "A.1.5.3"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        },
+        {
+          "gdpr_article": "Art. 48",
+          "mapped_iso_27701": [
+            "A.1.5.5",
+            "A.2.5.4",
+            "A.2.5.5",
+            "A.2.5.6",
+            "A.3.13"
+          ],
+          "mapped_iso_27018_2025": [
+            "A.6.1",
+            "A.6.2"
+          ]
+        },
+        {
+          "gdpr_article": "Art. 49",
+          "mapped_iso_27701": [
+            "A.1.5.2"
+          ],
+          "mapped_iso_27018_2025": [],
+          "coverage_note": "Covered by ISO 27701 only; no ISO 27018:2025 processor-cloud equivalent."
+        }
+      ]
+    }
+  }
+}

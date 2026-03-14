@@ -1,0 +1,1345 @@
+{
+  "bundle_id": "bundle--10986a78-f676-5b60-a946-26fe327d78d1",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "2.0",
+  "framework": {
+    "id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+    "code": "ISO27701",
+    "name": "ISO/IEC 27701:2025 — Privacy Information Management",
+    "version": "2025",
+    "publisher": "ISO/IEC",
+    "source_url": "https://www.iso.org/standard/71670.html",
+    "jurisdiction": null,
+    "description": "Standalone Privacy Information Management System (PIMS) standard. Second edition (published 2025-10-14) is a complete structural rewrite from the 2019 first edition (which was an extension to ISO/IEC 27001/27002). 2025 edition defines PIMS as an independent management system with three normative annexes: Annex A (control objectives and controls — 31 for PII controllers, 18 for PII processors, 29 security controls for both), Annex B (implementation guidance), plus informative annexes mapping to ISO/IEC 29100 (C), GDPR (D), ISO/IEC 27018+29151 (E), and 2019 correspondence (F)."
+  },
+  "generated_at": "2026-03-08T19:27:27Z",
+  "generator": "build_iso27701_2025.py",
+  "content_hash": "21d5f486aeb618e86bb391e9767fdd4e705169d3",
+  "objects_count": 89,
+  "relationships_count": 0,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "4ef29637-ada7-50e5-989f-b842b6851904",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1",
+      "title": "Table A.1 — Controls for PII controllers",
+      "description": "Normative control objectives and controls applicable to organisations acting as PII controllers. Contains 31 controls across four groups: conditions for collection and processing, obligations to PII principals, privacy by design, and PII sharing.",
+      "level": 0,
+      "sort_order": 1000
+    },
+    {
+      "type": "framework_control",
+      "id": "458cd22a-8ec1-524b-899e-47abee37459e",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2",
+      "title": "Table A.2 — Controls for PII processors",
+      "description": "Normative control objectives and controls applicable to organisations acting as PII processors on behalf of a customer. Contains 18 controls across four groups: conditions for processing, obligations to PII principals, privacy by design, and PII sharing and disclosure.",
+      "level": 0,
+      "sort_order": 1100
+    },
+    {
+      "type": "framework_control",
+      "id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3",
+      "title": "Table A.3 — Security controls for PII controllers and PII processors",
+      "description": "Normative information security controls applicable to all organisations processing PII, whether as controllers or processors. Contains 29 controls aligned with ISO/IEC 27002:2022 controls, adapted for PII processing contexts.",
+      "level": 0,
+      "sort_order": 1200
+    },
+    {
+      "type": "framework_control",
+      "id": "e88987f1-2e74-56d9-b342-c94a93649536",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.2",
+      "title": "Conditions for collection and processing",
+      "description": "To demonstrate that processing is lawful, with legal basis as per applicable jurisdictions, with clearly defined and legitimate purposes.",
+      "level": 1,
+      "parent_id": "4ef29637-ada7-50e5-989f-b842b6851904",
+      "sort_order": 1300,
+      "metadata": {
+        "role": "objective_group"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d70a1061-c412-5642-9de6-c7edcc12714e",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.3",
+      "title": "Obligations to PII principals",
+      "description": "To ensure that PII principals are provided with appropriate information about the processing of their PII, and to meet any other applicable obligations to PII principals related to the processing of their PII.",
+      "level": 1,
+      "parent_id": "4ef29637-ada7-50e5-989f-b842b6851904",
+      "sort_order": 1400,
+      "metadata": {
+        "role": "objective_group"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "68435f37-316a-599a-9ae4-63dcb7e0dd99",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.4",
+      "title": "Privacy by design and privacy by default",
+      "description": "To ensure that processes and systems are designed such that the collection and processing of PII (including use, disclosure, retention, transmission and disposal) are limited to what is necessary for the identified purpose.",
+      "level": 1,
+      "parent_id": "4ef29637-ada7-50e5-989f-b842b6851904",
+      "sort_order": 1500,
+      "metadata": {
+        "role": "objective_group"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ed11a7df-2902-5879-90c8-0023d4321814",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.5",
+      "title": "PII sharing, transfer and disclosure",
+      "description": "To determine whether, and document when, PII is shared, transferred to other jurisdictions or third parties or disclosed in accordance with applicable obligations.",
+      "level": 1,
+      "parent_id": "4ef29637-ada7-50e5-989f-b842b6851904",
+      "sort_order": 1600,
+      "metadata": {
+        "role": "objective_group"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b2bb55c6-3cf8-50ec-b83d-95e14372a6ad",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.2.2",
+      "title": "Identify and document purpose",
+      "description": "The organisation shall identify and document the specific purposes for which the PII will be processed.",
+      "level": 2,
+      "parent_id": "e88987f1-2e74-56d9-b342-c94a93649536",
+      "sort_order": 1700,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "764fe31b-3c75-541c-9b95-f522f070bd64",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.2.3",
+      "title": "Identify lawful basis",
+      "description": "The organisation shall determine, document and be able to demonstrate compliance with the relevant lawful basis for the processing of PII for the identified purposes.",
+      "level": 2,
+      "parent_id": "e88987f1-2e74-56d9-b342-c94a93649536",
+      "sort_order": 1800,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "02c2611a-aaf3-5e06-a921-8d38a636a930",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.2.4",
+      "title": "Determine when and how consent is to be obtained",
+      "description": "The organisation shall determine and document a process by which it can demonstrate if, when and how consent for the processing of PII was obtained from PII principals.",
+      "level": 2,
+      "parent_id": "e88987f1-2e74-56d9-b342-c94a93649536",
+      "sort_order": 1900,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8c9e2c02-a724-5226-b277-66e128945779",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.2.5",
+      "title": "Obtain and record consent",
+      "description": "The organisation shall obtain and record consent from PII principals according to the documented processes.",
+      "level": 2,
+      "parent_id": "e88987f1-2e74-56d9-b342-c94a93649536",
+      "sort_order": 2000,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3486775b-de90-5f08-b2d0-64ad07780b2c",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.2.6",
+      "title": "Privacy impact assessment",
+      "description": "The organisation shall assess the need for, and implement where appropriate, a privacy impact assessment whenever new processing of PII or changes to existing processing of PII is planned.",
+      "level": 2,
+      "parent_id": "e88987f1-2e74-56d9-b342-c94a93649536",
+      "sort_order": 2100,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5ed9232c-c768-5b69-bd2e-bd308e46bec2",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.2.7",
+      "title": "Contracts with PII processors",
+      "description": "The organisation shall have a written contract with any PII processor that it uses, and shall ensure that their contracts with PII processors address the implementation of the appropriate controls in Annex A (Table A.2).",
+      "level": 2,
+      "parent_id": "e88987f1-2e74-56d9-b342-c94a93649536",
+      "sort_order": 2200,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "15335d17-5e32-59d9-b65a-d528105f3392",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.2.8",
+      "title": "Joint PII controller",
+      "description": "The organisation shall determine respective roles and responsibilities for the processing of PII (including PII protection and security requirements) with any joint PII controller.",
+      "level": 2,
+      "parent_id": "e88987f1-2e74-56d9-b342-c94a93649536",
+      "sort_order": 2300,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "eab02194-f633-5ac1-88db-dd4ccb96ff02",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.2.9",
+      "title": "Records related to processing PII",
+      "description": "The organisation shall determine and securely maintain the necessary records in support of its obligations for the processing of PII.",
+      "level": 2,
+      "parent_id": "e88987f1-2e74-56d9-b342-c94a93649536",
+      "sort_order": 2400,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c8c62181-caac-56d0-b195-c0dfb8b6e3a5",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.3.2",
+      "title": "Determining and fulfilling obligations to PII principals",
+      "description": "The organisation shall determine and document its legal, regulatory and business obligations to PII principals related to the processing of their PII and provide the means to meet these obligations.",
+      "level": 2,
+      "parent_id": "d70a1061-c412-5642-9de6-c7edcc12714e",
+      "sort_order": 2500,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "30b0d15f-c03c-558e-a9b8-920d0e6e5ec8",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.3.3",
+      "title": "Determining information for PII principals",
+      "description": "The organisation shall determine and document the information to be provided to PII principals regarding the processing of their PII and the timing of such a provision.",
+      "level": 2,
+      "parent_id": "d70a1061-c412-5642-9de6-c7edcc12714e",
+      "sort_order": 2600,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8898f65d-39e3-597e-b158-71fe74e0077d",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.3.4",
+      "title": "Providing information to PII principals",
+      "description": "The organisation shall provide PII principals with clear and easily accessible information identifying the PII controller and describing the processing of their PII.",
+      "level": 2,
+      "parent_id": "d70a1061-c412-5642-9de6-c7edcc12714e",
+      "sort_order": 2700,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3b92fd6d-6349-5ab6-a9f9-927ca5809b99",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.3.5",
+      "title": "Providing mechanism to modify or withdraw consent",
+      "description": "The organisation shall provide a mechanism for PII principals to modify or withdraw their consent.",
+      "level": 2,
+      "parent_id": "d70a1061-c412-5642-9de6-c7edcc12714e",
+      "sort_order": 2800,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3d38cd5a-6cc3-555e-ab4f-c8144f031958",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.3.6",
+      "title": "Providing mechanism to object to PII processing",
+      "description": "The organisation shall provide a mechanism for PII principals to object to the processing of their PII.",
+      "level": 2,
+      "parent_id": "d70a1061-c412-5642-9de6-c7edcc12714e",
+      "sort_order": 2900,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "306a7873-05b5-5d33-b381-b079193ca4b6",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.3.7",
+      "title": "Access, correction or erasure",
+      "description": "The organisation shall implement policies, procedures or mechanisms to meet its obligations to PII principals to access, correct or erase their PII.",
+      "level": 2,
+      "parent_id": "d70a1061-c412-5642-9de6-c7edcc12714e",
+      "sort_order": 3000,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "841de6ee-b16d-5f11-a289-fed02e557a09",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.3.8",
+      "title": "PII controllers' obligations to inform third parties",
+      "description": "The organisation shall inform third parties with whom PII has been shared of any modification, withdrawal or objections pertaining to the shared PII, and implement appropriate policies, procedures or mechanisms to do so.",
+      "level": 2,
+      "parent_id": "d70a1061-c412-5642-9de6-c7edcc12714e",
+      "sort_order": 3100,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "10fd81c6-2076-5494-aa52-2be81a7a704f",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.3.9",
+      "title": "Providing copy of PII processed",
+      "description": "The organisation shall be able to provide a copy of the PII that is processed, when requested by the PII principal.",
+      "level": 2,
+      "parent_id": "d70a1061-c412-5642-9de6-c7edcc12714e",
+      "sort_order": 3200,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "95a3b23c-ac47-518c-85dc-a27a8cff75f0",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.3.10",
+      "title": "Handling requests",
+      "description": "The organisation shall define and document policies and procedures for handling and responding to legitimate requests from PII principals.",
+      "level": 2,
+      "parent_id": "d70a1061-c412-5642-9de6-c7edcc12714e",
+      "sort_order": 3300,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8651463f-53da-5068-8902-96efcaf424de",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.3.11",
+      "title": "Automated decision making",
+      "description": "The organisation shall identify obligations, including legal obligations, to the PII principals resulting from decisions made by the organisation which are related to the PII principal based solely on automated processing of PII, and be able to demonstrate how it addresses these obligations.",
+      "level": 2,
+      "parent_id": "d70a1061-c412-5642-9de6-c7edcc12714e",
+      "sort_order": 3400,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "79c004a7-e496-5235-b79d-6345cc51d154",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.4.2",
+      "title": "Limit collection",
+      "description": "The organisation shall limit the collection of PII to the minimum that is relevant, proportional and necessary for the identified purposes.",
+      "level": 2,
+      "parent_id": "68435f37-316a-599a-9ae4-63dcb7e0dd99",
+      "sort_order": 3500,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "82bcddd2-8601-5439-8f11-c9804476b9d2",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.4.3",
+      "title": "Limit processing",
+      "description": "The organisation shall limit the processing of PII to that which is adequate, relevant and necessary for the identified purposes.",
+      "level": 2,
+      "parent_id": "68435f37-316a-599a-9ae4-63dcb7e0dd99",
+      "sort_order": 3600,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "cae873f8-1c92-5089-bd2b-05b155d05754",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.4.4",
+      "title": "Accuracy and quality",
+      "description": "The organisation shall ensure and document that PII is as accurate, complete and up to date as necessary for the purposes for which it is processed, throughout the life cycle of the PII.",
+      "level": 2,
+      "parent_id": "68435f37-316a-599a-9ae4-63dcb7e0dd99",
+      "sort_order": 3700,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6458b86b-cf50-54c5-b572-c3636a7c9963",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.4.5",
+      "title": "PII minimisation objectives",
+      "description": "The organisation shall define and document data minimisation objectives and what mechanisms (such as de-identification) are used to meet those objectives.",
+      "level": 2,
+      "parent_id": "68435f37-316a-599a-9ae4-63dcb7e0dd99",
+      "sort_order": 3800,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bf8e619d-3585-56fc-85fe-5a0af34289bd",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.4.6",
+      "title": "PII de-identification and deletion at the end of processing",
+      "description": "The organisation shall either delete PII or render it in a form which does not permit identification or re-identification of PII principals, as soon as the original PII is no longer necessary for the identified purpose(s).",
+      "level": 2,
+      "parent_id": "68435f37-316a-599a-9ae4-63dcb7e0dd99",
+      "sort_order": 3900,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "23263c8f-f600-537e-9c93-33f60b569edc",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.4.7",
+      "title": "Temporary files",
+      "description": "The organisation shall ensure that temporary files created as a result of the processing of PII are disposed of (e.g. erased or destroyed) following documented procedures within a specified, documented period.",
+      "level": 2,
+      "parent_id": "68435f37-316a-599a-9ae4-63dcb7e0dd99",
+      "sort_order": 4000,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bf1cefa3-86cb-522d-bed6-58a6a414ef56",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.4.8",
+      "title": "Retention",
+      "description": "The organisation shall not retain PII for longer than is necessary for the purposes for which the PII is processed.",
+      "level": 2,
+      "parent_id": "68435f37-316a-599a-9ae4-63dcb7e0dd99",
+      "sort_order": 4100,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a9b21d38-61a5-59aa-992a-f4b530aa284c",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.4.9",
+      "title": "Disposal",
+      "description": "The organisation shall have documented policies, procedures or mechanisms for the disposal of PII.",
+      "level": 2,
+      "parent_id": "68435f37-316a-599a-9ae4-63dcb7e0dd99",
+      "sort_order": 4200,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "cc2499a5-65b0-57e9-8f5e-4cf38b278eb3",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.4.10",
+      "title": "PII transmission controls",
+      "description": "The organisation shall subject PII transmitted (e.g. sent to another organisation) over a data-transmission network to appropriate controls designed to ensure that the data reaches its intended destination.",
+      "level": 2,
+      "parent_id": "68435f37-316a-599a-9ae4-63dcb7e0dd99",
+      "sort_order": 4300,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "52577aa0-ae06-55fc-9a54-cd2d9854ddd3",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.5.2",
+      "title": "Identify basis for PII transfer between jurisdictions",
+      "description": "The organisation shall identify and document the relevant basis for transfers of PII between jurisdictions.",
+      "level": 2,
+      "parent_id": "ed11a7df-2902-5879-90c8-0023d4321814",
+      "sort_order": 4400,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7130cb2e-1334-5e2b-b485-b9e4f366b14a",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.5.3",
+      "title": "Countries and international organisations to which PII can be transferred",
+      "description": "The organisation shall specify and document the countries and international organisations to which PII can possibly be transferred.",
+      "level": 2,
+      "parent_id": "ed11a7df-2902-5879-90c8-0023d4321814",
+      "sort_order": 4500,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "63024f8a-79ad-56db-b5e2-507124e21070",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.5.4",
+      "title": "Records of transfer of PII",
+      "description": "The organisation shall record transfers of PII to or from third parties and ensure cooperation with those parties to support future requests related to obligations to the PII principals.",
+      "level": 2,
+      "parent_id": "ed11a7df-2902-5879-90c8-0023d4321814",
+      "sort_order": 4600,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6e74ca19-2795-57d2-aebc-6e3d3bace5b0",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.1.5.5",
+      "title": "Records of PII disclosures to third parties",
+      "description": "The organisation shall record disclosures of PII to third parties, including which PII has been disclosed, to whom and at what time.",
+      "level": 2,
+      "parent_id": "ed11a7df-2902-5879-90c8-0023d4321814",
+      "sort_order": 4700,
+      "metadata": {
+        "applies_to": "controller"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "abaccecd-3cd3-5514-954e-a84342e0c740",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.2",
+      "title": "Conditions for collection and processing",
+      "description": "To demonstrate that processing is lawful, with legal basis as per applicable jurisdictions, and with clearly defined and legitimate purposes.",
+      "level": 1,
+      "parent_id": "458cd22a-8ec1-524b-899e-47abee37459e",
+      "sort_order": 4800,
+      "metadata": {
+        "role": "objective_group"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "43ecb501-1c74-5fc3-a959-6a9ba7f4cf27",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.3",
+      "title": "Obligations to PII principals",
+      "description": "To ensure that PII principals are provided with the appropriate information about the processing of their PII, and to meet any other applicable obligations to PII principals related to the processing of their PII.",
+      "level": 1,
+      "parent_id": "458cd22a-8ec1-524b-899e-47abee37459e",
+      "sort_order": 4900,
+      "metadata": {
+        "role": "objective_group"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "147fde22-8489-56ac-9f32-9735abd0296d",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.4",
+      "title": "Privacy by design and privacy by default",
+      "description": "To ensure that processes and systems are designed such that the collection and processing of PII are limited to what is necessary for the identified purpose.",
+      "level": 1,
+      "parent_id": "458cd22a-8ec1-524b-899e-47abee37459e",
+      "sort_order": 5000,
+      "metadata": {
+        "role": "objective_group"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "826aa831-7bc0-51b2-b4ed-2b8e81fc6a2c",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.5",
+      "title": "PII sharing, transfer and disclosure",
+      "description": "To determine whether, and document when, PII is shared, transferred to other jurisdictions or third parties, or disclosed according to applicable obligations.",
+      "level": 1,
+      "parent_id": "458cd22a-8ec1-524b-899e-47abee37459e",
+      "sort_order": 5100,
+      "metadata": {
+        "role": "objective_group"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0bc1ee65-00f6-5403-b9dd-54ad69208046",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.2.2",
+      "title": "Customer agreement",
+      "description": "The organisation shall ensure, where relevant, that the contract to process PII addresses the organisation's role in providing assistance with the customer's obligations (taking into account the nature of processing and the information available to the organisation).",
+      "level": 2,
+      "parent_id": "abaccecd-3cd3-5514-954e-a84342e0c740",
+      "sort_order": 5200,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "382dd924-945e-554d-9b30-2a7ccfd8b88b",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.2.3",
+      "title": "Organisation's purposes",
+      "description": "The organisation shall ensure that PII processed on behalf of a customer are only processed for the purposes expressed in the documented instructions of the customer.",
+      "level": 2,
+      "parent_id": "abaccecd-3cd3-5514-954e-a84342e0c740",
+      "sort_order": 5300,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "744d5a2a-c900-5759-9fc9-f84e98ce3974",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.2.4",
+      "title": "Marketing and advertising use",
+      "description": "The organisation shall not use PII processed under a contract for the purposes of marketing and advertising without establishing that prior consent was obtained from the appropriate PII principal. The organisation shall not make providing such consent a condition for receiving the service.",
+      "level": 2,
+      "parent_id": "abaccecd-3cd3-5514-954e-a84342e0c740",
+      "sort_order": 5400,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d2358c31-1c8d-5d4b-8e7d-a630156a8a50",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.2.5",
+      "title": "Infringing instruction",
+      "description": "The organisation shall inform the customer if, in its opinion, a processing instruction infringes applicable legal requirements.",
+      "level": 2,
+      "parent_id": "abaccecd-3cd3-5514-954e-a84342e0c740",
+      "sort_order": 5500,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d3b0f39d-4e84-5f57-8e9b-baef1a6d053a",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.2.6",
+      "title": "Customer obligations",
+      "description": "The organisation shall provide the customer with the appropriate information such that the customer can demonstrate compliance with their obligations.",
+      "level": 2,
+      "parent_id": "abaccecd-3cd3-5514-954e-a84342e0c740",
+      "sort_order": 5600,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "65c09ccc-a27f-5ce6-927e-b2f2b2e29162",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.2.7",
+      "title": "Records related to processing PII",
+      "description": "The organisation shall determine and maintain the necessary records in support of demonstrating compliance with its obligations (as specified in the applicable contract) for the processing of PII carried out on behalf of a customer.",
+      "level": 2,
+      "parent_id": "abaccecd-3cd3-5514-954e-a84342e0c740",
+      "sort_order": 5700,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0351ffb0-a9a7-5812-868f-de9145950a13",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.3.2",
+      "title": "Comply with obligations to PII principals",
+      "description": "The organisation shall provide the customer with the means to comply with its obligations related to PII principals.",
+      "level": 2,
+      "parent_id": "43ecb501-1c74-5fc3-a959-6a9ba7f4cf27",
+      "sort_order": 5800,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fc51cfb4-bb3d-5ed0-897f-1ac3789f3a0f",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.4.2",
+      "title": "Temporary files",
+      "description": "The organisation shall ensure that temporary files created as a result of the processing of PII are disposed of (e.g. erased or destroyed) following documented procedures within a specified, documented period.",
+      "level": 2,
+      "parent_id": "147fde22-8489-56ac-9f32-9735abd0296d",
+      "sort_order": 5900,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1e1d5df4-ae0d-5e5b-b460-eccb2de5ab2b",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.4.3",
+      "title": "Return, transfer or disposal of PII",
+      "description": "The organisation shall be able to return, transfer or dispose of PII in a secure manner. It shall also make its policy available to the customer.",
+      "level": 2,
+      "parent_id": "147fde22-8489-56ac-9f32-9735abd0296d",
+      "sort_order": 6000,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b2ad312a-7f37-559f-aae3-390147496120",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.4.4",
+      "title": "PII transmission controls",
+      "description": "The organisation shall subject PII transmitted over a data-transmission network to appropriate controls, which are designed to ensure that the data reaches its intended destination.",
+      "level": 2,
+      "parent_id": "147fde22-8489-56ac-9f32-9735abd0296d",
+      "sort_order": 6100,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1896faa0-830a-518a-8fde-e6b648c5617a",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.5.2",
+      "title": "Basis for PII transfer between jurisdictions",
+      "description": "The organisation shall inform the customer in a timely manner of the basis for PII transfers between jurisdictions and of any intended changes in this regard, so that the customer can object to such changes or terminate the contract.",
+      "level": 2,
+      "parent_id": "826aa831-7bc0-51b2-b4ed-2b8e81fc6a2c",
+      "sort_order": 6200,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "04b58763-eeed-5687-bf3a-402e7cca1d08",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.5.3",
+      "title": "Countries and international organisations to which PII can be transferred",
+      "description": "The organisation shall specify and document the countries and international organisations to which PII can possibly be transferred.",
+      "level": 2,
+      "parent_id": "826aa831-7bc0-51b2-b4ed-2b8e81fc6a2c",
+      "sort_order": 6300,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fda560bc-2924-568b-896c-bc9ff24a7058",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.5.4",
+      "title": "Records of PII disclosures to third parties",
+      "description": "The organisation shall record disclosures of PII to third parties, including which PII has been disclosed, to whom and when.",
+      "level": 2,
+      "parent_id": "826aa831-7bc0-51b2-b4ed-2b8e81fc6a2c",
+      "sort_order": 6400,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8534630e-ee57-53f9-8b3b-4abe0c097476",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.5.5",
+      "title": "Notification of PII disclosure requests",
+      "description": "The organisation shall notify the customer of any legally binding requests for disclosure of PII.",
+      "level": 2,
+      "parent_id": "826aa831-7bc0-51b2-b4ed-2b8e81fc6a2c",
+      "sort_order": 6500,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2e5acf57-65d0-57bf-b2ed-751b9cc3e151",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.5.6",
+      "title": "Legally binding PII disclosures",
+      "description": "The organisation shall reject any requests for PII disclosures that are not legally binding, consult the corresponding customer before making any PII disclosures and accept any contractually agreed requests for PII disclosures that are authorised by the corresponding customer.",
+      "level": 2,
+      "parent_id": "826aa831-7bc0-51b2-b4ed-2b8e81fc6a2c",
+      "sort_order": 6600,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "50bc7dd8-3fe3-5dec-b5ac-9a67bdf7ed31",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.5.7",
+      "title": "Disclosure of subcontractors used to process PII",
+      "description": "Before use, the organisation shall disclose whether any subcontractors are used to process PII to the customer.",
+      "level": 2,
+      "parent_id": "826aa831-7bc0-51b2-b4ed-2b8e81fc6a2c",
+      "sort_order": 6700,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d72c982a-d9d4-5091-8189-246fb310bf23",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.5.8",
+      "title": "Engagement of a subcontractor to process PII",
+      "description": "The organisation shall only engage a subcontractor to process PII according to the customer contract.",
+      "level": 2,
+      "parent_id": "826aa831-7bc0-51b2-b4ed-2b8e81fc6a2c",
+      "sort_order": 6800,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "46a3a0b2-742e-54aa-853c-1f089660e2fd",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.2.5.9",
+      "title": "Change of subcontractor to process PII",
+      "description": "The organisation shall, in the case of having general written authorisation, inform the customer of any intended changes concerning the addition or replacement of subcontractors to process PII, thereby giving the customer the opportunity to object to such changes.",
+      "level": 2,
+      "parent_id": "826aa831-7bc0-51b2-b4ed-2b8e81fc6a2c",
+      "sort_order": 6900,
+      "metadata": {
+        "applies_to": "processor"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "46d0e2a0-9971-554c-83bb-457f0f1fa760",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.3",
+      "title": "Policies for information security",
+      "description": "Information security policies related to PII processing shall be defined, approved by management, published, communicated to and acknowledged by relevant personnel and relevant interested parties, and reviewed at planned intervals and if significant changes occur.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 7000,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.1"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9944157d-10db-5987-b6e5-aa2d75b0dd4b",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.4",
+      "title": "Information security roles and responsibilities",
+      "description": "Information security roles and responsibilities related to PII processing shall be defined and allocated according to the organisational needs.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 7100,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.2",
+          "5.4"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "93cfc339-7efa-5f72-b2cf-541801a0e9d2",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.5",
+      "title": "Classification of information",
+      "description": "Information shall be classified according to the information security needs of the organisation, taking into consideration PII, based on confidentiality, integrity, availability and relevant interested party requirements.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 7200,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.12"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0d8ba83c-a71e-50b0-b8ea-4d87536ae8ac",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.6",
+      "title": "Labelling of information",
+      "description": "An appropriate set of procedures for information labelling that considers PII shall be developed and implemented in accordance with the information classification scheme adopted by the organisation.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 7300,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.13"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f85db5d3-5961-5190-992f-15c0b76afd3d",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.7",
+      "title": "Information transfer",
+      "description": "Information transfer rules, procedures, or agreements related to processing PII shall be in place for all types of transfer facilities within the organisation and between the organisation and other parties.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 7400,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.14"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "317bd613-be82-5c1c-9744-ddcfddd7e57d",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.8",
+      "title": "Identity management",
+      "description": "The full life cycle of identities related to PII processing shall be managed.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 7500,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.16"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2974e776-f1dc-54a5-90e1-7b90df2f8fb3",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.9",
+      "title": "Access rights",
+      "description": "Access rights to PII and other associated assets related to PII processing shall be provisioned, reviewed, modified and removed in accordance with the organisation's topic-specific policy on and rules for access control.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 7600,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.18"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3507d6d2-ccfa-5a84-81b1-cbdcc5b3adb9",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.10",
+      "title": "Addressing information security within supplier agreements",
+      "description": "Relevant information security requirements related to PII processing shall be established and agreed with each supplier based on the type of supplier relationship.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 7700,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.20"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "e96fb8e7-4c5c-59bd-9a7b-4f6f7d02845a",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.11",
+      "title": "Information security incident management planning and preparation",
+      "description": "The organisation shall plan and prepare for managing information security incidents related to PII processing by defining, establishing and communicating incident management processes, roles and responsibilities.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 7800,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.24"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ceda6d97-be82-5f07-ab79-d76ade618ebe",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.12",
+      "title": "Response to information security incidents",
+      "description": "Responses to information security incidents related to PII processing shall be according to the documented procedures.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 7900,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.26"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6308d293-dec1-5d36-918e-c0a5a2692baf",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.13",
+      "title": "Legal, statutory, regulatory and contractual requirements",
+      "description": "Legal, statutory, regulatory and contractual requirements relevant to information security related to PII processing and the organisation's approach to meet these requirements shall be documented and this documentation kept up to date.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 8000,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.31"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2c817309-26bd-5a23-bf58-9dec43471a69",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.14",
+      "title": "Protection of records",
+      "description": "Records related to PII processing shall be protected from loss, destruction, falsification, unauthorised access and unauthorised release.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 8100,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.33"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "835a4dc4-4158-5cde-9f40-f95008b17c9b",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.15",
+      "title": "Independent review of information security",
+      "description": "The organisation's approach to managing information security related to PII processing and its implementation including people, processes and technologies shall be reviewed independently at planned intervals, or when significant changes occur.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 8200,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.35"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d289e55f-3e5e-5fe1-9837-4f05da05a7ac",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.16",
+      "title": "Compliance with policies, rules and standards for information security",
+      "description": "Compliance with the organisation's information security policy, topic-specific policies, rules and standards related to PII processing shall be regularly reviewed.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 8300,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "5.36"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1a46caed-75dc-5eec-bfe1-819b5ea610ac",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.17",
+      "title": "Information security awareness, education and training",
+      "description": "Personnel of the organisation and relevant interested parties shall receive appropriate information security awareness education and training, and regular updates of the organisation's information security policy, topic-specific policies and procedures, as relevant for their job function, as they relate to PII processing.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 8400,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "6.3"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a9298fda-16cd-515e-94de-4796e2c881d5",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.18",
+      "title": "Confidentiality or non-disclosure agreements",
+      "description": "Confidentiality or non-disclosure agreements reflecting the organisation's needs for the protection of PII shall be identified, documented, regularly reviewed and signed by personnel and other relevant interested parties.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 8500,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "6.6"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8319cab1-c612-5637-b5f6-7ee3d39386a2",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.19",
+      "title": "Clear desk and clear screen",
+      "description": "Clear desk rules for papers and removable storage media and clear screen rules for information processing facilities shall be defined and appropriately enforced.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 8600,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "7.7"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "84a7bee0-e674-5485-b142-d3db9f30ea18",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.20",
+      "title": "Storage media",
+      "description": "Storage media with PII shall be managed through its life cycle of acquisition, use, transportation and disposal in accordance with the organisation's classification scheme and handling requirements.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 8700,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "7.10"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3b61056c-5cb8-597d-beb8-95dc953e9245",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.21",
+      "title": "Secure disposal or re-use of equipment",
+      "description": "Items of equipment containing storage media with PII shall be verified to ensure that any sensitive data and licensed software has been removed or securely overwritten prior to disposal or re-use.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 8800,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "7.14"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5338945b-299d-5d26-b628-1ee97983f4d9",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.22",
+      "title": "User endpoint devices",
+      "description": "PII stored on, processed by or accessible via user endpoint devices shall be protected.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 8900,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "8.1"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c94f3c27-bc46-5054-9cb1-6ec9ae143f99",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.23",
+      "title": "Secure authentication",
+      "description": "Secure authentication technologies and procedures related to PII processing shall be implemented based on information access restrictions.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 9000,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "8.5"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "432d7ed2-20dd-5863-a149-48b743cad87f",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.24",
+      "title": "Information backup",
+      "description": "Backup copies of PII, and software and systems related to PII processing shall be maintained and regularly tested.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 9100,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "8.13"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "91d2f922-63ee-5eee-b480-1b95b492084e",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.25",
+      "title": "Logging",
+      "description": "Logs that record activities, exceptions, faults and other relevant events related to PII processing shall be produced, stored, protected and analysed.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 9200,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "8.15"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "56371472-c09a-57d4-8df2-01f7bdff611c",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.26",
+      "title": "Use of cryptography",
+      "description": "Rules for the effective use of cryptography related to PII processing, including cryptographic key management, shall be defined and implemented.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 9300,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "8.24"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "600ce10a-dea7-5911-8bae-b34714d80fcd",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.27",
+      "title": "Secure development life cycle",
+      "description": "Rules for the secure development of software and systems related to PII processing shall be established and applied.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 9400,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "8.25"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2577695f-b2ad-558f-9931-1f783a914501",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.28",
+      "title": "Application security requirements",
+      "description": "Information security requirements related to PII processing shall be identified, specified and approved when developing or acquiring applications.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 9500,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "8.26"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "cba57b31-d5f3-52d6-b991-f9f7a5e14600",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.29",
+      "title": "Secure system architecture and engineering principles",
+      "description": "Principles for engineering secure systems related to processing PII shall be established, documented, maintained and applied to any information system development activities.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 9600,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "8.27"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c437714e-4c59-5bb4-b1f3-a8449cea3c46",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.30",
+      "title": "Outsourced development",
+      "description": "The organisation shall direct, monitor and review the activities related to outsourced PII processing system development.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 9700,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "8.30"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8c830cc5-32ba-523d-b9ab-30b8686bfca1",
+      "framework_id": "50aabf3b-a713-525a-b7f7-2e4a6a06b3f0",
+      "control_id": "A.3.31",
+      "title": "Test information",
+      "description": "Test information related to PII processing shall be appropriately selected, protected and managed.",
+      "level": 1,
+      "parent_id": "2101f511-88e1-57b4-8d18-fa3a6030cd17",
+      "sort_order": 9800,
+      "metadata": {
+        "applies_to": "both",
+        "maps_to_iso27002_2022": [
+          "8.33"
+        ]
+      }
+    }
+  ],
+  "relationships": []
+}

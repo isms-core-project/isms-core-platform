@@ -46,7 +46,7 @@ The Platform expects ISMS CORE content repositories to sit **alongside** the pla
 ```
 /your/base/directory/
 ├── factory_isms/                    ← this repository (content + platform)
-│   ├── platform/                    ← Platform source (docker-compose.yml lives here)
+│   ├── isms-core-platform/                    ← Platform source (docker-compose.yml lives here)
 │   ├── isms-core-framework/         ← FRAMEWORK content (mounted read-only)
 │   ├── isms-core-operational/       ← OPERATIONAL content (mounted read-only)
 │   ├── isms-core-privacy/           ← PRIVACY content — ISO 27701:2025 (mounted read-only)
@@ -69,10 +69,10 @@ cd factory_isms
 ### Step 2 — Create your `.env` file
 
 ```bash
-cp platform/.env.example platform/.env
+cp isms-core-isms-core-platform/.env.example isms-core-platform/.env
 ```
 
-Edit `platform/.env` and set the three required secrets:
+Edit `isms-core-platform/.env` and set the three required secrets:
 
 ```dotenv
 # Required — change all three before running
@@ -94,7 +94,7 @@ ANTHROPIC_API_KEY=
 ### Step 3 — Start the stack
 
 ```bash
-cd platform
+cd isms-core-platform
 docker compose up -d
 ```
 

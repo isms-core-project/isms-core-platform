@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Import Completed — ISMS CORE{% endblock %}
+
+{% block content %}
+<h2>Data Import Completed</h2>
+<p>Hi {% if full_name %}{{ full_name }}{% else %}{{ email }}{% endif %},</p>
+<p>An ISMS CORE data import has completed{% if errors %} with errors{% else %} successfully{% endif %}.</p>
+
+<div class="callout">
+  <p class="label">Import summary</p>
+  <p>
+    <strong>Type:</strong> {{ import_type }}<br>
+    <strong>Completed:</strong> {{ completed_at }}<br>
+    <strong>Status:</strong>
+    {% if errors %}<span class="badge badge-red">Completed with errors</span>
+    {% else %}<span class="badge badge-green">Success</span>{% endif %}
+  </p>
+</div>
+
+{% if stats %}
+<div class="table-wrap">
+  <table class="data-table">
+    <thead>
+      <tr><th>Item</th><th>Count</th></tr>
+    </thead>
+    <tbody>
+      {% for key, val in stats.items() %}
+      <tr><td>{{ key | replace('_', ' ') | title }}</td><td>{{ val }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+{% if errors %}
+<p><strong>Errors encountered:</strong></p>
+<ul style="font-size:13px; color:#C00000; padding-left:20px;">
+  {% for e in errors[:10] %}
+  <li>{{ e }}</li>
+  {% endfor %}
+  {% if errors | length > 10 %}
+  <li style="color:#888; font-style:italic;">… and {{ errors | length - 10 }} more</li>
+  {% endif %}
+</ul>
+{% endif %}
+
+<p>
+  <a href="{{ system_url }}" class="btn">View System Status</a>
+</p>
+{% endblock %}

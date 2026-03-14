@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}ISMS CORE{% endblock %}</title>
+  <style>
+    body { margin: 0; padding: 0; background-color: #f4f4f4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .wrapper { max-width: 600px; margin: 32px auto; background: #ffffff; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    .header { background-color: #003366; padding: 24px 32px; }
+    .header-title { color: #ffffff; font-size: 18px; font-weight: 700; margin: 0; letter-spacing: 0.5px; }
+    .header-subtitle { color: #9DC3E6; font-size: 12px; margin: 4px 0 0; }
+    .body { padding: 32px; color: #1a1a2e; }
+    .body h2 { font-size: 20px; font-weight: 600; margin: 0 0 16px; color: #003366; }
+    .body p { font-size: 14px; line-height: 1.6; margin: 0 0 12px; color: #444; }
+    .callout { background: #f0f5ff; border-left: 4px solid #4472C4; border-radius: 4px; padding: 14px 18px; margin: 20px 0; }
+    .callout p { margin: 0; font-size: 14px; color: #333; }
+    .callout .label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #4472C4; margin-bottom: 4px; }
+    .btn { display: inline-block; background-color: #4472C4; color: #ffffff !important; text-decoration: none; padding: 10px 22px; border-radius: 4px; font-size: 14px; font-weight: 600; margin-top: 8px; }
+    .btn-warning { background-color: #C00000; }
+    .table-wrap { margin: 20px 0; }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .data-table th { background: #f0f5ff; color: #003366; font-weight: 600; padding: 8px 12px; text-align: left; border-bottom: 2px solid #dde6f5; }
+    .data-table td { padding: 8px 12px; border-bottom: 1px solid #eee; color: #444; vertical-align: top; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+    .badge-red    { background: #FFC7CE; color: #C00000; }
+    .badge-amber  { background: #FFEB9C; color: #9C6500; }
+    .badge-green  { background: #C6EFCE; color: #276221; }
+    .badge-blue   { background: #9DC3E6; color: #003366; }
+    .footer { background: #f9f9f9; border-top: 1px solid #eee; padding: 20px 32px; }
+    .footer p { font-size: 11px; color: #888; margin: 0 0 4px; line-height: 1.5; }
+    .footer a { color: #4472C4; text-decoration: none; }
+    .disclaimer { font-size: 11px; color: #aaa; margin-top: 16px; padding-top: 12px; border-top: 1px solid #eee; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <p class="header-title">ISMS CORE</p>
+      <p class="header-subtitle">ISO 27001:2022 Information Security Management</p>
+    </div>
+    <div class="body">
+      {% block content %}{% endblock %}
+    </div>
+    <div class="footer">
+      <p>This is an automated notification from <strong>ISMS CORE</strong>.</p>
+      <p>Do not reply to this email — it is sent from an unmonitored address.</p>
+      {% block footer_extra %}{% endblock %}
+      <p class="disclaimer">
+        You are receiving this email because you are registered as an ISMS CORE user.
+        To manage notification preferences, contact your ISMS administrator.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

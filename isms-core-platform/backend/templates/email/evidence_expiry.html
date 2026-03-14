@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Evidence {% if expired %}Expired{% else %}Expiring Soon{% endif %} — ISMS CORE{% endblock %}
+
+{% block content %}
+<h2>Evidence {% if expired %}Has Expired{% else %}Expiring Soon{% endif %}</h2>
+<p>Hi {% if full_name %}{{ full_name }}{% else %}{{ email }}{% endif %},</p>
+
+{% if expired %}
+<p>The following evidence item has <strong>expired</strong> and may affect your compliance posture. Please review and renew it as soon as possible.</p>
+{% else %}
+<p>The following evidence item is expiring in <strong>{{ days_remaining }} day{% if days_remaining != 1 %}s{% endif %}</strong>. Please review and renew it before the expiry date.</p>
+{% endif %}
+
+<div class="callout">
+  <p class="label">Evidence details</p>
+  <p>
+    <strong>Title:</strong> {{ evidence_title }}<br>
+    <strong>Control:</strong> {{ control_ref }} — {{ control_name }}<br>
+    <strong>Expiry date:</strong> {{ expiry_date }}
+    {% if expired %}
+    &nbsp;<span class="badge badge-red">Expired</span>
+    {% elif days_remaining <= 7 %}
+    &nbsp;<span class="badge badge-red">{{ days_remaining }} days left</span>
+    {% else %}
+    &nbsp;<span class="badge badge-amber">{{ days_remaining }} days left</span>
+    {% endif %}
+    <br>
+    {% if owner %}<strong>Evidence owner:</strong> {{ owner }}{% endif %}
+  </p>
+</div>
+
+<p>
+  <a href="{{ evidence_url }}" class="btn{% if expired %} btn-warning{% endif %}">Review Evidence</a>
+</p>
+{% endblock %}

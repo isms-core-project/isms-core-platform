@@ -1,0 +1,22 @@
+# Environment — never commit secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Docker build cache
+*.log
+
+# Uploads (user-uploaded evidence files)
+backend/uploads/
+
+# macOS
+.DS_Store

@@ -1,0 +1,173 @@
+{
+  "bundle_id": "bundle--ebe84ab5-8007-5ab2-982e-6036d7831f5a",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+    "code": "NIS2",
+    "name": "NIS2 Directive (EU 2022/2555)",
+    "version": "2022/2555",
+    "publisher": "European Union",
+    "source_url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj/eng",
+    "jurisdiction": "EU",
+    "description": "NIS2 Directive (EU 2022/2555)"
+  },
+  "generated_at": "2026-03-07T09:32:16Z",
+  "generator": "generate_regulatory.py",
+  "content_hash": "860089976ba7f8cf6665f9f0cd812be6fec562d5a84c16ba7c18d983325ebba2",
+  "objects_count": 15,
+  "relationships_count": 0,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "c8dc85c9-9a19-5f4b-996f-2c9a91d6ec41",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 21(2)(a)",
+      "title": "Risk analysis and information system security",
+      "description": "Entities must establish and maintain risk management frameworks, perform and document risk assessments, and implement risk treatment plans.",
+      "level": 0,
+      "sort_order": 100
+    },
+    {
+      "type": "framework_control",
+      "id": "6e247987-f1bc-5143-8a9a-35888355746a",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 21(2)(b)",
+      "title": "Incident handling",
+      "description": "Establish and implement incident handling policies defining roles, responsibilities, and procedures for detecting, analysing, containing, responding to, and recovering from incidents.",
+      "level": 0,
+      "sort_order": 200
+    },
+    {
+      "type": "framework_control",
+      "id": "76d14ac6-b406-534d-818b-b3339141df4a",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 21(2)(c)",
+      "title": "Business continuity and crisis management",
+      "description": "Backup management, disaster recovery, and crisis management procedures to ensure continuity of operations.",
+      "level": 0,
+      "sort_order": 300
+    },
+    {
+      "type": "framework_control",
+      "id": "cbc89fdf-f8ae-5620-94dc-456917bdd0d6",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 21(2)(d)",
+      "title": "Supply chain security",
+      "description": "Security-related aspects of relationships with direct suppliers or service providers, including supply chain risk assessment.",
+      "level": 0,
+      "sort_order": 400
+    },
+    {
+      "type": "framework_control",
+      "id": "3e404b80-3214-5c80-b608-db62a6ac69f6",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 21(2)(e)",
+      "title": "Security in acquisition, development and maintenance",
+      "description": "Security in network and information systems acquisition, development, and maintenance, including vulnerability handling and disclosure.",
+      "level": 0,
+      "sort_order": 500
+    },
+    {
+      "type": "framework_control",
+      "id": "f46e9cbf-8b64-575b-a079-f012cbb25a04",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 21(2)(f)",
+      "title": "Effectiveness assessment",
+      "description": "Policies and procedures to assess effectiveness of cybersecurity risk-management measures through audits, testing, and evaluation.",
+      "level": 0,
+      "sort_order": 600
+    },
+    {
+      "type": "framework_control",
+      "id": "3a9e4077-6678-5a47-828c-0be66341221d",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 21(2)(g)",
+      "title": "Basic cyber hygiene and training",
+      "description": "Basic cyber hygiene practices and cybersecurity training for personnel.",
+      "level": 0,
+      "sort_order": 700
+    },
+    {
+      "type": "framework_control",
+      "id": "0f4b1897-c1dd-57d4-bcec-5f2c31d2cc84",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 21(2)(h)",
+      "title": "Cryptography and encryption",
+      "description": "Policies and procedures regarding use of cryptography and encryption to protect data confidentiality and integrity.",
+      "level": 0,
+      "sort_order": 800
+    },
+    {
+      "type": "framework_control",
+      "id": "c83e175b-7e7a-5a5e-87e0-508501fb813c",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 21(2)(i)",
+      "title": "HR security, access control and asset management",
+      "description": "Human resources security, access control policies, and asset management to restrict and monitor access to systems and data.",
+      "level": 0,
+      "sort_order": 900
+    },
+    {
+      "type": "framework_control",
+      "id": "79140266-680f-5373-a4f8-6b86241182bb",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 21(2)(j)",
+      "title": "MFA and secured communications",
+      "description": "Multi-factor authentication or continuous authentication, secured voice/video/text communications, and secured emergency communication systems.",
+      "level": 0,
+      "sort_order": 1000
+    },
+    {
+      "type": "framework_control",
+      "id": "e8355a42-5b11-5079-92cd-f10c0781068c",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 23",
+      "title": "Reporting obligations",
+      "description": "Essential and important entities shall notify the CSIRT or competent authority of any significant incident. Reporting follows a phased timeline: early warning, incident notification, intermediate report, and final report.",
+      "level": 0,
+      "sort_order": 1100
+    },
+    {
+      "type": "framework_control",
+      "id": "5a70b68c-6c77-53af-a4b7-0549b7d2ee52",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 23-EW",
+      "title": "Reporting — Early warning",
+      "description": "Within 24 hours of becoming aware of a significant incident. Must indicate if suspected unlawful/malicious cause and cross-border impact.",
+      "level": 0,
+      "sort_order": 1200
+    },
+    {
+      "type": "framework_control",
+      "id": "5a432dc5-83ce-51ef-af07-05d5f6a93489",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 23-IN",
+      "title": "Reporting — Incident notification",
+      "description": "Within 72 hours: update with initial assessment including severity, impact, and indicators of compromise.",
+      "level": 0,
+      "sort_order": 1300
+    },
+    {
+      "type": "framework_control",
+      "id": "3d3011e8-3b49-5557-a6dc-9645c9c4a624",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 23-IR",
+      "title": "Reporting — Intermediate report",
+      "description": "Additional updates on status and handling as requested by CSIRT or competent authority.",
+      "level": 0,
+      "sort_order": 1400
+    },
+    {
+      "type": "framework_control",
+      "id": "8067a14a-fc6d-5fa4-b9b4-3d1809d4a185",
+      "framework_id": "439a76fb-6751-5290-bbd6-9b59767d16ea",
+      "control_id": "Art. 23-FR",
+      "title": "Reporting — Final report",
+      "description": "Within 1 month: detailed description, root cause, mitigation measures, and cross-border impact. Progress report if incident ongoing.",
+      "level": 0,
+      "sort_order": 1500
+    }
+  ],
+  "relationships": []
+}

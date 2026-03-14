@@ -1,0 +1,1304 @@
+{
+  "bundle_id": "bundle--0da66251-11b2-5cac-baf1-1cf543a956a1",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "2.0",
+  "framework": {
+    "id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+    "code": "ISO27018",
+    "name": "ISO/IEC 27018:2025 — PII Protection in Public Cloud",
+    "version": "2025",
+    "publisher": "ISO/IEC",
+    "source_url": "https://www.iso.org/standard/27018",
+    "jurisdiction": null,
+    "description": "Code of practice for protection of personally identifiable information (PII) in public clouds acting as PII processors. Third edition (2025-08). Main body (clauses 5–8) mirrors ISO/IEC 27002:2022 structure with cloud PII guidance overlaid. Annex A (informative in 2025 edition — was normative in 2019) provides an extended control set of 25 controls across 12 privacy themes. Strongly aligned with GDPR, CCPA, and ISO/IEC 27002:2022."
+  },
+  "generated_at": "2026-03-08T00:00:00Z",
+  "generator": "generate_regulatory.py",
+  "content_hash": "iso27018_2025_ed3_v2_actual_toc",
+  "objects_count": 39,
+  "relationships_count": 38,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A",
+      "title": "Annex A (informative) — Public cloud PII processor extended control set for PII protection",
+      "description": "Extended control set for public cloud service providers acting as PII processors on behalf of PII controllers. NOTE: In ISO/IEC 27018:2025 (third edition), Annex A status changed from normative to informative. Controls extend and supplement ISO/IEC 27002:2022 with PII-specific requirements for cloud environments. 25 controls across 12 privacy themes (A.2–A.12); A.4, A.7, and A.9 have no additional controls beyond the main body.",
+      "level": 0,
+      "sort_order": 10000
+    },
+    {
+      "type": "framework_control",
+      "id": "a27018a1-0001-0001-0001-000000000001",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.1",
+      "title": "General",
+      "description": "General principles and scope for the extended PII control set. Establishes that these controls apply to public cloud service providers acting as PII processors. Processors shall implement all applicable controls and document how they address each requirement in their service agreements with PII controllers.",
+      "level": 1,
+      "sort_order": 100,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 28"
+        ],
+        "keywords": [
+          "PII processor",
+          "public cloud",
+          "processor obligations",
+          "general principles",
+          "scope"
+        ]
+      },
+      "parent_id": "b9847b60-84c9-566f-9188-c56e46516794"
+    },
+    {
+      "type": "framework_control",
+      "id": "be15f867-cdc9-5926-80ac-0f92f406ff4b",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.2",
+      "title": "Consent and choice",
+      "description": "The public cloud PII processor shall not process PII for any purpose other than the documented instructions of the PII controller, unless required by applicable law. The processor shall not use PII for marketing, advertising, or profiling without explicit authorisation from the PII controller.",
+      "level": 1,
+      "sort_order": 200,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 6",
+          "Art. 7",
+          "Art. 28"
+        ],
+        "keywords": [
+          "consent",
+          "PII processing",
+          "controller instructions",
+          "marketing prohibition",
+          "purpose limitation"
+        ]
+      },
+      "parent_id": "b9847b60-84c9-566f-9188-c56e46516794"
+    },
+    {
+      "type": "framework_control",
+      "id": "a27018a2-0001-0001-0001-000000000001",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.2.1",
+      "title": "Obligation to co-operate regarding PII principals' rights",
+      "description": "The public cloud PII processor shall co-operate with the PII controller to enable the controller to fulfil data subject rights requests, including access, rectification, erasure, restriction, portability, and objection. The processor shall implement technical capabilities to support these obligations and respond to controller requests within timeframes enabling statutory compliance.",
+      "level": 2,
+      "sort_order": 201,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 15",
+          "Art. 16",
+          "Art. 17",
+          "Art. 18",
+          "Art. 20",
+          "Art. 21",
+          "Art. 28(3)(e)"
+        ],
+        "keywords": [
+          "data subject rights",
+          "DSAR",
+          "right to access",
+          "right to erasure",
+          "right to portability",
+          "cooperation",
+          "PII principal"
+        ]
+      },
+      "parent_id": "be15f867-cdc9-5926-80ac-0f92f406ff4b"
+    },
+    {
+      "type": "framework_control",
+      "id": "d595dea8-ea75-5732-ada4-ff3070a2b65d",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.3",
+      "title": "Purpose legitimacy and specification",
+      "description": "The cloud service provider shall process PII only for the purposes specified in the contract with the PII controller. Any proposed new processing purpose shall be documented and approved by the PII controller prior to implementation.",
+      "level": 1,
+      "sort_order": 300,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 5(1)(b)",
+          "Art. 28(3)"
+        ],
+        "keywords": [
+          "purpose specification",
+          "purpose limitation",
+          "processing purpose",
+          "PII processor",
+          "contractual basis"
+        ]
+      },
+      "parent_id": "b9847b60-84c9-566f-9188-c56e46516794"
+    },
+    {
+      "type": "framework_control",
+      "id": "a27018a3-0001-0001-0001-000000000001",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.3.1",
+      "title": "Public cloud PII processor's purpose",
+      "description": "The public cloud PII processor shall process PII only for the documented purposes agreed with the PII controller. Processing for other purposes — including the processor's own operational, analytical, or commercial purposes — is prohibited unless explicitly authorised in writing by the PII controller.",
+      "level": 2,
+      "sort_order": 301,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 5(1)(b)",
+          "Art. 28(3)(a)"
+        ],
+        "keywords": [
+          "processing purpose",
+          "processor purpose",
+          "purpose limitation",
+          "authorised processing"
+        ]
+      },
+      "parent_id": "d595dea8-ea75-5732-ada4-ff3070a2b65d"
+    },
+    {
+      "type": "framework_control",
+      "id": "a27018a3-0002-0001-0001-000000000002",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.3.2",
+      "title": "Public cloud PII processor's commercial use",
+      "description": "The public cloud PII processor shall not use PII processed on behalf of the PII controller for its own commercial purposes, including advertising, profiling, sale of data, or product improvement, without the explicit prior written consent of the PII controller. Any such commercial use shall be disclosed in the service agreement.",
+      "level": 2,
+      "sort_order": 302,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 5(1)(b)",
+          "Art. 28(3)(a)"
+        ],
+        "keywords": [
+          "commercial use",
+          "data monetisation",
+          "profiling prohibition",
+          "advertising prohibition",
+          "secondary use"
+        ]
+      },
+      "parent_id": "d595dea8-ea75-5732-ada4-ff3070a2b65d"
+    },
+    {
+      "type": "framework_control",
+      "id": "aa0dee70-05e8-5c1d-b38e-4f529f27b907",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.4",
+      "title": "Collection limitation",
+      "description": "The cloud service provider shall collect only the minimum PII necessary to fulfil the contracted service. Collection practices shall be documented and reviewed. Excess PII collected during service provision shall be promptly deleted or returned to the PII controller.",
+      "level": 1,
+      "sort_order": 400,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 5(1)(c)"
+        ],
+        "keywords": [
+          "data minimisation",
+          "collection limitation",
+          "minimum necessary",
+          "PII collection",
+          "excess data"
+        ],
+        "coverage_note": "Controller-side obligation only. A.4 Collection limitation maps to PII controller responsibilities (ISO 27701 A.1.4.2, A.1.4.5). There is no direct processor-side equivalent in ISO 27701 — processors collect PII only as directed by the controller under A.2/A.3. UI should note: 'applies to PII controllers; no direct 27701 processor mapping'."
+      },
+      "parent_id": "b9847b60-84c9-566f-9188-c56e46516794"
+    },
+    {
+      "type": "framework_control",
+      "id": "549519ce-88d2-566f-bc3d-f0c6287a276e",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.5",
+      "title": "Data minimization",
+      "description": "The cloud service provider shall anonymise, pseudonymise, or aggregate PII where full identification is not required for the processing purpose. Anonymisation and pseudonymisation techniques shall be documented and reviewed for effectiveness.",
+      "level": 1,
+      "sort_order": 500,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34",
+          "A.8.10"
+        ],
+        "gdpr_ref": [
+          "Art. 5(1)(c)",
+          "Art. 25"
+        ],
+        "keywords": [
+          "anonymisation",
+          "pseudonymisation",
+          "data minimisation",
+          "de-identification",
+          "aggregation"
+        ]
+      },
+      "parent_id": "b9847b60-84c9-566f-9188-c56e46516794"
+    },
+    {
+      "type": "framework_control",
+      "id": "a27018a5-0001-0001-0001-000000000001",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.5.1",
+      "title": "Secure erasure of temporary files",
+      "description": "The public cloud PII processor shall ensure that temporary files containing PII — including cache files, swap files, work files, and log files generated during processing — are securely erased after the processing operation is complete. Erasure shall be performed using methods that prevent recovery. Procedures shall cover both persistent and ephemeral storage used during processing.",
+      "level": 2,
+      "sort_order": 501,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.8.10"
+        ],
+        "gdpr_ref": [
+          "Art. 5(1)(c)",
+          "Art. 25"
+        ],
+        "keywords": [
+          "temporary files",
+          "secure erasure",
+          "cache",
+          "log files",
+          "ephemeral storage",
+          "data minimisation"
+        ]
+      },
+      "parent_id": "549519ce-88d2-566f-bc3d-f0c6287a276e"
+    },
+    {
+      "type": "framework_control",
+      "id": "517790b7-f3f0-5ae7-b18a-f5c48b05ceaa",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.6",
+      "title": "Use, retention and disclosure limitation",
+      "description": "PII shall be retained only for as long as necessary for the specified purpose. Retention schedules shall be documented and enforced. PII shall be disclosed only to authorised parties. Third-party disclosures shall be documented and restricted to the minimum necessary.",
+      "level": 1,
+      "sort_order": 600,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.33",
+          "A.5.34",
+          "A.8.10"
+        ],
+        "gdpr_ref": [
+          "Art. 5(1)(e)",
+          "Art. 13",
+          "Art. 14"
+        ],
+        "keywords": [
+          "retention",
+          "data retention",
+          "disclosure limitation",
+          "third party disclosure",
+          "retention schedule"
+        ]
+      },
+      "parent_id": "b9847b60-84c9-566f-9188-c56e46516794"
+    },
+    {
+      "type": "framework_control",
+      "id": "a27018a6-0001-0001-0001-000000000001",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.6.1",
+      "title": "PII disclosure notification",
+      "description": "Where the public cloud PII processor is legally compelled to disclose PII to a third party (e.g. law enforcement, regulatory authority), the processor shall notify the PII controller of this requirement prior to disclosure unless prohibited by law. Where prior notification is prohibited, the processor shall notify the controller at the earliest opportunity after the legal prohibition lapses.",
+      "level": 2,
+      "sort_order": 601,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.31",
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 28(3)(a)"
+        ],
+        "keywords": [
+          "disclosure notification",
+          "law enforcement",
+          "compelled disclosure",
+          "government request",
+          "legal order",
+          "controller notification"
+        ]
+      },
+      "parent_id": "517790b7-f3f0-5ae7-b18a-f5c48b05ceaa"
+    },
+    {
+      "type": "framework_control",
+      "id": "a27018a6-0002-0001-0001-000000000002",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.6.2",
+      "title": "Recording of PII disclosures",
+      "description": "The public cloud PII processor shall maintain records of all disclosures of PII to third parties, including: the recipient, date, categories of PII disclosed, legal basis for disclosure, and whether the PII controller was notified. These records shall be made available to the PII controller on request and retained for a period sufficient to demonstrate compliance.",
+      "level": 2,
+      "sort_order": 602,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34",
+          "A.5.36"
+        ],
+        "gdpr_ref": [
+          "Art. 30"
+        ],
+        "keywords": [
+          "disclosure records",
+          "PII disclosure log",
+          "third party disclosure",
+          "records of processing",
+          "audit trail"
+        ]
+      },
+      "parent_id": "517790b7-f3f0-5ae7-b18a-f5c48b05ceaa"
+    },
+    {
+      "type": "framework_control",
+      "id": "f80a07b3-312b-5790-a8d9-66fb586ace4b",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.7",
+      "title": "Accuracy and quality",
+      "description": "The cloud service provider shall implement controls to maintain the accuracy and completeness of PII. Mechanisms shall be provided to allow the PII controller to correct, update, or delete inaccurate PII. Quality checks shall be performed on PII stored or processed.",
+      "level": 1,
+      "sort_order": 700,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 5(1)(d)",
+          "Art. 16"
+        ],
+        "keywords": [
+          "data accuracy",
+          "data quality",
+          "rectification",
+          "data correction",
+          "PII quality"
+        ]
+      },
+      "parent_id": "b9847b60-84c9-566f-9188-c56e46516794"
+    },
+    {
+      "type": "framework_control",
+      "id": "9629bb33-abbd-54a1-b66e-28c3ab880d21",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.8",
+      "title": "Openness, transparency and notice",
+      "description": "The cloud service provider shall make available to the PII controller information about the geographic location of data processing, applicable sub-processors, and any changes to processing arrangements. Privacy notices shall be maintained and kept current.",
+      "level": 1,
+      "sort_order": 800,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 13",
+          "Art. 14",
+          "Art. 30"
+        ],
+        "keywords": [
+          "transparency",
+          "data location",
+          "sub-processors",
+          "privacy notice",
+          "processing registry"
+        ]
+      },
+      "parent_id": "b9847b60-84c9-566f-9188-c56e46516794"
+    },
+    {
+      "type": "framework_control",
+      "id": "a27018a8-0001-0001-0001-000000000001",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.8.1",
+      "title": "Disclosure of sub-contracted PII processing",
+      "description": "The public cloud PII processor shall disclose to the PII controller the identity of all sub-processors engaged to process PII on the processor's behalf, and shall provide advance notice of any intended changes to sub-processor arrangements (additions or replacements). The controller shall have the opportunity to object to such changes.",
+      "level": 2,
+      "sort_order": 801,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.19",
+          "A.5.21"
+        ],
+        "gdpr_ref": [
+          "Art. 28(2)"
+        ],
+        "keywords": [
+          "sub-processor disclosure",
+          "sub-processor list",
+          "processor chain",
+          "vendor transparency",
+          "sub-contracting notification"
+        ]
+      },
+      "parent_id": "9629bb33-abbd-54a1-b66e-28c3ab880d21"
+    },
+    {
+      "type": "framework_control",
+      "id": "1ad25121-6204-5ba4-a1a3-00584f096dfd",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.9",
+      "title": "Individual participation and access",
+      "description": "The cloud service provider shall provide mechanisms to the PII controller to support fulfilment of data subject access requests (DSAR). Response capabilities shall be tested and documented. The provider shall assist the controller in responding to DSARs within statutory timeframes.",
+      "level": 1,
+      "sort_order": 900,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 15",
+          "Art. 17",
+          "Art. 20",
+          "Art. 28"
+        ],
+        "keywords": [
+          "DSAR",
+          "data subject access",
+          "right of access",
+          "right to erasure",
+          "portability",
+          "individual rights"
+        ]
+      },
+      "parent_id": "b9847b60-84c9-566f-9188-c56e46516794"
+    },
+    {
+      "type": "framework_control",
+      "id": "74e5b126-5b73-562a-88d9-703faf8e59f6",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.10",
+      "title": "Accountability",
+      "description": "The cloud service provider shall maintain records of all PII processing activities including categories of PII, purposes, recipients, retention periods, and security measures. These records shall be made available to the PII controller and competent supervisory authorities upon request.",
+      "level": 1,
+      "sort_order": 1000,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34",
+          "A.5.36"
+        ],
+        "gdpr_ref": [
+          "Art. 30",
+          "Art. 28(3)"
+        ],
+        "keywords": [
+          "accountability",
+          "records of processing",
+          "RoPA",
+          "audit trail",
+          "processing records"
+        ]
+      },
+      "parent_id": "b9847b60-84c9-566f-9188-c56e46516794"
+    },
+    {
+      "type": "framework_control",
+      "id": "eb8fa368-0777-54e7-814c-37f45e182262",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.10.1",
+      "title": "Notification of a data breach involving PII",
+      "description": "The public cloud PII processor shall notify the PII controller of confirmed or suspected PII security incidents without undue delay, and within a timeframe enabling the controller to fulfil any regulatory breach notification obligations (e.g. 72-hour GDPR notification). Notifications shall include the nature of the breach, categories and approximate number of data subjects affected, categories of PII concerned, likely consequences, and measures taken or proposed.",
+      "level": 2,
+      "sort_order": 1001,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.24",
+          "A.5.25",
+          "A.5.26"
+        ],
+        "gdpr_ref": [
+          "Art. 33",
+          "Art. 34"
+        ],
+        "keywords": [
+          "breach notification",
+          "PII breach",
+          "personal data breach",
+          "72 hours",
+          "incident notification",
+          "supervisory authority"
+        ]
+      },
+      "parent_id": "74e5b126-5b73-562a-88d9-703faf8e59f6"
+    },
+    {
+      "type": "framework_control",
+      "id": "17ad51b4-0c34-503e-b99c-15d02d2e5e39",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.10.2",
+      "title": "Retention period for administrative security policies and guidelines",
+      "description": "The public cloud PII processor shall retain administrative security policies, guidelines, and related PII processing documentation for a period sufficient to demonstrate compliance with applicable obligations. Minimum retention periods shall be defined. Version history of policies shall be maintained to support retrospective audit and incident investigation.",
+      "level": 2,
+      "sort_order": 1002,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34",
+          "A.5.36"
+        ],
+        "gdpr_ref": [
+          "Art. 30",
+          "Art. 5(2)"
+        ],
+        "keywords": [
+          "policy retention",
+          "documentation retention",
+          "record keeping",
+          "audit documentation",
+          "policy lifecycle"
+        ]
+      },
+      "parent_id": "74e5b126-5b73-562a-88d9-703faf8e59f6"
+    },
+    {
+      "type": "framework_control",
+      "id": "95ca395f-36ce-5b6a-ad45-bf14ac731e7f",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.10.3",
+      "title": "PII return, transfer and disposal",
+      "description": "Upon termination of the service agreement, the public cloud PII processor shall return all PII to the PII controller in a documented, machine-readable format, or securely dispose of it as instructed. Where disposal is chosen, certification of secure destruction shall be provided. Copies retained in backups or replicated systems shall be disposed of within a defined timeframe. The processor shall confirm completion of return or disposal in writing.",
+      "level": 2,
+      "sort_order": 1003,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.8.10",
+          "A.5.33"
+        ],
+        "gdpr_ref": [
+          "Art. 28(3)(g)",
+          "Art. 17"
+        ],
+        "keywords": [
+          "PII return",
+          "data disposal",
+          "contract termination",
+          "data portability",
+          "secure deletion",
+          "certificate of destruction"
+        ]
+      },
+      "parent_id": "74e5b126-5b73-562a-88d9-703faf8e59f6"
+    },
+    {
+      "type": "framework_control",
+      "id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11",
+      "title": "Information security",
+      "description": "Technical and organisational information security controls specific to the protection of PII in public cloud environments. Controls address confidentiality obligations, physical media, access management, encryption, audit logging, sub-processor management, and storage media.",
+      "level": 1,
+      "sort_order": 1100,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.15",
+          "A.5.16",
+          "A.6.6",
+          "A.7.10",
+          "A.8.2",
+          "A.8.15",
+          "A.8.24"
+        ],
+        "gdpr_ref": [
+          "Art. 32"
+        ],
+        "keywords": [
+          "information security",
+          "PII security",
+          "technical controls",
+          "organisational controls",
+          "cloud security"
+        ]
+      },
+      "parent_id": "b9847b60-84c9-566f-9188-c56e46516794"
+    },
+    {
+      "type": "framework_control",
+      "id": "9a03328c-c2ae-5851-bac6-50164317610d",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.1",
+      "title": "Confidentiality or non-disclosure agreements",
+      "description": "Personnel of the public cloud PII processor with access to PII shall be bound by documented confidentiality and non-disclosure obligations. These obligations shall be explicit regarding prohibition on secondary use, personal retention, or unauthorised disclosure of PII, and shall survive termination of employment or engagement.",
+      "level": 2,
+      "sort_order": 1101,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.6.6"
+        ],
+        "gdpr_ref": [
+          "Art. 28(3)(b)",
+          "Art. 29"
+        ],
+        "keywords": [
+          "confidentiality",
+          "NDA",
+          "non-disclosure",
+          "staff obligations",
+          "employment contract"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "ac8be7bb-c5f9-507d-a296-d56d3f6fa4e7",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.2",
+      "title": "Restriction of the creation of hardcopy material",
+      "description": "The creation of hardcopy (printed) material containing PII shall be restricted to documented, legitimate business purposes. Physical printing of PII shall require authorisation. Printed PII shall be handled under secure procedures and not left unattended in shared areas.",
+      "level": 2,
+      "sort_order": 1102,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.7.7",
+          "A.7.10"
+        ],
+        "gdpr_ref": [
+          "Art. 32(1)(b)"
+        ],
+        "keywords": [
+          "hardcopy",
+          "printed PII",
+          "physical security",
+          "clean desk",
+          "print restriction"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "9bafa5ba-877b-521c-b7d9-c4b615f21315",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.3",
+      "title": "Control and logging of data restoration",
+      "description": "Restoration of PII data from backup or archive shall be a controlled, logged operation. Restoration logs shall capture: operator identity, timestamp, source backup, data restored, and authorisation. Logs shall be protected against tampering and reviewed periodically. Unplanned or unauthorised restoration attempts shall be flagged as security events.",
+      "level": 2,
+      "sort_order": 1103,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.8.13",
+          "A.8.15",
+          "A.8.16"
+        ],
+        "gdpr_ref": [
+          "Art. 32(1)(c)"
+        ],
+        "keywords": [
+          "data restoration",
+          "backup restore",
+          "restore logging",
+          "audit log",
+          "restoration control"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "d62a6786-09b1-5c0e-8713-bac8fa160e0e",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.4",
+      "title": "Protecting data on storage media leaving the premises",
+      "description": "Physical storage media containing PII that leaves cloud premises (e.g. for disposal, maintenance, or transfer) shall be encrypted or physically destroyed before leaving the controlled environment. Movement of media shall be authorised, logged, and tracked. Chain of custody shall be maintained.",
+      "level": 2,
+      "sort_order": 1104,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.7.10"
+        ],
+        "gdpr_ref": [
+          "Art. 32(1)(a)"
+        ],
+        "keywords": [
+          "media removal",
+          "storage media",
+          "physical security",
+          "media transport",
+          "chain of custody",
+          "data in transit physical"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "ce49806a-556c-5b0e-b61b-4a0dc7cc93f1",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.5",
+      "title": "Use of unencrypted portable storage media and devices",
+      "description": "The use of unencrypted portable storage media and devices (USB drives, laptops, mobile devices) for storage or transfer of PII is prohibited. Where portable devices are authorised for PII, full-disk encryption meeting approved standards shall be mandatory. Loss or theft of any portable device potentially containing PII shall be treated as a PII security incident.",
+      "level": 2,
+      "sort_order": 1105,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.7.10",
+          "A.8.24"
+        ],
+        "gdpr_ref": [
+          "Art. 32(1)(a)"
+        ],
+        "keywords": [
+          "portable storage",
+          "USB",
+          "removable media",
+          "encryption",
+          "BYOD",
+          "device encryption",
+          "laptop encryption"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "cc29ca60-1c92-5db2-853b-7fcbe8684d57",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.6",
+      "title": "Encryption of PII transmitted over public data-transmission networks",
+      "description": "PII transmitted over public networks shall be encrypted using approved protocols (TLS 1.2 minimum, TLS 1.3 preferred). Unencrypted transmission of PII over public networks is prohibited. API endpoints and web interfaces handling PII shall enforce HTTPS. Certificates shall be from trusted authorities and kept current.",
+      "level": 2,
+      "sort_order": 1106,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.8.24"
+        ],
+        "gdpr_ref": [
+          "Art. 32(1)(a)"
+        ],
+        "keywords": [
+          "encryption in transit",
+          "TLS",
+          "HTTPS",
+          "network encryption",
+          "PII transmission",
+          "public network",
+          "API security"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "920c2d2c-2511-5d23-bc85-39f9061a0475",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.7",
+      "title": "Secure disposal of hardcopy materials",
+      "description": "Hardcopy materials containing PII shall be disposed of securely using cross-cut shredding or equivalent methods that prevent reconstruction. Disposal shall be documented. Bulk disposal may use certified destruction services with a certificate of destruction. Disposal bins for PII material shall be locked and access-controlled.",
+      "level": 2,
+      "sort_order": 1107,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.7.10"
+        ],
+        "gdpr_ref": [
+          "Art. 5(1)(f)"
+        ],
+        "keywords": [
+          "hardcopy disposal",
+          "shredding",
+          "secure disposal",
+          "paper destruction",
+          "certificate of destruction"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "aa216c05-2aae-50d6-ae19-b8a5e098ce36",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.8",
+      "title": "Unique use of user IDs",
+      "description": "Each individual with access to PII systems shall be assigned a unique user identifier. Shared or generic accounts shall not be used for access to systems processing PII. Unique IDs ensure that actions can be attributed to a specific individual for audit and accountability purposes.",
+      "level": 2,
+      "sort_order": 1108,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.16",
+          "A.8.2"
+        ],
+        "gdpr_ref": [
+          "Art. 32(1)(b)",
+          "Art. 32(4)"
+        ],
+        "keywords": [
+          "unique user ID",
+          "individual accounts",
+          "shared accounts prohibited",
+          "user identification",
+          "non-repudiation"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "27c1b912-971b-5bf2-a99b-19f8a02d5a6c",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.9",
+      "title": "User ID management",
+      "description": "User identifiers for access to PII systems shall be managed throughout their lifecycle: provisioning, modification, suspension, and deletion. User IDs shall be deactivated promptly upon termination or role change. Dormant accounts shall be reviewed and disabled. User ID provisioning shall require documented authorisation.",
+      "level": 2,
+      "sort_order": 1109,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.16",
+          "A.8.2"
+        ],
+        "gdpr_ref": [
+          "Art. 32(1)(b)"
+        ],
+        "keywords": [
+          "user ID management",
+          "account lifecycle",
+          "account provisioning",
+          "account deactivation",
+          "identity management",
+          "joiners movers leavers"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "4995cb15-aeea-5335-8225-ae833e4dda97",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.10",
+      "title": "Records of authorized users",
+      "description": "The public cloud PII processor shall maintain up-to-date records of all personnel and entities authorised to access PII systems. These records shall include the individual's identity, role, scope of access, authorisation date, and review date. Access authorisation records shall be reviewed at least quarterly and made available to the PII controller on request.",
+      "level": 2,
+      "sort_order": 1110,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.15",
+          "A.8.2"
+        ],
+        "gdpr_ref": [
+          "Art. 32(1)(b)",
+          "Art. 32(4)"
+        ],
+        "keywords": [
+          "authorized users",
+          "access records",
+          "access register",
+          "access review",
+          "access control inventory"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "df6695dc-8364-5029-80e0-541385686b1e",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.11",
+      "title": "Contract measures",
+      "description": "Contracts between the PII controller and public cloud PII processor shall include provisions addressing: scope and purpose of PII processing, security obligations, breach notification requirements, data subject rights assistance, audit rights, sub-processor approval, return or deletion at termination, and applicable jurisdiction. Contract terms shall be reviewed when regulatory requirements change.",
+      "level": 2,
+      "sort_order": 1111,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.19",
+          "A.5.20"
+        ],
+        "gdpr_ref": [
+          "Art. 28(3)"
+        ],
+        "keywords": [
+          "DPA",
+          "data processing agreement",
+          "contract measures",
+          "processor contract",
+          "Art 28 contract",
+          "supplier agreement"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "832a409f-6049-5fe3-81af-a9a7ff2509cd",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.12",
+      "title": "Sub-contracted PII processing",
+      "description": "The public cloud PII processor shall impose equivalent data protection obligations on sub-processors via binding contracts. Sub-processor contracts shall mirror the controller-processor agreement in scope and security requirements. The processor shall audit sub-processors periodically and shall remain accountable to the PII controller for sub-processor compliance. Sub-processor changes shall require prior controller consent.",
+      "level": 2,
+      "sort_order": 1112,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.19",
+          "A.5.21"
+        ],
+        "gdpr_ref": [
+          "Art. 28(2)",
+          "Art. 28(4)"
+        ],
+        "keywords": [
+          "sub-processor",
+          "supply chain",
+          "processor chain",
+          "sub-contracting",
+          "sub-processor audit",
+          "flow-down obligations"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "a13574a4-631c-5aac-9234-1120b4c6e779",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.11.13",
+      "title": "Access to data on pre-used data storage space",
+      "description": "The public cloud PII processor shall ensure that PII cannot be accessed from storage space previously used by another customer (data remanence). Before any storage is allocated to a new customer, all prior data shall be cryptographically erased or overwritten to a standard that prevents recovery. Storage decommissioning procedures shall be documented and tested.",
+      "level": 2,
+      "sort_order": 1113,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.7.10",
+          "A.8.10"
+        ],
+        "gdpr_ref": [
+          "Art. 5(1)(f)",
+          "Art. 32"
+        ],
+        "keywords": [
+          "data remanence",
+          "storage reuse",
+          "multi-tenancy",
+          "secure erasure",
+          "pre-used storage",
+          "data isolation",
+          "tenant isolation"
+        ]
+      },
+      "parent_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951"
+    },
+    {
+      "type": "framework_control",
+      "id": "91954fb5-f583-52c2-8aa4-fb1f3623dda1",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.12",
+      "title": "Privacy compliance",
+      "description": "Controls addressing the geographic and jurisdictional dimensions of PII processing in public cloud environments, including data residency and cross-border transfer requirements.",
+      "level": 1,
+      "sort_order": 1200,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.31",
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 44",
+          "Art. 45",
+          "Art. 46"
+        ],
+        "keywords": [
+          "privacy compliance",
+          "data residency",
+          "geographic location",
+          "cross-border transfer",
+          "jurisdiction"
+        ]
+      },
+      "parent_id": "b9847b60-84c9-566f-9188-c56e46516794"
+    },
+    {
+      "type": "framework_control",
+      "id": "3a49f8f2-4076-534e-a3fc-a16d01319f98",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.12.1",
+      "title": "Geographical location of PII",
+      "description": "The public cloud PII processor shall disclose to the PII controller the countries or regions where PII is stored, processed, or may transit. Where the PII controller has contractual data residency requirements, the processor shall technically enforce and be able to demonstrate compliance with those requirements. Changes to processing locations shall require prior controller consent.",
+      "level": 2,
+      "sort_order": 1201,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 13(1)(f)",
+          "Art. 44",
+          "Art. 45"
+        ],
+        "keywords": [
+          "data residency",
+          "geographical location",
+          "data location",
+          "cloud regions",
+          "processing location",
+          "sovereignty"
+        ]
+      },
+      "parent_id": "91954fb5-f583-52c2-8aa4-fb1f3623dda1"
+    },
+    {
+      "type": "framework_control",
+      "id": "6a5ec110-337b-5891-9a32-862be9f02e02",
+      "framework_id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
+      "control_id": "A.12.2",
+      "title": "Intended destination of PII",
+      "description": "The public cloud PII processor shall inform the PII controller of all intended destinations for PII, including countries to which PII may be transferred, transmitted, or made accessible. Where transfers to third countries occur, the legal basis and applicable safeguards shall be documented and made available to the controller.",
+      "level": 2,
+      "sort_order": 1202,
+      "metadata": {
+        "maps_to_iso27001_2022": [
+          "A.5.31",
+          "A.5.34"
+        ],
+        "gdpr_ref": [
+          "Art. 44",
+          "Art. 45",
+          "Art. 46",
+          "Art. 47"
+        ],
+        "keywords": [
+          "international transfer",
+          "cross-border transfer",
+          "transfer destination",
+          "SCC",
+          "adequacy decision",
+          "transfer safeguards",
+          "third country"
+        ]
+      },
+      "parent_id": "91954fb5-f583-52c2-8aa4-fb1f3623dda1"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "hierarchy",
+      "source_id": "a27018a1-0001-0001-0001-000000000001",
+      "target_id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "be15f867-cdc9-5926-80ac-0f92f406ff4b",
+      "target_id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a27018a2-0001-0001-0001-000000000001",
+      "target_id": "be15f867-cdc9-5926-80ac-0f92f406ff4b",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d595dea8-ea75-5732-ada4-ff3070a2b65d",
+      "target_id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a27018a3-0001-0001-0001-000000000001",
+      "target_id": "d595dea8-ea75-5732-ada4-ff3070a2b65d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a27018a3-0002-0001-0001-000000000002",
+      "target_id": "d595dea8-ea75-5732-ada4-ff3070a2b65d",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "aa0dee70-05e8-5c1d-b38e-4f529f27b907",
+      "target_id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "549519ce-88d2-566f-bc3d-f0c6287a276e",
+      "target_id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a27018a5-0001-0001-0001-000000000001",
+      "target_id": "549519ce-88d2-566f-bc3d-f0c6287a276e",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "517790b7-f3f0-5ae7-b18a-f5c48b05ceaa",
+      "target_id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a27018a6-0001-0001-0001-000000000001",
+      "target_id": "517790b7-f3f0-5ae7-b18a-f5c48b05ceaa",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a27018a6-0002-0001-0001-000000000002",
+      "target_id": "517790b7-f3f0-5ae7-b18a-f5c48b05ceaa",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "f80a07b3-312b-5790-a8d9-66fb586ace4b",
+      "target_id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9629bb33-abbd-54a1-b66e-28c3ab880d21",
+      "target_id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a27018a8-0001-0001-0001-000000000001",
+      "target_id": "9629bb33-abbd-54a1-b66e-28c3ab880d21",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "1ad25121-6204-5ba4-a1a3-00584f096dfd",
+      "target_id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "74e5b126-5b73-562a-88d9-703faf8e59f6",
+      "target_id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "eb8fa368-0777-54e7-814c-37f45e182262",
+      "target_id": "74e5b126-5b73-562a-88d9-703faf8e59f6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "17ad51b4-0c34-503e-b99c-15d02d2e5e39",
+      "target_id": "74e5b126-5b73-562a-88d9-703faf8e59f6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "95ca395f-36ce-5b6a-ad45-bf14ac731e7f",
+      "target_id": "74e5b126-5b73-562a-88d9-703faf8e59f6",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "target_id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9a03328c-c2ae-5851-bac6-50164317610d",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ac8be7bb-c5f9-507d-a296-d56d3f6fa4e7",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "9bafa5ba-877b-521c-b7d9-c4b615f21315",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "d62a6786-09b1-5c0e-8713-bac8fa160e0e",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "ce49806a-556c-5b0e-b61b-4a0dc7cc93f1",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "cc29ca60-1c92-5db2-853b-7fcbe8684d57",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "920c2d2c-2511-5d23-bc85-39f9061a0475",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "aa216c05-2aae-50d6-ae19-b8a5e098ce36",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "27c1b912-971b-5bf2-a99b-19f8a02d5a6c",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "4995cb15-aeea-5335-8225-ae833e4dda97",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "df6695dc-8364-5029-80e0-541385686b1e",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "832a409f-6049-5fe3-81af-a9a7ff2509cd",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a13574a4-631c-5aac-9234-1120b4c6e779",
+      "target_id": "0a74ee0d-7672-5f70-bd94-e046d3e5d951",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "91954fb5-f583-52c2-8aa4-fb1f3623dda1",
+      "target_id": "b9847b60-84c9-566f-9188-c56e46516794",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "3a49f8f2-4076-534e-a3fc-a16d01319f98",
+      "target_id": "91954fb5-f583-52c2-8aa4-fb1f3623dda1",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "6a5ec110-337b-5891-9a32-862be9f02e02",
+      "target_id": "91954fb5-f583-52c2-8aa4-fb1f3623dda1",
+      "relationship_type": "part-of"
+    }
+  ]
+}

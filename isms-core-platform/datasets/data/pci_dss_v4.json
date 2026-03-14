@@ -1,0 +1,435 @@
+{
+  "bundle_id": "bundle--91cd3c30-8932-5cf9-be0a-8dbe0ddafcae",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "f151ed77-1907-5016-9a35-97dc11f56023",
+    "code": "PCI_DSS_4.0.1",
+    "name": "PCI DSS v4.0.1",
+    "version": "4.0.1",
+    "publisher": "PCI Security Standards Council",
+    "source_url": "https://www.pcisecuritystandards.org/document_library/",
+    "jurisdiction": "Global",
+    "description": "Payment Card Industry Data Security Standard v4.0.1"
+  },
+  "generated_at": "2026-03-07T09:32:16Z",
+  "generator": "generate_regulatory.py",
+  "content_hash": "909815e870ac9e11a282bd8934a994f61ae057b768ec71d638c52d6dfad66b7a",
+  "objects_count": 18,
+  "relationships_count": 12,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "bc287505-7532-5eb8-ae3f-1b3bb765dc71",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "CO1",
+      "title": "Build and Maintain a Secure Network and Systems",
+      "description": "PCI DSS Control Objective: Build and Maintain a Secure Network and Systems",
+      "level": 0,
+      "sort_order": 10000,
+      "metadata": {
+        "requirements": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f307bd47-34da-561f-8eda-56b7995b87f5",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "CO2",
+      "title": "Protect Account Data",
+      "description": "PCI DSS Control Objective: Protect Account Data",
+      "level": 0,
+      "sort_order": 20000,
+      "metadata": {
+        "requirements": [
+          "3",
+          "4"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "82285c44-fb14-52c2-9507-210cc160bceb",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "CO3",
+      "title": "Maintain a Vulnerability Management Program",
+      "description": "PCI DSS Control Objective: Maintain a Vulnerability Management Program",
+      "level": 0,
+      "sort_order": 30000,
+      "metadata": {
+        "requirements": [
+          "5",
+          "6"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b661d6b3-6fb3-5fe3-bef5-6ea5fd5fe2e0",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "CO4",
+      "title": "Implement Strong Access Control Measures",
+      "description": "PCI DSS Control Objective: Implement Strong Access Control Measures",
+      "level": 0,
+      "sort_order": 40000,
+      "metadata": {
+        "requirements": [
+          "7",
+          "8",
+          "9"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "59b92400-3cc8-5de3-8203-6c0633405c76",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "CO5",
+      "title": "Regularly Monitor and Test Networks",
+      "description": "PCI DSS Control Objective: Regularly Monitor and Test Networks",
+      "level": 0,
+      "sort_order": 50000,
+      "metadata": {
+        "requirements": [
+          "10",
+          "11"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5e2e53c7-aaf3-56f1-89b5-d4e314ce1bd5",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "CO6",
+      "title": "Maintain an Information Security Policy",
+      "description": "PCI DSS Control Objective: Maintain an Information Security Policy",
+      "level": 0,
+      "sort_order": 60000,
+      "metadata": {
+        "requirements": [
+          "12"
+        ]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "be479fa1-7476-54c0-8573-7b42f0a3ae12",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "Req. 1",
+      "title": "Install and Maintain Network Security Controls",
+      "description": "Establish and manage firewalls, routers, and network segmentation to block unauthorised access into the CDE.",
+      "level": 1,
+      "sort_order": 700,
+      "metadata": {
+        "sub_requirements": [
+          "1.1",
+          "1.2",
+          "1.3",
+          "1.4",
+          "1.5"
+        ]
+      },
+      "parent_id": "bc287505-7532-5eb8-ae3f-1b3bb765dc71"
+    },
+    {
+      "type": "framework_control",
+      "id": "843dff12-d021-55f1-b9b1-09547f5a03e7",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "Req. 2",
+      "title": "Apply Secure Configurations to All System Components",
+      "description": "Eliminate vendor-supplied defaults. Remove unnecessary software, functions, accounts. Disable unneeded services.",
+      "level": 1,
+      "sort_order": 800,
+      "metadata": {
+        "sub_requirements": [
+          "2.1",
+          "2.2",
+          "2.3"
+        ]
+      },
+      "parent_id": "bc287505-7532-5eb8-ae3f-1b3bb765dc71"
+    },
+    {
+      "type": "framework_control",
+      "id": "6053ed07-9ada-5877-a87d-96ec6b81ae90",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "Req. 3",
+      "title": "Protect Stored Account Data",
+      "description": "Encrypt, truncate, mask, or tokenise PAN. Strong key management. Data retention policies must minimise storage.",
+      "level": 1,
+      "sort_order": 900,
+      "metadata": {
+        "sub_requirements": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.6",
+          "3.7"
+        ]
+      },
+      "parent_id": "f307bd47-34da-561f-8eda-56b7995b87f5"
+    },
+    {
+      "type": "framework_control",
+      "id": "a78eb77a-54d4-5c5b-a5ef-a55b1685b8fc",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "Req. 4",
+      "title": "Protect Cardholder Data with Strong Cryptography During Transmission",
+      "description": "Use strong cryptography (TLS 1.2+) when transmitting payment data across public networks.",
+      "level": 1,
+      "sort_order": 1000,
+      "metadata": {
+        "sub_requirements": [
+          "4.1",
+          "4.2"
+        ]
+      },
+      "parent_id": "f307bd47-34da-561f-8eda-56b7995b87f5"
+    },
+    {
+      "type": "framework_control",
+      "id": "76113dc2-9fa4-5ffb-9504-23159c9ba5f2",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "Req. 5",
+      "title": "Protect All Systems and Networks from Malicious Software",
+      "description": "Deploy and regularly update anti-malware solutions. Periodic scans and real-time monitoring.",
+      "level": 1,
+      "sort_order": 1100,
+      "metadata": {
+        "sub_requirements": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4"
+        ]
+      },
+      "parent_id": "82285c44-fb14-52c2-9507-210cc160bceb"
+    },
+    {
+      "type": "framework_control",
+      "id": "3b051c6a-f5af-52bb-92b2-3d6f893741bb",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "Req. 6",
+      "title": "Develop and Maintain Secure Systems and Software",
+      "description": "Secure coding practices, vulnerability management, timely patching, WAFs, and change control.",
+      "level": 1,
+      "sort_order": 1200,
+      "metadata": {
+        "sub_requirements": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.5"
+        ]
+      },
+      "parent_id": "82285c44-fb14-52c2-9507-210cc160bceb"
+    },
+    {
+      "type": "framework_control",
+      "id": "1050c9e7-42f1-5940-b9dc-ac509b196eef",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "Req. 7",
+      "title": "Restrict Access by Business Need to Know",
+      "description": "Least-privilege and need-to-know access control. All access documented and audited. RBAC required.",
+      "level": 1,
+      "sort_order": 1300,
+      "metadata": {
+        "sub_requirements": [
+          "7.1",
+          "7.2",
+          "7.3"
+        ]
+      },
+      "parent_id": "b661d6b3-6fb3-5fe3-bef5-6ea5fd5fe2e0"
+    },
+    {
+      "type": "framework_control",
+      "id": "4767b282-d383-562e-bdd5-d5a861fcdca3",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "Req. 8",
+      "title": "Identify Users and Authenticate Access",
+      "description": "Unique user IDs. MFA for remote and CDE access. Strong password policies (min 12 chars). Inactive accounts disabled within 90 days.",
+      "level": 1,
+      "sort_order": 1400,
+      "metadata": {
+        "sub_requirements": [
+          "8.1",
+          "8.2",
+          "8.3",
+          "8.4",
+          "8.5",
+          "8.6"
+        ]
+      },
+      "parent_id": "b661d6b3-6fb3-5fe3-bef5-6ea5fd5fe2e0"
+    },
+    {
+      "type": "framework_control",
+      "id": "8708ad53-ae5b-5ae8-8992-e7fc34b4fad5",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "Req. 9",
+      "title": "Restrict Physical Access to Cardholder Data",
+      "description": "Building entry controls, secure server rooms, surveillance, visitor management, media destruction, POI device security.",
+      "level": 1,
+      "sort_order": 1500,
+      "metadata": {
+        "sub_requirements": [
+          "9.1",
+          "9.2",
+          "9.3",
+          "9.4",
+          "9.5"
+        ]
+      },
+      "parent_id": "b661d6b3-6fb3-5fe3-bef5-6ea5fd5fe2e0"
+    },
+    {
+      "type": "framework_control",
+      "id": "a2ef7c31-ffac-5521-a851-75d5183278dd",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "Req. 10",
+      "title": "Log and Monitor All Access to System Components and Cardholder Data",
+      "description": "Track and analyse all network and system activity. Logs retained 12 months (3 months immediately available).",
+      "level": 1,
+      "sort_order": 1600,
+      "metadata": {
+        "sub_requirements": [
+          "10.1",
+          "10.2",
+          "10.3",
+          "10.4",
+          "10.5",
+          "10.6",
+          "10.7"
+        ]
+      },
+      "parent_id": "59b92400-3cc8-5de3-8203-6c0633405c76"
+    },
+    {
+      "type": "framework_control",
+      "id": "3cf19fac-9709-5078-83d9-6e468ab6bab1",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "Req. 11",
+      "title": "Test Security of Systems and Networks Regularly",
+      "description": "Quarterly ASV scans, internal scans, annual penetration testing, IDS/IPS, file integrity monitoring.",
+      "level": 1,
+      "sort_order": 1700,
+      "metadata": {
+        "sub_requirements": [
+          "11.1",
+          "11.2",
+          "11.3",
+          "11.4",
+          "11.5",
+          "11.6"
+        ]
+      },
+      "parent_id": "59b92400-3cc8-5de3-8203-6c0633405c76"
+    },
+    {
+      "type": "framework_control",
+      "id": "79db8397-b04a-563b-9f5f-306bc7d9961c",
+      "framework_id": "f151ed77-1907-5016-9a35-97dc11f56023",
+      "control_id": "Req. 12",
+      "title": "Support Information Security with Organisational Policies and Programs",
+      "description": "Comprehensive security policy. Annual risk assessment. Security awareness training. Incident response plan. TPM management.",
+      "level": 1,
+      "sort_order": 1800,
+      "metadata": {
+        "sub_requirements": [
+          "12.1",
+          "12.2",
+          "12.3",
+          "12.4",
+          "12.5",
+          "12.6",
+          "12.7",
+          "12.8",
+          "12.9",
+          "12.10"
+        ]
+      },
+      "parent_id": "5e2e53c7-aaf3-56f1-89b5-d4e314ce1bd5"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "hierarchy",
+      "source_id": "be479fa1-7476-54c0-8573-7b42f0a3ae12",
+      "target_id": "bc287505-7532-5eb8-ae3f-1b3bb765dc71",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "843dff12-d021-55f1-b9b1-09547f5a03e7",
+      "target_id": "bc287505-7532-5eb8-ae3f-1b3bb765dc71",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "6053ed07-9ada-5877-a87d-96ec6b81ae90",
+      "target_id": "f307bd47-34da-561f-8eda-56b7995b87f5",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a78eb77a-54d4-5c5b-a5ef-a55b1685b8fc",
+      "target_id": "f307bd47-34da-561f-8eda-56b7995b87f5",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "76113dc2-9fa4-5ffb-9504-23159c9ba5f2",
+      "target_id": "82285c44-fb14-52c2-9507-210cc160bceb",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "3b051c6a-f5af-52bb-92b2-3d6f893741bb",
+      "target_id": "82285c44-fb14-52c2-9507-210cc160bceb",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "1050c9e7-42f1-5940-b9dc-ac509b196eef",
+      "target_id": "b661d6b3-6fb3-5fe3-bef5-6ea5fd5fe2e0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "4767b282-d383-562e-bdd5-d5a861fcdca3",
+      "target_id": "b661d6b3-6fb3-5fe3-bef5-6ea5fd5fe2e0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "8708ad53-ae5b-5ae8-8992-e7fc34b4fad5",
+      "target_id": "b661d6b3-6fb3-5fe3-bef5-6ea5fd5fe2e0",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "a2ef7c31-ffac-5521-a851-75d5183278dd",
+      "target_id": "59b92400-3cc8-5de3-8203-6c0633405c76",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "3cf19fac-9709-5078-83d9-6e468ab6bab1",
+      "target_id": "59b92400-3cc8-5de3-8203-6c0633405c76",
+      "relationship_type": "part-of"
+    },
+    {
+      "type": "hierarchy",
+      "source_id": "79db8397-b04a-563b-9f5f-306bc7d9961c",
+      "target_id": "5e2e53c7-aaf3-56f1-89b5-d4e314ce1bd5",
+      "relationship_type": "part-of"
+    }
+  ]
+}
