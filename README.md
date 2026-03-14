@@ -175,11 +175,23 @@ factory_isms/
 │       └── priv-a.X.X-X-control-name/
 │           ├── POL/    ├── IMP/    ├── SCR/    └── WKBK/
 │
-└── isms-core-cloud/                    # ☁️ ISO 27018:2025 — Cloud Extension Pack
-    ├── README.md
-    └── iso27018-pii-cloud/
-        └── cld-a.X-control-name/       # 12 Annex A control groups
-            ├── POL/    ├── IMP/    ├── SCR/    └── WKBK/
+├── isms-core-cloud/                    # ☁️ ISO 27018:2025 — Cloud Extension Pack
+│   ├── README.md
+│   └── iso27018-pii-cloud/
+│       └── cld-a.X-control-name/       # 12 Annex A control groups
+│           ├── POL/    ├── IMP/    ├── SCR/    └── WKBK/
+│
+├── isms-core-platform/                 # 🖥️ Production Deployment Package
+│   ├── .env.example                    # Environment variable template (copy → .env)
+│   ├── docker-compose.yml              # 8-service production stack
+│   ├── bootstrap.sh                    # First-boot import script
+│   ├── backend/                        # FastAPI application
+│   ├── frontend/                       # React 19 + MUI 6 UI
+│   ├── nginx/                          # Reverse proxy + TLS (A.8.24)
+│   ├── datasets/data/                  # 18 JSON reference datasets
+│   └── schemas/                        # PostgreSQL init schema
+│
+└── screenshots/                        # Platform UI screenshots
 ```
 
 ---
@@ -255,7 +267,7 @@ python3 generate_cld_checklist_a11.py
 </tr>
 <tr>
 <td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core-oveview.png" width="380" alt="Compliance overview — 54 controls, 100% coverage, 77.4% audit readiness"/></td>
-<td align="center"><strong>Connectors (v2.0)</strong><br/><img src="screenshots/07_isms-core_connectors.png" width="380" alt="Automated evidence connectors — MS Entra ID, Defender, M365, Azure CSPM"/></td>
+<td align="center"><strong>Connectors</strong><br/><img src="screenshots/07_isms-core_connectors.png" width="380" alt="Automated evidence connectors — MS Entra ID, Defender, M365, Azure CSPM"/></td>
 </tr>
 <tr>
 <td align="center"><strong>ISMS Compass (AI Gap Analysis)</strong><br/><img src="screenshots/05_isms-core_compass.png" width="380" alt="ISMS Compass — AI-powered gap analysis against Gold Standard"/></td>
