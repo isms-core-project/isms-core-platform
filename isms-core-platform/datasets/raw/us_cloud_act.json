@@ -1,0 +1,54 @@
+{
+  "framework": {
+    "code": "US_CLOUD_ACT",
+    "name": "US CLOUD Act (Clarifying Lawful Overseas Use of Data Act)",
+    "version": "2018",
+    "publisher": "United States Congress",
+    "effective_date": "2018-03-23",
+    "jurisdiction": "US",
+    "source_url": "https://www.congress.gov/bill/115th-congress/senate-bill/2383",
+    "enacted_as": "Division V of Consolidated Appropriations Act 2018 (H.R. 1625), P.L. 115-141, 132 Stat. 1213-1225",
+    "notes": "Information/awareness framework. Relevant for cross-border data access risk assessment when using US-based cloud providers. Not directly mapped to ISO controls but referenced in data sovereignty discussions. Amends Stored Communications Act (18 U.S.C. Chapter 121) and adds executive agreements framework (18 U.S.C. Chapter 119)."
+  },
+  "provisions": [
+    {
+      "id": "18USC2713",
+      "title": "Extraterritorial obligation to disclose",
+      "usc_citation": "18 U.S.C. § 2713",
+      "cloud_act_section": "Section 103(a)(1)",
+      "description": "A provider of electronic communication service or remote computing service shall comply with the obligations of Chapter 121 to preserve, backup, or disclose the contents of a wire or electronic communication and any record or other information pertaining to a customer or subscriber within such provider's possession, custody, or control, regardless of whether such communication, record, or other information is located within or outside of the United States."
+    },
+    {
+      "id": "18USC2703h2",
+      "title": "Motion to modify or quash",
+      "usc_citation": "18 U.S.C. § 2703(h)(2)",
+      "cloud_act_section": "Section 103(b)",
+      "description": "Provider may file motion within 14 days to modify or quash legal process if: (1) the customer or subscriber is not a United States person and does not reside in the United States, and (2) disclosure would create a material risk of violating the laws of a qualifying foreign government. Court may quash only if all conditions met: disclosure would violate foreign law, interests of justice support quashing, and customer is not a US person or US resident."
+    },
+    {
+      "id": "18USC2703h3",
+      "title": "Comity analysis",
+      "usc_citation": "18 U.S.C. § 2703(h)(3)",
+      "cloud_act_section": "Section 103(b)",
+      "description": "Court shall consider 8 statutory factors: (A) interests of the United States including investigative interests; (B) interests of the qualifying foreign government in preventing prohibited disclosure; (C) likelihood, extent, and nature of penalties to provider from inconsistent legal requirements; (D) location and nationality of subscriber and connection to US; (E) nature and extent of provider's ties to and presence in US; (F) importance to investigation of the information required; (G) likelihood of timely and effective access through less harmful means; (H) if sought on behalf of a foreign authority, that authority's investigative interests."
+    },
+    {
+      "id": "18USC2523",
+      "title": "Executive agreements",
+      "usc_citation": "18 U.S.C. § 2523",
+      "cloud_act_section": "Section 105(a)",
+      "description": "The US may enter bilateral agreements with qualifying foreign governments, allowing those governments to directly request data from US service providers (bypassing mutual legal assistance treaties). AG and Secretary of State must certify the foreign government has robust substantive and procedural protections for privacy and civil liberties. 180-day Congressional review period before entry into force.",
+      "signed_agreements": [
+        {"country": "United Kingdom", "signed": "2019-10-03", "in_force": "2022-10-03"},
+        {"country": "Australia", "signed": "2021-12-15", "in_force": "2024-01-31"}
+      ],
+      "in_negotiation": ["Canada", "European Union"],
+      "switzerland_status": "No agreement exists, none in negotiation as of 2026"
+    },
+    {
+      "id": "IMPACT",
+      "title": "Impact on data sovereignty",
+      "description": "Creates legal conflict with GDPR Art. 48 (which prohibits transfers based solely on foreign court orders without international agreement such as MLAT). Organisations using US-based cloud providers must assess this risk in cross-border data transfer assessments. EDPB/EDPS confirmed this legal tension in their joint response. Swiss nFADP creates the same Art. 48-type conflict. Switzerland investing CHF 246 million in Swiss Government Cloud (operational early 2026) to ensure data sovereignty."
+    }
+  ]
+}

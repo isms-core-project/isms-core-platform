@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   Alert,
   Box,
@@ -17,12 +18,14 @@ import {
   MenuItem,
   Select,
   Skeleton,
+  Tab,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
   TableRow,
+  Tabs,
   TextField,
   ToggleButton,
   ToggleButtonGroup,
@@ -39,7 +42,9 @@ import {
   ErrorOutlineOutlined,
   FileUploadOutlined,
   LinkOutlined,
+  OpenInNewOutlined,
   SendOutlined,
+  SmartToyOutlined,
   UploadFileOutlined,
   VerifiedOutlined,
   WarningAmberOutlined,
@@ -48,10 +53,12 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import { evidenceApi } from '../api/evidence'
 import { assessmentsApi } from '../api/assessmentsApi'
+import { connectorsApi, type ConnectorRead } from '../api/connectorsApi'
 import PageHeader from '../components/PageHeader'
 import MetricCard from '../components/MetricCard'
 import StatusChip from '../components/StatusChip'
 import { useProduct } from '../store/ProductContext'
+import { useAuth } from '../store/AuthContext'
 
 const EVIDENCE_TYPES = [
   'document',
@@ -71,6 +78,7 @@ const STATUS_COLORS: Record<string, { bg: string; color: string; label: string }
 }
 
 type FilterTab = 'all' | 'valid' | 'expiring' | 'expired' | 'unverified'
+type MainTab = 'manual' | 'automated'
 
 // ── Single-file upload dialog ─────────────────────────────────────────────────
 function UploadDialog({
@@ -460,6 +468,296 @@ function RejectDialog({
   )
 }
 
+// ── Automated Evidence tab ────────────────────────────────────────────────────
+const CLASSIFICATION_COLORS: Record<string, string> = {
+  compliant:     '#C6EFCE',
+  non_compliant: '#FFC7CE',
+  warning:       '#FFEB9C',
+  info:          '#9fc8f0',
+}
+
+function AutomatedEvidenceTab({ isAdmin, activeProduct }: { isAdmin: boolean; activeProduct: string }) {
+  const qc = useQueryClient()
+  const navigate = useNavigate()
+  const [connectorFilter, setConnectorFilter] = useState('all')
+  const [classFilter, setClassFilter] = useState('all')
+  const [confirmDelete, setConfirmDelete] = useState<string | null>(null)   // evidence item id
+  const [confirmBulk, setConfirmBulk]   = useState<string | null>(null)   // connector id
+
+  const { data: items = [], isLoading, error } = useQuery({
+    queryKey: ['automated-evidence', activeProduct],
+    queryFn: () => connectorsApi.getAllEvidence(500, activeProduct),
+  })
+
+  const { data: connectors = [] } = useQuery<ConnectorRead[]>({
+    queryKey: ['connectors'],
+    queryFn: () => connectorsApi.list(),
+    enabled: isAdmin,
+  })
+
+  const connectorMap = Object.fromEntries(connectors.map((c) => [c.id, c]))
+
+  const deleteItem = useMutation({
+    mutationFn: (id: string) => connectorsApi.deleteEvidence(id),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['automated-evidence'] })
+      setConfirmDelete(null)
+    },
+  })
+
+  const deleteBulk = useMutation({
+    mutationFn: (connectorId: string) => connectorsApi.deleteConnectorEvidence(connectorId),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['automated-evidence'] })
+      setConfirmBulk(null)
+    },
+  })
+
+  const connectorIds = [...new Set(items.map((i) => i.connector_id))]
+  const classifications = [...new Set(items.map((i) => i.classification).filter(Boolean))]
+
+  const filtered = items.filter((i) => {
+    if (connectorFilter !== 'all' && i.connector_id !== connectorFilter) return false
+    if (classFilter !== 'all' && i.classification !== classFilter) return false
+    return true
+  })
+
+  if (error) return <Alert severity="error">Failed to load automated evidence.</Alert>
+
+  return (
+    <Box>
+      {/* Metrics row */}
+      <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
+        <Box sx={{ flex: 1 }}>
+          <MetricCard title="Total Items" value={isLoading ? '—' : items.length} icon={<SmartToyOutlined fontSize="small" />} />
+        </Box>
+        <Box sx={{ flex: 1 }}>
+          <MetricCard title="Active Connectors" value={isLoading ? '—' : connectorIds.length} />
+        </Box>
+        <Box sx={{ flex: 1 }}>
+          <MetricCard
+            title="Non-Compliant"
+            value={isLoading ? '—' : items.filter((i) => i.classification === 'non_compliant').length}
+            sx={items.some((i) => i.classification === 'non_compliant') ? { borderColor: '#C00000', '& h3': { color: '#FFC7CE' } } : {}}
+          />
+        </Box>
+        <Box sx={{ flex: 1 }}>
+          <MetricCard
+            title="Warnings"
+            value={isLoading ? '—' : items.filter((i) => i.classification === 'warning').length}
+            sx={items.some((i) => i.classification === 'warning') ? { borderColor: '#FF9800', '& h3': { color: '#FFEB9C' } } : {}}
+          />
+        </Box>
+      </Box>
+
+      {/* Filters */}
+      <Card sx={{ mb: 2 }}>
+        <CardContent sx={{ pb: '12px !important' }}>
+          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', alignItems: 'center' }}>
+            <FormControl size="small" sx={{ minWidth: 200 }}>
+              <InputLabel>Connector</InputLabel>
+              <Select value={connectorFilter} onChange={(e) => setConnectorFilter(e.target.value)} label="Connector">
+                <MenuItem value="all">All connectors</MenuItem>
+                {connectorIds.map((cid) => (
+                  <MenuItem key={cid} value={cid}>
+                    {connectorMap[cid]?.name ?? cid.slice(0, 8) + '…'}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            <FormControl size="small" sx={{ minWidth: 160 }}>
+              <InputLabel>Classification</InputLabel>
+              <Select value={classFilter} onChange={(e) => setClassFilter(e.target.value)} label="Classification">
+                <MenuItem value="all">All</MenuItem>
+                {classifications.map((c) => <MenuItem key={c} value={c!}>{c}</MenuItem>)}
+              </Select>
+            </FormControl>
+            {isAdmin && connectorFilter !== 'all' && (
+              <Button
+                size="small"
+                color="error"
+                variant="outlined"
+                startIcon={<DeleteOutlined />}
+                onClick={() => setConfirmBulk(connectorFilter)}
+              >
+                Delete all from this connector
+              </Button>
+            )}
+            <Box sx={{ flex: 1 }} />
+            <Tooltip title="Export filtered view as CSV">
+              <Button
+                size="small"
+                variant="outlined"
+                startIcon={<DownloadOutlined />}
+                component="a"
+                href={connectorsApi.exportEvidenceCsvUrl(activeProduct)}
+                download
+              >
+                Export CSV
+              </Button>
+            </Tooltip>
+          </Box>
+        </CardContent>
+      </Card>
+
+      {items.length === 0 && !isLoading && (
+        <Alert severity="info">No automated evidence yet. Configure and activate a connector to start collecting evidence.</Alert>
+      )}
+
+      {filtered.length > 0 && (
+        <TableContainer component={Card}>
+          <Table size="small">
+            <TableHead>
+              <TableRow>
+                <TableCell>Title</TableCell>
+                <TableCell>Connector</TableCell>
+                <TableCell>Control Group</TableCell>
+                <TableCell>Classification</TableCell>
+                <TableCell>Status</TableCell>
+                <TableCell>Event Date</TableCell>
+                <TableCell>Source</TableCell>
+                {isAdmin && <TableCell align="right">Actions</TableCell>}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {isLoading && [...Array(5)].map((_, i) => (
+                <TableRow key={i}>
+                  {[...Array(isAdmin ? 8 : 7)].map((_, j) => (
+                    <TableCell key={j}><Skeleton variant="text" /></TableCell>
+                  ))}
+                </TableRow>
+              ))}
+              {filtered.map((ev) => (
+                <TableRow
+                  key={ev.id}
+                  hover
+                  onClick={() => ev.group_code && navigate(`/controls/code/${ev.group_code}`)}
+                  sx={{ cursor: ev.group_code ? 'pointer' : 'default' }}
+                >
+                  <TableCell>
+                    <Typography variant="body2" fontWeight={600} sx={{ maxWidth: 260 }} noWrap>
+                      {ev.title}
+                    </Typography>
+                    {ev.source_ref && (
+                      <Typography variant="caption" sx={{ fontFamily: 'monospace', color: 'text.secondary' }} noWrap>
+                        {ev.source_ref}
+                      </Typography>
+                    )}
+                  </TableCell>
+                  <TableCell>
+                    <Typography variant="caption">
+                      {connectorMap[ev.connector_id]?.name ?? ev.connector_id.slice(0, 8) + '…'}
+                    </Typography>
+                    {connectorMap[ev.connector_id]?.source_system && (
+                      <Typography variant="caption" color="text.secondary" sx={{ display: 'block' }}>
+                        {connectorMap[ev.connector_id].source_system}
+                      </Typography>
+                    )}
+                  </TableCell>
+                  <TableCell>
+                    <Typography variant="caption" sx={{ fontFamily: 'monospace' }}>{ev.group_code ?? ev.control_group_id?.slice(0, 8) ?? '—'}</Typography>
+                  </TableCell>
+                  <TableCell>
+                    {ev.classification ? (
+                      <Chip
+                        label={ev.classification.replace(/_/g, ' ')}
+                        size="small"
+                        sx={{
+                          height: 18,
+                          fontSize: '0.62rem',
+                          fontWeight: 600,
+                          bgcolor: 'transparent',
+                          color: CLASSIFICATION_COLORS[ev.classification] ?? '#aaa',
+                          border: '1px solid',
+                          borderColor: CLASSIFICATION_COLORS[ev.classification] ?? '#555',
+                        }}
+                      />
+                    ) : <Typography variant="caption" color="text.disabled">—</Typography>}
+                  </TableCell>
+                  <TableCell>
+                    {ev.status ? (
+                      <Typography variant="caption">{ev.status}</Typography>
+                    ) : <Typography variant="caption" color="text.disabled">—</Typography>}
+                  </TableCell>
+                  <TableCell>
+                    <Typography variant="caption" color="text.secondary">
+                      {ev.event_date ? dayjs(ev.event_date).format('DD MMM YYYY') : dayjs(ev.created_at).format('DD MMM YYYY')}
+                    </Typography>
+                  </TableCell>
+                  <TableCell onClick={(e) => e.stopPropagation()}>
+                    {ev.source_url ? (
+                      <Tooltip title={ev.source_url}>
+                        <IconButton size="small" component="a" href={ev.source_url} target="_blank" rel="noopener noreferrer">
+                          <OpenInNewOutlined sx={{ fontSize: 14 }} />
+                        </IconButton>
+                      </Tooltip>
+                    ) : ev.source_ref ? (
+                      <Typography variant="caption" sx={{ fontFamily: 'monospace', fontSize: '0.6rem', color: 'text.secondary' }}>
+                        {ev.source_ref}
+                      </Typography>
+                    ) : <Typography variant="caption" color="text.disabled">—</Typography>}
+                  </TableCell>
+                  {isAdmin && (
+                    <TableCell align="right" onClick={(e) => e.stopPropagation()}>
+                      <Tooltip title="Delete item">
+                        <IconButton size="small" sx={{ color: 'error.main' }} onClick={() => setConfirmDelete(ev.id)}>
+                          <DeleteOutlined fontSize="small" />
+                        </IconButton>
+                      </Tooltip>
+                    </TableCell>
+                  )}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      )}
+
+      {/* Delete single item confirmation */}
+      <Dialog open={!!confirmDelete} onClose={() => setConfirmDelete(null)} maxWidth="xs" fullWidth>
+        <DialogTitle>Delete evidence item?</DialogTitle>
+        <DialogContent>
+          <Typography variant="body2" color="text.secondary">
+            This will permanently delete the selected automated evidence item. This action cannot be undone.
+          </Typography>
+        </DialogContent>
+        <DialogActions sx={{ px: 3, pb: 2 }}>
+          <Button onClick={() => setConfirmDelete(null)}>Cancel</Button>
+          <Button
+            variant="contained" color="error"
+            onClick={() => confirmDelete && deleteItem.mutate(confirmDelete)}
+            disabled={deleteItem.isPending}
+          >
+            Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Delete all for connector confirmation */}
+      <Dialog open={!!confirmBulk} onClose={() => setConfirmBulk(null)} maxWidth="xs" fullWidth>
+        <DialogTitle>Delete all evidence for this connector?</DialogTitle>
+        <DialogContent>
+          <Typography variant="body2" color="text.secondary">
+            This will permanently delete <strong>all</strong> automated evidence collected by{' '}
+            <strong>{confirmBulk ? (connectorMap[confirmBulk]?.name ?? confirmBulk) : ''}</strong>.
+            Use this when the wrong tenant was connected. This cannot be undone.
+          </Typography>
+        </DialogContent>
+        <DialogActions sx={{ px: 3, pb: 2 }}>
+          <Button onClick={() => setConfirmBulk(null)}>Cancel</Button>
+          <Button
+            variant="contained" color="error"
+            onClick={() => confirmBulk && deleteBulk.mutate(confirmBulk)}
+            disabled={deleteBulk.isPending}
+          >
+            Delete All ({items.filter((i) => i.connector_id === confirmBulk).length} items)
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </Box>
+  )
+}
+
 // ── Status chip ───────────────────────────────────────────────────────────────
 function EvidenceStatusChip({ status }: { status: string }) {
   const cfg = STATUS_COLORS[status] ?? STATUS_COLORS.active
@@ -475,6 +773,9 @@ function EvidenceStatusChip({ status }: { status: string }) {
 // ── Main page ─────────────────────────────────────────────────────────────────
 export default function Evidence() {
   const { product: activeProduct } = useProduct()
+  const { user } = useAuth()
+  const isAdmin = user?.role === 'admin'
+  const [mainTab, setMainTab] = useState<MainTab>('manual')
   const [uploadOpen, setUploadOpen] = useState(false)
   const [bulkOpen, setBulkOpen] = useState(false)
   const [filterTab, setFilterTab] = useState<FilterTab>('all')
@@ -535,8 +836,10 @@ export default function Evidence() {
     <Box>
       <PageHeader
         title="Evidence Tracker"
-        subtitle={`${items.length} items · ${drafts.length} drafts · ${pending.length} pending review`}
-        actions={
+        subtitle={mainTab === 'manual'
+          ? `${items.length} items · ${drafts.length} drafts · ${pending.length} pending review`
+          : 'Automated evidence collected by connectors'}
+        actions={mainTab === 'manual' ? (
           <Box sx={{ display: 'flex', gap: 1 }}>
             <Button variant="outlined" size="small" startIcon={<FileUploadOutlined />} onClick={() => setBulkOpen(true)}>
               Bulk Upload
@@ -545,9 +848,21 @@ export default function Evidence() {
               Upload Evidence
             </Button>
           </Box>
-        }
+        ) : undefined}
       />
 
+      {/* Main tab switcher */}
+      <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 2 }}>
+        <Tabs value={mainTab} onChange={(_, v) => setMainTab(v)} textColor="primary" indicatorColor="primary">
+          <Tab value="manual" label="Manual Evidence" icon={<UploadFileOutlined fontSize="small" />} iconPosition="start" sx={{ minHeight: 40 }} />
+          <Tab value="automated" label="Automated Evidence" icon={<SmartToyOutlined fontSize="small" />} iconPosition="start" sx={{ minHeight: 40 }} />
+        </Tabs>
+      </Box>
+
+      {mainTab === 'automated' && <AutomatedEvidenceTab isAdmin={isAdmin} activeProduct={activeProduct} />}
+
+      {mainTab === 'manual' && (
+      <Box>
       <UploadDialog open={uploadOpen} onClose={() => setUploadOpen(false)} onSuccess={invalidate} activeProduct={activeProduct} />
       <BulkUploadDialog open={bulkOpen} onClose={() => setBulkOpen(false)} onSuccess={invalidate} />
       {assignTarget && (
@@ -643,6 +958,22 @@ export default function Evidence() {
                   {EVIDENCE_TYPES.map((t) => <MenuItem key={t} value={t}>{t.replace(/_/g, ' ')}</MenuItem>)}
                 </Select>
               </FormControl>
+              <Box sx={{ flex: 1 }} />
+              <Tooltip title="Export current view as CSV">
+                <Button
+                  size="small"
+                  variant="outlined"
+                  startIcon={<DownloadOutlined />}
+                  component="a"
+                  href={evidenceApi.exportCsvUrl({
+                    evidence_type: typeFilter !== 'all' ? typeFilter : undefined,
+                    evidence_status: statusFilter !== 'all' ? statusFilter : undefined,
+                  })}
+                  download
+                >
+                  Export CSV
+                </Button>
+              </Tooltip>
             </Box>
           </CardContent>
         </Card>
@@ -782,6 +1113,8 @@ export default function Evidence() {
 
       {filtered.length === 0 && items.length > 0 && !isLoading && (
         <Alert severity="info">No evidence matches the current filter.</Alert>
+      )}
+      </Box>
       )}
     </Box>
   )

@@ -1,0 +1,139 @@
+{
+  "framework": {
+    "code": "ISO27017",
+    "name": "ISO/IEC 27017:2015 — Cloud Services Security",
+    "version": "2015",
+    "publisher": "ISO/IEC",
+    "effective_date": "2015-12-15",
+    "jurisdiction": "International",
+    "source_url": "https://www.iso.org/standard/43757.html",
+    "notes": "Code of practice for information security controls based on ISO/IEC 27002 for cloud services. Provides cloud-specific guidance on ISO 27002 controls and introduces 7 new cloud-specific controls (CLD prefix)."
+  },
+  "sections": [
+    {
+      "id": "CLD",
+      "title": "Cloud-Specific Controls",
+      "description": "Seven new controls introduced by ISO 27017 that do not exist in ISO 27002. Applicable to both cloud service providers (CSPs) and cloud service customers (CSCs)."
+    },
+    {
+      "id": "CSP",
+      "title": "Cloud Service Provider Guidance",
+      "description": "Cloud-specific implementation guidance for ISO 27002 controls from the cloud service provider perspective."
+    },
+    {
+      "id": "CSC",
+      "title": "Cloud Service Customer Guidance",
+      "description": "Cloud-specific implementation guidance for ISO 27002 controls from the cloud service customer perspective."
+    }
+  ],
+  "controls": [
+    {
+      "id": "CLD.6.3.1",
+      "section": "CLD",
+      "title": "Shared roles and responsibilities within a cloud computing environment",
+      "description": "The allocation and division of information security responsibilities between the cloud service provider and the cloud service customer shall be documented, communicated, and implemented. Responsibility matrices (e.g. RACI) shall be established for all security controls to avoid gaps or overlaps.",
+      "applicability": "CSP and CSC",
+      "maps_to_iso27001_2022": ["A.5.2", "A.5.31"],
+      "keywords": ["shared responsibility", "cloud roles", "RACI", "provider", "customer", "accountability"]
+    },
+    {
+      "id": "CLD.8.1.5",
+      "section": "CLD",
+      "title": "Removal and return of cloud service customer assets",
+      "description": "Upon termination or expiry of a cloud service agreement, the cloud service provider shall return or securely delete all cloud service customer assets (data, configurations, artefacts) within a defined period. The process and timeline shall be contractually specified.",
+      "applicability": "CSP",
+      "maps_to_iso27001_2022": ["A.5.9", "A.5.10", "A.8.10"],
+      "keywords": ["asset return", "data deletion", "termination", "offboarding", "portability", "cloud exit"]
+    },
+    {
+      "id": "CLD.9.5.1",
+      "section": "CLD",
+      "title": "Segregation in virtual computing environments",
+      "description": "Virtual computing environments shared between multiple cloud service customers shall be segregated to prevent unauthorised access, data leakage, and resource interference. Hypervisor and container isolation controls shall be implemented and tested.",
+      "applicability": "CSP",
+      "maps_to_iso27001_2022": ["A.8.22", "A.8.31"],
+      "keywords": ["segregation", "virtualisation", "hypervisor", "multi-tenancy", "isolation", "container"]
+    },
+    {
+      "id": "CLD.9.5.2",
+      "section": "CLD",
+      "title": "Virtual machine hardening",
+      "description": "Virtual machine images used to instantiate cloud services shall be hardened and shall contain only the necessary components. Base images shall be maintained, versioned, and patched. Unused services and ports on virtual machines shall be disabled.",
+      "applicability": "CSP and CSC",
+      "maps_to_iso27001_2022": ["A.8.8", "A.8.9"],
+      "keywords": ["VM hardening", "virtual machine", "image", "baseline", "patch", "hardening", "configuration"]
+    },
+    {
+      "id": "CLD.12.1.5",
+      "section": "CLD",
+      "title": "Administrator's operational security",
+      "description": "Cloud service providers shall implement controls to protect against risks associated with administrator access including: privileged access management, separation of duties, monitoring of admin activity, just-in-time access, and multi-factor authentication for all administrative interfaces.",
+      "applicability": "CSP",
+      "maps_to_iso27001_2022": ["A.5.15", "A.5.18", "A.8.2", "A.8.15"],
+      "keywords": ["privileged access", "admin", "PAM", "JIT", "separation of duties", "MFA", "monitoring"]
+    },
+    {
+      "id": "CLD.12.4.5",
+      "section": "CLD",
+      "title": "Monitoring of cloud services",
+      "description": "The cloud service provider shall monitor the cloud service and provide monitoring capabilities to the cloud service customer. Monitoring shall cover availability, performance, security events, and compliance metrics. Customers shall have access to logs relevant to their tenancy.",
+      "applicability": "CSP",
+      "maps_to_iso27001_2022": ["A.8.15", "A.8.16"],
+      "keywords": ["monitoring", "cloud monitoring", "logging", "availability", "performance", "tenant logs"]
+    },
+    {
+      "id": "CLD.13.1.4",
+      "section": "CLD",
+      "title": "Alignment of security management for virtual and physical networks",
+      "description": "Security controls applied to physical networks shall be consistently applied to virtual networks within the cloud environment. Network segmentation, firewall rules, and traffic inspection policies shall be enforced equivalently in virtual network layers.",
+      "applicability": "CSP",
+      "maps_to_iso27001_2022": ["A.8.20", "A.8.21", "A.8.22"],
+      "keywords": ["virtual network", "SDN", "network segmentation", "firewall", "network security", "NFV"]
+    },
+    {
+      "id": "CSP.6.1",
+      "section": "CSP",
+      "title": "Information security roles and responsibilities (cloud)",
+      "description": "Cloud service providers shall define, document, and communicate information security roles and responsibilities applicable to the cloud service. Service level agreements shall include security responsibilities and escalation paths.",
+      "applicability": "CSP",
+      "maps_to_iso27001_2022": ["A.5.2"],
+      "keywords": ["SLA", "service level", "cloud roles", "provider responsibilities"]
+    },
+    {
+      "id": "CSP.12.1",
+      "section": "CSP",
+      "title": "Capacity and availability management (cloud)",
+      "description": "Cloud service providers shall monitor, plan, and manage capacity to ensure agreed service availability. Customers shall be informed of capacity constraints that may affect agreed service levels.",
+      "applicability": "CSP",
+      "maps_to_iso27001_2022": ["A.8.6"],
+      "keywords": ["capacity", "availability", "SLA", "elasticity", "scaling"]
+    },
+    {
+      "id": "CSP.16.1",
+      "section": "CSP",
+      "title": "Incident response notification (cloud)",
+      "description": "Cloud service providers shall notify cloud service customers of security incidents that affect their data or services within agreed timeframes. Incident notifications shall include: nature of incident, affected data, actions taken, and customer obligations.",
+      "applicability": "CSP",
+      "maps_to_iso27001_2022": ["A.5.24", "A.5.26"],
+      "keywords": ["incident notification", "breach notification", "cloud incident", "customer notification"]
+    },
+    {
+      "id": "CSC.9.1",
+      "section": "CSC",
+      "title": "Access control in cloud environments",
+      "description": "Cloud service customers shall implement identity and access management controls for cloud resources including: least privilege, role-based access, MFA, and regular access reviews. IAM configurations shall be reviewed whenever personnel changes occur.",
+      "applicability": "CSC",
+      "maps_to_iso27001_2022": ["A.5.15", "A.5.16", "A.5.18", "A.8.2", "A.8.3", "A.8.4", "A.8.5"],
+      "keywords": ["IAM", "cloud access", "least privilege", "MFA", "access review", "RBAC"]
+    },
+    {
+      "id": "CSC.13.1",
+      "section": "CSC",
+      "title": "Data protection in cloud services",
+      "description": "Cloud service customers shall implement controls to protect data in transit and at rest within cloud environments. Data classification shall determine applicable encryption and access control requirements. Data residency requirements shall be contractually enforced.",
+      "applicability": "CSC",
+      "maps_to_iso27001_2022": ["A.5.33", "A.5.34", "A.8.24"],
+      "keywords": ["data protection", "encryption at rest", "encryption in transit", "data residency", "classification"]
+    }
+  ]
+}

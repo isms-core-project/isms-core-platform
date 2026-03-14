@@ -47,4 +47,12 @@ export const evidenceApi = {
     client.delete(`/evidence/${id}`),
 
   downloadUrl: (id: string) => `/api/v1/evidence/${id}/download`,
+
+  exportCsvUrl: (params?: { group_code?: string; evidence_type?: string; evidence_status?: string }) => {
+    const q = new URLSearchParams()
+    if (params?.group_code) q.set('group_code', params.group_code)
+    if (params?.evidence_type) q.set('evidence_type', params.evidence_type)
+    if (params?.evidence_status) q.set('evidence_status', params.evidence_status)
+    return `/api/v1/evidence/export${q.toString() ? '?' + q.toString() : ''}`
+  },
 }

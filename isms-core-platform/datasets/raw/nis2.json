@@ -1,0 +1,29 @@
+{
+  "framework": {
+    "code": "NIS2",
+    "name": "NIS2 Directive (EU 2022/2555)",
+    "version": "2022/2555",
+    "publisher": "European Union",
+    "effective_date": "2023-01-16",
+    "transposition_deadline": "2024-10-17",
+    "jurisdiction": "EU",
+    "source_url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj/eng"
+  },
+  "articles": [
+    {"id": "Art. 21(2)(a)", "title": "Risk analysis and information system security", "description": "Entities must establish and maintain risk management frameworks, perform and document risk assessments, and implement risk treatment plans."},
+    {"id": "Art. 21(2)(b)", "title": "Incident handling", "description": "Establish and implement incident handling policies defining roles, responsibilities, and procedures for detecting, analysing, containing, responding to, and recovering from incidents."},
+    {"id": "Art. 21(2)(c)", "title": "Business continuity and crisis management", "description": "Backup management, disaster recovery, and crisis management procedures to ensure continuity of operations."},
+    {"id": "Art. 21(2)(d)", "title": "Supply chain security", "description": "Security-related aspects of relationships with direct suppliers or service providers, including supply chain risk assessment."},
+    {"id": "Art. 21(2)(e)", "title": "Security in acquisition, development and maintenance", "description": "Security in network and information systems acquisition, development, and maintenance, including vulnerability handling and disclosure."},
+    {"id": "Art. 21(2)(f)", "title": "Effectiveness assessment", "description": "Policies and procedures to assess effectiveness of cybersecurity risk-management measures through audits, testing, and evaluation."},
+    {"id": "Art. 21(2)(g)", "title": "Basic cyber hygiene and training", "description": "Basic cyber hygiene practices and cybersecurity training for personnel."},
+    {"id": "Art. 21(2)(h)", "title": "Cryptography and encryption", "description": "Policies and procedures regarding use of cryptography and encryption to protect data confidentiality and integrity."},
+    {"id": "Art. 21(2)(i)", "title": "HR security, access control and asset management", "description": "Human resources security, access control policies, and asset management to restrict and monitor access to systems and data."},
+    {"id": "Art. 21(2)(j)", "title": "MFA and secured communications", "description": "Multi-factor authentication or continuous authentication, secured voice/video/text communications, and secured emergency communication systems."},
+    {"id": "Art. 23", "title": "Reporting obligations", "description": "Essential and important entities shall notify the CSIRT or competent authority of any significant incident. Reporting follows a phased timeline: early warning, incident notification, intermediate report, and final report."},
+    {"id": "Art. 23-EW", "title": "Reporting — Early warning", "description": "Within 24 hours of becoming aware of a significant incident. Must indicate if suspected unlawful/malicious cause and cross-border impact."},
+    {"id": "Art. 23-IN", "title": "Reporting — Incident notification", "description": "Within 72 hours: update with initial assessment including severity, impact, and indicators of compromise."},
+    {"id": "Art. 23-IR", "title": "Reporting — Intermediate report", "description": "Additional updates on status and handling as requested by CSIRT or competent authority."},
+    {"id": "Art. 23-FR", "title": "Reporting — Final report", "description": "Within 1 month: detailed description, root cause, mitigation measures, and cross-border impact. Progress report if incident ongoing."}
+  ]
+}

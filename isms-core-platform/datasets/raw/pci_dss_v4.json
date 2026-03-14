@@ -1,0 +1,33 @@
+{
+  "framework": {
+    "code": "PCI_DSS_4.0.1",
+    "name": "PCI DSS v4.0.1",
+    "version": "4.0.1",
+    "publisher": "PCI Security Standards Council",
+    "effective_date": "2024-06-11",
+    "jurisdiction": "Global",
+    "source_url": "https://www.pcisecuritystandards.org/document_library/"
+  },
+  "control_objectives": [
+    {"id": "CO1", "name": "Build and Maintain a Secure Network and Systems", "requirements": ["1", "2"]},
+    {"id": "CO2", "name": "Protect Account Data", "requirements": ["3", "4"]},
+    {"id": "CO3", "name": "Maintain a Vulnerability Management Program", "requirements": ["5", "6"]},
+    {"id": "CO4", "name": "Implement Strong Access Control Measures", "requirements": ["7", "8", "9"]},
+    {"id": "CO5", "name": "Regularly Monitor and Test Networks", "requirements": ["10", "11"]},
+    {"id": "CO6", "name": "Maintain an Information Security Policy", "requirements": ["12"]}
+  ],
+  "requirements": [
+    {"id": "Req. 1", "title": "Install and Maintain Network Security Controls", "description": "Establish and manage firewalls, routers, and network segmentation to block unauthorised access into the CDE.", "sub_requirements": ["1.1", "1.2", "1.3", "1.4", "1.5"]},
+    {"id": "Req. 2", "title": "Apply Secure Configurations to All System Components", "description": "Eliminate vendor-supplied defaults. Remove unnecessary software, functions, accounts. Disable unneeded services.", "sub_requirements": ["2.1", "2.2", "2.3"]},
+    {"id": "Req. 3", "title": "Protect Stored Account Data", "description": "Encrypt, truncate, mask, or tokenise PAN. Strong key management. Data retention policies must minimise storage.", "sub_requirements": ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7"]},
+    {"id": "Req. 4", "title": "Protect Cardholder Data with Strong Cryptography During Transmission", "description": "Use strong cryptography (TLS 1.2+) when transmitting payment data across public networks.", "sub_requirements": ["4.1", "4.2"]},
+    {"id": "Req. 5", "title": "Protect All Systems and Networks from Malicious Software", "description": "Deploy and regularly update anti-malware solutions. Periodic scans and real-time monitoring.", "sub_requirements": ["5.1", "5.2", "5.3", "5.4"]},
+    {"id": "Req. 6", "title": "Develop and Maintain Secure Systems and Software", "description": "Secure coding practices, vulnerability management, timely patching, WAFs, and change control.", "sub_requirements": ["6.1", "6.2", "6.3", "6.4", "6.5"]},
+    {"id": "Req. 7", "title": "Restrict Access by Business Need to Know", "description": "Least-privilege and need-to-know access control. All access documented and audited. RBAC required.", "sub_requirements": ["7.1", "7.2", "7.3"]},
+    {"id": "Req. 8", "title": "Identify Users and Authenticate Access", "description": "Unique user IDs. MFA for remote and CDE access. Strong password policies (min 12 chars). Inactive accounts disabled within 90 days.", "sub_requirements": ["8.1", "8.2", "8.3", "8.4", "8.5", "8.6"]},
+    {"id": "Req. 9", "title": "Restrict Physical Access to Cardholder Data", "description": "Building entry controls, secure server rooms, surveillance, visitor management, media destruction, POI device security.", "sub_requirements": ["9.1", "9.2", "9.3", "9.4", "9.5"]},
+    {"id": "Req. 10", "title": "Log and Monitor All Access to System Components and Cardholder Data", "description": "Track and analyse all network and system activity. Logs retained 12 months (3 months immediately available).", "sub_requirements": ["10.1", "10.2", "10.3", "10.4", "10.5", "10.6", "10.7"]},
+    {"id": "Req. 11", "title": "Test Security of Systems and Networks Regularly", "description": "Quarterly ASV scans, internal scans, annual penetration testing, IDS/IPS, file integrity monitoring.", "sub_requirements": ["11.1", "11.2", "11.3", "11.4", "11.5", "11.6"]},
+    {"id": "Req. 12", "title": "Support Information Security with Organisational Policies and Programs", "description": "Comprehensive security policy. Annual risk assessment. Security awareness training. Incident response plan. TPM management.", "sub_requirements": ["12.1", "12.2", "12.3", "12.4", "12.5", "12.6", "12.7", "12.8", "12.9", "12.10"]}
+  ]
+}

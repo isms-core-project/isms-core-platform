@@ -1,18 +1,23 @@
 # ============================================================================
-# ISMS CORE Platform — Production Deployment (nuc-02)
+# ISMS CORE Platform — Production Compose
 #
 # TLS (A.8.24 compliance):
 #   Default:      self-signed cert auto-generated on first boot
-#   Custom cert:  place cert.pem + key.pem in ./certs/  (local CA or purchased)
+#   Custom cert:  place cert.pem + key.pem in ./certs/
 #   Let's Encrypt: run ./nginx/scripts/setup-letsencrypt.sh <domain> <email>
 #                  then set FQDN=yourdomain.com in .env
 #
 # Access:  https://<HOST_IP>  (port 443)  — nginx proxies to backend + frontend
 # API:     https://<HOST_IP>/api/v1/
 #
+# Usage:
+#   cp .env.example .env && nano .env
+#   docker compose -f docker-compose.prod.yml up -d
+#   ./bootstrap.sh        (first boot only)
+#
 # Email profiles (optional — default is no email):
-#   Mailpit:     docker compose --profile mailpit up -d   (MAIL_HOST=isms-core-mailhog)
-#   smtp-bridge: docker compose --profile smtp-bridge up -d (MAIL_HOST=isms-core-smtp-bridge)
+#   Mailpit:     docker compose -f docker-compose.prod.yml --profile mailpit up -d
+#   smtp-bridge: docker compose -f docker-compose.prod.yml --profile smtp-bridge up -d
 # ============================================================================
 
 services:
@@ -236,7 +241,7 @@ services:
 
   # ── Email options (optional profiles) ─────────────────────────────────────
 
-  # Mailpit: docker compose --profile mailpit up -d
+  # Mailpit: docker compose -f docker-compose.prod.yml --profile mailpit up -d
   # Set in .env: MAIL_HOST=isms-core-mailhog  MAIL_PORT=1025
   isms-core-mailhog:
     image: axllent/mailpit:latest
@@ -250,7 +255,7 @@ services:
     networks:
       - isms-core-network
 
-  # smtp-bridge: docker compose --profile smtp-bridge up -d
+  # smtp-bridge: docker compose -f docker-compose.prod.yml --profile smtp-bridge up -d
   # Set in .env: MAIL_HOST=isms-core-smtp-bridge  MAIL_PORT=1025
   isms-core-smtp-bridge:
     build:

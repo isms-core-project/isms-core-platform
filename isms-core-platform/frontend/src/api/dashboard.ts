@@ -34,9 +34,10 @@ export const dashboardApi = {
 }
 
 export interface HomeSummary {
-  isms:    { groups: number; policies: number; imps: number; fw_coverage_pct: number; op_coverage_pct: number; open_gaps: number }
-  privacy: { groups: number; policies: number; imps: number }
-  cloud:   { groups: number; policies: number; imps: number }
+  isms:       { groups: number; policies: number; imps: number; fw_coverage_pct: number; op_coverage_pct: number; open_gaps: number }
+  privacy:    { groups: number; policies: number; imps: number }
+  cloud:      { groups: number; policies: number; imps: number }
+  connectors: { active: number; evidence_items: number }
 }
 
 export interface FrameworkOverview {

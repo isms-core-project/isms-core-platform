@@ -15,6 +15,7 @@ import {
   CheckCircleOutlined,
   RadioButtonUncheckedOutlined,
   SearchOutlined,
+  ElectricalServicesOutlined,
 } from '@mui/icons-material'
 import { useQuery } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
@@ -23,14 +24,15 @@ import { useProduct, PRODUCT_COLORS, PRODUCT_LABELS } from '../store/ProductCont
 import { useAuth } from '../store/AuthContext'
 
 const PLATFORM_TOOLS = [
-  { label: 'QA',         path: '/qa',         icon: <VerifiedOutlined sx={{ fontSize: 17 }} /> },
-  { label: 'Search',     path: '/search',     icon: <SearchOutlined sx={{ fontSize: 17 }} /> },
-  { label: 'Compass',    path: '/compass',     icon: <ExploreOutlined sx={{ fontSize: 17 }} /> },
-  { label: 'Generators', path: '/generators',  icon: <CodeOutlined sx={{ fontSize: 17 }} /> },
-  { label: 'Report',     path: '/report',      icon: <SummarizeOutlined sx={{ fontSize: 17 }} /> },
-  { label: 'Risk',       path: '/risk',        icon: <GppMaybeOutlined sx={{ fontSize: 17 }} /> },
-  { label: 'Admin',      path: '/admin',       icon: <AdminPanelSettingsOutlined sx={{ fontSize: 17 }} /> },
-  { label: 'System',     path: '/system',      icon: <MonitorHeartOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'QA',           path: '/qa',           icon: <VerifiedOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'Search',       path: '/search',       icon: <SearchOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'Compass',      path: '/compass',      icon: <ExploreOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'Generators',   path: '/generators',   icon: <CodeOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'Connectors',   path: '/connectors',   icon: <ElectricalServicesOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'Report',       path: '/report',       icon: <SummarizeOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'Risk',         path: '/risk',         icon: <GppMaybeOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'Admin',        path: '/admin',        icon: <AdminPanelSettingsOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'System',       path: '/system',       icon: <MonitorHeartOutlined sx={{ fontSize: 17 }} /> },
 ]
 
 const PRODUCT_STANDARDS = {
@@ -308,6 +310,43 @@ export default function Home() {
           </ProductCard>
         </Box>
 
+      </Box>
+
+      {/* Connector summary bar */}
+      <Box
+        onClick={() => navigate('/connectors')}
+        sx={{
+          flexShrink: 0,
+          display: 'flex', alignItems: 'center', gap: 2.5,
+          px: 2, py: 1, borderRadius: 1.5, cursor: 'pointer',
+          border: '1px solid', borderColor: 'divider',
+          bgcolor: 'background.paper',
+          transition: 'all 0.12s',
+          '&:hover': { borderColor: 'text.secondary', bgcolor: 'action.hover' },
+        }}
+      >
+        <ElectricalServicesOutlined sx={{ fontSize: 18, color: 'text.secondary', flexShrink: 0 }} />
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
+          {isLoading
+            ? <Skeleton variant="text" width={16} height={22} />
+            : <Typography variant="subtitle2" sx={{ fontWeight: 700, fontSize: '1rem', lineHeight: 1, color: (summary?.connectors?.active ?? 0) > 0 ? '#70AD47' : 'text.disabled' }}>
+                {summary?.connectors?.active ?? 0}
+              </Typography>
+          }
+          <Typography variant="caption" sx={{ fontSize: '0.7rem', color: 'text.secondary' }}>Active Connectors</Typography>
+        </Box>
+        <Box sx={{ width: '1px', height: 18, bgcolor: 'divider' }} />
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
+          {isLoading
+            ? <Skeleton variant="text" width={24} height={22} />
+            : <Typography variant="subtitle2" sx={{ fontWeight: 700, fontSize: '1rem', lineHeight: 1, color: 'text.primary' }}>
+                {summary?.connectors?.evidence_items ?? 0}
+              </Typography>
+          }
+          <Typography variant="caption" sx={{ fontSize: '0.7rem', color: 'text.secondary' }}>Evidence Items</Typography>
+        </Box>
+        <Box sx={{ flex: 1 }} />
+        <ArrowForwardOutlined sx={{ fontSize: 14, color: 'text.disabled' }} />
       </Box>
 
       {/* Platform tools */}

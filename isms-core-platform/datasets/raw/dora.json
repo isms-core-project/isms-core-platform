@@ -1,0 +1,63 @@
+{
+  "framework": {
+    "code": "DORA",
+    "name": "Digital Operational Resilience Act (EU 2022/2554)",
+    "version": "2022/2554",
+    "publisher": "European Union",
+    "effective_date": "2025-01-17",
+    "jurisdiction": "EU",
+    "source_url": "https://www.digital-operational-resilience-act.com/DORA_Articles.html"
+  },
+  "chapters": [
+    {
+      "id": "Ch.II",
+      "title": "ICT Risk Management",
+      "articles": [
+        {"id": "Art. 5", "title": "Governance and organisation", "description": "Internal governance and control framework for effective ICT risk management. Management body defines, approves, and oversees implementation. Ultimate responsibility with management body."},
+        {"id": "Art. 6", "title": "ICT risk management framework", "description": "Sound, comprehensive, well-documented framework comprising strategies, policies, procedures, ICT protocols, and tools. Reviewed at least annually."},
+        {"id": "Art. 7", "title": "ICT systems, protocols and tools", "description": "Use and maintain updated ICT systems appropriate to scale, adequate to support critical functions. Must be reliable, have sufficient capacity, and be technologically resilient."},
+        {"id": "Art. 8", "title": "Identification", "description": "Identify, classify, and document all ICT-supported business functions, information assets, and ICT assets. Identify all sources of ICT risk. Maintain ICT asset inventory."},
+        {"id": "Art. 9", "title": "Protection and prevention", "description": "Continuously monitor and control ICT systems security. Implement IAM, strong authentication, network security, encryption, data protection policies. ICT security awareness programmes."},
+        {"id": "Art. 10", "title": "Detection", "description": "Mechanisms to promptly detect anomalous activities. Multiple layers of control, alert thresholds, and incident response initiation."},
+        {"id": "Art. 11", "title": "Response and recovery", "description": "ICT business continuity policy and response/recovery plans. Estimate impact and activate plans when incidents occur."},
+        {"id": "Art. 12", "title": "Backup policies and restoration", "description": "Backup policies with scope, frequency, retention. Restoration must not jeopardise integrity/confidentiality. Recovery plans tested periodically. Redundant ICT capacities."},
+        {"id": "Art. 13", "title": "Learning and evolving", "description": "Gather and analyse information on vulnerabilities, cyber threats, ICT incidents. Post-incident reviews mandatory. Findings fed into risk assessment and training."},
+        {"id": "Art. 14", "title": "Communication", "description": "Communication plans for internal and external stakeholders. At least one designated person for public/media communication on ICT incidents."},
+        {"id": "Art. 15", "title": "Further harmonisation", "description": "ESAs develop common regulatory technical standards to further specify ICT risk management framework elements."},
+        {"id": "Art. 16", "title": "Simplified ICT risk management", "description": "Certain entities meeting specific criteria may apply simplified framework. Core requirements retained but proportionally adjusted."}
+      ]
+    },
+    {
+      "id": "Ch.III",
+      "title": "ICT-Related Incident Management and Reporting",
+      "articles": [
+        {"id": "Art. 17", "title": "Incident management process", "description": "Define, establish, and implement ICT incident management process for detection, management, and notification. Record all significant cyber threats."},
+        {"id": "Art. 18", "title": "Classification of incidents", "description": "Classify ICT incidents and determine impact based on: clients affected, duration, geographical spread, data losses, criticality of services, economic impact."},
+        {"id": "Art. 19", "title": "Reporting major incidents", "description": "Report major ICT incidents to competent authority. Initial notification, intermediate report, and final report within specified timeframes."},
+        {"id": "Art. 20", "title": "Harmonisation of reporting", "description": "ESAs develop common reporting content and templates for consistency across the financial sector."},
+        {"id": "Art. 21", "title": "Centralisation of reporting", "description": "ESAs shall develop joint draft regulatory technical standards to establish a single EU Hub for major ICT-related incident reporting by financial entities."},
+        {"id": "Art. 22", "title": "Supervisory feedback", "description": "Competent authorities shall provide feedback and guidance to financial entities following notification of major ICT-related incidents, including anonymised threat intelligence sharing."},
+        {"id": "Art. 23", "title": "Payment-related operational or security incidents", "description": "Credit institutions, payment institutions, account information service providers, and e-money institutions shall also report payment-related operational or security incidents previously reported under PSD2 to the competent authority under DORA."}
+      ]
+    },
+    {
+      "id": "Ch.IV",
+      "title": "Digital Operational Resilience Testing",
+      "articles": [
+        {"id": "Art. 24", "title": "General testing requirements", "description": "Establish, maintain, and review sound digital operational resilience testing programme as integral part of ICT risk management framework."},
+        {"id": "Art. 25", "title": "Testing of ICT tools and systems", "description": "Vulnerability assessments, open source analyses, network security assessments, gap analyses, physical security reviews, source code reviews, penetration testing."},
+        {"id": "Art. 26", "title": "Advanced testing (TLPT)", "description": "Threat-Led Penetration Testing at least every 3 years. Must cover critical functions, be on live production, performed by qualified external testers."},
+        {"id": "Art. 27", "title": "Requirements for TLPT testers", "description": "External testers must be of highest suitability, possess technical capabilities, be certified, and carry professional indemnity insurance."}
+      ]
+    },
+    {
+      "id": "Ch.V",
+      "title": "Managing ICT Third-Party Risk",
+      "articles": [
+        {"id": "Art. 28", "title": "General principles", "description": "Manage ICT third-party risk as integral component. Remain fully responsible for compliance. Adopt ICT third-party risk strategy. Maintain register of contractual arrangements."},
+        {"id": "Art. 29", "title": "ICT concentration risk assessment", "description": "Identify and assess whether contractual arrangement creates ICT concentration risk, dependency, or sub-outsourcing chains."},
+        {"id": "Art. 30", "title": "Key contractual provisions", "description": "Contracts must include: service descriptions, SLDs, processing locations, data security provisions, termination rights, audit rights, incident notification, and exit strategies."}
+      ]
+    }
+  ]
+}

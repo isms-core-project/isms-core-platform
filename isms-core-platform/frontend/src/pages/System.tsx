@@ -39,6 +39,7 @@ import {
   EmailOutlined,
   SendOutlined,
   PsychologyOutlined,
+  AssignmentOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation } from '@tanstack/react-query'
 import dayjs from 'dayjs'
@@ -68,6 +69,7 @@ const DB_COUNT_LABELS: Record<string, string> = {
   implementations: 'Implementations',
   assessments: 'Assessments',
   evidence: 'Evidence Items',
+  automated_evidence: 'Automated Evidence',
   gaps: 'Gaps',
   users: 'Users',
   load_history_count: 'Load History Events',
@@ -164,6 +166,13 @@ export default function System() {
     queryFn: adminApi.getSysInfo,
     refetchInterval: 30_000,
     staleTime: 25_000,
+  })
+
+  const { data: sysLogs, refetch: refetchLogs } = useQuery({
+    queryKey: ['admin', 'system-logs'],
+    queryFn: () => adminApi.getAuditLog({ category: 'system', page_size: 30 }),
+    refetchInterval: 60_000,
+    staleTime: 55_000,
   })
 
   function setImportResult(key: string, ok: boolean, msg: string) {
@@ -281,6 +290,7 @@ export default function System() {
 
   function handleRefresh() {
     refetch()
+    refetchLogs()
     setLastRefresh(new Date())
   }
 
@@ -416,12 +426,16 @@ export default function System() {
                     <Divider sx={{ mb: 1.5 }} />
                     {[
                       { label: 'Platform', value: data.platform },
-                      { label: 'Standard', value: data.standard },
                       { label: 'API Version', value: data.api_version },
+                      { label: 'ISMS', value: 'ISO/IEC 27001:2022 + Amd. 1:2024', highlight: true },
+                      { label: 'Privacy', value: 'ISO/IEC 27701:2025', highlight: true },
+                      { label: 'Cloud', value: 'ISO/IEC 27018:2025', highlight: true },
                       { label: 'Framework Path', value: data.framework_path },
                       { label: 'Operational Path', value: data.operational_path },
+                      ...(data.privacy_path ? [{ label: 'Privacy Path', value: data.privacy_path }] : []),
+                      ...(data.cloud_path ? [{ label: 'Cloud Path', value: data.cloud_path }] : []),
                       { label: 'OpenSearch URL', value: data.opensearch_url },
-                    ].map(({ label, value }) => (
+                    ].map(({ label, value, highlight }) => (
                       <Box key={label} sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.75, gap: 2 }}>
                         <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0 }}>
                           {label}
@@ -429,7 +443,7 @@ export default function System() {
                         <Typography
                           variant="body2"
                           fontFamily="monospace"
-                          sx={{ fontSize: '0.75rem', textAlign: 'right', wordBreak: 'break-all', color: 'text.primary' }}
+                          sx={{ fontSize: '0.75rem', textAlign: 'right', wordBreak: 'break-all', color: highlight ? 'primary.light' : 'text.primary' }}
                         >
                           {value}
                         </Typography>
@@ -913,6 +927,72 @@ export default function System() {
               </Box>
             </Grid>
           </Grid>
+
+          {/* System Event Log */}
+          <Card>
+            <CardContent sx={{ pb: '12px !important' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                <AssignmentOutlined sx={{ color: 'primary.main' }} />
+                <Typography variant="h6" sx={{ flex: 1 }}>System Event Log</Typography>
+                <Typography variant="caption" color="text.secondary">
+                  Last 30 system events
+                </Typography>
+              </Box>
+              <Divider sx={{ mb: 1.5 }} />
+              {!sysLogs || sysLogs.items.length === 0 ? (
+                <Typography variant="body2" color="text.secondary">
+                  No system events recorded yet. Events appear here when background jobs run (archive sweeps, sync tasks, etc.).
+                </Typography>
+              ) : (
+                <TableContainer>
+                  <Table size="small">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell sx={{ color: 'text.secondary', fontSize: '0.7rem', py: 0.5 }}>Time</TableCell>
+                        <TableCell sx={{ color: 'text.secondary', fontSize: '0.7rem', py: 0.5 }}>Event</TableCell>
+                        <TableCell sx={{ color: 'text.secondary', fontSize: '0.7rem', py: 0.5 }}>Severity</TableCell>
+                        <TableCell sx={{ color: 'text.secondary', fontSize: '0.7rem', py: 0.5 }}>Description</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {sysLogs.items.map((entry) => {
+                        const sevColor = entry.severity === 'error' || entry.severity === 'critical'
+                          ? '#FFC7CE'
+                          : entry.severity === 'warning'
+                          ? '#FFEB9C'
+                          : '#C6EFCE'
+                        const sevBg = entry.severity === 'error' || entry.severity === 'critical'
+                          ? '#3a0000'
+                          : entry.severity === 'warning'
+                          ? '#3a2e00'
+                          : '#1a3a27'
+                        return (
+                          <TableRow key={entry.id} hover>
+                            <TableCell sx={{ fontSize: '0.7rem', py: 0.5, whiteSpace: 'nowrap', color: 'text.secondary' }}>
+                              {dayjs(entry.created_at).format('YYYY-MM-DD HH:mm:ss')}
+                            </TableCell>
+                            <TableCell sx={{ fontSize: '0.7rem', py: 0.5, fontFamily: 'monospace' }}>
+                              {entry.event_type}
+                            </TableCell>
+                            <TableCell sx={{ py: 0.5 }}>
+                              <Chip
+                                label={entry.severity}
+                                size="small"
+                                sx={{ fontSize: '0.6rem', height: 16, bgcolor: sevBg, color: sevColor }}
+                              />
+                            </TableCell>
+                            <TableCell sx={{ fontSize: '0.7rem', py: 0.5, color: 'text.secondary' }}>
+                              {entry.description ?? '—'}
+                            </TableCell>
+                          </TableRow>
+                        )
+                      })}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              )}
+            </CardContent>
+          </Card>
 
         </Box>
       )}

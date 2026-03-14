@@ -48,6 +48,7 @@ import {
   PeopleOutlined,
   ExpandMoreOutlined,
   HomeOutlined,
+  ElectricalServicesOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -86,6 +87,7 @@ const NAV_PLATFORM: NavItem[] = [
 
 const NAV_ADMIN: NavItem[] = [
   { label: 'Admin',       path: '/admin',       icon: <AdminPanelSettingsOutlined /> },
+  { label: 'Connectors',  path: '/connectors',  icon: <ElectricalServicesOutlined /> },
   { label: 'System',      path: '/system',      icon: <MonitorHeartOutlined /> },
 ]
 
@@ -110,7 +112,7 @@ const CAT_COLOR: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3
 const CAT_TEXT:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0' }
 
 const PLATFORM_COLOR = '#6B7A99'
-const PLATFORM_PATHS = ['/qa', '/search', '/compass', '/generators', '/report', '/risk', '/admin', '/system']
+const PLATFORM_PATHS = ['/qa', '/search', '/compass', '/generators', '/report', '/risk', '/admin', '/connectors', '/system']
 
 function NotificationPrefsDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
   const queryClient = useQueryClient()
@@ -197,8 +199,10 @@ export default function Sidebar() {
   const { logout, user } = useAuth()
   const { product, setProduct, ismsTier, setIsmsTier } = useProduct()
 
-  // Accordion: only one product section expanded at a time; initialise to active product
-  const [expandedProduct, setExpandedProduct] = useState<Product | null>(product)
+  // Accordion: only one product section expanded at a time.
+  // On Home and platform pages, start collapsed so no product is pre-selected.
+  const isNeutralPage = location.pathname === '/' || PLATFORM_PATHS.some(p => location.pathname.startsWith(p))
+  const [expandedProduct, setExpandedProduct] = useState<Product | null>(isNeutralPage ? null : product)
 
   const TIER_OPTIONS: { value: IsmsTier; label: string; color: string }[] = [
     { value: 'all',         label: 'All', color: 'rgba(255,255,255,0.55)' },

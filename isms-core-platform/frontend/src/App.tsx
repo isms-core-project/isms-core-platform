@@ -22,6 +22,7 @@ import Compass from './pages/Compass'
 import FrameworkControlDetail from './pages/FrameworkControlDetail'
 import Report from './pages/Report'
 import Risk from './pages/Risk'
+import Connectors from './pages/Connectors'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuth()
@@ -57,6 +58,7 @@ export default function App() {
         <Route path="graph" element={<Graph />} />
         <Route path="admin" element={<Admin />} />
         <Route path="system" element={<System />} />
+        <Route path="connectors" element={<Connectors />} />
         <Route path="qa" element={<QA />} />
         <Route path="generators" element={<Generators />} />
         <Route path="compass" element={<Compass />} />

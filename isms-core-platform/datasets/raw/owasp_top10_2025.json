@@ -1,0 +1,136 @@
+{
+  "framework": {
+    "code": "OWASP_TOP10_2025",
+    "name": "OWASP Top 10:2025",
+    "version": "2025",
+    "publisher": "OWASP Foundation",
+    "effective_date": "2025-11-06",
+    "confirmed_date": "2026-01-01",
+    "jurisdiction": "Global",
+    "source_url": "https://owasp.org/Top10/2025/",
+    "description": "Top 10 Web Application Security Risks (2025 edition). 8th installment. Analysed data from over 2.8 million applications across 248 CWEs. Data contributed by 13 organisations. Supplemented by community survey and CVSS scoring from approximately 175,000 CVE records.",
+    "notes": "Replaces OWASP Top 10:2021. RC1 announced 6 November 2025 at OWASP Global AppSec Conference. Confirmed January 2026."
+  },
+  "categories": [
+    {
+      "id": "A01:2025",
+      "name": "Broken Access Control",
+      "description": "Access control enforces policies so that users cannot act outside their intended permissions. Remains #1 with 100% of tested applications exhibiting some form of broken access control. Covers violations of least-privilege, bypassing access control checks through URL/API manipulation, insecure direct object references (IDOR), missing access controls for POST/PUT/DELETE API endpoints, privilege escalation, JWT/CORS misconfiguration, and forced browsing. SSRF (previously A10:2021) has been consolidated into this category.",
+      "cwes_mapped": 40,
+      "total_occurrences": 1839701,
+      "total_cves": 32654,
+      "max_incidence_rate": "20.15%",
+      "avg_incidence_rate": "3.74%",
+      "notable_cwes": ["CWE-200", "CWE-201", "CWE-918", "CWE-352"],
+      "previous": {"id": "A01:2021", "name": "Broken Access Control", "change": "Stays #1; absorbs A10:2021 SSRF (CWE-918)"}
+    },
+    {
+      "id": "A02:2025",
+      "name": "Security Misconfiguration",
+      "description": "Security misconfiguration occurs when a system, application, or cloud service is set up incorrectly from a security perspective. Applications are vulnerable when they have unnecessary features enabled, default accounts/passwords unchanged, overly informative error messages exposing stack traces, disabled security features in upgraded systems, insecure server/framework settings, or missing security headers and directives.",
+      "cwes_mapped": 16,
+      "total_occurrences": 719084,
+      "total_cves": 1375,
+      "max_incidence_rate": "27.70%",
+      "avg_incidence_rate": "3.00%",
+      "notable_cwes": ["CWE-16", "CWE-611"],
+      "previous": {"id": "A05:2021", "name": "Security Misconfiguration", "change": "Rises from #5 to #2 (biggest upward move)"}
+    },
+    {
+      "id": "A03:2025",
+      "name": "Software Supply Chain Failures",
+      "description": "New category for 2025. Replaces and expands the former A06:2021 Vulnerable and Outdated Components to cover the full software supply chain lifecycle — from third-party packages to build and deployment systems. Covers breakdowns or compromises in the process of building, distributing, or updating software caused by vulnerabilities or malicious changes in third-party code, tools, or dependencies. Despite having only 11 mapped CVEs, it shows the highest average incidence rate (5.72%) with over 215,000 occurrences. Overwhelmingly voted as a top concern in the community survey.",
+      "cwes_mapped": 6,
+      "total_occurrences": 215248,
+      "total_cves": 11,
+      "max_incidence_rate": "9.56%",
+      "avg_incidence_rate": "5.72%",
+      "notable_cwes": ["CWE-1035", "CWE-1104", "CWE-1329", "CWE-1357", "CWE-1395", "CWE-447"],
+      "previous": {"id": "A06:2021", "name": "Vulnerable and Outdated Components", "change": "Replaced and expanded; rises from #6 to #3"}
+    },
+    {
+      "id": "A04:2025",
+      "name": "Cryptographic Failures",
+      "description": "Covers failures in cryptography that lead to exposure of sensitive data. Encompasses absence of cryptography, inadequate encryption strength, cryptographic key exposure, deprecated algorithms, improper initialisation vectors, weak password hashing, and certificate validation failures. The three most prevalent underlying issues involve improper random number generation including weak PRNGs and insufficient entropy.",
+      "cwes_mapped": 32,
+      "total_occurrences": 1665348,
+      "total_cves": 2185,
+      "max_incidence_rate": "13.77%",
+      "avg_incidence_rate": "3.80%",
+      "notable_cwes": ["CWE-327", "CWE-338", "CWE-321", "CWE-319", "CWE-326", "CWE-759"],
+      "previous": {"id": "A02:2021", "name": "Cryptographic Failures", "change": "Drops from #2 to #4"}
+    },
+    {
+      "id": "A05:2025",
+      "name": "Injection",
+      "description": "An injection vulnerability allows untrusted user input to be sent to an interpreter that executes parts of that input as commands. Covers SQL injection, NoSQL injection, OS command injection, LDAP injection, expression language injection, and cross-site scripting (XSS). Maintains 100% testing prevalence across applications and carries the largest number of CVEs (62,445) across all categories.",
+      "cwes_mapped": 37,
+      "total_occurrences": 1404249,
+      "total_cves": 62445,
+      "max_incidence_rate": "13.77%",
+      "avg_incidence_rate": "3.08%",
+      "notable_cwes": ["CWE-79", "CWE-89", "CWE-78", "CWE-94", "CWE-90"],
+      "previous": {"id": "A03:2021", "name": "Injection", "change": "Drops from #3 to #5"}
+    },
+    {
+      "id": "A06:2025",
+      "name": "Insecure Design",
+      "description": "Represents missing or ineffective control design at the architectural level. Design flaws differ fundamentally from implementation defects — a secure design with poor execution can be fixed, but insecure architecture cannot be remedied through perfect coding alone. Requires requirements and resource management, secure design practices, and secure development lifecycle integration involving threat modelling.",
+      "cwes_mapped": 39,
+      "total_occurrences": 729882,
+      "total_cves": 7647,
+      "max_incidence_rate": "22.18%",
+      "avg_incidence_rate": "1.86%",
+      "notable_cwes": ["CWE-256", "CWE-269", "CWE-434", "CWE-501", "CWE-522"],
+      "previous": {"id": "A04:2021", "name": "Insecure Design", "change": "Drops from #4 to #6"}
+    },
+    {
+      "id": "A07:2025",
+      "name": "Authentication Failures",
+      "description": "Previously Identification and Authentication Failures. Manifests when systems incorrectly validate users. Common issues include credential stuffing using breached credential lists, permitting brute force attacks without rate limiting, allowing default or weak passwords, and using plain text or weakly hashed password storage.",
+      "cwes_mapped": 36,
+      "total_occurrences": 1120673,
+      "total_cves": 7147,
+      "max_incidence_rate": "15.80%",
+      "avg_incidence_rate": "2.92%",
+      "notable_cwes": ["CWE-259", "CWE-297", "CWE-287", "CWE-384", "CWE-798"],
+      "previous": {"id": "A07:2021", "name": "Identification and Authentication Failures", "change": "Stays #7; name shortened"}
+    },
+    {
+      "id": "A08:2025",
+      "name": "Software or Data Integrity Failures",
+      "description": "Focuses on failure to maintain trust boundaries and verify integrity of software and data at a lower/artifact level than Supply Chain Failures. Covers unsigned software updates, dependencies from untrusted repositories, insecure deserialisation of user-controlled data, and CI/CD pipelines lacking integrity verification.",
+      "cwes_mapped": 14,
+      "total_occurrences": 501327,
+      "total_cves": 3331,
+      "max_incidence_rate": "8.98%",
+      "avg_incidence_rate": "2.75%",
+      "notable_cwes": ["CWE-829", "CWE-915", "CWE-502"],
+      "previous": {"id": "A08:2021", "name": "Software and Data Integrity Failures", "change": "Stays #8; 'and' changed to 'or'"}
+    },
+    {
+      "id": "A09:2025",
+      "name": "Security Logging and Alerting Failures",
+      "description": "Addresses situations where attacks and breaches cannot be detected. Covers inadequate logging of auditable events, unclear or absent log messages, unmonitored logs, lack of real-time alerting, and insufficient incident response capabilities. Renamed from Monitoring to Alerting to emphasise the importance of active alerting over passive monitoring.",
+      "cwes_mapped": 5,
+      "total_occurrences": 260288,
+      "total_cves": 723,
+      "max_incidence_rate": "11.33%",
+      "avg_incidence_rate": "3.91%",
+      "notable_cwes": ["CWE-117", "CWE-223", "CWE-532", "CWE-778"],
+      "previous": {"id": "A09:2021", "name": "Security Logging and Monitoring Failures", "change": "Stays #9; 'Monitoring' changed to 'Alerting'"}
+    },
+    {
+      "id": "A10:2025",
+      "name": "Mishandling of Exceptional Conditions",
+      "description": "Entirely new category for 2025. Addresses software that fails to prevent, detect, and respond to unusual and unpredictable situations, leading to crashes, unexpected behaviour, and security vulnerabilities. Root causes include inadequate input validation, late-stage error handling, unexpected environmental states, and inconsistent exception management. Mishandled exceptions can trigger logic bugs, resource exhaustion, state corruption, and unauthorised access. Prevention requires fail-closed (not fail-open) approaches, centralised error handling, comprehensive logging, rate limiting, and rollback mechanisms.",
+      "cwes_mapped": 24,
+      "total_occurrences": 769581,
+      "total_cves": 3416,
+      "max_incidence_rate": "20.67%",
+      "avg_incidence_rate": "2.95%",
+      "notable_cwes": ["CWE-209", "CWE-234", "CWE-274", "CWE-476", "CWE-636"],
+      "previous": {"id": null, "name": null, "change": "Entirely new category; A10:2021 SSRF was absorbed into A01:2025"}
+    }
+  ]
+}

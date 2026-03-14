@@ -1,0 +1,221 @@
+# ============================================================================
+# ISMS CORE v2.0 — On-Premises Connector Stack
+# Model B: Remote deployment for connectors that need LAN access
+#
+# Deploy this docker-compose on the same network as your on-premises systems
+# (e.g. a Windows Server, Linux VM, or NUC on the corporate LAN).
+# Connectors POST to the ISMS CORE API over the LAN or VPN.
+#
+# Usage:
+#   # Start all configured connectors:
+#   docker compose up -d
+#
+#   # Start a specific connector only:
+#   docker compose up -d isms-connector-active-directory
+#
+# Configuration:
+#   Copy .env.sample for each connector and fill in credentials.
+#   All ISMS_API_URL values must point to your ISMS CORE API (e.g. http://10.0.0.110:8000).
+#   ISMS_API_TOKEN is generated once via Admin → Connectors → Register.
+# ============================================================================
+
+name: isms-core-on-prem-connectors
+
+services:
+
+  # ── Windows Active Directory / OpenLDAP / FreeIPA ────────────────────────
+  # Queries LDAP/LDAPS for users, groups, privileged memberships, password policy.
+  # Maps to: a.5.3 (users) | a.5.15 (groups) | a.5.18 (privileged) | a.8.2 (password policy)
+  isms-connector-active-directory:
+    build:
+      context: ../active-directory
+      dockerfile: Dockerfile
+    image: isms-connector-active-directory:latest
+    container_name: isms-connector-active-directory
+    env_file:
+      - ../active-directory/.env
+    restart: unless-stopped
+    # No port exposure needed — connector makes outbound connections only
+    # (outbound to LDAP server + outbound to ISMS CORE API)
+
+  # ── GLPI (IT Asset Management / ITSM) ────────────────────────────────────
+  # Uncomment when connector is built (Phase 3).
+  # Maps to: a.5.9 (asset inventory) | a.8.1 (asset lifecycle)
+  #
+  # isms-connector-glpi:
+  #   build:
+  #     context: ../glpi
+  #     dockerfile: Dockerfile
+  #   image: isms-connector-glpi:latest
+  #   container_name: isms-connector-glpi
+  #   env_file:
+  #     - ../glpi/.env
+  #   restart: unless-stopped
+
+  # ── NetBox (Network IPAM / DCIM) ─────────────────────────────────────────
+  # Uncomment when connector is built (Phase 3).
+  # Maps to: a.8.1 (network asset inventory) | a.8.20 (network security)
+  #
+  # isms-connector-netbox:
+  #   build:
+  #     context: ../netbox
+  #     dockerfile: Dockerfile
+  #   image: isms-connector-netbox:latest
+  #   container_name: isms-connector-netbox
+  #   env_file:
+  #     - ../netbox/.env
+  #   restart: unless-stopped
+
+  # ── OpenVAS / Greenbone (Vulnerability Scanner) ───────────────────────────
+  # Uncomment when connector is built (Phase 4).
+  # Maps to: a.8.8 (vulnerability management)
+  #
+  # isms-connector-openvas:
+  #   build:
+  #     context: ../openvas
+  #     dockerfile: Dockerfile
+  #   image: isms-connector-openvas:latest
+  #   container_name: isms-connector-openvas
+  #   env_file:
+  #     - ../openvas/.env
+  #   restart: unless-stopped
+
+  # ── Zabbix (Network Monitoring) ──────────────────────────────────────────
+  # Uncomment when connector is built (Phase 4).
+  # Maps to: a.8.16 (monitoring) | a.8.20 (network security)
+  #
+  # isms-connector-zabbix:
+  #   build:
+  #     context: ../zabbix
+  #     dockerfile: Dockerfile
+  #   image: isms-connector-zabbix:latest
+  #   container_name: isms-connector-zabbix
+  #   env_file:
+  #     - ../zabbix/.env
+  #   restart: unless-stopped
+
+  # ── OpenCTI (Filigran XTM) ───────────────────────────────────────────────
+  # Maps to: a.5.7 (threat intel) | a.5.25 (incidents) | a.8.8 (CVEs)
+  # Works with both on-premises OpenCTI and OpenCTI Cloud.
+  # Requires pycti — the official Filigran Python SDK (pip install pycti>=6.0.0).
+  #
+  # isms-connector-opencti:
+  #   build:
+  #     context: ../opencti
+  #     dockerfile: Dockerfile
+  #   image: isms-connector-opencti:latest
+  #   container_name: isms-connector-opencti
+  #   env_file:
+  #     - ../opencti/.env
+  #   restart: unless-stopped
+
+  # ── OpenAEV (Filigran XTM) ───────────────────────────────────────────────
+  # Maps to: a.5.25 (exercise results) | a.6.3 (training) | a.5.36 (compliance testing)
+  # Pulls completed adversary emulation exercises, findings, and ATT&CK coverage.
+  # Complements the OpenCTI connector — scenario intel from CTI → exercise → ISMS evidence.
+  #
+  # isms-connector-openaev:
+  #   build:
+  #     context: ../openaev
+  #     dockerfile: Dockerfile
+  #   image: isms-connector-openaev:latest
+  #   container_name: isms-connector-openaev
+  #   env_file:
+  #     - ../openaev/.env
+  #   restart: unless-stopped
+
+  # ── PRTG Network Monitor ─────────────────────────────────────────────────
+  # Maps to: a.8.16 (monitoring coverage + alarms) | a.8.20 (network inventory)
+  # Polls every 1h (monitoring data changes frequently).
+  # Set PRTG_VERIFY_SSL=false if PRTG uses a self-signed certificate.
+  isms-connector-prtg:
+    build:
+      context: ../prtg
+      dockerfile: Dockerfile
+    image: isms-connector-prtg:latest
+    container_name: isms-connector-prtg
+    env_file:
+      - ../prtg/.env
+    restart: unless-stopped
+
+  # ── Fortinet FortiGate ───────────────────────────────────────────────────
+  # Maps to: a.8.20 (firewall policies) | a.8.15 (IPS threats) | a.6.7 (VPN)
+  # Requires: REST API token (System → Administrators → REST API Admin)
+  # Set FORTIGATE_VERIFY_SSL=false for self-signed management certs.
+  #
+  # isms-connector-fortigate:
+  #   build:
+  #     context: ../fortigate
+  #     dockerfile: Dockerfile
+  #   image: isms-connector-fortigate:latest
+  #   container_name: isms-connector-fortigate
+  #   env_file:
+  #     - ../fortigate/.env
+  #   restart: unless-stopped
+
+  # ── Palo Alto Networks PAN-OS / Panorama ─────────────────────────────────
+  # Maps to: a.8.20 (security rules + zones) | a.8.15 (threat log) | a.6.7 (IPsec VPN)
+  # Requires: API key (GET /api/?type=keygen)
+  # Set PANW_PANORAMA=true + PANW_TARGET_DEVICE for Panorama-managed deployments.
+  #
+  # isms-connector-panw:
+  #   build:
+  #     context: ../panw
+  #     dockerfile: Dockerfile
+  #   image: isms-connector-panw:latest
+  #   container_name: isms-connector-panw
+  #   env_file:
+  #     - ../panw/.env
+  #   restart: unless-stopped
+
+  # ── Cisco ASA Firewall ───────────────────────────────────────────────────
+  # Maps to: a.8.20 (ACL/NAT) | a.8.22 (network config) | a.6.7 (VPN sessions)
+  # Requires: REST API enabled (configure terminal → rest-api enable)
+  # Some ASA versions use port 55443 — set CISCO_ASA_PORT=55443 if needed.
+  #
+  # isms-connector-cisco-asa:
+  #   build:
+  #     context: ../cisco-asa
+  #     dockerfile: Dockerfile
+  #   image: isms-connector-cisco-asa:latest
+  #   container_name: isms-connector-cisco-asa
+  #   env_file:
+  #     - ../cisco-asa/.env
+  #   restart: unless-stopped
+
+  # ── Cisco ISE (Identity Services Engine) ─────────────────────────────────
+  # Maps to: a.5.15 (access control / RADIUS sessions) | a.8.20 (endpoint posture)
+  # Requires: ERS API enabled (Administration → System → Settings → ERS Settings)
+  # Role required: ERS Admin (or ERS Operator for read-only access)
+  #
+  # isms-connector-cisco-ise:
+  #   build:
+  #     context: ../cisco-ise
+  #     dockerfile: Dockerfile
+  #   image: isms-connector-cisco-ise:latest
+  #   container_name: isms-connector-cisco-ise
+  #   env_file:
+  #     - ../cisco-ise/.env
+  #   restart: unless-stopped
+
+  # ── Tenable Security Center (Tenable.sc) ─────────────────────────────────
+  # Maps to: a.8.8 (vulnerability summary: critical/high/medium by host) |
+  #          a.8.1 (asset groups + IPs in scan scope)
+  # Auth option 1 (preferred, Tenable.sc 5.13+): API key pair
+  #   System → Users → [user] → API Keys → Generate
+  # Auth option 2 (fallback): username/password (session token)
+  # Set TENABLE_SC_VERIFY_SSL=false for self-signed management certs.
+  # Poll interval: 86400s (24h) — aligned with daily scan cadence.
+  isms-connector-tenable-sc:
+    build:
+      context: ../tenable-sc
+      dockerfile: Dockerfile
+    image: isms-connector-tenable-sc:latest
+    container_name: isms-connector-tenable-sc
+    env_file:
+      - ../tenable-sc/.env
+    restart: unless-stopped
+
+# No shared network needed — each connector talks directly to:
+#   1. Its source system (LDAP, HTTP API, etc.) on the LAN
+#   2. The ISMS CORE API (ISMS_API_URL in .env) over LAN/VPN

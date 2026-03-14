@@ -1,0 +1,165 @@
+{
+  "framework": {
+    "code": "ISO27018",
+    "name": "ISO/IEC 27018:2019 — PII Protection in Public Cloud",
+    "version": "2019",
+    "publisher": "ISO/IEC",
+    "effective_date": "2019-01-15",
+    "jurisdiction": "International",
+    "source_url": "https://www.iso.org/standard/76559.html",
+    "notes": "Code of practice for protection of personally identifiable information (PII) in public clouds acting as PII processors. Based on ISO 27002 with PII-specific additions. Strongly aligned with GDPR."
+  },
+  "sections": [
+    {
+      "id": "A",
+      "title": "Extended Control Set — PII in Public Cloud",
+      "description": "Controls extending ISO 27002 for PII protection. Applicable to public cloud service providers acting as PII processors on behalf of PII controllers."
+    }
+  ],
+  "controls": [
+    {
+      "id": "A.1",
+      "section": "A",
+      "title": "Consent and choice",
+      "description": "The public cloud PII processor shall not process PII for any purpose other than the documented instructions of the PII controller, unless required by applicable law. The PII processor shall not use PII for marketing or advertising without explicit authorisation from the PII controller.",
+      "gdpr_ref": ["Art. 6", "Art. 28"],
+      "maps_to_iso27001_2022": ["A.5.34"],
+      "keywords": ["consent", "PII processing", "controller instructions", "marketing prohibition", "purpose limitation"]
+    },
+    {
+      "id": "A.2",
+      "section": "A",
+      "title": "Purpose legitimacy and specification",
+      "description": "The cloud provider shall process PII only for the purposes specified in the contract with the PII controller. Any proposed new processing purpose shall be documented and approved by the PII controller prior to implementation.",
+      "gdpr_ref": ["Art. 5(1)(b)"],
+      "maps_to_iso27001_2022": ["A.5.34"],
+      "keywords": ["purpose specification", "purpose limitation", "processing purpose", "PII processor"]
+    },
+    {
+      "id": "A.3",
+      "section": "A",
+      "title": "Collection limitation",
+      "description": "The cloud service provider shall collect only the minimum PII necessary to fulfil the contracted service. Collection practices shall be documented and reviewed. Excess PII collected during service provision shall be promptly deleted.",
+      "gdpr_ref": ["Art. 5(1)(c)"],
+      "maps_to_iso27001_2022": ["A.5.34"],
+      "keywords": ["data minimisation", "collection limitation", "minimum necessary", "PII collection"]
+    },
+    {
+      "id": "A.4",
+      "section": "A",
+      "title": "Data minimisation",
+      "description": "The cloud service provider shall anonymise, pseudonymise, or aggregate PII where full identification is not required for the processing purpose. Anonymisation and pseudonymisation techniques shall be documented and reviewed for effectiveness.",
+      "gdpr_ref": ["Art. 5(1)(c)", "Art. 25"],
+      "maps_to_iso27001_2022": ["A.5.34", "A.8.24"],
+      "keywords": ["anonymisation", "pseudonymisation", "data minimisation", "de-identification", "aggregation"]
+    },
+    {
+      "id": "A.5",
+      "section": "A",
+      "title": "Use, retention, and disclosure limitation",
+      "description": "PII shall be retained only for as long as necessary for the specified purpose. Retention schedules shall be documented and enforced. PII shall be disclosed only to authorised parties. Third-party disclosures shall be documented and restricted to the minimum necessary.",
+      "gdpr_ref": ["Art. 5(1)(e)", "Art. 13", "Art. 14"],
+      "maps_to_iso27001_2022": ["A.5.33", "A.5.34", "A.8.10"],
+      "keywords": ["retention", "data retention", "disclosure limitation", "third party disclosure", "retention schedule"]
+    },
+    {
+      "id": "A.6",
+      "section": "A",
+      "title": "Accuracy and quality",
+      "description": "The cloud service provider shall implement controls to maintain the accuracy and completeness of PII. Mechanisms shall be provided to allow the PII controller to correct, update, or delete inaccurate PII. Quality checks shall be performed on PII stored or processed.",
+      "gdpr_ref": ["Art. 5(1)(d)", "Art. 16"],
+      "maps_to_iso27001_2022": ["A.5.34"],
+      "keywords": ["data accuracy", "data quality", "rectification", "data correction", "PII quality"]
+    },
+    {
+      "id": "A.7",
+      "section": "A",
+      "title": "Openness, transparency, and notice",
+      "description": "The cloud service provider shall make available to the PII controller information about the geographic location of data processing, applicable sub-processors, and any changes to processing. Privacy notices shall be maintained and kept current.",
+      "gdpr_ref": ["Art. 13", "Art. 14", "Art. 30"],
+      "maps_to_iso27001_2022": ["A.5.34"],
+      "keywords": ["transparency", "data location", "sub-processors", "privacy notice", "processing registry"]
+    },
+    {
+      "id": "A.8",
+      "section": "A",
+      "title": "Individual participation and access",
+      "description": "The cloud service provider shall provide mechanisms to the PII controller to support fulfilment of data subject access requests (DSAR). Response capabilities shall be tested and documented. The provider shall assist the controller in responding to DSARs within statutory timeframes.",
+      "gdpr_ref": ["Art. 15", "Art. 17", "Art. 20", "Art. 28"],
+      "maps_to_iso27001_2022": ["A.5.34"],
+      "keywords": ["DSAR", "data subject access", "right of access", "right to erasure", "portability"]
+    },
+    {
+      "id": "A.9",
+      "section": "A",
+      "title": "Accountability",
+      "description": "The cloud service provider shall maintain records of all PII processing activities including: categories of PII, purposes, recipients, retention periods, and security measures. These records shall be made available to the PII controller and competent supervisory authorities upon request.",
+      "gdpr_ref": ["Art. 30", "Art. 28(3)"],
+      "maps_to_iso27001_2022": ["A.5.34", "A.5.36"],
+      "keywords": ["accountability", "records of processing", "RoPA", "audit trail", "processing records"]
+    },
+    {
+      "id": "A.10.1",
+      "section": "A",
+      "title": "Information security obligations for sub-processors",
+      "description": "The cloud service provider shall ensure that any sub-processors engaged to process PII provide equivalent security guarantees to those required by the PII controller. Sub-processor agreements shall impose data protection obligations at least equivalent to the main contract.",
+      "gdpr_ref": ["Art. 28(2)", "Art. 28(4)"],
+      "maps_to_iso27001_2022": ["A.5.19", "A.5.20", "A.5.21"],
+      "keywords": ["sub-processor", "supply chain", "third party security", "processor obligations", "sub-contracting"]
+    },
+    {
+      "id": "A.10.2",
+      "section": "A",
+      "title": "Business continuity for PII",
+      "description": "Business continuity plans shall include specific provisions for PII. Recovery time objectives for systems processing PII shall be defined. PII backup and recovery procedures shall be tested regularly.",
+      "gdpr_ref": ["Art. 32(1)(c)"],
+      "maps_to_iso27001_2022": ["A.5.29", "A.5.30", "A.8.13"],
+      "keywords": ["business continuity", "PII backup", "RTO", "recovery", "resilience"]
+    },
+    {
+      "id": "A.10.3",
+      "section": "A",
+      "title": "Incident response for PII breaches",
+      "description": "The cloud service provider shall notify the PII controller of PII breaches without undue delay (within 24 hours of discovery is best practice). Notifications shall include: categories and approximate number of data subjects affected, categories of PII affected, and initial assessment of impact.",
+      "gdpr_ref": ["Art. 33", "Art. 34"],
+      "maps_to_iso27001_2022": ["A.5.24", "A.5.25", "A.5.26"],
+      "keywords": ["breach notification", "PII breach", "personal data breach", "72 hours", "incident notification"]
+    },
+    {
+      "id": "A.10.4",
+      "section": "A",
+      "title": "Encryption and key management for PII",
+      "description": "PII shall be encrypted in transit using TLS 1.2 or higher. PII at rest shall be encrypted using approved cryptographic algorithms. Encryption keys for PII shall be managed separately from encrypted data. Key management procedures shall address generation, distribution, storage, rotation, and destruction.",
+      "gdpr_ref": ["Art. 32(1)(a)"],
+      "maps_to_iso27001_2022": ["A.8.24"],
+      "keywords": ["encryption", "TLS", "key management", "PII encryption", "cryptography", "at rest", "in transit"]
+    },
+    {
+      "id": "A.10.5",
+      "section": "A",
+      "title": "Access control for PII",
+      "description": "Access to PII shall be restricted to personnel with a documented need to process it. All access to PII shall be logged. Privileged access to PII systems shall require additional authorisation. Access rights shall be reviewed at least quarterly.",
+      "gdpr_ref": ["Art. 32(1)(b)"],
+      "maps_to_iso27001_2022": ["A.5.15", "A.5.16", "A.8.2", "A.8.3"],
+      "keywords": ["PII access control", "need to know", "access logging", "privileged access", "access review"]
+    },
+    {
+      "id": "A.11.1",
+      "section": "A",
+      "title": "Privacy compliance monitoring",
+      "description": "The cloud service provider shall conduct regular privacy compliance assessments including DPIA support, privacy impact assessments of new processing activities, and periodic audits against applicable privacy regulations. Findings shall be tracked and remediated.",
+      "gdpr_ref": ["Art. 35", "Art. 36"],
+      "maps_to_iso27001_2022": ["A.5.34", "A.5.36"],
+      "keywords": ["DPIA", "privacy audit", "compliance monitoring", "privacy assessment", "data protection audit"]
+    },
+    {
+      "id": "A.11.2",
+      "section": "A",
+      "title": "Cross-border data transfer controls",
+      "description": "Transfers of PII to countries outside the originating jurisdiction shall be subject to appropriate safeguards. Applicable mechanisms include: adequacy decisions, standard contractual clauses (SCCs), binding corporate rules (BCRs), and approved certification schemes. Transfer impact assessments shall be conducted for high-risk transfers.",
+      "gdpr_ref": ["Art. 44", "Art. 45", "Art. 46", "Art. 47"],
+      "maps_to_iso27001_2022": ["A.5.31", "A.5.34"],
+      "keywords": ["cross-border transfer", "international transfer", "SCC", "BCR", "adequacy", "data transfer", "schrems"]
+    }
+  ]
+}

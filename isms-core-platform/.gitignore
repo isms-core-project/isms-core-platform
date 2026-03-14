@@ -1,22 +1,29 @@
 # Environment — never commit secrets
 .env
+.env.local
+.env.*.local
 
 # Python
 __pycache__/
-*.pyc
-*.pyo
-.pytest_cache/
+*.py[cod]
+*.egg-info/
+.venv/
+dist/
 
 # Node
 node_modules/
-dist/
-.vite/
+frontend/dist/
 
-# Docker build cache
-*.log
+# Docker volumes (local only)
+postgres-data/
+redis-data/
+opensearch-data/
 
-# Uploads (user-uploaded evidence files)
+# Uploads / generated
 backend/uploads/
+backend/cache/
 
-# macOS
+# IDE
 .DS_Store
+.idea/
+*.swp

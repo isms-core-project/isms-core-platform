@@ -1,0 +1,32 @@
+{
+  "framework": {
+    "code": "EU_GDPR",
+    "name": "EU General Data Protection Regulation",
+    "version": "2016/679",
+    "publisher": "European Union",
+    "effective_date": "2018-05-25",
+    "jurisdiction": "EU",
+    "source_url": "https://gdpr-info.eu/"
+  },
+  "articles": [
+    {"id": "Art. 5", "title": "Principles relating to processing of personal data", "description": "Processing must be lawful, fair, transparent; purpose-limited; data-minimised; accurate; storage-limited; processed with integrity and confidentiality. Controller must demonstrate accountability."},
+    {"id": "Art. 6", "title": "Lawfulness of processing", "description": "Processing is lawful only under specified legal bases: consent, contractual necessity, legal obligation, vital interests, public interest, or legitimate interests."},
+    {"id": "Art. 24", "title": "Responsibility of the controller", "description": "Controller shall implement appropriate TOMs to ensure and demonstrate that processing is performed in accordance with the Regulation, taking into account nature, scope, context and purposes of processing, and risks to rights and freedoms."},
+    {"id": "Art. 25", "title": "Data protection by design and by default", "description": "Controller shall implement appropriate TOMs (such as pseudonymisation) at design and processing time. By default, only personal data necessary for each specific purpose shall be processed."},
+    {"id": "Art. 28", "title": "Processor", "description": "Controller shall use only processors providing sufficient guarantees of appropriate TOMs. Processing governed by contract specifying subject matter, duration, nature, purpose, and obligations."},
+    {"id": "Art. 30", "title": "Records of processing activities", "description": "Controllers and processors must maintain written records including: purposes, categories of data subjects and data, recipients, transfers, retention periods, and description of security measures."},
+    {"id": "Art. 32", "title": "Security of processing", "description": "Implement appropriate TOMs including: pseudonymisation and encryption; ongoing CIA and resilience; restore availability after incident; regularly test and evaluate effectiveness. Risk-based approach."},
+    {"id": "Art. 33", "title": "Breach notification to authority", "description": "Controller shall notify supervisory authority without undue delay and within 72 hours. Notification must describe: nature of breach, categories/number of data subjects, likely consequences, and measures taken."},
+    {"id": "Art. 34", "title": "Breach communication to data subject", "description": "Where breach likely results in high risk to rights and freedoms, controller must communicate to data subject without undue delay. Not required if appropriate safeguards applied (e.g., encryption)."},
+    {"id": "Art. 35", "title": "Data protection impact assessment", "description": "DPIA required where processing likely results in high risk. Required for: systematic profiling, large-scale sensitive data, systematic monitoring of public areas."},
+    {"id": "Art. 36", "title": "Prior consultation", "description": "Consult supervisory authority prior to processing where DPIA indicates high risk that cannot be mitigated."},
+    {"id": "Art. 37", "title": "Designation of the data protection officer", "description": "Controller and processor shall designate a DPO where: processing by public authority; core activities require large-scale systematic monitoring; or core activities consist of large-scale processing of special categories of data."},
+    {"id": "Art. 39", "title": "Tasks of the data protection officer", "description": "DPO tasks include: inform and advise controller/processor; monitor compliance; provide advice on DPIA; cooperate with supervisory authority; act as contact point for supervisory authority on processing matters."},
+    {"id": "Art. 44", "title": "General principle for transfers", "description": "Any transfer to a third country shall take place only if Chapter V conditions met, ensuring level of protection is not undermined."},
+    {"id": "Art. 45", "title": "Transfers — adequacy decision", "description": "Transfer may take place where the Commission has decided the third country ensures adequate level of protection."},
+    {"id": "Art. 46", "title": "Transfers — appropriate safeguards", "description": "Without adequacy, transfers permitted with appropriate safeguards: BCRs, SCCs, approved codes of conduct, or approved certification mechanisms."},
+    {"id": "Art. 47", "title": "Binding corporate rules", "description": "BCRs must be approved by competent supervisory authority and include legally binding structure, data subject rights, acceptance of liability, and compliance verification mechanisms."},
+    {"id": "Art. 48", "title": "Transfers not authorised by Union law", "description": "Third-country court/administrative authority decisions requiring transfer only recognised if based on international agreement (e.g., MLAT)."},
+    {"id": "Art. 49", "title": "Derogations for specific situations", "description": "Without adequacy or safeguards, transfers allowed for: explicit consent, contractual necessity, important public interest, legal claims, vital interests, or public register."}
+  ]
+}

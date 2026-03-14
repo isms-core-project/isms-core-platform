@@ -1,0 +1,24 @@
+{
+  "framework": {
+    "code": "SWISS_NDSG",
+    "name": "Swiss Federal Act on Data Protection (nFADP/nDSG)",
+    "version": "2023",
+    "publisher": "Swiss Confederation",
+    "effective_date": "2023-09-01",
+    "jurisdiction": "CH",
+    "source_url": "https://www.fedlex.admin.ch/eli/cc/2022/491/en"
+  },
+  "articles": [
+    {"id": "Art. 5", "title": "Principles", "description": "Personal data may only be processed lawfully, in good faith, and proportionally. Collection must be for a defined purpose recognisable to the data subject."},
+    {"id": "Art. 6", "title": "Personality and fundamental rights", "description": "Data processing must not unlawfully breach the personality of the data subject. Processing is unlawful if it violates Art. 5 principles or occurs against the explicit will of the data subject."},
+    {"id": "Art. 7", "title": "Data security", "description": "The controller and processor shall ensure appropriate technical and organisational measures (TOMs) to ensure data security proportionate to the risk. Measures must protect against unauthorised or accidental destruction, loss, alteration, and unauthorised disclosure or access."},
+    {"id": "Art. 8", "title": "Data protection by design and by default", "description": "The controller shall design data processing so that data protection principles (especially minimisation) are implemented from the outset. Default settings must limit processing to the minimum required."},
+    {"id": "Art. 9", "title": "Processing by processors", "description": "Processing may be outsourced to a processor by agreement or law, provided the processor processes data only in ways the controller could themselves. The controller must ensure the processor maintains data security."},
+    {"id": "Art. 16", "title": "Cross-border disclosure — Principles", "description": "Personal data may be disclosed abroad if the Federal Council has determined the destination state ensures adequate protection. Without adequacy, appropriate safeguards (SCCs, BCRs) are required."},
+    {"id": "Art. 17", "title": "Cross-border disclosure — Exceptions", "description": "Data may be disclosed abroad without adequate-level protection in specific situations: express consent, contract performance, overriding public interest, or protection of life/physical integrity."},
+    {"id": "Art. 19", "title": "Duty to inform", "description": "The controller must inform the data subject of collection of personal data, providing identity of controller, processing purpose, recipients, and (for cross-border transfers) destination state and applicable safeguards."},
+    {"id": "Art. 22", "title": "Data protection impact assessment", "description": "The controller must carry out a DPIA where processing is likely to result in high risk to personality or fundamental rights. Must describe planned processing, assess risks, and identify mitigation measures."},
+    {"id": "Art. 24", "title": "Notification of data security breaches", "description": "The controller must notify the FDPIC as quickly as possible of any breach likely to result in high risk. Must state nature of breach, consequences, and measures taken. Must inform affected data subjects if necessary."},
+    {"id": "Art. 25", "title": "Right of access", "description": "Every person may request whether personal data concerning them is being processed, and receive all information necessary to assert their data protection rights."}
+  ]
+}

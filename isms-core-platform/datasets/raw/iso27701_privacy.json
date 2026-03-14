@@ -1,0 +1,207 @@
+{
+  "framework": {
+    "code": "ISO27701",
+    "name": "ISO/IEC 27701:2019 — Privacy Information Management",
+    "version": "2019",
+    "publisher": "ISO/IEC",
+    "effective_date": "2019-08-06",
+    "jurisdiction": "International",
+    "source_url": "https://www.iso.org/standard/71670.html",
+    "notes": "Extension to ISO/IEC 27001 and ISO/IEC 27002 for Privacy Information Management Systems (PIMS). Specifies requirements and provides guidance for controllers (Section 7) and processors (Section 8) of PII. Recognised as a valid GDPR compliance mechanism by EU supervisory authorities."
+  },
+  "sections": [
+    {
+      "id": "5",
+      "title": "PIMS-Specific Requirements (ISO 27001 Extensions)",
+      "description": "Additional requirements extending ISO 27001 clauses 4–10 for privacy management. Adds privacy-specific obligations to context, leadership, planning, support, operation, evaluation, and improvement."
+    },
+    {
+      "id": "6",
+      "title": "PIMS-Specific Guidance (ISO 27002 Extensions)",
+      "description": "Additional implementation guidance extending ISO 27002 for privacy. Applies to both PII controllers and PII processors."
+    },
+    {
+      "id": "7",
+      "title": "Additional ISO 27002 Guidance for PII Controllers",
+      "description": "Privacy-specific implementation guidance for organisations acting as PII controllers. Covers the full ISO 27002 control set with privacy overlay."
+    },
+    {
+      "id": "8",
+      "title": "Additional ISO 27002 Guidance for PII Processors",
+      "description": "Privacy-specific implementation guidance for organisations acting as PII processors on behalf of controllers. Mirrors Section 7 structure with processor-specific obligations."
+    }
+  ],
+  "controls": [
+    {
+      "id": "5.2.1",
+      "section": "5",
+      "title": "Understanding the organisation and its context (privacy)",
+      "description": "The organisation shall determine the role it plays with respect to PII (controller, processor, or both), identify relevant privacy legislation and regulatory requirements in all jurisdictions where it operates, and document its privacy obligations. A PII inventory shall be established.",
+      "maps_to_iso27001_2022": ["A.5.31", "A.5.34", "A.5.36"],
+      "gdpr_ref": ["Art. 4", "Art. 24", "Art. 28"],
+      "keywords": ["PII controller", "PII processor", "privacy legislation", "PII inventory", "data mapping", "GDPR role"]
+    },
+    {
+      "id": "5.4.1",
+      "section": "5",
+      "title": "Privacy risk assessment",
+      "description": "The organisation shall conduct privacy risk assessments (DPIA-compatible) to identify risks to PII principals (data subjects). Risk assessments shall consider: likelihood and severity of impact on data subjects, not just organisational risk. Assessments shall be updated when processing activities change.",
+      "maps_to_iso27001_2022": ["A.5.34"],
+      "gdpr_ref": ["Art. 35"],
+      "keywords": ["DPIA", "privacy risk", "data subject risk", "privacy impact assessment", "PIA", "risk to individuals"]
+    },
+    {
+      "id": "6.2.1",
+      "section": "6",
+      "title": "PII inventories",
+      "description": "A comprehensive, up-to-date inventory of all PII processing activities shall be maintained. The inventory shall include: categories of PII principals, PII categories, processing purposes, legal bases, retention periods, recipients, and applicable safeguards. Records of processing activities (RoPA) shall be maintained as required by applicable law.",
+      "maps_to_iso27001_2022": ["A.5.34"],
+      "gdpr_ref": ["Art. 30"],
+      "keywords": ["PII inventory", "data mapping", "RoPA", "records of processing", "data register", "processing activities"]
+    },
+    {
+      "id": "6.2.2",
+      "section": "6",
+      "title": "Determining privacy roles and responsibilities",
+      "description": "The organisation shall clearly define and document whether it acts as a PII controller, PII processor, or both for each processing activity. Joint controller arrangements shall be documented. The roles shall be communicated to relevant internal and external parties.",
+      "maps_to_iso27001_2022": ["A.5.2", "A.5.34"],
+      "gdpr_ref": ["Art. 24", "Art. 26", "Art. 28"],
+      "keywords": ["controller", "processor", "joint controller", "DPO", "privacy roles", "data governance"]
+    },
+    {
+      "id": "6.3.1",
+      "section": "6",
+      "title": "Privacy by design and by default",
+      "description": "Privacy controls shall be built into system design from inception, not added later. Data minimisation, purpose limitation, and storage limitation shall be enforced by default settings. Privacy impact assessments shall be conducted for new systems and significant changes.",
+      "maps_to_iso27001_2022": ["A.5.34", "A.8.25", "A.8.26"],
+      "gdpr_ref": ["Art. 25"],
+      "keywords": ["privacy by design", "privacy by default", "data minimisation", "PIA", "DPIA", "default settings"]
+    },
+    {
+      "id": "6.4.1",
+      "section": "6",
+      "title": "PII principal consent management",
+      "description": "Where consent is the legal basis for processing, the organisation shall implement consent management mechanisms that: are freely given, specific, informed, and unambiguous; are as easy to withdraw as to give; are logged with timestamp and method; and are renewed when processing purposes change.",
+      "maps_to_iso27001_2022": ["A.5.34"],
+      "gdpr_ref": ["Art. 6(1)(a)", "Art. 7"],
+      "keywords": ["consent", "consent management", "consent withdrawal", "opt-in", "legal basis", "consent record"]
+    },
+    {
+      "id": "6.5.1",
+      "section": "6",
+      "title": "PII principal rights support",
+      "description": "The organisation shall implement processes to support all applicable PII principal rights including: right of access (DSAR), rectification, erasure (right to be forgotten), restriction of processing, data portability, and objection to processing. Response procedures shall meet statutory timeframes.",
+      "maps_to_iso27001_2022": ["A.5.34"],
+      "gdpr_ref": ["Art. 15", "Art. 16", "Art. 17", "Art. 18", "Art. 20", "Art. 21"],
+      "keywords": ["data subject rights", "DSAR", "right to erasure", "right to be forgotten", "portability", "objection"]
+    },
+    {
+      "id": "7.2.1",
+      "section": "7",
+      "title": "Information security policies (PII controller)",
+      "description": "Information security policies shall include specific provisions addressing privacy and PII protection obligations. Policies shall reference applicable privacy legislation and the organisation's privacy notice. Senior management approval and annual review required.",
+      "maps_to_iso27001_2022": ["A.5.1", "A.5.34"],
+      "gdpr_ref": ["Art. 24"],
+      "keywords": ["privacy policy", "information security policy", "PII policy", "management commitment"]
+    },
+    {
+      "id": "7.3.1",
+      "section": "7",
+      "title": "Human resource security (privacy)",
+      "description": "All personnel with access to PII shall undergo privacy-specific background screening and shall receive privacy awareness training before handling PII. Privacy obligations shall be included in employment contracts. Termination procedures shall include revocation of PII access and return of PII assets.",
+      "maps_to_iso27001_2022": ["A.6.1", "A.6.2", "A.6.3", "A.6.5"],
+      "gdpr_ref": ["Art. 29", "Art. 32(4)"],
+      "keywords": ["privacy training", "staff screening", "confidentiality", "termination", "HR security privacy"]
+    },
+    {
+      "id": "7.4.1",
+      "section": "7",
+      "title": "PII asset management",
+      "description": "All assets that store, process, or transmit PII shall be included in an asset inventory with classification reflecting privacy risk. PII assets shall be classified at a higher level and subject to stricter controls than non-PII assets. Media containing PII shall be securely disposed of.",
+      "maps_to_iso27001_2022": ["A.5.9", "A.5.10", "A.5.12", "A.8.10"],
+      "gdpr_ref": ["Art. 32"],
+      "keywords": ["PII assets", "data classification", "media disposal", "asset inventory", "sensitive data"]
+    },
+    {
+      "id": "7.5.1",
+      "section": "7",
+      "title": "Access control for PII (controller)",
+      "description": "Access to PII shall be controlled based on the principle of need to know. Role-based access controls shall implement purpose limitation. All access to PII shall be logged. Privileged access to PII systems shall be time-limited and require additional approval.",
+      "maps_to_iso27001_2022": ["A.5.15", "A.5.16", "A.5.17", "A.5.18", "A.8.2", "A.8.3", "A.8.4", "A.8.5"],
+      "gdpr_ref": ["Art. 5(1)(f)", "Art. 32"],
+      "keywords": ["PII access control", "need to know", "RBAC", "purpose limitation enforcement", "access logging"]
+    },
+    {
+      "id": "7.8.1",
+      "section": "7",
+      "title": "Operations security for PII",
+      "description": "PII processing systems shall be monitored for anomalous access patterns indicative of data exfiltration or unauthorised processing. Monitoring shall cover bulk export, unusual query patterns, and access outside business hours. Alerts shall be investigated within defined timeframes.",
+      "maps_to_iso27001_2022": ["A.8.15", "A.8.16"],
+      "gdpr_ref": ["Art. 32"],
+      "keywords": ["PII monitoring", "anomaly detection", "data exfiltration", "audit logging", "DLP"]
+    },
+    {
+      "id": "7.9.1",
+      "section": "7",
+      "title": "Communications security for PII",
+      "description": "PII shall be encrypted when transmitted over networks. Encrypted channels (TLS 1.2+) shall be mandatory for all PII transmission. End-to-end encryption shall be considered for high-risk PII. Unencrypted transmission of PII shall be prohibited.",
+      "maps_to_iso27001_2022": ["A.8.20", "A.8.21", "A.8.24"],
+      "gdpr_ref": ["Art. 32(1)(a)"],
+      "keywords": ["PII encryption in transit", "TLS", "secure transmission", "end-to-end encryption", "network security PII"]
+    },
+    {
+      "id": "7.11.1",
+      "section": "7",
+      "title": "Supplier relationships for PII processing",
+      "description": "Suppliers and service providers with access to PII shall be assessed for privacy and data protection compliance. Data processing agreements (DPAs) shall be in place before sharing PII. Supplier privacy practices shall be audited at least annually. Sub-processor chains shall be documented and controlled.",
+      "maps_to_iso27001_2022": ["A.5.19", "A.5.20", "A.5.21", "A.5.22"],
+      "gdpr_ref": ["Art. 28", "Art. 29"],
+      "keywords": ["DPA", "data processing agreement", "supplier privacy", "sub-processor", "third party PII", "vendor assessment"]
+    },
+    {
+      "id": "7.12.1",
+      "section": "7",
+      "title": "Information security incident management for PII breaches",
+      "description": "Incident response procedures shall include specific provisions for personal data breaches. The organisation shall be capable of detecting, assessing, and notifying personal data breaches within 72 hours of discovery. DSAR-related incidents shall be tracked. Breach register shall be maintained.",
+      "maps_to_iso27001_2022": ["A.5.24", "A.5.25", "A.5.26", "A.5.27"],
+      "gdpr_ref": ["Art. 33", "Art. 34"],
+      "keywords": ["personal data breach", "72 hours", "breach notification", "breach register", "GDPR notification"]
+    },
+    {
+      "id": "7.14.1",
+      "section": "7",
+      "title": "Privacy compliance and review",
+      "description": "Compliance with privacy obligations shall be regularly assessed through internal audits, DPIAs, and management reviews. Non-conformities shall be tracked and remediated. The DPO (where appointed) shall report privacy compliance status to senior management at least annually.",
+      "maps_to_iso27001_2022": ["A.5.34", "A.5.35", "A.5.36"],
+      "gdpr_ref": ["Art. 37", "Art. 38", "Art. 39"],
+      "keywords": ["privacy audit", "DPO report", "DPIA", "compliance review", "privacy programme"]
+    },
+    {
+      "id": "8.2.1",
+      "section": "8",
+      "title": "Contractual obligations for PII processors",
+      "description": "PII processors shall only process PII on documented instructions from the controller. Processing shall be limited to purposes specified in the data processing agreement. The processor shall not engage sub-processors without prior written authorisation from the controller.",
+      "maps_to_iso27001_2022": ["A.5.19", "A.5.31", "A.5.34"],
+      "gdpr_ref": ["Art. 28(3)", "Art. 29"],
+      "keywords": ["processor instructions", "DPA compliance", "sub-processor authorisation", "documented instructions"]
+    },
+    {
+      "id": "8.4.1",
+      "section": "8",
+      "title": "Temporary files and copies of PII (processor)",
+      "description": "PII processors shall identify and control all temporary files, copies, and caches containing PII created during processing. Temporary PII shall be deleted when no longer needed for the processing purpose. Processing logs shall be retained for audit purposes.",
+      "maps_to_iso27001_2022": ["A.5.33", "A.8.10"],
+      "gdpr_ref": ["Art. 5(1)(e)", "Art. 28"],
+      "keywords": ["temporary files", "PII copies", "cache", "data deletion", "retention control", "processor"]
+    },
+    {
+      "id": "8.5.1",
+      "section": "8",
+      "title": "Processor security obligations",
+      "description": "PII processors shall implement security measures at least equivalent to those required by the controller. Security measures shall be documented and made available to the controller. Processors shall support controller audits and inspections of PII processing activities.",
+      "maps_to_iso27001_2022": ["A.5.19", "A.5.34"],
+      "gdpr_ref": ["Art. 28(3)(c)", "Art. 32"],
+      "keywords": ["processor security", "audit rights", "security measures", "processor obligations", "right to audit"]
+    }
+  ]
+}

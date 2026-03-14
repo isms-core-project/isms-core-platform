@@ -1,0 +1,58 @@
+{
+  "frameworks": [
+    {
+      "code": "FINMA_2023_1",
+      "name": "FINMA Circular 2023/1 — Operational Risks and Resilience",
+      "version": "2023/1",
+      "publisher": "FINMA",
+      "effective_date": "2024-01-01",
+      "jurisdiction": "CH",
+      "source_url": "https://www.finma.ch/en/documentation/circulars/",
+      "requirements": [
+        {"id": "P1", "title": "Operational Risk Management", "margin_nos": "Rz 22-46", "description": "Board approves risk tolerance; executive board implements procedures, processes, controls. Independent audit function. Regular risk reporting. Separation of operational management from independent control functions."},
+        {"id": "P2", "title": "ICT Risk Management", "margin_nos": "Rz 47-60", "description": "ICT strategy and governance aligned to business strategy. Change management, ICT operations, incident management. Comprehensive ICT asset inventory. Annual ICT risk reporting."},
+        {"id": "P3", "title": "Cyber Risk Management", "margin_nos": "Rz 61-70", "description": "Threat identification and asset protection. Vulnerability analyses and penetration testing. Systematic monitoring of ICT systems. Incident response plans tested. Cyber attacks reported to FINMA within 24 hours."},
+        {"id": "P4", "title": "Critical Data Risk Management", "margin_nos": "Rz 71-82", "description": "Protection of confidentiality, integrity, and availability of critical data. Data strategy. Service provider due diligence. Potential dual reporting obligations (FINMA + data protection)."},
+        {"id": "P5", "title": "Business Continuity Management", "margin_nos": "Rz 83-96", "description": "Identification of critical business processes with RTO/RPO. Mandatory BCP and DRP. Annual review plus ad hoc updates. Testing against severe but plausible scenarios."},
+        {"id": "P6", "title": "International Service Business Risks", "margin_nos": "Rz 97-100", "description": "Management of risks from cross-border financial services. Legal, regulatory, and reputational risk assessment for international operations."},
+        {"id": "P7", "title": "Operational Resilience", "margin_nos": "Rz 101-111", "description": "Ability to restore critical functions within defined disruption tolerance. Board-approved tolerance thresholds per critical function. Regular testing under severe scenarios."}
+      ]
+    },
+    {
+      "code": "FINMA_2018_3",
+      "name": "FINMA Circular 2018/3 — Outsourcing",
+      "version": "2018/3",
+      "publisher": "FINMA",
+      "effective_date": "2018-04-01",
+      "jurisdiction": "CH",
+      "source_url": "https://www.finma.ch/en/documentation/circulars/",
+      "requirements": [
+        {"id": "DEF", "title": "Outsourcing definition", "description": "Mandating a service provider to carry out independently and permanently an essential function on which regulatory compliance significantly depends."},
+        {"id": "V.A", "title": "Inventory of outsourced functions", "description": "Maintain current lists of outsourced functions showing service provider details, subcontractors, and responsible internal units."},
+        {"id": "V.B", "title": "Selection, instruction and monitoring", "description": "Service providers must have professional experience. Companies must provide proper instruction and monitor performance continuously."},
+        {"id": "V.C", "title": "Outsourcing within group/conglomerate", "description": "No blanket exemptions, but requirements may be adjusted based on affiliate relationships and lower applicable risks."},
+        {"id": "V.D", "title": "Responsibility", "description": "Outsourcing companies remain fully responsible to FINMA. Outsourced function integrated into internal control system. Main risks systematically identified, monitored, and controlled."},
+        {"id": "V.E", "title": "Security", "description": "Adequate security measures must be maintained for outsourced functions."},
+        {"id": "V.F", "title": "Audit and supervision", "description": "The company, audit firm, and FINMA must be able to verify compliance at any time. Contractual audit and inspection rights guaranteed."},
+        {"id": "V.G", "title": "Outsourcing to another country", "description": "Permissible if inspection/audit rights guaranteed. Must not hinder recovery/resolution. Data access in Switzerland guaranteed."},
+        {"id": "V.H", "title": "Agreement", "description": "Written contracts required for essential functions. Must grant instruction/control rights, require approval before subcontracting, and enable audit access."}
+      ]
+    },
+    {
+      "code": "FINMA_GUIDANCE_2024",
+      "name": "FINMA Guidance 03/2024 — Cyber Risks",
+      "version": "03/2024",
+      "publisher": "FINMA",
+      "effective_date": "2024-06-07",
+      "jurisdiction": "CH",
+      "source_url": "https://www.finma.ch/en/documentation/finma-guidance/",
+      "requirements": [
+        {"id": "G1", "title": "Governance", "description": "Cyber risks as separate risk category within operational risk management. Appropriate risk appetite and tolerance defined. Key controls integrated into ICS. Operational management separated from independent control functions."},
+        {"id": "G2", "title": "Protective measures", "description": "Effective DDoS protection. DLP covering sensitive data, business secrets, IP. Supply chain security (50%+ of attacks target service provider chains). Service providers must inform about cyber incidents."},
+        {"id": "G3", "title": "Detection, response, and recovery", "description": "Realistic incident response plans created and tested. Lessons learned documented. Timely improvements based on incident analysis. Systematic and prompt monitoring."},
+        {"id": "G4", "title": "Reporting obligations", "description": "Cyber attacks reported to FINMA key account manager within 24 hours of discovery. Initial report with severity assessment and factual description. May be withdrawn if not material."},
+        {"id": "G5", "title": "Cyber exercises", "description": "Risk-based and scenario-based cyber exercises required. Red teaming for systemically important institutions. Non-systemic: minimum one tabletop exercise annually. Proportionality applies."}
+      ]
+    }
+  ]
+}
