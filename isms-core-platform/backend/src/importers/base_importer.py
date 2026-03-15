@@ -109,7 +109,12 @@ class BaseImporter:
 
         # 2. Foundation / non-ISO mapping: group_code "00" or non-A. prefix
         #    (covers ISMS-POL-00, ISMS-POL-01, ISMS-INS-POL-00, ISMS-REF-DORA, etc.)
+        #    When a preferred_family is given, only look in that family's cache so
+        #    PRIV-POL-00 / CLD-POL-00 etc. never fall back to the ISMS "00" group.
         if code == "00" or not code.startswith("a."):
+            if preferred_family is not None:
+                family_cache = self._group_cache_by_family.get(preferred_family, {})
+                return family_cache.get("00") or None
             return _lookup("00")
 
         # 3. Strip section suffix (-S1, -S2, etc.)
