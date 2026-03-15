@@ -135,6 +135,9 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 <td align="center"><strong>ISMS Compass — AI Gap Analysis</strong><br/><img src="screenshots/05_isms-core_compass.png" width="380" alt="ISMS Compass — paste any document, compare against Gold Standard, get gap analysis"/></td>
 <td align="center"><strong>System Status</strong><br/><img src="screenshots/08_isms-core_system.png" width="380" alt="System status — all services healthy, DB stats, OpenSearch indices, Celery Worker active"/></td>
 </tr>
+<tr>
+<td align="center" colspan="2"><strong>Admin — Content Importer</strong><br/><img src="screenshots/09_isms-core_importer.png" width="700" alt="Admin panel — First-Run Setup with individual import buttons and Full Sync"/></td>
+</tr>
 </table>
 
 ---
@@ -320,7 +323,26 @@ isms-core-beat           Up
 
 ---
 
-### Step 4 — Run bootstrap.sh (ONCE, first boot only)
+### Step 4 — Load Content
+
+You have two ways to load content into the platform: the command-line bootstrap script (recommended for first deploy) or the Admin WebUI (useful for selective loading or re-syncing).
+
+#### Selective Loading — Mount Only What You Need
+
+The platform only imports what is mounted. If you only want Framework and Operational, only mount those two folders in `docker-compose.yml` and leave the Privacy and Cloud mounts out. The importers will find nothing for the unmounted products and skip them cleanly.
+
+```yaml
+# docker-compose.yml — mount only the products you want
+volumes:
+  - ../isms-core-framework:/app/isms-framework:ro      # Framework — include
+  - ../isms-core-operational:/app/isms-operational:ro  # Operational — include
+  # - ../isms-core-privacy:/app/isms-privacy:ro        # Privacy — commented out = not imported
+  # - ../isms-core-cloud:/app/isms-cloud:ro            # Cloud — commented out = not imported
+```
+
+You can also mount external policy folders here — for example, your own existing policies for evaluation against the ISMS CORE framework. Any markdown policy document placed in a mounted folder will be picked up by the importer, indexed into OpenSearch, and made available for gap analysis via ISMS Compass.
+
+#### Option A — bootstrap.sh (command line, recommended for first deploy)
 
 `bootstrap.sh` is a one-shot script that:
 1. Waits for the stack to be fully healthy
@@ -330,7 +352,7 @@ isms-core-beat           Up
 5. Triggers a full OpenSearch reindex
 6. Prints import statistics on completion
 
-**Why must it run exactly once?** The importers are idempotent — re-running is safe. But `bootstrap.sh` must run at least once after a fresh deploy, because control group seeding (`/admin/load`) must happen before any content import. If you skip it, the platform will appear to work but will have 0 policies and 0 assessments.
+**Why must it run at least once?** The importers are idempotent — re-running is safe. But control group seeding (`/admin/load`) must happen before any content import. If you skip it, the platform will appear to work but will have 0 policies and 0 assessments.
 
 ```bash
 chmod +x bootstrap.sh
@@ -340,6 +362,25 @@ bash bootstrap.sh
 This takes **3–5 minutes**. Do not interrupt it. At the end you will see import statistics confirming how many policies, implementations, and workbooks were imported.
 
 > **bootstrap.sh is safe to re-run** at any time if you need to re-sync content. It will not duplicate data.
+
+#### Option B — Admin WebUI (browser, selective step-by-step)
+
+Log in as admin and go to **Admin → First-Run Setup**. Each importer is a separate button — run them in order, top to bottom.
+
+<p align="center">
+  <img src="screenshots/09_isms-core_importer.png" width="700" alt="Admin panel — First-Run Setup with individual import buttons"/>
+</p>
+
+| Step | Button | What it does |
+|------|--------|-------------|
+| 1 | **Load Reference Frameworks** | Seeds control groups and loads the 18 reference datasets (ISO 27001, NIST CSF, MITRE ATT&CK, GDPR, DORA, NIS2 and more). **Always run this first.** |
+| 2 | **Import Policies** | Imports POL, OP-POL, PRIV-POL, CLD-POL, REF, CTX, FORM documents from all mounted content volumes. Only imports what is mounted. |
+| 3 | **Import Implementations (IMP)** | Imports IMP-UG and IMP-TG documents and indexes them into OpenSearch for full-text search. |
+| 4 | **Import Assessment Workbooks** | Parses Framework assessment workbook structures from the generator scripts. |
+| 5 | **Import Operational Checklists** | Parses Operational compliance checklist structures. |
+| — | **Full Sync (Steps 2–5)** | Runs all four importers in sequence. Step 1 (Load Reference Frameworks) must be done separately first. |
+
+> **External policies:** You can import your own existing policy documents by placing them in a mounted folder before running Import Policies. They will be indexed into OpenSearch and available for full-text search and ISMS Compass gap analysis — useful for evaluating your current documentation against the ISMS CORE Gold Standard.
 
 ---
 
