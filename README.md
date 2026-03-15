@@ -17,11 +17,11 @@
 </p>
 
 <p align="center">
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/NIST_CSF_2.0-Mapped-FF6600?style=flat-square" alt="NIST CSF"/></a>
+  <a href="#-framework-integration"><img src="https://img.shields.io/badge/NIST_CSF_2.0-Assessment_Tool-FF6600?style=flat-square" alt="NIST CSF"/></a>
+  <a href="#-framework-integration"><img src="https://img.shields.io/badge/NIS2-Assessment_Tool-003399?style=flat-square" alt="NIS2"/></a>
+  <a href="#-framework-integration"><img src="https://img.shields.io/badge/DORA-Assessment_Tool-1565C0?style=flat-square" alt="DORA"/></a>
+  <a href="#-framework-integration"><img src="https://img.shields.io/badge/CIS_Controls_v8-Assessment_Tool-2E7D32?style=flat-square" alt="CIS Controls v8"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v18-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/GDPR-Mapped-FFD700?style=flat-square" alt="GDPR"/></a>
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/Swiss_nDSG-Toolkit-FF0000?style=flat-square" alt="Swiss nDSG"/></a>
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/EU_AI_Act-Mapped-0066CC?style=flat-square" alt="EU AI Act"/></a>
 </p>
 
 <p align="center">
@@ -273,6 +273,14 @@ python3 generate_cld_checklist_a11.py
 <td align="center"><strong>ISMS Compass (AI Gap Analysis)</strong><br/><img src="screenshots/05_isms-core_compass.png" width="380" alt="ISMS Compass — AI-powered gap analysis against Gold Standard"/></td>
 <td align="center"><strong>System Status</strong><br/><img src="screenshots/08_isms-core_system.png" width="380" alt="System status — all services healthy, 87 groups, OpenSearch green"/></td>
 </tr>
+<tr>
+<td align="center"><strong>NIST CSF 2.0 Assessment</strong><br/><img src="screenshots/10_isms-core_nist-csf.png" width="380" alt="NIST CSF 2.0 — 106 subcategory assessment with tier ratings, function breakdown, and gap analysis"/></td>
+<td align="center"><strong>NIS2 Assessment</strong><br/><img src="screenshots/11_isms-core_nis2.png" width="380" alt="NIS2 Directive (EU 2022/2555) — Article 21 security measures and Article 23 reporting obligations"/></td>
+</tr>
+<tr>
+<td align="center"><strong>DORA Assessment</strong><br/><img src="screenshots/12_isms-core_dora.png" width="380" alt="DORA (EU 2022/2554) — 25 articles across 4 chapters, ICT risk maturity scoring 0–4"/></td>
+<td align="center"><strong>CIS Controls v8 Assessment</strong><br/><img src="screenshots/13_isms-core_cis8.png" width="380" alt="CIS Critical Security Controls v8 — 153 safeguards across 18 controls, maturity scoring 0–4"/></td>
+</tr>
 </table>
 
 ---
@@ -307,8 +315,23 @@ python3 generate_cld_checklist_a11.py
 </tr>
 <tr>
 <td>NIST CSF 2.0</td>
-<td>Control mapping and grouping across all 53 ISMS groups</td>
-<td><img src="https://img.shields.io/badge/Mapped-FF6600?style=flat-square" alt="Mapped"/></td>
+<td>Full assessment tool — 106 subcategories, tier 1–4 ratings, XLSX import/export, radar chart report. ISO 27001 crosswalk mapped.</td>
+<td><img src="https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square" alt="Assessment Tool"/></td>
+</tr>
+<tr>
+<td>NIS2 Directive (EU 2022/2555)</td>
+<td>Full assessment tool — 10 Article 21 security measures + 5 Article 23 reporting obligations, maturity scoring 0–4</td>
+<td><img src="https://img.shields.io/badge/Assessment_Tool-003399?style=flat-square" alt="Assessment Tool"/></td>
+</tr>
+<tr>
+<td>DORA (EU 2022/2554)</td>
+<td>Full assessment tool — 25 articles across 4 chapters (ICT Risk, Incident Mgmt, Testing, Third-Party Risk), maturity scoring 0–4</td>
+<td><img src="https://img.shields.io/badge/Assessment_Tool-1565C0?style=flat-square" alt="Assessment Tool"/></td>
+</tr>
+<tr>
+<td>CIS Critical Security Controls v8</td>
+<td>Full assessment tool — 153 safeguards across 18 controls, maturity scoring 0–4</td>
+<td><img src="https://img.shields.io/badge/Assessment_Tool-2E7D32?style=flat-square" alt="Assessment Tool"/></td>
 </tr>
 <tr>
 <td>NIST SP 800-53 Rev. 5</td>
@@ -324,11 +347,6 @@ python3 generate_cld_checklist_a11.py
 <td>EU GDPR / Swiss nDSG</td>
 <td>Security and privacy control mapping, operational checklists</td>
 <td><img src="https://img.shields.io/badge/Toolkit-FFD700?style=flat-square" alt="Toolkit"/></td>
-</tr>
-<tr>
-<td>DORA / NIS2</td>
-<td>Operational resilience mapping</td>
-<td><img src="https://img.shields.io/badge/Mapped-FFD700?style=flat-square" alt="Mapped"/></td>
 </tr>
 <tr>
 <td>EU AI Act</td>
@@ -421,6 +439,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 |--------|-------|--------|
 | Platform (API + WebUI) | v1.0 live — 44 connectors | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 | Products integrated | ISMS + Privacy + Cloud | ![v1.0](https://img.shields.io/badge/v1.0-2E8B57?style=flat-square) |
+| Regulatory assessment tools | NIST CSF 2.0 · NIS2 · DORA · CIS Controls v8 | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 
 ---
 

@@ -32,10 +32,10 @@
 > ```
 
 > **Production vs Development:**
-> - **Production** (recommended): access via `https://{HOST_IP}` — nginx handles TLS automatically. This is what `62-isms-core-api-prod/` is configured for.
+> - **Production** (recommended): access via `https://{HOST_IP}` — nginx handles TLS automatically.
 > - **Development**: backend on `:8000`, frontend on `:3000`, no TLS. For local development only.
 >
-> This guide covers **production deployment**. For development, see the `docker-compose.yml` in `60-isms-core-api-factory/`.
+> This guide covers **production deployment**. For development, use `docker-compose.yml` (no nginx) from the platform source.
 
 ---
 
@@ -69,7 +69,7 @@ cd factory_isms
 ### Step 2 — Create your `.env` file
 
 ```bash
-cp isms-core-isms-core-platform/.env.example isms-core-platform/.env
+cp isms-core-platform/.env.example isms-core-platform/.env
 ```
 
 Edit `isms-core-platform/.env` and set the three required secrets:
@@ -190,6 +190,8 @@ The script: waits for the stack to be healthy → authenticates → runs all 6 i
 | **Evidence** | Upload and link evidence to control groups and requirements |
 | **Coverage** | Heatmap of Framework and Operational coverage |
 | **QA** | Existence checker — validates artifact completeness across all four products |
+| **NIST CSF 2.0** | Assessment tool — 106 subcategories, tier ratings, gap report, XLSX import/export |
+| **NIS2 / DORA / CIS Controls v8** | Regulatory assessment tools — maturity scoring 0–4, grouped by article/chapter/control |
 | **Admin** | User management, system health, import controls |
 
 ---

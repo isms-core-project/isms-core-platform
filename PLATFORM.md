@@ -114,8 +114,10 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Gaps** | Identified compliance gaps with severity, owner, SLA, and remediation tracking |
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
-| **Frameworks** | 18 reference datasets: ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, and more |
+| **Frameworks** | 18 reference datasets: ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, and more |
 | **Crosswalk Mappings** | Cross-framework relationships: 1,500+ mappings across all loaded frameworks |
+| **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
+| **Compliance Assessments** | Generic regulatory assessment table — NIS2 (15 requirements), DORA (25 articles), CIS Controls v8 (153 safeguards), maturity scoring 0–4 |
 | **System Event Log** | Immutable trail of every platform action (who, what, when, resource) |
 
 ---
@@ -134,6 +136,14 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 <tr>
 <td align="center"><strong>ISMS Compass — AI Gap Analysis</strong><br/><img src="screenshots/05_isms-core_compass.png" width="380" alt="ISMS Compass — paste any document, compare against Gold Standard, get gap analysis"/></td>
 <td align="center"><strong>System Status</strong><br/><img src="screenshots/08_isms-core_system.png" width="380" alt="System status — all services healthy, DB stats, OpenSearch indices, Celery Worker active"/></td>
+</tr>
+<tr>
+<td align="center"><strong>NIST CSF 2.0 Assessment</strong><br/><img src="screenshots/10_isms-core_nist-csf.png" width="380" alt="NIST CSF 2.0 — 106 subcategory assessment, tier 1–4 ratings, function breakdown, gap analysis, XLSX import/export"/></td>
+<td align="center"><strong>NIS2 Directive Assessment</strong><br/><img src="screenshots/11_isms-core_nis2.png" width="380" alt="NIS2 EU 2022/2555 — Article 21 security measures and Article 23 reporting obligations, maturity scoring 0–4"/></td>
+</tr>
+<tr>
+<td align="center"><strong>DORA Assessment</strong><br/><img src="screenshots/12_isms-core_dora.png" width="380" alt="DORA EU 2022/2554 — 25 articles across 4 chapters, ICT risk maturity scoring 0–4"/></td>
+<td align="center"><strong>CIS Controls v8 Assessment</strong><br/><img src="screenshots/13_isms-core_cis8.png" width="380" alt="CIS Critical Security Controls v8 — 153 safeguards across 18 controls, maturity scoring 0–4"/></td>
 </tr>
 <tr>
 <td align="center" colspan="2"><strong>Admin — Content Importer</strong><br/><img src="screenshots/09_isms-core_importer.png" width="700" alt="Admin panel — First-Run Setup with individual import buttons and Full Sync"/></td>
@@ -161,6 +171,11 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats, import triggers |
 | **Full-Text Search** | Search across all policy and IMP document content via OpenSearch (product-filtered) |
 | **ISMS Compass** | AI gap analysis against ISMS CORE Gold Standard (requires `ANTHROPIC_API_KEY`) |
+| **NIST CSF 2.0 Assessment** | Full assessment tool — 106 subcategories across 6 functions, tier 1–4 ratings, radar + bar chart report page, XLSX import from official NIST template, XLSX/CSV export |
+| **NIS2 Assessment** | EU 2022/2555 compliance tool — 10 Article 21(2) security measures + 5 Article 23 reporting obligations, maturity score 0–4 (Non-compliant → Optimised) |
+| **DORA Assessment** | EU 2022/2554 compliance tool — 25 articles across 4 chapters (ICT Risk Management, Incident Management, Resilience Testing, Third-Party Risk), maturity score 0–4 |
+| **CIS Controls v8 Assessment** | CIS v8 compliance tool — 153 safeguards across 18 controls, maturity score 0–4 |
+| **Collapsible Sidebar** | Azure Portal-style icon-only sidebar — collapses to 52 px strip, full tooltips, state persisted in localStorage |
 | **RBAC** | Role-based access: Admin / ISMS Manager / Auditor / Control Owner / Viewer |
 | **Approval Workflow** | Content state lifecycle: draft → review → approved → published |
 | **Privacy Product** | 21 ISO 27701:2025 control groups — PRIV-POL imported; compliance checklists in Assessments |
