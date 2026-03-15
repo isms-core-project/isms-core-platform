@@ -341,7 +341,7 @@ volumes:
   - ../isms-core-external:/app/isms-external:ro        # External — optional, see below
 ```
 
-A fifth mount — `isms-core-external` — is included in both compose files for external policy documents. Create a sibling directory called `isms-core-external/` next to your other product folders and place any markdown policy documents there. They will be picked up by the importer, indexed into OpenSearch, and made available for full-text search and ISMS Compass gap analysis — useful for evaluating your existing policies against the ISMS CORE Gold Standard without mixing them into your core products.
+A fifth mount — `isms-core-external` — is included in the compose file for external policy documents. Create a sibling directory called `isms-core-external/` next to your other product folders and place any markdown policy documents there. They will be picked up by the importer, indexed into OpenSearch, and made available for full-text search and ISMS Compass gap analysis — useful for evaluating your existing policies against the ISMS CORE Gold Standard without mixing them into your core products.
 
 #### Option A — bootstrap.sh (command line, recommended for first deploy)
 
