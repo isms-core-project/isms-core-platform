@@ -12,12 +12,10 @@
 
 set -euo pipefail
 
-# Load .env if present (so ADMIN_EMAIL/ADMIN_PASSWORD are available without exporting manually)
+# Load ADMIN_EMAIL/ADMIN_PASSWORD from .env if not already set in the environment
 if [ -f ".env" ]; then
-    set -a
-    # shellcheck disable=SC1091
-    source .env
-    set +a
+    ADMIN_EMAIL="${ADMIN_EMAIL:-$(grep -E '^ADMIN_EMAIL=' .env | cut -d= -f2- | tr -d "'\"")}"
+    ADMIN_PASSWORD="${ADMIN_PASSWORD:-$(grep -E '^ADMIN_PASSWORD=' .env | cut -d= -f2- | tr -d "'\"")}"
 fi
 
 API=https://localhost
