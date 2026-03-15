@@ -88,6 +88,7 @@ services:
       - ../isms-core-operational:/app/isms-operational:ro
       - ../isms-core-privacy:/app/isms-privacy:ro
       - ../isms-core-cloud:/app/isms-cloud:ro
+      - ../isms-core-external:/app/isms-external:ro
     environment:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
@@ -96,6 +97,7 @@ services:
       - OPERATIONAL_PATH=/app/isms-operational
       - PRIVACY_PATH=/app/isms-privacy
       - CLOUD_PATH=/app/isms-cloud
+      - EXTERNAL_PATH=/app/isms-external
       - SECRET_KEY=${SECRET_KEY}
       - DEBUG=false
       - LOG_LEVEL=INFO
@@ -137,10 +139,12 @@ services:
       - ../isms-core-operational:/app/isms-operational:ro
       - ../isms-core-privacy:/app/isms-privacy:ro
       - ../isms-core-cloud:/app/isms-cloud:ro
+      - ../isms-core-external:/app/isms-external:ro
     environment:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - DATASETS_PATH=/app/datasets
+      - EXTERNAL_PATH=/app/isms-external
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
       - MAIL_HOST=${MAIL_HOST:-}
       - MAIL_PORT=${MAIL_PORT:-1025}
@@ -168,10 +172,12 @@ services:
       - ../isms-core-operational:/app/isms-operational:ro
       - ../isms-core-privacy:/app/isms-privacy:ro
       - ../isms-core-cloud:/app/isms-cloud:ro
+      - ../isms-core-external:/app/isms-external:ro
     environment:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - DATASETS_PATH=/app/datasets
+      - EXTERNAL_PATH=/app/isms-external
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
       - MAIL_HOST=${MAIL_HOST:-}
       - MAIL_PORT=${MAIL_PORT:-1025}

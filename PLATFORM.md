@@ -338,9 +338,10 @@ volumes:
   - ../isms-core-operational:/app/isms-operational:ro  # Operational — include
   # - ../isms-core-privacy:/app/isms-privacy:ro        # Privacy — commented out = not imported
   # - ../isms-core-cloud:/app/isms-cloud:ro            # Cloud — commented out = not imported
+  - ../isms-core-external:/app/isms-external:ro        # External — optional, see below
 ```
 
-You can also mount external policy folders here — for example, your own existing policies for evaluation against the ISMS CORE framework. Any markdown policy document placed in a mounted folder will be picked up by the importer, indexed into OpenSearch, and made available for gap analysis via ISMS Compass.
+A fifth mount — `isms-core-external` — is included in both compose files for external policy documents. Create a sibling directory called `isms-core-external/` next to your other product folders and place any markdown policy documents there. They will be picked up by the importer, indexed into OpenSearch, and made available for full-text search and ISMS Compass gap analysis — useful for evaluating your existing policies against the ISMS CORE Gold Standard without mixing them into your core products.
 
 #### Option A — bootstrap.sh (command line, recommended for first deploy)
 
@@ -725,6 +726,7 @@ You should see log lines confirming the beat scheduler is running and next sched
 | `SECRET_KEY` | Yes | JWT signing key — minimum 32 chars random hex |
 | `ADMIN_EMAIL` | Yes | Admin account email — created automatically on startup |
 | `ADMIN_PASSWORD` | Yes | Admin account password — **no default, must be set** |
+| `EXTERNAL_PATH` | No | Path to external policy mount — set automatically from `isms-core-external` volume if present |
 | `CONNECTORS_WORKER_SECRET` | No | Shared secret between backend and connector runner — required only if using connectors |
 | `ANTHROPIC_API_KEY` | No | Enables ISMS Compass AI gap analysis — leave empty to disable |
 | `MAIL_HOST` | No | SMTP host — leave empty to disable email |
