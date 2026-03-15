@@ -1,6 +1,23 @@
 # ============================================================================
-# ISMS CORE Platform — Test Deployment (nuc-01)
-# Self-contained: content/ holds all framework, operational, privacy, cloud data
+# ISMS CORE Platform — Production Compose
+#
+# TLS (A.8.24 compliance):
+#   Default:      self-signed cert auto-generated on first boot
+#   Custom cert:  place cert.pem + key.pem in ./certs/
+#   Let's Encrypt: run ./nginx/scripts/setup-letsencrypt.sh <domain> <email>
+#                  then set FQDN=yourdomain.com in .env
+#
+# Access:  https://<HOST_IP>  (port 443)  — nginx proxies to backend + frontend
+# API:     https://<HOST_IP>/api/v1/
+#
+# Usage:
+#   cp .env.example .env && nano .env
+#   docker compose -f docker-compose.prod.yml up -d
+#   ./bootstrap.sh        (first boot only)
+#
+# Email profiles (optional — default is no email):
+#   Mailpit:     docker compose -f docker-compose.prod.yml --profile mailpit up -d
+#   smtp-bridge: docker compose -f docker-compose.prod.yml --profile smtp-bridge up -d
 # ============================================================================
 
 services:
@@ -16,8 +33,6 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
       - ./schemas/init_db.sql:/docker-entrypoint-initdb.d/01_init.sql:ro
-    ports:
-      - "5432:5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U isms_user -d isms_db"]
       interval: 10s
@@ -33,8 +48,6 @@ services:
     command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
     volumes:
       - redis-data:/data
-    ports:
-      - "6379:6379"
     healthcheck:
       test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
       interval: 10s
@@ -53,8 +66,6 @@ services:
       - OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g
     volumes:
       - opensearch-data:/usr/share/opensearch/data
-    ports:
-      - "9200:9200"
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:9200/_cluster/health || exit 1"]
       interval: 10s
@@ -70,16 +81,13 @@ services:
       context: ./backend
     image: isms-core-backend:latest
     container_name: isms-core-backend
-    ports:
-      - "8000:8000"
+    # Port 8000 not published externally — nginx proxies /api/
     volumes:
-      - ./backend:/app
       - ./datasets/data:/app/datasets:ro
-      - ../50-isms-core-framework:/app/isms-framework:ro
-      - ../10-isms-core-operational:/app/isms-operational:ro
-      - ../51-isms-core-privacy:/app/isms-privacy:ro
-      - ../52-isms-core-cloud:/app/isms-cloud:ro
-      - ./content/external:/app/isms-external:ro
+      - ../isms-core-framework:/app/isms-framework:ro
+      - ../isms-core-operational:/app/isms-operational:ro
+      - ../isms-core-privacy:/app/isms-privacy:ro
+      - ../isms-core-cloud:/app/isms-cloud:ro
     environment:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
@@ -88,18 +96,17 @@ services:
       - OPERATIONAL_PATH=/app/isms-operational
       - PRIVACY_PATH=/app/isms-privacy
       - CLOUD_PATH=/app/isms-cloud
-      - EXTERNAL_PATH=/app/isms-external
       - SECRET_KEY=${SECRET_KEY}
       - DEBUG=false
       - LOG_LEVEL=INFO
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
       - CORS_ORIGINS=${CORS_ORIGINS}
       - ADMIN_EMAIL=${ADMIN_EMAIL:-admin@isms-core.dev}
-      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin123}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
       - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET:-}
       - MAIL_HOST=${MAIL_HOST:-}
-      - MAIL_PORT=1025
+      - MAIL_PORT=${MAIL_PORT:-1025}
       - PLATFORM_URL=${PLATFORM_URL}
     depends_on:
       isms-core-postgres:
@@ -125,25 +132,18 @@ services:
     container_name: isms-core-beat
     command: celery -A src.worker.celery_app beat --loglevel=info
     volumes:
-      - ./backend:/app
       - ./datasets/data:/app/datasets:ro
-      - ../50-isms-core-framework:/app/isms-framework:ro
-      - ../10-isms-core-operational:/app/isms-operational:ro
-      - ../51-isms-core-privacy:/app/isms-privacy:ro
-      - ../52-isms-core-cloud:/app/isms-cloud:ro
-      - ./content/external:/app/isms-external:ro
+      - ../isms-core-framework:/app/isms-framework:ro
+      - ../isms-core-operational:/app/isms-operational:ro
+      - ../isms-core-privacy:/app/isms-privacy:ro
+      - ../isms-core-cloud:/app/isms-cloud:ro
     environment:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - DATASETS_PATH=/app/datasets
-      - FRAMEWORK_PATH=/app/isms-framework
-      - OPERATIONAL_PATH=/app/isms-operational
-      - PRIVACY_PATH=/app/isms-privacy
-      - CLOUD_PATH=/app/isms-cloud
-      - EXTERNAL_PATH=/app/isms-external
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
       - MAIL_HOST=${MAIL_HOST:-}
-      - MAIL_PORT=1025
+      - MAIL_PORT=${MAIL_PORT:-1025}
       - PLATFORM_URL=${PLATFORM_URL}
     healthcheck:
       disable: true
@@ -163,25 +163,18 @@ services:
     container_name: isms-core-worker
     command: celery -A src.worker.celery_app worker --loglevel=info --queues=isms
     volumes:
-      - ./backend:/app
       - ./datasets/data:/app/datasets:ro
-      - ../50-isms-core-framework:/app/isms-framework:ro
-      - ../10-isms-core-operational:/app/isms-operational:ro
-      - ../51-isms-core-privacy:/app/isms-privacy:ro
-      - ../52-isms-core-cloud:/app/isms-cloud:ro
-      - ./content/external:/app/isms-external:ro
+      - ../isms-core-framework:/app/isms-framework:ro
+      - ../isms-core-operational:/app/isms-operational:ro
+      - ../isms-core-privacy:/app/isms-privacy:ro
+      - ../isms-core-cloud:/app/isms-cloud:ro
     environment:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - DATASETS_PATH=/app/datasets
-      - FRAMEWORK_PATH=/app/isms-framework
-      - OPERATIONAL_PATH=/app/isms-operational
-      - PRIVACY_PATH=/app/isms-privacy
-      - CLOUD_PATH=/app/isms-cloud
-      - EXTERNAL_PATH=/app/isms-external
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
       - MAIL_HOST=${MAIL_HOST:-}
-      - MAIL_PORT=1025
+      - MAIL_PORT=${MAIL_PORT:-1025}
       - PLATFORM_URL=${PLATFORM_URL}
     depends_on:
       isms-core-postgres:
@@ -205,13 +198,9 @@ services:
       context: ./frontend
     image: isms-core-frontend:latest
     container_name: isms-core-frontend
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
+    # Port 3000 not published externally — nginx proxies /
     environment:
-      - VITE_BACKEND_URL=http://${HOST_IP}:8000
+      - VITE_BACKEND_URL=https://${HOST_IP}
     depends_on:
       isms-core-backend:
         condition: service_healthy
@@ -219,10 +208,55 @@ services:
     networks:
       - isms-core-network
 
-  # SMTP bridge — production email via Microsoft 365 / Exchange Online
-  # Start with: docker compose --profile smtp-bridge up -d
-  # Required env: SMTP_BRIDGE_TENANT_ID, SMTP_BRIDGE_CLIENT_ID,
-  #               SMTP_BRIDGE_CLIENT_SECRET, SMTP_BRIDGE_FROM_ADDRESS
+  # ── nginx reverse proxy + TLS (A.8.24) ────────────────────────────────────
+  isms-core-nginx:
+    build:
+      context: ./nginx
+    image: isms-core-nginx:latest
+    container_name: isms-core-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./certs:/etc/nginx/certs            # custom cert drop-in (cert.pem + key.pem)
+      - /etc/letsencrypt:/etc/letsencrypt:ro # Let's Encrypt (read-only)
+      - certbot-www:/var/www/certbot        # ACME HTTP-01 challenge
+    environment:
+      - NGINX_HOST=${FQDN:-${HOST_IP}}
+      - FQDN=${FQDN:-}
+    depends_on:
+      isms-core-backend:
+        condition: service_healthy
+      isms-core-frontend:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "curl", "-fk", "https://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+    networks:
+      - isms-core-network
+
+  # ── Email options (optional profiles) ─────────────────────────────────────
+
+  # Mailpit: docker compose --profile mailpit up -d
+  # Set in .env: MAIL_HOST=isms-core-mailpit  MAIL_PORT=1025
+  isms-core-mailpit:
+    image: axllent/mailpit:latest
+    container_name: isms-core-mailpit
+    profiles: [mailpit]
+    ports:
+      - "8025:8025"
+    environment:
+      - MP_MAX_MESSAGES=500
+    restart: unless-stopped
+    networks:
+      - isms-core-network
+
+  # smtp-bridge: docker compose -f docker-compose.prod.yml --profile smtp-bridge up -d
+  # Set in .env: MAIL_HOST=isms-core-smtp-bridge  MAIL_PORT=1025
   isms-core-smtp-bridge:
     build:
       context: ./smtp-bridge
@@ -230,29 +264,13 @@ services:
     container_name: isms-core-smtp-bridge
     profiles: [smtp-bridge]
     environment:
-      - TENANT_ID=${SMTP_BRIDGE_TENANT_ID}
-      - CLIENT_ID=${SMTP_BRIDGE_CLIENT_ID}
-      - CLIENT_SECRET=${SMTP_BRIDGE_CLIENT_SECRET}
-      - FROM_ADDRESS=${SMTP_BRIDGE_FROM_ADDRESS}
+      - TENANT_ID=${SMTP_BRIDGE_TENANT_ID:-}
+      - CLIENT_ID=${SMTP_BRIDGE_CLIENT_ID:-}
+      - CLIENT_SECRET=${SMTP_BRIDGE_CLIENT_SECRET:-}
+      - FROM_ADDRESS=${SMTP_BRIDGE_FROM_ADDRESS:-}
       - FROM_NAME=${SMTP_BRIDGE_FROM_NAME:-ISMS CORE}
       - SMTP_PORT=1025
       - LOG_LEVEL=INFO
-    restart: unless-stopped
-    networks:
-      - isms-core-network
-
-  # Mailpit — dev mail catcher, visible at http://<HOST_IP>:8025
-  # Start with: docker compose --profile mailpit up -d
-  # Set MAIL_HOST=isms-core-mailpit in .env to route mail here
-  isms-core-mailpit:
-    image: axllent/mailpit:latest
-    container_name: isms-core-mailpit
-    profiles: [mailpit]
-    ports:
-      - "8025:8025"
-      - "1025:1025"
-    environment:
-      - MP_MAX_MESSAGES=500
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -267,4 +285,6 @@ volumes:
   redis-data:
     driver: local
   opensearch-data:
+    driver: local
+  certbot-www:
     driver: local
