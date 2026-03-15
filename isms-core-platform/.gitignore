@@ -31,6 +31,7 @@ backend/cache/
 # Dev-only directories (not for public repo)
 archive/
 content/
+doc/
 prod/
 screenshots/
 scripts/
