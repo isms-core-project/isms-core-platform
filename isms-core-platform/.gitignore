@@ -27,3 +27,11 @@ backend/cache/
 .DS_Store
 .idea/
 *.swp
+
+# Dev-only directories (not for public repo)
+archive/
+content/
+prod/
+screenshots/
+scripts/
+celerybeat-schedule
