@@ -12,6 +12,14 @@
 
 set -euo pipefail
 
+# Load .env if present (so ADMIN_EMAIL/ADMIN_PASSWORD are available without exporting manually)
+if [ -f ".env" ]; then
+    set -a
+    # shellcheck disable=SC1091
+    source .env
+    set +a
+fi
+
 API=https://localhost
 
 # ---- Colours ---------------------------------------------------------------
