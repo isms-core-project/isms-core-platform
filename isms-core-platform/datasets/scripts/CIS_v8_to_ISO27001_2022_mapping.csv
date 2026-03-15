@@ -1,0 +1,154 @@
+cis_safeguard,cis_title,iso_controls,mapping_type,notes
+1.1,Establish and Maintain Detailed Enterprise Asset Inventory,"A.5.9",maps-to,Asset inventory management
+1.2,Address Unauthorized Assets,"A.5.9; A.8.1",maps-to,Unauthorized asset handling
+1.3,Utilize an Active Discovery Tool,"A.5.9; A.8.1",maps-to,Active scanning/discovery
+1.4,Use Dynamic Host Configuration Protocol (DHCP) Logging to Update Enterprise Asset Inventory,"A.5.9; A.8.15",maps-to,DHCP logging for inventory
+1.5,Use a Passive Asset Discovery Tool,"A.5.9; A.8.1",maps-to,Passive asset discovery
+2.1,Establish and Maintain a Software Inventory,"A.5.9; A.8.19",maps-to,Software asset inventory
+2.2,Ensure Authorized Software is Currently Supported,"A.5.9; A.8.19",maps-to,Software lifecycle/support
+2.3,Address Unauthorized Software,"A.8.19; A.8.1",maps-to,Unauthorized software removal
+2.4,Utilize Automated Software Inventory Tools,"A.5.9; A.8.19",maps-to,Automated software tracking
+2.5,Allowlist Authorized Software,"A.8.19",maps-to,Application allowlisting
+2.6,Allowlist Authorized Libraries,"A.8.19; A.8.28",maps-to,Library allowlisting
+2.7,Allowlist Authorized Scripts,"A.8.19; A.8.28",maps-to,Script control
+3.1,Establish and Maintain a Data Management Process,"A.5.12; A.5.13; A.5.10",maps-to,Data classification/handling
+3.2,Establish and Maintain a Data Inventory,"A.5.9; A.5.12; A.5.13",maps-to,Data asset inventory
+3.3,Configure Data Access Control Lists,"A.5.15; A.8.3",maps-to,Data access controls
+3.4,Enforce Data Retention,"A.5.33; A.5.34",maps-to,Data retention management
+3.5,Securely Dispose of Data,"A.7.10; A.7.14; A.8.10",maps-to,Secure data disposal
+3.6,Encrypt Data on End-User Devices,"A.8.1; A.8.24",maps-to,Endpoint encryption
+3.7,Establish and Maintain a Data Classification Scheme,"A.5.12; A.5.13",maps-to,Data classification scheme
+3.8,Document Data Flows,"A.5.14; A.8.20",maps-to,Data flow documentation
+3.9,Encrypt Data on Removable Media,"A.7.10; A.8.24",maps-to,Removable media encryption
+3.10,Encrypt Sensitive Data in Transit,"A.8.24; A.5.14",maps-to,Transit encryption
+3.11,Encrypt Sensitive Data at Rest,"A.8.24; A.8.11",maps-to,At-rest encryption
+3.12,Segment Data Processing and Storage Based on Sensitivity,"A.5.12; A.8.22",maps-to,Data segmentation
+3.13,Deploy a Data Loss Prevention Solution,"A.8.12",maps-to,DLP implementation
+3.14,Log Sensitive Data Access,"A.8.15; A.8.11",maps-to,Sensitive data access logging
+4.1,Establish and Maintain a Secure Configuration Process,"A.8.9",maps-to,Configuration management baseline
+4.2,Establish and Maintain a Secure Configuration Process for Network Infrastructure,"A.8.9; A.8.20",maps-to,Network configuration management
+4.3,Configure Automatic Session Locking on Enterprise Assets,"A.8.1; A.8.5",maps-to,Session locking controls
+4.4,Implement and Manage a Firewall on Servers,"A.8.20; A.8.21",maps-to,Server firewall management
+4.5,Implement and Manage a Firewall on End-User Devices,"A.8.20; A.8.21; A.8.1",maps-to,Endpoint firewall management
+4.6,Securely Manage Enterprise Assets and Software,"A.8.9; A.8.19",maps-to,Secure management practices
+4.7,Manage Default Accounts on Enterprise Assets and Software,"A.8.2; A.8.5",maps-to,Default account management
+4.8,Uninstall or Disable Unnecessary Services on Enterprise Assets and Software,"A.8.9; A.8.19",maps-to,Service hardening
+4.9,Configure Trusted DNS Servers on Enterprise Assets,"A.8.20; A.8.9",maps-to,DNS configuration
+4.10,Enforce Automatic Device Lockout on Portable End-User Devices,"A.8.1; A.8.5",maps-to,Device lockout policy
+4.11,Enforce Remote Wipe Capability on Portable End-User Devices,"A.8.1; A.7.10",maps-to,Remote wipe capability
+4.12,Separate Enterprise Workspaces on Mobile End-User Devices,"A.8.1; A.6.7",maps-to,BYOD workspace separation
+5.1,Establish and Maintain an Inventory of Accounts,"A.5.16; A.8.2",maps-to,Account inventory
+5.2,Use Unique Passwords,"A.5.17; A.8.5",maps-to,Unique password policy
+5.3,Disable Dormant Accounts,"A.5.18; A.8.2",maps-to,Dormant account disabling
+5.4,Restrict Administrator Privileges to Dedicated Administrator Accounts,"A.8.2; A.8.18",maps-to,Admin account segregation
+5.5,Establish and Maintain an Inventory of Service Accounts,"A.5.16; A.8.2; A.8.18",maps-to,Service account inventory
+5.6,Centralize Account Management,"A.5.16; A.5.18; A.8.2",maps-to,Centralized account mgmt
+6.1,Establish an Access Granting Process,"A.5.15; A.5.18; A.8.2",maps-to,Access provisioning process
+6.2,Establish an Access Revoking Process,"A.5.15; A.5.18; A.8.2",maps-to,Access deprovisioning process
+6.3,Require MFA for Externally-Exposed Applications,"A.8.5; A.5.17",maps-to,External MFA requirement
+6.4,Require MFA for Remote Network Access,"A.8.5; A.5.17",maps-to,Remote access MFA
+6.5,Require MFA for Administrative Access,"A.8.5; A.5.17; A.8.18",maps-to,Admin access MFA
+6.6,Establish and Maintain an Inventory of Authentication and Authorization Systems,"A.5.16; A.8.2; A.8.5",maps-to,Auth system inventory
+6.7,Centralize Access Control,"A.5.15; A.5.16; A.8.2",maps-to,Centralized access control
+6.8,Define and Maintain Role-Based Access Control,"A.5.15; A.8.3; A.5.18",maps-to,RBAC implementation
+7.1,Establish and Maintain a Vulnerability Management Process,"A.8.8",maps-to,Vulnerability management process
+7.2,Establish and Maintain a Remediation Process,"A.8.8",maps-to,Vulnerability remediation process
+7.3,Perform Automated Operating System Patch Management,"A.8.8; A.8.19",maps-to,OS patch management
+7.4,Perform Automated Application Patch Management,"A.8.8; A.8.19",maps-to,Application patch management
+7.5,Perform Automated Vulnerability Scans of Internal Enterprise Assets,"A.8.8",maps-to,Internal vuln scanning
+7.6,Perform Automated Vulnerability Scans of Externally-Exposed Enterprise Assets,"A.8.8",maps-to,External vuln scanning
+7.7,Remediate Detected Vulnerabilities,"A.8.8",maps-to,Vulnerability remediation
+8.1,Establish and Maintain an Audit Log Management Process,"A.8.15",maps-to,Audit log management process
+8.2,Collect Audit Logs,"A.8.15",maps-to,Audit log collection
+8.3,Ensure Adequate Audit Log Storage,"A.8.15",maps-to,Log storage capacity
+8.4,Standardize Time Synchronization,"A.8.17",maps-to,NTP/time synchronization
+8.5,Collect Detailed Audit Logs,"A.8.15",maps-to,Detailed event logging
+8.6,Collect DNS Query Audit Logs,"A.8.15; A.8.20",maps-to,DNS query logging
+8.7,Collect URL Request Audit Logs,"A.8.15; A.8.23",maps-to,URL/proxy logging
+8.8,Collect Command-Line Audit Logs,"A.8.15",maps-to,Command-line logging
+8.9,Centralize Audit Logs,"A.8.15",maps-to,Centralized log management
+8.10,Retain Audit Logs,"A.8.15; A.5.33",maps-to,Log retention
+8.11,Conduct Audit Log Reviews,"A.8.15; A.8.16",maps-to,Log review process
+8.12,Collect Service Provider Logs,"A.5.22; A.8.15",maps-to,Third-party log collection
+9.1,Ensure Use of Only Fully Supported Browsers and Email Clients,"A.8.19; A.8.23",maps-to,Supported browser/email policy
+9.2,Use DNS Filtering Services,"A.8.23; A.8.20",maps-to,DNS filtering
+9.3,Maintain and Enforce Network-Based URL Filters,"A.8.23",maps-to,URL filtering
+9.4,Restrict Unnecessary or Unauthorized Browser and Email Client Extensions,"A.8.19; A.8.23",maps-to,Browser extension control
+9.5,Implement DMARC,"A.8.23",maps-to,Email authentication (DMARC)
+9.6,Block Unnecessary File Types,"A.8.23; A.8.12",maps-to,File type blocking
+9.7,Deploy and Maintain Email Server Anti-Malware Protections,"A.8.7; A.8.23",maps-to,Email anti-malware
+10.1,Deploy and Maintain Anti-Malware Software,"A.8.7",maps-to,Anti-malware deployment
+10.2,Configure Automatic Anti-Malware Signature Updates,"A.8.7",maps-to,Malware signature updates
+10.3,Disable Autorun and Autoplay for Removable Media,"A.8.7; A.8.1",maps-to,Autorun/autoplay control
+10.4,Configure Automatic Anti-Malware Scanning of Removable Media,"A.8.7",maps-to,Removable media scanning
+10.5,Enable Anti-Exploitation Features,"A.8.7; A.8.8",maps-to,Exploit protection
+10.6,Centrally Manage Anti-Malware Software,"A.8.7",maps-to,Centralized malware mgmt
+10.7,Use Behavior-Based Anti-Malware Software,"A.8.7; A.8.16",maps-to,Behavioral detection
+11.1,Establish and Maintain a Data Recovery Process,"A.8.13",maps-to,Backup process establishment
+11.2,Perform Automated Backups,"A.8.13",maps-to,Automated backup execution
+11.3,Protect Recovery Data,"A.8.13; A.8.24",maps-to,Backup data protection
+11.4,Establish and Maintain an Isolated Instance of Recovery Data,"A.8.13",maps-to,Isolated backup copies
+11.5,Test Data Recovery,"A.8.13",maps-to,Backup restoration testing
+12.1,Ensure Network Infrastructure is Up-to-Date,"A.8.20; A.8.8; A.7.12",maps-to,Network infrastructure patching
+12.2,Establish and Maintain a Secure Network Architecture,"A.8.20; A.8.22",maps-to,Network architecture security
+12.3,Securely Manage Network Infrastructure,"A.8.20; A.8.9",maps-to,Network device management
+12.4,Establish and Maintain Architecture Diagram(s),"A.8.20; A.5.14",maps-to,Network documentation
+12.5,"Centralize Network Authentication, Authorization, and Auditing (AAA)","A.8.20; A.5.16",maps-to,Network AAA centralization
+12.6,Use of Secure Network Management and Communication Protocols,"A.8.20; A.8.24",maps-to,Secure management protocols
+12.7,Ensure Remote Devices Utilize a VPN and are Connecting to an Enterprise's AAA Infrastructure,"A.8.20; A.8.1; A.6.7",maps-to,VPN and remote access
+12.8,Establish and Maintain Dedicated Computing Resources for All Administrative Work,"A.8.18; A.8.22",maps-to,Privileged access workstations
+13.1,Centralize Security Event Alerting,"A.8.16; A.8.15",maps-to,Security event alerting
+13.2,Deploy a Host-Based Intrusion Detection Solution,"A.8.16",maps-to,Host-based IDS
+13.3,Deploy a Network Intrusion Detection Solution,"A.8.16; A.8.20",maps-to,Network-based IDS
+13.4,Perform Traffic Filtering Between Network Segments,"A.8.22",maps-to,Network segmentation filtering
+13.5,Manage Access Control for Remote Assets,"A.8.1; A.6.7; A.8.20",maps-to,Remote asset access control
+13.6,Collect Network Traffic Flow Logs,"A.8.15; A.8.16; A.8.20",maps-to,NetFlow collection
+13.7,Deploy a Host-Based Intrusion Prevention Solution,"A.8.16; A.8.7",maps-to,Host-based IPS
+13.8,Deploy a Network Intrusion Prevention Solution,"A.8.16; A.8.20",maps-to,Network-based IPS
+13.9,Deploy Port-Level Access Control,"A.8.20; A.8.22",maps-to,802.1X/port security
+13.10,Perform Application Layer Filtering,"A.8.23; A.8.22",maps-to,Application layer filtering
+13.11,Tune Security Event Alerting Thresholds,"A.8.16; A.8.15",maps-to,Alert tuning
+14.1,Establish and Maintain a Security Awareness Program,"A.6.3",maps-to,Security awareness program
+14.2,Train Workforce Members to Recognize Social Engineering Attacks,"A.6.3",maps-to,Social engineering training
+14.3,Train Workforce Members on Authentication Best Practices,"A.6.3; A.5.17",maps-to,Authentication training
+14.4,Train Workforce Members on Data Handling Best Practices,"A.6.3; A.5.10; A.5.12",maps-to,Data handling training
+14.5,Train Workforce Members on Causes of Unintentional Data Exposure,"A.6.3; A.5.10",maps-to,Data exposure awareness
+14.6,Train Workforce Members on Recognizing and Reporting Security Incidents,"A.6.3; A.6.8",maps-to,Incident reporting training
+14.7,Train Workforce Members on How to Identify and Report if Their Enterprise Assets are Missing Security Updates,"A.6.3; A.8.8",maps-to,Patch awareness training
+14.8,Train Workforce Members on the Dangers of Connecting to and Transmitting Enterprise Data Over Insecure Networks,"A.6.3; A.8.24",maps-to,Network security awareness
+14.9,Conduct Role-Specific Security Awareness and Skills Training,"A.6.3; A.6.6",maps-to,Role-based security training
+15.1,Establish and Maintain an Inventory of Service Providers,"A.5.19; A.5.22",maps-to,Supplier inventory
+15.2,Establish and Maintain a Service Provider Management Policy,"A.5.19; A.5.20; A.5.21",maps-to,Supplier management policy
+15.3,Classify Service Providers,"A.5.19; A.5.22",maps-to,Supplier classification
+15.4,Ensure Service Provider Contracts Include Security Requirements,"A.5.19; A.5.20; A.5.23",maps-to,Supplier security clauses
+15.5,Assess Service Providers,"A.5.19; A.5.22",maps-to,Supplier security assessment
+15.6,Monitor Service Providers,"A.5.22",maps-to,Supplier monitoring
+15.7,Securely Decommission Service Providers,"A.5.19; A.5.20",maps-to,Supplier offboarding
+16.1,Establish and Maintain a Secure Application Development Process,"A.8.25; A.8.26",maps-to,Secure SDLC process
+16.2,Establish and Maintain a Process to Accept and Address Software Vulnerabilities,"A.8.8; A.8.25",maps-to,Vulnerability disclosure process
+16.3,Perform Root Cause Analysis on Security Vulnerabilities,"A.8.8; A.8.25",maps-to,Vulnerability root cause analysis
+16.4,Establish and Manage an Inventory of Third-Party Software Components,"A.8.19; A.8.25",maps-to,SBOM/software composition
+16.5,Use Up-to-Date and Trusted Third-Party Software Components,"A.8.19; A.8.25",maps-to,Third-party component currency
+16.6,Establish and Maintain a Severity Rating System and Process for Application Vulnerabilities,"A.8.8; A.8.25",maps-to,Vulnerability severity rating
+16.7,Use Standard Hardening Configuration Templates for Application Infrastructure,"A.8.9; A.8.25",maps-to,Application hardening templates
+16.8,Separate Production and Non-Production Systems,"A.8.31; A.8.25",maps-to,Environment separation
+16.9,Train Developers in Application Security Concepts and Secure Coding,"A.8.25; A.6.3",maps-to,Secure coding training
+16.10,Apply Secure Design Principles in Application Architectures,"A.8.25; A.8.27",maps-to,Secure design principles
+16.11,Leverage Vetted Modules or Services for Application Security Components,"A.8.25; A.8.28",maps-to,Vetted security components
+16.12,Implement Code-Level Security Checks,"A.8.25; A.8.29",maps-to,SAST/code review
+16.13,Conduct Application Penetration Testing,"A.8.25; A.8.34",maps-to,Application pen testing
+16.14,Conduct Threat Modeling,"A.8.25; A.5.7",maps-to,Application threat modeling
+17.1,Designate Personnel to Manage Incident Handling,"A.5.24; A.5.25",maps-to,Incident response roles
+17.2,Establish and Maintain Contact Information for Reporting Security Incidents,"A.5.5; A.5.24; A.5.26",maps-to,Incident contact information
+17.3,Establish and Maintain an Enterprise Process for Reporting Incidents,"A.5.24; A.5.26; A.6.8",maps-to,Incident reporting process
+17.4,Establish and Maintain an Incident Response Process,"A.5.24; A.5.26",maps-to,IR process establishment
+17.5,Assign Key Roles and Responsibilities,"A.5.24; A.5.25",maps-to,IR role assignment
+17.6,Define Mechanisms for Communicating During Incident Response,"A.5.24; A.5.26; A.5.5",maps-to,IR communication channels
+17.7,Conduct Routine Incident Response Exercises,"A.5.24; A.5.27",maps-to,IR tabletop/exercises
+17.8,Conduct Post-Incident Reviews,"A.5.24; A.5.27",maps-to,Post-incident review
+17.9,Establish and Maintain Security Incident Thresholds,"A.5.24; A.5.25",maps-to,Incident severity thresholds
+18.1,Establish and Maintain a Penetration Testing Program,"A.8.34; A.5.35",maps-to,Pen testing program
+18.2,Perform Periodic External Penetration Tests,"A.8.34",maps-to,External pen testing
+18.3,Remediate Penetration Test Findings,"A.8.34; A.8.8",maps-to,Pen test remediation
+18.4,Validate Security Measures,"A.8.34; A.5.35",maps-to,Security control validation
+18.5,Perform Periodic Internal Penetration Tests,"A.8.34",maps-to,Internal pen testing

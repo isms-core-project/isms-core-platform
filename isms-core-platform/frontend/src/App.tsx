@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { useAuth } from './store/AuthContext'
 import { ProductProvider } from './store/ProductContext'
@@ -23,6 +24,11 @@ import FrameworkControlDetail from './pages/FrameworkControlDetail'
 import Report from './pages/Report'
 import Risk from './pages/Risk'
 import Connectors from './pages/Connectors'
+import Nis2 from './pages/Nis2'
+import Dora from './pages/Dora'
+import Cis from './pages/Cis'
+const NistCsf = lazy(() => import('./pages/NistCsf'))
+const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuth()
@@ -64,6 +70,11 @@ export default function App() {
         <Route path="compass" element={<Compass />} />
         <Route path="report" element={<Report />} />
         <Route path="risk" element={<Risk />} />
+        <Route path="nist-csf" element={<Suspense fallback={null}><NistCsf /></Suspense>} />
+        <Route path="nist-csf/:id/report" element={<Suspense fallback={null}><NistCsfReport /></Suspense>} />
+        <Route path="nis2" element={<Nis2 />} />
+        <Route path="dora" element={<Dora />} />
+        <Route path="cis" element={<Cis />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

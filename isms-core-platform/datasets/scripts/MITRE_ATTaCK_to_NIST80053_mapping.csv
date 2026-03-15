@@ -1,0 +1,161 @@
+mitre_technique,mitre_name,nist_controls,tactic,notes
+T1566,Phishing,"AC-04, CA-07, CM-06, SC-07, SI-03, SI-04, SI-08",Initial Access,Email-borne threats — phishing attacks
+T1566.001,Spearphishing Attachment,"CA-07, SC-07, SI-03, SI-04, SI-08",Initial Access,Targeted attachment delivery
+T1566.002,Spearphishing Link,"CA-07, SC-07, SI-03, SI-04, SI-08",Initial Access,Targeted link delivery
+T1566.003,Spearphishing via Service,"AC-02, CA-07, SC-07, SI-03, SI-04",Initial Access,Spearphishing via third-party services
+T1059,Command and Scripting Interpreter,"AC-02, AC-06, CA-07, CM-06, SI-03, SI-04",Execution,Script-based execution
+T1059.001,PowerShell,"AC-06, CA-07, CM-06, IA-02, RA-05, SI-03",Execution,PowerShell-based execution
+T1059.003,Windows Command Shell,"AC-06, CM-06, SI-03",Execution,cmd.exe-based execution
+T1059.004,Unix Shell,"AC-06, CM-06, SI-03",Execution,Bash/sh-based execution
+T1059.005,Visual Basic,"AC-06, CM-06, RA-05, SI-03",Execution,VBA/VBScript execution
+T1059.006,Python,"AC-02, AC-06, CM-06, SI-04",Execution,Python interpreter execution
+T1059.007,JavaScript,"AC-06, CM-06, RA-05, SI-03",Execution,JS-based execution
+T1204,User Execution,"CA-07, CM-06, SC-07, SI-03, SI-04",Execution,User-initiated malicious action
+T1204.002,Malicious File,"CA-07, SI-03, SI-04",Execution,User opens malicious file
+T1203,Exploitation for Client Execution,"CA-07, CM-06, SC-07, SI-03, SI-04",Execution,Client-side exploitation
+T1078,Valid Accounts,"AC-02, AC-06, CA-07, CM-06, IA-02, SC-07, SC-28, SI-04",Defense Evasion; Initial Access; Persistence; Privilege Escalation,Compromised legitimate credentials
+T1078.001,Default Accounts,"AC-02, AC-06, CA-07, SC-28",Defense Evasion; Initial Access; Persistence; Privilege Escalation,Factory default credentials
+T1078.002,Domain Accounts,"IA-02",Defense Evasion; Initial Access; Persistence; Privilege Escalation,Active Directory accounts
+T1078.003,Local Accounts,"AC-02, AC-06, CA-07, CM-06, SC-28, SI-04",Defense Evasion; Initial Access; Persistence; Privilege Escalation,Local OS accounts
+T1078.004,Cloud Accounts,"AC-02, AC-06, CA-07, CM-06, SC-28, SI-04",Defense Evasion; Initial Access; Persistence; Privilege Escalation,Cloud service accounts
+T1190,Exploit Public-Facing Application,"AC-02, CA-07, CM-06, IA-02, RA-05, SC-07, SI-03, SI-04",Initial Access,Web application exploitation
+T1133,External Remote Services,"IA-02, SC-07",Initial Access,VPN/RDP/Citrix exploitation
+T1189,Drive-by Compromise,"CA-07, SC-07, SI-03",Initial Access,Browser-based compromise
+T1195,Supply Chain Compromise,"CA-07, CM-06, RA-05, SC-07, SI-03, SI-04",Initial Access,Software supply chain attack
+T1195.001,Compromise Software Dependencies,"CA-07, RA-05, SI-03",Initial Access,Dependency/library poisoning
+T1199,Trusted Relationship,"SC-07",Initial Access,Third-party access abuse
+T1110,Brute Force,"AC-02, AC-06, CA-07, CM-06, IA-02, SI-04",Credential Access,Password brute forcing
+T1110.001,Password Guessing,"AC-02, IA-02",Credential Access,Online password guessing
+T1110.002,Password Cracking,"AC-02, IA-02",Credential Access,Offline password cracking
+T1110.003,Password Spraying,"IA-02",Credential Access,Low-and-slow password attack
+T1110.004,Credential Stuffing,"IA-02",Credential Access,Reuse of breached credentials
+T1003,OS Credential Dumping,"AC-02, AC-06, CA-07, CM-06, CP-09, IA-02, SC-28, SI-03, SI-04",Credential Access,Memory/registry credential extraction
+T1003.001,LSASS Memory,"AC-02, AC-06, CM-06, SC-28, SI-03, SI-04",Credential Access,LSASS process memory dumping
+T1003.003,NTDS,"AC-02, AC-06, CM-06, CP-09, SC-28, SI-03",Credential Access,Active Directory database extraction
+T1003.006,DCSync,"AC-02, AC-06, CM-06, SC-28, SI-03",Credential Access,Domain replication abuse
+T1552,Unsecured Credentials,"AC-02, AC-06, CA-07, CM-06, RA-05, SC-28, SI-04",Credential Access,Credentials in files/registry
+T1552.001,Credentials In Files,"AC-02, AC-06, CA-07, RA-05, SC-28",Credential Access,Hardcoded credentials in files
+T1552.004,Private Keys,"AC-02, AC-06, CA-07, SC-28",Credential Access,Private key theft
+T1555,Credentials from Password Stores,"CA-07, CM-06, SI-04",Credential Access,Browser/keychain credential theft
+T1556,Modify Authentication Process,"AC-02, AC-06, CA-07, CM-06, IA-02, SI-04",Credential Access; Defense Evasion; Persistence,Authentication mechanism tampering
+T1556.001,Domain Controller Authentication,"AC-02, AC-06, CA-07, SI-04",Credential Access; Defense Evasion; Persistence,DC authentication modification
+T1558,Steal or Forge Kerberos Tickets,"AC-02, AC-06, CA-07, CM-06, IA-02, SI-04",Credential Access,Kerberos ticket manipulation
+T1528,Steal Application Access Token,"AC-02, CA-07, CM-06, RA-05, SI-04",Credential Access,OAuth/API token theft
+T1539,Steal Web Session Cookie,"AC-02, CA-07, CM-06, SI-04",Credential Access,Session hijacking via cookie theft
+T1557,Adversary-in-the-Middle,"CA-07, CM-06, IA-02, RA-05, SC-07, SI-04",Credential Access; Collection,MITM/network interception
+T1557.004,Evil Twin,"CA-07, SI-04",Credential Access; Collection,Rogue wireless AP
+T1098,Account Manipulation,"AC-02, AC-06, CM-06, IA-02, SI-04",Persistence; Privilege Escalation,Account attribute modification
+T1098.001,Additional Cloud Credentials,"AC-02, AC-06, CM-06, IA-02",Persistence; Privilege Escalation,Adding cloud credentials
+T1098.003,Additional Cloud Roles,"AC-06, IA-02",Persistence; Privilege Escalation,Cloud role escalation
+T1136,Create Account,"AC-02, AC-06, CM-06, IA-02, SC-07, SI-04",Persistence,New account creation
+T1136.003,Cloud Account,"AC-02, AC-06, CM-06, IA-02",Persistence,Cloud account creation
+T1053,Scheduled Task/Job,"AC-02, AC-06, CA-07, CM-06, IA-02, RA-05, SI-04",Execution; Persistence; Privilege Escalation,Scheduled task abuse
+T1053.005,Scheduled Task,"AC-02, AC-06, CM-06, RA-05",Execution; Persistence; Privilege Escalation,Windows Task Scheduler
+T1543,Create or Modify System Process,"AC-02, CA-07, CM-06, RA-05, SI-03, SI-04",Persistence; Privilege Escalation,System service manipulation
+T1543.002,Systemd Service,"AC-02, CA-07, CM-06, SI-03, SI-04",Persistence; Privilege Escalation,Systemd unit manipulation
+T1543.003,Windows Service,"AC-06, IA-02",Persistence; Privilege Escalation,Windows service creation
+T1547,Boot or Logon Autostart Execution,"CA-07, CM-06, SI-04",Persistence; Privilege Escalation,Autostart persistence
+T1546,Event Triggered Execution,"AC-02, CA-07, CM-06, SI-04",Persistence; Privilege Escalation,Event-based persistence
+T1546.003,Windows Management Instrumentation Event Subscription,"AC-02, CA-07, SI-03, SI-04",Persistence; Privilege Escalation,WMI event subscription
+T1037,Boot or Logon Initialization Scripts,"CA-07, CM-06, SI-03, SI-04",Persistence; Privilege Escalation,Login script abuse
+T1176,Browser Extensions,"AC-02, CA-07, CM-06, RA-05, SI-03, SI-04",Persistence,Malicious browser extension
+T1505,Server Software Component,"CM-06, IA-02, RA-05",Persistence,Server component backdoor
+T1505.003,Web Shell,"AC-02, RA-05, SI-04",Persistence,Web shell deployment
+T1548,Abuse Elevation Control Mechanism,"AC-02, AC-06, CA-07, CM-06, RA-05, SI-04",Defense Evasion; Privilege Escalation,UAC/sudo bypass
+T1134,Access Token Manipulation,"AC-02, CM-06, IA-02",Defense Evasion; Privilege Escalation,Token theft/impersonation
+T1134.001,Token Impersonation/Theft,"AC-02, AC-06, IA-02",Defense Evasion; Privilege Escalation,Process token impersonation
+T1068,Exploitation for Privilege Escalation,"CA-07, CM-06, RA-05, SC-07, SI-03",Privilege Escalation,Local privilege escalation
+T1055,Process Injection,"AC-06, CA-07, CM-06, IA-02, SC-07, SI-03",Defense Evasion; Privilege Escalation,Memory injection techniques
+T1027,Obfuscated Files or Information,"CM-06, SI-03, SI-04",Defense Evasion,Payload obfuscation
+T1036,Masquerading,"AC-02, AC-06, CA-07, CM-06, SI-03, SI-04",Defense Evasion,File/process disguise
+T1036.005,Match Legitimate Name or Location,"AC-06, CM-06, SI-03",Defense Evasion,Filename/path impersonation
+T1070,Indicator Removal,"CA-07, CM-06, CP-09, SI-03, SI-04",Defense Evasion,Log/evidence deletion
+T1070.001,Clear Windows Event Logs,"AC-02, AC-06, CA-07, CM-06, CP-09, SI-04",Defense Evasion,Windows event log clearing
+T1562,Impair Defenses,"AC-02, AC-06, CA-07, CM-06, RA-05, SI-04",Defense Evasion,Security tool disabling
+T1562.004,Disable or Modify System Firewall,"AC-02, AC-06, CM-06, IA-02, SI-03, SI-04",Defense Evasion,Firewall rule modification
+T1562.006,Indicator Blocking,"AC-02, AC-06, CA-07, CM-06, IA-02, SI-04",Defense Evasion,Telemetry blocking
+T1553,Subvert Trust Controls,"AC-02, AC-06, CM-06, IA-02",Defense Evasion,Code signing/SIP bypass
+T1564,Hide Artifacts,"CA-07, CM-06",Defense Evasion,Hidden files/processes/registry
+T1574,Hijack Execution Flow,"CM-06, RA-05, SI-04",Defense Evasion; Persistence; Privilege Escalation,DLL/path hijacking
+T1574.001,DLL Search Order Hijacking,"RA-05, SI-04",Defense Evasion; Persistence; Privilege Escalation,DLL search order exploitation
+T1021,Remote Services,"AC-02, AC-06, CM-06, IA-02, SI-04",Lateral Movement,Remote protocol abuse
+T1021.001,Remote Desktop Protocol,"AC-06, IA-02, RA-05",Lateral Movement,RDP-based lateral movement
+T1021.002,SMB/Windows Admin Shares,"AC-06, IA-02",Lateral Movement,SMB share access
+T1021.004,SSH,"AC-06, IA-02, RA-05",Lateral Movement,SSH-based lateral movement
+T1021.007,Cloud Services,"AC-02, AC-06, IA-02",Lateral Movement,Cloud service lateral movement
+T1550,Use Alternate Authentication Material,"AC-02, AC-06, CM-06, IA-02",Defense Evasion; Lateral Movement,Pass-the-hash/ticket
+T1570,Lateral Tool Transfer,"SC-07",Lateral Movement,Tool transfer between systems
+T1072,Software Deployment Tools,"AC-02, AC-06, CA-07, CM-06, SI-03, SI-04",Execution; Lateral Movement,SCCM/deployment tool abuse
+T1047,Windows Management Instrumentation,"AC-02, AC-06, CM-06, IA-02, RA-05, SI-03, SI-04",Execution,WMI-based execution
+T1087,Account Discovery,"AC-02, CM-06, SI-04",Discovery,Account enumeration
+T1046,Network Service Discovery,"CA-07, SC-07, SI-03",Discovery,Port/service scanning
+T1482,Domain Trust Discovery,"RA-05, SC-07",Discovery,AD trust enumeration
+T1613,Container and Resource Discovery,"AC-02",Discovery,Cloud/container enumeration
+T1619,Cloud Storage Object Discovery,"AC-02",Discovery,Cloud storage enumeration
+T1005,Data from Local System,"AC-02, AC-06, SC-28, SI-03",Collection,Local file access
+T1025,Data from Removable Media,"AC-06, SC-28, SI-03",Collection,Removable media data theft
+T1213,Data from Information Repositories,"AC-02, AC-06, CA-07, CM-06, RA-05, SC-28, SI-04",Collection,SharePoint/Confluence data access
+T1213.001,Confluence,"AC-02, CA-07, SC-28, SI-04",Collection,Confluence data access
+T1213.002,Sharepoint,"AC-02, CA-07, SC-28, SI-04",Collection,SharePoint data access
+T1213.003,Code Repositories,"AC-02, CA-07, RA-05, SI-04",Collection,Git repository data access
+T1114,Email Collection,"IA-02, SC-07, SI-04",Collection,Email data theft
+T1119,Automated Collection,"CP-09, SI-04",Collection,Automated data gathering
+T1530,Data from Cloud Storage,"AC-02, CA-07, CM-06, RA-05, SC-07, SI-04",Collection,Cloud storage data access
+T1560,Archive Collected Data,"CM-06, RA-05, SI-03",Collection,Data staging/compression
+T1041,Exfiltration Over C2 Channel,"AC-02, AC-06, CA-07, SC-07, SC-28, SI-03",Exfiltration,Data exfil over C2
+T1048,Exfiltration Over Alternative Protocol,"AC-06, CA-07, SC-07, SC-28, SI-03",Exfiltration,Non-C2 protocol exfiltration
+T1567,Exfiltration Over Web Service,"SC-07",Exfiltration,Cloud storage exfiltration
+T1537,Transfer Data to Cloud Account,"AC-02, CA-07, SC-07, SI-04",Exfiltration,Cloud account data transfer
+T1029,Scheduled Transfer,"CA-07, CM-06, SC-07, SI-03",Exfiltration,Timed data exfiltration
+T1030,Data Transfer Size Limits,"CA-07, CM-06, SC-07, SI-03",Exfiltration,Chunked data exfiltration
+T1071,Application Layer Protocol,"CA-07, CM-06, SC-07, SI-03, SI-04",Command and Control,C2 over HTTP/DNS/SMTP
+T1071.001,Web Protocols,"CM-06, SI-03, SI-04",Command and Control,HTTP/HTTPS C2
+T1071.004,DNS,"CM-06, SI-03, SI-04",Command and Control,DNS-based C2
+T1095,Non-Application Layer Protocol,"CM-06, SC-07, SI-03",Command and Control,Raw socket/ICMP C2
+T1102,Web Service,"AC-02, CA-07, CM-06, SC-07, SI-03, SI-04",Command and Control,Cloud/web service C2
+T1105,Ingress Tool Transfer,"CA-07, CM-06, SC-07, SI-03, SI-04",Command and Control,Tool download to target
+T1572,Protocol Tunneling,"CA-07, CM-06, RA-05, SC-07, SI-03, SI-04",Command and Control,Tunneled communications
+T1573,Encrypted Channel,"CA-07, CM-06, SC-07, SI-03, SI-04",Command and Control,Encrypted C2 traffic
+T1568,Dynamic Resolution,"SC-07",Command and Control,DGA/fast-flux DNS
+T1090,Proxy,"CA-07, CM-06, SC-07, SI-03",Command and Control,Traffic proxying
+T1104,Multi-Stage Channels,"CA-07, SC-07, SI-03",Command and Control,Multi-stage C2
+T1132,Data Encoding,"CA-07, SC-07, SI-03",Command and Control,Base64/custom encoding
+T1008,Fallback Channels,"CA-07, CM-06, SC-07, SI-03, SI-04",Command and Control,Backup C2 channels
+T1219,Remote Access Software,"CA-07, CM-06, SC-07, SI-03, SI-04",Command and Control,Legitimate RAT abuse
+T1486,Data Encrypted for Impact,"CP-09, CP-10",Impact,Ransomware encryption
+T1485,Data Destruction,"AC-02, AC-06, CP-09, SI-04",Impact,Data deletion/wiping
+T1485.001,Lifecycle-Triggered Deletion,"AC-02, CP-09",Impact,Automated data lifecycle deletion
+T1490,Inhibit System Recovery,"AC-02, AC-06, CP-09, SI-04",Impact,Backup/recovery sabotage
+T1489,Service Stop,"AC-02, AC-06, CA-07, CM-06, SC-07, SI-04",Impact,Service disruption
+T1491,Defacement,"CP-09",Impact,Website/system defacement
+T1491.001,Internal Defacement,"CP-09",Impact,Internal system defacement
+T1491.002,External Defacement,"CP-09",Impact,External website defacement
+T1498,Network Denial of Service,"SC-07",Impact,Network-level DoS
+T1499,Endpoint Denial of Service,"SC-07",Impact,Application-level DoS
+T1561,Disk Wipe,"CP-09",Impact,Disk destruction
+T1561.001,Disk Content Wipe,"CP-09",Impact,File-level disk wiping
+T1561.002,Disk Structure Wipe,"CP-09",Impact,MBR/partition destruction
+T1565,Data Manipulation,"CA-07, CM-06, CP-09, SC-07, SI-04",Impact; Collection,Data integrity attacks
+T1565.001,Stored Data Manipulation,"CP-09, SC-28",Impact,Database/file tampering
+T1657,Financial Theft,"AC-06",Impact,Financial fraud
+T1040,Network Sniffing,"IA-02, SI-04",Credential Access; Discovery,Passive network capture
+T1621,Multi-Factor Authentication Request Generation,"AC-02, AC-06, IA-02",Credential Access,MFA fatigue/push bombing
+T1606.002,SAML Tokens,"AC-02, AC-06",Credential Access,SAML token forging (Golden SAML)
+T1649,Steal or Forge Authentication Certificates,"IA-02",Credential Access,Certificate-based auth abuse
+T1210,Exploitation of Remote Services,"IA-02, RA-05, SC-07",Lateral Movement,Remote service exploitation
+T1484,Domain or Tenant Policy Modification,"AC-02, AC-06, CM-06, IA-02, RA-05, SI-04",Defense Evasion; Privilege Escalation,GPO/tenant policy abuse
+T1542,Pre-OS Boot,"AC-02, AC-06, CM-06, IA-02, SC-07, SI-03",Defense Evasion; Persistence,Firmware/bootkit persistence
+T1610,Deploy Container,"AC-02, AC-06, CM-06, RA-05, SC-07, SI-03, SI-04",Defense Evasion; Execution,Malicious container deployment
+T1611,Escape to Host,"AC-02, AC-06, CM-06, RA-05, SC-07, SI-03, SI-04",Privilege Escalation,Container escape
+T1648,Serverless Execution,"AC-02, AC-06, CM-06, SI-04",Execution,Cloud function abuse
+T1651,Cloud Administration Command,"AC-02, AC-06, SI-04",Execution,Cloud management API abuse
+T1654,Log Enumeration,"AC-02, AC-06",Discovery,Log file access/review
+T1666,Modify Cloud Resource Hierarchy,"CM-03",Persistence; Privilege Escalation,Cloud org/folder manipulation
+T1080,Taint Shared Content,"CA-07, SI-03",Lateral Movement,Shared drive/repo poisoning
+T1091,Replication Through Removable Media,"RA-05, SI-03",Initial Access; Lateral Movement,USB-based propagation
+T1197,BITS Jobs,"CA-07, IA-02, SC-07",Defense Evasion; Persistence,BITS transfer abuse
+T1187,Forced Authentication,"CA-07, SC-07",Credential Access,Forced NTLM authentication
+T1185,Browser Session Hijacking,"CA-07, IA-02",Collection,Browser session manipulation
+T1111,Multi-Factor Authentication Interception,"CA-07, IA-02, SI-03",Credential Access,MFA bypass/interception
+T1205,Traffic Signaling,"SC-07",Command and Control; Defense Evasion; Persistence,Port knocking/wake-on-LAN
+T1092,Communication Through Removable Media,"CM-06, RA-05, SI-03",Command and Control,Air-gap bridging via USB

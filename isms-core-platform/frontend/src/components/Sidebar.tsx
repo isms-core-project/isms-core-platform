@@ -20,6 +20,7 @@ import {
   Alert,
   Chip,
   Collapse,
+  IconButton,
 } from '@mui/material'
 import {
   DashboardOutlined,
@@ -41,6 +42,7 @@ import {
   NotificationsOutlined,
   SummarizeOutlined,
   GppMaybeOutlined,
+  GridViewOutlined,
   LockPersonOutlined,
   CloudOutlined,
   PersonOutlined,
@@ -49,6 +51,10 @@ import {
   ExpandMoreOutlined,
   HomeOutlined,
   ElectricalServicesOutlined,
+  ChevronLeftOutlined,
+  ChevronRightOutlined,
+  AccountBalanceOutlined,
+  SecurityOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -63,7 +69,6 @@ interface NavItem {
   icon: React.ReactNode
 }
 
-// Submenus shared across all 3 product sections
 const PRODUCT_NAV: NavItem[] = [
   { label: 'Overview',    path: '/overview',    icon: <DashboardOutlined /> },
   { label: 'Coverage',    path: '/coverage',    icon: <CompareArrowsOutlined /> },
@@ -75,7 +80,6 @@ const PRODUCT_NAV: NavItem[] = [
   { label: 'Graph',       path: '/graph',       icon: <DeviceHubOutlined /> },
 ]
 
-// Platform-wide pages — not product-specific
 const NAV_PLATFORM: NavItem[] = [
   { label: 'QA',          path: '/qa',          icon: <VerifiedOutlined /> },
   { label: 'Search',      path: '/search',      icon: <SearchOutlined /> },
@@ -83,6 +87,10 @@ const NAV_PLATFORM: NavItem[] = [
   { label: 'Generators',  path: '/generators',  icon: <CodeOutlined /> },
   { label: 'Report',      path: '/report',      icon: <SummarizeOutlined /> },
   { label: 'Risk Wizard', path: '/risk',        icon: <GppMaybeOutlined /> },
+  { label: 'NIST CSF',    path: '/nist-csf',    icon: <GridViewOutlined /> },
+  { label: 'NIS2',        path: '/nis2',        icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+  { label: 'DORA',        path: '/dora',        icon: <AccountBalanceOutlined /> },
+  { label: 'CIS Controls', path: '/cis',        icon: <SecurityOutlined /> },
 ]
 
 const NAV_ADMIN: NavItem[] = [
@@ -91,14 +99,12 @@ const NAV_ADMIN: NavItem[] = [
   { label: 'System',      path: '/system',      icon: <MonitorHeartOutlined /> },
 ]
 
-// Product section config
 const PRODUCT_SECTIONS: { value: Product; icon: React.ReactNode }[] = [
   { value: 'isms',    icon: <ShieldOutlined /> },
   { value: 'privacy', icon: <LockPersonOutlined /> },
   { value: 'cloud',   icon: <CloudOutlined /> },
 ]
 
-// Privacy Controls sub-filter
 const PRIVACY_SECTIONS = [
   { label: 'Controller', section: 'A.1', icon: <PersonOutlined sx={{ fontSize: 13 }} /> },
   { label: 'Processor',  section: 'A.2', icon: <BusinessOutlined sx={{ fontSize: 13 }} /> },
@@ -106,13 +112,15 @@ const PRIVACY_SECTIONS = [
 ]
 
 export const SIDEBAR_WIDTH = 220
+export const SIDEBAR_MINI_WIDTH = 52
 
 const CAT_LABEL: Record<string, string> = { workflow: 'Workflow', system: 'System' }
 const CAT_COLOR: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3a' }
 const CAT_TEXT:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0' }
-
 const PLATFORM_COLOR = '#6B7A99'
-const PLATFORM_PATHS = ['/qa', '/search', '/compass', '/generators', '/report', '/risk', '/admin', '/connectors', '/system']
+const PLATFORM_PATHS = ['/qa', '/search', '/compass', '/generators', '/report', '/risk', '/nist-csf', '/nis2', '/dora', '/cis', '/admin', '/connectors', '/system']
+
+// ── Notification prefs dialog ─────────────────────────────────────────────────
 
 function NotificationPrefsDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
   const queryClient = useQueryClient()
@@ -192,15 +200,15 @@ function NotificationPrefsDialog({ open, onClose }: { open: boolean; onClose: ()
   )
 }
 
-export default function Sidebar() {
+// ── Main sidebar ──────────────────────────────────────────────────────────────
+
+export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; onToggle: () => void }) {
   const navigate = useNavigate()
   const location = useLocation()
   const [notifsOpen, setNotifsOpen] = useState(false)
   const { logout, user } = useAuth()
   const { product, setProduct, ismsTier, setIsmsTier } = useProduct()
 
-  // Accordion: only one product section expanded at a time.
-  // On Home and platform pages, start collapsed so no product is pre-selected.
   const isNeutralPage = location.pathname === '/' || PLATFORM_PATHS.some(p => location.pathname.startsWith(p))
   const [expandedProduct, setExpandedProduct] = useState<Product | null>(isNeutralPage ? null : product)
 
@@ -211,6 +219,12 @@ export default function Sidebar() {
   ]
 
   function handleSectionHeader(p: Product) {
+    if (collapsed) {
+      setProduct(p)
+      setExpandedProduct(p)
+      navigate('/overview')
+      return
+    }
     if (expandedProduct === p) {
       setExpandedProduct(null)
     } else {
@@ -222,11 +236,9 @@ export default function Sidebar() {
   function handleNavItem(item: NavItem, p: Product) {
     setProduct(p)
     setExpandedProduct(p)
-    const basePath = item.path.split('?')[0]
-    navigate(basePath)
+    navigate(item.path.split('?')[0])
   }
 
-  // A nav item is active when the path matches AND the product matches
   function isProductNavActive(path: string, p: Product): boolean {
     const pathMatch = location.pathname === path || (path !== '/overview' && location.pathname.startsWith(path))
     return pathMatch && product === p
@@ -236,14 +248,15 @@ export default function Sidebar() {
     return location.pathname === path || location.pathname.startsWith(path + '/')
   }
 
-  // Privacy section filter (shown under Controls when privacy expanded)
   const isControlsPath = location.pathname.startsWith('/controls')
   const currentSection = new URLSearchParams(location.search).get('section') ?? ''
+
+  const sidebarWidth = collapsed ? SIDEBAR_MINI_WIDTH : SIDEBAR_WIDTH
 
   return (
     <Box
       sx={{
-        width: SIDEBAR_WIDTH,
+        width: sidebarWidth,
         flexShrink: 0,
         display: 'flex',
         flexDirection: 'column',
@@ -255,50 +268,95 @@ export default function Sidebar() {
         left: 0,
         top: 0,
         zIndex: 100,
+        overflow: 'hidden',
+        transition: 'width 0.2s ease',
       }}
     >
-      {/* Logo — click to go home */}
-      <Box
-        onClick={() => navigate('/')}
-        sx={{ px: 2.5, pt: 2.5, pb: 1.5, cursor: 'pointer', '&:hover': { opacity: 0.8 } }}
-      >
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <ShieldOutlined sx={{ color: PRODUCT_COLORS[product], fontSize: 26, transition: 'color 0.2s' }} />
-          <Box>
-            <Typography variant="h6" sx={{ color: PRODUCT_COLORS[product], lineHeight: 1, fontSize: '1rem', transition: 'color 0.2s' }}>
-              ISMS CORE
-            </Typography>
-            <Typography variant="caption" sx={{ color: 'text.disabled', fontSize: '0.6rem', letterSpacing: '0.04em' }}>
-              IS &amp; Privacy Compliance
-            </Typography>
-          </Box>
+      {/* ── Logo ── */}
+      <Box sx={{ position: 'relative', px: collapsed ? 0 : 2.5, pt: 2.5, pb: 1.5 }}>
+        <Box
+          onClick={() => navigate('/')}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: collapsed ? 0 : 1,
+            cursor: 'pointer',
+            justifyContent: collapsed ? 'center' : 'flex-start',
+            '&:hover': { opacity: 0.8 },
+          }}
+        >
+          <ShieldOutlined sx={{ color: PRODUCT_COLORS[product], fontSize: 26, transition: 'color 0.2s', flexShrink: 0 }} />
+          {!collapsed && (
+            <Box>
+              <Typography variant="h6" sx={{ color: PRODUCT_COLORS[product], lineHeight: 1, fontSize: '1rem', transition: 'color 0.2s', whiteSpace: 'nowrap' }}>
+                ISMS CORE
+              </Typography>
+              <Typography variant="caption" sx={{ color: 'text.disabled', fontSize: '0.6rem', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
+                IS &amp; Privacy Compliance
+              </Typography>
+            </Box>
+          )}
+        </Box>
+
+        {/* Collapse toggle — right edge */}
+        <Box
+          onClick={onToggle}
+          sx={{
+            position: 'absolute',
+            right: -14,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            width: 28,
+            height: 28,
+            borderRadius: '50%',
+            bgcolor: 'background.paper',
+            border: '1px solid rgba(255,255,255,0.18)',
+            boxShadow: '0 0 0 1px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.5)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            zIndex: 101,
+            transition: 'background-color 0.15s, border-color 0.15s',
+            '&:hover': { bgcolor: '#2a3550', borderColor: 'rgba(255,255,255,0.35)' },
+          }}
+        >
+          {collapsed
+            ? <ChevronRightOutlined sx={{ fontSize: 16, color: 'rgba(255,255,255,0.7)' }} />
+            : <ChevronLeftOutlined sx={{ fontSize: 16, color: 'rgba(255,255,255,0.7)' }} />}
         </Box>
       </Box>
 
       <Divider />
 
-      {/* Scrollable nav area */}
-      <Box sx={{ flex: 1, overflowY: 'auto', py: 0.5 }}>
+      {/* ── Scrollable nav area ── */}
+      <Box sx={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', py: 0.5 }}>
 
         {/* Home */}
         <Box sx={{ px: 1, pt: 0.5, pb: 0.25 }}>
-          <ListItemButton
-            selected={location.pathname === '/'}
-            onClick={() => navigate('/')}
-            sx={{
-              borderRadius: 1.5, py: 0.55, px: 1.5,
-              '&.Mui-selected': { bgcolor: `rgba(107,122,153,0.14)`, color: '#6B7A99', '& .MuiListItemIcon-root': { color: '#6B7A99' } },
-              '&:hover': { bgcolor: 'rgba(107,122,153,0.08)' },
-            }}
-          >
-            <ListItemIcon sx={{ minWidth: 30, color: location.pathname === '/' ? '#6B7A99' : 'text.secondary' }}>
-              <HomeOutlined sx={{ fontSize: 18 }} />
-            </ListItemIcon>
-            <ListItemText
-              primary="Home"
-              primaryTypographyProps={{ variant: 'body2', fontWeight: location.pathname === '/' ? 600 : 400, fontSize: '0.8rem' }}
-            />
-          </ListItemButton>
+          <Tooltip title={collapsed ? 'Home' : ''} placement="right">
+            <ListItemButton
+              selected={location.pathname === '/'}
+              onClick={() => navigate('/')}
+              sx={{
+                borderRadius: 1.5, py: 0.55,
+                px: collapsed ? 0 : 1.5,
+                justifyContent: collapsed ? 'center' : 'flex-start',
+                '&.Mui-selected': { bgcolor: 'rgba(107,122,153,0.14)', color: '#6B7A99', '& .MuiListItemIcon-root': { color: '#6B7A99' } },
+                '&:hover': { bgcolor: 'rgba(107,122,153,0.08)' },
+              }}
+            >
+              <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 30, color: location.pathname === '/' ? '#6B7A99' : 'text.secondary' }}>
+                <HomeOutlined sx={{ fontSize: 18 }} />
+              </ListItemIcon>
+              {!collapsed && (
+                <ListItemText
+                  primary="Home"
+                  primaryTypographyProps={{ variant: 'body2', fontWeight: location.pathname === '/' ? 600 : 400, fontSize: '0.8rem' }}
+                />
+              )}
+            </ListItemButton>
+          </Tooltip>
         </Box>
 
         <Divider sx={{ my: 0.5, mx: 1 }} />
@@ -306,75 +364,64 @@ export default function Sidebar() {
         {/* Product sections */}
         {PRODUCT_SECTIONS.map(({ value, icon }) => {
           const color = PRODUCT_COLORS[value]
-          const isExpanded = expandedProduct === value
+          const isExpanded = expandedProduct === value && !collapsed
           const isActiveProduct = product === value
 
           return (
             <Box key={value}>
-              {/* Section header */}
-              <Box
-                onClick={() => handleSectionHeader(value)}
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 1,
-                  mx: 1,
-                  px: 1.25,
-                  py: 0.65,
-                  borderRadius: 1.5,
-                  cursor: 'pointer',
-                  userSelect: 'none',
-                  borderLeft: `3px solid ${isActiveProduct ? color : 'transparent'}`,
-                  bgcolor: isExpanded ? `${color}14` : 'transparent',
-                  transition: 'all 0.15s',
-                  '&:hover': {
-                    bgcolor: `${color}10`,
-                    borderLeftColor: color,
-                  },
-                }}
-              >
-                <Box sx={{ color: isActiveProduct ? color : 'text.disabled', display: 'flex', transition: 'color 0.15s', fontSize: 16 }}>
-                  {icon}
+              <Tooltip title={collapsed ? PRODUCT_LABELS[value] : ''} placement="right">
+                <Box
+                  onClick={() => handleSectionHeader(value)}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: collapsed ? 0 : 1,
+                    mx: 1,
+                    px: collapsed ? 0 : 1.25,
+                    py: 0.65,
+                    borderRadius: 1.5,
+                    cursor: 'pointer',
+                    userSelect: 'none',
+                    justifyContent: collapsed ? 'center' : 'flex-start',
+                    borderLeft: collapsed ? 'none' : `3px solid ${isActiveProduct ? color : 'transparent'}`,
+                    bgcolor: isExpanded ? `${color}14` : 'transparent',
+                    transition: 'all 0.15s',
+                    '&:hover': {
+                      bgcolor: `${color}10`,
+                      ...(!collapsed && { borderLeftColor: color }),
+                    },
+                  }}
+                >
+                  <Box sx={{ color: isActiveProduct ? color : 'text.disabled', display: 'flex', transition: 'color 0.15s', fontSize: 16 }}>
+                    {icon}
+                  </Box>
+                  {!collapsed && (
+                    <>
+                      <Box sx={{ flex: 1, minWidth: 0 }}>
+                        <Typography
+                          variant="caption"
+                          sx={{ display: 'block', lineHeight: 1.2, fontWeight: isActiveProduct ? 700 : 500, fontSize: '0.72rem', color: isActiveProduct ? color : 'text.secondary', transition: 'color 0.15s', whiteSpace: 'nowrap' }}
+                        >
+                          {PRODUCT_LABELS[value]}
+                        </Typography>
+                        <Typography
+                          variant="caption"
+                          sx={{ display: 'block', lineHeight: 1.1, fontSize: '0.59rem', color: isActiveProduct ? `${color}99` : 'text.disabled', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+                        >
+                          {PRODUCT_SUBTITLES[value]}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ color: 'text.disabled', display: 'flex', fontSize: 16, transition: 'transform 0.2s', transform: isExpanded ? 'rotate(0deg)' : 'rotate(-90deg)' }}>
+                        <ExpandMoreOutlined sx={{ fontSize: 16 }} />
+                      </Box>
+                    </>
+                  )}
                 </Box>
-                <Box sx={{ flex: 1, minWidth: 0 }}>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      display: 'block',
-                      lineHeight: 1.2,
-                      fontWeight: isActiveProduct ? 700 : 500,
-                      fontSize: '0.72rem',
-                      color: isActiveProduct ? color : 'text.secondary',
-                      transition: 'color 0.15s',
-                    }}
-                  >
-                    {PRODUCT_LABELS[value]}
-                  </Typography>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      display: 'block',
-                      lineHeight: 1.1,
-                      fontSize: '0.59rem',
-                      color: isActiveProduct ? `${color}99` : 'text.disabled',
-                      whiteSpace: 'nowrap',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                    }}
-                  >
-                    {PRODUCT_SUBTITLES[value]}
-                  </Typography>
-                </Box>
-                <Box sx={{ color: 'text.disabled', display: 'flex', fontSize: 16, transition: 'transform 0.2s', transform: isExpanded ? 'rotate(0deg)' : 'rotate(-90deg)' }}>
-                  <ExpandMoreOutlined sx={{ fontSize: 16 }} />
-                </Box>
-              </Box>
+              </Tooltip>
 
-              {/* Expanded submenu */}
+              {/* Expanded submenu — only when sidebar is open */}
               <Collapse in={isExpanded} timeout={180} unmountOnExit>
                 <Box sx={{ pb: 0.5 }}>
-
-                  {/* ISMS tier filter */}
                   {value === 'isms' && (
                     <Box sx={{ mx: 2, mt: 0.5, mb: 0.75 }}>
                       <Box sx={{ display: 'flex', gap: 0.5 }}>
@@ -394,10 +441,7 @@ export default function Sidebar() {
                                 '&:hover': { borderColor: `${tc}45`, bgcolor: `${tc}12` },
                               }}
                             >
-                              <Typography variant="caption" sx={{
-                                fontSize: '0.62rem', fontWeight: tierActive ? 700 : 400, lineHeight: 1,
-                                color: tierActive ? tc : 'text.disabled',
-                              }}>
+                              <Typography variant="caption" sx={{ fontSize: '0.62rem', fontWeight: tierActive ? 700 : 400, lineHeight: 1, color: tierActive ? tc : 'text.disabled' }}>
                                 {label}
                               </Typography>
                             </Box>
@@ -407,7 +451,6 @@ export default function Sidebar() {
                     </Box>
                   )}
 
-                  {/* Nav items */}
                   <List disablePadding sx={{ px: 1 }}>
                     {PRODUCT_NAV.map((item) => {
                       const active = isProductNavActive(item.path, value)
@@ -419,15 +462,8 @@ export default function Sidebar() {
                               selected={active}
                               onClick={() => handleNavItem(item, value)}
                               sx={{
-                                borderRadius: 1.5,
-                                py: 0.5,
-                                px: 1.25,
-                                pl: 2,
-                                '&.Mui-selected': {
-                                  bgcolor: `${color}20`,
-                                  color: color,
-                                  '& .MuiListItemIcon-root': { color: color },
-                                },
+                                borderRadius: 1.5, py: 0.5, px: 1.25, pl: 2,
+                                '&.Mui-selected': { bgcolor: `${color}20`, color, '& .MuiListItemIcon-root': { color } },
                                 '&:hover': { bgcolor: `${color}10` },
                               }}
                             >
@@ -441,7 +477,6 @@ export default function Sidebar() {
                             </ListItemButton>
                           </ListItem>
 
-                          {/* Privacy: Controller/Processor/Shared sub-filter under Controls */}
                           {value === 'privacy' && basePath === '/controls' && active && isControlsPath && (
                             <Box sx={{ pl: 4, pr: 0.5, pb: 0.25 }}>
                               {PRIVACY_SECTIONS.map((s) => {
@@ -451,27 +486,14 @@ export default function Sidebar() {
                                     key={s.label}
                                     onClick={(e) => { e.stopPropagation(); navigate(`/controls?section=${s.section}`) }}
                                     sx={{
-                                      display: 'flex',
-                                      alignItems: 'center',
-                                      gap: 0.75,
-                                      px: 1,
-                                      py: 0.3,
-                                      borderRadius: 1,
-                                      cursor: 'pointer',
-                                      mb: 0.1,
+                                      display: 'flex', alignItems: 'center', gap: 0.75,
+                                      px: 1, py: 0.3, borderRadius: 1, cursor: 'pointer', mb: 0.1,
                                       bgcolor: sActive ? `${color}18` : 'transparent',
                                       '&:hover': { bgcolor: `${color}10` },
                                     }}
                                   >
                                     <Box sx={{ color: sActive ? color : 'text.disabled' }}>{s.icon}</Box>
-                                    <Typography
-                                      variant="caption"
-                                      sx={{
-                                        fontSize: '0.69rem',
-                                        fontWeight: sActive ? 600 : 400,
-                                        color: sActive ? color : 'text.secondary',
-                                      }}
-                                    >
+                                    <Typography variant="caption" sx={{ fontSize: '0.69rem', fontWeight: sActive ? 600 : 400, color: sActive ? color : 'text.secondary' }}>
                                       {s.label}
                                     </Typography>
                                   </Box>
@@ -493,37 +515,39 @@ export default function Sidebar() {
 
         {/* Platform pages */}
         <Box sx={{ pt: 0.25 }}>
-          <Typography variant="caption" sx={{ px: 2.5, display: 'block', mb: 0.5, fontSize: '0.59rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'text.disabled' }}>
-            Platform
-          </Typography>
+          {!collapsed && (
+            <Typography variant="caption" sx={{ px: 2.5, display: 'block', mb: 0.5, fontSize: '0.59rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'text.disabled' }}>
+              Platform
+            </Typography>
+          )}
           <List disablePadding sx={{ px: 1 }}>
             {NAV_PLATFORM.map((item) => {
               const active = isPlatformNavActive(item.path)
               return (
                 <ListItem key={item.path} disablePadding sx={{ mb: 0.15 }}>
-                  <ListItemButton
-                    selected={active}
-                    onClick={() => navigate(item.path)}
-                    sx={{
-                      borderRadius: 1.5,
-                      py: 0.5,
-                      px: 1.5,
-                      '&.Mui-selected': {
-                        bgcolor: `${PLATFORM_COLOR}20`,
-                        color: PLATFORM_COLOR,
-                        '& .MuiListItemIcon-root': { color: PLATFORM_COLOR },
-                      },
-                      '&:hover': { bgcolor: `${PLATFORM_COLOR}12` },
-                    }}
-                  >
-                    <ListItemIcon sx={{ minWidth: 30, color: active ? PLATFORM_COLOR : 'text.secondary', transition: 'color 0.15s' }}>
-                      <Box sx={{ '& svg': { fontSize: 18 } }}>{item.icon}</Box>
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={item.label}
-                      primaryTypographyProps={{ variant: 'body2', fontWeight: active ? 600 : 400, fontSize: '0.8rem' }}
-                    />
-                  </ListItemButton>
+                  <Tooltip title={collapsed ? item.label : ''} placement="right">
+                    <ListItemButton
+                      selected={active}
+                      onClick={() => navigate(item.path)}
+                      sx={{
+                        borderRadius: 1.5, py: 0.5,
+                        px: collapsed ? 0 : 1.5,
+                        justifyContent: collapsed ? 'center' : 'flex-start',
+                        '&.Mui-selected': { bgcolor: `${PLATFORM_COLOR}20`, color: PLATFORM_COLOR, '& .MuiListItemIcon-root': { color: PLATFORM_COLOR } },
+                        '&:hover': { bgcolor: `${PLATFORM_COLOR}12` },
+                      }}
+                    >
+                      <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 30, color: active ? PLATFORM_COLOR : 'text.secondary', transition: 'color 0.15s' }}>
+                        <Box sx={{ '& svg': { fontSize: 18 } }}>{item.icon}</Box>
+                      </ListItemIcon>
+                      {!collapsed && (
+                        <ListItemText
+                          primary={item.label}
+                          primaryTypographyProps={{ variant: 'body2', fontWeight: active ? 600 : 400, fontSize: '0.8rem' }}
+                        />
+                      )}
+                    </ListItemButton>
+                  </Tooltip>
                 </ListItem>
               )
             })}
@@ -538,29 +562,29 @@ export default function Sidebar() {
             const active = isPlatformNavActive(item.path)
             return (
               <ListItem key={item.path} disablePadding sx={{ mb: 0.15 }}>
-                <ListItemButton
-                  selected={active}
-                  onClick={() => navigate(item.path)}
-                  sx={{
-                    borderRadius: 1.5,
-                    py: 0.5,
-                    px: 1.5,
-                    '&.Mui-selected': {
-                      bgcolor: `${PLATFORM_COLOR}20`,
-                      color: PLATFORM_COLOR,
-                      '& .MuiListItemIcon-root': { color: PLATFORM_COLOR },
-                    },
-                    '&:hover': { bgcolor: `${PLATFORM_COLOR}12` },
-                  }}
-                >
-                  <ListItemIcon sx={{ minWidth: 30, color: active ? PLATFORM_COLOR : 'text.secondary', transition: 'color 0.15s' }}>
-                    <Box sx={{ '& svg': { fontSize: 18 } }}>{item.icon}</Box>
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={item.label}
-                    primaryTypographyProps={{ variant: 'body2', fontWeight: active ? 600 : 400, fontSize: '0.8rem' }}
-                  />
-                </ListItemButton>
+                <Tooltip title={collapsed ? item.label : ''} placement="right">
+                  <ListItemButton
+                    selected={active}
+                    onClick={() => navigate(item.path)}
+                    sx={{
+                      borderRadius: 1.5, py: 0.5,
+                      px: collapsed ? 0 : 1.5,
+                      justifyContent: collapsed ? 'center' : 'flex-start',
+                      '&.Mui-selected': { bgcolor: `${PLATFORM_COLOR}20`, color: PLATFORM_COLOR, '& .MuiListItemIcon-root': { color: PLATFORM_COLOR } },
+                      '&:hover': { bgcolor: `${PLATFORM_COLOR}12` },
+                    }}
+                  >
+                    <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 30, color: active ? PLATFORM_COLOR : 'text.secondary', transition: 'color 0.15s' }}>
+                      <Box sx={{ '& svg': { fontSize: 18 } }}>{item.icon}</Box>
+                    </ListItemIcon>
+                    {!collapsed && (
+                      <ListItemText
+                        primary={item.label}
+                        primaryTypographyProps={{ variant: 'body2', fontWeight: active ? 600 : 400, fontSize: '0.8rem' }}
+                      />
+                    )}
+                  </ListItemButton>
+                </Tooltip>
               </ListItem>
             )
           })}
@@ -568,40 +592,38 @@ export default function Sidebar() {
 
       </Box>
 
-      {/* Footer — user + notifications + logout */}
+      {/* ── Footer ── */}
       <Divider />
-      <Box sx={{ px: 2, py: 1.5 }}>
-        {user && (
+      <Box sx={{ px: collapsed ? 0.5 : 2, py: 1.5 }}>
+        {!collapsed && user && (
           <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.5, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {user.email}
           </Typography>
         )}
-        <Tooltip title="Notification preferences">
+        <Tooltip title={collapsed ? 'Notifications' : ''} placement="right">
           <ListItemButton
             onClick={() => setNotifsOpen(true)}
-            sx={{ borderRadius: 1.5, px: 1.5, py: 0.5 }}
+            sx={{ borderRadius: 1.5, px: collapsed ? 0 : 1.5, py: 0.5, justifyContent: collapsed ? 'center' : 'flex-start' }}
           >
-            <ListItemIcon sx={{ minWidth: 36, color: 'text.secondary' }}>
+            <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 36, color: 'text.secondary' }}>
               <NotificationsOutlined fontSize="small" />
             </ListItemIcon>
-            <ListItemText
-              primary="Notifications"
-              primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }}
-            />
+            {!collapsed && (
+              <ListItemText primary="Notifications" primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }} />
+            )}
           </ListItemButton>
         </Tooltip>
-        <Tooltip title="Sign out">
+        <Tooltip title={collapsed ? 'Sign out' : ''} placement="right">
           <ListItemButton
             onClick={logout}
-            sx={{ borderRadius: 1.5, px: 1.5, py: 0.5 }}
+            sx={{ borderRadius: 1.5, px: collapsed ? 0 : 1.5, py: 0.5, justifyContent: collapsed ? 'center' : 'flex-start' }}
           >
-            <ListItemIcon sx={{ minWidth: 36, color: 'text.secondary' }}>
+            <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 36, color: 'text.secondary' }}>
               <LogoutOutlined fontSize="small" />
             </ListItemIcon>
-            <ListItemText
-              primary="Sign out"
-              primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }}
-            />
+            {!collapsed && (
+              <ListItemText primary="Sign out" primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }} />
+            )}
           </ListItemButton>
         </Tooltip>
       </Box>
