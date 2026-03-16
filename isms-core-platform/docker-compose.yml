@@ -239,6 +239,28 @@ services:
     networks:
       - isms-core-network
 
+  # ── Connectors runner (optional profile) ──────────────────────────────────
+  # Single container running all 44 connectors as daemon threads.
+  # Polls the API every RUNNER_REFRESH_INTERVAL seconds and starts/stops
+  # connector threads automatically as connectors are registered/deregistered.
+  # Set in .env: CONNECTORS_WORKER_SECRET=<strong-secret>
+  isms-core-connectors:
+    build:
+      context: ./connectors
+    image: isms-core-connectors:latest
+    container_name: isms-core-connectors
+    environment:
+      - ISMS_API_URL=http://isms-core-backend:8000
+      - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET}
+      - RUNNER_REFRESH_INTERVAL=${RUNNER_REFRESH_INTERVAL:-60}
+      - POLL_INTERVAL=${POLL_INTERVAL:-86400}
+    depends_on:
+      isms-core-backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - isms-core-network
+
   # ── Email options (optional profiles) ─────────────────────────────────────
 
   # Mailpit: docker compose --profile mailpit up -d
