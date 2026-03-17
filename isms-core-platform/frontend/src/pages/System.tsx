@@ -341,8 +341,8 @@ export default function System() {
             ))}
           </Grid>
 
-          {/* Row 2: Data State — DB Records (left) | OpenSearch + Platform Config (right) */}
-          <Grid container spacing={2}>
+          {/* Row 2: DB Records (left) | Platform Config (right) */}
+          <Grid container spacing={2} sx={{ alignItems: 'stretch' }}>
             <Grid item xs={12} md={6}>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, height: '100%' }}>
 
@@ -376,6 +376,70 @@ export default function System() {
                     </TableContainer>
                   </CardContent>
                 </Card>
+
+              </Box>
+            </Grid>
+
+            {/* Platform Configuration — right column of Row 2 */}
+            <Grid item xs={12} md={6}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent sx={{ pb: '12px !important' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                    <SettingsOutlined sx={{ color: 'primary.main' }} />
+                    <Typography variant="h6">Platform Configuration</Typography>
+                  </Box>
+                  <Divider sx={{ mb: 1.5 }} />
+                  {[
+                    { label: 'Platform', value: data.platform },
+                    { label: 'API Version', value: data.api_version },
+                    { label: 'Standards', value: data.standard, highlight: true },
+                    { label: 'Framework Path', value: data.framework_path },
+                    { label: 'Operational Path', value: data.operational_path },
+                    ...(data.privacy_path ? [{ label: 'Privacy Path', value: data.privacy_path }] : []),
+                    ...(data.cloud_path ? [{ label: 'Cloud Path', value: data.cloud_path }] : []),
+                    ...(data.external_path ? [{ label: 'External Path', value: data.external_path }] : []),
+                    { label: 'Datasets Path', value: data.datasets_path },
+                    { label: 'OpenSearch URL', value: data.opensearch_url },
+                  ].map(({ label, value, highlight }) => (
+                    <Box key={label} sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.75, gap: 2 }}>
+                      <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0 }}>
+                        {label}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        fontFamily="monospace"
+                        sx={{ fontSize: '0.75rem', textAlign: 'right', wordBreak: 'break-all', color: highlight ? 'primary.light' : 'text.primary' }}
+                      >
+                        {value}
+                      </Typography>
+                    </Box>
+                  ))}
+                  <Divider sx={{ my: 1 }} />
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 0.75 }}>
+                    <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0 }}>Log Level</Typography>
+                    <Typography variant="body2" fontFamily="monospace" sx={{ fontSize: '0.75rem' }}>{data.log_level}</Typography>
+                  </Box>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 0.75 }}>
+                    <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0 }}>Debug Mode</Typography>
+                    <Box
+                      sx={{
+                        px: 1, py: 0.25, borderRadius: 1, fontSize: '0.7rem', fontFamily: 'monospace',
+                        bgcolor: data.debug ? 'error.dark' : 'success.dark',
+                        color: 'white',
+                      }}
+                    >
+                      {data.debug ? 'ON' : 'OFF'}
+                    </Box>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+
+          {/* Row 3: Last Data Load + OpenSearch (left) | Email + AI Compass (right) */}
+          <Grid container spacing={2} sx={{ alignItems: 'stretch' }}>
+            <Grid item xs={12} md={6}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, height: '100%' }}>
 
                 {/* Last Data Load */}
                 <Card>
@@ -415,48 +479,6 @@ export default function System() {
                     )}
                   </CardContent>
                 </Card>
-
-                {/* Platform Configuration */}
-                <Card>
-                  <CardContent sx={{ pb: '12px !important' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-                      <SettingsOutlined sx={{ color: 'primary.main' }} />
-                      <Typography variant="h6">Platform Configuration</Typography>
-                    </Box>
-                    <Divider sx={{ mb: 1.5 }} />
-                    {[
-                      { label: 'Platform', value: data.platform },
-                      { label: 'API Version', value: data.api_version },
-                      { label: 'ISMS', value: 'ISO/IEC 27001:2022 + Amd. 1:2024', highlight: true },
-                      { label: 'Privacy', value: 'ISO/IEC 27701:2025', highlight: true },
-                      { label: 'Cloud', value: 'ISO/IEC 27018:2025', highlight: true },
-                      { label: 'Framework Path', value: data.framework_path },
-                      { label: 'Operational Path', value: data.operational_path },
-                      ...(data.privacy_path ? [{ label: 'Privacy Path', value: data.privacy_path }] : []),
-                      ...(data.cloud_path ? [{ label: 'Cloud Path', value: data.cloud_path }] : []),
-                      { label: 'OpenSearch URL', value: data.opensearch_url },
-                    ].map(({ label, value, highlight }) => (
-                      <Box key={label} sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.75, gap: 2 }}>
-                        <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0 }}>
-                          {label}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          fontFamily="monospace"
-                          sx={{ fontSize: '0.75rem', textAlign: 'right', wordBreak: 'break-all', color: highlight ? 'primary.light' : 'text.primary' }}
-                        >
-                          {value}
-                        </Typography>
-                      </Box>
-                    ))}
-                  </CardContent>
-                </Card>
-
-              </Box>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
 
                 {/* OpenSearch */}
                 <Card>
@@ -525,6 +547,13 @@ export default function System() {
                     )}
                   </CardContent>
                 </Card>
+
+              </Box>
+            </Grid>
+
+            {/* Email + AI Compass — right column of Row 3 */}
+            <Grid item xs={12} md={6}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, height: '100%' }}>
 
                 {/* SMTP Configuration */}
                 <Card>
@@ -668,10 +697,10 @@ export default function System() {
             </Grid>
           </Grid>
 
-          {/* Row 3: Data Management — First-Run Setup (left) | Ongoing Sync + Orphan Scanner (right) */}
+          {/* Row 4: First-Run Setup (full width) */}
           <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-              <Card sx={{ height: '100%' }}>
+            <Grid item xs={12}>
+              <Card>
                 <CardContent sx={{ pb: '12px !important' }}>
                   <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, mb: 0.5 }}>
                     <DownloadingOutlined sx={{ color: 'primary.main', mt: 0.25 }} />
@@ -778,157 +807,156 @@ export default function System() {
                 </CardContent>
               </Card>
             </Grid>
+          </Grid>
+
+          {/* Row 5: Data Sync (left) | Orphan Scanner (right) */}
+          <Grid container spacing={2} sx={{ alignItems: 'stretch' }}>
+            <Grid item xs={12} md={6}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent sx={{ pb: '12px !important' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                    <SyncOutlined sx={{ color: 'primary.main' }} />
+                    <Box>
+                      <Typography variant="h6">Data Synchronisation</Typography>
+                      <Typography variant="caption" color="text.secondary">
+                        Re-sync content from mounted volumes after updating policies, IMPs, or workbooks.
+                      </Typography>
+                    </Box>
+                  </Box>
+                  <Divider sx={{ mb: 1.5 }} />
+
+                  {syncResult && (
+                    <Alert
+                      severity={syncResult.ok ? 'success' : 'error'}
+                      onClose={() => setSyncResult(null)}
+                      sx={{ mb: 1.5, py: 0 }}
+                    >
+                      {syncResult.msg}
+                    </Alert>
+                  )}
+
+                  <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap', alignItems: 'center' }}>
+                    <Button
+                      variant="contained"
+                      startIcon={syncNowMutation.isPending ? <CircularProgress size={14} sx={{ color: 'inherit' }} /> : <SyncOutlined />}
+                      onClick={() => { setSyncResult(null); syncNowMutation.mutate() }}
+                      disabled={syncNowMutation.isPending || syncBackgroundMutation.isPending || resetContentMutation.isPending}
+                    >
+                      {syncNowMutation.isPending ? 'Syncing…' : 'Sync Now'}
+                    </Button>
+                    <Button
+                      variant="outlined"
+                      startIcon={syncBackgroundMutation.isPending ? <CircularProgress size={14} /> : <SyncOutlined />}
+                      onClick={() => { setSyncResult(null); syncBackgroundMutation.mutate() }}
+                      disabled={syncNowMutation.isPending || syncBackgroundMutation.isPending || resetContentMutation.isPending}
+                    >
+                      {syncBackgroundMutation.isPending ? 'Queuing…' : 'Sync in Background'}
+                    </Button>
+
+                    <Divider orientation="vertical" flexItem sx={{ mx: 0.5 }} />
+
+                    <Tooltip title="Wipe all POLs, IMPs and assessments then re-import from source files. Control groups, framework bundles, users, evidence and gaps are NOT affected.">
+                      <span>
+                        <Button
+                          variant="outlined"
+                          color="warning"
+                          startIcon={resetContentMutation.isPending ? <CircularProgress size={14} /> : <DeleteSweepOutlined />}
+                          onClick={handleResetContent}
+                          disabled={syncNowMutation.isPending || syncBackgroundMutation.isPending || resetContentMutation.isPending}
+                        >
+                          {resetContentMutation.isPending ? 'Resetting…' : 'Reset & Re-import'}
+                        </Button>
+                      </span>
+                    </Tooltip>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
 
             <Grid item xs={12} md={6}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-
-                {/* Data Synchronisation */}
-                <Card>
-                  <CardContent sx={{ pb: '12px !important' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-                      <SyncOutlined sx={{ color: 'primary.main' }} />
-                      <Box>
-                        <Typography variant="h6">Data Synchronisation</Typography>
-                        <Typography variant="caption" color="text.secondary">
-                          Re-sync content from mounted volumes after updating policies, IMPs, or workbooks.
-                        </Typography>
-                      </Box>
-                    </Box>
-                    <Divider sx={{ mb: 1.5 }} />
-
-                    {syncResult && (
-                      <Alert
-                        severity={syncResult.ok ? 'success' : 'error'}
-                        onClose={() => setSyncResult(null)}
-                        sx={{ mb: 1.5, py: 0 }}
-                      >
-                        {syncResult.msg}
-                      </Alert>
-                    )}
-
-                    <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap', alignItems: 'center' }}>
-                      <Button
-                        variant="contained"
-                        startIcon={syncNowMutation.isPending ? <CircularProgress size={14} sx={{ color: 'inherit' }} /> : <SyncOutlined />}
-                        onClick={() => { setSyncResult(null); syncNowMutation.mutate() }}
-                        disabled={syncNowMutation.isPending || syncBackgroundMutation.isPending || resetContentMutation.isPending}
-                      >
-                        {syncNowMutation.isPending ? 'Syncing…' : 'Sync Now'}
-                      </Button>
-                      <Button
-                        variant="outlined"
-                        startIcon={syncBackgroundMutation.isPending ? <CircularProgress size={14} /> : <SyncOutlined />}
-                        onClick={() => { setSyncResult(null); syncBackgroundMutation.mutate() }}
-                        disabled={syncNowMutation.isPending || syncBackgroundMutation.isPending || resetContentMutation.isPending}
-                      >
-                        {syncBackgroundMutation.isPending ? 'Queuing…' : 'Sync in Background'}
-                      </Button>
-
-                      <Divider orientation="vertical" flexItem sx={{ mx: 0.5 }} />
-
-                      <Tooltip title="Wipe all POLs, IMPs and assessments then re-import from source files. Control groups, framework bundles, users, evidence and gaps are NOT affected.">
-                        <span>
+              <Card sx={{ height: '100%' }}>
+                <CardContent sx={{ pb: '12px !important' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                    <DeleteSweepOutlined sx={{ color: 'primary.main' }} />
+                    <Typography variant="h6" sx={{ flex: 1 }}>Orphan Scanner</Typography>
+                    <Button
+                      size="small"
+                      variant="outlined"
+                      startIcon={scanOrphansMutation.isPending ? <CircularProgress size={12} /> : <DeleteSweepOutlined />}
+                      disabled={scanOrphansMutation.isPending || purgeOrphansMutation.isPending}
+                      onClick={() => { setOrphanResult(null); setPurgeResult(null); scanOrphansMutation.mutate() }}
+                      sx={{ fontSize: '0.7rem' }}
+                    >
+                      {scanOrphansMutation.isPending ? 'Scanning…' : 'Scan'}
+                    </Button>
+                  </Box>
+                  <Divider sx={{ mb: 1.5 }} />
+                  {purgeResult && (
+                    <Alert severity="success" sx={{ mb: 1, py: 0 }}>{purgeResult}</Alert>
+                  )}
+                  {scanOrphansMutation.isError && (
+                    <Alert severity="error" sx={{ mb: 1, py: 0 }}>Scan failed.</Alert>
+                  )}
+                  {orphanResult === null && !purgeResult && (
+                    <Typography variant="body2" color="text.secondary">
+                      Finds DB records whose source file no longer exists on disk.
+                    </Typography>
+                  )}
+                  {orphanResult !== null && (
+                    <>
+                      {orphanResult.implementations.length === 0 && orphanResult.policies.length === 0 ? (
+                        <Alert severity="success" sx={{ py: 0 }}>No orphans found — DB is clean.</Alert>
+                      ) : (
+                        <>
+                          <Alert severity="warning" sx={{ mb: 1.5, py: 0 }}>
+                            {orphanResult.implementations.length + orphanResult.policies.length} orphaned record{orphanResult.implementations.length + orphanResult.policies.length !== 1 ? 's' : ''} found.
+                          </Alert>
+                          {orphanResult.implementations.length > 0 && (
+                            <>
+                              <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 0.5 }}>
+                                Implementations ({orphanResult.implementations.length})
+                              </Typography>
+                              {orphanResult.implementations.map((o) => (
+                                <Typography key={o.document_id} variant="caption" fontFamily="monospace" display="block" sx={{ color: '#FFC7CE', mb: 0.25 }}>
+                                  {o.document_id}
+                                </Typography>
+                              ))}
+                            </>
+                          )}
+                          {orphanResult.policies.length > 0 && (
+                            <>
+                              <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 1, mb: 0.5 }}>
+                                Policies ({orphanResult.policies.length})
+                              </Typography>
+                              {orphanResult.policies.map((o) => (
+                                <Typography key={o.document_id} variant="caption" fontFamily="monospace" display="block" sx={{ color: '#FFC7CE', mb: 0.25 }}>
+                                  {o.document_id}
+                                </Typography>
+                              ))}
+                            </>
+                          )}
                           <Button
-                            variant="outlined"
-                            color="warning"
-                            startIcon={resetContentMutation.isPending ? <CircularProgress size={14} /> : <DeleteSweepOutlined />}
-                            onClick={handleResetContent}
-                            disabled={syncNowMutation.isPending || syncBackgroundMutation.isPending || resetContentMutation.isPending}
+                            size="small"
+                            variant="contained"
+                            color="error"
+                            startIcon={purgeOrphansMutation.isPending ? <CircularProgress size={12} /> : <DeleteSweepOutlined />}
+                            disabled={purgeOrphansMutation.isPending}
+                            onClick={() => purgeOrphansMutation.mutate()}
+                            sx={{ mt: 1.5, fontSize: '0.7rem' }}
+                            fullWidth
                           >
-                            {resetContentMutation.isPending ? 'Resetting…' : 'Reset & Re-import'}
+                            {purgeOrphansMutation.isPending ? 'Purging…' : `Purge ${orphanResult.implementations.length + orphanResult.policies.length} orphans`}
                           </Button>
-                        </span>
-                      </Tooltip>
-                    </Box>
-                  </CardContent>
-                </Card>
-
-                {/* Orphan Scanner */}
-                <Card>
-                  <CardContent sx={{ pb: '12px !important' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-                      <DeleteSweepOutlined sx={{ color: 'primary.main' }} />
-                      <Typography variant="h6" sx={{ flex: 1 }}>Orphan Scanner</Typography>
-                      <Button
-                        size="small"
-                        variant="outlined"
-                        startIcon={scanOrphansMutation.isPending ? <CircularProgress size={12} /> : <DeleteSweepOutlined />}
-                        disabled={scanOrphansMutation.isPending || purgeOrphansMutation.isPending}
-                        onClick={() => { setOrphanResult(null); setPurgeResult(null); scanOrphansMutation.mutate() }}
-                        sx={{ fontSize: '0.7rem' }}
-                      >
-                        {scanOrphansMutation.isPending ? 'Scanning…' : 'Scan'}
-                      </Button>
-                    </Box>
-                    <Divider sx={{ mb: 1.5 }} />
-                    {purgeResult && (
-                      <Alert severity="success" sx={{ mb: 1, py: 0 }}>{purgeResult}</Alert>
-                    )}
-                    {scanOrphansMutation.isError && (
-                      <Alert severity="error" sx={{ mb: 1, py: 0 }}>Scan failed.</Alert>
-                    )}
-                    {orphanResult === null && !purgeResult && (
-                      <Typography variant="body2" color="text.secondary">
-                        Finds DB records whose source file no longer exists on disk.
-                      </Typography>
-                    )}
-                    {orphanResult !== null && (
-                      <>
-                        {orphanResult.implementations.length === 0 && orphanResult.policies.length === 0 ? (
-                          <Alert severity="success" sx={{ py: 0 }}>No orphans found — DB is clean.</Alert>
-                        ) : (
-                          <>
-                            <Alert severity="warning" sx={{ mb: 1.5, py: 0 }}>
-                              {orphanResult.implementations.length + orphanResult.policies.length} orphaned record{orphanResult.implementations.length + orphanResult.policies.length !== 1 ? 's' : ''} found.
-                            </Alert>
-                            {orphanResult.implementations.length > 0 && (
-                              <>
-                                <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 0.5 }}>
-                                  Implementations ({orphanResult.implementations.length})
-                                </Typography>
-                                {orphanResult.implementations.map((o) => (
-                                  <Typography key={o.document_id} variant="caption" fontFamily="monospace" display="block" sx={{ color: '#FFC7CE', mb: 0.25 }}>
-                                    {o.document_id}
-                                  </Typography>
-                                ))}
-                              </>
-                            )}
-                            {orphanResult.policies.length > 0 && (
-                              <>
-                                <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 1, mb: 0.5 }}>
-                                  Policies ({orphanResult.policies.length})
-                                </Typography>
-                                {orphanResult.policies.map((o) => (
-                                  <Typography key={o.document_id} variant="caption" fontFamily="monospace" display="block" sx={{ color: '#FFC7CE', mb: 0.25 }}>
-                                    {o.document_id}
-                                  </Typography>
-                                ))}
-                              </>
-                            )}
-                            <Button
-                              size="small"
-                              variant="contained"
-                              color="error"
-                              startIcon={purgeOrphansMutation.isPending ? <CircularProgress size={12} /> : <DeleteSweepOutlined />}
-                              disabled={purgeOrphansMutation.isPending}
-                              onClick={() => purgeOrphansMutation.mutate()}
-                              sx={{ mt: 1.5, fontSize: '0.7rem' }}
-                              fullWidth
-                            >
-                              {purgeOrphansMutation.isPending ? 'Purging…' : `Purge ${orphanResult.implementations.length + orphanResult.policies.length} orphans`}
-                            </Button>
-                          </>
-                        )}
-                      </>
-                    )}
-                  </CardContent>
-                </Card>
-
-              </Box>
+                        </>
+                      )}
+                    </>
+                  )}
+                </CardContent>
+              </Card>
             </Grid>
           </Grid>
 
-          {/* System Event Log */}
+          {/* Row 6: System Event Log (full width) */}
           <Card>
             <CardContent sx={{ pb: '12px !important' }}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>

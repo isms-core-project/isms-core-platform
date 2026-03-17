@@ -44,6 +44,10 @@ class SysInfoResponse(BaseModel):
     last_sync_at: datetime | None = None
     last_sync_type: str | None = None
     last_sync_status: str | None = None
+    external_path: str = ""
+    datasets_path: str = ""
+    log_level: str = "INFO"
+    debug: bool = False
     smtp_enabled: bool = False
     smtp_host: str = ""
     smtp_port: int = 1025

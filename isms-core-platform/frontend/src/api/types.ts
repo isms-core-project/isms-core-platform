@@ -538,7 +538,13 @@ export interface SysInfoResponse {
   api_version: string
   framework_path: string
   operational_path: string
+  privacy_path: string
+  cloud_path: string
+  external_path: string
+  datasets_path: string
   opensearch_url: string
+  log_level: string
+  debug: boolean
   last_sync_at: string | null
   last_sync_type: string | null
   last_sync_status: string | null
