@@ -91,18 +91,26 @@ class BaseImporter:
         code = group_code.lower()
 
         # Ordered list of caches to try: family-specific first, then global.
-        caches: list[dict[str, uuid.UUID]] = []
-        if preferred_family is not None and preferred_family in self._group_cache_by_family:
-            caches.append(self._group_cache_by_family[preferred_family])
-        caches.append(self._group_cache)
+        family_cache: dict[str, uuid.UUID] = {}
+        if preferred_family is not None:
+            family_cache = self._group_cache_by_family.get(preferred_family, {})
 
-        def _lookup(key: str) -> uuid.UUID | None:
-            for cache in caches:
-                if key in cache:
-                    return cache[key]
-            return None
+        def _lookup(key: str, family_only: bool = False) -> uuid.UUID | None:
+            """Look up key in caches.
 
-        # 1. Exact match
+            family_only=True restricts to the preferred-family cache when one is
+            set — used for normalisation steps (3-6) to prevent a stripped code
+            (e.g. "a.5" from stripping "a.5.16") from cross-matching a different
+            product family's group via the global cache.
+            """
+            if preferred_family is not None:
+                if key in family_cache:
+                    return family_cache[key]
+                if family_only:
+                    return None
+            return self._group_cache.get(key)
+
+        # 1. Exact match — global fallback intentional (foundation/multi-product docs)
         result = _lookup(code)
         if result:
             return result
@@ -118,34 +126,35 @@ class BaseImporter:
         }
         if code == "00" or not code.startswith("a."):
             if preferred_family is not None:
-                family_cache = self._group_cache_by_family.get(preferred_family, {})
                 fallback = _FOUNDATION_CODE.get(preferred_family, "00")
                 return family_cache.get(fallback) or None
             return _lookup("00")
 
         # 3. Strip section suffix (-S1, -S2, etc.)
+        # family_only=True: a stripped code must not accidentally match another
+        # product's section group (e.g. "a.5" in PRIVACY) via global fallback.
         stripped = self._SECTION_SUFFIX_RE.sub("", code)
-        result = _lookup(stripped)
+        result = _lookup(stripped, family_only=True)
         if result:
             return result
 
         # 4. Strip sub-part suffix (.1, .2, etc.)
         stripped = self._SUBPART_SUFFIX_RE.sub("", code)
-        result = _lookup(stripped)
+        result = _lookup(stripped, family_only=True)
         if result:
             return result
 
         # 5. Compact range: a.7.1-2-3 → a.7.1-3 (first-last)
         compact = self._compact_range(code)
         if compact:
-            result = _lookup(compact)
+            result = _lookup(compact, family_only=True)
             if result:
                 return result
 
         # 6. "Also covers" compound: a.5.1-2-6.1-2 → a.5.1-2
         stripped = self._ALSO_COVERS_RE.sub("", code)
         if stripped != code:
-            result = _lookup(stripped)
+            result = _lookup(stripped, family_only=True)
             if result:
                 return result
 
