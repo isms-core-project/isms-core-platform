@@ -333,7 +333,7 @@
         {
           "group_code": "a.7.1-3",
           "name": "Physical Security Perimeters and Access Control",
-          "folder_name": "isms-a.7.1-2-3-physical-access-control",
+          "folder_name": "isms-a.7.1-3-physical-access-control",
           "section": "A.7",
           "section_name": "Physical",
           "stacked_control_ids": ["A.7.1", "A.7.2", "A.7.3"],
