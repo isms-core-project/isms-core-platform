@@ -49,6 +49,8 @@ class CompassReport(BaseModel):
     model_used: str
     tokens_used: int
 
+    model_config = {"protected_namespaces": ()}
+
 
 @router.post("/analyse", response_model=CompassReport)
 def analyse(

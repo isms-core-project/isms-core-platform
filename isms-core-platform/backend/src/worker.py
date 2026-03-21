@@ -21,6 +21,7 @@ celery_app.conf.update(
     enable_utc=True,
     task_track_started=True,
     task_default_queue="isms",
+    broker_connection_retry_on_startup=True,
     beat_schedule={
         # Evidence expiry scanner — runs daily at 08:00 UTC
         "evidence-expiry-scan-daily": {
