@@ -19,6 +19,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && useradd -r -u 1000 -m -s /bin/false appuser
 
 COPY requirements.txt .
+# Install CPU-only PyTorch before requirements.txt so sentence-transformers
+# doesn't pull the full CUDA build (~2.5 GB → ~250 MB saving per image).
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
