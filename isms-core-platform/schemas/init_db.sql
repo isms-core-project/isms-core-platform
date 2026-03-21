@@ -586,13 +586,17 @@ CREATE TABLE correlation_results (
 -- All platform actions for compliance audit trail.
 CREATE TABLE audit_log (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    event_type VARCHAR(60) NOT NULL,
+    category VARCHAR(20) NOT NULL DEFAULT 'system',
+    severity VARCHAR(10) NOT NULL DEFAULT 'info',
     user_id UUID REFERENCES users(id) ON DELETE SET NULL,
-    action VARCHAR(30) NOT NULL,
-    resource_type VARCHAR(30),
-    resource_id UUID,
+    actor_email VARCHAR(255),
+    target_type VARCHAR(50),
+    target_id UUID,
+    description TEXT,
     ip_address INET,
     user_agent TEXT,
-    details JSONB DEFAULT '{}',
+    metadata_ JSONB DEFAULT '{}',
     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
@@ -705,10 +709,11 @@ CREATE INDEX idx_corr_qa_status ON correlation_results(qa_status);
 CREATE INDEX idx_corr_run_date ON correlation_results(run_date);
 
 -- Audit log
-CREATE INDEX idx_audit_user ON audit_log(user_id);
-CREATE INDEX idx_audit_action ON audit_log(action);
-CREATE INDEX idx_audit_resource ON audit_log(resource_type, resource_id);
-CREATE INDEX idx_audit_created ON audit_log(created_at);
+CREATE INDEX idx_audit_user       ON audit_log(user_id);
+CREATE INDEX idx_audit_event_type ON audit_log(event_type);
+CREATE INDEX idx_audit_category   ON audit_log(category);
+CREATE INDEX idx_audit_severity   ON audit_log(severity);
+CREATE INDEX idx_audit_created    ON audit_log(created_at);
 
 -- Data load history
 CREATE INDEX idx_dlh_framework ON data_load_history(framework_code);
