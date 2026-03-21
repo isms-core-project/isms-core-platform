@@ -40,6 +40,7 @@ from src.schemas.connectors import (
     ConnectorEvidenceIngest,
     ConnectorEvidenceIngestResponse,
     ConnectorEvidenceRead,
+    ConnectorLogEntry,
     ConnectorRead,
     ConnectorRegister,
     ConnectorRegistered,
@@ -459,3 +460,26 @@ def set_retention(
         raise HTTPException(status_code=404, detail="Connector not found")
     days = payload.get("retention_days")
     connector_service.set_retention_days(db, connector, int(days) if days else None)
+
+
+@router.get("/{connector_id}/log", response_model=list[ConnectorLogEntry])
+def get_connector_log(
+    connector_id: uuid.UUID,
+    limit: int = 50,
+    db: DBSession = Depends(get_db),
+    _: User = Depends(require_admin),
+):
+    """Return recent audit_log entries for a connector, newest first."""
+    from sqlalchemy import cast, String, desc
+    from src.domain.system import AuditLog
+    connector = connector_service.get_connector_by_id(db, connector_id)
+    if not connector:
+        raise HTTPException(status_code=404, detail="Connector not found")
+    rows = (
+        db.query(AuditLog)
+        .filter(AuditLog.metadata_["connector_id"].as_string() == str(connector_id))
+        .order_by(desc(AuditLog.created_at))
+        .limit(min(limit, 200))
+        .all()
+    )
+    return rows

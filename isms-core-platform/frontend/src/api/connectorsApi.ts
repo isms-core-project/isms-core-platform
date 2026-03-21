@@ -48,6 +48,16 @@ export interface ConnectorEvidenceRead {
   raw: Record<string, unknown> | null
 }
 
+// ── Activity log ──────────────────────────────────────────────────────────────
+
+export interface ConnectorLogEntry {
+  id: string
+  event_type: string
+  severity: string
+  description: string | null
+  created_at: string
+}
+
 // ── Config schema ─────────────────────────────────────────────────────────────
 
 export interface ConfigField {
@@ -516,4 +526,7 @@ export const connectorsApi = {
 
   deleteConnectorEvidence: (connectorId: string) =>
     client.delete(`/connectors/${connectorId}/evidence`),
+
+  getLog: (id: string, limit = 50) =>
+    client.get<ConnectorLogEntry[]>(`/connectors/${id}/log`, { params: { limit } }).then((r) => r.data),
 }

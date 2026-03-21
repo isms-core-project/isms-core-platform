@@ -72,7 +72,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { connectorsApi, CONNECTOR_CONFIG_SCHEMA, CONNECTOR_CONTROLS, KNOWN_SYSTEMS } from '../api/connectorsApi'
-import type { ArchiveStats, ConfigField, ConnectorRead, ConnectorRegistered } from '../api/connectorsApi'
+import type { ArchiveStats, ConfigField, ConnectorLogEntry, ConnectorRead, ConnectorRegistered } from '../api/connectorsApi'
 import PageHeader from '../components/PageHeader'
 
 dayjs.extend(relativeTime)
@@ -461,10 +461,23 @@ function ConfigDialog({
 
 // ── Last Sync Detail Dialog ───────────────────────────────────────────────────
 
+const SEV_COLOUR: Record<string, string> = {
+  info:     '#90CAF9',
+  warning:  '#FFCC80',
+  error:    '#FFC7CE',
+  critical: '#FF8A80',
+}
+
 function SyncDetailDialog({ connector, onClose }: { connector: ConnectorRead; onClose: () => void }) {
   const health = connector.last_error ? 'error' : !connector.last_run ? 'pending' : 'healthy'
+
+  const { data: log = [], isLoading: logLoading } = useQuery<ConnectorLogEntry[]>({
+    queryKey: ['connector-log', connector.id],
+    queryFn: () => connectorsApi.getLog(connector.id, 50),
+  })
+
   return (
-    <Dialog open onClose={onClose} maxWidth="sm" fullWidth>
+    <Dialog open onClose={onClose} maxWidth="md" fullWidth>
       <DialogTitle>
         Sync Details — {connector.name}
         <Typography variant="body2" color="text.secondary" fontWeight={400} sx={{ mt: 0.25 }}>
@@ -518,6 +531,56 @@ function SyncDetailDialog({ connector, onClose }: { connector: ConnectorRead; on
         <Typography variant="body2" color="text.secondary">
           Evidence older than <strong>{connector.retention_days ?? 90} days</strong> will be archived on the next archive run.
         </Typography>
+
+        {/* ── Activity Log ── */}
+        <Divider><Typography variant="caption" color="text.secondary">Activity Log</Typography></Divider>
+        {logLoading ? (
+          <LinearProgress sx={{ borderRadius: 1 }} />
+        ) : log.length === 0 ? (
+          <Typography variant="body2" color="text.secondary" sx={{ fontStyle: 'italic' }}>
+            No activity recorded yet.
+          </Typography>
+        ) : (
+          <Box
+            sx={{
+              maxHeight: 260,
+              overflowY: 'auto',
+              fontFamily: 'monospace',
+              fontSize: '0.72rem',
+              bgcolor: 'rgba(0,0,0,0.25)',
+              border: '1px solid rgba(255,255,255,0.08)',
+              borderRadius: 1,
+              p: 1,
+            }}
+          >
+            {log.map((entry) => (
+              <Box key={entry.id} sx={{ display: 'flex', gap: 1, mb: 0.5, alignItems: 'flex-start' }}>
+                <Typography
+                  component="span"
+                  sx={{ fontSize: '0.68rem', color: 'text.disabled', flexShrink: 0, pt: '1px' }}
+                >
+                  {dayjs(entry.created_at).format('DD MMM HH:mm:ss')}
+                </Typography>
+                <Typography
+                  component="span"
+                  sx={{
+                    fontSize: '0.68rem',
+                    fontWeight: 700,
+                    color: SEV_COLOUR[entry.severity] ?? '#90CAF9',
+                    flexShrink: 0,
+                    pt: '1px',
+                    minWidth: 52,
+                  }}
+                >
+                  [{entry.severity.toUpperCase()}]
+                </Typography>
+                <Typography component="span" sx={{ fontSize: '0.72rem', color: 'text.primary', wordBreak: 'break-word' }}>
+                  {entry.description ?? entry.event_type}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        )}
       </DialogContent>
       <DialogActions>
         <Button onClick={onClose}>Close</Button>

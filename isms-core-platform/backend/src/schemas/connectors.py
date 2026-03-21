@@ -110,3 +110,16 @@ class ConnectorSyncPending(BaseModel):
 class ConnectorRename(BaseModel):
     """Admin renames a connector's display name via PATCH /{id}/rename."""
     name: str = Field(..., min_length=1, max_length=120)
+
+
+# ── Activity log ──────────────────────────────────────────────────────────────
+
+class ConnectorLogEntry(BaseModel):
+    """One audit_log entry scoped to a connector."""
+    id: uuid.UUID
+    event_type: str
+    severity: str
+    description: str | None = None
+    created_at: datetime
+
+    model_config = {"from_attributes": True}
