@@ -79,7 +79,7 @@ class FrameworkControl(TimestampMixin, Base):
         remote_side=[id], foreign_keys=[parent_id]
     )
     children: Mapped[list["FrameworkControl"]] = relationship(
-        foreign_keys=[parent_id]
+        foreign_keys=[parent_id], overlaps="parent"
     )
     source_mappings: Mapped[list["CrossFrameworkMapping"]] = relationship(
         foreign_keys="CrossFrameworkMapping.source_control_id",

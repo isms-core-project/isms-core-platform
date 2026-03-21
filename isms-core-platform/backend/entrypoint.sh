@@ -9,8 +9,8 @@ echo "[entrypoint] Checking Alembic version..."
 CURRENT=$(alembic current 2>/dev/null | grep -Eo '[a-z0-9_]+' | head -1 || echo "")
 
 if [ -z "$CURRENT" ]; then
-    echo "[entrypoint] Fresh DB — stamping at 009_audit_log_phase9 (init_db.sql baseline)..."
-    alembic stamp 009_audit_log_phase9
+    echo "[entrypoint] Fresh DB — stamping at head (init_db.sql already reflects full schema)..."
+    alembic stamp head
 fi
 
 echo "[entrypoint] Running alembic upgrade head..."

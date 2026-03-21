@@ -4,7 +4,8 @@ WORKDIR /app
 
 # Install dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt \
+    && useradd -r -u 1000 -m -s /bin/false appuser
 
 # Base shared library
 COPY base /app/base
@@ -84,5 +85,8 @@ COPY runner.py .
 
 # Base on sys.path so all connector.py files can do: from base import ...
 ENV PYTHONPATH=/app
+
+RUN chown -R appuser:appuser /app
+USER appuser
 
 CMD ["python", "runner.py"]
