@@ -33,6 +33,7 @@ import Tisax from './pages/Tisax'
 import Ndsg from './pages/Ndsg'
 import Cra from './pages/Cra'
 import AiAct from './pages/AiAct'
+import Csrm from './pages/Csrm'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -87,6 +88,7 @@ export default function App() {
         <Route path="ndsg" element={<Ndsg />} />
         <Route path="cra" element={<Cra />} />
         <Route path="ai-act" element={<AiAct />} />
+        <Route path="csrm" element={<Csrm />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

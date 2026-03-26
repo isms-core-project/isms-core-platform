@@ -95,6 +95,7 @@ const NAV_COMPLIANCE: NavItem[] = [
   { label: 'DORA',                 path: '/dora',     icon: <AccountBalanceOutlined /> },
   { label: 'CIS Controls',         path: '/cis',      icon: <SecurityOutlined /> },
   { label: 'BSI IT-Grundschutz',  path: '/bsi',      icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+  { label: 'CSRM (NCSC CH)',       path: '/csrm',     icon: <LockPersonOutlined /> },
   { label: 'TISAX',                path: '/tisax',    icon: <VerifiedOutlined /> },
   { label: 'Swiss nDSG',          path: '/ndsg',     icon: <LockPersonOutlined /> },
   { label: 'EU Cyber Resilience', path: '/cra',      icon: <SecurityOutlined /> },
@@ -126,7 +127,7 @@ const CAT_LABEL: Record<string, string> = { workflow: 'Workflow', system: 'Syste
 const CAT_COLOR: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3a' }
 const CAT_TEXT:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0' }
 const PLATFORM_COLOR = '#6B7A99'
-const COMPLIANCE_PATHS = ['/nist-csf', '/nis2', '/dora', '/cis', '/bsi', '/tisax', '/ndsg', '/cra', '/ai-act']
+const COMPLIANCE_PATHS = ['/nist-csf', '/nis2', '/dora', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act']
 const PLATFORM_PATHS = ['/qa', '/search', '/compass', '/generators', '/report', '/risk', ...COMPLIANCE_PATHS, '/admin', '/connectors', '/system']
 
 // ── Notification prefs dialog ─────────────────────────────────────────────────
