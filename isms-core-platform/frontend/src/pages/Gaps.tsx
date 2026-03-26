@@ -52,6 +52,8 @@ import PageHeader from '../components/PageHeader'
 import MetricCard from '../components/MetricCard'
 import StatusChip from '../components/StatusChip'
 import type { GapRead, GapCreate, GapPatch } from '../api/types'
+import { calculateGapRisk } from '../utils/gapRiskCalculator'
+import type { GapRiskResult } from '../utils/gapRiskCalculator'
 
 const SEVERITIES = ['critical', 'high', 'medium', 'low']
 const STATUSES = ['open', 'in_progress', 'accepted', 'closed']
@@ -62,6 +64,13 @@ const SEV_COLOR: Record<string, string> = {
   high: '#FF5722',
   medium: '#FF9800',
   low: '#4CAF50',
+}
+
+const RISK_COLOR: Record<string, string> = {
+  VERY_HIGH: '#C00000',
+  HIGH:      '#FF5722',
+  MEDIUM:    '#FF9800',
+  LOW:       '#4CAF50',
 }
 
 // ── Create dialog ────────────────────────────────────────────────────────────
@@ -359,6 +368,8 @@ function EditRow({ gap, onClose }: { gap: GapRead; onClose: () => void }) {
     owner: gap.owner ?? '',
     due_date: gap.due_date ?? '',
     remediation_plan: gap.remediation_plan ?? '',
+    risk_level: gap.risk_level ?? '',
+    risk_assessed_by: 'manual',
   })
   const [error, setError] = useState('')
   const [evidenceOpen, setEvidenceOpen] = useState(false)
@@ -393,7 +404,7 @@ function EditRow({ gap, onClose }: { gap: GapRead; onClose: () => void }) {
     <>
       <EvidencePickerDialog gap={gap} open={evidenceOpen} onClose={() => setEvidenceOpen(false)} />
       <TableRow>
-        <TableCell colSpan={7} sx={{ p: 2, bgcolor: 'rgba(68,114,196,0.06)' }}>
+        <TableCell colSpan={8} sx={{ p: 2, bgcolor: 'rgba(68,114,196,0.06)' }}>
           {error && <Alert severity="error" sx={{ mb: 1 }}>{error}</Alert>}
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
             <TextField
@@ -448,6 +459,27 @@ function EditRow({ gap, onClose }: { gap: GapRead; onClose: () => void }) {
               value={form.remediation_plan ?? ''}
               onChange={(e) => set('remediation_plan', e.target.value)}
             />
+
+            {/* Risk override */}
+            <Box>
+              <Typography variant="caption" color="text.secondary" fontWeight={600}
+                sx={{ display: 'block', mb: 0.5, textTransform: 'uppercase', fontSize: '0.68rem', letterSpacing: '0.06em' }}>
+                Risk Override (optional — leave blank to use auto-calculated)
+              </Typography>
+              <FormControl size="small" sx={{ minWidth: 180 }}>
+                <InputLabel>Risk Level</InputLabel>
+                <Select
+                  value={form.risk_level ?? ''}
+                  onChange={(e) => set('risk_level', e.target.value)}
+                  label="Risk Level"
+                >
+                  <MenuItem value="">Auto-calculated</MenuItem>
+                  {['LOW', 'MEDIUM', 'HIGH', 'VERY_HIGH'].map((r) => (
+                    <MenuItem key={r} value={r}>{r.replace('_', ' ')}</MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Box>
 
             {/* Evidence panel */}
             <Box>
@@ -507,6 +539,7 @@ function EditRow({ gap, onClose }: { gap: GapRead; onClose: () => void }) {
                   owner: form.owner || null,
                   due_date: form.due_date || null,
                   remediation_plan: form.remediation_plan || null,
+                  risk_assessed_by: form.risk_level ? 'manual' : undefined,
                 })}
               >
                 Save
@@ -520,10 +553,48 @@ function EditRow({ gap, onClose }: { gap: GapRead; onClose: () => void }) {
   )
 }
 
+// ── Save Risk button ─────────────────────────────────────────────────────────
+function SaveRiskButton({ gap, autoRisk }: { gap: GapRead; autoRisk: GapRiskResult }) {
+  const qc = useQueryClient()
+  const mutation = useMutation({
+    mutationFn: () =>
+      gapsApi.patch(gap.id, {
+        risk_level:       autoRisk.riskLevel,
+        risk_likelihood:  autoRisk.likelihood,
+        risk_impact:      autoRisk.impact,
+        risk_treatment:   autoRisk.treatment,
+        risk_bsi_threats: autoRisk.threats.map((t) => t.code),
+        risk_assessed_by: 'auto',
+      }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['gaps'] })
+      qc.invalidateQueries({ queryKey: ['dashboard', 'gaps'] })
+    },
+  })
+
+  return (
+    <Button
+      size="small"
+      variant="outlined"
+      disabled={mutation.isPending}
+      onClick={() => mutation.mutate()}
+      sx={{ fontSize: '0.7rem', py: 0.25 }}
+    >
+      {mutation.isPending ? 'Saving…' : 'Save Risk Assessment'}
+    </Button>
+  )
+}
+
 // ── Gap row ──────────────────────────────────────────────────────────────────
 function GapRow({ gap }: { gap: GapRead }) {
   const [editing, setEditing] = useState(false)
+  const [riskOpen, setRiskOpen] = useState(false)
   const qc = useQueryClient()
+
+  const savedRisk = gap.risk_level != null
+  const autoRisk  = calculateGapRisk(gap.control_group_code, gap.severity)
+  const riskLevel = gap.risk_level ?? autoRisk.riskLevel
+  const riskTreatment = gap.risk_treatment ?? autoRisk.treatment
 
   const deleteMutation = useMutation({
     mutationFn: () => gapsApi.delete(gap.id),
@@ -557,6 +628,30 @@ function GapRow({ gap }: { gap: GapRead }) {
             size="small"
             sx={{ fontSize: '0.65rem', height: 18, bgcolor: `${SEV_COLOR[gap.severity]}22`, color: SEV_COLOR[gap.severity], fontWeight: 700 }}
           />
+        </TableCell>
+        {/* Risk column */}
+        <TableCell>
+          <Tooltip title={riskTreatment}>
+            <Chip
+              label={riskLevel.replace('_', ' ')}
+              size="small"
+              onClick={() => setRiskOpen((v) => !v)}
+              sx={{
+                cursor: 'pointer',
+                fontSize: '0.65rem',
+                height: 18,
+                fontWeight: 700,
+                bgcolor: `${RISK_COLOR[riskLevel] ?? '#888'}22`,
+                color: RISK_COLOR[riskLevel] ?? '#888',
+              }}
+            />
+          </Tooltip>
+          {!savedRisk && (
+            <Typography variant="caption" color="text.disabled"
+              sx={{ display: 'block', fontSize: '0.58rem', mt: 0.25, lineHeight: 1 }}>
+              auto
+            </Typography>
+          )}
         </TableCell>
         <TableCell><StatusChip status={gap.status} /></TableCell>
         <TableCell>
@@ -599,6 +694,75 @@ function GapRow({ gap }: { gap: GapRead }) {
           </Tooltip>
         </TableCell>
       </TableRow>
+
+      {/* Collapsible BSI risk detail row */}
+      <TableRow>
+        <TableCell colSpan={8} sx={{ py: 0, border: 0 }}>
+          <Collapse in={riskOpen} timeout="auto" unmountOnExit>
+            <Box sx={{ px: 2, py: 1.5, bgcolor: 'rgba(68,114,196,0.04)', borderBottom: '1px solid', borderColor: 'divider' }}>
+
+              {/* Header */}
+              <Typography variant="caption" color="text.secondary" fontWeight={600} display="block"
+                sx={{ mb: 1, textTransform: 'uppercase', letterSpacing: '0.06em', fontSize: '0.68rem' }}>
+                BSI 200-3 Risk Analysis
+                {savedRisk
+                  ? <Chip label="saved" size="small" sx={{ ml: 1, height: 14, fontSize: '0.58rem', bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
+                  : <Chip label="auto · not saved" size="small" sx={{ ml: 1, height: 14, fontSize: '0.58rem', bgcolor: 'rgba(255,152,0,0.15)', color: '#FF9800' }} />
+                }
+              </Typography>
+
+              {/* Section / Likelihood / Impact */}
+              <Box sx={{ display: 'flex', gap: 3, mb: 1 }}>
+                {([
+                  ['Section',    savedRisk ? `ISO A.${(gap.control_group_code ?? '').split('-')[1] ?? '?'}` : autoRisk.section],
+                  ['Likelihood', (gap.risk_likelihood ?? autoRisk.likelihood).toUpperCase()],
+                  ['Impact',     (gap.risk_impact     ?? autoRisk.impact).toUpperCase()],
+                ] as [string, string][]).map(([label, value]) => (
+                  <Box key={label}>
+                    <Typography variant="caption" color="text.disabled" display="block" sx={{ fontSize: '0.62rem' }}>{label}</Typography>
+                    <Typography variant="caption" fontWeight={600} sx={{ fontSize: '0.72rem' }}>{value}</Typography>
+                  </Box>
+                ))}
+              </Box>
+
+              {/* BSI threat chips */}
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mb: 1 }}>
+                {(gap.risk_bsi_threats?.length
+                  ? gap.risk_bsi_threats.map((c) => ({ code: c, label: '' }))
+                  : autoRisk.threats
+                ).map((t) => (
+                  <Chip
+                    key={t.code}
+                    label={t.code + (t.label ? ` — ${t.label}` : '')}
+                    size="small"
+                    sx={{ height: 16, fontSize: '0.62rem', bgcolor: '#1a2a3a', color: '#9fc8f0' }}
+                  />
+                ))}
+              </Box>
+
+              {/* Treatment */}
+              <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 1.5 }}>
+                {riskTreatment}
+              </Typography>
+
+              {/* Actions */}
+              <Box sx={{ display: 'flex', gap: 1.5, alignItems: 'center' }}>
+                {!savedRisk && <SaveRiskButton gap={gap} autoRisk={autoRisk} />}
+                <Typography
+                  variant="caption"
+                  component="a"
+                  href="/risk"
+                  sx={{ color: 'primary.light', fontSize: '0.72rem', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
+                >
+                  Run full Risk Wizard →
+                </Typography>
+              </Box>
+
+            </Box>
+          </Collapse>
+        </TableCell>
+      </TableRow>
+
       {editing && <EditRow gap={gap} onClose={() => setEditing(false)} />}
     </>
   )
@@ -703,6 +867,58 @@ export default function Gaps() {
         </CardContent>
       </Card>
 
+      {/* Risk distribution summary */}
+      {!isLoading && (data ?? []).length > 0 && (() => {
+        const counts: Record<string, number> = { VERY_HIGH: 0, HIGH: 0, MEDIUM: 0, LOW: 0 }
+        const freq: Record<string, number> = {}
+        for (const gap of data ?? []) {
+          const lvl = gap.risk_level ?? calculateGapRisk(gap.control_group_code, gap.severity).riskLevel
+          counts[lvl] = (counts[lvl] ?? 0) + 1
+          const codes = gap.risk_bsi_threats?.length
+            ? gap.risk_bsi_threats
+            : calculateGapRisk(gap.control_group_code, gap.severity).threats.map((t) => t.code)
+          codes.forEach((c) => { freq[c] = (freq[c] ?? 0) + 1 })
+        }
+        const topThreats = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([c]) => c)
+
+        return (
+          <Card sx={{ mb: 2 }}>
+            <CardContent sx={{ pb: '12px !important' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 3, flexWrap: 'wrap' }}>
+                <Typography variant="caption" color="text.secondary" fontWeight={600}
+                  sx={{ textTransform: 'uppercase', fontSize: '0.68rem', letterSpacing: '0.06em' }}>
+                  Risk Distribution
+                </Typography>
+                {(['VERY_HIGH', 'HIGH', 'MEDIUM', 'LOW'] as const).map((lvl) => (
+                  <Box key={lvl} sx={{ textAlign: 'center' }}>
+                    <Typography sx={{ fontSize: '1.25rem', fontWeight: 800, color: RISK_COLOR[lvl], lineHeight: 1 }}>
+                      {counts[lvl] ?? 0}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.62rem' }}>
+                      {lvl.replace('_', ' ')}
+                    </Typography>
+                  </Box>
+                ))}
+                {topThreats.length > 0 && (
+                  <>
+                    <Typography variant="caption" color="text.secondary"
+                      sx={{ fontWeight: 600, textTransform: 'uppercase', fontSize: '0.68rem', letterSpacing: '0.06em' }}>
+                      Top Threats
+                    </Typography>
+                    <Box sx={{ display: 'flex', gap: 0.5 }}>
+                      {topThreats.map((code) => (
+                        <Chip key={code} label={code} size="small"
+                          sx={{ height: 16, fontSize: '0.62rem', bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
+                      ))}
+                    </Box>
+                  </>
+                )}
+              </Box>
+            </CardContent>
+          </Card>
+        )
+      })()}
+
       {error && <Alert severity="error" sx={{ mb: 2 }}>Failed to load gaps.</Alert>}
 
       {!isLoading && (data ?? []).length === 0 && (
@@ -717,6 +933,7 @@ export default function Gaps() {
                 <TableCell sx={{ width: 160 }}>Control Group</TableCell>
                 <TableCell>Description</TableCell>
                 <TableCell sx={{ width: 90 }}>Severity</TableCell>
+                <TableCell sx={{ width: 100 }}>Risk</TableCell>
                 <TableCell sx={{ width: 100 }}>Status</TableCell>
                 <TableCell sx={{ width: 120 }}>Owner</TableCell>
                 <TableCell sx={{ width: 110 }}>Due Date</TableCell>
@@ -727,7 +944,7 @@ export default function Gaps() {
               {isLoading &&
                 [...Array(6)].map((_, i) => (
                   <TableRow key={i}>
-                    {[...Array(7)].map((_, j) => (
+                    {[...Array(8)].map((_, j) => (
                       <TableCell key={j}><Skeleton variant="text" /></TableCell>
                     ))}
                   </TableRow>

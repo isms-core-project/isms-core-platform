@@ -11,6 +11,7 @@ import Gaps from './pages/Gaps'
 import Controls from './pages/Controls'
 import ControlDetail from './pages/ControlDetail'
 import Assessments from './pages/Assessments'
+import CollectionDetail from './pages/CollectionDetail'
 import Policies from './pages/Policies'
 import Search from './pages/Search'
 import Evidence from './pages/Evidence'
@@ -58,6 +59,7 @@ export default function App() {
         <Route path="framework-controls/:code/:controlId" element={<FrameworkControlDetail />} />
         <Route path="controls/:id" element={<ControlDetail />} />
         <Route path="assessments" element={<Assessments />} />
+        <Route path="collections/:id" element={<CollectionDetail />} />
         <Route path="policies" element={<Policies />} />
         <Route path="search" element={<Search />} />
         <Route path="evidence" element={<Evidence />} />

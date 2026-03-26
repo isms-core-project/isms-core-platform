@@ -6,18 +6,21 @@ import {
   TableCell, TableContainer, TableHead, TableRow, LinearProgress,
   Dialog, DialogTitle, DialogContent, DialogActions,
   FormControl, InputLabel, Select, MenuItem,
-  TextField, InputAdornment,
+  TextField, InputAdornment, Tab, Tabs,
 } from '@mui/material'
 import {
   AddOutlined, DeleteOutlined, AssignmentOutlined,
   FolderOpenOutlined, ExpandMoreOutlined, ExpandLessOutlined,
   SearchOutlined, PersonOutlined, CalendarTodayOutlined,
-  FlagOutlined, OpenInNewOutlined,
+  FlagOutlined, OpenInNewOutlined, ReportOutlined,
+  LibraryBooksOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
 import { assessmentsApi, AssessmentListItem } from '../api/assessmentsApi'
+import { collectionsApi, CollectionListItem } from '../api/collectionsApi'
 import { controlsApi } from '../api/controls'
+import { gapsApi } from '../api/gaps'
 import PageHeader from '../components/PageHeader'
 import AssessmentFormDrawer from '../components/AssessmentFormDrawer'
 
@@ -69,6 +72,96 @@ function ComplianceBar({ a }: { a: AssessmentListItem }) {
   )
 }
 
+// ── Log Gap from Assessment dialog ─────────────────────────────────────────
+
+function deriveGapSeverity(score: number | null): string {
+  if (score == null) return 'medium'
+  if (score < 50) return 'high'
+  if (score < 75) return 'medium'
+  return 'low'
+}
+
+function LogGapDialog({ a, open, onClose }: {
+  a: AssessmentListItem
+  open: boolean
+  onClose: () => void
+}) {
+  const qc = useQueryClient()
+  const defaultSev = deriveGapSeverity(a.overall_score)
+  const [desc, setDesc] = useState(
+    `${a.items_non_compliant} non-compliant item(s) identified in assessment ${a.document_id}`
+  )
+  const [severity, setSeverity] = useState(defaultSev)
+  const [owner, setOwner] = useState('')
+  const [error, setError] = useState('')
+
+  const mutation = useMutation({
+    mutationFn: () => gapsApi.create({
+      control_group_id: a.control_group_id,
+      gap_description: desc,
+      severity,
+      product_type: a.product_type === 'operational' ? 'operational' : 'framework',
+      owner: owner || undefined,
+    }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['gaps'] })
+      qc.invalidateQueries({ queryKey: ['dashboard', 'gaps'] })
+      onClose()
+    },
+    onError: () => setError('Failed to create gap'),
+  })
+
+  return (
+    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
+      <DialogTitle sx={{ pb: 0.5 }}>
+        Log Gap from Assessment
+        <Typography variant="caption" color="text.secondary" display="block">
+          {a.group_code.toUpperCase()} — {a.group_name}
+        </Typography>
+      </DialogTitle>
+      <DialogContent sx={{ display: 'flex', flexDirection: 'column', gap: 2, pt: '12px !important' }}>
+        {error && <Alert severity="error">{error}</Alert>}
+        <TextField
+          label="Description"
+          size="small"
+          multiline
+          minRows={2}
+          fullWidth
+          value={desc}
+          onChange={(e) => setDesc(e.target.value)}
+        />
+        <Box sx={{ display: 'flex', gap: 2 }}>
+          <FormControl size="small" fullWidth>
+            <InputLabel>Severity</InputLabel>
+            <Select value={severity} onChange={(e) => setSeverity(e.target.value)} label="Severity">
+              {['critical', 'high', 'medium', 'low'].map((s) => (
+                <MenuItem key={s} value={s}>{s.charAt(0).toUpperCase() + s.slice(1)}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          <TextField
+            label="Owner (optional)"
+            size="small"
+            fullWidth
+            value={owner}
+            onChange={(e) => setOwner(e.target.value)}
+          />
+        </Box>
+        <Typography variant="caption" color="text.disabled">
+          {a.items_non_compliant} non-compliant · {a.items_partial ?? 0} partial · score {a.overall_score ?? '—'}%
+        </Typography>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={onClose} size="small">Cancel</Button>
+        <Button variant="contained" size="small" disabled={mutation.isPending || !desc.trim()}
+          onClick={() => mutation.mutate()}>
+          {mutation.isPending ? 'Creating…' : 'Create Gap'}
+        </Button>
+      </DialogActions>
+    </Dialog>
+  )
+}
+
 // ── Platform assessment card ───────────────────────────────────────────────
 
 function PlatformCard({ a, onDelete, onOpen }: {
@@ -78,8 +171,11 @@ function PlatformCard({ a, onDelete, onOpen }: {
 }) {
   const navigate = useNavigate()
   const meta = a.summary ?? {}
+  const [logGapOpen, setLogGapOpen] = useState(false)
 
   return (
+    <>
+      {logGapOpen && <LogGapDialog a={a} open={logGapOpen} onClose={() => setLogGapOpen(false)} />}
     <Card sx={{ mb: 1.5, bgcolor: 'rgba(68,114,196,0.05)', border: '1px solid rgba(68,114,196,0.12)', '&:hover': { borderColor: 'rgba(68,114,196,0.25)' } }}>
       <CardContent sx={{ p: '12px 16px !important' }}>
         <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
@@ -152,6 +248,14 @@ function PlatformCard({ a, onDelete, onOpen }: {
                 <OpenInNewOutlined sx={{ fontSize: 16 }} />
               </IconButton>
             </Tooltip>
+            {(a.items_non_compliant ?? 0) > 0 && (
+              <Tooltip title={`Log gap (${a.items_non_compliant} non-compliant)`}>
+                <IconButton size="small" onClick={() => setLogGapOpen(true)}
+                  sx={{ color: '#FF9800', opacity: 0.7, '&:hover': { opacity: 1 } }}>
+                  <ReportOutlined sx={{ fontSize: 16 }} />
+                </IconButton>
+              </Tooltip>
+            )}
             <Tooltip title="Delete">
               <IconButton size="small" onClick={onDelete}
                 sx={{ color: 'error.main', opacity: 0.4, '&:hover': { opacity: 1 } }}>
@@ -162,6 +266,247 @@ function PlatformCard({ a, onDelete, onOpen }: {
         </Box>
       </CardContent>
     </Card>
+    </>
+  )
+}
+
+// ── Collections panel ──────────────────────────────────────────────────────
+
+function scoreColor(pct: number): string {
+  if (pct >= 80) return '#70AD47'
+  if (pct >= 50) return '#FFC000'
+  return '#FF5252'
+}
+
+function CollectionStatusChip({ status }: { status: string }) {
+  const props = status === 'complete'
+    ? { label: 'Complete',     bg: 'rgba(198,239,206,0.15)', color: '#C6EFCE' }
+    : status === 'in_progress'
+    ? { label: 'In Progress',  bg: 'rgba(255,192,0,0.12)',   color: '#FFC000' }
+    : { label: 'Not Started',  bg: 'rgba(255,255,255,0.06)', color: '#888' }
+  return (
+    <Chip label={props.label} size="small"
+      sx={{ fontSize: '0.65rem', height: 18, bgcolor: props.bg, color: props.color, fontWeight: 600 }} />
+  )
+}
+
+function NewCollectionDialog({ open, onClose, productFamily, productType }: {
+  open: boolean
+  onClose: () => void
+  productFamily: string
+  productType: string | undefined
+}) {
+  const qc = useQueryClient()
+  const [name, setName] = useState('')
+  const [description, setDescription] = useState('')
+  const [dueDate, setDueDate] = useState('')
+  const [error, setError] = useState('')
+
+  const mutation = useMutation({
+    mutationFn: () => collectionsApi.create({
+      name,
+      description: description || undefined,
+      product_family: productFamily,
+      product_type: productType || undefined,
+      due_date: dueDate || undefined,
+    }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['collections'] })
+      setName(''); setDescription(''); setDueDate(''); setError('')
+      onClose()
+    },
+    onError: () => setError('Failed to create collection. Check fields and try again.'),
+  })
+
+  function handleClose() {
+    setName(''); setDescription(''); setDueDate(''); setError('')
+    onClose()
+  }
+
+  return (
+    <Dialog open={open} onClose={handleClose} maxWidth="xs" fullWidth>
+      <DialogTitle>New Collection</DialogTitle>
+      <DialogContent sx={{ pt: '8px !important', display: 'flex', flexDirection: 'column', gap: 2 }}>
+        {error && <Alert severity="error">{error}</Alert>}
+        <TextField label="Name" size="small" fullWidth required
+          value={name} onChange={e => setName(e.target.value)} />
+        <TextField label="Description (optional)" size="small" fullWidth multiline minRows={2}
+          value={description} onChange={e => setDescription(e.target.value)} />
+        <TextField label="Due Date (optional)" size="small" fullWidth type="date"
+          InputLabelProps={{ shrink: true }}
+          value={dueDate} onChange={e => setDueDate(e.target.value)} />
+      </DialogContent>
+      <DialogActions sx={{ px: 3, pb: 2 }}>
+        <Button onClick={handleClose} size="small">Cancel</Button>
+        <Button variant="contained" size="small"
+          disabled={mutation.isPending || !name.trim()}
+          onClick={() => mutation.mutate()}>
+          {mutation.isPending ? 'Creating…' : 'Create'}
+        </Button>
+      </DialogActions>
+    </Dialog>
+  )
+}
+
+function CollectionsPanel({ productFamily, productType }: { productFamily: string; productType?: string }) {
+  const navigate = useNavigate()
+  const qc = useQueryClient()
+  const [newOpen, setNewOpen] = useState(false)
+  const [deleteTarget, setDeleteTarget] = useState<{ id: string; name: string } | null>(null)
+
+  const { data: collections = [], isLoading } = useQuery({
+    queryKey: ['collections', productFamily],
+    queryFn: () => collectionsApi.list({ product_family: productFamily }),
+  })
+
+  const deleteMutation = useMutation({
+    mutationFn: (id: string) => collectionsApi.delete(id),
+    onSuccess: () => {
+      setDeleteTarget(null)
+      qc.invalidateQueries({ queryKey: ['collections'] })
+    },
+  })
+
+  return (
+    <Box>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2, flexWrap: 'wrap' }}>
+        <LibraryBooksOutlined sx={{ fontSize: 18, color: 'primary.light' }} />
+        <Typography variant="subtitle2" fontWeight={700} color="primary.light">
+          Assessment Collections
+        </Typography>
+        <Chip label={collections.length} size="small" sx={{ fontSize: '0.65rem', height: 18 }} />
+        <Box sx={{ flex: 1 }} />
+        <Button variant="contained" size="small" startIcon={<AddOutlined />}
+          onClick={() => setNewOpen(true)} sx={{ fontSize: '0.75rem' }}>
+          New Collection
+        </Button>
+      </Box>
+
+      {isLoading && <Skeleton variant="rectangular" height={80} sx={{ borderRadius: 2 }} />}
+
+      {!isLoading && collections.length === 0 && (
+        <Box
+          onClick={() => setNewOpen(true)}
+          sx={{
+            p: 3, borderRadius: 2, textAlign: 'center', cursor: 'pointer',
+            border: '1px dashed rgba(68,114,196,0.3)', bgcolor: 'rgba(68,114,196,0.03)',
+            '&:hover': { bgcolor: 'rgba(68,114,196,0.07)', borderColor: 'rgba(68,114,196,0.5)' },
+          }}
+        >
+          <LibraryBooksOutlined sx={{ color: 'text.disabled', mb: 0.5 }} />
+          <Typography variant="body2" color="text.secondary">
+            No collections yet — group related assessments and track progress together.
+          </Typography>
+          <Typography variant="caption" color="primary.light" sx={{ mt: 0.5, display: 'block' }}>
+            Click to create a collection
+          </Typography>
+        </Box>
+      )}
+
+      {collections.map((c: CollectionListItem) => (
+        <Card key={c.id} sx={{ mb: 1.5, bgcolor: 'rgba(68,114,196,0.04)', border: '1px solid rgba(68,114,196,0.1)',
+          '&:hover': { borderColor: 'rgba(68,114,196,0.22)' } }}>
+          <CardContent sx={{ p: '12px 16px !important' }}>
+            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
+              <Box sx={{ flex: 1, minWidth: 0 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5, flexWrap: 'wrap' }}>
+                  <Typography variant="body2" fontWeight={700} sx={{ cursor: 'pointer', '&:hover': { color: 'primary.light' } }}
+                    onClick={() => navigate(`/collections/${c.id}`)}>
+                    {c.name}
+                  </Typography>
+                  <CollectionStatusChip status={c.stats.status} />
+                  {c.product_type && (
+                    <Chip label={c.product_type} size="small" sx={{ fontSize: '0.6rem', height: 16,
+                      bgcolor: 'rgba(68,114,196,0.12)', color: '#9DC3E6' }} />
+                  )}
+                  {c.due_date && (
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.4 }}>
+                      <CalendarTodayOutlined sx={{ fontSize: 11, color: 'text.disabled' }} />
+                      <Typography variant="caption" color="text.secondary">Due {c.due_date}</Typography>
+                    </Box>
+                  )}
+                </Box>
+
+                {c.description && (
+                  <Typography variant="caption" color="text.disabled" noWrap sx={{ display: 'block', mb: 0.75 }}>
+                    {c.description}
+                  </Typography>
+                )}
+
+                <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', alignItems: 'center' }}>
+                  <Typography variant="caption" color="text.secondary">
+                    {c.stats.started}/{c.stats.total} assessments started
+                  </Typography>
+                  {c.stats.items_total > 0 && (
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                      <Typography variant="caption" color="text.secondary">Score:</Typography>
+                      <Typography variant="caption" sx={{ color: scoreColor(c.stats.compliance_pct), fontWeight: 700 }}>
+                        {c.stats.compliance_pct}%
+                      </Typography>
+                    </Box>
+                  )}
+                  {c.stats.items_non_compliant > 0 && (
+                    <Typography variant="caption" sx={{ color: '#FF5252' }}>
+                      {c.stats.items_non_compliant} non-compliant
+                    </Typography>
+                  )}
+                  {c.stats.total > 0 && (
+                    <Box sx={{ flex: 1, minWidth: 100 }}>
+                      <LinearProgress
+                        variant="determinate"
+                        value={Math.min(100, c.stats.completion_pct)}
+                        sx={{ height: 4, borderRadius: 2, bgcolor: 'rgba(255,255,255,0.06)',
+                          '& .MuiLinearProgress-bar': { bgcolor: 'primary.light' } }}
+                      />
+                    </Box>
+                  )}
+                </Box>
+              </Box>
+
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5, flexShrink: 0 }}>
+                <Tooltip title="Open collection">
+                  <IconButton size="small" onClick={() => navigate(`/collections/${c.id}`)}
+                    sx={{ color: 'primary.light', bgcolor: 'rgba(68,114,196,0.1)', '&:hover': { bgcolor: 'rgba(68,114,196,0.2)' } }}>
+                    <OpenInNewOutlined sx={{ fontSize: 16 }} />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title="Delete collection">
+                  <IconButton size="small" onClick={() => setDeleteTarget({ id: c.id, name: c.name })}
+                    sx={{ color: 'error.main', opacity: 0.4, '&:hover': { opacity: 1 } }}>
+                    <DeleteOutlined sx={{ fontSize: 16 }} />
+                  </IconButton>
+                </Tooltip>
+              </Box>
+            </Box>
+          </CardContent>
+        </Card>
+      ))}
+
+      <NewCollectionDialog
+        open={newOpen}
+        onClose={() => setNewOpen(false)}
+        productFamily={productFamily}
+        productType={productType}
+      />
+
+      <Dialog open={!!deleteTarget} onClose={() => setDeleteTarget(null)} maxWidth="xs" fullWidth>
+        <DialogTitle>Delete Collection?</DialogTitle>
+        <DialogContent>
+          <Typography variant="body2">
+            <strong>{deleteTarget?.name}</strong> will be permanently deleted. Assessments within it are not affected.
+          </Typography>
+          {deleteMutation.isError && <Alert severity="error" sx={{ mt: 1.5 }}>Delete failed. Try again.</Alert>}
+        </DialogContent>
+        <DialogActions sx={{ px: 3, pb: 2 }}>
+          <Button onClick={() => setDeleteTarget(null)} disabled={deleteMutation.isPending}>Cancel</Button>
+          <Button variant="contained" color="error" disabled={deleteMutation.isPending}
+            startIcon={<DeleteOutlined />}
+            onClick={() => deleteTarget && deleteMutation.mutate(deleteTarget.id)}>
+            {deleteMutation.isPending ? 'Deleting…' : 'Delete'}
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </Box>
   )
 }
 
@@ -171,6 +516,9 @@ export default function Assessments() {
   const navigate = useNavigate()
   const queryClient = useQueryClient()
   const { product, ismsTier } = useProduct()
+
+  // Tab state
+  const [activeTab, setActiveTab] = useState<'platform' | 'library' | 'collections'>('platform')
 
   // Platform section state
   const [statusFilter, setStatusFilter] = useState<'' | AssessmentStatus>('')
@@ -274,8 +622,23 @@ export default function Assessments() {
         }
       />
 
+      {/* ── Tabs ── */}
+      <Tabs value={activeTab} onChange={(_, v) => setActiveTab(v)} sx={{ mb: 2.5, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <Tab value="platform" label="Platform Assessments" sx={{ fontSize: '0.8rem', textTransform: 'none' }} />
+        <Tab value="library" label="Workbook Library" sx={{ fontSize: '0.8rem', textTransform: 'none' }} />
+        <Tab value="collections" label="Collections" sx={{ fontSize: '0.8rem', textTransform: 'none' }} />
+      </Tabs>
+
+      {/* ── Collections tab ── */}
+      {activeTab === 'collections' && (
+        <CollectionsPanel
+          productFamily={product.toUpperCase()}
+          productType={product === 'isms' ? selectedProduct : product}
+        />
+      )}
+
       {/* ── Platform Assessments ── */}
-      <Box sx={{ mb: 4 }}>
+      {activeTab === 'platform' && <Box sx={{ mb: 4 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2, flexWrap: 'wrap' }}>
           <AssignmentOutlined sx={{ fontSize: 18, color: 'primary.light' }} />
           <Typography variant="subtitle2" fontWeight={700} color="primary.light">
@@ -346,7 +709,7 @@ export default function Assessments() {
       </Box>
 
       {/* ── Workbook Library ── */}
-      <Box>
+      {activeTab === 'library' && <Box>
         <Box
           onClick={() => setLibOpen(v => !v)}
           sx={{ display: 'flex', alignItems: 'center', gap: 1, cursor: 'pointer', mb: libOpen ? 1.5 : 0,
@@ -441,7 +804,7 @@ export default function Assessments() {
             </Table>
           </TableContainer>
         </Collapse>
-      </Box>
+      </Box>}
 
       {/* ── Select product + control group dialog ── */}
       <Dialog open={newDialogOpen} onClose={() => { setNewDialogOpen(false); setSelectedGroupCode('') }} maxWidth="xs" fullWidth>

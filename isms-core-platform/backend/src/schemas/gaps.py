@@ -24,6 +24,13 @@ class GapPatch(BaseModel):
     due_date: date | None = None
     remediation_plan: str | None = None
     closed_by: str | None = None
+    # Risk fields — stored in metadata_ JSONB
+    risk_level: str | None = None           # LOW | MEDIUM | HIGH | VERY_HIGH
+    risk_likelihood: str | None = None      # low | medium | high
+    risk_impact: str | None = None          # limited | considerable
+    risk_treatment: str | None = None       # free text recommendation
+    risk_bsi_threats: list[str] | None = None   # e.g. ["G 0.14", "G 0.28"]
+    risk_assessed_by: str | None = None     # "auto" | "manual"
 
 
 class GapRead(BaseModel):
@@ -42,5 +49,13 @@ class GapRead(BaseModel):
     closed_by: str | None
     created_at: datetime
     evidence_count: int = 0
+    # Risk fields — read from metadata_ JSONB
+    risk_level: str | None = None
+    risk_likelihood: str | None = None
+    risk_impact: str | None = None
+    risk_treatment: str | None = None
+    risk_bsi_threats: list[str] = []
+    risk_assessed_by: str | None = None     # "auto" | "manual" | null
+    risk_assessed_at: str | None = None     # ISO timestamp string
 
     model_config = {"from_attributes": True}

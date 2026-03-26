@@ -31,6 +31,7 @@ router = APIRouter(prefix="/gaps", tags=["gaps"])
 
 def _enrich(gap: Gap, db: DBSession) -> GapRead:
     cg = db.get(ControlGroup, gap.control_group_id)
+    meta = gap.metadata_ or {}
     return GapRead(
         id=gap.id,
         control_group_id=gap.control_group_id,
@@ -47,6 +48,13 @@ def _enrich(gap: Gap, db: DBSession) -> GapRead:
         closed_by=gap.closed_by,
         created_at=gap.created_at,
         evidence_count=len(gap.evidence_items),
+        risk_level=meta.get("risk_level"),
+        risk_likelihood=meta.get("risk_likelihood"),
+        risk_impact=meta.get("risk_impact"),
+        risk_treatment=meta.get("risk_treatment"),
+        risk_bsi_threats=meta.get("risk_bsi_threats", []),
+        risk_assessed_by=meta.get("risk_assessed_by"),
+        risk_assessed_at=meta.get("risk_assessed_at"),
     )
 
 
@@ -146,6 +154,23 @@ def patch_gap(
         gap.remediation_plan = body.remediation_plan or None
     if body.closed_by is not None:
         gap.closed_by = body.closed_by or None
+
+    # Risk fields — persisted in metadata_ JSONB
+    risk_updates = {
+        k: v for k, v in {
+            "risk_level":       body.risk_level,
+            "risk_likelihood":  body.risk_likelihood,
+            "risk_impact":      body.risk_impact,
+            "risk_treatment":   body.risk_treatment,
+            "risk_bsi_threats": body.risk_bsi_threats,
+            "risk_assessed_by": body.risk_assessed_by,
+        }.items() if v is not None
+    }
+    if risk_updates:
+        meta = dict(gap.metadata_ or {})
+        meta.update(risk_updates)
+        meta["risk_assessed_at"] = dt.now(timezone.utc).isoformat()
+        gap.metadata_ = meta
 
     db.commit()
     db.refresh(gap)

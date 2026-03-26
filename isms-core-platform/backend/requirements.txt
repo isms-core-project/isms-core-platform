@@ -19,6 +19,7 @@ opensearch-py==3.1.0
 # Excel & Data Processing
 pandas==2.2.0
 openpyxl==3.1.2
+reportlab==4.2.5
 
 # File Handling
 python-multipart==0.0.6

@@ -213,6 +213,14 @@ export interface GapRead {
   closed_by: string | null
   created_at: string
   evidence_count: number
+  // Risk fields (from metadata_ JSONB via backend)
+  risk_level: string | null
+  risk_likelihood: string | null
+  risk_impact: string | null
+  risk_treatment: string | null
+  risk_bsi_threats: string[]
+  risk_assessed_by: string | null   // "auto" | "manual" | null
+  risk_assessed_at: string | null
 }
 
 export interface GapCreate {
@@ -234,6 +242,13 @@ export interface GapPatch {
   due_date?: string | null
   remediation_plan?: string | null
   closed_by?: string | null
+  // Risk fields
+  risk_level?: string
+  risk_likelihood?: string
+  risk_impact?: string
+  risk_treatment?: string
+  risk_bsi_threats?: string[]
+  risk_assessed_by?: string   // "auto" | "manual"
 }
 
 export interface EvidenceControlItem {
