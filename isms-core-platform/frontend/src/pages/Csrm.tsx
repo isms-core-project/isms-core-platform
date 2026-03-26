@@ -199,25 +199,37 @@ function CsrmDisclaimer() {
       }
     >
       <AlertTitle>CSRM 2025 — Framework in Development</AlertTitle>
-      NCSC BACS publishes this methodology as a work in progress. Click to see known limitations.
+      NCSC BACS publishes this methodology as a work in progress. Click to see known limitations and implementation notes.
       <Collapse in={open}>
         <Box sx={{ mt: 1.5 }}>
-          <Typography variant="caption" component="div" sx={{ mb: 0.75 }}>
-            <strong>Known gaps (from NCSC's own comparison document):</strong>
+          <Typography variant="caption" component="div" sx={{ mb: 0.5, color: 'success.light' }}>
+            <strong>✓ ISMS CORE implementation note:</strong> This assessment uses <strong>NIST CSF 2.0</strong> as the organising structure
+            (Govern / Identify / Protect / Detect / Respond+Recover). BACS's own comparison document references the Swiss ICT
+            Minimum Standard which is based on NIST CSF 1.1 — we have updated the baseline requirement structure to align with CSF 2.0.
+          </Typography>
+          <Typography variant="caption" component="div" sx={{ mb: 0.75, mt: 1 }}>
+            <strong>Known gaps (from NCSC's own comparison document — Vergleich-Managementsysteme_EN.pdf):</strong>
           </Typography>
           <Typography variant="caption" component="ul" sx={{ pl: 2, m: 0 }}>
-            <li><strong>IEC 62443 alignment pending</strong> — OT coverage claimed but not yet demonstrated against the OT security standard</li>
-            <li><strong>10 ICT Minimum Standard gaps</strong> — incl. threat intel sharing, hardware integrity, forensics, continuous improvement, contractual supplier requirements</li>
-            <li><strong>"No policies needed" is misleading</strong> — operational policies (vulnerability mgmt, incident mgmt, supplier mgmt) remain necessary</li>
-            <li><strong>Continuous improvement optional</strong> — unlike ISO 27001 PDCA; "stable processes" deemed sufficient</li>
-            <li><strong>Parallel implementation creates duplication</strong> — NCSC admits running alongside ISO 27001 or ICT Minimum Standard leads to reporting duplication</li>
+            <li><strong>IEC 62443 alignment pending</strong> — OT coverage claimed but not yet demonstrated against the OT security standard (footnote 26, p.20)</li>
+            <li><strong>10 ICT Minimum Standard gaps</strong> — incl. threat intel sharing, hardware integrity, forensics, continuous improvement, contractual supplier requirements (Vergleich p.6–7)</li>
+            <li><strong>"No policies needed" is misleading</strong> — operational policies (vulnerability mgmt, incident mgmt, supplier mgmt) remain necessary (Vergleich p.4)</li>
+            <li><strong>Continuous improvement optional</strong> — unlike ISO 27001 PDCA; "stable processes" deemed sufficient (Vergleich p.7)</li>
+            <li><strong>Parallel implementation creates duplication</strong> — NCSC admits running alongside ISO 27001 or ICT Minimum Standard leads to reporting duplication (Vergleich p.5)</li>
           </Typography>
-          <Typography variant="caption" component="div" sx={{ mt: 1 }}>
+          <Typography variant="caption" component="div" sx={{ mt: 1.25 }}>
             <strong>Source documents: </strong>
-            <Link href="https://www.ncsc.admin.ch/ncsc/en/home/infos-fuer/infos-it-spezialisten/themen/csrm.html" target="_blank" rel="noopener" sx={{ mr: 1 }}>
-              NCSC CSRM Website
+            <Link href="https://www.ncsc.admin.ch/ncsc/en/home/infos-fuer/infos-it-spezialisten/themen/csrm.html" target="_blank" rel="noopener" sx={{ mr: 0.75 }}>
+              BACS CSRM page
             </Link>
-            · Methode-CSRM-2025-EN.pdf · Vergleich-Managementsysteme_EN.pdf
+            ·{' '}
+            <Link href="https://www.ncsc.admin.ch/dam/ncsc/en/dokumente/infos-fuer/infos-it-spezialisten/csrm/Methode-CSRM-2025-EN.pdf" target="_blank" rel="noopener" sx={{ mx: 0.75 }}>
+              Methode-CSRM-2025-EN.pdf
+            </Link>
+            ·{' '}
+            <Link href="https://www.ncsc.admin.ch/dam/ncsc/en/dokumente/infos-fuer/infos-it-spezialisten/csrm/Vergleich-Managementsysteme_EN.pdf" target="_blank" rel="noopener" sx={{ ml: 0.75 }}>
+              Vergleich-Managementsysteme_EN.pdf
+            </Link>
           </Typography>
         </Box>
       </Collapse>
