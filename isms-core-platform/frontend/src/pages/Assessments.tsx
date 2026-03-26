@@ -706,7 +706,7 @@ export default function Assessments() {
             onOpen={() => navigate(`/controls/${a.control_group_id}`)}
           />
         ))}
-      </Box>
+      </Box>}
 
       {/* ── Workbook Library ── */}
       {activeTab === 'library' && <Box>
