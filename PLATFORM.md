@@ -564,17 +564,9 @@ git pull
 docker compose up -d --build
 ```
 
-This rebuilds containers in-place. Running containers are replaced one at a time. No data is lost — PostgreSQL and OpenSearch data live in named Docker volumes.
+This rebuilds containers in-place. No data is lost — PostgreSQL and OpenSearch data live in named Docker volumes.
 
-> **If the update includes new reference dataset files** (new JSON in `datasets/data/`, e.g. a new framework like BSI IT-Grundschutz), the bundle loader will NOT pick them up automatically on restart. You must re-run `bootstrap.sh` after the rebuild:
->
-> ```bash
-> git pull
-> docker compose up -d --build
-> bash bootstrap.sh   # safe to re-run — upserts only, no data loss
-> ```
->
-> `bootstrap.sh` is fully idempotent. Re-running it will not duplicate policies, assessments, gaps, or evidence. It only upserts reference data and re-indexes content.
+Reference datasets (`datasets/data/`) are loaded automatically on every container start via `entrypoint.sh`. New framework JSON files are picked up without any extra steps — a rebuild is sufficient.
 
 ### View Logs
 

@@ -18,4 +18,8 @@ echo "[entrypoint] Running alembic upgrade head..."
 alembic upgrade head
 echo "[entrypoint] Migrations complete."
 
+echo "[entrypoint] Loading reference datasets..."
+python3 -m src.cli.load_datasets
+echo "[entrypoint] Dataset load complete."
+
 exec uvicorn src.main:app --host 0.0.0.0 --port 8000
