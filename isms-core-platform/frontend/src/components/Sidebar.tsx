@@ -91,6 +91,7 @@ const NAV_PLATFORM: NavItem[] = [
   { label: 'NIS2',        path: '/nis2',        icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
   { label: 'DORA',        path: '/dora',        icon: <AccountBalanceOutlined /> },
   { label: 'CIS Controls', path: '/cis',        icon: <SecurityOutlined /> },
+  { label: 'BSI IT-Grundschutz', path: '/bsi', icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
 ]
 
 const NAV_ADMIN: NavItem[] = [
@@ -118,7 +119,7 @@ const CAT_LABEL: Record<string, string> = { workflow: 'Workflow', system: 'Syste
 const CAT_COLOR: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3a' }
 const CAT_TEXT:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0' }
 const PLATFORM_COLOR = '#6B7A99'
-const PLATFORM_PATHS = ['/qa', '/search', '/compass', '/generators', '/report', '/risk', '/nist-csf', '/nis2', '/dora', '/cis', '/admin', '/connectors', '/system']
+const PLATFORM_PATHS = ['/qa', '/search', '/compass', '/generators', '/report', '/risk', '/nist-csf', '/nis2', '/dora', '/cis', '/bsi', '/admin', '/connectors', '/system']
 
 // ── Notification prefs dialog ─────────────────────────────────────────────────
 

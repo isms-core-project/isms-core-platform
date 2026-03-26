@@ -23,11 +23,12 @@ from src.schemas.regulatory import (
 logger = logging.getLogger(__name__)
 
 # For NIS2: all requirements are level=0
-# For DORA: requirements are level=1 (articles), grouped by level=0 (chapters)
+# For DORA/CIS/BSI: requirements are level=1, grouped by level=0 (chapters/layers)
 _ASSESSABLE_LEVEL = {
     "NIS2": 0,
     "DORA": 1,
     "CIS_V8": 1,
+    "BSI_IT_GRUNDSCHUTZ": 1,
 }
 
 

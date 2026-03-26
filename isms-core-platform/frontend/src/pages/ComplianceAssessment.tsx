@@ -59,6 +59,12 @@ const FRAMEWORK_META: Record<string, { name: string; subtitle: string; color: st
     color: '#2E7D32',
     description: 'CIS Critical Security Controls v8 — 18 controls and 153 safeguards for enterprise cyber defence.',
   },
+  BSI_IT_GRUNDSCHUTZ: {
+    name: 'BSI IT-Grundschutz',
+    subtitle: '2023',
+    color: '#C62828',
+    description: 'BSI IT-Grundschutz Kompendium — 58 Bausteine across 10 layers. Basis for IT-Grundschutz certification, recognised by BSI as equivalent to ISO 27001.',
+  },
 }
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
@@ -244,8 +250,8 @@ interface GroupedReq {
 }
 
 function groupRequirements(requirements: FullAssessment['requirements'], frameworkCode: string): GroupedReq[] {
-  if (frameworkCode === 'DORA') {
-    // Group by group_id (chapter code)
+  if (frameworkCode === 'DORA' || frameworkCode === 'CIS_V8' || frameworkCode === 'BSI_IT_GRUNDSCHUTZ') {
+    // Group by group_id (chapter / IG / layer)
     const map = new Map<string, GroupedReq>()
     for (const r of requirements) {
       const gid = r.group_id ?? 'Other'

@@ -28,6 +28,7 @@ import Connectors from './pages/Connectors'
 import Nis2 from './pages/Nis2'
 import Dora from './pages/Dora'
 import Cis from './pages/Cis'
+import Bsi from './pages/Bsi'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -77,6 +78,7 @@ export default function App() {
         <Route path="nis2" element={<Nis2 />} />
         <Route path="dora" element={<Dora />} />
         <Route path="cis" element={<Cis />} />
+        <Route path="bsi" element={<Bsi />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
