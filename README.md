@@ -17,10 +17,16 @@
 </p>
 
 <p align="center">
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/NIST_CSF_2.0-Assessment_Tool-FF6600?style=flat-square" alt="NIST CSF"/></a>
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/NIS2-Assessment_Tool-003399?style=flat-square" alt="NIS2"/></a>
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/DORA-Assessment_Tool-1565C0?style=flat-square" alt="DORA"/></a>
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/CIS_Controls_v8-Assessment_Tool-2E7D32?style=flat-square" alt="CIS Controls v8"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NIST_CSF_2.0-Assessment_Tool-FF6600?style=flat-square" alt="NIST CSF"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NIS2-Assessment_Tool-003399?style=flat-square" alt="NIS2"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/DORA-Assessment_Tool-1565C0?style=flat-square" alt="DORA"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CIS_Controls_v8-Assessment_Tool-2E7D32?style=flat-square" alt="CIS Controls v8"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/BSI_IT--Grundschutz-Assessment_Tool-CC0000?style=flat-square" alt="BSI IT-Grundschutz"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CSRM_(NCSC_CH)-Assessment_Tool-D32F2F?style=flat-square" alt="CSRM NCSC CH"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/TISAX-Assessment_Tool-1B5E20?style=flat-square" alt="TISAX"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/Swiss_nDSG-Assessment_Tool-C62828?style=flat-square" alt="Swiss nDSG"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/EU_Cyber_Resilience_Act-Assessment_Tool-1A237E?style=flat-square" alt="EU CRA"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/EU_AI_Act-Assessment_Tool-4527A0?style=flat-square" alt="EU AI Act"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v18-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
 </p>
 
@@ -188,9 +194,10 @@ factory_isms/
 │   ├── backend/                        # FastAPI application
 │   ├── frontend/                       # React 19 + MUI 6 UI
 │   ├── nginx/                          # Reverse proxy + TLS (A.8.24)
-│   ├── datasets/data/                  # 18 JSON reference datasets
+│   ├── datasets/data/                  # 23 JSON reference datasets
 │   └── schemas/                        # PostgreSQL init schema
 │
+├── COMPLIANCE.md                       # 📋 Compliance assessment module coverage (10 frameworks)
 └── screenshots/                        # Platform UI screenshots
 ```
 
@@ -334,6 +341,36 @@ python3 generate_cld_checklist_a11.py
 <td><img src="https://img.shields.io/badge/Assessment_Tool-2E7D32?style=flat-square" alt="Assessment Tool"/></td>
 </tr>
 <tr>
+<td>BSI IT-Grundschutz Kompendium</td>
+<td>Full assessment tool — 68 Bausteine across 10 layers, maturity scoring 0–4. Plus crosswalk: ISO 27001 ↔ BSI (115 mappings), ISO 27701 ↔ BSI (103), ISO 27018 ↔ BSI (51) — basis for dual ISO 27001 / IT-Grundschutz certification</td>
+<td><img src="https://img.shields.io/badge/Assessment_Tool-CC0000?style=flat-square" alt="Assessment Tool"/></td>
+</tr>
+<tr>
+<td>CSRM (Swiss NCSC, 2025)</td>
+<td>Custom object-centric assessment tool — IT Protection Objects, 20 baseline requirements (NIST CSF 2.0 aligned: GV/ID/PR/DE/RS), 6 Control Objectives, binary status (met/partial/not_met/exception). Includes BACS limitation notes and CSF 2.0 upgrade from NCSC comparison documents.</td>
+<td><img src="https://img.shields.io/badge/Assessment_Tool-D32F2F?style=flat-square" alt="Assessment Tool"/></td>
+</tr>
+<tr>
+<td>TISAX / VDA ISA 6.0</td>
+<td>Full assessment tool — 53 requirements across 12 domains (Information Security, Physical Security, Prototype Protection, etc.), maturity scoring 0–4</td>
+<td><img src="https://img.shields.io/badge/Assessment_Tool-1B5E20?style=flat-square" alt="Assessment Tool"/></td>
+</tr>
+<tr>
+<td>Swiss nDSG 2023</td>
+<td>Full assessment tool — 25 provisions across 6 chapters, maturity scoring 0–4</td>
+<td><img src="https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square" alt="Assessment Tool"/></td>
+</tr>
+<tr>
+<td>EU Cyber Resilience Act (2024/2847)</td>
+<td>Full assessment tool — 26 requirements across 6 groups (Essential Cybersecurity, Vulnerability Handling, Conformity, etc.), maturity scoring 0–4</td>
+<td><img src="https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square" alt="Assessment Tool"/></td>
+</tr>
+<tr>
+<td>EU AI Act (2024/1689)</td>
+<td>Full assessment tool — 25 articles across 6 groups (Risk Management, Data Governance, Transparency, Human Oversight, Robustness, Accountability), maturity scoring 0–4</td>
+<td><img src="https://img.shields.io/badge/Assessment_Tool-4527A0?style=flat-square" alt="Assessment Tool"/></td>
+</tr>
+<tr>
 <td>NIST SP 800-53 Rev. 5</td>
 <td>Security control cross-mapping</td>
 <td><img src="https://img.shields.io/badge/Mapped-FF6600?style=flat-square" alt="Mapped"/></td>
@@ -344,19 +381,9 @@ python3 generate_cld_checklist_a11.py
 <td><img src="https://img.shields.io/badge/v18-DC143C?style=flat-square" alt="v18"/></td>
 </tr>
 <tr>
-<td>EU GDPR / Swiss nDSG</td>
+<td>EU GDPR / Swiss DSG</td>
 <td>Security and privacy control mapping, operational checklists</td>
 <td><img src="https://img.shields.io/badge/Toolkit-FFD700?style=flat-square" alt="Toolkit"/></td>
-</tr>
-<tr>
-<td>EU AI Act</td>
-<td>AI risk management mapping</td>
-<td><img src="https://img.shields.io/badge/Mapped-0066CC?style=flat-square" alt="Mapped"/></td>
-</tr>
-<tr>
-<td>BSI IT-Grundschutz Kompendium</td>
-<td>ISO 27001 ↔ BSI IT-Grundschutz crosswalk (115 mappings), ISO 27701 ↔ BSI crosswalk (103), ISO 27018 ↔ BSI crosswalk (51) — basis for dual ISO 27001 / IT-Grundschutz certification</td>
-<td><img src="https://img.shields.io/badge/Mapped-CC0000?style=flat-square" alt="Mapped"/></td>
 </tr>
 </table>
 
@@ -444,7 +471,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 |--------|-------|--------|
 | Platform (API + WebUI) | v1.0 live — 44 connectors | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 | Products integrated | ISMS + Privacy + Cloud | ![v1.0](https://img.shields.io/badge/v1.0-2E8B57?style=flat-square) |
-| Regulatory assessment tools | NIST CSF 2.0 · NIS2 · DORA · CIS Controls v8 | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| Compliance assessment modules | 10 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 
 ---
 
@@ -454,6 +481,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 |----------|-------------|
 | [PARADIGM.md](PARADIGM.md) | 🧭 Product overview and paradigm shift guide |
 | [PLATFORM.md](PLATFORM.md) | 🖥️ Platform architecture, features, and design decisions |
+| [COMPLIANCE.md](COMPLIANCE.md) | 📋 Compliance assessment modules — coverage notes, gaps, and audience for all 10 frameworks |
 | [GETTING-STARTED.md](GETTING-STARTED.md) | 🚀 How to run the Platform (Docker Compose setup guide) |
 | [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 Framework control pack index (53 packs) |
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A controls → 53 pack mapping |

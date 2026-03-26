@@ -114,10 +114,10 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Gaps** | Identified compliance gaps with severity, owner, SLA, and remediation tracking |
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
-| **Frameworks** | 19 reference datasets: ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, and more |
-| **Crosswalk Mappings** | Cross-framework relationships: 2,700+ mappings — including BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51) |
+| **Frameworks** | 23 reference datasets: ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, EU CRA 2024, EU AI Act, and more |
+| **Crosswalk Mappings** | Cross-framework relationships: 2,730+ mappings — including BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
-| **Compliance Assessments** | Generic regulatory assessment table — NIS2 (15 requirements), DORA (25 articles), CIS Controls v8 (153 safeguards), maturity scoring 0–4 |
+| **Compliance Assessments** | 9 generic frameworks (0–4 maturity): NIS2 (15), DORA (25), CIS Controls v8 (153), BSI IT-Grundschutz (68 Bausteine), TISAX (53), Swiss nDSG (25), EU CRA (26), EU AI Act (25). Plus CSRM (object-centric, binary). Assessment Collections group assessments with derived stats, CSV/XLSX/PDF export. See [COMPLIANCE.md](COMPLIANCE.md). |
 | **System Event Log** | Immutable trail of every platform action (who, what, when, resource) |
 
 ---
@@ -171,10 +171,18 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats, import triggers |
 | **Full-Text Search** | Search across all policy and IMP document content via OpenSearch (product-filtered) |
 | **ISMS Compass** | AI gap analysis against ISMS CORE Gold Standard (requires `ANTHROPIC_API_KEY`) |
-| **NIST CSF 2.0 Assessment** | Full assessment tool — 106 subcategories across 6 functions, tier 1–4 ratings, radar + bar chart report page, XLSX import from official NIST template, XLSX/CSV export |
-| **NIS2 Assessment** | EU 2022/2555 compliance tool — 10 Article 21(2) security measures + 5 Article 23 reporting obligations, maturity score 0–4 (Non-compliant → Optimised) |
-| **DORA Assessment** | EU 2022/2554 compliance tool — 25 articles across 4 chapters (ICT Risk Management, Incident Management, Resilience Testing, Third-Party Risk), maturity score 0–4 |
-| **CIS Controls v8 Assessment** | CIS v8 compliance tool — 153 safeguards across 18 controls, maturity score 0–4 |
+| **Compliance Assessment Suite** | 10 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md) for full coverage notes. |
+| **NIST CSF 2.0 Assessment** | 106 subcategories across 6 functions (incl. GV — Govern), tier 1–4 ratings, radar + bar chart report page, XLSX import from official NIST template, XLSX/CSV export |
+| **NIS2 Assessment** | EU 2022/2555 — 10 Article 21(2) security measures + 5 Article 23 reporting obligations, maturity score 0–4 |
+| **DORA Assessment** | EU 2022/2554 — 25 articles across 4 chapters (ICT Risk, Incident Mgmt, Resilience Testing, Third-Party Risk), maturity score 0–4 |
+| **CIS Controls v8 Assessment** | 153 safeguards across 18 controls, maturity score 0–4 |
+| **BSI IT-Grundschutz Assessment** | 68 Bausteine across 10 layers, maturity score 0–4. Paired with 269 crosswalk mappings across three ISO standards. |
+| **CSRM Assessment (NCSC CH)** | Custom object-centric module — IT Protection Objects, 20 NIST CSF 2.0 baseline requirements, binary status (met/partial/not_met/exception), 6 Control Objectives. Includes BACS limitation notes from official NCSC comparison documents. |
+| **TISAX Assessment** | VDA ISA 6.0 — 53 requirements across 12 domains (Information Security, Physical Security, Prototype Protection, etc.), maturity score 0–4 |
+| **Swiss nDSG Assessment** | Swiss Federal Act on Data Protection 2023 — 25 provisions across 6 chapters, maturity score 0–4 |
+| **EU Cyber Resilience Act Assessment** | EU 2024/2847 — 26 essential requirements across 6 groups, maturity score 0–4 |
+| **EU AI Act Assessment** | EU 2024/1689 — 25 articles across 6 groups (Risk Management, Data Governance, Transparency, Human Oversight, Robustness, Accountability), maturity score 0–4 |
+| **Assessment Collections** | Group multiple assessments into named collections with derived stats (completion %, compliance %, status rollup). Export as CSV, colour-coded XLSX, or PDF (A4). |
 | **Collapsible Sidebar** | Azure Portal-style icon-only sidebar — collapses to 52 px strip, full tooltips, state persisted in localStorage |
 | **RBAC** | Role-based access: Admin / ISMS Manager / Auditor / Control Owner / Viewer |
 | **Approval Workflow** | Content state lifecycle: draft → review → approved → published |
