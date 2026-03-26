@@ -94,7 +94,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 |-----------|-----------|------|
 | `isms-core-nginx` | nginx (Alpine) | Reverse proxy — TLS termination, routes `/api/` to backend, `/` to frontend. Ports 80 + 443. |
 | `isms-core-backend` | FastAPI 0.109+ | REST API, auth (JWT), business logic, import orchestration. Internal only — nginx proxies it. |
-| `isms-core-frontend` | React 19 + Vite | WebUI — dashboards, control explorer, evidence management. Internal only — nginx proxies it. |
+| `isms-core-frontend` | React 19 + Vite 8 | WebUI — dashboards, control explorer, evidence management. Internal only — nginx proxies it. |
 | `isms-core-postgres` | PostgreSQL 18 Alpine | Primary data store — all compliance data. Internal only (no exposed port in prod). |
 | `isms-core-redis` | Redis 8 Alpine | Session cache + Celery task broker. Internal only. |
 | `isms-core-opensearch` | OpenSearch 3.x | Full-text search over policy and IMP document content. Internal only. |
@@ -114,8 +114,8 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Gaps** | Identified compliance gaps with severity, owner, SLA, and remediation tracking |
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
-| **Frameworks** | 18 reference datasets: ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, and more |
-| **Crosswalk Mappings** | Cross-framework relationships: 1,500+ mappings across all loaded frameworks |
+| **Frameworks** | 19 reference datasets: ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, and more |
+| **Crosswalk Mappings** | Cross-framework relationships: 2,700+ mappings — including BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
 | **Compliance Assessments** | Generic regulatory assessment table — NIS2 (15 requirements), DORA (25 articles), CIS Controls v8 (153 safeguards), maturity scoring 0–4 |
 | **System Event Log** | Immutable trail of every platform action (who, what, when, resource) |
@@ -161,11 +161,11 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Coverage Heatmap** | Policy and assessment coverage by control group and section |
 | **Policy Manager** | Browse, filter, preview, and manage all POL/OP-POL/PRIV-POL/CLD-POL/INS/REF/CTX documents |
 | **Assessment Tracker** | Framework (188 workbooks), Operational (53 checklists), Privacy (21), Cloud (12) with per-item compliance status |
-| **Gap Management** | Full gap lifecycle: create, assign, track, close — with severity and SLA monitoring |
+| **Gap Management** | Full gap lifecycle: create, assign, track, close — with severity, SLA monitoring, and BSI 200-3 automatic risk calculator (likelihood × impact → risk level, pre-mapped threat codes per ISO section) |
 | **Evidence Tracker** | Evidence items with expiry tracking, verification status, and freshness alerts |
 | **Connectors** | Automated evidence ingestion from 44 systems — continuous compliance signals from real infrastructure |
 | **Nightly Evidence Archive** | Celery Beat job archives stale connector evidence at 02:00 UTC daily |
-| **Crosswalk Viewer** | Cross-framework mappings: ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK ↔ GDPR ↔ DORA and more |
+| **Crosswalk Viewer** | Cross-framework mappings: ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK ↔ GDPR ↔ DORA ↔ BSI IT-Grundschutz and more |
 | **QA / Existence Checker** | Validate that all expected artifacts are present (Framework, Operational, Privacy, Cloud) |
 | **System Event Log** | Full audit log of all platform actions |
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats, import triggers |

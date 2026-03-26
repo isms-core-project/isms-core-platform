@@ -8,7 +8,8 @@
     "cis_v8": "CIS Controls v8.1 Mapping to ISO/IEC 27001:2022",
     "mitre_attack": "CTID Mappings Explorer — NIST 800-53 Rev 5 to ATT&CK",
     "regulatory": "DataGuard, NQA, ENISA, Ceeyu, ISACA published mapping guides",
-    "owasp": "OWASP Top 10:2025 to ISO 27001:2022 control mapping"
+    "owasp": "OWASP Top 10:2025 to ISO 27001:2022 control mapping",
+    "bsi_it_grundschutz": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)"
   },
   "mapping_axes": {
     "ISO27001_2022 ↔ NIST_CSF_2.0": 244,
@@ -24640,6 +24641,2696 @@
       "confidence": 0.9,
       "source_reference": "ISO/IEC 27018:2025 — PII processor cloud controls mapped to ISO/IEC 27001:2022 Annex A",
       "notes": "ISO 27018 PII cloud control A.12.2 extends ISO 27001:2022 A.5.34"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.8",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.10",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.12",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.12",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.13",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.14",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.15",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.16",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.17",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.18",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.19",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.19",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.20",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.22",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.23",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.24",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.2.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.25",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.2.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.26",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.2.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.27",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.2.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.28",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.29",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.30",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.31",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.32",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.33",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.2.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.33",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.34",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.36",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.3.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.37",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.7",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.7",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.7",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.8",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.7",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "SYS.4.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.10",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.11",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.12",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "NET.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.12",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.13",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.13",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.14",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "SYS.4.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.14",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "SYS.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "SYS.2.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "APP.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.8",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "SYS.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "NET.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.10",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.11",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.12",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.13",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.14",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "SYS.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.14",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.17",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "NET.1.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.18",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.18",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.2.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.19",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "NET.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.21",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "NET.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.21",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "NET.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.22",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "NET.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.23",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "NET.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.23",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "APP.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.25",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.8",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.25",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "APP.7",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.26",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.8",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.26",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "APP.3.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.27",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.8",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.28",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.8",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.28",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "APP.3.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.29",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.29",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.8",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.30",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.31",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.32",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.33",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.34",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.3.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle ISO 27001:2022 (BSI, 2023)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "NET.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.8",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.10",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.10",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.11",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.2.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.12",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.2.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.13",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.14",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.2.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.14",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.15",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.3.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.16",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.3.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.17",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.18",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.19",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.7",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.20",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "SYS.4.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.20",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.21",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.22",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "SYS.2.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.23",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.24",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.25",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.26",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.27",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.8",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.27",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "APP.7",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.28",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.8",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.28",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "APP.3.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.29",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.8",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.30",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.31",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.8",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.2.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.8",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.10",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.11",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.8",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.2.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.8",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.10",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.10",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "NET.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.2.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.2.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.2.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.3.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.4.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.4.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.4.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.4.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.4.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "NET.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.2.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.2.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.8",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.8",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.2.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.3.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.3.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.5.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.5.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.2.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.6.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.6.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.2.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.6.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.2.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.8",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.8.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.8.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.10",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.10.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "DER.2.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.10.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.2.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.10.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.10.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.7",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.3",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "SYS.4.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.4",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "INF.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.5",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "SYS.4.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.6",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.7",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.8",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.9",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.10",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ORP.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.10",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.1.1.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.11",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.11",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.12",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.12",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.3.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.13",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "CON.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.13",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "SYS.4.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.12",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.12.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.12.1",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.12.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "ISMS.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.12.2",
+      "target_framework": "BSI_IT_GRUNDSCHUTZ",
+      "target_id": "OPS.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
+      "notes": ""
     }
   ]
 }

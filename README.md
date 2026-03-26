@@ -353,6 +353,11 @@ python3 generate_cld_checklist_a11.py
 <td>AI risk management mapping</td>
 <td><img src="https://img.shields.io/badge/Mapped-0066CC?style=flat-square" alt="Mapped"/></td>
 </tr>
+<tr>
+<td>BSI IT-Grundschutz Kompendium</td>
+<td>ISO 27001 ↔ BSI IT-Grundschutz crosswalk (115 mappings), ISO 27701 ↔ BSI crosswalk (103), ISO 27018 ↔ BSI crosswalk (51) — basis for dual ISO 27001 / IT-Grundschutz certification</td>
+<td><img src="https://img.shields.io/badge/Mapped-CC0000?style=flat-square" alt="Mapped"/></td>
+</tr>
 </table>
 
 ---
