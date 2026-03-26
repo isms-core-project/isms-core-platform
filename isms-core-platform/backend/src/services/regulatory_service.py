@@ -29,6 +29,10 @@ _ASSESSABLE_LEVEL = {
     "DORA": 1,
     "CIS_V8": 1,
     "BSI_IT_GRUNDSCHUTZ": 1,
+    "TISAX": 1,
+    "CH_NDSG": 1,
+    "EU_CRA": 1,
+    "EU_AI_ACT": 1,
 }
 
 

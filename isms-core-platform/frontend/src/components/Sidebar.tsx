@@ -87,11 +87,18 @@ const NAV_PLATFORM: NavItem[] = [
   { label: 'Generators',  path: '/generators',  icon: <CodeOutlined /> },
   { label: 'Report',      path: '/report',      icon: <SummarizeOutlined /> },
   { label: 'Risk Wizard', path: '/risk',        icon: <GppMaybeOutlined /> },
-  { label: 'NIST CSF',    path: '/nist-csf',    icon: <GridViewOutlined /> },
-  { label: 'NIS2',        path: '/nis2',        icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
-  { label: 'DORA',        path: '/dora',        icon: <AccountBalanceOutlined /> },
-  { label: 'CIS Controls', path: '/cis',        icon: <SecurityOutlined /> },
-  { label: 'BSI IT-Grundschutz', path: '/bsi', icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+]
+
+const NAV_COMPLIANCE: NavItem[] = [
+  { label: 'NIST CSF 2.0',        path: '/nist-csf', icon: <GridViewOutlined /> },
+  { label: 'NIS2',                 path: '/nis2',     icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+  { label: 'DORA',                 path: '/dora',     icon: <AccountBalanceOutlined /> },
+  { label: 'CIS Controls',         path: '/cis',      icon: <SecurityOutlined /> },
+  { label: 'BSI IT-Grundschutz',  path: '/bsi',      icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+  { label: 'TISAX',                path: '/tisax',    icon: <VerifiedOutlined /> },
+  { label: 'Swiss nDSG',          path: '/ndsg',     icon: <LockPersonOutlined /> },
+  { label: 'EU Cyber Resilience', path: '/cra',      icon: <SecurityOutlined /> },
+  { label: 'EU AI Act',           path: '/ai-act',   icon: <PolicyOutlined /> },
 ]
 
 const NAV_ADMIN: NavItem[] = [
@@ -119,7 +126,8 @@ const CAT_LABEL: Record<string, string> = { workflow: 'Workflow', system: 'Syste
 const CAT_COLOR: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3a' }
 const CAT_TEXT:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0' }
 const PLATFORM_COLOR = '#6B7A99'
-const PLATFORM_PATHS = ['/qa', '/search', '/compass', '/generators', '/report', '/risk', '/nist-csf', '/nis2', '/dora', '/cis', '/bsi', '/admin', '/connectors', '/system']
+const COMPLIANCE_PATHS = ['/nist-csf', '/nis2', '/dora', '/cis', '/bsi', '/tisax', '/ndsg', '/cra', '/ai-act']
+const PLATFORM_PATHS = ['/qa', '/search', '/compass', '/generators', '/report', '/risk', ...COMPLIANCE_PATHS, '/admin', '/connectors', '/system']
 
 // ── Notification prefs dialog ─────────────────────────────────────────────────
 
@@ -211,7 +219,9 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   const { product, setProduct, ismsTier, setIsmsTier } = useProduct()
 
   const isNeutralPage = location.pathname === '/' || PLATFORM_PATHS.some(p => location.pathname.startsWith(p))
+  const isCompliancePath = COMPLIANCE_PATHS.some(p => location.pathname === p || location.pathname.startsWith(p + '/'))
   const [expandedProduct, setExpandedProduct] = useState<Product | null>(isNeutralPage ? null : product)
+  const [complianceOpen, setComplianceOpen] = useState(isCompliancePath)
 
   const TIER_OPTIONS: { value: IsmsTier; label: string; color: string }[] = [
     { value: 'all',         label: 'All', color: 'rgba(255,255,255,0.55)' },
@@ -553,6 +563,79 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
               )
             })}
           </List>
+        </Box>
+
+        {/* Compliance Assessments collapsible group */}
+        <Box sx={{ pt: 0.25 }}>
+          {!collapsed ? (
+            <Box
+              onClick={() => setComplianceOpen(o => !o)}
+              sx={{
+                display: 'flex', alignItems: 'center', gap: 1,
+                mx: 1, px: 1.25, py: 0.65, borderRadius: 1.5,
+                cursor: 'pointer', userSelect: 'none',
+                '&:hover': { bgcolor: `${PLATFORM_COLOR}10` },
+              }}
+            >
+              <Typography
+                variant="caption"
+                sx={{ flex: 1, fontSize: '0.59rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'text.disabled' }}
+              >
+                Compliance Assessments
+              </Typography>
+              <Box sx={{ color: 'text.disabled', display: 'flex', transition: 'transform 0.2s', transform: complianceOpen ? 'rotate(0deg)' : 'rotate(-90deg)' }}>
+                <ExpandMoreOutlined sx={{ fontSize: 14 }} />
+              </Box>
+            </Box>
+          ) : (
+            <Tooltip title="Compliance Assessments" placement="right">
+              <Box
+                onClick={() => setComplianceOpen(o => !o)}
+                sx={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  mx: 1, py: 0.65, borderRadius: 1.5,
+                  cursor: 'pointer',
+                  '&:hover': { bgcolor: `${PLATFORM_COLOR}10` },
+                }}
+              >
+                <ExpandMoreOutlined sx={{ fontSize: 14, color: 'text.disabled', transition: 'transform 0.2s', transform: complianceOpen ? 'rotate(0deg)' : 'rotate(-90deg)' }} />
+              </Box>
+            </Tooltip>
+          )}
+          <Collapse in={complianceOpen} timeout={180} unmountOnExit>
+            <List disablePadding sx={{ px: 1, pb: 0.5 }}>
+              {NAV_COMPLIANCE.map((item) => {
+                const active = isPlatformNavActive(item.path)
+                return (
+                  <ListItem key={item.path} disablePadding sx={{ mb: 0.15 }}>
+                    <Tooltip title={collapsed ? item.label : ''} placement="right">
+                      <ListItemButton
+                        selected={active}
+                        onClick={() => navigate(item.path)}
+                        sx={{
+                          borderRadius: 1.5, py: 0.5,
+                          px: collapsed ? 0 : 1.5,
+                          justifyContent: collapsed ? 'center' : 'flex-start',
+                          '&.Mui-selected': { bgcolor: `${PLATFORM_COLOR}20`, color: PLATFORM_COLOR, '& .MuiListItemIcon-root': { color: PLATFORM_COLOR } },
+                          '&:hover': { bgcolor: `${PLATFORM_COLOR}12` },
+                        }}
+                      >
+                        <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 30, color: active ? PLATFORM_COLOR : 'text.secondary', transition: 'color 0.15s' }}>
+                          <Box sx={{ '& svg': { fontSize: 18 } }}>{item.icon}</Box>
+                        </ListItemIcon>
+                        {!collapsed && (
+                          <ListItemText
+                            primary={item.label}
+                            primaryTypographyProps={{ variant: 'body2', fontWeight: active ? 600 : 400, fontSize: '0.8rem' }}
+                          />
+                        )}
+                      </ListItemButton>
+                    </Tooltip>
+                  </ListItem>
+                )
+              })}
+            </List>
+          </Collapse>
         </Box>
 
         <Divider sx={{ my: 0.5, mx: 1 }} />

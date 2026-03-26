@@ -65,6 +65,30 @@ const FRAMEWORK_META: Record<string, { name: string; subtitle: string; color: st
     color: '#C62828',
     description: 'BSI IT-Grundschutz Kompendium — 58 Bausteine across 10 layers. Basis for IT-Grundschutz certification, recognised by BSI as equivalent to ISO 27001.',
   },
+  TISAX: {
+    name: 'TISAX / VDA ISA',
+    subtitle: 'v6.0',
+    color: '#1B5E20',
+    description: 'TISAX — Trusted Information Security Assessment Exchange. VDA ISA 6.0 security assessment for automotive supply chain. 55 requirements across 12 domains.',
+  },
+  CH_NDSG: {
+    name: 'Swiss nDSG',
+    subtitle: '2023',
+    color: '#B71C1C',
+    description: 'Swiss Federal Act on Data Protection (nDSG) — in force 1 September 2023. Data protection obligations for controllers and processors operating in or targeting Switzerland.',
+  },
+  EU_CRA: {
+    name: 'EU Cyber Resilience Act',
+    subtitle: '2024/2847',
+    color: '#0D47A1',
+    description: 'EU Cyber Resilience Act — mandatory cybersecurity requirements for products with digital elements. Manufacturers must comply by October 2027.',
+  },
+  EU_AI_ACT: {
+    name: 'EU AI Act',
+    subtitle: '2024/1689',
+    color: '#4A148C',
+    description: 'EU AI Act — risk-based framework for artificial intelligence systems. High-risk AI providers must comply by August 2026.',
+  },
 }
 
 // ── Helpers ────────────────────────────────────────────────────────────────────

@@ -29,6 +29,10 @@ import Nis2 from './pages/Nis2'
 import Dora from './pages/Dora'
 import Cis from './pages/Cis'
 import Bsi from './pages/Bsi'
+import Tisax from './pages/Tisax'
+import Ndsg from './pages/Ndsg'
+import Cra from './pages/Cra'
+import AiAct from './pages/AiAct'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -79,6 +83,10 @@ export default function App() {
         <Route path="dora" element={<Dora />} />
         <Route path="cis" element={<Cis />} />
         <Route path="bsi" element={<Bsi />} />
+        <Route path="tisax" element={<Tisax />} />
+        <Route path="ndsg" element={<Ndsg />} />
+        <Route path="cra" element={<Cra />} />
+        <Route path="ai-act" element={<AiAct />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
