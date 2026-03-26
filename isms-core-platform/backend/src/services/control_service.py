@@ -23,9 +23,9 @@ def list_control_groups(
     if product_family:
         stmt = stmt.where(ControlGroup.product_family == product_family.upper())
     elif product == "framework":
-        stmt = stmt.where(ControlGroup.has_framework.is_(True))
+        stmt = stmt.where(ControlGroup.has_framework.is_(True), ControlGroup.product_family == "ISMS")
     elif product == "operational":
-        stmt = stmt.where(ControlGroup.has_operational.is_(True))
+        stmt = stmt.where(ControlGroup.has_operational.is_(True), ControlGroup.product_family == "ISMS")
 
     return db.execute(stmt).scalars().all()
 
