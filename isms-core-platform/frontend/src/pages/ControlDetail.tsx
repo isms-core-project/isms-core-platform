@@ -128,6 +128,7 @@ interface EvidenceRow {
 interface RealControlDetail {
   id: string
   group_code: string
+  folder_name: string
   name: string
   section: string
   section_name: string
@@ -1766,23 +1767,17 @@ export default function ControlDetail() {
     enabled: !!cg,
   })
 
-  // For controls that genuinely span multiple ISO sections the generator carries
-  // the full combined code (e.g. "A.5.1-2-6.1-2" spans A.5 and A.6).
-  // Detection: the suffix after cg.group_code matches "-N." where N is a
-  // DIFFERENT section number than cg.section.  This correctly excludes
-  // same-section multi-control codes like "A.8.1-7-18-19" (all within A.8).
+  // For controls that span multiple ISO sections, folder_name encodes the full code
+  // (e.g. "isms-a.5.1-2-6.1-2-..." → "A.5.1-2-6.1-2"). Extract it and use it when
+  // it differs from the stored group_code (purely same-section controls like
+  // A.8.1-7-18-19 already have the full code in group_code, so they're unaffected).
   const displayGroupCode = (() => {
     if (!cg) return ''
-    const genCode = generatorsForGroup[0]?.group_code
-    if (!genCode) return cg.group_code.toUpperCase()
-    const gcLower  = cg.group_code.toLowerCase()
-    const genLower = genCode.toLowerCase()
-    if (!genLower.startsWith(gcLower)) return cg.group_code.toUpperCase()
-    const suffix     = genLower.slice(gcLower.length)          // e.g. "-6.1-2"
-    const sectionNum = cg.section.replace(/^[Aa]\./, '')       // e.g. "5"
-    const m          = suffix.match(/^-(\d+)\./)               // cross-section: -N.
-    if (m && m[1] !== sectionNum) return genCode.toUpperCase()
-    return cg.group_code.toUpperCase()
+    const stripped = (cg.folder_name ?? '').replace(/^isms-/i, '')
+    const m = stripped.match(/^(a\.[\d.]+(?:-[\d.]+)*)/i)
+    if (!m) return cg.group_code.toUpperCase()
+    const folderCode = m[1].toUpperCase()
+    return folderCode !== cg.group_code.toUpperCase() ? folderCode : cg.group_code.toUpperCase()
   })()
 
   // Connector evidence — auto-collected from v2.0 connectors

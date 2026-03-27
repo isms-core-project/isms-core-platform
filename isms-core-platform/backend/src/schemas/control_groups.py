@@ -11,6 +11,7 @@ class ControlGroupList(BaseModel):
     name: str
     section: str
     section_name: str
+    folder_name: str = ""
     is_stacked: bool
     has_framework: bool
     has_operational: bool

@@ -38,7 +38,7 @@ function HeatmapCell({ cg }: { cg: CgItem }) {
   const statusColor = STATUS_HM_COLOR[cg.framework_status] ?? STATUS_HM_COLOR.incomplete
   return (
     <Box
-      title={`${cg.group_code.toUpperCase()} — ${cg.name}\nStatus: ${cg.framework_status}`}
+      title={`${getDisplayCode(cg.group_code, cg.folder_name)} — ${cg.name}\nStatus: ${cg.framework_status}`}
       onClick={() => navigate(`/controls/${cg.id}`)}
       sx={{
         width: 60, height: 60, borderRadius: 1.5, cursor: 'pointer',
@@ -84,6 +84,7 @@ const CLOUD_SECTION_COLOR: Record<string, string> = {
 interface CgItem {
   id: string
   group_code: string
+  folder_name?: string
   name: string
   section: string
   section_name: string
@@ -92,6 +93,15 @@ interface CgItem {
   has_operational: boolean
   framework_status: string
   operational_status: string
+}
+
+function getDisplayCode(groupCode: string, folderName?: string): string {
+  if (!folderName) return groupCode.toUpperCase()
+  const stripped = folderName.replace(/^isms-/i, '')
+  const m = stripped.match(/^(a\.[\d.]+(?:-[\d.]+)*)/i)
+  if (!m) return groupCode.toUpperCase()
+  const folderCode = m[1].toUpperCase()
+  return folderCode !== groupCode.toUpperCase() ? folderCode : groupCode.toUpperCase()
 }
 
 function ProductPill({ active, label, color }: { active: boolean; label: string; color: string }) {
@@ -133,7 +143,7 @@ function ControlCard({ cg, colorOverride }: { cg: CgItem; colorOverride?: string
       <CardContent sx={{ pb: '10px !important', pt: 1.25, px: 1.5 }}>
         <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', mb: 0.4 }}>
           <Typography variant="caption" sx={{ color, fontWeight: 700, fontFamily: 'monospace', fontSize: '0.75rem' }}>
-            {cg.group_code.toUpperCase()}
+            {getDisplayCode(cg.group_code, cg.folder_name)}
           </Typography>
           <Box sx={{ display: 'flex', gap: 0.5 }}>
             <ProductPill active={cg.has_framework} label="FW" color="#4472C4" />

@@ -33,6 +33,7 @@ export interface ControlGroupList {
   product_type: string
   is_active: boolean
   created_at: string
+  folder_name?: string
 }
 
 export interface PolicySummary {
