@@ -51,7 +51,7 @@ function HeatmapCell({ cg }: { cg: CgItem }) {
       }}
     >
       <Typography sx={{ color: statusColor, fontWeight: 700, fontFamily: 'monospace', fontSize: '0.6rem', lineHeight: 1.2, textAlign: 'center' }}>
-        {cg.group_code.replace(/^a\./i, '').toUpperCase()}
+        {getDisplayCode(cg.group_code, cg.folder_name).replace(/^A\./, '')}
       </Typography>
       <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: cg.has_framework ? '#4472C4' : 'transparent', border: '1px solid #4472C440' }} />
     </Box>
