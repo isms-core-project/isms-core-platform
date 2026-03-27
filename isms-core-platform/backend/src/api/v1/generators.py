@@ -64,9 +64,13 @@ def get_form_schema(
     if product_type != "framework":
         return []
 
+    gc_lower = group_code.lower()
     q = (
         select(GeneratorDefinition)
-        .where(GeneratorDefinition.group_code == group_code.lower())
+        .where(
+            (GeneratorDefinition.group_code == gc_lower)
+            | GeneratorDefinition.group_code.ilike(f"{gc_lower}-%")
+        )
         .order_by(GeneratorDefinition.domain_number)
     )
     if generator_id:

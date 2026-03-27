@@ -31,6 +31,7 @@ logger = logging.getLogger(__name__)
 
 ISO27001_CODE = "ISO27001_2022"
 GENERATOR_REGISTRY_FILE = "generator_registry.json"
+WORKBOOK_SCHEMAS_FILE = "workbook_schemas.json"
 
 
 class BundleLoader:
@@ -47,8 +48,9 @@ class BundleLoader:
             logger.warning("No JSON files found in %s", self.datasets_path)
             return self._empty_stats()
 
-        # Separate generator_registry.json (list format) from dict-based bundles
+        # Separate list-format files from dict-based bundles
         generator_registry_path: Path | None = None
+        workbook_schemas_path: Path | None = None
         fw_bundles: list[tuple[Path, dict, BundleType]] = []
         cg_bundle: tuple[Path, dict] | None = None
         xw_bundles: list[tuple[Path, dict]] = []
@@ -56,6 +58,9 @@ class BundleLoader:
         for fp in json_files:
             if fp.name == GENERATOR_REGISTRY_FILE:
                 generator_registry_path = fp
+                continue
+            if fp.name == WORKBOOK_SCHEMAS_FILE:
+                workbook_schemas_path = fp
                 continue
             with open(fp) as f:
                 data = json.load(f)
@@ -102,6 +107,10 @@ class BundleLoader:
         # Phase 4: Generator registry (list-format JSON — must run after control groups)
         if generator_registry_path:
             self._load_generator_registry(generator_registry_path, stats)
+
+        # Phase 5: Workbook schemas — populates sheet_schemas on GeneratorDefinition rows
+        if workbook_schemas_path:
+            self._load_workbook_schemas(workbook_schemas_path, stats)
 
         self.db.commit()
         logger.info("Load complete: %s", stats)
@@ -379,7 +388,50 @@ class BundleLoader:
         )
 
     # ------------------------------------------------------------------
-    # Type 5: Crosswalk
+    # Type 5: Workbook schemas (list-format JSON)
+    # ------------------------------------------------------------------
+
+    def _load_workbook_schemas(self, fp: Path, stats: dict):
+        """Populate sheet_schemas column on GeneratorDefinition rows from workbook_schemas.json."""
+        with open(fp) as f:
+            records = json.load(f)
+
+        if not isinstance(records, list):
+            logger.warning("%s: expected a JSON array, got %s — skipping", fp.name, type(records).__name__)
+            return
+
+        updated = 0
+        skipped = 0
+        for rec in records:
+            doc_id = rec.get("document_id")
+            sheets = rec.get("sheets", [])
+            if not doc_id or not sheets:
+                skipped += 1
+                continue
+
+            existing = self.db.execute(
+                select(GeneratorDefinition)
+                .where(GeneratorDefinition.document_id == doc_id)
+            ).scalar_one_or_none()
+
+            if existing is None:
+                skipped += 1
+                continue
+            if existing.user_override:
+                skipped += 1
+                continue
+
+            existing.sheet_schemas = sheets
+            updated += 1
+
+        stats["sheet_schemas"] = updated
+        logger.info(
+            "Loaded %s: %d sheet_schemas updated (%d skipped)",
+            fp.name, updated, skipped,
+        )
+
+    # ------------------------------------------------------------------
+    # Type 6: Crosswalk
     # ------------------------------------------------------------------
 
     def _load_crosswalk(self, filename: str, data: dict, stats: dict):
@@ -584,5 +636,6 @@ class BundleLoader:
             "junctions": 0,
             "mappings": 0,
             "generators": 0,
+            "sheet_schemas": 0,
             "skipped": 0,
         }
