@@ -61,9 +61,6 @@ def get_form_schema(
 ):
     """Return input-only sheet schemas for a control group — used by the WebUI assessment form renderer.
     Optionally filter to a single generator via generator_id (document_id)."""
-    if product_type != "framework":
-        return []
-
     gc_lower = group_code.lower()
     q = (
         select(GeneratorDefinition)
@@ -120,7 +117,11 @@ def list_generators(
         GeneratorDefinition.domain_number,
     )
     if group_code:
-        q = q.where(GeneratorDefinition.group_code.ilike(group_code))
+        gc_lower = group_code.lower()
+        q = q.where(
+            (GeneratorDefinition.group_code == gc_lower)
+            | GeneratorDefinition.group_code.ilike(f"{gc_lower}-%")
+        )
     if section:
         if section == "00":
             q = q.where(GeneratorDefinition.group_code == "00")

@@ -112,7 +112,7 @@ export const assessmentsApi = {
     }).then((r) => r.data),
 
   getGeneratorsForGroup: (groupCode: string) =>
-    client.get<{ document_id: string; workbook_name: string; sheet_count: number }[]>(
+    client.get<{ document_id: string; workbook_name: string; sheet_count: number; group_code: string }[]>(
       `/generators/`, { params: { group_code: groupCode } }
     ).then((r) => r.data),
 }

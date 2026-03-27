@@ -1766,6 +1766,18 @@ export default function ControlDetail() {
     enabled: !!cg,
   })
 
+  // For stacked controls that span multiple sections the generator carries the full
+  // combined code (e.g. "A.5.1-2-6.1-2").  Use it for display; fall back to the
+  // control group's own code for everything else.
+  const displayGroupCode = (() => {
+    if (!cg) return ''
+    const genCode = generatorsForGroup[0]?.group_code
+    if (genCode && genCode.toLowerCase() !== cg.group_code.toLowerCase()) {
+      return genCode.toUpperCase()
+    }
+    return cg.group_code.toUpperCase()
+  })()
+
   // Connector evidence — auto-collected from v2.0 connectors
   const { data: connectorEvidence = [] } = useQuery<ConnectorEvidenceRead[]>({
     queryKey: ['connector-evidence', cg?.group_code ?? ''],
@@ -1851,7 +1863,7 @@ export default function ControlDetail() {
         </Typography>
         <Typography variant="caption" color="text.disabled">›</Typography>
         <Typography variant="caption" color="primary.light" fontWeight={600}>
-          {cg.group_code.toUpperCase()}
+          {displayGroupCode}
         </Typography>
       </Box>
 
@@ -1864,7 +1876,7 @@ export default function ControlDetail() {
         <Box sx={{ flex: 1 }}>
           <Box sx={{ display: 'flex', gap: 0.75, alignItems: 'center', mb: 0.5, flexWrap: 'wrap' }}>
             <Typography variant="caption" sx={{ fontFamily: 'monospace', color: 'primary.light', fontWeight: 700, fontSize: '0.8rem' }}>
-              {cg.group_code.toUpperCase()}
+              {displayGroupCode}
             </Typography>
             <Chip label={cg.section} size="small" sx={{ fontSize: '0.65rem', height: 18 }} />
             <Chip label={cg.section_name} size="small" sx={{ fontSize: '0.65rem', height: 18 }} />
