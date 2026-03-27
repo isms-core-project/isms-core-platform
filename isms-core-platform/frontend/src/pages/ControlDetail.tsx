@@ -1766,15 +1766,22 @@ export default function ControlDetail() {
     enabled: !!cg,
   })
 
-  // For stacked controls that span multiple sections the generator carries the full
-  // combined code (e.g. "A.5.1-2-6.1-2").  Use it for display; fall back to the
-  // control group's own code for everything else.
+  // For controls that genuinely span multiple ISO sections the generator carries
+  // the full combined code (e.g. "A.5.1-2-6.1-2" spans A.5 and A.6).
+  // Detection: the suffix after cg.group_code matches "-N." where N is a
+  // DIFFERENT section number than cg.section.  This correctly excludes
+  // same-section multi-control codes like "A.8.1-7-18-19" (all within A.8).
   const displayGroupCode = (() => {
     if (!cg) return ''
     const genCode = generatorsForGroup[0]?.group_code
-    if (genCode && genCode.toLowerCase() !== cg.group_code.toLowerCase()) {
-      return genCode.toUpperCase()
-    }
+    if (!genCode) return cg.group_code.toUpperCase()
+    const gcLower  = cg.group_code.toLowerCase()
+    const genLower = genCode.toLowerCase()
+    if (!genLower.startsWith(gcLower)) return cg.group_code.toUpperCase()
+    const suffix     = genLower.slice(gcLower.length)          // e.g. "-6.1-2"
+    const sectionNum = cg.section.replace(/^[Aa]\./, '')       // e.g. "5"
+    const m          = suffix.match(/^-(\d+)\./)               // cross-section: -N.
+    if (m && m[1] !== sectionNum) return genCode.toUpperCase()
     return cg.group_code.toUpperCase()
   })()
 
