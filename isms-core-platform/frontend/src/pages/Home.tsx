@@ -16,6 +16,10 @@ import {
   RadioButtonUncheckedOutlined,
   SearchOutlined,
   ElectricalServicesOutlined,
+  GridViewOutlined,
+  AccountBalanceOutlined,
+  SecurityOutlined,
+  PolicyOutlined,
 } from '@mui/icons-material'
 import { useQuery } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
@@ -33,6 +37,19 @@ const PLATFORM_TOOLS = [
   { label: 'Risk',         path: '/risk',         icon: <GppMaybeOutlined sx={{ fontSize: 17 }} /> },
   { label: 'Admin',        path: '/admin',        icon: <AdminPanelSettingsOutlined sx={{ fontSize: 17 }} /> },
   { label: 'System',       path: '/system',       icon: <MonitorHeartOutlined sx={{ fontSize: 17 }} /> },
+]
+
+const COMPLIANCE_TOOLS = [
+  { label: 'NIST CSF 2.0',   path: '/nist-csf', icon: <GridViewOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'NIS2',            path: '/nis2',     icon: <ShieldOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'DORA',            path: '/dora',     icon: <AccountBalanceOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'CIS Controls',   path: '/cis',      icon: <SecurityOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'BSI Grundschutz', path: '/bsi',      icon: <ShieldOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'CSRM (NCSC CH)', path: '/csrm',     icon: <LockPersonOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'TISAX',           path: '/tisax',    icon: <VerifiedOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'Swiss nDSG',     path: '/ndsg',     icon: <LockPersonOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'EU CRA',          path: '/cra',      icon: <SecurityOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'EU AI Act',       path: '/ai-act',   icon: <PolicyOutlined sx={{ fontSize: 17 }} /> },
 ]
 
 const PRODUCT_STANDARDS = {
@@ -356,6 +373,35 @@ export default function Home() {
         </Typography>
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
           {PLATFORM_TOOLS.map((tool) => (
+            <Tooltip key={tool.path} title={tool.label}>
+              <Box
+                onClick={() => navigate(tool.path)}
+                sx={{
+                  display: 'flex', alignItems: 'center', gap: 0.75,
+                  px: 1.5, py: 0.7, borderRadius: 1.5, cursor: 'pointer',
+                  border: '1px solid', borderColor: 'divider',
+                  bgcolor: 'background.paper',
+                  transition: 'all 0.12s',
+                  '&:hover': { borderColor: 'text.secondary', bgcolor: 'action.hover' },
+                }}
+              >
+                <Box sx={{ color: 'text.secondary', display: 'flex' }}>{tool.icon}</Box>
+                <Typography variant="caption" sx={{ fontSize: '0.73rem', color: 'text.secondary', fontWeight: 500 }}>
+                  {tool.label}
+                </Typography>
+              </Box>
+            </Tooltip>
+          ))}
+        </Box>
+      </Box>
+
+      {/* Compliance tools */}
+      <Box sx={{ flexShrink: 0 }}>
+        <Typography variant="caption" sx={{ color: 'text.disabled', fontSize: '0.63rem', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', mb: 0.75 }}>
+          Compliance Assessments
+        </Typography>
+        <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+          {COMPLIANCE_TOOLS.map((tool) => (
             <Tooltip key={tool.path} title={tool.label}>
               <Box
                 onClick={() => navigate(tool.path)}
