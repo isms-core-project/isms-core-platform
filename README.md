@@ -270,15 +270,19 @@ python3 generate_cld_checklist_a11.py
 <table>
 <tr>
 <td align="center"><strong>Login</strong><br/><img src="screenshots/01_isms-core_logon.png" width="380" alt="Login screen"/></td>
-<td align="center"><strong>Home Dashboard</strong><br/><img src="screenshots/02_isms-core_home.png" width="380" alt="Home dashboard — ISMS + Privacy + Cloud product switcher"/></td>
+<td align="center"><strong>Home Dashboard</strong><br/><img src="screenshots/02_isms-core_home.png" width="380" alt="Home dashboard — ISMS + Privacy + Cloud product switcher with compliance quick-access row"/></td>
 </tr>
 <tr>
-<td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core-oveview.png" width="380" alt="Compliance overview — 54 controls, 100% coverage, 77.4% audit readiness"/></td>
+<td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core-oveview.png" width="380" alt="Compliance overview — 54 controls, 100% coverage, audit readiness"/></td>
 <td align="center"><strong>Connectors</strong><br/><img src="screenshots/07_isms-core_connectors.png" width="380" alt="Automated evidence connectors — MS Entra ID, Defender, M365, Azure CSPM"/></td>
 </tr>
 <tr>
 <td align="center"><strong>ISMS Compass (AI Gap Analysis)</strong><br/><img src="screenshots/05_isms-core_compass.png" width="380" alt="ISMS Compass — AI-powered gap analysis against Gold Standard"/></td>
 <td align="center"><strong>System Status</strong><br/><img src="screenshots/08_isms-core_system.png" width="380" alt="System status — all services healthy, 87 groups, OpenSearch green"/></td>
+</tr>
+<tr>
+<td align="center"><strong>Assessments &amp; Collections</strong><br/><img src="screenshots/20_isms-core_assessments.png" width="380" alt="Platform assessments with collections — grouped scoring, CSV/XLSX/PDF export"/></td>
+<td align="center"><strong>Gaps &amp; BSI Risk</strong><br/><img src="screenshots/21_isms-core_gaps.png" width="380" alt="Gap register with BSI 200-3 risk scoring — likelihood, impact, risk level"/></td>
 </tr>
 <tr>
 <td align="center"><strong>NIST CSF 2.0 Assessment</strong><br/><img src="screenshots/10_isms-core_nist-csf.png" width="380" alt="NIST CSF 2.0 — 106 subcategory assessment with tier ratings, function breakdown, and gap analysis"/></td>
@@ -287,6 +291,18 @@ python3 generate_cld_checklist_a11.py
 <tr>
 <td align="center"><strong>DORA Assessment</strong><br/><img src="screenshots/12_isms-core_dora.png" width="380" alt="DORA (EU 2022/2554) — 25 articles across 4 chapters, ICT risk maturity scoring 0–4"/></td>
 <td align="center"><strong>CIS Controls v8 Assessment</strong><br/><img src="screenshots/13_isms-core_cis8.png" width="380" alt="CIS Critical Security Controls v8 — 153 safeguards across 18 controls, maturity scoring 0–4"/></td>
+</tr>
+<tr>
+<td align="center"><strong>BSI IT-Grundschutz Assessment</strong><br/><img src="screenshots/14_isms-core_bsi.png" width="380" alt="BSI IT-Grundschutz Kompendium — 68 building blocks mapped to ISO 27001:2022"/></td>
+<td align="center"><strong>CSRM (NCSC Switzerland)</strong><br/><img src="screenshots/15_isms-core_csrm.png" width="380" alt="Swiss NCSC Cyber Security Risk Management — object-centric assessment model"/></td>
+</tr>
+<tr>
+<td align="center"><strong>TISAX Assessment</strong><br/><img src="screenshots/16_isms-core_tisax.png" width="380" alt="TISAX — VDA ISA automotive information security assessment"/></td>
+<td align="center"><strong>Swiss nDSG Assessment</strong><br/><img src="screenshots/17_isms-core_ndsg.png" width="380" alt="Swiss nDSG (revDSG) — Federal Act on Data Protection compliance assessment"/></td>
+</tr>
+<tr>
+<td align="center"><strong>EU Cyber Resilience Act</strong><br/><img src="screenshots/18_isms-core_eu-cra.png" width="380" alt="EU Cyber Resilience Act — product security requirements assessment"/></td>
+<td align="center"><strong>EU AI Act Assessment</strong><br/><img src="screenshots/19_isms-core_eu-ai.png" width="380" alt="EU AI Act — risk classification and compliance requirements for AI systems"/></td>
 </tr>
 </table>
 
