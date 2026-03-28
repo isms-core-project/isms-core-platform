@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from 'react'
-import type { ProjectRead } from '../api/projectsApi'
+import { createContext, useContext, useEffect, useState } from 'react'
+import { projectsApi, type ProjectRead } from '../api/projectsApi'
 
 interface ProjectContextValue {
   activeProjectId: string | null
@@ -22,6 +22,22 @@ export function ProjectProvider({ children }: { children: React.ReactNode }) {
       return null
     }
   })
+
+  // Validate stored project still exists in DB on mount
+  useEffect(() => {
+    const stored = localStorage.getItem('isms_active_project')
+    if (!stored) return
+    try {
+      const p = JSON.parse(stored) as ProjectRead
+      projectsApi.get(p.id).catch(() => {
+        localStorage.removeItem('isms_active_project')
+        setActiveProjectState(null)
+      })
+    } catch {
+      localStorage.removeItem('isms_active_project')
+      setActiveProjectState(null)
+    }
+  }, [])
 
   function setActiveProject(p: ProjectRead | null) {
     setActiveProjectState(p)
