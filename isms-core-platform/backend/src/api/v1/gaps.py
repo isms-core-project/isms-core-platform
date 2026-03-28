@@ -64,6 +64,7 @@ def list_gaps(
     status: str | None = Query(None),
     product: str | None = Query(None),
     control_group_id: uuid.UUID | None = Query(None),
+    project_id: uuid.UUID | None = Query(None),
     limit: int = Query(200, ge=1, le=1000),
     offset: int = Query(0, ge=0),
     db: DBSession = Depends(get_db),
@@ -78,6 +79,8 @@ def list_gaps(
         q = q.where(Gap.product_type.in_([product, "both"]))
     if control_group_id:
         q = q.where(Gap.control_group_id == control_group_id)
+    if project_id:
+        q = q.where(Gap.project_id == project_id)
     q = q.order_by(Gap.created_at.desc()).offset(offset).limit(limit)
     gaps = db.execute(q).scalars().all()
     return [_enrich(g, db) for g in gaps]
@@ -113,6 +116,7 @@ def create_gap(
         due_date=body.due_date,
         remediation_plan=body.remediation_plan,
         metadata_=meta,
+        project_id=body.project_id,
     )
     db.add(gap)
     db.commit()

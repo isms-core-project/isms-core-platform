@@ -56,7 +56,14 @@ class Assessment(TimestampMixin, Base):
         JSONB, default=dict, server_default="{}"
     )
 
+    project_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("projects.id", ondelete="SET NULL"),
+        nullable=True,
+    )
+
     # Relationships
+    project: Mapped["Project | None"] = relationship()
     control_group: Mapped["ControlGroup"] = relationship(back_populates="assessments")
     sheets: Mapped[list["AssessmentSheet"]] = relationship(
         back_populates="assessment", cascade="all, delete-orphan"

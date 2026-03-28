@@ -13,6 +13,7 @@ import {
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { regulatoryApi, type AssessmentSummary, type FullAssessment, type RatingUpsert } from '../api/regulatoryApi'
+import { useProject } from '../store/ProjectContext'
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
@@ -129,8 +130,8 @@ function ScoreBar({ value, max = 4, color }: { value: number | null; max?: numbe
 // ── Create dialog ──────────────────────────────────────────────────────────────
 
 function CreateDialog({
-  open, frameworkCode, onClose,
-}: { open: boolean; frameworkCode: string; onClose: () => void }) {
+  open, frameworkCode, onClose, projectId,
+}: { open: boolean; frameworkCode: string; onClose: () => void; projectId?: string | null }) {
   const queryClient = useQueryClient()
   const [name, setName] = useState('')
   const [assessor, setAssessor] = useState('')
@@ -146,6 +147,7 @@ function CreateDialog({
       assessor: assessor || undefined,
       organisation: org || undefined,
       scope: scope || undefined,
+      project_id: projectId ?? null,
     }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['regulatory', frameworkCode, 'assessments'] })
@@ -676,14 +678,17 @@ function AssessmentDetail({
 
 export default function ComplianceAssessment({ frameworkCode }: { frameworkCode: string }) {
   const queryClient = useQueryClient()
+  const { activeProject } = useProject()
   const meta = FRAMEWORK_META[frameworkCode] ?? { name: frameworkCode, subtitle: '', color: '#1976d2', description: '' }
   const [createOpen, setCreateOpen] = useState(false)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [deleteId, setDeleteId] = useState<string | null>(null)
 
+  const projectIdParam = activeProject?.id
+
   const { data: assessments = [], isLoading } = useQuery({
-    queryKey: ['regulatory', frameworkCode, 'assessments'],
-    queryFn: () => regulatoryApi.listAssessments(frameworkCode),
+    queryKey: ['regulatory', frameworkCode, 'assessments', projectIdParam],
+    queryFn: () => regulatoryApi.listAssessments(frameworkCode, projectIdParam ? { project_id: projectIdParam } : undefined),
   })
 
   const deleteMutation = useMutation({
@@ -716,15 +721,35 @@ export default function ComplianceAssessment({ frameworkCode }: { frameworkCode:
           </Box>
           <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 600 }}>{meta.description}</Typography>
         </Box>
-        <Button
-          variant="contained"
-          startIcon={<AddOutlined />}
-          onClick={() => setCreateOpen(true)}
-          sx={{ bgcolor: meta.color, '&:hover': { bgcolor: meta.color + 'cc' }, flexShrink: 0 }}
-        >
-          New Assessment
-        </Button>
+        <Tooltip title={!activeProject ? 'Select a project first to create an assessment' : ''}>
+          <span>
+            <Button
+              variant="contained"
+              startIcon={<AddOutlined />}
+              onClick={() => setCreateOpen(true)}
+              disabled={!activeProject}
+              sx={{ bgcolor: meta.color, '&:hover': { bgcolor: meta.color + 'cc' }, flexShrink: 0, '&.Mui-disabled': { bgcolor: meta.color + '44' } }}
+            >
+              New Assessment
+            </Button>
+          </span>
+        </Tooltip>
       </Box>
+
+      {/* Project scope banner */}
+      {activeProject ? (
+        <Alert severity="success" sx={{ mb: 2, py: 0.5, fontSize: '0.8rem' }}>
+          Showing assessments for project <strong>{activeProject.name}</strong>. New assessments will be linked to this project.
+        </Alert>
+      ) : (
+        <Alert
+          severity="warning"
+          sx={{ mb: 2, py: 0.5, fontSize: '0.8rem' }}
+          action={<Button color="inherit" size="small" href="/projects">Go to Projects</Button>}
+        >
+          No project selected — assessments must be linked to a project. Select an active project first.
+        </Alert>
+      )}
 
       {/* Divider */}
       <Divider sx={{ mb: 3 }} />
@@ -738,7 +763,7 @@ export default function ComplianceAssessment({ frameworkCode }: { frameworkCode:
           <Typography variant="body2" color="text.disabled" sx={{ mb: 3 }}>
             Create your first {meta.name} assessment to get started.
           </Typography>
-          <Button variant="outlined" startIcon={<AddOutlined />} onClick={() => setCreateOpen(true)}>
+          <Button variant="outlined" startIcon={<AddOutlined />} onClick={() => setCreateOpen(true)} disabled={!activeProject}>
             New Assessment
           </Button>
         </Box>
@@ -760,6 +785,7 @@ export default function ComplianceAssessment({ frameworkCode }: { frameworkCode:
         open={createOpen}
         frameworkCode={frameworkCode}
         onClose={() => setCreateOpen(false)}
+        projectId={projectIdParam}
       />
 
       {/* Delete confirm */}

@@ -32,8 +32,11 @@ from sqlalchemy.orm import Session as DBSession
 
 from src.core.dependencies import get_current_user, require_admin
 from src.database.session import get_db
-from src.domain.connectors import Connector
+from src.domain.connectors import Connector, ConnectorEvidence
+from src.domain.compliance import Evidence
 from src.domain.users import User
+from src.database.enums import EvidenceStatus, EvidenceType
+from pydantic import BaseModel
 from src.schemas.connectors import (
     ConnectorConfigRead,
     ConnectorConfigUpdate,
@@ -382,6 +385,49 @@ def delete_connector_evidence(
         raise HTTPException(status_code=404, detail="Connector not found")
     count = connector_service.delete_connector_evidence(db, connector)
     return {"deleted": count}
+
+
+# ── Promote connector evidence → manual evidence ──────────────────────────────
+
+class PromoteRequest(BaseModel):
+    project_id: uuid.UUID
+
+
+@router.post("/evidence/item/{evidence_id}/promote", status_code=201)
+def promote_connector_evidence(
+    evidence_id: uuid.UUID,
+    body: PromoteRequest,
+    db: DBSession = Depends(get_db),
+    _user: User = Depends(get_current_user),
+):
+    """Promote a connector evidence item to a manual evidence record linked to a project."""
+    from sqlalchemy import select as sa_select
+    item = db.execute(
+        sa_select(ConnectorEvidence).where(ConnectorEvidence.id == evidence_id)
+    ).scalar_one_or_none()
+    if not item:
+        raise HTTPException(status_code=404, detail="Connector evidence not found")
+
+    ev = Evidence(
+        id=uuid.uuid4(),
+        control_group_id=item.control_group_id,
+        project_id=body.project_id,
+        evidence_type=EvidenceType.LOG_EXTRACT,
+        evidence_status=EvidenceStatus.ACTIVE,
+        title=item.title,
+        metadata_={
+            "promoted_from": "connector_evidence",
+            "connector_evidence_id": str(item.id),
+            "connector_id": str(item.connector_id),
+            "source_ref": item.source_ref or "",
+            "source_url": item.source_url or "",
+            "classification": item.classification or "",
+        },
+    )
+    db.add(ev)
+    db.commit()
+    db.refresh(ev)
+    return {"id": str(ev.id), "title": ev.title, "project_id": str(ev.project_id)}
 
 
 # ── Archiving ─────────────────────────────────────────────────────────────────

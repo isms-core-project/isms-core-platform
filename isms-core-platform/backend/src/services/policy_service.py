@@ -16,7 +16,9 @@ def list_policies(
         .join(ControlGroup, Policy.control_group_id == ControlGroup.id)
         .order_by(ControlGroup.group_code, Policy.product_type, Policy.document_id)
     )
-    if product:
+    if product == "isms":
+        stmt = stmt.where(Policy.product_type.in_(["framework", "operational"]))
+    elif product:
         stmt = stmt.where(Policy.product_type == product)
     if policy_type:
         stmt = stmt.where(Policy.policy_type == policy_type)

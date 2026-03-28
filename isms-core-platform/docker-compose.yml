@@ -84,10 +84,10 @@ services:
     # Port 8000 not published externally — nginx proxies /api/
     volumes:
       - ./datasets/data:/app/datasets:ro
-      - ../isms-core-framework:/app/isms-framework:ro
-      - ../isms-core-operational:/app/isms-operational:ro
-      - ../isms-core-privacy:/app/isms-privacy:ro
-      - ../isms-core-cloud:/app/isms-cloud:ro
+      - ${FRAMEWORK_HOST_PATH:-../isms-core-framework}:/app/isms-framework:ro
+      - ${OPERATIONAL_HOST_PATH:-../isms-core-operational}:/app/isms-operational:ro
+      - ${PRIVACY_HOST_PATH:-../isms-core-privacy}:/app/isms-privacy:ro
+      - ${CLOUD_HOST_PATH:-../isms-core-cloud}:/app/isms-cloud:ro
     environment:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
@@ -133,10 +133,10 @@ services:
     command: celery -A src.worker.celery_app beat --loglevel=info
     volumes:
       - ./datasets/data:/app/datasets:ro
-      - ../isms-core-framework:/app/isms-framework:ro
-      - ../isms-core-operational:/app/isms-operational:ro
-      - ../isms-core-privacy:/app/isms-privacy:ro
-      - ../isms-core-cloud:/app/isms-cloud:ro
+      - ${FRAMEWORK_HOST_PATH:-../isms-core-framework}:/app/isms-framework:ro
+      - ${OPERATIONAL_HOST_PATH:-../isms-core-operational}:/app/isms-operational:ro
+      - ${PRIVACY_HOST_PATH:-../isms-core-privacy}:/app/isms-privacy:ro
+      - ${CLOUD_HOST_PATH:-../isms-core-cloud}:/app/isms-cloud:ro
     environment:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
@@ -164,10 +164,10 @@ services:
     command: celery -A src.worker.celery_app worker --loglevel=info --queues=isms
     volumes:
       - ./datasets/data:/app/datasets:ro
-      - ../isms-core-framework:/app/isms-framework:ro
-      - ../isms-core-operational:/app/isms-operational:ro
-      - ../isms-core-privacy:/app/isms-privacy:ro
-      - ../isms-core-cloud:/app/isms-cloud:ro
+      - ${FRAMEWORK_HOST_PATH:-../isms-core-framework}:/app/isms-framework:ro
+      - ${OPERATIONAL_HOST_PATH:-../isms-core-operational}:/app/isms-operational:ro
+      - ${PRIVACY_HOST_PATH:-../isms-core-privacy}:/app/isms-privacy:ro
+      - ${CLOUD_HOST_PATH:-../isms-core-cloud}:/app/isms-cloud:ro
     environment:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0

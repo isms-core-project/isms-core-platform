@@ -233,6 +233,7 @@ export interface GapCreate {
   due_date?: string
   remediation_plan?: string
   workbook_document_id?: string
+  project_id?: string
 }
 
 export interface GapPatch {
@@ -354,6 +355,7 @@ export interface SearchResponse {
 export interface EvidenceRead {
   id: string
   control_group_id: string | null
+  group_code: string | null
   requirement_id: string | null
   assessment_item_id: string | null
   evidence_type: string

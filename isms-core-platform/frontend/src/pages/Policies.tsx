@@ -57,8 +57,8 @@ export default function Policies() {
     },
   })
 
-  // When ISMS tier filter is active, map it to API product param; otherwise pass product as-is
-  const tieredProduct = product === 'isms' && ismsTier !== 'all' ? ismsTier : undefined
+  // When ISMS tier filter is active, map it to API product param; otherwise pass 'isms' (fw+op only)
+  const tieredProduct = product === 'isms' && ismsTier !== 'all' ? ismsTier : 'isms'
   const effectiveProduct = externalOnly ? 'external' : (product === 'isms' ? tieredProduct : product)
 
   // Reset type filter when switching products to avoid stale ISMS types on PRIV/CLD

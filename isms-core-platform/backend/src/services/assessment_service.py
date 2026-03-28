@@ -15,6 +15,7 @@ def list_assessments(
     db: DBSession,
     product: str | None = None,
     product_family: str | None = None,
+    project_id: uuid.UUID | None = None,
 ) -> list[AssessmentListRead]:
     stmt = (
         select(Assessment, ControlGroup.group_code, ControlGroup.name)
@@ -28,6 +29,8 @@ def list_assessments(
             stmt = stmt.where(ControlGroup.product_family == ProductFamily(product_family.upper()))
         except ValueError:
             pass
+    if project_id:
+        stmt = stmt.where(Assessment.project_id == project_id)
     rows = db.execute(stmt).all()
     result = []
     for assessment, group_code, group_name in rows:
@@ -80,6 +83,7 @@ def create_platform_assessment(
     scope: str = "",
     purpose: str = "",
     target_date: str = "",
+    project_id: uuid.UUID | None = None,
 ) -> Assessment:
     """Create a new platform-originated assessment (no file, from WebUI form)."""
     group = db.execute(
@@ -114,6 +118,7 @@ def create_platform_assessment(
         sheets_count=len(sheet_names),
         last_generated=ts,
         summary=summary,
+        project_id=project_id,
     )
     db.add(assessment)
     db.flush()

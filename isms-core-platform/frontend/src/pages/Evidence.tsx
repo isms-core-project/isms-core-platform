@@ -34,6 +34,7 @@ import {
 } from '@mui/material'
 import {
   AssignmentOutlined,
+  CheckCircleOutlined,
   CheckCircleOutlineOutlined,
   CheckOutlined,
   CloseOutlined,
@@ -42,6 +43,7 @@ import {
   ErrorOutlineOutlined,
   FileUploadOutlined,
   LinkOutlined,
+  MoveToInboxOutlined,
   OpenInNewOutlined,
   SendOutlined,
   SmartToyOutlined,
@@ -59,6 +61,7 @@ import MetricCard from '../components/MetricCard'
 import StatusChip from '../components/StatusChip'
 import { useProduct } from '../store/ProductContext'
 import { useAuth } from '../store/AuthContext'
+import { useProject } from '../store/ProjectContext'
 
 const EVIDENCE_TYPES = [
   'document',
@@ -86,11 +89,13 @@ function UploadDialog({
   onClose,
   onSuccess,
   activeProduct,
+  projectId,
 }: {
   open: boolean
   onClose: () => void
   onSuccess: () => void
   activeProduct: string
+  projectId?: string
 }) {
   const isIsms = activeProduct === 'isms'
 
@@ -144,6 +149,7 @@ function UploadDialog({
     fd.append('group_code', groupCode.toLowerCase())
     const notesWithWorkbook = [workbookId ? `Workbook: ${workbookId}` : '', notes].filter(Boolean).join('\n')
     if (notesWithWorkbook) fd.append('notes', notesWithWorkbook)
+    if (projectId) fd.append('project_id', projectId)
     mutation.mutate(fd)
   }
 
@@ -479,10 +485,12 @@ const CLASSIFICATION_COLORS: Record<string, string> = {
 function AutomatedEvidenceTab({ isAdmin, activeProduct }: { isAdmin: boolean; activeProduct: string }) {
   const qc = useQueryClient()
   const navigate = useNavigate()
+  const { activeProject } = useProject()
   const [connectorFilter, setConnectorFilter] = useState('all')
   const [classFilter, setClassFilter] = useState('all')
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null)   // evidence item id
   const [confirmBulk, setConfirmBulk]   = useState<string | null>(null)   // connector id
+  const [promoted, setPromoted] = useState<Set<string>>(new Set())
 
   const { data: items = [], isLoading, error } = useQuery({
     queryKey: ['automated-evidence', activeProduct],
@@ -510,6 +518,14 @@ function AutomatedEvidenceTab({ isAdmin, activeProduct }: { isAdmin: boolean; ac
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['automated-evidence'] })
       setConfirmBulk(null)
+    },
+  })
+
+  const promote = useMutation({
+    mutationFn: (evidenceId: string) => connectorsApi.promoteEvidence(evidenceId, activeProject!.id),
+    onSuccess: (_data, evidenceId) => {
+      setPromoted((prev) => new Set(prev).add(evidenceId))
+      qc.invalidateQueries({ queryKey: ['evidence'] })
     },
   })
 
@@ -616,7 +632,7 @@ function AutomatedEvidenceTab({ isAdmin, activeProduct }: { isAdmin: boolean; ac
                 <TableCell>Status</TableCell>
                 <TableCell>Event Date</TableCell>
                 <TableCell>Source</TableCell>
-                {isAdmin && <TableCell align="right">Actions</TableCell>}
+                {(isAdmin || !!activeProject) && <TableCell align="right">Actions</TableCell>}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -697,13 +713,33 @@ function AutomatedEvidenceTab({ isAdmin, activeProduct }: { isAdmin: boolean; ac
                       </Typography>
                     ) : <Typography variant="caption" color="text.disabled">—</Typography>}
                   </TableCell>
-                  {isAdmin && (
+                  {(isAdmin || !!activeProject) && (
                     <TableCell align="right" onClick={(e) => e.stopPropagation()}>
-                      <Tooltip title="Delete item">
-                        <IconButton size="small" sx={{ color: 'error.main' }} onClick={() => setConfirmDelete(ev.id)}>
-                          <DeleteOutlined fontSize="small" />
-                        </IconButton>
-                      </Tooltip>
+                      <Box sx={{ display: 'flex', gap: 0.5, justifyContent: 'flex-end' }}>
+                        {activeProject && (
+                          <Tooltip title={promoted.has(ev.id) ? 'Promoted!' : `Promote to ${activeProject.name}`}>
+                            <span>
+                              <IconButton
+                                size="small"
+                                sx={{ color: promoted.has(ev.id) ? 'success.main' : 'primary.light' }}
+                                onClick={() => !promoted.has(ev.id) && promote.mutate(ev.id)}
+                                disabled={promote.isPending}
+                              >
+                                {promoted.has(ev.id)
+                                  ? <CheckCircleOutlined fontSize="small" />
+                                  : <MoveToInboxOutlined fontSize="small" />}
+                              </IconButton>
+                            </span>
+                          </Tooltip>
+                        )}
+                        {isAdmin && (
+                          <Tooltip title="Delete item">
+                            <IconButton size="small" sx={{ color: 'error.main' }} onClick={() => setConfirmDelete(ev.id)}>
+                              <DeleteOutlined fontSize="small" />
+                            </IconButton>
+                          </Tooltip>
+                        )}
+                      </Box>
                     </TableCell>
                   )}
                 </TableRow>
@@ -774,6 +810,7 @@ function EvidenceStatusChip({ status }: { status: string }) {
 export default function Evidence() {
   const { product: activeProduct } = useProduct()
   const { user } = useAuth()
+  const { activeProject } = useProject()
   const isAdmin = user?.role === 'admin'
   const [mainTab, setMainTab] = useState<MainTab>('manual')
   const [uploadOpen, setUploadOpen] = useState(false)
@@ -785,9 +822,11 @@ export default function Evidence() {
   const [rejectTarget, setRejectTarget] = useState<string | null>(null)
   const queryClient = useQueryClient()
 
+  const projectIdParam = activeProject?.id
+
   const { data, isLoading, error } = useQuery({
-    queryKey: ['evidence'],
-    queryFn: () => evidenceApi.list({ limit: 500 }),
+    queryKey: ['evidence', projectIdParam],
+    queryFn: () => evidenceApi.list({ limit: 500, project_id: projectIdParam }),
   })
 
   const deleteMutation = useMutation({
@@ -837,19 +876,39 @@ export default function Evidence() {
       <PageHeader
         title="Evidence Tracker"
         subtitle={mainTab === 'manual'
-          ? `${items.length} items · ${drafts.length} drafts · ${pending.length} pending review`
+          ? (activeProject ? `${activeProject.name} · ${items.length} items · ${drafts.length} drafts` : `${items.length} items · ${drafts.length} drafts · ${pending.length} pending review`)
           : 'Automated evidence collected by connectors'}
         actions={mainTab === 'manual' ? (
-          <Box sx={{ display: 'flex', gap: 1 }}>
-            <Button variant="outlined" size="small" startIcon={<FileUploadOutlined />} onClick={() => setBulkOpen(true)}>
-              Bulk Upload
-            </Button>
-            <Button variant="contained" size="small" startIcon={<UploadFileOutlined />} onClick={() => setUploadOpen(true)}>
-              Upload Evidence
-            </Button>
-          </Box>
+          <Tooltip title={!activeProject ? 'Select a project first to upload evidence' : ''}>
+            <Box sx={{ display: 'flex', gap: 1 }}>
+              <Button variant="outlined" size="small" startIcon={<FileUploadOutlined />} onClick={() => setBulkOpen(true)} disabled={!activeProject}>
+                Bulk Upload
+              </Button>
+              <Button variant="contained" size="small" startIcon={<UploadFileOutlined />} onClick={() => setUploadOpen(true)} disabled={!activeProject}>
+                Upload Evidence
+              </Button>
+            </Box>
+          </Tooltip>
         ) : undefined}
       />
+
+      {activeProject ? (
+        <Alert severity="success" sx={{ mb: 2 }}>
+          Showing evidence for project: <strong>{activeProject.name}</strong> — {activeProject.org_name}
+        </Alert>
+      ) : (
+        <Alert
+          severity="warning"
+          sx={{ mb: 2 }}
+          action={
+            <Button color="inherit" size="small" href="/projects">
+              Go to Projects
+            </Button>
+          }
+        >
+          No project selected — evidence must be linked to a project. Select an active project to start uploading.
+        </Alert>
+      )}
 
       {/* Main tab switcher */}
       <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 2 }}>
@@ -863,7 +922,7 @@ export default function Evidence() {
 
       {mainTab === 'manual' && (
       <Box>
-      <UploadDialog open={uploadOpen} onClose={() => setUploadOpen(false)} onSuccess={invalidate} activeProduct={activeProduct} />
+      <UploadDialog open={uploadOpen} onClose={() => setUploadOpen(false)} onSuccess={invalidate} activeProduct={activeProduct} projectId={projectIdParam} />
       <BulkUploadDialog open={bulkOpen} onClose={() => setBulkOpen(false)} onSuccess={invalidate} />
       {assignTarget && (
         <AssignDialog evidence={assignTarget} open onClose={() => setAssignTarget(null)} />

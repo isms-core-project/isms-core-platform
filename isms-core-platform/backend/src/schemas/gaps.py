@@ -14,6 +14,7 @@ class GapCreate(BaseModel):
     remediation_plan: str | None = None
     requirement_id: uuid.UUID | None = None
     workbook_document_id: str | None = None  # e.g. ISMS-IMP-A.7.4-5-11-S1 — stored in metadata_
+    project_id: uuid.UUID | None = None
 
 
 class GapPatch(BaseModel):

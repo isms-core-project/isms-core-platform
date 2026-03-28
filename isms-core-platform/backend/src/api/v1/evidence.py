@@ -49,6 +49,7 @@ async def upload_evidence(
     collected_date: date | None = Form(None, description="Date evidence was collected (YYYY-MM-DD)"),
     expires_date: date | None = Form(None, description="Date evidence expires (YYYY-MM-DD)"),
     notes: str | None = Form(None, description="Free-text notes"),
+    project_id: uuid.UUID | None = Form(None, description="Optional: link to a project"),
     db: DBSession = Depends(get_db),
     _user: User = Depends(get_current_user),
 ):
@@ -88,6 +89,7 @@ async def upload_evidence(
             collected_date=collected_date,
             expires_date=expires_date,
             notes=notes,
+            project_id=project_id,
         )
     except ValueError as e:
         raise HTTPException(status_code=422, detail=str(e))
@@ -165,17 +167,34 @@ def list_evidence(
     group_code: str | None = Query(None, description="Filter by group code (e.g. a.8.8)"),
     evidence_type: str | None = Query(None, description="Filter by type"),
     evidence_status: str | None = Query(None, description="Filter by status: draft|pending_review|approved|rejected|active"),
+    project_id: uuid.UUID | None = Query(None, description="Filter by project"),
     limit: int = Query(100, ge=1, le=500),
     offset: int = Query(0, ge=0),
     db: DBSession = Depends(get_db),
     _user: User = Depends(get_current_user),
 ):
     """List evidence items with optional filters."""
+    from sqlalchemy import select as sa_select
+    from src.domain.compliance import Evidence
+
     cg_id = control_group_id
     if group_code and not cg_id:
         cg = get_control_group_by_code(db, group_code)
         if cg:
             cg_id = cg.id
+
+    if project_id is not None:
+        # project_id filter not yet in evidence_service — apply directly
+        q = sa_select(Evidence)
+        if cg_id:
+            q = q.where(Evidence.control_group_id == cg_id)
+        if evidence_type:
+            q = q.where(Evidence.evidence_type == evidence_type)
+        if evidence_status:
+            q = q.where(Evidence.evidence_status == EvidenceStatus(evidence_status))
+        q = q.where(Evidence.project_id == project_id)
+        q = q.order_by(Evidence.created_at.desc()).offset(offset).limit(limit)
+        return db.execute(q).scalars().all()
 
     return evidence_service.list_evidence(
         db,

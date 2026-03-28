@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useProduct, PRODUCT_SUBTITLES, PRODUCT_COLORS } from '../store/ProductContext'
+import { useProject } from '../store/ProjectContext'
 import {
   Box, Card, CardContent, Typography, Chip, Skeleton, Alert,
   Button, IconButton, Tooltip, Collapse, Table, TableBody,
@@ -516,6 +517,7 @@ export default function Assessments() {
   const navigate = useNavigate()
   const queryClient = useQueryClient()
   const { product, ismsTier } = useProduct()
+  const { activeProject } = useProject()
 
   // Tab state
   const [activeTab, setActiveTab] = useState<'platform' | 'library' | 'collections'>('platform')
@@ -537,18 +539,28 @@ export default function Assessments() {
 
   const isIsms = product === 'isms'
 
-  const { data: all = [], isLoading } = useQuery({
-    queryKey: ['assessments', product],
+  const projectIdParam = activeProject?.id
+
+  // Platform assessments: scoped to active project (like Gaps/Evidence)
+  const { data: platformAll = [], isLoading } = useQuery({
+    queryKey: ['assessments', product, projectIdParam],
+    queryFn: () => assessmentsApi.list({ product_family: product.toUpperCase(), project_id: projectIdParam }),
+  })
+
+  // Library assessments: always all workbooks regardless of project
+  const { data: libraryAll = [] } = useQuery({
+    queryKey: ['assessments-library', product],
     queryFn: () => assessmentsApi.list({ product_family: product.toUpperCase() }),
   })
 
-  const { data: groups = [] } = useQuery({
+  const { data: rawGroups = [] } = useQuery({
     queryKey: ['control-groups-new-dialog', isIsms ? selectedProduct : product],
     queryFn: () => isIsms
       ? controlsApi.list({ product: selectedProduct })
       : controlsApi.list({ product_family: product.toUpperCase() }),
     enabled: newDialogOpen,
   })
+  const groups = rawGroups
 
   const { data: generatorsForGroup = [] } = useQuery({
     queryKey: ['generators-for-group', selectedGroupCode],
@@ -564,8 +576,8 @@ export default function Assessments() {
     },
   })
 
-  const platform = all.filter(isPlatform)
-  const library  = all.filter(a => !isPlatform(a))
+  const platform = platformAll.filter(isPlatform)
+  const library  = libraryAll.filter(a => !isPlatform(a))
 
   function matchesTier(productType: string) {
     if (product !== 'isms' || ismsTier === 'all') return true
@@ -593,9 +605,13 @@ export default function Assessments() {
   const inProgress  = tierPlatform.filter(a => getStatus(a) === 'in_progress').length
   const complete    = tierPlatform.filter(a => getStatus(a) === 'complete').length
 
-  // Auto-select generator when only one exists for the group
-  const needsGeneratorPick = selectedGroupCode && selectedProduct === 'framework' && generatorsForGroup.length > 1
-  const autoGeneratorId = generatorsForGroup.length === 1 ? generatorsForGroup[0].document_id : undefined
+  // Filter out checklist generators (sheet_count === 0) — not valid platform assessment workbooks
+  const validGenerators = generatorsForGroup.filter(g => g.sheet_count > 0)
+  // Auto-select generator when only one valid generator exists for the group
+  const needsGeneratorPick = selectedGroupCode && selectedProduct === 'framework' && validGenerators.length > 1
+  const autoGeneratorId = validGenerators.length === 1 ? validGenerators[0].document_id : undefined
+  // True when group is selected but has no valid (non-checklist) generators — disable Continue
+  const noValidGenerators = !!(selectedGroupCode && selectedProduct === 'framework' && generatorsForGroup.length > 0 && validGenerators.length === 0)
 
   function handleNewFromDialog() {
     const g = groups.find(g => g.group_code === selectedGroupCode)
@@ -613,14 +629,35 @@ export default function Assessments() {
     <Box>
       <PageHeader
         title="Assessments"
-        subtitle={`${product !== 'isms' ? PRODUCT_SUBTITLES[product] + ' · ' : ''}Platform assessments and workbook library`}
+        subtitle={activeProject
+          ? `${activeProject.name} · ${product !== 'isms' ? PRODUCT_SUBTITLES[product] + ' · ' : ''}Platform assessments and workbook library`
+          : `${product !== 'isms' ? PRODUCT_SUBTITLES[product] + ' · ' : ''}Platform assessments and workbook library`}
         actions={
-          <Button variant="contained" size="small" startIcon={<AddOutlined />}
-            onClick={() => setNewDialogOpen(true)} sx={{ fontSize: '0.78rem' }}>
-            New Assessment
-          </Button>
+          <Tooltip title={!activeProject ? 'Select a project first to create assessments' : ''}>
+            <span>
+              <Button variant="contained" size="small" startIcon={<AddOutlined />}
+                onClick={() => setNewDialogOpen(true)} sx={{ fontSize: '0.78rem' }}
+                disabled={!activeProject}>
+                + New Assessment
+              </Button>
+            </span>
+          </Tooltip>
         }
       />
+
+      {activeProject ? (
+        <Alert severity="success" sx={{ mb: 2 }}>
+          Showing assessments for project: <strong>{activeProject.name}</strong> — {activeProject.org_name}
+        </Alert>
+      ) : (
+        <Alert
+          severity="warning"
+          sx={{ mb: 2 }}
+          action={<Button color="inherit" size="small" onClick={() => navigate('/projects')}>Go to Projects</Button>}
+        >
+          No project selected — new assessments must be linked to a project. Select an active project first.
+        </Alert>
+      )}
 
       {/* ── Tabs ── */}
       <Tabs value={activeTab} onChange={(_, v) => setActiveTab(v)} sx={{ mb: 2.5, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
@@ -882,13 +919,18 @@ export default function Assessments() {
           </FormControl>
 
           {/* Step 3 — IMP / workbook picker (only for stacked/multi-generator groups) */}
+          {noValidGenerators && (
+            <Alert severity="info" sx={{ py: 0.5, fontSize: '0.78rem' }}>
+              This control group only has checklist assessments — use the <strong>SCR Checklists</strong> section instead.
+            </Alert>
+          )}
           {needsGeneratorPick && (
             <Box>
               <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>
                 Select assessment workbook
               </Typography>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.75 }}>
-                {generatorsForGroup.map((gen) => {
+                {validGenerators.map((gen) => {
                   const active = selectedGeneratorId === gen.document_id
                   return (
                     <Box
@@ -922,7 +964,7 @@ export default function Assessments() {
         <DialogActions sx={{ px: 3, pb: 2 }}>
           <Button onClick={() => { setNewDialogOpen(false); setSelectedGroupCode(''); setSelectedGeneratorId('') }}>Cancel</Button>
           <Button variant="contained"
-            disabled={!selectedGroupCode || (needsGeneratorPick && !selectedGeneratorId)}
+            disabled={!selectedGroupCode || noValidGenerators || (needsGeneratorPick && !selectedGeneratorId)}
             onClick={handleNewFromDialog}>
             Continue
           </Button>

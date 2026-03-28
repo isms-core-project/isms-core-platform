@@ -62,7 +62,7 @@ export interface AssessmentSheetRead {
 }
 
 export const assessmentsApi = {
-  list: (params?: { product?: string; product_family?: string }) =>
+  list: (params?: { product?: string; product_family?: string; project_id?: string }) =>
     client
       .get<AssessmentListItem[]>('/assessments/', { params: params ?? undefined })
       .then((r) => r.data),
@@ -71,7 +71,7 @@ export const assessmentsApi = {
     group_code: string,
     product_type: string,
     workbook_name?: string,
-    meta?: { label?: string; assessor?: string; scope?: string; purpose?: string; target_date?: string }
+    meta?: { label?: string; assessor?: string; scope?: string; purpose?: string; target_date?: string; project_id?: string }
   ) =>
     client.post<AssessmentListItem>('/assessments/', {
       group_code, product_type, workbook_name: workbook_name ?? '',
@@ -80,6 +80,7 @@ export const assessmentsApi = {
       scope: meta?.scope ?? '',
       purpose: meta?.purpose ?? '',
       target_date: meta?.target_date ?? '',
+      project_id: meta?.project_id ?? null,
     }).then((r) => r.data),
 
   getSheets: (assessmentId: string) =>

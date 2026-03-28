@@ -240473,5 +240473,330 @@
         "status_column_letter": "D"
       }
     ]
+  },
+  {
+    "document_id": "ISMS-CHK-POL-01",
+    "sheets": [
+      {
+        "document_id": "ISMS-CHK-POL-01",
+        "sheet_name": "Domain 1 - Authority",
+        "sheet_type": "input",
+        "title_text": "Domain 1 - Authority",
+        "subtitle_text": "ISMS Framework \u2014 Foundation Policies \u2014 Domain 1 - Authority",
+        "columns": [
+          {
+            "header": "Req #",
+            "width": 10,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Section",
+            "width": 20,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Requirement",
+            "width": 60,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Status",
+            "width": 16,
+            "dv_values": [
+              "Compliant",
+              "Partial",
+              "Non-Compliant",
+              "N/A"
+            ],
+            "is_status_col": true
+          },
+          {
+            "header": "Evidence",
+            "width": 40,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Owner",
+            "width": 18,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Due Date",
+            "width": 12,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Notes",
+            "width": 40,
+            "dv_values": [],
+            "is_status_col": false
+          }
+        ],
+        "sample_row": [],
+        "status_column_letter": "D"
+      },
+      {
+        "document_id": "ISMS-CHK-POL-01",
+        "sheet_name": "Domain 2 - Applicability",
+        "sheet_type": "input",
+        "title_text": "Domain 2 - Applicability",
+        "subtitle_text": "ISMS Framework \u2014 Foundation Policies \u2014 Domain 2 - Applicability",
+        "columns": [
+          {
+            "header": "Req #",
+            "width": 10,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Section",
+            "width": 20,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Requirement",
+            "width": 60,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Status",
+            "width": 16,
+            "dv_values": [
+              "Compliant",
+              "Partial",
+              "Non-Compliant",
+              "N/A"
+            ],
+            "is_status_col": true
+          },
+          {
+            "header": "Evidence",
+            "width": 40,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Owner",
+            "width": 18,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Due Date",
+            "width": 12,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Notes",
+            "width": 40,
+            "dv_values": [],
+            "is_status_col": false
+          }
+        ],
+        "sample_row": [],
+        "status_column_letter": "D"
+      },
+      {
+        "document_id": "ISMS-CHK-POL-01",
+        "sheet_name": "Domain 3 - Exceptions",
+        "sheet_type": "input",
+        "title_text": "Domain 3 - Exceptions",
+        "subtitle_text": "ISMS Framework \u2014 Foundation Policies \u2014 Domain 3 - Exceptions",
+        "columns": [
+          {
+            "header": "Req #",
+            "width": 10,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Section",
+            "width": 20,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Requirement",
+            "width": 60,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Status",
+            "width": 16,
+            "dv_values": [
+              "Compliant",
+              "Partial",
+              "Non-Compliant",
+              "N/A"
+            ],
+            "is_status_col": true
+          },
+          {
+            "header": "Evidence",
+            "width": 40,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Owner",
+            "width": 18,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Due Date",
+            "width": 12,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Notes",
+            "width": 40,
+            "dv_values": [],
+            "is_status_col": false
+          }
+        ],
+        "sample_row": [],
+        "status_column_letter": "D"
+      },
+      {
+        "document_id": "ISMS-CHK-POL-01",
+        "sheet_name": "Domain 4 - Change Mgmt",
+        "sheet_type": "input",
+        "title_text": "Domain 4 - Change Mgmt",
+        "subtitle_text": "ISMS Framework \u2014 Foundation Policies \u2014 Domain 4 - Change Mgmt",
+        "columns": [
+          {
+            "header": "Req #",
+            "width": 10,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Section",
+            "width": 20,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Requirement",
+            "width": 60,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Status",
+            "width": 16,
+            "dv_values": [
+              "Compliant",
+              "Partial",
+              "Non-Compliant",
+              "N/A"
+            ],
+            "is_status_col": true
+          },
+          {
+            "header": "Evidence",
+            "width": 40,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Owner",
+            "width": 18,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Due Date",
+            "width": 12,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Notes",
+            "width": 40,
+            "dv_values": [],
+            "is_status_col": false
+          }
+        ],
+        "sample_row": [],
+        "status_column_letter": "D"
+      },
+      {
+        "document_id": "ISMS-CHK-POL-01",
+        "sheet_name": "Domain 5 - Governance Review",
+        "sheet_type": "input",
+        "title_text": "Domain 5 - Governance Review",
+        "subtitle_text": "ISMS Framework \u2014 Foundation Policies \u2014 Domain 5 - Governance Review",
+        "columns": [
+          {
+            "header": "Req #",
+            "width": 10,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Section",
+            "width": 20,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Requirement",
+            "width": 60,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Status",
+            "width": 16,
+            "dv_values": [
+              "Compliant",
+              "Partial",
+              "Non-Compliant",
+              "N/A"
+            ],
+            "is_status_col": true
+          },
+          {
+            "header": "Evidence",
+            "width": 40,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Owner",
+            "width": 18,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Due Date",
+            "width": 12,
+            "dv_values": [],
+            "is_status_col": false
+          },
+          {
+            "header": "Notes",
+            "width": 40,
+            "dv_values": [],
+            "is_status_col": false
+          }
+        ],
+        "sample_row": [],
+        "status_column_letter": "D"
+      }
+    ]
   }
 ]

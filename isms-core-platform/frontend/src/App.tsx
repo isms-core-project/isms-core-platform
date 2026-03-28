@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { useAuth } from './store/AuthContext'
 import { ProductProvider } from './store/ProductContext'
+import { ProjectProvider } from './store/ProjectContext'
 import Layout from './components/Layout'
 import Login from './pages/Login'
 import Home from './pages/Home'
@@ -34,6 +35,8 @@ import Ndsg from './pages/Ndsg'
 import Cra from './pages/Cra'
 import AiAct from './pages/AiAct'
 import Csrm from './pages/Csrm'
+import Projects from './pages/Projects'
+import ProjectDetail from './pages/ProjectDetail'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -45,6 +48,7 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <ProductProvider>
+    <ProjectProvider>
     <Routes>
       <Route path="/login" element={<Login />} />
 
@@ -89,9 +93,12 @@ export default function App() {
         <Route path="cra" element={<Cra />} />
         <Route path="ai-act" element={<AiAct />} />
         <Route path="csrm" element={<Csrm />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="projects/:id" element={<ProjectDetail />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
+    </ProjectProvider>
     </ProductProvider>
   )
 }

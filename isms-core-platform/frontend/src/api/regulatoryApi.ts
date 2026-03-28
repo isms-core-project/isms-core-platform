@@ -22,6 +22,7 @@ export interface ComplianceAssessment {
   status: 'draft' | 'in_progress' | 'complete'
   created_at: string
   updated_at: string
+  project_id: string | null
 }
 
 export interface AssessmentSummary extends ComplianceAssessment {
@@ -69,8 +70,8 @@ export const regulatoryApi = {
   listRequirements: (frameworkCode: string) =>
     client.get<Requirement[]>(`/regulatory/${frameworkCode}/requirements`).then(r => r.data),
 
-  listAssessments: (frameworkCode: string) =>
-    client.get<AssessmentSummary[]>(`/regulatory/${frameworkCode}/assessments`).then(r => r.data),
+  listAssessments: (frameworkCode: string, params?: { project_id?: string }) =>
+    client.get<AssessmentSummary[]>(`/regulatory/${frameworkCode}/assessments`, { params }).then(r => r.data),
 
   createAssessment: (frameworkCode: string, data: {
     framework_code: string
@@ -79,6 +80,7 @@ export const regulatoryApi = {
     assessor?: string
     scope?: string
     organisation?: string
+    project_id?: string | null
   }) =>
     client.post<ComplianceAssessment>(`/regulatory/${frameworkCode}/assessments`, data).then(r => r.data),
 

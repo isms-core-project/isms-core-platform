@@ -27,6 +27,11 @@ class AssessmentCollection(TimestampMixin, Base):
     product_family: Mapped[str] = mapped_column(String(20), nullable=False)
     product_type: Mapped[str | None] = mapped_column(String(20))
     due_date: Mapped[date | None] = mapped_column(SADate)
+    project_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("projects.id", ondelete="SET NULL"),
+        nullable=True,
+    )
 
     assessments: Mapped[list] = relationship(
         "Assessment",

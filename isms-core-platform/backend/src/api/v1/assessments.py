@@ -1,6 +1,6 @@
 import uuid
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import select
 from sqlalchemy.orm import Session as DBSession
 
@@ -35,10 +35,11 @@ router = APIRouter(prefix="/assessments", tags=["assessments"])
 def list_all_assessments(
     product: str | None = None,
     product_family: str | None = None,
+    project_id: uuid.UUID | None = Query(None),
     db: DBSession = Depends(get_db),
     _user: User = Depends(get_current_user),
 ):
-    return list_assessments(db, product=product, product_family=product_family)
+    return list_assessments(db, product=product, product_family=product_family, project_id=project_id)
 
 
 @router.post("/", response_model=AssessmentRead, status_code=201)
@@ -60,6 +61,7 @@ def create_assessment(
             scope=body.scope,
             purpose=body.purpose,
             target_date=body.target_date,
+            project_id=body.project_id,
         )
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))

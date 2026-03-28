@@ -123,14 +123,19 @@ def list_requirements(db: Session, framework_code: str) -> list[RequirementRead]
 
 # ── Assessment CRUD ────────────────────────────────────────────────────────────
 
-def list_assessments(db: Session, framework_code: str) -> list[AssessmentSummary]:
-    assessments = list(
-        db.execute(
-            select(RegulatoryAssessment)
-            .where(RegulatoryAssessment.framework_code == framework_code)
-            .order_by(RegulatoryAssessment.created_at.desc())
-        ).scalars().all()
+def list_assessments(
+    db: Session,
+    framework_code: str,
+    project_id: uuid.UUID | None = None,
+) -> list[AssessmentSummary]:
+    q = (
+        select(RegulatoryAssessment)
+        .where(RegulatoryAssessment.framework_code == framework_code)
     )
+    if project_id is not None:
+        q = q.where(RegulatoryAssessment.project_id == project_id)
+    q = q.order_by(RegulatoryAssessment.created_at.desc())
+    assessments = list(db.execute(q).scalars().all())
 
     fw = _get_framework(db, framework_code)
     total = len(_get_requirements(db, fw.id, framework_code))

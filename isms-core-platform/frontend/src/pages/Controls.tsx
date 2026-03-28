@@ -23,6 +23,7 @@ import { useNavigate } from 'react-router-dom'
 import { controlsApi } from '../api/controls'
 import PageHeader from '../components/PageHeader'
 import { useProduct, PRODUCT_COLORS } from '../store/ProductContext'
+import { useProject } from '../store/ProjectContext'
 
 const STATUS_HM_COLOR: Record<string, string> = {
   complete:   '#C6EFCE',
@@ -166,6 +167,7 @@ type ViewMode = 'grid' | 'heatmap'
 export default function Controls() {
   const location = useLocation()
   const { product, ismsTier } = useProduct()
+  const { activeProject } = useProject()
   const [search, setSearch] = useState('')
   const [viewMode, setViewMode] = useState<ViewMode>('grid')
   const [section, setSection] = useState(() => {
@@ -234,8 +236,13 @@ export default function Controls() {
 
   return (
     <Box>
-      <PageHeader title="Control Groups" subtitle={subtitle} />
+      <PageHeader title="Controls Library" subtitle={subtitle} />
 
+      {!activeProject && (
+        <Alert severity="info" sx={{ mb: 2.5 }}>
+          You are browsing the Controls Library. <strong>Create or select a project</strong> to track your compliance work, manage policies and implementations, and log gaps.
+        </Alert>
+      )}
 
       {/* Filters */}
       <Card sx={{ mb: 3 }}>

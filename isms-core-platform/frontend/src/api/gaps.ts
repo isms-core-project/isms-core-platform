@@ -2,7 +2,7 @@ import { client } from './client'
 import type { EvidenceRead, GapCreate, GapPatch, GapRead } from './types'
 
 export const gapsApi = {
-  list: (params?: { severity?: string; status?: string; product?: string; control_group_id?: string; limit?: number }) =>
+  list: (params?: { severity?: string; status?: string; product?: string; control_group_id?: string; project_id?: string; limit?: number }) =>
     client.get<GapRead[]>('/gaps/', { params }).then((r) => r.data),
 
   create: (body: GapCreate) =>

@@ -36,6 +36,11 @@ class Evidence(TimestampMixin, Base):
         UUID(as_uuid=True),
         ForeignKey("assessment_items.id", ondelete="SET NULL"),
     )
+    project_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("projects.id", ondelete="SET NULL"),
+        nullable=True,
+    )
     evidence_type: Mapped[EvidenceType] = mapped_column(
         SAEnum(EvidenceType, name="evidence_type", create_type=False), nullable=False
     )
@@ -55,6 +60,7 @@ class Evidence(TimestampMixin, Base):
     )
 
     # Relationships
+    project: Mapped["Project | None"] = relationship(foreign_keys=[project_id])
     control_group: Mapped["ControlGroup | None"] = relationship(
         back_populates="evidence_items"
     )
@@ -81,6 +87,11 @@ class Gap(TimestampMixin, Base):
         UUID(as_uuid=True),
         ForeignKey("assessment_items.id", ondelete="SET NULL"),
     )
+    project_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("projects.id", ondelete="SET NULL"),
+        nullable=True,
+    )
     # CHECK (product_type IN ('framework', 'operational', 'both'))
     product_type: Mapped[str] = mapped_column(
         String(15), nullable=False, server_default="both"
@@ -106,6 +117,7 @@ class Gap(TimestampMixin, Base):
     )
 
     # Relationships
+    project: Mapped["Project | None"] = relationship(foreign_keys=[project_id])
     control_group: Mapped["ControlGroup"] = relationship(back_populates="gaps")
     requirement: Mapped["Requirement | None"] = relationship()
     assessment_item: Mapped["AssessmentItem | None"] = relationship()

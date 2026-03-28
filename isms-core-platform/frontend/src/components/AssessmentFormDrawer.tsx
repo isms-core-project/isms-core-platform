@@ -16,6 +16,7 @@ import {
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { assessmentsApi, FormSheet, AssessmentItemRead, AssessmentSheetRead } from '../api/assessmentsApi'
+import { useProject } from '../store/ProjectContext'
 
 // ── Status chip colours ──────────────────────────────────────────────────────
 
@@ -304,6 +305,7 @@ interface Props {
 
 export default function AssessmentFormDrawer({ open, onClose, groupCode, groupName, productType = 'framework', generatorId }: Props) {
   const qc = useQueryClient()
+  const { activeProject } = useProject()
   const [tab, setTab] = useState(0)
   const [assessmentId, setAssessmentId] = useState<string | null>(null)
   const [creating, setCreating] = useState(false)
@@ -350,6 +352,7 @@ export default function AssessmentFormDrawer({ open, onClose, groupCode, groupNa
     try {
       const a = await assessmentsApi.create(groupCode, productType, groupName, {
         label, assessor, scope, purpose, target_date: targetDate,
+        project_id: activeProject?.id,
       })
       setAssessmentId(a.id)
       qc.invalidateQueries({ queryKey: ['assessments'] })

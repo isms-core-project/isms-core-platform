@@ -9,6 +9,13 @@ from src.domain.frameworks import (  # noqa: F401
 )
 from src.domain.control_groups import ControlGroup, control_group_controls  # noqa: F401
 from src.domain.content import Policy, Requirement, Implementation  # noqa: F401
+# Projects must be registered before any model that holds a project_id FK
+from src.domain.projects import (  # noqa: F401
+    Project,
+    ProjectPolicy,
+    ProjectImplementation,
+    ProjectChecklist,
+)
 from src.domain.assessments import (  # noqa: F401
     Assessment,
     AssessmentSheet,

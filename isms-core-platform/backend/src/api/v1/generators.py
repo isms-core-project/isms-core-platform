@@ -65,7 +65,7 @@ def get_form_schema(
     q = (
         select(GeneratorDefinition)
         .where(
-            (GeneratorDefinition.group_code == gc_lower)
+            GeneratorDefinition.group_code.ilike(gc_lower)
             | GeneratorDefinition.group_code.ilike(f"{gc_lower}-%")
         )
         .order_by(GeneratorDefinition.domain_number)
@@ -119,12 +119,12 @@ def list_generators(
     if group_code:
         gc_lower = group_code.lower()
         q = q.where(
-            (GeneratorDefinition.group_code == gc_lower)
+            GeneratorDefinition.group_code.ilike(gc_lower)
             | GeneratorDefinition.group_code.ilike(f"{gc_lower}-%")
         )
     if section:
         if section == "00":
-            q = q.where(GeneratorDefinition.group_code == "00")
+            q = q.where(GeneratorDefinition.group_code.ilike("00"))
         else:
             prefix = section.lower().rstrip(".") + "."
             q = q.where(GeneratorDefinition.group_code.ilike(f"{prefix}%"))

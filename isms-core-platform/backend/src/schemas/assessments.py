@@ -52,6 +52,7 @@ class AssessmentCreate(BaseModel):
     group_code: str
     product_type: str = "framework"
     workbook_name: str = ""
+    project_id: uuid.UUID | None = None
     # Metadata — stored in summary JSONB
     label: str = ""        # slug appended to document_id
     assessor: str = ""     # lead assessor name / role

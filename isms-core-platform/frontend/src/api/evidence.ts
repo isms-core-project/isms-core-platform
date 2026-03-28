@@ -12,7 +12,7 @@ export interface EvidenceReview {
 }
 
 export const evidenceApi = {
-  list: (params?: { control_group_id?: string; group_code?: string; evidence_type?: string; evidence_status?: string; limit?: number; offset?: number }) =>
+  list: (params?: { control_group_id?: string; group_code?: string; evidence_type?: string; evidence_status?: string; project_id?: string; limit?: number; offset?: number }) =>
     client.get<EvidenceRead[]>('/evidence/', { params }).then((r) => r.data),
 
   get: (id: string) =>

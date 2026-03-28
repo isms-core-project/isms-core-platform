@@ -47,6 +47,7 @@ class AssessmentCreate(BaseModel):
     assessor: str | None = None
     scope: str | None = None
     organisation: str | None = None
+    project_id: uuid.UUID | None = None
 
 
 class AssessmentUpdate(BaseModel):
@@ -69,6 +70,7 @@ class AssessmentRead(BaseModel):
     status: str
     created_at: datetime
     updated_at: datetime
+    project_id: uuid.UUID | None = None
 
     model_config = {"from_attributes": True}
 

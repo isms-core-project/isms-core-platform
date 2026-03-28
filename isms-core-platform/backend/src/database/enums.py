@@ -146,3 +146,10 @@ class EditSource(str, enum.Enum):
     IMPORT = "import"   # Change came from the file import pipeline
     WEBUI = "webui"     # Change made via the platform WebUI
     API = "api"         # Change made via direct API call (non-WebUI client)
+
+
+class ProjectStatus(str, enum.Enum):
+    DRAFT = "draft"         # Created but not yet active
+    ACTIVE = "active"       # Live project — operational data being captured
+    INACTIVE = "inactive"   # On hold / paused — not archived but not actively worked
+    ARCHIVED = "archived"   # Completed / no longer active

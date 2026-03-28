@@ -527,6 +527,9 @@ export const connectorsApi = {
   deleteConnectorEvidence: (connectorId: string) =>
     client.delete(`/connectors/${connectorId}/evidence`),
 
+  promoteEvidence: (evidenceId: string, projectId: string) =>
+    client.post(`/connectors/evidence/item/${evidenceId}/promote`, { project_id: projectId }).then((r) => r.data),
+
   getLog: (id: string, limit = 50) =>
     client.get<ConnectorLogEntry[]>(`/connectors/${id}/log`, { params: { limit } }).then((r) => r.data),
 }

@@ -55,6 +55,10 @@ import {
   ChevronRightOutlined,
   AccountBalanceOutlined,
   SecurityOutlined,
+  FolderOpenOutlined,
+  CloseOutlined,
+  DarkModeOutlined,
+  LightModeOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -62,6 +66,8 @@ import { adminApi } from '../api/admin'
 import type { NotificationPref } from '../api/types'
 import { useAuth } from '../store/AuthContext'
 import { useProduct, type Product, type IsmsTier, PRODUCT_COLORS, PRODUCT_LABELS, PRODUCT_SUBTITLES } from '../store/ProductContext'
+import { useProject } from '../store/ProjectContext'
+import { useThemeMode } from '../store/ThemeContext'
 
 interface NavItem {
   label: string
@@ -72,7 +78,7 @@ interface NavItem {
 const PRODUCT_NAV: NavItem[] = [
   { label: 'Overview',    path: '/overview',    icon: <DashboardOutlined /> },
   { label: 'Coverage',    path: '/coverage',    icon: <CompareArrowsOutlined /> },
-  { label: 'Controls',    path: '/controls',    icon: <AccountTreeOutlined /> },
+  { label: 'Controls Library', path: '/controls', icon: <AccountTreeOutlined /> },
   { label: 'Assessments', path: '/assessments', icon: <AssignmentOutlined /> },
   { label: 'Policies',    path: '/policies',    icon: <PolicyOutlined /> },
   { label: 'Gaps',        path: '/gaps',        icon: <FindInPageOutlined /> },
@@ -81,6 +87,7 @@ const PRODUCT_NAV: NavItem[] = [
 ]
 
 const NAV_PLATFORM: NavItem[] = [
+  { label: 'Projects',    path: '/projects',    icon: <FolderOpenOutlined /> },
   { label: 'QA',          path: '/qa',          icon: <VerifiedOutlined /> },
   { label: 'Search',      path: '/search',      icon: <SearchOutlined /> },
   { label: 'Compass',     path: '/compass',     icon: <ExploreOutlined /> },
@@ -128,7 +135,7 @@ const CAT_COLOR: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3
 const CAT_TEXT:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0' }
 const PLATFORM_COLOR = '#6B7A99'
 const COMPLIANCE_PATHS = ['/nist-csf', '/nis2', '/dora', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act']
-const PLATFORM_PATHS = ['/qa', '/search', '/compass', '/generators', '/report', '/risk', ...COMPLIANCE_PATHS, '/admin', '/connectors', '/system']
+const PLATFORM_PATHS = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk', ...COMPLIANCE_PATHS, '/admin', '/connectors', '/system']
 
 // ── Notification prefs dialog ─────────────────────────────────────────────────
 
@@ -218,6 +225,8 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   const [notifsOpen, setNotifsOpen] = useState(false)
   const { logout, user } = useAuth()
   const { product, setProduct, ismsTier, setIsmsTier } = useProduct()
+  const { activeProject, setActiveProject } = useProject()
+  const { mode, toggleTheme } = useThemeMode()
 
   const isNeutralPage = location.pathname === '/' || PLATFORM_PATHS.some(p => location.pathname.startsWith(p))
   const isCompliancePath = COMPLIANCE_PATHS.some(p => location.pathname === p || location.pathname.startsWith(p + '/'))
@@ -335,7 +344,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
         >
           {collapsed
             ? <ChevronRightOutlined sx={{ fontSize: 16, color: 'rgba(255,255,255,0.7)' }} />
-            : <ChevronLeftOutlined sx={{ fontSize: 16, color: 'rgba(255,255,255,0.7)' }} />}
+            : <ChevronLeftOutlined sx={{ fontSize: 16, color: 'text.secondary' }} />}
         </Box>
       </Box>
 
@@ -368,6 +377,49 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
                 />
               )}
             </ListItemButton>
+          </Tooltip>
+        </Box>
+
+        {/* Active project chip */}
+        <Box sx={{ px: 1, pb: 0.5 }}>
+          <Tooltip title={collapsed ? (activeProject ? activeProject.name : 'No active project') : ''} placement="right">
+            <Box
+              onClick={() => navigate('/projects')}
+              sx={{
+                display: 'flex', alignItems: 'center', gap: 0.75,
+                mx: 0, px: collapsed ? 0 : 1.25, py: 0.5, borderRadius: 1.5,
+                cursor: 'pointer', userSelect: 'none',
+                justifyContent: collapsed ? 'center' : 'flex-start',
+                border: '1px solid',
+                borderColor: activeProject ? 'rgba(68,114,196,0.3)' : 'rgba(255,255,255,0.08)',
+                bgcolor: activeProject ? 'rgba(68,114,196,0.08)' : 'transparent',
+                transition: 'all 0.15s',
+                '&:hover': { borderColor: 'rgba(68,114,196,0.5)', bgcolor: 'rgba(68,114,196,0.12)' },
+              }}
+            >
+              <FolderOpenOutlined sx={{ fontSize: 14, color: activeProject ? '#4472C4' : 'text.disabled', flexShrink: 0 }} />
+              {!collapsed && (
+                <>
+                  <Box sx={{ flex: 1, minWidth: 0 }}>
+                    <Typography variant="caption" sx={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.06em', color: 'text.disabled', lineHeight: 1, display: 'block' }}>
+                      Active Project
+                    </Typography>
+                    <Typography variant="caption" sx={{ fontSize: '0.72rem', color: activeProject ? '#4472C4' : 'text.disabled', fontWeight: activeProject ? 600 : 400, lineHeight: 1.2, display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 120 }}>
+                      {activeProject ? activeProject.name : 'None selected'}
+                    </Typography>
+                  </Box>
+                  {activeProject && (
+                    <IconButton
+                      size="small"
+                      onClick={(e) => { e.stopPropagation(); setActiveProject(null) }}
+                      sx={{ p: 0.25, color: 'text.disabled', '&:hover': { color: 'error.main' } }}
+                    >
+                      <CloseOutlined sx={{ fontSize: 12 }} />
+                    </IconButton>
+                  )}
+                </>
+              )}
+            </Box>
           </Tooltip>
         </Box>
 
@@ -695,6 +747,24 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
             </ListItemIcon>
             {!collapsed && (
               <ListItemText primary="Notifications" primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }} />
+            )}
+          </ListItemButton>
+        </Tooltip>
+        <Tooltip title={collapsed ? (mode === 'dark' ? 'Light mode' : 'Dark mode') : ''} placement="right">
+          <ListItemButton
+            onClick={toggleTheme}
+            sx={{ borderRadius: 1.5, px: collapsed ? 0 : 1.5, py: 0.5, justifyContent: collapsed ? 'center' : 'flex-start' }}
+          >
+            <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 36, color: 'text.secondary' }}>
+              {mode === 'dark'
+                ? <LightModeOutlined fontSize="small" />
+                : <DarkModeOutlined fontSize="small" />}
+            </ListItemIcon>
+            {!collapsed && (
+              <ListItemText
+                primary={mode === 'dark' ? 'Light mode' : 'Dark mode'}
+                primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }}
+              />
             )}
           </ListItemButton>
         </Tooltip>

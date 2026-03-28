@@ -143,6 +143,7 @@ def create_evidence(
     collected_date: date | None = None,
     expires_date: date | None = None,
     notes: str | None = None,
+    project_id: uuid.UUID | None = None,
 ) -> Evidence:
     """Save file, extract text, create DB record, index to OpenSearch."""
     ext = validate_extension(original_filename)
@@ -169,6 +170,7 @@ def create_evidence(
         file_path=str(dest_path),
         collected_date=collected_date,
         expires_date=expires_date,
+        project_id=project_id,
         metadata_={
             "original_filename": original_filename,
             "file_size": len(file_bytes),

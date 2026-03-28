@@ -1811,10 +1811,14 @@ export default function ControlDetail() {
   }
 
   // Filter content by product view
-  // ISMS = show all ISMS content; privacy/cloud = show matching product_type
+  // ISMS = fw + op only; privacy/cloud = exact product_type match
   // INS docs go to Instructions tab, not Policies
   const visiblePolicies = cg.policies.filter(p =>
-    p.policy_type !== 'INS' && (productView === 'isms' || p.product_type === productView)
+    p.policy_type !== 'INS' && (
+      productView === 'isms'
+        ? ['framework', 'operational'].includes(p.product_type)
+        : p.product_type === productView
+    )
   )
   const visibleInstructions = cg.policies.filter(p => p.policy_type === 'INS')
   // Implementation model has no product_type — control group ownership is already product-scoped

@@ -11,7 +11,7 @@ PUT    /api/v1/regulatory/{framework_code}/assessments/{id}/ratings — batch up
 
 import uuid
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session as DBSession
 
 from src.core.dependencies import get_current_user
@@ -60,12 +60,13 @@ def list_requirements(
 @router.get("/{framework_code}/assessments", response_model=list[AssessmentSummary])
 def list_assessments(
     framework_code: str,
+    project_id: uuid.UUID | None = Query(None),
     db: DBSession = Depends(get_db),
     _user: User = Depends(get_current_user),
 ) -> list[AssessmentSummary]:
     code = _validate_code(framework_code)
     try:
-        return regulatory_service.list_assessments(db, code)
+        return regulatory_service.list_assessments(db, code, project_id=project_id)
     except ValueError as e:
         raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=str(e))
 

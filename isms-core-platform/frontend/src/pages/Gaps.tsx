@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useProduct } from '../store/ProductContext'
+import { useProject } from '../store/ProjectContext'
 import {
   Alert,
   Box,
@@ -79,11 +80,13 @@ function CreateGapDialog({
   onClose,
   onCreated,
   productFamily,
+  projectId,
 }: {
   open: boolean
   onClose: () => void
   onCreated: () => void
   productFamily: string
+  projectId?: string
 }) {
   const [form, setForm] = useState<GapCreate>({
     control_group_id: '',
@@ -138,6 +141,7 @@ function CreateGapDialog({
       due_date: form.due_date || undefined,
       remediation_plan: form.remediation_plan || undefined,
       workbook_document_id: workbookId || undefined,
+      project_id: projectId || undefined,
     })
   }
 
@@ -771,18 +775,21 @@ function GapRow({ gap }: { gap: GapRead }) {
 // ── Main page ────────────────────────────────────────────────────────────────
 export default function Gaps() {
   const { product: globalProduct } = useProduct()
+  const { activeProject } = useProject()
   const [severity, setSeverity] = useState('')
   const [status, setStatus] = useState('open')
   const [createOpen, setCreateOpen] = useState(false)
 
   const productParam = globalProduct === 'isms' ? undefined : globalProduct
+  const projectIdParam = activeProject?.id
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ['gaps', severity, status, productParam],
+    queryKey: ['gaps', severity, status, productParam, projectIdParam],
     queryFn: () => gapsApi.list({
       severity: severity || undefined,
       status: status || undefined,
       product: productParam,
+      project_id: projectIdParam,
     }),
   })
 
@@ -800,18 +807,41 @@ export default function Gaps() {
     <Box>
       <PageHeader
         title="Gap Analysis"
-        subtitle={`${summary?.total ?? 0} total gaps · ${open} open`}
+        subtitle={activeProject ? `${activeProject.name} · ${summary?.total ?? 0} gaps · ${open} open` : `${summary?.total ?? 0} total gaps · ${open} open`}
         actions={
-          <Button
-            variant="contained"
-            size="small"
-            startIcon={<AddOutlined />}
-            onClick={() => setCreateOpen(true)}
-          >
-            Create Gap
-          </Button>
+          <Tooltip title={!activeProject ? 'Select a project first to log gaps' : ''}>
+            <span>
+              <Button
+                variant="contained"
+                size="small"
+                startIcon={<AddOutlined />}
+                onClick={() => setCreateOpen(true)}
+                disabled={!activeProject}
+              >
+                Create Gap
+              </Button>
+            </span>
+          </Tooltip>
         }
       />
+
+      {activeProject ? (
+        <Alert severity="success" sx={{ mb: 2 }}>
+          Showing gaps for project: <strong>{activeProject.name}</strong> — {activeProject.org_name}
+        </Alert>
+      ) : (
+        <Alert
+          severity="warning"
+          sx={{ mb: 2 }}
+          action={
+            <Button color="inherit" size="small" href="/projects">
+              Go to Projects
+            </Button>
+          }
+        >
+          No project selected — gaps must be linked to a project. Select an active project to start logging gaps.
+        </Alert>
+      )}
 
       {/* Metrics */}
       {summary && (
@@ -962,6 +992,7 @@ export default function Gaps() {
         onClose={() => setCreateOpen(false)}
         onCreated={() => {}}
         productFamily={globalProduct.toUpperCase()}
+        projectId={projectIdParam}
       />
     </Box>
   )
