@@ -53,7 +53,7 @@ const STATUS_CONFIG = {
   compliant:      { label: 'Compliant',     color: '#4CAF50', icon: <CheckCircleOutlined sx={{ fontSize: 14 }} /> },
 }
 
-const FRAMEWORK_META: Record<string, { name: string; subtitle: string; color: string; description: string }> = {
+const FRAMEWORK_META: Record<string, { name: string; subtitle: string; color: string; description: string; scoreLabels?: Record<number, string> }> = {
   NIS2: {
     name: 'NIS2 Directive',
     subtitle: 'EU 2022/2555',
