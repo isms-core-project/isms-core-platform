@@ -248,40 +248,13 @@ Where auditor identifies potential gaps in organisational judgment (e.g., contro
 
 **Competence Requirements**:
 
-+----------------------------------------+----------------------------------------------------------------+----------------------------------------------------+
-| **Role**                               | **Minimum Competence**                                         | **Verification**                                   |
-+========================================+================================================================+====================================================+
-| **CISO**                               | - Information security certification                           | - Resume/CV documenting experience                 |
-|                                        |   (CISSP, CISM, or equivalent)                                 | - Professional certifications                      |
-|                                        | - 5+ years information security experience                     |   (current, not expired)                           |
-|                                        | - Technical background (infrastructure,                        | - ISO 27001 training records                       |
-|                                        |   development, or security operations)                         |   (Lead Implementer or equivalent)                 |
-|                                        | - ISO 27001 knowledge (training or                             |                                                    |
-|                                        |   implementation experience)                                   |                                                    |
-+----------------------------------------+----------------------------------------------------------------+----------------------------------------------------+
-| **Legal/Compliance Officer**           | - Legal training (law degree or compliance                     | - Legal credentials or compliance                  |
-|                                        |   certification such as CCEP, CRCM)                            |   certifications                                   |
-|                                        | - Regulatory monitoring capability                             | - External legal counsel engagement                |
-|                                        |   (legal databases, external counsel access)                   |   records (complex interpretations)                |
-|                                        | - Contract review experience                                   | - Documented regulatory monitoring                 |
-|                                        | - Understanding of ISO 27001 scope                             |   process (POL-00 Section 4.3)                     |
-|                                        |   and applicability                                            |                                                    |
-+----------------------------------------+----------------------------------------------------------------+----------------------------------------------------+
-| **Data Protection Officer (DPO)**      | - GDPR/nDSG expertise                                          | - Data protection certifications                   |
-|                                        |   (CIPP/E, CIPM, or equivalent)                                |   (IAPP or equivalent)                             |
-|                                        | - Independence from operational management                     | - Organisational chart showing                     |
-|                                        |   (per GDPR Article 38.3)                                      |   reporting line (independence verification)       |
-|                                        | - Direct reporting to highest management level                 | - GDPR/nDSG training records                       |
-|                                        | - Understanding of technical data                              |                                                    |
-|                                        |   protection measures                                          |                                                    |
-+----------------------------------------+----------------------------------------------------------------+----------------------------------------------------+
-| **Executive Management**               | - Fiduciary responsibility for                                 | - Role verification (employment contract,          |
-|                                        |   organisational risk (CEO, CFO, Board)                        |   board appointment)                               |
-|                                        | - Understanding of ISO 27001                                   | - ISO 27001 executive briefing                     |
-|                                        |   certification implications                                   |   (recorded in management review)                  |
-|                                        | - Authority to allocate budget and resources                   | - Budget authority documentation                   |
-|                                        | - Accountability for risk acceptance decisions                 |                                                    |
-+----------------------------------------+----------------------------------------------------------------+----------------------------------------------------+
+| **Role** | **Minimum Competence** | **Verification** |
+| --- | --- | --- |
+| **CISO** | - Information security certification (CISSP, CISM, or equivalent) - 5+ years information security experience - Technical background (infrastructure, development, or security operations) - ISO 27001 knowledge (training or implementation experience) | - Resume/CV documenting experience - Professional certifications (current, not expired) - ISO 27001 training records (Lead Implementer or equivalent) |
+| **Legal/Compliance Officer** | - Legal training (law degree or compliance certification such as CCEP, CRCM) - Regulatory monitoring capability (legal databases, external counsel access) - Contract review experience - Understanding of ISO 27001 scope and applicability | - Legal credentials or compliance certifications - External legal counsel engagement records (complex interpretations) - Documented regulatory monitoring process (POL-00 Section 4.3) |
+| **Data Protection Officer (DPO)** | - GDPR/nDSG expertise (CIPP/E, CIPM, or equivalent) - Independence from operational management (per GDPR Article 38.3) - Direct reporting to highest management level - Understanding of technical data protection measures | - Data protection certifications (IAPP or equivalent) - Organisational chart showing reporting line (independence verification) - GDPR/nDSG training records |
+| **Executive Management** | - Fiduciary responsibility for organisational risk (CEO, CFO, Board) - Understanding of ISO 27001 certification implications - Authority to allocate budget and resources - Accountability for risk acceptance decisions | - Role verification (employment contract, board appointment) - ISO 27001 executive briefing (recorded in management review) - Budget authority documentation |
+
 
 
 **Competence Verification**:
