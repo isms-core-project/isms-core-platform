@@ -41,10 +41,11 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [Swiss nDSG](#swiss-ndsg-2023) | Swiss law | 25 provisions | 6 Chapters | 0–4 | Organisations processing Swiss personal data |
 | [EU Cyber Resilience Act](#eu-cyber-resilience-act-20242847) | EU Regulation | 26 requirements | 6 Groups | 0–4 | EU product manufacturers |
 | [EU AI Act](#eu-ai-act-20241689) | EU Regulation | 25 articles | 6 Groups | 0–4 | EU AI system providers/deployers |
+| [EU Cloud Sovereignty Framework](#eu-cloud-sovereignty-framework-v121) | EC DG DIGIT | 8 Sovereignty Objectives | 1 Group (SEAL) | SEAL 0–4 | EU institutions / public sector cloud procurement |
 
 ---
 
-## Maturity Scale (used by 9 of 10 frameworks)
+## Maturity Scale (used by 9 of 11 frameworks)
 
 | Score | Label | Meaning |
 |-------|-------|---------|
@@ -257,6 +258,21 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 - General-purpose AI model obligations (Title VIII) are not covered in this module version
 - The AI Act is phased: prohibited practices apply from February 2025; high-risk obligations in stages through 2026–2027
 - Formal conformity assessment for high-risk AI systems involves notified bodies or self-assessment with standardised testing
+
+---
+
+### EU Cloud Sovereignty Framework (v1.2.1)
+
+**Source:** European Commission — DG DIGIT, EU Cloud Sovereignty Framework v1.2.1 (October 2025)
+**Scope:** 8 Sovereignty Objectives (SOV-1 to SOV-8) assessed via SEAL-0 to SEAL-4 scale. Weighted Sovereignty Score (weights sum to 100%): SOV-1 Strategic 15% · SOV-2 Legal & Jurisdictional 10% · SOV-3 Data & AI 10% · SOV-4 Operational 15% · SOV-5 Supply Chain 20% · SOV-6 Technology 15% · SOV-7 Security & Compliance 10% · SOV-8 Environmental 5%
+**Scoring:** SEAL-0 (No Sovereignty) → SEAL-1 (Jurisdictional) → SEAL-2 (Data) → SEAL-3 (Digital Resilience) → SEAL-4 (Full Digital Sovereignty)
+**Audience:** EU institutions, public sector bodies, and regulated entities evaluating cloud service providers under EU procurement and digital sovereignty requirements. Draws on Gaia-X, ENISA/NIS2/DORA, CIGREF Trusted Cloud Referential v2, France Cloud de Confiance, and Germany Souveräner Cloud strategies.
+
+**Coverage notes:**
+- The framework defines **minimum assurance levels** per procurement tier — this module supports self-assessment and gap analysis against those levels
+- SEAL ratings are qualitative judgements; formal procurement decisions require vendor audit evidence and contractual commitments
+- SOV-5 Supply Chain assessment requires visibility into sub-supplier chains — depth of evidence may vary by vendor transparency
+- Environmental Sustainability (SOV-8) scoring is indicative; formal green procurement may require certified energy/carbon data
 
 ---
 

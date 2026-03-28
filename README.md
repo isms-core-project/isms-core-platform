@@ -27,6 +27,7 @@
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/Swiss_nDSG-Assessment_Tool-C62828?style=flat-square" alt="Swiss nDSG"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/EU_Cyber_Resilience_Act-Assessment_Tool-1A237E?style=flat-square" alt="EU CRA"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/EU_AI_Act-Assessment_Tool-4527A0?style=flat-square" alt="EU AI Act"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/EU_Cloud_Sovereignty-Assessment_Tool-01579B?style=flat-square" alt="EU Cloud Sovereignty"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v18-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
 </p>
 
@@ -197,7 +198,7 @@ factory_isms/
 │   ├── datasets/data/                  # 23 JSON reference datasets
 │   └── schemas/                        # PostgreSQL init schema
 │
-├── COMPLIANCE.md                       # 📋 Compliance assessment module coverage (10 frameworks)
+├── COMPLIANCE.md                       # 📋 Compliance assessment module coverage (11 frameworks)
 └── screenshots/                        # Platform UI screenshots
 ```
 
@@ -387,6 +388,11 @@ python3 generate_cld_checklist_a11.py
 <td><img src="https://img.shields.io/badge/Assessment_Tool-4527A0?style=flat-square" alt="Assessment Tool"/></td>
 </tr>
 <tr>
+<td>EU Cloud Sovereignty Framework (v1.2.1, Oct. 2025)</td>
+<td>Full assessment tool — 8 Sovereignty Objectives (SOV-1 to SOV-8) scored via SEAL-0 to SEAL-4; weighted Sovereignty Score covering Strategic, Legal, Data/AI, Operational, Supply Chain, Technology, Security and Environmental dimensions</td>
+<td><img src="https://img.shields.io/badge/Assessment_Tool-01579B?style=flat-square" alt="Assessment Tool"/></td>
+</tr>
+<tr>
 <td>NIST SP 800-53 Rev. 5</td>
 <td>Security control cross-mapping</td>
 <td><img src="https://img.shields.io/badge/Mapped-FF6600?style=flat-square" alt="Mapped"/></td>
@@ -487,7 +493,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 |--------|-------|--------|
 | Platform (API + WebUI) | v1.0 live — 44 connectors | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 | Products integrated | ISMS + Privacy + Cloud | ![v1.0](https://img.shields.io/badge/v1.0-2E8B57?style=flat-square) |
-| Compliance assessment modules | 10 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| Compliance assessment modules | 11 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 
 ---
 
