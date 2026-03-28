@@ -118,6 +118,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Crosswalk Mappings** | Cross-framework relationships: 2,730+ mappings — including BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
 | **Compliance Assessments** | 9 generic frameworks (0–4 maturity): NIS2 (15), DORA (25), CIS Controls v8 (153), BSI IT-Grundschutz (68 Bausteine), TISAX (53), Swiss nDSG (25), EU CRA (26), EU AI Act (25). Plus CSRM (object-centric, binary). Assessment Collections group assessments with derived stats, CSV/XLSX/PDF export. See [COMPLIANCE.md](COMPLIANCE.md). |
+| **Projects** | Workspace layer — named projects own a curated subset of library policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date, etc.) applied on add; active/inactive/draft/archived lifecycle |
 | **System Event Log** | Immutable trail of every platform action (who, what, when, resource) |
 
 ---
@@ -183,6 +184,9 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **EU Cyber Resilience Act Assessment** | EU 2024/2847 — 26 essential requirements across 6 groups, maturity score 0–4 |
 | **EU AI Act Assessment** | EU 2024/1689 — 25 articles across 6 groups (Risk Management, Data Governance, Transparency, Human Oversight, Robustness, Accountability), maturity score 0–4 |
 | **Assessment Collections** | Group multiple assessments into named collections with derived stats (completion %, compliance %, status rollup). Export as CSV, colour-coded XLSX, or PDF (A4). |
+| **Projects Workspace** | Create named projects to own, edit, and track a curated set of policies and implementations from the library — with WYSIWYG document editing, document variable substitution, bulk actions, bin/restore, SCR checklists, and completeness scoring |
+| **Document Editor** | TipTap v3 WYSIWYG + raw source toggle for in-platform editing of policy/implementation content; grid table auto-conversion (RST → GFM); metadata comment stripping |
+| **Connector Evidence Promote** | Promote automated connector evidence items into the Evidence Tracker scoped to the active project — inbox button per evidence row with visual confirmation |
 | **Collapsible Sidebar** | Azure Portal-style icon-only sidebar — collapses to 52 px strip, full tooltips, state persisted in localStorage |
 | **RBAC** | Role-based access: Admin / ISMS Manager / Auditor / Control Owner / Viewer |
 | **Approval Workflow** | Content state lifecycle: draft → review → approved → published |
