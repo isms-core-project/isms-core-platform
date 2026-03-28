@@ -33,6 +33,7 @@ _ASSESSABLE_LEVEL = {
     "CH_NDSG": 1,
     "EU_CRA": 1,
     "EU_AI_ACT": 1,
+    "EU_CLOUD_SOV": 0,
 }
 
 

@@ -54,6 +54,7 @@ const COMPLIANCE_TOOLS = [
   { label: 'Swiss nDSG',     path: '/ndsg',     icon: <LockPersonOutlined sx={{ fontSize: 17 }} /> },
   { label: 'EU CRA',          path: '/cra',      icon: <SecurityOutlined sx={{ fontSize: 17 }} /> },
   { label: 'EU AI Act',       path: '/ai-act',   icon: <PolicyOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'EU Cloud Sov.',  path: '/eu-cloud-sov', icon: <CloudOutlined sx={{ fontSize: 17 }} /> },
 ]
 
 const PRODUCT_STANDARDS = {

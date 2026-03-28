@@ -25,6 +25,18 @@ const SCORE_LABELS: Record<number, string> = {
   4: 'Optimised',
 }
 
+const SEAL_SCORE_LABELS: Record<number, string> = {
+  0: 'No Sovereignty',
+  1: 'Jurisdictional Sovereignty',
+  2: 'Data Sovereignty',
+  3: 'Digital Resilience',
+  4: 'Full Digital Sovereignty',
+}
+
+function resolveScoreLabels(frameworkCode: string): Record<number, string> {
+  return frameworkCode === 'EU_CLOUD_SOV' ? SEAL_SCORE_LABELS : SCORE_LABELS
+}
+
 const SCORE_COLORS: Record<number, string> = {
   0: '#f44336',
   1: '#FF9800',
@@ -89,6 +101,13 @@ const FRAMEWORK_META: Record<string, { name: string; subtitle: string; color: st
     subtitle: '2024/1689',
     color: '#4A148C',
     description: 'EU AI Act — risk-based framework for artificial intelligence systems. High-risk AI providers must comply by August 2026.',
+  },
+  EU_CLOUD_SOV: {
+    name: 'EU Cloud Sovereignty Framework',
+    subtitle: 'v1.2.1 — Oct. 2025',
+    color: '#01579B',
+    description: 'European Commission Cloud Sovereignty Framework (DG DIGIT) — 8 Sovereignty Objectives assessed via SEAL-0 to SEAL-4. Defines minimum assurance levels and a weighted Sovereignty Score for cloud service procurement. Draws on Gaia-X, ENISA/NIS2/DORA, CIGREF Trusted Cloud Referential, and national sovereignty strategies.',
+    scoreLabels: SEAL_SCORE_LABELS,
   },
 }
 
@@ -276,6 +295,9 @@ interface GroupedReq {
 }
 
 function groupRequirements(requirements: FullAssessment['requirements'], frameworkCode: string): GroupedReq[] {
+  if (frameworkCode === 'EU_CLOUD_SOV') {
+    return [{ groupId: 'all', groupTitle: 'Cloud Sovereignty Objectives — SOV-1 to SOV-8', requirements }]
+  }
   if (frameworkCode === 'DORA' || frameworkCode === 'CIS_V8' || frameworkCode === 'BSI_IT_GRUNDSCHUTZ') {
     // Group by group_id (chapter / IG / layer)
     const map = new Map<string, GroupedReq>()
@@ -311,6 +333,7 @@ function RequirementSection({
 }) {
   const [expanded, setExpanded] = useState(true)
   const meta = FRAMEWORK_META[frameworkCode] ?? { color: '#1976d2' }
+  const scoreLabels = resolveScoreLabels(frameworkCode)
 
   const groupRatings = group.requirements.map(r => ratingMap.get(r.id))
   const rated = groupRatings.filter(r => r?.current_score !== null && r?.current_score !== undefined)
@@ -334,7 +357,7 @@ function RequirementSection({
         <Chip label={`${group.requirements.length} items`} size="small" sx={{ height: 18, fontSize: '0.6rem' }} />
         {avgScore !== null && (
           <Chip
-            label={`Avg: ${avgScore.toFixed(1)} — ${SCORE_LABELS[Math.round(avgScore)]}`}
+            label={`Avg: ${avgScore.toFixed(1)} — ${scoreLabels[Math.round(avgScore)]}`}
             size="small"
             sx={{ height: 18, fontSize: '0.6rem', bgcolor: SCORE_COLORS[Math.round(avgScore)] + '22', color: SCORE_COLORS[Math.round(avgScore)] }}
           />
@@ -361,6 +384,7 @@ function RequirementSection({
                   req={req}
                   existing={ratingMap.get(req.id)}
                   onSave={upsert => onSave([upsert])}
+                  scoreLabels={scoreLabels}
                 />
               ))}
             </TableBody>
@@ -372,11 +396,12 @@ function RequirementSection({
 }
 
 function RequirementRow({
-  req, existing, onSave,
+  req, existing, onSave, scoreLabels = SCORE_LABELS,
 }: {
   req: FullAssessment['requirements'][number]
   existing: FullAssessment['ratings'][number] | undefined
   onSave: (upsert: RatingUpsert) => void
+  scoreLabels?: Record<number, string>
 }) {
   const [currentScore, setCurrentScore] = useState<number | ''>(existing?.current_score ?? '')
   const [targetScore, setTargetScore] = useState<number | ''>(existing?.target_score ?? '')
@@ -458,7 +483,7 @@ function RequirementRow({
               <MenuItem key={s} value={s}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: SCORE_COLORS[s], flexShrink: 0 }} />
-                  {s} — {SCORE_LABELS[s]}
+                  {s} — {scoreLabels[s]}
                 </Box>
               </MenuItem>
             ))}
@@ -477,7 +502,7 @@ function RequirementRow({
               <MenuItem key={s} value={s}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: SCORE_COLORS[s], flexShrink: 0 }} />
-                  {s} — {SCORE_LABELS[s]}
+                  {s} — {scoreLabels[s]}
                 </Box>
               </MenuItem>
             ))}
@@ -640,7 +665,7 @@ function AssessmentDetail({
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 1.5, mb: 3 }}>
         {[
           { label: 'Assessed', value: `${ratedCount} / ${requirements.length}`, sub: `${progressPct}%`, color: meta.color },
-          { label: 'Avg Score', value: avgCurrent !== null ? avgCurrent.toFixed(1) : '—', sub: avgCurrent !== null ? SCORE_LABELS[Math.round(avgCurrent)] : '', color: avgCurrent !== null ? SCORE_COLORS[Math.round(avgCurrent)] : '#9e9e9e' },
+          { label: 'Avg Score', value: avgCurrent !== null ? avgCurrent.toFixed(1) : '—', sub: avgCurrent !== null ? resolveScoreLabels(frameworkCode)[Math.round(avgCurrent)] : '', color: avgCurrent !== null ? SCORE_COLORS[Math.round(avgCurrent)] : '#9e9e9e' },
           { label: 'Compliant', value: compliantCount, sub: `${requirements.length > 0 ? Math.round((compliantCount / requirements.length) * 100) : 0}%`, color: '#4CAF50' },
           { label: 'Partial', value: partialCount, sub: '', color: '#FF9800' },
           { label: 'Non-Compliant', value: nonCompliantCount, sub: '', color: '#f44336' },

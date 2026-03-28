@@ -34,6 +34,7 @@ import Tisax from './pages/Tisax'
 import Ndsg from './pages/Ndsg'
 import Cra from './pages/Cra'
 import AiAct from './pages/AiAct'
+import CloudSovereignty from './pages/CloudSovereignty'
 import Csrm from './pages/Csrm'
 import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
@@ -92,6 +93,7 @@ export default function App() {
         <Route path="ndsg" element={<Ndsg />} />
         <Route path="cra" element={<Cra />} />
         <Route path="ai-act" element={<AiAct />} />
+        <Route path="eu-cloud-sov" element={<CloudSovereignty />} />
         <Route path="csrm" element={<Csrm />} />
         <Route path="projects" element={<Projects />} />
         <Route path="projects/:id" element={<ProjectDetail />} />
