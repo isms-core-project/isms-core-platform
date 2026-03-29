@@ -156,13 +156,16 @@ def list_generators_grouped(
 
     rows = db.execute(q).scalars().all()
 
-    # Group by group_code
-    groups: dict[str, list[GeneratorDefinition]] = defaultdict(list)
+    # Group by (group_code, product_type) so FW and OP generators for the same
+    # control group are always rendered as separate blocks (e.g. A.5.1-2-6.1-2
+    # has both framework workbooks and an OP checklist sharing the same group_code).
+    groups: dict[tuple[str, str], list[GeneratorDefinition]] = defaultdict(list)
     for row in rows:
-        groups[row.group_code].append(row)
+        key = (row.group_code, row.product_type or "framework")
+        groups[key].append(row)
 
     # Resolve control names from control_groups table where available
-    group_codes = list(groups.keys())
+    group_codes = list({k[0] for k in groups.keys()})
     cg_rows = db.execute(
         select(ControlGroup.group_code, ControlGroup.name).where(
             ControlGroup.group_code.in_(group_codes)
@@ -171,8 +174,9 @@ def list_generators_grouped(
     cg_names = {r[0]: r[1] for r in cg_rows}
 
     result: list[GeneratorGrouped] = []
-    for code in sorted(groups.keys()):
-        gens = groups[code]
+    for key in sorted(groups.keys()):
+        code, _pt = key
+        gens = groups[key]
         first = gens[0]
         result.append(
             GeneratorGrouped(
