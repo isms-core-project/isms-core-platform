@@ -173,8 +173,12 @@ def list_generators_grouped(
     ).all()
     cg_names = {r[0]: r[1] for r in cg_rows}
 
+    # Sort: all framework blocks first (alphabetically by group_code), then
+    # operational, then privacy, then cloud — so OP checklists never appear
+    # sandwiched between FW blocks when the combined ISMS view is shown.
+    _PT_ORDER = {"framework": 0, "operational": 1, "privacy": 2, "cloud": 3}
     result: list[GeneratorGrouped] = []
-    for key in sorted(groups.keys()):
+    for key in sorted(groups.keys(), key=lambda k: (_PT_ORDER.get(k[1], 99), k[0])):
         code, _pt = key
         gens = groups[key]
         first = gens[0]
