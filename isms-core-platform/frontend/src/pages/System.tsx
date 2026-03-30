@@ -246,7 +246,7 @@ export default function System() {
 
   const testEmailMutation = useMutation({
     mutationFn: () => adminApi.sendTestEmail(testEmailRecipient),
-    onSuccess: (data) => setTestEmailResult({ ok: true, msg: `Test email sent to ${data.recipient}. Check your Mailpit inbox.` }),
+    onSuccess: (res) => setTestEmailResult({ ok: true, msg: `Test email sent to ${res.recipient}. ${data?.smtp_host?.includes('mailpit') ? 'Check your Mailpit inbox.' : 'Check your inbox.'}` }),
     onError: (e: { response?: { data?: { detail?: string } } }) =>
       setTestEmailResult({ ok: false, msg: e?.response?.data?.detail ?? 'Send failed — check server logs.' }),
   })
