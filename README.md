@@ -5,7 +5,7 @@
 <h1 align="center">🎋 ISMS CORE Project</h1>
 
 <p align="center">
-  <strong>Control-Oriented Real-world Engineering — ISO 27001 · ISO 27701 · ISO 27018</strong>
+  <strong>Compliance Operations, Risk & Evidence — ISO 27001 · ISO 27701 · ISO 27018</strong>
 </p>
 
 <p align="center">

@@ -23,7 +23,7 @@
     {
       "type": "control_group",
       "id": "bd88521c-9b69-5cea-af08-0605db67f09a",
-      "group_code": "a.5.1-2-6.1-2",
+      "group_code": "a.5.1-2",
       "name": "Secure Employment and Roles",
       "section": "A.5",
       "section_name": "Organisational",
@@ -31,11 +31,12 @@
       "is_stacked": true,
       "stacked_control_ids": [
         "A.5.1",
-        "A.5.2",
+        "A.5.2"
+      ],
+      "also_covers": [
         "A.6.1",
         "A.6.2"
       ],
-      "also_covers": [],
       "is_iso_standard": true,
       "has_framework": true,
       "has_operational": true,
