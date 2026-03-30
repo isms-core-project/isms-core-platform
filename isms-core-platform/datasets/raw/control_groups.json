@@ -34,13 +34,12 @@
       "groups_count": 21,
       "groups": [
         {
-          "group_code": "a.5.1-2",
+          "group_code": "a.5.1-2-6.1-2",
           "name": "Secure Employment and Roles",
           "folder_name": "isms-a.5.1-2-6.1-2-secure-employment-and-roles",
           "section": "A.5",
           "section_name": "Organisational",
-          "stacked_control_ids": ["A.5.1", "A.5.2"],
-          "also_covers": ["A.6.1", "A.6.2"],
+          "stacked_control_ids": ["A.5.1", "A.5.2", "A.6.1", "A.6.2"],
           "is_iso_standard": true,
           "has_framework": true,
           "has_operational": true,
