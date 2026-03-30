@@ -31,12 +31,11 @@
       "is_stacked": true,
       "stacked_control_ids": [
         "A.5.1",
-        "A.5.2"
-      ],
-      "also_covers": [
+        "A.5.2",
         "A.6.1",
         "A.6.2"
       ],
+      "also_covers": [],
       "is_iso_standard": true,
       "has_framework": true,
       "has_operational": true,
