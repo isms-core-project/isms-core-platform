@@ -22,23 +22,34 @@ https://www.gnu.org/licenses/agpl-3.0.txt
 
 ---
 
+PRODUCTS COVERED BY THIS LICENSE:
+- ISMS CORE Framework (SSE): Full governance product for mature organisations
+- ISMS CORE Operational: Lightweight product for SMEs
+- ISMS CORE Privacy: ISO 27701:2025 extension — privacy information management
+- ISMS CORE Cloud: ISO 27018:2025 extension — PII protection in public cloud
+- ISMS CORE Cloud Services: ISO 27017:2025 extension — security controls for
+  cloud services (forthcoming, expected mid-2026)
+- ISMS CORE Platform: Self-hosted Docker compliance management system
+
+---
+
 COMMERCIAL LICENSING
 
 ISMS CORE is dual-licensed:
 - AGPL 3.0 for open source use
 - Commercial licenses available for proprietary use
 
-For commercial licensing inquiries (proprietary use, SaaS hosting, 
+For commercial licensing inquiries (proprietary use, SaaS hosting,
 enterprise support, custom development), please contact:
 
-The ISMS Core Project
+Gregory Griffin / The ISMS Core Project
 Email: info@isms-core.com
 Web: https://isms-core.com
 
 ---
 
 Built in Bamboo Land with bamboo-like speed and strength.
-"The first principle is that you must not fool yourself—and you are 
+"The first principle is that you must not fool yourself—and you are
 the easiest person to fool." — Richard Feynman
 
 Feynman would approve.

@@ -403,9 +403,11 @@ Claude Code (Anthropic, Sonnet model family) has been the primary implementation
 
 ```
 December 31st 2025: Pilot Control Creation -> A.8.24
-January 31st 2026: ISMS CORE Framework -> 93 Controls Completed in 53 Control Packs
-February 7th 2026: ISMS CORE Operational -> 93 Controls Completed in 53 Control Packs
-February 8th 2026: Python Scripts QA (Ongoing)
+January 2026:       ISMS CORE Framework -> 93 Controls Completed in 53 Control Packs
+February 2026:      ISMS CORE Operational -> 93 Controls Completed in 53 Control Packs
+March 2026:         ISMS CORE Privacy (ISO 27701:2025) -> 21 Control Groups Completed
+March 2026:         ISMS CORE Cloud (ISO 27018:2025) -> 12 Control Groups Completed
+March 2026:         ISMS CORE Platform -> Live at isms-core.com
 ```
 
 ### Platform
@@ -419,7 +421,7 @@ The **ISMS CORE Platform** (`isms-core-platform/`) is live — a FastAPI backend
 ---
 
 <p align="center">
-  <strong>Copyright © 2025-2026 The ISMS Core Project. All rights reserved.</strong>
+  <strong>Copyright © 2025-2026 Gregory Griffin. All rights reserved.</strong>
 </p>
 
 <p align="center">
