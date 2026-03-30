@@ -437,7 +437,7 @@ export default function System() {
           </Grid>
 
           {/* Row 3: Last Data Load + OpenSearch (left) | Email + AI Compass (right) */}
-          <Grid container spacing={2} sx={{ alignItems: 'stretch' }}>
+          <Grid container spacing={2} sx={{ alignItems: 'flex-start' }}>
             <Grid item xs={12} md={6}>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, height: '100%' }}>
 
@@ -575,8 +575,12 @@ export default function System() {
                     <Divider sx={{ mb: 1.5 }} />
                     {[
                       { label: 'Host', value: data.smtp_host || '— not configured —' },
-                      { label: 'Port', value: String(data.smtp_port) },
+                      {
+                        label: 'Port',
+                        value: data.smtp_host?.includes('smtp-bridge') ? 'GraphAPI (443)' : String(data.smtp_port),
+                      },
                       { label: 'From', value: data.smtp_from },
+                      ...(data.notification_email ? [{ label: 'Notifications', value: data.notification_email }] : []),
                       { label: 'Platform URL', value: data.platform_url },
                     ].map(({ label, value }) => (
                       <Box key={label} sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.75, gap: 2 }}>
@@ -632,9 +636,11 @@ export default function System() {
                             </span>
                           </Tooltip>
                         </Box>
-                        <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.75 }}>
-                          Delivered to Mailpit — <a href="http://localhost:8025" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>http://localhost:8025</a>
-                        </Typography>
+                        {data.smtp_host?.includes('mailpit') && (
+                          <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.75 }}>
+                            Delivered to Mailpit — <a href="http://localhost:8025" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>http://localhost:8025</a>
+                          </Typography>
+                        )}
                       </>
                     )}
                   </CardContent>

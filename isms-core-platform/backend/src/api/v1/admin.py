@@ -203,6 +203,7 @@ def get_sysinfo(db: DBSession = Depends(get_db)):
         smtp_host=settings.mail_host or "",
         smtp_port=settings.mail_port,
         smtp_from=settings.mail_from,
+        notification_email=settings.notification_email or "",
         platform_url=settings.platform_url,
         ai_model=effective_model,
     )

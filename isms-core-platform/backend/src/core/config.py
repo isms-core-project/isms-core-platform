@@ -54,6 +54,7 @@ class Settings(BaseSettings):
     mail_from: str = "isms-core@localhost"
     mail_from_name: str = "ISMS CORE"
     mail_timeout: int = 10  # seconds
+    notification_email: str = ""  # override recipient for system notifications (defaults to admin_email)
 
     # Admin bootstrap (set these in .env to seed/override the admin user on startup)
     admin_email: str = "admin@isms-core.dev"

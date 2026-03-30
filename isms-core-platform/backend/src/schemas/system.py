@@ -52,6 +52,7 @@ class SysInfoResponse(BaseModel):
     smtp_host: str = ""
     smtp_port: int = 1025
     smtp_from: str = ""
+    notification_email: str = ""
     platform_url: str = ""
     ai_model: str = ""
 
