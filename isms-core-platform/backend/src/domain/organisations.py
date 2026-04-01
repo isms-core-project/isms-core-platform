@@ -1,21 +1,31 @@
-"""Organisation domain model — Phase 7.15 (governance mode schema)."""
+"""Organisation domain model — multi-tenant entity (Phase 11)."""
 
 import uuid
+from typing import TYPE_CHECKING
 
 from sqlalchemy import String, Text
 from sqlalchemy.dialects.postgresql import JSONB, UUID
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from src.database.base import Base, SAEnum, TimestampMixin
 from src.database.enums import GovernanceMode, PrivacyRole
 
+if TYPE_CHECKING:
+    from src.domain.users import User
+    from src.domain.projects import Project
+    from src.domain.connectors import Connector
+
 
 class Organisation(TimestampMixin, Base):
-    """Represents an ISMS CORE installation (single-tenant — one row expected).
+    """A tenant in the ISMS CORE platform.
 
-    governance_mode controls how policy content authority works:
-      - platform: WebUI edits flow DB → publish as MD (Platform mode)
-      - local:    File edits flow file → import → DB read-only view (Local mode)
+    One Organisation per client/company. Users, Projects, and Connectors all
+    belong to an Organisation. A platform-level super_admin can cross org
+    boundaries; all other roles are scoped to their own org.
+
+    governance_mode controls policy content authority:
+      - platform: WebUI edits flow DB → publish as MD
+      - local:    File edits flow file → import → DB read-only view
     """
 
     __tablename__ = "organisations"
@@ -39,3 +49,8 @@ class Organisation(TimestampMixin, Base):
     settings: Mapped[dict] = mapped_column(
         JSONB, default=dict, server_default="{}"
     )
+
+    # Relationships
+    users: Mapped[list["User"]] = relationship(back_populates="organisation")
+    projects: Mapped[list["Project"]] = relationship(back_populates="organisation")
+    connectors: Mapped[list["Connector"]] = relationship(back_populates="organisation")

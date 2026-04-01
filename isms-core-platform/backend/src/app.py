@@ -72,6 +72,9 @@ async def lifespan(app: FastAPI):
                     user.hashed_password = hashed
                     logger.info("Admin password updated from env (email=%s)", settings.admin_email)
                 else:
+                    from src.domain.organisations import Organisation
+                    from sqlalchemy import select as _select
+                    org = db2.execute(_select(Organisation)).scalar_one_or_none()
                     db2.add(User(
                         email=settings.admin_email,
                         username="admin",
@@ -79,6 +82,7 @@ async def lifespan(app: FastAPI):
                         full_name="Administrator",
                         role="admin",
                         is_active=True,
+                        organisation_id=org.id if org else None,
                     ))
                     logger.info("Admin user created from env (email=%s)", settings.admin_email)
                 db2.commit()

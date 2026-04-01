@@ -88,8 +88,7 @@ def apply_doc_vars(content: str, org_name: str, doc_vars: DocVars | None) -> str
 
 class ProjectCreate(BaseModel):
     name: str
-    org_name: str
-    product_family: str          # ISMS | PRIVACY | CLOUD
+    product_family: str          # ISMS | PRIVACY | CLOUD | SEC
     project_subtype: str | None = None  # fw | op (ISMS only)
     description: str | None = None
     doc_vars: DocVars | None = None   # pre-filled document header variables
@@ -97,9 +96,8 @@ class ProjectCreate(BaseModel):
 
 class ProjectPatch(BaseModel):
     name: str | None = None
-    org_name: str | None = None
     description: str | None = None
-    status: str | None = None    # draft | active | archived
+    status: str | None = None    # draft | active | inactive | archived
     project_subtype: str | None = None
     doc_vars: DocVars | None = None
 
@@ -107,7 +105,8 @@ class ProjectPatch(BaseModel):
 class ProjectRead(BaseModel):
     id: uuid.UUID
     name: str
-    org_name: str
+    organisation_id: uuid.UUID
+    organisation_name: str | None = None   # populated from organisation relationship
     product_family: str
     project_subtype: str | None = None
     description: str | None

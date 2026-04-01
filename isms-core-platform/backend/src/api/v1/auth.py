@@ -1,5 +1,8 @@
+import uuid
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from jose import JWTError
+from pydantic import BaseModel
 from sqlalchemy.orm import Session as DBSession
 
 from src.core.dependencies import get_current_user
@@ -98,3 +101,40 @@ def update_my_notification_prefs(
         for ev in NOTIFICATION_EVENTS
     ]
     return NotificationPrefsResponse(prefs=prefs)
+
+
+# ---------------------------------------------------------------------------
+# Active project selection (per product family)
+# ---------------------------------------------------------------------------
+
+class ActiveProjectPatch(BaseModel):
+    product_family: str   # ISMS | PRIVACY | CLOUD | SEC
+    project_id: uuid.UUID | None = None  # None clears the active selection
+
+
+@router.patch("/me/active-project")
+def set_active_project(
+    body: ActiveProjectPatch,
+    current_user=Depends(get_current_user),
+    db: DBSession = Depends(get_db),
+):
+    """Set (or clear) the active project for a given product family.
+
+    Stores in user.active_projects as {"ISMS": "<uuid>", "PRIVACY": "<uuid>", ...}.
+    The frontend reads this to determine which project is 'active' per product.
+    """
+    fam = body.product_family.upper()
+    if fam not in ("ISMS", "PRIVACY", "CLOUD", "SEC"):
+        raise HTTPException(status_code=422, detail="product_family must be ISMS, PRIVACY, CLOUD, or SEC")
+
+    active = dict(current_user.active_projects or {})
+    if body.project_id is None:
+        active.pop(fam, None)
+    else:
+        active[fam] = str(body.project_id)
+
+    current_user.active_projects = active
+    db.add(current_user)
+    db.commit()
+    db.refresh(current_user)
+    return {"product_family": fam, "project_id": active.get(fam)}

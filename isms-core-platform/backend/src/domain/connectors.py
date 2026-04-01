@@ -2,14 +2,15 @@
 
 import uuid
 from datetime import datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy import DateTime, ForeignKey, Index, Integer, String, Text, UniqueConstraint
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from src.domain.control_groups import ControlGroup
+    from src.domain.organisations import Organisation
 
 from src.database.base import Base, TimestampMixin
 
@@ -20,6 +21,11 @@ class Connector(TimestampMixin, Base):
     id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     name: Mapped[str] = mapped_column(String(100), nullable=False)
     source_system: Mapped[str] = mapped_column(String(50), nullable=False)  # entra_id, defender, panw …
+    organisation_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("organisations.id", ondelete="RESTRICT"),
+        nullable=False,
+    )
     api_token_hash: Mapped[str | None] = mapped_column(String(255), nullable=True)
     last_run: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     last_item_count: Mapped[int | None] = mapped_column(Integer, nullable=True)
@@ -30,6 +36,7 @@ class Connector(TimestampMixin, Base):
     last_error_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     retention_days: Mapped[int | None] = mapped_column(Integer, nullable=True)  # None = use global default (90d)
 
+    organisation: Mapped["Organisation"] = relationship(back_populates="connectors")
     evidence: Mapped[list["ConnectorEvidence"]] = relationship(
         "ConnectorEvidence", back_populates="connector", cascade="all, delete-orphan"
     )

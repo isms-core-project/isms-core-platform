@@ -1,5 +1,5 @@
 import logging
-
+import uuid
 import shutil
 import tempfile
 
@@ -7,7 +7,7 @@ from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from sqlalchemy import func, select, text
 from sqlalchemy.orm import Session as DBSession
 
-from src.core.dependencies import get_current_user, require_role
+from src.core.dependencies import get_current_user, get_org_context, require_role
 from src.database.enums import UserRole
 from src.database.session import get_db
 from src.domain.assessments import Assessment, AssessmentItem, AssessmentSheet
@@ -817,7 +817,11 @@ def list_users(db: DBSession = Depends(get_db)):
     status_code=201,
     dependencies=[Depends(require_role(UserRole.ADMIN))],
 )
-def create_user(body: UserCreate, db: DBSession = Depends(get_db)):
+def create_user(
+    body: UserCreate,
+    db: DBSession = Depends(get_db),
+    org_id: uuid.UUID = Depends(get_org_context),
+):
     """Create a new user."""
     from sqlalchemy.exc import IntegrityError
 
@@ -838,6 +842,7 @@ def create_user(body: UserCreate, db: DBSession = Depends(get_db)):
         hashed_password=hash_password(body.password),
         role=role,
         is_active=True,
+        organisation_id=org_id,
     )
     db.add(user)
     try:

@@ -1,11 +1,10 @@
-"""FastAPI dependencies: database session, current user, role guards."""
+"""FastAPI dependencies: database session, current user, role guards, org context."""
 
 import uuid
 
-from fastapi import Depends, HTTPException, status
+from fastapi import Depends, Header, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jose import JWTError
-from sqlalchemy import select
 from sqlalchemy.orm import Session as DBSession
 
 from src.core.security import decode_token
@@ -16,7 +15,7 @@ from src.domain.users import User
 bearer_scheme = HTTPBearer()
 
 # Roles that may write ISMS content (policies, generators, assessments)
-_CONTENT_WRITE_ROLES = (UserRole.ADMIN, UserRole.ISMS_MANAGER)
+_CONTENT_WRITE_ROLES = (UserRole.SUPER_ADMIN, UserRole.ADMIN, UserRole.ISMS_MANAGER)
 
 
 def get_current_user(
@@ -53,6 +52,26 @@ def get_current_user(
     return user
 
 
+def get_org_context(
+    x_org_id: str | None = Header(None, alias="X-Org-ID"),
+    current_user: User = Depends(get_current_user),
+) -> uuid.UUID:
+    """Resolve the active organisation UUID for the current request.
+
+    Regular users: always their own organisation_id.
+    SUPER_ADMIN: may pass X-Org-ID header to act in any org's context.
+    """
+    if current_user.role == UserRole.SUPER_ADMIN and x_org_id:
+        try:
+            return uuid.UUID(x_org_id)
+        except ValueError:
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail="X-Org-ID must be a valid UUID",
+            )
+    return current_user.organisation_id
+
+
 def require_role(*roles: UserRole):
     """Return a dependency that checks the current user has one of the given roles."""
 
@@ -67,8 +86,8 @@ def require_role(*roles: UserRole):
     return checker
 
 
-# Shorthand — admin-only gate
-require_admin = require_role(UserRole.ADMIN)
+# Shorthand — admin gate (SUPER_ADMIN also qualifies)
+require_admin = require_role(UserRole.SUPER_ADMIN, UserRole.ADMIN)
 
 
 def require_content_editable(
@@ -77,14 +96,14 @@ def require_content_editable(
 ) -> User:
     """Allow writes only when:
       1. governance_mode == 'platform'  (DB is the content authority)
-      2. user has ADMIN or ISMS_MANAGER role
+      2. user has SUPER_ADMIN, ADMIN, or ISMS_MANAGER role
 
     In 'local' governance mode the platform is a read-only view of files;
     content changes must go through the file import pipeline instead.
     """
     from src.domain.organisations import Organisation  # avoid circular at module level
 
-    org = db.execute(select(Organisation)).scalar_one_or_none()
+    org = db.get(Organisation, user.organisation_id)
     if org and org.governance_mode == GovernanceMode.LOCAL:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,

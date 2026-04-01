@@ -1,5 +1,6 @@
 import uuid
 from datetime import datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy import Boolean, DateTime, ForeignKey, String, Text, func
 from sqlalchemy.dialects.postgresql import ARRAY, INET, JSONB, UUID
@@ -7,6 +8,9 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from src.database.base import Base, SAEnum, TimestampMixin
 from src.database.enums import UserRole
+
+if TYPE_CHECKING:
+    from src.domain.organisations import Organisation
 
 
 class User(TimestampMixin, Base):
@@ -27,6 +31,15 @@ class User(TimestampMixin, Base):
     is_active: Mapped[bool] = mapped_column(
         Boolean, nullable=False, server_default="true"
     )
+    organisation_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("organisations.id", ondelete="RESTRICT"),
+        nullable=False,
+    )
+    # Per-product-family active project: {"ISMS": "<uuid>", "PRIVACY": "<uuid>"}
+    active_projects: Mapped[dict] = mapped_column(
+        JSONB, default=dict, server_default="{}"
+    )
     assigned_groups: Mapped[list | None] = mapped_column(
         ARRAY(UUID(as_uuid=True)), server_default="{}"
     )
@@ -39,6 +52,7 @@ class User(TimestampMixin, Base):
     )
 
     # Relationships
+    organisation: Mapped["Organisation"] = relationship(back_populates="users")
     sessions: Mapped[list["Session"]] = relationship(
         back_populates="user", cascade="all, delete-orphan"
     )

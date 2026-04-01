@@ -27,6 +27,8 @@ class UserRead(BaseModel):
     full_name: str | None
     role: str
     is_active: bool
+    organisation_id: uuid.UUID
+    active_projects: dict = {}
     last_login: datetime | None
     created_at: datetime
     notification_prefs: dict = {}

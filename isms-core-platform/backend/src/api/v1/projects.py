@@ -39,7 +39,7 @@ logger = logging.getLogger(__name__)
 from sqlalchemy import select
 from sqlalchemy.orm import Session as DBSession
 
-from src.core.dependencies import get_current_user
+from src.core.dependencies import get_current_user, get_org_context
 from src.database.enums import ProductFamily
 from src.database.session import get_db
 from src.domain.content import Implementation, Policy
@@ -101,10 +101,12 @@ def _enrich_project(p: Project, db: DBSession) -> ProjectRead:
     settings = p.settings or {}
     raw_dv = settings.get("doc_vars")
     doc_vars = DocVars(**raw_dv) if isinstance(raw_dv, dict) else None
+    org_name = p.organisation.name if p.organisation else None
     return ProjectRead(
         id=p.id,
         name=p.name,
-        org_name=p.org_name,
+        organisation_id=p.organisation_id,
+        organisation_name=org_name,
         product_family=p.product_family.value if hasattr(p.product_family, "value") else p.product_family,
         project_subtype=settings.get("project_subtype"),
         description=p.description,
@@ -179,9 +181,9 @@ def list_projects(
     product_family: str | None = Query(None),
     status: str | None = Query(None),
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    org_id: uuid.UUID = Depends(get_org_context),
 ):
-    q = select(Project)
+    q = select(Project).where(Project.organisation_id == org_id)
     if product_family:
         q = q.where(Project.product_family == product_family.upper())
     if status:
@@ -196,6 +198,7 @@ def create_project(
     body: ProjectCreate,
     db: DBSession = Depends(get_db),
     current_user: User = Depends(get_current_user),
+    org_id: uuid.UUID = Depends(get_org_context),
 ):
     fam = body.product_family.upper()
     if fam not in ("ISMS", "PRIVACY", "CLOUD", "SEC"):
@@ -207,7 +210,7 @@ def create_project(
         settings["project_subtype"] = body.project_subtype.lower()
     p = Project(
         name=body.name,
-        org_name=body.org_name,
+        organisation_id=org_id,
         product_family=ProductFamily(fam),
         description=body.description,
         owner_id=current_user.id,
@@ -238,8 +241,6 @@ def update_project(
     p = _get_project_or_404(project_id, db)
     if body.name is not None:
         p.name = body.name
-    if body.org_name is not None:
-        p.org_name = body.org_name
     if body.description is not None:
         p.description = body.description
     if body.status is not None:
@@ -303,7 +304,7 @@ def reapply_doc_vars(
         if lib_pol and lib_pol.file_path:
             try:
                 raw = Path(lib_pol.file_path).read_text(encoding="utf-8")
-                pp.custom_content = apply_doc_vars(raw, project.org_name, doc_vars)
+                pp.custom_content = apply_doc_vars(raw, project.organisation.name if project.organisation else "", doc_vars)
                 pp.is_edited = False
                 updated_pol += 1
             except OSError as e:
@@ -319,7 +320,7 @@ def reapply_doc_vars(
         if lib_impl and lib_impl.file_path:
             try:
                 raw = Path(lib_impl.file_path).read_text(encoding="utf-8")
-                pi.custom_content = apply_doc_vars(raw, project.org_name, doc_vars)
+                pi.custom_content = apply_doc_vars(raw, project.organisation.name if project.organisation else "", doc_vars)
                 pi.is_edited = False
                 updated_impl += 1
             except OSError as e:
@@ -481,12 +482,12 @@ def add_project_policy(
     settings = project.settings or {}
     raw_dv = settings.get("doc_vars")
     doc_vars = DocVars(**raw_dv) if isinstance(raw_dv, dict) else None
-    if body.lib_policy_id and (doc_vars or project.org_name):
+    if body.lib_policy_id and (doc_vars or project.organisation.name if project.organisation else ""):
         lib_pol = db.get(Policy, body.lib_policy_id)
         if lib_pol and lib_pol.file_path:
             try:
                 raw = Path(lib_pol.file_path).read_text(encoding="utf-8")
-                custom_content = apply_doc_vars(raw, project.org_name, doc_vars)
+                custom_content = apply_doc_vars(raw, project.organisation.name if project.organisation else "", doc_vars)
             except OSError as e:
                 logger.warning("Could not read policy file %s: %s", lib_pol.file_path, e)
 
@@ -613,12 +614,12 @@ def add_project_implementation(
     settings = project.settings or {}
     raw_dv = settings.get("doc_vars")
     doc_vars = DocVars(**raw_dv) if isinstance(raw_dv, dict) else None
-    if body.lib_impl_id and (doc_vars or project.org_name):
+    if body.lib_impl_id and (doc_vars or project.organisation.name if project.organisation else ""):
         lib_impl = db.get(Implementation, body.lib_impl_id)
         if lib_impl and lib_impl.file_path:
             try:
                 raw = Path(lib_impl.file_path).read_text(encoding="utf-8")
-                custom_content = apply_doc_vars(raw, project.org_name, doc_vars)
+                custom_content = apply_doc_vars(raw, project.organisation.name if project.organisation else "", doc_vars)
             except OSError as e:
                 logger.warning("Could not read impl file %s: %s", lib_impl.file_path, e)
 

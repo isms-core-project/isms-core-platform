@@ -2,6 +2,7 @@
 
 import uuid
 from datetime import datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy import Boolean, DateTime, ForeignKey, String, Text
 from sqlalchemy.dialects.postgresql import JSONB, UUID
@@ -9,6 +10,9 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from src.database.base import Base, SAEnum, TimestampMixin
 from src.database.enums import ProductFamily, ProjectStatus
+
+if TYPE_CHECKING:
+    from src.domain.organisations import Organisation
 
 
 class Project(TimestampMixin, Base):
@@ -18,6 +22,7 @@ class Project(TimestampMixin, Base):
     A project scopes all operational data: assessments, gaps, evidence, checklists.
     Library content (policies, implementations) is referenced from the project via
     project_policies and project_implementations — either as-is or edited copies.
+    Projects are scoped to an Organisation (Phase 11 — multi-tenant).
     """
 
     __tablename__ = "projects"
@@ -26,7 +31,11 @@ class Project(TimestampMixin, Base):
         UUID(as_uuid=True), primary_key=True, default=uuid.uuid4
     )
     name: Mapped[str] = mapped_column(String(255), nullable=False)
-    org_name: Mapped[str] = mapped_column(String(255), nullable=False)
+    organisation_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("organisations.id", ondelete="RESTRICT"),
+        nullable=False,
+    )
     product_family: Mapped[ProductFamily] = mapped_column(
         SAEnum(ProductFamily, name="productfamily", create_type=False), nullable=False
     )
@@ -44,6 +53,7 @@ class Project(TimestampMixin, Base):
     settings: Mapped[dict] = mapped_column(JSONB, default=dict, server_default="{}")
 
     # Relationships
+    organisation: Mapped["Organisation"] = relationship(back_populates="projects")
     owner: Mapped["User | None"] = relationship()
     policies: Mapped[list["ProjectPolicy"]] = relationship(
         back_populates="project", cascade="all, delete-orphan"

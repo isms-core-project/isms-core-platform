@@ -2,6 +2,7 @@ import enum
 
 
 class UserRole(str, enum.Enum):
+    SUPER_ADMIN = "super_admin"   # Platform-level; crosses org boundaries
     ADMIN = "admin"
     ISMS_MANAGER = "isms_manager"
     AUDITOR = "auditor"
