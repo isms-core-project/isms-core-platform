@@ -318,13 +318,14 @@ def run_existence_check(
         ]
         has_external = len(external_sources) > 0
 
-        # ── PRIVACY / CLOUD: simple policy-existence check ───────────────────
-        if group.product_family in (ProductFamily.PRIVACY, ProductFamily.CLOUD):
-            expected_pt = (
-                ProductType.PRIVACY
-                if group.product_family == ProductFamily.PRIVACY
-                else ProductType.CLOUD
-            )
+        # ── PRIVACY / CLOUD / SEC: simple policy-existence check ─────────────
+        if group.product_family in (ProductFamily.PRIVACY, ProductFamily.CLOUD, ProductFamily.SEC):
+            _pt_map = {
+                ProductFamily.PRIVACY: ProductType.PRIVACY,
+                ProductFamily.CLOUD: ProductType.CLOUD,
+                ProductFamily.SEC: ProductType.SEC,
+            }
+            expected_pt = _pt_map[group.product_family]
             has_native_pol = any(r[1] == expected_pt for r in pol_rows)
             pf_label = group.product_family.value.lower()
             pf_present = ["policy"] if has_native_pol else []
@@ -461,6 +462,7 @@ def run_keyword_check(
         ProductFamily.ISMS: "ISO27001_2022",
         ProductFamily.PRIVACY: "ISO27701",
         ProductFamily.CLOUD: "ISO27018",
+        ProductFamily.SEC: "ISO27017",
     }
     frameworks = {
         family: db.execute(
@@ -688,6 +690,7 @@ def run_semantic_mini_check(
         ProductFamily.ISMS: "ISO27001_2022",
         ProductFamily.PRIVACY: "ISO27701",
         ProductFamily.CLOUD: "ISO27018",
+        ProductFamily.SEC: "ISO27017",
     }
     frameworks = {
         family: db.execute(
@@ -805,6 +808,7 @@ def run_semantic_claude_check(
         ProductFamily.ISMS: "ISO27001_2022",
         ProductFamily.PRIVACY: "ISO27701",
         ProductFamily.CLOUD: "ISO27018",
+        ProductFamily.SEC: "ISO27017",
     }
     frameworks = {
         family: db.execute(
@@ -816,6 +820,7 @@ def run_semantic_claude_check(
         ProductFamily.ISMS: "ISO 27001:2022",
         ProductFamily.PRIVACY: "ISO 27701:2025",
         ProductFamily.CLOUD: "ISO 27018:2025",
+        ProductFamily.SEC: "ISO 27017:2025",
     }
 
     del_q = delete(CorrelationResult).where(

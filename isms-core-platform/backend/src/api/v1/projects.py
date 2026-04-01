@@ -198,8 +198,8 @@ def create_project(
     current_user: User = Depends(get_current_user),
 ):
     fam = body.product_family.upper()
-    if fam not in ("ISMS", "PRIVACY", "CLOUD"):
-        raise HTTPException(status_code=422, detail="product_family must be ISMS, PRIVACY, or CLOUD")
+    if fam not in ("ISMS", "PRIVACY", "CLOUD", "SEC"):
+        raise HTTPException(status_code=422, detail="product_family must be ISMS, PRIVACY, CLOUD, or SEC")
     settings: dict = {}
     if body.doc_vars:
         settings["doc_vars"] = body.doc_vars.model_dump(exclude_none=True)
@@ -351,6 +351,7 @@ def browse_library_policies(
         "ISMS": [ProductType.FRAMEWORK, ProductType.OPERATIONAL],
         "PRIVACY": [ProductType.PRIVACY],
         "CLOUD": [ProductType.CLOUD],
+        "SEC": [ProductType.SEC],
     }
     allowed_types = family_to_types.get(family, [])
     if not allowed_types:
@@ -406,6 +407,7 @@ def browse_library_implementations(
         "ISMS": ProductFamily.ISMS,
         "PRIVACY": ProductFamily.PRIVACY,
         "CLOUD": ProductFamily.CLOUD,
+        "SEC": ProductFamily.SEC,
     }
     pf = family_map.get(family)
     if not pf:
@@ -764,6 +766,7 @@ def browse_library_checklists(
         "ISMS": [ProductType.FRAMEWORK, ProductType.OPERATIONAL],
         "PRIVACY": [ProductType.PRIVACY],
         "CLOUD": [ProductType.CLOUD],
+        "SEC": [ProductType.SEC],
     }
     allowed_types = family_to_types.get(family, [])
     if not allowed_types:

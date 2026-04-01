@@ -943,6 +943,7 @@ def get_home_summary(db: DBSession) -> dict:
         (ProductFamily.ISMS,    "isms"),
         (ProductFamily.PRIVACY, "privacy"),
         (ProductFamily.CLOUD,   "cloud"),
+        (ProductFamily.SEC,     "sec"),
     )
     result = {}
     for family, key in products:

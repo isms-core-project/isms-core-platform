@@ -31,6 +31,7 @@ _PRODUCT_FAMILY: dict[str, ProductFamily] = {
     ProductType.OPERATIONAL: ProductFamily.ISMS,
     ProductType.PRIVACY: ProductFamily.PRIVACY,
     ProductType.CLOUD: ProductFamily.CLOUD,
+    ProductType.SEC: ProductFamily.SEC,
 }
 
 # Sections to skip when extracting requirements (boilerplate)

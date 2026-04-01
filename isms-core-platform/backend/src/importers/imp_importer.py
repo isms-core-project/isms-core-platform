@@ -95,7 +95,7 @@ class ImpImporter(BaseImporter):
     # Covers ISMS-IMP-, PRIV-IMP-, CLD-IMP- bold headers in addition to watermark
     _IMP_SNIFF_RE = re.compile(
         rb"<!-- ISMS-CORE:IMP:|"
-        rb"\*\*(?:ISMS|PRIV|CLD)-IMP-"
+        rb"\*\*(?:ISMS|PRIV|CLD|SEC)-IMP-"
     )
 
     def _discover_implementations(self) -> list[Path]:

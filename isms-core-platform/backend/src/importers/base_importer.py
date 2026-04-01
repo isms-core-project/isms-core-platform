@@ -123,6 +123,7 @@ class BaseImporter:
             ProductFamily.ISMS: "00",
             ProductFamily.PRIVACY: "priv-00",
             ProductFamily.CLOUD: "cld-00",
+            ProductFamily.SEC: "sec-00",
         }
         if code == "00" or not code.startswith("a."):
             if preferred_family is not None:
