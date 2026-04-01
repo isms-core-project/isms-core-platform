@@ -341,47 +341,156 @@ export default function System() {
             ))}
           </Grid>
 
-          {/* Row 2: DB Records (left) | Platform Config (right) */}
-          <Grid container spacing={2} sx={{ alignItems: 'flex-start' }}>
-            <Grid item xs={12} md={6}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, height: '100%' }}>
+          {/* Two independent columns — cards stack continuously, no row pairing */}
+          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2, alignItems: 'start' }}>
 
-                {/* Database Records */}
-                <Card>
-                  <CardContent sx={{ pb: '12px !important' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
-                      <StorageOutlined sx={{ color: 'primary.main' }} />
-                      <Typography variant="h6">Database Records</Typography>
-                    </Box>
+            {/* LEFT COLUMN */}
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+
+              {/* Database Records */}
+              <Card>
+                <CardContent sx={{ pb: '12px !important' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
+                    <StorageOutlined sx={{ color: 'primary.main' }} />
+                    <Typography variant="h6">Database Records</Typography>
+                  </Box>
+                  <TableContainer>
+                    <Table size="small">
+                      <TableBody>
+                        {Object.entries(DB_COUNT_LABELS).map(([key, label]) => {
+                          const val = data.db_counts[key as keyof typeof data.db_counts]
+                          return (
+                            <TableRow key={key} hover>
+                              <TableCell>
+                                <Typography variant="body2" color="text.secondary">{label}</Typography>
+                              </TableCell>
+                              <TableCell align="right">
+                                <Typography variant="body2" fontWeight={600} fontFamily="monospace">
+                                  {val.toLocaleString()}
+                                </Typography>
+                              </TableCell>
+                            </TableRow>
+                          )
+                        })}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                </CardContent>
+              </Card>
+
+              {/* Last Data Load */}
+              <Card>
+                <CardContent sx={{ pb: '12px !important' }}>
+                  <Typography variant="h6" gutterBottom>Last Data Load</Typography>
+                  <Divider sx={{ mb: 1.5 }} />
+                  {data.last_sync_at ? (
+                    <>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.75 }}>
+                        <Typography variant="body2" color="text.secondary">Type</Typography>
+                        <Typography variant="body2" fontFamily="monospace">
+                          {data.last_sync_type ?? '—'}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.75 }}>
+                        <Typography variant="body2" color="text.secondary">Status</Typography>
+                        <Chip
+                          label={data.last_sync_status ?? '—'}
+                          size="small"
+                          sx={{
+                            fontSize: '0.65rem',
+                            height: 18,
+                            bgcolor: data.last_sync_status === 'success' ? '#1a3a27' : '#3a0000',
+                            color: data.last_sync_status === 'success' ? '#C6EFCE' : '#FFC7CE',
+                          }}
+                        />
+                      </Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <Typography variant="body2" color="text.secondary">At</Typography>
+                        <Typography variant="body2">
+                          {dayjs(data.last_sync_at).format('DD MMM YYYY HH:mm')} UTC
+                        </Typography>
+                      </Box>
+                    </>
+                  ) : (
+                    <Typography variant="body2" color="text.secondary">No data loads recorded.</Typography>
+                  )}
+                </CardContent>
+              </Card>
+
+              {/* OpenSearch */}
+              <Card>
+                <CardContent sx={{ pb: '12px !important' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5, flexWrap: 'wrap' }}>
+                    <SyncAltOutlined sx={{ color: 'primary.main' }} />
+                    <Typography variant="h6" sx={{ flex: 1 }}>OpenSearch</Typography>
+                    <Tooltip title="Re-parse all IMP/POL files and push to OpenSearch. Fixes 'needs review' on keyword checks.">
+                      <Button
+                        size="small"
+                        variant="outlined"
+                        startIcon={reindexMutation.isPending ? <CircularProgress size={12} /> : <CloudSyncOutlined />}
+                        disabled={reindexMutation.isPending}
+                        onClick={() => { setReindexResult(null); reindexMutation.mutate() }}
+                        sx={{ fontSize: '0.7rem', ml: 'auto' }}
+                      >
+                        {reindexMutation.isPending ? 'Reindexing…' : 'Reindex'}
+                      </Button>
+                    </Tooltip>
+                    {data.opensearch_cluster_status && (
+                      <Chip
+                        label={data.opensearch_cluster_status}
+                        size="small"
+                        sx={{
+                          fontSize: '0.65rem',
+                          height: 18,
+                          bgcolor:
+                            data.opensearch_cluster_status === 'green' ? '#1a3a27'
+                            : data.opensearch_cluster_status === 'yellow' ? '#3a2e00'
+                            : '#3a0000',
+                          color:
+                            data.opensearch_cluster_status === 'green' ? '#C6EFCE'
+                            : data.opensearch_cluster_status === 'yellow' ? '#FFEB9C'
+                            : '#FFC7CE',
+                        }}
+                      />
+                    )}
+                  </Box>
+                  {data.opensearch_indices ? (
                     <TableContainer>
                       <Table size="small">
+                        <TableHead>
+                          <TableRow>
+                            <TableCell>Index</TableCell>
+                            <TableCell align="right">Documents</TableCell>
+                          </TableRow>
+                        </TableHead>
                         <TableBody>
-                          {Object.entries(DB_COUNT_LABELS).map(([key, label]) => {
-                            const val = data.db_counts[key as keyof typeof data.db_counts]
-                            return (
-                              <TableRow key={key} hover>
-                                <TableCell>
-                                  <Typography variant="body2" color="text.secondary">{label}</Typography>
-                                </TableCell>
-                                <TableCell align="right">
-                                  <Typography variant="body2" fontWeight={600} fontFamily="monospace">
-                                    {val.toLocaleString()}
-                                  </Typography>
-                                </TableCell>
-                              </TableRow>
-                            )
-                          })}
+                          {Object.entries(data.opensearch_indices).map(([idx, count]) => (
+                            <TableRow key={idx} hover>
+                              <TableCell>
+                                <Typography variant="caption" fontFamily="monospace">{idx}</Typography>
+                              </TableCell>
+                              <TableCell align="right">
+                                <Typography variant="body2" fontWeight={600} fontFamily="monospace">
+                                  {count?.toLocaleString() ?? '—'}
+                                </Typography>
+                              </TableCell>
+                            </TableRow>
+                          ))}
                         </TableBody>
                       </Table>
                     </TableContainer>
-                  </CardContent>
-                </Card>
+                  ) : (
+                    <Typography variant="body2" color="text.secondary">Unavailable</Typography>
+                  )}
+                </CardContent>
+              </Card>
 
-              </Box>
-            </Grid>
+            </Box>
 
-            {/* Platform Configuration — right column of Row 2 */}
-            <Grid item xs={12} md={6}>
+            {/* RIGHT COLUMN */}
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+
+              {/* Platform Configuration */}
               <Card>
                 <CardContent sx={{ pb: '12px !important' }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
@@ -397,7 +506,7 @@ export default function System() {
                     { label: 'Operational Path', value: data.operational_path },
                     ...(data.privacy_path ? [{ label: 'Privacy Path', value: data.privacy_path }] : []),
                     ...(data.cloud_path ? [{ label: 'Cloud Path', value: data.cloud_path }] : []),
-                    ...(data.sec_path ? [{ label: 'SEC Path', value: data.sec_path }] : []),
+                    ...(data.sec_path ? [{ label: 'Sec Path', value: data.sec_path }] : []),
                     ...(data.ext_path ? [{ label: 'Ext Path', value: data.ext_path }] : []),
                     { label: 'Datasets Path', value: data.datasets_path },
                     { label: 'OpenSearch URL', value: data.opensearch_url },
@@ -434,275 +543,152 @@ export default function System() {
                   </Box>
                 </CardContent>
               </Card>
-            </Grid>
-          </Grid>
 
-          {/* Row 3: Last Data Load + OpenSearch (left) | Email + AI Compass (right) */}
-          <Grid container spacing={2} sx={{ alignItems: 'flex-start' }}>
-            <Grid item xs={12} md={6}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, height: '100%' }}>
-
-                {/* Last Data Load */}
-                <Card>
-                  <CardContent sx={{ pb: '12px !important' }}>
-                    <Typography variant="h6" gutterBottom>Last Data Load</Typography>
-                    <Divider sx={{ mb: 1.5 }} />
-                    {data.last_sync_at ? (
-                      <>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.75 }}>
-                          <Typography variant="body2" color="text.secondary">Type</Typography>
-                          <Typography variant="body2" fontFamily="monospace">
-                            {data.last_sync_type ?? '—'}
-                          </Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.75 }}>
-                          <Typography variant="body2" color="text.secondary">Status</Typography>
-                          <Chip
-                            label={data.last_sync_status ?? '—'}
-                            size="small"
-                            sx={{
-                              fontSize: '0.65rem',
-                              height: 18,
-                              bgcolor: data.last_sync_status === 'success' ? '#1a3a27' : '#3a0000',
-                              color: data.last_sync_status === 'success' ? '#C6EFCE' : '#FFC7CE',
-                            }}
-                          />
-                        </Box>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <Typography variant="body2" color="text.secondary">At</Typography>
-                          <Typography variant="body2">
-                            {dayjs(data.last_sync_at).format('DD MMM YYYY HH:mm')} UTC
-                          </Typography>
-                        </Box>
-                      </>
-                    ) : (
-                      <Typography variant="body2" color="text.secondary">No data loads recorded.</Typography>
-                    )}
-                  </CardContent>
-                </Card>
-
-                {/* OpenSearch */}
-                <Card>
-                  <CardContent sx={{ pb: '12px !important' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5, flexWrap: 'wrap' }}>
-                      <SyncAltOutlined sx={{ color: 'primary.main' }} />
-                      <Typography variant="h6" sx={{ flex: 1 }}>OpenSearch</Typography>
-                      <Tooltip title="Re-parse all IMP/POL files and push to OpenSearch. Fixes 'needs review' on keyword checks.">
-                        <Button
-                          size="small"
-                          variant="outlined"
-                          startIcon={reindexMutation.isPending ? <CircularProgress size={12} /> : <CloudSyncOutlined />}
-                          disabled={reindexMutation.isPending}
-                          onClick={() => { setReindexResult(null); reindexMutation.mutate() }}
-                          sx={{ fontSize: '0.7rem', ml: 'auto' }}
-                        >
-                          {reindexMutation.isPending ? 'Reindexing…' : 'Reindex'}
-                        </Button>
-                      </Tooltip>
-                      {data.opensearch_cluster_status && (
-                        <Chip
-                          label={data.opensearch_cluster_status}
-                          size="small"
-                          sx={{
-                            fontSize: '0.65rem',
-                            height: 18,
-                            bgcolor:
-                              data.opensearch_cluster_status === 'green' ? '#1a3a27'
-                              : data.opensearch_cluster_status === 'yellow' ? '#3a2e00'
-                              : '#3a0000',
-                            color:
-                              data.opensearch_cluster_status === 'green' ? '#C6EFCE'
-                              : data.opensearch_cluster_status === 'yellow' ? '#FFEB9C'
-                              : '#FFC7CE',
-                          }}
-                        />
-                      )}
-                    </Box>
-                    {data.opensearch_indices ? (
-                      <TableContainer>
-                        <Table size="small">
-                          <TableHead>
-                            <TableRow>
-                              <TableCell>Index</TableCell>
-                              <TableCell align="right">Documents</TableCell>
-                            </TableRow>
-                          </TableHead>
-                          <TableBody>
-                            {Object.entries(data.opensearch_indices).map(([idx, count]) => (
-                              <TableRow key={idx} hover>
-                                <TableCell>
-                                  <Typography variant="caption" fontFamily="monospace">{idx}</Typography>
-                                </TableCell>
-                                <TableCell align="right">
-                                  <Typography variant="body2" fontWeight={600} fontFamily="monospace">
-                                    {count?.toLocaleString() ?? '—'}
-                                  </Typography>
-                                </TableCell>
-                              </TableRow>
-                            ))}
-                          </TableBody>
-                        </Table>
-                      </TableContainer>
-                    ) : (
-                      <Typography variant="body2" color="text.secondary">Unavailable</Typography>
-                    )}
-                  </CardContent>
-                </Card>
-
-              </Box>
-            </Grid>
-
-            {/* Email + AI Compass — right column of Row 3 */}
-            <Grid item xs={12} md={6}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, height: '100%' }}>
-
-                {/* SMTP Configuration */}
-                <Card>
-                  <CardContent sx={{ pb: '12px !important' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-                      <EmailOutlined sx={{ color: 'primary.main' }} />
-                      <Typography variant="h6" sx={{ flex: 1 }}>Email (SMTP)</Typography>
-                      <Chip
-                        label={data.smtp_enabled ? 'enabled' : 'disabled'}
-                        size="small"
-                        sx={{
-                          fontSize: '0.65rem',
-                          height: 18,
-                          bgcolor: data.smtp_enabled ? '#1a3a27' : '#3a0000',
-                          color: data.smtp_enabled ? '#C6EFCE' : '#FFC7CE',
-                        }}
-                      />
-                    </Box>
-                    <Divider sx={{ mb: 1.5 }} />
-                    {[
-                      { label: 'Host', value: data.smtp_host || '— not configured —' },
-                      {
-                        label: 'Port',
-                        value: data.smtp_host?.includes('smtp-bridge') ? 'GraphAPI (443)' : String(data.smtp_port),
-                      },
-                      { label: 'From', value: data.smtp_from },
-                      ...(data.notification_email ? [{ label: 'Notifications', value: data.notification_email }] : []),
-                      { label: 'Platform URL', value: data.platform_url },
-                    ].map(({ label, value }) => (
-                      <Box key={label} sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.75, gap: 2 }}>
-                        <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0 }}>{label}</Typography>
-                        <Typography
-                          variant="body2"
-                          fontFamily="monospace"
-                          sx={{ fontSize: '0.75rem', textAlign: 'right', wordBreak: 'break-all', color: 'text.primary' }}
-                        >
-                          {value}
-                        </Typography>
-                      </Box>
-                    ))}
-
-                    {data.smtp_enabled && (
-                      <>
-                        <Divider sx={{ my: 1.5 }} />
-                        {testEmailResult && (
-                          <Alert
-                            severity={testEmailResult.ok ? 'success' : 'error'}
-                            onClose={() => setTestEmailResult(null)}
-                            sx={{ mb: 1.5, py: 0, fontSize: '0.72rem' }}
-                          >
-                            {testEmailResult.msg}
-                          </Alert>
-                        )}
-                        <Box sx={{ display: 'flex', gap: 1, alignItems: 'flex-start' }}>
-                          <TextField
-                            size="small"
-                            placeholder="recipient@example.com"
-                            value={testEmailRecipient}
-                            onChange={(e) => setTestEmailRecipient(e.target.value)}
-                            onKeyDown={(e) => {
-                              if (e.key === 'Enter' && testEmailRecipient.trim()) {
-                                setTestEmailResult(null)
-                                testEmailMutation.mutate()
-                              }
-                            }}
-                            sx={{ flex: 1, '& .MuiInputBase-input': { fontSize: '0.8rem' } }}
-                          />
-                          <Tooltip title="Send a test email to verify SMTP is working">
-                            <span>
-                              <Button
-                                size="small"
-                                variant="outlined"
-                                startIcon={testEmailMutation.isPending ? <CircularProgress size={12} /> : <SendOutlined />}
-                                disabled={testEmailMutation.isPending || !testEmailRecipient.trim()}
-                                onClick={() => { setTestEmailResult(null); testEmailMutation.mutate() }}
-                                sx={{ fontSize: '0.7rem', whiteSpace: 'nowrap' }}
-                              >
-                                {testEmailMutation.isPending ? 'Sending…' : 'Send Test'}
-                              </Button>
-                            </span>
-                          </Tooltip>
-                        </Box>
-                        {data.smtp_host?.includes('mailpit') && (
-                          <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.75 }}>
-                            Delivered to Mailpit — <a href="http://localhost:8025" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>http://localhost:8025</a>
-                          </Typography>
-                        )}
-                      </>
-                    )}
-                  </CardContent>
-                </Card>
-
-                {/* AI Compass Configuration */}
-                <Card>
-                  <CardContent sx={{ pb: '12px !important' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-                      <PsychologyOutlined sx={{ color: 'primary.main' }} />
-                      <Typography variant="h6" sx={{ flex: 1 }}>AI Compass</Typography>
-                    </Box>
-                    <Divider sx={{ mb: 1.5 }} />
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1.5, gap: 2, alignItems: 'center' }}>
-                      <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0 }}>Active Model</Typography>
-                      <Typography variant="body2" fontFamily="monospace" sx={{ fontSize: '0.75rem', textAlign: 'right', wordBreak: 'break-all' }}>
-                        {data.ai_model || '—'}
+              {/* Email (SMTP) */}
+              <Card>
+                <CardContent sx={{ pb: '12px !important' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                    <EmailOutlined sx={{ color: 'primary.main' }} />
+                    <Typography variant="h6" sx={{ flex: 1 }}>Email (SMTP)</Typography>
+                    <Chip
+                      label={data.smtp_enabled ? 'enabled' : 'disabled'}
+                      size="small"
+                      sx={{
+                        fontSize: '0.65rem',
+                        height: 18,
+                        bgcolor: data.smtp_enabled ? '#1a3a27' : '#3a0000',
+                        color: data.smtp_enabled ? '#C6EFCE' : '#FFC7CE',
+                      }}
+                    />
+                  </Box>
+                  <Divider sx={{ mb: 1.5 }} />
+                  {[
+                    { label: 'Host', value: data.smtp_host || '— not configured —' },
+                    {
+                      label: 'Port',
+                      value: data.smtp_host?.includes('smtp-bridge') ? 'GraphAPI (443)' : String(data.smtp_port),
+                    },
+                    { label: 'From', value: data.smtp_from },
+                    ...(data.notification_email ? [{ label: 'Notifications', value: data.notification_email }] : []),
+                    { label: 'Platform URL', value: data.platform_url },
+                  ].map(({ label, value }) => (
+                    <Box key={label} sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.75, gap: 2 }}>
+                      <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0 }}>{label}</Typography>
+                      <Typography
+                        variant="body2"
+                        fontFamily="monospace"
+                        sx={{ fontSize: '0.75rem', textAlign: 'right', wordBreak: 'break-all', color: 'text.primary' }}
+                      >
+                        {value}
                       </Typography>
                     </Box>
-                    <Divider sx={{ mb: 1.5 }} />
-                    {aiModelResult && (
-                      <Alert
-                        severity={aiModelResult.ok ? 'success' : 'error'}
-                        onClose={() => setAiModelResult(null)}
-                        sx={{ mb: 1.5, py: 0, fontSize: '0.72rem' }}
-                      >
-                        {aiModelResult.msg}
-                      </Alert>
-                    )}
-                    <FormControl fullWidth size="small">
-                      <InputLabel sx={{ fontSize: '0.8rem' }}>Select Model</InputLabel>
-                      <Select
-                        label="Select Model"
-                        value={data.ai_model || ''}
-                        onChange={(e) => {
-                          setAiModelResult(null)
-                          updateAiModelMutation.mutate(e.target.value)
-                        }}
-                        disabled={updateAiModelMutation.isPending}
-                        sx={{ fontSize: '0.8rem' }}
-                      >
-                        <MenuItem value="claude-haiku-4-5-20251001" sx={{ fontSize: '0.8rem' }}>
-                          Haiku 4.5 — Fast &amp; economical
-                        </MenuItem>
-                        <MenuItem value="claude-sonnet-4-6" sx={{ fontSize: '0.8rem' }}>
-                          Sonnet 4.6 — Balanced (recommended)
-                        </MenuItem>
-                        <MenuItem value="claude-opus-4-6" sx={{ fontSize: '0.8rem' }}>
-                          Opus 4.6 — Most capable
-                        </MenuItem>
-                      </Select>
-                    </FormControl>
-                    <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.75 }}>
-                      Applies to ISMS Compass gap analysis. Requires ANTHROPIC_API_KEY in platform/.env.
-                    </Typography>
-                  </CardContent>
-                </Card>
+                  ))}
+                  {data.smtp_enabled && (
+                    <>
+                      <Divider sx={{ my: 1.5 }} />
+                      {testEmailResult && (
+                        <Alert
+                          severity={testEmailResult.ok ? 'success' : 'error'}
+                          onClose={() => setTestEmailResult(null)}
+                          sx={{ mb: 1.5, py: 0, fontSize: '0.72rem' }}
+                        >
+                          {testEmailResult.msg}
+                        </Alert>
+                      )}
+                      <Box sx={{ display: 'flex', gap: 1, alignItems: 'flex-start' }}>
+                        <TextField
+                          size="small"
+                          placeholder="recipient@example.com"
+                          value={testEmailRecipient}
+                          onChange={(e) => setTestEmailRecipient(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' && testEmailRecipient.trim()) {
+                              setTestEmailResult(null)
+                              testEmailMutation.mutate()
+                            }
+                          }}
+                          sx={{ flex: 1, '& .MuiInputBase-input': { fontSize: '0.8rem' } }}
+                        />
+                        <Tooltip title="Send a test email to verify SMTP is working">
+                          <span>
+                            <Button
+                              size="small"
+                              variant="outlined"
+                              startIcon={testEmailMutation.isPending ? <CircularProgress size={12} /> : <SendOutlined />}
+                              disabled={testEmailMutation.isPending || !testEmailRecipient.trim()}
+                              onClick={() => { setTestEmailResult(null); testEmailMutation.mutate() }}
+                              sx={{ fontSize: '0.7rem', whiteSpace: 'nowrap' }}
+                            >
+                              {testEmailMutation.isPending ? 'Sending…' : 'Send Test'}
+                            </Button>
+                          </span>
+                        </Tooltip>
+                      </Box>
+                      {data.smtp_host?.includes('mailpit') && (
+                        <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.75 }}>
+                          Delivered to Mailpit — <a href="http://localhost:8025" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>http://localhost:8025</a>
+                        </Typography>
+                      )}
+                    </>
+                  )}
+                </CardContent>
+              </Card>
 
-              </Box>
-            </Grid>
-          </Grid>
+              {/* AI Compass */}
+              <Card>
+                <CardContent sx={{ pb: '12px !important' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                    <PsychologyOutlined sx={{ color: 'primary.main' }} />
+                    <Typography variant="h6" sx={{ flex: 1 }}>AI Compass</Typography>
+                  </Box>
+                  <Divider sx={{ mb: 1.5 }} />
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1.5, gap: 2, alignItems: 'center' }}>
+                    <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0 }}>Active Model</Typography>
+                    <Typography variant="body2" fontFamily="monospace" sx={{ fontSize: '0.75rem', textAlign: 'right', wordBreak: 'break-all' }}>
+                      {data.ai_model || '—'}
+                    </Typography>
+                  </Box>
+                  <Divider sx={{ mb: 1.5 }} />
+                  {aiModelResult && (
+                    <Alert
+                      severity={aiModelResult.ok ? 'success' : 'error'}
+                      onClose={() => setAiModelResult(null)}
+                      sx={{ mb: 1.5, py: 0, fontSize: '0.72rem' }}
+                    >
+                      {aiModelResult.msg}
+                    </Alert>
+                  )}
+                  <FormControl fullWidth size="small">
+                    <InputLabel sx={{ fontSize: '0.8rem' }}>Select Model</InputLabel>
+                    <Select
+                      label="Select Model"
+                      value={data.ai_model || ''}
+                      onChange={(e) => {
+                        setAiModelResult(null)
+                        updateAiModelMutation.mutate(e.target.value)
+                      }}
+                      disabled={updateAiModelMutation.isPending}
+                      sx={{ fontSize: '0.8rem' }}
+                    >
+                      <MenuItem value="claude-haiku-4-5-20251001" sx={{ fontSize: '0.8rem' }}>
+                        Haiku 4.5 — Fast &amp; economical
+                      </MenuItem>
+                      <MenuItem value="claude-sonnet-4-6" sx={{ fontSize: '0.8rem' }}>
+                        Sonnet 4.6 — Balanced (recommended)
+                      </MenuItem>
+                      <MenuItem value="claude-opus-4-6" sx={{ fontSize: '0.8rem' }}>
+                        Opus 4.6 — Most capable
+                      </MenuItem>
+                    </Select>
+                  </FormControl>
+                  <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.75 }}>
+                    Applies to ISMS Compass gap analysis. Requires ANTHROPIC_API_KEY in platform/.env.
+                  </Typography>
+                </CardContent>
+              </Card>
+
+            </Box>
+          </Box>
 
           {/* Row 4: First-Run Setup (full width) */}
           <Grid container spacing={2}>
