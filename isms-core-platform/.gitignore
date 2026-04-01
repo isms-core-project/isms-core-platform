@@ -18,6 +18,7 @@ frontend/dist/
 postgres-data/
 redis-data/
 opensearch-data/
+certs/
 
 # Uploads / generated
 backend/uploads/
