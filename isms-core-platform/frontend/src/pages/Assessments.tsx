@@ -647,7 +647,7 @@ export default function Assessments() {
 
       {activeProject ? (
         <Alert severity="success" sx={{ mb: 2 }}>
-          Showing assessments for project: <strong>{activeProject.name}</strong> — {activeProject.org_name}
+          Showing assessments for project: <strong>{activeProject.name}</strong> — {activeProject.organisation_name ?? ''}
         </Alert>
       ) : (
         <Alert

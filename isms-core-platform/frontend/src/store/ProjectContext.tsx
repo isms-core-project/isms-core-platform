@@ -1,55 +1,86 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { projectsApi, type ProjectRead } from '../api/projectsApi'
 
+// Keyed by UPPERCASE product family: ISMS | PRIVACY | CLOUD | SEC
+type ActiveProjectsMap = Record<string, ProjectRead | null>
+
 interface ProjectContextValue {
+  getActiveProject: (family: string) => ProjectRead | null
+  setActiveProject: (family: string, project: ProjectRead | null) => void
+  // Backward-compat helpers used by components that don't need per-family resolution
   activeProjectId: string | null
   activeProject: ProjectRead | null
-  setActiveProject: (p: ProjectRead | null) => void
 }
 
 const ProjectContext = createContext<ProjectContextValue>({
+  getActiveProject: () => null,
+  setActiveProject: () => {},
   activeProjectId: null,
   activeProject: null,
-  setActiveProject: () => {},
 })
 
-export function ProjectProvider({ children }: { children: React.ReactNode }) {
-  const [activeProject, setActiveProjectState] = useState<ProjectRead | null>(() => {
-    try {
-      const stored = localStorage.getItem('isms_active_project')
-      return stored ? (JSON.parse(stored) as ProjectRead) : null
-    } catch {
-      return null
-    }
-  })
+const STORAGE_KEY = 'isms_active_projects'
 
-  // Validate stored project still exists in DB on mount
+function loadStored(): ActiveProjectsMap {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    return raw ? (JSON.parse(raw) as ActiveProjectsMap) : {}
+  } catch {
+    return {}
+  }
+}
+
+export function ProjectProvider({ children }: { children: React.ReactNode }) {
+  const [activeProjects, setActiveProjectsState] = useState<ActiveProjectsMap>(loadStored)
+
+  // Validate stored projects still exist in DB on mount
   useEffect(() => {
-    const stored = localStorage.getItem('isms_active_project')
-    if (!stored) return
-    try {
-      const p = JSON.parse(stored) as ProjectRead
+    const stored = loadStored()
+    const families = Object.keys(stored)
+    if (!families.length) return
+
+    families.forEach(family => {
+      const p = stored[family]
+      if (!p) return
       projectsApi.get(p.id).catch(() => {
-        localStorage.removeItem('isms_active_project')
-        setActiveProjectState(null)
+        setActiveProjectsState(prev => {
+          const next = { ...prev }
+          delete next[family]
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
+          return next
+        })
       })
-    } catch {
-      localStorage.removeItem('isms_active_project')
-      setActiveProjectState(null)
-    }
+    })
   }, [])
 
-  function setActiveProject(p: ProjectRead | null) {
-    setActiveProjectState(p)
-    if (p) {
-      localStorage.setItem('isms_active_project', JSON.stringify(p))
-    } else {
-      localStorage.removeItem('isms_active_project')
-    }
+  function getActiveProject(family: string): ProjectRead | null {
+    return activeProjects[family.toUpperCase()] ?? null
   }
 
+  function setActiveProject(family: string, project: ProjectRead | null) {
+    const key = family.toUpperCase()
+    setActiveProjectsState(prev => {
+      const next = { ...prev }
+      if (project) {
+        next[key] = project
+      } else {
+        delete next[key]
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
+      return next
+    })
+  }
+
+  // Backward-compat: expose ISMS project as the "default" active project
+  const ismsProject = activeProjects['ISMS'] ?? null
+
   return (
-    <ProjectContext.Provider value={{ activeProjectId: activeProject?.id ?? null, activeProject, setActiveProject }}>
+    <ProjectContext.Provider value={{
+      getActiveProject,
+      setActiveProject,
+      activeProjectId: ismsProject?.id ?? null,
+      activeProject: ismsProject,
+    }}>
       {children}
     </ProjectContext.Provider>
   )

@@ -19,6 +19,19 @@ export interface UserInfo {
   full_name: string | null
   role: string
   is_active: boolean
+  organisation_id: string
+  active_projects: Record<string, string>   // product_family → project_id
+}
+
+export interface OrganisationRead {
+  id: string
+  name: string
+  slug: string
+  governance_mode: string
+  privacy_role: string
+  description: string | null
+  created_at: string
+  updated_at: string
 }
 
 // ---------------------------------------------------------------------------
@@ -408,6 +421,8 @@ export interface UserRead {
   full_name: string | null
   role: string
   is_active: boolean
+  organisation_id: string
+  active_projects: Record<string, string>
   last_login: string | null
   created_at: string
   notification_prefs: Record<string, boolean>

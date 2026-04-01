@@ -224,9 +224,10 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   const navigate = useNavigate()
   const location = useLocation()
   const [notifsOpen, setNotifsOpen] = useState(false)
-  const { logout, user } = useAuth()
+  const { logout, user, isSuperAdmin } = useAuth()
   const { product, setProduct, ismsTier, setIsmsTier } = useProduct()
-  const { activeProject, setActiveProject } = useProject()
+  const { getActiveProject, setActiveProject } = useProject()
+  const activeProject = getActiveProject(product.toUpperCase())
   const { mode, toggleTheme } = useThemeMode()
 
   const isNeutralPage = location.pathname === '/' || PLATFORM_PATHS.some(p => location.pathname.startsWith(p))
@@ -412,7 +413,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
                   {activeProject && (
                     <IconButton
                       size="small"
-                      onClick={(e) => { e.stopPropagation(); setActiveProject(null) }}
+                      onClick={(e) => { e.stopPropagation(); setActiveProject(product.toUpperCase(), null) }}
                       sx={{ p: 0.25, color: 'text.disabled', '&:hover': { color: 'error.main' } }}
                     >
                       <CloseOutlined sx={{ fontSize: 12 }} />
@@ -737,6 +738,23 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
           <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.5, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {user.email}
           </Typography>
+        )}
+        {isSuperAdmin && (
+          <Tooltip title={collapsed ? 'Organisations' : ''} placement="right">
+            <ListItemButton
+              onClick={() => navigate('/organisations')}
+              selected={location.pathname === '/organisations'}
+              sx={{ borderRadius: 1.5, px: collapsed ? 0 : 1.5, py: 0.5, justifyContent: collapsed ? 'center' : 'flex-start',
+                '&.Mui-selected': { bgcolor: 'rgba(255,193,7,0.1)', color: '#FFC107', '& .MuiListItemIcon-root': { color: '#FFC107' } } }}
+            >
+              <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 36, color: 'text.secondary' }}>
+                <BusinessOutlined fontSize="small" />
+              </ListItemIcon>
+              {!collapsed && (
+                <ListItemText primary="Organisations" primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }} />
+              )}
+            </ListItemButton>
+          </Tooltip>
         )}
         <Tooltip title={collapsed ? 'Notifications' : ''} placement="right">
           <ListItemButton

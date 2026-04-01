@@ -420,7 +420,7 @@ export default function Home() {
                     </Typography>
                     <Chip label="Selected" size="small" sx={{ height: 16, fontSize: '0.58rem', bgcolor: `${color}20`, color }} />
                     <Typography variant="caption" sx={{ fontSize: '0.68rem', color: 'text.disabled' }}>
-                      {activeProject.org_name}
+                      {activeProject.organisation_name ?? ''}
                     </Typography>
                   </Box>
                   <LinearProgress

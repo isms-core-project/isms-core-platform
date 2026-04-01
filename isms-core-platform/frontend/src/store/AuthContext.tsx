@@ -11,6 +11,7 @@ interface AuthContextValue extends AuthState {
   login: (email: string, password: string) => Promise<void>
   logout: () => void
   isAuthenticated: boolean
+  isSuperAdmin: boolean
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null)
@@ -36,6 +37,8 @@ function userFromToken(token: string): UserInfo {
     full_name: null,
     role: String(payload.role ?? 'viewer'),
     is_active: true,
+    organisation_id: String(payload.org_id ?? ''),
+    active_projects: {},
   }
 }
 
@@ -58,9 +61,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setAuth({ token: null, user: null })
   }, [])
 
+  const isSuperAdmin = auth.user?.role === 'super_admin'
+
   return (
     <AuthContext.Provider
-      value={{ ...auth, login, logout, isAuthenticated: !!auth.token }}
+      value={{ ...auth, login, logout, isAuthenticated: !!auth.token, isSuperAdmin }}
     >
       {children}
     </AuthContext.Provider>

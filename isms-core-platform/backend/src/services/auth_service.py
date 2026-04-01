@@ -32,7 +32,11 @@ def create_token_pair(user: User) -> dict:
     """Create access + refresh tokens for a user."""
     access = create_access_token(
         subject=str(user.id),
-        extra_claims={"role": user.role.value, "email": user.email},
+        extra_claims={
+            "role": user.role.value,
+            "email": user.email,
+            "org_id": str(user.organisation_id),
+        },
     )
     refresh = create_refresh_token(subject=str(user.id))
     return {

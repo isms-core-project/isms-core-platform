@@ -827,7 +827,7 @@ export default function Gaps() {
 
       {activeProject ? (
         <Alert severity="success" sx={{ mb: 2 }}>
-          Showing gaps for project: <strong>{activeProject.name}</strong> — {activeProject.org_name}
+          Showing gaps for project: <strong>{activeProject.name}</strong> — {activeProject.organisation_name ?? ''}
         </Alert>
       ) : (
         <Alert

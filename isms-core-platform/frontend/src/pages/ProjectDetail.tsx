@@ -2160,7 +2160,7 @@ export default function ProjectDetail() {
 
       <PageHeader
         title={project.name}
-        subtitle={project.org_name}
+        subtitle={project.organisation_name ?? undefined}
         actions={
           <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
             <Chip

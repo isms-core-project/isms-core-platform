@@ -38,6 +38,7 @@ import CloudSovereignty from './pages/CloudSovereignty'
 import Csrm from './pages/Csrm'
 import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
+import Organisations from './pages/Organisations'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -97,6 +98,7 @@ export default function App() {
         <Route path="csrm" element={<Csrm />} />
         <Route path="projects" element={<Projects />} />
         <Route path="projects/:id" element={<ProjectDetail />} />
+        <Route path="organisations" element={<Organisations />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

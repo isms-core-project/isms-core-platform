@@ -13,7 +13,8 @@ export interface DocVars {
 export interface ProjectRead {
   id: string
   name: string
-  org_name: string
+  organisation_id: string
+  organisation_name: string | null
   product_family: string
   project_subtype: string | null   // 'fw' | 'op' — only relevant for ISMS
   description: string | null
@@ -29,7 +30,6 @@ export interface ProjectRead {
 
 export interface ProjectCreate {
   name: string
-  org_name: string
   product_family: string
   project_subtype?: string   // 'fw' | 'op'
   description?: string
@@ -38,7 +38,6 @@ export interface ProjectCreate {
 
 export interface ProjectPatch {
   name?: string
-  org_name?: string
   description?: string
   status?: string
   project_subtype?: string

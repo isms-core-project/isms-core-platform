@@ -70,7 +70,7 @@ const EMPTY_DOC_VARS: DocVars = { ciso_name: '', ceo_name: '', dpo_name: '', leg
 
 function CreateProjectDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
   const qc = useQueryClient()
-  const [form, setForm] = useState<ProjectCreate>({ name: '', org_name: '', product_family: 'ISMS', project_subtype: 'fw', description: '' })
+  const [form, setForm] = useState<ProjectCreate>({ name: '', product_family: 'ISMS', project_subtype: 'fw', description: '' })
   const [docVars, setDocVars] = useState<DocVars>(EMPTY_DOC_VARS)
   const [showDocVars, setShowDocVars] = useState(true)
   const [error, setError] = useState('')
@@ -79,7 +79,7 @@ function CreateProjectDialog({ open, onClose }: { open: boolean; onClose: () => 
     mutationFn: (body: ProjectCreate) => projectsApi.create(body),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['projects'] })
-      setForm({ name: '', org_name: '', product_family: 'ISMS', project_subtype: 'fw', description: '' })
+      setForm({ name: '', product_family: 'ISMS', project_subtype: 'fw', description: '' })
       setDocVars(EMPTY_DOC_VARS)
       setShowDocVars(false)
       setError('')
@@ -90,7 +90,6 @@ function CreateProjectDialog({ open, onClose }: { open: boolean; onClose: () => 
 
   function handleSubmit() {
     if (!form.name.trim()) { setError('Project name is required.'); return }
-    if (!form.org_name.trim()) { setError('Organisation name is required.'); return }
     if (!docVars.ciso_name?.trim()) { setError('CISO name is required.'); return }
     if (!docVars.effective_date?.trim()) { setError('Effective date is required.'); return }
     const dv: DocVars = Object.fromEntries(Object.entries(docVars).filter(([, v]) => v)) as DocVars
@@ -115,14 +114,6 @@ function CreateProjectDialog({ open, onClose }: { open: boolean; onClose: () => 
           value={form.name}
           onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
           placeholder="e.g. Acme Corp ISMS 2026"
-        />
-        <TextField
-          label="Organisation"
-          fullWidth size="small" sx={{ mb: 2 }}
-          value={form.org_name}
-          onChange={e => setForm(f => ({ ...f, org_name: e.target.value }))}
-          placeholder="e.g. Acme Corporation"
-          helperText="Used as [Organisation] in all policy and implementation documents"
         />
         <FormControl fullWidth size="small" sx={{ mb: form.product_family === 'ISMS' ? 1.5 : 2 }}>
           <InputLabel>Product</InputLabel>
@@ -281,11 +272,11 @@ function DeleteProjectDialog({
 function ProjectCard({ project }: { project: ProjectRead }) {
   const navigate = useNavigate()
   const qc = useQueryClient()
-  const { activeProjectId, setActiveProject } = useProject()
+  const { getActiveProject, setActiveProject } = useProject()
   const [archiveOpen, setArchiveOpen] = useState(false)
   const [deleteOpen, setDeleteOpen] = useState(false)
   const fam = project.product_family
-  const isSelected = activeProjectId === project.id
+  const isSelected = getActiveProject(fam)?.id === project.id
   const color = FAMILY_COLOR[fam] ?? '#4472C4'
   const total = TOTAL_CG[fam] ?? 53
   const statusColor = STATUS_COLOR[project.status] ?? '#9E9E9E'
@@ -308,11 +299,11 @@ function ProjectCard({ project }: { project: ProjectRead }) {
     e.stopPropagation()
     if (isSelected) {
       // Deselect → mark inactive
-      setActiveProject(null)
+      setActiveProject(fam, null)
       statusToggle.mutate('inactive')
     } else {
       // Select → mark active
-      setActiveProject(project)
+      setActiveProject(fam, project)
       statusToggle.mutate('active')
     }
   }
@@ -338,7 +329,7 @@ function ProjectCard({ project }: { project: ProjectRead }) {
                     {project.name}
                   </Typography>
                   <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.72rem' }}>
-                    {project.org_name}
+                    {project.organisation_name ?? '—'}
                   </Typography>
                 </Box>
               </Box>
