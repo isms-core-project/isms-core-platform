@@ -397,7 +397,8 @@ export default function System() {
                     { label: 'Operational Path', value: data.operational_path },
                     ...(data.privacy_path ? [{ label: 'Privacy Path', value: data.privacy_path }] : []),
                     ...(data.cloud_path ? [{ label: 'Cloud Path', value: data.cloud_path }] : []),
-                    ...(data.external_path ? [{ label: 'External Path', value: data.external_path }] : []),
+                    ...(data.sec_path ? [{ label: 'SEC Path', value: data.sec_path }] : []),
+                    ...(data.ext_path ? [{ label: 'Ext Path', value: data.ext_path }] : []),
                     { label: 'Datasets Path', value: data.datasets_path },
                     { label: 'OpenSearch URL', value: data.opensearch_url },
                   ].map(({ label, value, highlight }) => (

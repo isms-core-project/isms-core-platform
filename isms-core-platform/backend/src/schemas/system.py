@@ -40,11 +40,12 @@ class SysInfoResponse(BaseModel):
     operational_path: str
     privacy_path: str = ""
     cloud_path: str = ""
+    sec_path: str = ""
+    ext_path: str = ""
     opensearch_url: str
     last_sync_at: datetime | None = None
     last_sync_type: str | None = None
     last_sync_status: str | None = None
-    external_path: str = ""
     datasets_path: str = ""
     log_level: str = "INFO"
     debug: bool = False
