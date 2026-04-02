@@ -422,6 +422,7 @@ export interface UserRead {
   role: string
   is_active: boolean
   organisation_id: string
+  organisation_name: string | null
   active_projects: Record<string, string>
   last_login: string | null
   created_at: string
@@ -442,6 +443,7 @@ export interface UserPatch {
   is_active?: boolean
   password?: string
   notification_prefs?: Record<string, boolean>
+  organisation_id?: string  // super_admin only
 }
 
 export interface NotificationPref {

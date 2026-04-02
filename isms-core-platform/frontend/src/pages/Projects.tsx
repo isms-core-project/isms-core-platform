@@ -106,7 +106,7 @@ function CreateProjectDialog({ open, onClose }: { open: boolean; onClose: () => 
           Create a workspace for a specific product and organisation
         </Typography>
       </DialogTitle>
-      <DialogContent sx={{ pt: 2 }}>
+      <DialogContent sx={{ pt: '20px !important' }}>
         {error && <Alert severity="error" sx={{ mb: 2, py: 0.5 }}>{error}</Alert>}
         <TextField
           label="Project name"

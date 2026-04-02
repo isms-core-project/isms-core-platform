@@ -1,20 +1,25 @@
 """Organisation API — Phase 11 (multi-tenant)."""
 
 import logging
+import re
 import uuid
 
 from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy import select
 from sqlalchemy.orm import Session as DBSession
 
-from src.core.dependencies import get_current_user, get_org_context, require_admin
+from src.core.dependencies import get_current_user, get_org_context, require_admin, require_role
+from src.database.enums import UserRole
 from src.database.session import get_db
 from src.domain.organisations import Organisation
 from src.domain.users import User
-from src.schemas.organisation import OrganisationRead, OrganisationUpdate
+from src.schemas.organisation import OrganisationCreate, OrganisationRead, OrganisationUpdate
 
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/organisation", tags=["organisation"])
+
+_require_super_admin = require_role(UserRole.SUPER_ADMIN)
 
 
 def _get_org_by_id(org_id: uuid.UUID, db: DBSession) -> Organisation:
@@ -60,4 +65,45 @@ def update_organisation(
 
     db.commit()
     db.refresh(org)
+    return OrganisationRead.model_validate(org)
+
+
+# ── Super-admin endpoints ──────────────────────────────────────────────────────
+
+@router.get("/all", response_model=list[OrganisationRead])
+def list_all_organisations(
+    db: DBSession = Depends(get_db),
+    _user: User = Depends(_require_super_admin),
+):
+    """List all organisations on the platform (super_admin only)."""
+    orgs = db.execute(select(Organisation).order_by(Organisation.name)).scalars().all()
+    return [OrganisationRead.model_validate(o) for o in orgs]
+
+
+@router.post("/", response_model=OrganisationRead, status_code=201)
+def create_organisation(
+    body: OrganisationCreate,
+    db: DBSession = Depends(get_db),
+    _user: User = Depends(_require_super_admin),
+):
+    """Create a new organisation / tenant (super_admin only)."""
+    slug = body.slug.strip().lower()
+    if not re.match(r"^[a-z0-9-]+$", slug):
+        raise HTTPException(status_code=422, detail="Slug must be lowercase letters, numbers, and hyphens only.")
+
+    existing = db.execute(select(Organisation).where(Organisation.slug == slug)).scalar_one_or_none()
+    if existing:
+        raise HTTPException(status_code=409, detail=f"Slug '{slug}' is already in use.")
+
+    org = Organisation(
+        name=body.name.strip(),
+        slug=slug,
+        description=body.description,
+        governance_mode=body.governance_mode,
+        privacy_role=body.privacy_role,
+    )
+    db.add(org)
+    db.commit()
+    db.refresh(org)
+    logger.info("Created organisation: %s (%s)", org.name, org.slug)
     return OrganisationRead.model_validate(org)

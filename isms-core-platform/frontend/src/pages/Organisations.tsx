@@ -67,7 +67,7 @@ function CreateOrgDialog({ open, onClose }: { open: boolean; onClose: () => void
           Add a new tenant to the platform
         </Typography>
       </DialogTitle>
-      <DialogContent sx={{ pt: 2 }}>
+      <DialogContent sx={{ pt: '20px !important' }}>
         {error && <Alert severity="error" sx={{ mb: 2, py: 0.5 }}>{error}</Alert>}
         <TextField
           label="Organisation name"
@@ -124,7 +124,7 @@ function EditOrgDialog({ org, open, onClose }: { org: OrganisationRead; open: bo
   return (
     <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
       <DialogTitle sx={{ pb: 0.5 }}>Edit Organisation</DialogTitle>
-      <DialogContent sx={{ pt: 2 }}>
+      <DialogContent sx={{ pt: '20px !important' }}>
         {error && <Alert severity="error" sx={{ mb: 2, py: 0.5 }}>{error}</Alert>}
         <TextField
           label="Name" fullWidth size="small" sx={{ mb: 2 }}
@@ -211,10 +211,9 @@ export default function Organisations() {
   const [createOpen, setCreateOpen] = useState(false)
   const qc = useQueryClient()
 
-  // Fetch current org — list endpoint (Phase 11.7+) will expand this for super_admin
   const { data: orgs, isLoading, isError } = useQuery({
-    queryKey: ['organisations'],
-    queryFn: () => orgApi.get().then(o => [o]),
+    queryKey: ['organisations', isSuperAdmin],
+    queryFn: () => isSuperAdmin ? orgApi.list() : orgApi.get().then(o => [o]),
   })
 
   if (!isSuperAdmin && user?.role !== 'admin') {

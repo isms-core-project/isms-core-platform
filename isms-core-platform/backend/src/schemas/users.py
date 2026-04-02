@@ -18,6 +18,7 @@ class UserPatch(BaseModel):
     is_active: bool | None = None
     password: str | None = None
     notification_prefs: dict | None = None
+    organisation_id: uuid.UUID | None = None   # super_admin only
 
 
 class UserRead(BaseModel):
@@ -28,12 +29,22 @@ class UserRead(BaseModel):
     role: str
     is_active: bool
     organisation_id: uuid.UUID
+    organisation_name: str | None = None
     active_projects: dict = {}
     last_login: datetime | None
     created_at: datetime
     notification_prefs: dict = {}
 
     model_config = {"from_attributes": True}
+
+    @classmethod
+    def from_orm_with_org(cls, user: object) -> "UserRead":
+        """Build UserRead and populate organisation_name from relationship."""
+        data = cls.model_validate(user)
+        org = getattr(user, "organisation", None)
+        if org:
+            data.organisation_name = org.name
+        return data
 
 
 # ---------------------------------------------------------------------------

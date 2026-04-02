@@ -801,14 +801,18 @@ async def import_external_doc(
 # User management
 # ---------------------------------------------------------------------------
 
-@router.get(
-    "/users",
-    response_model=list[UserRead],
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
-)
-def list_users(db: DBSession = Depends(get_db)):
-    """List all users."""
-    return db.execute(select(User).order_by(User.created_at)).scalars().all()
+@router.get("/users", response_model=list[UserRead])
+def list_users(
+    db: DBSession = Depends(get_db),
+    current_user: User = Depends(require_role(UserRole.ADMIN, UserRole.SUPER_ADMIN)),
+):
+    """List users. super_admin sees all; admin sees only their org."""
+    from src.schemas.users import UserRead as _UserRead
+    q = select(User).order_by(User.created_at)
+    if current_user.role != UserRole.SUPER_ADMIN:
+        q = q.where(User.organisation_id == current_user.organisation_id)
+    users = db.execute(q).scalars().all()
+    return [_UserRead.from_orm_with_org(u) for u in users]
 
 
 @router.post(
@@ -851,17 +855,23 @@ def create_user(
         db.rollback()
         raise HTTPException(status_code=409, detail="User already exists")
     db.refresh(user)
-    return user
+    from src.schemas.users import UserRead as _UserRead
+    return _UserRead.from_orm_with_org(user)
 
 
 @router.patch(
     "/users/{user_id}",
     response_model=UserRead,
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
 )
-def update_user(user_id: str, body: UserPatch, db: DBSession = Depends(get_db)):
+def update_user(
+    user_id: str,
+    body: UserPatch,
+    db: DBSession = Depends(get_db),
+    current_user: User = Depends(require_role(UserRole.ADMIN, UserRole.SUPER_ADMIN)),
+):
     """Update user role, active status, full_name, or password."""
     import uuid as _uuid
+    from src.schemas.users import UserRead as _UserRead
 
     try:
         uid = _uuid.UUID(user_id)
@@ -887,10 +897,17 @@ def update_user(user_id: str, body: UserPatch, db: DBSession = Depends(get_db)):
         stored = dict(user.notification_prefs or {})
         stored.update(body.notification_prefs)
         user.notification_prefs = stored
+    if body.organisation_id is not None:
+        if current_user.role != UserRole.SUPER_ADMIN:
+            raise HTTPException(status_code=403, detail="Only super_admin can reassign users to a different organisation.")
+        org = db.get(Organisation, body.organisation_id)
+        if not org:
+            raise HTTPException(status_code=404, detail="Target organisation not found.")
+        user.organisation_id = body.organisation_id
 
     db.commit()
     db.refresh(user)
-    return user
+    return _UserRead.from_orm_with_org(user)
 
 
 @router.delete(

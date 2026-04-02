@@ -44,13 +44,17 @@ import {
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import { adminApi } from '../api/admin'
+import { orgApi } from '../api/orgApi'
 import type { UserCreate, UserPatch, UserRead } from '../api/types'
 import type { AuditLogParams } from '../api/admin'
 import PageHeader from '../components/PageHeader'
+import { useAuth } from '../store/AuthContext'
 
-const ROLES = ['admin', 'isms_manager', 'auditor', 'control_owner', 'viewer']
+const ROLES = ['super_admin', 'admin', 'isms_manager', 'auditor', 'control_owner', 'viewer']
+const ROLES_NON_SUPER = ['admin', 'isms_manager', 'auditor', 'control_owner', 'viewer']
 
 const ROLE_COLOR: Record<string, { bg: string; fg: string }> = {
+  super_admin: { bg: 'rgba(192,0,0,0.35)', fg: '#FF6B6B' },
   admin: { bg: 'rgba(192,0,0,0.18)', fg: '#FFC7CE' },
   isms_manager: { bg: 'rgba(68,114,196,0.2)', fg: '#9DC3E6' },
   auditor: { bg: 'rgba(112,173,71,0.15)', fg: '#C6EFCE' },
@@ -161,10 +165,12 @@ function EditUserDialog({
   user,
   open,
   onClose,
+  isSuperAdmin,
 }: {
   user: UserRead
   open: boolean
   onClose: () => void
+  isSuperAdmin: boolean
 }) {
   const queryClient = useQueryClient()
   const [form, setForm] = useState<UserPatch & { password: string }>({
@@ -173,6 +179,13 @@ function EditUserDialog({
     is_active: user.is_active,
     password: '',
     notification_prefs: { ...user.notification_prefs },
+    organisation_id: user.organisation_id,
+  })
+
+  const { data: allOrgs } = useQuery({
+    queryKey: ['organisations', true],
+    queryFn: orgApi.list,
+    enabled: isSuperAdmin,
   })
   const [error, setError] = useState<string | null>(null)
 
@@ -185,6 +198,7 @@ function EditUserDialog({
         notification_prefs: form.notification_prefs,
       }
       if (form.password) patch.password = form.password
+      if (isSuperAdmin && form.organisation_id !== user.organisation_id) patch.organisation_id = form.organisation_id
       return adminApi.updateUser(user.id, patch)
     },
     onSuccess: () => {
@@ -233,9 +247,21 @@ function EditUserDialog({
             onChange={(e) => setForm((f) => ({ ...f, role: e.target.value }))}
             label="Role"
           >
-            {ROLES.map((r) => <MenuItem key={r} value={r}>{r}</MenuItem>)}
+            {(isSuperAdmin ? ROLES : ROLES_NON_SUPER).map((r) => <MenuItem key={r} value={r}>{r}</MenuItem>)}
           </Select>
         </FormControl>
+        {isSuperAdmin && allOrgs && (
+          <FormControl fullWidth size="small" sx={{ mb: 2 }}>
+            <InputLabel>Organisation</InputLabel>
+            <Select
+              value={form.organisation_id ?? ''}
+              onChange={(e) => setForm((f) => ({ ...f, organisation_id: e.target.value }))}
+              label="Organisation"
+            >
+              {allOrgs.map((o) => <MenuItem key={o.id} value={o.id}>{o.name}</MenuItem>)}
+            </Select>
+          </FormControl>
+        )}
         <FormControlLabel
           control={
             <Switch
@@ -297,6 +323,7 @@ function EditUserDialog({
 
 function UsersTab() {
   const queryClient = useQueryClient()
+  const { isSuperAdmin } = useAuth()
   const [createOpen, setCreateOpen] = useState(false)
   const [editUser, setEditUser] = useState<UserRead | null>(null)
 
@@ -319,7 +346,7 @@ function UsersTab() {
     <>
       <CreateUserDialog open={createOpen} onClose={() => setCreateOpen(false)} />
       {editUser && (
-        <EditUserDialog user={editUser} open={true} onClose={() => setEditUser(null)} />
+        <EditUserDialog user={editUser} open={true} onClose={() => setEditUser(null)} isSuperAdmin={isSuperAdmin} />
       )}
       <Grid container spacing={2}>
         <Grid item xs={12}>
@@ -350,6 +377,7 @@ function UsersTab() {
                       <TableCell>Username</TableCell>
                       <TableCell>Name</TableCell>
                       <TableCell>Role</TableCell>
+                      {isSuperAdmin && <TableCell>Organisation</TableCell>}
                       <TableCell>Status</TableCell>
                       <TableCell>Last Login</TableCell>
                       <TableCell>Created</TableCell>
@@ -359,7 +387,7 @@ function UsersTab() {
                   <TableBody>
                     {isLoading && [...Array(3)].map((_, i) => (
                       <TableRow key={i}>
-                        {[...Array(8)].map((_, j) => (
+                        {[...Array(isSuperAdmin ? 9 : 8)].map((_, j) => (
                           <TableCell key={j}>
                             <Box sx={{ height: 16, bgcolor: 'rgba(255,255,255,0.05)', borderRadius: 1 }} />
                           </TableCell>
@@ -382,6 +410,11 @@ function UsersTab() {
                           <TableCell>
                             <Chip label={user.role} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: rc.bg, color: rc.fg }} />
                           </TableCell>
+                          {isSuperAdmin && (
+                            <TableCell>
+                              <Typography variant="caption" color="text.secondary">{user.organisation_name ?? '—'}</Typography>
+                            </TableCell>
+                          )}
                           <TableCell>
                             <Chip
                               label={user.is_active ? 'Active' : 'Inactive'}

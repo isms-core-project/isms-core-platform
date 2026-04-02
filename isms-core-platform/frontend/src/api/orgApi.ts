@@ -25,14 +25,14 @@ export const orgApi = {
 
   // Super-admin: list all orgs
   list: () =>
-    client.get<OrganisationRead[]>('/organisations').then(r => r.data),
+    client.get<OrganisationRead[]>('/organisation/all').then(r => r.data),
 
   create: (body: OrganisationCreate) =>
-    client.post<OrganisationRead>('/organisations', body).then(r => r.data),
+    client.post<OrganisationRead>('/organisation/', body).then(r => r.data),
 
   getById: (id: string) =>
-    client.get<OrganisationRead>(`/organisations/${id}`).then(r => r.data),
+    client.get<OrganisationRead>(`/organisation/${id}`).then(r => r.data),
 
   updateById: (id: string, body: OrganisationPatch) =>
-    client.patch<OrganisationRead>(`/organisations/${id}`, body).then(r => r.data),
+    client.patch<OrganisationRead>(`/organisation/${id}`, body).then(r => r.data),
 }

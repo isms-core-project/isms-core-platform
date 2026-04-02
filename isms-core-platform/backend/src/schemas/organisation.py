@@ -28,6 +28,14 @@ class OrganisationRead(BaseModel):
     model_config = {"from_attributes": True}
 
 
+class OrganisationCreate(BaseModel):
+    name: str
+    slug: str
+    description: str | None = None
+    governance_mode: GovernanceMode = GovernanceMode.PLATFORM
+    privacy_role: PrivacyRole = PrivacyRole.BOTH
+
+
 class OrganisationUpdate(BaseModel):
     name: str | None = None
     governance_mode: GovernanceMode | None = None
