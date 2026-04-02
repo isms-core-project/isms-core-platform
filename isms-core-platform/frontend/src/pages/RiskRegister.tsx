@@ -5,11 +5,11 @@ import {
   Slider, TextField, Tooltip, Typography,
 } from '@mui/material'
 import {
-  AddOutlined, DeleteOutlined, EditOutlined, WarningAmberOutlined,
+  AddOutlined, DeleteOutlined, EditOutlined, HowToRegOutlined, WarningAmberOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
-import { risksApi, type RiskScenario, type RiskScenarioCreate } from '../api/risksApi'
+import { risksApi, type RiskScenario, type RiskScenarioCreate, type RiskAcceptance } from '../api/risksApi'
 import PageHeader from '../components/PageHeader'
 
 // ── Colour helpers ────────────────────────────────────────────────────────────
@@ -269,11 +269,115 @@ function RiskDialog({
   )
 }
 
+// ── Acceptance dialog ─────────────────────────────────────────────────────────
+
+function AcceptanceDialog({ risk, open, onClose }: { risk: RiskScenario; open: boolean; onClose: () => void }) {
+  const qc = useQueryClient()
+  const [justification, setJustification] = useState('')
+  const [expiryDate, setExpiryDate] = useState('')
+  const [error, setError] = useState('')
+
+  const { data: history } = useQuery({
+    queryKey: ['acceptances', risk.id],
+    queryFn: () => risksApi.listAcceptances(risk.id),
+    enabled: open,
+  })
+
+  const createMut = useMutation({
+    mutationFn: () => risksApi.createAcceptance(risk.id, { justification, expiry_date: expiryDate || undefined }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['risks'] })
+      qc.invalidateQueries({ queryKey: ['acceptances', risk.id] })
+      setJustification(''); setExpiryDate('')
+    },
+    onError: () => setError('Failed to record acceptance.'),
+  })
+
+  const revokeMut = useMutation({
+    mutationFn: (acceptId: string) => risksApi.revokeAcceptance(risk.id, acceptId),
+    onSuccess: () => { qc.invalidateQueries({ queryKey: ['risks'] }); qc.invalidateQueries({ queryKey: ['acceptances', risk.id] }) },
+  })
+
+  function handleSubmit() {
+    if (!justification.trim()) { setError('Justification is required.'); return }
+    setError('')
+    createMut.mutate()
+  }
+
+  return (
+    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
+      <DialogTitle sx={{ pb: 0.5 }}>
+        Risk Acceptance
+        <Typography variant="caption" color="text.secondary" display="block">{risk.name}</Typography>
+      </DialogTitle>
+      <DialogContent sx={{ pt: '20px !important' }}>
+        {error && <Alert severity="error" sx={{ mb: 2, py: 0.5 }}>{error}</Alert>}
+
+        <TextField
+          label="Justification *" fullWidth size="small" multiline rows={3} sx={{ mb: 2 }}
+          value={justification} onChange={e => setJustification(e.target.value)}
+          placeholder="Explain why the residual risk is acceptable and who has approved it" />
+
+        <TextField
+          label="Expiry date" type="date" size="small" fullWidth sx={{ mb: 2 }}
+          InputLabelProps={{ shrink: true }}
+          value={expiryDate} onChange={e => setExpiryDate(e.target.value)}
+          helperText="Leave blank for permanent acceptance" />
+
+        <Button variant="outlined" size="small" onClick={handleSubmit} disabled={createMut.isPending} startIcon={<HowToRegOutlined />}>
+          {createMut.isPending ? 'Recording…' : 'Record Acceptance'}
+        </Button>
+
+        {history && history.length > 0 && (
+          <Box sx={{ mt: 2.5 }}>
+            <Typography variant="caption" sx={{ fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase', display: 'block', mb: 1 }}>
+              Acceptance History
+            </Typography>
+            {history.map((a: RiskAcceptance) => (
+              <Box key={a.id} sx={{ p: 1.5, mb: 1, borderRadius: 1, border: '1px solid', borderColor: a.status === 'active' ? 'success.dark' : 'divider', bgcolor: a.status === 'active' ? '#4CAF5008' : 'transparent' }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  <Box>
+                    <Typography variant="caption" sx={{ fontSize: '0.72rem', fontWeight: 500 }}>{a.approver_name}</Typography>
+                    <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.65rem', display: 'block' }}>
+                      {dayjs(a.created_at).format('D MMM YYYY')}
+                      {a.expiry_date && ` · Expires ${dayjs(a.expiry_date).format('D MMM YYYY')}`}
+                    </Typography>
+                  </Box>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
+                    <Chip label={a.status} size="small" sx={{ height: 18, fontSize: '0.6rem', textTransform: 'capitalize',
+                      bgcolor: a.status === 'active' ? '#4CAF5018' : '#9E9E9E18',
+                      color: a.status === 'active' ? '#4CAF50' : '#9E9E9E',
+                    }} />
+                    {a.status === 'active' && (
+                      <Tooltip title="Revoke">
+                        <IconButton size="small" sx={{ p: 0.25, color: 'error.light' }} onClick={() => { if (confirm('Revoke this acceptance?')) revokeMut.mutate(a.id) }}>
+                          <DeleteOutlined sx={{ fontSize: 13 }} />
+                        </IconButton>
+                      </Tooltip>
+                    )}
+                  </Box>
+                </Box>
+                <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.67rem', mt: 0.5, display: 'block' }}>
+                  {a.justification}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        )}
+      </DialogContent>
+      <DialogActions sx={{ px: 3, pb: 2 }}>
+        <Button onClick={onClose} size="small">Close</Button>
+      </DialogActions>
+    </Dialog>
+  )
+}
+
 // ── Risk row ──────────────────────────────────────────────────────────────────
 
 function RiskRow({ risk }: { risk: RiskScenario }) {
   const qc = useQueryClient()
   const [editOpen, setEditOpen] = useState(false)
+  const [acceptOpen, setAcceptOpen] = useState(false)
 
   const deleteMutation = useMutation({
     mutationFn: () => risksApi.delete(risk.id),
@@ -348,6 +452,11 @@ function RiskRow({ risk }: { risk: RiskScenario }) {
         {/* Status + actions */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
           <Box sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: statusColor, flexShrink: 0 }} />
+          <Tooltip title="Record acceptance">
+            <IconButton size="small" onClick={() => setAcceptOpen(true)} sx={{ p: 0.4, color: risk.treatment_status === 'accept' ? 'success.main' : 'text.disabled', '&:hover': { color: 'success.main' } }}>
+              <HowToRegOutlined sx={{ fontSize: 14 }} />
+            </IconButton>
+          </Tooltip>
           <Tooltip title="Edit">
             <IconButton size="small" onClick={() => setEditOpen(true)} sx={{ p: 0.4, color: 'text.disabled', '&:hover': { color: 'primary.main' } }}>
               <EditOutlined sx={{ fontSize: 14 }} />
@@ -362,6 +471,7 @@ function RiskRow({ risk }: { risk: RiskScenario }) {
       </Box>
 
       {editOpen && <RiskDialog open={editOpen} onClose={() => setEditOpen(false)} existing={risk} />}
+      {acceptOpen && <AcceptanceDialog risk={risk} open={acceptOpen} onClose={() => setAcceptOpen(false)} />}
     </>
   )
 }

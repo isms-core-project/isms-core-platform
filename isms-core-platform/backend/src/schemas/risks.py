@@ -131,3 +131,92 @@ class RiskSummary(BaseModel):
     accepted: int
     in_treatment: int
     closed:   int
+
+
+# ── RiskAcceptance ────────────────────────────────────────────────────────────
+
+class RiskAcceptanceCreate(BaseModel):
+    justification: str = Field(..., min_length=1)
+    expiry_date:   Optional[date] = None
+
+
+class RiskAcceptanceRead(BaseModel):
+    id:               uuid.UUID
+    risk_scenario_id: uuid.UUID
+    approver_id:      Optional[uuid.UUID]
+    approver_name:    str
+    justification:    str
+    expiry_date:      Optional[date]
+    status:           str
+    revoked_by:       Optional[uuid.UUID]
+    revoked_at:       Optional[datetime]
+    created_at:       datetime
+
+    model_config = {"from_attributes": True}
+
+
+# ── RemediationAction ─────────────────────────────────────────────────────────
+
+class RemediationActionCreate(BaseModel):
+    title:            str              = Field(..., min_length=1, max_length=255)
+    description:      Optional[str]    = None
+    status:           str              = "planned"
+    owner_id:         Optional[uuid.UUID] = None
+    eta:              Optional[date]   = None
+    effort:           Optional[str]    = None
+    cost_estimate:    Optional[float]  = None
+    progress:         int              = Field(default=0, ge=0, le=100)
+    project_id:       Optional[uuid.UUID] = None
+    risk_scenario_id: Optional[uuid.UUID] = None
+    gap_id:           Optional[uuid.UUID] = None
+    control_group_id: Optional[uuid.UUID] = None
+    evidence_id:      Optional[uuid.UUID] = None
+
+
+class RemediationActionPatch(BaseModel):
+    title:            Optional[str]       = None
+    description:      Optional[str]       = None
+    status:           Optional[str]       = None
+    owner_id:         Optional[uuid.UUID] = None
+    eta:              Optional[date]      = None
+    effort:           Optional[str]       = None
+    cost_estimate:    Optional[float]     = None
+    progress:         Optional[int]       = Field(default=None, ge=0, le=100)
+    project_id:       Optional[uuid.UUID] = None
+    risk_scenario_id: Optional[uuid.UUID] = None
+    gap_id:           Optional[uuid.UUID] = None
+    control_group_id: Optional[uuid.UUID] = None
+    evidence_id:      Optional[uuid.UUID] = None
+
+
+class RemediationActionRead(BaseModel):
+    id:               uuid.UUID
+    org_id:           uuid.UUID
+    title:            str
+    description:      Optional[str]
+    status:           str
+    owner_id:         Optional[uuid.UUID]
+    owner_name:       Optional[str]       = None
+    eta:              Optional[date]
+    effort:           Optional[str]
+    cost_estimate:    Optional[float]
+    progress:         int
+    project_id:       Optional[uuid.UUID]
+    risk_scenario_id: Optional[uuid.UUID]
+    risk_name:        Optional[str]       = None
+    gap_id:           Optional[uuid.UUID]
+    control_group_id: Optional[uuid.UUID]
+    evidence_id:      Optional[uuid.UUID]
+    created_at:       datetime
+    updated_at:       datetime
+
+    model_config = {"from_attributes": True}
+
+
+class RemediationSummary(BaseModel):
+    total:       int
+    planned:     int
+    in_progress: int
+    completed:   int
+    cancelled:   int
+    overdue:     int

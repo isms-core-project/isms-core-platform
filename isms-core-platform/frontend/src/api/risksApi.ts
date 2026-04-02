@@ -86,6 +86,65 @@ export interface RiskHeatmap {
   cells: HeatmapCell[]
 }
 
+export interface RiskAcceptance {
+  id: string
+  risk_scenario_id: string
+  approver_id: string | null
+  approver_name: string
+  justification: string
+  expiry_date: string | null
+  status: 'active' | 'expired' | 'revoked'
+  revoked_by: string | null
+  revoked_at: string | null
+  created_at: string
+}
+
+export interface RemediationAction {
+  id: string
+  org_id: string
+  title: string
+  description: string | null
+  status: 'planned' | 'in_progress' | 'completed' | 'cancelled'
+  owner_id: string | null
+  owner_name: string | null
+  eta: string | null
+  effort: 'low' | 'medium' | 'high' | null
+  cost_estimate: number | null
+  progress: number
+  project_id: string | null
+  risk_scenario_id: string | null
+  risk_name: string | null
+  gap_id: string | null
+  control_group_id: string | null
+  evidence_id: string | null
+  created_at: string
+  updated_at: string
+}
+
+export interface RemediationActionCreate {
+  title: string
+  description?: string
+  status?: string
+  owner_id?: string
+  eta?: string
+  effort?: string
+  cost_estimate?: number
+  progress?: number
+  project_id?: string
+  risk_scenario_id?: string
+  gap_id?: string
+  control_group_id?: string
+}
+
+export interface RemediationSummary {
+  total: number
+  planned: number
+  in_progress: number
+  completed: number
+  cancelled: number
+  overdue: number
+}
+
 export const risksApi = {
   list: (params?: { status?: string; risk_level?: string; treatment_status?: string; project_id?: string }) =>
     client.get<RiskScenario[]>('/risks', { params }).then(r => r.data),
@@ -110,4 +169,24 @@ export const risksApi = {
 
   matrix: () =>
     client.get<RiskMatrix>('/risks/matrix').then(r => r.data),
+
+  // Acceptances
+  listAcceptances: (riskId: string) =>
+    client.get<RiskAcceptance[]>(`/risks/${riskId}/acceptances`).then(r => r.data),
+  createAcceptance: (riskId: string, body: { justification: string; expiry_date?: string }) =>
+    client.post<RiskAcceptance>(`/risks/${riskId}/accept`, body).then(r => r.data),
+  revokeAcceptance: (riskId: string, acceptId: string) =>
+    client.delete(`/risks/${riskId}/accept/${acceptId}`),
+
+  // Remediation
+  remediationSummary: () =>
+    client.get<RemediationSummary>('/remediation/summary').then(r => r.data),
+  listRemediation: (params?: { status?: string; risk_scenario_id?: string; gap_id?: string }) =>
+    client.get<RemediationAction[]>('/remediation', { params }).then(r => r.data),
+  createRemediation: (body: RemediationActionCreate) =>
+    client.post<RemediationAction>('/remediation', body).then(r => r.data),
+  updateRemediation: (id: string, body: Partial<RemediationActionCreate>) =>
+    client.patch<RemediationAction>(`/remediation/${id}`, body).then(r => r.data),
+  deleteRemediation: (id: string) =>
+    client.delete(`/remediation/${id}`),
 }
