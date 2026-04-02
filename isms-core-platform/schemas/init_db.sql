@@ -48,6 +48,7 @@ CREATE EXTENSION IF NOT EXISTS "btree_gin";
 -- ============================================================================
 
 CREATE TYPE user_role AS ENUM (
+    'super_admin',
     'admin',
     'isms_manager',
     'auditor',
@@ -928,7 +929,7 @@ VALUES (
     'admin',
     '$2b$12$uVAdzc0JwdXXMJHJePXM..imqoN/PVCAkgE0A0z5qTyK1BstplfQy',
     'Administrator',
-    'admin'
+    'super_admin'
 ) ON CONFLICT (email) DO NOTHING;
 
 -- Foundation control group (group_code '00') — seeded permanently.
