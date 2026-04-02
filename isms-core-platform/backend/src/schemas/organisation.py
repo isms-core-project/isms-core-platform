@@ -15,6 +15,7 @@ class OrganisationRead(BaseModel):
     governance_mode: GovernanceMode
     privacy_role: PrivacyRole
     description: str | None
+    is_active: bool = True
     settings: dict
     created_at: datetime
     updated_at: datetime

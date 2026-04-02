@@ -19,9 +19,12 @@ import {
 } from '@mui/material'
 import {
   AddOutlined,
+  ArchiveOutlined,
   BusinessOutlined,
+  DeleteOutlined,
   EditOutlined,
   RefreshOutlined,
+  UnarchiveOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
@@ -149,23 +152,61 @@ function EditOrgDialog({ org, open, onClose }: { org: OrganisationRead; open: bo
 
 // ── Org card ──────────────────────────────────────────────────────────────────
 
-function OrgCard({ org }: { org: OrganisationRead }) {
+function OrgCard({ org, isSuperAdmin }: { org: OrganisationRead; isSuperAdmin: boolean }) {
+  const qc = useQueryClient()
   const [editOpen, setEditOpen] = useState(false)
+
+  const archiveMutation = useMutation({
+    mutationFn: () => orgApi.archiveById(org.id),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ['organisations'] }),
+  })
+
+  const deleteMutation = useMutation({
+    mutationFn: () => orgApi.deleteById(org.id),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ['organisations'] }),
+    onError: (e: { response?: { data?: { detail?: string } } }) =>
+      alert(e?.response?.data?.detail ?? 'Delete failed — organisation may have users or projects.'),
+  })
+
+  function handleDelete() {
+    if (window.confirm(`Permanently delete "${org.name}"? This cannot be undone.`)) {
+      deleteMutation.mutate()
+    }
+  }
+
+  const archived = !org.is_active
 
   return (
     <>
-      <Card variant="outlined" sx={{ height: '100%' }}>
+      <Card variant="outlined" sx={{ height: '100%', opacity: archived ? 0.55 : 1 }}>
         <CardContent>
           <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', mb: 1 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <BusinessOutlined sx={{ color: '#4472C4', fontSize: 20 }} />
-              <Typography variant="subtitle2" fontWeight={600}>{org.name}</Typography>
+              <BusinessOutlined sx={{ color: archived ? 'text.disabled' : '#4472C4', fontSize: 20 }} />
+              <Typography variant="subtitle2" fontWeight={600} color={archived ? 'text.disabled' : 'text.primary'}>
+                {org.name}
+              </Typography>
+              {archived && <Chip label="archived" size="small" sx={{ height: 16, fontSize: '0.62rem', bgcolor: 'rgba(158,158,158,0.15)', color: 'text.disabled' }} />}
             </Box>
-            <Tooltip title="Edit">
-              <IconButton size="small" onClick={() => setEditOpen(true)}>
-                <EditOutlined sx={{ fontSize: 15 }} />
-              </IconButton>
-            </Tooltip>
+            {isSuperAdmin && (
+              <Box sx={{ display: 'flex', gap: 0.25 }}>
+                <Tooltip title="Edit">
+                  <IconButton size="small" onClick={() => setEditOpen(true)}>
+                    <EditOutlined sx={{ fontSize: 14 }} />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title={archived ? 'Restore' : 'Archive'}>
+                  <IconButton size="small" onClick={() => archiveMutation.mutate()} disabled={archiveMutation.isPending}>
+                    {archived ? <UnarchiveOutlined sx={{ fontSize: 14 }} /> : <ArchiveOutlined sx={{ fontSize: 14 }} />}
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title="Delete">
+                  <IconButton size="small" onClick={handleDelete} disabled={deleteMutation.isPending} sx={{ color: 'error.main' }}>
+                    <DeleteOutlined sx={{ fontSize: 14 }} />
+                  </IconButton>
+                </Tooltip>
+              </Box>
+            )}
           </Box>
 
           <Typography variant="caption" color="text.disabled" sx={{ display: 'block', mb: 1 }}>
@@ -254,7 +295,7 @@ export default function Organisations() {
             ))
           : orgs?.map(org => (
               <Grid item xs={12} sm={6} md={4} key={org.id}>
-                <OrgCard org={org} />
+                <OrgCard org={org} isSuperAdmin={isSuperAdmin} />
               </Grid>
             ))
         }

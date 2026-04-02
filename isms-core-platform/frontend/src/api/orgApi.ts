@@ -35,4 +35,10 @@ export const orgApi = {
 
   updateById: (id: string, body: OrganisationPatch) =>
     client.patch<OrganisationRead>(`/organisation/${id}`, body).then(r => r.data),
+
+  archiveById: (id: string) =>
+    client.patch<OrganisationRead>(`/organisation/${id}/archive`).then(r => r.data),
+
+  deleteById: (id: string) =>
+    client.delete(`/organisation/${id}`),
 }

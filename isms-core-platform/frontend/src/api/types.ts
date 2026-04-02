@@ -30,6 +30,7 @@ export interface OrganisationRead {
   governance_mode: string
   privacy_role: string
   description: string | null
+  is_active: boolean
   created_at: string
   updated_at: string
 }
