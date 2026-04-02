@@ -161,8 +161,8 @@ export const risksApi = {
   delete: (id: string) =>
     client.delete(`/risks/${id}`),
 
-  summary: () =>
-    client.get<RiskSummary>('/risks/summary').then(r => r.data),
+  summary: (params?: { project_id?: string }) =>
+    client.get<RiskSummary>('/risks/summary', { params }).then(r => r.data),
 
   heatmap: () =>
     client.get<RiskHeatmap>('/risks/heatmap').then(r => r.data),
@@ -179,9 +179,9 @@ export const risksApi = {
     client.delete(`/risks/${riskId}/accept/${acceptId}`),
 
   // Remediation
-  remediationSummary: () =>
-    client.get<RemediationSummary>('/remediation/summary').then(r => r.data),
-  listRemediation: (params?: { status?: string; risk_scenario_id?: string; gap_id?: string }) =>
+  remediationSummary: (params?: { project_id?: string }) =>
+    client.get<RemediationSummary>('/remediation/summary', { params }).then(r => r.data),
+  listRemediation: (params?: { status?: string; risk_scenario_id?: string; gap_id?: string; project_id?: string }) =>
     client.get<RemediationAction[]>('/remediation', { params }).then(r => r.data),
   createRemediation: (body: RemediationActionCreate) =>
     client.post<RemediationAction>('/remediation', body).then(r => r.data),

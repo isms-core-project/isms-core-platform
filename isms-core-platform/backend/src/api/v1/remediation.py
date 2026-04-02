@@ -148,13 +148,15 @@ def revoke_acceptance(
 
 @remediation_router.get("/summary", response_model=RemediationSummary)
 def get_summary(
+    project_id: str | None = Query(None),
     db: DBSession = Depends(get_db),
     org_id: uuid.UUID = Depends(get_org_context),
     _: User = Depends(get_current_user),
 ):
-    rows = db.execute(
-        select(RemediationAction).where(RemediationAction.org_id == org_id)
-    ).scalars().all()
+    q = select(RemediationAction).where(RemediationAction.org_id == org_id)
+    if project_id:
+        q = q.where(RemediationAction.project_id == uuid.UUID(project_id))
+    rows = db.execute(q).scalars().all()
     today = date.today()
     summary = RemediationSummary(total=0, planned=0, in_progress=0, completed=0, cancelled=0, overdue=0)
     for a in rows:
@@ -170,17 +172,20 @@ def get_summary(
 
 @remediation_router.get("", response_model=list[RemediationActionRead])
 def list_actions(
-    status:          str | None = Query(None),
-    owner_id:        str | None = Query(None),
+    status:           str | None = Query(None),
+    owner_id:         str | None = Query(None),
     risk_scenario_id: str | None = Query(None),
-    gap_id:          str | None = Query(None),
-    limit:           int        = Query(200, le=500),
-    offset:          int        = Query(0),
+    gap_id:           str | None = Query(None),
+    project_id:       str | None = Query(None),
+    limit:            int        = Query(200, le=500),
+    offset:           int        = Query(0),
     db: DBSession = Depends(get_db),
     org_id: uuid.UUID = Depends(get_org_context),
     _: User = Depends(get_current_user),
 ):
     q = select(RemediationAction).where(RemediationAction.org_id == org_id)
+    if project_id:
+        q = q.where(RemediationAction.project_id == uuid.UUID(project_id))
     if status:
         q = q.where(RemediationAction.status == status)
     if owner_id:

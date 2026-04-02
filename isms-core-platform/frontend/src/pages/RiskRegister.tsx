@@ -10,6 +10,7 @@ import {
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import { risksApi, type RiskScenario, type RiskScenarioCreate, type RiskAcceptance } from '../api/risksApi'
+import { useProject } from '../store/ProjectContext'
 import PageHeader from '../components/PageHeader'
 
 // ── Colour helpers ────────────────────────────────────────────────────────────
@@ -484,13 +485,20 @@ export default function RiskRegister() {
   const [filterTreatment, setFilterTreatment] = useState('')
   const [filterStatus,    setFilterStatus]    = useState('')
 
-  const { data: summary } = useQuery({ queryKey: ['risk-summary'], queryFn: risksApi.summary })
+  const { activeProject } = useProject()
+  const projectId = activeProject?.id
+
+  const { data: summary } = useQuery({
+    queryKey: ['risk-summary', projectId],
+    queryFn: () => risksApi.summary({ project_id: projectId }),
+  })
   const { data: risks, isLoading } = useQuery({
-    queryKey: ['risks', filterLevel, filterTreatment, filterStatus],
+    queryKey: ['risks', filterLevel, filterTreatment, filterStatus, projectId],
     queryFn: () => risksApi.list({
       risk_level:       filterLevel     || undefined,
       treatment_status: filterTreatment || undefined,
       status:           filterStatus    || undefined,
+      project_id:       projectId,
     }),
   })
 
@@ -498,13 +506,27 @@ export default function RiskRegister() {
     <Box sx={{ p: 3 }}>
       <PageHeader
         title="Risk Register"
-        subtitle="ISO 27001:2022 Clause 6.1.2 — identify, analyse, and treat information security risks"
+        subtitle={activeProject
+          ? `${activeProject.name} · ISO 27001:2022 §6.1.2`
+          : 'ISO 27001:2022 Clause 6.1.2 — identify, analyse, and treat information security risks'}
         actions={
-          <Button variant="contained" size="small" startIcon={<AddOutlined />} onClick={() => setCreateOpen(true)}>
-            New Risk
-          </Button>
+          <Tooltip title={!activeProject ? 'Select a project first to log risks' : ''}>
+            <span>
+              <Button variant="contained" size="small" startIcon={<AddOutlined />}
+                onClick={() => setCreateOpen(true)} disabled={!activeProject}>
+                New Risk
+              </Button>
+            </span>
+          </Tooltip>
         }
       />
+
+      {activeProject && (
+        <Alert severity="info" sx={{ mb: 2, py: 0.5, fontSize: '0.8rem' }}>
+          Showing risks for project: <strong>{activeProject.name}</strong>
+          {activeProject.organisation_name ? ` — ${activeProject.organisation_name}` : ''}
+        </Alert>
+      )}
 
       {/* Summary row */}
       {summary && (

@@ -145,14 +145,16 @@ def update_matrix(
 
 @router.get("/summary", response_model=RiskSummary)
 def get_summary(
+    project_id: str | None = Query(None),
     db: DBSession = Depends(get_db),
     org_id: uuid.UUID = Depends(get_org_context),
     _: User = Depends(get_current_user),
 ):
     """Counts by risk level and treatment status."""
-    rows = db.execute(
-        select(RiskScenario).where(RiskScenario.org_id == org_id)
-    ).scalars().all()
+    q = select(RiskScenario).where(RiskScenario.org_id == org_id)
+    if project_id:
+        q = q.where(RiskScenario.project_id == uuid.UUID(project_id))
+    rows = db.execute(q).scalars().all()
 
     summary = RiskSummary(total=0, critical=0, high=0, medium=0, low=0, open=0, accepted=0, in_treatment=0, closed=0)
     for r in rows:

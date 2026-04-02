@@ -15,6 +15,7 @@ import {
   type RemediationAction,
   type RemediationActionCreate,
 } from '../api/risksApi'
+import { useProject } from '../store/ProjectContext'
 import PageHeader from '../components/PageHeader'
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -46,8 +47,11 @@ function isOverdue(action: RemediationAction) {
 
 // ── Summary cards ─────────────────────────────────────────────────────────────
 
-function SummaryCards() {
-  const { data, isLoading } = useQuery({ queryKey: ['remediation-summary'], queryFn: risksApi.remediationSummary })
+function SummaryCards({ projectId }: { projectId?: string }) {
+  const { data, isLoading } = useQuery({
+    queryKey: ['remediation-summary', projectId],
+    queryFn: () => risksApi.remediationSummary({ project_id: projectId }),
+  })
   const cards = [
     { label: 'Total',       value: data?.total,       color: '#607D8B' },
     { label: 'Planned',     value: data?.planned,     color: '#9E9E9E' },
@@ -228,14 +232,23 @@ export default function Remediation() {
   const [dialogOpen, setDialogOpen] = useState(false)
   const [editing, setEditing] = useState<RemediationAction | undefined>()
 
+  const { activeProject } = useProject()
+  const projectId = activeProject?.id
+
   const { data, isLoading } = useQuery({
-    queryKey: ['remediation', statusFilter],
-    queryFn: () => risksApi.listRemediation(statusFilter ? { status: statusFilter } : {}),
+    queryKey: ['remediation', statusFilter, projectId],
+    queryFn: () => risksApi.listRemediation({
+      ...(statusFilter ? { status: statusFilter } : {}),
+      project_id: projectId,
+    }),
   })
 
   const deleteMut = useMutation({
     mutationFn: (id: string) => risksApi.deleteRemediation(id),
-    onSuccess: () => { qc.invalidateQueries({ queryKey: ['remediation'] }); qc.invalidateQueries({ queryKey: ['remediation-summary'] }) },
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['remediation'] })
+      qc.invalidateQueries({ queryKey: ['remediation-summary'] })
+    },
   })
 
   function openCreate() { setEditing(undefined); setDialogOpen(true) }
@@ -245,11 +258,29 @@ export default function Remediation() {
     <Box sx={{ p: 3 }}>
       <PageHeader
         title="Remediation Tracker"
-        subtitle="Plan of Action and Milestones (POA&M) — ISO 27001:2022 §6.1.3"
-        action={<Button variant="contained" size="small" startIcon={<AddOutlined />} onClick={openCreate}>New Action</Button>}
+        subtitle={activeProject
+          ? `${activeProject.name} · POA&M — ISO 27001:2022 §6.1.3`
+          : 'Plan of Action and Milestones (POA&M) — ISO 27001:2022 §6.1.3'}
+        action={
+          <Tooltip title={!activeProject ? 'Select a project first to create remediation actions' : ''}>
+            <span>
+              <Button variant="contained" size="small" startIcon={<AddOutlined />}
+                onClick={openCreate} disabled={!activeProject}>
+                New Action
+              </Button>
+            </span>
+          </Tooltip>
+        }
       />
 
-      <SummaryCards />
+      {activeProject && (
+        <Alert severity="info" sx={{ mb: 2, py: 0.5, fontSize: '0.8rem' }}>
+          Showing actions for project: <strong>{activeProject.name}</strong>
+          {activeProject.organisation_name ? ` — ${activeProject.organisation_name}` : ''}
+        </Alert>
+      )}
+
+      <SummaryCards projectId={projectId} />
 
       {/* Filters */}
       <Box sx={{ display: 'flex', gap: 1.5, mb: 2, alignItems: 'center' }}>
