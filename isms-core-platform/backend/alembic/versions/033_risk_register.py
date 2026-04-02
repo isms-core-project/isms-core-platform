@@ -55,19 +55,19 @@ def upgrade():
         sa.Column('probability',           sa.Integer, nullable=False, server_default='1'),  # 1–5
         sa.Column('impact',                sa.Integer, nullable=False, server_default='1'),  # 1–5
         sa.Column('risk_score',            sa.Integer, nullable=False, server_default='1'),
-        sa.Column('risk_level',            sa.Enum('low', 'medium', 'high', 'critical', name='risklevel'), nullable=False, server_default='low'),
+        sa.Column('risk_level',            sa.Enum('low', 'medium', 'high', 'critical', name='risklevel', create_type=False), nullable=False, server_default='low'),
         # Treatment
-        sa.Column('treatment_status',      sa.Enum('pending', 'accept', 'mitigate', 'transfer', 'avoid', name='risktreatmentstatus'), nullable=False, server_default='pending'),
+        sa.Column('treatment_status',      sa.Enum('pending', 'accept', 'mitigate', 'transfer', 'avoid', name='risktreatmentstatus', create_type=False), nullable=False, server_default='pending'),
         sa.Column('treatment_notes',       sa.Text, nullable=True),
         # Residual risk
         sa.Column('residual_probability',  sa.Integer, nullable=True),
         sa.Column('residual_impact',       sa.Integer, nullable=True),
         sa.Column('residual_score',        sa.Integer, nullable=True),
-        sa.Column('residual_level',        sa.Enum('low', 'medium', 'high', 'critical', name='risklevel'), nullable=True),
+        sa.Column('residual_level',        sa.Enum('low', 'medium', 'high', 'critical', name='risklevel', create_type=False), nullable=True),
         # Meta
         sa.Column('owner_id',              UUID(as_uuid=True), sa.ForeignKey('users.id', ondelete='SET NULL'), nullable=True),
         sa.Column('target_date',           sa.Date, nullable=True),
-        sa.Column('status',                sa.Enum('open', 'in_treatment', 'closed', 'accepted', name='riskstatus'), nullable=False, server_default='open'),
+        sa.Column('status',                sa.Enum('open', 'in_treatment', 'closed', 'accepted', name='riskstatus', create_type=False), nullable=False, server_default='open'),
         sa.Column('created_at',            sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=False),
         sa.Column('updated_at',            sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=False),
     )
