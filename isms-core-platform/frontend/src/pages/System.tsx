@@ -23,6 +23,10 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
 } from '@mui/material'
 import {
   CheckCircleOutlined,
@@ -40,8 +44,13 @@ import {
   SendOutlined,
   PsychologyOutlined,
   AssignmentOutlined,
+  LockOutlined,
+  LockOpenOutlined,
+  ContentCopyOutlined,
+  SecurityOutlined,
 } from '@mui/icons-material'
-import { useQuery, useMutation } from '@tanstack/react-query'
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { mfaSetup, mfaEnable, mfaDisable, mfaRegenerateBackupCodes, getMfaStatus } from '../api/auth'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { adminApi } from '../api/admin'
@@ -119,8 +128,455 @@ function ServiceCard({ svc }: { svc: ServiceHealth }) {
   )
 }
 
+// ---------------------------------------------------------------------------
+// MFA sub-dialogs
+// ---------------------------------------------------------------------------
+
+function BackupCodesGrid({ codes }: { codes: string[] }) {
+  function copyAll() {
+    navigator.clipboard.writeText(codes.join('\n'))
+  }
+  return (
+    <Box>
+      <Alert severity="warning" sx={{ mb: 2, py: 0.5 }}>
+        Store these safely — they won't be shown again.
+      </Alert>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: 0.75,
+          mb: 2,
+          p: 1.5,
+          bgcolor: 'action.hover',
+          borderRadius: 1,
+          fontFamily: 'monospace',
+          fontSize: '0.85rem',
+        }}
+      >
+        {codes.map((c) => (
+          <Typography key={c} fontFamily="monospace" variant="body2" sx={{ letterSpacing: '0.05em' }}>
+            {c}
+          </Typography>
+        ))}
+      </Box>
+      <Button
+        size="small"
+        startIcon={<ContentCopyOutlined />}
+        onClick={copyAll}
+        sx={{ fontSize: '0.75rem' }}
+      >
+        Copy all codes
+      </Button>
+    </Box>
+  )
+}
+
+function MfaSetupDialog({
+  open,
+  token,
+  onClose,
+  onEnabled,
+}: {
+  open: boolean
+  token: string
+  onClose: () => void
+  onEnabled: () => void
+}) {
+  const [step, setStep] = useState<'qr' | 'verify' | 'backup'>('qr')
+  const [verifyCode, setVerifyCode] = useState('')
+  const [backupCodes, setBackupCodes] = useState<string[]>([])
+  const [error, setError] = useState<string | null>(null)
+  const [setupData, setSetupData] = useState<{ secret: string; otpauth_uri: string; qr_data_uri: string } | null>(null)
+
+  const setupMutation = useMutation({
+    mutationFn: () => mfaSetup(token),
+    onSuccess: (data) => setSetupData(data),
+    onError: () => setError('Failed to start MFA setup. Please try again.'),
+  })
+
+  const enableMutation = useMutation({
+    mutationFn: () => mfaEnable(token, verifyCode),
+    onSuccess: (data) => {
+      setBackupCodes(data.backup_codes)
+      setStep('backup')
+      setError(null)
+    },
+    onError: (e: Error) => setError(e.message ?? 'Invalid code — try again.'),
+  })
+
+  function handleOpen() {
+    setStep('qr')
+    setVerifyCode('')
+    setBackupCodes([])
+    setError(null)
+    setSetupData(null)
+    setupMutation.mutate()
+  }
+
+  function handleClose() {
+    onClose()
+  }
+
+  function handleDone() {
+    onEnabled()
+    onClose()
+  }
+
+  return (
+    <Dialog
+      open={open}
+      onClose={step === 'backup' ? handleDone : handleClose}
+      maxWidth="sm"
+      fullWidth
+      TransitionProps={{ onEnter: handleOpen }}
+    >
+      <DialogTitle>
+        {step === 'qr' && 'Set up two-factor authentication'}
+        {step === 'verify' && 'Verify your authenticator'}
+        {step === 'backup' && 'Save your backup codes'}
+      </DialogTitle>
+      <DialogContent>
+        {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+
+        {step === 'qr' && (
+          <>
+            {setupMutation.isPending && (
+              <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+                <CircularProgress />
+              </Box>
+            )}
+            {setupData && (
+              <Box>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                  Scan this QR code with Google Authenticator, Authy, or any TOTP app.
+                </Typography>
+                <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+                  <img src={setupData.qr_data_uri} alt="MFA QR code" style={{ maxWidth: 200, borderRadius: 8 }} />
+                </Box>
+                <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 0.5 }}>
+                  Can't scan? Enter this key manually:
+                </Typography>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1,
+                    p: 1,
+                    bgcolor: 'action.hover',
+                    borderRadius: 1,
+                  }}
+                >
+                  <Typography fontFamily="monospace" variant="body2" sx={{ flex: 1, wordBreak: 'break-all', letterSpacing: '0.1em' }}>
+                    {setupData.secret}
+                  </Typography>
+                  <IconButton size="small" onClick={() => navigator.clipboard.writeText(setupData.secret)}>
+                    <ContentCopyOutlined fontSize="small" />
+                  </IconButton>
+                </Box>
+              </Box>
+            )}
+          </>
+        )}
+
+        {step === 'verify' && (
+          <>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              Enter the 6-digit code from your authenticator app to confirm setup.
+            </Typography>
+            <TextField
+              fullWidth
+              label="Verification code"
+              value={verifyCode}
+              onChange={(e) => setVerifyCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+              autoFocus
+              inputProps={{ maxLength: 6, style: { letterSpacing: '0.3em', textAlign: 'center', fontSize: '1.4rem' } }}
+            />
+          </>
+        )}
+
+        {step === 'backup' && <BackupCodesGrid codes={backupCodes} />}
+      </DialogContent>
+      <DialogActions>
+        {step === 'qr' && (
+          <>
+            <Button onClick={handleClose}>Cancel</Button>
+            <Button
+              variant="contained"
+              disabled={!setupData}
+              onClick={() => { setStep('verify'); setError(null) }}
+            >
+              Next
+            </Button>
+          </>
+        )}
+        {step === 'verify' && (
+          <>
+            <Button onClick={() => setStep('qr')}>Back</Button>
+            <Button
+              variant="contained"
+              disabled={verifyCode.length < 6 || enableMutation.isPending}
+              onClick={() => { setError(null); enableMutation.mutate() }}
+            >
+              {enableMutation.isPending ? <CircularProgress size={20} /> : 'Verify & Enable'}
+            </Button>
+          </>
+        )}
+        {step === 'backup' && (
+          <Button variant="contained" onClick={handleDone}>Done</Button>
+        )}
+      </DialogActions>
+    </Dialog>
+  )
+}
+
+function MfaDisableDialog({
+  open,
+  token,
+  onClose,
+  onDisabled,
+}: {
+  open: boolean
+  token: string
+  onClose: () => void
+  onDisabled: () => void
+}) {
+  const [code, setCode] = useState('')
+  const [error, setError] = useState<string | null>(null)
+
+  const disableMutation = useMutation({
+    mutationFn: () => mfaDisable(token, code),
+    onSuccess: () => {
+      onDisabled()
+      onClose()
+    },
+    onError: (e: Error) => setError(e.message ?? 'Failed to disable MFA.'),
+  })
+
+  function handleClose() {
+    setCode('')
+    setError(null)
+    onClose()
+  }
+
+  return (
+    <Dialog open={open} onClose={handleClose} maxWidth="xs" fullWidth>
+      <DialogTitle>Disable two-factor authentication</DialogTitle>
+      <DialogContent>
+        {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+          Enter your current TOTP code to disable MFA.
+        </Typography>
+        <TextField
+          fullWidth
+          label="Authentication code"
+          value={code}
+          onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+          autoFocus
+          inputProps={{ maxLength: 6, style: { letterSpacing: '0.3em', textAlign: 'center', fontSize: '1.4rem' } }}
+        />
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={handleClose}>Cancel</Button>
+        <Button
+          variant="contained"
+          color="error"
+          disabled={code.length < 6 || disableMutation.isPending}
+          onClick={() => { setError(null); disableMutation.mutate() }}
+        >
+          {disableMutation.isPending ? <CircularProgress size={20} /> : 'Disable MFA'}
+        </Button>
+      </DialogActions>
+    </Dialog>
+  )
+}
+
+function MfaBackupCodesDialog({
+  open,
+  token,
+  onClose,
+}: {
+  open: boolean
+  token: string
+  onClose: () => void
+}) {
+  const [code, setCode] = useState('')
+  const [error, setError] = useState<string | null>(null)
+  const [newCodes, setNewCodes] = useState<string[] | null>(null)
+
+  const regenMutation = useMutation({
+    mutationFn: () => mfaRegenerateBackupCodes(token, code),
+    onSuccess: (data) => { setNewCodes(data.backup_codes); setError(null) },
+    onError: (e: Error) => setError(e.message ?? 'Regeneration failed.'),
+  })
+
+  function handleClose() {
+    setCode('')
+    setError(null)
+    setNewCodes(null)
+    onClose()
+  }
+
+  return (
+    <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
+      <DialogTitle>Regenerate backup codes</DialogTitle>
+      <DialogContent>
+        {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+        {!newCodes ? (
+          <>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              Enter your TOTP code to regenerate backup codes. Current codes will be invalidated.
+            </Typography>
+            <TextField
+              fullWidth
+              label="Authentication code"
+              value={code}
+              onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+              autoFocus
+              inputProps={{ maxLength: 6, style: { letterSpacing: '0.3em', textAlign: 'center', fontSize: '1.4rem' } }}
+            />
+          </>
+        ) : (
+          <BackupCodesGrid codes={newCodes} />
+        )}
+      </DialogContent>
+      <DialogActions>
+        {!newCodes ? (
+          <>
+            <Button onClick={handleClose}>Cancel</Button>
+            <Button
+              variant="contained"
+              disabled={code.length < 6 || regenMutation.isPending}
+              onClick={() => { setError(null); regenMutation.mutate() }}
+            >
+              {regenMutation.isPending ? <CircularProgress size={20} /> : 'Regenerate'}
+            </Button>
+          </>
+        ) : (
+          <Button variant="contained" onClick={handleClose}>Done</Button>
+        )}
+      </DialogActions>
+    </Dialog>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// MFA status card — visible to all authenticated users
+// ---------------------------------------------------------------------------
+
+function MfaCard({ token }: { token: string }) {
+  const queryClient = useQueryClient()
+  const [setupOpen, setSetupOpen] = useState(false)
+  const [disableOpen, setDisableOpen] = useState(false)
+  const [backupOpen, setBackupOpen] = useState(false)
+
+  const { data: mfaStatus, isLoading: mfaLoading } = useQuery({
+    queryKey: ['mfa-status'],
+    queryFn: () => getMfaStatus(token),
+    staleTime: 60_000,
+  })
+
+  const mfaEnabled = mfaStatus?.mfa_enabled ?? false
+
+  function invalidateMfa() {
+    queryClient.invalidateQueries({ queryKey: ['mfa-status'] })
+  }
+
+  return (
+    <>
+      <Card>
+        <CardContent sx={{ pb: '12px !important' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+            <SecurityOutlined sx={{ color: 'primary.main' }} />
+            <Typography variant="h6" sx={{ flex: 1 }}>Two-factor authentication</Typography>
+            {mfaEnabled && (
+              <Chip
+                label="Active"
+                size="small"
+                sx={{ fontSize: '0.65rem', height: 18, bgcolor: '#1a3a27', color: '#C6EFCE' }}
+              />
+            )}
+          </Box>
+          <Divider sx={{ mb: 1.5 }} />
+
+          {mfaLoading ? (
+            <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}>
+              <CircularProgress size={20} />
+            </Box>
+          ) : mfaEnabled ? (
+            <>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                <LockOutlined sx={{ color: '#C6EFCE', fontSize: 20 }} />
+                <Typography variant="body2" color="text.secondary">
+                  Your account is protected with an authenticator app.
+                </Typography>
+              </Box>
+              <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+                <Button
+                  size="small"
+                  variant="outlined"
+                  color="error"
+                  onClick={() => setDisableOpen(true)}
+                  sx={{ fontSize: '0.75rem' }}
+                >
+                  Disable
+                </Button>
+                <Button
+                  size="small"
+                  variant="outlined"
+                  onClick={() => setBackupOpen(true)}
+                  sx={{ fontSize: '0.75rem' }}
+                >
+                  Regenerate backup codes
+                </Button>
+              </Box>
+            </>
+          ) : (
+            <>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                <LockOpenOutlined sx={{ color: 'text.secondary', fontSize: 20 }} />
+                <Typography variant="body2" color="text.secondary">
+                  Add an extra layer of security to your account.
+                </Typography>
+              </Box>
+              <Button
+                size="small"
+                variant="contained"
+                onClick={() => setSetupOpen(true)}
+                sx={{ fontSize: '0.75rem' }}
+              >
+                Enable MFA
+              </Button>
+            </>
+          )}
+        </CardContent>
+      </Card>
+
+      <MfaSetupDialog
+        open={setupOpen}
+        token={token}
+        onClose={() => setSetupOpen(false)}
+        onEnabled={invalidateMfa}
+      />
+      <MfaDisableDialog
+        open={disableOpen}
+        token={token}
+        onClose={() => setDisableOpen(false)}
+        onDisabled={invalidateMfa}
+      />
+      <MfaBackupCodesDialog
+        open={backupOpen}
+        token={token}
+        onClose={() => setBackupOpen(false)}
+      />
+    </>
+  )
+}
+
+// ---------------------------------------------------------------------------
+
 export default function System() {
-  const { user } = useAuth()
+  const { user, token } = useAuth()
   const [lastRefresh, setLastRefresh] = useState<Date>(new Date())
   const [reindexResult, setReindexResult] = useState<string | null>(null)
   const [testEmailRecipient, setTestEmailRecipient] = useState('')
@@ -296,10 +752,24 @@ export default function System() {
     setLastRefresh(new Date())
   }
 
-  if (!user || !['super_admin', 'admin'].includes(user.role)) {
+  const isAdmin = user && ['super_admin', 'admin'].includes(user.role)
+
+  if (!user) {
     return (
       <Box sx={{ p: 3 }}>
-        <Alert severity="error">Admin role required to access this page.</Alert>
+        <Alert severity="error">You must be signed in to access this page.</Alert>
+      </Box>
+    )
+  }
+
+  if (!isAdmin) {
+    return (
+      <Box sx={{ p: 3, maxWidth: 600 }}>
+        <PageHeader
+          title="System"
+          subtitle="Account security settings"
+        />
+        {token && <MfaCard token={token} />}
       </Box>
     )
   }
@@ -958,6 +1428,9 @@ export default function System() {
               </Card>
             </Grid>
           </Grid>
+
+          {/* Account Security */}
+          {token && <MfaCard token={token} />}
 
           {/* Row 6: System Event Log (full width) */}
           <Card>

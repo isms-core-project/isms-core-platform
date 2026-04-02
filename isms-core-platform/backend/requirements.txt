@@ -47,6 +47,10 @@ sentence-transformers>=2.7.0
 # HTTP client (ITSM integrations)
 httpx==0.27.0
 
+# MFA — TOTP + QR code generation
+pyotp==2.9.0
+qrcode[pil]==7.4.2
+
 # Utilities
 python-dateutil==2.8.2
 

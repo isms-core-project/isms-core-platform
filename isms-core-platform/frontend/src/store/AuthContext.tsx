@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react'
 import type { UserInfo } from '../api/types'
-import { login as apiLogin, decodeJwtPayload } from '../api/auth'
+import { login as apiLogin, verifyMfa, isMfaRequired, decodeJwtPayload } from '../api/auth'
 
 interface AuthState {
   user: UserInfo | null
@@ -9,6 +9,7 @@ interface AuthState {
 
 interface AuthContextValue extends AuthState {
   login: (email: string, password: string) => Promise<void>
+  loginMfa: (mfaToken: string, code: string) => Promise<void>
   logout: () => void
   isAuthenticated: boolean
   isSuperAdmin: boolean
@@ -47,6 +48,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = useCallback(async (email: string, password: string) => {
     const response = await apiLogin({ email, password })
+    if (isMfaRequired(response)) {
+      // Signal to Login page that MFA is needed — throw a special object
+      throw { mfa_required: true, mfa_token: response.mfa_token }
+    }
+    // Normal flow
+    const user = userFromToken(response.access_token)
+    localStorage.setItem('access_token', response.access_token)
+    localStorage.setItem('refresh_token', response.refresh_token)
+    localStorage.setItem('user', JSON.stringify(user))
+    setAuth({ token: response.access_token, user })
+  }, [])
+
+  const loginMfa = useCallback(async (mfaToken: string, code: string) => {
+    const response = await verifyMfa(mfaToken, code)
     const user = userFromToken(response.access_token)
     localStorage.setItem('access_token', response.access_token)
     localStorage.setItem('refresh_token', response.refresh_token)
@@ -65,7 +80,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ ...auth, login, logout, isAuthenticated: !!auth.token, isSuperAdmin }}
+      value={{ ...auth, login, loginMfa, logout, isAuthenticated: !!auth.token, isSuperAdmin }}
     >
       {children}
     </AuthContext.Provider>

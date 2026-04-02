@@ -7,7 +7,18 @@ from sqlalchemy.orm import Session as DBSession
 
 from src.core.dependencies import get_current_user
 from src.database.session import get_db
-from src.schemas.auth import LoginRequest, RefreshRequest, TokenResponse
+from src.schemas.auth import (
+    LoginRequest,
+    MfaBackupCodesResponse,
+    MfaDisableRequest,
+    MfaEnableRequest,
+    MfaEnableResponse,
+    MfaLoginResponse,
+    MfaSetupResponse,
+    MfaVerifyRequest,
+    RefreshRequest,
+    TokenResponse,
+)
 from src.schemas.users import (
     NOTIFICATION_EVENTS,
     NotificationPrefRead,
@@ -19,7 +30,7 @@ from src.services.auth_service import authenticate_user, create_token_pair, refr
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 
-@router.post("/login", response_model=TokenResponse)
+@router.post("/login")
 def login(body: LoginRequest, db: DBSession = Depends(get_db)):
     user = authenticate_user(db, body.email, body.password)
     if not user:
@@ -27,6 +38,10 @@ def login(body: LoginRequest, db: DBSession = Depends(get_db)):
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid email or password",
         )
+    if user.mfa_enabled:
+        from src.services.mfa_service import create_mfa_token
+        mfa_token = create_mfa_token(user.id)
+        return MfaLoginResponse(mfa_token=mfa_token)
     return create_token_pair(user)
 
 
@@ -138,3 +153,154 @@ def set_active_project(
     db.commit()
     db.refresh(current_user)
     return {"product_family": fam, "project_id": active.get(fam)}
+
+
+# ---------------------------------------------------------------------------
+# MFA — setup / enable / disable / verify / backup-code regeneration
+# ---------------------------------------------------------------------------
+
+@router.get("/mfa/status")
+def mfa_status(current_user=Depends(get_current_user)):
+    """Return current MFA state for the authenticated user."""
+    return {
+        "mfa_enabled": bool(current_user.mfa_enabled),
+        "has_backup_codes": bool(current_user.mfa_backup_codes),
+    }
+
+@router.post("/mfa/setup", response_model=MfaSetupResponse)
+def mfa_setup(
+    current_user=Depends(get_current_user),
+    db: DBSession = Depends(get_db),
+):
+    """Generate a new TOTP secret and QR code for the current user.
+
+    Does NOT enable MFA — user must call /mfa/enable with a verified code.
+    Calling setup again overwrites any pending (not-yet-enabled) secret.
+    """
+    import base64
+    import io
+
+    import qrcode
+    from src.services.mfa_service import generate_totp_secret, get_totp_uri
+
+    secret = generate_totp_secret()
+    current_user.mfa_secret = secret
+    db.add(current_user)
+    db.commit()
+
+    uri = get_totp_uri(secret, current_user.email)
+
+    qr = qrcode.make(uri)
+    buf = io.BytesIO()
+    qr.save(buf, format="PNG")
+    b64 = base64.b64encode(buf.getvalue()).decode()
+    data_uri = f"data:image/png;base64,{b64}"
+
+    return MfaSetupResponse(secret=secret, otpauth_uri=uri, qr_data_uri=data_uri)
+
+
+@router.post("/mfa/enable", response_model=MfaEnableResponse)
+def mfa_enable(
+    body: MfaEnableRequest,
+    current_user=Depends(get_current_user),
+    db: DBSession = Depends(get_db),
+):
+    """Enable MFA after verifying the TOTP code from the authenticator app.
+
+    Returns 8 plaintext backup codes — shown once, user must copy them.
+    """
+    from src.services.mfa_service import generate_backup_codes, hash_backup_code, verify_totp
+
+    if not current_user.mfa_secret:
+        raise HTTPException(status_code=400, detail="Call /mfa/setup first")
+    if not verify_totp(current_user.mfa_secret, body.code):
+        raise HTTPException(status_code=400, detail="Invalid TOTP code")
+
+    plain_codes = generate_backup_codes(8)
+    hashed_codes = [hash_backup_code(c) for c in plain_codes]
+
+    current_user.mfa_enabled = True
+    current_user.mfa_backup_codes = hashed_codes
+    db.add(current_user)
+    db.commit()
+
+    return MfaEnableResponse(backup_codes=plain_codes)
+
+
+@router.post("/mfa/disable", status_code=204)
+def mfa_disable(
+    body: MfaDisableRequest,
+    current_user=Depends(get_current_user),
+    db: DBSession = Depends(get_db),
+):
+    """Disable MFA. Requires the current valid TOTP code."""
+    from src.services.mfa_service import verify_totp
+
+    if not current_user.mfa_enabled:
+        raise HTTPException(status_code=400, detail="MFA is not enabled")
+    if not verify_totp(current_user.mfa_secret, body.code):
+        raise HTTPException(status_code=400, detail="Invalid TOTP code")
+
+    current_user.mfa_enabled = False
+    current_user.mfa_secret = None
+    current_user.mfa_backup_codes = []
+    db.add(current_user)
+    db.commit()
+
+
+@router.post("/mfa/verify")
+def mfa_verify(
+    body: MfaVerifyRequest,
+    db: DBSession = Depends(get_db),
+):
+    """Complete login by verifying TOTP code + mfa_token.
+
+    Returns a full token pair (access_token + refresh_token).
+    Accepts either a 6-digit TOTP code or a XXXX-XXXX backup code.
+    """
+    from src.domain.users import User as UserModel
+    from src.services.mfa_service import verify_backup_code, verify_mfa_token, verify_totp
+
+    user_id = verify_mfa_token(body.mfa_token)
+    if not user_id:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or expired MFA token")
+
+    user = db.get(UserModel, user_id)
+    if not user or not user.is_active:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User not found")
+
+    code = body.code.strip().upper()
+    is_backup = "-" in code
+
+    if is_backup:
+        if not verify_backup_code(user, code, db):
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid backup code")
+    else:
+        if not verify_totp(user.mfa_secret, code):
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid TOTP code")
+
+    return create_token_pair(user)
+
+
+@router.post("/mfa/backup-codes/regenerate", response_model=MfaBackupCodesResponse)
+def mfa_regenerate_backup_codes(
+    body: MfaEnableRequest,  # reuse — just needs `code: str`
+    current_user=Depends(get_current_user),
+    db: DBSession = Depends(get_db),
+):
+    """Regenerate backup codes. Requires current TOTP code. Previous codes are invalidated."""
+    from src.services.mfa_service import generate_backup_codes, hash_backup_code, verify_totp
+
+    if not current_user.mfa_enabled:
+        raise HTTPException(status_code=400, detail="MFA is not enabled")
+    if not verify_totp(current_user.mfa_secret, body.code):
+        raise HTTPException(status_code=400, detail="Invalid TOTP code")
+
+    plain_codes = generate_backup_codes(8)
+    hashed_codes = [hash_backup_code(c) for c in plain_codes]
+
+    current_user.mfa_backup_codes = hashed_codes
+    db.add(current_user)
+    db.commit()
+
+    return MfaBackupCodesResponse(backup_codes=plain_codes)

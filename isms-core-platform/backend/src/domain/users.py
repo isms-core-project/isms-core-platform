@@ -2,7 +2,7 @@ import uuid
 from datetime import datetime
 from typing import TYPE_CHECKING
 
-from sqlalchemy import Boolean, DateTime, ForeignKey, String, Text, func
+from sqlalchemy import Boolean, DateTime, ForeignKey, JSON, String, Text, func
 from sqlalchemy.dialects.postgresql import ARRAY, INET, JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -47,6 +47,9 @@ class User(TimestampMixin, Base):
     notification_prefs: Mapped[dict] = mapped_column(
         JSONB, default=dict, server_default="{}"
     )
+    mfa_enabled: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    mfa_secret: Mapped[str | None] = mapped_column(Text, nullable=True)
+    mfa_backup_codes: Mapped[list] = mapped_column(JSON, nullable=False, default=list)
     metadata_: Mapped[dict] = mapped_column(
         "metadata", JSONB, default=dict, server_default="{}"
     )
