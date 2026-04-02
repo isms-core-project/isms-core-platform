@@ -30,3 +30,4 @@ from src.domain.system import AuditLog, DataLoadHistory  # noqa: F401
 from src.domain.collections import AssessmentCollection, collection_assessments  # noqa: F401
 from src.domain.csrm import CsrmAssessment, CsrmBaselineRating, CsrmElevatedTom, CsrmProtectionObject  # noqa: F401
 from src.domain.risks import RiskMatrix, RiskScenario, RiskAcceptance, RemediationAction  # noqa: F401
+from src.domain.metrics import MetricSnapshot  # noqa: F401

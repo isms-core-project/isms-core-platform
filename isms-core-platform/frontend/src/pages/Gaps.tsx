@@ -825,21 +825,10 @@ export default function Gaps() {
         }
       />
 
-      {activeProject ? (
-        <Alert severity="success" sx={{ mb: 2 }}>
-          Showing gaps for project: <strong>{activeProject.name}</strong> — {activeProject.organisation_name ?? ''}
-        </Alert>
-      ) : (
-        <Alert
-          severity="warning"
-          sx={{ mb: 2 }}
-          action={
-            <Button color="inherit" size="small" href="/projects">
-              Go to Projects
-            </Button>
-          }
-        >
-          No project selected — gaps must be linked to a project. Select an active project to start logging gaps.
+      {activeProject && (
+        <Alert severity="info" sx={{ mb: 2, py: 0.5, fontSize: '0.8rem' }}>
+          Showing gaps for project: <strong>{activeProject.name}</strong>
+          {activeProject.organisation_name ? ` — ${activeProject.organisation_name}` : ''}
         </Alert>
       )}
 

@@ -22,6 +22,7 @@ import {
   PolicyOutlined,
   FolderOpenOutlined,
   BuildOutlined,
+  InsightsOutlined,
 } from '@mui/icons-material'
 import { useQuery } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
@@ -41,6 +42,7 @@ const PLATFORM_TOOLS = [
   { label: 'Report',       path: '/report',       icon: <SummarizeOutlined sx={{ fontSize: 17 }} /> },
   { label: 'Risk',         path: '/risk',         icon: <GppMaybeOutlined sx={{ fontSize: 17 }} /> },
   { label: 'Remediation',  path: '/remediation',  icon: <BuildOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'KPI Metrics',  path: '/metrics',      icon: <InsightsOutlined sx={{ fontSize: 17 }} /> },
   { label: 'Admin',        path: '/admin',        icon: <AdminPanelSettingsOutlined sx={{ fontSize: 17 }} /> },
   { label: 'System',       path: '/system',       icon: <MonitorHeartOutlined sx={{ fontSize: 17 }} /> },
 ]

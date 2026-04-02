@@ -65,6 +65,7 @@ import {
   SettingsOutlined,
   HealthAndSafetyOutlined,
   PsychologyOutlined,
+  InsightsOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -99,6 +100,7 @@ const PRODUCT_NAV: NavItem[] = [
 const NAV_RISK: NavItem[] = [
   { label: 'Risk Register',   path: '/risk-register', icon: <WarningAmberOutlined /> },
   { label: 'Remediation',     path: '/remediation',   icon: <AssignmentOutlined /> },
+  { label: 'KPI Metrics',     path: '/metrics',       icon: <InsightsOutlined /> },
   { label: 'BIA',             path: '/bia',            icon: <HealthAndSafetyOutlined /> },
   { label: 'EBIOS RM',        path: '/ebios',          icon: <PsychologyOutlined /> },
 ]
@@ -164,7 +166,7 @@ const CAT_COLOR: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3
 const CAT_TEXT:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0' }
 const PLATFORM_COLOR = '#6B7A99'
 
-const RISK_PATHS       = ['/risk-register', '/remediation', '/bia', '/ebios']
+const RISK_PATHS       = ['/risk-register', '/remediation', '/metrics', '/bia', '/ebios']
 const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk']
 const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act', '/eu-cloud-sov']
 const SUPPLIER_PATHS   = ['/tprm']

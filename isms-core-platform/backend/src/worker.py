@@ -33,9 +33,17 @@ celery_app.conf.update(
             "task": "archive_evidence_beat",
             "schedule": crontab(hour=2, minute=0),
         },
+        # KPI metrics snapshot — runs daily at 06:00 UTC
+        "compute-daily-metrics": {
+            "task": "compute_daily_metrics",
+            "schedule": crontab(hour=6, minute=0),
+        },
     },
 )
 
 # Discover tasks: importers via autodiscover (has tasks.py), notification service explicitly
 celery_app.autodiscover_tasks(["src.importers"])
-celery_app.conf.include = ["src.services.notification_service"]
+celery_app.conf.include = [
+    "src.services.notification_service",
+    "src.services.metrics_tasks",
+]

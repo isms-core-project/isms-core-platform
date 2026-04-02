@@ -41,6 +41,7 @@ import ProjectDetail from './pages/ProjectDetail'
 import Organisations from './pages/Organisations'
 import RiskRegister from './pages/RiskRegister'
 import Remediation from './pages/Remediation'
+import Metrics from './pages/Metrics'
 import Bia from './pages/Bia'
 import Ebios from './pages/Ebios'
 import Tprm from './pages/Tprm'
@@ -106,6 +107,7 @@ export default function App() {
         <Route path="organisations" element={<Organisations />} />
         <Route path="risk-register" element={<RiskRegister />} />
         <Route path="remediation" element={<Remediation />} />
+        <Route path="metrics" element={<Metrics />} />
         <Route path="bia" element={<Bia />} />
         <Route path="ebios" element={<Ebios />} />
         <Route path="tprm" element={<Tprm />} />
