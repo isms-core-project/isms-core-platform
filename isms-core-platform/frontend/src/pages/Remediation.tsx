@@ -320,10 +320,14 @@ export default function Remediation() {
 
         {!isLoading && (!data || data.length === 0) && (
           <Box sx={{ py: 6, textAlign: 'center' }}>
-            <Typography variant="body2" color="text.secondary">No remediation actions yet.</Typography>
-            <Button variant="outlined" size="small" startIcon={<AddOutlined />} onClick={openCreate} sx={{ mt: 1.5 }}>
-              Create first action
-            </Button>
+            <Typography variant="body2" color="text.secondary">
+              {activeProject ? 'No remediation actions yet.' : 'Select a project to create remediation actions.'}
+            </Typography>
+            {activeProject && (
+              <Button variant="outlined" size="small" startIcon={<AddOutlined />} onClick={openCreate} sx={{ mt: 1.5 }}>
+                Create first action
+              </Button>
+            )}
           </Box>
         )}
 

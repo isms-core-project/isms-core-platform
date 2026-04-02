@@ -626,9 +626,14 @@ export default function RiskRegister() {
               <Typography color="text.disabled" variant="caption" sx={{ display: 'block', mb: 2 }}>
                 Create your first risk to comply with ISO 27001:2022 Clause 6.1.2
               </Typography>
-              <Button variant="contained" size="small" startIcon={<AddOutlined />} onClick={() => setCreateOpen(true)}>
-                New Risk
-              </Button>
+              <Tooltip title={!activeProject ? 'Select a project first to log risks' : ''}>
+                <span>
+                  <Button variant="contained" size="small" startIcon={<AddOutlined />}
+                    onClick={() => setCreateOpen(true)} disabled={!activeProject}>
+                    New Risk
+                  </Button>
+                </span>
+              </Tooltip>
             </Box>
           )
           : risks.map(r => <RiskRow key={r.id} risk={r} />)
