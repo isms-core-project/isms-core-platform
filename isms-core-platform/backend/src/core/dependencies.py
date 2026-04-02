@@ -89,6 +89,9 @@ def require_role(*roles: UserRole):
 # Shorthand — admin gate (SUPER_ADMIN also qualifies)
 require_admin = require_role(UserRole.SUPER_ADMIN, UserRole.ADMIN)
 
+# Shorthand — QA/content gate (SUPER_ADMIN + ADMIN + ISMS_MANAGER)
+require_qa_access = require_role(UserRole.SUPER_ADMIN, UserRole.ADMIN, UserRole.ISMS_MANAGER)
+
 
 def require_content_editable(
     db: DBSession = Depends(get_db),

@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import select
 from sqlalchemy.orm import Session as DBSession
 
-from src.core.dependencies import require_role
+from src.core.dependencies import require_qa_access
 from src.database.enums import CorrelationMethod, QAStatus, UserRole
 from src.database.session import get_db
 from src.domain.control_groups import ControlGroup
@@ -32,7 +32,7 @@ router = APIRouter(prefix="/qa", tags=["qa"])
 @router.post(
     "/run-existence",
     response_model=ExistenceRunResult,
-    dependencies=[Depends(require_role(UserRole.ADMIN, UserRole.ISMS_MANAGER))],
+    dependencies=[Depends(require_qa_access)],
 )
 def run_existence_check(db: DBSession = Depends(get_db)):
     """Run the existence checker for all control groups.
@@ -58,7 +58,7 @@ def run_existence_check(db: DBSession = Depends(get_db)):
 @router.post(
     "/run-keyword",
     response_model=KeywordRunResult,
-    dependencies=[Depends(require_role(UserRole.ADMIN, UserRole.ISMS_MANAGER))],
+    dependencies=[Depends(require_qa_access)],
 )
 def run_keyword_check(db: DBSession = Depends(get_db)):
     """Run the keyword correlation check for all control groups.
@@ -83,7 +83,7 @@ def run_keyword_check(db: DBSession = Depends(get_db)):
 @router.post(
     "/run-semantic",
     response_model=SemanticRunResult,
-    dependencies=[Depends(require_role(UserRole.ADMIN, UserRole.ISMS_MANAGER))],
+    dependencies=[Depends(require_qa_access)],
 )
 def run_semantic_check(db: DBSession = Depends(get_db)):
     """Run semantic similarity check using sentence-transformers (all-MiniLM-L6-v2).
@@ -112,7 +112,7 @@ def run_semantic_check(db: DBSession = Depends(get_db)):
 @router.post(
     "/run-semantic-claude",
     response_model=SemanticRunResult,
-    dependencies=[Depends(require_role(UserRole.ADMIN, UserRole.ISMS_MANAGER))],
+    dependencies=[Depends(require_qa_access)],
 )
 def run_semantic_claude(db: DBSession = Depends(get_db)):
     """Run semantic analysis using Anthropic Claude API.
@@ -290,7 +290,7 @@ def list_synonyms(db: DBSession = Depends(get_db)):
     "/synonyms",
     response_model=SynonymRuleRead,
     status_code=201,
-    dependencies=[Depends(require_role(UserRole.ADMIN, UserRole.ISMS_MANAGER))],
+    dependencies=[Depends(require_qa_access)],
 )
 def create_synonym(body: SynonymRuleCreate, db: DBSession = Depends(get_db)):
     """Add a new synonym rule. Keyword must be unique."""
@@ -314,7 +314,7 @@ def create_synonym(body: SynonymRuleCreate, db: DBSession = Depends(get_db)):
 @router.patch(
     "/synonyms/{rule_id}",
     response_model=SynonymRuleRead,
-    dependencies=[Depends(require_role(UserRole.ADMIN, UserRole.ISMS_MANAGER))],
+    dependencies=[Depends(require_qa_access)],
 )
 def update_synonym(rule_id: uuid.UUID, body: SynonymRulePatch, db: DBSession = Depends(get_db)):
     """Update synonyms list or notes for an existing rule."""
@@ -333,7 +333,7 @@ def update_synonym(rule_id: uuid.UUID, body: SynonymRulePatch, db: DBSession = D
 @router.delete(
     "/synonyms/{rule_id}",
     status_code=204,
-    dependencies=[Depends(require_role(UserRole.ADMIN, UserRole.ISMS_MANAGER))],
+    dependencies=[Depends(require_qa_access)],
 )
 def delete_synonym(rule_id: uuid.UUID, db: DBSession = Depends(get_db)):
     """Delete a synonym rule."""

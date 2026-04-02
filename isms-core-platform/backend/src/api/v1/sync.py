@@ -16,7 +16,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session as DBSession
 
 from src.core.config import get_settings
-from src.core.dependencies import require_role
+from src.core.dependencies import require_admin
 from src.database.enums import UserRole
 from src.database.session import get_db
 from src.importers.framework_importer import FrameworkWorkbookImporter
@@ -32,7 +32,7 @@ router = APIRouter(prefix="/sync", tags=["sync"])
 
 @router.post(
     "/full",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_full_sync(db: DBSession = Depends(get_db)):
     """Run all importers in sequence: policies → implementations → operational → framework."""
@@ -78,7 +78,7 @@ def trigger_full_sync(db: DBSession = Depends(get_db)):
 
 @router.post(
     "/full/async",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_full_sync_async():
     """Queue full sync via Celery worker. Returns task_id for polling."""
