@@ -39,6 +39,11 @@ import Csrm from './pages/Csrm'
 import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
 import Organisations from './pages/Organisations'
+import RiskRegister from './pages/RiskRegister'
+import Remediation from './pages/Remediation'
+import Bia from './pages/Bia'
+import Ebios from './pages/Ebios'
+import Tprm from './pages/Tprm'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -99,6 +104,11 @@ export default function App() {
         <Route path="projects" element={<Projects />} />
         <Route path="projects/:id" element={<ProjectDetail />} />
         <Route path="organisations" element={<Organisations />} />
+        <Route path="risk-register" element={<RiskRegister />} />
+        <Route path="remediation" element={<Remediation />} />
+        <Route path="bia" element={<Bia />} />
+        <Route path="ebios" element={<Ebios />} />
+        <Route path="tprm" element={<Tprm />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

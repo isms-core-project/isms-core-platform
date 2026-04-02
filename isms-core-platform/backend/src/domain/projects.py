@@ -13,6 +13,7 @@ from src.database.enums import ProductFamily, ProjectStatus
 
 if TYPE_CHECKING:
     from src.domain.organisations import Organisation
+    from src.domain.risks import RiskScenario
 
 
 class Project(TimestampMixin, Base):
@@ -64,6 +65,7 @@ class Project(TimestampMixin, Base):
     checklists: Mapped[list["ProjectChecklist"]] = relationship(
         back_populates="project", cascade="all, delete-orphan"
     )
+    risk_scenarios: Mapped[list["RiskScenario"]] = relationship(back_populates="project")
 
 
 class ProjectPolicy(TimestampMixin, Base):

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from src.api.v1 import ai, admin, assessments, auth, collections, compass, connectors, controls, csrm, dashboard, evidence, frameworks, gaps, generators, graph, health, implementations, nist, organisation, policies, projects, qa, regulatory, search, sync
+from src.api.v1 import ai, admin, assessments, auth, collections, compass, connectors, controls, csrm, dashboard, evidence, frameworks, gaps, generators, graph, health, implementations, nist, organisation, policies, projects, qa, regulatory, risks, search, sync
 
 api_router = APIRouter()
 
@@ -32,3 +32,4 @@ api_router.include_router(regulatory.router, prefix="/api/v1")
 api_router.include_router(collections.router, prefix="/api/v1")
 api_router.include_router(csrm.router, prefix="/api/v1")
 api_router.include_router(projects.router, prefix="/api/v1")
+api_router.include_router(risks.router, prefix="/api/v1")

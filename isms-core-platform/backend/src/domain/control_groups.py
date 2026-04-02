@@ -89,3 +89,4 @@ class ControlGroup(TimestampMixin, Base):
     correlation_results: Mapped[list] = relationship(
         "CorrelationResult", back_populates="control_group"
     )
+    risk_scenarios: Mapped[list] = relationship("RiskScenario", back_populates="control_group")

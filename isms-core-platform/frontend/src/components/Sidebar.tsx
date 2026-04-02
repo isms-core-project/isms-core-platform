@@ -59,6 +59,12 @@ import {
   CloseOutlined,
   DarkModeOutlined,
   LightModeOutlined,
+  WarningAmberOutlined,
+  TuneOutlined,
+  HandshakeOutlined,
+  SettingsOutlined,
+  HealthAndSafetyOutlined,
+  PsychologyOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -74,47 +80,66 @@ interface NavItem {
   path: string
   icon: React.ReactNode
   adminOnly?: boolean
+  superAdminOnly?: boolean
 }
 
+// ── Per-product nav (shown inside each product section) ───────────────────────
 const PRODUCT_NAV: NavItem[] = [
-  { label: 'Overview',    path: '/overview',    icon: <DashboardOutlined /> },
-  { label: 'Coverage',    path: '/coverage',    icon: <CompareArrowsOutlined /> },
-  { label: 'Controls Library', path: '/controls', icon: <AccountTreeOutlined /> },
-  { label: 'Assessments', path: '/assessments', icon: <AssignmentOutlined /> },
-  { label: 'Policies',    path: '/policies',    icon: <PolicyOutlined /> },
-  { label: 'Gaps',        path: '/gaps',        icon: <FindInPageOutlined /> },
-  { label: 'Evidence',    path: '/evidence',    icon: <UploadFileOutlined /> },
-  { label: 'Graph',       path: '/graph',       icon: <DeviceHubOutlined /> },
+  { label: 'Overview',        path: '/overview',    icon: <DashboardOutlined /> },
+  { label: 'Coverage',        path: '/coverage',    icon: <CompareArrowsOutlined /> },
+  { label: 'Controls Library',path: '/controls',    icon: <AccountTreeOutlined /> },
+  { label: 'Assessments',     path: '/assessments', icon: <AssignmentOutlined /> },
+  { label: 'Policies',        path: '/policies',    icon: <PolicyOutlined /> },
+  { label: 'Gaps',            path: '/gaps',        icon: <FindInPageOutlined /> },
+  { label: 'Evidence',        path: '/evidence',    icon: <UploadFileOutlined /> },
+  { label: 'Graph',           path: '/graph',       icon: <DeviceHubOutlined /> },
 ]
 
-const NAV_PLATFORM: NavItem[] = [
-  { label: 'Projects',    path: '/projects',    icon: <FolderOpenOutlined /> },
-  { label: 'QA',          path: '/qa',          icon: <VerifiedOutlined /> },
-  { label: 'Search',      path: '/search',      icon: <SearchOutlined /> },
-  { label: 'Compass',     path: '/compass',     icon: <ExploreOutlined /> },
-  { label: 'Generators',  path: '/generators',  icon: <CodeOutlined /> },
-  { label: 'Report',      path: '/report',      icon: <SummarizeOutlined /> },
-  { label: 'Risk Wizard', path: '/risk',        icon: <GppMaybeOutlined /> },
+// ── Risk & compliance management (Phase 12+) ──────────────────────────────────
+const NAV_RISK: NavItem[] = [
+  { label: 'Risk Register',   path: '/risk-register', icon: <WarningAmberOutlined /> },
+  { label: 'Remediation',     path: '/remediation',   icon: <AssignmentOutlined /> },
+  { label: 'BIA',             path: '/bia',            icon: <HealthAndSafetyOutlined /> },
+  { label: 'EBIOS RM',        path: '/ebios',          icon: <PsychologyOutlined /> },
 ]
 
-const NAV_COMPLIANCE: NavItem[] = [
-  { label: 'NIST CSF 2.0',        path: '/nist-csf', icon: <GridViewOutlined /> },
-  { label: 'NIS2',                 path: '/nis2',     icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
-  { label: 'DORA',                 path: '/dora',     icon: <AccountBalanceOutlined /> },
-  { label: 'CIS Controls',         path: '/cis',      icon: <SecurityOutlined /> },
-  { label: 'BSI IT-Grundschutz',  path: '/bsi',      icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
-  { label: 'CSRM (NCSC CH)',       path: '/csrm',     icon: <LockPersonOutlined /> },
-  { label: 'TISAX',                path: '/tisax',    icon: <VerifiedOutlined /> },
-  { label: 'Swiss nDSG',          path: '/ndsg',     icon: <LockPersonOutlined /> },
-  { label: 'EU Cyber Resilience', path: '/cra',      icon: <SecurityOutlined /> },
-  { label: 'EU AI Act',           path: '/ai-act',   icon: <PolicyOutlined /> },
-  { label: 'EU Cloud Sovereignty', path: '/eu-cloud-sov', icon: <CloudOutlined /> },
+// ── Tools (platform utilities) ────────────────────────────────────────────────
+const NAV_TOOLS: NavItem[] = [
+  { label: 'Projects',        path: '/projects',    icon: <FolderOpenOutlined /> },
+  { label: 'QA',              path: '/qa',          icon: <VerifiedOutlined /> },
+  { label: 'Search',          path: '/search',      icon: <SearchOutlined /> },
+  { label: 'Compass',         path: '/compass',     icon: <ExploreOutlined /> },
+  { label: 'Generators',      path: '/generators',  icon: <CodeOutlined /> },
+  { label: 'Report',          path: '/report',      icon: <SummarizeOutlined /> },
+  { label: 'Risk Wizard',     path: '/risk',        icon: <GppMaybeOutlined /> },
 ]
 
+// ── External compliance frameworks ────────────────────────────────────────────
+const NAV_FRAMEWORKS: NavItem[] = [
+  { label: 'NIST CSF 2.0',         path: '/nist-csf',       icon: <GridViewOutlined /> },
+  { label: 'NIS2',                  path: '/nis2',           icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+  { label: 'DORA',                  path: '/dora',           icon: <AccountBalanceOutlined /> },
+  { label: 'CIS Controls',          path: '/cis',            icon: <SecurityOutlined /> },
+  { label: 'BSI IT-Grundschutz',    path: '/bsi',            icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+  { label: 'CSRM (NCSC CH)',        path: '/csrm',           icon: <LockPersonOutlined /> },
+  { label: 'TISAX',                 path: '/tisax',          icon: <VerifiedOutlined /> },
+  { label: 'Swiss nDSG',            path: '/ndsg',           icon: <LockPersonOutlined /> },
+  { label: 'EU Cyber Resilience',   path: '/cra',            icon: <SecurityOutlined /> },
+  { label: 'EU AI Act',             path: '/ai-act',         icon: <PolicyOutlined /> },
+  { label: 'EU Cloud Sovereignty',  path: '/eu-cloud-sov',   icon: <CloudOutlined /> },
+]
+
+// ── Suppliers / TPRM (Phase 16+) ──────────────────────────────────────────────
+const NAV_SUPPLIERS: NavItem[] = [
+  { label: 'TPRM',            path: '/tprm',        icon: <HandshakeOutlined /> },
+]
+
+// ── Admin ─────────────────────────────────────────────────────────────────────
 const NAV_ADMIN: NavItem[] = [
-  { label: 'Admin',       path: '/admin',       icon: <AdminPanelSettingsOutlined />, adminOnly: true },
-  { label: 'Connectors',  path: '/connectors',  icon: <ElectricalServicesOutlined /> },
-  { label: 'System',      path: '/system',      icon: <MonitorHeartOutlined />,       adminOnly: true },
+  { label: 'Users',           path: '/admin',         icon: <PeopleOutlined /> },
+  { label: 'Connectors',      path: '/connectors',    icon: <ElectricalServicesOutlined /> },
+  { label: 'System',          path: '/system',        icon: <MonitorHeartOutlined />,  adminOnly: true },
+  { label: 'Organisations',   path: '/organisations', icon: <BusinessOutlined />, superAdminOnly: true },
 ]
 
 const ADMIN_ROLES = ['super_admin', 'admin']
@@ -138,8 +163,13 @@ const CAT_LABEL: Record<string, string> = { workflow: 'Workflow', system: 'Syste
 const CAT_COLOR: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3a' }
 const CAT_TEXT:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0' }
 const PLATFORM_COLOR = '#6B7A99'
-const COMPLIANCE_PATHS = ['/nist-csf', '/nis2', '/dora', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act', '/eu-cloud-sov']
-const PLATFORM_PATHS = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk', ...COMPLIANCE_PATHS, '/admin', '/connectors', '/system']
+
+const RISK_PATHS       = ['/risk-register', '/remediation', '/bia', '/ebios']
+const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk']
+const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act', '/eu-cloud-sov']
+const SUPPLIER_PATHS   = ['/tprm']
+const ADMIN_PATHS      = ['/admin', '/connectors', '/system', '/organisations']
+const ALL_PLATFORM_PATHS = [...RISK_PATHS, ...TOOLS_PATHS, ...FRAMEWORK_PATHS, ...SUPPLIER_PATHS, ...ADMIN_PATHS]
 
 // ── Notification prefs dialog ─────────────────────────────────────────────────
 
@@ -221,7 +251,98 @@ function NotificationPrefsDialog({ open, onClose }: { open: boolean; onClose: ()
   )
 }
 
+// ── Reusable collapsible nav group ────────────────────────────────────────────
+
+interface NavGroupProps {
+  label: string
+  icon: React.ReactNode
+  items: NavItem[]
+  open: boolean
+  onToggle: () => void
+  collapsed: boolean           // sidebar mini mode
+  color?: string
+  currentUser: { role: string } | null
+  isSuperAdmin: boolean
+  onNavigate: (path: string) => void
+  isActive: (path: string) => boolean
+}
+
+function NavGroup({ label, icon, items, open, onToggle, collapsed, color = PLATFORM_COLOR, currentUser, isSuperAdmin, onNavigate, isActive }: NavGroupProps) {
+  const visibleItems = items.filter(item => {
+    if (item.superAdminOnly) return isSuperAdmin
+    if (item.adminOnly) return ADMIN_ROLES.includes(currentUser?.role ?? '')
+    return true
+  })
+  if (visibleItems.length === 0) return null
+
+  return (
+    <Box>
+      <Tooltip title={collapsed ? label : ''} placement="right">
+        <Box
+          onClick={onToggle}
+          sx={{
+            display: 'flex', alignItems: 'center',
+            gap: collapsed ? 0 : 1,
+            mx: 1, px: collapsed ? 0 : 1.25, py: 0.6,
+            borderRadius: 1.5, cursor: 'pointer', userSelect: 'none',
+            justifyContent: collapsed ? 'center' : 'flex-start',
+            '&:hover': { bgcolor: `${color}10` },
+          }}
+        >
+          <Box sx={{ color: open ? color : 'text.disabled', display: 'flex', fontSize: 16, flexShrink: 0 }}>
+            {icon}
+          </Box>
+          {!collapsed && (
+            <>
+              <Typography
+                variant="caption"
+                sx={{ flex: 1, fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.07em', color: open ? color : 'text.disabled', fontWeight: open ? 600 : 400 }}
+              >
+                {label}
+              </Typography>
+              <Box sx={{ color: 'text.disabled', display: 'flex', transition: 'transform 0.2s', transform: open ? 'rotate(0deg)' : 'rotate(-90deg)' }}>
+                <ExpandMoreOutlined sx={{ fontSize: 14 }} />
+              </Box>
+            </>
+          )}
+        </Box>
+      </Tooltip>
+
+      <Collapse in={open && !collapsed} timeout={180} unmountOnExit>
+        <List disablePadding sx={{ px: 1, pb: 0.5 }}>
+          {visibleItems.map((item) => {
+            const active = isActive(item.path)
+            return (
+              <ListItem key={item.path} disablePadding sx={{ mb: 0.15 }}>
+                <ListItemButton
+                  selected={active}
+                  onClick={() => onNavigate(item.path)}
+                  sx={{
+                    borderRadius: 1.5, py: 0.5, px: 1.25, pl: 2,
+                    '&.Mui-selected': { bgcolor: `${color}20`, color, '& .MuiListItemIcon-root': { color } },
+                    '&:hover': { bgcolor: `${color}10` },
+                  }}
+                >
+                  <ListItemIcon sx={{ minWidth: 30, color: active ? color : 'text.secondary', transition: 'color 0.15s' }}>
+                    <Box sx={{ '& svg': { fontSize: 18 } }}>{item.icon}</Box>
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={item.label}
+                    primaryTypographyProps={{ variant: 'body2', fontWeight: active ? 600 : 400, fontSize: '0.8rem' }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            )
+          })}
+        </List>
+      </Collapse>
+    </Box>
+  )
+}
+
 // ── Main sidebar ──────────────────────────────────────────────────────────────
+
+type IsmsTier = 'all' | 'framework' | 'operational'
 
 export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; onToggle: () => void }) {
   const navigate = useNavigate()
@@ -234,10 +355,19 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   const activeFamilies = (['ISMS', 'PRIVACY', 'CLOUD'] as const).filter(f => !!activeProjectsMap[f])
   const { mode, toggleTheme } = useThemeMode()
 
-  const isNeutralPage = location.pathname === '/' || PLATFORM_PATHS.some(p => location.pathname.startsWith(p))
-  const isCompliancePath = COMPLIANCE_PATHS.some(p => location.pathname === p || location.pathname.startsWith(p + '/'))
+  const isNeutralPage = location.pathname === '/' || ALL_PLATFORM_PATHS.some(p => location.pathname.startsWith(p))
+  const isRiskPath       = RISK_PATHS.some(p => location.pathname.startsWith(p))
+  const isToolsPath      = TOOLS_PATHS.some(p => location.pathname.startsWith(p))
+  const isFrameworkPath  = FRAMEWORK_PATHS.some(p => location.pathname.startsWith(p))
+  const isSupplierPath   = SUPPLIER_PATHS.some(p => location.pathname.startsWith(p))
+  const isAdminPath      = ADMIN_PATHS.some(p => location.pathname.startsWith(p))
+
   const [expandedProduct, setExpandedProduct] = useState<Product | null>(isNeutralPage ? null : product)
-  const [complianceOpen, setComplianceOpen] = useState(isCompliancePath)
+  const [riskOpen,        setRiskOpen]        = useState(isRiskPath)
+  const [toolsOpen,       setToolsOpen]       = useState(isToolsPath)
+  const [frameworksOpen,  setFrameworksOpen]  = useState(isFrameworkPath)
+  const [suppliersOpen,   setSuppliersOpen]   = useState(isSupplierPath)
+  const [adminOpen,       setAdminOpen]       = useState(isAdminPath)
 
   const TIER_OPTIONS: { value: IsmsTier; label: string; color: string }[] = [
     { value: 'all',         label: 'All', color: 'rgba(255,255,255,0.55)' },
@@ -277,8 +407,16 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
 
   const isControlsPath = location.pathname.startsWith('/controls')
   const currentSection = new URLSearchParams(location.search).get('section') ?? ''
-
   const sidebarWidth = collapsed ? SIDEBAR_MINI_WIDTH : SIDEBAR_WIDTH
+
+  const groupProps = {
+    collapsed,
+    color: PLATFORM_COLOR,
+    currentUser: user,
+    isSuperAdmin,
+    onNavigate: navigate,
+    isActive: isPlatformNavActive,
+  }
 
   return (
     <Box
@@ -304,11 +442,8 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
         <Box
           onClick={() => navigate('/')}
           sx={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: collapsed ? 0 : 1,
-            cursor: 'pointer',
-            justifyContent: collapsed ? 'center' : 'flex-start',
+            display: 'flex', alignItems: 'center', gap: collapsed ? 0 : 1,
+            cursor: 'pointer', justifyContent: collapsed ? 'center' : 'flex-start',
             '&:hover': { opacity: 0.8 },
           }}
         >
@@ -325,32 +460,22 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
           )}
         </Box>
 
-        {/* Collapse toggle — right edge */}
+        {/* Collapse toggle */}
         <Box
           onClick={onToggle}
           sx={{
-            position: 'absolute',
-            right: -14,
-            top: '50%',
-            transform: 'translateY(-50%)',
-            width: 28,
-            height: 28,
-            borderRadius: '50%',
-            bgcolor: 'background.paper',
-            border: '1px solid rgba(255,255,255,0.18)',
+            position: 'absolute', right: -14, top: '50%', transform: 'translateY(-50%)',
+            width: 28, height: 28, borderRadius: '50%',
+            bgcolor: 'background.paper', border: '1px solid rgba(255,255,255,0.18)',
             boxShadow: '0 0 0 1px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.5)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            zIndex: 101,
-            transition: 'background-color 0.15s, border-color 0.15s',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            cursor: 'pointer', zIndex: 101, transition: 'background-color 0.15s, border-color 0.15s',
             '&:hover': { bgcolor: '#2a3550', borderColor: 'rgba(255,255,255,0.35)' },
           }}
         >
           {collapsed
             ? <ChevronRightOutlined sx={{ fontSize: 16, color: 'rgba(255,255,255,0.7)' }} />
-            : <ChevronLeftOutlined sx={{ fontSize: 16, color: 'text.secondary' }} />}
+            : <ChevronLeftOutlined  sx={{ fontSize: 16, color: 'text.secondary' }} />}
         </Box>
       </Box>
 
@@ -386,7 +511,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
           </Tooltip>
         </Box>
 
-        {/* Active project chips — one per active family */}
+        {/* Active project chips */}
         <Box sx={{ px: 1, pb: 0.5, display: 'flex', flexDirection: 'column', gap: 0.4 }}>
           {activeFamilies.length === 0 ? (
             <Tooltip title={collapsed ? 'No active projects' : ''} placement="right">
@@ -418,9 +543,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
                     display: 'flex', alignItems: 'center', gap: 0.75,
                     px: collapsed ? 0 : 1.25, py: 0.4, borderRadius: 1.5,
                     cursor: 'pointer', justifyContent: collapsed ? 'center' : 'flex-start',
-                    border: '1px solid',
-                    borderColor: `${color}30`,
-                    bgcolor: `${color}08`,
+                    border: '1px solid', borderColor: `${color}30`, bgcolor: `${color}08`,
                     transition: 'all 0.15s',
                     '&:hover': { borderColor: `${color}60`, bgcolor: `${color}14` },
                   }}
@@ -453,7 +576,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
 
         <Divider sx={{ my: 0.5, mx: 1 }} />
 
-        {/* Product sections */}
+        {/* ── Product sections (ISMS / PRIVACY / CLOUD) ── */}
         {PRODUCT_SECTIONS.map(({ value, icon }) => {
           const color = PRODUCT_COLORS[value]
           const isExpanded = expandedProduct === value && !collapsed
@@ -465,23 +588,14 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
                 <Box
                   onClick={() => handleSectionHeader(value)}
                   sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: collapsed ? 0 : 1,
-                    mx: 1,
-                    px: collapsed ? 0 : 1.25,
-                    py: 0.65,
-                    borderRadius: 1.5,
-                    cursor: 'pointer',
-                    userSelect: 'none',
+                    display: 'flex', alignItems: 'center', gap: collapsed ? 0 : 1,
+                    mx: 1, px: collapsed ? 0 : 1.25, py: 0.65, borderRadius: 1.5,
+                    cursor: 'pointer', userSelect: 'none',
                     justifyContent: collapsed ? 'center' : 'flex-start',
                     borderLeft: collapsed ? 'none' : `3px solid ${isActiveProduct ? color : 'transparent'}`,
                     bgcolor: isExpanded ? `${color}14` : 'transparent',
                     transition: 'all 0.15s',
-                    '&:hover': {
-                      bgcolor: `${color}10`,
-                      ...(!collapsed && { borderLeftColor: color }),
-                    },
+                    '&:hover': { bgcolor: `${color}10`, ...(!collapsed && { borderLeftColor: color }) },
                   }}
                 >
                   <Box sx={{ color: isActiveProduct ? color : 'text.disabled', display: 'flex', transition: 'color 0.15s', fontSize: 16 }}>
@@ -490,16 +604,10 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
                   {!collapsed && (
                     <>
                       <Box sx={{ flex: 1, minWidth: 0 }}>
-                        <Typography
-                          variant="caption"
-                          sx={{ display: 'block', lineHeight: 1.2, fontWeight: isActiveProduct ? 700 : 500, fontSize: '0.72rem', color: isActiveProduct ? color : 'text.secondary', transition: 'color 0.15s', whiteSpace: 'nowrap' }}
-                        >
+                        <Typography variant="caption" sx={{ display: 'block', lineHeight: 1.2, fontWeight: isActiveProduct ? 700 : 500, fontSize: '0.72rem', color: isActiveProduct ? color : 'text.secondary', transition: 'color 0.15s', whiteSpace: 'nowrap' }}>
                           {PRODUCT_LABELS[value]}
                         </Typography>
-                        <Typography
-                          variant="caption"
-                          sx={{ display: 'block', lineHeight: 1.1, fontSize: '0.59rem', color: isActiveProduct ? `${color}99` : 'text.disabled', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
-                        >
+                        <Typography variant="caption" sx={{ display: 'block', lineHeight: 1.1, fontSize: '0.59rem', color: isActiveProduct ? `${color}99` : 'text.disabled', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                           {PRODUCT_SUBTITLES[value]}
                         </Typography>
                       </Box>
@@ -511,7 +619,6 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
                 </Box>
               </Tooltip>
 
-              {/* Expanded submenu — only when sidebar is open */}
               <Collapse in={isExpanded} timeout={180} unmountOnExit>
                 <Box sx={{ pb: 0.5 }}>
                   {value === 'isms' && (
@@ -605,155 +712,58 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
           )
         })}
 
-        {/* Platform pages */}
-        <Box sx={{ pt: 0.25 }}>
-          {!collapsed && (
-            <Typography variant="caption" sx={{ px: 2.5, display: 'block', mb: 0.5, fontSize: '0.59rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'text.disabled' }}>
-              Platform
-            </Typography>
-          )}
-          <List disablePadding sx={{ px: 1 }}>
-            {NAV_PLATFORM.map((item) => {
-              const active = isPlatformNavActive(item.path)
-              return (
-                <ListItem key={item.path} disablePadding sx={{ mb: 0.15 }}>
-                  <Tooltip title={collapsed ? item.label : ''} placement="right">
-                    <ListItemButton
-                      selected={active}
-                      onClick={() => navigate(item.path)}
-                      sx={{
-                        borderRadius: 1.5, py: 0.5,
-                        px: collapsed ? 0 : 1.5,
-                        justifyContent: collapsed ? 'center' : 'flex-start',
-                        '&.Mui-selected': { bgcolor: `${PLATFORM_COLOR}20`, color: PLATFORM_COLOR, '& .MuiListItemIcon-root': { color: PLATFORM_COLOR } },
-                        '&:hover': { bgcolor: `${PLATFORM_COLOR}12` },
-                      }}
-                    >
-                      <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 30, color: active ? PLATFORM_COLOR : 'text.secondary', transition: 'color 0.15s' }}>
-                        <Box sx={{ '& svg': { fontSize: 18 } }}>{item.icon}</Box>
-                      </ListItemIcon>
-                      {!collapsed && (
-                        <ListItemText
-                          primary={item.label}
-                          primaryTypographyProps={{ variant: 'body2', fontWeight: active ? 600 : 400, fontSize: '0.8rem' }}
-                        />
-                      )}
-                    </ListItemButton>
-                  </Tooltip>
-                </ListItem>
-              )
-            })}
-          </List>
-        </Box>
+        {/* ── Risk group ── */}
+        <NavGroup
+          label="Risk"
+          icon={<WarningAmberOutlined sx={{ fontSize: 16 }} />}
+          items={NAV_RISK}
+          open={riskOpen}
+          onToggle={() => setRiskOpen(o => !o)}
+          {...groupProps}
+        />
 
-        {/* Compliance Assessments collapsible group */}
-        <Box sx={{ pt: 0.25 }}>
-          {!collapsed ? (
-            <Box
-              onClick={() => setComplianceOpen(o => !o)}
-              sx={{
-                display: 'flex', alignItems: 'center', gap: 1,
-                mx: 1, px: 1.25, py: 0.65, borderRadius: 1.5,
-                cursor: 'pointer', userSelect: 'none',
-                '&:hover': { bgcolor: `${PLATFORM_COLOR}10` },
-              }}
-            >
-              <Typography
-                variant="caption"
-                sx={{ flex: 1, fontSize: '0.59rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'text.disabled' }}
-              >
-                Compliance Assessments
-              </Typography>
-              <Box sx={{ color: 'text.disabled', display: 'flex', transition: 'transform 0.2s', transform: complianceOpen ? 'rotate(0deg)' : 'rotate(-90deg)' }}>
-                <ExpandMoreOutlined sx={{ fontSize: 14 }} />
-              </Box>
-            </Box>
-          ) : (
-            <Tooltip title="Compliance Assessments" placement="right">
-              <Box
-                onClick={() => setComplianceOpen(o => !o)}
-                sx={{
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  mx: 1, py: 0.65, borderRadius: 1.5,
-                  cursor: 'pointer',
-                  '&:hover': { bgcolor: `${PLATFORM_COLOR}10` },
-                }}
-              >
-                <ExpandMoreOutlined sx={{ fontSize: 14, color: 'text.disabled', transition: 'transform 0.2s', transform: complianceOpen ? 'rotate(0deg)' : 'rotate(-90deg)' }} />
-              </Box>
-            </Tooltip>
-          )}
-          <Collapse in={complianceOpen} timeout={180} unmountOnExit>
-            <List disablePadding sx={{ px: 1, pb: 0.5 }}>
-              {NAV_COMPLIANCE.map((item) => {
-                const active = isPlatformNavActive(item.path)
-                return (
-                  <ListItem key={item.path} disablePadding sx={{ mb: 0.15 }}>
-                    <Tooltip title={collapsed ? item.label : ''} placement="right">
-                      <ListItemButton
-                        selected={active}
-                        onClick={() => navigate(item.path)}
-                        sx={{
-                          borderRadius: 1.5, py: 0.5,
-                          px: collapsed ? 0 : 1.5,
-                          justifyContent: collapsed ? 'center' : 'flex-start',
-                          '&.Mui-selected': { bgcolor: `${PLATFORM_COLOR}20`, color: PLATFORM_COLOR, '& .MuiListItemIcon-root': { color: PLATFORM_COLOR } },
-                          '&:hover': { bgcolor: `${PLATFORM_COLOR}12` },
-                        }}
-                      >
-                        <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 30, color: active ? PLATFORM_COLOR : 'text.secondary', transition: 'color 0.15s' }}>
-                          <Box sx={{ '& svg': { fontSize: 18 } }}>{item.icon}</Box>
-                        </ListItemIcon>
-                        {!collapsed && (
-                          <ListItemText
-                            primary={item.label}
-                            primaryTypographyProps={{ variant: 'body2', fontWeight: active ? 600 : 400, fontSize: '0.8rem' }}
-                          />
-                        )}
-                      </ListItemButton>
-                    </Tooltip>
-                  </ListItem>
-                )
-              })}
-            </List>
-          </Collapse>
-        </Box>
+        {/* ── Tools group ── */}
+        <NavGroup
+          label="Tools"
+          icon={<TuneOutlined sx={{ fontSize: 16 }} />}
+          items={NAV_TOOLS}
+          open={toolsOpen}
+          onToggle={() => setToolsOpen(o => !o)}
+          {...groupProps}
+        />
+
+        {/* ── Frameworks group ── */}
+        <NavGroup
+          label="Frameworks"
+          icon={<GridViewOutlined sx={{ fontSize: 16 }} />}
+          items={NAV_FRAMEWORKS}
+          open={frameworksOpen}
+          onToggle={() => setFrameworksOpen(o => !o)}
+          {...groupProps}
+        />
+
+        {/* ── Suppliers group ── */}
+        <NavGroup
+          label="Suppliers"
+          icon={<HandshakeOutlined sx={{ fontSize: 16 }} />}
+          items={NAV_SUPPLIERS}
+          open={suppliersOpen}
+          onToggle={() => setSuppliersOpen(o => !o)}
+          {...groupProps}
+        />
 
         <Divider sx={{ my: 0.5, mx: 1 }} />
 
-        {/* Admin pages */}
-        <List disablePadding sx={{ px: 1, pb: 0.5 }}>
-          {NAV_ADMIN.filter(item => !item.adminOnly || ADMIN_ROLES.includes(user?.role ?? '')).map((item) => {
-            const active = isPlatformNavActive(item.path)
-            return (
-              <ListItem key={item.path} disablePadding sx={{ mb: 0.15 }}>
-                <Tooltip title={collapsed ? item.label : ''} placement="right">
-                  <ListItemButton
-                    selected={active}
-                    onClick={() => navigate(item.path)}
-                    sx={{
-                      borderRadius: 1.5, py: 0.5,
-                      px: collapsed ? 0 : 1.5,
-                      justifyContent: collapsed ? 'center' : 'flex-start',
-                      '&.Mui-selected': { bgcolor: `${PLATFORM_COLOR}20`, color: PLATFORM_COLOR, '& .MuiListItemIcon-root': { color: PLATFORM_COLOR } },
-                      '&:hover': { bgcolor: `${PLATFORM_COLOR}12` },
-                    }}
-                  >
-                    <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 30, color: active ? PLATFORM_COLOR : 'text.secondary', transition: 'color 0.15s' }}>
-                      <Box sx={{ '& svg': { fontSize: 18 } }}>{item.icon}</Box>
-                    </ListItemIcon>
-                    {!collapsed && (
-                      <ListItemText
-                        primary={item.label}
-                        primaryTypographyProps={{ variant: 'body2', fontWeight: active ? 600 : 400, fontSize: '0.8rem' }}
-                      />
-                    )}
-                  </ListItemButton>
-                </Tooltip>
-              </ListItem>
-            )
-          })}
-        </List>
+        {/* ── Admin group ── */}
+        <NavGroup
+          label="Admin"
+          icon={<SettingsOutlined sx={{ fontSize: 16 }} />}
+          items={NAV_ADMIN}
+          open={adminOpen}
+          onToggle={() => setAdminOpen(o => !o)}
+          {...groupProps}
+          color="#6B7A99"
+        />
 
       </Box>
 
@@ -764,23 +774,6 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
           <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.5, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {user.email}
           </Typography>
-        )}
-        {isSuperAdmin && (
-          <Tooltip title={collapsed ? 'Organisations' : ''} placement="right">
-            <ListItemButton
-              onClick={() => navigate('/organisations')}
-              selected={location.pathname === '/organisations'}
-              sx={{ borderRadius: 1.5, px: collapsed ? 0 : 1.5, py: 0.5, justifyContent: collapsed ? 'center' : 'flex-start',
-                '&.Mui-selected': { bgcolor: 'rgba(255,193,7,0.1)', color: '#FFC107', '& .MuiListItemIcon-root': { color: '#FFC107' } } }}
-            >
-              <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 36, color: 'text.secondary' }}>
-                <BusinessOutlined fontSize="small" />
-              </ListItemIcon>
-              {!collapsed && (
-                <ListItemText primary="Organisations" primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }} />
-              )}
-            </ListItemButton>
-          </Tooltip>
         )}
         <Tooltip title={collapsed ? 'Notifications' : ''} placement="right">
           <ListItemButton
@@ -801,9 +794,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
             sx={{ borderRadius: 1.5, px: collapsed ? 0 : 1.5, py: 0.5, justifyContent: collapsed ? 'center' : 'flex-start' }}
           >
             <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 36, color: 'text.secondary' }}>
-              {mode === 'dark'
-                ? <LightModeOutlined fontSize="small" />
-                : <DarkModeOutlined fontSize="small" />}
+              {mode === 'dark' ? <LightModeOutlined fontSize="small" /> : <DarkModeOutlined fontSize="small" />}
             </ListItemIcon>
             {!collapsed && (
               <ListItemText

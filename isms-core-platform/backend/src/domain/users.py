@@ -56,6 +56,7 @@ class User(TimestampMixin, Base):
     sessions: Mapped[list["Session"]] = relationship(
         back_populates="user", cascade="all, delete-orphan"
     )
+    risk_scenarios: Mapped[list] = relationship("RiskScenario", back_populates="owner", foreign_keys="RiskScenario.owner_id")
 
 
 class Session(Base):

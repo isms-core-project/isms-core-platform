@@ -14,6 +14,7 @@ if TYPE_CHECKING:
     from src.domain.users import User
     from src.domain.projects import Project
     from src.domain.connectors import Connector
+    from src.domain.risks import RiskMatrix, RiskScenario
 
 
 class Organisation(TimestampMixin, Base):
@@ -55,3 +56,5 @@ class Organisation(TimestampMixin, Base):
     users: Mapped[list["User"]] = relationship(back_populates="organisation")
     projects: Mapped[list["Project"]] = relationship(back_populates="organisation")
     connectors: Mapped[list["Connector"]] = relationship(back_populates="organisation")
+    risk_matrices: Mapped[list["RiskMatrix"]] = relationship(back_populates="organisation")
+    risk_scenarios: Mapped[list["RiskScenario"]] = relationship(back_populates="organisation")
