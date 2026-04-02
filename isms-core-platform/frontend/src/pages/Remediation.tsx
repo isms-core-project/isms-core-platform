@@ -2,10 +2,10 @@ import { useState } from 'react'
 import {
   Alert, Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle,
   FormControl, IconButton, InputLabel, LinearProgress, MenuItem, Select,
-  Skeleton, TextField, Tooltip, Typography,
+  Skeleton, Snackbar, TextField, Tooltip, Typography,
 } from '@mui/material'
 import {
-  AddOutlined, CheckCircleOutlined, DeleteOutlined, EditOutlined,
+  AddOutlined, CheckCircleOutlined, ConfirmationNumberOutlined, DeleteOutlined, EditOutlined,
   ErrorOutlined, HourglassEmptyOutlined, ScheduleOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -15,6 +15,8 @@ import {
   type RemediationAction,
   type RemediationActionCreate,
 } from '../api/risksApi'
+import { itsmApi } from '../api/itsmApi'
+import { client } from '../api/client'
 import { useProject } from '../store/ProjectContext'
 import PageHeader from '../components/PageHeader'
 
@@ -163,64 +165,188 @@ function ActionDialog({ open, onClose, existing }: { open: boolean; onClose: () 
   )
 }
 
+// ── ITSM push dialog ──────────────────────────────────────────────────────────
+
+interface ItsmConnector { id: string; name: string; source_system: string }
+interface PushResult { ticket_id: string; url: string | null; already_exists: boolean }
+
+function ItsmPushDialog({
+  open, onClose, actionId, onSuccess,
+}: { open: boolean; onClose: () => void; actionId: string; onSuccess: (result: PushResult, connectorName: string) => void }) {
+  const [connectorId, setConnectorId] = useState('')
+  const [error, setError] = useState('')
+
+  const { data: connectors = [], isLoading } = useQuery<ItsmConnector[]>({
+    queryKey: ['itsm-connectors'],
+    queryFn: () => client.get('/connectors').then(r =>
+      (r.data as ItsmConnector[]).filter(c => ['jira', 'servicenow'].includes(c.source_system))
+    ),
+    enabled: open,
+  })
+
+  const pushMut = useMutation({
+    mutationFn: () => itsmApi.pushRemediation(connectorId, actionId),
+    onSuccess: (result) => {
+      const conn = connectors.find(c => c.id === connectorId)
+      onSuccess(result, conn?.name ?? connectorId)
+      onClose()
+    },
+    onError: () => setError('Failed to push to ITSM.'),
+  })
+
+  function handlePush() {
+    if (!connectorId) { setError('Select a connector.'); return }
+    setError('')
+    pushMut.mutate()
+  }
+
+  return (
+    <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth>
+      <DialogTitle sx={{ pb: 0.5 }}>Push to ITSM</DialogTitle>
+      <DialogContent sx={{ pt: '20px !important' }}>
+        {error && <Alert severity="error" sx={{ mb: 2, py: 0.5 }}>{error}</Alert>}
+        {isLoading ? (
+          <Skeleton height={40} />
+        ) : connectors.length === 0 ? (
+          <Alert severity="warning" sx={{ py: 0.5 }}>
+            No Jira or ServiceNow connectors configured.
+          </Alert>
+        ) : (
+          <FormControl size="small" fullWidth>
+            <InputLabel>Connector</InputLabel>
+            <Select value={connectorId} label="Connector" onChange={e => setConnectorId(e.target.value)}>
+              {connectors.map(c => (
+                <MenuItem key={c.id} value={c.id}>
+                  {c.name}
+                  <Typography component="span" variant="caption" sx={{ ml: 1, color: 'text.disabled' }}>
+                    ({c.source_system})
+                  </Typography>
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        )}
+      </DialogContent>
+      <DialogActions sx={{ px: 3, pb: 2 }}>
+        <Button onClick={onClose} size="small">Cancel</Button>
+        <Button
+          variant="contained" size="small"
+          onClick={handlePush}
+          disabled={pushMut.isPending || connectors.length === 0}
+        >
+          {pushMut.isPending ? 'Pushing…' : 'Push'}
+        </Button>
+      </DialogActions>
+    </Dialog>
+  )
+}
+
 // ── Action row ────────────────────────────────────────────────────────────────
 
-function ActionRow({ action, onEdit, onDelete }: { action: RemediationAction; onEdit: () => void; onDelete: () => void }) {
+function ActionRow({
+  action, onEdit, onDelete,
+}: { action: RemediationAction; onEdit: () => void; onDelete: () => void }) {
   const overdue = isOverdue(action)
+  const [itsmOpen, setItsmOpen] = useState(false)
+  const [snackbar, setSnackbar] = useState<{ open: boolean; message: string; url: string | null }>({
+    open: false, message: '', url: null,
+  })
+
+  function handleItsmSuccess(result: PushResult, connectorName: string) {
+    const prefix = result.already_exists ? 'Already in' : 'Pushed to'
+    setSnackbar({
+      open: true,
+      message: `${prefix} ${connectorName}: ${result.ticket_id}`,
+      url: result.url,
+    })
+  }
+
   return (
-    <Box sx={{
-      display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1.25,
-      borderBottom: '1px solid', borderColor: 'divider',
-      '&:hover': { bgcolor: 'action.hover' },
-      bgcolor: overdue ? '#F4433606' : 'transparent',
-    }}>
-      <Box sx={{ flex: 3, minWidth: 0 }}>
-        <Typography variant="body2" sx={{ fontWeight: 500, fontSize: '0.82rem', color: overdue ? 'error.main' : 'text.primary' }}>
-          {action.title}
-        </Typography>
-        {action.risk_name && (
-          <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.disabled' }}>
-            Risk: {action.risk_name}
+    <>
+      <Box sx={{
+        display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1.25,
+        borderBottom: '1px solid', borderColor: 'divider',
+        '&:hover': { bgcolor: 'action.hover' },
+        bgcolor: overdue ? '#F4433606' : 'transparent',
+      }}>
+        <Box sx={{ flex: 3, minWidth: 0 }}>
+          <Typography variant="body2" sx={{ fontWeight: 500, fontSize: '0.82rem', color: overdue ? 'error.main' : 'text.primary' }}>
+            {action.title}
           </Typography>
-        )}
-      </Box>
-
-      <Box sx={{ flex: 1.5, display: 'flex', alignItems: 'center', gap: 1 }}>
-        <LinearProgress
-          variant="determinate"
-          value={action.progress}
-          sx={{ flex: 1, height: 4, borderRadius: 2, bgcolor: 'action.hover', '& .MuiLinearProgress-bar': { bgcolor: STATUS_META[action.status]?.color ?? '#9E9E9E' } }}
-        />
-        <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.secondary', minWidth: 28 }}>
-          {action.progress}%
-        </Typography>
-      </Box>
-
-      <Box sx={{ flex: 1 }}>
-        <StatusChip status={action.status} />
-      </Box>
-
-      {action.effort ? (
-        <Chip label={action.effort} size="small" sx={{ height: 18, fontSize: '0.6rem', bgcolor: `${EFFORT_COLOR[action.effort]}18`, color: EFFORT_COLOR[action.effort], border: `1px solid ${EFFORT_COLOR[action.effort]}40` }} />
-      ) : (
-        <Box sx={{ width: 52 }} />
-      )}
-
-      <Box sx={{ minWidth: 80, textAlign: 'right' }}>
-        {action.eta && (
-          <Tooltip title={overdue ? 'Overdue' : ''}>
-            <Typography variant="caption" sx={{ fontSize: '0.65rem', color: overdue ? 'error.main' : 'text.secondary', fontWeight: overdue ? 600 : 400 }}>
-              {dayjs(action.eta).format('D MMM YY')}
+          {action.risk_name && (
+            <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.disabled' }}>
+              Risk: {action.risk_name}
             </Typography>
-          </Tooltip>
+          )}
+        </Box>
+
+        <Box sx={{ flex: 1.5, display: 'flex', alignItems: 'center', gap: 1 }}>
+          <LinearProgress
+            variant="determinate"
+            value={action.progress}
+            sx={{ flex: 1, height: 4, borderRadius: 2, bgcolor: 'action.hover', '& .MuiLinearProgress-bar': { bgcolor: STATUS_META[action.status]?.color ?? '#9E9E9E' } }}
+          />
+          <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.secondary', minWidth: 28 }}>
+            {action.progress}%
+          </Typography>
+        </Box>
+
+        <Box sx={{ flex: 1 }}>
+          <StatusChip status={action.status} />
+        </Box>
+
+        {action.effort ? (
+          <Chip label={action.effort} size="small" sx={{ height: 18, fontSize: '0.6rem', bgcolor: `${EFFORT_COLOR[action.effort]}18`, color: EFFORT_COLOR[action.effort], border: `1px solid ${EFFORT_COLOR[action.effort]}40` }} />
+        ) : (
+          <Box sx={{ width: 52 }} />
         )}
+
+        <Box sx={{ minWidth: 80, textAlign: 'right' }}>
+          {action.eta && (
+            <Tooltip title={overdue ? 'Overdue' : ''}>
+              <Typography variant="caption" sx={{ fontSize: '0.65rem', color: overdue ? 'error.main' : 'text.secondary', fontWeight: overdue ? 600 : 400 }}>
+                {dayjs(action.eta).format('D MMM YY')}
+              </Typography>
+            </Tooltip>
+          )}
+        </Box>
+
+        <Box sx={{ display: 'flex', gap: 0.25 }}>
+          <Tooltip title="Push to ITSM">
+            <IconButton size="small" onClick={() => setItsmOpen(true)} sx={{ p: 0.5, color: 'text.disabled' }}>
+              <ConfirmationNumberOutlined sx={{ fontSize: 15 }} />
+            </IconButton>
+          </Tooltip>
+          <IconButton size="small" onClick={onEdit} sx={{ p: 0.5 }}><EditOutlined sx={{ fontSize: 15 }} /></IconButton>
+          <IconButton size="small" onClick={onDelete} sx={{ p: 0.5, color: 'error.light' }}><DeleteOutlined sx={{ fontSize: 15 }} /></IconButton>
+        </Box>
       </Box>
 
-      <Box sx={{ display: 'flex', gap: 0.25 }}>
-        <IconButton size="small" onClick={onEdit} sx={{ p: 0.5 }}><EditOutlined sx={{ fontSize: 15 }} /></IconButton>
-        <IconButton size="small" onClick={onDelete} sx={{ p: 0.5, color: 'error.light' }}><DeleteOutlined sx={{ fontSize: 15 }} /></IconButton>
-      </Box>
-    </Box>
+      <ItsmPushDialog
+        open={itsmOpen}
+        onClose={() => setItsmOpen(false)}
+        actionId={action.id}
+        onSuccess={handleItsmSuccess}
+      />
+
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={() => setSnackbar(s => ({ ...s, open: false }))}
+        message={
+          snackbar.url ? (
+            <span>
+              {snackbar.message}{' '}
+              <a href={snackbar.url} target="_blank" rel="noreferrer"
+                style={{ color: '#90CAF9', fontWeight: 600 }}>
+                View ticket
+              </a>
+            </span>
+          ) : snackbar.message
+        }
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      />
+    </>
   )
 }
 
@@ -308,7 +434,7 @@ export default function Remediation() {
         <Typography variant="caption" sx={{ flex: 1, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Status</Typography>
         <Typography variant="caption" sx={{ width: 52, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Effort</Typography>
         <Typography variant="caption" sx={{ minWidth: 80, textAlign: 'right', fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>ETA</Typography>
-        <Box sx={{ width: 56 }} />
+        <Box sx={{ width: 80 }} />
       </Box>
 
       <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: '0 0 8px 8px', overflow: 'hidden' }}>

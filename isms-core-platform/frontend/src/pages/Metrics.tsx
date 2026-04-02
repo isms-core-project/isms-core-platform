@@ -5,10 +5,11 @@ import {
 } from '@mui/material'
 import {
   AssessmentOutlined, ErrorOutlined, GppMaybeOutlined, InsightsOutlined,
-  InventoryOutlined, SecurityOutlined, ShieldOutlined, TaskAltOutlined,
-  VerifiedOutlined,
+  InventoryOutlined, RefreshOutlined, SecurityOutlined, ShieldOutlined,
+  TaskAltOutlined, VerifiedOutlined,
 } from '@mui/icons-material'
-import { useQuery } from '@tanstack/react-query'
+import { IconButton } from '@mui/material'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 import {
   LineChart, Line, ResponsiveContainer, Tooltip as ChartTooltip,
 } from 'recharts'
@@ -156,6 +157,7 @@ const OTHER_METRICS = [
 export default function Metrics() {
   const { activeProject } = useProject()
   const [projectId, setProjectId] = useState(activeProject?.id ?? '')
+  const qc = useQueryClient()
 
   const { data: projects } = useQuery({
     queryKey: ['projects-list'],
@@ -177,6 +179,12 @@ export default function Metrics() {
         title="KPI Dashboard"
         subtitle="ISO 27001:2022 §9.1 — performance evaluation and measurement"
         actions={
+          <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+          <Tooltip title="Recompute metrics now">
+            <IconButton size="small" onClick={() => qc.invalidateQueries({ queryKey: ['metrics'], exact: false })}>
+              <RefreshOutlined sx={{ fontSize: 18 }} />
+            </IconButton>
+          </Tooltip>
           <FormControl size="small" sx={{ minWidth: 240 }}>
             <InputLabel>Scope</InputLabel>
             <Select value={projectId} label="Scope" onChange={e => setProjectId(e.target.value)}>
@@ -186,6 +194,7 @@ export default function Metrics() {
               ))}
             </Select>
           </FormControl>
+          </Box>
         }
       />
 

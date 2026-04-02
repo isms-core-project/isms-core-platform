@@ -12,6 +12,7 @@ from typing import Any
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session as DBSession
 
+from src.database.enums import ProductFamily
 from src.domain.assessments import Assessment
 from src.domain.compliance import Evidence, Gap
 from src.domain.control_groups import ControlGroup
@@ -49,7 +50,7 @@ def _compliance_score(db: DBSession, org_id: uuid.UUID, project_id: uuid.UUID | 
     """Control groups with ≥1 assessment / total ISMS control groups."""
     total = db.scalar(
         select(func.count(ControlGroup.id))
-        .where(ControlGroup.product_family == 'isms')
+        .where(ControlGroup.product_family == ProductFamily.ISMS)
     ) or 0
     if total == 0:
         return 0.0
@@ -66,7 +67,7 @@ def _policy_coverage(db: DBSession, org_id: uuid.UUID, project_id: uuid.UUID | N
     from src.domain.content import Policy
     total = db.scalar(
         select(func.count(ControlGroup.id))
-        .where(ControlGroup.product_family == 'isms')
+        .where(ControlGroup.product_family == ProductFamily.ISMS)
     ) or 0
     if total == 0:
         return 0.0

@@ -34,6 +34,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
 import { dashboardApi, type CoverageGap } from '../api/dashboard'
 import { projectsApi, type ProjectRead } from '../api/projectsApi'
+import { useProject } from '../store/ProjectContext'
 import { client } from '../api/client'
 import PageHeader from '../components/PageHeader'
 
@@ -185,7 +186,8 @@ function FrameworkCoverageCard({ result, projectId }: { result: InferredResult; 
 }
 
 function InferredCoverage() {
-  const [projectId, setProjectId] = useState('')
+  const { activeProject } = useProject()
+  const [projectId, setProjectId] = useState(activeProject?.id ?? '')
 
   const { data: projects } = useQuery({
     queryKey: ['projects-list'],

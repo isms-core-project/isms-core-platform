@@ -529,3 +529,95 @@ def get_connector_log(
         .all()
     )
     return rows
+
+
+# ── ITSM push endpoints ───────────────────────────────────────────────────────
+
+@router.post("/{connector_id}/push/gap/{gap_id}")
+def push_gap_to_itsm(
+    connector_id: uuid.UUID,
+    gap_id: uuid.UUID,
+    db: DBSession = Depends(get_db),
+    org_id: uuid.UUID = Depends(get_org_context),
+    _: User = Depends(get_current_user),
+):
+    """Push a gap to Jira or ServiceNow."""
+    from src.services.itsm_service import push_gap
+    try:
+        return push_gap(db, gap_id, connector_id, org_id)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"ITSM push failed: {e}")
+
+
+@router.post("/{connector_id}/push/remediation/{action_id}")
+def push_remediation_to_itsm(
+    connector_id: uuid.UUID,
+    action_id: uuid.UUID,
+    db: DBSession = Depends(get_db),
+    org_id: uuid.UUID = Depends(get_org_context),
+    _: User = Depends(get_current_user),
+):
+    """Push a remediation action to Jira or ServiceNow."""
+    from src.services.itsm_service import push_remediation
+    try:
+        return push_remediation(db, action_id, connector_id, org_id)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"ITSM push failed: {e}")
+
+
+@router.get("/{connector_id}/tickets")
+def list_connector_tickets(
+    connector_id: uuid.UUID,
+    source_type: str | None = None,
+    db: DBSession = Depends(get_db),
+    org_id: uuid.UUID = Depends(get_org_context),
+    _: User = Depends(get_current_user),
+):
+    """List all ITSM tickets pushed via this connector."""
+    from sqlalchemy import select as sa_select
+    from src.domain.itsm import ItsmTicket
+    q = sa_select(ItsmTicket).where(
+        ItsmTicket.connector_id == connector_id,
+        ItsmTicket.org_id == org_id,
+    ).order_by(ItsmTicket.created_at.desc())
+    if source_type:
+        q = q.where(ItsmTicket.source_type == source_type)
+    rows = db.execute(q).scalars().all()
+    return [{"id": str(t.id), "source_type": t.source_type, "source_id": str(t.source_id),
+             "ticket_id": t.external_ticket_id, "url": t.external_url, "status": t.status,
+             "last_synced_at": t.last_synced_at.isoformat() if t.last_synced_at else None,
+             "created_at": t.created_at.isoformat()} for t in rows]
+
+
+@router.post("/tickets/{ticket_id}/sync")
+def sync_itsm_ticket(
+    ticket_id: uuid.UUID,
+    db: DBSession = Depends(get_db),
+    org_id: uuid.UUID = Depends(get_org_context),
+    _: User = Depends(get_current_user),
+):
+    """Refresh ticket status from ITSM."""
+    from src.services.itsm_service import sync_ticket
+    try:
+        return sync_ticket(db, ticket_id, org_id)
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"ITSM sync failed: {e}")
+
+
+@router.get("/source/{source_type}/{source_id}/tickets")
+def list_source_tickets(
+    source_type: str,
+    source_id: uuid.UUID,
+    db: DBSession = Depends(get_db),
+    org_id: uuid.UUID = Depends(get_org_context),
+    _: User = Depends(get_current_user),
+):
+    """All ITSM tickets for a specific gap or remediation action."""
+    from src.services.itsm_service import list_tickets_for_source
+    return list_tickets_for_source(db, source_type, source_id, org_id)

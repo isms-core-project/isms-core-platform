@@ -170,15 +170,17 @@ def get_summary(
 
 @router.get("/heatmap")
 def get_heatmap(
+    project_id: str | None = Query(None),
     db: DBSession = Depends(get_db),
     org_id: uuid.UUID = Depends(get_org_context),
     _: User = Depends(get_current_user),
 ):
     """5×5 grid with scenario counts per cell. Returns list of {p, i, count, level}."""
     matrix = _get_or_create_matrix(db, org_id)
-    rows = db.execute(
-        select(RiskScenario).where(RiskScenario.org_id == org_id, RiskScenario.status != 'closed')
-    ).scalars().all()
+    q = select(RiskScenario).where(RiskScenario.org_id == org_id, RiskScenario.status != 'closed')
+    if project_id:
+        q = q.where(RiskScenario.project_id == uuid.UUID(project_id))
+    rows = db.execute(q).scalars().all()
 
     grid: dict[str, int] = {}
     for r in rows:

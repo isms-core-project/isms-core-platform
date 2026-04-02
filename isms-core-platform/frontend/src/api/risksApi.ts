@@ -164,8 +164,8 @@ export const risksApi = {
   summary: (params?: { project_id?: string }) =>
     client.get<RiskSummary>('/risks/summary', { params }).then(r => r.data),
 
-  heatmap: () =>
-    client.get<RiskHeatmap>('/risks/heatmap').then(r => r.data),
+  heatmap: (params?: { project_id?: string }) =>
+    client.get<RiskHeatmap>('/risks/heatmap', { params }).then(r => r.data),
 
   matrix: () =>
     client.get<RiskMatrix>('/risks/matrix').then(r => r.data),

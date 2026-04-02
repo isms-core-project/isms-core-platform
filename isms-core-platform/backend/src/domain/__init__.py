@@ -31,3 +31,6 @@ from src.domain.collections import AssessmentCollection, collection_assessments 
 from src.domain.csrm import CsrmAssessment, CsrmBaselineRating, CsrmElevatedTom, CsrmProtectionObject  # noqa: F401
 from src.domain.risks import RiskMatrix, RiskScenario, RiskAcceptance, RemediationAction  # noqa: F401
 from src.domain.metrics import MetricSnapshot  # noqa: F401
+from src.domain.tprm import Vendor, VendorAssessment, VendorContract  # noqa: F401
+from src.domain.itsm import ItsmTicket  # noqa: F401
+from src.domain.bia import BIARecord  # noqa: F401

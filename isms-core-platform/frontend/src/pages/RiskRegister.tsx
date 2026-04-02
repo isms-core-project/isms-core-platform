@@ -50,8 +50,11 @@ function LevelChip({ level }: { level: string }) {
 
 // ── Heatmap ───────────────────────────────────────────────────────────────────
 
-function RiskHeatmap() {
-  const { data } = useQuery({ queryKey: ['risk-heatmap'], queryFn: risksApi.heatmap })
+function RiskHeatmap({ projectId }: { projectId?: string }) {
+  const { data } = useQuery({
+    queryKey: ['risk-heatmap', projectId],
+    queryFn: () => risksApi.heatmap({ project_id: projectId }),
+  })
   if (!data) return null
 
   const size = 36
@@ -154,12 +157,12 @@ function RiskDialog({
 
   const createMutation = useMutation({
     mutationFn: (body: RiskScenarioCreate) => risksApi.create(body),
-    onSuccess: () => { qc.invalidateQueries({ queryKey: ['risks'] }); qc.invalidateQueries({ queryKey: ['risk-heatmap'] }); qc.invalidateQueries({ queryKey: ['risk-summary'] }); onClose() },
+    onSuccess: () => { qc.invalidateQueries({ queryKey: ['risks'] }); qc.invalidateQueries({ queryKey: ['risk-heatmap'], exact: false }); qc.invalidateQueries({ queryKey: ['risk-summary'] }); onClose() },
     onError: () => setError('Failed to save risk scenario.'),
   })
   const updateMutation = useMutation({
     mutationFn: (body: RiskScenarioCreate) => risksApi.update(existing!.id, body),
-    onSuccess: () => { qc.invalidateQueries({ queryKey: ['risks'] }); qc.invalidateQueries({ queryKey: ['risk-heatmap'] }); qc.invalidateQueries({ queryKey: ['risk-summary'] }); onClose() },
+    onSuccess: () => { qc.invalidateQueries({ queryKey: ['risks'] }); qc.invalidateQueries({ queryKey: ['risk-heatmap'], exact: false }); qc.invalidateQueries({ queryKey: ['risk-summary'] }); onClose() },
     onError: () => setError('Failed to update risk scenario.'),
   })
 
@@ -382,7 +385,7 @@ function RiskRow({ risk }: { risk: RiskScenario }) {
 
   const deleteMutation = useMutation({
     mutationFn: () => risksApi.delete(risk.id),
-    onSuccess: () => { qc.invalidateQueries({ queryKey: ['risks'] }); qc.invalidateQueries({ queryKey: ['risk-heatmap'] }); qc.invalidateQueries({ queryKey: ['risk-summary'] }) },
+    onSuccess: () => { qc.invalidateQueries({ queryKey: ['risks'] }); qc.invalidateQueries({ queryKey: ['risk-heatmap'], exact: false }); qc.invalidateQueries({ queryKey: ['risk-summary'] }) },
   })
 
   function handleDelete() {
@@ -555,7 +558,7 @@ export default function RiskRegister() {
         {/* Heatmap */}
         <Grid item xs={12} md={5}>
           <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 1.5, p: 2 }}>
-            <RiskHeatmap />
+            <RiskHeatmap projectId={projectId} />
           </Box>
         </Grid>
 
