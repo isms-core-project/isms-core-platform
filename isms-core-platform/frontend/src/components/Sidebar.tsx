@@ -73,6 +73,7 @@ interface NavItem {
   label: string
   path: string
   icon: React.ReactNode
+  adminOnly?: boolean
 }
 
 const PRODUCT_NAV: NavItem[] = [
@@ -111,10 +112,12 @@ const NAV_COMPLIANCE: NavItem[] = [
 ]
 
 const NAV_ADMIN: NavItem[] = [
-  { label: 'Admin',       path: '/admin',       icon: <AdminPanelSettingsOutlined /> },
+  { label: 'Admin',       path: '/admin',       icon: <AdminPanelSettingsOutlined />, adminOnly: true },
   { label: 'Connectors',  path: '/connectors',  icon: <ElectricalServicesOutlined /> },
-  { label: 'System',      path: '/system',      icon: <MonitorHeartOutlined /> },
+  { label: 'System',      path: '/system',      icon: <MonitorHeartOutlined />,       adminOnly: true },
 ]
+
+const ADMIN_ROLES = ['super_admin', 'admin']
 
 const PRODUCT_SECTIONS: { value: Product; icon: React.ReactNode }[] = [
   { value: 'isms',    icon: <ShieldOutlined /> },
@@ -720,7 +723,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
 
         {/* Admin pages */}
         <List disablePadding sx={{ px: 1, pb: 0.5 }}>
-          {NAV_ADMIN.map((item) => {
+          {NAV_ADMIN.filter(item => !item.adminOnly || ADMIN_ROLES.includes(user?.role ?? '')).map((item) => {
             const active = isPlatformNavActive(item.path)
             return (
               <ListItem key={item.path} disablePadding sx={{ mb: 0.15 }}>

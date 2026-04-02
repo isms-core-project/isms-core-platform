@@ -48,6 +48,7 @@ import { adminApi } from '../api/admin'
 import type { OrphanEntry } from '../api/admin'
 import type { ServiceHealth } from '../api/types'
 import PageHeader from '../components/PageHeader'
+import { useAuth } from '../store/AuthContext'
 
 dayjs.extend(relativeTime)
 
@@ -119,7 +120,16 @@ function ServiceCard({ svc }: { svc: ServiceHealth }) {
 }
 
 export default function System() {
+  const { user } = useAuth()
   const [lastRefresh, setLastRefresh] = useState<Date>(new Date())
+
+  if (!user || !['super_admin', 'admin'].includes(user.role)) {
+    return (
+      <Box sx={{ p: 3 }}>
+        <Alert severity="error">Admin role required to access this page.</Alert>
+      </Box>
+    )
+  }
   const [reindexResult, setReindexResult] = useState<string | null>(null)
   const [testEmailRecipient, setTestEmailRecipient] = useState('')
   const [testEmailResult, setTestEmailResult] = useState<{ ok: boolean; msg: string } | null>(null)

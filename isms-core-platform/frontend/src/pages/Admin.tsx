@@ -694,6 +694,15 @@ function AuditLogTab() {
 
 export default function Admin() {
   const [tab, setTab] = useState(0)
+  const { user } = useAuth()
+
+  if (!user || !['super_admin', 'admin'].includes(user.role)) {
+    return (
+      <Box sx={{ p: 3 }}>
+        <Alert severity="error">Admin role required to access this page.</Alert>
+      </Box>
+    )
+  }
 
   return (
     <Box>
