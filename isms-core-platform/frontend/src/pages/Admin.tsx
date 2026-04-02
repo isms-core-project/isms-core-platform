@@ -111,7 +111,7 @@ function CreateUserDialog({ open, onClose }: { open: boolean; onClose: () => voi
   return (
     <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth>
       <DialogTitle>Add User</DialogTitle>
-      <DialogContent sx={{ pt: 1 }}>
+      <DialogContent sx={{ pt: '20px !important' }}>
         {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
         <TextField
           fullWidth label="Email" value={form.email}
@@ -232,7 +232,7 @@ function EditUserDialog({
           {user.email}
         </Typography>
       </DialogTitle>
-      <DialogContent sx={{ pt: 1 }}>
+      <DialogContent sx={{ pt: '20px !important' }}>
         {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
         <TextField
           fullWidth label="Full Name"

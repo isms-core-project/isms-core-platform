@@ -7,6 +7,7 @@ type ActiveProjectsMap = Record<string, ProjectRead | null>
 interface ProjectContextValue {
   getActiveProject: (family: string) => ProjectRead | null
   setActiveProject: (family: string, project: ProjectRead | null) => void
+  activeProjectsMap: ActiveProjectsMap   // all active projects by family
   // Backward-compat helpers used by components that don't need per-family resolution
   activeProjectId: string | null
   activeProject: ProjectRead | null
@@ -15,6 +16,7 @@ interface ProjectContextValue {
 const ProjectContext = createContext<ProjectContextValue>({
   getActiveProject: () => null,
   setActiveProject: () => {},
+  activeProjectsMap: {},
   activeProjectId: null,
   activeProject: null,
 })
@@ -78,6 +80,7 @@ export function ProjectProvider({ children }: { children: React.ReactNode }) {
     <ProjectContext.Provider value={{
       getActiveProject,
       setActiveProject,
+      activeProjectsMap: activeProjects,
       activeProjectId: ismsProject?.id ?? null,
       activeProject: ismsProject,
     }}>

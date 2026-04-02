@@ -65,7 +65,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { adminApi } from '../api/admin'
 import type { NotificationPref } from '../api/types'
 import { useAuth } from '../store/AuthContext'
-import { useProduct, type Product, type IsmsTier, PRODUCT_COLORS, PRODUCT_LABELS, PRODUCT_SUBTITLES } from '../store/ProductContext'
+import { useProduct, type Product, PRODUCT_COLORS, PRODUCT_LABELS, PRODUCT_SUBTITLES } from '../store/ProductContext'
 import { useProject } from '../store/ProjectContext'
 import { useThemeMode } from '../store/ThemeContext'
 
@@ -226,8 +226,9 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   const [notifsOpen, setNotifsOpen] = useState(false)
   const { logout, user, isSuperAdmin } = useAuth()
   const { product, setProduct, ismsTier, setIsmsTier } = useProduct()
-  const { getActiveProject, setActiveProject } = useProject()
+  const { getActiveProject, setActiveProject, activeProjectsMap } = useProject()
   const activeProject = getActiveProject(product.toUpperCase())
+  const activeFamilies = (['ISMS', 'PRIVACY', 'CLOUD'] as const).filter(f => !!activeProjectsMap[f])
   const { mode, toggleTheme } = useThemeMode()
 
   const isNeutralPage = location.pathname === '/' || PLATFORM_PATHS.some(p => location.pathname.startsWith(p))
@@ -382,47 +383,69 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
           </Tooltip>
         </Box>
 
-        {/* Active project chip */}
-        <Box sx={{ px: 1, pb: 0.5 }}>
-          <Tooltip title={collapsed ? (activeProject ? activeProject.name : 'No active project') : ''} placement="right">
-            <Box
-              onClick={() => navigate('/projects')}
-              sx={{
-                display: 'flex', alignItems: 'center', gap: 0.75,
-                mx: 0, px: collapsed ? 0 : 1.25, py: 0.5, borderRadius: 1.5,
-                cursor: 'pointer', userSelect: 'none',
-                justifyContent: collapsed ? 'center' : 'flex-start',
-                border: '1px solid',
-                borderColor: activeProject ? 'rgba(68,114,196,0.3)' : 'rgba(255,255,255,0.08)',
-                bgcolor: activeProject ? 'rgba(68,114,196,0.08)' : 'transparent',
-                transition: 'all 0.15s',
-                '&:hover': { borderColor: 'rgba(68,114,196,0.5)', bgcolor: 'rgba(68,114,196,0.12)' },
-              }}
-            >
-              <FolderOpenOutlined sx={{ fontSize: 14, color: activeProject ? '#4472C4' : 'text.disabled', flexShrink: 0 }} />
-              {!collapsed && (
-                <>
-                  <Box sx={{ flex: 1, minWidth: 0 }}>
-                    <Typography variant="caption" sx={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.06em', color: 'text.disabled', lineHeight: 1, display: 'block' }}>
-                      Active Project
-                    </Typography>
-                    <Typography variant="caption" sx={{ fontSize: '0.72rem', color: activeProject ? '#4472C4' : 'text.disabled', fontWeight: activeProject ? 600 : 400, lineHeight: 1.2, display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 120 }}>
-                      {activeProject ? activeProject.name : 'None selected'}
-                    </Typography>
-                  </Box>
-                  {activeProject && (
-                    <IconButton
-                      size="small"
-                      onClick={(e) => { e.stopPropagation(); setActiveProject(product.toUpperCase(), null) }}
-                      sx={{ p: 0.25, color: 'text.disabled', '&:hover': { color: 'error.main' } }}
-                    >
-                      <CloseOutlined sx={{ fontSize: 12 }} />
-                    </IconButton>
+        {/* Active project chips — one per active family */}
+        <Box sx={{ px: 1, pb: 0.5, display: 'flex', flexDirection: 'column', gap: 0.4 }}>
+          {activeFamilies.length === 0 ? (
+            <Tooltip title={collapsed ? 'No active projects' : ''} placement="right">
+              <Box
+                onClick={() => navigate('/projects')}
+                sx={{
+                  display: 'flex', alignItems: 'center', gap: 0.75,
+                  px: collapsed ? 0 : 1.25, py: 0.5, borderRadius: 1.5,
+                  cursor: 'pointer', justifyContent: collapsed ? 'center' : 'flex-start',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                }}
+              >
+                <FolderOpenOutlined sx={{ fontSize: 14, color: 'text.disabled', flexShrink: 0 }} />
+                {!collapsed && (
+                  <Typography variant="caption" sx={{ fontSize: '0.72rem', color: 'text.disabled' }}>
+                    No active projects
+                  </Typography>
+                )}
+              </Box>
+            </Tooltip>
+          ) : activeFamilies.map(fam => {
+            const proj = activeProjectsMap[fam]!
+            const color = PRODUCT_COLORS[fam.toLowerCase() as Product]
+            return (
+              <Tooltip key={fam} title={collapsed ? `${fam}: ${proj.name}` : ''} placement="right">
+                <Box
+                  onClick={() => navigate('/projects')}
+                  sx={{
+                    display: 'flex', alignItems: 'center', gap: 0.75,
+                    px: collapsed ? 0 : 1.25, py: 0.4, borderRadius: 1.5,
+                    cursor: 'pointer', justifyContent: collapsed ? 'center' : 'flex-start',
+                    border: '1px solid',
+                    borderColor: `${color}30`,
+                    bgcolor: `${color}08`,
+                    transition: 'all 0.15s',
+                    '&:hover': { borderColor: `${color}60`, bgcolor: `${color}14` },
+                  }}
+                >
+                  <FolderOpenOutlined sx={{ fontSize: 13, color, flexShrink: 0 }} />
+                  {!collapsed && (
+                    <>
+                      <Box sx={{ flex: 1, minWidth: 0 }}>
+                        <Typography variant="caption" sx={{ fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '0.06em', color, opacity: 0.7, lineHeight: 1, display: 'block' }}>
+                          {fam}
+                        </Typography>
+                        <Typography variant="caption" sx={{ fontSize: '0.7rem', color, fontWeight: 600, lineHeight: 1.2, display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 110 }}>
+                          {proj.name}
+                        </Typography>
+                      </Box>
+                      <IconButton
+                        size="small"
+                        onClick={(e) => { e.stopPropagation(); setActiveProject(fam, null) }}
+                        sx={{ p: 0.25, color: 'text.disabled', '&:hover': { color: 'error.main' } }}
+                      >
+                        <CloseOutlined sx={{ fontSize: 11 }} />
+                      </IconButton>
+                    </>
                   )}
-                </>
-              )}
-            </Box>
-          </Tooltip>
+                </Box>
+              </Tooltip>
+            )
+          })}
         </Box>
 
         <Divider sx={{ my: 0.5, mx: 1 }} />

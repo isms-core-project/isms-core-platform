@@ -174,7 +174,10 @@ export default function Home() {
   const navigate = useNavigate()
   const { user } = useAuth()
   const { setProduct } = useProduct()
-  const { activeProjectId } = useProject()
+  const { activeProjectsMap } = useProject()
+  const activeProjectsList = (['ISMS', 'PRIVACY', 'CLOUD'] as const)
+    .map(f => activeProjectsMap[f])
+    .filter((p): p is NonNullable<typeof p> => !!p)
   const [searchQuery, setSearchQuery] = useState('')
 
   function handleSearch() {
@@ -189,12 +192,6 @@ export default function Home() {
     retry: 2,
   })
 
-  const { data: activeProject, isLoading: projLoading } = useQuery({
-    queryKey: ['project', activeProjectId],
-    queryFn: () => projectsApi.get(activeProjectId!),
-    enabled: !!activeProjectId,
-    staleTime: 15_000,
-  })
 
   const now = new Date()
   const dateStr = now.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
@@ -384,72 +381,67 @@ export default function Home() {
         <ArrowForwardOutlined sx={{ fontSize: 14, color: 'text.disabled' }} />
       </Box>
 
-      {/* Active project status card */}
-      {(activeProjectId || projLoading) && (
-        <Box
-          onClick={() => activeProject && navigate(`/projects/${activeProject.id}`)}
-          sx={{
-            flexShrink: 0,
-            px: 2, py: 1.25, borderRadius: 1.5, cursor: 'pointer',
-            border: '1px solid',
-            borderColor: activeProject ? `${FAMILY_COLOR[activeProject.product_family] ?? '#4472C4'}50` : 'divider',
-            borderLeft: activeProject ? `4px solid ${FAMILY_COLOR[activeProject.product_family] ?? '#4472C4'}` : '4px solid transparent',
-            bgcolor: activeProject ? `${FAMILY_COLOR[activeProject.product_family] ?? '#4472C4'}07` : 'background.paper',
-            transition: 'all 0.12s',
-            '&:hover': { bgcolor: activeProject ? `${FAMILY_COLOR[activeProject.product_family] ?? '#4472C4'}12` : 'action.hover' },
-          }}
-        >
-          {projLoading ? (
-            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-              <Skeleton variant="text" width={160} height={18} />
-              <Skeleton variant="text" width={80} height={18} />
-              <Skeleton variant="text" width={80} height={18} />
-            </Box>
-          ) : activeProject ? (() => {
-            const fam = activeProject.product_family
+      {/* Active project rows — one per active family */}
+      {activeProjectsList.length > 0 && (
+        <Box sx={{ flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 0.75 }}>
+          {activeProjectsList.map(proj => {
+            const fam = proj.product_family
             const color = FAMILY_COLOR[fam] ?? '#4472C4'
             const total = TOTAL_CG[fam] ?? 53
-            const polPct = Math.min(100, Math.round((activeProject.policy_count / Math.max(1, total)) * 100))
+            const polPct = Math.min(100, Math.round((proj.policy_count / Math.max(1, total)) * 100))
             return (
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                <FolderOpenOutlined sx={{ fontSize: 18, color, flexShrink: 0 }} />
-                <Box sx={{ flex: 1, minWidth: 0 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.3 }}>
-                    <Typography variant="caption" sx={{ fontWeight: 700, fontSize: '0.8rem', color, lineHeight: 1 }}>
-                      {activeProject.name}
-                    </Typography>
-                    <Chip label="Selected" size="small" sx={{ height: 16, fontSize: '0.58rem', bgcolor: `${color}20`, color }} />
-                    <Typography variant="caption" sx={{ fontSize: '0.68rem', color: 'text.disabled' }}>
-                      {activeProject.organisation_name ?? ''}
-                    </Typography>
-                  </Box>
-                  <LinearProgress
-                    variant="determinate"
-                    value={polPct}
-                    sx={{ height: 3, borderRadius: 2, bgcolor: `${color}18`, '& .MuiLinearProgress-bar': { bgcolor: color } }}
-                  />
-                </Box>
-                <Box sx={{ display: 'flex', gap: 2, flexShrink: 0 }}>
-                  {[
-                    { label: 'Policies', val: activeProject.policy_count },
-                    { label: 'IMPs', val: activeProject.implementation_count },
-                    { label: 'SCRs', val: activeProject.checklist_count },
-                  ].map(({ label, val }) => (
-                    <Box key={label} sx={{ textAlign: 'center' }}>
-                      <Typography sx={{ fontWeight: 700, fontSize: '0.95rem', color, lineHeight: 1 }}>{val}</Typography>
-                      <Typography variant="caption" sx={{ fontSize: '0.6rem', color: 'text.secondary' }}>{label}</Typography>
+              <Box
+                key={proj.id}
+                onClick={() => navigate(`/projects/${proj.id}`)}
+                sx={{
+                  px: 2, py: 1.25, borderRadius: 1.5, cursor: 'pointer',
+                  border: '1px solid', borderColor: `${color}50`,
+                  borderLeft: `4px solid ${color}`,
+                  bgcolor: `${color}07`,
+                  transition: 'all 0.12s',
+                  '&:hover': { bgcolor: `${color}12` },
+                }}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                  <FolderOpenOutlined sx={{ fontSize: 18, color, flexShrink: 0 }} />
+                  <Box sx={{ flex: 1, minWidth: 0 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.3 }}>
+                      <Typography variant="caption" sx={{ fontWeight: 700, fontSize: '0.8rem', color, lineHeight: 1 }}>
+                        {proj.name}
+                      </Typography>
+                      <Chip label="Selected" size="small" sx={{ height: 16, fontSize: '0.58rem', bgcolor: `${color}20`, color }} />
+                      <Typography variant="caption" sx={{ fontSize: '0.68rem', color: 'text.disabled' }}>
+                        {proj.organisation_name ?? ''}
+                      </Typography>
                     </Box>
-                  ))}
-                </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexShrink: 0 }}>
-                  <Typography variant="caption" sx={{ fontSize: '0.68rem', color: 'text.secondary' }}>
-                    {Math.min(activeProject.policy_count, total)}/{total} control groups
-                  </Typography>
-                  <ArrowForwardOutlined sx={{ fontSize: 14, color: 'text.disabled' }} />
+                    <LinearProgress
+                      variant="determinate"
+                      value={polPct}
+                      sx={{ height: 3, borderRadius: 2, bgcolor: `${color}18`, '& .MuiLinearProgress-bar': { bgcolor: color } }}
+                    />
+                  </Box>
+                  <Box sx={{ display: 'flex', gap: 2, flexShrink: 0 }}>
+                    {[
+                      { label: 'Policies', val: proj.policy_count },
+                      { label: 'IMPs', val: proj.implementation_count },
+                      { label: 'SCRs', val: proj.checklist_count },
+                    ].map(({ label, val }) => (
+                      <Box key={label} sx={{ textAlign: 'center' }}>
+                        <Typography sx={{ fontWeight: 700, fontSize: '0.95rem', color, lineHeight: 1 }}>{val}</Typography>
+                        <Typography variant="caption" sx={{ fontSize: '0.6rem', color: 'text.secondary' }}>{label}</Typography>
+                      </Box>
+                    ))}
+                  </Box>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexShrink: 0 }}>
+                    <Typography variant="caption" sx={{ fontSize: '0.68rem', color: 'text.secondary' }}>
+                      {Math.min(proj.policy_count, total)}/{total} control groups
+                    </Typography>
+                    <ArrowForwardOutlined sx={{ fontSize: 14, color: 'text.disabled' }} />
+                  </Box>
                 </Box>
               </Box>
             )
-          })() : null}
+          })}
         </Box>
       )}
 
