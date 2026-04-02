@@ -1,13 +1,11 @@
 """033 — Risk Register: risk_matrices + risk_scenarios tables
 
 Revision ID: 033
-Revises: 032
+Revises: 032_org_is_active
 Create Date: 2026-04-02
 """
 
 from alembic import op
-import sqlalchemy as sa
-from sqlalchemy.dialects.postgresql import UUID, JSONB
 
 revision = '033'
 down_revision = '032_org_is_active'
@@ -16,70 +14,76 @@ depends_on = None
 
 
 def upgrade():
-    # ── risk_matrices ──────────────────────────────────────────────────────────
-    op.create_table(
-        'risk_matrices',
-        sa.Column('id',                  UUID(as_uuid=True), primary_key=True, server_default=sa.text('gen_random_uuid()')),
-        sa.Column('org_id',              UUID(as_uuid=True), sa.ForeignKey('organisations.id', ondelete='CASCADE'), nullable=False),
-        sa.Column('name',                sa.String(120), nullable=False, server_default='Default 5×5 Matrix'),
-        sa.Column('probability_labels',  JSONB, nullable=False),
-        sa.Column('impact_labels',       JSONB, nullable=False),
-        sa.Column('score_map',           JSONB, nullable=False),   # {"1,1": 1, "1,2": 2, ...}
-        sa.Column('colour_map',          JSONB, nullable=False),   # {"1": "low", "6": "medium", ...}
-        sa.Column('is_default',          sa.Boolean, nullable=False, server_default='true'),
-        sa.Column('created_at',          sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=False),
-    )
-    op.create_index('ix_risk_matrices_org_id', 'risk_matrices', ['org_id'])
+    op.execute("""
+        CREATE TABLE IF NOT EXISTS risk_matrices (
+            id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            org_id              UUID NOT NULL REFERENCES organisations(id) ON DELETE CASCADE,
+            name                VARCHAR(120) NOT NULL DEFAULT 'Default 5×5 Matrix',
+            probability_labels  JSONB NOT NULL,
+            impact_labels       JSONB NOT NULL,
+            score_map           JSONB NOT NULL,
+            colour_map          JSONB NOT NULL,
+            is_default          BOOLEAN NOT NULL DEFAULT true,
+            created_at          TIMESTAMPTZ NOT NULL DEFAULT now()
+        )
+    """)
+    op.execute("CREATE INDEX IF NOT EXISTS ix_risk_matrices_org_id ON risk_matrices (org_id)")
 
-    # ── risk_treatment_status enum ─────────────────────────────────────────────
-    op.execute("CREATE TYPE risktreatmentstatus AS ENUM ('pending','accept','mitigate','transfer','avoid')")
+    op.execute("""
+        DO $$ BEGIN
+            CREATE TYPE risktreatmentstatus AS ENUM ('pending','accept','mitigate','transfer','avoid');
+        EXCEPTION WHEN duplicate_object THEN null;
+        END $$
+    """)
+    op.execute("""
+        DO $$ BEGIN
+            CREATE TYPE risklevel AS ENUM ('low','medium','high','critical');
+        EXCEPTION WHEN duplicate_object THEN null;
+        END $$
+    """)
+    op.execute("""
+        DO $$ BEGIN
+            CREATE TYPE riskstatus AS ENUM ('open','in_treatment','closed','accepted');
+        EXCEPTION WHEN duplicate_object THEN null;
+        END $$
+    """)
 
-    # ── risk_level enum ────────────────────────────────────────────────────────
-    op.execute("CREATE TYPE risklevel AS ENUM ('low','medium','high','critical')")
-
-    # ── risk_status enum ───────────────────────────────────────────────────────
-    op.execute("CREATE TYPE riskstatus AS ENUM ('open','in_treatment','closed','accepted')")
-
-    # ── risk_scenarios ─────────────────────────────────────────────────────────
-    op.create_table(
-        'risk_scenarios',
-        sa.Column('id',                    UUID(as_uuid=True), primary_key=True, server_default=sa.text('gen_random_uuid()')),
-        sa.Column('org_id',                UUID(as_uuid=True), sa.ForeignKey('organisations.id', ondelete='CASCADE'), nullable=False),
-        sa.Column('project_id',            UUID(as_uuid=True), sa.ForeignKey('projects.id', ondelete='SET NULL'), nullable=True),
-        sa.Column('control_group_id',      UUID(as_uuid=True), sa.ForeignKey('control_groups.id', ondelete='SET NULL'), nullable=True),
-        sa.Column('name',                  sa.String(255), nullable=False),
-        sa.Column('description',           sa.Text, nullable=True),
-        sa.Column('threat_source',         sa.String(120), nullable=True),
-        sa.Column('threat_event',          sa.String(255), nullable=True),
-        # Inherent risk
-        sa.Column('probability',           sa.Integer, nullable=False, server_default='1'),  # 1–5
-        sa.Column('impact',                sa.Integer, nullable=False, server_default='1'),  # 1–5
-        sa.Column('risk_score',            sa.Integer, nullable=False, server_default='1'),
-        sa.Column('risk_level',            sa.Enum('low', 'medium', 'high', 'critical', name='risklevel', create_type=False), nullable=False, server_default='low'),
-        # Treatment
-        sa.Column('treatment_status',      sa.Enum('pending', 'accept', 'mitigate', 'transfer', 'avoid', name='risktreatmentstatus', create_type=False), nullable=False, server_default='pending'),
-        sa.Column('treatment_notes',       sa.Text, nullable=True),
-        # Residual risk
-        sa.Column('residual_probability',  sa.Integer, nullable=True),
-        sa.Column('residual_impact',       sa.Integer, nullable=True),
-        sa.Column('residual_score',        sa.Integer, nullable=True),
-        sa.Column('residual_level',        sa.Enum('low', 'medium', 'high', 'critical', name='risklevel', create_type=False), nullable=True),
-        # Meta
-        sa.Column('owner_id',              UUID(as_uuid=True), sa.ForeignKey('users.id', ondelete='SET NULL'), nullable=True),
-        sa.Column('target_date',           sa.Date, nullable=True),
-        sa.Column('status',                sa.Enum('open', 'in_treatment', 'closed', 'accepted', name='riskstatus', create_type=False), nullable=False, server_default='open'),
-        sa.Column('created_at',            sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=False),
-        sa.Column('updated_at',            sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=False),
-    )
-    op.create_index('ix_risk_scenarios_org_id',      'risk_scenarios', ['org_id'])
-    op.create_index('ix_risk_scenarios_project_id',  'risk_scenarios', ['project_id'])
-    op.create_index('ix_risk_scenarios_status',      'risk_scenarios', ['status'])
-    op.create_index('ix_risk_scenarios_risk_level',  'risk_scenarios', ['risk_level'])
+    op.execute("""
+        CREATE TABLE IF NOT EXISTS risk_scenarios (
+            id                   UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            org_id               UUID NOT NULL REFERENCES organisations(id) ON DELETE CASCADE,
+            project_id           UUID REFERENCES projects(id) ON DELETE SET NULL,
+            control_group_id     UUID REFERENCES control_groups(id) ON DELETE SET NULL,
+            name                 VARCHAR(255) NOT NULL,
+            description          TEXT,
+            threat_source        VARCHAR(120),
+            threat_event         VARCHAR(255),
+            probability          INTEGER NOT NULL DEFAULT 1,
+            impact               INTEGER NOT NULL DEFAULT 1,
+            risk_score           INTEGER NOT NULL DEFAULT 1,
+            risk_level           risklevel NOT NULL DEFAULT 'low',
+            treatment_status     risktreatmentstatus NOT NULL DEFAULT 'pending',
+            treatment_notes      TEXT,
+            residual_probability INTEGER,
+            residual_impact      INTEGER,
+            residual_score       INTEGER,
+            residual_level       risklevel,
+            owner_id             UUID REFERENCES users(id) ON DELETE SET NULL,
+            target_date          DATE,
+            status               riskstatus NOT NULL DEFAULT 'open',
+            created_at           TIMESTAMPTZ NOT NULL DEFAULT now(),
+            updated_at           TIMESTAMPTZ NOT NULL DEFAULT now()
+        )
+    """)
+    op.execute("CREATE INDEX IF NOT EXISTS ix_risk_scenarios_org_id     ON risk_scenarios (org_id)")
+    op.execute("CREATE INDEX IF NOT EXISTS ix_risk_scenarios_project_id ON risk_scenarios (project_id)")
+    op.execute("CREATE INDEX IF NOT EXISTS ix_risk_scenarios_status     ON risk_scenarios (status)")
+    op.execute("CREATE INDEX IF NOT EXISTS ix_risk_scenarios_risk_level ON risk_scenarios (risk_level)")
 
 
 def downgrade():
-    op.drop_table('risk_scenarios')
-    op.drop_table('risk_matrices')
+    op.execute("DROP TABLE IF EXISTS risk_scenarios")
+    op.execute("DROP TABLE IF EXISTS risk_matrices")
     op.execute("DROP TYPE IF EXISTS riskstatus")
     op.execute("DROP TYPE IF EXISTS risklevel")
     op.execute("DROP TYPE IF EXISTS risktreatmentstatus")
