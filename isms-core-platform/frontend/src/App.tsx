@@ -45,6 +45,7 @@ import Metrics from './pages/Metrics'
 import Bia from './pages/Bia'
 import Ebios from './pages/Ebios'
 import Tprm from './pages/Tprm'
+import CustomFrameworks from './pages/CustomFrameworks'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -111,6 +112,7 @@ export default function App() {
         <Route path="bia" element={<Bia />} />
         <Route path="ebios" element={<Ebios />} />
         <Route path="tprm" element={<Tprm />} />
+        <Route path="custom-frameworks" element={<CustomFrameworks />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

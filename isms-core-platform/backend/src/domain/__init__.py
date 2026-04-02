@@ -34,3 +34,5 @@ from src.domain.metrics import MetricSnapshot  # noqa: F401
 from src.domain.tprm import Vendor, VendorAssessment, VendorContract  # noqa: F401
 from src.domain.itsm import ItsmTicket  # noqa: F401
 from src.domain.bia import BIARecord  # noqa: F401
+from src.domain.ebios import EbiosStudy, EbiosFearedEvent, EbiosRiskSource, EbiosStrategicScenario, EbiosAttackPath, EbiosMeasure  # noqa: F401
+from src.domain.custom_framework import CustomFramework, CustomControl  # noqa: F401

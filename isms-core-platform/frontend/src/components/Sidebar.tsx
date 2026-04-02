@@ -66,6 +66,7 @@ import {
   HealthAndSafetyOutlined,
   PsychologyOutlined,
   InsightsOutlined,
+  AppRegistrationOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -138,10 +139,11 @@ const NAV_SUPPLIERS: NavItem[] = [
 
 // ── Admin ─────────────────────────────────────────────────────────────────────
 const NAV_ADMIN: NavItem[] = [
-  { label: 'Users',           path: '/admin',         icon: <PeopleOutlined /> },
-  { label: 'Connectors',      path: '/connectors',    icon: <ElectricalServicesOutlined /> },
-  { label: 'System',          path: '/system',        icon: <MonitorHeartOutlined />,  adminOnly: true },
-  { label: 'Organisations',   path: '/organisations', icon: <BusinessOutlined />, superAdminOnly: true },
+  { label: 'Users',             path: '/admin',             icon: <PeopleOutlined /> },
+  { label: 'Connectors',        path: '/connectors',        icon: <ElectricalServicesOutlined /> },
+  { label: 'Custom Frameworks', path: '/custom-frameworks', icon: <AppRegistrationOutlined />, adminOnly: true },
+  { label: 'System',            path: '/system',            icon: <MonitorHeartOutlined />, adminOnly: true },
+  { label: 'Organisations',     path: '/organisations',     icon: <BusinessOutlined />, superAdminOnly: true },
 ]
 
 const ADMIN_ROLES = ['super_admin', 'admin']
@@ -170,7 +172,7 @@ const RISK_PATHS       = ['/risk-register', '/remediation', '/metrics', '/bia', 
 const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk']
 const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act', '/eu-cloud-sov']
 const SUPPLIER_PATHS   = ['/tprm']
-const ADMIN_PATHS      = ['/admin', '/connectors', '/system', '/organisations']
+const ADMIN_PATHS      = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks']
 const ALL_PLATFORM_PATHS = [...RISK_PATHS, ...TOOLS_PATHS, ...FRAMEWORK_PATHS, ...SUPPLIER_PATHS, ...ADMIN_PATHS]
 
 // ── Notification prefs dialog ─────────────────────────────────────────────────

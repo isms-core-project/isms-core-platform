@@ -30,7 +30,7 @@ from fastapi.responses import StreamingResponse
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from sqlalchemy.orm import Session as DBSession
 
-from src.core.dependencies import get_current_user, require_admin
+from src.core.dependencies import get_current_user, get_org_context, require_admin
 from src.database.session import get_db
 from src.domain.connectors import Connector, ConnectorEvidence
 from src.domain.compliance import Evidence
