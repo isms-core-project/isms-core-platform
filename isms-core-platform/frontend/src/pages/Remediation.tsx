@@ -242,7 +242,7 @@ export default function Remediation() {
   function openEdit(a: RemediationAction) { setEditing(a); setDialogOpen(true) }
 
   return (
-    <Box sx={{ p: 3, maxWidth: 1100, mx: 'auto' }}>
+    <Box sx={{ p: 3 }}>
       <PageHeader
         title="Remediation Tracker"
         subtitle="Plan of Action and Milestones (POA&M) — ISO 27001:2022 §6.1.3"
