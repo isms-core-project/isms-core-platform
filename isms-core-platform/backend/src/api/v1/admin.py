@@ -7,7 +7,7 @@ from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from sqlalchemy import func, select, text
 from sqlalchemy.orm import Session as DBSession
 
-from src.core.dependencies import get_current_user, get_org_context, require_role
+from src.core.dependencies import get_current_user, get_org_context, require_role, require_admin
 from src.database.enums import UserRole
 from src.database.session import get_db
 from src.domain.assessments import Assessment, AssessmentItem, AssessmentSheet
@@ -50,7 +50,7 @@ router = APIRouter(prefix="/admin", tags=["admin"])
 @router.get(
     "/system/status",
     response_model=SystemStatus,
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def system_status(db: DBSession = Depends(get_db)):
     def count(model):
@@ -76,7 +76,7 @@ def system_status(db: DBSession = Depends(get_db)):
 @router.get(
     "/sysinfo",
     response_model=SysInfoResponse,
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def get_sysinfo(db: DBSession = Depends(get_db)):
     """Consolidated system information: service health, DB counts, config, last sync."""
@@ -212,7 +212,7 @@ def get_sysinfo(db: DBSession = Depends(get_db)):
 
 @router.post(
     "/email/test",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def send_test_email(body: dict, current_user=Depends(get_current_user)):
     """Send a test email to verify SMTP configuration.
@@ -254,7 +254,7 @@ def send_test_email(body: dict, current_user=Depends(get_current_user)):
 @router.get(
     "/load-history",
     response_model=list[LoadHistoryRead],
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def list_load_history(db: DBSession = Depends(get_db)):
     return (
@@ -268,7 +268,7 @@ def list_load_history(db: DBSession = Depends(get_db)):
 
 @router.post(
     "/load",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_load(db: DBSession = Depends(get_db)):
     stats = load_all_bundles(db)
@@ -278,7 +278,7 @@ def trigger_load(db: DBSession = Depends(get_db)):
 
 @router.post(
     "/import-policies",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_import_policies(db: DBSession = Depends(get_db)):
     """Synchronous policy import from mounted directories."""
@@ -297,7 +297,7 @@ def trigger_import_policies(db: DBSession = Depends(get_db)):
 
 @router.post(
     "/import-policies/async",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_import_policies_async():
     """Async policy import via Celery worker."""
@@ -307,7 +307,7 @@ def trigger_import_policies_async():
 
 @router.post(
     "/import-framework-workbooks",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_import_framework_workbooks(db: DBSession = Depends(get_db)):
     """Synchronous import of 188 framework workbook structures from SCR generators."""
@@ -320,7 +320,7 @@ def trigger_import_framework_workbooks(db: DBSession = Depends(get_db)):
 
 @router.post(
     "/import-framework-workbooks/async",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_import_framework_workbooks_async():
     """Async framework workbook import via Celery worker."""
@@ -330,7 +330,7 @@ def trigger_import_framework_workbooks_async():
 
 @router.post(
     "/import-operational",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_import_operational(db: DBSession = Depends(get_db)):
     """Synchronous import of 53 operational compliance checklists from SCR scripts."""
@@ -343,7 +343,7 @@ def trigger_import_operational(db: DBSession = Depends(get_db)):
 
 @router.post(
     "/import-operational/async",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_import_operational_async():
     """Async operational import via Celery worker."""
@@ -353,7 +353,7 @@ def trigger_import_operational_async():
 
 @router.post(
     "/import-privacy",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_import_privacy(db: DBSession = Depends(get_db)):
     """Synchronous import of PRIV + CLD compliance checklists from SCR scripts."""
@@ -367,7 +367,7 @@ def trigger_import_privacy(db: DBSession = Depends(get_db)):
 
 @router.post(
     "/import-privacy/async",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_import_privacy_async():
     """Async PRIV + CLD checklist import via Celery worker."""
@@ -377,7 +377,7 @@ def trigger_import_privacy_async():
 
 @router.post(
     "/import-implementations",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_import_implementations(db: DBSession = Depends(get_db)):
     """Synchronous IMP import from Framework mount."""
@@ -391,7 +391,7 @@ def trigger_import_implementations(db: DBSession = Depends(get_db)):
 
 @router.post(
     "/import-implementations/async",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_import_implementations_async():
     """Async IMP import via Celery worker."""
@@ -402,7 +402,7 @@ def trigger_import_implementations_async():
 @router.get(
     "/search/status",
     response_model=SearchStatus,
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def get_search_status():
     """Return OpenSearch cluster health and index document counts."""
@@ -412,7 +412,7 @@ def get_search_status():
 
 @router.post(
     "/reindex",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def trigger_reindex(db: DBSession = Depends(get_db)):
     """Full reindex: delete indices, recreate, re-parse all files and index.
@@ -545,7 +545,7 @@ def trigger_reindex(db: DBSession = Depends(get_db)):
 
 @router.get(
     "/orphans",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def scan_orphans(db: DBSession = Depends(get_db)):
     """Scan DB for implementation and policy records whose file_path no longer exists on disk."""
@@ -581,7 +581,7 @@ def scan_orphans(db: DBSession = Depends(get_db)):
 
 @router.delete(
     "/orphans",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def purge_orphans(db: DBSession = Depends(get_db)):
     """Delete all implementation and policy records whose file_path no longer exists on disk."""
@@ -624,7 +624,7 @@ def purge_orphans(db: DBSession = Depends(get_db)):
 
 @router.post(
     "/reset-content",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def reset_content(db: DBSession = Depends(get_db)):
     """Wipe all imported content (POLs, IMPs, Assessments, QA results) and re-import from source.
@@ -746,7 +746,7 @@ def reset_content(db: DBSession = Depends(get_db)):
 
 @router.post(
     "/import-external",
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 async def import_external_doc(
     file: UploadFile = File(...),
@@ -819,7 +819,7 @@ def list_users(
     "/users",
     response_model=UserRead,
     status_code=201,
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def create_user(
     body: UserCreate,
@@ -913,7 +913,7 @@ def update_user(
 @router.delete(
     "/users/{user_id}",
     status_code=204,
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def delete_user(user_id: str, db: DBSession = Depends(get_db)):
     """Delete a user account."""
@@ -939,7 +939,7 @@ def delete_user(user_id: str, db: DBSession = Depends(get_db)):
 @router.get(
     "/audit-log",
     response_model=AuditLogPage,
-    dependencies=[Depends(require_role(UserRole.ADMIN))],
+    dependencies=[Depends(require_admin)],
 )
 def get_audit_log(
     db: DBSession = Depends(get_db),
