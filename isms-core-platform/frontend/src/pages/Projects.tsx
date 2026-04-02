@@ -9,6 +9,7 @@ import {
   Chip,
   Collapse,
   Dialog,
+  Divider,
   DialogActions,
   DialogContent,
   DialogTitle,
@@ -484,7 +485,7 @@ export default function Projects() {
       />
 
       {/* Filters */}
-      <Box sx={{ display: 'flex', gap: 1.5, mb: 3, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Box sx={{ display: 'flex', gap: 1, mb: 3, flexWrap: 'wrap', alignItems: 'center' }}>
         <Box sx={{ display: 'flex', gap: 0.5 }}>
           {families.map(f => {
             const active = familyFilter === f
@@ -507,6 +508,7 @@ export default function Projects() {
             )
           })}
         </Box>
+        <Divider orientation="vertical" flexItem sx={{ mx: 0.5 }} />
         <Box sx={{ display: 'flex', gap: 0.5 }}>
           {statuses.map(s => {
             const active = statusFilter === s
