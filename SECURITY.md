@@ -34,6 +34,13 @@ We will:
 - Vulnerabilities in third-party tools or services not distributed with ISMS CORE
 - Social engineering, spam, or physical attacks
 
+## Authentication Security
+
+ISMS CORE supports TOTP-based MFA (RFC 6238) for all user accounts. We recommend:
+- Enabling MFA on all admin and super_admin accounts before production use
+- Rotating the `SECRET_KEY` environment variable when deploying to a new environment
+- Using strong, unique values for `POSTGRES_PASSWORD` and `SECRET_KEY` (minimum 32 characters, randomly generated)
+
 ## Safe Handling
 
 - Do not include secrets, tokens, private keys, or customer data in vulnerability reports.

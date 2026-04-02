@@ -99,7 +99,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | `isms-core-redis` | Redis 8 Alpine | Session cache + Celery task broker. Internal only. |
 | `isms-core-opensearch` | OpenSearch 3.x | Full-text search over policy and IMP document content. Internal only. |
 | `isms-core-worker` | Celery 5.3 | Background tasks — import, sync, compliance recalculation. Queue: `isms`. |
-| `isms-core-beat` | Celery Beat | Scheduled jobs — nightly evidence archive at 02:00 UTC. No healthcheck (by design — see Troubleshooting). |
+| `isms-core-beat` | Celery Beat | Scheduled jobs — nightly evidence archive at 02:00 UTC; daily KPI metrics snapshots at 06:00 UTC. No healthcheck (by design — see Troubleshooting). |
 
 > **Access in production:** `https://{HOST_IP}` via nginx. Do NOT access `:3000` or `:8000` directly — those ports are not exposed in production.
 
@@ -192,6 +192,19 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Approval Workflow** | Content state lifecycle: draft → review → approved → published |
 | **Privacy Product** | 21 ISO 27701:2025 control groups — PRIV-POL imported; compliance checklists in Assessments |
 | **Cloud Product** | 12 ISO 27018:2025 control groups — CLD-POL imported; compliance checklists in Assessments |
+| **Risk Register** | Project-scoped risk scenarios with 5×5 probability/impact matrix and visual risk heatmap |
+| **Risk Heatmap** | Colour-coded 5×5 grid (probability × impact) — view all risks at a glance, drill into any cell |
+| **Remediation + ITSM Push** | Risk acceptance sign-off + action plans with ETA, cost, effort, and progress tracking; idempotent outbound push to Jira / ServiceNow; ticket status sync |
+| **KPI Dashboard** | 9 named metrics: `compliance_score`, `policy_coverage`, `risk_score_avg`, `risk_critical_count`, `evidence_freshness`, `gap_open_count`, `gap_closure_rate`, `remediation_overdue`, `audit_readiness`; sparkline trend charts per metric |
+| **Audit Readiness Score** | Composite hero score derived from all 9 KPI metrics — shown prominently on the KPI dashboard |
+| **Metrics Portfolio** | `super_admin` role can view KPI metrics across all organisations from a single portfolio view |
+| **TPRM** | Vendor/supplier register with criticality rating; DORA ICT service type, entity type, and substitutability fields; vendor assessments; contract tracking with expiry alerts; dedicated DORA register view |
+| **BIA** | Business Impact Analysis — asset records with RTO/RPO/MTPD hours; financial, operational, reputational, and regulatory impact scores; recovery testing tracking; BIA tab on A.5.29/A.5.30 control groups |
+| **EBIOS RM** | Full 5-workshop ANSSI risk methodology — feared events, risk sources, strategic scenarios (likelihood × gravity matrix), attack paths with MITRE ATT&CK technique mapping, security measures mapped to ISO 27001 controls |
+| **Custom Framework Import** | YAML-based upload of custom or sector-specific control frameworks; auto-mapped against ISO 27001 via `iso_mappings`; coverage percentage shown in Coverage page |
+| **Cross-Framework Coverage** | BFS inference maps ISO 27001 assessment coverage to NIS2, DORA, and GDPR automatically; Mapping Matrix and Inferred Coverage tabs |
+| **MFA** | TOTP-based two-factor authentication — Google Authenticator / Authy compatible; QR code setup in System page; 8 single-use backup codes; auto-submits on 6-digit entry |
+| **Project-Scoped Risk/Gaps/Evidence** | Risk scenarios, gaps, and evidence items are scoped to the active project — switching projects switches context |
 
 ---
 
@@ -544,6 +557,8 @@ The runner is independent from the main stack. You can start, stop, or update it
 | **Microsoft** | Entra ID, Microsoft Defender, Microsoft Sentinel, Microsoft Intune, Microsoft 365, Microsoft Purview, Azure CSPM |
 | **Network & Firewall** | FortiGate, FortiAnalyzer, FortiManager, Palo Alto PAN-OS, Cisco ASA, Cisco ISE, Zscaler |
 | **ITSM** | ServiceNow, Jira / Jira Service Management, GLPI |
+
+> **Jira and ServiceNow — bidirectional:** In addition to inbound evidence collection, Jira and ServiceNow support outbound ITSM push. Gap records and remediation actions can be pushed as tickets directly from the Gap Management and Remediation pages. Push is idempotent (will not create duplicates) and ticket status syncs back to the platform.
 | **Vulnerability & EDR** | Qualys, Tenable.sc, Tenable.io, CrowdStrike Falcon, SentinelOne, Wazuh, OpenVAS |
 | **Identity & PAM** | Windows Active Directory, LDAP, FreeIPA, Authentik, Keycloak, CyberArk, HashiCorp Vault, Devolutions Server |
 | **Monitoring & SIEM** | PRTG Network Monitor, Graylog, Zabbix, Generic SIEM |
@@ -792,6 +807,7 @@ Use this checklist before declaring the deployment live.
 - [ ] Email profile started if needed (`--profile mailpit` or `--profile smtp-bridge`)
 - [ ] Connector runner started if using automated evidence (`cd connectors/ && docker compose up -d`)
 - [ ] `ANTHROPIC_API_KEY` set if using ISMS Compass AI gap analysis
+- [ ] MFA enabled on all admin accounts (System → MFA Setup — scan QR code with Google Authenticator or Authy, save backup codes)
 
 ---
 

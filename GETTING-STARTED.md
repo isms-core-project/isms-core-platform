@@ -152,6 +152,21 @@ Open `https://{HOST_IP}` in your browser (replace with your server IP or FQDN).
 
 ---
 
+## Security: Enable MFA
+
+We strongly recommend enabling MFA on all admin accounts before going to production.
+
+1. Log in → navigate to **System** (admin sidebar)
+2. In the **Security** section, click **Enable MFA**
+3. Scan the QR code with Google Authenticator, Authy, or any TOTP app
+4. Enter the 6-digit code to confirm
+5. **Copy your 8 backup codes** and store them securely — they are shown once
+
+On next login, after entering your password you will be prompted for a 6-digit TOTP code.
+If you lose your authenticator app, use a backup code on the login screen.
+
+---
+
 ## Initial Data Import
 
 Run `bootstrap.sh` once after first boot. It handles everything automatically:
@@ -192,6 +207,12 @@ The script: waits for the stack to be healthy → authenticates → runs all 6 i
 | **QA** | Existence checker — validates artifact completeness across all four products |
 | **NIST CSF 2.0** | Assessment tool — 106 subcategories, tier ratings, gap report, XLSX import/export |
 | **NIS2 / DORA / CIS Controls v8** | Regulatory assessment tools — maturity scoring 0–4, grouped by article/chapter/control |
+| **Risk Register** | Risk register — empty, ready for data entry |
+| **KPI Metrics** | KPI dashboard — empty, ready for data entry |
+| **TPRM** | Third-party risk management — empty, ready for data entry |
+| **BIA** | Business Impact Analysis — empty, ready for data entry |
+| **EBIOS RM** | EBIOS Risk Manager — empty, ready for data entry |
+| **Remediation** | Remediation tracking — linked to gaps, ready for assignment |
 | **Admin** | User management, system health, import controls |
 
 ---

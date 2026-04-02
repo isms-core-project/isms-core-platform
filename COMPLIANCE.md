@@ -5,7 +5,7 @@
 <h1 align="center">🎋 ISMS CORE — Compliance Assessment Modules</h1>
 
 <p align="center">
-  <strong>Ten regulatory frameworks. One platform. No separate tools required.</strong>
+  <strong>Eleven built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
 
 ## Overview
 
-ISMS CORE Platform includes a unified compliance assessment layer covering 10 regulatory frameworks across Europe and North America. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
+ISMS CORE Platform includes a unified compliance assessment layer covering 11 built-in frameworks across Europe and North America, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
 
 Assessment results can be grouped into **Assessment Collections** — named bundles that aggregate status across multiple frameworks for reporting or audit purposes, with CSV, XLSX (colour-coded), and PDF (A4) export.
 
@@ -42,6 +42,7 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [EU Cyber Resilience Act](#eu-cyber-resilience-act-20242847) | EU Regulation | 26 requirements | 6 Groups | 0–4 | EU product manufacturers |
 | [EU AI Act](#eu-ai-act-20241689) | EU Regulation | 25 articles | 6 Groups | 0–4 | EU AI system providers/deployers |
 | [EU Cloud Sovereignty Framework](#eu-cloud-sovereignty-framework-v121) | EC DG DIGIT | 8 Sovereignty Objectives | 1 Group (SEAL) | SEAL 0–4 | EU institutions / public sector cloud procurement |
+| [Custom (YAML)](#custom-frameworks-yaml-import) | User-defined | User-defined | User-defined | User-defined | All |
 
 ---
 
@@ -273,6 +274,32 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 - SEAL ratings are qualitative judgements; formal procurement decisions require vendor audit evidence and contractual commitments
 - SOV-5 Supply Chain assessment requires visibility into sub-supplier chains — depth of evidence may vary by vendor transparency
 - Environmental Sustainability (SOV-8) scoring is indicative; formal green procurement may require certified energy/carbon data
+
+---
+
+### Custom Frameworks (YAML Import)
+
+Upload any custom, sector-specific, or proprietary control framework via YAML. Once imported, the platform maps each control against ISO 27001:2022 via `iso_mappings` fields and shows inferred coverage in the Coverage page.
+
+**YAML format:**
+```yaml
+name: "My Framework"
+short_code: "MY_FW"
+version: "1.0"
+description: "Optional"
+controls:
+  - id: "MY.1.1"
+    title: "Control title"
+    category: "Access Control"
+    iso_mappings: ["A.5.15", "A.8.2"]
+    tags: ["identity"]
+```
+
+**Key fields per control:** `id` (required), `title` (required), `category`, `subcategory`, `priority` (HIGH/MEDIUM/LOW), `iso_mappings` (list of ISO 27001:2022 Annex A refs), `tags`.
+
+**Coverage display:** After import, the Coverage page Mapping Matrix tab shows a custom framework coverage section with percentage, progress bar, and per-control breakdown.
+
+**Admin only:** Import and deletion require admin or super_admin role.
 
 ---
 

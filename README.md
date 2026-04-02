@@ -68,7 +68,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td>Foundation ISMS for SMEs — operational policies with single-sheet compliance checklists</td>
 <td>Privacy information management — controller, processor, and shared control groups</td>
 <td>PII protection in public cloud — compliance checklists for cloud service providers</td>
-<td>API + WebUI — turns all content products into a live compliance management system</td>
+<td>API + WebUI — turns all content products into a live compliance management system; modules include Risk Register, KPI Metrics, TPRM, BIA, EBIOS RM, ITSM push, Cross-Framework Coverage, Custom Framework Import, and MFA</td>
 </tr>
 <tr>
 <td><strong>For</strong></td>
@@ -305,6 +305,14 @@ python3 generate_cld_checklist_a11.py
 <td align="center"><strong>EU Cyber Resilience Act</strong><br/><img src="screenshots/18_isms-core_eu-cra.png" width="380" alt="EU Cyber Resilience Act — product security requirements assessment"/></td>
 <td align="center"><strong>EU AI Act Assessment</strong><br/><img src="screenshots/19_isms-core_eu-ai.png" width="380" alt="EU AI Act — risk classification and compliance requirements for AI systems"/></td>
 </tr>
+<tr>
+<td align="center"><strong>Risk Register</strong><br/><img src="screenshots/22_isms-core_risk-register.png" width="380" alt="Risk Register — 5×5 probability/impact matrix, risk heatmap, treatment workflow (mitigate/accept/transfer/avoid), project-scoped"/></td>
+<td align="center"><strong>KPI Metrics &amp; Audit Readiness</strong><br/><img src="screenshots/23_isms-core_kpi-metrics.png" width="380" alt="KPI dashboard — 9 named metrics, sparkline trends, Audit Readiness hero score, super_admin portfolio view"/></td>
+</tr>
+<tr>
+<td align="center"><strong>TPRM — Third-Party Risk</strong><br/><img src="screenshots/24_isms-core_tprm.png" width="380" alt="TPRM — vendor/supplier register with DORA ICT service fields, vendor assessments, contract expiry alerts, DORA register view"/></td>
+<td align="center"><strong>EBIOS RM</strong><br/><img src="screenshots/25_isms-core_ebios.png" width="380" alt="EBIOS RM — 5-workshop ANSSI methodology, feared events, risk sources, strategic scenarios, MITRE ATT&CK attack paths"/></td>
+</tr>
 </table>
 
 ---
@@ -494,6 +502,17 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | Platform (API + WebUI) | v1.0 live — 44 connectors | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 | Products integrated | ISMS + Privacy + Cloud | ![v1.0](https://img.shields.io/badge/v1.0-2E8B57?style=flat-square) |
 | Compliance assessment modules | 11 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| Risk Register + Heatmap | 5×5 probability/impact matrix, treatment workflow | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| Risk Acceptance & Remediation | Formal sign-off, action plans with ETA/cost/progress | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| Cross-Framework Coverage | BFS inference: ISO 27001 → NIS2, DORA, GDPR | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| KPI / Metrics | 9 named metrics, sparklines, Audit Readiness score, Celery daily snapshots | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| TPRM | Vendor register, DORA ICT fields, contract tracking | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| ITSM Integrations | Jira + ServiceNow — evidence pull + ticket push (gaps/remediation) | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| BIA | Asset RTO/RPO/MTPD, financial/reputational impact scores, recovery testing | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| EBIOS RM | 5-workshop ANSSI methodology, MITRE ATT&CK attack paths | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| Custom Framework Import | YAML upload, auto-mapped to ISO 27001, coverage % | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| MFA | TOTP (Google Authenticator / Authy), QR setup, 8 backup codes | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| DB migrations | Revision 041 | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 
 ---
 
