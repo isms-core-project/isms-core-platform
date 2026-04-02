@@ -387,7 +387,7 @@ export default function Remediation() {
         subtitle={activeProject
           ? `${activeProject.name} · POA&M — ISO 27001:2022 §6.1.3`
           : 'Plan of Action and Milestones (POA&M) — ISO 27001:2022 §6.1.3'}
-        action={
+        actions={
           <Tooltip title={!activeProject ? 'Select a project first to create remediation actions' : ''}>
             <span>
               <Button variant="contained" size="small" startIcon={<AddOutlined />}
