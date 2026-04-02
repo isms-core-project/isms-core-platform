@@ -1,10 +1,15 @@
 import { useState, useMemo } from 'react'
 import { useProduct, PRODUCT_SUBTITLES, PRODUCT_COLORS } from '../store/ProductContext'
-import { LockPersonOutlined, CloudOutlined } from '@mui/icons-material'
+import { LockPersonOutlined, CloudOutlined, ExpandMoreOutlined, ExpandLessOutlined } from '@mui/icons-material'
 import {
   Box,
   Card,
   CardContent,
+  Collapse,
+  IconButton,
+  LinearProgress,
+  Tab,
+  Tabs,
   Typography,
   Select,
   MenuItem,
@@ -28,6 +33,8 @@ import {
 import { useQuery } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
 import { dashboardApi, type CoverageGap } from '../api/dashboard'
+import { projectsApi, type ProjectRead } from '../api/projectsApi'
+import { client } from '../api/client'
 import PageHeader from '../components/PageHeader'
 
 interface CoverageMapping {
@@ -85,8 +92,148 @@ const MISSING_CHIP: Record<string, { bg: string; color: string }> = {
   assessment:  { bg: 'rgba(192,0,0,0.15)',    color: '#FFC7CE' },
 }
 
+// ── Inferred Coverage tab ─────────────────────────────────────────────────────
+
+interface InferredResult {
+  framework: string
+  framework_code: string
+  total_controls: number
+  covered_controls: number
+  uncovered_controls: number
+  coverage_pct: number
+}
+
+interface GapEntry {
+  target_control_id: string
+  target_control_title: string
+  iso_controls_needed: { id: string; title: string }[]
+}
+
+const PCT_COLOR = (pct: number) =>
+  pct >= 75 ? '#4CAF50' : pct >= 40 ? '#FF9800' : '#F44336'
+
+function FrameworkCoverageCard({ result, projectId }: { result: InferredResult; projectId: string }) {
+  const [expanded, setExpanded] = useState(false)
+  const color = PCT_COLOR(result.coverage_pct)
+
+  const { data: gapData, isLoading: gapLoading } = useQuery({
+    queryKey: ['coverage-gap-map', result.framework_code, projectId],
+    queryFn: () => client.get('/coverage/gap-map', { params: { target_framework: result.framework_code, project_id: projectId || undefined } }).then(r => r.data as { gaps: GapEntry[]; gap_count: number }),
+    enabled: expanded,
+  })
+
+  return (
+    <Box sx={{ border: '1px solid', borderColor: `${color}30`, borderRadius: 1.5, overflow: 'hidden', mb: 1 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, px: 2, py: 1.25, bgcolor: `${color}08`, cursor: 'pointer' }} onClick={() => setExpanded(e => !e)}>
+        <Box sx={{ flex: 1 }}>
+          <Typography variant="body2" sx={{ fontWeight: 600, fontSize: '0.82rem' }}>{result.framework}</Typography>
+          <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.disabled' }}>
+            {result.covered_controls} / {result.total_controls} controls covered
+          </Typography>
+        </Box>
+        <Box sx={{ width: 160 }}>
+          <LinearProgress variant="determinate" value={result.coverage_pct}
+            sx={{ height: 6, borderRadius: 3, bgcolor: `${color}20`, '& .MuiLinearProgress-bar': { bgcolor: color } }} />
+        </Box>
+        <Typography variant="body2" sx={{ fontWeight: 700, color, minWidth: 44, textAlign: 'right', fontSize: '0.9rem' }}>
+          {result.coverage_pct}%
+        </Typography>
+        <IconButton size="small" sx={{ p: 0.25 }}>
+          {expanded ? <ExpandLessOutlined sx={{ fontSize: 16 }} /> : <ExpandMoreOutlined sx={{ fontSize: 16 }} />}
+        </IconButton>
+      </Box>
+
+      <Collapse in={expanded}>
+        <Box sx={{ px: 2, py: 1.5, borderTop: '1px solid', borderColor: 'divider' }}>
+          {gapLoading && <Skeleton height={40} />}
+          {gapData && gapData.gap_count === 0 && (
+            <Typography variant="caption" sx={{ color: 'success.main' }}>✓ Full coverage — all controls addressed</Typography>
+          )}
+          {gapData && gapData.gaps.length > 0 && (
+            <>
+              <Typography variant="caption" sx={{ fontWeight: 600, fontSize: '0.68rem', color: 'text.secondary', textTransform: 'uppercase', display: 'block', mb: 1 }}>
+                {gapData.gap_count} uncovered controls
+              </Typography>
+              <Box sx={{ maxHeight: 280, overflowY: 'auto' }}>
+                {gapData.gaps.map((g: GapEntry) => (
+                  <Box key={g.target_control_id} sx={{ mb: 1, pb: 1, borderBottom: '1px solid', borderColor: 'divider', '&:last-child': { borderBottom: 'none', mb: 0, pb: 0 } }}>
+                    <Typography variant="caption" sx={{ fontWeight: 600, fontSize: '0.72rem' }}>
+                      {g.target_control_id} — {g.target_control_title}
+                    </Typography>
+                    {g.iso_controls_needed.length > 0 && (
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mt: 0.5 }}>
+                        {g.iso_controls_needed.slice(0, 4).map(iso => (
+                          <Chip key={iso.id} label={iso.id} size="small"
+                            sx={{ height: 16, fontSize: '0.58rem', bgcolor: 'rgba(255,152,0,0.1)', color: '#FF9800' }} />
+                        ))}
+                        {g.iso_controls_needed.length > 4 && (
+                          <Typography variant="caption" sx={{ fontSize: '0.6rem', color: 'text.disabled', alignSelf: 'center' }}>
+                            +{g.iso_controls_needed.length - 4} more
+                          </Typography>
+                        )}
+                      </Box>
+                    )}
+                  </Box>
+                ))}
+              </Box>
+            </>
+          )}
+        </Box>
+      </Collapse>
+    </Box>
+  )
+}
+
+function InferredCoverage() {
+  const [projectId, setProjectId] = useState('')
+
+  const { data: projects } = useQuery({
+    queryKey: ['projects-list'],
+    queryFn: () => projectsApi.list(),
+  })
+
+  const { data, isLoading } = useQuery({
+    queryKey: ['coverage-inferred', projectId],
+    queryFn: () => client.get('/coverage/multi-framework', { params: { project_id: projectId || undefined } }).then(r => r.data as { assessed_controls: number; frameworks: InferredResult[] }),
+  })
+
+  return (
+    <Box>
+      <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', mb: 2.5 }}>
+        <FormControl size="small" sx={{ minWidth: 260 }}>
+          <InputLabel>Project scope</InputLabel>
+          <Select value={projectId} label="Project scope" onChange={e => setProjectId(e.target.value)}>
+            <MenuItem value="">Org-wide (all assessments)</MenuItem>
+            {(projects ?? []).map((p: ProjectRead) => (
+              <MenuItem key={p.id} value={p.id}>{p.name}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        {data && (
+          <Typography variant="caption" sx={{ color: 'text.disabled' }}>
+            Based on {data.assessed_controls} assessed ISO 27001 control groups
+          </Typography>
+        )}
+      </Box>
+
+      {isLoading && [0,1,2,3,4].map(i => <Skeleton key={i} height={52} sx={{ mb: 1 }} />)}
+
+      {data?.frameworks.filter(f => f.total_controls > 0).map(r => (
+        <FrameworkCoverageCard key={r.framework_code} result={r} projectId={projectId} />
+      ))}
+
+      {data?.frameworks.length === 0 && (
+        <Alert severity="info" sx={{ mt: 2 }}>No crosswalk data loaded — run the dataset bootstrap to load framework mappings.</Alert>
+      )}
+    </Box>
+  )
+}
+
+// ── Main page ─────────────────────────────────────────────────────────────────
+
 export default function Coverage() {
   const { product, ismsTier } = useProduct()
+  const [activeTab, setActiveTab] = useState(0)
   const [selectedFramework, setSelectedFramework] = useState('')
   const [showUnmapped, setShowUnmapped] = useState(false)
   const [page, setPage] = useState(0)
@@ -147,10 +294,12 @@ export default function Coverage() {
   return (
     <Box>
       <PageHeader
-        title="Framework Coverage Matrix"
-        subtitle={`${PRODUCT_SUBTITLES[product]} mapped to ${cov?.frameworks.length ?? '...'} frameworks · ${(cov?.total_mappings ?? 0).toLocaleString()} total mappings`}
+        title="Framework Coverage"
+        subtitle={activeTab === 0
+          ? `${PRODUCT_SUBTITLES[product]} mapped to ${cov?.frameworks.length ?? '...'} frameworks · ${(cov?.total_mappings ?? 0).toLocaleString()} total mappings`
+          : 'Inferred compliance coverage across target frameworks based on project assessments'}
         actions={
-          cov && (
+          activeTab === 0 && cov && (
             <FormControl size="small" sx={{ minWidth: 240 }}>
               <InputLabel>Framework</InputLabel>
               <Select
@@ -173,6 +322,19 @@ export default function Coverage() {
           )
         }
       />
+
+      <Tabs
+        value={activeTab}
+        onChange={(_, v) => setActiveTab(v)}
+        sx={{ mb: 2.5, borderBottom: '1px solid', borderColor: 'divider', minHeight: 36, '& .MuiTab-root': { minHeight: 36, py: 0.75, fontSize: '0.8rem' } }}
+      >
+        <Tab label="Mapping Matrix" />
+        <Tab label="Inferred Coverage" />
+      </Tabs>
+
+      {activeTab === 1 && <InferredCoverage />}
+
+      {activeTab === 0 && <>
 
       {/* Cloud sub-framework toggle */}
       {product === 'cloud' && (
@@ -529,6 +691,8 @@ export default function Coverage() {
           </TableContainer>
         )}
       </Box>
+
+      </>}
     </Box>
   )
 }
