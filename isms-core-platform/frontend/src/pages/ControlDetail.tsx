@@ -32,6 +32,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { controlsApi } from '../api/controls'
 import { assessmentsApi } from '../api/assessmentsApi'
 import { connectorsApi, ConnectorRead, ConnectorEvidenceRead, KNOWN_SYSTEMS } from '../api/connectorsApi'
+import { biaApi, type BIARecord } from '../api/biaApi'
 import { useProduct } from '../store/ProductContext'
 import StatusChip from '../components/StatusChip'
 import AiAssistant from '../components/AiAssistant'
@@ -1794,6 +1795,15 @@ export default function ControlDetail() {
     queryFn: () => connectorsApi.list(),
     staleTime: 30_000,
   })
+
+  const isBiaControl = cg?.group_code?.startsWith('a.5.29') || cg?.group_code?.startsWith('a.5.30')
+
+  const { data: biaRecords } = useQuery({
+    queryKey: ['bia-for-control', cg?.id],
+    queryFn: () => biaApi.list(),
+    enabled: !!cg && isBiaControl,
+  })
+
   const needsGeneratorPick = generatorsForGroup.length > 1
   const drawerGeneratorId = needsGeneratorPick ? pickerGeneratorId : (generatorsForGroup[0]?.document_id ?? undefined)
 
@@ -1835,6 +1845,7 @@ export default function ControlDetail() {
   const TAB_MAPPINGS = 4
   const TAB_EVIDENCE = 5
   const TAB_GAPS = 6
+  const TAB_BIA = 7
 
   const tabs = [
     { label: `Policies (${visiblePolicies.length})` },
@@ -1844,6 +1855,7 @@ export default function ControlDetail() {
     { label: `ISO Mappings (${cg.iso_controls.length})` },
     { label: `Evidence (${cg.evidence_total + connectorEvidence.length})` },
     ...(cg.gaps.length > 0 ? [{ label: `Gaps (${cg.gaps.length})` }] : []),
+    ...(isBiaControl ? [{ label: `BIA (${biaRecords?.length ?? 0})` }] : []),
   ]
 
   return (
@@ -2364,6 +2376,41 @@ export default function ControlDetail() {
                   <Typography variant="body2">{gap.description}</Typography>
                 </Box>
               ))}
+            </TabPanel>
+          )}
+
+          {/* BIA */}
+          {isBiaControl && (
+            <TabPanel value={tab} index={TAB_BIA}>
+              {!biaRecords?.length ? (
+                <Typography variant="body2" color="text.secondary">
+                  No BIA records. Add assets in the BIA module.
+                </Typography>
+              ) : (
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                  {biaRecords.map((r: BIARecord) => (
+                    <Box key={r.id} sx={{ p: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: 2 }}>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                        <Box>
+                          <Typography variant="body2" fontWeight={600}>{r.asset_name}</Typography>
+                          <Typography variant="caption" color="text.secondary">{r.asset_type}</Typography>
+                        </Box>
+                        <Chip
+                          label={r.recovery_tested ? 'Tested' : 'Not Tested'}
+                          size="small"
+                          sx={{ bgcolor: r.recovery_tested ? '#4CAF5020' : '#FF980020', color: r.recovery_tested ? '#4CAF50' : '#FF9800', border: 'none' }}
+                        />
+                      </Box>
+                      <Box sx={{ display: 'flex', gap: 2, mt: 1 }}>
+                        {r.rto_hours != null && <Typography variant="caption" color="text.secondary">RTO: <strong>{r.rto_hours}h</strong></Typography>}
+                        {r.rpo_hours != null && <Typography variant="caption" color="text.secondary">RPO: <strong>{r.rpo_hours}h</strong></Typography>}
+                        {r.mtpd_hours != null && <Typography variant="caption" color="text.secondary">MTPD: <strong>{r.mtpd_hours}h</strong></Typography>}
+                        <Typography variant="caption" color="text.secondary">Avg Impact: <strong>{r.avg_impact.toFixed(1)}</strong></Typography>
+                      </Box>
+                    </Box>
+                  ))}
+                </Box>
+              )}
             </TabPanel>
           )}
         </CardContent>

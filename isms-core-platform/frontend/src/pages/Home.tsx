@@ -23,6 +23,9 @@ import {
   FolderOpenOutlined,
   BuildOutlined,
   InsightsOutlined,
+  HandshakeOutlined,
+  HealthAndSafetyOutlined,
+  PsychologyOutlined,
 } from '@mui/icons-material'
 import { useQuery } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
@@ -43,6 +46,9 @@ const PLATFORM_TOOLS = [
   { label: 'Risk',         path: '/risk',         icon: <GppMaybeOutlined sx={{ fontSize: 17 }} /> },
   { label: 'Remediation',  path: '/remediation',  icon: <BuildOutlined sx={{ fontSize: 17 }} /> },
   { label: 'KPI Metrics',  path: '/metrics',      icon: <InsightsOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'TPRM',         path: '/tprm',         icon: <HandshakeOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'BIA',          path: '/bia',           icon: <HealthAndSafetyOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'EBIOS RM',     path: '/ebios',        icon: <PsychologyOutlined sx={{ fontSize: 17 }} /> },
   { label: 'Admin',        path: '/admin',        icon: <AdminPanelSettingsOutlined sx={{ fontSize: 17 }} /> },
   { label: 'System',       path: '/system',       icon: <MonitorHeartOutlined sx={{ fontSize: 17 }} /> },
 ]

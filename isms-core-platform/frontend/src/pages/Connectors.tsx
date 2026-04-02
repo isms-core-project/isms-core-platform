@@ -15,6 +15,7 @@ import {
   FormControlLabel,
   IconButton,
   LinearProgress,
+  Link,
   MenuItem,
   Paper,
   Select,
@@ -73,6 +74,8 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { connectorsApi, CONNECTOR_CONFIG_SCHEMA, CONNECTOR_CONTROLS, KNOWN_SYSTEMS } from '../api/connectorsApi'
 import type { ArchiveStats, ConfigField, ConnectorLogEntry, ConnectorRead, ConnectorRegistered } from '../api/connectorsApi'
+import { itsmApi } from '../api/itsmApi'
+import type { ItsmTicket } from '../api/itsmApi'
 import PageHeader from '../components/PageHeader'
 
 dayjs.extend(relativeTime)
@@ -1025,6 +1028,150 @@ function RegisterDialog({ onClose }: { onClose: () => void }) {
   )
 }
 
+// ── Ticket Status colours ─────────────────────────────────────────────────────
+
+const TICKET_STATUS_COLOUR: Record<string, string> = {
+  open:       '#607D8B',
+  new:        '#607D8B',
+  in_progress:'#FF9800',
+  done:       '#4CAF50',
+  resolved:   '#4CAF50',
+  closed:     '#4CAF50',
+}
+
+// ── Ticket List Dialog ────────────────────────────────────────────────────────
+
+function TicketListDialog({ connector, onClose }: { connector: ConnectorRead; onClose: () => void }) {
+  const qc = useQueryClient()
+
+  const { data: tickets = [], isLoading } = useQuery<ItsmTicket[]>({
+    queryKey: ['connector-tickets', connector.id],
+    queryFn: () => itsmApi.listConnectorTickets(connector.id),
+  })
+
+  const syncOne = useMutation({
+    mutationFn: (ticketId: string) => itsmApi.syncTicket(ticketId),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ['connector-tickets', connector.id] }),
+  })
+
+  return (
+    <Dialog open onClose={onClose} maxWidth="md" fullWidth>
+      <DialogTitle>
+        Pushed Tickets — {connector.name}
+        <Typography variant="body2" color="text.secondary" fontWeight={400} sx={{ mt: 0.25 }}>
+          {systemLabel(connector.source_system)}
+        </Typography>
+      </DialogTitle>
+      <DialogContent sx={{ pt: 2 }}>
+        {isLoading ? (
+          <LinearProgress sx={{ borderRadius: 1 }} />
+        ) : tickets.length === 0 ? (
+          <Box sx={{ py: 4, textAlign: 'center' }}>
+            <ConfirmationNumberOutlined sx={{ fontSize: 40, color: 'text.disabled', mb: 1 }} />
+            <Typography color="text.secondary">No tickets pushed yet</Typography>
+          </Box>
+        ) : (
+          <TableContainer component={Paper} variant="outlined">
+            <Table size="small">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Ticket ID</TableCell>
+                  <TableCell>Source</TableCell>
+                  <TableCell>Status</TableCell>
+                  <TableCell>Last Synced</TableCell>
+                  <TableCell align="right" />
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {tickets.map((ticket) => (
+                  <TableRow key={ticket.id} hover>
+                    <TableCell>
+                      <Typography variant="body2" sx={{ fontFamily: 'monospace', fontSize: '0.78rem' }}>
+                        {ticket.url ? (
+                          <Link href={ticket.url} target="_blank" rel="noopener noreferrer" underline="hover">
+                            {ticket.ticket_id}
+                          </Link>
+                        ) : (
+                          ticket.ticket_id
+                        )}
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
+                        <Chip
+                          label={ticket.source_type}
+                          size="small"
+                          sx={{ height: 18, fontSize: '0.62rem', '& .MuiChip-label': { px: 0.6 } }}
+                        />
+                        <Typography
+                          variant="caption"
+                          sx={{ fontFamily: 'monospace', color: 'text.secondary', fontSize: '0.7rem' }}
+                        >
+                          {ticket.source_id.length > 8 ? `${ticket.source_id.slice(0, 8)}…` : ticket.source_id}
+                        </Typography>
+                      </Box>
+                    </TableCell>
+                    <TableCell>
+                      <Chip
+                        label={ticket.status}
+                        size="small"
+                        sx={{
+                          height: 18,
+                          fontSize: '0.62rem',
+                          '& .MuiChip-label': { px: 0.6 },
+                          bgcolor: TICKET_STATUS_COLOUR[ticket.status] ?? '#607D8B',
+                          color: '#fff',
+                        }}
+                      />
+                    </TableCell>
+                    <TableCell>
+                      <Typography variant="body2" color="text.secondary">
+                        {ticket.last_synced_at ? dayjs(ticket.last_synced_at).fromNow() : 'Never'}
+                      </Typography>
+                    </TableCell>
+                    <TableCell align="right">
+                      <Tooltip title="Sync ticket">
+                        <span>
+                          <IconButton
+                            size="small"
+                            disabled={syncOne.isPending}
+                            onClick={() => syncOne.mutate(ticket.id)}
+                          >
+                            <SyncOutlined
+                              fontSize="small"
+                              sx={{
+                                animation: syncOne.isPending && syncOne.variables === ticket.id ? 'spin 1s linear infinite' : 'none',
+                                '@keyframes spin': { '0%': { transform: 'rotate(0deg)' }, '100%': { transform: 'rotate(360deg)' } },
+                              }}
+                            />
+                          </IconButton>
+                        </span>
+                      </Tooltip>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        )}
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={onClose}>Close</Button>
+        {tickets.length > 0 && (
+          <Button
+            variant="outlined"
+            startIcon={syncOne.isPending ? <CircularProgress size={14} /> : <SyncOutlined />}
+            disabled={syncOne.isPending}
+            onClick={() => tickets.forEach((t) => syncOne.mutate(t.id))}
+          >
+            Sync All
+          </Button>
+        )}
+      </DialogActions>
+    </Dialog>
+  )
+}
+
 // ── Deregister Confirm ────────────────────────────────────────────────────────
 
 function DeregisterDialog({
@@ -1062,6 +1209,7 @@ export default function Connectors() {
   const [deregisterTarget, setDeregisterTarget] = useState<{ id: string; name: string } | null>(null)
   const [configureTarget, setConfigureTarget] = useState<ConnectorRead | null>(null)
   const [syncDetailTarget, setSyncDetailTarget] = useState<ConnectorRead | null>(null)
+  const [ticketListTarget, setTicketListTarget] = useState<ConnectorRead | null>(null)
   const [showArchive, setShowArchive] = useState(false)
 
   const { data: connectors = [], isLoading } = useQuery({
@@ -1279,6 +1427,13 @@ export default function Connectors() {
                             <SettingsOutlined fontSize="small" />
                           </IconButton>
                         </Tooltip>
+                        {(c.source_system === 'jira' || c.source_system === 'servicenow') && (
+                          <Tooltip title="View pushed tickets">
+                            <IconButton size="small" onClick={() => setTicketListTarget(c)}>
+                              <ConfirmationNumberOutlined fontSize="small" />
+                            </IconButton>
+                          </Tooltip>
+                        )}
                         <Tooltip title="Deregister connector">
                           <IconButton
                             size="small"
@@ -1314,6 +1469,9 @@ export default function Connectors() {
         <SyncDetailDialog connector={syncDetailTarget} onClose={() => setSyncDetailTarget(null)} />
       )}
       {showArchive && <ArchiveDialog onClose={() => setShowArchive(false)} />}
+      {ticketListTarget && (
+        <TicketListDialog connector={ticketListTarget} onClose={() => setTicketListTarget(null)} />
+      )}
       {deregisterTarget && (
         <DeregisterDialog
           connectorName={deregisterTarget.name}

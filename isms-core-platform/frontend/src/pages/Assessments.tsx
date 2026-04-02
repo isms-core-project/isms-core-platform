@@ -706,22 +706,26 @@ export default function Assessments() {
         {isLoading && <Skeleton variant="rectangular" height={80} sx={{ borderRadius: 2 }} />}
 
         {!isLoading && tierPlatform.length === 0 && (
-          <Box
-            onClick={() => setNewDialogOpen(true)}
-            sx={{
-              p: 3, borderRadius: 2, textAlign: 'center', cursor: 'pointer',
-              border: '1px dashed rgba(68,114,196,0.3)', bgcolor: 'rgba(68,114,196,0.03)',
-              '&:hover': { bgcolor: 'rgba(68,114,196,0.07)', borderColor: 'rgba(68,114,196,0.5)' },
-            }}
-          >
-            <AddOutlined sx={{ color: 'text.disabled', mb: 0.5 }} />
-            <Typography variant="body2" color="text.secondary">
-              No platform assessments yet — fill in your data directly, no Excel required.
-            </Typography>
-            <Typography variant="caption" color="primary.light" sx={{ mt: 0.5, display: 'block' }}>
-              Click to start a new assessment
-            </Typography>
-          </Box>
+          <Tooltip title={!activeProject ? 'Select a project first to create assessments' : ''}>
+            <Box
+              onClick={() => activeProject && setNewDialogOpen(true)}
+              sx={{
+                p: 3, borderRadius: 2, textAlign: 'center',
+                cursor: activeProject ? 'pointer' : 'default',
+                border: '1px dashed rgba(68,114,196,0.3)', bgcolor: 'rgba(68,114,196,0.03)',
+                opacity: activeProject ? 1 : 0.5,
+                '&:hover': activeProject ? { bgcolor: 'rgba(68,114,196,0.07)', borderColor: 'rgba(68,114,196,0.5)' } : {},
+              }}
+            >
+              <AddOutlined sx={{ color: 'text.disabled', mb: 0.5 }} />
+              <Typography variant="body2" color="text.secondary">
+                No platform assessments yet — fill in your data directly, no Excel required.
+              </Typography>
+              <Typography variant="caption" color={activeProject ? 'primary.light' : 'text.disabled'} sx={{ mt: 0.5, display: 'block' }}>
+                {activeProject ? 'Click to start a new assessment' : 'Select a project first'}
+              </Typography>
+            </Box>
+          </Tooltip>
         )}
 
         {!isLoading && tierPlatform.length > 0 && filteredPlatform.length === 0 && (
