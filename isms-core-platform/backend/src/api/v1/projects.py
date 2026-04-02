@@ -182,9 +182,13 @@ def list_projects(
     product_family: str | None = Query(None),
     status: str | None = Query(None),
     db: DBSession = Depends(get_db),
+    current_user: User = Depends(get_current_user),
     org_id: uuid.UUID = Depends(get_org_context),
 ):
-    q = select(Project).where(Project.organisation_id == org_id)
+    q = select(Project)
+    # super_admin sees all orgs' projects; everyone else is scoped to their own org
+    if current_user.role != UserRole.SUPER_ADMIN:
+        q = q.where(Project.organisation_id == org_id)
     if product_family:
         q = q.where(Project.product_family == product_family.upper())
     if status:
