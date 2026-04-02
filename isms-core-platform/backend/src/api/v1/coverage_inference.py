@@ -8,6 +8,9 @@ GET /api/v1/coverage/multi-framework
 
 GET /api/v1/coverage/gap-map
     ?project_id=&target_framework=DORA    uncovered target controls + missing ISO sources
+
+GET /api/v1/coverage/custom/{framework_id}
+    ?project_id=                          custom framework coverage based on iso_mappings
 """
 
 import logging
@@ -19,6 +22,8 @@ from sqlalchemy.orm import Session as DBSession
 
 from src.core.dependencies import get_current_user, get_org_context
 from src.database.session import get_db
+from src.domain.control_groups import ControlGroup
+from src.domain.custom_framework import CustomControl, CustomFramework
 from src.domain.frameworks import Framework
 from src.domain.users import User
 from src.services.mapping_engine import (
@@ -95,4 +100,76 @@ def coverage_gap_map(
         'framework_code': target_fw.code,
         'gap_count':      len(gaps),
         'gaps':           gaps,
+    }
+
+
+@router.get("/custom/{framework_id}")
+def custom_framework_coverage(
+    framework_id: uuid.UUID,
+    project_id: str | None = Query(None),
+    db: DBSession = Depends(get_db),
+    org_id: uuid.UUID = Depends(get_org_context),
+    _: User = Depends(get_current_user),
+):
+    """Coverage of a custom framework's controls based on ISO mapping strings and project assessments."""
+    # Load framework and verify org ownership
+    fw = db.execute(
+        select(CustomFramework).where(
+            CustomFramework.id == framework_id,
+            CustomFramework.org_id == org_id,
+        )
+    ).scalar_one_or_none()
+    if not fw:
+        raise HTTPException(status_code=404, detail="Custom framework not found")
+
+    # Load all controls for this framework
+    controls = db.execute(
+        select(CustomControl).where(CustomControl.framework_id == framework_id)
+    ).scalars().all()
+
+    # Get covered ControlGroup IDs from assessments, then resolve their group_codes
+    covered_cg_ids = get_project_covered_cg_ids(db, project_id, str(org_id))
+    covered_codes: set[str] = set()
+    if covered_cg_ids:
+        groups = db.execute(
+            select(ControlGroup).where(ControlGroup.id.in_(covered_cg_ids))
+        ).scalars().all()
+        covered_codes = {g.group_code.lower() for g in groups}
+
+    # Evaluate each custom control against covered ISO codes
+    result_controls = []
+    covered_count = 0
+    for ctrl in controls:
+        iso_refs: list[str] = ctrl.iso_mappings or []
+        # A control is covered if any iso_mapping substring-matches a covered group_code
+        # (dots stripped for comparison, e.g. "A.5.15" → "a515" matches "a.5.15" → "a515")
+        matched = [
+            ref for ref in iso_refs
+            if any(
+                ref.lower().replace('.', '') in code.replace('.', '')
+                for code in covered_codes
+            )
+        ]
+        is_covered = len(matched) > 0
+        if is_covered:
+            covered_count += 1
+        result_controls.append({
+            'control_id':  ctrl.control_id,
+            'title':       ctrl.title,
+            'category':    ctrl.category,
+            'covered':     is_covered,
+            'matched_iso': matched,
+        })
+
+    total = len(controls)
+    coverage_pct = round((covered_count / total * 100), 1) if total > 0 else 0.0
+
+    return {
+        'framework_id':     str(framework_id),
+        'framework_name':   fw.name,
+        'short_code':       fw.short_code,
+        'total_controls':   total,
+        'covered_controls': covered_count,
+        'coverage_pct':     coverage_pct,
+        'controls':         result_controls,
     }

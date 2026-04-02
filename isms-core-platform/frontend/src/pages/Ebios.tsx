@@ -5,7 +5,7 @@ import {
   Select, Skeleton, Tab, Tabs, TextField, Tooltip, Typography,
 } from '@mui/material'
 import {
-  AddOutlined, ArrowBackOutlined, DeleteOutlined,
+  AddOutlined, ArrowBackOutlined, DeleteOutlined, EditOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
@@ -238,6 +238,66 @@ function CreateStudyDialog({ open, onClose }: { open: boolean; onClose: () => vo
         <Button onClick={onClose} size="small">Cancel</Button>
         <Button variant="contained" size="small" onClick={handleSubmit} disabled={mut.isPending}>
           {mut.isPending ? 'Creating…' : 'Create'}
+        </Button>
+      </DialogActions>
+    </Dialog>
+  )
+}
+
+// ── Edit Study Dialog ─────────────────────────────────────────────────────────
+
+function EditStudyDialog({
+  open, onClose, study,
+}: { open: boolean; onClose: () => void; study: EbiosStudy }) {
+  const qc = useQueryClient()
+  const [name, setName] = useState(study.name)
+  const [status, setStatus] = useState(study.status)
+  const [owner, setOwner] = useState(study.owner ?? '')
+  const [error, setError] = useState('')
+
+  // Keep form in sync if dialog re-opens for a different study
+  const studyId = study.id
+  const mut = useMutation({
+    mutationFn: () => ebiosApi.update(studyId, {
+      name: name.trim(),
+      status,
+      owner: owner.trim() || undefined,
+    }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['ebios-studies'] })
+      onClose()
+    },
+    onError: () => setError('Failed to update study.'),
+  })
+
+  function handleSubmit() {
+    if (!name.trim()) { setError('Name is required.'); return }
+    setError('')
+    mut.mutate()
+  }
+
+  return (
+    <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth>
+      <DialogTitle sx={{ pb: 0.5 }}>Edit Study</DialogTitle>
+      <DialogContent sx={{ pt: '20px !important' }}>
+        {error && <Alert severity="error" sx={{ mb: 2, py: 0.5 }}>{error}</Alert>}
+        <TextField label="Study name *" fullWidth size="small" sx={{ mb: 2 }}
+          value={name} onChange={e => setName(e.target.value)} />
+        <Box sx={{ display: 'flex', gap: 1.5 }}>
+          <TextField label="Owner" size="small" sx={{ flex: 1 }}
+            value={owner} onChange={e => setOwner(e.target.value)} />
+          <FormControl size="small" sx={{ flex: 1 }}>
+            <InputLabel>Status</InputLabel>
+            <Select value={status} label="Status" onChange={e => setStatus(e.target.value)}>
+              {STUDY_STATUSES.map(s => <MenuItem key={s} value={s}>{toLabel(s)}</MenuItem>)}
+            </Select>
+          </FormControl>
+        </Box>
+      </DialogContent>
+      <DialogActions sx={{ px: 3, pb: 2 }}>
+        <Button onClick={onClose} size="small">Cancel</Button>
+        <Button variant="contained" size="small" onClick={handleSubmit} disabled={mut.isPending}>
+          {mut.isPending ? 'Saving…' : 'Save'}
         </Button>
       </DialogActions>
     </Dialog>
@@ -1113,6 +1173,7 @@ function StudyList({
   const qc = useQueryClient()
   const [statusFilter, setStatusFilter] = useState('')
   const [createOpen, setCreateOpen] = useState(false)
+  const [editingStudy, setEditingStudy] = useState<EbiosStudy | null>(null)
 
   const { data, isLoading } = useQuery({
     queryKey: ['ebios-studies', statusFilter],
@@ -1156,7 +1217,7 @@ function StudyList({
         <TH width={110}>Status</TH>
         <TH flex={1.5}>Owner</TH>
         <TH width={110} align="right">Created</TH>
-        <Box sx={{ width: 56 }} />
+        <Box sx={{ width: 76 }} />
       </Box>
       <Box sx={TABLE_WRAP_SX}>
         {isLoading && [0,1,2,3].map(i => (
@@ -1205,8 +1266,12 @@ function StudyList({
                 {dayjs(s.created_at).format('D MMM YY')}
               </Typography>
             </Box>
-            <Box sx={{ width: 56, display: 'flex', justifyContent: 'flex-end' }}
+            <Box sx={{ width: 76, display: 'flex', justifyContent: 'flex-end', gap: 0.25 }}
               onClick={e => e.stopPropagation()}>
+              <IconButton size="small" sx={{ p: 0.5 }}
+                onClick={() => setEditingStudy(s)}>
+                <EditOutlined sx={{ fontSize: 15 }} />
+              </IconButton>
               <IconButton size="small" sx={{ p: 0.5, color: 'error.light' }}
                 onClick={() => { if (confirm(`Delete study "${s.name}"?`)) deleteMut.mutate(s.id) }}>
                 <DeleteOutlined sx={{ fontSize: 15 }} />
@@ -1217,6 +1282,13 @@ function StudyList({
       </Box>
 
       <CreateStudyDialog open={createOpen} onClose={() => setCreateOpen(false)} />
+      {editingStudy && (
+        <EditStudyDialog
+          open={!!editingStudy}
+          onClose={() => setEditingStudy(null)}
+          study={editingStudy}
+        />
+      )}
     </Box>
   )
 }

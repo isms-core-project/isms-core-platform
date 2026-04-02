@@ -36,6 +36,7 @@ import { dashboardApi, type CoverageGap } from '../api/dashboard'
 import { projectsApi, type ProjectRead } from '../api/projectsApi'
 import { useProject } from '../store/ProjectContext'
 import { client } from '../api/client'
+import { customFrameworksApi } from '../api/customFrameworksApi'
 import PageHeader from '../components/PageHeader'
 
 interface CoverageMapping {
@@ -231,6 +232,136 @@ function InferredCoverage() {
   )
 }
 
+// ── Custom Framework Coverage ─────────────────────────────────────────────────
+
+interface CustomCoverageControl {
+  control_id: string
+  title: string
+  category: string | null
+  covered: boolean
+  matched_iso: string[]
+}
+
+interface CustomCoverageResult {
+  framework_id: string
+  framework_name: string
+  short_code: string
+  total_controls: number
+  covered_controls: number
+  coverage_pct: number
+  controls: CustomCoverageControl[]
+}
+
+function CustomFrameworkCoverage({ frameworkId, frameworkName, shortCode, projectId }: {
+  frameworkId: string
+  frameworkName: string
+  shortCode: string
+  projectId: string
+}) {
+  const [expanded, setExpanded] = useState(false)
+
+  const { data, isLoading } = useQuery({
+    queryKey: ['coverage-custom', frameworkId, projectId],
+    queryFn: () => client.get<CustomCoverageResult>(`/coverage/custom/${frameworkId}`, {
+      params: { project_id: projectId || undefined },
+    }).then(r => r.data),
+  })
+
+  const color = data ? PCT_COLOR(data.coverage_pct) : '#9E9E9E'
+
+  return (
+    <Box sx={{ border: '1px solid', borderColor: `${color}30`, borderRadius: 1.5, overflow: 'hidden', mb: 1 }}>
+      <Box
+        sx={{ display: 'flex', alignItems: 'center', gap: 2, px: 2, py: 1.25, bgcolor: `${color}08`, cursor: 'pointer' }}
+        onClick={() => setExpanded(e => !e)}
+      >
+        <Chip
+          label={shortCode}
+          size="small"
+          sx={{ height: 18, fontSize: '0.62rem', fontWeight: 700, bgcolor: 'rgba(255,192,0,0.12)', color: '#FFC000', borderRadius: 0.75 }}
+        />
+        <Box sx={{ flex: 1 }}>
+          <Typography variant="body2" sx={{ fontWeight: 600, fontSize: '0.82rem' }}>{frameworkName}</Typography>
+          {data && (
+            <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.disabled' }}>
+              {data.covered_controls} / {data.total_controls} controls covered
+            </Typography>
+          )}
+          {isLoading && <Skeleton width={120} height={14} />}
+        </Box>
+        {data && (
+          <>
+            <Box sx={{ width: 160 }}>
+              <LinearProgress
+                variant="determinate"
+                value={data.coverage_pct}
+                sx={{ height: 6, borderRadius: 3, bgcolor: `${color}20`, '& .MuiLinearProgress-bar': { bgcolor: color } }}
+              />
+            </Box>
+            <Typography variant="body2" sx={{ fontWeight: 700, color, minWidth: 44, textAlign: 'right', fontSize: '0.9rem' }}>
+              {data.coverage_pct}%
+            </Typography>
+          </>
+        )}
+        <IconButton size="small" sx={{ p: 0.25 }}>
+          {expanded ? <ExpandLessOutlined sx={{ fontSize: 16 }} /> : <ExpandMoreOutlined sx={{ fontSize: 16 }} />}
+        </IconButton>
+      </Box>
+
+      <Collapse in={expanded}>
+        <Box sx={{ px: 2, py: 1.5, borderTop: '1px solid', borderColor: 'divider' }}>
+          {isLoading && <Skeleton height={40} />}
+          {data && data.controls.length === 0 && (
+            <Typography variant="caption" color="text.secondary">No controls defined for this framework.</Typography>
+          )}
+          {data && data.controls.length > 0 && (
+            <Box sx={{ maxHeight: 320, overflowY: 'auto' }}>
+              {data.controls.map(ctrl => (
+                <Box
+                  key={ctrl.control_id}
+                  sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5, mb: 0.75, pb: 0.75, borderBottom: '1px solid', borderColor: 'divider', '&:last-child': { borderBottom: 'none', mb: 0, pb: 0 } }}
+                >
+                  <Box sx={{ width: 8, height: 8, borderRadius: '50%', mt: 0.6, flexShrink: 0, bgcolor: ctrl.covered ? '#C6EFCE' : '#FFC7CE' }} />
+                  <Box sx={{ flex: 1, minWidth: 0 }}>
+                    <Typography variant="caption" sx={{ fontWeight: 600, fontSize: '0.72rem', display: 'block' }}>
+                      {ctrl.control_id}
+                      {ctrl.category && (
+                        <Typography component="span" variant="caption" sx={{ ml: 0.75, fontWeight: 400, color: 'text.disabled', fontSize: '0.65rem' }}>
+                          {ctrl.category}
+                        </Typography>
+                      )}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.68rem', display: 'block', lineHeight: 1.3 }}>
+                      {ctrl.title}
+                    </Typography>
+                    {ctrl.covered && ctrl.matched_iso.length > 0 && (
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.4, mt: 0.4 }}>
+                        {ctrl.matched_iso.slice(0, 5).map(ref => (
+                          <Chip
+                            key={ref}
+                            label={ref}
+                            size="small"
+                            sx={{ height: 14, fontSize: '0.58rem', bgcolor: 'rgba(198,239,206,0.1)', color: '#C6EFCE' }}
+                          />
+                        ))}
+                        {ctrl.matched_iso.length > 5 && (
+                          <Typography variant="caption" sx={{ fontSize: '0.6rem', color: 'text.disabled', alignSelf: 'center' }}>
+                            +{ctrl.matched_iso.length - 5} more
+                          </Typography>
+                        )}
+                      </Box>
+                    )}
+                  </Box>
+                </Box>
+              ))}
+            </Box>
+          )}
+        </Box>
+      </Collapse>
+    </Box>
+  )
+}
+
 // ── Main page ─────────────────────────────────────────────────────────────────
 
 export default function Coverage() {
@@ -260,6 +391,11 @@ export default function Coverage() {
     queryFn: () => dashboardApi.getCoverageGaps(gapProduct),
   })
   const gaps: CoverageGap[] = gapsData ?? []
+
+  const { data: customFrameworks } = useQuery({
+    queryKey: ['custom-frameworks'],
+    queryFn: () => customFrameworksApi.list(),
+  })
 
   const cov = data as unknown as RealCoverage | undefined
 
@@ -693,6 +829,24 @@ export default function Coverage() {
           </TableContainer>
         )}
       </Box>
+
+      {/* ── Custom Framework Coverage ─────────────────────────────── */}
+      {customFrameworks && customFrameworks.length > 0 && (
+        <Box sx={{ mt: 4 }}>
+          <Typography variant="caption" sx={{ fontWeight: 700, fontSize: '0.68rem', color: 'text.secondary', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', mb: 1.5 }}>
+            Custom Frameworks
+          </Typography>
+          {customFrameworks.map(fw => (
+            <CustomFrameworkCoverage
+              key={fw.id}
+              frameworkId={fw.id}
+              frameworkName={fw.name}
+              shortCode={fw.short_code}
+              projectId=""
+            />
+          ))}
+        </Box>
+      )}
 
       </>}
     </Box>

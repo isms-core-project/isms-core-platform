@@ -256,7 +256,8 @@ export const CONNECTOR_CONFIG_SCHEMA: Record<string, ConfigField[]> = {
   jira: [
     { key: 'url',       label: 'Jira URL',     type: 'text',     required: true, placeholder: 'https://yourcompany.atlassian.net' },
     { key: 'username',  label: 'Email',        type: 'text',     required: true },
-    { key: 'api_token', label: 'API Token',    type: 'password', required: true, helperText: 'Account settings → Security → API tokens. Account needs Browse Projects permission on the projects to be scanned. For JSM: Service Desk Team member role.' },
+    { key: 'api_token',    label: 'API Token',    type: 'password', required: true, helperText: 'Account settings → Security → API tokens. Account needs Browse Projects permission on the projects to be scanned. For JSM: Service Desk Team member role.' },
+    { key: 'project_key', label: 'Project Key',  type: 'text',     required: true, placeholder: 'ISMS', helperText: 'Jira project key where issues will be created when pushing gaps or remediation actions. Find it in your Jira project settings (short uppercase code like ISMS, SEC, OPS).' },
   ],
   // ── Monitoring ──────────────────────────────────────────────────────────────
   prtg: [

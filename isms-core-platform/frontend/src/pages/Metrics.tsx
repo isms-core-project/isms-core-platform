@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import {
   Alert, Box, FormControl, InputLabel, MenuItem, Select,
-  Skeleton, Tooltip, Typography,
+  Skeleton, Tab, Tabs, Table, TableBody, TableCell, TableHead,
+  TableRow, Tooltip, Typography,
 } from '@mui/material'
 import {
   AssessmentOutlined, ErrorOutlined, GppMaybeOutlined, InsightsOutlined,
@@ -13,9 +14,10 @@ import { useQuery, useQueryClient } from '@tanstack/react-query'
 import {
   LineChart, Line, ResponsiveContainer, Tooltip as ChartTooltip,
 } from 'recharts'
-import { metricsApi, type MetricResult } from '../api/metricsApi'
+import { metricsApi, type MetricResult, type OrgMetricRow } from '../api/metricsApi'
 import { projectsApi, type ProjectRead } from '../api/projectsApi'
 import { useProject } from '../store/ProjectContext'
+import { useAuth } from '../store/AuthContext'
 import PageHeader from '../components/PageHeader'
 
 // ── Config ────────────────────────────────────────────────────────────────────
@@ -147,6 +149,84 @@ function AuditReadinessHero({ value, loading }: { value?: number; loading: boole
   )
 }
 
+// ── Portfolio table ───────────────────────────────────────────────────────────
+
+const PORTFOLIO_COLS: { key: string; label: string; unit: string }[] = [
+  { key: 'audit_readiness',    label: 'Audit Readiness',     unit: 'percent' },
+  { key: 'compliance_score',   label: 'Compliance Score',    unit: 'percent' },
+  { key: 'risk_score_avg',     label: 'Risk Score',          unit: 'numeric' },
+  { key: 'gap_open_count',     label: 'Open Gaps',           unit: 'count'   },
+  { key: 'remediation_overdue',label: 'Remediation Overdue', unit: 'count'   },
+]
+
+function PortfolioTab() {
+  const { data, isLoading, error } = useQuery<OrgMetricRow[]>({
+    queryKey: ['metrics-portfolio'],
+    queryFn: metricsApi.portfolio,
+    retry: false,
+  })
+
+  if (error) {
+    return <Alert severity="warning" sx={{ mt: 2 }}>Portfolio data unavailable.</Alert>
+  }
+
+  const sorted = [...(data ?? [])].sort((a, b) => {
+    const av = a.metrics['audit_readiness'] ?? -1
+    const bv = b.metrics['audit_readiness'] ?? -1
+    return bv - av
+  })
+
+  return (
+    <Box sx={{ mt: 2, overflowX: 'auto' }}>
+      <Table size="small">
+        <TableHead>
+          <TableRow>
+            <TableCell sx={{ fontWeight: 600, color: 'text.secondary', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              Organisation
+            </TableCell>
+            {PORTFOLIO_COLS.map(col => (
+              <TableCell key={col.key} align="right" sx={{ fontWeight: 600, color: 'text.secondary', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                {col.label}
+              </TableCell>
+            ))}
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {isLoading
+            ? Array.from({ length: 4 }).map((_, i) => (
+                <TableRow key={i}>
+                  <TableCell><Skeleton width={160} /></TableCell>
+                  {PORTFOLIO_COLS.map(col => (
+                    <TableCell key={col.key} align="right"><Skeleton width={48} /></TableCell>
+                  ))}
+                </TableRow>
+              ))
+            : sorted.map(row => (
+                <TableRow key={row.org_id} hover>
+                  <TableCell sx={{ fontWeight: 500 }}>{row.org_name}</TableCell>
+                  {PORTFOLIO_COLS.map(col => {
+                    const val = row.metrics[col.key]
+                    if (val === undefined) {
+                      return (
+                        <TableCell key={col.key} align="right" sx={{ color: 'text.disabled' }}>—</TableCell>
+                      )
+                    }
+                    const color = metricColor(col.key, val, col.unit)
+                    return (
+                      <TableCell key={col.key} align="right" sx={{ color, fontWeight: 600 }}>
+                        {formatValue(val, col.unit)}
+                      </TableCell>
+                    )
+                  })}
+                </TableRow>
+              ))
+          }
+        </TableBody>
+      </Table>
+    </Box>
+  )
+}
+
 // ── Main page ─────────────────────────────────────────────────────────────────
 
 const OTHER_METRICS = [
@@ -156,8 +236,11 @@ const OTHER_METRICS = [
 
 export default function Metrics() {
   const { activeProject } = useProject()
+  const { user } = useAuth()
   const [projectId, setProjectId] = useState(activeProject?.id ?? '')
+  const [tab, setTab] = useState(0)
   const qc = useQueryClient()
+  const isSuperAdmin = user?.role === 'super_admin'
 
   const { data: projects } = useQuery({
     queryKey: ['projects-list'],
@@ -167,6 +250,7 @@ export default function Metrics() {
   const { data, isLoading, error } = useQuery({
     queryKey: ['metrics', projectId],
     queryFn: () => metricsApi.list({ project_id: projectId || undefined }),
+    enabled: tab === 0,
   })
 
   const byName = Object.fromEntries((data ?? []).map(m => [m.name, m]))
@@ -179,56 +263,88 @@ export default function Metrics() {
         title="KPI Dashboard"
         subtitle="ISO 27001:2022 §9.1 — performance evaluation and measurement"
         actions={
-          <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-          <Tooltip title="Recompute metrics now">
-            <IconButton size="small" onClick={() => qc.invalidateQueries({ queryKey: ['metrics'], exact: false })}>
-              <RefreshOutlined sx={{ fontSize: 18 }} />
-            </IconButton>
-          </Tooltip>
-          <FormControl size="small" sx={{ minWidth: 240 }}>
-            <InputLabel>Scope</InputLabel>
-            <Select value={projectId} label="Scope" onChange={e => setProjectId(e.target.value)}>
-              <MenuItem value="">Org-wide</MenuItem>
-              {(projects ?? []).map((p: ProjectRead) => (
-                <MenuItem key={p.id} value={p.id}>{p.name}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          </Box>
+          tab === 0
+            ? (
+              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                <Tooltip title="Recompute metrics now">
+                  <IconButton size="small" onClick={() => qc.invalidateQueries({ queryKey: ['metrics'], exact: false })}>
+                    <RefreshOutlined sx={{ fontSize: 18 }} />
+                  </IconButton>
+                </Tooltip>
+                <FormControl size="small" sx={{ minWidth: 240 }}>
+                  <InputLabel>Scope</InputLabel>
+                  <Select value={projectId} label="Scope" onChange={e => setProjectId(e.target.value)}>
+                    <MenuItem value="">Org-wide</MenuItem>
+                    {(projects ?? []).map((p: ProjectRead) => (
+                      <MenuItem key={p.id} value={p.id}>{p.name}</MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </Box>
+            )
+            : (
+              <Tooltip title="Refresh portfolio">
+                <IconButton size="small" onClick={() => qc.invalidateQueries({ queryKey: ['metrics-portfolio'] })}>
+                  <RefreshOutlined sx={{ fontSize: 18 }} />
+                </IconButton>
+              </Tooltip>
+            )
         }
       />
 
-      {error && <Alert severity="error" sx={{ mb: 2 }}>Failed to load metrics.</Alert>}
+      {/* Tab bar — only shown to super_admin */}
+      {isSuperAdmin && (
+        <Tabs
+          value={tab}
+          onChange={(_, v) => setTab(v)}
+          sx={{ mb: 2.5, borderBottom: '1px solid', borderColor: 'divider' }}
+          textColor="primary"
+          indicatorColor="primary"
+        >
+          <Tab label="My Metrics" />
+          <Tab label="Portfolio" />
+        </Tabs>
+      )}
 
-      {/* Audit readiness hero */}
-      {isLoading
-        ? <AuditReadinessHero loading />
-        : <AuditReadinessHero value={auditReadiness?.value} loading={false} />
-      }
+      {/* ── My Metrics tab ── */}
+      {tab === 0 && (
+        <>
+          {error && <Alert severity="error" sx={{ mb: 2 }}>Failed to load metrics.</Alert>}
 
-      {/* KPI grid */}
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 2 }}>
-        {isLoading
-          ? Array.from({ length: 8 }).map((_, i) => (
-              <Box key={i} sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 2, p: 2 }}>
-                <Skeleton height={20} width="60%" sx={{ mb: 1 }} />
-                <Skeleton height={40} width="40%" sx={{ mb: 1 }} />
-                <Skeleton height={32} />
-              </Box>
-            ))
-          : others.map(m => (
-              <Tooltip
-                key={m.name}
-                title={`Computed at ${new Date(m.computed_at).toLocaleString()}`}
-                placement="top"
-              >
-                <span>
-                  <MetricCard metric={m} projectId={projectId || undefined} />
-                </span>
-              </Tooltip>
-            ))
-        }
-      </Box>
+          {/* Audit readiness hero */}
+          {isLoading
+            ? <AuditReadinessHero loading />
+            : <AuditReadinessHero value={auditReadiness?.value} loading={false} />
+          }
+
+          {/* KPI grid */}
+          <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 2 }}>
+            {isLoading
+              ? Array.from({ length: 8 }).map((_, i) => (
+                  <Box key={i} sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 2, p: 2 }}>
+                    <Skeleton height={20} width="60%" sx={{ mb: 1 }} />
+                    <Skeleton height={40} width="40%" sx={{ mb: 1 }} />
+                    <Skeleton height={32} />
+                  </Box>
+                ))
+              : others.map(m => (
+                  <Tooltip
+                    key={m.name}
+                    title={`Computed at ${new Date(m.computed_at).toLocaleString()}`}
+                    placement="top"
+                  >
+                    <span>
+                      <MetricCard metric={m} projectId={projectId || undefined} />
+                    </span>
+                  </Tooltip>
+                ))
+            }
+          </Box>
+        </>
+      )}
+
+      {/* ── Portfolio tab ── */}
+      {tab === 1 && isSuperAdmin && <PortfolioTab />}
     </Box>
   )
 }

@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import {
-  Alert, Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle,
-  FormControl, IconButton, InputLabel, MenuItem, Select,
+  Alert, Box, Button, Checkbox, Chip, Dialog, DialogActions, DialogContent, DialogTitle,
+  FormControl, FormControlLabel, IconButton, InputLabel, MenuItem, Select,
   Skeleton, TextField, Tooltip, Typography,
 } from '@mui/material'
 import {
-  AddOutlined, DeleteOutlined, EditOutlined, LanguageOutlined, VerifiedOutlined,
+  AddOutlined, DeleteOutlined, EditOutlined, ExpandLessOutlined, ExpandMoreOutlined,
+  LanguageOutlined, VerifiedOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
@@ -259,100 +260,392 @@ function VendorDialog({
   )
 }
 
+// ── Assessment dialog ─────────────────────────────────────────────────────────
+
+const ASSESSMENT_STATUSES = ['planned', 'in_progress', 'complete']
+
+function AssessmentDialog({
+  open, onClose, vendorId,
+}: { open: boolean; onClose: () => void; vendorId: string }) {
+  const qc = useQueryClient()
+  const [score, setScore] = useState('')
+  const [status, setStatus] = useState('planned')
+  const [notes, setNotes] = useState('')
+  const [assessmentDate, setAssessmentDate] = useState('')
+  const [nextReviewDate, setNextReviewDate] = useState('')
+  const [controlGroupId, setControlGroupId] = useState('')
+  const [error, setError] = useState('')
+
+  const mut = useMutation({
+    mutationFn: () => tprmApi.createAssessment(vendorId, {
+      score: score !== '' ? Number(score) : undefined,
+      status,
+      notes: notes || undefined,
+      assessment_date: assessmentDate || undefined,
+      next_review_date: nextReviewDate || undefined,
+      control_group_id: controlGroupId || undefined,
+    }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['vendor-assessments', vendorId] })
+      onClose()
+      setScore(''); setStatus('planned'); setNotes(''); setAssessmentDate('')
+      setNextReviewDate(''); setControlGroupId('')
+    },
+    onError: () => setError('Failed to save assessment.'),
+  })
+
+  return (
+    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
+      <DialogTitle sx={{ pb: 0.5 }}>New Assessment</DialogTitle>
+      <DialogContent sx={{ pt: '20px !important' }}>
+        {error && <Alert severity="error" sx={{ mb: 2, py: 0.5 }}>{error}</Alert>}
+        <Box sx={{ display: 'flex', gap: 1.5, mb: 2 }}>
+          <TextField
+            label="Score (0–100)" type="number" size="small" sx={{ flex: 1 }}
+            inputProps={{ min: 0, max: 100 }}
+            value={score} onChange={e => setScore(e.target.value)}
+          />
+          <FormControl size="small" sx={{ flex: 1 }}>
+            <InputLabel>Status</InputLabel>
+            <Select value={status} label="Status" onChange={e => setStatus(e.target.value)}>
+              {ASSESSMENT_STATUSES.map(s => <MenuItem key={s} value={s}>{toLabel(s)}</MenuItem>)}
+            </Select>
+          </FormControl>
+        </Box>
+        <TextField label="Notes" fullWidth size="small" multiline rows={3} sx={{ mb: 2 }}
+          value={notes} onChange={e => setNotes(e.target.value)} />
+        <Box sx={{ display: 'flex', gap: 1.5, mb: 2 }}>
+          <TextField label="Assessment date" type="date" size="small" sx={{ flex: 1 }}
+            InputLabelProps={{ shrink: true }}
+            value={assessmentDate} onChange={e => setAssessmentDate(e.target.value)} />
+          <TextField label="Next review date" type="date" size="small" sx={{ flex: 1 }}
+            InputLabelProps={{ shrink: true }}
+            value={nextReviewDate} onChange={e => setNextReviewDate(e.target.value)} />
+        </Box>
+        <TextField label="Control group (optional)" fullWidth size="small"
+          placeholder="e.g. A.5.19"
+          value={controlGroupId} onChange={e => setControlGroupId(e.target.value)} />
+      </DialogContent>
+      <DialogActions sx={{ px: 3, pb: 2 }}>
+        <Button onClick={onClose} size="small">Cancel</Button>
+        <Button variant="contained" size="small" onClick={() => { setError(''); mut.mutate() }} disabled={mut.isPending}>
+          {mut.isPending ? 'Saving…' : 'Save'}
+        </Button>
+      </DialogActions>
+    </Dialog>
+  )
+}
+
+// ── Contract dialog ───────────────────────────────────────────────────────────
+
+function ContractDialog({
+  open, onClose, vendorId,
+}: { open: boolean; onClose: () => void; vendorId: string }) {
+  const qc = useQueryClient()
+  const [title, setTitle] = useState('')
+  const [contractRef, setContractRef] = useState('')
+  const [startDate, setStartDate] = useState('')
+  const [expiryDate, setExpiryDate] = useState('')
+  const [autoRenews, setAutoRenews] = useState(false)
+  const [securityClauses, setSecurityClauses] = useState(false)
+  const [error, setError] = useState('')
+
+  const mut = useMutation({
+    mutationFn: () => tprmApi.createContract(vendorId, {
+      title,
+      contract_ref: contractRef || undefined,
+      start_date: startDate || undefined,
+      expiry_date: expiryDate || undefined,
+      auto_renews: autoRenews,
+      security_clauses_present: securityClauses,
+    }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['vendor-contracts', vendorId] })
+      onClose()
+      setTitle(''); setContractRef(''); setStartDate(''); setExpiryDate('')
+      setAutoRenews(false); setSecurityClauses(false)
+    },
+    onError: () => setError('Failed to save contract.'),
+  })
+
+  function handleSubmit() {
+    if (!title.trim()) { setError('Title is required.'); return }
+    setError('')
+    mut.mutate()
+  }
+
+  return (
+    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
+      <DialogTitle sx={{ pb: 0.5 }}>New Contract</DialogTitle>
+      <DialogContent sx={{ pt: '20px !important' }}>
+        {error && <Alert severity="error" sx={{ mb: 2, py: 0.5 }}>{error}</Alert>}
+        <TextField label="Title *" fullWidth size="small" sx={{ mb: 2 }}
+          value={title} onChange={e => setTitle(e.target.value)} />
+        <TextField label="Contract reference" fullWidth size="small" sx={{ mb: 2 }}
+          value={contractRef} onChange={e => setContractRef(e.target.value)} />
+        <Box sx={{ display: 'flex', gap: 1.5, mb: 2 }}>
+          <TextField label="Start date" type="date" size="small" sx={{ flex: 1 }}
+            InputLabelProps={{ shrink: true }}
+            value={startDate} onChange={e => setStartDate(e.target.value)} />
+          <TextField label="Expiry date" type="date" size="small" sx={{ flex: 1 }}
+            InputLabelProps={{ shrink: true }}
+            value={expiryDate} onChange={e => setExpiryDate(e.target.value)} />
+        </Box>
+        <Box sx={{ display: 'flex', gap: 2 }}>
+          <FormControlLabel
+            control={<Checkbox size="small" checked={autoRenews} onChange={e => setAutoRenews(e.target.checked)} />}
+            label={<Typography variant="caption">Auto-renews</Typography>}
+          />
+          <FormControlLabel
+            control={<Checkbox size="small" checked={securityClauses} onChange={e => setSecurityClauses(e.target.checked)} />}
+            label={<Typography variant="caption">Security clauses present</Typography>}
+          />
+        </Box>
+      </DialogContent>
+      <DialogActions sx={{ px: 3, pb: 2 }}>
+        <Button onClick={onClose} size="small">Cancel</Button>
+        <Button variant="contained" size="small" onClick={handleSubmit} disabled={mut.isPending}>
+          {mut.isPending ? 'Saving…' : 'Save'}
+        </Button>
+      </DialogActions>
+    </Dialog>
+  )
+}
+
+// ── Vendor expanded (assessments + contracts) ─────────────────────────────────
+
+const ASSESSMENT_STATUS_COLORS: Record<string, string> = {
+  planned: '#607D8B', in_progress: '#FF9800', complete: '#4CAF50',
+}
+
+function ScoreChip({ score }: { score: number | null }) {
+  if (score == null) return <Typography variant="caption" color="text.disabled">—</Typography>
+  const color = score >= 75 ? '#4CAF50' : score >= 50 ? '#FF9800' : '#F44336'
+  return (
+    <Chip
+      label={score}
+      size="small"
+      sx={{
+        height: 18, fontSize: '0.62rem', fontWeight: 700, minWidth: 28,
+        bgcolor: `${color}18`, color, border: `1px solid ${color}40`,
+      }}
+    />
+  )
+}
+
+function VendorExpanded({ vendorId }: { vendorId: string }) {
+  const [assessOpen, setAssessOpen] = useState(false)
+  const [contractOpen, setContractOpen] = useState(false)
+
+  const { data: assessments, isLoading: loadingA } = useQuery({
+    queryKey: ['vendor-assessments', vendorId],
+    queryFn: () => tprmApi.listAssessments(vendorId),
+  })
+  const { data: contracts, isLoading: loadingC } = useQuery({
+    queryKey: ['vendor-contracts', vendorId],
+    queryFn: () => tprmApi.listContracts(vendorId),
+  })
+
+  return (
+    <Box sx={{
+      display: 'flex', gap: 2, px: 2, py: 1.5,
+      bgcolor: 'action.hover', borderBottom: '1px solid', borderColor: 'divider',
+    }}>
+      {/* Assessments column */}
+      <Box sx={{ flex: 1, minWidth: 0 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', mb: 0.75, gap: 0.5 }}>
+          <Typography variant="caption" sx={{ fontWeight: 700, fontSize: '0.68rem', textTransform: 'uppercase', color: 'text.secondary', flex: 1 }}>
+            Assessments
+          </Typography>
+          <IconButton size="small" onClick={() => setAssessOpen(true)} sx={{ p: 0.25 }}>
+            <AddOutlined sx={{ fontSize: 13 }} />
+          </IconButton>
+        </Box>
+        {loadingA && <Skeleton height={16} />}
+        {!loadingA && (!assessments || assessments.length === 0) && (
+          <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.disabled' }}>No assessments yet.</Typography>
+        )}
+        {assessments?.map(a => (
+          <Box key={a.id} sx={{ display: 'flex', alignItems: 'center', gap: 0.75, py: 0.4 }}>
+            <ScoreChip score={a.score} />
+            <Chip
+              label={toLabel(a.status)}
+              size="small"
+              sx={{
+                height: 18, fontSize: '0.6rem', fontWeight: 600,
+                bgcolor: `${ASSESSMENT_STATUS_COLORS[a.status] ?? '#607D8B'}18`,
+                color: ASSESSMENT_STATUS_COLORS[a.status] ?? '#607D8B',
+                border: `1px solid ${ASSESSMENT_STATUS_COLORS[a.status] ?? '#607D8B'}40`,
+              }}
+            />
+            <Typography variant="caption" sx={{ fontSize: '0.63rem', color: 'text.secondary' }}>
+              {a.assessment_date ? dayjs(a.assessment_date).format('D MMM YY') : '—'}
+            </Typography>
+            {a.next_review_date && (
+              <Typography variant="caption" sx={{ fontSize: '0.63rem', color: 'text.disabled' }}>
+                → {dayjs(a.next_review_date).format('D MMM YY')}
+              </Typography>
+            )}
+          </Box>
+        ))}
+      </Box>
+
+      {/* Divider */}
+      <Box sx={{ width: '1px', bgcolor: 'divider', flexShrink: 0 }} />
+
+      {/* Contracts column */}
+      <Box sx={{ flex: 1, minWidth: 0 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', mb: 0.75, gap: 0.5 }}>
+          <Typography variant="caption" sx={{ fontWeight: 700, fontSize: '0.68rem', textTransform: 'uppercase', color: 'text.secondary', flex: 1 }}>
+            Contracts
+          </Typography>
+          <IconButton size="small" onClick={() => setContractOpen(true)} sx={{ p: 0.25 }}>
+            <AddOutlined sx={{ fontSize: 13 }} />
+          </IconButton>
+        </Box>
+        {loadingC && <Skeleton height={16} />}
+        {!loadingC && (!contracts || contracts.length === 0) && (
+          <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.disabled' }}>No contracts yet.</Typography>
+        )}
+        {contracts?.map(c => (
+          <Box key={c.id} sx={{ display: 'flex', alignItems: 'center', gap: 0.75, py: 0.4, flexWrap: 'wrap' }}>
+            <Typography variant="caption" sx={{ fontSize: '0.72rem', fontWeight: 600, color: 'text.primary' }}>
+              {c.title}
+            </Typography>
+            {c.contract_ref && (
+              <Typography variant="caption" sx={{ fontSize: '0.63rem', color: 'text.disabled' }}>
+                {c.contract_ref}
+              </Typography>
+            )}
+            {c.expiry_date && (
+              <Typography
+                variant="caption"
+                sx={{ fontSize: '0.63rem', color: c.is_expired ? '#F44336' : c.expiring_soon ? '#FF9800' : 'text.secondary' }}
+              >
+                exp {dayjs(c.expiry_date).format('D MMM YY')}
+              </Typography>
+            )}
+            {c.auto_renews && (
+              <Chip label="Auto-renew" size="small" sx={{ height: 16, fontSize: '0.58rem', bgcolor: '#2196F318', color: '#2196F3', border: '1px solid #2196F340' }} />
+            )}
+            {c.security_clauses_present && (
+              <Chip label="Sec clauses" size="small" sx={{ height: 16, fontSize: '0.58rem', bgcolor: '#4CAF5018', color: '#4CAF50', border: '1px solid #4CAF5040' }} />
+            )}
+          </Box>
+        ))}
+      </Box>
+
+      <AssessmentDialog open={assessOpen} onClose={() => setAssessOpen(false)} vendorId={vendorId} />
+      <ContractDialog open={contractOpen} onClose={() => setContractOpen(false)} vendorId={vendorId} />
+    </Box>
+  )
+}
+
 // ── Vendor row ────────────────────────────────────────────────────────────────
 
 function VendorRow({
   vendor, onEdit, onDelete,
 }: { vendor: Vendor; onEdit: () => void; onDelete: () => void }) {
+  const [expanded, setExpanded] = useState(false)
+
   return (
-    <Box sx={{
-      display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1.25,
-      borderBottom: '1px solid', borderColor: 'divider',
-      '&:hover': { bgcolor: 'action.hover' },
-    }}>
-      {/* Name */}
-      <Box sx={{ flex: 3, minWidth: 0 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-          <Typography variant="body2" sx={{ fontWeight: 500, fontSize: '0.82rem' }} noWrap>
-            {vendor.name}
+    <Box>
+      <Box sx={{
+        display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1.25,
+        borderBottom: expanded ? 'none' : '1px solid', borderColor: 'divider',
+        '&:hover': { bgcolor: 'action.hover' },
+      }}>
+        {/* Name */}
+        <Box sx={{ flex: 3, minWidth: 0 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+            <Typography variant="body2" sx={{ fontWeight: 500, fontSize: '0.82rem' }} noWrap>
+              {vendor.name}
+            </Typography>
+            {vendor.website && (
+              <Tooltip title={vendor.website}>
+                <IconButton size="small" component="a" href={vendor.website} target="_blank" sx={{ p: 0.25 }}>
+                  <LanguageOutlined sx={{ fontSize: 13, color: 'text.disabled' }} />
+                </IconButton>
+              </Tooltip>
+            )}
+          </Box>
+          {vendor.primary_contact && (
+            <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.disabled' }}>
+              {vendor.primary_contact}
+            </Typography>
+          )}
+        </Box>
+
+        {/* Type */}
+        <Box sx={{ flex: 1.2, minWidth: 0 }}>
+          <Typography variant="caption" sx={{ fontSize: '0.72rem', color: 'text.secondary' }}>
+            {toLabel(vendor.vendor_type ?? '—')}
           </Typography>
-          {vendor.website && (
-            <Tooltip title={vendor.website}>
-              <IconButton size="small" component="a" href={vendor.website} target="_blank" sx={{ p: 0.25 }}>
-                <LanguageOutlined sx={{ fontSize: 13, color: 'text.disabled' }} />
-              </IconButton>
+        </Box>
+
+        {/* Criticality */}
+        <Box sx={{ width: 80 }}>
+          <CritChip crit={vendor.criticality} />
+        </Box>
+
+        {/* Status */}
+        <Box sx={{ width: 100 }}>
+          <StatusChip status={vendor.status} />
+        </Box>
+
+        {/* DORA badge */}
+        <Box sx={{ width: 60, textAlign: 'center' }}>
+          {vendor.dora_entity_type && (
+            <Tooltip title={`DORA: ${toLabel(vendor.dora_entity_type)}`}>
+              <Chip
+                icon={<VerifiedOutlined sx={{ fontSize: 11 }} />}
+                label="DORA"
+                size="small"
+                sx={{
+                  height: 18, fontSize: '0.6rem', fontWeight: 700,
+                  bgcolor: '#2196F318', color: '#2196F3', border: '1px solid #2196F340',
+                  '& .MuiChip-icon': { color: '#2196F3', ml: '4px' },
+                }}
+              />
             </Tooltip>
           )}
         </Box>
-        {vendor.primary_contact && (
-          <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.disabled' }}>
-            {vendor.primary_contact}
+
+        {/* Last assessment */}
+        <Box sx={{ minWidth: 90, textAlign: 'right' }}>
+          <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.secondary' }}>
+            {vendor.last_assessment_date ? dayjs(vendor.last_assessment_date).format('D MMM YY') : '—'}
           </Typography>
-        )}
+        </Box>
+
+        {/* Contracts */}
+        <Box sx={{ width: 70, textAlign: 'center' }}>
+          <Typography
+            variant="caption"
+            sx={{ fontSize: '0.72rem', color: vendor.contracts_expiring_soon > 0 ? '#FF9800' : 'text.secondary' }}
+          >
+            {vendor.contract_count}
+            {vendor.contracts_expiring_soon > 0 ? ` (${vendor.contracts_expiring_soon}⚠)` : ''}
+          </Typography>
+        </Box>
+
+        {/* Actions */}
+        <Box sx={{ display: 'flex', gap: 0.25 }}>
+          <IconButton size="small" onClick={() => setExpanded(x => !x)} sx={{ p: 0.5 }}>
+            {expanded
+              ? <ExpandLessOutlined sx={{ fontSize: 15 }} />
+              : <ExpandMoreOutlined sx={{ fontSize: 15 }} />}
+          </IconButton>
+          <IconButton size="small" onClick={onEdit} sx={{ p: 0.5 }}>
+            <EditOutlined sx={{ fontSize: 15 }} />
+          </IconButton>
+          <IconButton size="small" onClick={onDelete} sx={{ p: 0.5, color: 'error.light' }}>
+            <DeleteOutlined sx={{ fontSize: 15 }} />
+          </IconButton>
+        </Box>
       </Box>
 
-      {/* Type */}
-      <Box sx={{ flex: 1.2, minWidth: 0 }}>
-        <Typography variant="caption" sx={{ fontSize: '0.72rem', color: 'text.secondary' }}>
-          {toLabel(vendor.vendor_type ?? '—')}
-        </Typography>
-      </Box>
-
-      {/* Criticality */}
-      <Box sx={{ width: 80 }}>
-        <CritChip crit={vendor.criticality} />
-      </Box>
-
-      {/* Status */}
-      <Box sx={{ width: 100 }}>
-        <StatusChip status={vendor.status} />
-      </Box>
-
-      {/* DORA badge */}
-      <Box sx={{ width: 60, textAlign: 'center' }}>
-        {vendor.dora_entity_type && (
-          <Tooltip title={`DORA: ${toLabel(vendor.dora_entity_type)}`}>
-            <Chip
-              icon={<VerifiedOutlined sx={{ fontSize: 11 }} />}
-              label="DORA"
-              size="small"
-              sx={{
-                height: 18, fontSize: '0.6rem', fontWeight: 700,
-                bgcolor: '#2196F318', color: '#2196F3', border: '1px solid #2196F340',
-                '& .MuiChip-icon': { color: '#2196F3', ml: '4px' },
-              }}
-            />
-          </Tooltip>
-        )}
-      </Box>
-
-      {/* Last assessment */}
-      <Box sx={{ minWidth: 90, textAlign: 'right' }}>
-        <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.secondary' }}>
-          {vendor.last_assessment_date ? dayjs(vendor.last_assessment_date).format('D MMM YY') : '—'}
-        </Typography>
-      </Box>
-
-      {/* Contracts */}
-      <Box sx={{ width: 70, textAlign: 'center' }}>
-        <Typography
-          variant="caption"
-          sx={{ fontSize: '0.72rem', color: vendor.contracts_expiring_soon > 0 ? '#FF9800' : 'text.secondary' }}
-        >
-          {vendor.contract_count}
-          {vendor.contracts_expiring_soon > 0 ? ` (${vendor.contracts_expiring_soon}⚠)` : ''}
-        </Typography>
-      </Box>
-
-      {/* Actions */}
-      <Box sx={{ display: 'flex', gap: 0.25 }}>
-        <IconButton size="small" onClick={onEdit} sx={{ p: 0.5 }}>
-          <EditOutlined sx={{ fontSize: 15 }} />
-        </IconButton>
-        <IconButton size="small" onClick={onDelete} sx={{ p: 0.5, color: 'error.light' }}>
-          <DeleteOutlined sx={{ fontSize: 15 }} />
-        </IconButton>
-      </Box>
+      {expanded && <VendorExpanded vendorId={vendor.id} />}
     </Box>
   )
 }
@@ -439,7 +732,7 @@ export default function Tprm() {
         <Typography variant="caption" sx={{ width: 60, textAlign: 'center', fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>DORA</Typography>
         <Typography variant="caption" sx={{ minWidth: 90, textAlign: 'right', fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Last Assessed</Typography>
         <Typography variant="caption" sx={{ width: 70, textAlign: 'center', fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Contracts</Typography>
-        <Box sx={{ width: 56 }} />
+        <Box sx={{ width: 82 }} />
       </Box>
 
       <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: '0 0 8px 8px', overflow: 'hidden' }}>
