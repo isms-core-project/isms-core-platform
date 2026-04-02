@@ -26,8 +26,8 @@ from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, Upload
 from fastapi.responses import FileResponse, StreamingResponse
 from sqlalchemy.orm import Session as DBSession
 
-from src.core.dependencies import get_current_user, require_admin
-from src.database.enums import EvidenceStatus, UserRole
+from src.core.dependencies import get_current_user, require_admin, require_qa_access
+from src.database.enums import EvidenceStatus
 from src.database.session import get_db
 from src.domain.users import User
 from src.schemas.evidence import EvidenceAssign, EvidenceRead, EvidenceReview, EvidenceUpdate
@@ -377,11 +377,9 @@ def approve_evidence(
     evidence_id: uuid.UUID,
     body: EvidenceReview,
     db: DBSession = Depends(get_db),
-    _user: User = Depends(get_current_user),
+    _user: User = Depends(require_qa_access),
 ):
-    """Approve a pending evidence item. Requires admin or isms_manager role."""
-    if _user.role not in (UserRole.ADMIN, UserRole.ISMS_MANAGER):
-        raise HTTPException(status_code=403, detail="Only admin or isms_manager can approve evidence")
+    """Approve a pending evidence item. Requires super_admin, admin, or isms_manager role."""
 
     ev = evidence_service.get_evidence(db, evidence_id)
     if not ev:
@@ -412,11 +410,9 @@ def reject_evidence(
     evidence_id: uuid.UUID,
     body: EvidenceReview,
     db: DBSession = Depends(get_db),
-    _user: User = Depends(get_current_user),
+    _user: User = Depends(require_qa_access),
 ):
-    """Reject a pending evidence item. Requires admin or isms_manager role."""
-    if _user.role not in (UserRole.ADMIN, UserRole.ISMS_MANAGER):
-        raise HTTPException(status_code=403, detail="Only admin or isms_manager can reject evidence")
+    """Reject a pending evidence item. Requires super_admin, admin, or isms_manager role."""
 
     ev = evidence_service.get_evidence(db, evidence_id)
     if not ev:
