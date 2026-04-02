@@ -20,7 +20,7 @@ export const PRODUCT_LABELS: Record<Product, string> = {
 export const PRODUCT_SUBTITLES: Record<Product, string> = {
   isms:    'ISO 27001:2022 + Amd.1',
   privacy: 'ISO 27701:2025 Ed. 2',
-  cloud:   'ISO 27017:2015',
+  cloud:   'ISO 27018:2025',
 }
 
 interface ProductContextValue {

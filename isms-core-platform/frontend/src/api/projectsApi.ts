@@ -34,6 +34,7 @@ export interface ProjectCreate {
   project_subtype?: string   // 'fw' | 'op'
   description?: string
   doc_vars?: DocVars
+  organisation_id?: string   // super_admin only
 }
 
 export interface ProjectPatch {

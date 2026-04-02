@@ -40,7 +40,8 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session as DBSession
 
 from src.core.dependencies import get_current_user, get_org_context
-from src.database.enums import ProductFamily
+from src.database.enums import ProductFamily, UserRole
+from src.domain.organisations import Organisation
 from src.database.session import get_db
 from src.domain.content import Implementation, Policy
 from src.domain.control_groups import ControlGroup
@@ -203,6 +204,15 @@ def create_project(
     fam = body.product_family.upper()
     if fam not in ("ISMS", "PRIVACY", "CLOUD", "SEC"):
         raise HTTPException(status_code=422, detail="product_family must be ISMS, PRIVACY, CLOUD, or SEC")
+    # super_admin may override the target organisation
+    target_org_id = org_id
+    if body.organisation_id is not None:
+        if current_user.role != UserRole.SUPER_ADMIN:
+            raise HTTPException(status_code=403, detail="Only super_admin may assign a project to a different organisation")
+        org = db.get(Organisation, body.organisation_id)
+        if not org:
+            raise HTTPException(status_code=404, detail="Organisation not found")
+        target_org_id = body.organisation_id
     settings: dict = {}
     if body.doc_vars:
         settings["doc_vars"] = body.doc_vars.model_dump(exclude_none=True)
@@ -210,7 +220,7 @@ def create_project(
         settings["project_subtype"] = body.project_subtype.lower()
     p = Project(
         name=body.name,
-        organisation_id=org_id,
+        organisation_id=target_org_id,
         product_family=ProductFamily(fam),
         description=body.description,
         owner_id=current_user.id,

@@ -92,6 +92,7 @@ class ProjectCreate(BaseModel):
     project_subtype: str | None = None  # fw | op (ISMS only)
     description: str | None = None
     doc_vars: DocVars | None = None   # pre-filled document header variables
+    organisation_id: uuid.UUID | None = None  # super_admin only — override target org
 
 
 class ProjectPatch(BaseModel):

@@ -42,8 +42,10 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
 import dayjs from 'dayjs'
 import { projectsApi, type ProjectCreate, type ProjectRead, type DocVars } from '../api/projectsApi'
+import { orgApi } from '../api/orgApi'
 import PageHeader from '../components/PageHeader'
 import { useProject } from '../store/ProjectContext'
+import { useAuth } from '../store/AuthContext'
 
 const FAMILY_COLOR: Record<string, string> = {
   ISMS:    '#4472C4',
@@ -69,12 +71,18 @@ const TOTAL_CG: Record<string, number> = { ISMS: 53, PRIVACY: 21, CLOUD: 12 }
 // ── Create dialog ─────────────────────────────────────────────────────────────
 const EMPTY_DOC_VARS: DocVars = { ciso_name: '', ceo_name: '', dpo_name: '', legal_entity: '', effective_date: '', review_date: '', classification: 'Internal' }
 
-function CreateProjectDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
+function CreateProjectDialog({ open, onClose, isSuperAdmin }: { open: boolean; onClose: () => void; isSuperAdmin: boolean }) {
   const qc = useQueryClient()
   const [form, setForm] = useState<ProjectCreate>({ name: '', product_family: 'ISMS', project_subtype: 'fw', description: '' })
   const [docVars, setDocVars] = useState<DocVars>(EMPTY_DOC_VARS)
   const [showDocVars, setShowDocVars] = useState(true)
   const [error, setError] = useState('')
+
+  const { data: allOrgs } = useQuery({
+    queryKey: ['orgs-all'],
+    queryFn: () => orgApi.list(),
+    enabled: isSuperAdmin,
+  })
 
   const mutation = useMutation({
     mutationFn: (body: ProjectCreate) => projectsApi.create(body),
@@ -152,6 +160,19 @@ function CreateProjectDialog({ open, onClose }: { open: boolean; onClose: () => 
           value={form.description}
           onChange={e => setForm(f => ({ ...f, description: e.target.value }))}
         />
+        {isSuperAdmin && allOrgs && (
+          <FormControl fullWidth size="small" sx={{ mb: 2 }}>
+            <InputLabel>Organisation</InputLabel>
+            <Select
+              label="Organisation"
+              value={form.organisation_id ?? ''}
+              onChange={e => setForm(f => ({ ...f, organisation_id: e.target.value || undefined }))}
+            >
+              <MenuItem value=""><em>My organisation (default)</em></MenuItem>
+              {allOrgs.map(o => <MenuItem key={o.id} value={o.id}>{o.name}</MenuItem>)}
+            </Select>
+          </FormControl>
+        )}
 
         {/* Document variables (collapsible) */}
         <Box
@@ -457,6 +478,7 @@ function ProjectCard({ project }: { project: ProjectRead }) {
 
 // ── Main page ──────────────────────────────────────────────────────────────────
 export default function Projects() {
+  const { isSuperAdmin } = useAuth()
   const [createOpen, setCreateOpen] = useState(false)
   const [familyFilter, setFamilyFilter] = useState<string>('ALL')
   const [statusFilter, setStatusFilter] = useState<string>('active')
@@ -563,7 +585,7 @@ export default function Projects() {
         </Grid>
       )}
 
-      <CreateProjectDialog open={createOpen} onClose={() => setCreateOpen(false)} />
+      <CreateProjectDialog open={createOpen} onClose={() => setCreateOpen(false)} isSuperAdmin={isSuperAdmin} />
     </Box>
   )
 }

@@ -80,7 +80,7 @@ async def lifespan(app: FastAPI):
                         username="admin",
                         hashed_password=hashed,
                         full_name="Administrator",
-                        role="admin",
+                        role="super_admin",
                         is_active=True,
                         organisation_id=org.id if org else None,
                     ))
