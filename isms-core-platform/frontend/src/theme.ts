@@ -106,6 +106,17 @@ export function createAppTheme(mode: PaletteMode) {
           paper: { backgroundImage: 'none' },
         },
       },
+      MuiInputBase: {
+        styleOverrides: {
+          input: ({ theme }) => ({
+            '&:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill:active': {
+              WebkitBoxShadow: `0 0 0 100px ${theme.palette.background.paper} inset`,
+              WebkitTextFillColor: theme.palette.text.primary,
+              caretColor: theme.palette.text.primary,
+            },
+          }),
+        },
+      },
       MuiAlert: {
         styleOverrides: {
           root: { fontSize: '0.82rem' },
