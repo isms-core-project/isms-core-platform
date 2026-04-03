@@ -1,0 +1,1034 @@
+[
+  {
+    "clause_id": "0.1",
+    "title": "Background and context",
+    "text": "Background and context\n\nCloud service providers who process personally identifiable information (PII) under contract to their \ncustomers are expected to operate their services in ways that allow both parties to meet the requirements \nof applicable legislation and regulations covering the protection of PII. The requirements and the way in \nwhich the requirements are divided between the cloud service provider and its customers vary according \nto legal jurisdiction, and according to the terms of the contract between the cloud service provider and the \ncustomer. Legislation which governs how PII is allowed to be processed (i.e. collected, used, transferred \nand disposed of) is sometimes referred to as data protection legislation; PII is sometimes referred to as \npersonal data or personal information. The obligations falling on a PII processor vary from jurisdiction to \njurisdiction, which makes it challenging for businesses providing cloud computing services to operate in a \nmultinational environment.\nA public cloud service provider is a “PII processor” when it processes PII for and according to the instructions \nof a cloud service customer. The cloud service customer, who has the contractual relationship with the public \ncloud PII processor, can range from a natural person (i.e. a “PII principal”, processing his or her own PII in \nthe cloud) to an organization (i.e. a “PII controller”, processing PII relating to many PII principals). The cloud \nservice customer can authorize one or more cloud service users associated with it to use the services made \navailable to the customer under its contract with the public cloud PII processor. The cloud service customer \nhas authority over the processing and use of the data. A cloud service customer who is also a PII controller \ncan be subject to a wider set of obligations governing the protection of PII than the public cloud PII processor. \nMaintaining the distinction between PII controller and PII processor relies on the public cloud PII processor \nhaving no data processing objectives other than those set by the cloud service customer with respect to the \nPII it processes and the operations necessary to achieve the cloud service customer's objectives.\nNOTE 1\t\nWhere the public cloud PII processor is processing cloud service customer account data, it can be acting as \na PII controller for this purpose. This document does not cover such activity.\nThe intention of this document, when used in conjunction with the information security objectives \nand controls in ISO/IEC 27002, is to create a common set of security categories and controls that can be \nimplemented by a public cloud computing service provider acting as a PII processor. This document has the \nfollowing objectives:\n—\t to enable the public cloud PII processor to be transparent in relevant matters so that cloud service \ncustomers can select well-governed cloud-based PII processing services;\n—\t to assist the cloud service customer and the public cloud PII processor in entering into a contractual \nagreement;\n—\t to provide cloud service customers with a mechanism for exercising audit and compliance rights and \nresponsibilities in cases where the individual cloud service customer data, which are hosted in a multi-\nparty, virtualized server (cloud) environment, can be technically impractical to audit and can potentially \nincrease risks to those physical and logical network security controls in place.\nNOTE 2\t\nIt is expected that public cloud service providers comply with applicable obligations when acting as a PII \nprocessor.\nThis document can assist by providing a common compliance framework for public cloud service providers, \nin particular those that operate in a multinational market.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "0.2",
+    "title": "PII protection controls for public cloud computing services",
+    "text": "PII protection controls for public cloud computing services\n\nThis document is designed for organizations to use as a reference for selecting PII protection controls \nwithin the process of implementing a cloud computing information security management system based on \nISO/IEC 27001, or as a guidance document for implementing commonly accepted PII protection controls \nfor organizations acting as public cloud PII processors. In particular, this document has been based on \nISO/IEC 27002, taking into consideration the specific risk environment(s) arising from those PII protection \nrequirements which can apply to public cloud computing service providers acting as PII processors.\nvi\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nIn the context of PII protection requirements for a public cloud service provider acting as a PII processor, \nthe organization is protecting the information assets entrusted to it by its customers. Implementation of the \ncontrols of ISO/IEC 27002 by the public cloud PII processor is both suitable for this purpose and necessary. \nThis document extends the ISO/IEC 27002 controls to accommodate the distributed nature of the risk and \nthe existence of a contractual relationship between the cloud service customer and the public cloud PII \nprocessor. This document extends ISO/IEC 27002 in two ways, by providing:\n—\t implementation guidance applicable to public cloud PII protection for some of the existing ISO/IEC 27002 \ncontrols, and\n—\t a set of additional controls and associated guidance in Annex A intended to address public cloud PII \nprotection requirements not addressed by the existing ISO/IEC 27002 control set, organized in line with \nthe privacy principles of ISO/IEC 29100.\nMost of the controls and guidelines in this document also apply to a PII controller. However, the PII controller \nis, in most cases, subject to additional obligations not specified here.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "0.3",
+    "title": "PII protection requirements",
+    "text": "PII protection requirements\n\nIt is essential that an organization identifies its requirements for the protection of PII. There are three main \nsources of requirement, as given below.\na)\t Legal and contractual requirements: One source is the legal and contractual requirements to \nwhich an organization, its trading partners, contractors and service providers are bound, as well as \nresponsibilities concerning their socio-cultural and operating environment. It should be noted that \nlegislation, regulations and contractual commitments made by the PII processor can mandate the \nselection of particular controls and can also necessitate specific criteria for implementing those \ncontrols. These requirements can vary from one jurisdiction to another.\nb)\t Risks: Another source is derived from assessing risks to the organization associated with PII, taking into \naccount the organization’s overall business strategy and objectives. Through a risk assessment, risks \nare identified, their consequence and likelihood are assessed and risks are evaluated. ISO/IEC 27005 \nprovides information security risk management guidance, including advice on risk assessment, risk \nacceptance, risk communication, risk monitoring and risk review. ISO/IEC 29134 provides guidelines on \nprivacy impact assessment.\nc)\t\nCorporate policies: While many aspects covered by a corporate policy are derived from legal and socio-\ncultural requirements, an organization can also choose voluntarily to go beyond the criteria that are \nderived from the requirements of a).",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "0.4",
+    "title": "Selecting and implementing controls in a cloud computing environment",
+    "text": "Selecting and implementing controls in a cloud computing environment\n\nControls can be selected from this document (which includes by reference the controls from ISO/IEC 27002, \ncreating a combined reference control set for the sector or application defined by the relevant sector). If \nrequired, controls can also be selected from other control sets, or new controls can be designed to meet \nspecific needs as appropriate.\nNOTE\t\nA PII processing service provided by a public cloud PII processor can be considered as an application of \ncloud computing rather than as a sector in itself. Nevertheless, the term “public cloud service provider-specific” is \nused in this document, as this is the conventional term used within other Information Security Management systems \nstandards developed by ISO/IEC JTC 1/SC 27.\nThe selection of controls is dependent on organizational decisions based on the criteria for risk acceptance, \nrisk treatment options, and the general risk management approach applied to the organization and, through \ncontractual agreements, its customers and suppliers. It is also subject to relevant national and international \nlegislation. Where organizations/public cloud providers do not select the controls specified in this document, \na justification should be provided.\nFurther, the selection and implementation of controls is dependent on the public cloud provider’s actual role \nin the context of the whole cloud computing reference architecture (see ISO/IEC 22123-3). Many different \norganizations can be involved in providing infrastructure and application services in a cloud computing \nenvironment. In some circumstances, selected controls can be unique to a particular service category of \nvii\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nthe cloud computing reference architecture. In other instances, there can be shared roles in implementing \nsecurity controls. Contractual agreements are expected to specify the PII protection responsibilities of all \norganizations involved in providing or using the cloud services, including the public cloud PII processor, its \nsub-contractors and the cloud service customer.\nThe controls in this document can be considered as guiding principles and applicable for most organizations. \nThey are explained in more detail in this document along with implementation guidance. Implementation \ncan be made simpler if requirements for the protection of PII have been considered in the design of the \npublic cloud PII processor’s information system, services and operations. Such consideration is an element of \nthe concept that is often called “privacy by design” (see References [64] and [65]).",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "0.5",
+    "title": "Developing additional guidelines",
+    "text": "Developing additional guidelines\n\nThis document can be regarded as a starting point for developing PII protection guidelines. It is possible that \nnot all of the controls and guidance in this code of practice are applicable. Furthermore, additional controls \nand guidelines not included in this document can be required. When documents are developed containing \nadditional guidelines or controls, it can be useful to include cross-references to clauses in this document \nwhere applicable to facilitate compliance checking by auditors and business partners.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "0.6",
+    "title": "Lifecycle considerations",
+    "text": "Lifecycle considerations\n\nPII has a natural lifecycle, from creation and origination, through to storage, processing, use and \ntransmission, to its eventual destruction or disuse. The risks to PII can vary during its lifetime but protection \nof PII remains important at all stages.\nPII protection requirements are expected to be taken into account as existing and new information systems \nare managed through their lifecycle.\nviii\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nInternational Standard\nISO/IEC 27018:2025(en)\nInformation security, cybersecurity and privacy protection — \nGuidelines for protection of personally identifiable \ninformation (PII) in public clouds acting as PII processors\n1\t Scope\nThis document establishes commonly accepted control objectives, controls and guidelines for implementing \nmeasures to protect personally identifiable information (PII) in line with the privacy principles in \nISO/IEC 29100 for the public cloud computing environment.\nIn particular, this document specifies guidelines based on ISO/IEC 27002:2022, taking into consideration \nthe regulatory requirements for the protection of PII which can be applicable within the context of the \ninformation security risk environment(s) of a provider of public cloud services.\nThis document is applicable to all types and sizes of organizations, including public and private companies, \ngovernment entities and not-for-profit organizations, which provide information processing services as PII \nprocessors via cloud computing under contract to other organizations.\nThe guidelines in this document can also be relevant to organizations acting as PII controllers.\n2\t Normative references\nThe following documents are referred to in the text in such a way that some or all of their content constitutes \nrequirements of this document. For dated references, only the edition cited applies. For undated references, \nthe latest edition of the referenced document (including any amendments) applies.\nISO/IEC 27000, Information technology — Security techniques — Information security management systems — \nOverview and vocabulary\nISO/IEC  27002:2022, Information security, cybersecurity and privacy protection — Information security \ncontrols\nISO/IEC 22123-1, Information technology — Cloud computing — Part 1: Vocabulary\n3\t Terms and definitions\nFor the purposes of this document, the terms and definitions given in ISO/IEC 22123-1, ISO/IEC 27000, \nISO/IEC 27002 and the following apply.\nISO and IEC maintain terminology databases for use in standardization at the following addresses:\n—\t ISO Online browsing platform: available at https://​www​.iso​.org/​obp\n—\t IEC Electropedia: available at https://​www​.electropedia​.org/​\n3.1\ndata breach\ncompromise of security that leads to the accidental or unlawful destruction, loss, alteration, unauthorized \ndisclosure of, or access to, protected data transmitted, stored or otherwise processed\n[SOURCE: ISO/IEC 27040:2024, 3.5.2]\n1\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\n3.2\npersonally identifiable information\nPII\ninformation that a) can be used to establish a link between the information and the natural person to whom \nsuch information relates, or b) is or can be directly or indirectly linked to a natural person\nNote 1 to entry: The “natural person” in the definition is the PII principal (3.4). To determine whether a PII principal is \nidentifiable, account should be taken of all the means which can reasonably be used by the privacy stakeholder holding \nthe data, or by any other party, to establish the link between the set of PII and the natural person.\nNote 2 to entry: This definition is included to define the term PII as used in this document. A public cloud PII processor \n(3.5) is typically not in a position to know explicitly whether information it processes falls into any specified category \nunless this is made transparent by the cloud service customer.\n[SOURCE: ISO/IEC 29100:2024, 3.7, modified — Note 2 to entry has been added.]",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "3.3",
+    "title": "PII controller",
+    "text": "PII controller\n\nprivacy stakeholder (or privacy stakeholders) that determines the purposes and means for processing \npersonally identifiable information (PII) (3.2) other than natural persons who use data for personal purposes\nNote 1 to entry: A PII controller sometimes instructs others [e.g. PII processors (3.5)] to process PII on its behalf while \nthe responsibility for the processing remains with the PII controller.\n[SOURCE: ISO/IEC 29100:2024, 3.8]",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "3.4",
+    "title": "PII principal",
+    "text": "PII principal\n\nnatural person to whom the personally identifiable information (PII) (3.2) relates\nNote 1 to entry: Depending on the jurisdiction and the particular PII protection and privacy legislation, the synonym \n“data subject” can also be used instead of the term “PII principal”.\n[SOURCE: ISO/IEC 29100:2024, 3.9, modified — Note 1 to entry has been added.]",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "3.5",
+    "title": "PII processor",
+    "text": "PII processor\n\nprivacy stakeholder that processes personally identifiable information (PII) (3.2) on behalf of and in \naccordance with the instructions of a PII controller (3.3)\n[SOURCE: ISO/IEC 29100:2024, 3.10]",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "3.6",
+    "title": "PII processing",
+    "text": "PII processing\n\nprocessing of PII\noperation or set of operations performed on personally identifiable information (PII) (3.2)\nNote  1  to  entry:  Examples of processing operations of PII include, but are not limited to, the collection, storage, \nalteration, retrieval, consultation, disclosure, anonymization, pseudonymization, dissemination or otherwise making \navailable, deletion or destruction of PII.\n[SOURCE: ISO/IEC 29100:2024, 3.21, modified — \"PII processing\" has been added as the preferred term.]\n3.7\npublic cloud service provider\nparty which makes cloud services available according to the public cloud model\n2\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\n4\t Overview",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "4.1",
+    "title": "Structure of this document",
+    "text": "Structure of this document\n\nThis document follows the structure used in ISO/IEC 27002:2022 for the description of controls. In this \naspect, the same strategy that was adopted in the earlier version of this document (ISO/IEC 27018:2019), in \nmirroring the controls in ISO/IEC 27002:2013,1 has been repeated here.\nAnnex  B provides a comparison of the two control layouts in this document and the previous edition \n(ISO/IEC 27018:2019).\nSpecifically, the following rules have been used in mirroring the controls in ISO/IEC 27002:2022 in this \ndocument. In cases where the various elements of the control layout (described in 4.2) for a control are \nidentical, only a reference is provided to the corresponding control in ISO/IEC 27002:2022. For those controls \nthat require additional guidance and related information in the context of public cloud PII protection, \nadditional guidance is provided under the headings “Public cloud PII protection implementation guidance” \nand “Other information for public cloud PII protection” respectively. This type of guidance is also referred to \nusing the term “Public cloud service provider-specific implementation guidance”. Besides these, additional \ncontrols and associated implementation guidance applicable to PII protection for cloud computing service \nproviders are described in Annex  A. Finally, the clause numbers in this document are aligned with the \ncorresponding clause numbers in ISO/IEC 27002:2022.\nThe controls in Table 1 are organized into four themes, which correspond to the controls listed in Clauses 5 \nto 8 as follows:\n—\t the theme \"Public cloud service provider-specific implementation guidance is provided\" corresponds to \nthe control \"Public cloud PII protection implementation guidance\";\n—\t the theme \"Public cloud service provider-specific implementation guidance and other information is \nprovided\" corresponds to the control \"Public cloud PII protection implementation guidance and other \ninformation for Public cloud PII protection\";\n—\t the theme \"No additional public cloud service provider-specific implementation guidance or other \ninformation is provided\" corresponds to the control \"no specific Guidance or other information for Public \ncloud PII protection\";\n—\t the theme \"Public cloud service provider-specific implementation guidance is provided, together with \na cross-reference to control(s) in Annex  A\" corresponds to the control \"Public cloud PII protection \nimplementation guidance and cross-reference to control(s) in Annex A\".\n3\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nTable 1 — Location of public cloud service provider-specific guidance and other information for \nimplementing controls in ISO/IEC 27002:2022\nISO/IEC \n27002:2022\nControl\nidentifier\nISO/IEC 27002:2022 Control name\nTheme\nClause 5 – Organizational controls",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.1",
+    "title": "Policies for information security",
+    "text": "Policies for information security\n\nPublic cloud service provider-specific\nimplementation guidance and other\ninformation is provided.c",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.3",
+    "title": "Segregation of duties",
+    "text": "Segregation of duties\n\nNo additional public cloud service \nprovider-specific implementation guidance\nor other information is provided.d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.4",
+    "title": "Management responsibilities",
+    "text": "Management responsibilities\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.5",
+    "title": "Contact with authorities",
+    "text": "Contact with authorities\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.6",
+    "title": "Contact with special interest groups",
+    "text": "Contact with special interest groups\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\n5.7 a\nThreat intelligence\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.8",
+    "title": "Information security in project management",
+    "text": "Information security in project management\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.9",
+    "title": "Inventory of information and other associated",
+    "text": "Inventory of information and other associated\n\nassets\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.10",
+    "title": "Acceptable use of information and other associat­",
+    "text": "Acceptable use of information and other associat­\n\ned assets\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.11",
+    "title": "Return of assets",
+    "text": "Return of assets\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.12",
+    "title": "Classification of information",
+    "text": "Classification of information\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.13",
+    "title": "Labelling of information",
+    "text": "Labelling of information\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\na\t\nNew control introduced in ISO/IEC 27002:2022.\nb\t\nThis control is applicable as “Public cloud PII protection implementation guidance”.\nc\t\nThis control is applicable as “Public cloud PII protection implementation guidance and other information for public cloud PII \nprotection”.\nd\t\nThis control is applicable as “no specific Guidance or other information for Public cloud PII protection”.\ne\t\nThis control is applicable as “Public cloud PII protection implementation guidance and cross-reference to control(s) in \nAnnex A”.\n4\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nISO/IEC \n27002:2022\nControl\nidentifier\nISO/IEC 27002:2022 Control name\nTheme",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.15",
+    "title": "Access control",
+    "text": "Access control\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.17",
+    "title": "Authentication information",
+    "text": "Authentication information\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.18",
+    "title": "Access rights",
+    "text": "Access rights\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.19",
+    "title": "Information security in supplier relationships",
+    "text": "Information security in supplier relationships\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.20",
+    "title": "Addressing information security within supplier",
+    "text": "Addressing information security within supplier\n\nagreements\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.21",
+    "title": "Managing information security in the ICT supply",
+    "text": "Managing information security in the ICT supply\n\nchain\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.22",
+    "title": "Monitoring, review and change management of",
+    "text": "Monitoring, review and change management of\n\nsupplier services\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\n5.23 a\nInformation security for use of cloud services\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.24",
+    "title": "Information security incident management plan­",
+    "text": "Information security incident management plan­\n\nning and preparation\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.25",
+    "title": "Assessment and decision on information security",
+    "text": "Assessment and decision on information security\n\nevents\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.26",
+    "title": "Response to information security incidents",
+    "text": "Response to information security incidents\n\nPublic cloud service provider-specific\nimplementation guidance is provided, together \nwith a cross-reference to control(s) in Annex A. e",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.27",
+    "title": "Learning from information security incidents",
+    "text": "Learning from information security incidents\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.28",
+    "title": "Collection of evidence",
+    "text": "Collection of evidence\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\na\t\nNew control introduced in ISO/IEC 27002:2022.\nb\t\nThis control is applicable as “Public cloud PII protection implementation guidance”.\nc\t\nThis control is applicable as “Public cloud PII protection implementation guidance and other information for public cloud PII \nprotection”.\nd\t\nThis control is applicable as “no specific Guidance or other information for Public cloud PII protection”.\ne\t\nThis control is applicable as “Public cloud PII protection implementation guidance and cross-reference to control(s) in \nAnnex A”.\nTable 1 (continued)\nTable 1 (continued)\n5\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nISO/IEC \n27002:2022\nControl\nidentifier\nISO/IEC 27002:2022 Control name\nTheme",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.29",
+    "title": "Information security during disruption",
+    "text": "Information security during disruption\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\n5.30 a\nICT readiness for business continuity\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.31",
+    "title": "Legal, statutory, regulatory and contractual re­",
+    "text": "Legal, statutory, regulatory and contractual re­\n\nquirements\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.32",
+    "title": "Intellectual property rights",
+    "text": "Intellectual property rights\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.33",
+    "title": "Protection of records",
+    "text": "Protection of records\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.34",
+    "title": "Privacy and protection of PII",
+    "text": "Privacy and protection of PII\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.36",
+    "title": "Compliance with policies, rules and standards for",
+    "text": "Compliance with policies, rules and standards for\n\ninformation security\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.37",
+    "title": "Documented operating procedures",
+    "text": "Documented operating procedures\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\nClause 6 – People controls",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "6.1",
+    "title": "Screening",
+    "text": "Screening\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "6.2",
+    "title": "Terms and conditions of employment",
+    "text": "Terms and conditions of employment\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "6.3",
+    "title": "Information security awareness, education and",
+    "text": "Information security awareness, education and\n\ntraining\nPublic cloud service provider-specific\nimplementation guidance and other\ninformation is provided.c",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "6.4",
+    "title": "Disciplinary process",
+    "text": "Disciplinary process\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "6.5",
+    "title": "Responsibilities after termination or change of",
+    "text": "Responsibilities after termination or change of\n\nemployment\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\na\t\nNew control introduced in ISO/IEC 27002:2022.\nb\t\nThis control is applicable as “Public cloud PII protection implementation guidance”.\nc\t\nThis control is applicable as “Public cloud PII protection implementation guidance and other information for public cloud PII \nprotection”.\nd\t\nThis control is applicable as “no specific Guidance or other information for Public cloud PII protection”.\ne\t\nThis control is applicable as “Public cloud PII protection implementation guidance and cross-reference to control(s) in \nAnnex A”.\nTable 1 (continued)\nTable 1 (continued)\n6\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nISO/IEC \n27002:2022\nControl\nidentifier\nISO/IEC 27002:2022 Control name\nTheme",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "6.6",
+    "title": "Confidentiality or non-disclosure agreements",
+    "text": "Confidentiality or non-disclosure agreements\n\nPublic cloud service provider-specific\nimplementation guidance is provided, together \nwith a cross-reference to control(s) in Annex A. e",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "6.7",
+    "title": "Remote working",
+    "text": "Remote working\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "6.8",
+    "title": "Information security event reporting",
+    "text": "Information security event reporting\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\nClause 7 – Physical controls",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.1",
+    "title": "Physical security perimeters",
+    "text": "Physical security perimeters\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.2",
+    "title": "Physical entry",
+    "text": "Physical entry\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.3",
+    "title": "Securing offices, rooms and facilities",
+    "text": "Securing offices, rooms and facilities\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\n7.4 a\nPhysical security monitoring\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.5",
+    "title": "Protecting against physical and environmental",
+    "text": "Protecting against physical and environmental\n\nthreats\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.6",
+    "title": "Working in secure areas",
+    "text": "Working in secure areas\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.7",
+    "title": "Clear desk and clear screen",
+    "text": "Clear desk and clear screen\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.8",
+    "title": "Equipment siting and protection",
+    "text": "Equipment siting and protection\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.9",
+    "title": "Security of assets off-premises",
+    "text": "Security of assets off-premises\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.10",
+    "title": "Storage media",
+    "text": "Storage media\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.11",
+    "title": "Supporting utilities",
+    "text": "Supporting utilities\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\na\t\nNew control introduced in ISO/IEC 27002:2022.\nb\t\nThis control is applicable as “Public cloud PII protection implementation guidance”.\nc\t\nThis control is applicable as “Public cloud PII protection implementation guidance and other information for public cloud PII \nprotection”.\nd\t\nThis control is applicable as “no specific Guidance or other information for Public cloud PII protection”.\ne\t\nThis control is applicable as “Public cloud PII protection implementation guidance and cross-reference to control(s) in \nAnnex A”.\nTable 1 (continued)\nTable 1 (continued)\n7\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nISO/IEC \n27002:2022\nControl\nidentifier\nISO/IEC 27002:2022 Control name\nTheme",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.12",
+    "title": "Cabling security",
+    "text": "Cabling security\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.13",
+    "title": "Equipment maintenance",
+    "text": "Equipment maintenance\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.14",
+    "title": "Secure disposal or re-use of equipment",
+    "text": "Secure disposal or re-use of equipment\n\nPublic cloud service provider-specific\nimplementation guidance is provided, together \nwith a cross-reference to control(s) in Annex A. e\nClause 8 – Technological controls",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.1",
+    "title": "User endpoint devices",
+    "text": "User endpoint devices\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.2",
+    "title": "Privileged access rights",
+    "text": "Privileged access rights\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.3",
+    "title": "Information access restriction",
+    "text": "Information access restriction\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.4",
+    "title": "Access to source code",
+    "text": "Access to source code\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.6",
+    "title": "Capacity management",
+    "text": "Capacity management\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.7",
+    "title": "Protection against malware",
+    "text": "Protection against malware\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.8",
+    "title": "Management of technical vulnerabilities",
+    "text": "Management of technical vulnerabilities\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\n8.9 a\nConfiguration management\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\n8.10 a\nInformation deletion\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\n8.11 a\nData masking\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\na\t\nNew control introduced in ISO/IEC 27002:2022.\nb\t\nThis control is applicable as “Public cloud PII protection implementation guidance”.\nc\t\nThis control is applicable as “Public cloud PII protection implementation guidance and other information for public cloud PII \nprotection”.\nd\t\nThis control is applicable as “no specific Guidance or other information for Public cloud PII protection”.\ne\t\nThis control is applicable as “Public cloud PII protection implementation guidance and cross-reference to control(s) in \nAnnex A”.\nTable 1 (continued)\nTable 1 (continued)\n8\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nISO/IEC \n27002:2022\nControl\nidentifier\nISO/IEC 27002:2022 Control name\nTheme\n8.12 a\nData leakage prevention\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.14",
+    "title": "Redundancy of information processing facilities",
+    "text": "Redundancy of information processing facilities\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.15",
+    "title": "Logging",
+    "text": "Logging\n\nPublic cloud service provider-specific\nimplementation guidance is provided, together \nwith a cross-reference to control(s) in Annex A. e\n8.16 a\nMonitoring activities\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.17",
+    "title": "Clock synchronization",
+    "text": "Clock synchronization\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.18",
+    "title": "Use of privileged utility programs",
+    "text": "Use of privileged utility programs\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.19",
+    "title": "Installation of software on operational systems",
+    "text": "Installation of software on operational systems\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.20",
+    "title": "Networks security",
+    "text": "Networks security\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.21",
+    "title": "Security of network services",
+    "text": "Security of network services\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.22",
+    "title": "Segregation of networks",
+    "text": "Segregation of networks\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\n8.23 a\nWeb filtering\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.25",
+    "title": "Secure development lifecycle",
+    "text": "Secure development lifecycle\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.26",
+    "title": "Application security requirements",
+    "text": "Application security requirements\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\na\t\nNew control introduced in ISO/IEC 27002:2022.\nb\t\nThis control is applicable as “Public cloud PII protection implementation guidance”.\nc\t\nThis control is applicable as “Public cloud PII protection implementation guidance and other information for public cloud PII \nprotection”.\nd\t\nThis control is applicable as “no specific Guidance or other information for Public cloud PII protection”.\ne\t\nThis control is applicable as “Public cloud PII protection implementation guidance and cross-reference to control(s) in \nAnnex A”.\nTable 1 (continued)\nTable 1 (continued)\n9\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nISO/IEC \n27002:2022\nControl\nidentifier\nISO/IEC 27002:2022 Control name\nTheme",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.27",
+    "title": "Secure system architecture and engineering",
+    "text": "Secure system architecture and engineering\n\nprinciples\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\n8.28 a\nSecure coding\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.29",
+    "title": "Security testing in development and acceptance",
+    "text": "Security testing in development and acceptance\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.30",
+    "title": "Outsourced development",
+    "text": "Outsourced development\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.31",
+    "title": "Separation of development, test and production",
+    "text": "Separation of development, test and production\n\nenvironments\nPublic cloud service provider-specific\nimplementation guidance is provided. b",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.32",
+    "title": "Change management",
+    "text": "Change management\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.33",
+    "title": "Test information",
+    "text": "Test information\n\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.34",
+    "title": "Protection of information systems during audit",
+    "text": "Protection of information systems during audit\n\ntesting\nNo additional public cloud service \nprovider-specific implementation guidance \nor other information is provided. d\na\t\nNew control introduced in ISO/IEC 27002:2022.\nb\t\nThis control is applicable as “Public cloud PII protection implementation guidance”.\nc\t\nThis control is applicable as “Public cloud PII protection implementation guidance and other information for public cloud PII \nprotection”.\nd\t\nThis control is applicable as “no specific Guidance or other information for Public cloud PII protection”.\ne\t\nThis control is applicable as “Public cloud PII protection implementation guidance and cross-reference to control(s) in \nAnnex A”.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "4.2",
+    "title": "Control layout",
+    "text": "Control layout\n\nIn line with ISO/IEC 27002:2022, the entire set of controls are categorized under the 4 themes found in \nTable 1 above. Each control has the following elements:\na)\t Control title: short name of the control;\nb)\t Attribute table: a table shows the value(s) of each attribute for the given control;\nc)\t\nControl: what the control is;\nd)\t Purpose: why the control should be implemented;\ne)\t Guidance: how the control should be implemented;\nf)\t\nOther information: explanatory text or references to other related documents.\nSubheadings are used in the guidance text for some controls to aid readability where guidance is lengthy \nand addresses multiple topics. Such headings are not necessarily used in all guidance text.\ng)\t Public cloud PII protection guidance\nTable 1 (continued)\nTable 1 (continued)\n10\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nThis provides more detailed information to support the implementation of the control and to meet the \ncontrol objectives. The guidance should not be considered as entirely suitable or sufficient in all situations \nand hence will not fulfil the organization’s specific control requirements. Alternative or additional controls, \nor other forms of risk treatment (e.g. avoiding, transferring, or accepting risks), can therefore be appropriate.\nh)\t Other information for public cloud PII protection\nThis provides further information that is expected to be considered, such as legal considerations and \nreferences to other standards.\n5\t Organizational controls",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.1",
+    "title": "Policies for information security",
+    "text": "Policies for information security\n\nThe guidance in ISO/IEC 27002:2022, 5.1 applies. In addition, the following public cloud service provider-\nspecific guidance and associated information also apply.\na)\t Public cloud PII protection implementation guidance\nContractual agreements should allocate responsibilities between the public cloud PII processor, its sub-\ncontractors and the cloud service customer, taking into account the type of cloud service in question [e.g. a \nservice of an Infrastructure as a Service (IaaS), Platform as a Service (PaaS) or Software as a Service (SaaS) \ncategory of the cloud computing reference architecture]. For example, the allocation of responsibility for \napplication layer controls can differ depending on whether the public cloud PII processor is providing a SaaS \nservice or rather is providing a PaaS or IaaS service on which the cloud service customer can build or layer \nits own applications.\nb)\t Other information for public cloud PII protection\nIn some jurisdictions, the public cloud PII processor is directly subject to PII protection legislation. In others, \nPII protection legislation can apply to the PII controller only.\nIt is necessary that the contract between the cloud service customer and the public cloud PII processor \nincludes a mechanism to ensure the public cloud PII processor supports and manages compliance with the \ncontract between the cloud service customer and the public cloud PII processor. The contract can call for \nindependently audited compliance, acceptable to the cloud service customer, e.g. via the implementation of \nthe relevant controls in this document and in ISO/IEC 27002.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.2",
+    "title": "Information security roles and responsibilities",
+    "text": "Information security roles and responsibilities\n\nThe guidance in ISO/IEC 27002:2022, 5.2 applies. In addition, the following public cloud service provider-\nspecific guidance also applies.\na)\t Public cloud PII protection implementation guidance\nThe public cloud PII processor should have a PII specialist who advises the cloud service customers on the \nproper handling of PII information.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.5",
+    "title": "Contact with authorities",
+    "text": "Contact with authorities\n\nThe guidance in ISO/IEC 27002:2022, 5.5 applies.\n11\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.7",
+    "title": "Threat intelligence",
+    "text": "Threat intelligence\n\nNOTE\t\nNew control introduced in ISO/IEC 27002:2022.\nThe guidance in ISO/IEC 27002:2022, 5.7 applies.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.14",
+    "title": "Information transfer",
+    "text": "Information transfer\n\nThe guidance in ISO/IEC 27002:2022, 5.14 applies. In addition, the following public cloud service provider-\nspecific guidance also applies.\na)\t Public cloud PII protection implementation guidance\nWhenever physical media are used for information transfer, a system should be put in place to record \nincoming and outgoing physical media containing PII, including the type of physical media, the authorized \nsender/recipients, the date and time, and the number of physical media. Where appropriate, cloud service \ncustomers should implement, and public cloud PII processors should support technical capacity to apply, \nadditional measures (such as encryption) to reduce the likelihood that unauthorized access could occur en \nroute, prior to arrival at the intended destination. In these cases, both parties can apply their own such \nmeasures.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.15",
+    "title": "Access control",
+    "text": "Access control\n\nThe guidance in ISO/IEC 27002:2022, 5.15 applies.\n12\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.16",
+    "title": "Identity management",
+    "text": "Identity management\n\nThe guidance in ISO/IEC 27002:2022, 5.16 applies. In addition, the following public cloud service provider-\nspecific guidance and associated information also apply.\na)\t Public cloud PII protection implementation guidance\nIn the context of the service categories of the cloud computing reference architecture, the cloud service \ncustomer can be responsible for some or all aspects of access management for cloud service users under \nits control. Where appropriate, the public cloud PII processor should enable the cloud service customer to \nmanage the access of cloud service users under the cloud service customer’s control.\nProcedures for user registration and de-registration should address the situation where user access control \nis compromised, such as the corruption or compromise of passwords or other user registration data (e.g. as \na result of inadvertent disclosure).\nNOTE\t\nIndividual jurisdictions can impose specific requirements regarding the frequency of checks for unused \nauthentication credentials. It is the responsibility of organizations operating in these jurisdictions to ensure that they \ncomply with these requirements.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.23",
+    "title": "Information security for use of cloud services",
+    "text": "Information security for use of cloud services\n\nNOTE\t\nNew control introduced in ISO/IEC 27002:2022.\nThe guidance in ISO/IEC 27002:2022, 5.23 applies.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.25",
+    "title": "Assessment and decision on information security events",
+    "text": "Assessment and decision on information security events\n\nThe guidance in ISO/IEC 27002:2022, 5.25 applies.\n13\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.26",
+    "title": "Response to information security incidents",
+    "text": "Response to information security incidents\n\nThe guidance in ISO/IEC 27002:2022, 5.26 applies.\na)\t Public cloud PII protection implementation guidance\nAn information security incident should trigger a review by the public cloud PII processor, as part of its \ninformation security incident management process, to determine if a data breach involving PII has taken \nplace (see A.10.1).\nNot all information security events should necessarily trigger such a review. It is possible that an information \nsecurity event does not result in actual, or the significant probability of, unauthorized access to PII or to any \nof the public cloud PII processor’s equipment or facilities storing PII, and can include, without limitation, \npings and other diagnostic probes to firewalls or edge servers.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.30",
+    "title": "ICT readiness for business continuity",
+    "text": "ICT readiness for business continuity\n\nNOTE\t\nNew control introduced in ISO/IEC 27002:2022.\nThe guidance in ISO/IEC 27002:2022, 5.30 applies.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "5.35",
+    "title": "Independent review of information security",
+    "text": "Independent review of information security\n\nThe guidance in ISO/IEC 27002:2022, 5.35 applies. In addition, the following public cloud service provider-\nspecific guidance also applies.\na)\t Public cloud PII protection implementation guidance\nIn cases where individual cloud service customer audits are impractical or can increase risks to security, the \npublic cloud PII processor should make available to prospective cloud service customers, prior to entering \ninto, and for the duration of, a contract, independent evidence that information security is implemented and \n14\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\noperated according to the public cloud PII processor’s policies and procedures. A relevant independent audit \nas selected by the public cloud PII processor should normally be an acceptable method for fulfilling the cloud \nservice customer’s interest in reviewing the public cloud PII processor’s processing operations, provided \nsufficient transparency is provided.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "6.3",
+    "title": "Information security awareness, education and training",
+    "text": "Information security awareness, education and training\n\nThe guidance in ISO/IEC 27002:2022, 6.3 applies. In addition, the following public cloud service provider-\nspecific guidance and associated information also apply.\na)\t Public cloud PII protection implementation guidance\nMeasures should be put in place to make relevant staff aware of the possible consequences on the public \ncloud PII processor (e.g. loss of business and brand or reputational damage), on the staff member (e.g. \ndisciplinary consequences) and on the PII principal (e.g. physical, material and emotional consequences) of \nbreaching privacy or security rules and procedures, especially those addressing the handling of PII.\nb)\t Other information for public cloud PII protection\nIn some jurisdictions, the public cloud PII processor can be subject to legal sanctions, including substantial \nfines directly from the local PII protection authority.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "6.6",
+    "title": "Confidentiality or non-disclosure agreements",
+    "text": "Confidentiality or non-disclosure agreements\n\nNOTE\t\nAdditional controls and guidance relevant to confidentiality or non-disclosure agreements can be found \nin A.10.1.\nThe guidance in ISO/IEC 27002:2022, 6.6 applies.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "6.7",
+    "title": "Remote working",
+    "text": "Remote working\n\nThe guidance in ISO/IEC 27002:2022, 6.7 applies.\n15\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.4",
+    "title": "Physical security monitoring",
+    "text": "Physical security monitoring\n\nNOTE\t\nNew control introduced in ISO/IEC 27002:2022.\nThe guidance in ISO/IEC 27002:2022, 7.4 applies.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.12",
+    "title": "Cabling security",
+    "text": "Cabling security\n\nThe guidance in ISO/IEC 27002:2022, 7.12 applies.\n16\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "7.14",
+    "title": "Secure disposal or re-use of equipment",
+    "text": "Secure disposal or re-use of equipment\n\nThe guidance in ISO/IEC 27002:2022, 7.14 applies. The following public cloud service provider-specific \nguidance also applies.\na)\t Public cloud PII protection implementation guidance\nFor the purposes of secure disposal or re-use, equipment containing storage media that can possibly contain \nPII should be treated as though it does.\nNOTE\t\nAdditional controls and guidance relevant to secure disposal or re-use of equipment can be found in A.11.7.\n8\t Technological controls",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.5",
+    "title": "Secure authentication",
+    "text": "Secure authentication\n\nThe guidance in ISO/IEC 27002:2022, 8.5 applies. The following public cloud service provider-specific \nguidance also applies.\na)\t Public cloud PII protection implementation guidance\nWhere required, the public cloud PII processor should provide secure log-on procedures for any accounts \nrequested by the cloud service customer for cloud service users under its control.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.8",
+    "title": "Management of technical vulnerabilities",
+    "text": "Management of technical vulnerabilities\n\nThe guidance in ISO/IEC 27002:2022, 8.8 applies.\n17\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.9",
+    "title": "Configuration management",
+    "text": "Configuration management\n\nNOTE\t\nNew control introduced in ISO/IEC 27002:2022.\nThe guidance in ISO/IEC 27002:2022, 8.9 applies.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.10",
+    "title": "Information deletion",
+    "text": "Information deletion\n\nNOTE\t\nNew control introduced in ISO/IEC 27002:2022.\nThe guidance in ISO/IEC 27002:2022, 8.10 applies.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.11",
+    "title": "Data masking",
+    "text": "Data masking\n\nNOTE\t\nNew control introduced in ISO/IEC 27002:2022.\nThe guidance in ISO/IEC 27002:2022, 8.11 applies.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.12",
+    "title": "Data leakage prevention",
+    "text": "Data leakage prevention\n\nNOTE\t\nNew control introduced in ISO/IEC 27002:2022.\nThe guidance in ISO/IEC 27002:2022, 8.12 applies.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.13",
+    "title": "Information backup",
+    "text": "Information backup\n\nThe guidance in ISO/IEC 27002:2022, 8.13 applies. The following public cloud service provider-specific \nguidance also applies.\na)\t Public cloud PII protection implementation guidance\nInformation processing systems based on the cloud computing model introduce additional or alternative \nmechanisms to off-site backups for protecting against loss of data, ensuring continuity of data processing \noperations, and providing the ability to restore data processing operations after a disruptive event. Multiple \ncopies of data in either physically or logically diverse locations or both (which can be within the information \nprocessing system itself) should be created or maintained for the purposes of either backup or recovery or both.\nPII-specific responsibilities in this respect can lie with the cloud service customer. Where the public cloud \nPII processor explicitly provides backup and restore services to the cloud service customer, the public cloud \nPII processor should provide information to the cloud service customer about the capabilities of the cloud \nservice with respect to backup and restoration of the cloud service customer data.\nProcedures should be put in place to allow for restoration of data processing operations within a specified, \ndocumented period after a disruptive event.\nThe back-up and recovery procedures should be reviewed at a specified, documented frequency.\nNOTE\t\nSome jurisdictions can impose specific requirements regarding the frequency of reviews of backup and \nrecovery procedures. It is the responsibility of organizations operating in these jurisdictions to ensure that they \ncomply with these requirements.\nThe use of sub-contractors to store replicated or backup copies of data being processed is covered by the \ncontrols A.8.1 and A.11.12 in this document applying to sub-contracted PII processing. Where physical \nmedia transfers take place this is also covered by controls 5.14 and A.11.5 in this document.\nThe public cloud PII processor should have a policy which addresses the requirements for the backup of \ninformation and any further requirements (e.g. contractual requirements) for the erasure of PII contained in \ninformation held for backup purposes.\n18\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.15",
+    "title": "Logging",
+    "text": "Logging\n\nThe guidance in ISO/IEC 27002:2022, 8.15 applies. The following public cloud service provider-specific \nguidance also applies.\na)\t Public cloud PII protection implementation guidance\nA process should be put in place to review event logs with a specified, documented periodicity, to identify \nirregularities and propose remediation efforts.\nWhere possible, event logs should record whether or not PII has been changed (e.g. added, modified or \ndeleted) as a result of an event and by whom. Where multiple service providers are involved in providing \nservice from different service categories of the cloud computing reference architecture, there can be varied \nor shared roles in implementing this guidance.\nThe public cloud PII processor should define criteria regarding if, when and how log information can be \nmade available to or usable by the cloud service customer. These procedures should be made available to the \ncloud service customer.\nWhere a cloud service customer is permitted to access log records controlled by the public cloud PII \nprocessor, the public cloud PII processor should ensure that the cloud service customer can only access \nrecords that relate to that cloud service customer’s activities, and cannot access any log records which relate \nto the activities of other cloud service customers.\nLog information recorded for purposes such as security monitoring and operational diagnostics can contain \nPII. Measures, such as controlling access, should be put in place to ensure that logged information is only \nused for its intended purposes.\nA procedure, preferably automatic, should be put in place to ensure that logged information is deleted within \na specified and documented period.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.16",
+    "title": "Monitoring activities",
+    "text": "Monitoring activities\n\nNOTE\t\nNew control introduced in ISO/IEC 27002:2022.\nThe guidance in ISO/IEC 27002:2022, 8.16 applies.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.21",
+    "title": "Security of network services",
+    "text": "Security of network services\n\nThe guidance in ISO/IEC 27002:2022, 8.21 applies.\n19\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.23",
+    "title": "Web filtering",
+    "text": "Web filtering\n\nNOTE\t\nNew control introduced in ISO/IEC 27002:2022.\nThe guidance in ISO/IEC 27002:2022, 8.23 applies.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.24",
+    "title": "Use of cryptography",
+    "text": "Use of cryptography\n\nThe guidance in ISO/IEC 27002:2022, 8.24 applies. The following public cloud service provider-specific \nguidance also applies.\na)\t Public cloud PII protection implementation guidance\nThe public cloud PII processor should also provide information to the cloud service customer about \nany capabilities it provides that can assist the cloud service customer in applying and managing its own \ncryptographic protection and processes such as various methods to manage keys or secrets in a vault, key \nmanagement system (KMS), hardware security module (HSM) backed service, cloud HSM, etc.\nNOTE\t\nIn some jurisdictions, it can be required to apply cryptography to protect particular kinds of PII, such as \nhealth data concerning a PII principal, resident registration numbers, passport numbers and driver's licence numbers.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.28",
+    "title": "Secure coding",
+    "text": "Secure coding\n\nNOTE\t\nNew control introduced in ISO/IEC 27002:2022.\nThe guidance in ISO/IEC 27002:2022, 8.28 applies.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.31",
+    "title": "Separation of development, test and production environments",
+    "text": "Separation of development, test and production environments\n\nThe guidance in ISO/IEC 27002:2022, 8.31 applies. The following public cloud service provider-specific \nguidance also applies.\na)\t Public cloud PII protection implementation guidance\n20\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nWhere the use of PII for testing purposes cannot be avoided, a risk assessment should be undertaken. \nTechnical and organizational measures should be implemented to minimize the risks identified.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "8.34",
+    "title": "Protection of information systems during audit testing",
+    "text": "Protection of information systems during audit testing\n\nThe guidance in ISO/IEC 27002:2022, 8.34 applies.\n21\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nAnnex A\n(informative)\n\nPublic cloud PII processor extended control set for PII protection\nA.1\t General\nThis annex specifies new controls and associated implementation guidance which, in combination with the \ncontrols and guidance in ISO/IEC 27002 (see Clauses 5 to 8), make up an extended control set to meet the \nrequirements for PII protection which apply to public cloud service providers acting as PII processors.\nThese additional controls are classified according to the 11 privacy principles of ISO/IEC 29100. In many \ncases, the controls can be classified under more than one of the privacy principles. In such cases, they are \nclassified under the most relevant principle.\nA.2\t Consent and choice\nA.2.1\t Obligation to co-operate regarding PII principals’ rights\na)\t Control\nThe public cloud PII processor should enable the cloud service customer to fulfil their obligations, by \nproviding them with the means to facilitate the exercise of the PII principals’ rights to access, correct and \nerase PII pertaining to them.\nb)\t Public cloud PII protection implementation guidance\nThe PII controller’s obligations in this respect can be defined by law, by regulations or by contract. These \nobligations can include matters where the cloud service customer uses the services of the public cloud PII \nprocessor for implementation. For example, this can include the correction or deletion of PII in a timely \nfashion.\nWhere the PII controller depends on the public cloud PII processor for information or technical measures \nto facilitate the exercise of PII principals’ rights, the relevant information or technical measures should be \nspecified in the contract.\nA.3\t Purpose legitimacy and specification\nA.3.1\t Public cloud PII processor’s purpose\na)\t Control\nPII to be processed under a contract should not be processed for any purpose independent of the instructions \nof the cloud service customer.\nb)\t Public cloud PII protection implementation guidance\nInstructions can be contained in the contract between the public cloud PII processor and the cloud service \ncustomer including, e.g. the objective and time frame to be achieved by the service.\nIn order to achieve the cloud service customer’s purpose, there can be technical reasons why it is appropriate \nfor a public cloud PII processor to determine the method for PII processing, consistent with the general \ninstructions of the cloud service customer but without the cloud service customer’s express instruction. For \nexample, in order to efficiently utilize network or processing capacity it can be necessary to allocate specific \n22\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nprocessing resources depending on certain characteristics of the PII principal. In circumstances where the \npublic cloud PII processor’s determination of the processing method involves the collection and use of PII, \nthe public cloud PII processor should adhere to the relevant privacy principles set forth in ISO/IEC 29100 \nand the principles of “privacy by design” (see References [64] and [65]).\nThe public cloud PII processor should provide the cloud service customer with all relevant information, in \na timely fashion, to allow the cloud service customer to ensure the public cloud PII processor’s compliance \nwith purpose specification and limitation principles and ensure that no PII is processed by the public cloud \nPII processor or any of its sub-contractors for further purposes independent of the instructions of the cloud \nservice customer.\nA.3.2\t Public cloud PII processor's commercial use\na)\t Control\nPII processed under a contract should not be used by the public cloud PII processor for the purposes of \nmarketing and advertising without express consent. Such consent should not be a condition of receiving the \nservice.\nNOTE\t\nThis control is an addition to the more general control in A.3.1 and does not replace or otherwise supersede it.\nA.4\t Collection limitation\nNo additional controls are relevant to this privacy principle.\nA.5\t Data minimization\nA.5.1\t Secure erasure of temporary files\na)\t Control\nTemporary files and documents should be erased or destroyed within a specified, documented period.\nb)\t Public cloud PII protection implementation guidance\nImplementation guidance on PII erasure is provided in A.10.3.\nInformation systems can create temporary files in the normal course of their operation. Such files are \nspecific to the system or application, but can include file system roll-back journals and temporary files \nassociated with the updating of databases and the operation of other application software. Temporary files \nare not needed after the related information processing task has completed and should be deleted after \ncompletion unless the particular circumstances require that they should not be deleted. The length of time \nfor which these files remain in use is not always deterministic but a “garbage collection” procedure should \nidentify the relevant files and determine how long it has been since they were last used.\nPII processing information systems should implement a periodic check that unused temporary files above a \nspecified age are deleted.\nA.6\t Use, retention and disclosure limitation\nA.6.1\t PII disclosure notification\na)\t Control\nIt is expected that the contract between the public cloud PII processor and the cloud service customer \nrequires the public cloud PII processor to notify the cloud service customer, according to any procedure and \n23\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\ntime periods agreed in the contract, of any legally binding request for disclosure of PII by a law enforcement \nauthority, unless such a disclosure is otherwise prohibited.\nb)\t Public cloud PII protection implementation guidance\nThe public cloud PII processor should provide contractual guarantees that it will:\n—\t reject any requests for PII disclosure that are not legally binding;\n—\t consult the corresponding cloud service customer, where legally permissible, before making any PII \ndisclosure; and\n—\t accept any contractually agreed requests for PII disclosures that are authorized by the corresponding \ncloud service customer.\nEXAMPLE\t\nA possible prohibition on disclosure would be a prohibition under criminal law to preserve the \nconfidentiality of a law enforcement investigation.\nA.6.2\t Recording of PII disclosures\na)\t Control\nDisclosure of PII to third parties should be recorded, including what PII has been disclosed, the reason for \ndisclosing the PII, to whom and at what time.\nb)\t Public cloud PII protection implementation guidance\nPII can be disclosed during the course of normal operations. These disclosures should be recorded. Any \nadditional disclosures to third parties, such as those arising from lawful investigations or external audits, \nshould also be recorded. The records should include the source of the disclosure, reason for disclosure and \nthe source of the authority to make the disclosure.\nA.7\t Accuracy and quality\nNo additional controls are relevant to this privacy principle.\nA.8\t Openness, transparency and notice\nA.8.1\t Disclosure of sub-contracted PII processing\na)\t Control\nIf public cloud PII processors intend to use sub-contractors to process PII, this should be disclosed to the \nrelevant cloud service customers in advance.\nb)\t Public cloud PII protection implementation guidance\nProvisions for the use of sub-contractors to process PII should be transparent in the contract between the \npublic cloud PII processor and the cloud service customer. The contract should specify that sub-contractors \ncan only be commissioned on the basis of a consent that can generally be given by the cloud service customer \nat the beginning of the service. The public cloud PII processor should inform the cloud service customer in \na timely fashion of any intended changes in this regard so that the cloud service customer has the ability to \nobject to such changes or to terminate the contract.\nInformation disclosed should cover the fact that sub-contracting is used and the names of relevant sub-\ncontractors, but not any business-specific details. The information disclosed should also include the \ncountries in which sub-contractors can process data (see A.12.1) and the means by which sub-contractors \nare obliged to meet or exceed the obligations of the public cloud PII processor (see A.11.12).\n24\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nWhere public disclosure of sub-contractor information is assessed as leading to security risk increase, \ndisclosure should be made under a non-disclosure agreement and/or on the request of the cloud service \ncustomer. The cloud service customer should be made aware that the information is available.\nA.9\t Individual participation and access\nNo additional controls are relevant to this privacy principle.\nA.10\tAccountability\nA.10.1\tNotification of a data breach involving PII\na)\t Control\nThe public cloud PII processor should promptly notify the relevant cloud service customer in the event of \nany unauthorized access to PII or unauthorized access to processing equipment or facilities resulting in loss, \ndisclosure or alteration of PII.\nb)\t Public cloud PII protection implementation guidance\nProvisions covering the notification of a data breach involving PII should form part of the contract between \nthe public cloud PII processor and the cloud service customer. The contract should specify how the public \ncloud PII processor will provide the information necessary for the cloud service customer to fulfil his \nobligation to notify relevant authorities. This notification obligation does not extend to a data breach caused \nby the cloud service customer or PII principal, or within system components for which they are responsible. \nThe contract should also define the maximum delay in notification of a data breach involving PII.\nIn the event that a data breach involving PII has occurred, a record should be maintained with a description \nof the incident, the time period, the consequences of the incident, the name of the reporter, to whom the \nincident was reported, the steps taken to resolve the incident (including the person in charge and the data \nrecovered) and the fact that the incident resulted in loss, disclosure or alteration of PII.\nIn the event that a data breach involving PII has occurred, the record should also include a description of the \ndata compromised, if known. If notifications were performed, the record should include the steps taken to \nnotify either the cloud service customer or regulatory authorities or both.\nIn some jurisdictions, relevant legislation or regulations can require the public cloud PII processor to directly \nnotify appropriate regulatory authorities (e.g. a PII protection authority) of a data breach involving PII.\nNOTE\t\nThere can be other breaches requiring notification that are not covered here, e.g. collection without consent \nor other authorization, use for unauthorized purposes, etc.\nA.10.2\tRetention period for administrative security policies and guidelines\na)\t Control\nThe existing copies of security policies and operating procedures that are updated should be retained for a \nspecified, documented period of replacement.\nb)\t Public cloud PII protection implementation guidance\nReview of current and historical policies and procedures can be required, e.g. in the cases of customer \ndispute resolution and investigation by a PII protection authority. A minimum retention period of five years \nis recommended in the absence of a specific contractual requirement or other requirements as applicable.\nA.10.3\tPII return, transfer and disposal\na)\t Control\n25\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nThe public cloud PII processor should have a policy in respect of these activities and should make this policy \navailable to the cloud service customer.\nb)\t Public cloud PII protection implementation guidance\nAt some point in time, PII are expected to be disposed of in some manner. This can involve returning the PII \nto the cloud service customer, transferring it to another public cloud PII processor or to a PII controller (e.g. \nas a result of a merger), securely deleting or otherwise destroying it, anonymizing it or archiving it.\nThe public cloud PII processor should provide the information necessary to allow the cloud service customer \nto ensure that PII processed under a contract is erased (by the public cloud PII processor and any of its sub-\ncontractors) from wherever they are stored, including for the purposes of backup and business continuity, \nas soon as they are no longer necessary for the specific purposes of the cloud service customer. The nature \nof the disposition mechanisms (de-linking, overwriting, demagnetization, destruction or other forms of \nerasure) and/or the applicable commercial standards should be provided for contractually.\nThe public cloud PII processor should develop and implement a policy in respect of the disposition of PII and \nshould make this policy available to the cloud service customer.\nThe policy should cover the retention period for PII before its destruction after termination of a contract, to \nprotect the cloud service customer from losing PII through an accidental lapse of the contract.\nNOTE\t\nThis control and guidance is also relevant under the retention element of the “Use, retention and disclosure \nlimitation” principle (see A.6).\nA.11\tInformation security\nA.11.1\tConfidentiality or non-disclosure agreements\na)\t Control\nIndividuals under the public cloud PII processor’s control with access to PII should be subject to a \nconfidentiality obligation.\nb)\t Public cloud PII protection implementation guidance\nA confidentiality agreement, in whatever form, between the public cloud PII processor, its employees and \nits agents should ensure that employees and agents do not disclose PII for purposes independent of the \ninstructions of the cloud service customer (see A.3.1). The obligations of the confidentiality agreement \nshould survive termination of any relevant contract.\nA.11.2\tRestriction of the creation of hardcopy material\na)\t Control\nThe creation of hardcopy material displaying PII should be restricted.\nb)\t Public cloud PII protection implementation guidance\nHardcopy material includes material created by printing.\nA.11.3\tControl and logging of data restoration\na)\t Control\nThere should be a procedure for, and a log of, data restoration efforts.\nb)\t Public cloud PII protection implementation guidance\nThe log of data restoration efforts should contain: the person responsible, a description of the restored data, \nand the data that were restored manually.\n26\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nA.11.4\tProtecting data on storage media leaving the premises\na)\t Control\nPII on media leaving the organization's premises should be subject to an authorization procedure and should \nnot be accessible to anyone other than authorized personnel (e.g. by encrypting the data concerned).\nA.11.5\tUse of unencrypted portable storage media and devices\na)\t Control\nPortable physical media and portable devices that do not permit encryption should not be used except where \nit is unavoidable, and any use of such portable media and devices should be documented.\nA.11.6\tEncryption of PII transmitted over public data-transmission networks\na)\t Control\nPII that is transmitted over public data-transmission networks should be encrypted prior to transmission.\nb)\t Public cloud PII protection implementation guidance\nIn some cases, e.g. the exchange of e-mail, the inherent characteristics of public data-transmission network \nsystems can require that some header or traffic data be exposed for effective transmission.\nWhere multiple service providers are involved in providing service from different service categories of the \ncloud computing reference architecture, there can be varied or shared roles in implementing this guidance.\nA.11.7\tSecure disposal of hardcopy materials\na)\t Control\nWhere hardcopy materials are destroyed, they should be destroyed securely using mechanisms such as \ncross-cutting, shredding, incinerating, pulping, etc.\nA.11.8\tUnique use of user IDs\na)\t Control\nIf more than one individual has access to stored PII, then they should each have a distinct user ID for \nidentification, authentication and authorization purposes.\nA.11.9\tUser ID management\na)\t Control\nDe-activated or expired user IDs should not be granted to other individuals.\nb)\t Public cloud PII protection implementation guidance\nIn the context of the whole cloud computing reference architecture, the cloud service customer can be \nresponsible for some or all aspects of user ID management for cloud service users under its control.\nA.11.10\t\nRecords of authorized users\na)\t Control\nAn up-to-date record of the users or profiles of users who have authorized access to the information system \nshould be maintained.\nb)\t Public cloud PII protection implementation guidance\n27\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nA user profile should be maintained for all users whose access is authorized by the public cloud PII processor. \nThe profile of a user comprises the set of data about that user, including user ID, which is necessary to \nimplement the technical controls providing authorized access to the information system.\nA.11.11\t\nContract measures\na)\t Control\nContracts between the cloud service customer and the public cloud PII processor should specify minimum \ntechnical and organizational measures to ensure that the contracted security arrangements are in place and \nthat data are not processed for any purpose independent of the instructions of the controller. Such measures \nshould not be subject to unilateral reduction by the public cloud PII processor.\nb)\t Public cloud PII protection implementation guidance\nInformation security and PII protection obligations relevant to the public cloud PII processor can arise \ndirectly from applicable law. Where this is not the case, PII protection obligations relevant to the public \ncloud PII processor are expected to be covered in the contract.\nThe controls in this document, together with the controls in ISO/IEC 27002, are intended as a reference \ncatalogue of measures to assist in entering into an information processing contract in respect of PII. The \npublic cloud PII processor should inform a prospective cloud service customer, before entering into a \ncontract, about the information security and privacy controls implemented for the protection of PII.\nThe public cloud PII processor should be transparent about its capabilities during the process of entering \ninto a contract. However, it is ultimately the cloud service customer’s responsibility to ensure that the \nmeasures implemented by the public cloud PII processor meet its obligations.\nA.11.12\t\nSub-contracted PII processing\na)\t Control\nContracts between the public cloud PII processor and any sub-contractors that process PII should specify \nminimum technical and organizational measures that meet the information security and PII protection \nobligations of the public cloud PII processor. Such measures should not be subject to unilateral reduction by \nthe sub-contractor.\nb)\t Public cloud PII protection implementation guidance\nThe use of sub-contractors to store backup copies is covered by this control (see A.8.1).\nA.11.13\t\nAccess to data on pre-used data storage space\na)\t Control\nThe public cloud PII processor should ensure that whenever data storage space is assigned to a cloud service \ncustomer, any data previously residing on that storage space is not visible to that cloud service customer.\nb)\t Public cloud PII protection implementation guidance\nOn deletion by a cloud service user of data held in an information system, performance issues can mean that \nexplicit erasure of those data are impractical. This creates the risk that another user can read the data. Such \nrisk should be avoided by specific technical measures.\nNo specific guidance is especially appropriate for dealing with all cases in implementing this control. \nHowever, as an example, some cloud infrastructure, platforms or applications will return either zeroes or \nnonces if a cloud service user attempts to read storage space which has not been overwritten by that user’s \nown data.\n28\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nA.12\tPrivacy compliance\nA.12.1\tGeographical location of PII\na)\t Control\nThe public cloud PII processor should specify and document the countries in which PII can possibly be stored.\nb)\t Public cloud PII protection implementation guidance\nThe identities of the countries where PII can possibly be stored should be made available to cloud service \ncustomers. The identities of the countries arising from the use of sub-contracted PII processing should be \nincluded. Where specific contractual agreements apply to the international transfer of data, such as model \ncontract clauses, binding corporate rules or cross border privacy rules, the agreements and the countries \nor circumstances in which such agreements apply should also be identified. The public cloud PII processor \nshould inform the cloud service customer in a timely fashion of any intended changes in this regard so that \nthe cloud service customer has the ability to object to such changes or to terminate the contract.\nA.12.2\tIntended destination of PII\na)\t Control\nPII transmitted using a data-transmission network should be subject to appropriate controls designed to \nensure that data reaches its intended destination.\n29\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nAnnex B\n(informative)\n\nCorrespondence between this document and the first edition \nISO/IEC 27018:2019\nThe purpose of this annex is to provide backwards compatibility with the first edition of this document \n(ISO/IEC 27018:2019) for organizations currently using it and wanting to transition to this edition.\nTable  B.1 provides the correspondence of the controls specified in Clauses  5 to 8 with those in \nISO/IEC 27018:2019.\nTable B.1 — Correspondence between controls in this document and controls in ISO/IEC 27018:2019\nISO/IEC \n27018:2025\ncontrol\nidentifier\nISO/IEC 27018:2019\ncontrol\nidentifier\nControl name\n5.1\n05.1.1, 05.1.2\nPolicies for information security\n5.2",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "06.1.4",
+    "title": "Contact with special interest groups",
+    "text": "Contact with special interest groups\n\n5.7\nNew\nThreat intelligence\n5.8\n06.1.5, 14.1.1\nInformation security in project management\n5.9\n08.1.1, 08.1.2\nInventory of information and other associated assets\n5.10\n08.1.3, 08.2.3\nAcceptable use of information and other associated assets\n5.11",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "15.1.3",
+    "title": "Managing information security in the ICT supply chain",
+    "text": "Managing information security in the ICT supply chain\n\n5.22\n15.2.1, 15.2.2\nMonitoring, review and change management of supplier services\n5.23\nNew\nInformation security for use of cloud services\n5.24",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "16.1.5",
+    "title": "Response to information security incidents",
+    "text": "Response to information security incidents\n\n30\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nISO/IEC \n27018:2025\ncontrol\nidentifier\nISO/IEC 27018:2019\ncontrol\nidentifier\nControl name\n5.27",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "16.1.7",
+    "title": "Collection of evidence",
+    "text": "Collection of evidence\n\n5.29\n17.1.1, 17.1.2, 17.1.3\nInformation security during disruption\n5.30\nNew\nICT readiness for business continuity\n5.31\n18.1.1, 18.1.5\nLegal, statutory, regulatory and contractual requirements\n5.32",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "18.2.1",
+    "title": "Independent review of information security",
+    "text": "Independent review of information security\n\n5.36\n18.2.2, 18.2.3\nCompliance with policies, rules and standards for information security\n5.37",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "12.2.1",
+    "title": "Protection against malware",
+    "text": "Protection against malware\n\n8.8\n12.6.1, 18.2.3\nManagement of technical vulnerabilities\nTable B.1 (continued)\nTable B.1 (continued)\n31\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nISO/IEC \n27018:2025\ncontrol\nidentifier\nISO/IEC 27018:2019\ncontrol\nidentifier\nControl name\n8.9\nNew\nConfiguration management\n8.10\nNew\nInformation deletion\n8.11\nNew\nData masking\n8.12\nNew\nData leakage prevention\n8.13",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "14.2.5",
+    "title": "Secure system architecture and engineering principles",
+    "text": "Secure system architecture and engineering principles\n\n8.28\nNew\nSecure coding\n8.29\n14.2.8, 14.2.9\nSecurity testing in development and acceptance\n8.30",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "14.2.7",
+    "title": "Outsourced development",
+    "text": "Outsourced development\n\n8.31\n12.1.4, 14.2.6\nSeparation of development, test and production environments\n8.32\n12.1.2, 14.2.2,\n14.2.3, 14.2.4\nChange management\n8.33",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  },
+  {
+    "clause_id": "12.7.1",
+    "title": "Protection of information systems during audit testing",
+    "text": "Protection of information systems during audit testing\n\nTable B.1 (continued)\nTable B.1 (continued)\n32\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\nBibliography\n[1]\t\nISO 9000, Quality management systems — Fundamentals and vocabulary\n[2]\t\nISO 55001, Asset management — Asset management system — Requirements\n[3]\t\nISO/IEC 11770 (all parts), Information security — Key management\n[4]\t\nISO/IEC  15408 (all parts), Information security, cybersecurity and privacy protection — Evaluation \ncriteria for IT security\n[5]\t\nISO 15489 (all parts), Information and documentation — Records management\n[6]\t\nISO/IEC 22123-1, Information technology — Cloud computing — Part 1: Vocabulary\n[7]\t\nISO/IEC 22123-2, Information technology — Cloud computing — Part 2: Concepts\n[8]\t\nISO/IEC 22123-3, Information technology — Cloud computing — Part 3: Reference architecture\n[9]\t\nISO/IEC 19086 (all parts), Cloud computing — Service level agreement (SLA) framework\n[10]\t\nISO/IEC 19770 (all parts), Information technology — IT asset management\n[11]\t\nISO/IEC 19941, Information technology — Cloud computing — Interoperability and portability\n[12]\t\nISO/IEC 20889, Privacy enhancing data de-identification terminology and classification of techniques\n[13]\t\nISO 21500, Project, programme and portfolio management — Context and concepts\n[14]\t\nISO 21502, Project, programme and portfolio management — Guidance on project management\n[15]\t\nISO 22301, Security and resilience — Business continuity management systems — Requirements\n[16]\t\nISO 22313, Security and resilience — Business continuity management systems — Guidance on the use of \nISO 22301\n[17]\t\nISO/TS  22317, Security and resilience — Business continuity management systems — Guidelines for \nbusiness impact analysis\n[18]\t\nISO  22396, Security and resilience — Community resilience — Guidelines for information exchange \nbetween organizations\n[19]\t\nISO/IEC/TS 23167, Information technology — Cloud computing — Common technologies and techniques\n[20]\t\nISO/IEC 23751, Information technology — Cloud computing and distributed platforms — Data sharing \nagreement (DSA) framework\n[21]\t\nISO/IEC 24760 (all parts), IT Security and Privacy — A framework for identity management\n[22]\t\nISO/IEC 27001:2022, Information security, cybersecurity and privacy protection — Information security \nmanagement systems — Requirements\n[23]\t\nISO/IEC 27002:2013, Information technology — Security techniques — Code of practice for information \nsecurity controls1)\n[24]\t\nISO/IEC 27005, Information security, cybersecurity and privacy protection — Guidance on managing \ninformation security risks\n[25]\t\nISO/IEC 27007, Information security, cybersecurity and privacy protection — Guidelines for information \nsecurity management systems auditing\n1)\t  Cancelled and replaced by ISO/IEC 27002:2022.\n33\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\n[26]\t\nISO/IEC/TS 27008, Information technology — Security techniques — Guidelines for the assessment of \ninformation security controls\n[27]\t\nISO/IEC  27011, Information security, cybersecurity and privacy protection — Information security \ncontrols based on ISO/IEC 27002 for telecommunications organizations\n[28]\t\nISO/IEC/TR 27016, Information technology — Security techniques — Information security management \n— Organizational economics\n[29]\t\nISO/IEC  27017, Information technology — Security techniques — Code of practice for information \nsecurity controls based on ISO/IEC 27002 for cloud services\n[30]\t\nISO/IEC  27018, Information technology — Security techniques — Code of practice for protection of \npersonally identifiable information (PII) in public clouds acting as PII processors\n[31]\t\nISO/IEC  27019, Information security, cybersecurity and privacy protection — Information security \ncontrols for the energy utility industry\n[32]\t\nISO/IEC  27031, Cybersecurity — Information and communication technology readiness for business \ncontinuity\n[33]\t\nISO/IEC 27033 (all parts),  — Information technology – Network security\n[34]\t\nISO/IEC 27034 (all parts), Information technology — Application security\n[35]\t\nISO/IEC  27035-1, Information technology — Information security incident management — Part 1: \nPrinciples and process\n[36]\t\nISO/IEC  27035-2, Information technology — Information security incident management — Part 2: \nGuidelines to plan and prepare for incident response\n[37]\t\nISO/IEC 27036 (all parts), Cybersecurity — Supplier relationships\n[38]\t\nISO/IEC 27037, Information technology — Security techniques — Guidelines for identification, collection, \nacquisition and preservation of digital evidence\n[39]\t\nISO/IEC 27040, Information technology — Security techniques — Storage security\n[40]\t\nISO/IEC 27050 (all parts), Information technology — Electronic discovery\n[41]\t\nISO/IEC/TS  27110, Information technology, cybersecurity and privacy protection — Cybersecurity \nframework development guidelines\n[42]\t\nISO/IEC  27701, Security techniques — Extension to ISO/IEC  27001 and ISO/IEC  27002 for privacy \ninformation management — Requirements and guidelines\n[43]\t\nISO 27799, Health informatics — Information security management in health using ISO/IEC 27002\n[44]\t\nISO/IEC 29100, Information technology — Security techniques — Privacy framework\n[45]\t\nISO/IEC  29115, Information technology — Security techniques — Entity authentication assurance \nframework\n[46]\t\nISO/IEC  29134, Information technology — Security techniques — Guidelines for privacy impact \nassessment\n[47]\t\nISO/IEC 29146, Information technology — Security techniques — A framework for access management\n[48]\t\nISO/IEC 29147, Information technology — Security techniques — Vulnerability disclosure\n[49]\t\nISO 30000, Ships and marine technology — Ship recycling management systems — Specifications for \nmanagement systems for safe and environmentally sound ship recycling facilities\n[50]\t\nISO/IEC 30111, Information technology — Security techniques — Vulnerability handling processes\n34\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nISO/IEC 27018:2025(en)\n[51]\t\nISO 31000:2018, Risk management — Guidelines\n[52]\t\nIEC 31010, Risk management — Risk assessment techniques\n[53]\t\nISO/IEC 22123 (all parts), Information technology — Cloud computing\n[54]\t\nISO/IEC 27555, Information security, cybersecurity and privacy protection — Guidelines on personally \nidentifiable information deletion\n[55]\t\nInformation Security Forum (ISF). The ISF Standard of Good Practice for Information Security2020. \nAvailable at https://​www​.securityforum​.org/​solutions​-and​-insights/​standard​-of​-good​-practice​-for​\n-information​-security/​\n[56]\t\nITIL® Foundation, ITIL 4 edition, AXELOS, February 2019, ISBN: 9780113316076\n[57]\t\nNational Institute of Standards and Technology (NIST), SP 800‑37, Risk Management Framework for \nInformation Systems and Organizations: A System Lifecycle Approach for Security and Privacy, Revision \n2. December2018 [viewed 2023-08-09]. Available at https://​doi​.org/​10​.6028/​NIST​.SP​.800​-37r2\n[58]\t\nOpen Web Application Security Project (OWASP). OWASP Top Ten - 2021, The Ten Most Critical Web \nApplication Security Risks, 2021 [viewed 2023-08-09]. Available at https://​owasp​.org/​Top10/​\n[59]\t\nOpen Web Application Security Project (OWASP). OWASP Developer Guide, [online] [viewed 2023-\n08-09]. Available at https://​owasp​.org/​www​-project​-developer​-guide/​\n[60]\t\nOpen Web Application Security Project (OWASP). OWASP Top 10 API Security Risks – 2023, [online] \n[viewed 2023-08-09]. Available at https://​owasp​.org/​API​-Security/​editions/​2023/​en/​0x11​-t10/​\n[61]\t\nNational Institute of Standards and Technology (NIST), SP  800‑63B, Digital Identity Guidelines; \nAuthentication and Lifecycle Management. February 2020 [viewed 2023-08-09]. Available at https://​\ndoi​.org/​10​.6028/​NIST​.SP​.800​-63b\n[62]\t\nOASIS, Structured Threat Information Expression. Available at https://​www​.oasis​-open​.org/​standards​\n#stix2​.0\n[63]\t\nOASIS, Trusted Automated Exchange of Indicator Information. Available at https://​www​.oasis​-open​\n.org/​standards​#taxii2​.0\n[64]\t\nISO 31700-1:2023, Consumer protection — Privacy by design for consumer goods and services — Part 1: \nHigh-level requirements\n[65]\t\nISO/TR 31700-2:2023, Consumer protection — Privacy by design for consumer goods and services — \nPart 2: Use cases\n35\n﻿\n© ISO/IEC 2025 – All rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.\n\nICS 35.030\nPrice based on 35 pages\niso.org\n﻿\n© ISO/IEC 2025\nAll rights reserved\nLicensed to Gregory Griffin (admin@gregorygriffin.org) \nISO Store Order: OP-1030540 license #1/ Downloaded: 2026-03-08 \nSingle user licence only, copying and networking prohibited.",
+    "standard": "ISO 27018:2025",
+    "language": "en",
+    "source_file": "ISO_IEC_27018_2025(en).pdf"
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "EU Cloud Sovereignty — section 1",
+    "text": "EUROPEAN COMMISSION \n \n \n \nDIRECTORATE-GENERAL FOR DIGITAL SERVICES  \n \n\nLogo of the European Commission, 12 yellow stars on a blue background arranged in a circle and framed by two light grey graphic elements representing the Berlaymont building, which is the headquarter of the European Commission.\nLuxembourg  \nCloud Sovereignty Framework \nVersion 1.2 � Sep. 2025 \nCONTENTS \n1. Introduction ..................................................................................................... 2 \n2. Sovereignty Objectives .................................................................................... 2 \n3. Sovereignty Effective Assurance Levels ......................................................... 3 \n4. Assessment of Sovereignty Effectiveness ....................................................... 4 \n5. Computation of Sovereignty Score ................................................................. 6 \n \n\n \n  \n1. INTRODUCTION \nThis document defines Sovereignty Objectives relevant for the provision of Cloud services requested in this procedure. They draw on European initiatives such as CIGREF�s Trusted Cloud Referential v2, Gaia-X policy rules and architecture, and the Eur",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "EU Cloud Sovereignty — section 2",
+    "text": "in this procedure. They draw on European initiatives such as CIGREF�s Trusted Cloud Referential v2, Gaia-X policy rules and architecture, and the European Cybersecurity Certification Framework (ENISA, NIS2, DORA). In addition, they echo lessons from national cloud sovereignty strategies (e.g., France�s �Cloud de Confiance�, Germany�s �Souver�ner Cloud�), as well as international practices in export controls, supply chain resilience, and security auditability. The result is a set of objectives that supplement security assurance requirements with sovereignty-specific safeguards defining clearly what sovereignty means. \nThe assessment will be conducted on the basis of open or closed questions asked to the tenderers, of supporting evidence provided by the tenderers and/or of the public documentation of the service, as explained in the tender specifications. The assessment is twofold: \n- The contracting authority will assess the level of assurance provided by the tenderer for each of the Sovereignty Objectives, through a Sovereignty Effectiveness Assurance Level (SEAL). The SEAL level is used as a Minimum Assurance Level. The tender specifications indicate a minimum SEAL level that the",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "EU Cloud Sovereignty — section 3",
+    "text": "tiveness Assurance Level (SEAL). The SEAL level is used as a Minimum Assurance Level. The tender specifications indicate a minimum SEAL level that the cloud service provider must reach for each Sovereignty Objective. Tenders that do not offer the required (minimum) levels of assurance consistently across all objectives will be rejected.   \n\n\n \n- The contracting authority will also compute a Sovereignty Score for cloud services, complementary to the SEAL assessment, to sort the cloud services according to their respective sovereignty features. The formula used to compute the Sovereignty Score is provided in Section 5. The Sovereignty Score contributes to the quality score of the tender, as an Award Criterion.   \n\n\nThe results of the sovereignty assessment may also be used by the contracting authorities� technical services during the performance of the contract(s) resulting from this procedure, to determine the nature of systems that can be deployed at a specific provider, different risk profiles requiring different assurance levels. \n2. SOVEREIGNTY OBJECTIVES \nThe list of Sovereignty Objectives of the procedure is provided in the following table: \n# \n Sovereignty Objectives \n Sovere",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "EU Cloud Sovereignty — section 4",
+    "text": ". SOVEREIGNTY OBJECTIVES \nThe list of Sovereignty Objectives of the procedure is provided in the following table: \n# \n Sovereignty Objectives \n Sovereignty Objectives Descriptions \n \nSOV-1 \n Strategic  Sovereignty \n Strategic sovereignty captures the degree to which the services of a cloud provider (or technology actor) are anchored within the European Union legal, financial, and industrial ecosystem. It assesses ownership stability, governance influence, and alignment with EU strategic priorities. \n \nSOV-2 \n Legal & Jurisdictional Sovereignty \n Legal & Jurisdictional sovereignty evaluates the legal environment, exposure to foreign authority, and enforceability of rights that govern the services of a technology provider. It determines the extent to which the services are anchored in European jurisdiction and insulated from external legal claims. \n \nSOV-3 \n Data & AI  Sovereignty \n Data & AI sovereignty focuses on the protection, control, and independence of data assets and AI services within the EU. It addresses Sovereignty Objectives Descriptions \n # \n Sovereignty Objectives \n \nhow data is secured, where it is processed, and the degree of autonomy customers retain over AI capabili",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "EU Cloud Sovereignty — section 5",
+    "text": "Descriptions \n # \n Sovereignty Objectives \n \nhow data is secured, where it is processed, and the degree of autonomy customers retain over AI capabilities. \n \nSOV-4 \n Operational  Sovereignty \n Operational sovereignty measures the practical ability of EU actors to run, support, and evolve a technology independently of foreign control. It focuses on continuity of operations, skill availability, and resilience against external dependencies. \n \nSOV-5 \n Supply Chain  Sovereignty \n Supply chain sovereignty evaluates the geographic origin, transparency, and resilience of the technology supply chain, focusing on the extent to which critical components and processes remain under EU control or exposed to non-EU dependencies. \n \nSOV-6 \n Technology  Sovereignty \n Technology sovereignty evaluates the degree of openness, transparency, and independence in the underlying technological stack, ensuring EU actors can interoperate, audit, and evolve solutions without lock-in to foreign proprietary systems. \n \nSOV-7 \n Security & Compliance Sovereignty \n Security & Compliance sovereignty measures the extent to which security operations, compliance obligations, and resilience measures are controlled wit",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "EU Cloud Sovereignty — section 6",
+    "text": "Security & Compliance sovereignty measures the extent to which security operations, compliance obligations, and resilience measures are controlled within the EU, ensuring independence from foreign jurisdictions and long-term operational assurance. \n \nSOV-8 \n Environmental Sustainability \n Environmental sustainability assesses autonomy and resilience of cloud services over the long term in relation to energy usage, dependency and raw material scarcity. \n \n\n \n3. SOVEREIGNTY EFFECTIVE ASSURANCE LEVELS \nThe detailed list of Sovereignty Effectiveness Assurance Levels (SEAL) relevant for the procedure is provided in the table below: \nSovereignty  Effectiveness  Assurance Levels \n Sovereignty Effectiveness Assurance Levels Descriptions \n \nSEAL-0 \n No Sovereignty:  \nService, technology or operations under exclusive control of non-EU third parties, governed entirely in non-EU jurisdictions. \n \nSEAL-1 \n Jurisdictional Sovereignty:  \nEU law formally applies with limited practical enforceability; service, technology or operations under exclusive control of non-EU third parties. \n \nSEAL-2 \n Data Sovereignty:  \nEU law applicable and enforceable, with material non-EU dependencies remaining; servi",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "EU Cloud Sovereignty — section 7",
+    "text": "control of non-EU third parties. \n \nSEAL-2 \n Data Sovereignty:  \nEU law applicable and enforceable, with material non-EU dependencies remaining; service, technology or operations under indirect control of non-EU third parties. \n \nSEAL-3 \n Digital Resilience:  \nEU law applicable and enforceable, EU actors exercising meaningful but not full influence; service, technology or operations under marginal control of non-EU third parties. \n \nSEAL-4 \n Full Digital Sovereignty:  \nTechnology and operations under complete EU control, subject only to EU law, with no critical non-EU dependencies. \n \n\n \n4. ASSESSMENT OF SOVEREIGNTY EFFECTIVENESS \nThe Contracting Authority will assess the Sovereignty Objectives though questions asked in the questionnaire of the tender. Questions involved in the evaluation of Sovereignty Objectives effectiveness will be tagged with the reference of the Sovereignty Objective (i.e. SOV-0 to SOV-8) to which the answer contributes. \nThe tender specification defines the minimum Sovereignty Effective Assurance Level of each Sovereignty Objective required in the scope of the tender. \n \n\n \nThe assessment performed by the Contracting Authority will be based on the answers of",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "EU Cloud Sovereignty — section 8",
+    "text": "Sovereignty Objective required in the scope of the tender. \n \n\n \nThe assessment performed by the Contracting Authority will be based on the answers of the tenderer supplemented by supporting document provided in the context of the answers, and by public information made available by the tenderer.  \nThe contributing factors involved in the assessment of each objective are described in the following table:   \n# \n Sovereignty Objectives \n Contributing factors \n \nSOV-1 \n Strategic  Sovereignty \n - Ensuring that bodies having decisive authority over your services are located within EU jurisdiction,  \n\n- Evaluating the assurances against change of control. \n\n- Degree to which the provider relies on financing coming from EU sources. \n\n- Extent of investment, jobs, and value creation within EU. \n\n- Involvement in EU initiatives, Consistency with digital, green, and industrial sovereignty objectives defined at EU level. \n\n- Ability to sustain secure operations against requests to cease or suspend the service, or if vendor support is withdrawn or disrupted. \n\n\n \nSOV-2 \n Legal & Jurisdictional Sovereignty \n - The national legal system governing the provider�s operations and contracts. \n\n- Deg",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "EU Cloud Sovereignty — section 9",
+    "text": "or disrupted. \n\n\n \nSOV-2 \n Legal & Jurisdictional Sovereignty \n - The national legal system governing the provider�s operations and contracts. \n\n- Degree of exposure to non-EU laws with cross-border reach (e.g., US CLOUD Act, Chinese Cybersecurity Law). \n\n- Existence of legal, contractual, or technical channels through which non-EU authorities could compel access to data or systems. \n\n- Applicability of international regimes, which may restrict usage or transfer. \n\n- Location of intellectual property creation, registration, and development (EU vs. third countries), legal jurisdiction where IP is created and developed. \n\n\n \nSOV-3 \n Data & AI  Sovereignty \n - Ensuring that only the customer, not the provider, has effective control over cryptographic access to their data. \n\n- Visibility into when, where, and by whom data is accessed, including auditability of AI model usage, mechanisms guaranteeing irreversible removal of data, with verifiable evidence. \n\n- Strict confinement of storage and processing to European jurisdictions, with no fallback to third countries. \n\n- Extent to which AI models and data pipelines are developed, trained, hosted, and governed under EU control, minimizing",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "EU Cloud Sovereignty — section 10",
+    "text": "allback to third countries. \n\n- Extent to which AI models and data pipelines are developed, trained, hosted, and governed under EU control, minimizing dependency on non-EU technology stacks. \n\n\n SOV-8 \n Environmental Sustainability \n \n# \n Sovereignty Objectives \n Contributing factors \n \nSOV-4 \n Operational  Sovereignty \n - Ease of migrating workloads or integrating with alternative EU-controlled solutions without vendor lock-in. \n\n- Capacity for EU operators to manage, maintain, and support the technology without requiring non-EU vendor involvement \n\n- Existence of an EU-based talent pool with the expertise to operate and sustain the service.  \n\n- Assurance that operational support is delivered from within the EU and subject exclusively to EU legal frameworks \n\n- Availability of full technical documentation, source code, and operational know-how enabling long-term autonomy. \n\n- Location and legal control of critical suppliers or subcontractors involved in service delivery. \n\n\n \nSOV-5 \n Supply Chain  Sovereignty \n - Geographic source of key physical parts, manufacturing location - countries where hardware is manufactured or assembled  \n\n- Jurisdiction and provenance of embedded code",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "EU Cloud Sovereignty — section 11",
+    "text": "f key physical parts, manufacturing location - countries where hardware is manufactured or assembled  \n\n- Jurisdiction and provenance of embedded code controlling hardware, firmware  \n\n- Origin of Software: where and by whom software is architected and programmed, location and jurisdiction governing software packaging, distribution, and updates. \n\n- Degree of reliance on non-EU vendors, facilities, or proprietary technologies \n\n- Visibility into the entire supplier and sub-supplier chain, including audit rights. \n\n\n \nSOV-6 \n Technology  Sovereignty \n - Ability to integrate with other technologies through well-documented and non-proprietary APIs or protocols, extent to which the solution adheres to publicly governed and widely adopted standards, reducing dependency on single vendors \n\n- Whether software is accessible under open licenses, with rights to audit, modify, and redistribute, ensuring transparency and adaptability \n\n- Visibility into the design and functioning of the service, including architectural documentation, data flows, and dependencies \n\n- Degree of EU independence in high-performance computing capabilities, including processors, accelerators, and software ecosystems",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "EU Cloud Sovereignty — section 12",
+    "text": "and dependencies \n\n- Degree of EU independence in high-performance computing capabilities, including processors, accelerators, and software ecosystems. \n\n\n \nSOV-7 \n Security & Compliance Sovereignty \n - Attainment of EU and internationally recognized certifications (e.g., ISO, ENISA schemes) \n\n- Adherence to GDPR, NIS2, DORA, and other EU frameworks \n\n- Security Operations Centres and response teams operating exclusively under EU jurisdiction, control over security monitoring/logging - customer or EU authority ability to oversee logs, alerts, and monitoring functions directly. \n\n- Transparent, timely, and EU-compliant reporting of breaches or vulnerabilities, maintenance Autonomy - ability to develop, test, and apply security patches independently of non-EU vendors \n\n- Capacity for EU entities to perform independent security and compliance audits with full access. - Adoption of energy-efficient infrastructure (e.g., low PUE) and measurable improvement targets. \n\n- Circular economy practices ensuring reuse, refurbishment, and responsible end-of-life treatment of hardware. \n\n- Transparent measurement and disclosure of carbon emissions, water usage, and other sustainability indicators",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "EU Cloud Sovereignty — section 13",
+    "text": "le end-of-life treatment of hardware. \n\n- Transparent measurement and disclosure of carbon emissions, water usage, and other sustainability indicators. \n\n\n \n# \n Sovereignty Objectives \n Contributing factors \n \n- Sourcing of renewable or low-carbon energy to power infrastructure and operations \n\n\n \n\n \nThe Contracting Authority will determine the assurance level given by the tenderer for each objective by taking all the above contributing factors into consideration. Material weaknesses identified in one or more contributing factor will result in lowering the overall assurance level recognized for the objective.  \n5. COMPUTATION OF SOVEREIGNTY SCORE \nThe Contracting Authority will compute a global Sovereignty Score complementary to the Sovereign Effective Assurance Levels, using the same questions involved in the assessment of the Sovereignty Objectives effectiveness. \nThe computation of the Sovereignty Score uses the points allocated to the question proposed in the tender, weighted as below: \n# \n Sovereignty Objectives \n Weight in Scoring \n \nSOV-1 \n Strategic Sovereignty \n 15% \n \nSOV-2 \n Legal & Jurisdictional Sovereignty \n 10% \n \nSOV-3 \n Data & AI Sovereignty \n 10% \n \nSOV-4 \n Operat",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "EU Cloud Sovereignty — section 14",
+    "text": "ng \n \nSOV-1 \n Strategic Sovereignty \n 15% \n \nSOV-2 \n Legal & Jurisdictional Sovereignty \n 10% \n \nSOV-3 \n Data & AI Sovereignty \n 10% \n \nSOV-4 \n Operational Sovereignty \n 20% \n \nSOV-5 \n Supply Chain Sovereignty \n 20% \n \nSOV-6 \n Technology Sovereignty \n 15% \n \nSOV-7 \n Security & Compliance Sovereignty \n 10% \n \nSOV-8 \n Environmental Sustainability \n 5% \n \nTotal \n 100% \n \n\n \nThe weighting considers that the procurement procedure already contains significant safeguards in certain domains such as SOV-2 (Legal and Jurisdictional) and SOV-7 (Security and Compliance). \nThe Sovereignty Score is therefore computing according to the formula below: ............................................ ....................=.....................(................).................................(................)....=........=....�........................(................) %",
+    "standard": "EU Cloud Sovereignty",
+    "language": "en",
+    "source_file": "Cloud-Sovereignty-Framework.txt"
+  }
+]
