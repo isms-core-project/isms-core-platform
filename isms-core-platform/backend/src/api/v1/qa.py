@@ -461,6 +461,34 @@ def run_project_semantic(
     )
 
 
+@router.post(
+    "/project/{project_id}/run-semantic-claude",
+    response_model=SemanticRunResult,
+    dependencies=[Depends(require_qa_access)],
+)
+def run_project_semantic_claude(
+    project_id: uuid.UUID,
+    reference_library: str = "iso_corpus",
+    language: str = "en",
+    db: DBSession = Depends(get_db),
+):
+    """Claude AI semantic check for a project. Requires ANTHROPIC_API_KEY."""
+    try:
+        stats = qa_service.run_project_semantic_claude_check(db, project_id, reference_library, language)
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    return SemanticRunResult(
+        total=stats["total"],
+        pass_count=stats["pass"],
+        warning_count=stats["warning"],
+        fail_count=stats["fail"],
+        needs_review_count=stats["needs_review"],
+        duration_ms=stats["duration_ms"],
+        run_date=datetime.now(timezone.utc).isoformat(),
+        method="semantic_claude",
+    )
+
+
 @router.get(
     "/project/{project_id}/results",
     response_model=list[CorrelationResultRead],

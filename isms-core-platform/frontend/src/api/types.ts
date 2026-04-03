@@ -509,7 +509,7 @@ export interface CorrelationResultRead {
   control_group_code: string
   control_group_name: string
   document_id: string
-  product_type: 'framework' | 'operational'
+  product_type: string
   correlation_method: string
   correlation_strength: number
   qa_status: 'pass' | 'warning' | 'fail' | 'needs_review'
@@ -517,6 +517,10 @@ export interface CorrelationResultRead {
   missing_keywords: string[]
   run_date: string
   metadata: Record<string, unknown>
+  // Phase 21 — project scope
+  project_id?: string | null
+  reference_library?: string | null
+  result_view?: string
 }
 
 export interface QASummaryBucket {

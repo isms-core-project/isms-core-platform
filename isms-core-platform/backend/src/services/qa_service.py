@@ -1398,6 +1398,167 @@ def run_project_semantic_check(
     return stats
 
 
+def run_project_semantic_claude_check(
+    db: DBSession,
+    project_id: uuid.UUID,
+    reference_library: str = "iso_corpus",
+    language: str = "en",
+) -> dict:
+    """Claude AI semantic check scoped to a project's covered control groups."""
+    import json as _json
+    from src.core.config import get_settings
+    settings = get_settings()
+
+    if not settings.anthropic_api_key:
+        raise ValueError("ANTHROPIC_API_KEY not configured.")
+
+    import anthropic as _anthropic
+    client = _anthropic.Anthropic(api_key=settings.anthropic_api_key)
+
+    t0 = time.monotonic()
+    run_date = datetime.now(timezone.utc)
+
+    os_client = search_service.get_client()
+    os_available = os_client is not None
+
+    groups = _get_project_control_groups(db, project_id)
+
+    _framework_codes = {
+        ProductFamily.ISMS: "ISO27001_2022",
+        ProductFamily.PRIVACY: "ISO27701",
+        ProductFamily.CLOUD: "ISO27018",
+        ProductFamily.SEC: "ISO27017",
+    }
+    frameworks = {
+        family: db.execute(
+            select(Framework).where(Framework.code == code)
+        ).scalar_one_or_none()
+        for family, code in _framework_codes.items()
+    }
+    _standard_names = {
+        ProductFamily.ISMS: "ISO 27001:2022",
+        ProductFamily.PRIVACY: "ISO 27701:2025",
+        ProductFamily.CLOUD: "ISO 27018:2025",
+        ProductFamily.SEC: "ISO 27017:2025",
+    }
+
+    db.execute(
+        delete(CorrelationResult).where(
+            CorrelationResult.correlation_method == CorrelationMethod.SEMANTIC_CLAUDE,
+            CorrelationResult.project_id == project_id,
+        )
+    )
+
+    stats: dict = {"total": 0, "pass": 0, "warning": 0, "fail": 0, "needs_review": 0}
+
+    _PROMPT = """\
+You are a {standard_name} QA auditor. Rate how well the implementation \
+documentation addresses the ISO control requirements below.
+
+ISO CONTROL REQUIREMENTS:
+{iso_text}
+
+IMPLEMENTATION DOCUMENTATION (excerpt):
+{impl_text}
+
+Respond with a JSON object ONLY — no other text:
+{{"score": <integer 0-100>, "reasoning": "<2-3 sentence explanation>", "gaps": ["<gap 1>", "<gap 2>"]}}
+
+score guide: 0=no coverage, 30=minimal, 50=partial, 70=good, 85=strong, 100=comprehensive.
+gaps: list up to 3 specific missing topics; empty list [] if score>=85."""
+
+    for group in groups:
+        doc_id = f"{group.group_code}:sem_claude:prj"
+        product_label = group.product_family.value.lower() if group.product_family else "isms"
+        framework = frameworks.get(group.product_family)
+        standard_name = _standard_names.get(group.product_family, "ISO 27001:2022")
+
+        if reference_library == "isms_library" and os_available:
+            ref_text = _fetch_library_pol_text(os_client, group.group_code, language="en")
+            if not ref_text:
+                ref_text = _build_iso_text(db, framework, group)
+        else:
+            ref_text = _build_iso_text(db, framework, group)
+
+        impl_text = ""
+        if os_available:
+            impl_text = _fetch_group_full_text(os_client, group.group_code, language=language)[:3000]
+            if not impl_text and language != "en":
+                impl_text = _fetch_group_full_text(os_client, group.group_code, language="en")[:3000]
+
+        _nr_meta: dict = {
+            "product_type": product_label, "reference_library": reference_library,
+            "model": settings.ai_model,
+        }
+
+        if not impl_text:
+            db.add(CorrelationResult(
+                control_group_id=group.id, document_id=doc_id, project_id=project_id,
+                result_view="document", reference_library=reference_library,
+                correlation_method=CorrelationMethod.SEMANTIC_CLAUDE, correlation_strength=Decimal("0"),
+                qa_status=QAStatus.NEEDS_REVIEW, coverage_keywords=[], missing_keywords=[],
+                run_date=run_date, metadata_={**_nr_meta, "reason": "no_implementation_content"},
+            ))
+            stats["total"] += 1; stats["needs_review"] += 1; continue
+
+        score_raw = 0
+        reasoning = ""
+        gaps: list = []
+        try:
+            response = client.messages.create(
+                model=settings.ai_model,
+                max_tokens=512,
+                messages=[{"role": "user", "content": _PROMPT.format(
+                    standard_name=standard_name,
+                    iso_text=ref_text[:600],
+                    impl_text=impl_text,
+                )}],
+            )
+            text = response.content[0].text.strip()
+            if text.startswith("```"):
+                text = text.split("```")[1]
+                if text.startswith("json"):
+                    text = text[4:]
+            parsed = _json.loads(text)
+            score_raw = max(0, min(100, int(parsed.get("score", 0))))
+            reasoning = str(parsed.get("reasoning", ""))
+            gaps = [str(g) for g in parsed.get("gaps", [])][:3]
+        except (_anthropic.RateLimitError, _anthropic.APIStatusError) as e:
+            logger.warning("Claude API error for group %s: %s", group.group_code, e)
+            db.add(CorrelationResult(
+                control_group_id=group.id, document_id=doc_id, project_id=project_id,
+                result_view="document", reference_library=reference_library,
+                correlation_method=CorrelationMethod.SEMANTIC_CLAUDE, correlation_strength=Decimal("0"),
+                qa_status=QAStatus.NEEDS_REVIEW, coverage_keywords=[], missing_keywords=[],
+                run_date=run_date, metadata_={**_nr_meta, "reason": f"api_error: {e}"},
+            ))
+            stats["total"] += 1; stats["needs_review"] += 1
+            time.sleep(1); continue
+        except Exception as e:
+            logger.warning("Claude response parse error for group %s: %s", group.group_code, e)
+            reasoning = f"Parse error: {e}"
+
+        strength = Decimal(str(score_raw)) / Decimal("100")
+        status = _semantic_status(strength, _CLAUDE_PASS_THRESHOLD, _CLAUDE_WARN_THRESHOLD)
+
+        db.add(CorrelationResult(
+            control_group_id=group.id, document_id=doc_id, project_id=project_id,
+            result_view="document", reference_library=reference_library,
+            correlation_method=CorrelationMethod.SEMANTIC_CLAUDE, correlation_strength=strength,
+            qa_status=status, coverage_keywords=[], missing_keywords=gaps,
+            run_date=run_date,
+            metadata_={**_nr_meta, "score": score_raw, "reasoning": reasoning, "gaps": gaps, "language": language},
+        ))
+        stats["total"] += 1
+        stats[status.value] += 1
+        time.sleep(0.3)
+
+    db.commit()
+    stats["duration_ms"] = int((time.monotonic() - t0) * 1000)
+    logger.info("Project Claude semantic check complete (project=%s): %s", project_id, stats)
+    return stats
+
+
 def get_project_qa_summary(db: DBSession, project_id: uuid.UUID, method: str = "existence") -> dict:
     """Aggregated QA summary for a specific project."""
     try:
@@ -1430,8 +1591,9 @@ def get_project_qa_summary(db: DBSession, project_id: uuid.UUID, method: str = "
 
 
 def get_org_project_summaries(db: DBSession, method: str = "existence") -> list:
-    """Per-project QA summaries for all projects that have run QA."""
+    """Per-project QA summaries for all projects that have run QA, with name + family."""
     from sqlalchemy import distinct as sa_distinct
+    from src.domain.projects import Project
 
     try:
         method_enum = CorrelationMethod(method)
@@ -1445,7 +1607,14 @@ def get_org_project_summaries(db: DBSession, method: str = "existence") -> list:
         )
     ).scalars().all()
 
-    return [
-        {"project_id": str(pid), **get_project_qa_summary(db, pid, method)}
-        for pid in project_ids
-    ]
+    result = []
+    for pid in project_ids:
+        summary = get_project_qa_summary(db, pid, method)
+        project = db.get(Project, pid)
+        result.append({
+            "project_id": str(pid),
+            "project_name": project.name if project else str(pid)[:8],
+            "product_family": project.product_family.value if project else "ISMS",
+            **summary,
+        })
+    return result

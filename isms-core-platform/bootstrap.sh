@@ -129,7 +129,7 @@ except: pass
 " 2>/dev/null || true
 
 echo ""
-HOST="${HOST_IP:-$(hostname -I | awk '{print $1}')}"
+HOST="${HOST_IP:-$(hostname -I 2>/dev/null | awk '{print $1}' || ipconfig getifaddr en0 2>/dev/null || echo 'localhost')}"
 echo "  Platform:  https://${HOST}  (accept self-signed cert or use FQDN)"
 echo "  API docs:  https://${HOST}/api/docs"
 echo "  Login:     ${BOOTSTRAP_EMAIL} / ${BOOTSTRAP_PASSWORD}"

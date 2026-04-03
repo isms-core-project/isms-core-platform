@@ -65,6 +65,7 @@ import {
   WarningAmberOutlined,
   VerifiedOutlined,
   PlayArrowOutlined,
+  AutoAwesomeOutlined,
 } from '@mui/icons-material'
 import dayjs from 'dayjs'
 import { useEditor, EditorContent } from '@tiptap/react'
@@ -2209,6 +2210,8 @@ function QATab({ projectId }: { projectId: string }) {
         res = await qaApi.runProjectExistence(projectId)
       } else if (type === 'keyword') {
         res = await qaApi.runProjectKeyword(projectId, refLib, language)
+      } else if (type === 'semantic_claude') {
+        res = await qaApi.runProjectSemanticClaude(projectId, refLib, language)
       } else {
         res = await qaApi.runProjectSemantic(projectId, refLib, language)
       }
@@ -2238,6 +2241,7 @@ function QATab({ projectId }: { projectId: string }) {
             <MenuItem value="existence" sx={{ fontSize: '0.78rem' }}>Artefact Check</MenuItem>
             <MenuItem value="keyword" sx={{ fontSize: '0.78rem' }}>Keyword</MenuItem>
             <MenuItem value="semantic" sx={{ fontSize: '0.78rem' }}>Semantic (Mini LLM)</MenuItem>
+            <MenuItem value="semantic_claude" sx={{ fontSize: '0.78rem' }}>Semantic (Claude AI)</MenuItem>
           </Select>
         </FormControl>
 
@@ -2266,12 +2270,12 @@ function QATab({ projectId }: { projectId: string }) {
         <Button
           size="small"
           variant="contained"
-          startIcon={running === method ? <CircularProgress size={13} color="inherit" /> : <PlayArrowOutlined sx={{ fontSize: 15 }} />}
+          startIcon={running === method ? <CircularProgress size={13} color="inherit" /> : method === 'semantic_claude' ? <AutoAwesomeOutlined sx={{ fontSize: 15 }} /> : <PlayArrowOutlined sx={{ fontSize: 15 }} />}
           disabled={!!running}
           onClick={() => handleRun(method)}
           sx={{ fontSize: '0.72rem' }}
         >
-          Run {method === 'existence' ? 'Artefact Check' : method === 'keyword' ? 'Keyword Check' : 'Semantic Check'}
+          Run {method === 'existence' ? 'Artefact Check' : method === 'keyword' ? 'Keyword Check' : method === 'semantic_claude' ? 'Claude AI Check' : 'Semantic Check'}
         </Button>
       </Box>
 

@@ -1,6 +1,8 @@
 import { client } from './client'
 import type { CorrelationResultRead, ExistenceRunResult, KeywordRunResult, QASummary, SemanticRunResult, SynonymRule } from './types'
 
+export type { CorrelationResultRead } from './types'
+
 export const qaApi = {
   runExistence: () =>
     client.post<ExistenceRunResult>('/qa/run-existence').then((r) => r.data),
@@ -52,6 +54,11 @@ export const qaApi = {
       params: { reference_library: referenceLibrary, language },
     }).then((r) => r.data),
 
+  runProjectSemanticClaude: (projectId: string, referenceLibrary = 'iso_corpus', language = 'en') =>
+    client.post<SemanticRunResult>(`/qa/project/${projectId}/run-semantic-claude`, null, {
+      params: { reference_library: referenceLibrary, language },
+    }).then((r) => r.data),
+
   getProjectResults: (projectId: string, params?: { method?: string; status?: string; limit?: number }) =>
     client.get<CorrelationResultRead[]>(`/qa/project/${projectId}/results`, { params }).then((r) => r.data),
 
@@ -86,6 +93,8 @@ export interface ProjectQASummary {
 
 export interface OrgProjectSummaryItem extends ProjectQASummary {
   project_id: string
+  project_name: string
+  product_family: string
 }
 
 export interface ReferenceCorpusLoadResult {

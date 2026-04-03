@@ -749,14 +749,28 @@ function ProjectHealthCard({ item, method }: { item: OrgProjectSummaryItem; meth
       onClick={() => navigate(`/projects/${item.project_id}`)}
     >
       <CardContent sx={{ pb: '12px !important' }}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>
-          <Typography
-            variant="caption"
-            sx={{ fontFamily: 'monospace', fontSize: '0.68rem', color: 'text.secondary', maxWidth: 160, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
-          >
-            {item.project_id.slice(0, 8)}…
-          </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 0.75 }}>
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            <Typography
+              variant="body2"
+              fontWeight={600}
+              sx={{ fontSize: '0.8rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
+            >
+              {item.project_name}
+            </Typography>
+            <Chip
+              label={item.product_family}
+              size="small"
+              sx={{
+                height: 16, fontSize: '0.6rem', mt: 0.25,
+                bgcolor: item.product_family === 'PRIVACY' ? 'rgba(112,48,159,0.15)' :
+                         item.product_family === 'CLOUD' ? 'rgba(0,153,204,0.15)' : 'rgba(68,114,196,0.15)',
+                color: item.product_family === 'PRIVACY' ? '#c084fc' :
+                       item.product_family === 'CLOUD' ? '#67e8f9' : '#93bbf5',
+              }}
+            />
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, ml: 1 }}>
             <Typography variant="h5" fontWeight={700} sx={{ color: barColor, lineHeight: 1 }}>
               {pct}%
             </Typography>
