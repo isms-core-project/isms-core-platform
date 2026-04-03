@@ -42,13 +42,15 @@ import {
   PsychologyOutlined,
   AutoAwesomeOutlined,
   InfoOutlined,
+  OpenInNewOutlined,
 } from '@mui/icons-material'
 import Popover from '@mui/material/Popover'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { useNavigate } from 'react-router-dom'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { qaApi } from '../api/qa'
-import type { ReferenceCorpusStatus } from '../api/qa'
+import type { ReferenceCorpusStatus, OrgProjectSummaryItem } from '../api/qa'
 import type { CorrelationResultRead, QASummaryBucket, SynonymRule } from '../api/types'
 import PageHeader from '../components/PageHeader'
 import { useProduct, PRODUCT_SUBTITLES, PRODUCT_COLORS } from '../store/ProductContext'
@@ -734,6 +736,139 @@ function ReferenceCorpusTab() {
   )
 }
 
+function ProjectHealthCard({ item, method }: { item: OrgProjectSummaryItem; method: string }) {
+  const navigate = useNavigate()
+  const pct = Math.round(item.pass_rate * 100)
+  const barColor =
+    pct >= 80 ? '#C6EFCE' :
+    pct >= 50 ? '#FFEB9C' : '#FFC7CE'
+
+  return (
+    <Card
+      sx={{ cursor: 'pointer', '&:hover': { bgcolor: 'rgba(255,255,255,0.04)' }, transition: 'background 0.15s' }}
+      onClick={() => navigate(`/projects/${item.project_id}`)}
+    >
+      <CardContent sx={{ pb: '12px !important' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>
+          <Typography
+            variant="caption"
+            sx={{ fontFamily: 'monospace', fontSize: '0.68rem', color: 'text.secondary', maxWidth: 160, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
+          >
+            {item.project_id.slice(0, 8)}…
+          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+            <Typography variant="h5" fontWeight={700} sx={{ color: barColor, lineHeight: 1 }}>
+              {pct}%
+            </Typography>
+            <OpenInNewOutlined sx={{ fontSize: 13, color: 'text.disabled' }} />
+          </Box>
+        </Box>
+
+        <LinearProgress
+          variant="determinate"
+          value={pct}
+          sx={{
+            mb: 1.5, height: 5, borderRadius: 3,
+            bgcolor: 'rgba(255,255,255,0.08)',
+            '& .MuiLinearProgress-bar': { bgcolor: barColor },
+          }}
+        />
+
+        <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap' }}>
+          <Chip label={`${item.pass} pass`} size="small"
+            sx={{ fontSize: '0.62rem', height: 17, bgcolor: '#1a3a27', color: '#C6EFCE' }} />
+          {item.warning > 0 && (
+            <Chip label={`${item.warning} warn`} size="small"
+              sx={{ fontSize: '0.62rem', height: 17, bgcolor: '#3a2e00', color: '#FFEB9C' }} />
+          )}
+          {item.fail > 0 && (
+            <Chip label={`${item.fail} fail`} size="small"
+              sx={{ fontSize: '0.62rem', height: 17, bgcolor: '#3a0000', color: '#FFC7CE' }} />
+          )}
+          {item.needs_review > 0 && (
+            <Chip label={`${item.needs_review} review`} size="small"
+              sx={{ fontSize: '0.62rem', height: 17 }} />
+          )}
+          <Typography variant="caption" color="text.disabled" sx={{ alignSelf: 'center', fontSize: '0.62rem' }}>
+            / {item.total}
+          </Typography>
+        </Box>
+
+        {item.last_run && (
+          <Typography variant="caption" color="text.disabled" sx={{ fontSize: '0.6rem', display: 'block', mt: 0.75 }}>
+            {dayjs(item.last_run).fromNow()} · {METHOD_LABELS[method] ?? method}
+          </Typography>
+        )}
+      </CardContent>
+    </Card>
+  )
+}
+
+function OrgProjectsTab() {
+  const [method, setMethod] = useState<string>('existence')
+
+  const { data: projects = [], isLoading } = useQuery({
+    queryKey: ['qa', 'org-projects', method],
+    queryFn: () => qaApi.getOrgProjectSummaries(method),
+  })
+
+  const avgPassRate = projects.length
+    ? Math.round(projects.reduce((s, p) => s + p.pass_rate, 0) / projects.length * 100)
+    : null
+
+  return (
+    <Box>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2.5 }}>
+        <ToggleButtonGroup
+          value={method}
+          exclusive
+          onChange={(_, v) => v && setMethod(v)}
+          size="small"
+        >
+          <ToggleButton value="existence">Existence</ToggleButton>
+          <ToggleButton value="keyword">Keyword</ToggleButton>
+          <ToggleButton value="semantic">Mini LLM</ToggleButton>
+        </ToggleButtonGroup>
+
+        {avgPassRate !== null && (
+          <Typography variant="caption" color="text.secondary">
+            {projects.length} project{projects.length !== 1 ? 's' : ''} — avg pass rate{' '}
+            <Box component="span" sx={{ color: avgPassRate >= 80 ? '#C6EFCE' : avgPassRate >= 50 ? '#FFEB9C' : '#FFC7CE', fontWeight: 600 }}>
+              {avgPassRate}%
+            </Box>
+          </Typography>
+        )}
+      </Box>
+
+      {isLoading && (
+        <Grid container spacing={2}>
+          {[...Array(6)].map((_, i) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={i}>
+              <Box sx={{ height: 120, bgcolor: 'rgba(255,255,255,0.04)', borderRadius: 1 }} />
+            </Grid>
+          ))}
+        </Grid>
+      )}
+
+      {!isLoading && projects.length === 0 && (
+        <Alert severity="info">
+          No projects have run QA yet. Open a project and use the QA tab to run checks.
+        </Alert>
+      )}
+
+      {!isLoading && projects.length > 0 && (
+        <Grid container spacing={2}>
+          {projects.map(p => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={p.project_id}>
+              <ProjectHealthCard item={p} method={method} />
+            </Grid>
+          ))}
+        </Grid>
+      )}
+    </Box>
+  )
+}
+
 export default function QA() {
   const queryClient = useQueryClient()
   const { product: activeProduct } = useProduct()
@@ -826,7 +961,7 @@ export default function QA() {
     <Box>
       <PageHeader
         title="QA"
-        subtitle={tab === 0 ? methodSubtitle : tab === 1 ? 'Manage the synonym dictionary used by keyword correlation' : 'ISO & regulatory normative corpus — 72 standards, 13,500+ indexed chunks'}
+        subtitle={tab === 0 ? methodSubtitle : tab === 1 ? 'Manage the synonym dictionary used by keyword correlation' : tab === 2 ? 'ISO & regulatory normative corpus — 72 standards, 13,500+ indexed chunks' : 'Per-project QA health — click any card to open the project QA tab'}
         actions={tab === 0 ? (
           <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap">
             {summary?.last_run && (
@@ -892,10 +1027,12 @@ export default function QA() {
         <Tab label="Results" />
         <Tab label="Synonyms" />
         <Tab label="Reference Corpus" />
+        <Tab label="Projects" />
       </Tabs>
 
       {tab === 1 && <SynonymsTab />}
       {tab === 2 && <ReferenceCorpusTab />}
+      {tab === 3 && <OrgProjectsTab />}
 
       {tab === 0 && <>
 
