@@ -622,8 +622,8 @@ def _get_semantic_model():
     global _SEMANTIC_MODEL
     if _SEMANTIC_MODEL is None:
         from sentence_transformers import SentenceTransformer  # type: ignore
-        logger.info("Loading sentence-transformers model all-MiniLM-L6-v2 …")
-        _SEMANTIC_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
+        logger.info("Loading sentence-transformers model paraphrase-multilingual-MiniLM-L12-v2 …")
+        _SEMANTIC_MODEL = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
         logger.info("Sentence-transformers model loaded")
     return _SEMANTIC_MODEL
 
@@ -657,7 +657,7 @@ def run_semantic_mini_check(
     db: DBSession,
     group_id: uuid.UUID | None = None,
 ) -> dict:
-    """Run semantic similarity check using sentence-transformers all-MiniLM-L6-v2.
+    """Run semantic similarity check using sentence-transformers paraphrase-multilingual-MiniLM-L12-v2.
 
     Encodes ISO control text and UG/TG implementation content as vectors, then
     computes cosine similarity. No API key required — runs entirely on CPU.
@@ -728,7 +728,7 @@ def run_semantic_mini_check(
                 metadata_={
                     "product_type": product_label,
                     "reason": "no_implementation_content",
-                    "model": "all-MiniLM-L6-v2",
+                    "model": "paraphrase-multilingual-MiniLM-L12-v2",
                 },
             ))
             stats["total"] += 1
@@ -754,7 +754,7 @@ def run_semantic_mini_check(
             run_date=run_date,
             metadata_={
                 "product_type": product_label,
-                "model": "all-MiniLM-L6-v2",
+                "model": "paraphrase-multilingual-MiniLM-L12-v2",
                 "iso_text": iso_text[:400],
                 "iso_word_count": iso_word_count,
                 "short_iso_text": iso_word_count < 15,
