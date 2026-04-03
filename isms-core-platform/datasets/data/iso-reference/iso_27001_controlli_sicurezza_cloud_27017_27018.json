@@ -1,418 +1,442 @@
 [
   {
     "clause_id": "5.1.1",
-    "title": "Policies for information security",
-    "text": "Policies for information security\n\nPolitiche del Sistema di Gestione della Sicurezza delle Informazioni: AT Service ha definito la propria Politica di sicurezza delle Informazioni aggiornata periodicamente e pubblicata sul proprio sito web. \n https://www.at-service.it/certificazioni.asp",
+    "title": "Policies for",
+    "text": "Policies for\n\ninformation \nsecurity \nPolitiche del Sistema di Gestione della Sicurezza delle \nInformazioni: AT Service ha definito la propria Politica di \nsicurezza delle Informazioni aggiornata periodicamente e \npubblicata sul proprio sito web. \nhttps://www.at-\nservice.it/certificazioni.asp",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "6.1.1",
-    "title": "Information security roles and responsibilities",
-    "text": "Information security roles and responsibilities\n\nRuoli e responsabilit�: All�interno dell�ambito di responsabilit� di AT Service come fornitore di soluzioni SaaS, AT Service ha definito le figure, i ruoli, le competenze e le responsabilit� connesse ai processi, secondo i principi di segregation of duties, least privilege e dual control. \n \nSegregation of Duties (SoD) - Nell'ambito dei processi operativi dei servizi, una sequenza di procedure viene svolta da diverse persone, mai una sola, a garanzia che il controllo dell'intero processo non sia affidato ad un singolo individuo.  \n \nLeast privilege - I permessi di accesso a locali, apparati, dati, funzionalit�, ecc. sono concessi, al personale addetto ai servizi, secondo il principio del �least privilege� ossia nella misura necessaria affinch� tali risorse possano svolgere i compiti loro assegnati, ma non oltre.  \n \nDual control - Le procedure pi� critiche dal punto di vista della sicurezza prevedono il concorso di almeno due persone.  \n Tabella responsabilit� per tutti i Prodotti SaaS di AT Service \n \nAmbito \n Responsabile \n \nData \n Cliente \n \nApplication \n AT Service \n \nSystem \n AT Service \n \nServers \n AT Service \n \nStorage \n AT Service \n \nNetwork \n AT Service \n \nPhysical \n Aruba \n \n\n \n \nIndirizzo mail dedicato all�assistenza assistena@at-service.it",
+    "title": "Information",
+    "text": "Information\n\nsecurity \nroles and \nresponsibili\nties \nRuoli e responsabilità: All’interno dell’ambito di \nresponsabilità di AT Service come fornitore di soluzioni \nSaaS, AT Service ha definito le figure, i ruoli, le \ncompetenze e le responsabilità connesse ai processi, \nsecondo i principi di segregation of duties, least \nprivilege e dual control. \n \nSegregation of Duties (SoD) - Nell'ambito dei processi \noperativi dei servizi, una sequenza di procedure viene \nsvolta da diverse persone, mai una sola, a garanzia che il \ncontrollo dell'intero processo non sia affidato ad un singolo \nindividuo.  \n \nLeast privilege - I permessi di accesso a locali, apparati, \ndati, funzionalità, ecc. sono concessi, al personale addetto \nai servizi, secondo il principio del “least privilege” ossia \nnella misura necessaria affinché tali risorse possano \nsvolgere i compiti loro assegnati, ma non oltre.  \n \nDual control - Le procedure più critiche dal punto di \nvista della sicurezza prevedono il concorso di almeno \ndue persone.  \nTabella responsabilità per tutti i \nProdotti SaaS di AT Service \n \nAmbito \nResponsabile \nData \nCliente \nApplication \nAT Service \nSystem \nAT Service \nServers \nAT Service \nStorage \nAT Service \nNetwork \nAT Service \nPhysical \nAruba \n \n \nIndirizzo \nmail \ndedicato \nall’assistenza \nassistena@at-\nservice.it",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "6.1.3",
-    "title": "Contact with authorities",
-    "text": "Contact with authorities\n\nContatti con le autorit�: AT Service � in contatto costante con le autorit� competenti la materia di sicurezza delle informazioni e protezione dei dati. \nGARANTE PRIVACY \nACN  \n \n AT Service ha nominato un DPO raggiungibile tramite mail:  info@at-service.it o telefono al 045.7513353",
+    "title": "Contact",
+    "text": "Contact\n\nwith \nauthorities \nContatti con le autorità: AT Service è in contatto \ncostante con le autorità competenti la materia di \nsicurezza delle informazioni e protezione dei dati. \nGARANTE PRIVACY \nACN \n \n \nAT Service ha nominato un DPO \nraggiungibile tramite mail:  info@at-\nservice.it o telefono al 045.7513353",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "7.2.2",
-    "title": "Information security awareness, education and training",
-    "text": "Information security awareness, education and training\n\nFormazione del personale: il personale di AT Service e i sub-appaltatori addetti al servizio hanno adeguata competenza ed esperienza, e viene loro fornito o richiesto un addestramento specifico a fronte di ogni importante aggiornamento dei sistemi.  \n \nConsapevolezza (Awareness): periodicamente, il personale di AT Service viene sensibilizzato sulle tematiche di sicurezza, sul cybercrime in generale e sulle best practice da adottare, mediante specifici corsi di formazione. Ai sub-appaltatori viene richiesto quale requisito essenziale per poter collaborare con AT Service. \n \nNon Disclosure Agreement (NDA): ai nuovi assunti e ai sub-appaltatori viene richiesto di sottoscrivere un accordo di confidenzialit� al fine di tutelare il know-how aziendale e le informazioni trattate nell�ambito della collaborazione.",
+    "title": "Information",
+    "text": "Information\n\nsecurity \nawareness, \neducation \nand training \nFormazione del personale: il personale di AT Service e i \nsub-appaltatori addetti al servizio hanno adeguata \ncompetenza ed esperienza, e viene loro fornito o richiesto \nun addestramento specifico a fronte di ogni importante \naggiornamento dei sistemi.  \n \nConsapevolezza \n(Awareness): \nperiodicamente, \nil \npersonale di AT Service viene sensibilizzato sulle \ntematiche di sicurezza, sul cybercrime in generale e sulle \nbest practice da adottare, mediante specifici corsi di \nformazione. Ai sub-appaltatori viene richiesto quale \nrequisito essenziale per poter collaborare con AT Service. \n \nNon Disclosure Agreement (NDA): ai nuovi assunti e ai \nsub-appaltatori viene richiesto di sottoscrivere un \naccordo di confidenzialità al fine di tutelare il know-how \naziendale e le informazioni trattate nell’ambito della \ncollaborazione.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "8.1.1",
-    "title": "Inventory of assets",
-    "text": "Inventory of assets\n\nInventario Asset: all�interno di AT Service � presente un inventario aggiornato degli asset, al cui interno � censita l�infrastruttura fisica e virtuale e la loro collocazione. \nAT Service testa e censisce l�hardware e il software autorizzato all�inserimento nell�infrastruttura \n  \n \naggiornato l�inventario al termine delle nuove installazioni. \nOgni asset � classificato per tipologia di informazioni trattate e caratteristiche tecniche, nonch� relativi responsabili.",
+    "title": "Inventory of",
+    "text": "Inventory of\n\nassets \nInventario Asset: all’interno di AT Service è presente \nun inventario aggiornato degli asset, al cui interno è \ncensita l’infrastruttura fisica e virtuale e la loro \ncollocazione. \nAT Service testa e censisce l’hardware e il software \nautorizzato \nall’inserimento \nnell’infrastruttura\n\nSICUREZZA DELLE INFORMAZIONI norma ISO 27001:2024 \nAspetti di sicurezza del Cloud di AT Service Srl \nCONTROLLI AGGIUNTIVI CLOUD ISO 27017 | 27018 \n \nAT Service S.r.l. | Controlli ISO 27017-27018 | Rev: 00 | Data: 10.01.2025 | Responsabile: RSGSI | PUBBLICO \nPAG. 4 DI 11 \nNR \nCONTROLLO \nI NOSTRI CONTROLLI \nSTRUMENTI E FUNZIONALITÀ A \nDISPOSIZIONE DEL CLIENTE \naggiornato \nl’inventario \nal \ntermine \ndelle \nnuove \ninstallazioni. \nOgni asset è classificato per tipologia di informazioni \ntrattate e caratteristiche tecniche, nonché relativi \nresponsabili.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "8.2.2",
-    "title": "Labelling of information",
-    "text": "Labelling of information\n\nEtichettatura delle informazioni: AT Service adotta un sistema per etichettare le informazioni in base alla classificazione definita nelle proprie procedure. \n \n \n I Prodotti SaaS offerti da AT Service non prevedono per il Cliente la possibilit� di classificare o etichettare le informazioni e le risorse associate.",
+    "title": "Labelling of",
+    "text": "Labelling of\n\ninformation \nEtichettatura delle informazioni: AT Service adotta \nun sistema per etichettare le informazioni in base alla \nclassificazione definita nelle proprie procedure. \n \n \nI Prodotti SaaS offerti da AT Service \nnon prevedono per il Cliente la \npossibilità \ndi \nclassificare \no \netichettare le informazioni e le \nrisorse associate.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "9.1.2",
-    "title": "Access to networks and network services",
-    "text": "Access to networks and network services\n\nControlli di accesso: il personale di AT Service che accede alle risorse � stato autorizzato. \nPrima di accedere ai sistemi interni, viene chiesto al personale che ne ha diritto di identificarsi e di autenticarsi (tramite nome utente, password). Il personale AT Service pu� accedere, previa autenticazione, alle sole risorse per cui � stato autorizzato.",
+    "title": "Access to",
+    "text": "Access to\n\nnetworks \nand \nnetwork \nservices \nControlli di accesso: il personale di AT Service che \naccede alle risorse è stato autorizzato. \nPrima di accedere ai sistemi interni, viene chiesto al \npersonale che ne ha diritto di identificarsi e di autenticarsi \n(tramite nome utente, password). Il personale AT Service \npuò accedere, previa autenticazione, alle sole risorse per \ncui è stato autorizzato.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "9.2.1",
-    "title": "User registration and deregistration",
-    "text": "User registration and deregistration\n\nAlla fornitura di un servizio, AT Service crea le utenze necessarie all�utilizzo di Dedalo, le cui password sono modificabili in autonomia dall�utente. \n Il Cliente pu� utilizzare il sistema di autenticazione nativo del prodotto AT Service. Gli utilizzatori finali del prodotto accedono ai servizi tramite SPID.",
+    "title": "User",
+    "text": "User\n\nregistration \nand \nderegistrati\non \nAlla fornitura di un servizio, AT Service crea le utenze \nnecessarie all’utilizzo di Dedalo, le cui password sono \nmodificabili in autonomia dall’utente. \nIl Cliente può utilizzare il sistema di \nautenticazione nativo del prodotto \nAT Service. Gli utilizzatori finali del \nprodotto accedono ai servizi tramite \nSPID.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "9.2.2",
-    "title": "User access provisioning",
-    "text": "User access provisioning\n\nOgni Prodotto SaaS di AT Service prevede la gestione degli accessi, tra cui le funzioni di registrazione e annullamento",
+    "title": "User access",
+    "text": "User access\n\nprovisioning \nOgni Prodotto SaaS di AT Service prevede la gestione \ndegli accessi, tra cui le funzioni di registrazione e \nannullamento",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "9.2.3",
-    "title": "Management of privileged access rights",
-    "text": "Management of privileged access rights\n\nGestione dei privilegi di accesso: i Prodotti SaaS di AT Service gestiscono due tipologie di accesso. Per i Clienti (ovvero gli Enti Locali) il sistema proprietario del prodotto si basa su username e password. \nLa seconda per gli utilizzatori tramite SPID.",
+    "title": "Manageme",
+    "text": "Manageme\n\nnt of \nprivileged \naccess \nrights \nGestione dei privilegi di accesso: i Prodotti SaaS di AT \nService gestiscono due tipologie di accesso. Per i \nClienti (ovvero gli Enti Locali) il sistema proprietario del \nprodotto si basa su username e password. \nLa seconda per gli utilizzatori tramite SPID.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "9.2.4",
-    "title": "Management of secret authentication information of users",
-    "text": "Management of secret authentication information of users\n\nPassword policy - Coerentemente con le policy di sicurezza di AT Service e nel rispetto della normativa vigente, � applicata una politica sicura di gestione delle password.  \n \n Al Cliente vengono fornite istruzioni dirette o tramite il manuale di prodotto.",
+    "title": "Manageme",
+    "text": "Manageme\n\nnt of secret \nauthenticati\non \ninformation \nof users \nPassword policy - Coerentemente con le policy di sicurezza \ndi AT Service e nel rispetto della normativa vigente, è \napplicata una politica sicura di gestione delle password.  \n \nAl Cliente vengono fornite istruzioni \ndirette o tramite il manuale di \nprodotto.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "9.4.4",
-    "title": "Use of privileged utility programs",
-    "text": "Use of privileged utility programs\n\nUtilizzo di programmi di utilit� privilegiati: in conformit� alle policy della norma ISO 27001, AT Service ha definito una politica di uso dei programmi di utilit� privilegiata, autorizzato gli utenti abilitati, definendo e censendo i programmi autorizzati.",
+    "title": "Use of",
+    "text": "Use of\n\nprivileged \nutility \nprograms \nUtilizzo di programmi di utilità privilegiati: in \nconformità alle policy della norma ISO 27001, AT \nService ha definito una politica di uso dei programmi di \nutilità privilegiata, autorizzato gli utenti abilitati, \ndefinendo e censendo i programmi autorizzati.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "10.1.1",
-    "title": "Policy on the use of cryptographic controls",
-    "text": "Policy on the use of cryptographic controls\n\nCanale sicuro SSL - I flussi di dati da/verso i sistemi, sono protetti da canale sicuro SSL, mediante opportuna configurazione sui server, tale da assicurare: autenticazione del server e la cifratura della sessione. \n \nQuesto vale sia per i flussi originati in modo interattivo (web browsing) sia per quelli generati in modo automatico (es. utilizzo di API di servizi terzi).",
+    "title": "Policy on",
+    "text": "Policy on\n\nthe use of \ncryptograph\nic controls \nCanale sicuro SSL - I flussi di dati da/verso i sistemi, sono \nprotetti da canale sicuro SSL, mediante opportuna \nconfigurazione \nsui \nserver, \ntale \nda \nassicurare: \nautenticazione del server e la cifratura della sessione. \n \nQuesto vale sia per i flussi originati in modo interattivo \n(web browsing) sia per quelli generati in modo automatico \n(es. utilizzo di API di servizi terzi).",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "10.1.2",
-    "title": "Key management",
-    "text": "Key management\n\nLe chiavi crittografiche eventualmente utilizzate da AT Service sono conservate all�interno del Cloud. \n \nPolicy: AT Service ha definito internamente una politica per l�uso della crittografia.",
+    "title": "Key",
+    "text": "Key\n\nmanageme\nnt \nLe chiavi crittografiche eventualmente utilizzate da AT \nService sono conservate all’interno del Cloud. \n \nPolicy: AT Service ha definito internamente una \npolitica per l’uso della crittografia.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "11.2.7",
-    "title": "Secure disposal or reuse of equipment",
-    "text": "Secure disposal or reuse of equipment\n\nAlla conclusione del contratto di un Prodotto SaaS, AT Service provvede alla cancellazione e rimozione definitiva \n  \n \ndei dati del Cliente come da accordi contrattuali e comunicandolo al cliente a mezzo PEC.  \nAT Service gestisce con un processo definito la cancellazione periodica dei file temporanei dei propri sistemi cloud.",
+    "title": "Secure",
+    "text": "Secure\n\ndisposal or \nreuse of \nequipment \nAlla conclusione del contratto di un Prodotto SaaS, AT \nService provvede alla cancellazione e rimozione definitiva\n\nSICUREZZA DELLE INFORMAZIONI norma ISO 27001:2024 \nAspetti di sicurezza del Cloud di AT Service Srl \nCONTROLLI AGGIUNTIVI CLOUD ISO 27017 | 27018 \n \nAT Service S.r.l. | Controlli ISO 27017-27018 | Rev: 00 | Data: 10.01.2025 | Responsabile: RSGSI | PUBBLICO \nPAG. 5 DI 11 \nNR \nCONTROLLO \nI NOSTRI CONTROLLI \nSTRUMENTI E FUNZIONALITÀ A \nDISPOSIZIONE DEL CLIENTE \ndei dati del Cliente come da accordi contrattuali e \ncomunicandolo al cliente a mezzo PEC.  \nAT Service gestisce con un processo definito la \ncancellazione periodica dei file temporanei dei propri \nsistemi cloud.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "12.1.2",
-    "title": "Change management",
-    "text": "Change management\n\nI cambiamenti resi necessari dalle circostanze tecniche e di gestione vengono gestiti in modo controllato per permettere di verificarne i risultati e di mantenere traccia delle attivit� svolte.  \n \n Per le attivit� impattanti sul servizio AT Service informa i propri clienti mediante comunicazioni mail preventive.",
+    "title": "Change",
+    "text": "Change\n\nmanageme\nnt \n \nI cambiamenti resi necessari dalle circostanze tecniche e di \ngestione vengono gestiti in modo controllato per \npermettere di verificarne i risultati e di mantenere traccia \ndelle attività svolte.  \n \nPer le attività impattanti sul servizio \nAT Service informa i propri clienti \nmediante \ncomunicazioni \nmail \npreventive.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "12.1.3",
-    "title": "Capacity management",
-    "text": "Capacity management\n\nAl fine di garantire la corretta erogazione del servizio, AT Service monitora costantemente il proprio Cloud e tutte le risorse di cui dispone, analizzando le capacit� e adottando gli opportuni accorgimenti per lo sfruttamento ottimale delle stesse e per assicurare la normale fruizione dei Prodotti SaaS.",
+    "title": "Capacity",
+    "text": "Capacity\n\nmanageme\nnt \nAl fine di garantire la corretta erogazione del servizio, AT \nService monitora costantemente il proprio Cloud e tutte le \nrisorse di cui dispone, analizzando le capacità e adottando \ngli opportuni accorgimenti per lo sfruttamento ottimale \ndelle stesse e per assicurare la normale fruizione dei \nProdotti SaaS.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "12.3.1",
-    "title": "Information backup",
-    "text": "Information backup\n\nBackup delle informazioni: la struttura dei backup, i controlli, la verifica, i test, sono a carico di AT Service che garantisce al Cliente la conservazione di un backup: \n-\n Degli ultimi 60 giorni \n\n-\n Di un backup al mese per 12 mesi \n\n\nInoltre, le componenti funzionali all�erogazione dei servizi di AT Service, la gestione degli utenti e le altre componenti architetturali seguono le procedure di backup definite a livello aziendale e vengono periodicamente verificate e testate.  \nI sistemi di backup prevedono sistemi di notifica in caso di problemi. \n Il Cliente non dispone dei backup eseguiti da AT Service, ma ne pu� richiedere copia ad AT Service in qualsiasi momento.",
+    "title": "Information",
+    "text": "Information\n\nbackup \nBackup delle informazioni: la struttura dei backup, i \ncontrolli, la verifica, i test, sono a carico di AT Service \nche garantisce al Cliente la conservazione di un backup: \n- \nDegli ultimi 60 giorni \n- \nDi un backup al mese per 12 mesi \nInoltre, le componenti funzionali all’erogazione dei servizi \ndi AT Service, la gestione degli utenti e le altre componenti \narchitetturali seguono le procedure di backup definite a \nlivello aziendale e vengono periodicamente verificate e \ntestate.  \nI sistemi di backup prevedono sistemi di notifica in caso di \nproblemi. \nIl Cliente non dispone dei backup \neseguiti da AT Service, ma ne può \nrichiedere copia ad AT Service in \nqualsiasi momento.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "12.4.1",
-    "title": "Event logging",
-    "text": "Event logging\n\nLog applicazioni: la soluzione SaaS Dedalo, prodotta da AT Service, dispone di un proprio Log.",
+    "title": "Event",
+    "text": "Event\n\nlogging \nLog applicazioni: la soluzione SaaS Dedalo, prodotta \nda AT Service, dispone di un proprio Log.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "12.4.3",
-    "title": "Administrator and operator logs",
-    "text": "Administrator and operator logs\n\nLog applicazioni: la soluzione SaaS Dedalo, prodotta da AT Service, dispone di un proprio Log.",
+    "title": "Administrat",
+    "text": "Administrat\n\nor and \noperator \nlogs \nLog applicazioni: la soluzione SaaS Dedalo, prodotta \nda AT Service, dispone di un proprio Log.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "12.4.4",
-    "title": "Clock syncronization",
-    "text": "Clock syncronization\n\nSincronizzazione � AT Service utilizza il sistema NTP per sincronizzare gli orologi dei propri asset fisici e virtuali e mantenere coerenza degli eventi. La fonte per la sincronizzazione dell�orologio � time.windows.com.",
+    "title": "Clock",
+    "text": "Clock\n\nsyncronizati\non \nSincronizzazione – AT Service utilizza il sistema NTP per \nsincronizzare gli orologi dei propri asset fisici e virtuali e \nmantenere coerenza degli eventi. La fonte per la \nsincronizzazione dell’orologio è time.windows.com.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "12.6.1",
-    "title": "Administrator and operator logs",
-    "text": "Administrator and operator logs\n\nProcesso di Vulnerability Management � Il perimetro AT Service, composto dal Cloud e i prodotti SaaS, viene regolarmente scansionato da strumenti automatici e da professionisti qualificati del settore al fine di identificare ogni possibile vulnerabilit� anche solo potenziale. Le criticit� individuate vengono segnalate al responsabile competente, dando il via al ciclo di risoluzione della problematica che pu� concludersi con un nuovo rilascio oppure con una mitigazione. Per verificarne l�efficacia, si esegue infine una nuova scansione per avere la certezza del rientro della vulnerabilit�.  \n \n Il Cliente pu� segnalare eventuali Vulnerabilit� riscontrate tramite mail all�indirizzo info@at-service.it",
+    "title": "Administrat",
+    "text": "Administrat\n\nor and \noperator \nlogs \nProcesso di Vulnerability Management – Il perimetro AT \nService, composto dal Cloud e i prodotti SaaS, viene \nregolarmente scansionato da strumenti automatici e da \nprofessionisti qualificati del settore al fine di identificare \nogni possibile vulnerabilità anche solo potenziale. Le \ncriticità individuate vengono segnalate al responsabile \ncompetente, dando il via al ciclo di risoluzione della \nproblematica che può concludersi con un nuovo rilascio \noppure con una mitigazione. Per verificarne l’efficacia, si \nesegue infine una nuova scansione per avere la certezza del \nrientro della vulnerabilità.  \n \nIl Cliente può segnalare eventuali \nVulnerabilità \nriscontrate \ntramite \nmail all’indirizzo info@at-service.it",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "13.1.3",
-    "title": "Segregation in network",
-    "text": "Segregation in network\n\nAT Service, in conformit� con gli standard di sicurezza internazionali, garantisce la segregazione dell'accesso dei Clienti rispetto agli accessi interni degli operatori di AT Service. Inoltre, AT Service assicura un'efficace separazione degli ambienti in configurazione multi-tenant, a tutela della riservatezza e dell'integrit� dei dati di ciascun Cliente.",
+    "title": "Segregation",
+    "text": "Segregation\n\nin network \nAT Service, in conformità con gli standard di sicurezza \ninternazionali, garantisce la segregazione dell'accesso \ndei Clienti rispetto agli accessi interni degli operatori di \nAT Service. Inoltre, AT Service assicura un'efficace \nseparazione degli ambienti in configurazione multi-\ntenant, a tutela della riservatezza e dell'integrità dei dati \ndi ciascun Cliente.\n\nSICUREZZA DELLE INFORMAZIONI norma ISO 27001:2024 \nAspetti di sicurezza del Cloud di AT Service Srl \nCONTROLLI AGGIUNTIVI CLOUD ISO 27017 | 27018 \n \nAT Service S.r.l. | Controlli ISO 27017-27018 | Rev: 00 | Data: 10.01.2025 | Responsabile: RSGSI | PUBBLICO \nPAG. 6 DI 11 \nNR \nCONTROLLO \nI NOSTRI CONTROLLI \nSTRUMENTI E FUNZIONALITÀ A \nDISPOSIZIONE DEL CLIENTE",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "14.1.1",
-    "title": "Information security requirements analysis and specification",
-    "text": "Information security requirements analysis and specification\n\nAT Service informa i propri Clienti mediante il presente documento e la pagina �PRIVACY CERTIFICAZIONI E SICUREZZA� presente e aggiornata sul proprio sito web \n https://www.at-service.it/certificazioni.asp",
+    "title": "Information",
+    "text": "Information\n\nsecurity \nrequirement\ns analysis \nand \nspecificatio\nn \nAT Service informa i propri Clienti mediante il presente \ndocumento e la pagina “PRIVACY CERTIFICAZIONI E \nSICUREZZA” presente e aggiornata sul proprio sito web \nhttps://www.at-\nservice.it/certificazioni.asp",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "14.2.1",
-    "title": "Secure development policy",
-    "text": "Secure development policy\n\nAT Service adotta le Linee Guida AGID e la metodologia OWASP come riferimenti fondamentali per lo sviluppo dei propri prodotti, garantendo cos� standard elevati di qualit� e sicurezza.",
+    "title": "Secure",
+    "text": "Secure\n\ndevelopme\nnt policy \nAT Service adotta le Linee Guida AGID e la metodologia \nOWASP come riferimenti fondamentali per lo sviluppo \ndei propri prodotti, garantendo così standard elevati di \nqualità e sicurezza.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "15.1.1",
-    "title": "Secure development policy",
-    "text": "Secure development policy\n\nIl Cloud AT Service � locato in Italia presso un�infrastruttura di cloud computing avanzata che fornisce servizi scalabili, sicuri e distribuiti a livello nazionale, e ridondati per garantirne la disponibilit�.",
+    "title": "Secure",
+    "text": "Secure\n\ndevelopme\nnt policy \nIl Cloud AT Service è locato in Italia presso \nun’infrastruttura di cloud computing avanzata che \nfornisce servizi scalabili, sicuri e distribuiti a livello \nnazionale, e ridondati per garantirne la disponibilità.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "15.1.2",
-    "title": "Addressing security within supplier agreements",
-    "text": "Addressing security within supplier agreements\n\nLe soluzioni SaaS di AT Service prevedono l�accettazione delle condizioni contrattuali al cui interno sono specificate le responsabilit� di AT Service e del Cliente.",
+    "title": "Addressing",
+    "text": "Addressing\n\nsecurity \nwithin \nsupplier \nagreements \nLe \nsoluzioni \nSaaS \ndi \nAT \nService \nprevedono \nl’accettazione delle condizioni contrattuali al cui interno \nsono specificate le responsabilità di AT Service e del \nCliente.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "15.1.3",
-    "title": "Information and communication technology supply chain",
-    "text": "Information and communication technology supply chain\n\nIl Cloud AT Service � locato in Italia presso un�infrastruttura di cloud computing avanzata che fornisce servizi scalabili, sicuri e distribuiti a livello nazionale, e ridondati per garantirne la disponibilit�.",
+    "title": "Information",
+    "text": "Information\n\nand \ncommunica\ntion \ntechnology \nsupply \nchain \nIl Cloud AT Service è locato in Italia presso \nun’infrastruttura di cloud computing avanzata che \nfornisce servizi scalabili, sicuri e distribuiti a livello \nnazionale, e ridondati per garantirne la disponibilità.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "16.1.1",
-    "title": "Responsibilities and procedures",
-    "text": "Responsibilities and procedures\n\nLe soluzioni SaaS di AT Service prevedono l�accettazione delle condizioni contrattuali al cui interno sono specificate le responsabilit� di AT Service e del Cliente. \n Il Cliente pu� segnalare eventuali Incidenti di Sicurezza tramite mail all�indirizzo info@at-service.it  \n \nIn caso di Data Breach, Il Cliente pu� contattare il DPO designato da AT Service scrivendo una e-mail all�indirizzo info@at-service.it o contattando il numero 045.7513353",
+    "title": "Responsibili",
+    "text": "Responsibili\n\nties and \nprocedures \nLe \nsoluzioni \nSaaS \ndi \nAT \nService \nprevedono \nl’accettazione delle condizioni contrattuali al cui interno \nsono specificate le responsabilità di AT Service e del \nCliente. \nIl Cliente può segnalare eventuali \nIncidenti di Sicurezza tramite mail \nall’indirizzo info@at-service.it  \n \nIn caso di Data Breach, Il Cliente \npuò contattare il DPO designato da \nAT Service scrivendo una e-mail \nall’indirizzo \ninfo@at-service.it \no \ncontattando il numero 045.7513353",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "16.1.2",
-    "title": "Reporting information security events",
-    "text": "Reporting information security events\n\nAT Service mette a disposizione un indirizzo mail, oltra al numero telefonico, tramite cui aprire segnalazioni per qualsiasi problematica o richiesta. \n Il Cliente pu� segnalare eventi di sicurezza tramite mail all�indirizzo info@at-service.it",
+    "title": "Reporting",
+    "text": "Reporting\n\ninformation \nsecurity \nevents \nAT Service mette a disposizione un indirizzo mail, oltra \nal numero telefonico, tramite cui aprire segnalazioni per \nqualsiasi problematica o richiesta. \nIl Cliente può segnalare eventi di \nsicurezza tramite mail all’indirizzo \ninfo@at-service.it",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "16.1.7",
-    "title": "Collection of evidence",
-    "text": "Collection of evidence\n\nAT Service collaborer� con il Cliente per rispondere ad eventuali richieste di evidenze e/o prove da parte delle autorit� fornendo all�occorrenza log o altre tipologie di evidenze",
+    "title": "Collection",
+    "text": "Collection\n\nof evidence \nAT Service collaborerà con il Cliente per rispondere ad \neventuali richieste di evidenze e/o prove da parte delle \nautorità fornendo all’occorrenza log o altre tipologie di \nevidenze",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "18.1.1",
-    "title": "Identification of applicable legislation and contractual requirements",
-    "text": "Identification of applicable legislation and contractual requirements\n\nLegge Italiana, Diritto d�autore, GDPR e Codice Privacy e Provvedimenti del Garante, Norme ISO 9001 | 27001 | 27017 | 27018",
+    "title": "Identificatio",
+    "text": "Identificatio\n\nn of \napplicable \nlegislation \nand \ncontractual \nrequirement\ns \nLegge Italiana, Diritto d’autore, GDPR e Codice Privacy e \nProvvedimenti del Garante, Norme ISO 9001 | 27001 | \n27017 | 27018",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "18.1.2",
-    "title": "Intellectual property rights",
-    "text": "Intellectual property rights\n\nLa propriet� intellettuale dei prodotti AT Service � soggetta al diritto d�autore italiano ed � di AT Service Srl. \n Il Cliente pu� segnalare eventi reclami sulla propriet� intellettuale tramite mail all�indirizzo info@at-service.it",
+    "title": "Intellectual",
+    "text": "Intellectual\n\nproperty \nrights \nLa proprietà intellettuale dei prodotti AT Service è \nsoggetta al diritto d’autore italiano ed è di AT Service Srl. \nIl Cliente può segnalare eventi \nreclami sulla proprietà intellettuale \ntramite mail all’indirizzo info@at-\nservice.it",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "18.1.3",
-    "title": "Protection of records",
-    "text": "Protection of records\n\nAT Service fornisce indicazioni sulla protezione dei dati tramite informativa privacy e nomina a Responsabile del \n https://www.at-service.it/privacy/informativa_privacy.pdf   \n \ntrattamento firmata nella fase di definizione contrattuale.",
+    "title": "Protection",
+    "text": "Protection\n\nof records \nAT Service fornisce indicazioni sulla protezione dei dati \ntramite informativa privacy e nomina a Responsabile del \nhttps://www.at-\nservice.it/privacy/informativa_priva\ncy.pdf\n\nSICUREZZA DELLE INFORMAZIONI norma ISO 27001:2024 \nAspetti di sicurezza del Cloud di AT Service Srl \nCONTROLLI AGGIUNTIVI CLOUD ISO 27017 | 27018 \n \nAT Service S.r.l. | Controlli ISO 27017-27018 | Rev: 00 | Data: 10.01.2025 | Responsabile: RSGSI | PUBBLICO \nPAG. 7 DI 11 \nNR \nCONTROLLO \nI NOSTRI CONTROLLI \nSTRUMENTI E FUNZIONALITÀ A \nDISPOSIZIONE DEL CLIENTE \ntrattamento \nfirmata \nnella \nfase \ndi \ndefinizione \ncontrattuale.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "18.1.5",
-    "title": "Regulation of cryptographic controls",
-    "text": "Regulation of cryptographic controls\n\nCanale sicuro SSL - I flussi di dati da/verso i sistemi, sono protetti da canale sicuro SSL, mediante opportuna configurazione sui server, tale da assicurare: autenticazione del server e la cifratura della sessione. \n \nQuesto vale sia per i flussi originati in modo interattivo (web browsing) sia per quelli generati in modo automatico (es. utilizzo di API di servizi terzi).",
+    "title": "Regulation",
+    "text": "Regulation\n\nof \ncryptograph\nic controls \nCanale sicuro SSL - I flussi di dati da/verso i sistemi, sono \nprotetti da canale sicuro SSL, mediante opportuna \nconfigurazione \nsui \nserver, \ntale \nda \nassicurare: \nautenticazione del server e la cifratura della sessione. \n \nQuesto vale sia per i flussi originati in modo interattivo \n(web browsing) sia per quelli generati in modo \nautomatico (es. utilizzo di API di servizi terzi).",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "18.2.1",
-    "title": "Independent review of information security",
-    "text": "Independent review of information security\n\nAT Service sottopone i propri sistemi e relativi sistemi di gestione ad audit periodici effettuati da Enti di Certificazione. Queste informazioni possono essere richieste dal Cliente in casi di necessit�. \n  \n \nCLD 6.3.1 \n Shared roles and responsibilities within a cloud computing environment \n AT Service � responsabile della sicurezza del proprio Cloud e dei propri prodotti SaaS. \n  \n \nCLD 8.1.5 \n Removal of cloud service customer assets Control \n Alla conclusione del contratto di un Prodotto SaaS, AT Service provvede alla cancellazione e rimozione definitiva dei dati del Cliente come da accordi contrattuali e comunicandolo al cliente a mezzo PEC.  \nAT Service gestisce con un processo definito la cancellazione periodica dei file temporanei dei propri sistemi cloud. \n  \n \nCLD 9.5.1 \n Segregation in virtual computing environments \n AT Service, in conformit� con gli standard di sicurezza internazionali, garantisce la segregazione dell'accesso dei Clienti rispetto agli accessi interni degli operatori di AT Service. Inoltre, AT Service assicura un'efficace separazione degli ambienti in configurazione multi-tenant, a tutela della riservatezza e dell'integrit� dei dati di ciascun Cliente. \n  \n \nCLD 9.5.2 \n Virtual machine hardening \n AT Service, in conformit� agli standard internazionali di sicurezza, adotta procedure collaudate per la configurazione di ogni nuovo ambiente, fisico o virtuale, o nuovo servizio. \n  \n \nCLD 12.1.5 \n Administrator's operational security \n AT Service programma le attivit� critiche sui propri sistemi, comunicando preventivamente tramite mail ai propri clienti. \n   \n \nCLD 12.4.5 \n Monitoring of Cloud Services \n AT Service monitora i propri servizi informando i clienti su eventi rilevanti che possano compromettere o possano aver compromesso il servizio. \n All�interno di Dedalo.top � presente una sezione di avvisi con cui AT Service comunica eventuali disservizi agli utilizzatori \n \nCLD 13.1.4 \n Alignment of security management for virtual and physical networks \n AT Service ha definito le politiche di configurazione delle reti fisiche e virtuali. \n  \n \n\n\n \n  \nCONTROLLI NORMA UNI CEI EN ISO/IEC 27018:2020 \nNR \n CONTROLLO \n I NOSTRI CONTROLLI \n STRUMENTI E FUNZIONALIT� A",
+    "title": "Independen",
+    "text": "Independen\n\nt review of \ninformation \nsecurity \nAT Service sottopone i propri sistemi e relativi sistemi \ndi gestione ad audit periodici effettuati da Enti di \nCertificazione. Queste informazioni possono essere \nrichieste dal Cliente in casi di necessità. \n \nCLD 6.3.1 \nShared \nroles and \nresponsibili\nties within a \ncloud \ncomputing \nenvironmen\nt \nAT Service è responsabile della sicurezza del proprio \nCloud e dei propri prodotti SaaS. \n \nCLD 8.1.5 \nRemoval of \ncloud \nservice \ncustomer \nassets \nControl \nAlla conclusione del contratto di un Prodotto SaaS, AT \nService provvede alla cancellazione e rimozione definitiva \ndei dati del Cliente come da accordi contrattuali e \ncomunicandolo al cliente a mezzo PEC.  \nAT Service gestisce con un processo definito la \ncancellazione periodica dei file temporanei dei propri \nsistemi cloud. \n \nCLD 9.5.1 \nSegregation \nin virtual \ncomputing \nenvironmen\nts \nAT Service, in conformità con gli standard di sicurezza \ninternazionali, garantisce la segregazione dell'accesso \ndei Clienti rispetto agli accessi interni degli operatori di \nAT Service. Inoltre, AT Service assicura un'efficace \nseparazione degli ambienti in configurazione multi-\ntenant, a tutela della riservatezza e dell'integrità dei dati \ndi ciascun Cliente. \n \nCLD 9.5.2 \nVirtual \nmachine \nhardening \nAT Service, in conformità agli standard internazionali di \nsicurezza, \nadotta \nprocedure \ncollaudate \nper \nla \nconfigurazione di ogni nuovo ambiente, fisico o virtuale, \no nuovo servizio. \n \nCLD",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
+  },
+  {
+    "clause_id": "12.1.5",
+    "title": "Administrat",
+    "text": "Administrat\n\nor's \noperational \nsecurity \nAT Service programma le attività critiche sui propri \nsistemi, comunicando preventivamente tramite mail ai \npropri clienti. \n  \nCLD",
+    "standard": "ISO 27017",
+    "language": "en",
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
+  },
+  {
+    "clause_id": "12.4.5",
+    "title": "Monitoring",
+    "text": "Monitoring\n\nof Cloud \nServices \nAT Service monitora i propri servizi informando i \nclienti \nsu \neventi \nrilevanti \nche \npossano \ncompromettere o possano aver compromesso il \nservizio. \nAll’interno di Dedalo.top è presente \nuna sezione di avvisi con cui AT \nService \ncomunica \neventuali \ndisservizi agli utilizzatori \nCLD",
+    "standard": "ISO 27017",
+    "language": "en",
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
+  },
+  {
+    "clause_id": "13.1.4",
+    "title": "Alignment",
+    "text": "Alignment\n\nof security \nmanageme\nnt for virtual \nand \nphysical \nnetworks \nAT Service ha definito le politiche di configurazione \ndelle reti fisiche e virtuali.\n\nSICUREZZA DELLE INFORMAZIONI norma ISO 27001:2024 \nAspetti di sicurezza del Cloud di AT Service Srl \nCONTROLLI AGGIUNTIVI CLOUD ISO 27017 | 27018 \n \nAT Service S.r.l. | Controlli ISO 27017-27018 | Rev: 00 | Data: 10.01.2025 | Responsabile: RSGSI | PUBBLICO \nPAG. 8 DI 11 \nCONTROLLI NORMA UNI CEI EN ISO/IEC 27018:2020 \nNR \nCONTROLLO \nI NOSTRI CONTROLLI \nSTRUMENTI E FUNZIONALITÀ A \nDISPOSIZIONE DEL CLIENTE",
+    "standard": "ISO 27017",
+    "language": "en",
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "5.1.1",
-    "title": "Policies for information security",
-    "text": "Policies for information security\n\nPolitiche del Sistema di Gestione della Sicurezza delle Informazioni: AT Service ha definito la propria Politica di sicurezza delle Informazioni aggiornata periodicamente e pubblicata sul proprio sito web \n Politica Sicurezza Informazioni disponibile a link  \nhttps://www.at-service.it/certificazioni.asp",
+    "title": "Policies for",
+    "text": "Policies for\n\ninformation \nsecurity \nPolitiche del Sistema di Gestione della Sicurezza \ndelle Informazioni: AT Service ha definito la propria \nPolitica di sicurezza delle Informazioni aggiornata \nperiodicamente e pubblicata sul proprio sito web \nPolitica \nSicurezza \nInformazioni \ndisponibile a link  \nhttps://www.at-\nservice.it/certificazioni.asp",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "6.1.1",
-    "title": "Information security roles and responsibilities",
-    "text": "Information security roles and responsibilities\n\nAT Service ha nominato un DPO raggiungibile tramite mail:  info@at-service.it o telefono al 045.7513353 \n Mail DPO  info@at-service.it o telefono al 045.7513353",
+    "title": "Information",
+    "text": "Information\n\nsecurity roles \nand \nresponsibilities \nAT Service ha nominato un DPO raggiungibile tramite \nmail:  info@at-service.it o telefono al 045.7513353 \nMail DPO  info@at-service.it o \ntelefono al 045.7513353",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "7.2.2",
-    "title": "Information security awareness, education and training",
-    "text": "Information security awareness, education and training\n\nFormazione del personale: il personale di AT Service e i sub-appaltatori addetti al servizio hanno adeguata competenza ed esperienza, e viene loro fornito o richiesto un addestramento specifico a fronte di ogni importante aggiornamento dei sistemi.  \n \nConsapevolezza (Awareness): periodicamente, il personale di AT Service viene sensibilizzato sulle tematiche di sicurezza, sul cybercrime in generale e sulle best practice da adottare, mediante specifici corsi di formazione. Ai sub-appaltatori viene richiesto quale requisito essenziale per poter collaborare con AT Service. \n \nNon Disclosure Agreement (NDA): ai nuovi assunti e ai sub-appaltatori viene richiesto di sottoscrivere un accordo di confidenzialit� al fine di tutelare il know-how aziendale e le informazioni trattate nell�ambito della collaborazione.",
+    "title": "Information",
+    "text": "Information\n\nsecurity \nawareness, \neducation and \ntraining \nFormazione del personale: il personale di AT Service e i \nsub-appaltatori addetti al servizio hanno adeguata \ncompetenza ed esperienza, e viene loro fornito o richiesto \nun addestramento specifico a fronte di ogni importante \naggiornamento dei sistemi.  \n \nConsapevolezza \n(Awareness): \nperiodicamente, \nil \npersonale di AT Service viene sensibilizzato sulle \ntematiche di sicurezza, sul cybercrime in generale e sulle \nbest practice da adottare, mediante specifici corsi di \nformazione. Ai sub-appaltatori viene richiesto quale \nrequisito essenziale per poter collaborare con AT Service. \n \nNon Disclosure Agreement (NDA): ai nuovi assunti e ai \nsub-appaltatori viene richiesto di sottoscrivere un \naccordo di confidenzialità al fine di tutelare il know-how \naziendale e le informazioni trattate nell’ambito della \ncollaborazione.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "9.2",
-    "title": "User access management",
-    "text": "User access management\n\nAlla fornitura di un servizio, AT Service crea le utenze necessarie all�utilizzo di Dedalo, le cui password sono modificabili in autonomia dall�utente.",
+    "title": "User access",
+    "text": "User access\n\nmanagement \nAlla fornitura di un servizio, AT Service crea le utenze \nnecessarie all’utilizzo di Dedalo, le cui password sono \nmodificabili in autonomia dall’utente.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "9.2.1",
-    "title": "User registration and de-registration",
-    "text": "User registration and de-registration\n\nAlla fornitura di un servizio, AT Service crea le utenze necessarie all�utilizzo di Dedalo, le cui password sono modificabili in autonomia dall�utente.",
+    "title": "User",
+    "text": "User\n\nregistration and \nde-registration \nAlla fornitura di un servizio, AT Service crea le utenze \nnecessarie all’utilizzo di Dedalo, le cui password sono \nmodificabili in autonomia dall’utente.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "9.4.2",
-    "title": "Secure log-on procedures",
-    "text": "Secure log-on procedures\n\nL�accesso al servizio Dedalo avviene tramite credenziali di accesso o sistema di autenticazione SPID",
+    "title": "Secure log-on",
+    "text": "Secure log-on\n\nprocedures \nL’accesso al servizio Dedalo avviene tramite credenziali \ndi accesso o sistema di autenticazione SPID",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "10.1.1",
-    "title": "Policy on the use of cryptographic controls",
-    "text": "Policy on the use of cryptographic controls\n\nCanale sicuro SSL - I flussi di dati da/verso i sistemi, sono protetti da canale sicuro SSL, mediante opportuna configurazione sui server, tale da assicurare: autenticazione del server e la cifratura della sessione. \n \nQuesto vale sia per i flussi originati in modo interattivo (web browsing) sia per quelli generati in modo automatico (es. utilizzo di API di servizi terzi).",
+    "title": "Policy on the",
+    "text": "Policy on the\n\nuse of \ncryptographic \ncontrols \nCanale sicuro SSL - I flussi di dati da/verso i sistemi, sono \nprotetti da canale sicuro SSL, mediante opportuna \nconfigurazione \nsui \nserver, \ntale \nda \nassicurare: \nautenticazione del server e la cifratura della sessione. \n \nQuesto vale sia per i flussi originati in modo interattivo \n(web browsing) sia per quelli generati in modo \nautomatico (es. utilizzo di API di servizi terzi).",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "11.2.7",
-    "title": "Secure disposal or re-use of equipment",
-    "text": "Secure disposal or re-use of equipment\n\nAlla conclusione del contratto di un Prodotto SaaS, AT Service provvede alla cancellazione e rimozione definitiva dei dati del Cliente come da accordi contrattuali e comunicandolo al cliente a mezzo PEC.  \nAT Service gestisce con un processo definito la cancellazione periodica dei file temporanei dei propri sistemi cloud.",
+    "title": "Secure",
+    "text": "Secure\n\ndisposal or re-\nuse of \nequipment \nAlla conclusione del contratto di un Prodotto SaaS, AT \nService provvede alla cancellazione e rimozione definitiva \ndei dati del Cliente come da accordi contrattuali e \ncomunicandolo al cliente a mezzo PEC.  \nAT Service gestisce con un processo definito la \ncancellazione periodica dei file temporanei dei propri \nsistemi cloud.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "12.1.4",
-    "title": "Separation of development, testing and operational environments",
-    "text": "Separation of development, testing and operational environments\n\nEventuali test necessari, effettuati da AT Service avvengono esclusivamente nel perimetro AT Service, in appositi sistemi dedicati per garantire la protezione dei dati personali e delle informazioni.",
+    "title": "Separation of",
+    "text": "Separation of\n\ndevelopment, \ntesting and \noperational \nenvironments \nEventuali test necessari, effettuati da AT Service \navvengono esclusivamente nel perimetro AT Service, in \nappositi sistemi dedicati per garantire la protezione dei \ndati personali e delle informazioni.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "12.3.1",
-    "title": "Information backup",
-    "text": "Information backup\n\nBackup delle informazioni: la struttura dei backup, i controlli, la verifica, i test, sono a carico di AT Service \n  \n \nche garantisce al Cliente la conservazione di un backup: \n-\n Degli ultimi 60 giorni \n\n-\n Di un backup al mese per 12 mesi \n\n\nInoltre, le componenti funzionali all�erogazione dei servizi di AT Service, la gestione degli utenti e le altre componenti architetturali seguono le procedure di backup definite a livello aziendale e vengono periodicamente verificate e testate.  \nI sistemi di backup prevedono sistemi di notifica in caso di problemi.",
+    "title": "Information",
+    "text": "Information\n\nbackup \nBackup delle informazioni: la struttura dei backup, i \ncontrolli, la verifica, i test, sono a carico di AT Service\n\nSICUREZZA DELLE INFORMAZIONI norma ISO 27001:2024 \nAspetti di sicurezza del Cloud di AT Service Srl \nCONTROLLI AGGIUNTIVI CLOUD ISO 27017 | 27018 \n \nAT Service S.r.l. | Controlli ISO 27017-27018 | Rev: 00 | Data: 10.01.2025 | Responsabile: RSGSI | PUBBLICO \nPAG. 9 DI 11 \nche garantisce al Cliente la conservazione di un \nbackup: \n- \nDegli ultimi 60 giorni \n- \nDi un backup al mese per 12 mesi \nInoltre, le componenti funzionali all’erogazione dei servizi \ndi AT Service, la gestione degli utenti e le altre \ncomponenti architetturali seguono le procedure di backup \ndefinite a livello aziendale e vengono periodicamente \nverificate e testate.  \nI sistemi di backup prevedono sistemi di notifica in caso \ndi problemi.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "12.4.1",
     "title": "Event logging",
-    "text": "Event logging\n\nLog applicazioni: la soluzione SaaS Dedalo, prodotta da AT Service, dispone di un proprio Log.",
+    "text": "Event logging\n\nLog applicazioni: la soluzione SaaS Dedalo, prodotta \nda AT Service, dispone di un proprio Log.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "12.4.2",
-    "title": "Protection of log information",
-    "text": "Protection of log information\n\nAT Service attua tutte le misure di sicurezza necessarie per la protezione delle informazioni di Log contenenti dati personali.",
+    "title": "Protection of",
+    "text": "Protection of\n\nlog information \nAT Service attua tutte le misure di sicurezza \nnecessarie per la protezione delle informazioni di Log \ncontenenti dati personali.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "13.2.1",
-    "title": "Information transfer policies and procedures",
-    "text": "Information transfer policies and procedures\n\nAT Service ha definito una politica di trasferimento delle informazioni tramite canali di comunicazione sicuri.",
+    "title": "Information",
+    "text": "Information\n\ntransfer \npolicies and \nprocedures \nAT Service ha definito una politica di trasferimento \ndelle informazioni tramite canali di comunicazione \nsicuri.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "16.1",
-    "title": "Management of information security incidents and improvements",
-    "text": "Management of information security incidents and improvements\n\nAT Service cooperer� con il Cliente nel caso di segnalazioni di incidenti di sicurezza delle informazioni, implementando controlli e apportando con rapidit� i miglioramenti necessari affinch� non riaccadano. \n Il Cliente � responsabile dei dati personali contenuti nei prodotti SaaS AT Service",
+    "title": "Management of",
+    "text": "Management of\n\ninformation \nsecurity \nincidents and \nimprovements \nAT Service coopererà con il Cliente nel caso di \nsegnalazioni di incidenti di sicurezza delle informazioni, \nimplementando controlli e apportando con rapidità i \nmiglioramenti necessari affinché non riaccadano. \nIl Cliente è responsabile dei dati \npersonali contenuti nei prodotti \nSaaS AT Service",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "16.1.1",
-    "title": "Responsibilities and procedures",
-    "text": "Responsibilities and procedures\n\nAT Service ha definito le procedure per la gestione degli incidenti di sicurezza, con eventuale registrazione del Data Breach e relativa notifica al Garante e agli interessati (se previsto). A seguito di ogni incidente AT Service adotta procedure di miglioramento atte a evitare incidenti successivi.",
+    "title": "Responsibilities",
+    "text": "Responsibilities\n\nand procedures \nAT Service ha definito le procedure per la gestione \ndegli incidenti di sicurezza, con eventuale registrazione \ndel Data Breach e relativa notifica al Garante e agli \ninteressati (se previsto). A seguito di ogni incidente AT \nService adotta procedure di miglioramento atte a \nevitare incidenti successivi.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   },
   {
     "clause_id": "18.2.1",
-    "title": "Independent review of information security",
-    "text": "Independent review of information security\n\nAT Service � certificata secondo lo schema della norma ISO UNI CEI EN ISO/IEC 27001:2024 con l�estensione dei controlli delle norme ISO UNI CEI EN ISO/IEC 27017 e 27018 ed � sottoposta periodicamente ad Audit di verifica da parte dell�Ente di Certificazione \n Certificazioni AT Service disponibili al link \nhttps://www.at-service.it/certificazioni.asp  \n \nA.2.1 \n Obligation to co-operate regarding PII principals� rights \n AT Service rende disponibile ai propri clienti l�informativa privacy e relativo modello di esercizio dei diritti dell�interessato. Ha inoltre nominato un DPO contattabile all�indirizzo info@at-service.it  \n Informativa privacy disponibile al link \nhttps://www.at-service.it/privacy/  \n \ninfo@at-service.it \n \nA.3.1 \n Public cloud PII processor�s purpose \n AT Service utilizza i dati personali di cui � Responsabile del trattamento per le esclusive finalit� necessarie all�erogazione del servizio \n Nomina Responsabile trattamento \n \nA.3.2 \n Public cloud PII processor's commercial use \n AT Service utilizza i dati personali di cui � Responsabile del trattamento per le esclusive finalit� necessarie all�erogazione del servizio  \n Nomina Responsabile trattamento \n \nA.5.1 \n Secure erasure of temporary files \n I file temporanei presenti nei sistemi di AT Service sono cancellati tempestivamente come definito nelle policy interne. \n  \n \nA.6.1 \n PII disclosure notification \n Nel caso di richieste da parte delle autorit� di informazioni personali contenute del Cloud, se non configura reato, AT Service comunicher� al Cliente l�avvenuta comunicazione e la relativa autorit� e motivazione. \n  \n \nA.6.2 \n Recording of PII disclosures \n AT Service si � strutturata in modo da registrare tempestivamente eventuali Data Breach e provvedere alla corretta gestione.  \n AT Service, al 31.12.2024 non ha registrato Data Breach. \n \nA.8.1 \n Disclosure of sub-contracted PII processing \n AT Service pu� utilizzare sub responsabili del trattamento per svolgere le proprie attivit�. AT Service conserva un registro, con relative nomine, di tutti i sub responsabili che possono essere richiesti dal Cliente in qualsiasi momento. \n Nomina Responsabile Trattamento \n \nA.10.1 \n Notification of a data breach involving PII \n In caso di Data Breach AT Service informa tempestivamente il Cliente di quanto avvenuto e di tutti i dettagli della violazione nonch� delle contromisure adottare per contenere i danni. \n  \n \nA.10.2 \n Notification of a data breach involving PII \n AT Service conserva tutta la documentazione interna (comprensiva di politiche, procedure, istruzioni, manuali, ecc.) in conformit� alla normativa vigente. \n  \n \nA.10.3 \n PII return, transfer and disposal \n Alla conclusione del contratto di un Prodotto SaaS, AT Service provvede alla cancellazione e rimozione definitiva dei dati del Cliente come da accordi contrattuali e comunicandolo al cliente a mezzo PEC.  \nAT Service gestisce con un processo definito la cancellazione periodica dei file temporanei dei propri sistemi cloud. \n  \n \nA.11.1 \n Confidentiality or non-disclosure agreements \n Non Disclosure Agreement (NDA): AT Service sottoscrive con tutti i propri addetti (dipendenti o collaboratori) un accordo di riservatezza al fine di tutelare anche i dati personali trattati nell�ambito della collaborazione. \n  \n \nA.11.2 \n Restriction of the creation of hardcopy material \n AT Service ha definito una politica per ridurre l�utilizzo di materiale cartaceo. \n  \n \nA.11.3 \n Control and logging of data restoration \n AT Service mantiene un registro dei ripristini dati. \n  \n \nA.11.4 \n Protecting data on storage media leaving the premises \n AT Service ha definito una politica di sicurezza per il trasporto e/o trasferimento di dispositivi fisici contenenti informazioni personali che prevede tra le altre misure di sicurezza la cifratura dei dati. \n  \n \nA.11.5 \n Use of unencrypted portable storage media and devices \n AT Service ha definito una politica di sicurezza per il trasporto e/o trasferimento di dispositivi fisici contenenti informazioni personali che prevede tra le altre misure di sicurezza la cifratura dei dati. \n  \n \nA.11.6 \n Encryption of PII transmitted over public data-transmission networks \n Canale sicuro SSL - I flussi di dati da/verso i sistemi, sono protetti da canale sicuro SSL, mediante opportuna configurazione sui server, tale da assicurare: autenticazione del server e la cifratura della sessione. \n \nQuesto vale sia per i flussi originati in modo interattivo (web browsing) sia per quelli generati in modo automatico (es. utilizzo di API di servizi terzi). \n  \n \nA.11.7 \n Secure disposal of hardcopy materials \n AT Service ha definito una policy interna per la distruzione della documentazione cartacea tramite appositi distruggi documenti. \n  \n \nA.11.8  \n Unique use of user IDs \n AT Service ha definito una politica di accesso alle informazioni che prevede un ID utente distinto per ogni addetto. \n  \n \nA.11.9 \n Records of authorized users \n AT Service mantiene un registro degli accessi dettagliati per risorsa e tipologia di informazioni. \n  \n \nA.11.10 \n User ID management \n AT Service ha definito apposita policy interna per non assegnare utenti disattivi o scaduti ad altri individui. \n  \n \nA.11.11 \n Contract measures \n AT Service sottoscrive la Nomina a Responsabile del Trattamento dei Dati Personali fornita dal Cliente. In assenza di questa � in grado di proporre il proprio template sottoscritto e ha inserito nell�EULA del prodotto la DPA con indicate le misure di sicurezza applicate. \n Nomina Responsabile del Trattamento \n \nA.11.12 \n Sub-contracted PII processing \n AT Service predispone apposite nomine per Sub Responsabili del Trattamento dei Dati Personali e mantiene un registro aggiornato. \n  \n \nA.11.13 \n Access to data on pre-used data storage space \n Nel Cloud di AT Service sono previste procedure per la cancellazione delle informazioni non pi� utilizzate prima che sia allocato nuovamente lo spazio. \n  \n \nA.12.1 \n Geographical location of PII \n Il Cloud di AT Service e di eventuali Partner � situato in Italia o in altro paese dell�Unione Europea. \n Italia \n \nA.12.2 \n Intended destination of PII \n Le reti del perimetro di AT Service sono sottoposte periodicamente a test di sicurezza, tra cui Vulnerability Assessment.",
+    "title": "Independent",
+    "text": "Independent\n\nreview of \ninformation \nsecurity \nAT Service è certificata secondo lo schema della \nnorma ISO UNI CEI EN ISO/IEC 27001:2024 con \nl’estensione dei controlli delle norme ISO UNI CEI EN \nISO/IEC 27017 e 27018 ed è sottoposta periodicamente \nad Audit di verifica da parte dell’Ente di Certificazione \nCertificazioni \nAT \nService \ndisponibili al link \nhttps://www.at-\nservice.it/certificazioni.asp  \nA.2.1 \nObligation to \nco-operate \nregarding PII \nprincipals’ \nrights \nAT Service rende disponibile ai propri clienti \nl’informativa privacy e relativo modello di esercizio dei \ndiritti dell’interessato. Ha inoltre nominato un DPO \ncontattabile all’indirizzo info@at-service.it  \nInformativa privacy disponibile al \nlink \nhttps://www.at-service.it/privacy/  \n \ninfo@at-service.it \nA.3.1 \nPublic cloud PII \nprocessor’s \npurpose \nAT Service utilizza i dati personali di cui è Responsabile \ndel trattamento per le esclusive finalità necessarie \nall’erogazione del servizio \nNomina Responsabile trattamento \nA.3.2 \nPublic cloud PII \nprocessor's \ncommercial \nuse \nAT Service utilizza i dati personali di cui è Responsabile \ndel trattamento per le esclusive finalità necessarie \nall’erogazione del servizio  \nNomina Responsabile trattamento \nA.5.1 \nSecure erasure \nof temporary \nfiles \nI file temporanei presenti nei sistemi di AT Service sono \ncancellati tempestivamente come definito nelle policy \ninterne. \n \nA.6.1 \nPII disclosure \nnotification \nNel caso di richieste da parte delle autorità di \ninformazioni personali contenute del Cloud, se non \nconfigura reato, AT Service comunicherà al Cliente \nl’avvenuta comunicazione e la relativa autorità e \nmotivazione. \n \nA.6.2 \nRecording of PII \ndisclosures \nAT Service si è strutturata in modo da registrare \ntempestivamente eventuali Data Breach e provvedere \nalla corretta gestione.  \nAT Service, al 31.12.2024 non ha \nregistrato Data Breach.\n\nSICUREZZA DELLE INFORMAZIONI norma ISO 27001:2024 \nAspetti di sicurezza del Cloud di AT Service Srl \nCONTROLLI AGGIUNTIVI CLOUD ISO 27017 | 27018 \n \nAT Service S.r.l. | Controlli ISO 27017-27018 | Rev: 00 | Data: 10.01.2025 | Responsabile: RSGSI | PUBBLICO \nPAG. 10 DI 11 \nA.8.1 \nDisclosure of \nsub-contracted \nPII processing \nAT Service può utilizzare sub responsabili del \ntrattamento per svolgere le proprie attività. AT Service \nconserva un registro, con relative nomine, di tutti i sub \nresponsabili che possono essere richiesti dal Cliente in \nqualsiasi momento. \nNomina Responsabile Trattamento \nA.10.1 \nNotification of a \ndata breach \ninvolving PII \nIn caso di Data Breach AT Service informa \ntempestivamente il Cliente di quanto avvenuto e di tutti \ni dettagli della violazione nonché delle contromisure \nadottare per contenere i danni. \n \nA.10.2 \nNotification of a \ndata breach \ninvolving PII \nAT Service conserva tutta la documentazione interna \n(comprensiva di politiche, procedure, istruzioni, \nmanuali, ecc.) in conformità alla normativa vigente. \n \nA.10.3 \nPII return, \ntransfer and \ndisposal \nAlla conclusione del contratto di un Prodotto SaaS, AT \nService provvede alla cancellazione e rimozione definitiva \ndei dati del Cliente come da accordi contrattuali e \ncomunicandolo al cliente a mezzo PEC.  \nAT Service gestisce con un processo definito la \ncancellazione periodica dei file temporanei dei propri \nsistemi cloud. \n \nA.11.1 \nConfidentiality \nor non-\ndisclosure \nagreements \nNon Disclosure Agreement (NDA): AT Service \nsottoscrive con tutti i propri addetti (dipendenti o \ncollaboratori) un accordo di riservatezza al fine di \ntutelare anche i dati personali trattati nell’ambito della \ncollaborazione. \n \nA.11.2 \nRestriction of \nthe creation of \nhardcopy \nmaterial \nAT Service ha definito una politica per ridurre l’utilizzo \ndi materiale cartaceo. \n \nA.11.3 \nControl and \nlogging of data \nrestoration \nAT Service mantiene un registro dei ripristini dati. \n \nA.11.4 \nProtecting data \non storage \nmedia leaving \nthe premises \nAT Service ha definito una politica di sicurezza per il \ntrasporto \ne/o \ntrasferimento \ndi \ndispositivi \nfisici \ncontenenti informazioni personali che prevede tra le \naltre misure di sicurezza la cifratura dei dati. \n \nA.11.5 \nUse of \nunencrypted \nportable \nstorage media \nand devices \nAT Service ha definito una politica di sicurezza per il \ntrasporto \ne/o \ntrasferimento \ndi \ndispositivi \nfisici \ncontenenti informazioni personali che prevede tra le \naltre misure di sicurezza la cifratura dei dati. \n \nA.11.6 \nEncryption of \nPII transmitted \nover public \ndata-\ntransmission \nnetworks \nCanale sicuro SSL - I flussi di dati da/verso i sistemi, sono \nprotetti da canale sicuro SSL, mediante opportuna \nconfigurazione \nsui \nserver, \ntale \nda \nassicurare: \nautenticazione del server e la cifratura della sessione. \n \nQuesto vale sia per i flussi originati in modo interattivo \n(web browsing) sia per quelli generati in modo \nautomatico (es. utilizzo di API di servizi terzi). \n \nA.11.7 \nSecure \ndisposal of \nhardcopy \nmaterials \nAT Service ha definito una policy interna per la \ndistruzione della documentazione cartacea tramite \nappositi distruggi documenti. \n \nA.11.8\n \n \nUnique use of \nuser IDs \nAT Service ha definito una politica di accesso alle \ninformazioni che prevede un ID utente distinto per ogni \naddetto. \n \nA.11.9 \nRecords of \nauthorized \nusers \nAT Service mantiene un registro degli accessi \ndettagliati per risorsa e tipologia di informazioni. \n \nA.11.10 \nUser ID \nmanagement \nAT Service ha definito apposita policy interna per non \nassegnare utenti disattivi o scaduti ad altri individui.\n\nSICUREZZA DELLE INFORMAZIONI norma ISO 27001:2024 \nAspetti di sicurezza del Cloud di AT Service Srl \nCONTROLLI AGGIUNTIVI CLOUD ISO 27017 | 27018 \n \nAT Service S.r.l. | Controlli ISO 27017-27018 | Rev: 00 | Data: 10.01.2025 | Responsabile: RSGSI | PUBBLICO \nPAG. 11 DI 11 \nA.11.11 \nContract \nmeasures \nAT Service sottoscrive la Nomina a Responsabile del \nTrattamento dei Dati Personali fornita dal Cliente. In \nassenza di questa è in grado di proporre il proprio \ntemplate sottoscritto e ha inserito nell’EULA del \nprodotto la DPA con indicate le misure di sicurezza \napplicate. \nNomina \nResponsabile \ndel \nTrattamento \nA.11.12 \nSub-contracted \nPII processing \nAT Service predispone apposite nomine per Sub \nResponsabili del Trattamento dei Dati Personali e \nmantiene un registro aggiornato. \n \nA.11.13 \nAccess to data \non pre-used \ndata storage \nspace \nNel Cloud di AT Service sono previste procedure per la \ncancellazione delle informazioni non più utilizzate \nprima che sia allocato nuovamente lo spazio. \n \nA.12.1 \nGeographical \nlocation of PII \nIl Cloud di AT Service e di eventuali Partner è situato in \nItalia o in altro paese dell’Unione Europea. \nItalia \nA.12.2 \nIntended \ndestination of \nPII \nLe reti del perimetro di AT Service sono sottoposte \nperiodicamente a test di sicurezza, tra cui Vulnerability \nAssessment.",
     "standard": "ISO 27017",
     "language": "en",
-    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.txt"
+    "source_file": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf"
   }
 ]

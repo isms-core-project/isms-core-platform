@@ -1,0 +1,866 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "NIST SP 800-88r2 — section 1",
+    "text": "NIST Special Publication 800 \nNIST SP 800-88r2\nGuidelines for Media Sanitization \nRamaswamy Chandramouli \nEric A. Hibbard \nThis publication is available free of charge from: \nhttps://doi.org/10.6028/NIST.SP.800-88r2\n\nNIST Special Publication 800 \nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nRamaswamy Chandramouli \nComputer Security Division \nInformation Technology Laboratory \nEric A. Hibbard \nSamsung Semiconductor, Inc. \nThis publication is available free of charge from: \nhttps://doi.org/10.6028/NIST.SP.800-88r2 \nSeptember 2025 \nU.S. Department of Commerce \nHoward Lutnick, Secretary  \nNational Institute of Standards and Technology \nCraig Burkhardt, Acting Under Secretary of Commerce for Standards and Technology and Acting NIST Director\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \nCertain equipment, instruments, software, or materials, commercial or non-commercial, are identified in this \npaper in order to specify the experimental procedure adequately. Such identification does not imply \nrecommendation or endorsement of any product or service by NIST, nor does it imply that the materials or \nequipment identified are necessarily the best available for",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "NIST SP 800-88r2 — section 2",
+    "text": "or endorsement of any product or service by NIST, nor does it imply that the materials or \nequipment identified are necessarily the best available for the purpose.  \nThere may be references in this publication to other publications currently under development by NIST in \naccordance with its assigned statutory responsibilities. The information in this publication, including concepts and \nmethodologies, may be used by federal agencies even before the completion of such companion publications. \nThus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, \nremain operative. For planning and transition purposes, federal agencies may wish to closely follow the \ndevelopment of these new publications by NIST.   \nOrganizations are encouraged to review all draft publications during public comment periods and provide feedback \nto NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at \nhttps://csrc.nist.gov/publications. \nAuthority \nThis publication has been developed by NIST in accordance with its statutory responsibilities under the Federal \nInformation Security Modernization Act (FISMA) of 2014, 44 U.S.",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "NIST SP 800-88r2 — section 3",
+    "text": "developed by NIST in accordance with its statutory responsibilities under the Federal \nInformation Security Modernization Act (FISMA) of 2014, 44 U.S.C. § 3551 et seq., Public Law (P.L.) 113-283. NIST is \nresponsible for developing information security standards and guidelines, including minimum requirements for \nfederal information systems, but such standards and guidelines shall not apply to national security systems \nwithout the express approval of appropriate federal officials exercising policy authority over such systems. This \nguideline is consistent with the requirements of the Office of Management and Budget (OMB) Circular A-130. \nNothing in this publication should be taken to contradict the standards and guidelines made mandatory and \nbinding on federal agencies by the Secretary of Commerce under statutory authority. Nor should these guidelines \nbe interpreted as altering or superseding the existing authorities of the Secretary of Commerce, Director of the \nOMB, or any other federal official.  This publication may be used by nongovernmental organizations on a voluntary \nbasis and is not subject to copyright in the United States. Attribution would, however, be appreciated b",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "NIST SP 800-88r2 — section 4",
+    "text": "nongovernmental organizations on a voluntary \nbasis and is not subject to copyright in the United States. Attribution would, however, be appreciated by NIST.  \nNIST Technical Series Policies \nCopyright, Use, and Licensing Statements \nNIST Technical Series Publication Identifier Syntax \nPublication History \nApproved by the NIST Editorial Review Board on 2025-09-12 \nSupersedes NIST SP 800-88r1 (Revision 1) (December 2014) https://doi.org/10.6028/NIST.SP.800-88r1 \nHow to Cite this NIST Technical Series Publication \nChandramouli R, Hibbard EA (2025) Guidelines for Media Sanitization. (National Institute of Standards and \nTechnology, Gaithersburg, MD), NIST Special Publication (SP) NIST SP 800-88r2. \nhttps://doi.org/10.6028/NIST.SP.800-88r2  \nAuthor ORCID iDs \nRamaswamy Chandramouli: 0000-0002-7387-5858 \nEric Hibbard: 0009-0001-8112-1263\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \nContact Information   \nsp800-88-comments@nist.gov \nNational Institute of Standards and Technology \nAttn: Computer Security Division, Information Technology Laboratory \n100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930 \nAdditional Information \nAdditional information about t",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "NIST SP 800-88r2 — section 5",
+    "text": "formation Technology Laboratory \n100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930 \nAdditional Information \nAdditional information about this publication is available at https://csrc.nist.gov/pubs/sp/800/88/r2/final, \nincluding related content, potential updates, and document history.  \nAll comments are subject to release under the Freedom of Information Act (FOIA).\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \ni \nAbstract \nMedia sanitization refers to a process that renders access to target data on the media infeasible \nfor a given level of effort. This guide will assist organizations and system owners in setting up a \nmedia sanitization program with proper and applicable techniques and controls for sanitization \nand disposal based on the sensitivity of their information. \nKeywords \nCryptographic erase; ensuring confidentiality; media sanitization; media sanitization program; \nmedia types; sanitization methods; secure erase. \nReports on Computer Systems Technology \nThe Information Technology Laboratory (ITL) at the National Institute of Standards and \nTechnology (NIST) promotes the U.S. economy and public welfare by providing technical",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "NIST SP 800-88r2 — section 6",
+    "text": "y Laboratory (ITL) at the National Institute of Standards and \nTechnology (NIST) promotes the U.S. economy and public welfare by providing technical \nleadership for the Nation’s measurement and standards infrastructure. ITL develops tests, test \nmethods, reference data, proof of concept implementations, and technical analyses to advance \nthe development and productive use of information technology. ITL’s responsibilities include \nthe development of management, administrative, technical, and physical standards and \nguidelines for the cost-effective security and privacy of other than national security-related \ninformation in federal information systems. The Special Publication 800-series reports on ITL’s \nresearch, guidelines, and outreach efforts in information system security, and its collaborative \nactivities with industry, government, and academic organizations.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \nii \nPatent Disclosure Notice  \nNOTICE: ITL has requested that holders of patent claims whose use may be required for \ncompliance with the guidance or requirements of this publication disclose such patent claims to \nITL. However, holders of paten",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "NIST SP 800-88r2 — section 7",
+    "text": "e may be required for \ncompliance with the guidance or requirements of this publication disclose such patent claims to \nITL. However, holders of patents are not obligated to respond to ITL calls for patents and ITL has \nnot undertaken a patent search in order to identify which, if any, patents may apply to this \npublication. \nAs of the date of publication and following call(s) for the identification of patent claims whose \nuse may be required for compliance with the guidance or requirements of this publication, no \nsuch patent claims have been identified to ITL.  \nNo representation is made or implied by ITL that licenses are not required to avoid patent \ninfringement in the use of this publication.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \niii \nTable of Contents \nExecutive Summary ............................................................................................................................1 \n1. Introduction ...................................................................................................................................2 \n2. Background .................................................................................",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "NIST SP 800-88r2 — section 8",
+    "text": "....................................................2 \n2. Background ....................................................................................................................................5 \n3. Summary of Sanitization Methods ..................................................................................................8 \n3.1.1. Clear Sanitization Method ............................................................................................................ 8 \n3.1.2. Purge Sanitization Method ......................................................................................................... 10 \n3.1.3. Destroy Sanitization Method ...................................................................................................... 11 \n3.2.1. Strength of Cryptography for CE ................................................................................................ 12 \n3.2.2. Applicability of CE ....................................................................................................................... 13 \n3.2.3. Sanitization of Keys ...............................................................................................................",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "NIST SP 800-88r2 — section 9",
+    "text": "...... 13 \n3.2.3. Sanitization of Keys .................................................................................................................... 13 \n3.2.4. Quality of Cryptographic Implementations ................................................................................ 15 \n3.2.5. Traceability of CE Operations ..................................................................................................... 16 \n4. Media Sanitization Program ......................................................................................................... 18 \n4.3.1. Information Decisions in the System Life Cycle.......................................................................... 20 \n4.3.2. Determination of Security Categorization .................................................................................. 21 \n4.3.3. Reuse of Media ........................................................................................................................... 22 \n4.3.4. Control of Media ........................................................................................................................ 22 \n4.3.5. Data Protection Level .............................",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "NIST SP 800-88r2 — section 10",
+    "text": "....................................................................................... 22 \n4.3.5. Data Protection Level ................................................................................................................. 23 \n4.3.6. Sanitization and Disposal Decision ............................................................................................. 23\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \niv \n4.5.1. Sanitization Verification ............................................................................................................. 24 \n4.5.2. Sanitization Validation ................................................................................................................ 24 \n4.7.1. Program Managers/Agency Heads ............................................................................................. 27 \n4.7.2. Chief Information Officer (CIO) .................................................................................................. 27 \n4.7.3. Information System Owner ........................................................................................................ 27 \n4.7.4. Information Owner/Steward ..",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "NIST SP 800-88r2 — section 11",
+    "text": "Owner ........................................................................................................ 27 \n4.7.4. Information Owner/Steward ...................................................................................................... 27 \n4.7.5. Senior Agency Information Security Officer (SAISO) .................................................................. 27 \n4.7.6. System Security Manager/Officer .............................................................................................. 27 \n4.7.7. Property Management Officer ................................................................................................... 28 \n4.7.8. Records Management Officer .................................................................................................... 28 \n4.7.9. Privacy Officer ............................................................................................................................ 28 \n4.7.10. Users ......................................................................................................................................... 28 \nReferences .................................................................................",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "NIST SP 800-88r2 — section 12",
+    "text": "..................................................... 28 \nReferences ....................................................................................................................................... 29 \nAppendix A. Glossary ....................................................................................................................... 32 \nAppendix B. Device-Specific Characteristics of Interest...................................................................... 35 \nAppendix C. Sample “Certificate of Sanitization” Form ...................................................................... 36 \nAppendix D. Change Log ................................................................................................................... 38 \nList of Tables \nTable 1. CE considerations ................................................................................................................ 12 \nList of Figures \nFig. 1. Sanitization and disposition decision flow ............................................................................... 20 \nFig. 2. Certificate of sanitization ................................................................................................",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "NIST SP 800-88r2 — section 13",
+    "text": "............. 20 \nFig. 2. Certificate of sanitization ....................................................................................................... 37\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \nv \nAcknowledgments \nThe authors would like to thank Richard Kissel, Andrew Regenscheid, Matthew Scholl, and Kevin \nStine for their work on the original version and the first revision of this publication. The authors \nwould also like to thank Steven Skolochenko and Xing Li for their contributions to the original \nversion of this publication. The authors would also like to thank Jim Foti and Isabel Van Wyk for \ntheir exceptional editing skills and thorough review of this document; their work made this a \nmuch better document. Thanks to their diligent and detailed reviews, we expect this document \nto serve as a useful guide for developing an effective media sanitization program.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n1 \nExecutive Summary \nProtecting the confidentiality of information should be a concern for everyone, from federal \nagencies and businesses to home users. Media disposition and sanitization decision",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "NIST SP 800-88r2 — section 14",
+    "text": "lity of information should be a concern for everyone, from federal \nagencies and businesses to home users. Media disposition and sanitization decisions need to \nconsider the confidentiality obligations associated with recording or storing sensitive \ninformation on hard copy media or information storage media (ISM). To help ensure media \ndisposition and sanitization are effective and traceable, consideration should be given to \nimplementing a media sanitization program. \nThe modern storage environment is rapidly evolving. Data may pass through multiple \norganizations, systems, and ISM in its lifetime. Data propagation has continued to increase as \nthe internet and data storage systems have moved toward a distributed cloud-based \narchitecture. As a result, more parties are responsible for effectively sanitizing ISM (i.e., \neliminating sensitive data), and the potential is substantial for sensitive data to be collected and \nretained on the ISM. This responsibility lies with organizations that are originators (i.e., \nsources), users, and final resting places (e.g., archives) of sensitive data, as well as \nintermediaries who transiently store or process the information along the way. Ef",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0014",
+    "title": "NIST SP 800-88r2 — section 15",
+    "text": "final resting places (e.g., archives) of sensitive data, as well as \nintermediaries who transiently store or process the information along the way. Efficient and \neffective information management from origination through disposition is the responsibility of \nall those who have handled the data. \nSophisticated access controls and encryption help reduce the likelihood that an attacker can \ngain direct access to sensitive data. As a result, parties that attempt to obtain sensitive data \nmay focus their efforts on alternative access means, such as retrieving residual data on ISM that \nhas left an organization without being sufficiently sanitized. Consequently, effective sanitization \ntechniques and the tracking of ISM are critical to ensuring that sensitive data is protected \nagainst unauthorized disclosure, whether that information is on paper, optical, electronic or \nmagnetic media, or complex storage systems (e.g., cloud). \nAn organization may choose to dispose of ISM by charitable donation, internal or external \ntransfer, or recycling if that ISM is obsolete or no longer usable. Even internal transfers require \nincreased scrutiny in compliance with legal and regulatory obligations",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0015",
+    "title": "NIST SP 800-88r2 — section 16",
+    "text": "if that ISM is obsolete or no longer usable. Even internal transfers require \nincreased scrutiny in compliance with legal and regulatory obligations for sensitive data, such as \npersonally identifiable information (PII). Regardless of the ISM’s final intended destination, \norganizations should use approved sanitization methods and techniques to ensure that no \nreconstructible residual representation of the sensitive data is stored on ISM that has left the \ncontrol of the organization. \nSanitization refers to a process that renders access to target data on the media infeasible for a \ngiven level of effort (i.e., constraints on time, budget, and resources). This document outlines \nthe important elements of a media sanitization program to assist organizations and system \nowners in making practical sanitization decisions based on the sensitivity of their information. \nWhile this document does not and cannot specifically address all known types of media, the \ndescribed sanitization decision process can be applied universally.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n2 \n1. Introduction  \n1.1. Purpose and Scope \nThe information security concern regard",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0016",
+    "title": "NIST SP 800-88r2 — section 17",
+    "text": "-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n2 \n1. Introduction  \n1.1. Purpose and Scope \nThe information security concern regarding disposal and sanitization revolves around the \nrecorded information rather than the media itself. The media used on an information system \n(i.e., ISM) should be assumed to contain information commensurate with the security \ncategorization (low, moderate, or high) of the system’s confidentiality. If not handled properly, \nthe release of such ISM could lead to the unauthorized disclosure of information. Categorizing \nan information technology (IT) system in accordance with Federal Information Processing \nStandards (FIPS) Publication 199, Standards for Security Categorization of Federal Information \nand Information Systems [2], is the critical first step in understanding and managing system \ninformation and media.  \nBased on the results of categorization, the system owner should refer to NIST Special \nPublication (SP) 800-53r5 (Revision 5), Security and Privacy Controls for Information Systems \nand Organizations [5], which states:  \nThe sanitization process removes information from system media such \nthat the information cannot be re",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0017",
+    "title": "NIST SP 800-88r2 — section 18",
+    "text": "Systems \nand Organizations [5], which states:  \nThe sanitization process removes information from system media such \nthat the information cannot be retrieved or reconstructed. Sanitization \ntechniques—including clearing, purging, cryptographic erase, de-\nidentification of personally identifiable information, and destruction—\nprevent the disclosure of information to unauthorized individuals when \nsuch media is reused or released for disposal. Organizations determine \nthe appropriate sanitization methods, recognizing that destruction is \nsometimes necessary when other methods cannot be applied to media \nrequiring sanitization. \nThis document will assist organizations in implementing a media sanitization program for media \nbefore disposal, reuse, or leaving the effective control of an organization. Proper and applicable \ntechniques and controls for sanitization and disposal decisions consider the security \ncategorization of the associated system’s confidentiality. Organizations should develop and use \na media sanitization program that is aligned with the guidelines in this document to make \neffective, risk-based decisions on the ultimate sanitization and/or disposition of media and da",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0018",
+    "title": "NIST SP 800-88r2 — section 19",
+    "text": "aligned with the guidelines in this document to make \neffective, risk-based decisions on the ultimate sanitization and/or disposition of media and data \nthroughout the system life cycle.  \nBefore applying any sanitization efforts to ISM, information system owners are strongly advised \nto consult with designated officials with privacy responsibilities (e.g., privacy officers), Freedom \nof Information Act (FOIA) officers, and/or local records retention offices to ensure compliance \nwith record retention regulations and requirements in the Federal Records Act.1\n1 The Federal Records Act of 1950, as amended, establishes the framework for records management programs in federal agencies. Federal \nrecords may not be destroyed except in accordance with the procedures described in Chapter 33 of Title 44, United States Code. \n Organizational \nmanagement should also be consulted to ensure that historical information is captured and \nmaintained as required by business needs. Controls may need to be adjusted as the system and \nits environment of operation change.\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n3 \n1.2. Audience \nProtecting the confidentiality of informatio",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0019",
+    "title": "NIST SP 800-88r2 — section 20",
+    "text": "operation change.\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n3 \n1.2. Audience \nProtecting the confidentiality of information should be a concern for everyone, from federal \nagencies and businesses to home users. Interconnections and information exchanges are \ncritical to the delivery of government services, and the guidelines in this document can inform \ndecisions regarding sanitization and disposal processes.  \n1.3. Assumptions \nThis document presumes that organizations can correctly identify appropriate information \ncategories, confidentiality impact levels, and information locations. Ideally, this activity is \naccomplished in the earliest phase of the system life cycle [8]. This critical initial step is outside \nof the scope of this document, but without this identification, the organization will likely lose \ncontrol of some ISM containing sensitive data.  \nThis document does not claim to cover all possible media that an organization could use to \nstore or record information, nor does it attempt to forecast future media that may be \ndeveloped. Organizations and users are expected to make sanitization and disposal decisions \nbased on the security catego",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0020",
+    "title": "NIST SP 800-88r2 — section 21",
+    "text": "st future media that may be \ndeveloped. Organizations and users are expected to make sanitization and disposal decisions \nbased on the security categorization of the information contained in the media.  \n1.4. Relationship With Other NIST Documents \nThe following NIST documents, including FIPS and Special Publications, are directly related to \nthis document:  \n•\nFIPS 199 [2] and SP 800-60r2, Guide for Mapping Types of Information and Systems to\nSecurity Categories [7], provide guidance for establishing the security categorization for\na system’s confidentiality. This categorization will impact the level of assurance that an\norganization should require when making sanitization decisions.\n•\nFIPS 200, Minimum Security Requirements for Federal Information and Information\nSystems [3], establishes baseline security requirements for organizations to have a\nmedia sanitization program.\n•\nFIPS 140-3, Security Requirements for Cryptographic Modules [1], establishes a standard\nfor cryptographic modules used by the U.S. Government.\n•\nSP 800-53r5 [5] provides minimum recommended security controls, including\nsanitization, for federal systems based on their overall system security categorization.\n•",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0021",
+    "title": "NIST SP 800-88r2 — section 22",
+    "text": "provides minimum recommended security controls, including\nsanitization, for federal systems based on their overall system security categorization.\n•\nSP 800-53Ar5, Guide for Assessing the Security Controls in Federal Information Systems\nand Organizations: Building Effective Security Assessment Plans [6], provides guidelines\nfor assessing security controls, including sanitization, for federal systems based on their\noverall system security categorization.\n•\nSP 800-111, Guide to Storage Encryption Technologies for End User Devices [10],\nprovides guidelines for selecting and using storage encryption technologies.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n4 \n• SP 800-122, Guide to Protecting the Confidentiality of Personally Identifiable Information \n(PII) [11], provides guidelines for protecting the confidentiality of PII in information \nsystems.  \n1.5. Document Structure  \nThis document is divided into the following sections and appendices:  \n• Section 1 describes this document’s purpose, scope, audience, assumptions, \nrelationship to other NIST documents, and structure. \n• Section 2 presents an overview of the need for sanitization and the basic ty",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0022",
+    "title": "NIST SP 800-88r2 — section 23",
+    "text": "ce, assumptions, \nrelationship to other NIST documents, and structure. \n• Section 2 presents an overview of the need for sanitization and the basic types of \ninformation, sanitization, and media. \n• Section 3 provides an overview of sanitization methods. \n• Section 4 summarizes a general media sanitization program. \n• The References section provides a detailed list of citations. \n• Appendix A defines important terms used in this document. \n• Appendix B identifies a set of device-specific characteristics of interest that users should \nrequest from ISM vendors. \n• Appendix C provides a sample Certificate of Sanitization form for documenting an \norganization’s sanitization activities.\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n5 \n2. Background\nInformation disposition and sanitization decisions occur throughout the information system life \ncycle. Critical factors that affect information disposition and media sanitization are decided at \nthe start of a system’s development. Initial system requirements should include hardware and \nsoftware specifications as well as interconnections and data flow documents that will assist the \nsystem owner in identifying the ty",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0023",
+    "title": "NIST SP 800-88r2 — section 24",
+    "text": "ude hardware and \nsoftware specifications as well as interconnections and data flow documents that will assist the \nsystem owner in identifying the types of ISM used in the system. Some ISM support enhanced \ninterface commands for sanitization, which may make sanitization easier, faster, and more \neffective. The decision may be even more fundamental because effective sanitization \nprocedures may not yet have been determined for emerging ISM types. Without an effective \ncommand or interface-based sanitization technique, the ISM may have to be destroyed. In that \nevent, the ISM cannot be reused by other organizations that could have benefited from \nreceiving the repurposed ISM.  \nDuring the requirements phase, other types of ISM that will be used to create, capture, or \ntransfer information used by the system should be identified. This analysis balances business \nneeds and confidentiality risks in compliance with FIPS 200 [3]. While media sanitization and \ninformation disposition activities primarily occur during the disposal phase of the system life \ncycle, many types of ISM containing data will be transferred outside of the positive control of \nthe organization throughout the life",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0024",
+    "title": "NIST SP 800-88r2 — section 25",
+    "text": "he system life \ncycle, many types of ISM containing data will be transferred outside of the positive control of \nthe organization throughout the life of an information system (e.g., for maintenance, system \nupgrades, or during a configuration update).  \n2.1. Need for Proper Information Disposition and Media Sanitization \nMedia sanitization is key to ensuring confidentiality, which is defined as “preserving authorized \nrestrictions on information access and disclosure, including means for protecting personal \nprivacy and proprietary information…” [22]. Additionally, “a loss of confidentiality is the \nunauthorized disclosure of information” [2].  \nThe unauthorized disclosure of sensitive and/or regulated information often constitutes the \nbasis of a data breach, which can necessitate undesirable data breach notifications and other \nremedies. In some jurisdictions, simply losing control of sensitive information is enough to be \nconsidered a data breach. Understanding where this sensitive information is stored and \nsystematically tracking the media on which it is stored can be important safeguards against \ndata breaches.  \nFor organizations to have appropriate controls on the informati",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0025",
+    "title": "NIST SP 800-88r2 — section 26",
+    "text": "the media on which it is stored can be important safeguards against \ndata breaches.  \nFor organizations to have appropriate controls on the information for which they are \nresponsible, they must properly safeguard used media. Potential misuse of information \ncollection can result from improperly disposed hard copy media, the acquisition of improperly \nsanitized ISM, or laboratory reconstruction of ISM sanitized in a manner that is not \ncommensurate with the confidentiality of information stored on that media. Media flows in and \nout of organizational control through recycle bins, out to vendors for equipment repairs, and \nswapped into other systems in response to hardware or software failures. This potential \nvulnerability can be mitigated by properly understanding where information is located and how \nto protect it.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n6 \n2.2. Types of Media  \nThis document focuses on two primary types of media in common use:  \n• Hard copy. Hard copy media refers to physical representations of information, typically \npaper printouts, film, microfiche, etc. However, printer and facsimile ribbons, drums, \nand platens are als",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0026",
+    "title": "NIST SP 800-88r2 — section 27",
+    "text": "representations of information, typically \npaper printouts, film, microfiche, etc. However, printer and facsimile ribbons, drums, \nand platens are also examples of hard copy media. The supplies associated with \nproducing paper printouts are often the most uncontrolled. Hard copy materials \ncontaining sensitive data that leave an organization without effective sanitization \nexpose a significant vulnerability to “dumpster divers” and overcurious employees.  \n• Information storage media (ISM). ISM commonly2\n2 There are other forms of storage (e.g., DNA-based, ceramic/glass-based) that may exist for long-term preservation applications, but they are \nnot widely available. \n takes the form of:  \no Devices that contain bits and bytes, such as hard disk drives (HDDs), solid state \ndrives (SSDs), random access memory (RAM), read-only memory (ROM), optical \ndisks, magnetic tape, flash memory, memory devices, phones, mobile computing \ndevices, networking devices, and office equipment  \no Systems that provide “virtual” or “logical” storage that abstracts the underlying \nelectronic media (e.g., cloud storage, object storage)  \nISM can be volatile/non-persistent storage (i.e., fails to retain it",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0027",
+    "title": "NIST SP 800-88r2 — section 28",
+    "text": "bstracts the underlying \nelectronic media (e.g., cloud storage, object storage)  \nISM can be volatile/non-persistent storage (i.e., fails to retain its contents after power is \nremoved) or non-volatile/persistent storage (i.e., retains its contents after power is \nremoved). This latter type of ISM is where most organizations should focus their \nsanitization efforts.  \n2.3. Target of Sanitization  \nIn general, sanitization safeguards the confidentiality of sensitive information that is stored on \nmedia by eliminating either the information on the media or the underlying media itself. This \nsensitive information is the target of sanitization activities. When considering hard copy, all \nsanitization activities focus on the proper elimination of the media. For ISM, sensitive \ninformation is stored as data on media and can constitute some or all of the user data stored on \nthe ISM. If the target data cannot be selectively or partially sanitized, sanitization operations \nshould be expanded to cover all user data instead (see Sec. 4.2).  \nSome types of ISM can contain more physical storage than the user addressable capacity (e.g., \noverprovisioning) for endurance and performance purposes.",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0028",
+    "title": "NIST SP 800-88r2 — section 29",
+    "text": "me types of ISM can contain more physical storage than the user addressable capacity (e.g., \noverprovisioning) for endurance and performance purposes. For example, an ISM can have \n1024 GB of total physical capacity but only 900 GB of available capacity (i.e., user accessible \nstorage). If the ISM implements data reduction techniques (e.g., data compression) internally, it \nis also possible for the user-addressable capacity to exceed the total physical capacity. In either \ncase, user data may be stored on the full 1024 GB because of the mechanisms in the ISM, and \nthe entire contents should be sanitized.\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n7 \n2.4. Factors Influencing Sanitization and Disposal Decisions \nWhen making sanitization decisions for ISM, several factors should be considered along with \nthe security categorization of the system confidentiality. The cost versus benefit trade-off of a \nsanitization process should be understood prior to a final decision. Organizations retain the \nability to increase the level of sanitization applied if that is reasonable and indicated by an \nassessment of the existing risk.  \nOrganizations should consider othe",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0029",
+    "title": "NIST SP 800-88r2 — section 30",
+    "text": "ase the level of sanitization applied if that is reasonable and indicated by an \nassessment of the existing risk.  \nOrganizations should consider other factors, including: \n•\nThe types (e.g., hard copy, ISM), physical sizes, density (e.g., high resolution film), or\ncapacities (e.g., megabyte, gigabyte, terabyte for ISM) of the media to be sanitized\n•\nThe confidentiality requirement for the information recorded or stored on the media\n•\nWhether the media will be processed in a controlled area\n•\nWhether sanitization techniques should be conducted by the organization or a third\nparty\n•\nWhether sanitization is performed on-site or off-site3\n3 An organization’s loss of control of an ISM that contains certain types of sensitive data may constitute a data breach. \n•\nThe anticipated volume of media to be sanitized by type\n•\nThe availability of sanitization equipment and tools\n•\nThe training level of personnel with sanitization equipment or tools\n•\nHow much time the complete sanitization technique will take (i.e., duration)\n•\nThe cost of sanitization when considering tools, training, verification, and re-entering\nISM into the supply stream\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0030",
+    "title": "NIST SP 800-88r2 — section 31",
+    "text": "zation when considering tools, training, verification, and re-entering\nISM into the supply stream\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n8 \n3. Summary of Sanitization Methods\nThe level of effort applied when attempting to retrieve data can vary widely, especially for ISM. \nInterested parties may attempt simple data retrieval from an ISM (e.g., reads) without the use \nof specialized tools, skills, or knowledge, or they can have extensive capabilities that enable \nthem to apply state-of-the-art laboratory techniques.4\n4 “State-of-the-art laboratory techniques” refer to the most advanced and innovative methods currently available for performing experiments, \nanalyses, and procedures within a laboratory setting. Such a capability is assumed to be available to a party (e.g., nation-state actor) that \ndesires the ability to recover high-value sensitive data that has been sanitized. \n  \nUsers of this document should categorize the information (e.g., low, medium, and high security \ncategorizations) to be disposed of, assess the nature of the media on which that information is \nrecorded, assess the risk to confidentiality, and determine future plans for the me",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0031",
+    "title": "NIST SP 800-88r2 — section 32",
+    "text": "d of, assess the nature of the media on which that information is \nrecorded, assess the risk to confidentiality, and determine future plans for the media. The \norganization can then choose the appropriate method of sanitization. The selected method \nshould be assessed based on applicable factors (e.g., cost, environmental impact), and a \ndecision should be made that best mitigates the risk to confidentiality and satisfies other \nconstraints imposed on the process.  \n3.1. Sanitization Methods \nThree different sanitization methods are defined to sanitize media: clear (see Sec. 3.1.1), purge \n(see Sec. 3.1.2), and destroy (see Sec. 3.1.3). In addition, one or more technology-specific \nsanitization techniques may be available for each sanitization method. As storage technology \nevolves, these sanitization techniques need to be updated on a regular basis, so the latest \nversion of standards (e.g., IEEE 2883 [13]) should be consulted.  \nISM sanitization techniques are one of the following: \n•\nLogical techniques. Software or other tools are used over an interface to replace data in\na systematic manner, issue specific commands to cause data to be eliminated, or\neliminate access to the data",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0032",
+    "title": "NIST SP 800-88r2 — section 33",
+    "text": "used over an interface to replace data in\na systematic manner, issue specific commands to cause data to be eliminated, or\neliminate access to the data. The confidentiality protection can vary significantly,\ndepending on the specific technique. The intent of logical sanitization is to leave the ISM\nin a usable state.\n•\nPhysical techniques. External physical measures are applied to eliminate data or the\nISM. With few exceptions, physical techniques typically leave the ISM in an unusable\nstate and involve some form of destruction.\nExcept for cryptographic erase (see Sec. 3.2), technology-specific sanitization techniques are \nout of scope for this document. \n3.1.1. Clear Sanitization Method \nThe clear sanitization method is not appropriate for hard copy under any conditions but may be \nappropriate for ISM. This method applies logical techniques to sanitize data in all user-\naddressable storage locations of an ISM for protection against simple, non-invasive data \nrecovery techniques using the same interface that is available to the user (e.g., host interface).\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n9 \nClear sanitization techniques are typically applied thr",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0033",
+    "title": "NIST SP 800-88r2 — section 34",
+    "text": ".g., host interface).\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n9 \nClear sanitization techniques are typically applied through the standard read and write \ncommands to the ISM, such as by rewriting with a new value or using a menu option to reset \nthe ISM to the factory state if rewriting is not supported. Clear sanitization techniques typically \nhave no impact on the usability of the ISM.  \nOne clear sanitization technique is to use software or hardware products to overwrite user-\naddressable storage space on the ISM with non-sensitive data using the standard read and \nwrite commands for the ISM. This process can include overwriting both the file metadata (e.g., \nfile allocation table entry) and all user-addressable locations. The security goal of the \noverwriting process is to replace target data with non-sensitive data. Overwriting typically \nhinders the recovery of data even if state-of-the-art laboratory techniques are applied to \nattempt to retrieve the data.  \nIn the past, hard drives were often erased using multiple overwrite passes (e.g., based on DoD \n5220.22-M5\n5 The U.S. Department of Defense (DoD) Manual 5220.22, or National Industrial Secur",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0034",
+    "title": "NIST SP 800-88r2 — section 35",
+    "text": "ed using multiple overwrite passes (e.g., based on DoD \n5220.22-M5\n5 The U.S. Department of Defense (DoD) Manual 5220.22, or National Industrial Security Program Operating Manual (NISPOM), is now Part 117 \nof Title 32, Code of Federal Regulations. In 2006, DoD removed overwriting specifications from NISPOM. \n) with specific binary patterns (e.g., a pattern of all zeros). The number of passes \nranged from a single pass to as high as 39. The binary pattern could change for each pass, and \nthere could be verification after some or all of the overwrite passes. For certain ISM (e.g., SSDs \nwith overprovisioning), such practices should be avoided as very little confidentiality protection \nis achieved. If additional assurances are needed, a more secure sanitization method in the form \nof purge (see Sec. 3.1.2) or destroy (see Sec. 3.1.3) should be used.  \nOverwriting cannot be used on a non-rewriteable ISM or one that is damaged to the point of \nbeing inoperable and, therefore, cannot address all areas of the ISM where sensitive data may \nbe retained. The ISM’s type and size may also influence whether overwriting is a suitable \nsanitization method. For example, flash memory-based storage",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0035",
+    "title": "NIST SP 800-88r2 — section 36",
+    "text": "retained. The ISM’s type and size may also influence whether overwriting is a suitable \nsanitization method. For example, flash memory-based storage devices that contain spare cells \nand perform wear levelling make it infeasible for a user to sanitize all previous data using this \napproach because the device cannot support directly addressing all areas in which sensitive \ndata has been stored using the native read and write interface.  \nUsers who have become accustomed to relying on overwrite techniques on magnetic ISM and \nwho have continued to apply these techniques as ISM types evolved (e.g., to flash memory-\nbased devices) can be exposing their data to increased risk of unintentional disclosure. \nAlthough the host interface can be the same or very similar across ISM with varying underlying \nISM types, sanitization techniques must be carefully matched to the ISM.  \nAlternatively, the ISM may support dedicated sanitize commands that address all storage areas \nmore effectively. The use of such commands results in a trade-off because they require trust \nand assurance from the ISM vendor that the commands have been implemented as expected.  \nClear sanitization techniques can vary c",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0036",
+    "title": "NIST SP 800-88r2 — section 37",
+    "text": "they require trust \nand assurance from the ISM vendor that the commands have been implemented as expected.  \nClear sanitization techniques can vary contextually for ISM other than dedicated storage \ndevices, where the ISM (e.g., a basic cell phone, a piece of office equipment) only provides the \nability to return the ISM to its factory state (e.g., deleting the file pointers) and does not directly \nsupport the ability to rewrite or apply ISM-specific techniques to the non-volatile storage \ncontents. If rewriting is not supported, manufacturer resets and procedures that do not include \nrewriting may be the only clear sanitization technique options for the ISM. These still meet the\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n10 \ndefinition for the clear sanitization method as long as the device interface available to the user \ndoes not facilitate retrieval of the original data.  \n3.1.2. Purge Sanitization Method \nThe purge sanitization method is not appropriate for hard copy under any conditions but may \nbe appropriate for some ISM. Purge sanitization techniques apply physical or logical techniques \nthat make the recovery of target data infeasible using sta",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0037",
+    "title": "NIST SP 800-88r2 — section 38",
+    "text": "propriate for some ISM. Purge sanitization techniques apply physical or logical techniques \nthat make the recovery of target data infeasible using state-of-the-art laboratory techniques \nbut preserves the ISM in a potentially reusable state. When possible, the purge sanitization \nmethod should be used instead of the clear sanitization method. \nLogical purge sanitization techniques can vary by ISM type, so IEEE 2883 [13]should be \nconsulted to determine acceptable purge sanitization techniques, which can include overwrite, \nblock erase, and cryptographic erase using dedicated, standardized device sanitize commands \nthat apply ISM-specific techniques to bypass the abstraction inherent in typical read and write \ncommands. Careful selection of the purge sanitization technique increases the likelihood of \npreserving the storage device in a usable state.  \nOf the logical purge sanitization techniques, cryptographic erase is noteworthy in its ability to \nrapidly sanitize target data. However, the effective use of cryptographic erase depends on the \npedigree of cryptographic capabilities and meeting certain pre-conditions. Section 3.2 \naddresses these dependencies. \nFor an ISM that takes t",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0038",
+    "title": "NIST SP 800-88r2 — section 39",
+    "text": "on the \npedigree of cryptographic capabilities and meeting certain pre-conditions. Section 3.2 \naddresses these dependencies. \nFor an ISM that takes the form of logical/virtual storage (e.g., cloud storage), cryptographic \nerase may be the only viable purge sanitization technique option. Typically, the underlying \nphysical ISM is abstracted such that the data owner has no direct access to the physical ISM, \nand sanitizing them is not possible. As such, organizations should clearly understand their purge \nsanitization technique options and the effectiveness of the technique prior to storing sensitive \ndata on such ISM.  \nPhysical purge sanitization techniques historically included degaussing for magnetic tapes, \nmagnetic removable disks, and magnetic hard disk drives [19]. Degaussing should not be used \nfor non-magnetic ISM (e.g., flash storage, such as SSDs). The use of degaussing as a purge \nsanitization technique has become more complicated as ISM have evolved to use hybrids of \nmagnetic and non-magnetic storage as well as variations of magnetic recording technologies \nwith higher coercivity6\n6 Degaussing potentially renders a magnetic ISM purged when the strength of the degausse",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0039",
+    "title": "NIST SP 800-88r2 — section 40",
+    "text": "s of magnetic recording technologies \nwith higher coercivity6\n6 Degaussing potentially renders a magnetic ISM purged when the strength of the degausser is carefully matched to the ISM coercivity. \n (i.e., magnetic force)[18]. As a result, many existing degaussers [19] do \nnot have sufficient force to effectively degauss such ISM. Additionally, degaussing can damage \n(i.e., make unusable) some types of ISM, potentially rendering them inoperable (e.g., if the \nservo tracks are damaged), but fail to sanitize the target data. At the time of this writing, \ndegaussing is not considered an approved destroy sanitization technique (see Sec. 3.1.3), but \nIEEE 2883 [13] and/or NSA/CSS Policy Manual 9-12 [16] should be consulted for further \nclarification. \nOther physical purge sanitization techniques can also exist.\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n11 \n3.1.3. Destroy Sanitization Method \nThe destroy sanitization method is appropriate for all hard copy and most ISM, except for \nlogical/virtual storage. Destroy sanitization techniques render target data recovery infeasible \nusing state-of-the-art laboratory techniques and results in the subsequent inability",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0040",
+    "title": "NIST SP 800-88r2 — section 41",
+    "text": "sanitization techniques render target data recovery infeasible \nusing state-of-the-art laboratory techniques and results in the subsequent inability to use the \nISM for the storage of data.  \nThere are many different types, techniques, and procedures for media destruction. While some \ntechniques can render the target data infeasible to retrieve through the device interface and \nunable to be used for subsequent storage of data, the ISM is not considered destroyed unless \ntarget data access or recovery is infeasible using state-of-the-art laboratory techniques. The \napplication of destructive techniques may be the only option when the ISM fails or is obsolete \n(e.g., the ISM interface is no longer supported) and other clear or purge sanitization techniques \ncannot be effectively applied to the ISM.  \nThe following physical destructive techniques are commonly associated with the destroy \nsanitization method:  \n•\nDisintegrate. Process that destroys the media by breaking, separating, or decomposing\n(e.g., dissolving with acid) media into its constituent elements, parts, or small particles\nsuch that there is nothing or very little of it that is recognizable after the process.\n•\nIncinera",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0041",
+    "title": "NIST SP 800-88r2 — section 42",
+    "text": "its constituent elements, parts, or small particles\nsuch that there is nothing or very little of it that is recognizable after the process.\n•\nIncinerate. Process that destroys the media by burning it to ash.\n•\nMelt. Process that destroys the media by liquefying it (i.e., loses intactness or solidness),\ngenerally through the application of extreme heat.\n•\nPulverize. Process that destroys the media by reducing it to a fine powder or dust\nthrough crushing, grinding, or other mechanical means.\n•\nShred. Process that destroys the media by cutting or tearing it into small particles.\nTechniques like bending, cutting, or some emergency procedures (e.g., shooting or drilling a \nhole through a storage device) may only partly damage the ISM, leaving portions of it accessible \nusing state-of-the-art laboratory techniques. \nAs the density of data and the hardness of the component materials increase on an ISM, certain \ndestructive techniques can become ineffective. Pulverize and shred techniques for ISM should \nbe avoided for anything but the lowest security categories of data. \n3.2. Use of Cryptography and Cryptographic Erase \nIncreasingly, ISM have integrated encryption and key-management capab",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0042",
+    "title": "NIST SP 800-88r2 — section 43",
+    "text": "security categories of data. \n3.2. Use of Cryptography and Cryptographic Erase \nIncreasingly, ISM have integrated encryption and key-management capabilities. Under the \ncorrect conditions and with strong cryptography, these capabilities can be used to sanitize ISM \nwith a purge sanitization technique known as cryptographic erase (CE). At a basic level, CE is \nbased on the sanitization of keys used to encrypt data or to prevent access to the keys that \nencrypt data. Thus, with CE, sanitization can be performed with high assurance much faster \nthan with other sanitization techniques. The encryption itself acts to sanitize the data, subject \nto the constraints identified in the guidelines in this document. Federal agencies must use\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n12 \nencryption modules7\n7 NIST maintains lists of validated cryptographic modules and cryptographic algorithms. \n validated to the current FIPS-140 standard [1] in order to have assurance \nthat the conditions stated above have been verified for the self-encrypting drive (SED). \nFurther elaboration on CE and guidance is covered in this section. \n3.2.1. Strength of Cryptography for CE  \nCE",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0043",
+    "title": "NIST SP 800-88r2 — section 44",
+    "text": "for the self-encrypting drive (SED). \nFurther elaboration on CE and guidance is covered in this section. \n3.2.1. Strength of Cryptography for CE  \nCE is based on symmetric-key encryption and associated key management. In order for \nencryption to provide confidentiality, the cryptographic algorithm (e.g., the Advanced \nEncryption Standard [30]) used for encryption and its mode of operation must be designed and \nimplemented so that an unauthorized party cannot determine the decryption key associated \nwith the encryption or be able to derive the plaintext directly without using the appropriate key \nto decrypt the encrypted information (i.e., ciphertext) [31]. \nISO/IEC 27040 [15] addresses the strength of cryptography for CE by specifying: \n•\nThe security strength of the cryptographic algorithm (including the mode of operation)\nused to encrypt the target data is at least 128 bits.\n•\nThe level/bits of entropy of the random number sources are at least the number of bits\nof the cryptographic keys (e.g., encryption keys, wrapping keys, or keys used to derive\nthese keys).\nConfidentiality assurances for CE depend on other cryptographic considerations. While ISO/IEC \n27040 [15] approaches cr",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0044",
+    "title": "NIST SP 800-88r2 — section 45",
+    "text": "ys used to derive\nthese keys).\nConfidentiality assurances for CE depend on other cryptographic considerations. While ISO/IEC \n27040 [15] approaches cryptography from an international perspective, this document narrows \nthe approved cryptography to a smaller set of options, which are reflected in Table 1. \nTable 1. CE considerations \nArea \nConsiderations \nRelevant Docs \nKey Generation \nThe level of entropy of the random number \nsources and the quality of the key-generation \nprocedures applied to the random data. This \napplies to the cryptographic keys and any \nwrapping keys affected by the cryptographic erase \noperation. \nSP 800-90A [9] \nSP 800-90B [23] \nSP 800-90C [24] \nSP 800-133 [25] \nISM Encryption \nThe security strength and validity of the \nimplementation of the encryption \nalgorithm/mode used to protect the target data. \nFIPS 140-38\n8 Conformance testing for FIPS 140-3 is conducted within the framework of the Cryptographic Module Validation Program (CMVP) and the \nCryptographic Algorithm Validation Program (CAVP).  \n [1] \nFIPS 197 [30] \nSP 800-38A9\n9 Electronic codebook (ECB) mode is not allowed. \n [4] \nSP 800-38E [27]\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSept",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0045",
+    "title": "NIST SP 800-88r2 — section 46",
+    "text": "7 [30] \nSP 800-38A9\n9 Electronic codebook (ECB) mode is not allowed. \n [4] \nSP 800-38E [27]\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n13 \nArea \nConsiderations \nRelevant Docs \nKey Level and \nWrapping \nThe key being sanitized might not be the \nsymmetric data-encryption key but a key used to \nwrap (i.e., encrypt) it. In this case, the security \nstrength and level of assurance of the wrapping \ntechniques used should be commensurate with \nthe level of strength of the cryptographic \nencryption operation. \nFIPS 197 [30] \nSP 800-38A [4] \nSP 800-38F [26] \nSP 800-131A [29] \nKey Derivation \nThe methods for deriving additional keys from an \nexisting cryptographic key. \nSP 800-90A [9] \nSP 800-108 [28] \nSP 800-133 [25] \n3.2.2. Applicability of CE \nAs a pre-condition for using CE, ISO/IEC 27040 [15] specifies that no sensitive data has \npreviously been stored10\n10 For an ISM that was previously sanitized with an appropriate technique, this prohibition applies since the last sanitization of the ISM. \n on the ISM in plaintext form (i.e., not encrypted) as CE can only \nsanitize keys related to encrypted data. Sanitizing sensitive data stored as plaintext requires the \nuse",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0046",
+    "title": "NIST SP 800-88r2 — section 47",
+    "text": "xt form (i.e., not encrypted) as CE can only \nsanitize keys related to encrypted data. Sanitizing sensitive data stored as plaintext requires the \nuse of other storage sanitization techniques that are appropriate for the ISM. For ISM consisting \nof virtual/logical storage, there may not be a purge sanitization technique alternative to CE. \nAs mentioned earlier, many ISMs have integrated symmetric-key encryption that is \nimplemented such that it is always active and encrypts all data stored on the ISM. These ISM \nare often known as self-encrypting drives (SEDs), and they typically include sanitization \ncapabilities as well.  \nWhen considering the applicability of CE, the sensitivity of the information is an important \nfactor. Some sensitive information can be long-lived, and confidentiality protections need to \nspan decades. In such cases, future recovery of the data can be a concern because the data still \nresides in the ISM as ciphertext. If cryptographic weaknesses in the algorithms used in those \nISM were found in the future or computational capabilities (e.g., quantum computing) made it \nfeasible to recover keys, the sensitive data can become recoverable in those ISM. For such",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0047",
+    "title": "NIST SP 800-88r2 — section 48",
+    "text": "putational capabilities (e.g., quantum computing) made it \nfeasible to recover keys, the sensitive data can become recoverable in those ISM. For such \nsituations, CE may not be an acceptable sanitization technique. \nSanitization using CE should not be trusted on ISM that have been backed up or escrowed \nunless the organization has a high level of confidence regarding how and where the keys were \nstored and managed outside of the ISM. Such backed up or escrowed copies of data, \ncredentials, or keys should be subject to a separate ISM sanitization policy.  \n3.2.3. Sanitization of Keys \nThe objective of CE is to permanently prevent the decryption of ciphertext associated with \nsensitive information. CE is achieved through the sanitization of keys used to encrypt data or \nprevent access to the keys that encrypt data, which are collectively referred to as target \ncryptographic keys.\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n14 \nThe recommended key sanitization technique is zeroization, as described in ISO/IEC 19790 [14] \n(e.g., overwriting with all zeros, all ones, or random data), of the target cryptographic keys. \nISO/IEC 27040 [15] further specifies that a",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0048",
+    "title": "NIST SP 800-88r2 — section 49",
+    "text": "790 [14] \n(e.g., overwriting with all zeros, all ones, or random data), of the target cryptographic keys. \nISO/IEC 27040 [15] further specifies that all copies of the target cryptographic keys must be \nable to be sanitized. \nThe following key types are potential target cryptographic keys for CE, as described in SP 800-\n57pt1r5 [31]: \n•\nSymmetric data-encryption keys are used with symmetric-key algorithms to apply\nconfidentiality protection to data (i.e., encrypt plaintext data).\nWhen symmetric data-encryption keys are sanitized or ciphertext (i.e., wrapped)\nversions of these keys are sanitized, the corresponding ciphertext cannot be decrypted.\n•\nSymmetric key-wrapping keys (sometimes called key-encrypting keys) are used with\nsymmetric-key algorithms to encrypt other keys. The key-wrapping key used to encrypt\na key is also used to decrypt the encrypted key.\nWhen key-encrypting keys are sanitized or ciphertext (i.e., wrapped) versions of these\nkeys are sanitized, the protected symmetric data-encryption keys cannot be decrypted\nand, therefore, the ciphertext corresponding to these symmetric data-encryption keys\ncannot be decrypted.\n•\nSymmetric master keys or key-derivation keys are us",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0049",
+    "title": "NIST SP 800-88r2 — section 50",
+    "text": "efore, the ciphertext corresponding to these symmetric data-encryption keys\ncannot be decrypted.\n•\nSymmetric master keys or key-derivation keys are used to derive other symmetric keys\n(e.g., data-encryption keys, key-wrapping keys) using symmetric cryptographic methods.\nThere are many instances where one or more key-derivation keys are jointly11\n11 As an example, a cloud service provider could offer cloud storage, built upon multiple SSDs that employ encryption, wherein keys supplied by \na customer, by the cloud service provider, and a unique key contained each SSD are cryptographically combined to produce a wrapping key that \nprotects the keys used for encryption. If any one of these keys are sanitized, the encrypted data protected by these combined keys is not \navailable (i.e., it has been sanitized). \n used to\nderive a symmetric key (often a key-encrypting key).\nWhen at least one of these key-derivation keys is sanitized or ciphertext (i.e., wrapped)\nversions of these keys is sanitized, the key derivation cannot be correctly completed,\nand the relevant symmetric data-encryption key or key-wrapping key cannot be derived.\nWhen such keys are not available, the ciphertext containing",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0050",
+    "title": "NIST SP 800-88r2 — section 51",
+    "text": "ted,\nand the relevant symmetric data-encryption key or key-wrapping key cannot be derived.\nWhen such keys are not available, the ciphertext containing sensitive information\ncannot be decrypted.\n•\nPrivate key-transport keys are the private keys of asymmetric-key pairs that are used to\ndecrypt keys that have been encrypted with the corresponding public key using a public-\nkey algorithm. Key-transport keys are usually used to establish symmetric keys (e.g.,\nkey-wrapping keys, data-encryption keys, key-derivation keys) and, optionally, other\nkeying material (e.g., initialization vectors).\nThere are also situations in which public-key cryptography is used such that a public key\n(i.e., public key-transport key12\n12 The sanitization of public key-transport keys is not considered a valid form of sanitization because these keys are not typically protected, and \nthere may not be a way to eliminate all copies of them. \n) encrypts (i.e., encapsulates) a key that is “transported”\nand subsequently decrypted (i.e., decapsulated) by the corresponding private key (i.e.,\nprivate key-transport key). The transported key can serve as a symmetric data-\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitizatio",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0051",
+    "title": "NIST SP 800-88r2 — section 52",
+    "text": "private key (i.e.,\nprivate key-transport key). The transported key can serve as a symmetric data-\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n15 \nencryption key, a key-wrapping key, or a key-derivation key. When the private key or a \nciphertext (i.e., wrapped) version of the key is sanitized, the “transported” key cannot \nbe decrypted (i.e., decapsulated), so the ciphertext protected by this key cannot be \ndecrypted \nIn addition to performing appropriate key sanitization on the target cryptographic keys, it is \nimperative that all keys hierarchically below the target cryptographic keys are eliminated or \nactively erased. Such actions can provide an additional measure of protection, if the target \ncryptographic keys are ever recovered. \nAs part of a CE operation, steps should be taken to guard against continued use of keys that \nmay have been recovered prior to the CE operation. For example, if the wrapped versions of \nkeys had previously been unwrapped and the keys inside them stored to volatile memory or \nwritten into a register in a data encryption engine, the elimination of all unwrapped versions of \nthe key must also be assured, preferably by direct k",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0052",
+    "title": "NIST SP 800-88r2 — section 53",
+    "text": "ritten into a register in a data encryption engine, the elimination of all unwrapped versions of \nthe key must also be assured, preferably by direct key sanitization, but may require a hard reset \nor powering off the ISM for some period of time. \nWhen deciding whether to rely on CE, ISO/IEC 27040 [15] recommends considering whether the \ntarget cryptographic keys can be recovered internally or externally (e.g., injected from a key \nmanagement server or from a key escrow service). If the target cryptographic keys (or any key \nat or below the level of key sanitized during CE) exists outside of the ISM, there is a possibility \nthat the key can be used in the future to recover encrypted data stored on the ISM. \n3.2.4. Quality of Cryptographic Implementations \nISO/IEC 27040 [15] recommends organizations that choose to apply CE to seek either \nindependent validation [15] of the following assurance areas or ask the ISM vendor to identify \nwhich mechanisms are used to ensure that these concern areas have been addressed: \n•\nThe level of entropy of the random number sources and the quality of whitening\nprocedures applied to the random data (e.g., key generation). This applies to the\ncryptogra",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0053",
+    "title": "NIST SP 800-88r2 — section 54",
+    "text": "of the random number sources and the quality of whitening\nprocedures applied to the random data (e.g., key generation). This applies to the\ncryptographic keys and, potentially, to wrapping keys affected by the CE operation.\n•\nThe security strength and validity of implementation of the encryption algorithm/mode\nused to protect target data.\n•\nThe technique used for key sanitization of keys associated with CE is sufficient to\nprevent recovery of the target keys.\n•\nThe security strength and level of assurance of the wrapping techniques used are\ncommensurate with the level of strength of the cryptographic encryption operation.\nGenerally accepted and standardized mechanisms should be used, as applicable. For example, \ncryptographic requirements are specified in ISO/IEC 19790 [14], and test requirements for \ncryptographic modules are specified in ISO/IEC 24759 [32]. These test requirements and tests \ncover some but not all of the concern areas. \nFederal agencies must use encryption modules that have been validated to the current FIPS-\n140 in order to have assurance that the conditions stated above have been verified for the ISM.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSe",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0054",
+    "title": "NIST SP 800-88r2 — section 55",
+    "text": "n order to have assurance that the conditions stated above have been verified for the ISM.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n16 \n3.2.5. Traceability of CE Operations  \nDocumenting a storage sanitization operation is often a component of an organization’s media \nsanitization program (see Sec. 4.6). When CE is used as the purge sanitization technique, the \nevidence or documentation may need to be augmented with additional details, including: \n1. Make, model, version, or ISM type. The product and versions to which the statement \napplies and the type of storage technology that the ISM uses (e.g., magnetic disk/tape, \nsolid-state drive, hybrid). Many ISMs store the target data (see Sec. 2.3) in several \ndifferent ISM components (e.g., a cache in addition to rotating platters in a hard drive).  \n2. Key generation. Identify whether a deterministic random bit generator (e.g., one listed \nin SP 800-90Ar1 [9]) was used and how it was validated.  \n3. Media encryption. Identify the algorithm, key strength, mode of operation, and any \napplicable validations. \n4. Key wrapping. Identify whether the symmetric data-encryption key, key-wrapping key, \nor ke",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0055",
+    "title": "NIST SP 800-88r2 — section 56",
+    "text": "th, mode of operation, and any \napplicable validations. \n4. Key wrapping. Identify whether the symmetric data-encryption key, key-wrapping key, \nor key-derivation key is sanitized. A description of the wrapping techniques only applies \nif a key-encryption key (KEK) is sanitized. When applicable, details about the key-\nwrapping key and/or key-derivation key algorithms used should be provided, including \ntheir strengths and (if applicable) their mode of operation.  \n5. ISM areas addressed. Describe which areas are encrypted and which are not. For any \nunencrypted areas (i.e., not used for user data), describe how sanitization is performed.  \n6. Key life cycle management. The keys on an ISM can have multiple wrapping activities \n(i.e., wrapping, unwrapping, and rewrapping) throughout the ISM’s life cycle. Identify \nhow the keys being sanitized are handled during wrapping activities that are not directly \npart of the CE operation.  \n7. Key sanitization technique. Describe the ISM-dependent key sanitization technique \nused to sanitize the key (see Sec. 3.2.3).  \n8. Key escrow or injection. Identify whether the ISM supports key escrow or injection at or \nbelow the level of CE or whether",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0056",
+    "title": "NIST SP 800-88r2 — section 57",
+    "text": "key (see Sec. 3.2.3).  \n8. Key escrow or injection. Identify whether the ISM supports key escrow or injection at or \nbelow the level of CE or whether the key has ever been escrowed from or injected into \nthe ISM.  \n9. Error condition handling. Identify how the ISM handles error conditions that prevent \nthe CE operation from fully completing, such as a defect encountered where an instance \nof the key to be sanitized is stored. For example, if the location where the key was \nstored cannot be sanitized, determine whether the CE operation can report success or \nfailure to the user.  \n10. Interface clarity. Identify the host interface commands that support the features \ndescribed in the statement. If the ISM supports the use of multiple symmetric data-\nencryption keys, identify whether all symmetric data-encryption keys are changed using \nthe host interface commands available and any additional commands or actions \nnecessary.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n17 \nWhen the target cryptographic keys for CE are stored in an external key management system \n(KMS) and then provided to the ISM, the documentation trail for key sanitization within the",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0057",
+    "title": "NIST SP 800-88r2 — section 58",
+    "text": "s for CE are stored in an external key management system \n(KMS) and then provided to the ISM, the documentation trail for key sanitization within the \nKMS may be limited to the details contained in the KMS (i.e., the ISM may have no visibility into \nkey sanitization on the KMS). Further, the key may have been escrowed, backed up, and/or \nstored elsewhere, so the documentation needs to reflect how these potential sources for key \nrecovery have been addressed as well. \nCE’s effectiveness as a purge sanitization technique does not depend on documentation. \nHowever, CE acceptance by an organization can be influenced by the documentation that can \nbe produced for CE operations.\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n18 \n4. Media Sanitization Program\nA media sanitization program can help ensure the consistent and appropriate disposal of \nstorage assets and avoid data breaches due to mishandling. ISO/IEC 27040 [15] states that \nstorage sanitization should be an element of the organization’s data governance process, which \nshould include the following at a minimum: \n•\nSpecifying policies that set the expectations associated with storage asset disposal (i.e.,",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0058",
+    "title": "NIST SP 800-88r2 — section 59",
+    "text": "ess, which \nshould include the following at a minimum: \n•\nSpecifying policies that set the expectations associated with storage asset disposal (i.e.,\ntransfer, reuse, destruction) and minimum acceptable sanitization methods\n•\nIdentifying the scope and sanitization decision criteria\n•\nPerforming storage sanitization\n•\nDetermining the adequacy of the sanitization performed\n•\nIdentifying the necessary records or evidence (i.e., documentation) to meet compliance\nobligations\n4.1. Storage Sanitization Policy \nThe presence or absence of a storage sanitization policy can significantly impact the \neffectiveness of an organization’s storage sanitization activities. Such a policy should address \nthe following:  \n•\nAlignment of the organization’s data classification scheme (e.g., low, medium, and high\nsecurity categorizations) with minimum acceptable sanitization methods (i.e., clear,\npurge, and destroy)\n•\nRequirements for the disposal and/or reuse of storage assets\n•\nExpected outcomes from storage sanitization activities (e.g., identification of specific,\nacceptable sanitization techniques [13])\n•\nDocumentation or evidence associated with sanitization activities (see Sec. 4.6)\n•\nThe identific",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0059",
+    "title": "NIST SP 800-88r2 — section 60",
+    "text": "specific,\nacceptable sanitization techniques [13])\n•\nDocumentation or evidence associated with sanitization activities (see Sec. 4.6)\n•\nThe identification of roles and responsibilities (see Sec. 4.7) and personnel\ncompetencies, skills, and training\n•\nThe use of sanitization tools, including equipment calibration, testing, and maintenance\n•\nType of assurances (e.g., guarantees, assessment results, formal certifications) that the\nISM vendor should provide for the sanitization capabilities\n4.2. Sanitization Scope \nFor federal organizations, unclassified ISM that are never used in a classified information \nsystem or that do not contain For Official Use Only (FOUO) information, Privacy Act \ninformation, or personally identifiable information (PII) do not require sanitization [17].\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n19 \nFor most sanitization operations, the target data of the operation ultimately includes all user \ndata stored on the ISM and not just the sensitive data. However, there may be a desire or need \nto sanitize a subset of the ISM. Selective sanitization focuses on sanitizing specific sensitive data \nwherever this data resides in the ISM.13\n1",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0060",
+    "title": "NIST SP 800-88r2 — section 61",
+    "text": "eed \nto sanitize a subset of the ISM. Selective sanitization focuses on sanitizing specific sensitive data \nwherever this data resides in the ISM.13\n13 An example of selective sanitizing is sanitizing the contents of a single file that is encrypted with a unique key using CE. \n Partial ISM sanitization focuses on sanitizing a subset or \nregion of the ISM.  \nPartial ISM sanitization comes with some risks, as it can be difficult to verify that sensitive data \nstored on a portion of the ISM did not spill over into other areas of the ISM (e.g., remapped bad \nblocks or overprovisioning). In addition, the dedicated interfaces provided by ISM vendors for \nsanitization typically operate at the device level and cannot be applied to a subset of the ISM.  \nOn ISM with integrated encryption capabilities, CE provides a unique mechanism for supporting \nsome types of partial ISM sanitization. These ISM can support the ability to encrypt portions of \nthe data with different encryption keys (e.g., encrypting different partitions with different \nencryption keys). When the interface supports sanitizing only a subset of the encryption keys, \npartial ISM sanitization via CE is possible. As with any oth",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0061",
+    "title": "NIST SP 800-88r2 — section 62",
+    "text": "tion keys). When the interface supports sanitizing only a subset of the encryption keys, \npartial ISM sanitization via CE is possible. As with any other sanitization technique applied to \nISM, the level of assurance depends on both vendor implementation and confidence that the \ndata was only stored in areas that can be reliably sanitized. Data can be stored outside of these \nregions if the user or software on the system moved data outside of the designated area on the \nISM or if the ISM stored data in a manner that was not fully understood by the user.  \nDue to the difficulty of reliably ensuring that partial ISM sanitization effectively addresses all \nsensitive data, sanitization of the whole ISM is preferred to partial ISM sanitization whenever \npossible. Organizations should understand the potential risks of this approach and make \nappropriate decisions that balance missions and specific use cases. For example, an ISM in a \ndata center can contain customer data from multiple customers. When one customer \ndiscontinues service and another begins storing data on the same ISM, the organization may \nchoose to apply partial ISM sanitization, if possible, in order to retain the data of",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0062",
+    "title": "NIST SP 800-88r2 — section 63",
+    "text": "other begins storing data on the same ISM, the organization may \nchoose to apply partial ISM sanitization, if possible, in order to retain the data of other \ncustomers. The organization may also choose to apply partial ISM sanitization because the ISM \nremains in the physical possession of the organization, access by the customer is limited to the \ninterface commands, and the organization has trust in the partial ISM sanitization mechanism \nthat is available for that specific ISM. If the alternative to partial ISM sanitization is not \nperforming sanitization at all, partial ISM sanitization provides benefits that should be \nconsidered.  \n4.3. Storage Sanitization and Disposition Decision Framework \nAn organization may maintain ISM with differing levels of confidentiality, and it is important to \nunderstand what types of data can be stored on the ISM in order to apply the security \ntechniques that best balance efficiency and efficacy to maintain the confidentiality of the data. \nThe data confidentiality level should be identified using the procedures described in FIPS 199 \n[2]. Additionally, SP 800-60r2 [7] describes mapping information types to security categories.\n\nNIST SP 800-88r",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0063",
+    "title": "NIST SP 800-88r2 — section 64",
+    "text": "the procedures described in FIPS 199 \n[2]. Additionally, SP 800-60r2 [7] describes mapping information types to security categories.\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n20 \nWhile most ISM support some form of clear sanitization technique, not all ISM have a reliable \npurge sanitization technique. For moderate sensitivity data, the ISM owner may choose to \naccept the risk of applying clear techniques to the ISM, acknowledging that some data may be \nretrievable by someone with the time, knowledge, equipment, and skills to do so (see IEEE \n2883.1 [22] for additional guidance).  \nPurge sanitization techniques (and clear sanitization techniques, where applicable) may be \nmore appropriate than destroy sanitization techniques when factoring in contractual \nobligations (e.g., lease returns), environmental concerns, the desire to reuse the ISM (either \nwithin the organization or by selling or donating the ISM), the cost of an ISM, or the difficulties \nin physically destroying some types of ISM. The risk decision should include the potential \nconsequences of information disclosure, the cost of information retrieval and its efficacy, the \ncost of sanitizatio",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0064",
+    "title": "NIST SP 800-88r2 — section 65",
+    "text": "ion should include the potential \nconsequences of information disclosure, the cost of information retrieval and its efficacy, the \ncost of sanitization and its efficacy, and how long the data will remain sensitive. These values \ncan vary between different environments.  \nOrganizations can refer to Fig. 1 and the descriptions in this section to make sanitization \ndecisions that are commensurate with the security categorization (i.e., low, medium, and high) \nof the confidentiality of information contained on their media.  \nFig. 1. Sanitization and disposition decision flow \nThe decision process is based on the confidentiality of the information rather than the type of \nmedia. Once the organization decides what type of sanitization is best for their individual case, \nthe media type will influence the technique used to achieve the sanitization goal. \n4.3.1. Information Decisions in the System Life Cycle \nThe need and methods for conducting media sanitization should be identified and developed \nbefore arriving at the disposal phase in the system life cycle. ISM sanitization controls should be \ndeveloped, documented, and deployed when the initial system security plan is developed [12].",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0065",
+    "title": "NIST SP 800-88r2 — section 66",
+    "text": "system life cycle. ISM sanitization controls should be \ndeveloped, documented, and deployed when the initial system security plan is developed [12].\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n21 \nOne of the key decisions that will affect the ability to conduct sanitization is choosing what ISM \nwill be used within the system. Although this is mostly a business decision, system owners must \nunderstand that this decision will affect the types of resources needed for sanitization \nthroughout the entire system life cycle.  \nAn organization can ask an ISM vendor for assistance in identifying components of ISM that \nmay potentially contain sensitive data, which is typically documented in a Statement of \nVolatility (SoV).14\n14 A Statement or Letter of Volatility (SOV/LOV) is a specification issued by device manufacturers. An SOV/LOV generally includes the following \ninformation: 1) list of all volatile and non-volatile memory components or locations, 2) the nature of data stored in the memory, 3) whether the \nmemory is accessible by the user, and 4) how the data can be erased or sanitized. \n An SoV may be used to support decisions about which equipment to purcha",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0066",
+    "title": "NIST SP 800-88r2 — section 67",
+    "text": "y is accessible by the user, and 4) how the data can be erased or sanitized. \n An SoV may be used to support decisions about which equipment to purchase \nbased on the ease or difficulty of sanitization. While volatility statements are useful, caution \nshould be applied when comparing statements across vendors because vendors can state \nvolatility details differently.  \nA list of device-specific characteristics of interest for the application of sanitization techniques is \nincluded in Appendix B. These characteristics can be used to drive the types of questions that \nISM users should ask vendors. Ideally, this information would be made readily available by ISM \nvendors so that it can be easily retrieved by users to facilitate informed, risk-based sanitization \ndecisions. For example, knowing the coercivity of an ISM can help a user decide whether \navailable degaussers can effectively degauss the ISM.  \nOrganizations should take care when identifying ISM for sanitization. Many items used will \ncontain multiple types of ISM that can require different methods of sanitization. For example, a \ndesktop computer can contain a hard drive, motherboard, RAM, and ROM; mobile devices can \nconta",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0067",
+    "title": "NIST SP 800-88r2 — section 68",
+    "text": "ire different methods of sanitization. For example, a \ndesktop computer can contain a hard drive, motherboard, RAM, and ROM; mobile devices can \ncontain on-board volatile memory and non-volatile removable memory.  \nThe increasing availability of rapidly applicable sanitization techniques (e.g., CE) provides \nopportunities for organizations to reduce the risks of inadvertent disclosure by combining \nsanitization technologies and techniques. For example, an organization could choose to apply \nCE at a user’s desktop before sending the ISM to a sanitization facility.  \nWhen an ISM is repurposed or reaches the end of its life, the organization executes the system \nlife cycle sanitization decision for the information on the ISM. Disposal without sanitization \nshould be considered only if information disclosure would have no impact on the organization’s \nmission, would not result in damage to organizational assets, and would not result in financial \nloss or harm to any individuals. For example, a mass-produced commercial software program \ncontained on a DVD in an unopened package is unlikely to contain sensitive data. Therefore, the \ndecision may be made to simply dispose of the ISM witho",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0068",
+    "title": "NIST SP 800-88r2 — section 69",
+    "text": "ntained on a DVD in an unopened package is unlikely to contain sensitive data. Therefore, the \ndecision may be made to simply dispose of the ISM without applying any sanitization \ntechnique. Alternatively, an organization is substantially more likely to decide that a hard drive \nfrom a system that processed PII needs sanitization prior to disposal.  \n4.3.2. Determination of Security Categorization \nEarly in the system life cycle, a system is categorized using the guidance found in FIPS 199 [2], \nSP 800-60r2 [7], or CNSSI 1253 [12], including the security categorization for the system’s \nconfidentiality (i.e., low, medium, and high security categorizations). This security\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n22 \ncategorization is revisited at least every three years (or when significant change occurs within \nthe system) and revalidated throughout the system’s life, and any necessary changes to the \nconfidentiality category can be made. Once the security categorization is completed, the \nsystem owner can then design a sanitization process that will ensure adequate protection of \nthe system’s information.  \nOrganizations may have information th",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0069",
+    "title": "NIST SP 800-88r2 — section 70",
+    "text": "wner can then design a sanitization process that will ensure adequate protection of \nthe system’s information.  \nOrganizations may have information that is not associated with any categorized system. This \ninformation is often hard copy internal communications, such as memoranda, white papers, \nand presentations. This information may sometimes be considered sensitive, such as internal \ndisciplinary letters, financial or salary negotiations, or strategy meeting minutes. Organizations \nshould label these ISM with their internal operating confidentiality levels and associate a type \nof sanitization described in this document.  \n4.3.3. Reuse of Media  \nA key sanitization decision is whether the media (i.e., rarely other than ISM) is planned for \nreuse (e.g., internal transfer, donations, refurbishment). If the media is not intended for reuse \nwithin or outside of an organization due to damage or another reason, the simplest and most \ncost-effective sanitization method can be to destroy the media.  \n4.3.4. Control of Media  \nOrganizational sanitization decisions are influenced by who has control and access to the \nmedia. This aspect must be considered when media leaves organizational co",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0070",
+    "title": "NIST SP 800-88r2 — section 71",
+    "text": "sanitization decisions are influenced by who has control and access to the \nmedia. This aspect must be considered when media leaves organizational control.  \nMedia control can change when an ISM is returned from a leasing agreement, donated, resold \nto be reused outside of the organization, or sent to a recycling facility. For example:  \n• ISM under organizational control \no ISM that are turned over (and securely transported) to a maintenance provider \nmay still be considered to be under organizational control if contractual \nagreements are in place with the organization and the maintenance provider \nthat specifically provides for the confidentiality of the information. \no Maintenance being performed on an organization’s site, under the organization’s \nsupervision, by a maintenance provider is also considered to be under the \ncontrol of the organization. \n• ISM not under organizational control (i.e., external control) \no ISM that are being exchanged for warranty, cost rebates, or other purposes and \nwill not be returned to the organization are considered to be out of \norganizational control.  \nThe examples above do not consider relevant legal, regulatory, or statutory requirements",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0071",
+    "title": "NIST SP 800-88r2 — section 72",
+    "text": "zation are considered to be out of \norganizational control.  \nThe examples above do not consider relevant legal, regulatory, or statutory requirements \nassociated with certain types of sensitive data, which can treat the loss of organizational \ncontrol of ISM that have not been sanitized as a data breach.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n23 \n4.3.5. Data Protection Level  \nVarying data protection policies may be established within an organization. For example, an \norganization can have an engineering department and a sales department, where the sales \npersonnel do not need to access detailed proprietary technical data (e.g., source code, \nschematics), and the engineers do not need to access the PII of the organization’s customers. \nBoth might be within the same confidentiality categorization but are contextually different and \nhave different internal and external rules regarding necessary controls. As such, the data \nprotection level is a complementary consideration to organizational control. When identifying \nwhether sanitization is necessary, both organizational control and the data protection level \nshould be considered.  \n4.3.6. Sanit",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0072",
+    "title": "NIST SP 800-88r2 — section 73",
+    "text": ". When identifying \nwhether sanitization is necessary, both organizational control and the data protection level \nshould be considered.  \n4.3.6. Sanitization and Disposal Decision  \nOnce an organization completes an assessment of its system confidentiality, determines the \nneed for information sanitization, determines appropriate time frames for sanitization, and \ndetermines the types of media used and the media disposition, then an effective, risk-based \ndecision can be made on the appropriate and needed level of sanitization (see IEEE 2883.1 [22] \nfor additional guidance). Again, certain factors and media types might cause the sanitization \nmethod to change.  \nOnce a sanitization decision has been made, the organization should record the decision and \nensure that a process and proper resources are in place to support that decision. The process \nincludes the act of sanitization as well as verification, including decisions, actions, resources, \nand critical interfaces with key officials.  \n4.4. Performing Sanitization  \nAfter the requirement to sanitize media has been established, the sanitization should be \nperformed based on the selected sanitization method (i.e., clear, purge, o",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0073",
+    "title": "NIST SP 800-88r2 — section 74",
+    "text": "irement to sanitize media has been established, the sanitization should be \nperformed based on the selected sanitization method (i.e., clear, purge, or destroy) and in a \nmanner that complies with IEEE 2883 [13].15\n15 The IEEE 2883 series provides additional information about selecting appropriate sanitization methods for use, as well as technology-specific \nsanitization techniques. \n or a standard that is identified as acceptable by \norganizational policy (e.g., NSA/CSS Policy 6-22 [17], NSA/CSS Policy Manual 9-12 [16]). \nDepending on the media type (i.e., hard copy or ISM) and selected sanitization method, there \ncan be multiple sanitization technique options. The option that provides the most \nconfidentiality protection should be used. When the purge sanitization technique of CE is used \nfor an ISM, Sec. 3.2 should be consulted for additional considerations or requirements.  \nAs part of performing the sanitization, certain details will need to be captured, including the \nresults/outcomes of the sanitization (see Sec. 4.5), the information necessary to document the \nsanitization (see Sec. 4.6), and other relevant information.  \nThe proper initial configuration of each ISM helps e",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0074",
+    "title": "NIST SP 800-88r2 — section 75",
+    "text": "rmation necessary to document the \nsanitization (see Sec. 4.6), and other relevant information.  \nThe proper initial configuration of each ISM helps ensure that the sanitization operation is as \neffective as possible. The individuals performing the sanitization are encouraged to check \nmanufacturer recommendations and guides, such as the Defense Information Systems Agency\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n24 \nSecurity (DISA) Security Technical Implementation Guides (STIGs) [21], for additional \ninformation about recommended settings. Sanitization techniques typically play no role in \nconfiguring ISM. A frequent misconception is that a sanitized ISM will resemble a factory-fresh \ndrive (i.e., in a factory default state), but this is often not the case. Additional configuration \nchanges may be necessary before the ISM can be readily reused.  \n4.5. Sanitization Assurance  \nPer ISO/IEC 27040 [15], verifying the adequacy or effectiveness of sanitization outcomes is an \nimportant aspect of a media sanitization program. The results of attempted sanitization \ntechniques are inspected (see Sec. 4.5.1), and a decision on the adequacy of the results",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0075",
+    "title": "NIST SP 800-88r2 — section 76",
+    "text": "sanitization program. The results of attempted sanitization \ntechniques are inspected (see Sec. 4.5.1), and a decision on the adequacy of the results is made \n(see Sec. 4.5.2). These activities are shown as the “Validate” decision point in Fig. 1. If the \noutcomes are expected and appropriate, the sanitization is accepted. If outcomes are not \nacceptable, then sanitization is repeated. Repeated sanitization should recheck the reusability \nof media because a previous sanitization technique may have rendered the media unusable or \ninoperable.  \n4.5.1. Sanitization Verification  \nThe goal of sanitization verification is to determine the outcome of the sanitization technique \nused during the sanitization operation. The sanitization results should be inspected to verify \nthat the sanitization technique was completed successfully.  \nFor destructive sanitization methods applied to either hard copy or ISM, this verification \ninvolves inspecting the remnants of a destruction technique and identifying the equipment \nused with it.  \nFor non-destructive sanitization methods for ISM, verification can be more complex and \ntypically depends on the type of ISM. Clear and logical purge sanitizatio",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0076",
+    "title": "NIST SP 800-88r2 — section 77",
+    "text": "tructive sanitization methods for ISM, verification can be more complex and \ntypically depends on the type of ISM. Clear and logical purge sanitization techniques that \ninvolve tools and systems can be verified by checking the completion status of the tools and \nidentifying errors, anomalies, and the health of the ISM. For physical purge sanitization \ntechniques, the equipment performing the sanitization should be checked to confirm that it \ncompleted its operation successfully. The ISM may not be in a usable state until certain device \nsoftware and configurations are reestablished, so there can be limitations on further \ninspections of the ISM.  \nUnless explicitly required by organizational policy, elaborate sampling of an ISM’s contents \n(e.g., full or representative) after clear or purge sanitization techniques is not necessary. \n4.5.2. Sanitization Validation  \nThe goal of sanitization validation is to ensure that the target data was effectively sanitized. \nSanitization validation results in a decision to either approve the sanitization as being effective \nor reject it, which would require repeating the sanitization method using a different sanitization \ntechnique or escalating",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0077",
+    "title": "NIST SP 800-88r2 — section 78",
+    "text": "zation as being effective \nor reject it, which would require repeating the sanitization method using a different sanitization \ntechnique or escalating to a more secure sanitization method.\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n25 \nThe results of the sanitization verification are considered (see Sec. 4.5.1). Any identified errors, \nanomalies, or other issues should be analyzed, and risks to data confidentiality should be \nassessed. Unacceptable data confidentiality risks associated with the sanitization operation \nshould result in the sanitization not being accepted (i.e., rejected) as sufficient to ensure the \nconfidentiality of sensitive data (i.e., an additional sanitization method is needed).  \nThe effectiveness of the sanitization may be called into question by several other \nconsiderations, including:  \n•\nThe ISM may appear fully functional, but some portion of the ISM may no longer be\naccessible through the ISM’s interface due to errors or performance conditions.\n•\nThe selected sanitization method and/or technique is not appropriate for the media or\nthe security category of the information. For example, a sanitization operation that\ndegausses a",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0078",
+    "title": "NIST SP 800-88r2 — section 79",
+    "text": "and/or technique is not appropriate for the media or\nthe security category of the information. For example, a sanitization operation that\ndegausses an SSD can complete successfully, but no sensitive data is sanitized.\n•\nThe sanitization may have been performed by unqualified personnel, or the tools and/or\nequipment used were not approved and/or were improperly calibrated.\n•\nThe outcome does not meet minimum requirements. For example, a shredder is used\non an optical disc and results in pieces that are 50 % larger than what is acceptable to\nthe organization. The sanitization technique completed successfully but is not\nconsidered effective.\n•\nThe scope of the sanitization (i.e., target data) was too narrowly focused. For example,\nan ISM that employs overprovisioning is sanitized using clear sanitization technique\nbased on simple writes to overwrite existing contents and potentially leaves a\nsubstantial amount of user data unchanged.\nThe validation process considers the sanitization outcomes and the sensitivity of the target data \nand decides (shown as “Validate” in Fig. 1) whether the target data has been sanitized to an \nacceptable level (i.e., the organization accepts any residual",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0079",
+    "title": "NIST SP 800-88r2 — section 80",
+    "text": "ecides (shown as “Validate” in Fig. 1) whether the target data has been sanitized to an \nacceptable level (i.e., the organization accepts any residual risks). In other words, the level of \neffort that is necessary to potentially gain access to the data after the sanitization operation is \ndeemed sufficient to ensure the confidentiality of the data.  \n4.6. Documentation \nFollowing sanitization, a certificate of sanitization (see Appendix C) should be completed for \neach ISM that has been sanitized, per the organization’s policies. A certification of sanitization \nmay be a physical (e.g., piece of paper) or electronic record of the action taken. For example, \nsome ISM include bar codes on the label for the model and serial numbers, so the person \nperforming the sanitization might simply enter the details into a tracking application and scan \neach bar code as the ISM is sanitized. Automatic documentation can be important as some \nsystems make physical access to the ISM very difficult.  \nWhen fully completed, the certificate should record at least the following details: \n•\nManufacturer\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n26 \n• Model \n• Serial n",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0080",
+    "title": "NIST SP 800-88r2 — section 81",
+    "text": "at least the following details: \n•\nManufacturer\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n26 \n• Model \n• Serial number \n• Organizationally assigned media or property number (if applicable) \n• Media type (i.e., hard copy or ISM) \n• Media source (e.g., user, computer) \n• Pre-sanitization confidentiality categorization (optional) \n• Sanitization method (i.e., clear, purge, destroy) \n• Sanitization technique (e.g., degauss, overwrite, block erase, CE) \n• Tool used, including version \n• Verification method  \n• Information of individuals performing verification and validation: \no Name of person \no Position/title of person \no Date \no Location \no Contact information (e.g., phone number) \no Signature  \nIf the ISM has been successfully validated (see Sec. 4.5) and the sanitization results in a lower \nconfidentiality level for the ISM, all markings on the ISM that indicate the previous \nconfidentiality level should be removed.  \nThe value of a certification of media disposition depends on the organization’s handling of ISM \nover the ISM’s life cycle. The organization can most effectively identify how well ISM \nsanitization is being applied across the enter",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0081",
+    "title": "NIST SP 800-88r2 — section 82",
+    "text": "andling of ISM \nover the ISM’s life cycle. The organization can most effectively identify how well ISM \nsanitization is being applied across the enterprise if records are maintained when the ISM is \nintroduced to the environment, when it leaves the place where it was last used, and when it \nreaches the post-sanitization destination. If there is a breakdown in tracking at locations other \nthan the post-sanitization destination, sanitization records will only show that specific ISM were \nsanitized and not whether the organization is effectively sanitizing all ISM that have been \nintroduced into the operating environment.  \n4.7. Roles and Responsibilities  \nA successful media sanitization program depends on the sustained efforts and oversight of \nmany individuals, and this section describes example roles and responsibilities. These roles \nfocus on assuring programmatic success as opposed to operational responsibilities, which are \nnot addressed.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n27 \n4.7.1. Program Managers/Agency Heads  \nProgram managers are responsible for establishing an effective information security \ngovernance structure, including the o",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0082",
+    "title": "NIST SP 800-88r2 — section 83",
+    "text": "ram Managers/Agency Heads  \nProgram managers are responsible for establishing an effective information security \ngovernance structure, including the organization’s computer security program and its overall \ngoals, objectives, and priorities. Agency heads are responsible for providing adequate resources \nto the program to ensure its success. Allocated resources should correctly identify the types \nand locations of information.  \n4.7.2. Chief Information Officer (CIO)  \nThe CIO16\n16 Per the Information Technology Management Reform Act of 1996 (“Clinger-Cohen Act”; P.L. 104-106 (Division E) 10 Feb. 1996), when an \nagency has not designated a formal CIO position, FISMA requires the associated responsibilities to be handled by a comparable agency official. \n is responsible for promulgating the information security policy, which includes \ninformation disposition and media sanitization. As the information custodian, the CIO ensures \nthat organizational and/or local sanitization requirements follow the guidelines in this \ndocument. \n4.7.3. Information System Owner  \nThe information system owner17\n17 The role of the information system owner can be interpreted in a variety of ways depending",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0083",
+    "title": "NIST SP 800-88r2 — section 84",
+    "text": "formation System Owner  \nThe information system owner17\n17 The role of the information system owner can be interpreted in a variety of ways depending on the particular agency and the system \ndevelopment life cycle phase of the information system. Some agencies may refer to information system owners as “program managers” or \n“business/asset/mission owners.” \n is responsible for ensuring that maintenance or contractual \nagreements are in place and sufficiently protect the confidentiality of the system ISM and \ninformation commensurate with the impact of disclosure.  \n4.7.4. Information Owner/Steward  \nThe information owner is responsible for ensuring the appropriate supervision of on-site ISM \nmaintenance by service providers. The information owner should fully understand the \nsensitivity of the information under their control, its confidentiality, and the basic requirements \nfor media sanitization.  \n4.7.5. Senior Agency Information Security Officer (SAISO)  \nThe SAISO is responsible for ensuring that the requirements of the information security policy \nwith regard to information disposition and media sanitization are implemented and exercised in \na timely and appropriate manner thr",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0084",
+    "title": "NIST SP 800-88r2 — section 85",
+    "text": "n security policy \nwith regard to information disposition and media sanitization are implemented and exercised in \na timely and appropriate manner throughout the organization. The SAISO also requires access \nto the technical basis/personnel to understand and properly implement the sanitization \nprocedures.  \n4.7.6. System Security Manager/Officer  \nThe system security manager/office often is responsible for day-to-day security implementation \nand administration. Although not normally part of the computer security program management\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n28 \noffice, this person is responsible for coordinating the security efforts of particular systems. This \nrole is sometimes referred to as the Computer System Security Officer or the Information \nSystem Security Officer.  \n4.7.7. Property Management Officer  \nThe property management officer is responsible for identifying and tracking sanitized ISM that \nare redistributed within the organization, donated to external entities, or destroyed.  \n4.7.8. Records Management Officer  \nThe records management officer is responsible for advising the system and/or data owner or \ncustodian o",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0085",
+    "title": "NIST SP 800-88r2 — section 86",
+    "text": "stroyed.  \n4.7.8. Records Management Officer  \nThe records management officer is responsible for advising the system and/or data owner or \ncustodian of retention requirements so that the sanitization of media will not destroy records \nthat should be preserved.  \n4.7.9. Privacy Officer  \nThe privacy officer is responsible for providing advice on issues surrounding the disposition of \nprivacy information and the media upon which it is recorded.  \n4.7.10. Users  \nUsers are responsible for knowing and understanding the confidentiality of the information \nthey are using to accomplish their assigned work and ensure proper handling of information.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n29 \nReferences \n[1] \nNational Institute of Standards and Technology (2019) Security Requirements for \nCryptographic Modules. (Department of Commerce, Washington, D.C.), Federal \nInformation Processing Standards Publications (FIPS) NIST FIPS 140-3. \nhttps://doi.org/10.6028/NIST.FIPS.140-3  \n[2] \nNational Institute of Standards and Technology (2004) Standards for Security \nCategorization of Federal Information and Information Systems. (Department of \nCommerce, Washington",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0086",
+    "title": "NIST SP 800-88r2 — section 87",
+    "text": "ards and Technology (2004) Standards for Security \nCategorization of Federal Information and Information Systems. (Department of \nCommerce, Washington, D.C.), Federal Information Processing Standards Publications \n(FIPS) NIST FIPS 199. https://doi.org/10.6028/NIST.FIPS.199  \n[3] \nNational Institute of Standards and Technology (2006) Minimum Security Requirements \nfor Federal Information and Information Systems. (Department of Commerce, \nWashington, D.C.), Federal Information Processing Standards Publications (FIPS) NIST \nFIPS 200. https://doi.org/10.6028/NIST.FIPS.200    \n[4] \nDworkin M (2010) Recommendation for Block Cipher Modes of Operation: Methods and \nTechniques. (National Institute of Standards and Technology, Gaithersburg, MD), NIST \nSpecial Publication (SP) NIST SP 800-38A. https://doi.org/10.6028/NIST.SP.800-38A  \n[5] \nJoint Task Force (2020) Security and Privacy Controls for Information Systems and \nOrganizations. (National Institute of Standards and Technology, Gaithersburg, MD), NIST \nSpecial Publication (SP) NIST SP 800-53r5. Includes updates as of December 10, 2020. \nhttps://doi.org/10.6028/NIST.SP.800-53r5  \n[6] \nJoint Task Force (2022) Assessing Security and Privac",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0087",
+    "title": "NIST SP 800-88r2 — section 88",
+    "text": "53r5. Includes updates as of December 10, 2020. \nhttps://doi.org/10.6028/NIST.SP.800-53r5  \n[6] \nJoint Task Force (2022) Assessing Security and Privacy Controls in Information Systems \nand Organizations. (National Institute of Standards and Technology, Gaithersburg, MD), \nNIST Special Publication (SP) NIST SP 800-53Ar5. https://doi.org/10.6028/NIST.SP.800-\n53Ar5   \n[7] \nJoint Task Force (2024) Guide for Mapping Types of Information and Systems to Security \nCategories. (National Institute of Standards and Technology, Gaithersburg, MD), NIST \nSpecial Publication (SP) NIST SP 800-60r2 iwd. https://doi.org/10.6028/NIST.SP.800-\n60r2.iwd \n[8] \nRoss R, Winstead M, McEvilley M (2022) Engineering Trustworthy Secure Systems. \n(National Institute of Standards and Technology, Gaithersburg, MD), NIST Special \nPublication (SP) NIST SP 800-160v1r1. https://doi.org/10.6028/NIST.SP.800-160v1r1  \n[9] \nBarker E, Kelsey J (2015) Recommendation for Random Number Generation Using \nDeterministic Random Bit Generators. (National Institute of Standards and Technology, \nGaithersburg, MD), NIST Special Publication (SP) NIST SP 800-90Ar1. \nhttps://doi.org/10.6028/NIST.SP.800-90Ar1  \n[10] \nScarfone K, Souppaya",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0088",
+    "title": "NIST SP 800-88r2 — section 89",
+    "text": "chnology, \nGaithersburg, MD), NIST Special Publication (SP) NIST SP 800-90Ar1. \nhttps://doi.org/10.6028/NIST.SP.800-90Ar1  \n[10] \nScarfone K, Souppaya M, Sexton M (2007) Guide to Storage Encryption Technologies for \nEnd User Devices. (National Institute of Standards and Technology, Gaithersburg, MD), \nNIST Special Publication (SP) NIST SP 800-111. https://doi.org/10.6028/NIST.SP.800-111  \n[11] \nMcCallister E, Grance T, Scarfone K (2010) Guide to Protecting the Confidentiality of \nPersonally Identifiable Information (PII). (National Institute of Standards and \nTechnology, Gaithersburg, MD), NIST Special Publication (SP) NIST SP 800-122. \nhttps://doi.org/10.6028/NIST.SP.800-122\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n30 \n[12]\nCommittee on National Security Systems (CNSS) Instruction 1253, Security\nCategorization and Control Selection for National Security Systems, August 1, 2022.\nAvailable at https://www.cnss.gov/CNSS/issuances/Instructions.cfm\n[13]\nIEEE Standards Association IEEE 2883 – IEEE Standard for Sanitizing Storage (IEEE\nStandards Association, Piscataway, New Jersey). Available at\nhttps://standards.ieee.org/ieee/2883/10277/\n[14]\nInternational Or",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0089",
+    "title": "NIST SP 800-88r2 — section 90",
+    "text": "anitizing Storage (IEEE\nStandards Association, Piscataway, New Jersey). Available at\nhttps://standards.ieee.org/ieee/2883/10277/\n[14]\nInternational Organization for Standardization/International Electrotechnical\nCommission (2025) ISO/IEC 19790:2025 – Information security, cybersecurity and privacy\nprotection – Security requirements for cryptographic modules (ISO, Geneva,\nSwitzerland). Available at https://www.iso.org/standard/82423.html\n[15]\nInternational Organization for Standardization/International Electrotechnical\nCommission ISO/IEC 27040 – Information technology — Security techniques — Storage\nsecurity (ISO, Geneva, Switzerland). Available at\nhttps://www.iso.org/standard/80194.html\n[16]\nNational Security Agency/Central Security Service (2020) NSA/CSS Storage Device\nSanitization and Destruction Manual. NSA/CSS Policy Manual 9-12, December 4, 2020.\nAvailable at https://www.nsa.gov/Helpful-Links/NSA-FOIA/Declassification-\nTransparency-Initiatives/NSA-CSS-Policies/\n[17]\nNational Security Agency/Central Security Service (2019) Handling of NSA/CSS\nInformation Storage Media. NSA/CSS Policy 6-22, November 21, 2019. Available at\nhttps://www.nsa.gov/Helpful-Links/NSA-FOIA/Declassificati",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0090",
+    "title": "NIST SP 800-88r2 — section 91",
+    "text": "g of NSA/CSS\nInformation Storage Media. NSA/CSS Policy 6-22, November 21, 2019. Available at\nhttps://www.nsa.gov/Helpful-Links/NSA-FOIA/Declassification-Transparency-\nInitiatives/NSA-CSS-Policies/#handling-sanitization-of-storage-media\n[18]\nNSA/CSS (2021) Requirements for Magnetic Degaussers. Available at\nhttps://www.nsa.gov/portals/75/documents/resources/everyone/media-\ndestruction/NSA_CSS%20Requirements%20for%20Magnetic%20Degaussers.pdf\n[19]\nNational Security Agency/Central Security Service (2025) NSA Evaluated Products Lists\n(EPLs). Available at https://www.nsa.gov/Resources/Media-Destruction-Guidance/NSA-\nEvaluated-Products-Lists-EPLs/\n[20]\n“Chapter 33 – Disposal of Records,” Title 44 U.S. Code, Sec. 3301. 2018. Available at\nhttps://www.gpo.gov/\n[21]\nDefense Information Systems Agency Security (DISA) Security Technical Implementation\nGuides (STIGs). Available at\nhttps://public.cyber.mil/stigs/\n[22]\nIEEE Standards Association (2022) IEEE 2883.1– IEEE Recommended Practice for Use of\nStorage Sanitization Methods (IEEE Standards Association, Piscataway, New Jersey).\nAvailable at https://standards.ieee.org/ieee/2883.1/11015/\n[23]\nTuran M, Barker E (2018) Recommendation for the Entro",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0091",
+    "title": "NIST SP 800-88r2 — section 92",
+    "text": "iation, Piscataway, New Jersey).\nAvailable at https://standards.ieee.org/ieee/2883.1/11015/\n[23]\nTuran M, Barker E (2018) Recommendation for the Entropy Sources Used for Random\nBit Generation. (National Institute of Standards and Technology, Gaithersburg, MD),\nNIST Special Publication (SP) NIST SP 800-90B. https://doi.org/10.6028/NIST.SP.800-90B\n[24]\nBarker E, Kelsey J (2025) Recommendation for Random Bit Generator (RBG)\nConstructions. (National Institute of Standards and Technology, Gaithersburg, MD), NIST\nSpecial Publication (SP) NIST SP 800-90C. https://doi.org/10.6028/NIST.SP.800-90C\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n31 \n[25] \nBarker E, Roginsky A (2020) Recommendation for Cryptographic Key Generation. \n(National Institute of Standards and Technology, Gaithersburg, MD), NIST Special \nPublication (SP) NIST SP 800-133r2. https://doi.org/10.6028/NIST.SP.800-133r2  \n[26] \nDworkin M (2012) Recommendation for Block Cipher Modes of Operation: Methods for \nKey Wrapping. (National Institute of Standards and Technology, Gaithersburg, MD), NIST \nSpecial Publication (SP) NIST SP 800-38F. https://doi.org/10.6028/NIST.SP.800-38F  \n[27] \nDworkin M (",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0092",
+    "title": "NIST SP 800-88r2 — section 93",
+    "text": "andards and Technology, Gaithersburg, MD), NIST \nSpecial Publication (SP) NIST SP 800-38F. https://doi.org/10.6028/NIST.SP.800-38F  \n[27] \nDworkin M (2010) Recommendation for Block Cipher Modes of Operation: the XTS-AES \nMode for Confidentiality on Storage Devices. (National Institute of Standards and \nTechnology, Gaithersburg, MD), NIST Special Publication (SP) NIST SP 800-38E. \nhttps://doi.org/10.6028/NIST.SP.800-38E  \n[28] \nChen L (2022) Recommendation for Key Derivation Using Pseudorandom Functions. \n(National Institute of Standards and Technology, Gaithersburg, MD), NIST Special \nPublication (SP) NIST SP 800-108r1. https://doi.org/10.6028/NIST.SP.800-108r1-upd1 \n[29] \nBarker E, Roginsky A (2019) Transitioning the Use of Cryptographic Algorithms and Key \nLengths. (National Institute of Standards and Technology, Gaithersburg, MD), NIST \nSpecial Publication (SP) NIST SP 800-131Ar2. https://doi.org/10.6028/NIST.SP.800-\n131Ar2  \n[30] \nNational Institute of Standards and Technology (2001) Advanced Encryption Standard \n(AES). (Department of Commerce, Washington, D.C.), Federal Information Processing \nStandards Publications (FIPS) NIST FIPS 197-upd1, updated May 9, 2023. \nhttps://doi.",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0093",
+    "title": "NIST SP 800-88r2 — section 94",
+    "text": "t of Commerce, Washington, D.C.), Federal Information Processing \nStandards Publications (FIPS) NIST FIPS 197-upd1, updated May 9, 2023. \nhttps://doi.org/10.6028/NIST.FIPS.197-upd1  \n[31] \nBarker E (2020) Recommendation for Key Management: Part 1 – General. (National \nInstitute of Standards and Technology, Gaithersburg, MD), NIST Special Publication (SP) \nNIST SP 800-57pt1r5. https://doi.org/10.6028/NIST.SP.800-57pt1r5  \n[32] \nInternational Organization for Standardization/International Electrotechnical \nCommission ISO/IEC 24759:2025 – Information security, cybersecurity and privacy \nprotection — Test requirements for cryptographic modules (ISO, Geneva, Switzerland). \nAvailable at https://www.iso.org/standard/82424.html\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n32 \nAppendix A. Glossary \nbend \nThe use of a mechanical process to alter the physical shape of the storage media and make reading the media \ndifficult or infeasible using state-of-the-art laboratory techniques. \nclear \nA method of sanitization that applies logical techniques to sanitize data in all user-addressable storage locations \nfor protection against simple, non-invasive data recover",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0094",
+    "title": "NIST SP 800-88r2 — section 95",
+    "text": "n that applies logical techniques to sanitize data in all user-addressable storage locations \nfor protection against simple, non-invasive data recovery techniques using the same interface that is available to \nthe user. Typically applied through the standard read and write commands to the storage device, such as by \nrewriting with a new value or using a menu option to reset the device to the factory state, where rewriting is not \nsupported. \ncoercivity \nA measure of the ability of a ferromagnetic material to withstand an external magnetic field without becoming \ndemagnetized. \ncryptographic erase (CE) \nA purge sanitization technique in which key sanitization is applied to one or more keys providing confidentiality \nprotections for the encrypted target data, making recovery of the decrypted target data infeasible. \ncut/cutting \nThe use of a tool or physical technique to break the surface of electronic storage media, potentially breaking the \nmedia into two or more pieces and making it difficult or infeasible to recover the data using state-of-the-art \nlaboratory techniques. \ndata \nA representation of information, including digital and non-digital formats, from which understandable i",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0095",
+    "title": "NIST SP 800-88r2 — section 96",
+    "text": "tate-of-the-art \nlaboratory techniques. \ndata \nA representation of information, including digital and non-digital formats, from which understandable information \nis derived. \ndegauss \nTo reduce the magnetic flux to virtual zero by applying a reverse magnetizing field that is matched to the ISM \ncoercivity.  \ndestroy \nA method of sanitization that renders target data recovery infeasible using state-of-the-art laboratory techniques \nand results in the subsequent inability to use the media to store data. \ndisintegration/disintegrate \nA physically destructive method of sanitizing media. The act of separating into component parts. \ndisposal \nA release outcome following the decision that media does not contain sensitive data. This occurs if the media \nnever contained sensitive data or after sanitization techniques are applied and the media no longer contains \nsensitive data. \nelectronic media \nMedia on which data is recorded via an electrically based process. \nhard disk \nA rigid magnetic disk that is permanently fixed within a drive unit and used to store data. It could also be a \nremovable cartridge that contains one or more magnetic disks. \nincineration/incinerate \nA physically destruc",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0096",
+    "title": "NIST SP 800-88r2 — section 97",
+    "text": "d used to store data. It could also be a \nremovable cartridge that contains one or more magnetic disks. \nincineration/incinerate \nA physically destructive method of sanitizing media. The act of burning completely to ashes.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n33 \ninfeasible \nInfeasible acknowledges the possibility of data recovery with future, more advanced technology. It simply means \nthat, for a given level of effort and using current \"state of the art\" techniques, recovery cannot be done. \ninformation \nA meaningful expression of data. \nkey-encryption key (KEK) \nA cryptographic key that is used for the encryption or decryption of other keys to provide confidentiality \nprotection for those keys. Also known as a key-wrapping key. \nkey sanitization \nA technique for zeroization (e.g., overwriting with all zeros, all ones, or random data) of the target cryptographic \nkeys. \nmagnetic media \nA class of storage device that only uses magnetic storage media for persistent storage. \nmedia sanitization \nThe actions taken to render data written on media unrecoverable by both logical and state-of-the-art laboratory \ntechniques. \nmedium/media \nMaterial o",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0097",
+    "title": "NIST SP 800-88r2 — section 98",
+    "text": "The actions taken to render data written on media unrecoverable by both logical and state-of-the-art laboratory \ntechniques. \nmedium/media \nMaterial on which data may be recorded, such as paper, punched cards, film, magnetic tape, magnetic disks, solid \nstate devices, or optical discs. \nmelting/melt \nA physically destructive method of sanitizing media. To be changed from a solid to liquid state, generally through \nthe application of heat. \noptical disk \nA plastic disk that is read using an optical laser device. \noverwrite \nWriting data on top of the physical location of data stored on the media. \nPersonally identifiable information (PII) \nAny data that can be used to distinguish or trace an individual's identity, either alone or in combination with other \ninformation. \npulverization/pulverize \nA physically destructive method of sanitizing media. The act of grinding to a powder or dust. \npurge \nA method of sanitization that applies physical or logical techniques to render target data recovery infeasible using \nstate-of-the-art laboratory techniques. \nread \nA fundamental process in an information system that only results in the flow of information from ISM to a \nrequester. \nread-only",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0098",
+    "title": "NIST SP 800-88r2 — section 99",
+    "text": "ry techniques. \nread \nA fundamental process in an information system that only results in the flow of information from ISM to a \nrequester. \nread-only memory (ROM) \nA pre-recorded ISM that can only be read from and not written to. \nrecord \nTo write data on an ISM, such as a magnetic tape, magnetic disk, or optical disk.\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n34 \nsanitization \nA process or method to sanitize. \nsanitization method \nActions that can be taken to sanitize media, such as clear, purge, and destroy. \nsanitization technique \nA technology-specific approach associated with a sanitization method that can be used to sanitize a specific type of \nmedia. \nsanitize \nTo render access to target data on the media infeasible for a given level of effort. \nsecurity strength \nThe amount of computational work required to break a cryptographic algorithm or system, often measured in bits. \nshred \nA method of sanitizing media. The act of cutting or tearing into small particles. \nsolid-state drive (SSD) \nA storage device that uses solid-state memory to store persistent data. \nstorage \nThe retrievable retention of data. Electronic, electrostatic, or electr",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0099",
+    "title": "NIST SP 800-88r2 — section 100",
+    "text": "torage device that uses solid-state memory to store persistent data. \nstorage \nThe retrievable retention of data. Electronic, electrostatic, or electrical hardware or other elements onto which \ndata may be entered and from which data may be retrieved. \ntarget data \nThe stored, sensitive data to be protected with confidentiality measures, such as encryption and sanitization. \nvalidation \nThe process of determining whether a sanitization operation effectively sanitized the target data, resulting in a \ndecision to either approve the sanitization as being effective or reject it, which requires repeating the sanitization \nmethod using a different sanitization technique or escalating to a more secure sanitization method. \nverification \nThe process of inspecting the outcomes of a sanitization technique to determine whether it completed \nsuccessfully. \nwrite \nA fundamental operation of an information system that only results in the flow of information from an actor to \nstorage media.\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n35 \nAppendix B. Device-Specific Characteristics of Interest \nISM vendors implement a range of ISM types that can leverage the same standard",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0100",
+    "title": "NIST SP 800-88r2 — section 101",
+    "text": "mber 2025 \n35 \nAppendix B. Device-Specific Characteristics of Interest \nISM vendors implement a range of ISM types that can leverage the same standardized interface \ncommand sets. This can be useful when an organization has deployed drives from multiple \nvendors because it may be possible to use the same sanitization commands for specific \ninterfaces without regard to the vendor. There may also be the same or similar commands \nacross different interface types, but no assumptions should be made as to the functionality of \nthese commands (i.e., the commands on two different interfaces may be the same, but they \ncould perform very different sanitization operations). It is also important to verify the \nfunctionality of commands as the command name might imply a certain capability but not \nactually meet minimum requirements for the sanitization method. Some ISM vendors may have \nimplementations that apply sanitization techniques, such as CE or block erase (for flash memory \ndevices). It may be difficult or impossible for users to know for sure how the sanitization action \nis being implemented.  \nIn order to support informed decision-making by users, ISM vendors should be asked to provid",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0101",
+    "title": "NIST SP 800-88r2 — section 102",
+    "text": "sure how the sanitization action \nis being implemented.  \nIn order to support informed decision-making by users, ISM vendors should be asked to provide \ninformation about how a specific device implements any dedicated sanitize commands \nsupported by the device as well as compliance with standards such as IEEE 2883 [13]. This \ninformation also helps purchasing authorities make informed decisions about which storage \ndevices to acquire based on the availability of suitable sanitization functions and approaches. \nThis vendor-reported information should address the following:  \n•\nMedia type (e.g., legacy/conventional magnetic recording, heat-assisted magnetic\nrecording, magnetic shingle, flash memory, hybrid)\no\nCoercivity of any magnetic media to support an informed decision about\nwhether to attempt to degauss the media\n•\nAny supported sanitize commands and the following for each:\no\nA list of any areas that are not addressed by the sanitization command\no\nThe estimated time necessary for the command to successfully complete\no\nThe results of any validation testing, if applicable\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n36 \nAppendix C. Sample “Certific",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0102",
+    "title": "NIST SP 800-88r2 — section 103",
+    "text": "f any validation testing, if applicable\n\nNIST SP 800-88r2  \n \nGuidelines for Media Sanitization \nSeptember 2025 \n \n  \n36 \nAppendix C. Sample “Certificate of Sanitization” Form \nThis example certificate demonstrates the types of information that should be collected and \nhow a certificate might be formatted. An organization could alternatively choose to \nelectronically record sanitization details through a native application or by using a form with an \nautomated data transfer utility (e.g., a PDF form with a button to send the data to a database or \nemail address). If the records need to be referenced in the future, electronic records will likely \nprovide the fastest search capabilities and the best likelihood of being reliably retained.\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n37 \nFig. 2. Certificate of sanitization \nName: \nTitle: \nOrganization: \nLocation \nPhone: \nEmail: \nVendor/Make: \nMedia Type: \nModel Number: \nSerial Number: \nProperty Number: \nSource: \nClassification: \nOperational/Damaged: \nSanitization Method:     □Clear □Purge □Destroy\nSanitization Technique: \nTools Used (include version): \nVerification/Status:     \nValidation:     \nNotes:     \n□Int",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0103",
+    "title": "NIST SP 800-88r2 — section 104",
+    "text": "Method:     □Clear □Purge □Destroy\nSanitization Technique: \nTools Used (include version): \nVerification/Status:     \nValidation:     \nNotes:     \n□Internal Reuse □External Reuse □Recycling Facility □Manufacturer □Other (Specify)\nDetails:     \nI attest that the information provided on this statement is accurate to the best of my knowledge.     \nSignature: \nDate: \nName: \nTitle: \nOrganization: \nLocation \nPhone: \nEmail: \nSignature: \nDate: \nCERTIFICATE OF SANITIZATION \nPERSON PERFORMING SANITIZATION \nMEDIA INFORMATION \nSANITIZATION DETAILS \nMEDIA DESTINATION/DISPOSITION \nSIGNATURE \nConcurrence\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n38 \nAppendix D. Change Log \nThis document revises SP 800-88r1 (2014) as follows: \n•\nApart from CE, which is commonly used across all encrypted media, all sanitization\ntechnique and tool details have been replaced with recommendations to comply with\nIEEE 2883, NSA specifications, or an organizationally approved standard.\n•\nThe document’s focus has shifted from providing guidelines for hands-on sanitization\ndecisions to maintaining confidentiality of sensitive information by establishing an\nagency or enterprise media sanitization",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0104",
+    "title": "NIST SP 800-88r2 — section 105",
+    "text": "or hands-on sanitization\ndecisions to maintaining confidentiality of sensitive information by establishing an\nagency or enterprise media sanitization program as part of media disposal or reuse.\n•\nThe term information storage media (ISM) replaces electronic (i.e., “soft copy”) media in\nthe document to accommodate logical storage (e.g., cloud storage) and other types of\nmedia (e.g., DNA, ceramic, glass-based).\n•\nDocuments that were previously referenced in footnotes have been moved to the new\n“References” section and updated to refer to the latest revision. The Bibliography\nsection was eliminated as many documents listed there were obsolete, and the\ndocuments referenced in the body of the text are now included in the “References”\nsection.\n•\nAppendices (Appendix A and C) that described media-specific sanitization techniques\nand tools were removed to improve the document’s longevity. Sections that described\ntrends in storage media (e.g., old Sec. 2.3) were also removed.\n•\nThe new sanitization process figure has an initial decision point focused on reusing\nmedia.\n•\nAlmost all “verification” language has been removed. Full/representative sampling is\nstated as not being needed unless requ",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0105",
+    "title": "NIST SP 800-88r2 — section 106",
+    "text": "ocused on reusing\nmedia.\n•\nAlmost all “verification” language has been removed. Full/representative sampling is\nstated as not being needed unless required by the organization.\n•\nSanitization validation is described and focuses on checks (e.g., errors, anomalies, and\nother issues) to see whether the attempted sanitization was effective from a\nconfidentiality and sensitivity perspective.\n•\nThe “clear” method was clarified such that multi-pass overwrite is not needed. This\ncounters the obsolete DoD 5220.22-M language that mandates a certain number of\noverwrite passes and patterns.\n•\nLaboratory attacks have been described.\n•\nLogical versus physical sanitization techniques have been described.\n•\nGuidance for degaussing as a physical purge sanitization technique has been updated to\nlimit its applicability and clarifies that it does not currently constitute a destroy\nsanitization technique, even when it renders an ISM inoperable.\n•\nFor CE, the material was rewritten to consolidate and focus the content; Appendix D\nwas integrated into the main body of the text.\n•\nFor CE, key sanitization has been defined to be based on ISO/IEC 19790 zeroization.\n\nNIST SP 800-88r2 \nGuidelines for Media Sani",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0106",
+    "title": "NIST SP 800-88r2 — section 107",
+    "text": "n body of the text.\n•\nFor CE, key sanitization has been defined to be based on ISO/IEC 19790 zeroization.\n\nNIST SP 800-88r2 \nGuidelines for Media Sanitization \nSeptember 2025 \n39 \n•\nFor CE, the acceptable key types have been updated to include symmetric data-\nencryption keys, symmetric key-wrapping keys, symmetric master keys or key-derivation\nkeys, and private key-transport keys as described by NIST SP 800-57 Part 1.\n•\nFor CE, there is now clarification regarding when the use of externally managed keys is\npotentially acceptable.\n•\nThe issue of trusting the vendor’s implementation of sanitization techniques for clear\nand purge has been addressed.\n•\nFor a media sanitization program, the concept of sanitization assurance is introduced to\nverify the adequacy or effectiveness of sanitization outcomes. This sanitization\nassurance encompasses sanitization verification (determines the outcome of the\nsanitization technique used during the sanitization operation) as well as sanitization\nvalidation (decision process to either approve the sanitization as being effective or\nreject it).\n•\nThe sample “Certificate of Sanitization” form in Appendix C was updated.\n•\nAll content has been reformatted",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  },
+  {
+    "clause_id": "chunk-0107",
+    "title": "NIST SP 800-88r2 — section 108",
+    "text": "zation as being effective or\nreject it).\n•\nThe sample “Certificate of Sanitization” form in Appendix C was updated.\n•\nAll content has been reformatted to follow the latest NIST technical report template.",
+    "standard": "NIST SP 800-88r2",
+    "language": "en",
+    "source_file": "NIST.SP.800-88r2.pdf"
+  }
+]

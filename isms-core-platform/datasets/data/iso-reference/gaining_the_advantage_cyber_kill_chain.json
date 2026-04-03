@@ -1,0 +1,98 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "Lockheed Martin Cyber Kill Chain — section 1",
+    "text": "G A I N I N G  T H E  A D V A N T A G E\nApplying Cyber Kill Chain® Methodology to Network Defense\n\nTHE MODERN DAY ATTACKER\nCyberattacks aren’t new, but the stakes at every level are higher than ever. Adversaries are more \nsophisticated, well-resourced, trained, and adept at launching skillfully planned intrusion campaigns called \nAdvanced Persistent Threats (APT). Our nation’s security and prosperity depend on critical infrastructure. \nProtecting these assets requires a clear understanding of our adversaries, their motivations and strategies.\n Adversaries are intent on the compromise and extraction of data for economic, political \nand national security advancement. Even worse, adversaries have demonstrated \ntheir willingness to conduct destructive attacks. Their tools and techniques have the \nability to defeat most common computer network defense mechanisms.\nSOPHISTICATED\nWELL-RESOURCED\nMOTIVATED\n\nTHE LOCKHEED MARTIN CYBER KILL CHAIN ®\nThe Cyber Kill Chain® framework is part of the Intelligence Driven \nDefense® model for the identification and prevention of cyber \nintrusions activity. The model identifies what the adversaries \nmust complete in order to achieve their objective.\nStop",
+    "standard": "Lockheed Martin Cyber Kill Chain",
+    "language": "en",
+    "source_file": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "Lockheed Martin Cyber Kill Chain — section 2",
+    "text": "ation and prevention of cyber \nintrusions activity. The model identifies what the adversaries \nmust complete in order to achieve their objective.\nStopping adversaries at any stage breaks the chain of attack! Adversaries \nmust completely progress through all phases for success; this puts \nthe odds in our favor as we only need to block them at any given one \nfor success. Every intrusion is a chance to understand more about \nour adversaries and use their persistence to our advantage. \nThe kill chain model is designed in seven steps:\nf\nf Defender’s goal: understand the aggressor’s actions\nf\nf Understanding is Intelligence\nf\nf Intruder succeeds if, and only if, they can proceed through steps \n1-6 and reach the final stage of the Cyber Kill Chain®.\n1\n2\n3\n4\n5\n6\n7\n\nRECONNAISSANCE Identify the Targets\nADVERSARY\nThe adversaries are in the planning \nphase of their operation. They \nconduct research to understand \nwhich targets will enable them \nto meet their objectives.\nf\nf Harvest email addresses \nf\nf Identify employees on \nsocial media networks\nf\nf Collect press releases, contract \nawards, conference attendee lists\nf\nf Discover internet-facing servers\nDEFENDER\nDetecting reconnaissance as it",
+    "standard": "Lockheed Martin Cyber Kill Chain",
+    "language": "en",
+    "source_file": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "Lockheed Martin Cyber Kill Chain — section 3",
+    "text": "f\nf Collect press releases, contract \nawards, conference attendee lists\nf\nf Discover internet-facing servers\nDEFENDER\nDetecting reconnaissance as it \nhappens can be very difficult, but \nwhen defenders discover recon – even \nwell after the fact – it can reveal \nthe intent of the adversaries.\nf\nf Collect website visitor logs for \nalerting and historical searching.\nf\nf Collaborate with web administrators to \nutilize their existing browser analytics.\nf\nf Build detections for browsing \nbehaviors unique to reconnaissance.\nf\nf Prioritize defenses around \nparticular technologies or people \nbased on recon activity.\n1\n\nWEAPONIZATION Prepare the Operation\nADVERSARY\nThe adversaries are in the preparation \nand staging phase of their operation. \nMalware generation is likely not done \nby hand – they use automated tools. \nA “weaponizer” couples malware and \nexploit into a deliverable payload. \nf\nf Obtain a weaponizer, either \nin-house or obtain through \npublic or private channels \nf\nf For file-based exploits, select “decoy” \ndocument to present to the victim. \nf\nf Select backdoor implant and \nappropriate command and control \ninfrastructure for operation\nf\nf Designate a specific “mission id” \nand",
+    "standard": "Lockheed Martin Cyber Kill Chain",
+    "language": "en",
+    "source_file": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "Lockheed Martin Cyber Kill Chain — section 4",
+    "text": "he victim. \nf\nf Select backdoor implant and \nappropriate command and control \ninfrastructure for operation\nf\nf Designate a specific “mission id” \nand embed in the malware\nf\nf Compile the backdoor and \nweaponize the payload\nDEFENDER\nThis is an essential phase for defenders \nto understand. Though they cannot \ndetect weaponization as it happens, \nthey can infer by analyzing malware \nartifacts. Detections against \nweaponizer artifacts are often the \nmost durable & resilient defenses.\nf\nf Conduct full malware analysis – \nnot just what payload it drops, \nbut how it was made.\nf\nf Build detections for weaponizers \n– find new campaigns and new \npayloads only because they re-\nused a weaponizer toolkit.\nf\nf Analyze timeline of when malware \nwas created relative to when it was \nused. Old malware is “malware off \nthe shelf” but new malware might \nmean active, tailored operations.\nf\nf Collect files and metadata \nfor future analysis.\nf\nf Determine which weaponizer artifacts \nare common to which APT campaigns. \nAre they widely shared or closely held?\n2\n\nDELIVERY Launch the Operation\nADVERSARY\nThe adversaries convey the \nmalware to the target. They have \nlaunched their operation. \nf\nf Adversary con",
+    "standard": "Lockheed Martin Cyber Kill Chain",
+    "language": "en",
+    "source_file": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "Lockheed Martin Cyber Kill Chain — section 5",
+    "text": "2\n\nDELIVERY Launch the Operation\nADVERSARY\nThe adversaries convey the \nmalware to the target. They have \nlaunched their operation. \nf\nf Adversary controlled delivery:\nf\nf Direct against web servers \nf\nf Adversary released delivery:\nf\nf Malicious email\nf\nf Malware on USB stick\nf\nf Social media interactions\nf\nf “Watering hole” \ncompromised websites\nDEFENDER\nThis is the first and most important \nopportunity for defenders to block \nthe operation. A key measure \nof effectiveness is the fraction \nof intrusion attempts that are \nblocked at delivery stage.\nf\nf Analyze delivery medium – understand \nupstream infrastructure.\nf\nf Understand targeted servers and \npeople, their roles and responsibilities, \nwhat information is available.\nf\nf Infer intent of adversary \nbased on targeting.\nf\nf Leverage weaponizer artifacts to \ndetect new malicious payloads \nat the point of Delivery.\nf\nf Analyze time of day of when \noperation began.\nf\nf Collect email and web logs for \nforensic reconstruction. Even if an \nintrusion is detected late, defenders \nmust be able to determine when \nand how delivery began.\n3\n\nEXPLOITATION Gain Access to Victim\nADVERSARY\nThe adversaries must exploit a \nvulnerability to gain",
+    "standard": "Lockheed Martin Cyber Kill Chain",
+    "language": "en",
+    "source_file": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "Lockheed Martin Cyber Kill Chain — section 6",
+    "text": "able to determine when \nand how delivery began.\n3\n\nEXPLOITATION Gain Access to Victim\nADVERSARY\nThe adversaries must exploit a \nvulnerability to gain access. The \nphrase “zero day” refers to the \nexploit code used in just this step.  \nf\nf Software, hardware, or \nhuman vulnerability\nf\nf Acquire or develop zero day exploit\nf\nf Adversary triggered exploits for \nserver-based vulnerabilities\nf\nf Victim triggered exploits\nf\nf Opening attachment of \nmalicious email\nf\nf Clicking malicious link\nDEFENDER\nHere traditional hardening \nmeasures add resiliency, but custom \ncapabilities are necessary to stop \nzero-day exploits at this stage.\nf\nf User awareness training and \nemail testing for employees.\nf\nf Secure coding training for \nweb developers.\nf\nf Regular vulnerability scanning \nand penetration testing. \nf\nf Endpoint hardening measures:\nf\nf Restrict admin privileges\nf\nf Use Microsoft EMET\nf\nf Custom endpoint rules to \nblock shellcode execution\nf\nf Endpoint process auditing to forensically \ndetermine origin of exploit.\n4\n\nINSTALLATION Establish Beachhead at the Victim\nADVERSARY\nTypically, the adversaries install a \npersistent backdoor or implant in the \nvictim environment to maintain access",
+    "standard": "Lockheed Martin Cyber Kill Chain",
+    "language": "en",
+    "source_file": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "Lockheed Martin Cyber Kill Chain — section 7",
+    "text": "Beachhead at the Victim\nADVERSARY\nTypically, the adversaries install a \npersistent backdoor or implant in the \nvictim environment to maintain access \nfor an extended period of time.  \nf\nf Install webshell on web server\nf\nf Install backdoor/implant on client victim\nf\nf Create point of persistence by adding \nservices, AutoRun keys, etc.\nf\nf Some adversaries “time stomp” the file \nto make malware appear it is part of \nthe standard operating system install.\nDEFENDER\nEndpoint instrumentation to \ndetect and log installation activity. \nAnalyze installation phase during \nmalware analysis to create \nnew endpoint mitigations.\nf\nf HIPS to alert or block on common \ninstallation paths, e.g. RECYCLER.\nf\nf Understand if malware requires \nadministrator privileges or only user.\nf\nf Endpoint process auditing to \ndiscover abnormal file creations.\nf\nf Extract certificates of any \nsigned executables.\nf\nf Understand compile time of malware \nto determine if it is old or new.\n5\n\nCOMMAND & CONTROL (C2) Remotely Control the Implants\nADVERSARY\nMalware opens a command \nchannel to enable the adversary to \nremotely manipulate the victim. \nf\nf Open two way communications \nchannel to C2 infrastructure\nf\nf Most co",
+    "standard": "Lockheed Martin Cyber Kill Chain",
+    "language": "en",
+    "source_file": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "Lockheed Martin Cyber Kill Chain — section 8",
+    "text": "ommand \nchannel to enable the adversary to \nremotely manipulate the victim. \nf\nf Open two way communications \nchannel to C2 infrastructure\nf\nf Most common C2 channels are over \nweb, DNS, and email protocols\nf\nf C2 infrastructure may be adversary \nowned or another victim network itself\nDEFENDER\nThe defender’s last best chance to \nblock the operation: by blocking \nthe C2 channel. If adversaries \ncan’t issue commands, defenders \ncan prevent impact.\nf\nf Discover C2 infrastructure \nthorough malware analysis.\nf\nf Harden network:\nf\nf Consolidate number of \ninternet points of presence\nf\nf Require proxies for all types \nof traffic (HTTP, DNS)\nf\nf Customize blocks of C2 \nprotocols on web proxies.\nf\nf Proxy category blocks, including \n“none” or “uncategorized” domains.\nf\nf DNS sink holing and name \nserver poisoning.\nf\nf Conduct open source research \nto discover new adversary \nC2 infrastructure.\n6\n\nACTIONS ON OBJECTIVES Achieve the Mission’s Goal\nADVERSARY\nWith hands-on keyboard access, \nintruders accomplish the mission’s \ngoal. What happens next depends \non who is on the keyboard.\nf\nf Collect user credentials\nf\nf Privilege escalation\nf\nf Internal reconnaissance\nf\nf Lateral movement through en",
+    "standard": "Lockheed Martin Cyber Kill Chain",
+    "language": "en",
+    "source_file": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "Lockheed Martin Cyber Kill Chain — section 9",
+    "text": "depends \non who is on the keyboard.\nf\nf Collect user credentials\nf\nf Privilege escalation\nf\nf Internal reconnaissance\nf\nf Lateral movement through environment\nf\nf Collect and exfiltrate data\nf\nf Destroy systems\nf\nf Overwrite or corrupt data\nf\nf Surreptitiously modify data\nDEFENDER\nThe longer an adversary has CKC7 \naccess, the greater the impact. \nDefenders must detect this stage as \nquickly as possible by using forensic \nevidence – including network packet \ncaptures, for damage assessment.\nf\nf Establish incident response playbook, \nincluding executive engagement \nand communications plan.\nf\nf Detect data exfiltration, lateral \nmovement, unauthorized \ncredential usage.\nf\nf Immediate analyst response \nto all CKC7 alerts.\nf\nf Forensic agents pre-deployed to \nendpoints for rapid triage.\nf\nf Network package capture \nto recreate activity.\nf\nf Conduct damage assessment \nwith subject matter experts.\n7\n\nANALYSIS: Identifying Patterns\nAnalysis of multiple intrusion kill chains over time draws attention to \nsimilarities and overlapping indicators. Defenders learn to recognize and define \nintrusion campaigns and understand the intruder’s mission objectives. \nIdentify patterns: what are they lo",
+    "standard": "Lockheed Martin Cyber Kill Chain",
+    "language": "en",
+    "source_file": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "Lockheed Martin Cyber Kill Chain — section 10",
+    "text": "s. Defenders learn to recognize and define \nintrusion campaigns and understand the intruder’s mission objectives. \nIdentify patterns: what are they looking for, why are they targeting me?\nThis will help identify how to best protect yourself from the next attack.\nYou can’t get ahead of the threat unless you understand the campaign.\nRECONSTRUCTION: Prevent Future Attacks \nCyber Kill Chain® analysis guides understanding of what information is, and may be, available \nfor defensive courses of action. Stay focused on your threat landscape with vigilance.\nRESILIENCE: Defend against Advanced Persistent Threats \nThe antidote to APT is a resilient defense. Measure the effectiveness of your \ncountermeasures against the threats. Be agile to adapt your defenses faster than the threats.\nTIPS FOR INTELLIGENT \nRECONSTRUCTION:\nf\nf Defenders must always analyze \nbackward to understand earlier steps \nin the kill chain. The threats will \ncome back again. Learn how they \ngot in and block it for the future.\nf\nf Blocked intrusions are equally \nimportant to analyze in depth to \nunderstand how the intrusion \nwould have progressed.\nf\nf Measure effectiveness of your defenses \nif it progressed. Deploy mitigat",
+    "standard": "Lockheed Martin Cyber Kill Chain",
+    "language": "en",
+    "source_file": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "Lockheed Martin Cyber Kill Chain — section 11",
+    "text": "analyze in depth to \nunderstand how the intrusion \nwould have progressed.\nf\nf Measure effectiveness of your defenses \nif it progressed. Deploy mitigations \nto build resilience for tomorrow.\n\nJUST ONE MITIGATION BREAKS THE CHAIN\nf\nf The defender has the advantage with the Cyber Kill Chain® solution. \nAll seven steps must be successful for a cyber attack to occur. \nf\nf The defender has seven opportunities to break the chain.\nCONCLUSION\nf\nf Defenders CAN have the advantage:\nf\nf Better communicate and mitigate risks\nf\nf Build true resilience\nf\nf Meaningfully measure results\nf\nf Getting Started:  Remember there is no such thing as secure, only defendable. \nf\nf Start by thinking differently when you make changes to your \nprocesses, investments, metrics, communications with your \nteam and leadership, staffing models, and architectures. \nf\nf Know your threats…it’s not just about network defense anymore. it’s \nabout defending  much more like your platforms and mobile users.  \n1\n2\n3\n4\n5\n6\n7\nTHREE WAYS TO \nUSE HISTORY TO \nYOUR ADVANTAGE:\nf\nf Look for patterns to \nstrengthen your defense\nf\nf Improve your organizational \nstructure and response\nf\nf Know your potential threat \nsurfaces, even the",
+    "standard": "Lockheed Martin Cyber Kill Chain",
+    "language": "en",
+    "source_file": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "Lockheed Martin Cyber Kill Chain — section 12",
+    "text": "k for patterns to \nstrengthen your defense\nf\nf Improve your organizational \nstructure and response\nf\nf Know your potential threat \nsurfaces, even the old ones\n\nWhite Paper\nVideo\nArticle\nConnect\ncyber.security@lmco.com\n855-LMCYBER \n855-562-9237\nRESOURCES\nLOCKHEED MARTIN, LOCKHEED and the STAR design trademarks used throughout are registered trademarks \nin the U.S. Patent and Trademark Office owned by Lockheed Martin Corporation.  \n© 2015 Lockheed Martin Corporation. All Rights Reserved.   |   #CMK201503001",
+    "standard": "Lockheed Martin Cyber Kill Chain",
+    "language": "en",
+    "source_file": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf"
+  }
+]

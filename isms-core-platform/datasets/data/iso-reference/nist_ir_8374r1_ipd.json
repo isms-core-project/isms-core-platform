@@ -1,0 +1,378 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "NIST CSF 2.0 — section 1",
+    "text": "NIST Internal Report 1 \nNIST IR 8374r1 ipd2 \nRansomware Risk Management: 3 \nA Cybersecurity Framework 2.0 Community Profile 4 \nInitial Public Draft 5 \nMurugiah Souppaya 6 \nWilliam C. Barker 7 \nWilliam Fisher 8 \nKaren Scarfone 9 \n10 \nThis publication is available free of charge from: 11 \nhttps://doi.org/10.6028/NIST.IR.8374r1.ipd 12 \n\nNIST Internal Report  13 \nNIST IR 8374r1 ipd 14 \nRansomware Risk Management: 15 \nA Cybersecurity Framework 2.0 Community Profile 16 \nInitial Public Draft 17 \nMurugiah Souppaya 18 \nComputer Security Division 19 \nInformation Technology Laboratory  20 \n 21 \nWilliam C. Barker 22 \nDakota Consulting 23 \nSilver Spring, MD  24 \n \nWilliam Fisher \nApplied Cybersecurity Division \nInformation Technology Laboratory \n \nKaren Scarfone \nScarfone Cybersecurity  \nClifton, VA  \n \nThis publication is available free of charge from:  25 \nhttps://doi.org/10.6028/NIST.IR.8374r1.ipd 26 \nJanuary 2025 27 \n 28 \nDepartment of Commerce Logo\nU.S. Department of Commerce  29 \nGina M. Raimondo, Secretary 30 \nNational Institute of Standards and Technology  31 \nCharles H. Romine, Acting Under Secretary of Commerce for Standards and Technology and Acting NIST Director  32 \n \nCertain equip",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "NIST CSF 2.0 — section 2",
+    "text": "s and Technology  31 \nCharles H. Romine, Acting Under Secretary of Commerce for Standards and Technology and Acting NIST Director  32 \n \nCertain equipment, instruments, software, or materials, commercial or non-commercial, are identified in this 33 34 35 36 \n37 38 39 40 41 42 \n43 44 45 \n46 \n47 \n48 \n49 \n50 51 52 \n53 \n54 \n55 \n56 \n57 \n58 \n59 \n60 \n61 \n\n62 \n63 \n64 \n65 \n66 67 \npaper in order to specify the experimental procedure adequately. Such identification does not imply recommendation or endorsement of any product or service by NIST, nor does it imply that the materials or equipment identified are necessarily the best available for the purpose.  There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, federal agencies may wish to closely follow the deve",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "NIST CSF 2.0 — section 3",
+    "text": "elines, and procedures, where they exist, remain operative. For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST. Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at https://csrc.nist.gov/publications. NIST Technical Series Policies Copyright, Use, and Licensing Statements NIST Technical Series Publication Identifier Syntax How to Cite this NIST Technical Series Publication Souppaya M, Barker WC, Fisher W, Scarfone K (2025) Ransomware Risk Management: A Cybersecurity Framework 2.0 Community Profile. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Internal Report (IR) NIST IR 8374r1 ipd. https://doi.org/10.6028/NIST.IR.8374r1.ipd  Author ORCID iDs Murugiah Souppaya: 0000-0002-8055-8527 William C. Barker: 0000-0002-4113-8861 William Fisher: 0009-0004-7569-5668 Karen Scarfone: 0000-0001-6334-9486 Public Comment Period January 13, 2025 � March 14 \nSeptember 11, 2025 Submit Comments  ransomware@nist.gov National Institute of Stan",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "NIST CSF 2.0 — section 4",
+    "text": "0-0001-6334-9486 Public Comment Period January 13, 2025 � March 14 \nSeptember 11, 2025 Submit Comments  ransomware@nist.gov National Institute of Standards and Technology Attn: Applied Cybersecurity Division, Information Technology Laboratory 100 Bureau Drive (Mail Stop 2000) Gaithersburg, MD 20899-2000 Additional Information Additional information about this publication is available at https://csrc.nist.gov/pubs/ir/8374/r1/ipd, including related content, potential updates, and document history. All comments are subject to release under the Freedom of Information Act (FOIA)68 \nAbstract 69 \nRansomware is a type of malicious attack where attackers encrypt an organization�s data and 70 demand payment to restore access. Attackers may also steal an organization�s information and 71 demand an additional payment in return for not disclosing the information to authorities, 72 competitors, or the public. This Cybersecurity Framework (CSF) 2.0 Community Profile identifies 73 the security objectives from the NIST CSF 2.0 that support governing management of, 74 identifying, protecting against, detecting, responding to, and recovering from ransomware 75 events. The Profile can be used as a gui",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "NIST CSF 2.0 — section 5",
+    "text": "anagement of, 74 identifying, protecting against, detecting, responding to, and recovering from ransomware 75 events. The Profile can be used as a guide to managing the risk of ransomware events. That 76 includes helping to gauge an organization�s level of readiness to counter ransomware threats 77 and to deal with the potential consequences of events. This Profile can be leveraged in 78 developing a ransomware countermeasure playbook. 79 \nKeywords 80 \nCybersecurity Framework; detect; identify; protect; ransomware; recover; respond; risk; 81 security. 82 \nReports on Computer Systems Technology 83 \nThe Information Technology Laboratory (ITL) at the National Institute of Standards and 84 Technology (NIST) promotes the U.S. economy and public welfare by providing technical 85 leadership for the Nation�s measurement and standards infrastructure. ITL develops tests, test 86 methods, reference data, proof of concept implementations, and technical analyses to advance 87 the development and productive use of information technology. ITL�s responsibilities include 88 the development of management, administrative, technical, and physical standards and 89 guidelines for the cost-effective secu",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "NIST CSF 2.0 — section 6",
+    "text": "onsibilities include 88 the development of management, administrative, technical, and physical standards and 89 guidelines for the cost-effective security and privacy of other than national security-related 90 information in federal information systems. 91 \nAudience  92 \nThis Ransomware Community Profile is intended for any organization (including industry, 93 government, and nonprofits) that could be subject to ransomware attacks, regardless of sector 94 or size. As the Profile helps to prioritize efforts, it could be especially valuable for smaller and 95 less resourced organizations. 96 \nIn addition, the Profile is intended for organizations that: 97 \n�\n are familiar with � and may have already adopted � the CSF to help manage 98 cybersecurity risks and want to improve their risk postures by addressing ransomware 99 threats, or 100 \n\n�\n are not familiar with the CSF but want to implement risk management frameworks to 101 mitigate ransomware threats. Such organizations may wish to review the CSF for 102 additional context and guidance. 103 \n\n\nNote to Reviewers 104 \nThis draft Ransomware Community Profile reflects changes due to the update from CSF 1.1 to 105 CSF 2.0. The Ransomwa",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "NIST CSF 2.0 — section 7",
+    "text": "ce. 103 \n\n\nNote to Reviewers 104 \nThis draft Ransomware Community Profile reflects changes due to the update from CSF 1.1 to 105 CSF 2.0. The Ransomware Community Profile is a widely used guidance document, both 106 domestically and internationally. NIST is currently considering a more comprehensive revision 107 to this Profile to reflect recent ransomware policy developments and incorporate the results of 108 collaborative activities in the ransomware prevention and response space. NIST is interested in 109 your feedback on what guidance and content would be most valuable. Specifically, NIST is 110 interested in answers to the following questions: 111 \n1.\n What elements of this Community Profile have been helpful? 112 \n\n2.\n Where could this Community Profile be improved? 113 \n\n3.\n Are supplemental documents, such as quick start guides, useful? If so, how? If not, why? 114 \n\n4.\n What type of prioritization would be most helpful? Control baselines? high/medium/low 115 criticality? Mapping to specific organizational outcomes? Other? 116 \n\n5.\n What other ransomware resources have you or your organization used to improve your 117 ransomware risk mitigation strategy? How have those reso",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "NIST CSF 2.0 — section 8",
+    "text": "5.\n What other ransomware resources have you or your organization used to improve your 117 ransomware risk mitigation strategy? How have those resources been helpful? 118 \n\n\nGeneral comments and answers to the above questions can be submitted to 119 ransomware@nist.gov. 120 \nAdditional Guidance Resources  121 \nNIST�s National Cybersecurity Center of Excellence (NCCoE) has produced guidance to support 122 ransomware threat mitigation. NIST has many other resources that, while not ransomware-123 specific, contain valuable information about governing management of, identifying, protecting 124 against, detecting, responding to, and recovering from ransomware events. See the References 125 section for a list of references and Appendix A for a more extensive list of NIST resources. 126 \n  \nCall for Patent Claims 127 \nThis public review includes a call for information on essential patent claims (claims whose use 128 would be required for compliance with the guidance or requirements in this Information 129 Technology Laboratory (ITL) draft publication). Such guidance and/or requirements may be 130 directly stated in this ITL Publication or by reference to another publication. This call",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "NIST CSF 2.0 — section 9",
+    "text": "publication). Such guidance and/or requirements may be 130 directly stated in this ITL Publication or by reference to another publication. This call also 131 includes disclosure, where known, of the existence of pending U.S. or foreign patent 132 applications relating to this ITL draft publication and of any relevant unexpired U.S. or foreign 133 patents. 134 \nITL may require from the patent holder, or a party authorized to make assurances on its behalf, 135 in written or electronic form, either: 136 \na)\n assurance in the form of a general disclaimer to the effect that such party does not hold 137 and does not currently intend holding any essential patent claim(s); or 138 \n\nb)\n assurance that a license to such essential patent claim(s) will be made available to 139 applicants desiring to utilize the license for the purpose of complying with the guidance 140 or requirements in this ITL draft publication either: 141 \n\ni.\n under reasonable terms and conditions that are demonstrably free of any unfair 142 discrimination; or 143 \n\nii.\n without compensation and under reasonable terms and conditions that are 144 demonstrably free of any unfair discrimination. 145 \n\n\nSuch assurance shall",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "NIST CSF 2.0 — section 10",
+    "text": "thout compensation and under reasonable terms and conditions that are 144 demonstrably free of any unfair discrimination. 145 \n\n\nSuch assurance shall indicate that the patent holder (or third party authorized to make 146 assurances on its behalf) will include in any documents transferring ownership of patents 147 subject to the assurance, provisions sufficient to ensure that the commitments in the assurance 148 are binding on the transferee, and that the transferee will similarly include appropriate 149 provisions in the event of future transfers with the goal of binding each successor-in-interest. 150 \nThe assurance shall also indicate that it is intended to be binding on successors-in-interest 151 regardless of whether such provisions are included in the relevant transfer documents. 152 \nSuch statements should be addressed to: ransomware@nist.gov 153 \nTable of Contents 154 \n1. Introduction ...................................................................................................................................2 155 \n156 \n157 \n2. The Ransomware Community Profile ..............................................................................................5 158 \nAppendix A",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "NIST CSF 2.0 — section 11",
+    "text": "7 \n2. The Ransomware Community Profile ..............................................................................................5 158 \nAppendix A. Additional NIST Ransomware Resources ....................................................................... 18 159 \n \n\n1. Introduction 160 \nThis Ransomware Community Profile can help organizations and individuals to manage the risk 161 of ransomware events. That includes helping to gauge an organization�s level of readiness to 162 counter ransomware threats and to deal with the potential consequences of events. The Profile 163 can also be used to identify opportunities for improving cybersecurity to help thwart 164 ransomware. It prioritizes security objectives from the NIST Cybersecurity Framework (CSF) 2.0 165 [NIST CSWP 29] to security capabilities and measures that help to govern management of, 166 identify, protect against, detect, respond to, and recover from ransomware events.  167 \nThis Profile is a Community Profile that was developed in collaboration with industry to serve as 168 a baseline of CSF outcomes that address shared interests and goals among multiple 169 organizations. Individual organizations may use community",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "NIST CSF 2.0 — section 12",
+    "text": "s 168 a baseline of CSF outcomes that address shared interests and goals among multiple 169 organizations. Individual organizations may use community profiles to create their own 170 organizational profile, detailing the organization�s current and/or target cybersecurity posture 171 in terms of outcomes identified in the CSF. Examples of profiles can be found on the NIST CSF 172 website along with a template for creating organizational profiles. The guidance in this report 173 addresses best practices rather than a set of legal or regulatory requirements. 174 \n1.1 The Ransomware Challenge 175 \nRansomware is a type of malware that encrypts an organization�s data and demands payment 176 as a condition of restoring access to that data. Ransomware can also be used to steal an 177 organization�s information and demand additional payment in return for not disclosing the 178 information to authorities, competitors, or the public. Ransomware events target the 179 organization�s data or critical infrastructure, disrupting or halting operations and posing a 180 dilemma for management: pay the ransom and hope that the attackers keep their word about 181 restoring access and not disclosing dat",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "NIST CSF 2.0 — section 13",
+    "text": "and posing a 180 dilemma for management: pay the ransom and hope that the attackers keep their word about 181 restoring access and not disclosing data, or do not pay the ransom and attempt to restore 182 operations themselves. The methods ransomware uses to gain access to an organization�s 183 information and systems are common to cyberattacks more broadly, but they are aimed at 184 forcing a ransom to be paid. Techniques used to promulgate ransomware will continue to 185 change as attackers constantly look for new ways to pressure their victims. 186 \nRansomware attacks differ from other cybersecurity events where access may be 187 surreptitiously gained to information such as intellectual property, credit card data, or 188 personally identifiable information and later exfiltrated for monetization. Instead, ransomware 189 threatens an immediate impact on business operations. During a ransomware event, 190 organizations may be afforded little time to mitigate or remediate impact, restore systems, or 191 communicate via necessary business, partner, and public relations channels. For this reason, it 192 is especially critical that organizations be prepared. That includes educating us",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "NIST CSF 2.0 — section 14",
+    "text": "ess, partner, and public relations channels. For this reason, it 192 is especially critical that organizations be prepared. That includes educating users of cyber 193 systems, response teams, and business decision makers about the importance of � and 194 processes and procedures for � preventing and handling potential compromises before they 195 occur.  196 \nFortunately, organizations can follow recommended steps to prepare for and reduce the 197 potential for successful ransomware attacks. This includes the following: establish, 198 communicate and monitor ransomware risk strategy, expectations and policy; identify and 199 \nprotect critical data, systems, and devices; detect ransomware events as early as possible 200 (preferably before the ransomware is deployed); and prepare to respond to and recover from 201 any ransomware events that do occur. There are many resources available to assist 202 organizations in these efforts. They include information from the National Institute of 203 Standards and Technology (NIST), the Federal Bureau of Investigation (FBI), and the 204 Department of Homeland Security (DHS). Additional NIST resources are listed in Appendix A.  205 \n1.2 Basic Rans",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0014",
+    "title": "NIST CSF 2.0 — section 15",
+    "text": "au of Investigation (FBI), and the 204 Department of Homeland Security (DHS). Additional NIST resources are listed in Appendix A.  205 \n1.2 Basic Ransomware Tips  206 \nThe security capabilities and measures in this profile support a detailed approach to preventing 207 and mitigating ransomware events. Realizing that undertaking all these measures may be 208 beyond the reach of some, the text box below includes basic preventative steps that an 209 organization can take now to protect against the ransomware threat. Not all these measures 210 will apply to the situations of all organizations. 211 \nBASIC RANSOMWARE TIPS \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n4.\n\n\n\n\n\n \n\n\n \n2. The Ransomware Community Profile  212 \nThe Ransomware Community Profile aligns organizations� ransomware prevention and 213 mitigation requirements, objectives, risk appetite, and resources with the elements of the CSF. 214 It should help organizations to identify and prioritize opportunities for improving their security 215 and resilience against ransomware attacks. Organizations can use this document as a guide for 216 profiling the state of their own readiness. Doing so will as",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0015",
+    "title": "NIST CSF 2.0 — section 16",
+    "text": "lience against ransomware attacks. Organizations can use this document as a guide for 216 profiling the state of their own readiness. Doing so will assist them to determine their current 217 �organizational profile� or state and set a �target organizational profile� to identify gaps.  218 \nThe table below identifies Categories and Subcategories from CSF 2.0 that are particularly 219 relevant to mitigating ransomware risk. The first two columns list these Categories and 220 Subcategories which organizations may use as priority target outcomes for ransomware risk 221 management programs. All subcategories included in the table are priority objectives, but the 222 third column highlights subcategories that have been identified as Priority 1 or Priority 2. The 223 fourth column briefly explains how each Subcategory helps to govern management of, identify, 224 protect against, detect, respond to, and recover from ransomware events and details a 225 rationale for subcategories� Priority 1 assignments. It is important to note that subcategories 226 assigned Priority 2 rather than Priority 1 are still highly important to organizations� 227 ransomware-specific defense posture.  228 \nOrganiz",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0016",
+    "title": "NIST CSF 2.0 — section 17",
+    "text": "ies 226 assigned Priority 2 rather than Priority 1 are still highly important to organizations� 227 ransomware-specific defense posture.  228 \nOrganizations are encouraged to include the full set of CSF 2.0 Subcategories for their 229 cybersecurity risk management programs. The selection of subcategories highlighted in this 230 document are specific to ransomware risks. 231 \nNIST and other organizations have produced a suite of online resources that help organizations 232 understand, adopt, and use the CSF, including Informative References, Implementation 233 Examples, and Quick Start Guides. 234 \nThe six Cybersecurity Framework Functions used to organize the Categories are: 235 \n�\n GOVERN (GV) � The organization�s cybersecurity risk management strategy, 236 expectations, and policy are established, communicated, and monitored. The GOVERN 237 Function provides outcomes to inform what an organization may do to achieve and 238 prioritize the outcomes of the other five Functions in the context of its mission and 239 stakeholder expectations. Governance activities are critical for incorporating 240 cybersecurity into an organization�s broader enterprise risk management (ERM) 241 strate",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0017",
+    "title": "NIST CSF 2.0 — section 18",
+    "text": "ons. Governance activities are critical for incorporating 240 cybersecurity into an organization�s broader enterprise risk management (ERM) 241 strategy. GOVERN addresses an understanding of organizational context; the 242 establishment of cybersecurity strategy and cybersecurity supply chain risk 243 management; roles, responsibilities, and authorities; policy; and the oversight of 244 cybersecurity strategy. 245 \n\n�\n IDENTIFY (ID) � The organization�s current cybersecurity risks are understood. 246 Understanding the organization�s assets (e.g., data, hardware, software, systems, 247 facilities, services, people), suppliers, and related cybersecurity risks enables an 248 organization to prioritize its efforts consistent with its risk management strategy and the 249 mission needs identified under GOVERN. This Function also includes the identification of 250 improvement opportunities for the organization�s policies, plans, processes, procedures, 251 \n\n\nand practices that support cybersecurity risk management to inform efforts under all six \n252 Functions.  253 \n\n�\n PROTECT (PR) � Safeguards to manage the organization�s cybersecurity risks are used. 254 Once assets and risks are iden",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0018",
+    "title": "NIST CSF 2.0 — section 19",
+    "text": "six \n252 Functions.  253 \n\n�\n PROTECT (PR) � Safeguards to manage the organization�s cybersecurity risks are used. 254 Once assets and risks are identified and prioritized, PROTECT supports the ability to 255 secure those assets to prevent or lower the likelihood and impact of adverse 256 cybersecurity events, as well as to increase the likelihood and impact of taking 257 advantage of opportunities. Outcomes covered by this Function include identity 258 management, authentication, and access control; awareness and training; data security; 259 platform security (i.e., securing the hardware, software, and services of physical and 260 virtual platforms); and the resilience of technology infrastructure. 261 \n\n�\n DETECT (DE) � Possible cybersecurity attacks and compromises are found and analyzed. 262 DETECT enables the timely discovery and analysis of anomalies, indicators of 263 compromise, and other potentially adverse events that may indicate that cybersecurity 264 attacks and incidents are occurring. This Function supports successful incident response 265 and recovery activities. 266 \n\n�\n RESPOND (RS) � Actions regarding a detected cybersecurity incident are taken. 267 RESPOND supp",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0019",
+    "title": "NIST CSF 2.0 — section 20",
+    "text": "incident response 265 and recovery activities. 266 \n\n�\n RESPOND (RS) � Actions regarding a detected cybersecurity incident are taken. 267 RESPOND supports the ability to contain the effects of cybersecurity incidents. 268 Outcomes within this Function cover incident management, analysis, mitigation, 269 reporting, and communication.   270 \n\n�\n RECOVER (RC) � Assets and operations affected by a cybersecurity incident are 271 restored. RECOVER supports the timely restoration of normal operations to reduce the 272 effects of cybersecurity incidents and enable appropriate communication during 273 recovery efforts. 274 \n\n\nThe CSF 2.0 outcomes included in the table also map to controls, requirements, and 275 recommendations of other security standards and guidance documents. Examples include 276 NIST�s Special Publication 800-53; ISO/IEC information, security, cybersecurity, and privacy 277 protection standards, and industry consensus standards. The Cybersecurity and Privacy 278 Reference Tool (CPRT) highlights the reference data from NIST publications without the 279 constraints of PDF files. This enables stakeholders to interactively browse, search, and export 280 the data in a structu",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0020",
+    "title": "NIST CSF 2.0 — section 21",
+    "text": "publications without the 279 constraints of PDF files. This enables stakeholders to interactively browse, search, and export 280 the data in a structured format that is human- and machine-consumable. For example, you can 281 use the search tool to locate reference data in each publication and then download the 282 reference data for each publication in MS Excel or JSON. The Online Informative Reference 283 Catalog contains the reference data, including Informative References and Derived Relationship 284 Mappings (DRMs), for the National Online Informative References (OLIR) Program.  285 \nTable 1. Ransomware Community Profile 286 \nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nOrganizational Context (GV.OC): The circumstances � mission, stakeholder expectations, dependencies, and legal, regulatory, and contractual requirements � surrounding the organization�s cybersecurity risk management decisions are understood \n GV.OC-01: The organizational mission is understood and informs cybersecurity risk management \n 2 \n Priorities for organizational mission, objectives, and activities are established and communicated. Understanding priorities for organizational o",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0021",
+    "title": "NIST CSF 2.0 — section 22",
+    "text": "2 \n Priorities for organizational mission, objectives, and activities are established and communicated. Understanding priorities for organizational objectives and activities is needed to support contingency planning for future ransomware events and emergency response and recovery actions. For example, the most critical enterprise information and operational activities or functions might be given the highest priority for backup as well as for access management. \n \nOrganizational Context (GV.OC) \n GV.OC-02: Internal and external stakeholders are understood, and their needs and expectations regarding cybersecurity risk management are understood and considered \n 1 \n Understanding the needs and expectations of internal and external stakeholders with respect to cybersecurity risk management is needed to support contingency planning for future ransomware events and emergency response and recovery actions (e.g., notification requirements). The priority for this outcome is designated Priority 1 because of both the importance of everyone understanding the consequences of a successful ransomware attack, and the need to understand the impact of the attack on specific internal and external sta",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0022",
+    "title": "NIST CSF 2.0 — section 23",
+    "text": "standing the consequences of a successful ransomware attack, and the need to understand the impact of the attack on specific internal and external stakeholders. \n \nOrganizational Context (GV.OC) \n GV.OC-03: Legal, regulatory, and contractual requirements regarding cybersecurity � including privacy and civil liberties obligations � are understood and managed  \n 2 \n Understanding legal and regulatory requirements regarding cybersecurity and privacy is necessary for organizational cybersecurity policy development and for establishing priorities in contingency planning for responses to and recovery from future ransomware events. \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nRisk Management Strategy (GV.RM): The organization�s priorities, constraints, risk tolerance and appetite statements, and assumptions are established, communicated, and used to support operational risk decisions \n GV.RM-03: Cybersecurity risk management activities and outcomes are included in enterprise risk management processes \n 2 \n Ransomware risks must be factored into organizational risk management governance to support establishment of adequate organizational cybersecurity pol",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0023",
+    "title": "NIST CSF 2.0 — section 24",
+    "text": "Ransomware risks must be factored into organizational risk management governance to support establishment of adequate organizational cybersecurity policies. \n \nRoles, Responsibilities, and Authorities (GV.RR): Cybersecurity roles, responsibilities, and authorities to foster accountability, performance assessment, and continuous improvement are established and communicated \n GV.RR-02: Roles, responsibilities, and authorities related to cybersecurity risk management are established, communicated, understood, and enforced \n 1 \n Because ransomware events often result in the immediate loss of business functionality, organizations face extreme pressure to recover business functions quickly. Effective ransomware mitigation and response requires everyone in the organization understand their role, responsibility, and authority prior to a ransomware event. Because this is critical to mitigating ransomware impact and restoring business function, this outcome is designated Priority 1. \n \nCybersecurity Supply Chain Risk Management (GV.SC): Cyber supply chain risk management processes are identified, established, managed, monitored, and improved by organizational stakeholders \n GV.SC-02: Cyberse",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0024",
+    "title": "NIST CSF 2.0 — section 25",
+    "text": "upply chain risk management processes are identified, established, managed, monitored, and improved by organizational stakeholders \n GV.SC-02: Cybersecurity roles and responsibilities for suppliers, customers, and partners are established, communicated, and coordinated internally and externally \n 1 \n Many ransomware events are enabled by some member of the workforce or a third-party stakeholder taking an intentional or inadvertent action that enables infiltration by criminals or other unauthorized parties. It�s important to understand roles and responsibilities for preventing ransomware infections and the associated responsibilities with response and recovery actions. For this reason, the outcome is designated  Priority 1. \n \nCybersecurity Supply Chain Risk Management (GV.SC) \n GV.SC-08: Relevant suppliers and other third parties are included in incident planning, response, and recovery activities \n 2 \n Ransomware contingency planning should be coordinated with suppliers and third-party providers, and planning should include provision for testing of planned activities. \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nAsset Management (ID.AM): Assets (",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0025",
+    "title": "NIST CSF 2.0 — section 26",
+    "text": "for testing of planned activities. \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nAsset Management (ID.AM): Assets (e.g., data, hardware, software, systems, facilities, services, people) that enable the organization to achieve business purposes are identified and managed consistent with their relative importance to organizational objectives and the organization�s risk strategy \n ID.AM-02: Inventories of software, services, and systems managed by the organization are maintained \n 1 \n It is important to update your software as soon as practical after updates become available to remove vulnerabilities that attackers can take advantage of to infiltrate your systems using ransomware. Also, some software utilities and applications contain known vulnerabilities used for intrusion. Software inventories may track elements such as software name and version, devices where it�s currently installed, last patch date, and current known vulnerabilities. This information supports scheduling updates and removing vulnerable utilities and applications. Because of the importance of timely updates in eliminating vulnerabilities that ransomware actors exploit, this outco",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0026",
+    "title": "NIST CSF 2.0 — section 27",
+    "text": "able utilities and applications. Because of the importance of timely updates in eliminating vulnerabilities that ransomware actors exploit, this outcome is designated Priority 1. \n \nAsset Management (ID.AM) \n ID.AM-03: Representations of the organization�s authorized network communication and internal and external network data flows are maintained \n 2 \n Understanding organizational communications and data flows is needed as preparation for responding to future ransomware events. In addition to enabling assignment of responsibilities, knowing the connections and flows helps to enumerate what information or processes are at risk based on the identified criminal infiltration. Cataloging connections to external information systems is important for planning communications to partners and possible actions to temporarily disconnect from external systems in response to ransomware events.  Identifying these connections will also help organizations plan security control implementation and identity areas where controls may be shared with third parties.  Note that ransomware attacks can disable common communication channels (e.g., email)> It is essential that planning include means for communi",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0027",
+    "title": "NIST CSF 2.0 — section 28",
+    "text": "arties.  Note that ransomware attacks can disable common communication channels (e.g., email)> It is essential that planning include means for communication with staff and partners in the event of such attacks. \n \nAsset Management (ID.AM) \n ID.AM-05: Assets are prioritized based on classification, criticality, resources, and impact on the mission \n 2 \n Prioritization of data and software based on classification, criticality, and business value is essential to understanding the true scope and impact of ransomware events and is an important factor in both contingency planning for future ransomware events, and emergency responses and recovery actions. \n \nRisk Assessment (ID.RA): The cybersecurity risk to the organization, assets, and individuals is understood by the organization \n ID.RA-01: Vulnerabilities in assets are identified, validated, and recorded \n 2 \n Identifying and documenting the vulnerabilities of organizational assets supports development and prioritization of planning to mitigate or eliminate those vulnerabilities as well as contingency planning for evaluation of and responses to future ransomware events. \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0028",
+    "title": "NIST CSF 2.0 — section 29",
+    "text": "as contingency planning for evaluation of and responses to future ransomware events. \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nRisk Assessment (ID.RA) \n ID.RA-04: Potential impacts and likelihoods of threats exploiting vulnerabilities are identified and recorded \n 1 \n Understanding the business impacts of potential ransomware events is needed to support cybersecurity cost-benefit analyses as well as to establish priorities for activities included in ransomware contingency plans for response and recovery. Understanding the potential business impacts also supports emergency response decisions in the event of a ransomware attack. Because understanding the potential impact of a successful ransomware attack is a critical factor in determining the response to criminal demands, this outcome is designated Priority 1. \n \nRisk Assessment (ID.RA) \n ID.RA-06: Risk responses are chosen, prioritized, planned, tracked, and communicated \n 2 \n The expense associated with response to and recovery from ransomware events is materially affected by the effectiveness of contingency planning of responses to projected risks. \n \nRisk Assessment (ID.RA) \n ID.RA-09: The",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0029",
+    "title": "NIST CSF 2.0 — section 30",
+    "text": "vents is materially affected by the effectiveness of contingency planning of responses to projected risks. \n \nRisk Assessment (ID.RA) \n ID.RA-09: The authenticity and integrity of hardware and software are assessed prior to acquisition and use \n 2 \n Software of unknown or unreliable provenance can contain malware or otherwise be subject to exploitation by bad actors. \n \nImprovement (ID.IM): Improvements to organizational cybersecurity risk management processes, procedures and activities are identified across all CSF Functions \n ID.IM-04: Incident response plans and other cybersecurity plans that affect operations are established, communicated, maintained, and improved \n 2 \n Response and recovery plans should include response to and recovery from future ransomware events. Ransomware response and recovery plans should be tested periodically to ensure that risk and response assumptions and processes are current with respect to evolving ransomware threats. \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nIdentity Management, Authentication, and Access Control (PR.AA): Access to physical and logical assets is limited to authorized users, services, and hard",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0030",
+    "title": "NIST CSF 2.0 — section 31",
+    "text": "ntity Management, Authentication, and Access Control (PR.AA): Access to physical and logical assets is limited to authorized users, services, and hardware and  managed commensurate with the assessed risk of unauthorized access \n PR.AA-01: Identities and credentials for authorized users, services, and hardware are managed by the organization \n 1 \n Because ransomware attacks often start with credential compromise, proper credential management is an essential mitigation. The type of credential and how credentials are issued, managed, revoked and recovered are critical considerations for preventing credential compromise that could lead to ransomware events. For this reason, this outcome is designated Priority 1. \n \nIdentity Management, Authentication, and Access Control (PR.AA) \n PR.AA-03: Users, services, and hardware are authenticated \n 2 \n Most ransomware attacks are conducted through network connections, and because social engineering-based compromise of passwords is a major source of compromise, authentication of identities using phishing-resistant multi-factor authentication is strongly recommended. \n \nIdentity Management, Authentication, and Access Control (PR.AA) \n PR.AA-05: Ac",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0031",
+    "title": "NIST CSF 2.0 — section 32",
+    "text": "shing-resistant multi-factor authentication is strongly recommended. \n \nIdentity Management, Authentication, and Access Control (PR.AA) \n PR.AA-05: Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties \n 2 \n Many ransomware intrusions occur through the compromise of user credentials or invoking processes that should not be authorized to have privileged access to the process that is being infiltrated. \n \nIdentity Management, Authentication, and Access Control (PR.AA) \n PR.AA-06: Physical access to assets is managed, monitored, and enforced commensurate with risk \n 2 \n Although most ransomware attacks are conducted remotely, managing and protecting physical access does protect against insider attacks. This includes protection against others, including family members, accessing physical devices and intentionally or inadvertently degrading the logical access protections associated with the devices. \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nAwareness and Training (PR.AT): The organization�s personnel are provided with c",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0032",
+    "title": "NIST CSF 2.0 — section 33",
+    "text": ".0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nAwareness and Training (PR.AT): The organization�s personnel are provided with cybersecurity awareness and training so that they can perform their cybersecurity-related tasks \n PR.AT-01: Personnel are provided with awareness and training so that they possess the knowledge and skills to perform general tasks with cybersecurity risks in mind \n 1 \n Most ransomware attacks are made possible by users who engage in unsafe practices, administrators who implement insecure configurations, or developers who have insufficient security training. For this reason, this CSF outcome is designated Priority 1. \n \nData Security (PR.DS): Data are managed consistent with the organization�s risk strategy to protect the confidentiality, integrity, and availability of information \n PR.DS-11: Backups of data are created, protected, maintained, and tested \n 1 \n Regular backups that are maintained and tested are essential to timely and relatively painless recovery from ransomware events. Backups should have a copy stored offline or otherwise in a manner that prevents access to them by the attacker or compromise by ransomware. Because this",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0033",
+    "title": "NIST CSF 2.0 — section 34",
+    "text": "ups should have a copy stored offline or otherwise in a manner that prevents access to them by the attacker or compromise by ransomware. Because this CSF outcome is so important to mitigating the effects of ransomware attacks, this outcome is designated Priority 1. \n \nPlatform Security (PR.PS): The hardware, software (e.g., firmware, operating systems, applications), and services of physical and virtual platforms are managed consistent with the organization�s risk strategy to protect their confidentiality, integrity, and availability \n PR.PS-01: Configuration management practices are established and applied \n 2 \n Proper configuration change processes can help to enforce timely security updates to software, maintain necessary security configuration settings, and discourage replacement of code with products that contain malware or don't satisfy access management policies. This CSF outcome reduces an attacker�s opportunities to exploit system vulnerabilities, thus protecting against ransomware attacks. \n \nPlatform Security (PR.PS) \n PR.PS-02: Software is maintained, replaced, and removed commensurate with risk \n 1 \n Old versions of software may contain vulnerabilities of which ransomw",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0034",
+    "title": "NIST CSF 2.0 — section 35",
+    "text": "S-02: Software is maintained, replaced, and removed commensurate with risk \n 1 \n Old versions of software may contain vulnerabilities of which ransomware actors are aware and can exploit. Software updates should be promptly installed, and software that is no longer supported should be replaced. Because is a commonly exploited vulnerability, this outcome is designated Priority 1. \n \nPlatform Security (PR.PS) \n PR.PS-04: Log records are generated and made available for continuous monitoring \n 2 \n Availability of audit/log records can assist forensics in support of recovery and response processes. \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nPlatform Security (PR.PS) \n PR.PS.05: Installation and execution of unauthorized software are prevented \n 2 \n Software of unknown or unreliable provenance can contain malware or other vulnerabilities that can be exploited by a ransomware actor. This objective includes employing protection mechanisms such as technologies that prevent malware installation, use allowlisting/denylisting protections for executables, and block access to known-malicious domains. \n \nTechnology Infrastructure Resilience (PR.IR): Security",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0035",
+    "title": "NIST CSF 2.0 — section 36",
+    "text": "sting/denylisting protections for executables, and block access to known-malicious domains. \n \nTechnology Infrastructure Resilience (PR.IR): Security architectures are managed with the organization�s risk strategy to protect asset confidentiality, integrity, and availability, and organizational resilience \n PR.IR-01: Networks and environments are protected from unauthorized logical access and usage \n 1 \n Most ransomware attacks are executed remotely. Protection of network connections can include processes as simple as password protection of Wi-Fi connections to personal computers and firewalls. In general, use of zero-trust network principles is encouraged. Because remote attacks are so prevalent, this outcome is designated Priority 1. \n \nContinuous Monitoring (DE.CM): Assets are monitored to find anomalies, indicators of compromise, and other potentially adverse events \n DE.CM-01: Networks and network services are monitored to find potentially adverse events \n 2 \n Network monitoring may sometimes detect intrusions before malicious code can be inserted or large volumes of information exfiltrated. \n \nContinuous Monitoring (DE.CM) \n DE.CM-03: Personnel activity and technology usage a",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0036",
+    "title": "NIST CSF 2.0 — section 37",
+    "text": "de can be inserted or large volumes of information exfiltrated. \n \nContinuous Monitoring (DE.CM) \n DE.CM-03: Personnel activity and technology usage are monitored to find potentially adverse events \n 2 \n Monitoring personnel activity can sometimes detect insider threats or insecure staff practices, and thwart potential ransomware events. Monitoring can also be used to find unusual patterns of usage, like someone logging on from another country. \n \nContinuous Monitoring (DE.CM): \n DE.CM-06: External service provider activities and services are monitored to find potentially adverse events \n 2 \n Ransomware can be introduced intentionally or inadvertently by external service providers, especially where remote maintenance takes place. Monitoring can detect exploitable vulnerabilities before ransomware actors take advantage of them. \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nContinuous Monitoring (DE.CM): \n DE.CM-09: Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events \n 2 \n Often malicious code is not immediately executed. There may be time between its insertion and its activation to d",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0037",
+    "title": "NIST CSF 2.0 — section 38",
+    "text": "ind potentially adverse events \n 2 \n Often malicious code is not immediately executed. There may be time between its insertion and its activation to detect it before the ransomware attack is executed. \n \nAdverse Event Analysis (DE.AE): Anomalies, indicators of compromise, and other potentially adverse events are analyzed to characterize the events and detect cybersecurity incidents \n DE.AE-02: Potentially adverse events are analyzed to better understand associated activities \n 1 \n Identifying the cause of potentially adverse behaviors can prevent or mitigate attacks. For example, receipt of data from unknown sources or sudden slowing of response times may indicate attempts to insert malware or exfiltrate information. Unknown mail headers can be clicked on to provide additional sender information and reveal suspicious senders. Terminating connections can abort exfiltration. Data center operations can undertake forensics activities to ascertain the nature and extent of attacks. The importance of recognizing and understanding anomalies is such that this outcome is designated Priority 1. \n \nAdverse Event Analysis (DE.AE) \n DE.AE-04: The estimated impact and scope of adverse events are",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0038",
+    "title": "NIST CSF 2.0 — section 39",
+    "text": "s such that this outcome is designated Priority 1. \n \nAdverse Event Analysis (DE.AE) \n DE.AE-04: The estimated impact and scope of adverse events are understood \n 2 \n Determining the impact of events can inform response and recovery priorities to include supporting a cost-benefit analysis when deciding if a ransom should be paid. \n \nIncident Management (RS.MA): Responses to detected cybersecurity incidents are managed \n RS.MA-01: The incident response plan is executed in coordination with relevant third parties once an incident is declared \n 2 \n Immediate execution of the response plan is necessary to stop any continuing exfiltration of data, stem the spread of an infection to other systems and networks, and initiate pre-emptive messaging. \n \nIncident Response Reporting and Communication (RS.CO): Response activities are coordinated with internal and external stakeholders as required by laws, regulations, or policies \n RS.CO-02: Internal and external stakeholders are notified of incidents \n 2 \n Response to ransomware events include both technical and business responses. An efficient response requires all parties to understand their role.   \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n P",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0039",
+    "title": "NIST CSF 2.0 — section 40",
+    "text": "h technical and business responses. An efficient response requires all parties to understand their role.   \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nIncident Response Reporting and Communication (RS.CO) \n RS.CO-03: Information is shared with designated internal and external stakeholders \n 2 \n Information sharing priorities include stemming the spread of an infection to other systems and networks as well as pre-emptive messaging. Information sharing may also yield forensic benefits and reduce profitability of ransomware attacks.  \n \nIncident Mitigation (RS.MI): Activities are performed to prevent expansion of an event and mitigate its effects \n RS.MI-01: Incidents are contained \n 1 \n Immediate action must be taken to minimize the damage to systems and data, to prevent the spread of infection to other systems and networks, and to minimize the impact on the mission or business. Containment of the effects of the incident is of such importance that this outcome is designated Priority 1. \n \nIncident Mitigation (RS.MI): \n RS.MI-02: Incidents are eradicated \n 2 \n This is necessary to minimize the probability of future successful ransomware attacks and",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0040",
+    "title": "NIST CSF 2.0 — section 41",
+    "text": "igation (RS.MI): \n RS.MI-02: Incidents are eradicated \n 2 \n This is necessary to minimize the probability of future successful ransomware attacks and to restore confidence among stakeholders. \n \nIncident Management (RS.MA): Responses to detected cybersecurity incidents are managed \n RS.MA-01: The incident response plan is executed in coordination with relevant third parties once an incident is declared \n 2 \n Immediate execution of the response plan is necessary to stop any continuing exfiltration of data, stem the spread of an infection to other systems and networks, and initiate pre-emptive messaging. \n \nIncident Response Reporting and Communication (RS.CO): Response activities are coordinated with internal and external stakeholders as required by laws, regulations, or policies \n RS.CO-02: Internal and external stakeholders are notified of incidents \n 2 \n Response to ransomware events include both technical and business responses. An efficient response requires all parties to understand their role. \n \nIncident Response Reporting and Communication (RS.CO) \n RS.CO-03: Information is shared with designated internal and external stakeholders \n 2 \n Information sharing priorities includ",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0041",
+    "title": "NIST CSF 2.0 — section 42",
+    "text": "Communication (RS.CO) \n RS.CO-03: Information is shared with designated internal and external stakeholders \n 2 \n Information sharing priorities include stemming the spread of an infection to other systems and networks as well as pre-emptive messaging. Information sharing may also yield forensic benefits and reduce profitability of ransomware attacks.  \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nIncident Mitigation (RS.MI): Activities are performed to prevent expansion of an event and mitigate its effects \n RS.MI-01: Incidents are contained \n 1 \n Immediate action must be taken to minimize the damage to systems and data, to prevent the spread of infection to other systems and networks, and to minimize the impact on the mission or business. Containment of the effects of the incident is of such importance that this outcome is designated Priority 1. \n \nIncident Mitigation (RS.MI) \n RS.MI-02: Incidents are eradicated \n 2 \n This is necessary to minimize the probability of future successful ransomware attacks and to restore confidence among stakeholders. \n \nIncident Recovery Plan Execution (RC.RP): Restoration activities are performed to ensure operation",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0042",
+    "title": "NIST CSF 2.0 — section 43",
+    "text": "ks and to restore confidence among stakeholders. \n \nIncident Recovery Plan Execution (RC.RP): Restoration activities are performed to ensure operational availability of systems and services affected by cybersecurity incidents \n RC.RP-01: The recovery portion of the incident response plan is executed once initiated from the incident response process \n 2 \n Immediate initiation of the recovery plan can cut losses. \n \nIncident Recovery Plan Execution (RC.RP) \n RC.RP-02: Recovery actions are selected, scoped, prioritized, and performed \n 2 \n Recovery actions are necessary to restore mission effectiveness and business reputation.  \n \nIncident Recovery Plan Execution (RC.RP) \n RC.RP-03: The integrity of backups and other restoration assets is verified before using them for restoration \n 1 \n It is important to verify the integrity of backups to ensure their efficacy for use in recovering from a ransomware event. Because restoring from backups is critical to recovery, this outcome is designated  Priority 1. \n \nIncident Recovery Communication (RC.CO): Restoration activities are coordinated with internal and external parties \n RC.CO-03: Recovery activities and progress in restoring operationa",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0043",
+    "title": "NIST CSF 2.0 — section 44",
+    "text": "RC.CO): Restoration activities are coordinated with internal and external parties \n RC.CO-03: Recovery activities and progress in restoring operational capabilities are communicated to designated internal and external stakeholders \n 2 \n This is necessary to minimize the business impact and to restore confidence among stakeholders. \n \n\n\nCSF 2.0 Category \n CSF 2.0 Outcome \n Priority \n Ransomware Application \n \n\nIncident Recovery Communication (RC.CO) \n RC.CO-04: Public updates on incident recovery are shared using approved methods and messaging \n 2 \n This helps minimize the business impact and restore confidence among stakeholders. \n \n\n\n \nAppendix A. Additional NIST Ransomware Resources  287 \nIn addition to other resources cited in this document, NIST�s National Cybersecurity Center of 288 Excellence (NCCoE) has produced additional guidance to support ransomware threat mitigation. 289 These include:  290 \n�\n NIST Special Publication (SP) 1800-26, Data Integrity: Detecting and Responding to 291 Ransomware and Other Destructive Events addresses how an organization can handle an 292 attack when it occurs and what capabilities it needs to have in place to detect and 293 respond to destru",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0044",
+    "title": "NIST CSF 2.0 — section 45",
+    "text": "resses how an organization can handle an 292 attack when it occurs and what capabilities it needs to have in place to detect and 293 respond to destructive events. Available at https://csrc.nist.gov/pubs/sp/1800/26/final. 294 \n\n�\n NIST SP 1800-25, Data Integrity: Identifying and Protecting Assets Against Ransomware 295 and Other Destructive Events addresses how an organization can work before an attack 296 to identify its assets and potential vulnerabilities and remedy the discovered 297 vulnerabilities to protect these assets. Available at 298 https://csrc.nist.gov/pubs/sp/1800/25/final. 299 \n\n�\n NIST SP 1800-11, Data Integrity: Recovering from Ransomware and Other Destructive 300 Events addresses approaches for recovery should a data integrity attack be successful. 301 Available at https://csrc.nist.gov/pubs/sp/1800/11/final. 302 \n\n�\n Protecting Data from Ransomware and Other Data Loss Events: A Guide for Managed 303 Service Providers to Conduct, Maintain, and Test Backup Files is a guide to help 304 managed service providers (MSPs) improve their recovery from ransomware attacks. 305 Available at https://csrc.nist.gov/pubs/other/2020/04/24/protecting-data-from-306 ransomware-and-",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0045",
+    "title": "NIST CSF 2.0 — section 46",
+    "text": "improve their recovery from ransomware attacks. 305 Available at https://csrc.nist.gov/pubs/other/2020/04/24/protecting-data-from-306 ransomware-and-other-data-los/final. 307 \n\n\nNIST has many other resources that, while not ransomware-specific, contain valuable 308 information about identifying, protecting against, detecting, responding to, and recovering 309 from ransomware events. Several are highlighted below. For a more complete list of resources, 310 visit NIST�s Ransomware Protection and Response site at https://csrc.nist.gov/ransomware.  311 \n�\n Improving the security of telework, remote access, and bring-your-own-device (BYOD) 312 technologies:  313 o\n SP 800-46 Revision 2, Guide to Enterprise Telework, Remote Access, and Bring 314 Your Own Device (BYOD) Security available at 315 https://csrc.nist.gov/pubs/sp/800/46/r2/final 316 \n\n\n\n\n�\n Patching software to eliminate vulnerabilities:  317 o\n SP 800-40 Revision 4, Guide to Enterprise Patch Management Technologies 318 available at https://csrc.nist.gov/pubs/sp/800/40/r4/final 319 \n\n\n\n\n�\n Implementing a zero trust architecture to mitigate ransomware threats: 320 o\n SP 800-207, Zero Trust Architecture available at 321 https://",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0046",
+    "title": "NIST CSF 2.0 — section 47",
+    "text": "19 \n\n\n\n\n�\n Implementing a zero trust architecture to mitigate ransomware threats: 320 o\n SP 800-207, Zero Trust Architecture available at 321 https://csrc.nist.gov/pubs/sp/800/207/final 322 \n\no\n SP 1800-28, Data Confidentiality: Identifying and Protecting Assets Against Data 323 Breaches available at https://csrc.nist.gov/pubs/sp/1800/28/final  324 \n\no\n SP 1800-29, Data Confidentiality: Detect, Respond to, and Recover from Data 325 Breaches available at https://csrc.nist.gov/pubs/sp/1800/29/final 326 \n\no\n SP 1800-35, Implementing a Zero Trust Architecture (DRAFT) available at 327 https://csrc.nist.gov/pubs/sp/1800/35/3prd 328 \n\no\n IR 8496, Data Classification Concepts and Considerations for Improving Data 329 Protection (DRAFT) available at https://csrc.nist.gov/pubs/ir/8496/ipd 330 \n\no\n SP 800-70 Revision 4, National Checklist Program for IT Products: Guidelines for 332 Checklist Users and Developers available at 333 https://csrc.nist.gov/pubs/sp/800/70/r4/final 334 \n\n\n\n\n\n�\n Finding low-level guidance on securely configuring software to eliminate vulnerabilities:  331",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.IR.8374r1.ipd.txt"
+  }
+]

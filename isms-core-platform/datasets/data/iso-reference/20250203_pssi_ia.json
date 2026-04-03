@@ -1,0 +1,474 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "CLUSIF PSSI-IA 2025 — section 1",
+    "text": "Modèle de Politique de Sécurité des \nSystèmes d’Information (PSSI) pour \nl’Intelligence artificielle \nFévrier 2025\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n2/27 \nL’article L. 122-5 de la propriété intellectuelle n’autorisant pas les représentations ou reproduction \nintégrale, ou partielle, faite sans le consentement de l’auteur ou de l’ayant droit ou ayant cause, sauf \nexception stricte (« copies ou reproductions réalisées à partir d’une source licite et strictement réservées \nà l’usage privé du copiste et non destinées à une utilisation collective », analyses et les courtes citations \ndans un but d’exemple et d’illustration, etc.), toute représentation ou reproduction, par quelque procédé \nque ce soit du présent document sans autorisation préalable du Clusif constituerait une contrefaçon \nsanctionnée par les articles L. 335-2 et suivants du Code de la propriété intellectuelle.\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n3/27 \n \nTable des matières \nMODELE DE POLITIQUE DE SECURITE DES SYSTEMES D’INFORMATION (PSSI) \nPOUR L’INTELLIGENCE ARTIFICIELLE ....................................................................................... 1 \n1 \nDEFINITIONS ......................................",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "CLUSIF PSSI-IA 2025 — section 2",
+    "text": "IELLE ....................................................................................... 1 \n1 \nDEFINITIONS .............................................................................................................................. 6 \n1.1 \nSystème d’Intelligence Artificielle (SIA) ............................................................................................... 6 \n1.2 \nSystème d’IA à usage général .............................................................................................................. 6 \n1.3 \nModèle d’IA à usage général................................................................................................................ 6 \n1.4 \nCycle de vie d’un système d’IA ............................................................................................................. 6 \n1.5 \nIA générative ....................................................................................................................................... 6 \n1.6 \nLarge Language Model (LLM) .............................................................................................................. 7 \n1.7 \nModèle d’IA ..............................................",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "CLUSIF PSSI-IA 2025 — section 3",
+    "text": "................................................................................... 7 \n1.7 \nModèle d’IA ......................................................................................................................................... 7 \n1.8 \nRequête ............................................................................................................................................... 7 \n1.9 \nAttaque adverse .................................................................................................................................. 7 \n1.10 \nPoids .................................................................................................................................................... 7 \n1.11 \nAgent conversationnel ......................................................................................................................... 7 \n1.12 \nQualité des données ............................................................................................................................ 7 \n1.13 \nPerformance d’un modèle d’IA ............................................................................................................ 7 \n1.14 \nExplicabilité ..",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "CLUSIF PSSI-IA 2025 — section 4",
+    "text": "’un modèle d’IA ............................................................................................................ 7 \n1.14 \nExplicabilité ......................................................................................................................................... 7 \n1.15 \nHallucination ....................................................................................................................................... 7 \n1.16 \nFine-tuning .......................................................................................................................................... 8 \n2 \nPERIMETRE ET OBJET ............................................................................................................. 9 \n3 \nCYBERSECURITE DU DEVELOPPEMENT DE SYSTEMES D’IA ................................... 10 \n3.1 \nPourquoi la sécurité de l’IA est-elle différente ? ................................................................................ 10 \n3.2 \nRôle du responsable du développement d’un SIA sécurisé ................................................................ 11 \n3.3 \nRègles de sécurité applicables pour la conception .........................................",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "CLUSIF PSSI-IA 2025 — section 5",
+    "text": "................................................. 11 \n3.3 \nRègles de sécurité applicables pour la conception ............................................................................. 11 \n3.3.1 \nSensibiliser les collaborateurs aux menaces et aux risques ............................................................ 11 \n3.3.2 \nModéliser les menaces qui pèsent sur le SIA .................................................................................. 12 \n3.3.3 \nConception sécurisée du SIA ........................................................................................................... 12 \n3.3.4 \nSélection d’un modèle d’IA ............................................................................................................. 13 \n3.4 \nRègles de sécurité applicables pour le développement...................................................................... 14 \n3.4.1 \nSécurité de la chaîne d’approvisionnement .................................................................................... 14 \n3.4.2 \nIdentifier, suivre et protéger les actifs ............................................................................................ 14 \n3.4.3 \nDocumentation des donn",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "CLUSIF PSSI-IA 2025 — section 6",
+    "text": "et protéger les actifs ............................................................................................ 14 \n3.4.3 \nDocumentation des données, modèles et prompts ........................................................................ 15 \n3.4.4 \nGérer la dette technique ................................................................................................................. 15 \n3.5 \nRègles de sécurité applicables pour le déploiement .......................................................................... 15 \n3.5.1 \nSécuriser l’infrastructure ................................................................................................................. 16 \n3.5.2 \nProtéger les modèles dans la continuité ......................................................................................... 16 \n3.5.3 \nÉlaborer des procédures de gestion des incidents.......................................................................... 17\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n4/27 \n3.5.4 \nDiffuser l’IA de manière responsable .............................................................................................. 17 \n3.6 \nRègles de sécurité applicables pour l’exploit",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "CLUSIF PSSI-IA 2025 — section 7",
+    "text": ".............................................................................................. 17 \n3.6 \nRègles de sécurité applicables pour l’exploitation et la maintenance ................................................ 17 \n3.6.1 \nSurveillance du comportement du système ................................................................................... 17 \n3.6.2 \nSurveillance des entrées du système .............................................................................................. 18 \n3.6.3 \nSécuriser les mises à jour ................................................................................................................ 18 \n4 \nGESTION DU RISQUE LIE A L’IA ......................................................................................... 19 \n4.1 \nLa fonction « gouverner » .................................................................................................................. 20 \n4.2 \nLa fonction « cartographier » ............................................................................................................. 21 \n4.3 \nLa fonction « mesurer » ...........................................................................................",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "CLUSIF PSSI-IA 2025 — section 8",
+    "text": "......................... 21 \n4.3 \nLa fonction « mesurer » ..................................................................................................................... 22 \n4.4 \nLa fonction « gérer » .......................................................................................................................... 23 \n5 \nCAS PARTICULIER DES IA GENERATIVES ....................................................................... 24 \n5.1 \nScénarios d’attaques sur l’IA générative ............................................................................................ 24 \n5.2 \nGénération de code source assistée par l’IA ...................................................................................... 25 \n5.3 \nUtilisation de solutions d’IA générative tierces .................................................................................. 26\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n6/27 \n1 Définitions \n1.1 Système d’Intelligence Artificielle (SIA) \nUn système d’Intelligence Artificielle est un système qui fonctionne grâce à une machine et \nest capable d’influencer son environnement en produisant des résultats, tels que des \nprédictions, des recommandations ou des dé",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "CLUSIF PSSI-IA 2025 — section 9",
+    "text": "âce à une machine et \nest capable d’influencer son environnement en produisant des résultats, tels que des \nprédictions, des recommandations ou des décisions, pour répondre à un ensemble donné \nd’objectifs. Il utilise les données et les entrants générés par la machine et/ou apportés par \nl’homme afin de : \n• \npercevoir des environnements réels et/ou virtuels ; \n• \nproduire une représentation abstraite de ces perceptions sous forme de modèles issus \nd’une analyse automatisée (ex. l’apprentissage automatisé) ou manuelle ; \n• \nutiliser les déductions du modèle pour formuler différentes options de résultats. Les \nsystèmes d’IA sont conçus pour fonctionner de façon plus ou moins autonome. \n1.2 Système d’IA à usage général \nIl s’agit d’un système d’IA qui est fondé sur un modèle d’IA à usage général et qui a la capacité \nde répondre à diverses finalités, tant pour une utilisation directe que pour une intégration dans \nd’autres systèmes d’IA. \n1.3 Modèle d’IA à usage général \nUn modèle d’IA, y compris lorsque ce modèle d’IA est entraîné à l’aide d’un grand nombre de \ndonnées utilisant l’auto-supervision à grande échelle, qui présente une généralité significative \net est capable d’exécuter",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "CLUSIF PSSI-IA 2025 — section 10",
+    "text": "aide d’un grand nombre de \ndonnées utilisant l’auto-supervision à grande échelle, qui présente une généralité significative \net est capable d’exécuter de manière compétente un large éventail de tâches distinctes, \nindépendamment de la manière dont le modèle est mis sur le marché, et qui peut être intégré \ndans une variété de systèmes ou d’applications en aval, à l’exception des modèles d’IA utilisés \npour des activités de recherche, de développement ou de prototypage avant leur mise sur le \nmarché. \n1.4 Cycle de vie d’un système d’IA \nLes phases du cycle de vie d’un système d’IA sont au nombre de quatre : \n• \nla conception du système et du modèle ; \n• \nle développement ; \n• \nle déploiement ; \n• \nl’exploitation et la maintenance. \nCes phases se déroulent souvent de manière itérative et ne sont pas nécessairement \nséquentielles. La décision de retirer un système IA de l’exploitation peut intervenir à tout \nmoment pendant la phase d’exploitation et de surveillance. \n1.5 IA générative \nL’IA générative est un sous-ensemble de l’intelligence artificielle, axé sur la création de \nmodèles qui sont entraînés à générer du contenu (texte, images, vidéos, etc.) à partir d’un \ncorpus spécifique",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "CLUSIF PSSI-IA 2025 — section 11",
+    "text": "e artificielle, axé sur la création de \nmodèles qui sont entraînés à générer du contenu (texte, images, vidéos, etc.) à partir d’un \ncorpus spécifique de données d’entraînement.\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n7/27 \n1.6 Large Language Model (LLM) \nCatégorie de modèles d’IA générative qui peuvent générer du texte proche du langage naturel \nd’un être humain, et qui sont généralement entraînés sur un large ensemble de données. \n1.7 Modèle d’IA \nUn modèle d’IA désigne, dans le contexte de cette politique, un réseau de neurones et ses \nparamètres (poids, biais). \n1.8 Requête \nUne requête (ou prompt) désigne l’instruction sous forme de texte envoyée par l’utilisateur au \nSIA. \n1.9 Attaque adverse \nUne attaque adverse (adversarial attack), parfois aussi appelée attaque antagoniste ou \nattaque par exemples contradictoires vise à envoyer à un système d’IA une ou plusieurs \nrequêtes malveillantes dans le but de tromper ou d’altérer son bon fonctionnement. \n1.10 Poids \nDans un réseau de neurones, un poids est un coefficient de puissance de la connexion entre \ndeux neurones, qui s’ajuste pendant toute la phase d’entraînement. Un biais est une constante \nliée à un neurone permettant une",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "CLUSIF PSSI-IA 2025 — section 12",
+    "text": "e la connexion entre \ndeux neurones, qui s’ajuste pendant toute la phase d’entraînement. Un biais est une constante \nliée à un neurone permettant une “compensation” dans le calcul du résultat. La connaissance \ndes poids du modèle peut permettre aux attaquants d’améliorer la capacité de certaines \nattaques. \n1.11 Agent conversationnel \nUn agent conversationnel est défini comme une application permettant un échange écrit entre \nl’utilisateur et le SIA et non un échange oral. \n1.12 Qualité des données \nLa qualité des données désigne généralement un critère métier. Des critères de qualité des \ndonnées d’un point de vue métier peuvent être par exemple l’origine, la quantité, l’exhaustivité, \nla pertinence, l’exactitude, la représentativité (au sens statistique), ou encore le respect d’une \nstructure donnée. \n1.13 Performance d’un modèle d’IA \nLa performance d’un modèle d’IA est un concept métier très dépendant des objectifs fixés lors \nde la conception du modèle. Elle peut inclure plusieurs facteurs comme la précision, la \npertinence ou encore la rapidité des réponses générés pour les utilisateurs par exemple. \n1.14 Explicabilité \nL’explicabilité est la capacité de mettre en relation et",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "CLUSIF PSSI-IA 2025 — section 13",
+    "text": "core la rapidité des réponses générés pour les utilisateurs par exemple. \n1.14 Explicabilité \nL’explicabilité est la capacité de mettre en relation et de rendre compréhensible les éléments \npris en compte par le SIA pour la production d’un résultat. \n1.15 Hallucination \nPhénomène dans lequel un modèle génère du contenu erroné qui n’est pas basé sur des\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n8/27 \ndonnées réelles. \n1.16 Fine-tuning \nTechnique consistant à spécialiser un modèle d’IA pré-entraîné à l’accomplissement d’une \ntâche spécifique. Cela consiste généralement à entraîner le modèle dans son ensemble, ou \nseulement certaines couches d’un réseau de neurones, pour un faible nombre d’itérations sur \nun ensemble de données spécifiques correspondant à la tâche visée. Cette pratique est \nparfois traduite par affinage, réglage fin, peaufinage ou encore spécialisation.\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n9/27 \n2 Périmètre et objet \nCette politique s’applique à tous les systèmes d’intelligence artificielle développés ou utilisés \npar l’entité. \nConformément au règlement européen du 13 juin 2024 établissant des règles harmonisées \nconcernant l’intelligence artificielle (AI Act)1, les p",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "CLUSIF PSSI-IA 2025 — section 14",
+    "text": "ntité. \nConformément au règlement européen du 13 juin 2024 établissant des règles harmonisées \nconcernant l’intelligence artificielle (AI Act)1, les pratiques en matière d’intelligence artificielle \ndécrites dans l’article 5 sont interdites dans l’entité. \nConformément à l’article 4 de l’AI Act l’objet de cette politique est de décrire les mesures pour \ngarantir, dans toute la mesure du possible, un niveau suffisant de maîtrise de l’IA pour les \ncollaborateurs de l’entité, en prenant en considération leurs connaissances techniques, leur \nexpérience, leur éducation et leur formation, ainsi que le contexte dans lequel les systèmes \nd’IA sont destinés à être utilisés, et en tenant compte des personnes ou des groupes de \npersonnes à l’égard desquels les systèmes d’IA sont destinés à être utilisés. \nConformément à l’article 15 de l’AI Act, la conception et le développement des systèmes d’IA \nde l’entité sont tels qu’ils leur permettent d’atteindre un niveau approprié d’exactitude, de \nrobustesse et de cybersécurité, et de fonctionner de façon constante à cet égard tout au long \nde leur cycle de vie. \nLa présente politique s’applique aux systèmes d’IA à haut risque et aux systèmes d’IA à",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0014",
+    "title": "CLUSIF PSSI-IA 2025 — section 15",
+    "text": "çon constante à cet égard tout au long \nde leur cycle de vie. \nLa présente politique s’applique aux systèmes d’IA à haut risque et aux systèmes d’IA à usage \ngénéral, développés et mis en œuvre dans l’entité, tels qu’ils sont décrits dans l’AI Act. \n \n \n \n1 https://artificialintelligenceact.eu/ai-act-explorer/\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n10/27 \n3 Cybersécurité du développement \nde systèmes d’IA \nCe chapitre définit les règles de cybersécurité pour les fournisseurs de systèmes d’intelligence \nartificielle (SIA), que ces systèmes aient été créés de toutes pièces ou qu’ils aient été \nconstruits à partir d’outils et de services fournis par d’autres. La mise en œuvre de ces règles \npermet l’élaboration de SIA sûrs, disponibles et qui fonctionnent sans révéler de données \nsensibles à des parties non autorisées. \nLes SIA ont le potentiel d’apporter de nombreux avantages à l’entité. Toutefois, pour que les \npossibilités offertes par l’IA soient pleinement exploitées, celle-ci doit être développée, \ndéployée et exploitée de façon sécurisée. La cybersécurité est une condition préalable à la \nsécurité, à la résilience, au respect de la vie privée, à l’équité, à l’efficacité et à la",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0015",
+    "title": "CLUSIF PSSI-IA 2025 — section 16",
+    "text": "curisée. La cybersécurité est une condition préalable à la \nsécurité, à la résilience, au respect de la vie privée, à l’équité, à l’efficacité et à la fiabilité des \nSIA. \nLes SIA sont sujets à de nouvelles vulnérabilités en matière de sécurité qui doivent être prises \nen compte parallèlement aux menaces classiques de cybersécurité. Lorsque le rythme de \ndéveloppement est élevé - comme c’est le cas avec l’IA - la sécurité peut souvent être une \nconsidération secondaire. La sécurité doit être une exigence fondamentale, non seulement \npendant la phase de développement, mais tout au long du cycle de vie du système. \nC’est pourquoi ces règles sont divisées en quatre domaines clés du cycle de vie du \ndéveloppement d’un SIA : \n• \nconception sécurisée ; \n• \ndéveloppement sécurisé ; \n• \ndéploiement sécurisé ; \n• \nexploitation et maintenance sécurisées. \n3.1 Pourquoi la sécurité de l’IA est-elle différente ? \nLa spécificité des SIA est que ce sont des systèmes d’information qui : \n• \nimpliquent des composants logiciels (modèles) qui permettent aux ordinateurs de re-\nconnaître et de mettre en contexte des modèles dans les données sans que les règles \nne doivent être explicitement programmées",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0016",
+    "title": "CLUSIF PSSI-IA 2025 — section 17",
+    "text": "aux ordinateurs de re-\nconnaître et de mettre en contexte des modèles dans les données sans que les règles \nne doivent être explicitement programmées par un être humain ; \n• \ngénérer des prédictions, des recommandations ou des décisions basées sur un raison-\nnement statistique. \nOutre les menaces existantes en matière de cybersécurité, les SIA sont exposés à de \nnouveaux types de vulnérabilités. Le terme “adversarial machine learning” (AML) est utilisé \npour décrire l’exploitation de vulnérabilités dans les composants d’un SIA, y compris le \nmatériel, les logiciels, les flux de travail et les chaînes d’approvisionnement. L’AML permet aux \nattaquants de provoquer des comportements involontaires dans les systèmes d’intelligence \nartificielle, notamment : \n• \nen affectant les performances du modèle en matière de classification ou de régression ; \n• \nen permettant aux utilisateurs d’effectuer des actions non autorisées ; \n• \nen permettant l’extraction d’informations sensibles sur les modèles. \nIl existe de nombreuses façons d’obtenir ces effets, comme les attaques par injection dans le \ndomaine des grands modèles de langage (LLM), ou la corruption délibérée des données \nd’apprentissag",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0017",
+    "title": "CLUSIF PSSI-IA 2025 — section 18",
+    "text": "effets, comme les attaques par injection dans le \ndomaine des grands modèles de langage (LLM), ou la corruption délibérée des données \nd’apprentissage ou du retour d’information de l’utilisateur (connue sous le nom \nd’empoisonnement des données).\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n11/27 \n3.2 Rôle du responsable du développement d’un \nSIA sécurisé \nLes chaînes d’approvisionnement modernes de l’IA comptent de nombreux acteurs. Une \napproche simple suppose deux entités : \n• \nle fournisseur qui est responsable de la conservation des données, du développement \nalgorithmique, de la conception, du déploiement et de la maintenance ; \n• \nl’utilisateur, qui fournit les données d’entrée et reçoit les données de sortie. \nLe fournisseur doit mettre en œuvre des contrôles de sécurité et des mesures d’atténuation \nau sein de ses modèles, pipelines et/ou systèmes et, lorsque des paramètres sont utilisés, \nmettre en œuvre l’option la plus sûre par défaut. Lorsque les risques ne peuvent être atténués, \nle fournisseur est responsable de : \n• \ninformer les utilisateurs en aval de la chaîne d’approvisionnement des risques qu’ils \nacceptent ; \n• \nconseiller les utilisateurs sur la manière d’utilise",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0018",
+    "title": "CLUSIF PSSI-IA 2025 — section 19",
+    "text": "mer les utilisateurs en aval de la chaîne d’approvisionnement des risques qu’ils \nacceptent ; \n• \nconseiller les utilisateurs sur la manière d’utiliser le composant en toute sécurité. \nLorsque la compromission d’un système peut entraîner des dommages physiques ou de \nréputation tangibles ou étendus, une perte importante des opérations commerciales, la fuite \nd’informations sensibles ou confidentielles et/ou des implications juridiques, les risques liés à \nla cybersécurité de l’IA doivent être traités comme des risques critiques. \n3.3 Règles de sécurité applicables pour la \nconception \nCette section décrit les règles qui s’appliquent à la phase de conception du cycle de vie du \ndéveloppement d’un SIA. Elle traite de la compréhension des risques et de la modélisation \ndes menaces, ainsi que des sujets spécifiques et des compromis à prendre en compte lors de \nla conception du système et du modèle. \n3.3.1 Sensibiliser les collaborateurs aux menaces et aux \nrisques \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-01 \nLes \ncollaborateurs \ndu \nfournisseur de SIA doivent être \nformés aux menaces et risques \nqui pèsent sur un SIA \nCette formation a pour objectif de \ncomprendre les menaces q",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0019",
+    "title": "CLUSIF PSSI-IA 2025 — section 20",
+    "text": "u \nfournisseur de SIA doivent être \nformés aux menaces et risques \nqui pèsent sur un SIA \nCette formation a pour objectif de \ncomprendre les menaces qui pèsent sur \nla sécurité de l’IA et les moyens de les \natténuer. Cette formation s’appuiera sur \nle document du NIST AI 100-2e2023 et \nsur le référentiel Atlas du MITRE. \nLes collaborateurs du fournisseur de SIA doivent effectuer une veille technique afin de se tenir \ninformés des menaces de sécurité et des modes de défaillance pertinents. Ils aident les \ngestionnaires de risques à prendre des décisions éclairées. \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-02 \nLes utilisateurs du SIA doivent \nêtre sensibilisés aux risques de \nsécurité spécifiques aux SIA. \nCette sensibilisation concerne tous les \nutilisateurs d’un SIA. Elle doit être \nrenouvelée tous les 2 ans. \nLes développeurs doivent être formés aux techniques de programmation sécurisées et aux \npratiques d’IA sûres et responsables.\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n12/27 \n3.3.2 Modéliser les menaces qui pèsent sur le SIA \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-03 \nUne analyse de risque doit être \nconduite \npour \ntout \ndéveloppement de SIA. \nCette analyse de r",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0020",
+    "title": "CLUSIF PSSI-IA 2025 — section 21",
+    "text": "Réf. \nRègle \nInformations de mise en œuvre \nSIA-03 \nUne analyse de risque doit être \nconduite \npour \ntout \ndéveloppement de SIA. \nCette analyse de risque inclut la \ncompréhension des impacts potentiels \nsur le système, les utilisateurs et les \nentités si un composant d’IA est \ncompromis ou se comporte de manière \ninattendue. Ce processus implique \nd’évaluer \nl’impact \ndes \nmenaces \nspécifiques à l’IA. \nLa sensibilité et les types de données utilisées dans le SIA peuvent influencer sa valeur en \ntant que cible pour un attaquant. L’analyse de risques doit tenir compte du fait que certaines \nmenaces peuvent se développer à mesure que les SIA sont de plus en plus considérés comme \ndes cibles de grande valeur et que l’IA elle-même permet de créer de nouveaux vecteurs \nd’attaque automatisés. \n3.3.3 Conception sécurisée du SIA \nIl est nécessaire d’évaluer la pertinence des choix de conception spécifiques à l’IA. Pour cela, \nil faut tenir compte du modèle de menace et des mesures d’atténuation de la sécurité \nassociées, ainsi que de la fonctionnalité, de l’expérience utilisateur, de l’environnement de \ndéploiement, de la performance, de l’assurance, de la surveillance, des exigences éthi",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0021",
+    "title": "CLUSIF PSSI-IA 2025 — section 22",
+    "text": "tionnalité, de l’expérience utilisateur, de l’environnement de \ndéploiement, de la performance, de l’assurance, de la surveillance, des exigences éthiques et \njuridiques, entre autres considérations. \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-04 \nLa conception du SIA doit \nprendre en compte la sécurité de \nla chaîne d’approvisionnement \nlorsque le choix est fait de \ndévelopper \nen \ninterne \nou \nd’utiliser \ndes \ncomposants \nexternes \nLa \nsécurité \nde \nla \nchaîne \nd’approvisionnement doit faire l’objet \nd’une analyse détaillée. \nCette analyse comprend les éléments de décision sur : \n• \nle choix de construire un nouveau modèle, d’utiliser un modèle existant (avec ou sans \nfine-tunning) ou d’accéder à un modèle par le biais d’une API externe ; \n• \nle choix de travailler avec un fournisseur de modèles externe ce qui implique une éva-\nluation de la posture de sécurité de ce fournisseur ; \n• \ndans le cas de l’utilisation d’une bibliothèque externe, il est nécessaire d’en effectuer \nune évaluation pour s’assurer, notamment, que la bibliothèque dispose de contrôles \nqui empêchent le système de charger des modèles non fiables sans s’exposer immé-\ndiatement à l’exécution d’un code arbit",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0022",
+    "title": "CLUSIF PSSI-IA 2025 — section 23",
+    "text": "othèque dispose de contrôles \nqui empêchent le système de charger des modèles non fiables sans s’exposer immé-\ndiatement à l’exécution d’un code arbitraire ; \n• \nla nécessité de mettre en œuvre une analyse et une isolation, lors de l’importation de \nmodèles tiers, qui doivent être traités comme du code tiers non fiable ; \n• \ndans le cas de l’utilisation d’une API externe, la nécessité d’appliquer des contrôles \nappropriés aux données qui peuvent être envoyées à des services échappant au con-\ntrôle de l’entité, par exemple en demandant aux utilisateurs de se connecter et de con-\nfirmer avant d’envoyer des informations potentiellement sensibles ; \n• \nla nécessité de procéder à des vérifications appropriées et à l’assainissement des don-\nnées et des entrées, y compris lorsque sont incorporées dans le modèle des données \nrelatives au retour d’information de l’utilisateur ou à l’apprentissage continu, en recon-\nnaissant que les données de formation définissent le comportement du système.\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n13/27 \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-05 \nLa conception du SIA doit \nprendre en compte l’intégration \ndu développement du système \nlogiciel d’IA d",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0023",
+    "title": "CLUSIF PSSI-IA 2025 — section 24",
+    "text": "Règle \nInformations de mise en œuvre \nSIA-05 \nLa conception du SIA doit \nprendre en compte l’intégration \ndu développement du système \nlogiciel d’IA dans les meilleures \npratiques existantes en matière \nde \ndéveloppement \net \nd’exploitation sécurisés \nTous les éléments du SIA sont écrits \ndans des environnements appropriés \nen utilisant des pratiques de codage et \ndes \nlangages \nqui \nréduisent \nou \néliminent les classes connues de \nvulnérabilités. \nSi les composants d’IA doivent déclencher des actions, par exemple modifier des fichiers ou \ndiriger les résultats vers des systèmes externes, il est nécessaire d’appliquer des restrictions \nappropriées aux actions possibles (cela inclut les dispositifs de sécurité externes, IA et non IA, \nsi nécessaire). \nLes décisions relatives à l’interaction avec l’utilisateur sont éclairées par les risques \nspécifiques à l’IA, comme par exemple : \n• \nle système fournit aux utilisateurs des résultats utilisables sans révéler des niveaux de \ndétail inutiles à un attaquant potentiel ; \n• \nsi nécessaire, le système fournit des garde-fous efficaces autour des résultats du mo-\ndèle ; \n• \nsi l’entité propose une API à des clients ou collaborateurs, il est",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0024",
+    "title": "CLUSIF PSSI-IA 2025 — section 25",
+    "text": "e système fournit des garde-fous efficaces autour des résultats du mo-\ndèle ; \n• \nsi l’entité propose une API à des clients ou collaborateurs, il est nécessaire d’appliquer \ndes contrôles appropriés afin d’atténuer les attaques contre le SIA via l’API ; \n• \nl’intégration par défaut des paramètres les plus sûrs dans le système ; \n• \nla mise en œuvre des principes du moindre privilège pour limiter l’accès aux fonction-\nnalités du SIA ; \n• \nla nécessité d’expliquer aux utilisateurs les capacités les plus risquées du SIA et valider \nleur acceptation de les utiliser ; \n• \nla communication des cas d’utilisation interdits et si possible des solutions alternatives. \n3.3.4 Sélection d’un modèle d’IA \nLe choix d’un modèle d’IA implique de trouver un équilibre entre plusieurs exigences. Il s’agit \nnotamment du choix de l’architecture du modèle, de la configuration, des données \nd’entraînement, de l’algorithme d’entraînement et des hyperparamètres. Les décisions \ns’appuient sur un modèle de menace et sont régulièrement réévaluées à mesure que la \nrecherche sur la sécurité de l’IA progresse et que la compréhension de la menace évolue. \nLors du choix d’un modèle d’IA, il est nécessaire de prendr",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0025",
+    "title": "CLUSIF PSSI-IA 2025 — section 26",
+    "text": "recherche sur la sécurité de l’IA progresse et que la compréhension de la menace évolue. \nLors du choix d’un modèle d’IA, il est nécessaire de prendre en compte les éléments suivants, \nsans toutefois s’y limiter : \n• \nla complexité du modèle utilisé, c’est-à-dire l’architecture et le nombre de paramètres \nchoisis. L’architecture et le nombre de paramètres choisis pour le modèle auront, entre \nautres, une incidence sur la quantité de données d’entraînement nécessaires et sur la \nrobustesse du modèle aux modifications des données d’entrée lorsqu’il est utilisé ; \n• \nl’adéquation du modèle au cas d’usage et/ou la possibilité de l’adapter aux besoins \nspécifiques (par exemple par le fine-tuning) ; \n• \nla capacité d’aligner, d’interpréter et d’expliquer les résultats de du modèle (par \nexemple pour le débogage, l’audit ou la conformité réglementaire). Il peut être avanta-\ngeux d’utiliser des modèles plus simples et plus transparents plutôt que des modèles \ncomplexes et de grande taille qui sont plus difficiles à interpréter ; \n• \nles caractéristiques du ou des ensembles de données de formation, notamment la \ntaille, l’intégrité, la qualité, la sensibilité, l’âge, la pertinence et la di",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0026",
+    "title": "CLUSIF PSSI-IA 2025 — section 27",
+    "text": "ctéristiques du ou des ensembles de données de formation, notamment la \ntaille, l’intégrité, la qualité, la sensibilité, l’âge, la pertinence et la diversité ;\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n14/27 \n• \nl’intérêt d’utiliser des techniques de renforcement des modèles (comme l’entraînement \ncontradictoire), de régularisation et/ou d’amélioration de la protection de la vie privée ; \n• \nla provenance et les chaînes d’approvisionnement des composants, y compris le mo-\ndèle ou le modèle de base, les données de formation et les outils associés. \n3.4 Règles de sécurité applicables pour le \ndéveloppement \nCette section décrit les règles qui s’appliquent à la phase de développement du cycle de vie \ndu SIA, y compris la sécurité de la chaîne d’approvisionnement, la documentation et la gestion \ndes actifs et de la dette technique. \n3.4.1 Sécurité de la chaîne d’approvisionnement \nRéf. \nRègle \nInformations de mise en \nœuvre \nSIA-06 \nLa sécurité des chaînes \nd’approvisionnement en IA \ndoit être évaluée contrôlée et \ndocumentée tout au long du \ncycle de vie du système. \nLes \nfournisseurs \ndoivent \négalement \nadhérer \naux \nmêmes normes que celles \nque \nl’entité \napplique \nà \nd’autres logicie",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0027",
+    "title": "CLUSIF PSSI-IA 2025 — section 28",
+    "text": "cycle de vie du système. \nLes \nfournisseurs \ndoivent \négalement \nadhérer \naux \nmêmes normes que celles \nque \nl’entité \napplique \nà \nd’autres logiciels (signature \ndu \nplan \nd’assurance \nsécurité). \nLorsqu’ils ne sont pas produits en interne, il est nécessaire d’acquérir et de maintenir des \ncomposants matériels et logiciels sécurisés et documentés (par exemple, les modèles, les \ndonnées, les bibliothèques logicielles, les modules, les middlewares, les Frameworks et les \nAPI externes) auprès de développeurs commerciaux, open source et autres tiers vérifiés, afin \nde garantir une sécurité éprouvée des systèmes de l’entité. \n3.4.2 Identifier, suivre et protéger les actifs \nLes actifs liés à l’IA ont de la valeur pour l’entité. \nEn particulier : \n• \nles modèles ; \n• \nles données ; \n• \nles commentaires des utilisateurs ; \n• \nles prompts ; \n• \nles logiciels ; \n• \nla documentation ; \n• \nles logs. \nRéf. \nRègle \nInformations de mise en \nœuvre \nSIA-07 \nLes actifs liés à l’IA doivent \nêtre \ntraités \ncomme \ndes \ndonnées sensibles. \nDes mesures de sécurité \ndoivent être mises en œuvre \npour \nassurer \nleur \nconfidentialité, leur intégrité \net leur disponibilité. \nLa cartographie de ces actifs",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0028",
+    "title": "CLUSIF PSSI-IA 2025 — section 29",
+    "text": "de sécurité \ndoivent être mises en œuvre \npour \nassurer \nleur \nconfidentialité, leur intégrité \net leur disponibilité. \nLa cartographie de ces actifs doit être réalisée pour chaque SIA.\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n15/27 \nIl existe un processus et des outils pour suivre, authentifier, contrôler les versions et sécuriser \nces actifs. \nLa sauvegarde de ces actifs doit être réalisée et il est possible de restaurer un état connu en \ncas de compromission. \nIl existe un processus et des contrôles pour protéger les données auxquelles un SIA peut \naccéder et le contenu généré par l’IA en fonction de sa sensibilité et de la sensibilité des \ndonnées qui ont servi à le générer. \n3.4.3 Documentation des données, modèles et prompts \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-08 \nLa création, l’exploitation et la \ngestion du cycle de vie de \ntous les modèles, ensembles \nde \ndonnées \net \nprompts \nsystèmes \ndoivent \nêtre \ndocumentés. \nLa \ndocumentation \ncomprend \ndes \ninformations relatives à la sécurité, telles que \nles sources des données d’entraînement (y \ncompris les données de fine-tuning et les \nfeedbacks humains ou techniques), la portée \net les limites prévues, les garde-fou",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0029",
+    "title": "CLUSIF PSSI-IA 2025 — section 30",
+    "text": "nnées d’entraînement (y \ncompris les données de fine-tuning et les \nfeedbacks humains ou techniques), la portée \net les limites prévues, les garde-fous, les \nhachages \nou \nles \nsignatures \ncryptographiques, la durée de conservation, \nla fréquence de révision et les modes de \ndéfaillance potentiels. \nParmi les structures utiles pour y parvenir, on peut citer les cartes de modèles, les cartes de \ndonnées et les nomenclatures logicielles (SBOM). \nLa production d’une documentation complète favorise la transparence et la responsabilité. \n3.4.4 Gérer la dette technique \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-09 \nIl est obligatoire d’identifier, \nde suivre et de gérer la dette \ntechnique tout au long du \ncycle de vie d’un SIA. \nLa dette technique correspond aux décisions \nd’ingénierie qui ne respectent pas les \nmeilleures pratiques pour obtenir des \nrésultats à court terme, au détriment \nd’avantages à plus long terme. \nLa dette technique n’est pas mauvaise en soi, mais elle doit être gérée dès les premières \nétapes du développement. \nEn raison de cycles de développement rapides et d’un manque de protocoles et d’interfaces \nbien établis, les niveaux de dette technique d’un SIA son",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0030",
+    "title": "CLUSIF PSSI-IA 2025 — section 31",
+    "text": "En raison de cycles de développement rapides et d’un manque de protocoles et d’interfaces \nbien établis, les niveaux de dette technique d’un SIA sont susceptibles d’être élevés. Il est \nnécessaire de veiller à ce que les plans de cycle de vie (y compris les processus de mise hors \nservice des systèmes d’IA) évaluent, reconnaissent et atténuent les risques pour les futurs \nsystèmes similaires. \n3.5 Règles de sécurité applicables pour le \ndéploiement \nCette section décrit les règles qui s’appliquent à la phase de déploiement du cycle de \ndéveloppement des SIA, y compris la protection de l’infrastructure et des modèles contre les \ncompromissions, les menaces ou les pertes, l’élaboration de processus de gestion des \nincidents et la diffusion responsable.\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n16/27 \n3.5.1 Sécuriser l’infrastructure \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-10 \nLa prise en compte de la \nsécurité \nde \nl’infrastructure \nutilisée \ndoit être assurée à \nchaque étape du cycle \nde vie du système. \nIl est nécessaire de mettre en œuvre des contrôles \nd’accès appropriés aux API, modèles et données, \nainsi qu’à leurs pipelines d’entraînement et de \ntraitement, tant au niv",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0031",
+    "title": "CLUSIF PSSI-IA 2025 — section 32",
+    "text": "ttre en œuvre des contrôles \nd’accès appropriés aux API, modèles et données, \nainsi qu’à leurs pipelines d’entraînement et de \ntraitement, tant au niveau de la recherche et du \ndéveloppement que du déploiement. Cela inclut \nune séparation appropriée des environnements \ncontenant du code ou des données sensibles. \nCes mesures permettent notamment de réduire le risque d’attaques visant à voler un modèle \nou à nuire à ses performances. \n3.5.2 Protéger les modèles dans la continuité \nLes attaquants peuvent être en mesure de reconstruire la fonctionnalité d’un modèle ou les \ndonnées sur lesquelles il a été formé, en accédant à un modèle directement (en acquérant les \npoids du modèle) ou indirectement (en interrogeant le modèle par l’intermédiaire d’une \napplication ou d’un service). Les attaquants peuvent également altérer les modèles, les \ndonnées ou les prompts pendant ou après l’apprentissage, ce qui rend le résultat non fiable. \nRéf. \nRègle \nInformations \nde \nmise \nen \nœuvre \nSIA-11 \nLe modèle et les données doivent être \nprotégés de l’accès direct et indirect par la \nmise en œuvre de contrôles sur l’interface \nd’interrogation \nafin \nde \ndétecter \net \nempêcher les tentatives d’accès",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0032",
+    "title": "CLUSIF PSSI-IA 2025 — section 33",
+    "text": "’accès direct et indirect par la \nmise en œuvre de contrôles sur l’interface \nd’interrogation \nafin \nde \ndétecter \net \nempêcher les tentatives d’accès, de \nmodification \net \nd’exfiltration \nd’informations confidentielles. \nNA \n \nRéf. \nRègle \nInformations \nde \nmise \nen \nœuvre \nSIA-12 \nPour que les systèmes consommateurs \npuissent valider les modèles, il est \nnécessaire de calculer et partager les \nhachages cryptographiques et/ou les \nsignatures des fichiers de modèles (par \nexemple, les poids des modèles) et des \nensembles de données (y compris les \npoints de contrôle) dès que le modèle est \nentraîné. \nPour \nce \nfaire, \nseuls \nles \nalgorithmes \nde \nhachage \nspécifiés dans la PSSIG sont \nautorisés. \nL’atténuation du risque de perte de confidentialité dépend du cas d’utilisation et du modèle de \nmenace. Certaines applications, par exemple celles qui impliquent des données très sensibles, \npeuvent nécessiter des modèles de garanties qu’il peut être difficile ou coûteux d’appliquer. \nLe cas échéant, des technologies d’amélioration de la confidentialité (telles que la \nconfidentialité différentielle ou le chiffrement homomorphique) peuvent être utilisées pour \nexplorer ou garantir les ni",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0033",
+    "title": "CLUSIF PSSI-IA 2025 — section 34",
+    "text": "nfidentialité (telles que la \nconfidentialité différentielle ou le chiffrement homomorphique) peuvent être utilisées pour \nexplorer ou garantir les niveaux de risque associés à l’accès des consommateurs, des \nutilisateurs et des attaquants aux modèles et aux résultats.\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n17/27 \n3.5.3 Élaborer des procédures de gestion des incidents \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-13 \nL’inévitabilité des incidents de \nsécurité affectant les SIA doit \nêtre prise en compte dans les \nplans de réponse aux incidents, \nd’escalade et de remédiation. \nCes plans tiennent compte de différents \nscénarios et sont régulièrement réévalués \nau fur et à mesure de l’évolution du \nsystème et de la recherche en général. \nLes ressources numériques critiques du SIA sont stockées dans des sauvegardes hors ligne. \nLes intervenants sont formés à l’évaluation et au traitement des incidents liés à l’IA. \n3.5.4 Diffuser l’IA de manière responsable \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-14 \nL’entité ne publie des modèles, \ndes \napplications \nou \ndes \nsystèmes qu’après les avoir \nsoumis à une évaluation de \nsécurité appropriée et efficace, \ntelle que l’analyse comp",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0034",
+    "title": "CLUSIF PSSI-IA 2025 — section 35",
+    "text": "èles, \ndes \napplications \nou \ndes \nsystèmes qu’après les avoir \nsoumis à une évaluation de \nsécurité appropriée et efficace, \ntelle que l’analyse comparative \net le red teaming. \nL’entité \nindique \nclairement \nà \nses \nutilisateurs les limites connues ou les \nmodes de défaillance potentiels. \nL’entité applique des contrôles pour empêcher l’utilisation ou le déploiement de son SIA à des \nfins malveillantes. \nL’entité fournit aux utilisateurs des conseils sur l’utilisation appropriée de son modèle ou de \nson SIA, notamment en soulignant les limites et les modes de défaillance potentiels. \nL’entité indique clairement aux utilisateurs les aspects de la sécurité dont ils sont \nresponsables. \nL’entité est transparente sur l’endroit et la manière dont leurs données peuvent être utilisées, \nconsultées ou stockées (par exemple, si elles sont utilisées pour le recyclage du modèle ou \nexaminées par des employés ou des partenaires). \n3.6 Règles de sécurité applicables pour \nl’exploitation et la maintenance \nCette section décrit les règles qui s’appliquent à l’étape de l’exploitation et de la maintenance \nsécurisées du cycle de vie du développement d’un SIA. Elle décrit notamment les règles à \nm",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0035",
+    "title": "CLUSIF PSSI-IA 2025 — section 36",
+    "text": "pliquent à l’étape de l’exploitation et de la maintenance \nsécurisées du cycle de vie du développement d’un SIA. Elle décrit notamment les règles à \nmettre en œuvre une fois qu’un système a été déployé, y compris la journalisation et la \nsurveillance, la gestion des mises à jour et le partage d’informations. \n3.6.1 Surveillance du comportement du système \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-15 \nLes \nrésultats \net \nles \nperformances du modèle et du \nsystème doivent être mesurés \nde manière à pouvoir observer \nles \nchangements \nde \ncomportement \nsoudains \nou \nprogressifs qui affectent la \nsécurité. \nCette surveillance prend en compte et \nidentifie \nles \nintrusions \net \nles \ncompromissions potentielles, ainsi que la \ndérive naturelle des données.\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n18/27 \n3.6.2 Surveillance des entrées du système \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-16 \nConformément aux exigences \nen matière de protection de la \nvie privée et des données à \ncaractère \npersonnelle, \nles \nentrées dans le système (telles \nque les demandes d’inférence, \nles requêtes ou les prompts) \nsont loggées et surveillées. \nCes logs doivent permettre l’audit, l’analyse \net",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0036",
+    "title": "CLUSIF PSSI-IA 2025 — section 37",
+    "text": "(telles \nque les demandes d’inférence, \nles requêtes ou les prompts) \nsont loggées et surveillées. \nCes logs doivent permettre l’audit, l’analyse \net la correction en cas de compromission \nou d’utilisation abusive. \n3.6.3 Sécuriser les mises à jour \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-17 \nDes mises à jour automatisées \nsont incluses par défaut dans \nchaque \nproduit \net \ndes \nprocédures de mise à jour \nsécurisées et modulaires sont \nutilisées pour les distribuer. \nCes processus de mise à jour (y compris \nles régimes de test et d’évaluation) tiennent \ncompte du fait que les modifications \napportées aux données, aux modèles ou \naux \nprompts \npeuvent \nentraîner \ndes \nchangements dans le comportement du \nsystème.\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n19/27 \n4 Gestion du risque lié à l’IA \nComme pour les logiciels traditionnels, les risques liés à la technologie basée sur l’intelligence \nartificielle peuvent avoir des impacts sur l’entité. Les systèmes d’IA comportent également un \nensemble de risques qui ne sont pas entièrement pris en compte par les méthodes courantes \nde traitement du risque. \nPar rapport aux systèmes d’informations traditionnels, les risques spécifiques",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0037",
+    "title": "CLUSIF PSSI-IA 2025 — section 38",
+    "text": "t pris en compte par les méthodes courantes \nde traitement du risque. \nPar rapport aux systèmes d’informations traditionnels, les risques spécifiques à l’IA sont les \nsuivants : \n• \nles données utilisées pour créer un système d’IA peuvent ne pas être une représenta-\ntion vraie ou appropriée du contexte ou de l’utilisation prévue du système d’IA, et la \nreprésentation du terrain peut soit ne pas exister, soit ne pas être disponible. De plus, \ndes biais préjudiciables et d’autres problèmes de qualité des données peuvent affecter \nla fiabilité du système d’IA, ce qui peut entraîner des impacts négatifs ; \n• \ndépendance au système d’IA et dépendance aux données pour les tâches d’entraîne-\nment, combinées à un volume et une complexité accrus généralement associés à ces \ndonnées ; \n• \ndes changements intentionnels ou non pendant l’entraînement peuvent altérer fonda-\nmentalement les performances du système d’IA ; \n• \nles ensembles de données utilisés pour entraîner les systèmes d’IA peuvent se déta-\ncher de leur contexte d’origine ou devenir obsolètes par rapport au contexte de dé-\nploiement ; \n• \nl’échelle et la complexité des systèmes d’IA (de nombreux systèmes contiennent des \nmillions",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0038",
+    "title": "CLUSIF PSSI-IA 2025 — section 39",
+    "text": "obsolètes par rapport au contexte de dé-\nploiement ; \n• \nl’échelle et la complexité des systèmes d’IA (de nombreux systèmes contiennent des \nmillions, voire des milliards de points de décision) hébergés dans des applications lo-\ngicielles plus traditionnelles ; \n• \nl’utilisation de modèles pré-entraînés capables de faire progresser la recherche et \nd’améliorer les performances peut également augmenter les niveaux d’incertitude sta-\ntistique et entraîner des problèmes de gestion des biais, de validité scientifique et de \nreproductibilité ; \n• \ndegré de difficulté plus élevé dans la prévision des modes de défaillance pour les pro-\npriétés émergentes des modèles pré-entraînés à grande échelle ; \n• \nrisque de perte de confidentialité dû à la capacité améliorée d’agrégation de données \npour les systèmes d’IA ; \n• \nles systèmes d’IA peuvent nécessiter une maintenance plus fréquente et des déclen-\ncheurs pour effectuer une maintenance corrective en raison d’une dérive des données \nou du modèle ; \n• \nopacité accrue et soucis de reproductibilité ; \n• \nnormes de tests logiciels insuffisantes et incapacité à documenter les pratiques basées \nsur l’IA selon les normes attendues des logiciels d",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0039",
+    "title": "CLUSIF PSSI-IA 2025 — section 40",
+    "text": "ité ; \n• \nnormes de tests logiciels insuffisantes et incapacité à documenter les pratiques basées \nsur l’IA selon les normes attendues des logiciels d’ingénierie traditionnelle, sauf dans \nles cas les plus simples ; \n• \ndifficulté à effectuer régulièrement des tests de logiciels basés sur l’IA ou à déterminer \nce qu’il faut tester, car les systèmes d’IA ne sont pas soumis aux mêmes contrôles que \nle développement de code traditionnel ; \n• \ncoûts de calcul pour le développement de systèmes d’IA ; \n• \nincapacité de prédire ou de détecter les effets secondaires des systèmes basés sur \nl’IA au-delà des mesures statistiques. \nLes considérations et approches de gestion des risques liés à la confidentialité et à la\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n20/27 \ncybersécurité sont applicables à la conception, au développement, au déploiement, à \nl’évaluation et à l’utilisation de systèmes d’IA. \nL’IA et les technologies associées sont soumis à une innovation rapide. Les avancées \ntechnologiques doivent être surveillées et déployées pour tirer parti de ces évolutions et \nœuvrer à une évolution de l’IA à la fois sécurisée et responsable. \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-18 \nCh",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0040",
+    "title": "CLUSIF PSSI-IA 2025 — section 41",
+    "text": "parti de ces évolutions et \nœuvrer à une évolution de l’IA à la fois sécurisée et responsable. \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-18 \nChaque \nsystème \nd’IA \ndéveloppé et/ou mis en \nœuvre au sein de l’entité doit \nfaire l’objet d’une analyse de \nrisques adaptée. \nLa gestion des risques lié au développement \net à l’utilisation des SIA doit s’appuyer sur le \nFramework du NIST: Artificial Intelligence \nRisk Management Framework2 \nCe Framework fournit des résultats et des actions qui permettent le dialogue, la \ncompréhension et les activités pour gérer les risques liés à l’IA et développer de manière \nresponsable des systèmes d’IA sécurisés. \nCe Framework s’appuie sur quatre fonctions : \n• \ngouverner ; \n• \ncartographier ; \n• \nmesurer ; \n• \ngérer. \nChacune de ces fonctions de haut niveau est décomposée en catégories et sous-catégories. \nLes catégories et sous-catégories sont subdivisées en actions et résultats spécifiques. Les \nactions ne constituent pas une liste de contrôle, ni nécessairement un ensemble ordonné \nd’étapes. \nLa gestion des risques doit être continue, opportune et effectuée tout au long du cycle de vie \ndu système d’IA. Les fonctions principales du Framewor",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0041",
+    "title": "CLUSIF PSSI-IA 2025 — section 42",
+    "text": "La gestion des risques doit être continue, opportune et effectuée tout au long du cycle de vie \ndu système d’IA. Les fonctions principales du Framework doivent être exercées d’une manière \nqui reflète des perspectives diverses et multidisciplinaires, incluant potentiellement les points \nde vue des acteurs de l’IA extérieurs à l’organisation. \n4.1 La fonction « gouverner » \nLa fonction “gouverner” : \n• \ndéveloppe et met en œuvre une culture de gestion des risques au sein des entités qui \nconçoivent, développent, déploient, évaluent ou acquièrent des systèmes d’IA ; \n• \ndécrit les processus, les documents et les schémas organisationnels qui anticipent, \nidentifient et gèrent les risques qu’un système peut poser, y compris pour les utilisa-\nteurs et les autres acteurs de l’entité, ainsi que les procédures permettant d’atteindre \nces résultats ; \n• \nintègre des processus pour évaluer les impacts potentiels; \n• \nfournit une structure grâce à laquelle les fonctions de gestion des risques liées à l’IA \npeuvent s’aligner sur les principes organisationnels, les politiques et les priorités stra-\ntégiques ; \n• \nrelie les aspects techniques de la conception et du développement de systèmes d’IA",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0042",
+    "title": "CLUSIF PSSI-IA 2025 — section 43",
+    "text": "anisationnels, les politiques et les priorités stra-\ntégiques ; \n• \nrelie les aspects techniques de la conception et du développement de systèmes d’IA \naux valeurs et principes organisationnels, et permet des pratiques et des compétences \norganisationnelles pour les personnes impliquées dans l’acquisition, l’entraînement, le \ndéploiement et la surveillance de ces systèmes ; \n \n2 https://www.nist.gov/itl/ai-risk-management-framework\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n21/27 \n• \ntraite du cycle de vie complet du produit et des processus associés, y compris les \nquestions juridiques et autres concernant l’utilisation de systèmes et de données logi-\nciels ou matériels tiers. \n“Gouverner” est une fonction transversale qui est imprégnée dans toute la gestion des risques \nliés à l’IA et qui active les autres fonctions du processus. Les aspects de gouvernance, \nnotamment ceux liés à la conformité ou à l’évaluation, doivent être intégrés dans chacune des \nautres fonctions. L’attention portée à la gouvernance est une exigence continue et intrinsèque \npour une gestion efficace des risques liés à l’IA tout au long de la durée de vie d’un système \nd’IA et du management de l’entité. \nAprès av",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0043",
+    "title": "CLUSIF PSSI-IA 2025 — section 44",
+    "text": "rinsèque \npour une gestion efficace des risques liés à l’IA tout au long de la durée de vie d’un système \nd’IA et du management de l’entité. \nAprès avoir mis en place les structures, les systèmes, les processus et les équipes décrits \ndans la fonction “gouverner”, les entités devraient bénéficier d’une culture axée sur les \nobjectifs et axée sur la compréhension et la gestion des risques. Il incombe aux entités de \ncontinuer à exécuter la fonction “gouverner” à mesure que les connaissances, les cultures et \nles besoins ou attentes des acteurs de l’IA évoluent au fil du temps. \n4.2 La fonction « cartographier » \nLa fonction “cartographier” établit le contexte pour encadrer les risques liés à un système d’IA. \nLe cycle de vie de l’IA comprend de nombreuses activités interdépendantes impliquant un \nensemble diversifié d’acteurs. Dans la pratique, les acteurs de l’IA en charge d’une partie du \nprocessus n’ont souvent pas une visibilité ou un contrôle total sur les autres parties et leurs \ncontextes associés. Les interdépendances entre ces activités et entre les acteurs concernés \nde l’IA peuvent rendre difficile une anticipation fiable des impacts des systèmes d’IA. Par \nexemple, les d",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0044",
+    "title": "CLUSIF PSSI-IA 2025 — section 45",
+    "text": "activités et entre les acteurs concernés \nde l’IA peuvent rendre difficile une anticipation fiable des impacts des systèmes d’IA. Par \nexemple, les décisions précoces visant à identifier les buts et les objectifs d’un système d’IA \npeuvent modifier son comportement et ses capacités, et la dynamique du contexte de \ndéploiement (comme les utilisateurs finaux ou les individus concernés) peut façonner les \nimpacts des décisions du système d’IA. \nCette complexité et ces différents niveaux de visibilité peuvent introduire de l’incertitude dans \nles pratiques de gestion des risques. Anticiper, évaluer et traiter les sources potentielles de \nrisque peut atténuer cette incertitude et améliorer l’intégrité du processus décisionnel. \nLes informations recueillies lors de l’exécution de la fonction “cartographier” permettent de \nprévenir les risques et éclairent les décisions concernant des processus tels que la gestion \ndes modèles, ainsi qu’une décision initiale sur l’opportunité ou la nécessité d’une solution d’IA. \nLes résultats de la fonction “cartographier” constituent la base des fonctions “mesurer” et \n“gérer”. Sans connaissance contextuelle et conscience des risques dans les contextes",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0045",
+    "title": "CLUSIF PSSI-IA 2025 — section 46",
+    "text": "n “cartographier” constituent la base des fonctions “mesurer” et \n“gérer”. Sans connaissance contextuelle et conscience des risques dans les contextes \nidentifiés, la gestion des risques est difficile à réaliser. La fonction “cartographier” vise à \naméliorer la capacité d’une organisation à identifier les risques et les facteurs contributifs plus \nlarges. \nRecueillir des perspectives aussi larges peut aider les entités à prévenir de manière proactive \nles risques et à développer des systèmes d’IA plus fiables en leur permettant de : \n• \naméliorer leur capacité à comprendre les contextes ; \n• \nvérifier leurs hypothèses sur le contexte d’utilisation ; \n• \nreconnaître quand les systèmes ne sont pas fonctionnels dans ou hors de leur contexte \nprévu ; \n• \nidentifier les utilisations positives et bénéfiques de leurs systèmes d’IA existants ; \n• \naméliorer la compréhension des limites des processus d’IA ; \n• \nidentifier les contraintes dans les applications du monde réel qui peuvent conduire à \ndes impacts négatifs ; \n• \nidentifier les impacts négatifs connus et prévisibles liés à l’utilisation prévue des sys-\ntèmes d’IA ;\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n22/27 \n• \nanticiper les ris",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0046",
+    "title": "CLUSIF PSSI-IA 2025 — section 47",
+    "text": "ts négatifs connus et prévisibles liés à l’utilisation prévue des sys-\ntèmes d’IA ;\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n22/27 \n• \nanticiper les risques liés à l’utilisation des systèmes d’IA au-delà de leur utilisation pré-\nvue. \nAprès avoir terminé la fonction “cartographier”, les entités doivent avoir des connaissances \ncontextuelles suffisantes sur les impacts du système d’IA pour éclairer la décision de \nl’opportunité de concevoir, de développer, de déployer ou d’arrêter un système d’IA. \nSi une décision est prise de poursuivre, les entités doivent utiliser les fonctions “mesurer” et \n“gérer” ainsi que les politiques et procédures mises en place dans la fonction “gouverner” pour \ncontribuer aux efforts de gestion des risques liés à l’IA. \nIl incombe aux entités de continuer à appliquer la fonction “cartographier” aux systèmes d’IA \nà mesure que le contexte, les capacités, les risques, les avantages et les impacts potentiels \névoluent au fil du temps. \n4.3 La fonction « mesurer » \nLa fonction “mesurer” utilise des outils, des techniques et des méthodologies quantitatives, \nqualitatives ou mixtes pour analyser, évaluer, comparer et surveiller les risques liés à l’IA et \nles im",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0047",
+    "title": "CLUSIF PSSI-IA 2025 — section 48",
+    "text": "chniques et des méthodologies quantitatives, \nqualitatives ou mixtes pour analyser, évaluer, comparer et surveiller les risques liés à l’IA et \nles impacts associés. Il utilise les connaissances pertinentes pour les risques IA identifiés dans \nla fonction “cartographier” et informe la fonction “gérer”. Les systèmes d’IA doivent être testés \navant leur déploiement et régulièrement pendant leur fonctionnement. Les mesures des \nrisques de l’IA incluent la documentation des aspects de la fonctionnalité et de la fiabilité des \nsystèmes. \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-19 \nLa liste des menaces utilisée \ndans le cadre de la fonction \n“mesurer” est la base Atlas du \nMITRE. \nATLAS3 (Adversarial Threat Landscape for \nArtificial-Intelligence Systems) est une base \nde connaissances sur les tactiques et \ntechniques adverses contre les systèmes \nd’IA. Elle est basée sur des observations \nd’attaques réelles et des démonstrations \nréalistes des red teams. \nLa mesure des risques liés à l’IA comprend le suivi des mesures relatives aux caractéristiques \nfiables, à l’impact social et aux configurations humain-IA. Les processus développés ou \nadoptés dans la fonction “mesurer” doivent",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0048",
+    "title": "CLUSIF PSSI-IA 2025 — section 49",
+    "text": "caractéristiques \nfiables, à l’impact social et aux configurations humain-IA. Les processus développés ou \nadoptés dans la fonction “mesurer” doivent inclure des méthodologies rigoureuses de tests de \nlogiciels et d’évaluation des performances avec des mesures d’incertitude associées, des \ncomparaisons avec des références de performances, ainsi que des rapports et une \ndocumentation formalisée des résultats. Les processus d’examen indépendant peuvent \naméliorer l’efficacité des tests et atténuer les préjugés internes et les conflits d’intérêts \npotentiels. \nLorsque des compromis entre les caractéristiques fiables surviennent, la mesure fournit une \nbase traçable pour éclairer les décisions de gestion. Les options peuvent inclure le recalibrage, \nl’atténuation des impacts ou le retrait du système de la conception, du développement, de la \nproduction ou de l’utilisation, ainsi qu’une gamme de contrôles de compensation, de détection, \nde dissuasion, de directive et de récupération. \nAprès avoir terminé la fonction “mesurer”, les processus de test, d’évaluation, de vérification \net de validation objectifs, reproductibles ou évolutifs, y compris les métriques, les méthodes et \nles métho",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0049",
+    "title": "CLUSIF PSSI-IA 2025 — section 50",
+    "text": "s de test, d’évaluation, de vérification \net de validation objectifs, reproductibles ou évolutifs, y compris les métriques, les méthodes et \nles méthodologies, sont en place, suivis et documentés. Les mesures et les méthodologies de \nmesure doivent respecter les normes scientifiques, juridiques et éthiques et être appliquées \ndans le cadre d’un processus ouvert et transparent. \n \n3 https://atlas.mitre.org/matrices/ATLAS\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n23/27 \n4.4 La fonction « gérer » \nLa fonction “gérer” consiste à allouer des ressources de risque aux risques cartographiés et \nmesurés de manière régulière et telle que définie par la fonction “gouverner”. Le traitement \ndes risques comprend des plans pour réagir, remédier et communiquer sur les incidents de \nsécurité. \nLes informations contextuelles tirées de la consultation d’experts et des contributions des \nacteurs concernés de l’IA – établies dans “gouverner” et réalisées dans le “cartographier” – \nsont utilisées dans cette fonction pour réduire la probabilité de pannes du système et d’impacts \nnégatifs. Les pratiques de documentation systématique établies dans “gouverner” et utilisées \ndans “cartographier” et “mesurer” r",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0050",
+    "title": "CLUSIF PSSI-IA 2025 — section 51",
+    "text": "ystème et d’impacts \nnégatifs. Les pratiques de documentation systématique établies dans “gouverner” et utilisées \ndans “cartographier” et “mesurer” renforcent les efforts de gestion des risques liés à l’IA et \naugmentent la transparence et la responsabilité. Des processus d’évaluation des risques \némergents sont en place, ainsi que des mécanismes d’amélioration continue. \nAprès avoir terminé la fonction “gérer”, des plans de priorisation des risques ainsi qu’un suivi \net une amélioration réguliers sont en place. Les entités disposent alors d’une capacité ac-\ncrue à gérer les risques liés aux systèmes d’IA déployés et à allouer des ressources de ges-\ntion des risques en fonction des risques évalués et hiérarchisés.\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n24/27 \n5 Cas particulier des IA génératives \nLa mise en œuvre d’un système d’IA générative peut se décomposer en trois phases \ncycliques : \n• \nune première phase d’entraînement du modèle d’IA à partir de données spécifiquement \nchoisies ; \n• \nune phase d’intégration et de déploiement ; \n• \nune phase de production opérationnelle dans laquelle les utilisateurs peuvent accéder \nau modèle d’IA entraîné, par l’intermédiaire du système d’",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0051",
+    "title": "CLUSIF PSSI-IA 2025 — section 52",
+    "text": "• \nune phase de production opérationnelle dans laquelle les utilisateurs peuvent accéder \nau modèle d’IA entraîné, par l’intermédiaire du système d’IA. \nCes trois phases doivent chacune faire l’objet de mesures de sécurisation spécifiques, qui \ndépendent en partie du choix de sous-traitance retenu pour chaque composante \n(hébergement, entraînement du modèle, tests de performance, etc.) ainsi que de la sensibilité \ndes données utilisées à chaque étape et de la criticité du système d’IA dans sa finalité. \nEn complément des menaces classiques inhérentes à tout système d’information, un système \nd’IA générative peut-être soumis à des attaques spécifiques visant par exemple à perturber le \nbon fonctionnement de celui-ci (attaques adverses) ou bien à exfiltrer des données traitées \npar celui-ci. \nLa question de la protection des données, notamment des données d’entraînement, est donc \nun enjeu essentiel d’un système d’IA générative, avec comme corollaire la problématique du \nbesoin d’en connaître des utilisateurs lorsqu’ils interrogent le modèle. En effet, ce dernier est \nconçu pour générer une réponse à partir de l’ensemble des données auxquelles il a eu accès \nlors de l’entraînement,",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0052",
+    "title": "CLUSIF PSSI-IA 2025 — section 53",
+    "text": "modèle. En effet, ce dernier est \nconçu pour générer une réponse à partir de l’ensemble des données auxquelles il a eu accès \nlors de l’entraînement, ainsi que des données additionnelles qui peuvent être issues de \nsources internes sensibles. \nL’utilisation d’un système d’IA générative doit répondre à des besoins de confidentialité mais \négalement des besoins en intégrité et en disponibilité. Les interactions du système d’IA avec \nd’autres applications ou composants du SI doivent ainsi être sécurisées, limitées au strict \nbesoin opérationnel, et doivent pouvoir être contrôlées par un humain lorsque celles-ci sont \ncritiques pour entité. \n5.1 Scénarios d’attaques sur l’IA générative \nUn système d’IA générative est une application métier standard, qui doit disposer du même \nsocle de sécurité que toute autre application métier de l’entité. Toutefois, en complément de \nce socle de sécurité, l’entité doit prendre en compte des menaces spécifiques à un système \nd’IA générative. \nCes menaces peuvent être déclinées en trois grandes catégories d’attaques : \n• \nattaques par manipulation: ces attaques consistent à détourner le comportement du \nsystème d’IA en production au moyen de requêtes",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0053",
+    "title": "CLUSIF PSSI-IA 2025 — section 54",
+    "text": "s d’attaques : \n• \nattaques par manipulation: ces attaques consistent à détourner le comportement du \nsystème d’IA en production au moyen de requêtes malveillantes. Elles peuvent provo-\nquer des réponses inattendues, des actions dangereuses ou un déni de service ; \n• \nattaques par infection: ces attaques consistent à contaminer un système d’IA lors de \nsa phase d’entraînement, en altérant les données d’entraînement ou en insérant une \nporte dérobée ; \n• \nattaques par exfiltration: ces attaques consistent à dérober des informations sur le sys-\ntème d’IA en production, comme les données ayant servi à entraîner le modèle, les \ndonnées des utilisateurs ou bien des données internes du modèle (paramètres). \nDans le contexte de l’IA générative, ces attaques peuvent porter atteinte aux besoins de \nsécurité suivants :\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n25/27 \n• \nconfidentialité : l’objectif est de protéger un système d’IA contre la fuite d’informations \nconsidérées comme sensibles: jeux de données d’entraînement, requêtes des utilisa-\nteurs, paramètres des modèles, données additionnelles internes, etc. ; \n• \nintégrité : l’objectif est de protéger un système d’IA contre une modification",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0054",
+    "title": "CLUSIF PSSI-IA 2025 — section 55",
+    "text": "s, paramètres des modèles, données additionnelles internes, etc. ; \n• \nintégrité : l’objectif est de protéger un système d’IA contre une modification non prévue \nde son comportement. L’intégrité peut concerner directement le modèle (paramètres) \nou bien viser les jeux de données d’entraînement (empoisonnement) ou encore les \ncomposants techniques permettant le bon fonctionnement du système d’IA ; \n• \ndisponibilité : l’objectif est de protéger un système d’IA contre des dénis de service ou \ndes actions visant à dégrader ses performances (requêtes malveillantes) ; \n• \ntraçabilité : l’objectif est de garantir d’une part l’explicabilité et l’imputabilité des actions \nréalisées sur un système d’IA. Ces éléments peuvent faciliter le travail d’investigation \net de remédiation après un incident de sécurité. \n5.2 Génération de code source assistée par l’IA \nLes outils d’IA générative peuvent être spécialisés et spécifiquement entraînés pour générer \ndu code source dans plusieurs langages de programmation. \nCes moyens peuvent permettre aux développeurs un gain de temps mais comportent aussi \ndes risques sur la qualité du code (introduction de vulnérabilités) ou d’insertion de porte \ndérobée",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0055",
+    "title": "CLUSIF PSSI-IA 2025 — section 56",
+    "text": "loppeurs un gain de temps mais comportent aussi \ndes risques sur la qualité du code (introduction de vulnérabilités) ou d’insertion de porte \ndérobée dans le cas où un attaquant aurait compromis le modèle. \nIl est donc important de faire preuve de vigilance sur le code source généré par IA. \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-20 \nLe code source généré par \nune IA doit être contrôlé \nsystématiquement et faire \nl’objet \nde mesures de \nsécurité afin de vérifier son \ninnocuité. \n* il est interdit d’exécuter automatiquement \nun code source généré par IA dans \nl’environnement de développement; * le \ncommit automatique de code source généré \npar IA dans les dépôts est interdit; * il est \nobligatoire \nd’intégrer \nun \noutil \nd’assainissement de code source généré par \nIA dans l’environnement de développement; \n* il est obligatoire de vérifier l’innocuité des \nbibliothèques référencées dans le résultat du \ncode source généré par IA; * il est obligatoire \nde faire contrôler régulièrement par un \nhumain la qualité du code source généré à \npartir de requêtes types. \nLa génération de code source par IA pour des modules critiques d’applications doit être limitée. \nRéf. \nRègle \nInform",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0056",
+    "title": "CLUSIF PSSI-IA 2025 — section 57",
+    "text": "ré à \npartir de requêtes types. \nLa génération de code source par IA pour des modules critiques d’applications doit être limitée. \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-21 \nIl est interdit de recourir à un outil \nd’IA générative pour générer des \nblocs de code source destinés aux \nmodules applicatifs suivants:* les \nmodules \nde \ncryptographie \n(authentification, \nchiffrement, \nsignature, etc.); * les modules de \ngestion des droits d’accès des \nutilisateurs et administrateurs; * \nles modules de traitement de \ndonnées sensibles. \nN/A\n\nModèle de PSSI IA \n \n \n© Clusif 2025 \n26/27 \nLes développeurs doivent être sensibilisés sur les risques liés au code source généré par IA. \nRéf. \nRègle \nInformations de mise en œuvre \nSIA-22 \nIl est obligatoire d’effectuer des \ncampagnes de sensibilisation sur \nles risques liés à l’utilisation de \ncode source généré par IA. \nEn complément, les développeurs \ndoivent également être formés sur \nles outils d’IA pour l’optimisation de \nleurs requêtes (prompt engineering) \nafin d’améliorer la qualité et la \nsécurité du code généré. \n5.3 Utilisation de solutions d’IA générative tierces \nEn raison de leur facilité d’usage et des gains métiers potentie",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0057",
+    "title": "CLUSIF PSSI-IA 2025 — section 58",
+    "text": "t la \nsécurité du code généré. \n5.3 Utilisation de solutions d’IA générative tierces \nEn raison de leur facilité d’usage et des gains métiers potentiels, il est possible de recourir à \ndes outils d’IA générative disponibles sur Internet pour traiter des données métier, par exemple \npour la traduction de textes. \nLe fait d’envoyer des informations (texte, images, documents) à un service d’IA générative \nexposé sur Internet revient à déposer ces mêmes informations sur un espace de stockage \nappartenant à ce service. \nDans ce cas, le cloisonnement entre les clients ainsi que la protection en confidentialité des \ndonnées envoyées au système d’IA sur Internet ne sont pas maîtrisés. De plus, dans la \nmajorité des offres, les données envoyées au service sont collectées et utilisées par le \nprestataire à des fins d’optimisation des modèles. \nProposition de critères de sécurité de confidentialité de données : \nNiveau \nIntitulé \nDescription \nC0 \nPublic \nLa donnée est publique. \nC1 \nInterne \nLa donnée ne doit être accessible qu’aux \ncollaborateurs de l’entité et aux partenaires. \nC2 \nConfidentiel \nLa donnée ne doit être accessible qu’aux \ncollaborateurs de l’entité concernés. \nC3 \nSecret \nLa",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  },
+  {
+    "clause_id": "chunk-0058",
+    "title": "CLUSIF PSSI-IA 2025 — section 59",
+    "text": "rs de l’entité et aux partenaires. \nC2 \nConfidentiel \nLa donnée ne doit être accessible qu’aux \ncollaborateurs de l’entité concernés. \nC3 \nSecret \nLa donnée ne doit être accessible qu’aux \npersonnes identifiées et ayant le besoin d’en \nconnaître. \nLes règles d’utilisation d’outils d’IA générative, en fonction de la classification des données \nproposée ci-dessus, est détaillé dans le tableau suivant : \nMode d’accès \nClassification Autorisation \nDatacenter Entité \nC0, C1, C2 \nAutorisé \nDatacenter Entité \nC3 \nInterdit \nSaaS en Europe \nC0, C1 \nAutorisé \nSaaS en Europe \nC2, C3 \nInterdit \nSaas hors Europe C0 \nAutorisé \nSaas hors Europe C1, C2, C3 \nInterdit\n\nModèle de PSSI IA \n \n \n \nTour Eria, 5 rue Bellini \n92821 Puteaux Cedex \nFrance \n +33 1 53 25 08 80 \nclusif@clusif.fr \n \nclusif.fr",
+    "standard": "CLUSIF PSSI-IA 2025",
+    "language": "en",
+    "source_file": "20250203-PSSI-IA.pdf"
+  }
+]

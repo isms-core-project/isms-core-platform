@@ -1,0 +1,218 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "NIST CSF 2.0 — section 1",
+    "text": "NIST Cybersecurity White Paper \nNIST CSWP 32 ipd \nNIST Cybersecurity Framework 2.0:  A Guide to Creating Community Profiles \nInitial Public Draft\n\nCherilyn Pascoe \nNational Cybersecurity Center of Excellence \nNational Institute of Standards and Technology \n\nJulie Nethery Snyder \nThe MITRE Corporation \n\nKaren Scarfone \nScarfone Cybersecurity \n\nThis publication is available free of charge from: \nhttps://doi.org/10.6028/NIST.CSWP.32.ipd \nFebruary 26, 2024 \nCertain equipment, instruments, software, or materials, commercial or non-commercial, are identified in this 1 paper in order to specify the experimental procedure adequately. Such identification does not imply 2 recommendation or endorsement of any product or service by NIST, nor does it imply that the materials or 3 equipment identified are necessarily the best available for the purpose. 4 \nNIST Technical Series Policies 5 \nCopyright, Use, and Licensing Statements 6 \nNIST Technical Series Publication Identifier Syntax 7 \nHow to Cite this NIST Technical Series Publication:  8 \nPascoe C, Snyder JN, Scarfone KA (2024) NIST Cybersecurity Framework 2.0: A Guide to Creating Community 9 Profiles. (National Institute of Standards and Tech",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "NIST CSF 2.0 — section 2",
+    "text": "C, Snyder JN, Scarfone KA (2024) NIST Cybersecurity Framework 2.0: A Guide to Creating Community 9 Profiles. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Cybersecurity White Paper 10 (CSWP) NIST CSWP 32 ipd. https://doi.org/10.6028/NIST.CSWP.32.ipd 11 \nAuthor ORCID iDs 12 \nCherilyn Pascoe: 0009-0009-6216-4864 13 \nJulie Snyder: 0009-0004-6352-2831 14 \nKaren Scarfone: 0000-0001-6334-9486 15 \nPublic Comment Period  16 \nFebruary 26, 2024 � May 3, 2024 17 \nSubmit Comments 18 \nframework-profiles@nist.gov  19 \n 20 \nNational Institute of Standards and Technology 21 \nAttn: Applied Cybersecurity Division, Information Technology Laboratory 22 \n100 Bureau Drive (Mail Stop 2000) Gaithersburg, MD 20899-2000 23 \nAdditional Information 24 \nAdditional information about this publication is available at  25 \nhttps://csrc.nist.gov/pubs/cswp/32/a-guide-to-creating-csf-20-community-profiles/ipd, including related content, 26 potential updates, and document history.  27 \nAll comments are subject to release under the Freedom of Information Act (FOIA). 28 \n  29 \nAbstract  30 \nThe NIST Cybersecurity Framework (CSF) 2.0 introduced the term �Community Profiles� to 31 reflect the us",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "NIST CSF 2.0 — section 3",
+    "text": "formation Act (FOIA). 28 \n  29 \nAbstract  30 \nThe NIST Cybersecurity Framework (CSF) 2.0 introduced the term �Community Profiles� to 31 reflect the use of the CSF for developing use case-specific cybersecurity risk management 32 guidance for multiple organizations. This guide provides considerations for creating and using 33 Community Profiles to help implement the Framework. The guide describes Community 34 Profiles, provides guidance for the content that may be conveyed through a Community Profile, 35 and offers a Community Profile Lifecycle (Plan, Develop, Use, Maintain). 36 \nKeywords 37 \nCommunity Profiles; cybersecurity; Cybersecurity Framework (CSF); cybersecurity risk 38 governance; cybersecurity risk management; enterprise risk management; Profiles. 39 \nAudience 40 \nThe primary audience for this guide is communities, which are groups of organizations with 41 shared interests in cybersecurity risk management within a specific context, such as a sector, 42 technology, or challenge, that are interested in developing one or more Community Profiles. 43 \nSupplemental Content 44 \nThe NCCoE has worked with communities to develop Community Profiles for a variety of use 45 cases. The",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "NIST CSF 2.0 — section 4",
+    "text": "ommunity Profiles. 43 \nSupplemental Content 44 \nThe NCCoE has worked with communities to develop Community Profiles for a variety of use 45 cases. These Community Profiles are available on the NCCoE Framework Resource Center. 46 Communities that are interested in working with the NCCoE to develop Community Profiles and 47 supporting resources or that have suggestions for improving this guide may contact the NCCoE 48 at framework-profiles@nist.gov or visit the NCCoE Framework Resource Center. 49 \nAcknowledgments 50 \nThis NCCoE guide is informed by insights gained from over a decade of collaborative efforts to 51 develop what are now called Community Profiles. The NCCoE acknowledges and thanks all of 52 those who have contributed to these efforts. In addition, the NCCoE wishes to express our 53 thanks to Nakia Grayson, NIST; Jonathan Keisler, MITRE; Brett Kreider, MITRE; William 54 Newhouse, NIST; Ron Pulivarti, NIST; Steve Quinn, NIST; Christina Sames, MITRE; and David 55 Weitzel, MITRE. 56 \n  57 \nTable of Contents 58 \n1. About Community Profiles ..............................................................................................................1 59 \n60 \n61 \n2. Community P",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "NIST CSF 2.0 — section 5",
+    "text": "ty Profiles ..............................................................................................................1 59 \n60 \n61 \n2. Community Profiles Contents .........................................................................................................3 62 \n3. The Community Profile Lifecycle .....................................................................................................5 63 \n64 \n65 \n66 \n67 \n4. NCCoE Resources.......................................................................................................................... 12 68 \nList of Tables 69 \nTable 1 Sample Community Profile Template ......................................................................................3 70 \nList of Figures 71 \nFig. 1. Representation of Community Profiles Using the CSF Core. .......................................................1 72 \nFig. 2: Community Profile Lifestyle ......................................................................................................5 73 \n  74 \n\nPreface 75 \nSince the NIST Cybersecurity Framework (CSF) was first released in 2014, the CSF has been used 76 by communities with shared interests in cybersecurity ri",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "NIST CSF 2.0 — section 6",
+    "text": "e the NIST Cybersecurity Framework (CSF) was first released in 2014, the CSF has been used 76 by communities with shared interests in cybersecurity risk management. These communities 77 developed what are now called �Community Profiles� to outline shared interests, goals, and 78 outcomes within a specific context, such as a sector, technology, or challenge. CSF 2.0 79 introduced the term �Community Profiles� to describe the ways various organizations have 80 used CSF Profiles to develop cybersecurity risk management guidance that applies to multiple 81 organizations, as well as to differentiate them from Organizational Profiles that are internally 82 focused on the organization itself and generally not shared publicly. A Community Profile can 83 be thought of as guidance for a specific community that is organized around the common 84 taxonomy of the CSF. 85 \nThis guide provides considerations for creating and using Community Profiles to implement the 86 CSF 2.0. This guide is intended to provide a starting point, as there are a myriad of ways that 87 Community Profiles have been developed to serve communities. Communities can build on the 88 ideas in this guide to create a Communit",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "NIST CSF 2.0 — section 7",
+    "text": "of ways that 87 Community Profiles have been developed to serve communities. Communities can build on the 88 ideas in this guide to create a Community Profile that supports their needs where they share 89 common priorities. 90 \n1. About Community Profiles 91 \nA Community Profile describes shared interests, goals, and outcomes for reducing 92 cybersecurity risk among a number of organizations. Community Profiles provide a way for 93 communities to reflect a consensus point of view about cybersecurity risk management. 94 Organizations in the community can use a Community Profile as the basis of, or to inform, their 95 Organizational Target Profiles. Some communities may develop more than one Community 96 Profile, based on the scope of their needs. 97 \nCommunities are organizations that share a common context and an interest in their 98 cybersecurity posture. Examples of communities that a Community Profile may support include: 99 \n� Sectors/subsectors (e.g., critical infrastructure sectors) 100 \n\n� Technologies (e.g., mobile, cloud) 101 \n\n� Other use cases (e.g., thwarting ransomware attacks) 102 \n\n\nFigure 1 provides an abstract view of Community Profiles, which use the CSF 2.0 Core",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "NIST CSF 2.0 — section 8",
+    "text": "1 \n\n� Other use cases (e.g., thwarting ransomware attacks) 102 \n\n\nFigure 1 provides an abstract view of Community Profiles, which use the CSF 2.0 Core to identify 103 and prioritize cybersecurity outcomes that are necessary to meet the community�s priorities. 104 Community priorities influence the CSF 2.0 outcomes that are prioritized. The stars in Fig. 1 105 represent the degree of importance of CSF 2.0 outcomes in the context of the Community 106 Profile.  107 \n 108 \nFig. 1. Representation of Community Profiles Using the CSF Core. 109 \nExamples of Community Profiles are available on the NCCoE Framework Resource Center. Once 110 available, NIST will add Community Profiles that are developed for CSF 2.0 to the NCCoE 111 Framework Profiles Resource Center. 112 \nThis figure shows the relationship between community priorities and the CSF Core. The image depicts the CSF Core as a hierarchy of six Functions, each of which contains multiple Categories. Each of those Categories contains multiple Subcategories.  The community priorities are represented by a box that points to the CSF Core.  The priorities are overlaid on the CSF Core, abstractly represented by empty and filled stars to sho",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "NIST CSF 2.0 — section 9",
+    "text": "epresented by a box that points to the CSF Core.  The priorities are overlaid on the CSF Core, abstractly represented by empty and filled stars to show varying levels of priority.\n Benefits  113 \nCommunity Profiles offer a variety of potential benefits, including: 114 \n� Describing a shared taxonomy for cybersecurity risk management and priorities in the 115 context of the community 116 \n\n� Encouraging common target outcomes that organizations within the community can use 117 to inform their assessments of cybersecurity progress 118 \n\n� Aligning requirements from multiple sources under one framework 119 \n\n� Leveraging expertise across the community 120 \n\n� Minimizing the burden for each organization by providing priorities and outcomes that 121 organizations can use to develop their own Target Profiles 122 \n\n\nThe benefits communities will find most valuable shape how they scope and approach 123 developing their Community Profile(s). 124 \n Developers and Owners 125 \nEfforts to develop Community Profiles encourage collaboration across the community � often 126 the efforts to bring a community together to develop a Community Profile to find consensus are 127 just as valuable as the pu",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "NIST CSF 2.0 — section 10",
+    "text": "he community � often 126 the efforts to bring a community together to develop a Community Profile to find consensus are 127 just as valuable as the publication. The Community Profile developer should have community 128 expertise, capabilities to convene other experts that represent the interests of the community, 129 and resources to support development. Examples of organizations that may collaboratively 130 develop and maintain Community Profiles include trade associations, nonprofit entities, 131 government agencies, advisory committees, and information sharing organizations. A large 132 organization with distinct operational components might even develop a Community Profile for 133 internal use across its divisions or units. 134 \n2. Community Profiles Contents 135 \nCommunity Profiles use the CSF Core to highlight and prioritize cybersecurity outcomes that are 136 important for achieving community priorities. A Community Profile provides information that 137 enables the community to make risk-informed decisions when determining how to use its 138 cybersecurity resources. 139 \nCommunity Profiles align community priorities with outcomes from the CSF 2.0 Core by 140 specifying Subca",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "NIST CSF 2.0 — section 11",
+    "text": "to use its 138 cybersecurity resources. 139 \nCommunity Profiles align community priorities with outcomes from the CSF 2.0 Core by 140 specifying Subcategories as �included� in the Community Profile. As depicted in Table 1, 141 Community Profiles should include: 142 \n� The priority level of each CSF 2.0 outcome (e.g., ranking 1, 2, 3, or Low/Moderate/High), 143 \n\n� A rationale for the priority level(s) to help users understand applicability of the CSF 2.0 144 outcome in the context of the community (e.g., an explanation of community-specific 145 challenges or threats that the outcome will help the community address), and 146 \n\n� Applicable Informative References/Mappings that can help users achieve the CSF 2.0 147 outcomes or that can inform assessments of outcomes their organization is already 148 achieving (e.g., industry standards or guidelines). 149 \n\n\n 150 \nCSF 2.0 Outcome \n Priority \n Rationale \n Informative References / Mappings \n \nID.AM-01 \n Inventories of hardware managed by the organization are maintained \n  \n  \n  \n \nID.AM-02 \n Inventories of software, services, and systems managed by the organization are maintained \n  \n  \n  \n \n\nTable 1 Sample Community Profile Template 15",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "NIST CSF 2.0 — section 12",
+    "text": "Inventories of software, services, and systems managed by the organization are maintained \n  \n  \n  \n \n\nTable 1 Sample Community Profile Template 151 \nCommunities may also choose to include: 152 \n� Considerations � Supplements the rationale by providing additional recommendations, 153 explanations, or other supporting details for a CSF 2.0 outcome within the context of 154 this Profile 155 \n\n� Implementation Examples - Provides one or more examples of implementation 156 activities that could be implemented to achieve part or all of the CSF 2.0 outcome 157 \n\n� Notes � Offers any additional details about a CSF 2.0 outcome within the community�s 158 context, such as notes to Community Profile users 159 \n\n\nCommunities may wish to further elaborate on how CSF 2.0 outcomes help them address more 160 discrete priorities and objectives. For example, priority levels, considerations, and 161 implementation examples may differ for one community priority in comparison to another.  162 \n 163 \nUsing Crosswalks and Mappings for Community Profiles 164 \nCommunities may have requirements from a variety of laws, 165 regulations, standards, and other resources. Mappings provide a way of 166 identify",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "NIST CSF 2.0 — section 13",
+    "text": "164 \nCommunities may have requirements from a variety of laws, 165 regulations, standards, and other resources. Mappings provide a way of 166 identifying and describing relationships of these many resources. 167 Mappings to the NIST CSF 2.0 and other NIST publications are stored in 168 the Cybersecurity Privacy and Reference Tool (CPRT). 169 \n3. The Community Profile Lifecycle 170 \n 171 \nFig. 2: Community Profile Lifestyle 172 \nFig. 2 illustrates the Community Profile Lifecycle. Developing a Community Profile begins with a 173 planning process that includes understanding the needs of the community it is intended to 174 support and determining the scope of the Profile. Thoughtful planning enables the 175 development process, resulting in the Community Profile. The Profile is then ready for use by 176 organizations in the community. Community Profiles are reviewed periodically and updated as 177 needed to ensure they are adequately maintained and continue to meet the needs of the 178 community or are retired when no longer needed. 179 \nA thread of communication runs throughout the Community Profile Lifecycle. Coordination and 180 collaboration among organizations within the community",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "NIST CSF 2.0 — section 14",
+    "text": "A thread of communication runs throughout the Community Profile Lifecycle. Coordination and 180 collaboration among organizations within the community helps develop a Community Profile 181 that is realistic and useful throughout its lifespan. 182 \nThe section below provides a summary of the Community Profile Lifecycle phases. 183 \nSummary of Community Profile Lifecycle Phases184 \n1: Plan \nAudience: determine the community \nScope: determine what the Community Profile will address \nParticipants: determine who will contribute to development \nReferences: identify community-specific standards, regulations, and other resources \nContent: determine what to include in the Community Profile2: Develop \nPrioritize: identify community priorities and objectives \nAlign: align community priorities to CSF cybersecurity outcomes \nDocument: complete the Community Profile with relevant content \nFeedback: engage the community to provide feedback \nInform: notify the community that the Profile is available and ready for use3: Use \nCollaborate and Coordinate: determine how to use the Community Profile most effectively within organizations and across the community \nAssess: determine the current state of th",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0014",
+    "title": "NIST CSF 2.0 — section 15",
+    "text": ": determine how to use the Community Profile most effectively within organizations and across the community \nAssess: determine the current state of the community and organizations4: Maintain \nMeasure Impact: evaluate the success of the Community Profile and identify additional needs \nThis image depicts the Community Profile Lifecycle as an infinite loop with four phases: 1) Plan, 2) Develop, 3) Use, and 4) Maintain.  The image includes Communicate in the middle that touches all phases to emphasize the importance of communications throughout the lifecycle.\nMonitor/Feedback: determine if changes are needed to make the Profile more effective for the community \nUpdate: adjust Community Profile content as needed \nRetire: retire the Community Profile when no longer needed \nCommunicate (All Phases) 185 \nCommunication throughout the lifecycle helps the community develop an appropriate Community 186 Profile. 187 \n Plan 188 \n 189 \nWhen planning the creation of a Community Profile, perform these actions: 190 \n1. Identify the intended audience for the Community Profile. Determine whether the 191 Profile is intended for the entire community or specific parts of or roles within the 192 community",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0015",
+    "title": "NIST CSF 2.0 — section 16",
+    "text": "r the Community Profile. Determine whether the 191 Profile is intended for the entire community or specific parts of or roles within the 192 community. Most Community Profiles are intended to address many roles, from 193 directors and executive leaders to hands-on implementers. 194 2. Scope the Profile. The Profile�s scope should be broad enough to accommodate the 195 variety of community members but not so broad that it does not adequately capture the 196 community�s cybersecurity needs. Some communities also determine whether the 197 Community Profile will be a voluntary resource or will be required for the community. 198 \n\n3. Identify participants in the development process. Aligning community priorities 199 requires participation of knowledgeable experts across the community with a variety of 200 operational experience in addition to cybersecurity experts. Participants should be 201 willing to participate throughout the Profile development process and will ideally 202 champion its use once the Profile is complete. 203 \n\n4. Identify community-specific Informative References. Informative References are 204 standards, guidelines, regulations, and other resources to help inform how",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0016",
+    "title": "NIST CSF 2.0 — section 17",
+    "text": "y community-specific Informative References. Informative References are 204 standards, guidelines, regulations, and other resources to help inform how a community 205 achieves the outcomes in the CSF Core. Communities should take advantage of context-206 specific regulations, relevant sector/technology-specific standards, industry best 207 practices, and other available references that can support development and use of the 208 Community Profile. These can be mapped to outcomes in the CSF. Communities may 209 incorporate available references, including available CSF mappings, to aid practitioners 210 in using the Profile. 211 \n\n5. Decide what to include in the Profile. At a minimum, a Community Profile indicates 212 which CSF Functions, Categories, and Subcategories align with community priorities. 213 This helps indicate which cybersecurity activities and outcomes are most supportive to 214 community objectives, operational functions, and other priorities. A Community Profile 215 may also provide discussions of priorities and implementation guidance. 216  217 The state of the community that will be served by the Profile (e.g., cybersecurity 218 knowledge and maturity) can inform d",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0017",
+    "title": "NIST CSF 2.0 — section 18",
+    "text": "ntation guidance. 216  217 The state of the community that will be served by the Profile (e.g., cybersecurity 218 knowledge and maturity) can inform decisions regarding what type of information to 219 include and the necessary level of detail. Each community determines the appropriate 220 level of detail to communicate and the effective structure of the document (e.g., 221 content that appears in the main body vs. an appendix). 222 \n\n\nIntegrating Other NIST Frameworks 223 \nWhile a CSF Community Profile can be a valuable tool on its own, 224 communities may consider integrating other related or complementary 225 frameworks, such as the NIST Privacy Framework, NIST (cybersecurity) 226 Risk Management Framework (RMF), or NIST Artificial Intelligence (AI) 227 RMF. Additionally, incorporating links to other resources, such as the 228 NICE Workforce Framework for Cybersecurity (NICE Framework) or NIST 229 Privacy Workforce Taxonomy, may help communities with identifying 230 work roles and aligning staff to implement prioritized Subcategories in 231 the Community Profile.  232 \n Develop 233 \n 234 \nAfter planning a Community Profile, follow these steps to develop it:  235 \n1. Identify comm",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0018",
+    "title": "NIST CSF 2.0 — section 19",
+    "text": "s in 231 the Community Profile.  232 \n Develop 233 \n 234 \nAfter planning a Community Profile, follow these steps to develop it:  235 \n1. Identify community priorities and objectives. While each organization within a 236 community has its own mission objectives and priorities, there are common or universal 237 interests that support the community. Community Profile teams begin with identifying 238 these universal priorities, which describe the fundamental purposes, operations, or use 239 cases of a community. 240 \n\n\nQuestions to ask that may help the community identify its shared priorities include: 241 \n� How would you describe the purpose of the community? 242 \n\n� What are the critical activities in the community and why are they important? 243 \n\n� What are the current risk management requirements the community must 244 adhere to? 245 \n\n� Are there current community opportunities or priorities to include? 246 \n\n� Are there any dependencies outside the community? 247 \n\n� What are the threats to the success of the community? 248 \n\n� What are the key assets that support each priority? 249 \nPlan phase graphic\n\n� What are the risk appetite statements of the community? 250 \n\n� What asse",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0019",
+    "title": "NIST CSF 2.0 — section 20",
+    "text": "at are the key assets that support each priority? 249 \nPlan phase graphic\n\n� What are the risk appetite statements of the community? 250 \n\n� What assessment criteria should be used? 251 \n\n\nOnce the priorities are agreed upon, the community may decide to rank the priorities in 252 order of relative importance. This helps organizations within the community make 253 strategic planning decisions. 254 \n2. Align community priorities with CSF outcomes. Once community priorities are 255 identified, the development team aligns those priorities with the CSF outcomes that 256 enable or support them. Communities can choose a simple prioritization schema (e.g., 257 Included/Not Included) or a multi-level schema (e.g., High, Moderate, Implement Later) 258 to provide more insights when creating a gap analysis or action plan. Inputs for adding 259 and prioritizing outcomes include community-specific Informative References, shared 260 threats in the community, inputs from community experts, and other resources that the 261 community finds beneficial. 262 3. Fill out the Profile. There is no required format for a Community Profile. Some 263 communities use a narrative format with prose and tables. O",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0020",
+    "title": "NIST CSF 2.0 — section 21",
+    "text": "262 3. Fill out the Profile. There is no required format for a Community Profile. Some 263 communities use a narrative format with prose and tables. Others prefer a table format 264 that can be manipulated and sorted in a variety of ways. Still others prefer a format that 265 can be ingested into and manipulated by governance tools. 266 \n\n\nDevelopment teams can capitalize on existing resources rather than creating the 267 Community Profile from a virtual blank page. For example, some communities may 268 already have a set of priorities or community-specific cybersecurity standards. 269 \nAlso, the NIST National Cybersecurity Center of Excellence (NCCoE) has published 270 multiple Community Profiles that can be used as examples of additional narrative 271 discussions that may be included along with the basic Community Profile contents 272 described in Section 2. Published Community Profiles are available on the NCCoE 273 Framework Resource Center. 274 \n4. Engage the community to provide feedback. Engaging the community for feedback is a 275 critical part of developing an effective Community Profile and increases the likelihood 276 that the Profile will be accepted and used by organiz",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0021",
+    "title": "NIST CSF 2.0 — section 22",
+    "text": "275 critical part of developing an effective Community Profile and increases the likelihood 276 that the Profile will be accepted and used by organizations in the community. The 277 development team may wish to engage the community at multiple milestones during 278 development. At a minimum, once the development team has completed the draft 279 Community Profile, it should seek input from the broader community and incorporate 280 any feedback that will help the Profile be used successfully. 281 \n\n5. Inform the community when the Profile is finalized. The final Community Profile should 282 be hosted by the community in a location that all community members can access. The 283 community should promote the Profile to its members so they know it is available for 284 use (for example, an email to members or social media announcements). 285 \n\n\n Use 286 \nDevelop phase graphic\n 287 \nCommunity Profiles provide a shared view of cybersecurity that facilitates collaboration and 288 coordination throughout the community. It is easier for communities to share information 289 when community members are each starting with a shared way of discussing the topic. 290 \nExamples of how organizations ca",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0022",
+    "title": "NIST CSF 2.0 — section 23",
+    "text": "ies to share information 289 when community members are each starting with a shared way of discussing the topic. 290 \nExamples of how organizations can use Community Profiles include: 291 \n� Inform executive leadership of community-level cybersecurity expectations and goals 292 \n\n� Align business and operational practices with supporting cybersecurity activities that 293 have been vetted by the community 294 � Benchmark against community expectations when developing the organization�s 295 Organizational Current Profile 296 \n\n� Inform the organization�s Target Profile(s) or use it as the organization�s Target Profile 297 \n\n� Facilitate decision making when allocating budget, staffing, and other resources 298 \n\n� Communicate cybersecurity posture in a consistent way with community partners (e.g., 299 vendors, supply chain, service providers), standards bodies, or regulators 300 \n\n\nAssessing Current State 301 \nCommunity Profiles can serve as valuable tools for assessing both the 302 community and organizations within the community. At the community 303 level, Profiles can help a community determine where its ecosystem has 304 systemic cybersecurity challenges and work in collaboration",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0023",
+    "title": "NIST CSF 2.0 — section 24",
+    "text": "e community 303 level, Profiles can help a community determine where its ecosystem has 304 systemic cybersecurity challenges and work in collaboration to address 305 those challenges. 306 \nIn addition to using Community Profiles to create an Organizational 307 Target Profile, organizations can use the information in Community 308 Profiles to inform how they conduct internal assessments of their 309 progress in relation to community expectations. Communities may 310 choose to include assessment criteria and implementation examples to 311 facilitate consistent evaluation by community members. These 312 assessments will inform Organizational Profiles and strategic planning 313 efforts for organizations in the community. 314 \nFor more information on Organizational Current Profiles and Target Profiles, see the Creating 315 and Using Organizational Profiles Quick Start Guide. 316 \n Maintain 317 \n 318 \nMaintain phase graphic\nCollaboration across the community continues to maintain the Community Profile over time. 319 Perform the following activities: 320 \n� Measure the impact the Community Profile is having and determine whether 321 additional resources are necessary to support successful",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0024",
+    "title": "NIST CSF 2.0 — section 25",
+    "text": "tivities: 320 \n� Measure the impact the Community Profile is having and determine whether 321 additional resources are necessary to support successful use. Communities may 322 conduct activities to measure the impact a Community Profile is having over time. Each 323 community will determine its need for measurement and effective measures for 324 evaluating impact. Understanding use and impact can also inform next steps for 325 maintaining the Community Profile and help the community identify any additional 326 resources it may need for effective use. For example, communities may choose to 327 develop guidance for implementation and assessment, establish a forum for ongoing 328 collaboration, or perform other activities. 329 \n\n� Identify and monitor for changes and feedback that might necessitate updates. As 330 operating environments and cybersecurity risks inevitably change over time, Community 331 Profiles will also need to change. Communities will need to determine an appropriate 332 frequency with which to review their Community Profiles, as well as any circumstances 333 that may necessitate change between periodic reviews. Examples of events that may 334 trigger the need to up",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0025",
+    "title": "NIST CSF 2.0 — section 26",
+    "text": "rofiles, as well as any circumstances 333 that may necessitate change between periodic reviews. Examples of events that may 334 trigger the need to update a Community Profile include: 335 o Changes to: 336 - priorities 337 \nUse phase graphic\n\n- risk management posture (e.g., new threats) 338 \n\n- laws, regulations, standards, contracts 339 \n\n- sector composition 340 \n\n- supply chain 341 \n\n- insurance 342 \n\n\n\n\no Feedback from the community (e.g., clarity or utility of content, implementation 343 challenges) 344 \n\no Updates to the CSF 345 \n\n\n\n\n� Update the Community Profile when needed by repeating earlier lifecycle phases. 346 When changes are required, communities can follow earlier steps in the Community 347 Profile Lifecycle to make and communicate updates. Communities may also consider 348 whether and how to maintain an archive of previous versions of Community Profiles. 349 \n\n� Retire Profiles. Communities may also determine that a Community Profile has outlived 350 its usefulness and should be retired. Each community can determine its approach to 351 retiring Community Profiles. 352 \n\n\n4. NCCoE Resources 353 \nFor more information regarding developing and using Community Profile",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  },
+  {
+    "clause_id": "chunk-0026",
+    "title": "NIST CSF 2.0 — section 27",
+    "text": "its approach to 351 retiring Community Profiles. 352 \n\n\n4. NCCoE Resources 353 \nFor more information regarding developing and using Community Profiles, see the NCCoE 354 Framework Resource Center and join our community of interest by sending an email to 355 framework-profiles@nist.gov. 356",
+    "standard": "NIST CSF 2.0",
+    "language": "en",
+    "source_file": "NIST.CSWP.32.ipd.txt"
+  }
+]

@@ -1,0 +1,530 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "NIST SP 800-207A — section 1",
+    "text": "NIST Special Publication  \nNIST SP 800-207A \nA Zero Trust Architecture Model \nfor Access Control in Cloud-Native \nApplications in Multi-Location \nEnvironments \n \nRamaswamy Chandramouli \nZack Butcher  \n  \nThis publication is available free of charge from: \nhttps://doi.org/10.6028/NIST.SP.800-207A\n\nNIST Special Publication  \nNIST SP 800-207A \nA Zero Trust Architecture Model \nfor Access Control in Cloud-Native \nApplications in Multi-Location \nEnvironments \n \nRamaswamy Chandramouli \nComputer Security Division \nInformation Technology Laboratory \n \nZack Butcher \nTetrate, Inc. \n \n \n \nThis publication is available free of charge from: \nhttps://doi.org/10.6028/NIST.SP.800-207A \nSeptember 2023 \n \nU.S. Department of Commerce  \nGina M. Raimondo, Secretary \nNational Institute of Standards and Technology  \nLaurie E. Locascio, NIST Director and Under Secretary of Commerce for Standards and Technology\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n \nCertain commercial equipment, instruments, software, or materials, commercial or non-commercial, are identified in \nthis paper in order to specify the experimental p",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "NIST SP 800-207A — section 2",
+    "text": "ial equipment, instruments, software, or materials, commercial or non-commercial, are identified in \nthis paper in order to specify the experimental procedure adequately. Such identification does not imply \nrecommendation or endorsement of any product or service by NIST, nor does it imply that the materials or \nequipment identified are necessarily the best available for the purpose. \nThere may be references in this publication to other publications currently under development by NIST in \naccordance with its assigned statutory responsibilities. The information in this publication, including concepts and \nmethodologies, may be used by federal agencies even before the completion of such companion publications. Thus, \nuntil each publication is completed, current requirements, guidelines, and procedures, where they exist, remain \noperative. For planning and transition purposes, federal agencies may wish to closely follow the development of \nthese new publications by NIST.   \nOrganizations are encouraged to review all draft publications during public comment periods and provide feedback \nto NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at \nhtt",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "NIST SP 800-207A — section 3",
+    "text": "ing public comment periods and provide feedback \nto NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at \nhttps://csrc.nist.gov/publications. \nAuthority \nThis publication has been developed by NIST in accordance with its statutory responsibilities under the Federal \nInformation Security Modernization Act (FISMA) of 2014, 44 U.S.C. § 3551 et seq., Public Law (P.L.) 113-283. \nNIST is responsible for developing information security standards and guidelines, including minimum requirements \nfor federal information systems, but such standards and guidelines shall not apply to national security systems \nwithout the express approval of appropriate federal officials exercising policy authority over such systems. This \nguideline is consistent with the requirements of the Office of Management and Budget (OMB) Circular A-130. \n \nNothing in this publication should be taken to contradict the standards and guidelines made mandatory and binding \non federal agencies by the Secretary of Commerce under statutory authority. Nor should these guidelines be \ninterpreted as altering or superseding the existing authorities of the Secretary of Commerce, Director of t",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "NIST SP 800-207A — section 4",
+    "text": "authority. Nor should these guidelines be \ninterpreted as altering or superseding the existing authorities of the Secretary of Commerce, Director of the OMB, or \nany other federal official.  This publication may be used by nongovernmental organizations on a voluntary basis and \nis not subject to copyright in the United States. Attribution would, however, be appreciated by NIST.  \nNIST Technical Series Policies \nCopyright, Use, and Licensing Statements \nNIST Technical Series Publication Identifier Syntax \nPublication History \nApproved by the NIST Editorial Review Board on 2023-09-08 \nHow to Cite this NIST Technical Series Publication:  \nChandramouli R, Butcher Z (2023) A Zero-Trust Architecture Model for Access Control in Cloud-Native \nApplications in Multi-Location Environments. (National Institute of Standards and Technology, Gaithersburg, MD), \nNIST Special Publication (SP) NIST SP 800-207A. https://doi.org/10.6028/NIST.SP.800-207A  \nAuthor ORCID iDs \nRamaswamy Chandramouli: 0000-0002-7387-5858\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n \nContact Information \nsp800-207A-comments@nist.gov",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "NIST SP 800-207A — section 5",
+    "text": "ess Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n \nContact Information \nsp800-207A-comments@nist.gov \n \nNational Institute of Standards and Technology \nAttn: Computer Security Division, Information Technology Laboratory \n100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930 \nAll comments are subject to release under the Freedom of Information Act (FOIA).\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \ni \n \nAbstract \nOne of the basic tenets of zero trust is to remove the implicit trust in users, services, and devices \nbased only on their network location, affiliation, and ownership. NIST Special Publication 800-\n207 has laid out a comprehensive set of zero trust principles and referenced zero trust \narchitectures (ZTA) for turning those concepts into reality. A key paradigm shift in ZTAs is the \nchange in focus from security controls based on segmentation and isolation using network \nparameters (e.g., Internet Protocol (IP) addresses, subnets, perimeter) to identities. From an \napplication security point of view, this requires authentication an",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "NIST SP 800-207A — section 6",
+    "text": ".g., Internet Protocol (IP) addresses, subnets, perimeter) to identities. From an \napplication security point of view, this requires authentication and authorization policies based \non application and service identities in addition to the underlying network parameters and user \nidentities. This in turn requires a platform that consists of Application Programming Interface \n(API) gateways, sidecar proxies, and application identity infrastructures (e.g., Secure Production \nIdentity Framework for Everyone [SPIFFE]) that can enforce those policies irrespective of the \nlocation of the services or applications, whether on-premises or on multiple clouds. The \nobjective of this publication is to provide guidance for realizing an architecture that can enforce \ngranular application-level policies while meeting the runtime requirements of ZTA for multi-\ncloud and hybrid environments. \nKeywords \negress gateway; identity-tier policies; ingress gateway; microservices; multi-cloud; network-tier \npolicies; service mesh; sidecar proxy; SPIFFE; transit gateway; zero trust; zero trust architecture. \nReports on Computer Systems Technology \nThe Information Technology Laboratory (ITL) at the National In",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "NIST SP 800-207A — section 7",
+    "text": "gateway; zero trust; zero trust architecture. \nReports on Computer Systems Technology \nThe Information Technology Laboratory (ITL) at the National Institute of Standards and \nTechnology (NIST) promotes the U.S. economy and public welfare by providing technical \nleadership for the Nation’s measurement and standards infrastructure. ITL develops tests, test \nmethods, reference data, proof of concept implementations, and technical analyses to advance \nthe development and productive use of information technology. ITL’s responsibilities include the \ndevelopment of management, administrative, technical, and physical standards and guidelines for \nthe cost-effective security and privacy of other than national security-related information in \nfederal information systems. The Special Publication 800-series reports on ITL’s research, \nguidelines, and outreach efforts in information system security, and its collaborative activities \nwith industry, government, and academic organizations.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \nii \n \nPatent Disclosure Notice \nNOTICE: ITL has requested that holders of pa",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "NIST SP 800-207A — section 8",
+    "text": "ative \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \nii \n \nPatent Disclosure Notice \nNOTICE: ITL has requested that holders of patent claims whose use may be required for \ncompliance with the guidance or requirements of this publication disclose such patent claims to \nITL. However, holders of patents are not obligated to respond to ITL calls for patents and ITL \nhas not undertaken a patent search in order to identify which, if any, patents may apply to this \npublication. \nAs of the date of publication and following call(s) for the identification of patent claims whose \nuse may be required for compliance with the guidance or requirements of this publication, no \nsuch patent claims have been identified to ITL.  \nNo representation is made or implied by ITL that licenses are not required to avoid patent \ninfringement in the use of this publication.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \niii \n \nTable of Contents \nExecutive Summary ................................................................................................................. 1 \n \nIntroduction ............",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "NIST SP 800-207A — section 9",
+    "text": "mmary ................................................................................................................. 1 \n \nIntroduction ...................................................................................................................... 2 \n \nBackground – Zero Trust Principles and Zero Trust Architecture ................................ 2 \n \nRelationship to Other NIST Guidance Documents ...................................................... 3 \n \nScope ......................................................................................................................... 3 \n \nTarget Audience ......................................................................................................... 4 \n \nOrganization of This Document .................................................................................. 4 \n \nThe Enterprise Cloud-Native Platform and its Components ......................................... 5 \n \nEnterprise Infrastructure Layer ................................................................................... 6 \n \nDesigning a Policy Framework for ZTA for Cloud-Native Application Environments . 7 \n \nFunctional Components of Identity-Based Seg",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "NIST SP 800-207A — section 10",
+    "text": "............... 6 \n \nDesigning a Policy Framework for ZTA for Cloud-Native Application Environments . 7 \n \nFunctional Components of Identity-Based Segmentation Policies for ZTA .................. 8 \n \nShortcomings of Identity-Based Segmentation Policies for Enterprise ZTA ................ 9 \n \nMulti-Tier Policies for Enterprise ZTA ......................................................................... 9 \n \nImplementing Multi-Tier Policies for ZTA for Cloud-Native Application Environments  \n \n ..........................................................................................................................................12 \n \nReference Application Infrastructure Scenario ...........................................................12 \n \nRole of the Service Mesh in Policy Deployment, Enforcement, and Updates .............13 \n \nPolicy Deployment for Reference Application Infrastructure.......................................14 \n \nAnother Application Infrastructure Scenario ...............................................................15 \n \nFunctional Roles of Application Infrastructure Elements in Enforcing Policies ...........16 \n \nComparison of Identity-Tier and Network-Ti",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "NIST SP 800-207A — section 11",
+    "text": ".......15 \n \nFunctional Roles of Application Infrastructure Elements in Enforcing Policies ...........16 \n \nComparison of Identity-Tier and Network-Tier Policies ..............................................17 \n4.6.1. \nApproaches for Deployment and the Limitations of Network-Tier Policies ...............17 \n4.6.2. \nPrerequisites for the Deployment of Identity-Tier Policies ........................................18 \n4.6.3. \nAdvantages of Identity-Tier Policies .........................................................................19 \n \nSummary and Conclusions ............................................................................................20 \nReferences ..............................................................................................................................23 \nList of Figures \nFig. 1. Enterprise infrastructure layer for uniform policy deployment .......................................... 7 \nFig. 2. Flexibility provided by multi-tier policies .........................................................................10 \nFig. 3. Multi-tier Policies for a Hybrid Application Environment .................................................13 \nFig. 4. An Ist",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "NIST SP 800-207A — section 12",
+    "text": "..............10 \nFig. 3. Multi-tier Policies for a Hybrid Application Environment .................................................13 \nFig. 4. An Istio Authorization Policy that allows Service 1 to Service 2 on port 443 but only \nallows it to execute the GET HTTP verb on the “/public” path ........................................15 \nFig. 5. Policy Deployment for a Three-tier Application ...............................................................16\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \niv \n \nAcknowledgments \nThe authors would like to express their thanks to Isabel Van Wyk of NIST for her detailed \neditorial review of the public comment version as well as the final publication.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n1 \n \nExecutive Summary \nThe principles of zero trust, as described in NIST Special Publication (SP) 800-207, have \nbecome the guiding markers for developing secure zero trust architecture. A well-established \nclass of applications is the cloud-native application class. The genera",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "NIST SP 800-207A — section 13",
+    "text": "ing markers for developing secure zero trust architecture. A well-established \nclass of applications is the cloud-native application class. The generally accepted \ncharacterization of a cloud-native application includes the following: \n• The application is made up of a set of loosely coupled components called microservices. \nEach of the microservices can be hosted on different physical or virtual machines (VMs) \nand even be geographically distributed (e.g., within several facilities that belong to the \nenterprise, such as the headquarters, branch offices, and in various cloud service provider \nenvironments). \n• Any transaction involving the application may also involve one or more inter-service \n(microservice) calls across the network. \n• A widespread feature (though not necessarily a requirement for cloud-native applications) \nis the presence of a software platform called the service mesh that provides an integrated \nset of all application services (e.g., services discovery, networking connections, \ncommunication resilience, and security services like authentication and authorization). \nThe realization of a zero trust architecture for the above class of cloud-native applications",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "NIST SP 800-207A — section 14",
+    "text": "rity services like authentication and authorization). \nThe realization of a zero trust architecture for the above class of cloud-native applications \nrequires a robust policy framework. In order to follow zero trust principles, the constituent \npolices in the framework should consider the following scenario: \n• There should not be implicit trust in users, services, or devices based exclusively on their \nnetwork location, affiliation, or ownership. Hence, policy definitions and associated \nsecurity controls based on the segmentation or isolation of networks using network \nparameters (e.g., IP addresses, subnets, perimeter) are insufficient. These policies fall \nunder the classification of network-tier policies. \n• To ensure the presence of zero trust principles throughout the entire application, network-\ntier policies must be augmented with policies that establish trust in the identity of the \nvarious participating entities (e.g., users and services) irrespective of the location of the \nservices or applications, whether on-premises or on multiple clouds. \nThis document provides guidance for realizing a zero trust architecture that can enforce granular \napplication-level policies for",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0014",
+    "title": "NIST SP 800-207A — section 15",
+    "text": "on multiple clouds. \nThis document provides guidance for realizing a zero trust architecture that can enforce granular \napplication-level policies for cloud-native applications. The guidance is anchored in the \nfollowing: \n• A combination of network-tier and identity-tier policies \n• The components of cloud-native applications that enable the definition and deployment \nof those policies, such as edge, ingress, sidecar, and egress gateways; the creation, \nissuance, and maintenance of service identities; and the issuance of authentication and \nauthorization tokens that carry user identities in the enterprise application infrastructure \nthat encompasses multi-cloud and hybrid environments\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n2 \n \n \nIntroduction  \nZero trust (ZT) tenets or principles have been accepted as the guide markers for architecting all \napplications. There are several reasons why adherence to these tenets is critical for obtaining \nnecessary security assurances, especially for cloud-native applications. The enterprise \napplication environments for this class of applications are high",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0015",
+    "title": "NIST SP 800-207A — section 16",
+    "text": "essary security assurances, especially for cloud-native applications. The enterprise \napplication environments for this class of applications are highly geographically distributed and \nspan multiple cloud and on-premises environments (e.g., headquarters, enterprise-operated data \ncenters, branch offices). Further, the user base consists of both remote and on-premises \nemployees. These two features call for establishing trust in all of the data sources and computing \nservices of the enterprise — irrespective of their location — through secure communication and \nthe validation of access policies.  \nApart from geographic distribution, another common feature of cloud-native applications is the \npresence of many microservices that are loosely coupled and collectively support business \nprocesses through extensive inter-service calls. This is augmented by an integrated infrastructure \nfor providing all application services called the service mesh. These features emphasize the \nconcept of identity for the various components of the application in the form of microservices as \nwell as the users who access them through direct calls or clients (other services). This in turn \nhighlights the cri",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0016",
+    "title": "NIST SP 800-207A — section 17",
+    "text": "in the form of microservices as \nwell as the users who access them through direct calls or clients (other services). This in turn \nhighlights the critical need for authenticating these identities and for providing legitimate access \non a per-session basis through a dynamic policy that takes the current status of the user, service, \nand requested resource into account. \nThe above requirements can only be met through a comprehensive policy framework. This \ndocument provides guidance for developing a policy framework that will form the foundation for \nrealizing a zero trust architecture (ZTA) while incorporating zero trust principles into its design \nfor cloud-native applications. The policy framework should also consist of a comprehensive set \nof policies that span all critical entities and resources in the application stack, including the \nnetwork, network devices, users, and services. \n \nBackground — Zero Trust Principles and Zero Trust Architecture  \nA summary of the zero trust principles and the definition of a zero trust architecture, as described \nin SP 800-207, Zero Trust Architecture [1], are: \n• Zero trust is the term for an evolving set of cybersecurity paradigms that move",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0017",
+    "title": "NIST SP 800-207A — section 18",
+    "text": "ure, as described \nin SP 800-207, Zero Trust Architecture [1], are: \n• Zero trust is the term for an evolving set of cybersecurity paradigms that move defenses \nfrom static, network-based perimeters to focus on users and resources. It is a set of \nsecurity primitives rather than a particular set of technologies. Zero trust assumes that \nthere is no implicit trust granted to user accounts based solely on their physical or \nnetwork location (i.e., local area networks versus the internet) or to endpoints (devices) \nbased on their ownership (e.g., enterprise or personally owned). Zero trust focuses on \nprotecting resources (e.g., devices, services, workflows, network accounts) rather than \nnetwork segments, as the network location is no longer seen as the prime component to \nthe security posture of the resource. \n• A zero trust architecture uses zero trust principles to plan industrial and enterprise \ninfrastructures and workflows.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n3 \n \nNIST’s guidance on zero trust also contains an abstract definition of zero trust architecture and \ngives general deploy",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0018",
+    "title": "NIST SP 800-207A — section 19",
+    "text": "ocation Environments \n \n \n3 \n \nNIST’s guidance on zero trust also contains an abstract definition of zero trust architecture and \ngives general deployment models and use cases with which zero trust could improve an \nenterprise’s overall information technology security posture. \n \nRelationship to Other NIST Guidance Documents \nSince the current document provides guidance for the realization of ZTA for cloud-native \napplications hosted in multiple locations (on-premises and multiple clouds) and the enforcement \nof ZT principles requires policies that are associated with various security services, it will be \nuseful to refer to the following documents. These documents provide background information for \nthe architecture of a microservices-based application with service mesh as well as guidance for \nconfiguring specific security services. The current document expands the reference environment \nto one in which the Information Technology (IT) application infrastructure of an enterprise spans \nmultiple premises and multiple cloud provider locations as well as addresses the range of policies \nthat is required for comprehensive security assurance. \n• SP 800-204A, Building Secure Microservic",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0019",
+    "title": "NIST SP 800-207A — section 20",
+    "text": "cations as well as addresses the range of policies \nthat is required for comprehensive security assurance. \n• SP 800-204A, Building Secure Microservices-Based Applications Using Service Mesh \nArchitecture [2], provides deployment guidance for various security services (e.g., \nestablishment of secure sessions, security monitoring) for a microservices-based \napplication using a dedicated infrastructure (i.e., a service mesh) based on service proxies \nthat operate independently of the application code. \n• SP 800-204B, Attribute-Based Access Control for Microservices-Based Applications \nUsing a Service Mesh [3], provides deployment guidance for building an authentication \nand authorization framework within the service mesh that meets the security \nrequirements. This may include establishing (1) zero trust by enabling mutual \nauthentication in communication between any pair of services and (2) a robust access \ncontrol mechanism based on an access control model (e.g., the attribute-based access \ncontrol [ABAC] model) that can be used to express a wide set of policies and is scalable \nin terms of user base, objects (resources), and deployment environment. \n \nScope \nThe scope of this docum",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0020",
+    "title": "NIST SP 800-207A — section 21",
+    "text": "ress a wide set of policies and is scalable \nin terms of user base, objects (resources), and deployment environment. \n \nScope \nThe scope of this document includes: \n• Identifying the requirements for realizing a ZTA for granular access control in \nmicroservices-based application platforms that include a service mesh infrastructure. \n• Identifying the infrastructural elements that should be part of the platform in order to \nconfigure and implement ZT principles. \n• Guidance for deploying a ZTA in the above platform and outlining the security \nassurances that the deployment can provide. \n• Recommend multi-tier policies that combine network-level (both coarse-grained and \nfine-grained) and identity-tier policies for enforcing ZT principles.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n4 \n \nThe reference application platform consists of microservices-based applications using a service \nmesh with sidecar proxies as the application services infrastructure. The service mesh technology \nvariation that uses a sidecar-less approach is not considered as the deployment of this technology \nis still in early",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0021",
+    "title": "NIST SP 800-207A — section 22",
+    "text": "re. The service mesh technology \nvariation that uses a sidecar-less approach is not considered as the deployment of this technology \nis still in early stages.  \n \nTarget Audience \nThis guidance is intended for security architects and infrastructure designers in organizations \nwith a hybrid IT environment (consisting of both on-premises and multiple cloud-based \napplications) with a combination of legacy and microservices-based (i.e., cloud-native) \napplications and a built-in application services infrastructure, such as a service mesh. \n \nOrganization of This Document \nThe organization of this document is as follows: \n• Section 2 describes a modern enterprise cloud-native application platform that includes a \ndedicated infrastructure for providing all application services as well as a management \nplane when the application spans both on-premises and multiple cloud service provider \nlocations. \n• Section 3 introduces the basic concepts of a policy framework for ZTA for the platform \ndescribed in Section 2 in terms of drivers and design requirements. It also provides an \nanalysis of identity-based policies and introduces the concept of multi-tier policies. \n• Section 4 describes the",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0022",
+    "title": "NIST SP 800-207A — section 23",
+    "text": "requirements. It also provides an \nanalysis of identity-based policies and introduces the concept of multi-tier policies. \n• Section 4 describes the implementation approach for deploying multi-tier policies for two \nenterprise application infrastructure scenarios by outlining the roles of the service mesh, \nthe functional components involved, and the advantages of identity-tier policies, which \nprovide service-level segmentation and play a critical role in the security assurance of an \napplication ecosystem to conform to zero trust principles or tenets. \n• Section 5 provides a summary and conclusion.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n5 \n \n \nThe Enterprise Cloud-Native Platform and its Components \nAn enterprise cloud-native platform is increasingly made up of microservices that are \nimplemented as containers and hosted on a container orchestration platform. In addition, it has a \ndedicated infrastructure layer called a service mesh, which provides a comprehensive set of \napplication services (e.g., network connectivity, network resilience, observability, and security). \nThese applica",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0023",
+    "title": "NIST SP 800-207A — section 24",
+    "text": "ch provides a comprehensive set of \napplication services (e.g., network connectivity, network resilience, observability, and security). \nThese application services are enabled by the following: \n• A built-in infrastructure for (a) providing service identities, (b) service discovery, and (c) \nexternal policy-based authorization engines in which policies incorporate contextual \nvariables. Policies pertain to service-to-service and user-to-resource authentications and \nauthorizations and ensure application integrity and confidentiality. These policies \ngenerally are expressed through a structure called access control. Some examples of \naccess control models include: Next Generation Access Control (NGAC) model, and \nAttribute-based access control (ABAC) model.  \n• Code for performing network-related functions (e.g., traffic routing) and for ensuring \nnetwork resiliency through functions such as retries, timeouts, blue-green deployments, \nand circuit breaking.  \n• More details on the container orchestration platform with an integrated service mesh can \nbe found in [2], and an access control implementation in that platform is described \nextensively in [3]. \nIn the modern enterprise, the",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0024",
+    "title": "NIST SP 800-207A — section 25",
+    "text": "ice mesh can \nbe found in [2], and an access control implementation in that platform is described \nextensively in [3]. \nIn the modern enterprise, the platform described above is present in both on-premises data \ncenters and multiple cloud service locations. Assuming that a service mesh instance is deployed \nfor managing a single cluster that consists of the above platforms, there will be multiple clusters \nspread over multiple on-premises sites and multiple availability zones in different clouds. \nConsequently, there will be multiple service mesh instances. \nEach service mesh instance has two main logical components: 1) a control plane that implements \nthe APIs needed to define various configurations and policies that govern access between various \nmicroservices in that cluster and 2) a data plane that enforces those policies at runtime. However, \na uniform set of policies is also needed to govern access between any pair of microservices or \nservices in the enterprise irrespective of their location or the service mesh instance of which they \nare a part. This requires a global control plane that can define a uniform set of policies applicable \nto the entire set of services that oper",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0025",
+    "title": "NIST SP 800-207A — section 26",
+    "text": "h they \nare a part. This requires a global control plane that can define a uniform set of policies applicable \nto the entire set of services that operate in the enterprise and disseminate them to the control \nplanes of the individual service mesh instances. \nIt is technically possible to have a single service mesh control plane instance (i.e., single service \nmesh instance) that manages multiple clusters spanning multiple environments (i.e., on-premises \nand on clouds). However, this architecture may make the multiple clusters a single failure \ndomain and potentially defeat the very purpose of designing a multi-cluster configuration (i.e., \navailability). Thus, running a service mesh control plane instance for each cluster isolates the \nfailure domain and improves availability and scalability. Further, providing the required \nunderlying network connectivity to facilitate every workload (since each workload or application \ninstance has an associated sidecar proxy that forms the data plane) to communicate with a single\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n6 \n \ncontrol plane instance is un",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0026",
+    "title": "NIST SP 800-207A — section 27",
+    "text": "ZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n6 \n \ncontrol plane instance is untenable in most enterprise environments and impossible in many \ngovernment ones (e.g., air-gapped systems). \n \nEnterprise Infrastructure Layer \nThe global control plane forms an integral part of the enterprise infrastructure layer. The \nmanagement plane that contains the various interfaces is hosted within the global control plane. \nThe roles of the global control plane and the management plane are as follows: \n• The global control plane can be leveraged to perform the functions of individual control \nplanes at the enterprise level rather than at the cluster level (e.g., issuing identities to all \nservices in the enterprise by leveraging the enterprise Public Key Infrastructure (PKI) \nsystem). \n• The global control plane can also be used to shut down a specific control plane if all \ncluster nodes under the jurisdiction of that control plane have been compromised. \n• The management plane provides the human-computer interfaces (e.g., user interfaces, \nsuch as command line interfaces and APIs) that enable enterprise-level systems to work",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0027",
+    "title": "NIST SP 800-207A — section 28",
+    "text": "provides the human-computer interfaces (e.g., user interfaces, \nsuch as command line interfaces and APIs) that enable enterprise-level systems to work \nby encoding organizational processes related to the usage of various tools (e.g., policy \ndefinition and evaluation tools, telemetry tools) at the lower layer. \nIn short, the management plane enables the definition and deployment of consistent and uniform \npolicies for all services throughout the enterprise. In addition to the global control plane and \nmanagement plane, the enterprise infrastructure for a ZTA consists of local control planes \n(associated with service mesh instances) and a set of various types of proxies that form part of \ntheir respective data planes. The proxies act as the policy enforcement points (PEPs) and have \nthree types: \n1. Ingress proxies enforce policies for entering user or service requests from client \napplications that originate outside of the cluster into any service within the cluster. \n2. Side-car proxies enforce policies between intra-cluster services. \n3. Egress proxies enforce policies for requests that emanate from any service within the \ncluster to an external application that is outside of the",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0028",
+    "title": "NIST SP 800-207A — section 29",
+    "text": ". \n3. Egress proxies enforce policies for requests that emanate from any service within the \ncluster to an external application that is outside of the cluster. \nFigure 1 shows a schematic diagram of the entire infrastructure layer for uniform (enterprise-\nwide) policy deployment for realizing a ZTA.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n7 \n \n \nFig. 1. Enterprise infrastructure layer for uniform policy deployment \n \nDesigning a Policy Framework for ZTA for Cloud-Native Application \nEnvironments \nBased on the set of zero trust principles and some strawman ZTAs provided in [1], the following \ndriver assumptions were formulated for realizing a ZTA for an enterprise cloud-native \napplication environment (i.e., a set of microservices in various clusters with each cluster \nmanaged by a service mesh and augmented with an enterprise-level infrastructure that consists of \na global control plane and management plane). These driver assumptions are: \n• Trust can no longer be based on a network perimeter as perimeters can always be \nbreached. \n• Policies have to be defined based on the assumption that",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0029",
+    "title": "NIST SP 800-207A — section 30",
+    "text": "Trust can no longer be based on a network perimeter as perimeters can always be \nbreached. \n• Policies have to be defined based on the assumption that the attacker is already inside of \nthe corporate network. \n• All access decisions have to rely on least-privilege, per-request, and context-based \nprinciples and on identities associated with users, services, and devices. This results in a \nform of runtime isolation for applications, which this document refers to as “identity-\nbased segmentation”. \n• Since APIs play a crucial role in cloud-native applications, proper versioning (to provide \nbackward compatibility), proper input validation techniques (to prevent attacks, such as \nStructured Query Language (SQL) injection and cross-site scripting), and output \nencoding must be part of the policy framework in addition to general requirements, such \nas proper documentation for key areas (e.g., usage instructions). \nThe above driver assumptions provide the design requirements for a ZTA as follows: \n• No single component or function is sufficient to implement ZTA. Rather, they must \ncollectively enforce zero trust principles across all applications in the infrastructure. \n• ZTA component f",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0030",
+    "title": "NIST SP 800-207A — section 31",
+    "text": "ient to implement ZTA. Rather, they must \ncollectively enforce zero trust principles across all applications in the infrastructure. \n• ZTA component functions should be clearly articulated, including their interrelationships \nand workflows.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n8 \n \n• The enforcement infrastructure that implements the security controls (mainly consisting \nof PEPs) should satisfy the properties of a security kernel: always invoked (non-by-\npassable), verifiable, and independent of the application code. \n• The core tenant or primary function of ZTA at runtime is implementing an identity-based \nsegmentation of applications that leverages the enforcement infrastructure. \n \nRequirements for Identity-Based Segmentation Policies for ZTA \nThe following policy checks should be implemented at runtime through the deployment of \nidentity-tier policies in order to realize identity-based segmentation: \n• ID-SEG-REC-1: Encrypted connection between service endpoints — Service endpoints \ncan be located in different subnets, different availability zones or regions in a cloud \nprovider env",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0031",
+    "title": "NIST SP 800-207A — section 32",
+    "text": "n between service endpoints — Service endpoints \ncan be located in different subnets, different availability zones or regions in a cloud \nprovider environment, in different clouds, or on-premises. Wherever they are located, \ncommunication between any two should be encrypted to ensure eavesdropping protection \nand message authenticity. \n• ID-SEG-REC-2: Service authentication — Each service should present a short-lived \ncryptographically verifiable identity credential to other services that is authenticated per \nconnection and reauthenticated regularly. \nNote on the above recommendation: In an ideal situation, services would be authenticated \nfor each service request. Since this is highly disruptive from the point of view of \napplication transaction response, this authentication is accomplished at the connection \nlevel via mutual Transport Layer Security  (mTLS) when a service makes an initial \nconnection establishment as part of its inter-service call. This authentication is not \nperformed again in subsequent calls. However, the security of this operation is ensured \nby not allowing the connections to be very long (usually as long as the time to live [TTL] \nof the service’s identity",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0032",
+    "title": "NIST SP 800-207A — section 33",
+    "text": "ty of this operation is ensured \nby not allowing the connections to be very long (usually as long as the time to live [TTL] \nof the service’s identity certificate or as short as 15-30 minutes, depending on the \nconfiguration). \n• ID-SEG-REC-3: Service to service authorization — Services should leverage runtime \nservice identity (ID-SEG-REC-2) to enforce granular policies and have the capability to \ncall external authorization services if the mesh-level proxies are insufficient to enforce \ndynamic authorization policies. \n• ID-SEG-REC-4: End user authentication — Since all application requests are triggered \nby user actions, a robust identity management system is required to assign and maintain \nuser identities and enforce robust protocols with phishing-resistant multi-factor \nauthentication (MFA). This system should be used to issue a cryptographically verifiable \nruntime token that represents the user principal to the rest of the infrastructure (e.g., a \nJSON Web Token [JWT]), and services should authenticate the credential at each hop. \nNote on the above recommendation: Authenticating the user in session at every hop is \nimpractical at scale. Therefore, NIST recommends using shor",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0033",
+    "title": "NIST SP 800-207A — section 34",
+    "text": "op. \nNote on the above recommendation: Authenticating the user in session at every hop is \nimpractical at scale. Therefore, NIST recommends using short-lived end user credentials \n(e.g., OAuth 2.0 tokens) for external users and exchanging them for a locally \nauthenticatable token, like a JWT, that is authenticated at each hop.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n9 \n \n• ID-SEG-REC-5: End user to resource authorization — As part of each service access \nrequest, the system must ensure that the authenticated end user principal (ID-SEG-REC-\n4) is authorized to act on the resources designated in the request. This authorization may \nbe performed by the application itself or checked locally (e.g., by checking against a set \nof claims in a JWT) or externally against an authorization system’s policy decision point. \nThe JWT libraries that process the token must be enabled to both decode (base64url \nencoding) and verify the signature. Enforcing end user authorization via the service \nmesh’s sidecar PEP is particularly effective [3]. \nContext for the application of these policy recommendations and",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0034",
+    "title": "NIST SP 800-207A — section 35",
+    "text": "user authorization via the service \nmesh’s sidecar PEP is particularly effective [3]. \nContext for the application of these policy recommendations and the improved security \nassurance that emanates from their deployment and enforcement are explained in [2] and [3]. \n \nLimitations of Identity-Based Segmentation Policies for Enterprise ZTA \nWhile identity-based segmentation is powerful, purely identity-based policies cannot currently \nbe adopted due to the following scenarios: \n• Identity-based segmentation policies can include access scenarios that cover all origins \n(e.g., users, services) and all target resources that consist of services and data. However, \nenterprise scenarios that involve both on-premises and cloud-based applications require \nidentification of the location of those resources using network parameters. Purely \nidentity-based enforcement should by augmented by other factors (e.g., network location) \nto evaluate risk when performing context-based authorization. \n• A subset of identity-based segmentation policies (i.e., service identity-based) can be      \ndifficult to administer since service identity assignments are often based on specific \ndomains, which makes con",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0035",
+    "title": "NIST SP 800-207A — section 36",
+    "text": "service identity-based) can be      \ndifficult to administer since service identity assignments are often based on specific \ndomains, which makes consistent policy deployment difficult across on-premises \nsystems, cloud-based systems, and different compute runtimes. However, this is \nmitigated by adopting consistent service names across the infrastructure using the \nconcept of a universal identity domain, as recommended in SM-DR11 of [2]. \n• Having network-level policies alone requires high maintenance due to the continuous \nchanges to their location parameters as containers and virtualized workloads are \nfrequently migrated for availability and performance reasons (e.g., migration to different \nVMs or  to a different pod in containerized applications). \nNetwork-tier policies cannot be completely eliminated given current compliance requirements \n(e.g., PCI/DSS) and regulations. However, relaxing requirements at the network level in \nexchange for introducing more descriptive policy at the identity level could lead to an improved \noverall security posture compared to network-tier security alone.  \n \nMulti-Tier Policies for Enterprise ZTA \n A successful enterprise ZTA requires multi-",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0036",
+    "title": "NIST SP 800-207A — section 37",
+    "text": "all security posture compared to network-tier security alone.  \n \nMulti-Tier Policies for Enterprise ZTA \n A successful enterprise ZTA requires multi-tier policies that combine network-tier and identity-\ntier policies:\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n10 \n \n• Network-tier policies — Allowed communication between enterprise network elements \n(e.g., firewall rules, which are relatively static). This can include restrictions on usage of \nallowed ports. \n• Identity-tier policies — Access scope for services and resources based on service and \nuser identities (e.g., dynamic application-to-application communication rules based on \nidentities through a dedicated infrastructure layer, such as user identity provided by an \nenterprise Identity and Access Management (IAM) provider and service identity provided \nby a standard-based Secure Production Identity Framework for Everyone(SPIFFE) server \n[4]) \nMulti-tier policies can be implemented realistically and are non-disruptive to current compliance \npractices. Other tiers of policy also exist. For example, in the context of the service mesh, the",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0037",
+    "title": "NIST SP 800-207A — section 38",
+    "text": "ically and are non-disruptive to current compliance \npractices. Other tiers of policy also exist. For example, in the context of the service mesh, there \nare “application-tier” policies, which apply to the application payload itself. These include \ncoarse-grained Web Application Firewall (WAF) rules, fine-grained rules like Spring Cloud \nGateway payload validation, and the validation of request semantics via tools like the Open \nPolicy Agent (OPA). Many can even be enforced by a service mesh, but those policies are \nbeyond the scope of this document. \nThe difficulty with having all network-tier policies is that policies expressed through firewall \nrules have to be continuously changed, depending on the application pair behind those firewalls. \nThe flexibility in having multi-tier policies is that network-tier policies can be relatively static \nwhile identity-tier policies higher up in the stack (e.g., service to service) can be dynamic, as \nillustrated in Fig. 2.  \n \nFig. 2. Flexibility provided by multi-tier policies. \nImplementing identity-tier policies is also a more agile process that allows for new policy \ncapabilities, such as writing policy in terms of identity and applicati",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0038",
+    "title": "NIST SP 800-207A — section 39",
+    "text": "dentity-tier policies is also a more agile process that allows for new policy \ncapabilities, such as writing policy in terms of identity and application-level action and verb. For \nexample, a network-tier policy would describe the subnets that contain application instances of \nthe client being allowed to call the subnet on a specific port. In contrast, an identity-tier policy \nwould allow the client application identity to communicate with the server application identity \nvia Hyper-text Transfer Protocol Secure (HTTPS) on port 443 and execute only the GET method\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n11 \n \non the public path. The full range of policies that an enterprise ZTA implemented via a service \nmesh can enable is outlined in [2] and [3]. \nImplementing multi-tier policies by relaxing network-tier policies (e.g., by allowing \ncommunication across a set of gateways) while introducing identity-tier policies with advanced \nlayer seven controls results in a better overall security posture than either a purely identity-tier or \npurely network-tier approach.\n\nNIST SP 800-207A \n \nZTA Model",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0039",
+    "title": "NIST SP 800-207A — section 40",
+    "text": "rols results in a better overall security posture than either a purely identity-tier or \npurely network-tier approach.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n12 \n \n \nImplementing Multi-Tier Policies for ZTA for Cloud-Native Application \nEnvironments \nThis section will consider the implementation of multi-tier policies for realizing an enterprise \nZTA using a reference enterprise scenario in which an enterprise hosts microservices \napplications in several clusters. Each cluster is serviced with a service mesh instance, and \nclusters are spread out both on-premises and in multiple clouds.  \nSection 4.1 outlines a simple application infrastructure scenario, and Section 4.2 presents a \nsample set of associated policies that is relevant for that context. Section 4.3 shows how the same \nset of policies can be defined and deployed for a realistic application infrastructure scenario in \nwhich the incoming traffic comes through a demilitarized zone (DMZ). \n \nReference Application Infrastructure Scenario \nConsider an application infrastructure of an enterprise where the application topology spans a",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0040",
+    "title": "NIST SP 800-207A — section 41",
+    "text": "DMZ). \n \nReference Application Infrastructure Scenario \nConsider an application infrastructure of an enterprise where the application topology spans a \ncloud and on-premises environment. The applications are implemented as microservices with a \nservice mesh instance for each cluster. Hence, a sidecar proxy is associated with each service. At \nthe entry and exit points of each cluster are ingress and egress gateways, respectively. The same \ndata plane (e.g., open-source Envoy) can be used to implement both the sidecar proxy and the \ntransit gateways. \nNext, consider establishing policies for a scenario that involves two services — Service 1 and \nService 2 — that reside in clusters in a cloud and on-premises, respectively. Service 1 in the \ncloud cluster can interact with services outside of the cluster through an egress gateway. \nSimilarly, all services that attempt to access Service 2 from outside of the cluster have to go \nthrough an ingress gateway. All traffic coming out of the cloud has to go through an outbound \nfirewall, and all traffic coming on-premises has to come through an inbound firewall. The paired \negress-ingress proxies and the firewall rules that allow them connect",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0041",
+    "title": "NIST SP 800-207A — section 42",
+    "text": "traffic coming on-premises has to come through an inbound firewall. The paired \negress-ingress proxies and the firewall rules that allow them connectivity are collectively \nreferred to as a “transit gateway”. Each network location for the two services is designated by a \nsubnet address. The application topology and policies described so far are shown in Fig. 3.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n13 \n \n \nFig. 3. Multi-tier policies for a hybrid application environment \n \nRole of the Service Mesh in Policy Deployment, Enforcement, and Updates \nThe service mesh has a unique role within the overall policy life cycle activities of policy \ndefinition, deployment, enforcement, and update. As already stated, the service mesh is a \ndedicated infrastructure that provides all application services, including security controls like \nsecure communication and application-level access control. These services are only possible if \nthere are also policies to enforce them during application runtime.  \nBased on the discussion of the control plane in previous sections, it should be clear that this \ncompo",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0042",
+    "title": "NIST SP 800-207A — section 43",
+    "text": "s to enforce them during application runtime.  \nBased on the discussion of the control plane in previous sections, it should be clear that this \ncomponent of the service mesh provides access to the interfaces of various policy definition tools \nthrough which policies can be defined and updated. Thus, the control plane of the service mesh \nacts as the policy administration point, while the underlying policy tools become the policy \ndecision point. In addition, the control plane also enables those policies to be distributed to the \nvarious proxies described in the previous section. Once distributed, these proxies intercept all \ntraffic in and out of the applications, where it acts as a universal policy enforcement point. This \nallows the service mesh — which centrally manages a fleet of the applications’ proxies — to \nbecome the modern cloud-native security kernel [3]. \nThe proxies — especially the sidecars — can enforce security and traffic policies and generate \ntelemetry data to allow operators to close the loop on policy changes by authoring a change, \nobserving its effect on the runtime, and making additional changes as needed in a real-time \nfeedback control loop. In other word",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0043",
+    "title": "NIST SP 800-207A — section 44",
+    "text": "authoring a change, \nobserving its effect on the runtime, and making additional changes as needed in a real-time \nfeedback control loop. In other words, the mesh provides the needed capabilities to implement \nthe runtime controls and achieve a zero trust posture.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n14 \n \n \nPolicy Deployment for Reference Application Infrastructure \nConnectivity (between network elements) and access policies (between service instances) are \nnetwork-tier policies and identity-tier policies, respectively. \nConsider the following example set of policies that contain a combination of network-tier and \nidentity-tier policies. Network-tier policies can be further categorized into coarse-grained and \nfine-grained policies. \n• Coarse-grained network-tier policies — These perimeter control policies are informally \ncalled firewall rules and are mostly static as they specify: \no The network location of the egress gateway from which the network edge element \nat the exit point of a cloud network (e.g., outbound firewall, such as the one at the \nedge of a cloud) can receive traffic",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0044",
+    "title": "NIST SP 800-207A — section 45",
+    "text": "he network edge element \nat the exit point of a cloud network (e.g., outbound firewall, such as the one at the \nedge of a cloud) can receive traffic  \no The network location of the ingress gateway to which the incoming traffic that \nlands at the entry point of the on-premises network edge (e.g., inbound firewall at \nthe entry point to an on-premises network) should be routed: \nFirewall: allow 10.100.2.3/30 15443 to 10.1.2.3/30:15443 \n• Fine-grained network-tier policies — This category of policies is also called \nmicrosegmentation policies, and they specify the pathways for traffic flowing into and \nout of the services located within the network subnets at the cloud location or on-\npremises location. \no Specify the path on which the outbound traffic from a service or an application \n(e.g., App 1 in Fig. 2) can flow. The elements in the path that are specified \ninclude the egress gateway at the edge of the cluster and, subsequently, the \noutbound firewall for the network (cloud network in this example). \no Specify the path for the inbound traffic into the on-premises network to reach the \ntarget application. The elements in the path start from the inbound firewall at the \nedge of th",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0045",
+    "title": "NIST SP 800-207A — section 46",
+    "text": "und traffic into the on-premises network to reach the \ntarget application. The elements in the path start from the inbound firewall at the \nedge of the on-premises network to the ingress gateway in an on-premises cluster \nto the network subnet where the target service is located. \no Notably, they specify how traffic can flow “east-west” (i.e., inside of the \nperimeter). This is in contrast to coarse-grained policies, which specify how \ntraffic can flow “north-south” (i.e., from an external to internal network). \n• Identity-tier policies — These are also called mesh-level policies as they are deployed \nand enforced at the data plane of the service mesh in the reference platform. Figure 4\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n15 \n \nshows these in the context of the application infrastructure and the example policies that \ncover traffic flows from Service 1 to Service 2. \nFig. 4. An example authorization policy in a Service mesh that allows Service 1 to Service 2 on port 443 \nbut only allows it to execute the GET HTTP verb on the “/public” path \n                                   selector:",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0046",
+    "title": "NIST SP 800-207A — section 47",
+    "text": "rvice 1 to Service 2 on port 443 \nbut only allows it to execute the GET HTTP verb on the “/public” path \n                                   selector: \n       matchLabels: \n         app: service-2 \n     action: ALLOW \n     rules: \n     - from: \n       - source: \n           principals: [\"cluster.local/ns/service-1/sa/service-1\"] \n       to: \n       - operation: \n           ports: [\"443\"] \n           methods: [\"GET\"] \n           paths: [\"/public\"] \nThis simple example shows some of the advanced capabilities that identity-tier policies can \nachieve by limiting access based on the application request context. Specifically, this policy \nlimits the application actions to a single HTTP verb on a specific path, but a much more \nsophisticated policy can be implemented as well. See [2] and [3] for detailed overviews. \n \nAnother Application Infrastructure Scenario \nConsider another common application scenario in which there is an internal (i.e., within a cluster \nin the enterprise data center) three-tier application. This application is accessed from outside \n(through a mobile app or website) through a DMZ. This scenario consists of edge gateways \npresent in the DMZ — an ingress gateway and an",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0047",
+    "title": "NIST SP 800-207A — section 48",
+    "text": "from outside \n(through a mobile app or website) through a DMZ. This scenario consists of edge gateways \npresent in the DMZ — an ingress gateway and an egress gateway at the entrance and exit points \nto and from the data center with firewalls at either side of the gateways. Each of the services that \nrepresent the front end and back end (application logic) of the three-tier application have to have \na sidecar proxy to enforce policies that pertain to inter-service call requests. This scenario \nrequires the definition and deployment of a combination of network-tier and identity-tier policies \nthat span the various types of gateways and sidecar proxies. Deploying policies at these multiple \nlocations requires an enterprise-level infrastructure that plays the role of a global control plane, \nas described in Section 2.1. This is designated as a central coordination infrastructure, as shown \nin Fig. 5.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n16 \n \n \nFig. 5. Policy deployment for a three-tier application \n \nFunctional Roles of Application Infrastructure Elements in Enforcing \nPolicies \nThis secti",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0048",
+    "title": "NIST SP 800-207A — section 49",
+    "text": "Fig. 5. Policy deployment for a three-tier application \n \nFunctional Roles of Application Infrastructure Elements in Enforcing \nPolicies \nThis section discusses the functionality of each of the application infrastructure elements \ninvolved in the policies (e.g., firewalls, gateways, sidecar, transit, and edge proxies). Since the \nfunctionality of firewalls that take part in this context for coarse network-tier policies is well \nknown, this section focuses on the functionality of gateways that take part in fine-grained \nnetwork and identity-tier policies: \n• Sidecar — Beside each application instance to intercept all traffic into and out of the \napplication and handles east-west internal communication between services in the \ninfrastructure. This is the primary use case of the service mesh. \n• Ingress gateway — Controls how applications in the cluster are exposed outside (e.g., \nmanaging what names, certificates, ports, protocols, and application endpoints are served \nto the world outside of the cluster). Think of this as the service mesh control plane that \nmanages a traditional reverse proxy similar to Spring Cloud Gateway, NGINX, or \nHAProxy. \n• Egress gateway — Controls how ap",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0049",
+    "title": "NIST SP 800-207A — section 50",
+    "text": "mesh control plane that \nmanages a traditional reverse proxy similar to Spring Cloud Gateway, NGINX, or \nHAProxy. \n• Egress gateway — Controls how applications in the cluster communicate with the outside \nworld. This can be used for traditional egress filtering and logging, like a Squid proxy, \nbut can also implement an identity-based policy for what is allowed to call out and \nperform credential exchange, or present a set of credentials (e.g., an mTLS certificate for \na partner API), on behalf of the application so that the application does not need to handle \nthem (e.g., communicating via mTLS with the partner API). Think of this as a next-\ngeneration identity-aware Squid proxy. \n• Edge gateway — Accepts external traffic before the ingress gateway and performs fine-\ngrained load balancing across clusters or sites. It is used to terminate external traffic, \nenable infrastructure-level failover, deploy blue-green clusters, and facilitate ingress-\ngateway-per-team deployments without requiring each of those teams to have publicly \nroutable ingress gateways. Think of this as a modern software-based local traffic \nmanager, like F5, that can apply policy per-request rather than per-co",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0050",
+    "title": "NIST SP 800-207A — section 51",
+    "text": "table ingress gateways. Think of this as a modern software-based local traffic \nmanager, like F5, that can apply policy per-request rather than per-connection.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n17 \n \n \nComparison of Identity-Tier and Network-Tier Policies \nNetwork-tier policies are necessary for geographically distributed application infrastructures and \nfor meeting the compliance requirements of regulators. However, having a combination of \nnetwork-tier and identity-tier policies allows for some relaxation of the network-tier policies as \nany unauthorized traffic flow due to an overlooked network element in the path can be addressed \nthrough flexible service identity-tier policies. In order to appreciate the need for the coexistence \nof both policy tiers, it is necessary to know the characteristics of both tiers of policies. This \nlayering of policies, whose strictness can be tuned per organizational needs at each tier, provides \nagility and operational ease over status quo perimeter-based models while enhancing the overall \nsecurity posture of the organization. \n4.6.1. Approaches f",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0051",
+    "title": "NIST SP 800-207A — section 52",
+    "text": "ty and operational ease over status quo perimeter-based models while enhancing the overall \nsecurity posture of the organization. \n4.6.1. Approaches for Deployment and the Limitations of Network-Tier Policies \nIn this approach, applications and service resources with similar security requirements are \ngrouped into a unique segment, and firewall rules are created to block or allow communication \nwith each group or segment [5]. The segments are created using network layer abstractions (e.g., \nVirtual Local Area Network (VLAN) IDs or some other tagging approaches), while policies are \ndefined using network address constructs (e.g., IP addresses and ports). Policies apply to subnets \n(e.g., VLANs) rather than to individual hosts. The assignment of applications to a particular \nsegment can be based on different criteria, such as “all applications with similar security \nrequirements” or “all tiers (e.g., web front end, application logic servers, and database servers) \nassociated with a particular application should run in a single segment”. \nEach segment is protected by gateway devices, such as intelligent switches and routers or next-\ngeneration firewalls, that should have the capacity",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0052",
+    "title": "NIST SP 800-207A — section 53",
+    "text": "Each segment is protected by gateway devices, such as intelligent switches and routers or next-\ngeneration firewalls, that should have the capacity to react and adapt in response to the threats \nand changes in the application workflows. Segmentation gateways monitor traffic, stop threats, \nand enforce granular access across east-west traffic (rarely for north-south traffic) within on-\npremises data centers or cloud regions. The main difficulty with this approach is in mapping the \napplications’ security requirements-based segments to corresponding network segments. Another \ndifficulty is change management. The mapping between applications and network identities that \nare being statically maintained has to be kept in sync with the operational scenario in which the \napplication’s network locations are continuously changing due to performance and security. \nMore modern cloud-native deployments that leverage techniques like container network \ninterface-driven network policy are good improvements because they provide identity-tier style \npolicies (i.e., policy in terms of identities and non-network-oriented nouns) while implementing \nthat policy at the network layer (e.g., via Extende",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0053",
+    "title": "NIST SP 800-207A — section 54",
+    "text": "policies (i.e., policy in terms of identities and non-network-oriented nouns) while implementing \nthat policy at the network layer (e.g., via Extended Berkeley Packet Filter (eBPF) policy or \nBorder Gateway Protocol (BGP) propagation rules). These are a strong upgrade from traditional \nmicrosegmentation because they tend to result in finer-grained policies that are easier for the \norganization to manage over time. However, they typically lack the ability to apply per-request \npolicies in the context of the application, which is needed to achieve identity-based \nsegmentation.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n18 \n \n4.6.2. Prerequisites for the Deployment of Identity-Tier Policies \nIdentity-tier policies use contextual, application-driven identifiers (e.g., “order processing front-\nend service can communicate with inventory back-end service”) instead of network parameters \n(e.g., “permit calls from 192.168.10.0/24 subnet to 10.0.0.31”). The identifiers assigned to \nservices at runtime are cryptographic identities, which are used for mutual authentication and \nauthorization during each",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0054",
+    "title": "NIST SP 800-207A — section 55",
+    "text": "The identifiers assigned to \nservices at runtime are cryptographic identities, which are used for mutual authentication and \nauthorization during each service request and response. \nDeploying identity-tier policies requires a standardized infrastructure for creating, issuing, and \nmaintaining tamper-proof service identities. Some of the components of this infrastructure are \noutlined below and also discussed in [5]: \n• Creation of application identity: The fundamental requirement to enable this is the \nassignment of a unique identity to each application or service, just like how each user \ncarries a unique identity (e.g., userid). Prior to the era of cloud-based applications, \napplication requests were validated based on the IP subnet or IP address from which they \noriginated. Since ubiquitous access and multi-clouds have eliminated the concept of \nnetwork perimeters, authentication and authorization based on those parameters are \nneither feasible nor scalable. Further, the presence of proxies, network address \ntranslations, dynamic infrastructures (e.g., migration of applications between VMs), and \nload balancers make it impossible for the called application to know the IP address",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0055",
+    "title": "NIST SP 800-207A — section 56",
+    "text": "nfrastructures (e.g., migration of applications between VMs), and \nload balancers make it impossible for the called application to know the IP address of the \ncalling application in order to make authentication or authorization decisions. A unique \napplication identity is required. \n• Establishment of trust in application identity: The created application (i.e., workload or \nservice) identity should not be subject to spoofing and should be continuously verifiable. \nAn example of workload identity is a SPIFFE ID [4], which is a string that uniquely and \nspecifically identifies a workload and is encoded as a Uniform Resource Identifier (URI). \nThe SPIFFE ID is carried in a cryptographically verifiable document called a SPIFFE \nVerifiable Identity Document (SVID). SPIFFE supports multiple SVID formats, but the \nmost commonly used is an X.509 certificate. \n• Discovery of application resources: There should be a robust and secure method for \ndiscovering all of the application dependencies consumed over the network (e.g., \nservices, SaaS endpoints, network appliances). This capability is enabled through an \nauthenticated service registry. \nThese allowable flows can be based on either (a)",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0056",
+    "title": "NIST SP 800-207A — section 57",
+    "text": "dpoints, network appliances). This capability is enabled through an \nauthenticated service registry. \nThese allowable flows can be based on either (a) the structure of the application (i.e., “the front \nend of application 1 can call the back end of application 1”) or (b) a legitimate business \ntransaction (e.g., “order processing application can call the shipping application”). Often, \norganizations do not know all of the allowable service requests in their infrastructure. However, \nthe observability capabilities of the infrastructure (e.g., the metrics provided by the service mesh) \ncan be leveraged to build a view of “requests made today”. From that view, the organization can \ncreate fine-grained policies for allowable service requests. Utilizing this observe-and-lock-down \nmethodology builds the organizational processes required to maintain the life cycle of these \npolicies over time.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n19 \n \n4.6.3. Advantages of Identity-Tier Policies \nPolicies based on service and application identities do not use any infrastructure-related variables \n(e.g., IP ad",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0057",
+    "title": "NIST SP 800-207A — section 58",
+    "text": "vantages of Identity-Tier Policies \nPolicies based on service and application identities do not use any infrastructure-related variables \n(e.g., IP addresses, subnets), so they are environment-agnostic and provide the freedom for the \nservices and applications to be migrated to different environments and still maintain the same \npolicies. In other words, there can be a consistent set of policies across cloud providers and on-\npremises because the policy follows the application rather than the network. \n• Identity-tier policies enable the automated testing of policies. Policies that are \nindependent of infrastructure can be tested by merely exercising the application and \nobserving the outcomes (e.g., trace the sequence of service calls and requests or \nresponses instead of configuring the infrastructure correctly for test runs). \n• Identity-tier policies enable “policy as code” (PaC). With the availability of tools for the \ndeclarative specification of policies through PaC, identity-tier policies can be defined and \nimplemented by incorporating the code into automated workflows, such as continuous \nintegration/continuous delivery (CI/CD) pipelines. \n• Identity-tier policies enable",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0058",
+    "title": "NIST SP 800-207A — section 59",
+    "text": "orporating the code into automated workflows, such as continuous \nintegration/continuous delivery (CI/CD) pipelines. \n• Identity-tier policies enable fine-grained access control by providing visibility into \napplication call sequences/interdependencies and data flows through request-level \ntracking, which enables the enforcement of security policies for application traffic that is \nboth north-south and east-west, irrespective of the environment (e.g., corporate data \ncenter or cloud infrastructure). \nAdditional advantages include:  \n• Write once, enforce everywhere — This means that policy can span environments and \ntopologies (i.e., write a policy once and enforce it everywhere) rather than bespoke \npolicies per environment. \n• Human-readable primitives — The written policies use human-understandable primitives \n(e.g., “service A can call service B”) rather than network-oriented primitives (e.g., \n“10.1.2.3/30 is allowed to call 10.100.2.3/30 on port 8080”). This context is critical since \nthe lack of context for rules is a key reason for the lack of agility around traditional \nnetwork policy. \n• Contextual intent is codified in a single policy — There is a single policy rather th",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0059",
+    "title": "NIST SP 800-207A — section 60",
+    "text": "n for the lack of agility around traditional \nnetwork policy. \n• Contextual intent is codified in a single policy — There is a single policy rather than a set \nof policies that need to be pieced together to understand their intent. A human can read a \npolicy like “the front-end service is allowed to call ‘GET /foo’ (a method) on the back-\nend service” and understand the access that the policy intends to convey even if, for \nexample, the front end is deployed in the cloud and the back end is deployed on-\npremises. It is significantly harder to read and understand a set of network peering and \nfirewall rules that allow communication across the DMZ for a set of subnets. In turn, this \nmeans it is harder to write the wrong policy and easier for a human to understand when a \npolicy is incorrect. \nIdentity-tier policies enable only valid network traffic between the various component services of \nthe application due to the mutual authentication and authorization of the service identities, thus \nenabling the goals of zero trust network access (ZTNA) to be met.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0060",
+    "title": "NIST SP 800-207A — section 61",
+    "text": "(ZTNA) to be met.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n20 \n \n \nSupport for Multi-tier Policies Through a Monitoring Framework \nTo realize the goals of all types of policies (e.g., coarse- and fine-grained network policies, \nidentity-tier policies), it is necessary to have a monitoring framework as part of a ZTA. The \nsalient features of the two tenets called out in SP 800-207 (Section 2.1) for ZTA are: \n• Measure the integrity and security posture of all resources by establishing a continuous \ndiagnostics and mitigation (CDM) or similar system to monitor the state of devices and \napplications and apply patches or fixes as needed. \n• An enterprise should collect data about the resource security posture, network traffic, and \naccess requests; process that data; and use any insight gained to improve policy creation \nand enforcement. This data can also be used to provide context for access requests from \nsubjects. \nThe requirements for the monitoring framework in the context of cloud-native applications are: \n• MON-CNA-REQ-1: Resource monitoring should cover all categories of resources, \ni",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0061",
+    "title": "NIST SP 800-207A — section 62",
+    "text": "nitoring framework in the context of cloud-native applications are: \n• MON-CNA-REQ-1: Resource monitoring should cover all categories of resources, \nincluding those that are enterprise-owned, not managed by the enterprise, and personally \nowned. \n• MON-CNA-REQ-2: Monitoring should cover application targets (e.g., containers), \napplication infrastructure elements (e.g., control plane elements of a service mesh), and \ndata plane elements (e.g., sidecar proxies). \n• MON-CNA-REQ-3: Monitoring should cover every user access request and the \nsubsequent series of service calls needed to complete the user request as in \nmicroservices-based applications. \n• MON-CNA-REQ-4: Monitoring should cover changes to data in enterprise directories to \nensure that all changes to directory entries are associated with valid requests and valid \ntransactions for carrying out the change requests. \nThe monitoring data, derived analytics, and telemetry data should be used in the following ways \nto realize zero trust principles for cloud-native applications: \n• MON-DATA-USE-1: Access enforcement in the context of identity-tier policies in ZTA \nshould be based on access decisions that rely on assigned permissio",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0062",
+    "title": "NIST SP 800-207A — section 63",
+    "text": "ON-DATA-USE-1: Access enforcement in the context of identity-tier policies in ZTA \nshould be based on access decisions that rely on assigned permissions as well as the \ncontextual information about each connection or access request. A key piece of \ncontextual information is the behavioral data associated with the user and/or devices from \nwhich the request originates. This behavioral data can only be generated from the \nvisibility information on network traffic flows, which help verify that the users and \nresources are behaving in a way that is consistent with their roles and are, therefore \ntrustworthy.  \n• MON-DATA-USE-2: The telemetry data generated from monitoring activity should be \nused in the following ways: \no To fine-tune access rights data, such as granting, revoking, and restricting access \n[6]\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n21 \n \no To implement step-up authentication by asking for more information from users \nor resorting to a stronger form of authentication (e.g., phishing-resistant MFA). \nThis verification establishes trust in them and grants permission to proceed wi",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0063",
+    "title": "NIST SP 800-207A — section 64",
+    "text": "to a stronger form of authentication (e.g., phishing-resistant MFA). \nThis verification establishes trust in them and grants permission to proceed with \nauthorization after their identity is verified.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n22 \n \n \nSummary and Conclusions \nThis document provides guidance for realizing a ZTA for cloud-native application platforms \n(microservices with a service mesh infrastructure) in the context of an enterprise environment in \nwhich applications are hosted in multi-cluster and multi-cloud deployments. A ZTA consists of \ndeployment artifacts that enforce zero trust principles, which is only possible with robust, \nflexible, scalable, and granular policies that cover all enterprise resources. A policy framework \nthat consists of network-tier and identity-tier policies to meet these goals has been proposed in \nthis document. \nThe artifacts needed for the definition, deployment, and enforcement of these policies have been \ndiscussed along with examples of network-tier policies and identity-tier policies. The \napplicability of these policies in modern enterpris",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0064",
+    "title": "NIST SP 800-207A — section 65",
+    "text": "have been \ndiscussed along with examples of network-tier policies and identity-tier policies. The \napplicability of these policies in modern enterprise application infrastructures is also illustrated. \nFinally, the policies that belong to the two tiers are compared in terms of their advantages and \nlimitations, and the critical role of identity-tier policies for realizing a ZTA in the context of \nmodern cloud-native application infrastructures is emphasized.\n\nNIST SP 800-207A \n \nZTA Model for Access Control in Cloud-Native \nSeptember 2023 \n \nApplications in Multi-Location Environments \n \n \n23 \n \nReferences \n[1] Rose S, Borchert O, Mitchell S, Connelly S (2020) Zero Trust Architecture. (National \nInstitute of Standards and Technology, Gaithersburg, MD), NIST Special Publication (SP) \nNIST SP 800-207. https://doi.org/10.6028/NIST.SP.800-207 \n[2] Chandramouli R, Butcher Z (2020) Building Secure Microservices-based Applications \nUsing Service-Mesh Architecture. (National Institute of Standards and Technology, \nGaithersburg, MD), NIST Special Publication (SP) NIST SP 800-204A. \nhttps://doi.org/10.6028/NIST.SP.800-204A \n[3] Chandramouli R, Butcher Z, Aradhna C (2021) Attribute-based Acce",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  },
+  {
+    "clause_id": "chunk-0065",
+    "title": "NIST SP 800-207A — section 66",
+    "text": "ial Publication (SP) NIST SP 800-204A. \nhttps://doi.org/10.6028/NIST.SP.800-204A \n[3] Chandramouli R, Butcher Z, Aradhna C (2021) Attribute-based Access Control for \nMicroservices-based Applications using a Service Mesh. (National Institute of Standards \nand Technology, Gaithersburg, MD), NIST Special Publication (SP) NIST SP 800-204B. \nhttps://doi.org/10.6028/NIST.SP.800-204B \n[4] SPIFFE (2022) SPIFFE Concepts. Available at https://spiffe.io/docs/latest/spiffe-\nabout/spiffe-concepts/ \n[5] Chandramouli R (2022) Guide to a Secure Enterprise Network Landscape. (National \nInstitute of Standards and Technology, Gaithersburg, MD), NIST Special Publication (SP) \nNIST SP 800-215. https://doi.org/10.6028/NIST.SP.800-215 \n[6] Chickowski E (2022) Implementing Zero Trust in your Enterprise: 8 Ways to get Started. \nAvailable at https://www.informationweek.com/whitepaper/network-and-perimeter-\nsecurity/endpoint-security/implementing-zero-trust-in-your-enterprise-how-to-get-\nstarted/441133",
+    "standard": "NIST SP 800-207A",
+    "language": "en",
+    "source_file": "NIST.SP.800-207A.pdf"
+  }
+]

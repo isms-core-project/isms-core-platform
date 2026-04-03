@@ -1,0 +1,922 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "DoD Zero Trust OT Activities — section 1",
+    "text": "[1] DoD Instruction, “Cybersecurity”, October 7, 2019, https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodi/850001_2014.pdf \nDoD Cybersecurity Reference Architecture (CSRA) \n[2] DoDI 8500 Series CS program requirements and the DoD Control Systems Security Requirements Guide (SRG) provide direction and \nauthoritative guidance on DoD-owned OT/control systems security. ZT outcomes intend to aid system owners in appropriately tailoring and \nenhancing security objectives for their systems. \n[3] Framing risk in OT environments is discussed in NIST SP 800-82, Guide to Operational Technology (OT) Security, September 2023, p. 46-47. \nhttps://dodcio.defense.gov/Portals/0/Documents/Library/CS-Ref-Architecture.pdf \nDoD Control Systems Security Requirements Guide, July 14, 2021 \nhttps://dl.dod.cyber.mil/wp-content/uploads/external/pdf/071421_Control_Systems_SRG.pdf \nFRCS Overlay https://cybersecurityks.osd.mil/dodcs/HelpandResources/References/Reference%20Library/U_FRCS_Overlay_Rev%205_vF.pdf \nManufacturing Overlay \nhttps://cybersecurityks.osd.mil/dodcs/HelpandResources/References/Reference%20Library/U_Manufacturing_Overlay_Rev%205_vF.pdf \nEXECUTIVE SUMMARY \nZERO TRUST FOR OPERATIONAL",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "DoD Zero Trust OT Activities — section 2",
+    "text": "ks.osd.mil/dodcs/HelpandResources/References/Reference%20Library/U_Manufacturing_Overlay_Rev%205_vF.pdf \nEXECUTIVE SUMMARY \nZERO TRUST FOR OPERATIONAL TECHNOLOGY  \n \nZERO TRUST FOR OPERATIONAL TECHNOLOGY - SCOPE AND PURPOSE \nThe Department of War (DoW) Chief Information Officer (CIO) established the Zero Trust (ZT) Portfolio Management \nOffice (PfMO) to coordinate, synchronize, and accelerate adoption of ZT architecture and cybersecurity framework \nacross the DoW enterprise. The ZT security model transitions away from trusted networks, actors, and devices to an \nenvironment with continuous authentication and fine-grained policy enforcement. In July 2025, the Department \nissued DTM 25-003, “Implementing the DoD Zero Trust Strategy,” which directs DoW Components to achieve, at \nminimum, Target Level ZT across all unclassified and classified systems (including national security systems) and \ncontrol systems/Operational Technology (OT).   \nThe following ZT guidance is underpinned by DoW policy and authoritative guidance (e.g., DoDI 8500 Series, DoD \nCSRA, DoD Control Systems SRG and RMF control systems overlays) [1], the adoption of NIST (e.g., NIST 800-82 rev3). \nThis guidance represe",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "DoD Zero Trust OT Activities — section 3",
+    "text": "eries, DoD \nCSRA, DoD Control Systems SRG and RMF control systems overlays) [1], the adoption of NIST (e.g., NIST 800-82 rev3). \nThis guidance represents authoritative Department guidance pertaining to ZT for OT and Control Systems and is \nexpected to be implemented in addition to all existing cybersecurity requirements. Any questions on this guidance \nshould be raised to the DoW CIO ZT PfMO at osd.pentagon.dod-cio.mbx.zt-pfmo@mail.mil. \nThe DoW ZT Roadmap, DoW ZT Reference Architecture, and DoW ZT Execution Roadmap define and layout the \nexecution of the Capabilities, Activities, and Outcomes that will promote a common ZT implementation across DoW. \nThe ZT for OT Activities and Outcomes build upon these guiding ZT documents, adapting them to the unique \ncharacteristics and challenges of OT environments and aligned to existing required control systems/OT cybersecurity \npolicy and guidance [2]. As defined in NIST SP 800-82 rev3, OT includes a broad range of programmable systems and \ndevices that interact with the physical environment or manage devices that interact with the physical environment. \nThese systems and devices detect or cause a direct change through the monitoring and/or",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "DoD Zero Trust OT Activities — section 4",
+    "text": "r manage devices that interact with the physical environment. \nThese systems and devices detect or cause a direct change through the monitoring and/or control of devices, \nprocesses, and events. Examples include industrial control systems, building automation systems, transportation \nsystems, physical access control systems, physical environment monitoring systems, and physical environment \nmeasurement systems. OT environments and control systems, regularly operate where there is “a significant need \nfor continuous and reliable operations” [3]. As such, their reliability and security are paramount to national security \nand economic stability. ZT requirements complement and enhance existing DoW CS Program security requirements. \nDoW system owners are responsible for adhering to all applicable DoW CS Program direction, including, but not \nlimited to, the requirements in DoD Instructions (DoDI) such as DoDI 8500.01, DoDI 8510.01, the DoD Cybersecurity \nReference Architecture 5.0 (CSRA), and the DoD Control Systems Security Requirements Guide and its preceding \niterations (SRG). \nThis guidance provides a revised set of Activities and Outcomes to facilitate current and future adoption o",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "DoD Zero Trust OT Activities — section 5",
+    "text": "uide and its preceding \niterations (SRG). \nThis guidance provides a revised set of Activities and Outcomes to facilitate current and future adoption of ZT \nprinciples in OT environments, accounting for the distinct differences between Information Technology (IT) and OT \npractices. The ZT for OT Activities and Outcomes are aligned to the ZT for Enterprise IT Activities and Outcomes to \nfacilitate interoperability and alignment between the two. This guidance is focused on DoW owned OT environments \nand control systems up to and including the point of demarcation, encompassing facility related control systems, \npower grids, water treatment facilities, security and life safety systems, energy management systems, transportation \nnetworks, logistics handling, and manufacturing control systems. This extends to the boundary of Weapon Systems \n1 of 28\n                        CLEARED \nFor Open Publication \n \n \nDepartment of Defense \nOFFICE OF PREPUBLICATION AND SECURITY REVIEW \nNov 18, 2025\n\n(WS), or Defense Critical Infrastructure (DCI) as defined by the mission owner and addresses the cybersecurity and \noperational risks associated with these DoW-owned systems. For example, this applies to",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "DoD Zero Trust OT Activities — section 6",
+    "text": "ined by the mission owner and addresses the cybersecurity and \noperational risks associated with these DoW-owned systems. For example, this applies to the electrical distribution \nsystem providing power to a WS, but does not cover the WS’s internal targeting or firing systems. Separate guidance \nwill be developed for WS and DCI, though it may leverage similarities to this OT guidance. This guidance does not \nspecifically address the OT components contained within a WS or DCI. \nWHY DO WE NEED ZT FOR OT ACTIVITIES AND OUTCOMES? \nApplying standard IT security approaches to OT environments can be ineffective and potentially dangerous. OT \nenvironments prioritize operational availability and are distinct from Enterprise IT in their use of legacy equipment \nand diverse industrial protocols, process criticality, safety standards, and custom implementations. Furthermore, OT \noperations require a workforce with specialized engineering expertise, differing from traditional IT security teams. \nThe ZT for OT Activities and Outcomes address these critical differences, providing a practical and effective path to \nZT implementation in these vital environments. \nWhile the core principles of ZT – d",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "DoD Zero Trust OT Activities — section 7",
+    "text": "critical differences, providing a practical and effective path to \nZT implementation in these vital environments. \nWhile the core principles of ZT – data protection, strong authentication, network segmentation, and threat \nmonitoring – apply to OT, their implementation and deployment timescales require careful consideration of OT-\nspecific constraints and priorities. These challenges make ZT adoption more difficult in OT environments and require \nmodifications to the Activities and Outcomes. This is particularly true for low-level process controllers, as well as for \ncomputers, workstations, servers, and switches in an OT environment. \nFor example, OT environments commonly prioritize availability and safety over confidentiality and integrity. In some \ncases, this is governed by strict safety requirements, while in other cases, it is determined by the criticality to mission \noperations. As a result, ZT implementation in OT environments requires thorough risk mitigation before any product \ndeployment, often with testing on either a simulated, testbed, or real-world scenarios. OT environments also utilize \ndistinct industrial control protocols such as DNP3, Modbus, BACnet, and PROFINE",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "DoD Zero Trust OT Activities — section 8",
+    "text": "lated, testbed, or real-world scenarios. OT environments also utilize \ndistinct industrial control protocols such as DNP3, Modbus, BACnet, and PROFINET, which vary in their native \ncapabilities for security controls. \nAs a result, the IT and OT Activities and Outcomes may be accomplished with vastly different approaches. While the \nZT for OT Activities have some alignment with those in the Enterprise ZT for IT guidance, the ZT for OT guidance \nincludes unique Activities tailored to the specific challenges and requirements of OT environments. Nonetheless, the \nZT for IT and ZT for OT Activities and Outcomes remain closely linked, with similar outcomes for each Activity. The \ncommonality between the ZT for IT and ZT for OT guidance facilitates phased interoperability between the ZT for IT \nand ZT for OT implementations. For example, credentialing, asset management, threat detection, actor role and \nattribution, and behavioral analytics may be initially installed locally within the OT environment; they will eventually \nbe integrated with the comparable Enterprise IT tools and standards to provide a common approach across a \nComponent and the DoW at large. \nLastly, it is recommended th",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "DoD Zero Trust OT Activities — section 9",
+    "text": "the comparable Enterprise IT tools and standards to provide a common approach across a \nComponent and the DoW at large. \nLastly, it is recommended that only persons with authority over an OT environment, in close collaboration with OT \noperators and security professionals, should evaluate each activity in their specific environment, considering \noperational constraints and risk profiles to their componentry and environment. The ZT for OT Activities and \nOutcomes are intended to be general enough to apply broadly to all sub-types of OT environments, as the basic \nprinciples of ZT functionality are the same. For some OT environments, system owners and operators may find that \ncertain Activities are deemed inapplicable (e.g., a standalone system may not be able to ingest threat streams). The \nZT for OT Assessor or designer should document, report the justification, and remove the ZT for OT Activity from the \nTarget Level OT requirements of that specific system. Implementation designs may be highly diverse in OT \nenvironments, but the essential ZT principles are followed, and Outcomes of the ZT for OT guidance shall be \nachieved.  \nDISTINCTION BETWEEN ENTERPRISE IT AND OT ENVIRONMENTS",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "DoD Zero Trust OT Activities — section 10",
+    "text": "sential ZT principles are followed, and Outcomes of the ZT for OT guidance shall be \nachieved.  \nDISTINCTION BETWEEN ENTERPRISE IT AND OT ENVIRONMENTS \nEstablished reference architectures for OT systems, such as the Purdue Model, IEC 62443, and UFC 4-010-06, serve \nas authoritative frameworks for classifying OT systems within the DoW. If conflicts are identified with existing \n2 of 28\n\npolicies and instructions, it must be raised to the appropriate mission owner and/or authorizing official to bring to \nthe DoW CIO to adjudicate and resolve. These architectures are based on a layered model, with clear boundaries \nbetween layers and specific assignments of devices to each layer. However, the ZT OT Activities and Outcomes are \nintended to be high-level requirements for system owners, making them more adaptable and dynamic in nature. \nConsequently, it is more convenient to describe OT environments using a higher-level abstraction rather than the \ntraditional 5-layer topology. For the purposes of describing ZT principles in the OT environment, we refer to the OT \nenvironment as consisting of two layers: Operational Layer and the Process Control Layer. The Operational Layer \nnotionally i",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "DoD Zero Trust OT Activities — section 11",
+    "text": "ent, we refer to the OT \nenvironment as consisting of two layers: Operational Layer and the Process Control Layer. The Operational Layer \nnotionally includes layers 4 and 5 of the Purdue Model, while Process Control Layer encompasses layers 0-2. This \nOperational Layer conceptually also includes tooling and capabilities that you would traditionally find within a \nSupervisory Layer (e.g., Application services, control center workstations, HMI within the OT environment) as well \nas an Automation layer (e.g., Controllers, Wireless Gateways within the OT environment). \nThis generalized description of the commonly used models provides flexibility to adapt to a wide variety of future \nOT environments and to accommodate alternative security reference architectures. This generalized description of \nthe commonly used Purdue Model provides flexibility to adapt to a wide variety of future OT environments and to \naccommodate alternative security reference architectures. It also eliminates the need to specify how ZT solutions \nwill be deployed to specific layers, instead allowing flexibility in implementation based on specific system \nconfigurations. This description of the OT environment does",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "DoD Zero Trust OT Activities — section 12",
+    "text": "specific layers, instead allowing flexibility in implementation based on specific system \nconfigurations. This description of the OT environment does not replace the standard reference architectures. \nInstead, the goal is to provide a flexible and adaptable description of an OT environment when describing ZT \nprinciples and solutions. \nSeparating OT environments into an Operational Layer as well as a Process Control Layer gives flexibility to adapt to \na wide variety of OT environments without being too prescriptive by assigning componentry, devices, and users to \nspecific architecture levels. We believe this is a flexible and adaptable approach going forward, capturing the \nrelevant designation for applying ZT principles.  An example is provided in the figure below for a generic drinking \nwater system. \nDistinction between Enterprise IT Layer, Operational Layer, and the Process Control Layer for a generic drinking water \nsystem. DoD CSRA 5.0, is the authoritative DoW cybersecurity reference architectural framework. The above \nsimplified view of control systems/OT layers illustrates the distinct differences between environments to apply \nappropriate security considerations. \nThe En",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "DoD Zero Trust OT Activities — section 13",
+    "text": "ied view of control systems/OT layers illustrates the distinct differences between environments to apply \nappropriate security considerations. \nThe Enterprise IT Layer houses general-purpose business systems, including email servers, acquisition and asset \nmanagement services, SharePoint/Teams services, Active Directory, identity credentialing services (e.g., Common \n3 of 28\n\nAccess Card (CAC) authentication), and other services shared across the DoW Enterprise. Additionally, this contains \nservices that facilitate analytics, threat detection, credentialing, and productivity tools. An OT environment can run \nwithout the Enterprise Layer, but the efficiency and effectiveness of its operations will often be reduced.  \nThe Operational Layer contains components that can resemble Enterprise Layer components but support a vastly \ndifferent mission set and are maintained through various processes. This includes components such as the Internet \nProtocol (IP) network with local front-end control system services, including operator workstations, network \nswitches, process control servers, data historians, firewalls, and local control system management services (e.g., \nsoftware updates, scann",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "DoD Zero Trust OT Activities — section 14",
+    "text": ", network \nswitches, process control servers, data historians, firewalls, and local control system management services (e.g., \nsoftware updates, scanning, patching). For example, an Operational Layer firewall may be a similar model to an \nEnterprise IT Layer firewall, however, the inspected protocols and session state tracking are focused on different \noperations when compared. In addition, many components are based on legacy operating systems, which are \nconfigured to specific versions to support the process control environment. As a result, these components are \nisolated from standard Enterprise patching, scanning, and anti-virus services because changes and updates may \ndisrupt or break the environment. \nThe Process Control Layer comprises field control devices that enable local operation of sensors, actuators, motors, \nand other mechanical equipment. Typically, this would contain IP-based controllers that send commands to lower-\nlevel non-IP or IP controllers, which may send serial or IP commands to sensors, valves, motors, and other mechanical \ndevices. The layer will also include digital and analog Safety Instrumented Systems (SIS), such as fault protection \nsystems, fuses, o",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0014",
+    "title": "DoD Zero Trust OT Activities — section 15",
+    "text": "her mechanical \ndevices. The layer will also include digital and analog Safety Instrumented Systems (SIS), such as fault protection \nsystems, fuses, or pressure values. Many OT environments are isolated, with no persistent connection to any IT \nenvironments or external networks. Even so, the ZT for OT Activities and Outcomes apply equally to these \nenvironments, where insider threats, temporary device connections, data transfer media, and installed software and \nhardware are potential attack vectors. In some ways, isolated systems presume a false sense of security and trust in \nthe air-gapped boundary, which makes ZT implementation necessary. \nTARGET AND ADVANCED ZT ACTIVITIES \nBoth the Enterprise ZT for IT and ZT for OT guidance makes a distinction between Target and Advanced Level ZT \nActivities. In the DoW ZT Strategy document, “Target Level ZT is the minimum set of ZT capability outcomes and \nactivities necessary to secure and protect the Department's Data, Applications, Assets, and Services (DAAS) to \nmanage risks from currently known threats”, and “Advanced Level ZT capabilities include the complete set of \nidentified ZT capability outcomes and activities that enable adaptive",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0015",
+    "title": "DoD Zero Trust OT Activities — section 16",
+    "text": "known threats”, and “Advanced Level ZT capabilities include the complete set of \nidentified ZT capability outcomes and activities that enable adaptive responses to cybersecurity risk and threats and \noffer the highest level of protection”. Target Level ZT Activities are intended to collectively provide comprehensive \nZT Capabilities to prevent lateral movement in the environment. Advanced Activities are additional long-term goals \nthat provide adaptive responses and comprehensive ZT functionality but, will not be held to the Target timeline. \nAdvanced Activities may also require capabilities that are technically, procedurally, or policy-wise infeasible within \na strict time frame.  Reaching the Advanced Level does not signify the completion of ZT maturity; instead, security \ncontrols and risk mitigation strategies must continuously evolve as threat actors adapt their tactics, techniques, and \nprocedures (TTPs) and exploit new attack vectors. \nTarget Level ZT Activities may require significant design, development, and testing in an OT environment, but are \nconsidered feasible and necessary to prevent adversaries from successfully attacking and moving within these \nenvironments. Impl",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0016",
+    "title": "DoD Zero Trust OT Activities — section 17",
+    "text": "environment, but are \nconsidered feasible and necessary to prevent adversaries from successfully attacking and moving within these \nenvironments. Implicit in the Target and Advanced Level Activity and Outcome descriptions is the assumption that \nimplementation will maintain acceptable process control and safety performance. The activities are not OT technical \nimplementation guidance but rather focused Outcomes that may be achieved through flexible means. \nPHYSICAL SECURITY CONSIDERATIONS FOR ZT IN OT ENVIRONMENTS \nThe OT for ZT Activities and Outcomes framework provides a cybersecurity approach to securing adversary remote \naccess to OT environments and control systems and focuses primarily on technical cybersecurity measures. This \nframework does not prescribe specific physical security controls as primary mitigation strategies, nor does it address \ntechniques to prevent physical access, as such measures fall under the purview and expertise of Physical Security \n4 of 28\n\nManagers. It is critical to understand that if an adversary gains physical access, the cybersecurity controls outlined \nin this framework may be insufficient to prevent compromise. Components need to address phys",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0017",
+    "title": "DoD Zero Trust OT Activities — section 18",
+    "text": "ins physical access, the cybersecurity controls outlined \nin this framework may be insufficient to prevent compromise. Components need to address physical vulnerabilities, \nwhich must be robustly addressed through appropriate physical security measures. Organizations must coordinate \nbetween cybersecurity and physical security teams to ensure comprehensive protection that addresses both remote \ncyber threats and physical access vulnerabilities.  \nOT inherently integrates digital and physical environments. OT elements – including operations centers, \nworkstations, server rooms, controllers, human-machine interfaces (HMIs), analog actuators, and other critical \ncomponents – are often distributed across numerous facilities and are accessible by both operators, and individuals \noutside of the OT environment’s operations. In the example above, wells, tanks, and pumps could be distributed \nacross a large geographic region and in remote locations, with physical security measures in place to protect the \nequipment (e.g., buildings, card access, fences). \nRobust physical security measures directly enable the successful implementation of OT ZT Activities and Outcomes. \nFor example, the mecha",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0018",
+    "title": "DoD Zero Trust OT Activities — section 19",
+    "text": "s, fences). \nRobust physical security measures directly enable the successful implementation of OT ZT Activities and Outcomes. \nFor example, the mechanisms for controlling access to non-person entities (NPEs), such as HMI or remote terminal \nunits, can rely on underlying physical controls (e.g., a locked door, perimeter fencing, surveillance). Similarly, \nnecessitating physical actions or token safeguards can supplement authentication within the OT context. \nImplementers should inventory existing physical controls and consider any digital access management plans to \nprovide a holistic ZT approach. Access control methods taken from IT, such as digital MFA, can also be used in \nconjunction with physical confirmation of identity to enhance session authentication further.  \nA layered approach is recommended to achieve the outcomes defined by the ZT for OT Activities. OT environments \noffer unique opportunities to leverage robust physical controls to complement digital security measures. \nImplementers should consider physical environment and controls as potential ways to support the application of ZT \nprinciples within OT environments. They can regard the following examples   as analogo",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0019",
+    "title": "DoD Zero Trust OT Activities — section 20",
+    "text": "nd controls as potential ways to support the application of ZT \nprinciples within OT environments. They can regard the following examples   as analogous to the controls \nimplemented in IT, but applied to the physical world: \nIdentity & Access Management (IAM) – Physical Analog: \n•\nBiometric Access Control: Fingerprint scanners, facial recognition, or iris scanners for critical areas\n(analogous to MFA in IT).\n•\nProximity Card Readers: Require authorized personnel to use proximity cards to access restricted areas (this\nis a form of authentication).\n•\nVisitor Management System: Track all visitors, verify their identity, and escort them while they are on site\n(similar to guest network access in IT).\n•\nRole-Based Physical Access: Access levels are designed based on job function (e.g., engineers have access\nto control rooms, while maintenance personnel have access to equipment areas).\nNetwork Segmentation – Physical Analog: \n•\nPerimeter Fencing & Barriers: Create a physical barrier around the facility (analogous to a firewall).\n•\nZoning: Divide the facility into zones with different security levels (similar to VLANs in IT).\n•\nMantrap: A small space with two interlocking doors, used to co",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0020",
+    "title": "DoD Zero Trust OT Activities — section 21",
+    "text": "vide the facility into zones with different security levels (similar to VLANs in IT).\n•\nMantrap: A small space with two interlocking doors, used to control access to highly sensitive areas (a\npowerful form of micro segmentation).\nContinuous Monitoring & Detection – Physical Analog: \n•\nCCTV Surveillance: Monitor critical areas with cameras and record footage (analogous to SIEM logs in IT).\nNote that cameras should cover all access points and blind spots.\n•\nIntrusion Detection Systems (IDS) – Physical: Motion sensors, door/window sensors, and glass break\ndetectors (analogous to network IDS).\n•\nEnvironmental Monitoring: Monitor temperature, humidity, and other environmental factors that could\nindicate a security breach (similar to user behavior monitoring tools)\n5 of 28\n\n•\nRegular Security Patrols: Conduct regular patrols of the facility to identify and address security\nvulnerabilities (similar to SoC threat hunting).\nData Security – Physical Analog: \n•\nSecure Storage: Lock up sensitive documents and data storage devices (analogous to drive encryption).\n•\nDevice Tracking: Implement a system to track the location of critical assets (similar to asset management in\nIT).\nIt's essential to",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0021",
+    "title": "DoD Zero Trust OT Activities — section 22",
+    "text": "ive encryption).\n•\nDevice Tracking: Implement a system to track the location of critical assets (similar to asset management in\nIT).\nIt's essential to recognize that physical controls are not replacements for digital security measures but rather serve \nas complementary elements when applying ZT principles to OT. Implementors need to evaluate physical controls \nbased on their ability to support and enhance the Outcomes defined by the ZT FOR OT Activities and Outcomes, \nrecognizing the unique operational constraints and priorities of OT environments. Physical security guidance enables \na holistic and effective ZT implementation, strengthening the resilience of critical OT environments. \n6 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n1.1.1.OT\nInventory Users in OT \nEnvironment\nUser\nTarget\nDoW Components establish and update a user inventory within the OT \nenvironment, manually if necessary, preparing for an automated approach \nin later stages.  Privileged OT accounts will be identified. Both standard and \nprivileged accounts for applications and systems with local identity stores \nwill be identifi",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0022",
+    "title": "DoD Zero Trust OT Activities — section 23",
+    "text": "leged OT accounts will be identified. Both standard and \nprivileged accounts for applications and systems with local identity stores \nwill be identified for future migration and/or decommissioning.  Shared \ngroup accounts, must-run accounts, or service OT accounts must be \nidentified for future migration to inventory and/or decommissioning. \n1. Identified and documented inventory of accounts \nacross both the Operational IT and Process Control \nenvironments\n2. All applications and systems with local identity stores \nhave been identified\n3. Local user, local privileged, shared, must-run, and \nservice OT accounts have been identified for migration\nand/or decommissioning.\nNone\nNone\n1.2.1.OT\nImplement \nAuthorization and \nAccess Management \nfor OT Environments\nUser\nTarget\nDoW Components implement OT or Enterprise ICAM governance, or other \nauthorized credentialing services, in accordance with applicable policies and \nregulations. The authorized credentialing service establishes a set of \nattributes for authentication and authorization within the OT environment.  \nAttributes are integrated with the 2.1.3.OT activity process for a complete \nIdP process.  The OT credentialing service is ena",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0023",
+    "title": "DoD Zero Trust OT Activities — section 24",
+    "text": "n the OT environment.  \nAttributes are integrated with the 2.1.3.OT activity process for a complete \nIdP process.  The OT credentialing service is enabled for adding and updating \nattributes for users. OT privileged access and authorization are approved \nand tailored as specified by the roles.  For OT systems on which it is \ntechnically capable, any shared group, must-run, and service OT accounts \nare migrated to proper identities or are decommissioned. Any OT systems \nidentified that cannot be migrated and/or decommisioned are tracked using \na risk-based metholody for future migration and/or decommision.\n1. Authorized Credentialing service is implemented for\nthe Operational IT environment\n2. Attributes for authentication and authorization of\nusers are defined\n3. OT credentialing service enabled to add and update \nattributes\n4. OT privileged accounts are authorized based on roles \nand attributes\n5. Shared group, must-run, and service OT accounts \nhave been migrated and/or decommissioned.\nNone\n1.3.1.OT, 2.1.3.OT\n1.2.2.OT\nRole Based Dynamic \nAccess for OT \nEnvironments\nUser\nTarget\nDoW Components develop rules, both technical and procedural, for remote \nand third-party access into the",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0024",
+    "title": "DoD Zero Trust OT Activities — section 25",
+    "text": "amic \nAccess for OT \nEnvironments\nUser\nTarget\nDoW Components develop rules, both technical and procedural, for remote \nand third-party access into the OT environment.   All users must have strict \nrole-based access controls prior to access or connection into the OT \nenvironment.  Remote and third-party access should be limited to the \naccount of least privilege required to perform work. OT privileged accounts \nrequired for operations are accessed through the Authorized Credentialing \nService.   Identify high-privileged accounts and require these use dynamic \naccess control.\n1. Rules are defined for third party and remote access \ninto the OT environment\n 2. Role-based enforcement of user access to the \nenvironment;  Authorized Credentialing service required \nfor Privileged accounts\n3. Identified High-privileged accounts and enforced\nusing dynamic access.\n1.4.1.OT, 1.8.1.OT\n4.4.1.OT\n1.3.1.OT\nMFA for OT \nEnvironments\nUser\nTarget\nDoW Components enable or integrate the Authorized Credentialing Service \nwith Multifactor Authentication (MFA), or an approved alternative \nauthoritative credentialing solution, either technical or procedural, for \naccess within the OT Environment.\n1. MFA, or",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0025",
+    "title": "DoD Zero Trust OT Activities — section 26",
+    "text": ", or an approved alternative \nauthoritative credentialing solution, either technical or procedural, for \naccess within the OT Environment.\n1. MFA, or approved authoritative credentialing \nsolution, is implemented with the Authorized \nCredentialing Service for access.\n1.2.1.OT\n1.3.2.OT, 1.8.1.OT\n1.3.2.OT\nAlternative Flexible \nCredentialing\nUser\nAdvanced\nDoW Components shall support alternative methods of authentication that \ncan be managed using a self-service approach.  The solution will be \napproved and implemented following DoW Enterprise policy \nrecommendations and guidance.   \n1. Authoritative Credentialing service provides user self-\nservice alternative authentication solutions\n2. DoW Component provides solutions approved per \npolicy.\n1.3.1.OT\n1.3.3.OT\n1.3.3.OT\nInteroperate \nCredentialing Services User\nAdvanced\nDoW Component Authentication solution is extended to interoperate with \nDoW Approved Credentialing services.\n1. DoW Component authentication solution \ninteroperates with all approved credentialing services.\n1.3.2.OT\nNone\n7 of 28\nZT for OT Activities and Outcomes\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predece",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0026",
+    "title": "DoD Zero Trust OT Activities — section 27",
+    "text": "of 28\nZT for OT Activities and Outcomes\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n1.4.1.OT\nImplement PAM for \nOT Environments Pt. 1 User\nTarget\nDoW Components procure and implement an OT Privileged Access \nManagement (PAM) solution that supports all critical privileged use cases, as \nappropriate in the OT environment. Integration points for applications, \nservices, and/or devices are identified to determine the status of support for \nthe PAM solution. Applications, services, and/or devices that are able to \nintegrate with the PAM solution are transitioned to using the solution.\n1. OT PAM solution implemented\n2. Integration points with appropriate applications, \nservices, and devices are identified to support \ninteroperability across the environment\n3. Applications, services, devices that can be readily \nintegrated with the PAM solution are integrated.\nNone\n1.2.2.OT, 1.4.2.OT\n1.4.2.OT\nImplement PAM for \nOT Environments Pt. 2 User\nTarget\nDoW Components extend integrations with the OT PAM Solution to all use \ncases, inclusive of all critical use cases.   Applications, services, and devices \nthat can",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0027",
+    "title": "DoD Zero Trust OT Activities — section 28",
+    "text": "s extend integrations with the OT PAM Solution to all use \ncases, inclusive of all critical use cases.   Applications, services, and devices \nthat cannot integrate with the PAM solution shall be managed in a risk-\nbased methodical approach to be migrated and/or decommissioned where \noperationally possible in the OT Environment.\n1. OT PAM solution extended for all use cases\n2. Applications, services, and devices that are not \nintegrated with the OT PAM solution are migrated\nand/or decommissioned.\n1.4.1.OT\nNone\n1.5.1.OT\nLife-Cycle \nManagement for OT \nEnvironments Pt. 1\nUser\nTarget\nDoW Components develop and document an Identity Life-Cycle \nManagement (ILM) process for the OT Environment.  The process is \nimplemented for all users that access, connect, and operate with the OT \nEnvironment.  \n1. OT Environment Identity Life-Cycle Management \nprocess developed, documented, and implemented.\nNone\n1.5.2.OT, 1.9.1.OT\n1.5.2.OT\nLife-Cycle \nManagement for OT \nEnvironments Pt. 2\nUser\nAdvanced\nDoW Components works with the DoW Enterprise to review and align the \nOT Environment ILM process with existing ILM processes, policies, and \nstandards.  Exceptions are identified and are managed in a risk-",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0028",
+    "title": "DoD Zero Trust OT Activities — section 29",
+    "text": "and align the \nOT Environment ILM process with existing ILM processes, policies, and \nstandards.  Exceptions are identified and are managed in a risk-based \nmethodical approach.\n1. Standardized ILM processes and policies for OT\nenvironments.\n1.5.1.OT\nNone\n1.6.1.OT\nImplement User & \nEntity Behavior \nActivity (UEBA) and \nUser Activity \nMonitoring (UAM) \nTooling for OT \nEnvironments\nUser\nTarget\nDoW Components procure and implement UEBA and UAM solutions that are \ndesigned specifically for OT environments for all users, PEs and NPEs, as \nappropriate.  UEBA and UAM solutions are integrated with the Authorized \nCredentialing Service and configured actions prioritize safety, reliability, and \nresilience within the OT environment.\n1. UEBA and UAM functionality is implemented for all \nusers, PEs and NPEs, as appropriate.\nNone\n2.3.2.OT, 7.2.6.OT, 7.3.2.OT, 7.4.1.OT\n1.7.1.OT\nDeny by Default Policy \nin OT Environments\nUser\nTarget\nDoW Components conduct a comprehensive review of all user accounts and \ntheir assigned permissions, applying the principle of least privilege to revoke \nunnecessary access rights while maintaining the safety and reliability of OT \nprocesses.  Identify and decommission",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0029",
+    "title": "DoD Zero Trust OT Activities — section 30",
+    "text": "iple of least privilege to revoke \nunnecessary access rights while maintaining the safety and reliability of OT \nprocesses.  Identify and decommission static privileged accounts where \npossible, or reduce their permissions to the minimum required.  Automate \naudit logging and governance processes to continuously monitor access and \nprepare for the implementation of more granular, attribute-based or \ndynamic access control mechanisms.\n1. Default permission levels have been significantly \nreduced, thorough audit of identity and group usage \nwith revocation of unnecessary permissions\n2. Auditing process has been automated where possible\n3. Static privileged users decommissioned or had \npermissions reduced.\n7.2.1.OT\nNone\n1.8.1.OT\nInitial Authentication \nin OT Environments\nUser\nTarget\nDoW Components implement authentication processes to authenticate \nusers at the start of every session in the Operational IT environment, in the \nEnterprise IT environment when it interoperates with the OT environment, \nand in the Process Control environment via technical or procedural means, \nas appropriate.\n1. Authentication of users is implemented across\napplications per session.\n1.3.1.OT\n1.2.2.OT, 1.8.",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0030",
+    "title": "DoD Zero Trust OT Activities — section 31",
+    "text": "via technical or procedural means, \nas appropriate.\n1. Authentication of users is implemented across\napplications per session.\n1.3.1.OT\n1.2.2.OT, 1.8.2.OT, 3.4.1.OT, 3.4.4.OT\n1.8.2.OT\nProgrammable \nPeriodic \nAuthentication in OT \nEnvironments\nUser\nTarget\nDoW Components enable programmable periodic authentication \nrequirements in the Operational IT environment, in the Enterprise IT \nenvironment when it interoperates with the OT environment, and in the \nProcess Control environment, as appropriate on a session basis.  Alternative \nmitigating controls, technical or procedural, must be deployed and \ndocumented when OT devices do not support periodic authentication.\n1. Programmable periodic authentication of users is\nimplemented multiple times per session\n2. Alternative mitigating controls are deployed for OT\ndevices that do not support periodic authentication.\n1.8.1.OT\n1.8.3.OT\n8 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n1.8.3.OT\nContinuous \nAuthentication\nUser\nAdvanced\nDoW Components monitor transaction-based authentications for Policy \nViolations.  Any violations are escalated for response to t",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0031",
+    "title": "DoD Zero Trust OT Activities — section 32",
+    "text": "ication\nUser\nAdvanced\nDoW Components monitor transaction-based authentications for Policy \nViolations.  Any violations are escalated for response to the incident \nresponse process.\n1. Transaction authentication monitoring detects Policy \nViolations and escalated for action.\n1.8.2.OT\nNone\n1.9.1.OT\nEnterprise \nCredentialing Services \nPt. 1\nUser\nTarget\nThe DoW Enterprise works with DoW Components to implement DoW \napproved Credentialing Services in a centralized and/or federated fashion in \nthe Operational IT environment, in the Enterprise IT environment when it \ninteroperates with the OT environment, and in the Process Control \nenvironment, as appropriate.  DoW Components credentialing services \ninteroperate with the DoW Enterprise, while also ensuring all risks involving \ncommunications between Process Control and Operational IT environments \nare mitigated beforehand.  DoW Component local credentialing solutions \nare identified for future migration and decommissioning.  \n1. DoW Component implements approved \nCredentialing Services in the OT environment\n2. Component Credentialing Service interoperates with \nDoW Enterprise approved Credentialing Authority when \npossible\n3. Local Crede",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0032",
+    "title": "DoD Zero Trust OT Activities — section 33",
+    "text": "he OT environment\n2. Component Credentialing Service interoperates with \nDoW Enterprise approved Credentialing Authority when \npossible\n3. Local Credentialing solutions are identified for future \nmigration and decommissioning.\n1.5.1.OT\n1.9.2.OT, 2.1.3.OT\n1.9.2.OT\nEnterprise \nCredentialing Services \nPt. 2\nUser\nTarget\nDoW Component local credentialing solution is decommissioned and users \nare migrated to the DoW Approved Credentialing Authority as appropriate. \nAll systems are assessed for compliance with this directive. Systems unable \nto comply due to technical or operational constraints, including Stand-Alone \nsystems, where migration may be delayed due to inherent limitations, are \nsubject to a documented risk assessment process to be migrated and \ndecommissioned in the future, and compensating controls are implemented \nto maintain equivalent security posture. Any users that are in violation are \nescalated for review and remediated.\n1. Local Credentialing is decommissioned and migrated\nto DoW Approved solution\n2. Users unable to migrate are escalated and\nremediated.\n1.9.1.OT\n1.9.3.OT\n1.9.3.OT\nEnterprise \nCredentialing Services \nPt. 3\nUser\nAdvanced\nDoW Components shall apply authe",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0033",
+    "title": "DoD Zero Trust OT Activities — section 34",
+    "text": "rate are escalated and\nremediated.\n1.9.1.OT\n1.9.3.OT\n1.9.3.OT\nEnterprise \nCredentialing Services \nPt. 3\nUser\nAdvanced\nDoW Components shall apply authentication from DoW Approved \nCredentialing Authority to all OT Assets.  \n1. Authentication from a DoW approved Credentialing \nAuthority has been applied to all OT Assets, enabling \ninteroperable access across all OT componentry.\n1.9.2.OT\nNone\n2.1.1.OT\nInventory NPEs in OT \nEnvironment\nDevice\nTarget\nDoW Components develop a centralized inventory for NPEs in the \nOperational IT and Process Control environments.  Existing inventories are \nidentified and manual and/or passive discovery-based automated solutions \nshall be used to update the centralized inventory.  Automated inventories \nmust be manually verified and audited periodically for accuracy as new \nequipment is deployed in the environment.   \n1. DoW Components have developed a centralized \ninventory of NPE, incorporating existing inventories\nthrough manual and/or passive discovery-based \nautomated solutions.\n2. Inventories are manually validated and audited \nperiodically.\nNone\n2.1.4.OT\n2.1.2.OT\nNPE Certificate \nManagement for OT \nEnvironment\nDevice\nTarget\nDoW Components utilize th",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0034",
+    "title": "DoD Zero Trust OT Activities — section 35",
+    "text": "ly validated and audited \nperiodically.\nNone\n2.1.4.OT\n2.1.2.OT\nNPE Certificate \nManagement for OT \nEnvironment\nDevice\nTarget\nDoW Components utilize the Public Key Infrastructure (PKI) solution, or DoW \napproved Credentialing Authority, to deploy X.509 certificates to all \nsupported and managed NPEs in the Operational IT environment.  NPEs \nwithin the Process Control environment supporting X.509 certificates are \nassigned.  NPEs incapable are marked for retirement or excepted using a risk \nbased methodical approach.  In addition, break-glass mechanisms are \nimplemented to revert system to non-secure OT protocols in the event of \nmission critical requirement. Break-glass mechanisms must have mitigation \ncontrols in place to prevent misuse or exploitation.\n1. NPEs are managed via available PKI/IdP solutions, \nwhere possible\n2. DoW Components have established break-glass \nmechanisms to revert Process Control environment \nNPEs to utilize non-secure OT protocols in the event of\nmission critical requirements. \n2.6.2.OT\n2.2.1.OT, 2.4.1.OT\n9 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n2.1.3.OT\nNPE Cred",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0035",
+    "title": "DoD Zero Trust OT Activities — section 36",
+    "text": "f 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n2.1.3.OT\nNPE Credentialing \nAuthority\nDevice\nTarget\nThe DoW approved Credentialing Authority, using either a centralized or \nfederated technologies, integrates NPEs from both the Operational IT and \nProcess Control environments. The Operational IT and Process Control IdP \nsolution should be separate from the Enterprise IT solution. An Operational \nIT Device Management solution is used to track NPE integration. As \nappropriate, process Control NPEs shall be integrated into the PKI and/or IdP \nsystem to enable secure OT protocols (e.g., BACnet Secure Connect \n(BACnet/SC), DNP3 Secure). \n1. NPEs from both Operational IT and Process Control \nenvironments are integrated using either centralized or\nfederated technologies. \n2. NPEs are tracked in the Operational IT environment \nDevice Management solution, indicating whether they \nare integrated into the IdP and/or PKI system.\n3. Process Control NPEs are integrated into the PKI \nand/or IdP system as appropriate to enable secure OT\nprotocols.\n4. NPEs not integrated are marked for retirement or an \nexception is",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0036",
+    "title": "DoD Zero Trust OT Activities — section 37",
+    "text": "ted into the PKI \nand/or IdP system as appropriate to enable secure OT\nprotocols.\n4. NPEs not integrated are marked for retirement or an \nexception is documented with a risk-based, methodical \napproach.\n1.2.1.OT, 1.9.1.OT\nNone\n2.1.4.OT\nAutomated NPE \nDiscovery\nDevice\nAdvanced\nDoW Components automate OT network NPE discovery through the OT \nenvironment, limiting access to NPEs based on risk-based methods.  OT \nnetwork asset discovery shall utilize active discovery methods that are \noptimized to mitigate operational disturbances through configurations that \navoid aggressive network scans, especially for equipment in the Process \nControl environment.  In addition, SIEM, SOAR, and IDS solutions shall be \nconfigured to permit traffic from authorized active discovery tools to reduce \nfalse alarms.  \n1. NPE discovery is automated through the entire OT\nenvironment\n2. Automated discovery utilizes active discovery \nmethods, as opposed to passive discovery methods\n3. The incidence of false alarms is reduced compared to\nTarget Activities by configuring the SIEM, SOAR, and IDS \nsolution to permit traffic from discovery tools.\n2.1.1.OT\nNone\n2.2.1.OT\nImplement Connection \nPolicy for OT \nEnvironme",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0037",
+    "title": "DoD Zero Trust OT Activities — section 38",
+    "text": "guring the SIEM, SOAR, and IDS \nsolution to permit traffic from discovery tools.\n2.1.1.OT\nNone\n2.2.1.OT\nImplement Connection \nPolicy for OT \nEnvironments\nDevice\nTarget\nThe DoW Enterprise refines policy, standards and requirements for  \nconnection policies.  Policy, standards, and requirements should specifically \nstate how often compliance audits are conducted to ensure all NPEs meet \nminimum security standards.  DoW Components implement and enforce \ncompliance-based network authorization for the Operational IT \nenvironment, but only for the Process Control environment, as appropriate.  \n1. DoW Enterprise policy, standards, and requirements \nfor connection policies are refined and documented.\n2. Refined policies clearly dictate the frequency and \nscope of compliance audits to meet minimum security \nstandards. \n3. DoW Components implement and enforce \ncompliance-based network authorization, specifically \nfor the Process Control environment as appropriate.\n4. Compliance enforcement is risk-based, prioritizing \nthe Operational IT and Process Control environments as \nappropriate. \n2.1.2.OT, 2.3.2.OT, \n2.4.2.OT, 2.5.1.OT\nNone\n2.3.1.OT\nConfiguration \nMonitoring and \nControl Tools for OT",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0038",
+    "title": "DoD Zero Trust OT Activities — section 39",
+    "text": "cess Control environments as \nappropriate. \n2.1.2.OT, 2.3.2.OT, \n2.4.2.OT, 2.5.1.OT\nNone\n2.3.1.OT\nConfiguration \nMonitoring and \nControl Tools for OT \nEnvironments\nDevice\nTarget\nDoW Components procure and implement configuration monitoring and \ncontrol solutions for the Operational IT environment. Configuration control \nshould ensure configuration files (e.g., ladder logic) for the Process Control \nenvironment are not altered, downloaded, or uploaded except by \nauthorized individuals.\n 1. Configuration monitoring and control solutions are \nimplemented for the Operational IT environment\n2. Process Control environment configuration control \nsolution prevents altering, downloading, or uploading \nunauthorized configuration files.\nNone\n4.4.3.OT\n2.3.2.OT\nIntegrate AV Tools for \nOT Environments\nDevice\nTarget\nDoW Components procure and implement approved anti-virus and anti-\nmalware solutions for supported Operational IT NPEs.  NPEs without anti-\nvirus or anti-malware solutions must be protected with mitigating controls.\n1. Anti-virus and anti-malware is implemented on \nOperational IT NPEs\n2. NPEs without anti-virus or anti-malware must be \nprotected with other mitigating controls.\n1.6.1.O",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0039",
+    "title": "DoD Zero Trust OT Activities — section 40",
+    "text": "i-malware is implemented on \nOperational IT NPEs\n2. NPEs without anti-virus or anti-malware must be \nprotected with other mitigating controls.\n1.6.1.OT, 6.6.3.OT, \n7.3.2.OT\n2.2.1.OT, 2.7.1.OT\n10 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n2.3.3.OT\nOT Device Security \nStack with C2C\nDevice\nAdvanced\nDoW Components working with DoW Enterprise review current C2C policies \napplicability to the OT Environment.  DoW Components shall prioritize \napplying security solutions and configurations for OT devices enabling C2C \npolicies where possible in the OT Environment.  \n1. DoW Components, in collaboration with the DoW \nEnterprise, have reviewed current C2C policies to \ndetermine their applicability to the OT environment.\n2. Based on the review, DoW Components prioritize the \nimplementation of security solutions and configurations \nfor OT devices that enable C2C policies, where feasible. \n3. OT devices prioritized for C2C implementation have \nan acceptable security stack adaptation to support \nthose policies.\nNone\nNone\n2.4.1.OT\nNPE Deny by Default \nPolicy\nDevice\nTarget\nDoW Components block all unauthoriz",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0040",
+    "title": "DoD Zero Trust OT Activities — section 41",
+    "text": "security stack adaptation to support \nthose policies.\nNone\nNone\n2.4.1.OT\nNPE Deny by Default \nPolicy\nDevice\nTarget\nDoW Components block all unauthorized remote and local NPE access to \nresources, including serial communications and console access, via technical \nor procedural controls.  Identified and authorized NPEs are provided risk-\nbased, methodical access.\n1. Unauthorized remote and local NPE access and\nconnections are blocked.\n2. Physical controls are implemented to secure local \nNPE access.\n2.1.2.OT, 7.2.1.OT\n2.4.2.OT\n2.4.2.OT\nManaged and Limited \nBYOD support for OT \nEnvironments\nDevice\nTarget\nOnly Government Furnished Equipment (GFE) is permitted to connect to an \nOT Environment.  GFE is provided by the system owner and any required \nsoftware is scanned and approved before deployment for use in the OT \nenvironment.  If non-GFE is required, and properly authorized by command \nauthority, to connect to the OT Environment, it must follow the approved \ndeviation process, which explicitly identifies risk tolerance levels based on \nsituational circumstance.\n1. Only GFE is permitted to connect, manage, configure, \nor maintain NPE in the OT environment.\n2. Software deployed on GFE",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0041",
+    "title": "DoD Zero Trust OT Activities — section 42",
+    "text": "situational circumstance.\n1. Only GFE is permitted to connect, manage, configure, \nor maintain NPE in the OT environment.\n2. Software deployed on GFE is scanned and approved \nbefore use in the OT environment. \n3. Any non-GFE requiring connection to the OT \nenvironment must follow an approved deviation \nprocess, explicitly identifying risk tolerance levels based\non situational circumstance and requiring command \nauthorization\n2.4.1.OT\n2.2.1.OT, 2.4.3.OT, 2.6.1.OT\n2.4.3.OT\nManaged Non-OT \nAssets\nDevice\nTarget\nDoW Components shall require non-OT assets are managed and meet \nstandard baseline checks before authorization or connection to the OT \nEnvironment.\n1. Only non-OT assets that meet mandated \nconfiguration standards allowed to access resources or \nconnect in the OT Environment.\n2.4.2.OT\nNone\n2.5.1.OT\nImplement \nVulnerability and \nPatch Management \nTools for OT \nEnvironments\nDevice\nTarget\nOT Environments must maintain minimum government approved \ncompliance standards and patching as well as be maintained to current \napproved configuration profiles. Any systems outside of these standards \nrequire authorization from the DoW Component through a risk based \nassessment approach.  Perio",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0042",
+    "title": "DoD Zero Trust OT Activities — section 43",
+    "text": "ation profiles. Any systems outside of these standards \nrequire authorization from the DoW Component through a risk based \nassessment approach.  Periodic reassessments for compliance are \nperformed for all devices in use.  At the Process Control level, special care \nmust be given to mitigate vulnerabilities without a patch source, while \nprotecting safety, operational functionality, and process reliability. Similarly, \nrisk-based testing must be performed and accepted prior to  patching.\n1. OT Environments are maintained to current \napproved compliance standards, patching levels, and \nconfiguration profiles.\n2. Periodic reassessments are performed for all devices \nto verify ongoing compliance.\n3. For Process Control environments, a risk-based \napproach is used to mitigate vulnerabilities, particularly \nwhere patch sources are unavailable, prioritizing \nprocess reliability.\nNone\n2.2.1.OT, 2.6.1.OT, 3.2.3.OT\n2.6.1.OT\nImplement UEDM for \nOT Environments\nDevice\nTarget\nDoW Components will procure and implement a UEDM solution, wherever \napplicable, for all identified devices.  This shall include explicit configuration \nprofiles per device.  \n1. UEDM solution is implemented, incorporatin",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0043",
+    "title": "DoD Zero Trust OT Activities — section 44",
+    "text": "plicable, for all identified devices.  This shall include explicit configuration \nprofiles per device.  \n1. UEDM solution is implemented, incorporating the \nrequirements for configuration, vulnerability, and patch\nmanagement.\n2.4.2.OT, 2.5.1.OT\n2.6.2.OT\n11 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n2.6.2.OT\nOT Device \nConfiguration \nManagement\nDevice\nTarget\nDoW Components sets standards and policies for the device inventory and \nsecure configuration, in conjunction with the UEDM solution and asset \nmanagement tools, to enable automated configuration management \ncontrol.  Automated solutions for configuring devices are used only after \nanalyzing the risk to operations.\n1. Standards and policies are defined for OT device \nmanagement for the Operational IT and Process Control \nenvironments.\n2. Automated configuration management is enabled.\n2.6.1.OT\n2.1.2.OT\n2.7.1.OT\nImplement Endpoint \nDetection & Response \n(EDR) Tools for OT \nEnvironments\nDevice\nTarget\nDoW Components procure and implement EDR solution(s) within the \nOperational IT, and Process Control environments as appropriate.  DoW \nComponen",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0044",
+    "title": "DoD Zero Trust OT Activities — section 45",
+    "text": "arget\nDoW Components procure and implement EDR solution(s) within the \nOperational IT, and Process Control environments as appropriate.  DoW \nComponents conduct system analysis to determine the potential automated \nresponses within both the Operational IT and Process Control environments \nprioritizing safety, process reliability, and mission.\n1. EDR solutions are implemented for both Operational \nIT and Process Control environments, following system \nanalysis to determine and prioritize automated \nresponses.\n2.3.2.OT\n2.7.2.OT\n2.7.2.OT\nImplement Extended \nDetection & Response \n(XDR) Tools for OT \nEnvironments\nDevice\nAdvanced\nDoW Components procure and implement XDR solution(s) to all possible \ndevices, and integration with other solutions where possible.  EDR continues \ncoverage to include the maximum number of services and applications as \npart of the XDR implementation.  Basic analytics are sent from the XDR \nsolution stack to the OT and/or Enterprise SIEM solution.\n1. XDR solution is implemented for both Operational IT\nand Process Control environments\n2. The maximum number of services and applications \nare covered by the XDR solution\n3. Basic analytics from the XDR are sent to th",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0045",
+    "title": "DoD Zero Trust OT Activities — section 46",
+    "text": "ontrol environments\n2. The maximum number of services and applications \nare covered by the XDR solution\n3. Basic analytics from the XDR are sent to the OT\nand/or Enterprise SIEM.\n2.7.1.OT, 7.2.2.OT\n7.2.4.OT\n3.1.1.OT\nOT Application and \nCode Inventory\nApplications and \nWorkload\nTarget\nDoW Components create an inventory of all applications.  Software \napplications include those in use within the Operational IT environment, as \nwell as those in use within the Enterprise IT applications when they \ninteroperate with the Operational IT environment, including open source, \ncommercial, and/or in-house solutions.  Each Component tracks and \ndocuments the application supportability, hosted location (e.g., cloud, on-\npremise, hybrid), and other important data (e.g., name, version, team \nresponsible, licensing and support, mapped dependencies). \n1. All applications within the Operational IT \nenvironment, and the Enterprise IT and which \ninteroperate with the Operational IT environment, are \nidentified, categorized, tracked, and documented.\nNone\n3.2.3.OT, 3.3.2.OT\n3.1.2.OT\nOT Application Control Applications and \nWorkload\nTarget\nApplication control solutions are applied to inventoried applicati",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0046",
+    "title": "DoD Zero Trust OT Activities — section 47",
+    "text": ".2.3.OT, 3.3.2.OT\n3.1.2.OT\nOT Application Control Applications and \nWorkload\nTarget\nApplication control solutions are applied to inventoried applications (e.g., \nSCADA software, control software, controller IDEs, etc.), to prevent \nunauthorized modifications.\n1. Application control solutions are implemented on \ninventoried applications\n3.1.1.OT\nNone\n3.2.1.OT\nBuild OT DevOps  \nCapability Factory Pt. 1\nApplications and \nWorkload\nTarget\nThe DoW Enterprise provide guidance for DevOps or DevSecOps processes, \nCI/CD, and Infrastructure as Code (IaC) pipelines in the Operational IT \nenvironments, and where appropriate for the Process Control applications.  \nFor DoW Components that have application development processes the \nguidance is applied.\n1. The DoW Enterprise provides guidance for DevOps or \nDevSecOps processes, CI/CD, and IaC pipelines for \nOperational IT environments, and where appropriate \nfor Process Control applications, to be applied by DoW \nComponents with existing application development \nprocesses.\nNone\n3.2.2.OT\n3.2.2.OT\nBuild OT DevOps \nCapability Factory Pt. 2\nApplications and \nWorkload\nTarget\nDoW Components that have capability development processes extend to \nuse appro",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0047",
+    "title": "DoD Zero Trust OT Activities — section 48",
+    "text": "d OT DevOps \nCapability Factory Pt. 2\nApplications and \nWorkload\nTarget\nDoW Components that have capability development processes extend to \nuse approved DevOps or DevSecOps processes, CI/CD, and IaC  pipelines to \ndevelop new capabilities in the OT environment, as appropriate.  DevOps or \nDevSecOps processes are also used to update existing capabilities.  \nContinual validation functions are integrated into the CI/CD pipelines and \nDevSecOps processes are integrated with existing capabilities.\n1. Engineering teams within the OT environment follow \nDevOps or DevSecOps, CI/CD, and IaC  pipeline process \npatterns for development and deployment.\n3.2.1.OT\nNone\n12 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n3.2.3.OT\nStandardized OT \nApplication Security \nand XBOM Inventory\nApplications and \nWorkload\nAdvanced\nAll delivered applications and capabilities must apply approved security \npractices during development and ensure all security features are operable \nduring execution.  Additionally, an approved XBOM solution inventories \nutilized capability and application delivery.\n1. All delivered application",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0048",
+    "title": "DoD Zero Trust OT Activities — section 49",
+    "text": "le \nduring execution.  Additionally, an approved XBOM solution inventories \nutilized capability and application delivery.\n1. All delivered applications and capabilities apply \napproved security practices during development\n2. All security features are operable during execution\n3. An approved XBOM solution inventories utilized\nsoftware solutions.\n2.5.1.OT, 3.1.1.OT, \n3.3.2.OT\nNone\n3.3.1.OT\nOT Vulnerability \nManagement Program \nPt. 1\nApplications and \nWorkload\nTarget\nDoW Components work with the DoW Enterprise to establish and manage \nan OT Vulnerability Management program. OT Vulnerability Management \nteams shall collaborate with a related Enterprise IT Vulnerability \nManagement team. Vulnerability management for the OT environment shall \nincorporate vulnerability scope and risk to mission in prioritization decisions. \nVulnerability sources can be delivered from any trusted agent, and must be \nconsumed as an interoperable product. \n1. OT Vulnerability Management program is established\nand managed by the DoW Component, in collaboration \nwith the DoW Enterprise.\n2. The OT Vulnerability Management program \nprioritizes vulnerabilities based on risk to mission and\nconsumes vulnerability",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0049",
+    "title": "DoD Zero Trust OT Activities — section 50",
+    "text": "with the DoW Enterprise.\n2. The OT Vulnerability Management program \nprioritizes vulnerabilities based on risk to mission and\nconsumes vulnerability data from interoperable \nsources.\nNone\n3.3.2.OT, 3.3.3.OT\n3.3.2.OT\nOT Vulnerability \nManagement Program \nPt. 2\nApplications and \nWorkload\nTarget\nStandard processes are established at the DoW Enterprise level for reporting \nand managing the disclosure of vulnerabilities in DoW maintained or \noperated OT environments, for disclosure both publicly and privately.  DoW \nComponents expand the OT Vulnerability Management program to track \nand manage open public, controlled public, PAI and CAI, and DoW internally \nderived vulnerability sources.  \n1. Enterprise-wide processes for managing disclosure of \nvulnerabilities for OT environments\n2. DoW Components have expanded the vulnerability \nmanagement program to track and manage open \npublic, controlled public, PAI and CAI, and DoW \ninternally derived vulnerability sources.\n3.3.1.OT\n3.2.3.OT\n3.3.3.OT\nBinaries, Code, and \nHardware \nConfigurations for OT \nEnvironments\nApplications and \nWorkload\nTarget\nThe DoW Components manage and document approved binaries, code, and \nhardware configurations for",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0050",
+    "title": "DoD Zero Trust OT Activities — section 51",
+    "text": "r OT \nEnvironments\nApplications and \nWorkload\nTarget\nThe DoW Components manage and document approved binaries, code, and \nhardware configurations for the Operational IT and Process Control \nenvironments, and code reviews are conducted. Secure and reliable \nconfiguration management processes and procedures are established and \nadopted (e.g., to enable reverting to known-good backups). These \napproaches include supplier sourcing risk management, supply chain risk \nmanagement, and industry standard vulnerability management.\n1. Approved binaries, code, and hardware configuration \ndeveloped across the OT environment are managed and \ndocumented.\n3.1.1.OT, 3.3.1.OT\nNone\n3.4.1.OT\nAccess Control for OT \nEnvironments Pt. 1\nApplications and \nWorkload\nTarget\nAll applications and capabilities must support a full ABAC solution. \nApplications, services, and devices unable to utilize ABAC are identified for \nfuture decommissioning.\n1. All applications and capabilities support a full ABAC \nsolution. \n2. Applications, services, and devices unable to utilize \nABAC are identified for future decommissioning.\n1.8.1.OT, 5.3.1.OT\n3.4.2.OT\n3.4.2.OT\nAccess Control for OT \nEnvironments Pt. 2\nApplications and",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0051",
+    "title": "DoD Zero Trust OT Activities — section 52",
+    "text": "ilize \nABAC are identified for future decommissioning.\n1.8.1.OT, 5.3.1.OT\n3.4.2.OT\n3.4.2.OT\nAccess Control for OT \nEnvironments Pt. 2\nApplications and \nWorkload\nTarget\nAccess control must be enforced using digital policy with full attribution \nutilizing ABAC following established policies. Applications, services, and \ndevices unable to utilize ABAC are either decommissioned or accepted using \na risk-based methodical approach.\n1. Policy enforcements is implemented for all possible \napplications, services, and devices in the Operational IT\nenvironment\n2. Applications, services, and devices unable to utilize \nABAC are either decommissioned or accepted using a \nrisk-based approach.\n3.4.1.OT\n3.4.3.OT\n3.4.3.OT\nAccess Control for OT \nEnvironments Pt. 3\nApplications and \nWorkload\nAdvanced\nConfidence scoring is introduced across the attributes to create a more \nadvanced method of authorization decision making in an automated \nfashion. High-Privileged OT attributes are identified for the Confidence \nscoring.\n1. Confidence scoring is introduced and implemented \nto High-Privileged OT attributes.\n3.4.2.OT, 5.4.2.OT\n3.4.4.OT\n3.4.4.OT\nAccess Control for OT \nEnvironments Pt. 4\nApplications and \nWo",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0052",
+    "title": "DoD Zero Trust OT Activities — section 53",
+    "text": "and implemented \nto High-Privileged OT attributes.\n3.4.2.OT, 5.4.2.OT\n3.4.4.OT\n3.4.4.OT\nAccess Control for OT \nEnvironments Pt. 4\nApplications and \nWorkload\nAdvanced\nApply confidence scoring to all DAAS, PEs, and NPEs in the OT environment.\n1. Confidence scoring is applied to all DAAS, PEs, and\nNPEs in the OT environment.\n1.8.1.OT, 3.4.3.OT\nNone\n13 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n4.1.1.OT\nOT Data Tagging \nGovernance\nData\nTarget\nThe DoW Enterprise establishes governing body(s) for establishing \ncontrolled terminology (data and metadata), file formats, and \ncommunication protocols, which are used to ensure interoperability across \ncommunities.  Data at the DoW Component level should be categorized and \nanalyzed to align with the controlled terminology, ensuring input from \nappropriate Information Owners for correct alignment.  DoW Components \nwill also determine data tagging structure and maps based on workflow \nprocess, with a focus on risk of operational impact.  OT environment must \ninclude a characterization method for all data.  \n1. A governing body is established to define and",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0053",
+    "title": "DoD Zero Trust OT Activities — section 54",
+    "text": "risk of operational impact.  OT environment must \ninclude a characterization method for all data.  \n1. A governing body is established to define and \nmaintain controlled terminology, file formats, and\ncommunication protocols for interoperable data \ntransmission, querying, and storage across \ncommunities.\n2. DoW Component categorizes and analyzes their data\nto align with the established controlled terminology. \n3. DoW Component determines and implements data\ntagging structures and maps based on workflow \nprocesses and operational risk, including a \ncharacterization method for all data in the OT \nenvironment.\n4. Exemptions for data tagging have been submitted by \nthe DoW Component with justification.\nNone\n4.2.1.OT\n4.2.1.OT\nDefine OT Data \nTagging Patterns\nData\nTarget\nData tagging mandates for data within the OT environment is defined based \non workflow process data types in 4.1.1.OT.  The DoW Enterprise works with \nDoW Components to establish data tagging, labeling, and classification \npatterns based on industry best practices.  Patterns are agreed upon, for \nboth Operational IT data tagging and Process Control data tagging (which \nmay be system specific), documented, and implemente",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0054",
+    "title": "DoD Zero Trust OT Activities — section 55",
+    "text": "ns are agreed upon, for \nboth Operational IT data tagging and Process Control data tagging (which \nmay be system specific), documented, and implemented in portions of the \nOT environment for which tagging does not interfere with critical processes.\n1. Data tagging mandates for OT data are defined \nbased on workflow process data types.\n2. Data tagging, labeling, and classification patterns are \nestablished across DoW Components, instituting \nindustry best practices and does not interfere with \ncritical processes.\n4.1.1.OT\n4.3.1.OT, 4.3.2.OT, 5.1.2.OT, 6.3.1.OT \n4.2.2.OT\nOT Data Sharing \nInteroperability \nPatterns\nData\nTarget\nThe DoW Enterprise, collaborating with the DoW Components, develops \ninteroperability patterns that are compliant with the established policy used \nfor each operating mode of the OT environment.  DoW Components develop \nmethods for data sharing outside of the OT environment, considerations for \nsecure data exchange between different Impact Levels, and including \nprotection mechanisms for managing all OT data.\n1. Interoperability patterns, compliant with established\npolicy, are in place for data protection technologies \nacross all operating modes of the OT enviro",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0055",
+    "title": "DoD Zero Trust OT Activities — section 56",
+    "text": "teroperability patterns, compliant with established\npolicy, are in place for data protection technologies \nacross all operating modes of the OT environment.\n2. Methods and protection mechanisms for data \nsharing outside of the OT environment are developed.\nNone\n4.5.1.OT\n4.2.3.OT\nDocument OT Storage \nArchitecture\nData\nTarget\nThe DoW Enterprise works with DoW Components to establish storage \narchitecture patterns and guidance, taking into consideration the data that \nis produced within the Operational IT and Process Control environments.  \nDoW Components develop logical and physical architectural diagram for all \nstorage methods.  DoW Components assess their existing data storage \nstrategies and technologies to determine the suitability for implementing \nstorage architectures.\n1. Storage architecture patterns and guidance are \nestablished by the DoW Enterprise in collaboration with\nthe DoW Component.\n2. Storage architecture considers OT-specific data \nrequirements, both for the Operational IT environment \n(e.g., server configurations, network device \nconfigurations, etc.), and Process Control environment \n(e.g., controller logic, device configurations, PLC project \nfiles, etc.).\n3. L",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0056",
+    "title": "DoD Zero Trust OT Activities — section 57",
+    "text": "etwork device \nconfigurations, etc.), and Process Control environment \n(e.g., controller logic, device configurations, PLC project \nfiles, etc.).\n3. Logical and physical architectural diagrams are \ndeveloped for all storage methods used by the DoW \nComponent.\n4. DoW Component assesses their existing data storage \nstrategies and technologies to determine suitability for \nimplementing established storage architecture patterns, \nincluding consideration of Software Defined Storage \nwhere appropriate.\nNone\n4.7.1.OT\n14 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n4.3.1.OT\nImplement OT Data \nTagging Tools\nData\nTarget\nDoW Components procure and implement a data tagging solution based on \nthe standard from activity 4.2.1.OT.  A framework is established for periodic \nre-assessment of system risk and vulnerability. Tagging solution may \nleverage native capabilities of the Process Control protocols.\n1. Data tagging solution is procured and implemented\n2. Periodic evaluation of the system risk and \nvulnerabilities is performed to adjust data tagging to\nevolving threat landscape.E53:E55\n4.2.1.OT\n4.3.2.OT, 4.",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0057",
+    "title": "DoD Zero Trust OT Activities — section 58",
+    "text": "odic evaluation of the system risk and \nvulnerabilities is performed to adjust data tagging to\nevolving threat landscape.E53:E55\n4.2.1.OT\n4.3.2.OT, 4.6.1.OT\n4.3.2.OT\nData Tagging\nData\nTarget\nDoW Components use the tagging standards developed in 4.2.1.OT to apply \ntags (manual or automated) using local labeling to meet minimum essential \nmetadata criteria to enable ZT functionalities.  Data tagging solution \nmigrates over time to attribute-based pattern marking.\n1. Manual and/or automated data tagging begins \naccording to the standards established.\n4.2.1.OT, 4.3.1.OT\n4.5.3.OT, 4.6.2.OT\n4.4.1.OT\nDLP Analytics\nData\nTarget\nDoW Components establish DLP types (e.g., Network, Endpoint, On-\nPremises, etc.) and recognition patterns based on data tagging solution in \nActivity 4.3.1.OT.  A DLP analytics process is established to investigate loss \ntype from logs, and determine severity, impact, policy enforcement, and \nmitigation response.\n1. DLP types, recognition patterns, and analytics \nprocess are established\n2. DLP analytics process enables policy enforcement for \nhow sensitive data is handled and shared, and\nenables monitoring and detection of data loss events.\n1.2.2.OT\n4.4.2.OT, 4.4.6.O",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0058",
+    "title": "DoD Zero Trust OT Activities — section 59",
+    "text": "policy enforcement for \nhow sensitive data is handled and shared, and\nenables monitoring and detection of data loss events.\n1.2.2.OT\n4.4.2.OT, 4.4.6.OT, 4.6.1.OT\n4.4.2.OT\nEstablish DRM \nProcesses\nData\nTarget\nDoW Components establish a DRM processes, which leverage PBAC to \ncontrol information use, to include information use beyond the OT \nenvironment Formal Boundary.  The framework includes the development of \nDRM-specific use cases to better outline solution coverage.\n1. DRM processes that leverage PBAC are established\n2. DRM-specific use cases are developed in framework.\n4.4.1.OT\n4.4.6.OT\n4.4.3.OT\nOT File Prioritization \nand Monitoring\nData\nTarget\nDoW Components identify files within the Operational IT and Process \nControl environments that require file monitoring and protection (e.g., \ncontroller configuration files, plant schematics, network diagrams), and \nestablish a prioritization process for ranking severity of impact for each file \ntype and use case.  Data owners utilize File Monitoring tools to monitor, in \npriority order, the identified files.\n1. Data and files of critical classification are  actively \nbeing monitored\n2. Data owners utilize File Monitoring tools to monit",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0059",
+    "title": "DoD Zero Trust OT Activities — section 60",
+    "text": "he identified files.\n1. Data and files of critical classification are  actively \nbeing monitored\n2. Data owners utilize File Monitoring tools to monitor\nfiles in order of established priority\n3. Basic Integration is in place with monitoring system\nsuch as the SIEM.\n2.3.1.OT, 7.2.2.OT\n4.4.4.OT\n4.4.4.OT\nOT File Monitoring \nInteroperability\nData\nTarget\nFile monitoring artifacts and logs must have a standard, machine-readable \nformats to enable interoperability with other tools (e.g., DLP, DRM, and \nUEBA tools), in alignment with activity 6.6.1.OT.\n1. Data and files of all regulated classifications are \nactively being monitored\n2. A standard, machine-readable format is utilized for\nfile monitoring artifacts and logs.\n4.4.3.OT, 6.6.1.OT\nNone\n4.4.5.OT\nInventory Databases\nData\nTarget\nDoW Components identify, enumerate, and document databases within the \nOT Operational Environment.\n1. Databases are identified and documented within the \nOT Operational Environment.\nNone\n4.4.6.OT\n15 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n4.4.6.OT\nDatabase Activity \nMonitoring and \nResponse\nData\nTarget\nDoW Components",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0060",
+    "title": "DoD Zero Trust OT Activities — section 61",
+    "text": "Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n4.4.6.OT\nDatabase Activity \nMonitoring and \nResponse\nData\nTarget\nDoW Components procure, implement, and utilize Database Monitoring \nsolutions, as appropriate, with either in-band or out-of-band solutions.  \nInitial data monitored shall include regulated data types (e.g., CUI, PII, PHI) \nas appropriate for the mission environment.  Logs and analytics from the \ndatabase monitoring solution are fed to the SIEM.  Additional data attributes \nare identified and used to extend the monitoring of databases as applicable.\n1. Databases within the OT environment (e.g.  data at \nrest, data exchange, transaction monitoring) is \nmonitored.\n2. Monitoring analytics is sent to SIEM.\n3. Additional data attributes are identified and \nincorporated into database monitoring to enhance \ndetection capabilities. \n4. Along with in-band monitoring, out-of-band \nmonitoring solutions are considered and possibly \nutilized.\n4.4.1.OT, 4.4.2.OT, \n4.4.5.OT\nNone\n4.5.1.OT\nImplement DRM and \nDLP Pt. 1\nData\nTarget\nOT environment will manage DRM and DLP to the outer edge of the OT \nenvironment formal boundary as determined by the DoW Component.  The",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0061",
+    "title": "DoD Zero Trust OT Activities — section 62",
+    "text": "Data\nTarget\nOT environment will manage DRM and DLP to the outer edge of the OT \nenvironment formal boundary as determined by the DoW Component.  The \nconsumer of the artifact(s) is expected to maintain the DRM agreement.\n1. DRM and DLP are managed by OT environment to \nthe outer edge of the OT environment formal boundary. 4.2.2.OT\n4.5.2.OT, 4.5.3.OT\n4.5.2.OT\nImplement DRM and \nDLP Pt. 2\nData\nAdvanced\nAtypical DRM behavior or occurrences are documented and reported to \nDoW Components or Enterprise, to perform outlier analysis and refinement \nof DRM rule sets.  Refined rule sets utilized by DLP.\n1. Outlier analysis and refinement of DRM rule sets is\nperformed and documented against atypical DRM \nbehavior and/or occurrences\n2. DLP used with refined rule sets.\n4.5.1.OT\n4.5.3.OT\nDRM Response Pt. 1\nData\nTarget\nCreate data tags for response characterization, and create response process \ndriven by newly established tags.\n1. Data tags are created for DRM response \ncharacterization\n2. DRM response process is driven by newly established \ntags.\n4.3.2.OT, 4.5.1.OT\n4.5.4.OT\n4.5.4.OT\nDRM Response Pt. 2\nData\nAdvanced\nDoW Components implement data tags for data within databases applicable \nto the",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0062",
+    "title": "DoD Zero Trust OT Activities — section 63",
+    "text": "4.3.2.OT, 4.5.1.OT\n4.5.4.OT\n4.5.4.OT\nDRM Response Pt. 2\nData\nAdvanced\nDoW Components implement data tags for data within databases applicable \nto the mission environment.  Data is encrypted according to policy based on \ndata tags.\n1. Data repositories are protected using DRM.\n2. Data is encrypted using data tags.\n4.5.3.OT\nNone\n4.6.1.OT\nDLP Deployment\nData\nTarget\nNewly identified attributes can be established to improve DLP outcomes.  \nThe DLP enforcement points can be controlled to the OT environment \nformal boundary with a combination of PBAC, DRM, and DLP, and then \nbeyond the boundary via agreement.  DLP is initially implemented with \n“monitor-only” and/or “learning” mode, to test outcomes with limiting \nimpact on operations.  Collaboration with cyber functions should occur with \nrespect to any observed data loss activity.  \n1. DLP enforcement points are established and \ncontrolled to the OT environment formal boundary, \ndeployed with DLP tools, and initially configured in \nmonitor mode with standardized logging.\n2. A process is established for identifying and \nincorporating new data attributes to improve DLP \neffectiveness.\n3. Observed data loss activity triggers collaboration",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0063",
+    "title": "DoD Zero Trust OT Activities — section 64",
+    "text": "tablished for identifying and \nincorporating new data attributes to improve DLP \neffectiveness.\n3. Observed data loss activity triggers collaboration \nwith cyber functions for investigation and response. \n4. Mechanisms for extending DLP enforcement beyond \nthe OT boundary via agreements are defined. \n4.3.1.OT, 4.4.1.OT, \n7.2.1.OT\n5.4.3.OT, 7.2.2.OT\n16 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n4.6.2.OT\nDLP Operations\nData\nTarget\nDLP solution is transitioned from testing to operations.  DLP and zero trust \ntagging should be complimentary to achieve full access control and data loss \nprevention to the formal boundary.  The operational model must also \nprescribe formalized agreements for zero trust and DLP behaviors beyond \nthe formal boundary as determined by the DoW Component. \n1. DLP solution is transitioned from testing to\noperations mode.\n2. Tagging is integrated to achieve full access control \nand data loss prevention to the formal boundary. \n3. Formalized agreements are established to govern\nzero trust and DLP behaviors beyond the formal \nboundary.\n4.3.2.OT\nNone\n4.7.1.OT\nManage DAAS Acces",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0064",
+    "title": "DoD Zero Trust OT Activities — section 65",
+    "text": "3. Formalized agreements are established to govern\nzero trust and DLP behaviors beyond the formal \nboundary.\n4.3.2.OT\nNone\n4.7.1.OT\nManage DAAS Access \nwith Storage Policy\nData\nTarget\nGovernance mechanisms ensure that DoW Component DAAS access policy is \nsufficient for Zero Trust outcomes aligned with activity 4.2.3.OT.\n1. Attribute-based DAAS policy is developed with DoW \nEnterprise and organizational level support.\n4.2.3.OT\nNone\n5.1.1.OT\nOT Granular Access \nRules and Policies Pt. 1 Network\nTarget\nThe DoW Enterprise works with DoW Components to create granular access \nrules and policies, technical and procedural, in the Operational IT \nenvironment, and within the Enterprise IT environment when services are \nprovided to the OT environment.  Associated ConOps shall be developed to \nalign with the access rules and policies.  DoW Components will implement \nthese access rules and policies into existing solutions to improve initial risk \nlevels and ensure future interoperability.\n1. Granular access rules and policies are established for \nthe Operational IT environment, and for the Enterprise \nIT environment when applicable\n2. ConOps are developed\n3. Access rules and policies are implem",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0065",
+    "title": "DoD Zero Trust OT Activities — section 66",
+    "text": "the Operational IT environment, and for the Enterprise \nIT environment when applicable\n2. ConOps are developed\n3. Access rules and policies are implemented.\nNone\n5.1.2.OT, 5.2.1.OT, 5.3.1.OT\n5.1.2.OT\nOT Granular Access \nRules and Policies Pt. 2 Network\nTarget\n Data flow patterns are defined. DoW Components apply data tagging \npatterns to enable granular access to the OT environment, as appropriate. \n1. Data flow patterns are defined, which cover both \npersistent and ephemeral data.\n2. Data tagging patterns are applied.\n4.2.1.OT, 5.1.1.OT\n5.2.2.OT, 5.3.1.OT\n5.2.1.OT\nDefine OT \nCommunication \nPathway APIs\nNetwork\nTarget\nWhen SDN or alternate communication pathways are specified, the DoW \nEnterprise works with the DoW Components to identify the necessary APIs \nand other programmatic interfaces.  Automated policy management \nthrough APIs should be tested before deployment, to minimize risk to OT \noperations.  \n1. Necessary APIs and other programmatic interfaces \nfor specified communication pathways (including SDN) \nare identified and tested prior to deployment to \nminimize risk to OT operations.\n5.1.1.OT\n5.2.2.OT\n5.2.2.OT\nImplement OT  \nProgrammable  \nInfrastructure\nNetwork\nTarget\nDoW",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0066",
+    "title": "DoD Zero Trust OT Activities — section 67",
+    "text": "ed prior to deployment to \nminimize risk to OT operations.\n5.1.1.OT\n5.2.2.OT\n5.2.2.OT\nImplement OT  \nProgrammable  \nInfrastructure\nNetwork\nTarget\nDoW Components implement the programmable communication pathways \nto enable automation tasks in the Operational IT environment, as \nappropriate.  Segmentation Gateways and Authentication Decision Points \nare integrated into the SDN or alternative networking infrastructure.  All \ncomponents of each programmable pathway shall output their logs into a \nstandardized repository (e.g., SIEM, Log Analytics, syslog) for monitoring and \nalerting.\n1. Programmable communication pathways are \nimplemented in the Operational IT environment.\n2. Segmentation Gateways and Authentication Decision \nPoints are integrated into SDN.\n3. Logs are output into standardized repository.\n5.1.2.OT, 5.2.1.OT, \n6.6.2.OT, 7.2.1.OT\nNone\n5.2.3.OT\nInformation Flow \nMapping Across OT \nPlanes\nNetwork\nTarget\nDevelop detailed information flow map inclusive of all planes and actions \n(e.g., data, control, management planes).  Analytics and NetFlow from the \nupdated infrastructure is automatically fed into operations centers and \nanalytics tools.\n1. Detailed information flow map",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0067",
+    "title": "DoD Zero Trust OT Activities — section 68",
+    "text": "tics and NetFlow from the \nupdated infrastructure is automatically fed into operations centers and \nanalytics tools.\n1. Detailed information flow map is developed.\n2. Analytics are automatically fed to operations centers \nand analytic tools.\nNone\n5.3.2.OT, 5.4.2.OT, 6.1.1.OT\n17 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n5.3.1.OT\nOT Plane \nSegmentation\nNetwork\nTarget\nDoW Components implement plane segmentation (e.g., control, data, \nmanagement planes) using traditional tiered and/or service-based \narchitectures, as it applies to connected devices and systems within the \nEnterprise IT, Operational IT, and Process Control environments.  Proxy \nand/or enforcement checks are integrated with communication pathways \nbased the access policies defined in 5.1.1.OT and 5.1.2.OT.\n1. Traditional tiered and/or service-based plane \nsegmentation is implemented.\n2. Enforcement checks of attributes, behavior, or other \ndata using behavioral analytics engines are established.\n5.1.1.OT, 5.1.2.OT\n3.4.1.OT, 5.4.1.OT\n5.3.2.OT\nB/C/P/S  Segmentation Network\nTarget\nDoW Components implement B/C/P/S segmentation using l",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0068",
+    "title": "DoD Zero Trust OT Activities — section 69",
+    "text": "established.\n5.1.1.OT, 5.1.2.OT\n3.4.1.OT, 5.4.1.OT\n5.3.2.OT\nB/C/P/S  Segmentation Network\nTarget\nDoW Components implement B/C/P/S segmentation using logical zones, \nlimiting lateral movement across missions and geographically separated \nDoW Components.  Proxy and/or enforcement checks are integrated with \nthe communication pathways based on the defined access policies.\n1. Segmentation is implemented across base, camp, \npost and stations using logical zones to limit lateral \nmovement.\n2. Attribute and behavior based enforcement checks\nare implemented  to enforce defined access policies \nacross the base, camp, post, and stations.\n5.2.3.OT\nNone\n5.4.1.OT\nImplement Micro \nSegmentation\nNetwork\nTarget\nDoW Components implement Micro segmentation communication \npathways into the Operational IT and Process Control environments, \nenabling basic segmentation of network addresses, VLANs, devices, \nendpoints, services, ports, and protocols.  Basic automation is accepted for \nIT systems for policy changes, including API decision-making.  OT systems will \nqueue and notify proposed changes for human approval.  Virtual hosting \nenvironments also implement Micro segmentation at the host/container \nle",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0069",
+    "title": "DoD Zero Trust OT Activities — section 70",
+    "text": "will \nqueue and notify proposed changes for human approval.  Virtual hosting \nenvironments also implement Micro segmentation at the host/container \nlevel.\n1. Micro segmentation is implemented in the OT\nenvironment.\n2. Automated policy changes are enabled following \nhuman approval.\n5.3.1.OT\n5.4.2.OT\n5.4.2.OT\nApplication and Device \nMicro Segmentation\nNetwork\nTarget\nDoW Components apply Micro segmentation communication pathways for \nall information flow, including logical network zones (e.g., VLANs, IP \nsubnets), roles, attributes and conditional-based access control for all PEs, \nNPEs, and endpoints, privileged access management services for network \nresources, and policy-based control on API access, as appropriate. \n1. Micro segmentation is implemented across all \ninformation flow, utilizing role, attribute, and condition-\nbased access controls for PEs, NPEs, and endpoints, \nprivileged access management services for network \nresources, policy-based control on API access, and \nlogical network zones.\n5.2.3.OT, 5.4.1.OT\n3.4.3.OT\n5.4.3.OT\nProtect OT Data In \nTransit\nNetwork\nTarget\nDoW Components shall use protection of data in transit per policy, and \ninclude common use cases.\n1. Data",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0070",
+    "title": "DoD Zero Trust OT Activities — section 71",
+    "text": "Protect OT Data In \nTransit\nNetwork\nTarget\nDoW Components shall use protection of data in transit per policy, and \ninclude common use cases.\n1. Data is protected in transit per policy through the OT\nenvironment.\n4.6.1.OT\nNone\n6.1.1.OT\nPolicy Inventory and \nDevelopment\nAutomation and \nOrchestration\nTarget\nDoW Enterprise works with DoW Components to catalog and inventory \nexisting access control policies and standards across OT system \nenvironments, including role-based access controls and policies dictating \noperational availability and Disaster Recovery Plans/Business Continuity \nPlans.  Policies and standards are updated as needed.\n1. Policies have been collected in reference to\napplicable compliance and risk\n2. Policies have been reviewed and updated as needed.\n5.2.3.OT\nNone\n6.1.2.OT\nAttribute-Driven \nAccess Profiles\nAutomation and \nOrchestration\nTarget\nDoW Components support DoW Enterprise in establishing rules, which are \nprioritized over local rules, as appropriate. DoW Components develop \nattribute-driven access profile rules for mission/task and DAAS, using \nappropriate cross-pillar data.  \n1. Enterprise rules are established.\n2. Component scoped, attribute-driven profile(s",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0071",
+    "title": "DoD Zero Trust OT Activities — section 72",
+    "text": "or mission/task and DAAS, using \nappropriate cross-pillar data.  \n1. Enterprise rules are established.\n2. Component scoped, attribute-driven profile(s) are \ncreated for mission/task and DAAS\nNone\n6.1.3.OT, 7.4.1.OT\n6.1.3.OT\nEnterprise Security \nProfile for OT \nEnvironments Pt. 1\nAutomation and \nOrchestration\nTarget\nDoW Components establish minimum attributes to drive security and \nprivacy policies.  DoW Components create rules to ensure security, privacy, \nand integrity is aligned and in compliance with Enterprise policy.\n1. Minimum attributes are established to drive security \nand privacy policies\n2. Rules are created to ensure alignment with\nEnterprise policy.\n6.1.2.OT\n6.1.4.OT\n18 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n6.1.4.OT\nEnterprise Security \nProfile for OT \nEnvironments Pt. 2\nAutomation and \nOrchestration\nAdvanced\nDoW Components implement all security and privacy rules to ensure \nsufficient policy coverage.\n1. All security and privacy rules are implemented to\nensure sufficient policy coverage.\n6.1.3.OT\nNone\n6.2.1.OT\nProcess Automation \nAnalysis\nAutomation and \nOrchestration\nTarge",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0072",
+    "title": "DoD Zero Trust OT Activities — section 73",
+    "text": "cy rules are implemented to\nensure sufficient policy coverage.\n6.1.3.OT\nNone\n6.2.1.OT\nProcess Automation \nAnalysis\nAutomation and \nOrchestration\nTarget\nDoW Components identify, enumerate, and document all operational \nprocesses and procedures that can be executed both manually and in an \nautomated fashion, and identify candidates for automation.\n1. Automatable operational processes and procedures\nare identified\n2. All operational processes and procedures are \nenumerated.\nNone\nNone\n6.2.2.OT\nTool Interoperability \nfor OT Environments\nAutomation and \nOrchestration\nAdvanced\nDoW Enterprise works with DoW Components to establish and prioritize \nbaseline integration and interoperability between applicable SOAR, SIEM, \nand other security solutions within OT environments.  Where possible, \nenvironment integration shall be done with DoW Enterprise solutions and \npolicy services, while maintaining a human in the loop capability.\n1. Baseline integration and interoperability between\napplicable SOAR, SIEM, and other security solutions \nwithin OT environments is established\n2. Prioritization of integration efforts is completed, \nbased on risk and operational impact. \n3. Integration with DoW Enter",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0073",
+    "title": "DoD Zero Trust OT Activities — section 74",
+    "text": "vironments is established\n2. Prioritization of integration efforts is completed, \nbased on risk and operational impact. \n3. Integration with DoW Enterprise solutions and policy \nservices is prioritized and implemented where feasible.\n6.5.2.OT\nNone\n6.3.1.OT\nImplement OT Data \nTagging and \nClassification Tools\nAutomation and \nOrchestration\nAdvanced\nDoW Components evaluate data-driven analytic approaches, such as \nMachine Learning solutions or equivalent capabilities, as needed to increase \ncapability for orchestrated workflows and risk management processes.  \nSolutions are tested with existing tagged and classified data repositories to \nestablish baselines with a supervised approach to continually improve \nanalysis.\n1. Implemented data tagging and classification tools are \nintegrated with analytic tools, utilizing existing tagged \nand classified data repositories.\n2. A supervised learning approach is established to\nestablish baselines and continually improve the \naccuracy and effectiveness of data-driven analysis.\n4.2.1.OT\nNone\n6.5.1.OT\nOT Response \nAutomation Analysis\nAutomation and \nOrchestration\nTarget\nIdentify and enumerate all workflow processes that are potential \noptimization",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0074",
+    "title": "DoD Zero Trust OT Activities — section 75",
+    "text": "OT Response \nAutomation Analysis\nAutomation and \nOrchestration\nTarget\nIdentify and enumerate all workflow processes that are potential \noptimization candidates, to improve response automation using advanced \nanalysis techniques.  Manual tasks are assessed for possible automation, or \npartial automation that maintains a human-in-the-loop.  Remaining manual \nprocesses are documented for exception and are periodically revaluated for \npossible automation.\n1. All workflow processes are identified and\nenumerated.\n2. Manual processes are assessed for automation.\n3. Remaining manual processes are documented for \nexception and are periodically revaluated for possible \nautomation.\nNone\nNone\n6.5.2.OT\nImplement SOAR Tools \nin OT Environment\nAutomation and \nOrchestration\nTarget\nDoW Components work with DoW Enterprise to develop a standard set of \nrequirements for OT SOAR solutions to operate in OT environments.  DoW \nComponents use approved requirements to procure and implement SOAR \nsolutions in the OT environment, while maintaining a human in the loop \ncapability to prevent mission impact or risk of life.\n1. Develop requirements for SOAR tool\n2. Procure SOAR tools.\n6.6.2.OT, 6.7.1.OT,  \n7.2.",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0075",
+    "title": "DoD Zero Trust OT Activities — section 76",
+    "text": "he loop \ncapability to prevent mission impact or risk of life.\n1. Develop requirements for SOAR tool\n2. Procure SOAR tools.\n6.6.2.OT, 6.7.1.OT,  \n7.2.1.OT\n6.2.2.OT\n6.5.3.OT\nIAC within OT \nEnvironments\nAutomation and \nOrchestration\nAdvanced\nDoW Components review existing manual and automated processes to \nprioritize Infrastructure as Code (IAC) development for automation within \nthe OT Environment.  \n1. When possible IAC principles are applied to\nautomate workflow capabilities\n2. Manual processes are automated when possible.\nNone\nNone\n19 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n6.6.1.OT\nAPI Patterns for OT \nEnvironments Pt. 1\nAutomation and \nOrchestration\nTarget\nThe DoW Enterprise works with DoW Components to establish an API \nstandard (or equivalent automated interchange mechanism) which outlines \nthe approved patterns and protocols for tooling inclusive of the OT \nenvironment. The standard should prioritize ensuring the safety, reliability, \nand resilience of the OT Environment with the diverse OT componentry \nimplemented.\n1. API standard is established for tooling.\n7.2.1.OT\n4.4.4.OT, 6.6.",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0076",
+    "title": "DoD Zero Trust OT Activities — section 77",
+    "text": "and resilience of the OT Environment with the diverse OT componentry \nimplemented.\n1. API standard is established for tooling.\n7.2.1.OT\n4.4.4.OT, 6.6.2.OT\n6.6.2.OT\nTool Compliance \nAnalysis for OT \nEnvironments\nAutomation and \nOrchestration\nTarget\nAutomation and orchestration tooling and solutions are reviewed to identify \nexisting APIs that they provide.  These APIs are analyzed for compliance with \nexisting API machine-readable patterns and protocols established by DoW \nEnterprise, or the necessary modifications are documented to achieve \nalignment.\n1. Existing APIs within automation and orchestration\ntooling are assessed for compliance with established \nDoW Enterprise API standards.\n2. Non-compliant APIs are documented with necessary \nmodifications to achieve alignment with DoW Enterprise \nstandards.\n6.6.1.OT\n5.2.2.OT, 6.5.2.OT, 6.6.3.OT\n6.6.3.OT\nAPI Patterns for OT \nEnvironments Pt. 2\nAutomation and \nOrchestration\nTarget\nDoW Components ensure that all applications and services implement API \nprotocols as appropriate.  Enterprise and/or Operational IT environments \nshall prioritize interoperation with APIs.  Applications and services that are \nunable to interoperate are schedule",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0077",
+    "title": "DoD Zero Trust OT Activities — section 78",
+    "text": "nd/or Operational IT environments \nshall prioritize interoperation with APIs.  Applications and services that are \nunable to interoperate are scheduled for eventual retirement, and \nalternative equivalent capability solutions for operational gaps must be \nidentified.\n1. API calls and schemas are implemented at prioritized \nareas within the OT environment\n2. Applications and services that cannot meet \nstandardization are marked for eventual retirement\n3. Alternative equivalent capability solutions are \nidentified.\n6.6.2.OT\n2.3.2.OT, 6.6.4.OT\n6.6.4.OT\nAPI Patterns for OT \nEnvironments Pt. 3\nAutomation and \nOrchestration\nAdvanced\nDoW Components ensure that all applications and services implement API \nprotocols.  Applications and services that were marked for retirement are \ndecommissioned.  If decommissioning presents an operational gap, an \nalternative must be implemented.\n1. All applications and services implement the standard\nAPI calls and schemas.\n2. Applications and services that cannot meet API \nstandardization requirements are either retired or \nreplaced with alternative solutions. \n6.6.3.OT\nNone\n6.7.1.OT\nIncident Response \nGuidance for OT \nEnvironments Pt. 1\nAutomation and \nOr",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0078",
+    "title": "DoD Zero Trust OT Activities — section 79",
+    "text": "her retired or \nreplaced with alternative solutions. \n6.6.3.OT\nNone\n6.7.1.OT\nIncident Response \nGuidance for OT \nEnvironments Pt. 1\nAutomation and \nOrchestration\nTarget\nDoW Enterprise works with DoW Components to establish cybersecurity \nincident response guidance utilizing threat feeds from 7.5.1.OT.  DoW \nComponents establish appropriate incident response processes for OT \nenvironments based on each environment's standard operating procedures.  \n1. Threat events are identified.\n2. Incident response workflows for threat events are \ndeveloped.\n3. DoW Component establishes and documents OT-\nspecific incident response processes, aligned with the \nEnterprise guidance and their existing standard \noperating procedures. \n7.5.1.OT\n6.5.2.OT, 6.7.2.OT\n6.7.2.OT\nIncident Response \nGuidance for OT \nEnvironments Pt. 2\nAutomation and \nOrchestration\nAdvanced\nDoW Components identify and establish extended incident response \nguidance for advanced response types in alignment with 7.2.3.OT. This \nincludes developing and incorporating incident response playbooks for any \nevent to support OT engineers and security managers. Enrichment data \nsources are used for existing workflows to identify emerging,",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0079",
+    "title": "DoD Zero Trust OT Activities — section 80",
+    "text": "laybooks for any \nevent to support OT engineers and security managers. Enrichment data \nsources are used for existing workflows to identify emerging, evolving, and \nadvanced threat events.\n1. Guidance for advanced threat events are developed; \nAdvanced Threat events are identified\n2. Enrichment data is utilized for advanced incident \nresponse.\n6.7.1.OT, 7.2.3.OT\nNone\n7.1.1.OT\nScale Considerations \nfor OT Environments\nVisibility and \nAnalytics\nTarget\nDoW Components are required to analyze current OT infrastructure and \nresource capabilities and capacities for adopting zero trust functionality, and \nproject a growth curve aligned with planned mission needs.  The team works \nwith existing Continuity of Operations teams to ensure continuous mission \nsupport.\n1. Future scaling needs are determined for current \nconditions, as well as for mission growth and \nemergencies.\nNone\nNone\n20 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n7.1.2.OT\nLog Parsing in OT \nEnvironments\nVisibility and \nAnalytics\nTarget\nDoW Components identify and prioritize collection of all log, event, alert, \nand flow sources in the O",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0080",
+    "title": "DoD Zero Trust OT Activities — section 81",
+    "text": "Environments\nVisibility and \nAnalytics\nTarget\nDoW Components identify and prioritize collection of all log, event, alert, \nand flow sources in the Operational IT and Process Control environments \nwithin the OT environment, and for data flow to the Enterprise IT and \nexternal environments.  DoW Components and DoW Enterprise, with vendor \nsupport, map existing vendor log content and create a DoW Enterprise \nmachine consumable pattern.  The established DoW Enterprise pattern is \nprovided as a contract element for vendor capability alignment.\n1. Rules developed for each log format.\n2. All log, event, alert, and flow sources are identified in \nthe OT environment and are collected and mapped.\nNone\n7.1.3.OT, 7.2.5.OT, 7.3.1.OT\n7.1.3.OT\nLog Analysis in OT \nEnvironments\nVisibility and \nAnalytics\nTarget\nDoW Components work with DoW Enterprise to develop common \nbehaviors, and identifies and prioritizes behaviors based on all relevant \ndocumented processes, including distinct operating modes.  Ensure log data \nhas sufficient attributes to analyze the behavior model.\n1. Common behaviors are developed or identified, and \nare prioritized based on all relevant documented \nprocesses.\n2. Log data",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0081",
+    "title": "DoD Zero Trust OT Activities — section 82",
+    "text": "yze the behavior model.\n1. Common behaviors are developed or identified, and \nare prioritized based on all relevant documented \nprocesses.\n2. Log data has sufficient attributes to analyze behavior \nmodel.\n7.1.2.OT\n7.2.6.OT, 7.3.1.OT, 7.3.2.OT, 7.4.1.OT\n7.2.1.OT\nOT Infrastructure \nIncident Response \nIsolation\nVisibility and \nAnalytics\nTarget\nDoW Components will ensure that the interconnections between Enterprise \nIT, Operational IT, and Process Control infrastructure are designed to be \ndisconnected physically or logically during a detected incident to prevent any \nfurther intrusion or damage.  The infrastructure must prevent reconnection \nuntil the incident is cleared. A controlled recovery procedure for testing and \nvalidation is used during reconnection to maintain system integrity and \nreduce the risk of recurring issues.\n1. Enterprise IT, Operational IT, and Process Control \ninfrastructure can be physically or logically disconnected \nin a safe and reliable manner, and this capability is \nregularly tested and validated to ensure effectiveness \nduring incident response.\n2. Controlled recovery procedure testing and validation \nprocess to maintain system integrity is used. \nNone\n1.",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0082",
+    "title": "DoD Zero Trust OT Activities — section 83",
+    "text": "fectiveness \nduring incident response.\n2. Controlled recovery procedure testing and validation \nprocess to maintain system integrity is used. \nNone\n1.7.1.OT, 2.4.1.OT, 4.6.1.OT, 5.2.2.OT, 6.5.2.OT, 6.6.1.OT, \n7.2.2.OT\n7.2.2.OT\nThreat Alerting for OT \nEnvironments Pt. 1\nVisibility and \nAnalytics\nTarget\nDoW Components procure and implement a SIEM solution, or integrate, \nwith an Enterprise SIEM.  Data feeds are ingested, identified from the CTI \nprogram established in 7.5.1.OT, to develop rules and alerts for the OT \nenvironment.\n1. SIEM solution is procured and implemented for OT\nenvironment.\n2. Data feeds are ingested.\n3. Rules and alerts are developed for the OT\nenvironment.\n4.6.1.OT, 7.2.1.OT \n7.5.1.OT\n2.7.2.OT, 4.4.3.OT, 7.2.1.OT, 7.2.5.OT\n7.2.3.OT\nThreat Alerting for OT \nEnvironments Pt. 2\nVisibility and \nAnalytics\nTarget\nDoW Components expand threat alerting and develop deviation anomaly \nrules to detect advanced threats utilizing the data feeds established in \n7.2.2.OT.\n1. Threat alerting is expanded by incorporating data \nfeeds resulting in a measurable increase in the number\nof detected threat indicators.\n2. Deviation anomaly rules are developed and \nimplemented to detect a",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0083",
+    "title": "DoD Zero Trust OT Activities — section 84",
+    "text": "resulting in a measurable increase in the number\nof detected threat indicators.\n2. Deviation anomaly rules are developed and \nimplemented to detect advanced threats and reduce \nfalse positive rates. \n7.2.2.OT, 7.5.1.OT\n6.7.2.OT, 7.2.4.OT\n7.2.4.OT\nThreat Alerting for OT \nEnvironments Pt. 3\nVisibility and \nAnalytics\nAdvanced\nThreat Alerting is expanded to include advanced data sources, such as UEBA \nand UAM.  These advanced data sources are used to develop and improve \nanomalous and pattern activity detections and event triggers.\n1. Identify Triggering Anomalous Events\n2. Implement Triggering Policy.\n3. Anomalous and pattern activity detections are \ndeveloped and continuously improved using data from\nUEBA and UAM, resulting in a reduction in undetected \nthreats.\n2.7.2.OT, 7.2.3.OT\nNone\n21 of 28\n\nOT Activity ID\nOT Activity Name\nPillar\nActivity Type\nOT Activity Description\nOT Activity Outcomes\nOT Predecessor\nOT Successors\n7.2.5.OT\nOT Asset ID and Alert \nCorrelation\nVisibility and \nAnalytics\nTarget\nAll PEs and NPEs in SIEM are identified and correlated to alerts in order \nto provide security teams with accurately detailed information and asset IDs. \nEvent visualization indicates which",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0084",
+    "title": "DoD Zero Trust OT Activities — section 85",
+    "text": "and correlated to alerts in order \nto provide security teams with accurately detailed information and asset IDs. \nEvent visualization indicates which asset ID is affected by detected event.\n1. All PEs and NPEs within the SIEM are identified and\ncorrelated to alerts, providing security teams with \naccurately detailed information and asset IDs.\n2. Event visualization clearly indicates the affected asset \nID for each detected event.\n3. Automated responses are developed based on asset \nID, enabling faster and more targeted incident response.\n7.1.2.OT, 7.2.2.OT\nNone\n7.2.6.OT\nOT Baselines\nVisibility and \nAnalytics\nTarget\nDoW Components develop a subject/attribute baseline approach based off \nof typical patterns and behaviors from activity 7.3.2.OT.\n1. Subject/attribute baseline are established.\n1.6.1.OT, 7.1.3.OT, \n7.3.2.OT\n7.3.1.OT, 7.4.1.OT\n7.3.1.OT\nImplement Analytics \nTools for OT \nEnvironments\nVisibility and \nAnalytics\nTarget\nDoW Enterprise works with DoW Components to develop and provide \nminimum requirements for Analytics Tools capabilities to analyze all data.  \nAny analytic tools under consideration by DoW Components for \nimplementation shall be subject to these requirements.\n1.",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0085",
+    "title": "DoD Zero Trust OT Activities — section 86",
+    "text": "ilities to analyze all data.  \nAny analytic tools under consideration by DoW Components for \nimplementation shall be subject to these requirements.\n1. Minimum requirements for analytic tools are \ndeveloped.\n7.1.2.OT, 7.1.3.OT, \n7.2.6.OT\n7.3.2.OT\n7.3.2.OT\nEstablish OT Baseline \nBehavior\nVisibility and \nAnalytics\nTarget\nDoW Components utilize analytics tools developed for OT environments to \nanalyze baseline operational behavior patterns across the entire OT \nenvironment, and to identify patterns and deviations from the normal \nbaseline.\n1. Analytics tools are utilized to establish baseline \nbehavioral patterns for OT environment, and deviations \nfrom these baselines are identified and investigated to \nproactively detect anomalous activity and potential \nthreats.\n2. UEBA capabilities improve the accuracy of threat \ndetection by reducing false positives and identifying \npreviously undetected malicious activity. \n1.6.1.OT, 7.1.3.OT, \n7.3.1.OT\n2.3.2.OT, 7.2.6.OT\n7.4.1.OT\nOT Environment \nBaseline and Profiling \nVisibility and \nAnalytics\nTarget\nDoW Components, utilizing the developed OT baselines, create threat \nprofiles to assess the level of risk of deviations from normal baseline.  Thr",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0086",
+    "title": "DoD Zero Trust OT Activities — section 87",
+    "text": "get\nDoW Components, utilizing the developed OT baselines, create threat \nprofiles to assess the level of risk of deviations from normal baseline.  Threat \nprofiles should be used for prioritization of events and integrated into \naccess profile rules developed for system triage.\n1. Threat profiles are developed to assess level of risk.\n2. Events are prioritized based on developed threat \nprofiles.\n1.6.1.OT, 6.1.2.OT, \n7.1.3.OT, 7.2.6.OT\nNone\n7.5.1.OT\nOT Cyber Threat \nIntelligence Program \nPt. 1\nVisibility and \nAnalytics\nTarget\nThe DoW Enterprise works with DoW Components to develop an OT CTI \nprogram.  The CTI program identifies and integrates common data feeds \nwith an OT SIEM solution for improved alerting and response.  Integrations \nwith enforcement points are created to monitor CTI-driven data alerting and \nresponse for the Enterprise IT, Operational IT, and the Process Control \nenvironments.\n1. An OT-focused CTI program is established, defining \nprocesses for identifying, analyzing, and disseminating \nthreat intelligence.\n2. The CTI program integrates relevant data feeds into\nthe SIEM solution that is deployed in the OT \nenvironment.\n3. CTI-driven data alerting and response ar",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0087",
+    "title": "DoD Zero Trust OT Activities — section 88",
+    "text": "CTI program integrates relevant data feeds into\nthe SIEM solution that is deployed in the OT \nenvironment.\n3. CTI-driven data alerting and response are integrated \nwith enforcement points across Enterprise IT, \nOperational IT, and Process Control environments.\nNone\n6.7.1.OT, 7.2.1.OT, 7.2.2.OT, 7.5.2.OT\n7.5.2.OT\nOT Cyber Threat \nIntelligence Program \nPt. 2\nVisibility and \nAnalytics\nAdvanced\nDoW Components expand their CTI program to develop a community of \ninterest that includes identified stakeholders.  Authenticated, private, and \ncontrolled CTI data feeds are integrated into the OT SIEM solution and \nutilized by the appropriate PEPs.\n1. The OT CTI program is expanded to include \nauthenticated, private, and controlled CTI data feeds\n2. A CTI community of interest is established, \nidentifying and engaging key stakeholders. \n7.5.1.OT\nNone\n22 of 28\n\nAcronyms\nGlossary\nAbbreviation\nTerm\nDefinition\nSource\nACI\nAdvanced Cyber Industrial Control Systems\nA term from the paper \"Advanced Cyber Industrial Control System Tactics, Techniques, and Procedures (ACI TTP) for Department of War (DoW) \nIndustrial Control Systems (ICS)\". Generally mentioned as \"ACI TTP\" to describe Tactics, Techniques,",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0088",
+    "title": "DoD Zero Trust OT Activities — section 89",
+    "text": "Procedures (ACI TTP) for Department of War (DoW) \nIndustrial Control Systems (ICS)\". Generally mentioned as \"ACI TTP\" to describe Tactics, Techniques, and Procedures used by advanced malware \nsuites that threaten ICS systems.\nACI TTP for DoW ICS\nABAC\nAttributed-Based Access Control\nAn access control method where subject requests to perform operations on objects are granted or denied based on assigned attributes of the \nsubject, assigned attributes of the object, environment conditions, and a set of policies that are specified in terms of those attributes and \nconditions.\nCNSSI 4009\nB/C/P/S\nBase, camp, post, and station\nAny type of military installation, camp, post, or station that is geographically defined within a fence line.\n10 USC § 2801(c)(4) (adapted)\nBYOD\nBring Your Own Device\nPersonal or non-government devices used for work-related activities.\nNIST SP 800-207\nCI/CD\nContinuous Integration Continuous Delivery\nContinuous integration (CI) refers to the practice of automatically and frequently integrating code changes into a shared source code repository \n(e.g., committing and pushing code to a branch via Git). Continuous delivery/deployment (CD) is the process of building, testi",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0089",
+    "title": "DoD Zero Trust OT Activities — section 90",
+    "text": "source code repository \n(e.g., committing and pushing code to a branch via Git). Continuous delivery/deployment (CD) is the process of building, testing, and publishing \nthose changes to a runtime environment (e.g., an Azure DevOps pipeline that takes recently merged code, compiles it into a build artifact, then \nuploads it to a production environment).\nNIST SP 800-215\nCMMC\nCybersecurity Maturity Model Certification\nDepartment of War program aimed at ensuring defense contractors and subcontractors are properly securing sensitive information.\n32 CFR Part 170\nConOps\nConcept of Operations\nVerbal and graphic statement of an organization’s assumptions or intent in regard to an operation or series of operations of a specific system or a \nrelated set of specific new, existing, or modified systems.\nCNSSI 4009\nCTI\nCyber Threat Intelligence\nCollecting, analyzing, and disseminating information about cyber threats to help organizations prepare for, prevent, and respond to cyberattacks.\nNIST SP 800-160 Vol. 2 Rev. 1\nCUI\nControlled Unclassified Information\nSensitive information that does not meet the criteria for classification but must still be protected.\nExecutive Order 13556; DoDI 5200.48\nDAA",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0090",
+    "title": "DoD Zero Trust OT Activities — section 91",
+    "text": "ormation\nSensitive information that does not meet the criteria for classification but must still be protected.\nExecutive Order 13556; DoDI 5200.48\nDAAS\nData, applications, assets and services\n(Not to be confused with DoW Defense Automatic Addressing System or Desktop as a Service). DAAS is a Zero Trust term that refers to all resources \nthat are critical to an organization. DAAS are generally accessible by users, devices, etc. Data is usually sensitive and is thus placed into \nclassification levels (e.g., CUI, PII, etc.). Assets are devices or systems (e.g., IT systems, SCADA systems, IoT devices) that may be critical to the \norganization's mission. Applications are software that utilize data and/or control assets. Services refer to the protocols used to communicate \nbetween DAAS (e.g., Active Directory, HTTP, DNS).\nDoW ZTRA 2.0\nDevSecOps\nDevelopment Security Operations\nA process capability that improves the lead time and frequency of delivery outcomes through enhanced engineering practices; promoting a more \ncohesive collaboration between Development, Security, and Operations teams as they work towards continuous integration and delivery.\nNIST SP 800-215\nDLP\nData Loss Prevention\nA",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0091",
+    "title": "DoD Zero Trust OT Activities — section 92",
+    "text": "tween Development, Security, and Operations teams as they work towards continuous integration and delivery.\nNIST SP 800-215\nDLP\nData Loss Prevention\nA systems ability to identify, monitor, and protect data in use (e.g. endpoint actions), data in motion (e.g. network actions), and data at rest (e.g. \ndata storage) through deep packet content inspection, contextual security analysis of transaction (attributes of originator, data object, medium, \ntiming, recipient/destination, etc.), within a centralized management framework. Data loss prevention capabilities are designed to detect and \nprevent the unauthorized use and transmission of NSS information.\nNIST SP 800-82 Rev. 3; NIST SP 800-215\nDODIN\nDoD Information Network\nSet of information capabilities and associated processes for collecting, processing, storing, disseminating, and managing information on demand to \nwarfighters, policymakers, and support personnel, whether interconnected or stand-alone, including owned and leased communications and \ncomputing systems and services, software (including applications), data, security services, other associated services, and national security systems.\nCNSSI 4009\nDRM\nDigital Rights Management",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0092",
+    "title": "DoD Zero Trust OT Activities — section 93",
+    "text": "(including applications), data, security services, other associated services, and national security systems.\nCNSSI 4009\nDRM\nDigital Rights Management\nTechnology used to control and manage access to digital content, protecting it from unauthorized use, modification, and distribution.\nDoW ZTRA 2.0\nEDR\nEndpoint Detection and Response\nTechnology that monitors and responds to threats on endpoint devices in real-time.\n[adapated industry term]\nFCI\nFederal Contract Information\nNon-public data, not intended for public release, that is provided or generated for the U.S. government under a contract to deliver goods or \nservices.\n48 CFR § 52.204-21\nFIM\nFile Integrity Monitoring\nSecurity process and technology that tests and checks operating system (OS), database, and application software files to determine whether have \nbeen tampered with or corrupted.\nNIST SP 800-115 (adapted)\nFRCS\nFacility Related Control Systems\nSystems that monitor and control equipment and systems in Department of War facilities. These systems include (non-exhaustive): Building control \nsystems, Utility control systems, Electronic security systems, Fire and life safety systems, and HVAC systems.\nUFC 4-010-06\nIAC\nInfrastr",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0093",
+    "title": "DoD Zero Trust OT Activities — section 94",
+    "text": "ding control \nsystems, Utility control systems, Electronic security systems, Fire and life safety systems, and HVAC systems.\nUFC 4-010-06\nIAC\nInfrastructure as Code\nThe process of managing and provisioning an organization’s IT infrastructure using machine-readable configuration files, rather than employing \nphysical hardware configuration or interactive configuration tools.\nNIST SP 800-172\nIDE\nIndegrated Development Environment\nSoftware for building applications that combines common developer tools into a single graphical user interface.\n[common industry term]\nICAM\nIdentity, Credential, and Access Management\nThe set of security disciplines that allows an organization to enable the right entity to access the right resource at the right time for the right \nreason. It is the tools, policies, and systems that allow an organization to manage, monitor, and secure access to protected resources. These \nresources may be electronic files, computer systems, or physical resources such as server rooms and buildings.\nCNSSI 4009\nICS\nIndustrial Control System\nA collection of devices, controllers, software, etc. used to monitor industrial processes. SCADA could be arguably described as a type of IC",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0094",
+    "title": "DoD Zero Trust OT Activities — section 95",
+    "text": "ol System\nA collection of devices, controllers, software, etc. used to monitor industrial processes. SCADA could be arguably described as a type of ICS.\nCNSSI 4009; NIST SP 800-82 Rev. 3\nIdAM\nIdentity and Access Management\nA security framework that enforces access control to users and/or devices in order to ensure that they have appropriate access to resources.\nNIST SP 800-203\n23 of 28\nAPPENDIX A: Acronyms and Definition Sources\n\nIdP\nIdentity Provider\nA service which provides state/status determination and access to Identity and Credential information. It may also provide baseline user/NPE \naccess roles.\nCNSSI 4009; NIST SP 800-63-3; FIPS 201-3\nIoT\nInternet of Things\nGenerally refers to networked embedded devices that serve one specific purpose (e.g., smart thermostats, IP cameras).\nNIST SP 800-215\nIR\nIncident Response\nThe remediation or mitigation of violations of security policies and recommended practices.\nCNSSI 4009\nMFA\nMultifactor Authentication\nAn authentication system or an authenticator that requires more than one authentication factor for successful authentication. Multi-factor \nauthentication can be performed using a single authenticator that provides more than one factor",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0095",
+    "title": "DoD Zero Trust OT Activities — section 96",
+    "text": "on factor for successful authentication. Multi-factor \nauthentication can be performed using a single authenticator that provides more than one factor or by a combination of authenticators that \nprovide different factors.\nCNSSI 4009\nML\nMachine Learning\nA subfield of artificial intelligence that focuses on enabling computer systems to learn from data without explicit programming.\nNIST SP 800-55v1\nNPE\nNon-Person Entity\nAn entity with a digital identity that acts in cyberspace but is not a human actor. This can include an autonomous service or application, hardware \ndevices (e.g. smart sensors), proxies, and software applications (e.g. automated bots for repetitive tasks).\nCNSSI 4009\nOT SDN\nOperational Technology Software Defined \nNetwork\nA specific implementation of SDN that is deployed on an operational technology.\n[adapted industry term]\nPAM\nPrivileged Access Management\nA class of solutions that help secure, control, manage and monitor privileged access to critical assets. (Example: PAM for administrator/sudo \nprivileges could mean that a user has to re-enter their credentials before performing a privileged action (i.e., installing software), then that action \nwould be logged).\n[ad",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0096",
+    "title": "DoD Zero Trust OT Activities — section 97",
+    "text": "at a user has to re-enter their credentials before performing a privileged action (i.e., installing software), then that action \nwould be logged).\n[adapted industry term]; ISO/IEC 27002:2022 (adapted)\nPBAC\nPolicy-Based Access Control\nA form of access control that uses an authorization policy that is flexible in the types of evaluated parameters (e.g., identity, role, clearance, \noperational need, risk, heuristics).\nCNSSI 4009\nPE\nPerson Entity\nThe role a human actor (i.e. User) performs when accessing IT assets with a specific identify.\nCNSSI 4009\nPKI\nPublic Key Infrastructure\nThe architecture, organization, techniques, practices, and procedures that collectively support the implementation and operation of a certificate-\nbased public key cryptographic system. Framework established to issue, maintain, and revoke public key certificates.\nCNSSI 4009\nPLC\nProgrammable Logic Controller\nA configurable device (generally an embedded device) that acts as the physical interface between the site and ICS/SCADA systems. (Example: a PLC \ncan be programmed to take readings from a temperature sensor, convert those values to a certain unit, and then send those values over to a \nSCADA server.)\nCNSSI 4",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0097",
+    "title": "DoD Zero Trust OT Activities — section 98",
+    "text": "ammed to take readings from a temperature sensor, convert those values to a certain unit, and then send those values over to a \nSCADA server.)\nCNSSI 4009\nSBOM\nSoftware Bill of Materials\nA formal record containing the details and supply chain relationships of various components used in building software. Software developers and \nvendors often create products by assembling existing open source and commercial software components. The SBOM enumerates these \ncomponents in a product.\nNIST SP 800-218\nSCADA \nSupervisory Control and Data Acquisition\nA generic name for a computerized system that is capable of gathering and processing data and applying operational controls over long distances. \nTypical uses include power transmission and distribution and pipeline systems. SCADA was designed for the unique communication challenges \n(e.g., delays, data integrity) posed by the various media that must be used, such as phone lines, microwave, and satellite. Usually shared rather \nthan dedicated.\nCNSSI 4009; NIST SP 800-82 Rev. 3\nSDC\nSoftware Defined Compute\nA framework to manage, provision, and deploy computational resources (e.g., a rack of servers in a data center) via centralized code and/or \nc",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0098",
+    "title": "DoD Zero Trust OT Activities — section 99",
+    "text": "Compute\nA framework to manage, provision, and deploy computational resources (e.g., a rack of servers in a data center) via centralized code and/or \nconfiguration, rather than having to configure each resource manually. Software Defined Compute is another way to describe the industry \nstandard term, Infrastructure-as-Code (IoC).\n[adapted industry term]\nSDN\nSoftware Defined Network\nAn approach to manage the control plane of network devices (e.g., firewalls, managed switches, routers, etc.) via a centralized configuration rather \nthan having to configure each device manually. The SDN may expose an API to allow other entities (network devices, scripts, etc.) to read/configure \nit automatically.\nNIST SP 800-207\nSDP\nSoftware Defined Perimeter\nA firewalling approach defined by the Cloud Security Alliance for protecting a network. It focuses on enforcing access control for both \ndiscoverability and accessibility to any given resource (e.g., requiring an authorized identity before a user can ping a device on a network). This \nserves as an alternative to the traditional \"fixed/static perimeter\" model (i.e., firewall rules) which may solve the problem of isolating internal \ndevices, but may",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0099",
+    "title": "DoD Zero Trust OT Activities — section 100",
+    "text": "ernative to the traditional \"fixed/static perimeter\" model (i.e., firewall rules) which may solve the problem of isolating internal \ndevices, but may not be able to granularly enforce identify-based access control per endpoint/device.\nNIST SP 800-207; NIST SP 800-215\nSDS\nSoftware Defined Storage\nStorage architecture that decouples storage software from its underlying hardware, enabling flexible and dynamic management of storage \nresources.\nNIST SP 800-209\nSIEM\nSecurity Information and Event Management; \nSecurity Incident and Event Management\nThe SIEM aggregates security and event data from across the environment.\nNIST SP 800-92; NIST SP 800-128; NIST SP 800-209\nSOAR\nSecurity Orchestration Automated Response\nA security strategy that has evolved in recent years to automate the incident response process.\nNIST SP 800-215\nTTP\nTactics, Techniques, and Procedures\nA term borrowed from US Army but used in cybersecurity to describe adversarial behavior of cyberthreat actors, in three increasing levels of detail: \n1) Tactics are a general description of the threat behavior, 2) Techniques are a slightly more detailed description of a tactic, and 3) Procedures are a\nhighly detailed, step-by-ste",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0100",
+    "title": "DoD Zero Trust OT Activities — section 101",
+    "text": "ption of the threat behavior, 2) Techniques are a slightly more detailed description of a tactic, and 3) Procedures are a\nhighly detailed, step-by-step description of a technique.\nCNSSI 4009\nUAM\nUser Activity Monitoring\nThe technical capability to observe and record the actions and activities of an individual, at any time, on any device accessing U.S. Government \ninformation in order to detect insider threat and to support authorized investigations.\nCNSSI 4009\nUEBA\nUser and Entity Behavior Analytics\ncybersecurity approach that uses advanced analytics to monitor and detect anomalies in the behavior of users and other entities within an \norganization's network.\nNIST SP 800-215\nUEDM\nUnified Endpoint and Device Management\nIntegrated approach to managing and securing various endpoints like desktops, laptops, smartphones, tablets, and IoT devices from a single \nconsole utilizing deployable agents or using agentless native OS management control features.\nNIST SP 800-215 (adapted)\n24 of 28\n\nXDR\nExtended Detection and Response\nSolution that extends the capabilities of Endpoint Detection and Response (EDR) to encompass a wider range of security layers beyond just \nendpoints.\n[adapted industr",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0101",
+    "title": "DoD Zero Trust OT Activities — section 102",
+    "text": "tends the capabilities of Endpoint Detection and Response (EDR) to encompass a wider range of security layers beyond just \nendpoints.\n[adapted industry term]\nActor, NPE Actor, PE Actor\nAll-encompassing term to refer to any person entity, non-person entity, user, group, device, resource, or asset that acts upon the system.\nCNSSI 4009 (adapted)\nConfidence Scoring\nA method used in cybersecurity to assess the reliability or probability that a detected alert, event, or indicator represents a genuine threat. It's a \nnumerical value assigned to signify how certain a system is that something malicious is occurring.\nThis document\nControl Plane\nLayer of the network architecture responsible for controlling traffic sent to a network device, and managing network routing protocols (e.g., STP, \nBGP, ICMP).\nNIST SP 800-207\nData Plane\nLayer of the network architecture responsible for handling traffic sent through a network device, and for forwarding data packets between devices \nin the network.\nNIST SP 800-207\nInformation Owner\nOfficial with statutory or operational authority for specified information and responsibility for establishing the controls for its generation, \nclassification, collection,",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0102",
+    "title": "DoD Zero Trust OT Activities — section 103",
+    "text": "or operational authority for specified information and responsibility for establishing the controls for its generation, \nclassification, collection, processing, dissemination, and disposal.\nNIST SP 800-37 Rev. 2 \nFormal Boundary - also known as Authorization \nBoundary\nAll components of an information system to be authorized for operation by an authorizing official. This excludes separately authorized systems to \nwhich the information system is connected. \nCNSSI 4009; NIST SP 800-137\nImpact Level\nThe magnitude of harm that can be expected to result from the consequences of unauthorized disclosure of information, unauthorized \nmodification of information, unauthorized destruction of information, or loss of information or information system availability.\nNIST SP 800-30 Rev. 1\nManagement Plane\nLayer of the network architecture responsible for managing traffic to the network device that is intended to configure, manage, or monitor the \nnetwork device (e.g., SSH, SNMP, HTTP).\nNIST SP 800-128 (adapted)\nNon-response task\nA \"non-response task\" in automation refers to a situation where an automated process encounters an unexpected issue or lack of response from a \nsystem it is trying to int",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0103",
+    "title": "DoD Zero Trust OT Activities — section 104",
+    "text": "\" in automation refers to a situation where an automated process encounters an unexpected issue or lack of response from a \nsystem it is trying to interact with, forcing it to pause or stop execution until manual intervention is required to resolve the problem and continue \nthe automation process.\nThis document\nNon-OT device\nFor the purposes of this document, non-OT devices can be understood as operational IT infrastructure requiring temporary access to ZT compliant \nProcess Control or Operational IT environments. In the context of 2.4.3.OT Managed Non-OT Assets, it refers to non-GFE BYOD equipment deemed \nabsolutely necessary to perform a task.\nThis document\nOperational IT Environment\nOperational IT environment consists of an Internet Protocol (IP) network with local front-end control system services, including operator \nworkstations, network switches, process control servers, data historians, firewalls, and local control system management services. Generally Levels \n4/5 of the Purdue model.\nThis document\nProcess Control Environment\nContains the field control devices that provide local command and control of sensors, actuators, motors, and other mechanical equipment. \nGenerally re",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0104",
+    "title": "DoD Zero Trust OT Activities — section 105",
+    "text": "Contains the field control devices that provide local command and control of sensors, actuators, motors, and other mechanical equipment. \nGenerally refers to levels 0-3 of the Purdue model.\nNIST SP 800-82 Rev. 3 (adapted)\nResponse task\nA \"response task\" in automation refers to a specific action or set of actions that are automatically triggered by a predefined event or condition, \ndesigned to initiate a response to that event, often within a larger automated workflow, like in incident response systems where a response task \nmight involve isolating a compromised system upon detecting a security threat.\nThis document\nDoW Approved Credentialing Authority\nAn entity formally authorized to issue credentials that enable secure access to DoW information systems and resources.\nThis document\n25 of 28\n\nDefinition Sources\nReference\nTitle\nDescription\n32 CFR Part 170\nCybersecurity Maturity Model Certification (CMMC) Program\nCFR - National Defense - Cybersecurity Maturity Model Certification (CMMC) Program.\n48 CFR § 52.204-21\nBasic Safeguarding of Covered Contractor Information Systems\nCFR - Federal Aquisition Regulations System - Basic Safeguarding of Covered Contractor Information Systems.\nACI",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0105",
+    "title": "DoD Zero Trust OT Activities — section 106",
+    "text": "overed Contractor Information Systems\nCFR - Federal Aquisition Regulations System - Basic Safeguarding of Covered Contractor Information Systems.\nACI TTP for DoW ICS\nAdvanced Cyber Industrial Control System Tactics, Techniques, and Procedures (ACI TTP) for \nDepartment of War (DOW) Industrial Control Systems (ICS)\nAbstract: \"This ACI TTP is designed to enable managers of ICS networks to Detect, Mitigate, and Recover from nation-state-level cyber attacks (strategic, \ndeliberate, well-trained, and funded attacks to support greater strategic objectives).\"\nCNSSI 4009\nCommittee on National Security Systems (CNSS) Glossary\nAbstract: \"...Contains definitions of terms used by the Department of War (DoW), Intelligence Community (IC), and Civil Agencies (e.g., National Institute of \nStandards and Technology (NIST)).\"\nDoDI 5200.48\nDoD Instruction 5200.48 - Controlled Unclassified Information\nAbstract: \"Establishes policy, assigns responsibilities, and prescribes procedures for CUI throughout the DoW...\"\nDoW ZTRA 2.0\nDepartment of War (DoW) Zero Trust Reference Architecture\nAbstract: \"The Reference Architecture (RA) establishes a framework that provides guidance via architectural Pillars and Pr",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0106",
+    "title": "DoD Zero Trust OT Activities — section 107",
+    "text": "rust Reference Architecture\nAbstract: \"The Reference Architecture (RA) establishes a framework that provides guidance via architectural Pillars and Principles.\"\nExecutive Order 13556\nControlled Unclassified Information\nAbstract: \"This order establishes an open and uniform program for managing information that requires safeguarding or dissemination controls.\"\nFIPS 201-3\nPersonal Identity Verification (PIV) of Federal Employees and Contractors\nAbstract: \"This document establishes a standard for a Personal Identity Verification (PIV) system that meets the control and security objectives of Homeland \nSecurity Presidential Directive-12.\"\nIEC 62443\nSeries of standards that address cybersecurity of OT control systems. \nNIST SP 800-218\nSecure Software Development Framework (SSDF) Version 1.1: Recommendations for Mitigating \nthe Risk of Software Vulnerabilities\nAbstract: \"This document recommends the Secure Software Development Framework (SSDF) – a core set of high-level secure software development practices \nthat can be integrated into each software development life cycle (SDLC) implementation.\"\nNIST SP 800-215\nGuide to a Secure Enterprise Network Landscape\nAbstract: \"This document is mean",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0107",
+    "title": "DoD Zero Trust OT Activities — section 108",
+    "text": "oftware development life cycle (SDLC) implementation.\"\nNIST SP 800-215\nGuide to a Secure Enterprise Network Landscape\nAbstract: \"This document is meant to provide guidance to this new enterprise network landscape from a secure operations perspective.\"\nNIST SP 800-209\nSecurity Guidelines for Storage Infrastructure\nAbstract: \"This document provides an overview of the evolution of the storage technology landscape, current security threats, and the resultant risks.\"\nNIST SP 800-207\nZero Trust Architecture\nAbstract: \"This document contains an abstract definition of zero trust architecture (ZTA) and gives general deployment models and use cases where zero trust \ncould improve an enterprise’s overall information technology security posture.\"\nNIST SP 800-203\n2017 NIST/ITL Cybersecurity Program Annual Report\nAbstract: \"This annual report highlights the research agenda and activities in which ITL Cybersecurity Program was engaged during FY 2017.\"\nNIST SP 800-160 Vol. 2 Rev. 1\nDeveloping Cyber-Resilient Systems: A Systems Security Engineering Approach\nAbstract: \"NIST Special Publication (SP) 800-160, Volume 2, focuses on cyber resiliency engineering—an emerging specialty systems engineering d",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0108",
+    "title": "DoD Zero Trust OT Activities — section 109",
+    "text": "proach\nAbstract: \"NIST Special Publication (SP) 800-160, Volume 2, focuses on cyber resiliency engineering—an emerging specialty systems engineering discipline \napplied in conjunction with systems security engineering and resilience engineering to develop survivable, trustworthy secure systems.\"\nNIST SP 800-128\nGuide for Security-Focused Configuration Management of Information Systems\nAbstract: \"The focus of this document is on implementation of the information system security aspects of configuration management, and as such the term \nsecurity-focused configuration management (SecCM) is used to emphasize the concentration on information security.\"\nNIST SP 800-115\nTechnical Guide to Information Security Testing and Assessment\nAbstract: \"The guide provides practical recommendations for designing, implementing, and maintaining technical information security test and examination \nprocesses and procedures.\"\nNIST SP 800-92\nGuide to Computer Security Log Management\nAbstract: \"This publication seeks to assist organizations in understanding the need for sound computer security log management.\"\nNIST SP 800-82 Rev. 3\nGuide to Operational Technology (OT) Security\nAbstract: \"The document provid",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0109",
+    "title": "DoD Zero Trust OT Activities — section 110",
+    "text": "e need for sound computer security log management.\"\nNIST SP 800-82 Rev. 3\nGuide to Operational Technology (OT) Security\nAbstract: \"The document provides an overview of OT and typical system topologies, identifies common threats and vulnerabilities to these systems, and \nprovides recommended security countermeasures to mitigate the associated risks.\"\nNIST SP 800-63-3\nDigital Identity Guidelines\nAbstract: \"The guidelines cover identity proofing and authentication of users (such as employees, contractors, or private individuals) interacting with \ngovernment IT systems over open networks.\"\nUFC 4-010-06\nUnified Facilities Criteria - Cybersecurity of Facility-Related Control Systems\nAbstract: \"UFC 4-010-06 provides requirements for incorporating cybersecurity into the design of facility-related control systems.\"\n26 of 28\n\nVisibility & \nAnalytics\nDevice\nApplication & \nWorkload\nData\nVersion OT.1.3 As of 09/25/20\nFinal ZT OT Baseline Activities\n1.2.1 Implement Authorization and Access \nManagement for OT Environments\n1.2.2 Role Based Dynamic \nAccess for OT Environments\n2.1.2 NPE Certificate \nManagement for OT \nEnvironments\n4.3.2 Data \nTagging\n1.1.1 Inventory Users \nin OT Environment\n2.1.1 In",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0110",
+    "title": "DoD Zero Trust OT Activities — section 111",
+    "text": "ccess for OT Environments\n2.1.2 NPE Certificate \nManagement for OT \nEnvironments\n4.3.2 Data \nTagging\n1.1.1 Inventory Users \nin OT Environment\n2.1.1 Inventory NPEs \nin OT Environments\n3.1.1 OT Application \nand Code Inventory\n4.3.1 Implement OT \nData Tagging Tools\n4.1.1 OT Data \nTagging Governance\n4.2.1 Define OT Data \nTagging Patterns\n5.1.1 OT \nGranular \nAccess Rules \n& Policies Pt. 1\n4.2.2 OT Data Sharing \nInteroperability Patterns\n4.2.3 Document \nOT Storage \nArchitecture\n1.3.1 MFA for OT Environments\n1.4.1 Implement PAM for OT \nEnvironments Pt. 1\n2.1.3 NPE \nCredentialing \nAuthority\n2.2.1 Implement \nConnection Policy for \nOT Environments\n2.3.1 Configuration \nMonitoring and Control \nTools for OT Environments\n3.2.1 Build OT DevOps \nCapability Factory Pt. 1\n3.2.2 Build OT DevOps \nCapability Factory Pt. 2\n1.4.2 Implement PAM for OT \nEnvironments Pt. 2\n1.5.1 Life-Cycle Management for \nOT Environments Pt. 1\n1.6.1 Implement UEBA and UAM \nTooling for OT Environments\n1.7.1 Deny by Default \nPolicy in OT Environment\n1.8.2 Programmable Periodic \nAuthentication in OT Environments\n1.9.1 Enterprise Credentialing Services Pt. 1\n1.8.1 Initial Authentication \nin OT Environments\n1.9.2 Enterprise Cred",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0111",
+    "title": "DoD Zero Trust OT Activities — section 112",
+    "text": "Authentication in OT Environments\n1.9.1 Enterprise Credentialing Services Pt. 1\n1.8.1 Initial Authentication \nin OT Environments\n1.9.2 Enterprise Credentialing Services Pt. 2\n2.3.2 Integrate AV Tools \nfor OT Environments\n2.4.1 NPE Deny by \nDefault Policy \n2.4.2 Managed and \nLimited BYOD Support \nfor OT Environments\n2.5.1 Implement \nVulnerability and Patch \nManagement Tools for \nOT Environments\n2.4.3 Managed \nNon-OT Assets\n2.6.1 Implement UEDM for \nOT Environments\n2.6.2 OT Device \nConfiguration Management\n2.7.1 Implement \nEDR Tools for \nOT Environments\n2.7.2 Implement XDR Tools for OT Environments\n2.1.4 Automated NPE Discovery\n2.3.3 OT Device Security Stack with C2C\n3.3.3 Binaries, Code, and Hardware \nConfigurations for OT Environments\n3.3.1 OT Vulnerability Management Program Pt. 1\n4.4.1 DLP \nAnalytics\n4.4.3 OT File \nPrioritization and \nMonitoring\n4.5.1 Implement \nDRM and DLP Pt. 1\n4.6.1 DLP \nDeployment\n3.4.1 Access Control for \nOT Environments Pt. 1\n4.6.2 DLP \nOperations\n4.4.2 Establish \nDRM Processes\n4.4.4 OT File \nMonitoring \nInteroperability\n3.3.2 OT Vulnerability Management Program Pt. 2\n4.4.5 Inventory \nDatabases\n4.4.6 Database \nActivity Monitoring \nand Response\n4.5.3 DRM Res",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0112",
+    "title": "DoD Zero Trust OT Activities — section 113",
+    "text": "operability\n3.3.2 OT Vulnerability Management Program Pt. 2\n4.4.5 Inventory \nDatabases\n4.4.6 Database \nActivity Monitoring \nand Response\n4.5.3 DRM Response Pt. 1\n4.7.1 Manage \nDAAS Access with \nStorage Policy\n5.2.3 Information Flow \nMapping Across OT Planes\n5.3.1 OT Plane Segmentation\n5.2.2 Implement OT \nProgrammable Infrastructure\n5.3.2 B/C/P/S Segmentation\n5.1.2 OT \nGranular Access \nRules & Policies Pt. 2\n5.2.1 Define OT \nCommunication Pathway \nAPIs\n5.4.1 Implement Micro Segmentation\n6.7.1 Incident Response Guidance for \nOT Environments Pt. 1\n7.4.1 OT Environment Baseline and \nProfiling\n7.5.1 OT Cyber Threat Intelligence \nProgram Pt. 1\n6.6.3 API Patterns for \nOT Environments Pt. 2\n5.4.3 Protect OT Data In Transit\n5.4.2 Application & Device Micro Segmentation\n6.1.4 Enterprise Security Profile for OT \nEnvironments Pt. 2\n6.1.2 Attribute-\nDriven Access \nProfiles\n6.6.2 Tool Compliance \nAnalysis for OT Environments\n6.5.2 Implement OT SOAR Tools\n6.1.1 Policy \nInventory & \nDevelopment\n6.2.1 Process \nAutomation Analysis\n6.5.1 OT Response \nAutomation Analysis\n6.6.1 API Patterns for \nOT Environments Pt. 1\n7.2.5 OT Asset ID and \nAlert Correlation\n7.3.1 Implement Analytics \nTools for OT Envir",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0113",
+    "title": "DoD Zero Trust OT Activities — section 114",
+    "text": "tomation Analysis\n6.6.1 API Patterns for \nOT Environments Pt. 1\n7.2.5 OT Asset ID and \nAlert Correlation\n7.3.1 Implement Analytics \nTools for OT Environments\n7.3.2 Establish OT Baseline Behavior\n7.2.3 Threat Alerting for \nOT Environments Pt. 2\n7.2.1 OT Infrastructure \nIncident Response \nIsolation\n7.2.2 Threat \nAlerting for OT \nEnvironments Pt. 1\n7.1.1 Scale \nConsiderations \nfor OT \nEnvironments\n7.1.2 Log \nParsing in OT \nEnvironments\n7.2.6 OT Baselines\n7.1.3 Log Analysis in \nOT Environments\nTarget Activities:\n84\nAdvanced Activities: \n21\nTotal Activities: \n105\nAPPENDIX B: Zero Trust Fan Chart for Operational Technologies\nUser\nAdvanced Activities\n1.3.2 Alternative Flexible \nCredentialing\n1.3.3 Interoperate Credentialing \nServices\n1.8.3 Continuous Authentication\n1.5.2 Life-Cycle Management for OT \nEnvironments Pt. 2\n1.9.3 Enterprise Credentialing Services Pt. 3\nTarget Activities\n3.2.3 Standardized OT Application \nSecurity and XBOM Inventory\n3.4.2 Access Control for \nOT Environments Pt. 2\n3.4.3 Access Control for OT Environments Pt. 3\n3.4.4 Access Control for OT Environments Pt. 4\n7.5.2 OT Cyber Threat Intelligence \nProgram Pt. 2\n6.3.1 Implement OT Data Tagging \nand Classification ML To",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  },
+  {
+    "clause_id": "chunk-0114",
+    "title": "DoD Zero Trust OT Activities — section 115",
+    "text": "4 Access Control for OT Environments Pt. 4\n7.5.2 OT Cyber Threat Intelligence \nProgram Pt. 2\n6.3.1 Implement OT Data Tagging \nand Classification ML Tools\n6.7.2 Incident Response Guidance for OT \nEnvironments Pt. 2\n6.2.2 Tool Interoperability \nfor OT Environments\n6.5.3 IaC within OT Environments\n6.6.4 API Patterns for OT Environments Pt. 3\n7.2.4 Threat Alerting for OT \nEnvironments Pt. 3\nNetwork & \nEnvironment\nAutomation & \nOrchestration\nDoctrine\nOrganization\nTraining\nmateriel\nLeadership & Education\nPersonnel\nFacilities\nPolicy\nExecution Enablers\n6.1.3 Enterprise \nSecurity Profile for OT \nEnvironments Pt. 1\n3.1.2 OT \nApplication Control\n4.5.2 Implement DRM and DLP Pt. 2\n4.5.4 DRM Response Pt. 2\n27 of 28\n\nSeptember 2025 \n28 of 28\nAPPENDIX C: Distinction Between Enterprise IT and OT Environments",
+    "standard": "DoD Zero Trust OT Activities",
+    "language": "en",
+    "source_file": "ZT-OperationalTechnologyActivitiesOutcomes.pdf"
+  }
+]

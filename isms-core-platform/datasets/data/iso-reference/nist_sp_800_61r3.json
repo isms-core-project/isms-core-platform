@@ -1,0 +1,826 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "NIST SP 800-61r3 — section 1",
+    "text": "NIST Special Publication 800 \nNIST SP 800-61r3\nIncident Response Recommendations \nand Considerations for Cybersecurity \nRisk Management \nA CSF 2.0 Community Profile \nAlex Nelson \nSanjay Rekhi \nMurugiah Souppaya \nKaren Scarfone \nThis publication is available free of charge from: \nhttps://doi.org/10.6028/NIST.SP.800-61r3\n\nNIST Special Publication 800  \nNIST SP 800-61r3 \nIncident Response Recommendations \nand Considerations for Cybersecurity \nRisk Management \nA CSF 2.0 Community Profile \nAlex Nelson \nSanjay Rekhi \nMurugiah Souppaya* \nComputer Security Division \nInformation Technology Laboratory \n \nKaren Scarfone \nScarfone Cybersecurity \n*Former NIST employee; all work for this \npublication was done while at NIST. \n \nThis publication is available free of charge from: \nhttps://doi.org/10.6028/NIST.SP.800-61r3 \nApril 2025 \n \nU.S. Department of Commerce  \nHoward Lutnick, Secretary of Commerce \nNational Institute of Standards and Technology  \nCraig Burkhardt, Acting Under Secretary of Commerce for Standards and Technology and Acting NIST Director\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n \nCertain equipment, instru",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "NIST SP 800-61r3 — section 2",
+    "text": "ctor\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n \nCertain equipment, instruments, software, or materials, commercial or non-commercial, are identified in this \npaper in order to specify the experimental procedure adequately. Such identification does not imply \nrecommendation or endorsement of any product or service by NIST, nor does it imply that the materials or \nequipment identified are necessarily the best available for the purpose.  \nThere may be references in this publication to other publications currently under development by NIST in \naccordance with its assigned statutory responsibilities. The information in this publication, including concepts and \nmethodologies, may be used by federal agencies even before the completion of such companion publications. \nThus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, \nremain operative. For planning and transition purposes, federal agencies may wish to closely follow the \ndevelopment of these new publications by NIST.   \nOrganizations are encouraged to review all draft publications during public comment p",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "NIST SP 800-61r3 — section 3",
+    "text": "ly follow the \ndevelopment of these new publications by NIST.   \nOrganizations are encouraged to review all draft publications during public comment periods and provide feedback \nto NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at \nhttps://csrc.nist.gov/publications. \nAuthority \nThis publication has been developed by NIST in accordance with its statutory responsibilities under the Federal \nInformation Security Modernization Act (FISMA) of 2014, 44 U.S.C. § 3551 et seq., Public Law (P.L.) 113-283. NIST is \nresponsible for developing information security standards and guidelines, including minimum requirements for \nfederal information systems, but such standards and guidelines shall not apply to national security systems \nwithout the express approval of appropriate federal officials exercising policy authority over such systems. This \nguideline is consistent with the requirements of the Office of Management and Budget (OMB) Circular A-130. \n \nNothing in this publication should be taken to contradict the standards and guidelines made mandatory and \nbinding on federal agencies by the Secretary of Commerce under statutory authority. Nor shoul",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "NIST SP 800-61r3 — section 4",
+    "text": "tradict the standards and guidelines made mandatory and \nbinding on federal agencies by the Secretary of Commerce under statutory authority. Nor should these guidelines \nbe interpreted as altering or superseding the existing authorities of the Secretary of Commerce, Director of the \nOMB, or any other federal official.  This publication may be used by nongovernmental organizations on a voluntary \nbasis and is not subject to copyright in the United States. Attribution would, however, be appreciated by NIST.  \nNIST Technical Series Policies \nCopyright, Use, and Licensing Statements \nNIST Technical Series Publication Identifier Syntax \nPublication History \nApproved by the NIST Editorial Review Board on 2025-03-25 \nSupersedes NIST SP 800-61r2 (August 2012) https://doi.org/10.6028/NIST.SP.800-61r2  \nHow to Cite this NIST Technical Series Publication \nNelson A, Rekhi S, Souppaya M, Scarfone K (2025) Incident Response Recommendations and Considerations for \nCybersecurity Risk Management: A CSF 2.0 Community Profile. (National Institute of Standards and Technology, \nGaithersburg, MD), NIST Special Publication (SP) NIST SP 800-61r3. https://doi.org/10.6028/NIST.SP.800-61r3\n\nNIST SP 800-61r3",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "NIST SP 800-61r3 — section 5",
+    "text": "ndards and Technology, \nGaithersburg, MD), NIST Special Publication (SP) NIST SP 800-61r3. https://doi.org/10.6028/NIST.SP.800-61r3\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n \n \nAuthor ORCID iDs \nAlex Nelson: 0000-0002-3771-570X \nSanjay Rekhi: 0009-0008-8711-4030 \nMurugiah Souppaya: 0000-0002-8055-8527 \nKaren Scarfone: 0000-0001-6334-9486 \nContact Information \n800-61-comments@nist.gov \n  \nNational Institute of Standards and Technology \nAttn: Computer Security Division, Information Technology Laboratory \n100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930 \nAdditional Information \nAdditional information about this publication is available at https://csrc.nist.gov/pubs/sp/800/61/r3/final, \nincluding related content, potential updates, and document history. \nAll comments are subject to release under the Freedom of Information Act (FOIA).\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \ni \nAbstract \nThis publication seeks to assist organizations with incorporating cybersecurity incident response \nrecommendations and considerations thr",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "NIST SP 800-61r3 — section 6",
+    "text": "i \nAbstract \nThis publication seeks to assist organizations with incorporating cybersecurity incident response \nrecommendations and considerations throughout their cybersecurity risk management \nactivities as described by the NIST Cybersecurity Framework (CSF) 2.0. Doing so can help \norganizations prepare for incident responses, reduce the number and impact of incidents that \noccur, and improve the efficiency and effectiveness of their incident detection, response, and \nrecovery activities. Readers are encouraged to utilize online resources in conjunction with this \ndocument to access additional information on implementing these recommendations and \nconsiderations. \nKeywords \ncyber threat information sharing; Cybersecurity Framework; cybersecurity incident; \ncybersecurity risk management; incident handling; incident management; incident response. \nReports on Computer Systems Technology \nThe Information Technology Laboratory (ITL) at the National Institute of Standards and \nTechnology (NIST) promotes the U.S. economy and public welfare by providing technical \nleadership for the Nation’s measurement and standards infrastructure. ITL develops tests, test \nmethods, reference data, proo",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "NIST SP 800-61r3 — section 7",
+    "text": "by providing technical \nleadership for the Nation’s measurement and standards infrastructure. ITL develops tests, test \nmethods, reference data, proof of concept implementations, and technical analyses to advance \nthe development and productive use of information technology. ITL’s responsibilities include \nthe development of management, administrative, technical, and physical standards and \nguidelines for the cost-effective security and privacy of other than national security-related \ninformation in federal information systems. The Special Publication 800-series reports on ITL’s \nresearch, guidelines, and outreach efforts in information system security, and its collaborative \nactivities with industry, government, and academic organizations.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \nii \nSupplemental Content \nNIST has established an Incident Response project page that hosts links to resources with \nadditional information on incident response activities. By moving links from this document to a \nwebsite, NIST can update and expand them as needed without having to release a new version \nof this publication.  \nF",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "NIST SP 800-61r3 — section 8",
+    "text": "ng links from this document to a \nwebsite, NIST can update and expand them as needed without having to release a new version \nof this publication.  \nFor more information on CSF 2.0 Community Profiles, see the Framework Resource Center. \nAudience \nThe target audience for this publication includes cybersecurity program leadership, \ncybersecurity personnel, and others who are responsible for preparing for, detecting, \nresponding to, or recovering from cybersecurity incidents. This publication is intended for use \nby most organizations, regardless of sector, size, or other factors. \nTrademark Information \nAll registered trademarks belong to their respective organizations.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \niii \nPatent Disclosure Notice \nNOTICE: ITL has requested that holders of patent claims whose use may be required for \ncompliance with the guidance or requirements of this publication disclose such patent claims to \nITL. However, holders of patents are not obligated to respond to ITL calls for patents and ITL has \nnot undertaken a patent search in order to identify which, if any, patents may apply to th",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "NIST SP 800-61r3 — section 9",
+    "text": "obligated to respond to ITL calls for patents and ITL has \nnot undertaken a patent search in order to identify which, if any, patents may apply to this \npublication. \nAs of the date of publication and following call(s) for the identification of patent claims whose \nuse may be required for compliance with the guidance or requirements of this publication, no \nsuch patent claims have been identified to ITL.  \nNo representation is made or implied by ITL that licenses are not required to avoid patent \ninfringement in the use of this publication.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \niv \nTable of Contents \nExecutive Summary ............................................................................................................................1 \n1. Introduction ...................................................................................................................................2 \n2. Incident Response as Part of Cybersecurity Risk Management .........................................................4 \n3. CSF 2.0 Community Profile for Cyber Incident Risk Management ..............................",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "NIST SP 800-61r3 — section 10",
+    "text": ".....................................................4 \n3. CSF 2.0 Community Profile for Cyber Incident Risk Management ................................................... 10 \nReferences ....................................................................................................................................... 36 \nAppendix A. List of Symbols, Abbreviations, and Acronyms ............................................................... 38 \nAppendix B. Glossary ....................................................................................................................... 39 \nAppendix C. Change Log ................................................................................................................... 40 \nList of Tables \nTable 1. Previous incident response life cycle model’s phases and corresponding CSF 2.0 Functions .....6 \nTable 2. CSF 2.0 Community Profile part 1: Preparation and Lessons Learned .................................... 11 \nTable 3. CSF 2.0 Community Profile part 2: Incident Response ........................................................... 23 \nList of Figures \nFig. 1. Previous incident response life cycle model ............................",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "NIST SP 800-61r3 — section 11",
+    "text": "................................................ 23 \nList of Figures \nFig. 1. Previous incident response life cycle model ..............................................................................4 \nFig. 2. Incident response life cycle model based on CSF 2.0 Functions ..................................................5\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n1 \nExecutive Summary \nIncident response is a critical part of cybersecurity risk management and should be integrated \nacross organizational operations. All six NIST Cybersecurity Framework (CSF) 2.0 Functions play \nvital roles in incident response:  \n• Govern, Identify, and Protect help organizations prevent some incidents, prepare to \nhandle incidents that do occur, reduce the impact of those incidents, and improve \nincident response and cybersecurity risk management practices based on lessons \nlearned from those incidents. \n• Detect, Respond, and Recover help organizations discover, manage, prioritize, contain, \neradicate, and recover from cybersecurity incidents, as well as perform incident \nreporting, notification, and other incident-related c",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "NIST SP 800-61r3 — section 12",
+    "text": "ize, contain, \neradicate, and recover from cybersecurity incidents, as well as perform incident \nreporting, notification, and other incident-related communications.  \nMany individuals, teams, and third parties hold a wide variety of roles and responsibilities \nacross all of the Functions that support an organization’s incident response. Organizations have \nno direct control over the tactics and techniques used by their adversaries, nor are they certain \nabout the timing of a future incident other than knowing that another incident is inevitable. \nHowever, organizations can use an incident response life cycle framework or model that best \nsuits them to develop strong cybersecurity risk management practices that reduce their risks to \nacceptable levels.  \nThis publication uses the CSF 2.0 Functions, Categories, and Subcategories to organize its \nrecommendations, considerations, and other information regarding incident response as a CSF \n2.0 Community Profile. Doing so provides a common taxonomy that is already widely used for \ncommunicating about incident response and cybersecurity risk management and governance. \nThis also enables organizations to access a range of online resources",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "NIST SP 800-61r3 — section 13",
+    "text": "ting about incident response and cybersecurity risk management and governance. \nThis also enables organizations to access a range of online resources mapped to each Function, \nCategory, and Subcategory through the NIST Cybersecurity and Privacy Reference Tool (CPRT). \nThese resources include mappings to other incident response and cybersecurity risk \nmanagement standards and guidance, as well as sources of implementation guidance that \norganizations can choose to utilize as needed. \nOrganizations should use the incident response life cycle framework or model that suits them \nbest. The model in this document is based on CSF 2.0 to take advantage of the wealth of \nresources available for CSF 2.0 and aid organizations that are already using the CSF. Regardless \nof the incident response life cycle framework or model used, every organization should take \nincident response into consideration throughout their cybersecurity risk management activities.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n2 \n1. Introduction \nWithin this document, an event is any observable occurrence that involves computing assets, \nincluding p",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "NIST SP 800-61r3 — section 14",
+    "text": "Cyber Risk Management \n \n2 \n1. Introduction \nWithin this document, an event is any observable occurrence that involves computing assets, \nincluding physical and virtual platforms, networks, services, and cloud environments. Examples \nof events are user login attempts, the installation of software updates, and an application \nresponding to a transaction request. Many events focus on security or have security \nimplications. Adverse events are any events associated with a negative consequence regardless \nof cause, including natural disasters, power failures, or cybersecurity attacks. This guide \naddresses only adverse cybersecurity events. Additional analysis is often needed to determine \nwhether adverse cybersecurity events indicate that a cybersecurity incident has occurred. \nA cybersecurity incident (or simply incident) is  \n…an occurrence that actually or imminently jeopardizes, without lawful \nauthority, the integrity, confidentiality, or availability of information or \nan information system; or constitutes a violation or imminent threat of \nviolation of law, security policies, security procedures, or acceptable use \npolicies. [FISMA2014]  \nExamples of incidents include an attac",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0014",
+    "title": "NIST SP 800-61r3 — section 15",
+    "text": "threat of \nviolation of law, security policies, security procedures, or acceptable use \npolicies. [FISMA2014]  \nExamples of incidents include an attacker: \n• Employing a botnet to send high volumes of connection requests to an internet-facing \nservice, making it unavailable to legitimate service users \n• Obtaining administrative credentials at a software-as-a-service provider, which puts \nsensitive tenant data entrusted to that provider at risk \n• Intruding upon an organization’s business network to steal credentials and use them to \ninstruct industrial control systems to shut down or destroy critical physical components, \ncausing a major service disruption \n• Deploying ransomware to prevent the use of computer systems and cause multiple data \nbreaches by copying files from those systems \n• Using phishing emails to compromise user accounts and using those accounts to commit \nfinancial fraud \n• Identifying a new vulnerability in network management appliances and exploiting the \nvulnerability to gain unauthorized access to network communications \n• Compromising a vendor’s software, which is subsequently distributed to customers in its \ncompromised state \nBecause of the damage that cy",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0015",
+    "title": "NIST SP 800-61r3 — section 16",
+    "text": "nications \n• Compromising a vendor’s software, which is subsequently distributed to customers in its \ncompromised state \nBecause of the damage that cybersecurity incidents can inflict on organizations and their \ncustomers, business partners, and others, it is vital to respond quickly and effectively when an \nincident occurs. Effective implementation of incident response processes enables systematic \nresponses to and recovery from incidents by analyzing information and taking appropriate \naction. This reduces cybersecurity and enterprise risks by minimizing data loss or theft, the \ndisruption of services, and the overall impact of incidents. Lessons learned from incident \nresponse activities and root cause analysis help improve cybersecurity risk management and\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n3 \ngovernance efforts and ensure that the organization is better prepared to identify its current \ntechnology assets and cybersecurity risks, protect its assets, and detect, respond to, and \nrecover from future incidents. \n1.1. Purpose and Scope \nThis publication seeks to help organizations incorporate cyberse",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0016",
+    "title": "NIST SP 800-61r3 — section 17",
+    "text": "and detect, respond to, and \nrecover from future incidents. \n1.1. Purpose and Scope \nThis publication seeks to help organizations incorporate cybersecurity incident response \nrecommendations and considerations throughout their cybersecurity risk management \nactivities. It also provides a common language that all organizations can use to communicate \ninternally and externally regarding their incident response plans and activities. \nThe scope of this publication differs significantly from previous versions. Because the details of \nhow to perform incident response activities change so often and vary so much across \ntechnologies, environments, and organizations, it is no longer feasible to capture and maintain \nthat information in a single static publication. Instead, this version focuses on improving \ncybersecurity risk management for all of the NIST Cybersecurity Framework (CSF) 2.0 Functions \n[CSF2.0] to better support an organization’s incident response capabilities. \nReaders are encouraged to utilize other NIST resources in conjunction with this document, \nincluding the CSF 2.0 publication and supplemental resources, the Incident Response project \npage, and mappings to additional",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0017",
+    "title": "NIST SP 800-61r3 — section 18",
+    "text": "ion with this document, \nincluding the CSF 2.0 publication and supplemental resources, the Incident Response project \npage, and mappings to additional sources of information on implementing incident response \nconsiderations available through the NIST Cybersecurity and Privacy Reference Tool (CPRT). An \nexample of a CPRT mapping is associating CSF 2.0 outcomes with NIST Special Publication (SP) \n800-53 controls that can be implemented to help achieve the outcomes. In this way, CSF 2.0 \nprovides a common language that facilitates access to a large number of other resources. \nThis publication supersedes SP 800-61r2 (Revision 2), Computer Security Incident Handling \nGuide [SP800-61r2].  \n1.2. Document Structure \nThe remainder of this document is organized into the following sections and appendices: \n• Section 2 discusses how incident response has evolved to become a critical part of \ncybersecurity risk management, as well as how the concept of the incident response life \ncycle has changed to reflect that. \n• Section 3 presents incident response recommendations and considerations for an \norganization’s cybersecurity risk management practices. They are organized and \ndocumented as a CSF",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0018",
+    "title": "NIST SP 800-61r3 — section 19",
+    "text": "sponse recommendations and considerations for an \norganization’s cybersecurity risk management practices. They are organized and \ndocumented as a CSF 2.0 Community Profile. \n• The References section lists references cited throughout this publication. \n• Appendix A and Appendix B provide an acronyms list and a glossary, respectively.  \n• Appendix C contains a change log of the major changes made since the previous \nrevision.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n4 \n2. Incident Response as Part of Cybersecurity Risk Management \nThis section explains the fundamental concepts of incident response as an integral part of \ncybersecurity risk management. Section 2.1 explores the incident response life cycle and \nproposes a new life cycle model based on CSF 2.0 Functions. Section 2.2 discusses incident \nresponse roles and responsibilities both inside and outside an organization. Finally, Section 2.3 \nbriefly examines incident response policies, processes, and procedures. \n2.1. Incident Response Life Cycle Model \nFig. 1 depicts the incident response life cycle model illustrated in the previous version of this \npu",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0019",
+    "title": "NIST SP 800-61r3 — section 20",
+    "text": "dures. \n2.1. Incident Response Life Cycle Model \nFig. 1 depicts the incident response life cycle model illustrated in the previous version of this \npublication [SP800-61r2].  \n \nFig. 1. Previous incident response life cycle model \nAt that time, incidents were relatively rare, the scope of most incidents was narrow and well-\ndefined, and incident response and recovery was usually completed within a day or two. Under \nthose conditions, it was realistic to treat incident response as a separate set of activities \nperformed by a separate team of personnel and to depict all incident response activities as part \nof a circular life cycle. Formal post-incident activities would identify needed improvements and \nfeed them into the preparation stage, thus starting the cycle again. Incident response activities \nwere typically intermittent rather than continuous. \nHowever, the current state of incident response has greatly changed since then. Today, \nincidents occur frequently and cause far more damage. Recovering from them often takes \nweeks or months due to their breadth, complexity, and dynamic nature. Incident response is \nnow considered a critical part of cybersecurity risk management that",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0020",
+    "title": "NIST SP 800-61r3 — section 21",
+    "text": "nths due to their breadth, complexity, and dynamic nature. Incident response is \nnow considered a critical part of cybersecurity risk management that should be integrated \nacross organizational operations. The lessons learned during incident response should often be \nshared as soon as they are identified, not delayed until after recovery concludes. Continuous \nimprovement is increasingly necessary for all facets of cybersecurity risk management in order \nto keep up with modern threats.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n5 \nFig. 2 shows a high-level incident response life cycle model based on the six CSF 2.0 Functions, \nwhich organize cybersecurity outcomes at their highest level:  \n• Govern (GV): The organization’s cybersecurity risk management strategy, expectations, \nand policy are established, communicated, and monitored. \n• Identify (ID): The organization’s current cybersecurity risks are understood. \n• Protect (PR): Safeguards to manage the organization’s cybersecurity risks are used. \n• Detect (DE): Possible cybersecurity attacks and compromises are found and analyzed. \n• Respond (RS): Actions",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0021",
+    "title": "NIST SP 800-61r3 — section 22",
+    "text": "ation’s cybersecurity risks are used. \n• Detect (DE): Possible cybersecurity attacks and compromises are found and analyzed. \n• Respond (RS): Actions regarding a detected cybersecurity incident are taken. \n• Recover (RC): Assets and operations affected by a cybersecurity incident are restored. \nAll six Functions have vital roles in incident response. Govern, Identify, and Protect help \norganizations prevent some incidents, prepare to handle incidents that do occur, reduce the \nimpact of those incidents, and improve incident response and cybersecurity risk management \npractices based on lessons learned. Detect, Respond, and Recover help organizations discover, \nmanage, prioritize, contain, eradicate, and recover from cybersecurity incidents, as well as \nperform incident reporting, notification, and other incident-related communications.   \n \nFig. 2. Incident response life cycle model based on CSF 2.0 Functions \nThe bottom level reflects that the preparation activities of Govern, Identify, and Protect are not \npart of the incident response itself. Rather, they are much broader cybersecurity risk \nmanagement activities that also support incident response. Incident response is shown in",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0022",
+    "title": "NIST SP 800-61r3 — section 23",
+    "text": "nse itself. Rather, they are much broader cybersecurity risk \nmanagement activities that also support incident response. Incident response is shown in the \ntop level of the figure: Detect, Respond, and Recover. Additionally, the need for continuous \nimprovement is indicated as the middle level with the Improvement Category (ID.IM) within the \nIdentify Function and the dashed green lines. Lessons learned from performing all activities in \nall Functions are fed into Improvement, and those lessons are analyzed, prioritized, and used to \ninform all of the Functions. This reflects that organizations can learn new lessons at all times\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n6 \n(e.g., detecting the presence of a new threat and characterizing its behavior) and communicate \nthose lessons to the appropriate personnel so that the organization’s incident response and \nother cybersecurity risk management policies, processes, and practices can be adjusted as \nneeded. \nTable 1 maps the previous SP 800-61 incident response life cycle model’s phases to the \ncorresponding CSF 2.0 Functions used in this document.  \nTable 1.",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0023",
+    "title": "NIST SP 800-61r3 — section 24",
+    "text": "le 1 maps the previous SP 800-61 incident response life cycle model’s phases to the \ncorresponding CSF 2.0 Functions used in this document.  \nTable 1. Previous incident response life cycle model’s phases and corresponding CSF 2.0 Functions \nPrevious Incident Response Life Cycle Model Phase \nCSF 2.0 Functions \nPreparation \nGovern \nIdentify (all Categories) \nProtect \nDetection & Analysis \nDetect \nIdentify (Improvement Category) \nContainment, Eradication & Recovery \nRespond \nRecover \nIdentify (Improvement Category) \nPost-Incident Activity \nIdentify (Improvement Category) \nOrganizations should use the incident response life cycle framework or model that suits them \nbest. The model in this document is based on CSF 2.0 to take advantage of the wealth of \nresources available for CSF 2.0 and aid organizations that are already using the CSF. The \nappropriate incident response life cycle framework or model for an organization depends on \nmany factors; for example, larger and more technology-dependent organizations are likely to \nbenefit more from using a framework or model emphasizing continuous improvement than \nother organizations would. Regardless of the incident response life cycle frame",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0024",
+    "title": "NIST SP 800-61r3 — section 25",
+    "text": "om using a framework or model emphasizing continuous improvement than \nother organizations would. Regardless of the incident response life cycle framework or model \nused, every organization should take incident response into consideration throughout their \ncybersecurity risk management activities. \n2.2. Incident Response Roles and Responsibilities \nIn the past, incident response activities were performed almost exclusively by incident handlers \nfrom the organization’s own incident response team. Today, while incident handlers are still \ncritically important, most organizations increasingly recognize that the success of their incident \nresponse efforts depend on the participation of many internal and external parties who hold a \nwide variety of roles and responsibilities and may be spread around the world. Roles and \nresponsibilities will differ for each organization and may also differ within an organization based \non the nature of a particular incident.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n7 \nExamples of incident response roles and responsibilities include the following: \n• Leadership. The organizatio",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0025",
+    "title": "NIST SP 800-61r3 — section 26",
+    "text": "rations for Cyber Risk Management \n \n7 \nExamples of incident response roles and responsibilities include the following: \n• Leadership. The organization’s leadership team oversees incident response, allocates \nfunding, and may have decision-making authority on high-impact response actions, such \nas shutting down or rebuilding critical services. \n• Incident handlers. Incident handlers verify that an incident has occurred, collect and \nanalyze data and evidence, prioritize incident response activities, and act appropriately \nto limit damage, find root causes, and restore operations. Incident handlers also often \nprovide input to others on mitigating cybersecurity issues and improving resiliency. An \norganization’s incident handlers might be:  \no On staff (e.g., an incident response team), \no On contract (e.g., outsourcing a security operations center [SOC] to a managed \nsecurity services provider [MSSP] or leveraging a cloud service provider’s \nincident response team when an incident occurs within that provider’s cloud), \nand/or  \no Available when needed (e.g., from a parent organization, a cybersecurity services \nprovider, a business partner, or a law enforcement agency).  \nMany orga",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0026",
+    "title": "NIST SP 800-61r3 — section 27",
+    "text": "lable when needed (e.g., from a parent organization, a cybersecurity services \nprovider, a business partner, or a law enforcement agency).  \nMany organizations may use more than one of these approaches, such as internally \nperforming basic incident response and engaging third-party resources for assistance \nwith certain incidents. Larger organizations may have multiple incident response teams, \nwith each team responsible for a particular logical or physical segment of the \norganization. When this model is employed, the teams should be part of a single \ncoordinated entity (e.g., a federation) to ensure that incident response processes, \nprocedures, and training are consistent across the organization and that information is \nshared among teams. \n• Technology professionals. Cybersecurity, privacy, system, network, cloud, and other \ntechnology architects, engineers, and administrators, as well as software developers, \nmay be involved in incident response and recovery efforts. \n• Legal. Legal experts can review incident response plans, policies, and procedures to \nensure compliance with applicable laws and regulations, including the right to privacy. \nLegal experts can also review contr",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0027",
+    "title": "NIST SP 800-61r3 — section 28",
+    "text": "icies, and procedures to \nensure compliance with applicable laws and regulations, including the right to privacy. \nLegal experts can also review contracts with technology suppliers and other third parties \nwhen there are incident response implications. In addition, incident responders can seek \nguidance from their organization’s legal department if a particular incident may have \nlegal ramifications, such as the prosecution of a suspect, lawsuits, or situations that \nrequire a memorandum of understanding (MOU) or other binding agreement. \n• Public affairs and media relations. Depending on the nature and impact of an incident, \nit may be necessary to inform the media and, by extension, the public. Sometimes, the \nmedia learns of incidents through alternate sources (i.e., not through public affairs \npersonnel). Having a media engagement strategy in place can greatly aid in this \nsituation.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n8 \n• Human resources. Certain human resources practices should consider cybersecurity risk \nmanagement, including pre-employment screening and employee onboarding, \noffboarding, and",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0028",
+    "title": "NIST SP 800-61r3 — section 29",
+    "text": "uman resources practices should consider cybersecurity risk \nmanagement, including pre-employment screening and employee onboarding, \noffboarding, and position changes. Human resources may also be involved if an \nemployee is suspected of intentionally causing an incident. \n• Physical security and facilities management. Some computer security incidents occur \nthrough physical security breaches or involve coordinated logical and physical attacks. \nThe incident response team may also need access to facilities during incident handling \n(e.g., to access a compromised workstation in a locked office). \n• Asset owners. Asset owners (e.g., system owners, data owners, and business process \nowners) may have valuable insights on response and recovery priorities for their \naffected assets. They also need to be kept up to date on the status of response and \nrecovery efforts. \nThird parties may be under contract with an organization to help perform incident response \nactivities. Some third parties may fill a primary role (e.g., an MSSP performing incident \ndetection, response, and recovery activities), while other parties (e.g., cloud service providers \n[CSPs] and internet service providers [ISPs",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0029",
+    "title": "NIST SP 800-61r3 — section 30",
+    "text": "cident \ndetection, response, and recovery activities), while other parties (e.g., cloud service providers \n[CSPs] and internet service providers [ISPs]) may be involved in certain incident response \nactivities for particular types of incidents. This is a shared responsibility model in which the \norganization transfers some of its responsibilities to a provider. These responsibilities should be \nclearly defined in a contract, and the incident response team should be aware of the division of \nresponsibilities, including information flows, coordination, and authority to act on behalf of the \norganization. This also includes restrictions on what the service provider can do, such as sharing \nsanitized incident information with other customers or making and implementing operational \ndecisions (e.g., immediately deactivating certain services to contain an incident).  \nA service provider may detect malicious activity sooner than individual organizations would \nbecause it can correlate events across its customers. In some situations, a service provider \nmight be able to use knowledge of an incident with one customer to proactively prevent similar \nincidents with its other customers. Service",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0030",
+    "title": "NIST SP 800-61r3 — section 31",
+    "text": "provider \nmight be able to use knowledge of an incident with one customer to proactively prevent similar \nincidents with its other customers. Service providers often have privileged access to \norganizational systems and may also have access to sensitive organizational data. Accordingly, \nthe risk of malicious insiders or the service provider being compromised should be considered \nand addressed. Non-disclosure agreements (NDAs) and contracting clauses are options for \ndeterring the unauthorized disclosure of sensitive data. \n2.3. Incident Response Policies, Processes, and Procedures \nOrganizations should have policies that govern their cybersecurity incident response. While a \npolicy is highly individualized to the organization, most incident response policies include the \nsame key elements: \n• Statement of management commitment \n• Purpose and objectives of the policy \n• Scope of the policy (i.e., to whom and what it applies and under what circumstances)\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n9 \n• Definition of events, cybersecurity incidents, investigations, and related terms \n• Roles, responsibilities",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0031",
+    "title": "NIST SP 800-61r3 — section 32",
+    "text": "erations for Cyber Risk Management \n \n9 \n• Definition of events, cybersecurity incidents, investigations, and related terms \n• Roles, responsibilities, and authorities, such as which roles have the authority to \nconfiscate, disconnect, or shut down technology assets \n• Guidelines for prioritizing incidents, estimating their severity, initiating recovery \nprocesses, maintaining or restoring operations, and other key actions \n• Performance measures  \nProcesses and procedures should be based on the incident response policy and plan. \nDocumented procedures should explain how technical processes and other operating \nprocedures should be performed. Procedures can be tested or exercised periodically to verify \ntheir accuracy and can be used to help train new personnel. While it is impossible to have \ndetailed procedures for every possible situation, organizations should consider documenting \nprocedures for responding to the most common types of incidents and threats. Organizations \nshould also develop and maintain procedures for particularly important processes that may be \nurgently needed during emergency situations, such as redeploying the organization’s primary \nauthentication platform",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0032",
+    "title": "NIST SP 800-61r3 — section 33",
+    "text": "important processes that may be \nurgently needed during emergency situations, such as redeploying the organization’s primary \nauthentication platform. \nMany organizations choose to create playbooks as part of documenting their procedures. \nPlaybooks provide actionable steps or tasks for people to perform during various scenarios or \nsituations. Formatting procedures within a playbook instead of another format can improve \ntheir usability. See the Cybersecurity and Infrastructure Security Agency (CISA) Cybersecurity \nIncident & Vulnerability Response Playbooks [CISA-PB] for incident response playbook \nexamples.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n10 \n3. CSF 2.0 Community Profile for Cyber Incident Risk Management \nA CSF Community Profile is a baseline of CSF outcomes that is created and published to address \nshared interests and goals for reducing cybersecurity risk among a number of organizations. A \nCommunity Profile is typically developed for a particular sector, subsector, technology, threat \ntype, or other use case [CSF2.0]. \nThis section defines NIST’s CSF 2.0 Community Profile for cyber inciden",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0033",
+    "title": "NIST SP 800-61r3 — section 34",
+    "text": "ular sector, subsector, technology, threat \ntype, or other use case [CSF2.0]. \nThis section defines NIST’s CSF 2.0 Community Profile for cyber incident risk management. It \nuses the CSF Core as the basis for highlighting and prioritizing cybersecurity outcomes that are \nimportant for incident response, makes recommendations, and provides other supporting \ninformation for certain CSF outcomes within the context of incident response [CSWP32]. The \nCommunity Profile is split into two tables: Table 2 covers Preparation (Govern, Identify, and \nProtect) and Lessons Learned (Identify-Improvement), while Table 3 covers Incident Response \n(Detect, Respond, and Recover). \nEach CSF 2.0 Function, Category, and Subcategory has its own row in one of the two tables. \nEach row’s relative priority within the context of incident response is indicated by one of the \nfollowing:  \n• High: Functions as a core incident response activity for most organizations \n• Medium: Directly supports incident response activities for most organizations \n• Low: Indirectly supports incident response activities for most organizations \nThese priorities are intended as a starting point for organizations, who are encouraged",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0034",
+    "title": "NIST SP 800-61r3 — section 35",
+    "text": "supports incident response activities for most organizations \nThese priorities are intended as a starting point for organizations, who are encouraged to \ncustomize this Community Profile to reflect their own priorities and needs. \nThe last column may contain one or more items that recommend what to do or describe \nadditional considerations or supporting information for some rows. Each item in that column \nhas an ID starting with one of the following: \n• “R” (recommendation: something the organization should do) \n• “C” (consideration: something the organization should consider doing)  \n• “N” (note: additional information besides recommendations and considerations) \nAn R, C, or N designation and its number can be appended to the row’s CSF ID to create an \nidentifier that is unique within the Community Profile (e.g., “GV.OC-03.R1” is recommendation \n1 for CSF Subcategory GV.OC-03). \nRecommendations, considerations, and notes made at a higher level of the CSF (Function or \nCategory) also apply to their component elements (Categories or Subcategories). \nThe recommendations, considerations, and notes supplement what the CSF 2.0 already \nprovides through its documents and online resource",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0035",
+    "title": "NIST SP 800-61r3 — section 36",
+    "text": "ubcategories). \nThe recommendations, considerations, and notes supplement what the CSF 2.0 already \nprovides through its documents and online resources. The recommendations, considerations, \nand notes are not comprehensive, and not all of them will be applicable to every organization. \nTechnologies mentioned in recommendations, considerations, and notes are examples as of \nthis writing and may become outdated.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n11 \nSome recommendations, considerations, and notes use terms that are not defined in this \npublication (e.g., “data breach”). Organizations that adopt the Community Profile should define \nthese terms in the context of their own environments, use cases, and applicable laws and \nregulations. Readers may also choose to consult NIST’s glossary, which contains an aggregation \nof terms and definitions from numerous NIST standards, guidelines, and other publications. \nThe Community Profile is intended for use by most organizations, regardless of sector, size, or \nother factors. Additional versions of this Community Profile could be developed for narrower \naudiences,",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0036",
+    "title": "NIST SP 800-61r3 — section 37",
+    "text": "rganizations, regardless of sector, size, or \nother factors. Additional versions of this Community Profile could be developed for narrower \naudiences, such as federal agencies, small businesses, or educational institutions. For more \ninformation on CSF 2.0 Community Profiles, see the Framework Resource Center. \n3.1. Preparation and Lessons Learned \nTable 2 contains the first part of the Community Profile: Preparation and Lessons Learned, \nwhich both support the Incident Response part of the Community Profile defined in Table 3.  \nNote: Most of the CSF elements in this part of the Profile are not \nspecific to executing incident response activities, so they have lower \npriorities with respect to incident response and do not contain \nrecommendations or considerations. This does not imply that they are \nunnecessary for organizations to achieve, but rather that they are \noutside of the direct scope of responding to incidents. \nTable 2. CSF 2.0 Community Profile part 1: Preparation and Lessons Learned \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nGV (Govern) \nThe organization’s cybersecurity \nrisk management strategy, \nexpectations, and policy a",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0037",
+    "title": "NIST SP 800-61r3 — section 38",
+    "text": "Priority \nRecommendations, Considerations, Notes \nGV (Govern) \nThe organization’s cybersecurity \nrisk management strategy, \nexpectations, and policy are \nestablished, communicated, and \nmonitored \nLow \n \nGV.OC \n(Organizational \nContext) \nThe circumstances — mission, \nstakeholder expectations, \ndependencies, and legal, \nregulatory, and contractual \nrequirements — surrounding \nthe organization’s cybersecurity \nrisk management decisions are \nunderstood \nLow \n \nGV.OC-01 \nThe organizational mission is \nunderstood and informs \ncybersecurity risk management \nLow \n \nGV.OC-02 \nInternal and external \nstakeholders are understood, \nand their needs and \nexpectations regarding \ncybersecurity risk management \nare understood and considered \nLow \n \nGV.OC-03 \nLegal, regulatory, and \ncontractual requirements \nMedium \nR1: Cybersecurity requirements should \ninclude all requirements related to incident\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n12 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nregarding cybersecurity — \nincluding privacy and civil \nliberties obligations — are \nunderstood",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0038",
+    "title": "NIST SP 800-61r3 — section 39",
+    "text": "on \nPriority \nRecommendations, Considerations, Notes \nregarding cybersecurity — \nincluding privacy and civil \nliberties obligations — are \nunderstood and managed \nnotifications, data breach reporting, and \nother aspects of incident response. \nGV.OC-04 \nCritical objectives, capabilities, \nand services that external \nstakeholders depend on or \nexpect from the organization \nare understood and \ncommunicated \nMedium \nN1: Understanding critical external \ndependencies on the organization’s \noperations can aid in prioritizing response \nand recovery efforts. \nGV.OC-05 \nOutcomes, capabilities, and \nservices that the organization \ndepends on are understood and \ncommunicated \nMedium \nN1: Understanding critical dependencies on \nexternal resources (e.g., cloud-based \nhosting providers and managed service \nproviders) can aid in prioritizing response \nand recovery efforts. \nGV.RM (Risk \nManagement \nStrategy) \nThe organization’s priorities, \nconstraints, risk tolerance and \nappetite statements, and \nassumptions are established, \ncommunicated, and used to \nsupport operational risk \ndecisions \nLow \n \nGV.RM-01 \nRisk management objectives are \nestablished and agreed to by \norganizational stakeholders",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0039",
+    "title": "NIST SP 800-61r3 — section 40",
+    "text": "to \nsupport operational risk \ndecisions \nLow \n \nGV.RM-01 \nRisk management objectives are \nestablished and agreed to by \norganizational stakeholders \nLow \n \nGV.RM-02 \nRisk appetite and risk tolerance \nstatements are established, \ncommunicated, and maintained \nLow \n \nGV.RM-03 \nCybersecurity risk management \nactivities and outcomes are \nincluded in enterprise risk \nmanagement processes \nMedium \nR1: Have processes in place so that \nincident-related decision-making will be \ninformed by other types of risks that the \norganization faces (e.g., privacy, \noperational, safety, reputational, AI) and \nnot just cybersecurity risks in isolation. \nGV.RM-04 \nStrategic direction that \ndescribes appropriate risk \nresponse options is established \nand communicated \nLow \n \nGV.RM-05 \nLines of communication across \nthe organization are established \nfor cybersecurity risks, including \nrisks from suppliers and other \nthird parties \nLow \n \nGV.RM-06 \nA standardized method for \ncalculating, documenting, \ncategorizing, and prioritizing \ncybersecurity risks is established \nand communicated \nMedium \nN1: Having a standardized method for \ncalculating cybersecurity risks can aid in \nprioritizing response and recov",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0040",
+    "title": "NIST SP 800-61r3 — section 41",
+    "text": "tablished \nand communicated \nMedium \nN1: Having a standardized method for \ncalculating cybersecurity risks can aid in \nprioritizing response and recovery efforts \nand in comparing the estimated and actual \nimpacts of incidents. \nN2: Such a method can also be used to \nestablish criteria and inform decision\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n13 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nmaking on when to escalate or elevate \nincident response activities. \nGV.RM-07 \nStrategic opportunities (i.e., \npositive risks) are characterized \nand are included in \norganizational cybersecurity risk \ndiscussions \nLow \n \nGV.RR (Roles, \nResponsibilities, \nand Authorities) \nCybersecurity roles, \nresponsibilities, and authorities \nto foster accountability, \nperformance assessment, and \ncontinuous improvement are \nestablished and communicated \nMedium \nR1: Cybersecurity roles, responsibilities, \nand authorities should include incident \nresponse. \nGV.RR-01 \nOrganizational leadership is \nresponsible and accountable for \ncybersecurity risk and fosters a \nculture that is risk-aware",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0041",
+    "title": "NIST SP 800-61r3 — section 42",
+    "text": "dent \nresponse. \nGV.RR-01 \nOrganizational leadership is \nresponsible and accountable for \ncybersecurity risk and fosters a \nculture that is risk-aware, \nethical, and continually \nimproving \nMedium \nR1: See the recommendation for GV.RR. \nGV.RR-02 \nRoles, responsibilities, and \nauthorities related to \ncybersecurity risk management \nare established, communicated, \nunderstood, and enforced \nMedium \nN1: Roles and responsibilities that involve \ncybersecurity incident response typically \nexist throughout an organization and often \ninclude third parties (e.g., those under \ncontract) to help perform incident response \nactivities for the organization.  \nR1: All roles and responsibilities involving \ncybersecurity incident response should be \ndocumented in an organization’s policies.  \nR2: All appropriate individuals or parties \nshould be designated the authority \nnecessary to fulfill their incident response-\nrelated responsibilities. \nR3: See the recommendation for GV.RR. \nGV.RR-03 \nAdequate resources are \nallocated commensurate with \nthe cybersecurity risk strategy, \nroles, responsibilities, and \npolicies \nLow \n \nGV.RR-04 \nCybersecurity is included in \nhuman resources practices \nLow \n \nGV.PO",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0042",
+    "title": "NIST SP 800-61r3 — section 43",
+    "text": "ecurity risk strategy, \nroles, responsibilities, and \npolicies \nLow \n \nGV.RR-04 \nCybersecurity is included in \nhuman resources practices \nLow \n \nGV.PO (Policy) \nOrganizational cybersecurity \npolicy is established, \ncommunicated, and enforced \nHigh \nR1: Cybersecurity policies should include an \nincident response policy.  \nGV.PO-01 \nPolicy for managing \ncybersecurity risks is established \nbased on organizational \ncontext, cybersecurity strategy, \nand priorities and is \ncommunicated and enforced \nLow \n \nGV.PO-02 \nPolicy for managing \ncybersecurity risks is reviewed, \nLow\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n14 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nupdated, communicated, and \nenforced to reflect changes in \nrequirements, threats, \ntechnology, and organizational \nmission \nGV.OV (Oversight) \nResults of organization-wide \ncybersecurity risk management \nactivities and performance are \nused to inform, improve, and \nadjust the risk management \nstrategy \nLow \n \nGV.OV-01 \nCybersecurity risk management \nstrategy outcomes are reviewed \nto inform and adjust strategy",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0043",
+    "title": "NIST SP 800-61r3 — section 44",
+    "text": "adjust the risk management \nstrategy \nLow \n \nGV.OV-01 \nCybersecurity risk management \nstrategy outcomes are reviewed \nto inform and adjust strategy \nand direction \nMedium \nR1: Take past cybersecurity incidents into \naccount when adjusting the organization’s \ncybersecurity risk management strategy \nand direction. \nGV.OV-02 \nThe cybersecurity risk \nmanagement strategy is \nreviewed and adjusted to \nensure coverage of \norganizational requirements \nand risks \nMedium \nR1: Take risks from past cybersecurity \nincidents into account when reviewing the \norganization’s cybersecurity risk \nmanagement strategy. \nGV.OV-03 \nOrganizational cybersecurity \nrisk management performance \nis evaluated and reviewed for \nadjustments needed \nLow \n \nGV.SC \n(Cybersecurity \nSupply Chain Risk \nManagement) \nCyber supply chain risk \nmanagement processes are \nidentified, established, \nmanaged, monitored, and \nimproved by organizational \nstakeholders \nLow \n \nGV.SC-01 \nA cybersecurity supply chain risk \nmanagement program, strategy, \nobjectives, policies, and \nprocesses are established and \nagreed to by organizational \nstakeholders \nLow \n \nGV.SC-02 \nCybersecurity roles and \nresponsibilities for suppliers, \ncustom",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0044",
+    "title": "NIST SP 800-61r3 — section 45",
+    "text": "sses are established and \nagreed to by organizational \nstakeholders \nLow \n \nGV.SC-02 \nCybersecurity roles and \nresponsibilities for suppliers, \ncustomers, and partners are \nestablished, communicated, and \ncoordinated internally and \nexternally \nLow \nN1: See GV.RR-02 for additional \ninformation on cybersecurity incident \nresponse-related roles and responsibilities \nfor third parties. \nGV.SC-03 \nCybersecurity supply chain risk \nmanagement is integrated into \ncybersecurity and enterprise \nrisk management, risk \nassessment, and improvement \nprocesses \nLow \n \nGV.SC-04 \nSuppliers are known and \nprioritized by criticality \nLow\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n15 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nGV.SC-05 \nRequirements to address \ncybersecurity risks in supply \nchains are established, \nprioritized, and integrated into \ncontracts and other types of \nagreements with suppliers and \nother relevant third parties \nMedium \nR1: Cybersecurity supply chain risk \nmanagement requirements should include \ncybersecurity performance and \nvulnerability, threat, and inc",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0045",
+    "title": "NIST SP 800-61r3 — section 46",
+    "text": "es \nMedium \nR1: Cybersecurity supply chain risk \nmanagement requirements should include \ncybersecurity performance and \nvulnerability, threat, and incident disclosure \nand information sharing. \nGV.SC-06 \nPlanning and due diligence are \nperformed to reduce risks \nbefore entering into formal \nsupplier or other third-party \nrelationships \nLow \n \nGV.SC-07 \nThe risks posed by a supplier, \ntheir products and services, and \nother third parties are \nunderstood, recorded, \nprioritized, assessed, responded \nto, and monitored over the \ncourse of the relationship \nLow \n \nGV.SC-08 \nRelevant suppliers and other \nthird parties are included in \nincident planning, response, \nand recovery activities \nMedium \nN1: The GV.SC-08 Subcategory is specific to \nincident planning, response, and recovery. \nN2: See ID.IM-02 for more information on \ntests and exercises. \nGV.SC-09 \nSupply chain security practices \nare integrated into \ncybersecurity and enterprise \nrisk management programs, and \ntheir performance is monitored \nthroughout the technology \nproduct and service life cycle \nLow \n \nGV.SC-10 \nCybersecurity supply chain risk \nmanagement plans include \nprovisions for activities that \noccur after the conclus",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0046",
+    "title": "NIST SP 800-61r3 — section 47",
+    "text": "ervice life cycle \nLow \n \nGV.SC-10 \nCybersecurity supply chain risk \nmanagement plans include \nprovisions for activities that \noccur after the conclusion of a \npartnership or service \nagreement \nLow \n \nID (Identify) \nThe organization’s current \ncybersecurity risks are \nunderstood \nMedium \nN1: All Identify Categories are beneficial for \npreventing, responding to, and recovering \nfrom incidents. \nID.AM (Asset \nManagement) \nAssets (e.g., data, hardware, \nsoftware, systems, facilities, \nservices, people) that enable \nthe organization to achieve \nbusiness purposes are identified \nand managed consistent with \ntheir relative importance to \norganizational objectives and \nthe organization’s risk strategy \nMedium \nN1: All asset management information can \nbe helpful to incident responders in many \nways, such as understanding the impact of \nan incident, identifying other assets that \nmay be targeted, and prioritizing response \nand recovery efforts. \nID.AM-01 \nInventories of hardware \nmanaged by the organization \nare maintained \nMedium \nR1: Make current and automatically \nupdated inventories of the internal and \nexternal hardware used by the organization\n\nNIST SP 800-61r3 \n \nIncident Response",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0047",
+    "title": "NIST SP 800-61r3 — section 48",
+    "text": "current and automatically \nupdated inventories of the internal and \nexternal hardware used by the organization\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n16 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \navailable for use in finding and addressing \nvulnerabilities, monitoring operations and \nusage to detect adverse cybersecurity \nevents, and identifying “shadow IT” usage. \nID.AM-02 \nInventories of software, \nservices, and systems managed \nby the organization are \nmaintained \nMedium \nR1: Make current and automatically \nupdated inventories of the internal and \nexternal software, services, and systems \nused by the organization available for use in \nfinding and addressing vulnerabilities, \nmonitoring operations and usage to detect \nadverse cybersecurity events, and \nidentifying “shadow IT” usage. \nID.AM-03 \nRepresentations of the \norganization’s authorized \nnetwork communication and \ninternal and external network \ndata flows are maintained \nMedium \nN1: Maintaining network data flow \nrepresentations can improve the accuracy \nof detecting malicious data flows and \ncommunic",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0048",
+    "title": "NIST SP 800-61r3 — section 49",
+    "text": "s are maintained \nMedium \nN1: Maintaining network data flow \nrepresentations can improve the accuracy \nof detecting malicious data flows and \ncommunication.  \nC1: Consider leveraging automation and \nzero trust architectures to automatically \ncreate and maintain network data flow \nrepresentations. \nID.AM-04 \nInventories of services provided \nby suppliers are maintained \nMedium \nR1: Current and automatically updated \ninventories of the services provided by the \norganization’s suppliers should be available \nfor use in finding and addressing \nvulnerabilities, monitoring operations and \nusage to detect adverse cybersecurity \nevents, and identifying “shadow IT” usage. \nID.AM-05 \nAssets are prioritized based on \nclassification, criticality, \nresources, and impact on the \nmission \nMedium \nR1: Prioritizing the organization’s assets —  \nincluding hardware, software, services, \nsystems, and data — and being aware of \nthe dependencies between those and other \nassets should help indicate where the \norganization should focus its resources in \nterms of protection, detection, response, \nand recovery. \nID.AM-07 \nInventories of data and \ncorresponding metadata for \ndesignated data types are \nmaintai",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0049",
+    "title": "NIST SP 800-61r3 — section 50",
+    "text": "of protection, detection, response, \nand recovery. \nID.AM-07 \nInventories of data and \ncorresponding metadata for \ndesignated data types are \nmaintained \nMedium \nR1: Having data inventories that include \ndata classifications, owners, and logical and \nphysical locations should provide valuable \ninformation on what data may have been \ninvolved in an incident. \nID.AM-08 \nSystems, hardware, software, \nservices, and data are managed \nthroughout their life cycles \nMedium \nR1: Managing hardware, software, services, \nand systems throughout their life cycles \nshould take cybersecurity into \nconsideration, such as configuring them \nsecurely, reducing attack surfaces, and \nupdating inventory information as assets \nare transferred or relocated. \nID.RA (Risk \nAssessment) \nThe cybersecurity risk to the \norganization, assets, and \nindividuals is understood by the \norganization \nMedium \nN1: Risk assessment practices are critical \nfor reducing the number of incidents that \noccur and the impacts they cause. Risk \nassessment is a vast topic that is outside of\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n17 \nCSF Element \nCSF Ele",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0050",
+    "title": "NIST SP 800-61r3 — section 51",
+    "text": "side of\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n17 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nthe scope of this Profile other than to \nsummarize its importance for incident \nresponse. \nN2: See [SP800-37r2] for more information \non cybersecurity risk. \nN3: See [SP800-30r1] for more information \non cybersecurity risk assessment. \nID.RA-01 \nVulnerabilities in assets are \nidentified, validated, and \nrecorded \nMedium \nR1: Understand current known \ncybersecurity vulnerabilities to make \ninformed decisions when assessing risks. \nThis should include all types of known \ncybersecurity vulnerabilities, such as flaws \nin software (including firmware and \nsoftware-based services) developed by the \norganization and third parties, software \nmisconfigurations, network and system \ndesign and implementation weaknesses, \nphysical vulnerabilities and resilience issues \nin facilities that house computing assets, \nand integrity violations in hardware and \nsoftware (e.g., counterfeit, evidence of \ntampering). \nN1: See the notes for ID.RA. \nID.RA-02 \nCyber threat intelligence is \nrec",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0051",
+    "title": "NIST SP 800-61r3 — section 52",
+    "text": "ions in hardware and \nsoftware (e.g., counterfeit, evidence of \ntampering). \nN1: See the notes for ID.RA. \nID.RA-02 \nCyber threat intelligence is \nreceived from information \nsharing forums and sources \nHigh \nN1: Cyber threat intelligence (CTI) is threat \ninformation that has been aggregated, \ntransformed, analyzed, interpreted, or \nenriched to provide the necessary context \nfor decision-making processes. \nOrganizations can receive CTI from \nautomated CTI feeds, information sharing \nforums, and other sources.  \nN2: CTI is useful for incident response and \nrecovery in several ways, including \nobtaining information on new threats, \nimproving the accuracy of cybersecurity \ntechnologies with incident detection or \nresponse capabilities, and understanding \nthe tactics, techniques, and procedures \n(TTPs) used by attackers. TTPs describe the \nbehavior of an actor. Information on \nthreats and their TTPs is widely available \nthrough repositories and knowledge bases. \nN3: [SP800-150] provides guidelines on \nconsuming, using, and storing CTIs, as well \nas establishing CTI relationships. \nN4: See the notes for ID.RA. \nID.RA-03 \nInternal and external threats to \nthe organization are identified",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0052",
+    "title": "NIST SP 800-61r3 — section 53",
+    "text": "well \nas establishing CTI relationships. \nN4: See the notes for ID.RA. \nID.RA-03 \nInternal and external threats to \nthe organization are identified \nand recorded \nMedium \nR1: Identify internal and external threats \nduring routine operations and from CTI.  \nN1: Other possible methods that \norganizations could consider for identifying\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n18 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nthreats include threat hunting and the use \nof deception technologies. \nN2: See the notes for ID.RA. \nID.RA-04 \nPotential impacts and \nlikelihoods of threats exploiting \nvulnerabilities are identified and \nrecorded \nMedium \nN1: Recording the potential impacts and \nlikelihoods of threats exploiting \nvulnerabilities is necessary for determining \nrisk. \nN2: See the notes for ID.RA. \nID.RA-05 \nThreats, vulnerabilities, \nlikelihoods, and impacts are \nused to understand inherent \nrisk and inform risk response \nprioritization \nHigh \nR1: Organizations with mechanisms in place \nfor estimating cybersecurity risk as part of \ntheir cybersecurity risk managem",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0053",
+    "title": "NIST SP 800-61r3 — section 54",
+    "text": "onse \nprioritization \nHigh \nR1: Organizations with mechanisms in place \nfor estimating cybersecurity risk as part of \ntheir cybersecurity risk management \nprograms should use those mechanisms for \nincident response purposes.  \nC1: Consider using threat modeling and \nother methods to inform the understanding \nof attack vectors, attack surfaces, and \nlateral paths through organizational assets, \namong other factors that contribute to risk. \nN1: See the notes for ID.RA. \nID.RA-06 \nRisk responses are chosen, \nprioritized, planned, tracked, \nand communicated \nHigh \nN1: Risk responses are needed to prevent \nfuture incidents from occurring and existing \nincidents from reoccurring.  \nR1: The organization’s policies, processes, \nand procedures should provide guidance \n(e.g., criteria) for making decisions \nregarding appropriate risk responses in \nvarious situations.  \nN2: The four types of risk responses are 1) \nAccept (accept the risk as is), 2) Mitigate \n(reduce the risk by eliminating the \nvulnerabilities and/or deploying additional \nsecurity controls to reduce vulnerability \nexploitation), 3) Transfer (reduce the risk by \nsharing some of the consequences with \nanother party), and 4) Avo",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0054",
+    "title": "NIST SP 800-61r3 — section 55",
+    "text": "ty controls to reduce vulnerability \nexploitation), 3) Transfer (reduce the risk by \nsharing some of the consequences with \nanother party), and 4) Avoid (ensure that \nthe risk does not occur by eliminating the \nattack surface). \nN3: See [IR8286] for more information on \nrisk responses. \nN4: See the notes for ID.RA. \nID.RA-07 \nChanges and exceptions are \nmanaged, assessed for risk \nimpact, recorded, and tracked \nMedium \nN1: See the notes for ID.RA. \nID.RA-08 \nProcesses for receiving, \nanalyzing, and responding to \nvulnerability disclosures are \nestablished \nMedium \nN1: A vulnerability disclosure is when a \nthird party reports a suspected vulnerability \nin one of the organization’s systems to the \norganization. \nN2: See [SP800-216] for more information \non vulnerability disclosure. \nN3: See Section 4.5.2 of [SP800-150] for \nguidance on using data formats that may\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n19 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nassist with maintaining cross-references \nbetween asset inventories and sources of \nvulnerability disclosures. \nN4:",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0055",
+    "title": "NIST SP 800-61r3 — section 56",
+    "text": "endations, Considerations, Notes \nassist with maintaining cross-references \nbetween asset inventories and sources of \nvulnerability disclosures. \nN4: See the notes for ID.RA. \nID.RA-09 \nThe authenticity and integrity of \nhardware and software are \nassessed prior to acquisition \nand use \nMedium \nN1: See the notes for ID.RA. \nID.RA-10 \nCritical suppliers are assessed \nprior to acquisition \nLow \nN1: See the notes for ID.RA. \nID.IM \n(Improvement) \nImprovements to organizational \ncybersecurity risk management \nprocesses, procedures, and \nactivities are identified across \nall CSF Functions \nMedium \nN1: See the note for ID. \nID.IM-01 \nImprovements are identified \nfrom evaluations \nMedium \nR1: Periodically evaluate incident response \nprogram performance to identify problems \nand deficiencies that should be corrected.  \nN1: Possible evaluation forms include self-\nassessments, third-party assessments, and \nindependent audits. \nID.IM-02 \nImprovements are identified \nfrom security tests and \nexercises, including those done \nin coordination with suppliers \nand relevant third parties \nHigh \nN1: Incident response exercises and tests \nmay provide helpful information for \nprogram evaluation and pre",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0056",
+    "title": "NIST SP 800-61r3 — section 57",
+    "text": "uppliers \nand relevant third parties \nHigh \nN1: Incident response exercises and tests \nmay provide helpful information for \nprogram evaluation and prepare staff and \ninvolved third parties (e.g., critical service \nproviders and product suppliers) for future \nincident response activities.  \nN2: See [SP800-84] for more information on \nsimulations, tabletop discussions, and other \nforms of exercises. \nID.IM-03 \nImprovements are identified \nfrom the execution of \noperational processes, \nprocedures, and activities \nHigh \nN1: The execution of operational processes, \nprocedures, and activities includes all \nincident response and recovery efforts.  \nN2: Improvements that affect incident \nresponse can be made to the incident \nresponse program itself (e.g., plan, policy, \nprocesses, procedures) or to other aspects \nof the organization’s cybersecurity risk \nmanagement activities (e.g., identifying \nTTPs that are not currently being blocked \nby safeguards or flagged by detection \ntechnologies).  \nN3: Improvements are often identified \nwhen creating follow-up reports for \nincidents or holding “lessons learned” \nmeetings when an incident’s recovery \nefforts are concluding, especially if the \ninc",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0057",
+    "title": "NIST SP 800-61r3 — section 58",
+    "text": "ng follow-up reports for \nincidents or holding “lessons learned” \nmeetings when an incident’s recovery \nefforts are concluding, especially if the \nincident was major. This provides an \nopportunity to review what happened, \nwhat actions were taken, and how effective \nthose actions were, as well as hear from all\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n20 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nparties involved in the incident. Such a \nmeeting can help identify and prioritize \npotential improvements to the \norganization’s incident response program \nand cybersecurity risk management efforts. \nID.IM-04 \nIncident response plans and \nother cybersecurity plans that \naffect operations are \nestablished, communicated, \nmaintained, and improved \nHigh \nN1: Several types of cybersecurity plans are \nrelevant to incident response, including 1) \nincident response plans, which provide the \nroadmap for implementing the incident \nresponse capability; 2) vulnerability \nmanagement plans, which help identify and \nassess all types of vulnerabilities and \nprioritize, test, and impl",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0058",
+    "title": "NIST SP 800-61r3 — section 59",
+    "text": "response capability; 2) vulnerability \nmanagement plans, which help identify and \nassess all types of vulnerabilities and \nprioritize, test, and implement risk \nresponses; and 3) business continuity plans. \nR1: Synchronize business continuity plans \nwith incident response plans since incidents \ncan undermine business resilience.  \nR2: Review and update all cybersecurity \nplans periodically or when a need for \nsignificant improvements is identified.  \nR3: Base each cybersecurity plan on the \norganization’s unique requirements, \nmission, size, structure, and functions.  \nR4: Each cybersecurity plan should identify \nthe resources and management support \nneeded to carry it out successfully. \nN2: Business continuity planning \nprofessionals who are made aware of \ncybersecurity incidents and their impacts \ncan fine-tune business impact assessments, \nrisk assessments, and continuity of \noperations plans. Further, because business \ncontinuity planners have extensive \nexpertise in minimizing operational \ndisruption during severe circumstances, \nthey may be valuable in planning responses \nto specific incident types, such as denial-of-\nservice (DoS) conditions. \nPR (Protect) \nSafeguards to ma",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0059",
+    "title": "NIST SP 800-61r3 — section 60",
+    "text": "they may be valuable in planning responses \nto specific incident types, such as denial-of-\nservice (DoS) conditions. \nPR (Protect) \nSafeguards to manage the \norganization’s cybersecurity \nrisks are used \nMedium \nN1: Lowering the number of incidents \nshortens operational disruptions, allows \nresponse teams to focus on high-impact \nsituations, and reduces the impact of \nincidents that do occur (e.g., by making it \nharder for attackers to move laterally \nthroughout an environment and, thus, \nslowing them down).  \nN2: Understanding the protection \nmechanisms in place can help personnel \ndeploy methods to detect protection \nfailures and bypasses.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n21 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nN3: It is outside of the scope of this Profile \nto provide recommendations and \nconsiderations on protecting assets, other \nthan a few notes of practices that \nspecifically benefit incident response \nactivities. \nPR.AA (Identity \nManagement, \nAuthentication, \nand Access \nControl) \nAccess to physical and logical \nassets is limited to aut",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0060",
+    "title": "NIST SP 800-61r3 — section 61",
+    "text": "t response \nactivities. \nPR.AA (Identity \nManagement, \nAuthentication, \nand Access \nControl) \nAccess to physical and logical \nassets is limited to authorized \nusers, services, and hardware \nand managed commensurate \nwith the assessed risk of \nunauthorized access \nMedium \nN1: See the notes for PR. \nPR.AA-01 \nIdentities and credentials for \nauthorized users, services, and \nhardware are managed by the \norganization \nMedium \nN1: See the notes for PR. \nPR.AA-02 \nIdentities are proofed and \nbound to credentials based on \nthe context of interactions \nMedium \nN1: See the notes for PR. \nPR.AA-03 \nUsers, services, and hardware \nare authenticated \nMedium \nN1: See the notes for PR. \nPR.AA-04 \nIdentity assertions are \nprotected, conveyed, and \nverified \nMedium \nN1: See the notes for PR. \nPR.AA-05 \nAccess permissions, \nentitlements, and \nauthorizations are defined in a \npolicy, managed, enforced, and \nreviewed, and incorporate the \nprinciples of least privilege and \nseparation of duties \nMedium \nN1: See the notes for PR. \nPR.AA-06 \nPhysical access to assets is \nmanaged, monitored, and \nenforced commensurate with \nrisk \nMedium \nN1: See the notes for PR. \nPR.AT (Awareness \nand Training) \nThe organ",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0061",
+    "title": "NIST SP 800-61r3 — section 62",
+    "text": "to assets is \nmanaged, monitored, and \nenforced commensurate with \nrisk \nMedium \nN1: See the notes for PR. \nPR.AT (Awareness \nand Training) \nThe organization’s personnel \nare provided with cybersecurity \nawareness and training so that \nthey can perform their \ncybersecurity-related tasks \nMedium \nN1: See the notes for PR. \nPR.AT-01 \nPersonnel are provided with \nawareness and training so that \nthey possess the knowledge and \nskills to perform general tasks \nwith cybersecurity risks in mind \nMedium \nN1: See the notes for PR. \nPR.AT-02 \nIndividuals in specialized roles \nare provided with awareness \nand training so that they \npossess the knowledge and \nskills to perform relevant tasks \nwith cybersecurity risks in mind \nMedium \nR1: Role-based training should include \nincident-related responsibilities. \nN1: See the notes for PR.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n22 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nPR.DS (Data \nSecurity) \nData are managed consistent \nwith the organization’s risk \nstrategy to protect the \nconfidentiality, integrity, and \navailability of",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0062",
+    "title": "NIST SP 800-61r3 — section 63",
+    "text": "(Data \nSecurity) \nData are managed consistent \nwith the organization’s risk \nstrategy to protect the \nconfidentiality, integrity, and \navailability of information \nMedium \nN1: See the notes for PR. \nPR.DS-01 \nThe confidentiality, integrity, \nand availability of data-at-rest \nare protected \nMedium \nN1: See the notes for PR. \nPR.DS-02 \nThe confidentiality, integrity, \nand availability of data-in-\ntransit are protected \nMedium \nN1: See the notes for PR. \nPR.DS-10 \nThe confidentiality, integrity, \nand availability of data-in-use \nare protected \nMedium \nN1: See the notes for PR. \nPR.DS-11 \nBackups of data are created, \nprotected, maintained, and \ntested \nHigh \nN1: Backups can be particularly important \nfor recovery purposes when data integrity \nor availability is affected. \nN1: See the notes for PR. \nPR.PS (Platform \nSecurity) \nThe hardware, software (e.g., \nfirmware, operating systems, \napplications), and services of \nphysical and virtual platforms \nare managed consistent with \nthe organization’s risk strategy \nto protect their confidentiality, \nintegrity, and availability \nMedium \nN1: See the notes for PR. \nPR.PS-01 \nConfiguration management \npractices are established and \napplied \nMe",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0063",
+    "title": "NIST SP 800-61r3 — section 64",
+    "text": "ality, \nintegrity, and availability \nMedium \nN1: See the notes for PR. \nPR.PS-01 \nConfiguration management \npractices are established and \napplied \nMedium \nN1: See the notes for PR. \nPR.PS-02 \nSoftware is maintained, \nreplaced, and removed \ncommensurate with risk \nMedium \nN1: See the notes for PR. \nPR.PS-03 \nHardware is maintained, \nreplaced, and removed \ncommensurate with risk \nMedium \nN1: See the notes for PR. \nPR.PS-04 \nLog records are generated and \nmade available for continuous \nmonitoring \nMedium \nN1: Logs are particularly important for \nrecording and preserving information that \nis vital to incident detection, response, and \nrecovery activities. \nN2: For more information on log \nmanagement, see [SP800-92r1]. \nN3: See the notes for PR. \nPR.PS-05 \nInstallation and execution of \nunauthorized software are \nprevented \nMedium \nN1: See the notes for PR. \nPR.PS-06 \nSecure software development \npractices are integrated, and \ntheir performance is monitored \nthroughout the software \ndevelopment life cycle \nMedium \nN1: For more information on secure \nsoftware development practices, including \nresponding to vulnerabilities or incidents \nthat involve released software, see [SP800-\n218].",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0064",
+    "title": "NIST SP 800-61r3 — section 65",
+    "text": "on secure \nsoftware development practices, including \nresponding to vulnerabilities or incidents \nthat involve released software, see [SP800-\n218]. \nN2: See the notes for PR.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n23 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nPR.IR (Technology \nInfrastructure \nResilience) \nSecurity architectures are \nmanaged with the \norganization’s risk strategy to \nprotect asset confidentiality, \nintegrity, and availability, and \norganizational resilience \nMedium \nN1: See the notes for PR. \nPR.IR-01 \nNetworks and environments are \nprotected from unauthorized \nlogical access and usage \nMedium \nN1: See the notes for PR. \nPR.IR-02 \nThe organization’s technology \nassets are protected from \nenvironmental threats \nMedium \nN1: See the notes for PR. \nPR.IR-03 \nMechanisms are implemented \nto achieve resilience \nrequirements in normal and \nadverse situations \nMedium \nN1: See the notes for PR. \nPR.IR-04 \nAdequate resource capacity to \nensure availability is maintained \nMedium \nN1: See the notes for PR. \n3.2. Incident Response \nTable 3 contains the se",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0065",
+    "title": "NIST SP 800-61r3 — section 66",
+    "text": "Adequate resource capacity to \nensure availability is maintained \nMedium \nN1: See the notes for PR. \n3.2. Incident Response \nTable 3 contains the second part of the Community Profile: Incident Response.  \nNote: All of the CSF elements in this part of the Profile are specific to \nresponding to incidents, so they have higher priorities with respect to \nincident response than those in the first part. Accordingly, all CSF \nelements in this part have recommendations or considerations.  \nTable 3. CSF 2.0 Community Profile part 2: Incident Response \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nDE (Detect) \nPossible cybersecurity attacks \nand compromises are found and \nanalyzed \nHigh \nN1: The Detect Function encompasses all of \nthe monitoring and analysis activities \nperformed to find and characterize \npotentially adverse events and, in turn, find \ncybersecurity incidents. \nDE.CM \n(Continuous \nMonitoring) \nAssets are monitored to find \nanomalies, indicators of \ncompromise, and other \npotentially adverse events \nHigh \nR1: Continuous monitoring for \nunauthorized activity, deviations from \nexpected activity, and changes in security \nposture should",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0066",
+    "title": "NIST SP 800-61r3 — section 67",
+    "text": "verse events \nHigh \nR1: Continuous monitoring for \nunauthorized activity, deviations from \nexpected activity, and changes in security \nposture should involve the following types \nof assets at all times: networks and \nnetwork services; computing hardware and \nsoftware, runtime environments, and their \ndata; the physical environment; personnel \nactivity and technology usage; and external \nservice provider activities.  \nC1: Consider using cyber threat information \nwith continuous monitoring to help identify \npotentially malicious activities that may \nhave otherwise been considered benign.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n24 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nR2: Tune the continuous monitoring \ntechnologies to reduce false positives and \nfalse negatives to acceptable levels. \nDE.CM-01 \nNetworks and network services \nare monitored to find potentially \nadverse events \nHigh \nR1: Monitoring should include wired and \nwireless networks, network \ncommunications and flows, network \nservices (e.g., DNS and BGP), and the \npresence of unauthorized or rogue \nne",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0067",
+    "title": "NIST SP 800-61r3 — section 68",
+    "text": "wired and \nwireless networks, network \ncommunications and flows, network \nservices (e.g., DNS and BGP), and the \npresence of unauthorized or rogue \nnetworks within facilities. \nDE.CM-02 \nThe physical environment is \nmonitored to find potentially \nadverse events \nHigh \nR1: Monitoring the physical environment \nshould include all successful and failed \naccess attempts into all controlled areas, \nthe movement of people and equipment \ninto and out of secure areas of facilities, \nand signs of tampering with physical access \ncontrols. \nDE.CM-03 \nPersonnel activity and \ntechnology usage are monitored \nto find potentially adverse \nevents \nHigh \nR1: Monitoring personnel activity and \ntechnology usage should include \nanomalous user activity or unusual \npatterns of activity, authentication and \nlogical access attempts, and the use of \ndeception technology. \nDE.CM-06 \nExternal service provider \nactivities and services are \nmonitored to find potentially \nadverse events \nHigh \nR1: Monitoring external service provider \nactivities and services should include \nremote and on-site administration and \nmaintenance activities that providers \nperform on organizational systems and \ndeviations from expected",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0068",
+    "title": "NIST SP 800-61r3 — section 69",
+    "text": "include \nremote and on-site administration and \nmaintenance activities that providers \nperform on organizational systems and \ndeviations from expected behavior by \ncloud-based services, internet service \nproviders, and other service providers. \nDE.CM-09 \nComputing hardware and \nsoftware, runtime environments, \nand their data are monitored to \nfind potentially adverse events \nHigh \nR1: Monitor email, web, file sharing, \ncollaboration services, and other common \nattack vectors to detect malware, phishing, \ndata leaks, exfiltration, and other adverse \nevents. \nR2: Monitor authentication attempts to \nidentify attacks against credentials and \nunauthorized credential use. \nR3: Monitor software and hardware \nconfigurations for deviations from security \nbaselines. \nR4: Monitor hardware and software, \nincluding cybersecurity protection \nmechanisms, for signs of tampering, failure, \nor compromise.  \nR5: Monitor endpoints for cyber health \nissues (e.g., missing patches, malware \ninfections, or unauthorized software), and \nredirect endpoints with issues to a \nremediation environment before access is \nauthorized.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsider",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0069",
+    "title": "NIST SP 800-61r3 — section 70",
+    "text": "issues to a \nremediation environment before access is \nauthorized.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n25 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nDE.AE (Adverse \nEvent Analysis) \nAnomalies, indicators of \ncompromise, and other \npotentially adverse events are \nanalyzed to characterize the \nevents and detect cybersecurity \nincidents \nHigh \nN1: Adverse event analysis involves \nstudying the data on potentially adverse \nevents collected by continuous monitoring \nto find possible attacks and compromises \nand declaring when an incident has \noccurred so as to initiate incident response \nactivities. \nR1: The volume of potentially adverse \nevents to be analyzed is generally quite \nhigh, so organizations should rely on \ntechnical solutions that filter large event \ndatasets down to a subset that is suitable \nfor human viewing and analysis.  \nN2: The fidelity of events varies based on \nmany factors. Anomalies may have benign \nor malicious foundations. Some incidents \nare relatively easy to find amid the noise, \nwhile others require deep, specialized \ntechnical know",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0070",
+    "title": "NIST SP 800-61r3 — section 71",
+    "text": "benign \nor malicious foundations. Some incidents \nare relatively easy to find amid the noise, \nwhile others require deep, specialized \ntechnical knowledge and experience. \nN3: CTI can be invaluable in detecting \nmalicious activity early, reducing its impact, \nand shortening recovery time. Signs of an \nincident may be more obvious later in the \nattack life cycle, but the incident’s impact \nand scope may be much larger.  \nR2: Organizations should strive to find \nincidents earlier in the attack life cycle and \ntake a proactive approach to incident \ndetection and response. \nDE.AE-02 \nPotentially adverse events are \nanalyzed to better understand \nassociated activities \nHigh \nR1: Use tools (e.g., security information \nand event management [SIEM]; security \norchestration, automation, and response \n[SOAR]) to continuously monitor log events \nfor known malicious and suspicious activity \nand to generate reports on their findings. \nR2: Utilize up-to-date CTI in log analysis \ntools to improve detection accuracy and \ncharacterize threat actors, their methods, \nand indicators of compromise. \nR3: Regularly conduct manual reviews of \nlog events for technologies that cannot be \nsufficiently monito",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0071",
+    "title": "NIST SP 800-61r3 — section 72",
+    "text": "heir methods, \nand indicators of compromise. \nR3: Regularly conduct manual reviews of \nlog events for technologies that cannot be \nsufficiently monitored through automation. \nDE.AE-03 \nInformation is correlated from \nmultiple sources \nHigh \nR1: Constantly transfer the log data \ngenerated by other sources to a relatively \nsmall number of log servers.  \nR2: Use event correlation technology (e.g., \nSIEM, SOAR) to gather pieces of related \ndata captured by multiple sources. \nR3: Utilize CTI to help correlate events \namong log sources.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n26 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nDE.AE-04 \nThe estimated impact and scope \nof adverse events are \nunderstood \nHigh \nR1: Estimate the impact and scope of \nadverse events through automated (e.g., \nSIEM, SOAR) and/or manual means, and \nreview and refine the estimates. \nDE.AE-06 \nInformation on adverse events is \nprovided to authorized staff and \ntools \nHigh \nR1: Generate alerts and provide them to \ncybersecurity and incident response tools \nand staff (e.g., the SOC and incident \nrespo",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0072",
+    "title": "NIST SP 800-61r3 — section 73",
+    "text": "aff and \ntools \nHigh \nR1: Generate alerts and provide them to \ncybersecurity and incident response tools \nand staff (e.g., the SOC and incident \nresponders). \nR2: Make log analysis findings accessible to \nincident responders and other authorized \npersonnel at all times. \nR3: Consider automatically creating and \nassigning tickets in the organization’s \nticketing system when certain types of \nalerts occur. \nDE.AE-07 \nCyber threat intelligence and \nother contextual information are \nintegrated into the analysis \nHigh \nR1: Integrate up-to-date CTI and other \ncontextual information (e.g., asset \ninventories) into adverse event analysis to \nimprove detection accuracy and \ncharacterize threat actors, their methods, \nand indicators of compromise. \nR2: Rapidly acquire and analyze \nvulnerability disclosures for the \norganization’s technologies from suppliers, \nvendors, and third-party security \nadvisories. \nN1: See [SP800-150] for guidelines on \nconsuming, using, and storing CTIs, as well \nas establishing CTI relationships. \nDE.AE-08 \nIncidents are declared when \nadverse events meet the defined \nincident criteria \nHigh \nR1: Apply incident criteria to known and \nassumed characteristics of anal",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0073",
+    "title": "NIST SP 800-61r3 — section 74",
+    "text": "are declared when \nadverse events meet the defined \nincident criteria \nHigh \nR1: Apply incident criteria to known and \nassumed characteristics of analyzed \nactivity, and consider known false positives \nto determine whether an incident should \nbe declared. \nRS (Respond) \nActions regarding a detected \ncybersecurity incident are taken \nHigh \nN1: The Respond Function is at the core of \nincident response activities. \nRS.MA (Incident \nManagement) \nResponses to detected \ncybersecurity incidents are \nmanaged \nHigh \nN1: Incident management involves \noverseeing responses to all incidents and \nshifting priorities and resources as needed. \nEvaluating the overall risk from an incident \nand applying the appropriate prioritization \nare perhaps the most critical decision \npoints in the incident response process.  \nR1: Because of resource limitations, \nincidents should not be handled on a first-\ncome, first-served basis. \nR2: Incident triage, prioritization, \nescalation, and elevation and decisions \nregarding when to initiate recovery \nprocesses should all be based on a set of \nrisk evaluation factors. This set can range\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nCons",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0074",
+    "title": "NIST SP 800-61r3 — section 75",
+    "text": "d all be based on a set of \nrisk evaluation factors. This set can range\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n27 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nfrom simple to incredibly complex, \ndepending on the needs and maturity of an \norganization. \nN2: Examples of possible risk evaluation \nfactors include asset criticality, functional \nimpact of the incident, data impact of the \nincident, stage of observed activity, threat \nactor characterization, and recoverability. \nR3: The incident response status should be \ntracked for each incident along with \npertinent information, such as an incident \nsummary, indicators of compromise related \nto the incident, the status and expected \ntime frame for each assigned action, and \nnext steps to be taken. \nRS.MA-01 \nThe incident response plan is \nexecuted in coordination with \nrelevant third parties once an \nincident is declared \nHigh \nR1: Detection technologies should \nautomatically report incidents that they \nhave confirmed. \nC1: Consider designating an incident lead \nfor each incident. \nR2: If appropriate, contact the",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0075",
+    "title": "NIST SP 800-61r3 — section 76",
+    "text": "atically report incidents that they \nhave confirmed. \nC1: Consider designating an incident lead \nfor each incident. \nR2: If appropriate, contact the \norganization’s incident response service \nprovider to request assistance. \nR3: Initiate execution of other \ncybersecurity plans as needed (e.g., \nbusiness continuity and disaster recovery \nplans) to support incident response. \nRS.MA-02 \nIncident reports are triaged and \nvalidated \nHigh \nR1: Perform a preliminary review of a new \nincident report to verify that a \ncybersecurity incident has occurred, then \nestimate the severity of the incident and \nthe level of urgency needed to respond to \nit. \nR2: Have mechanisms in place for third \nparties to report possible incidents that \ninvolve the organization. Reports should be \ncarefully monitored and taken seriously. \nFor example, the organization might be \ncontacted by a party claiming that its \nsystems are being attacked by a system at \nthe organization. External users may report \nother indicators, such as an unavailable \nservice. Other incident response teams \nmay also report incidents to the \norganization. \nRS.MA-03 \nIncidents are categorized and \nprioritized \nHigh \nR1: Perform a more det",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0076",
+    "title": "NIST SP 800-61r3 — section 77",
+    "text": "nt response teams \nmay also report incidents to the \norganization. \nRS.MA-03 \nIncidents are categorized and \nprioritized \nHigh \nR1: Perform a more detailed review of \nincidents to help categorize them by \nincident type (e.g., data breach, \nransomware, account takeover, denial of \nservice).\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n28 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nR2: Prioritize how quickly incident response \nshould be performed for each incident \nbased on its scope, likely impact, time-\ncritical nature, and resource availability. \nR3: Select incident response strategies for \nactive incidents by balancing the need to \nquickly recover from an incident with the \nneed to observe the attacker or conduct a \nmore thorough investigation. \nN1: Every response strategy decision has \ntrade-offs. For example, a strategy that \nsupports observing the attacker’s behavior \nor conducting a more thorough \ninvestigation may be at odds with the need \nto quickly return to normal operations. \nRS.MA-04 \nIncidents are escalated or \nelevated as needed \nHigh \nN1: Escalation g",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0077",
+    "title": "NIST SP 800-61r3 — section 78",
+    "text": "ay be at odds with the need \nto quickly return to normal operations. \nRS.MA-04 \nIncidents are escalated or \nelevated as needed \nHigh \nN1: Escalation generally refers to \nincreasing resources or time frames, while \nelevation usually indicates involving a \nhigher level of management in the \nresponse efforts. \nR1: Track and validate the status of all \nongoing incidents so that incidents in need \nof more response resources or a change in \nresponse strategy can be identified and the \nnecessary changes initiated rapidly.  \nRS.MA-05 \nThe criteria for initiating incident \nrecovery are applied \nHigh \nR1: Apply incident recovery criteria to \nknown and assumed characteristics of the \nincident to determine when an incident’s \nrecovery processes should be initiated. \nR2: Take the possible operational \ndisruption of incident recovery activities \ninto account to determine when recovery \nshould be initiated. \nRS.AN (Incident \nAnalysis) \nInvestigations are conducted to \nensure effective response and \nsupport forensics and recovery \nactivities \nHigh \nN1: The Incident Analysis Category focuses \non investigating, determining, and \ndocumenting what has happened during an \nincident, as well as how and w",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0078",
+    "title": "NIST SP 800-61r3 — section 79",
+    "text": "1: The Incident Analysis Category focuses \non investigating, determining, and \ndocumenting what has happened during an \nincident, as well as how and why it \nhappened. \nRS.AN-03 \nAnalysis is performed to \nestablish what has taken place \nduring an incident and the root \ncause of the incident \nHigh \nR1: Determine the sequence of events that \nhave occurred during the incident and \nwhich assets and resources were involved \nin each of those events. \nR2: Attempt to determine what \nvulnerabilities, threats, and threat actors \nwere directly or indirectly involved in the \nincident. \nR3: Analyze the incident to find the \nunderlying or systemic root causes. \nR4: Check any deployed cyber deception \ntechnology for additional information on \nattacker behavior.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n29 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nN1: This information may also be helpful \nfor identifying weaknesses in cybersecurity \nrisk management that should be addressed \nto prevent similar incidents from occurring \nin the future. \nRS.AN-06 \nActions performed during an \ninves",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0079",
+    "title": "NIST SP 800-61r3 — section 80",
+    "text": "y \nrisk management that should be addressed \nto prevent similar incidents from occurring \nin the future. \nRS.AN-06 \nActions performed during an \ninvestigation are recorded, and \nthe records’ integrity and \nprovenance are preserved \nHigh \nN1: Facts discovered and actions taken \nduring incident response tasks can be \nrecorded by many means, including a paper \nlogbook, audio/video recordings, or \nautomatic session monitoring and logging, \nas permitted by the organization’s incident \nresponse plan and policy. \nR1: Safeguard the confidentiality and \nintegrity of incident response records, and \nensure that only authorized personnel have \naccess.  \nN2: Incident response records can contain \nsensitive information, such as data on \nexploited vulnerabilities, recent data \nbreaches, and users who may have \nperformed inappropriate actions. The \nincident lead is often responsible for \nensuring that incident response records are \nproperly safeguarded. \nRS.AN-07 \nIncident data and metadata are \ncollected, and their integrity and \nprovenance are preserved \nHigh \nN1: Many incident responses involve the \ncollection of incident data and metadata. \nFormal evidence gathering and handling \nusing chain-o",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0080",
+    "title": "NIST SP 800-61r3 — section 81",
+    "text": "erved \nHigh \nN1: Many incident responses involve the \ncollection of incident data and metadata. \nFormal evidence gathering and handling \nusing chain-of-custody procedures might \nnot be performed for every incident that \noccurs (e.g., most malware incidents will \nnot result in prosecution). However, \ncollected incident data is still considered \nevidence, which is defined as “grounds for \nbelief or disbelief; data on which to base \nproof or to establish truth or falsehood” \n[SP800-160v1]. \nR1: Collect and retain evidence from an \nincident in accordance with the \norganization’s evidence preservation \nprocedures and data retention policies, and \nconsider factors such as the possibility of \nprosecution, and the cost of retaining the \ndata and the hardware and software \nneeded to access the data in the future. \nRS.AN-08 \nAn incident’s magnitude is \nestimated and validated \nHigh \nN1: Determining the incident’s magnitude \nis often one of the most challenging \naspects of incident response.  \nR1: Look for indicators of compromise, \nevidence of persistence, and other signs of \nan incident on both the assets known to be \ntargeted and other potential targets.\n\nNIST SP 800-61r3 \n \nIncident Respo",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0081",
+    "title": "NIST SP 800-61r3 — section 82",
+    "text": "persistence, and other signs of \nan incident on both the assets known to be \ntargeted and other potential targets.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n30 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nSkipping this activity or performing it in a \nsuperficial way may cause underestimation \nof the incident’s magnitude, thus allowing \nthe incident to continue indefinitely on \nother targets without the organization’s \nknowledge or monitoring. \nRS.CO (Incident \nResponse \nReporting and \nCommunication) \nResponse activities are \ncoordinated with internal and \nexternal stakeholders, as \nrequired by laws, regulations, or \npolicies \nHigh \nN1: Incident response reporting and \ncommunication activities tend to fall into \nfour categories. Incident coordination \ninvolves communicating current and \nplanned incident response activities for a \nparticular incident among the internal and \nexternal parties with incident response \nroles and responsibilities. Incident \nnotification involves formally informing \naffected customers, employees, partners, \nregulators, or others about a da",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0082",
+    "title": "NIST SP 800-61r3 — section 83",
+    "text": "s and responsibilities. Incident \nnotification involves formally informing \naffected customers, employees, partners, \nregulators, or others about a data breach \nor other incident. Public communication \ninvolves communicating to the public about \nthe status of a particular incident, such as \nresponding to media inquiries. Incident \ninformation sharing involves sharing \ncybersecurity threat information with \nothers, usually voluntarily, based on \nactivity observed within the organization’s \ntechnology assets. \nR1: Organizations should have mechanisms \nin place in advance to coordinate with \naffected parties about incidents when \nneeded. \nRS.CO-02 \nInternal and external \nstakeholders are notified of \nincidents \nHigh \nR1: When an incident is analyzed and \nprioritized, the incident response team \nshould coordinate with the appropriate \nindividuals inside and outside of the \norganization so that all who need to be \ninvolved will play their roles.  \nR2: Follow established procedures \nconcerning incident coordination that \ninclude what must be reported to whom \nand at what times (e.g., initial notification, \nregular status updates). \nR3: Perform notifications in compliance \nwith the curren",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0083",
+    "title": "NIST SP 800-61r3 — section 84",
+    "text": "e reported to whom \nand at what times (e.g., initial notification, \nregular status updates). \nR3: Perform notifications in compliance \nwith the current incident notification-\nrelated laws and regulations that pertain to \nthe organization’s sectors, geographic \nlocations, customer locations, and any \nother characteristics that apply to the \norganization. Incident notification is an \nevolving topic, and new laws and \nregulations are being established \nfrequently.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n31 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nR4: Notify affected third parties of data \nbreaches and other cybersecurity incidents \nin accordance with regulatory, legal, and \ncontractual requirements. \nR5: Notify law enforcement agencies and \nregulatory bodies of incidents based on \ncriteria in the incident response plan and \nmanagement approval. Designated \nindividuals should contact these parties in a \nmanner consistent with the requirements \nof the law and the organization’s policies \nand procedures. \nRS.CO-03 \nInformation is shared with \ndesignated internal a",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0084",
+    "title": "NIST SP 800-61r3 — section 85",
+    "text": "istent with the requirements \nof the law and the organization’s policies \nand procedures. \nRS.CO-03 \nInformation is shared with \ndesignated internal and external \nstakeholders \nHigh \nN1: Voluntary incident information sharing \nis often mutually beneficial because the \nsame threats and attacks simultaneously \naffect multiple organizations. An example is \nsharing information about observed TTPs \nwith a sector-specific Information Sharing \nand Analysis Center (ISAC). \nN2: Sharing defensive tactics between \norganizations can enhance overall \nsituational awareness and increase the \nresiliency of all. There is a cost to threat \nactors to develop or purchase exploits and \nto deploy them. The effective identification \nand dissemination of detection techniques \nlowers the attackers’ return on investment \nand increases their costs. \nN3: Incident handlers might coordinate \ntheir efforts with colleagues at partner \norganizations to share tactical, technical \ninformation on mitigating an attack that \nspans those organizations. The \norganizations participating in this type of \nrelationship are usually peers without \nauthority over each other. In addition to \nchoosing to share information, they m",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0085",
+    "title": "NIST SP 800-61r3 — section 86",
+    "text": "articipating in this type of \nrelationship are usually peers without \nauthority over each other. In addition to \nchoosing to share information, they may \nalso pool resources to solve common \nproblems. \nR1: Securely share information with \nstakeholders consistent with the \norganization’s response plans and \ninformation sharing agreements, including \ncontracts with suppliers. \nR2: Regularly update senior leadership on \nthe status of major incidents. \nR3: Notify human resources when \nmalicious insider activity has occurred. \nR4: Establish and follow media \ncommunications procedures for incident \nresponse that comply with the\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n32 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \norganization’s policies on media interaction \nand information disclosure. \nRS.MI (Incident \nMitigation) \nActivities are performed to \nprevent expansion of an event \nand mitigate its effects \nHigh \nN1: Manually selecting containment and \neradication actions may be easier and \nfaster if the organization has criteria and \nprocedures in place. Criteria could tak",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0086",
+    "title": "NIST SP 800-61r3 — section 87",
+    "text": "selecting containment and \neradication actions may be easier and \nfaster if the organization has criteria and \nprocedures in place. Criteria could take the \nincident type into account (e.g., a cloud-\nbased services compromise or a user \nendpoint ransomware infection) and use \nsome of the risk evaluation factors in \nRS.MA. Another factor to consider is the \nduration of the containment measure (e.g., \nan emergency workaround that must be \nremoved within hours, a temporary \nworkaround to be removed within two \nweeks, or a permanent solution). The \neradication measure’s duration could be \nsimilarly evaluated. \nR1: In some instances, organizations \nredirect an attacker to a sandbox so that \nthey can monitor the attacker’s activity, \nusually to gather additional evidence. This \ndelays containment and eradication \nactivities. The incident response team \nshould first discuss the feasibility of this \nstrategy with the legal department before \nexecuting it. The intentional delay can be \ndangerous because an attacker could \nescalate unauthorized access or \ncompromise other systems. \nRS.MI-01 \nIncidents are contained \nHigh \nN1: Containment refers to preventing the \nexpansion of an incident. Co",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0087",
+    "title": "NIST SP 800-61r3 — section 88",
+    "text": "access or \ncompromise other systems. \nRS.MI-01 \nIncidents are contained \nHigh \nN1: Containment refers to preventing the \nexpansion of an incident. Containment can \nprevent additional damage and avoid \noverwhelming the organization’s resources. \nMost incidents require some form of \ncontainment.  \nC1: Consider configuring cybersecurity \ntechnologies (e.g., antivirus software) and \nthe cybersecurity features of other \ntechnologies (e.g., operating systems, \nnetwork infrastructure devices) to \nautomatically perform some containment \nactions, like quarantining malware, \ntransferring a compromised endpoint to an \nisolated remediation network, or halting \nthe execution of an infected container.  \nC2: Consider authorizing third parties (e.g., \nthe organization’s internet service \nproviders and cloud service providers) to \nautomatically act to contain certain types\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n33 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nof incidents (e.g., large-scale DDoS attacks) \non behalf of the organization. \nR1: Allow incident handlers to manually",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0088",
+    "title": "NIST SP 800-61r3 — section 89",
+    "text": "tions, Considerations, Notes \nof incidents (e.g., large-scale DDoS attacks) \non behalf of the organization. \nR1: Allow incident handlers to manually \nselect and perform containment actions \ninstead of or in addition to automated \ncontainment measures. \nRS.MI-02 \nIncidents are eradicated \nHigh \nN1: Eradication refers to mitigating an \nincident’s effects. After containment, \neradication may be necessary to eliminate \npersistence mechanisms and entry points, \nsuch as deleting malware, disabling \nbreached user accounts, and identifying \nand mitigating all exploited vulnerabilities.  \nR1: Identify all affected hosts and services \nwithin the organization so that all flaws and \nweaknesses can be remediated.  \nC1: Consider configuring cybersecurity \ntechnologies and the cybersecurity \nfeatures of other technologies (e.g., \noperating systems, network infrastructure \ndevices) to automatically perform some \neradication actions. \nC2: Consider authorizing third parties (e.g., \nthe organization’s internet service \nproviders and cloud service providers) to \nautomatically act to eradicate certain types \nof incidents on behalf of the organization. \nR2: Allow incident handlers to manually \nselect an",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0089",
+    "title": "NIST SP 800-61r3 — section 90",
+    "text": "ers) to \nautomatically act to eradicate certain types \nof incidents on behalf of the organization. \nR2: Allow incident handlers to manually \nselect and perform eradication actions \ninstead of or in addition to automated \neradication measures. \nRC (Recover) \nAssets and operations affected \nby a cybersecurity incident are \nrestored \nHigh \nN1: During incident recovery, personnel \nrestore systems to normal operations, \nconfirm that the systems are functioning \nnormally, and (if applicable) remediate \nvulnerabilities to prevent similar incidents.  \nN2: Recovery operations include restoring \nsystems from clean backups, rebuilding \nsystems, replacing compromised files with \nclean versions, installing patches, changing \npasswords, and tightening security \ncontrols. In intrusions where the threat \nactor is highly sophisticated and the full \nscope of their tactics is not revealed, it may \nbe necessary to go as far as replacing the \nhardware (e.g., bare metal) of all of the \ncompromised systems. \nN3: For more information on incident \nrecovery, see [SP800-184].\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n34 \nCSF Element",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0090",
+    "title": "NIST SP 800-61r3 — section 91",
+    "text": "ee [SP800-184].\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n34 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nRC.RP (Incident \nRecovery Plan \nExecution) \nRestoration activities are \nperformed to ensure operational \navailability of systems and \nservices affected by \ncybersecurity incidents \nHigh \nN1: Executing the incident recovery plan \ninvolves selecting, prioritizing, and \nperforming recovery actions in a secure \nmanner; verifying the integrity of \nrecovered assets; declaring the end of \nincident recovery; and completing incident \ndocumentation. \nN2: For more information on incident \nrecovery plans and plan execution, see \n[SP800-184]. \nRC.RP-01 \nThe recovery portion of the \nincident response plan is \nexecuted once initiated from the \nincident response process \nHigh \nR1: Begin recovery procedures during or \nafter incident response processes. \nR2: Inform all individuals with recovery \nresponsibilities about the plans for \nrecovery and the authorizations required to \nimplement each aspect of the plans. \nRC.RP-02 \nRecovery actions are selected, \nscoped, prioritized, an",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0091",
+    "title": "NIST SP 800-61r3 — section 92",
+    "text": "r \nrecovery and the authorizations required to \nimplement each aspect of the plans. \nRC.RP-02 \nRecovery actions are selected, \nscoped, prioritized, and \nperformed \nHigh \nR1: Recovery actions should take \ntimeliness, precision, and reliability (e.g., \nrestoring only the affected files versus \nrestoring all files) into account. \nR2: Select recovery actions based on the \ncriteria defined in the incident response \nplan and available resources. \nR3: Change planned recovery actions based \non a reassessment of organizational needs \nand resources. \nRC.RP-03 \nThe integrity of backups and \nother restoration assets is \nverified before using them for \nrestoration \nHigh \nR1: Check restoration assets for indicators \nof compromise, file corruption, and other \nintegrity issues before use. \nRC.RP-04 \nCritical mission functions and \ncybersecurity risk management \nare considered to establish post-\nincident operational norms \nHigh \nR1: Validate that essential services are \nrestored in the appropriate order. \nR2: Work with system owners to confirm \nthe successful restoration of systems and \nthe return to normal operations. \nR3: Monitor the performance of restored \nsystems to verify the adequacy of the",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0092",
+    "title": "NIST SP 800-61r3 — section 93",
+    "text": "ccessful restoration of systems and \nthe return to normal operations. \nR3: Monitor the performance of restored \nsystems to verify the adequacy of the \nrestoration. \nRC.RP-05 \nThe integrity of restored assets \nis verified, systems and services \nare restored, and normal \noperating status is confirmed \nHigh \nR1: Check restored assets for indicators of \ncompromise, and remediate the root \ncauses of the incident before production \nuse. \nR2: Verify the correctness and adequacy of \nthe restoration actions taken before \nputting a restored system online. \nRC.RP-06 \nThe end of incident recovery is \ndeclared based on criteria, and \nincident-related documentation \nis completed \nHigh \nR1: Prepare an after-action report that \ndocuments the incident itself, the response \nand recovery actions taken, and lessons \nlearned.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n35 \nCSF Element \nCSF Element Description \nPriority \nRecommendations, Considerations, Notes \nRC.CO (Incident \nRecovery \nCommunication) \nRestoration activities are \ncoordinated with internal and \nexternal parties \nHigh \nN1: Incident recovery communication is a \nconti",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0093",
+    "title": "NIST SP 800-61r3 — section 94",
+    "text": "ry \nCommunication) \nRestoration activities are \ncoordinated with internal and \nexternal parties \nHigh \nN1: Incident recovery communication is a \ncontinuation of the communication \nactivities in RS.CO.  \nRC.CO-03 \nRecovery activities and progress \nin restoring operational \ncapabilities are communicated \nto designated internal and \nexternal stakeholders \nHigh \nR1: Securely share recovery information, \nincluding restoration progress, consistent \nwith response plans and information \nsharing agreements. \nR2: Regularly update senior leadership on \nrecovery status and restoration progress \nfor major incidents. \nR3: Follow the rules and protocols defined \nin contracts for incident information \nsharing between the organization and its \nsuppliers. \nR4: Coordinate crisis communication \nbetween the organization and its critical \nsuppliers. \nRC.CO-04 \nPublic updates on incident \nrecovery are shared using \napproved methods and \nmessaging \nHigh \nR1: Follow the organization’s breach \nnotification procedures for recovering from \na data breach incident. \nR2: Explain the steps being taken to \nrecover from the incident and to prevent a \nrecurrence.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendation",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0094",
+    "title": "NIST SP 800-61r3 — section 95",
+    "text": ". \nR2: Explain the steps being taken to \nrecover from the incident and to prevent a \nrecurrence.\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n36 \nReferences \n[CISA-PB] \nCybersecurity and Infrastructure Security Agency (2021) Cybersecurity Incident \n& Vulnerability Response Playbooks: Operational Procedures for Planning and \nConducting Cybersecurity Incident and Vulnerability Response Activities in \nFCEB Information Systems. (Cybersecurity and Infrastructure Security Agency, \nArlington, VA). Available at \nhttps://www.cisa.gov/sites/default/files/publications/Federal_Government_Cy\nbersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf  \n[CNSSI-4009] \nCommittee on National Security Systems (2022) Committee on National \nSecurity Systems (CNSS) Glossary. (National Security Agency, Ft. Meade, MD). \nCommittee on National Security Systems Instruction (CNSSI) 4009. Available at \nhttps://www.cnss.gov/CNSS/issuances/instructions.cfm  \n[CSF2.0] \nNational Institute of Standards and Technology (2024) The NIST Cybersecurity \nFramework (CSF) 2.0. (National Institute of Standards and Technology, \nGaithersburg, MD),",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0095",
+    "title": "NIST SP 800-61r3 — section 96",
+    "text": "e of Standards and Technology (2024) The NIST Cybersecurity \nFramework (CSF) 2.0. (National Institute of Standards and Technology, \nGaithersburg, MD), NIST Cybersecurity White Paper (CSWP) NIST CSWP 29. \nhttps://doi.org/10.6028/NIST.CSWP.29  \n[CSWP32] \nPascoe C, Snyder JN, Scarfone K (2024) NIST Cybersecurity Framework 2.0: A \nGuide to Creating Community Profiles. (National Institute of Standards and \nTechnology, Gaithersburg, MD), NIST Cybersecurity White Paper (CSWP) NIST \nCSWP 32. https://doi.org/10.6028/NIST.CSWP.32.ipd  \n[FISMA2014] \nFederal Information Security Modernization Act of 2014, Pub. L. 113-283, 128 \nStat. 3073. Available at https://www.govinfo.gov/app/details/PLAW-\n113publ283 \n[IR8286] \nStine KM, Quinn SD, Witte GA, Gardner RK (2020) Integrating Cybersecurity \nand Enterprise Risk Management (ERM). (National Institute of Standards and \nTechnology, Gaithersburg, MD), NIST Interagency or Internal Report (IR) NIST \nIR 8286. https://doi.org/10.6028/NIST.IR.8286  \n[SP800-30r1] \nJoint Task Force Transformation Initiative (2012) Guide for Conducting Risk \nAssessments. (National Institute of Standards and Technology, Gaithersburg, \nMD), NIST Special Publication (SP) NIST SP",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0096",
+    "title": "NIST SP 800-61r3 — section 97",
+    "text": "2) Guide for Conducting Risk \nAssessments. (National Institute of Standards and Technology, Gaithersburg, \nMD), NIST Special Publication (SP) NIST SP 800-30r1. \nhttps://doi.org/10.6028/NIST.SP.800-30r1 \n[SP800-37r2] \nJoint Task Force (2018) Risk Management Framework for Information Systems \nand Organizations: A System Life Cycle Approach for Security and Privacy. \n(National Institute of Standards and Technology, Gaithersburg, MD), NIST \nSpecial Publication (SP) NIST SP 800-37r2. \nhttps://doi.org/10.6028/NIST.SP.800-37r2\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n37 \n[SP800-61r2] \nCichonski PR, Millar T, Grance T, Scarfone KA (2012) Computer Security \nIncident Handling Guide. (National Institute of Standards and Technology, \nGaithersburg, MD), NIST Special Publication (SP) NIST SP 800-61r2. \nhttps://doi.org/10.6028/NIST.SP.800-61r2   \n[SP800-84] \nGrance T, Nolan T, Burke K, Dudley R, White G, Good T (2006) Guide to Test, \nTraining, and Exercise Programs for IT Plans and Capabilities. (National \nInstitute of Standards and Technology, Gaithersburg, MD), NIST Special \nPublication (SP) NIST SP 800-84. https://doi",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0097",
+    "title": "NIST SP 800-61r3 — section 98",
+    "text": "lans and Capabilities. (National \nInstitute of Standards and Technology, Gaithersburg, MD), NIST Special \nPublication (SP) NIST SP 800-84. https://doi.org/10.6028/NIST.SP.800-84  \n[SP800-92r1] \nScarfone K, Souppaya M (2023) Cybersecurity Log Management Planning \nGuide. (National Institute of Standards and Technology, Gaithersburg, MD), \nNIST Special Publication (SP) NIST SP 800-92r1 ipd. \nhttps://doi.org/10.6028/NIST.SP.800-92r1.ipd  \n[SP800-150] \nJohnson CS, Waltermire DA, Badger ML, Skorupka C, Snyder J (2016) Guide to \nCyber Threat Information Sharing. (National Institute of Standards and \nTechnology, Gaithersburg, MD), NIST Special Publication (SP) NIST SP 800-150. \nhttps://doi.org/10.6028/NIST.SP.800-150   \n[SP800-160v1] Ross RS, McEvilley M, Winstead M (2022) Engineering Trustworthy Secure \nSystems. (National Institute of Standards and Technology, Gaithersburg, MD), \nNIST Special Publication (SP) NIST SP 800-160v1r1. \nhttps://doi.org/10.6028/NIST.SP.800-160v1r1  \n[SP800-184] \nBartock MJ, Scarfone KA, Smith MC, Witte GA, Cichonski JA, Souppaya MP \n(2016) Guide for Cybersecurity Event Recovery. (National Institute of Standards \nand Technology, Gaithersburg, MD), NIST Special Pu",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0098",
+    "title": "NIST SP 800-61r3 — section 99",
+    "text": "i JA, Souppaya MP \n(2016) Guide for Cybersecurity Event Recovery. (National Institute of Standards \nand Technology, Gaithersburg, MD), NIST Special Publication (SP) NIST SP 800-\n184. https://doi.org/10.6028/NIST.SP.800-184  \n[SP800-216] \nSchaffer KB, Mell PM, Trinh H, Van Wyk I (2023) Recommendations for Federal \nVulnerability Disclosure Guidelines. (National Institute of Standards and \nTechnology, Gaithersburg, MD), NIST Special Publication (SP) NIST SP 800-216. \nhttps://doi.org/10.6028/NIST.SP.800-216  \n[SP800-218] \nSouppaya MP, Scarfone KA, Dodson DF (2022) Secure Software Development \nFramework (SSDF) Version 1.1: Recommendations for Mitigating the Risk of \nSoftware Vulnerabilities. (National Institute of Standards and Technology, \nGaithersburg, MD), NIST Special Publication (SP) NIST SP 800-218. \nhttps://doi.org/10.6028/NIST.SP.800-218\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n38 \nAppendix A. List of Symbols, Abbreviations, and Acronyms \nCISA \nCybersecurity and Infrastructure Security Agency \nCPRT \nCybersecurity and Privacy Reference Tool \nCSF \nCybersecurity Framework \nCSP \nCloud Service Provider \nCTI",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0099",
+    "title": "NIST SP 800-61r3 — section 100",
+    "text": "ty and Infrastructure Security Agency \nCPRT \nCybersecurity and Privacy Reference Tool \nCSF \nCybersecurity Framework \nCSP \nCloud Service Provider \nCTI \nCyber Threat Intelligence \nISAC \nInformation Sharing and Analysis Center \nISP \nInternet Service Provider \nMOU \nMemorandum of Understanding \nMSSP \nManaged Security Services Provider \nNDA \nNon-Disclosure Agreement \nSIEM \nSecurity Information and Event Management \nSOAR \nSecurity Orchestration, Automation, and Response \nSOC \nSecurity Operations Center \nSOP \nStandard Operating Procedures \nTTPs \nTactics, Techniques, and Procedures\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n39 \nAppendix B. Glossary \nadverse cybersecurity event \nAny event with a potentially negative impact on cybersecurity. \ncomputer security incident \nSee cybersecurity incident. \ncyber threat intelligence \nCyber threat information that has been aggregated, transformed, analyzed, interpreted, or enriched to provide the \nnecessary context for decision-making processes. [SP800-150, adapted] \ncybersecurity incident \nAn occurrence that actually or imminently jeopardizes, without lawful authority, the inte",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0100",
+    "title": "NIST SP 800-61r3 — section 101",
+    "text": "ing processes. [SP800-150, adapted] \ncybersecurity incident \nAn occurrence that actually or imminently jeopardizes, without lawful authority, the integrity, confidentiality, or \navailability of information or an information system; or constitutes a violation or imminent threat of violation of \nlaw, security policies, security procedures, or acceptable use policies. [FISMA2014] \nevent \nAny observable occurrence involving computing assets, including physical and virtual platforms, networks, services, \nand cloud environments. \nincident \nSee cybersecurity incident. \nincident response \nThe remediation or mitigation of violations of security policies and recommended practices. [FISMA2014] \nindicators of compromise \nTechnical artifacts or observables that suggest that an attack is imminent or is currently underway or that a \ncompromise may have already occurred. [SP800-150, adapted] \ntactics, techniques, and procedures \nThe behavior of an actor. A tactic is the highest-level description of this behavior, while techniques give a more \ndetailed description of behavior in the context of a tactic, and procedures an even lower-level, highly detailed \ndescription in the context of a technique.",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0101",
+    "title": "NIST SP 800-61r3 — section 102",
+    "text": "d description of behavior in the context of a tactic, and procedures an even lower-level, highly detailed \ndescription in the context of a technique. [SP800-150] \nthreat \nAny circumstance or event with the potential to adversely impact organizational operations (including mission, \nfunctions, image, or reputation), organizational assets, individuals, other organizations, or the Nation through an \ninformation system via unauthorized access, destruction, disclosure, or modification of information, and/or denial \nof service. [SP800-30r1] \nvulnerability \nA weakness in a system, system security procedures, internal controls, or implementation by which an actor or \nevent may intentionally exploit or accidentally trigger the weakness to access, modify, or disrupt the normal \noperations of a system, resulting in a security incident or violation of the system’s security policy. [CNSSI-4009, \nadapted]\n\nNIST SP 800-61r3 \n \nIncident Response Recommendations and \nApril 2025 \n \nConsiderations for Cyber Risk Management \n \n40 \nAppendix C. Change Log \nThis publication revises the previous version, NIST SP 800-61 Revision 2 (2012), as follows: \n• Performed a full rewrite of the previous content to i",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  },
+  {
+    "clause_id": "chunk-0102",
+    "title": "NIST SP 800-61r3 — section 103",
+    "text": "This publication revises the previous version, NIST SP 800-61 Revision 2 (2012), as follows: \n• Performed a full rewrite of the previous content to improve clarity and usability and to \nremove outdated material and material addressed in more depth in other NIST \npublications and other federal agency content \n• Shifted the focus of the document from guidelines on detecting, analyzing, prioritizing, \nand handling incidents to recommendations and considerations for incorporating \ncybersecurity incident response considerations throughout an organization’s \ncybersecurity risk management activities \n• Reorganized the contents to comprise a CSF 2.0 Community Profile \n• Moved most hyperlinks to a new SP 800-61 project website to facilitate their \nmaintenance \n• Reformatted all content to follow the latest NIST technical report template",
+    "standard": "NIST SP 800-61r3",
+    "language": "en",
+    "source_file": "NIST.SP.800-61r3.pdf"
+  }
+]
