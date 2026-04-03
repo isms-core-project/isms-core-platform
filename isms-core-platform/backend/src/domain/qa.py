@@ -2,7 +2,7 @@ import uuid
 from datetime import datetime
 from decimal import Decimal
 
-from sqlalchemy import DateTime, ForeignKey, Numeric, String, Text, func
+from sqlalchemy import DateTime, ForeignKey, Numeric, String, Text, UniqueConstraint, func
 from sqlalchemy.dialects.postgresql import ARRAY, JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -26,6 +26,21 @@ class CorrelationResult(Base):
         ForeignKey("framework_controls.id", ondelete="SET NULL"),
     )
     document_id: Mapped[str] = mapped_column(String(50), nullable=False)
+
+    # Phase 21 — project-scoped QA (NULL = org-level/global run)
+    project_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("projects.id", ondelete="CASCADE"),
+        nullable=True,
+        index=True,
+    )
+    reference_library: Mapped[str | None] = mapped_column(
+        String(20), nullable=True
+    )
+    result_view: Mapped[str] = mapped_column(
+        String(20), nullable=False, server_default="control_group"
+    )
+
     correlation_method: Mapped[CorrelationMethod] = mapped_column(
         SAEnum(CorrelationMethod, name="correlation_method", create_type=False),
         nullable=False,
@@ -62,6 +77,30 @@ class CorrelationResult(Base):
         back_populates="correlation_results"
     )
     framework_control: Mapped["FrameworkControl | None"] = relationship()
+
+
+class QAKeywordTranslation(Base):
+    """Pre-translated ISO control keywords for FR/DE/IT keyword QA.
+
+    Seeded from datasets/data/qa_keyword_translations.json at bootstrap.
+    Used by keyword QA when a document's language != 'en'.
+    """
+
+    __tablename__ = "qa_keyword_translations"
+    __table_args__ = (
+        UniqueConstraint("keyword", "language", "translation", name="uq_kw_translation"),
+    )
+
+    id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True), primary_key=True, default=uuid.uuid4
+    )
+    keyword: Mapped[str] = mapped_column(String(100), nullable=False)
+    language: Mapped[str] = mapped_column(String(5), nullable=False)     # 'fr' | 'de' | 'it'
+    translation: Mapped[str] = mapped_column(String(200), nullable=False)
+    notes: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), nullable=False
+    )
 
 
 class SynonymRule(Base):

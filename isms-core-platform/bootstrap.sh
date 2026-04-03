@@ -90,6 +90,19 @@ run_import "Step 4/6: Importing operational checklists" "import-operational"
 run_import "Step 5/6: Importing privacy/cloud checklists" "import-privacy"
 run_import "Step 6/6: Importing framework workbook structure" "import-framework-workbooks"
 
+info "Step 7/7: Seeding QA keyword translations..."
+RESULT=$(curl -sfk -X POST "$API/api/v1/qa/seed-keyword-translations" \
+    -H "Authorization: Bearer $TOKEN") || \
+    fail "Keyword translations seed failed — check backend logs"
+echo "$RESULT" | python3 -c "
+import sys, json
+try:
+    d = json.load(sys.stdin)
+    print(f'    seeded={d.get(\"seeded\",\"?\")}, skipped={d.get(\"skipped\",\"?\")}')
+except: pass
+"
+ok "QA keyword translations seeded"
+
 info "Reindexing OpenSearch..."
 curl -sfk -X POST "$API/api/v1/admin/reindex" \
     -H "Authorization: Bearer $TOKEN" > /dev/null

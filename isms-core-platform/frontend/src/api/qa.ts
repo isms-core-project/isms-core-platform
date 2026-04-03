@@ -37,6 +37,32 @@ export const qaApi = {
 
   reloadReferenceCorpus: () =>
     client.post<ReferenceCorpusLoadResult>('/qa/reference-corpus/reload').then((r) => r.data),
+
+  // Phase 21 — project-scoped QA
+  runProjectExistence: (projectId: string) =>
+    client.post<ExistenceRunResult>(`/qa/project/${projectId}/run-existence`).then((r) => r.data),
+
+  runProjectKeyword: (projectId: string, referenceLibrary = 'iso_corpus', language = 'en') =>
+    client.post<KeywordRunResult>(`/qa/project/${projectId}/run-keyword`, null, {
+      params: { reference_library: referenceLibrary, language },
+    }).then((r) => r.data),
+
+  runProjectSemantic: (projectId: string, referenceLibrary = 'iso_corpus', language = 'en') =>
+    client.post<SemanticRunResult>(`/qa/project/${projectId}/run-semantic`, null, {
+      params: { reference_library: referenceLibrary, language },
+    }).then((r) => r.data),
+
+  getProjectResults: (projectId: string, params?: { method?: string; status?: string; limit?: number }) =>
+    client.get<CorrelationResultRead[]>(`/qa/project/${projectId}/results`, { params }).then((r) => r.data),
+
+  getProjectSummary: (projectId: string, method = 'existence') =>
+    client.get<ProjectQASummary>(`/qa/project/${projectId}/summary`, { params: { method } }).then((r) => r.data),
+
+  getOrgProjectSummaries: (method = 'existence') =>
+    client.get<OrgProjectSummaryItem[]>('/qa/org/projects', { params: { method } }).then((r) => r.data),
+
+  seedKeywordTranslations: () =>
+    client.post('/qa/seed-keyword-translations').then((r) => r.data),
 }
 
 export interface ReferenceCorpusStatus {
@@ -45,6 +71,21 @@ export interface ReferenceCorpusStatus {
   total_chunks: number
   standards: { standard: string; chunks: number }[]
   error?: string
+}
+
+export interface ProjectQASummary {
+  total: number
+  pass: number
+  warning: number
+  fail: number
+  needs_review: number
+  pass_rate: number
+  last_run: string | null
+  method: string
+}
+
+export interface OrgProjectSummaryItem extends ProjectQASummary {
+  project_id: string
 }
 
 export interface ReferenceCorpusLoadResult {

@@ -63,6 +63,8 @@ import {
   ShieldOutlined,
   UploadFileOutlined,
   WarningAmberOutlined,
+  VerifiedOutlined,
+  PlayArrowOutlined,
 } from '@mui/icons-material'
 import dayjs from 'dayjs'
 import { useEditor, EditorContent } from '@tiptap/react'
@@ -72,6 +74,7 @@ import { Markdown } from 'tiptap-markdown'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { useNavigate, useParams } from 'react-router-dom'
 import { projectsApi, type DocVars, type LibraryChecklistItem, type LibraryImplItem, type LibraryPolicyItem, type ProjectChecklistRead } from '../api/projectsApi'
+import { qaApi, type CorrelationResultRead, type ProjectQASummary } from '../api/qa'
 import { gapsApi } from '../api/gaps'
 import { evidenceApi } from '../api/evidence'
 import { controlsApi } from '../api/controls'
@@ -2110,6 +2113,260 @@ function AssessmentsTab({ projectId }: { projectId: string }) {
   )
 }
 
+// ── QA Tab (Phase 21) ──────────────────────────────────────────────────────────
+
+const STATUS_COLOR: Record<string, string> = {
+  pass: '#4CAF50',
+  warning: '#FF9800',
+  fail: '#f44336',
+  needs_review: '#9E9E9E',
+}
+
+const STATUS_LABEL: Record<string, string> = {
+  pass: 'Pass',
+  warning: 'Warning',
+  fail: 'Fail',
+  needs_review: 'Review',
+}
+
+function QAScoreBar({ label, value, total }: { label: string; value: number; total: number }) {
+  const pct = total ? Math.round((value / total) * 100) : 0
+  return (
+    <Box sx={{ mb: 0.75 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.2 }}>
+        <Typography variant="caption" sx={{ fontSize: '0.68rem', color: 'text.secondary' }}>{label}</Typography>
+        <Typography variant="caption" sx={{ fontSize: '0.68rem', color: 'text.primary' }}>{value} ({pct}%)</Typography>
+      </Box>
+      <LinearProgress
+        variant="determinate"
+        value={pct}
+        sx={{
+          height: 4,
+          borderRadius: 2,
+          bgcolor: 'rgba(255,255,255,0.06)',
+          '& .MuiLinearProgress-bar': {
+            bgcolor: label === 'Pass' ? '#4CAF50' : label === 'Warning' ? '#FF9800' : label === 'Fail' ? '#f44336' : '#9E9E9E',
+          },
+        }}
+      />
+    </Box>
+  )
+}
+
+function ProjectQASummaryCard({ summary, method }: { summary: ProjectQASummary; method: string }) {
+  const total = summary.total || 1
+  return (
+    <Box sx={{ p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1.5, mb: 2.5 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
+        <Typography variant="caption" sx={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', fontSize: '0.65rem', color: 'text.secondary' }}>
+          {method === 'existence' ? 'Artefact Coverage' : method === 'keyword' ? 'Keyword Coverage' : 'Semantic Alignment'} — Last Run
+        </Typography>
+        <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 0.5 }}>
+          <Typography variant="h5" sx={{ fontWeight: 700, color: '#4CAF50', lineHeight: 1, fontSize: '1.4rem' }}>
+            {Math.round(summary.pass_rate * 100)}%
+          </Typography>
+          <Typography variant="caption" sx={{ color: 'text.disabled', fontSize: '0.65rem' }}>pass rate</Typography>
+        </Box>
+      </Box>
+      <QAScoreBar label="Pass" value={summary.pass} total={total} />
+      <QAScoreBar label="Warning" value={summary.warning} total={total} />
+      <QAScoreBar label="Fail" value={summary.fail} total={total} />
+      <QAScoreBar label="Needs Review" value={summary.needs_review} total={total} />
+      {summary.last_run && (
+        <Typography variant="caption" sx={{ fontSize: '0.63rem', color: 'text.disabled', display: 'block', mt: 0.75 }}>
+          Last run: {dayjs(summary.last_run).format('DD MMM YYYY HH:mm')}
+        </Typography>
+      )}
+    </Box>
+  )
+}
+
+function QATab({ projectId }: { projectId: string }) {
+  const qc = useQueryClient()
+  const [method, setMethod] = useState<string>('existence')
+  const [refLib, setRefLib] = useState<string>('iso_corpus')
+  const [language, setLanguage] = useState<string>('en')
+  const [running, setRunning] = useState<string | null>(null)
+  const [runResult, setRunResult] = useState<string | null>(null)
+
+  const { data: summary, isLoading: summaryLoading } = useQuery({
+    queryKey: ['project-qa-summary', projectId, method],
+    queryFn: () => qaApi.getProjectSummary(projectId, method),
+  })
+
+  const { data: results, isLoading: resultsLoading } = useQuery({
+    queryKey: ['project-qa-results', projectId, method],
+    queryFn: () => qaApi.getProjectResults(projectId, { method, limit: 200 }),
+    enabled: !!summary?.last_run,
+  })
+
+  async function handleRun(type: string) {
+    setRunning(type)
+    setRunResult(null)
+    try {
+      let res: { total: number; pass_count: number; warning_count: number; fail_count: number; duration_ms: number }
+      if (type === 'existence') {
+        res = await qaApi.runProjectExistence(projectId)
+      } else if (type === 'keyword') {
+        res = await qaApi.runProjectKeyword(projectId, refLib, language)
+      } else {
+        res = await qaApi.runProjectSemantic(projectId, refLib, language)
+      }
+      setRunResult(`Complete — ${res.total} checked, ${res.pass_count} pass, ${res.warning_count} warning, ${res.fail_count} fail (${res.duration_ms}ms)`)
+      qc.invalidateQueries({ queryKey: ['project-qa-summary', projectId] })
+      qc.invalidateQueries({ queryKey: ['project-qa-results', projectId] })
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e)
+      setRunResult(`Error: ${msg}`)
+    } finally {
+      setRunning(null)
+    }
+  }
+
+  const statusCounts = (results ?? []).reduce<Record<string, number>>((acc, r) => {
+    acc[r.qa_status] = (acc[r.qa_status] ?? 0) + 1
+    return acc
+  }, {})
+
+  return (
+    <Box>
+      {/* Controls row */}
+      <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap', alignItems: 'center', mb: 2.5 }}>
+        <FormControl size="small" sx={{ minWidth: 140 }}>
+          <InputLabel sx={{ fontSize: '0.78rem' }}>Method</InputLabel>
+          <Select value={method} label="Method" onChange={e => setMethod(e.target.value)} sx={{ fontSize: '0.78rem' }}>
+            <MenuItem value="existence" sx={{ fontSize: '0.78rem' }}>Artefact Check</MenuItem>
+            <MenuItem value="keyword" sx={{ fontSize: '0.78rem' }}>Keyword</MenuItem>
+            <MenuItem value="semantic" sx={{ fontSize: '0.78rem' }}>Semantic (Mini LLM)</MenuItem>
+          </Select>
+        </FormControl>
+
+        {method !== 'existence' && (
+          <FormControl size="small" sx={{ minWidth: 150 }}>
+            <InputLabel sx={{ fontSize: '0.78rem' }}>Reference Library</InputLabel>
+            <Select value={refLib} label="Reference Library" onChange={e => setRefLib(e.target.value)} sx={{ fontSize: '0.78rem' }}>
+              <MenuItem value="iso_corpus" sx={{ fontSize: '0.78rem' }}>ISO Corpus</MenuItem>
+              <MenuItem value="isms_library" sx={{ fontSize: '0.78rem' }}>ISMS Library POLs</MenuItem>
+            </Select>
+          </FormControl>
+        )}
+
+        {method !== 'existence' && (
+          <FormControl size="small" sx={{ minWidth: 110 }}>
+            <InputLabel sx={{ fontSize: '0.78rem' }}>Language</InputLabel>
+            <Select value={language} label="Language" onChange={e => setLanguage(e.target.value)} sx={{ fontSize: '0.78rem' }}>
+              <MenuItem value="en" sx={{ fontSize: '0.78rem' }}>EN</MenuItem>
+              <MenuItem value="fr" sx={{ fontSize: '0.78rem' }}>FR</MenuItem>
+              <MenuItem value="de" sx={{ fontSize: '0.78rem' }}>DE</MenuItem>
+              <MenuItem value="it" sx={{ fontSize: '0.78rem' }}>IT</MenuItem>
+            </Select>
+          </FormControl>
+        )}
+
+        <Button
+          size="small"
+          variant="contained"
+          startIcon={running === method ? <CircularProgress size={13} color="inherit" /> : <PlayArrowOutlined sx={{ fontSize: 15 }} />}
+          disabled={!!running}
+          onClick={() => handleRun(method)}
+          sx={{ fontSize: '0.72rem' }}
+        >
+          Run {method === 'existence' ? 'Artefact Check' : method === 'keyword' ? 'Keyword Check' : 'Semantic Check'}
+        </Button>
+      </Box>
+
+      {runResult && (
+        <Alert
+          severity={runResult.startsWith('Error') ? 'error' : 'success'}
+          onClose={() => setRunResult(null)}
+          sx={{ mb: 2, fontSize: '0.78rem' }}
+        >
+          {runResult}
+        </Alert>
+      )}
+
+      {/* Summary card */}
+      {summaryLoading ? (
+        <Skeleton variant="rectangular" height={120} sx={{ borderRadius: 1.5, mb: 2.5 }} />
+      ) : summary && summary.total > 0 ? (
+        <ProjectQASummaryCard summary={summary} method={method} />
+      ) : (
+        <Box sx={{ p: 2, mb: 2.5, border: '1px solid', borderColor: 'divider', borderRadius: 1.5, textAlign: 'center' }}>
+          <VerifiedOutlined sx={{ fontSize: 28, color: 'text.disabled', mb: 0.5 }} />
+          <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.78rem' }}>
+            No QA results yet — run a check above to analyse this project's documents.
+          </Typography>
+        </Box>
+      )}
+
+      {/* Status filter chips */}
+      {results && results.length > 0 && (
+        <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', mb: 1.5 }}>
+          {Object.entries(statusCounts).map(([st, cnt]) => (
+            <Chip
+              key={st}
+              label={`${STATUS_LABEL[st] ?? st} (${cnt})`}
+              size="small"
+              sx={{ height: 20, fontSize: '0.65rem', bgcolor: `${STATUS_COLOR[st] ?? '#9E9E9E'}18`, color: STATUS_COLOR[st] ?? '#9E9E9E', border: `1px solid ${STATUS_COLOR[st] ?? '#9E9E9E'}40` }}
+            />
+          ))}
+        </Box>
+      )}
+
+      {/* Results table */}
+      {resultsLoading ? (
+        <Skeleton variant="rectangular" height={200} sx={{ borderRadius: 1 }} />
+      ) : results && results.length > 0 ? (
+        <TableContainer>
+          <Table size="small" stickyHeader>
+            <TableHead>
+              <TableRow>
+                <TableCell sx={{ fontSize: '0.69rem', py: 0.75 }}>Control Group</TableCell>
+                <TableCell sx={{ fontSize: '0.69rem', py: 0.75 }}>Status</TableCell>
+                <TableCell sx={{ fontSize: '0.69rem', py: 0.75 }}>Score</TableCell>
+                {method !== 'existence' && <TableCell sx={{ fontSize: '0.69rem', py: 0.75 }}>Coverage</TableCell>}
+                {method !== 'existence' && <TableCell sx={{ fontSize: '0.69rem', py: 0.75 }}>Missing</TableCell>}
+                {method === 'existence' && <TableCell sx={{ fontSize: '0.69rem', py: 0.75 }}>Present</TableCell>}
+                {method === 'existence' && <TableCell sx={{ fontSize: '0.69rem', py: 0.75 }}>Missing</TableCell>}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {results.map(r => (
+                <TableRow key={r.id} sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.02)' } }}>
+                  <TableCell sx={{ py: 0.5 }}>
+                    <Typography sx={{ fontSize: '0.72rem', fontFamily: 'monospace' }}>{r.control_group_code}</Typography>
+                    <Typography sx={{ fontSize: '0.65rem', color: 'text.disabled' }}>{r.control_group_name}</Typography>
+                  </TableCell>
+                  <TableCell sx={{ py: 0.5 }}>
+                    <Chip
+                      label={STATUS_LABEL[r.qa_status] ?? r.qa_status}
+                      size="small"
+                      sx={{ height: 18, fontSize: '0.62rem', bgcolor: `${STATUS_COLOR[r.qa_status] ?? '#9E9E9E'}18`, color: STATUS_COLOR[r.qa_status] ?? '#9E9E9E' }}
+                    />
+                  </TableCell>
+                  <TableCell sx={{ py: 0.5, fontSize: '0.72rem' }}>
+                    {(r.correlation_strength * 100).toFixed(0)}%
+                  </TableCell>
+                  <TableCell sx={{ py: 0.5 }}>
+                    <Typography sx={{ fontSize: '0.68rem', color: '#4CAF50' }}>
+                      {r.coverage_keywords.join(', ') || '—'}
+                    </Typography>
+                  </TableCell>
+                  <TableCell sx={{ py: 0.5 }}>
+                    <Typography sx={{ fontSize: '0.68rem', color: r.missing_keywords.length ? '#f44336' : 'text.disabled' }}>
+                      {r.missing_keywords.join(', ') || '—'}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      ) : null}
+    </Box>
+  )
+}
+
 // ── Main page ──────────────────────────────────────────────────────────────────
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>()
@@ -2234,6 +2491,7 @@ export default function ProjectDetail() {
               <Tab label="Evidence" icon={<UploadFileOutlined sx={{ fontSize: 15 }} />} iconPosition="start" />
               <Tab label="Assessments" icon={<AssignmentOutlined sx={{ fontSize: 15 }} />} iconPosition="start" />
               <Tab label="Compliance" icon={<ShieldOutlined sx={{ fontSize: 15 }} />} iconPosition="start" />
+              <Tab label="QA" icon={<VerifiedOutlined sx={{ fontSize: 15 }} />} iconPosition="start" />
             </Tabs>
           </Box>
         )
@@ -2246,6 +2504,7 @@ export default function ProjectDetail() {
       {tab === 4 && <EvidenceTab projectId={id!} />}
       {tab === 5 && <PlatformAssessmentsTab productFamily={fam} />}
       {tab === 6 && <AssessmentsTab projectId={id!} />}
+      {tab === 7 && <QATab projectId={id!} />}
     </Box>
   )
 }

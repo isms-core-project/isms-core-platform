@@ -622,8 +622,8 @@ def _get_semantic_model():
     global _SEMANTIC_MODEL
     if _SEMANTIC_MODEL is None:
         from sentence_transformers import SentenceTransformer  # type: ignore
-        logger.info("Loading sentence-transformers model all-MiniLM-L6-v2 …")
-        _SEMANTIC_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
+        logger.info("Loading sentence-transformers model paraphrase-multilingual-MiniLM-L12-v2 …")
+        _SEMANTIC_MODEL = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
         logger.info("Sentence-transformers model loaded")
     return _SEMANTIC_MODEL
 
@@ -657,7 +657,7 @@ def run_semantic_mini_check(
     db: DBSession,
     group_id: uuid.UUID | None = None,
 ) -> dict:
-    """Run semantic similarity check using sentence-transformers all-MiniLM-L6-v2.
+    """Run semantic similarity check using sentence-transformers paraphrase-multilingual-MiniLM-L12-v2.
 
     Encodes ISO control text and UG/TG implementation content as vectors, then
     computes cosine similarity. No API key required — runs entirely on CPU.
@@ -728,7 +728,7 @@ def run_semantic_mini_check(
                 metadata_={
                     "product_type": product_label,
                     "reason": "no_implementation_content",
-                    "model": "all-MiniLM-L6-v2",
+                    "model": "paraphrase-multilingual-MiniLM-L12-v2",
                 },
             ))
             stats["total"] += 1
@@ -754,7 +754,7 @@ def run_semantic_mini_check(
             run_date=run_date,
             metadata_={
                 "product_type": product_label,
-                "model": "all-MiniLM-L6-v2",
+                "model": "paraphrase-multilingual-MiniLM-L12-v2",
                 "iso_text": iso_text[:400],
                 "iso_word_count": iso_word_count,
                 "short_iso_text": iso_word_count < 15,
@@ -954,3 +954,498 @@ gaps: list up to 3 specific missing topics; empty list [] if score>=85."""
     stats["duration_ms"] = int((time.monotonic() - t0) * 1000)
     logger.info("Semantic Claude check complete: %s", stats)
     return stats
+
+
+# ── Phase 21: Project-scoped QA + multilingual keyword translations ───────────
+
+
+def _fetch_library_pol_text(os_client, group_code: str, language: str = "en") -> str:
+    """Fetch concatenated policy full_text from isms-policies index for a control group."""
+    try:
+        result = os_client.search(
+            index=search_service.IDX_POLICIES,
+            body={
+                "query": {
+                    "bool": {
+                        "must": [{"prefix": {"control_group_code": group_code.lower()}}],
+                        "filter": [{"term": {"language": language}}],
+                    }
+                },
+                "_source": ["full_text"],
+                "size": 10,
+            },
+        )
+        parts = [hit["_source"].get("full_text", "") for hit in result["hits"]["hits"]]
+        return " ".join(parts).lower()
+    except Exception as e:
+        logger.warning("OpenSearch POL fetch failed for group %s: %s", group_code, e)
+        return ""
+
+
+def _get_project_control_groups(db: DBSession, project_id: uuid.UUID) -> list:
+    """Return distinct ControlGroup rows covered by a project's policies + implementations."""
+    from src.domain.projects import ProjectPolicy, ProjectImplementation
+
+    pol_groups = db.execute(
+        select(ControlGroup)
+        .join(Policy, Policy.control_group_id == ControlGroup.id)
+        .join(ProjectPolicy, ProjectPolicy.lib_policy_id == Policy.id)
+        .where(ProjectPolicy.project_id == project_id)
+        .where(ProjectPolicy.status == "active")
+        .distinct()
+    ).scalars().all()
+
+    impl_groups = db.execute(
+        select(ControlGroup)
+        .join(Implementation, Implementation.control_group_id == ControlGroup.id)
+        .join(ProjectImplementation, ProjectImplementation.lib_impl_id == Implementation.id)
+        .where(ProjectImplementation.project_id == project_id)
+        .where(ProjectImplementation.status == "active")
+        .distinct()
+    ).scalars().all()
+
+    seen: set = set()
+    groups: list = []
+    for g in [*pol_groups, *impl_groups]:
+        if g.id not in seen:
+            seen.add(g.id)
+            groups.append(g)
+    groups.sort(key=lambda g: g.group_code)
+    return groups
+
+
+def seed_keyword_translations(db: DBSession) -> dict:
+    """Seed qa_keyword_translations from datasets/data/qa_keyword_translations.json.
+
+    Idempotent — skips rows that already exist.
+    """
+    import json as _json
+    import pathlib as _pathlib
+    from src.domain.qa import QAKeywordTranslation
+
+    seed_path = _pathlib.Path("/app/datasets/qa_keyword_translations.json")
+    if not seed_path.exists():
+        logger.warning("qa_keyword_translations.json not found at %s — skipping", seed_path)
+        return {"seeded": 0, "skipped": 0, "error": "file_not_found"}
+
+    with seed_path.open() as f:
+        rows = _json.load(f)
+
+    seeded = 0
+    skipped = 0
+    for row in rows:
+        kw = (row.get("keyword") or "").strip()
+        lang = (row.get("language") or "").strip()
+        trans = (row.get("translation") or "").strip()
+        if not kw or not lang or not trans:
+            continue
+        existing = db.execute(
+            select(QAKeywordTranslation)
+            .where(QAKeywordTranslation.keyword == kw)
+            .where(QAKeywordTranslation.language == lang)
+            .where(QAKeywordTranslation.translation == trans)
+        ).scalar_one_or_none()
+        if existing:
+            skipped += 1
+        else:
+            db.add(QAKeywordTranslation(
+                id=uuid.uuid4(),
+                keyword=kw,
+                language=lang,
+                translation=trans,
+                notes=row.get("notes"),
+            ))
+            seeded += 1
+    db.commit()
+    logger.info("Seeded %d keyword translations (%d already existed)", seeded, skipped)
+    return {"seeded": seeded, "skipped": skipped}
+
+
+def _get_keyword_translations(db: DBSession, language: str) -> dict:
+    """Return {keyword: [translations]} map for a given language from DB."""
+    from src.domain.qa import QAKeywordTranslation
+    try:
+        rows = db.execute(
+            select(QAKeywordTranslation).where(QAKeywordTranslation.language == language)
+        ).scalars().all()
+        result: dict = {}
+        for row in rows:
+            result.setdefault(row.keyword, []).append(row.translation)
+        return result
+    except Exception as e:
+        logger.warning("Could not load keyword translations for %s: %s", language, e)
+        return {}
+
+
+def run_project_existence_check(db: DBSession, project_id: uuid.UUID) -> dict:
+    """Existence check scoped to a project's covered control groups."""
+    from src.domain.projects import ProjectPolicy, ProjectImplementation
+    from src.database.enums import ImplType
+
+    t0 = time.monotonic()
+    run_date = datetime.now(timezone.utc)
+
+    groups = _get_project_control_groups(db, project_id)
+
+    db.execute(
+        delete(CorrelationResult).where(
+            CorrelationResult.correlation_method == CorrelationMethod.EXISTENCE,
+            CorrelationResult.project_id == project_id,
+        )
+    )
+
+    stats: dict = {"total": 0, "pass": 0, "warning": 0, "fail": 0, "needs_review": 0}
+
+    for group in groups:
+        doc_id = f"{group.group_code}:exist:prj"
+        product_label = group.product_family.value.lower() if group.product_family else "isms"
+
+        has_pol = db.execute(
+            select(ProjectPolicy.id)
+            .join(Policy, ProjectPolicy.lib_policy_id == Policy.id)
+            .where(ProjectPolicy.project_id == project_id)
+            .where(Policy.control_group_id == group.id)
+            .where(ProjectPolicy.status == "active")
+            .limit(1)
+        ).scalar_one_or_none() is not None
+
+        has_ug = db.execute(
+            select(ProjectImplementation.id)
+            .join(Implementation, ProjectImplementation.lib_impl_id == Implementation.id)
+            .where(ProjectImplementation.project_id == project_id)
+            .where(Implementation.control_group_id == group.id)
+            .where(Implementation.impl_type == ImplType.UG)
+            .where(ProjectImplementation.status == "active")
+            .limit(1)
+        ).scalar_one_or_none() is not None
+
+        has_tg = db.execute(
+            select(ProjectImplementation.id)
+            .join(Implementation, ProjectImplementation.lib_impl_id == Implementation.id)
+            .where(ProjectImplementation.project_id == project_id)
+            .where(Implementation.control_group_id == group.id)
+            .where(Implementation.impl_type == ImplType.TG)
+            .where(ProjectImplementation.status == "active")
+            .limit(1)
+        ).scalar_one_or_none() is not None
+
+        present = [k for k, v in [("policy", has_pol), ("UG", has_ug), ("TG", has_tg)] if v]
+        status = _fw_status(present)
+
+        db.add(CorrelationResult(
+            control_group_id=group.id,
+            document_id=doc_id,
+            project_id=project_id,
+            result_view="document",
+            correlation_method=CorrelationMethod.EXISTENCE,
+            correlation_strength=Decimal(str(len(present))) / Decimal("3"),
+            qa_status=status,
+            coverage_keywords=present,
+            missing_keywords=[k for k in ["policy", "UG", "TG"] if k not in present],
+            run_date=run_date,
+            metadata_={"product_type": product_label},
+        ))
+        stats["total"] += 1
+        stats[status.value] += 1
+
+    db.commit()
+    stats["duration_ms"] = int((time.monotonic() - t0) * 1000)
+    logger.info("Project existence check complete (project=%s): %s", project_id, stats)
+    return stats
+
+
+def run_project_keyword_check(
+    db: DBSession,
+    project_id: uuid.UUID,
+    reference_library: str = "iso_corpus",
+    language: str = "en",
+) -> dict:
+    """Keyword check scoped to a project's covered control groups.
+
+    reference_library: 'iso_corpus' (ISO control text) | 'isms_library' (ISMS POL text)
+    language: 'en' | 'fr' | 'de' | 'it' — keyword translations used for non-EN
+    """
+    t0 = time.monotonic()
+    run_date = datetime.now(timezone.utc)
+
+    os_client = search_service.get_client()
+    os_available = os_client is not None
+    synonyms = load_synonyms(db)
+
+    kw_translations: dict = {}
+    if language != "en":
+        kw_translations = _get_keyword_translations(db, language)
+
+    groups = _get_project_control_groups(db, project_id)
+
+    _framework_codes = {
+        ProductFamily.ISMS: "ISO27001_2022",
+        ProductFamily.PRIVACY: "ISO27701",
+        ProductFamily.CLOUD: "ISO27018",
+        ProductFamily.SEC: "ISO27017",
+    }
+    frameworks = {
+        family: db.execute(
+            select(Framework).where(Framework.code == code)
+        ).scalar_one_or_none()
+        for family, code in _framework_codes.items()
+    }
+
+    db.execute(
+        delete(CorrelationResult).where(
+            CorrelationResult.correlation_method == CorrelationMethod.KEYWORD,
+            CorrelationResult.project_id == project_id,
+        )
+    )
+
+    stats: dict = {"total": 0, "pass": 0, "warning": 0, "fail": 0, "needs_review": 0}
+
+    for group in groups:
+        doc_id = f"{group.group_code}:kw:prj"
+        control_ids: list = group.stacked_control_ids or []
+        framework = frameworks.get(group.product_family)
+        product_label = group.product_family.value.lower() if group.product_family else "isms"
+
+        if reference_library == "isms_library" and os_available:
+            pol_text = _fetch_library_pol_text(os_client, group.group_code, language="en")
+            corpus = pol_text[:2000] if pol_text else group.name
+        else:
+            if framework and control_ids:
+                fw_controls = db.execute(
+                    select(FrameworkControl).where(
+                        FrameworkControl.framework_id == framework.id,
+                        FrameworkControl.control_id.in_(control_ids),
+                    )
+                ).scalars().all()
+                corpus = " ".join(f"{fc.title} {fc.description or ''}" for fc in fw_controls)
+            else:
+                corpus = group.name
+
+        keywords = _extract_keywords(corpus)
+
+        _nr_meta: dict = {"product_type": product_label, "reference_library": reference_library}
+
+        if not keywords:
+            db.add(CorrelationResult(
+                control_group_id=group.id, document_id=doc_id, project_id=project_id,
+                result_view="document", reference_library=reference_library,
+                correlation_method=CorrelationMethod.KEYWORD, correlation_strength=Decimal("0"),
+                qa_status=QAStatus.NEEDS_REVIEW, coverage_keywords=[], missing_keywords=[],
+                run_date=run_date, metadata_={**_nr_meta, "reason": "no_keywords_extracted"},
+            ))
+            stats["total"] += 1; stats["needs_review"] += 1; continue
+
+        if not os_available:
+            db.add(CorrelationResult(
+                control_group_id=group.id, document_id=doc_id, project_id=project_id,
+                result_view="document", reference_library=reference_library,
+                correlation_method=CorrelationMethod.KEYWORD, correlation_strength=Decimal("0"),
+                qa_status=QAStatus.NEEDS_REVIEW, coverage_keywords=[], missing_keywords=keywords,
+                run_date=run_date, metadata_={**_nr_meta, "reason": "opensearch_unavailable"},
+            ))
+            stats["total"] += 1; stats["needs_review"] += 1; continue
+
+        full_text = _fetch_group_full_text(os_client, group.group_code, language=language)
+        if not full_text and language != "en":
+            full_text = _fetch_group_full_text(os_client, group.group_code, language="en")
+
+        found_exact: list = []
+        synonym_matches: dict = {}
+        missing: list = []
+
+        for kw in keywords:
+            matched = False
+            if kw in full_text:
+                found_exact.append(kw); matched = True
+            else:
+                kw_stem = _stem(kw)
+                if kw_stem != kw and kw_stem in full_text:
+                    found_exact.append(kw); matched = True
+            if not matched and language != "en" and kw in kw_translations:
+                trans_hit = next(
+                    (t for t in kw_translations[kw] if t.lower() in full_text), None
+                )
+                if trans_hit:
+                    synonym_matches[kw] = trans_hit; matched = True
+            if not matched:
+                syn_hit = next((s for s in synonyms.get(kw, []) if s in full_text), None)
+                if syn_hit:
+                    synonym_matches[kw] = syn_hit
+                else:
+                    missing.append(kw)
+
+        n = len(keywords)
+        weighted = Decimal(len(found_exact)) + Decimal(len(synonym_matches)) * _KW_SYNONYM_WEIGHT
+        strength = weighted / Decimal(n) if n else Decimal("0")
+        status = _kw_status(strength) if full_text else QAStatus.NEEDS_REVIEW
+
+        db.add(CorrelationResult(
+            control_group_id=group.id, document_id=doc_id, project_id=project_id,
+            result_view="document", reference_library=reference_library,
+            correlation_method=CorrelationMethod.KEYWORD, correlation_strength=strength,
+            qa_status=status, coverage_keywords=found_exact, missing_keywords=missing,
+            run_date=run_date,
+            metadata_={
+                "product_type": product_label, "language": language,
+                "reference_library": reference_library, "total_keywords": n,
+                "found_exact": len(found_exact), "found_synonym": len(synonym_matches),
+                "has_os_content": bool(full_text),
+            },
+        ))
+        stats["total"] += 1
+        stats[status.value] += 1
+
+    db.commit()
+    stats["duration_ms"] = int((time.monotonic() - t0) * 1000)
+    logger.info("Project keyword check complete (project=%s): %s", project_id, stats)
+    return stats
+
+
+def run_project_semantic_check(
+    db: DBSession,
+    project_id: uuid.UUID,
+    reference_library: str = "iso_corpus",
+    language: str = "en",
+) -> dict:
+    """Semantic similarity check scoped to a project's covered control groups."""
+    from sentence_transformers import util as st_util  # type: ignore
+
+    t0 = time.monotonic()
+    run_date = datetime.now(timezone.utc)
+
+    model = _get_semantic_model()
+    os_client = search_service.get_client()
+    os_available = os_client is not None
+
+    groups = _get_project_control_groups(db, project_id)
+
+    _framework_codes = {
+        ProductFamily.ISMS: "ISO27001_2022",
+        ProductFamily.PRIVACY: "ISO27701",
+        ProductFamily.CLOUD: "ISO27018",
+        ProductFamily.SEC: "ISO27017",
+    }
+    frameworks = {
+        family: db.execute(
+            select(Framework).where(Framework.code == code)
+        ).scalar_one_or_none()
+        for family, code in _framework_codes.items()
+    }
+
+    db.execute(
+        delete(CorrelationResult).where(
+            CorrelationResult.correlation_method == CorrelationMethod.SEMANTIC,
+            CorrelationResult.project_id == project_id,
+        )
+    )
+
+    stats: dict = {"total": 0, "pass": 0, "warning": 0, "fail": 0, "needs_review": 0}
+
+    for group in groups:
+        doc_id = f"{group.group_code}:sem:prj"
+        product_label = group.product_family.value.lower() if group.product_family else "isms"
+        framework = frameworks.get(group.product_family)
+
+        if reference_library == "isms_library" and os_available:
+            ref_text = _fetch_library_pol_text(os_client, group.group_code, language="en")
+            if not ref_text:
+                ref_text = _build_iso_text(db, framework, group)
+        else:
+            ref_text = _build_iso_text(db, framework, group)
+
+        impl_text = ""
+        if os_available:
+            impl_text = _fetch_group_full_text(os_client, group.group_code, language=language)[:3000]
+            if not impl_text and language != "en":
+                impl_text = _fetch_group_full_text(os_client, group.group_code, language="en")[:3000]
+
+        _nr_meta: dict = {
+            "product_type": product_label, "reference_library": reference_library,
+            "model": "paraphrase-multilingual-MiniLM-L12-v2",
+        }
+
+        if not ref_text or not impl_text:
+            db.add(CorrelationResult(
+                control_group_id=group.id, document_id=doc_id, project_id=project_id,
+                result_view="document", reference_library=reference_library,
+                correlation_method=CorrelationMethod.SEMANTIC, correlation_strength=Decimal("0"),
+                qa_status=QAStatus.NEEDS_REVIEW, coverage_keywords=[], missing_keywords=[],
+                run_date=run_date,
+                metadata_={**_nr_meta, "reason": "no_reference_text" if not ref_text else "no_implementation_content"},
+            ))
+            stats["total"] += 1; stats["needs_review"] += 1; continue
+
+        embeddings = model.encode([ref_text, impl_text], convert_to_tensor=True)
+        cosine = float(st_util.cos_sim(embeddings[0], embeddings[1]))
+        cosine = max(0.0, min(1.0, cosine))
+        strength = Decimal(str(round(cosine, 4)))
+        status = _semantic_status(strength, _SEMANTIC_PASS_THRESHOLD, _SEMANTIC_WARN_THRESHOLD)
+
+        db.add(CorrelationResult(
+            control_group_id=group.id, document_id=doc_id, project_id=project_id,
+            result_view="document", reference_library=reference_library,
+            correlation_method=CorrelationMethod.SEMANTIC, correlation_strength=strength,
+            qa_status=status, coverage_keywords=[], missing_keywords=[],
+            run_date=run_date,
+            metadata_={**_nr_meta, "language": language},
+        ))
+        stats["total"] += 1
+        stats[status.value] += 1
+
+    db.commit()
+    stats["duration_ms"] = int((time.monotonic() - t0) * 1000)
+    logger.info("Project semantic check complete (project=%s): %s", project_id, stats)
+    return stats
+
+
+def get_project_qa_summary(db: DBSession, project_id: uuid.UUID, method: str = "existence") -> dict:
+    """Aggregated QA summary for a specific project."""
+    try:
+        method_enum = CorrelationMethod(method)
+    except ValueError:
+        method_enum = CorrelationMethod.EXISTENCE
+
+    rows = db.execute(
+        select(CorrelationResult).where(
+            CorrelationResult.project_id == project_id,
+            CorrelationResult.correlation_method == method_enum,
+        )
+    ).scalars().all()
+
+    stats: dict = {"total": 0, "pass": 0, "warning": 0, "fail": 0, "needs_review": 0}
+    last_run = None
+    for row in rows:
+        stats["total"] += 1
+        stats[row.qa_status.value] += 1
+        if last_run is None or row.run_date > last_run:
+            last_run = row.run_date
+
+    total = stats["total"] or 1
+    return {
+        **stats,
+        "pass_rate": round(stats["pass"] / total, 3),
+        "last_run": last_run.isoformat() if last_run else None,
+        "method": method,
+    }
+
+
+def get_org_project_summaries(db: DBSession, method: str = "existence") -> list:
+    """Per-project QA summaries for all projects that have run QA."""
+    from sqlalchemy import distinct as sa_distinct
+
+    try:
+        method_enum = CorrelationMethod(method)
+    except ValueError:
+        method_enum = CorrelationMethod.EXISTENCE
+
+    project_ids = db.execute(
+        select(sa_distinct(CorrelationResult.project_id)).where(
+            CorrelationResult.project_id.is_not(None),
+            CorrelationResult.correlation_method == method_enum,
+        )
+    ).scalars().all()
+
+    return [
+        {"project_id": str(pid), **get_project_qa_summary(db, pid, method)}
+        for pid in project_ids
+    ]

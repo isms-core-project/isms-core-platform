@@ -49,6 +49,10 @@ class CorrelationResultRead(BaseModel):
     missing_keywords: list[str]
     run_date: datetime
     metadata: dict
+    # Phase 21 — project scope (None = org-level/global)
+    project_id: uuid.UUID | None = None
+    reference_library: str | None = None
+    result_view: str = "control_group"
 
     model_config = {"from_attributes": True}
 

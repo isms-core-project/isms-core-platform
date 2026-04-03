@@ -385,3 +385,170 @@ def delete_synonym(rule_id: uuid.UUID, db: DBSession = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Synonym rule not found.")
     db.delete(rule)
     db.commit()
+
+
+# ── Project-scoped QA (Phase 21) ─────────────────────────────────────────────
+
+
+@router.post(
+    "/project/{project_id}/run-existence",
+    response_model=ExistenceRunResult,
+    dependencies=[Depends(require_qa_access)],
+)
+def run_project_existence(project_id: uuid.UUID, db: DBSession = Depends(get_db)):
+    """Existence check for a specific project's covered control groups."""
+    stats = qa_service.run_project_existence_check(db, project_id)
+    return ExistenceRunResult(
+        total=stats["total"],
+        pass_count=stats["pass"],
+        warning_count=stats["warning"],
+        fail_count=stats["fail"],
+        needs_review_count=stats["needs_review"],
+        duration_ms=stats["duration_ms"],
+        run_date=datetime.now(timezone.utc).isoformat(),
+    )
+
+
+@router.post(
+    "/project/{project_id}/run-keyword",
+    response_model=KeywordRunResult,
+    dependencies=[Depends(require_qa_access)],
+)
+def run_project_keyword(
+    project_id: uuid.UUID,
+    reference_library: str = "iso_corpus",
+    language: str = "en",
+    db: DBSession = Depends(get_db),
+):
+    """Keyword check for a project. reference_library: iso_corpus | isms_library."""
+    stats = qa_service.run_project_keyword_check(db, project_id, reference_library, language)
+    return KeywordRunResult(
+        total=stats["total"],
+        pass_count=stats["pass"],
+        warning_count=stats["warning"],
+        fail_count=stats["fail"],
+        needs_review_count=stats["needs_review"],
+        duration_ms=stats["duration_ms"],
+        run_date=datetime.now(timezone.utc).isoformat(),
+    )
+
+
+@router.post(
+    "/project/{project_id}/run-semantic",
+    response_model=SemanticRunResult,
+    dependencies=[Depends(require_qa_access)],
+)
+def run_project_semantic(
+    project_id: uuid.UUID,
+    reference_library: str = "iso_corpus",
+    language: str = "en",
+    db: DBSession = Depends(get_db),
+):
+    """Semantic similarity check for a project. reference_library: iso_corpus | isms_library."""
+    try:
+        stats = qa_service.run_project_semantic_check(db, project_id, reference_library, language)
+    except RuntimeError as e:
+        raise HTTPException(status_code=503, detail=str(e))
+    return SemanticRunResult(
+        total=stats["total"],
+        pass_count=stats["pass"],
+        warning_count=stats["warning"],
+        fail_count=stats["fail"],
+        needs_review_count=stats["needs_review"],
+        duration_ms=stats["duration_ms"],
+        run_date=datetime.now(timezone.utc).isoformat(),
+        method="semantic",
+    )
+
+
+@router.get(
+    "/project/{project_id}/results",
+    response_model=list[CorrelationResultRead],
+)
+def list_project_results(
+    project_id: uuid.UUID,
+    method: str = "existence",
+    status: str | None = None,
+    limit: int = 200,
+    offset: int = 0,
+    db: DBSession = Depends(get_db),
+):
+    """List QA results for a specific project."""
+    try:
+        method_enum = CorrelationMethod(method)
+    except ValueError:
+        method_enum = CorrelationMethod.EXISTENCE
+
+    q = (
+        select(CorrelationResult)
+        .where(
+            CorrelationResult.project_id == project_id,
+            CorrelationResult.correlation_method == method_enum,
+        )
+        .order_by(CorrelationResult.run_date.desc())
+        .limit(limit)
+        .offset(offset)
+    )
+    if status:
+        try:
+            q = q.where(CorrelationResult.qa_status == QAStatus(status))
+        except ValueError:
+            pass
+
+    rows = db.execute(q).scalars().all()
+    results = []
+    for row in rows:
+        group = db.get(ControlGroup, row.control_group_id)
+        results.append(CorrelationResultRead(
+            id=row.id,
+            control_group_id=row.control_group_id,
+            control_group_code=group.group_code if group else "",
+            control_group_name=group.name if group else "",
+            document_id=row.document_id,
+            product_type=(row.metadata_ or {}).get("product_type", ""),
+            correlation_method=row.correlation_method.value,
+            correlation_strength=float(row.correlation_strength),
+            qa_status=row.qa_status.value,
+            coverage_keywords=row.coverage_keywords or [],
+            missing_keywords=row.missing_keywords or [],
+            run_date=row.run_date,
+            metadata=row.metadata_ or {},
+            project_id=row.project_id,
+            reference_library=row.reference_library,
+            result_view=row.result_view or "document",
+        ))
+    return results
+
+
+@router.get("/project/{project_id}/summary")
+def get_project_summary(
+    project_id: uuid.UUID,
+    method: str = "existence",
+    db: DBSession = Depends(get_db),
+):
+    """Aggregated QA summary for a specific project."""
+    return qa_service.get_project_qa_summary(db, project_id, method)
+
+
+# ── Org-level aggregate (Phase 21) ────────────────────────────────────────────
+
+
+@router.get("/org/projects")
+def list_org_project_summaries(
+    method: str = "existence",
+    db: DBSession = Depends(get_db),
+):
+    """Per-project QA summaries for all projects that have run QA (org aggregate)."""
+    return qa_service.get_org_project_summaries(db, method)
+
+
+# ── Keyword translation seed ──────────────────────────────────────────────────
+
+
+@router.post(
+    "/seed-keyword-translations",
+    dependencies=[Depends(require_qa_access)],
+)
+def seed_keyword_translations(db: DBSession = Depends(get_db)):
+    """Seed qa_keyword_translations table from the bundled JSON file."""
+    return qa_service.seed_keyword_translations(db)
