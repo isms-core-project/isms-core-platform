@@ -6,6 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import select
 from sqlalchemy.orm import Session as DBSession
 
+from src.core.config import get_settings
 from src.core.dependencies import require_qa_access
 from src.database.enums import CorrelationMethod, QAStatus, UserRole
 from src.database.session import get_db
@@ -23,6 +24,7 @@ from src.schemas.qa import (
     SynonymRuleRead,
 )
 from src.services import qa_service
+from src.services.iso_reference_service import get_status as iso_ref_status, load_from_seeds
 
 logger = logging.getLogger(__name__)
 
@@ -273,6 +275,47 @@ def get_summary(
         cloud=_bucket(cld),
         overall_pass_rate=round(all_pass / all_total, 3),
     )
+
+
+# ── ISO Reference Corpus ──────────────────────────────────────────────────────
+
+
+@router.get("/reference-corpus/status")
+def reference_corpus_status():
+    """Return current state of the iso-reference index: chunk count, standards breakdown."""
+    return iso_ref_status()
+
+
+@router.post(
+    "/reference-corpus/reload",
+    dependencies=[Depends(require_qa_access)],
+)
+def reference_corpus_reload():
+    """Reload ISO reference corpus from baked-in JSON seed files.
+
+    Clears the existing iso-reference index and reloads from datasets/data/iso-reference/*.json.
+    Use after updating seed files and rebuilding the container.
+    Requires admin or QA role.
+    """
+    from src.services import search_service as ss
+    client = ss.get_client()
+    if client and client.indices.exists(index=ss.IDX_ISO_REFERENCE):
+        try:
+            client.delete_by_query(
+                index=ss.IDX_ISO_REFERENCE,
+                body={"query": {"match_all": {}}},
+                wait_for_completion=True,
+            )
+        except Exception as e:
+            logger.warning("Could not clear iso-reference before reload: %s", e)
+
+    result = load_from_seeds()
+    if result.get("total_chunks", 0) == 0:
+        raise HTTPException(
+            status_code=503,
+            detail=result.get("error", "No chunks loaded — seed files may be missing.")
+        )
+    return result
 
 
 # ── Synonym management ────────────────────────────────────────────────────────

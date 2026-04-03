@@ -13,6 +13,7 @@ from src.core.exceptions import generic_exception_handler, http_exception_handle
 from src.core.security import hash_password
 from src.database.session import SessionLocal
 from src.services import search_service
+from src.services.iso_reference_service import load_from_seeds, needs_seed as iso_needs_seed
 from src.services.loader_service import load_all_bundles, needs_seed
 from src.services.qa_service import ensure_synonym_table
 
@@ -45,11 +46,26 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.error("Synonym table setup failed: %s", e)
 
-    # OpenSearch: verify connectivity and ensure indices
+    # OpenSearch: verify connectivity, ensure indices, auto-seed ISO reference corpus
     try:
         if search_service.is_available():
             search_service.ensure_indices()
             logger.info("OpenSearch connected — indices ensured")
+            # Auto-load ISO reference corpus on first boot (non-blocking best-effort)
+            try:
+                if iso_needs_seed():
+                    logger.info("ISO reference index empty — loading from seeds…")
+                    stats = load_from_seeds()
+                    logger.info(
+                        "ISO reference corpus loaded: %d chunks across %d standards (%dms)",
+                        stats.get("total_chunks", 0),
+                        len(stats.get("standards", [])),
+                        stats.get("duration_ms", 0),
+                    )
+                else:
+                    logger.info("ISO reference corpus already indexed — skipping seed")
+            except Exception as e:
+                logger.warning("ISO reference seed failed: %s (non-fatal)", e)
         else:
             logger.warning(
                 "OpenSearch not available — search disabled (non-fatal)"
