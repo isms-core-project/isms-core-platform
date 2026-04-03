@@ -18,9 +18,10 @@ from src.core.config import get_settings
 logger = logging.getLogger(__name__)
 
 # Index names
-IDX_IMPLEMENTATIONS = "isms-implementations"
-IDX_POLICIES = "isms-policies"
-IDX_EVIDENCE = "isms-evidence"
+IDX_IMPLEMENTATIONS  = "isms-implementations"
+IDX_POLICIES         = "isms-policies"
+IDX_EVIDENCE         = "isms-evidence"
+IDX_ISO_REFERENCE    = "iso-reference"
 
 # Client singleton
 _client: OpenSearch | None = None
@@ -516,6 +517,99 @@ def search_all(
 # ------------------------------------------------------------------
 # Status / stats
 # ------------------------------------------------------------------
+
+
+_ISO_REF_MAPPING = {
+    "settings": _SHARED_SETTINGS,
+    "mappings": {
+        "properties": {
+            "standard":    {"type": "keyword"},
+            "clause_id":   {"type": "keyword"},
+            "title":       {"type": "text", "analyzer": "isms_analyzer", "fields": {"raw": {"type": "keyword"}}},
+            "text":        {"type": "text", "analyzer": "isms_analyzer"},
+            "language":    {"type": "keyword"},
+            "source_file": {"type": "keyword"},
+            "indexed_at":  {"type": "date"},
+        }
+    },
+}
+
+
+def ensure_iso_reference_index() -> bool:
+    """Create iso-reference index if it does not exist."""
+    client = get_client()
+    if not client:
+        return False
+    try:
+        if not client.indices.exists(index=IDX_ISO_REFERENCE):
+            client.indices.create(index=IDX_ISO_REFERENCE, body=_ISO_REF_MAPPING)
+            logger.info("Created index: %s", IDX_ISO_REFERENCE)
+        return True
+    except Exception as e:
+        logger.error("Failed to ensure iso-reference index: %s", e)
+        return False
+
+
+def index_iso_chunk(
+    doc_id: str,
+    standard: str,
+    clause_id: str,
+    title: str,
+    text: str,
+    language: str = "en",
+    source_file: str = "",
+) -> bool:
+    """Index a single ISO normative text chunk. Returns True on success."""
+    client = get_client()
+    if not client:
+        return False
+    try:
+        from datetime import datetime, timezone
+        client.index(
+            index=IDX_ISO_REFERENCE,
+            id=doc_id,
+            body={
+                "standard":    standard,
+                "clause_id":   clause_id,
+                "title":       title,
+                "text":        text,
+                "language":    language,
+                "source_file": source_file,
+                "indexed_at":  datetime.now(timezone.utc).isoformat(),
+            },
+        )
+        return True
+    except Exception as e:
+        logger.warning("Failed to index ISO chunk %s: %s", doc_id, e)
+        return False
+
+
+def get_iso_reference_text(clause_id: str, standard: str | None = None) -> str:
+    """Fetch concatenated normative text for a given clause_id from iso-reference index.
+
+    Used by QA checks to get the ISO ground truth for a control group.
+    clause_id can be exact (e.g. 'a.5.15') or a prefix (e.g. 'a.5').
+    """
+    client = get_client()
+    if not client:
+        return ""
+    try:
+        must: list[dict] = [{"prefix": {"clause_id": clause_id.lower()}}]
+        if standard:
+            must.append({"term": {"standard": standard}})
+        result = client.search(
+            index=IDX_ISO_REFERENCE,
+            body={
+                "query": {"bool": {"must": must}},
+                "_source": ["text"],
+                "size": 10,
+            },
+        )
+        parts = [hit["_source"].get("text", "") for hit in result["hits"]["hits"]]
+        return "\n\n".join(parts)
+    except Exception as e:
+        logger.warning("ISO reference fetch failed for %s: %s", clause_id, e)
+        return ""
 
 
 def get_search_status() -> dict:

@@ -826,7 +826,7 @@ export default function QA() {
     <Box>
       <PageHeader
         title="QA"
-        subtitle={tab === 0 ? methodSubtitle : 'Manage the synonym dictionary used by keyword correlation'}
+        subtitle={tab === 0 ? methodSubtitle : tab === 1 ? 'Manage the synonym dictionary used by keyword correlation' : 'ISO & regulatory normative corpus — 72 standards, 13,500+ indexed chunks'}
         actions={tab === 0 ? (
           <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap">
             {summary?.last_run && (
