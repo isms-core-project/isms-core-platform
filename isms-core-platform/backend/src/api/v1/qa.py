@@ -6,7 +6,6 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import select
 from sqlalchemy.orm import Session as DBSession
 
-from src.core.config import get_settings
 from src.core.dependencies import require_qa_access
 from src.database.enums import CorrelationMethod, QAStatus, UserRole
 from src.database.session import get_db
@@ -23,7 +22,7 @@ from src.schemas.qa import (
     SynonymRulePatch,
     SynonymRuleRead,
 )
-from src.services import iso_reference_service, qa_service
+from src.services import qa_service
 
 logger = logging.getLogger(__name__)
 
@@ -274,32 +273,6 @@ def get_summary(
         cloud=_bucket(cld),
         overall_pass_rate=round(all_pass / all_total, 3),
     )
-
-
-# ── ISO Reference Corpus ──────────────────────────────────────────────────────
-
-
-@router.get("/reference-corpus/status")
-def reference_corpus_status():
-    """Return current state of the iso-reference index: chunk count, standards breakdown."""
-    return iso_reference_service.get_status()
-
-
-@router.post(
-    "/reference-corpus/load",
-    dependencies=[Depends(require_qa_access)],
-)
-def reference_corpus_load():
-    """Extract all ISO/regulatory PDFs and index them into OpenSearch iso-reference index.
-
-    Clears previous content before loading. May take 1-3 minutes depending on file count.
-    Requires admin or QA role.
-    """
-    settings = get_settings()
-    result = iso_reference_service.load_corpus(settings.iso_reference_path)
-    if "error" in result and result.get("total_chunks", 0) == 0:
-        raise HTTPException(status_code=503, detail=result["error"])
-    return result
 
 
 # ── Synonym management ────────────────────────────────────────────────────────

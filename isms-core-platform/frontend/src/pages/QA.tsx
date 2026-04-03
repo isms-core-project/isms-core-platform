@@ -48,7 +48,6 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { qaApi } from '../api/qa'
-import type { ReferenceCorpusStatus } from '../api/qa'
 import type { CorrelationResultRead, QASummaryBucket, SynonymRule } from '../api/types'
 import PageHeader from '../components/PageHeader'
 import { useProduct, PRODUCT_SUBTITLES, PRODUCT_COLORS } from '../store/ProductContext'
@@ -623,117 +622,6 @@ function MissingCell({ row, method }: { row: CorrelationResultRead; method: stri
   )
 }
 
-function ReferenceCorpusTab() {
-  const queryClient = useQueryClient()
-  const [loadResult, setLoadResult] = useState<string | null>(null)
-  const [loadError, setLoadError] = useState<string | null>(null)
-
-  const { data: status, isLoading } = useQuery<ReferenceCorpusStatus>({
-    queryKey: ['qa', 'reference-corpus', 'status'],
-    queryFn: qaApi.getReferenceCorpusStatus,
-    refetchInterval: 30_000,
-  })
-
-  const loadMutation = useMutation({
-    mutationFn: qaApi.loadReferenceCorpus,
-    onSuccess: (data) => {
-      queryClient.invalidateQueries({ queryKey: ['qa', 'reference-corpus'] })
-      setLoadError(null)
-      setLoadResult(
-        `Loaded ${data.loaded_files} files — ${data.total_chunks.toLocaleString()} chunks indexed in ${(data.duration_ms / 1000).toFixed(1)}s.` +
-        (data.failed_files > 0 ? ` (${data.failed_files} files failed)` : '')
-      )
-    },
-    onError: (e: Error) => {
-      setLoadResult(null)
-      setLoadError(e.message || 'Failed to load reference corpus.')
-    },
-  })
-
-  return (
-    <Box>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
-        <Box>
-          <Typography variant="body2" fontWeight={600} gutterBottom>ISO & Regulatory Reference Corpus</Typography>
-          <Typography variant="caption" color="text.secondary">
-            Normative text from all ISO/regulatory PDFs indexed as ground truth for QA checks.
-            Load or reload after adding new documents to the iso-reference mount.
-          </Typography>
-        </Box>
-        <Button
-          variant="contained"
-          size="small"
-          startIcon={<PlayArrowOutlined />}
-          onClick={() => loadMutation.mutate()}
-          disabled={loadMutation.isPending || !status?.available}
-        >
-          {loadMutation.isPending ? 'Loading…' : 'Load / Reload Corpus'}
-        </Button>
-      </Box>
-
-      {loadMutation.isPending && (
-        <Alert severity="info" sx={{ mb: 2, py: 0.5 }}>
-          Extracting and indexing PDFs — this may take 1–3 minutes…
-        </Alert>
-      )}
-      {loadResult && <Alert severity="success" sx={{ mb: 2, py: 0.5 }}>{loadResult}</Alert>}
-      {loadError  && <Alert severity="error"   sx={{ mb: 2, py: 0.5 }}>{loadError}</Alert>}
-
-      {isLoading && <CircularProgress size={20} />}
-
-      {status && !isLoading && (
-        <>
-          {!status.available && (
-            <Alert severity="warning" sx={{ mb: 2, py: 0.5 }}>
-              OpenSearch not available — reference corpus cannot be loaded.
-            </Alert>
-          )}
-
-          {status.available && !status.indexed && (
-            <Alert severity="info" sx={{ mb: 2, py: 0.5 }}>
-              No reference corpus indexed yet. Click "Load / Reload Corpus" to extract and index all ISO documents.
-            </Alert>
-          )}
-
-          {status.indexed && (
-            <Box sx={{ mb: 2 }}>
-              <Typography variant="body2" color="text.secondary" gutterBottom>
-                {status.total_chunks.toLocaleString()} chunks indexed across {status.standards.length} standards
-              </Typography>
-            </Box>
-          )}
-
-          {status.standards.length > 0 && (
-            <TableContainer component={Card}>
-              <Table size="small">
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Standard</TableCell>
-                    <TableCell align="right">Chunks</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {status.standards.map((s) => (
-                    <TableRow key={s.standard} hover>
-                      <TableCell>
-                        <Typography variant="body2" fontWeight={500}>{s.standard}</Typography>
-                      </TableCell>
-                      <TableCell align="right">
-                        <Chip label={s.chunks.toLocaleString()} size="small"
-                          sx={{ fontSize: '0.65rem', height: 18, bgcolor: 'rgba(255,255,255,0.06)' }} />
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          )}
-        </>
-      )}
-    </Box>
-  )
-}
-
 export default function QA() {
   const queryClient = useQueryClient()
   const { product: activeProduct } = useProduct()
@@ -891,11 +779,9 @@ export default function QA() {
       <Tabs value={tab} onChange={(_, v) => setTab(v)} sx={{ mb: 2, borderBottom: 1, borderColor: 'divider' }}>
         <Tab label="Results" />
         <Tab label="Synonyms" />
-        <Tab label="Reference Corpus" />
       </Tabs>
 
       {tab === 1 && <SynonymsTab />}
-      {tab === 2 && <ReferenceCorpusTab />}
 
       {tab === 0 && <>
 

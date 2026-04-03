@@ -31,28 +31,4 @@ export const qaApi = {
 
   deleteSynonym: (id: string) =>
     client.delete(`/qa/synonyms/${id}`),
-
-  getReferenceCorpusStatus: () =>
-    client.get<ReferenceCorpusStatus>('/qa/reference-corpus/status').then((r) => r.data),
-
-  loadReferenceCorpus: () =>
-    client.post<ReferenceCorpusLoadResult>('/qa/reference-corpus/load').then((r) => r.data),
-}
-
-export interface ReferenceCorpusStatus {
-  available: boolean
-  indexed: boolean
-  total_chunks: number
-  standards: { standard: string; chunks: number }[]
-  error?: string
-}
-
-export interface ReferenceCorpusLoadResult {
-  loaded_files: number
-  failed_files: number
-  total_chunks: number
-  standards: { standard: string; chunks: number }[]
-  duration_ms: number
-  loaded_at?: string
-  error?: string
 }
