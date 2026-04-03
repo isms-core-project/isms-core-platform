@@ -892,6 +892,12 @@ export default function QA() {
   const [status, setStatus] = useState<string>('all')
   const [runResult, setRunResult] = useState<string | null>(null)
 
+  const { data: corpusStatus } = useQuery<ReferenceCorpusStatus>({
+    queryKey: ['qa', 'reference-corpus', 'status'],
+    queryFn: qaApi.getReferenceCorpusStatus,
+    staleTime: 60_000,
+  })
+
   const { data: summary } = useQuery({
     queryKey: ['qa', 'summary', method, product],
     queryFn: () => qaApi.getSummary(method, product),
@@ -975,7 +981,7 @@ export default function QA() {
     <Box>
       <PageHeader
         title="QA"
-        subtitle={tab === 0 ? methodSubtitle : tab === 1 ? 'Manage the synonym dictionary used by keyword correlation' : tab === 2 ? 'ISO & regulatory normative corpus — 72 standards, 13,500+ indexed chunks' : 'Per-project QA health — click any card to open the project QA tab'}
+        subtitle={tab === 0 ? methodSubtitle : tab === 1 ? 'Manage the synonym dictionary used by keyword correlation' : tab === 2 ? (corpusStatus?.indexed ? `ISO & regulatory normative corpus — ${corpusStatus.standards.length} standards, ${corpusStatus.total_chunks.toLocaleString()} indexed chunks` : 'ISO & regulatory normative corpus') : 'Per-project QA health — click any card to open the project QA tab'}
         actions={tab === 0 ? (
           <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap">
             {summary?.last_run && (

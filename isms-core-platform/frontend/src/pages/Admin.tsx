@@ -40,6 +40,9 @@ import {
   HistoryOutlined,
   FilterListOutlined,
   FileDownloadOutlined,
+  LockResetOutlined,
+  LockOutlined,
+  LockOpenOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
@@ -337,9 +340,19 @@ function UsersTab() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['admin', 'users'] }),
   })
 
+  const resetMfaMutation = useMutation({
+    mutationFn: adminApi.resetUserMfa,
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['admin', 'users'] }),
+  })
+
   function handleDelete(user: UserRead) {
     if (!window.confirm(`Delete user ${user.email}? This cannot be undone.`)) return
     deleteMutation.mutate(user.id)
+  }
+
+  function handleResetMfa(user: UserRead) {
+    if (!window.confirm(`Reset MFA for ${user.email}? They will need to re-enroll.`)) return
+    resetMfaMutation.mutate(user.id)
   }
 
   return (
@@ -379,6 +392,7 @@ function UsersTab() {
                       <TableCell>Role</TableCell>
                       {isSuperAdmin && <TableCell>Organisation</TableCell>}
                       <TableCell>Status</TableCell>
+                      <TableCell>MFA</TableCell>
                       <TableCell>Last Login</TableCell>
                       <TableCell>Created</TableCell>
                       <TableCell align="center">Actions</TableCell>
@@ -387,7 +401,7 @@ function UsersTab() {
                   <TableBody>
                     {isLoading && [...Array(3)].map((_, i) => (
                       <TableRow key={i}>
-                        {[...Array(isSuperAdmin ? 9 : 8)].map((_, j) => (
+                        {[...Array(isSuperAdmin ? 10 : 9)].map((_, j) => (
                           <TableCell key={j}>
                             <Box sx={{ height: 16, bgcolor: 'rgba(255,255,255,0.05)', borderRadius: 1 }} />
                           </TableCell>
@@ -423,6 +437,15 @@ function UsersTab() {
                             />
                           </TableCell>
                           <TableCell>
+                            <Tooltip title={user.mfa_enabled ? 'MFA enabled' : 'MFA not set up'}>
+                              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                {user.mfa_enabled
+                                  ? <LockOutlined sx={{ fontSize: 16, color: '#C6EFCE' }} />
+                                  : <LockOpenOutlined sx={{ fontSize: 16, color: 'text.disabled' }} />}
+                              </Box>
+                            </Tooltip>
+                          </TableCell>
+                          <TableCell>
                             <Typography variant="caption" color="text.secondary">
                               {user.last_login ? dayjs(user.last_login).format('DD MMM YYYY HH:mm') : '—'}
                             </Typography>
@@ -438,6 +461,18 @@ function UsersTab() {
                                 <EditOutlined fontSize="small" />
                               </IconButton>
                             </Tooltip>
+                            {user.mfa_enabled && (
+                              <Tooltip title="Reset MFA">
+                                <IconButton
+                                  size="small"
+                                  onClick={() => handleResetMfa(user)}
+                                  sx={{ color: 'warning.main' }}
+                                  disabled={resetMfaMutation.isPending}
+                                >
+                                  <LockResetOutlined fontSize="small" />
+                                </IconButton>
+                              </Tooltip>
+                            )}
                             <Tooltip title="Delete">
                               <IconButton
                                 size="small"

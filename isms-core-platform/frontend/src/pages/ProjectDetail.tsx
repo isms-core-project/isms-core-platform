@@ -2251,6 +2251,7 @@ function QATab({ projectId }: { projectId: string }) {
             <Select value={refLib} label="Reference Library" onChange={e => setRefLib(e.target.value)} sx={{ fontSize: '0.78rem' }}>
               <MenuItem value="iso_corpus" sx={{ fontSize: '0.78rem' }}>ISO Corpus</MenuItem>
               <MenuItem value="isms_library" sx={{ fontSize: '0.78rem' }}>ISMS Library POLs</MenuItem>
+              <MenuItem value="crosswalk" sx={{ fontSize: '0.78rem' }}>Crosswalk (NIS2/DORA/NIST)</MenuItem>
             </Select>
           </FormControl>
         )}

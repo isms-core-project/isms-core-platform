@@ -982,6 +982,52 @@ def _fetch_library_pol_text(os_client, group_code: str, language: str = "en") ->
         return ""
 
 
+def _fetch_crosswalk_reference_text(db: DBSession, framework, group) -> str:
+    """Fetch concatenated regulatory reference text via CrossFrameworkMapping.
+
+    For the ISO controls stacked under *group*, find all cross-framework
+    mappings where the ISO control is the source and collect the title +
+    description of the target controls (NIS2, DORA, NIST CSF, etc.).
+    Falls back to an empty string if no mappings exist.
+    """
+    from src.domain.frameworks import CrossFrameworkMapping
+
+    control_ids: list = group.stacked_control_ids or []
+    if not framework or not control_ids:
+        return ""
+
+    # ISO FrameworkControl rows for this group
+    iso_controls = db.execute(
+        select(FrameworkControl).where(
+            FrameworkControl.framework_id == framework.id,
+            FrameworkControl.control_id.in_(control_ids),
+        )
+    ).scalars().all()
+
+    if not iso_controls:
+        return ""
+
+    iso_fc_ids = [fc.id for fc in iso_controls]
+
+    # Crosswalk targets mapped from those ISO controls
+    mappings = db.execute(
+        select(CrossFrameworkMapping).where(
+            CrossFrameworkMapping.source_control_id.in_(iso_fc_ids),
+        )
+    ).scalars().all()
+
+    if not mappings:
+        return ""
+
+    target_ids = list({m.target_control_id for m in mappings})
+    target_controls = db.execute(
+        select(FrameworkControl).where(FrameworkControl.id.in_(target_ids))
+    ).scalars().all()
+
+    parts = [f"{tc.title} {tc.description or ''}".strip() for tc in target_controls]
+    return " ".join(parts)
+
+
 def _get_project_control_groups(db: DBSession, project_id: uuid.UUID) -> list:
     """Return distinct ControlGroup rows covered by a project's policies + implementations."""
     from src.domain.projects import ProjectPolicy, ProjectImplementation
@@ -1209,6 +1255,9 @@ def run_project_keyword_check(
         if reference_library == "isms_library" and os_available:
             pol_text = _fetch_library_pol_text(os_client, group.group_code, language="en")
             corpus = pol_text[:2000] if pol_text else group.name
+        elif reference_library == "crosswalk":
+            crosswalk_text = _fetch_crosswalk_reference_text(db, framework, group)
+            corpus = crosswalk_text[:3000] if crosswalk_text else _build_iso_text(db, framework, group)
         else:
             if framework and control_ids:
                 fw_controls = db.execute(
@@ -1350,6 +1399,10 @@ def run_project_semantic_check(
             ref_text = _fetch_library_pol_text(os_client, group.group_code, language="en")
             if not ref_text:
                 ref_text = _build_iso_text(db, framework, group)
+        elif reference_library == "crosswalk":
+            ref_text = _fetch_crosswalk_reference_text(db, framework, group)
+            if not ref_text:
+                ref_text = _build_iso_text(db, framework, group)
         else:
             ref_text = _build_iso_text(db, framework, group)
 
@@ -1475,6 +1528,10 @@ gaps: list up to 3 specific missing topics; empty list [] if score>=85."""
 
         if reference_library == "isms_library" and os_available:
             ref_text = _fetch_library_pol_text(os_client, group.group_code, language="en")
+            if not ref_text:
+                ref_text = _build_iso_text(db, framework, group)
+        elif reference_library == "crosswalk":
+            ref_text = _fetch_crosswalk_reference_text(db, framework, group)
             if not ref_text:
                 ref_text = _build_iso_text(db, framework, group)
         else:

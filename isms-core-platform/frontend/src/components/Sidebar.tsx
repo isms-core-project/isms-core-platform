@@ -81,8 +81,10 @@ interface NavItem {
   label: string
   path: string
   icon: React.ReactNode
-  adminOnly?: boolean
-  superAdminOnly?: boolean
+  adminOnly?: boolean         // admin + super_admin only
+  superAdminOnly?: boolean    // super_admin only
+  managerAndAbove?: boolean   // isms_manager + admin + super_admin only
+  notViewer?: boolean         // all roles except viewer
 }
 
 // ── Per-product nav (shown inside each product section) ───────────────────────
@@ -101,20 +103,20 @@ const PRODUCT_NAV: NavItem[] = [
 const NAV_RISK: NavItem[] = [
   { label: 'Risk Register',   path: '/risk-register', icon: <WarningAmberOutlined /> },
   { label: 'Remediation',     path: '/remediation',   icon: <AssignmentOutlined /> },
-  { label: 'KPI Metrics',     path: '/metrics',       icon: <InsightsOutlined /> },
-  { label: 'BIA',             path: '/bia',            icon: <HealthAndSafetyOutlined /> },
-  { label: 'EBIOS RM',        path: '/ebios',          icon: <PsychologyOutlined /> },
+  { label: 'KPI Metrics',     path: '/metrics',       icon: <InsightsOutlined />,      notViewer: true },
+  { label: 'BIA',             path: '/bia',            icon: <HealthAndSafetyOutlined />, notViewer: true },
+  { label: 'EBIOS RM',        path: '/ebios',          icon: <PsychologyOutlined />,    notViewer: true },
 ]
 
 // ── Tools (platform utilities) ────────────────────────────────────────────────
 const NAV_TOOLS: NavItem[] = [
   { label: 'Projects',        path: '/projects',    icon: <FolderOpenOutlined /> },
-  { label: 'QA',              path: '/qa',          icon: <VerifiedOutlined /> },
+  { label: 'QA',              path: '/qa',          icon: <VerifiedOutlined />,     notViewer: true },
   { label: 'Search',          path: '/search',      icon: <SearchOutlined /> },
   { label: 'Compass',         path: '/compass',     icon: <ExploreOutlined /> },
-  { label: 'Generators',      path: '/generators',  icon: <CodeOutlined /> },
-  { label: 'Report',          path: '/report',      icon: <SummarizeOutlined /> },
-  { label: 'Risk Wizard',     path: '/risk',        icon: <GppMaybeOutlined /> },
+  { label: 'Generators',      path: '/generators',  icon: <CodeOutlined />,         managerAndAbove: true },
+  { label: 'Report',          path: '/report',      icon: <SummarizeOutlined />,    notViewer: true },
+  { label: 'Risk Wizard',     path: '/risk',        icon: <GppMaybeOutlined />,     notViewer: true },
 ]
 
 // ── External compliance frameworks ────────────────────────────────────────────
@@ -134,19 +136,21 @@ const NAV_FRAMEWORKS: NavItem[] = [
 
 // ── Suppliers / TPRM (Phase 16+) ──────────────────────────────────────────────
 const NAV_SUPPLIERS: NavItem[] = [
-  { label: 'TPRM',            path: '/tprm',        icon: <HandshakeOutlined /> },
+  { label: 'TPRM',            path: '/tprm',        icon: <HandshakeOutlined />,    notViewer: true },
 ]
 
 // ── Admin ─────────────────────────────────────────────────────────────────────
 const NAV_ADMIN: NavItem[] = [
-  { label: 'Users',             path: '/admin',             icon: <PeopleOutlined /> },
-  { label: 'Connectors',        path: '/connectors',        icon: <ElectricalServicesOutlined /> },
+  { label: 'Users',             path: '/admin',             icon: <PeopleOutlined />, adminOnly: true },
+  { label: 'Connectors',        path: '/connectors',        icon: <ElectricalServicesOutlined />, adminOnly: true },
   { label: 'Custom Frameworks', path: '/custom-frameworks', icon: <AppRegistrationOutlined />, adminOnly: true },
   { label: 'System',            path: '/system',            icon: <MonitorHeartOutlined />, adminOnly: true },
   { label: 'Organisations',     path: '/organisations',     icon: <BusinessOutlined />, superAdminOnly: true },
 ]
 
-const ADMIN_ROLES = ['super_admin', 'admin']
+const ADMIN_ROLES    = ['super_admin', 'admin']
+const MANAGER_ROLES  = ['super_admin', 'admin', 'isms_manager']
+const NON_VIEWER_ROLES = ['super_admin', 'admin', 'isms_manager', 'auditor', 'control_owner']
 
 const PRODUCT_SECTIONS: { value: Product; icon: React.ReactNode }[] = [
   { value: 'isms',    icon: <ShieldOutlined /> },
@@ -272,9 +276,12 @@ interface NavGroupProps {
 }
 
 function NavGroup({ label, icon, items, open, onToggle, collapsed, color = PLATFORM_COLOR, currentUser, isSuperAdmin, onNavigate, isActive }: NavGroupProps) {
+  const role = currentUser?.role ?? ''
   const visibleItems = items.filter(item => {
-    if (item.superAdminOnly) return isSuperAdmin
-    if (item.adminOnly) return ADMIN_ROLES.includes(currentUser?.role ?? '')
+    if (item.superAdminOnly)   return isSuperAdmin
+    if (item.adminOnly)        return ADMIN_ROLES.includes(role)
+    if (item.managerAndAbove)  return MANAGER_ROLES.includes(role)
+    if (item.notViewer)        return NON_VIEWER_ROLES.includes(role)
     return true
   })
   if (visibleItems.length === 0) return null
@@ -789,6 +796,19 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
             </ListItemIcon>
             {!collapsed && (
               <ListItemText primary="Notifications" primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }} />
+            )}
+          </ListItemButton>
+        </Tooltip>
+        <Tooltip title={collapsed ? 'Security' : ''} placement="right">
+          <ListItemButton
+            onClick={() => navigate('/system')}
+            sx={{ borderRadius: 1.5, px: collapsed ? 0 : 1.5, py: 0.5, justifyContent: collapsed ? 'center' : 'flex-start' }}
+          >
+            <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 36, color: 'text.secondary' }}>
+              <SecurityOutlined fontSize="small" />
+            </ListItemIcon>
+            {!collapsed && (
+              <ListItemText primary="Security" primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }} />
             )}
           </ListItemButton>
         </Tooltip>

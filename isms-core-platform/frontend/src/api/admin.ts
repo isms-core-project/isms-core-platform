@@ -14,6 +14,9 @@ export const adminApi = {
   deleteUser: (id: string) =>
     client.delete(`/admin/users/${id}`),
 
+  resetUserMfa: (id: string) =>
+    client.delete(`/admin/users/${id}/mfa`),
+
   syncFull: () =>
     client.post<SyncResult>('/sync/full').then((r) => r.data),
 

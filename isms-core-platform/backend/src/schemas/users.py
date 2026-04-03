@@ -28,6 +28,7 @@ class UserRead(BaseModel):
     full_name: str | None
     role: str
     is_active: bool
+    mfa_enabled: bool = False
     organisation_id: uuid.UUID
     organisation_name: str | None = None
     active_projects: dict = {}

@@ -27,6 +27,8 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
+  FormControlLabel,
+  Switch,
 } from '@mui/material'
 import {
   CheckCircleOutlined,
@@ -577,6 +579,7 @@ function MfaCard({ token }: { token: string }) {
 
 export default function System() {
   const { user, token } = useAuth()
+  const queryClient = useQueryClient()
   const [lastRefresh, setLastRefresh] = useState<Date>(new Date())
   const [reindexResult, setReindexResult] = useState<string | null>(null)
   const [testEmailRecipient, setTestEmailRecipient] = useState('')
@@ -592,6 +595,20 @@ export default function System() {
     workbooks: null,
     operational: null,
     fullSync: null,
+  })
+
+  const { data: orgSettings } = useQuery({
+    queryKey: ['organisation'],
+    queryFn: adminApi.getOrganisation,
+    staleTime: 60_000,
+  })
+
+  const mfaRequired = Boolean(orgSettings?.settings?.mfa_required)
+
+  const toggleMfaEnforcementMutation = useMutation({
+    mutationFn: (value: boolean) =>
+      adminApi.patchOrganisationSettings({ ...(orgSettings?.settings ?? {}), mfa_required: value }),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['organisation'] }),
   })
 
   const reindexMutation = useMutation({
@@ -1428,6 +1445,43 @@ export default function System() {
               </Card>
             </Grid>
           </Grid>
+
+          {/* MFA Policy */}
+          <Card>
+            <CardContent sx={{ pb: '12px !important' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                <SecurityOutlined sx={{ color: 'primary.main' }} />
+                <Typography variant="h6" sx={{ flex: 1 }}>MFA Policy</Typography>
+                <Chip
+                  label={mfaRequired ? 'Enforced' : 'Optional'}
+                  size="small"
+                  sx={{ fontSize: '0.65rem', height: 18, bgcolor: mfaRequired ? '#1a3a27' : 'rgba(255,255,255,0.07)', color: mfaRequired ? '#C6EFCE' : '#d9d9d9' }}
+                />
+              </Box>
+              <Divider sx={{ mb: 1.5 }} />
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={mfaRequired}
+                    onChange={(e) => toggleMfaEnforcementMutation.mutate(e.target.checked)}
+                    disabled={toggleMfaEnforcementMutation.isPending}
+                  />
+                }
+                label={
+                  <Box>
+                    <Typography variant="body2">Require MFA for all users</Typography>
+                    <Typography variant="caption" color="text.secondary" display="block">
+                      When enabled, users without MFA set up will be blocked from accessing the platform until they enrol.
+                    </Typography>
+                  </Box>
+                }
+                sx={{ alignItems: 'flex-start', ml: 0 }}
+              />
+              {toggleMfaEnforcementMutation.isError && (
+                <Alert severity="error" sx={{ mt: 1.5, py: 0.5 }}>Failed to update MFA policy.</Alert>
+              )}
+            </CardContent>
+          </Card>
 
           {/* Account Security */}
           {token && <MfaCard token={token} />}

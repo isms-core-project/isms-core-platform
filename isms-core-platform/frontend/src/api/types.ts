@@ -33,6 +33,7 @@ export interface OrganisationRead {
   is_active: boolean
   created_at: string
   updated_at: string
+  settings?: Record<string, unknown>
 }
 
 // ---------------------------------------------------------------------------
@@ -422,6 +423,7 @@ export interface UserRead {
   full_name: string | null
   role: string
   is_active: boolean
+  mfa_enabled: boolean
   organisation_id: string
   organisation_name: string | null
   active_projects: Record<string, string>

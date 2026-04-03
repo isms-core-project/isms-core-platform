@@ -932,6 +932,35 @@ def delete_user(user_id: str, db: DBSession = Depends(get_db)):
     db.commit()
 
 
+@router.delete(
+    "/users/{user_id}/mfa",
+    status_code=204,
+)
+def reset_user_mfa(
+    user_id: str,
+    db: DBSession = Depends(get_db),
+    current_user: User = Depends(require_role(UserRole.ADMIN, UserRole.SUPER_ADMIN)),
+):
+    """Reset (disable) MFA for a user. Admin can only affect their own org."""
+    import uuid as _uuid
+
+    try:
+        uid = _uuid.UUID(user_id)
+    except ValueError:
+        raise HTTPException(status_code=422, detail="Invalid user ID")
+
+    user = db.get(User, uid)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    if current_user.role != UserRole.SUPER_ADMIN and user.organisation_id != current_user.organisation_id:
+        raise HTTPException(status_code=403, detail="Cannot reset MFA for users in a different organisation")
+
+    user.mfa_enabled = False
+    user.mfa_secret = None
+    user.mfa_backup_codes = []
+    db.commit()
+
+
 # ---------------------------------------------------------------------------
 # Audit log
 # ---------------------------------------------------------------------------
