@@ -45,7 +45,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 
 ## Architecture
 
-### Eight-Service Stack
+### Nine-Service Stack
 
 ```
                         ┌───────────────────────────────────────────┐
@@ -114,10 +114,10 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Gaps** | Identified compliance gaps with severity, owner, SLA, and remediation tracking |
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
-| **Frameworks** | 30 reference datasets: ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS Regulations, UK Operational Resilience, and more |
+| **Frameworks** | 29 reference datasets: ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS Regulations, UK Operational Resilience, FINMA, and more |
 | **Crosswalk Mappings** | Cross-framework relationships: 3,100+ mappings — including BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51) and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF 20-750 LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
-| **Compliance Assessments** | 16 generic frameworks (0–4 maturity): NIS2 (15), DORA (25), CIS Controls v8 (153), BSI IT-Grundschutz (68 Bausteine), TISAX (53), Swiss nDSG (25), EU CRA (26), EU AI Act (25), EU Cloud Sovereignty (8), CyberFundamentals BE (41), BaFin BAIT DE (23), CSSF 20-750 LU (19), ACN IT (19), UK NIS (13), UK Op. Resilience (12). Plus CSRM (object-centric, binary) and NIST CSF 2.0 (tiered profile). Assessment Collections group assessments with derived stats, CSV/XLSX/PDF export. See [COMPLIANCE.md](COMPLIANCE.md). |
+| **Compliance Assessments** | 17 generic frameworks (0–4 maturity): NIS2 (15), DORA (25), CIS Controls v8 (153), BSI IT-Grundschutz (68 Bausteine), TISAX (53), Swiss nDSG (25), EU CRA (26), EU AI Act (25), EU Cloud Sovereignty (8), CyberFundamentals BE (41), BaFin BAIT DE (23), CSSF 20-750 LU (19), ACN IT (19), UK NIS (13), UK Op. Resilience (12), FINMA. Plus CSRM (object-centric, binary) and NIST CSF 2.0 (tiered profile). Assessment Collections group assessments with derived stats, CSV/XLSX/PDF export. See [COMPLIANCE.md](COMPLIANCE.md). |
 | **Projects** | Workspace layer — named projects own a curated subset of library policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date, etc.) applied on add; active/inactive/draft/archived lifecycle |
 | **System Event Log** | Immutable trail of every platform action (who, what, when, resource) |
 
@@ -208,7 +208,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **BIA** | Business Impact Analysis — asset records with RTO/RPO/MTPD hours; financial, operational, reputational, and regulatory impact scores; recovery testing tracking; BIA tab on A.5.29/A.5.30 control groups |
 | **EBIOS RM** | Full 5-workshop ANSSI risk methodology — feared events, risk sources, strategic scenarios (likelihood × gravity matrix), attack paths with MITRE ATT&CK technique mapping, security measures mapped to ISO 27001 controls |
 | **Custom Framework Import** | YAML-based upload of custom or sector-specific control frameworks; auto-mapped against ISO 27001 via `iso_mappings`; coverage percentage shown in Coverage page |
-| **Country Localisation** | Policy rendering adapts regulatory references, authority names, financial sector bodies, and data protection law names for 7 jurisdictions: CH (default), FR, BE, LU, DE, AT, IT, GB — applied at request time from `org.country`; CH source files untouched |
+| **Country Localisation** | Policy rendering adapts regulatory references, authority names, financial sector bodies, and data protection law names for 8 jurisdictions: CH (default), FR, BE, LU, DE, AT, IT, GB — applied at request time from `org.country`; CH source files untouched |
 | **Cross-Framework Coverage** | BFS inference maps ISO 27001 assessment coverage to NIS2, DORA, and GDPR automatically; Mapping Matrix and Inferred Coverage tabs |
 | **MFA** | TOTP-based two-factor authentication — Google Authenticator / Authy compatible; QR code setup in System page; 8 single-use backup codes; auto-submits on 6-digit entry |
 | **Project-Scoped Risk/Gaps/Evidence** | Risk scenarios, gaps, and evidence items are scoped to the active project — switching projects switches context |
@@ -352,18 +352,19 @@ Wait until all containers are up before proceeding to Step 4. You can check:
 docker compose ps
 ```
 
-Expected output — all 8 containers, 7 showing `healthy`, beat showing `Up` (no healthcheck — this is normal):
+Expected output — all 9 containers, 8 showing `healthy`, beat showing `Up` (no healthcheck — this is normal):
 
 ```
-NAME                     STATUS
-isms-core-nginx          Up (healthy)
-isms-core-backend        Up (healthy)
-isms-core-frontend       Up (healthy)
-isms-core-postgres       Up (healthy)
-isms-core-redis          Up (healthy)
-isms-core-opensearch     Up (healthy)
-isms-core-worker         Up (healthy)
-isms-core-beat           Up
+NAME                        STATUS
+isms-core-nginx             Up (healthy)
+isms-core-backend           Up (healthy)
+isms-core-frontend          Up (healthy)
+isms-core-postgres          Up (healthy)
+isms-core-redis             Up (healthy)
+isms-core-opensearch        Up (healthy)
+isms-core-worker            Up (healthy)
+isms-core-connectors        Up (healthy)
+isms-core-beat              Up
 ```
 
 **Alembic migrations run automatically.** On a fresh database, the backend container stamps at migration 009 and applies 010 through head automatically via `entrypoint.sh`. You do not need to run `alembic upgrade head` manually.
@@ -421,7 +422,7 @@ Log in as admin and go to **Admin → First-Run Setup**. Each importer is a sepa
 
 | Step | Button | What it does |
 |------|--------|-------------|
-| 1 | **Load Reference Frameworks** | Seeds control groups and loads the 18 reference datasets (ISO 27001, NIST CSF, MITRE ATT&CK, GDPR, DORA, NIS2 and more). **Always run this first.** |
+| 1 | **Load Reference Frameworks** | Seeds control groups and loads all reference datasets (ISO 27001, NIST CSF, MITRE ATT&CK, GDPR, DORA, NIS2, EU country frameworks, crosswalk bundles and more). **Always run this first.** |
 | 2 | **Import Policies** | Imports POL, OP-POL, PRIV-POL, CLD-POL, REF, CTX, FORM documents from all mounted content volumes. Only imports what is mounted. |
 | 3 | **Import Implementations (IMP)** | Imports IMP-UG and IMP-TG documents and indexes them into OpenSearch for full-text search. |
 | 4 | **Import Assessment Workbooks** | Parses Framework assessment workbook structures from the generator scripts. |
@@ -522,7 +523,7 @@ docker compose --profile mailpit up -d
 
 - Outbound email is caught by Mailpit (nothing leaves the server)
 - Web UI: `http://{HOST_IP}:8025`
-- Set `MAIL_HOST=isms-core-mailhog` and `MAIL_PORT=1025` in `.env`
+- Set `MAIL_HOST=isms-core-mailpit` and `MAIL_PORT=1025` in `.env`
 
 ### Option B — SMTP Bridge (Microsoft 365 / OAuth)
 
@@ -808,8 +809,8 @@ Use this checklist before declaring the deployment live.
 - [ ] `SECRET_KEY` set to a random 32+ character hex string
 - [ ] `ADMIN_PASSWORD` set — **there is no default; if empty, you cannot log in**
 - [ ] `HOST_IP` set to your server's IP address
-- [ ] `docker compose up -d` completed — all 8 containers up
-- [ ] `docker compose ps` shows 7 containers `healthy` + `isms-core-beat` `Up`
+- [ ] `docker compose up -d` completed — all 9 containers up
+- [ ] `docker compose ps` shows 8 containers `healthy` + `isms-core-beat` `Up`
 - [ ] `bootstrap.sh` run once — import statistics show non-zero counts
 - [ ] `curl -k https://localhost/health` returns `{"status":"ok","database":"ok","opensearch":"ok"}`
 - [ ] `https://{HOST_IP}` accessible in browser — dashboard shows compliance data
@@ -819,7 +820,7 @@ Use this checklist before declaring the deployment live.
   - [ ] Custom certificate (`./certs/cert.pem` + `./certs/key.pem`), or
   - [ ] Let's Encrypt (`setup-letsencrypt.sh` run with domain + email)
 - [ ] Email profile started if needed (`--profile mailpit` or `--profile smtp-bridge`)
-- [ ] Connector runner started if using automated evidence (`cd connectors/ && docker compose up -d`)
+- [ ] `CONNECTORS_WORKER_SECRET` set in `.env` if using automated evidence (connector runner starts automatically with the main stack)
 - [ ] `ANTHROPIC_API_KEY` set if using ISMS Compass AI gap analysis
 - [ ] MFA enabled on all admin accounts (System → MFA Setup — scan QR code with Google Authenticator or Authy, save backup codes)
 
