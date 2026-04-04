@@ -922,15 +922,7 @@ VALUES (
     '{}'
 ) ON CONFLICT DO NOTHING;
 
--- Default admin user (password: admin123 — CHANGE ON FIRST LOGIN).
-INSERT INTO users (email, username, hashed_password, full_name, role)
-VALUES (
-    'admin@isms-core.dev',
-    'admin',
-    '$2b$12$uVAdzc0JwdXXMJHJePXM..imqoN/PVCAkgE0A0z5qTyK1BstplfQy',
-    'Administrator',
-    'super_admin'
-) ON CONFLICT (email) DO NOTHING;
+-- Admin user is seeded at runtime by the backend lifespan from ADMIN_PASSWORD env var.
 
 -- Foundation control group (group_code '00') — seeded permanently.
 -- Not in control_groups.json (53 ISO Annex A groups).  This group holds

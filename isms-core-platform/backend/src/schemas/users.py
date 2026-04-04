@@ -1,7 +1,23 @@
+import re
 import uuid
 from datetime import datetime
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, field_validator
+
+
+def _validate_password(v: str) -> str:
+    """Enforce minimum password complexity for a compliance platform."""
+    if len(v) < 12:
+        raise ValueError("Password must be at least 12 characters")
+    if not re.search(r"[A-Z]", v):
+        raise ValueError("Password must contain at least one uppercase letter")
+    if not re.search(r"[a-z]", v):
+        raise ValueError("Password must contain at least one lowercase letter")
+    if not re.search(r"\d", v):
+        raise ValueError("Password must contain at least one digit")
+    if not re.search(r"[!@#$%^&*()\-_=+\[\]{}|;:',.<>?/`~\\]", v):
+        raise ValueError("Password must contain at least one special character")
+    return v
 
 
 class UserCreate(BaseModel):
@@ -11,6 +27,11 @@ class UserCreate(BaseModel):
     password: str
     role: str = "viewer"              # admin | isms_manager | auditor | control_owner | viewer
 
+    @field_validator("password")
+    @classmethod
+    def validate_password(cls, v: str) -> str:
+        return _validate_password(v)
+
 
 class UserPatch(BaseModel):
     full_name: str | None = None
@@ -19,6 +40,13 @@ class UserPatch(BaseModel):
     password: str | None = None
     notification_prefs: dict | None = None
     organisation_id: uuid.UUID | None = None   # super_admin only
+
+    @field_validator("password")
+    @classmethod
+    def validate_password(cls, v: str | None) -> str | None:
+        if v is not None:
+            return _validate_password(v)
+        return v
 
 
 class UserRead(BaseModel):

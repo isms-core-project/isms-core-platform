@@ -278,7 +278,12 @@ def download_evidence(
     if not ev:
         raise HTTPException(status_code=404, detail="Evidence not found")
 
-    file_path = Path(ev.file_path)
+    from src.core.config import get_settings as _get_settings
+    _settings = _get_settings()
+    uploads_root = Path(_settings.uploads_path).resolve()
+    file_path = Path(ev.file_path).resolve()
+    if not str(file_path).startswith(str(uploads_root)):
+        raise HTTPException(status_code=403, detail="Access denied")
     if not file_path.exists():
         raise HTTPException(status_code=404, detail="Evidence file not found on disk")
 

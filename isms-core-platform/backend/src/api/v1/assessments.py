@@ -4,9 +4,11 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import select
 from sqlalchemy.orm import Session as DBSession
 
-from src.core.dependencies import get_current_user
+from src.core.dependencies import get_current_user, get_org_context
+from src.database.enums import UserRole
 from src.database.session import get_db
 from src.domain.assessments import Assessment, AssessmentItem, AssessmentSheet
+from src.domain.projects import Project
 from src.domain.users import User
 from src.schemas.assessments import (
     AssessmentCreate,
@@ -29,6 +31,16 @@ from src.services.assessment_service import (
 )
 
 router = APIRouter(prefix="/assessments", tags=["assessments"])
+
+
+def _check_assessment_org(a: Assessment, db, current_user: User, org_id: uuid.UUID) -> None:
+    """Raise 404 if a project-scoped assessment belongs to a different org."""
+    if current_user.role == UserRole.SUPER_ADMIN:
+        return
+    if a.project_id:
+        project = db.get(Project, a.project_id)
+        if not project or project.organisation_id != org_id:
+            raise HTTPException(status_code=404, detail="Assessment not found")
 
 
 @router.get("/", response_model=list[AssessmentListRead])
@@ -72,9 +84,14 @@ def create_assessment(
 def list_assessment_sheets(
     assessment_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _user: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
+    org_id: uuid.UUID = Depends(get_org_context),
 ):
     """Return all sheets with their items for an assessment."""
+    a = db.get(Assessment, assessment_id)
+    if not a:
+        raise HTTPException(status_code=404, detail="Assessment not found")
+    _check_assessment_org(a, db, current_user, org_id)
     sheets = db.execute(
         select(AssessmentSheet)
         .where(AssessmentSheet.assessment_id == assessment_id)
@@ -156,12 +173,14 @@ def delete_item(
 def delete_assessment(
     assessment_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _user: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
+    org_id: uuid.UUID = Depends(get_org_context),
 ):
     """Delete a platform (WebUI) assessment. Only platform:webui assessments may be deleted."""
     a = db.get(Assessment, assessment_id)
     if not a:
         raise HTTPException(status_code=404, detail="Assessment not found")
+    _check_assessment_org(a, db, current_user, org_id)
     if a.file_path != "platform:webui":
         raise HTTPException(status_code=403, detail="Only platform assessments can be deleted via the UI")
     db.delete(a)
@@ -172,9 +191,11 @@ def delete_assessment(
 def get_one_assessment(
     assessment_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _user: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
+    org_id: uuid.UUID = Depends(get_org_context),
 ):
     a = get_assessment(db, assessment_id)
     if not a:
         raise HTTPException(status_code=404, detail="Assessment not found")
+    _check_assessment_org(a, db, current_user, org_id)
     return a

@@ -17,16 +17,28 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import select
 from sqlalchemy.orm import Session as DBSession
 
-from src.core.dependencies import get_current_user
-from src.database.enums import GapSeverity, GapStatus
+from src.core.dependencies import get_current_user, get_org_context
+from src.database.enums import GapSeverity, GapStatus, UserRole
 from src.database.session import get_db
 from src.domain.compliance import Evidence, Gap
 from src.domain.control_groups import ControlGroup
+from src.domain.projects import Project
 from src.domain.users import User
 from src.schemas.evidence import EvidenceRead
 from src.schemas.gaps import GapCreate, GapPatch, GapRead
 
 router = APIRouter(prefix="/gaps", tags=["gaps"])
+
+
+def _get_gap_or_404(gap_id: uuid.UUID, db: DBSession, current_user: User, org_id: uuid.UUID) -> Gap:
+    gap = db.get(Gap, gap_id)
+    if not gap:
+        raise HTTPException(status_code=404, detail="Gap not found")
+    if current_user.role != UserRole.SUPER_ADMIN and gap.project_id:
+        project = db.get(Project, gap.project_id)
+        if not project or project.organisation_id != org_id:
+            raise HTTPException(status_code=404, detail="Gap not found")
+    return gap
 
 
 def _enrich(gap: Gap, db: DBSession) -> GapRead:
@@ -68,9 +80,13 @@ def list_gaps(
     limit: int = Query(200, ge=1, le=1000),
     offset: int = Query(0, ge=0),
     db: DBSession = Depends(get_db),
-    _user: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
+    org_id: uuid.UUID = Depends(get_org_context),
 ):
     q = select(Gap)
+    # Scope to org via project join (super_admin sees all)
+    if current_user.role != UserRole.SUPER_ADMIN:
+        q = q.join(Project, Gap.project_id == Project.id).where(Project.organisation_id == org_id)
     if severity:
         q = q.where(Gap.severity == severity)
     if status:
@@ -129,11 +145,10 @@ def patch_gap(
     gap_id: uuid.UUID,
     body: GapPatch,
     db: DBSession = Depends(get_db),
-    _user: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
+    org_id: uuid.UUID = Depends(get_org_context),
 ):
-    gap = db.get(Gap, gap_id)
-    if not gap:
-        raise HTTPException(status_code=404, detail="Gap not found")
+    gap = _get_gap_or_404(gap_id, db, current_user, org_id)
 
     if body.gap_description is not None:
         gap.gap_description = body.gap_description
@@ -185,11 +200,10 @@ def patch_gap(
 def delete_gap(
     gap_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _user: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
+    org_id: uuid.UUID = Depends(get_org_context),
 ):
-    gap = db.get(Gap, gap_id)
-    if not gap:
-        raise HTTPException(status_code=404, detail="Gap not found")
+    gap = _get_gap_or_404(gap_id, db, current_user, org_id)
     db.delete(gap)
     db.commit()
 
@@ -203,12 +217,11 @@ def delete_gap(
 def list_gap_evidence(
     gap_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _user: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
+    org_id: uuid.UUID = Depends(get_org_context),
 ):
     """List all evidence items linked to a gap."""
-    gap = db.get(Gap, gap_id)
-    if not gap:
-        raise HTTPException(status_code=404, detail="Gap not found")
+    gap = _get_gap_or_404(gap_id, db, current_user, org_id)
     return gap.evidence_items
 
 
@@ -217,12 +230,11 @@ def attach_evidence(
     gap_id: uuid.UUID,
     evidence_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _user: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
+    org_id: uuid.UUID = Depends(get_org_context),
 ):
     """Attach an evidence item to a gap."""
-    gap = db.get(Gap, gap_id)
-    if not gap:
-        raise HTTPException(status_code=404, detail="Gap not found")
+    gap = _get_gap_or_404(gap_id, db, current_user, org_id)
     ev = db.get(Evidence, evidence_id)
     if not ev:
         raise HTTPException(status_code=404, detail="Evidence not found")
@@ -238,12 +250,11 @@ def detach_evidence(
     gap_id: uuid.UUID,
     evidence_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _user: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
+    org_id: uuid.UUID = Depends(get_org_context),
 ):
     """Detach an evidence item from a gap (does not delete the evidence record)."""
-    gap = db.get(Gap, gap_id)
-    if not gap:
-        raise HTTPException(status_code=404, detail="Gap not found")
+    gap = _get_gap_or_404(gap_id, db, current_user, org_id)
     ev = db.get(Evidence, evidence_id)
     if ev and ev in gap.evidence_items:
         gap.evidence_items.remove(ev)

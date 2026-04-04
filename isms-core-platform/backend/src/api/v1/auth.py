@@ -1,11 +1,12 @@
 import uuid
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from jose import JWTError
 from pydantic import BaseModel
 from sqlalchemy.orm import Session as DBSession
 
 from src.core.dependencies import get_current_user
+from src.core.limiter import limiter
 from src.database.session import get_db
 from src.schemas.auth import (
     LoginRequest,
@@ -31,7 +32,8 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 
 
 @router.post("/login")
-def login(body: LoginRequest, db: DBSession = Depends(get_db)):
+@limiter.limit("10/minute")
+def login(request: Request, body: LoginRequest, db: DBSession = Depends(get_db)):
     user = authenticate_user(db, body.email, body.password)
     if not user:
         raise HTTPException(
@@ -46,7 +48,8 @@ def login(body: LoginRequest, db: DBSession = Depends(get_db)):
 
 
 @router.post("/refresh", response_model=TokenResponse)
-def refresh(body: RefreshRequest, db: DBSession = Depends(get_db)):
+@limiter.limit("20/minute")
+def refresh(request: Request, body: RefreshRequest, db: DBSession = Depends(get_db)):
     try:
         result = refresh_tokens(db, body.refresh_token)
     except JWTError as e:
@@ -249,7 +252,9 @@ def mfa_disable(
 
 
 @router.post("/mfa/verify")
+@limiter.limit("10/minute")
 def mfa_verify(
+    request: Request,
     body: MfaVerifyRequest,
     db: DBSession = Depends(get_db),
 ):

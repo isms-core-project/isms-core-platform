@@ -73,9 +73,11 @@ router = APIRouter(prefix="/projects", tags=["projects"])
 
 # ── helpers ──────────────────────────────────────────────────────────────────
 
-def _get_project_or_404(project_id: uuid.UUID, db: DBSession) -> Project:
+def _get_project_or_404(project_id: uuid.UUID, db: DBSession, current_user: User) -> Project:
     p = db.get(Project, project_id)
     if not p:
+        raise HTTPException(status_code=404, detail="Project not found")
+    if current_user.role != UserRole.SUPER_ADMIN and p.organisation_id != current_user.organisation_id:
         raise HTTPException(status_code=404, detail="Project not found")
     return p
 
@@ -240,9 +242,9 @@ def create_project(
 def get_project(
     project_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
-    return _enrich_project(_get_project_or_404(project_id, db), db)
+    return _enrich_project(_get_project_or_404(project_id, db, current_user), db)
 
 
 @router.patch("/{project_id}", response_model=ProjectRead)
@@ -250,9 +252,9 @@ def update_project(
     project_id: uuid.UUID,
     body: ProjectPatch,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
-    p = _get_project_or_404(project_id, db)
+    p = _get_project_or_404(project_id, db, current_user)
     if body.name is not None:
         p.name = body.name
     if body.description is not None:
@@ -278,9 +280,9 @@ def update_project(
 def delete_project(
     project_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
-    p = _get_project_or_404(project_id, db)
+    p = _get_project_or_404(project_id, db, current_user)
     db.delete(p)
     db.commit()
 
@@ -291,7 +293,7 @@ def delete_project(
 def reapply_doc_vars(
     project_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
     """Re-read each library source file and re-apply current doc_vars substitution.
 
@@ -299,7 +301,7 @@ def reapply_doc_vars(
     already-imported policies and implementations.
     Custom (non-library) documents are not touched.
     """
-    project = _get_project_or_404(project_id, db)
+    project = _get_project_or_404(project_id, db, current_user)
     settings = project.settings or {}
     raw_dv = settings.get("doc_vars")
     doc_vars = DocVars(**raw_dv) if isinstance(raw_dv, dict) else None
@@ -352,12 +354,12 @@ def browse_library_policies(
     product_type: str | None = Query(None),
     language: str | None = Query(None),
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
     """Return all Library policies for this project's product family.
     Flags which ones are already in the project.
     """
-    p = _get_project_or_404(project_id, db)
+    p = _get_project_or_404(project_id, db, current_user)
     family = p.product_family.value if hasattr(p.product_family, "value") else p.product_family
 
     # Map product_family → ProductType enum values stored on policies
@@ -413,9 +415,9 @@ def browse_library_implementations(
     project_id: uuid.UUID,
     impl_type: str | None = Query(None),
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
-    p = _get_project_or_404(project_id, db)
+    p = _get_project_or_404(project_id, db, current_user)
     family = p.product_family.value if hasattr(p.product_family, "value") else p.product_family
 
     family_map = {
@@ -467,9 +469,9 @@ def browse_library_implementations(
 def list_project_policies(
     project_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
-    _get_project_or_404(project_id, db)
+    _get_project_or_404(project_id, db, current_user)
     rows = db.execute(
         select(ProjectPolicy)
         .where(ProjectPolicy.project_id == project_id)
@@ -483,9 +485,9 @@ def add_project_policy(
     project_id: uuid.UUID,
     body: ProjectPolicyAdd,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
-    project = _get_project_or_404(project_id, db)
+    project = _get_project_or_404(project_id, db, current_user)
     if not body.lib_policy_id and not body.custom_content:
         raise HTTPException(status_code=422, detail="Provide lib_policy_id or custom_content")
     if body.lib_policy_id and not db.get(Policy, body.lib_policy_id):
@@ -522,8 +524,9 @@ def get_project_policy(
     project_id: uuid.UUID,
     pp_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
+    _get_project_or_404(project_id, db, current_user)
     pp = db.execute(
         select(ProjectPolicy).where(
             ProjectPolicy.id == pp_id,
@@ -543,8 +546,9 @@ def update_project_policy(
     pp_id: uuid.UUID,
     body: ProjectPolicyPatch,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
+    _get_project_or_404(project_id, db, current_user)
     pp = db.execute(
         select(ProjectPolicy).where(
             ProjectPolicy.id == pp_id,
@@ -579,8 +583,9 @@ def remove_project_policy(
     project_id: uuid.UUID,
     pp_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
+    _get_project_or_404(project_id, db, current_user)
     pp = db.execute(
         select(ProjectPolicy).where(
             ProjectPolicy.id == pp_id,
@@ -599,9 +604,9 @@ def remove_project_policy(
 def list_project_implementations(
     project_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
-    _get_project_or_404(project_id, db)
+    _get_project_or_404(project_id, db, current_user)
     rows = db.execute(
         select(ProjectImplementation)
         .where(ProjectImplementation.project_id == project_id)
@@ -615,9 +620,9 @@ def add_project_implementation(
     project_id: uuid.UUID,
     body: ProjectImplAdd,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
-    project = _get_project_or_404(project_id, db)
+    project = _get_project_or_404(project_id, db, current_user)
     if not body.lib_impl_id and not body.custom_content:
         raise HTTPException(status_code=422, detail="Provide lib_impl_id or custom_content")
     if body.lib_impl_id and not db.get(Implementation, body.lib_impl_id):
@@ -653,8 +658,9 @@ def get_project_implementation(
     project_id: uuid.UUID,
     pi_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
+    _get_project_or_404(project_id, db, current_user)
     pi = db.execute(
         select(ProjectImplementation).where(
             ProjectImplementation.id == pi_id,
@@ -674,8 +680,9 @@ def update_project_implementation(
     pi_id: uuid.UUID,
     body: ProjectImplPatch,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
+    _get_project_or_404(project_id, db, current_user)
     pi = db.execute(
         select(ProjectImplementation).where(
             ProjectImplementation.id == pi_id,
@@ -703,8 +710,9 @@ def remove_project_implementation(
     project_id: uuid.UUID,
     pi_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
+    _get_project_or_404(project_id, db, current_user)
     pi = db.execute(
         select(ProjectImplementation).where(
             ProjectImplementation.id == pi_id,
@@ -770,11 +778,11 @@ def _build_checklist_read(pc: ProjectChecklist, db: DBSession, include_items: bo
 def browse_library_checklists(
     project_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
     """Return library SCR checklists (assessment_type=checklist) for this project's product family."""
     from src.database.enums import AssessmentType, ProductType
-    p = _get_project_or_404(project_id, db)
+    p = _get_project_or_404(project_id, db, current_user)
     family = p.product_family.value if hasattr(p.product_family, "value") else p.product_family
 
     family_to_types = {
@@ -829,9 +837,9 @@ def browse_library_checklists(
 def list_project_checklists(
     project_id: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
-    _get_project_or_404(project_id, db)
+    _get_project_or_404(project_id, db, current_user)
     rows = db.execute(
         select(ProjectChecklist)
         .where(ProjectChecklist.project_id == project_id)
@@ -845,10 +853,10 @@ def add_project_checklist(
     project_id: uuid.UUID,
     body: ProjectChecklistAdd,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
     """Clone a library SCR (assessment) into the project, copying all items for N/A toggling."""
-    _get_project_or_404(project_id, db)
+    _get_project_or_404(project_id, db, current_user)
 
     asmnt = db.get(Assessment, body.lib_checklist_id)
     if not asmnt:
@@ -898,8 +906,9 @@ def get_project_checklist(
     project_id: uuid.UUID,
     cid: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
+    _get_project_or_404(project_id, db, current_user)
     pc = db.execute(
         select(ProjectChecklist).where(
             ProjectChecklist.id == cid,
@@ -917,9 +926,10 @@ def patch_checklist_item(
     cid: uuid.UUID,
     body: ProjectChecklistItemPatch,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
     """Toggle N/A on a single checklist item."""
+    _get_project_or_404(project_id, db, current_user)
     pc = db.execute(
         select(ProjectChecklist).where(
             ProjectChecklist.id == cid,
@@ -945,8 +955,9 @@ def remove_project_checklist(
     project_id: uuid.UUID,
     cid: uuid.UUID,
     db: DBSession = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
+    _get_project_or_404(project_id, db, current_user)
     pc = db.execute(
         select(ProjectChecklist).where(
             ProjectChecklist.id == cid,

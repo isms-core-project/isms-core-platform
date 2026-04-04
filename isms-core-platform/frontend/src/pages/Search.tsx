@@ -22,11 +22,18 @@ import { searchApi } from '../api/search'
 import PageHeader from '../components/PageHeader'
 
 function Highlight({ html }: { html: string }) {
+  // OpenSearch wraps matched terms in <mark>...</mark>. Parse safely — no innerHTML.
+  const safe = html.replace(/<(?!\/?mark\b)[^>]+>/gi, '')
+  const parts = safe.split(/(<mark>.*?<\/mark>)/gi)
   return (
-    <span
-      dangerouslySetInnerHTML={{ __html: html }}
-      style={{ fontSize: '0.8rem', color: '#8B9CC8', lineHeight: 1.6 }}
-    />
+    <span style={{ fontSize: '0.8rem', color: '#8B9CC8', lineHeight: 1.6 }}>
+      {parts.map((part, i) => {
+        const m = part.match(/^<mark>(.*)<\/mark>$/i)
+        return m
+          ? <mark key={i} style={{ background: 'rgba(68,114,196,0.35)', color: '#fff', borderRadius: 2, padding: '0 2px' }}>{m[1]}</mark>
+          : part
+      })}
+    </span>
   )
 }
 

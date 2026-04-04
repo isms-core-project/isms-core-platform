@@ -5,6 +5,8 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from slowapi import _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from src.api.router import api_router
@@ -15,6 +17,7 @@ from src.database.session import SessionLocal
 from src.services import search_service
 from src.services.iso_reference_service import load_from_seeds, needs_seed as iso_needs_seed
 from src.services.loader_service import load_all_bundles, needs_seed
+from src.core.limiter import limiter
 from src.services.qa_service import ensure_synonym_table
 
 logger = logging.getLogger(__name__)
@@ -85,8 +88,9 @@ async def lifespan(app: FastAPI):
                 ).scalar_one_or_none()
                 hashed = hash_password(settings.admin_password)
                 if user:
-                    user.hashed_password = hashed
-                    logger.info("Admin password updated from env (email=%s)", settings.admin_email)
+                    # Never overwrite an existing password — admin manages it via UI.
+                    # To reset, delete the user record and let it re-seed on next boot.
+                    logger.info("Admin user exists — skipping password reset (email=%s)", settings.admin_email)
                 else:
                     from src.domain.organisations import Organisation
                     from sqlalchemy import select as _select
@@ -134,6 +138,10 @@ def create_app() -> FastAPI:
         allow_headers=["Authorization", "Content-Type", "Accept"],
         expose_headers=["X-QA-Status", "X-QA-Issues"],
     )
+
+    # Rate limiter
+    app.state.limiter = limiter
+    app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
     # Exception handlers
     app.add_exception_handler(StarletteHTTPException, http_exception_handler)

@@ -881,6 +881,8 @@ def update_user(
     user = db.get(User, uid)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
+    if current_user.role != UserRole.SUPER_ADMIN and user.organisation_id != current_user.organisation_id:
+        raise HTTPException(status_code=404, detail="User not found")
 
     if body.full_name is not None:
         user.full_name = body.full_name or None
@@ -894,6 +896,11 @@ def update_user(
     if body.password is not None:
         user.hashed_password = hash_password(body.password)
     if body.notification_prefs is not None:
+        from src.schemas.users import NOTIFICATION_EVENTS
+        valid_types = {ev["event_type"] for ev in NOTIFICATION_EVENTS}
+        unknown = set(body.notification_prefs) - valid_types
+        if unknown:
+            raise HTTPException(status_code=422, detail=f"Unknown notification event type(s): {', '.join(sorted(unknown))}")
         stored = dict(user.notification_prefs or {})
         stored.update(body.notification_prefs)
         user.notification_prefs = stored
@@ -913,9 +920,12 @@ def update_user(
 @router.delete(
     "/users/{user_id}",
     status_code=204,
-    dependencies=[Depends(require_admin)],
 )
-def delete_user(user_id: str, db: DBSession = Depends(get_db)):
+def delete_user(
+    user_id: str,
+    db: DBSession = Depends(get_db),
+    current_user: User = Depends(require_role(UserRole.ADMIN, UserRole.SUPER_ADMIN)),
+):
     """Delete a user account."""
     import uuid as _uuid
 
@@ -926,6 +936,8 @@ def delete_user(user_id: str, db: DBSession = Depends(get_db)):
 
     user = db.get(User, uid)
     if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    if current_user.role != UserRole.SUPER_ADMIN and user.organisation_id != current_user.organisation_id:
         raise HTTPException(status_code=404, detail="User not found")
 
     db.delete(user)

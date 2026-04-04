@@ -1,5 +1,6 @@
 """TOTP MFA service using pyotp."""
 import hashlib
+import hmac
 import logging
 import secrets
 import string
@@ -52,11 +53,19 @@ def hash_backup_code(code: str) -> str:
 
 
 def verify_backup_code(user: User, code: str, db: DBSession) -> bool:
-    """Check if code matches a stored backup code; if so, consume it."""
+    """Check if code matches a stored backup code; if so, consume it.
+
+    Uses hmac.compare_digest to prevent timing-based enumeration of valid codes.
+    """
     code_hash = hash_backup_code(code)
     stored: list[str] = list(user.mfa_backup_codes or [])
-    if code_hash in stored:
-        stored.remove(code_hash)
+    matched_hash: str | None = None
+    for h in stored:
+        if hmac.compare_digest(h, code_hash):
+            matched_hash = h
+            break
+    if matched_hash is not None:
+        stored.remove(matched_hash)
         user.mfa_backup_codes = stored
         db.commit()
         return True

@@ -26,10 +26,12 @@ server {
     ssl_session_timeout 1d;
 
     # ── Security headers ─────────────────────────────────────────────────────
-    add_header Strict-Transport-Security "max-age=63072000; includeSubDomains" always;
-    add_header X-Frame-Options           SAMEORIGIN                            always;
-    add_header X-Content-Type-Options    nosniff                               always;
-    add_header Referrer-Policy           "strict-origin-when-cross-origin"     always;
+    add_header Strict-Transport-Security "max-age=63072000; includeSubDomains"                                                     always;
+    add_header X-Frame-Options           SAMEORIGIN                                                                                always;
+    add_header X-Content-Type-Options    nosniff                                                                                   always;
+    add_header Referrer-Policy           "strict-origin-when-cross-origin"                                                         always;
+    # CSP: unsafe-eval required by Vite dev server (source maps + HMR); unsafe-inline required by MUI
+    add_header Content-Security-Policy   "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' wss: https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" always;
 
     client_max_body_size 50m;
 
