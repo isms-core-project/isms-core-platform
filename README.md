@@ -110,7 +110,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 </tr>
 <tr>
 <td><strong>Languages</strong></td>
-<td>EN + FR + DE + IT (POL/CTX/REF/FORM)</td>
+<td>EN + FR + DE + IT (POL/INS/CTX/REF/FORM)</td>
 <td>EN + FR + DE + IT (OP-POL)</td>
 <td>EN + FR + DE + IT (PRIV-POL)</td>
 <td>EN + FR + DE + IT (CLD-POL)</td>
