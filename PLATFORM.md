@@ -114,10 +114,10 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Gaps** | Identified compliance gaps with severity, owner, SLA, and remediation tracking |
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
-| **Frameworks** | 23 reference datasets: ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, EU CRA 2024, EU AI Act, and more |
-| **Crosswalk Mappings** | Cross-framework relationships: 2,730+ mappings — including BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51) |
+| **Frameworks** | 30 reference datasets: ISO 27001, NIST CSF 2.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS Regulations, UK Operational Resilience, and more |
+| **Crosswalk Mappings** | Cross-framework relationships: 3,100+ mappings — including BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51) and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF 20-750 LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
-| **Compliance Assessments** | 9 generic frameworks (0–4 maturity): NIS2 (15), DORA (25), CIS Controls v8 (153), BSI IT-Grundschutz (68 Bausteine), TISAX (53), Swiss nDSG (25), EU CRA (26), EU AI Act (25). Plus CSRM (object-centric, binary). Assessment Collections group assessments with derived stats, CSV/XLSX/PDF export. See [COMPLIANCE.md](COMPLIANCE.md). |
+| **Compliance Assessments** | 16 generic frameworks (0–4 maturity): NIS2 (15), DORA (25), CIS Controls v8 (153), BSI IT-Grundschutz (68 Bausteine), TISAX (53), Swiss nDSG (25), EU CRA (26), EU AI Act (25), EU Cloud Sovereignty (8), CyberFundamentals BE (41), BaFin BAIT DE (23), CSSF 20-750 LU (19), ACN IT (19), UK NIS (13), UK Op. Resilience (12). Plus CSRM (object-centric, binary) and NIST CSF 2.0 (tiered profile). Assessment Collections group assessments with derived stats, CSV/XLSX/PDF export. See [COMPLIANCE.md](COMPLIANCE.md). |
 | **Projects** | Workspace layer — named projects own a curated subset of library policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date, etc.) applied on add; active/inactive/draft/archived lifecycle |
 | **System Event Log** | Immutable trail of every platform action (who, what, when, resource) |
 
@@ -172,7 +172,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats, import triggers |
 | **Full-Text Search** | Search across all policy and IMP document content via OpenSearch (product-filtered) |
 | **ISMS Compass** | AI gap analysis against ISMS CORE Gold Standard (requires `ANTHROPIC_API_KEY`) |
-| **Compliance Assessment Suite** | 10 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md) for full coverage notes. |
+| **Compliance Assessment Suite** | 17 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md) for full coverage notes. |
 | **NIST CSF 2.0 Assessment** | 106 subcategories across 6 functions (incl. GV — Govern), tier 1–4 ratings, radar + bar chart report page, XLSX import from official NIST template, XLSX/CSV export |
 | **NIS2 Assessment** | EU 2022/2555 — 10 Article 21(2) security measures + 5 Article 23 reporting obligations, maturity score 0–4 |
 | **DORA Assessment** | EU 2022/2554 — 25 articles across 4 chapters (ICT Risk, Incident Mgmt, Resilience Testing, Third-Party Risk), maturity score 0–4 |
@@ -183,6 +183,12 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Swiss nDSG Assessment** | Swiss Federal Act on Data Protection 2023 — 25 provisions across 6 chapters, maturity score 0–4 |
 | **EU Cyber Resilience Act Assessment** | EU 2024/2847 — 26 essential requirements across 6 groups, maturity score 0–4 |
 | **EU AI Act Assessment** | EU 2024/1689 — 25 articles across 6 groups (Risk Management, Data Governance, Transparency, Human Oversight, Robustness, Accountability), maturity score 0–4 |
+| **CyberFundamentals Assessment (BE)** | CCN/CCB CyberFundamentals — 41 NIST CSF 2.0 aligned practices, maturity score 0–4; ISO 27001 crosswalk: 107 mappings |
+| **BaFin BAIT Assessment (DE)** | Rundschreiben 10/2021 — 23 requirements across 12 modules, maturity score 0–4; ISO 27001 crosswalk: 69 mappings |
+| **CSSF 20-750 Assessment (LU)** | CSSF Circulaire 20/750 ICT Risk — 19 requirements across 7 domains, maturity score 0–4; ISO 27001 crosswalk: 47 mappings |
+| **ACN Guidelines Assessment (IT)** | ACN Linee Guida Cyber Risk — 19 guidelines across 4 groups, maturity score 0–4; ISO 27001 crosswalk: 43 mappings |
+| **UK NIS Assessment** | UK NIS Regulations 2018 (SI 2018/506) — 13 requirements across 3 objectives, maturity score 0–4; ISO 27001 crosswalk: 51 mappings |
+| **UK Operational Resilience Assessment** | FCA/PRA PS21/3 + PS26/2 — 12 requirements across 4 objectives, maturity score 0–4; ISO 27001 crosswalk: 34 mappings |
 | **Assessment Collections** | Group multiple assessments into named collections with derived stats (completion %, compliance %, status rollup). Export as CSV, colour-coded XLSX, or PDF (A4). |
 | **Projects Workspace** | Create named projects to own, edit, and track a curated set of policies and implementations from the library — with WYSIWYG document editing, document variable substitution, bulk actions, bin/restore, SCR checklists, and completeness scoring |
 | **Document Editor** | TipTap v3 WYSIWYG + raw source toggle for in-platform editing of policy/implementation content; grid table auto-conversion (RST → GFM); metadata comment stripping |
@@ -202,6 +208,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **BIA** | Business Impact Analysis — asset records with RTO/RPO/MTPD hours; financial, operational, reputational, and regulatory impact scores; recovery testing tracking; BIA tab on A.5.29/A.5.30 control groups |
 | **EBIOS RM** | Full 5-workshop ANSSI risk methodology — feared events, risk sources, strategic scenarios (likelihood × gravity matrix), attack paths with MITRE ATT&CK technique mapping, security measures mapped to ISO 27001 controls |
 | **Custom Framework Import** | YAML-based upload of custom or sector-specific control frameworks; auto-mapped against ISO 27001 via `iso_mappings`; coverage percentage shown in Coverage page |
+| **Country Localisation** | Policy rendering adapts regulatory references, authority names, financial sector bodies, and data protection law names for 7 jurisdictions: CH (default), FR, BE, LU, DE, AT, IT, GB — applied at request time from `org.country`; CH source files untouched |
 | **Cross-Framework Coverage** | BFS inference maps ISO 27001 assessment coverage to NIS2, DORA, and GDPR automatically; Mapping Matrix and Inferred Coverage tabs |
 | **MFA** | TOTP-based two-factor authentication — Google Authenticator / Authy compatible; QR code setup in System page; 8 single-use backup codes; auto-submits on 6-digit entry |
 | **Project-Scoped Risk/Gaps/Evidence** | Risk scenarios, gaps, and evidence items are scoped to the active project — switching projects switches context |

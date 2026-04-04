@@ -5,12 +5,12 @@
 <h1 align="center">🎋 ISMS CORE — Compliance Assessment Modules</h1>
 
 <p align="center">
-  <strong>Eleven built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
+  <strong>Seventeen built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Frameworks-10-2E8B57?style=flat-square" alt="10 Frameworks"/>
-  <img src="https://img.shields.io/badge/Requirements-500+-0066CC?style=flat-square" alt="500+ Requirements"/>
+  <img src="https://img.shields.io/badge/Frameworks-17-2E8B57?style=flat-square" alt="17 Frameworks"/>
+  <img src="https://img.shields.io/badge/Requirements-650+-0066CC?style=flat-square" alt="650+ Requirements"/>
   <img src="https://img.shields.io/badge/Export-CSV_%7C_XLSX_%7C_PDF-FF6600?style=flat-square" alt="Export"/>
   <img src="https://img.shields.io/badge/Assessment_Collections-Grouping_%26_Reports-2E7D32?style=flat-square" alt="Collections"/>
 </p>
@@ -19,7 +19,7 @@
 
 ## Overview
 
-ISMS CORE Platform includes a unified compliance assessment layer covering 11 built-in frameworks across Europe and North America, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
+ISMS CORE Platform includes a unified compliance assessment layer covering 17 built-in frameworks across Europe and North America, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
 
 Assessment results can be grouped into **Assessment Collections** — named bundles that aggregate status across multiple frameworks for reporting or audit purposes, with CSV, XLSX (colour-coded), and PDF (A4) export.
 
@@ -42,6 +42,12 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [EU Cyber Resilience Act](#eu-cyber-resilience-act-20242847) | EU Regulation | 26 requirements | 6 Groups | 0–4 | EU product manufacturers |
 | [EU AI Act](#eu-ai-act-20241689) | EU Regulation | 25 articles | 6 Groups | 0–4 | EU AI system providers/deployers |
 | [EU Cloud Sovereignty Framework](#eu-cloud-sovereignty-framework-v121) | EC DG DIGIT | 8 Sovereignty Objectives | 1 Group (SEAL) | SEAL 0–4 | EU institutions / public sector cloud procurement |
+| [CyberFundamentals (BE)](#cyberfundamentals-ccncertbe) | Belgian regulation | 41 practices | 6 CSF Functions | 0–4 | Belgian organisations / CCN/CCB certification |
+| [BaFin BAIT (DE)](#bafin-bait-rundschreiben-102021) | German BaFin | 23 requirements | 12 Modules | 0–4 | German financial sector (banks, investment firms) |
+| [CSSF Circulaire 20-750 (LU)](#cssf-circulaire-20-750-lu) | Luxembourg CSSF | 19 requirements | 7 Domains | 0–4 | Luxembourg financial sector |
+| [ACN Cyber Risk Management (IT)](#acn-cyber-risk-management-it) | Italian ACN | 19 guidelines | 4 Groups | 0–4 | Italian organisations / critical infrastructure |
+| [UK NIS Regulations](#uk-nis-regulations-2018) | UK law | 13 requirements | 3 Objectives | 0–4 | UK network and information systems operators |
+| [UK Operational Resilience (FCA/PRA)](#uk-operational-resilience-fcapra) | UK FCA/PRA | 12 requirements | 4 Objectives | 0–4 | UK financial sector — banks, insurers, FMIs |
 | [Custom (YAML)](#custom-frameworks-yaml-import) | User-defined | User-defined | User-defined | User-defined | All |
 
 ---
@@ -277,6 +283,91 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 
 ---
 
+### CyberFundamentals (CCN/CERT.be)
+
+**Source:** Centre for Cybersecurity Belgium (CCB/CCN) — CyberFundamentals Framework v2025
+**Scope:** 41 practices aligned to NIST CSF 2.0 functions: Govern (GV), Identify (ID), Protect (PR), Detect (DE), Respond (RS), Recover (RC)
+**Scoring:** Maturity 0–4
+**Audience:** Belgian organisations seeking CCN/CCB CyberFundamentals certification; NIS2-in-scope entities in Belgium; any organisation using NIST CSF 2.0 with Belgian regulatory context
+
+**Coverage notes:**
+- CyberFundamentals uses NIST CSF 2.0 control IDs (GV.OC-01, ID.AM-01, etc.) — the ISMS CORE crosswalk leverages existing ISO→NIST CSF mappings
+- Three certification levels: Basic, Important, Essential (aligned to Belgian NIS2 transposition)
+- Crosswalk: ISO 27001:2022 ↔ CyberFundamentals — 107 mappings
+
+---
+
+### BaFin BAIT (Rundschreiben 10/2021)
+
+**Source:** Bundesanstalt für Finanzdienstleistungsaufsicht — Bankaufsichtliche Anforderungen an die IT (BAIT), Rundschreiben 10/2021
+**Scope:** 23 requirements across 12 modules: IT Strategy, IT Governance, Information Risk Management, Information Security, IT Projects, Application Development, IT Operations, IT Outsourcing, IT Emergency Management, IAM, Cryptography, BCM
+**Scoring:** Maturity 0–4
+**Audience:** German banks and financial institutions supervised by BaFin; applies in conjunction with MaRisk and DORA for EU-regulated entities
+
+**Coverage notes:**
+- BAIT is the primary IT supervisory circular for German-supervised banks; VAIT (insurance) and KAIT (capital management) share the same structure
+- Replaces the 2017 BAIT circular; includes MaRisk alignment and cloud-specific guidance
+- Crosswalk: ISO 27001:2022 ↔ BaFin BAIT — 69 mappings
+
+---
+
+### CSSF Circulaire 20-750 (LU)
+
+**Source:** Commission de Surveillance du Secteur Financier (CSSF), Luxembourg — Circulaire CSSF 20/750
+**Scope:** 19 requirements across 7 ICT risk domains: Governance, Risk Management, ICT Security, Business Continuity, Third-Party Management, Incident Management, Audit
+**Scoring:** Maturity 0–4
+**Audience:** Luxembourg financial sector entities regulated by CSSF — banks, investment firms, payment institutions, fund administrators
+
+**Coverage notes:**
+- CSSF 20/750 is the primary ICT risk management circular for CSSF-regulated entities, aligned to EBA/ESMA guidelines
+- Entities subject to DORA (from January 2025) should use both this module and the DORA module
+- Crosswalk: ISO 27001:2022 ↔ CSSF 20/750 — 47 mappings
+
+---
+
+### ACN Cyber Risk Management (IT)
+
+**Source:** Agenzia per la Cybersicurezza Nazionale (ACN) — Linee Guida per la Gestione del Rischio Cyber, 2024
+**Scope:** 19 guidelines across 4 groups: Governance & Risk, Asset Management, Technical Controls, Incident & BCM
+**Scoring:** Maturity 0–4
+**Audience:** Italian organisations — public administration, critical infrastructure operators, NIS2-in-scope entities in Italy
+
+**Coverage notes:**
+- ACN is the Italian National Cybersecurity Agency; these guidelines align with NIS2 Italian transposition (D.Lgs. 138/2024)
+- Organisations subject to both ACN guidelines and NIS2 can use both modules
+- Crosswalk: ISO 27001:2022 ↔ ACN Guidelines — 43 mappings
+
+---
+
+### UK NIS Regulations 2018
+
+**Source:** The Network and Information Systems (NIS) Regulations 2018 (SI 2018/506) — UK implementation of EU NIS Directive
+**Scope:** 13 requirements across 3 objectives: Governance, Risk Management & Security, Operational Capability
+**Scoring:** Maturity 0–4
+**Audience:** UK operators of essential services (OES) in energy, transport, health, water, digital infrastructure; relevant digital service providers (RDSPs)
+
+**Coverage notes:**
+- UK NIS Regulations remain in force post-Brexit as domestic law; the Cyber Security and Resilience Bill (2025, pending Royal Assent) will update and expand scope
+- NCSC's Cyber Assessment Framework (CAF) is the recommended tool for OES compliance — this module covers the core NIS obligations
+- Crosswalk: ISO 27001:2022 ↔ UK NIS Regulations — 51 mappings
+
+---
+
+### UK Operational Resilience (FCA/PRA)
+
+**Source:** FCA Policy Statement PS21/3 + PS26/2; PRA Supervisory Statement SS1/21; Bank of England operational resilience policy
+**Scope:** 12 requirements across 4 objectives: Important Business Services, Impact Tolerances, Scenario Testing, Self-Assessment
+**Scoring:** Maturity 0–4
+**Audience:** UK financial sector — banks, building societies, PRA-designated investment firms, insurers, financial market infrastructures (FMIs), payment systems operators
+
+**Coverage notes:**
+- UK Op. Resilience requirements came into full effect March 2025 (PS21/3 deadline); PS26/2 extended scope to more entities
+- Entities subject to both UK Op. Resilience and DORA should use both modules
+- Focus is on important business services (IBS) and impact tolerances — not a substitute for formal FCA/PRA supervisory engagement
+- Crosswalk: ISO 27001:2022 ↔ UK Operational Resilience — 34 mappings
+
+---
+
 ### Custom Frameworks (YAML Import)
 
 Upload any custom, sector-specific, or proprietary control framework via YAML. Once imported, the platform maps each control against ISO 27001:2022 via `iso_mappings` fields and shows inferred coverage in the Coverage page.
@@ -316,8 +407,14 @@ All compliance assessment modules benefit from the Platform's Crosswalk Viewer, 
 - ISO 27001:2022 ↔ BSI IT-Grundschutz (115 mappings)
 - ISO 27701:2025 ↔ BSI IT-Grundschutz (103 mappings)
 - ISO 27018:2025 ↔ BSI IT-Grundschutz (51 mappings)
+- ISO 27001:2022 ↔ CyberFundamentals BE (107 mappings)
+- ISO 27001:2022 ↔ BaFin BAIT DE (69 mappings)
+- ISO 27001:2022 ↔ CSSF 20-750 LU (47 mappings)
+- ISO 27001:2022 ↔ ACN Guidelines IT (43 mappings)
+- ISO 27001:2022 ↔ UK NIS Regulations (51 mappings)
+- ISO 27001:2022 ↔ UK Operational Resilience (34 mappings)
 
-Total: **2,730+ cross-framework mappings** available in the Crosswalk Viewer.
+Total: **3,100+ cross-framework mappings** available in the Crosswalk Viewer.
 
 ---
 

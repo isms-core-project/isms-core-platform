@@ -28,6 +28,12 @@
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/EU_Cyber_Resilience_Act-Assessment_Tool-1A237E?style=flat-square" alt="EU CRA"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/EU_AI_Act-Assessment_Tool-4527A0?style=flat-square" alt="EU AI Act"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/EU_Cloud_Sovereignty-Assessment_Tool-01579B?style=flat-square" alt="EU Cloud Sovereignty"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CyberFundamentals_(BE)-Assessment_Tool-1A237E?style=flat-square" alt="CyberFundamentals BE"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/BaFin_BAIT_(DE)-Assessment_Tool-B71C1C?style=flat-square" alt="BaFin BAIT"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CSSF_20--750_(LU)-Assessment_Tool-4A148C?style=flat-square" alt="CSSF LU"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/ACN_Guidelines_(IT)-Assessment_Tool-006630?style=flat-square" alt="ACN IT"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/UK_NIS_Regulations-Assessment_Tool-1A237E?style=flat-square" alt="UK NIS"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/UK_Op._Resilience-Assessment_Tool-283593?style=flat-square" alt="UK Op Resilience"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v18-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
 </p>
 
@@ -68,7 +74,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td>Foundation ISMS for SMEs — operational policies with single-sheet compliance checklists</td>
 <td>Privacy information management — controller, processor, and shared control groups</td>
 <td>PII protection in public cloud — compliance checklists for cloud service providers</td>
-<td>API + WebUI — turns all content products into a live compliance management system; modules include Risk Register, KPI Metrics, TPRM, BIA, EBIOS RM, ITSM push, Cross-Framework Coverage, Custom Framework Import, and MFA</td>
+<td>API + WebUI — turns all content products into a live compliance management system; modules include Risk Register, KPI Metrics, TPRM, BIA, EBIOS RM, ITSM push, Cross-Framework Coverage, Custom Framework Import, Country Localisation (FR/BE/LU/DE/AT/IT/GB), and MFA</td>
 </tr>
 <tr>
 <td><strong>For</strong></td>
@@ -195,10 +201,10 @@ factory_isms/
 │   ├── backend/                        # FastAPI application
 │   ├── frontend/                       # React 19 + MUI 6 UI
 │   ├── nginx/                          # Reverse proxy + TLS (A.8.24)
-│   ├── datasets/data/                  # 23 JSON reference datasets
+│   ├── datasets/data/                  # 30 JSON reference datasets
 │   └── schemas/                        # PostgreSQL init schema
 │
-├── COMPLIANCE.md                       # 📋 Compliance assessment module coverage (11 frameworks)
+├── COMPLIANCE.md                       # 📋 Compliance assessment module coverage (17 frameworks)
 └── screenshots/                        # Platform UI screenshots
 ```
 
