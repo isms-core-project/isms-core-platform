@@ -657,13 +657,14 @@ docker compose down -v       # Stops containers AND deletes volumes (destroys al
 
 | Role | Capabilities |
 |------|-------------|
-| **Admin** | Full access — user management, system config, sync triggers, content approval, admin panel |
+| **Super Admin** | Cross-organisation access — creates and manages organisations, views Metrics Portfolio across all orgs. Assigned at platform level, not per-org. |
+| **Admin** | Full access within their organisation — user management, system config, sync triggers, content approval, admin panel |
 | **ISMS Manager** | All controls, assessments, gaps, evidence. Cannot manage users or system config. |
 | **Auditor** | Read-only access to everything. Can export reports. |
 | **Control Owner** | Read/write on assigned control groups only. |
 | **Viewer** | Read-only on non-confidential items. |
 
-Roles are assigned per-user in **Admin → Users**.
+Roles are assigned per-user in **Admin → Users**. Super Admin is assigned at the platform level during initial setup.
 
 ---
 
