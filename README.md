@@ -109,6 +109,14 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td>FastAPI + PostgreSQL + Redis + OpenSearch + React WebUI</td>
 </tr>
 <tr>
+<td><strong>Languages</strong></td>
+<td>EN + FR (CTX/REF) + IT (POL/CTX/REF)</td>
+<td>EN + IT (OP-POL)</td>
+<td>EN + IT (PRIV-POL)</td>
+<td>EN + IT (CLD-POL)</td>
+<td>UI: EN — policy rendering: 8 jurisdictions</td>
+</tr>
+<tr>
 <td><strong>Status</strong></td>
 <td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
 <td><img src="https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square" alt="Complete"/></td>
