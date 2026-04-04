@@ -1,0 +1,211 @@
+{
+  "bundle_id": "bundle--29e4af46-9b36-5520-8942-209455ffb6de",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+    "code": "ACN_IT",
+    "name": "ACN — Linee Guida Cyber Risk Management",
+    "version": "2024",
+    "publisher": "Agenzia per la Cybersicurezza Nazionale (ACN)",
+    "source_url": "https://www.acn.gov.it",
+    "jurisdiction": "IT",
+    "description": "ACN Linee Guida per la definizione dei processi di cyber risk management e security by design — Italian National Cybersecurity Agency guidelines for cyber risk management and security-by-design. Applies to NIS2 subjects (operatori di servizi essenziali and fornitori di servizi digitali) under D.Lgs. 138/2024."
+  },
+  "generated_at": "2026-04-04T00:00:00Z",
+  "generator": "manual",
+  "content_hash": "24df54e21a83797dcad65ca850a35acda7107702b748c4ef880a9cc73b54a7f8",
+  "objects_count": 19,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "099b23dd-ba75-5704-81cd-aefc72212c94",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-1",
+      "title": "Introduzione — Ambito e destinatari (Scope and Addressees)",
+      "level": 0,
+      "sort_order": 100,
+      "description": "These guidelines apply to all public administrations under the Digital Administration Code (CAD), public service managers, and publicly controlled companies. They provide a framework for cyber risk management and security-by-design processes aligned with D.Lgs. 138/2024 and Legge 90/2024."
+    },
+    {
+      "type": "framework_control",
+      "id": "4b114510-70b1-5f86-b214-98ccdef7920b",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-2.1",
+      "title": "Definizione del contesto (Context Definition)",
+      "level": 0,
+      "sort_order": 200,
+      "description": "The context definition phase requires understanding the internal and external environment in which the organisation operates, including governance structures, business objectives, regulatory requirements, technological landscape, and stakeholder relationships. Risk criteria (risk appetite and risk tolerance) are established and approved by senior management."
+    },
+    {
+      "type": "framework_control",
+      "id": "b76eb959-2832-5def-82e2-5912e109a46a",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-2.2",
+      "title": "Valutazione del rischio (Risk Assessment)",
+      "level": 0,
+      "sort_order": 300,
+      "description": "Risk assessment comprises three sub-phases: risk identification, risk analysis, and risk evaluation. Assessment may be performed at service/process level or at organisational level, using event-based or asset-based approaches, with qualitative, quantitative, or semi-quantitative methodologies."
+    },
+    {
+      "type": "framework_control",
+      "id": "4fb66307-0de0-5d1c-83e2-78c512cb7287",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-2.2.1",
+      "title": "Identificazione del rischio (Risk Identification)",
+      "level": 0,
+      "sort_order": 400,
+      "description": "Risks are identified using event-based approaches (risk scenarios) or asset-based approaches (analysis of assets, vulnerabilities, threats, and impacts). All approaches must produce consistent, valid, and comparable results."
+    },
+    {
+      "type": "framework_control",
+      "id": "8c4e316f-a8ae-5550-a610-62c795c12c6c",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-2.2.2",
+      "title": "Analisi del rischio (Risk Analysis)",
+      "level": 0,
+      "sort_order": 500,
+      "description": "Risk level is calculated as a function of the probability of an event occurring and its impact on the organisation in terms of costs and/or operations. Qualitative, quantitative, or semi-quantitative methodologies may be used based on the assessment purpose and available data."
+    },
+    {
+      "type": "framework_control",
+      "id": "cd583588-b36a-5dce-902d-1470f8332242",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-2.2.3",
+      "title": "Ponderazione del rischio (Risk Evaluation)",
+      "level": 0,
+      "sort_order": 600,
+      "description": "Risk evaluation compares risk analysis results against the organisation's risk criteria to determine acceptable risks and prioritise unacceptable ones by severity and relevance. Results provide an objective basis for subsequent risk treatment decisions."
+    },
+    {
+      "type": "framework_control",
+      "id": "731f1184-6a9e-5ffc-baee-5ee7930dd402",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-2.3",
+      "title": "Trattamento del rischio (Risk Treatment)",
+      "level": 0,
+      "sort_order": 700,
+      "description": "Risk treatment identifies and implements appropriate actions to bring risk levels within acceptable bounds. Treatment options include: mitigation (implementing countermeasures), transfer (e.g. insurance), avoidance (ceasing the risk-generating activity), or acceptance. A risk treatment plan documents selected options, responsible units, timelines, and residual risk justifications."
+    },
+    {
+      "type": "framework_control",
+      "id": "a27d37ee-bcc5-5e92-88c2-83cedeb15339",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-2.4",
+      "title": "Comunicazione e consultazione (Communication and Consultation)",
+      "level": 0,
+      "sort_order": 800,
+      "description": "Communication and consultation activities extend throughout the cyber risk management lifecycle, ensuring stakeholders have adequate and up-to-date information about risks, threats, vulnerabilities, and incident impacts. Risk acceptance criteria, assessment outcomes, and treatment actions must be approved by senior management."
+    },
+    {
+      "type": "framework_control",
+      "id": "5f3cfc84-1014-5c68-b6a0-ee62ff2e4d42",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-2.5",
+      "title": "Monitoraggio e riesame (Monitoring and Review)",
+      "level": 0,
+      "sort_order": 900,
+      "description": "Monitoring and review activities extend throughout the cyber risk management lifecycle to identify changes in risks due to their dynamic nature. The organisation must continuously track risks, controls effectiveness, and changes in threat environment to ensure risk levels remain within accepted thresholds."
+    },
+    {
+      "type": "framework_control",
+      "id": "8d4e66b7-115b-5eae-8530-d8aa8ac41ec6",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-2.6",
+      "title": "Registrazione e reportistica (Recording and Reporting)",
+      "level": 0,
+      "sort_order": 1000,
+      "description": "Activities performed during the risk management process and identified risks must be recorded and documented. Reporting outputs support the communication and consultation phase and must be produced for senior management and relevant stakeholders."
+    },
+    {
+      "type": "framework_control",
+      "id": "a3e5f8f1-9845-5ee9-a9a7-7ecba4fabb1e",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-A",
+      "title": "Appendice A — Scenari di rischio (Risk Scenarios)",
+      "level": 0,
+      "sort_order": 1100,
+      "description": "Risk scenarios are structured tools guiding the management of specific threats. They describe potential events (e.g. ransomware, DDoS, data exfiltration) and their consequences, and are used in the risk identification sub-phase as part of the event-based approach."
+    },
+    {
+      "type": "framework_control",
+      "id": "9a8bb445-1234-5379-af66-101c80f91a21",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-3",
+      "title": "Processo di security by design (Security-by-Design Process)",
+      "level": 0,
+      "sort_order": 1200,
+      "description": "The security-by-design process integrates security requirements from the earliest design phases of information and network systems, as opposed to applying mitigating or corrective measures post-development. The process covers four phases: requirements definition, requirements implementation, requirements effectiveness verification, and remediation."
+    },
+    {
+      "type": "framework_control",
+      "id": "e602b973-a388-5d12-87d9-4e8dfa0d19be",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-3.1",
+      "title": "Definizione requisiti di sicurezza (Security Requirements Definition)",
+      "level": 0,
+      "sort_order": 1300,
+      "description": "Security requirements must be identified and defined during system design, based on the results of the cyber risk management process and applicable regulatory, business, and technical constraints. Requirements cover confidentiality, integrity, and availability objectives."
+    },
+    {
+      "type": "framework_control",
+      "id": "08293f91-6cb2-51a1-bdf7-61a0b318a7f0",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-3.2",
+      "title": "Implementazione requisiti di sicurezza (Security Requirements Implementation)",
+      "level": 0,
+      "sort_order": 1400,
+      "description": "Security requirements defined in the design phase must be implemented throughout the development and configuration of systems. Implementation must follow secure coding practices, hardening guidelines, and relevant standards."
+    },
+    {
+      "type": "framework_control",
+      "id": "95f5c25c-f122-5965-95e6-a9daf7e3754f",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-3.3",
+      "title": "Verifica efficacia requisiti (Requirements Effectiveness Verification)",
+      "level": 0,
+      "sort_order": 1500,
+      "description": "The effectiveness of implemented security requirements must be verified through security testing activities including code reviews, vulnerability assessments, and penetration testing, to confirm that security objectives are met before system deployment."
+    },
+    {
+      "type": "framework_control",
+      "id": "d6b3fbd9-88b6-597b-a502-b5ebccc1651f",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-3.4",
+      "title": "Attuazione azioni di rimedio (Remediation)",
+      "level": 0,
+      "sort_order": 1600,
+      "description": "Where verification activities identify deficiencies, remediation actions must be defined, prioritised, and implemented. Remediation must address root causes and be tracked to closure. Re-verification confirms effectiveness of remediation measures."
+    },
+    {
+      "type": "framework_control",
+      "id": "bcf27ca1-4eed-5788-abcd-77afb13b20e8",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-B.1",
+      "title": "Principi di progettazione sicura — Minimizzazione della superficie di attacco (Minimise Attack Surface)",
+      "level": 0,
+      "sort_order": 1700,
+      "description": "Design principle: reduce the attack surface by minimising exposed interfaces, services, and functionality. Only necessary components should be enabled; unnecessary features, ports, and services must be disabled or removed."
+    },
+    {
+      "type": "framework_control",
+      "id": "7f49001f-f57f-5c76-9951-4224ae14d0ea",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-B.2",
+      "title": "Principi di progettazione sicura — Difesa in profondità (Defence in Depth)",
+      "level": 0,
+      "sort_order": 1800,
+      "description": "Design principle: implement multiple layers of security controls so that a failure in one layer does not compromise the entire system. Layered defences include network segmentation, access controls, encryption, and monitoring."
+    },
+    {
+      "type": "framework_control",
+      "id": "566d047c-be4d-525c-9ff3-4eed242ae4ae",
+      "framework_id": "f6f51496-b114-50f2-82c5-d530c3d3b6ec",
+      "control_id": "ACN-B.3",
+      "title": "Principi di progettazione sicura — Privilegio minimo e separazione dei compiti (Least Privilege and Separation of Duties)",
+      "level": 0,
+      "sort_order": 1900,
+      "description": "Design principle: grant only the minimum access rights necessary for a function to operate. Separate critical duties to prevent fraud and error. Apply need-to-know and need-to-use principles across all user, service, and system accounts."
+    }
+  ]
+}

@@ -28,6 +28,12 @@ import Risk from './pages/Risk'
 import Connectors from './pages/Connectors'
 import Nis2 from './pages/Nis2'
 import Dora from './pages/Dora'
+import UkNis from './pages/UkNis'
+import UkOperationalResilience from './pages/UkOperationalResilience'
+import CyfunBe from './pages/CyfunBe'
+import BafinBait from './pages/BafinBait'
+import CssfLu from './pages/CssfLu'
+import AcnIt from './pages/AcnIt'
 import Cis from './pages/Cis'
 import Bsi from './pages/Bsi'
 import Tisax from './pages/Tisax'
@@ -46,6 +52,7 @@ import Bia from './pages/Bia'
 import Ebios from './pages/Ebios'
 import Tprm from './pages/Tprm'
 import CustomFrameworks from './pages/CustomFrameworks'
+import FrameworkTracker from './pages/FrameworkTracker'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -95,6 +102,12 @@ export default function App() {
         <Route path="nist-csf/:id/report" element={<Suspense fallback={null}><NistCsfReport /></Suspense>} />
         <Route path="nis2" element={<Nis2 />} />
         <Route path="dora" element={<Dora />} />
+        <Route path="uk-nis" element={<UkNis />} />
+        <Route path="uk-op-resilience" element={<UkOperationalResilience />} />
+        <Route path="cyfun-be" element={<CyfunBe />} />
+        <Route path="bafin-bait" element={<BafinBait />} />
+        <Route path="cssf-lu" element={<CssfLu />} />
+        <Route path="acn-it" element={<AcnIt />} />
         <Route path="cis" element={<Cis />} />
         <Route path="bsi" element={<Bsi />} />
         <Route path="tisax" element={<Tisax />} />
@@ -113,6 +126,7 @@ export default function App() {
         <Route path="ebios" element={<Ebios />} />
         <Route path="tprm" element={<Tprm />} />
         <Route path="custom-frameworks" element={<CustomFrameworks />} />
+        <Route path="framework-tracker" element={<FrameworkTracker />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

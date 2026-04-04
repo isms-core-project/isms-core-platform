@@ -67,6 +67,7 @@ import {
   PsychologyOutlined,
   InsightsOutlined,
   AppRegistrationOutlined,
+  UpdateOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -124,8 +125,14 @@ const NAV_FRAMEWORKS: NavItem[] = [
   { label: 'NIST CSF 2.0',         path: '/nist-csf',       icon: <GridViewOutlined /> },
   { label: 'NIS2',                  path: '/nis2',           icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
   { label: 'DORA',                  path: '/dora',           icon: <AccountBalanceOutlined /> },
-  { label: 'CIS Controls',          path: '/cis',            icon: <SecurityOutlined /> },
-  { label: 'BSI IT-Grundschutz',    path: '/bsi',            icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+  { label: 'UK NIS Regulations',    path: '/uk-nis',          icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+  { label: 'UK Op. Resilience',     path: '/uk-op-resilience', icon: <AccountBalanceOutlined /> },
+  { label: 'CyberFundamentals (BE)', path: '/cyfun-be',       icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+  { label: 'BaFin BAIT',            path: '/bafin-bait',      icon: <AccountBalanceOutlined /> },
+  { label: 'CSSF 20-750 (LU)',      path: '/cssf-lu',         icon: <AccountBalanceOutlined /> },
+  { label: 'ACN Guidelines (IT)',   path: '/acn-it',          icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+  { label: 'CIS Controls',          path: '/cis',             icon: <SecurityOutlined /> },
+  { label: 'BSI IT-Grundschutz',    path: '/bsi',             icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
   { label: 'CSRM (NCSC CH)',        path: '/csrm',           icon: <LockPersonOutlined /> },
   { label: 'TISAX',                 path: '/tisax',          icon: <VerifiedOutlined /> },
   { label: 'Swiss nDSG',            path: '/ndsg',           icon: <LockPersonOutlined /> },
@@ -143,8 +150,9 @@ const NAV_SUPPLIERS: NavItem[] = [
 const NAV_ADMIN: NavItem[] = [
   { label: 'Users',             path: '/admin',             icon: <PeopleOutlined />, adminOnly: true },
   { label: 'Connectors',        path: '/connectors',        icon: <ElectricalServicesOutlined />, adminOnly: true },
-  { label: 'Custom Frameworks', path: '/custom-frameworks', icon: <AppRegistrationOutlined />, adminOnly: true },
-  { label: 'System',            path: '/system',            icon: <MonitorHeartOutlined />, adminOnly: true },
+  { label: 'Custom Frameworks', path: '/custom-frameworks',  icon: <AppRegistrationOutlined />, adminOnly: true },
+  { label: 'Framework Tracker', path: '/framework-tracker', icon: <UpdateOutlined />,         adminOnly: true },
+  { label: 'System',            path: '/system',            icon: <MonitorHeartOutlined />,   adminOnly: true },
   { label: 'Organisations',     path: '/organisations',     icon: <BusinessOutlined />, superAdminOnly: true },
 ]
 
@@ -174,9 +182,9 @@ const PLATFORM_COLOR = '#6B7A99'
 
 const RISK_PATHS       = ['/risk-register', '/remediation', '/metrics', '/bia', '/ebios']
 const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk']
-const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act', '/eu-cloud-sov']
+const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/uk-nis', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act', '/eu-cloud-sov']
 const SUPPLIER_PATHS   = ['/tprm']
-const ADMIN_PATHS      = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks']
+const ADMIN_PATHS      = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker']
 const ALL_PLATFORM_PATHS = [...RISK_PATHS, ...TOOLS_PATHS, ...FRAMEWORK_PATHS, ...SUPPLIER_PATHS, ...ADMIN_PATHS]
 
 // ── Notification prefs dialog ─────────────────────────────────────────────────

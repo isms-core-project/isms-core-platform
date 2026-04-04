@@ -1,0 +1,211 @@
+{
+  "bundle_id": "bundle--4d576147-d92b-5079-95af-f06587deab3a",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+    "code": "CSSF_LU",
+    "name": "CSSF Circulaire 20-750 (ICT Risk)",
+    "version": "20-750",
+    "publisher": "Commission de Surveillance du Secteur Financier (CSSF)",
+    "source_url": "https://www.cssf.lu/en/Document/circular-cssf-20-750/",
+    "jurisdiction": "LU",
+    "description": "CSSF Circular 20-750 — ICT and security risk management requirements for Luxembourg financial sector entities supervised by the CSSF. Specifies governance, risk management, ICT operations, ICT projects, and business continuity requirements. Updated by Circular 24-847 for DORA alignment."
+  },
+  "generated_at": "2026-04-04T00:00:00Z",
+  "generator": "manual",
+  "content_hash": "1c0ba23db5a28b7dc8628d66aaa0b6a3890f68b9b21a3f986ae675622dca9044",
+  "objects_count": 19,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "9732e6d4-ae17-5261-9e94-766e92d70774",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.1",
+      "title": "Proportionality",
+      "level": 0,
+      "sort_order": 100,
+      "description": "All financial institutions should comply with the provisions in a manner proportionate to their size, internal organisation, and the nature, scope, complexity and riskiness of their services and products."
+    },
+    {
+      "type": "framework_control",
+      "id": "827303cc-13da-5877-b49f-0a8aad76f118",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.2.1",
+      "title": "ICT Governance",
+      "level": 0,
+      "sort_order": 200,
+      "description": "The management body must ensure adequate internal governance and internal control framework for ICT and security risks, including clear roles and responsibilities for ICT functions, information security risk management, and business continuity."
+    },
+    {
+      "type": "framework_control",
+      "id": "60ed6357-07f2-5aac-bff1-484b50f4c471",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.2.2",
+      "title": "ICT Strategy",
+      "level": 0,
+      "sort_order": 300,
+      "description": "The ICT strategy must be aligned with the business strategy and define how ICT will evolve to support business objectives, including the architecture evolution, third-party dependencies, and clear information security objectives."
+    },
+    {
+      "type": "framework_control",
+      "id": "7d59c3de-b7a2-5df2-b625-0150ca45126a",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.2.3",
+      "title": "Use of Third-Party Providers",
+      "level": 0,
+      "sort_order": 400,
+      "description": "Financial institutions must ensure effectiveness of risk-mitigating measures when ICT functions are outsourced or when using third parties. Contracts with providers must include appropriate security objectives, incident handling procedures, and SLAs."
+    },
+    {
+      "type": "framework_control",
+      "id": "53cefc8f-e8a0-565b-936d-2c172c4636b4",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.3.1",
+      "title": "ICT Risk Management — Organisation and Objectives",
+      "level": 0,
+      "sort_order": 500,
+      "description": "Financial institutions must identify and manage ICT and security risks. An independent control function must be assigned to manage and oversee ICT and security risks, directly accountable to the management body."
+    },
+    {
+      "type": "framework_control",
+      "id": "4a18d7e8-185b-55fd-b1ea-3ef330516d32",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.3.2",
+      "title": "Identification of Functions, Processes and Assets",
+      "level": 0,
+      "sort_order": 600,
+      "description": "Financial institutions must identify and maintain updated mapping of business functions, roles, supporting processes, and information assets including ICT systems, staff, contractors, and third-party dependencies."
+    },
+    {
+      "type": "framework_control",
+      "id": "12e53bc0-40be-549c-9edb-96b832ed70fe",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.3.3",
+      "title": "Classification and Risk Assessment",
+      "level": 0,
+      "sort_order": 700,
+      "description": "Business functions, supporting processes, and information assets must be classified by criticality considering confidentiality, integrity, and availability. Risk assessments must be performed annually or upon major changes."
+    },
+    {
+      "type": "framework_control",
+      "id": "55284308-e19d-5aca-8d3b-6d32821706d6",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.3.4",
+      "title": "Risk Mitigation",
+      "level": 0,
+      "sort_order": 800,
+      "description": "Based on risk assessments, financial institutions must determine and implement measures to mitigate identified ICT and security risks to acceptable levels, considering time to implement changes and interim mitigating measures."
+    },
+    {
+      "type": "framework_control",
+      "id": "daf3ef6c-b654-59a1-8de3-b2c465c45f6c",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.3.5",
+      "title": "Risk Reporting",
+      "level": 0,
+      "sort_order": 900,
+      "description": "Risk assessment results must be reported to the management body in a clear and timely manner. PSPs must provide competent authorities with updated and comprehensive risk assessments as required by law."
+    },
+    {
+      "type": "framework_control",
+      "id": "b67497d6-a398-5c90-883b-14125be084cb",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.4.1",
+      "title": "Information Security Policy",
+      "level": 0,
+      "sort_order": 1000,
+      "description": "Financial institutions must have a documented information security policy, aligned with the ICT strategy, covering all relevant aspects of information security including data classification, access control, encryption, and incident management."
+    },
+    {
+      "type": "framework_control",
+      "id": "c45c79be-ffb9-5b4a-9744-994429121f32",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.4.2",
+      "title": "Access Control",
+      "level": 0,
+      "sort_order": 1100,
+      "description": "Access rights to ICT systems, applications, and data must be managed on a need-to-know and need-to-use basis, enforcing least-privilege principles. Regular access reviews must be performed."
+    },
+    {
+      "type": "framework_control",
+      "id": "7c2f0276-5ab5-5837-bf81-19446cf4e5ba",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.4.3",
+      "title": "Cryptographic Controls",
+      "level": 0,
+      "sort_order": 1200,
+      "description": "Financial institutions must define and implement cryptographic policies covering encryption of data at rest and in transit. Cryptographic key management procedures must be established."
+    },
+    {
+      "type": "framework_control",
+      "id": "4459156e-bcfb-5507-80b7-0167cae53ae7",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.4.4",
+      "title": "Physical and Environmental Security",
+      "level": 0,
+      "sort_order": 1300,
+      "description": "Physical security measures must protect ICT assets including data centres, server rooms, and network infrastructure against unauthorised access, environmental threats, and disruption."
+    },
+    {
+      "type": "framework_control",
+      "id": "fa37c05d-8a64-5fb0-915c-174e89573c76",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.4.5",
+      "title": "Network and Endpoint Security",
+      "level": 0,
+      "sort_order": 1400,
+      "description": "Network security controls must be implemented including firewalls, network segmentation, intrusion detection/prevention, and endpoint protection. Security monitoring must cover all critical network components."
+    },
+    {
+      "type": "framework_control",
+      "id": "32246720-cc15-520f-831a-edbf84a138bd",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.4.6",
+      "title": "Vulnerability and Patch Management",
+      "level": 0,
+      "sort_order": 1500,
+      "description": "Financial institutions must maintain a vulnerability management programme including regular vulnerability assessments, penetration tests, and timely application of security patches and updates."
+    },
+    {
+      "type": "framework_control",
+      "id": "2a40914b-2d69-5c09-b889-7308cea80e77",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.4.7",
+      "title": "ICT Security Awareness and Training",
+      "level": 0,
+      "sort_order": 1600,
+      "description": "All staff, including key function holders, must receive appropriate training on ICT and security risks, including information security, on an annual basis or more frequently if required."
+    },
+    {
+      "type": "framework_control",
+      "id": "fce2cf4d-0d6d-51a7-a703-d401ef71a93e",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.5",
+      "title": "ICT Operations Management",
+      "level": 0,
+      "sort_order": 1700,
+      "description": "ICT operations must be managed with documented processes for change management, capacity planning, availability management, backup and recovery, incident management, and service level monitoring."
+    },
+    {
+      "type": "framework_control",
+      "id": "99427168-fd02-5269-ae7c-2ec13dd46271",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.6",
+      "title": "ICT Project and Change Management",
+      "level": 0,
+      "sort_order": 1800,
+      "description": "Formal processes must govern ICT projects and changes, including security requirements definition, testing, approval, and rollback procedures. ICT projects must incorporate information security from the design phase."
+    },
+    {
+      "type": "framework_control",
+      "id": "8cf5b421-48b4-50fc-8975-6ae06c7b31b4",
+      "framework_id": "1be2ffc4-6a81-5ec8-8343-de7ad7e3f52e",
+      "control_id": "CSSF-3.7",
+      "title": "Business Continuity Management",
+      "level": 0,
+      "sort_order": 1900,
+      "description": "Financial institutions must have a business continuity management framework covering ICT recovery plans with defined RPO/RTO targets, regular testing of continuity and recovery plans, and crisis communication procedures."
+    }
+  ]
+}

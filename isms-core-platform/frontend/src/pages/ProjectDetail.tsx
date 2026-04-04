@@ -2182,13 +2182,35 @@ function ProjectQASummaryCard({ summary, method }: { summary: ProjectQASummary; 
   )
 }
 
+const CROSSWALK_FRAMEWORKS = [
+  { code: 'NIS2',                    label: 'NIS2 Directive' },
+  { code: 'DORA',                    label: 'DORA' },
+  { code: 'NIST_CSF_2.0',            label: 'NIST CSF 2.0' },
+  { code: 'NIST_800_53_R5',          label: 'NIST SP 800-53 Rev 5' },
+  { code: 'CIS_V8',                  label: 'CIS Controls v8' },
+  { code: 'BSI_IT_GRUNDSCHUTZ',      label: 'BSI IT-Grundschutz' },
+  { code: 'EU_GDPR',                 label: 'EU GDPR' },
+  { code: 'TISAX',                   label: 'TISAX / VDA ISA' },
+  { code: 'ISO27701',                label: 'ISO 27701' },
+  { code: 'ISO27018',                label: 'ISO 27018' },
+  { code: 'CYFUN_BE',                label: 'CyberFundamentals (BE)' },
+  { code: 'BAFIN_BAIT',              label: 'BaFin BAIT (DE)' },
+  { code: 'CSSF_LU',                 label: 'CSSF 20-750 (LU)' },
+  { code: 'ACN_IT',                  label: 'ACN Guidelines (IT)' },
+  { code: 'UK_NIS',                  label: 'UK NIS Regulations' },
+  { code: 'UK_OPERATIONAL_RESILIENCE', label: 'UK Op. Resilience' },
+]
+
 function QATab({ projectId }: { projectId: string }) {
   const qc = useQueryClient()
   const [method, setMethod] = useState<string>('existence')
   const [refLib, setRefLib] = useState<string>('iso_corpus')
   const [language, setLanguage] = useState<string>('en')
+  const [frameworkCodes, setFrameworkCodes] = useState<string[]>([])
   const [running, setRunning] = useState<string | null>(null)
   const [runResult, setRunResult] = useState<string | null>(null)
+
+  const showFrameworkSelect = method !== 'existence' && (refLib === 'crosswalk' || refLib === 'both')
 
   const { data: summary, isLoading: summaryLoading } = useQuery({
     queryKey: ['project-qa-summary', projectId, method],
@@ -2206,14 +2228,15 @@ function QATab({ projectId }: { projectId: string }) {
     setRunResult(null)
     try {
       let res: { total: number; pass_count: number; warning_count: number; fail_count: number; duration_ms: number }
+      const fw = showFrameworkSelect && frameworkCodes.length > 0 ? frameworkCodes : undefined
       if (type === 'existence') {
         res = await qaApi.runProjectExistence(projectId)
       } else if (type === 'keyword') {
-        res = await qaApi.runProjectKeyword(projectId, refLib, language)
+        res = await qaApi.runProjectKeyword(projectId, refLib, language, fw)
       } else if (type === 'semantic_claude') {
-        res = await qaApi.runProjectSemanticClaude(projectId, refLib, language)
+        res = await qaApi.runProjectSemanticClaude(projectId, refLib, language, fw)
       } else {
-        res = await qaApi.runProjectSemantic(projectId, refLib, language)
+        res = await qaApi.runProjectSemantic(projectId, refLib, language, fw)
       }
       setRunResult(`Complete — ${res.total} checked, ${res.pass_count} pass, ${res.warning_count} warning, ${res.fail_count} fail (${res.duration_ms}ms)`)
       qc.invalidateQueries({ queryKey: ['project-qa-summary', projectId] })
@@ -2251,7 +2274,8 @@ function QATab({ projectId }: { projectId: string }) {
             <Select value={refLib} label="Reference Library" onChange={e => setRefLib(e.target.value)} sx={{ fontSize: '0.78rem' }}>
               <MenuItem value="iso_corpus" sx={{ fontSize: '0.78rem' }}>ISO Corpus</MenuItem>
               <MenuItem value="isms_library" sx={{ fontSize: '0.78rem' }}>ISMS Library POLs</MenuItem>
-              <MenuItem value="crosswalk" sx={{ fontSize: '0.78rem' }}>Crosswalk (NIS2/DORA/NIST)</MenuItem>
+              <MenuItem value="crosswalk" sx={{ fontSize: '0.78rem' }}>Crosswalk only</MenuItem>
+              <MenuItem value="both" sx={{ fontSize: '0.78rem' }}>ISO + Crosswalk (both)</MenuItem>
             </Select>
           </FormControl>
         )}
@@ -2264,6 +2288,26 @@ function QATab({ projectId }: { projectId: string }) {
               <MenuItem value="fr" sx={{ fontSize: '0.78rem' }}>FR</MenuItem>
               <MenuItem value="de" sx={{ fontSize: '0.78rem' }}>DE</MenuItem>
               <MenuItem value="it" sx={{ fontSize: '0.78rem' }}>IT</MenuItem>
+            </Select>
+          </FormControl>
+        )}
+
+        {showFrameworkSelect && (
+          <FormControl size="small" sx={{ minWidth: 220 }}>
+            <InputLabel sx={{ fontSize: '0.78rem' }}>Target Frameworks (optional)</InputLabel>
+            <Select
+              multiple
+              label="Target Frameworks (optional)"
+              value={frameworkCodes}
+              onChange={e => setFrameworkCodes(typeof e.target.value === 'string' ? e.target.value.split(',') : e.target.value as string[])}
+              renderValue={selected => (selected as string[]).map(c => CROSSWALK_FRAMEWORKS.find(f => f.code === c)?.label ?? c).join(', ')}
+              sx={{ fontSize: '0.78rem' }}
+            >
+              {CROSSWALK_FRAMEWORKS.map(f => (
+                <MenuItem key={f.code} value={f.code} sx={{ fontSize: '0.78rem' }}>
+                  {f.label}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         )}

@@ -17,7 +17,7 @@ class Framework(TimestampMixin, Base):
     id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True)
     code: Mapped[str] = mapped_column(String(50), unique=True, nullable=False)
     name: Mapped[str] = mapped_column(String(200), nullable=False)
-    version: Mapped[str | None] = mapped_column(String(20))
+    version: Mapped[str | None] = mapped_column(String(100))
     publisher: Mapped[str | None] = mapped_column(String(100))
     source_url: Mapped[str | None] = mapped_column(Text)
     description: Mapped[str | None] = mapped_column(Text)

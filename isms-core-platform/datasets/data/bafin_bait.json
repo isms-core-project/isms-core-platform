@@ -1,0 +1,251 @@
+{
+  "bundle_id": "bundle--176f1a8b-fa78-5665-af06-0dc9bbfd0088",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+    "code": "BAFIN_BAIT",
+    "name": "BaFin BAIT (Bankaufsichtliche Anforderungen an die IT)",
+    "version": "Rundschreiben 10/2021",
+    "publisher": "Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin)",
+    "source_url": "https://www.bafin.de/dok/17925196",
+    "jurisdiction": "DE",
+    "description": "BaFin BAIT — Bankaufsichtliche Anforderungen an die IT (Rundschreiben 10/2021). Binding IT governance and cybersecurity requirements for German credit institutions under §25a KWG. Covers IT strategy, IT governance, information risk management, information security, operational ICT continuity, and outsourcing of IT services."
+  },
+  "generated_at": "2026-04-04T00:00:00Z",
+  "generator": "manual",
+  "content_hash": "cbe471c97bafcd6ed2614c9bccd581c7851ffc26aeaafe5326f30bde2f2407b1",
+  "objects_count": 23,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "a74167d1-f8ae-5d43-baac-3d2f6bf11308",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-I",
+      "title": "Vorbemerkung (Preliminary Remarks)",
+      "level": 0,
+      "sort_order": 100,
+      "description": "Scope and applicability of BAIT under §25a KWG for German credit and financial services institutions. Institutions subject to DORA ICT risk management requirements (Art. 5-16) are exempt from BAIT from 17 January 2025."
+    },
+    {
+      "type": "framework_control",
+      "id": "d9932005-322b-5baa-96d0-8dbfb6a95b0b",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-1",
+      "title": "IT-Strategie (IT Strategy)",
+      "level": 0,
+      "sort_order": 200,
+      "description": "The management board must define a sustainable IT strategy consistent with the business strategy. Minimum content includes: IT organisational structure, IT services and third-party dependencies, alignment to recognised standards (e.g. IT-Grundschutz, ISO/IEC 270xx), IT emergency management, and information security objectives."
+    },
+    {
+      "type": "framework_control",
+      "id": "1472d97f-8336-5095-97cd-b8a82f51920c",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-1.1",
+      "title": "IT-Strategie — Mindestinhalte (IT Strategy — Minimum Content)",
+      "level": 0,
+      "sort_order": 300,
+      "description": "IT strategy must cover: IT architecture objectives, strategic development of IT organisation, IT services and key third-party dependencies, assignment of recognised standards to IT and information security areas, information security roles and responsibilities, and IT emergency management."
+    },
+    {
+      "type": "framework_control",
+      "id": "d339a9c1-6158-5647-97af-da46501aa512",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-2",
+      "title": "IT-Governance (IT Governance)",
+      "level": 0,
+      "sort_order": 400,
+      "description": "IT governance is the structure for steering and monitoring the operation and further development of IT systems, including IT processes. Requires separation of interests and adequate resource allocation across information risk management, information security management, IT operations, and application development."
+    },
+    {
+      "type": "framework_control",
+      "id": "5ceadf74-c11f-5177-90ce-a82c692ebc5a",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-2.1",
+      "title": "IT-Governance — Ressourcenausstattung (IT Governance — Resource Allocation)",
+      "level": 0,
+      "sort_order": 500,
+      "description": "The institution must ensure quantitatively and qualitatively adequate resources for information risk management, information security management, IT operations, and application development. Resource adequacy is assessed against the current and future threat environment."
+    },
+    {
+      "type": "framework_control",
+      "id": "7718ce4d-c78a-5e7a-a36b-87a538e67820",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-3",
+      "title": "Informationsrisikomanagement (Information Risk Management)",
+      "level": 0,
+      "sort_order": 600,
+      "description": "The institution must define an information compound (Informationsverbund) covering business-critical information, processes, IT systems, and infrastructure. Roles, competencies, responsibilities, controls, and communication channels for managing information risks must be defined and coordinated."
+    },
+    {
+      "type": "framework_control",
+      "id": "39ce17e7-9661-515b-a4bf-18b4f2d5b3e2",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-3.1",
+      "title": "Schutzbedarf und Sollmaßnahmen (Protection Requirements and Target Measures)",
+      "level": 0,
+      "sort_order": 700,
+      "description": "Regular and event-driven determination of protection requirements for information compound components with respect to confidentiality, integrity, availability, and authenticity. Results must be documented in a target measure catalogue (Sollmaßnahmenkatalog)."
+    },
+    {
+      "type": "framework_control",
+      "id": "e73f3f29-171e-5f08-8c39-8cc71bf6c36a",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-3.2",
+      "title": "Risikoanalyse (Risk Analysis)",
+      "level": 0,
+      "sort_order": 800,
+      "description": "Risk analysis compares target measures against implemented measures (Soll-Ist-Vergleich). Considers threats, damage potential, frequency, and risk appetite. Results must be approved by qualified personnel and fed into the operational risk management process."
+    },
+    {
+      "type": "framework_control",
+      "id": "630939df-e658-5174-92c8-a1686ca6a228",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-3.3",
+      "title": "Laufende Bedrohungsüberwachung (Ongoing Threat Monitoring)",
+      "level": 0,
+      "sort_order": 900,
+      "description": "The institution must continuously monitor threats and vulnerabilities, assess relevance and impact, and implement appropriate technical and organisational countermeasures. Management must be informed at least quarterly."
+    },
+    {
+      "type": "framework_control",
+      "id": "d642e0ac-0924-50d3-97b6-0a7db9952829",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-4",
+      "title": "Informationssicherheitsmanagement (Information Security Management)",
+      "level": 0,
+      "sort_order": 1000,
+      "description": "Defines the information security management function, its processes (plan, implement, review, improve), and the mandatory appointment of an Information Security Officer (Informationssicherheitsbeauftragter, ISB)."
+    },
+    {
+      "type": "framework_control",
+      "id": "b2839e39-a725-57ac-9264-9da644532335",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-4.1",
+      "title": "Informationssicherheitsleitlinie (Information Security Policy)",
+      "level": 0,
+      "sort_order": 1100,
+      "description": "Management must adopt and communicate an information security policy aligned with institutional strategy. The policy defines scope, objectives, key roles and responsibilities, and requirements for staff, contractors, processes, and technology."
+    },
+    {
+      "type": "framework_control",
+      "id": "7a1477c7-fd80-553b-a035-837b81e5b976",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-4.2",
+      "title": "Informationssicherheitsbeauftragter (Information Security Officer)",
+      "level": 0,
+      "sort_order": 1200,
+      "description": "An Information Security Officer (ISB) must be appointed, organisationally and procedurally independent of IT operations and development. Responsibilities include advising management, issuing security guidelines, coordinating security processes, responding to incidents, and delivering awareness and training programmes."
+    },
+    {
+      "type": "framework_control",
+      "id": "07d4aa42-d182-5c74-a7fa-8e0c5dd75c0c",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-4.3",
+      "title": "Sensibilisierung und Schulung (Awareness and Training)",
+      "level": 0,
+      "sort_order": 1300,
+      "description": "The institution must define a continuous and appropriate information security awareness and training programme. Effectiveness of training measures must be verified."
+    },
+    {
+      "type": "framework_control",
+      "id": "2bfd50ef-34bd-5232-9976-a18e71b21508",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-5",
+      "title": "Operative Informationssicherheit (Operational Information Security)",
+      "level": 0,
+      "sort_order": 1400,
+      "description": "Technical and organisational security measures for IT systems, including: network security, endpoint protection, cryptographic controls, privileged access management, vulnerability scanning, patch management, logging, and penetration testing."
+    },
+    {
+      "type": "framework_control",
+      "id": "18c6e5cc-ba33-52b7-99fb-a92e4259f966",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-5.1",
+      "title": "Sicherheitstests und -überprüfungen (Security Tests and Reviews)",
+      "level": 0,
+      "sort_order": 1500,
+      "description": "The institution must maintain a policy for testing and reviewing information security measures, including penetration tests, vulnerability scans, and technical reviews. Tests must be conducted regularly and on an event-driven basis."
+    },
+    {
+      "type": "framework_control",
+      "id": "2b799c82-dac0-5bc4-aeab-c73cd654748f",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-6",
+      "title": "Identitäts- und Rechtemanagement (Identity and Access Management)",
+      "level": 0,
+      "sort_order": 1600,
+      "description": "Requirements for managing user identities, access rights, and privileged accounts. Includes need-to-know and least-privilege principles, role-based access, separation of duties, regular access reviews, and controls for technical accounts."
+    },
+    {
+      "type": "framework_control",
+      "id": "1c0b5c0f-c8e1-50e3-ab27-a9103260a3ee",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-7",
+      "title": "IT-Projekte und Anwendungsentwicklung (IT Projects and Application Development)",
+      "level": 0,
+      "sort_order": 1700,
+      "description": "IT project governance including defined project methodology, roles (project manager, steering committee, ISB involvement), change management, secure software development lifecycle (SDLC), testing requirements, and acceptance criteria."
+    },
+    {
+      "type": "framework_control",
+      "id": "fc8de5cf-d4fd-552f-9b4c-9264c9476010",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-7.1",
+      "title": "Anwendungsentwicklung — Sicherheitsanforderungen (Application Development — Security Requirements)",
+      "level": 0,
+      "sort_order": 1800,
+      "description": "Secure software development must incorporate information security requirements from the design phase. Code reviews, security testing (including penetration tests), and approval processes are required before production deployment."
+    },
+    {
+      "type": "framework_control",
+      "id": "7547743d-c282-5e84-9985-a4911fce16a6",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-8",
+      "title": "IT-Betrieb (IT Operations)",
+      "level": 0,
+      "sort_order": 1900,
+      "description": "Operational requirements for IT systems: configuration management, capacity planning, availability management, patch and change management, service level management, and incident and problem management procedures."
+    },
+    {
+      "type": "framework_control",
+      "id": "a4792205-07e1-5ec8-a1b9-52b9b0ba9860",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-8.1",
+      "title": "IT-Betrieb — Protokollierung und Überwachung (IT Operations — Logging and Monitoring)",
+      "level": 0,
+      "sort_order": 2000,
+      "description": "IT systems must generate adequate log records. Logging and monitoring must cover security-relevant events. Log data must be protected against manipulation and retained for an appropriate period."
+    },
+    {
+      "type": "framework_control",
+      "id": "58c601d7-ee26-5517-a8c2-732759677435",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-9",
+      "title": "Auslagerungen und sonstiger Fremdbezug von IT-Dienstleistungen (IT Outsourcing)",
+      "level": 0,
+      "sort_order": 2100,
+      "description": "Requirements for outsourcing IT services under §25b KWG, including: risk assessment prior to outsourcing, contractual obligations (SLAs, audit rights, data localisation), ongoing monitoring of service providers, and exit management strategies."
+    },
+    {
+      "type": "framework_control",
+      "id": "78a30bf6-7a85-5344-b65f-fd849acebe6d",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-10",
+      "title": "IT-Notfallmanagement (IT Emergency Management)",
+      "level": 0,
+      "sort_order": 2200,
+      "description": "IT contingency and emergency management requirements: definition of emergency scenarios, IT recovery plans (including RPO/RTO targets), regular testing of emergency and recovery procedures, and integration with the institution's overall business continuity management."
+    },
+    {
+      "type": "framework_control",
+      "id": "8810174c-7900-57b7-8c46-526292360d78",
+      "framework_id": "35a0c354-329d-569b-ae4e-f1257ceff652",
+      "control_id": "BAIT-12",
+      "title": "Kritische Infrastrukturen (Critical Infrastructures)",
+      "level": 0,
+      "sort_order": 2300,
+      "description": "Specific requirements for institutions operating critical infrastructure under the BSI KRITIS regulation (BSI-Kritisverordnung). Includes enhanced security measures, mandatory incident reporting to BSI, and implementation of the BSI minimum standards."
+    }
+  ]
+}

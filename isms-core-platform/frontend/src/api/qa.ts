@@ -44,19 +44,19 @@ export const qaApi = {
   runProjectExistence: (projectId: string) =>
     client.post<ExistenceRunResult>(`/qa/project/${projectId}/run-existence`).then((r) => r.data),
 
-  runProjectKeyword: (projectId: string, referenceLibrary = 'iso_corpus', language = 'en') =>
+  runProjectKeyword: (projectId: string, referenceLibrary = 'iso_corpus', language = 'en', frameworkCodes?: string[]) =>
     client.post<KeywordRunResult>(`/qa/project/${projectId}/run-keyword`, null, {
-      params: { reference_library: referenceLibrary, language },
+      params: { reference_library: referenceLibrary, language, ...(frameworkCodes?.length ? { framework_codes: frameworkCodes } : {}) },
     }).then((r) => r.data),
 
-  runProjectSemantic: (projectId: string, referenceLibrary = 'iso_corpus', language = 'en') =>
+  runProjectSemantic: (projectId: string, referenceLibrary = 'iso_corpus', language = 'en', frameworkCodes?: string[]) =>
     client.post<SemanticRunResult>(`/qa/project/${projectId}/run-semantic`, null, {
-      params: { reference_library: referenceLibrary, language },
+      params: { reference_library: referenceLibrary, language, ...(frameworkCodes?.length ? { framework_codes: frameworkCodes } : {}) },
     }).then((r) => r.data),
 
-  runProjectSemanticClaude: (projectId: string, referenceLibrary = 'iso_corpus', language = 'en') =>
+  runProjectSemanticClaude: (projectId: string, referenceLibrary = 'iso_corpus', language = 'en', frameworkCodes?: string[]) =>
     client.post<SemanticRunResult>(`/qa/project/${projectId}/run-semantic-claude`, null, {
-      params: { reference_library: referenceLibrary, language },
+      params: { reference_library: referenceLibrary, language, ...(frameworkCodes?.length ? { framework_codes: frameworkCodes } : {}) },
     }).then((r) => r.data),
 
   getProjectResults: (projectId: string, params?: { method?: string; status?: string; limit?: number }) =>

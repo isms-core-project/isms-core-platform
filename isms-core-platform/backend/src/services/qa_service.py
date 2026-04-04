@@ -982,12 +982,21 @@ def _fetch_library_pol_text(os_client, group_code: str, language: str = "en") ->
         return ""
 
 
-def _fetch_crosswalk_reference_text(db: DBSession, framework, group) -> str:
+def _fetch_crosswalk_reference_text(
+    db: DBSession,
+    framework,
+    group,
+    framework_codes: list[str] | None = None,
+) -> str:
     """Fetch concatenated regulatory reference text via CrossFrameworkMapping.
 
     For the ISO controls stacked under *group*, find all cross-framework
     mappings where the ISO control is the source and collect the title +
     description of the target controls (NIS2, DORA, NIST CSF, etc.).
+
+    framework_codes: optional list of target Framework.code values to restrict
+    the crosswalk lookup (e.g. ["NIS2", "DORA"]). None = all targets.
+
     Falls back to an empty string if no mappings exist.
     """
     from src.domain.frameworks import CrossFrameworkMapping
@@ -1020,9 +1029,16 @@ def _fetch_crosswalk_reference_text(db: DBSession, framework, group) -> str:
         return ""
 
     target_ids = list({m.target_control_id for m in mappings})
-    target_controls = db.execute(
-        select(FrameworkControl).where(FrameworkControl.id.in_(target_ids))
-    ).scalars().all()
+
+    target_q = (
+        select(FrameworkControl)
+        .join(Framework, FrameworkControl.framework_id == Framework.id)
+        .where(FrameworkControl.id.in_(target_ids))
+    )
+    if framework_codes:
+        target_q = target_q.where(Framework.code.in_(framework_codes))
+
+    target_controls = db.execute(target_q).scalars().all()
 
     parts = [f"{tc.title} {tc.description or ''}".strip() for tc in target_controls]
     return " ".join(parts)
@@ -1205,11 +1221,13 @@ def run_project_keyword_check(
     project_id: uuid.UUID,
     reference_library: str = "iso_corpus",
     language: str = "en",
+    framework_codes: list[str] | None = None,
 ) -> dict:
     """Keyword check scoped to a project's covered control groups.
 
-    reference_library: 'iso_corpus' (ISO control text) | 'isms_library' (ISMS POL text)
-    language: 'en' | 'fr' | 'de' | 'it' — keyword translations used for non-EN
+    reference_library: 'iso_corpus' | 'isms_library' | 'crosswalk' | 'both'
+    language: 'en' | 'fr' | 'de' | 'it'
+    framework_codes: restrict crosswalk lookup to specific target frameworks
     """
     t0 = time.monotonic()
     run_date = datetime.now(timezone.utc)
@@ -1255,9 +1273,13 @@ def run_project_keyword_check(
         if reference_library == "isms_library" and os_available:
             pol_text = _fetch_library_pol_text(os_client, group.group_code, language="en")
             corpus = pol_text[:2000] if pol_text else group.name
-        elif reference_library == "crosswalk":
-            crosswalk_text = _fetch_crosswalk_reference_text(db, framework, group)
-            corpus = crosswalk_text[:3000] if crosswalk_text else _build_iso_text(db, framework, group)
+        elif reference_library in ("crosswalk", "both"):
+            crosswalk_text = _fetch_crosswalk_reference_text(db, framework, group, framework_codes)
+            if reference_library == "both":
+                iso_text = _build_iso_text(db, framework, group)
+                corpus = f"{iso_text} {crosswalk_text}".strip()[:4000] if crosswalk_text else iso_text
+            else:
+                corpus = crosswalk_text[:3000] if crosswalk_text else _build_iso_text(db, framework, group)
         else:
             if framework and control_ids:
                 fw_controls = db.execute(
@@ -1355,6 +1377,7 @@ def run_project_semantic_check(
     project_id: uuid.UUID,
     reference_library: str = "iso_corpus",
     language: str = "en",
+    framework_codes: list[str] | None = None,
 ) -> dict:
     """Semantic similarity check scoped to a project's covered control groups."""
     from sentence_transformers import util as st_util  # type: ignore
@@ -1399,10 +1422,13 @@ def run_project_semantic_check(
             ref_text = _fetch_library_pol_text(os_client, group.group_code, language="en")
             if not ref_text:
                 ref_text = _build_iso_text(db, framework, group)
-        elif reference_library == "crosswalk":
-            ref_text = _fetch_crosswalk_reference_text(db, framework, group)
-            if not ref_text:
-                ref_text = _build_iso_text(db, framework, group)
+        elif reference_library in ("crosswalk", "both"):
+            crosswalk_text = _fetch_crosswalk_reference_text(db, framework, group, framework_codes)
+            if reference_library == "both":
+                iso_text = _build_iso_text(db, framework, group)
+                ref_text = f"{iso_text} {crosswalk_text}".strip()[:4000] if crosswalk_text else iso_text
+            else:
+                ref_text = crosswalk_text or _build_iso_text(db, framework, group)
         else:
             ref_text = _build_iso_text(db, framework, group)
 
@@ -1456,6 +1482,7 @@ def run_project_semantic_claude_check(
     project_id: uuid.UUID,
     reference_library: str = "iso_corpus",
     language: str = "en",
+    framework_codes: list[str] | None = None,
 ) -> dict:
     """Claude AI semantic check scoped to a project's covered control groups."""
     import json as _json
@@ -1530,10 +1557,13 @@ gaps: list up to 3 specific missing topics; empty list [] if score>=85."""
             ref_text = _fetch_library_pol_text(os_client, group.group_code, language="en")
             if not ref_text:
                 ref_text = _build_iso_text(db, framework, group)
-        elif reference_library == "crosswalk":
-            ref_text = _fetch_crosswalk_reference_text(db, framework, group)
-            if not ref_text:
-                ref_text = _build_iso_text(db, framework, group)
+        elif reference_library in ("crosswalk", "both"):
+            crosswalk_text = _fetch_crosswalk_reference_text(db, framework, group, framework_codes)
+            if reference_library == "both":
+                iso_text = _build_iso_text(db, framework, group)
+                ref_text = f"{iso_text} {crosswalk_text}".strip()[:4000] if crosswalk_text else iso_text
+            else:
+                ref_text = crosswalk_text or _build_iso_text(db, framework, group)
         else:
             ref_text = _build_iso_text(db, framework, group)
 

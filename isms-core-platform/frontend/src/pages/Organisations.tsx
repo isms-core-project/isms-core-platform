@@ -12,6 +12,10 @@ import {
   DialogTitle,
   Grid,
   IconButton,
+  MenuItem,
+  Select,
+  InputLabel,
+  FormControl,
   Skeleton,
   TextField,
   Tooltip,
@@ -32,6 +36,19 @@ import { orgApi, type OrganisationCreate, type OrganisationPatch } from '../api/
 import type { OrganisationRead } from '../api/types'
 import PageHeader from '../components/PageHeader'
 import { useAuth } from '../store/AuthContext'
+
+// ── Country options ────────────────────────────────────────────────────────────
+
+const COUNTRY_OPTIONS = [
+  { code: null,  label: 'Switzerland (default)' },
+  { code: 'fr',  label: 'France' },
+  { code: 'be',  label: 'Belgium' },
+  { code: 'lu',  label: 'Luxembourg' },
+  { code: 'de',  label: 'Germany' },
+  { code: 'at',  label: 'Austria' },
+  { code: 'it',  label: 'Italy' },
+  { code: 'gb',  label: 'United Kingdom' },
+]
 
 // ── Create dialog ──────────────────────────────────────────────────────────────
 
@@ -92,10 +109,24 @@ function CreateOrgDialog({ open, onClose }: { open: boolean; onClose: () => void
         />
         <TextField
           label="Description (optional)"
-          fullWidth size="small" multiline rows={2}
+          fullWidth size="small" multiline rows={2} sx={{ mb: 2 }}
           value={form.description ?? ''}
           onChange={e => setForm(f => ({ ...f, description: e.target.value || undefined }))}
         />
+        <FormControl fullWidth size="small">
+          <InputLabel>Country / Regulatory jurisdiction</InputLabel>
+          <Select
+            label="Country / Regulatory jurisdiction"
+            value={form.country ?? ''}
+            onChange={e => setForm(f => ({ ...f, country: e.target.value || null }))}
+          >
+            {COUNTRY_OPTIONS.map(o => (
+              <MenuItem key={o.code ?? '__ch'} value={o.code ?? ''}>
+                {o.label}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </DialogContent>
       <DialogActions sx={{ px: 3, pb: 2 }}>
         <Button onClick={onClose} size="small">Cancel</Button>
@@ -111,7 +142,7 @@ function CreateOrgDialog({ open, onClose }: { open: boolean; onClose: () => void
 
 function EditOrgDialog({ org, open, onClose }: { org: OrganisationRead; open: boolean; onClose: () => void }) {
   const qc = useQueryClient()
-  const [form, setForm] = useState<OrganisationPatch>({ name: org.name, description: org.description ?? '' })
+  const [form, setForm] = useState<OrganisationPatch>({ name: org.name, description: org.description ?? '', country: org.country })
   const [error, setError] = useState('')
 
   const mutation = useMutation({
@@ -135,10 +166,24 @@ function EditOrgDialog({ org, open, onClose }: { org: OrganisationRead; open: bo
           onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
         />
         <TextField
-          label="Description" fullWidth size="small" multiline rows={2}
+          label="Description" fullWidth size="small" multiline rows={2} sx={{ mb: 2 }}
           value={form.description ?? ''}
           onChange={e => setForm(f => ({ ...f, description: e.target.value || undefined }))}
         />
+        <FormControl fullWidth size="small">
+          <InputLabel>Country / Regulatory jurisdiction</InputLabel>
+          <Select
+            label="Country / Regulatory jurisdiction"
+            value={form.country ?? ''}
+            onChange={e => setForm(f => ({ ...f, country: e.target.value || null }))}
+          >
+            {COUNTRY_OPTIONS.map(o => (
+              <MenuItem key={o.code ?? '__ch'} value={o.code ?? ''}>
+                {o.label}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </DialogContent>
       <DialogActions sx={{ px: 3, pb: 2 }}>
         <Button onClick={onClose} size="small">Cancel</Button>
@@ -231,6 +276,11 @@ function OrgCard({ org, isSuperAdmin }: { org: OrganisationRead; isSuperAdmin: b
               label={org.privacy_role}
               size="small"
               sx={{ fontSize: '0.68rem', height: 20, bgcolor: 'rgba(112,48,160,0.1)', color: '#7030A0' }}
+            />
+            <Chip
+              label={org.country ? org.country.toUpperCase() : 'CH'}
+              size="small"
+              sx={{ fontSize: '0.68rem', height: 20, bgcolor: 'rgba(0,150,136,0.1)', color: '#00897B' }}
             />
           </Box>
 

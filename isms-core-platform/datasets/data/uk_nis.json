@@ -1,0 +1,151 @@
+{
+  "bundle_id": "bundle--fbda3f78-62b6-5efa-9a0e-b669f863cb94",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+    "code": "UK_NIS",
+    "name": "UK NIS Regulations 2018 (SI 2018/506)",
+    "version": "SI 2018/506",
+    "publisher": "UK Parliament",
+    "source_url": "https://www.legislation.gov.uk/uksi/2018/506/contents",
+    "jurisdiction": "GB",
+    "description": "The Network and Information Systems (NIS) Regulations 2018 (SI 2018/506) — UK cybersecurity obligations for operators of essential services (OES) and relevant digital service providers (RDSP). Pending update by the Cyber Security and Resilience Bill (2025–2026)."
+  },
+  "generated_at": "2026-04-04T00:00:00Z",
+  "generator": "manual",
+  "objects_count": 13,
+  "relationships_count": 0,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "43620582-bf18-5063-a7c5-eda8b1411fdd",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "Reg. 10(1)",
+      "title": "Security of network and information systems",
+      "description": "Operators of essential services must take appropriate and proportionate technical and organisational measures to manage risks to the security of network and information systems used to provide essential services.",
+      "level": 0,
+      "sort_order": 100
+    },
+    {
+      "type": "framework_control",
+      "id": "f24f8c29-2495-5e8f-9ef3-932edbc7f085",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "Reg. 10(2)",
+      "title": "Incident prevention and minimisation of impact",
+      "description": "Measures must ensure a level of security appropriate to the risk posed and prevent and minimise the impact of incidents on the network and information systems used to provide an essential service.",
+      "level": 0,
+      "sort_order": 200
+    },
+    {
+      "type": "framework_control",
+      "id": "90f01486-a052-5d06-b34f-b51bf2eff210",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "Reg. 11",
+      "title": "Incident notification — OES",
+      "description": "Operators of essential services must notify the relevant competent authority of any incident which has a significant impact on the continuity of the essential service provided, without undue delay.",
+      "level": 0,
+      "sort_order": 300
+    },
+    {
+      "type": "framework_control",
+      "id": "fa286414-7ff4-55af-9fff-473077ee2708",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "Reg. 14",
+      "title": "Security of digital services — RDSP",
+      "description": "Relevant digital service providers must identify and take appropriate and proportionate technical and organisational measures to manage security risks to their network and information systems.",
+      "level": 0,
+      "sort_order": 400
+    },
+    {
+      "type": "framework_control",
+      "id": "3cf0b1cd-fa41-55cd-9624-e5d2d27661bc",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "Reg. 16",
+      "title": "Incident notification — RDSP",
+      "description": "Relevant digital service providers must notify the relevant competent authority of any incident with a substantial impact on provision of the digital service.",
+      "level": 0,
+      "sort_order": 500
+    },
+    {
+      "type": "framework_control",
+      "id": "c8eed979-b7f1-5ea2-82fe-599f1c546cb1",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "NCSC CAF A1",
+      "title": "Governance — Managing security risk",
+      "description": "NCSC CAF Objective A: The organisation has appropriate management policies and processes in place to govern their approach to the security of network and information systems. Board-level ownership of security risk.",
+      "level": 0,
+      "sort_order": 600
+    },
+    {
+      "type": "framework_control",
+      "id": "5d047f69-96ac-53bb-8f1f-bf2cc06da6b9",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "NCSC CAF A2",
+      "title": "Risk management",
+      "description": "NCSC CAF Objective A: The organisation identifies, assesses, and understands the risks to the security of networks and information systems supporting essential/digital services. Risk management is embedded in organisational processes.",
+      "level": 0,
+      "sort_order": 700
+    },
+    {
+      "type": "framework_control",
+      "id": "16e47655-38ba-5e36-b030-635aee4f4b84",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "NCSC CAF B1–B6",
+      "title": "Protecting against cyber attack",
+      "description": "NCSC CAF Objective B: The organisation protects its network and information systems against cyber attack. Covers: service protection policies, identity and access control, data security, system security, resilient networks and systems, staff awareness and training.",
+      "level": 0,
+      "sort_order": 800
+    },
+    {
+      "type": "framework_control",
+      "id": "622781e3-d80b-5a53-9efb-75bffaaaa238",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "NCSC CAF C1–C2",
+      "title": "Detecting cyber security events",
+      "description": "NCSC CAF Objective C: The organisation detects cyber security events affecting, or with the potential to affect, essential services. Covers: security monitoring and anomaly detection; event discovery and reporting.",
+      "level": 0,
+      "sort_order": 900
+    },
+    {
+      "type": "framework_control",
+      "id": "a8786323-8abb-535c-a942-69e276527dd0",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "NCSC CAF D1–D3",
+      "title": "Minimising the impact of cyber security incidents",
+      "description": "NCSC CAF Objective D: The organisation minimises the impact of cyber security incidents on the delivery of essential services. Covers: response and recovery planning, lessons learned, and civil emergency preparedness.",
+      "level": 0,
+      "sort_order": 1000
+    },
+    {
+      "type": "framework_control",
+      "id": "712be165-c11c-50ef-a1e4-ebce879e26f1",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "Reg. 18",
+      "title": "Designation of competent authorities",
+      "description": "UK-sector competent authorities under NIS: NCSC/DSIT (digital), Ofcom (telecoms), FCA (financial infrastructure), NHSE (health), Environment Agency (water), BEIS (energy).",
+      "level": 0,
+      "sort_order": 1100
+    },
+    {
+      "type": "framework_control",
+      "id": "4709542d-ba48-57bf-9320-8a18ca1b7dce",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "CS&R Bill §1",
+      "title": "Forthcoming: Cyber Security and Resilience Bill (2025–2026)",
+      "description": "The Cyber Security and Resilience Bill, introduced November 2025 and pending Royal Assent, will expand the scope of SI 2018/506 to cover more sectors, introduce mandatory incident reporting timelines, and strengthen enforcement powers. Organisations should monitor progress and prepare for updated obligations.",
+      "level": 0,
+      "sort_order": 1200
+    },
+    {
+      "type": "framework_control",
+      "id": "8dae23e5-3cc8-5380-ba6d-08ff49d10d12",
+      "framework_id": "b7d39851-c774-53f1-8d48-cf0682e32d04",
+      "control_id": "Reg. 27",
+      "title": "Enforcement — penalties",
+      "description": "The competent authority may issue improvement notices and financial penalty notices. Maximum financial penalty: £17 million for OES; up to £8.5 million or 2% of global annual turnover for RDSP (whichever is higher).",
+      "level": 0,
+      "sort_order": 1300
+    }
+  ]
+}

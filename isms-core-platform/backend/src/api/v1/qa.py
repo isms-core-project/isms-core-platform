@@ -2,7 +2,7 @@ import logging
 import uuid
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import select
 from sqlalchemy.orm import Session as DBSession
 
@@ -418,10 +418,11 @@ def run_project_keyword(
     project_id: uuid.UUID,
     reference_library: str = "iso_corpus",
     language: str = "en",
+    framework_codes: list[str] | None = Query(None),
     db: DBSession = Depends(get_db),
 ):
-    """Keyword check for a project. reference_library: iso_corpus | isms_library."""
-    stats = qa_service.run_project_keyword_check(db, project_id, reference_library, language)
+    """Keyword check for a project. reference_library: iso_corpus | isms_library | crosswalk | both."""
+    stats = qa_service.run_project_keyword_check(db, project_id, reference_library, language, framework_codes)
     return KeywordRunResult(
         total=stats["total"],
         pass_count=stats["pass"],
@@ -442,11 +443,12 @@ def run_project_semantic(
     project_id: uuid.UUID,
     reference_library: str = "iso_corpus",
     language: str = "en",
+    framework_codes: list[str] | None = Query(None),
     db: DBSession = Depends(get_db),
 ):
-    """Semantic similarity check for a project. reference_library: iso_corpus | isms_library."""
+    """Semantic similarity check for a project. reference_library: iso_corpus | isms_library | crosswalk | both."""
     try:
-        stats = qa_service.run_project_semantic_check(db, project_id, reference_library, language)
+        stats = qa_service.run_project_semantic_check(db, project_id, reference_library, language, framework_codes)
     except RuntimeError as e:
         raise HTTPException(status_code=503, detail=str(e))
     return SemanticRunResult(
@@ -470,11 +472,12 @@ def run_project_semantic_claude(
     project_id: uuid.UUID,
     reference_library: str = "iso_corpus",
     language: str = "en",
+    framework_codes: list[str] | None = Query(None),
     db: DBSession = Depends(get_db),
 ):
     """Claude AI semantic check for a project. Requires ANTHROPIC_API_KEY."""
     try:
-        stats = qa_service.run_project_semantic_claude_check(db, project_id, reference_library, language)
+        stats = qa_service.run_project_semantic_claude_check(db, project_id, reference_library, language, framework_codes)
     except ValueError as e:
         raise HTTPException(status_code=422, detail=str(e))
     return SemanticRunResult(
