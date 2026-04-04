@@ -109,20 +109,26 @@ class MarkdownPolicyParser(BasePolicyParser):
         first_line = text.split("\n", 1)[0].strip()
 
         # Try: **ISMS-POL-A.5.24-28 — Title** / **ISMS-POL-A.5.31.1: Title**
-        # Split using document_id as the anchor so hyphens within the ID are never
-        # mistaken for the title separator (e.g. "ISMS-POL-A.5.8 - Title" must not
-        # split at the first "-" inside "ISMS-POL").
-        doc_id_base = document_id.rsplit("-", 1)[0]  # ISMS-POL-00-DE → ISMS-POL-00
+        # Build candidate ID prefixes by progressively stripping trailing hyphen-segments.
+        # This handles slug-based document_ids like ISMS-REF-DORA-FR-digital-op-... where
+        # the bold line uses only the short canonical ID ISMS-REF-DORA.
         clean_line = first_line.strip("*").strip()
-        for id_prefix in [document_id, doc_id_base]:
-            if not clean_line.startswith(id_prefix):
-                continue
-            remainder = clean_line[len(id_prefix):]
-            for sep in [" — ", " – ", " - ", ": ", "—", "–", "-", ":"]:
-                if remainder.startswith(sep):
-                    title = remainder[len(sep):].strip().strip("*").strip()
-                    if title:
-                        return title
+        candidate = document_id
+        seen: set[str] = set()
+        while len(candidate) >= 4:
+            if candidate not in seen:
+                seen.add(candidate)
+                if clean_line.startswith(candidate):
+                    remainder = clean_line[len(candidate):]
+                    for sep in [" — ", " – ", " - ", ": ", "—", "–", ":"]:
+                        if remainder.startswith(sep):
+                            title = remainder[len(sep):].strip().strip("*").strip()
+                            if title:
+                                return title
+            pos = candidate.rfind("-")
+            if pos < 0:
+                break
+            candidate = candidate[:pos]
 
         # Try Document Control table (English and German field names)
         _TITLE_FIELDS = {"title", "document title", "dokumenttitel", "titre", "titolo"}
