@@ -52,7 +52,7 @@ This policy establishes [Organisation]'s requirements for management responsibil
 
 **Purpose**: Define WHAT management responsibilities exist and WHO is accountable for security leadership. Implementation procedures (HOW) are documented in ISMS-IMP-A.5.4.
 
-**Scope**: This policy applies to all management personnel with supervisory or decision-making authority, including Executive Management, department heads, team leads, and project managers.
+**Scope**: This policy applies to all management personnel with supervisory or decision-making authority, including Executive Managementartment heads, team leads, and project managers.
 
 **Key Principle**: Information security is a business enabler, not an obstacle. Management leads by example.
 

@@ -1,43 +1,46 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.17-DE:framework:POL:a.8.17-de -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.17-DE:framework:POL:a.8.17 -->
 **ISMS-POL-A.8.17 — Zeitsynchronisation**
 
 ---
 
-**Dokumentenlenkung**
+**Dokumentenkontrolle**
 
 | Feld | Wert |
 |------|------|
-| **Dokumenten Titel** | Zeitsynchronisation |
-| **Dokumententyp** | Konzept |
+| **Dokumenttitel** | Zeitsynchronisation |
+| **Dokumenttyp** | Richtlinie (Policy) |
 | **Dokument-ID** | ISMS-POL-A.8.17 |
-| **Dokumenteneigentümer/in** | Chief Information Security Officer (CISO) |
-| **Freigabe durch** | Geschäftsleitung (GL) |
-| **Erstellt** | [Date] |
+| **Dokumentersteller** | Informationssicherheitsbeauftragter (ISB) |
+| **Dokumenteigentümer** | Geschäftsführer (GF) |
+| **Genehmigt durch** | Geschäftsleitung (Geschäftsleitung) |
+| **Erstellungsdatum** | [Datum] ||
 | **Version** | 1.0 |
-| **Versionsdatum** | [Date] |
+| **Versionsdatum** | [Noch festzulegen] |
 | **Klassifizierung** | Intern |
 | **Status** | Entwurf |
 
-**Versions-Verzeichnis**:
+**Versionshistorie**:
 
-| Version | Datum | Autor | Änderungsvermerk |
-|---------|-------|-------|------------------|
-| 1.0 | [Date] | CISO | Initiale Richtlinie für ISO 27001:2022 Erstzertifizierung |
+| Version | Datum | Autor | Änderungen |
+|---------|-------|-------|------------|
+| 1.0 | [Datum] | ISB | Erstveröffentlichung für ISO-27001:2022-Erstzertifizierung |
 
-**Review-Zyklus**: Jährlich  
-**Nächstes Review-Datum**: [Inkraftsetzungsdatum + 12 Monate]  
+**Review-Zyklus**: Jährlich
+**Nächstes Review-Datum**: [Gültigkeitsdatum + 12 Monate]
 
 **Freigabekette**:
 
-- Primär: Chief Information Security Officer (CISO)
-- Sekundär: Chief Information Officer (CIO)
+- Primär: Informationssicherheitsbeauftragter (ISB)
+- Sekundär: IT-Leiter (ITL)
 - Compliance: Legal/Compliance Officer
-- Finale Autorität: Geschäftsleitung (GL)
+- Finale Autorität: Geschäftsleitung (Geschäftsleitung)
 
-**Zugehörige Dokumente**: 
+**Verknüpfte Dokumente**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.17 (Implementation Guidance Suite)
+- ISMS-IMP-A.8.17.1-UG/TG (Zeitquellen-Konfiguration)
+- ISMS-IMP-A.8.17.2-UG/TG (Synchronisationsverifizierungsprozess)
+- ISMS-IMP-A.8.17.3-UG/TG (Ausnahmenmanagement)
 - ISO/IEC 27001:2022 Control A.8.17
 - ISMS-POL-A.8.21 (Network Services Security)
 - ISMS-POL-A.8.15 (Logging)
@@ -45,560 +48,566 @@
 
 ---
 
-## Management Summary
+## Zusammenfassung
 
-Diese Richtlinie definiert die Anforderungen von [Organisation] für Zeitsynchronisation über alle informationsverarbeitenden Systeme hinweg, um Log-Korrelation, forensische Analysen und zuverlässige Audit Trails gemäss ISO/IEC 27001:2022 Control A.8.17 zu ermöglichen.
+Diese Richtlinie legt die Anforderungen von [Organisation] an die Zeitsynchronisation über alle informationsverarbeitenden Systeme hinweg fest, um Log-Korrelation, forensische Analyse und zuverlässige Prüfpfade in Übereinstimmung mit ISO/IEC 27001:2022 Control A.8.17 zu ermöglichen.
 
-**Geltungsbereich**: Diese Richtlinie gilt für alle informationsverarbeitenden Systeme, die Logs generieren oder an sicherheitsrelevanten Operationen teilnehmen, einschliesslich Servern, Netzwerkgeräten, Security-Systemen und Cloud-Instanzen.
+**Geltungsbereich**: Diese Richtlinie gilt für alle informationsverarbeitenden Systeme, die Protokolle erzeugen oder an sicherheitsrelevanten Operationen beteiligt sind, einschliesslich Server, Netzwerkgeräte, Sicherheitssysteme und Cloud-Instanzen.
 
-**Zweck**: Definition organisatorischer Anforderungen für Implementierung und Governance von Zeitsynchronisations-Kontrollen. Diese Richtlinie definiert WAS Zeitsynchronisation erforderlich ist und WER verantwortlich ist. Implementierungsprozeduren (WIE) sind separat in ISMS-IMP-A.8.17 dokumentiert.
+**Zweck**: Organisatorische Anforderungen für die Umsetzung und Governance der Zeitsynchronisation definieren. Diese Richtlinie legt fest, WAS an Zeitsynchronisation erforderlich ist und WER verantwortlich ist. Umsetzungsverfahren (WIE) sind separat in ISMS-IMP-A.8.17 (UG/TG-Varianten) dokumentiert.
 
-**Regulatorisches Alignment**: Diese Richtlinie adressiert obligatorische Compliance-Anforderungen gemäss ISMS-POL-00 (Regulatory Applicability Framework), einschliesslich Schweizer nDSG, EU DSGVO und ISO/IEC 27001:2022. Konditionale branchenspezifische Anforderungen (PCI DSS v4.0.1, FINMA, DORA, NIS2) gelten, wo Geschäftsaktivitäten der [Organisation] Anwendbarkeit auslösen.
+**Regulatorische Ausrichtung**: Diese Richtlinie adressiert verpflichtende Compliance-Anforderungen gemäss ISMS-POL-00 (Regulatory Applicability Framework), einschliesslich Swiss nDSG, EU GDPR und ISO/IEC 27001:2022. Bedingte branchenspezifische Anforderungen (PCI DSS v4.0.1, FINMA, DORA, NIS2) gelten dort, wo die Geschäftsaktivitäten von [Organisation] die Anwendbarkeit auslösen.
 
 ---
 
-# Control Alignment & Geltungsbereich
+# Kontroll-Ausrichtung & Geltungsbereich
 
 ## ISO/IEC 27001:2022 Control A.8.17
 
-**ISO/IEC 27001:2022 Annex A.8.17 - Zeitsynchronisation**
+**ISO/IEC 27001:2022 Annex A.8.17 — Zeitsynchronisation**
 
-> *Die Uhren informationsverarbeitender Systeme, die von der Organisation verwendet werden, sollen mit genehmigten Zeitquellen synchronisiert werden.*
+> *Die Uhren der von der Organisation verwendeten informationsverarbeitenden Systeme müssen mit genehmigten Zeitquellen synchronisiert sein.*
 
-**Control-Zielsetzung**: Etablierung organisatorischer Richtlinie für Zeitsynchronisation um sicherzustellen, dass alle Systeme akkurate, synchronisierte Zeitstempel für Log-Korrelation, forensische Analysen, Authentifizierung und Compliance-Zwecke bereitstellen.
+**Kontrollziel**: Organisatorische Richtlinie für die Zeitsynchronisation etablieren, die genaue, konsistente Zeitstempel über alle Informationssysteme hinweg sicherstellt, um Log-Korrelation zu ermöglichen, forensische Untersuchungen zu unterstützen, digitale Signaturen zu validieren und die Integrität von Prüfpfaden aufrechtzuerhalten.
 
 **Diese Richtlinie adressiert**:
 
-- Anforderungen an autoritative Zeitquellen und interne NTP-Infrastruktur
-- Systemkonfigurationsanforderungen für Zeitsynchronisation
-- Akzeptable Zeitabweichungs-Schwellenwerte (Time Drift Thresholds)
-- Monitoring und Berichterstattung für Synchronisationsstatus
-- Organisatorische Rollen und Verantwortlichkeiten für NTP-Governance
-- Frameworks für Exception Management und Incident Management
-- Integration mit Logging, Monitoring und Security Operations
+- Anforderungen an autoritative Zeitquellen und deren Hierarchie
+- Anforderungen an die interne Zeitsynchronisationsinfrastruktur
+- Synchronisationsanforderungen auf Systemebene und akzeptable Abweichungsschwellen
+- Erkennung von Synchronisationsausfällen, Alarmierung und Reaktion
+- Integration mit dem Risikobewertungs- und ISMS-Prozessen von [Organisation]
 
 ## Was diese Richtlinie tut
 
 Diese Richtlinie:
 
-- **Definiert** Anforderungen an Zeitquellen und NTP-Infrastruktur
-- **Etabliert** akzeptable Zeitabweichungs-Schwellenwerte basierend auf System-Kritikalität
-- **Spezifiziert** Monitoring-Anforderungen für Zeitsynchronisationsstatus
-- **Etabliert** Governance-Framework für Zeitsynchronisations-Management
-- **Referenziert** anwendbare regulatorische Anforderungen gemäss ISMS-POL-00
+- **Definiert** Zeitsynchronisationsanforderungen ausgerichtet an Systemkritikalität und betrieblichen Anforderungen
+- **Etabliert** einen Governance-Rahmen für die Auswahl von Zeitquellen und die Verifizierung der Synchronisation
+- **Legt fest**, wer für die Zeitsynchronisationsinfrastruktur und Compliance verantwortlich ist
+- **Verweist** auf anwendbare regulatorische Anforderungen gemäss ISMS-POL-00
 
 ## Was diese Richtlinie NICHT tut
 
 Diese Richtlinie tut NICHT:
 
-- **Spezifizieren technischer NTP-Server-Konfigurationen** (siehe ISMS-IMP-A.8.17.1 Time Source Configuration)
-- **Bereitstellen plattformspezifischer Synchronisations-Prozeduren** (siehe ISMS-IMP-A.8.17.2 Synchronization Verification)
-- **Definieren spezifischer NTP-Technologien** (chrony, ntpd, W32Time, Cloud Time Services)
-- **Auswählen von Zeitquellen-Anbietern** (NIST, Cloudflare, NTP Pool, GPS - basierend auf organisatorischem Assessment)
-- **Ersetzen von Risk Assessment** (Zeitabweichungs-Schwellenwerte basierend auf System-Kritikalität und Risk Treatment)
+- **Technische Umsetzungsdetails spezifizieren** (siehe ISMS-IMP-A.8.17.1 Zeitquellen-Konfiguration)
+- **Plattformspezifische Konfigurationsverfahren definieren** (siehe ISMS-IMP-A.8.17.1, S2 für Linux, Windows, Netzwerkgeräte, Cloud-Plattformen)
+- **Verifizierungs-Befehlssyntax bereitstellen** (siehe ISMS-IMP-A.8.17.2 Synchronisationsverifizierungsprozess)
+- **NTP-Technologien oder Anbieter auswählen** (Technologieauswahl basiert auf Risikobewertung und Infrastrukturanforderungen von [Organisation])
+- **Risikobewertung ersetzen** (Zeitsynchronisationskontrollen werden basierend auf der Risikobehandlung von [Organisation] ausgewählt)
 
-**Rationale**: Trennung von Richtlinienanforderungen und Implementierungsleitlinien ermöglicht:
+**Begründung**: Die Trennung von Richtlinienanforderungen und Umsetzungsanleitung ermöglicht:
 
-- Richtlinienstabilität trotz sich entwickelnder NTP-Technologien
-- Technische Agilität für Plattform-Updates ohne Richtlinienrevision
-- Klare Unterscheidung zwischen Governance (Richtlinie) und Execution (Implementierung)
+- Richtlinienstabilität trotz sich weiterentwickelnder Zeitsynchronisationstechnologien (NTP, chrony, PTP, Cloud-Zeitdienste)
+- Technische Agilität für Protokollaktualisierungen und Infrastrukturänderungen ohne Richtlinienrevision
+- Klare Unterscheidung zwischen Governance (Richtlinie) und Ausführung (Umsetzung)
 
 ## Geltungsbereich
 
 **Diese Richtlinie gilt für**:
 
-- Alle Server (physisch, virtuell, Cloud) die sicherheitsrelevante Logs generieren
-- Alle Netzwerkgeräte (Router, Switches, Firewalls, Load Balancers)
-- Alle Security-Systeme (SIEM, IDS/IPS, Authentifizierungsserver, Zertifikatsautoritäten)
-- Alle Datenbanksysteme mit Audit-Anforderungen
-- Alle Systeme in Security Operations Center (SOC) Scope
-- Cloud-Instanzen und Container-Hosts mit Logging-Anforderungen
+- Alle informationsverarbeitenden Systeme, die Protokolle erzeugen oder an sicherheitsrelevanten Operationen beteiligt sind
+- Server (physisch, virtuell, Cloud-basiert)
+- Netzwerkinfrastrukturgeräte (Router, Switches, Firewalls, Load Balancer)
+- Sicherheitssysteme (SIEM, IDS/IPS, Authentifizierungssysteme, Schwachstellenscanner)
+- Workstations und Endpunkte, wo Protokollierung oder Prüfung erforderlich ist
+- Container und Cloud-Instanzen
+- IoT- und eingebettete Systeme mit Protokollierungsfähigkeit
 
-**Ausschlüsse**:
+**Nicht im Geltungsbereich**:
 
-- Nicht-vernetzte Standalone-Systeme ohne Logging-Anforderungen
-- IoT-Geräte ohne Audit-Trail-Anforderungen (sofern durch Risk Assessment ausgeschlossen)
-- Systeme in vollständig isolierten Air-Gapped-Umgebungen (unterliegen speziellen Zeitquellen-Anforderungen)
+- Standalone-Systeme ohne Netzwerkkonnektivität oder Protokollierungsfähigkeit
+- Endbenutzergeräte, bei denen Zeitsynchronisation nicht sicherheitsrelevant ist
+- Systeme, die durch dokumentierte Risikoakzeptanz explizit ausgeschlossen wurden (gemäss Ausnahmeprozess)
+- Nicht vernetzte Air-Gapped-Systeme ohne alternative Zeitquellen
 
-## Regulatorisches Applicability Framework
+## Regulatorische Anwendbarkeit
 
-Gemäss ISMS-POL-00 (Regulatory Applicability Framework) sind regulatorische Anforderungen in drei Kategorien unterteilt:
+Regulatorische Anforderungen werden gemäss **ISMS-POL-00 (Regulatory Applicability Framework)** kategorisiert.
 
-**Tier 1 - Mandatory Compliance** (alle gelten):
+**Tier 1: Pflichtige Compliance**
 
-- **Schweizer nDSG Art. 8** - Anforderungen an Datensicherheit, Logging und Audit Trails
-- **EU DSGVO Art. 32** - Anforderungen an Logging und Monitoring zur Gewährleistung von Security of Processing
-- **ISO/IEC 27001:2022 A.8.17** - Kontrolle für Clock Synchronization
+| Verordnung | Anwendbarkeit | Wesentliche Anforderungen |
+|------------|---------------|--------------------------|
+| **Swiss nDSG** | Alle Schweizer Operationen | Art. 8 — Angemessene technische Massnahmen einschliesslich genauer Protokollierung und Prüfpfade |
+| **EU GDPR** | Bei Verarbeitung personenbezogener EU-Daten | Art. 32 — Sicherheitsmassnahmen einschliesslich Protokollierungs- und Monitoring-Fähigkeiten |
+| **ISO/IEC 27001:2022** | Zertifizierungsumfang | Control A.8.17 — Dokumentierte Richtlinie und synchronisierte Zeitquellen |
 
-**Tier 2 - Conditional Applicability** (gelten, wo ausgelöst):
+**Tier 2: Bedingte Anwendbarkeit**
 
-- **PCI DSS v4.0.1 Req. 10.4** - Time-Synchronization Technology (gilt, wenn Kartenzahlungen verarbeitet werden)
-- **FINMA Rundschreiben 2023/1** - Logging-Anforderungen für Finanzinstitute (gilt bei Finanzdienstleistungen)
-- **DORA Art. 21** - Logging und ICT-Risikomonitoring für Finanzentitäten (gilt bei Finanzdienstleistungen)
-- **NIS2 Art. 21** - Anforderungen an Incident Logging für wesentliche/wichtige Entitäten (gilt bei kritischer Infrastruktur)
+Gilt nur, wenn spezifische Geschäftsbedingungen die Anwendbarkeit auslösen:
 
-**Tier 3 - Informational Reference / Best Practice**:
+| Verordnung | Auslösebedingung | Zeitsynchronisationsanforderungen |
+|-----------|-----------------|----------------------------------|
+| **PCI DSS v4.0.1** | Verarbeitung von Zahlungskarteninhaberdaten | Req. 10.4 — Zeitsynchronisationstechnologie, konsistente Zeiteinstellungen |
+| **FINMA** | Schweizer reguliertes Finanzinstitut | Technische und organisatorische Massnahmen einschliesslich Prüfpfad-Integrität |
+| **DORA** | EU-Finanzdienstleistungsunternehmen | IKT-Risikomanagement einschliesslich Protokollierungs- und Monitoring-Fähigkeiten |
+| **NIS2** | Wesentliche/wichtige Einrichtung (EU) | Sicherheitsmassnahmen für Netz- und Informationssysteme einschliesslich Protokollierung |
 
-- **NIST SP 800-53 (AU-8)** - Time Stamps für Audit Records
-- **CIS Controls v8.1 (Control 8)** - Audit Log Management
-- **RFC 5905** - Network Time Protocol Version 4 Spezifikation
-- **NIST Time Services** - time.nist.gov technische Leitlinien
+**Tier 3: Informative Orientierung**
 
-**Compliance-Bestimmung**: [Organisation] bestimmt anwendbare Tier-2-Regulations durch periodisches Business Activity Assessment. Die strengsten Anforderungen gelten, wo mehrere Regulations überlappen.
+Diese Rahmenwerke informieren die Umsetzung, stellen aber keine verpflichtende Compliance dar, sofern nicht vertraglich gefordert:
+
+- NIST SP 800-53 (AU-8: Time Stamps)
+- CIS Controls v8.1 (Control 8: Audit Log Management)
+- RFC 5905 (Network Time Protocol Version 4)
+- NIST Time Services (time.nist.gov)
+
+**Compliance-Feststellung**: [Organisation] bestimmt anwendbare Tier-2-Verordnungen durch periodische Bewertung der Geschäftsaktivitäten. Bei Überschneidung mehrerer Verordnungen gelten die strengsten Anforderungen.
 
 ---
 
-# Clock Synchronization Requirements Framework
+# Framework der Zeitsynchronisationsanforderungen
 
-## Anforderungen an Autoritative Zeitquellen (Obligatorisch)
+## Anforderungen an autoritative Zeitquellen (Verpflichtend)
 
-[Organisation] unterhält Zugang zu autoritativen Zeitquellen um akkurate Referenzzeit für alle Informationssysteme bereitzustellen.
+[Organisation] unterhält Zugang zu autoritativen Zeitquellen, um allen Informationssystemen genaue Referenzzeit bereitzustellen.
 
 **Erforderliche Zeitquellen**:
 
-| Anforderungs-Kategorie | Spezifikation | Implementierungs-Priorität |
-|------------------------|---------------|---------------------------|
-| **Redundanz** | Minimum ZWEI (2) autoritative Zeitquellen | **Obligatorisch** |
-| **Stratum-Level** | Stratum 0 oder Stratum 1 Quellen | **Obligatorisch** |
-| **Verfügbarkeit** | >99.9% Uptime für jede Quelle | **Obligatorisch** |
-| **Geografische Diversität** | Quellen aus verschiedenen Standorten wo praktikabel | Empfohlen |
-| **Vertrauenswürdige Anbieter** | Regierungs-, akademische oder renommierte kommerzielle Services | **Obligatorisch** |
+| Anforderungskategorie | Spezifikation | Umsetzungspriorität |
+|---------------------|--------------|---------------------|
+| **Redundanz** | Mindestens ZWEI (2) autoritative Zeitquellen | **Verpflichtend** |
+| **Stratum-Stufe** | Stratum-0- oder Stratum-1-Quellen | **Verpflichtend** |
+| **Verfügbarkeit** | >99,9 % Betriebszeit je Quelle | **Verpflichtend** |
+| **Geografische Diversität** | Quellen von unterschiedlichen Standorten wo möglich | Empfohlen |
+| **Vertrauenswürdige Anbieter** | Staatliche, akademische oder seriöse kommerzielle Dienste | **Verpflichtend** |
 
 **Primäre Zeitquellen (Stratum 0/1 erforderlich)**:
 
 - GPS-basierte Zeitserver (Stratum 0/1)
 - NIST-Zeitserver (time.nist.gov)
-- Nationale/regionale Regierungs-Zeitservices
-- Organisations-eigene Atomuhr oder GPS-Empfänger
+- Nationale/regionale staatliche Zeitdienste
+- Organisationseigene Atomuhr oder GPS-Empfänger
 
 **Ergänzende/Backup-Quellen (Stratum 2+ akzeptabel)**:
 
-- NTP Pool Project Server (pool.ntp.org)
-- Cloud-Provider-Zeitservices (AWS Time Sync, Azure NTP, GCP NTP)
+- NTP-Pool-Projekt-Server (pool.ntp.org)
+- Cloud-Anbieter-Zeitdienste (AWS Time Sync, Azure NTP, GCP NTP)
 
-**Hinweis**: Interne NTP-Infrastruktur MUSS mit mindestens zwei primären (Stratum 0/1) Quellen synchronisieren. NTP Pool und Cloud-Provider-Services können als ergänzende Quellen für Redundanz dienen, SOLLEN aber NICHT die einzige autoritative Referenz sein.
+**Hinweis**: Interne NTP-Infrastruktur MUSS sich mit mindestens zwei primären (Stratum-0/1-) Quellen synchronisieren. NTP-Pool- und Cloud-Anbieter-Dienste können als ergänzende Quellen für Redundanz dienen, dürfen aber NICHT die einzige autoritative Referenz sein.
 
-**Implementierungs-Hinweis**: Spezifische Zeitquellen-Auswahl, -Konfiguration und Verfügbarkeitsmonitoring-Prozeduren sind in ISMS-IMP-A.8.17.1 (Time Source Configuration) definiert.
+**Umsetzungshinweis**: Auswahl spezifischer Zeitquellen, Konfiguration und Verfügbarkeitsmonitoring sind in ISMS-IMP-A.8.17.1 (Zeitquellen-Konfiguration) definiert.
 
-## Interne Zeitsynchronisations-Infrastruktur (Obligatorisch)
+## Interne Zeitsynchronisationsinfrastruktur (Verpflichtend)
 
-[Organisation] deployed interne NTP-Infrastruktur um Zeitsynchronisations-Services für alle Client-Systeme bereitzustellen.
+[Organisation] betreibt interne NTP-Infrastruktur zur Bereitstellung von Zeitsynchronisationsdiensten für alle Client-Systeme.
 
-**Interne NTP-Infrastruktur-Anforderungen**:
+**Anforderungen an interne NTP-Infrastruktur**:
 
-| Anforderungs-Kategorie | Spezifikation | Implementierungs-Priorität |
-|------------------------|---------------|---------------------------|
-| **Redundanz** | Minimum ZWEI (2) interne NTP-Server | **Obligatorisch** |
-| **Stratum-Level** | Stratum 2 (synchronisiert zu externen Stratum 1 Quellen) | **Obligatorisch** |
-| **Geografische Verteilung** | NTP-Server über Rechenzentren/Standorte verteilt wo anwendbar | Empfohlen |
-| **High Availability** | Automatisches Failover zwischen NTP-Servern | **Obligatorisch** |
-| **Monitoring** | Kontinuierliches Monitoring mit automatisiertem Alerting | **Obligatorisch** |
-| **Alerting-Konfiguration** | Automatische Benachrichtigung bei NTP-Infrastruktur-Ausfall oder Synchronisationsfehlern | **Obligatorisch** |
+| Komponente | Anforderung | Begründung |
+|-----------|------------|-----------|
+| **Interne NTP-Server** | Mindestens ZWEI (2) Server (Stratum 2) | Redundanz und Failover-Fähigkeit |
+| **Autoritätssync** | Synchronisation mit mehreren Stratum-1-Quellen | Genauigkeit und Zuverlässigkeit |
+| **Server-Peering** | Peering zwischen internen Servern konfigurieren | Konsistenz und gegenseitige Validierung |
+| **Geografische Verteilung** | Einsatz in getrennten Rechenzentren wo möglich | Resilienz und Verfügbarkeit |
+| **Hohe Verfügbarkeit** | Automatische Failover-Konfiguration | Kontinuierliche Dienstverfügbarkeit |
 
-**NTP-Server-Anforderungen**:
+**Sicherheitsanforderungen**:
 
-- Synchronisation mit mindestens zwei externen autoritativen Zeitquellen
-- Peer-Konfiguration mit anderen internen NTP-Servern für Konsistenz
-- Zeitsynchronisations-Service per ISMS-POL-A.8.21 (Network Services Security) gesichert
-- UDP Port 123 Traffic-Filterung und Access Control konfiguriert
+Interne NTP-Server MÜSSEN gemäss den in ISMS-POL-A.8.21 (Network Services Security) definierten Sicherheitsanforderungen gehärtet werden, einschliesslich:
 
-**Implementierungs-Hinweis**: Spezifische NTP-Server-Deployment, -Konfiguration und -Management-Prozeduren sind in ISMS-IMP-A.8.17.1 (Time Source Configuration) definiert.
-
-## Systemsynchronisations-Anforderungen (Obligatorisch)
-
-Alle in-scope Systeme MÜSSEN für Zeitsynchronisation zu genehmigten internen NTP-Servern konfiguriert sein.
-
-**Systemkonfigurations-Anforderungen**:
-
-| Anforderungs-Kategorie | Spezifikation | Implementierungs-Priorität |
-|------------------------|---------------|---------------------------|
-| **NTP-Server-Zuweisung** | Primärer und sekundärer NTP-Server konfiguriert | **Obligatorisch** |
-| **Automatische Korrektur** | Automatische Zeitkorrektur aktiviert (keine manuellen Eingriffe) | **Obligatorisch** |
-| **Maximale Zeitabweichung** | Siehe Schwellenwert-Tabelle unten | **Obligatorisch** |
-| **Synchronisationsstatus-Logging** | Zeit-Synchronisationsstatus und -änderungen geloggt | **Obligatorisch** |
-| **Verifizierung** | Synchronisationsstatus verifiziert innerhalb von 7 Tagen für Compliance-Metriken, 30 Tage Maximum für Policy-Compliance | **Obligatorisch** |
-
-**Maximale Akzeptable Zeitabweichung (Time Drift Thresholds)**:
-
-| System-Kategorie | Target (Operational) | Compliance Threshold (Maximum) | Anwendbar auf |
-|------------------|---------------------|--------------------------------|---------------|
-| **Allgemeine Systeme** | <500 Millisekunden | ±1 Sekunde | Standard-Server, Workstations, nicht-kritische Netzwerkgeräte |
-| **Kritische Security-Systeme** | <50 Millisekunden | ±100 Millisekunden | SIEM, Authentifizierungsserver, Zertifikatsautoritäten, IDS/IPS |
-| **High-Precision-Anforderungen** | <5 Millisekunden | ±10 Millisekunden | Finanztransaktionssysteme, regulatorische Compliance-Systeme |
-
-**Definitionen**:
-
-- **Target**: Operationales Ziel, das gesunden Zustand indiziert
-- **Compliance Threshold**: Maximal akzeptabler Wert per Section 2.3; Überschreitungen erfordern Remediation
-
-**Spezialfälle**:
-
-**Cloud-Systeme**:
-
-- Cloud-Provider-Zeitservices (AWS Time Sync, Azure NTP, GCP NTP) sind akzeptabel wo von vertrauenswürdigem Provider bereitgestellt
-- Zeitabweichungs-Monitoring bleibt verpflichtend
-- Verifizierung der Cloud-Time-Service-Konfiguration erforderlich
-
-**Air-Gapped Systeme**:
-
-- Erfordern GPS-basierte Zeitquelle oder organisations-eigene Stratum 1 Zeitquelle
-- Exception-Prozess erforderlich, falls kein GPS-Zugang verfügbar
-
-**IoT/Embedded Devices**:
-
-- Können SNTP (Simplified Network Time Protocol) verwenden
-- Unterliegen denselben Zeitabweichungs-Anforderungen basierend auf Funktionalität
-
-**Implementierungs-Hinweis**: Plattformspezifische NTP-Client-Konfigurationsprozeduren (Linux, Windows, Netzwerkgeräte, Cloud-Plattformen) sind in ISMS-IMP-A.8.17.1 (Time Source Configuration) definiert.
-
-## Synchronisationsverifizierungs-Anforderungen (Obligatorisch)
-
-[Organisation] verifiziert dass alle Systeme aktiv mit genehmigten Zeitquellen synchronisieren.
-
-**Verifizierungs-Anforderungen**:
-
-| Anforderungs-Kategorie | Spezifikation | Frequenz |
-|------------------------|---------------|----------|
-| **Synchronisationsstatus-Prüfung** | Verifizierung dass System mit genehmigtem NTP-Server synchronisiert | Monatlich (minimum) |
-| **Zeitabweichungs-Messung** | Messung aktueller Zeitabweichung vs. autoritative Quelle | Monatlich (minimum) |
-| **Synchronisationsausfall-Erkennung** | Automatisiertes Monitoring mit Alerting für Synchronisationsausfälle | Kontinuierlich |
-| **Compliance-Assessment** | Dokumentiertes Assessment von systemweitem Synchronisationsstatus | Monatlich |
-| **Verifizierungs-Zeitrahmen** | Sync-Status verifiziert innerhalb 7 Tage für Compliance-Metriken, 30 Tage Maximum für Policy-Compliance | Gemäss Kategorie |
-
-**Verifizierungs-Methodik**:
-
-- Plattformspezifische Verifizierungs-Commands (chronyc tracking, ntpq -p, w32tm /query /status)
-- Automatisierte Sync-Status-Collection via Configuration Management oder Monitoring-Systeme
-- Regelmässige System-Inventar-Abgleiche mit Asset Management (ISMS-POL-A.5.9)
-
-**Implementierungs-Hinweis**: Detaillierte Verifizierungsprozeduren, plattformspezifische Commands und Assessment-Templates sind in ISMS-IMP-A.8.17.2 (Synchronization Verification Process) definiert.
-
----
-
-# Governance & Operations
-
-## Rollen & Verantwortlichkeiten
-
-**Chief Information Security Officer (CISO)**:
-
-- Rechenschaftlichkeit für diese Policy und Clock Synchronization Compliance
-- Genehmigung technischer Exceptions (alternative NTP-Server, spezifische Systemkonfigurationen)
-- Quartalsweise Review von Exception Status und Compliance-Metriken
-- Eskalation von Compliance-Ausfällen an Executive Management
-
-**Network Operations Manager**:
-
-- Deployment und Maintenance der internen NTP-Server-Infrastruktur
-- Auswahl und Konfiguration externer autoritativer Zeitquellen
-- NTP-Infrastruktur-Monitoring und Performance-Tuning
-- Koordination mit Anbietern für GPS/Atomuhr-Zeitquellen wo anwendbar
-
-**IT Operations / System Administrators**:
-
-- Konfiguration von Client-Systemen für Zeitsynchronisation
-- Verifizierung von Synchronisationsstatus per Verifizierungs-Schedule
-- Investigation und Remediation von Synchronisationsausfällen
-- Dokumentation von Systemkonfigurationen in Asset Management
-
-**Cloud Platform Teams**:
-
-- Konfiguration von Cloud-Instanzen für Zeitservices (AWS Time Sync, Azure NTP, GCP NTP)
-- Verifizierung Cloud-Platform-Zeitsynchronisation funktioniert korrekt
-- Integration Cloud-Zeitservices mit organisatorischem NTP-Monitoring
-
-**Security Operations Center (SOC)**:
-
-- Monitoring Zeitsynchronisationsstatus für security-kritische Systeme
-- Investigation Synchronisationsausfälle die Security Operations beeinträchtigen
-- Eskalation infrastrukturweiter Sync-Ausfälle
-- Validierung Timestamp-Konsistenz während Security Investigations und Incident Response
-
-**Information Security / ISMS Officer**:
-
-- Maintenance dieser Policy und zugehöriger Implementation Guidance
-- Durchführung monatlicher Systemsynchronisationsstatus-Assessments
-- Generierung Compliance-Dashboards und Reports
-- Tracking Remediation identifizierter Gaps und Non-Compliance
-- Präsentation Compliance-Status an CISO und Management
-- Koordination mit Auditoren für Evidence Provision
-
-**System Owners**:
-
-- Definition spezifischer Drift-Schwellenwerte für eigene Systeme (innerhalb Policy-Limits)
-- Akzeptanz dokumentierter Risiken für Systeme ausgeschlossen von Zeitsynchronisations-Anforderungen
-- Genehmigung Remediation Plans für Synchronisationsausfälle eigene Systeme betreffend
-- Review Assessment Findings und Compliance-Status für eigene Systeme
-
-**Verantwortlichkeits-Matrix**:
-
-| Aktivität | CISO | Network Ops | IT Ops | System Owners | ISMS Officer | SOC |
-|-----------|------|-------------|--------|---------------|--------------|-----|
-| Policy-Genehmigung | A | C | I | I | R | I |
-| NTP-Infrastruktur-Deployment | I | A/R | C | I | I | I |
-| Client-Systemkonfiguration | I | C | A/R | C | I | I |
-| Synchronisations-Monitoring | I | R | R | I | C | A |
-| Compliance-Assessment | R | C | C | I | A | C |
-| Exception-Genehmigung | A | I | I | R | C | I |
-| Incident Response | C | R | R | I | C | A |
-
-Legende: A = Accountable (Rechenschaftspflichtig), R = Responsible (Verantwortlich), C = Consulted (Konsultiert), I = Informed (Informiert)
-
-## Monitoring & Reporting
+- Zugangskontroll- und Authentifizierungsmechanismen
+- Firewall-Regeln zur Einschränkung des NTP-Datenverkehrs (UDP-Port 123)
+- Rate-Limiting zur Verhinderung von Amplifikationsangriffen
+- Protokollierung von Synchronisationsereignissen und Konfigurationsänderungen
+- Regelmässige Sicherheitsupdates und Patching
 
 **Monitoring-Anforderungen**:
 
-[Organisation] monitored Zeitsynchronisation um sicherzustellen:
+Der Zustand interner NTP-Server MUSS kontinuierlich überwacht werden, mit automatischer Alarmierung bei:
 
-- Alle in-scope Systeme unterhalten aktive Synchronisation zu genehmigten Zeitquellen
-- Zeitabweichung bleibt innerhalb akzeptabler Schwellenwerte definiert in Section 2.3
-- NTP-Infrastruktur-Verfügbarkeit und -Performance erfüllt Service-Anforderungen
-- Synchronisationsausfälle werden prompt erkannt und darauf reagiert
+- Verlust der Synchronisation mit autoritativen Quellen
+- Übermässiger Abweichung (>100 ms von autoritativer Zeit)
+- Ausfällen der Dienstverfügbarkeit
+- Konfigurationsänderungen oder Anomalien
 
-**Key Metrics**:
+**Umsetzungshinweis**: NTP-Server-Einsatz, Härtungsverfahren und Monitoring-Konfiguration sind in ISMS-IMP-A.8.17.1 (Zeitquellen-Konfiguration) und ISMS-POL-A.8.21 (Network Services Security) dokumentiert.
 
-| Metrik | Target | Compliance Threshold | Anwendbar auf |
-|--------|--------|---------------------|---------------|
-| **Synchronizations-Compliance** | ≥98% | ≥95% | Alle in-scope Systeme |
-| **Average Time Drift** | <500ms | <1 Sekunde | Allgemeine Systeme |
-| **Critical System Drift** | <50ms | <100ms | Security-kritische Systeme |
-| **Critical System Compliance** | 100% | 100% | SIEM, Authentifizierung, Zertifikatssysteme |
-| **Infrastruktur-Verfügbarkeit** | >99.9% | >99.5% | Interne NTP-Server |
+## Systemsynchronisationsanforderungen (Verpflichtend)
 
-**Definitionen**:
+Alle im Geltungsbereich befindlichen Systeme MÜSSEN so konfiguriert werden, dass sie die Zeit mit genehmigten Zeitquellen synchronisieren.
 
-- **Target**: Operationales Ziel, das gesunden Zustand indiziert
-- **Compliance Threshold**: Maximal akzeptabler Wert per Section 2.3; Überschreitungen erfordern Remediation
-- **Synchronizations-Compliance**: Prozentsatz in-scope Systeme mit verifiziertem Synchronisationsstatus innerhalb letzter 7 Tage zeigend Drift innerhalb anwendbarem Schwellenwert für System-Kategorie
+**Konfigurationsanforderungen für Client-Systeme**:
 
-**Rationale für 95% Compliance Threshold**: Dieser Schwellenwert berücksichtigt dass transiente Synchronisationsausfälle während Wartungsfenstern, System-Reboots und Netzwerkstörungen auftreten. Systeme unter Schwellenwert werden für Remediation getrackt. Persistente Non-Compliance (>30 Tage) triggert Eskalation unabhängig vom Gesamt-Prozentsatz.
+| Anforderung | Spezifikation | Gilt für |
+|------------|--------------|---------|
+| **Zeitquellenkonfiguration** | Primäre und sekundäre (Backup-)NTP-Server konfiguriert | Alle Systeme |
+| **Synchronisationsmethode** | NTP, chrony, SNTP oder Cloud-Anbieter-Zeitdienst | Plattformabhängig |
+| **Aktualisierungsintervall** | Geeignete Synchronisationshäufigkeit (typisch 64–1024 Sekunden) | Alle Systeme |
+| **Automatische Korrektur** | Automatische Abweichungskorrektur aktiviert | Alle Systeme |
+| **Ereignisprotokollierung** | Synchronisationsereignisse und -ausfälle protokollieren | Alle Systeme |
 
-**Reporting**:
+**Akzeptable Zeitabweichungsschwellen**:
 
-- **Frequenz**: Monatliche Compliance-Reports, quartalsweise Executive Summaries
-- **Publikum**: CISO (monatlich), Executive Management (quartalsweise), IT Operations (kontinuierliches Monitoring)
-- **Format**: Compliance-Dashboard zeigend Sync-Status, Drift-Metriken, Gaps und Remediation Tracking
-- **Eskalation**: Sofortige Benachrichtigung für critical System Sync Failures, Infrastruktur-Ausfälle oder Compliance fallend unter 90%
+| Systemkategorie | Maximale Abweichung | Gilt für |
+|----------------|--------------------|---------|
+| **Allgemeine Systeme** | ±1 Sekunde von autoritativer Quelle | Standard-Infrastruktur, Workstations |
+| **Kritische Sicherheitssysteme** | ±100 Millisekunden von autoritativer Quelle | SIEM, Authentifizierung, Zertifikatsvalidierung |
+| **Hochpräzisionsanforderungen** | ±10 Millisekunden von autoritativer Quelle | Finanzsysteme, regulatorische Compliance |
 
-**Detaillierte Prozeduren**: ISMS-IMP-A.8.17.2 (Synchronization Verification Process) bietet Monitoring-Konfiguration, Verifizierungsprozeduren, Metrik-Berechnungen und Reporting-Templates.
+**Hinweise**:
 
-## Exception Management
+- System-Eigentümer können strengere Schwellen basierend auf betrieblichen Anforderungen definieren, dürfen aber die obigen Maximalwerte für sicherheitsrelevante Systeme NICHT überschreiten
+- Systeme, die akzeptable Abweichungsschwellen überschreiten, MÜSSEN Alarme für Untersuchung und Abhilfe generieren
 
-**Exception Request Anforderungen**:
+**Umsetzungshinweis**: Plattformspezifische Konfigurationsverfahren (Linux, Windows, Netzwerkgeräte, Cloud-Plattformen, Container) sind in ISMS-IMP-A.8.17.1 (Zeitquellen-Konfiguration) dokumentiert.
 
-Exceptions von Clock Synchronization Policy Anforderungen erfordern:
+## Sonderkonfigurationsfälle
 
-- Dokumentierte Business- oder technische Justifikation (z.B. air-gapped System ohne GPS, Vendor-Limitation)
-- Risk Assessment (Likelihood und Impact inakkurater Zeit, Residual Risk)
-- Kompensierende Kontrollen wo machbar (manuelle Zeitverifizierung, Log-Isolation, reduziertes Logging)
-- Timeline für Erreichen voller Compliance (falls temporäre Exception)
-- Formale Genehmigung per Authority Matrix
+**Cloud- und Virtualisierungsumgebungen**:
 
-**Genehmigungsautorität**:
+- Cloud-Instanzen KÖNNEN native Cloud-Anbieter-Zeitdienste (AWS Time Sync, Azure NTP, GCP NTP) verwenden
+- Virtuelle Maschinen SOLLTEN sich mit dem Hypervisor-Host oder dedizierten NTP-Servern synchronisieren (nicht mit beiden gleichzeitig)
+- Container-Umgebungen erben typischerweise die Hostzeit und erfordern keine unabhängige Konfiguration
 
-- **Technische Exceptions** (spezifische Systemkonfigurationen, alternative Zeitquellen): CISO-Genehmigung
-- **Policy-Level-Exceptions** (Requirement Waiver, permanenter Ausschluss): Executive Management Genehmigung
-- **Maximale Dauer**: 12 Monate für temporäre Exceptions
-- **Renewal**: Erfordert aktualisiertes Risk Assessment und Justifikation
+**Air-Gapped-Systeme**:
 
-**Exception Reassessment**: Exception Renewals erfordern Reassessment gegen aktuelle Policy-Anforderungen, nicht nur fortgesetzte Justifikation ursprünglicher Umstände. Falls Policy-Anforderungen, Risk Landscape oder technische Capabilities sich seit Original-Genehmigung geändert haben, muss Exception re-evaluiert werden für fortgesetzte Angemessenheit. Exceptions granted innerhalb 90 Tagen des jährlichen Policy Review SOLLEN für explizites Reassessment während dieses Review Cycle geflaggt werden.
+- Systeme ohne Netzwerkkonnektivität zu externen Zeitquellen benötigen lokale GPS-Empfänger oder Atomuhr-Referenzen
+- Alternative: Manuelle Zeitsynchronisation mit dokumentierten Verfahren und akzeptablen Abweichungsschwellen
 
-**Kompensierende Kontrollen** für excepted Systeme können einschliessen:
+**IoT- und eingebettete Geräte**:
 
-- Manuelle Zeitverifizierungs-Prozeduren mit dokumentierter Frequenz
-- Log-Isolation (nicht korreliert mit anderen Systemen für forensische Analyse)
-- Reduzierte Log-Retention oder keine Logging-Anforderung
-- Risk Acceptance Dokumentation Limitations bestätigend
+- Geräte mit begrenzten Ressourcen KÖNNEN SNTP (Simple Network Time Protocol) verwenden
+- Geräte ohne Zeitsynchronisationsfähigkeit erfordern eine dokumentierte Ausnahme und kompensierende Kontrollen
 
-**Monitoring**: Aktive Exceptions reviewed quartalsweise durch CISO. Kompensierende Control Effectiveness verifiziert. Exceptions widerrufen falls Risk Profile sich ändert, kompensierende Controls fehlschlagen oder Compliance machbar wird.
-
-**Exception Template**: ISMS-IMP-A.8.17 Exception Request Form bietet standardisiertes Dokumentationsformat und Workflow.
-
-## Incident Response
-
-**Clock Synchronization Security Incidents** einschliessen:
-
-- Weitverbreitete Synchronisationsausfälle mehrere Systeme oder kritische Infrastruktur betreffend
-- Excessive Time Drift auf security-kritischen Systemen (SIEM, Authentifizierungsserver, Zertifikatsautoritäten)
-- NTP-Infrastruktur-Kompromittierung oder verdächtige böswillige Zeitmanipulation
-- Zeitquellen-Unerreichbarkeit oder Redundanzverlust
-- Systeme persistent ausfallend zu synchronisieren trotz Remediation Efforts
-
-**Response Prozess**:
-1. **Erkennung & Reporting**: Monitoring-Systeme generieren Alerts; SOC oder IT Operations sofort benachrichtigt
-2. **Assessment**: Incident Severity Classification (Critical, High, Medium, Low) basierend auf betroffenen Systemen und Security Impact
-3. **Investigation**: Root Cause Analysis (NTP-Server-Ausfall, Network Connectivity, Misconfiguration, Infrastruktur-Issue)
-4. **Containment**: Sofortmassnahmen basierend auf Incident Type (Failover zu Backup NTP, Service Restore, isolate betroffene Systeme)
-5. **Recovery**: Systemwiederherstellung, Konfigurationskorrektur und Verifizierung Synchronisationsstatus
-6. **Post-Incident**: Lessons Learned, Control Improvements und preventive Massnahmen
-
-**Critical Incidents**: 
-
-- Synchronisationsausfälle auf security-kritischen Systemen (SIEM, Authentifizierung) behandelt als **High-Priority Incidents** erfordern sofortige Response
-- Infrastrukturweite Ausfälle eskaliert zu IT Management und CISO innerhalb 1 Stunde
-- Verdächtige Zeitmanipulation eskaliert zu SOC für Security Investigation
-
-**Response Timeframes**:
-
-- **Critical Systems**: Investigation innerhalb 1 Stunde, Remediation Plan innerhalb 4 Stunden, Resolution innerhalb 24 Stunden
-- **Standard Systems**: Investigation innerhalb 4 Business Hours, Remediation Plan innerhalb 1 Business Day, Resolution innerhalb 3 Business Days
-
-**NTP-Infrastruktur-Klassifizierung**: Interne NTP-Server und autoritative Zeitquellen-Konnektivität sind klassifiziert als kritische Infrastruktur. Ausfälle NTP-Infrastruktur betreffend folgen Critical System Response Timeframes:
-
-- Investigation innerhalb 1 Stunde
-- Remediation Plan innerhalb 4 Stunden
-- Resolution innerhalb 24 Stunden
-
-Infrastruktur-Ausfälle werden eskaliert zu IT Management und CISO sofort bei Erkennung due zu kaskadierendem Impact auf alle abhängigen Systeme.
-
-**Detaillierte Prozeduren**: ISMS-IMP-A.8.17.2 (Synchronization Verification Process) bietet Incident Classification Criteria, Response Workflows, Eskalationsprozeduren und Koordination mit Endpoint Security und Infrastructure Teams.
-
-## Policy Governance
-
-**Policy Review**:
-
-- **Frequenz**: Jährlich (oder bei signifikanten Änderungen in NTP-Technologie, Threat Landscape oder regulatorischen Anforderungen)
-- **Owner**: Chief Information Security Officer (CISO)
-- **Prozess**: Formaler Review einschliesslich Stakeholder Input, Regulatory Update Assessment, Technology Evolution Review
-
-**Policy Maintenance**:
-
-- Minor Updates (klarifizierende Language, Contact Updates): CISO-Genehmigung
-- Major Updates (neue Requirements, Scope Changes): Executive Management Genehmigung
-- Emergency Updates (kritische Security Issues): CISO mit nachfolgender Executive Ratification
-
-**Training & Awareness**:
-
-- Neues Personal: Policy Awareness im Rahmen von Security Onboarding
-- Technisches Personal (Network Ops, System Admins): Detailliertes Training auf Implementation Guidance
-- Jährliche Awareness-Kampagne für alle Mitarbeiter betonend Importance akkurater Zeitstempel
+**Umsetzungshinweis**: Sonderkonfigurationen und Validierungsverfahren sind in ISMS-IMP-A.8.17.1 (Zeitquellen-Konfiguration) und ISMS-IMP-A.8.17.2 (Synchronisationsverifizierungsprozess) dokumentiert.
 
 ---
 
-# Implementierung & Referenzen
+# Governance & Betrieb
 
-## Integration mit ISMS
+## Rollen & Verantwortlichkeiten
 
-Diese Policy integriert mit folgenden ISMS Komponenten:
+**Informationssicherheitsbeauftragter (ISB)**:
 
-**ISO/IEC 27001:2022 Clause 5 (Leadership)**:
+- Gesamtverantwortung für Zeitsynchronisationsrichtlinie und Compliance
+- Genehmigungskompetenz für Richtlinienausnahmen und Risikoakzeptanzen
+- Prüfung und Genehmigung von Zeitsynchronisations-Compliance-Berichten
+- Eskalationspunkt bei anhaltender Nicht-Compliance oder Infrastrukturausfällen
 
-- Clause 5.3 - CISO accountable für Policy und Compliance per Verantwortlichkeits-Matrix
+**Netzwerkbetrieb / IT-Infrastruktur**:
 
-**ISO/IEC 27001:2022 Clause 6 (Planning)**:
+- Interne NTP-Server-Infrastruktur einsetzen und pflegen
+- NTP-Server zur Synchronisation mit autoritativen Quellen konfigurieren
+- Redundanz, Hochverfügbarkeit und Monitoring für NTP-Infrastruktur implementieren
+- Auf NTP-Infrastrukturalarme und Serviceausfälle reagieren
+- Vierteljährliche Bestandsaufnahmen der Zeitquellen durchführen
+- Mit ISMS-Beauftragtem für Compliance-Berichterstattung koordinieren
 
-- Clause 6.1 - Risk Assessment informiert Zeitabweichungs-Schwellenwerte und Exception Decisions
-- Clause 6.2 - Security Objectives einschliessen Zeitsynchronisations-Compliance-Ziele
+**Systemadministratoren / IT-Betrieb**:
 
-**ISO/IEC 27001:2022 Clause 8 (Operation)**:
+- Alle verwalteten Systeme zur Synchronisation mit genehmigten Zeitquellen konfigurieren
+- Synchronisationsstatus bei der Systemeinführung verifizieren
+- Auf Synchronisationsausfallalarme für verwaltete Systeme reagieren
+- Synchronisationsausfälle innerhalb definierter Reaktionszeitrahmen beheben
+- Systemzugang für automatisierte Sync-Status-Verifizierung bereitstellen
+- Mit Security Operations für sicherheitskritische Systeme koordinieren
 
-- Clause 8.1 - Operationelle Prozesse definiert in ISMS-IMP-A.8.17 Implementation Guidance
+**Cloud-Plattform-Teams**:
 
-**ISO/IEC 27001:2022 Clause 9 (Performance Evaluation)**:
+- Cloud-Instanzen zur Nutzung geeigneter Zeitdienste konfigurieren
+- Zeitsynchronisation in Cloud-Umgebungen verifizieren
+- Cloud-spezifische Zeitsync-Konfigurationen dokumentieren
+- Cloud-Zeitsync-Status in Monitoring-Systeme integrieren
 
-- Clause 9.1 - Monitoring-Requirements definiert in Section 3.2
+**Security Operations Center (SOC)**:
 
-**Related Annex A Controls**:
+- Zeitsynchronisationsstatus für sicherheitskritische Systeme überwachen
+- Synchronisationsausfälle mit Auswirkungen auf den Sicherheitsbetrieb untersuchen
+- Infrastrukturweite Synchronisationsausfälle eskalieren
+- Zeitstempel-Konsistenz bei Sicherheitsuntersuchungen und Incident-Response validieren
 
-- **A.8.21 (Network Services Security)**: Sichert NTP-Infrastruktur und Zeit-Services gegen Attacks
-- **A.8.15 (Logging)**: Ermöglicht durch synchronisierte Zeitstempel über Systeme hinweg
-- **A.8.16 (Monitoring Activities)**: Einschliessen Zeitsynchronisations-Status-Monitoring
-- **A.5.9 (Inventory of Assets)**: Bietet System-Liste für Zeitsynchronisations-Assessment
-- **A.8.9 (Configuration Management)**: Verwaltet NTP-Client-Konfigurationen
-- **A.5.28 (Collection of Evidence)**: Erfordert zeitlich synchronisierte Logs für forensische Analysen
+**Informationssicherheit / ISMS-Beauftragter**:
 
-## Implementation Resources
+- Diese Richtlinie und zugehörige Umsetzungsanleitung pflegen
+- Monatliche Bewertungen des System-Synchronisationsstatus durchführen
+- Summary-Dashboard-Berichte erstellen
+- Behebung identifizierter Lücken und Nicht-Compliance verfolgen
+- Compliance-Status ISB und Management präsentieren
+- Mit Auditoren für Nachweisbereitstellung koordinieren
 
-**Implementation Guidance verfügbar in**:
+**System-Eigentümer**:
 
-- **ISMS-IMP-A.8.17.1** (Time Source Configuration):
-  - Auswahl externer autoritativer Zeitquellen (NIST, NTP Pool, Cloudflare, GPS)
-  - Deployment interner NTP-Server (Redundanz, High Availability, Geographic Distribution)
-  - NTP-Server-Konfiguration (chrony, ntpd, W32Time)
-  - Client-Systemkonfigurationen (Linux, Windows, Netzwerkgeräte, Cloud-Plattformen)
-  - Cloud-Zeitservices (AWS Time Sync, Azure NTP, GCP NTP)
-  - Spezialfälle (Container, IoT, air-gapped Systeme)
+- Spezifische Abweichungsschwellen für eigene Systeme definieren (innerhalb Richtliniengrenzen)
+- Dokumentiertes Risiko für von Zeitsynchronisationsanforderungen ausgeschlossene Systeme akzeptieren
+- Abhilfepläne für Synchronisationsausfälle bei eigenen Systemen genehmigen
+- Bewertungsergebnisse und Compliance-Status für eigene Systeme prüfen
 
-- **ISMS-IMP-A.8.17.2** (Synchronization Verification Process):
-  - Plattformspezifische Verifizierungs-Commands (chronyc, ntpq, w32tm)
-  - Zeitabweichungs-Messmethodik
-  - Automatisierte Sync-Status-Collection-Ansätze
-  - Alert-Konfiguration für Synchronisationsausfälle
-  - Periodische Verifizierungs-Schedules
-  - Gap Identification und Remediation Tracking
+**Verantwortungsmatrix**:
 
-## Regulatory Mapping
+| Aktivität | ISB | Netzwerkbetrieb | IT-Betrieb | System-Eigentümer | ISMS-Beauftragter | SOC |
+|----------|------|-----------------|-----------|-------------------|-------------------|-----|
+| Richtliniengenehmigung | A | B | I | I | V | I |
+| NTP-Infrastruktur-Einsatz | I | A/V | B | I | I | I |
+| Client-Systemkonfiguration | I | B | A/V | B | I | I |
+| Synchronisationsmonitoring | I | V | V | I | B | A |
+| Compliance-Bewertung | V | B | B | I | A | B |
+| Ausnahmegenehmigung | A | I | I | V | B | I |
+| Incident-Response | B | V | V | I | B | A |
 
-Diese Policy adressiert folgende regulatorische Anforderungen:
+Legende: A = Accountable (Rechenschaftspflichtig), V = Verantwortlich, B = Beratend, I = Informiert
 
-| Regulation | Requirement | Wie adressiert |
-|------------|-------------|----------------|
-| **Schweizer nDSG Art. 8** | Datensicherheit, Logging und Audit Trails | Synchronisierte Zeitstempel ermöglichen akkurate Logs und Audit Trails |
-| **EU DSGVO Art. 32** | Logging und Monitoring | Zeitsynchronisation ermöglicht konsistente Logging und Security Monitoring |
-| **ISO 27001:2022 A.8.17** | Clock Synchronization | Direkt implementiert durch diese Policy |
-| **PCI DSS v4.0.1 Req. 10.4** | Time-Synchronization Technology | NTP-Infrastruktur-Anforderungen und Zeitabweichungs-Schwellenwerte |
-| **FINMA/DORA/NIS2** | Audit Trail Integrity, Logging Capability | Zeitstempel-Konsistenz für regulatorisches Logging |
+## Monitoring & Berichterstattung
 
-**Compliance-Posture**: Diese Policy etabliert Framework für Clock Synchronization Compliance. Tatsächlicher Compliance-Status gemessen durch:
+**Monitoring-Anforderungen**:
 
-- System Synchronization Status Assessment (monatlich via ISMS-IMP-A.8.17.2)
-- NTP-Infrastruktur-Compliance-Review (quartalsweise)
-- Audit Findings und Corrective Actions
-- Regulatory Assessment Results
+[Organisation] überwacht die Zeitsynchronisation, um sicherzustellen, dass:
 
-## Training & Awareness
+- Alle im Geltungsbereich befindlichen Systeme aktive Synchronisation mit genehmigten Zeitquellen aufrechterhalten
+- Zeitabweichung innerhalb der in Abschnitt 2.3 definierten akzeptablen Schwellen bleibt
+- NTP-Infrastrukturverfügbarkeit und -leistung die Serviceanforderungen erfüllen
+- Synchronisationsausfälle zeitnah erkannt und behoben werden
 
-**Zielgruppen**:
+**Schlüsselmetriken**:
 
-- **Neues Personal**: Policy Awareness als Teil von Security Onboarding
-- **Network Operations**: Detailliertes Training auf NTP-Server-Management
-- **System Administrators**: Training auf Client-Systemkonfiguration und Verifizierung
-- **Security Operations**: Awareness auf Importance Zeitsynchronisation für Incident Response
-- **ISMS Officers**: Training auf Assessment-Prozeduren und Compliance-Reporting
+| Metrik | Ziel | Compliance-Schwelle | Gilt für |
+|--------|------|--------------------|---------|
+| **Synchronisations-Compliance** | ≥98 % | ≥95 % | Alle im Geltungsbereich befindlichen Systeme |
+| **Durchschnittliche Zeitabweichung** | <500 ms | <1 Sekunde | Allgemeine Systeme |
+| **Kritische System-Abweichung** | <50 ms | <100 ms | Sicherheitskritische Systeme |
+| **Kritische System-Compliance** | 100 % | 100 % | SIEM, Authentifizierung, Zertifikatssysteme |
+| **Infrastrukturverfügbarkeit** | >99,9 % | >99,5 % | Interne NTP-Server |
 
-**Training-Materialien**:
+**Definitionen**:
 
-- Policy Overview-Präsentation
-- Implementation Guidance Workshops
-- Platform-spezifische How-To-Guides
-- Troubleshooting Playbooks
+- **Ziel**: Betriebsziel, das einen gesunden Zustand anzeigt
+- **Compliance-Schwelle**: Maximal akzeptabler Wert gemäss Abschnitt 2.3; Überschreitungen erfordern Abhilfe
+- **Synchronisations-Compliance**: Prozentsatz der im Geltungsbereich befindlichen Systeme mit verifiziertem Synchronisationsstatus innerhalb der letzten 7 Tage, der die Abweichung innerhalb der anwendbaren Schwelle für die Systemkategorie zeigt
+
+**Begründung für 95-%-Compliance-Schwelle**: Diese Schwelle erkennt an, dass vorübergehende Synchronisationsausfälle während Wartungsfenstern, Systemneustarts und Netzwerkunterbrechungen auftreten. Systeme unterhalb der Schwelle werden zur Behebung verfolgt. Anhaltende Nicht-Compliance (>30 Tage) löst Eskalation unabhängig vom Gesamtprozentsatz aus.
+
+**Berichterstattung**:
+
+- **Häufigkeit**: Monatliche Compliance-Berichte, vierteljährliche Executive-Zusammenfassungen
+- **Zielgruppe**: ISB (monatlich), Geschäftsleitung (vierteljährlich), IT-Betrieb (kontinuierliches Monitoring)
+- **Format**: Summary Dashboard mit Sync-Status, Abweichungsmetriken, Lücken und Abhilfeverfolgung
+- **Eskalation**: Sofortige Benachrichtigung bei Synchronisationsausfällen kritischer Systeme, Infrastrukturausfällen oder Compliance unter 90 %
+
+**Nachweisaufbewahrung**:
+
+Compliance-Nachweise (Synchronisationsstatusberichte, Abweichungsmessungen, Bewertungsarbeitsbücher und Abhilfeunterlagen) MÜSSEN für mindestens **3 Jahre** aufbewahrt werden, um Auditzyklen und regulatorische Anfragen zu unterstützen. Die Nachweisaufbewahrung orientiert sich am ISO-27001-Zertifizierungszyklus und ermöglicht Trendanalysen über mehrere Bewertungszeiträume.
+
+**Detaillierte Verfahren**: ISMS-IMP-A.8.17.2 (Synchronisationsverifizierungsprozess) enthält Monitoring-Konfiguration, Verifizierungsverfahren, Metrik-Berechnungen und Berichtsvorlagen.
+
+## Ausnahmenmanagement
+
+**Anforderungen an Ausnahmenanträge**:
+
+Ausnahmen von Anforderungen der Zeitsynchronisationsrichtlinie erfordern:
+
+- Dokumentierte geschäftliche oder technische Begründung (z. B. Air-Gapped-System ohne GPS, Anbietereinschränkung)
+- Risikobewertung (Wahrscheinlichkeit und Auswirkung ungenauer Zeit, Restrisiko)
+- Kompensierende Kontrollen wo machbar (manuelle Zeitverifizierung, Log-Isolierung, reduzierte Protokollierung)
+- Zeitplan für vollständige Compliance (bei vorübergehender Ausnahme)
+- Formale Genehmigung gemäss Kompetenzmatrix
+
+**Genehmigungskompetenz**:
+
+- **Technische Ausnahmen** (spezifische Systemkonfigurationen, alternative Zeitquellen): ISB-Genehmigung
+- **Richtlinienebenen-Ausnahmen** (Anforderungsverzicht, dauerhafter Ausschluss): Genehmigung der Geschäftsleitung
+- **Maximale Dauer**: 12 Monate für vorübergehende Ausnahmen
+- **Verlängerung**: Erfordert aktualisierte Risikobewertung und Begründung
+
+**Ausnahmen-Neubewertung**: Verlängerungen von Ausnahmen erfordern Neubewertung gegen aktuelle Richtlinienanforderungen, nicht nur Weiterführung der ursprünglichen Begründung.
+
+**Verhinderung veralteter Ausnahmen**:
+- Ausnahmen, die innerhalb von 90 Tagen vor dem jährlichen Richtlinien-Review gewährt wurden, MÜSSEN in diesem Review-Zyklus explizit neu bewertet werden
+- Alle Ausnahmen, die sich ihrem 12-monatigen Ablauf nähern, MÜSSEN 60 Tage vor Ablauf zur Neubewertung vorgemerkt werden
+- Der ISMS-Beauftragte MUSS einen Ausnahmenkalender mit proaktiven Verlängerungsbenachrichtigungen führen
+- Abgelaufene Ausnahmen ohne Verlängerung fallen automatisch auf Standard-Richtlinienanforderungen zurück; betroffene System-Eigentümer werden 30 Tage vor Ablauf benachrichtigt
+
+**Kompensierende Kontrollen** für ausgenommene Systeme können umfassen:
+
+- Manuelle Zeitverifizierungsverfahren mit dokumentierter Häufigkeit
+- Log-Isolierung (nicht mit anderen Systemen für forensische Analyse korreliert)
+- Reduzierte Log-Aufbewahrung oder keine Protokollierungsanforderung
+- Risikoakzeptanzdokumentation mit Anerkennung der Einschränkungen
+
+**Monitoring**: Aktive Ausnahmen werden vierteljährlich vom ISB geprüft. Wirksamkeit kompensierender Kontrollen verifiziert. Ausnahmen werden widerrufen, wenn sich das Risikoprofil ändert, kompensierende Kontrollen versagen oder Compliance machbar wird.
+
+## Incident-Response
+
+**Sicherheitsvorfälle bei der Zeitsynchronisation** umfassen:
+
+- Weitreichende Synchronisationsausfälle, die mehrere Systeme oder kritische Infrastruktur betreffen
+- Übermässige Zeitabweichung bei sicherheitskritischen Systemen (SIEM, Authentifizierungsserver, Zertifizierungsstellen)
+- Kompromittierung der NTP-Infrastruktur oder vermutete böswillige Zeitmanipulation
+- Nichtverfügbarkeit von Zeitquellen oder Verlust der Redundanz
+- Systeme, die trotz Abhilfemassnahmen dauerhaft keine Synchronisation herstellen können
+
+**Reaktionsprozess**:
+1. **Erkennung & Meldung**: Monitoring-Systeme generieren Alarme; SOC oder IT-Betrieb wird sofort benachrichtigt
+2. **Bewertung**: Vorfallschweregradklassifizierung (Kritisch, Hoch, Mittel, Niedrig) basierend auf betroffenen Systemen und Sicherheitsauswirkungen
+3. **Untersuchung**: Ursachenanalyse (NTP-Serverausfall, Netzwerkkonnektivität, Fehlkonfiguration, Infrastrukturproblem)
+4. **Eindämmung**: Sofortmassnahmen basierend auf Vorfalltyp (Failover zu Backup-NTP, Dienst wiederherstellen, betroffene Systeme isolieren)
+5. **Wiederherstellung**: Systemwiederherstellung, Konfigurationskorrektur und Verifizierung des Synchronisationsstatus
+6. **Nach dem Vorfall**: Gewonnene Erkenntnisse, Kontrollverbesserungen und Präventivmassnahmen
+
+**Kritische Vorfälle**:
+
+- Synchronisationsausfälle bei sicherheitskritischen Systemen (SIEM, Authentifizierung) werden als **hochprioritäre Vorfälle** behandelt, die sofortige Reaktion erfordern
+- Infrastrukturweite Ausfälle werden innerhalb von 1 Stunde an IT-Management und ISB eskaliert
+- Vermutete Zeitmanipulation wird zur Sicherheitsuntersuchung an das SOC eskaliert
+
+**Reaktionszeitrahmen**:
+
+- **Kritische Systeme**: Untersuchung innerhalb 1 Stunde, Abhilfeplan innerhalb 4 Stunden, Lösung innerhalb 24 Stunden
+- **Standardsysteme**: Untersuchung innerhalb 4 Geschäftsstunden, Abhilfeplan innerhalb 1 Geschäftstag, Lösung innerhalb 3 Geschäftstagen
+
+**NTP-Infrastrukturklassifizierung**: Interne NTP-Server und Konnektivität zu autoritativen Zeitquellen sind als kritische Infrastruktur klassifiziert. Ausfälle folgen den Reaktionszeitrahmen für kritische Systeme.
+
+**Detaillierte Verfahren**: ISMS-IMP-A.8.17.2 (Synchronisationsverifizierungsprozess) enthält Vorfallklassifizierungskriterien, Reaktions-Workflows, Eskalationsverfahren und Koordination mit Endpunktschutz- und Infrastrukturteams.
+
+## Richtlinien-Governance
+
+**Richtlinienprüfung**:
+
+- **Häufigkeit**: Jährliches Minimum
+- **Auslöser**: Regulatorische Änderungen, schwerwiegende Vorfälle, wesentliche Infrastrukturänderungen (Rechenzentrum-Migration, Cloud-Einführung), Technologieänderungen (neue Zeitsynch-Protokolle), Audit-Befunde
+- **Prüfende**: ISB, IT-Security-Team, Netzwerkbetrieb, IT-Betrieb, Legal/Compliance
+- **Genehmigung**: ISB (technisch), Geschäftsleitung (strategisch)
+
+**Prüfung der Umsetzungsstandards**:
+
+- **Häufigkeit**: Halbjährlich (Zeitsynchronisationstechnologien und -protokolle entwickeln sich regelmässig weiter)
+- **Kompetenz**: IT-Security-Team und Netzwerkbetrieb schlagen Aktualisierungen vor, ISB genehmigt
+- **Hinweis**: Aktualisierungen des Umsetzungsstandards (ISMS-IMP-A.8.17) erfordern keine Richtlinienrevision
+
+**Richtlinienaktualisierungen**:
+
+- **Geringfügig** (Klarstellungen, Referenzen, Schwellenwertsanpassungen): ISB-Genehmigung, Kommunikation innerhalb 30 Tage
+- **Wesentlich** (Scope-Änderungen, neue Anforderungen, Infrastrukturänderungen): Vollständige Genehmigungskette, Umsetzungszeitplan gemäss Änderungsmanagement
+- **Notfall** (kritische Sicherheitsschwachstellen, NTP-Protokollprobleme): ISB-Genehmigung, sofortige Kommunikation und Umsetzung
+
+**Kommunikation**: Richtlinie im ISMS-Dokumentenrepository veröffentlicht. Änderungen organisationsweit an betroffenes Personal kommuniziert (Netzwerkbetrieb, Systemadministratoren, Security Operations). Schulung bei wesentlichen Änderungen der Verantwortlichkeiten oder Verfahren.
+
+---
+
+# Umsetzung & Referenzen
+
+## Integration mit dem ISMS
+
+Diese Richtlinie integriert sich in das Informationssicherheits-Managementsystem von [Organisation]:
+
+**Risikobewertung** (ISO 27001 Clause 6.1):
+
+- Zeitsynchronisationskontrollen basierend auf Risikobewertung von [Organisation] ausgewählt
+- Systemkritikalität bestimmt Synchronisationsanforderungen und akzeptable Abweichungsschwellen
+- Risikobehandlungspläne dokumentieren Zeitsynchronisationskontrollumsetzung und Ausnahmen
+
+**Statement of Applicability** (ISO 27001 Clause 6.1.3):
+
+- Control-A.8.17-Anwendbarkeit in SoA von [Organisation] begründet
+- Umsetzungsstatus durch Compliance-Bewertungen verfolgt und berichtet
+
+**Verwandte Kontrollen**:
+
+- A.8.21 (Network Services Security): Stellt sichere NTP-Infrastruktur bereit, von der A.8.17 abhängt
+- A.8.15 (Logging): Durch synchronisierte Zeit für Log-Korrelation und forensische Analyse ermöglicht
+- A.8.16 (Monitoring Activities): Schliesst Zeitsynchronisationsstatus als überwachten Parameter ein
+- A.5.9 (Inventory of Information and Assets): Stellt Systeminventar für den Synchronisationsbewertungsumfang bereit
+- A.8.9 (Configuration Management): NTP-Konfiguration als Teil der Systembaseline verwaltet
+- A.5.28 (Collection of Evidence): Zeitsynchronisierte Protokolle liefern zulässige forensische Nachweise
+
+## Umsetzungsressourcen
+
+**Umsetzungsanleitung** (ISMS-IMP-A.8.17-Suite):
+
+- ISMS-IMP-A.8.17.1: Zeitquellen-Konfiguration (autoritative Quellen, interne NTP-Server, Client-Konfiguration für Linux, Windows, Netzwerkgeräte, Cloud-Plattformen)
+- ISMS-IMP-A.8.17.2: Synchronisationsverifizierungsprozess (Verifizierungsbefehle je Plattform, Abweichungsmessung, automatisierte Statuserfassung, Compliance-Bewertung)
+
+**Bewertungswerkzeuge**:
+
+- Excel-basierte Bewertungsarbeitsbücher mit automatisierten Compliance-Berechnungen
+- Zeitquellen-Inventarvorlagen
+- Systemsynchronisationsstatus-Verfolgung
+- Summary Dashboard und Lückenanalyse
+- Nachweisregister für Audit-Unterstützung
+
+**Unterstützungsmaterialien**:
+
+- Ausnahmenantragsverfahren und -vorlagen
+- Incident-Response-Playbooks
+- Plattformspezifische Kurzreferenzleitfäden
+- Schulungsmaterialien für Netzwerkbetrieb und Systemadministratoren
+
+## Regulatorisches Mapping
+
+Diese Richtlinie adressiert Zeitsynchronisationsanforderungen aus:
+
+| Anforderungskategorie | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS v4.0.1* | FINMA* | DORA/NIS2* |
+|----------------------|-----------|---------|-----------|---------|--------|------------|
+| Synchronisierte Zeitquellen | Art. 8 | Art. 32 | A.8.17 | Req. 10.4 | Risikobasiert | Protokollierungsfähigkeit |
+| Protokollierung und Prüfpfade | Art. 8 | Art. 32 | A.8.15, A.8.17 | Req. 10 | Prüfpfad | IKT-Risikomanagement |
+| Monitoring und Alarmierung | Art. 8 | Art. 32 | A.8.16, A.8.17 | Req. 10 | Monitoring | Monitoring-Massnahmen |
+| Forensische Analysefähigkeit | Art. 8 | Art. 33 | A.8.17, A.5.28 | Req. 10, 12.10 | Incident-Mgmt | Incident-Response |
+
+*Bedingte Anwendbarkeit gemäss ISMS-POL-00
+
+**Hinweis**: Spezifische regulatorische Interpretation und Compliance-Verifizierungsverfahren sind im Summary Dashboard von ISMS-IMP-A.8.17.2 (Synchronisationsverifizierungsprozess) dokumentiert.
+
+## Schulung & Sensibilisierung
+
+**Sicherheitssensibilisierung** (Alle Mitarbeitenden):
+
+- Jährliches Schulungsmodul zur Bedeutung genauer Zeit für Sicherheitsoperationen
+- Verständnis der Rolle der Zeitsynchronisation bei Log-Korrelation und Incident-Response
+- Verfahren zur Meldung beobachteter Zeitabweichungen
+
+**Technische Schulung** (Netzwerkbetrieb, Systemadministratoren):
+
+- NTP-Infrastruktur-Einsatz und -Konfiguration
+- Plattformspezifische Zeitsynchronisationskonfiguration (Linux, Windows, Netzwerkgeräte, Cloud)
+- Fehlerbehebung bei Synchronisationsausfällen
+- Verifizierungsverfahren und Bewertungswerkzeuge
+- Alarmreaktion und Abhilfeverfahren
+
+**Betriebliche Schulung** (IT-Betrieb, Security Operations):
+
+- Überwachung des Zeitsynchronisationsstatus
+- Reaktion auf Synchronisationsalarme
+- Eskalationsverfahren bei kritischen Ausfällen
+- Koordination zwischen Infrastrukturteams und Sicherheitsteams
 
 ---
 
 # Definitionen
 
-**Autoritative Zeitquelle**: Stratum 0 oder Stratum 1 Zeitquelle (GPS, Atomuhr, NIST-Server), die primäre Zeitreferenz bereitstellt.
+**Autoritative Zeitquelle**: Externe Referenzuhr, die genaue Zeit aus Atomuhren, GPS-Satelliten oder gleichwertigen hochpräzisen Quellen bereitstellt (Stratum 0 oder Stratum 1).
 
-**Compliance Threshold**: Maximal akzeptabler Wert für Metrik; Überschreitung erfordert Remediation.
+**Stratum**: Hierarchische Stufe in der NTP-Architektur, die den Abstand von der autoritativen Zeitquelle angibt. Niedrigere Stratum-Nummer bedeutet grössere Nähe zur Referenzuhr (Stratum 0 = Atomuhr, Stratum 1 = direkt mit Stratum 0 verbunden, Stratum 2 = mit Stratum 1 synchronisiert usw.).
 
-**NTP (Network Time Protocol)**: Protokoll verwendet für Uhren-Synchronisation zwischen Computer-Systemen über paket-geschaltete, variable-latency Datennetzwerke.
+**Zeitabweichung**: Abweichung zwischen der Uhr eines Systems und der autoritativen Zeitquelle, gemessen in Sekunden oder Millisekunden. Akzeptable Abweichungsschwellen variieren je nach Systemkritikalität.
 
-**Stratum**: Distanz von Referenzuhr in NTP-Hierarchie. Stratum 0 = direkte Physik-Referenz (GPS, Atomuhr), Stratum 1 = Computer synchronisiert zu Stratum 0, Stratum 2 = Computer synchronisiert zu Stratum 1, etc.
+**Synchronisationsstatus**: Zustand, der anzeigt, ob ein System aktiv Zeitsynchronisation mit konfigurierten Zeitquellen aufrechterhält (synchronisiert, nicht synchronisiert, unbekannt).
 
-**Stratum 16**: Unsynchronisierter Zustand - indiziert NTP Sync Failure.
+**NTP (Network Time Protocol)**: Branchenstandard-Protokoll für Zeitsynchronisation über paketvermittelte Netzwerke (RFC 5905). Bietet hierarchische Zeitverteilung mit typischerweise wenige Dutzend Millisekunden Genauigkeit.
 
-**Target**: Operationales Ziel indizierende gesunden Zustand.
+**Interner NTP-Server**: Von der Organisation betriebener Zeitserver (typischerweise Stratum 2), der sich mit externen autoritativen Quellen synchronisiert und Zeitdienste für interne Client-Systeme bereitstellt.
 
-**Zeitabweichung (Time Drift)**: Differenz zwischen System Clock und autoritativer Zeitquelle.
+**Kritisches Sicherheitssystem**: System, bei dem Zeitgenauigkeit direkt den Sicherheitsbetrieb beeinflusst (z. B. SIEM für Log-Korrelation, Authentifizierungsserver für Token-Validierung, Zertifizierungsstellen für Zertifikatsgültigkeit).
 
-**Zeitsynchronisation**: Prozess koordinierender System-Clocks zu gemeinsamer Zeitreferenz.
-
----
-
-# Approval Record
-
-| Rolle | Name | Unterschrift | Datum |
-|-------|------|--------------|-------|
-| **CISO** (Primary Approver) | [Name] | [Unterschrift] | [Datum] |
-| **CIO** (Secondary Approver) | [Name] | [Unterschrift] | [Datum] |
-| **Legal/Compliance** | [Name] | [Unterschrift] | [Datum] |
-| **Executive Management** (Finale Autorität) | [Name] | [Unterschrift] | [Datum] |
-
-**Freigabedatum**: [Datum]  
-**Inkrafttretungsdatum**: [Datum]  
-**Nächstes Review-Datum**: [Freigabedatum + 12 Monate]
+**Zeitquellen-Redundanz**: Konfiguration mehrerer unabhängiger Zeitquellen zur Sicherstellung von Verfügbarkeit und Genauigkeit trotz Einzelquellenausfall.
 
 ---
 
-**END OF DOCUMENT**
+# Genehmigungsprotokoll
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+| Rolle | Name | Datum |
+|-------|------|-------|
+| **Informationssicherheitsbeauftragter (ISB)** | [Name] | [Date] |
+| **IT-Leiter (ITL)** | [Name] | [Date] |
+| **Legal/Compliance Officer** | [Name] | [Date] |
+| **Geschäftsleitung (Geschäftsleitung)** | [Name] | [Date] |
+
+---
+
+**ENDE DES RICHTLINIENDOKUMENTS**
+
+---
+
+*Diese Richtlinie legt Anforderungen fest. Umsetzungsverfahren sind in ISMS-IMP-A.8.17 (UG/TG) dokumentiert.*
+
+<!-- QA_VERIFIED: 2026-03-28 -->

@@ -471,7 +471,7 @@ Policy changes require CISO approval; major revisions require Executive Manageme
 | **Chief Information Officer (CIO)** | [Name] | [Date] |
 | **Chief Human Resources Officer (CHRO)** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management** | [Name] | [Date] |
+| **Executive Management[Name] | [Date] |
 
 ---
 

@@ -10,7 +10,7 @@
 | **Dokumenten Titel** | Webfilterung |
 | **Dokumententyp** | Konzept |
 | **Dokument-ID** | ISMS-POL-A.8.23 |
-| **Dokumenteneigentümer/in** | Chief Information Security Officer (CISO) |
+| **Dokumenteneigentümer/in** | Informationssicherheitsbeauftragter (ISB) |
 | **Freigabe durch** | Geschäftsleitung (GL) |
 | **Erstellt** | [Datum] |
 | **Version** | 1.0 |
@@ -29,8 +29,8 @@
 
 **Freigabekette**:
 
-- Primär: Chief Information Security Officer (CISO)
-- Sekundär: Chief Information Officer (CIO)
+- Primär: Informationssicherheitsbeauftragter (ISB)
+- Sekundär: IT-Leiter (ITL)
 - Compliance: Legal/Compliance Officer
 - Finale Autorität: Geschäftsleitung (GL)
 
@@ -252,7 +252,7 @@ Kategorie-Klassifizierungen und Blocking-Regeln sind dokumentiert in ISMS-IMP-A.
 - Akzeptanz von Restrisiken
 - Unterstützung des Sicherheitsprogramms
 
-**Chief Information Security Officer (CISO)**:
+**Informationssicherheitsbeauftragter (ISB)**:
 
 - Verantwortlich für gesamte Web-Filtering-Richtlinien- und Programm-Effektivität
 - Genehmigung von Hochrisiko-Exceptions und Richtlinien-Änderungen
@@ -512,8 +512,8 @@ Diese Richtlinie adressiert Web-Filtering-Anforderungen von:
 
 | Rolle | Name | Datum |
 |-------|------|-------|
-| **Chief Information Security Officer (CISO)** | [Name] | [Datum] |
-| **Chief Information Officer (CIO)** | [Name] | [Datum] |
+| **Informationssicherheitsbeauftragter (ISB)** | [Name] | [Datum] |
+| **IT-Leiter (ITL)** | [Name] | [Datum] |
 | **Legal/Compliance Officer** | [Name] | [Datum] |
 | **Geschäftsleitung (GL)** | [Name] | [Datum] |
 

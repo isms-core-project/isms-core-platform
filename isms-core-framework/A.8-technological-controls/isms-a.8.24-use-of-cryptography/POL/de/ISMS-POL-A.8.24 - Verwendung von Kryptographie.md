@@ -10,8 +10,8 @@
 | **Dokumenten Titel** | Verwendung von Kryptographie |
 | **Dokumententyp** | Konzept |
 | **Dokument-ID** | ISMS-POL-A.8.24 |
-| **Ersteller/in** | Chief Information Security Officer (CISO) |
-| **Dokumenteneigentümer/in** | Chief Executive Officer (CEO) |
+| **Ersteller/in** | Informationssicherheitsbeauftragter (ISB) |
+| **Dokumenteneigentümer/in** | Geschäftsführer (GF) |
 | **Freigabe durch** | Geschäftsleitung (GL) |
 | **Erstellt** | [Date] |
 | **Version** | 1.0 |
@@ -30,8 +30,8 @@
 
 **Freigabekette**:
 
-- Primär: Chief Information Security Officer (CISO)
-- Sekundär: Chief Information Officer (CIO)
+- Primär: Informationssicherheitsbeauftragter (ISB)
+- Sekundär: IT-Leiter (ITL)
 - Compliance: Legal/Compliance Officer
 - Finale Autorität: Geschäftsleitung (GL)
 
@@ -250,7 +250,7 @@ Folgende Praktiken sind **streng verboten**:
 
 ## Rollen & Verantwortlichkeiten
 
-**Chief Information Security Officer (CISO)**:
+**Informationssicherheitsbeauftragter (ISB)**:
 
 - Richtlinien-Eigentümerschaft und strategische Ausrichtung
 - Genehmigung kryptographischer Exceptions (technisch)
@@ -510,8 +510,8 @@ Diese Richtlinie adressiert kryptographische Anforderungen von:
 
 | Rolle | Name | Datum |
 |-------|------|-------|
-| **Chief Information Security Officer (CISO)** | [Name] | [Datum] |
-| **Chief Information Officer (CIO)** | [Name] | [Datum] |
+| **Informationssicherheitsbeauftragter (ISB)** | [Name] | [Datum] |
+| **IT-Leiter (ITL)** | [Name] | [Datum] |
 | **Legal/Compliance Officer** | [Name] | [Datum] |
 | **Geschäftsleitung (GL)** | [Name] | [Datum] |
 

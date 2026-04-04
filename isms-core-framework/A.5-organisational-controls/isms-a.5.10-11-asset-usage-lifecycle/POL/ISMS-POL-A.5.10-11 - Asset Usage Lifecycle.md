@@ -522,7 +522,7 @@ This policy addresses asset management requirements from:
 | **Chief Information Security Officer (CISO)** | [Name] | [Date] |
 | **Human Resources Director** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management** | [Name] | [Date] |
+| **Executive Management[Name] | [Date] |
 
 ---
 

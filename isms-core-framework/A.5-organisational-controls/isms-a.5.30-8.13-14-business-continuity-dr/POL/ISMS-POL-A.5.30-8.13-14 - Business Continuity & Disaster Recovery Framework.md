@@ -1497,7 +1497,7 @@ This policy addresses BC/DR requirements from applicable regulations:
 | **Chief Information Officer (CIO)** | [Name] | [Date] |
 | **BC/DR Coordinator** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management** | [Name] | [Date] |
+| **Executive Management[Name] | [Date] |
 
 ---
 

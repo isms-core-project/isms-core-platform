@@ -518,7 +518,7 @@ This policy addresses web filtering requirements from:
 | **Chief Information Security Officer (CISO)** | [Name] | [Date] |
 | **Chief Information Officer (CIO)** | [Name] | [Date] |
 | **Legal/Compliance Officer** | [Name] | [Date] |
-| **Executive Management** | [Name] | [Date] |
+| **Executive Management[Name] | [Date] |
 
 ---
 

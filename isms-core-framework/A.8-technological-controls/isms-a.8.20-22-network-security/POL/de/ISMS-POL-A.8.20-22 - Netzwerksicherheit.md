@@ -10,7 +10,7 @@
 | **Dokumenten Titel** | Netzwerksicherheit |
 | **Dokumententyp** | Konzept |
 | **Dokument-ID** | ISMS-POL-A.8.20-22 |
-| **Dokumenteneigentümer/in** | Chief Information Security Officer (CISO) |
+| **Dokumenteneigentümer/in** | Informationssicherheitsbeauftragter (ISB) |
 | **Freigabe durch** | Geschäftsleitung (GL) |
 | **Erstellt** | [Date] |
 | **Version** | 1.0 |
@@ -29,8 +29,8 @@
 
 **Freigabekette**:
 
-- Primär: Chief Information Security Officer (CISO)
-- Sekundär: Chief Information Officer (CIO)
+- Primär: Informationssicherheitsbeauftragter (ISB)
+- Sekundär: IT-Leiter (ITL)
 - Technisch: Network Operations Manager
 - Compliance: Legal/Compliance Officer
 - Finale Autorität: Geschäftsleitung (GL)
@@ -293,15 +293,15 @@ Rules ohne dokumentierte Business-Justifikation, die während Review identifizie
 
 ## Rollen & Verantwortlichkeiten
 
-**Chief Information Security Officer (CISO)**:
+**Informationssicherheitsbeauftragter (ISB)**:
 
 - Richtlinien-Owner und ultimative Verantwortlichkeit für Netzwerksicherheits-Kontrollen
 - Genehmigung von Netzwerksicherheits-Anforderungen und Risk Treatment Entscheidungen
 - Genehmigung von Exceptions zu Netzwerksicherheits-Anforderungen
-- Reporting Netzwerksicherheits-Posture an Executive Management
+- Reporting Netzwerksicherheits-Posture an Geschäftsleitung
 - Sicherstellung adäquater Ressourcen für Netzwerksicherheits-Implementierung
 
-**Chief Information Officer (CIO) / IT Director**:
+**IT-Leiter (ITL) / IT Director**:
 
 - Operationale Verantwortlichkeit für Netzwerkinfrastruktur und Services
 - Ressourcen-Allokation für Netzwerksicherheits-Implementierung
@@ -411,7 +411,7 @@ Rules ohne dokumentierte Business-Justifikation, die während Review identifizie
 
 **Reporting-Audience**:
 
-- **Executive Management**: Executive Summary von Netzwerksicherheits-Posture, kritische Risiken, strategische Initiativen
+- **Geschäftsleitung**: Executive Summary von Netzwerksicherheits-Posture, kritische Risiken, strategische Initiativen
 - **CISO**: Detaillierte Compliance Reports, Security Event Summaries, Gap-Analyse
 - **IT Management**: Operational Metriken, Service Availability, Infrastructure Status
 - **Auditoren**: Zugang zu Assessment Workbooks, Evidence und Compliance-Dokumentation
@@ -436,7 +436,7 @@ Wenn Netzwerksicherheits-Anforderungen nicht erfüllt werden können aufgrund te
 - **Low Risk**: Information Security Manager
 - **Medium Risk**: CISO
 - **High Risk**: CISO + CIO (gemeinsame Genehmigung)
-- **Critical Risk**: CISO + Executive Management
+- **Critical Risk**: CISO + Geschäftsleitung
 
 **Exception-Dokumentation**:
 
@@ -507,7 +507,7 @@ Wenn Netzwerksicherheits-Anforderungen nicht erfüllt werden können aufgrund te
 | **Low** | Network/Security Team handhabt | Innerhalb 24 Stunden | Network Operations Manager |
 | **Medium** | Network/Security Team handhabt mit Management Awareness | Innerhalb 4 Stunden | Network Operations Manager, Information Security Manager |
 | **High** | Incident Response Team engaged | Innerhalb 1 Stunde | CISO, CIO, Network Operations Manager |
-| **Critical** | Full Incident Response Activation | Sofort | CISO, CIO, Executive Management, Legal/Compliance (bei Data Breach) |
+| **Critical** | Full Incident Response Activation | Sofort | CISO, CIO, Geschäftsleitung, Legal/Compliance (bei Data Breach) |
 
 **Severity-Eskalation**: Incidents können zu höherer Severity eskaliert werden falls:
 
@@ -527,7 +527,7 @@ Wenn Netzwerksicherheits-Anforderungen nicht erfüllt werden können aufgrund te
 - **Frequenz**: Jährlicher Review-Cycle
 - **Trigger**: Regulatorische Änderungen, signifikante Security-Incidents, Technologie-Änderungen, organisatorische Änderungen, Audit-Findings
 - **Reviewer**: CISO (primär), CIO, Network Operations Manager, Legal/Compliance Officer
-- **Genehmigung**: Executive Management (finale Autorität)
+- **Genehmigung**: Geschäftsleitung (finale Autorität)
 
 **Implementation Standards Review** (separater Lifecycle von Richtlinie):
 
@@ -552,7 +552,7 @@ Wenn Netzwerksicherheits-Anforderungen nicht erfüllt werden können aufgrund te
 - Änderungen zu Rollen/Verantwortlichkeiten
 - Änderungen zu Exception-Genehmigungs-Autorität
 - Scope-Änderungen
-- Genehmigung: Executive Management (volle Genehmigungs-Kette)
+- Genehmigung: Geschäftsleitung (volle Genehmigungs-Kette)
 - Notification: Update Versionsnummer (z.B. 1.0 → 2.0)
 - Kommunikation: Notification an alle Stakeholder, Training falls erforderlich
 
@@ -560,7 +560,7 @@ Wenn Netzwerksicherheits-Anforderungen nicht erfüllt werden können aufgrund te
 
 - Kritische Vulnerability oder Bedrohung erfordert sofortige Richtlinien-Änderung
 - Regulatorisches Mandat erfordert sofortige Compliance
-- Genehmigung: CISO (mit Executive Management Notification innerhalb 24 Stunden)
+- Genehmigung: CISO (mit Geschäftsleitung Notification innerhalb 24 Stunden)
 - Notification: Sofortige Kommunikation an betroffene Parteien
 - Formalisierung: Retroaktive Genehmigung bei nächster Richtlinien-Review
 

@@ -515,7 +515,7 @@ Evidence required to demonstrate this policy is operationally effective:
 |------|------|------|
 | **Chief Information Security Officer (CISO)** | [Name] | [Date to be set] |
 | **Chief Information Officer (CIO)** | [Name] | [Date to be set] |
-| **Executive Management** | [Name] | [Date to be set] |
+| **Executive Management[Name] | [Date to be set] |
 
 ---
 
