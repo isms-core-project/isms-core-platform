@@ -544,7 +544,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 |----------|-------------|
 | [PARADIGM.md](PARADIGM.md) | 🧭 Product overview and paradigm shift guide |
 | [PLATFORM.md](PLATFORM.md) | 🖥️ Platform architecture, features, and design decisions |
-| [COMPLIANCE.md](COMPLIANCE.md) | 📋 Compliance assessment modules — coverage notes, gaps, and audience for all 10 frameworks |
+| [COMPLIANCE.md](COMPLIANCE.md) | 📋 Compliance assessment modules — coverage notes, gaps, and audience for all 17 frameworks |
 | [GETTING-STARTED.md](GETTING-STARTED.md) | 🚀 How to run the Platform (Docker Compose setup guide) |
 | [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 Framework control pack index (53 packs) |
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A controls → 53 pack mapping |
