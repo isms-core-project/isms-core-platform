@@ -546,16 +546,23 @@ ISMS CORE includes an automated evidence ingestion layer. A single connector run
 
 ### Setup
 
-1. Set `CONNECTORS_WORKER_SECRET` in your `.env` (same value must be in both backend and runner)
-2. Start the connector runner (it uses its own `docker-compose.yml` in the `connectors/` directory):
+The connector runner (`isms-core-connectors`) is part of the main stack and starts automatically with:
 
 ```bash
-cd connectors/
-docker compose up -d
-cd ..
+docker compose up -d --build
 ```
 
-The runner is independent from the main stack. You can start, stop, or update it without affecting the platform.
+No separate step is required. The only prerequisite is setting the shared secret in your `.env`:
+
+```env
+CONNECTORS_WORKER_SECRET=<strong-secret>   # same value used by backend + runner
+```
+
+To restart the runner independently without rebuilding:
+
+```bash
+docker compose restart isms-core-connectors
+```
 
 ### Supported Connectors (44 systems)
 
