@@ -62,6 +62,8 @@ def update_organisation(
         org.description = body.description
     if body.settings is not None:
         org.settings = body.settings
+    if "country" in body.model_fields_set:
+        org.country = body.country.lower() if body.country else None
 
     db.commit()
     db.refresh(org)
@@ -101,6 +103,7 @@ def create_organisation(
         description=body.description,
         governance_mode=body.governance_mode,
         privacy_role=body.privacy_role,
+        country=body.country.lower() if body.country else None,
     )
     db.add(org)
     db.commit()
@@ -126,6 +129,8 @@ def update_organisation_by_id(
         org.description = body.description
     if body.settings is not None:
         org.settings = body.settings
+    if "country" in body.model_fields_set:
+        org.country = body.country.lower() if body.country else None
     db.commit()
     db.refresh(org)
     return OrganisationRead.model_validate(org)

@@ -1,0 +1,188 @@
+# Country configuration — United Kingdom
+# ISMS CORE Phase 23: UK Country Config
+# Base: CH-EN source POLs (50-isms-core-framework/, 10-isms-core-operational/)
+# Generator: scripts/generate_country_pol.py
+# Last updated: 2026-04-04
+#
+# Notes:
+#   - UK is post-Brexit; EU Regulations (DORA, NIS2, EU AI Act) are NOT directly
+#     applicable. UK has own equivalents — see token map and financial_sector below.
+#   - NCSC acronym is retained (same as CH source) — UK NCSC = National Cyber
+#     Security Centre (GCHQ). Coincidental match, no substitution needed.
+#   - Cyber Security and Resilience Bill (introduced Nov 2025) is expected to
+#     replace/update NIS 2018 — referenced as "forthcoming" until Royal Assent.
+#   - Data (Use and Access) Act 2025 amends UK GDPR and PECR (Royal Assent Jun 2025).
+#   - UK AI Bill expected H2 2026; current framework is voluntary/principles-based.
+
+country: United Kingdom
+country_adjective_en: British
+country_adjective_de: britisch
+country_adjective_fr: britannique
+country_adjective_it: britannico
+language: en
+base_language: en   # start from CH English source
+
+# ── Data protection ────────────────────────────────────────────────────────────
+law:
+  data_protection_full:   "UK General Data Protection Regulation (UK GDPR) and Data Protection Act 2018 (c.12), as amended by the Data (Use and Access) Act 2025"
+  data_protection_short:  "UK GDPR / DPA 2018"
+  dpa_name:               "Information Commissioner's Office (ICO)"
+  dpa_short:              "ICO"
+  dpa_url:                "https://ico.org.uk"
+  national_law_ref:       "Data Protection Act 2018, Chapter 12; UK GDPR (Regulation (EU) 2016/679 as retained in UK law from 31 December 2020)"
+  privacy_ordinance:      "Privacy and Electronic Communications (EC Directive) Regulations 2003 (SI 2003/2426), as amended by the Data (Use and Access) Act 2025"
+  incident_notification:  "Notification to the ICO within 72 hours (UK GDPR Art. 33; DPA 2018 s.67)"
+
+# ── Regulatory / cyber authorities ─────────────────────────────────────────────
+authority:
+  cyber_national:         "National Cyber Security Centre (NCSC)"
+  cyber_short:            "NCSC"
+  cyber_url:              "https://www.ncsc.gov.uk"
+  cert:                   "NCSC (National Cyber Security Centre)"
+  financial_prudential:   "Prudential Regulation Authority (PRA)"
+  financial_short:        "PRA"
+  financial_url:          "https://www.bankofengland.co.uk/prudential-regulation"
+  markets:                "Financial Conduct Authority (FCA)"
+  markets_short:          "FCA"
+  markets_url:            "https://www.fca.org.uk"
+  insurance:              "Prudential Regulation Authority (PRA)"
+  telecom:                "Office of Communications (Ofcom)"
+  telecom_short:          "Ofcom"
+  central_bank:           "Bank of England"
+  data_protection_officer_national: "ICO"
+
+# ── NIS equivalence (UK) ────────────────────────────────────────────────────────
+nis:
+  status:                 "current"
+  law_ref:                "The Network and Information Systems (NIS) Regulations 2018 (SI 2018/506)"
+  nis2_status:            "not_applicable"
+  nis2_note:              "NIS2 (EU 2022/2555) does not apply to UK post-Brexit. The Cyber Security and Resilience Bill (introduced November 2025) is expected to update SI 2018/506 — pending Royal Assent 2026."
+  forthcoming_bill:       "Cyber Security and Resilience (Network and Information Systems) Bill (2025–2026)"
+  implementing_body:      "NCSC / DSIT"
+
+# ── Financial sector regulations ────────────────────────────────────────────────
+financial_sector:
+  applicable_regs:
+    - "FCA PS21/3 — Building Operational Resilience (March 2021)"
+    - "PRA SS1/21 — Operational Resilience: Impact Tolerances for Important Business Services"
+    - "FCA PS26/2 / PRA PS7/26 — Operational Incident and Third-Party Reporting (March 2026, in force March 2027)"
+    - "PRA SS2/21 — Outsourcing and Third Party Risk Management (March 2021, updated November 2024)"
+    - "FCA PS24/16 / PRA PS16/24 — Operational Resilience: Critical Third Parties (November 2024)"
+    - "UK GDPR / Data Protection Act 2018 — applicable"
+    - "The Network and Information Systems (NIS) Regulations 2018 (SI 2018/506)"
+  excluded_regs:
+    - "DORA (EU 2022/2554) — EU regulation, not applicable to UK post-Brexit"
+    - "NIS2 Directive (EU 2022/2555) — EU directive, not applicable to UK post-Brexit"
+    - "FINMA Circ. 2023/01 — Operational risks (CH only)"
+    - "FINMA Circ. 2018/03 — Outsourcing banks (CH only)"
+    - "OPDo (Swiss Data Protection Ordinance) — CH only"
+    - "ISG (Swiss Federal Act on Information Security) — CH only"
+  dora_equivalent:        "FCA PS21/3 + PRA SS1/21 (operational resilience) and FCA PS26/2 / PRA PS7/26 (third-party reporting) are the UK functional equivalents of DORA"
+
+# ── AI regulation ───────────────────────────────────────────────────────────────
+ai_regulation:
+  status:                 "voluntary"
+  framework:              "UK Government Pro-Innovation AI Regulation (DSIT White Paper, March 2023)"
+  responsible_body:       "Department for Science, Innovation and Technology (DSIT) + AI Safety Institute"
+  mandatory_act:          "None (as of April 2026) — UK AI Bill expected H2 2026"
+  note:                   "EU AI Act (EU 2024/1689) does not apply to UK. DSIT AI Management Essentials scheme is under consultation for public sector procurement. AI Bill anticipated second half of 2026."
+
+# ── National cyber frameworks ───────────────────────────────────────────────────
+cyber_frameworks:
+  primary:                "NCSC Cyber Assessment Framework (CAF) v4.0"
+  secondary:
+    - "NCSC Cyber Essentials v3.2 (April 2025)"
+    - "NCSC 10 Steps to Cyber Security"
+    - "NCSC Protective DNS"
+  sector_specific:
+    health:               "NHS Data Security and Protection Toolkit (DSPT)"
+    financial:            "FCA/PRA Operational Resilience framework (PS21/3, SS1/21)"
+    government:           "HMG Security Policy Framework (SPF)"
+    critical_infra:       "NCSC CAF v4.0 (Critical National Infrastructure)"
+
+# ── Token substitution map ──────────────────────────────────────────────────────
+# Keys = strings that appear in CH source POLs
+# Values = replacement strings for GB country variant
+# NOTE: Base language is EN, so no country-name tokens in body text for most POLs.
+#       These tokens target CH-specific regulatory/authority references embedded in EN source.
+tokens:
+  # Country names
+  Switzerland:                    "United Kingdom"
+  Swiss:                          "British"
+  "swiss ":                       "british "
+  Schweiz:                        "United Kingdom"
+  Suisse:                         "United Kingdom"
+  Svizzera:                       "United Kingdom"
+  cantonal:                       "regional"
+
+  # Data protection law — compound forms first (longest-match wins)
+  "Swiss nFADP (revDSG)":         "UK GDPR / DPA 2018"
+  "Swiss nFADP (nDSG)":           "UK GDPR / DPA 2018"
+  "nFADP (revDSG)":               "UK GDPR / DPA 2018"
+  "nFADP (nDSG)":                 "UK GDPR / DPA 2018"
+  "nFADP (Swiss revDSG)":         "UK GDPR / DPA 2018"
+  "Swiss nFADP":                  "UK GDPR / DPA 2018"
+  "Swiss nDSG":                   "UK GDPR / DPA 2018"
+  "Swiss Data Protection Ordinance (DSV)": "UK GDPR / DPA 2018"
+  "Swiss DSV":                    "UK GDPR / DPA 2018"
+  "Data Protection Ordinance (DSV)": "UK GDPR / DPA 2018"
+  "Annex 1 DSV":                  "ICO adequacy list"
+  "Annex 1, DSV":                 "ICO adequacy list"
+  "DSV Annex 1":                  "ICO adequacy list"
+  nLPD:                           "UK GDPR / DPA 2018"
+  nFADP:                          "UK GDPR / DPA 2018"
+  nDSG:                           "UK GDPR / DPA 2018"
+  revDSG:                         "UK GDPR / DPA 2018"
+  DSV:                            "UK GDPR / DPA 2018"
+  "Federal Act on Data Protection": "UK General Data Protection Regulation (UK GDPR) and Data Protection Act 2018"
+  "new Federal Act on Data Protection": "UK GDPR and Data Protection Act 2018"
+  DSGVO:                          "UK GDPR"
+  RGPD:                           "UK GDPR"
+
+  # Privacy ordinance
+  OPDo:                           "ICO Guidance / Data (Use and Access) Act 2025"
+
+  # Swiss employment law — no UK direct equivalent; map to UK ERA 1996
+  "Swiss Code of Obligations":    "UK Employment Rights Act 1996"
+  "Code of Obligations":          "Employment Rights Act 1996"
+  "Swiss CO":                     "UK ERA 1996"
+  "Swiss OR":                     "UK ERA 1996"
+  "British OR":                   "UK ERA 1996"
+  "Swiss FADP":                   "UK GDPR / DPA 2018"
+
+  # Swiss government body
+  "Swiss Federal Council":        "UK Secretary of State"
+  "British Federal Council":      "UK Secretary of State"
+
+  # DPA / data protection authority
+  PFPDT:                          "ICO"
+  FDPIC:                          "ICO"
+  "Federal Data Protection and Information Commissioner": "Information Commissioner's Office (ICO)"
+  EDÖB:                           "ICO"
+
+  # Financial regulator
+  FINMA:                          "FCA / PRA"
+  "Swiss Financial Market Supervisory Authority": "Financial Conduct Authority (FCA) / Prudential Regulation Authority (PRA)"
+
+  # Central bank
+  BNS:                            "Bank of England"
+  "Swiss National Bank":          "Bank of England"
+  SNB:                            "Bank of England"
+
+  # National cyber law
+  ISG:                            "Cyber Security and Resilience Bill (2025–2026)"
+  "Federal Act on Information Security": "Cyber Security and Resilience (Network and Information Systems) Bill (2025–2026)"
+
+  # Currency
+  CHF:                            "GBP"
+  "Swiss francs":                 "pounds sterling"
+  "Swiss franc":                  "pound sterling"
+
+  # EU-specific regulations replaced with UK equivalents
+  "DORA (EU 2022/2554)":          "FCA PS21/3 / PRA SS1/21 (UK Operational Resilience)"
+  "DORA (if EU financial services entity)": "FCA/PRA Operational Resilience (if UK-regulated financial entity)"
+  DORA:                           "FCA/PRA Operational Resilience (PS21/3)"
+  "NIS2 (EU 2022/2555)":          "UK NIS Regulations 2018 (SI 2018/506)"
+  NIS2:                           "UK NIS Regulations 2018 (SI 2018/506)"
+  "EU AI Act":                    "UK AI Regulation (DSIT voluntary framework)"
+  "AI Act":                       "UK AI Regulation (DSIT)"

@@ -6,12 +6,14 @@ export interface OrganisationCreate {
   slug: string
   description?: string
   governance_mode?: string
+  country?: string | null
 }
 
 export interface OrganisationPatch {
   name?: string
   description?: string
   governance_mode?: string
+  country?: string | null
   settings?: Record<string, unknown>
 }
 

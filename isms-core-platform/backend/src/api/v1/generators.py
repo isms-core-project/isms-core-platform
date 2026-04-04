@@ -22,6 +22,7 @@ from src.schemas.generators import GeneratorGrouped, GeneratorRead, GeneratorUpd
 from src.core.config import get_settings
 from src.services.generator_service import render_generator, validate_rendered_script
 from src.services.workbook_service import WorkbookRegenError, regenerate_workbook, _product_base_path
+from src.services.country_renderer import render as render_for_country
 
 router = APIRouter(prefix="/generators", tags=["generators"])
 
@@ -60,7 +61,8 @@ def get_form_schema(
     _user: User = Depends(get_current_user),
 ):
     """Return input-only sheet schemas for a control group — used by the WebUI assessment form renderer.
-    Optionally filter to a single generator via generator_id (document_id)."""
+    Optionally filter to a single generator via generator_id (document_id).
+    Text fields are passed through country_renderer so CH terms are localised for non-CH orgs."""
     gc_lower = group_code.lower()
     q = (
         select(GeneratorDefinition)
@@ -78,6 +80,31 @@ def get_form_schema(
     if not gens:
         raise HTTPException(status_code=404, detail=f"No generators found for group_code={group_code}")
 
+    country = _user.organisation.country if _user.organisation else None
+
+    def _r(text: str | None) -> str | None:
+        """Apply country token rendering to a text field."""
+        if not text:
+            return text
+        return render_for_country(text, country)
+
+    def _render_columns(cols: list) -> list:
+        """Apply country rendering to column header and dv_values strings."""
+        out = []
+        for col in cols:
+            if not isinstance(col, dict):
+                out.append(col)
+                continue
+            c = dict(col)
+            if "header" in c:
+                c["header"] = _r(c["header"])
+            if "header_raw" in c:
+                c["header_raw"] = _r(c["header_raw"])
+            if "dv_values" in c and isinstance(c["dv_values"], list):
+                c["dv_values"] = [_r(o) if isinstance(o, str) else o for o in c["dv_values"]]
+            out.append(c)
+        return out
+
     result = []
     seen: set[str] = set()
     for gen in gens:
@@ -94,9 +121,9 @@ def get_form_schema(
             result.append({
                 "generator_document_id": gen.document_id,
                 "sheet_name": sheet_name,
-                "title_text": schema.get("title_text") or sheet_name,
-                "subtitle_text": schema.get("subtitle_text"),
-                "columns": schema.get("columns", []),
+                "title_text": _r(schema.get("title_text") or sheet_name),
+                "subtitle_text": _r(schema.get("subtitle_text")),
+                "columns": _render_columns(schema.get("columns", [])),
                 "sample_row": schema.get("sample_row", []),
                 "status_column_letter": schema.get("status_column_letter"),
             })

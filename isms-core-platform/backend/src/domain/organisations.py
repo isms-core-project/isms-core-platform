@@ -48,6 +48,9 @@ class Organisation(TimestampMixin, Base):
     )
     description: Mapped[str | None] = mapped_column(Text)
     is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True, server_default="true")
+    country: Mapped[str | None] = mapped_column(
+        String(2), nullable=True, comment="ISO 3166-1 alpha-2 country code. NULL = Switzerland (CH, default)."
+    )
     settings: Mapped[dict] = mapped_column(
         JSONB, default=dict, server_default="{}"
     )

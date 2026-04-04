@@ -1,0 +1,122 @@
+# Country configuration — Belgium (French-speaking)
+# ISMS CORE Phase 22: Country Localisation (Option B)
+# Base: CH-FR source POLs (50-isms-core-framework/, 10-isms-core-operational/)
+# Generator: scripts/generate_country_pol.py
+# Last updated: 2026-04-04
+
+country: Belgique
+country_adjective_fr: belge
+country_adjective_de: belgisch
+country_adjective_it: belga
+language: fr
+base_language: fr   # start from CH French variant
+
+# ── Data protection ────────────────────────────────────────────────────────────
+law:
+  data_protection_full:   "Règlement Général sur la Protection des Données (RGPD, UE 2016/679) et Loi du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel (LVP)"
+  data_protection_short:  "RGPD / LVP"
+  dpa_name:               "Autorité de Protection des Données (APD) / Gegevensbeschermingsautoriteit (GBA)"
+  dpa_short:              "APD/GBA"
+  dpa_url:                "https://www.autoriteprotectiondonnees.be"
+  national_law_ref:       "Loi du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel"
+  privacy_ordinance:      "Arrêté royal du 29 septembre 2019 portant sur les modalités d'application"
+  incident_notification:  "Notification à l'APD/GBA dans les 72 heures (Art. 33 RGPD)"
+
+# ── Regulatory / cyber authorities ─────────────────────────────────────────────
+authority:
+  cyber_national:         "Centre pour la Cybersécurité Belgique (CCB) / Centrum voor Cybersecurity België"
+  cyber_short:            "CCB"
+  cyber_url:              "https://ccb.belgium.be"
+  cert:                   "CERT.be (CCB)"
+  financial_prudential:   "Banque Nationale de Belgique (BNB) / Nationale Bank van België (NBB)"
+  financial_short:        "BNB/NBB"
+  financial_url:          "https://www.nbb.be"
+  markets:                "Autorité des Services et Marchés Financiers (FSMA) / Autoriteit voor Financiële Diensten en Markten"
+  markets_short:          "FSMA"
+  markets_url:            "https://www.fsma.be"
+  insurance:              "FSMA (pour les assurances) / BNB (pour les établissements de crédit)"
+  telecom:                "Institut Belge des Services Postaux et des Télécommunications (IBPT) / Belgisch Instituut voor Postdiensten en Telecommunicatie (BIPT)"
+  telecom_short:          "IBPT/BIPT"
+  central_bank:           "Banque Nationale de Belgique (BNB)"
+
+# ── NIS2 transposition ──────────────────────────────────────────────────────────
+nis2:
+  status:                 "enacted"
+  law_ref:                "Loi du 26 avril 2024 établissant un cadre pour la cybersécurité des réseaux et des systèmes d'information d'intérêt général pour la sécurité publique"
+  in_force:               "2024"
+  implementing_body:      "CCB (Centre pour la Cybersécurité Belgique)"
+  framework:              "CCB CyberFundamentals Framework 2025 (BASIC / IMPORTANT / ESSENTIAL)"
+
+# ── Financial sector regulations ────────────────────────────────────────────────
+financial_sector:
+  applicable_regs:
+    - "Règlement (UE) 2022/2554 (DORA) — applicable aux entités financières à partir du 17 janvier 2025"
+    - "Loi du 26 avril 2024 (NIS2 belge) — applicable aux entités essentielles et importantes"
+    - "Règlement (UE) 2016/679 (RGPD) — applicable"
+    - "Loi du 30 juillet 2018 (LVP) — applicable"
+    - "BNB/NBB Circulaire PPB-2023-1 — Saine gestion et gouvernance des établissements de crédit"
+    - "FSMA Circulaire sur la cybersécurité — applicable aux établissements financiers"
+  excluded_regs:
+    - "FINMA Circ. 2023/01 — Risques opérationnels (CH uniquement)"
+    - "FINMA Circ. 2018/03 — Externalisation banques (CH uniquement)"
+    - "OPDo (Ordonnance suisse sur la protection des données) (CH uniquement)"
+    - "ISG (Loi fédérale suisse sur la sécurité de l'information) (CH uniquement)"
+
+# ── National cyber frameworks ───────────────────────────────────────────────────
+cyber_frameworks:
+  primary:                "CCB CyberFundamentals Framework 2025 (implémentation NIS2 belge)"
+  tiers:
+    basic:                "BASIC — PME et entités hors champ NIS2"
+    important:            "IMPORTANT — Entités importantes NIS2"
+    essential:            "ESSENTIAL — Entités essentielles NIS2"
+  secondary:
+    - "CCB CyberFundamentals Small Self-assessment (PME)"
+
+# ── Token substitution map ──────────────────────────────────────────────────────
+tokens:
+  # Country names
+  SUISSES:                        "BELGES"
+  SUISSE:                         "BELGE"
+  Suisse:                         "Belgique"
+  suisse:                         "belge"
+  Switzerland:                    "Belgium"
+  Swiss:                          "Belgian"
+  Schweiz:                        "Belgien"
+  Svizzera:                       "Belgio"
+
+  # Data protection law
+  nLPD:                           "RGPD / LVP"
+  nFADP:                          "RGPD / LVP"
+  nDSG:                           "RGPD / LVP"
+  revDSG:                         "RGPD / LVP"
+  "Loi fédérale sur la protection des données":  "Règlement général sur la protection des données (RGPD) et Loi du 30 juillet 2018 (LVP)"
+  "loi fédérale sur la protection des données":  "Règlement général sur la protection des données (RGPD) et Loi du 30 juillet 2018 (LVP)"
+  "nouvelle loi sur la protection des données":  "RGPD et Loi LVP du 30 juillet 2018"
+
+  # Privacy ordinance
+  OPDo:                           "Arrêté royal du 29 septembre 2019"
+
+  # DPA
+  PFPDT:                          "APD/GBA"
+  FDPIC:                          "APD/GBA"
+  "Préposé fédéral à la protection des données et à la transparence": "Autorité de Protection des Données (APD/GBA)"
+  EDÖB:                           "APD/GBA"
+
+  # Swiss territorial references
+  cantonal:                       "régional"
+
+  # Cyber authority
+  NCSC:                           "CCB"
+  "Centre national pour la cybersécurité":       "Centre pour la Cybersécurité Belgique (CCB)"
+
+  # National cyber law
+  ISG:                            "Loi du 26 avril 2024 (NIS2 belge)"
+  "loi fédérale sur la sécurité de l'information": "Loi du 26 avril 2024 relative à la cybersécurité"
+
+  # Financial regulator
+  FINMA:                          "BNB/NBB et FSMA"
+  "Autorité fédérale de surveillance des marchés financiers": "Banque Nationale de Belgique (BNB) et FSMA"
+
+  # Central bank
+  BNS:                            "Banque Nationale de Belgique (BNB)"
+  "Banque nationale suisse":      "Banque Nationale de Belgique (BNB)"

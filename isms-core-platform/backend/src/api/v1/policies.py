@@ -11,6 +11,7 @@ from src.domain.content import Policy
 from src.domain.users import User
 from src.schemas.policies import PolicyListRead, PolicyStateUpdate
 from src.services.audit_service import log_event
+from src.services.country_renderer import render as render_for_country
 from src.services.policy_service import list_policies
 
 router = APIRouter(prefix="/policies", tags=["policies"])
@@ -90,9 +91,12 @@ def get_policy_content(
     path = Path(policy.file_path)
     if not path.exists():
         raise HTTPException(status_code=404, detail="File not found on filesystem")
+    content = path.read_text(encoding="utf-8")
+    content = render_for_country(content, _user.organisation.country if _user.organisation else None)
     return {
         "document_id": policy.document_id,
         "title": policy.title,
         "policy_type": policy.policy_type.value if hasattr(policy.policy_type, "value") else str(policy.policy_type),
-        "content": path.read_text(encoding="utf-8"),
+        "content": content,
+        "country": _user.organisation.country if _user.organisation else None,
     }

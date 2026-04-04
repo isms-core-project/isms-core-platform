@@ -16,6 +16,7 @@ class OrganisationRead(BaseModel):
     privacy_role: PrivacyRole
     description: str | None
     is_active: bool = True
+    country: str | None = None
     settings: dict
     created_at: datetime
     updated_at: datetime
@@ -35,6 +36,7 @@ class OrganisationCreate(BaseModel):
     description: str | None = None
     governance_mode: GovernanceMode = GovernanceMode.PLATFORM
     privacy_role: PrivacyRole = PrivacyRole.BOTH
+    country: str | None = None
 
 
 class OrganisationUpdate(BaseModel):
@@ -42,4 +44,5 @@ class OrganisationUpdate(BaseModel):
     governance_mode: GovernanceMode | None = None
     privacy_role: PrivacyRole | None = None
     description: str | None = None
+    country: str | None = None
     settings: dict | None = None

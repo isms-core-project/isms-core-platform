@@ -1,0 +1,129 @@
+# Country configuration — Germany
+# ISMS CORE Phase 22: Country Localisation (Option B)
+# Base: CH-DE source POLs (50-isms-core-framework/, 10-isms-core-operational/)
+# Generator: scripts/generate_country_pol.py
+# Last updated: 2026-04-04
+
+country: Deutschland
+country_adjective_fr: allemand/allemande
+country_adjective_de: deutsch
+country_adjective_it: tedesco
+language: de
+base_language: de   # start from CH German variant
+
+# ── Data protection ────────────────────────────────────────────────────────────
+law:
+  data_protection_full:   "Datenschutz-Grundverordnung (DSGVO, EU 2016/679) und Bundesdatenschutzgesetz (BDSG)"
+  data_protection_short:  "DSGVO / BDSG"
+  dpa_name:               "Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI) sowie Landesdatenschutzbehörden"
+  dpa_short:              "BfDI"
+  dpa_url:                "https://www.bfdi.bund.de"
+  national_law_ref:       "Bundesdatenschutzgesetz (BDSG) vom 30. Juni 2017, zuletzt geändert durch Art. 10 des Gesetzes vom 23. Juni 2021 (BGBl. I S. 1858)"
+  privacy_ordinance:      "BDSG Durchführungsbestimmungen"
+  incident_notification:  "Meldung an die zuständige Aufsichtsbehörde innerhalb von 72 Stunden (Art. 33 DSGVO)"
+  note:                   "Deutschland hat 16 Landesdatenschutzbehörden. Die zuständige Behörde richtet sich nach dem Sitz der verantwortlichen Stelle."
+
+# ── Regulatory / cyber authorities ─────────────────────────────────────────────
+authority:
+  cyber_national:         "Bundesamt für Sicherheit in der Informationstechnik (BSI)"
+  cyber_short:            "BSI"
+  cyber_url:              "https://www.bsi.bund.de"
+  cert:                   "CERT-Bund (BSI)"
+  financial_prudential:   "Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin)"
+  financial_short:        "BaFin"
+  financial_url:          "https://www.bafin.de"
+  markets:                "Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin)"
+  markets_short:          "BaFin"
+  insurance:              "Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin)"
+  telecom:                "Bundesnetzagentur (BNetzA)"
+  telecom_short:          "BNetzA"
+  central_bank:           "Deutsche Bundesbank"
+
+# ── NIS2 transposition ──────────────────────────────────────────────────────────
+nis2:
+  status:                 "enacted"
+  law_ref:                "Gesetz zur Umsetzung der NIS-2-Richtlinie und zur Regelung wesentlicher Grundzüge des Informationssicherheitsmanagements in der Bundesverwaltung (NIS2UmsuCG) — BSIG 2025"
+  citation:               "BGBl. I Nr. 301 vom 2. Dezember 2025"
+  in_force:               "6. Dezember 2025"
+  implementing_body:      "BSI (Bundesamt für Sicherheit in der Informationstechnik)"
+
+# ── Financial sector regulations ────────────────────────────────────────────────
+financial_sector:
+  applicable_regs:
+    - "Verordnung (EU) 2022/2554 (DORA) — anwendbar auf Finanzunternehmen ab 17. Januar 2025"
+    - "BSIG 2025 (NIS2UmsuCG) — anwendbar auf wesentliche und wichtige Einrichtungen"
+    - "BaFin Rundschreiben 10/2017 (BA) — Bankaufsichtliche Anforderungen an die IT (BAIT), zuletzt geändert Dezember 2024"
+    - "BaFin Rundschreiben 05/2017 (VA) — Versicherungsaufsichtliche Anforderungen an die IT (VAIT)"
+    - "Verordnung (EU) 2016/679 (DSGVO) — anwendbar"
+    - "BDSG — anwendbar"
+    - "MaRisk (Mindestanforderungen an das Risikomanagement) — BaFin Rundschreiben 05/2023 (BA)"
+  excluded_regs:
+    - "FINMA Circ. 2023/01 — Operationelle Risiken (nur CH)"
+    - "FINMA Circ. 2018/03 — Outsourcing Banken (nur CH)"
+    - "OPDo (Schweizer Datenschutzverordnung) (nur CH)"
+    - "ISG (Schweizerisches Informationssicherheitsgesetz) (nur CH)"
+
+# ── National cyber frameworks ───────────────────────────────────────────────────
+cyber_frameworks:
+  primary:                "BSI IT-Grundschutz-Kompendium (aktuellste Ausgabe)"
+  secondary:
+    - "BSI C5 (Cloud Computing Compliance Criteria Catalogue)"
+    - "BSI-Standard 200-1 (Managementsysteme für Informationssicherheit)"
+    - "BSI-Standard 200-2 (IT-Grundschutz-Methodik)"
+    - "BSI-Standard 200-3 (Risikoanalyse auf Basis IT-Grundschutz)"
+    - "BSI-Standard 200-4 (Business Continuity Management)"
+
+# ── Token substitution map ──────────────────────────────────────────────────────
+tokens:
+  # Country names / adjectives
+  SCHWEIZ:                        "DEUTSCHLAND"
+  Suisse:                         "Deutschland"
+  suisse:                         "deutsch"
+  Switzerland:                    "Germany"
+  Swiss:                          "German"
+  Schweiz:                        "Deutschland"
+  schweizerisch:                  "deutsch"
+  schweizerischen:                "deutschen"
+  schweizerische:                 "deutsche"
+  Svizzera:                       "Deutschland"
+
+  # Swiss German orthography → Standard German
+  Massnahmen:                     "Maßnahmen"
+
+  # Data protection law (CH source uses nDSG/revDSG in German)
+  nLPD:                           "DSGVO / BDSG"
+  nDSG:                           "DSGVO / BDSG"
+  nFADP:                          "DSGVO / BDSG"
+  revDSG:                         "DSGVO / BDSG"
+  "neues Datenschutzgesetz":      "Datenschutz-Grundverordnung (DSGVO) und BDSG"
+  "Bundesgesetz über den Datenschutz": "Datenschutz-Grundverordnung (DSGVO) und Bundesdatenschutzgesetz (BDSG)"
+
+  # Privacy ordinance
+  OPDo:                           "BDSG-Durchführungsbestimmungen"
+
+  # Swiss Code of Obligations → German employment law equivalent
+  "Schweizerisches Obligationenrecht (OR)": "Bürgerliches Gesetzbuch (BGB)"
+  "Obligationenrecht (OR)":       "BGB (Bürgerliches Gesetzbuch)"
+  Obligationenrecht:              "Bürgerliches Gesetzbuch (BGB)"
+
+  # DPA
+  PFPDT:                          "BfDI / Landesdatenschutzbehörde"
+  FDPIC:                          "BfDI"
+  "Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter": "Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI)"
+  EDÖB:                           "BfDI"
+
+  # Cyber authority
+  NCSC:                           "BSI"
+  "Nationales Zentrum für Cybersicherheit": "Bundesamt für Sicherheit in der Informationstechnik (BSI)"
+
+  # National cyber law
+  ISG:                            "BSIG 2025 (NIS2UmsuCG)"
+  "Informationssicherheitsgesetz": "BSIG 2025 (Gesetz zur Umsetzung der NIS-2-Richtlinie)"
+
+  # Financial regulator
+  FINMA:                          "BaFin"
+  "Eidgenössische Finanzmarktaufsicht": "Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin)"
+
+  # Central bank
+  BNS:                            "Deutsche Bundesbank"
+  "Schweizerische Nationalbank":  "Deutsche Bundesbank"

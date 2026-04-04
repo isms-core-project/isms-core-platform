@@ -28,6 +28,7 @@ class Settings(BaseSettings):
     cloud_path: str = ""     # ISO 27018:2025 content mount (/app/isms-cloud)
     sec_path: str = ""       # ISO 27017:2025 content mount (/app/isms-sec)
     ext_path: str = ""       # External policies mount (/app/isms-ext)
+    iso_reference_path: str = "/app/iso-reference"  # ISO regulatory PDFs mount
     cache_path: str = "/app/cache"
     uploads_path: str = "/app/uploads"
 

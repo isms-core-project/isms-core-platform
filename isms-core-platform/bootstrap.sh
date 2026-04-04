@@ -129,11 +129,24 @@ except: pass
 " 2>/dev/null || true
 
 echo ""
-HOST="${HOST_IP:-$(hostname -I 2>/dev/null | awk '{print $1}' || ipconfig getifaddr en0 2>/dev/null || echo 'localhost')}"
+_get_host_ip() {
+    # Linux: hostname -I returns all IPs; take first non-empty
+    local ip
+    ip=$(hostname -I 2>/dev/null | awk '{print $1}')
+    [ -n "$ip" ] && echo "$ip" && return
+    # macOS: try en0 (Wi-Fi), then en1 (Ethernet), then en2
+    for iface in en0 en1 en2; do
+        ip=$(ipconfig getifaddr "$iface" 2>/dev/null)
+        [ -n "$ip" ] && echo "$ip" && return
+    done
+    echo 'localhost'
+}
+HOST="${HOST_IP:-$(_get_host_ip)}"
 echo "  Platform:  https://${HOST}  (accept self-signed cert or use FQDN)"
 echo "  API docs:  https://${HOST}/api/docs"
 echo "  Login:     ${BOOTSTRAP_EMAIL} / ${BOOTSTRAP_PASSWORD}"
 echo ""
-echo "  Email:     docker compose --profile mailpit up -d  (then http://${HOST}:8025)"
+echo "  Email Local:        docker compose --profile mailpit up -d  (then http://${HOST}:8025)"
+echo "  Email GraphAPI:     docker compose --profile smtp-bridge up -d"
 echo "  TLS/FQDN:  ./nginx/scripts/setup-letsencrypt.sh <domain> <email>"
 echo "============================================================================"
