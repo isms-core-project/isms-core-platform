@@ -158,6 +158,8 @@ services:
         condition: service_healthy
       isms-core-redis:
         condition: service_healthy
+      isms-core-backend:
+        condition: service_healthy
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -190,6 +192,8 @@ services:
       isms-core-redis:
         condition: service_healthy
       isms-core-opensearch:
+        condition: service_healthy
+      isms-core-backend:
         condition: service_healthy
     healthcheck:
       test: ["CMD-SHELL", "celery -A src.worker.celery_app inspect ping --timeout 5 2>/dev/null | grep -q OK || exit 1"]
