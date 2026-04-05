@@ -990,9 +990,8 @@ BEGIN
     RAISE NOTICE '  sheet_type, evidence_type, mapping_type, correlation_method,';
     RAISE NOTICE '  qa_status, control_group_status';
     RAISE NOTICE '';
-    RAISE NOTICE 'Seed data: admin user + Foundation Policies control group (00)';
-    RAISE NOTICE 'Default admin: admin@isms-core.dev / admin123';
-    RAISE NOTICE 'CHANGE THE DEFAULT PASSWORD ON FIRST LOGIN!';
+    RAISE NOTICE 'Seed data: Foundation Policies control group (00)';
+    RAISE NOTICE 'Admin user is seeded at runtime by the backend from ADMIN_PASSWORD env var.';
     RAISE NOTICE '';
     RAISE NOTICE 'Next: Load Phase 0 bundles with framework_loader task.';
     RAISE NOTICE '============================================================';
