@@ -236,7 +236,7 @@ export default function Controls() {
 
   return (
     <Box>
-      <PageHeader title="Controls Library" subtitle={subtitle} />
+      <PageHeader title="Controls Library" subtitle={subtitle} helpSection="controls-library" />
 
       {!activeProject && (
         <Alert severity="info" sx={{ mb: 2.5 }}>

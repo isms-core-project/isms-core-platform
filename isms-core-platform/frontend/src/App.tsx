@@ -53,6 +53,7 @@ import Ebios from './pages/Ebios'
 import Tprm from './pages/Tprm'
 import CustomFrameworks from './pages/CustomFrameworks'
 import FrameworkTracker from './pages/FrameworkTracker'
+import Help from './pages/Help'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -127,6 +128,7 @@ export default function App() {
         <Route path="tprm" element={<Tprm />} />
         <Route path="custom-frameworks" element={<CustomFrameworks />} />
         <Route path="framework-tracker" element={<FrameworkTracker />} />
+        <Route path="help" element={<Help />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

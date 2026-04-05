@@ -68,6 +68,7 @@ import {
   InsightsOutlined,
   AppRegistrationOutlined,
   UpdateOutlined,
+  HelpOutlineOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -817,6 +818,19 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
             </ListItemIcon>
             {!collapsed && (
               <ListItemText primary="Security" primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }} />
+            )}
+          </ListItemButton>
+        </Tooltip>
+        <Tooltip title={collapsed ? 'User Guide' : ''} placement="right">
+          <ListItemButton
+            onClick={() => navigate('/help')}
+            sx={{ borderRadius: 1.5, px: collapsed ? 0 : 1.5, py: 0.5, justifyContent: collapsed ? 'center' : 'flex-start' }}
+          >
+            <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 36, color: 'text.secondary' }}>
+              <HelpOutlineOutlined fontSize="small" />
+            </ListItemIcon>
+            {!collapsed && (
+              <ListItemText primary="User Guide" primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }} />
             )}
           </ListItemButton>
         </Tooltip>

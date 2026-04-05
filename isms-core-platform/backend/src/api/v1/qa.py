@@ -88,7 +88,7 @@ def run_keyword_check(db: DBSession = Depends(get_db)):
     dependencies=[Depends(require_qa_access)],
 )
 def run_semantic_check(db: DBSession = Depends(get_db)):
-    """Run semantic similarity check using sentence-transformers (all-MiniLM-L6-v2).
+    """Run semantic similarity check using sentence-transformers (paraphrase-multilingual-MiniLM-L12-v2).
 
     Encodes ISO control text and UG/TG implementation content as embedding vectors,
     then computes cosine similarity. Runs entirely on CPU — no API key required.

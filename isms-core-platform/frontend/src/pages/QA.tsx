@@ -350,7 +350,7 @@ const METHOD_LEGEND: Record<string, { summary: string; thresholds: string; rows:
     ],
   },
   semantic: {
-    summary: 'Encodes ISO control text and UG/TG content as embedding vectors (all-MiniLM-L6-v2) then computes cosine similarity. No API key required — runs on CPU.',
+    summary: 'Encodes ISO control text and UG/TG content as embedding vectors (paraphrase-multilingual-MiniLM-L12-v2) then computes cosine similarity. No API key required — runs on CPU.',
     thresholds: 'PASS ≥ 0.42 · WARNING ≥ 0.28 · FAIL < 0.28  (cosine similarity; typical range 0.1–0.55)',
     auditRelevant: false,
     rows: [
@@ -460,7 +460,7 @@ const METHOD_LABELS: Record<string, string> = {
 const METHOD_SUBTITLES: Record<string, string> = {
   existence: 'Verifies each control group has the required artefacts',
   keyword: 'Checks keyword coverage across all ISO standard implementations (27001 · 27701 · 27018)',
-  semantic: 'Cosine similarity between ISO control text and implementation embeddings (all-MiniLM-L6-v2)',
+  semantic: 'Cosine similarity between ISO control text and implementation embeddings (paraphrase-multilingual-MiniLM-L12-v2)',
   semantic_claude: 'Claude AI scores how well each implementation addresses the relevant ISO control requirements',
 }
 
@@ -508,7 +508,7 @@ function DetailsCell({ row, method }: { row: CorrelationResultRead; method: stri
     const isoWords = (row.metadata?.iso_word_count as number) ?? 0
     const implChars = (row.metadata?.impl_text_chars as number) ?? 0
     const shortIso = !!(row.metadata?.short_iso_text)
-    const model = (row.metadata?.model as string) ?? 'all-MiniLM-L6-v2'
+    const model = (row.metadata?.model as string) ?? 'paraphrase-multilingual-MiniLM-L12-v2'
 
     const tooltipContent = (
       <Box sx={{ maxWidth: 320 }}>
