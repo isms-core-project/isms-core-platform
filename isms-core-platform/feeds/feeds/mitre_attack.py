@@ -66,8 +66,11 @@ def _parse_technique(obj: dict) -> dict | None:
     }
 
 
+_RUN_NAME = "mitre_attack_v19" if _SOURCE_LABEL == "attack_v19" else "mitre_attack_v18"
+
+
 def run() -> None:
-    run_id = start_run(_SOURCE_LABEL)
+    run_id = start_run(_RUN_NAME)
     logger.info("MITRE ATT&CK pull started (source=%s)", _SOURCE_LABEL)
 
     try:
