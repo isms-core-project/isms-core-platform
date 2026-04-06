@@ -21,7 +21,7 @@ from datetime import datetime, timezone
 
 import requests
 
-from feeds.base import fail_run, finish_run, get_conn, start_run
+from feeds.base import fail_run, finish_run, get_conn, get_platform_setting, start_run
 
 logger = logging.getLogger(__name__)
 
@@ -77,9 +77,17 @@ def _get_kev_cve_ids() -> set[str]:
         return set()
 
 
+def _cpe_full_enabled() -> bool:
+    """DB platform_settings takes precedence over env var."""
+    db_val = get_platform_setting("feeds_cpe_full", "")
+    if db_val:
+        return db_val.lower() == "true"
+    return os.environ.get("FEEDS_CPE_FULL", "false").lower() == "true"
+
+
 def run() -> None:
-    if os.environ.get("FEEDS_CPE_FULL", "false").lower() != "true":
-        logger.info("FEEDS_CPE_FULL not enabled — skipping CPE Option B pull")
+    if not _cpe_full_enabled():
+        logger.info("feeds_cpe_full not enabled — skipping CPE Option B pull")
         return
 
     run_id = start_run(_RUN_NAME)

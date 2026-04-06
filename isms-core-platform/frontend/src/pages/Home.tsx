@@ -26,11 +26,16 @@ import {
   HandshakeOutlined,
   HealthAndSafetyOutlined,
   PsychologyOutlined,
+  BugReportOutlined,
+  WarningAmberOutlined,
+  StreamOutlined,
+  ErrorOutlineOutlined,
 } from '@mui/icons-material'
 import { useQuery } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
 import { dashboardApi, type HomeSummary } from '../api/dashboard'
 import { projectsApi } from '../api/projectsApi'
+import { feedsApi } from '../api/feedsApi'
 import { useProduct, PRODUCT_COLORS, PRODUCT_LABELS } from '../store/ProductContext'
 import { useAuth } from '../store/AuthContext'
 import { useProject } from '../store/ProjectContext'
@@ -201,6 +206,14 @@ export default function Home() {
     staleTime: 30_000,
     retry: 2,
   })
+
+  const { data: kevStats }    = useQuery({ queryKey: ['feeds', 'kev', 'stats'],    queryFn: feedsApi.getKevStats,      staleTime: 5 * 60_000 })
+  const { data: indexStats }  = useQuery({ queryKey: ['nvd', 'index-stats'],       queryFn: feedsApi.getNvdIndexStats, staleTime: 5 * 60_000 })
+  const { data: attackStats } = useQuery({ queryKey: ['feeds', 'attack', 'stats'], queryFn: feedsApi.getAttackStats,   staleTime: 5 * 60_000 })
+  const { data: feedStatus }  = useQuery({ queryKey: ['feeds', 'status'],          queryFn: feedsApi.getStatus,        staleTime: 5 * 60_000 })
+
+  const failedFeeds  = (feedStatus?.feeds ?? []).filter(f => f.last_status === 'error')
+  const anyFeedError = failedFeeds.length > 0
 
 
   const now = new Date()
@@ -389,6 +402,80 @@ export default function Home() {
         </Box>
         <Box sx={{ flex: 1 }} />
         <ArrowForwardOutlined sx={{ fontSize: 14, color: 'text.disabled' }} />
+      </Box>
+
+      {/* Intelligence summary bar */}
+      <Box
+        sx={{
+          flexShrink: 0,
+          display: 'flex', alignItems: 'center', gap: 2,
+          px: 2, py: 1, borderRadius: 1.5,
+          border: '1px solid', borderColor: 'divider',
+          bgcolor: 'background.paper',
+        }}
+      >
+        <StreamOutlined sx={{ fontSize: 16, color: '#B84F00', flexShrink: 0 }} />
+        <Typography variant="caption" sx={{ fontSize: '0.63rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#B84F00', fontWeight: 600, flexShrink: 0 }}>
+          Intelligence
+        </Typography>
+        <Box sx={{ width: '1px', height: 18, bgcolor: 'divider' }} />
+
+        {/* CVE Index */}
+        <Box
+          onClick={() => navigate('/cve-explorer')}
+          sx={{ display: 'flex', alignItems: 'center', gap: 0.75, cursor: 'pointer', '&:hover': { opacity: 0.75 } }}
+        >
+          <BugReportOutlined sx={{ fontSize: 15, color: '#c62828' }} />
+          <Typography variant="caption" sx={{ fontSize: '0.72rem', fontWeight: 700, color: '#c62828', lineHeight: 1 }}>
+            {indexStats?.cve_total ? indexStats.cve_total.toLocaleString() : '—'}
+          </Typography>
+          <Typography variant="caption" sx={{ fontSize: '0.68rem', color: 'text.secondary' }}>CVEs</Typography>
+        </Box>
+        <Box sx={{ width: '1px', height: 18, bgcolor: 'divider' }} />
+
+        {/* CISA KEV */}
+        <Box
+          onClick={() => navigate('/threat-feeds')}
+          sx={{ display: 'flex', alignItems: 'center', gap: 0.75, cursor: 'pointer', '&:hover': { opacity: 0.75 } }}
+        >
+          <WarningAmberOutlined sx={{ fontSize: 15, color: '#e65100' }} />
+          <Typography variant="caption" sx={{ fontSize: '0.72rem', fontWeight: 700, color: '#e65100', lineHeight: 1 }}>
+            {kevStats?.total_entries ? kevStats.total_entries.toLocaleString() : '—'}
+          </Typography>
+          <Typography variant="caption" sx={{ fontSize: '0.68rem', color: 'text.secondary' }}>KEV</Typography>
+        </Box>
+        <Box sx={{ width: '1px', height: 18, bgcolor: 'divider' }} />
+
+        {/* MITRE ATT&CK */}
+        <Box
+          onClick={() => navigate('/mitre-attack')}
+          sx={{ display: 'flex', alignItems: 'center', gap: 0.75, cursor: 'pointer', '&:hover': { opacity: 0.75 } }}
+        >
+          <SecurityOutlined sx={{ fontSize: 15, color: '#B84F00' }} />
+          <Typography variant="caption" sx={{ fontSize: '0.72rem', fontWeight: 700, color: '#B84F00', lineHeight: 1 }}>
+            {attackStats ? (attackStats.total_techniques + attackStats.total_subtechniques).toLocaleString() : '—'}
+          </Typography>
+          <Typography variant="caption" sx={{ fontSize: '0.68rem', color: 'text.secondary' }}>ATT&CK</Typography>
+        </Box>
+        <Box sx={{ width: '1px', height: 18, bgcolor: 'divider' }} />
+
+        {/* Feed Status */}
+        <Box
+          onClick={() => navigate('/threat-feeds')}
+          sx={{ display: 'flex', alignItems: 'center', gap: 0.75, cursor: 'pointer', '&:hover': { opacity: 0.75 } }}
+        >
+          {anyFeedError
+            ? <ErrorOutlineOutlined sx={{ fontSize: 15, color: '#c62828' }} />
+            : <CheckCircleOutlined sx={{ fontSize: 15, color: '#70AD47' }} />
+          }
+          <Typography variant="caption" sx={{ fontSize: '0.72rem', fontWeight: 700, color: anyFeedError ? '#c62828' : '#70AD47', lineHeight: 1 }}>
+            {anyFeedError ? `${failedFeeds.length} error${failedFeeds.length > 1 ? 's' : ''}` : 'All OK'}
+          </Typography>
+          <Typography variant="caption" sx={{ fontSize: '0.68rem', color: 'text.secondary' }}>Feeds</Typography>
+        </Box>
+
+        <Box sx={{ flex: 1 }} />
+        <ArrowForwardOutlined sx={{ fontSize: 14, color: 'text.disabled' }} onClick={() => navigate('/threat-feeds')} />
       </Box>
 
       {/* Active project rows — one per active family */}

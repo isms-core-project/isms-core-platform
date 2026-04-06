@@ -67,38 +67,34 @@ def main():
 
     # ── Schedule ────────────────────────────────────────────────────────────────
 
-    # NVD CVE: full weekly + daily delta
+    # Register all schedules first
+    if _enabled("FEEDS_MITRE_ENABLED"):
+        schedule.every().sunday.at("02:00").do(_safe(mitre_attack.run, "MITRE ATT&CK"))
+    if _enabled("FEEDS_ATLAS_ENABLED"):
+        schedule.every().sunday.at("02:30").do(_safe(mitre_atlas.run, "MITRE ATLAS"))
+    if _enabled("FEEDS_KEV_ENABLED"):
+        schedule.every().day.at("03:00").do(_safe(cisa_kev.run, "CISA KEV"))
+    if _enabled("FEEDS_EPSS_ENABLED"):
+        schedule.every().day.at("03:30").do(_safe(epss.run, "FIRST EPSS"))
     if _enabled("FEEDS_CVE_ENABLED"):
         schedule.every().sunday.at("01:00").do(_safe(nist_cve.run_full, "NVD CVE (full)"))
         schedule.every().day.at("03:00").do(_safe(nist_cve.run_delta, "NVD CVE (delta)"))
-        if run_on_start:
-            _safe(nist_cve.run_full, "NVD CVE (full)")()
-
-    # NVD CPE Option B: weekly after CVE full (only if FEEDS_CPE_FULL=true)
-    if _enabled("FEEDS_CVE_ENABLED") and os.environ.get("FEEDS_CPE_FULL", "false").lower() == "true":
         schedule.every().sunday.at("01:30").do(_safe(nist_cpe.run, "NVD CPE (Option B)"))
-        if run_on_start:
-            _safe(nist_cpe.run, "NVD CPE (Option B)")()
 
-    if _enabled("FEEDS_MITRE_ENABLED"):
-        schedule.every().sunday.at("02:00").do(_safe(mitre_attack.run, "MITRE ATT&CK"))
-        if run_on_start:
+    # ── Run on start: Phase 1 feeds first (fast, <5s), CVE last (slow) ──────────
+    if run_on_start:
+        if _enabled("FEEDS_MITRE_ENABLED"):
             _safe(mitre_attack.run, "MITRE ATT&CK")()
-
-    if _enabled("FEEDS_ATLAS_ENABLED"):
-        schedule.every().sunday.at("02:30").do(_safe(mitre_atlas.run, "MITRE ATLAS"))
-        if run_on_start:
+        if _enabled("FEEDS_ATLAS_ENABLED"):
             _safe(mitre_atlas.run, "MITRE ATLAS")()
-
-    if _enabled("FEEDS_KEV_ENABLED"):
-        schedule.every().day.at("03:00").do(_safe(cisa_kev.run, "CISA KEV"))
-        if run_on_start:
+        if _enabled("FEEDS_KEV_ENABLED"):
             _safe(cisa_kev.run, "CISA KEV")()
-
-    if _enabled("FEEDS_EPSS_ENABLED"):
-        schedule.every().day.at("03:30").do(_safe(epss.run, "FIRST EPSS"))
-        if run_on_start:
+        if _enabled("FEEDS_EPSS_ENABLED"):
             _safe(epss.run, "FIRST EPSS")()
+        # CVE full runs last — takes minutes to hours depending on API key
+        if _enabled("FEEDS_CVE_ENABLED"):
+            _safe(nist_cve.run_full, "NVD CVE (full)")()
+            _safe(nist_cpe.run, "NVD CPE (Option B)")()
 
     logger.info("Scheduler running — next jobs: %s", schedule.jobs)
 

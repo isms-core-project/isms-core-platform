@@ -195,6 +195,12 @@ export const feedsApi = {
     per_page?: number
   }) =>
     client.get<NvdCpeList>('/feeds/cpe', { params }).then(r => r.data),
+
+  getFeedSettings: () =>
+    client.get<{ feeds_cpe_full: boolean }>('/feeds/settings').then(r => r.data),
+
+  patchFeedSettings: (payload: { feeds_cpe_full: boolean }) =>
+    client.patch<{ feeds_cpe_full: boolean }>('/feeds/settings', payload).then(r => r.data),
 }
 
 // ── Phase 27 types ────────────────────────────────────────────────────────────

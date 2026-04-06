@@ -8,6 +8,18 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from src.database.base import Base
 
 
+class PlatformSetting(Base):
+    """Simple key-value store for platform-wide settings controllable via the UI."""
+
+    __tablename__ = "platform_settings"
+
+    key: Mapped[str] = mapped_column(String(100), primary_key=True)
+    value: Mapped[str] = mapped_column(Text, nullable=False, server_default="")
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False
+    )
+
+
 class AuditLog(Base):
     """Immutable audit trail — Phase 9.
 

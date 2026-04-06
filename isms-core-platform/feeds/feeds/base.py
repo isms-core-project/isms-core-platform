@@ -67,3 +67,17 @@ def fail_run(run_id: str, error: str) -> None:
                 """,
                 (datetime.now(timezone.utc), error[:2000], run_id),
             )
+
+
+def get_platform_setting(key: str, default: str = "") -> str:
+    """Read a value from platform_settings. Returns default if missing or on error."""
+    try:
+        with get_conn() as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "SELECT value FROM platform_settings WHERE key = %s", (key,)
+                )
+                row = cur.fetchone()
+                return row[0] if row else default
+    except Exception:
+        return default

@@ -1,16 +1,17 @@
 """Phase 25 — Threat Intelligence & Vulnerability Feeds API."""
 
 import logging
+import os
 from collections import Counter, defaultdict
 from datetime import date, datetime, timedelta, timezone
 
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Body, Depends, Query
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session as DBSession
-
 from src.core.dependencies import get_current_user, require_admin
 from src.database.session import get_db
 from src.domain.feeds import CisaKevEntry, EpssScore, FeedRun, MitreTechnique
+from src.domain.system import PlatformSetting
 from src.domain.users import User
 from src.schemas.feeds import (
     CisaKevList,
@@ -18,6 +19,7 @@ from src.schemas.feeds import (
     CisaKevStats,
     EpssScoreList,
     EpssScoreRead,
+    FeedSettings,
     FeedStatusItem,
     FeedStatusResponse,
     KevAuditEntry,
@@ -501,7 +503,6 @@ def get_nvd_index_stats(
     _current_user: User = Depends(get_current_user),
 ):
     """Combined stats for the CVE Explorer info banner (CVE + CPE + KEV totals)."""
-    import os as _os
     from src.services import search_service
 
     nvd = search_service.get_nvd_stats()
@@ -523,9 +524,17 @@ def get_nvd_index_stats(
         kev_total               = kev_total,
         last_cve_sync           = _last_run("nist_cve"),
         last_cpe_sync           = _last_run("nist_cpe"),
-        nist_api_key_configured = bool(_os.environ.get("NIST_API_KEY", "").strip()),
-        cpe_full_enabled        = _os.environ.get("FEEDS_CPE_FULL", "false").lower() == "true",
+        nist_api_key_configured = bool(os.environ.get("NIST_API_KEY", "").strip()),
+        cpe_full_enabled        = _cpe_full_enabled(db),
     )
+
+
+def _cpe_full_enabled(db: DBSession) -> bool:
+    """DB setting takes precedence over env var."""
+    row = db.get(PlatformSetting, "feeds_cpe_full")
+    if row is not None:
+        return row.value.lower() == "true"
+    return os.environ.get("FEEDS_CPE_FULL", "false").lower() == "true"
 
 
 @router.get("/cve", response_model=NvdCveList)
@@ -669,3 +678,37 @@ def list_cpe(
     items = [NvdCpeEntry(**_hit_to_cpe(h)) for h in result.get("hits", {}).get("hits", [])]
 
     return NvdCpeList(items=items, total=total, page=page, per_page=per_page)
+
+
+# ── Feed settings (admin toggle) ───────────────────────────────────────────────
+
+_CPE_FULL_KEY = "feeds_cpe_full"
+
+
+@router.get("/settings", response_model=FeedSettings, dependencies=[Depends(require_admin)])
+def get_feed_settings(db: DBSession = Depends(get_db)):
+    """Return current platform feed settings."""
+    row = db.get(PlatformSetting, _CPE_FULL_KEY)
+    cpe_full = (row.value.lower() == "true") if row else False
+    return FeedSettings(feeds_cpe_full=cpe_full)
+
+
+@router.patch("/settings", response_model=FeedSettings, dependencies=[Depends(require_admin)])
+def patch_feed_settings(
+    payload: FeedSettings = Body(...),
+    db: DBSession = Depends(get_db),
+):
+    """Toggle platform feed settings. Changes take effect on the next scheduled run."""
+    from datetime import datetime, timezone
+    row = db.get(PlatformSetting, _CPE_FULL_KEY)
+    if row:
+        row.value = "true" if payload.feeds_cpe_full else "false"
+        row.updated_at = datetime.now(timezone.utc)
+    else:
+        row = PlatformSetting(
+            key=_CPE_FULL_KEY,
+            value="true" if payload.feeds_cpe_full else "false",
+        )
+        db.add(row)
+    db.commit()
+    return FeedSettings(feeds_cpe_full=payload.feeds_cpe_full)

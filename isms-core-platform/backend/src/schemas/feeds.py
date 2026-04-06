@@ -220,3 +220,8 @@ class NvdIndexStats(BaseModel):
     last_cpe_sync: str | None
     nist_api_key_configured: bool
     cpe_full_enabled: bool
+
+
+class FeedSettings(BaseModel):
+    """Platform-level feed toggle settings (stored in platform_settings table)."""
+    feeds_cpe_full: bool

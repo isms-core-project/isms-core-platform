@@ -1,21 +1,22 @@
 import { useState } from 'react'
 import {
-  Alert, Box, Button, Chip, CircularProgress, FormControl, InputLabel,
-  MenuItem, Paper, Select, Table, TableBody, TableCell, TableHead,
-  TableRow, Tooltip, Typography,
+  Alert, Box, Button, Chip, CircularProgress, FormControl, FormControlLabel,
+  InputLabel, MenuItem, Paper, Select, Switch, Table, TableBody, TableCell,
+  TableHead, TableRow, Tooltip, Typography,
 } from '@mui/material'
 import {
   BugReportOutlined, CheckCircleOutlined, DownloadOutlined, ErrorOutlined,
   HourglassEmptyOutlined, PolicyOutlined, SecurityOutlined,
-  SyncOutlined, VerifiedOutlined,
+  SyncOutlined, TuneOutlined, VerifiedOutlined,
 } from '@mui/icons-material'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import {
   Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer,
   Tooltip as ChartTooltip, XAxis, YAxis,
 } from 'recharts'
 import { feedsApi } from '../api/feedsApi'
 import PageHeader from '../components/PageHeader'
+import { useAuth } from '../store/AuthContext'
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
@@ -87,9 +88,23 @@ function exportAuditCsv(entries: import('../api/feedsApi').KevAuditEntry[], mont
 
 export default function ThreatFeeds() {
   const [auditMonths, setAuditMonths] = useState(12)
+  const { user } = useAuth()
+  const isAdmin = user?.role === 'admin' || user?.role === 'super_admin'
+  const qc = useQueryClient()
 
   const { data: status, isLoading: statusLoading, error: statusError } =
     useQuery({ queryKey: ['feeds', 'status'], queryFn: feedsApi.getStatus })
+
+  const { data: feedSettings } = useQuery({
+    queryKey: ['feeds', 'settings'],
+    queryFn: feedsApi.getFeedSettings,
+    enabled: isAdmin,
+  })
+
+  const settingsMutation = useMutation({
+    mutationFn: feedsApi.patchFeedSettings,
+    onSuccess: () => qc.invalidateQueries({ queryKey: ['feeds', 'settings'] }),
+  })
 
   const { data: kevStats } =
     useQuery({ queryKey: ['feeds', 'kev', 'stats'], queryFn: feedsApi.getKevStats })
@@ -159,6 +174,42 @@ export default function ThreatFeeds() {
           </Alert>
         )}
       </Box>
+
+      {/* ── Feed settings (admin only) ── */}
+      {isAdmin && feedSettings !== undefined && (
+        <Paper variant="outlined" sx={{ p: 2, borderRadius: 2, mb: 3, display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
+          <TuneOutlined sx={{ color: 'text.secondary', fontSize: 20 }} />
+          <Typography variant="subtitle2" fontWeight={600} sx={{ mr: 1 }}>
+            Feed Settings
+          </Typography>
+          <Tooltip title="Query NVD CPE API for KEV vendor/product names and index ~3-5K additional CPE entries into OpenSearch. Takes effect on the next scheduled run (Sunday 01:30 UTC).">
+            <FormControlLabel
+              control={
+                <Switch
+                  size="small"
+                  checked={feedSettings.feeds_cpe_full}
+                  disabled={settingsMutation.isPending}
+                  onChange={e => settingsMutation.mutate({ feeds_cpe_full: e.target.checked })}
+                />
+              }
+              label={
+                <Typography variant="body2" sx={{ fontSize: '0.82rem' }}>
+                  NVD CPE Option B (KEV-vendor)
+                  <Typography component="span" variant="caption" color="text.secondary" sx={{ ml: 1 }}>
+                    — queries CPE API for KEV vendors
+                  </Typography>
+                </Typography>
+              }
+            />
+          </Tooltip>
+          {settingsMutation.isSuccess && (
+            <Typography variant="caption" color="success.main">Saved</Typography>
+          )}
+          {settingsMutation.isError && (
+            <Typography variant="caption" color="error.main">Failed to save</Typography>
+          )}
+        </Paper>
+      )}
 
       {/* ── Charts row ── */}
       <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mb: 3 }}>
