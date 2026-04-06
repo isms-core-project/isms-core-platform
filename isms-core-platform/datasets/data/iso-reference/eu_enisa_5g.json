@@ -1,0 +1,74 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "ENISA 5G Security Controls — section 1",
+    "text": "ENISA 5G SECURITY\nCONTROLS MATRIX\nINTRODUCTION\nThe ENISA 5G Security Controls Matrix is a tool for national authorities. It was delivered in response to the EU\nCybersecurity Strategy and as part of ENISA’s broader support for the implementation of the EU Toolbox for 5G\nCybersecurity. The matrix is currently available as a spreadsheet at the following URL:\nhttps://www.enisa.europa.eu/publications/5g-security-controls-matrix.\nThis document is a short paper to accompany the publication of the ENISA 5G Controls Matrix. It explains the\nbackground of the matrix, its goal, its contents, and how the matrix can be used in practice by national telecom\nauthorities and even telecom operators.",
+    "standard": "ENISA 5G Security Controls",
+    "language": "en",
+    "source_file": "ENISA_5G_Security_Controls_Matrix.txt"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "ENISA 5G Security Controls — section 2",
+    "text": "BACKGROUND\nIn 2019 the Commission made a recommendation that requested EU Member States to take steps to secure the roll\nout of 5G networks. In response, the NIS Cooperation group, with the support of ENISA, delivered a Union Coordinated\nRisk Assessment of 5G Networks, and subsequently developed an EU Toolbox for 5G Cybersecurity containing\nstrategic measures (SM01 - SM08), technical measures (TM01 - TM11) and supporting actions (SA01 – SA10). ENISA\nhas been supporting the Commission and EU Member States with the implementation of the strategic and the technical\nmeasures, creating several deliverables with 5G security measures and controls (see next section). The EU Cybersecurity Strategy, published at the end of 2020, directs ENISA to support the implementation of the EU’s\n5G toolbox by developing a comprehensive and dynamic matrix of security controls and best practices for 5G security 1. In 2021 ENISA started developing a 5G controls matrix in consultation and collaboration with the NIS Cooperation\nGroup’s 5G workstream and the national telecom authorities in the ENISA ECASEC expert group.",
+    "standard": "ENISA 5G Security Controls",
+    "language": "en",
+    "source_file": "ENISA_5G_Security_Controls_Matrix.txt"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "ENISA 5G Security Controls — section 3",
+    "text": "Early versions of the\nmatrix were shared with national authorities from the end of 2021 for comments and as part of the piloting phase in the\nfirst half of 2021. In the second half of 2022 we entered consultations with industry, collecting feedback on the matrix\nfrom experts working at telecom operators in the EU. We are grateful for the support and feedback received from\nvarious groups of stakeholders.\n\n1\n\nSee Appendix Next Steps on cybersecurity of 5G - Key objective 1.\n\n1\n\nENISA 5G SECURITY CONTROLS MATRIX\nMay 2023\n\n5G SECURITY CONTROLS MATRIX\n3.1 GOAL\n\nThe goal of the ENISA 5G Security Controls Matrix is to support national authorities in the EU with the supervision of\n5G networks in their country by developing a single repository of technical security controls for 5G networks, to support\nimplementation of the technical measures in the 5G Toolbox, drawing on measures in ENISA technical papers and,\nwhere relevant, other standards and specifications (see below).\n\n3.2 CONTENT",
+    "standard": "ENISA 5G Security Controls",
+    "language": "en",
+    "source_file": "ENISA_5G_Security_Controls_Matrix.txt"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "ENISA 5G Security Controls — section 4",
+    "text": "The ENISA 5G Security Controls Matrix contains 144 high level security measures from EECC Guideline with 171\nhigh level descriptions of evidence, 399 detailed security controls with detailed descriptions of evidence, 110\nasset types, two 5G architectures (with 5G and 4G core), and three cloud deployment models as well as a\nmapping to standards.\nThe ENISA 5G Security Controls Matrix consolidates and is based on the following four technical ENISA documents:\n•\n\nENISA 5G Threat Landscape – First published in 2019 (as input for a Union-wide risk assessment on 5G and\nthe 5G Cybersecurity Toolbox) and revised in 2020, the ENISA 5G Threat Landscape provides a technical\noverview of relevant threats for 5G networks and lists potential counter measures.\n\n•\n\nENISA Guideline on Security Measures under the EECC – ENISA maintains a telecom security framework\nto support national telecom authorities with the supervision of security measures taken by telecom operators.\nThe revision of the framework, the ENISA Guideline on Security Measures under the EECC, addresses the\nnew requirements of the European Electronic Communication Code (EECC), which had come into force in\nDecember 2021.\n\n•",
+    "standard": "ENISA 5G Security Controls",
+    "language": "en",
+    "source_file": "ENISA_5G_Security_Controls_Matrix.txt"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "ENISA 5G Security Controls — section 5",
+    "text": "5G Supplement – The 5G Supplement extends the above mentioned ENISA Guideline on Security Measures\nunder the EECC, with more detailed additional guidance for national authorities on how to ensure mobile\nnetwork operators take appropriate measures to secure their 5G networks. The 5G Supplement, together with\nthe EECC guideline, supports Member States with implementing the 5G Toolbox technical measure TM01 and\naddresses the 5G Toolbox supporting action SA01.\n\n•\n\nSecurity Controls in 5G Specifications – This ENISA paper lists different (optional and mandatory) Security\nControls in 5G Technical Specifications (of 3GPP), and aims to support authorities in understanding the\ncontrols and why they are important. This ENISA paper supports Member States with implementing the 5G\nToolbox technical measure TM02 and addresses the 5G Toolbox supporting action SA04.",
+    "standard": "ENISA 5G Security Controls",
+    "language": "en",
+    "source_file": "ENISA_5G_Security_Controls_Matrix.txt"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "ENISA 5G Security Controls — section 6",
+    "text": "In addition, the 5G Matrix also includes technical controls from several different standards, industry good practices and\ntechnical specifications, including 3GPP specifications, such as 3GPP 33.501, ETSI standards for component\ntechnologies, such as network function virtualisation (NFV), ISO standards on information security, such as ISO27001,\ngood practices from GSMA, OWASP, eTom, NTIA, IEEE, NIST, ONF, CISA, OpenStack and ENISA papers on 5G.\n\n3.3 USE CASES FOR THE MATRIX",
+    "standard": "ENISA 5G Security Controls",
+    "language": "en",
+    "source_file": "ENISA_5G_Security_Controls_Matrix.txt"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "ENISA 5G Security Controls — section 7",
+    "text": "We conducted a pilot study to understand better how national authorities will be using the 5G Matrix. In summary, we\nidentified the following three use cases:\nUse case 1: NRAs use the 5G Matrix to review and update national regulation and frameworks, for example to\nunderstand what high level security objectives to include.\nUse case 2: NRAs use the 5G Matrix to develop high-level or more technical questionnaires for operators, for\nexample, to follow up on an incident ex-post, or to carry out supervision ex-ante, to understand how operators work in\nmore detail and to provide guidance to mobile network operators at the national level.\nUse case 3: NRAs use the Matrix to develop detailed technical guidance for telecom operators, for example on\na specific topic that supports operators with deploying 5G networks securely.\n\n2\n\nENISA 5G SECURITY CONTROLS MATRIX\nMay 2023\n\nAdditionally, several telecom operators said they would be using the 5G Matrix as input to their 5G security controls\nand overall architecture.\n\nNEXT STEPS\nIn 2023, ENISA is taking the following next steps with regards to the 5G Security Controls Matrix:\n•",
+    "standard": "ENISA 5G Security Controls",
+    "language": "en",
+    "source_file": "ENISA_5G_Security_Controls_Matrix.txt"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "ENISA 5G Security Controls — section 8",
+    "text": "We are developing a webtool to improve the usability of the matrix. The plan is to deliver the webtool by the\nend of 2023.\n\n•\n\nWe are also extending the 5G Matrix with non-technical controls regarding, amongst others, risk\nmanagement, human resources security, supplier risk management, access control policies, incident and\nbusiness continuity management, based on standards such as ISO/IEC 27002, ISO/IEC 27005, ISO 22301\nand NIST SP 800-53.",
+    "standard": "ENISA 5G Security Controls",
+    "language": "en",
+    "source_file": "ENISA_5G_Security_Controls_Matrix.txt"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "ENISA 5G Security Controls — section 9",
+    "text": "The 5G Controls Matrix has been set up to become a dynamic and comprehensive repository. This means that,\nalthough the bulk of the technical controls is now in place, we aim to keep the matrix up-to-date in the coming years\nand to extend it with controls from relevant standards and specifications where needed. The 5G Controls Matrix\nshould therefore not be seen as a one-off delivery but rather a long-term initiative to support national authorities with\ntheir supervision of 5G networks, providing a one-stop shop for 5G security controls.\nFinally, we should mention that ENISA has been developing in parallel an EU certification scheme for 5G network\nproducts, following a certification request issued by the European Commission. This request asks ENISA to develop a\ncandidate certification scheme based on two existing industry good practices, for network equipment (GSMA NESAS)\nand for mobile network electronic SIMs (GSMA EUICC). In the future, when this candidate scheme is ready and\nadopted, the 5G Controls Matrix will be aligned with and mapped to the relevant controls in the EU 5G Certification\nScheme.\n\n3",
+    "standard": "ENISA 5G Security Controls",
+    "language": "en",
+    "source_file": "ENISA_5G_Security_Controls_Matrix.txt"
+  }
+]

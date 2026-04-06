@@ -1,0 +1,34 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "FR RGS — section 1",
+    "text": "REFERENTIEL GENERAL DE SECURITE (RGS) - VERSION 2.0\nANSSI — Agence nationale de la sécurité des systèmes d'information\n=====================================================================\n\nNOTE: PDF could not be downloaded automatically on 2026-04-04.\nThe anssi.gouv.fr server (IP: 193.70.123.152) timed out on all connection\nattempts. The server appears to block or rate-limit non-European IP addresses.\n\nMANUAL DOWNLOAD REQUIRED:\n- Main body (Corps du texte): https://www.anssi.gouv.fr/documents/331/RGS_v-2-00_Corps_du_texte.pdf\n- Full ZIP (all annexes):     https://www.anssi.gouv.fr/documents/342/RGS-V2-et-Annexes.zip\n- Landing page:               https://cyber.gouv.fr/le-referentiel-general-de-securite-version-20-les-documents",
+    "standard": "FR RGS",
+    "language": "fr",
+    "source_file": "RGS_Referentiel_General_Securite_FR.txt"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "FR RGS — section 2",
+    "text": "ANNEXES AVAILABLE:\n- Annexe A1 (Certificats électroniques): https://www.anssi.gouv.fr/documents/332/RGS_v-2-0_A1.pdf\n- Annexe A2 (PC personnes):             https://www.anssi.gouv.fr/documents/333/RGS_v-2-0_A2.pdf\n- Annexe A3 (PC services applicatifs):  https://www.anssi.gouv.fr/documents/334/RGS_v-2-0_A3.pdf\n- Annexe A3 Errata (horodatage):        https://www.anssi.gouv.fr/documents/335/RGS_v-2-0_A3-errata_horodatage_electronique_v1.0.pdf\n- Annexe A4 (Profils certificats/CRL):  https://www.anssi.gouv.fr/documents/336/RGS_v-2-0_A4.pdf\n- Annexe A5 (Horodatage électronique):  https://www.anssi.gouv.fr/documents/337/RGS_v-2-0_A5.pdf\n- Annexe B1 (Mécanismes crypto):        https://www.anssi.gouv.fr/documents/338/anssi-guide-mecanismes_crypto-2.04.pdf\n- Annexe B2 (Gestion clés crypto):      https://www.anssi.gouv.fr/documents/339/RGS_v-2-0_B2.pdf\n- Annexe B3 (Mécanismes auth):          https://www.anssi.gouv.fr/documents/340/RGS_v-2-0_B3.pdf\n- Annexe C  (Exigences audit SI):       https://www.anssi.gouv.fr/documents/341/RGS_v-2-0_C.pdf",
+    "standard": "FR RGS",
+    "language": "fr",
+    "source_file": "RGS_Referentiel_General_Securite_FR.txt"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "FR RGS — section 3",
+    "text": "DOCUMENT OVERVIEW (from ANSSI metadata):\nTitle:    Référentiel général de sécurité — Version 2.0 — Corps du texte\nPublisher: ANSSI (Agence nationale de la sécurité des systèmes d'information)\nVersion:  2.0\nDate:     2014-07-01 (original), with annexe updates through 2020\n\nSCOPE:\nThe RGS (Référentiel général de sécurité) is a mandatory framework for French\npublic administrations. It defines security rules for electronic information\nsystems used in public services (teleservices). Version 2.0 covers:\n- Security requirements for electronic trust services\n- Requirements for electronic certificates (person, device, service)\n- Cryptographic mechanisms and key management\n- Electronic timestamping policies\n- IS audit requirements for accreditation\n- Rules for deployment of security functions based on electronic certificates\n\nREGULATORY BASIS:\n- Ordonnance n° 2005-1516 du 8 décembre 2005 relative aux échanges\n  électroniques entre les usagers et les autorités administratives\n- Arrêté du 6 mai 2010 portant approbation du référentiel général de sécurité\n  et précisant les modalités de mise en oeuvre de la procédure de validation\n  des certificats électroniques",
+    "standard": "FR RGS",
+    "language": "fr",
+    "source_file": "RGS_Referentiel_General_Securite_FR.txt"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "FR RGS — section 4",
+    "text": "STRUCTURE (Corps du texte — 50 pages approx.):\n- Chapitre 1: Objet et champ d'application\n- Chapitre 2: Cadre réglementaire\n- Chapitre 3: Fonctions de sécurité\n- Chapitre 4: Niveaux de sécurité\n- Chapitre 5: Procédures de qualification\n- Annexes: A (Certificats), B (Cryptographie), C (Audit)",
+    "standard": "FR RGS",
+    "language": "fr",
+    "source_file": "RGS_Referentiel_General_Securite_FR.txt"
+  }
+]

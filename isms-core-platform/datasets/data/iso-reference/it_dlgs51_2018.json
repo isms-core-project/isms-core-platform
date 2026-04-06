@@ -1,0 +1,650 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "IT D.Lgs. 51/2018 LED — section 1",
+    "text": "DECRETO LEGISLATIVO 18 maggio 2018 , n. 51\nAttuazione della direttiva (UE) 2016/680 del Parlamento europeo e del Consiglio, del 27 aprile 2016, relativa alla protezione delle\npersone fisiche con riguardo al trattamento dei dati personali da parte delle autorità competenti a fini di prevenzione, indagine,\naccertamento e perseguimento di reati o esecuzione di sanzioni penali, nonchè alla libera circolazione di tali dati e che abroga la\ndecisione quadro 2008/977/GAI del Consiglio. (18G00080)\nVigente al: 4-4-2026",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "IT D.Lgs. 51/2018 LED — section 2",
+    "text": "Capo I\nDisposizioni generali\nIL PRESIDENTE DELLA REPUBBLICA\nVisti gli articoli 76 e 87 della Costituzione;\nVisto l'articolo 14 della legge 23 agosto 1988, n. 400;\nVista la direttiva (UE) 2016/680 del Parlamento europeo e del Consiglio, del 27 aprile 2016, relativa alla protezione delle persone\nfisiche con riguardo al trattamento dei dati personali da parte delle autorità competenti a fini di prevenzione, indagine,\naccertamento e perseguimento di reati o esecuzione di sanzioni penali, nonché alla libera circolazione di tali dati e che abroga la\ndecisione quadro 2008/977/GAI del Consiglio;\nVisto il regolamento (UE) n. 2016/679 del Parlamento europeo e del Consiglio, del 27 aprile 2016, relativo alla protezione delle\npersone fisiche con riguardo al trattamento dei dati personali, nonché alla libera circolazione di tali dati e che abroga la direttiva\n95/46/CE concernente regolamento generale sulla protezione dei dati;\nVista la legge 25 ottobre 2017, n.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "IT D.Lgs. 51/2018 LED — section 3",
+    "text": "163, recante delega al Governo per il recepimento delle direttive europee e l'attuazione di altri\natti dell'Unione europea - Legge di delegazione europea 2016-2017, e in particolare l'articolo 11;\nVisto il codice in materia di protezione dei dati personali adottato con decreto legislativo 30 giugno 2003, n. 196;\nVista la preliminare deliberazione del Consiglio dei ministri, adottata nella riunione dell'8 febbraio 2018;\nAcquisito il parere del Garante per la protezione dei dati personali, espresso nell'adunanza del 22 febbraio 2018;\nAcquisito il parere della 2ª Commissione del Senato della Repubblica;\nConsiderato che le competenti Commissioni della Camera dei deputati non hanno espresso il parere entro il termine di cui\nall'articolo 31, comma 3, della legge 24 dicembre 2012, n. 234;\nVista la deliberazione del Consiglio dei ministri, adottata nella riunione del 16 maggio 2018;\nSulla proposta del Presidente del Consiglio dei ministri e del Ministro della giustizia, di concerto con i Ministri degli affari esteri e\ndella cooperazione internazionale, dell'interno e dell'economia e delle finanze;\nEmana\nil seguente decreto legislativo:\nArt. 1\nOggetto e ambito di applicazione\n1.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "IT D.Lgs. 51/2018 LED — section 4",
+    "text": "Il presente decreto attua nell'ordinamento interno le disposizioni della direttiva (UE) 2016/680 del Parlamento europeo e del\nConsiglio, del 27 aprile 2016, relativa alla protezione delle persone fisiche con riguardo al trattamento dei dati personali da parte",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "IT D.Lgs. 51/2018 LED — section 5",
+    "text": "delle autorità competenti a fini di prevenzione, indagine, accertamento e perseguimento di reati o esecuzione di sanzioni penali,\nnonché alla libera circolazione di tali dati, e che abroga la decisione quadro 2008/977/GAI del Consiglio.\n2. Il presente decreto si applica al trattamento interamente o parzialmente automatizzato di dati personali delle persone fisiche e\nal trattamento non automatizzato di dati personali delle persone fisiche contenuti in un archivio o ad esso destinati, svolti dalle\nautorità competenti a fini di prevenzione, indagine, accertamento e perseguimento di reati, o esecuzione di sanzioni penali, incluse\nla salvaguardia contro e la prevenzione di minacce alla sicurezza pubblica.\n3. Il presente decreto non si applica ai trattamenti di dati personali:\na) effettuati nello svolgimento di attività concernenti la sicurezza nazionale o rientranti nell'ambito di applicazione del titolo V,\ncapo 2, del trattato sull'Unione europea e per tutte le attività che non rientrano nell'ambito di applicazione del diritto dell'Unione\neuropea;\nb) effettuati da istituzioni, organi, uffici e agenzie dell'Unione europea.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "IT D.Lgs. 51/2018 LED — section 6",
+    "text": "Ai fini del presente decreto, si applicano le seguenti definizioni: a) dati personali: qualsiasi informazione riguardante una persona fisica identificata o identificabile («interessato»); b) trattamento: qualsiasi operazione o insieme di operazioni, compiute con o senza l'ausilio di processi automatizzati, applicate a dati personali o insiemi di dati personali, come la raccolta, la registrazione, l'organizzazione, la strutturazione, la conservazione, l'adattamento o la modifica, l'estrazione, la consultazione, l'uso, la comunicazione mediante trasmissione, diffusione o qualsiasi altra forma di messa a disposizione, il raffronto o l'interconnessione, la limitazione, la cancellazione o la distruzione; c) limitazione di trattamento: il contrassegno dei dati personali conservati con l'obiettivo di limitarne il trattamento in futuro; d) pseudonimizzazione: il trattamento dei dati personali in modo tale che i dati personali non possano più essere attribuiti a un interessato specifico senza l'utilizzo di informazioni aggiuntive, a condizione che tali informazioni aggiuntive siano conservate separatamente e soggette a misure tecniche e organizzative intese a garantire che i dati personali",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "IT D.Lgs. 51/2018 LED — section 7",
+    "text": "non siano attribuiti a una persona fisica identificata o identificabile; e) profilazione: qualsiasi forma di trattamento automatizzato di dati personali consistente nell'utilizzo di tali dati per valutare determinati aspetti personali relativi a una persona fisica, in particolare per analizzare o prevedere aspetti riguardanti il rendimento professionale, la situazione economica, la salute, le preferenze personali, gli interessi, l'affidabilità, il comportamento, l'ubicazione o gli spostamenti di detta persona fisica; f) archivio: qualsiasi insieme strutturato di dati personali accessibili secondo criteri determinati, indipendentemente dal fatto che tale insieme sia centralizzato, decentralizzato o ripartito in modo funzionale o geografico; g) autorità competente: 1) qualsiasi autorità pubblica dello Stato, di uno Stato membro dell'Unione europea o di uno Stato terzo competente in materia di prevenzione, indagine, accertamento e perseguimento di reati o esecuzione di sanzioni penali, incluse la salvaguardia contro e la prevenzione di minacce alla sicurezza pubblica; 2) qualsiasi altro organismo o entità incaricato dagli ordinamenti interni di esercitare l'autorità pubblica e i",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "IT D.Lgs. 51/2018 LED — section 8",
+    "text": "poteri pubblici a fini di prevenzione, indagine, accertamento e perseguimento di reati o esecuzione di sanzioni penali, incluse la salvaguardia e la prevenzione di minacce alla sicurezza pubblica; h) titolare del trattamento: l'autorità competente che, singolarmente o insieme ad altri, determina le finalità e i mezzi del trattamento di dati personali; quando le finalità e i mezzi di tale trattamento sono determinati dal diritto dell'Unione europea o dello Stato, il titolare del trattamento o i criteri specifici applicabili alla sua nomina possono essere previsti dal diritto dell'Unione europea o dello Stato; i) responsabile del trattamento: la persona fisica o giuridica, l'autorità pubblica, il servizio o altro organismo che tratta dati personali per conto del titolare del trattamento; l) destinatario: la persona fisica o giuridica, l'autorità pubblica, il servizio o un altro organismo che riceve comunicazione di dati personali, che si tratti o meno di terzi.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "IT D.Lgs. 51/2018 LED — section 9",
+    "text": "Tuttavia, le autorità pubbliche che possono ricevere comunicazione di dati personali\nnell'ambito di una specifica indagine conformemente al diritto dell'Unione europea o dello Stato non sono considerate destinatari;\nil trattamento di tali dati da parte di tali autorità pubbliche è conforme alle norme in materia di protezione dei dati applicabili\nsecondo le finalità del trattamento;",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "IT D.Lgs. 51/2018 LED — section 10",
+    "text": "m) violazione dei dati personali: la violazione della sicurezza che comporta accidentalmente o in modo illecito la distruzione, la perdita, la modifica, la divulgazione non autorizzata o l'accesso ai dati personali trasmessi, conservati o comunque trattati; n) dati genetici: i dati personali relativi alle caratteristiche genetiche ereditarie o acquisite di una persona fisica, che forniscono informazioni univoche sulla fisiologia o sulla salute di detta persona fisica e che risultano in particolare dall'analisi di un campione biologico della persona fisica in questione; o) dati biometrici: i dati personali ottenuti da un trattamento tecnico specifico relativi alle caratteristiche fisiche, fisiologiche o comportamentali di una persona fisica che ne consentono o confermano l'identificazione univoca, quali l'immagine facciale o i dati dattiloscopici; p) dati relativi alla salute: i dati personali attinenti alla salute fisica o mentale di una persona fisica, compresa la prestazione di servizi di assistenza sanitaria, che rivelano informazioni relative al suo stato di salute; q) file di log: registro degli accessi e delle operazioni; r) autorità di controllo: l'autorità pubblica",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "IT D.Lgs. 51/2018 LED — section 11",
+    "text": "indipendente istituita negli Stati membri ai sensi dell'articolo 41 della direttiva; s) il Garante: autorità di controllo nell'ordinamento interno, individuata nel Garante per la protezione dei dati personali, istituito dal decreto legislativo 30 giugno 2003, n. 196;\nt) organizzazione internazionale: un'organizzazione e gli organismi di diritto internazionale pubblico a essa subordinati o qualsiasi\naltro organismo istituito da o sulla base di un accordo tra due o più Stati;\nu) Codice: Codice in materia di protezione dei dati personali, adottato con il decreto legislativo 30 giugno 2003, n. 196;\nv) Stato membro: Stato membro dell'Unione europea;\nz) Paese terzo: Stato non membro dell'Unione europea;\naa) direttiva: la direttiva (UE) 2016/680 del Parlamento europeo e del Consiglio del 27 aprile 2016;\nbb) regolamento UE: il regolamento (UE) 2016/679 del Parlamento europeo e del Consiglio del 27 aprile 2016;\ncc) Forze di polizia: le Forze di polizia di cui all'articolo 16 della legge 1° aprile 1981, n. 121.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "IT D.Lgs. 51/2018 LED — section 12",
+    "text": "Art. 3\nPrincipi applicabili\nal trattamento di dati personali\n1. I dati personali di cui all'articolo 1, comma 2, sono:\na) trattati in modo lecito e corretto;\nb) raccolti per finalità determinate, espresse e legittime e trattati in modo compatibile con tali finalità;\nc) adeguati, pertinenti e non eccedenti rispetto alle finalità per le quali sono trattati;\nd) esatti e, se necessario, aggiornati; devono essere adottate tutte le misure ragionevoli per cancellare o rettificare\ntempestivamente i dati inesatti rispetto alle finalità per le quali sono trattati;\ne) conservati con modalità che consentano l'identificazione degli interessati per il tempo necessario al conseguimento delle\nfinalità per le quali sono trattati, sottoposti a esame periodico per verificarne la persistente necessità di conservazione, cancellati o\nanonimizzati una volta decorso tale termine;\nf) trattati in modo da garantire un'adeguata sicurezza e protezione da trattamenti non autorizzati o illeciti e dalla perdita, dalla\ndistruzione o dal danno accidentali, mediante l'adozione di misure tecniche e organizzative adeguate. 2.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "IT D.Lgs. 51/2018 LED — section 13",
+    "text": "Il trattamento per una delle finalità di cui all'articolo 1, comma 2, diversa da quella per cui i dati sono raccolti, è consentito se il\ntitolare del trattamento, anche se diverso da quello che ha raccolto i dati, è autorizzato a trattarli per detta finalità,\nconformemente al diritto dell'Unione europea o dell'ordinamento interno e se il trattamento è necessario e proporzionato a tale\ndiversa finalità, conformemente al diritto dell'Unione europea o dell'ordinamento interno. 3. Il trattamento per le finalità di cui all'articolo 1, comma 2, può comprendere l'archiviazione nel pubblico interesse, l'utilizzo\nscientifico, storico o statistico, fatte salve le garanzie adeguate per i diritti e le libertà degli interessati. 4. Il titolare del trattamento è responsabile del rispetto dei principi di cui ai commi 1, 2 e 3.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "IT D.Lgs. 51/2018 LED — section 14",
+    "text": "Art. 4\nConservazione e verifica della qualità dei dati,\ndistinzione tra categorie di interessati e di dati\n1. Il titolare del trattamento, tenuto conto della finalità del trattamento e per quanto possibile, distingue i dati personali in\nrelazione alle diverse categorie di interessati previste dalla legge e i dati fondati su fatti da quelli fondati su valutazioni. La\ndistinzione in relazione alle diverse categorie di interessati si applica, in particolare, alle seguenti categorie di interessati: persone\nsottoposte a indagine; imputati; persone sottoposte a indagine o imputate in procedimento connesso o collegato; persone\ncondannate con sentenza definitiva; persone offese dal reato; parti civili; persone informate sui fatti; testimoni. 2. Le autorità competenti adottano misure adeguate a garantire che i dati personali inesatti, incompleti o non aggiornati non siano\ntrasmessi o resi disponibili.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0014",
+    "title": "IT D.Lgs. 51/2018 LED — section 15",
+    "text": "A tal fine ciascuna autorità competente, per quanto possibile, verifica la qualità dei dati personali prima\nche questi siano trasmessi o resi disponibili e correda la loro trasmissione delle informazioni che consentono all'autorità ricevente\ndi valutarne il grado di esattezza, completezza, aggiornamento e affidabilità. 3. Quando risulta che i dati personali sono stati trasmessi illecitamente o sono inesatti, il destinatario ne è tempestivamente\ninformato. In tal caso, i dati personali devono essere rettificati o cancellati o il trattamento deve essere limitato a norma\ndell'articolo 12.\n\nArt. 5\nLiceità del trattamento\n1. Il trattamento è lecito se è necessario per l'esecuzione di un compito di un'autorità competente per le finalità di cui all'articolo 1,\ncomma 2, e si basa sul diritto dell'Unione europea o su disposizioni di legge o di regolamento o su atti amministrativi generali che\nindividuano i dati personali e le finalità del trattamento.\n2. ((COMMA ABROGATO DALLA L. 2 DICEMBRE 2025, N. 182)).\n(2)",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0015",
+    "title": "IT D.Lgs. 51/2018 LED — section 16",
+    "text": "---------------AGGIORNAMENTO (2)\nIl D.L. 8 ottobre 2021, n. 139, convertito con modificazioni dalla L. 3 dicembre 2021, n. 205, ha disposto (con l'art. 9, comma 5) che\n\"l'articolo 5 del decreto legislativo n. 51 del 2018, come modificati dal presente articolo, si applicano anche ai casi in cui\ndisposizioni di legge già in vigore stabiliscono che i tipi di dati che possono essere trattati, le operazioni eseguibili, il motivo di\ninteresse pubblico rilevante, la finalità del trattamento nonché le misure appropriate e specifiche per tutelare i diritti fondamentali\ndell'interessato e i suoi interessi sono previsti da uno o più regolamenti\".",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0016",
+    "title": "IT D.Lgs. 51/2018 LED — section 17",
+    "text": "Art. 6\nCondizioni di trattamento specifiche\n1. I dati personali raccolti per le finalità di cui all'articolo 1, comma 2, non possono essere trattati per finalità diverse, salvo che tale\ntrattamento sia consentito dal diritto dell'Unione europea o dalla legge.\n2. Ai trattamenti eseguiti per finalità diverse da quelle di cui all'articolo 1, comma 2, comprese le attività di archiviazione nel\npubblico interesse, di ricerca scientifica o storica o per finalità statistiche, si applica il regolamento UE, salve le disposizioni di cui\nall'articolo 58 del Codice.\n\n3. Se il diritto dell'Unione europea o le disposizioni legislative o regolamentari prevedono condizioni specifiche per il trattamento\ndei dati personali, l'autorità competente che trasmette tali dati informa il destinatario delle condizioni e dell'obbligo di rispettarle.\n4. L'autorità competente che trasmette i dati applica le stesse condizioni previste per le trasmissioni di dati all'interno dello Stato\nai destinatari di altri Stati membri o ad agenzie, uffici e organi istituiti a norma del titolo V, capi 4 e 5, del Trattato sul\nfunzionamento dell'Unione europea.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0017",
+    "title": "IT D.Lgs. 51/2018 LED — section 18",
+    "text": "Art. 7\nTrattamento di categorie\nparticolari di dati personali\n1. Il trattamento di dati di cui all'articolo 9 del regolamento UE è autorizzato solo se strettamente necessario e assistito da\ngaranzie adeguate per i diritti e le libertà dell'interessato e specificamente previsto dal diritto dell'Unione europea o da legge o, nei\ncasi previsti dalla legge, da regolamento, ovvero, ferme le garanzie dei diritti e delle libertà, se necessario per salvaguardare un\ninteresse vitale dell'interessato o di un'altra persona fisica o se ha ad oggetto dati resi manifestamente pubblici dall'interessato.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0018",
+    "title": "IT D.Lgs. 51/2018 LED — section 19",
+    "text": "Art. 8\nProcesso decisionale automatizzato\nrelativo alle persone fisiche\n1. Sono vietate le decisioni basate unicamente su un trattamento automatizzato, compresa la profilazione, che producono effetti\nnegativi nei confronti dell'interessato, salvo che siano autorizzate dal diritto dell'Unione europea o da specifiche disposizioni di\nlegge.\n2. Le disposizioni di legge devono prevedere garanzie adeguate per i diritti e le libertà dell'interessato. In ogni caso è garantito il\ndiritto di ottenere l'intervento umano da parte del titolare del trattamento.\n3. Le decisioni di cui al comma 1 non possono basarsi sulle categorie particolari di dati personali di cui all'articolo 9 del\nregolamento UE, salvo che siano in vigore misure adeguate a salvaguardia dei diritti, delle libertà e dei legittimi interessi\ndell'interessato.\n4. Fermo il divieto di cui all'articolo 21 della Carta dei diritti fondamentali dell'Unione europea, è vietata la profilazione finalizzata\nalla discriminazione di persone fisiche sulla base di categorie particolari di dati personali di cui all'articolo 9 del regolamento UE.\nCapo II\nDiritti dell'interessato",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0019",
+    "title": "IT D.Lgs. 51/2018 LED — section 20",
+    "text": "Art. 9\nComunicazioni e modalità\nper l'esercizio dei diritti dell'interessato\n1. Il titolare del trattamento adotta misure adeguate a fornire all'interessato tutte le informazioni di cui all'articolo 10 ed effettua le\ncomunicazioni relative al trattamento di cui agli articoli 8, 11, 12, 13, 14 e 27, in forma concisa, intellegibile e facilmente\naccessibile, con un linguaggio semplice e chiaro. Le informazioni sono fornite con qualsiasi mezzo adeguato, anche per via\nelettronica, se possibile con le stesse modalità della richiesta.\n2. Il titolare del trattamento facilita l'esercizio dei diritti di cui agli articoli 8, 11, 12, 13 e 14 da parte dell'interessato.\n3. Il titolare del trattamento informa l'interessato senza ingiustificato ritardo e per iscritto dell'esito della sua richiesta.\n4. È assicurata la gratuità del rilascio di informazioni ai sensi dell'articolo 10 e dell'esercizio dei diritti previsti dagli articoli 8, 11, 12,",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0020",
+    "title": "IT D.Lgs. 51/2018 LED — section 21",
+    "text": "13, 14 e 27. Si applicano le disposizioni di cui all'articolo 12, paragrafo 5, secondo periodo, del regolamento UE.\n5. Fermo quanto previsto dall'articolo 5, comma 1, con decreto adottato dal Ministro competente sono individuati, ove necessario\nanche per categorie, i trattamenti non occasionali effettuati con strumenti elettronici per le finalità di cui all'articolo 1, comma 2,\nprevisti da disposizioni di legge o di regolamento, nonché i relativi titolari.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0021",
+    "title": "IT D.Lgs. 51/2018 LED — section 22",
+    "text": "Art. 10\nInformazioni da rendere disponibili\no da fornire all'interessato\n1. Il titolare del trattamento mette a disposizione dell'interessato, anche sul proprio sito internet, le seguenti informazioni:\na) l'identità e i dati di contatto del titolare del trattamento;\nb) i dati di contatto del responsabile della protezione dei dati, se previsto;\nc) le finalità del trattamento cui sono destinati i dati personali;\nd) la sussistenza del diritto di proporre reclamo al Garante e i relativi dati di contatto;\ne) la sussistenza del diritto di chiedere al titolare del trattamento l'accesso ai dati e la rettifica o la cancellazione dei dati personali\ne la limitazione del trattamento dei dati personali che lo riguardano. 2.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0022",
+    "title": "IT D.Lgs. 51/2018 LED — section 23",
+    "text": "In aggiunta alle informazioni di cui al comma 1, il titolare del trattamento, quando previsto da disposizioni di legge o di\nregolamento, fornisce all'interessato le seguenti ulteriori informazioni, funzionali all'esercizio dei propri diritti:\na) il titolo giuridico del trattamento;\nb) il periodo di conservazione dei dati personali o, se non è possibile, i criteri per determinare tale periodo;\nc) le categorie di destinatari dei dati personali, anche in Paesi terzi o in seno a organizzazioni internazionali;\nd) le ulteriori informazioni ritenute utili all'esercizio dei diritti, in particolare nel caso in cui i dati personali siano stati raccolti\nall'insaputa dell'interessato.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0023",
+    "title": "IT D.Lgs. 51/2018 LED — section 24",
+    "text": "Art. 11\nDiritto di accesso dell'interessato\n1. L'interessato ha il diritto di ottenere dal titolare del trattamento conferma dell'esistenza di un trattamento in corso di dati\npersonali che lo riguardano e, in tal caso, l'accesso ai dati e alle seguenti informazioni:\na) le finalità e il titolo giuridico del trattamento;\nb) le categorie di dati personali trattati;\nc) i destinatari o le categorie di destinatari a cui i dati personali sono stati comunicati;\nd) il periodo di conservazione dei dati personali o, se non è possibile, i criteri per determinare tale periodo;\ne) il diritto di chiedere al titolare del trattamento la rettifica o la cancellazione dei dati personali o la limitazione del trattamento\ndei dati personali che lo riguardano;\nf) il diritto di proporre reclamo al Garante, con i relativi dati di contatto;\ng) la comunicazione dei dati personali oggetto del trattamento e di tutte le informazioni disponibili sulla loro origine. 2.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0024",
+    "title": "IT D.Lgs. 51/2018 LED — section 25",
+    "text": "Nei casi di cui all'articolo 14, comma 2, il titolare del trattamento informa l'interessato, senza ingiustificato ritardo e per iscritto,\ndi ogni rifiuto o limitazione dell'accesso e dei relativi motivi, nonché del diritto di proporre reclamo dinanzi al Garante o di proporre\nricorso giurisdizionale. 3. Il titolare del trattamento documenta i motivi di fatto o di diritto su cui si basa la decisione di cui al comma 2. Tali informazioni\nsono rese disponibili al Garante.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0025",
+    "title": "IT D.Lgs. 51/2018 LED — section 26",
+    "text": "Art. 12\nDiritto di rettifica o cancellazione di dati personali\ne limitazione di trattamento\n1. L'interessato ha il diritto di ottenere dal titolare del trattamento, senza ingiustificato ritardo, la rettifica dei dati personali inesatti\nche lo riguardano. Tenuto conto delle finalità del trattamento, l'interessato ha il diritto di ottenere l'integrazione dei dati personali\nincompleti, anche fornendo una dichiarazione integrativa. 2. Fermo quanto previsto dall'articolo 14, comma 1 e 2, il titolare del trattamento cancella senza ingiustificato ritardo i dati\npersonali, quando il trattamento si pone in contrasto con le disposizioni di cui agli articoli 3, 5 o 7 e in ogni altro caso previsto dalla\nlegge. 3. In luogo della cancellazione, il titolare del trattamento limita il trattamento quando l'esattezza dei dati, contestata\ndall'interessato, non può essere accertata o se i dati devono essere conservati a fini probatori. 4. Quando il trattamento è limitato per l'impossibilità di accertare l'esattezza dei dati, il titolare del trattamento informa\nl'interessato prima di revocare la limitazione. 5.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0026",
+    "title": "IT D.Lgs. 51/2018 LED — section 27",
+    "text": "L'interessato ha diritto di essere informato per iscritto dal titolare del trattamento del rifiuto di rettifica, di cancellazione o di\nlimitazione del trattamento e dei relativi motivi, nonché del diritto di proporre reclamo dinanzi al Garante o di proporre ricorso\ngiurisdizionale. 7. Il titolare del trattamento comunica le rettifiche dei dati personali inesatti all'autorità competente da cui provengono. 8. Qualora i dati personali siano stati rettificati o cancellati o il trattamento sia stato limitato ai sensi dei commi 1, 2 e 3, il titolare\ndel trattamento ne informa i destinatari e questi provvedono, sotto la propria responsabilità, alla rettifica o cancellazione dei dati\npersonali ovvero alla limitazione del trattamento.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0027",
+    "title": "IT D.Lgs. 51/2018 LED — section 28",
+    "text": "Art. 13\nEsercizio dei diritti dell'interessato\ne verifica da parte del Garante\n1. Al di fuori dei casi di trattamento effettuato dall'autorità giudiziaria per le finalità di cui all'articolo 1, comma 2, i diritti\ndell'interessato possono essere esercitati anche tramite il Garante con le modalità di cui all'articolo 160 del codice.\n2. Il titolare del trattamento informa l'interessato della facoltà di cui al comma 1.\n3. Nei casi di cui al comma 1, il Garante informa l'interessato di aver eseguito tutte le verifiche necessarie o di aver svolto un\nriesame, nonché del diritto dell'interessato di proporre ricorso giurisdizionale.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0028",
+    "title": "IT D.Lgs. 51/2018 LED — section 29",
+    "text": "Art. 14\nLimitazioni dell'esercizio dei diritti dell'interessato\n1. I diritti di cui agli articoli 10, 11 e 12, relativamente ai dati personali contenuti in una decisione giudiziaria, in atti o documenti\noggetto di trattamento nel corso di accertamenti o indagini, nel casellario giudiziale o in un fascicolo oggetto di trattamento nel\ncorso di un procedimento penale o in fase di esecuzione penale, sono esercitati conformemente a quanto previsto dalle\ndisposizioni di legge o di regolamento che disciplinano tali atti e procedimenti. Chiunque vi abbia interesse, durante il procedimento\npenale o dopo la sua definizione, può chiedere, con le modalità di cui all'articolo 116 del codice di procedura penale, la rettifica, la\ncancellazione o la limitazione dei dati personali che lo riguardano. Il giudice provvede con le forme dell'articolo 130 del codice di\nprocedura penale.\n2. Fermo quanto previsto dal comma 1, l'esercizio dei diritti di cui agli articoli 11, commi 1 e 2, e 12, comma 5, nonché\nl'adempimento dell'obbligo di cui all'articolo 10, comma 2, possono essere ritardati, limitati o esclusi, con disposizione di legge",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0029",
+    "title": "IT D.Lgs. 51/2018 LED — section 30",
+    "text": "((...)), nella misura e per il tempo in cui ciò costituisca una misura necessaria e proporzionata, tenuto conto dei diritti fondamentali\ne dei legittimi interessi della persona fisica interessata al fine di:\na) non compromettere il buon esito dell'attività di prevenzione, indagine, accertamento e perseguimento di reati o l'esecuzione di\nsanzioni penali, nonché l'applicazione delle misure di prevenzione personali e patrimoniali e delle misure di sicurezza;\nb) tutelare la sicurezza pubblica;\nc) tutelare la sicurezza nazionale;\nd) tutelare i diritti e le libertà altrui.\nCapo III\nTitolare del trattamento e responsabile del trattamento\nSezione I\nObblighi generali",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0030",
+    "title": "IT D.Lgs. 51/2018 LED — section 31",
+    "text": "Art. 15\nObblighi del titolare del trattamento\n1. Il titolare del trattamento, tenuto conto della natura, dell'ambito di applicazione, del contesto e delle finalità del trattamento,\nnonché dei rischi per i diritti e le libertà delle persone fisiche, mette in atto misure tecniche e organizzative adeguate per garantire\nche il trattamento sia effettuato in conformità alle norme del presente decreto.\n2. Le misure di cui al comma 1 sono riesaminate e aggiornate qualora necessario e, ove proporzionato rispetto all'attività di\ntrattamento, includono l'attuazione di politiche adeguate in materia di protezione dei dati da parte del titolare del trattamento.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0031",
+    "title": "IT D.Lgs. 51/2018 LED — section 32",
+    "text": "Art. 16\nProtezione dei dati fin dalla progettazione\ne protezione per impostazione predefinita\n1. Il titolare del trattamento, tenuto conto delle cognizioni tecniche disponibili e dei costi di attuazione, della natura, dell'ambito di\napplicazione, del contesto e delle finalità del trattamento, nonché dei rischi per i diritti e le libertà delle persone fisiche, mette in\natto misure tecniche e organizzative adeguate, quale la pseudonimizzazione, per garantire la protezione dei dati e per tutelare i\ndiritti degli interessati, in conformità alle norme del presente decreto.\n2. Il titolare del trattamento mette in atto misure tecniche e organizzative adeguate per garantire che siano trattati, per\nimpostazione predefinita, solo i dati personali necessari per ogni specifica finalità del trattamento. Tale obbligo vale per la quantità\ndei dati personali raccolti, la portata del trattamento, il periodo di conservazione e l'accessibilità. In particolare, tali misure\ngarantiscono che, per impostazione predefinita, non siano resi accessibili dati personali a un numero indefinito di persone fisiche\nsenza l'intervento della persona fisica.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0032",
+    "title": "IT D.Lgs. 51/2018 LED — section 33",
+    "text": "Art. 17\nContitolari del trattamento\n1. Due o più titolari del trattamento che determinano congiuntamente le finalità e i mezzi del trattamento sono contitolari del\ntrattamento.\n2. I contitolari del trattamento determinano mediante accordo con modalità trasparenti gli ambiti delle rispettive responsabilità\nper l'osservanza delle norme di cui al presente decreto, salvo che detti ambiti siano determinati dal diritto dell'Unione europea o da\ndisposizioni legislative o regolamentari.\n3. Con l'accordo di cui al comma 2 è designato il punto di contatto per gli interessati. Indipendentemente dalle disposizioni di tale\naccordo, l'interessato può esercitare i diritti nei confronti di e contro ciascun titolare del trattamento.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0033",
+    "title": "IT D.Lgs. 51/2018 LED — section 34",
+    "text": "Art. 18\nResponsabile del trattamento\n1. Qualora un trattamento debba essere effettuato per conto del titolare del trattamento, quest'ultimo ricorre a responsabili del\ntrattamento che garantiscono misure tecniche e organizzative adeguate ad assicurare la protezione dei dati personali e la tutela\ndei diritti dell'interessato. 2. Il responsabile del trattamento non può ricorrere a un altro responsabile senza preventiva autorizzazione scritta del titolare del\ntrattamento. 3. L'esecuzione dei trattamenti da parte di un responsabile del trattamento è disciplinata da un contratto o da altro atto giuridico\nche prevede l'oggetto, la durata, la natura e la finalità del trattamento, il tipo di dati personali e le categorie di interessati, gli\nobblighi e i diritti del titolare del trattamento.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0034",
+    "title": "IT D.Lgs. 51/2018 LED — section 35",
+    "text": "Tale contratto o diverso atto giuridico prevede anche che il responsabile del\ntrattamento:\na) agisca soltanto su istruzione del titolare del trattamento;\nb) garantisca che le persone autorizzate al trattamento dei dati personali si siano impegnate alla riservatezza o abbiano un\nadeguato obbligo legale di riservatezza;\nc) assista il titolare del trattamento con ogni mezzo adeguato per garantire il rispetto delle disposizioni relative ai diritti\ndell'interessato;\nd) su scelta del titolare del trattamento, cancelli o gli restituisca tutti i dati personali dopo che è terminata la prestazione dei\nservizi di trattamento di dati e cancelli le copie esistenti, salvo che il diritto dell'Unione europea o la legge preveda la conservazione\ndei dati personali;\ne) metta a disposizione del titolare del trattamento tutte le informazioni necessarie per dimostrare il rispetto delle condizioni di\ncui al presente articolo;\nf) rispetti le condizioni di cui ai commi 2 e 3 nel caso di ricorso ad altro responsabile del trattamento. 4. Il contratto o il diverso atto di cui al comma 3 è stipulato per iscritto, anche in formato elettronico. 5.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0035",
+    "title": "IT D.Lgs. 51/2018 LED — section 36",
+    "text": "Se un responsabile del trattamento determina, in violazione del presente decreto, le finalità e i mezzi del trattamento, è\nconsiderato titolare del trattamento.\n\nArt. 19\nTrattamento sotto l'autorità del titolare del trattamento\no del responsabile del trattamento\n1. Il responsabile del trattamento o chiunque agisca sotto la sua autorità o sotto quella del titolare del trattamento può trattare i\ndati personali cui ha accesso solo in conformità alle istruzioni del titolare del trattamento, salvo che sia diversamente previsto dal\ndiritto dell'Unione europea o da disposizioni di legge o, nei casi previsti dalla legge, di regolamento.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0036",
+    "title": "IT D.Lgs. 51/2018 LED — section 37",
+    "text": "Art. 20\nRegistri delle attività di trattamento\n1. I titolari del trattamento tengono un registro di tutte le categorie di attività di trattamento sotto la propria responsabilità. Tale\nregistro contiene le seguenti informazioni:\na) il nome e i dati di contatto del titolare del trattamento e, se previsti, di ogni contitolare del trattamento e del responsabile della\nprotezione dei dati;\nb) le finalità del trattamento;\nc) le categorie di destinatari a cui i dati personali sono stati o saranno comunicati, compresi i destinatari di paesi terzi o presso\norganizzazioni internazionali;",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0037",
+    "title": "IT D.Lgs. 51/2018 LED — section 38",
+    "text": "d) una descrizione delle categorie di interessati e delle categorie di dati personali;\ne) se previsto, il ricorso alla profilazione;\nf) se previste, le categorie di trasferimenti di dati personali verso un Paese terzo o verso organizzazioni internazionali;\ng) un'indicazione del titolo giuridico del trattamento cui sono destinati i dati personali, anche in caso di trasferimento;\nh) ove possibile, i termini ultimi previsti per la cancellazione delle diverse categorie di dati personali;\ni) ove possibile, una descrizione generale delle misure di sicurezza tecniche e organizzative di cui all'articolo 25, comma 1. 2.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0038",
+    "title": "IT D.Lgs. 51/2018 LED — section 39",
+    "text": "I responsabili del trattamento tengono un registro di tutte le categorie di attività di trattamento svolte per conto di un titolare\ndel trattamento, contenente le seguenti informazioni:\na) il nome e i dati di contatto del responsabile o dei responsabili del trattamento, di ogni titolare del trattamento per conto del\nquale agiscono e, se esistente, del responsabile della protezione dei dati;\nb) le categorie dei trattamenti effettuati per conto di ogni titolare del trattamento;\nc) i trasferimenti di dati personali effettuati su istruzione del titolare del trattamento verso un Paese terzo o verso\nun'organizzazione internazionale;\nd) ove possibile, una descrizione generale delle misure di sicurezza tecniche e organizzative di cui all'articolo 25, comma 1. 3. I registri di cui ai commi 1 e 2 sono tenuti in forma scritta, anche in formato elettronico. Su richiesta, il titolare del trattamento e\nil responsabile del trattamento mettono tali registri a disposizione del Garante.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0039",
+    "title": "IT D.Lgs. 51/2018 LED — section 40",
+    "text": "Art. 21\nRegistrazione\n1. Le operazioni di raccolta, modifica, consultazione, comunicazione, trasferimento, interconnessione e cancellazione di dati,\neseguite in sistemi di trattamento automatizzati, sono registrate in appositi file di log ((...)).\n2. Le registrazioni delle operazioni di cui al comma 1 debbono consentire di conoscere i motivi, la data e l'ora di tali operazioni e, se\npossibile, di identificare la persona che ha eseguito le operazioni e i destinatari.\n3. Le registrazioni sono usate ai soli fini della verifica della liceità del trattamento, per finalità di controllo interno, per garantire\nl'integrità e la sicurezza dei dati personali e nell'ambito di procedimenti penali.\n4. Su richiesta e fatto salvo quanto previsto dall'articolo 37, comma 3, il titolare del trattamento e il responsabile del trattamento\nmettono le registrazioni a disposizione del Garante.\n\nArt. 22\nCooperazione con il Garante\n1. Salvo quanto previsto dall'articolo 37, comma 3, il titolare del trattamento e il responsabile del trattamento cooperano, su\nrichiesta, con il Garante.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0040",
+    "title": "IT D.Lgs. 51/2018 LED — section 41",
+    "text": "Art. 23\nValutazione d'impatto\nsulla protezione dei dati\n1. Se il trattamento, per l'uso di nuove tecnologie e per la sua natura, per l'ambito di applicazione, per il contesto e per le finalità,\npresenta un rischio elevato per i diritti e le libertà delle persone fisiche, il titolare del trattamento, prima di procedere al\ntrattamento, effettua una valutazione del suo impatto sulla protezione dei dati personali.\n2. La valutazione di cui al comma 1 contiene una descrizione generale dei trattamenti previsti, una valutazione dei rischi per i diritti\ne le libertà degli interessati, le misure previste per affrontare tali rischi, le garanzie, le misure di sicurezza e i meccanismi per\ngarantire la protezione dei dati personali e il rispetto delle norme del presente decreto.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0041",
+    "title": "IT D.Lgs. 51/2018 LED — section 42",
+    "text": "Art. 24\nConsultazione preventiva del Garante\n1. Salvo quanto previsto dall'articolo 37, comma 6, il titolare del trattamento o il responsabile del trattamento consultano il\nGarante prima del trattamento di dati personali che figureranno in un nuovo archivio di prossima creazione se:\na) una valutazione d'impatto sulla protezione dei dati di cui all'articolo 23 indica che il trattamento presenterebbe un rischio\nelevato in assenza di misure adottate dal titolare del trattamento per attenuare il rischio; oppure\nb) il tipo di trattamento presenta un rischio elevato per i diritti e le libertà degli interessati anche in ragione dell'utilizzo di\ntecnologie, procedure o meccanismi nuovi ovvero di dati genetici o biometrici. 2. Il Garante è consultato nel corso dell'esame di un progetto di legge o di uno schema di decreto legislativo ovvero di uno schema\ndi regolamento o decreto non avente carattere regolamentare, suscettibile di rilevare ai fini della garanzia del diritto alla protezione\ndei dati personali. 3. Il Garante può stabilire un elenco di trattamenti soggetti a consultazione preventiva ai sensi del comma 1. 4.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0042",
+    "title": "IT D.Lgs. 51/2018 LED — section 43",
+    "text": "Il titolare del trattamento trasmette al Garante la valutazione d'impatto sulla protezione dei dati di cui all'articolo 23 e, su\nrichiesta, ogni altra informazione, al fine di consentire a detta autorità di effettuare una valutazione della conformità del\ntrattamento, dei rischi per la protezione dei dati personali dell'interessato e delle relative garanzie. 5. Ove ritenga che il trattamento di cui al comma 1 violi le disposizioni del presente decreto, il Garante fornisce, entro un termine di\nsei settimane dal ricevimento della richiesta di consultazione, un parere per iscritto al titolare del trattamento e, se esistente, al\nresponsabile del trattamento. Il Garante si avvale dei poteri di cui all'articolo 37, comma 3. 6. Il termine di cui al comma 5 può essere prorogato di un mese nel caso di trattamento complesso. Il Garante informa della\nproroga e dei motivi del ritardo il titolare del trattamento e, se esistente, il responsabile del trattamento, entro un mese dal\nricevimento della richiesta di consultazione. Sezione II\nSicurezza dei dati personali",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0043",
+    "title": "IT D.Lgs. 51/2018 LED — section 44",
+    "text": "Art. 25\nSicurezza del trattamento\n1. Il titolare del trattamento e il responsabile del trattamento, tenuto conto delle cognizioni tecniche disponibili, dei costi di\nattuazione, della natura, dell'oggetto, del contesto e delle finalità del trattamento, nonché del grado di rischio per i diritti e le libertà\ndelle persone fisiche, mettono in atto misure tecniche e organizzative che garantiscano un livello di sicurezza adeguato al rischio di\nviolazione dei dati. 2.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0044",
+    "title": "IT D.Lgs. 51/2018 LED — section 45",
+    "text": "Per il trattamento automatizzato il titolare o il responsabile del trattamento, previa valutazione dei rischi, adottano misure volte a: a) vietare alle persone non autorizzate l'accesso alle attrezzature utilizzate per il trattamento («controllo dell'accesso alle attrezzature»); b) impedire che supporti di dati possano essere letti, copiati, modificati o asportati da persone non autorizzate («controllo dei supporti di dati»); c) impedire che i dati personali siano inseriti senza autorizzazione e che i dati personali conservati siano visionati, modificati o cancellati senza autorizzazione («controllo della conservazione»); d) impedire che persone non autorizzate utilizzino sistemi di trattamento automatizzato mediante attrezzature per la trasmissione di dati («controllo dell'utente»); e) garantire che le persone autorizzate a usare un sistema di trattamento automatizzato abbiano accesso solo ai dati personali cui si riferisce la loro autorizzazione d'accesso («controllo dell'accesso ai dati»); f) garantire la possibilità di individuare i soggetti ai quali siano stati o possano essere trasmessi o resi disponibili i dati personali utilizzando attrezzature per la trasmissione di dati",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0045",
+    "title": "IT D.Lgs. 51/2018 LED — section 46",
+    "text": "(«controllo della trasmissione»);\n\ng) garantire la possibilità di verificare e accertare a posteriori quali dati personali sono stati introdotti nei sistemi di trattamento\nautomatizzato, il momento della loro introduzione e la persona che l'ha effettuata («controllo dell'introduzione»);\nh) impedire che i dati personali possano essere letti, copiati, modificati o cancellati in modo non autorizzato durante i\ntrasferimenti di dati personali o il trasporto di supporti di dati («controllo del trasporto»);\ni) garantire che, in caso di interruzione, i sistemi utilizzati possano essere ripristinati («recupero»);\nl) garantire che le funzioni del sistema siano operative, che eventuali errori di funzionamento siano segnalati («affidabilità») e che\ni dati personali conservati non possano essere falsati da un errore di funzionamento del sistema («integrità»).",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0046",
+    "title": "IT D.Lgs. 51/2018 LED — section 47",
+    "text": "Art. 26\nNotifica al Garante\ndi una violazione di dati personali\n1. Salvo quanto previsto dall'articolo 37, comma 6, in caso di violazione di dati personali, il titolare del trattamento notifica la\nviolazione al Garante con le modalità di cui all'articolo 33 del regolamento UE.\n2. Se la violazione dei dati personali riguarda dati personali che sono stati trasmessi dal o al titolare del trattamento di un altro\nStato membro, le informazioni previste dal citato articolo 33 del regolamento UE sono comunicate, senza ingiustificato ritardo, al\ntitolare del trattamento di tale Stato membro.\n\nArt. 27\nComunicazione di una violazione\ndi dati personali all'interessato\n1. Quando la violazione di dati personali è suscettibile di presentare un rischio elevato per i diritti e le libertà delle persone fisiche,\nsi osservano le disposizioni in tema di comunicazioni di cui all'articolo 34 del regolamento UE.\n2. La comunicazione all'interessato di cui al comma 1 può essere ritardata, limitata od omessa alle condizioni e per i motivi di cui\nall'articolo 14, comma 2.\nSezione III\nResponsabile della protezione dei dati",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0047",
+    "title": "IT D.Lgs. 51/2018 LED — section 48",
+    "text": "Art. 28\nDesignazione del responsabile\ndella protezione dei dati\n1. Il titolare del trattamento designa un responsabile della protezione dei dati.\n2. Il responsabile della protezione dei dati è designato in funzione delle qualità professionali, in particolare della conoscenza\nspecialistica della normativa e delle prassi in materia di protezione dei dati, e della capacità di assolvere i compiti di cui all'articolo\n30.\n3. Può essere designato un unico responsabile della protezione dei dati per più autorità competenti, tenuto conto della loro\nstruttura organizzativa e dimensione.\n4. Il titolare del trattamento pubblica i dati di contatto del responsabile della protezione dei dati e, salvo quanto previsto\ndall'articolo 37, comma 6, li comunica al Garante.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0048",
+    "title": "IT D.Lgs. 51/2018 LED — section 49",
+    "text": "Art. 29\nPosizione del responsabile\ndella protezione dei dati\n1. Il titolare del trattamento si assicura che il responsabile della protezione dei dati sia coinvolto adeguatamente e\ntempestivamente in tutte le questioni riguardanti la protezione dei dati personali.\n2. Il titolare del trattamento coadiuva il responsabile della protezione dei dati nell'esecuzione dei compiti di cui all'articolo 30\nfornendogli le risorse necessarie per assolvere tali compiti, per accedere ai dati personali e ai trattamenti e per mantenere la\npropria conoscenza specialistica.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0049",
+    "title": "IT D.Lgs. 51/2018 LED — section 50",
+    "text": "Art. 30\nCompiti del responsabile\ndella protezione dei dati\n1.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0050",
+    "title": "IT D.Lgs. 51/2018 LED — section 51",
+    "text": "Il titolare del trattamento conferisce al responsabile della protezione dei dati almeno i seguenti compiti:\na) informare il titolare del trattamento e i dipendenti che effettuano il trattamento degli obblighi derivanti dal presente decreto\nnonché da altre disposizioni dell'Unione europea o dello Stato relative alla protezione dei dati;\nb) vigilare sull'osservanza del presente decreto e di altre disposizioni dell'Unione europea o dello Stato relative alla protezione dei\ndati nonché delle previsioni di programma del titolare del trattamento in materia di protezione dei dati personali, compresi\nl'attribuzione delle responsabilità, la sensibilizzazione e la formazione del personale che partecipa ai trattamenti e alle connesse\nattività di controllo;\nc) fornire, se richiesto, un parere in merito alla valutazione d'impatto sulla protezione dei dati e sorvegliarne lo svolgimento ai\nsensi dell'articolo 23;\nd) cooperare con il Garante;\ne) fungere da punto di contatto per il Garante per questioni connesse al trattamento, tra cui la consultazione preventiva di cui\nall'articolo 24, ed effettuare, ove necessario, consultazioni relativamente a qualunque altra questione.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0051",
+    "title": "IT D.Lgs. 51/2018 LED — section 52",
+    "text": "Capo IV\nTrasferimento di dati personali verso paesi terzi o organizzazioni\ninternazionali",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0052",
+    "title": "IT D.Lgs. 51/2018 LED — section 53",
+    "text": "Art. 31\nPrincipi generali in materia\ndi trasferimento di dati personali\n1. Il trasferimento di dati personali oggetto di un trattamento o destinati a essere oggetto di un trattamento dopo il trasferimento\nverso un Paese terzo o un'organizzazione internazionale, compresi trasferimenti successivi verso un altro Paese terzo o un'altra\norganizzazione internazionale è consentito se:\na) il trasferimento è necessario per le finalità di cui all'articolo 1, comma 2;\nb) i dati personali sono trasferiti al titolare del trattamento in un Paese terzo o a un'organizzazione internazionale che sia\nun'autorità competente per le finalità di cui all'articolo 1, comma 2;\nc) qualora i dati personali siano trasmessi o resi disponibili da uno Stato membro, tale Stato ha fornito la propria autorizzazione\npreliminare al trasferimento conformemente al proprio diritto nazionale;\nd) la Commissione europea ha adottato una decisione di adeguatezza, a norma dell'articolo 32 o, in mancanza, sono state fornite\no esistono garanzie adeguate ai sensi dell'articolo 33; in assenza di una decisione di adeguatezza e di garanzie adeguate, si\napplicano deroghe per situazioni specifiche ai sensi dell'articolo 34; e",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0053",
+    "title": "IT D.Lgs. 51/2018 LED — section 54",
+    "text": "e) in caso di trasferimento successivo a un altro Paese terzo o a un'altra organizzazione internazionale, l'autorità competente che\nha effettuato il trasferimento originario o un'altra autorità competente dello stesso Stato membro autorizza il trasferimento\nsuccessivo dopo avere valutato tutti i fattori pertinenti, tra cui la gravità del reato, la finalità per la quale i dati personali sono stati\ntrasferiti e il livello di protezione dei dati personali previsto nel Paese terzo o nell'organizzazione internazionale verso i quali i dati\npersonali sono successivamente trasferiti.\n2. In assenza dell'autorizzazione preliminare di un altro Stato membro di cui al comma 1, lettera c), il trasferimento di dati\npersonali è consentito solo se necessario per prevenire una minaccia grave e immediata alla sicurezza pubblica di uno Stato\nmembro o di un Paese terzo o agli interessi vitali di uno Stato membro e l'autorizzazione preliminare non può essere ottenuta\ntempestivamente. L'autorità competente a rilasciare l'autorizzazione preliminare è informata senza ritardo.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0054",
+    "title": "IT D.Lgs. 51/2018 LED — section 55",
+    "text": "Art. 32\nTrasferimento sulla base\ndi una decisione di adeguatezza\n1. Il trasferimento di dati personali verso un Paese terzo o un'organizzazione internazionale è consentito se la Commissione\neuropea ha deciso che il Paese terzo, un territorio o uno o più settori specifici all'interno del Paese terzo, o l'organizzazione\ninternazionale garantiscono un livello di protezione adeguato. In tal caso non sono necessarie autorizzazioni specifiche.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0055",
+    "title": "IT D.Lgs. 51/2018 LED — section 56",
+    "text": "Art. 33\nTrasferimenti soggetti a garanzie adeguate\n1. In mancanza o in caso di revoca, modifica o sospensione di una decisione di adeguatezza di cui all'articolo 32, il trasferimento di\ndati personali verso un Paese terzo o un'organizzazione internazionale è consentito se:\na) sono fornite garanzie adeguate per la protezione dei dati personali attraverso uno strumento giuridicamente vincolante; o\nb) il titolare del trattamento, valutate tutte le circostanze relative allo specifico trasferimento, ritiene che sussistano garanzie\nadeguate per la protezione dei dati personali.\n2. Il titolare del trattamento informa il Garante dei trasferimenti effettuati ai sensi del comma 1, lettera b), e ne conserva\ndocumentazione che, su richiesta, mette a disposizione del Garante, con l'indicazione della data e dell'ora del trasferimento,\ndell'autorità competente ricevente, della motivazione del trasferimento e dei dati personali trasferiti.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0056",
+    "title": "IT D.Lgs. 51/2018 LED — section 57",
+    "text": "Art. 34\nDeroghe in situazioni specifiche\n1. In mancanza o in caso di revoca, modifica o sospensione di una decisione di adeguatezza ai sensi dell'articolo 32 o di garanzie\nadeguate di cui all'articolo 33, il trasferimento o una categoria di trasferimenti di dati personali verso un Paese terzo o\nun'organizzazione internazionale sono consentiti se necessari per una delle seguenti finalità:\na) per tutelare un interesse vitale dell'interessato o di un'altra persona;\nb) per salvaguardare i legittimi interessi dell'interessato quando lo preveda il diritto dello Stato membro che trasferisce i dati\npersonali;\nc) per prevenire una minaccia grave e immediata alla sicurezza pubblica di uno Stato membro o di un Paese terzo;\nd) in singoli casi, per le finalità di cui all'articolo 1, comma 2;\ne) in singoli casi, per accertare, esercitare o difendere un diritto in sede giudiziaria in relazione alle finalità di cui all'articolo 1,\ncomma 2.\n2. Nei casi di cui al comma 1, lettere d) ed e), i dati personali non sono trasferiti se l'autorità competente che effettua il\ntrasferimento valuta i diritti e le libertà fondamentali dell'interessato prevalenti rispetto all'interesse pubblico al trasferimento.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0057",
+    "title": "IT D.Lgs. 51/2018 LED — section 58",
+    "text": "3. Il trasferimento effettuato ai sensi del comma 1 deve essere documentato e, su richiesta, la documentazione deve essere\nmessa a disposizione del Garante con l'indicazione della data e dell'ora del trasferimento, dell'autorità competente ricevente, della\nmotivazione del trasferimento e dei dati personali trasferiti.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0058",
+    "title": "IT D.Lgs. 51/2018 LED — section 59",
+    "text": "Art. 35\nTrasferimenti di dati personali\na destinatari stabiliti in Paesi terzi\n1.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0059",
+    "title": "IT D.Lgs. 51/2018 LED — section 60",
+    "text": "In deroga a quanto previsto dall'articolo 31, comma 1, lettera b), e fatti salvi eventuali accordi internazionali di cui al comma 2, le autorità competenti di cui all'articolo 2, comma 1, lettera g), numero 1), possono, in singoli e specifici casi previsti da norme di legge o di regolamento o dal diritto dell'Unione europea, trasferire dati personali direttamente a destinatari stabiliti in Paesi terzi se: a) il trasferimento è strettamente necessario per l'assolvimento di un compito previsto dal diritto dell'Unione europea o dall'ordinamento interno, per le finalità di cui all'articolo 1, comma 2; b) l'autorità competente che effettua il trasferimento valuta che i diritti e le libertà fondamentali dell'interessato non prevalgono sull'interesse pubblico che rende necessario il trasferimento; c) l'autorità competente che effettua il trasferimento ritiene che il trasferimento a un'autorità per le finalità di cui all'articolo 1, comma 2, nel Paese terzo sia inefficace o inidoneo, in particolare in quanto non può essere effettuato tempestivamente; d) l'autorità competente ai fini di cui all'articolo 1, comma 2, nel Paese terzo è informata senza ingiustificato ritardo, salvo che ciò",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0060",
+    "title": "IT D.Lgs. 51/2018 LED — section 61",
+    "text": "pregiudichi la finalità per cui il trasferimento è effettuato; e) l'autorità competente che effettua il trasferimento informa il destinatario della finalità specifica o delle finalità specifiche per le quali i dati personali devono essere trattati, a condizione che tale trattamento sia necessario. 2. Per accordo internazionale di cui al comma 1 si intende qualsiasi accordo internazionale bilaterale o multilaterale in vigore tra gli\nStati membri e Paesi terzi nel settore della cooperazione giudiziaria in materia penale e della cooperazione di polizia. 3. L'autorità competente informa il Garante dei trasferimenti previsti dal presente articolo. 4. Il trasferimento effettuato ai sensi del comma 1 è documentato.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0061",
+    "title": "IT D.Lgs. 51/2018 LED — section 62",
+    "text": "Art. 36\nCooperazione internazionale per la protezione dei dati personali e accordi internazionali precedentemente conclusi\n1. In relazione ai Paesi terzi e alle organizzazioni internazionali, sono adottate misure appropriate per le finalità di cui all'articolo 50\ndel regolamento UE.\n2. Restano in vigore, fino alla loro modifica, sostituzione o revoca, gli accordi internazionali relativi al trasferimento di dati personali\nverso Paesi terzi o organizzazioni internazionali conclusi anteriormente al 6 maggio 2016 e che sono conformi al diritto\ndell'Unione europea applicabile a tale data.\nCapo V\nTutela e sanzioni amministrative\n\nArt. 37\nAutorità di controllo\n1. Il Garante è l'autorità di controllo incaricata di vigilare sull'applicazione delle norme di cui al presente decreto, al fine di tutelare i\ndiritti e le libertà fondamentali delle persone fisiche con riguardo al trattamento di dati personali e di agevolare la libera\ncircolazione dei dati all'interno dell'Unione europea.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0062",
+    "title": "IT D.Lgs. 51/2018 LED — section 63",
+    "text": "Ai fini di cui al comma 1 sono attribuite al Garante le funzioni di cui all'articolo 154 del Codice, nonché le seguenti: ((1)) a) promozione di una diffusa conoscenza e della consapevolezza circa i rischi, le norme, le garanzie e i diritti in relazione al trattamento; b) promozione della consapevolezza in capo ai titolari e responsabili del trattamento dell'importanza degli obblighi previsti dal presente decreto; c) espressione di pareri nei casi previsti dalla legge; d) rilascio, su richiesta dell'interessato, di informazioni in merito all'esercizio dei diritti previsti dal presente decreto e, se del caso, cooperazione, a tal fine, con le autorità di controllo di altri Stati membri; e) trattazione dei reclami proposti da un interessato, da un organismo, un'organizzazione o un'associazione ai sensi dell'articolo 40 e compimento delle indagini sull'oggetto del reclamo, informando il reclamante dello stato e dell'esito delle indagini entro un termine ragionevole, in particolare ove siano necessarie ulteriori indagini o un coordinamento con un'altra autorità di controllo; f) supporto agli interessati nella proposizione dei reclami; g) accertamento della liceità del trattamento ai",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0063",
+    "title": "IT D.Lgs. 51/2018 LED — section 64",
+    "text": "sensi dell'articolo 13 e informazione all'interessato entro un termine ragionevole dell'esito della verifica ai sensi del comma 3 di detto articolo, o dei motivi per cui non è stata effettuata; h) collaborazione, anche tramite scambi di informazioni, con le altre autorità di controllo e attività di assistenza reciproca, al fine di garantire l'applicazione e l'attuazione del presente decreto; i) verifica degli sviluppi tecnologici e sociali che presentano un interesse, se ed in quanto incidenti sulla protezione dei dati personali, in particolare l'evoluzione delle tecnologie dell'informazione e della comunicazione; l) prestazione di consulenza in merito ai trattamenti di cui all'articolo 24; m) contribuzione alle attività del comitato di cui all'articolo 68 del regolamento UE; 3. Ai fini di cui al comma 1 sono attribuiti al Garante i seguenti poteri:\na) svolgere indagini sull'applicazione del presente decreto, anche sulla base di informazioni ricevute da un'altra autorità di\ncontrollo o da un'altra autorità pubblica.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0064",
+    "title": "IT D.Lgs. 51/2018 LED — section 65",
+    "text": "Lo svolgimento delle indagini è disciplinato dalle disposizioni del Codice; b) ottenere, dal titolare del trattamento e dal responsabile del trattamento, l'accesso a tutti i dati personali oggetto del trattamento e a tutte le informazioni necessarie per l'adempimento dei suoi compiti; c) rivolgere avvertimenti al titolare del trattamento o al responsabile del trattamento in ordine alle possibili violazioni delle norme del presente decreto; d) ingiungere al titolare del trattamento o al responsabile del trattamento di conformare i trattamenti alle disposizioni del presente decreto, se del caso, con specifiche modalità ed entro un determinato termine, ordinando in particolare la rettifica o la cancellazione di dati personali o la limitazione del trattamento ai sensi dell'articolo 12; e) imporre una limitazione provvisoria o definitiva al trattamento, incluso il divieto e il blocco dello stesso; f) promuovere la segnalazione riservata di violazioni del presente decreto; g) denunciare i reati dei quali viene a conoscenza nell'esercizio o a causa delle funzioni; h) predisporre annualmente una relazione sull'attività svolta, da trasmettere al Parlamento e al Governo, ai sensi",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0065",
+    "title": "IT D.Lgs. 51/2018 LED — section 66",
+    "text": "dell'articolo 154, comma 1, del Codice e da mettere a disposizione del pubblico, della Commissione europea e del comitato di cui all'articolo 68 del regolamento UE, in cui può figurare un elenco delle tipologie di violazioni notificate e di sanzioni imposte. 4. I poteri di cui al comma 3 sono esercitati nei modi, nelle forme e con le garanzie previste dalla legge. 5. Le funzioni e i poteri di cui ai commi 2 e 3 sono esercitati senza spese per l'interessato o per il responsabile della protezione dati. Il Garante non provvede in ordine alle richieste manifestamente infondate o inammissibili in quanto ripropongono, senza nuovi\nelementi, richieste già rigettate. 6. Il Garante non è competente in ordine al controllo del rispetto delle norme del presente decreto, limitatamente ai trattamenti\neffettuati dall'autorità giudiziaria nell'esercizio delle funzioni giurisdizionali, nonché di quelle giudiziarie del pubblico ministero. --------------AGGIORNAMENTO (1)\nIl D.Lgs. 10 agosto 2018, n. 101 ha disposto (con l'art. 23, comma 1, lettera a)) che \"A decorrere dalla data di entrata in vigore del\npresente decreto:\na) all'articolo 37, comma 2, alinea, del decreto legislativo 18 maggio 2018, n.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0066",
+    "title": "IT D.Lgs. 51/2018 LED — section 67",
+    "text": "51, il riferimento all'articolo 154 del codice in materia\ndi protezione dei dati personali, di cui al decreto legislativo n. 196 del 2003, si intende effettuato agli articoli 154 e 154-bis del\nmedesimo codice\".",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0067",
+    "title": "IT D.Lgs. 51/2018 LED — section 68",
+    "text": "Art. 38\nAssistenza reciproca\n1. Il Garante coopera con la Commissione europea al fine di contribuire alla coerente applicazione del diritto dell'Unione in materia\ndi protezione dei dati personali, scambia con le autorità di controllo degli altri Stati membri le informazioni utili e presta assistenza\nreciproca al fine di attuare e applicare il presente decreto in maniera coerente, e di cooperare efficacemente con loro.\nL'assistenza reciproca comprende le richieste di informazioni e le misure di controllo, quali le richieste di effettuare consultazioni,\nispezioni e indagini.\n2. Il Garante adotta, con proprio provvedimento, le misure di cui all'articolo 61, paragrafo 2, del regolamento UE.\n3. Le richieste di assistenza sono conformi alle modalità di cui all'articolo 61, paragrafo 3, del regolamento UE.\n4. Il Garante non può rifiutare di dare seguito alla richiesta, salvo che sia incompetente o l'intervento richiesto violi il diritto interno\no dell'Unione europea.\n5. Il Garante osserva le disposizioni di cui all'articolo 61, paragrafi 5, 6 e 7, del regolamento UE.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0068",
+    "title": "IT D.Lgs. 51/2018 LED — section 69",
+    "text": "Art. 39\nReclamo al Garante e ricorso giurisdizionale\n1. Fermo quanto previsto dall'articolo 37, comma 6, l'interessato, se ritiene che il trattamento dei dati personali che lo riguardano\nvioli le disposizioni del presente decreto, può proporre reclamo al Garante, con le modalità di cui agli articoli 142 e 143 del\nCodice.((1))\n2. Il Garante informa l'interessato dello stato o dell'esito del reclamo, compresa la possibilità del ricorso giurisdizionale.\n3. Per l'inosservanza delle disposizioni del presente decreto in violazione dei suoi diritti, l'interessato può proporre ricorso\ngiurisdizionale secondo quanto previsto e regolato dalla disciplina contenuta nella parte III, titolo I, capo II del Codice.\n--------------AGGIORNAMENTO (1)\nIl D.Lgs. 10 agosto 2018, n. 101 ha disposto (con l'art. 23, comma 1, lettera b)) che \"A decorrere dalla data di entrata in vigore del\npresente decreto:\n[...]\nb) all'articolo 39, comma 1, del decreto legislativo 18 maggio 2018, n. 51, il riferimento agli articoli 142 e 143 del codice in materia di\nprotezione dei dati personali, di cui al decreto legislativo n. 196 del 2003 si intende effettuato agli articoli 141, 142 e 143 del\nmedesimo codice\".",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0069",
+    "title": "IT D.Lgs. 51/2018 LED — section 70",
+    "text": "Art. 40\nRappresentanza degli interessati\n1. L'interessato può dare mandato a un ente del terzo settore soggetto alla disciplina del decreto legislativo 3 luglio 2017, n. 117,\nche sia attivo nel settore della tutela dei diritti e delle libertà degli interessati con riguardo alla protezione dei dati personali, al fine\ndi esercitare per suo conto i diritti di cui all'articolo 39, ferme le disposizioni in materia di patrocinio previste dal codice di procedura\ncivile.\n\nArt. 41\nDiritto al risarcimento\n1. Il titolare o il responsabile del trattamento sono tenuti, a norma dell'articolo 82 del regolamento UE, al risarcimento del danno\npatrimoniale o non patrimoniale cagionato da un trattamento o da qualsiasi altro atto compiuti in violazione delle disposizioni del\npresente decreto.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0070",
+    "title": "IT D.Lgs. 51/2018 LED — section 71",
+    "text": "Art. 42\nSanzioni amministrative\n1. Salvo che il fatto costituisca reato e ad esclusione dei trattamenti svolti in ambito giudiziario, la violazione delle disposizioni di\ncui all'articolo 3, comma 1, lettere a), b), d), e) ed f), all'articolo 4, commi 2 e 3, all'articolo 6, commi 3 e 4, all'articolo 7, all'articolo 8,\nè punita con la sanzione amministrativa del pagamento di una somma da 50.000 euro a 150.000 euro. La medesima sanzione\namministrativa si applica al trasferimento dei dati personali verso un Paese terzo o un'organizzazione internazionale in assenza\ndella decisione di adeguatezza della Commissione europea, salvo quanto previsto dagli articoli 33 e 34. 2. Salvo che il fatto costituisca reato e ad esclusione dei trattamenti svolti in ambito giudiziario, è punita con la sanzione\namministrativa del pagamento di una somma da 20.000 euro a 80.000 euro la violazione delle disposizioni di cui all'articolo 14,\ncomma 2.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0071",
+    "title": "IT D.Lgs. 51/2018 LED — section 72",
+    "text": "Con la medesima sanzione è punita la violazione delle disposizioni di cui all'articolo 17, comma 2, all'articolo 18, commi\n1, 2, 3 e 4, all'articolo 19, all'articolo 20, all'articolo 21, all'articolo 22, all'articolo 23, all'articolo 24, commi 1 e 4, all'articolo 26,\nall'articolo 27, all'articolo 28, commi 1 e 4, all'articolo 29, comma 2. 3. Nella determinazione della sanzione amministrativa da applicare secondo quanto previsto dai commi 1 e 2 si tiene conto dei\ncriteri di cui all'articolo 83, paragrafo 2, lettere a), b), c), d), e), f), g), h), i), k), del regolamento UE. 4. Il procedimento per l'applicazione delle sanzioni è regolato dall'articolo 166 del Codice. Si applica altresì l'articolo 165 del Codice.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0072",
+    "title": "IT D.Lgs. 51/2018 LED — section 73",
+    "text": "((1))\n--------------AGGIORNAMENTO (1)\nIl D.Lgs. 10 agosto 2018, n. 101 ha disposto (con l'art. 23, comma 1, lettera c)) che \"A decorrere dalla data di entrata in vigore del\npresente decreto:\n[...]\nc) all'articolo 42 del decreto legislativo 18 maggio 2018, n. 51, il riferimento all'articolo 165 del codice in materia di protezione dei\ndati personali, di cui al decreto legislativo n. 196 del 2003, si intende effettuato all'articolo 166, comma 7, del medesimo codice\".\nCapo VI\nIlleciti penali",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0073",
+    "title": "IT D.Lgs. 51/2018 LED — section 74",
+    "text": "Art. 43\nTrattamento illecito di dati\n1. Salvo che il fatto costituisca più grave reato, chiunque, al fine di trarne per sé o per altri profitto o di recare ad altri un danno,\nprocede al trattamento di dati personali in violazione di quanto disposto dall'articolo 5, comma 1, è punito, se dal fatto deriva\nnocumento, con la reclusione da sei mesi a un anno e sei mesi o, se la condotta comporta comunicazione o diffusione dei dati, con\nla reclusione da sei mesi a due anni.\n2. Salvo che il fatto costituisca più grave reato, chiunque, al fine di trarne per sé o per altri profitto o di recare ad altri un danno,\nprocede al trattamento di dati personali in violazione di quanto disposto dall'articolo 7 o dall'articolo 8, comma 4, è punito, se dal\n\nfatto deriva nocumento, con la reclusione da uno a tre anni.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0074",
+    "title": "IT D.Lgs. 51/2018 LED — section 75",
+    "text": "Art. 44\nFalsità in atti e dichiarazioni al Garante\n1. Salvo che il fatto costituisca più grave reato, chiunque, in un procedimento dinanzi al Garante riguardante il trattamento dei dati\ndi cui all'articolo 1, comma 2, o nel corso di accertamenti riguardanti i medesimi dati, dichiara o attesta falsamente notizie o\ncircostanze o produce atti o documenti falsi, è punito con la reclusione da sei mesi a tre anni.\n\nArt. 45\nInosservanza di provvedimenti del Garante\n1. Chiunque, ((non osservando)) il provvedimento adottato dal Garante ai sensi dell'articolo 143, comma 1, lettera c), del Codice, in\nun procedimento riguardante il trattamento dei dati di cui all'articolo 1, comma 2, ((arreca un concreto nocumento a uno o più\n\ninteressati)) è punito ((, a querela della persona offesa,)) con la reclusione da tre mesi a due anni.\n(1)\n--------------AGGIORNAMENTO (1)",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0075",
+    "title": "IT D.Lgs. 51/2018 LED — section 76",
+    "text": "Il D.Lgs. 10 agosto 2018, n. 101 ha disposto (con l'art. 23, comma 1, lettera d)) che \"A decorrere dalla data di entrata in vigore del\npresente decreto:\n[...]\nd) all'articolo 45 del decreto legislativo 18 maggio 2018, n. 51, il riferimento all'articolo 143, comma 1, lettera c), del codice in\nmateria di protezione dei dati personali, di cui al decreto legislativo n. 196 del 2003, si intende effettuato all'articolo 58, paragrafo 2,\nlettera f), del Regolamento (UE) 2016/679\".\n\nArt. 46\nPene accessorie\n1. La condanna per uno dei delitti previsti dal presente decreto importa la pubblicazione della sentenza, ai sensi dell'articolo 36,\nsecondo e terzo comma, del codice penale.\nCapo VII\nDisposizioni integrative sui trattamenti\ndelle Forze di polizia",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0076",
+    "title": "IT D.Lgs. 51/2018 LED — section 77",
+    "text": "Art. 47\nModalità di trattamento e flussi di dati\nda parte delle Forze di polizia\n1. Nei casi in cui le autorità di pubblica sicurezza o le Forze di polizia possono acquisire in conformità alle vigenti disposizioni di\nlegge o di regolamento dati, informazioni, atti e documenti da altri soggetti, l'acquisizione può essere effettuata anche per via\ntelematica. A tal fine gli organi o uffici interessati possono avvalersi di convenzioni volte ad agevolare la consultazione da parte dei\nmedesimi organi o uffici, mediante reti di comunicazione elettronica, di pubblici registri, elenchi, schedari e banche di dati, nel",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0077",
+    "title": "IT D.Lgs. 51/2018 LED — section 78",
+    "text": "rispetto delle pertinenti disposizioni e dei principi di cui agli articoli da 3 a 8. Le convenzioni-tipo sono adottate dal Ministero\ndell'interno, su conforme parere del Garante, e stabiliscono le modalità dei collegamenti e degli accessi anche al fine di assicurare\nl'accesso selettivo ai soli dati necessari al perseguimento delle finalità di cui all'articolo 1, comma 2. 2. I dati trattati dalle Forze di polizia per le finalità di cui all'articolo 1, comma 2, sono conservati separatamente da quelli registrati\nper finalità amministrative che non richiedono il loro utilizzo. 3. Fermo restando quanto previsto dagli articoli da 2 a 7, il Centro elaborazione dati del Dipartimento della pubblica sicurezza\nassicura l'aggiornamento periodico, la proporzionalità, la pertinenza e la non eccedenza dei dati personali trattati anche attraverso\ninterrogazioni autorizzate del casellario giudiziale e del casellario dei carichi pendenti del Ministero della giustizia di cui al decreto\ndel Presidente della Repubblica 14 novembre 2002, n. 313, o di altre banche di dati delle Forze di polizia, necessarie per le finalità\ndi cui all'articolo 1, comma 1. 4.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0078",
+    "title": "IT D.Lgs. 51/2018 LED — section 79",
+    "text": "Gli organi, uffici e comandi di polizia verificano periodicamente i requisiti di cui agli articoli da 2 a 7 in riferimento ai dati trattati\nanche senza l'ausilio di strumenti elettronici, e provvedono al loro aggiornamento anche sulla base delle procedure adottate dal\nCentro elaborazione dati ai sensi del comma 3, o, per i trattamenti effettuati senza l'ausilio di strumenti elettronici, mediante\nannotazioni o integrazioni dei documenti che li contengono.\n\nArt. 48\nTutela dell'interessato\n1. Restano ferme le disposizioni di cui dall'articolo 10, commi 3, 4 e 5, della legge 1° aprile 1981, n. 121, e successive\nmodificazioni, concernenti i controlli sul Centro elaborazione dati del Dipartimento della pubblica sicurezza.\n2. Le disposizioni di cui all'articolo 10, commi 3, 4 e 5, della legge n. 121 del 1981, si applicano, oltre ai dati destinati a confluire nel\nCentro elaborazione dati di cui al comma 1, ai dati trattati con l'ausilio di strumenti elettronici da organi, uffici o comandi delle\nForze di polizia di cui all'articolo 16 della predetta legge n. 121 del 1981.\nCapo VIII\nDisposizioni di coordinamento e abrogazioni",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0079",
+    "title": "IT D.Lgs. 51/2018 LED — section 80",
+    "text": "Art. 49\nAbrogazioni e disposizioni di coordinamento\n1. Gli articoli 53, 54, 55 e 56 del Codice sono abrogati.\n2. L'articolo 57 del Codice è abrogato decorso un anno dalla data di entrata in vigore del presente decreto.\n3. I decreti adottati in attuazione degli articoli 53 e 57 del Codice continuano ad applicarsi fino all'adozione di diversa disciplina ai\nsensi ((dell'articolo)) 9, comma 5.\n\nArt. 50\nClausola di invarianza finanziaria\n1. Dall'attuazione delle disposizioni di cui al presente decreto non devono derivare nuovi o maggiori oneri per la finanza pubblica.\nLe amministrazioni interessate provvedono agli adempimenti previsti dal presente decreto con le risorse umane, finanziarie e\nstrumentali disponibili a legislazione vigente.",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  },
+  {
+    "clause_id": "chunk-0080",
+    "title": "IT D.Lgs. 51/2018 LED — section 81",
+    "text": "Il presente decreto, munito del sigillo dello Stato, sarà inserito nella Raccolta ufficiale degli atti normativi della Repubblica italiana. È\nfatto obbligo a chiunque spetti di osservarlo e di farlo osservare.\nDato a Roma, addì 18 maggio 2018\nMATTARELLA\nGentiloni Silveri, Presidente del Consiglio dei ministri\nOrlando, Ministro della giustizia\nAlfano, Ministro degli affari esteri e della cooperazione internazionale\nMinniti, Ministro dell'interno\nPadoan, Ministro dell'economia e delle finanze\nVisto, il Guardasigilli: Orlando\n\nRealizzazione e gestione\n\nIstituto Poligrafico e Zecca dello Stato\n\nContattaci\n\nNormattiva\n\nCollegamenti veloci\n\nCon il contributo di\n\nIn collaborazione con\nPrivacy e Cookie policy\nNote legali\nMappa del sito\nFAQ\nDichiarazione di accessibilità\ndati.normattiva.it\n\nPortale Normattiva, Versione 2.4.4",
+    "standard": "IT D.Lgs. 51/2018 LED",
+    "language": "it",
+    "source_file": "DLgs51-2018_LED_LawEnforcement_IT.txt"
+  }
+]

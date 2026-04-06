@@ -1,0 +1,522 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "DE BaFin BAIT — section 1",
+    "text": "Rundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\nAn alle Kreditinstitute und Finanzdienstleistungsinstitute in der Bundesrepublik Deutschland\n\nBankaufsichtliche Anforderungen an die IT (BAIT)\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 1 von 32\n\nInhalt\nI.\n\nVorbemerkung\n\n3\n\nII.\n\nAnforderungen\n\n4\n\nIT-Strategie\n\n4\n\nIT-Governance\n\n5\n\nInformationsrisikomanagement\n\n6\n\nInformationssicherheitsmanagement\n\n8\n\nOperative Informationssicherheit\n\n14\n\nIdentitäts- und Rechtemanagement\n\n16\n\nIT-Projekte und Anwendungsentwicklung\n\n18\n\nIT-Betrieb\n\n23\n\nAuslagerungen und sonstiger Fremdbezug von IT-Dienstleistungen\n\n26\n\nIT-Notfallmanagement\n\n28\n\n[aufgehoben]\n\n30\n\nKritische Infrastrukturen\n\n30\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 2 von 32\n\nI.\n\nVorbemerkung\n\n1\n\nDer Anwenderkreis dieses Rundschreibens ergibt sich aus AT 2.1 MaRisk entsprechend. Davon sind ab dem 17.01.2025 die Institute ausgenommen,\ndie ein IKT-Risikomanagement nach Art. 5-15 oder Art. 16 der Verordnung (EU) 2022/2554 (DORA) betreiben müssen.\n\n2",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "DE BaFin BAIT — section 2",
+    "text": "Der Einsatz von Informationstechnik (IT) in den Instituten, auch unter Einbeziehung von IT-Services, die durch IT-Dienstleister bereitgestellt werden,\nhat eine zentrale Bedeutung für die Finanzwirtschaft und wird weiter an Bedeutung gewinnen. Dieses Rundschreiben gibt auf der Grundlage des\n§ 25a Abs. 1 des Kreditwesengesetzes (KWG) einen flexiblen und praxisnahen Rahmen für die technisch-organisatorische Ausstattung der Institute insbesondere für das Management der IT-Ressourcen, das Informationsrisikomanagement und das Informationssicherheitsmanagement - vor. Es\npräzisiert ferner die Anforderungen des § 25b KWG (Auslagerung von Aktivitäten und Prozessen).\n\n3",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "DE BaFin BAIT — section 3",
+    "text": "Die in den Mindestanforderungen an das Risikomanagement (MaRisk) enthaltenen Anforderungen bleiben davon unberührt und werden im Rahmen seines Gegenstands durch dieses Rundschreiben konkretisiert. Die Themenbereiche dieses Rundschreibens sind nach Regelungstiefe und –\numfang nicht abschließender Natur. Das Institut bleibt folglich jenseits der Konkretisierungen in diesem Rundschreiben gemäß § 25a Abs. 1 Satz 3\nNr. 4 KWG i. V. m. AT 7.2 Tz. 2 MaRisk verpflichtet, bei der Ausgestaltung der IT-Systeme und der dazugehörigen IT-Prozesse grundsätzlich auf\ngängige Standards abzustellen. Zu diesen zählen beispielsweise der IT-Grundschutz des Bundesamts für Sicherheit in der Informationstechnik und\ndie internationalen Sicherheitsstandards ISO/IEC 270XX der International Organization for Standardization.\n\n4\n\nDie prinzipienorientierten Anforderungen dieses Rundschreibens ermöglichen die Umsetzung des Prinzips der doppelten Proportionalität (vgl.\ninsbesondere AT 1 Tzn. 3, 5 und 7 sowie AT 2.1 Tz. 2 MaRisk).\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 3 von 32\n\nIT-Strategie\n\nII.\n\nAnforderungen\nIT-Strategie\n\n1.1.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "DE BaFin BAIT — section 4",
+    "text": "Die IT-Strategie hat die Anforderungen nach AT 4.2 der MaRisk zu erfüllen. Dies beinhaltet insbesondere, dass die Geschäftsleitung eine nachhaltige\nIT-Strategie festlegt, in der die Ziele sowie die Maßnahmen zur Erreichung dieser Ziele dargestellt werden.\n\n1.2.\n\nDie Geschäftsleitung hat eine mit der Geschäftsstrategie konsistente\nIT-Strategie festzulegen. Mindestinhalte sind:\n(a)\n\n(b)",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "DE BaFin BAIT — section 5",
+    "text": "Zu (a): Beschreibung der Rolle, der Positionierung und des Selbstverständnisses der IT im Hinblick auf Personaleinsatz und Budget der IT-Aufbau- und\nIT-Ablauforganisation sowie die Darstellung und strategische Einordnung\nStrategische Entwicklung der IT-Aufbau- und IT-Ablauforganisader IT-Dienstleistungen und möglicher sonstiger wichtiger Abhängigkeiten\ntion des Instituts sowie IT-Dienstleistungen und sonstige wichvon Dritten (wie z. B Zentralbankfunktionen, Informationsdiensten, Telekomtige Abhängigkeiten von Dritten\nmunikationsdienstleistungen, Versorgungsleistungen). Aussagen zu AuslageZuordnung der gängigen Standards, an denen sich das Institut rungen von IT-Dienstleistungen können auch in den strategischen Ausfühorientiert, auf die Bereiche der IT und der Informationssicherheit rungen zu Auslagerungen enthalten sein.\n\n(c)\n\nZiele, Zuständigkeiten und Einbindung der Informationssicherheit in die Organisation\n\n(d)\n\nStrategische Entwicklung der IT-Architektur\n\n(e)\n\nAussagen zum IT-Notfallmanagement unter Berücksichtigung\nder Informationssicherheitsbelange\n\n(f)",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "DE BaFin BAIT — section 6",
+    "text": "Zu (b): Auswahl der gängigen Standards und Umsetzung auf die IT-Prozesse\nund das Informationssicherheitsmanagement des Instituts sowie Darstellung\ndes avisierten Implementierungsumfangs der jeweiligen Standards.\n\nZu (c): Beschreibung der Bedeutung der Informationssicherheit im Institut\nsowie der Einbettung der Informationssicherheit in die Fachbereiche und in\ndas jeweilige Zusammenarbeitsmodell mit den IT-Dienstleistern. Dies beinAussagen zu den in den Fachbereichen selbst betriebenen bzw. haltet auch grundlegende Aussagen zur Schulung und Sensibilisierung zur\nentwickelten IT-Systemen (Hardware- und Software-Komponen- Informationssicherheit.\nten).\nZu (d): Darstellung des Zielbilds der IT-Architektur in Form eines Überblicks\nüber die Anwendungslandschaft.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 4 von 32\n\nIT-Governance\n\nIT-Governance\n2.1.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "DE BaFin BAIT — section 7",
+    "text": "Die IT-Governance ist die Struktur zur Steuerung sowie Überwachung des Betriebs und der Weiterentwicklung der IT-Systeme einschließlich der\ndazugehörigen IT-Prozesse auf Basis der IT-Strategie. Hierfür maßgeblich sind insbesondere die Regelungen zur IT-Aufbau- und IT-Ablauforganisation (vgl. AT 4.3.1 MaRisk), zum Informationsrisiko- sowie Informationssicherheitsmanagement (vgl. AT 4.3.2 MaRisk, AT 7.2 Tzn. 2 und 4 MaRisk),\nzur quantitativ und qualitativ angemessenen Personalausstattung der IT (vgl. AT 7.1 MaRisk) sowie zum Umfang und zur Qualität der technischorganisatorischen Ausstattung (vgl. AT 7.2 Tz. 1 MaRisk). Regelungen für die IT-Aufbau- und IT-Ablauforganisation sind bei Veränderungen der\nAktivitäten und Prozesse zeitnah anzupassen (vgl. AT 5 Tzn. 1 und 2 MaRisk).\n\n2.2.\n\nDie Geschäftsleitung ist dafür verantwortlich, dass auf Basis der ITStrategie die Regelungen zur IT-Aufbau- und IT-Ablauforganisation\nfestgelegt und bei Veränderungen der Aktivitäten und Prozesse zeitnah angepasst werden. Es ist sicherzustellen, dass diese Regelungen\nwirksam umgesetzt werden.\n\n2.3.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "DE BaFin BAIT — section 8",
+    "text": "Das Institut hat insbesondere das Informationsrisikomanagement, das Hinsichtlich der Maßnahmen zur Erhaltung einer angemessenen qualitativen\nInformationssicherheitsmanagement, den IT-Betrieb und die Anwen- Ressourcenausstattung (personelle, finanzielle und sonstige Ressourcen)\ndungsentwicklung quantitativ und qualitativ angemessen mit Reswerden insbesondere der Stand der Technik sowie die aktuelle und zukünfsourcen auszustatten.\ntige Bedrohungslage berücksichtigt.\n\n2.4.\n\nInteressenkonflikte und unvereinbare Tätigkeiten innerhalb der ITAufbau- und IT-Ablauforganisation sind zu vermeiden.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nInteressenkonflikten zwischen Aktivitäten, die beispielsweise im Zusammenhang mit der Anwendungsentwicklung und den Aufgaben des IT-Betriebs\nstehen, kann durch aufbau- oder ablauforganisatorische Maßnahmen, bzw.\ndurch eine adäquate Rollendefinition begegnet werden.\n\nSeite 5 von 32\n\nInformationsrisikomanagement\n\n2.5.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "DE BaFin BAIT — section 9",
+    "text": "Zur Steuerung der für den Betrieb und die Weiterentwicklung der ITSysteme zuständigen Bereiche durch die Geschäftsleitung sind angemessene quantitative oder qualitative Kriterien durch diese festzulegen. Die Einhaltung der Kriterien ist zu überwachen.\n\nBei der Festlegung der Kriterien können z. B. die Qualität der Leistungserbringung, die Verfügbarkeit, Wartbarkeit, Anpassbarkeit an neue Anforderungen, Sicherheit der IT-Systeme oder der dazugehörigen IT-Prozesse sowie deren Kosten berücksichtigt werden.\n\nInformationsrisikomanagement\n3.1.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "DE BaFin BAIT — section 10",
+    "text": "Die Informationsverarbeitung und -weitergabe in Geschäfts- und Serviceprozessen wird durch datenverarbeitende IT-Systeme und zugehörige ITProzesse unterstützt. Deren Umfang und Qualität hat sich insbesondere an betriebsinternen Erfordernissen, den Geschäftsaktivitäten sowie an der\nRisikosituation zu orientieren (vgl. AT 7.2 Tz. 1 MaRisk). IT-Systeme, die zugehörigen IT-Prozesse und sonstige Bestandteile des Informationsverbundes müssen die Integrität, die Verfügbarkeit, die Authentizität sowie die Vertraulichkeit der Daten sicherstellen (vgl. AT 7.2 Tz. 2 MaRisk). Das Institut\nhat die mit dem Management der Informationsrisiken verbundenen Aufgaben, Kompetenzen, Verantwortlichkeiten, Kontrollen und Kommunikationswege zu definieren und aufeinander abzustimmen (vgl. AT 4.3.1 Tz. 2 MaRisk). Hierfür hat das Institut angemessene Überwachungs- und Steuerungsprozesse einzurichten (vgl. AT 7.2 Tz. 4 MaRisk) und diesbezügliche Berichtspflichten zu definieren (vgl. BT 3.2 Tz. 1 MaRisk).\n\n3.2.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "DE BaFin BAIT — section 11",
+    "text": "Die Bestandteile eines Systems zum Management der Informationsri- Zu den maßgeblichen Stellen gehören auch die Fachbereiche, die Eigentüsiken sind unter Mitwirkung aller maßgeblichen Stellen und Funktio- mer der Informationen oder der Informationsrisiken sind.\nnen kompetenzgerecht und frei von Interessenkonflikten umzusetzen.\n\n3.3.\n\nDas Institut hat über einen aktuellen Überblick über die Bestandteile\ndes festgelegten Informationsverbunds sowie deren Abhängigkeiten\nund Schnittstellen zu verfügen. Das Institut sollte sich hierbei insbesondere an den betriebsinternen Erfordernissen, den Geschäftsaktivitäten sowie an der Risikosituation orientieren.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nZu einem Informationsverbund gehören beispielsweise geschäftsrelevante\nInformationen, Geschäfts- und Unterstützungsprozesse, IT-Systeme und die\nzugehörigen IT-Prozesse sowie Netz- und Gebäudeinfrastrukturen.\nAbhängigkeiten und Schnittstellen berücksichtigen auch die Vernetzung des\nInformationsverbundes mit Dritten.\n\nSeite 6 von 32\n\nInformationsrisikomanagement\n\n3.4.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "DE BaFin BAIT — section 12",
+    "text": "Das Institut hat regelmäßig und anlassbezogen den Schutzbedarf für\ndie Bestandteile seines definierten Informationsverbundes, insbesondere im Hinblick auf die Schutzziele „Integrität“, „Verfügbarkeit“, „Vertraulichkeit“ und „Authentizität“, zu ermitteln. Die Eigentümer der Information bzw. die Fachbereiche, die verantwortlich für die Geschäftsprozesse sind, verantworten die Ermittlung des Schutzbedarfes.\n\n3.5.\n\nDie Schutzbedarfsfeststellung sowie die zugehörige Dokumentation\nsind durch das Informationsrisikomanagement zu überprüfen.\n\n3.6.\n\nDas Institut hat Anforderungen zu definieren, die zur Erreichung des\njeweiligen Schutzbedarfs angemessen sind, und diese in geeigneter\nForm zu dokumentieren (Sollmaßnahmenkatalog).\n\nDer Sollmaßnahmenkatalog enthält lediglich die Anforderung, nicht jedoch\nderen konkrete Umsetzung.\n\n3.7.\n\nDas Institut hat auf Basis der festgelegten Risikokriterien einen Vergleich der Sollmaßnahmen mit den jeweils wirksam umgesetzten\nMaßnahmen (dem Ist-Zustand) durchzuführen.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "DE BaFin BAIT — section 13",
+    "text": "Die Risikoanalyse berücksichtigt über den Soll-Ist-Vergleich hinaus u. a.\nmögliche Bedrohungen, das Schadenspotenzial, die Schadenshäufigkeit sowie den Risikoappetit. Sonstige risikoreduzierende Maßnahmen können hierbei berücksichtigt werden.\nFalls Sollmaßnahmen nicht implementiert werden können (z. B. wegen technischer Restriktionen), können sonstige risikoreduzierende Maßnahmen umgesetzt werden.\n\n3.8.\n\nSonstige risikoreduzierende Maßnahmen aufgrund unvollständig umgesetzter Sollmaßnahmen sind wirksam zu koordinieren, zu dokumentieren, zu überwachen und zu steuern.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 7 von 32\n\nInformationssicherheitsmanagement\n\n3.9.\n\nDas Informationsrisikomanagement hat die Risikoanalyse zu koordinieren und zu überwachen sowie deren Ergebnisse in den Prozess des\nManagements der operationellen Risiken zu überführen. Die Behandlung der Risiken ist kompetenzgerecht zu genehmigen.\n\n3.10.\n\nDas Institut informiert sich laufend über Bedrohungen und Schwachstellen seines Informationsverbundes, prüft ihre Relevanz, bewertet\nihre Auswirkung und ergreift, sofern erforderlich, geeignete technische und organisatorische Maßnahmen.\n\n3.11.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "DE BaFin BAIT — section 14",
+    "text": "Die Geschäftsleitung ist regelmäßig, mindestens jedoch vierteljährlich, Die Risikosituation enthält auch externe potenzielle Bedrohungen.\ninsbesondere über die Ergebnisse der Risikoanalyse sowie Veränderungen an der Risikosituation zu unterrichten.\n\nHierbei sind interne und externe Veränderungen (z. B. der Bedrohungslage)\nzu berücksichtigen. Maßnahmen können z. B. die direkte Warnung von Mitarbeitern, das Sperren von betroffenen Schnittstellen und den Austausch von\nbetroffenen IT-Systemen umfassen.\n\nInformationssicherheitsmanagement\n4.1.\n\nDas Informationssicherheitsmanagement macht Vorgaben zur Informationssicherheit, definiert Prozesse und steuert deren Umsetzung (vgl. AT 7.2\nTz. 2 MaRisk). Das Informationssicherheitsmanagement folgt einem fortlaufenden Prozess, der die Phasen Planung, Umsetzung, Erfolgskontrolle\nsowie Optimierung und Verbesserung umfasst. Die inhaltlichen Berichtspflichten des Informationssicherheitsbeauftragten an die Geschäftsleitung\nsowie der Turnus der Berichterstattung orientieren sich an BT 3.2 Tz. 1 MaRisk.\n\n4.2.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0014",
+    "title": "DE BaFin BAIT — section 15",
+    "text": "Die Geschäftsleitung hat eine Informationssicherheitsleitlinie zu beschließen und innerhalb des Instituts zu kommunizieren. Die Informationssicherheitsleitlinie hat im Einklang mit den Strategien des Instituts zu stehen. Die Leitlinie ist bei wesentlichen Veränderungen der\nRahmenbedingungen zu überprüfen und bei Bedarf zeitnah anzupassen.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nIn der Informationssicherheitsleitlinie werden die Eckpunkte zum Schutz von\nVertraulichkeit, Integrität, Verfügbarkeit und Authentizität sowie der Geltungsbereich für die Informationssicherheit festgelegt. Darüber hinaus werden die wesentlichen organisatorischen Aspekte, wie die wichtigsten Rollen\n\nSeite 8 von 32\n\nInformationssicherheitsmanagement\n\nund Verantwortlichkeiten des Informationssicherheitsmanagements beschrieben. Mit der Leitlinie legt die Geschäftsleitung u. a. dar:\n\n\nihre Gesamtverantwortung für die Informationssicherheit\n\n\n\nFrequenz und Umfang des Berichtswesens zur Informationssicherheit\n\n\n\ndie Kompetenzen im Umgang mit Informationsrisiken\n\n\n\ndie grundlegenden Anforderungen der Informationssicherheit an Personal, Auftragnehmer, Prozesse und Technologien.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0015",
+    "title": "DE BaFin BAIT — section 16",
+    "text": "Rahmenbedingungen umfassen u. a. interne Veränderungen der Aufbauund Ablauforganisation oder der IT-Systeme sowie äußere Veränderungen\nz. B. der Bedrohungsszenarien, Technologien oder der rechtlichen Anforderungen.\n4.3.\n\nAuf Basis der Informationssicherheitsleitlinie und der Ergebnisse des Informationssicherheitsrichtlinien werden z. B. für die Bereiche NetzwerksiInformationsrisikomanagements sind konkretisierende, den Stand der cherheit, Kryptografie, Identitäts- und Rechtemanagement, Protokollierung\nTechnik berücksichtigende Informationssicherheitsrichtlinien und In- sowie physische Sicherheit (z. B. Perimeter- und Gebäudeschutz) erstellt.\nformationssicherheitsprozesse zu definieren.\nInformationssicherheitsprozesse dienen in erster Linie zur Erreichung der\nvereinbarten Schutzziele. Dazu gehört u. a., Informationssicherheitsvorfällen\nvorzubeugen bzw. diese zu identifizieren sowie die angemessene Reaktion\nund Kommunikation im weiteren Verlauf.\n\n4.4.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0016",
+    "title": "DE BaFin BAIT — section 17",
+    "text": "Die Geschäftsleitung hat die Funktion des Informationssicherheitsbe- Die Funktion des Informationssicherheitsbeauftragten umfasst insbesondere\nauftragten einzurichten. Diese Funktion umfasst die Verantwortung\ndie nachfolgenden Aufgaben:\nfür die Wahrnehmung aller Belange der Informationssicherheit inner die Geschäftsleitung beim Festlegen und Anpassen der Informationssihalb des Instituts und gegenüber Dritten. Sie stellt sicher, dass die in\ncherheitsleitlinie zu unterstützen und in allen Fragen der Informationsder IT-Strategie, der Informationssicherheitsleitlinie und den Informasicherheit zu beraten; dies umfasst auch Hilfestellungen bei der Lösung\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 9 von 32\n\nInformationssicherheitsmanagement\n\ntionssicherheitsrichtlinien des Instituts festgelegten Ziele und Maßnahmen hinsichtlich der Informationssicherheit sowohl intern als auch\ngegenüber Dritten transparent gemacht und deren Einhaltung regelmäßig sowie anlassbezogen überprüft und überwacht werden.\n\nvon Zielkonflikten (z. B. Wirtschaftlichkeit kontra Informationssicherheit)\n",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0017",
+    "title": "DE BaFin BAIT — section 18",
+    "text": "Erstellung von Informationssicherheitsrichtlinien und ggf. weiteren einschlägigen Regelungen sowie die Kontrolle ihrer Einhaltung\n\n\n\nden Informationssicherheitsprozess im Institut zu steuern und zu koordinieren sowie diesen gegenüber IT-Dienstleistern zu überwachen und\nbei allen damit zusammenhängenden Aufgaben mitzuwirken\n\n\n\ndie Beteiligung bei der Erstellung und Fortschreibung des Notfallkonzepts bzgl. der Informationssicherheitsbelange\n\n\n\ndie Realisierung von Informationssicherheitsmaßnahmen zu initiieren\nund zu überwachen\n\n\n\nÜberwachung und Hinwirkung auf Einhaltung der Informationssicherheit bei Projekten und Beschaffungen\n\n\n\nals Ansprechpartner für Fragen der Informationssicherheit innerhalb\ndes Instituts und für Dritte bereitzustehen\n\n\n\nInformationssicherheitsvorfälle zu untersuchen und an die Geschäftsleitung zu berichten\n\n\n\nSensibilisierungs- und Schulungsmaßnahmen zur Informationssicherheit zu initiieren und zu koordinieren.\n\nDer Informationssicherheitsbeauftragte kann durch ein Informationssicherheitsmanagement-Team unterstützt werden.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 10 von 32\n\nInformationssicherheitsmanagement\n\n4.5.\n\n4.6.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0018",
+    "title": "DE BaFin BAIT — section 19",
+    "text": "Die Funktion des Informationssicherheitsbeauftragten ist organisato- Zur Vermeidung möglicher Interessenkonflikte werden insbesondere folrisch und prozessual unabhängig auszugestalten, um mögliche Inte- gende Maßnahmen beachtet:\nressenskonflikte zu vermeiden.\n Funktions- und Stellenbeschreibung für den Informationssicherheitsbeauftragten, seinen Vertreter und ggf. weiterer Stellen\n\nJedes Institut hat die Funktion des Informationssicherheitsbeauftragten grundsätzlich im eigenen Haus vorzuhalten.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\n\n\nFestlegung der erforderlichen Ressourcenausstattung für die Funktion\ndes Informationssicherheitsbeauftragten\n\n\n\nein der Funktion zugewiesenes Budget für Informationssicherheitsschulungen im Institut und die persönliche Weiterbildung des Informationssicherheitsbeauftragten sowie seines Vertreters\n\n\n\nunmittelbare und jederzeitige Gelegenheit zur Berichterstattung des\nInformationssicherheitsbeauftragten an die Geschäftsleitung\n\n",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0019",
+    "title": "DE BaFin BAIT — section 20",
+    "text": "Verpflichtung der Beschäftigten des Instituts sowie der IT-Dienstleister\nzur sofortigen und umfassenden Unterrichtung des Informationssicherheitsbeauftragten über alle bekannt gewordenen informationssicherheitsrelevanten Sachverhalte, die das Institut betreffen\n\n\n\ndie Funktion des Informationssicherheitsbeauftragten wird von den Bereichen getrennt, die für den Betrieb und die Weiterentwicklung der ITSysteme zuständig sind\n\n\n\nder Informationssicherheitsbeauftragte nimmt keinesfalls Aufgaben der\nInternen Revision wahr.\n\nIm Hinblick auf regional tätige (insbesondere verbundangehörige) Institute\nsowie kleine (insbesondere gruppenangehörige) Institute ohne wesentliche\neigenbetriebene IT mit einem gleichgerichteten Geschäftsmodell und gemeinsamen IT-Dienstleistern für die Abwicklung von bankfachlichen Prozes-\n\nSeite 11 von 32\n\nInformationssicherheitsmanagement",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0020",
+    "title": "DE BaFin BAIT — section 21",
+    "text": "sen ist es im Hinblick auf die regelmäßig (verbund- oder gruppenseitig) vorhandenen Kontrollmechanismen zulässig, dass mehrere Institute einen gemeinsamen Informationssicherheitsbeauftragten bestellen, wobei vertraglich\nsicherzustellen ist, dass dieser gemeinsame Informationssicherheitsbeauftragte die Wahrnehmung der einschlägigen Aufgaben der Funktion in allen\nbetreffenden Instituten jederzeit gewährleisten kann. In diesem Fall ist jedoch in jedem Institut eine zuständige Ansprechperson für den Informationssicherheitsbeauftragten zu benennen.\nInstitute können die Funktion des Informationssicherheitsbeauftragten\ngrundsätzlich mit anderen Funktionen im Institut kombinieren.\nDie Möglichkeit, sich externer Unterstützung per Servicevertrag zu bedienen,\nbleibt für die Institute unberührt.\n4.7.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0021",
+    "title": "DE BaFin BAIT — section 22",
+    "text": "Nach einem Informationssicherheitsvorfall sind die Auswirkungen auf Die Definition des Begriffes „Informationssicherheitsvorfall“ nach Art und\ndie Informationssicherheit zeitnah zu analysieren und angemessene\nUmfang orientiert sich am Schutzbedarf der betroffenen Bestandteile des InNachsorgemaßnahmen zu veranlassen.\nformationsverbundes. Ein Informationssicherheitsvorfall kann auch dann vorliegen, wenn mindestens eines der Schutzziele („Verfügbarkeit“, „Integrität“,\n„Vertraulichkeit“, „Authentizität“) gemäß den Vorgaben des institutsspezifischen Sollkonzepts der Informationssicherheit verletzt ist.\nDie Begriffe „Informationssicherheitsvorfall“, „sicherheitsrelevantes Ereignis“\n(im Sinne der operativen Informationssicherheit) und „ungeplante Abweichung vom Regelbetrieb“ (im Sinne von „Störung“) werden nachvollziehbar\nvoneinander abgegrenzt.\n\n4.8.\n\nDas Institut hat eine Richtlinie über das Testen und Überprüfen der\nMaßnahmen zum Schutz der Informationssicherheit einzuführen und\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nDie Richtlinie berücksichtigt u. a.:\n\n\ndie allgemeine Bedrohungslage\n\nSeite 12 von 32\n\nInformationssicherheitsmanagement",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0022",
+    "title": "DE BaFin BAIT — section 23",
+    "text": "diese regelmäßig und anlassbezogen zu überprüfen und bei Bedarf\nanzupassen.\n\n4.9.\n\n4.10.\n\nDas Institut hat ein kontinuierliches und angemessenes Sensibilisierungs- und Schulungsprogramm für Informationssicherheit festzulegen. Der Erfolg der festgelegten Sensibilisierungs- und Schulungsmaßnahmen ist zu überprüfen.\n\nDer Informationssicherheitsbeauftragte hat der Geschäftsleitung regelmäßig, mindestens vierteljährlich, über den Status der Informationssicherheit sowie anlassbezogen zu berichten.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\n\n\ndie individuelle Risikosituation des Instituts\n\n\n\nKategorien von Test- und Überprüfungsobjekten (z. B. das Institut, ITSysteme, Komponenten)\n\n\n\nArt, Umfang und Frequenz von Tests und Überprüfungen\n\n\n\nZuständigkeiten und Regelungen zur Vermeidung von Interessenkonflikten.\n\nDas Programm sollte zielgruppenorientiert mindestens folgende Aspekte berücksichtigen:\n\n\npersönliche Verantwortung für eigene Handlungen und Unterlassungen sowie allgemeine Verantwortlichkeiten zum Schutz von Informationen\n\n",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0023",
+    "title": "DE BaFin BAIT — section 24",
+    "text": "grundsätzliche Verfahren zur Informationssicherheit (wie Berichterstattung über Informationssicherheitsvorfälle) und allgemeingültige Sicherheitsmaßnahmen (z. B. zu Passwörtern, Social Engineering, Prävention vor Schadsoftware und dem Verhalten bei Verdacht auf Schadsoftware).\n\nDer Statusbericht enthält beispielsweise die Bewertung der Informationssicherheitslage im Vergleich zum Vorbericht, Informationen zu Projekten zur\nInformationssicherheit, Informationssicherheitsvorfälle sowie Penetrationstestergebnisse.\n\nSeite 13 von 32\n\nOperative Informationssicherheit\n\nOperative Informationssicherheit\n5.1.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0024",
+    "title": "DE BaFin BAIT — section 25",
+    "text": "Die operative Informationssicherheit setzt die Anforderungen des Informationssicherheitsmanagements um. IT-Systeme, die zugehörigen IT-Prozesse und sonstige Bestandteile des Informationsverbundes müssen die Integrität, die Verfügbarkeit, die Authentizität sowie die Vertraulichkeit der\nDaten sicherstellen. Für diese Zwecke ist bei der Ausgestaltung der IT-Systeme und der zugehörigen IT-Prozesse grundsätzlich auf gängige Standards abzustellen (vgl. AT 7.2 Tz. 2 MaRisk). Für IT-Risiken sind angemessene Überwachungs- und Steuerungsprozesse einzurichten, die insbesondere die Festlegung von IT-Risikokriterien, die Identifikation von IT-Risiken, die Festlegung des Schutzbedarfs, daraus abgeleitete Schutzmaßnahmen für den IT-Betrieb sowie die Festlegung entsprechender Maßnahmen zur Risikobehandlung und –minderung umfassen (vgl. AT 7.2 Tz. 4 MaRisk).\n\n5.2.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0025",
+    "title": "DE BaFin BAIT — section 26",
+    "text": "Das Institut hat auf Basis der Informationssicherheitsleitlinie und InInformationssicherheitsmaßnahmen und -prozesse berücksichtigen u. a.:\nformationssicherheitsrichtlinien angemessene, dem Stand der Technik\n Schwachstellenmanagement zur Erkennung, Bewertung, Behandlung\nentsprechende, operative Informationssicherheitsmaßnahmen und\nund Dokumentation von Schwachstellen\nProzesse zu implementieren.\n Segmentierung und Kontrolle des Netzwerks (einschließlich Richtlinienkonformität der Endgeräte)\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\n\n\nSichere Konfiguration von IT-Systemen (Härtung)\n\n\n\nVerschlüsselung von Daten bei Speicherung und Übertragung gemäß\nSchutzbedarf\n\n\n\nmehrstufigen Schutz der IT-Systeme gemäß Schutzbedarf (z. B. vor Datenverlust, Manipulation oder Verfügbarkeitsangriffen oder vor nicht\nautorisiertem Zugriff)\n\n\n\nPerimeterschutz von z. B. Liegenschaften, Rechenzentren und anderen\nsensiblen Bereichen.\n\nSeite 14 von 32\n\nOperative Informationssicherheit\n\n5.3.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0026",
+    "title": "DE BaFin BAIT — section 27",
+    "text": "Gefährdungen des Informationsverbundes sind möglichst frühzeitig\nPotentiell sicherheitsrelevante Informationen sind z. B. Protokolldaten, Melzu identifizieren. Potentiell sicherheitsrelevante Informationen sind\ndungen und Störungen, welche Hinweise auf Verletzung der Schutzziele geangemessen zeitnah, regelbasiert und zentral auszuwerten. Diese In- ben können.\nformationen müssen bei Transport und Speicherung geschützt werDie regelbasierte Auswertung (z. B. über Parameter, Korrelationen von Inforden und für eine angemessene Zeit zur späteren Auswertung zur Vermationen, Abweichungen oder Muster) großer Datenmengen erfordert in\nfügung stehen.\nder Regel den Einsatz automatisierter IT-Systeme.\nSpätere Auswertungen umfassen u. a. forensische Analysen und interne Verbesserungsmaßnahmen. Der Zeitraum sollte der Bedrohungslage entsprechend bemessen sein.\n\n5.4.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0027",
+    "title": "DE BaFin BAIT — section 28",
+    "text": "Es ist ein angemessenes Portfolio an Regeln zur Identifizierung siRegeln erkennen beispielsweise, ob vermehrt nicht autorisierte Zugriffsvercherheitsrelevanter Ereignisse zu definieren. Regeln sind vor Inbesuche stattgefunden haben, erwartete Protokolldaten nicht mehr angeliefert\ntriebnahme zu testen. Die Regeln sind regelmäßig und anlassbezogen werden oder die Uhrzeiten der anliefernden IT-Systeme voneinander abweiauf Wirksamkeit zu prüfen und weiterzuentwickeln.\nchen.\n\n5.5.\n\nSicherheitsrelevante Ereignisse sind zeitnah zu analysieren, und auf\ndaraus resultierende Informationssicherheitsvorfälle ist unter Verantwortung des Informationssicherheitsmanagements angemessen zu\nreagieren.\n\n5.6.\n\nSicherheitsrelevante Ereignisse ergeben sich beispielsweise aus der regelbasierten Auswertung der potentiell sicherheitsrelevanten Informationen.\nDie zeitnahe Analyse und Reaktion kann eine ständig besetzte zentrale\nStelle, z. B. in Form eines Security Operation Centers (SOC), erfordern.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0028",
+    "title": "DE BaFin BAIT — section 29",
+    "text": "Die Sicherheit der IT-Systeme ist regelmäßig, anlassbezogen und un- Turnus, Art und Umfang der Überprüfung sollten sich insbesondere am\nter Vermeidung von Interessenskonflikten zu überprüfen. Ergebnisse Schutzbedarf und der potentiellen Angriffsfläche (z. B. Erreichbarkeit aus\nsind hinsichtlich notwendiger Verbesserungen zu analysieren und Ri- dem Internet) des IT-Systems orientieren.\nsiken angemessen zu steuern.\nArten der Überprüfungen sind z. B.:\n\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nAbweichungsanalysen (Gapanalysen)\n\nSeite 15 von 32\n\nIdentitäts- und Rechtemanagement\n\n\n\nSchwachstellenscans\n\n\n\nPenetrationstests\n\n\n\nSimulationen von Angriffen.\n\nIdentitäts- und Rechtemanagement\n6.1.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0029",
+    "title": "DE BaFin BAIT — section 30",
+    "text": "Ein Identitäts- und Rechtemanagement stellt sicher, dass den Benutzern eingeräumte Berechtigungen so ausgestaltet sind und genutzt werden, wie\nes den organisatorischen und fachlichen Vorgaben des Instituts entspricht. Das Identitäts- und Rechtemanagement hat die Anforderungen nach AT\n4.3.1 Tz. 2, AT 7.2 Tz. 2, sowie BTO Tz. 9 der MaRisk zu erfüllen. Jegliche Zugriffs-, Zugangs- und Zutrittsrechte auf Bestandteile bzw. zu Bestandteilen des Informationsverbundes sollten standardisierten Prozessen und Kontrollen unterliegen.\n\n6.2.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0030",
+    "title": "DE BaFin BAIT — section 31",
+    "text": "Berechtigungskonzepte legen den Umfang und die Nutzungsbedingungen der Berechtigungen für die IT-Systeme (Zugang zu IT-Systemen sowie Zugriff auf Daten) sowie die Zutrittsrechte zu Räumen\nkonsistent zum ermittelten Schutzbedarf sowie vollständig und nachvollziehbar ableitbar für alle bereitgestellten Berechtigungen fest. Berechtigungskonzepte haben die Vergabe von Berechtigungen nach\ndem Sparsamkeitsgrundsatz („Need-to-know“ und „Least-Privilege“\nPrinzipien) sicherzustellen, die Funktionstrennung auch berechtigungskonzeptübergreifend zu wahren und Interessenskonflikte zu\nvermeiden. Berechtigungskonzepte sind regelmäßig und anlassbezogen zu überprüfen und ggf. zu aktualisieren.\n\n6.3.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0031",
+    "title": "DE BaFin BAIT — section 32",
+    "text": "Eine mögliche Nutzungsbedingung ist die Befristung von eingeräumten Berechtigungen.\nBerechtigungen können, je nach Art, für personalisierte sowie für nicht personalisierte Benutzer (inkl. technische Benutzer) vorliegen.\nZugangs- und Zugriffsberechtigungen auf den IT-Systemen können auf allen\nEbenen eines IT-Systems (z. B. Betriebssystem, Datenbank, Anwendung) vorliegen.\nTechnische Benutzer sind z. B. Benutzer, die von IT-Systemen verwendet\nwerden, um sich gegenüber anderen IT-Systemen zu identifizieren oder um\neigenständig IT-Routinen auszuführen.\n\nZugriffe und Zugänge müssen jederzeit zweifelsfrei einer handelnden Beispielsweise müssen automatisierte Aktivitäten verantwortlichen Personen\nbzw. verantwortlichen Person (möglichst automatisiert) zuzuordnen\nzuordenbar sein. Abweichungen in begründeten Ausnahmefällen und die\nsein.\nhieraus resultierenden Risiken sind zu bewerten, zu dokumentieren und anschließend von der fachlich verantwortlichen Stelle zu genehmigen.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 16 von 32\n\nIdentitäts- und Rechtemanagement",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0032",
+    "title": "DE BaFin BAIT — section 33",
+    "text": "Die Verfahren zur Einrichtung, Änderung, Deaktivierung oder Löschung von Berechtigungen für Benutzer haben durch Genehmigungs- und Kontrollprozesse sicherzustellen, dass die Vorgaben des\nBerechtigungskonzepts eingehalten werden. Dabei ist die fachlich\nverantwortliche Stelle angemessen einzubinden, so dass sie ihrer\nfachlichen Verantwortung nachkommen kann.\n\nDie Einrichtung, Änderung, Deaktivierung oder Löschung von Berechtigungen umfassen jeweils auch die zeitnahe oder unverzügliche Umsetzung im\nZielsystem.\n\n6.5.\n\nBei der Überprüfung, ob die eingeräumten Berechtigungen weiterhin\nbenötigt werden und ob diese den Vorgaben des Berechtigungskonzepts entsprechen (Rezertifizierung), sind die für die Einrichtung, Änderung, Deaktivierung oder Löschung von Berechtigungen zuständigen Kontrollinstanzen einzubeziehen.\n\nFällt im Rahmen der Rezertifizierung auf, dass nicht legitimierte Berechtigungen vorhanden sind, so werden diese gemäß Regelverfahren zeitnah entzogen und bei Bedarf weitere Maßnahmen (z. B. Ursachenanalyse, Vorfallmeldung) ergriffen.\n\n6.6.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0033",
+    "title": "DE BaFin BAIT — section 34",
+    "text": "Die Einrichtung, Änderung, Deaktivierung sowie Löschung von Berechtigungen und die Rezertifizierung sind nachvollziehbar und auswertbar zu dokumentieren.\n\n6.7.\n\nDas Institut hat nach Maßgabe des Schutzbedarfs und der Soll-Anfor- Die übergeordnete Verantwortung für die Prozesse zur Protokollierung und\nderungen Prozesse zur Protokollierung und Überwachung einzurich- Überwachung von Berechtigungen wird einer Stelle zugeordnet, die unabten, die überprüfbar machen, dass die Berechtigungen nur wie vorge- hängig vom berechtigten Benutzer oder dessen Organisationseinheit ist. Zu\nsehen eingesetzt werden. Aufgrund der damit verbundenen weitrei- privilegierten Zutrittsrechten zählen in der Regel die Rechte zum Zutritt zu\nchenden Eingriffsmöglichkeiten hat das Institut insbesondere für die Rechenzentren, Technikräumen sowie sonstigen sensiblen Bereichen.\nAktivitäten mit privilegierten (besonders kritischen) Benutzer- und\nZutrittsrechten angemessene Prozesse zur Protokollierung und Überwachung einzurichten.\n\n6.4.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0034",
+    "title": "DE BaFin BAIT — section 35",
+    "text": "Grund für eine unverzügliche Deaktivierung bzw. Löschung von Berechtigungen ist u. a. die Gefahr einer missbräuchlichen Verwendung (z. B. bei fristloser Kündigung eines Mitarbeiters).\n\nSeite 17 von 32\n\nIT-Projekte und Anwendungsentwicklung\n\n6.8.\n\nDurch begleitende technisch-organisatorische Maßnahmen ist einer\nUmgehung der Vorgaben der Berechtigungskonzepte vorzubeugen.\n\nTechnisch-organisatorische Maßnahmen sind beispielsweise:\n\n\nAuswahl angemessener Authentifizierungsverfahren (u. a. starke Authentifizierung im Falle von Fernzugriffen)\n\n\n\nImplementierung einer Richtlinie zur Wahl sicherer Passwörter\n\n\n\nautomatische passwortgesicherte Bildschirmsperre\n\n\n\nVerschlüsselung von Daten\n\n\n\nmanipulationssichere Implementierung der Protokollierung\n\n\n\nMaßnahmen zur Sensibilisierung der Mitarbeiter.\n\nIT-Projekte und Anwendungsentwicklung\n7.1.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0035",
+    "title": "DE BaFin BAIT — section 36",
+    "text": "Wesentliche Veränderungen in den IT-Systemen im Rahmen von IT-Projekten, deren Auswirkung auf die IT-Aufbau- und IT-Ablauforganisation\nsowie die dazugehörigen IT-Prozesse sind im Rahmen einer Auswirkungsanalyse zu bewerten (vgl. AT 8.2 Tz. 1 MaRisk). Im Hinblick auf den erstmaligen Einsatz sowie wesentliche Veränderungen von IT-Systemen sind die Anforderungen des AT 7.2 (insbesondere Tz. 3 und Tz. 5) MaRisk, AT 8.2\nTz. 1 MaRisk sowie AT 8.3 Tz. 1 MaRisk zu erfüllen.\n\n7.2.\n\nDie organisatorischen Grundlagen für IT-Projekte und die Kriterien für Organisatorische Grundlagen berücksichtigen u. a.:\nderen Anwendung sind zu regeln.\n Einbindung betroffener Beteiligter (insbesondere des Informationssicherheitsbeauftragten)\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\n\n\nProjektdokumentation (z. B. Projektantrag, Projektabschlussbericht)\n\n\n\nQuantitative und qualitative Ressourcenausstattung\n\n\n\nSteuerung der Projektrisiken\n\n\n\nInformationssicherheitsanforderungen\nSeite 18 von 32\n\nIT-Projekte und Anwendungsentwicklung\n\n\n\nProjektunabhängige Qualitätssicherungsmaßnahmen\n\n\n\nAufarbeitung der gewonnenen Erkenntnisse (Lessons Learned).\n\n7.3.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0036",
+    "title": "DE BaFin BAIT — section 37",
+    "text": "IT-Projekte sind angemessen unter Berücksichtigung ihrer Ziele und\nRisiken im Hinblick auf die Dauer, Ressourcen und Qualität zu steuern. Hierfür sind Vorgehensmodelle festzulegen, deren Einhaltung zu\nüberwachen ist.\n\nBeispielsweise kann die Entscheidung über den Übergang zwischen den Projektphasen bzw. Projektabschnitten von eindeutigen Qualitätskriterien des\njeweiligen Vorgehensmodells abhängen.\n\n7.4.\n\nDas Portfolio der IT-Projekte ist angemessen zu überwachen und zu\nsteuern. Dabei ist zu berücksichtigen, dass auch aus Abhängigkeiten\nverschiedener Projekte voneinander Risiken resultieren können.\n\nDie Portfoliosicht ermöglicht einen Überblick über die IT-Projekte mit den\nentsprechenden Projektdaten, Ressourcen, Risiken und Abhängigkeiten.\n\n7.5.\n\nÜber wesentliche IT-Projekte und IT-Projektrisiken wird der Geschäftsleitung regelmäßig und anlassbezogen berichtet. Wesentliche\nProjektrisiken sind im Risikomanagement zu berücksichtigen.\n\n7.6.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0037",
+    "title": "DE BaFin BAIT — section 38",
+    "text": "Für die Anwendungsentwicklung sind angemessene Prozesse festzulegen, die Vorgaben zur Anforderungsermittlung, zum Entwicklungsziel, zur (technischen) Umsetzung (einschließlich Programmierrichtlinien), zur Qualitätssicherung sowie zu Test, Abnahme und Freigabe\nenthalten.\n\n7.7.\n\nAnwendungsentwicklung umfasst u. a. die Erstellung von Software für Geschäfts- und Unterstützungsprozesse (einschließlich individueller Datenverarbeitung – IDV).\nDie Ausgestaltung der Prozesse erfolgt risikoorientiert.\n\nAnforderungen an die Funktionalität der Anwendung müssen ebenso Anforderungsdokumente können sich nach Vorgehensmodell unterscheiden\nerhoben, bewertet, dokumentiert und genehmigt werden wie nicht- und beinhalten beispielsweise:\nfunktionale Anforderungen. Zu jeder Anforderung sind entspre Fachkonzept (Lastenheft)\nchende Akzeptanz- und Testkriterien zu definieren. Die Verantwor Technisches Fachkonzept (Pflichtenheft)\ntung für die Erhebung, Bewertung und Genehmigung der fachlichen\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 19 von 32\n\nIT-Projekte und Anwendungsentwicklung\n\nAnforderungen (funktional und nicht funktional) haben die fachlich\nverantwortlichen Stellen zu tragen.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0038",
+    "title": "DE BaFin BAIT — section 39",
+    "text": "7.8.\n\n\n\nUser-Story/Product Back-Log.\n\nNichtfunktionale Anforderungen an IT-Systeme sind beispielsweise:\n\n\nAnforderungen an die Informationssicherheit\n\n\n\nZugriffsregelungen\n\n\n\nErgonomie\n\n\n\nWartbarkeit\n\n\n\nAntwortzeiten\n\n\n\nResilienz.\n\nIm Rahmen der Anwendungsentwicklung sind je nach Schutzbedarf\nGeeignete Vorkehrungen sind z. B.:\nangemessene Vorkehrungen zu treffen, dass auch nach jeder Produk Prüfung der Eingabedaten\ntivsetzung einer Anwendung die Vertraulichkeit, Integrität, Verfügbar Systemzugangskontrolle\nkeit und Authentizität der zu verarbeitenden Daten nachvollziehbar\nsichergestellt werden.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\n\n\nBenutzerauthentifizierung\n\n\n\nTransaktionsautorisierung\n\n\n\nProtokollierung der Systemaktivität\n\n\n\nPrüfpfade (Audit Logs)\n\n\n\nVerfolgung von sicherheitsrelevanten Ereignissen\n\n\n\nBehandlung von Ausnahmen.\n\nSeite 20 von 32\n\nIT-Projekte und Anwendungsentwicklung\n\n7.9.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0039",
+    "title": "DE BaFin BAIT — section 40",
+    "text": "Die Integrität der Anwendung (insbesondere des Quellcodes) ist an- Eine geeignete Vorkehrung unter Berücksichtigung des Schutzbedarfs kann\ngemessen sicherzustellen. Zudem müssen u. a. Vorkehrungen getrof- die Überprüfung des Quellcodes sein. Die Überprüfung des Quellcodes ist\nfen werden, die erkennen lassen, ob eine Anwendung versehentlich\neine methodische Untersuchung zur Identifizierung von Risiken.\ngeändert oder absichtlich manipuliert wurde.\n\n7.10.\n\nDie Anwendung sowie deren Entwicklung sind übersichtlich und für\nsachkundige Dritte nachvollziehbar zu dokumentieren.\n\nDie Dokumentation der Anwendung umfasst mindestens folgende Inhalte:\n\n\nAnwenderdokumentation\n\n\n\nTechnische Systemdokumentation\n\n\n\nBetriebsdokumentation.\n\nZur Nachvollziehbarkeit der Anwendungsentwicklung trägt beispielsweise\neine Versionierung des Quellcodes und der Anforderungsdokumente bei.\n7.11.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0040",
+    "title": "DE BaFin BAIT — section 41",
+    "text": "Es ist eine Methodik für das Testen von Anwendungen vor ihrem erst- Die Testdurchführung erfordert einschlägige Expertise der Tester sowie eine\nmaligen Einsatz und nach wesentlichen Änderungen zu definieren\nangemessen ausgestaltete Unabhängigkeit von den Anwendungsentwickund einzuführen. Die Tests haben in ihrem Umfang die Funktionalität lern. Der Schutzbedarf der zum Test verwendeten Daten ist zu berücksichtider Anwendung, die implementierten Maßnahmen zum Schutz der\ngen.\nInformationen und bei Relevanz die Systemleistung unter verschiedeEine Testdokumentation enthält mindestens folgende Punkte:\nnen Stressbelastungsszenarien einzubeziehen. Die fachlich zuständi Testfallbeschreibung\ngen Stellen haben die Durchführung von Abnahmetests zu verantworten. Testumgebungen zur Durchführung der Abnahmetests haben  Dokumentation der zugrunde gelegten Parametrisierung des Testfalls\nin für den Test wesentlichen Aspekten der Produktionsumgebung zu\n Testdaten\nentsprechen. Testaktivitäten und Testergebnisse sind zu dokumentieren.\n erwartetes Testergebnis\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\n\n\nerzieltes Testergebnis\n\n\n\naus den Tests abgeleiteten Maßnahmen.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0041",
+    "title": "DE BaFin BAIT — section 42",
+    "text": "Seite 21 von 32\n\nIT-Projekte und Anwendungsentwicklung\n\nRisikoorientiert schließen die Maßnahmen zum Schutz der Informationen\nauch Penetrationstests ein.\n7.12.\n\nNach Produktivsetzung der Anwendung sind mögliche Abweichungen vom Regelbetrieb zu überwachen, deren Ursachen zu untersuchen und ggf. Maßnahmen zur Nachbesserung zu veranlassen.\n\n7.13.\n\nEin angemessenes Verfahren für die Klassifizierung/Kategorisierung\nDie Einhaltung von Programmierrichtlinien wird auch für die entwickelten\n(Schutzbedarfsklasse) und den Umgang mit den von Mitarbeitern des IDV-Anwendungen sichergestellt.\nFachbereichs entwickelten oder betriebenen Anwendungen ist festzuJede Anwendung wird einer Schutzbedarfsklasse zugeordnet. Übersteigt der\nlegen (Individuelle Datenverarbeitung – IDV).\nermittelte Schutzbedarf die technische Schutzmöglichkeit einer Anwendungen, werden Schutzmaßnahmen in Abhängigkeit der Ergebnisse der Schutzbedarfsklassifizierung ergriffen.\n\n7.14.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0042",
+    "title": "DE BaFin BAIT — section 43",
+    "text": "Die Vorgaben zur Identifizierung aller von Mitarbeitern des FachbeFür einen Überblick und zur Vermeidung von Redundanzen wird ein zentrareichs entwickelten oder betriebenen Anwendungen, zur Dokumenta- les Register für Anwendungen geführt und es werden mindestens folgende\ntion, zu den Programmierrichtlinien und zur Methodik des Testens,\nInformationen erhoben:\nzur Schutzbedarfsfeststellung und zum Rezertifizierungsprozess der\n Name und Zweck der Anwendung\nBerechtigungen sind zu regeln (z. B. in einer IDV-Richtlinie).\n Versionierung, Datumsangabe\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nHinweise auf erhebliche Mängel können z. B. Häufungen von Abweichungen\nvom Regelbetrieb sein.\n\n\n\nFremd- oder Eigenentwicklung\n\n\n\nFachverantwortliche(r) Mitarbeiter\n\n\n\nTechnisch verantwortliche(r) Mitarbeiter\n\n\n\nTechnologie\n\n\n\nErgebnis der Risikoklassifizierung/Schutzbedarfseinstufung und ggf.\ndie daraus abgeleiteten Schutzmaßnahmen.\nSeite 22 von 32\n\nIT-Betrieb\n\nIT-Betrieb\n8.1.\n\nDer IT-Betrieb hat die Anforderungen, die sich aus der Umsetzung der Geschäftsstrategie sowie aus den IT-unterstützten Geschäftsprozessen ergeben, zu erfüllen (vgl. AT 7.2 Tz. 1 und Tz. 2 MaRisk).\n\n8.2.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0043",
+    "title": "DE BaFin BAIT — section 44",
+    "text": "Die Komponenten der IT-Systeme und deren Beziehungen zueinander sind in geeigneter Weise zu verwalten, und die hierzu erfassten\nBestandsangaben regelmäßig sowie anlassbezogen zu aktualisieren.\n\n8.3.\n\nZu den Bestandsangaben zählen insbesondere:\n\n\nBestand und Verwendungszweck der Komponenten der IT-Systeme mit\nden relevanten Konfigurationsangaben (z. B. Versionen und Patchlevel)\n\n\n\nEigentümer der IT-Systeme und deren Komponenten\n\n\n\nStandort der Komponenten der IT-Systeme\n\n\n\nAufstellung der relevanten Angaben zu Gewährleistungen und sonstigen Supportverträgen (ggf. Verlinkung)\n\n\n\nAngaben zum Ablaufdatum des Supportzeitraums der Komponenten\nder IT-Systeme\n\n\n\nSchutzbedarf der IT-Systeme und deren Komponenten\n\n\n\nAkzeptierter Zeitraum der Nichtverfügbarkeit der IT-Systeme sowie der\nmaximal tolerierbare Datenverlust.\n\nDas Portfolio aus IT-Systemen bedarf der Steuerung. IT-Systeme sollten regelmäßig aktualisiert werden. Risiken aus veralteten bzw. nicht\nmehr vom Hersteller unterstützten IT-Systemen sind zu steuern (Lebenszyklus-Management).\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 23 von 32\n\nIT-Betrieb\n\n8.4.\n\n8.5.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0044",
+    "title": "DE BaFin BAIT — section 45",
+    "text": "Die Prozesse zur Änderung von IT-Systemen sind abhängig von Art,\nÄnderungen von IT-Systemen umfassen auch die Wartung von IT-Systemen.\nUmfang, Komplexität und Risikogehalt auszugestalten und umzuset- Beispiele für Änderungen sind:\nzen. Dies gilt auch für Neu- bzw. Ersatzbeschaffungen von IT-Syste Funktionserweiterungen oder Fehlerbehebungen von Softwarekompomen sowie für sicherheitsrelevante Nachbesserungen (Sicherheitspatnenten\nches).\n Datenmigrationen\n\n\nÄnderungen an Konfigurationseinstellungen von IT-Systemen\n\n\n\nAustausch von Hardwarekomponenten (Server, Router etc.)\n\n\n\nEinsatz neuer Hardwarekomponenten\n\n\n\nUmzug der IT-Systeme zu einem anderen Standort.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0045",
+    "title": "DE BaFin BAIT — section 46",
+    "text": "Änderungen von IT-Systemen sind in geordneter Art und Weise auf- Der sicheren Umsetzung der Änderungen in den produktiven Betrieb dienen\nzunehmen, zu dokumentieren, unter Berücksichtigung möglicher Um- beispielsweise:\nsetzungsrisiken zu bewerten, zu priorisieren, zu genehmigen sowie\n Risikoanalyse in Bezug auf die bestehenden IT-Systeme (insbesondere\nkoordiniert und sicher umzusetzen. Auch für zeitkritische Änderungen\nauch das Netzwerk und die vor- und nachgelagerten IT-Systeme), auch\nvon IT-Systemen sind geeignete Prozesse einzurichten.\nim Hinblick auf mögliche Sicherheits- oder Kompatibilitätsprobleme,\nals Bestandteil der Änderungsanforderung\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\n\n\nTests von Änderungen vor Produktivsetzung auf mögliche Inkompatibilitäten der Änderungen sowie mögliche sicherheitskritische Aspekte\nbei bestehenden IT-Systemen\n\n\n\nTests von Patches vor Produktivsetzung unter Berücksichtigung ihrer\nKritikalität\n\n\n\nDatensicherungen der betroffenen IT-Systeme\n\nSeite 24 von 32\n\nIT-Betrieb\n\n\n\nRückabwicklungspläne, um eine frühere Version des IT-Systems wiederherstellen zu können, wenn während oder nach der Produktivsetzung ein Problem auftritt\n\n",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0046",
+    "title": "DE BaFin BAIT — section 47",
+    "text": "alternative Wiederherstellungsoptionen, um dem Fehlschlagen primärer Rückabwicklungspläne begegnen zu können.\n\nFür risikoarme Konfigurationsänderungen/Parametereinstellungen (z. B. Änderungen am Layout von Anwendungen, Austausch von defekten Hardwarekomponenten, Zuschaltung von Prozessoren) können abweichende prozessuale Vorgaben/Kontrollen definiert werden (z. B. Vier-Augen-Prinzip,\nDokumentation der Änderungen oder der nachgelagerten Kontrolle).\n8.6.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0047",
+    "title": "DE BaFin BAIT — section 48",
+    "text": "Die Meldungen über ungeplante Abweichungen vom Regelbetrieb\nDie Identifikation der Risiken kann beispielsweise anhand des Aufzeigens der\n(Störungen) und deren Ursachen sind in geeigneter Weise zu erfasVerletzung der Schutzziele erfolgen. sen, zu bewerten, insbesondere hinsichtlich möglicherweise resultieDie Ursachenanalyse erfolgt auch dann, wenn mehrere IT-Systeme zur Störender Risiken zu priorisieren und entsprechend festgelegter Kriterien\nrungs- und Ursachenerfassung sowie –bearbeitung eingesetzt werden. zu eskalieren. Hierzu sind Standardvorgehensweisen z. B. für Maßnahmen und Kommunikation sowie Zuständigkeiten (z. B. für Schadcode Hier können standardisierte Incident– und Problemmanagement-Lösungen\neingesetzt werden. auf Endgeräten, Fehlfunktionen) zu definieren. Bearbeitung, Ursachenanalyse und Lösungsfindung inkl. Nachverfolgung sind zu dokumentieren. Ein geordneter Prozess zur Analyse möglicher Korrelationen von Störungen und deren Ursachen muss vorhanden sein. Der\nBearbeitungsstand offener Meldungen über Störungen, wie auch die\nAngemessenheit der Bewertung und Priorisierung, ist zu überwachen\nund zu steuern.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0048",
+    "title": "DE BaFin BAIT — section 49",
+    "text": "Das Institut hat geeignete Kriterien für die Information der Beteiligten (z. B. Geschäftsleitung, zuständige Aufsichtsbehörde) über Störungen festzulegen.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 25 von 32\n\nAuslagerungen und sonstiger Fremdbezug von IT-Dienstleistungen\n\n8.7.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0049",
+    "title": "DE BaFin BAIT — section 50",
+    "text": "Die Vorgaben für die Verfahren zur Datensicherung (ohne DatenarDie Anforderungen an die Maßnahmen zur Sicherstellung von Verfügbarkeit,\nchivierung) sind schriftlich in einem Datensicherungskonzept zu reLesbarkeit und Aktualität der Daten sowie an die durchzuführenden Tests ergeln. Die im Datensicherungskonzept dargestellten Anforderungen\ngeben sich aus diesbezüglichen Risikoanalysen. Hinsichtlich der Standorte\nan die Verfügbarkeit, Lesbarkeit und Aktualität der Kunden- und Ge- für die Lagerung der Datensicherungen können eine oder mehrere weitere\nschäftsdaten sowie an die für deren Verarbeitung notwendigen ITLokationen erforderlich sein.\nSysteme sind aus den Anforderungen der Geschäftsprozesse und den\nGeschäftsfortführungsplänen abzuleiten. Die Verfahren zur Wiederherstellung und zur Gewährleistung der Lesbarkeit der Daten sind regelmäßig, mindestens jährlich, im Rahmen einer Stichprobe sowie anlassbezogen zu testen.\n\n8.8.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0050",
+    "title": "DE BaFin BAIT — section 51",
+    "text": "Der aktuelle Leistungs- und Kapazitätsbedarf der IT-Systeme ist zu erheben. Der zukünftige Leistungs- und Kapazitätsbedarf ist abzuschätzen. Die Leistungserbringung ist zu planen und zu überwachen um\ninsbesondere Engpässe zeitnah zu erkennen und angemessen zu reagieren. Bei der Planung sind Leistungs- und Kapazitätsbedarf von Informationssicherheitsmaßnahmen zu berücksichtigen.\n\nAuslagerungen und sonstiger Fremdbezug von IT-Dienstleistungen\n9.1.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0051",
+    "title": "DE BaFin BAIT — section 52",
+    "text": "IT-Dienstleistungen umfassen alle Ausprägungen des Bezugs von IT; dazu zählen insbesondere die Bereitstellung von IT-Systemen, Projekte/Gewerke oder Personalgestellung. Die Auslagerungen der IT-Dienstleistungen haben die Anforderungen nach AT 9 der MaRisk zu erfüllen. Dies gilt\nauch für Auslagerungen von IT-Dienstleistungen, die dem Institut durch ein Dienstleistungsunternehmen über ein Netz bereitgestellt werden (z. B.\nRechenleistung, Speicherplatz, Plattformen oder Software) und deren Angebot, Nutzung und Abrechnung dynamisch und an den Bedarf angepasst\nüber definierte technische Schnittstellen sowie Protokolle erfolgen (Cloud-Dienstleistungen). Das Institut hat auch beim sonstigen Fremdbezug von\nIT-Dienstleistungen die allgemeinen Anforderungen an die Ordnungsmäßigkeit der Geschäftsorganisation gemäß § 25a Abs. 1 KWG zu beachten\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 26 von 32\n\nAuslagerungen und sonstiger Fremdbezug von IT-Dienstleistungen\n\n(vgl. AT 9 Tz. 1 – Erläuterungen - MaRisk). Bei jedem Bezug von Software sind die damit verbundenen Risiken angemessen zu bewerten (vgl. AT 7.2\nTz. 4 Satz 2 MaRisk).\n9.2.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0052",
+    "title": "DE BaFin BAIT — section 53",
+    "text": "Wegen der grundlegenden Bedeutung der IT für das Institut ist auch\nfür jeden sonstigen Fremdbezug von IT-Dienstleistungen vorab eine\nRisikobewertung durchzuführen.\n\nArt und Umfang einer Risikobewertung kann das Institut unter Proportionalitätsgesichtspunkten nach Maßgabe seines allgemeinen Risikomanagements\nflexibel festlegen.\nFür gleichartige Formen des sonstigen Fremdbezugs von IT-Dienstleistungen\nkann auf bestehende Risikobewertungen zurückgegriffen werden.\nDie für Informationssicherheit und Notfallmanagement verantwortlichen\nFunktionen des Instituts werden eingebunden.\n\n9.3.\n\nDer sonstige Fremdbezug von IT-Dienstleistungen ist im Einklang mit\nden Strategien unter Berücksichtigung der Risikobewertung des Instituts zu steuern. Die Erbringung der vom Dienstleister geschuldeten\nLeistung ist entsprechend der Risikobewertung zu überwachen.\n\nHierfür wird eine vollständige, strukturierte Vertragsübersicht vorgehalten.\nDie Steuerung kann auf der Basis dieser Vertragsübersicht durch Bündelung\nvon Verträgen des sonstigen Fremdbezugs von IT-Dienstleistungen (Vertragsportfolio) erfolgen. Bestehende Steuerungsmechanismen können hierzu genutzt werden.\n\n9.4.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0053",
+    "title": "DE BaFin BAIT — section 54",
+    "text": "Die aus der Risikobewertung zum sonstigen Fremdbezug von ITDienstleistungen abgeleiteten Maßnahmen sind angemessen in der\nVertragsgestaltung zu berücksichtigen. Die Ergebnisse der Risikobewertung sind in angemessener Art und Weise im Managementprozess des operationellen Risikos, vor allem im Bereich der Gesamtrisikobewertung des operationellen Risikos, zu berücksichtigen.\n\nDies beinhaltet beispielsweise Vereinbarungen zum Informationsrisikomanagement, zum Informationssicherheitsmanagement, zum Notfallmanagement und zum IT-Betrieb, die im Regelfall den Zielvorgaben des Instituts\nentsprechen.\nBei Relevanz wird auch die Möglichkeit eines Ausfalls eines IT-Dienstleisters\nberücksichtigt und eine diesbezügliche Exit- bzw. Alternativ-Strategie entwickelt und dokumentiert.\nAls erforderlich erkannte Maßnahmen sind auch im Fall der Einbindung von\nSubunternehmen des IT-Dienstleisters zu berücksichtigen.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 27 von 32\n\nIT-Notfallmanagement\n\n9.5.\n\nDie Risikobewertungen in Bezug auf den sonstigen Fremdbezug von\nIT-Dienstleistungen sind regelmäßig und anlassbezogen zu überprüfen und ggf. inkl. der Vertragsinhalte anzupassen.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0054",
+    "title": "DE BaFin BAIT — section 55",
+    "text": "IT-Notfallmanagement\n10.1.\n\nDas Institut hat Ziele zum Notfallmanagement zu definieren und hieraus abgeleitet einen Notfallmanagementprozess festzulegen. Für Notfälle in\nzeitkritischen Aktivitäten und Prozessen ist Vorsorge zu treffen (Notfallkonzept). Die im Notfallkonzept festgelegten Maßnahmen müssen dazu\ngeeignet sein, das Ausmaß möglicher Schäden zu reduzieren (vgl. AT 7.3 Tz. 1 MaRisk). Das Notfallkonzept muss Geschäftsfortführungs- sowie\nWiederherstellungspläne umfassen. Im Fall der Auslagerung von zeitkritischen Aktivitäten und Prozessen haben das auslagernde Institut und das\nAuslagerungsunternehmen über aufeinander abgestimmte Notfallkonzepte zu verfügen (vgl. AT 7.3 Tz. 2 MaRisk). Die Wirksamkeit und Angemessenheit des Notfallkonzeptes ist regelmäßig zu überprüfen. Für zeitkritische Aktivitäten und Prozesse ist sie für alle relevanten Szenarien mindestens\njährlich und anlassbezogen nachzuweisen (vgl. AT 7.3 Tz. 3 MaRisk).\n\n10.2.\n\nDie Ziele und Rahmenbedingungen des IT-Notfallmanagements sind\nauf Basis der Ziele des Notfallmanagements festzulegen.\n\n10.3.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0055",
+    "title": "DE BaFin BAIT — section 56",
+    "text": "Das Institut hat auf Basis des Notfallkonzepts für IT-Systeme, welche IT-Notfallpläne umfassen Wiederanlauf-, Notbetriebs- und Wiederherstelzeitkritische Aktivitäten und Prozesse unterstützen, IT-Notfallpläne zu lungspläne sowie die dafür festgelegten Parameter und berücksichtigen Aberstellen.\nhängigkeiten, um die zeitkritischen Aktivitäten und Prozesse wiederherzustellen.\n\nRahmenbedingungen enthalten u. a. organisatorische Aspekte wie z. B.\nSchnittstellen zu anderen Bereichen (u. a. Risikomanagement oder Informationssicherheitsmanagement).\n\nParameter umfassen u. a.:\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\n\n\nWiederanlaufzeit (Recovery Time Objective – RTO)\n\n\n\nMaximal tolerierbarer Zeitraum, in dem Datenverlust hingenommen\nwerden kann (Recovery Point Objective – RPO)\nSeite 28 von 32\n\nIT-Notfallmanagement\n\n\n\nKonfiguration für den Notbetrieb.\n\nAbhängigkeiten umfassen u. a.:\n\n\nAbhängigkeiten von vor- und nachgelagerten Geschäftsprozessen und\nden eingesetzten IT-Systemen des Instituts und der (IT-) Dienstleister\n\n\n\nAbhängigkeiten bei der Wiederherstellungspriorisierung der IT-Prozesse und -Systeme\n\n",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0056",
+    "title": "DE BaFin BAIT — section 57",
+    "text": "Notwendige Ressourcen, um eine (eingeschränkte) Fortführung der\nGeschäftsprozesse zu gewährleisten\n\n\n\nAbhängigkeiten von externen Faktoren (Gesetzgeber, Anteilseigner,\nÖffentlichkeit, etc.).\n\n10.4.\n\nDie Wirksamkeit der IT-Notfallpläne ist durch mindestens jährliche IT- Das IT-Testkonzept beinhaltet sowohl Tests einzelner IT-Systeme (z. B. KomNotfalltests zu überprüfen. Die Tests müssen IT-Systeme, welche zeit- ponenten, einzelne Anwendungen) als auch deren Zusammenfassung zu\nkritische Aktivitäten und Prozesse unterstützen, vollständig abdecken. Systemverbünden (z. B. Hochverfügbarkeitscluster) sowie Prozesse (z. B. ZuAbhängigkeiten zwischen IT-Systemen bzw. von gemeinsam genutz- tritts- und Zugriffsmanagement).\nten IT-Systemen sind angemessen zu berücksichtigen. Hierfür ist ein\nIT-Testkonzept zu erstellen.\n\n10.5.\n\nDas Institut hat nachzuweisen, dass bei Ausfall eines Rechenzentrums\ndie zeitkritischen Aktivitäten und Prozesse aus einem ausreichend\nentfernten Rechenzentrum und für eine angemessene Zeit sowie für\ndie anschließende Wiederherstellung des IT-Normalbetriebs erbracht\nwerden können.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 29 von 32\n\n[aufgehoben]",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0057",
+    "title": "DE BaFin BAIT — section 58",
+    "text": "Dieses Kapitel richtet sich – im Kontext mit den anderen Kapiteln der BAIT und den sonstigen einschlägigen bankaufsichtlichen Anforderungen in\nBezug auf die Sicherstellung angemessener Vorkehrungen zur Gewährleistung von Verfügbarkeit, Integrität, Authentizität und Vertraulichkeit der\nInformationsverarbeitung – eigens an die Betreiber kritischer Infrastrukturen (KRITIS-Betreiber1). Es ergänzt insoweit die bankaufsichtlichen Anforderungen an die IT um Anforderungen an die wirksame Umsetzung besonderer Maßnahmen zum\nErreichen des KRITIS-Schutzziels. Als KRITIS-Schutzziel wird nachfolgend das Bewahren der Versorgungssicherheit der Gesellschaft mit den in § 7\nBSI-Kritisverordnung genannten kritischen Dienstleistungen (Bargeldversorgung, kartengestützter Zahlungsverkehr, konventioneller Zahlungsverkehr sowie Verrechnung und Abwicklung von Wertpapier- und Derivatgeschäften) verstanden, da deren Ausfall oder Beeinträchtigung zu erheblichen Versorgungsengpässen oder zu Gefährdungen der öffentlichen Sicherheit führen könnte.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0058",
+    "title": "DE BaFin BAIT — section 59",
+    "text": "Für kritische Dienstleistungen sind von den jeweiligen KRITIS-Betreibern (und im Falle von Auslagerungen zusätzlich von ihren IT-Dienstleistern)\ngeeignete Maßnahmen zu beschreiben und wirksam umzusetzen, die die Risiken für den sicheren Betrieb kritischer Infrastrukturen auf ein dem\nKRITIS-Schutzziel angemessenes Niveau senken. Hierzu müssen sich die KRITIS-Betreiber sowie ihre IT-Dienstleister an den einschlägigen Standards\norientieren und Konzepte der Hochverfügbarkeit berücksichtigen. Dabei soll der Stand der Technik eingehalten werden. Dieses Kapitel kann optional verwendet werden, um im Rahmen einer Jahresabschlussprüfung den Nachweis nach § 8a Abs. 3 BSIG zu erbringen. Dazu müssen alle informationstechnischen Systeme, Komponenten oder Prozesse der kritischen Infrastrukturen in der Prüfung komplett abgedeckt\nsein. Alternativ können die KRITIS-Betreiber einen unternehmensindividuellen Ansatz verfolgen oder einen branchenspezifischen Sicherheitsstandard\n(B3S) gemäß § 8a Abs. 2 BSIG erstellen. Der Nachweis gemäß § 8a Abs. 3 BSIG ist in diesen Fällen unter Hinzuziehung einer geeigneten prüfenden\nStelle (siehe einschlägige FAQ auf der BSI-Website) zu erstellen.\n\n1",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0059",
+    "title": "DE BaFin BAIT — section 60",
+    "text": "Siehe Erste Verordnung zur Änderung der BSI-Kritisverordnung vom 21. Juni 2017\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 30 von 32\n\nKritische Infrastrukturen\n\n12.2.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0060",
+    "title": "DE BaFin BAIT — section 61",
+    "text": "Der Geltungsbereich der kritischen Infrastrukturen innerhalb des In- Dies kann beispielsweise erfolgen, indem im Inventar entsprechend 3.3. BAIT\nformationsverbundes ist eindeutig zu kennzeichnen. Hierbei sind alle (beispielsweise in einer Configuration Management Database CMDB) die\nrelevanten Schnittstellen einzubeziehen.\nKomponenten und Bereiche des Informationsverbundes zusätzlich gekennzeichnet werden, die zu den kritischen Infrastrukturen gehören. Der Bezug zu\nAlle einschlägigen Anforderungen der BAIT und der sonstigen aufden jeweiligen zu prüfenden Anlagenkategorien des KRITIS-Betreibers ist\nsichtlichen Anforderungen sind nachvollziehbar auch auf alle Kompodarzustellen.\nnenten und Bereiche der kritischen Dienstleistung anzuwenden.\nDurch geeignete Maßnahmen ist sicherzustellen, dass die für die kritischen\nKritische Dienstleistungen sind angemessen zu überwachen. Mögliche\nDienstleistungen betriebsrelevanten Systeme einer resilienten Architektur\nAuswirkungen von Sicherheitsvorfällen auch auf die kritischen Dienstunterliegen.\nleistungen sind zu bewerten.\n\n12.3.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0061",
+    "title": "DE BaFin BAIT — section 62",
+    "text": "Im Rahmen des Informationsrisiko- und InformationssicherheitsmaGrundsätzlich sind für Risiken Maßnahmen zur Mitigation zu treffen. Dabei\nnagements gemäß den BAIT-Kapiteln 3. und 4. ist das KRITIS-Schutz- soll der Stand der Technik eingehalten werden. ziel zu beachten und Maßnahmen zu dessen Einhaltung wirksam umDer erforderliche Aufwand soll im Verhältnis zu den Folgen eines Ausfalls ozusetzen. Insbesondere sind Risiken, die die kritischen Dienstleistunder einer Beeinträchtigung der betroffenen Kritischen Infrastruktur stehen. gen in relevantem Maße beeinträchtigen können, durch angemessene\nDies bedeutet, dass Risiken zwar auch akzeptiert oder übertragen werden\nMaßnahmen der Risikominderung oder -vermeidung auf ein dem\nkönnen, dies aber nicht allein nach betriebswirtschaftlichen Gesichtspunkten\nKRITIS-Schutzziel angemessenes Niveau zu senken. Hierzu sind insbeentschieden werden darf, sondern nur unter Gewährleistung der Versorsondere solche Maßnahmen geeignet, mit denen den Risiken für die\ngungssicherheit.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0062",
+    "title": "DE BaFin BAIT — section 63",
+    "text": "Risiken, die die kritische Dienstleistung betreffen, dürfen\nVerfügbarkeit bei einem hohen und sehr hohen Schutzbedarf begegbeispielsweise nicht akzeptiert werden, sofern Vorkehrungen nach dem\nnet werden kann. Unter anderem sollten daher Konzepte der HochStand der Technik möglich und angemessen sind. Auch ein Transfer der Risiverfügbarkeit geprüft und soweit geeignet, angewandt werden. ken, z. B. durch Versicherungen, ist kein Ersatz für angemessene Vorkehrungen. Der Abschluss einer Versicherung, z. B. aus betriebswirtschaftlichem Interesse, steht dem nicht entgegen.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 31 von 32\n\nKritische Infrastrukturen\n\n12.4.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0063",
+    "title": "DE BaFin BAIT — section 64",
+    "text": "Das KRITIS-Schutzziel ist von der Schutzbedarfsermittlung über die\nInsbesondere ist dies bei den folgenden Aspekten zu beachten:\nDefinition angemessener Maßnahmen bis hin zur wirksamen Umset das KRITIS-Schutzziel ist auch bei Auslagerungen von Dienstleistungen\nzung dieser Maßnahmen einschließlich der Implementierung und des\nentsprechend §§ 25a, 25b KWG i. V. m. AT 9 und AT 5 Tz. 3. f) MaRisk\nregelmäßigen Testens entsprechender Notfallvorsorgemaßnahmen\nsowie Kapitel 9. BAIT zu berücksichtigen\nstets mit zu berücksichtigen.\n im Rahmen der Notfallvorsorge sind Maßnahmen zu ergreifen (AT 7.3\nMaRisk sowie Kapitel 10. BAIT), mit denen die kritischen Dienstleistungen auch im Notfall aufrechterhalten werden können.\n\n12.5.",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  },
+  {
+    "clause_id": "chunk-0064",
+    "title": "DE BaFin BAIT — section 65",
+    "text": "Die Nachweiserbringung gemäß § 8a Abs. 3 BSIG bzgl. der Einhaltung Bei der Nachweiserbringung im Rahmen der Jahresabschlussprüfung sollte\nder Anforderungen gemäß § 8a Abs. 1 BSIG kann im Rahmen der Jah- die Einhaltung der Anforderungen gemäß § 8a Abs. 1 BSIG durch den KRITISresabschlussprüfung erfolgen. Der KRITIS-Betreiber hat die einschlä- Betreiber erstmals auf den Jahresabschluss 2018 referenziert werden und ist\ngigen Nachweisdokumente fristgerecht beim BSI einzureichen, entanschließend mindestens alle zwei Jahre gegenüber dem BSI nachzuweisen.\nsprechend den jeweils gültigen Vorgaben des BSI.\nNeben der Prüfung im Rahmen des Jahresabschlusses sind weitere Möglichkeiten zur Nachweiserbringung zulässig. Die KRITIS-Betreiber sollten entsprechend die „Orientierungshilfe zu Nachweisen gemäß § 8a Abs. 3 BSIG“ in\nder jeweils aktuellen Fassung beachten.\n\nRundschreiben 10/2017 (BA) in der Fassung vom 16.12.2024\n\nSeite 32 von 32",
+    "standard": "DE BaFin BAIT",
+    "language": "de",
+    "source_file": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt"
+  }
+]

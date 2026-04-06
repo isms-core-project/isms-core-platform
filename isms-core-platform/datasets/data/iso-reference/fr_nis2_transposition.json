@@ -1,0 +1,26 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "FR NIS2 Transposition 2024 — section 1",
+    "text": "=== STATUS: LEGIFRANCE BLOCKED BY CLOUDFLARE — TEXT NOT RETRIEVED ===\n\nDOCUMENT: Loi n° 2024-449 du 21 mai 2024 visant à sécuriser et réguler l'espace numérique\n          (transposant partiellement la Directive NIS2 / Directive (UE) 2022/2555)\nSOURCE: https://www.legifrance.gouv.fr/loda/id/JORFTEXT000049502615\nPUBLISHED: Journal officiel de la République française, n° 0118 du 22 mai 2024, texte n° 1\nELI: https://www.legifrance.gouv.fr/eli/loi/2024/5/21/PRMD2406904L/jo/texte",
+    "standard": "FR NIS2 Transposition 2024",
+    "language": "fr",
+    "source_file": "NIS2_Transposition_Loi_2024-449_FR.txt"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "FR NIS2 Transposition 2024 — section 2",
+    "text": "ACCESSIBILITY:\n- Legifrance (www.legifrance.gouv.fr): BLOCKED by Cloudflare protection.\n  Returns HTTP 403 for all programmatic/automated access. All URL variants tested:\n    /loda/id/JORFTEXT000049502615\n    /jorf/id/JORFTEXT000049502615\n    /eli/loi/2024/5/21/PRMD2406904L/jo/texte\n    /download/pdf?id=JORFTEXT000049502615\n    /download/file/JORFTEXT000049502615.pdf\n  Requires browser with JavaScript/cookies (Cloudflare challenge).\n- Format available: HTML (primary rendering), PDF (signed JORF), XML\n- Authentication: NOT required for public access — Cloudflare blocks bots only\n- DILA Open Data (echanges.dila.gouv.fr/OPENDATA/JORF/): Full JORF archives in .tar.gz\n  format (Freemium_jorf_global ~1.6GB; incremental updates also available).\n  The specific text JORFTEXT000049502615.xml is inside the global archive.\n- National Assembly (assemblee-nationale.fr): dossier served as JavaScript SPA",
+    "standard": "FR NIS2 Transposition 2024",
+    "language": "fr",
+    "source_file": "NIS2_Transposition_Loi_2024-449_FR.txt"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "FR NIS2 Transposition 2024 — section 3",
+    "text": "LAW CONTEXT — CRITICAL NOTE:\n- Loi 2024-449 is PARTIAL NIS2 transposition only. It covers:\n    Title I: Critical infrastructure resilience (operators of vital importance - OIV)\n    Title II: Electronic communications security\n    Partial cybersecurity provisions\n- The FULL NIS2 transposition for remaining entities (essential/important operators under\n  Directive 2022/2555) requires a separate \"Projet de loi Résilience\" (PJL Résilience)\n  which as of April 2026 is still in parliamentary process.\n- ANSSI (cyber.gouv.fr) as of March 2026 still refers to \"article 14 du projet de loi\n  Résilience\" for the cybersecurity framework (ReCyF). This confirms full transposition\n  is incomplete as of the date this file was created.\n\nRETRIEVAL INSTRUCTIONS:\n1. Browser access: https://www.legifrance.gouv.fr/loda/id/JORFTEXT000049502615\n2. DILA open data: curl https://echanges.dila.gouv.fr/OPENDATA/JORF/Freemium_jorf_global_20250713-140000.tar.gz\n   then extract JORFTEXT000049502615.xml from the archive\n3. Signed PDF: available at Legifrance via browser download (authenticated JORF PDF)\n\nDATE CHECKED: 2026-04-04",
+    "standard": "FR NIS2 Transposition 2024",
+    "language": "fr",
+    "source_file": "NIS2_Transposition_Loi_2024-449_FR.txt"
+  }
+]

@@ -431,11 +431,370 @@
       "source": "Rosenthal-M365-Anwaltskanzlei.txt",
       "standard": "M365 Security Guide (Rosenthal)",
       "chunks": 29
+    },
+    {
+      "file": "at_dsg.json",
+      "source": "DSG_Datenschutzgesetz_AT.txt",
+      "standard": "AT DSG (Datenschutzgesetz)",
+      "language": "de",
+      "chunks": 312
+    },
+    {
+      "file": "at_nisg_2024.json",
+      "source": "NISG_2024_AT.txt",
+      "standard": "AT NISG 2024",
+      "language": "de",
+      "chunks": 149
+    },
+    {
+      "file": "be_cyfun_2025.json",
+      "source": "CyFun_Cyberfundamentals_Framework_2025_BE.txt",
+      "standard": "BE CyFun 2025",
+      "language": "en",
+      "chunks": 464
+    },
+    {
+      "file": "be_nis2_2024.json",
+      "source": "NIS2_Transposition_Loi_2024_BE.txt",
+      "standard": "BE NIS2 Transposition 2024",
+      "language": "fr",
+      "chunks": 417
+    },
+    {
+      "file": "de_bdsg_en.json",
+      "source": "BDSG_Bundesdatenschutzgesetz_EN.txt",
+      "standard": "DE BDSG (English)",
+      "language": "en",
+      "chunks": 151
+    },
+    {
+      "file": "de_bafin_bait.json",
+      "source": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt",
+      "standard": "DE BaFin BAIT",
+      "language": "de",
+      "chunks": 65
+    },
+    {
+      "file": "de_nis2umsucg.json",
+      "source": "NIS2_Umsetzungsgesetz_NIS2UmsuCG_DE.txt",
+      "standard": "DE NIS2UmsuCG",
+      "language": "de",
+      "chunks": 210
+    },
+    {
+      "file": "eu_dora.json",
+      "source": "DORA_Regulation_2022-2554_EN.txt",
+      "standard": "EU DORA",
+      "language": "en",
+      "chunks": 350
+    },
+    {
+      "file": "eu_enisa_5g.json",
+      "source": "ENISA_5G_Security_Controls_Matrix.txt",
+      "standard": "ENISA 5G Security Controls",
+      "language": "en",
+      "chunks": 9
+    },
+    {
+      "file": "eu_gdpr.json",
+      "source": "GDPR_Regulation_2016-679_EN.txt",
+      "standard": "EU GDPR",
+      "language": "en",
+      "chunks": 397
+    },
+    {
+      "file": "eu_nis2_directive.json",
+      "source": "NIS2_Directive_2022-2555_EN.txt",
+      "standard": "EU NIS2 Directive",
+      "language": "en",
+      "chunks": 315
+    },
+    {
+      "file": "fr_acpr_risque_info.json",
+      "source": "ACPR_Notice_Risque_Informatique_20210707_FR.txt",
+      "standard": "FR ACPR Notice Risque Informatique",
+      "language": "fr",
+      "chunks": 118
+    },
+    {
+      "file": "fr_anssi_hygiene.json",
+      "source": "ANSSI_Guide_Hygiene_Informatique_FR.txt",
+      "standard": "FR ANSSI Guide Hygiène Informatique",
+      "language": "fr",
+      "chunks": 83
+    },
+    {
+      "file": "fr_cnil_guide_2024.json",
+      "source": "CNIL_Guide_Securite_Donnees_Personnelles_2024_FR.txt",
+      "standard": "FR CNIL Guide Sécurité 2024",
+      "language": "fr",
+      "chunks": 143
+    },
+    {
+      "file": "fr_hds.json",
+      "source": "HDS_Healthcare_Data_Hosting_Requirements_FR.txt",
+      "standard": "FR HDS Requirements",
+      "language": "fr",
+      "chunks": 5
+    },
+    {
+      "file": "fr_nis2_sren.json",
+      "source": "NIS2_SREN_Loi_2024-449_21mai2024_FR.txt",
+      "standard": "FR NIS2/SREN Loi 2024-449",
+      "language": "fr",
+      "chunks": 97
+    },
+    {
+      "file": "fr_nis2_sren_jorf.json",
+      "source": "NIS2_SREN_Loi_2024-449_JORF_22mai2024_FR.txt",
+      "standard": "FR NIS2/SREN JORF 2024",
+      "language": "fr",
+      "chunks": 273
+    },
+    {
+      "file": "fr_nis2_transposition.json",
+      "source": "NIS2_Transposition_Loi_2024-449_FR.txt",
+      "standard": "FR NIS2 Transposition 2024",
+      "language": "fr",
+      "chunks": 3
+    },
+    {
+      "file": "fr_osac_aviation.json",
+      "source": "OSAC_Aviation_Cyber_Framework_FR.txt",
+      "standard": "FR OSAC Aviation Cyber Framework",
+      "language": "fr",
+      "chunks": 145
+    },
+    {
+      "file": "fr_rgs.json",
+      "source": "RGS_Referentiel_General_Securite_FR.txt",
+      "standard": "FR RGS",
+      "language": "fr",
+      "chunks": 4
+    },
+    {
+      "file": "gb_computer_misuse_act.json",
+      "source": "Computer_Misuse_Act_1990_c18_GB.txt",
+      "standard": "UK Computer Misuse Act 1990",
+      "language": "en",
+      "chunks": 46
+    },
+    {
+      "file": "gb_dsit_ai_2023.json",
+      "source": "DSIT_AI_Regulation_White_Paper_2023_GB.txt",
+      "standard": "UK DSIT AI Regulation White Paper",
+      "language": "en",
+      "chunks": 640
+    },
+    {
+      "file": "gb_dpa_2018.json",
+      "source": "Data_Protection_Act_2018_c12_GB.txt",
+      "standard": "UK DPA 2018",
+      "language": "en",
+      "chunks": 974
+    },
+    {
+      "file": "gb_dua_2025.json",
+      "source": "Data_Use_Access_Act_2025_GB.txt",
+      "standard": "UK Data Use and Access Act 2025",
+      "language": "en",
+      "chunks": 198
+    },
+    {
+      "file": "gb_fca_ps21_3.json",
+      "source": "FCA_PS21-3_Building_Operational_Resilience_GB.txt",
+      "standard": "UK FCA PS21/3 Operational Resilience",
+      "language": "en",
+      "chunks": 78
+    },
+    {
+      "file": "gb_fca_ps24_16.json",
+      "source": "FCA_PS24-16_Critical_Third_Parties_GB.txt",
+      "standard": "UK FCA PS24/16 Critical Third Parties",
+      "language": "en",
+      "chunks": 78
+    },
+    {
+      "file": "gb_fca_ps26_2.json",
+      "source": "FCA_PS26-2_Operational_Incident_Third_Party_Reporting_GB.txt",
+      "standard": "UK FCA PS26/2 Incident Reporting",
+      "language": "en",
+      "chunks": 78
+    },
+    {
+      "file": "gb_ico_accountability.json",
+      "source": "ICO_Accountability_Framework_GB.txt",
+      "standard": "UK ICO Accountability Framework",
+      "language": "en",
+      "chunks": 18
+    },
+    {
+      "file": "gb_ico_uk_gdpr.json",
+      "source": "ICO_Guide_UK_GDPR_GB.txt",
+      "standard": "UK ICO Guide UK GDPR",
+      "language": "en",
+      "chunks": 25
+    },
+    {
+      "file": "gb_ipa_2016.json",
+      "source": "Investigatory_Powers_Act_2016_c25_GB.txt",
+      "standard": "UK Investigatory Powers Act 2016",
+      "language": "en",
+      "chunks": 800
+    },
+    {
+      "file": "gb_ncsc_caf_v4.json",
+      "source": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt",
+      "standard": "UK NCSC CAF v4",
+      "language": "en",
+      "chunks": 12
+    },
+    {
+      "file": "gb_ncsc_cyber_essentials.json",
+      "source": "NCSC_Cyber_Essentials_v3-2_Overview_GB.txt",
+      "standard": "UK NCSC Cyber Essentials v3.2",
+      "language": "en",
+      "chunks": 8
+    },
+    {
+      "file": "gb_nis_regs_2018.json",
+      "source": "NIS_Regulations_2018_SI_2018-506_GB.txt",
+      "standard": "UK NIS Regulations 2018",
+      "language": "en",
+      "chunks": 140
+    },
+    {
+      "file": "gb_pecr_2003.json",
+      "source": "PECR_SI_2003-2426_GB.txt",
+      "standard": "UK PECR 2003",
+      "language": "en",
+      "chunks": 106
+    },
+    {
+      "file": "gb_pra_ss1_21.json",
+      "source": "PRA_SS1-21_Operational_Resilience_GB.txt",
+      "standard": "UK PRA SS1/21 Operational Resilience",
+      "language": "en",
+      "chunks": 14
+    },
+    {
+      "file": "gb_pra_ss2_21.json",
+      "source": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt",
+      "standard": "UK PRA SS2/21 Outsourcing",
+      "language": "en",
+      "chunks": 14
+    },
+    {
+      "file": "gb_uk_gdpr.json",
+      "source": "UK_GDPR_Regulation_EU_2016-679_retained_GB.txt",
+      "standard": "UK GDPR",
+      "language": "en",
+      "chunks": 426
+    },
+    {
+      "file": "it_acn_linee_guida.json",
+      "source": "ACN_Linee_Guida_Cyber_Risk_Management_Security_by_Design_IT.txt",
+      "standard": "IT ACN Linee Guida Cyber Risk",
+      "language": "it",
+      "chunks": 54
+    },
+    {
+      "file": "it_bancaitalia_circ285_agg50.json",
+      "source": "BancaItalia_Circ285_Aggiornamento50_26ago2025.txt",
+      "standard": "IT Banca d'Italia Circ. 285 (50° Aggiornamento)",
+      "language": "it",
+      "chunks": 423
+    },
+    {
+      "file": "it_bancaitalia_circ285_agg51.json",
+      "source": "BancaItalia_Circ285_Aggiornamento51_03feb2026.txt",
+      "standard": "IT Banca d'Italia Circ. 285 (51° Aggiornamento)",
+      "language": "it",
+      "chunks": 347
+    },
+    {
+      "file": "it_bancaitalia_circ285_atto50.json",
+      "source": "BancaItalia_Circ285_AttoEmanazione50_26ago2025.txt",
+      "standard": "IT Banca d'Italia Circ. 285 Atto 50",
+      "language": "it",
+      "chunks": 32
+    },
+    {
+      "file": "it_bancaitalia_circ285_atto51.json",
+      "source": "BancaItalia_Circ285_AttoEmanazione51_03feb2026.txt",
+      "standard": "IT Banca d'Italia Circ. 285 Atto 51",
+      "language": "it",
+      "chunks": 9
+    },
+    {
+      "file": "it_bancaitalia_circ285_testo.json",
+      "source": "BancaItalia_Circ285_Testo_Integrale_50Aggiornamento.txt",
+      "standard": "IT Banca d'Italia Circ. 285 Testo Integrale",
+      "language": "it",
+      "chunks": 2158
+    },
+    {
+      "file": "it_dlgs101_2018.json",
+      "source": "DLgs101-2018_GDPR_Adaptation_IT.txt",
+      "standard": "IT D.Lgs. 101/2018 GDPR Adaptation",
+      "language": "it",
+      "chunks": 154
+    },
+    {
+      "file": "it_dlgs196_2003.json",
+      "source": "DLgs196-2003.txt",
+      "standard": "IT D.Lgs. 196/2003 Codice Privacy",
+      "language": "it",
+      "chunks": 399
+    },
+    {
+      "file": "it_dlgs51_2018.json",
+      "source": "DLgs51-2018_LED_LawEnforcement_IT.txt",
+      "standard": "IT D.Lgs. 51/2018 LED",
+      "language": "it",
+      "chunks": 81
+    },
+    {
+      "file": "it_nis2_dlgs138.json",
+      "source": "NIS2_Transposition_DLgs_138-2024_IT.txt",
+      "standard": "IT NIS2 D.Lgs. 138/2024",
+      "language": "it",
+      "chunks": 412
+    },
+    {
+      "file": "lu_cssf_20_750.json",
+      "source": "CSSF_Circulaire_20-750_ICT_Security_Risk_LU.txt",
+      "standard": "LU CSSF Circulaire 20/750",
+      "language": "fr",
+      "chunks": 54
+    },
+    {
+      "file": "lu_lpd_2018.json",
+      "source": "LPD-LU_Loi_01aout2018_CNPD_RGPD_LU.txt",
+      "standard": "LU LPD 2018",
+      "language": "fr",
+      "chunks": 58
+    },
+    {
+      "file": "lu_nis2_2024.json",
+      "source": "NIS2_Transposition_Loi_2024_LU.txt",
+      "standard": "LU NIS2 Transposition 2024",
+      "language": "fr",
+      "chunks": 5
+    },
+    {
+      "file": "lu_eprivacy_2005.json",
+      "source": "ePrivacy_Loi_30mai2005_consolide_20201225_LU.txt",
+      "standard": "LU ePrivacy Loi 2005",
+      "language": "fr",
+      "chunks": 52
     }
   ],
   "total_chunks": 13533,
   "total_files_processed": 73,
   "failed_files": [
     "AI-Act-Compliance-Checker-Flowchart-v1.0_compressed.docx"
-  ]
+  ],
+  "updated": "2026-04-06",
+  "total_files": 123
 }
