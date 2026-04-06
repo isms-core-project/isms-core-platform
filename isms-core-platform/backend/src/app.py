@@ -54,6 +54,7 @@ async def lifespan(app: FastAPI):
     try:
         if search_service.is_available():
             search_service.ensure_indices()
+            search_service.ensure_nvd_indices()
             logger.info("OpenSearch connected — indices ensured")
             # Auto-load ISO reference corpus on first boot (non-blocking best-effort)
             try:

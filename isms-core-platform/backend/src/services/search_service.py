@@ -22,6 +22,8 @@ IDX_IMPLEMENTATIONS  = "isms-implementations"
 IDX_POLICIES         = "isms-policies"
 IDX_EVIDENCE         = "isms-evidence"
 IDX_ISO_REFERENCE    = "iso-reference"
+IDX_NVD_CVE          = "nvd-cve"
+IDX_NVD_CPE          = "nvd-cpe"
 
 # Client singleton
 _client: OpenSearch | None = None
@@ -610,6 +612,109 @@ def get_iso_reference_text(clause_id: str, standard: str | None = None) -> str:
     except Exception as e:
         logger.warning("ISO reference fetch failed for %s: %s", clause_id, e)
         return ""
+
+
+# ── NVD CVE / CPE index mappings ──────────────────────────────────────────────
+
+_NVD_CVE_MAPPING = {
+    "mappings": {
+        "properties": {
+            "cve_id":          {"type": "keyword"},
+            "published":       {"type": "date"},
+            "last_modified":   {"type": "date"},
+            "vuln_status":     {"type": "keyword"},
+            "description":     {"type": "text"},
+            "cvss_v3_score":   {"type": "float"},
+            "cvss_v3_severity":{"type": "keyword"},
+            "cvss_v3_vector":  {"type": "keyword"},
+            "cvss_v2_score":   {"type": "float"},
+            "cwe_ids":         {"type": "keyword"},
+            "cpe_affected":    {"type": "keyword"},
+            "in_kev":          {"type": "boolean"},
+            "epss_score":      {"type": "float"},
+            "references":      {"type": "text"},
+            "indexed_at":      {"type": "date"},
+        }
+    }
+}
+
+_NVD_CPE_MAPPING = {
+    "mappings": {
+        "properties": {
+            "cpe_uri":  {"type": "keyword"},
+            "part":     {"type": "keyword"},
+            "vendor":   {"type": "keyword"},
+            "product":  {"type": "keyword"},
+            "version":  {"type": "keyword"},
+            "title":    {"type": "text"},
+            "in_kev":   {"type": "boolean"},
+            "source":   {"type": "keyword"},
+            "indexed_at": {"type": "date"},
+        }
+    }
+}
+
+
+def ensure_nvd_indices() -> bool:
+    """Create nvd-cve and nvd-cpe indices if they do not exist."""
+    client = get_client()
+    if not client:
+        return False
+    ok = True
+    for idx, mapping in [(IDX_NVD_CVE, _NVD_CVE_MAPPING), (IDX_NVD_CPE, _NVD_CPE_MAPPING)]:
+        try:
+            if not client.indices.exists(index=idx):
+                client.indices.create(index=idx, body=mapping)
+                logger.info("Created index: %s", idx)
+        except Exception as e:
+            logger.error("Failed to ensure index %s: %s", idx, e)
+            ok = False
+    return ok
+
+
+def index_nvd_cve(doc: dict) -> bool:
+    """Upsert a CVE document into nvd-cve by cve_id."""
+    client = get_client()
+    if not client:
+        return False
+    try:
+        doc["indexed_at"] = datetime.now(timezone.utc).isoformat()
+        client.index(index=IDX_NVD_CVE, id=doc["cve_id"], body=doc)
+        return True
+    except Exception as e:
+        logger.warning("Failed to index CVE %s: %s", doc.get("cve_id"), e)
+        return False
+
+
+def index_nvd_cpe(doc: dict) -> bool:
+    """Upsert a CPE document into nvd-cpe by cpe_uri."""
+    client = get_client()
+    if not client:
+        return False
+    try:
+        doc["indexed_at"] = datetime.now(timezone.utc).isoformat()
+        client.index(index=IDX_NVD_CPE, id=doc["cpe_uri"], body=doc)
+        return True
+    except Exception as e:
+        logger.warning("Failed to index CPE %s: %s", doc.get("cpe_uri"), e)
+        return False
+
+
+def get_nvd_stats() -> dict:
+    """Return CVE and CPE doc counts from OpenSearch."""
+    client = get_client()
+    if not client:
+        return {"cve_total": 0, "cpe_total": 0, "available": False}
+    try:
+        stats: dict = {"available": True}
+        for key, idx in [("cve_total", IDX_NVD_CVE), ("cpe_total", IDX_NVD_CPE)]:
+            if client.indices.exists(index=idx):
+                stats[key] = client.count(index=idx).get("count", 0)
+            else:
+                stats[key] = 0
+        return stats
+    except Exception as e:
+        return {"cve_total": 0, "cpe_total": 0, "available": False, "error": str(e)}
 
 
 def get_search_status() -> dict:

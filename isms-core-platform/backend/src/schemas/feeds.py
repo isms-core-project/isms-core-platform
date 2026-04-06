@@ -145,3 +145,78 @@ class KevAuditReport(BaseModel):
     months: int
     generated_at: str
     entries: list[KevAuditEntry]
+
+
+# ── NVD CVE / CPE (Phase 27) ──────────────────────────────────────────────────
+
+class NvdCveEntry(BaseModel):
+    cve_id: str
+    published: str | None
+    last_modified: str | None
+    vuln_status: str | None
+    description: str | None
+    cvss_v3_score: float | None
+    cvss_v3_severity: str | None
+    cvss_v3_vector: str | None
+    cvss_v2_score: float | None
+    cwe_ids: list[str]
+    cpe_affected: list[str]
+    in_kev: bool
+    epss_score: float | None
+    references: list[str]
+
+
+class NvdCveList(BaseModel):
+    items: list[NvdCveEntry]
+    total: int
+    page: int
+    per_page: int
+
+
+class NvdCveStats(BaseModel):
+    total: int
+    critical: int
+    high: int
+    medium: int
+    low: int
+    in_kev: int
+    with_epss: int
+    last_indexed: str | None
+
+
+class NvdCpeEntry(BaseModel):
+    cpe_uri: str
+    part: str | None
+    vendor: str | None
+    product: str | None
+    version: str | None
+    title: str | None
+    in_kev: bool
+    source: str | None
+
+
+class NvdCpeList(BaseModel):
+    items: list[NvdCpeEntry]
+    total: int
+    page: int
+    per_page: int
+
+
+class NvdCpeStats(BaseModel):
+    total: int
+    kev_vendor: int
+    cve_config: int
+    applications: int
+    operating_systems: int
+    hardware: int
+
+
+class NvdIndexStats(BaseModel):
+    """Combined stats for the CVE Explorer banner."""
+    cve_total: int
+    cpe_total: int
+    kev_total: int
+    last_cve_sync: str | None
+    last_cpe_sync: str | None
+    nist_api_key_configured: bool
+    cpe_full_enabled: bool

@@ -72,6 +72,7 @@ import {
   BugReportOutlined,
   TravelExploreOutlined,
   StreamOutlined,
+  ManageSearchOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -150,6 +151,7 @@ const NAV_INTELLIGENCE: NavItem[] = [
   { label: 'Threat Feeds',  path: '/threat-feeds',  icon: <StreamOutlined /> },
   { label: 'MITRE ATT&CK',  path: '/mitre-attack',  icon: <BugReportOutlined /> },
   { label: 'MITRE ATLAS',   path: '/mitre-atlas',   icon: <TravelExploreOutlined /> },
+  { label: 'CVE / CPE',     path: '/cve-explorer',  icon: <ManageSearchOutlined /> },
 ]
 
 // ── Suppliers / TPRM (Phase 16+) ──────────────────────────────────────────────
@@ -197,7 +199,7 @@ const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generator
 const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/uk-nis', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act', '/eu-cloud-sov']
 const SUPPLIER_PATHS   = ['/tprm']
 const ADMIN_PATHS        = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker']
-const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas']
+const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/cve-explorer']
 const ALL_PLATFORM_PATHS = [...RISK_PATHS, ...TOOLS_PATHS, ...FRAMEWORK_PATHS, ...SUPPLIER_PATHS, ...ADMIN_PATHS, ...INTELLIGENCE_PATHS]
 
 // ── Notification prefs dialog ─────────────────────────────────────────────────

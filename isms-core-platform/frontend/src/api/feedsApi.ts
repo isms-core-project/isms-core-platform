@@ -159,4 +159,114 @@ export const feedsApi = {
 
   getKevAuditReport: (months = 12) =>
     client.get<KevAuditReport>('/feeds/kev/audit-report', { params: { months } }).then(r => r.data),
+
+  // Phase 27 — NVD CVE / CPE
+  getNvdIndexStats: () =>
+    client.get<NvdIndexStats>('/feeds/cve/index-stats').then(r => r.data),
+
+  getCveStats: () =>
+    client.get<NvdCveStats>('/feeds/cve/stats').then(r => r.data),
+
+  getCve: (params: {
+    search?: string
+    severity?: string
+    kev_only?: boolean
+    min_epss?: number
+    year?: number
+    page?: number
+    per_page?: number
+  }) =>
+    client.get<NvdCveList>('/feeds/cve', { params }).then(r => r.data),
+
+  getCveDetail: (cveId: string) =>
+    client.get<NvdCveEntry>(`/feeds/cve/${cveId}`).then(r => r.data),
+
+  getCpeStats: () =>
+    client.get<NvdCpeStats>('/feeds/cpe/stats').then(r => r.data),
+
+  getCpe: (params: {
+    search?: string
+    vendor?: string
+    product?: string
+    part?: string
+    source?: string
+    kev_only?: boolean
+    page?: number
+    per_page?: number
+  }) =>
+    client.get<NvdCpeList>('/feeds/cpe', { params }).then(r => r.data),
+}
+
+// ── Phase 27 types ────────────────────────────────────────────────────────────
+
+export interface NvdCveEntry {
+  cve_id: string
+  published: string | null
+  last_modified: string | null
+  vuln_status: string | null
+  description: string | null
+  cvss_v3_score: number | null
+  cvss_v3_severity: string | null
+  cvss_v3_vector: string | null
+  cvss_v2_score: number | null
+  cwe_ids: string[]
+  cpe_affected: string[]
+  in_kev: boolean
+  epss_score: number | null
+  references: string[]
+}
+
+export interface NvdCveList {
+  items: NvdCveEntry[]
+  total: number
+  page: number
+  per_page: number
+}
+
+export interface NvdCveStats {
+  total: number
+  critical: number
+  high: number
+  medium: number
+  low: number
+  in_kev: number
+  with_epss: number
+  last_indexed: string | null
+}
+
+export interface NvdCpeEntry {
+  cpe_uri: string
+  part: string | null
+  vendor: string | null
+  product: string | null
+  version: string | null
+  title: string | null
+  in_kev: boolean
+  source: string | null
+}
+
+export interface NvdCpeList {
+  items: NvdCpeEntry[]
+  total: number
+  page: number
+  per_page: number
+}
+
+export interface NvdCpeStats {
+  total: number
+  kev_vendor: number
+  cve_config: number
+  applications: number
+  operating_systems: number
+  hardware: number
+}
+
+export interface NvdIndexStats {
+  cve_total: number
+  cpe_total: number
+  kev_total: number
+  last_cve_sync: string | null
+  last_cpe_sync: string | null
+  nist_api_key_configured: boolean
+  cpe_full_enabled: boolean
 }

@@ -57,6 +57,7 @@ import Help from './pages/Help'
 import ThreatFeeds from './pages/ThreatFeeds'
 import MitreAttack from './pages/MitreAttack'
 import MitreAtlas from './pages/MitreAtlas'
+import CVEExplorer from './pages/CVEExplorer'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -135,6 +136,7 @@ export default function App() {
         <Route path="threat-feeds" element={<ThreatFeeds />} />
         <Route path="mitre-attack" element={<MitreAttack />} />
         <Route path="mitre-atlas" element={<MitreAtlas />} />
+        <Route path="cve-explorer" element={<CVEExplorer />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

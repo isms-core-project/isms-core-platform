@@ -284,12 +284,16 @@ services:
     container_name: isms-core-feeds
     environment:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
+      - OPENSEARCH_URL=http://isms-core-opensearch:9200
       - FEEDS_RUN_ON_START=${FEEDS_RUN_ON_START:-true}
       - FEEDS_MITRE_ENABLED=${FEEDS_MITRE_ENABLED:-true}
       - FEEDS_ATLAS_ENABLED=${FEEDS_ATLAS_ENABLED:-true}
       - FEEDS_KEV_ENABLED=${FEEDS_KEV_ENABLED:-true}
       - FEEDS_EPSS_ENABLED=${FEEDS_EPSS_ENABLED:-true}
       - FEEDS_MITRE_V19=${FEEDS_MITRE_V19:-false}
+      - FEEDS_CVE_ENABLED=${FEEDS_CVE_ENABLED:-false}
+      - FEEDS_CPE_FULL=${FEEDS_CPE_FULL:-false}
+      - NIST_API_KEY=${NIST_API_KEY:-}
     depends_on:
       isms-core-backend:
         condition: service_healthy
