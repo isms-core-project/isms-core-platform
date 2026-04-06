@@ -16,6 +16,7 @@ from src.core.security import hash_password
 from src.database.session import SessionLocal
 from src.services import search_service
 from src.services.iso_reference_service import load_from_seeds, needs_seed as iso_needs_seed
+from src.services import kev_reference_service
 from src.services.loader_service import load_all_bundles, needs_seed
 from src.core.limiter import limiter
 from src.services.qa_service import ensure_synonym_table
@@ -69,6 +70,18 @@ async def lifespan(app: FastAPI):
                     logger.info("ISO reference corpus already indexed — skipping seed")
             except Exception as e:
                 logger.warning("ISO reference seed failed: %s (non-fatal)", e)
+
+            # Phase 26: auto-index KEV entries into QA corpus if not yet indexed
+            try:
+                if kev_reference_service.needs_index(db):
+                    logger.info("KEV corpus not indexed — indexing from DB…")
+                    kev_stats = kev_reference_service.index_from_db(db)
+                    logger.info("KEV corpus indexed: %d entries (%dms)",
+                                kev_stats.get("indexed", 0), kev_stats.get("duration_ms", 0))
+                else:
+                    logger.info("KEV corpus already indexed — skipping")
+            except Exception as e:
+                logger.warning("KEV corpus index failed: %s (non-fatal)", e)
         else:
             logger.warning(
                 "OpenSearch not available — search disabled (non-fatal)"

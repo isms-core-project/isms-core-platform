@@ -88,6 +88,7 @@ class EvidenceType(str, enum.Enum):
     CONFIG_EXPORT = "config_export"
     TEST_RESULT = "test_result"
     ATTESTATION = "attestation"
+    THREAT_INTEL = "threat_intel"   # Phase 26 — auto-created from CISA KEV
 
 
 class EvidenceStatus(str, enum.Enum):

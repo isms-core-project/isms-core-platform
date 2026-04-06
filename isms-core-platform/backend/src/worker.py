@@ -38,6 +38,11 @@ celery_app.conf.update(
             "task": "compute_daily_metrics",
             "schedule": crontab(hour=6, minute=0),
         },
+        # Phase 26 — KEV evidence sync: runs daily at 04:30 UTC (30min after KEV feed pull)
+        "kev-evidence-sync-daily": {
+            "task": "kev_evidence_sync",
+            "schedule": crontab(hour=4, minute=30),
+        },
     },
 )
 
@@ -46,4 +51,5 @@ celery_app.autodiscover_tasks(["src.importers"])
 celery_app.conf.include = [
     "src.services.notification_service",
     "src.services.metrics_tasks",
+    "src.services.kev_evidence_tasks",
 ]

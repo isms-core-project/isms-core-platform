@@ -393,7 +393,17 @@ export interface EvidenceRead {
     text_preview: string
     rejection_reason?: string
     approval_note?: string
+    // Phase 26 — KEV auto-created evidence
+    source?: string
+    cve_id?: string
+    vendor_project?: string
+    product?: string
+    date_added?: string
+    due_date?: string
+    required_action?: string
+    known_ransomware?: boolean
   }
+  kev_cve_id?: string | null
 }
 
 export interface EvidenceUpdate {

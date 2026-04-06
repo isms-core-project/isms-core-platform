@@ -19,6 +19,7 @@ class EvidenceRead(BaseModel):
     expires_date: date | None = None
     verified_by: str | None = None
     verified_date: date | None = None
+    kev_cve_id: str | None = None
     created_at: datetime
     metadata: dict = Field(default={}, validation_alias="metadata_")
 

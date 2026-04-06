@@ -55,6 +55,7 @@ class Evidence(TimestampMixin, Base):
     expires_date: Mapped[date | None] = mapped_column(Date)
     verified_by: Mapped[str | None] = mapped_column(String(100))
     verified_date: Mapped[date | None] = mapped_column(Date)
+    kev_cve_id: Mapped[str | None] = mapped_column(String(30), nullable=True)   # Phase 26
     metadata_: Mapped[dict] = mapped_column(
         "metadata", JSONB, default=dict, server_default="{}"
     )

@@ -70,6 +70,7 @@ const EVIDENCE_TYPES = [
   'config_export',
   'test_result',
   'attestation',
+  'threat_intel',
 ]
 
 const STATUS_COLORS: Record<string, { bg: string; color: string; label: string }> = {
@@ -1054,12 +1055,32 @@ export default function Evidence() {
                 <TableRow key={ev.id} hover sx={ev.evidence_status === 'draft' ? { opacity: 0.75 } : {}}>
                   <TableCell>
                     <Typography variant="body2" fontWeight={600}>{ev.title}</Typography>
-                    <Box sx={{ display: 'flex', gap: 0.5, mt: 0.25, flexWrap: 'wrap' }}>
+                    <Box sx={{ display: 'flex', gap: 0.5, mt: 0.25, flexWrap: 'wrap', alignItems: 'center' }}>
                       <EvidenceStatusChip status={ev.evidence_status} />
-                      {ev.metadata.notes && (
+                      {ev.kev_cve_id && (
+                        <Tooltip title={`CISA KEV — Added: ${ev.metadata.date_added ?? '?'}${ev.metadata.known_ransomware ? ' · Ransomware' : ''}${ev.metadata.due_date ? ` · Due: ${ev.metadata.due_date}` : ''}`}>
+                          <Chip
+                            label={`KEV ${ev.kev_cve_id}`}
+                            size="small"
+                            sx={{
+                              height: 18, fontSize: '0.62rem', fontFamily: 'monospace', fontWeight: 700,
+                              bgcolor: ev.metadata.known_ransomware ? '#3a0a0a' : '#1a2a0a',
+                              color: ev.metadata.known_ransomware ? '#FFC7CE' : '#C6EFCE',
+                              border: '1px solid',
+                              borderColor: ev.metadata.known_ransomware ? '#c62828' : '#388e3c',
+                            }}
+                          />
+                        </Tooltip>
+                      )}
+                      {ev.metadata.notes && !ev.kev_cve_id && (
                         <Typography variant="caption" color="text.secondary">{ev.metadata.notes.slice(0, 60)}</Typography>
                       )}
                     </Box>
+                    {ev.kev_cve_id && ev.metadata.required_action && (
+                      <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.25 }} noWrap>
+                        {ev.metadata.required_action.slice(0, 100)}
+                      </Typography>
+                    )}
                     {ev.evidence_status === 'rejected' && ev.metadata.rejection_reason && (
                       <Typography variant="caption" sx={{ color: '#FFC7CE', display: 'block', mt: 0.25 }}>
                         Reason: {ev.metadata.rejection_reason}

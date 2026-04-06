@@ -8,7 +8,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session as DBSession
 
-from src.core.dependencies import get_current_user
+from src.core.dependencies import get_current_user, require_admin
 from src.database.session import get_db
 from src.domain.feeds import CisaKevEntry, EpssScore, FeedRun, MitreTechnique
 from src.domain.users import User
@@ -280,6 +280,27 @@ def get_kev_stats(
 
 
 # ── EPSS ───────────────────────────────────────────────────────────────────────
+
+@router.post(
+    "/kev/index-corpus",
+    dependencies=[Depends(require_admin)],
+)
+def index_kev_corpus(
+    db: DBSession = Depends(get_db),
+    _current_user: User = Depends(get_current_user),
+):
+    """Re-index all CISA KEV entries into the OpenSearch QA reference corpus.
+
+    Makes KEV vulnerability descriptions searchable in the QA engine
+    for controls A.8.8 and A.8.28. Admin only.
+    """
+    from src.services import kev_reference_service
+    result = kev_reference_service.index_from_db(db)
+    if "error" in result:
+        from fastapi import HTTPException
+        raise HTTPException(status_code=503, detail=result["error"])
+    return result
+
 
 @router.get("/epss", response_model=EpssScoreList)
 def list_epss(
