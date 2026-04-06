@@ -8,11 +8,17 @@ import {
   WarningAmberOutlined,
   FileDownloadOutlined,
   AccountBalanceOutlined,
+  BugReportOutlined,
+  SecurityOutlined,
+  StreamOutlined,
+  CheckCircleOutlined,
+  ErrorOutlineOutlined,
 } from '@mui/icons-material'
 import { useQuery } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
 import { dashboardApi, type FrameworkOverview } from '../api/dashboard'
 import { adminApi } from '../api/admin'
+import { feedsApi } from '../api/feedsApi'
 import PageHeader from '../components/PageHeader'
 import MetricCard from '../components/MetricCard'
 import StatusChip from '../components/StatusChip'
@@ -254,6 +260,92 @@ function NonIsmsOverview({ product }: { product: 'privacy' | 'cloud' }) {
 }
 
 
+// ── Intelligence Cards ────────────────────────────────────────────────────────
+
+const INTEL_COLOR = '#B84F00'
+
+function IntelligenceCards() {
+  const navigate = useNavigate()
+
+  const { data: kevStats }     = useQuery({ queryKey: ['feeds', 'kev', 'stats'],     queryFn: feedsApi.getKevStats,     staleTime: 5 * 60_000 })
+  const { data: indexStats }   = useQuery({ queryKey: ['nvd', 'index-stats'],        queryFn: feedsApi.getNvdIndexStats, staleTime: 5 * 60_000 })
+  const { data: attackStats }  = useQuery({ queryKey: ['feeds', 'attack', 'stats'],  queryFn: feedsApi.getAttackStats,  staleTime: 5 * 60_000 })
+  const { data: feedStatus }   = useQuery({ queryKey: ['feeds', 'status'],            queryFn: feedsApi.getStatus,        staleTime: 5 * 60_000 })
+
+  const failedFeeds  = (feedStatus?.feeds ?? []).filter(f => f.last_status === 'error')
+  const anyFeedError = failedFeeds.length > 0
+
+  const cards = [
+    {
+      title: 'CVE Index',
+      icon: <BugReportOutlined sx={{ fontSize: 20, color: '#c62828' }} />,
+      value: indexStats?.cve_total ? indexStats.cve_total.toLocaleString() : '—',
+      sub: indexStats?.cpe_total ? `${indexStats.cpe_total.toLocaleString()} CPEs` : 'Enable FEEDS_CVE_ENABLED',
+      color: '#c62828',
+      path: '/cve-explorer',
+    },
+    {
+      title: 'CISA KEV',
+      icon: <WarningAmberOutlined sx={{ fontSize: 20, color: '#FFEB9C' }} />,
+      value: kevStats?.total_entries ? kevStats.total_entries.toLocaleString() : '—',
+      sub: kevStats?.recent_30d != null ? `${kevStats.recent_30d} added last 30d` : '',
+      color: '#FFEB9C',
+      path: '/threat-feeds',
+    },
+    {
+      title: 'MITRE ATT&CK',
+      icon: <SecurityOutlined sx={{ fontSize: 20, color: INTEL_COLOR }} />,
+      value: attackStats ? (attackStats.total_techniques + attackStats.total_subtechniques).toLocaleString() : '—',
+      sub: attackStats ? `${attackStats.total_techniques} techniques · ${attackStats.total_subtechniques} sub` : '',
+      color: INTEL_COLOR,
+      path: '/mitre-attack',
+    },
+    {
+      title: 'Feed Status',
+      icon: anyFeedError
+        ? <ErrorOutlineOutlined sx={{ fontSize: 20, color: '#FFC7CE' }} />
+        : <CheckCircleOutlined sx={{ fontSize: 20, color: '#C6EFCE' }} />,
+      value: anyFeedError ? `${failedFeeds.length} failure${failedFeeds.length > 1 ? 's' : ''}` : 'All OK',
+      sub: anyFeedError ? failedFeeds.map(f => f.display_name).join(', ') : `${(feedStatus?.feeds ?? []).length} feeds active`,
+      color: anyFeedError ? '#FFC7CE' : '#C6EFCE',
+      path: '/threat-feeds',
+    },
+  ]
+
+  return (
+    <Box sx={{ mb: 3 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+        <StreamOutlined sx={{ fontSize: 14, color: INTEL_COLOR }} />
+        <Typography variant="caption" sx={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.07em', color: INTEL_COLOR, fontWeight: 600 }}>
+          Intelligence
+        </Typography>
+      </Box>
+      <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap' }}>
+        {cards.map(card => (
+          <Card
+            key={card.title}
+            variant="outlined"
+            onClick={() => navigate(card.path)}
+            sx={{ flex: '1 1 160px', minWidth: 150, cursor: 'pointer', borderRadius: 2, '&:hover': { borderColor: card.color, bgcolor: `${card.color}08` }, transition: 'border-color 0.15s' }}
+          >
+            <CardContent sx={{ p: '12px !important' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
+                {card.icon}
+                <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.72rem' }}>{card.title}</Typography>
+              </Box>
+              <Typography variant="h6" fontWeight={700} sx={{ color: card.color, lineHeight: 1.2, fontSize: '1.1rem' }}>
+                {card.value}
+              </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.68rem' }} noWrap>{card.sub}</Typography>
+            </CardContent>
+          </Card>
+        ))}
+      </Box>
+    </Box>
+  )
+}
+
+
 export default function Overview() {
   const navigate = useNavigate()
   const { product } = useProduct()
@@ -428,6 +520,9 @@ export default function Overview() {
           />
         </Grid>
       </Grid>
+
+      {/* ── Intelligence summary cards ── */}
+      <IntelligenceCards />
 
       {/* Charts row */}
       <Grid container spacing={2} sx={{ mb: 3 }}>

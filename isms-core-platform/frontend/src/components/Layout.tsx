@@ -4,6 +4,7 @@ import { CloseOutlined, LockOutlined } from '@mui/icons-material'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import Sidebar, { SIDEBAR_WIDTH, SIDEBAR_MINI_WIDTH } from './Sidebar'
+import HealthAlertBanner from './HealthAlertBanner'
 import { getMfaStatus } from '../api/auth'
 import { orgApi } from '../api/orgApi'
 import { useAuth } from '../store/AuthContext'
@@ -125,6 +126,7 @@ export default function Layout() {
         ) : (
           <>
             <MfaBanner mfaEnforced={mfaEnforced} />
+            <HealthAlertBanner />
             <Box sx={{ flex: 1, overflowY: 'auto', p: 3 }}>
               <Outlet />
             </Box>

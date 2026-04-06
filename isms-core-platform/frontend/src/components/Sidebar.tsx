@@ -77,6 +77,7 @@ import {
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { adminApi } from '../api/admin'
+import { client } from '../api/client'
 import type { NotificationPref } from '../api/types'
 import { useAuth } from '../store/AuthContext'
 import { useProduct, type Product, PRODUCT_COLORS, PRODUCT_LABELS, PRODUCT_SUBTITLES } from '../store/ProductContext'
@@ -296,9 +297,10 @@ interface NavGroupProps {
   isSuperAdmin: boolean
   onNavigate: (path: string) => void
   isActive: (path: string) => boolean
+  hasBadge?: boolean           // red alert dot
 }
 
-function NavGroup({ label, icon, items, open, onToggle, collapsed, color = PLATFORM_COLOR, currentUser, isSuperAdmin, onNavigate, isActive }: NavGroupProps) {
+function NavGroup({ label, icon, items, open, onToggle, collapsed, color = PLATFORM_COLOR, currentUser, isSuperAdmin, onNavigate, isActive, hasBadge }: NavGroupProps) {
   const role = currentUser?.role ?? ''
   const visibleItems = items.filter(item => {
     if (item.superAdminOnly)   return isSuperAdmin
@@ -334,6 +336,9 @@ function NavGroup({ label, icon, items, open, onToggle, collapsed, color = PLATF
               >
                 {label}
               </Typography>
+              {hasBadge && (
+                <Box sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: '#f44336', flexShrink: 0, mr: 0.5 }} />
+              )}
               <Box sx={{ color: 'text.disabled', display: 'flex', transition: 'transform 0.2s', transform: open ? 'rotate(0deg)' : 'rotate(-90deg)' }}>
                 <ExpandMoreOutlined sx={{ fontSize: 14 }} />
               </Box>
@@ -404,6 +409,16 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   const [suppliersOpen,   setSuppliersOpen]   = useState(isSupplierPath)
   const [adminOpen,       setAdminOpen]       = useState(isAdminPath)
   const [intelOpen,       setIntelOpen]       = useState(isIntelPath)
+
+  const { data: healthAlerts } = useQuery<{ type: string }[]>({
+    queryKey: ['health', 'alerts'],
+    queryFn: () => client.get<{ type: string }[]>('/health/alerts').then(r => r.data),
+    staleTime: 5 * 60_000,
+    refetchInterval: 5 * 60_000,
+    enabled: !!user,
+  })
+  const hasIntelAlert     = (healthAlerts ?? []).some(a => a.type === 'feed_failure' || a.type === 'opensearch_down')
+  const hasConnectorAlert = (healthAlerts ?? []).some(a => a.type === 'connector_failure')
 
   const TIER_OPTIONS: { value: IsmsTier; label: string; color: string }[] = [
     { value: 'all',         label: 'All', color: 'rgba(255,255,255,0.55)' },
@@ -785,6 +800,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
           items={NAV_SUPPLIERS}
           open={suppliersOpen}
           onToggle={() => setSuppliersOpen(o => !o)}
+          hasBadge={hasConnectorAlert}
           {...groupProps}
         />
 
@@ -795,6 +811,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
           items={NAV_INTELLIGENCE}
           open={intelOpen}
           onToggle={() => setIntelOpen(o => !o)}
+          hasBadge={hasIntelAlert}
           {...groupProps}
           color={INTEL_COLOR}
         />

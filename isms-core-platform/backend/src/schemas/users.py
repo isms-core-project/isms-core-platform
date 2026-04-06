@@ -107,6 +107,18 @@ NOTIFICATION_EVENTS: list[dict] = [
         "category": "system",
         "description": "Receive a summary email when a data import finishes.",
     },
+    {
+        "event_type": "email.feed_failure",
+        "label": "Feed pull failures",
+        "category": "infrastructure",
+        "description": "Receive an alert when a threat intelligence feed (MITRE, KEV, NVD) fails to pull.",
+    },
+    {
+        "event_type": "email.connector_failure",
+        "label": "Connector sync failures",
+        "category": "infrastructure",
+        "description": "Receive an alert when an evidence connector reports a sync error.",
+    },
 ]
 
 
