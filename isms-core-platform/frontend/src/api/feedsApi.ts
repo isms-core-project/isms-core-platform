@@ -87,6 +87,29 @@ export interface EpssScoreList {
   per_page: number
 }
 
+export interface KevAuditEntry {
+  cve_id: string
+  vulnerability_name: string | null
+  vendor_project: string | null
+  product: string | null
+  date_added: string | null
+  due_date: string | null
+  known_ransomware: boolean
+  evidence_status: string
+  evidence_id: string | null
+  evidence_title: string | null
+}
+
+export interface KevAuditReport {
+  total: number
+  covered: number
+  uncovered: number
+  ransomware_uncovered: number
+  months: number
+  generated_at: string
+  entries: KevAuditEntry[]
+}
+
 export const feedsApi = {
   getStatus: () =>
     client.get<FeedStatusResponse>('/feeds/status').then(r => r.data),
@@ -133,4 +156,7 @@ export const feedsApi = {
     per_page?: number
   }) =>
     client.get<EpssScoreList>('/feeds/epss', { params }).then(r => r.data),
+
+  getKevAuditReport: (months = 12) =>
+    client.get<KevAuditReport>('/feeds/kev/audit-report', { params: { months } }).then(r => r.data),
 }

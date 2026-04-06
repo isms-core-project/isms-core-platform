@@ -2276,6 +2276,7 @@ function QATab({ projectId }: { projectId: string }) {
               <MenuItem value="isms_library" sx={{ fontSize: '0.78rem' }}>ISMS Library POLs</MenuItem>
               <MenuItem value="crosswalk" sx={{ fontSize: '0.78rem' }}>Crosswalk only</MenuItem>
               <MenuItem value="both" sx={{ fontSize: '0.78rem' }}>ISO + Crosswalk (both)</MenuItem>
+              <MenuItem value="cve_kev" sx={{ fontSize: '0.78rem' }}>CISA KEV Corpus</MenuItem>
             </Select>
           </FormControl>
         )}

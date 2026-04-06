@@ -120,3 +120,28 @@ class EpssScoreList(BaseModel):
     total: int
     page: int
     per_page: int
+
+
+# ── KEV Audit Report (Phase 26 Task 26.7) ─────────────────────────────────────
+
+class KevAuditEntry(BaseModel):
+    cve_id: str
+    vulnerability_name: str | None
+    vendor_project: str | None
+    product: str | None
+    date_added: date | None
+    due_date: date | None
+    known_ransomware: bool
+    evidence_status: str           # 'no_evidence' | evidence_status values
+    evidence_id: str | None
+    evidence_title: str | None
+
+
+class KevAuditReport(BaseModel):
+    total: int
+    covered: int                   # entries that have at least one evidence item
+    uncovered: int                 # entries with no evidence
+    ransomware_uncovered: int      # ransomware entries with no evidence
+    months: int
+    generated_at: str
+    entries: list[KevAuditEntry]

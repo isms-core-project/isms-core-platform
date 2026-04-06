@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import {
-  Alert, Box, Chip, CircularProgress, Paper,
-  Table, TableBody, TableCell, TableHead, TableRow, Typography,
+  Alert, Box, Button, Chip, CircularProgress, FormControl, InputLabel,
+  MenuItem, Paper, Select, Table, TableBody, TableCell, TableHead,
+  TableRow, Tooltip, Typography,
 } from '@mui/material'
 import {
-  BugReportOutlined, CheckCircleOutlined, ErrorOutlined,
+  BugReportOutlined, CheckCircleOutlined, DownloadOutlined, ErrorOutlined,
   HourglassEmptyOutlined, PolicyOutlined, SecurityOutlined,
   SyncOutlined, VerifiedOutlined,
 } from '@mui/icons-material'
@@ -51,7 +53,41 @@ const TACTIC_COLORS = [
 
 // ── Component ──────────────────────────────────────────────────────────────────
 
+const AUDIT_STATUS_COLORS: Record<string, { bg: string; color: string; label: string }> = {
+  no_evidence:    { bg: '#3a0a0a', color: '#FFC7CE', label: 'No Evidence' },
+  pending_review: { bg: '#3a2e00', color: '#FFEB9C', label: 'Pending Review' },
+  draft:          { bg: '#1e1e2e', color: '#aaa',    label: 'Draft' },
+  active:         { bg: '#1a2a3a', color: '#9fc8f0', label: 'Active' },
+  approved:       { bg: '#1a3a27', color: '#C6EFCE', label: 'Approved' },
+  rejected:       { bg: '#2a1a1a', color: '#FFC7CE', label: 'Rejected' },
+}
+
+function exportAuditCsv(entries: import('../api/feedsApi').KevAuditEntry[], months: number) {
+  const header = 'CVE ID,Vulnerability Name,Vendor,Product,Date Added,Due Date,Ransomware,Evidence Status,Evidence Title'
+  const rows = entries.map(e => [
+    e.cve_id,
+    e.vulnerability_name ?? '',
+    e.vendor_project ?? '',
+    e.product ?? '',
+    e.date_added ?? '',
+    e.due_date ?? '',
+    e.known_ransomware ? 'Yes' : 'No',
+    e.evidence_status,
+    e.evidence_title ?? '',
+  ].map(v => `"${String(v).replace(/"/g, '""')}"`).join(','))
+  const csv = [header, ...rows].join('\n')
+  const blob = new Blob([csv], { type: 'text/csv' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = `KEV-Audit-Report-${months}m.csv`
+  a.click()
+  URL.revokeObjectURL(url)
+}
+
 export default function ThreatFeeds() {
+  const [auditMonths, setAuditMonths] = useState(12)
+
   const { data: status, isLoading: statusLoading, error: statusError } =
     useQuery({ queryKey: ['feeds', 'status'], queryFn: feedsApi.getStatus })
 
@@ -64,6 +100,11 @@ export default function ThreatFeeds() {
   const { data: recentKev } = useQuery({
     queryKey: ['feeds', 'kev', 'recent'],
     queryFn: () => feedsApi.getKev({ per_page: 10, page: 1 }),
+  })
+
+  const { data: auditReport, isLoading: auditLoading } = useQuery({
+    queryKey: ['feeds', 'kev', 'audit', auditMonths],
+    queryFn: () => feedsApi.getKevAuditReport(auditMonths),
   })
 
   const tacticData = attackStats
@@ -250,6 +291,117 @@ export default function ThreatFeeds() {
           </Table>
         </Paper>
       )}
+
+      {/* ── A.8.8 KEV Audit Report ── */}
+      <Paper variant="outlined" sx={{ borderRadius: 2, overflow: 'hidden', mt: 3 }}>
+        <Box sx={{ px: 2, py: 1.5, borderBottom: '1px solid', borderColor: 'divider', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1 }}>
+          <Box>
+            <Typography variant="subtitle2" fontWeight={600}>A.8.8 KEV Audit Report</Typography>
+            <Typography variant="caption" color="text.secondary">
+              CISA KEV entries with evidence status — exportable for audit evidence
+            </Typography>
+          </Box>
+          <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            <FormControl size="small" sx={{ minWidth: 100 }}>
+              <InputLabel sx={{ fontSize: '0.78rem' }}>Window</InputLabel>
+              <Select value={auditMonths} label="Window" onChange={e => setAuditMonths(Number(e.target.value))} sx={{ fontSize: '0.78rem' }}>
+                <MenuItem value={3} sx={{ fontSize: '0.78rem' }}>3 months</MenuItem>
+                <MenuItem value={6} sx={{ fontSize: '0.78rem' }}>6 months</MenuItem>
+                <MenuItem value={12} sx={{ fontSize: '0.78rem' }}>12 months</MenuItem>
+                <MenuItem value={24} sx={{ fontSize: '0.78rem' }}>24 months</MenuItem>
+              </Select>
+            </FormControl>
+            {auditReport && (
+              <Button
+                size="small"
+                variant="outlined"
+                startIcon={<DownloadOutlined sx={{ fontSize: 14 }} />}
+                onClick={() => exportAuditCsv(auditReport.entries, auditMonths)}
+                sx={{ fontSize: '0.75rem' }}
+              >
+                Export CSV
+              </Button>
+            )}
+          </Box>
+        </Box>
+
+        {/* Summary row */}
+        {auditReport && (
+          <Box sx={{ display: 'flex', gap: 2, p: 2, flexWrap: 'wrap', borderBottom: '1px solid', borderColor: 'divider' }}>
+            {[
+              { label: 'Total KEV', value: auditReport.total, color: 'text.primary' },
+              { label: 'With Evidence', value: auditReport.covered, color: '#C6EFCE' },
+              { label: 'No Evidence', value: auditReport.uncovered, color: '#FFC7CE' },
+              { label: 'Ransomware / No Evidence', value: auditReport.ransomware_uncovered, color: '#FFC7CE' },
+            ].map(s => (
+              <Box key={s.label} sx={{ textAlign: 'center', flex: '1 1 120px' }}>
+                <Typography variant="h5" fontWeight={700} sx={{ color: s.color, lineHeight: 1.2 }}>{s.value}</Typography>
+                <Typography variant="caption" color="text.secondary">{s.label}</Typography>
+              </Box>
+            ))}
+          </Box>
+        )}
+
+        {auditLoading && <Box sx={{ p: 2 }}><CircularProgress size={18} /></Box>}
+
+        {auditReport && auditReport.entries.length > 0 && (
+          <Table size="small">
+            <TableHead>
+              <TableRow>
+                <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem' }}>CVE</TableCell>
+                <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem' }}>Vulnerability / Vendor</TableCell>
+                <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem' }}>Added</TableCell>
+                <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem' }}>Due</TableCell>
+                <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem' }}>Ransomware</TableCell>
+                <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem' }}>Evidence Status</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {auditReport.entries.map(entry => {
+                const sc = AUDIT_STATUS_COLORS[entry.evidence_status] ?? { bg: '#1e1e2e', color: '#aaa', label: entry.evidence_status }
+                return (
+                  <TableRow key={entry.cve_id} hover>
+                    <TableCell sx={{ fontSize: '0.75rem', fontFamily: 'monospace', color: '#c62828', fontWeight: 600, whiteSpace: 'nowrap' }}>
+                      {entry.cve_id}
+                    </TableCell>
+                    <TableCell sx={{ fontSize: '0.75rem', maxWidth: 280 }}>
+                      <Tooltip title={entry.vulnerability_name ?? ''}>
+                        <Typography noWrap variant="inherit">{entry.vulnerability_name ?? '—'}</Typography>
+                      </Tooltip>
+                      <Typography variant="caption" color="text.secondary" noWrap display="block">
+                        {entry.vendor_project} {entry.product ? `— ${entry.product}` : ''}
+                      </Typography>
+                    </TableCell>
+                    <TableCell sx={{ fontSize: '0.75rem', whiteSpace: 'nowrap' }}>{entry.date_added ?? '—'}</TableCell>
+                    <TableCell sx={{ fontSize: '0.75rem', whiteSpace: 'nowrap', color: entry.due_date ? '#FFEB9C' : 'text.secondary' }}>{entry.due_date ?? '—'}</TableCell>
+                    <TableCell>
+                      {entry.known_ransomware
+                        ? <Chip label="Yes" size="small" color="error" sx={{ fontSize: '0.68rem', height: 18 }} />
+                        : <Typography variant="caption" color="text.disabled">No</Typography>}
+                    </TableCell>
+                    <TableCell>
+                      {entry.evidence_title ? (
+                        <Tooltip title={entry.evidence_title}>
+                          <Chip label={sc.label} size="small" sx={{ fontSize: '0.68rem', height: 20, bgcolor: sc.bg, color: sc.color, border: `1px solid ${sc.color}40` }} />
+                        </Tooltip>
+                      ) : (
+                        <Chip label={sc.label} size="small" sx={{ fontSize: '0.68rem', height: 20, bgcolor: sc.bg, color: sc.color, border: `1px solid ${sc.color}40` }} />
+                      )}
+                    </TableCell>
+                  </TableRow>
+                )
+              })}
+            </TableBody>
+          </Table>
+        )}
+
+        {auditReport && auditReport.entries.length === 0 && (
+          <Box sx={{ p: 3, textAlign: 'center' }}>
+            <HourglassEmptyOutlined sx={{ fontSize: 32, color: 'text.disabled', mb: 1 }} />
+            <Typography variant="body2" color="text.secondary">No KEV entries in the selected window</Typography>
+          </Box>
+        )}
+      </Paper>
     </Box>
   )
 }

@@ -982,6 +982,33 @@ def _fetch_library_pol_text(os_client, group_code: str, language: str = "en") ->
         return ""
 
 
+def _fetch_kev_reference_text(os_client, group_name: str, group_code: str) -> str:
+    """Fetch CISA KEV entries most relevant to this control group from iso-reference index.
+
+    Uses a relevance search (group name as query text) against the cve_kev corpus
+    so controls like A.8.8 (patch management) get matched to recent vulnerabilities.
+    """
+    try:
+        result = os_client.search(
+            index=search_service.IDX_ISO_REFERENCE,
+            body={
+                "query": {
+                    "bool": {
+                        "must": [{"term": {"standard": "cve_kev"}}],
+                        "should": [{"match": {"text": group_name}}],
+                    }
+                },
+                "_source": ["text", "title"],
+                "size": 15,
+            },
+        )
+        parts = [hit["_source"].get("text", "") for hit in result["hits"]["hits"]]
+        return " ".join(parts)[:4000]
+    except Exception as e:
+        logger.warning("KEV reference fetch failed for group %s: %s", group_code, e)
+        return ""
+
+
 def _fetch_crosswalk_reference_text(
     db: DBSession,
     framework,
@@ -1273,6 +1300,9 @@ def run_project_keyword_check(
         if reference_library == "isms_library" and os_available:
             pol_text = _fetch_library_pol_text(os_client, group.group_code, language="en")
             corpus = pol_text[:2000] if pol_text else group.name
+        elif reference_library == "cve_kev" and os_available:
+            kev_text = _fetch_kev_reference_text(os_client, group.name, group.group_code)
+            corpus = kev_text if kev_text else group.name
         elif reference_library in ("crosswalk", "both"):
             crosswalk_text = _fetch_crosswalk_reference_text(db, framework, group, framework_codes)
             if reference_library == "both":
@@ -1422,6 +1452,10 @@ def run_project_semantic_check(
             ref_text = _fetch_library_pol_text(os_client, group.group_code, language="en")
             if not ref_text:
                 ref_text = _build_iso_text(db, framework, group)
+        elif reference_library == "cve_kev" and os_available:
+            ref_text = _fetch_kev_reference_text(os_client, group.name, group.group_code)
+            if not ref_text:
+                ref_text = _build_iso_text(db, framework, group)
         elif reference_library in ("crosswalk", "both"):
             crosswalk_text = _fetch_crosswalk_reference_text(db, framework, group, framework_codes)
             if reference_library == "both":
@@ -1555,6 +1589,10 @@ gaps: list up to 3 specific missing topics; empty list [] if score>=85."""
 
         if reference_library == "isms_library" and os_available:
             ref_text = _fetch_library_pol_text(os_client, group.group_code, language="en")
+            if not ref_text:
+                ref_text = _build_iso_text(db, framework, group)
+        elif reference_library == "cve_kev" and os_available:
+            ref_text = _fetch_kev_reference_text(os_client, group.name, group.group_code)
             if not ref_text:
                 ref_text = _build_iso_text(db, framework, group)
         elif reference_library in ("crosswalk", "both"):

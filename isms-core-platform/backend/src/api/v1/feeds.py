@@ -20,6 +20,8 @@ from src.schemas.feeds import (
     EpssScoreRead,
     FeedStatusItem,
     FeedStatusResponse,
+    KevAuditEntry,
+    KevAuditReport,
     MitreAttackStats,
     MitreTechniqueList,
     MitreTechniqueRead,
@@ -324,4 +326,77 @@ def list_epss(
         total=total or 0,
         page=page,
         per_page=per_page,
+    )
+
+
+# ── KEV Audit Report (Phase 26 Task 26.7) ─────────────────────────────────────
+
+@router.get("/kev/audit-report", response_model=KevAuditReport)
+def get_kev_audit_report(
+    months: int = Query(12, ge=1, le=36, description="Look-back window in months"),
+    db: DBSession = Depends(get_db),
+    _current_user: User = Depends(get_current_user),
+):
+    """Return all CISA KEV entries from the last N months with their evidence status.
+
+    For each KEV entry, report the most recent linked evidence item (via kev_cve_id).
+    Entries without any evidence are flagged 'no_evidence'.
+    """
+    from src.domain.compliance import Evidence
+
+    cutoff = date.today() - timedelta(days=months * 30)
+
+    kev_entries = db.scalars(
+        select(CisaKevEntry)
+        .where(CisaKevEntry.date_added >= cutoff)
+        .order_by(CisaKevEntry.date_added.desc().nullsfirst())
+    ).all()
+
+    # Build a map of cve_id → most recent evidence
+    cve_ids = [e.cve_id for e in kev_entries]
+    evidence_map: dict[str, Evidence] = {}
+    if cve_ids:
+        ev_rows = db.scalars(
+            select(Evidence)
+            .where(Evidence.kev_cve_id.in_(cve_ids))
+            .order_by(Evidence.created_at.desc())
+        ).all()
+        for ev in ev_rows:
+            if ev.kev_cve_id not in evidence_map:
+                evidence_map[ev.kev_cve_id] = ev
+
+    entries: list[KevAuditEntry] = []
+    covered = 0
+    ransomware_uncovered = 0
+
+    for kev in kev_entries:
+        ev = evidence_map.get(kev.cve_id)
+        status = ev.evidence_status.value if ev else "no_evidence"
+        if ev:
+            covered += 1
+        elif kev.known_ransomware:
+            ransomware_uncovered += 1
+
+        entries.append(KevAuditEntry(
+            cve_id=kev.cve_id,
+            vulnerability_name=kev.vulnerability_name,
+            vendor_project=kev.vendor_project,
+            product=kev.product,
+            date_added=kev.date_added,
+            due_date=kev.due_date,
+            known_ransomware=bool(kev.known_ransomware),
+            evidence_status=status,
+            evidence_id=str(ev.id) if ev else None,
+            evidence_title=ev.title if ev else None,
+        ))
+
+    total = len(entries)
+    return KevAuditReport(
+        total=total,
+        covered=covered,
+        uncovered=total - covered,
+        ransomware_uncovered=ransomware_uncovered,
+        months=months,
+        generated_at=datetime.now(timezone.utc).isoformat(),
+        entries=entries,
     )
