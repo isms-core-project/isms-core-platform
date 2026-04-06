@@ -45,7 +45,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 
 ## Architecture
 
-### Nine-Service Stack
+### Ten-Service Stack
 
 ```
                         ┌───────────────────────────────────────────┐
@@ -83,7 +83,16 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
                         │                                            │
                         │  ┌─────────────────────────────────────┐  │
                         │  │  isms-core-opensearch (internal)    │  │
-                        │  │  Full-text search over policy/IMP   │  │
+                        │  │  Full-text search (policy/IMP)      │  │
+                        │  │  + nvd-cve / nvd-cpe indices        │  │
+                        │  └──────────────────┬──────────────────┘  │
+                        │                     │                      │
+                        │                     ▼                      │
+                        │  ┌─────────────────────────────────────┐  │
+                        │  │  isms-core-feeds (internal)         │  │
+                        │  │  Threat intelligence scheduler      │  │
+                        │  │  MITRE ATT&CK · ATLAS · CISA KEV   │  │
+                        │  │  FIRST EPSS · NVD CVE/CPE          │  │
                         │  └─────────────────────────────────────┘  │
                         └───────────────────────────────────────────┘
 ```
@@ -100,6 +109,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | `isms-core-opensearch` | OpenSearch 3.x | Full-text search over policy and IMP document content. Internal only. |
 | `isms-core-worker` | Celery 5.3 | Background tasks — import, sync, compliance recalculation. Queue: `isms`. |
 | `isms-core-beat` | Celery Beat | Scheduled jobs — nightly evidence archive at 02:00 UTC; daily KPI metrics snapshots at 06:00 UTC. No healthcheck (by design — see Troubleshooting). |
+| `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, FIRST EPSS, NVD CVE/CPE. Writes to Postgres (feed_runs, kev_entries, epss_scores) and OpenSearch (nvd-cve, nvd-cpe). Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `NIST_API_KEY`. |
 
 > **Access in production:** `https://{HOST_IP}` via nginx. Do NOT access `:3000` or `:8000` directly — those ports are not exposed in production.
 
@@ -120,6 +130,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Compliance Assessments** | 17 generic frameworks (0–4 maturity): NIS2 (15), DORA (25), CIS Controls v8 (153), BSI IT-Grundschutz (68 Bausteine), TISAX (53), Swiss nDSG (25), EU CRA (26), EU AI Act (25), EU Cloud Sovereignty (8), CyberFundamentals BE (41), BaFin BAIT DE (23), CSSF 20-750 LU (19), ACN IT (19), UK NIS (13), UK Op. Resilience (12), FINMA. Plus CSRM (object-centric, binary) and NIST CSF 2.0 (tiered profile). Assessment Collections group assessments with derived stats, CSV/XLSX/PDF export. See [COMPLIANCE.md](COMPLIANCE.md). |
 | **Projects** | Workspace layer — named projects own a curated subset of library policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date, etc.) applied on add; active/inactive/draft/archived lifecycle |
 | **System Event Log** | Immutable trail of every platform action (who, what, when, resource) |
+| **Threat Intelligence** | Feed run history (`feed_runs`), CISA KEV entries (`cisa_kev_entries`), EPSS scores (`epss_scores`), MITRE techniques (`mitre_techniques`). NVD CVE (~250K docs) and CPE (~50-100K docs) stored in OpenSearch indices `nvd-cve` / `nvd-cpe` with EPSS + KEV denormalized at index time. |
 
 ---
 
@@ -211,6 +222,12 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Country Localisation** | Policy rendering adapts regulatory references, authority names, financial sector bodies, and data protection law names for 8 jurisdictions: CH (default), FR, BE, LU, DE, AT, IT, GB — applied at request time from `org.country`; CH source files untouched |
 | **Cross-Framework Coverage** | BFS inference maps ISO 27001 assessment coverage to NIS2, DORA, and GDPR automatically; Mapping Matrix and Inferred Coverage tabs |
 | **MFA** | TOTP-based two-factor authentication — Google Authenticator / Authy compatible; QR code setup in System page; 8 single-use backup codes; auto-submits on 6-digit entry |
+| **Threat Intelligence Feeds** | Dedicated `isms-core-feeds` container pulling 6 sources on schedule: MITRE ATT&CK v18 (weekly), MITRE ATLAS (weekly), CISA KEV (daily), FIRST EPSS (daily), NVD CVE full+delta (weekly/daily — ~250K CVEs into OpenSearch), NVD CPE Option B (weekly — KEV-vendor CPEs). EPSS and KEV status denormalized into CVE docs at index time. |
+| **CVE / CPE Explorer** | Search and filter the NVD CVE index (~250K entries) by severity, EPSS score, year, KEV-only. Click any CVE for detail panel: CVSS scores, CPE applicability, CWEs, and NVD reference links. Separate CPE tab. Stats bar shows live index totals and last sync timestamp. |
+| **KEV Audit Report (A.8.8)** | Generates an audit trail for ISO 27001:2022 A.8.8 (Management of technical vulnerabilities) using the CISA KEV feed. Shows remediation status breakdown by CVE, per-vendor summary, and CSV export for auditor evidence. |
+| **Health Alert Banner** | Dismissible warning banner at the top of all pages when any feed run, connector sync, or OpenSearch check reports an error in the last 24 hours. Red-dot sidebar badges on Intelligence and Suppliers groups. Backed by `GET /api/v1/health/alerts`. |
+| **CPE Option B Toggle** | Admin UI switch on the Threat Feeds page to enable/disable NVD CPE Option B (KEV-vendor CPE pull) at runtime — no `.env` edit or container restart needed. Setting stored in `platform_settings` DB table, overrides `FEEDS_CPE_FULL` env var. Takes effect on next scheduled run (Sunday 01:30 UTC). |
+| **Dashboard Intelligence Cards** | Four clickable summary cards on the Dashboard (below controls): CVE Index count, CISA KEV total, MITRE ATT&CK feed status, and overall Feed Health indicator. Click any card to navigate to the Intelligence section. |
 | **Project-Scoped Risk/Gaps/Evidence** | Risk scenarios, gaps, and evidence items are scoped to the active project — switching projects switches context |
 
 ---
