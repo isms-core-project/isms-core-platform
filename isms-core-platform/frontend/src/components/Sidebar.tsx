@@ -69,6 +69,9 @@ import {
   AppRegistrationOutlined,
   UpdateOutlined,
   HelpOutlineOutlined,
+  BugReportOutlined,
+  TravelExploreOutlined,
+  StreamOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -142,6 +145,13 @@ const NAV_FRAMEWORKS: NavItem[] = [
   { label: 'EU Cloud Sovereignty',  path: '/eu-cloud-sov',   icon: <CloudOutlined /> },
 ]
 
+// ── Intelligence (Phase 25) ───────────────────────────────────────────────────
+const NAV_INTELLIGENCE: NavItem[] = [
+  { label: 'Threat Feeds',  path: '/threat-feeds',  icon: <StreamOutlined /> },
+  { label: 'MITRE ATT&CK',  path: '/mitre-attack',  icon: <BugReportOutlined /> },
+  { label: 'MITRE ATLAS',   path: '/mitre-atlas',   icon: <TravelExploreOutlined /> },
+]
+
 // ── Suppliers / TPRM (Phase 16+) ──────────────────────────────────────────────
 const NAV_SUPPLIERS: NavItem[] = [
   { label: 'TPRM',            path: '/tprm',        icon: <HandshakeOutlined />,    notViewer: true },
@@ -179,14 +189,16 @@ export const SIDEBAR_MINI_WIDTH = 52
 const CAT_LABEL: Record<string, string> = { workflow: 'Workflow', system: 'System' }
 const CAT_COLOR: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3a' }
 const CAT_TEXT:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0' }
-const PLATFORM_COLOR = '#6B7A99'
+const PLATFORM_COLOR    = '#6B7A99'
+const INTEL_COLOR       = '#B84F00'
 
 const RISK_PATHS       = ['/risk-register', '/remediation', '/metrics', '/bia', '/ebios']
 const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk']
 const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/uk-nis', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act', '/eu-cloud-sov']
 const SUPPLIER_PATHS   = ['/tprm']
-const ADMIN_PATHS      = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker']
-const ALL_PLATFORM_PATHS = [...RISK_PATHS, ...TOOLS_PATHS, ...FRAMEWORK_PATHS, ...SUPPLIER_PATHS, ...ADMIN_PATHS]
+const ADMIN_PATHS        = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker']
+const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas']
+const ALL_PLATFORM_PATHS = [...RISK_PATHS, ...TOOLS_PATHS, ...FRAMEWORK_PATHS, ...SUPPLIER_PATHS, ...ADMIN_PATHS, ...INTELLIGENCE_PATHS]
 
 // ── Notification prefs dialog ─────────────────────────────────────────────────
 
@@ -381,6 +393,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   const isFrameworkPath  = FRAMEWORK_PATHS.some(p => location.pathname.startsWith(p))
   const isSupplierPath   = SUPPLIER_PATHS.some(p => location.pathname.startsWith(p))
   const isAdminPath      = ADMIN_PATHS.some(p => location.pathname.startsWith(p))
+  const isIntelPath      = INTELLIGENCE_PATHS.some(p => location.pathname.startsWith(p))
 
   const [expandedProduct, setExpandedProduct] = useState<Product | null>(isNeutralPage ? null : product)
   const [riskOpen,        setRiskOpen]        = useState(isRiskPath)
@@ -388,6 +401,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   const [frameworksOpen,  setFrameworksOpen]  = useState(isFrameworkPath)
   const [suppliersOpen,   setSuppliersOpen]   = useState(isSupplierPath)
   const [adminOpen,       setAdminOpen]       = useState(isAdminPath)
+  const [intelOpen,       setIntelOpen]       = useState(isIntelPath)
 
   const TIER_OPTIONS: { value: IsmsTier; label: string; color: string }[] = [
     { value: 'all',         label: 'All', color: 'rgba(255,255,255,0.55)' },
@@ -770,6 +784,17 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
           open={suppliersOpen}
           onToggle={() => setSuppliersOpen(o => !o)}
           {...groupProps}
+        />
+
+        {/* ── Intelligence group ── */}
+        <NavGroup
+          label="Intelligence"
+          icon={<StreamOutlined sx={{ fontSize: 16 }} />}
+          items={NAV_INTELLIGENCE}
+          open={intelOpen}
+          onToggle={() => setIntelOpen(o => !o)}
+          {...groupProps}
+          color={INTEL_COLOR}
         />
 
         <Divider sx={{ my: 0.5, mx: 1 }} />

@@ -273,6 +273,30 @@ services:
     networks:
       - isms-core-network
 
+  # ── Threat Intelligence & Vulnerability Feeds (Phase 25) ──────────────────
+  # Pulls MITRE ATT&CK, MITRE ATLAS, CISA KEV, and FIRST EPSS on schedule.
+  # Runs on first start to seed the DB, then on configured schedules.
+  # Enable/disable individual feeds via FEEDS_*_ENABLED vars in .env
+  isms-core-feeds:
+    build:
+      context: ./feeds
+    image: isms-core-feeds:latest
+    container_name: isms-core-feeds
+    environment:
+      - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
+      - FEEDS_RUN_ON_START=${FEEDS_RUN_ON_START:-true}
+      - FEEDS_MITRE_ENABLED=${FEEDS_MITRE_ENABLED:-true}
+      - FEEDS_ATLAS_ENABLED=${FEEDS_ATLAS_ENABLED:-true}
+      - FEEDS_KEV_ENABLED=${FEEDS_KEV_ENABLED:-true}
+      - FEEDS_EPSS_ENABLED=${FEEDS_EPSS_ENABLED:-true}
+      - FEEDS_MITRE_V19=${FEEDS_MITRE_V19:-false}
+    depends_on:
+      isms-core-backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - isms-core-network
+
   # ── Email options (optional profiles) ─────────────────────────────────────
 
   # Mailpit: docker compose --profile mailpit up -d

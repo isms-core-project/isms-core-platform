@@ -54,6 +54,9 @@ import Tprm from './pages/Tprm'
 import CustomFrameworks from './pages/CustomFrameworks'
 import FrameworkTracker from './pages/FrameworkTracker'
 import Help from './pages/Help'
+import ThreatFeeds from './pages/ThreatFeeds'
+import MitreAttack from './pages/MitreAttack'
+import MitreAtlas from './pages/MitreAtlas'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -129,6 +132,9 @@ export default function App() {
         <Route path="custom-frameworks" element={<CustomFrameworks />} />
         <Route path="framework-tracker" element={<FrameworkTracker />} />
         <Route path="help" element={<Help />} />
+        <Route path="threat-feeds" element={<ThreatFeeds />} />
+        <Route path="mitre-attack" element={<MitreAttack />} />
+        <Route path="mitre-atlas" element={<MitreAtlas />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
