@@ -5,11 +5,11 @@
 <h1 align="center">🎋 ISMS CORE — Compliance Assessment Modules</h1>
 
 <p align="center">
-  <strong>Seventeen built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
+  <strong>Eighteen built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Frameworks-17-2E8B57?style=flat-square" alt="17 Frameworks"/>
+  <img src="https://img.shields.io/badge/Frameworks-18-2E8B57?style=flat-square" alt="18 Frameworks"/>
   <img src="https://img.shields.io/badge/Requirements-650+-0066CC?style=flat-square" alt="650+ Requirements"/>
   <img src="https://img.shields.io/badge/Export-CSV_%7C_XLSX_%7C_PDF-FF6600?style=flat-square" alt="Export"/>
   <img src="https://img.shields.io/badge/Assessment_Collections-Grouping_%26_Reports-2E7D32?style=flat-square" alt="Collections"/>
@@ -19,7 +19,7 @@
 
 ## Overview
 
-ISMS CORE Platform includes a unified compliance assessment layer covering 17 built-in frameworks across Europe and North America, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
+ISMS CORE Platform includes a unified compliance assessment layer covering 18 built-in frameworks across Europe and North America, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
 
 Assessment results can be grouped into **Assessment Collections** — named bundles that aggregate status across multiple frameworks for reporting or audit purposes, with CSV, XLSX (colour-coded), and PDF (A4) export.
 
@@ -48,11 +48,12 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [ACN Cyber Risk Management (IT)](#acn-cyber-risk-management-it) | Italian ACN | 19 guidelines | 4 Groups | 0–4 | Italian organisations / critical infrastructure |
 | [UK NIS Regulations](#uk-nis-regulations-2018) | UK law | 13 requirements | 3 Objectives | 0–4 | UK network and information systems operators |
 | [UK Operational Resilience (FCA/PRA)](#uk-operational-resilience-fcapra) | UK FCA/PRA | 12 requirements | 4 Objectives | 0–4 | UK financial sector — banks, insurers, FMIs |
+| [COBIT 2019 (ISACA)](#cobit-2019-isaca) | ISACA EGIT | 40 objectives | 5 Domains (EDM/APO/BAI/DSS/MEA) | 0–4 | Enterprise IT governance, audit, CISM/CISA/CGEIT holders |
 | [Custom (YAML)](#custom-frameworks-yaml-import) | User-defined | User-defined | User-defined | User-defined | All |
 
 ---
 
-## Maturity Scale (used by 9 of 11 frameworks)
+## Maturity Scale (used by most frameworks)
 
 | Score | Label | Meaning |
 |-------|-------|---------|
@@ -365,6 +366,22 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 - Entities subject to both UK Op. Resilience and DORA should use both modules
 - Focus is on important business services (IBS) and impact tolerances — not a substitute for formal FCA/PRA supervisory engagement
 - Crosswalk: ISO 27001:2022 ↔ UK Operational Resilience — 34 mappings
+
+---
+
+### COBIT 2019 (ISACA)
+
+**Source:** ISACA — COBIT 2019 Framework: Governance and Management Objectives (November 2018)
+**Scope:** 40 governance and management objectives across 5 domains: EDM (Evaluate, Direct and Monitor), APO (Align, Plan and Organise), BAI (Build, Acquire and Implement), DSS (Deliver, Service and Support), MEA (Monitor, Evaluate and Assess)
+**Scoring:** Capability levels 0–4 (Incomplete → Performed → Managed → Established → Optimizing)
+**Audience:** Enterprise IT governance programmes, internal audit functions, IT strategy and board-level oversight. Particularly relevant for CISM, CISA, and CGEIT certification holders.
+
+**Coverage notes:**
+- EDM objectives (EDM01–EDM05) are governance-level — intended for board/executive oversight; APO, BAI, DSS, MEA are management-level
+- APO13 (Managed Security) and DSS05 (Managed Security Services) map directly to ISO 27001:2022 Annex A information security controls
+- COBIT 2019 aligns to ISO/IEC 27001, ISO/IEC 38500, ITIL, NIST CSF, and PMBOK/PRINCE2
+- Full COBIT capability scale runs 0–5 (level 5: Optimizing with quantitative management); the platform uses a 0–4 scale consistent with all other assessment modules
+- Replaces COBIT 5 (2012); key changes include design factors, focus areas, and alignment with NIST CSF 2.0 concepts
 
 ---
 
