@@ -34,6 +34,7 @@ _ASSESSABLE_LEVEL = {
     "EU_CRA": 1,
     "EU_AI_ACT": 1,
     "EU_CLOUD_SOV": 0,
+    "COBIT_2019": 1,
 }
 
 

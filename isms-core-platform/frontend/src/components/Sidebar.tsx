@@ -73,6 +73,7 @@ import {
   TravelExploreOutlined,
   StreamOutlined,
   ManageSearchOutlined,
+  MenuBookOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -117,13 +118,14 @@ const NAV_RISK: NavItem[] = [
 
 // ── Tools (platform utilities) ────────────────────────────────────────────────
 const NAV_TOOLS: NavItem[] = [
-  { label: 'Projects',        path: '/projects',    icon: <FolderOpenOutlined /> },
-  { label: 'QA',              path: '/qa',          icon: <VerifiedOutlined />,     notViewer: true },
-  { label: 'Search',          path: '/search',      icon: <SearchOutlined /> },
-  { label: 'Compass',         path: '/compass',     icon: <ExploreOutlined /> },
-  { label: 'Generators',      path: '/generators',  icon: <CodeOutlined />,         managerAndAbove: true },
-  { label: 'Report',          path: '/report',      icon: <SummarizeOutlined />,    notViewer: true },
-  { label: 'Risk Wizard',     path: '/risk',        icon: <GppMaybeOutlined />,     notViewer: true },
+  { label: 'Projects',        path: '/projects',       icon: <FolderOpenOutlined /> },
+  { label: 'QA',              path: '/qa',             icon: <VerifiedOutlined />,     notViewer: true },
+  { label: 'Search',          path: '/search',         icon: <SearchOutlined /> },
+  { label: 'Compass',         path: '/compass',        icon: <ExploreOutlined /> },
+  { label: 'Cloud Glossary',  path: '/cloud-glossary', icon: <MenuBookOutlined /> },
+  { label: 'Generators',      path: '/generators',     icon: <CodeOutlined />,         managerAndAbove: true },
+  { label: 'Report',          path: '/report',         icon: <SummarizeOutlined />,    notViewer: true },
+  { label: 'Risk Wizard',     path: '/risk',           icon: <GppMaybeOutlined />,     notViewer: true },
 ]
 
 // ── External compliance frameworks ────────────────────────────────────────────
@@ -145,14 +147,15 @@ const NAV_FRAMEWORKS: NavItem[] = [
   { label: 'EU Cyber Resilience',   path: '/cra',            icon: <SecurityOutlined /> },
   { label: 'EU AI Act',             path: '/ai-act',         icon: <PolicyOutlined /> },
   { label: 'EU Cloud Sovereignty',  path: '/eu-cloud-sov',   icon: <CloudOutlined /> },
+  { label: 'COBIT 2019',            path: '/cobit',           icon: <AccountBalanceOutlined /> },
 ]
 
 // ── Intelligence (Phase 25) ───────────────────────────────────────────────────
 const NAV_INTELLIGENCE: NavItem[] = [
-  { label: 'Threat Feeds',  path: '/threat-feeds',  icon: <StreamOutlined /> },
-  { label: 'MITRE ATT&CK',  path: '/mitre-attack',  icon: <BugReportOutlined /> },
-  { label: 'MITRE ATLAS',   path: '/mitre-atlas',   icon: <TravelExploreOutlined /> },
-  { label: 'CVE / CPE',     path: '/cve-explorer',  icon: <ManageSearchOutlined /> },
+  { label: 'Threat Feeds',   path: '/threat-feeds',    icon: <StreamOutlined /> },
+  { label: 'MITRE ATT&CK',   path: '/mitre-attack',    icon: <BugReportOutlined /> },
+  { label: 'MITRE ATLAS',    path: '/mitre-atlas',     icon: <TravelExploreOutlined /> },
+  { label: 'CVE / CPE',      path: '/cve-explorer',    icon: <ManageSearchOutlined /> },
 ]
 
 // ── Suppliers / TPRM (Phase 16+) ──────────────────────────────────────────────
@@ -196,8 +199,8 @@ const PLATFORM_COLOR    = '#6B7A99'
 const INTEL_COLOR       = '#B84F00'
 
 const RISK_PATHS       = ['/risk-register', '/remediation', '/metrics', '/bia', '/ebios']
-const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk']
-const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/uk-nis', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act', '/eu-cloud-sov']
+const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk', '/cloud-glossary']
+const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/uk-nis', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit']
 const SUPPLIER_PATHS   = ['/tprm']
 const ADMIN_PATHS        = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker']
 const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/cve-explorer']

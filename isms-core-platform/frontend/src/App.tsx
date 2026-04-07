@@ -58,6 +58,8 @@ import ThreatFeeds from './pages/ThreatFeeds'
 import MitreAttack from './pages/MitreAttack'
 import MitreAtlas from './pages/MitreAtlas'
 import CVEExplorer from './pages/CVEExplorer'
+import CloudGlossary from './pages/CloudGlossary'
+import Cobit from './pages/Cobit'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -137,6 +139,8 @@ export default function App() {
         <Route path="mitre-attack" element={<MitreAttack />} />
         <Route path="mitre-atlas" element={<MitreAtlas />} />
         <Route path="cve-explorer" element={<CVEExplorer />} />
+        <Route path="cloud-glossary" element={<CloudGlossary />} />
+        <Route path="cobit" element={<Cobit />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

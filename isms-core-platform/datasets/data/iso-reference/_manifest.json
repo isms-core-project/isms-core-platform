@@ -788,13 +788,34 @@
       "standard": "LU ePrivacy Loi 2005",
       "language": "fr",
       "chunks": 52
+    },
+    {
+      "file": "iso_iec_22123-1_2023_en.json",
+      "source": "ISO_IEC_22123-1_2023(en).pdf",
+      "standard": "ISO/IEC 22123-1:2023",
+      "language": "en",
+      "chunks": 15
+    },
+    {
+      "file": "iso_iec_22123-2_2023_en.json",
+      "source": "ISO_IEC_22123-2_2023(en).pdf",
+      "standard": "ISO/IEC 22123-2:2023",
+      "language": "en",
+      "chunks": 15
+    },
+    {
+      "file": "iso_iec_22123-3_2023_en.json",
+      "source": "ISO_IEC_22123-3_2023(en).pdf",
+      "standard": "ISO/IEC 22123-3:2023",
+      "language": "en",
+      "chunks": 12
     }
   ],
-  "total_chunks": 13533,
-  "total_files_processed": 73,
+  "total_chunks": 13575,
+  "total_files_processed": 76,
   "failed_files": [
     "AI-Act-Compliance-Checker-Flowchart-v1.0_compressed.docx"
   ],
-  "updated": "2026-04-06",
-  "total_files": 123
+  "updated": "2026-04-07",
+  "total_files": 126
 }

@@ -614,6 +614,80 @@ def get_iso_reference_text(clause_id: str, standard: str | None = None) -> str:
         return ""
 
 
+def search_iso_reference_by_standard(query: str, standard: str, max_results: int = 3) -> str:
+    """Full-text search across the iso-reference index filtered to a specific standard.
+
+    Used to pull relevant cross-cutting terminology (e.g. ISO 22123-1 vocabulary,
+    ISO 22123-2 concepts) into QA check reference text when product_family is cloud/sec.
+    Returns concatenated text of top matching chunks, capped at ~600 chars.
+    """
+    client = get_client()
+    if not client or not query.strip():
+        return ""
+    try:
+        result = client.search(
+            index=IDX_ISO_REFERENCE,
+            body={
+                "query": {
+                    "bool": {
+                        "must": [
+                            {
+                                "multi_match": {
+                                    "query": query,
+                                    "fields": ["title^2", "text"],
+                                    "type": "best_fields",
+                                }
+                            }
+                        ],
+                        "filter": [{"term": {"standard": standard}}],
+                    }
+                },
+                "_source": ["title", "text"],
+                "size": max_results,
+            },
+        )
+        parts = [
+            f"{hit['_source'].get('title', '')}: {hit['_source'].get('text', '')}"
+            for hit in result["hits"]["hits"]
+        ]
+        return "\n\n".join(parts)[:600]
+    except Exception as e:
+        logger.warning("ISO reference search failed (standard=%s): %s", standard, e)
+        return ""
+
+
+def get_iso_reference_by_standard_all(standard: str, max_results: int = 100) -> list[dict]:
+    """Return all chunks for a given standard from the iso-reference index.
+
+    Used by the cloud glossary endpoint to list all ISO 22123-1 vocabulary terms.
+    Returns list of {clause_id, title, text} dicts sorted by clause_id.
+    """
+    client = get_client()
+    if not client:
+        return []
+    try:
+        result = client.search(
+            index=IDX_ISO_REFERENCE,
+            body={
+                "query": {"term": {"standard": standard}},
+                "_source": ["clause_id", "title", "text"],
+                "size": max_results,
+                "sort": [{"clause_id": {"order": "asc"}}],
+            },
+        )
+        return [
+            {
+                "clause_id": hit["_source"].get("clause_id", ""),
+                "title": hit["_source"].get("title", ""),
+                "text": hit["_source"].get("text", ""),
+            }
+            for hit in result["hits"]["hits"]
+        ]
+    except Exception as e:
+        logger.warning("ISO reference list failed (standard=%s): %s", standard, e)
+        return []
+
+
 # ── NVD CVE / CPE index mappings ──────────────────────────────────────────────
 
 _NVD_CVE_MAPPING = {

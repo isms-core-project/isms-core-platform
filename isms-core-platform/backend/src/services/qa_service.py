@@ -628,6 +628,48 @@ def _get_semantic_model():
     return _SEMANTIC_MODEL
 
 
+_22123_VOCAB_STANDARD    = "ISO/IEC 22123-1:2023"
+_22123_CONCEPTS_STANDARD = "ISO/IEC 22123-2:2023"
+_22123_ARCH_STANDARD     = "ISO/IEC 22123-3:2023"
+
+
+def _fetch_22123_cloud_context(os_client, group_name: str) -> str:
+    """Query ISO 22123-2 (Concepts) for cross-cutting aspects relevant to a cloud control group.
+
+    Returns a short excerpt (~500 chars) of ISO 22123 concept text matching the group
+    name keywords.  Appended to ISO 27017/27018 control text in cloud/sec QA checks
+    to give the AI context about CSP/CSC roles, shared responsibility and SLA terms.
+    """
+    text = search_service.search_iso_reference_by_standard(
+        query=group_name,
+        standard=_22123_CONCEPTS_STANDARD,
+        max_results=2,
+    )
+    if text:
+        return f"\n\n[ISO 22123-2 Cloud Concepts — terminology reference]\n{text}"
+    return ""
+
+
+def _fetch_22123_vocabulary_defs(os_client, iso_text: str) -> str:
+    """Query ISO 22123-1 (Vocabulary) for term definitions matching key words in iso_text.
+
+    Returns relevant vocabulary definitions to supplement crosswalk reference text
+    for cloud and security-product control groups.
+    """
+    if not iso_text:
+        return ""
+    # Use first 120 chars of the iso_text as the search query
+    query = iso_text[:120]
+    text = search_service.search_iso_reference_by_standard(
+        query=query,
+        standard=_22123_VOCAB_STANDARD,
+        max_results=2,
+    )
+    if text:
+        return f"\n\n[ISO 22123-1 Vocabulary definitions]\n{text}"
+    return ""
+
+
 def _build_iso_text(db: DBSession, framework, group: ControlGroup) -> str:
     """Build ISO control text for a group (title + description of linked controls)."""
     control_ids: list[str] = group.stacked_control_ids or []
@@ -854,6 +896,9 @@ gaps: list up to 3 specific missing topics; empty list [] if score>=85."""
         product_label = group.product_family.value.lower() if group.product_family else "isms"
         standard_name = _standard_names.get(group.product_family, "ISO 27001:2022")
         iso_text = _build_iso_text(db, framework, group)
+        # For cloud/sec product families, augment ISO text with ISO 22123 cloud concepts
+        if group.product_family in (ProductFamily.CLOUD, ProductFamily.SEC) and os_available:
+            iso_text += _fetch_22123_cloud_context(os_client, group.name)
         impl_text = _fetch_group_full_text(os_client, group.group_code, language="en")[:3000] if os_available else ""
 
         if not impl_text:
@@ -878,7 +923,7 @@ gaps: list up to 3 specific missing topics; empty list [] if score>=85."""
 
         prompt = _PROMPT_TEMPLATE.format(
             standard_name=standard_name,
-            iso_text=iso_text[:600],
+            iso_text=iso_text[:800],
             impl_text=impl_text,
         )
 
@@ -1068,7 +1113,16 @@ def _fetch_crosswalk_reference_text(
     target_controls = db.execute(target_q).scalars().all()
 
     parts = [f"{tc.title} {tc.description or ''}".strip() for tc in target_controls]
-    return " ".join(parts)
+    crosswalk_text = " ".join(parts)
+
+    # For cloud/sec product families, append ISO 22123-1 vocabulary definitions
+    # so the QA engine understands CSP/CSC/SLA terminology in the crosswalk targets
+    if group.product_family in (ProductFamily.CLOUD, ProductFamily.SEC):
+        vocab_text = _fetch_22123_vocabulary_defs(None, crosswalk_text or group.name)
+        if vocab_text:
+            crosswalk_text += vocab_text
+
+    return crosswalk_text
 
 
 def _get_project_control_groups(db: DBSession, project_id: uuid.UUID) -> list:

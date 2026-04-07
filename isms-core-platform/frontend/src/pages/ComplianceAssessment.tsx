@@ -33,8 +33,18 @@ const SEAL_SCORE_LABELS: Record<number, string> = {
   4: 'Full Digital Sovereignty',
 }
 
+const COBIT_SCORE_LABELS: Record<number, string> = {
+  0: 'Incomplete',
+  1: 'Performed',
+  2: 'Managed',
+  3: 'Established',
+  4: 'Optimizing',
+}
+
 function resolveScoreLabels(frameworkCode: string): Record<number, string> {
-  return frameworkCode === 'EU_CLOUD_SOV' ? SEAL_SCORE_LABELS : SCORE_LABELS
+  if (frameworkCode === 'EU_CLOUD_SOV') return SEAL_SCORE_LABELS
+  if (frameworkCode === 'COBIT_2019') return COBIT_SCORE_LABELS
+  return SCORE_LABELS
 }
 
 const SCORE_COLORS: Record<number, string> = {
@@ -144,6 +154,13 @@ const FRAMEWORK_META: Record<string, { name: string; subtitle: string; color: st
     color: '#01579B',
     description: 'European Commission Cloud Sovereignty Framework (DG DIGIT) — 8 Sovereignty Objectives assessed via SEAL-0 to SEAL-4. Defines minimum assurance levels and a weighted Sovereignty Score for cloud service procurement. Draws on Gaia-X, ENISA/NIS2/DORA, CIGREF Trusted Cloud Referential, and national sovereignty strategies.',
     scoreLabels: SEAL_SCORE_LABELS,
+  },
+  COBIT_2019: {
+    name: 'COBIT 2019',
+    subtitle: 'ISACA — EGIT Framework',
+    color: '#7B1FA2',
+    description: 'ISACA EGIT framework — 40 governance and management objectives across 5 domains: EDM, APO, BAI, DSS and MEA. Capability levels 0 (Incomplete) to 4 (Optimizing).',
+    scoreLabels: COBIT_SCORE_LABELS,
   },
 }
 
@@ -334,7 +351,7 @@ function groupRequirements(requirements: FullAssessment['requirements'], framewo
   if (frameworkCode === 'EU_CLOUD_SOV') {
     return [{ groupId: 'all', groupTitle: 'Cloud Sovereignty Objectives — SOV-1 to SOV-8', requirements }]
   }
-  if (frameworkCode === 'DORA' || frameworkCode === 'CIS_V8' || frameworkCode === 'BSI_IT_GRUNDSCHUTZ') {
+  if (frameworkCode === 'DORA' || frameworkCode === 'CIS_V8' || frameworkCode === 'BSI_IT_GRUNDSCHUTZ' || frameworkCode === 'COBIT_2019') {
     // Group by group_id (chapter / IG / layer)
     const map = new Map<string, GroupedReq>()
     for (const r of requirements) {

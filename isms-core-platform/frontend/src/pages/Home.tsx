@@ -70,6 +70,7 @@ const COMPLIANCE_TOOLS = [
   { label: 'EU CRA',          path: '/cra',      icon: <SecurityOutlined sx={{ fontSize: 17 }} /> },
   { label: 'EU AI Act',       path: '/ai-act',   icon: <PolicyOutlined sx={{ fontSize: 17 }} /> },
   { label: 'EU Cloud Sov.',  path: '/eu-cloud-sov', icon: <CloudOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'COBIT 2019',    path: '/cobit',         icon: <AccountBalanceOutlined sx={{ fontSize: 17 }} /> },
 ]
 
 const PRODUCT_STANDARDS = {
