@@ -1,10 +1,12 @@
 import uuid
 
-from fastapi import APIRouter, Depends, HTTPException, Request, status
+from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
+from fastapi.responses import JSONResponse
 from jose import JWTError
 from pydantic import BaseModel
 from sqlalchemy.orm import Session as DBSession
 
+from src.core.config import get_settings
 from src.core.dependencies import get_current_user
 from src.core.limiter import limiter
 from src.database.session import get_db
@@ -17,7 +19,6 @@ from src.schemas.auth import (
     MfaLoginResponse,
     MfaSetupResponse,
     MfaVerifyRequest,
-    RefreshRequest,
     TokenResponse,
 )
 from src.schemas.users import (
@@ -29,6 +30,22 @@ from src.schemas.users import (
 from src.services.auth_service import authenticate_user, create_token_pair, refresh_tokens
 
 router = APIRouter(prefix="/auth", tags=["auth"])
+
+
+def _token_response_with_cookie(tokens: dict) -> JSONResponse:
+    """Build a JSON response with access_token body + refresh_token as HttpOnly cookie."""
+    settings = get_settings()
+    resp = JSONResponse({"access_token": tokens["access_token"], "token_type": "bearer"})
+    resp.set_cookie(
+        key="refresh_token",
+        value=tokens["refresh_token"],
+        httponly=True,
+        secure=settings.cookie_secure,
+        samesite="strict",
+        path="/api/v1/auth",
+        max_age=settings.refresh_token_expire_minutes * 60,
+    )
+    return resp
 
 
 @router.post("/login")
@@ -44,14 +61,20 @@ def login(request: Request, body: LoginRequest, db: DBSession = Depends(get_db))
         from src.services.mfa_service import create_mfa_token
         mfa_token = create_mfa_token(user.id)
         return MfaLoginResponse(mfa_token=mfa_token)
-    return create_token_pair(user)
+    return _token_response_with_cookie(create_token_pair(user))
 
 
-@router.post("/refresh", response_model=TokenResponse)
+@router.post("/refresh")
 @limiter.limit("20/minute")
-def refresh(request: Request, body: RefreshRequest, db: DBSession = Depends(get_db)):
+def refresh(request: Request, db: DBSession = Depends(get_db)):
+    refresh_token = request.cookies.get("refresh_token")
+    if not refresh_token:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="No refresh token",
+        )
     try:
-        result = refresh_tokens(db, body.refresh_token)
+        result = refresh_tokens(db, refresh_token)
     except JWTError as e:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -62,7 +85,13 @@ def refresh(request: Request, body: RefreshRequest, db: DBSession = Depends(get_
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Could not refresh token",
         )
-    return result
+    return _token_response_with_cookie(result)
+
+
+@router.post("/logout", status_code=204)
+def logout(response: Response):
+    """Clear the HttpOnly refresh token cookie."""
+    response.delete_cookie(key="refresh_token", path="/api/v1/auth")
 
 
 # ---------------------------------------------------------------------------
@@ -284,7 +313,7 @@ def mfa_verify(
         if not verify_totp(user.mfa_secret, code):
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid TOTP code")
 
-    return create_token_pair(user)
+    return _token_response_with_cookie(create_token_pair(user))
 
 
 @router.post("/mfa/backup-codes/regenerate", response_model=MfaBackupCodesResponse)

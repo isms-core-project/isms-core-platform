@@ -1,4 +1,5 @@
 import { client } from './client'
+import { tokenStore } from './tokenStore'
 
 export interface ChatMessage {
   role: 'user' | 'assistant'
@@ -26,7 +27,7 @@ export const aiApi = {
     onDone: () => void,
     signal?: AbortSignal,
   ) => {
-    const token = localStorage.getItem('access_token')
+    const token = tokenStore.get()
     const res = await fetch('/api/v1/ai/chat', {
       method: 'POST',
       headers: {

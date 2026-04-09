@@ -9,8 +9,8 @@ export interface LoginRequest {
 
 export interface TokenResponse {
   access_token: string
-  refresh_token: string
   token_type: string
+  // refresh_token is delivered via HttpOnly cookie — not in the response body
 }
 
 export interface UserInfo {

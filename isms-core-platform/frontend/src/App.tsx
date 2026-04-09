@@ -64,7 +64,8 @@ const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const { isAuthenticated } = useAuth()
+  const { isAuthenticated, isLoading } = useAuth()
+  if (isLoading) return null   // wait for silent refresh before deciding
   return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />
 }
 

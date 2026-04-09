@@ -13,8 +13,23 @@ export function isMfaRequired(r: LoginResponse): r is MfaLoginResponse {
 }
 
 export async function login(data: LoginRequest): Promise<LoginResponse> {
-  const res = await axios.post<LoginResponse>('/api/v1/auth/login', data)
+  const res = await axios.post<LoginResponse>('/api/v1/auth/login', data, { withCredentials: true })
   return res.data
+}
+
+/** Re-issue access token using the HttpOnly refresh cookie. Returns null on failure. */
+export async function silentRefresh(): Promise<TokenResponse | null> {
+  try {
+    const res = await axios.post<TokenResponse>('/api/v1/auth/refresh', {}, { withCredentials: true })
+    return res.data
+  } catch {
+    return null
+  }
+}
+
+/** Clear the server-side refresh cookie. */
+export async function logoutApi(): Promise<void> {
+  await axios.post('/api/v1/auth/logout', {}, { withCredentials: true }).catch(() => {})
 }
 
 // Decode JWT payload (no signature verification — client-side only)
@@ -33,6 +48,7 @@ export async function verifyMfa(mfa_token: string, code: string): Promise<TokenR
   const res = await fetch('/api/v1/auth/mfa/verify', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
     body: JSON.stringify({ mfa_token, code }),
   })
   if (!res.ok) {

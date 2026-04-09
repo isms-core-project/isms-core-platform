@@ -1,6 +1,7 @@
-import { createContext, useContext, useState, useCallback, type ReactNode } from 'react'
+import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react'
 import type { UserInfo } from '../api/types'
-import { login as apiLogin, verifyMfa, isMfaRequired, decodeJwtPayload } from '../api/auth'
+import { login as apiLogin, verifyMfa, isMfaRequired, decodeJwtPayload, silentRefresh, logoutApi } from '../api/auth'
+import { tokenStore } from '../api/tokenStore'
 
 interface AuthState {
   user: UserInfo | null
@@ -13,22 +14,10 @@ interface AuthContextValue extends AuthState {
   logout: () => void
   isAuthenticated: boolean
   isSuperAdmin: boolean
+  isLoading: boolean
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null)
-
-function loadStoredAuth(): AuthState {
-  try {
-    const token = localStorage.getItem('access_token')
-    const userJson = localStorage.getItem('user')
-    if (token && userJson) {
-      return { token, user: JSON.parse(userJson) }
-    }
-  } catch {
-    // ignore
-  }
-  return { token: null, user: null }
-}
 
 function userFromToken(token: string): UserInfo {
   const payload = decodeJwtPayload(token)
@@ -44,35 +33,42 @@ function userFromToken(token: string): UserInfo {
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [auth, setAuth] = useState<AuthState>(loadStoredAuth)
+  const [auth, setAuth] = useState<AuthState>({ token: null, user: null })
+  const [isLoading, setIsLoading] = useState(true)
+
+  // On mount: try to rehydrate from the HttpOnly refresh cookie
+  useEffect(() => {
+    silentRefresh()
+      .then((res) => {
+        if (res) {
+          const user = userFromToken(res.access_token)
+          tokenStore.set(res.access_token)
+          setAuth({ token: res.access_token, user })
+        }
+      })
+      .finally(() => setIsLoading(false))
+  }, [])
 
   const login = useCallback(async (email: string, password: string) => {
     const response = await apiLogin({ email, password })
     if (isMfaRequired(response)) {
-      // Signal to Login page that MFA is needed — throw a special object
       throw { mfa_required: true, mfa_token: response.mfa_token }
     }
-    // Normal flow
     const user = userFromToken(response.access_token)
-    localStorage.setItem('access_token', response.access_token)
-    localStorage.setItem('refresh_token', response.refresh_token)
-    localStorage.setItem('user', JSON.stringify(user))
+    tokenStore.set(response.access_token)
     setAuth({ token: response.access_token, user })
   }, [])
 
   const loginMfa = useCallback(async (mfaToken: string, code: string) => {
     const response = await verifyMfa(mfaToken, code)
     const user = userFromToken(response.access_token)
-    localStorage.setItem('access_token', response.access_token)
-    localStorage.setItem('refresh_token', response.refresh_token)
-    localStorage.setItem('user', JSON.stringify(user))
+    tokenStore.set(response.access_token)
     setAuth({ token: response.access_token, user })
   }, [])
 
   const logout = useCallback(() => {
-    localStorage.removeItem('access_token')
-    localStorage.removeItem('refresh_token')
-    localStorage.removeItem('user')
+    logoutApi()
+    tokenStore.set(null)
     setAuth({ token: null, user: null })
   }, [])
 
@@ -80,7 +76,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ ...auth, login, loginMfa, logout, isAuthenticated: !!auth.token, isSuperAdmin }}
+      value={{ ...auth, login, loginMfa, logout, isAuthenticated: !!auth.token, isSuperAdmin, isLoading }}
     >
       {children}
     </AuthContext.Provider>

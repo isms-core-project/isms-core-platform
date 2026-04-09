@@ -17,6 +17,8 @@ class Settings(BaseSettings):
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 60
     refresh_token_expire_minutes: int = 10080  # 7 days
+    # Set True when the platform is served over HTTPS
+    cookie_secure: bool = False
 
     # Paths (read-only mounts)
     isms_data_path: str = "/app/isms-data"
