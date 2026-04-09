@@ -46,6 +46,9 @@ config.ini
 !generate_*password*
 !generate_*secret*
 !generate_*token*
+# Allow platform source files that contain 'token' in the name
+!*tokenStore*
+!*tokenStore.ts
 
 # Temporary Files
 *.tmp
