@@ -27,6 +27,7 @@ from src.schemas.feeds import (
     MitreAttackStats,
     MitreTechniqueList,
     MitreTechniqueRead,
+    NvdCpeEntry,
     NvdCpeList,
     NvdCpeStats,
     NvdCveEntry,
