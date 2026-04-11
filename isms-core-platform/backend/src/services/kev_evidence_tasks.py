@@ -34,7 +34,7 @@ def _get_a88_control_group(db: DBSession) -> ControlGroup | None:
     """Look up the A.8.8 control group."""
     return db.scalars(
         select(ControlGroup).where(
-            ControlGroup.code == TARGET_CONTROL_CODE
+            ControlGroup.group_code == TARGET_CONTROL_CODE
         ).limit(1)
     ).first()
 
