@@ -1,4 +1,4 @@
-"""SQLAlchemy models for Phase 25 — Threat Intelligence & Vulnerability Feeds."""
+"""SQLAlchemy models for Phase 25/28 — Threat Intelligence & Vulnerability Feeds."""
 
 import uuid
 from datetime import date, datetime
@@ -65,6 +65,101 @@ class CisaKevEntry(Base):
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class MitreGroup(Base):
+    """Phase 28 — MITRE ATT&CK intrusion-set objects (threat actor groups)."""
+    __tablename__ = "mitre_groups"
+    __table_args__ = (
+        UniqueConstraint("stix_id", "source", name="uq_mitre_groups_stix_source"),
+        Index("ix_mitre_groups_source",   "source"),
+        Index("ix_mitre_groups_group_id", "group_id"),
+    )
+
+    id: Mapped[uuid.UUID]    = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    stix_id: Mapped[str]     = mapped_column(String(100), nullable=False)
+    source: Mapped[str]      = mapped_column(String(30),  nullable=False)
+    group_id: Mapped[str]    = mapped_column(String(20),  nullable=False)
+    name: Mapped[str]        = mapped_column(String(255), nullable=False)
+    description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    aliases: Mapped[list]    = mapped_column(JSONB, nullable=False, default=list)
+    deprecated: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    url: Mapped[str | None]  = mapped_column(String(512), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class MitreSoftware(Base):
+    """Phase 28 — MITRE ATT&CK malware + tool objects."""
+    __tablename__ = "mitre_software"
+    __table_args__ = (
+        UniqueConstraint("stix_id", "source", name="uq_mitre_software_stix_source"),
+        Index("ix_mitre_software_source",      "source"),
+        Index("ix_mitre_software_software_id", "software_id"),
+        Index("ix_mitre_software_type",        "software_type"),
+    )
+
+    id: Mapped[uuid.UUID]         = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    stix_id: Mapped[str]          = mapped_column(String(100), nullable=False)
+    source: Mapped[str]           = mapped_column(String(30),  nullable=False)
+    software_id: Mapped[str]      = mapped_column(String(20),  nullable=False)
+    name: Mapped[str]             = mapped_column(String(255), nullable=False)
+    software_type: Mapped[str]    = mapped_column(String(20),  nullable=False)  # malware | tool
+    description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    aliases: Mapped[list]         = mapped_column(JSONB, nullable=False, default=list)
+    platforms: Mapped[list]       = mapped_column(JSONB, nullable=False, default=list)
+    deprecated: Mapped[bool]      = mapped_column(Boolean, nullable=False, default=False)
+    url: Mapped[str | None]       = mapped_column(String(512), nullable=True)
+    created_at: Mapped[datetime]  = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime]  = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class MitreCampaign(Base):
+    """Phase 28 — MITRE ATT&CK campaign objects."""
+    __tablename__ = "mitre_campaigns"
+    __table_args__ = (
+        UniqueConstraint("stix_id", "source", name="uq_mitre_campaigns_stix_source"),
+        Index("ix_mitre_campaigns_source",      "source"),
+        Index("ix_mitre_campaigns_campaign_id", "campaign_id"),
+    )
+
+    id: Mapped[uuid.UUID]    = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    stix_id: Mapped[str]     = mapped_column(String(100), nullable=False)
+    source: Mapped[str]      = mapped_column(String(30),  nullable=False)
+    campaign_id: Mapped[str] = mapped_column(String(20),  nullable=False)
+    name: Mapped[str]        = mapped_column(String(255), nullable=False)
+    description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    aliases: Mapped[list]    = mapped_column(JSONB, nullable=False, default=list)
+    first_seen: Mapped[date | None] = mapped_column(Date, nullable=True)
+    last_seen: Mapped[date | None]  = mapped_column(Date, nullable=True)
+    deprecated: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    url: Mapped[str | None]  = mapped_column(String(512), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class MitreRelationship(Base):
+    """Phase 28 — MITRE ATT&CK relationship objects (group→technique, software→technique, etc.)."""
+    __tablename__ = "mitre_relationships"
+    __table_args__ = (
+        UniqueConstraint("stix_id", "source", name="uq_mitre_relationships_stix_source"),
+        Index("ix_mitre_rel_source",     "source"),
+        Index("ix_mitre_rel_type",       "relationship_type"),
+        Index("ix_mitre_rel_source_ref", "source_ref"),
+        Index("ix_mitre_rel_target_ref", "target_ref"),
+    )
+
+    id: Mapped[uuid.UUID]            = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    stix_id: Mapped[str]             = mapped_column(String(100), nullable=False)
+    source: Mapped[str]              = mapped_column(String(30),  nullable=False)
+    relationship_type: Mapped[str]   = mapped_column(String(50),  nullable=False)
+    source_ref: Mapped[str]          = mapped_column(String(100), nullable=False)
+    target_ref: Mapped[str]          = mapped_column(String(100), nullable=False)
+    source_type: Mapped[str]         = mapped_column(String(50),  nullable=False)
+    target_type: Mapped[str]         = mapped_column(String(50),  nullable=False)
+    description: Mapped[str | None]  = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime]     = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime]     = mapped_column(DateTime(timezone=True), nullable=False)
 
 
 class EpssScore(Base):

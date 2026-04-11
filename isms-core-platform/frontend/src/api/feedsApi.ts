@@ -110,6 +110,83 @@ export interface KevAuditReport {
   entries: KevAuditEntry[]
 }
 
+// ── Phase 28 — MITRE Groups / Software / Campaigns ───────────────────────────
+
+export interface MitreGroup {
+  id: string
+  stix_id: string
+  source: string
+  group_id: string
+  name: string
+  description: string | null
+  aliases: string[]
+  deprecated: boolean
+  url: string | null
+}
+
+export interface MitreGroupList {
+  items: MitreGroup[]
+  total: number
+  page: number
+  per_page: number
+}
+
+export interface MitreGroupStats {
+  total_groups: number
+  deprecated_count: number
+  sources: string[]
+}
+
+export interface MitreSoftware {
+  id: string
+  stix_id: string
+  source: string
+  software_id: string
+  name: string
+  software_type: string
+  description: string | null
+  aliases: string[]
+  platforms: string[]
+  deprecated: boolean
+  url: string | null
+}
+
+export interface MitreSoftwareList {
+  items: MitreSoftware[]
+  total: number
+  page: number
+  per_page: number
+}
+
+export interface MitreSoftwareStats {
+  total_software: number
+  malware_count: number
+  tool_count: number
+  deprecated_count: number
+  sources: string[]
+}
+
+export interface MitreCampaign {
+  id: string
+  stix_id: string
+  source: string
+  campaign_id: string
+  name: string
+  description: string | null
+  aliases: string[]
+  first_seen: string | null
+  last_seen: string | null
+  deprecated: boolean
+  url: string | null
+}
+
+export interface MitreCampaignList {
+  items: MitreCampaign[]
+  total: number
+  page: number
+  per_page: number
+}
+
 export const feedsApi = {
   getStatus: () =>
     client.get<FeedStatusResponse>('/feeds/status').then(r => r.data),
@@ -159,6 +236,43 @@ export const feedsApi = {
 
   getKevAuditReport: (months = 12) =>
     client.get<KevAuditReport>('/feeds/kev/audit-report', { params: { months } }).then(r => r.data),
+
+  // Phase 28 — MITRE Groups
+  getMitreGroups: (params: {
+    source?: string
+    search?: string
+    deprecated?: boolean
+    page?: number
+    per_page?: number
+  }) =>
+    client.get<MitreGroupList>('/feeds/mitre/groups', { params }).then(r => r.data),
+
+  getMitreGroupStats: () =>
+    client.get<MitreGroupStats>('/feeds/mitre/groups/stats').then(r => r.data),
+
+  // Phase 28 — MITRE Software
+  getMitreSoftware: (params: {
+    source?: string
+    software_type?: string
+    search?: string
+    deprecated?: boolean
+    page?: number
+    per_page?: number
+  }) =>
+    client.get<MitreSoftwareList>('/feeds/mitre/software', { params }).then(r => r.data),
+
+  getMitreSoftwareStats: () =>
+    client.get<MitreSoftwareStats>('/feeds/mitre/software/stats').then(r => r.data),
+
+  // Phase 28 — MITRE Campaigns
+  getMitreCampaigns: (params: {
+    source?: string
+    search?: string
+    deprecated?: boolean
+    page?: number
+    per_page?: number
+  }) =>
+    client.get<MitreCampaignList>('/feeds/mitre/campaigns', { params }).then(r => r.data),
 
   // Phase 27 — NVD CVE / CPE
   getNvdIndexStats: () =>

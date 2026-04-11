@@ -150,12 +150,15 @@ const NAV_FRAMEWORKS: NavItem[] = [
   { label: 'COBIT 2019',            path: '/cobit',           icon: <AccountBalanceOutlined /> },
 ]
 
-// ── Intelligence (Phase 25) ───────────────────────────────────────────────────
+// ── Intelligence (Phase 25/28) ────────────────────────────────────────────────
 const NAV_INTELLIGENCE: NavItem[] = [
-  { label: 'Threat Feeds',   path: '/threat-feeds',    icon: <StreamOutlined /> },
-  { label: 'MITRE ATT&CK',   path: '/mitre-attack',    icon: <BugReportOutlined /> },
-  { label: 'MITRE ATLAS',    path: '/mitre-atlas',     icon: <TravelExploreOutlined /> },
-  { label: 'CVE / CPE',      path: '/cve-explorer',    icon: <ManageSearchOutlined /> },
+  { label: 'Threat Feeds',      path: '/threat-feeds',     icon: <StreamOutlined /> },
+  { label: 'MITRE ATT&CK',      path: '/mitre-attack',     icon: <BugReportOutlined /> },
+  { label: 'MITRE Groups',      path: '/mitre-groups',     icon: <PeopleOutlined /> },
+  { label: 'MITRE Software',    path: '/mitre-software',   icon: <CodeOutlined /> },
+  { label: 'MITRE Campaigns',   path: '/mitre-campaigns',  icon: <InsightsOutlined /> },
+  { label: 'MITRE ATLAS',       path: '/mitre-atlas',      icon: <TravelExploreOutlined /> },
+  { label: 'CVE / CPE',         path: '/cve-explorer',     icon: <ManageSearchOutlined /> },
 ]
 
 // ── Suppliers / TPRM (Phase 16+) ──────────────────────────────────────────────
@@ -203,7 +206,7 @@ const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generator
 const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/uk-nis', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit']
 const SUPPLIER_PATHS   = ['/tprm']
 const ADMIN_PATHS        = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker']
-const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/cve-explorer']
+const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/mitre-groups', '/mitre-software', '/mitre-campaigns', '/cve-explorer']
 const ALL_PLATFORM_PATHS = [...RISK_PATHS, ...TOOLS_PATHS, ...FRAMEWORK_PATHS, ...SUPPLIER_PATHS, ...ADMIN_PATHS, ...INTELLIGENCE_PATHS]
 
 // ── Notification prefs dialog ─────────────────────────────────────────────────

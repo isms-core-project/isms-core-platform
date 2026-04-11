@@ -57,6 +57,9 @@ import Help from './pages/Help'
 import ThreatFeeds from './pages/ThreatFeeds'
 import MitreAttack from './pages/MitreAttack'
 import MitreAtlas from './pages/MitreAtlas'
+import MitreGroups from './pages/MitreGroups'
+import MitreSoftware from './pages/MitreSoftware'
+import MitreCampaigns from './pages/MitreCampaigns'
 import CVEExplorer from './pages/CVEExplorer'
 import CloudGlossary from './pages/CloudGlossary'
 import Cobit from './pages/Cobit'
@@ -139,6 +142,9 @@ export default function App() {
         <Route path="threat-feeds" element={<ThreatFeeds />} />
         <Route path="mitre-attack" element={<MitreAttack />} />
         <Route path="mitre-atlas" element={<MitreAtlas />} />
+        <Route path="mitre-groups" element={<MitreGroups />} />
+        <Route path="mitre-software" element={<MitreSoftware />} />
+        <Route path="mitre-campaigns" element={<MitreCampaigns />} />
         <Route path="cve-explorer" element={<CVEExplorer />} />
         <Route path="cloud-glossary" element={<CloudGlossary />} />
         <Route path="cobit" element={<Cobit />} />

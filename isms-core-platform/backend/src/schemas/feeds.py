@@ -225,3 +225,90 @@ class NvdIndexStats(BaseModel):
 class FeedSettings(BaseModel):
     """Platform-level feed toggle settings (stored in platform_settings table)."""
     feeds_cpe_full: bool
+
+
+# ── MITRE Groups (Phase 28) ────────────────────────────────────────────────────
+
+class MitreGroupRead(BaseModel):
+    id: uuid.UUID
+    stix_id: str
+    source: str
+    group_id: str
+    name: str
+    description: str | None
+    aliases: list[str]
+    deprecated: bool
+    url: str | None
+
+    model_config = {"from_attributes": True}
+
+
+class MitreGroupList(BaseModel):
+    items: list[MitreGroupRead]
+    total: int
+    page: int
+    per_page: int
+
+
+class MitreGroupStats(BaseModel):
+    total_groups: int
+    deprecated_count: int
+    sources: list[str]
+
+
+# ── MITRE Software (Phase 28) ──────────────────────────────────────────────────
+
+class MitreSoftwareRead(BaseModel):
+    id: uuid.UUID
+    stix_id: str
+    source: str
+    software_id: str
+    name: str
+    software_type: str
+    description: str | None
+    aliases: list[str]
+    platforms: list[str]
+    deprecated: bool
+    url: str | None
+
+    model_config = {"from_attributes": True}
+
+
+class MitreSoftwareList(BaseModel):
+    items: list[MitreSoftwareRead]
+    total: int
+    page: int
+    per_page: int
+
+
+class MitreSoftwareStats(BaseModel):
+    total_software: int
+    malware_count: int
+    tool_count: int
+    deprecated_count: int
+    sources: list[str]
+
+
+# ── MITRE Campaigns (Phase 28) ─────────────────────────────────────────────────
+
+class MitreCampaignRead(BaseModel):
+    id: uuid.UUID
+    stix_id: str
+    source: str
+    campaign_id: str
+    name: str
+    description: str | None
+    aliases: list[str]
+    first_seen: date | None
+    last_seen: date | None
+    deprecated: bool
+    url: str | None
+
+    model_config = {"from_attributes": True}
+
+
+class MitreCampaignList(BaseModel):
+    items: list[MitreCampaignRead]
+    total: int
+    page: int
+    per_page: int

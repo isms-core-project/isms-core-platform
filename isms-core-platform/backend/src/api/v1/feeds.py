@@ -10,7 +10,10 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session as DBSession
 from src.core.dependencies import get_current_user, require_admin
 from src.database.session import get_db
-from src.domain.feeds import CisaKevEntry, EpssScore, FeedRun, MitreTechnique
+from src.domain.feeds import (
+    CisaKevEntry, EpssScore, FeedRun, MitreTechnique,
+    MitreGroup, MitreSoftware, MitreCampaign,
+)
 from src.domain.system import PlatformSetting
 from src.domain.users import User
 from src.schemas.feeds import (
@@ -27,6 +30,9 @@ from src.schemas.feeds import (
     MitreAttackStats,
     MitreTechniqueList,
     MitreTechniqueRead,
+    MitreGroupRead, MitreGroupList, MitreGroupStats,
+    MitreSoftwareRead, MitreSoftwareList, MitreSoftwareStats,
+    MitreCampaignRead, MitreCampaignList,
     NvdCpeEntry,
     NvdCpeList,
     NvdCpeStats,
@@ -219,6 +225,147 @@ def get_atlas_stats(
         "total_techniques": len(rows),
         "tactic_counts": dict(tactic_counts.most_common()),
     }
+
+
+# ── MITRE Groups (Phase 28) ───────────────────────────────────────────────────
+
+@router.get("/mitre/groups", response_model=MitreGroupList)
+def list_mitre_groups(
+    source: str = Query("attack_v18", description="attack_v18 | attack_v19"),
+    search: str | None = Query(None),
+    deprecated: bool = Query(False),
+    page: int = Query(1, ge=1),
+    per_page: int = Query(50, ge=1, le=200),
+    db: DBSession = Depends(get_db),
+    _current_user: User = Depends(get_current_user),
+):
+    stmt = select(MitreGroup).where(MitreGroup.source == source)
+    if not deprecated:
+        stmt = stmt.where(MitreGroup.deprecated.is_(False))
+    if search:
+        q = f"%{search.lower()}%"
+        stmt = stmt.where(
+            MitreGroup.name.ilike(q) | MitreGroup.group_id.ilike(q)
+        )
+    stmt = stmt.order_by(MitreGroup.group_id)
+
+    total = db.scalar(select(func.count()).select_from(stmt.subquery()))
+    items = db.scalars(stmt.offset((page - 1) * per_page).limit(per_page)).all()
+
+    return MitreGroupList(
+        items=[MitreGroupRead.model_validate(i) for i in items],
+        total=total or 0,
+        page=page,
+        per_page=per_page,
+    )
+
+
+@router.get("/mitre/groups/stats", response_model=MitreGroupStats)
+def get_mitre_group_stats(
+    db: DBSession = Depends(get_db),
+    _current_user: User = Depends(get_current_user),
+):
+    rows = db.scalars(select(MitreGroup)).all()
+    sources: set[str] = set()
+    for g in rows:
+        sources.add(g.source)
+    total = len(rows)
+    dep = sum(1 for g in rows if g.deprecated)
+    return MitreGroupStats(
+        total_groups=total - dep,
+        deprecated_count=dep,
+        sources=sorted(sources),
+    )
+
+
+# ── MITRE Software (Phase 28) ──────────────────────────────────────────────────
+
+@router.get("/mitre/software", response_model=MitreSoftwareList)
+def list_mitre_software(
+    source: str = Query("attack_v18", description="attack_v18 | attack_v19"),
+    software_type: str | None = Query(None, description="malware | tool"),
+    search: str | None = Query(None),
+    deprecated: bool = Query(False),
+    page: int = Query(1, ge=1),
+    per_page: int = Query(50, ge=1, le=200),
+    db: DBSession = Depends(get_db),
+    _current_user: User = Depends(get_current_user),
+):
+    stmt = select(MitreSoftware).where(MitreSoftware.source == source)
+    if not deprecated:
+        stmt = stmt.where(MitreSoftware.deprecated.is_(False))
+    if software_type:
+        stmt = stmt.where(MitreSoftware.software_type == software_type)
+    if search:
+        q = f"%{search.lower()}%"
+        stmt = stmt.where(
+            MitreSoftware.name.ilike(q) | MitreSoftware.software_id.ilike(q)
+        )
+    stmt = stmt.order_by(MitreSoftware.software_id)
+
+    total = db.scalar(select(func.count()).select_from(stmt.subquery()))
+    items = db.scalars(stmt.offset((page - 1) * per_page).limit(per_page)).all()
+
+    return MitreSoftwareList(
+        items=[MitreSoftwareRead.model_validate(i) for i in items],
+        total=total or 0,
+        page=page,
+        per_page=per_page,
+    )
+
+
+@router.get("/mitre/software/stats", response_model=MitreSoftwareStats)
+def get_mitre_software_stats(
+    db: DBSession = Depends(get_db),
+    _current_user: User = Depends(get_current_user),
+):
+    rows = db.scalars(select(MitreSoftware)).all()
+    sources: set[str] = set()
+    for s in rows:
+        sources.add(s.source)
+    dep = sum(1 for s in rows if s.deprecated)
+    malware = sum(1 for s in rows if s.software_type == "malware" and not s.deprecated)
+    tool = sum(1 for s in rows if s.software_type == "tool" and not s.deprecated)
+    return MitreSoftwareStats(
+        total_software=malware + tool,
+        malware_count=malware,
+        tool_count=tool,
+        deprecated_count=dep,
+        sources=sorted(sources),
+    )
+
+
+# ── MITRE Campaigns (Phase 28) ─────────────────────────────────────────────────
+
+@router.get("/mitre/campaigns", response_model=MitreCampaignList)
+def list_mitre_campaigns(
+    source: str = Query("attack_v18", description="attack_v18 | attack_v19"),
+    search: str | None = Query(None),
+    deprecated: bool = Query(False),
+    page: int = Query(1, ge=1),
+    per_page: int = Query(50, ge=1, le=200),
+    db: DBSession = Depends(get_db),
+    _current_user: User = Depends(get_current_user),
+):
+    stmt = select(MitreCampaign).where(MitreCampaign.source == source)
+    if not deprecated:
+        stmt = stmt.where(MitreCampaign.deprecated.is_(False))
+    if search:
+        q = f"%{search.lower()}%"
+        stmt = stmt.where(
+            MitreCampaign.name.ilike(q) | MitreCampaign.campaign_id.ilike(q)
+        )
+    stmt = stmt.order_by(MitreCampaign.campaign_id)
+
+    total = db.scalar(select(func.count()).select_from(stmt.subquery()))
+    items = db.scalars(stmt.offset((page - 1) * per_page).limit(per_page)).all()
+
+    return MitreCampaignList(
+        items=[MitreCampaignRead.model_validate(i) for i in items],
+        total=total or 0,
+        page=page,
+        per_page=per_page,
+    )
 
 
 # ── CISA KEV ──────────────────────────────────────────────────────────────────
