@@ -5,11 +5,11 @@
 <h1 align="center">🎋 ISMS CORE — Compliance Assessment Modules</h1>
 
 <p align="center">
-  <strong>Eighteen built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
+  <strong>Nineteen built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Frameworks-18-2E8B57?style=flat-square" alt="18 Frameworks"/>
+  <img src="https://img.shields.io/badge/Frameworks-19-2E8B57?style=flat-square" alt="19 Frameworks"/>
   <img src="https://img.shields.io/badge/Requirements-650+-0066CC?style=flat-square" alt="650+ Requirements"/>
   <img src="https://img.shields.io/badge/Export-CSV_%7C_XLSX_%7C_PDF-FF6600?style=flat-square" alt="Export"/>
   <img src="https://img.shields.io/badge/Assessment_Collections-Grouping_%26_Reports-2E7D32?style=flat-square" alt="Collections"/>
@@ -19,7 +19,7 @@
 
 ## Overview
 
-ISMS CORE Platform includes a unified compliance assessment layer covering 18 built-in frameworks across Europe and North America, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
+ISMS CORE Platform includes a unified compliance assessment layer covering 19 built-in frameworks across Europe and North America, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
 
 Assessment results can be grouped into **Assessment Collections** — named bundles that aggregate status across multiple frameworks for reporting or audit purposes, with CSV, XLSX (colour-coded), and PDF (A4) export.
 
@@ -37,6 +37,7 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [CIS Controls v8](#cis-critical-security-controls-v8) | Best Practice | 153 safeguards | 18 Controls | 0–4 | Any sector |
 | [BSI IT-Grundschutz](#bsi-it-grundschutz-kompendium) | German standard | 68 Bausteine | 10 Layers | 0–4 | Germany / DACH / IT-Grundschutz cert |
 | [CSRM (NCSC CH)](#csrm-swiss-ncsc-2025) | Swiss NCSC | 20 baseline requirements | 5 CSF Functions | Binary | Swiss critical infrastructure |
+| [Swiss ISG (SR 128)](#swiss-isg-sr-128) | Swiss law | 27 requirements | 8 Sections | 0–4 | Swiss federal bodies & critical infrastructure operators |
 | [TISAX](#tisaxvida-isa-60) | VDA/ENX | 53 requirements | 12 Domains | 0–4 | Automotive supply chain |
 | [Swiss nDSG](#swiss-ndsg-2023) | Swiss law | 25 provisions | 6 Chapters | 0–4 | Organisations processing Swiss personal data |
 | [EU Cyber Resilience Act](#eu-cyber-resilience-act-20242847) | EU Regulation | 26 requirements | 6 Groups | 0–4 | EU product manufacturers |
@@ -221,6 +222,32 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 - Full TISAX assessment and label issuance requires engagement with an ENX-accredited auditor
 - This module is a self-assessment tool for readiness preparation, not a substitute for official TISAX assessment
 - Assessment labels (TISAX, AL1/AL2/AL3) are only issued through ENX-accredited assessment service providers
+
+---
+
+### Swiss ISG (SR 128)
+
+**Source:** Bundesgesetz über die Informationssicherheit beim Bund (ISG) / Federal Act on Information Security (LSI), Switzerland — SR 128, in force 1 January 2024; cyberattack reporting obligation (Art. 74a–74h) in force 1 April 2025
+**Scope:** 27 assessable requirements across 8 sections: Information Security Principles (Art. 6–10a), Information Classification (Art. 11–15), ICT Security (Art. 16–19), Personnel & Access (Art. 20–21), Physical Security (Art. 22–23), Personnel Security Checks (Art. 27–30, 43), Cyberattack Reporting Obligation (Art. 74a–74h), ISMS Organisation (Art. 81, 85)
+**Scoring:** Maturity 0–4
+**Audience:** Swiss federal bodies (mandatory); critical infrastructure operators subject to the cyberattack reporting obligation under Art. 74b (energy, water, finance, transport, health, ICT); private organisations voluntarily aligning with Swiss federal security standards
+
+**Key obligations:**
+- **24-hour cyberattack reporting** — mandatory report to BACS/OFCS within 24 hours of detecting a cyberattack that jeopardises operations, involves data manipulation/exfiltration, was undetected for a prolonged period, or involves extortion (Art. 74d–74e)
+- **Information classification** — three-level scheme: internal / confidential / secret, with need-to-know access controls (Art. 11–14)
+- **ICT security categories** — baseline / elevated / very high, each with corresponding minimum security measures (Art. 17–18)
+- **Personnel security checks (PSC)** — base and extended clearance for sensitive functions; periodic repetition (Art. 27–43)
+- **ISB/RSSI appointment** — formal information security officer with advisory, directive, and compliance monitoring responsibility (Art. 81)
+- **Administrative sanction** — failure to report a cyberattack: up to CHF 100,000 (Art. 74h)
+
+**ISO 27001 crosswalk:** 40 mappings — ISO 27001:2022 controls map directly to ISG requirements; ISO 27001 is the recognised implementation vehicle for ISG compliance in practice.
+
+**Coverage notes:**
+- This module is relevant primarily to Swiss federal bodies and operators of critical infrastructure listed in Art. 74b
+- Private-sector organisations not subject to Art. 74b are not legally required to comply but may voluntarily adopt the framework as a Swiss security baseline
+- The cyberattack reporting obligation (Art. 74a–74h) is the most immediate compliance action for critical infrastructure operators — it entered into force 1 April 2025
+
+> **Note:** This module is a self-assessment tool. Official compliance determination requires review by a qualified Swiss information security practitioner.
 
 ---
 
