@@ -312,3 +312,23 @@ class MitreCampaignList(BaseModel):
     total: int
     page: int
     per_page: int
+
+
+# ── MITRE Heatmap (Phase 28) ───────────────────────────────────────────────────
+
+class MitreHeatmapTechnique(BaseModel):
+    technique_id: str
+    stix_id: str
+    name: str
+    tactics: list[str]
+    is_subtechnique: bool
+    usage_count: int
+    used_by: list[str]          # actor/software names (capped at 30)
+
+
+class MitreHeatmapResponse(BaseModel):
+    tactic_order: list[str]
+    techniques: list[MitreHeatmapTechnique]
+    covered: int                # techniques with usage_count > 0
+    total_techniques: int       # all non-deprecated techniques in source
+    selected_actors: int        # number of groups (+ software if enabled) in scope

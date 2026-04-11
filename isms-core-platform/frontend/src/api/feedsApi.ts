@@ -274,6 +274,14 @@ export const feedsApi = {
   }) =>
     client.get<MitreCampaignList>('/feeds/mitre/campaigns', { params }).then(r => r.data),
 
+  // Phase 28 — MITRE Heatmap
+  getMitreHeatmap: (params: {
+    source?: string
+    group_ids?: string        // comma-separated group IDs, empty = all
+    include_software?: boolean
+  }) =>
+    client.get<MitreHeatmapResponse>('/feeds/mitre/heatmap', { params }).then(r => r.data),
+
   // Phase 27 — NVD CVE / CPE
   getNvdIndexStats: () =>
     client.get<NvdIndexStats>('/feeds/cve/index-stats').then(r => r.data),
@@ -318,6 +326,26 @@ export const feedsApi = {
 }
 
 // ── Phase 27 types ────────────────────────────────────────────────────────────
+
+// ── Phase 28 — MITRE Heatmap ──────────────────────────────────────────────────
+
+export interface MitreHeatmapTechnique {
+  technique_id: string
+  stix_id: string
+  name: string
+  tactics: string[]
+  is_subtechnique: boolean
+  usage_count: number
+  used_by: string[]
+}
+
+export interface MitreHeatmapResponse {
+  tactic_order: string[]
+  techniques: MitreHeatmapTechnique[]
+  covered: number
+  total_techniques: number
+  selected_actors: number
+}
 
 export interface NvdCveEntry {
   cve_id: string

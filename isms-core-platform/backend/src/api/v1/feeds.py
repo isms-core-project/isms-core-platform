@@ -12,7 +12,7 @@ from src.core.dependencies import get_current_user, require_admin
 from src.database.session import get_db
 from src.domain.feeds import (
     CisaKevEntry, EpssScore, FeedRun, MitreTechnique,
-    MitreGroup, MitreSoftware, MitreCampaign,
+    MitreGroup, MitreSoftware, MitreCampaign, MitreRelationship,
 )
 from src.domain.system import PlatformSetting
 from src.domain.users import User
@@ -33,6 +33,7 @@ from src.schemas.feeds import (
     MitreGroupRead, MitreGroupList, MitreGroupStats,
     MitreSoftwareRead, MitreSoftwareList, MitreSoftwareStats,
     MitreCampaignRead, MitreCampaignList,
+    MitreHeatmapTechnique, MitreHeatmapResponse,
     NvdCpeEntry,
     NvdCpeList,
     NvdCpeStats,
@@ -365,6 +366,107 @@ def list_mitre_campaigns(
         total=total or 0,
         page=page,
         per_page=per_page,
+    )
+
+
+# ── MITRE Heatmap (Phase 28) ──────────────────────────────────────────────────
+
+# Canonical ATT&CK tactic order (Enterprise)
+_TACTIC_ORDER = [
+    "reconnaissance", "resource-development", "initial-access", "execution",
+    "persistence", "privilege-escalation", "defense-evasion", "credential-access",
+    "discovery", "lateral-movement", "collection", "command-and-control",
+    "exfiltration", "impact",
+]
+
+
+@router.get("/mitre/heatmap", response_model=MitreHeatmapResponse)
+def get_mitre_heatmap(
+    source: str = Query("attack_v18", description="attack_v18 | attack_v19"),
+    group_ids: str | None = Query(None, description="Comma-separated group IDs (e.g. G0001,G0016). Empty = all groups."),
+    include_software: bool = Query(True, description="Also include malware/tool → technique relationships"),
+    db: DBSession = Depends(get_db),
+    _current_user: User = Depends(get_current_user),
+):
+    """Return technique usage heatmap data for selected threat actor groups.
+
+    When group_ids is empty, aggregates across all groups in the source.
+    usage_count = number of distinct actors (groups + software if enabled)
+    that have a 'uses' relationship to each technique.
+    """
+    from collections import defaultdict
+
+    # ── Build actor maps ──────────────────────────────────────────────────────
+    group_rows = db.scalars(
+        select(MitreGroup).where(MitreGroup.source == source, MitreGroup.deprecated.is_(False))
+    ).all()
+    group_stix_map: dict[str, str] = {g.stix_id: g.name for g in group_rows}  # stix_id → name
+
+    selected_ids = [gid.strip() for gid in group_ids.split(",")] if group_ids else []
+    if selected_ids:
+        active_group_stix = {g.stix_id for g in group_rows if g.group_id in selected_ids}
+    else:
+        active_group_stix = set(group_stix_map.keys())
+
+    software_stix_map: dict[str, str] = {}
+    if include_software:
+        sw_rows = db.scalars(
+            select(MitreSoftware).where(MitreSoftware.source == source, MitreSoftware.deprecated.is_(False))
+        ).all()
+        software_stix_map = {s.stix_id: s.name for s in sw_rows}
+
+    actor_stix_ids = active_group_stix | set(software_stix_map.keys())
+
+    # ── Fetch all 'uses' → attack-pattern relationships for this source ────────
+    rels = db.scalars(
+        select(MitreRelationship).where(
+            MitreRelationship.source == source,
+            MitreRelationship.relationship_type == "uses",
+            MitreRelationship.target_type == "attack-pattern",
+        )
+    ).all()
+
+    # ── Aggregate: target_ref → set[actor_name] ───────────────────────────────
+    tech_actors: dict[str, set[str]] = defaultdict(set)
+    for r in rels:
+        if r.source_ref not in actor_stix_ids:
+            continue
+        name = group_stix_map.get(r.source_ref) or software_stix_map.get(r.source_ref, "")
+        if name:
+            tech_actors[r.target_ref].add(name)
+
+    # ── Load all non-deprecated techniques ────────────────────────────────────
+    techniques = db.scalars(
+        select(MitreTechnique).where(
+            MitreTechnique.source == source,
+            MitreTechnique.deprecated.is_(False),
+        )
+    ).all()
+
+    stix_to_tech: dict[str, MitreTechnique] = {t.stix_id: t for t in techniques}
+
+    # ── Build response: include all techniques, coverage from relationships ────
+    result: list[MitreHeatmapTechnique] = []
+    for t in techniques:
+        actors = tech_actors.get(t.stix_id, set())
+        result.append(MitreHeatmapTechnique(
+            technique_id=t.technique_id,
+            stix_id=t.stix_id,
+            name=t.name,
+            tactics=t.tactics or [],
+            is_subtechnique=bool(t.is_subtechnique),
+            usage_count=len(actors),
+            used_by=sorted(actors)[:30],
+        ))
+
+    covered = sum(1 for r in result if r.usage_count > 0)
+
+    return MitreHeatmapResponse(
+        tactic_order=_TACTIC_ORDER,
+        techniques=result,
+        covered=covered,
+        total_techniques=len(techniques),
+        selected_actors=len(active_group_stix) + (len(software_stix_map) if include_software else 0),
     )
 
 
