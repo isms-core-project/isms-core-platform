@@ -38,6 +38,7 @@ import Cis from './pages/Cis'
 import Bsi from './pages/Bsi'
 import Tisax from './pages/Tisax'
 import Ndsg from './pages/Ndsg'
+import Isg from './pages/Isg'
 import Cra from './pages/Cra'
 import AiAct from './pages/AiAct'
 import CloudSovereignty from './pages/CloudSovereignty'
@@ -124,6 +125,7 @@ export default function App() {
         <Route path="bsi" element={<Bsi />} />
         <Route path="tisax" element={<Tisax />} />
         <Route path="ndsg" element={<Ndsg />} />
+        <Route path="isg" element={<Isg />} />
         <Route path="cra" element={<Cra />} />
         <Route path="ai-act" element={<AiAct />} />
         <Route path="eu-cloud-sov" element={<CloudSovereignty />} />

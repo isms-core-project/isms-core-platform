@@ -95,6 +95,11 @@ interface NavItem {
   notViewer?: boolean         // all roles except viewer
 }
 
+interface NavRegion {
+  label: string               // region display name (e.g. "Switzerland")
+  items: NavItem[]
+}
+
 // ── Per-product nav (shown inside each product section) ───────────────────────
 const PRODUCT_NAV: NavItem[] = [
   { label: 'Overview',        path: '/overview',    icon: <DashboardOutlined /> },
@@ -129,25 +134,66 @@ const NAV_TOOLS: NavItem[] = [
 ]
 
 // ── External compliance frameworks ────────────────────────────────────────────
-const NAV_FRAMEWORKS: NavItem[] = [
-  { label: 'NIST CSF 2.0',         path: '/nist-csf',       icon: <GridViewOutlined /> },
-  { label: 'NIS2',                  path: '/nis2',           icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
-  { label: 'DORA',                  path: '/dora',           icon: <AccountBalanceOutlined /> },
-  { label: 'UK NIS Regulations',    path: '/uk-nis',          icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
-  { label: 'UK Op. Resilience',     path: '/uk-op-resilience', icon: <AccountBalanceOutlined /> },
-  { label: 'CyberFundamentals (BE)', path: '/cyfun-be',       icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
-  { label: 'BaFin BAIT',            path: '/bafin-bait',      icon: <AccountBalanceOutlined /> },
-  { label: 'CSSF 20-750 (LU)',      path: '/cssf-lu',         icon: <AccountBalanceOutlined /> },
-  { label: 'ACN Guidelines (IT)',   path: '/acn-it',          icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
-  { label: 'CIS Controls',          path: '/cis',             icon: <SecurityOutlined /> },
-  { label: 'BSI IT-Grundschutz',    path: '/bsi',             icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
-  { label: 'CSRM (NCSC CH)',        path: '/csrm',           icon: <LockPersonOutlined /> },
-  { label: 'TISAX',                 path: '/tisax',          icon: <VerifiedOutlined /> },
-  { label: 'Swiss nDSG',            path: '/ndsg',           icon: <LockPersonOutlined /> },
-  { label: 'EU Cyber Resilience',   path: '/cra',            icon: <SecurityOutlined /> },
-  { label: 'EU AI Act',             path: '/ai-act',         icon: <PolicyOutlined /> },
-  { label: 'EU Cloud Sovereignty',  path: '/eu-cloud-sov',   icon: <CloudOutlined /> },
-  { label: 'COBIT 2019',            path: '/cobit',           icon: <AccountBalanceOutlined /> },
+const NAV_FRAMEWORK_REGIONS: NavRegion[] = [
+  {
+    label: 'Global',
+    items: [
+      { label: 'NIST CSF 2.0',      path: '/nist-csf',  icon: <GridViewOutlined /> },
+      { label: 'CIS Controls',       path: '/cis',       icon: <SecurityOutlined /> },
+      { label: 'TISAX',              path: '/tisax',     icon: <VerifiedOutlined /> },
+      { label: 'COBIT 2019',         path: '/cobit',     icon: <AccountBalanceOutlined /> },
+    ],
+  },
+  {
+    label: 'European Union',
+    items: [
+      { label: 'NIS2',               path: '/nis2',          icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+      { label: 'DORA',               path: '/dora',          icon: <AccountBalanceOutlined /> },
+      { label: 'EU Cyber Resilience', path: '/cra',          icon: <SecurityOutlined /> },
+      { label: 'EU AI Act',          path: '/ai-act',        icon: <PolicyOutlined /> },
+      { label: 'EU Cloud Sovereignty', path: '/eu-cloud-sov', icon: <CloudOutlined /> },
+    ],
+  },
+  {
+    label: 'Switzerland',
+    items: [
+      { label: 'Swiss ISG (SR 128)', path: '/isg',   icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+      { label: 'CSRM (NCSC CH)',     path: '/csrm',  icon: <LockPersonOutlined /> },
+      { label: 'Swiss nDSG',         path: '/ndsg',  icon: <LockPersonOutlined /> },
+    ],
+  },
+  {
+    label: 'United Kingdom',
+    items: [
+      { label: 'UK NIS Regulations', path: '/uk-nis',          icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+      { label: 'UK Op. Resilience',  path: '/uk-op-resilience', icon: <AccountBalanceOutlined /> },
+    ],
+  },
+  {
+    label: 'Germany',
+    items: [
+      { label: 'BaFin BAIT',         path: '/bafin-bait', icon: <AccountBalanceOutlined /> },
+      { label: 'BSI IT-Grundschutz', path: '/bsi',        icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+    ],
+  },
+  {
+    label: 'Belgium',
+    items: [
+      { label: 'CyberFundamentals',  path: '/cyfun-be', icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+    ],
+  },
+  {
+    label: 'Luxembourg',
+    items: [
+      { label: 'CSSF 20-750',        path: '/cssf-lu', icon: <AccountBalanceOutlined /> },
+    ],
+  },
+  {
+    label: 'Italy',
+    items: [
+      { label: 'ACN Guidelines',     path: '/acn-it', icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+    ],
+  },
 ]
 
 // ── Intelligence (Phase 25/28) ────────────────────────────────────────────────
@@ -204,7 +250,7 @@ const INTEL_COLOR       = '#B84F00'
 
 const RISK_PATHS       = ['/risk-register', '/remediation', '/metrics', '/bia', '/ebios']
 const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk', '/cloud-glossary']
-const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/uk-nis', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit']
+const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/uk-nis', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/isg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit']
 const SUPPLIER_PATHS   = ['/tprm']
 const ADMIN_PATHS        = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker']
 const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/mitre-groups', '/mitre-software', '/mitre-campaigns', '/mitre-heatmap', '/cve-explorer']
@@ -295,7 +341,8 @@ function NotificationPrefsDialog({ open, onClose }: { open: boolean; onClose: ()
 interface NavGroupProps {
   label: string
   icon: React.ReactNode
-  items: NavItem[]
+  items?: NavItem[]
+  regions?: NavRegion[]
   open: boolean
   onToggle: () => void
   collapsed: boolean           // sidebar mini mode
@@ -307,16 +354,68 @@ interface NavGroupProps {
   hasBadge?: boolean           // red alert dot
 }
 
-function NavGroup({ label, icon, items, open, onToggle, collapsed, color = PLATFORM_COLOR, currentUser, isSuperAdmin, onNavigate, isActive, hasBadge }: NavGroupProps) {
+function NavItemRow({ item, color, isActive, onNavigate, indent = false }: {
+  item: NavItem; color: string; isActive: (p: string) => boolean
+  onNavigate: (p: string) => void; indent?: boolean
+}) {
+  const active = isActive(item.path)
+  return (
+    <ListItem disablePadding sx={{ mb: 0.15 }}>
+      <ListItemButton
+        selected={active}
+        onClick={() => onNavigate(item.path)}
+        sx={{
+          borderRadius: 1.5, py: 0.5, px: 1.25, pl: indent ? 2.5 : 2,
+          '&.Mui-selected': { bgcolor: `${color}20`, color, '& .MuiListItemIcon-root': { color } },
+          '&:hover': { bgcolor: `${color}10` },
+        }}
+      >
+        <ListItemIcon sx={{ minWidth: 30, color: active ? color : 'text.secondary', transition: 'color 0.15s' }}>
+          <Box sx={{ '& svg': { fontSize: 18 } }}>{item.icon}</Box>
+        </ListItemIcon>
+        <ListItemText
+          primary={item.label}
+          primaryTypographyProps={{ variant: 'body2', fontWeight: active ? 600 : 400, fontSize: '0.8rem' }}
+        />
+      </ListItemButton>
+    </ListItem>
+  )
+}
+
+function NavGroup({ label, icon, items, regions, open, onToggle, collapsed, color = PLATFORM_COLOR, currentUser, isSuperAdmin, onNavigate, isActive, hasBadge }: NavGroupProps) {
   const role = currentUser?.role ?? ''
-  const visibleItems = items.filter(item => {
-    if (item.superAdminOnly)   return isSuperAdmin
-    if (item.adminOnly)        return ADMIN_ROLES.includes(role)
-    if (item.managerAndAbove)  return MANAGER_ROLES.includes(role)
-    if (item.notViewer)        return NON_VIEWER_ROLES.includes(role)
-    return true
-  })
-  if (visibleItems.length === 0) return null
+
+  function filterItems(list: NavItem[]): NavItem[] {
+    return list.filter(item => {
+      if (item.superAdminOnly)   return isSuperAdmin
+      if (item.adminOnly)        return ADMIN_ROLES.includes(role)
+      if (item.managerAndAbove)  return MANAGER_ROLES.includes(role)
+      if (item.notViewer)        return NON_VIEWER_ROLES.includes(role)
+      return true
+    })
+  }
+
+  // For regions mode: find which region contains the active path (for auto-expand)
+  const activeRegionLabel = regions?.find(r => r.items.some(i => isActive(i.path)))?.label ?? regions?.[0]?.label ?? ''
+  const [openRegions, setOpenRegions] = useState<Set<string>>(() => new Set([activeRegionLabel]))
+
+  function toggleRegion(regionLabel: string) {
+    setOpenRegions(prev => {
+      const next = new Set(prev)
+      if (next.has(regionLabel)) next.delete(regionLabel)
+      else next.add(regionLabel)
+      return next
+    })
+  }
+
+  // Visibility check
+  if (regions) {
+    const hasAny = regions.some(r => filterItems(r.items).length > 0)
+    if (!hasAny) return null
+  } else {
+    const visibleItems = filterItems(items ?? [])
+    if (visibleItems.length === 0) return null
+  }
 
   return (
     <Box>
@@ -355,32 +454,59 @@ function NavGroup({ label, icon, items, open, onToggle, collapsed, color = PLATF
       </Tooltip>
 
       <Collapse in={open && !collapsed} timeout={180} unmountOnExit>
-        <List disablePadding sx={{ px: 1, pb: 0.5 }}>
-          {visibleItems.map((item) => {
-            const active = isActive(item.path)
-            return (
-              <ListItem key={item.path} disablePadding sx={{ mb: 0.15 }}>
-                <ListItemButton
-                  selected={active}
-                  onClick={() => onNavigate(item.path)}
-                  sx={{
-                    borderRadius: 1.5, py: 0.5, px: 1.25, pl: 2,
-                    '&.Mui-selected': { bgcolor: `${color}20`, color, '& .MuiListItemIcon-root': { color } },
-                    '&:hover': { bgcolor: `${color}10` },
-                  }}
-                >
-                  <ListItemIcon sx={{ minWidth: 30, color: active ? color : 'text.secondary', transition: 'color 0.15s' }}>
-                    <Box sx={{ '& svg': { fontSize: 18 } }}>{item.icon}</Box>
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={item.label}
-                    primaryTypographyProps={{ variant: 'body2', fontWeight: active ? 600 : 400, fontSize: '0.8rem' }}
-                  />
-                </ListItemButton>
-              </ListItem>
-            )
-          })}
-        </List>
+        {regions ? (
+          /* ── Nested region sub-groups ── */
+          <Box sx={{ pb: 0.5 }}>
+            {regions.map((region) => {
+              const visibleItems = filterItems(region.items)
+              if (visibleItems.length === 0) return null
+              const regionOpen = openRegions.has(region.label)
+              const hasActive = visibleItems.some(i => isActive(i.path))
+              return (
+                <Box key={region.label}>
+                  {/* Region header */}
+                  <Box
+                    onClick={() => toggleRegion(region.label)}
+                    sx={{
+                      display: 'flex', alignItems: 'center', gap: 0.5,
+                      mx: 1, px: 1.5, py: 0.35,
+                      borderRadius: 1, cursor: 'pointer', userSelect: 'none',
+                      '&:hover': { bgcolor: `${color}08` },
+                    }}
+                  >
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        flex: 1, fontSize: '0.6rem', textTransform: 'uppercase',
+                        letterSpacing: '0.06em', fontWeight: hasActive ? 600 : 400,
+                        color: hasActive ? `${color}cc` : 'text.disabled',
+                      }}
+                    >
+                      {region.label}
+                    </Typography>
+                    <Box sx={{ color: 'text.disabled', display: 'flex', transition: 'transform 0.18s', transform: regionOpen ? 'rotate(0deg)' : 'rotate(-90deg)' }}>
+                      <ExpandMoreOutlined sx={{ fontSize: 11 }} />
+                    </Box>
+                  </Box>
+                  <Collapse in={regionOpen} timeout={140} unmountOnExit>
+                    <List disablePadding sx={{ px: 1, pb: 0.25 }}>
+                      {visibleItems.map((item) => (
+                        <NavItemRow key={item.path} item={item} color={color} isActive={isActive} onNavigate={onNavigate} indent />
+                      ))}
+                    </List>
+                  </Collapse>
+                </Box>
+              )
+            })}
+          </Box>
+        ) : (
+          /* ── Flat item list ── */
+          <List disablePadding sx={{ px: 1, pb: 0.5 }}>
+            {filterItems(items ?? []).map((item) => (
+              <NavItemRow key={item.path} item={item} color={color} isActive={isActive} onNavigate={onNavigate} />
+            ))}
+          </List>
+        )}
       </Collapse>
     </Box>
   )
@@ -794,7 +920,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
         <NavGroup
           label="Frameworks"
           icon={<GridViewOutlined sx={{ fontSize: 16 }} />}
-          items={NAV_FRAMEWORKS}
+          regions={NAV_FRAMEWORK_REGIONS}
           open={frameworksOpen}
           onToggle={() => setFrameworksOpen(o => !o)}
           {...groupProps}

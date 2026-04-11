@@ -100,6 +100,12 @@ const FRAMEWORK_META: Record<string, { name: string; subtitle: string; color: st
     color: '#B71C1C',
     description: 'Swiss Federal Act on Data Protection (nDSG) — in force 1 September 2023. Data protection obligations for controllers and processors operating in or targeting Switzerland.',
   },
+  CH_ISG: {
+    name: 'Swiss ISG (SR 128)',
+    subtitle: 'State 1 Oct. 2025',
+    color: '#C62828',
+    description: 'Swiss Federal Act on Information Security (ISG / LSI, SR 128) — in force 1 January 2024; cyberattack reporting obligation (Art. 74a–74h) in force 1 April 2025. Mandatory for federal bodies; applies to critical infrastructure operators via Art. 2 al. 5 and Chapter 5. ISO 27001 is the recognised implementation vehicle.',
+  },
   EU_CRA: {
     name: 'EU Cyber Resilience Act',
     subtitle: '2024/2847',
