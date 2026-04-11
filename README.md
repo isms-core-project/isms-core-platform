@@ -212,7 +212,7 @@ factory_isms/
 │   ├── datasets/data/                  # 30 JSON reference datasets
 │   └── schemas/                        # PostgreSQL init schema
 │
-├── COMPLIANCE.md                       # 📋 Compliance assessment module coverage (19 frameworks)
+├── COMPLIANCE.md                       # 📋 Compliance assessment module coverage (20 frameworks)
 └── screenshots/                        # Platform UI screenshots
 ```
 
@@ -539,7 +539,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 |--------|-------|--------|
 | Platform (API + WebUI) | v1.0 live — 44 connectors | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 | Products integrated | ISMS + Privacy + Cloud | ![v1.0](https://img.shields.io/badge/v1.0-2E8B57?style=flat-square) |
-| Compliance assessment modules | 19 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| Compliance assessment modules | 20 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 | Risk Register + Heatmap | 5×5 probability/impact matrix, treatment workflow | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 | Risk Acceptance & Remediation | Formal sign-off, action plans with ETA/cost/progress | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 | Cross-Framework Coverage | BFS inference: ISO 27001 → NIS2, DORA, GDPR | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
@@ -560,7 +560,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 |----------|-------------|
 | [PARADIGM.md](PARADIGM.md) | 🧭 Product overview and paradigm shift guide |
 | [PLATFORM.md](PLATFORM.md) | 🖥️ Platform architecture, features, and design decisions |
-| [COMPLIANCE.md](COMPLIANCE.md) | 📋 Compliance assessment modules — coverage notes, gaps, and audience for all 19 frameworks |
+| [COMPLIANCE.md](COMPLIANCE.md) | 📋 Compliance assessment modules — coverage notes, gaps, and audience for all 20 frameworks |
 | [GETTING-STARTED.md](GETTING-STARTED.md) | 🚀 How to run the Platform (Docker Compose setup guide) |
 | [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 Framework control pack index (53 packs) |
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A controls → 53 pack mapping |

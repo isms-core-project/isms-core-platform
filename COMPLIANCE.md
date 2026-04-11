@@ -5,12 +5,12 @@
 <h1 align="center">🎋 ISMS CORE — Compliance Assessment Modules</h1>
 
 <p align="center">
-  <strong>Nineteen built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
+  <strong>Twenty built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Frameworks-19-2E8B57?style=flat-square" alt="19 Frameworks"/>
-  <img src="https://img.shields.io/badge/Requirements-650+-0066CC?style=flat-square" alt="650+ Requirements"/>
+  <img src="https://img.shields.io/badge/Frameworks-20-2E8B57?style=flat-square" alt="20 Frameworks"/>
+  <img src="https://img.shields.io/badge/Requirements-700+-0066CC?style=flat-square" alt="700+ Requirements"/>
   <img src="https://img.shields.io/badge/Export-CSV_%7C_XLSX_%7C_PDF-FF6600?style=flat-square" alt="Export"/>
   <img src="https://img.shields.io/badge/Assessment_Collections-Grouping_%26_Reports-2E7D32?style=flat-square" alt="Collections"/>
 </p>
@@ -19,7 +19,7 @@
 
 ## Overview
 
-ISMS CORE Platform includes a unified compliance assessment layer covering 19 built-in frameworks across Europe and North America, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
+ISMS CORE Platform includes a unified compliance assessment layer covering 20 built-in frameworks across Europe, North America, and globally, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
 
 Assessment results can be grouped into **Assessment Collections** — named bundles that aggregate status across multiple frameworks for reporting or audit purposes, with CSV, XLSX (colour-coded), and PDF (A4) export.
 
@@ -32,6 +32,7 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | Framework | Type | Requirements | Grouping | Scoring | Audience |
 |-----------|------|-------------|----------|---------|----------|
 | [NIST CSF 2.0](#nist-csf-20) | NIST | 106 subcategories | 6 Functions | Tier 1–4 | Any sector |
+| [NIST AI RMF 1.0](#nist-ai-rmf-10-ai-100-1) | NIST | 72 subcategories | 4 Functions (GOV/MAP/MSR/MNG) | 0–4 | AI system providers and operators — any sector |
 | [NIS2](#nis2-directive-eu-20222555) | EU Directive | 15 requirements | 2 Articles | 0–4 | EU essential/important entities |
 | [DORA](#dora-eu-20222554) | EU Regulation | 25 articles | 4 Chapters | 0–4 | EU financial sector |
 | [CIS Controls v8](#cis-critical-security-controls-v8) | Best Practice | 153 safeguards | 18 Controls | 0–4 | Any sector |
@@ -100,6 +101,32 @@ Each collection shows derived statistics: completion %, compliance %, per-status
 **Coverage notes:**
 - Full 106-subcategory coverage including GV (Govern) — the function added in CSF 2.0 that is absent from CSF 1.1
 - ISO 27001 ↔ NIST CSF 2.0 crosswalk available in the Crosswalk Viewer
+
+---
+
+### NIST AI RMF 1.0 (AI 100-1)
+
+**Source:** NIST AI Risk Management Framework 1.0 (NIST AI 100-1), January 2023
+**Scope:** 72 subcategory-level practices across 4 core functions — GOVERN (GOV), MAP (MAP), MEASURE (MSR), MANAGE (MNG) — divided into 19 Categories
+**Scoring:** Maturity 0–4 per subcategory
+**Audience:** AI system providers, developers, deployers, and operators — any sector. Voluntary, jurisdiction-neutral.
+
+**Function structure:**
+- **GOVERN (19 subcategories)** — organisational AI risk culture, policies, accountability structures, workforce practices
+- **MAP (21 subcategories)** — context and risk framing: intended purposes, categorisation, benefits, costs, societal impacts
+- **MEASURE (19 subcategories)** — quantitative, qualitative, and mixed-method tools to analyse, benchmark, and monitor AI risk
+- **MANAGE (13 subcategories)** — risk treatment, residual risk, incident response, post-market surveillance
+
+**Platform features:**
+- 72 subcategory practices grouped by Category (GOV-1 through MNG-4), maturity 0–4
+- EU AI Act ↔ NIST AI RMF 1.0 crosswalk in the Crosswalk Viewer (72 mappings)
+- Assessment Collections — group AI RMF assessments alongside EU AI Act assessments
+
+**Coverage notes:**
+- Subcategory descriptions sourced from the official NIST AI RMF Playbook (72 suggested actions)
+- No ISO 27001 ↔ AI RMF official crosswalk exists — EU AI Act crosswalk is the primary mapping path
+- Framework is voluntary — not a regulatory compliance requirement in any jurisdiction
+- Related: NIST CSF 2.0 GOVERN function directly mirrors AI RMF GOVERN structure
 
 ---
 
@@ -443,6 +470,7 @@ controls:
 All compliance assessment modules benefit from the Platform's Crosswalk Viewer, which shows cross-framework mappings between:
 
 - ISO 27001:2022 ↔ NIST CSF 2.0
+- NIST AI RMF 1.0 ↔ EU AI Act (72 mappings)
 - ISO 27001:2022 ↔ NIST SP 800-53 Rev. 5
 - ISO 27001:2022 ↔ MITRE ATT&CK v18
 - ISO 27001:2022 ↔ DORA
@@ -458,7 +486,7 @@ All compliance assessment modules benefit from the Platform's Crosswalk Viewer, 
 - ISO 27001:2022 ↔ UK NIS Regulations (51 mappings)
 - ISO 27001:2022 ↔ UK Operational Resilience (34 mappings)
 
-Total: **3,100+ cross-framework mappings** available in the Crosswalk Viewer.
+Total: **3,200+ cross-framework mappings** available in the Crosswalk Viewer.
 
 ---
 
