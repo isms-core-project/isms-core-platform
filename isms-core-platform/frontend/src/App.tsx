@@ -41,6 +41,7 @@ import Ndsg from './pages/Ndsg'
 import Isg from './pages/Isg'
 import Cra from './pages/Cra'
 import AiAct from './pages/AiAct'
+import NistAiRmf from './pages/NistAiRmf'
 import CloudSovereignty from './pages/CloudSovereignty'
 import Csrm from './pages/Csrm'
 import Projects from './pages/Projects'
@@ -128,6 +129,7 @@ export default function App() {
         <Route path="isg" element={<Isg />} />
         <Route path="cra" element={<Cra />} />
         <Route path="ai-act" element={<AiAct />} />
+        <Route path="nist-ai-rmf" element={<NistAiRmf />} />
         <Route path="eu-cloud-sov" element={<CloudSovereignty />} />
         <Route path="csrm" element={<Csrm />} />
         <Route path="projects" element={<Projects />} />

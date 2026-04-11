@@ -118,6 +118,12 @@ const FRAMEWORK_META: Record<string, { name: string; subtitle: string; color: st
     color: '#4A148C',
     description: 'EU AI Act — risk-based framework for artificial intelligence systems. High-risk AI providers must comply by August 2026. Note: does not apply to UK post-Brexit. UK equivalent: DSIT Pro-Innovation AI Regulation (voluntary framework, AI Bill expected H2 2026).',
   },
+  NIST_AI_RMF: {
+    name: 'NIST AI RMF 1.0',
+    subtitle: 'NIST AI 100-1',
+    color: '#1B5E20',
+    description: 'NIST AI Risk Management Framework 1.0 (AI 100-1) — voluntary framework for managing AI risks across the full AI lifecycle. Four core functions: GOVERN, MAP, MEASURE, MANAGE. 72 subcategory-level practices. Crosswalk to EU AI Act included.',
+  },
   UK_NIS: {
     name: 'UK NIS Regulations',
     subtitle: 'SI 2018/506',
@@ -357,7 +363,7 @@ function groupRequirements(requirements: FullAssessment['requirements'], framewo
   if (frameworkCode === 'EU_CLOUD_SOV') {
     return [{ groupId: 'all', groupTitle: 'Cloud Sovereignty Objectives — SOV-1 to SOV-8', requirements }]
   }
-  if (frameworkCode === 'DORA' || frameworkCode === 'CIS_V8' || frameworkCode === 'BSI_IT_GRUNDSCHUTZ' || frameworkCode === 'COBIT_2019') {
+  if (frameworkCode === 'DORA' || frameworkCode === 'CIS_V8' || frameworkCode === 'BSI_IT_GRUNDSCHUTZ' || frameworkCode === 'COBIT_2019' || frameworkCode === 'NIST_AI_RMF') {
     // Group by group_id (chapter / IG / layer)
     const map = new Map<string, GroupedReq>()
     for (const r of requirements) {

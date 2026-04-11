@@ -59,7 +59,8 @@ const PLATFORM_TOOLS = [
 ]
 
 const COMPLIANCE_TOOLS = [
-  { label: 'NIST CSF 2.0',   path: '/nist-csf', icon: <GridViewOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'NIST CSF 2.0',   path: '/nist-csf',     icon: <GridViewOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'NIST AI RMF',   path: '/nist-ai-rmf',  icon: <PolicyOutlined sx={{ fontSize: 17 }} /> },
   { label: 'NIS2',            path: '/nis2',     icon: <ShieldOutlined sx={{ fontSize: 17 }} /> },
   { label: 'DORA',            path: '/dora',     icon: <AccountBalanceOutlined sx={{ fontSize: 17 }} /> },
   { label: 'CIS Controls',   path: '/cis',      icon: <SecurityOutlined sx={{ fontSize: 17 }} /> },

@@ -139,6 +139,7 @@ const NAV_FRAMEWORK_REGIONS: NavRegion[] = [
     label: 'Global',
     items: [
       { label: 'NIST CSF 2.0',      path: '/nist-csf',  icon: <GridViewOutlined /> },
+      { label: 'NIST AI RMF 1.0',   path: '/nist-ai-rmf', icon: <PolicyOutlined /> },
       { label: 'CIS Controls',       path: '/cis',       icon: <SecurityOutlined /> },
       { label: 'TISAX',              path: '/tisax',     icon: <VerifiedOutlined /> },
       { label: 'COBIT 2019',         path: '/cobit',     icon: <AccountBalanceOutlined /> },
@@ -250,7 +251,7 @@ const INTEL_COLOR       = '#B84F00'
 
 const RISK_PATHS       = ['/risk-register', '/remediation', '/metrics', '/bia', '/ebios']
 const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk', '/cloud-glossary']
-const FRAMEWORK_PATHS  = ['/nist-csf', '/nis2', '/dora', '/uk-nis', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/isg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit']
+const FRAMEWORK_PATHS  = ['/nist-csf', '/nist-ai-rmf', '/nis2', '/dora', '/uk-nis', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/isg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit']
 const SUPPLIER_PATHS   = ['/tprm']
 const ADMIN_PATHS        = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker']
 const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/mitre-groups', '/mitre-software', '/mitre-campaigns', '/mitre-heatmap', '/cve-explorer']

@@ -1937,12 +1937,12 @@ function EvidenceTab({ projectId }: { projectId: string }) {
 }
 
 // ── Compliance assessments tab ────────────────────────────────────────────────
-const FRAMEWORK_CODES = ['NIS2', 'DORA', 'CIS_V8', 'BSI_IT_GRUNDSCHUTZ', 'TISAX', 'CH_NDSG', 'EU_CRA', 'EU_AI_ACT', 'EU_CLOUD_SOV']
+const FRAMEWORK_CODES = ['NIS2', 'DORA', 'CIS_V8', 'BSI_IT_GRUNDSCHUTZ', 'TISAX', 'CH_NDSG', 'EU_CRA', 'EU_AI_ACT', 'NIST_AI_RMF', 'EU_CLOUD_SOV']
 const FRAMEWORK_COLORS: Record<string, string> = {
   NIS2: '#1565C0', DORA: '#6A1B9A', CIS_V8: '#2E7D32',
   BSI_IT_GRUNDSCHUTZ: '#E65100', TISAX: '#00838F',
   CH_NDSG: '#AD1457', EU_CRA: '#4527A0', EU_AI_ACT: '#283593',
-  EU_CLOUD_SOV: '#01579B',
+  NIST_AI_RMF: '#1B5E20', EU_CLOUD_SOV: '#01579B',
 }
 
 // Fetches assessments for all frameworks scoped to a project in a single query
@@ -1991,13 +1991,13 @@ const FRAMEWORK_ROUTES: Record<string, string> = {
   NIS2: '/nis2', DORA: '/dora', CIS_V8: '/cis-v8',
   BSI_IT_GRUNDSCHUTZ: '/bsi-it-grundschutz', TISAX: '/tisax',
   CH_NDSG: '/ch-ndsg', EU_CRA: '/eu-cra', EU_AI_ACT: '/eu-ai-act',
-  EU_CLOUD_SOV: '/eu-cloud-sov',
+  NIST_AI_RMF: '/nist-ai-rmf', EU_CLOUD_SOV: '/eu-cloud-sov',
 }
 const FRAMEWORK_LABELS: Record<string, string> = {
   NIS2: 'NIS2', DORA: 'DORA', CIS_V8: 'CIS v8',
   BSI_IT_GRUNDSCHUTZ: 'BSI IT-GS', TISAX: 'TISAX',
   CH_NDSG: 'nDSG', EU_CRA: 'EU CRA', EU_AI_ACT: 'EU AI Act',
-  EU_CLOUD_SOV: 'Cloud Sov.',
+  NIST_AI_RMF: 'NIST AI RMF', EU_CLOUD_SOV: 'Cloud Sov.',
 }
 
 function AssessmentsTab({ projectId }: { projectId: string }) {

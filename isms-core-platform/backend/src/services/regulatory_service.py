@@ -36,6 +36,7 @@ _ASSESSABLE_LEVEL = {
     "EU_AI_ACT": 1,
     "EU_CLOUD_SOV": 0,
     "COBIT_2019": 1,
+    "NIST_AI_RMF": 2,
 }
 
 
@@ -66,13 +67,19 @@ def _get_requirements(db: Session, framework_id: uuid.UUID, framework_code: str)
 
 
 def _get_groups(db: Session, framework_id: uuid.UUID, framework_code: str) -> dict[uuid.UUID, FrameworkControl]:
-    """Return {parent_id: FrameworkControl} for grouping (only needed when level=1)."""
-    if _ASSESSABLE_LEVEL.get(framework_code, 0) == 0:
+    """Return {control_id: FrameworkControl} for grouping.
+
+    For level=1 assessable frameworks: parent level is 0.
+    For level=2 assessable frameworks (e.g. NIST_AI_RMF): parent level is 1.
+    """
+    assessable = _ASSESSABLE_LEVEL.get(framework_code, 0)
+    if assessable == 0:
         return {}
+    parent_level = assessable - 1
     groups = db.execute(
         select(FrameworkControl).where(
             FrameworkControl.framework_id == framework_id,
-            FrameworkControl.level == 0,
+            FrameworkControl.level == parent_level,
         )
     ).scalars().all()
     return {g.id: g for g in groups}
