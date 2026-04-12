@@ -51,16 +51,6 @@ const KNOWN_UPDATES: Record<string, { latest: string; status: 'pending' | 'avail
     note: 'MITRE ATT&CK v19 — scheduled release 2026-04-28. Includes defense-evasion technique revisions.',
     eta: '2026-04-28',
   },
-  NIST_800_53_R5: {
-    latest: 'Rev 5 (current)',
-    status: 'available',
-    note: 'NIST SP 800-53 Rev 5 — current. Rev 6 not yet announced.',
-  },
-  ISO27001_2022: {
-    latest: 'ISO 27001:2022/Amd.1:2024',
-    status: 'available',
-    note: 'Amendment 1:2024 (climate change, Clauses 4.1/4.2) is included in the dataset.',
-  },
 }
 
 // Jurisdiction → display label
