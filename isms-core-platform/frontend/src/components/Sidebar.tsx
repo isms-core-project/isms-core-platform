@@ -141,7 +141,6 @@ const NAV_FRAMEWORK_REGIONS: NavRegion[] = [
       { label: 'NIST CSF 2.0',      path: '/nist-csf',  icon: <GridViewOutlined /> },
       { label: 'NIST AI RMF 1.0',   path: '/nist-ai-rmf', icon: <PolicyOutlined /> },
       { label: 'CIS Controls',       path: '/cis',       icon: <SecurityOutlined /> },
-      { label: 'TISAX',              path: '/tisax',     icon: <VerifiedOutlined /> },
       { label: 'COBIT 2019',         path: '/cobit',     icon: <AccountBalanceOutlined /> },
     ],
   },
@@ -175,6 +174,7 @@ const NAV_FRAMEWORK_REGIONS: NavRegion[] = [
     items: [
       { label: 'BaFin BAIT',         path: '/bafin-bait', icon: <AccountBalanceOutlined /> },
       { label: 'BSI IT-Grundschutz', path: '/bsi',        icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+      { label: 'TISAX',              path: '/tisax',      icon: <VerifiedOutlined /> },
     ],
   },
   {
