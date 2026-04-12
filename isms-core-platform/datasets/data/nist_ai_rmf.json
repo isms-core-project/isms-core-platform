@@ -9,8 +9,8 @@
     "version": "1.0",
     "publisher": "NIST",
     "source_url": "https://doi.org/10.6028/NIST.AI.100-1",
-    "jurisdiction": "US",
-    "description": "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0, NIST AI 100-1, January 2023) — voluntary framework for managing risks of AI systems throughout their lifecycle. Four core functions: GOVERN, MAP, MEASURE, MANAGE. 19 categories, 72 subcategories."
+    "jurisdiction": null,
+    "description": "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0, NIST AI 100-1, January 2023) \u2014 voluntary framework for managing risks of AI systems throughout their lifecycle. Four core functions: GOVERN, MAP, MEASURE, MANAGE. 19 categories, 72 subcategories."
   },
   "generated_at": "2026-04-11T00:00:00Z",
   "generator": "manual",
@@ -32,7 +32,7 @@
       "framework_id": "3d472fc7-9c21-55bb-9cd3-d1a897e5267d",
       "control_id": "MAP",
       "title": "MAP",
-      "description": "Establishes the context to frame risks related to an AI system — intended purposes, categorisation, capabilities, benefits, costs, and impacts to individuals and society.",
+      "description": "Establishes the context to frame risks related to an AI system \u2014 intended purposes, categorisation, capabilities, benefits, costs, and impacts to individuals and society.",
       "level": 0,
       "sort_order": 2000
     },
@@ -338,7 +338,7 @@
       "parent_id": "eb6a9c36-1eb1-5838-b0fc-33827b453d00",
       "control_id": "GOV-1.7",
       "title": "GOVERN 1.7",
-      "description": "Processes and procedures are in place for decommissioning and phasing out of AI systems safely and in a manner that does not increase risks or decrease the organization’s trustworthiness.",
+      "description": "Processes and procedures are in place for decommissioning and phasing out of AI systems safely and in a manner that does not increase risks or decrease the organization\u2019s trustworthiness.",
       "level": 2,
       "sort_order": 1170
     },
@@ -360,7 +360,7 @@
       "parent_id": "591f4898-3b0e-5875-b5a4-796faeed8eaf",
       "control_id": "GOV-2.2",
       "title": "GOVERN 2.2",
-      "description": "The organization’s personnel and partners receive AI risk management training to enable them to perform their duties and responsibilities consistent with related policies, procedures, and agreements.",
+      "description": "The organization\u2019s personnel and partners receive AI risk management training to enable them to perform their duties and responsibilities consistent with related policies, procedures, and agreements.",
       "level": 2,
       "sort_order": 1220
     },
@@ -459,7 +459,7 @@
       "parent_id": "282ad639-36b4-582a-9db5-596e938d76a2",
       "control_id": "GOV-6.1",
       "title": "GOVERN 6.1",
-      "description": "Policies and procedures are in place that address AI risks associated with third-party entities, including risks of infringement of a third party’s intellectual property or other rights.",
+      "description": "Policies and procedures are in place that address AI risks associated with third-party entities, including risks of infringement of a third party\u2019s intellectual property or other rights.",
       "level": 2,
       "sort_order": 1610
     },
@@ -525,7 +525,7 @@
       "parent_id": "378d33a9-ff76-51aa-b500-3a552ad2d6b4",
       "control_id": "MNG-2.1",
       "title": "MANAGE 2.1",
-      "description": "Resources required to manage AI risks are taken into account, along with viable non-AI alternative systems, approaches, or methods – to reduce the magnitude or likelihood of potential impacts.",
+      "description": "Resources required to manage AI risks are taken into account, along with viable non-AI alternative systems, approaches, or methods \u2013 to reduce the magnitude or likelihood of potential impacts.",
       "level": 2,
       "sort_order": 4210
     },
@@ -646,7 +646,7 @@
       "parent_id": "5b38c502-5a15-5100-8ce6-2f1937e2136d",
       "control_id": "MAP-1.3",
       "title": "MAP 1.3",
-      "description": "The organization’s mission and relevant goals for the AI technology are understood and documented.",
+      "description": "The organization\u2019s mission and relevant goals for the AI technology are understood and documented.",
       "level": 2,
       "sort_order": 2130
     },
@@ -657,7 +657,7 @@
       "parent_id": "5b38c502-5a15-5100-8ce6-2f1937e2136d",
       "control_id": "MAP-1.4",
       "title": "MAP 1.4",
-      "description": "The business value or context of business use has been clearly defined or – in the case of assessing existing AI systems – re-evaluated.",
+      "description": "The business value or context of business use has been clearly defined or \u2013 in the case of assessing existing AI systems \u2013 re-evaluated.",
       "level": 2,
       "sort_order": 2140
     },
@@ -679,7 +679,7 @@
       "parent_id": "5b38c502-5a15-5100-8ce6-2f1937e2136d",
       "control_id": "MAP-1.6",
       "title": "MAP 1.6",
-      "description": "System requirements (e.g., “the system shall respect the privacy of its users”) are elicited from and understood by relevant AI actors.  Design decisions take socio-technical implications into account to address AI risks.",
+      "description": "System requirements (e.g., \u201cthe system shall respect the privacy of its users\u201d) are elicited from and understood by relevant AI actors.  Design decisions take socio-technical implications into account to address AI risks.",
       "level": 2,
       "sort_order": 2160
     },
@@ -701,7 +701,7 @@
       "parent_id": "e263e60e-e97a-581c-bd7b-5b9f5c34e9a0",
       "control_id": "MAP-2.2",
       "title": "MAP 2.2",
-      "description": "Information about the AI system’s knowledge limits and how system output may be utilized and overseen by humans is documented. Documentation provides sufficient information to assist relevant AI actors when making informed decisions and taking subsequent actions.",
+      "description": "Information about the AI system\u2019s knowledge limits and how system output may be utilized and overseen by humans is documented. Documentation provides sufficient information to assist relevant AI actors when making informed decisions and taking subsequent actions.",
       "level": 2,
       "sort_order": 2220
     },
@@ -745,7 +745,7 @@
       "parent_id": "d2238309-9489-5327-bf9f-a8f842129cfa",
       "control_id": "MAP-3.3",
       "title": "MAP 3.3",
-      "description": "Targeted application scope is specified and documented based on the system’s capability, established context, and AI system categorization.",
+      "description": "Targeted application scope is specified and documented based on the system\u2019s capability, established context, and AI system categorization.",
       "level": 2,
       "sort_order": 2330
     },
@@ -756,7 +756,7 @@
       "parent_id": "d2238309-9489-5327-bf9f-a8f842129cfa",
       "control_id": "MAP-3.4",
       "title": "MAP 3.4",
-      "description": "Processes for operator and practitioner proficiency with AI system performance and trustworthiness – and relevant technical standards and certifications – are defined, assessed and documented.",
+      "description": "Processes for operator and practitioner proficiency with AI system performance and trustworthiness \u2013 and relevant technical standards and certifications \u2013 are defined, assessed and documented.",
       "level": 2,
       "sort_order": 2340
     },
@@ -778,7 +778,7 @@
       "parent_id": "dd2b67e9-30d2-5cc7-ae96-4c20411c7160",
       "control_id": "MAP-4.1",
       "title": "MAP 4.1",
-      "description": "Approaches for mapping AI technology and legal risks of its components – including the use of third-party data or software – are in place, followed, and documented, as are risks of infringement of a third-party’s intellectual property or other rights.",
+      "description": "Approaches for mapping AI technology and legal risks of its components \u2013 including the use of third-party data or software \u2013 are in place, followed, and documented, as are risks of infringement of a third-party\u2019s intellectual property or other rights.",
       "level": 2,
       "sort_order": 2410
     },
@@ -822,7 +822,7 @@
       "parent_id": "46acb131-7fc3-596a-8422-9c614d1ce065",
       "control_id": "MSR-1.1",
       "title": "MEASURE 1.1",
-      "description": "Approaches and metrics for measurement of AI risks enumerated during the Map function are selected for implementation starting with the most significant AI risks. The risks or trustworthiness characteristics that will not – or cannot – be measured are properly documented.",
+      "description": "Approaches and metrics for measurement of AI risks enumerated during the Map function are selected for implementation starting with the most significant AI risks. The risks or trustworthiness characteristics that will not \u2013 or cannot \u2013 be measured are properly documented.",
       "level": 2,
       "sort_order": 3110
     },
@@ -888,7 +888,7 @@
       "parent_id": "c01fce76-0b25-5d6c-8f5a-102d816e755d",
       "control_id": "MSR-2.4",
       "title": "MEASURE 2.4",
-      "description": "The functionality and behavior of the AI system and its components – as identified in the MAP function – are monitored when in production.",
+      "description": "The functionality and behavior of the AI system and its components \u2013 as identified in the MAP function \u2013 are monitored when in production.",
       "level": 2,
       "sort_order": 3240
     },
@@ -910,7 +910,7 @@
       "parent_id": "c01fce76-0b25-5d6c-8f5a-102d816e755d",
       "control_id": "MSR-2.6",
       "title": "MEASURE 2.6",
-      "description": "AI system is evaluated regularly for safety risks – as identified in the MAP function. The AI system to be deployed is demonstrated to be safe, its residual negative risk does not exceed the risk tolerance, and can fail safely, particularly if made to operate beyond its knowledge limits. Safety metrics implicate system reliability and robustness, real-time monitoring, and response times for AI system failures.",
+      "description": "AI system is evaluated regularly for safety risks \u2013 as identified in the MAP function. The AI system to be deployed is demonstrated to be safe, its residual negative risk does not exceed the risk tolerance, and can fail safely, particularly if made to operate beyond its knowledge limits. Safety metrics implicate system reliability and robustness, real-time monitoring, and response times for AI system failures.",
       "level": 2,
       "sort_order": 3260
     },
@@ -921,7 +921,7 @@
       "parent_id": "c01fce76-0b25-5d6c-8f5a-102d816e755d",
       "control_id": "MSR-2.7",
       "title": "MEASURE 2.7",
-      "description": "AI system security and resilience – as identified in the MAP function – are evaluated and documented.",
+      "description": "AI system security and resilience \u2013 as identified in the MAP function \u2013 are evaluated and documented.",
       "level": 2,
       "sort_order": 3270
     },
@@ -932,7 +932,7 @@
       "parent_id": "c01fce76-0b25-5d6c-8f5a-102d816e755d",
       "control_id": "MSR-2.8",
       "title": "MEASURE 2.8",
-      "description": "Risks associated with transparency and accountability – as identified in the MAP function – are examined and documented.",
+      "description": "Risks associated with transparency and accountability \u2013 as identified in the MAP function \u2013 are examined and documented.",
       "level": 2,
       "sort_order": 3280
     },
@@ -943,7 +943,7 @@
       "parent_id": "c01fce76-0b25-5d6c-8f5a-102d816e755d",
       "control_id": "MSR-2.9",
       "title": "MEASURE 2.9",
-      "description": "The AI model is explained, validated, and documented, and  AI system output is interpreted within its context – as identified in the MAP function – and to inform responsible use and governance.",
+      "description": "The AI model is explained, validated, and documented, and  AI system output is interpreted within its context \u2013 as identified in the MAP function \u2013 and to inform responsible use and governance.",
       "level": 2,
       "sort_order": 3290
     },
@@ -954,7 +954,7 @@
       "parent_id": "c01fce76-0b25-5d6c-8f5a-102d816e755d",
       "control_id": "MSR-2.10",
       "title": "MEASURE 2.10",
-      "description": "Privacy risk of the AI system – as identified in the MAP function – is examined and documented.",
+      "description": "Privacy risk of the AI system \u2013 as identified in the MAP function \u2013 is examined and documented.",
       "level": 2,
       "sort_order": 3300
     },
@@ -965,7 +965,7 @@
       "parent_id": "c01fce76-0b25-5d6c-8f5a-102d816e755d",
       "control_id": "MSR-2.11",
       "title": "MEASURE 2.11",
-      "description": "Fairness and bias – as identified in the MAP function – are evaluated and results are documented.",
+      "description": "Fairness and bias \u2013 as identified in the MAP function \u2013 are evaluated and results are documented.",
       "level": 2,
       "sort_order": 3310
     },
@@ -976,7 +976,7 @@
       "parent_id": "c01fce76-0b25-5d6c-8f5a-102d816e755d",
       "control_id": "MSR-2.12",
       "title": "MEASURE 2.12",
-      "description": "Environmental impact and sustainability of AI model training and management activities – as identified in the MAP function – are assessed and documented.",
+      "description": "Environmental impact and sustainability of AI model training and management activities \u2013 as identified in the MAP function \u2013 are assessed and documented.",
       "level": 2,
       "sort_order": 3320
     },
