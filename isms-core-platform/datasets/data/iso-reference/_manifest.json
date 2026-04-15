@@ -809,13 +809,58 @@
       "standard": "ISO/IEC 22123-3:2023",
       "language": "en",
       "chunks": 12
+    },
+    {
+      "file": "grc_skill_fedramp.json",
+      "chunks": 21,
+      "standard": "FedRAMP (NIST 800-53 Rev 5)"
+    },
+    {
+      "file": "grc_skill_gdpr_compliance.json",
+      "chunks": 16,
+      "standard": "GDPR EU 2016/679"
+    },
+    {
+      "file": "grc_skill_hipaa_compliance.json",
+      "chunks": 39,
+      "standard": "HIPAA Privacy & Security Rules"
+    },
+    {
+      "file": "grc_skill_iso27001.json",
+      "chunks": 21,
+      "standard": "ISO 27001:2022"
+    },
+    {
+      "file": "grc_skill_iso42001.json",
+      "chunks": 33,
+      "standard": "ISO 42001:2023 (AI Management)"
+    },
+    {
+      "file": "grc_skill_nist_csf.json",
+      "chunks": 28,
+      "standard": "NIST Cybersecurity Framework 2.0"
+    },
+    {
+      "file": "grc_skill_pci_compliance.json",
+      "chunks": 39,
+      "standard": "PCI DSS v4.0.1"
+    },
+    {
+      "file": "grc_skill_soc2.json",
+      "chunks": 33,
+      "standard": "SOC 2 Trust Services Criteria"
+    },
+    {
+      "file": "grc_skill_tsa_compliance.json",
+      "chunks": 32,
+      "standard": "TSA Security Directives"
     }
   ],
-  "total_chunks": 13575,
-  "total_files_processed": 76,
+  "total_chunks": 13837,
+  "total_files_processed": 135,
   "failed_files": [
     "AI-Act-Compliance-Checker-Flowchart-v1.0_compressed.docx"
   ],
-  "updated": "2026-04-07",
-  "total_files": 126
+  "updated": "2026-04-15T08:17:51.509114+00:00",
+  "total_files": 135
 }
