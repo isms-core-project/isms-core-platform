@@ -5,13 +5,14 @@
 <h1 align="center">🎋 ISMS CORE Project</h1>
 
 <p align="center">
-  <strong>Compliance Operations, Risk & Evidence — ISO 27001 · ISO 27701 · ISO 27018</strong>
+  <strong>Compliance Operations, Risk & Evidence — ISO 27001 · ISO 27701 · ISO 27018 · ISO 42001</strong>
 </p>
 
 <p align="center">
   <a href="https://www.iso.org/standard/27001"><img src="https://img.shields.io/badge/ISO_27001-2022-0066CC?style=flat-square" alt="ISO 27001:2022"/></a>
   <a href="https://www.iso.org/standard/71670.html"><img src="https://img.shields.io/badge/ISO_27701-2025-7030A0?style=flat-square" alt="ISO 27701:2025"/></a>
   <a href="https://www.iso.org/standard/76559.html"><img src="https://img.shields.io/badge/ISO_27018-2025-00897B?style=flat-square" alt="ISO 27018:2025"/></a>
+  <a href="https://www.iso.org/standard/81230.html"><img src="https://img.shields.io/badge/ISO_42001-2023-FF6B35?style=flat-square" alt="ISO 42001:2023"/></a>
   <a href="isms-core-framework/STATUS.md"><img src="https://img.shields.io/badge/Control_Packs-53_of_53-00AA00?style=flat-square" alt="Control Packs"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-AGPL_3.0-9400D3?style=flat-square" alt="License"/></a>
 </p>
@@ -49,7 +50,7 @@ ISMS CORE is a production-grade **control engineering** platform for building an
 
 > **New here?** Read [PARADIGM.md](PARADIGM.md) first — it explains how ISMS CORE differs from traditional ISMS approaches, how to choose between products, and what to expect.
 
-ISMS CORE covers **three ISO standards** across **four content products**, all served by one Platform:
+ISMS CORE covers **four ISO standards** across **five content products**, all served by one Platform:
 
 <table>
 <tr>
@@ -58,6 +59,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <th>⚡ <a href="isms-core-operational/">Operational</a></th>
 <th>🔒 <a href="isms-core-privacy/">Privacy</a></th>
 <th>☁️ <a href="isms-core-cloud/">Cloud</a></th>
+<th>🤖 <a href="isms-core-ai/">AI</a></th>
 <th>🖥️ <a href="PLATFORM.md">Platform</a></th>
 </tr>
 <tr>
@@ -66,7 +68,8 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td>ISO 27001:2022</td>
 <td>ISO 27701:2025</td>
 <td>ISO 27018:2025</td>
-<td>All three</td>
+<td>ISO 42001:2023</td>
+<td>All four</td>
 </tr>
 <tr>
 <td><strong>What</strong></td>
@@ -74,6 +77,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td>Foundation ISMS for SMEs — operational policies with single-sheet compliance checklists</td>
 <td>Privacy information management — controller, processor, and shared control groups</td>
 <td>PII protection in public cloud — compliance checklists for cloud service providers</td>
+<td>AI management system — governance policies for AI development, deployment, and responsible use</td>
 <td>API + WebUI — turns all content products into a live compliance management system; modules include Risk Register, KPI Metrics, TPRM, BIA, EBIOS RM, ITSM push, Cross-Framework Coverage, Custom Framework Import, Country Localisation (FR/BE/LU/DE/AT/IT/GB), Threat Intelligence (MITRE ATT&CK, MITRE ATLAS, CISA KEV, NVD CVE/CPE Explorer), Health Notifications, and MFA</td>
 </tr>
 <tr>
@@ -82,6 +86,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td>SMEs and startups (10–500 people)</td>
 <td>Any organisation processing PII as controller or processor</td>
 <td>Cloud service providers processing PII on behalf of controllers</td>
+<td>Organisations developing or deploying AI systems requiring an AIMS</td>
 <td>Any ISMS CORE user needing dashboards, gap tracking, audit management</td>
 </tr>
 <tr>
@@ -90,6 +95,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td>OP-POL + SCR + WKBK</td>
 <td>PRIV-POL + IMP (UG/TG) + SCR + WKBK</td>
 <td>CLD-POL + IMP (UG/TG) + SCR + WKBK</td>
+<td>AI-POL + SCR (selected controls)</td>
 <td>Ingests all products — no content of its own</td>
 </tr>
 <tr>
@@ -98,7 +104,8 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td>53 control groups / 93 Annex A controls</td>
 <td>21 control groups (8 controller + 5 processor + 8 shared)</td>
 <td>12 Annex A control groups</td>
-<td>87 total groups across all products</td>
+<td>12 AI control groups (2 foundation + 10 Annex A)</td>
+<td>99 total groups across all products</td>
 </tr>
 <tr>
 <td><strong>Artifacts</strong></td>
@@ -106,6 +113,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td>53 operational policies, 53 checklist scripts</td>
 <td>23 PRIV-POL, 42 IMP docs, 21 checklist scripts</td>
 <td>12 CLD-POL, 24 IMP docs, 12 checklist scripts</td>
+<td>14 AI-POL (EN + FR + DE + IT per control)</td>
 <td>FastAPI + PostgreSQL + Redis + OpenSearch + React WebUI</td>
 </tr>
 <tr>
@@ -114,6 +122,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td>EN + FR + DE + IT (OP-POL)</td>
 <td>EN + FR + DE + IT (PRIV-POL)</td>
 <td>EN + FR + DE + IT (CLD-POL)</td>
+<td>EN + FR + DE + IT (AI-POL)</td>
 <td>UI: EN — policy rendering: 8 jurisdictions</td>
 </tr>
 <tr>
@@ -122,6 +131,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 <td><img src="https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square" alt="Complete"/></td>
 <td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
 <td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
+<td><img src="https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square" alt="Complete"/></td>
 <td><img src="https://img.shields.io/badge/Live_(v1.0)-2E8B57?style=flat-square" alt="Live (v1.0)"/></td>
 </tr>
 </table>
@@ -134,6 +144,7 @@ ISMS CORE covers **three ISO standards** across **four content products**, all s
 - SMEs that need **practical, audit-ready policies** without over-engineering
 - Organisations processing PII that need **ISO 27701 controller/processor controls**
 - Cloud service providers that need **ISO 27018 PII protection compliance**
+- Organisations developing or deploying AI systems that need **ISO 42001 AIMS governance**
 - Consultants and auditors who need **structured, traceable control packs**
 
 **This is not for:**
@@ -202,6 +213,13 @@ factory_isms/
 │       └── cld-a.X-control-name/       # 12 Annex A control groups
 │           ├── POL/    ├── IMP/    ├── SCR/    └── WKBK/
 │
+├── isms-core-ai/                       # 🤖 ISO 42001:2023 — AI Extension Pack
+│   ├── README.md
+│   ├── 00-ai-foundation-policies/      # AI-POL-00 + AI-POL-01
+│   ├── 00-checklist-engine/            # Shared AI checklist engine
+│   └── ai-a.X.X-X-control-name/       # 10 Annex A control groups
+│       ├── POL/    └── SCR/
+│
 ├── isms-core-platform/                 # 🖥️ Production Deployment Package
 │   ├── .env.example                    # Environment variable template (copy → .env)
 │   ├── docker-compose.yml              # 10-service production stack (includes feeds scheduler and optional mailpit/smtp-bridge profiles)
@@ -267,6 +285,19 @@ python3 generate_priv_checklist_a1225.py
 cd isms-core-cloud/iso27018-pii-cloud/cld-a.11-information-security/SCR
 python3 generate_cld_checklist_a11.py
 ```
+
+### AI (ISO 42001:2023 — AI Management System Extension Pack)
+
+1. Browse `isms-core-ai/` — start with the foundation policies, then Annex A controls
+2. Read `AI-POL-00` (AIMS Regulatory Applicability) and `AI-POL-01` (AIMS Governance) first
+3. Work through the Annex A control groups relevant to your AI systems:
+
+```bash
+# Read the AI governance policy
+cat isms-core-ai/00-ai-foundation-policies/ai-pol-01-aims-governance-and-decision-making/POL/AI-POL-01\ -\ AIMS\ Governance\ and\ Decision-Making\ Framework.md
+```
+
+**Multilingual:** All AI-POL documents are available in EN, FR, DE, and IT in `POL/fr/`, `POL/de/`, and `POL/it/` subdirectories.
 
 ### Platform (Live Compliance Dashboard — All Products)
 
@@ -384,6 +415,11 @@ python3 generate_cld_checklist_a11.py
 <td><img src="https://img.shields.io/badge/Complete-00897B?style=flat-square" alt="Complete"/></td>
 </tr>
 <tr>
+<td>ISO/IEC 42001:2023</td>
+<td>Full AI Extension Pack — 12 AI control groups covering AIMS governance, impact assessment, responsible use, and third-party AI relationships</td>
+<td><img src="https://img.shields.io/badge/Complete-FF6B35?style=flat-square" alt="Complete"/></td>
+</tr>
+<tr>
 <td>NIST CSF 2.0</td>
 <td>Full assessment tool — 106 subcategories, tier 1–4 ratings, XLSX import/export, radar chart report. ISO 27001 crosswalk mapped.</td>
 <td><img src="https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square" alt="Assessment Tool"/></td>
@@ -489,7 +525,7 @@ Every control pack undergoes a structured multi-stage validation process before 
    + Code Review           3-layer QA check
 ```
 
-All 188 Framework generators, 53 Operational policies, 21 Privacy control groups, and 12 Cloud control groups carry `QA_VERIFIED` markers confirming they have passed the full QA process.
+All 188 Framework generators, 53 Operational policies, 21 Privacy control groups, 12 Cloud control groups, and 12 AI control groups carry `QA_VERIFIED` markers confirming they have passed the full QA process.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 
@@ -532,6 +568,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | Control groups | **12 of 12** | ![100%](https://img.shields.io/badge/100%25-00897B?style=flat-square) |
 | CLD-POL documents | **12** | ![Complete](https://img.shields.io/badge/Complete-00897B?style=flat-square) |
 | IMP documents | **24** (12 UG + 12 TG) | ![Complete](https://img.shields.io/badge/Complete-00897B?style=flat-square) |
+
+### ISO 42001:2023 — AI Extension Pack
+
+| Metric | Value | Status |
+|--------|-------|--------|
+| Control groups | **12 of 12** | ![100%](https://img.shields.io/badge/100%25-FF6B35?style=flat-square) |
+| Foundation policies | **2** (AI-POL-00 + AI-POL-01) | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
+| Annex A control groups | **10** | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
+| AI-POL documents | **14** (12 EN + FR + DE + IT translations) | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
 
 ### Platform
 

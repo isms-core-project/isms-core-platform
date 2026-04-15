@@ -50,10 +50,11 @@ The Platform expects ISMS CORE content repositories to sit **alongside** the pla
 │   ├── isms-core-framework/         ← FRAMEWORK content (mounted read-only)
 │   ├── isms-core-operational/       ← OPERATIONAL content (mounted read-only)
 │   ├── isms-core-privacy/           ← PRIVACY content — ISO 27701:2025 (mounted read-only)
-│   └── isms-core-cloud/             ← CLOUD content — ISO 27018:2025 (mounted read-only)
+│   ├── isms-core-cloud/             ← CLOUD content — ISO 27018:2025 (mounted read-only)
+│   └── isms-core-ai/                ← AI content — ISO 42001:2023 (mounted read-only)
 ```
 
-The `docker-compose.yml` mounts all four product directories as read-only volumes. **The platform never modifies these files.**
+The `docker-compose.yml` mounts all five product directories as read-only volumes. **The platform never modifies these files.**
 
 ---
 
@@ -198,13 +199,13 @@ The script: waits for the stack to be healthy → authenticates → runs all 6 i
 | Section | What's there |
 |---------|-------------|
 | **Dashboard** | Compliance overview, audit readiness score, top gaps; ISMS / Privacy / Cloud product switcher |
-| **Controls** | 87 control groups (54 ISMS + 21 Privacy + 12 Cloud) with policy/assessment/gap status |
+| **Controls** | 99 control groups (54 ISMS + 21 Privacy + 12 Cloud + 12 AI) with policy/assessment/gap status |
 | **Policies** | Imported documents (POL + OP-POL + PRIV-POL + CLD-POL + foundation + REF/CTX/INS) |
 | **Assessments** | 188 framework + 53 operational + 21 privacy + 12 cloud workbook structures with per-item compliance status |
 | **Gaps** | Identified compliance gaps — create, assign, track |
 | **Evidence** | Upload and link evidence to control groups and requirements |
 | **Coverage** | Heatmap of Framework and Operational coverage |
-| **QA** | Existence checker — validates artifact completeness across all four products |
+| **QA** | Existence checker — validates artifact completeness across all five products |
 | **NIST CSF 2.0** | Assessment tool — 106 subcategories, tier ratings, gap report, XLSX import/export |
 | **NIS2 / DORA / CIS Controls v8** | Regulatory assessment tools — maturity scoring 0–4, grouped by article/chapter/control |
 | **Risk Register** | Risk register — empty, ready for data entry |
@@ -343,7 +344,7 @@ The backend auto-generates OpenAPI documentation. Once running:
 | `HOST_IP` | *(your server IP)* | No | Server IP for nginx SAN + VITE_BACKEND_URL |
 | `MAIL_HOST` | *(empty)* | No | `isms-core-mailhog` (Mailpit profile) or `isms-core-smtp-bridge` |
 | `MAIL_PORT` | `1025` | No | SMTP port (default 1025 for both email profiles) |
-| `POLICY_EXTRA_PATHS` | `/app/isms-cloud,/app/isms-privacy` | No | Comma-separated extra mount paths for Privacy + Cloud content |
+| `POLICY_EXTRA_PATHS` | `/app/isms-cloud,/app/isms-privacy,/app/isms-ai` | No | Comma-separated extra mount paths for Privacy + Cloud + AI content |
 | `DEBUG` | `true` | No | Set `false` in production |
 | `LOG_LEVEL` | `INFO` | No | `DEBUG` / `INFO` / `WARNING` / `ERROR` |
 | `CORS_ORIGINS` | `http://localhost:3000,...` | No | Comma-separated allowed origins |

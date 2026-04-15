@@ -408,6 +408,7 @@ February 2026:      ISMS CORE Operational -> 93 Controls Completed in 53 Control
 March 2026:         ISMS CORE Privacy (ISO 27701:2025) -> 21 Control Groups Completed
 March 2026:         ISMS CORE Cloud (ISO 27018:2025) -> 12 Control Groups Completed
 March 2026:         ISMS CORE Platform -> Live at isms-core.com
+April 2026:         ISMS CORE AI (ISO 42001:2023) -> 12 Control Groups Completed
 ```
 
 ### Platform
