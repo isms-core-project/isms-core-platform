@@ -18,7 +18,7 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
-from sqlalchemy import select
+from sqlalchemy import delete, select
 from sqlalchemy.orm import Session as DBSession
 
 from src.domain.content import GeneratorDefinition
@@ -381,10 +381,21 @@ class BundleLoader:
                 self.db.add(gd)
             loaded += 1
 
+        # Remove orphan rows — document_ids that are no longer in the JSON.
+        # These accumulate when generators are renamed or removed (e.g. pre-.Sx suffix entries).
+        known_ids = {e.get("document_id") for e in entries if e.get("document_id")}
+        deleted_count = self.db.execute(
+            delete(GeneratorDefinition).where(
+                GeneratorDefinition.document_id.not_in(known_ids)
+            )
+        ).rowcount
+        if deleted_count:
+            logger.info("Removed %d orphan generator_definitions not in current registry", deleted_count)
+
         stats["generators"] += loaded
         logger.info(
-            "Loaded %s: %d generator definitions (%d skipped)",
-            fp.name, loaded, skipped,
+            "Loaded %s: %d generator definitions (%d skipped, %d orphans removed)",
+            fp.name, loaded, skipped, deleted_count,
         )
 
     # ------------------------------------------------------------------

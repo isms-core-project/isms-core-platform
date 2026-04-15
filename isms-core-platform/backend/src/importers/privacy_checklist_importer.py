@@ -37,10 +37,11 @@ from src.importers.base_importer import BaseImporter
 
 logger = logging.getLogger(__name__)
 
-# Matches folder names like priv-a.3.3-4-privacy-policy-and-roles or cld-a.1-general
-# Captures the control ref: "a.3.3-4", "a.1", "a.12", etc.
+# Matches folder names like priv-a.3.3-4-privacy-policy-and-roles, cld-a.1-general,
+# or ai-a.2.2-4-ai-policy-framework.
+# Captures the control ref: "a.3.3-4", "a.1", "a.2.2-4", etc.
 # Pattern: a. followed by digit sequences separated by dots/hyphens, stopping at any letter
-_FOLDER_RE = re.compile(r"^(?:priv|cld)-(a\.(?:\d+(?:[-\.]\d+)*))", re.IGNORECASE)
+_FOLDER_RE = re.compile(r"^(?:priv|cld|ai)-(a\.(?:\d+(?:[-\.]\d+)*))", re.IGNORECASE)
 
 
 class PrivacyChecklistImporter(BaseImporter):
@@ -93,7 +94,7 @@ class PrivacyChecklistImporter(BaseImporter):
     # ------------------------------------------------------------------
 
     def _discover_scripts(self) -> list[tuple[Path, ProductType]]:
-        """Find all priv/cld checklist generator scripts."""
+        """Find all priv/cld/ai checklist generator scripts."""
         results = []
         for base in self.extra_paths:
             if not base.exists():
@@ -103,6 +104,8 @@ class PrivacyChecklistImporter(BaseImporter):
                 results.append((script, ProductType.PRIVACY))
             for script in sorted(base.rglob("SCR/generate_cld_checklist_*.py")):
                 results.append((script, ProductType.CLOUD))
+            for script in sorted(base.rglob("SCR/generate_ai_checklist_*.py")):
+                results.append((script, ProductType.AI))
         return results
 
     # ------------------------------------------------------------------
@@ -125,9 +128,12 @@ class PrivacyChecklistImporter(BaseImporter):
             raise ValueError("REQUIREMENTS not found or empty in script")
 
         # Map product type to product family for family-aware resolution
-        preferred_family = (
-            ProductFamily.PRIVACY if product_type == ProductType.PRIVACY else ProductFamily.CLOUD
-        )
+        _FAMILY_MAP = {
+            ProductType.PRIVACY: ProductFamily.PRIVACY,
+            ProductType.CLOUD: ProductFamily.CLOUD,
+            ProductType.AI: ProductFamily.AI,
+        }
+        preferred_family = _FAMILY_MAP.get(product_type, ProductFamily.CLOUD)
         group_id = self._resolve_group(script_path, control_id, preferred_family)
         if not group_id:
             raise ValueError(

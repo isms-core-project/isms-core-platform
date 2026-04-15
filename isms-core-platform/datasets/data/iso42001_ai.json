@@ -1,0 +1,252 @@
+{
+  "bundle_id": "bundle--4201f013-ae15-3156-3365-3b65458fed55",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "f013ae15-3156-3365-3b65-458fed5591c6",
+    "code": "ISO42001",
+    "name": "ISO/IEC 42001:2023 \u2014 AI Management System",
+    "version": "2023",
+    "publisher": "ISO/IEC",
+    "source_url": "https://www.iso.org/standard/81230.html",
+    "jurisdiction": null,
+    "description": "International standard for Artificial Intelligence Management Systems (AIMS). Specifies requirements and provides guidance for establishing, implementing, maintaining, and continually improving an AI management system. Annex A provides 36 additional controls across 9 sections (A.2\u2013A.10) covering the full AI system lifecycle, from policy and governance through to third-party relationships."
+  },
+  "generated_at": "2026-04-15T00:00:00Z",
+  "generator": "generate_iso42001.py",
+  "content_hash": "iso42001_ai_v1_2026-04-15",
+  "objects_count": 19,
+  "relationships_count": 0,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "0a0dd7e0-8ee8-a434-3eb1-35d3a7f77d1f",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.2",
+      "title": "Policies Relating to AI",
+      "description": "Annex A section covering AI policy requirements. Organisations shall establish, document, and maintain policies that address the responsible use and development of AI systems, including regulatory applicability, ethics, and governance commitments.",
+      "level": 0,
+      "sort_order": 10000
+    },
+    {
+      "type": "framework_control",
+      "id": "4faece0a-2d5a-e401-4275-ef01d83b1ad2",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.3",
+      "title": "Internal Organisation",
+      "description": "Annex A section covering organisational structures for AI. Organisations shall define roles, responsibilities, and accountabilities for AI governance including designation of an AI Owner and AI Risk function.",
+      "level": 0,
+      "sort_order": 20000
+    },
+    {
+      "type": "framework_control",
+      "id": "bb6ba4ba-9d53-7022-3c32-652aabee3e8b",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.4",
+      "title": "Resources for AI Systems",
+      "description": "Annex A section covering resource requirements for AI. Organisations shall ensure adequate computational resources, tooling, and human competence to develop, operate, and maintain AI systems securely and reliably.",
+      "level": 0,
+      "sort_order": 30000
+    },
+    {
+      "type": "framework_control",
+      "id": "a7e16075-23a5-6af0-0878-c2826f7e3c87",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.5",
+      "title": "AI System Impact Assessment",
+      "description": "Annex A section covering AI impact assessment. Organisations shall assess the potential impacts of AI systems on individuals, society, and the environment before deployment and on an ongoing basis.",
+      "level": 0,
+      "sort_order": 40000
+    },
+    {
+      "type": "framework_control",
+      "id": "1f39bea4-3e52-2d7d-b88d-ab76f4afe685",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.6",
+      "title": "AI System Life Cycle",
+      "description": "Annex A section covering the AI system lifecycle. Organisations shall govern AI systems through all lifecycle phases: design, development, testing, deployment, operation, monitoring, and decommissioning.",
+      "level": 0,
+      "sort_order": 50000
+    },
+    {
+      "type": "framework_control",
+      "id": "2936d84a-386f-2fab-397d-f4e4edb43308",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.7",
+      "title": "Data for AI Systems",
+      "description": "Annex A section covering data governance for AI. Organisations shall establish data governance practices covering collection, quality, provenance, bias mitigation, and handling of special categories of data used in AI systems.",
+      "level": 0,
+      "sort_order": 60000
+    },
+    {
+      "type": "framework_control",
+      "id": "66df08d2-5f79-c6ad-ab04-e2cdf9310b0b",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.8",
+      "title": "Information for Interested Parties",
+      "description": "Annex A section covering transparency obligations. Organisations shall provide appropriate information about AI systems to users, affected persons, and other relevant stakeholders including technical documentation and disclosure requirements.",
+      "level": 0,
+      "sort_order": 70000
+    },
+    {
+      "type": "framework_control",
+      "id": "3e44519f-c87c-24ed-1096-bc2f098f608a",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.9",
+      "title": "Use of AI Systems",
+      "description": "Annex A section covering responsible AI use. Organisations shall ensure AI systems are used responsibly, with appropriate human oversight, safeguards against misuse, and mechanisms for individuals to contest automated decisions.",
+      "level": 0,
+      "sort_order": 80000
+    },
+    {
+      "type": "framework_control",
+      "id": "76e8f849-57d6-da7f-6760-9aac08f10f2f",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.10",
+      "title": "Third-Party and Customer Relationships",
+      "description": "Annex A section covering third-party AI governance. Organisations shall manage AI-related risks arising from third-party AI providers, suppliers, and customers, including contractual obligations, due diligence, and shared responsibility frameworks.",
+      "level": 0,
+      "sort_order": 90000
+    },
+    {
+      "type": "framework_control",
+      "id": "0e10af23-065b-dc09-211f-0ce4bb6cb7fa",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.2.2-4",
+      "title": "AI Policy Framework",
+      "description": "Organisations shall establish, document, and maintain an AI policy framework that defines the organisation\u2019s approach to AI governance, ethical principles, regulatory applicability (including the EU AI Act and sector-specific obligations), and management commitments. The policy shall be approved by top management and communicated to all relevant parties.",
+      "level": 1,
+      "sort_order": 100,
+      "metadata": {
+        "iso42001_clauses": ["A.2.2", "A.2.3", "A.2.4"],
+        "keywords": ["AI policy", "AI governance", "ethics", "regulatory applicability", "management commitment"]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2507fe53-4d0d-42ee-2bb8-e92ea7b0d0bf",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.3.2-3",
+      "title": "AI Roles and Responsibilities",
+      "description": "Organisations shall define and assign roles and responsibilities for AI governance, including an AI Owner, AI Risk function, and accountability structures for AI system decisions. Reporting lines and escalation paths shall be documented and communicated.",
+      "level": 1,
+      "sort_order": 200,
+      "metadata": {
+        "iso42001_clauses": ["A.3.2", "A.3.3"],
+        "keywords": ["AI owner", "AI roles", "accountability", "governance structure", "responsibilities"]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3e96e579-b835-0862-bf7c-9cc71fbdd15e",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.4.2-6",
+      "title": "AI System Resources",
+      "description": "Organisations shall ensure the availability of adequate resources for AI systems, including computational infrastructure, tooling environments, personnel competence, and access to verified training datasets. Resource constraints that could affect system reliability or safety shall be identified and managed.",
+      "level": 1,
+      "sort_order": 300,
+      "metadata": {
+        "iso42001_clauses": ["A.4.2", "A.4.3", "A.4.4", "A.4.5", "A.4.6"],
+        "keywords": ["compute resources", "AI tools", "competence", "training data", "infrastructure"]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b5cb81f4-1f0f-abb9-ad6e-0962592dd1b7",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.5.2-5",
+      "title": "AI System Impact Assessment",
+      "description": "Organisations shall conduct structured impact assessments for AI systems before deployment and periodically thereafter, covering risks to individuals, groups, society, and the environment. Assessments shall identify potential harms, evaluate likelihood and severity, and define mitigation measures. High-risk AI systems require formal Fundamental Rights Impact Assessments (FRIA).",
+      "level": 1,
+      "sort_order": 400,
+      "metadata": {
+        "iso42001_clauses": ["A.5.2", "A.5.3", "A.5.4", "A.5.5"],
+        "keywords": ["impact assessment", "FRIA", "risk to individuals", "harm assessment", "high-risk AI"]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ff874dd6-b622-8e31-7fcd-0dc689af35bc",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.6.1",
+      "title": "AI Development Governance",
+      "description": "Organisations shall establish governance controls for the development of AI systems, including design specifications, model selection criteria, testing requirements, security reviews, and approval gates before deployment. Development practices shall incorporate responsible AI principles and bias mitigation from the outset.",
+      "level": 1,
+      "sort_order": 500,
+      "metadata": {
+        "iso42001_clauses": ["A.6.1"],
+        "keywords": ["AI development", "model governance", "design controls", "testing", "approval gates"]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b99fb835-c9fd-d432-d3b0-0e7ad727f741",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.6.2",
+      "title": "AI System Lifecycle",
+      "description": "Organisations shall manage AI systems through their full lifecycle, including operational monitoring, performance degradation detection, incident response, change management, and planned decommissioning. Post-deployment monitoring shall include drift detection, anomaly detection, and feedback loops for continuous improvement.",
+      "level": 1,
+      "sort_order": 600,
+      "metadata": {
+        "iso42001_clauses": ["A.6.2"],
+        "keywords": ["AI lifecycle", "model monitoring", "drift detection", "incident response", "decommissioning"]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "39c7f58d-ff71-00d1-0425-659caf655ade",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.7.2-6",
+      "title": "Data for AI Systems",
+      "description": "Organisations shall establish data governance practices for AI systems covering data collection and provenance, data quality assurance, bias detection and mitigation, handling of special categories of personal data, and data lineage documentation. Training, validation, and test datasets shall meet defined quality thresholds.",
+      "level": 1,
+      "sort_order": 700,
+      "metadata": {
+        "iso42001_clauses": ["A.7.2", "A.7.3", "A.7.4", "A.7.5", "A.7.6"],
+        "keywords": ["data governance", "data quality", "bias mitigation", "training data", "data provenance"]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b899c75d-1ba3-932a-d2ee-ca3a98a81889",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.8.2-5",
+      "title": "Information for Interested Parties",
+      "description": "Organisations shall provide appropriate, timely, and accessible information about AI systems to all relevant interested parties, including technical documentation for regulators, plain-language disclosures for users, and notifications to affected persons. Information shall cover system purpose, capabilities, limitations, and data handling practices.",
+      "level": 1,
+      "sort_order": 800,
+      "metadata": {
+        "iso42001_clauses": ["A.8.2", "A.8.3", "A.8.4", "A.8.5"],
+        "keywords": ["AI transparency", "technical documentation", "user disclosure", "stakeholder information"]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "08999115-0deb-ee9e-12ba-1568560bc48f",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.9.2-4",
+      "title": "Responsible Use of AI Systems",
+      "description": "Organisations shall ensure AI systems are used responsibly and in accordance with their intended purpose. Controls shall include human oversight mechanisms, override capabilities, safeguards against misuse, and rights for individuals to contest, request review of, or opt out of AI-driven decisions that significantly affect them.",
+      "level": 1,
+      "sort_order": 900,
+      "metadata": {
+        "iso42001_clauses": ["A.9.2", "A.9.3", "A.9.4"],
+        "keywords": ["human oversight", "AI misuse", "contestability", "override capability", "responsible use"]
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2c7ea00f-f126-289f-4463-cf19680acd95",
+      "framework_id": "f013ae15-3156-3365-3b65-458fed5591c6",
+      "control_id": "A.10.2-4",
+      "title": "Third-Party and Customer Relationships",
+      "description": "Organisations shall manage AI-related risks arising from third-party AI systems, component suppliers, and AI service providers. Contractual arrangements shall address data handling, model behaviour, liability, audit rights, and ongoing monitoring. Organisations shall also define obligations when supplying AI systems to customers.",
+      "level": 1,
+      "sort_order": 1000,
+      "metadata": {
+        "iso42001_clauses": ["A.10.2", "A.10.3", "A.10.4"],
+        "keywords": ["third-party AI", "supplier management", "AI contracts", "customer obligations", "supply chain"]
+      }
+    }
+  ]
+}

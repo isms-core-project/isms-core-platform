@@ -9618,15 +9618,15 @@
         "type": "input"
       },
       {
-        "name": "✅ Implemented",
+        "name": "\u2705 Implemented",
         "type": "input"
       },
       {
-        "name": "⚠️ Partial",
+        "name": "\u26a0\ufe0f Partial",
         "type": "input"
       },
       {
-        "name": "❌ Not Implemented",
+        "name": "\u274c Not Implemented",
         "type": "input"
       },
       {
@@ -9634,11 +9634,11 @@
         "type": "input"
       },
       {
-        "name": "✅ Yes",
+        "name": "\u2705 Yes",
         "type": "input"
       },
       {
-        "name": "❌ No",
+        "name": "\u274c No",
         "type": "input"
       },
       {
@@ -9866,15 +9866,15 @@
         "type": "input"
       },
       {
-        "name": "✅ Yes",
+        "name": "\u2705 Yes",
         "type": "input"
       },
       {
-        "name": "⚠️ Partial",
+        "name": "\u26a0\ufe0f Partial",
         "type": "input"
       },
       {
-        "name": "❌ No",
+        "name": "\u274c No",
         "type": "input"
       },
       {
@@ -9906,11 +9906,11 @@
         "type": "input"
       },
       {
-        "name": "✅ Implemented",
+        "name": "\u2705 Implemented",
         "type": "input"
       },
       {
-        "name": "❌ Not Implemented",
+        "name": "\u274c Not Implemented",
         "type": "input"
       },
       {
@@ -10002,7 +10002,7 @@
         "type": "input"
       },
       {
-        "name": "✅ Yes",
+        "name": "\u2705 Yes",
         "type": "input"
       },
       {
@@ -13536,6 +13536,196 @@
     "sheet_count": 0,
     "sheet_source": null,
     "source_file": "iso27018-pii-cloud/cld-a.12-privacy-compliance/SCR/generate_cld_checklist_a12.py",
+    "output_filename_pattern": null,
+    "qa_status": "PASS",
+    "qa_issues": []
+  },
+  {
+    "product_type": "ai",
+    "document_id": "AI-CHK-A.2.2-4",
+    "workbook_name": "ISO 42001:2023 AI Management - AI Policy Framework",
+    "control_id": "A.2.2-4",
+    "control_name": "AI Policy Framework",
+    "group_code": "a.2.2-4",
+    "domain_number": 1,
+    "domain_total": 1,
+    "is_stacked": false,
+    "stacked_control_ids": [],
+    "sheets": [],
+    "sheet_count": 0,
+    "sheet_source": null,
+    "source_file": "ai-a.2.2-4-ai-policy-framework/SCR/generate_ai_checklist_a224.py",
+    "output_filename_pattern": null,
+    "qa_status": "PASS",
+    "qa_issues": []
+  },
+  {
+    "product_type": "ai",
+    "document_id": "AI-CHK-A.3.2-3",
+    "workbook_name": "ISO 42001:2023 AI Management - AI Roles and Responsibilities",
+    "control_id": "A.3.2-3",
+    "control_name": "AI Roles and Responsibilities",
+    "group_code": "a.3.2-3",
+    "domain_number": 1,
+    "domain_total": 1,
+    "is_stacked": false,
+    "stacked_control_ids": [],
+    "sheets": [],
+    "sheet_count": 0,
+    "sheet_source": null,
+    "source_file": "ai-a.3.2-3-ai-roles-and-responsibilities/SCR/generate_ai_checklist_a323.py",
+    "output_filename_pattern": null,
+    "qa_status": "PASS",
+    "qa_issues": []
+  },
+  {
+    "product_type": "ai",
+    "document_id": "AI-CHK-A.4.2-6",
+    "workbook_name": "ISO 42001:2023 AI Management - AI System Resources",
+    "control_id": "A.4.2-6",
+    "control_name": "AI System Resources",
+    "group_code": "a.4.2-6",
+    "domain_number": 1,
+    "domain_total": 1,
+    "is_stacked": false,
+    "stacked_control_ids": [],
+    "sheets": [],
+    "sheet_count": 0,
+    "sheet_source": null,
+    "source_file": "ai-a.4.2-6-ai-system-resources/SCR/generate_ai_checklist_a426.py",
+    "output_filename_pattern": null,
+    "qa_status": "PASS",
+    "qa_issues": []
+  },
+  {
+    "product_type": "ai",
+    "document_id": "AI-CHK-A.5.2-5",
+    "workbook_name": "ISO 42001:2023 AI Management - AI System Impact Assessment",
+    "control_id": "A.5.2-5",
+    "control_name": "AI System Impact Assessment",
+    "group_code": "a.5.2-5",
+    "domain_number": 1,
+    "domain_total": 1,
+    "is_stacked": false,
+    "stacked_control_ids": [],
+    "sheets": [],
+    "sheet_count": 0,
+    "sheet_source": null,
+    "source_file": "ai-a.5.2-5-ai-system-impact-assessment/SCR/generate_ai_checklist_a525.py",
+    "output_filename_pattern": null,
+    "qa_status": "PASS",
+    "qa_issues": []
+  },
+  {
+    "product_type": "ai",
+    "document_id": "AI-CHK-A.6.1",
+    "workbook_name": "ISO 42001:2023 AI Management - AI Development Governance",
+    "control_id": "A.6.1",
+    "control_name": "AI Development Governance",
+    "group_code": "a.6.1",
+    "domain_number": 1,
+    "domain_total": 1,
+    "is_stacked": false,
+    "stacked_control_ids": [],
+    "sheets": [],
+    "sheet_count": 0,
+    "sheet_source": null,
+    "source_file": "ai-a.6.1-ai-development-governance/SCR/generate_ai_checklist_a61.py",
+    "output_filename_pattern": null,
+    "qa_status": "PASS",
+    "qa_issues": []
+  },
+  {
+    "product_type": "ai",
+    "document_id": "AI-CHK-A.6.2",
+    "workbook_name": "ISO 42001:2023 AI Management - AI System Lifecycle",
+    "control_id": "A.6.2",
+    "control_name": "AI System Lifecycle",
+    "group_code": "a.6.2",
+    "domain_number": 1,
+    "domain_total": 1,
+    "is_stacked": false,
+    "stacked_control_ids": [],
+    "sheets": [],
+    "sheet_count": 0,
+    "sheet_source": null,
+    "source_file": "ai-a.6.2-ai-system-lifecycle/SCR/generate_ai_checklist_a62.py",
+    "output_filename_pattern": null,
+    "qa_status": "PASS",
+    "qa_issues": []
+  },
+  {
+    "product_type": "ai",
+    "document_id": "AI-CHK-A.7.2-6",
+    "workbook_name": "ISO 42001:2023 AI Management - Data for AI Systems",
+    "control_id": "A.7.2-6",
+    "control_name": "Data for AI Systems",
+    "group_code": "a.7.2-6",
+    "domain_number": 1,
+    "domain_total": 1,
+    "is_stacked": false,
+    "stacked_control_ids": [],
+    "sheets": [],
+    "sheet_count": 0,
+    "sheet_source": null,
+    "source_file": "ai-a.7.2-6-data-for-ai-systems/SCR/generate_ai_checklist_a726.py",
+    "output_filename_pattern": null,
+    "qa_status": "PASS",
+    "qa_issues": []
+  },
+  {
+    "product_type": "ai",
+    "document_id": "AI-CHK-A.8.2-5",
+    "workbook_name": "ISO 42001:2023 AI Management - Information for Interested Parties",
+    "control_id": "A.8.2-5",
+    "control_name": "Information for Interested Parties",
+    "group_code": "a.8.2-5",
+    "domain_number": 1,
+    "domain_total": 1,
+    "is_stacked": false,
+    "stacked_control_ids": [],
+    "sheets": [],
+    "sheet_count": 0,
+    "sheet_source": null,
+    "source_file": "ai-a.8.2-5-information-for-interested-parties/SCR/generate_ai_checklist_a825.py",
+    "output_filename_pattern": null,
+    "qa_status": "PASS",
+    "qa_issues": []
+  },
+  {
+    "product_type": "ai",
+    "document_id": "AI-CHK-A.9.2-4",
+    "workbook_name": "ISO 42001:2023 AI Management - Responsible Use of AI Systems",
+    "control_id": "A.9.2-4",
+    "control_name": "Responsible Use of AI Systems",
+    "group_code": "a.9.2-4",
+    "domain_number": 1,
+    "domain_total": 1,
+    "is_stacked": false,
+    "stacked_control_ids": [],
+    "sheets": [],
+    "sheet_count": 0,
+    "sheet_source": null,
+    "source_file": "ai-a.9.2-4-responsible-use-of-ai-systems/SCR/generate_ai_checklist_a924.py",
+    "output_filename_pattern": null,
+    "qa_status": "PASS",
+    "qa_issues": []
+  },
+  {
+    "product_type": "ai",
+    "document_id": "AI-CHK-A.10.2-4",
+    "workbook_name": "ISO 42001:2023 AI Management - Third-Party and Customer Relationships",
+    "control_id": "A.10.2-4",
+    "control_name": "Third-Party and Customer Relationships",
+    "group_code": "a.10.2-4",
+    "domain_number": 1,
+    "domain_total": 1,
+    "is_stacked": false,
+    "stacked_control_ids": [],
+    "sheets": [],
+    "sheet_count": 0,
+    "sheet_source": null,
+    "source_file": "ai-a.10.2-4-third-party-and-customer-relationships/SCR/generate_ai_checklist_a10.py",
     "output_filename_pattern": null,
     "qa_status": "PASS",
     "qa_issues": []

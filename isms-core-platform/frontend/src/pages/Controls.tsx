@@ -184,13 +184,14 @@ export default function Controls() {
   const isIsms = product === 'isms'
   const isPrivacy = product === 'privacy'
   const isCloud = product === 'cloud'
+  const isAi = product === 'ai'
   // product_family for the DB control groups query — always explicit to avoid cross-product pollution
-  const productFamily = isPrivacy ? 'PRIVACY' : isCloud ? 'CLOUD' : 'ISMS'
+  const productFamily = isPrivacy ? 'PRIVACY' : isCloud ? 'CLOUD' : isAi ? 'AI' : 'ISMS'
 
   const { data: cgData, isLoading: cgLoading, error: cgError } = useQuery({
     queryKey: ['controls', productFamily],
     queryFn: () => controlsApi.list({ product_family: productFamily }),
-    enabled: isIsms || isPrivacy || isCloud,
+    enabled: isIsms || isPrivacy || isCloud || isAi,
   })
 
   const allControls = cgData as unknown as CgItem[] | undefined

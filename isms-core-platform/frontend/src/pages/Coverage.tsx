@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useProduct, PRODUCT_SUBTITLES, PRODUCT_COLORS } from '../store/ProductContext'
-import { LockPersonOutlined, CloudOutlined, ExpandMoreOutlined, ExpandLessOutlined } from '@mui/icons-material'
+import { LockPersonOutlined, CloudOutlined, PsychologyOutlined, ExpandMoreOutlined, ExpandLessOutlined } from '@mui/icons-material'
 import {
   Box,
   Card,
@@ -68,6 +68,7 @@ const PRODUCT_SOURCE_FRAMEWORK: Record<string, string> = {
   isms:    'ISO27001',
   privacy: 'ISO27701',
   cloud:   'ISO27017',
+  ai:      'ISO42001',
 }
 
 // Human-readable label for the source control column
@@ -75,6 +76,7 @@ const SOURCE_CONTROL_LABEL: Record<string, string> = {
   isms:     'ISO 27001 Control',
   privacy:  'ISO 27701 Control',
   cloud:    'ISO 27017 Control',
+  ai:       'ISO 42001 Control',
   ISO27017: 'ISO 27017 Control',
   ISO27018: 'ISO 27018 Control',
 }
@@ -759,11 +761,13 @@ export default function Coverage() {
           )}
         </Box>
 
-        {(product === 'privacy' || product === 'cloud') && (
+        {(product === 'privacy' || product === 'cloud' || product === 'ai') && (
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, py: 3, pl: 1 }}>
             {product === 'privacy'
               ? <LockPersonOutlined sx={{ color: `${PRODUCT_COLORS.privacy}50`, fontSize: 20 }} />
-              : <CloudOutlined sx={{ color: `${PRODUCT_COLORS.cloud}50`, fontSize: 20 }} />
+              : product === 'ai'
+                ? <PsychologyOutlined sx={{ color: `${PRODUCT_COLORS.ai}50`, fontSize: 20 }} />
+                : <CloudOutlined sx={{ color: `${PRODUCT_COLORS.cloud}50`, fontSize: 20 }} />
             }
             <Typography variant="body2" color="text.disabled">
               Content coverage gaps for {PRODUCT_SUBTITLES[product]} will appear here once control groups are imported.

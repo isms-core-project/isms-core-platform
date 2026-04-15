@@ -1,0 +1,70 @@
+{
+  "bundle_id": "bundle--0ecd0001-a100-4200-b000-000000000001",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "0ecd0001-a100-4200-b000-0ecd00000001",
+    "code": "OECD_AI",
+    "name": "OECD AI Principles",
+    "version": "2024",
+    "publisher": "OECD",
+    "source_url": "https://oecd.ai/en/ai-principles",
+    "jurisdiction": null,
+    "description": "OECD Principles on Artificial Intelligence (2019, updated 2024) — adopted by 46+ countries and referenced in the EU AI Act preamble. Five principles for responsible stewardship of trustworthy AI covering inclusive growth, human-centred values, transparency, robustness and accountability."
+  },
+  "generated_at": "2026-04-15T00:00:00Z",
+  "generator": "manual",
+  "objects_count": 5,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "0ecd0001-a100-4200-b001-000000000001",
+      "framework_id": "0ecd0001-a100-4200-b000-0ecd00000001",
+      "control_id": "P1",
+      "title": "Inclusive growth, sustainable development and well-being",
+      "description": "Stakeholders should proactively engage in responsible stewardship of trustworthy AI in pursuit of beneficial outcomes for people and the planet, such as augmenting human capabilities and enhancing creativity, advancing inclusion of underrepresented populations, reducing economic inequality and protecting natural environments.",
+      "level": 0,
+      "sort_order": 1000
+    },
+    {
+      "type": "framework_control",
+      "id": "0ecd0001-a100-4200-b001-000000000002",
+      "framework_id": "0ecd0001-a100-4200-b000-0ecd00000001",
+      "control_id": "P2",
+      "title": "Human-centred values and fairness",
+      "description": "AI actors should respect the rule of law, human rights and democratic values, throughout the AI system lifecycle. These include freedom, dignity and autonomy, privacy and data protection, non-discrimination and equality, diversity, fairness, social justice, and internationally recognised labour rights.",
+      "level": 0,
+      "sort_order": 2000
+    },
+    {
+      "type": "framework_control",
+      "id": "0ecd0001-a100-4200-b001-000000000003",
+      "framework_id": "0ecd0001-a100-4200-b000-0ecd00000001",
+      "control_id": "P3",
+      "title": "Transparency and explainability",
+      "description": "AI actors should commit to transparency and responsible disclosure regarding AI systems. To this end, they should provide meaningful information, appropriate to the context, and consistent with the state of art to foster a general understanding of AI systems, to make stakeholders aware of their interactions with AI systems.",
+      "level": 0,
+      "sort_order": 3000
+    },
+    {
+      "type": "framework_control",
+      "id": "0ecd0001-a100-4200-b001-000000000004",
+      "framework_id": "0ecd0001-a100-4200-b000-0ecd00000001",
+      "control_id": "P4",
+      "title": "Robustness, security and safety",
+      "description": "AI systems should be robust, secure and safe throughout their entire lifecycle so that, in conditions of normal use, foreseeable use or misuse, or other adverse conditions, they function appropriately and do not pose unreasonable safety risk. Mechanisms should be in place to ensure AI systems can be corrected or shut down.",
+      "level": 0,
+      "sort_order": 4000
+    },
+    {
+      "type": "framework_control",
+      "id": "0ecd0001-a100-4200-b001-000000000005",
+      "framework_id": "0ecd0001-a100-4200-b000-0ecd00000001",
+      "control_id": "P5",
+      "title": "Accountability",
+      "description": "AI actors should be accountable for the proper functioning of AI systems and for the respect of the above principles, based on their roles, the context, and consistent with the state of art. Organisations should ensure mechanisms are in place to ensure traceability, auditability and explainability of AI systems.",
+      "level": 0,
+      "sort_order": 5000
+    }
+  ]
+}

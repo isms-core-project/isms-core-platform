@@ -88,6 +88,7 @@ services:
       - ${OPERATIONAL_HOST_PATH:-../isms-core-operational}:/app/isms-operational:ro
       - ${PRIVACY_HOST_PATH:-../isms-core-privacy}:/app/isms-privacy:ro
       - ${CLOUD_HOST_PATH:-../isms-core-cloud}:/app/isms-cloud:ro
+      - ${AI_HOST_PATH:-../isms-core-ai}:/app/isms-ai:ro
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
     environment:
@@ -98,6 +99,7 @@ services:
       - OPERATIONAL_PATH=/app/isms-operational
       - PRIVACY_PATH=/app/isms-privacy
       - CLOUD_PATH=/app/isms-cloud
+      - AI_PATH=/app/isms-ai
       - SEC_PATH=/app/isms-sec
       - EXT_PATH=/app/isms-ext
       - SECRET_KEY=${SECRET_KEY}
@@ -122,10 +124,10 @@ services:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
-      interval: 30s
+      interval: 15s
       timeout: 10s
       retries: 3
-      start_period: 40s
+      start_period: 150s
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -142,6 +144,7 @@ services:
       - ${OPERATIONAL_HOST_PATH:-../isms-core-operational}:/app/isms-operational:ro
       - ${PRIVACY_HOST_PATH:-../isms-core-privacy}:/app/isms-privacy:ro
       - ${CLOUD_HOST_PATH:-../isms-core-cloud}:/app/isms-cloud:ro
+      - ${AI_HOST_PATH:-../isms-core-ai}:/app/isms-ai:ro
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
     environment:
@@ -177,6 +180,7 @@ services:
       - ${OPERATIONAL_HOST_PATH:-../isms-core-operational}:/app/isms-operational:ro
       - ${PRIVACY_HOST_PATH:-../isms-core-privacy}:/app/isms-privacy:ro
       - ${CLOUD_HOST_PATH:-../isms-core-cloud}:/app/isms-cloud:ro
+      - ${AI_HOST_PATH:-../isms-core-ai}:/app/isms-ai:ro
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
     environment:

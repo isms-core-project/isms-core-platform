@@ -33,6 +33,7 @@ const PRODUCT_SOURCE_FRAMEWORK: Record<string, string> = {
   isms:    'ISO27001',
   privacy: 'ISO27701',
   cloud:   'ISO27017',
+  ai:      'ISO42001',
 }
 
 const PRODUCT_SECTIONS: Record<string, { label: string; value: string }[]> = {
@@ -48,6 +49,17 @@ const PRODUCT_SECTIONS: Record<string, { label: string; value: string }[]> = {
     { label: 'A.3 — Both',           value: 'A.3' },
   ],
   cloud: [],  // ISO 27017 has a single CLD. prefix — no section grouping needed
+  ai: [
+    { label: 'A.2 — AI Policies',          value: 'A.2' },
+    { label: 'A.3 — Roles & Resources',    value: 'A.3' },
+    { label: 'A.4 — AI Resources',         value: 'A.4' },
+    { label: 'A.5 — Planning & Operation', value: 'A.5' },
+    { label: 'A.6 — Operation',            value: 'A.6' },
+    { label: 'A.7 — Data for AI',          value: 'A.7' },
+    { label: 'A.8 — Information',          value: 'A.8' },
+    { label: 'A.9 — Responsible Use',      value: 'A.9' },
+    { label: 'A.10 — Third-Party',         value: 'A.10' },
+  ],
 }
 
 export default function Graph() {

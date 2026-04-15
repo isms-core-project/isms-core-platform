@@ -40,6 +40,7 @@ class SysInfoResponse(BaseModel):
     operational_path: str
     privacy_path: str = ""
     cloud_path: str = ""
+    ai_path: str = ""
     sec_path: str = ""
     ext_path: str = ""
     opensearch_url: str

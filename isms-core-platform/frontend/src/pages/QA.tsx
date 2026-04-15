@@ -764,9 +764,11 @@ function ProjectHealthCard({ item, method }: { item: OrgProjectSummaryItem; meth
               sx={{
                 height: 16, fontSize: '0.6rem', mt: 0.25,
                 bgcolor: item.product_family === 'PRIVACY' ? 'rgba(112,48,159,0.15)' :
-                         item.product_family === 'CLOUD' ? 'rgba(0,153,204,0.15)' : 'rgba(68,114,196,0.15)',
+                         item.product_family === 'CLOUD' ? 'rgba(0,153,204,0.15)' :
+                         item.product_family === 'AI' ? 'rgba(255,107,53,0.15)' : 'rgba(68,114,196,0.15)',
                 color: item.product_family === 'PRIVACY' ? '#c084fc' :
-                       item.product_family === 'CLOUD' ? '#67e8f9' : '#93bbf5',
+                       item.product_family === 'CLOUD' ? '#67e8f9' :
+                       item.product_family === 'AI' ? '#ff6b35' : '#93bbf5',
               }}
             />
           </Box>
@@ -975,6 +977,7 @@ export default function QA() {
   const showOp  = isExistence && (product === 'all' || product === 'operational')
   const showPrv = product === 'all' || product === 'privacy'
   const showCld = product === 'all' || product === 'cloud'
+  const showAi  = product === 'all' || product === 'ai'
   const methodSubtitle = METHOD_SUBTITLES[method] ?? ''
 
   return (
@@ -1092,9 +1095,9 @@ export default function QA() {
                   {overallPct}%
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                  {summary.framework.pass_count + summary.operational.pass_count + summary.privacy.pass_count + summary.cloud.pass_count}
+                  {summary.framework.pass_count + summary.operational.pass_count + summary.privacy.pass_count + summary.cloud.pass_count + (summary.ai?.pass_count ?? 0)}
                   {' / '}
-                  {summary.framework.total + summary.operational.total + summary.privacy.total + summary.cloud.total} checks passing
+                  {summary.framework.total + summary.operational.total + summary.privacy.total + summary.cloud.total + (summary.ai?.total ?? 0)} checks passing
                 </Typography>
               </CardContent>
             </Card>
@@ -1103,6 +1106,7 @@ export default function QA() {
           {showOp  && <Grid item xs={12} md={3}><SummaryCard label="Operational" bucket={summary.operational} color="#70AD47" /></Grid>}
           {showPrv && <Grid item xs={12} md={3}><SummaryCard label="Privacy"     bucket={summary.privacy}     color={PRODUCT_COLORS.privacy} /></Grid>}
           {showCld && <Grid item xs={12} md={3}><SummaryCard label="Cloud"       bucket={summary.cloud}       color={PRODUCT_COLORS.cloud} /></Grid>}
+          {showAi  && summary.ai?.total > 0 && <Grid item xs={12} md={3}><SummaryCard label="AI"    bucket={summary.ai}          color="#ff6b35" /></Grid>}
         </Grid>
       )}
 
@@ -1120,6 +1124,7 @@ export default function QA() {
             <ToggleButton value="operational">Operational</ToggleButton>
             <ToggleButton value="privacy">Privacy</ToggleButton>
             <ToggleButton value="cloud">Cloud</ToggleButton>
+            <ToggleButton value="ai">AI</ToggleButton>
           </ToggleButtonGroup>
         )}
         {(method === 'keyword' || isSemantic(method)) && (
@@ -1133,6 +1138,7 @@ export default function QA() {
             <ToggleButton value="isms">ISMS</ToggleButton>
             <ToggleButton value="privacy">Privacy</ToggleButton>
             <ToggleButton value="cloud">Cloud</ToggleButton>
+            <ToggleButton value="ai">AI</ToggleButton>
           </ToggleButtonGroup>
         )}
 

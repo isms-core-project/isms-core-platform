@@ -127,7 +127,7 @@ const NAV_TOOLS: NavItem[] = [
   { label: 'QA',              path: '/qa',             icon: <VerifiedOutlined />,     notViewer: true },
   { label: 'Search',          path: '/search',         icon: <SearchOutlined /> },
   { label: 'Compass',         path: '/compass',        icon: <ExploreOutlined /> },
-  { label: 'Cloud Glossary',  path: '/cloud-glossary', icon: <MenuBookOutlined /> },
+  { label: 'Glossary',        path: '/glossary',       icon: <MenuBookOutlined /> },
   { label: 'Generators',      path: '/generators',     icon: <CodeOutlined />,         managerAndAbove: true },
   { label: 'Report',          path: '/report',         icon: <SummarizeOutlined />,    notViewer: true },
   { label: 'Risk Wizard',     path: '/risk',           icon: <GppMaybeOutlined />,     notViewer: true },
@@ -138,10 +138,13 @@ const NAV_FRAMEWORK_REGIONS: NavRegion[] = [
   {
     label: 'Global',
     items: [
-      { label: 'NIST CSF 2.0',      path: '/nist-csf',  icon: <GridViewOutlined /> },
-      { label: 'NIST AI RMF 1.0',   path: '/nist-ai-rmf', icon: <PolicyOutlined /> },
+      { label: 'NIST CSF 2.0',      path: '/nist-csf',     icon: <GridViewOutlined /> },
+      { label: 'NIST AI RMF 1.0',   path: '/nist-ai-rmf',  icon: <PolicyOutlined /> },
+      { label: 'NIST SP 800-53 R5', path: '/nist-800-53',  icon: <SecurityOutlined /> },
       { label: 'CIS Controls',       path: '/cis',       icon: <SecurityOutlined /> },
       { label: 'COBIT 2019',         path: '/cobit',     icon: <AccountBalanceOutlined /> },
+      { label: 'CSA CCM v4.1',       path: '/csa-ccm',   icon: <CloudOutlined /> },
+      { label: 'CSA AI Controls',    path: '/csa-aicm',  icon: <PolicyOutlined /> },
     ],
   },
   {
@@ -232,6 +235,7 @@ const PRODUCT_SECTIONS: { value: Product; icon: React.ReactNode }[] = [
   { value: 'isms',    icon: <ShieldOutlined /> },
   { value: 'privacy', icon: <LockPersonOutlined /> },
   { value: 'cloud',   icon: <CloudOutlined /> },
+  { value: 'ai',      icon: <PsychologyOutlined /> },
 ]
 
 const PRIVACY_SECTIONS = [
@@ -250,8 +254,8 @@ const PLATFORM_COLOR    = '#6B7A99'
 const INTEL_COLOR       = '#B84F00'
 
 const RISK_PATHS       = ['/risk-register', '/remediation', '/metrics', '/bia', '/ebios']
-const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk', '/cloud-glossary']
-const FRAMEWORK_PATHS  = ['/nist-csf', '/nist-ai-rmf', '/nis2', '/dora', '/uk-nis', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/isg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit']
+const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk', '/glossary']
+const FRAMEWORK_PATHS  = ['/nist-csf', '/nist-ai-rmf', '/nist-800-53', '/nis2', '/dora', '/uk-nis', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/isg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit', '/csa-ccm', '/csa-aicm']
 const SUPPLIER_PATHS   = ['/tprm']
 const ADMIN_PATHS        = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker']
 const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/mitre-groups', '/mitre-software', '/mitre-campaigns', '/mitre-heatmap', '/cve-explorer']

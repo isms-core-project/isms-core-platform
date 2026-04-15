@@ -59,8 +59,9 @@ const PLATFORM_TOOLS = [
 ]
 
 const COMPLIANCE_TOOLS = [
-  { label: 'NIST CSF 2.0',   path: '/nist-csf',     icon: <GridViewOutlined sx={{ fontSize: 17 }} /> },
-  { label: 'NIST AI RMF',   path: '/nist-ai-rmf',  icon: <PolicyOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'NIST CSF 2.0',    path: '/nist-csf',     icon: <GridViewOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'NIST AI RMF',    path: '/nist-ai-rmf',  icon: <PolicyOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'NIST 800-53 R5', path: '/nist-800-53',  icon: <SecurityOutlined sx={{ fontSize: 17 }} /> },
   { label: 'NIS2',            path: '/nis2',     icon: <ShieldOutlined sx={{ fontSize: 17 }} /> },
   { label: 'DORA',            path: '/dora',     icon: <AccountBalanceOutlined sx={{ fontSize: 17 }} /> },
   { label: 'CIS Controls',   path: '/cis',      icon: <SecurityOutlined sx={{ fontSize: 17 }} /> },
@@ -72,18 +73,22 @@ const COMPLIANCE_TOOLS = [
   { label: 'EU AI Act',       path: '/ai-act',   icon: <PolicyOutlined sx={{ fontSize: 17 }} /> },
   { label: 'EU Cloud Sov.',  path: '/eu-cloud-sov', icon: <CloudOutlined sx={{ fontSize: 17 }} /> },
   { label: 'COBIT 2019',    path: '/cobit',         icon: <AccountBalanceOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'CSA CCM v4.1', path: '/csa-ccm',       icon: <CloudOutlined sx={{ fontSize: 17 }} /> },
+  { label: 'CSA AICM',     path: '/csa-aicm',      icon: <PolicyOutlined sx={{ fontSize: 17 }} /> },
 ]
 
 const PRODUCT_STANDARDS = {
   isms:    'ISO/IEC 27001:2022',
   privacy: 'ISO/IEC 27701:2025',
   cloud:   'ISO/IEC 27018:2025',
+  ai:      'ISO/IEC 42001:2023',
 }
 
 const PRODUCT_ICONS = {
   isms:    <ShieldOutlined />,
   privacy: <LockPersonOutlined />,
   cloud:   <CloudOutlined />,
+  ai:      <PsychologyOutlined />,
 }
 
 function Num({ value, color, loading }: { value?: number; color: string; loading: boolean }) {
@@ -142,7 +147,7 @@ function ProductCard({
   onClick,
   children,
 }: {
-  product: 'isms' | 'privacy' | 'cloud'
+  product: 'isms' | 'privacy' | 'cloud' | 'ai'
   loading: boolean
   onClick: () => void
   children: React.ReactNode
@@ -221,7 +226,7 @@ export default function Home() {
   const now = new Date()
   const dateStr = now.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
 
-  function goTo(product: 'isms' | 'privacy' | 'cloud') {
+  function goTo(product: 'isms' | 'privacy' | 'cloud' | 'ai') {
     setProduct(product)
     navigate('/overview')
   }
@@ -229,6 +234,7 @@ export default function Home() {
   const ismsColor = PRODUCT_COLORS.isms
   const privColor = PRODUCT_COLORS.privacy
   const cloudColor = PRODUCT_COLORS.cloud
+  const aiColor = PRODUCT_COLORS.ai
 
   return (
     <Box sx={{
@@ -364,6 +370,28 @@ export default function Home() {
             </Box>
             <StatusDot ok={(summary?.cloud.policies ?? 0) > 0} label={`Policies (${summary?.cloud.policies ?? '…'})`} loading={isLoading} />
             <StatusDot ok={(summary?.cloud.imps ?? 0) > 0} label={`Implementation Guides (${summary?.cloud.imps ?? '…'})`} loading={isLoading} />
+          </ProductCard>
+        </Box>
+
+        {/* AI */}
+        <Box sx={{ flex: 1 }}>
+          <ProductCard product="ai" loading={isLoading} onClick={() => goTo('ai')}>
+            <Box sx={{ display: 'flex', gap: 2.5, mb: 2 }}>
+              <Box>
+                <Num value={summary?.ai.groups} color={aiColor} loading={isLoading} />
+                <Typography variant="caption" sx={{ fontSize: '0.63rem', color: 'text.secondary' }}>Control Groups</Typography>
+              </Box>
+              <Box>
+                <Num value={summary?.ai.policies} color={aiColor} loading={isLoading} />
+                <Typography variant="caption" sx={{ fontSize: '0.63rem', color: 'text.secondary' }}>Policies</Typography>
+              </Box>
+              <Box>
+                <Num value={summary?.ai.imps} color={aiColor} loading={isLoading} />
+                <Typography variant="caption" sx={{ fontSize: '0.63rem', color: 'text.secondary' }}>Impl. Guides</Typography>
+              </Box>
+            </Box>
+            <StatusDot ok={(summary?.ai.policies ?? 0) > 0} label={`Policies (${summary?.ai.policies ?? '…'})`} loading={isLoading} />
+            <StatusDot ok={(summary?.ai.imps ?? 0) > 0} label={`Implementation Guides (${summary?.ai.imps ?? '…'})`} loading={isLoading} />
           </ProductCard>
         </Box>
 

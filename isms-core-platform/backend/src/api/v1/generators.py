@@ -47,7 +47,7 @@ def _apply_product_filter(q, product: str | None):
     """
     if product == "isms":
         q = q.where(GeneratorDefinition.product_type.in_(["framework", "operational"]))
-    elif product in ("framework", "operational", "privacy", "cloud"):
+    elif product in ("framework", "operational", "privacy", "cloud", "ai"):
         q = q.where(GeneratorDefinition.product_type == product)
     return q
 
@@ -203,7 +203,7 @@ def list_generators_grouped(
     # Sort: all framework blocks first (alphabetically by group_code), then
     # operational, then privacy, then cloud — so OP checklists never appear
     # sandwiched between FW blocks when the combined ISMS view is shown.
-    _PT_ORDER = {"framework": 0, "operational": 1, "privacy": 2, "cloud": 3}
+    _PT_ORDER = {"framework": 0, "operational": 1, "privacy": 2, "cloud": 3, "ai": 4}
     result: list[GeneratorGrouped] = []
     for key in sorted(groups.keys(), key=lambda k: (_PT_ORDER.get(k[1], 99), k[0])):
         code, _pt = key

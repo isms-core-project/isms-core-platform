@@ -37,6 +37,7 @@ import {
   ShieldOutlined,
   LockPersonOutlined,
   CloudOutlined,
+  PsychologyOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
@@ -51,12 +52,14 @@ const FAMILY_COLOR: Record<string, string> = {
   ISMS:    '#4472C4',
   PRIVACY: '#70309f',
   CLOUD:   '#0099cc',
+  AI:      '#ff6b35',
 }
 
 const FAMILY_ICON: Record<string, React.ReactNode> = {
   ISMS:    <ShieldOutlined sx={{ fontSize: 15 }} />,
   PRIVACY: <LockPersonOutlined sx={{ fontSize: 15 }} />,
   CLOUD:   <CloudOutlined sx={{ fontSize: 15 }} />,
+  AI:      <PsychologyOutlined sx={{ fontSize: 15 }} />,
 }
 
 const STATUS_COLOR: Record<string, string> = {
@@ -66,7 +69,7 @@ const STATUS_COLOR: Record<string, string> = {
   archived: '#9E9E9E',
 }
 
-const TOTAL_CG: Record<string, number> = { ISMS: 53, PRIVACY: 21, CLOUD: 12 }
+const TOTAL_CG: Record<string, number> = { ISMS: 53, PRIVACY: 21, CLOUD: 12, AI: 10 }
 
 // ── Create dialog ─────────────────────────────────────────────────────────────
 const EMPTY_DOC_VARS: DocVars = { ciso_name: '', ceo_name: '', dpo_name: '', legal_entity: '', effective_date: '', review_date: '', classification: 'Internal' }
@@ -134,6 +137,7 @@ function CreateProjectDialog({ open, onClose, isSuperAdmin }: { open: boolean; o
             <MenuItem value="ISMS">ISMS — ISO 27001:2022</MenuItem>
             <MenuItem value="PRIVACY">Privacy — ISO 27701:2025</MenuItem>
             <MenuItem value="CLOUD">Cloud — ISO 27018:2025</MenuItem>
+            <MenuItem value="AI">AI — ISO 42001:2023</MenuItem>
           </Select>
         </FormControl>
         {form.product_family === 'ISMS' && (
@@ -491,7 +495,7 @@ export default function Projects() {
     }),
   })
 
-  const families = ['ALL', 'ISMS', 'PRIVACY', 'CLOUD']
+  const families = ['ALL', 'ISMS', 'PRIVACY', 'CLOUD', 'AI']
   const statuses = ['ALL', 'active', 'inactive', 'draft', 'archived']
 
   return (

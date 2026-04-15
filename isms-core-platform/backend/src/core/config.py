@@ -28,6 +28,7 @@ class Settings(BaseSettings):
     operational_path: str = "/app/isms-operational"
     privacy_path: str = ""   # ISO 27701:2025 content mount (/app/isms-privacy)
     cloud_path: str = ""     # ISO 27018:2025 content mount (/app/isms-cloud)
+    ai_path: str = ""        # ISO 42001:2023 content mount (/app/isms-ai)
     sec_path: str = ""       # ISO 27017:2025 content mount (/app/isms-sec)
     ext_path: str = ""       # External policies mount (/app/isms-ext)
     iso_reference_path: str = "/app/iso-reference"  # ISO regulatory PDFs mount
@@ -37,7 +38,7 @@ class Settings(BaseSettings):
     @property
     def extra_paths(self) -> str:
         """Comma-separated non-ISMS product paths for importers."""
-        return ",".join(p for p in [self.privacy_path, self.cloud_path, self.sec_path, self.ext_path] if p)
+        return ",".join(p for p in [self.privacy_path, self.cloud_path, self.ai_path, self.sec_path, self.ext_path] if p)
 
     # AI
     anthropic_api_key: str = ""

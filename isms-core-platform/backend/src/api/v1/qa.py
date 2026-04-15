@@ -236,6 +236,7 @@ def get_summary(
     op  = _EMPTY()
     prv = _EMPTY()
     cld = _EMPTY()
+    ai  = _EMPTY()
 
     _BUCKET_MAP = {
         "framework":   fw,
@@ -243,6 +244,7 @@ def get_summary(
         "operational": op,
         "privacy":     prv,
         "cloud":       cld,
+        "ai":          ai,
     }
 
     for row in rows:
@@ -264,8 +266,8 @@ def get_summary(
             pass_rate=round(b["pass"] / total, 3),
         )
 
-    all_total = fw["total"] + op["total"] + prv["total"] + cld["total"] or 1
-    all_pass  = fw["pass"]  + op["pass"]  + prv["pass"]  + cld["pass"]
+    all_total = fw["total"] + op["total"] + prv["total"] + cld["total"] + ai["total"] or 1
+    all_pass  = fw["pass"]  + op["pass"]  + prv["pass"]  + cld["pass"]  + ai["pass"]
 
     return QASummary(
         last_run=last_run,
@@ -273,6 +275,7 @@ def get_summary(
         operational=_bucket(op),
         privacy=_bucket(prv),
         cloud=_bucket(cld),
+        ai=_bucket(ai),
         overall_pass_rate=round(all_pass / all_total, 3),
     )
 

@@ -72,6 +72,7 @@ class QASummary(BaseModel):
     operational: QASummaryBucket
     privacy: QASummaryBucket
     cloud: QASummaryBucket
+    ai: QASummaryBucket
     overall_pass_rate: float
 
 

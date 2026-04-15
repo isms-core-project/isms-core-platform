@@ -64,8 +64,11 @@ import MitreSoftware from './pages/MitreSoftware'
 import MitreCampaigns from './pages/MitreCampaigns'
 import MitreHeatmap from './pages/MitreHeatmap'
 import CVEExplorer from './pages/CVEExplorer'
-import CloudGlossary from './pages/CloudGlossary'
+import Glossary from './pages/Glossary'
 import Cobit from './pages/Cobit'
+import CsaCcm from './pages/CsaCcm'
+import CsaAicm from './pages/CsaAicm'
+import NistSp80053 from './pages/NistSp80053'
 const NistCsf = lazy(() => import('./pages/NistCsf'))
 const NistCsfReport = lazy(() => import('./pages/NistCsfReport'))
 
@@ -130,6 +133,9 @@ export default function App() {
         <Route path="cra" element={<Cra />} />
         <Route path="ai-act" element={<AiAct />} />
         <Route path="nist-ai-rmf" element={<NistAiRmf />} />
+        <Route path="csa-ccm" element={<CsaCcm />} />
+        <Route path="csa-aicm" element={<CsaAicm />} />
+        <Route path="nist-800-53" element={<NistSp80053 />} />
         <Route path="eu-cloud-sov" element={<CloudSovereignty />} />
         <Route path="csrm" element={<Csrm />} />
         <Route path="projects" element={<Projects />} />
@@ -152,7 +158,7 @@ export default function App() {
         <Route path="mitre-campaigns" element={<MitreCampaigns />} />
         <Route path="mitre-heatmap" element={<MitreHeatmap />} />
         <Route path="cve-explorer" element={<CVEExplorer />} />
-        <Route path="cloud-glossary" element={<CloudGlossary />} />
+        <Route path="glossary" element={<Glossary />} />
         <Route path="cobit" element={<Cobit />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>

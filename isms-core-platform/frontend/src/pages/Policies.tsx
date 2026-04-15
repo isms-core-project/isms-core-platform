@@ -98,11 +98,12 @@ export default function Policies() {
   const operationalCount = (data ?? []).filter((p) => p.product_type === 'operational').length
   const privacyCount = (data ?? []).filter((p) => p.product_type === 'privacy').length
   const cloudCount = (data ?? []).filter((p) => p.product_type === 'cloud').length
+  const aiCount = (data ?? []).filter((p) => p.product_type === 'ai').length
   const externalCount = (data ?? []).filter((p) => p.product_type === 'external').length
   const totalReqs = (data ?? []).reduce((s, p) => s + (p.requirements_count ?? 0), 0)
 
   const STANDARD_LABELS: Record<string, string> = {
-    isms: 'ISO 27001:2022', privacy: 'ISO 27701:2025', cloud: 'ISO 27018:2025',
+    isms: 'ISO 27001:2022', privacy: 'ISO 27701:2025', cloud: 'ISO 27018:2025', ai: 'ISO 42001:2023',
   }
 
   const productChipStyle = (type: string) => {
@@ -111,6 +112,7 @@ export default function Policies() {
     if (type === 'operational') return { bgcolor: 'rgba(112,173,71,0.15)',                     color: '#70AD47' }
     if (type === 'privacy')     return { bgcolor: `${PRODUCT_COLORS.privacy}22`,               color: PRODUCT_COLORS.privacy }
     if (type === 'cloud')       return { bgcolor: `${PRODUCT_COLORS.cloud}22`,                 color: PRODUCT_COLORS.cloud }
+    if (type === 'ai')          return { bgcolor: `${PRODUCT_COLORS.ai}22`,                    color: PRODUCT_COLORS.ai }
     return { bgcolor: 'rgba(112,173,71,0.15)', color: '#70AD47' }
   }
 
@@ -156,6 +158,11 @@ export default function Policies() {
           {product === 'cloud' && (
             <Grid item xs={6} sm={3}>
               <MetricCard title="Cloud" value={cloudCount} sx={{ borderTop: `2px solid ${PRODUCT_COLORS.cloud}` }} />
+            </Grid>
+          )}
+          {product === 'ai' && (
+            <Grid item xs={6} sm={3}>
+              <MetricCard title="AI" value={aiCount} sx={{ borderTop: `2px solid ${PRODUCT_COLORS.ai}` }} />
             </Grid>
           )}
           <Grid item xs={6} sm={3}>
@@ -206,6 +213,7 @@ export default function Policies() {
                 ]}
                 {product === 'privacy' && <MenuItem value="PRIV-POL">PRIV-POL</MenuItem>}
                 {product === 'cloud'   && <MenuItem value="CLD-POL">CLD-POL</MenuItem>}
+                {product === 'ai'      && <MenuItem value="AI-POL">AI-POL</MenuItem>}
               </Select>
             </FormControl>
 

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react'
 
-export type Product = 'isms' | 'privacy' | 'cloud'
+export type Product = 'isms' | 'privacy' | 'cloud' | 'ai'
 
 // ISMS-only tier filter — only meaningful when product === 'isms'
 export type IsmsTier = 'all' | 'framework' | 'operational'
@@ -9,18 +9,21 @@ export const PRODUCT_COLORS: Record<Product, string> = {
   isms:    '#4472C4',
   privacy: '#7030A0',
   cloud:   '#00897B',
+  ai:      '#ff6b35',
 }
 
 export const PRODUCT_LABELS: Record<Product, string> = {
   isms:    'ISMS',
   privacy: 'PRIVACY',
   cloud:   'CLOUD',
+  ai:      'AI',
 }
 
 export const PRODUCT_SUBTITLES: Record<Product, string> = {
   isms:    'ISO 27001:2022 + Amd.1',
   privacy: 'ISO 27701:2025 Ed. 2',
   cloud:   'ISO 27018:2025',
+  ai:      'ISO 42001:2023',
 }
 
 interface ProductContextValue {
@@ -37,7 +40,7 @@ const ProductContext = createContext<ProductContextValue>({
   setIsmsTier: () => {},
 })
 
-const VALID: Product[] = ['isms', 'privacy', 'cloud']
+const VALID: Product[] = ['isms', 'privacy', 'cloud', 'ai']
 const VALID_TIER: IsmsTier[] = ['all', 'framework', 'operational']
 
 export function ProductProvider({ children }: { children: React.ReactNode }) {

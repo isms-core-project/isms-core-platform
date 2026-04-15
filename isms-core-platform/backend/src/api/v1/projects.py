@@ -208,8 +208,8 @@ def create_project(
     org_id: uuid.UUID = Depends(get_org_context),
 ):
     fam = body.product_family.upper()
-    if fam not in ("ISMS", "PRIVACY", "CLOUD", "SEC"):
-        raise HTTPException(status_code=422, detail="product_family must be ISMS, PRIVACY, CLOUD, or SEC")
+    if fam not in ("ISMS", "PRIVACY", "CLOUD", "AI", "SEC"):
+        raise HTTPException(status_code=422, detail="product_family must be ISMS, PRIVACY, CLOUD, AI, or SEC")
     # super_admin may override the target organisation
     target_org_id = org_id
     if body.organisation_id is not None:
@@ -368,6 +368,7 @@ def browse_library_policies(
         "ISMS": [ProductType.FRAMEWORK, ProductType.OPERATIONAL],
         "PRIVACY": [ProductType.PRIVACY],
         "CLOUD": [ProductType.CLOUD],
+        "AI": [ProductType.AI],
         "SEC": [ProductType.SEC],
     }
     allowed_types = family_to_types.get(family, [])
@@ -424,6 +425,7 @@ def browse_library_implementations(
         "ISMS": ProductFamily.ISMS,
         "PRIVACY": ProductFamily.PRIVACY,
         "CLOUD": ProductFamily.CLOUD,
+        "AI": ProductFamily.AI,
         "SEC": ProductFamily.SEC,
     }
     pf = family_map.get(family)
@@ -789,6 +791,7 @@ def browse_library_checklists(
         "ISMS": [ProductType.FRAMEWORK, ProductType.OPERATIONAL],
         "PRIVACY": [ProductType.PRIVACY],
         "CLOUD": [ProductType.CLOUD],
+        "AI": [ProductType.AI],
         "SEC": [ProductType.SEC],
     }
     allowed_types = family_to_types.get(family, [])

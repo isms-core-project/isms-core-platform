@@ -318,12 +318,13 @@ def run_existence_check(
         ]
         has_external = len(external_sources) > 0
 
-        # ── PRIVACY / CLOUD / SEC: simple policy-existence check ─────────────
-        if group.product_family in (ProductFamily.PRIVACY, ProductFamily.CLOUD, ProductFamily.SEC):
+        # ── PRIVACY / CLOUD / SEC / AI: simple policy-existence check ──────────
+        if group.product_family in (ProductFamily.PRIVACY, ProductFamily.CLOUD, ProductFamily.SEC, ProductFamily.AI):
             _pt_map = {
                 ProductFamily.PRIVACY: ProductType.PRIVACY,
                 ProductFamily.CLOUD: ProductType.CLOUD,
                 ProductFamily.SEC: ProductType.SEC,
+                ProductFamily.AI: ProductType.AI,
             }
             expected_pt = _pt_map[group.product_family]
             has_native_pol = any(r[1] == expected_pt for r in pol_rows)
@@ -463,6 +464,7 @@ def run_keyword_check(
         ProductFamily.PRIVACY: "ISO27701",
         ProductFamily.CLOUD: "ISO27018",
         ProductFamily.SEC: "ISO27017",
+        ProductFamily.AI: "ISO42001",
     }
     frameworks = {
         family: db.execute(

@@ -66,6 +66,7 @@ const PRODUCT_TYPE_COLOR: Record<string, string> = {
   operational: '#1565C0',
   privacy:     '#7030A0',
   cloud:       '#00897B',
+  ai:          '#ff6b35',
 }
 
 const PRODUCT_TYPE_LABEL: Record<string, string> = {
@@ -73,6 +74,7 @@ const PRODUCT_TYPE_LABEL: Record<string, string> = {
   operational: 'OP',
   privacy:     'PRIV',
   cloud:       'CLD',
+  ai:          'AI',
 }
 
 function groupColor(group: GeneratorGroup): string {
@@ -684,24 +686,45 @@ function GroupBlock({ group }: { group: GeneratorGroup }) {
 function apiProductParam(product: string, ismsTier: string): string | undefined {
   if (product === 'privacy') return 'privacy'
   if (product === 'cloud') return 'cloud'
+  if (product === 'ai') return 'ai'
   // isms
   if (ismsTier === 'framework') return 'framework'
   if (ismsTier === 'operational') return 'operational'
   return 'isms'
 }
 
+// Natural sort for section labels: "A.2" < "A.9" < "A.10" (not "A.10" < "A.2")
+function sectionSort(a: string, b: string): number {
+  const parse = (s: string) => s.split('.').map(p => parseInt(p, 10) || p)
+  const pa = parse(a), pb = parse(b)
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const x = pa[i] ?? -Infinity, y = pb[i] ?? -Infinity
+    if (x < y) return -1
+    if (x > y) return 1
+  }
+  return 0
+}
+
 export default function Generators() {
   const { product, ismsTier } = useProduct()
   const [sectionFilter, setSectionFilter] = useState('All')
+  const [prevApiProduct, setPrevApiProduct] = useState(() => apiProductParam(product, ismsTier))
   const [search, setSearch] = useState('')
 
   const apiProduct = apiProductParam(product, ismsTier)
 
-  // Reset section filter when product changes
-  useEffect(() => {
+  // Reset section filter synchronously during render when product changes.
+  // This prevents a stale sectionFilter value from reaching the query on the
+  // first render after a product switch (useEffect fires too late — after commit).
+  if (prevApiProduct !== apiProduct) {
+    setPrevApiProduct(apiProduct)
     setSectionFilter('All')
-  }, [apiProduct])
+  }
 
+  // After the above state reset, React will immediately re-render with
+  // sectionFilter='All'. Use the current sectionFilter for the query key;
+  // on the transition render it may still be the old value but React
+  // discards that render and issues the correct one next cycle.
   const { data, isLoading, error } = useQuery({
     queryKey: ['generators-grouped', apiProduct, sectionFilter],
     queryFn: () =>
@@ -711,8 +734,8 @@ export default function Generators() {
       }),
   })
 
-  // Dynamic sections from loaded data
-  const sections = ['All', ...Array.from(new Set((data ?? []).map((g: GeneratorGroup) => g.section))).sort()]
+  // Dynamic sections from loaded data — natural sort so A.2 < A.9 < A.10
+  const sections = ['All', ...Array.from(new Set((data ?? []).map((g: GeneratorGroup) => g.section))).sort(sectionSort)]
 
   // Client-side search filter on group name / workbook name / doc ID
   const filtered = data?.filter((g: GeneratorGroup) => {

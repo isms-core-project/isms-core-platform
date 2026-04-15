@@ -35,6 +35,7 @@ def _product_base_path(product_type: str) -> Path:
         "operational": s.operational_path,
         "privacy":     s.privacy_path,
         "cloud":       s.cloud_path,
+        "ai":          s.ai_path,
     }
     raw = paths.get(product_type, s.framework_path)
     return Path(raw)
@@ -48,6 +49,8 @@ def _engine_path(product_type: str) -> str | None:
     if product_type in ("privacy", "cloud"):
         # CLD reuses the PRIV engine
         return str(Path(s.privacy_path) / "00-checklist-engine")
+    if product_type == "ai":
+        return str(Path(s.ai_path) / "00-checklist-engine")
     return None
 
 

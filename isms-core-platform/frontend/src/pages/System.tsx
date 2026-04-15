@@ -1003,6 +1003,7 @@ export default function System() {
                     { label: 'Operational Path', value: data.operational_path },
                     ...(data.privacy_path ? [{ label: 'Privacy Path', value: data.privacy_path }] : []),
                     ...(data.cloud_path ? [{ label: 'Cloud Path', value: data.cloud_path }] : []),
+                    ...(data.ai_path ? [{ label: 'AI Path', value: data.ai_path }] : []),
                     ...(data.sec_path ? [{ label: 'Sec Path', value: data.sec_path }] : []),
                     ...(data.ext_path ? [{ label: 'Ext Path', value: data.ext_path }] : []),
                     { label: 'Datasets Path', value: data.datasets_path },
@@ -1025,18 +1026,6 @@ export default function System() {
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 0.75 }}>
                     <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0 }}>Log Level</Typography>
                     <Typography variant="body2" fontFamily="monospace" sx={{ fontSize: '0.75rem' }}>{data.log_level}</Typography>
-                  </Box>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 0.75 }}>
-                    <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0 }}>Debug Mode</Typography>
-                    <Box
-                      sx={{
-                        px: 1, py: 0.25, borderRadius: 1, fontSize: '0.7rem', fontFamily: 'monospace',
-                        bgcolor: data.debug ? 'error.dark' : 'success.dark',
-                        color: 'white',
-                      }}
-                    >
-                      {data.debug ? 'ON' : 'OFF'}
-                    </Box>
                   </Box>
                 </CardContent>
               </Card>

@@ -37,6 +37,10 @@ _ASSESSABLE_LEVEL = {
     "EU_CLOUD_SOV": 0,
     "COBIT_2019": 1,
     "NIST_AI_RMF": 2,
+    "CSA_CCM_V4_1": 1,
+    "CSA_AICM_V1": 1,
+    "NIST_800_53_R5": 1,
+    "ISO42001": 1,
 }
 
 

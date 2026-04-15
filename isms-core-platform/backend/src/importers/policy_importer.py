@@ -31,6 +31,7 @@ _PRODUCT_FAMILY: dict[str, ProductFamily] = {
     ProductType.OPERATIONAL: ProductFamily.ISMS,
     ProductType.PRIVACY: ProductFamily.PRIVACY,
     ProductType.CLOUD: ProductFamily.CLOUD,
+    ProductType.AI: ProductFamily.AI,
     ProductType.SEC: ProductFamily.SEC,
 }
 
@@ -287,6 +288,19 @@ class PolicyImporter(BaseImporter):
 
         parsed = parser.parse(file_path)
 
+        # Detect language early — needed to normalise document_id before DB lookup.
+        language = self._detect_language(file_path, parsed.document_id)
+
+        # Ensure translated variants have unique document_ids.
+        # Policies with watermarks already carry a language suffix (e.g. ISMS-POL-A.5.1-2-DE).
+        # INS/REF files without watermarks (e.g. ISMS-INS-POL-00 in de/ and fr/ subfolders)
+        # parse to the same base document_id for all languages — append -DE/-FR/-IT so each
+        # language variant gets its own DB row and they stop overwriting each other every run.
+        if language != "en":
+            lang_suffix = f"-{language.upper()}"
+            if not parsed.document_id.upper().endswith(lang_suffix):
+                parsed.document_id = f"{parsed.document_id}{lang_suffix}"
+
         # Determine which product family to prefer when resolving the control group.
         # This prevents cross-product contamination via the sub-part fallback
         # (e.g. a.5.14 must not resolve to the CLOUD group a.5).
@@ -314,10 +328,12 @@ class PolicyImporter(BaseImporter):
             logger.debug("Skip %s (unchanged)", parsed.document_id)
             return
 
+        action = "Update" if existing else "Import"
+        logger.debug("%s policy: %s (product=%s, path=%s)", action, parsed.document_id, parsed.product_type, file_path.name)
+
         # Map enums
         product_type = ProductType(parsed.product_type)
         policy_type = PolicyType(parsed.policy_type)
-        language = self._detect_language(file_path, parsed.document_id)
 
         # Extract requirements
         requirements = self._extract_requirements(parsed)

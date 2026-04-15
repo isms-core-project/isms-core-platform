@@ -171,8 +171,8 @@ def set_active_project(
     The frontend reads this to determine which project is 'active' per product.
     """
     fam = body.product_family.upper()
-    if fam not in ("ISMS", "PRIVACY", "CLOUD", "SEC"):
-        raise HTTPException(status_code=422, detail="product_family must be ISMS, PRIVACY, CLOUD, or SEC")
+    if fam not in ("ISMS", "PRIVACY", "CLOUD", "AI", "SEC"):
+        raise HTTPException(status_code=422, detail="product_family must be ISMS, PRIVACY, CLOUD, AI, or SEC")
 
     active = dict(current_user.active_projects or {})
     if body.project_id is None:

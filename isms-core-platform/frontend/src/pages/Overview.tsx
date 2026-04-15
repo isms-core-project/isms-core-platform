@@ -91,6 +91,18 @@ const SECTION_LABELS_27701: Record<string, string> = {
   'A.3': 'Shared (Both)',
 }
 
+const SECTION_LABELS_42001: Record<string, string> = {
+  'A.2': 'A.2 — AI Policy',
+  'A.3': 'A.3 — Organisation',
+  'A.4': 'A.4 — Resources',
+  'A.5': 'A.5 — Impact Assess.',
+  'A.6': 'A.6 — Lifecycle',
+  'A.7': 'A.7 — Data',
+  'A.8': 'A.8 — Transparency',
+  'A.9': 'A.9 — Responsible Use',
+  'A.10': 'A.10 — Third-Party',
+}
+
 function FrameworkOverviewWidget({ sourceFramework, color }: { sourceFramework: string; color: string }) {
   const navigate = useNavigate()
   const { data, isLoading } = useQuery({
@@ -113,8 +125,14 @@ function FrameworkOverviewWidget({ sourceFramework, color }: { sourceFramework: 
 
   if (!fw) return null
 
+  const sectionLabels = sourceFramework.startsWith('ISO42001')
+    ? SECTION_LABELS_42001
+    : sourceFramework.startsWith('ISO27701')
+    ? SECTION_LABELS_27701
+    : {}
+
   const barData = fw.sections.map((s) => ({
-    name: SECTION_LABELS_27701[s.section] ?? s.section,
+    name: sectionLabels[s.section] ?? s.section,
     Total: s.count,
     Mapped: s.mapped_count,
   }))
@@ -215,14 +233,16 @@ function FrameworkOverviewWidget({ sourceFramework, color }: { sourceFramework: 
   )
 }
 
-function NonIsmsOverview({ product }: { product: 'privacy' | 'cloud' }) {
+function NonIsmsOverview({ product }: { product: 'privacy' | 'cloud' | 'ai' }) {
   const color = PRODUCT_COLORS[product] ?? '#4472C4'
   const [cloudSub, setCloudSub] = useState<'ISO27017' | 'ISO27018'>('ISO27017')
 
-  const sourceFramework = product === 'cloud' ? cloudSub : 'ISO27701'
+  const sourceFramework = product === 'cloud' ? cloudSub : product === 'ai' ? 'ISO42001' : 'ISO27701'
   const fwLabel = product === 'cloud'
     ? (cloudSub === 'ISO27017' ? 'ISO 27017 — Cloud Security' : 'ISO 27018 — PII in Cloud')
-    : 'ISO 27701:2025 Ed. 2 — Privacy'
+    : product === 'ai'
+      ? 'ISO 42001:2023 — AI Management System'
+      : 'ISO 27701:2025 Ed. 2 — Privacy'
 
   return (
     <Box>
@@ -446,7 +466,7 @@ export default function Overview() {
   ] : []
 
   // Non-ISMS products: show framework overview
-  if (product === 'privacy' || product === 'cloud') {
+  if (product === 'privacy' || product === 'cloud' || product === 'ai') {
     return <NonIsmsOverview product={product} />
   }
 

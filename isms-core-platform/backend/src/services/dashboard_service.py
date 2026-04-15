@@ -194,53 +194,66 @@ def get_coverage_matrix(
 
     # Counts per target framework (scoped to source framework's controls)
     by_framework: dict[str, int] = {}
-    total_mappings = db.scalar(select(func.count()).select_from(CrossFrameworkMapping)) or 0
 
-    for fw in target_fws:
-        stmt = (
+    if src_fw is None:
+        # Source framework not loaded — return zeros rather than leaking counts from
+        # other frameworks (which happens when the source_control_id filter is absent).
+        by_framework = {fw.name: 0 for fw in target_fws}
+        total_mappings = 0
+    else:
+        src_ctrl_ids = db.execute(
+            select(FrameworkControl.id).where(
+                FrameworkControl.framework_id == src_fw.id,
+                FrameworkControl.level == leaf_level,
+            )
+        ).scalars().all()
+        total_mappings = db.scalar(
             select(func.count(CrossFrameworkMapping.id))
-            .join(FrameworkControl,
-                  CrossFrameworkMapping.target_control_id == FrameworkControl.id)
-            .where(FrameworkControl.framework_id == fw.id)
-        )
-        if src_fw:
-            src_ctrl_ids = db.execute(
-                select(FrameworkControl.id).where(
-                    FrameworkControl.framework_id == src_fw.id,
-                    FrameworkControl.level == leaf_level,
+            .where(CrossFrameworkMapping.source_control_id.in_(src_ctrl_ids))
+        ) or 0
+
+        for fw in target_fws:
+            stmt = (
+                select(func.count(CrossFrameworkMapping.id))
+                .join(FrameworkControl,
+                      CrossFrameworkMapping.target_control_id == FrameworkControl.id)
+                .where(
+                    FrameworkControl.framework_id == fw.id,
+                    CrossFrameworkMapping.source_control_id.in_(src_ctrl_ids),
                 )
-            ).scalars().all()
-            stmt = stmt.where(CrossFrameworkMapping.source_control_id.in_(src_ctrl_ids))
-        by_framework[fw.name] = db.scalar(stmt) or 0
+            )
+            by_framework[fw.name] = db.scalar(stmt) or 0
 
     # Build rows: source framework controls (leaf level only) + their mappings
-    src_controls_stmt = select(FrameworkControl)
-    if src_fw:
-        src_controls_stmt = src_controls_stmt.where(
+    # If source framework not loaded, return no rows rather than dumping all controls.
+    if src_fw is None:
+        iso_controls = []
+    else:
+        src_controls_stmt = select(FrameworkControl).where(
             FrameworkControl.framework_id == src_fw.id,
             FrameworkControl.level == leaf_level,
         )
-    if target_framework:
-        # Filter to source controls that have at least one mapping to this target framework
-        target_fw = db.execute(
-            select(Framework).where(Framework.name.ilike(f"%{target_framework}%"))
-        ).scalar_one_or_none()
-        if target_fw:
-            src_controls_stmt = src_controls_stmt.join(
-                CrossFrameworkMapping,
-                CrossFrameworkMapping.source_control_id == FrameworkControl.id,
-            ).join(
-                FrameworkControl.__table__.alias("tfc"),
-                CrossFrameworkMapping.target_control_id == FrameworkControl.__table__.alias("tfc").c.id,
-            ).where(
-                FrameworkControl.__table__.alias("tfc").c.framework_id == target_fw.id
-            ).distinct()
+        if target_framework:
+            # Filter to source controls that have at least one mapping to this target framework
+            target_fw = db.execute(
+                select(Framework).where(Framework.name.ilike(f"%{target_framework}%"))
+            ).scalar_one_or_none()
+            if target_fw:
+                src_controls_stmt = src_controls_stmt.join(
+                    CrossFrameworkMapping,
+                    CrossFrameworkMapping.source_control_id == FrameworkControl.id,
+                ).join(
+                    FrameworkControl.__table__.alias("tfc"),
+                    CrossFrameworkMapping.target_control_id == FrameworkControl.__table__.alias("tfc").c.id,
+                ).where(
+                    FrameworkControl.__table__.alias("tfc").c.framework_id == target_fw.id
+                ).distinct()
 
-    src_controls_stmt = src_controls_stmt.order_by(
-        FrameworkControl.sort_order
-    ).limit(limit).offset(offset)
+        src_controls_stmt = src_controls_stmt.order_by(
+            FrameworkControl.sort_order
+        ).limit(limit).offset(offset)
 
-    iso_controls = db.execute(src_controls_stmt).scalars().all()
+        iso_controls = db.execute(src_controls_stmt).scalars().all()
 
     # Build control_group lookup — only available for ISO 27001
     from src.domain.control_groups import control_group_controls as cgc_table
@@ -943,6 +956,7 @@ def get_home_summary(db: DBSession) -> dict:
         (ProductFamily.ISMS,    "isms"),
         (ProductFamily.PRIVACY, "privacy"),
         (ProductFamily.CLOUD,   "cloud"),
+        (ProductFamily.AI,      "ai"),
         (ProductFamily.SEC,     "sec"),
     )
     result = {}

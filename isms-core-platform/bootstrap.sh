@@ -83,12 +83,12 @@ except: pass
 echo ""
 echo "--- Importing content ---"
 
-run_import "Step 1/6: Loading framework datasets" "load"
-run_import "Step 2/6: Importing policies (FW + OP + PRIV + CLD)" "import-policies"
-run_import "Step 3/6: Importing implementations (IMP-UG/TG)" "import-implementations"
-run_import "Step 4/6: Importing operational checklists" "import-operational"
-run_import "Step 5/6: Importing privacy/cloud checklists" "import-privacy"
-run_import "Step 6/6: Importing framework workbook structure" "import-framework-workbooks"
+run_import "Step 1/7: Loading framework datasets" "load"
+run_import "Step 2/7: Importing policies (FW + OP + PRIV + CLD + AI)" "import-policies"
+run_import "Step 3/7: Importing implementations (IMP-UG/TG)" "import-implementations"
+run_import "Step 4/7: Importing operational checklists" "import-operational"
+run_import "Step 5/7: Importing privacy/cloud/AI checklists" "import-privacy"
+run_import "Step 6/7: Importing framework workbook structure" "import-framework-workbooks"
 
 info "Step 7/7: Seeding QA keyword translations..."
 RESULT=$(curl -sfk -X POST "$API/api/v1/qa/seed-keyword-translations" \

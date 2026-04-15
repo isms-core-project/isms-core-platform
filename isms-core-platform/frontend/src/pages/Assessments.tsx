@@ -192,10 +192,12 @@ function PlatformCard({ a, onDelete, onOpen }: {
                 bgcolor: a.product_type === 'framework' ? 'rgba(68,114,196,0.15)'
                   : a.product_type === 'privacy' ? `${PRODUCT_COLORS.privacy}22`
                   : a.product_type === 'cloud'   ? `${PRODUCT_COLORS.cloud}22`
+                  : a.product_type === 'ai'      ? `${PRODUCT_COLORS.ai}22`
                   : 'rgba(112,173,71,0.15)',
                 color: a.product_type === 'framework' ? '#4472C4'
                   : a.product_type === 'privacy' ? PRODUCT_COLORS.privacy
                   : a.product_type === 'cloud'   ? PRODUCT_COLORS.cloud
+                  : a.product_type === 'ai'      ? PRODUCT_COLORS.ai
                   : '#70AD47' }} />
             </Box>
 
@@ -882,15 +884,15 @@ export default function Assessments() {
           ) : (
             <Box sx={{
               p: 1.5, borderRadius: 2, textAlign: 'center',
-              border: `1px solid ${product === 'privacy' ? 'rgba(180,120,255,0.4)' : 'rgba(41,182,246,0.4)'}`,
-              bgcolor: product === 'privacy' ? 'rgba(180,120,255,0.08)' : 'rgba(41,182,246,0.08)',
+              border: `1px solid ${product === 'privacy' ? 'rgba(180,120,255,0.4)' : product === 'ai' ? `${PRODUCT_COLORS.ai}66` : 'rgba(41,182,246,0.4)'}`,
+              bgcolor: product === 'privacy' ? 'rgba(180,120,255,0.08)' : product === 'ai' ? `${PRODUCT_COLORS.ai}12` : 'rgba(41,182,246,0.08)',
             }}>
               <Typography variant="body2" fontWeight={700}
-                color={product === 'privacy' ? '#B478FF' : '#29B6F6'}>
-                {product === 'privacy' ? 'Privacy' : 'Cloud'}
+                color={product === 'privacy' ? '#B478FF' : product === 'ai' ? PRODUCT_COLORS.ai : '#29B6F6'}>
+                {product === 'privacy' ? 'Privacy' : product === 'ai' ? 'AI' : 'Cloud'}
               </Typography>
               <Typography variant="caption" color="text.disabled" sx={{ fontSize: '0.62rem' }}>
-                {product === 'privacy' ? 'ISO 27701:2025 privacy controls' : 'ISO 27018:2025 cloud controls'}
+                {product === 'privacy' ? 'ISO 27701:2025 privacy controls' : product === 'ai' ? 'ISO 42001:2023 AI management controls' : 'ISO 27018:2025 cloud controls'}
               </Typography>
             </Box>
           )}

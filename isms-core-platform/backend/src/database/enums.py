@@ -17,6 +17,7 @@ class ProductType(str, enum.Enum):
     PRIVACY = "privacy"
     CLOUD = "cloud"
     SEC = "sec"
+    AI = "ai"
 
 
 class PrivacyRole(str, enum.Enum):
@@ -30,6 +31,7 @@ class ProductFamily(str, enum.Enum):
     PRIVACY = "PRIVACY"
     CLOUD = "CLOUD"
     SEC = "SEC"
+    AI = "AI"
 
 
 class PolicyType(str, enum.Enum):
