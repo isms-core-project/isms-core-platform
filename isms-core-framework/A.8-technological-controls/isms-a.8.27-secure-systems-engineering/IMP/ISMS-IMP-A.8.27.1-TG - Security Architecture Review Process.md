@@ -185,4 +185,4 @@ Approved with Conditions, Rejected, Deferred
 *"Architecture is the foundation; security architecture is the foundation's foundation."*
 — Gene Kim
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

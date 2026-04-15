@@ -229,4 +229,4 @@ The Sub-Processor Register records all approved sub-processors and the controlle
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

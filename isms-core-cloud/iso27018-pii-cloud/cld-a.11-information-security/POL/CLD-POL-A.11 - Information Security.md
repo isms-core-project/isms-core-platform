@@ -325,4 +325,4 @@ Auditors verifying compliance with CLD-POL-A.11 should expect to find:
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

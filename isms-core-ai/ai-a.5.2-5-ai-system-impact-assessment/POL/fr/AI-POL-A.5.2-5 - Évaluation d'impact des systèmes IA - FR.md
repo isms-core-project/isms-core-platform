@@ -308,4 +308,4 @@ Les auditeurs vérifiant la conformité avec A.5.2–A.5.5 doivent s'attendre à
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

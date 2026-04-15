@@ -172,4 +172,4 @@ Transmission controls are consistent with PRIV-POL-A.3.5-7 (transfer rules) and 
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

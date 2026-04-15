@@ -186,4 +186,4 @@ Where processing relies on legitimate interests, the data subject must be explic
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

@@ -300,4 +300,4 @@ Maintained by the DPO — records where and how privacy notices are provided at 
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

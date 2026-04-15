@@ -366,4 +366,4 @@ The AI Governance Officer maintains an AISIA Register containing:
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

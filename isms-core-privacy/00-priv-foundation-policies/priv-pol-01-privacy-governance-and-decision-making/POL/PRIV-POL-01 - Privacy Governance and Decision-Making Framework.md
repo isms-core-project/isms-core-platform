@@ -586,4 +586,4 @@ This policy establishes the governance framework for the organisation's Privacy 
 
 *"Privacy governance is not bureaucracy — it is the documented judgment that turns regulatory obligations into operational reality."*
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

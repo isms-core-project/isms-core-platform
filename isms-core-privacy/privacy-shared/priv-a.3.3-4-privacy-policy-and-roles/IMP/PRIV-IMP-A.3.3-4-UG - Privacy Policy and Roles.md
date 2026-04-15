@@ -203,4 +203,4 @@ Use this checklist when preparing for a PIMS audit covering A.3.3 and A.3.4:
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

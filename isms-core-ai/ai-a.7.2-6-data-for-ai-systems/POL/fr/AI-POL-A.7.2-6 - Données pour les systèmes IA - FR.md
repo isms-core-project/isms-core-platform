@@ -293,4 +293,4 @@ Les auditeurs vérifiant la conformité avec A.7.2–A.7.6 doivent s'attendre à
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

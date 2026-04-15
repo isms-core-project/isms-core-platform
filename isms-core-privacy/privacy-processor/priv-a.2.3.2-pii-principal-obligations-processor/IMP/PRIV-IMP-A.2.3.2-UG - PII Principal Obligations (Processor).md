@@ -173,4 +173,4 @@ If a data subject contacts [Organisation] and it is not immediately clear which 
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

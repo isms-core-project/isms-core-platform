@@ -289,4 +289,4 @@ Where the team believes real PII is operationally necessary for a specific test:
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

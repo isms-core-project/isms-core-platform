@@ -217,4 +217,4 @@ For AI systems maintained under [Organisation]'s version control infrastructure:
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

@@ -249,4 +249,4 @@ Technical transmission standards are specified in PRIV-IMP-A.1.4.6-10-TG, consis
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

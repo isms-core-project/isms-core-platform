@@ -319,4 +319,4 @@ Auditors verifying compliance with A.3.11 and A.3.12 should expect to find:
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

@@ -173,4 +173,4 @@ Where misuse has caused or could cause harm to individuals or constitutes a mate
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

@@ -307,4 +307,4 @@ I revisori che verificano la conformità ai controlli A.9.2–A.9.4 dovrebbero a
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

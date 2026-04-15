@@ -314,4 +314,4 @@ I revisori che verificano la conformità ai controlli A.8.2–A.8.5 dovrebbero a
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

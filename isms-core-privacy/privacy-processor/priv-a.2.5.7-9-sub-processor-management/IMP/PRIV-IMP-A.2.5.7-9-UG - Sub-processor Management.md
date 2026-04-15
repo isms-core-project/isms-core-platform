@@ -184,4 +184,4 @@ If a customer objects to a planned sub-processor change:
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

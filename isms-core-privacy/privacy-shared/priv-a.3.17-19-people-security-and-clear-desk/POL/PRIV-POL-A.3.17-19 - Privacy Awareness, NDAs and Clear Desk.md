@@ -311,4 +311,4 @@ Auditors verifying compliance with A.3.17, A.3.18, and A.3.19 should expect to f
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

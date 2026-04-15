@@ -190,4 +190,4 @@ If the customer's processor agreement explicitly authorises [Organisation] to di
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

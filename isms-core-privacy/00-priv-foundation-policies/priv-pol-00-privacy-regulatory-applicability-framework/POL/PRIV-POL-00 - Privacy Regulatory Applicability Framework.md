@@ -762,4 +762,4 @@ This policy establishes privacy regulatory applicability for the organisation's 
 
 *"Privacy regulatory applicability is the foundation. Implementation and compliance are the structure built upon it."*
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

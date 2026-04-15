@@ -381,4 +381,4 @@ Managementbewertungsaufzeichnungen sind als dokumentierte Nachweise gemäss Klau
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

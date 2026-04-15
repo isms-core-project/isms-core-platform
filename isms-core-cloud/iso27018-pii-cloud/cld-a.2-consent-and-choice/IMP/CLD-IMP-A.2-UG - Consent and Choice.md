@@ -160,4 +160,4 @@ If Cloud Service Delivery is uncertain whether a cooperation request can be fulf
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

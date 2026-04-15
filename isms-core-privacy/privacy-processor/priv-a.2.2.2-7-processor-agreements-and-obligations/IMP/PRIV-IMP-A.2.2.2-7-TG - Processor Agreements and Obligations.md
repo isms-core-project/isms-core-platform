@@ -282,4 +282,4 @@ The processor-side RoPA. One entry per category of processing carried out on beh
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

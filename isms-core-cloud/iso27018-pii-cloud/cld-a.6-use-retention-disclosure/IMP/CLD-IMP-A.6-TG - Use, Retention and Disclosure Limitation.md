@@ -203,4 +203,4 @@ If a prohibited order is received and the canary cannot be renewed honestly, the
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

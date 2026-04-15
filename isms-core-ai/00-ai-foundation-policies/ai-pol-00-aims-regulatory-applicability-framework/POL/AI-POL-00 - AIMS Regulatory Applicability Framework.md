@@ -547,4 +547,4 @@ This policy shall be reviewed annually by the AI Governance Officer and Legal/Co
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

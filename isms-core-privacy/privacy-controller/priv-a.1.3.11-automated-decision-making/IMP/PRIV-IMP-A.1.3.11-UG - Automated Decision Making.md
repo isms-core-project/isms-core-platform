@@ -165,4 +165,4 @@ When an automated decision is communicated to a data subject, the communication 
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

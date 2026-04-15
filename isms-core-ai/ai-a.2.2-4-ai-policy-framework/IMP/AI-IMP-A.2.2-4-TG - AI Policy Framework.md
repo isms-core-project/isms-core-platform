@@ -266,4 +266,4 @@ The AI Governance Officer maintains an annual governance calendar to ensure all 
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

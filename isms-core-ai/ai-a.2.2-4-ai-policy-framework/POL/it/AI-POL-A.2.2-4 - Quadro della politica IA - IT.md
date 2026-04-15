@@ -279,4 +279,4 @@ I revisori che verificano la conformità con A.2.2–A.2.4 devono aspettarsi di 
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

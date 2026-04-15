@@ -266,4 +266,4 @@ If you are not satisfied with the outcome of this review, you have the right to:
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

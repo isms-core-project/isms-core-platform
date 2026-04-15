@@ -223,4 +223,4 @@ Quarterly, the DPO confirms with Data Owners that:
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

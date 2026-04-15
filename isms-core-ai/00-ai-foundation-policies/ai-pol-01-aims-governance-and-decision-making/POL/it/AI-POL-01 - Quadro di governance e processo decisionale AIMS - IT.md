@@ -381,4 +381,4 @@ I verbali del riesame della direzione devono essere conservati come prove docume
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

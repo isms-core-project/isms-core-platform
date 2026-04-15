@@ -162,4 +162,4 @@ The DPO reviews the PII Disclosure Register quarterly. Open entries with active 
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

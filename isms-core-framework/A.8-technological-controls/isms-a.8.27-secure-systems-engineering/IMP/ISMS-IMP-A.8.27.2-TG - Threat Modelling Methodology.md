@@ -196,4 +196,4 @@ Approved, Approved with Conditions, Rejected, Deferred
 *"If you know the enemy and know yourself, you need not fear the result of a hundred battles."*
 — Sun Tzu, The Art of War
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

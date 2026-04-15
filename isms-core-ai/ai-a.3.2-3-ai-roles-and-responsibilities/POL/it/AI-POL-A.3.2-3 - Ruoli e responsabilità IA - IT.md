@@ -308,4 +308,4 @@ I revisori che verificano la conformità con A.3.2–A.3.3 devono aspettarsi di 
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

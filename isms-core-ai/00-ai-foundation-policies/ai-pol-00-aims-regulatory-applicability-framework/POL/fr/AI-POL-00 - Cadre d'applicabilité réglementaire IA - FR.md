@@ -547,4 +547,4 @@ Cette politique DOIT être révisée annuellement par le Responsable de la Gouve
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

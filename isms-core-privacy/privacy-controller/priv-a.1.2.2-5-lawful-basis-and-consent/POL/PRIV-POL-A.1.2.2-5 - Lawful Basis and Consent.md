@@ -277,4 +277,4 @@ Auditors verifying compliance with A.1.2.2–A.1.2.5 should expect to find:
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

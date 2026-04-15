@@ -298,4 +298,4 @@ Auditors verifying compliance with A.3.20, A.3.21, and A.3.22 should expect to f
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

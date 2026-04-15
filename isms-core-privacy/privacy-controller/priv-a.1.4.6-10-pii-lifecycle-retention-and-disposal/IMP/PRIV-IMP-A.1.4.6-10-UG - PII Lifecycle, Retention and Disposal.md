@@ -213,4 +213,4 @@ Personnel who are unsure whether a proposed transmission method is approved must
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

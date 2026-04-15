@@ -185,4 +185,4 @@ Control A.1.4.5 requires [Organisation] to define and document its data minimisa
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

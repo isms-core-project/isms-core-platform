@@ -410,4 +410,4 @@ Auditors verifying compliance with A.3.23–A.3.31 should expect to find:
 
 ---
 
-<!-- QA_VERIFIED: [Date] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

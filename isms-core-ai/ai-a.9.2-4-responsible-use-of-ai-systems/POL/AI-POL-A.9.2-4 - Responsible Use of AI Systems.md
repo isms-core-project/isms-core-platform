@@ -307,4 +307,4 @@ Auditors verifying compliance with A.9.2–A.9.4 should expect to find:
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

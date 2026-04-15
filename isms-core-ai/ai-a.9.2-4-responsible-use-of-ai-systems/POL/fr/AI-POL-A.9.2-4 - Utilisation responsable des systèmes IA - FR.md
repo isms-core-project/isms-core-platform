@@ -307,4 +307,4 @@ Les auditeurs vérifiant la conformité avec les contrôles A.9.2–A.9.4 doiven
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

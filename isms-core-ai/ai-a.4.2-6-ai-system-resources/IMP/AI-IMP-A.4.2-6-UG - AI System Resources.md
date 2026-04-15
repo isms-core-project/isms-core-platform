@@ -196,4 +196,4 @@ If a material competency gap is identified (e.g., operators using the system lac
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

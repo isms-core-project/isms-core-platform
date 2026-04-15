@@ -202,4 +202,4 @@ Development teams should treat the gate as a quality milestone, not a bureaucrat
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->

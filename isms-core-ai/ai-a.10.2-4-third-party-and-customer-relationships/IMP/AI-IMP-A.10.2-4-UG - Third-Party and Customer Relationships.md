@@ -170,4 +170,4 @@ If a customer pushes back on these provisions, escalate to Legal and AI Governan
 
 ---
 
-<!-- QA_VERIFIED: [YYYY-MM-DD] -->
+<!-- QA_VERIFIED: [2026-04-15] -->
