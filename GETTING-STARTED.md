@@ -198,10 +198,10 @@ The script: waits for the stack to be healthy → authenticates → runs all 6 i
 
 | Section | What's there |
 |---------|-------------|
-| **Dashboard** | Compliance overview, audit readiness score, top gaps; ISMS / Privacy / Cloud product switcher |
+| **Dashboard** | Compliance overview, audit readiness score, top gaps; ISMS / Privacy / Cloud / AI product switcher |
 | **Controls** | 99 control groups (54 ISMS + 21 Privacy + 12 Cloud + 12 AI) with policy/assessment/gap status |
-| **Policies** | Imported documents (POL + OP-POL + PRIV-POL + CLD-POL + foundation + REF/CTX/INS) |
-| **Assessments** | 188 framework + 53 operational + 21 privacy + 12 cloud workbook structures with per-item compliance status |
+| **Policies** | Imported documents (POL + OP-POL + PRIV-POL + CLD-POL + AI-POL + foundation + REF/CTX/INS) |
+| **Assessments** | 188 framework + 53 operational + 21 privacy + 12 cloud + 10 AI workbook structures with per-item compliance status |
 | **Gaps** | Identified compliance gaps — create, assign, track |
 | **Evidence** | Upload and link evidence to control groups and requirements |
 | **Coverage** | Heatmap of Framework and Operational coverage |

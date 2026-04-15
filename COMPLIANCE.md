@@ -5,11 +5,11 @@
 <h1 align="center">🎋 ISMS CORE — Compliance Assessment Modules</h1>
 
 <p align="center">
-  <strong>Twenty built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
+  <strong>Twenty-three built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Frameworks-20-2E8B57?style=flat-square" alt="20 Frameworks"/>
+  <img src="https://img.shields.io/badge/Frameworks-23-2E8B57?style=flat-square" alt="23 Frameworks"/>
   <img src="https://img.shields.io/badge/Requirements-700+-0066CC?style=flat-square" alt="700+ Requirements"/>
   <img src="https://img.shields.io/badge/Export-CSV_%7C_XLSX_%7C_PDF-FF6600?style=flat-square" alt="Export"/>
   <img src="https://img.shields.io/badge/Assessment_Collections-Grouping_%26_Reports-2E7D32?style=flat-square" alt="Collections"/>
@@ -19,7 +19,7 @@
 
 ## Overview
 
-ISMS CORE Platform includes a unified compliance assessment layer covering 20 built-in frameworks across Europe, North America, and globally, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
+ISMS CORE Platform includes a unified compliance assessment layer covering 23 built-in frameworks across Europe, North America, and globally, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
 
 Assessment results can be grouped into **Assessment Collections** — named bundles that aggregate status across multiple frameworks for reporting or audit purposes, with CSV, XLSX (colour-coded), and PDF (A4) export.
 
@@ -51,6 +51,9 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [UK NIS Regulations](#uk-nis-regulations-2018) | UK law | 13 requirements | 3 Objectives | 0–4 | UK network and information systems operators |
 | [UK Operational Resilience (FCA/PRA)](#uk-operational-resilience-fcapra) | UK FCA/PRA | 12 requirements | 4 Objectives | 0–4 | UK financial sector — banks, insurers, FMIs |
 | [COBIT 2019 (ISACA)](#cobit-2019-isaca) | ISACA EGIT | 40 objectives | 5 Domains (EDM/APO/BAI/DSS/MEA) | 0–4 | Enterprise IT governance, audit, CISM/CISA/CGEIT holders |
+| [NIST SP 800-53 R5](#nist-sp-800-53-rev-5) | NIST | 20 control families | 3 Classes (Technical/Operational/Management) | 0–4 | US federal agencies, contractors, and any organisation seeking comprehensive security controls |
+| [CSA CCM v4.1](#csa-cloud-controls-matrix-v41) | CSA | 197 control specifications | 17 Domains | 0–4 | Cloud service providers, cloud consumers — any sector |
+| [CSA AICM v1.0.3](#csa-ai-controls-matrix-v103) | CSA | 72 controls | 7 Domains | 0–4 | Organisations developing, deploying, or procuring AI systems |
 | [Custom (YAML)](#custom-frameworks-yaml-import) | User-defined | User-defined | User-defined | User-defined | All |
 
 ---
@@ -436,6 +439,50 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 - COBIT 2019 aligns to ISO/IEC 27001, ISO/IEC 38500, ITIL, NIST CSF, and PMBOK/PRINCE2
 - Full COBIT capability scale runs 0–5 (level 5: Optimizing with quantitative management); the platform uses a 0–4 scale consistent with all other assessment modules
 - Replaces COBIT 5 (2012); key changes include design factors, focus areas, and alignment with NIST CSF 2.0 concepts
+
+---
+
+### NIST SP 800-53 Rev. 5
+
+**Source:** NIST Special Publication 800-53 Revision 5 — Security and Privacy Controls for Information Systems and Organizations (September 2020)
+**Scope:** 20 control families covering the full security and privacy control catalogue for federal information systems. Families include Access Control (AC), Audit and Accountability (AU), Configuration Management (CM), Identification and Authentication (IA), Incident Response (IR), System and Communications Protection (SC), and more.
+**Scoring:** Maturity levels 0–4 (Not Implemented → Initial → Managed → Defined → Optimizing)
+**Audience:** US federal agencies and contractors required under FISMA; organisations seeking FedRAMP authorization; any sector wanting a comprehensive, baseline-driven control framework. Cross-referenced against ISO 27001:2022 Annex A.
+
+**Coverage notes:**
+- Control families map directly to ISO 27001:2022 Annex A domains — 474+ individual controls condensed to 20 scored families on the platform
+- NIST SP 800-53 Rev. 5 integrates privacy controls (previously separate in 800-53A) for the first time
+- ISO 27001:2022 ↔ NIST SP 800-53 Rev. 5 crosswalk available in the Crosswalk Viewer
+- Baseline tailoring (Low/Moderate/High) is not automated — the platform scores all 20 families uniformly
+
+---
+
+### CSA Cloud Controls Matrix v4.1
+
+**Source:** Cloud Security Alliance — Cloud Controls Matrix v4.1 (March 2023)
+**Scope:** 197 control specifications across 17 security domains: Application & Interface Security (AIS), Audit Assurance & Compliance (AAC), Business Continuity Management & Operational Resilience (BCR), Change Control & Configuration Management (CCC), Cryptography, Encryption & Key Management (CEK), Data Center Security (DCS), Data Security & Privacy Lifecycle Management (DSP), Governance, Risk & Compliance (GRC), Human Resources (HRS), Identity & Access Management (IAM), Infrastructure & Virtualization Security (IVS), Interoperability & Portability (IPY), Logging & Monitoring (LOG), Security Incident Management, E-Discovery, & Cloud Forensics (SEF), Supply Chain Management, Transparency & Accountability (STA), Threat & Vulnerability Management (TVM), Universal Endpoint Management (UEM).
+**Scoring:** Maturity levels 0–4
+**Audience:** Cloud service providers seeking CSA STAR certification; cloud consumers performing vendor due diligence; organisations with multi-cloud or hybrid environments.
+
+**Coverage notes:**
+- CCM v4.1 is the definitive cloud security control framework — aligned to ISO/IEC 27001, ISO/IEC 27017, ISO/IEC 27018, NIST SP 800-53, CIS Controls v8, and GDPR
+- CSA STAR (Security, Trust, Assurance, and Risk) Level 1 uses CCM self-assessment; Level 2 uses third-party audit
+- ISO 27018:2025 (Cloud product) and CCM v4.1 are complementary — CCM is broader; ISO 27018 focuses specifically on PII protection
+
+---
+
+### CSA AI Controls Matrix v1.0.3
+
+**Source:** Cloud Security Alliance — AI Controls Matrix (AICM) v1.0.3 (2024)
+**Scope:** 72 controls across 7 domains: AI Governance & Accountability (AGA), Data Management & Privacy (DMP), Model Development & Validation (MDV), Security & Resilience (SAR), Transparency & Explainability (TEX), Human Oversight & Control (HOC), Regulatory Compliance & Legal (RCL).
+**Scoring:** Maturity levels 0–4
+**Audience:** Organisations developing, deploying, or procuring AI systems; AI governance teams; cloud providers offering AI/ML services; teams managing EU AI Act or ISO 42001 compliance.
+
+**Coverage notes:**
+- AICM is designed as a companion to CCM v4.1 — focuses exclusively on AI system security and governance
+- Aligned to EU AI Act, ISO/IEC 42001:2023, NIST AI RMF 1.0, and OECD AI Principles
+- ISO 42001 (AI product) and AICM are complementary — ISO 42001 is a management system standard; AICM provides detailed technical controls
+- Particularly useful alongside the platform's ISO 42001 crosswalk mappings (NIST AI RMF: 32, EU AI Act: 31, OECD AI: 14)
 
 ---
 

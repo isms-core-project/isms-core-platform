@@ -95,7 +95,7 @@ ISMS CORE covers **four ISO standards** across **five content products**, all se
 <td>OP-POL + SCR + WKBK</td>
 <td>PRIV-POL + IMP (UG/TG) + SCR + WKBK</td>
 <td>CLD-POL + IMP (UG/TG) + SCR + WKBK</td>
-<td>AI-POL + SCR (selected controls)</td>
+<td>AI-POL + SCR (10 Annex A groups)</td>
 <td>Ingests all products — no content of its own</td>
 </tr>
 <tr>
@@ -577,14 +577,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | Foundation policies | **2** (AI-POL-00 + AI-POL-01) | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
 | Annex A control groups | **10** | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
 | AI-POL documents | **14** (12 EN + FR + DE + IT translations) | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
+| Checklist generators | **10** (one per Annex A control group) | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
 
 ### Platform
 
 | Metric | Value | Status |
 |--------|-------|--------|
 | Platform (API + WebUI) | v1.0 live — 44 connectors | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| Products integrated | ISMS + Privacy + Cloud | ![v1.0](https://img.shields.io/badge/v1.0-2E8B57?style=flat-square) |
-| Compliance assessment modules | 20 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+| Products integrated | ISMS + Privacy + Cloud + AI | ![v1.0](https://img.shields.io/badge/v1.0-2E8B57?style=flat-square) |
+| Compliance assessment modules | 23 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 | Risk Register + Heatmap | 5×5 probability/impact matrix, treatment workflow | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 | Risk Acceptance & Remediation | Formal sign-off, action plans with ETA/cost/progress | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
 | Cross-Framework Coverage | BFS inference: ISO 27001 → NIS2, DORA, GDPR | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
@@ -605,7 +606,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 |----------|-------------|
 | [PARADIGM.md](PARADIGM.md) | 🧭 Product overview and paradigm shift guide |
 | [PLATFORM.md](PLATFORM.md) | 🖥️ Platform architecture, features, and design decisions |
-| [COMPLIANCE.md](COMPLIANCE.md) | 📋 Compliance assessment modules — coverage notes, gaps, and audience for all 20 frameworks |
+| [COMPLIANCE.md](COMPLIANCE.md) | 📋 Compliance assessment modules — coverage notes, gaps, and audience for all 23 frameworks |
 | [GETTING-STARTED.md](GETTING-STARTED.md) | 🚀 How to run the Platform (Docker Compose setup guide) |
 | [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 Framework control pack index (53 packs) |
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A controls → 53 pack mapping |

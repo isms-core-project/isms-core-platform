@@ -33,7 +33,7 @@
 
 ## What Is ISMS CORE Platform?
 
-ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS CORE products (Framework, Operational, Privacy, Cloud) into a live compliance management system. The policies, assessment workbooks, and implementation guides are the content — Platform is the engine that ingests, correlates, and presents them as a unified operational dashboard covering ISO 27001:2022, ISO 27701:2025, and ISO 27018:2025.
+ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS CORE products (Framework, Operational, Privacy, Cloud, AI) into a live compliance management system. The policies, assessment workbooks, and implementation guides are the content — Platform is the engine that ingests, correlates, and presents them as a unified operational dashboard covering ISO 27001:2022, ISO 27701:2025, ISO 27018:2025, and ISO 42001:2023.
 
 **Without Platform:** You have policy files and Excel workbooks on disk. Excellent paperwork.
 
@@ -117,15 +117,15 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 
 | Entity | Description |
 |--------|-------------|
-| **Control Groups** | 87 groups — 54 ISMS (ISO 27001), 21 Privacy (ISO 27701), 12 Cloud (ISO 27018) |
-| **Policies** | POL, OP-POL, PRIV-POL, CLD-POL, INS, REF, CTX, FORM — typed, product-tagged, state-tracked |
+| **Control Groups** | 99 groups — 54 ISMS (ISO 27001), 21 Privacy (ISO 27701), 12 Cloud (ISO 27018), 12 AI (ISO 42001) |
+| **Policies** | POL, OP-POL, PRIV-POL, CLD-POL, AI-POL, INS, REF, CTX, FORM — typed, product-tagged, state-tracked |
 | **Implementations** | IMP-UG/TG documents, indexed into OpenSearch for full-text search |
-| **Assessments** | Excel workbook contents: sheets, items, compliance status per item; Framework, Operational, Privacy, and Cloud checklists |
+| **Assessments** | Excel workbook contents: sheets, items, compliance status per item; Framework, Operational, Privacy, Cloud, and AI checklists |
 | **Gaps** | Identified compliance gaps with severity, owner, SLA, and remediation tracking |
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
 | **Frameworks** | 31 reference datasets: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS Regulations, UK Operational Resilience, FINMA, and more |
-| **Crosswalk Mappings** | Cross-framework relationships: 3,200+ mappings — including NIST AI RMF 1.0 ↔ EU AI Act (72 mappings), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51), Swiss ISG (40 mappings), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF 20-750 LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
+| **Crosswalk Mappings** | Cross-framework relationships: 3,400+ mappings — including NIST AI RMF 1.0 ↔ EU AI Act (72 mappings), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51), Swiss ISG (40 mappings), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF 20-750 LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
 | **Compliance Assessments** | 20 frameworks: NIS2 (15), DORA (25), CIS Controls v8 (153), BSI IT-Grundschutz (68 Bausteine), TISAX (53), Swiss nDSG (25), Swiss ISG SR 128 (27), EU CRA (26), EU AI Act (25), NIST AI RMF 1.0 (72 subcategories, 0–4), EU Cloud Sovereignty (8), CyberFundamentals BE (41), BaFin BAIT DE (23), CSSF 20-750 LU (19), ACN IT (19), UK NIS (13), UK Op. Resilience (12), COBIT 2019 (40 objectives, capability 0–4), FINMA. Plus CSRM (object-centric, binary) and NIST CSF 2.0 (tiered profile). Assessment Collections group assessments with derived stats, CSV/XLSX/PDF export. See [COMPLIANCE.md](COMPLIANCE.md). |
 | **Projects** | Workspace layer — named projects own a curated subset of library policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date, etc.) applied on add; active/inactive/draft/archived lifecycle |
@@ -168,22 +168,22 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 
 | Feature | Description |
 |---------|-------------|
-| **Control Explorer** | Browse all 87 control groups (ISMS + Privacy + Cloud) with compliance scores, policy status, assessment history |
-| **Compliance Dashboard** | Aggregated scores across all four products with section breakdown; ISMS / Privacy / Cloud product switcher |
+| **Control Explorer** | Browse all 99 control groups (ISMS + Privacy + Cloud + AI) with compliance scores, policy status, assessment history | 
+| **Compliance Dashboard** | Aggregated scores across all four products with section breakdown; ISMS / Privacy / Cloud / AI product switcher |
 | **Coverage Heatmap** | Policy and assessment coverage by control group and section |
-| **Policy Manager** | Browse, filter, preview, and manage all POL/OP-POL/PRIV-POL/CLD-POL/INS/REF/CTX documents |
-| **Assessment Tracker** | Framework (188 workbooks), Operational (53 checklists), Privacy (21), Cloud (12) with per-item compliance status |
+| **Policy Manager** | Browse, filter, preview, and manage all POL/OP-POL/PRIV-POL/CLD-POL/AI-POL/INS/REF/CTX documents |
+| **Assessment Tracker** | Framework (188 workbooks), Operational (53 checklists), Privacy (21), Cloud (12), AI (10) with per-item compliance status |
 | **Gap Management** | Full gap lifecycle: create, assign, track, close — with severity, SLA monitoring, and BSI 200-3 automatic risk calculator (likelihood × impact → risk level, pre-mapped threat codes per ISO section) |
 | **Evidence Tracker** | Evidence items with expiry tracking, verification status, and freshness alerts |
 | **Connectors** | Automated evidence ingestion from 44 systems — continuous compliance signals from real infrastructure |
 | **Nightly Evidence Archive** | Celery Beat job archives stale connector evidence at 02:00 UTC daily |
 | **Crosswalk Viewer** | Cross-framework mappings: ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK ↔ GDPR ↔ DORA ↔ BSI IT-Grundschutz and more |
-| **QA / Existence Checker** | Validate that all expected artifacts are present (Framework, Operational, Privacy, Cloud) |
+| **QA / Existence Checker** | Validate that all expected artifacts are present (Framework, Operational, Privacy, Cloud, AI) |
 | **System Event Log** | Full audit log of all platform actions |
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats, import triggers |
 | **Full-Text Search** | Search across all policy and IMP document content via OpenSearch (product-filtered) |
 | **ISMS Compass** | AI gap analysis against ISMS CORE Gold Standard (requires `ANTHROPIC_API_KEY`) |
-| **Compliance Assessment Suite** | 20 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md) for full coverage notes. |
+| **Compliance Assessment Suite** | 23 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md) for full coverage notes. |
 | **NIST CSF 2.0 Assessment** | 106 subcategories across 6 functions (incl. GV — Govern), tier 1–4 ratings, radar + bar chart report page, XLSX import from official NIST template, XLSX/CSV export |
 | **NIS2 Assessment** | EU 2022/2555 — 10 Article 21(2) security measures + 5 Article 23 reporting obligations, maturity score 0–4 |
 | **DORA Assessment** | EU 2022/2554 — 25 articles across 4 chapters (ICT Risk, Incident Mgmt, Resilience Testing, Third-Party Risk), maturity score 0–4 |
@@ -210,6 +210,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Approval Workflow** | Content state lifecycle: draft → review → approved → published |
 | **Privacy Product** | 21 ISO 27701:2025 control groups — PRIV-POL imported; compliance checklists in Assessments |
 | **Cloud Product** | 12 ISO 27018:2025 control groups — CLD-POL imported; compliance checklists in Assessments |
+| **AI Product** | 10 ISO 42001:2023 Annex A control groups — AI-POL imported; compliance checklists in Assessments; ISO 42001 ↔ NIST AI RMF (32), EU AI Act (31), OECD AI (14), ISO 42005 (5) crosswalk mappings |
 | **Risk Register** | Project-scoped risk scenarios with 5×5 probability/impact matrix and visual risk heatmap |
 | **Risk Heatmap** | Colour-coded 5×5 grid (probability × impact) — view all risks at a glance, drill into any cell |
 | **Remediation + ITSM Push** | Risk acceptance sign-off + action plans with ETA, cost, effort, and progress tracking; idempotent outbound push to Jira / ServiceNow; ticket status sync |
