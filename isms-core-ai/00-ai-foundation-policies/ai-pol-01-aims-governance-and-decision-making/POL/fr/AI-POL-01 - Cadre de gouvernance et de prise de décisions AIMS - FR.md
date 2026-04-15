@@ -381,4 +381,4 @@ Les registres de revue de direction doivent être conservés en tant que preuves
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

@@ -389,4 +389,4 @@ Gli auditor che verificano la conformità con A.6.2.2–A.6.2.8 dovranno trovare
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

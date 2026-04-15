@@ -296,4 +296,4 @@ Recorded in Privacy Training Register: [ ] Yes  Record ID: _____________
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

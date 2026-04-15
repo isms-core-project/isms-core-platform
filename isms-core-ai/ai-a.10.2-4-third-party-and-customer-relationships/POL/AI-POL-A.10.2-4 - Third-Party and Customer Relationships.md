@@ -302,4 +302,4 @@ Auditors verifying compliance with A.10.2–A.10.4 should expect to find:
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

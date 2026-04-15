@@ -201,4 +201,4 @@ Maintain one record per transfer destination. Update whenever a new destination 
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

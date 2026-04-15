@@ -140,4 +140,4 @@ The means to fulfil the above SHALL be:
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

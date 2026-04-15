@@ -205,4 +205,4 @@ Medium, Low
 *"Good judgment comes from experience, and experience comes from bad judgment. Architecture patterns capture good judgment so others need not repeat the bad."*
 — Fred Brooks (paraphrased)
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

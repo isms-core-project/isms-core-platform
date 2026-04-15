@@ -272,4 +272,4 @@ Auditoren, die die Konformität mit A.6.1.2–A.6.1.3 prüfen, sollten folgendes
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

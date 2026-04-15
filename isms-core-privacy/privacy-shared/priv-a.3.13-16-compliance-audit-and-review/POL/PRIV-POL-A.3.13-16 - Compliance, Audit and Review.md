@@ -369,4 +369,4 @@ Auditors verifying compliance with A.3.13, A.3.14, A.3.15, and A.3.16 should exp
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

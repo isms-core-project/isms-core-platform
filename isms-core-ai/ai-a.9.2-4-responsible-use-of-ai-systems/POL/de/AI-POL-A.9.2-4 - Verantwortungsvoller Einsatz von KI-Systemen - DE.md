@@ -307,4 +307,4 @@ Auditoren, die die Einhaltung der Massnahmen A.9.2–A.9.4 prüfen, sollten Folg
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

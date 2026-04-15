@@ -174,4 +174,4 @@ All RESTRICTED transmission confirmations are recorded in the Processor Transmis
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

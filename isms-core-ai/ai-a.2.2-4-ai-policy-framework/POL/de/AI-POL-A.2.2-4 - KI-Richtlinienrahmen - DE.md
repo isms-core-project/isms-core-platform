@@ -279,4 +279,4 @@ Auditoren, die die Konformität mit A.2.2–A.2.4 prüfen, sollten Folgendes vor
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

@@ -155,4 +155,4 @@ Archived versions are retained for 5 years from the date the version was superse
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

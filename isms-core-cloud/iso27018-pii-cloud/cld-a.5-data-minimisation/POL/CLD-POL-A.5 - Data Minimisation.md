@@ -185,4 +185,4 @@ Auditors verifying compliance with CLD-POL-A.5 should expect to find:
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

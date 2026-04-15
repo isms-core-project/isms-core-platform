@@ -314,4 +314,4 @@ Auditoren, die die Einhaltung der Massnahmen A.8.2–A.8.5 prüfen, sollten Folg
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

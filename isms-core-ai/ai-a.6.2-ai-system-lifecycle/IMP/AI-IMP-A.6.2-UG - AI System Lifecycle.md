@@ -221,4 +221,4 @@ An AI system is decommissioned when:
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

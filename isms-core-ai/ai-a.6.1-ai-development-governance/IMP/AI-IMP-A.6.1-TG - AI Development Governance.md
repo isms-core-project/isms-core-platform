@@ -218,4 +218,4 @@ Complete at each major development milestone. Different sections are triggered a
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

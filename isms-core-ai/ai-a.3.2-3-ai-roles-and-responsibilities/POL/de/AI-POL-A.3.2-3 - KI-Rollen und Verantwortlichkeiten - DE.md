@@ -308,4 +308,4 @@ Auditoren, die die Konformität mit A.3.2–A.3.3 prüfen, sollten Folgendes vor
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

@@ -207,4 +207,4 @@ The following matrix defines who is notified and who approves decisions at each 
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

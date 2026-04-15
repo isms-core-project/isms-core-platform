@@ -308,4 +308,4 @@ Les auditeurs vérifiant la conformité avec A.3.2–A.3.3 doivent s'attendre à
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

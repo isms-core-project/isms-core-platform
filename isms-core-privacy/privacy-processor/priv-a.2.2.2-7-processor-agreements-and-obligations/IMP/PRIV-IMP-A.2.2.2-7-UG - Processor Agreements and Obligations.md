@@ -243,4 +243,4 @@ Register schemas are in PRIV-IMP-A.2.2.2-7-TG.
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

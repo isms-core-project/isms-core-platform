@@ -293,4 +293,4 @@ Auditoren, die die Konformität mit A.7.2–A.7.6 prüfen, sollten folgendes vor
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

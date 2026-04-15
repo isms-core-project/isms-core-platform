@@ -212,4 +212,4 @@ The AI Governance Officer prepares an AIMS governance report for the annual mana
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

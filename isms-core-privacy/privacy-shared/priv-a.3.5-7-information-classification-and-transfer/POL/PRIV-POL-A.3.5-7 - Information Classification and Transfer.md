@@ -368,4 +368,4 @@ Auditors verifying compliance with A.3.5, A.3.6, and A.3.7 should expect to find
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

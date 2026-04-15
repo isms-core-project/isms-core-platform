@@ -275,4 +275,4 @@ Auditors verifying compliance with A.4.2–A.4.6 should expect to find:
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

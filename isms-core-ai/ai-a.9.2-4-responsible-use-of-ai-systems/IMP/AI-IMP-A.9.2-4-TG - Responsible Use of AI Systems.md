@@ -198,4 +198,4 @@ One record per AI system per initial deployment (and per material expansion of u
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

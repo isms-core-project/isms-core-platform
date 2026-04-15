@@ -279,4 +279,4 @@ Les auditeurs vérifiant la conformité avec A.2.2–A.2.4 doivent s'attendre à
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

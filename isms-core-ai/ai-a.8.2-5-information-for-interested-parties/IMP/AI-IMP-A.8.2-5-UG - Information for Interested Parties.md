@@ -178,4 +178,4 @@ When an AI incident or near-miss is detected:
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

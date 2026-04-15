@@ -245,4 +245,4 @@ Tracks consent withdrawals separately from the main DSR register (consent withdr
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

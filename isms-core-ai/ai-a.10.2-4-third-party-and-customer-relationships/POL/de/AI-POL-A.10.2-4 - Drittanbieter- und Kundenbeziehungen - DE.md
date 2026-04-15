@@ -302,4 +302,4 @@ Auditoren, die die Einhaltung der Massnahmen A.10.2–A.10.4 prüfen, sollten Fo
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

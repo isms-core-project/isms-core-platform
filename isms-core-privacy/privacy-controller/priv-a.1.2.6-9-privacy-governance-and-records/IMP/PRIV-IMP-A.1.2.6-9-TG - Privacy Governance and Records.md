@@ -316,4 +316,4 @@ Use when reviewing a processor agreement for compliance with GDPR Article 28(3):
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

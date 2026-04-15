@@ -314,4 +314,4 @@ Les auditeurs vérifiant la conformité avec les contrôles A.8.2–A.8.5 doiven
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

@@ -231,4 +231,4 @@ Anonymisation is an irreversible process. If successful, the output is no longer
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

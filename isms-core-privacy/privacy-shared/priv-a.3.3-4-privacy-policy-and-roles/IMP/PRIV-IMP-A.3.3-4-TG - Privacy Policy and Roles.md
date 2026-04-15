@@ -273,4 +273,4 @@ Suitable platforms: SharePoint, Confluence, Google Drive with appropriate access
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

@@ -178,4 +178,4 @@ Per-customer (or per-product) register of AI information provided. Maintained by
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

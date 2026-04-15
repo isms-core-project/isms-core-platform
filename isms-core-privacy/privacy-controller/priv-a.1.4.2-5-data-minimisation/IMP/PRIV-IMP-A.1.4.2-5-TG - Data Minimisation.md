@@ -277,4 +277,4 @@ Records the technically enforced privacy-by-default settings per system or produ
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

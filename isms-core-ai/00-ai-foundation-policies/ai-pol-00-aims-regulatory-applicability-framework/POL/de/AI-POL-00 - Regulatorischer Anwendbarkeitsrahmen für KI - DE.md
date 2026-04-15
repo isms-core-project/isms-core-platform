@@ -547,4 +547,4 @@ Diese Richtlinie MUSS jährlich vom KI-Governance-Beauftragten und Legal/Complia
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

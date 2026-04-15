@@ -302,4 +302,4 @@ I revisori che verificano la conformità ai controlli A.10.2–A.10.4 dovrebbero
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

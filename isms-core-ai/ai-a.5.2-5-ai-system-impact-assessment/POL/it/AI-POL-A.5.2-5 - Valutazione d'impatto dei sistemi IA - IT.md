@@ -308,4 +308,4 @@ Gli auditor che verificano la conformità con A.5.2–A.5.5 dovranno trovare:
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

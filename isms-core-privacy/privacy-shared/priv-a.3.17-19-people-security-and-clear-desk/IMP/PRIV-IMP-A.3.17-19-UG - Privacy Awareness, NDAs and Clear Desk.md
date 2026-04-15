@@ -230,4 +230,4 @@ Personnel working remotely are subject to the same clear desk and clear screen r
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->

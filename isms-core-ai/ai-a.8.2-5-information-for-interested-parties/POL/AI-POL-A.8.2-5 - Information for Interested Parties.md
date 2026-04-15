@@ -314,4 +314,4 @@ Auditors verifying compliance with A.8.2–A.8.5 should expect to find:
 
 ---
 
-<!-- QA_VERIFIED: [2026-04-15] -->
+<!-- QA_VERIFIED: 2026-04-15 -->
