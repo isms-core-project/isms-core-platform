@@ -35,6 +35,8 @@ _RUN_NAME    = "nist_cve"
 # Rate limit: 0.6s between requests without key, 0.1s with key
 _SLEEP_NO_KEY = 0.65
 _SLEEP_KEY    = 0.12
+_MAX_RETRIES  = 3
+_RETRY_BACKOFF = [10, 30, 60]  # seconds to wait before each retry attempt
 
 
 def _headers() -> dict:
@@ -253,11 +255,19 @@ def run(full: bool = False) -> None:
     start = PAGE_SIZE
     while start < total_results:
         _sleep_between_pages()
-        try:
-            page = _fetch_page({**params, "startIndex": start})
-            pages_data.append(page)
-        except Exception as exc:
-            logger.warning("NVD CVE page at %d failed: %s — skipping", start, exc)
+        for attempt, wait in enumerate([0] + _RETRY_BACKOFF):
+            if wait:
+                logger.info("NVD CVE page at %d retry %d/%d — waiting %ds", start, attempt, _MAX_RETRIES, wait)
+                time.sleep(wait)
+            try:
+                page = _fetch_page({**params, "startIndex": start})
+                pages_data.append(page)
+                break
+            except Exception as exc:
+                if attempt < _MAX_RETRIES:
+                    logger.warning("NVD CVE page at %d failed (attempt %d): %s — retrying", start, attempt + 1, exc)
+                else:
+                    logger.warning("NVD CVE page at %d failed after %d retries — skipping", start, _MAX_RETRIES)
         start += PAGE_SIZE
 
     for page_data in pages_data:
