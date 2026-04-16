@@ -201,6 +201,9 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **ACN Guidelines Assessment (IT)** | ACN Linee Guida Cyber Risk — 19 guidelines across 4 groups, maturity score 0–4; ISO 27001 crosswalk: 43 mappings |
 | **UK NIS Assessment** | UK NIS Regulations 2018 (SI 2018/506) — 13 requirements across 3 objectives, maturity score 0–4; ISO 27001 crosswalk: 51 mappings |
 | **UK Operational Resilience Assessment** | FCA/PRA PS21/3 + PS26/2 — 12 requirements across 4 objectives, maturity score 0–4; ISO 27001 crosswalk: 34 mappings |
+| **CSA CCM v4.1 Assessment** | Cloud Security Alliance Cloud Controls Matrix v4.1 — 207 controls across 17 domains. Cloud-specific security controls for cloud service providers and customers. Maturity score 0–4. |
+| **CSA AICM v1.0.3 Assessment** | Cloud Security Alliance AI Controls Matrix v1.0.3 — 243 controls across 18 domains. AI-specific security controls overlay for AI system providers and users. Maturity score 0–4. |
+| **NIST SP 800-53 Rev 5 Assessment** | NIST SP 800-53 Rev 5 — 324 base controls across 20 families (AC, AT, AU, CA, CM, CP, IA, IR, MA, MP, PE, PL, PM, PS, PT, RA, SA, SC, SI, SR). Assessed at base-control level. Maturity score 0–4. |
 | **Assessment Collections** | Group multiple assessments into named collections with derived stats (completion %, compliance %, status rollup). Export as CSV, colour-coded XLSX, or PDF (A4). |
 | **Projects Workspace** | Create named projects to own, edit, and track a curated set of policies and implementations from the library — with WYSIWYG document editing, document variable substitution, bulk actions, bin/restore, SCR checklists, and completeness scoring |
 | **Document Editor** | TipTap v3 WYSIWYG + raw source toggle for in-platform editing of policy/implementation content; grid table auto-conversion (RST → GFM); metadata comment stripping |
