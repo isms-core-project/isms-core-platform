@@ -174,8 +174,10 @@ def _ensure_nvd_indices(os_client) -> None:
             logger.warning("Could not ensure index %s: %s", idx, e)
 
 
-def _fetch_page(params: dict) -> dict:
-    resp = requests.get(NVD_CVE_URL, headers=_headers(), params=params, timeout=60)
+def _fetch_page(params: dict, session: requests.Session | None = None) -> dict:
+    # (connect_timeout, read_timeout) — guards against half-open TCP hangs in Docker
+    caller = session.get if session else requests.get
+    resp = caller(NVD_CVE_URL, headers=_headers(), params=params, timeout=(10, 30))
     resp.raise_for_status()
     return resp.json()
 
@@ -259,15 +261,17 @@ def run(full: bool = False) -> None:
             if wait:
                 logger.info("NVD CVE page at %d retry %d/%d — waiting %ds", start, attempt, _MAX_RETRIES, wait)
                 time.sleep(wait)
-            try:
-                page = _fetch_page({**params, "startIndex": start})
-                pages_data.append(page)
-                break
-            except Exception as exc:
-                if attempt < _MAX_RETRIES:
-                    logger.warning("NVD CVE page at %d failed (attempt %d): %s — retrying", start, attempt + 1, exc)
-                else:
-                    logger.warning("NVD CVE page at %d failed after %d retries — skipping", start, _MAX_RETRIES)
+            # Fresh session each attempt — avoids stale TCP connections in Docker
+            with requests.Session() as sess:
+                try:
+                    page = _fetch_page({**params, "startIndex": start}, session=sess)
+                    pages_data.append(page)
+                    break
+                except Exception as exc:
+                    if attempt < _MAX_RETRIES:
+                        logger.warning("NVD CVE page at %d failed (attempt %d): %s — retrying", start, attempt + 1, exc)
+                    else:
+                        logger.warning("NVD CVE page at %d failed after %d retries — skipping", start, _MAX_RETRIES)
         start += PAGE_SIZE
 
     for page_data in pages_data:
