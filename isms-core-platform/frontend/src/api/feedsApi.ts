@@ -323,6 +323,13 @@ export const feedsApi = {
 
   patchFeedSettings: (payload: { feeds_cpe_full: boolean }) =>
     client.patch<{ feeds_cpe_full: boolean }>('/feeds/settings', payload).then(r => r.data),
+
+  triggerFeed: (feedName: string, mode: 'full' | 'delta' = 'full') =>
+    client.post<{ status: string; feed: string; mode: string | null }>(
+      `/feeds/trigger/${feedName}`,
+      null,
+      { params: feedName === 'nist_cve' ? { mode } : undefined },
+    ).then(r => r.data),
 }
 
 // ── Phase 27 types ────────────────────────────────────────────────────────────

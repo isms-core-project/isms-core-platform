@@ -6,7 +6,7 @@ import {
 } from '@mui/material'
 import {
   BugReportOutlined, CheckCircleOutlined, DownloadOutlined, ErrorOutlined,
-  HourglassEmptyOutlined, PolicyOutlined, SecurityOutlined,
+  HourglassEmptyOutlined, PlayArrowOutlined, PolicyOutlined, SecurityOutlined,
   SyncOutlined, TuneOutlined, VerifiedOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -106,6 +106,19 @@ export default function ThreatFeeds() {
     onSuccess: () => qc.invalidateQueries({ queryKey: ['feeds', 'settings'] }),
   })
 
+  const [triggerError, setTriggerError] = useState<string | null>(null)
+  const triggerMutation = useMutation({
+    mutationFn: ({ feedName, mode }: { feedName: string; mode?: 'full' | 'delta' }) =>
+      feedsApi.triggerFeed(feedName, mode),
+    onSuccess: () => {
+      setTriggerError(null)
+      setTimeout(() => qc.invalidateQueries({ queryKey: ['feeds', 'status'] }), 2000)
+    },
+    onError: (err: any) => {
+      setTriggerError(err?.response?.data?.detail ?? 'Trigger failed')
+    },
+  })
+
   const { data: kevStats } =
     useQuery({ queryKey: ['feeds', 'kev', 'stats'], queryFn: feedsApi.getKevStats })
 
@@ -139,6 +152,7 @@ export default function ThreatFeeds() {
 
       {statusLoading && <CircularProgress size={20} sx={{ mb: 2 }} />}
       {statusError && <Alert severity="error" sx={{ mb: 2 }}>Failed to load feed status</Alert>}
+      {triggerError && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setTriggerError(null)}>{triggerError}</Alert>}
 
       {/* ── Feed status cards ── */}
       <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mb: 3 }}>
@@ -163,6 +177,44 @@ export default function ThreatFeeds() {
                   <Typography variant="caption" color="error.main" display="block" sx={{ mt: 0.25 }} noWrap>
                     {feed.error_message}
                   </Typography>
+                )}
+                {isAdmin && (
+                  <Box sx={{ mt: 1, display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
+                    <Tooltip title={feed.feed_name === 'nist_cve' ? 'Run delta update now' : 'Run feed now'}>
+                      <span>
+                        <Button
+                          size="small"
+                          variant="outlined"
+                          startIcon={triggerMutation.isPending && triggerMutation.variables?.feedName === feed.feed_name
+                            ? <CircularProgress size={12} /> : <PlayArrowOutlined sx={{ fontSize: 14 }} />}
+                          disabled={triggerMutation.isPending}
+                          onClick={() => triggerMutation.mutate({
+                            feedName: feed.feed_name,
+                            mode: feed.feed_name === 'nist_cve' ? 'delta' : undefined,
+                          })}
+                          sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
+                        >
+                          {feed.feed_name === 'nist_cve' ? 'Delta' : 'Run'}
+                        </Button>
+                      </span>
+                    </Tooltip>
+                    {feed.feed_name === 'nist_cve' && (
+                      <Tooltip title="Run full CVE pull (slow — 30-60 min)">
+                        <span>
+                          <Button
+                            size="small"
+                            variant="outlined"
+                            color="warning"
+                            disabled={triggerMutation.isPending}
+                            onClick={() => triggerMutation.mutate({ feedName: 'nist_cve', mode: 'full' })}
+                            sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
+                          >
+                            Full
+                          </Button>
+                        </span>
+                      </Tooltip>
+                    )}
+                  </Box>
                 )}
               </Box>
             </Box>

@@ -943,6 +943,32 @@ def get_feed_settings(db: DBSession = Depends(get_db)):
     return FeedSettings(feeds_cpe_full=cpe_full)
 
 
+@router.post("/trigger/{feed_name}", dependencies=[Depends(require_admin)])
+def trigger_feed(
+    feed_name: str,
+    mode: str = Query("full", description="full|delta — only applies to nist_cve"),
+):
+    """Trigger a feed run immediately. Admin only. Returns 202 if started, 409 if already running."""
+    import requests as _req
+    from fastapi import HTTPException
+
+    feeds_host = os.environ.get("FEEDS_HOST", "http://isms-core-feeds:8001")
+    url = f"{feeds_host}/trigger/{feed_name}"
+    if feed_name == "nist_cve":
+        url += f"?mode={mode}"
+
+    try:
+        resp = _req.post(url, timeout=5)
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail=f"Feeds container unreachable: {exc}")
+
+    if resp.status_code == 202:
+        return {"status": "triggered", "feed": feed_name, "mode": mode if feed_name == "nist_cve" else None}
+    if resp.status_code == 409:
+        raise HTTPException(status_code=409, detail=f"Feed '{feed_name}' is already running")
+    raise HTTPException(status_code=502, detail=f"Feeds container returned {resp.status_code}: {resp.text}")
+
+
 @router.patch("/settings", response_model=FeedSettings, dependencies=[Depends(require_admin)])
 def patch_feed_settings(
     payload: FeedSettings = Body(...),

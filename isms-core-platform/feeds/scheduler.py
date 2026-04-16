@@ -39,7 +39,7 @@ import time
 
 import schedule
 
-from feeds import cisa_kev, epss, mitre_atlas, mitre_attack, nist_cpe, nist_cve
+from feeds import cisa_kev, epss, mitre_atlas, mitre_attack, nist_cpe, nist_cve, trigger_server
 
 logging.basicConfig(
     level=logging.INFO,
@@ -63,6 +63,7 @@ def _safe(fn, name: str):
 
 
 def main():
+    trigger_server.start()
     run_on_start = os.environ.get("FEEDS_RUN_ON_START", "true").lower() == "true"
 
     # ── Schedule ────────────────────────────────────────────────────────────────
