@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <em>Four products. One platform. All live.</em>
+  <em>Five products. One platform. All live.</em>
 </p>
 
 ---
@@ -124,10 +124,10 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all four ISMS 
 | **Gaps** | Identified compliance gaps with severity, owner, SLA, and remediation tracking |
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
-| **Frameworks** | 31 reference datasets: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS Regulations, UK Operational Resilience, FINMA, and more |
-| **Crosswalk Mappings** | Cross-framework relationships: 3,400+ mappings — including NIST AI RMF 1.0 ↔ EU AI Act (72 mappings), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51), Swiss ISG (40 mappings), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF 20-750 LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
+| **Frameworks** | 37 reference datasets: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS Regulations, UK Operational Resilience, FINMA, and more |
+| **Crosswalk Mappings** | Cross-framework relationships: 3,412 mappings — including NIST AI RMF 1.0 ↔ EU AI Act (72 mappings), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51), Swiss ISG (40 mappings), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF 20-750 LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
-| **Compliance Assessments** | 20 frameworks: NIS2 (15), DORA (25), CIS Controls v8 (153), BSI IT-Grundschutz (68 Bausteine), TISAX (53), Swiss nDSG (25), Swiss ISG SR 128 (27), EU CRA (26), EU AI Act (25), NIST AI RMF 1.0 (72 subcategories, 0–4), EU Cloud Sovereignty (8), CyberFundamentals BE (41), BaFin BAIT DE (23), CSSF 20-750 LU (19), ACN IT (19), UK NIS (13), UK Op. Resilience (12), COBIT 2019 (40 objectives, capability 0–4), FINMA. Plus CSRM (object-centric, binary) and NIST CSF 2.0 (tiered profile). Assessment Collections group assessments with derived stats, CSV/XLSX/PDF export. See [COMPLIANCE.md](COMPLIANCE.md). |
+| **Compliance Assessments** | 23 frameworks: NIS2 (15), DORA (25), CIS Controls v8 (153), BSI IT-Grundschutz (68 Bausteine), TISAX (53), Swiss nDSG (25), Swiss ISG SR 128 (27), EU CRA (26), EU AI Act (25), NIST AI RMF 1.0 (72 subcategories, 0–4), EU Cloud Sovereignty (8), CyberFundamentals BE (41), BaFin BAIT DE (23), CSSF 20-750 LU (19), ACN IT (19), UK NIS (13), UK Op. Resilience (12), COBIT 2019 (40 objectives, capability 0–4), FINMA. Plus CSRM (object-centric, binary) and NIST CSF 2.0 (tiered profile). Assessment Collections group assessments with derived stats, CSV/XLSX/PDF export. See [COMPLIANCE.md](COMPLIANCE.md). |
 | **Projects** | Workspace layer — named projects own a curated subset of library policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date, etc.) applied on add; active/inactive/draft/archived lifecycle |
 | **System Event Log** | Immutable trail of every platform action (who, what, when, resource) |
 | **Threat Intelligence** | Feed run history (`feed_runs`), CISA KEV entries (`cisa_kev_entries`), EPSS scores (`epss_scores`), MITRE techniques (`mitre_techniques`). NVD CVE (~250K docs) and CPE (~50-100K docs) stored in OpenSearch indices `nvd-cve` / `nvd-cpe` with EPSS + KEV denormalized at index time. |
@@ -371,7 +371,7 @@ Wait until all containers are up before proceeding to Step 4. You can check:
 docker compose ps
 ```
 
-Expected output — all 9 containers, 8 showing `healthy`, beat showing `Up` (no healthcheck — this is normal):
+Expected output — all 10 containers, 8 showing `healthy`, beat and feeds showing `Up` (no healthcheck — this is normal):
 
 ```
 NAME                        STATUS
@@ -384,6 +384,7 @@ isms-core-opensearch        Up (healthy)
 isms-core-worker            Up (healthy)
 isms-core-connectors        Up (healthy)
 isms-core-beat              Up
+isms-core-feeds             Up
 ```
 
 **Alembic migrations run automatically.** On a fresh database, the backend container stamps at migration 009 and applies 010 through head automatically via `entrypoint.sh`. You do not need to run `alembic upgrade head` manually.
@@ -405,6 +406,7 @@ volumes:
   - ../isms-core-operational:/app/isms-operational:ro  # Operational — include
   # - ../isms-core-privacy:/app/isms-privacy:ro        # Privacy — commented out = not imported
   # - ../isms-core-cloud:/app/isms-cloud:ro            # Cloud — commented out = not imported
+  # - ../isms-core-ai:/app/isms-ai:ro                  # AI — commented out = not imported
   - ../isms-core-external:/app/isms-external:ro        # External — optional, see below
 ```
 
@@ -442,11 +444,13 @@ Log in as admin and go to **Admin → First-Run Setup**. Each importer is a sepa
 | Step | Button | What it does |
 |------|--------|-------------|
 | 1 | **Load Reference Frameworks** | Seeds control groups and loads all reference datasets (ISO 27001, NIST CSF, MITRE ATT&CK, GDPR, DORA, NIS2, EU country frameworks, crosswalk bundles and more). **Always run this first.** |
-| 2 | **Import Policies** | Imports POL, OP-POL, PRIV-POL, CLD-POL, REF, CTX, FORM documents from all mounted content volumes. Only imports what is mounted. |
+| 2 | **Import Policies** | Imports POL, OP-POL, PRIV-POL, CLD-POL, AI-POL, REF, CTX, FORM documents from all mounted content volumes. Only imports what is mounted. |
 | 3 | **Import Implementations (IMP)** | Imports IMP-UG and IMP-TG documents and indexes them into OpenSearch for full-text search. |
-| 4 | **Import Assessment Workbooks** | Parses Framework assessment workbook structures from the generator scripts. |
-| 5 | **Import Operational Checklists** | Parses Operational compliance checklist structures. |
-| — | **Full Sync (Steps 2–5)** | Runs all four importers in sequence. Step 1 (Load Reference Frameworks) must be done separately first. |
+| 4 | **Import Operational Checklists** | Parses Operational compliance checklist structures. |
+| 5 | **Import Privacy / Cloud / AI Checklists** | Parses Privacy (ISO 27701), Cloud (ISO 27018), and AI (ISO 42001) compliance checklist structures. |
+| 6 | **Import Assessment Workbooks** | Parses Framework assessment workbook structures from the generator scripts. |
+| 7 | **Seed QA Keyword Translations** | Loads multilingual keyword sets used by the QA Engine for FR/DE/IT document validation. |
+| — | **Full Sync (Steps 2–7)** | Runs all importers in sequence. Step 1 (Load Reference Frameworks) must be done separately first. |
 
 > **External policies:** You can import your own existing policy documents by placing them in a mounted folder before running Import Policies. They will be indexed into OpenSearch and available for full-text search and ISMS Compass gap analysis — useful for evaluating your current documentation against the ISMS CORE Gold Standard.
 
@@ -830,7 +834,7 @@ Use this checklist before declaring the deployment live.
 - [ ] `ADMIN_PASSWORD` set — **there is no default; if empty, you cannot log in**
 - [ ] `HOST_IP` set to your server's IP address
 - [ ] `docker compose up -d` completed — all 9 containers up
-- [ ] `docker compose ps` shows 8 containers `healthy` + `isms-core-beat` `Up`
+- [ ] `docker compose ps` shows 8 containers `healthy` + `isms-core-beat` and `isms-core-feeds` showing `Up`
 - [ ] `bootstrap.sh` run once — import statistics show non-zero counts
 - [ ] `curl -k https://localhost/health` returns `{"status":"ok","database":"ok","opensearch":"ok"}`
 - [ ] `https://{HOST_IP}` accessible in browser — dashboard shows compliance data
