@@ -25,21 +25,32 @@
 15. [Crosswalk & Framework Mapping](#crosswalk-framework-mapping)
 16. [Metrics & KPI Dashboard](#metrics-kpi-dashboard)
 17. [Country Localisation](#country-localisation)
-18. [Custom Frameworks](#custom-frameworks)
-19. [Organisation & User Management](#organisation-user-management)
-20. [MFA & Account Security](#mfa-account-security)
+18. [AI Extension Pack](#ai-extension-pack)
+19. [Custom Frameworks](#custom-frameworks)
+20. [Organisation & User Management](#organisation-user-management)
+21. [MFA & Account Security](#mfa-account-security)
 
 ---
 
 ## Introduction {#introduction}
 
-ISMS CORE is an ISO 27001:2022 compliance management platform. It turns your static policy documents, implementation guides, and control workbooks into a live compliance system — with gap tracking, risk management, evidence collection, and cross-framework mapping.
+ISMS CORE is a compliance management platform covering ISO 27001:2022 and four extension standards. It turns your static policy documents, implementation guides, and control workbooks into a live compliance system — with gap tracking, risk management, evidence collection, and cross-framework mapping.
+
+Five product families are available:
+
+| Product | Standard | Control groups |
+|---------|----------|---------------|
+| **ISMS Framework** | ISO 27001:2022 | 54 Annex A groups |
+| **ISMS Operational** | ISO 27001:2022 | 53 lightweight policies |
+| **Privacy Extension** | ISO 27701:2025 | 21 privacy groups |
+| **Cloud Extension** | ISO 27018:2025 | 12 cloud PII groups |
+| **AI Extension** | ISO 42001:2023 + ISO 42005:2025 | 10 AI management groups |
 
 ### What you can do with ISMS CORE
 
-- Manage your ISO 27001:2022 ISMS across all 93 Annex A controls
+- Manage your ISMS across 99 control groups covering ISO 27001, ISO 27701, ISO 27018, and ISO 42001
 - Track control implementation status, gaps, and evidence
-- Run compliance assessments across 20 regulatory frameworks (NIS2, DORA, NIST CSF 2.0, NIST AI RMF 1.0, and more)
+- Run compliance assessments across 23 regulatory frameworks (NIS2, DORA, NIST CSF 2.0, NIST AI RMF 1.0, CSA CCM, NIST SP 800-53, and more)
 - Collect evidence automatically via 44 integrations (Microsoft, CrowdStrike, Jira, ServiceNow, and more)
 - Monitor live threat intelligence — MITRE ATT&CK, CISA KEV, NVD CVE/CPE feeds, EPSS scores
 - Manage risks with a full 5×5 risk register and treatment workflow
@@ -47,7 +58,7 @@ ISMS CORE is an ISO 27001:2022 compliance management platform. It turns your sta
 - Assess business impact (BIA) for continuity planning
 - Track third-party and supplier risk
 - Map your controls across multiple frameworks automatically
-- Generate localised policies for 7 jurisdictions (CH, DE, FR, AT, LI, IT, GB)
+- Generate localised policies for 8 jurisdictions (CH default, AT, BE, DE, FR, GB, IT, LU)
 
 ### Personas
 
@@ -210,17 +221,20 @@ Control Owners can update status for controls assigned to them. ISMS Managers ca
 
 ## Compliance Assessments {#compliance-assessments}
 
-ISMS CORE includes 20 built-in compliance assessment modules. Each module maps your ISO 27001 control posture to a specific regulatory framework.
+ISMS CORE includes 23 built-in compliance assessment modules. Each module maps your ISO 27001 control posture to a specific regulatory framework.
 
 ### Available frameworks
 
 | Framework | Scope |
 |-----------|-------|
-| NIST CSF 2.0 | US cybersecurity framework |
-| NIST AI RMF 1.0 | US AI risk management framework (AI 100-1) |
+| NIST CSF 2.0 | US cybersecurity framework (tiered profiles, radar report, XLSX import/export) |
+| NIST AI RMF 1.0 | US AI risk management framework (AI 100-1) — 72 subcategories, 0–4 maturity |
+| NIST SP 800-53 Rev 5 | US federal security controls — 324 base controls across 20 families |
 | NIS2 | EU network and information security directive |
 | DORA | EU digital operational resilience (financial sector) |
 | CIS Controls v8 | Center for Internet Security controls |
+| CSA CCM v4.1 | Cloud Security Alliance Cloud Controls Matrix — 207 controls, 17 domains |
+| CSA AICM v1.0.3 | Cloud Security Alliance AI Controls Matrix — 243 controls, 18 domains |
 | BSI IT-Grundschutz | German federal security baseline |
 | TISAX | Automotive sector information security |
 | Swiss ISG (SR 128) | Swiss Federal Act on Information Security |
@@ -662,7 +676,7 @@ Set a review frequency — the platform notifies you when a vendor review is due
 
 ## Crosswalk & Framework Mapping {#crosswalk-framework-mapping}
 
-The Crosswalk engine automatically maps your ISO 27001:2022 controls to other frameworks using a database of 3,195+ pre-built mappings.
+The Crosswalk engine automatically maps your ISO 27001:2022 controls to other frameworks using a database of 3,412 pre-built mappings.
 
 ### How it works
 
@@ -725,19 +739,20 @@ Super Admins can access **Metrics → Portfolio** to compare KPIs across all org
 
 ## Country Localisation {#country-localisation}
 
-ISMS CORE generates jurisdiction-specific policies for 7 countries. When you set your organisation's country, all policy documents render with localised legal references, regulatory contacts, and terminology.
+ISMS CORE generates jurisdiction-specific policies for 7 countries. When you set your organisation's country, all policy documents render with localised legal references, regulatory contacts, and terminology. Switzerland (CH) is the default — all source documents use Swiss references unless a country is set.
 
 ### Supported jurisdictions
 
-| Code | Country | Key frameworks |
-|------|---------|----------------|
-| **CH** | Switzerland | nLPD, DSG, OPDo, PFPDT, FINMA |
-| **DE** | Germany | DSGVO, BDSG, BSI, BaFin |
+| Code | Country | Key localised references |
+|------|---------|--------------------------|
+| **CH** | Switzerland (default) | nLPD, OPDo, PFPDT, FINMA, NCSC/BACS |
+| **AT** | Austria | DSGVO, DSG, DSB, FMA |
+| **BE** | Belgium | GDPR, RGPD, APD/GBA, CCB, CyberFundamentals |
+| **DE** | Germany | DSGVO, BDSG, BSI, BaFin, LfDI |
 | **FR** | France | RGPD, CNIL, ANSSI, LPM |
-| **AT** | Austria | DSGVO, DSG, FMA |
-| **LI** | Liechtenstein | DSG-LI, FMA-LI |
-| **IT** | Italy | GDPR, Garante, ACN |
 | **GB** | United Kingdom | UK GDPR, DPA 2018, ICO, FCA/PRA, NIS Regs 2018 |
+| **IT** | Italy | GDPR, Garante, ACN |
+| **LU** | Luxembourg | RGPD, CNPD, CSSF, CIRCABC |
 
 ### Setting your jurisdiction
 
@@ -748,6 +763,59 @@ ISMS CORE generates jurisdiction-specific policies for 7 countries. When you set
 All policy documents immediately reflect the jurisdiction-specific tokens (regulatory body names, law references, terminology).
 
 > **Note:** Changing jurisdiction does not alter the base control text — only the jurisdiction-specific tokens are replaced.
+
+---
+
+## AI Extension Pack {#ai-extension-pack}
+
+The AI Extension Pack brings ISO 42001:2023 (AI Management System) and ISO 42005:2025 (AI Risk Assessment) into the platform as a fifth product family. It is designed for organisations that develop, deploy, or procure AI systems and need to demonstrate governance and risk management beyond their ISO 27001 ISMS.
+
+### What It Covers
+
+10 control groups across the ISO 42001:2023 Annex A domains:
+
+| Group | Domain |
+|-------|--------|
+| AI-A.2 | AI Policy |
+| AI-A.3 | Internal Organisation |
+| AI-A.4 | Resources for AI Systems |
+| AI-A.5 | Assessing Impacts of AI Systems |
+| AI-A.6 | AI System Life Cycle |
+| AI-A.7 | Data for AI Systems |
+| AI-A.8 | Information for Interested Parties |
+| AI-A.9 | Use of AI Systems |
+| AI-A.10 | Third-Party and Customer Relationships |
+| AI Foundation | AI-POL-00 + AI-POL-01 foundation policies |
+
+Each group has: AI-POL policy, IMP-UG user implementation guide, IMP-TG technical implementation guide, SCR self-assessment checklist.
+
+### AI Product Switcher
+
+Switch to the AI product using the product switcher in the sidebar. The Control Library, Policies, Coverage, and Assessment pages update to show AI content.
+
+### Crosswalk Coverage
+
+ISO 42001 controls are crosswalked to:
+
+| Target framework | Mappings |
+|-----------------|---------|
+| NIST AI RMF 1.0 | 32 mappings |
+| EU AI Act | 31 mappings |
+| OECD AI Principles | 14 mappings |
+| ISO 42005:2025 | 5 mappings |
+
+### ISO 42005:2025 Integration
+
+ISO 42005:2025 (AI Risk Assessment) content is integrated into the AI implementation guides — the IMP-TG documents for AI-A.5 (Assessing Impacts) and AI-A.6 (Life Cycle) include ISO 42005 methodology and AISIA (AI System Impact Assessment) guidance.
+
+### NIST AI RMF and EU AI Act Assessments
+
+The AI Extension Pack activates two dedicated compliance assessment modules:
+
+- **NIST AI RMF 1.0** — assess your AI governance against GOVERN, MAP, MEASURE, and MANAGE functions
+- **EU AI Act** — assess compliance with high-risk AI system requirements across 6 groups
+
+Both are available in the Compliance Assessments section when the AI product is active.
 
 ---
 
