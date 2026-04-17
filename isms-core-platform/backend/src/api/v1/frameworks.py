@@ -1,8 +1,8 @@
 import uuid
 
 from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy import select
-from sqlalchemy.orm import Session as DBSession
+from sqlalchemy import func, select
+from sqlalchemy.orm import Session as DBSession, aliased
 
 from src.core.dependencies import get_current_user
 from src.database.session import get_db
@@ -96,6 +96,36 @@ def list_controls_by_code(
     if not fw:
         raise HTTPException(status_code=404, detail=f"Framework '{code}' not found")
     return get_framework_controls(db, fw.id, level=level)
+
+
+@router.get("/crosswalk/axes")
+def list_crosswalk_axes(
+    db: DBSession = Depends(get_db),
+    _user: User = Depends(get_current_user),
+):
+    """Return cross-framework mapping axis counts grouped by source → target framework."""
+    SrcCtrl = aliased(FrameworkControl)
+    TgtCtrl = aliased(FrameworkControl)
+    SrcFW   = aliased(Framework)
+    TgtFW   = aliased(Framework)
+
+    rows = db.execute(
+        select(
+            SrcFW.code.label("source_framework"),
+            TgtFW.code.label("target_framework"),
+            func.count().label("count"),
+        )
+        .join(SrcCtrl, CrossFrameworkMapping.source_control_id == SrcCtrl.id)
+        .join(SrcFW,   SrcCtrl.framework_id == SrcFW.id)
+        .join(TgtCtrl, CrossFrameworkMapping.target_control_id == TgtCtrl.id)
+        .join(TgtFW,   TgtCtrl.framework_id == TgtFW.id)
+        .group_by(SrcFW.code, TgtFW.code)
+        .order_by(SrcFW.code, TgtFW.code)
+    ).all()
+
+    axes = [{"source_framework": r.source_framework, "target_framework": r.target_framework, "count": r.count} for r in rows]
+    total = sum(a["count"] for a in axes)
+    return {"axes": axes, "total_mappings": total, "total_axes": len(axes)}
 
 
 @router.get("/", response_model=list[FrameworkRead])

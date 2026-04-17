@@ -55,6 +55,7 @@ import Ebios from './pages/Ebios'
 import Tprm from './pages/Tprm'
 import CustomFrameworks from './pages/CustomFrameworks'
 import FrameworkTracker from './pages/FrameworkTracker'
+import CrosswalkTracker from './pages/CrosswalkTracker'
 import Help from './pages/Help'
 import ThreatFeeds from './pages/ThreatFeeds'
 import MitreAttack from './pages/MitreAttack'
@@ -149,6 +150,7 @@ export default function App() {
         <Route path="tprm" element={<Tprm />} />
         <Route path="custom-frameworks" element={<CustomFrameworks />} />
         <Route path="framework-tracker" element={<FrameworkTracker />} />
+        <Route path="crosswalk-tracker" element={<CrosswalkTracker />} />
         <Route path="help" element={<Help />} />
         <Route path="threat-feeds" element={<ThreatFeeds />} />
         <Route path="mitre-attack" element={<MitreAttack />} />
