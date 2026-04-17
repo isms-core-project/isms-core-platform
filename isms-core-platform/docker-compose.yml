@@ -26,6 +26,7 @@ services:
     image: postgres:18-alpine
     container_name: isms-core-postgres
     environment:
+      TZ: Europe/Zurich
       POSTGRES_DB: isms_db
       POSTGRES_USER: isms_user
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -46,6 +47,8 @@ services:
     image: redis:8-alpine
     container_name: isms-core-redis
     command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    environment:
+      - TZ=Europe/Zurich
     volumes:
       - redis-data:/data
     healthcheck:
@@ -61,6 +64,7 @@ services:
     image: opensearchproject/opensearch:3
     container_name: isms-core-opensearch
     environment:
+      - TZ=Europe/Zurich
       - discovery.type=single-node
       - DISABLE_SECURITY_PLUGIN=true
       - OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g
@@ -92,6 +96,7 @@ services:
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
     environment:
+      - TZ=Europe/Zurich
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - DATASETS_PATH=/app/datasets
@@ -148,6 +153,7 @@ services:
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
     environment:
+      - TZ=Europe/Zurich
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - DATASETS_PATH=/app/datasets
@@ -184,6 +190,7 @@ services:
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
     environment:
+      - TZ=Europe/Zurich
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - DATASETS_PATH=/app/datasets
@@ -217,6 +224,7 @@ services:
     container_name: isms-core-frontend
     # Port 3000 not published externally — nginx proxies /
     environment:
+      - TZ=Europe/Zurich
       - VITE_BACKEND_URL=https://${HOST_IP}
     depends_on:
       isms-core-backend:
@@ -239,6 +247,7 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt:ro # Let's Encrypt (read-only)
       - certbot-www:/var/www/certbot        # ACME HTTP-01 challenge
     environment:
+      - TZ=Europe/Zurich
       - NGINX_HOST=${FQDN:-${HOST_IP}}
       - FQDN=${FQDN:-}
     depends_on:
@@ -267,6 +276,7 @@ services:
     image: isms-core-connectors:latest
     container_name: isms-core-connectors
     environment:
+      - TZ=Europe/Zurich
       - ISMS_API_URL=http://isms-core-backend:8000
       - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET}
       - RUNNER_REFRESH_INTERVAL=${RUNNER_REFRESH_INTERVAL:-60}
@@ -288,6 +298,7 @@ services:
     image: isms-core-feeds:latest
     container_name: isms-core-feeds
     environment:
+      - TZ=Europe/Zurich
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
       - FEEDS_RUN_ON_START=${FEEDS_RUN_ON_START:-true}
@@ -331,6 +342,7 @@ services:
     container_name: isms-core-smtp-bridge
     profiles: [smtp-bridge]
     environment:
+      - TZ=Europe/Zurich
       - TENANT_ID=${SMTP_BRIDGE_TENANT_ID:-}
       - CLIENT_ID=${SMTP_BRIDGE_CLIENT_ID:-}
       - CLIENT_SECRET=${SMTP_BRIDGE_CLIENT_SECRET:-}
