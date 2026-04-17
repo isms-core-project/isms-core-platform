@@ -115,6 +115,7 @@ def list_crosswalk_axes(
             TgtFW.code.label("target_framework"),
             func.count().label("count"),
         )
+        .select_from(CrossFrameworkMapping)
         .join(SrcCtrl, CrossFrameworkMapping.source_control_id == SrcCtrl.id)
         .join(SrcFW,   SrcCtrl.framework_id == SrcFW.id)
         .join(TgtCtrl, CrossFrameworkMapping.target_control_id == TgtCtrl.id)
