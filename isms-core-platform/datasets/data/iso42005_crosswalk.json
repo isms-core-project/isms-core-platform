@@ -4,10 +4,10 @@
   "bundle_version": "1.0",
   "dataset": "iso42005_crosswalk",
   "framework": null,
-  "generated_at": "2026-04-15T00:00:00Z",
+  "generated_at": "2026-04-17T00:00:00Z",
   "generator": "generate_iso42005_crosswalk.py",
-  "content_hash": "iso42005_crosswalk_v1_2026-04-15",
-  "objects_count": 23,
+  "content_hash": "iso42005_crosswalk_v2_2026-04-17",
+  "objects_count": 44,
   "relationships_count": 0,
   "objects": [
     {
@@ -262,6 +262,237 @@
       "mapping_type": "maps-to",
       "confidence": 0.95,
       "notes": "Identifying actual and reasonably foreseeable benefits and harms to individuals, groups, and society (6.8-6.9) is the primary instrument for implementing OECD Principle 1 — ensuring AI drives inclusive growth and does not cause societal harm."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8003-000000000001",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.1",
+      "target_framework": "EU_AI_ACT",
+      "target_control": "GOV.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "Clauses 5.1 General and 5.2 Purpose establish the structured, documented AI impact assessment process — directly implements the QMS documentation and governance requirements of Art. 17 which mandates a formal quality management system for high-risk AI."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8003-000000000002",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.3",
+      "target_framework": "EU_AI_ACT",
+      "target_control": "GOV.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "Clause 5.3 Integration with AI management system aligns the impact assessment with the broader AI governance system — supporting Art. 17 QMS requirements for integrated risk and quality management in high-risk AI systems."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8003-000000000003",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.3",
+      "target_framework": "EU_AI_ACT",
+      "target_control": "RMG.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "notes": "Clause 5.3 Integration with risk management ensures impact assessment is embedded in the Art. 9 risk management system — ISO 42005 assessment methodology operationalises the Art. 9 risk management obligations when integrated with the AIMS."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8003-000000000004",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.7",
+      "target_framework": "EU_AI_ACT",
+      "target_control": "RMG.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "notes": "Clause 5.7 Thresholds for sensitive and restricted uses, and 5.8 Performing the assessment, identify risks through structured assessment methodology — directly implements Art. 9(2) risk identification requirements for high-risk AI systems."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8003-000000000005",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.7",
+      "target_framework": "EU_AI_ACT",
+      "target_control": "RMG.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "Clause 5.8 Performing the assessment against established thresholds evaluates likelihood and severity of identified AI impacts — implementing Art. 9(4) risk estimation and evaluation for the purposes of EU AI Act compliance."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8003-000000000006",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.9",
+      "target_framework": "EU_AI_ACT",
+      "target_control": "GOV.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "Clauses 5.9 Analysing results and 5.11 Approval process generate the documented impact analysis required for Art. 27 Fundamental Rights Impact Assessment — ISO 42005 assessment outputs are the primary evidence artefact for FRIA compliance."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8003-000000000007",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.9",
+      "target_framework": "EU_AI_ACT",
+      "target_control": "TRN.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "Clauses 5.10 Recording and reporting produce documented assessment outputs that form part of the technical file — Art. 11 technical documentation requirements include impact assessment records as evidence of conformity with risk management obligations."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8003-000000000008",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.2",
+      "target_framework": "EU_AI_ACT",
+      "target_control": "TRN.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "notes": "Clauses 6.2 Scope, 6.3 AI system information, and 6.5 Algorithm and model information document the AI system in detail — this documentation directly satisfies Art. 11 technical documentation requirements for system description, capabilities, and limitations."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8003-000000000009",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.2",
+      "target_framework": "EU_AI_ACT",
+      "target_control": "TRN.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "Clauses 6.3 AI system information (description, intended uses) and 6.7 Interested parties provide the information deployers and users require — directly supporting Art. 13 transparency obligations requiring providers to supply clear information to deployers."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8003-000000000010",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.6",
+      "target_framework": "EU_AI_ACT",
+      "target_control": "HOV.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "Clause 6.6 Deployment environment (6.6.1 Geographical area, 6.6.2 Deployment complexity) establishes the context that deployers operate in — informing Art. 26 deployer obligations including oversight measures appropriate to the specific deployment environment."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8003-000000000011",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.8",
+      "target_framework": "EU_AI_ACT",
+      "target_control": "GOV.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "notes": "Clauses 6.8.1 General, 6.8.2 Benefits and harms, and 6.9 Comparing and prioritising impacts constitute the full impact identification methodology — the primary operational instrument for performing the Art. 27 Fundamental Rights Impact Assessment required for high-risk AI deployers."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8004-000000000001",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.1",
+      "target_framework": "ISO42001",
+      "target_control": "A.5.2-5",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "notes": "ISO 42005 Clauses 5.1 General and 5.2 Purpose define the structured impact assessment process that operationalises the ISO 42001 A.5.2-5 impact assessment obligation — ISO 42005 is the detailed methodological implementation of the requirement mandated by ISO 42001 A.5."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8004-000000000002",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.3",
+      "target_framework": "ISO42001",
+      "target_control": "A.5.2-5",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "notes": "ISO 42005 Clause 5.3 Integration with AI management, risk management, and other assessment processes embeds the impact assessment within the broader AIMS — directly implementing ISO 42001 A.5.2 integration requirement for the impact assessment process."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8004-000000000003",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.3",
+      "target_framework": "ISO42001",
+      "target_control": "A.6.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "ISO 42005 Clause 5.4 Timing of impact assessment requires assessment during the development lifecycle — this integrates with ISO 42001 A.6.1 AI development governance, ensuring impact assessment is a gate in the development approval process."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8004-000000000004",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.7",
+      "target_framework": "ISO42001",
+      "target_control": "A.5.2-5",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "notes": "ISO 42005 Clauses 5.7 Thresholds and 5.8 Performing the assessment provide the detailed assessment methodology — the operational implementation of ISO 42001 A.5.2-5 impact assessment requirements, specifying how to conduct the assessment mandated by A.5."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8004-000000000005",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.9",
+      "target_framework": "ISO42001",
+      "target_control": "A.5.2-5",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "notes": "ISO 42005 Clauses 5.9 Analysing results, 5.10 Recording, 5.11 Approval, and 5.12 Monitoring complete the impact assessment cycle — implementing the full documentation and monitoring requirements of ISO 42001 A.5.4-5.5 post-assessment obligations."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8004-000000000006",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.2",
+      "target_framework": "ISO42001",
+      "target_control": "A.6.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "ISO 42005 Clause 6.2 Scope and 6.3 AI system information require detailed characterisation of the AI system being assessed — this information is generated by and must be consistent with ISO 42001 A.6.1 AI development governance documentation (design specs, intended use, approval records)."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8004-000000000007",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.4",
+      "target_framework": "ISO42001",
+      "target_control": "A.7.2-6",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "notes": "ISO 42005 Clauses 6.4 Data information and quality and 6.5 Algorithm and model information require documentation of training data, quality criteria, and algorithmic characteristics — this data documentation directly extends ISO 42001 A.7.2-6 data governance requirements to the impact assessment context."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8004-000000000008",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.6",
+      "target_framework": "ISO42001",
+      "target_control": "A.9.2-4",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "ISO 42005 Clause 6.6 Deployment environment establishes the context in which human oversight must operate — the deployment environment characterisation informs ISO 42001 A.9.2-4 responsible use obligations and the appropriate design of human oversight mechanisms."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8004-000000000009",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.8",
+      "target_framework": "ISO42001",
+      "target_control": "A.5.2-5",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "notes": "ISO 42005 Clauses 6.8 Actual and reasonably foreseeable impacts (6.8.2 Benefits and harms, 6.8.3 Failures and misuse, 6.9 Comparing impacts) contain the core impact identification methodology — the operational heart of ISO 42001 A.5.2-5 impact assessment execution."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8004-000000000010",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.8",
+      "target_framework": "ISO42001",
+      "target_control": "A.9.2-4",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "ISO 42005 Clause 6.8.3 AI system failures and reasonably foreseeable misuse scenarios identify use-case-level risks — these identified misuse scenarios directly inform ISO 42001 A.9.2-4 design of safeguards, override mechanisms, and human oversight requirements for responsible AI use."
     }
   ]
 }
