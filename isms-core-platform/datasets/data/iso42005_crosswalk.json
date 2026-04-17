@@ -6,8 +6,8 @@
   "framework": null,
   "generated_at": "2026-04-17T00:00:00Z",
   "generator": "generate_iso42005_crosswalk.py",
-  "content_hash": "iso42005_crosswalk_v2_2026-04-17",
-  "objects_count": 44,
+  "content_hash": "iso42005_crosswalk_v3_2026-04-17",
+  "objects_count": 66,
   "relationships_count": 0,
   "objects": [
     {
@@ -493,6 +493,248 @@
       "mapping_type": "maps-to",
       "confidence": 0.85,
       "notes": "ISO 42005 Clause 6.8.3 AI system failures and reasonably foreseeable misuse scenarios identify use-case-level risks — these identified misuse scenarios directly inform ISO 42001 A.9.2-4 design of safeguards, override mechanisms, and human oversight requirements for responsible AI use."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8005-000000000001",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.1",
+      "target_framework": "ISO27701",
+      "target_control": "A.3.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "AI impact assessment policy (IAS-5.1) maps to ISO 27701 A.3.3 policies for information security — the AI impact assessment policy must integrate with the privacy policy framework; privacy-by-design is a mandatory consideration in AI impact assessments affecting PII."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8005-000000000002",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.3",
+      "target_framework": "ISO27701",
+      "target_control": "A.1.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "AI impact assessment scope (IAS-5.3) maps to ISO 27701 A.1.4 privacy by design — scoping an AI impact assessment requires identifying all PII processed by the AI system; privacy by design principles must be applied during scope definition and system design review."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8005-000000000003",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.3",
+      "target_framework": "ISO27701",
+      "target_control": "A.2.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "AI impact assessment scope (IAS-5.3) maps to ISO 27701 A.2.4 privacy by design for processors — where the AI system is operated by a processor, the scope assessment must address processor-specific privacy by design requirements under A.2.4."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8005-000000000004",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.7",
+      "target_framework": "ISO27701",
+      "target_control": "A.1.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "Impact on rights and freedoms (IAS-5.7) maps to ISO 27701 A.1.2 conditions for collection and processing — identifying the impact of AI on data subjects' rights requires evaluating whether the legal basis for AI-driven PII processing is adequate for the assessed level of risk."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8005-000000000005",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.7",
+      "target_framework": "ISO27701",
+      "target_control": "A.1.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "notes": "Impact on rights and freedoms (IAS-5.7) maps to ISO 27701 A.1.3 obligations to PII principals — AI impact assessment must evaluate how AI decisions affect data subject rights (access, erasure, objection to automated decisions); A.1.3 obligations are directly informed by IAS-5.7 findings."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8005-000000000006",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.9",
+      "target_framework": "ISO27701",
+      "target_control": "A.3.13",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "Regulatory impact (IAS-5.9) maps to ISO 27701 A.3.13 legal and regulatory requirements — AI impact assessments must identify applicable privacy regulations (GDPR, nDSG, EU AI Act) as part of the regulatory landscape; A.3.13 compliance monitoring must track AI-specific regulatory obligations."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8005-000000000007",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.2",
+      "target_framework": "ISO27701",
+      "target_control": "A.1.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "Impact assessment documentation (IAS-6.2) maps to ISO 27701 A.1.4 privacy by design — impact assessment findings must feed back into privacy by design decisions; design mitigations identified in IAS-6.2 documentation are implemented through A.1.4 privacy by design controls."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8005-000000000008",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.2",
+      "target_framework": "ISO27701",
+      "target_control": "A.3.15",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "Impact assessment documentation (IAS-6.2) maps to ISO 27701 A.3.15 independent review — AI impact assessment documentation must be reviewed by an independent privacy function; IAS-6.2 documentation provides the evidence base for A.3.15 independent privacy reviews."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8005-000000000009",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.4",
+      "target_framework": "ISO27701",
+      "target_control": "A.1.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "notes": "Privacy impact findings (IAS-6.4) maps to ISO 27701 A.1.3 obligations to PII principals — IAS-6.4 impact findings that identify risks to data subject rights must be mitigated through A.1.3 obligations; both controls require that AI systems do not infringe on data subject rights."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8005-000000000010",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.4",
+      "target_framework": "ISO27701",
+      "target_control": "A.2.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "Privacy impact findings (IAS-6.4) maps to ISO 27701 A.2.3 obligations to PII principals for processors — processor AI systems must address impact findings that affect data subjects; A.2.3 processor obligations are informed by IAS-6.4 privacy risk findings."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8005-000000000011",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.6",
+      "target_framework": "ISO27701",
+      "target_control": "A.3.12",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "Response to impact findings (IAS-6.6) maps to ISO 27701 A.3.12 response to incidents — when AI impact findings reveal an active privacy risk, the response must invoke the incident response procedure; IAS-6.6 finding remediation and A.3.12 incident response are complementary response mechanisms."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8005-000000000012",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.8",
+      "target_framework": "ISO27701",
+      "target_control": "A.3.14",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "Impact assessment records (IAS-6.8) maps to ISO 27701 A.3.14 protection of records — AI impact assessment records must be protected and retained; IAS-6.8 record-keeping requirements and A.3.14 records protection apply jointly to DPIA documentation."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8006-000000000001",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.1",
+      "target_framework": "ISO27001_2022",
+      "target_control": "A.5.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "AI impact assessment policy (IAS-5.1) maps to ISO 27001 A.5.1 information security policies — the AI impact assessment policy must be endorsed by and integrated with the information security policy hierarchy; A.5.1 provides the governance framework within which IAS-5.1 operates."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8006-000000000002",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.3",
+      "target_framework": "ISO27001_2022",
+      "target_control": "A.8.25",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "AI impact assessment scope (IAS-5.3) maps to ISO 27001 A.8.25 secure development lifecycle — scoping an AI impact assessment requires reviewing the AI system's development lifecycle; A.8.25 secure development practices must be assessed as part of the AI impact scope definition."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8006-000000000003",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.7",
+      "target_framework": "ISO27001_2022",
+      "target_control": "A.5.34",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "notes": "Impact on rights and freedoms (IAS-5.7) maps to ISO 27001 A.5.34 privacy and PII protection — IAS-5.7 assessment of harm to data subjects is the risk assessment input for A.5.34 privacy controls; the two controls are corollary requirements for organisations processing PII in AI systems."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8006-000000000004",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.9",
+      "target_framework": "ISO27001_2022",
+      "target_control": "A.5.31",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "Regulatory impact (IAS-5.9) maps to ISO 27001 A.5.31 legal requirements — AI regulatory compliance obligations (EU AI Act, GDPR, sector-specific AI rules) identified in IAS-5.9 must be tracked under A.5.31 legal and regulatory compliance monitoring."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8006-000000000005",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.2",
+      "target_framework": "ISO27001_2022",
+      "target_control": "A.5.36",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "Impact assessment implementation (IAS-6.2) maps to ISO 27001 A.5.36 compliance with policies — AI impact assessments must verify that AI system design and operation comply with information security policies; IAS-6.2 documentation serves as evidence for A.5.36 policy compliance."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8006-000000000006",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.4",
+      "target_framework": "ISO27001_2022",
+      "target_control": "A.5.8",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "Privacy impact findings (IAS-6.4) maps to ISO 27001 A.5.8 information security in project management — AI impact findings must be fed back into the project management process; A.5.8 requires that security and privacy findings from assessments are addressed as project requirements."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8006-000000000007",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.6",
+      "target_framework": "ISO27001_2022",
+      "target_control": "A.5.26",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "notes": "Response to impact findings (IAS-6.6) maps to ISO 27001 A.5.26 response to incidents — when IAS-6.6 identifies an active risk requiring urgent mitigation, the response must be coordinated with the incident response process; significant AI privacy findings are treated as security incidents."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8006-000000000008",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.8",
+      "target_framework": "ISO27001_2022",
+      "target_control": "A.5.33",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "notes": "Impact assessment records (IAS-6.8) maps to ISO 27001 A.5.33 protection of records — AI impact assessment records are formal compliance records; IAS-6.8 record-keeping requirements and A.5.33 records protection apply jointly to DPIA and AI assessment documentation."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8006-000000000009",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-5.3",
+      "target_framework": "ISO27001_2022",
+      "target_control": "A.5.12",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "notes": "AI impact assessment scope (IAS-5.3) maps to ISO 27001 A.5.12 classification of information — scoping an AI impact assessment requires identifying the classification level of data processed by the AI system; A.5.12 classification determines the applicable controls and assessment depth for IAS-5.3."
+    },
+    {
+      "type": "cross_framework_mapping",
+      "id": "f042005e-0002-4200-8006-000000000010",
+      "source_framework": "ISO42005",
+      "source_control": "IAS-6.2",
+      "target_framework": "ISO27001_2022",
+      "target_control": "A.5.35",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "notes": "Impact assessment documentation (IAS-6.2) maps to ISO 27001 A.5.35 independent review — AI impact assessment documentation should be reviewed by an independent function; A.5.35 independent review requirements apply to AI impact assessments as a specialised category of compliance documentation."
     }
   ]
 }
