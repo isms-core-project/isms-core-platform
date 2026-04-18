@@ -17,6 +17,9 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-AGPL_3.0-9400D3?style=flat-square" alt="License"/></a>
 </p>
 
+<details>
+<summary><strong>23 compliance assessment modules — click to expand</strong></summary>
+<br/>
 <p align="center">
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NIST_CSF_2.0-Assessment_Tool-FF6600?style=flat-square" alt="NIST CSF"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NIS2-Assessment_Tool-003399?style=flat-square" alt="NIS2"/></a>
@@ -26,17 +29,23 @@
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CSRM_(NCSC_CH)-Assessment_Tool-D32F2F?style=flat-square" alt="CSRM NCSC CH"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/TISAX-Assessment_Tool-1B5E20?style=flat-square" alt="TISAX"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/Swiss_nDSG-Assessment_Tool-C62828?style=flat-square" alt="Swiss nDSG"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/Swiss_ISG_(SR_128)-Assessment_Tool-B71C1C?style=flat-square" alt="Swiss ISG"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/EU_Cyber_Resilience_Act-Assessment_Tool-1A237E?style=flat-square" alt="EU CRA"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/EU_AI_Act-Assessment_Tool-4527A0?style=flat-square" alt="EU AI Act"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/EU_Cloud_Sovereignty-Assessment_Tool-01579B?style=flat-square" alt="EU Cloud Sovereignty"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NIST_AI_RMF_1.0-Assessment_Tool-FF6600?style=flat-square" alt="NIST AI RMF"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/COBIT_2019-Assessment_Tool-7B1FA2?style=flat-square" alt="COBIT 2019"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CyberFundamentals_(BE)-Assessment_Tool-1A237E?style=flat-square" alt="CyberFundamentals BE"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/BaFin_BAIT_(DE)-Assessment_Tool-B71C1C?style=flat-square" alt="BaFin BAIT"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CSSF_20--750_(LU)-Assessment_Tool-4A148C?style=flat-square" alt="CSSF LU"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/ACN_Guidelines_(IT)-Assessment_Tool-006630?style=flat-square" alt="ACN IT"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/UK_NIS_Regulations-Assessment_Tool-1A237E?style=flat-square" alt="UK NIS"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/UK_Op._Resilience-Assessment_Tool-283593?style=flat-square" alt="UK Op Resilience"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/FINMA-Assessment_Tool-C62828?style=flat-square" alt="FINMA"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v18-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/3%2C915_Crosswalk_Mappings-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
 </p>
+</details>
 
 <p align="center">
   <em>Grows fast. Bends, doesn't break. Built to last.</em> 🎋
@@ -46,106 +55,198 @@
 
 ## 🎯 What is ISMS CORE?
 
-ISMS CORE is a production-grade **control engineering** platform for building and operating an information security and privacy management system. It treats compliance implementation as an **engineering problem** — not a consulting exercise.
+ISMS CORE is a production-grade **control engineering** platform for building and operating an information security management system. It treats compliance implementation as an **engineering problem** — not a consulting exercise.
 
 > **New here?** Read [PARADIGM.md](PARADIGM.md) first — it explains how ISMS CORE differs from traditional ISMS approaches, how to choose between products, and what to expect.
 
-ISMS CORE covers **four ISO standards** across **five content products**, all served by one Platform:
+---
+
+## Five Products. Four Standards. One Platform.
 
 <table>
 <tr>
-<th></th>
-<th>🏗️ <a href="isms-core-framework/">Framework</a></th>
-<th>⚡ <a href="isms-core-operational/">Operational</a></th>
-<th>🔒 <a href="isms-core-privacy/">Privacy</a></th>
-<th>☁️ <a href="isms-core-cloud/">Cloud</a></th>
-<th>🤖 <a href="isms-core-ai/">AI</a></th>
-<th>🖥️ <a href="PLATFORM.md">Platform</a></th>
+<td align="center" valign="top" width="33%">
+
+### 🏗️ [Framework](isms-core-framework/)
+<img src="https://img.shields.io/badge/ISO_27001-2022-0066CC?style=flat-square" alt="ISO 27001:2022"/>
+
+**Full SSE engineering product** for mature security teams and consultants. Governance policies, implementation guides, assessment scripts, generated workbooks — one complete pack per control.
+
+**53** control packs · **93** Annex A controls<br/>
+**376** IMP docs · **188** generators<br/>
+EN · FR · DE · IT
+
+<img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/>
+
+</td>
+<td align="center" valign="top" width="33%">
+
+### ⚡ [Operational](isms-core-operational/)
+<img src="https://img.shields.io/badge/ISO_27001-2022-0066CC?style=flat-square" alt="ISO 27001:2022"/>
+
+**Foundation ISMS for SMEs** (10–500 people). Operational policies with single-sheet compliance checklists. No engineering overhead — read the policy, run the checklist, done.
+
+**53** control groups · **53** OP-POL docs<br/>
+**53** checklist generators<br/>
+EN · FR · DE · IT
+
+<img src="https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square" alt="Complete"/>
+
+</td>
+<td align="center" valign="top" width="34%">
+
+### 🔒 [Privacy](isms-core-privacy/)
+<img src="https://img.shields.io/badge/ISO_27701-2025-7030A0?style=flat-square" alt="ISO 27701:2025"/>
+
+**Privacy information management** — controller, processor, and shared control groups for ISO 27701:2025. Pairs with Framework or Operational.
+
+**21** control groups · **23** PRIV-POL docs<br/>
+**42** IMP docs · **21** generators<br/>
+EN · FR · DE · IT
+
+<img src="https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square" alt="Complete"/>
+
+</td>
 </tr>
 <tr>
-<td><strong>Standard</strong></td>
-<td>ISO 27001:2022</td>
-<td>ISO 27001:2022</td>
-<td>ISO 27701:2025</td>
-<td>ISO 27018:2025</td>
-<td>ISO 42001:2023</td>
-<td>All four</td>
-</tr>
-<tr>
-<td><strong>What</strong></td>
-<td>Full SSE engineering product — governance policies, implementation guides, assessment scripts, generated workbooks</td>
-<td>Foundation ISMS for SMEs — operational policies with single-sheet compliance checklists</td>
-<td>Privacy information management — controller, processor, and shared control groups</td>
-<td>PII protection in public cloud — compliance checklists for cloud service providers</td>
-<td>AI management system — governance policies for AI development, deployment, and responsible use</td>
-<td>API + WebUI — turns all content products into a live compliance management system; modules include Risk Register, KPI Metrics, TPRM, BIA, EBIOS RM, ITSM push, Cross-Framework Coverage, Custom Framework Import, Country Localisation (FR/BE/LU/DE/AT/IT/GB), Threat Intelligence (MITRE ATT&CK, MITRE ATLAS, CISA KEV, NVD CVE/CPE Explorer), Health Notifications, and MFA</td>
-</tr>
-<tr>
-<td><strong>For</strong></td>
-<td>Mature security teams, consultants, auditors</td>
-<td>SMEs and startups (10–500 people)</td>
-<td>Any organisation processing PII as controller or processor</td>
-<td>Cloud service providers processing PII on behalf of controllers</td>
-<td>Organisations developing or deploying AI systems requiring an AIMS</td>
-<td>Any ISMS CORE user needing dashboards, gap tracking, audit management</td>
-</tr>
-<tr>
-<td><strong>Per control</strong></td>
-<td>POL + IMP (UG/TG) + SCR + WKBK + REF + FORM + CTX</td>
-<td>OP-POL + SCR + WKBK</td>
-<td>PRIV-POL + IMP (UG/TG) + SCR + WKBK</td>
-<td>CLD-POL + IMP (UG/TG) + SCR + WKBK</td>
-<td>AI-POL + SCR (10 Annex A groups)</td>
-<td>Ingests all products — no content of its own</td>
-</tr>
-<tr>
-<td><strong>Groups</strong></td>
-<td>53 control packs / 93 Annex A controls</td>
-<td>53 control groups / 93 Annex A controls</td>
-<td>21 control groups (8 controller + 5 processor + 8 shared)</td>
-<td>12 Annex A control groups</td>
-<td>12 AI control groups (2 foundation + 10 Annex A)</td>
-<td>99 total groups across all products</td>
-</tr>
-<tr>
-<td><strong>Artifacts</strong></td>
-<td>376 IMP docs, 188 Python scripts, 188 Excel workbooks</td>
-<td>53 operational policies, 53 checklist scripts</td>
-<td>23 PRIV-POL, 42 IMP docs, 21 checklist scripts</td>
-<td>12 CLD-POL, 24 IMP docs, 12 checklist scripts</td>
-<td>14 AI-POL (EN + FR + DE + IT per control)</td>
-<td>FastAPI + PostgreSQL + Redis + OpenSearch + React WebUI</td>
-</tr>
-<tr>
-<td><strong>Languages</strong></td>
-<td>EN + FR + DE + IT (POL/INS/CTX/REF/FORM)</td>
-<td>EN + FR + DE + IT (OP-POL)</td>
-<td>EN + FR + DE + IT (PRIV-POL)</td>
-<td>EN + FR + DE + IT (CLD-POL)</td>
-<td>EN + FR + DE + IT (AI-POL)</td>
-<td>UI: EN — policy rendering: 8 jurisdictions</td>
-</tr>
-<tr>
-<td><strong>Status</strong></td>
-<td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
-<td><img src="https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square" alt="Complete"/></td>
-<td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
-<td><img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/></td>
-<td><img src="https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square" alt="Complete"/></td>
-<td><img src="https://img.shields.io/badge/Live_(v1.0)-2E8B57?style=flat-square" alt="Live (v1.0)"/></td>
+<td align="center" valign="top" width="33%">
+
+### ☁️ [Cloud](isms-core-cloud/)
+<img src="https://img.shields.io/badge/ISO_27018-2025-00897B?style=flat-square" alt="ISO 27018:2025"/>
+
+**PII protection in public cloud** — compliance checklists for cloud service providers processing PII on behalf of controllers. ISO 27018:2025 Annex A.
+
+**12** control groups · **12** CLD-POL docs<br/>
+**24** IMP docs · **12** generators<br/>
+EN · FR · DE · IT
+
+<img src="https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square" alt="Complete"/>
+
+</td>
+<td align="center" valign="top" width="33%">
+
+### 🤖 [AI](isms-core-ai/)
+<img src="https://img.shields.io/badge/ISO_42001-2023-FF6B35?style=flat-square" alt="ISO 42001:2023"/>
+
+**AI management system** — governance policies covering AI development, deployment, impact assessment, responsible use, and third-party AI relationships.
+
+**12** AI control groups · **14** AI-POL docs<br/>
+**10** checklist generators<br/>
+EN · FR · DE · IT
+
+<img src="https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square" alt="Complete"/>
+
+</td>
+<td align="center" valign="top" width="34%">
+
+### 🖥️ [Platform](PLATFORM.md)
+<img src="https://img.shields.io/badge/All_Four_Standards-Live-2E8B57?style=flat-square" alt="All four standards"/>
+
+**Live compliance management system** — turns all content products into dashboards, gap tracking, evidence ingestion, risk registers, and audit reports. Docker Compose, 10 services, self-hosted.
+
+**44** connectors · **10** services<br/>
+**23** assessment modules · **3,915** crosswalk mappings<br/>
+7 country jurisdictions
+
+<img src="https://img.shields.io/badge/v1.0-Live-2E8B57?style=flat-square" alt="Live"/>
+
+</td>
 </tr>
 </table>
 
-### 🧭 Who this is for (and not for)
+---
+
+## 📦 What You Get — Ready to Use
+
+This is not a framework reference or a checklist template library. **Every control pack ships production-ready artifacts you open, adapt, and issue.**
+
+<table>
+<tr>
+<th width="10%">Artifact</th>
+<th width="7%">Format</th>
+<th width="43%">What it is</th>
+<th width="20%">Who uses it</th>
+<th width="20%">Products</th>
+</tr>
+<tr>
+<td><strong>POL</strong></td>
+<td>Markdown</td>
+<td>Governance policy document — what the control requires, who owns it, which standards apply. Set your org name, CISO, and effective date. Issue it.</td>
+<td>ISMS Manager → Board / Staff</td>
+<td>All five products</td>
+</tr>
+<tr>
+<td><strong>IMP-UG</strong></td>
+<td>Markdown</td>
+<td>Implementation User Guide — how the ISMS Manager implements and operates the control. Roles, process steps, KPIs, review cycles.</td>
+<td>ISMS Manager</td>
+<td>Framework · Privacy · Cloud · AI</td>
+</tr>
+<tr>
+<td><strong>IMP-TG</strong></td>
+<td>Markdown</td>
+<td>Implementation Technical Guide — step-by-step for the engineer. Commands, config snippets, vendor-specific notes, hardening checklists.</td>
+<td>Security Engineer</td>
+<td>Framework · Privacy · Cloud · AI</td>
+</tr>
+<tr>
+<td><strong>SCR</strong></td>
+<td>Python 3.11+</td>
+<td>Assessment generator — run <code>python3 generate_*.py</code> to produce a structured, formatted compliance evidence workbook. Single dependency: <code>openpyxl</code>.</td>
+<td>ISMS Manager → Auditor</td>
+<td>All five products</td>
+</tr>
+<tr>
+<td><strong>WKBK</strong></td>
+<td>Excel (.xlsx)</td>
+<td>Generated compliance workbook — per-control assessment items, evidence status, scoring, and auditor notes. Output of the SCR generator. Hand directly to your auditor.</td>
+<td>Auditor / Control Owner</td>
+<td>All five products</td>
+</tr>
+<tr>
+<td><strong>REF</strong></td>
+<td>Markdown</td>
+<td>Reference extracts from the ISO standard text mapped to this control. Cross-references to adjacent and related Annex A controls.</td>
+<td>ISMS Manager / Auditor</td>
+<td>Framework</td>
+</tr>
+<tr>
+<td><strong>CTX</strong></td>
+<td>Markdown</td>
+<td>Context document linking this control pack to adjacent and dependent control packs — for control stacking and dependency mapping.</td>
+<td>ISMS Manager</td>
+<td>Framework</td>
+</tr>
+<tr>
+<td><strong>FORM</strong></td>
+<td>Markdown</td>
+<td>Ready-to-use templates: evidence collection forms, meeting agendas, approval records, risk acceptance forms.</td>
+<td>ISMS Manager / Control Owner</td>
+<td>Framework</td>
+</tr>
+</table>
+
+> **Example workflow — A.8.24 Use of Cryptography:**
+> 1. Open `POL/` → your organisation's cryptography policy, ready to sign and issue
+> 2. Open `IMP/IMP-UG/` → how to run a key management programme (KPIs, review cycle, ownership)
+> 3. Open `IMP/IMP-TG/` → TLS config, certificate lifecycle, HSM setup, vendor notes
+> 4. Run `SCR/generate_a824_*.py` → produces `.xlsx` assessment workbook
+> 5. Hand the workbook to your auditor as structured compliance evidence
+
+**Prerequisites for generators:** Python 3.11+, `pip install openpyxl`
+
+---
+
+## 🧭 Who This Is For (and Not For)
 
 **This is for:**
-- Security teams building an ISMS and wanting **repeatable evidence**
+- Security teams building an ISMS wanting **repeatable, auditable evidence**
 - Engineers who prefer **automation + tests** over "security theater"
-- SMEs that need **practical, audit-ready policies** without over-engineering
-- Organisations processing PII that need **ISO 27701 controller/processor controls**
-- Cloud service providers that need **ISO 27018 PII protection compliance**
-- Organisations developing or deploying AI systems that need **ISO 42001 AIMS governance**
-- Consultants and auditors who need **structured, traceable control packs**
+- SMEs needing **practical, audit-ready policies** without over-engineering
+- Organisations processing PII needing **ISO 27701 controller/processor controls**
+- Cloud service providers needing **ISO 27018 PII compliance**
+- Organisations developing AI systems needing **ISO 42001 AIMS governance**
+- Consultants and auditors needing **structured, traceable control packs**
 
 **This is not for:**
 - "One-click compliance" expectations
@@ -154,160 +255,60 @@ ISMS CORE covers **four ISO standards** across **five content products**, all se
 
 ---
 
-## 📂 Repository Structure
-
-```
-factory_isms/
-├── README.md                           # This file
-├── PARADIGM.md                         # Product overview and paradigm shift guide
-├── PLATFORM.md                         # Platform architecture and features
-├── GETTING-STARTED.md                  # How to run the Platform (Docker setup)
-├── CONTRIBUTING.md                     # QA process and standards
-├── PHILOSOPHY.md                       # Anti-cargo-cult methodology
-├── CODE_OF_CONDUCT.md                  # Community standards
-├── SECURITY.md                         # Vulnerability reporting
-├── LICENSE                             # AGPL-3.0
-│
-├── isms-core-framework/                # 🏗️ ISO 27001:2022 — Full Engineering Product
-│   ├── README.md
-│   ├── CONTROLS.md                     # 53 control pack index
-│   ├── COVERAGE.md                     # 93 Annex A → 53 pack mapping
-│   ├── STATUS.md                       # Implementation metrics
-│   ├── STACKING.md                     # Control grouping methodology
-│   ├── CHANGELOG.md
-│   ├── 00-foundation-policies/         # Regulatory framework (POL-00, POL-01)
-│   ├── A.5-organisational-controls/    # 21 control packs
-│   ├── A.6-people-controls/            # 4 control packs
-│   ├── A.7-physical-controls/          # 6 control packs
-│   └── A.8-technological-controls/     # 22 control packs
-│       └── isms-a.X.X-control-name/
-│           ├── POL/    ├── IMP/    ├── SCR/    ├── WKBK/
-│           ├── REF/    ├── CTX/    └── FORM/
-│
-├── isms-core-operational/              # ⚡ ISO 27001:2022 — Lightweight SME Product
-│   ├── README.md
-│   ├── CONTROLS.md
-│   ├── STATUS.md
-│   ├── CHANGELOG.md
-│   ├── 00-checklist-engine/            # Shared checklist generator engine
-│   ├── A.5-organisational-controls/    # 21 control groups
-│   ├── A.6-people-controls/            # 4 control groups
-│   ├── A.7-physical-controls/          # 6 control groups
-│   └── A.8-technological-controls/     # 22 control groups
-│       └── isms-a.X.X-control-name/
-│           ├── POL/    ├── SCR/    └── WKBK/
-│
-├── isms-core-privacy/                  # 🔒 ISO 27701:2025 — Privacy Extension Pack
-│   ├── README.md
-│   ├── 00-checklist-engine/            # Shared privacy checklist engine
-│   ├── 00-priv-foundation-policies/    # PRIV-POL-00 + PRIV-POL-01
-│   ├── privacy-controller/             # 8 controller control groups (a.1.x)
-│   ├── privacy-processor/              # 5 processor control groups (a.2.x)
-│   └── privacy-shared/                 # 8 shared control groups (a.3.x)
-│       └── priv-a.X.X-X-control-name/
-│           ├── POL/    ├── IMP/    ├── SCR/    └── WKBK/
-│
-├── isms-core-cloud/                    # ☁️ ISO 27018:2025 — Cloud Extension Pack
-│   ├── README.md
-│   └── iso27018-pii-cloud/
-│       └── cld-a.X-control-name/       # 12 Annex A control groups
-│           ├── POL/    ├── IMP/    ├── SCR/    └── WKBK/
-│
-├── isms-core-ai/                       # 🤖 ISO 42001:2023 — AI Extension Pack
-│   ├── README.md
-│   ├── 00-ai-foundation-policies/      # AI-POL-00 + AI-POL-01
-│   ├── 00-checklist-engine/            # Shared AI checklist engine
-│   └── ai-a.X.X-X-control-name/       # 10 Annex A control groups
-│       ├── POL/    └── SCR/
-│
-├── isms-core-platform/                 # 🖥️ Production Deployment Package
-│   ├── .env.example                    # Environment variable template (copy → .env)
-│   ├── docker-compose.yml              # 10-service production stack (includes feeds scheduler and optional mailpit/smtp-bridge profiles)
-│   ├── bootstrap.sh                    # First-boot import script
-│   ├── backend/                        # FastAPI application
-│   ├── frontend/                       # React 19 + MUI 6 UI
-│   ├── nginx/                          # Reverse proxy + TLS (A.8.24)
-│   ├── datasets/data/                  # 30 JSON reference datasets
-│   └── schemas/                        # PostgreSQL init schema
-│
-├── COMPLIANCE.md                       # 📋 Compliance assessment module coverage (20 frameworks)
-└── screenshots/                        # Platform UI screenshots
-```
-
----
-
 ## 🚀 Quick Start
 
-### Framework (ISO 27001:2022 — Full SSE Engineering)
+**Prerequisites:** Python 3.11+, `pip install openpyxl`
 
-1. Browse [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) for the control pack index
-2. Navigate to a control folder and read POL → IMP-UG → IMP-TG
-3. Run a generator to produce an assessment workbook:
+### Framework — ISO 27001:2022 Full Engineering
 
 ```bash
+# Browse the 53 control packs
+cat isms-core-framework/CONTROLS.md
+
+# Navigate to a control, read POL → IMP-UG → IMP-TG, then generate the workbook
 cd isms-core-framework/A.8-technological-controls/isms-a.8.24-use-of-cryptography/SCR
 python3 generate_a824_1_data_transmission_assessment.py
 ```
 
-**Prerequisites:** Python 3.11+, `pip install openpyxl`
-
-### Operational (ISO 27001:2022 — Foundation ISMS for SMEs)
-
-1. Browse [isms-core-operational/CONTROLS.md](isms-core-operational/CONTROLS.md)
-2. Navigate to a control folder and read the OP-POL
-3. Generate the compliance checklist and work through each requirement:
+### Operational — ISO 27001:2022 SME Edition
 
 ```bash
 cd isms-core-operational/A.5-organisational-controls/isms-a.5.1-2-information-security-policies/SCR
 python3 generate_op_checklist_a512.py
 ```
 
-### Privacy (ISO 27701:2025 — Privacy Extension Pack)
-
-1. Browse `isms-core-privacy/` — choose controller, processor, or shared section
-2. Read the PRIV-POL for your control group
-3. Generate the compliance checklist:
+### Privacy — ISO 27701:2025
 
 ```bash
 cd isms-core-privacy/privacy-controller/priv-a.1.2.2-5-lawful-basis-and-consent/SCR
 python3 generate_priv_checklist_a1225.py
 ```
 
-**Prerequisites:** Python 3.11+, `pip install openpyxl`
-
-### Cloud (ISO 27018:2025 — Cloud Extension Pack)
-
-1. Browse `isms-core-cloud/iso27018-pii-cloud/`
-2. Read the CLD-POL for your control group
-3. Generate the compliance checklist:
+### Cloud — ISO 27018:2025
 
 ```bash
 cd isms-core-cloud/iso27018-pii-cloud/cld-a.11-information-security/SCR
 python3 generate_cld_checklist_a11.py
 ```
 
-### AI (ISO 42001:2023 — AI Management System Extension Pack)
-
-1. Browse `isms-core-ai/` — start with the foundation policies, then Annex A controls
-2. Read `AI-POL-00` (AIMS Regulatory Applicability) and `AI-POL-01` (AIMS Governance) first
-3. Work through the Annex A control groups relevant to your AI systems:
+### AI — ISO 42001:2023
 
 ```bash
-# Read the AI governance policy
-cat isms-core-ai/00-ai-foundation-policies/ai-pol-01-aims-governance-and-decision-making/POL/AI-POL-01\ -\ AIMS\ Governance\ and\ Decision-Making\ Framework.md
+# Start with the AI governance foundation policy (available in EN, FR, DE, IT)
+cat "isms-core-ai/00-ai-foundation-policies/ai-pol-01-aims-governance-and-decision-making/POL/AI-POL-01 - AIMS Governance and Decision-Making Framework.md"
 ```
 
-**Multilingual:** All AI-POL documents are available in EN, FR, DE, and IT in `POL/fr/`, `POL/de/`, and `POL/it/` subdirectories.
+### Platform — Live Compliance Dashboard
 
-### Platform (Live Compliance Dashboard — All Products)
+```bash
+cd isms-core-platform
+cp .env.example .env         # Fill in HOST_IP, passwords, ADMIN_PASSWORD
+docker compose up -d         # All 10 services start (takes 3–5 min first run)
+bash bootstrap.sh            # One-shot: seeds all control groups, imports all content
+# → Open https://{HOST_IP}
+```
 
-1. Read [PLATFORM.md](PLATFORM.md) — the full deployment guide
-2. Ensure Docker 24+ and Docker Compose v2 are installed
-3. Copy `.env.example` → `.env`, set all required secrets + `ADMIN_PASSWORD`
-4. `docker compose up -d`
-5. `bash bootstrap.sh` — run once, imports all content automatically
-6. Open `https://{HOST_IP}` — accept self-signed cert (or configure TLS in PLATFORM.md)
-7. Login: `ADMIN_EMAIL` / `ADMIN_PASSWORD` from your `.env`
+Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, connector setup, and Go-Live Checklist.
 
 ---
 
@@ -316,23 +317,19 @@ cat isms-core-ai/00-ai-foundation-policies/ai-pol-01-aims-governance-and-decisio
 <table>
 <tr>
 <td align="center"><strong>Login</strong><br/><img src="screenshots/01_isms-core_logon.png" width="380" alt="Login screen"/></td>
-<td align="center"><strong>Home Dashboard</strong><br/><img src="screenshots/02_isms-core_home.png" width="380" alt="Home dashboard — ISMS + Privacy + Cloud product switcher with compliance quick-access row"/></td>
+<td align="center"><strong>Home Dashboard</strong><br/><img src="screenshots/02_isms-core_home.png" width="380" alt="Home dashboard — ISMS + Privacy + Cloud + AI product switcher with compliance quick-access row"/></td>
 </tr>
 <tr>
 <td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core_oveview.png" width="380" alt="Compliance overview — 54 controls, 100% coverage, audit readiness"/></td>
-<td align="center"><strong>Connectors</strong><br/><img src="screenshots/07_isms-core_connectors.png" width="380" alt="Automated evidence connectors — MS Entra ID, Defender, M365, Azure CSPM"/></td>
+<td align="center"><strong>Connectors — Automated Evidence</strong><br/><img src="screenshots/07_isms-core_connectors.png" width="380" alt="Automated evidence connectors — MS Entra ID, Defender, M365, Azure CSPM"/></td>
 </tr>
 <tr>
 <td align="center"><strong>ISMS Compass (AI Gap Analysis)</strong><br/><img src="screenshots/05_isms-core_compass.png" width="380" alt="ISMS Compass — AI-powered gap analysis against Gold Standard"/></td>
-<td align="center"><strong>Document Generators</strong><br/><img src="screenshots/06_isms-core_generators.png" width="380" alt="Policy and procedure generators — ISO 27001 control pack generation"/></td>
-</tr>
-<tr>
-<td align="center"><strong>System Status &amp; MFA</strong><br/><img src="screenshots/08_isms-core_system.png" width="380" alt="System status — all services healthy, 87 groups, OpenSearch green"/></td>
-<td align="center"><strong>QA Console</strong><br/><img src="screenshots/04_isms-core_qa.png" width="380" alt="QA console — correlation engine, AI-assisted gap quality review"/></td>
+<td align="center"><strong>System Status</strong><br/><img src="screenshots/08_isms-core_system.png" width="380" alt="System status — all services healthy, OpenSearch green, Celery active"/></td>
 </tr>
 <tr>
 <td align="center"><strong>Assessments &amp; Collections</strong><br/><img src="screenshots/20_isms-core_assessments.png" width="380" alt="Platform assessments with collections — grouped scoring, CSV/XLSX/PDF export"/></td>
-<td align="center"><strong>Gaps &amp; BSI Risk</strong><br/><img src="screenshots/21_isms-core_gaps.png" width="380" alt="Gap register with BSI 200-3 risk scoring — likelihood, impact, risk level"/></td>
+<td align="center"><strong>Gap Register</strong><br/><img src="screenshots/21_isms-core_gaps.png" width="380" alt="Gap register with BSI 200-3 risk scoring — likelihood, impact, risk level"/></td>
 </tr>
 <tr>
 <td align="center"><strong>NIST CSF 2.0 Assessment</strong><br/><img src="screenshots/10_isms-core_nist_csf.png" width="380" alt="NIST CSF 2.0 — 106 subcategory assessment with tier ratings, function breakdown, and gap analysis"/></td>
@@ -340,47 +337,19 @@ cat isms-core-ai/00-ai-foundation-policies/ai-pol-01-aims-governance-and-decisio
 </tr>
 <tr>
 <td align="center"><strong>DORA Assessment</strong><br/><img src="screenshots/12_isms-core_dora.png" width="380" alt="DORA (EU 2022/2554) — 25 articles across 4 chapters, ICT risk maturity scoring 0–4"/></td>
-<td align="center"><strong>CIS Controls v8 Assessment</strong><br/><img src="screenshots/13_isms-core_cis8.png" width="380" alt="CIS Critical Security Controls v8 — 153 safeguards across 18 controls, maturity scoring 0–4"/></td>
-</tr>
-<tr>
 <td align="center"><strong>BSI IT-Grundschutz Assessment</strong><br/><img src="screenshots/14_isms-core_bsi.png" width="380" alt="BSI IT-Grundschutz Kompendium — 68 building blocks mapped to ISO 27001:2022"/></td>
-<td align="center"><strong>CSRM (NCSC Switzerland)</strong><br/><img src="screenshots/15_isms-core_csrm.png" width="380" alt="Swiss NCSC Cyber Security Risk Management — object-centric assessment model"/></td>
 </tr>
 <tr>
-<td align="center"><strong>TISAX Assessment</strong><br/><img src="screenshots/16_isms-core_tisax.png" width="380" alt="TISAX — VDA ISA automotive information security assessment"/></td>
-<td align="center"><strong>Swiss nDSG Assessment</strong><br/><img src="screenshots/17_isms-core_ndsg.png" width="380" alt="Swiss nDSG (revDSG) — Federal Act on Data Protection compliance assessment"/></td>
+<td align="center"><strong>Risk Register &amp; Heatmap</strong><br/><img src="screenshots/23_isms-core_risk_register.png" width="380" alt="Risk Register — 5×5 probability/impact matrix, risk heatmap, treatment workflow"/></td>
+<td align="center"><strong>KPI Metrics &amp; Audit Readiness</strong><br/><img src="screenshots/25_isms-core_kpi_dashboard.png" width="380" alt="KPI dashboard — 9 named metrics, sparkline trends, Audit Readiness hero score"/></td>
 </tr>
 <tr>
-<td align="center"><strong>EU Cyber Resilience Act</strong><br/><img src="screenshots/18_isms-core_eu_cra.png" width="380" alt="EU Cyber Resilience Act — product security requirements assessment"/></td>
-<td align="center"><strong>EU AI Act Assessment</strong><br/><img src="screenshots/19_isms-core_eu_ai.png" width="380" alt="EU AI Act — risk classification and compliance requirements for AI systems"/></td>
+<td align="center"><strong>EBIOS RM</strong><br/><img src="screenshots/27_isms-core_ebios_rm.png" width="380" alt="EBIOS RM — 5-workshop ANSSI methodology, feared events, MITRE ATT&CK attack paths"/></td>
+<td align="center"><strong>TPRM — Third-Party Risk</strong><br/><img src="screenshots/28_isms-core_tprm.png" width="380" alt="TPRM — vendor/supplier register with DORA ICT fields, contract expiry alerts"/></td>
 </tr>
 <tr>
-<td align="center"><strong>Risk Assessment Wizard</strong><br/><img src="screenshots/22_isms-core_ra_wizard.png" width="380" alt="Risk Assessment Wizard — guided risk scoring with likelihood/impact matrix, inherent and residual risk calculation"/></td>
-<td align="center"><strong>Risk Register</strong><br/><img src="screenshots/23_isms-core_risk_register.png" width="380" alt="Risk Register — 5×5 probability/impact matrix, risk heatmap, treatment workflow (mitigate/accept/transfer/avoid), project-scoped"/></td>
-</tr>
-<tr>
-<td align="center"><strong>Remediation Tracker</strong><br/><img src="screenshots/24_isms-core_remediation_tracker.png" width="380" alt="Remediation Tracker — action items linked to gaps/risks, owner assignment, due-date tracking, ITSM ticket push"/></td>
-<td align="center"><strong>KPI Metrics &amp; Audit Readiness</strong><br/><img src="screenshots/25_isms-core_kpi_dashboard.png" width="380" alt="KPI dashboard — 9 named metrics, sparkline trends, Audit Readiness hero score, super_admin portfolio view"/></td>
-</tr>
-<tr>
-<td align="center"><strong>Business Impact Analysis</strong><br/><img src="screenshots/26_isms-core_bia.png" width="380" alt="BIA — business asset register with RTO/RPO/MTPD targets, impact scoring, and recovery testing status"/></td>
-<td align="center"><strong>EBIOS RM</strong><br/><img src="screenshots/27_isms-core_ebios_rm.png" width="380" alt="EBIOS RM — 5-workshop ANSSI methodology, feared events, risk sources, strategic scenarios, MITRE ATT&CK attack paths"/></td>
-</tr>
-<tr>
-<td align="center"><strong>TPRM — Third-Party Risk</strong><br/><img src="screenshots/28_isms-core_tprm.png" width="380" alt="TPRM — vendor/supplier register with DORA ICT service fields, vendor assessments, contract expiry alerts, DORA register view"/></td>
-<td align="center"><strong>ISMS Importer</strong><br/><img src="screenshots/09_isms-core_importer.png" width="380" alt="ISMS document importer — bulk upload of policies, procedures and evidence"/></td>
-</tr>
-<tr>
-<td align="center"><strong>Organisation Management</strong><br/><img src="screenshots/29_isms-core_org.png" width="380" alt="Organisation management — multi-tenant org registry with project scoping"/></td>
-<td align="center"><strong>User Guide</strong><br/><img src="screenshots/30_isms-core_help.png" width="380" alt="User Guide — in-platform manual with table of contents and anchor navigation"/></td>
-</tr>
-<tr>
-<td align="center"><strong>Threat Intelligence Feeds</strong><br/><img src="screenshots/31_isms-core_ti.png" width="380" alt="Threat Intelligence — MITRE ATT&CK, CISA KEV, EPSS feed status and charts"/></td>
 <td align="center"><strong>MITRE ATT&CK</strong><br/><img src="screenshots/32_isms-core_mitre.png" width="380" alt="MITRE ATT&CK v18 — 835 techniques across 14 tactics with EPSS and KEV correlation"/></td>
-</tr>
-<tr>
-<td align="center"><strong>MITRE ATLAS</strong><br/><img src="screenshots/33_isms-core_mitre_atlas.png" width="380" alt="MITRE ATLAS — AI/ML adversarial threat techniques"/></td>
-<td align="center"><strong>CVE / CPE Explorer</strong><br/><img src="screenshots/34_isms-core_cve_cpe.png" width="380" alt="CVE/CPE Explorer — NVD vulnerability search with CVSS, EPSS, KEV filters and detail panel"/></td>
+<td align="center"><strong>CVE / CPE Explorer</strong><br/><img src="screenshots/34_isms-core_cve_cpe.png" width="380" alt="CVE/CPE Explorer — NVD vulnerability search with CVSS, EPSS, KEV filters"/></td>
 </tr>
 </table>
 
@@ -388,108 +357,44 @@ cat isms-core-ai/00-ai-foundation-policies/ai-pol-01-aims-governance-and-decisio
 
 ## 🔗 Framework Integration
 
-<table>
-<tr>
-<th>Framework / Standard</th>
-<th>What ISMS CORE provides</th>
-<th>Status</th>
-</tr>
-<tr>
-<td>ISO/IEC 27001:2022</td>
-<td>Full Annex A control packs (Framework + Operational)</td>
-<td><img src="https://img.shields.io/badge/Complete-0066CC?style=flat-square" alt="Complete"/></td>
-</tr>
-<tr>
-<td>ISO/IEC 27002:2022</td>
-<td>Implementation guidance integrated into IMP-TG documents</td>
-<td><img src="https://img.shields.io/badge/Integrated-0066CC?style=flat-square" alt="Integrated"/></td>
-</tr>
-<tr>
-<td>ISO/IEC 27701:2025</td>
-<td>Full Privacy Extension Pack — controller, processor, and shared controls</td>
-<td><img src="https://img.shields.io/badge/Complete-7030A0?style=flat-square" alt="Complete"/></td>
-</tr>
-<tr>
-<td>ISO/IEC 27018:2025</td>
-<td>Full Cloud Extension Pack — 12 Annex A control groups for PII in cloud</td>
-<td><img src="https://img.shields.io/badge/Complete-00897B?style=flat-square" alt="Complete"/></td>
-</tr>
-<tr>
-<td>ISO/IEC 42001:2023</td>
-<td>Full AI Extension Pack — 12 AI control groups covering AIMS governance, impact assessment, responsible use, and third-party AI relationships</td>
-<td><img src="https://img.shields.io/badge/Complete-FF6B35?style=flat-square" alt="Complete"/></td>
-</tr>
-<tr>
-<td>NIST CSF 2.0</td>
-<td>Full assessment tool — 106 subcategories, tier 1–4 ratings, XLSX import/export, radar chart report. ISO 27001 crosswalk mapped.</td>
-<td><img src="https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square" alt="Assessment Tool"/></td>
-</tr>
-<tr>
-<td>NIS2 Directive (EU 2022/2555)</td>
-<td>Full assessment tool — 10 Article 21 security measures + 5 Article 23 reporting obligations, maturity scoring 0–4</td>
-<td><img src="https://img.shields.io/badge/Assessment_Tool-003399?style=flat-square" alt="Assessment Tool"/></td>
-</tr>
-<tr>
-<td>DORA (EU 2022/2554)</td>
-<td>Full assessment tool — 25 articles across 4 chapters (ICT Risk, Incident Mgmt, Testing, Third-Party Risk), maturity scoring 0–4</td>
-<td><img src="https://img.shields.io/badge/Assessment_Tool-1565C0?style=flat-square" alt="Assessment Tool"/></td>
-</tr>
-<tr>
-<td>CIS Critical Security Controls v8</td>
-<td>Full assessment tool — 153 safeguards across 18 controls, maturity scoring 0–4</td>
-<td><img src="https://img.shields.io/badge/Assessment_Tool-2E7D32?style=flat-square" alt="Assessment Tool"/></td>
-</tr>
-<tr>
-<td>BSI IT-Grundschutz Kompendium</td>
-<td>Full assessment tool — 68 Bausteine across 10 layers, maturity scoring 0–4. Plus crosswalk: ISO 27001 ↔ BSI (115 mappings), ISO 27701 ↔ BSI (103), ISO 27018 ↔ BSI (51) — basis for dual ISO 27001 / IT-Grundschutz certification</td>
-<td><img src="https://img.shields.io/badge/Assessment_Tool-CC0000?style=flat-square" alt="Assessment Tool"/></td>
-</tr>
-<tr>
-<td>CSRM (Swiss NCSC, 2025)</td>
-<td>Custom object-centric assessment tool — IT Protection Objects, 20 baseline requirements (NIST CSF 2.0 aligned: GV/ID/PR/DE/RS), 6 Control Objectives, binary status (met/partial/not_met/exception). Includes BACS limitation notes and CSF 2.0 upgrade from NCSC comparison documents.</td>
-<td><img src="https://img.shields.io/badge/Assessment_Tool-D32F2F?style=flat-square" alt="Assessment Tool"/></td>
-</tr>
-<tr>
-<td>TISAX / VDA ISA 6.0</td>
-<td>Full assessment tool — 53 requirements across 12 domains (Information Security, Physical Security, Prototype Protection, etc.), maturity scoring 0–4</td>
-<td><img src="https://img.shields.io/badge/Assessment_Tool-1B5E20?style=flat-square" alt="Assessment Tool"/></td>
-</tr>
-<tr>
-<td>Swiss nDSG 2023</td>
-<td>Full assessment tool — 25 provisions across 6 chapters, maturity scoring 0–4</td>
-<td><img src="https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square" alt="Assessment Tool"/></td>
-</tr>
-<tr>
-<td>EU Cyber Resilience Act (2024/2847)</td>
-<td>Full assessment tool — 26 requirements across 6 groups (Essential Cybersecurity, Vulnerability Handling, Conformity, etc.), maturity scoring 0–4</td>
-<td><img src="https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square" alt="Assessment Tool"/></td>
-</tr>
-<tr>
-<td>EU AI Act (2024/1689)</td>
-<td>Full assessment tool — 25 articles across 6 groups (Risk Management, Data Governance, Transparency, Human Oversight, Robustness, Accountability), maturity scoring 0–4</td>
-<td><img src="https://img.shields.io/badge/Assessment_Tool-4527A0?style=flat-square" alt="Assessment Tool"/></td>
-</tr>
-<tr>
-<td>EU Cloud Sovereignty Framework (v1.2.1, Oct. 2025)</td>
-<td>Full assessment tool — 8 Sovereignty Objectives (SOV-1 to SOV-8) scored via SEAL-0 to SEAL-4; weighted Sovereignty Score covering Strategic, Legal, Data/AI, Operational, Supply Chain, Technology, Security and Environmental dimensions</td>
-<td><img src="https://img.shields.io/badge/Assessment_Tool-01579B?style=flat-square" alt="Assessment Tool"/></td>
-</tr>
-<tr>
-<td>NIST SP 800-53 Rev. 5</td>
-<td>Security control cross-mapping</td>
-<td><img src="https://img.shields.io/badge/Mapped-FF6600?style=flat-square" alt="Mapped"/></td>
-</tr>
-<tr>
-<td>MITRE ATT&CK v18</td>
-<td>Threat technique mapping (Enterprise / ICS / Mobile)</td>
-<td><img src="https://img.shields.io/badge/v18-DC143C?style=flat-square" alt="v18"/></td>
-</tr>
-<tr>
-<td>EU GDPR / Swiss DSG</td>
-<td>Security and privacy control mapping, operational checklists</td>
-<td><img src="https://img.shields.io/badge/Toolkit-FFD700?style=flat-square" alt="Toolkit"/></td>
-</tr>
-</table>
+<details>
+<summary><strong>Show all 23+ framework integrations and crosswalk mappings</strong></summary>
+<br/>
+
+| Framework / Standard | What ISMS CORE provides | Status |
+|---|---|---|
+| ISO/IEC 27001:2022 | Full Annex A control packs (Framework + Operational) | ![Complete](https://img.shields.io/badge/Complete-0066CC?style=flat-square) |
+| ISO/IEC 27002:2022 | Implementation guidance integrated into IMP-TG documents | ![Integrated](https://img.shields.io/badge/Integrated-0066CC?style=flat-square) |
+| ISO/IEC 27701:2025 | Full Privacy Extension Pack — controller, processor, and shared controls | ![Complete](https://img.shields.io/badge/Complete-7030A0?style=flat-square) |
+| ISO/IEC 27018:2025 | Full Cloud Extension Pack — 12 Annex A control groups for PII in cloud | ![Complete](https://img.shields.io/badge/Complete-00897B?style=flat-square) |
+| ISO/IEC 42001:2023 | Full AI Extension Pack — 12 AI control groups covering AIMS governance, impact assessment, responsible use, and third-party AI | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
+| NIST CSF 2.0 | Full assessment tool — 106 subcategories, tier 1–4 ratings, XLSX import/export, radar chart. ISO 27001 crosswalk. | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square) |
+| NIST AI RMF 1.0 | Full assessment tool — 72 subcategories, 0–4 maturity; ISO 42001 crosswalk: 32 mappings, EU AI Act: 31 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square) |
+| NIS2 Directive (EU 2022/2555) | 10 Article 21 measures + 5 Article 23 obligations, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-003399?style=flat-square) |
+| DORA (EU 2022/2554) | 25 articles across 4 chapters (ICT Risk, Incidents, Testing, TPRM), maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1565C0?style=flat-square) |
+| CIS Critical Security Controls v8 | 153 safeguards across 18 controls, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-2E7D32?style=flat-square) |
+| BSI IT-Grundschutz Kompendium | 68 Bausteine across 10 layers, maturity 0–4. Crosswalk: ISO 27001↔BSI (115), ISO 27701↔BSI (103), ISO 27018↔BSI (51) | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-CC0000?style=flat-square) |
+| CSRM (Swiss NCSC, 2025) | Object-centric module — IT Protection Objects, 20 NIST CSF 2.0 baseline requirements, binary status, 6 Control Objectives | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-D32F2F?style=flat-square) |
+| TISAX / VDA ISA 6.0 | 53 requirements across 12 domains, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1B5E20?style=flat-square) |
+| Swiss nDSG 2023 | 25 provisions across 6 chapters, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
+| Swiss ISG (SR 128, 2024) | 27 requirements across 8 sections, 24h cyberattack reporting; ISO 27001 crosswalk: 40 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-B71C1C?style=flat-square) |
+| EU Cyber Resilience Act (2024/2847) | 26 essential requirements across 6 groups, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square) |
+| EU AI Act (2024/1689) | 25 articles across 6 groups (Risk Mgmt, Data Governance, Transparency, Human Oversight, Robustness, Accountability), maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-4527A0?style=flat-square) |
+| EU Cloud Sovereignty Framework (v1.2.1) | 8 Sovereignty Objectives (SOV-1 to SOV-8), SEAL-0 to SEAL-4 scoring, weighted Sovereignty Score | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-01579B?style=flat-square) |
+| COBIT 2019 | 40 governance/management objectives, capability scoring 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-7B1FA2?style=flat-square) |
+| CyberFundamentals (BE) | 41 NIST CSF 2.0 aligned practices, maturity 0–4; ISO 27001 crosswalk: 107 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square) |
+| BaFin BAIT (DE) | 23 requirements across 12 modules, maturity 0–4; ISO 27001 crosswalk: 69 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-B71C1C?style=flat-square) |
+| CSSF 20-750 (LU) | 19 requirements across 7 domains, maturity 0–4; ISO 27001 crosswalk: 47 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-4A148C?style=flat-square) |
+| ACN Guidelines (IT) | 19 guidelines across 4 groups, maturity 0–4; ISO 27001 crosswalk: 43 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-006630?style=flat-square) |
+| UK NIS Regulations | 13 requirements across 3 objectives, maturity 0–4; ISO 27001 crosswalk: 51 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square) |
+| UK Operational Resilience | 12 requirements across 4 objectives, maturity 0–4; ISO 27001 crosswalk: 34 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-283593?style=flat-square) |
+| FINMA | Assessment module | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
+| NIST SP 800-53 Rev. 5 | Security control cross-mapping | ![Mapped](https://img.shields.io/badge/Mapped-FF6600?style=flat-square) |
+| MITRE ATT&CK v18 | Threat technique mapping (Enterprise / ICS / Mobile) — 835 techniques, EPSS + CISA KEV correlation | ![v18](https://img.shields.io/badge/v18-DC143C?style=flat-square) |
+| MITRE ATLAS | AI/ML adversarial threat techniques | ![Mapped](https://img.shields.io/badge/Mapped-DC143C?style=flat-square) |
+| EU GDPR / Swiss DSG | Security and privacy control mapping, operational checklists | ![Toolkit](https://img.shields.io/badge/Toolkit-FFD700?style=flat-square) |
+
+</details>
 
 ---
 
@@ -497,8 +402,6 @@ cat isms-core-ai/00-ai-foundation-policies/ai-pol-01-aims-governance-and-decisio
 
 > *"The first principle is that you must not fool yourself — and you are the easiest person to fool."*
 > — Richard Feynman
-
-ISMS CORE avoids **cargo-cult compliance** where formal structures exist without verifiable effectiveness:
 
 | | Cargo Cult | ISMS CORE |
 |---|---|---|
@@ -513,90 +416,38 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full methodology.
 
 ## 🔬 Quality Assurance
 
-Every control pack undergoes a structured multi-stage validation process before promotion to this repository:
+Every control pack undergoes a structured multi-stage validation before promotion to this repository:
 
 ```
-┌──────────────────┐     ┌──────────────────┐     ┌──────────────────────┐
-│  Claude Code     │────▶│  ISMS QA Engine  │────▶│   The ISMS Core Project    │
-│  (Build + QA)    │     │  (Existence +    │     │   (Final Approval)   │
-│                  │     │   Keyword +      │     │                      │
-└──────────────────┘     │   Semantic)      │     └──────────────────────┘
-   Implementation        └──────────────────┘          Final gate
-   + Code Review           3-layer QA check
+┌──────────────────┐     ┌───────────────────────┐     ┌──────────────────────┐
+│  Claude Code     │────▶│  ISMS QA Engine        │────▶│  The ISMS Core       │
+│  (Build + QA)    │     │  Existence + Keyword + │     │  Project (Final)     │
+│                  │     │  Semantic 3-layer check │     │                      │
+└──────────────────┘     └───────────────────────┘     └──────────────────────┘
 ```
 
-All 188 Framework generators, 53 Operational policies, 21 Privacy control groups, 12 Cloud control groups, and 12 AI control groups carry `QA_VERIFIED` markers confirming they have passed the full QA process.
+All 188 Framework generators, 53 Operational policies, 21 Privacy control groups, 12 Cloud control groups, and 12 AI control groups carry `QA_VERIFIED` markers confirming a full QA pass.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 
 ---
 
-## 📊 Status
+## 📊 Status at a Glance
 
-### ISO 27001:2022 — ISMS Framework
+| Product | Control groups | Key artifacts | Languages | Version |
+|---------|---------------|---------------|-----------|---------|
+| 🏗️ Framework | 53 / 53 | 376 IMPs · 188 generators · 188 workbooks | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square) |
+| ⚡ Operational | 53 / 53 | 53 OP-POL · 53 checklist generators | EN FR DE IT | ![v0.1](https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square) |
+| 🔒 Privacy | 21 / 21 | 23 PRIV-POL · 42 IMPs · 21 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
+| ☁️ Cloud | 12 / 12 | 12 CLD-POL · 24 IMPs · 12 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
+| 🤖 AI | 12 / 12 | 14 AI-POL · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
+| 🖥️ Platform | 99 total | 44 connectors · 23 assessments · 3,915 mappings | 7 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
 
-| Metric | Value | Status |
-|--------|-------|--------|
-| Control packs | **53 of 53** | ![100%](https://img.shields.io/badge/100%25-00AA00?style=flat-square) |
-| Annex A controls mapped | **93 of 93** | ![Mapped](https://img.shields.io/badge/Mapped-32CD32?style=flat-square) |
-| Python generators | **188** (377K+ lines total across all products) | ![Validated](https://img.shields.io/badge/Validated-0066CC?style=flat-square) |
-| IMP documents | **376** (188 UG + 188 TG) | ![Complete](https://img.shields.io/badge/Complete-0066CC?style=flat-square) |
+---
 
-### ISO 27001:2022 — ISMS Operational
+## 📂 Repository Structure
 
-| Metric | Value | Status |
-|--------|-------|--------|
-| Control groups | **53 of 53** | ![100%](https://img.shields.io/badge/100%25-00AA00?style=flat-square) |
-| Operational policies | **53** | ![Complete](https://img.shields.io/badge/Complete-00AA00?style=flat-square) |
-| Checklist generators | **53** | ![Complete](https://img.shields.io/badge/Complete-00AA00?style=flat-square) |
-
-### ISO 27701:2025 — Privacy Extension Pack
-
-| Metric | Value | Status |
-|--------|-------|--------|
-| Control groups | **21 of 21** | ![100%](https://img.shields.io/badge/100%25-7030A0?style=flat-square) |
-| Controller groups | **8** (a.1.x) | ![Complete](https://img.shields.io/badge/Complete-7030A0?style=flat-square) |
-| Processor groups | **5** (a.2.x) | ![Complete](https://img.shields.io/badge/Complete-7030A0?style=flat-square) |
-| Shared groups | **8** (a.3.x) | ![Complete](https://img.shields.io/badge/Complete-7030A0?style=flat-square) |
-| PRIV-POL documents | **23** (21 + 2 foundation) | ![Complete](https://img.shields.io/badge/Complete-7030A0?style=flat-square) |
-| IMP documents | **42** (21 UG + 21 TG) | ![Complete](https://img.shields.io/badge/Complete-7030A0?style=flat-square) |
-
-### ISO 27018:2025 — Cloud Extension Pack
-
-| Metric | Value | Status |
-|--------|-------|--------|
-| Control groups | **12 of 12** | ![100%](https://img.shields.io/badge/100%25-00897B?style=flat-square) |
-| CLD-POL documents | **12** | ![Complete](https://img.shields.io/badge/Complete-00897B?style=flat-square) |
-| IMP documents | **24** (12 UG + 12 TG) | ![Complete](https://img.shields.io/badge/Complete-00897B?style=flat-square) |
-
-### ISO 42001:2023 — AI Extension Pack
-
-| Metric | Value | Status |
-|--------|-------|--------|
-| Control groups | **12 of 12** | ![100%](https://img.shields.io/badge/100%25-FF6B35?style=flat-square) |
-| Foundation policies | **2** (AI-POL-00 + AI-POL-01) | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
-| Annex A control groups | **10** | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
-| AI-POL documents | **14** (12 EN + FR + DE + IT translations) | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
-| Checklist generators | **10** (one per Annex A control group) | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
-
-### Platform
-
-| Metric | Value | Status |
-|--------|-------|--------|
-| Platform (API + WebUI) | v1.0 live — 44 connectors | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| Products integrated | ISMS + Privacy + Cloud + AI | ![v1.0](https://img.shields.io/badge/v1.0-2E8B57?style=flat-square) |
-| Compliance assessment modules | 23 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| Risk Register + Heatmap | 5×5 probability/impact matrix, treatment workflow | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| Risk Acceptance & Remediation | Formal sign-off, action plans with ETA/cost/progress | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| Cross-Framework Coverage | BFS inference: ISO 27001 → NIS2, DORA, GDPR | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| KPI / Metrics | 9 named metrics, sparklines, Audit Readiness score, Celery daily snapshots | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| TPRM | Vendor register, DORA ICT fields, contract tracking | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| ITSM Integrations | Jira + ServiceNow — evidence pull + ticket push (gaps/remediation) | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| BIA | Asset RTO/RPO/MTPD, financial/reputational impact scores, recovery testing | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| EBIOS RM | 5-workshop ANSSI methodology, MITRE ATT&CK attack paths | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| Custom Framework Import | YAML upload, auto-mapped to ISO 27001, coverage % | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| MFA | TOTP (Google Authenticator / Authy), QR setup, 8 backup codes | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
-| DB migrations | Revision 041 | ![Live](https://img.shields.io/badge/Live-2E8B57?style=flat-square) |
+See [STRUCTURE.md](STRUCTURE.md) for the complete repository map with per-folder and per-artifact-type explanations.
 
 ---
 
@@ -604,26 +455,23 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 
 | Document | Description |
 |----------|-------------|
-| [PARADIGM.md](PARADIGM.md) | 🧭 Product overview and paradigm shift guide |
-| [PLATFORM.md](PLATFORM.md) | 🖥️ Platform architecture, features, and design decisions |
-| [COMPLIANCE.md](COMPLIANCE.md) | 📋 Compliance assessment modules — coverage notes, gaps, and audience for all 23 frameworks |
-| [GETTING-STARTED.md](GETTING-STARTED.md) | 🚀 How to run the Platform (Docker Compose setup guide) |
+| [PARADIGM.md](PARADIGM.md) | 🧭 Product overview and paradigm shift guide — start here |
+| [PLATFORM.md](PLATFORM.md) | 🖥️ Platform architecture, features, and full deployment guide |
+| [STRUCTURE.md](STRUCTURE.md) | 📂 Repository map — all folders and artifact types explained |
+| [COMPLIANCE.md](COMPLIANCE.md) | 📋 All 23 compliance assessment modules — coverage notes, gaps, audience |
+| [GETTING-STARTED.md](GETTING-STARTED.md) | 🚀 Platform quick-start (Docker Compose) |
 | [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 Framework control pack index (53 packs) |
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A controls → 53 pack mapping |
-| [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) | 📊 Framework metrics |
 | [isms-core-framework/STACKING.md](isms-core-framework/STACKING.md) | 🔗 Control grouping methodology |
-| [isms-core-operational/CONTROLS.md](isms-core-operational/CONTROLS.md) | 📋 Operational control group index (53 groups) |
-| [isms-core-operational/STATUS.md](isms-core-operational/STATUS.md) | 📊 Operational metrics |
 | [PHILOSOPHY.md](PHILOSOPHY.md) | ✈️ Anti-cargo-cult methodology |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | 🔧 QA process and standards |
 | [SECURITY.md](SECURITY.md) | 🔒 Vulnerability reporting policy |
-| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | 🤝 Community standards |
 
 ---
 
 ## 🔒 Security
 
-- **Vulnerability reporting:** Please report security issues to **info@isms-core.com** (include "ISMS CORE Security" in the subject).
+- **Vulnerability reporting:** Report security issues to **info@isms-core.com** (subject: "ISMS CORE Security")
 - **Safe usage:** Review scripts before execution. Run in a virtual environment. Treat generated artifacts as sensitive until proven otherwise.
 - **No secrets:** Do not commit credentials, tokens, private keys, or customer data to this repository or to generated workbooks.
 
@@ -632,8 +480,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 ## 📜 License
 
 **Dual-licensed:**
-- **AGPL-3.0** for open-source use (see [LICENSE](LICENSE))
-- **Commercial license** available for organisations that cannot (or do not want to) comply with AGPL obligations
+- **AGPL-3.0** for open-source use — see [LICENSE](LICENSE)
+- **Commercial license** for organisations that cannot comply with AGPL obligations
 
 Commercial licensing: **info@isms-core.com**
 
@@ -648,6 +496,7 @@ Commercial licensing: **info@isms-core.com**
 <p align="center">
   <a href="mailto:info@isms-core.com"><img src="https://img.shields.io/badge/Email-info@isms--core.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
   <a href="https://github.com/isms-core-project"><img src="https://img.shields.io/badge/GitHub-isms--core--project-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/></a>
+  <a href="https://isms-core.com"><img src="https://img.shields.io/badge/Website-isms--core.com-2E8B57?style=flat-square" alt="Website"/></a>
 </p>
 
 ---
