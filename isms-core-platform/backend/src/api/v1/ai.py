@@ -59,3 +59,37 @@ def ai_status(
     from src.core.config import get_settings
     settings = get_settings()
     return {"configured": bool(settings.anthropic_api_key), "model": settings.ai_model}
+
+
+# Fallback shown when no API key is configured
+_FALLBACK_MODELS = [
+    {"id": "claude-haiku-4-5-20251001", "display_name": "Claude Haiku 4.5"},
+    {"id": "claude-sonnet-4-6",         "display_name": "Claude Sonnet 4.6"},
+    {"id": "claude-opus-4-7",           "display_name": "Claude Opus 4.7"},
+]
+
+
+@router.get("/models")
+def list_models(
+    _user: User = Depends(get_current_user),
+) -> dict:
+    """Return available Claude models from Anthropic API, or a fallback list."""
+    from src.core.config import get_settings
+    settings = get_settings()
+
+    if not settings.anthropic_api_key:
+        return {"models": _FALLBACK_MODELS, "source": "fallback"}
+
+    try:
+        import anthropic
+        client = anthropic.Anthropic(api_key=settings.anthropic_api_key)
+        page = client.models.list(limit=100)
+        models = [
+            {"id": m.id, "display_name": m.display_name}
+            for m in page.data
+            if m.id.startswith("claude-")
+        ]
+        # Newest first (API returns newest first already, but make it explicit)
+        return {"models": models, "source": "api"}
+    except Exception:
+        return {"models": _FALLBACK_MODELS, "source": "fallback"}

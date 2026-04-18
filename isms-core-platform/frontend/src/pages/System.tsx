@@ -29,6 +29,7 @@ import {
   DialogActions,
   FormControlLabel,
   Switch,
+  Skeleton,
 } from '@mui/material'
 import {
   CheckCircleOutlined,
@@ -62,6 +63,42 @@ import PageHeader from '../components/PageHeader'
 import { useAuth } from '../store/AuthContext'
 
 dayjs.extend(relativeTime)
+
+// ── Dynamic model selector ────────────────────────────────────────────────────
+import { client } from '../api/client'
+
+function ModelSelect({ currentModel, disabled, onChange }: {
+  currentModel: string
+  disabled: boolean
+  onChange: (id: string) => void
+}) {
+  const { data, isLoading } = useQuery<{ models: { id: string; display_name: string }[] }>({
+    queryKey: ['ai-models'],
+    queryFn: () => client.get('/ai/models').then(r => r.data),
+    staleTime: 5 * 60 * 1000,
+  })
+
+  if (isLoading) return <Skeleton variant="rectangular" height={40} sx={{ borderRadius: 1 }} />
+
+  return (
+    <FormControl fullWidth size="small">
+      <InputLabel sx={{ fontSize: '0.8rem' }}>Select Model</InputLabel>
+      <Select
+        label="Select Model"
+        value={currentModel}
+        onChange={(e) => onChange(e.target.value)}
+        disabled={disabled}
+        sx={{ fontSize: '0.8rem' }}
+      >
+        {(data?.models ?? []).map(m => (
+          <MenuItem key={m.id} value={m.id} sx={{ fontSize: '0.8rem' }}>
+            {m.display_name}
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
+  )
+}
 
 const SERVICE_LABELS: Record<string, string> = {
   api: 'API',
@@ -1144,29 +1181,11 @@ export default function System() {
                       {aiModelResult.msg}
                     </Alert>
                   )}
-                  <FormControl fullWidth size="small">
-                    <InputLabel sx={{ fontSize: '0.8rem' }}>Select Model</InputLabel>
-                    <Select
-                      label="Select Model"
-                      value={data.ai_model || ''}
-                      onChange={(e) => {
-                        setAiModelResult(null)
-                        updateAiModelMutation.mutate(e.target.value)
-                      }}
-                      disabled={updateAiModelMutation.isPending}
-                      sx={{ fontSize: '0.8rem' }}
-                    >
-                      <MenuItem value="claude-haiku-4-5-20251001" sx={{ fontSize: '0.8rem' }}>
-                        Haiku 4.5 — Fast &amp; economical
-                      </MenuItem>
-                      <MenuItem value="claude-sonnet-4-6" sx={{ fontSize: '0.8rem' }}>
-                        Sonnet 4.6 — Balanced (recommended)
-                      </MenuItem>
-                      <MenuItem value="claude-opus-4-6" sx={{ fontSize: '0.8rem' }}>
-                        Opus 4.6 — Most capable
-                      </MenuItem>
-                    </Select>
-                  </FormControl>
+                  <ModelSelect
+                    currentModel={data.ai_model || ''}
+                    disabled={updateAiModelMutation.isPending}
+                    onChange={(id) => { setAiModelResult(null); updateAiModelMutation.mutate(id) }}
+                  />
                   <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.75 }}>
                     Applies to ISMS Compass gap analysis. Requires ANTHROPIC_API_KEY in platform/.env.
                   </Typography>
