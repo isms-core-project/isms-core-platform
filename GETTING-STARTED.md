@@ -99,7 +99,7 @@ cd isms-core-platform
 docker compose up -d
 ```
 
-This starts 8 services: PostgreSQL, Redis, OpenSearch, Backend API, Celery Worker, Celery Beat, nginx, and React Frontend.
+This starts 10 services: PostgreSQL, Redis, OpenSearch, Backend API, Celery Worker, Celery Beat, nginx, React Frontend, the Threat Intelligence feed scheduler, and the Evidence Connectors runner.
 
 **First boot takes longer** (~2–3 minutes) — OpenSearch needs to initialise before the backend will accept connections. Watch progress:
 
@@ -119,7 +119,7 @@ isms-core-nginx    | ... start worker processes
 docker compose ps
 ```
 
-All eight services should show `healthy` or `running`:
+All ten services should show `healthy` or `running`:
 
 ```
 NAME                    STATUS          PORTS
@@ -131,9 +131,11 @@ isms-core-worker        running
 isms-core-beat          Up
 isms-core-nginx         healthy         0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp
 isms-core-frontend      running         0.0.0.0:3000->3000/tcp
+isms-core-feeds         running
+isms-core-connectors    running
 ```
 
-> **Note:** `isms-core-beat` shows no healthcheck status — just "Up". This is normal. Celery Beat runs no web server, so there is nothing to health-check. "Up" is correct.
+> **Note:** `isms-core-beat`, `isms-core-feeds`, and `isms-core-connectors` show no healthcheck status — just "Up" or "running". These services run no web server, so there is nothing to health-check. This is correct.
 
 **Health check endpoints:**
 - Backend API: `http://localhost:8000/health`
@@ -177,7 +179,7 @@ chmod +x bootstrap.sh
 bash bootstrap.sh
 ```
 
-The script: waits for the stack to be healthy → authenticates → runs all 6 import steps in the correct order → shows import stats on completion.
+The script: waits for the stack to be healthy → authenticates → runs all 7 import steps in the correct order → shows import stats on completion.
 
 **Import order (handled automatically by bootstrap.sh):**
 1. `POST /admin/load` — seeds ISMS control groups (must run first)
