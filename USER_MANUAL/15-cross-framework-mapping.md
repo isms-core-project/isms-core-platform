@@ -14,7 +14,7 @@ Navigate to **Analytics → Cross-Framework Mapping** in the sidebar.
 
 ## What Cross-Framework Mapping Does
 
-The platform contains 3,412 pre-built, curated crosswalk mappings between ISO 27001:2022 controls and other frameworks. When you complete your ISO 27001 assessment, those scores are automatically inferred into the mapped frameworks.
+The platform contains 3,915 pre-built, curated crosswalk mappings between ISO 27001:2022 controls and other frameworks. When you complete your ISO 27001 assessment, those scores are automatically inferred into the mapped frameworks.
 
 This means:
 
