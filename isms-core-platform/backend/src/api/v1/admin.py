@@ -1052,3 +1052,26 @@ def get_audit_log(
         page_size=page_size,
         pages=math.ceil(total / page_size) if total else 1,
     )
+
+
+# ── OpenSearch operational detail (Phase 7) ───────────────────────────────────
+
+@router.get("/opensearch", tags=["admin"])
+def get_opensearch_detail(
+    _user=Depends(require_admin),
+):
+    """
+    Return OpenSearch operational status: cluster health, ISM policies,
+    ISM managed index states, SM snapshot policies, snapshot repos,
+    and per-org evidence index sizes.
+    """
+    from src.services import opensearch_service
+
+    return {
+        "ism_policies":      opensearch_service.get_ism_policies(),
+        "ism_managed":       opensearch_service.get_ism_managed_indices(),
+        "sm_policies":       opensearch_service.get_sm_policies(),
+        "snapshot_repos":    opensearch_service.get_snapshot_repos(),
+        "evidence_indices":  opensearch_service.get_evidence_indices(),
+    }
+

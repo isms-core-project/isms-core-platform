@@ -1,0 +1,26 @@
+{
+  "index_patterns": ["audit-logs-*"],
+  "priority": 100,
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": "__REPLICAS__",
+      "plugins.index_state_management.policy_id": "audit-retention"
+    },
+    "mappings": {
+      "properties": {
+        "org_id":       {"type": "keyword"},
+        "user_id":      {"type": "keyword"},
+        "user_email":   {"type": "keyword"},
+        "action":       {"type": "keyword"},
+        "resource":     {"type": "keyword"},
+        "resource_id":  {"type": "keyword"},
+        "timestamp":    {"type": "date"},
+        "ip_address":   {"type": "ip"},
+        "user_agent":   {"type": "keyword"},
+        "outcome":      {"type": "keyword"},
+        "detail":       {"type": "object", "enabled": false}
+      }
+    }
+  }
+}

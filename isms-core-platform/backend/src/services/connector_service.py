@@ -10,12 +10,30 @@ from src.utils.encryption import decrypt_config, encrypt_config
 from sqlalchemy import select, func, update as sa_update
 from sqlalchemy.orm import Session as DBSession
 
+from src.core.config import get_settings
 from src.domain.connectors import Connector, ConnectorEvidence
 from src.domain.control_groups import ControlGroup
 from src.database.enums import ProductFamily
 from src.schemas.connectors import ConnectorEvidenceIngest, ConnectorRegister
 
 logger = logging.getLogger(__name__)
+
+
+def _build_evidence_item(connector: Connector, item: ConnectorEvidenceIngest):
+    """Map ConnectorEvidenceIngest → EvidenceItem for OpenSearch upsert."""
+    from src.services.evidence_store.base import EvidenceItem
+    return EvidenceItem(
+        connector_id=str(connector.id),
+        org_id=str(connector.organisation_id),
+        resource_id=item.source_ref or "",
+        evidence_type=item.classification or "general",
+        title=item.title,
+        summary=item.status or "",
+        payload=item.raw or {},
+        control_ids=[item.group_code],
+        tags=[t for t in [item.status, item.classification] if t],
+        collected_at=item.event_date,
+    )
 
 
 # ── Token helpers ─────────────────────────────────────────────────────────────
@@ -148,6 +166,15 @@ def ingest_evidence(
     """Bulk-ingest evidence items from a connector. Returns accepted/skipped/errors counts."""
     accepted = skipped = errors = 0
 
+    # Lazy-init OpenSearch store once per call (v2 only)
+    os_store = None
+    if get_settings().evidence_store == "opensearch":
+        try:
+            from src.services.evidence_store import get_evidence_store
+            os_store = get_evidence_store()
+        except Exception as exc:
+            logger.warning("OpenSearch store init failed (falling back to postgres-only): %s", exc)
+
     for item in items:
         try:
             group = _resolve_control_group(db, item.group_code)
@@ -180,6 +207,14 @@ def ingest_evidence(
                 raw=item.raw,
             )
             db.add(evidence)
+
+            # OpenSearch upsert (v2) — non-fatal
+            if os_store and item.source_ref:
+                try:
+                    os_store.upsert(_build_evidence_item(connector, item))
+                except Exception as os_exc:
+                    logger.warning("OpenSearch upsert failed (non-fatal): %s", os_exc)
+
             accepted += 1
 
         except Exception as e:

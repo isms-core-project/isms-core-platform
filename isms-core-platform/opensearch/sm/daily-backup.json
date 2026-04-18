@@ -1,0 +1,36 @@
+{
+  "description": "Daily snapshot of all ISMS CORE indices to Garage S3. Keeps 30 daily snapshots, min 7 retained.",
+  "creation": {
+    "schedule": {
+      "cron": {
+        "expression": "0 2 * * *",
+        "timezone": "Europe/Zurich"
+      }
+    },
+    "time_limit": "1h"
+  },
+  "deletion": {
+    "schedule": {
+      "cron": {
+        "expression": "0 3 * * *",
+        "timezone": "Europe/Zurich"
+      }
+    },
+    "condition": {
+      "max_count": 30,
+      "max_age": "30d",
+      "min_count": 7
+    },
+    "time_limit": "1h"
+  },
+  "snapshot_config": {
+    "repository": "garage-s3",
+    "indices": "evidence-*,audit-logs-*,connector-runs-*",
+    "ignore_unavailable": true,
+    "include_global_state": false,
+    "partial": false,
+    "metadata": {
+      "policy": "daily-backup"
+    }
+  }
+}

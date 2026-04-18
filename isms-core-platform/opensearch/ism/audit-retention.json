@@ -1,0 +1,46 @@
+{
+  "policy": {
+    "description": "ISMS CORE audit log retention — NIS2 minimum 12 months immediately accessible. Hot 30d → Warm 12m → Snapshot to Garage S3 → Delete. Adjust delete threshold for DORA (5y) or HGB/GoBD (10y) if required.",
+    "default_state": "hot",
+    "states": [
+      {
+        "name": "hot",
+        "actions": [
+          {"index_priority": {"priority": 100}},
+          {"rollover": {"min_index_age": "30d", "min_size": "10gb"}}
+        ],
+        "transitions": [
+          {"state_name": "warm", "conditions": {"min_index_age": "30d"}}
+        ]
+      },
+      {
+        "name": "warm",
+        "actions": [
+          {"index_priority": {"priority": 50}},
+          {"force_merge": {"max_num_segments": 1}}
+        ],
+        "transitions": [
+          {"state_name": "snapshot", "conditions": {"min_index_age": "365d"}}
+        ]
+      },
+      {
+        "name": "snapshot",
+        "actions": [
+          {"snapshot": {"repository": "garage-s3", "snapshot": "audit-archive-{{ctx.index}}"}},
+          {"read_only": {}}
+        ],
+        "transitions": [
+          {"state_name": "delete", "conditions": {"min_index_age": "395d"}}
+        ]
+      },
+      {
+        "name": "delete",
+        "actions": [{"delete": {}}],
+        "transitions": []
+      }
+    ],
+    "ism_template": [
+      {"index_patterns": ["audit-logs-*"], "priority": 100}
+    ]
+  }
+}

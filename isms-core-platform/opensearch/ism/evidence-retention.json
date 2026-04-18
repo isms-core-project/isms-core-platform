@@ -1,0 +1,40 @@
+{
+  "policy": {
+    "description": "ISMS CORE evidence retention — ISO 27001 + NIS2 + DORA compliant. Hot 30d → Warm 12m → Cold 10y (snapshot to Garage S3 legal hold). No auto-delete: compliance evidence must be manually purged per legal review.",
+    "default_state": "hot",
+    "states": [
+      {
+        "name": "hot",
+        "actions": [
+          {"index_priority": {"priority": 100}},
+          {"rollover": {"min_index_age": "30d", "min_size": "50gb"}}
+        ],
+        "transitions": [
+          {"state_name": "warm", "conditions": {"min_index_age": "30d"}}
+        ]
+      },
+      {
+        "name": "warm",
+        "actions": [
+          {"index_priority": {"priority": 50}},
+          {"force_merge": {"max_num_segments": 1}}
+        ],
+        "transitions": [
+          {"state_name": "cold", "conditions": {"min_index_age": "365d"}}
+        ]
+      },
+      {
+        "name": "cold",
+        "actions": [
+          {"index_priority": {"priority": 0}},
+          {"snapshot": {"repository": "garage-s3", "snapshot": "evidence-archive-{{ctx.index}}"}},
+          {"read_only": {}}
+        ],
+        "transitions": []
+      }
+    ],
+    "ism_template": [
+      {"index_patterns": ["evidence-*"], "priority": 100}
+    ]
+  }
+}

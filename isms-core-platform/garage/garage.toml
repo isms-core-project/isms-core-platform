@@ -1,0 +1,27 @@
+# Garage S3 — single-node config for ISMS CORE v2 workshop
+# Full docs: https://garagehq.deuxfleurs.fr/documentation/reference-manual/configuration/
+#
+# rpc_secret is set via GARAGE_RPC_SECRET env var (overrides any value here).
+# admin_token must match GARAGE_ADMIN_TOKEN in .env (used by setup.py and
+# any manual admin API calls).
+#
+# To change the admin token: update both this file AND .env, then restart
+# isms-core-garage.  setup.py reads it from the GARAGE_ADMIN_TOKEN env var.
+
+metadata_dir = "/var/lib/garage/meta"
+data_dir     = "/var/lib/garage/data"
+db_engine    = "lmdb"
+
+# Single-node: no replication. Increase to 2 or 3 for multi-node setups.
+replication_factor = 1
+
+rpc_bind_addr   = "0.0.0.0:3901"
+rpc_public_addr = "isms-core-garage:3901"
+
+[s3_api]
+api_bind_addr = "0.0.0.0:3900"
+s3_region     = "garage"
+
+[admin]
+api_bind_addr = "0.0.0.0:3903"
+admin_token   = "isms-core-garage-admin"

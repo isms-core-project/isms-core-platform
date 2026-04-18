@@ -109,6 +109,13 @@ def create_organisation(
     db.commit()
     db.refresh(org)
     logger.info("Created organisation: %s (%s)", org.name, org.slug)
+
+    # Provision OpenSearch evidence index for this org (v2 — non-fatal)
+    from src.core.config import get_settings
+    if get_settings().evidence_store == "opensearch":
+        from src.services import opensearch_service
+        opensearch_service.provision_org(str(org.id))
+
     return OrganisationRead.model_validate(org)
 
 

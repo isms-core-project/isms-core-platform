@@ -47,6 +47,17 @@ class Settings(BaseSettings):
     # OpenSearch
     opensearch_url: str = "http://isms-core-opensearch:9200"
 
+    # Garage S3 (v2 — Phase 3)
+    garage_endpoint: str = "http://isms-core-garage:3900"
+    garage_access_key: str = ""
+    garage_secret_key: str = ""
+    garage_bucket_evidence: str = "isms-evidence"
+    garage_bucket_snapshots: str = "isms-snapshots"
+    garage_bucket_exports: str = "isms-exports"
+
+    # Storage backend feature flag: "postgres" = v1 compat, "opensearch" = v2
+    evidence_store: str = "postgres"
+
     # Platform URL (used in email links)
     platform_url: str = "http://localhost:3000"
 

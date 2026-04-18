@@ -687,6 +687,13 @@ export default function System() {
     staleTime: 55_000,
   })
 
+  const { data: osDetail } = useQuery({
+    queryKey: ['admin', 'opensearch-detail'],
+    queryFn: adminApi.getOpenSearchDetail,
+    refetchInterval: 60_000,
+    staleTime: 55_000,
+  })
+
   function setImportResult(key: string, ok: boolean, msg: string) {
     setImportResults((prev) => ({ ...prev, [key]: { ok, msg } }))
     refetch()
@@ -1195,6 +1202,271 @@ export default function System() {
             </Box>
           </Box>
 
+          {/* OpenSearch — ILM & Snapshots — full width, split left/right */}
+          {osDetail && (
+            <Card>
+              <CardContent sx={{ pb: '12px !important' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                  <CloudSyncOutlined sx={{ color: 'primary.main' }} />
+                  <Typography variant="h6">OpenSearch — ILM &amp; Snapshots</Typography>
+                </Box>
+                <Divider sx={{ mb: 1.5 }} />
+
+                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 3, alignItems: 'start' }}>
+
+                  {/* LEFT — ISM Retention + Snapshot Repos + SM Policies */}
+                  <Box>
+                    {osDetail.ism_policies.length > 0 ? (
+                      <>
+                        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.75, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                          ISM Retention Policies
+                        </Typography>
+                        <TableContainer>
+                          <Table size="small">
+                            <TableHead>
+                              <TableRow>
+                                <TableCell sx={{ fontSize: '0.65rem', color: 'text.secondary', py: 0.5 }}>POLICY</TableCell>
+                                <TableCell sx={{ fontSize: '0.65rem', color: 'text.secondary', py: 0.5 }}>STATES</TableCell>
+                                <TableCell sx={{ fontSize: '0.65rem', color: 'text.secondary', py: 0.5 }}>DEFAULT STATE</TableCell>
+                              </TableRow>
+                            </TableHead>
+                            <TableBody>
+                              {osDetail.ism_policies.map((p) => (
+                                <TableRow key={p.id} hover>
+                                  <TableCell sx={{ py: 0.75 }}><Typography variant="caption" fontFamily="monospace">{p.id}</Typography></TableCell>
+                                  <TableCell sx={{ py: 0.75 }}><Typography variant="caption" color="text.secondary">{p.states.join(' → ')}</Typography></TableCell>
+                                  <TableCell sx={{ py: 0.75 }}><Chip label={p.default_state} size="small" sx={{ fontSize: '0.6rem', height: 16 }} /></TableCell>
+                                </TableRow>
+                              ))}
+                            </TableBody>
+                          </Table>
+                        </TableContainer>
+                      </>
+                    ) : (
+                      <Typography variant="body2" color="text.secondary">No ISM retention policies configured.</Typography>
+                    )}
+
+                    {osDetail.snapshot_repos.length > 0 && (
+                      <>
+                        <Divider sx={{ my: 1.5 }} />
+                        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.75, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                          Snapshot Repositories
+                        </Typography>
+                        {osDetail.snapshot_repos.map((r) => (
+                          <Box key={r.name} sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
+                            <Typography variant="caption" fontFamily="monospace">{r.name}</Typography>
+                            <Typography variant="caption" color="text.secondary">{r.type} · {r.bucket ?? '—'}</Typography>
+                          </Box>
+                        ))}
+                      </>
+                    )}
+
+                    {osDetail.sm_policies.length > 0 && (
+                      <>
+                        <Divider sx={{ my: 1.5 }} />
+                        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.75, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                          Snapshot Policies
+                        </Typography>
+                        {osDetail.sm_policies.map((p) => (
+                          <Box key={p.id} sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
+                            <Box>
+                              <Typography variant="caption" fontFamily="monospace">{p.id}</Typography>
+                              <Typography variant="caption" color="text.secondary" sx={{ ml: 1 }}>({p.creation_schedule ?? '—'})</Typography>
+                            </Box>
+                            <Chip
+                              label={p.enabled ? 'enabled' : 'disabled'}
+                              size="small"
+                              sx={{ fontSize: '0.6rem', height: 16, bgcolor: p.enabled ? '#1a3a27' : '#3a0000', color: p.enabled ? '#C6EFCE' : '#FFC7CE' }}
+                            />
+                          </Box>
+                        ))}
+                      </>
+                    )}
+                  </Box>
+
+                  {/* RIGHT — Evidence Indices */}
+                  <Box>
+                    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.75, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                      Evidence Indices (per org)
+                    </Typography>
+                    {osDetail.evidence_indices.length > 0 ? (
+                      <TableContainer>
+                        <Table size="small">
+                          <TableHead>
+                            <TableRow>
+                              <TableCell sx={{ fontSize: '0.65rem', color: 'text.secondary', py: 0.5 }}>INDEX</TableCell>
+                              <TableCell align="right" sx={{ fontSize: '0.65rem', color: 'text.secondary', py: 0.5 }}>DOCS</TableCell>
+                              <TableCell align="right" sx={{ fontSize: '0.65rem', color: 'text.secondary', py: 0.5 }}>SIZE</TableCell>
+                            </TableRow>
+                          </TableHead>
+                          <TableBody>
+                            {osDetail.evidence_indices.map((idx) => (
+                              <TableRow key={idx.index} hover>
+                                <TableCell sx={{ py: 0.75 }}><Typography variant="caption" fontFamily="monospace">{idx.index}</Typography></TableCell>
+                                <TableCell align="right" sx={{ py: 0.75 }}><Typography variant="caption">{idx.doc_count.toLocaleString()}</Typography></TableCell>
+                                <TableCell align="right" sx={{ py: 0.75 }}><Typography variant="caption" color="text.secondary">{idx.store_size ?? '—'}</Typography></TableCell>
+                              </TableRow>
+                            ))}
+                          </TableBody>
+                        </Table>
+                      </TableContainer>
+                    ) : (
+                      <Typography variant="body2" color="text.secondary">No evidence indices found. Evidence indices are created automatically when an organisation is provisioned.</Typography>
+                    )}
+                  </Box>
+
+                </Box>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Data Synchronisation + Orphan Scanner — side by side */}
+          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2, alignItems: 'start' }}>
+
+            {/* Data Synchronisation */}
+            <Card>
+              <CardContent sx={{ pb: '12px !important' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                  <SyncOutlined sx={{ color: 'primary.main' }} />
+                  <Box>
+                    <Typography variant="h6">Data Synchronisation</Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      Re-sync content from mounted volumes after updating policies, IMPs, or workbooks.
+                    </Typography>
+                  </Box>
+                </Box>
+                <Divider sx={{ mb: 1.5 }} />
+
+                {syncResult && (
+                  <Alert
+                    severity={syncResult.ok ? 'success' : 'error'}
+                    onClose={() => setSyncResult(null)}
+                    sx={{ mb: 1.5, py: 0 }}
+                  >
+                    {syncResult.msg}
+                  </Alert>
+                )}
+
+                <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap', alignItems: 'center' }}>
+                  <Button
+                    variant="contained"
+                    startIcon={syncNowMutation.isPending ? <CircularProgress size={14} sx={{ color: 'inherit' }} /> : <SyncOutlined />}
+                    onClick={() => { setSyncResult(null); syncNowMutation.mutate() }}
+                    disabled={syncNowMutation.isPending || syncBackgroundMutation.isPending || resetContentMutation.isPending}
+                  >
+                    {syncNowMutation.isPending ? 'Syncing…' : 'Sync Now'}
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    startIcon={syncBackgroundMutation.isPending ? <CircularProgress size={14} /> : <SyncOutlined />}
+                    onClick={() => { setSyncResult(null); syncBackgroundMutation.mutate() }}
+                    disabled={syncNowMutation.isPending || syncBackgroundMutation.isPending || resetContentMutation.isPending}
+                  >
+                    {syncBackgroundMutation.isPending ? 'Queuing…' : 'Sync in Background'}
+                  </Button>
+
+                  <Divider orientation="vertical" flexItem sx={{ mx: 0.5 }} />
+
+                  <Tooltip title="Wipe all POLs, IMPs and assessments then re-import from source files. Control groups, framework bundles, users, evidence and gaps are NOT affected.">
+                    <span>
+                      <Button
+                        variant="outlined"
+                        color="warning"
+                        startIcon={resetContentMutation.isPending ? <CircularProgress size={14} /> : <DeleteSweepOutlined />}
+                        onClick={handleResetContent}
+                        disabled={syncNowMutation.isPending || syncBackgroundMutation.isPending || resetContentMutation.isPending}
+                      >
+                        {resetContentMutation.isPending ? 'Resetting…' : 'Reset & Re-import'}
+                      </Button>
+                    </span>
+                  </Tooltip>
+                </Box>
+              </CardContent>
+            </Card>
+
+            {/* Orphan Scanner */}
+            <Card>
+              <CardContent sx={{ pb: '12px !important' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                  <DeleteSweepOutlined sx={{ color: 'primary.main' }} />
+                  <Typography variant="h6" sx={{ flex: 1 }}>Orphan Scanner</Typography>
+                  <Button
+                    size="small"
+                    variant="outlined"
+                    startIcon={scanOrphansMutation.isPending ? <CircularProgress size={12} /> : <DeleteSweepOutlined />}
+                    disabled={scanOrphansMutation.isPending || purgeOrphansMutation.isPending}
+                    onClick={() => { setOrphanResult(null); setPurgeResult(null); scanOrphansMutation.mutate() }}
+                    sx={{ fontSize: '0.7rem' }}
+                  >
+                    {scanOrphansMutation.isPending ? 'Scanning…' : 'Scan'}
+                  </Button>
+                </Box>
+                <Divider sx={{ mb: 1.5 }} />
+                {purgeResult && (
+                  <Alert severity="success" sx={{ mb: 1, py: 0 }}>{purgeResult}</Alert>
+                )}
+                {scanOrphansMutation.isError && (
+                  <Alert severity="error" sx={{ mb: 1, py: 0 }}>Scan failed.</Alert>
+                )}
+                {orphanResult === null && !purgeResult && (
+                  <Typography variant="body2" color="text.secondary">
+                    Finds DB records whose source file no longer exists on disk.
+                  </Typography>
+                )}
+                {orphanResult !== null && (
+                  <>
+                    {orphanResult.implementations.length === 0 && orphanResult.policies.length === 0 ? (
+                      <Alert severity="success" sx={{ py: 0 }}>No orphans found — DB is clean.</Alert>
+                    ) : (
+                      <>
+                        <Alert severity="warning" sx={{ mb: 1.5, py: 0 }}>
+                          {orphanResult.implementations.length + orphanResult.policies.length} orphaned record{orphanResult.implementations.length + orphanResult.policies.length !== 1 ? 's' : ''} found.
+                        </Alert>
+                        {orphanResult.implementations.length > 0 && (
+                          <>
+                            <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 0.5 }}>
+                              Implementations ({orphanResult.implementations.length})
+                            </Typography>
+                            {orphanResult.implementations.map((o) => (
+                              <Typography key={o.document_id} variant="caption" fontFamily="monospace" display="block" sx={{ color: '#FFC7CE', mb: 0.25 }}>
+                                {o.document_id}
+                              </Typography>
+                            ))}
+                          </>
+                        )}
+                        {orphanResult.policies.length > 0 && (
+                          <>
+                            <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 1, mb: 0.5 }}>
+                              Policies ({orphanResult.policies.length})
+                            </Typography>
+                            {orphanResult.policies.map((o) => (
+                              <Typography key={o.document_id} variant="caption" fontFamily="monospace" display="block" sx={{ color: '#FFC7CE', mb: 0.25 }}>
+                                {o.document_id}
+                              </Typography>
+                            ))}
+                          </>
+                        )}
+                        <Button
+                          size="small"
+                          variant="contained"
+                          color="error"
+                          startIcon={purgeOrphansMutation.isPending ? <CircularProgress size={12} /> : <DeleteSweepOutlined />}
+                          disabled={purgeOrphansMutation.isPending}
+                          onClick={() => purgeOrphansMutation.mutate()}
+                          sx={{ mt: 1.5, fontSize: '0.7rem' }}
+                          fullWidth
+                        >
+                          {purgeOrphansMutation.isPending ? 'Purging…' : `Purge ${orphanResult.implementations.length + orphanResult.policies.length} orphans`}
+                        </Button>
+                      </>
+                    )}
+                  </>
+                )}
+              </CardContent>
+            </Card>
+
+          </Box>
+
           {/* Row 4: First-Run Setup (full width) */}
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -1302,153 +1574,6 @@ export default function System() {
                   <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.75, textAlign: 'center' }}>
                     Runs all four importers in sequence. Load Reference Frameworks (Step 1) must be done separately first.
                   </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-
-          {/* Row 5: Data Sync (left) | Orphan Scanner (right) */}
-          <Grid container spacing={2} sx={{ alignItems: 'stretch' }}>
-            <Grid item xs={12} md={6}>
-              <Card sx={{ height: '100%' }}>
-                <CardContent sx={{ pb: '12px !important' }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-                    <SyncOutlined sx={{ color: 'primary.main' }} />
-                    <Box>
-                      <Typography variant="h6">Data Synchronisation</Typography>
-                      <Typography variant="caption" color="text.secondary">
-                        Re-sync content from mounted volumes after updating policies, IMPs, or workbooks.
-                      </Typography>
-                    </Box>
-                  </Box>
-                  <Divider sx={{ mb: 1.5 }} />
-
-                  {syncResult && (
-                    <Alert
-                      severity={syncResult.ok ? 'success' : 'error'}
-                      onClose={() => setSyncResult(null)}
-                      sx={{ mb: 1.5, py: 0 }}
-                    >
-                      {syncResult.msg}
-                    </Alert>
-                  )}
-
-                  <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap', alignItems: 'center' }}>
-                    <Button
-                      variant="contained"
-                      startIcon={syncNowMutation.isPending ? <CircularProgress size={14} sx={{ color: 'inherit' }} /> : <SyncOutlined />}
-                      onClick={() => { setSyncResult(null); syncNowMutation.mutate() }}
-                      disabled={syncNowMutation.isPending || syncBackgroundMutation.isPending || resetContentMutation.isPending}
-                    >
-                      {syncNowMutation.isPending ? 'Syncing…' : 'Sync Now'}
-                    </Button>
-                    <Button
-                      variant="outlined"
-                      startIcon={syncBackgroundMutation.isPending ? <CircularProgress size={14} /> : <SyncOutlined />}
-                      onClick={() => { setSyncResult(null); syncBackgroundMutation.mutate() }}
-                      disabled={syncNowMutation.isPending || syncBackgroundMutation.isPending || resetContentMutation.isPending}
-                    >
-                      {syncBackgroundMutation.isPending ? 'Queuing…' : 'Sync in Background'}
-                    </Button>
-
-                    <Divider orientation="vertical" flexItem sx={{ mx: 0.5 }} />
-
-                    <Tooltip title="Wipe all POLs, IMPs and assessments then re-import from source files. Control groups, framework bundles, users, evidence and gaps are NOT affected.">
-                      <span>
-                        <Button
-                          variant="outlined"
-                          color="warning"
-                          startIcon={resetContentMutation.isPending ? <CircularProgress size={14} /> : <DeleteSweepOutlined />}
-                          onClick={handleResetContent}
-                          disabled={syncNowMutation.isPending || syncBackgroundMutation.isPending || resetContentMutation.isPending}
-                        >
-                          {resetContentMutation.isPending ? 'Resetting…' : 'Reset & Re-import'}
-                        </Button>
-                      </span>
-                    </Tooltip>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <Card sx={{ height: '100%' }}>
-                <CardContent sx={{ pb: '12px !important' }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-                    <DeleteSweepOutlined sx={{ color: 'primary.main' }} />
-                    <Typography variant="h6" sx={{ flex: 1 }}>Orphan Scanner</Typography>
-                    <Button
-                      size="small"
-                      variant="outlined"
-                      startIcon={scanOrphansMutation.isPending ? <CircularProgress size={12} /> : <DeleteSweepOutlined />}
-                      disabled={scanOrphansMutation.isPending || purgeOrphansMutation.isPending}
-                      onClick={() => { setOrphanResult(null); setPurgeResult(null); scanOrphansMutation.mutate() }}
-                      sx={{ fontSize: '0.7rem' }}
-                    >
-                      {scanOrphansMutation.isPending ? 'Scanning…' : 'Scan'}
-                    </Button>
-                  </Box>
-                  <Divider sx={{ mb: 1.5 }} />
-                  {purgeResult && (
-                    <Alert severity="success" sx={{ mb: 1, py: 0 }}>{purgeResult}</Alert>
-                  )}
-                  {scanOrphansMutation.isError && (
-                    <Alert severity="error" sx={{ mb: 1, py: 0 }}>Scan failed.</Alert>
-                  )}
-                  {orphanResult === null && !purgeResult && (
-                    <Typography variant="body2" color="text.secondary">
-                      Finds DB records whose source file no longer exists on disk.
-                    </Typography>
-                  )}
-                  {orphanResult !== null && (
-                    <>
-                      {orphanResult.implementations.length === 0 && orphanResult.policies.length === 0 ? (
-                        <Alert severity="success" sx={{ py: 0 }}>No orphans found — DB is clean.</Alert>
-                      ) : (
-                        <>
-                          <Alert severity="warning" sx={{ mb: 1.5, py: 0 }}>
-                            {orphanResult.implementations.length + orphanResult.policies.length} orphaned record{orphanResult.implementations.length + orphanResult.policies.length !== 1 ? 's' : ''} found.
-                          </Alert>
-                          {orphanResult.implementations.length > 0 && (
-                            <>
-                              <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 0.5 }}>
-                                Implementations ({orphanResult.implementations.length})
-                              </Typography>
-                              {orphanResult.implementations.map((o) => (
-                                <Typography key={o.document_id} variant="caption" fontFamily="monospace" display="block" sx={{ color: '#FFC7CE', mb: 0.25 }}>
-                                  {o.document_id}
-                                </Typography>
-                              ))}
-                            </>
-                          )}
-                          {orphanResult.policies.length > 0 && (
-                            <>
-                              <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 1, mb: 0.5 }}>
-                                Policies ({orphanResult.policies.length})
-                              </Typography>
-                              {orphanResult.policies.map((o) => (
-                                <Typography key={o.document_id} variant="caption" fontFamily="monospace" display="block" sx={{ color: '#FFC7CE', mb: 0.25 }}>
-                                  {o.document_id}
-                                </Typography>
-                              ))}
-                            </>
-                          )}
-                          <Button
-                            size="small"
-                            variant="contained"
-                            color="error"
-                            startIcon={purgeOrphansMutation.isPending ? <CircularProgress size={12} /> : <DeleteSweepOutlined />}
-                            disabled={purgeOrphansMutation.isPending}
-                            onClick={() => purgeOrphansMutation.mutate()}
-                            sx={{ mt: 1.5, fontSize: '0.7rem' }}
-                            fullWidth
-                          >
-                            {purgeOrphansMutation.isPending ? 'Purging…' : `Purge ${orphanResult.implementations.length + orphanResult.policies.length} orphans`}
-                          </Button>
-                        </>
-                      )}
-                    </>
-                  )}
                 </CardContent>
               </Card>
             </Grid>

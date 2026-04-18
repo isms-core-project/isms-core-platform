@@ -676,7 +676,7 @@ Set a review frequency — the platform notifies you when a vendor review is due
 
 ## Crosswalk & Framework Mapping {#crosswalk-framework-mapping}
 
-The Crosswalk engine automatically maps your ISO 27001:2022 controls to other frameworks using a database of 3,412 pre-built mappings.
+The Crosswalk engine automatically maps your ISO 27001:2022 controls to other frameworks using a database of 3,915 pre-built mappings.
 
 ### How it works
 
@@ -739,7 +739,7 @@ Super Admins can access **Metrics → Portfolio** to compare KPIs across all org
 
 ## Country Localisation {#country-localisation}
 
-ISMS CORE generates jurisdiction-specific policies for 7 countries. When you set your organisation's country, all policy documents render with localised legal references, regulatory contacts, and terminology. Switzerland (CH) is the default — all source documents use Swiss references unless a country is set.
+ISMS CORE generates jurisdiction-specific policies for 8 jurisdictions. When you set your organisation's country, all policy documents render with localised legal references, regulatory contacts, and terminology. Switzerland (CH) is the default — all source documents use Swiss references unless a country is set.
 
 ### Supported jurisdictions
 

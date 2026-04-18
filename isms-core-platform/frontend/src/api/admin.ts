@@ -29,6 +29,15 @@ export const adminApi = {
   getSysInfo: () =>
     client.get<SysInfoResponse>('/admin/sysinfo').then((r) => r.data),
 
+  getOpenSearchDetail: () =>
+    client.get<{
+      ism_policies: Array<{ id: string; description: string; default_state: string; states: string[]; last_updated_time: number | null }>;
+      ism_managed: Array<{ index: string; policy_id: string; state: string | null; action: string | null }>;
+      sm_policies: Array<{ id: string; description: string; repository: string | null; creation_schedule: string | null; enabled: boolean; last_creation: string | null; last_creation_time: number | null }>;
+      snapshot_repos: Array<{ name: string; type: string; bucket: string | null; endpoint: string | null }>;
+      evidence_indices: Array<{ index: string; doc_count: number; store_size: string | null }>;
+    }>('/admin/opensearch').then((r) => r.data),
+
   resetContent: () =>
     client.post<{ status: string; deleted: Record<string, number>; reimport: Record<string, unknown> }>('/admin/reset-content').then((r) => r.data),
 
