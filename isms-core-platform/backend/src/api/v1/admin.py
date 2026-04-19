@@ -252,6 +252,94 @@ def send_test_email(body: dict, current_user=Depends(get_current_user)):
     return {"ok": True, "recipient": recipient}
 
 
+@router.post("/notification/test", dependencies=[Depends(get_current_user)])
+def send_test_notification(body: dict, current_user=Depends(get_current_user)):
+    """Send a sample notification email to the calling user to verify a specific event template.
+
+    Body: {"event_type": "email.feed_failure"}
+    Sends to current_user.email using realistic placeholder data.
+    """
+    from src.services.email_service import is_enabled, render_template, send_email
+
+    event_type = (body.get("event_type") or "").strip()
+    if not event_type:
+        raise HTTPException(status_code=422, detail="event_type is required")
+
+    if not is_enabled():
+        raise HTTPException(status_code=503, detail="Email is not configured (MAIL_HOST is not set).")
+
+    settings = get_settings()
+    base = settings.platform_url.rstrip("/")
+    # Prefer NOTIFICATION_EMAIL override; fall back to the logged-in user's DB email
+    recipient = settings.notification_email or current_user.email
+    name = current_user.full_name or recipient
+
+    TEMPLATES: dict[str, tuple[str, str, dict]] = {
+        "email.gap_assigned": ("gap_assigned.html", "Test: Gap Assigned — ISMS CORE", {
+            "full_name": name, "email": recipient,
+            "gap_title": "[TEST] Patch management gap — A.8.8",
+            "control_ref": "a.8.8", "control_name": "Management of Technical Vulnerabilities",
+            "severity": "high", "due_date": "30 Apr 2026",
+            "description": "This is a sample gap notification. No action required.",
+            "assigned_by": None, "gap_url": f"{base}/gaps",
+        }),
+        "email.evidence_expiry": ("evidence_expiry.html", "Test: Evidence Expiring — ISMS CORE", {
+            "full_name": name, "email": recipient,
+            "evidence_title": "[TEST] Vulnerability scan report Q1 2026",
+            "control_ref": "a.8.8", "control_name": "Management of Technical Vulnerabilities",
+            "expiry_date": "30 Apr 2026", "days_remaining": 14, "expired": False,
+            "owner": recipient, "evidence_url": f"{base}/evidence",
+        }),
+        "email.qa_fail": ("qa_fail.html", "Test: QA Check — ISMS CORE", {
+            "full_name": name, "email": recipient,
+            "product": "Framework", "checked_at": "19 Apr 2026 08:00 UTC",
+            "pass_pct": 72, "fail_count": 2, "warning_count": 1,
+            "failures": [
+                {"control_ref": "A.8.8", "status": "FAIL", "missing": ["IMP-TG", "SCR"]},
+                {"control_ref": "A.8.23", "status": "WARN", "missing": ["REF"]},
+            ],
+            "qa_url": f"{base}/qa",
+        }),
+        "email.import_completed": ("import_completed.html", "Test: Import Completed — ISMS CORE", {
+            "full_name": name, "email": recipient,
+            "import_type": "Policy Import (test)",
+            "completed_at": "19 Apr 2026 10:00 UTC",
+            "stats": {"policies_found": 12, "policies_imported": 10, "policies_skipped": 2},
+            "errors": [],
+            "system_url": f"{base}/system",
+        }),
+        "email.feed_failure": ("feed_failure.html", "Test: Feed Pull Failed — ISMS CORE", {
+            "full_name": name, "email": recipient,
+            "feed_name": "cisa_kev (test)",
+            "error_message": "ConnectionError: Failed to connect to api.cisa.gov — this is a test notification.",
+            "run_id": "00000000-0000-0000-0000-000000000001",
+            "failed_at": "19 Apr 2026 03:00 UTC",
+            "feeds_url": f"{base}/threat-intel",
+        }),
+        "email.connector_failure": ("connector_failure.html", "Test: Connector Sync Failed — ISMS CORE", {
+            "full_name": name, "email": recipient,
+            "connector_name": "Test Connector",
+            "connector_id": "00000000-0000-0000-0000-000000000001",
+            "error_message": "AuthenticationError: API token rejected — this is a test notification.",
+            "failed_at": "19 Apr 2026 06:00 UTC",
+            "connectors_url": f"{base}/connectors",
+        }),
+    }
+
+    entry = TEMPLATES.get(event_type)
+    if not entry:
+        raise HTTPException(status_code=422, detail=f"Unknown event_type: {event_type}")
+
+    template_file, subject, ctx = entry
+    html = render_template(template_file, ctx)
+    ok = send_email(to=[recipient], subject=subject, html_body=html)
+
+    if not ok:
+        raise HTTPException(status_code=502, detail="Email send failed — check server logs.")
+
+    return {"ok": True, "recipient": recipient, "event_type": event_type}
+
+
 @router.get(
     "/load-history",
     response_model=list[LoadHistoryRead],

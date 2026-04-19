@@ -11,6 +11,7 @@ import {
   ToggleButton,
   Skeleton,
   Alert,
+  CircularProgress,
   Tooltip,
   Collapse,
   IconButton,
@@ -46,6 +47,7 @@ import {
   CodeOutlined,
   GridViewOutlined,
   CloseOutlined,
+  DownloadOutlined,
 } from '@mui/icons-material'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { generatorsApi, GeneratorGroup, GeneratorItem, GeneratorUpdate, SheetInfo, SheetSchema } from '../api/generatorsApi'
@@ -477,6 +479,7 @@ function GeneratorCard({ gen: initialGen }: { gen: GeneratorItem }) {
   const [previewOpen, setPreviewOpen] = useState(false)
   const [gen, setGen] = useState(initialGen)
   const [generating, setGenerating] = useState(false)
+  const [generatingWorkbook, setGeneratingWorkbook] = useState(false)
   const queryClient = useQueryClient()
 
   const handleSaved = (updated: GeneratorItem) => {
@@ -502,6 +505,21 @@ function GeneratorCard({ gen: initialGen }: { gen: GeneratorItem }) {
       URL.revokeObjectURL(url)
     } finally {
       setGenerating(false)
+    }
+  }
+
+  const handleGenerateWorkbook = async () => {
+    setGeneratingWorkbook(true)
+    try {
+      const { blob, filename } = await generatorsApi.generateWorkbook(gen.document_id)
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = filename
+      a.click()
+      URL.revokeObjectURL(url)
+    } finally {
+      setGeneratingWorkbook(false)
     }
   }
 
@@ -585,8 +603,20 @@ function GeneratorCard({ gen: initialGen }: { gen: GeneratorItem }) {
                 </IconButton>
               </Tooltip>
               <Tooltip title={gen.product_type === 'framework' ? 'Generate .py script' : 'Download source script'} arrow>
-                <IconButton size="small" onClick={handleGenerateScript} disabled={generating} sx={{ p: 0.25 }}>
+                <IconButton size="small" onClick={handleGenerateScript} disabled={generating || generatingWorkbook} sx={{ p: 0.25 }}>
                   <CodeOutlined sx={{ fontSize: '1rem' }} />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Download .xlsx workbook (generated server-side)" arrow>
+                <IconButton
+                  size="small"
+                  onClick={handleGenerateWorkbook}
+                  disabled={generating || generatingWorkbook}
+                  sx={{ p: 0.25, color: generatingWorkbook ? 'primary.main' : 'inherit' }}
+                >
+                  {generatingWorkbook
+                    ? <CircularProgress size={14} />
+                    : <DownloadOutlined sx={{ fontSize: '1rem' }} />}
                 </IconButton>
               </Tooltip>
               <Tooltip title="Edit" arrow>

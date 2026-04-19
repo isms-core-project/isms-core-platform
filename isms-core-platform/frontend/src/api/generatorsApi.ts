@@ -90,4 +90,10 @@ export const generatorsApi = {
       blob: r.data as Blob,
       filename: (r.headers['content-disposition'] as string | undefined)?.match(/filename="(.+)"/)?.[1] ?? `${documentId}.py`,
     })),
+
+  generateWorkbook: (documentId: string) =>
+    client.post(`/generators/${documentId}/workbook`, null, { responseType: 'blob', timeout: 180_000 }).then(r => ({
+      blob: r.data as Blob,
+      filename: (r.headers['content-disposition'] as string | undefined)?.match(/filename="(.+)"/)?.[1] ?? `${documentId}.xlsx`,
+    })),
 }

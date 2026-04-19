@@ -401,6 +401,7 @@ services:
       - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET:-}
       - MAIL_HOST=${MAIL_HOST:-}
       - MAIL_PORT=${MAIL_PORT:-1025}
+      - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL:-}
       - PLATFORM_URL=${PLATFORM_URL}
       # v2: Garage S3 — wired in Phase 3 (EvidenceStore migration)
       - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-http://isms-core-garage:3900}
@@ -458,6 +459,7 @@ services:
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
       - MAIL_HOST=${MAIL_HOST:-}
       - MAIL_PORT=${MAIL_PORT:-1025}
+      - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL:-}
       - PLATFORM_URL=${PLATFORM_URL}
       - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-http://isms-core-garage:3900}
       - GARAGE_ACCESS_KEY=${GARAGE_ACCESS_KEY:-}
@@ -498,6 +500,7 @@ services:
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
       - MAIL_HOST=${MAIL_HOST:-}
       - MAIL_PORT=${MAIL_PORT:-1025}
+      - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL:-}
       - PLATFORM_URL=${PLATFORM_URL}
       - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-http://isms-core-garage:3900}
       - GARAGE_ACCESS_KEY=${GARAGE_ACCESS_KEY:-}
@@ -613,6 +616,8 @@ services:
       - FEEDS_CVE_ENABLED=${FEEDS_CVE_ENABLED:-false}
       - FEEDS_CPE_FULL=${FEEDS_CPE_FULL:-false}
       - NIST_API_KEY=${NIST_API_KEY:-}
+      - ISMS_API_URL=http://isms-core-backend:8000
+      - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET}
     depends_on:
       isms-core-backend:
         condition: service_healthy

@@ -241,10 +241,26 @@ def ingest_evidence(
 
 def report_error(db: DBSession, connector: Connector, message: str) -> None:
     """Record that a connector sync failed with an error message."""
+    prev_error_at = connector.last_error_at
+    now = datetime.now(timezone.utc)
     connector.last_error = message[:2000]  # cap at 2000 chars
-    connector.last_error_at = datetime.now(timezone.utc)
+    connector.last_error_at = now
     db.commit()
     logger.warning("Connector %s reported error: %s", connector.name, message[:200])
+
+    # Notify only on first error or if 24 h have passed since last notification
+    is_first = prev_error_at is None
+    is_repeat = not is_first and (now - prev_error_at).total_seconds() >= 86400
+    if is_first or is_repeat:
+        try:
+            from src.services.notification_service import notify_connector_failure
+            notify_connector_failure.delay(
+                connector_id=str(connector.id),
+                connector_name=connector.name,
+                error_message=message,
+            )
+        except Exception as exc:
+            logger.warning("Could not queue connector failure notification: %s", exc)
 
 
 # ── Evidence queries ──────────────────────────────────────────────────────────

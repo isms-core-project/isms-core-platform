@@ -489,3 +489,147 @@ def scan_evidence_expiry(self) -> dict:
         raise self.retry(exc=e, countdown=300)
     finally:
         db.close()
+
+
+# ---------------------------------------------------------------------------
+# Task: feed pull failure
+# ---------------------------------------------------------------------------
+
+@celery_app.task(name="notify_feed_failure", bind=True, max_retries=2)
+def notify_feed_failure(self, feed_name: str, error_message: str, run_id: str | None = None) -> int:
+    """Alert all active admins/managers that a threat feed pull failed.
+
+    Args:
+        feed_name:     Canonical feed name, e.g. 'cisa_kev'.
+        error_message: The error string from the feed pull.
+        run_id:        Optional feed_run UUID for traceability.
+    """
+    if not is_enabled():
+        return 0
+
+    db = SessionLocal()
+    try:
+        from src.database.enums import UserRole
+        from src.domain.users import User
+
+        recipients = (
+            db.query(User)
+            .filter(
+                User.is_active.is_(True),
+                User.role.in_([UserRole.ADMIN, UserRole.ISMS_MANAGER]),
+            )
+            .all()
+        )
+        if not recipients:
+            return 0
+
+        base = _platform_url()
+        sent = 0
+
+        for user in recipients:
+            if not _prefs_allow(user, "email.feed_failure"):
+                continue
+
+            html = render_template("feed_failure.html", {
+                "full_name": user.full_name,
+                "email": user.email,
+                "feed_name": feed_name,
+                "error_message": error_message[:500],
+                "run_id": run_id,
+                "failed_at": datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC"),
+                "feeds_url": f"{base}/threat-intel",
+            })
+
+            ok = send_email(
+                to=[user.email],
+                subject=f"Feed Pull Failed: {feed_name}",
+                html_body=html,
+            )
+            if ok:
+                _log_email_sent(
+                    db, "email.feed_failure", run_id,
+                    f"Feed failure alert sent to {user.email} — {feed_name}",
+                )
+                sent += 1
+
+        db.commit()
+        return sent
+
+    except Exception as e:
+        db.rollback()
+        logger.error("notify_feed_failure failed: %s", e, exc_info=True)
+        raise self.retry(exc=e, countdown=60)
+    finally:
+        db.close()
+
+
+# ---------------------------------------------------------------------------
+# Task: connector sync failure
+# ---------------------------------------------------------------------------
+
+@celery_app.task(name="notify_connector_failure", bind=True, max_retries=2)
+def notify_connector_failure(self, connector_id: str, connector_name: str, error_message: str) -> int:
+    """Alert all active admins/managers that a connector sync failed.
+
+    Args:
+        connector_id:   UUID string of the connector.
+        connector_name: Display name of the connector.
+        error_message:  The error string reported by the connector.
+    """
+    if not is_enabled():
+        return 0
+
+    db = SessionLocal()
+    try:
+        from src.database.enums import UserRole
+        from src.domain.users import User
+
+        recipients = (
+            db.query(User)
+            .filter(
+                User.is_active.is_(True),
+                User.role.in_([UserRole.ADMIN, UserRole.ISMS_MANAGER]),
+            )
+            .all()
+        )
+        if not recipients:
+            return 0
+
+        base = _platform_url()
+        sent = 0
+
+        for user in recipients:
+            if not _prefs_allow(user, "email.connector_failure"):
+                continue
+
+            html = render_template("connector_failure.html", {
+                "full_name": user.full_name,
+                "email": user.email,
+                "connector_name": connector_name,
+                "connector_id": connector_id,
+                "error_message": error_message[:500],
+                "failed_at": datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC"),
+                "connectors_url": f"{base}/connectors",
+            })
+
+            ok = send_email(
+                to=[user.email],
+                subject=f"Connector Sync Failed: {connector_name}",
+                html_body=html,
+            )
+            if ok:
+                _log_email_sent(
+                    db, "email.connector_failure", connector_id,
+                    f"Connector failure alert sent to {user.email} — {connector_name}",
+                )
+                sent += 1
+
+        db.commit()
+        return sent
+
+    except Exception as e:
+        db.rollback()
+        logger.error("notify_connector_failure failed: %s", e, exc_info=True)
+        raise self.retry(exc=e, countdown=60)
+    finally:
+        db.close()

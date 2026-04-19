@@ -74,6 +74,7 @@ import {
   StreamOutlined,
   ManageSearchOutlined,
   MenuBookOutlined,
+  SendOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -248,9 +249,9 @@ const PRIVACY_SECTIONS = [
 export const SIDEBAR_WIDTH = 220
 export const SIDEBAR_MINI_WIDTH = 52
 
-const CAT_LABEL: Record<string, string> = { workflow: 'Workflow', system: 'System' }
-const CAT_COLOR: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3a' }
-const CAT_TEXT:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0' }
+const CAT_LABEL: Record<string, string> = { workflow: 'Workflow', system: 'System', infrastructure: 'Infrastructure' }
+const CAT_COLOR: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3a', infrastructure: '#2a1a3a' }
+const CAT_TEXT:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0', infrastructure: '#d4b8f0' }
 const PLATFORM_COLOR    = '#6B7A99'
 const INTEL_COLOR       = '#B84F00'
 
@@ -275,6 +276,22 @@ function NotificationPrefsDialog({ open, onClose }: { open: boolean; onClose: ()
   const mutation = useMutation({
     mutationFn: (prefs: Record<string, boolean>) => adminApi.updateMyNotificationPrefs(prefs),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['my', 'notification-prefs'] }),
+  })
+
+  const [testingEvent, setTestingEvent] = useState<string | null>(null)
+  const [testResult, setTestResult] = useState<{ event_type: string; ok: boolean; msg: string } | null>(null)
+
+  const testMutation = useMutation({
+    mutationFn: (event_type: string) => adminApi.sendTestNotification(event_type),
+    onMutate: (event_type) => { setTestingEvent(event_type); setTestResult(null) },
+    onSuccess: (res) => {
+      setTestResult({ event_type: res.event_type, ok: true, msg: `Test sent to ${res.recipient}` })
+      setTestingEvent(null)
+    },
+    onError: (_e, event_type) => {
+      setTestResult({ event_type, ok: false, msg: 'Send failed — check SMTP config' })
+      setTestingEvent(null)
+    },
   })
 
   function toggle(pref: NotificationPref) {
@@ -303,6 +320,15 @@ function NotificationPrefsDialog({ open, onClose }: { open: boolean; onClose: ()
         {mutation.isError && (
           <Alert severity="error" sx={{ mb: 1.5, py: 0 }}>Failed to save — try again.</Alert>
         )}
+        {testResult && (
+          <Alert
+            severity={testResult.ok ? 'success' : 'error'}
+            onClose={() => setTestResult(null)}
+            sx={{ mb: 1.5, py: 0, fontSize: '0.72rem' }}
+          >
+            {testResult.msg}
+          </Alert>
+        )}
         {byCategory.map(([cat, prefs]) => (
           <Box key={cat} sx={{ mb: 2 }}>
             <Chip
@@ -311,26 +337,41 @@ function NotificationPrefsDialog({ open, onClose }: { open: boolean; onClose: ()
               sx={{ mb: 1, fontSize: '0.65rem', height: 18, bgcolor: CAT_COLOR[cat] ?? '#222', color: CAT_TEXT[cat] ?? '#fff' }}
             />
             {prefs.map((pref) => (
-              <FormControlLabel
-                key={pref.event_type}
-                control={
-                  <Switch
-                    size="small"
-                    checked={pref.enabled}
-                    onChange={() => toggle(pref)}
-                    disabled={mutation.isPending}
-                  />
-                }
-                label={
-                  <Box>
-                    <Typography variant="body2">{pref.label}</Typography>
-                    <Typography variant="caption" color="text.secondary" display="block">
-                      {pref.description}
-                    </Typography>
-                  </Box>
-                }
-                sx={{ display: 'flex', alignItems: 'flex-start', mb: 1, ml: 0 }}
-              />
+              <Box key={pref.event_type} sx={{ display: 'flex', alignItems: 'flex-start', mb: 1 }}>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      size="small"
+                      checked={pref.enabled}
+                      onChange={() => toggle(pref)}
+                      disabled={mutation.isPending}
+                    />
+                  }
+                  label={
+                    <Box>
+                      <Typography variant="body2">{pref.label}</Typography>
+                      <Typography variant="caption" color="text.secondary" display="block">
+                        {pref.description}
+                      </Typography>
+                    </Box>
+                  }
+                  sx={{ flex: 1, alignItems: 'flex-start', ml: 0, mr: 0 }}
+                />
+                <Tooltip title="Send test email to yourself">
+                  <span>
+                    <IconButton
+                      size="small"
+                      onClick={() => testMutation.mutate(pref.event_type)}
+                      disabled={testingEvent !== null}
+                      sx={{ mt: 0.25, color: 'text.disabled', '&:hover': { color: 'primary.main' } }}
+                    >
+                      {testingEvent === pref.event_type
+                        ? <CircularProgress size={14} />
+                        : <SendOutlined sx={{ fontSize: 14 }} />}
+                    </IconButton>
+                  </span>
+                </Tooltip>
+              </Box>
             ))}
           </Box>
         ))}

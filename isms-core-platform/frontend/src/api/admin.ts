@@ -71,6 +71,9 @@ export const adminApi = {
   sendTestEmail: (recipient: string) =>
     client.post<{ ok: boolean; recipient: string }>('/admin/email/test', { recipient }).then((r) => r.data),
 
+  sendTestNotification: (event_type: string) =>
+    client.post<{ ok: boolean; recipient: string; event_type: string }>('/admin/notification/test', { event_type }).then((r) => r.data),
+
   getMyNotificationPrefs: () =>
     client.get<NotificationPrefsResponse>('/auth/me/notification-prefs').then((r) => r.data),
 

@@ -5,7 +5,7 @@ import os
 from collections import Counter, defaultdict
 from datetime import date, datetime, timedelta, timezone
 
-from fastapi import APIRouter, Body, Depends, Query
+from fastapi import APIRouter, Body, Depends, Query, Request
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session as DBSession
 from src.core.dependencies import get_current_user, require_admin
@@ -988,3 +988,36 @@ def patch_feed_settings(
         db.add(row)
     db.commit()
     return FeedSettings(feeds_cpe_full=payload.feeds_cpe_full)
+
+
+# ── Internal: feed failure notification (called by feeds container) ────────────
+
+@router.post("/internal/notify-failure", include_in_schema=False)
+def internal_notify_feed_failure(
+    request: Request,
+    payload: dict = Body(...),
+):
+    """Called by the feeds container when a pull fails. Queues a notification email.
+
+    Authenticated via CONNECTORS_WORKER_SECRET (shared secret, same as connectors runner).
+    Body: {feed_name: str, error_message: str, run_id: str | null}
+    """
+    ws = os.environ.get("CONNECTORS_WORKER_SECRET", "")
+    if not ws:
+        raise HTTPException(status_code=503, detail="Worker mode not configured")
+    token = request.headers.get("Authorization", "").removeprefix("Bearer ").strip()
+    if token != ws:
+        raise HTTPException(status_code=401, detail="Invalid worker secret")
+
+    feed_name = payload.get("feed_name", "unknown")
+    error_message = payload.get("error_message", "")
+    run_id = payload.get("run_id")
+
+    from src.services.notification_service import notify_feed_failure
+    notify_feed_failure.delay(
+        feed_name=feed_name,
+        error_message=error_message,
+        run_id=run_id,
+    )
+    logger.info("Queued feed failure notification for %s", feed_name)
+    return {"queued": True, "feed_name": feed_name}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Connector Sync Failed — ISMS CORE{% endblock %}
+
+{% block content %}
+<h2>Evidence Connector Sync Failed</h2>
+<p>Hi {% if full_name %}{{ full_name }}{% else %}{{ email }}{% endif %},</p>
+<p>An evidence connector has reported a sync failure. Evidence from this connector may be out of date until the issue is resolved.</p>
+
+<div class="callout" style="border-left-color: #C00000; background: #fff0f0;">
+  <p class="label" style="color: #C00000;">Connector failure details</p>
+  <p>
+    <strong>Connector:</strong> {{ connector_name }}<br>
+    <strong>Failed at:</strong> {{ failed_at }}<br>
+    <strong>Connector ID:</strong> <code style="font-size:12px;">{{ connector_id }}</code>
+  </p>
+  <p style="margin-top: 10px; font-family: monospace; font-size: 12px; background: #f9e8e8; padding: 8px; border-radius: 3px; word-break: break-all;">{{ error_message }}</p>
+</div>
+
+<p>Review the connector configuration and resolve the underlying issue. The connector will continue to retry on its next scheduled run.</p>
+
+<p>
+  <a href="{{ connectors_url }}" class="btn btn-warning">View Connectors</a>
+</p>
+{% endblock %}

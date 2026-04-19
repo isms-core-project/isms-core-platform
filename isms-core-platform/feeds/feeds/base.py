@@ -9,6 +9,11 @@ from uuid import uuid4
 import psycopg2
 import psycopg2.extras
 
+try:
+    import requests as _requests
+except ImportError:
+    _requests = None  # type: ignore[assignment]
+
 logger = logging.getLogger(__name__)
 
 DATABASE_URL = os.environ["DATABASE_URL"]
@@ -56,9 +61,34 @@ def finish_run(run_id: str, item_count: int) -> None:
             )
 
 
+def _notify_backend_feed_failure(feed_name: str, error: str, run_id: str) -> None:
+    """Best-effort POST to backend to queue a failure notification email."""
+    if _requests is None:
+        return
+    api_url = os.environ.get("ISMS_API_URL", "")
+    secret = os.environ.get("CONNECTORS_WORKER_SECRET", "")
+    if not api_url or not secret:
+        return
+    try:
+        _requests.post(
+            f"{api_url}/api/v1/feeds/internal/notify-failure",
+            json={"feed_name": feed_name, "error_message": error, "run_id": run_id},
+            headers={"Authorization": f"Bearer {secret}"},
+            timeout=5,
+        )
+    except Exception as exc:
+        logger.warning("Could not notify backend of feed failure: %s", exc)
+
+
 def fail_run(run_id: str, error: str) -> None:
+    feed_name = "unknown"
     with get_conn() as conn:
         with conn.cursor() as cur:
+            # Resolve the feed name from the run record
+            cur.execute("SELECT feed_name FROM feed_runs WHERE id=%s", (run_id,))
+            row = cur.fetchone()
+            if row:
+                feed_name = row[0]
             cur.execute(
                 """
                 UPDATE feed_runs
@@ -67,6 +97,7 @@ def fail_run(run_id: str, error: str) -> None:
                 """,
                 (datetime.now(timezone.utc), error[:2000], run_id),
             )
+    _notify_backend_feed_failure(feed_name, error, run_id)
 
 
 def get_platform_setting(key: str, default: str = "") -> str:
