@@ -110,7 +110,8 @@ def _os_request(method: str, path: str, body: dict = None):
     req.add_header("Content-Type", "application/json")
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
-            return json.loads(resp.read())
+            raw = resp.read()
+            return json.loads(raw) if raw else {}
     except urllib.error.HTTPError as exc:
         return {"_status": exc.code, "_body": exc.read().decode(errors="replace")}
 
