@@ -330,8 +330,6 @@ services:
       - TZ=${TZ:-Europe/Zurich}
       - 'OPENSEARCH_HOSTS=["http://isms-core-opensearch:9200"]'
       - DISABLE_SECURITY_DASHBOARDS_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-true}
-      - 'theme:darkMode=true'
-      - 'theme:version=v7'
       - SERVER_BASEPATH=
       - SERVER_REWRITEBASEPATH=false
     ports:

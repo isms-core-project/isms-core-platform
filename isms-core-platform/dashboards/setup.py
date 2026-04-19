@@ -216,6 +216,20 @@ def wait_for_dashboards(retries: int = 60, delay: float = 3.0):
     raise SystemExit("Dashboards did not become ready in time.")
 
 
+def set_dark_mode():
+    # theme:darkMode cannot be set via env var or opensearch_dashboards.yml —
+    # it is a runtime UI setting that must be pushed via the settings API.
+    try:
+        _request(
+            "POST",
+            "/api/opensearch-dashboards/settings",
+            json.dumps({"changes": {"theme:darkMode": True, "theme:version": "v7"}}).encode(),
+        )
+        print("Dark mode enabled (v7 theme).", flush=True)
+    except Exception as exc:
+        print(f"WARNING: could not set dark mode: {exc}", flush=True)
+
+
 # ── Saved-object builders ─────────────────────────────────────────────────────
 
 def _ss(index_id: str) -> str:
@@ -483,8 +497,9 @@ def main():
         count = len(json.loads(fields_json))
         print(f"  {pid}: {count} fields", flush=True)
 
-    # Step 3: wait for OSD, then import everything in one call
+    # Step 3: wait for OSD, apply dark mode, then import everything in one call
     wait_for_dashboards()
+    set_dark_mode()
 
     print("\nImporting index patterns, visualizations, and dashboards...", flush=True)
     objects = build_objects(fields_by_id)
