@@ -4,14 +4,13 @@ OpenSearch Dashboards — bootstrap index patterns + sample dashboards.
 Idempotent: uses overwrite=true on import.
 
 Startup sequence:
-  1. Seed OpenSearch indices with field mappings (so OSD can discover fields)
-  2. Create index patterns via OSD Index Patterns API (triggers real field discovery)
-  3. Import OSD saved objects: visualizations, dashboards
+  1. Seed OpenSearch indices with field mappings
+  2. Read those mappings back and embed them in index-pattern saved objects
+  3. Import everything (index patterns + visualizations + dashboards) in one call
 
-Objects created:
-  Index patterns : evidence-*, audit-logs-*, connector-runs-*
-  Dashboards     : Evidence Overview, Audit Logs, Connector Health
-  Visualizations : 4 per dashboard (metric + timeline + 2 pies)
+Embedding fields directly in the saved object works on every OSD version.
+The OSD Index Patterns API and /fields/refresh endpoint are Kibana-era APIs
+that do not exist in OpenSearch Dashboards.
 """
 
 import json
@@ -82,6 +81,27 @@ INDICES = {
     },
 }
 
+# Maps ES type → (OSD type, searchable, aggregatable, readFromDocValues)
+_TYPE_MAP = {
+    "date":    ("date",    True,  True,  True),
+    "keyword": ("string",  True,  True,  True),
+    "text":    ("string",  True,  False, False),
+    "integer": ("number",  True,  True,  True),
+    "long":    ("number",  True,  True,  True),
+    "float":   ("number",  True,  True,  True),
+    "double":  ("number",  True,  True,  True),
+    "boolean": ("boolean", True,  True,  True),
+    "ip":      ("ip",      True,  True,  True),
+}
+
+_META_FIELDS = [
+    {"name": "_id",     "type": "string",  "esTypes": ["_id"],     "searchable": True,  "aggregatable": False, "readFromDocValues": False},
+    {"name": "_index",  "type": "string",  "esTypes": ["_index"],  "searchable": True,  "aggregatable": False, "readFromDocValues": False},
+    {"name": "_score",  "type": "number",  "esTypes": [],          "searchable": False, "aggregatable": False, "readFromDocValues": False},
+    {"name": "_source", "type": "_source", "esTypes": ["_source"], "searchable": False, "aggregatable": False, "readFromDocValues": False},
+    {"name": "_type",   "type": "string",  "esTypes": ["_type"],   "searchable": True,  "aggregatable": True,  "readFromDocValues": False},
+]
+
 
 def _os_request(method: str, path: str, body: dict = None):
     url = f"{OPENSEARCH_URL}{path}"
@@ -98,7 +118,6 @@ def _os_request(method: str, path: str, body: dict = None):
 def seed_opensearch_indices():
     print("Seeding OpenSearch indices with field mappings...", flush=True)
     for name, body in INDICES.items():
-        # Check if already exists
         check = _os_request("HEAD", f"/{name}")
         if isinstance(check, dict) and check.get("_status") == 404:
             result = _os_request("PUT", f"/{name}", body)
@@ -108,6 +127,58 @@ def seed_opensearch_indices():
                 print(f"  WARNING creating {name}: {result}", flush=True)
         else:
             print(f"  exists:  {name}", flush=True)
+
+
+def get_osd_fields(alias_name: str) -> str:
+    """Read the OpenSearch mapping for an alias and return OSD-format fields JSON.
+
+    Embedding this in the index-pattern saved object means OSD knows every
+    field immediately — no post-import refresh call needed, no version-specific
+    API dependency.
+    """
+    result = _os_request("GET", f"/{alias_name}/_mapping")
+    props = {}
+    for idx_data in result.values():
+        props = idx_data.get("mappings", {}).get("properties", {})
+        break
+
+    fields = list(_META_FIELDS)
+    for field_name, field_def in props.items():
+        es_type = field_def.get("type", "keyword")
+        osd_type, searchable, aggregatable, rfdv = _TYPE_MAP.get(
+            es_type, ("string", True, True, True)
+        )
+        fields.append({
+            "name": field_name,
+            "type": osd_type,
+            "esTypes": [es_type],
+            "searchable": searchable,
+            "aggregatable": aggregatable,
+            "readFromDocValues": rfdv,
+            "count": 0,
+            "scripted": False,
+            "indexed": True,
+        })
+        # Add .keyword subfield for text fields that have one
+        for sub_name, sub_def in field_def.get("fields", {}).items():
+            sub_es = sub_def.get("type", "keyword")
+            sub_osd, sub_s, sub_a, sub_rfdv = _TYPE_MAP.get(
+                sub_es, ("string", True, True, True)
+            )
+            fields.append({
+                "name": f"{field_name}.{sub_name}",
+                "type": sub_osd,
+                "esTypes": [sub_es],
+                "searchable": sub_s,
+                "aggregatable": sub_a,
+                "readFromDocValues": sub_rfdv,
+                "count": 0,
+                "scripted": False,
+                "indexed": True,
+                "subType": {"multi": {"parent": field_name}},
+            })
+
+    return json.dumps(fields)
 
 
 # ── OSD HTTP ──────────────────────────────────────────────────────────────────
@@ -303,32 +374,54 @@ def _dashboard(obj_id: str, title: str, panels: list) -> dict:
 
 # ── Object catalogue ──────────────────────────────────────────────────────────
 
-def build_objects() -> list:
+def build_objects(fields_by_id: dict) -> list:
+    """Build all saved objects. Index patterns include pre-populated field lists
+    read directly from OpenSearch mappings — no post-import refresh needed."""
     objs = []
 
-    # Index patterns are created separately via create_index_patterns() so OSD
-    # performs real field discovery from OpenSearch mappings (saved_objects/_import
-    # does not trigger field discovery — it stores patterns with empty field lists).
+    objs += [
+        {"type": "index-pattern", "id": "ip-evidence",
+         "attributes": {
+             "title": "evidence-*",
+             "timeFieldName": "collected_at",
+             "fields": fields_by_id.get("ip-evidence", "[]"),
+         },
+         "references": []},
+        {"type": "index-pattern", "id": "ip-audit-logs",
+         "attributes": {
+             "title": "audit-logs-*",
+             "timeFieldName": "timestamp",
+             "fields": fields_by_id.get("ip-audit-logs", "[]"),
+         },
+         "references": []},
+        {"type": "index-pattern", "id": "ip-connector-runs",
+         "attributes": {
+             "title": "connector-runs-*",
+             "timeFieldName": "started_at",
+             "fields": fields_by_id.get("ip-connector-runs", "[]"),
+         },
+         "references": []},
+    ]
 
     objs += [
         _metric("viz-ev-count",      "Evidence — Total Count",        "ip-evidence"),
         _timeline("viz-ev-time",     "Evidence — Over Time",          "ip-evidence", "collected_at"),
-        _pie("viz-ev-connector",     "Evidence — By Connector",       "ip-evidence", "connector_id.keyword"),
-        _pie("viz-ev-control",       "Evidence — By Control Group",   "ip-evidence", "control_ids.keyword"),
+        _pie("viz-ev-connector",     "Evidence — By Connector",       "ip-evidence", "connector_id"),
+        _pie("viz-ev-control",       "Evidence — By Control Group",   "ip-evidence", "control_ids"),
     ]
 
     objs += [
         _metric("viz-al-count",      "Audit Logs — Total Events",     "ip-audit-logs"),
         _timeline("viz-al-time",     "Audit Logs — Over Time",        "ip-audit-logs", "timestamp"),
-        _pie("viz-al-user",          "Audit Logs — Top Users",        "ip-audit-logs", "user_email.keyword"),
-        _pie("viz-al-action",        "Audit Logs — By Action",        "ip-audit-logs", "action.keyword"),
+        _pie("viz-al-user",          "Audit Logs — Top Users",        "ip-audit-logs", "user_email"),
+        _pie("viz-al-action",        "Audit Logs — By Action",        "ip-audit-logs", "action"),
     ]
 
     objs += [
         _metric("viz-cr-count",      "Connector Runs — Total",        "ip-connector-runs"),
         _timeline("viz-cr-time",     "Connector Runs — Over Time",    "ip-connector-runs", "started_at"),
-        _pie("viz-cr-status",        "Connector Runs — By Status",    "ip-connector-runs", "status.keyword"),
-        _pie("viz-cr-connector",     "Connector Runs — By Connector", "ip-connector-runs", "connector_name.keyword"),
+        _pie("viz-cr-status",        "Connector Runs — By Status",    "ip-connector-runs", "status"),
+        _pie("viz-cr-connector",     "Connector Runs — By Connector", "ip-connector-runs", "connector_name"),
     ]
 
     objs.append(_dashboard("dash-evidence", "ISMS CORE — Evidence Overview", [
@@ -374,51 +467,26 @@ def import_objects(objects: list) -> dict:
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-INDEX_PATTERNS = [
-    {"id": "ip-evidence",       "title": "evidence-*",       "timeFieldName": "collected_at"},
-    {"id": "ip-audit-logs",     "title": "audit-logs-*",     "timeFieldName": "timestamp"},
-    {"id": "ip-connector-runs", "title": "connector-runs-*", "timeFieldName": "started_at"},
-]
-
-
-def create_index_patterns() -> None:
-    """Create index patterns via the OSD Index Patterns API.
-
-    Unlike saved_objects/_import, this endpoint queries OpenSearch for the
-    actual field mappings at creation time — so field pickers work immediately.
-    Uses overwrite=true so it is idempotent.
-    """
-    print("Creating index patterns (with field discovery)...", flush=True)
-    for p in INDEX_PATTERNS:
-        body = json.dumps({
-            "override": True,
-            "index_pattern": {
-                "id":            p["id"],
-                "title":         p["title"],
-                "timeFieldName": p["timeFieldName"],
-            },
-        }).encode()
-        try:
-            _request("POST", "/api/index_patterns/index_pattern", data=body)
-            print(f"  created: {p['title']} ({p['id']})", flush=True)
-        except RuntimeError as exc:
-            # 400 "index pattern already exists" is fine with override=true; log others
-            print(f"  WARNING {p['title']}: {exc}", flush=True)
-
-
 def main():
-    # Step 1: seed OpenSearch indices so OSD can discover field mappings
+    # Step 1: seed OpenSearch indices
     seed_opensearch_indices()
 
-    # Step 2: wait for OSD, then create index patterns (triggers real field discovery)
+    # Step 2: read field mappings from OpenSearch to embed in index patterns
+    print("\nReading field mappings from OpenSearch...", flush=True)
+    fields_by_id = {
+        "ip-evidence":       get_osd_fields("evidence"),
+        "ip-audit-logs":     get_osd_fields("audit-logs"),
+        "ip-connector-runs": get_osd_fields("connector-runs"),
+    }
+    for pid, fields_json in fields_by_id.items():
+        count = len(json.loads(fields_json))
+        print(f"  {pid}: {count} fields", flush=True)
+
+    # Step 3: wait for OSD, then import everything in one call
     wait_for_dashboards()
 
-    print("\nCreating index patterns...", flush=True)
-    create_index_patterns()
-
-    # Step 3: import visualizations and dashboards (index patterns referenced by id)
-    print("\nImporting visualizations and dashboards...", flush=True)
-    objects = build_objects()
+    print("\nImporting index patterns, visualizations, and dashboards...", flush=True)
+    objects = build_objects(fields_by_id)
     result = import_objects(objects)
 
     success = result.get("successCount", 0)
