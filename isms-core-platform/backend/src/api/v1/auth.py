@@ -27,6 +27,7 @@ from src.schemas.users import (
     NotificationPrefsResponse,
     NotificationPrefsPatch,
 )
+from src.services.audit_service import CAT_SECURITY, SEV_INFO, SEV_WARNING, log_event
 from src.services.auth_service import authenticate_user, create_token_pair, refresh_tokens
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -51,16 +52,23 @@ def _token_response_with_cookie(tokens: dict) -> JSONResponse:
 @router.post("/login")
 @limiter.limit("10/minute")
 def login(request: Request, body: LoginRequest, db: DBSession = Depends(get_db)):
+    client_ip = request.client.host if request.client else None
     user = authenticate_user(db, body.email, body.password)
     if not user:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid email or password",
-        )
+        log_event(db, event_type="login.failure", category=CAT_SECURITY, severity=SEV_WARNING,
+                  actor_email=body.email, ip_address=client_ip,
+                  description=f"Failed login attempt for {body.email}")
+        db.commit()
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password")
+    log_event(db, event_type="login.success", category=CAT_SECURITY, severity=SEV_INFO,
+              user_id=user.id, actor_email=user.email, ip_address=client_ip,
+              description=f"User {user.email} logged in")
     if user.mfa_enabled:
+        db.commit()
         from src.services.mfa_service import create_mfa_token
         mfa_token = create_mfa_token(user.id)
         return MfaLoginResponse(mfa_token=mfa_token)
+    db.commit()
     return _token_response_with_cookie(create_token_pair(user))
 
 
@@ -254,6 +262,9 @@ def mfa_enable(
     current_user.mfa_enabled = True
     current_user.mfa_backup_codes = hashed_codes
     db.add(current_user)
+    log_event(db, event_type="user.mfa_enabled", category=CAT_SECURITY, severity=SEV_INFO,
+              user_id=current_user.id, actor_email=current_user.email,
+              description=f"MFA enabled for {current_user.email}")
     db.commit()
 
     return MfaEnableResponse(backup_codes=plain_codes)
@@ -277,6 +288,9 @@ def mfa_disable(
     current_user.mfa_secret = None
     current_user.mfa_backup_codes = []
     db.add(current_user)
+    log_event(db, event_type="user.mfa_disabled", category=CAT_SECURITY, severity=SEV_WARNING,
+              user_id=current_user.id, actor_email=current_user.email,
+              description=f"MFA disabled for {current_user.email}")
     db.commit()
 
 
@@ -306,13 +320,26 @@ def mfa_verify(
     code = body.code.strip().upper()
     is_backup = "-" in code
 
+    client_ip = request.client.host if request.client else None
     if is_backup:
         if not verify_backup_code(user, code, db):
+            log_event(db, event_type="login.mfa_failure", category=CAT_SECURITY, severity=SEV_WARNING,
+                      user_id=user.id, actor_email=user.email, ip_address=client_ip,
+                      description="Invalid MFA backup code")
+            db.commit()
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid backup code")
     else:
         if not verify_totp(user.mfa_secret, code):
+            log_event(db, event_type="login.mfa_failure", category=CAT_SECURITY, severity=SEV_WARNING,
+                      user_id=user.id, actor_email=user.email, ip_address=client_ip,
+                      description="Invalid MFA TOTP code")
+            db.commit()
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid TOTP code")
 
+    log_event(db, event_type="login.mfa_success", category=CAT_SECURITY, severity=SEV_INFO,
+              user_id=user.id, actor_email=user.email, ip_address=client_ip,
+              description=f"User {user.email} completed MFA login")
+    db.commit()
     return _token_response_with_cookie(create_token_pair(user))
 
 

@@ -89,14 +89,16 @@ services:
 
   isms-core-opensearch:
     profiles: [opensearch-single]
-    image: opensearchproject/opensearch:3
+    build:
+      context: ./opensearch
+      dockerfile: Dockerfile
     container_name: isms-core-opensearch
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - discovery.type=single-node
       - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-true}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
-      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g}
+      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true
       - bootstrap.memory_lock=true
       - logger.org.opensearch.discovery=ERROR
     volumes:
@@ -125,7 +127,9 @@ services:
   # discovery.seed_hosts excludes self (mirrors reference pattern).
 
   isms-core-opensearch-node1:
-    image: opensearchproject/opensearch:3
+    build:
+      context: ./opensearch
+      dockerfile: Dockerfile
     container_name: isms-core-opensearch-node1
     profiles: [opensearch-cluster]
     environment:
@@ -136,7 +140,7 @@ services:
       - cluster.initial_master_nodes=isms-core-opensearch-node1,isms-core-opensearch-node2,isms-core-opensearch-node3
       - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-true}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
-      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g}
+      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true
       - bootstrap.memory_lock=true
       - logger.org.opensearch.discovery=ERROR
     volumes:
@@ -161,7 +165,9 @@ services:
           - isms-core-opensearch  # same alias as single-node — URL unchanged
 
   isms-core-opensearch-node2:
-    image: opensearchproject/opensearch:3
+    build:
+      context: ./opensearch
+      dockerfile: Dockerfile
     container_name: isms-core-opensearch-node2
     profiles: [opensearch-cluster]
     environment:
@@ -172,7 +178,7 @@ services:
       - cluster.initial_master_nodes=isms-core-opensearch-node1,isms-core-opensearch-node2,isms-core-opensearch-node3
       - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-true}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
-      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g}
+      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true
       - bootstrap.memory_lock=true
       - logger.org.opensearch.discovery=ERROR
     volumes:
@@ -195,7 +201,9 @@ services:
       - isms-core-network
 
   isms-core-opensearch-node3:
-    image: opensearchproject/opensearch:3
+    build:
+      context: ./opensearch
+      dockerfile: Dockerfile
     container_name: isms-core-opensearch-node3
     profiles: [opensearch-cluster]
     environment:
@@ -206,7 +214,7 @@ services:
       - cluster.initial_master_nodes=isms-core-opensearch-node1,isms-core-opensearch-node2,isms-core-opensearch-node3
       - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-true}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
-      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g}
+      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true
       - bootstrap.memory_lock=true
       - logger.org.opensearch.discovery=ERROR
     volumes:
@@ -315,13 +323,15 @@ services:
   # When Security plugin is enabled (Phase 5): set OPENSEARCH_USERNAME/PASSWORD.
 
   isms-core-dashboards:
-    image: opensearchproject/opensearch-dashboards:3
+    image: opensearchproject/opensearch-dashboards:latest
     container_name: isms-core-dashboards
     profiles: [dashboards]
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - 'OPENSEARCH_HOSTS=["http://isms-core-opensearch:9200"]'
       - DISABLE_SECURITY_DASHBOARDS_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-true}
+      - 'theme:darkMode=true'
+      - 'theme:version=v7'
       - SERVER_BASEPATH=
       - SERVER_REWRITEBASEPATH=false
     ports:

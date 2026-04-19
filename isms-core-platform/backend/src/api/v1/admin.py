@@ -38,6 +38,7 @@ from src.core.security import hash_password
 from src.schemas.search import SearchStatus
 from src.schemas.system import AuditLogPage, AuditLogRead, LoadHistoryRead, ServiceHealth, SysInfoResponse, SystemStatus
 from src.services import qa_service
+from src.services.audit_service import CAT_SECURITY, SEV_INFO, SEV_WARNING, log_event
 from src.schemas.users import UserCreate, UserPatch, UserRead
 from src.services import search_service
 from src.services.loader_service import load_all_bundles
@@ -944,6 +945,10 @@ def create_user(
         db.rollback()
         raise HTTPException(status_code=409, detail="User already exists")
     db.refresh(user)
+    log_event(db, event_type="user.created", category=CAT_SECURITY, severity=SEV_INFO,
+              target_type="user", target_id=str(user.id),
+              description=f"User {user.email} created with role {user.role.value}")
+    db.commit()
     from src.schemas.users import UserRead as _UserRead
     return _UserRead.from_orm_with_org(user)
 
@@ -1001,6 +1006,10 @@ def update_user(
             raise HTTPException(status_code=404, detail="Target organisation not found.")
         user.organisation_id = body.organisation_id
 
+    log_event(db, event_type="user.updated", category=CAT_SECURITY, severity=SEV_INFO,
+              user_id=current_user.id, actor_email=current_user.email,
+              target_type="user", target_id=user_id,
+              description=f"User {user.email} updated by {current_user.email}")
     db.commit()
     db.refresh(user)
     return _UserRead.from_orm_with_org(user)
@@ -1029,7 +1038,12 @@ def delete_user(
     if current_user.role != UserRole.SUPER_ADMIN and user.organisation_id != current_user.organisation_id:
         raise HTTPException(status_code=404, detail="User not found")
 
+    email = user.email
     db.delete(user)
+    log_event(db, event_type="user.deleted", category=CAT_SECURITY, severity=SEV_WARNING,
+              user_id=current_user.id, actor_email=current_user.email,
+              target_type="user", target_id=user_id,
+              description=f"User {email} deleted by {current_user.email}")
     db.commit()
 
 
@@ -1059,6 +1073,10 @@ def reset_user_mfa(
     user.mfa_enabled = False
     user.mfa_secret = None
     user.mfa_backup_codes = []
+    log_event(db, event_type="user.mfa_reset", category=CAT_SECURITY, severity=SEV_WARNING,
+              user_id=current_user.id, actor_email=current_user.email,
+              target_type="user", target_id=user_id,
+              description=f"MFA reset for {user.email} by admin {current_user.email}")
     db.commit()
 
 

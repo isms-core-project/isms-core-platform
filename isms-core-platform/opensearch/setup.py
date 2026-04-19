@@ -105,6 +105,7 @@ def register_snapshot_repository():
             "endpoint": GARAGE_ENDPOINT.removeprefix("http://").removeprefix("https://"),
             "protocol": "http" if GARAGE_ENDPOINT.startswith("http://") else "https",
             "path_style_access": True,
+            "region": "garage",
             "access_key": GARAGE_ACCESS_KEY,
             "secret_key": GARAGE_SECRET_KEY,
             "compress": True,
