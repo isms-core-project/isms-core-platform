@@ -240,7 +240,7 @@ services:
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
-      - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-}
+      - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-http://isms-core-garage:3900}
       - GARAGE_ACCESS_KEY=${GARAGE_ACCESS_KEY:-}
       - GARAGE_SECRET_KEY=${GARAGE_SECRET_KEY:-}
       - GARAGE_BUCKET_SNAPSHOTS=${GARAGE_BUCKET_SNAPSHOTS:-isms-snapshots}
