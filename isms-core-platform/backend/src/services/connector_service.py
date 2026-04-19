@@ -158,6 +158,33 @@ def _resolve_control_group(db: DBSession, group_code: str) -> ControlGroup | Non
     ).scalar_one_or_none()
 
 
+def _index_connector_run(
+    connector: Connector,
+    started_at: datetime,
+    evidence_count: int,
+    errors: int,
+) -> None:
+    """Write a connector run record to the OpenSearch connector-runs alias (non-fatal)."""
+    try:
+        from opensearchpy import OpenSearch
+        s = get_settings()
+        client = OpenSearch(hosts=[s.opensearch_url], use_ssl=False, verify_certs=False)
+        finished_at = datetime.now(timezone.utc)
+        doc = {
+            "started_at":      started_at.isoformat(),
+            "finished_at":     finished_at.isoformat(),
+            "connector_name":  connector.name,
+            "connector_id":    str(connector.id),
+            "org_id":          connector.organisation_id,
+            "status":          "error" if errors and not evidence_count else "success",
+            "evidence_count":  evidence_count,
+            "error_message":   f"{errors} item(s) failed" if errors else "",
+        }
+        client.index(index="connector-runs", body=doc)
+    except Exception as exc:
+        logger.debug("OpenSearch connector-runs index failed (non-fatal): %s", exc)
+
+
 def ingest_evidence(
     db: DBSession,
     connector: Connector,
@@ -165,6 +192,7 @@ def ingest_evidence(
 ) -> dict:
     """Bulk-ingest evidence items from a connector. Returns accepted/skipped/errors counts."""
     accepted = skipped = errors = 0
+    started_at = datetime.now(timezone.utc)
 
     # Lazy-init OpenSearch store once per call (v2 only)
     os_store = None
@@ -236,6 +264,11 @@ def ingest_evidence(
         db.commit()
 
     logger.info("Connector %s ingest: accepted=%d skipped=%d errors=%d", connector.name, accepted, skipped, errors)
+
+    # Write connector run record to OpenSearch (non-fatal)
+    if os_store:
+        _index_connector_run(connector, started_at, accepted, errors)
+
     return {"accepted": accepted, "skipped": skipped, "errors": errors}
 
 
@@ -247,6 +280,9 @@ def report_error(db: DBSession, connector: Connector, message: str) -> None:
     connector.last_error_at = now
     db.commit()
     logger.warning("Connector %s reported error: %s", connector.name, message[:200])
+
+    if get_settings().evidence_store == "opensearch":
+        _index_connector_run(connector, now, 0, 1)
 
     # Notify only on first error or if 24 h have passed since last notification
     is_first = prev_error_at is None

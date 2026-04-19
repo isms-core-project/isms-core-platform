@@ -27,6 +27,7 @@ Usage:
 
 import logging
 import uuid
+from datetime import datetime, timezone
 from typing import Any
 
 from sqlalchemy.orm import Session as DBSession
@@ -34,6 +35,29 @@ from sqlalchemy.orm import Session as DBSession
 from src.domain.system import AuditLog
 
 logger = logging.getLogger(__name__)
+
+
+def _index_to_opensearch(entry: AuditLog, org_id: int | None = None) -> None:
+    """Write audit event to OpenSearch audit-logs alias (non-fatal, fire-and-forget)."""
+    try:
+        from src.core.config import get_settings
+        if get_settings().evidence_store != "opensearch":
+            return
+        from opensearchpy import OpenSearch
+        s = get_settings()
+        client = OpenSearch(hosts=[s.opensearch_url], use_ssl=False, verify_certs=False)
+        doc = {
+            "timestamp":     (entry.created_at or datetime.now(timezone.utc)).isoformat(),
+            "action":        entry.event_type,
+            "user_email":    entry.actor_email or "",
+            "resource_type": entry.target_type or "",
+            "resource_id":   str(entry.target_id) if entry.target_id else "",
+            "org_id":        org_id or 0,
+            "ip_address":    entry.ip_address or None,
+        }
+        client.index(index="audit-logs", body=doc)
+    except Exception as exc:
+        logger.debug("OpenSearch audit index failed (non-fatal): %s", exc)
 
 # ---------------------------------------------------------------------------
 # Category and severity constants — use these rather than bare strings
@@ -61,6 +85,7 @@ def log_event(
     ip_address: str | None = None,
     user_agent: str | None = None,
     metadata: dict[str, Any] | None = None,
+    org_id: int | None = None,
 ) -> None:
     """Write one audit log entry.
 
@@ -101,4 +126,5 @@ def log_event(
         metadata_=metadata or {},
     )
     db.add(entry)
+    _index_to_opensearch(entry, org_id=org_id)
     # Caller is responsible for db.commit() after their own changes
