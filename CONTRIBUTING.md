@@ -354,10 +354,10 @@ Each stage operates under **purpose-built instruction sets** authored by The ISM
 
 <p align="center">
   <img src="https://img.shields.io/badge/Claude_Code-Sonnet_4.6-CC785C?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code Sonnet"/>
-  <img src="https://img.shields.io/badge/Dec_2025–Feb_2026-6_Weeks-2E8B57?style=for-the-badge" alt="6 Weeks"/>
+  <img src="https://img.shields.io/badge/Dec_2025–Ongoing-Continuous-2E8B57?style=for-the-badge" alt="Ongoing"/>
 </p>
 
-Claude Code (Anthropic, Sonnet model family) has been the primary implementation partner on ISMS CORE since December 31, 2025. Working in continuous pairing sessions directed by The ISMS Core Project — who authored all methodology, architectural decisions, prompt instruction sets, and multi-model orchestration — Claude Code delivered the full automation layer, wrote and refined all documentation, and built the factory infrastructure that makes this project maintainable.
+Claude Code (Anthropic, Sonnet model family) has been the primary implementation partner on ISMS CORE since December 31, 2025, and the collaboration is ongoing. Working in continuous pairing sessions directed by The ISMS Core Project — who authored all methodology, architectural decisions, prompt instruction sets, and multi-model orchestration — Claude Code delivered the full automation layer, wrote and refined all documentation, and built the factory infrastructure that makes this project maintainable.
 
 ### What was built
 
