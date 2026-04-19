@@ -528,6 +528,8 @@ docker compose --profile mailpit up -d
 
 The standard stack runs a single OpenSearch node (`isms-core-opensearch`). For production deployments with higher search capacity or HA requirements, activate the 3-node cluster profile. OpenSearch Dashboards can be added independently of the cluster profile.
 
+> **⚠️ Set your `.env` BEFORE running any profile command.** Docker Compose reads `.env` at startup — variables set after the stack is running have no effect until you restart the affected containers.
+
 ### Hardware sizing
 
 | Profile | Min RAM | Recommended |
@@ -535,9 +537,11 @@ The standard stack runs a single OpenSearch node (`isms-core-opensearch`). For p
 | Single node (default) | 6 GB total | 8 GB |
 | 3-node cluster | 16 GB total | 32 GB (4 GB heap × 3 nodes) |
 
-For a 32 GB host, set `OPENSEARCH_HEAP=4g` in `.env` — each of the three nodes gets 4 GB heap (12 GB total). The rule of thumb is heap ≤ 50% of RAM assigned to OpenSearch, no more than 31 GB.
+The rule of thumb for OpenSearch heap: ≤ 50% of RAM assigned to OpenSearch, never more than 31 GB per node.
 
 ### Option A — Standard (single OpenSearch node, no Dashboards)
+
+No `.env` changes required beyond the base setup. Run:
 
 ```bash
 docker compose up -d
@@ -547,10 +551,13 @@ Expected `docker compose ps` output: 10 containers — `isms-core-opensearch` is
 
 ### Option B — 3-node cluster, no Dashboards
 
-```bash
-# .env — set heap per node before starting
-OPENSEARCH_HEAP=4g
+**Step 1 — set in `.env`:**
+```env
+OPENSEARCH_HEAP=4g      # heap per node — adjust to your RAM (e.g. 2g for 16 GB host, 4g for 32 GB host)
+```
 
+**Step 2 — start the stack:**
+```bash
 docker compose --profile opensearch-cluster up -d
 ```
 
@@ -572,28 +579,33 @@ isms-core-feeds             Up (healthy)
 isms-core-beat              Up
 ```
 
-> `isms-core-os01` is the elected cluster manager. All three nodes form a single cluster named `isms-core-cluster`. The backend connects to `isms-core-os01:9200` — no config change needed.
+> `isms-core-os01` is the elected cluster manager. All three nodes form a single cluster named `isms-core-cluster`. The backend connects to `isms-core-os01:9200` — no backend config change needed.
 
 ### Option C — 3-node cluster + OpenSearch Dashboards
 
-```bash
-OPENSEARCH_HEAP=4g
+**Step 1 — set in `.env`:**
+```env
+OPENSEARCH_HEAP=4g          # heap per node
+DASHBOARDS_BIND=0.0.0.0     # expose Dashboards on LAN (127.0.0.1 = localhost only)
+```
 
+**Step 2 — start the stack:**
+```bash
 docker compose --profile opensearch-cluster --profile dashboards up -d
 ```
 
-This adds a 13th container: `isms-core-opensearch-dashboards` on port 5601.
-
-To reach Dashboards from a browser on the LAN, set in `.env`:
-```env
-DASHBOARDS_BIND=0.0.0.0
-```
-Then open `http://{HOST_IP}:5601`. No login required when `OPENSEARCH_DISABLE_SECURITY=true` (default).
+This adds a 13th container: `isms-core-opensearch-dashboards`. Open `http://{HOST_IP}:5601` in a browser. No login required when `OPENSEARCH_DISABLE_SECURITY=true` (default).
 
 > Dashboards is for infrastructure monitoring and index inspection. The platform WebUI at `https://{HOST_IP}` does not depend on it.
 
 ### Option D — Dashboards only (single node + Dashboards, no cluster)
 
+**Step 1 — set in `.env`:**
+```env
+DASHBOARDS_BIND=0.0.0.0     # expose Dashboards on LAN (127.0.0.1 = localhost only)
+```
+
+**Step 2 — start the stack:**
 ```bash
 docker compose --profile dashboards up -d
 ```
@@ -604,20 +616,35 @@ Adds `isms-core-opensearch-dashboards` against the standard single `isms-core-op
 
 Garage is an optional S3-compatible store for evidence files and index snapshots. It runs independently of the OpenSearch profile choice.
 
+**Step 1 — generate secrets and set in `.env`:**
 ```bash
-# Generate secrets first:
-openssl rand -hex 32   # → GARAGE_RPC_SECRET
-python3 -c "import secrets; print('GK'+secrets.token_hex(12))"   # → GARAGE_ACCESS_KEY
-python3 -c "import secrets; print(secrets.token_hex(32))"        # → GARAGE_SECRET_KEY
+openssl rand -hex 32
+# → paste result as GARAGE_RPC_SECRET
 
-# Start with Garage:
+python3 -c "import secrets; print('GK'+secrets.token_hex(12))"
+# → paste result as GARAGE_ACCESS_KEY  (must be GK + 24 hex chars)
+
+python3 -c "import secrets; print(secrets.token_hex(32))"
+# → paste result as GARAGE_SECRET_KEY  (must be 64 hex chars)
+```
+
+```env
+GARAGE_RPC_SECRET=<generated above>
+GARAGE_ACCESS_KEY=<generated above>
+GARAGE_SECRET_KEY=<generated above>
+GARAGE_BIND=127.0.0.1   # set to 0.0.0.0 only if external S3 access is needed
+```
+
+**Step 2 — start the stack:**
+```bash
+# Garage only (standard single-node OpenSearch):
 docker compose --profile garage up -d
 
 # Combined: cluster + dashboards + garage
 docker compose --profile opensearch-cluster --profile dashboards --profile garage up -d
 ```
 
-Garage initialises its buckets (`isms-evidence`, `isms-snapshots`, `isms-exports`) automatically on first boot via `garage/setup.py`. S3 API listens on port 3900 (localhost-only by default — set `GARAGE_BIND=0.0.0.0` to expose on LAN).
+Garage initialises its buckets (`isms-evidence`, `isms-snapshots`, `isms-exports`) automatically on first boot via `garage/setup.py`. The S3 API listens on port 3900.
 
 ---
 
