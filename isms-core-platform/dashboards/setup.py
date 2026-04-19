@@ -5,7 +5,8 @@ Idempotent: uses overwrite=true on import.
 
 Startup sequence:
   1. Seed OpenSearch indices with field mappings (so OSD can discover fields)
-  2. Import OSD saved objects: index patterns, visualizations, dashboards
+  2. Create index patterns via OSD Index Patterns API (triggers real field discovery)
+  3. Import OSD saved objects: visualizations, dashboards
 
 Objects created:
   Index patterns : evidence-*, audit-logs-*, connector-runs-*
@@ -28,7 +29,10 @@ OPENSEARCH_URL  = os.environ.get("OPENSEARCH_URL",  "http://isms-core-opensearch
 
 INDICES = {
     "evidence-000001": {
-        "aliases": {"evidence": {}},
+        "aliases": {"evidence": {"is_write_index": True}},
+        "settings": {
+            "index.plugins.index_state_management.rollover_alias": "evidence"
+        },
         "mappings": {
             "properties": {
                 "collected_at":    {"type": "date"},
@@ -42,7 +46,10 @@ INDICES = {
         },
     },
     "audit-logs-000001": {
-        "aliases": {"audit-logs": {}},
+        "aliases": {"audit-logs": {"is_write_index": True}},
+        "settings": {
+            "index.plugins.index_state_management.rollover_alias": "audit-logs"
+        },
         "mappings": {
             "properties": {
                 "timestamp":       {"type": "date"},
@@ -56,7 +63,10 @@ INDICES = {
         },
     },
     "connector-runs-000001": {
-        "aliases": {"connector-runs": {}},
+        "aliases": {"connector-runs": {"is_write_index": True}},
+        "settings": {
+            "index.plugins.index_state_management.rollover_alias": "connector-runs"
+        },
         "mappings": {
             "properties": {
                 "started_at":      {"type": "date"},
@@ -296,17 +306,9 @@ def _dashboard(obj_id: str, title: str, panels: list) -> dict:
 def build_objects() -> list:
     objs = []
 
-    objs += [
-        {"type": "index-pattern", "id": "ip-evidence",
-         "attributes": {"title": "evidence-*", "timeFieldName": "collected_at"},
-         "references": []},
-        {"type": "index-pattern", "id": "ip-audit-logs",
-         "attributes": {"title": "audit-logs-*", "timeFieldName": "timestamp"},
-         "references": []},
-        {"type": "index-pattern", "id": "ip-connector-runs",
-         "attributes": {"title": "connector-runs-*", "timeFieldName": "started_at"},
-         "references": []},
-    ]
+    # Index patterns are created separately via create_index_patterns() so OSD
+    # performs real field discovery from OpenSearch mappings (saved_objects/_import
+    # does not trigger field discovery — it stores patterns with empty field lists).
 
     objs += [
         _metric("viz-ev-count",      "Evidence — Total Count",        "ip-evidence"),
@@ -372,14 +374,50 @@ def import_objects(objects: list) -> dict:
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+INDEX_PATTERNS = [
+    {"id": "ip-evidence",       "title": "evidence-*",       "timeFieldName": "collected_at"},
+    {"id": "ip-audit-logs",     "title": "audit-logs-*",     "timeFieldName": "timestamp"},
+    {"id": "ip-connector-runs", "title": "connector-runs-*", "timeFieldName": "started_at"},
+]
+
+
+def create_index_patterns() -> None:
+    """Create index patterns via the OSD Index Patterns API.
+
+    Unlike saved_objects/_import, this endpoint queries OpenSearch for the
+    actual field mappings at creation time — so field pickers work immediately.
+    Uses overwrite=true so it is idempotent.
+    """
+    print("Creating index patterns (with field discovery)...", flush=True)
+    for p in INDEX_PATTERNS:
+        body = json.dumps({
+            "override": True,
+            "index_pattern": {
+                "id":            p["id"],
+                "title":         p["title"],
+                "timeFieldName": p["timeFieldName"],
+            },
+        }).encode()
+        try:
+            _request("POST", "/api/index_patterns/index_pattern", data=body)
+            print(f"  created: {p['title']} ({p['id']})", flush=True)
+        except RuntimeError as exc:
+            # 400 "index pattern already exists" is fine with override=true; log others
+            print(f"  WARNING {p['title']}: {exc}", flush=True)
+
+
 def main():
     # Step 1: seed OpenSearch indices so OSD can discover field mappings
     seed_opensearch_indices()
 
-    # Step 2: wait for OSD, then import saved objects
+    # Step 2: wait for OSD, then create index patterns (triggers real field discovery)
     wait_for_dashboards()
 
-    print("\nImporting index patterns, visualizations, and dashboards...", flush=True)
+    print("\nCreating index patterns...", flush=True)
+    create_index_patterns()
+
+    # Step 3: import visualizations and dashboards (index patterns referenced by id)
+    print("\nImporting visualizations and dashboards...", flush=True)
     objects = build_objects()
     result = import_objects(objects)
 
