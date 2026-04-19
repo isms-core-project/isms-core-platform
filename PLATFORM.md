@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <em>Four products. One platform. All live.</em>
+  <em>Five products. One platform. All live.</em>
 </p>
 
 ---
@@ -118,9 +118,19 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 
 ---
 
-> **Enterprise v2 — In Development**
+> **Enterprise Deployment Profiles**
 >
-> An enterprise edition is currently in development that replaces PostgreSQL as the evidence store with a dedicated OpenSearch cluster (1-node default, optional 3-node profile) and adds Garage S3 object storage for evidence files and index snapshots. The v1.0 architecture documented here remains the production baseline. Enterprise v2 will be available as a separate deployment profile on the same codebase — no configuration changes for existing v1.0 deployments.
+> The platform ships with optional compose profiles that add enterprise-grade storage and observability on top of the standard ten-service stack. All profiles are additive — the standard stack runs unchanged when no profile is specified.
+>
+> | Profile flag | What it adds |
+> |---|---|
+> | `--profile opensearch-cluster` | Replaces the single OpenSearch node with a 3-node cluster (`isms-core-os01/02/03`) for HA and horizontal search capacity. Set `OPENSEARCH_HEAP` per node (e.g. `4g` for 3×4 GB on a 32 GB host). |
+> | `--profile garage` | Adds `isms-core-garage` — a Garage S3-compatible object store for evidence files and index snapshots. Requires `GARAGE_RPC_SECRET`, `GARAGE_ACCESS_KEY`, `GARAGE_SECRET_KEY`. |
+> | `--profile dashboards` | Adds `isms-core-opensearch-dashboards` (port 5601). Set `DASHBOARDS_BIND=0.0.0.0` to reach it from the LAN. |
+> | `--profile smtp-bridge` | Adds `isms-core-smtp-bridge` — an OAuth relay for Microsoft 365 / Exchange Online. Requires `SMTP_BRIDGE_*` credentials. |
+> | `--profile mailpit` | Adds `isms-core-mailpit` — local mail catcher for dev/test (port 8025). Never use in production. |
+>
+> **Evidence Storage Backend (`EVIDENCE_STORE`):** defaults to `postgres` (all evidence in PostgreSQL). Setting to `opensearch` routes evidence through OpenSearch and files through Garage S3 — requires both profiles above. The default postgres backend is fully supported and recommended for most deployments.
 
 ---
 
@@ -135,7 +145,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Gaps** | Identified compliance gaps with severity, owner, SLA, and remediation tracking |
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
-| **Frameworks** | 37 reference datasets: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v18, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS, UK Operational Resilience, FINMA, COBIT 2019, and more |
+| **Frameworks** | 37 reference datasets: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v18 (v19 upgrade planned — see Phase 35), GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS, UK Operational Resilience, FINMA, COBIT 2019, and more |
 | **Crosswalk Mappings** | Cross-framework relationships: 3,915+ mappings — including NIST AI RMF 1.0 ↔ EU AI Act (72 mappings), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51), Swiss ISG (40), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
 | **Compliance Assessments** | 23 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) for full coverage |
@@ -231,7 +241,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Country Localisation** | Policy rendering adapts regulatory references for 8 jurisdictions: CH (default), FR, BE, LU, DE, AT, IT, GB — applied at request time from `org.country` |
 | **Cross-Framework Coverage** | BFS inference maps ISO 27001 assessment coverage to NIS2, DORA, and GDPR; Mapping Matrix and Inferred Coverage tabs |
 | **MFA** | TOTP-based 2FA — Google Authenticator / Authy compatible; QR code setup; 8 single-use backup codes; auto-submits on 6-digit entry |
-| **Threat Intelligence Feeds** | Dedicated `isms-core-feeds` container pulling 6 sources: MITRE ATT&CK v18 (weekly), MITRE ATLAS (weekly), CISA KEV (daily), FIRST EPSS (daily), NVD CVE full+delta (weekly/daily — ~250K CVEs into OpenSearch), NVD CPE Option B (weekly). EPSS and KEV denormalised into CVE docs at index time. |
+| **Threat Intelligence Feeds** | Dedicated `isms-core-feeds` container pulling 6 sources: MITRE ATT&CK v18 (weekly — v19 upgrade planned), MITRE ATLAS (weekly), CISA KEV (daily), FIRST EPSS (daily), NVD CVE full+delta (weekly/daily — ~250K CVEs into OpenSearch), NVD CPE Option B (weekly). EPSS and KEV denormalised into CVE docs at index time. |
 | **CVE / CPE Explorer** | Search and filter ~250K NVD CVE entries by severity, EPSS score, year, KEV-only. Detail panel: CVSS scores, CPE applicability, CWEs, NVD references. Separate CPE tab. |
 | **KEV Audit Report (A.8.8)** | Audit trail for ISO 27001:2022 A.8.8 using CISA KEV feed — remediation status by CVE, per-vendor summary, CSV export for auditor evidence. |
 | **Health Alert Banner** | Dismissible warning banner when any feed run, connector sync, or OpenSearch check reports an error in the last 24 hours. Red-dot sidebar badges on Intelligence and Suppliers groups. |
@@ -387,6 +397,7 @@ volumes:
   - ../isms-core-operational:/app/isms-operational:ro
   # - ../isms-core-privacy:/app/isms-privacy:ro       # comment out = not imported
   # - ../isms-core-cloud:/app/isms-cloud:ro
+  # - ../isms-core-ai:/app/isms-ai:ro
   - ../isms-core-external:/app/isms-external:ro       # optional — your own docs
 ```
 
@@ -513,7 +524,104 @@ docker compose --profile mailpit up -d
 
 ---
 
-## Day 2 Operations
+## Enterprise Deployment — OpenSearch Cluster + Dashboards
+
+The standard stack runs a single OpenSearch node (`isms-core-opensearch`). For production deployments with higher search capacity or HA requirements, activate the 3-node cluster profile. OpenSearch Dashboards can be added independently of the cluster profile.
+
+### Hardware sizing
+
+| Profile | Min RAM | Recommended |
+|---------|---------|-------------|
+| Single node (default) | 6 GB total | 8 GB |
+| 3-node cluster | 16 GB total | 32 GB (4 GB heap × 3 nodes) |
+
+For a 32 GB host, set `OPENSEARCH_HEAP=4g` in `.env` — each of the three nodes gets 4 GB heap (12 GB total). The rule of thumb is heap ≤ 50% of RAM assigned to OpenSearch, no more than 31 GB.
+
+### Option A — Standard (single OpenSearch node, no Dashboards)
+
+```bash
+docker compose up -d
+```
+
+Expected `docker compose ps` output: 10 containers — `isms-core-opensearch` is the single search node.
+
+### Option B — 3-node cluster, no Dashboards
+
+```bash
+# .env — set heap per node before starting
+OPENSEARCH_HEAP=4g
+
+docker compose --profile opensearch-cluster up -d
+```
+
+Expected output — 12 containers (`isms-core-opensearch` is replaced by three cluster nodes):
+
+```
+NAME                        STATUS
+isms-core-nginx             Up (healthy)
+isms-core-backend           Up (healthy)
+isms-core-frontend          Up (healthy)
+isms-core-postgres          Up (healthy)
+isms-core-redis             Up (healthy)
+isms-core-os01              Up (healthy)
+isms-core-os02              Up (healthy)
+isms-core-os03              Up (healthy)
+isms-core-worker            Up (healthy)
+isms-core-connectors        Up (healthy)
+isms-core-feeds             Up (healthy)
+isms-core-beat              Up
+```
+
+> `isms-core-os01` is the elected cluster manager. All three nodes form a single cluster named `isms-core-cluster`. The backend connects to `isms-core-os01:9200` — no config change needed.
+
+### Option C — 3-node cluster + OpenSearch Dashboards
+
+```bash
+OPENSEARCH_HEAP=4g
+
+docker compose --profile opensearch-cluster --profile dashboards up -d
+```
+
+This adds a 13th container: `isms-core-opensearch-dashboards` on port 5601.
+
+To reach Dashboards from a browser on the LAN, set in `.env`:
+```env
+DASHBOARDS_BIND=0.0.0.0
+```
+Then open `http://{HOST_IP}:5601`. No login required when `OPENSEARCH_DISABLE_SECURITY=true` (default).
+
+> Dashboards is for infrastructure monitoring and index inspection. The platform WebUI at `https://{HOST_IP}` does not depend on it.
+
+### Option D — Dashboards only (single node + Dashboards, no cluster)
+
+```bash
+docker compose --profile dashboards up -d
+```
+
+Adds `isms-core-opensearch-dashboards` against the standard single `isms-core-opensearch` node. Useful when you want index visibility without running the full cluster.
+
+### Adding Garage S3 object storage
+
+Garage is an optional S3-compatible store for evidence files and index snapshots. It runs independently of the OpenSearch profile choice.
+
+```bash
+# Generate secrets first:
+openssl rand -hex 32   # → GARAGE_RPC_SECRET
+python3 -c "import secrets; print('GK'+secrets.token_hex(12))"   # → GARAGE_ACCESS_KEY
+python3 -c "import secrets; print(secrets.token_hex(32))"        # → GARAGE_SECRET_KEY
+
+# Start with Garage:
+docker compose --profile garage up -d
+
+# Combined: cluster + dashboards + garage
+docker compose --profile opensearch-cluster --profile dashboards --profile garage up -d
+```
+
+Garage initialises its buckets (`isms-evidence`, `isms-snapshots`, `isms-exports`) automatically on first boot via `garage/setup.py`. S3 API listens on port 3900 (localhost-only by default — set `GARAGE_BIND=0.0.0.0` to expose on LAN).
+
+---
+
+## Operations Reference
 
 ### Re-sync Content
 
@@ -548,7 +656,7 @@ docker exec isms-core-postgres \
 
 # Restore:
 docker exec -i isms-core-postgres \
-  psql -U isms_user isms_db < backup_20260314.sql
+  psql -U isms_user isms_db < backup_YYYYMMDD.sql
 ```
 
 ### Stop the Stack
@@ -649,10 +757,20 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 | `NIST_API_KEY` | No | NVD API key — removes rate-limiting on CVE/CPE downloads |
 | `MAIL_HOST` | No | SMTP host — empty = no email |
 | `MAIL_PORT` | No | SMTP port (default: 1025) |
+| `NOTIFICATION_EMAIL` | No | Override notification recipient — defaults to admin account email |
 | `SMTP_BRIDGE_TENANT_ID` | No | Azure AD tenant ID — only for `smtp-bridge` profile |
 | `SMTP_BRIDGE_CLIENT_ID` | No | Azure AD app client ID — only for `smtp-bridge` profile |
 | `SMTP_BRIDGE_CLIENT_SECRET` | No | Azure AD app secret — only for `smtp-bridge` profile |
 | `SMTP_BRIDGE_FROM_ADDRESS` | No | Sender address — only for `smtp-bridge` profile |
+| `OPENSEARCH_HEAP` | No | Heap per OpenSearch node — e.g. `1g` (default) or `4g` for 3-node cluster |
+| `OPENSEARCH_DISABLE_SECURITY` | No | Set `false` to enable OpenSearch Security plugin (requires `OPENSEARCH_ADMIN_PASSWORD`) |
+| `OPENSEARCH_ADMIN_PASSWORD` | No | Required when `OPENSEARCH_DISABLE_SECURITY=false` (OpenSearch 2.12+) |
+| `EVIDENCE_STORE` | No | `postgres` (default) or `opensearch` — see Enterprise Profiles section |
+| `GARAGE_RPC_SECRET` | No | Garage cluster secret — required for `--profile garage` |
+| `GARAGE_ACCESS_KEY` | No | Garage S3 access key — required for `--profile garage` |
+| `GARAGE_SECRET_KEY` | No | Garage S3 secret key — required for `--profile garage` |
+| `GARAGE_BUCKET_EVIDENCE` | No | Garage bucket for evidence files (default: `isms-evidence`) |
+| `DASHBOARDS_BIND` | No | Bind address for OpenSearch Dashboards — `0.0.0.0` to expose on LAN |
 
 ---
 

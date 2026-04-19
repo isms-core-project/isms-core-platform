@@ -390,7 +390,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | UK Operational Resilience | 12 requirements across 4 objectives, maturity 0–4; ISO 27001 crosswalk: 34 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-283593?style=flat-square) |
 | FINMA | Assessment module | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
 | NIST SP 800-53 Rev. 5 | Security control cross-mapping | ![Mapped](https://img.shields.io/badge/Mapped-FF6600?style=flat-square) |
-| MITRE ATT&CK v18 | Threat technique mapping (Enterprise / ICS / Mobile) — 835 techniques, EPSS + CISA KEV correlation | ![v18](https://img.shields.io/badge/v18-DC143C?style=flat-square) |
+| MITRE ATT&CK v18 | Threat technique mapping (Enterprise / ICS / Mobile) — 835 techniques, EPSS + CISA KEV correlation. v19 upgrade planned. | ![v18](https://img.shields.io/badge/v18-DC143C?style=flat-square) |
 | MITRE ATLAS | AI/ML adversarial threat techniques | ![Mapped](https://img.shields.io/badge/Mapped-DC143C?style=flat-square) |
 | EU GDPR / Swiss DSG | Security and privacy control mapping, operational checklists | ![Toolkit](https://img.shields.io/badge/Toolkit-FFD700?style=flat-square) |
 
