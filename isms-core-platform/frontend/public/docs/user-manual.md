@@ -50,7 +50,7 @@ Five product families are available:
 
 - Manage your ISMS across 99 control groups covering ISO 27001, ISO 27701, ISO 27018, and ISO 42001
 - Track control implementation status, gaps, and evidence
-- Run compliance assessments across 23 regulatory frameworks (NIS2, DORA, NIST CSF 2.0, NIST AI RMF 1.0, CSA CCM, NIST SP 800-53, and more)
+- Run compliance assessments across 24 regulatory frameworks (NIS2, DORA, NIST CSF 2.0, NIST AI RMF 1.0, CSA CCM, NIST SP 800-53, NCSC CAF v4.0, and more)
 - Collect evidence automatically via 44 integrations (Microsoft, CrowdStrike, Jira, ServiceNow, and more)
 - Monitor live threat intelligence — MITRE ATT&CK, CISA KEV, NVD CVE/CPE feeds, EPSS scores
 - Manage risks with a full 5×5 risk register and treatment workflow
@@ -221,7 +221,7 @@ Control Owners can update status for controls assigned to them. ISMS Managers ca
 
 ## Compliance Assessments {#compliance-assessments}
 
-ISMS CORE includes 23 built-in compliance assessment modules. Each module maps your ISO 27001 control posture to a specific regulatory framework.
+ISMS CORE includes 24 built-in compliance assessment modules. Each module maps your ISO 27001 control posture to a specific regulatory framework.
 
 ### Available frameworks
 
@@ -250,6 +250,7 @@ ISMS CORE includes 23 built-in compliance assessment modules. Each module maps y
 | ACN IT | Italian national cybersecurity agency |
 | UK NIS | UK network and information systems regulations |
 | UK Operational Resilience | UK FCA/PRA operational resilience |
+| NCSC CAF v4.0 | UK National Cyber Security Centre Cyber Assessment Framework — outcome-based assessment, 4 Objectives, 14 Principles, 41 Contributing Outcomes |
 
 ### Running an assessment
 
@@ -676,7 +677,7 @@ Set a review frequency — the platform notifies you when a vendor review is due
 
 ## Crosswalk & Framework Mapping {#crosswalk-framework-mapping}
 
-The Crosswalk engine automatically maps your ISO 27001:2022 controls to other frameworks using a database of 3,915 pre-built mappings.
+The Crosswalk engine automatically maps your ISO 27001:2022 controls to other frameworks using a database of 3,980 pre-built mappings.
 
 ### How it works
 
