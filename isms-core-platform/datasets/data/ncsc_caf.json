@@ -1,0 +1,1324 @@
+{
+  "bundle_id": "bundle--3a41b502-a85f-5475-939d-99ace3d62a44",
+  "bundle_type": "isms-core-dataset",
+  "bundle_version": "1.0",
+  "framework": {
+    "id": "90a43bc1-7202-5667-8184-020010bbb029",
+    "code": "NCSC_CAF",
+    "name": "NCSC Cyber Assessment Framework",
+    "version": "4.0",
+    "publisher": "National Cyber Security Centre (NCSC)",
+    "source_url": "https://www.ncsc.gov.uk/collection/caf",
+    "jurisdiction": "GB",
+    "description": "NCSC CAF v4.0 — Outcome-based cybersecurity assessment framework for operators of essential services and regulated entities in the UK. 4 Objectives, 14 Principles, 41 Contributing Outcomes, each assessed as Not Achieved / Partially Achieved / Achieved using Indicators of Good Practice (IGPs). Aligned with UK NIS Regulations (SI 2018/506) and the forthcoming Cyber Security and Resilience Bill."
+  },
+  "generated_at": "2026-04-20T00:00:00Z",
+  "generator": "gen_ncsc_caf.py",
+  "objects_count": 114,
+  "relationships_count": 55,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "d5c38459-c63a-50cc-b282-bd408af4aac9",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "control_id": "CAF-A",
+      "title": "Objective A — Managing Security Risk",
+      "description": "Organisations have an appropriate organisational understanding to inform their cyber security and risk management activities.",
+      "level": 0,
+      "sort_order": 10000,
+      "metadata": {
+        "objective": "A"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "control_id": "CAF-B",
+      "title": "Objective B — Protecting Against Cyber Attack",
+      "description": "Proportionate security measures are in place to protect network and information systems supporting essential functions from cyber attack.",
+      "level": 0,
+      "sort_order": 20000,
+      "metadata": {
+        "objective": "B"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7067620a-8f3f-574b-8670-0ed79e57d103",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "control_id": "CAF-C",
+      "title": "Objective C — Detecting Cyber Security Events",
+      "description": "Capabilities exist to ensure security defences remain effective and to detect cyber security events and incidents adversely affecting essential functions.",
+      "level": 0,
+      "sort_order": 30000,
+      "metadata": {
+        "objective": "C"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1559a09f-9c9e-56ee-8447-3f5ca1cc3e5f",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "control_id": "CAF-D",
+      "title": "Objective D — Minimising the Impact of Cyber Security Incidents",
+      "description": "Capabilities exist to minimise the adverse impact of a cyber security incident on the operation of essential functions, including the restoration of those functions where necessary.",
+      "level": 0,
+      "sort_order": 40000,
+      "metadata": {
+        "objective": "D"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4cc14555-ef50-51ff-8d25-f9a562aa58fe",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "d5c38459-c63a-50cc-b282-bd408af4aac9",
+      "control_id": "A1",
+      "title": "A1 Governance",
+      "description": "The organisation has appropriate management policies and processes in place to govern its approach to the security of network and information systems.",
+      "level": 1,
+      "sort_order": 100,
+      "metadata": {
+        "objective": "A",
+        "principle": "A1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3c8a86f8-1aee-575d-a8de-a0b951a3994e",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "4cc14555-ef50-51ff-8d25-f9a562aa58fe",
+      "control_id": "A1.a",
+      "title": "Board Direction",
+      "description": "Senior management have defined and communicate a direction and tone for cyber security across the organisation.\n\nNOT ACHIEVED — at least one of these statements is true:\nBoard or senior management have not clearly defined or communicated their direction on cyber security. No organisational strategy or policy exists. Cyber security decisions are made without senior management awareness.\n\nACHIEVED — all of these statements are true:\nBoard or senior management clearly define and communicate an acceptable level of cyber risk. A cyber security strategy or policy is in place, reviewed regularly, and reflected in investment decisions. Accountability is assigned at board level.",
+      "level": 2,
+      "sort_order": 110,
+      "metadata": {
+        "objective": "A",
+        "principle": "A1",
+        "columns": 2
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7e3ea7ea-b28b-5727-a39a-a4325e09a858",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "4cc14555-ef50-51ff-8d25-f9a562aa58fe",
+      "control_id": "A1.b",
+      "title": "Roles and Responsibilities",
+      "description": "Individuals' cyber security responsibilities are clearly defined and they are given appropriate resources and support to fulfil those responsibilities.\n\nNOT ACHIEVED — at least one of these statements is true:\nCyber security responsibilities are not clearly defined. There is no designated individual or team responsible for cyber security. Staff are unaware of their security obligations.\n\nACHIEVED — all of these statements are true:\nCyber security roles and responsibilities are clearly documented for all relevant staff. A named individual or team is accountable for cyber security. Staff receive appropriate support and resources to fulfil their security responsibilities.",
+      "level": 2,
+      "sort_order": 120,
+      "metadata": {
+        "objective": "A",
+        "principle": "A1",
+        "columns": 2
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8c6b78c7-1984-5349-8bc7-c8014f051977",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "4cc14555-ef50-51ff-8d25-f9a562aa58fe",
+      "control_id": "A1.c",
+      "title": "Decision-making",
+      "description": "There are clear processes for making and approving cyber security decisions, including those that are the responsibility of senior management.\n\nNOT ACHIEVED — at least one of these statements is true:\nThere are no clear processes for cyber security decision-making. Security decisions are made informally or reactively. Escalation paths to senior management do not exist.\n\nACHIEVED — all of these statements are true:\nCyber security decisions are made through well-defined, documented processes. Decision-making authority is clear and appropriate individuals are involved. Senior management are kept informed and approve significant security decisions.",
+      "level": 2,
+      "sort_order": 130,
+      "metadata": {
+        "objective": "A",
+        "principle": "A1",
+        "columns": 2
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f9e31591-04ad-5201-911d-122ad7a28ebc",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "d5c38459-c63a-50cc-b282-bd408af4aac9",
+      "control_id": "A2",
+      "title": "A2 Risk Management",
+      "description": "The organisation takes appropriate steps to identify, assess and understand cyber security risks to the network and information systems supporting essential function(s).",
+      "level": 1,
+      "sort_order": 230,
+      "metadata": {
+        "objective": "A",
+        "principle": "A2"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2b0f1dfb-c214-5895-9f13-2cc1c3b8bba8",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "f9e31591-04ad-5201-911d-122ad7a28ebc",
+      "control_id": "A2.a",
+      "title": "Risk Management Process",
+      "description": "The organisation has in place an appropriate set of processes to identify, assess, prioritise, and manage cyber security risks.\n\nNOT ACHIEVED — at least one of these statements is true:\nNo structured risk management process exists. Risks are not identified or assessed. Security decisions are made without reference to risk.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nA risk management process is in place and covers the most significant cyber risks. Risks are reviewed following major incidents or changes. Risk appetite is partially defined.\n\nACHIEVED — all of these statements are true:\nA comprehensive, documented risk management process is embedded. All significant cyber risks are identified, assessed, prioritised, and tracked. Risk appetite is clearly defined and approved by senior management. Risks are reviewed regularly and after significant events.",
+      "level": 2,
+      "sort_order": 240,
+      "metadata": {
+        "objective": "A",
+        "principle": "A2",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "69979544-ce82-5e20-b282-1fb94db62541",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "f9e31591-04ad-5201-911d-122ad7a28ebc",
+      "control_id": "A2.b",
+      "title": "Understanding Threats",
+      "description": "The organisation has a clear understanding of the cyber threats it faces in order to appropriately assess the associated cyber security risks.\n\nNOT ACHIEVED — at least one of these statements is true:\nThe organisation has no structured approach to understanding the threats it faces. Threat sources and attack patterns relevant to the essential function are not considered.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nThe organisation has some understanding of relevant threats and uses this to inform risk assessments. Threat intelligence is used reactively following incidents or sector alerts.\n\nACHIEVED — all of these statements are true:\nThe organisation maintains a current, detailed understanding of threats relevant to its essential function. Threat intelligence is sourced systematically (including sector-specific sources), used proactively to update risk assessments, and informs security investment decisions.",
+      "level": 2,
+      "sort_order": 250,
+      "metadata": {
+        "objective": "A",
+        "principle": "A2",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fe4f13e8-a8ee-516a-b0e6-43c8ec1df536",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "f9e31591-04ad-5201-911d-122ad7a28ebc",
+      "control_id": "A2.c",
+      "title": "Assurance",
+      "description": "The organisation has sought assurance about the effectiveness of the cyber security of the network and information systems supporting essential function(s).\n\nNOT ACHIEVED — at least one of these statements is true:\nNo assurance activities are carried out. The organisation has no understanding of whether its cyber security measures are effective.\n\nACHIEVED — all of these statements are true:\nRegular, proportionate assurance activities (e.g. audits, penetration tests, reviews) are planned and carried out. Findings are used to improve security. Senior management receive assurance outcomes. External assurance is used where appropriate.",
+      "level": 2,
+      "sort_order": 260,
+      "metadata": {
+        "objective": "A",
+        "principle": "A2",
+        "columns": 2
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "903066f6-27ce-5b7d-a2b6-3cb3adae65ce",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "d5c38459-c63a-50cc-b282-bd408af4aac9",
+      "control_id": "A3",
+      "title": "A3 Asset Management",
+      "description": "Everything required to deliver, maintain, or support network and information systems necessary for the essential function(s) are subject to asset management.",
+      "level": 1,
+      "sort_order": 360,
+      "metadata": {
+        "objective": "A",
+        "principle": "A3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "46e27312-231b-5f42-abf5-819f2d974b75",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "903066f6-27ce-5b7d-a2b6-3cb3adae65ce",
+      "control_id": "A3.a",
+      "title": "Asset Management",
+      "description": "The organisation maintains a comprehensive, up-to-date inventory of all assets that support the essential function(s) and understands their security significance.\n\nNOT ACHIEVED — at least one of these statements is true:\nThere is no comprehensive asset inventory. The organisation does not know all the components of the networks and information systems supporting the essential function. Asset management is incomplete or out of date.\n\nACHIEVED — all of these statements are true:\nA current, comprehensive inventory of all assets supporting the essential function(s) is maintained. The inventory covers hardware, software, data, and network connections. Security significance and interdependencies are understood. The inventory is kept up to date through a defined process.",
+      "level": 2,
+      "sort_order": 370,
+      "metadata": {
+        "objective": "A",
+        "principle": "A3",
+        "columns": 2
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a818f2d6-fb67-5dbf-9128-f18fbc26291f",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "d5c38459-c63a-50cc-b282-bd408af4aac9",
+      "control_id": "A4",
+      "title": "A4 Supply Chain",
+      "description": "The organisation understands and manages cyber security risks to the network and information systems supporting essential function(s) that arise from dependencies on external suppliers, including outsourced services.",
+      "level": 1,
+      "sort_order": 470,
+      "metadata": {
+        "objective": "A",
+        "principle": "A4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "cefb8285-8cbd-5a3b-8c51-acf176d74848",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "a818f2d6-fb67-5dbf-9128-f18fbc26291f",
+      "control_id": "A4.a",
+      "title": "Supply Chain",
+      "description": "The organisation understands the cyber security risks arising from its supply chain and takes appropriate steps to manage those risks.\n\nNOT ACHIEVED — at least one of these statements is true:\nSupply chain dependencies supporting the essential function have not been identified. No consideration is given to the cyber security of suppliers. Supply chain risks are unknown.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nKey supply chain dependencies are identified and some cyber security requirements are in place for significant suppliers. Supplier security is reviewed following incidents but not routinely.\n\nACHIEVED — all of these statements are true:\nAll significant supply chain dependencies are identified and their cyber security risks managed. Security requirements are agreed with key suppliers. Supplier compliance is regularly reviewed. Network connections and data sharing with third parties are managed proportionately. Supplier incident response is coordinated where appropriate.",
+      "level": 2,
+      "sort_order": 480,
+      "metadata": {
+        "objective": "A",
+        "principle": "A4",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ede687d9-f0cd-58b5-9e5b-4ff9abc05950",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "a818f2d6-fb67-5dbf-9128-f18fbc26291f",
+      "control_id": "A4.b",
+      "title": "Secure Software Development and Support",
+      "description": "The organisation actively maximises the use of secure and supported software, whether developed internally or sourced externally.\n\nNOT ACHIEVED — at least one of these statements is true:\nSoftware suppliers are unaware of composition or provenance of software provided. Software is rarely tested. Updates introduce new problems or fail to fix existing ones. Vulnerabilities are discovered due to negligible mitigations.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nSoftware suppliers use secure development principles. Suppliers have limited understanding of software composition. Security of development, test, and production environments is considered. Testing regime uses multiple approaches. Arrangements are in place for timely security updates. Secure channels are used for software delivery.\n\nACHIEVED — all of these statements are true:\nSuppliers leverage an established secure development framework (e.g. NIST SSDF, Microsoft SDL). Suppliers demonstrate thorough understanding of software composition including third-party components. Components are monitored for new vulnerabilities throughout product lifespan. Software development lifecycle is informed by current threat understanding and applies threat modelling.",
+      "level": 2,
+      "sort_order": 490,
+      "metadata": {
+        "objective": "A",
+        "principle": "A4",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "919530b1-4c39-5e61-82b1-10bcf2c110fa",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "control_id": "B1",
+      "title": "B1 Service Protection Policies, Processes and Procedures",
+      "description": "The organisation defines, implements, communicates and enforces appropriate policies, processes and procedures that direct its overall approach to securing systems and data that support operation of essential functions.",
+      "level": 1,
+      "sort_order": 590,
+      "metadata": {
+        "objective": "B",
+        "principle": "B1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2eb6fab0-f642-5125-8832-e483e8229663",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "919530b1-4c39-5e61-82b1-10bcf2c110fa",
+      "control_id": "B1.a",
+      "title": "Policy, Process and Procedure Development",
+      "description": "The organisation has developed and continues to improve a set of cyber security and resilience policies, processes and procedures that manage and mitigate the risk of adverse impact to systems supporting the essential function(s).\n\nNOT ACHIEVED — at least one of these statements is true:\nPolicies, processes and procedures are absent or incomplete. Not applied universally or consistently. People routinely circumvent them to achieve business objectives. Security governance has no bearing on policies.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nPolicies document overarching security governance, risk management approach, technical security practice and specific regulatory compliance. Reviewed and updated in response to major cyber security incidents.\n\nACHIEVED — all of these statements are true:\nPolicies are fully documented covering security governance, risk management, technical security practice and specific regulatory compliance. Cyber security is integrated and embedded throughout policies. KPIs are reported to executive management. Policies are practical, usable and appropriate to mitigate risks. Reviewed at regular intervals and when essential function or threats change.",
+      "level": 2,
+      "sort_order": 600,
+      "metadata": {
+        "objective": "B",
+        "principle": "B1",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "66cee94f-68f6-5aab-b5fb-b55a9a44baa8",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "919530b1-4c39-5e61-82b1-10bcf2c110fa",
+      "control_id": "B1.b",
+      "title": "Policy, Process and Procedure Implementation",
+      "description": "The organisation has successfully implemented its security policies, processes and procedures and can demonstrate the security benefits achieved.\n\nNOT ACHIEVED — at least one of these statements is true:\nPolicies are ignored or only partially followed. Staff are unaware of their responsibilities. Breaches of policies are not detected. Policies lack integration with other organisational procedures.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nMost policies are followed and their application is monitored. Integrated with HR processes including trustworthiness assessments. All staff are aware of their responsibilities. Breaches with potential to adversely impact essential function(s) are fully investigated.\n\nACHIEVED — all of these statements are true:\nAll policies are followed, their correct application and security effectiveness is evaluated. Effectively communicated across all levels of the organisation. Appropriate action is taken to address all breaches, including aggregated breaches.",
+      "level": 2,
+      "sort_order": 610,
+      "metadata": {
+        "objective": "B",
+        "principle": "B1",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "596edd39-e836-5eef-a908-b9522ba6e2f8",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "control_id": "B2",
+      "title": "B2 Identity and Access Control",
+      "description": "The organisation understands, documents and manages access to network and information systems supporting the operation of essential functions. Users (or automated functions) that can access data or systems are appropriately verified, authenticated and authorised.",
+      "level": 1,
+      "sort_order": 710,
+      "metadata": {
+        "objective": "B",
+        "principle": "B2"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "eb24f520-ae93-581b-815a-aa8c915deed8",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "596edd39-e836-5eef-a908-b9522ba6e2f8",
+      "control_id": "B2.a",
+      "title": "Identity Verification, Authentication and Authorisation",
+      "description": "The organisation robustly verifies, authenticates and authorises access to network and information systems supporting the essential function(s).\n\nNOT ACHIEVED — at least one of these statements is true:\nInitial identity verification is not robust. Authorised users and systems cannot be individually identified. Unauthorised individuals or devices can access systems. Number of authorised users is not limited to minimum necessary. Authentication approach does not follow up-to-date best practice.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nProcess of initial identity verification is robust enough to provide reasonable confidence. All authorised users and systems are individually identified and authenticated. Number of authorised users is limited to minimum necessary. MFA is used for privileged access. All remote access is individually authenticated and authorised. List of users reviewed at least annually.\n\nACHIEVED — all of these statements are true:\nInitial identity verification provides high level of confidence. Only authorised, individually authenticated users can physically and logically access systems. MFA is used for all user access including remote access. List of users is reviewed at least every six months. Authentication approach follows up-to-date best practice.",
+      "level": 2,
+      "sort_order": 720,
+      "metadata": {
+        "objective": "B",
+        "principle": "B2",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "efb8cb37-f410-5857-943e-8523479ab2d0",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "596edd39-e836-5eef-a908-b9522ba6e2f8",
+      "control_id": "B2.b",
+      "title": "Device Management",
+      "description": "The organisation fully knows and has trust in the devices that are used to access networks, information systems and data that support the essential function(s).\n\nNOT ACHIEVED — at least one of these statements is true:\nUsers can connect using devices not corporately owned and managed. Privileged users can perform privileged operations from non-corporately owned devices. No assurance has been gained in security of any third-party devices or networks.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nOnly corporately owned and managed devices can access essential function(s) network and information systems. Privileged operations are performed from corporately owned devices providing sufficient separation from standard user activities. Steps taken to understand security of third-party devices. Connecting to a network port does not grant access without authentication. Unknown devices being connected are detected and investigated.\n\nACHIEVED — all of these statements are true:\nAll privileged operations are conducted from highly trusted devices such as Privileged Access Workstations. Independent assurance obtained of third-party device security, or only dedicated third-party devices allowed. Certificate-based device identity management — only known devices can access systems. Regular scans to detect unknown devices.",
+      "level": 2,
+      "sort_order": 730,
+      "metadata": {
+        "objective": "B",
+        "principle": "B2",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8d60288f-faaf-5c2d-a218-f08be96c182f",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "596edd39-e836-5eef-a908-b9522ba6e2f8",
+      "control_id": "B2.c",
+      "title": "Privileged User Management",
+      "description": "The organisation closely manages privileged user access to network and information systems supporting the essential function(s).\n\nNOT ACHIEVED — at least one of these statements is true:\nIdentities of individuals with privileged access are not known or managed. Privileged access via weak authentication mechanisms. List of privileged users not reviewed recently. Privileged access is granted on a system-wide basis rather than by role. Access via generic, shared or default name accounts.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nAll privileged user access requires strong authentication (MFA). Identities of all individuals with privileged access including third parties are known and managed. Activity by privileged users routinely reviewed and validated at least annually. Privileged users are only granted specific access rights essential to their business role.\n\nACHIEVED — all of these statements are true:\nPrivileged user access carried out from dedicated separate accounts that are closely monitored and managed. Temporary, time-bound rights for privileged and third-party support access are in place. Privileged user access rights regularly reviewed and always updated as part of joiners, movers and leavers process. All privileged user activity routinely reviewed, validated and recorded for offline analysis and investigation.",
+      "level": 2,
+      "sort_order": 740,
+      "metadata": {
+        "objective": "B",
+        "principle": "B2",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c677a59f-d96d-5f32-b3d7-d3c1e81cc915",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "596edd39-e836-5eef-a908-b9522ba6e2f8",
+      "control_id": "B2.d",
+      "title": "Identity and Access Management (IdAM)",
+      "description": "The organisation closely manages and maintains identity and access control for users, devices and systems accessing network and information systems supporting the essential function(s).\n\nNOT ACHIEVED — at least one of these statements is true:\nGreater access rights are granted than necessary. Identity validation not carried out for users, devices or systems. User access rights not reviewed when users change roles or leave. Access rights granted to devices or systems not reviewed regularly.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nRobust procedure to verify each user and issue minimum required access rights followed. Access rights regularly reviewed and revoked when no longer needed. Access rights reviewed when users change roles via joiners, leavers and movers process. All user, device and system access to systems supporting essential function(s) is logged and monitored, but not compared to other log data or access records.\n\nACHIEVED — all of these statements are true:\nRobust procedure followed and regularly audited. User access rights reviewed both when people change roles and at regular intervals — at least annually. All user, device and systems access is logged and monitored. Access logs regularly reviewed and correlated with other data and expected activity. Attempts by unauthorised users, devices or systems are alerted, promptly assessed and investigated.",
+      "level": 2,
+      "sort_order": 750,
+      "metadata": {
+        "objective": "B",
+        "principle": "B2",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a6218798-8c39-599c-b716-f240e7244005",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "control_id": "B3",
+      "title": "B3 Data Security",
+      "description": "Data stored or transmitted electronically is protected from actions such as unauthorised access, modification, or deletion that may cause an adverse impact on essential functions.",
+      "level": 1,
+      "sort_order": 850,
+      "metadata": {
+        "objective": "B",
+        "principle": "B3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "cee52a54-a227-54cb-91a5-a15f8a78b52f",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "a6218798-8c39-599c-b716-f240e7244005",
+      "control_id": "B3.a",
+      "title": "Understanding Data",
+      "description": "The organisation has a good understanding of data important to the operation of systems supporting the essential function(s), where it is stored, where it travels and how unavailability or unauthorised access would adversely impact the essential function(s).\n\nNOT ACHIEVED — at least one of these statements is true:\nIncomplete knowledge of what data is used by and produced in the operation of systems supporting the essential function(s). The important data on which systems rely has not been identified. Who has access to important data has not been identified. The impact of data compromise or lack of availability has not been clearly articulated.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nAll data important to the operation of systems supporting the essential function(s) has been identified and catalogued. Who has access to the important data is identified and catalogued. Location, transmission, quantity and quality of data is regularly reviewed. All mobile devices and media that hold important data have been identified. Impact on the essential function(s) of all relevant scenarios is understood and documented.\n\nACHIEVED — all of these statements are true:\nAll important data is identified, catalogued and understood. The impact of all relevant scenarios is understood, documented and validated regularly, at least annually. Unnecessary copies or unneeded historic data are minimised. Data links used to transmit important data are maintained and understood.",
+      "level": 2,
+      "sort_order": 860,
+      "metadata": {
+        "objective": "B",
+        "principle": "B3",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fcd9a9c0-6474-5b57-af7f-cd84791208d1",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "a6218798-8c39-599c-b716-f240e7244005",
+      "control_id": "B3.b",
+      "title": "Data in Transit",
+      "description": "The organisation has protected the transit of data important to the operation of the essential function(s) including transfers to third parties.\n\nNOT ACHIEVED — at least one of these statements is true:\nNot knowing what all data links are or which carry important data. Data travels without technical protection over non-trusted or openly accessible carriers. Critical data paths that could fail or be jammed have no alternative path.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nAll data links that carry important data are identified and protected using appropriate physical and/or technical means (e.g. cryptography). Appropriate means used but limited or no confidence in the robustness of the protection.\n\nACHIEVED — all of these statements are true:\nAll data links carrying important data are identified and effectively protected. Appropriate physical and/or technical means are applied with justified confidence in the robustness of protection. Suitable alternative transmission paths are available where there is a significant risk of impact.",
+      "level": 2,
+      "sort_order": 870,
+      "metadata": {
+        "objective": "B",
+        "principle": "B3",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "db58d926-b76c-5e17-adff-9c0f66d5c582",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "a6218798-8c39-599c-b716-f240e7244005",
+      "control_id": "B3.c",
+      "title": "Stored Data",
+      "description": "The organisation has protected stored soft and hard copy data important to the operation of the essential function(s).\n\nNOT ACHIEVED — at least one of these statements is true:\nNo or limited knowledge of where important data is stored. Important stored data has not been protected in a suitable way. Backups are incomplete, untested, not adequately secured or could be inaccessible in a disaster recovery or business continuity situation.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nAll copies of important data are only stored where necessary. Where transferred to less secure systems, data is provided with limited detail and/or as a read-only copy. Suitable physical and/or technical means applied to protect from unauthorised access, modification or deletion. If cryptographic protections are used, suitable technical and procedural means applied but limited confidence in robustness. Suitable, secured backups available to allow recovery.\n\nACHIEVED — all of these statements are true:\nAll copies of important data are stored only where necessary. Suitable physical and/or technical means applied to protect from unauthorised access, modification or deletion with justified confidence in robustness. Suitable, secured backups are maintained, tested, documented and routinely reviewed. Necessary historic or archive data is suitably secured.",
+      "level": 2,
+      "sort_order": 880,
+      "metadata": {
+        "objective": "B",
+        "principle": "B3",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c8a567c9-d7a9-59a7-b301-5eec1018fdfc",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "a6218798-8c39-599c-b716-f240e7244005",
+      "control_id": "B3.d",
+      "title": "Mobile Data",
+      "description": "The organisation has protected data important to the operation of systems supporting the essential function(s) on mobile devices (e.g. smartphones, tablets and laptops).\n\nNOT ACHIEVED — at least one of these statements is true:\nNot knowing which mobile devices may hold important data. Important data is allowed to be stored on devices not managed by the organisation. Data on mobile devices is not technically secured.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nKnow which mobile devices hold important data. Important data is stored on mobile devices only when they have at least the security standard aligned to overarching security policies. Data on mobile devices is technically secured.\n\nACHIEVED — all of these statements are true:\nMobile devices that hold important data are catalogued, are under the organisation's control and configured according to best practice for the platform. The organisation can remotely wipe all mobile devices holding important data. Important data on mobile devices is minimised; some data may be automatically deleted after a certain period.",
+      "level": 2,
+      "sort_order": 890,
+      "metadata": {
+        "objective": "B",
+        "principle": "B3",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "396be3a9-6587-5076-864e-570da79b3e90",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "a6218798-8c39-599c-b716-f240e7244005",
+      "control_id": "B3.e",
+      "title": "Media/Equipment Sanitisation",
+      "description": "Before reuse and/or disposal, the organisation appropriately sanitises devices, equipment and removable media holding data important to the operation of the essential function(s).\n\nNOT ACHIEVED — at least one of these statements is true:\nSome or all devices, equipment or removable media that hold important data are reused or disposed of without sanitisation.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nImportant data is removed from all devices, equipment and removable media before reuse and/or disposal.\n\nACHIEVED — all of these statements are true:\nAll devices that contain important data are catalogued and tracked. Important data is removed from all devices, equipment and removable media before reuse and/or disposal using an assured product or service.",
+      "level": 2,
+      "sort_order": 900,
+      "metadata": {
+        "objective": "B",
+        "principle": "B3",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f35173de-83aa-5d88-93ac-7642031c5b5b",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "control_id": "B4",
+      "title": "B4 System Security",
+      "description": "Network and information systems and technology critical for the operation of essential functions are protected from cyber attack.",
+      "level": 1,
+      "sort_order": 1000,
+      "metadata": {
+        "objective": "B",
+        "principle": "B4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "989029bb-a46b-5ac1-80e1-14eb21c58727",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "f35173de-83aa-5d88-93ac-7642031c5b5b",
+      "control_id": "B4.a",
+      "title": "Secure by Design",
+      "description": "The organisation designs security into network and information systems that support the operation of the essential function(s). It minimises their attack surface and ensures that the operation of the essential function(s) should not be impacted by the exploitation of any single vulnerability.\n\nNOT ACHIEVED — at least one of these statements is true:\nSystems supporting the essential function(s) are not appropriately segregated from other systems. Internet services such as browsing and email are accessible from systems supporting essential functions. Data flows between systems and other systems are complex, making it hard to discriminate between legitimate and illegitimate traffic. Remote or third-party accesses circumvent some network controls.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nAppropriate expertise is used to design network and information systems. Strong boundary defences are designed where systems interface with other organisations or the world at large. Simple data flows between systems and external interfaces enable effective monitoring. Systems are designed to make network and information system recovery simple. All inputs to systems are checked and validated at the network boundary, or additional monitoring is in place for content-based attacks.\n\nACHIEVED — all of these statements are true:\nAppropriate expertise is used to design systems. Systems are segregated into appropriate security zones (e.g. systems supporting the essential function(s) are segregated in a highly trusted, more secure zone). Systems are designed to have simple data flows between components to support effective security monitoring. Systems are designed to be easy to recover. Content-based attacks are mitigated for all inputs to systems affecting the essential function(s). If automated decision-making technologies are in use, appropriate restrictions are designed and applied.",
+      "level": 2,
+      "sort_order": 1010,
+      "metadata": {
+        "objective": "B",
+        "principle": "B4",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a37da377-91da-5d8e-bf29-8a037548f486",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "f35173de-83aa-5d88-93ac-7642031c5b5b",
+      "control_id": "B4.b",
+      "title": "Secure Configuration",
+      "description": "The organisation securely configures network and information systems that support the operation of the essential function(s).\n\nNOT ACHIEVED — at least one of these statements is true:\nAssets that need to be carefully configured have not been identified. Policies relating to security of operating system builds or configuration are not applied consistently. Configuration details are not recorded. Recording of security changes that affect the essential function(s) is lacking or inconsistent. Generic, shared, default name and built-in accounts have not been removed or disabled. Standard users are able to change settings that would adversely impact security.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nAssets that need to be carefully configured have been identified and documented. Secure platform and device builds are used across the estate. Consistent, secure and minimal system and device configurations are applied across the same types of environment. Changes and adjustments to security configurations at security boundaries are approved and documented. Software is verified before installation is permitted. Generic, shared, default name and built-in accounts have been removed or disabled, or credentials changed. Standard users are not able to change settings that would adversely impact security.\n\nACHIEVED — all of these statements are true:\nAssets are identified, documented and actively managed (security configurations, patching, updating). All platforms conform to a secure, defined baseline build, or the latest known good configuration. Changes are closely and effectively managed, ensuring configurations are secure and documented. Network and information systems are regularly reviewed and validated to confirm expected, secure settings and configuration. Only permitted software can be installed. Generic, shared, default and built-in accounts removed, disabled or credentials changed. Service accounts are appropriately protected.",
+      "level": 2,
+      "sort_order": 1020,
+      "metadata": {
+        "objective": "B",
+        "principle": "B4",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a9edae97-3aa3-504e-a3eb-721de11d3be8",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "f35173de-83aa-5d88-93ac-7642031c5b5b",
+      "control_id": "B4.c",
+      "title": "Secure Management",
+      "description": "The organisation manages its network and information systems that support the operation of the essential function(s) to enable and maintain security.\n\nNOT ACHIEVED — at least one of these statements is true:\nSystems and devices supporting the essential function(s) are administered or maintained from devices that are not corporately owned and managed. No good or current technical documentation of network and information systems.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nSystems and devices supporting the essential function(s) are only administered or maintained by authorised privileged users from devices sufficiently separated, using a risk-based approach, from the activities of standard users. Technical knowledge about systems, including documentation and network diagrams, is regularly reviewed and updated. Malware and unauthorised software are prevented, detected and removed.\n\nACHIEVED — all of these statements are true:\nSystems and devices are only administered or maintained by authorised privileged users from highly trusted devices, such as Privileged Access Workstations. Technical knowledge about systems, including documentation and network diagrams, is regularly reviewed, updated and securely stored. Malware and unauthorised software are prevented, detected and removed using technical, procedural and physical measures as necessary.",
+      "level": 2,
+      "sort_order": 1030,
+      "metadata": {
+        "objective": "B",
+        "principle": "B4",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "31378401-68b3-5605-98fd-404a3b030f70",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "f35173de-83aa-5d88-93ac-7642031c5b5b",
+      "control_id": "B4.d",
+      "title": "Vulnerability Management",
+      "description": "The organisation manages known vulnerabilities in network and information systems to prevent adverse impact on the essential function(s).\n\nNOT ACHIEVED — at least one of these statements is true:\nNo understanding of the exposure of systems supporting the essential function(s) to publicly-known vulnerabilities. Externally exposed vulnerabilities are not mitigated promptly. No recent testing to verify understanding of vulnerabilities. Unsupported systems or software not being replaced.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nCurrent understanding of the exposure of systems to publicly-known vulnerabilities is maintained. Announced vulnerabilities for all software packages used are tracked, prioritised and externally exposed vulnerabilities mitigated promptly. Some vulnerabilities not externally exposed have temporary mitigations for extended periods. Temporary mitigations for unsupported systems while pursuing migration to supported technology. Vulnerabilities tested regularly.\n\nACHIEVED — all of these statements are true:\nCurrent understanding of the exposure of systems to publicly-known vulnerabilities is maintained. Announced vulnerabilities for all software packages are tracked, prioritised and mitigated promptly. Regular testing to fully understand vulnerabilities with third-party testing used to verify. Actively maximise the use of supported software, firmware and hardware.",
+      "level": 2,
+      "sort_order": 1040,
+      "metadata": {
+        "objective": "B",
+        "principle": "B4",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4d9f533e-518e-53af-a83e-7ac6feeba179",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "control_id": "B5",
+      "title": "B5 Resilient Networks and Systems",
+      "description": "The organisation builds resilience against cyber attack and system failure into the design, implementation, operation and management of systems that support the essential function(s).",
+      "level": 1,
+      "sort_order": 1140,
+      "metadata": {
+        "objective": "B",
+        "principle": "B5"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d02e15f2-cca7-5dc4-9700-371c0ab39e2b",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "4d9f533e-518e-53af-a83e-7ac6feeba179",
+      "control_id": "B5.a",
+      "title": "Resilience Preparation",
+      "description": "The organisation is prepared to restore the operation of the essential function(s) following adverse impact to network and information systems.\n\nNOT ACHIEVED — at least one of these statements is true:\nLimited understanding of all the elements required to restore operation of systems supporting the essential function(s). Business continuity and disaster recovery plans not completed for systems, including their dependencies. Practical implementation of business continuity and disaster recovery plans not fully assessed.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nAll network and information systems, and underlying technologies, necessary to restore the operation of the essential function(s) are known and their interdependence understood. The order in which systems need to be recovered to efficiently and effectively restore the operation of the essential function(s) is known.\n\nACHIEVED — all of these statements are true:\nBusiness continuity and disaster recovery plans have been tested for practicality, effectiveness and completeness. Appropriate use is made of different test methods (e.g. manual fail-over, table-top exercises, or red-teaming). Security awareness and threat intelligence sources are used to identify new or heightened levels of risk, resulting in immediate and potentially temporary security enhancement measures.",
+      "level": 2,
+      "sort_order": 1150,
+      "metadata": {
+        "objective": "B",
+        "principle": "B5",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "79671396-d6b3-58cf-bd23-0bf4f73ef0cd",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "4d9f533e-518e-53af-a83e-7ac6feeba179",
+      "control_id": "B5.b",
+      "title": "Design for Resilience",
+      "description": "The organisation designs network and information systems supporting the essential function(s) to be resilient to cyber security incidents. Systems are appropriately segregated and resource limitations are mitigated.\n\nNOT ACHIEVED — at least one of these statements is true:\nSystems supporting the essential function(s) are not appropriately segregated. Internet services are accessible from systems supporting essential functions. Resource limitations that could adversely affect the essential function(s) are not understood or not planned to mitigate.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nSystems supporting the essential function(s) are logically separated from business systems (e.g. reside on same network but within a DMZ). Internet services are not accessible from systems supporting essential functions. Resource limitations have been identified but not fully mitigated.\n\nACHIEVED — all of these statements are true:\nSystems supporting the essential function(s) are segregated from other business and external systems by appropriate technical and physical means. Internet services are not accessible from systems supporting essential functions. All resource limitations have been identified and mitigated. Geographical constraints or weaknesses have been identified and mitigated. Dependencies, resource and geographical limitation assessments are reviewed and updated when necessary.",
+      "level": 2,
+      "sort_order": 1160,
+      "metadata": {
+        "objective": "B",
+        "principle": "B5",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "df6bf530-00e4-570e-9b25-804f2f932acb",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "4d9f533e-518e-53af-a83e-7ac6feeba179",
+      "control_id": "B5.c",
+      "title": "Backups",
+      "description": "The organisation holds accessible and secured current backups of data and information needed to recover operation of the essential function(s) following an adverse impact to network and information systems.\n\nNOT ACHIEVED — at least one of these statements is true:\nBackup coverage is incomplete and does not include all relevant data and information needed to restore the essential function(s). Backups are not frequent enough for the essential function(s) to be restored effectively. Restoration process does not restore the essential function(s) in a suitable time frame.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nAppropriately secured backups are available (including data, configuration information, software, equipment, processes and knowledge). These backups will be accessible to recover from an extreme event including ransomware attack. Backups are routinely tested to ensure the backup process function(s) correctly and the backups are usable.\n\nACHIEVED — all of these statements are true:\nComprehensive, automatic and tested technical and procedural backups are secured at centrally accessible or secondary sites to recover from an extreme event. Backups of all important data and information needed to recover the essential function(s) are made, tested, documented and routinely reviewed.",
+      "level": 2,
+      "sort_order": 1170,
+      "metadata": {
+        "objective": "B",
+        "principle": "B5",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "faccd8db-f10b-575e-b744-ab85d0cebec7",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "control_id": "B6",
+      "title": "B6 Staff Awareness and Training",
+      "description": "Staff have appropriate awareness, knowledge and skills to carry out their organisational roles effectively in relation to the security of network and information systems supporting the essential function(s).",
+      "level": 1,
+      "sort_order": 1270,
+      "metadata": {
+        "objective": "B",
+        "principle": "B6"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7c558696-e75a-559f-b394-45b55a5d6653",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "faccd8db-f10b-575e-b744-ab85d0cebec7",
+      "control_id": "B6.a",
+      "title": "Cyber Security Culture",
+      "description": "The organisation develops and maintains a positive cyber security culture and a shared sense of responsibility.\n\nNOT ACHIEVED — at least one of these statements is true:\nPeople do not understand what they contribute to cyber security of systems supporting essential functions. People do not know how to raise a concern about cyber security. People believe that reporting issues may get them into trouble. Formal or informal incentives and rewards conflict with the promotion of positive security outcomes.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nExecutive management understand and widely communicate the importance of a positive cyber security culture. Positive attitudes, behaviours and expectations are described. All people understand their contribution to cyber security of systems supporting essential functions. All individuals know who to contact and where to access more information about cyber security and how to raise a cyber security issue. Issues that inhibit people from behaving in a manner that supports cyber security outcomes are identified and addressed.\n\nACHIEVED — all of these statements are true:\nExecutive management clearly and effectively communicates the organisation's cyber security priorities and objectives to all staff. Organisation displays positive cyber security attitudes, behaviours, and expectations. People raising potential cyber security incidents and issues are treated positively. Individuals at all levels routinely report concerns or issues about cyber security and are recognised for their contribution to keeping the organisation secure. Organisation communicates openly about cyber security, with any concern being taken seriously.",
+      "level": 2,
+      "sort_order": 1280,
+      "metadata": {
+        "objective": "B",
+        "principle": "B6",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0e4bad30-b489-5985-ade1-4f167e913cb8",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "faccd8db-f10b-575e-b744-ab85d0cebec7",
+      "control_id": "B6.b",
+      "title": "Cyber Security Training",
+      "description": "The people who support the operation of network and information systems supporting the essential function(s) are appropriately trained in cyber security.\n\nNOT ACHIEVED — at least one of these statements is true:\nTeams that operate and support the essential function(s) lack any cyber security training. Cyber security training is restricted to specific roles. Cyber security training records for the organisation are lacking or incomplete. Training is used as a 'silver bullet' for all user security behaviours. Training materials contain out of date or contradictory information.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nAppropriate cyber security training and awareness activities have been defined for all roles in the organisation, from executives to the most junior roles. A range of teaching and communication techniques are used for training and awareness to reach the widest audience effectively. Cyber security information is easily available.\n\nACHIEVED — all of these statements are true:\nAll people in the organisation, from the most senior to the most junior, follow appropriate cyber security training paths. Each individual's cyber security training is tracked and refreshed at suitable intervals. Cyber security training and awareness activities are routinely evaluated to ensure they reach the widest audience and are effective. Cyber security information and good practice guidance is easily accessible, widely available and known to be referenced and used within the organisation.",
+      "level": 2,
+      "sort_order": 1290,
+      "metadata": {
+        "objective": "B",
+        "principle": "B6",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "7067620a-8f3f-574b-8670-0ed79e57d103",
+      "control_id": "C1",
+      "title": "C1 Security Monitoring",
+      "description": "The organisation monitors the security status of network and information systems supporting the operation of essential function(s) in order to detect security events indicative of a security incident.",
+      "level": 1,
+      "sort_order": 1390,
+      "metadata": {
+        "objective": "C",
+        "principle": "C1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "28992e13-17f0-5fcd-8db9-55a7dd97bea9",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "control_id": "C1.a",
+      "title": "Sources and Tools for Logging and Monitoring",
+      "description": "The data sources and tools included in logging and monitoring allow for timely identification of events which might adversely affect the security or resiliency of systems supporting the essential function(s).\n\nNOT ACHIEVED — at least one of these statements is true:\nData relating to the security and operation of systems supporting the essential function(s) is not collected. User and system activities cannot be audited. Traffic crossing network boundary is not monitored. Log data cannot be synchronised using an accurate common time source. Monitoring tools can only make use of a fraction of the log data being collected.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nData relating to the security and operation of some areas of systems supporting the essential function(s) is collected but not comprehensive. Some user and system monitoring is done, but not covering a fully agreed list of suspicious or undesirable behaviour. Traffic crossing the network boundary is monitored (including IP address connections as a minimum). Some but not all log datasets can be easily queried with search tools to aid investigations. Monitoring tools work with most log data, with some configuration. Log data is available for analysis when needed.\n\nACHIEVED — all of these statements are true:\nMonitoring is based on a thorough understanding of systems supporting the essential function(s), techniques used by threat actors, and awareness of what logging and monitoring is required to detect events and incidents. Monitoring data provides enough detail to promptly and reliably detect security events, incidents and support investigations. Extensive monitoring of user and system activity enables prompt detection of policy violations, suspicious or undesirable user and system behaviour, deviations from normal/routine behaviour or abnormalities indicative of adverse activity. Logging and monitoring capability includes host-based and network monitoring. All new systems are considered as potential logging and monitoring data sources. Log datasets are synchronised with an accurate common time source. Log data is enriched with other systems data to provide a more comprehensive picture. Monitoring data sources and tools are regularly reviewed.",
+      "level": 2,
+      "sort_order": 1400,
+      "metadata": {
+        "objective": "C",
+        "principle": "C1",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6cb6afc5-3deb-557e-b1f0-e84f1feefa86",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "control_id": "C1.b",
+      "title": "Securing Logs",
+      "description": "The organisation holds log data securely and grants appropriate user and system access only to accounts with a business need. Log data is held for a suitable retention period.\n\nNOT ACHIEVED — at least one of these statements is true:\nLog data can be easily edited or deleted by unauthorised users/systems or attackers. There is no control of users and systems that can access log data. There is no monitoring of access to log data. There are no policies covering access to log data.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nOnly authorised users and systems can access log data. There is some monitoring of access to log data (e.g. copying, deleting or modification, or even viewing). Retention periods have been defined and implemented. Legitimate reasons for accessing log data are given in policies.\n\nACHIEVED — all of these statements are true:\nAppropriate access to log data is limited to those users and systems with a business need. The logging architecture has mechanisms, policies, processes and procedures to protect itself from threats comparable to those it is trying to identify. Log data analysis and normalisation is only performed on copies of the log data keeping the master copy unaltered. All actions involving log data (copying, deleting, modification, or even viewing) can be traced back to a unique user or system. Integrity of log data is protected, verified and any modification, including deletion, is detected and attributed.",
+      "level": 2,
+      "sort_order": 1410,
+      "metadata": {
+        "objective": "C",
+        "principle": "C1",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bb64de9c-2b63-59f1-8a0a-111545736b32",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "control_id": "C1.c",
+      "title": "Generating Alerts",
+      "description": "Evidence of potential security incidents contained in monitoring data is reliably identified and where appropriate triggers alerts.\n\nNOT ACHIEVED — at least one of these statements is true:\nDetection security technologies are not updated in a timely way. Security alerts relating to systems supporting the essential function(s) are not prioritised. Enrichment of security alerts cannot be performed. IoCs cannot be confidently detected. User or system abnormalities indicative of adverse activity are not monitored for. Logs are monitored infrequently.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nThe presence of Indicators of Compromise (IoCs) on systems is easily detectable, including known malicious command and control signatures. Some updates, new signatures and IoCs are applied in a timely way. Security alerts relating to systems supporting the essential function(s) are prioritised. Enrichment of alerts is performed but not as part of the original alert. Detections and alerting rely on off-the-shelf tooling without customisation or users reporting events and potential incidents. A documented and shared process exists for all users who support the operation of the essential function to report events and potential security incidents. Appropriate detections and alerting result in automated actions (e.g. malware identified by AV is quarantined). Logs are monitored at regular intervals.\n\nACHIEVED — all of these statements are true:\nThe presence of IoCs on systems is easily detectable, including known malicious command and control signatures, as well as abnormalities or behaviours indicative of adverse activity. All updates, new signatures and IoCs are applied promptly. Security alerts relating to all systems supporting the essential function(s) are prioritised and this information is used to support incident management. Alerts are routinely enriched in almost real time as part of the original alert. Alerts and underlying detections are regularly reviewed and tested to ensure they are generated promptly and reliably, and it is possible to distinguish genuine security incidents from false alarms. Detection rules are customisable and tuned to reduce false positives and optimise responses. User and system abnormalities indicative of adverse activity are continuously monitored, generating alerts. Logs are monitored continuously in near real time.",
+      "level": 2,
+      "sort_order": 1420,
+      "metadata": {
+        "objective": "C",
+        "principle": "C1",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "42f9b8cd-00c7-5ff2-a672-16bcff80c1e6",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "control_id": "C1.d",
+      "title": "Triage of Security Alerts",
+      "description": "The organisation contextualises alerts with knowledge of the threat and systems, to identify security incidents as well as responding to all alerts appropriately.\n\nNOT ACHIEVED — at least one of these statements is true:\nAlerts from detection security technologies are not triaged. Alerts and incidents are not categorised by type and priority/severity level. No Standard Operating Procedures (SOPs)/Playbooks/Runbooks available for use during triage. No records are kept of triage performed. No sufficient understanding of normal user or system behaviour to make effective decisions within triage.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nAlerts from some security tools are investigated, triaged and acted upon. SOPs/Playbooks/Runbooks are created, made available and used for the most common use cases, reviewed regularly. Some triage and actions taken by monitoring and detection personnel are recorded. Alerts and incidents are categorised by type and priority/severity level. Understanding of normal user or system behaviour informs decision making within triage.\n\nACHIEVED — all of these statements are true:\nAlerts from all security tools are investigated, triaged and acted upon. SOPs/Playbooks/Runbooks are created for all plausible use cases, regularly reviewed to ensure they remain effective. Alerts and incidents are categorised by type and priority/severity level. All triage related activities are documented and used to drive improvements. Triage provides enough information for subsequent activities to be prioritised. Understanding of normal user and system behaviour, and threats, is sufficient for effective decision making within triage.",
+      "level": 2,
+      "sort_order": 1430,
+      "metadata": {
+        "objective": "C",
+        "principle": "C1",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "230d35a1-31c7-5a97-ac56-4de586872d7b",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "control_id": "C1.e",
+      "title": "Personnel Skills for Monitoring and Detection",
+      "description": "Monitoring and detection personnel skills and roles reflect governance and reporting requirements, expected threats and the complexities of the network or system data they need to use.\n\nNOT ACHIEVED — at least one of these statements is true:\nNo personnel perform a monitoring and detection function. Monitoring and detection personnel do not have the correct specialist skills. Monitoring and detection personnel are not capable of reporting against governance requirements. Monitoring and detection personnel have a lack of awareness of the essential function(s), what assets relate to those functions, and hence the importance of the log data and security events.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nMonitoring and detection personnel have some investigative skills and a basic understanding of the data they need to work with. Personnel can report to other parts of the organisation (e.g. security directors, resilience managers). Personnel are capable of following most of the required workflows. Personnel are aware of some of the systems and the essential function(s), and can manage alerts relating to them. Personnel have some understanding of the operational context (e.g. people, processes, network and information systems) to enhance the security monitoring function. Personnel deal with their workload and cases effectively.\n\nACHIEVED — all of these statements are true:\nMonitoring and detection personnel are responsible for the proactive and reactive analysis, investigation and reporting of monitoring alerts including both security and performance. Personnel have defined roles and skills covering all parts of the monitoring and investigation process. Personnel follow policies, processes and procedures that address all governance reporting requirements, internal and external. Personnel are empowered to look beyond the fixed process to investigate and understand non-standard threats. Personnel are aware of the systems and the essential function(s), related assets, and can identify and prioritise alerts and investigations. Personnel drive and shape new log data collection and can make effective use of it. Personnel have a sufficient understanding of the operational context to enhance the security monitoring function. Personnel deal with their workload and cases effectively as well as identifying areas for improvement.",
+      "level": 2,
+      "sort_order": 1440,
+      "metadata": {
+        "objective": "C",
+        "principle": "C1",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "55472733-86bc-56c8-b01a-e8e2fda7c888",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "control_id": "C1.f",
+      "title": "Understanding User's and System's Behaviour, and Threat Intelligence (within Security Monitoring)",
+      "description": "Threats to the operation of network and information systems, and corresponding user and system behaviour, are sufficiently understood and used to detect cyber security incidents.\n\nNOT ACHIEVED — at least one of these statements is true:\nNo sources of threat intelligence. The usefulness of threat intelligence is not evaluated or feedback shared with providers or other users. No awareness of the steps necessary to make best use of threat intelligence for security monitoring. Threat intelligence is unreliable or not actioned by appropriate users or systems in a timely manner. No established understanding of what abnormalities to look for that might signify adverse activities.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nKnow how effective threat intelligence is (e.g. by tracking how threat intelligence helps identify security incidents). Organisation may use threat intelligence services but does not necessarily choose sources or providers specifically because of business needs or specific threats in sector. The user and system abnormalities from past attacks and threat intelligence, on and other systems, are used to signify adverse activity. Receive regular updates for all detection security technologies.\n\nACHIEVED — all of these statements are true:\nTrack the effectiveness of threat intelligence and actively share feedback on usefulness of IoCs and other intelligence with the threat community. When using threat intelligence feeds, these have been selected using risk-based and threat-informed decisions based on business needs and sector. Relevant, reliable and actionable threat intelligence is made available to necessary users and systems promptly. Threat intelligence is contextualised and linked to the why and/or how attacks take place for security monitoring. Normal user and system abnormalities are fully understood to such an extent that searching for system abnormalities is an effective way of detecting adverse activity. User and system abnormalities indicative of adverse activity are regularly updated to reflect changes in systems and current threat intelligence.",
+      "level": 2,
+      "sort_order": 1450,
+      "metadata": {
+        "objective": "C",
+        "principle": "C1",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d614b3cc-b33d-547f-80f9-8949074bea92",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "7067620a-8f3f-574b-8670-0ed79e57d103",
+      "control_id": "C2",
+      "title": "C2 Threat Hunting",
+      "description": "The organisation proactively seeks to detect, within networks and information systems, adverse activity affecting, or with the potential to affect, the operation of essential functions even when the activity evades standard security prevent/detect solutions.",
+      "level": 1,
+      "sort_order": 1550,
+      "metadata": {
+        "objective": "C",
+        "principle": "C2"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fe96d36e-7eed-5709-b32a-ca9fe23d09a7",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "d614b3cc-b33d-547f-80f9-8949074bea92",
+      "control_id": "C2.a",
+      "title": "Threat Hunting",
+      "description": "The organisation proactively hunts for threats to the essential function(s) that evade automated security detection tools.\n\nNOT ACHIEVED — at least one of these statements is true:\nNot knowing the resources required for threat hunting. No access to an effective threat hunting capability. Threat hunts do not follow any structure and few if any records are created.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nThe resources required to perform threat hunting have been identified and are able to deploy, in a timely manner, on an occasional basis. An effective threat hunting capability is deployed but not frequent enough to match the risks posed to systems supporting the essential function(s). Threat hunts follow pre-determined and documented methods designed to identify adverse activity not detected by automated detections.\n\nACHIEVED — all of these statements are true:\nThe resources required to perform threat hunting are understood and deployed as part of business as usual. Threat hunting resources are deployed at a frequency that matches the risks posed to systems supporting the essential function(s). Threat hunts follow pre-determined and documented methods designed to identify adverse activity not detected by automated detections. Threat hunts are turned into automated detections and alerting where appropriate. Details of previous threat hunts and post hunt activities are routinely recorded and used to drive improvements. Threat hunts focus on TTPs of threats over atomic IoCs.",
+      "level": 2,
+      "sort_order": 1560,
+      "metadata": {
+        "objective": "C",
+        "principle": "C2",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f59e1dc3-703e-5d01-8c5c-1b2e7ddc2c64",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "1559a09f-9c9e-56ee-8447-3f5ca1cc3e5f",
+      "control_id": "D1",
+      "title": "D1 Response and Recovery Planning",
+      "description": "There are well-defined and tested incident management processes in place, that aim to ensure continuity of essential function(s) in the event of system or service failure. Mitigation activities designed to contain or limit the impact of compromise are also in place.",
+      "level": 1,
+      "sort_order": 1660,
+      "metadata": {
+        "objective": "D",
+        "principle": "D1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "59983f81-5ce7-5b15-8966-8ab633c6af28",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "f59e1dc3-703e-5d01-8c5c-1b2e7ddc2c64",
+      "control_id": "D1.a",
+      "title": "Response Plan",
+      "description": "The organisation has an up-to-date incident response plan that is grounded in a thorough risk assessment and covers a range of incident scenarios.\n\nNOT ACHIEVED — at least one of these statements is true:\nIncident response plan is not documented. Plan does not include the organisation's identified essential function(s). Plan is not well understood by relevant staff.\n\nPARTIALLY ACHIEVED — all of these statements are true:\nIncident response plan covers systems supporting the essential function(s). Comprehensively covers scenarios focused on likely impacts of known and well understood attacks only. Plan is understood by all staff who are involved with the organisation's response function. Plan is documented and shared with all relevant stakeholders. Plan is readily accessible, even when the organisation's IT systems have been adversely affected by an incident. Plan is regularly reviewed to ensure it remains effective.\n\nACHIEVED — all of these statements are true:\nIncident response plan is based on a clear and thorough understanding of the security risks to systems supporting the essential function(s). Plan is comprehensive (covers the complete lifecycle of an incident, roles and responsibilities, and reporting) and covers likely impacts of both known attack patterns and possible attacks, previously unseen. Plan is documented and integrated with wider organisational business plans and supply chain response plans, as well as dependencies on supporting infrastructure (e.g. power, cooling). Plan is communicated and understood by the business areas involved with the operation of the essential function(s).",
+      "level": 2,
+      "sort_order": 1670,
+      "metadata": {
+        "objective": "D",
+        "principle": "D1",
+        "columns": 3
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "1e930332-2691-5df3-9e74-164adde12886",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "f59e1dc3-703e-5d01-8c5c-1b2e7ddc2c64",
+      "control_id": "D1.b",
+      "title": "Response and Recovery Capability",
+      "description": "The organisation has the capability to enact its incident response plan, including effective limitation of impact on the essential function(s). During an incident, the organisation has access to timely information on which to base its response decisions.\n\nNOT ACHIEVED — at least one of these statements is true:\nInadequate arrangements have been made to make the right resources available to implement the response plan. Response team members are not equipped to make good response decisions and put them into effect. Inadequate back-up mechanisms exist to allow the continued operation of the essential function(s) during an incident.\n\nACHIEVED — all of these statements are true:\nUnderstand the resources that will likely be needed to carry out required response activities, and arrangements are in place to make these resources available. Understand the types of information that will likely be needed to inform response decisions and arrangements are in place. Response team members have the skills and knowledge required to decide on the response actions necessary to limit harm, and the authority to carry them out. Key roles are duplicated, and operational delivery knowledge is shared with all individuals involved in the operations and recovery of the essential function(s). Back-up mechanisms are available to allow continued operation, possibly at a reduced level, if primary network and information systems fail or are unavailable. Arrangements exist to augment the organisation's incident response capabilities with external support if necessary.",
+      "level": 2,
+      "sort_order": 1680,
+      "metadata": {
+        "objective": "D",
+        "principle": "D1",
+        "columns": 2
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "9b632dfe-6fe0-5bdd-ab55-4fdf2a5e0efe",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "f59e1dc3-703e-5d01-8c5c-1b2e7ddc2c64",
+      "control_id": "D1.c",
+      "title": "Testing and Exercising",
+      "description": "The organisation carries out exercises to test response plans, using past incidents that affected the organisation and other organisations, and scenarios that draw on threat intelligence and the risk assessment.\n\nNOT ACHIEVED — at least one of these statements is true:\nExercises test only a discrete part of the process (e.g. that backups are working), but do not consider all areas. Incident response exercises are not routinely carried out or are carried out in an ad-hoc way. Outputs from exercises are not fed into the organisation's lessons learned process. Exercises do not test all parts of the response cycle.\n\nACHIEVED — all of these statements are true:\nExercise scenarios are based on incidents experienced by your and other organisations or are composed using experience or threat intelligence. Exercise scenarios are documented, regularly reviewed, and validated. Exercises are routinely run, with the findings documented and used to refine incident response plans and protective security, in line with the lessons learned. Exercises test all parts of your response cycle relating to your essential function(s) (e.g. restoration of normal function(s) levels).",
+      "level": 2,
+      "sort_order": 1690,
+      "metadata": {
+        "objective": "D",
+        "principle": "D1",
+        "columns": 2
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f10dcbd8-ee89-552e-a93a-96824366d685",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "1559a09f-9c9e-56ee-8447-3f5ca1cc3e5f",
+      "control_id": "D2",
+      "title": "D2 Lessons Learned",
+      "description": "When an incident occurs, steps are taken to understand its causes and to ensure remediating action is taken to protect against future incidents.",
+      "level": 1,
+      "sort_order": 1790,
+      "metadata": {
+        "objective": "D",
+        "principle": "D2"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "11821fbe-8c75-57de-bfc7-b74f617a77af",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "f10dcbd8-ee89-552e-a93a-96824366d685",
+      "control_id": "D2.a",
+      "title": "Post Incident Analysis",
+      "description": "When an incident occurs, the organisation takes steps to understand its causes, informing appropriate remediating action.\n\nNOT ACHIEVED — at least one of these statements is true:\nNot usually able to resolve incidents to a root cause or identify the contributing factors within a broader systems context. No formal process for investigating causes. Investigators form theories early in the process and only seek evidence that affirms their belief. Investigations are solely focused on identifying the person(s) who can be held responsible for the incident.\n\nACHIEVED — all of these statements are true:\nPost incident analysis is conducted routinely as a key part of lessons learned activities following an incident. Post incident analysis is comprehensive, considering organisational factors (e.g. policies, processes and procedures), technical factors (e.g. system design, vulnerabilities), human factors (e.g. training, security culture) and any changes to threat. All relevant incident data is made available to the analysis team. Analysis considers what could have happened under plausible, alternative circumstances (e.g. 'what if'/'if only' scenarios).",
+      "level": 2,
+      "sort_order": 1800,
+      "metadata": {
+        "objective": "D",
+        "principle": "D2",
+        "columns": 2
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6a51ef08-0328-5a9f-ac84-749b07c5d565",
+      "framework_id": "90a43bc1-7202-5667-8184-020010bbb029",
+      "parent_id": "f10dcbd8-ee89-552e-a93a-96824366d685",
+      "control_id": "D2.b",
+      "title": "Using Incidents to Drive Improvements",
+      "description": "The organisation uses lessons learned from incidents to improve its security measures.\n\nNOT ACHIEVED — at least one of these statements is true:\nFollowing incidents, lessons learned are not captured or are limited in scope. Improvements arising from lessons learned following an incident are not implemented or not given sufficient organisational priority. Changes are made as a 'knee jerk' reaction to an incident without proper analysis and testing to ensure the change is appropriate. The organisation waits until a severe or high-profile incident has occurred before taking steps to improve.\n\nACHIEVED — all of these statements are true:\nA documented incident review process/policy ensures that lessons learned from each incident, including near misses, are identified, captured, and acted upon. Lessons learned cover issues with reporting, roles, governance, skills and organisational policies, processes and procedures as well as technical aspects of systems. Lessons learned are used to improve security measures, including updating and retesting response plans when necessary. Security improvements identified as a result of lessons learned are prioritised, with highest priority improvements completed promptly. Analysis is fed to senior management and incorporated into risk management and continuous improvement. Organisation learns from reported incidents in its sector and the wider national infrastructure.",
+      "level": 2,
+      "sort_order": 1810,
+      "metadata": {
+        "objective": "D",
+        "principle": "D2",
+        "columns": 2
+      }
+    },
+    {
+      "type": "relationship",
+      "id": "7955cb6a-d64c-596a-8868-5cb0f275fa5d",
+      "relationship_type": "parent-of",
+      "source_ref": "d5c38459-c63a-50cc-b282-bd408af4aac9",
+      "target_ref": "4cc14555-ef50-51ff-8d25-f9a562aa58fe"
+    },
+    {
+      "type": "relationship",
+      "id": "b9d3c482-ef14-5c5b-8101-9f6b74bbca99",
+      "relationship_type": "parent-of",
+      "source_ref": "4cc14555-ef50-51ff-8d25-f9a562aa58fe",
+      "target_ref": "3c8a86f8-1aee-575d-a8de-a0b951a3994e"
+    },
+    {
+      "type": "relationship",
+      "id": "db40f187-0440-5e8e-a88d-fb4b699f681a",
+      "relationship_type": "parent-of",
+      "source_ref": "4cc14555-ef50-51ff-8d25-f9a562aa58fe",
+      "target_ref": "7e3ea7ea-b28b-5727-a39a-a4325e09a858"
+    },
+    {
+      "type": "relationship",
+      "id": "c2e6eb71-e1bd-5fad-b90f-0b89d1b3f9b3",
+      "relationship_type": "parent-of",
+      "source_ref": "4cc14555-ef50-51ff-8d25-f9a562aa58fe",
+      "target_ref": "8c6b78c7-1984-5349-8bc7-c8014f051977"
+    },
+    {
+      "type": "relationship",
+      "id": "718ebdbe-95f6-5e6a-8ff4-ef0e8a6581b1",
+      "relationship_type": "parent-of",
+      "source_ref": "d5c38459-c63a-50cc-b282-bd408af4aac9",
+      "target_ref": "f9e31591-04ad-5201-911d-122ad7a28ebc"
+    },
+    {
+      "type": "relationship",
+      "id": "a4edf493-6681-5a22-9dbf-7ed980146585",
+      "relationship_type": "parent-of",
+      "source_ref": "f9e31591-04ad-5201-911d-122ad7a28ebc",
+      "target_ref": "2b0f1dfb-c214-5895-9f13-2cc1c3b8bba8"
+    },
+    {
+      "type": "relationship",
+      "id": "65383fea-7402-52c6-8751-1769c9c8c733",
+      "relationship_type": "parent-of",
+      "source_ref": "f9e31591-04ad-5201-911d-122ad7a28ebc",
+      "target_ref": "69979544-ce82-5e20-b282-1fb94db62541"
+    },
+    {
+      "type": "relationship",
+      "id": "b2ade559-a7c0-5076-b388-0d67b38755bb",
+      "relationship_type": "parent-of",
+      "source_ref": "f9e31591-04ad-5201-911d-122ad7a28ebc",
+      "target_ref": "fe4f13e8-a8ee-516a-b0e6-43c8ec1df536"
+    },
+    {
+      "type": "relationship",
+      "id": "bcce96fa-4e65-5cb7-8570-c5fab71a20ed",
+      "relationship_type": "parent-of",
+      "source_ref": "d5c38459-c63a-50cc-b282-bd408af4aac9",
+      "target_ref": "903066f6-27ce-5b7d-a2b6-3cb3adae65ce"
+    },
+    {
+      "type": "relationship",
+      "id": "8569d6df-78cd-57f2-accf-3f67613d43c4",
+      "relationship_type": "parent-of",
+      "source_ref": "903066f6-27ce-5b7d-a2b6-3cb3adae65ce",
+      "target_ref": "46e27312-231b-5f42-abf5-819f2d974b75"
+    },
+    {
+      "type": "relationship",
+      "id": "cbd5d6e7-a99b-5f58-a6c1-38619cd3142b",
+      "relationship_type": "parent-of",
+      "source_ref": "d5c38459-c63a-50cc-b282-bd408af4aac9",
+      "target_ref": "a818f2d6-fb67-5dbf-9128-f18fbc26291f"
+    },
+    {
+      "type": "relationship",
+      "id": "307db4da-5350-551f-89ff-ae8e4211c69b",
+      "relationship_type": "parent-of",
+      "source_ref": "a818f2d6-fb67-5dbf-9128-f18fbc26291f",
+      "target_ref": "cefb8285-8cbd-5a3b-8c51-acf176d74848"
+    },
+    {
+      "type": "relationship",
+      "id": "cd4c5341-25c5-5496-a44e-954b3e8f92d9",
+      "relationship_type": "parent-of",
+      "source_ref": "a818f2d6-fb67-5dbf-9128-f18fbc26291f",
+      "target_ref": "ede687d9-f0cd-58b5-9e5b-4ff9abc05950"
+    },
+    {
+      "type": "relationship",
+      "id": "844a2645-28ce-5d47-9894-c3aec825ea8f",
+      "relationship_type": "parent-of",
+      "source_ref": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "target_ref": "919530b1-4c39-5e61-82b1-10bcf2c110fa"
+    },
+    {
+      "type": "relationship",
+      "id": "e182c586-c7fb-5673-bc7d-918771e2fb6e",
+      "relationship_type": "parent-of",
+      "source_ref": "919530b1-4c39-5e61-82b1-10bcf2c110fa",
+      "target_ref": "2eb6fab0-f642-5125-8832-e483e8229663"
+    },
+    {
+      "type": "relationship",
+      "id": "2761bcb0-969b-5d33-9274-ff4cd16a1595",
+      "relationship_type": "parent-of",
+      "source_ref": "919530b1-4c39-5e61-82b1-10bcf2c110fa",
+      "target_ref": "66cee94f-68f6-5aab-b5fb-b55a9a44baa8"
+    },
+    {
+      "type": "relationship",
+      "id": "4541b068-51e7-5763-bbf3-01b5ec087246",
+      "relationship_type": "parent-of",
+      "source_ref": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "target_ref": "596edd39-e836-5eef-a908-b9522ba6e2f8"
+    },
+    {
+      "type": "relationship",
+      "id": "d49cffe1-d271-5a1a-84f7-0850511cd413",
+      "relationship_type": "parent-of",
+      "source_ref": "596edd39-e836-5eef-a908-b9522ba6e2f8",
+      "target_ref": "eb24f520-ae93-581b-815a-aa8c915deed8"
+    },
+    {
+      "type": "relationship",
+      "id": "19e1bb39-072b-580e-8c83-39b7da9a705d",
+      "relationship_type": "parent-of",
+      "source_ref": "596edd39-e836-5eef-a908-b9522ba6e2f8",
+      "target_ref": "efb8cb37-f410-5857-943e-8523479ab2d0"
+    },
+    {
+      "type": "relationship",
+      "id": "0eed5644-0f4d-5fcc-9347-c0f71ee6e7fa",
+      "relationship_type": "parent-of",
+      "source_ref": "596edd39-e836-5eef-a908-b9522ba6e2f8",
+      "target_ref": "8d60288f-faaf-5c2d-a218-f08be96c182f"
+    },
+    {
+      "type": "relationship",
+      "id": "0dbb2c48-07ef-54e4-a821-3f809e4a0d24",
+      "relationship_type": "parent-of",
+      "source_ref": "596edd39-e836-5eef-a908-b9522ba6e2f8",
+      "target_ref": "c677a59f-d96d-5f32-b3d7-d3c1e81cc915"
+    },
+    {
+      "type": "relationship",
+      "id": "2b31a1ad-2ad6-59c7-a63e-e470817ca0b2",
+      "relationship_type": "parent-of",
+      "source_ref": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "target_ref": "a6218798-8c39-599c-b716-f240e7244005"
+    },
+    {
+      "type": "relationship",
+      "id": "bf7e51fa-530b-5cc0-a784-1efe4075b692",
+      "relationship_type": "parent-of",
+      "source_ref": "a6218798-8c39-599c-b716-f240e7244005",
+      "target_ref": "cee52a54-a227-54cb-91a5-a15f8a78b52f"
+    },
+    {
+      "type": "relationship",
+      "id": "73ad764c-e8e8-5e62-9714-2e8df5a9912d",
+      "relationship_type": "parent-of",
+      "source_ref": "a6218798-8c39-599c-b716-f240e7244005",
+      "target_ref": "fcd9a9c0-6474-5b57-af7f-cd84791208d1"
+    },
+    {
+      "type": "relationship",
+      "id": "c8b7df92-726f-50b9-b8ae-91ab9ba941a9",
+      "relationship_type": "parent-of",
+      "source_ref": "a6218798-8c39-599c-b716-f240e7244005",
+      "target_ref": "db58d926-b76c-5e17-adff-9c0f66d5c582"
+    },
+    {
+      "type": "relationship",
+      "id": "d8d9cdd0-886f-5065-9e0a-0e62107bf8d5",
+      "relationship_type": "parent-of",
+      "source_ref": "a6218798-8c39-599c-b716-f240e7244005",
+      "target_ref": "c8a567c9-d7a9-59a7-b301-5eec1018fdfc"
+    },
+    {
+      "type": "relationship",
+      "id": "78b83dce-68bd-51df-ac90-aa68e54351ec",
+      "relationship_type": "parent-of",
+      "source_ref": "a6218798-8c39-599c-b716-f240e7244005",
+      "target_ref": "396be3a9-6587-5076-864e-570da79b3e90"
+    },
+    {
+      "type": "relationship",
+      "id": "4af62809-a4b5-5c98-817b-c8ca2f76a94c",
+      "relationship_type": "parent-of",
+      "source_ref": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "target_ref": "f35173de-83aa-5d88-93ac-7642031c5b5b"
+    },
+    {
+      "type": "relationship",
+      "id": "65dabe33-23ac-57b3-a2fd-13830da2693e",
+      "relationship_type": "parent-of",
+      "source_ref": "f35173de-83aa-5d88-93ac-7642031c5b5b",
+      "target_ref": "989029bb-a46b-5ac1-80e1-14eb21c58727"
+    },
+    {
+      "type": "relationship",
+      "id": "431b361d-fbdb-51df-b5b8-2fd550c9d864",
+      "relationship_type": "parent-of",
+      "source_ref": "f35173de-83aa-5d88-93ac-7642031c5b5b",
+      "target_ref": "a37da377-91da-5d8e-bf29-8a037548f486"
+    },
+    {
+      "type": "relationship",
+      "id": "0e811973-d932-5697-a07d-6490ba51d4b8",
+      "relationship_type": "parent-of",
+      "source_ref": "f35173de-83aa-5d88-93ac-7642031c5b5b",
+      "target_ref": "a9edae97-3aa3-504e-a3eb-721de11d3be8"
+    },
+    {
+      "type": "relationship",
+      "id": "5549a7ab-0c1c-5f19-a0b8-d2f22ca4038e",
+      "relationship_type": "parent-of",
+      "source_ref": "f35173de-83aa-5d88-93ac-7642031c5b5b",
+      "target_ref": "31378401-68b3-5605-98fd-404a3b030f70"
+    },
+    {
+      "type": "relationship",
+      "id": "08859e20-e888-51b4-bf69-ba72efb371af",
+      "relationship_type": "parent-of",
+      "source_ref": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "target_ref": "4d9f533e-518e-53af-a83e-7ac6feeba179"
+    },
+    {
+      "type": "relationship",
+      "id": "77de2bf7-7d5b-53a0-bfa9-63dcfe0ba524",
+      "relationship_type": "parent-of",
+      "source_ref": "4d9f533e-518e-53af-a83e-7ac6feeba179",
+      "target_ref": "d02e15f2-cca7-5dc4-9700-371c0ab39e2b"
+    },
+    {
+      "type": "relationship",
+      "id": "e50ff029-dd51-5413-9e87-9cc127ce72bd",
+      "relationship_type": "parent-of",
+      "source_ref": "4d9f533e-518e-53af-a83e-7ac6feeba179",
+      "target_ref": "79671396-d6b3-58cf-bd23-0bf4f73ef0cd"
+    },
+    {
+      "type": "relationship",
+      "id": "9e930ccf-720a-5707-a7e0-0556fc766c01",
+      "relationship_type": "parent-of",
+      "source_ref": "4d9f533e-518e-53af-a83e-7ac6feeba179",
+      "target_ref": "df6bf530-00e4-570e-9b25-804f2f932acb"
+    },
+    {
+      "type": "relationship",
+      "id": "022005a1-ac01-5abc-ab04-0537678e9e77",
+      "relationship_type": "parent-of",
+      "source_ref": "4723b105-30be-590e-84b9-eaa5e0ad665b",
+      "target_ref": "faccd8db-f10b-575e-b744-ab85d0cebec7"
+    },
+    {
+      "type": "relationship",
+      "id": "161aed11-bbc4-55e1-8a17-24fbf9b24907",
+      "relationship_type": "parent-of",
+      "source_ref": "faccd8db-f10b-575e-b744-ab85d0cebec7",
+      "target_ref": "7c558696-e75a-559f-b394-45b55a5d6653"
+    },
+    {
+      "type": "relationship",
+      "id": "d2f1d5e0-cae2-51f7-b165-bd1d91608276",
+      "relationship_type": "parent-of",
+      "source_ref": "faccd8db-f10b-575e-b744-ab85d0cebec7",
+      "target_ref": "0e4bad30-b489-5985-ade1-4f167e913cb8"
+    },
+    {
+      "type": "relationship",
+      "id": "61b20c33-38ee-579d-86dd-3f284190e927",
+      "relationship_type": "parent-of",
+      "source_ref": "7067620a-8f3f-574b-8670-0ed79e57d103",
+      "target_ref": "59fdd919-d7df-59a8-8bd0-d53a26fe457e"
+    },
+    {
+      "type": "relationship",
+      "id": "0840b588-39e2-51e9-90eb-a539971d7e3d",
+      "relationship_type": "parent-of",
+      "source_ref": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "target_ref": "28992e13-17f0-5fcd-8db9-55a7dd97bea9"
+    },
+    {
+      "type": "relationship",
+      "id": "f62274bf-881c-50be-92ee-35aeb5513f8b",
+      "relationship_type": "parent-of",
+      "source_ref": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "target_ref": "6cb6afc5-3deb-557e-b1f0-e84f1feefa86"
+    },
+    {
+      "type": "relationship",
+      "id": "6cbd7897-8c3d-5cc3-9797-d2e6a70232f2",
+      "relationship_type": "parent-of",
+      "source_ref": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "target_ref": "bb64de9c-2b63-59f1-8a0a-111545736b32"
+    },
+    {
+      "type": "relationship",
+      "id": "ebade7c3-8f0d-5953-9646-b5afb3bc8013",
+      "relationship_type": "parent-of",
+      "source_ref": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "target_ref": "42f9b8cd-00c7-5ff2-a672-16bcff80c1e6"
+    },
+    {
+      "type": "relationship",
+      "id": "f7dba6ae-51c7-5cc6-a5a3-43126af2158d",
+      "relationship_type": "parent-of",
+      "source_ref": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "target_ref": "230d35a1-31c7-5a97-ac56-4de586872d7b"
+    },
+    {
+      "type": "relationship",
+      "id": "50a4e964-8ab2-5c6a-a639-9755be29f78c",
+      "relationship_type": "parent-of",
+      "source_ref": "59fdd919-d7df-59a8-8bd0-d53a26fe457e",
+      "target_ref": "55472733-86bc-56c8-b01a-e8e2fda7c888"
+    },
+    {
+      "type": "relationship",
+      "id": "9ee1e217-80cf-59d6-9db1-17d2df7b8aa2",
+      "relationship_type": "parent-of",
+      "source_ref": "7067620a-8f3f-574b-8670-0ed79e57d103",
+      "target_ref": "d614b3cc-b33d-547f-80f9-8949074bea92"
+    },
+    {
+      "type": "relationship",
+      "id": "425e32b7-5b4c-5b06-a0fc-1f59f16a224a",
+      "relationship_type": "parent-of",
+      "source_ref": "d614b3cc-b33d-547f-80f9-8949074bea92",
+      "target_ref": "fe96d36e-7eed-5709-b32a-ca9fe23d09a7"
+    },
+    {
+      "type": "relationship",
+      "id": "87c8fb4a-afc2-51e5-bd56-43252c89bb8f",
+      "relationship_type": "parent-of",
+      "source_ref": "1559a09f-9c9e-56ee-8447-3f5ca1cc3e5f",
+      "target_ref": "f59e1dc3-703e-5d01-8c5c-1b2e7ddc2c64"
+    },
+    {
+      "type": "relationship",
+      "id": "f9dfbb71-a506-5e59-87f1-733608b96cf0",
+      "relationship_type": "parent-of",
+      "source_ref": "f59e1dc3-703e-5d01-8c5c-1b2e7ddc2c64",
+      "target_ref": "59983f81-5ce7-5b15-8966-8ab633c6af28"
+    },
+    {
+      "type": "relationship",
+      "id": "dd4ad2e0-3199-55e3-99d1-ed50f7f2abaa",
+      "relationship_type": "parent-of",
+      "source_ref": "f59e1dc3-703e-5d01-8c5c-1b2e7ddc2c64",
+      "target_ref": "1e930332-2691-5df3-9e74-164adde12886"
+    },
+    {
+      "type": "relationship",
+      "id": "2c497f61-caa9-5abe-9e20-108d34a446b7",
+      "relationship_type": "parent-of",
+      "source_ref": "f59e1dc3-703e-5d01-8c5c-1b2e7ddc2c64",
+      "target_ref": "9b632dfe-6fe0-5bdd-ab55-4fdf2a5e0efe"
+    },
+    {
+      "type": "relationship",
+      "id": "f8e8674b-0d13-5657-a478-95112d5a5469",
+      "relationship_type": "parent-of",
+      "source_ref": "1559a09f-9c9e-56ee-8447-3f5ca1cc3e5f",
+      "target_ref": "f10dcbd8-ee89-552e-a93a-96824366d685"
+    },
+    {
+      "type": "relationship",
+      "id": "d90419eb-19fb-5869-96f5-477cbe5466c7",
+      "relationship_type": "parent-of",
+      "source_ref": "f10dcbd8-ee89-552e-a93a-96824366d685",
+      "target_ref": "11821fbe-8c75-57de-bfc7-b74f617a77af"
+    },
+    {
+      "type": "relationship",
+      "id": "3faf8eb4-c8e5-5460-997f-7eefb84ffd53",
+      "relationship_type": "parent-of",
+      "source_ref": "f10dcbd8-ee89-552e-a93a-96824366d685",
+      "target_ref": "6a51ef08-0328-5a9f-ac84-749b07c5d565"
+    }
+  ]
+}

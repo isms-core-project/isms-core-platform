@@ -41,9 +41,18 @@ const COBIT_SCORE_LABELS: Record<number, string> = {
   4: 'Optimizing',
 }
 
+const CAF_SCORE_LABELS: Record<number, string> = {
+  0: 'Not Achieved',
+  1: 'Not Achieved +',
+  2: 'Partially Achieved',
+  3: 'Partially Achieved +',
+  4: 'Achieved',
+}
+
 function resolveScoreLabels(frameworkCode: string): Record<number, string> {
   if (frameworkCode === 'EU_CLOUD_SOV') return SEAL_SCORE_LABELS
   if (frameworkCode === 'COBIT_2019') return COBIT_SCORE_LABELS
+  if (frameworkCode === 'NCSC_CAF') return CAF_SCORE_LABELS
   return SCORE_LABELS
 }
 
@@ -129,6 +138,13 @@ const FRAMEWORK_META: Record<string, { name: string; subtitle: string; color: st
     subtitle: 'SI 2018/506',
     color: '#003399',
     description: 'The Network and Information Systems (NIS) Regulations 2018 (SI 2018/506) — UK cybersecurity obligations for operators of essential services (OES) and relevant digital service providers (RDSP). Assessed against NCSC Cyber Assessment Framework (CAF) v4.0. Pending update by the Cyber Security and Resilience Bill (2025–2026).',
+  },
+  NCSC_CAF: {
+    name: 'NCSC Cyber Assessment Framework',
+    subtitle: 'CAF v4.0',
+    color: '#1D3557',
+    description: 'NCSC CAF v4.0 — Outcome-based cybersecurity assessment framework for operators of essential services and regulated entities in the UK. 4 Objectives, 14 Principles, 41 Contributing Outcomes. Each outcome is assessed as Not Achieved / Partially Achieved / Achieved using Indicators of Good Practice (IGPs). Aligned with UK NIS Regulations (SI 2018/506) and the Cyber Security and Resilience Bill (2025–2026). Required for OES self-assessment and CAF-based audits by competent authorities.',
+    scoreLabels: CAF_SCORE_LABELS,
   },
   UK_OPERATIONAL_RESILIENCE: {
     name: 'UK Operational Resilience',
@@ -363,7 +379,7 @@ function groupRequirements(requirements: FullAssessment['requirements'], framewo
   if (frameworkCode === 'EU_CLOUD_SOV') {
     return [{ groupId: 'all', groupTitle: 'Cloud Sovereignty Objectives — SOV-1 to SOV-8', requirements }]
   }
-  if (frameworkCode === 'DORA' || frameworkCode === 'CIS_V8' || frameworkCode === 'BSI_IT_GRUNDSCHUTZ' || frameworkCode === 'COBIT_2019' || frameworkCode === 'NIST_AI_RMF') {
+  if (frameworkCode === 'DORA' || frameworkCode === 'CIS_V8' || frameworkCode === 'BSI_IT_GRUNDSCHUTZ' || frameworkCode === 'COBIT_2019' || frameworkCode === 'NIST_AI_RMF' || frameworkCode === 'NCSC_CAF') {
     // Group by group_id (chapter / IG / layer)
     const map = new Map<string, GroupedReq>()
     for (const r of requirements) {

@@ -41,6 +41,7 @@ _ASSESSABLE_LEVEL = {
     "CSA_AICM_V1": 1,
     "NIST_800_53_R5": 1,
     "ISO42001": 1,
+    "NCSC_CAF": 2,
 }
 
 

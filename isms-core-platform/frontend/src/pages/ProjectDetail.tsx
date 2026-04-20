@@ -2198,6 +2198,7 @@ const CROSSWALK_FRAMEWORKS = [
   { code: 'CSSF_LU',                 label: 'CSSF 20-750 (LU)' },
   { code: 'ACN_IT',                  label: 'ACN Guidelines (IT)' },
   { code: 'UK_NIS',                  label: 'UK NIS Regulations' },
+  { code: 'NCSC_CAF',               label: 'NCSC CAF v4.0' },
   { code: 'UK_OPERATIONAL_RESILIENCE', label: 'UK Op. Resilience' },
 ]
 

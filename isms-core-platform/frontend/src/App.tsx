@@ -29,6 +29,7 @@ import Connectors from './pages/Connectors'
 import Nis2 from './pages/Nis2'
 import Dora from './pages/Dora'
 import UkNis from './pages/UkNis'
+import NcscCaf from './pages/NcscCaf'
 import UkOperationalResilience from './pages/UkOperationalResilience'
 import CyfunBe from './pages/CyfunBe'
 import BafinBait from './pages/BafinBait'
@@ -121,6 +122,7 @@ export default function App() {
         <Route path="nis2" element={<Nis2 />} />
         <Route path="dora" element={<Dora />} />
         <Route path="uk-nis" element={<UkNis />} />
+        <Route path="ncsc-caf" element={<NcscCaf />} />
         <Route path="uk-op-resilience" element={<UkOperationalResilience />} />
         <Route path="cyfun-be" element={<CyfunBe />} />
         <Route path="bafin-bait" element={<BafinBait />} />
