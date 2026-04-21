@@ -8,7 +8,8 @@ Pulls threat intelligence and vulnerability data on fixed schedules:
   - CISA KEV       : daily    (03:00 UTC)
   - NVD CVE delta  : daily    (03:00 UTC — runs alongside KEV, both are fast)
   - FIRST EPSS     : daily    (03:30 UTC)
-  - ENISA EUVD     : daily    (04:00 UTC)
+  - ENISA EUVD full : weekly  (Sunday 02:45 UTC)
+  - ENISA EUVD delta: daily   (04:00 UTC)
 
 Each feed can be disabled via env vars:
   FEEDS_MITRE_ENABLED=true|false
@@ -64,7 +65,28 @@ def _safe(fn, name: str):
     return wrapper
 
 
+def _clear_stale_runs():
+    """Mark any feed_runs still in 'running' state as failed — left over from a previous container crash."""
+    try:
+        from feeds.base import get_conn
+        with get_conn() as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    """
+                    UPDATE feed_runs SET status='error', finished_at=NOW(),
+                      error_message='Container restarted — run interrupted'
+                    WHERE status='running'
+                    """
+                )
+                count = cur.rowcount
+        if count:
+            logger.info("Cleared %d stale running feed_run(s) on startup", count)
+    except Exception as exc:
+        logger.warning("Could not clear stale feed runs: %s", exc)
+
+
 def main():
+    _clear_stale_runs()
     trigger_server.start()
     run_on_start = os.environ.get("FEEDS_RUN_ON_START", "true").lower() == "true"
 
@@ -84,9 +106,10 @@ def main():
         schedule.every().day.at("03:00").do(_safe(nist_cve.run_delta, "NVD CVE (delta)"))
         schedule.every().sunday.at("01:30").do(_safe(nist_cpe.run, "NVD CPE (Option B)"))
     if _enabled("FEEDS_EUVD_ENABLED"):
-        schedule.every().day.at("04:00").do(_safe(euvd.run, "ENISA EUVD"))
+        schedule.every().sunday.at("02:45").do(_safe(euvd.run_full, "ENISA EUVD (full)"))
+        schedule.every().day.at("04:00").do(_safe(euvd.run_delta, "ENISA EUVD (delta)"))
 
-    # ── Run on start: Phase 1 feeds first (fast, <5s), CVE last (slow) ──────────
+    # ── Run on start: Phase 1 feeds first (fast, <5s), CVE/EUVD last (slow) ──────
     if run_on_start:
         if _enabled("FEEDS_MITRE_ENABLED"):
             _safe(mitre_attack.run, "MITRE ATT&CK")()
@@ -96,12 +119,12 @@ def main():
             _safe(cisa_kev.run, "CISA KEV")()
         if _enabled("FEEDS_EPSS_ENABLED"):
             _safe(epss.run, "FIRST EPSS")()
-        # CVE full runs last — takes minutes to hours depending on API key
+        # Full pulls run last — can take minutes to hours
         if _enabled("FEEDS_CVE_ENABLED"):
             _safe(nist_cve.run_full, "NVD CVE (full)")()
             _safe(nist_cpe.run, "NVD CPE (Option B)")()
         if _enabled("FEEDS_EUVD_ENABLED"):
-            _safe(euvd.run, "ENISA EUVD")()
+            _safe(euvd.run_full, "ENISA EUVD (full)")()
 
     logger.info("Scheduler running — next jobs: %s", schedule.jobs)
 

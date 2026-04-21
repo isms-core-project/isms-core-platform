@@ -24,7 +24,7 @@ from uuid import uuid4
 
 import requests
 
-from feeds.base import fail_run, finish_run, get_conn, start_run
+from feeds.base import fail_run, finish_run, get_conn, is_cancelled, start_run
 
 logger = logging.getLogger(__name__)
 
@@ -270,9 +270,14 @@ def run(full: bool = False) -> None:
     total_results = first.get("totalResults", 0)
     logger.info("NVD CVE %s: %d CVEs to process", mode, total_results)
 
+    feed_key = f"nist_cve_{mode}"
     pages_data = [first]
     start = PAGE_SIZE
     while start < total_results:
+        if is_cancelled(feed_key):
+            logger.info("NVD CVE %s cancelled at startIndex=%d", mode, start)
+            fail_run(run_id, "Cancelled by user")
+            return
         _sleep_between_pages()
         for attempt, wait in enumerate([0] + _RETRY_BACKOFF):
             if wait:

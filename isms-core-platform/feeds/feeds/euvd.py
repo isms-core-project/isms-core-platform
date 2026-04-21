@@ -2,14 +2,23 @@
 
 Source: https://euvdservices.enisa.europa.eu/api
 
-Fetches:
-  - Actively Exploited Vulnerabilities — EU analog of CISA KEV
-  - Critical Vulnerabilities           — CVSS 8+ catalog
+Fetches via /api/search (paginated, 100/page, page index 0-based):
+  - Full pull  (weekly, Sunday 01:30 UTC) — all EUVD entries, no filters
+  - Delta pull (daily,  04:00 UTC)        — entries updated since last successful run
+                                            using fromUpdatedDate=YYYY-MM-DD
+
+Flags derived from item fields (no separate endpoint calls needed):
+  is_exploited   ← bool(item["exploitedSince"])
+  is_critical    ← base_score >= 9.0
+  is_eu_assigned ← assigner in {ENISA, NCSC-FI, NCSC-NL, CERT-PL, SK-CERT, INCIBE}
 
 After upsert to PostgreSQL, immediately:
   1. Indexes all records to OpenSearch 'euvd' index.
   2. Bulk-updates 'nvd-cve' with in_euvd=True for matching CVEs so the
      CVE Explorer reflects EU exploitation status on the same daily cycle.
+
+Env:
+  FEEDS_EUVD_ENABLED — toggle (default: true)
 """
 
 import json
@@ -21,14 +30,21 @@ from uuid import uuid4
 
 import requests
 
-from feeds.base import fail_run, finish_run, get_conn, start_run
+from feeds.base import fail_run, finish_run, get_conn, is_cancelled, start_run
 
 logger = logging.getLogger(__name__)
 
 _BASE_URL  = "https://euvdservices.enisa.europa.eu/api"
-_PAGE_SIZE = 500
+_PAGE_SIZE = 100
 _OS_INDEX  = "euvd"
 _NVD_INDEX = "nvd-cve"
+_RUN_NAME  = "euvd"
+
+# EUVD API returns dates as "Apr 20, 2023, 12:00:00 AM" — not ISO 8601.
+_EUVD_DT_FMT = "%b %d, %Y, %I:%M:%S %p"
+
+_EU_ASSIGNERS     = "ENISA,NCSC-FI,NCSC-NL,CERT-PL,SK-CERT,INCIBE"
+_EU_ASSIGNERS_SET = set(_EU_ASSIGNERS.split(","))
 
 
 # ── HTTP helpers ──────────────────────────────────────────────────────────────
@@ -40,19 +56,24 @@ def _get(path: str, params: dict | None = None) -> dict | list:
     return resp.json()
 
 
-def _paginate(endpoint: str) -> list[dict]:
-    """Fetch all pages from a paginated EUVD list endpoint."""
+def _paginate_search(params: dict) -> list[dict]:
+    """Paginate /api/search. Page index is 0-based; response is {items, total}."""
     items: list[dict] = []
-    page = 1
+    page = 0
     while True:
-        try:
-            data = _get(endpoint, {"page": page, "size": _PAGE_SIZE})
-        except Exception as exc:
-            logger.warning("EUVD %s page %d failed: %s", endpoint, page, exc)
+        if is_cancelled(_RUN_NAME):
+            logger.info("EUVD fetch cancelled at page %d", page)
             break
 
-        batch = data if isinstance(data, list) else (data.get("items") or [])
+        try:
+            data = _get("search", {**params, "page": page, "size": _PAGE_SIZE})
+        except Exception as exc:
+            logger.warning("EUVD search page %d failed: %s", page, exc)
+            break
+
+        batch = data.get("items") or [] if isinstance(data, dict) else data
         items.extend(batch)
+        logger.debug("EUVD page %d: %d items (running total %d)", page, len(batch), len(items))
 
         if len(batch) < _PAGE_SIZE:
             break
@@ -64,11 +85,20 @@ def _paginate(endpoint: str) -> list[dict]:
 
 # ── Data helpers ──────────────────────────────────────────────────────────────
 
-def _cve_ids(aliases: list) -> list[str]:
-    return [a.upper() for a in (aliases or []) if isinstance(a, str) and a.upper().startswith("CVE-")]
+def _parse_aliases(raw) -> list[str]:
+    """EUVD returns aliases as a newline-separated string, not a list."""
+    if not raw:
+        return []
+    if isinstance(raw, list):
+        return [a.strip() for a in raw if isinstance(a, str) and a.strip()]
+    return [a.strip() for a in str(raw).split("\n") if a.strip()]
 
 
-def _first_cve(aliases: list) -> str | None:
+def _cve_ids(aliases: list[str]) -> list[str]:
+    return [a.upper() for a in aliases if a.upper().startswith("CVE-")]
+
+
+def _first_cve(aliases: list[str]) -> str | None:
     ids = _cve_ids(aliases)
     return ids[0] if ids else None
 
@@ -76,8 +106,50 @@ def _first_cve(aliases: list) -> str | None:
 def _parse_dt(s: str | None) -> datetime | None:
     if not s:
         return None
+    s = s.strip()
     try:
         return datetime.fromisoformat(s.replace("Z", "+00:00"))
+    except ValueError:
+        pass
+    try:
+        dt = datetime.strptime(s, _EUVD_DT_FMT)
+        return dt.replace(tzinfo=timezone.utc)
+    except ValueError:
+        pass
+    logger.debug("Cannot parse date: %r", s)
+    return None
+
+
+def _extract_vendors(item: dict) -> list[str]:
+    return [
+        v.get("vendor", {}).get("name", "")
+        for v in (item.get("enisaIdVendor") or [])
+        if v.get("vendor", {}).get("name")
+    ]
+
+
+def _extract_products(item: dict) -> list[str]:
+    return [
+        p.get("product", {}).get("name", "")
+        for p in (item.get("enisaIdProduct") or [])
+        if p.get("product", {}).get("name")
+    ]
+
+
+def _get_last_run_date() -> datetime | None:
+    try:
+        with get_conn() as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    """
+                    SELECT started_at FROM feed_runs
+                    WHERE feed_name = %s AND status = 'success'
+                    ORDER BY started_at DESC LIMIT 1
+                    """,
+                    (_RUN_NAME,),
+                )
+                row = cur.fetchone()
+                return row[0] if row else None
     except Exception:
         return None
 
@@ -112,6 +184,7 @@ def _ensure_euvd_index(client) -> None:
             "assigner":            {"type": "keyword"},
             "is_exploited":        {"type": "boolean"},
             "is_critical":         {"type": "boolean"},
+            "is_eu_assigned":      {"type": "boolean"},
             "aliases":             {"type": "keyword"},
             "vendors":             {"type": "keyword"},
             "products":            {"type": "keyword"},
@@ -122,7 +195,6 @@ def _ensure_euvd_index(client) -> None:
 
 
 def _sync_to_opensearch(entries: list[dict]) -> int:
-    """Index EUVD entries to OpenSearch, then cross-enrich nvd-cve."""
     client = _get_os_client()
     if client is None:
         logger.warning("opensearch-py not available — skipping EUVD sync")
@@ -159,7 +231,6 @@ def _sync_to_opensearch(entries: list[dict]) -> int:
         logger.warning("EUVD OpenSearch bulk error: %s", exc)
 
     logger.info("EUVD → OpenSearch euvd: %d indexed", indexed)
-
     _enrich_nvd_cve(client, entries)
     return indexed
 
@@ -182,7 +253,6 @@ def _enrich_nvd_cve(client, entries: list[dict]) -> None:
 
     from opensearchpy import helpers as os_helpers
 
-    # CVE → first EUVD ID mapping
     cve_to_euvd: dict[str, str] = {}
     for e in entries:
         for cve_id in (e.get("cve_ids") or []):
@@ -220,34 +290,36 @@ def _enrich_nvd_cve(client, entries: list[dict]) -> None:
 
 # ── Main run ──────────────────────────────────────────────────────────────────
 
-def run() -> None:
-    run_id = start_run("euvd")
-    logger.info("ENISA EUVD pull started")
+def run(full: bool = False) -> None:
+    """Pull ENISA EUVD data.
 
-    logger.info("Fetching exploited vulnerabilities...")
-    exploited = _paginate("exploitedvulnerabilities")
-    logger.info("  → %d exploited entries", len(exploited))
+    full=True  → fetch all EUVD entries (weekly)
+    full=False → fetch entries updated since last successful run (daily delta)
+    """
+    run_id = start_run(_RUN_NAME)
+    mode   = "full" if full else "delta"
+    logger.info("ENISA EUVD %s pull started", mode)
 
-    logger.info("Fetching critical vulnerabilities...")
-    critical = _paginate("criticalvulnerabilities")
-    logger.info("  → %d critical entries", len(critical))
-
-    # Deduplicate on EUVD id, preserving both flags
-    merged: dict[str, dict] = {}
-    for item in exploited:
-        eid = item.get("id") or ""
-        if eid:
-            merged[eid] = {**item, "_is_exploited": True, "_is_critical": False}
-    for item in critical:
-        eid = item.get("id") or ""
-        if not eid:
-            continue
-        if eid in merged:
-            merged[eid]["_is_critical"] = True
+    params: dict = {}
+    if not full:
+        last_run = _get_last_run_date()
+        if last_run:
+            params["fromUpdatedDate"] = last_run.strftime("%Y-%m-%d")
+            logger.info("Delta mode: entries updated since %s", last_run.date())
         else:
-            merged[eid] = {**item, "_is_exploited": False, "_is_critical": True}
+            logger.info("No previous run found — running full pull")
+            full = True
 
-    if not merged:
+    all_items = _paginate_search(params)
+    logger.info("EUVD %s: %d entries fetched", mode, len(all_items))
+
+    if not all_items and not full:
+        # Delta returned nothing — normal when nothing changed
+        finish_run(run_id, 0)
+        logger.info("EUVD delta complete: no changes since last run")
+        return
+
+    if not all_items:
         fail_run(run_id, "No EUVD entries fetched")
         return
 
@@ -257,8 +329,12 @@ def run() -> None:
 
     with get_conn() as conn:
         with conn.cursor() as cur:
-            for eid, item in merged.items():
-                aliases      = item.get("aliases") or []
+            for item in all_items:
+                eid = item.get("id") or ""
+                if not eid:
+                    continue
+
+                aliases      = _parse_aliases(item.get("aliases"))
                 cve_id       = _first_cve(aliases)
                 all_cve_ids  = _cve_ids(aliases)
                 description  = (item.get("description") or "")[:8000] or None
@@ -269,10 +345,14 @@ def run() -> None:
                 base_vec     = (item.get("baseScoreVector") or "")[:200] or None
                 epss         = item.get("epss")
                 assigner     = (item.get("assigner") or "")[:200] or None
-                is_exploited = bool(item.get("_is_exploited"))
-                is_critical  = bool(item.get("_is_critical"))
-                vendors      = [v.get("name", "") for v in (item.get("enisaIdVendor") or []) if v.get("name")]
-                products     = [p.get("name", "") for p in (item.get("enisaIdProduct") or []) if p.get("name")]
+
+                # Derive flags from item fields — no separate API calls needed
+                is_exploited   = bool(item.get("exploitedSince"))
+                is_critical    = (base_score or 0) >= 9.0
+                is_eu_assigned = (item.get("assigner") or "").strip() in _EU_ASSIGNERS_SET
+
+                vendors  = _extract_vendors(item)
+                products = _extract_products(item)
 
                 cur.execute(
                     """
@@ -281,10 +361,10 @@ def run() -> None:
                        date_published, date_updated,
                        base_score, base_score_version, base_score_vector,
                        epss_score, assigner,
-                       is_exploited, is_critical,
+                       is_exploited, is_critical, is_eu_assigned,
                        aliases, cve_ids, vendors, products,
                        created_at, updated_at)
-                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,
+                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,
                             %s::jsonb,%s::jsonb,%s::jsonb,%s::jsonb,
                             %s,%s)
                     ON CONFLICT (euvd_id) DO UPDATE SET
@@ -296,8 +376,9 @@ def run() -> None:
                       base_score_vector  = EXCLUDED.base_score_vector,
                       epss_score         = EXCLUDED.epss_score,
                       assigner           = EXCLUDED.assigner,
-                      is_exploited       = EXCLUDED.is_exploited OR euvd_vulnerabilities.is_exploited,
-                      is_critical        = EXCLUDED.is_critical OR euvd_vulnerabilities.is_critical,
+                      is_exploited       = EXCLUDED.is_exploited,
+                      is_critical        = EXCLUDED.is_critical,
+                      is_eu_assigned     = EXCLUDED.is_eu_assigned,
                       aliases            = EXCLUDED.aliases,
                       cve_ids            = EXCLUDED.cve_ids,
                       vendors            = EXCLUDED.vendors,
@@ -309,7 +390,7 @@ def run() -> None:
                         date_pub, date_upd,
                         base_score, base_ver, base_vec,
                         epss, assigner,
-                        is_exploited, is_critical,
+                        is_exploited, is_critical, is_eu_assigned,
                         json.dumps(aliases), json.dumps(all_cve_ids),
                         json.dumps(vendors), json.dumps(products),
                         now, now,
@@ -331,6 +412,7 @@ def run() -> None:
                     "assigner":           assigner,
                     "is_exploited":       is_exploited,
                     "is_critical":        is_critical,
+                    "is_eu_assigned":     is_eu_assigned,
                     "aliases":            aliases,
                     "vendors":            vendors,
                     "products":           products,
@@ -339,4 +421,12 @@ def run() -> None:
     _sync_to_opensearch(os_docs)
 
     finish_run(run_id, upserted)
-    logger.info("ENISA EUVD completed: %d entries upserted", upserted)
+    logger.info("ENISA EUVD %s complete: %d entries upserted", mode, upserted)
+
+
+def run_full() -> None:
+    run(full=True)
+
+
+def run_delta() -> None:
+    run(full=False)

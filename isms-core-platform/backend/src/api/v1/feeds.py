@@ -846,7 +846,8 @@ def list_cve(
     try:
         result = client.search(
             index=search_service.IDX_NVD_CVE,
-            body={"query": query, "sort": sort, "from": (page - 1) * per_page, "size": per_page},
+            body={"query": query, "sort": sort, "from": (page - 1) * per_page, "size": per_page,
+                  "track_total_hits": True},
         )
     except Exception:
         return NvdCveList(items=[], total=0, page=page, per_page=per_page)
@@ -941,7 +942,8 @@ def list_cpe(
     try:
         result = client.search(
             index=search_service.IDX_NVD_CPE,
-            body={"query": query, "sort": [{"in_kev": {"order": "desc"}}, "_score"], "from": (page - 1) * per_page, "size": per_page},
+            body={"query": query, "sort": [{"in_kev": {"order": "desc"}}, "_score"], "from": (page - 1) * per_page, "size": per_page,
+                  "track_total_hits": True},
         )
     except Exception:
         return NvdCpeList(items=[], total=0, page=page, per_page=per_page)
@@ -969,7 +971,7 @@ def get_feed_settings(db: DBSession = Depends(get_db)):
 @router.post("/trigger/{feed_name}", dependencies=[Depends(require_admin)])
 def trigger_feed(
     feed_name: str,
-    mode: str = Query("full", description="full|delta — only applies to nist_cve"),
+    mode: str = Query("full", description="full|delta — applies to nist_cve and euvd"),
 ):
     """Trigger a feed run immediately. Admin only. Returns 202 if started, 409 if already running."""
     import requests as _req
@@ -977,7 +979,7 @@ def trigger_feed(
 
     feeds_host = os.environ.get("FEEDS_HOST", "http://isms-core-feeds:8001")
     url = f"{feeds_host}/trigger/{feed_name}"
-    if feed_name == "nist_cve":
+    if feed_name in ("nist_cve", "euvd"):
         url += f"?mode={mode}"
 
     try:
@@ -986,9 +988,29 @@ def trigger_feed(
         raise HTTPException(status_code=503, detail=f"Feeds container unreachable: {exc}")
 
     if resp.status_code == 202:
-        return {"status": "triggered", "feed": feed_name, "mode": mode if feed_name == "nist_cve" else None}
+        return {"status": "triggered", "feed": feed_name, "mode": mode if feed_name in ("nist_cve", "euvd") else None}
     if resp.status_code == 409:
         raise HTTPException(status_code=409, detail=f"Feed '{feed_name}' is already running")
+    raise HTTPException(status_code=502, detail=f"Feeds container returned {resp.status_code}: {resp.text}")
+
+
+@router.delete("/cancel/{feed_name}", dependencies=[Depends(require_admin)])
+def cancel_feed(feed_name: str):
+    """Request cancellation of a running feed. Admin only."""
+    import requests as _req
+    from fastapi import HTTPException
+
+    feeds_host = os.environ.get("FEEDS_HOST", "http://isms-core-feeds:8001")
+    url = f"{feeds_host}/cancel/{feed_name}"
+    try:
+        resp = _req.delete(url, timeout=5)
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail=f"Feeds container unreachable: {exc}")
+
+    if resp.status_code == 200:
+        return {"status": "cancel_requested", "feed": feed_name}
+    if resp.status_code == 404:
+        raise HTTPException(status_code=404, detail=f"Feed '{feed_name}' is not running")
     raise HTTPException(status_code=502, detail=f"Feeds container returned {resp.status_code}: {resp.text}")
 
 
@@ -1070,6 +1092,7 @@ def _hit_to_euvd(hit: dict) -> EuvdEntry:
         assigner           = s.get("assigner"),
         is_exploited       = bool(s.get("is_exploited", False)),
         is_critical        = bool(s.get("is_critical", False)),
+        is_eu_assigned     = bool(s.get("is_eu_assigned", False)),
         aliases            = s.get("aliases") or [],
         vendors            = s.get("vendors") or [],
         products           = s.get("products") or [],
@@ -1082,7 +1105,7 @@ def get_euvd_stats(
 ):
     client = _euvd_client()
     if not client:
-        return EuvdStats(total=0, exploited=0, critical=0, with_cvss=0, last_indexed=None)
+        return EuvdStats(total=0, exploited=0, critical=0, eu_assigned=0, with_cvss=0, last_indexed=None)
 
     def _count(q: dict) -> int:
         try:
@@ -1092,10 +1115,11 @@ def get_euvd_stats(
             return 0
 
     try:
-        total      = _count({"match_all": {}})
-        exploited  = _count({"term": {"is_exploited": True}})
-        critical   = _count({"term": {"is_critical": True}})
-        with_cvss  = _count({"exists": {"field": "base_score"}})
+        total       = _count({"match_all": {}})
+        exploited   = _count({"term": {"is_exploited": True}})
+        critical    = _count({"term": {"is_critical": True}})
+        eu_assigned = _count({"term": {"is_eu_assigned": True}})
+        with_cvss   = _count({"exists": {"field": "base_score"}})
 
         # Last indexed timestamp
         last_indexed = None
@@ -1112,21 +1136,22 @@ def get_euvd_stats(
             pass
 
         return EuvdStats(total=total, exploited=exploited, critical=critical,
-                         with_cvss=with_cvss, last_indexed=last_indexed)
+                         eu_assigned=eu_assigned, with_cvss=with_cvss, last_indexed=last_indexed)
     except Exception as exc:
         logger.warning("EUVD stats error: %s", exc)
-        return EuvdStats(total=0, exploited=0, critical=0, with_cvss=0, last_indexed=None)
+        return EuvdStats(total=0, exploited=0, critical=0, eu_assigned=0, with_cvss=0, last_indexed=None)
 
 
 @router.get("/euvd", response_model=EuvdList)
 def list_euvd(
-    search: str | None     = Query(None),
-    exploited_only: bool   = Query(False),
-    critical_only: bool    = Query(False),
+    search: str | None      = Query(None),
+    exploited_only: bool    = Query(False),
+    critical_only: bool     = Query(False),
+    eu_assigned_only: bool  = Query(False),
     min_score: float | None = Query(None, ge=0, le=10),
-    page: int              = Query(1, ge=1),
-    per_page: int          = Query(25, ge=1, le=200),
-    _current_user: User    = Depends(get_current_user),
+    page: int               = Query(1, ge=1),
+    per_page: int           = Query(25, ge=1, le=200),
+    _current_user: User     = Depends(get_current_user),
 ):
     client = _euvd_client()
     if not client:
@@ -1137,6 +1162,8 @@ def list_euvd(
         filter_.append({"term": {"is_exploited": True}})
     if critical_only:
         filter_.append({"term": {"is_critical": True}})
+    if eu_assigned_only:
+        filter_.append({"term": {"is_eu_assigned": True}})
     if min_score is not None:
         filter_.append({"range": {"base_score": {"gte": min_score}}})
 
@@ -1151,19 +1178,20 @@ def list_euvd(
                 "filter": filter_,
             }
         }
-        sort = ["_score", {"date_published": {"order": "desc"}}]
+        sort = ["_score", {"date_published": {"order": "desc", "missing": "_last"}}]
     else:
         query = {"bool": {"filter": filter_}} if filter_ else {"match_all": {}}
         sort = [
             {"base_score": {"order": "desc", "missing": "_last"}},
-            {"date_published": {"order": "desc"}},
+            {"date_published": {"order": "desc", "missing": "_last"}},
         ]
 
     try:
         r = client.search(
             index=_EUVD_INDEX,
             body={"query": query, "sort": sort,
-                  "from": (page - 1) * per_page, "size": per_page},
+                  "from": (page - 1) * per_page, "size": per_page,
+                  "track_total_hits": True},
         )
     except Exception as exc:
         logger.warning("EUVD search error: %s", exc)

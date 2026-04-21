@@ -7,7 +7,7 @@ import {
 import {
   BugReportOutlined, CheckCircleOutlined, DownloadOutlined, ErrorOutlined,
   HourglassEmptyOutlined, PlayArrowOutlined, PolicyOutlined, SecurityOutlined,
-  SyncOutlined, TuneOutlined, VerifiedOutlined,
+  StopOutlined, SyncOutlined, TuneOutlined, VerifiedOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import {
@@ -119,6 +119,21 @@ export default function ThreatFeeds() {
     },
   })
 
+  const cancelMutation = useMutation({
+    mutationFn: (feedName: string) => feedsApi.cancelFeed(feedName),
+    onSuccess: () => {
+      setTimeout(() => qc.invalidateQueries({ queryKey: ['feeds', 'status'] }), 3000)
+    },
+    onError: (err: any) => {
+      // 404 = feed already stopped (e.g. container restarted) — treat as success
+      if (err?.response?.status === 404) {
+        setTimeout(() => qc.invalidateQueries({ queryKey: ['feeds', 'status'] }), 1000)
+      } else {
+        setTriggerError(err?.response?.data?.detail ?? 'Cancel failed')
+      }
+    },
+  })
+
   const { data: kevStats } =
     useQuery({ queryKey: ['feeds', 'kev', 'stats'], queryFn: feedsApi.getKevStats })
 
@@ -155,9 +170,9 @@ export default function ThreatFeeds() {
       {triggerError && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setTriggerError(null)}>{triggerError}</Alert>}
 
       {/* ── Feed status cards ── */}
-      <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mb: 3 }}>
+      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))', gap: 2, mb: 3 }}>
         {(status?.feeds ?? []).map(feed => (
-          <Paper key={feed.feed_name} variant="outlined" sx={{ p: 2, borderRadius: 2, flex: '1 1 220px', minWidth: 200 }}>
+          <Paper key={feed.feed_name} variant="outlined" sx={{ p: 2, borderRadius: 2 }}>
             <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
               {FEED_ICONS[feed.feed_name] ?? <SecurityOutlined sx={{ fontSize: 28, color: INTEL_COLOR }} />}
               <Box sx={{ flex: 1, minWidth: 0 }}>
@@ -180,39 +195,64 @@ export default function ThreatFeeds() {
                 )}
                 {isAdmin && (
                   <Box sx={{ mt: 1, display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
-                    <Tooltip title={feed.feed_name === 'nist_cve' ? 'Run delta update now' : 'Run feed now'}>
-                      <span>
-                        <Button
-                          size="small"
-                          variant="outlined"
-                          startIcon={triggerMutation.isPending && triggerMutation.variables?.feedName === feed.feed_name
-                            ? <CircularProgress size={12} /> : <PlayArrowOutlined sx={{ fontSize: 14 }} />}
-                          disabled={triggerMutation.isPending}
-                          onClick={() => triggerMutation.mutate({
-                            feedName: feed.feed_name,
-                            mode: feed.feed_name === 'nist_cve' ? 'delta' : undefined,
-                          })}
-                          sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
-                        >
-                          {feed.feed_name === 'nist_cve' ? 'Delta' : 'Run'}
-                        </Button>
-                      </span>
-                    </Tooltip>
-                    {feed.feed_name === 'nist_cve' && (
-                      <Tooltip title="Run full CVE pull (slow — 30-60 min)">
+                    {feed.last_status === 'running' ? (
+                      <Tooltip title="Request cancellation of this feed">
                         <span>
                           <Button
                             size="small"
                             variant="outlined"
-                            color="warning"
-                            disabled={triggerMutation.isPending}
-                            onClick={() => triggerMutation.mutate({ feedName: 'nist_cve', mode: 'full' })}
+                            color="error"
+                            startIcon={cancelMutation.isPending && cancelMutation.variables === feed.feed_name
+                              ? <CircularProgress size={12} /> : <StopOutlined sx={{ fontSize: 14 }} />}
+                            disabled={cancelMutation.isPending}
+                            onClick={() => cancelMutation.mutate(feed.feed_name)}
                             sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
                           >
-                            Full
+                            Stop
                           </Button>
                         </span>
                       </Tooltip>
+                    ) : (
+                      <>
+                        <Tooltip title={['nist_cve', 'euvd'].includes(feed.feed_name) ? 'Run delta update now' : 'Run feed now'}>
+                          <span>
+                            <Button
+                              size="small"
+                              variant="outlined"
+                              startIcon={triggerMutation.isPending && triggerMutation.variables?.feedName === feed.feed_name
+                                ? <CircularProgress size={12} /> : <PlayArrowOutlined sx={{ fontSize: 14 }} />}
+                              disabled={triggerMutation.isPending}
+                              onClick={() => triggerMutation.mutate({
+                                feedName: feed.feed_name,
+                                mode: ['nist_cve', 'euvd'].includes(feed.feed_name) ? 'delta' : undefined,
+                              })}
+                              sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
+                            >
+                              {['nist_cve', 'euvd'].includes(feed.feed_name) ? 'Delta' : 'Run'}
+                            </Button>
+                          </span>
+                        </Tooltip>
+                        {['nist_cve', 'euvd'].includes(feed.feed_name) && (
+                          <Tooltip title={
+                            feed.feed_name === 'nist_cve'
+                              ? 'Run full CVE pull (slow — 30-60 min)'
+                              : 'Run full EUVD pull (all entries)'
+                          }>
+                            <span>
+                              <Button
+                                size="small"
+                                variant="outlined"
+                                color="warning"
+                                disabled={triggerMutation.isPending}
+                                onClick={() => triggerMutation.mutate({ feedName: feed.feed_name, mode: 'full' })}
+                                sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
+                              >
+                                Full
+                              </Button>
+                            </span>
+                          </Tooltip>
+                        )}
+                      </>
                     )}
                   </Box>
                 )}

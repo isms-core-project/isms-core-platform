@@ -5,14 +5,16 @@ without restarting the container. Each feed runs in a background thread.
 A 409 is returned if the feed is already running.
 
 Endpoints:
-  POST /trigger/nist_cve?mode=full   — NVD CVE full pull
-  POST /trigger/nist_cve?mode=delta  — NVD CVE delta pull
-  POST /trigger/mitre_attack         — MITRE ATT&CK
-  POST /trigger/mitre_atlas          — MITRE ATLAS
-  POST /trigger/cisa_kev             — CISA KEV
-  POST /trigger/epss                 — FIRST EPSS
-  POST /trigger/nist_cpe             — NVD CPE (Option B)
-  POST /trigger/euvd                 — ENISA EUVD
+  POST   /trigger/nist_cve?mode=full   — NVD CVE full pull
+  POST   /trigger/nist_cve?mode=delta  — NVD CVE delta pull
+  POST   /trigger/mitre_attack         — MITRE ATT&CK
+  POST   /trigger/mitre_atlas          — MITRE ATLAS
+  POST   /trigger/cisa_kev             — CISA KEV
+  POST   /trigger/epss                 — FIRST EPSS
+  POST   /trigger/nist_cpe             — NVD CPE (Option B)
+  POST   /trigger/euvd?mode=full       — ENISA EUVD full pull
+  POST   /trigger/euvd?mode=delta      — ENISA EUVD delta pull
+  DELETE /cancel/{feed_name}           — Request cancellation of a running feed
 """
 
 import logging
@@ -21,6 +23,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qs, urlparse
 
 from feeds import cisa_kev, epss, euvd, mitre_atlas, mitre_attack, nist_cpe, nist_cve
+from feeds.base import clear_cancelled, set_cancelled
 
 logger = logging.getLogger(__name__)
 
@@ -32,7 +35,8 @@ _TRIGGERS: dict[str, callable] = {
     "cisa_kev":       cisa_kev.run,
     "epss":           epss.run,
     "nist_cpe":       nist_cpe.run,
-    "euvd":           euvd.run,
+    "euvd_full":      euvd.run_full,
+    "euvd_delta":     euvd.run_delta,
 }
 
 _running: dict[str, bool] = {}
@@ -44,6 +48,7 @@ def _run_in_thread(feed_name: str, fn) -> bool:
         if _running.get(feed_name):
             return False
         _running[feed_name] = True
+        clear_cancelled(feed_name)
 
     def target():
         try:
@@ -72,10 +77,10 @@ class _Handler(BaseHTTPRequestHandler):
             return
 
         feed_name = parts[1]
-        if feed_name == "nist_cve":
+        if feed_name in ("nist_cve", "euvd"):
             qs = parse_qs(parsed.query)
             mode = (qs.get("mode") or ["full"])[0]
-            feed_name = f"nist_cve_{mode}"
+            feed_name = f"{feed_name}_{mode}"
 
         fn = _TRIGGERS.get(feed_name)
         if not fn:
@@ -86,6 +91,34 @@ class _Handler(BaseHTTPRequestHandler):
             self._send(202, f"Feed {feed_name} triggered")
         else:
             self._send(409, f"Feed {feed_name} already running")
+
+    def do_DELETE(self):
+        parsed = urlparse(self.path)
+        parts = [p for p in parsed.path.strip("/").split("/") if p]
+
+        if len(parts) < 2 or parts[0] != "cancel":
+            self._send(404, "Not found")
+            return
+
+        feed_name = parts[1]
+        # Feeds with full/delta variants: cancel covers both
+        if feed_name in ("nist_cve", "euvd"):
+            cancel_keys = [f"{feed_name}_full", f"{feed_name}_delta"]
+        else:
+            cancel_keys = [feed_name]
+        for key in cancel_keys:
+            set_cancelled(key)
+
+        with _lock:
+            was_running = _running.get(feed_name) or any(
+                _running.get(k) for k in cancel_keys
+            )
+
+        if was_running:
+            logger.info("Cancellation requested for feed: %s", feed_name)
+            self._send(200, f"Cancel requested for {feed_name}")
+        else:
+            self._send(404, f"Feed {feed_name} is not running")
 
     def _send(self, code: int, msg: str):
         body = msg.encode()

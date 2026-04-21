@@ -6,7 +6,7 @@ import {
   TableRow, TextField, Tooltip, Typography,
 } from '@mui/material'
 import {
-  BugReportOutlined, LanguageOutlined, SearchOutlined,
+  BugReportOutlined, FlagOutlined, LanguageOutlined, SearchOutlined,
   WarningAmberOutlined,
 } from '@mui/icons-material'
 import PageHeader from '../components/PageHeader'
@@ -39,7 +39,7 @@ function EntryDetail({ entry, onClose }: { entry: EuvdEntry; onClose: () => void
     ['Updated',     fmtDate(entry.date_updated)],
     ['Assigner',    entry.assigner ?? '—'],
     ['CVSS Version',entry.base_score_version ?? '—'],
-    ['EPSS Score',  entry.epss_score !== null ? `${(entry.epss_score * 100).toFixed(2)}%` : '—'],
+    ['EPSS Score',  entry.epss_score !== null ? `${entry.epss_score.toFixed(2)}%` : '—'],
   ]
 
   return (
@@ -64,8 +64,12 @@ function EntryDetail({ entry, onClose }: { entry: EuvdEntry; onClose: () => void
               <Chip label="CRITICAL" size="small"
                 sx={{ fontSize: '0.68rem', height: 18, bgcolor: '#b71c1c', color: '#fff' }} />
             )}
+            {entry.is_eu_assigned && (
+              <Chip label="EU ASSIGNED" size="small"
+                sx={{ fontSize: '0.68rem', height: 18, bgcolor: '#003399', color: '#fff' }} />
+            )}
             {entry.epss_score !== null && (
-              <Chip label={`EPSS ${(entry.epss_score * 100).toFixed(1)}%`} size="small"
+              <Chip label={`EPSS ${entry.epss_score.toFixed(1)}%`} size="small"
                 sx={{ fontSize: '0.68rem', height: 18, bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
             )}
           </Box>
@@ -129,12 +133,13 @@ function EntryDetail({ entry, onClose }: { entry: EuvdEntry; onClose: () => void
 // ── Main Page ─────────────────────────────────────────────────────────────────
 
 export default function EuvdExplorer() {
-  const [searchInput, setSearchInput] = useState('')
-  const [search, setSearch]           = useState('')
-  const [exploitedOnly, setExploited] = useState(false)
-  const [minScore, setMinScore]       = useState('')
-  const [page, setPage]               = useState(1)
-  const [selected, setSelected]       = useState<EuvdEntry | null>(null)
+  const [searchInput, setSearchInput]   = useState('')
+  const [search, setSearch]             = useState('')
+  const [exploitedOnly, setExploited]   = useState(false)
+  const [euAssignedOnly, setEuAssigned] = useState(false)
+  const [minScore, setMinScore]         = useState('')
+  const [page, setPage]                 = useState(1)
+  const [selected, setSelected]         = useState<EuvdEntry | null>(null)
 
   const PER_PAGE = 25
 
@@ -145,13 +150,14 @@ export default function EuvdExplorer() {
   })
 
   const { data, isLoading } = useQuery({
-    queryKey: ['euvd', 'list', search, exploitedOnly, minScore, page],
+    queryKey: ['euvd', 'list', search, exploitedOnly, euAssignedOnly, minScore, page],
     queryFn:  () => feedsApi.getEuvd({
-      search:         search || undefined,
-      exploited_only: exploitedOnly || undefined,
-      min_score:      minScore ? Number(minScore) : undefined,
+      search:           search || undefined,
+      exploited_only:   exploitedOnly || undefined,
+      eu_assigned_only: euAssignedOnly || undefined,
+      min_score:        minScore ? Number(minScore) : undefined,
       page,
-      per_page:       PER_PAGE,
+      per_page:         PER_PAGE,
     }),
     staleTime: 2 * 60_000,
   })
@@ -171,11 +177,12 @@ export default function EuvdExplorer() {
       {stats && (
         <Box sx={{ display: 'flex', gap: 3, mb: 2.5, flexWrap: 'wrap' }}>
           {[
-            { label: 'Total',     value: stats.total.toLocaleString() },
-            { label: 'Exploited', value: stats.exploited.toLocaleString(), icon: <WarningAmberOutlined sx={{ fontSize: 14, color: '#ff6b6b', verticalAlign: 'middle' }} /> },
-            { label: 'Critical',  value: stats.critical.toLocaleString(),  icon: <BugReportOutlined sx={{ fontSize: 14, color: '#ed6c02', verticalAlign: 'middle' }} /> },
-            { label: 'With CVSS', value: stats.with_cvss.toLocaleString() },
-            { label: 'Source',    value: 'ENISA EUVD',                      icon: <LanguageOutlined sx={{ fontSize: 14, color: '#003399', verticalAlign: 'middle' }} /> },
+            { label: 'Total',       value: stats.total.toLocaleString() },
+            { label: 'Exploited',   value: stats.exploited.toLocaleString(),   icon: <WarningAmberOutlined sx={{ fontSize: 14, color: '#ff6b6b', verticalAlign: 'middle' }} /> },
+            { label: 'Critical',    value: stats.critical.toLocaleString(),    icon: <BugReportOutlined sx={{ fontSize: 14, color: '#ed6c02', verticalAlign: 'middle' }} /> },
+            { label: 'EU Assigned', value: stats.eu_assigned.toLocaleString(), icon: <FlagOutlined sx={{ fontSize: 14, color: '#003399', verticalAlign: 'middle' }} /> },
+            { label: 'With CVSS',  value: stats.with_cvss.toLocaleString() },
+            { label: 'Source',     value: 'ENISA EUVD',                       icon: <LanguageOutlined sx={{ fontSize: 14, color: '#003399', verticalAlign: 'middle' }} /> },
           ].map(s => (
             <Box key={s.label}>
               <Typography variant="h6" sx={{ fontWeight: 700, color: INTEL_COLOR, lineHeight: 1 }}>
@@ -216,8 +223,13 @@ export default function EuvdExplorer() {
             </Select>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
               <Switch size="small" checked={exploitedOnly}
-                onChange={e => { setExploited(e.target.checked); setPage(1) }} />
+                onChange={e => { setExploited(e.target.checked); setEuAssigned(false); setPage(1) }} />
               <Typography variant="caption">Exploited only</Typography>
+            </Box>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+              <Switch size="small" checked={euAssignedOnly}
+                onChange={e => { setEuAssigned(e.target.checked); setExploited(false); setPage(1) }} />
+              <Typography variant="caption" sx={{ color: '#5c7ad6' }}>EU Assigned</Typography>
             </Box>
           </Box>
 
@@ -268,7 +280,7 @@ export default function EuvdExplorer() {
                         : '—'}
                     </TableCell>
                     <TableCell sx={{ fontSize: '0.75rem' }}>
-                      {entry.epss_score !== null ? `${(entry.epss_score * 100).toFixed(1)}%` : '—'}
+                      {entry.epss_score !== null ? `${entry.epss_score.toFixed(1)}%` : '—'}
                     </TableCell>
                     <TableCell sx={{ fontSize: '0.75rem', whiteSpace: 'nowrap' }}>
                       {fmtDate(entry.date_published)}
@@ -283,6 +295,11 @@ export default function EuvdExplorer() {
                         {entry.is_critical && (
                           <Tooltip title="Critical Severity">
                             <BugReportOutlined sx={{ fontSize: 14, color: '#ed6c02' }} />
+                          </Tooltip>
+                        )}
+                        {entry.is_eu_assigned && (
+                          <Tooltip title="EU Assigned (ENISA/NCSC-FI/NCSC-NL/CERT-PL/SK-CERT/INCIBE)">
+                            <FlagOutlined sx={{ fontSize: 14, color: '#5c7ad6' }} />
                           </Tooltip>
                         )}
                       </Box>

@@ -331,6 +331,9 @@ export const feedsApi = {
       { params: feedName === 'nist_cve' ? { mode } : undefined },
     ).then(r => r.data),
 
+  cancelFeed: (feedName: string) =>
+    client.delete<{ status: string; feed: string }>(`/feeds/cancel/${feedName}`).then(r => r.data),
+
   // Phase 37 — ENISA EUVD
   getEuvdStats: () =>
     client.get<EuvdStats>('/feeds/euvd/stats').then(r => r.data),
@@ -339,6 +342,7 @@ export const feedsApi = {
     search?: string
     exploited_only?: boolean
     critical_only?: boolean
+    eu_assigned_only?: boolean
     min_score?: number
     page?: number
     per_page?: number
@@ -403,10 +407,11 @@ export interface EuvdEntry {
   date_updated: string | null
   base_score: number | null
   base_score_version: string | null
-  epss_score: number | null
+  epss_score: number | null   // 0-100 percentage as returned by EUVD API
   assigner: string | null
   is_exploited: boolean
   is_critical: boolean
+  is_eu_assigned: boolean
   aliases: string[]
   vendors: string[]
   products: string[]
@@ -423,6 +428,7 @@ export interface EuvdStats {
   total: number
   exploited: number
   critical: number
+  eu_assigned: number
   with_cvss: number
   last_indexed: string | null
 }

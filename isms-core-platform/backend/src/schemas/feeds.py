@@ -353,6 +353,7 @@ class EuvdEntry(BaseModel):
     assigner: str | None
     is_exploited: bool
     is_critical: bool
+    is_eu_assigned: bool
     aliases: list[str]
     vendors: list[str]
     products: list[str]
@@ -369,5 +370,6 @@ class EuvdStats(BaseModel):
     total: int
     exploited: int
     critical: int
+    eu_assigned: int
     with_cvss: int
     last_indexed: str | None
