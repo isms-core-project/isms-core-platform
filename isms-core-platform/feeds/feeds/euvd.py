@@ -3,9 +3,9 @@
 Source: https://euvdservices.enisa.europa.eu/api
 
 Fetches via /api/search (paginated, 100/page, page index 0-based):
-  - Full pull  (weekly, Sunday 01:30 UTC) — all EUVD entries, no filters
+  - Full pull  (weekly, Sunday 02:45 UTC) — EUVD entries with CVSS >= 4.0 (Medium+)
   - Delta pull (daily,  04:00 UTC)        — entries updated since last successful run
-                                            using fromUpdatedDate=YYYY-MM-DD
+                                            using fromUpdatedDate=YYYY-MM-DD + fromScore=4
 
 Flags derived from item fields (no separate endpoint calls needed):
   is_exploited   ← bool(item["exploitedSince"])
@@ -300,7 +300,10 @@ def run(full: bool = False) -> None:
     mode   = "full" if full else "delta"
     logger.info("ENISA EUVD %s pull started", mode)
 
-    params: dict = {}
+    # fromScore=4 excludes LOW severity (< 4.0) — ENISA mirrors all NVD which is
+    # ~345K entries; without a floor the full pull takes hours. Medium+ covers all
+    # NIS2-relevant vulnerabilities. Delta uses the same floor for consistency.
+    params: dict = {"fromScore": 4}
     if not full:
         last_run = _get_last_run_date()
         if last_run:
