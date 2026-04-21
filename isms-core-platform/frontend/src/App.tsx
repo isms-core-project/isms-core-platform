@@ -66,6 +66,7 @@ import MitreSoftware from './pages/MitreSoftware'
 import MitreCampaigns from './pages/MitreCampaigns'
 import MitreHeatmap from './pages/MitreHeatmap'
 import CVEExplorer from './pages/CVEExplorer'
+import EuvdExplorer from './pages/EuvdExplorer'
 import Glossary from './pages/Glossary'
 import Cobit from './pages/Cobit'
 import CsaCcm from './pages/CsaCcm'
@@ -162,6 +163,7 @@ export default function App() {
         <Route path="mitre-campaigns" element={<MitreCampaigns />} />
         <Route path="mitre-heatmap" element={<MitreHeatmap />} />
         <Route path="cve-explorer" element={<CVEExplorer />} />
+        <Route path="euvd-explorer" element={<EuvdExplorer />} />
         <Route path="glossary" element={<Glossary />} />
         <Route path="cobit" element={<Cobit />} />
         <Route path="*" element={<Navigate to="/" replace />} />

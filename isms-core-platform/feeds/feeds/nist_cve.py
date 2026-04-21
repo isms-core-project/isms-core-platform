@@ -162,6 +162,8 @@ def _ensure_nvd_indices(os_client) -> None:
             "cwe_ids":          {"type": "keyword"},
             "cpe_affected":     {"type": "keyword"},
             "in_kev":           {"type": "boolean"},
+            "in_euvd":          {"type": "boolean"},
+            "euvd_id":          {"type": "keyword"},
             "epss_score":       {"type": "float"},
             "references":       {"type": "text"},
             "indexed_at":       {"type": "date"},

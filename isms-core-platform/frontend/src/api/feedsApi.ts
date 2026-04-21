@@ -330,6 +330,23 @@ export const feedsApi = {
       null,
       { params: feedName === 'nist_cve' ? { mode } : undefined },
     ).then(r => r.data),
+
+  // Phase 37 — ENISA EUVD
+  getEuvdStats: () =>
+    client.get<EuvdStats>('/feeds/euvd/stats').then(r => r.data),
+
+  getEuvd: (params: {
+    search?: string
+    exploited_only?: boolean
+    critical_only?: boolean
+    min_score?: number
+    page?: number
+    per_page?: number
+  }) =>
+    client.get<EuvdList>('/feeds/euvd', { params }).then(r => r.data),
+
+  getEuvdEntry: (euvdId: string) =>
+    client.get<EuvdEntry>(`/feeds/euvd/${euvdId}`).then(r => r.data),
 }
 
 // ── Phase 27 types ────────────────────────────────────────────────────────────
@@ -370,8 +387,44 @@ export interface NvdCveEntry {
   cwe_ids: string[]
   cpe_affected: string[]
   in_kev: boolean
+  in_euvd: boolean
+  euvd_id: string | null
   epss_score: number | null
   references: string[]
+}
+
+// ── ENISA EUVD (Phase 37) ─────────────────────────────────────────────────────
+
+export interface EuvdEntry {
+  euvd_id: string
+  cve_id: string | null
+  description: string | null
+  date_published: string | null
+  date_updated: string | null
+  base_score: number | null
+  base_score_version: string | null
+  epss_score: number | null
+  assigner: string | null
+  is_exploited: boolean
+  is_critical: boolean
+  aliases: string[]
+  vendors: string[]
+  products: string[]
+}
+
+export interface EuvdList {
+  items: EuvdEntry[]
+  total: number
+  page: number
+  per_page: number
+}
+
+export interface EuvdStats {
+  total: number
+  exploited: number
+  critical: number
+  with_cvss: number
+  last_indexed: string | null
 }
 
 export interface NvdCveList {

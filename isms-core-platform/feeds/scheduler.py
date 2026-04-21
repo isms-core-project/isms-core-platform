@@ -8,6 +8,7 @@ Pulls threat intelligence and vulnerability data on fixed schedules:
   - CISA KEV       : daily    (03:00 UTC)
   - NVD CVE delta  : daily    (03:00 UTC — runs alongside KEV, both are fast)
   - FIRST EPSS     : daily    (03:30 UTC)
+  - ENISA EUVD     : daily    (04:00 UTC)
 
 Each feed can be disabled via env vars:
   FEEDS_MITRE_ENABLED=true|false
@@ -17,6 +18,7 @@ Each feed can be disabled via env vars:
   FEEDS_CVE_ENABLED=true|false
   FEEDS_CPE_ENABLED=true|false  (Option A always runs as part of CVE pull)
   FEEDS_CPE_FULL=false          (Option B KEV-vendor CPE — default off)
+  FEEDS_EUVD_ENABLED=true|false (default: true)
 
 Set FEEDS_RUN_ON_START=true to run all enabled feeds immediately on container start.
 
@@ -39,7 +41,7 @@ import time
 
 import schedule
 
-from feeds import cisa_kev, epss, mitre_atlas, mitre_attack, nist_cpe, nist_cve, trigger_server
+from feeds import cisa_kev, epss, euvd, mitre_atlas, mitre_attack, nist_cpe, nist_cve, trigger_server
 
 logging.basicConfig(
     level=logging.INFO,
@@ -81,6 +83,8 @@ def main():
         schedule.every().sunday.at("01:00").do(_safe(nist_cve.run_full, "NVD CVE (full)"))
         schedule.every().day.at("03:00").do(_safe(nist_cve.run_delta, "NVD CVE (delta)"))
         schedule.every().sunday.at("01:30").do(_safe(nist_cpe.run, "NVD CPE (Option B)"))
+    if _enabled("FEEDS_EUVD_ENABLED"):
+        schedule.every().day.at("04:00").do(_safe(euvd.run, "ENISA EUVD"))
 
     # ── Run on start: Phase 1 feeds first (fast, <5s), CVE last (slow) ──────────
     if run_on_start:
@@ -96,6 +100,8 @@ def main():
         if _enabled("FEEDS_CVE_ENABLED"):
             _safe(nist_cve.run_full, "NVD CVE (full)")()
             _safe(nist_cpe.run, "NVD CPE (Option B)")()
+        if _enabled("FEEDS_EUVD_ENABLED"):
+            _safe(euvd.run, "ENISA EUVD")()
 
     logger.info("Scheduler running — next jobs: %s", schedule.jobs)
 

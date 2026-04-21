@@ -165,6 +165,8 @@ class NvdCveEntry(BaseModel):
     cwe_ids: list[str]
     cpe_affected: list[str]
     in_kev: bool
+    in_euvd: bool = False
+    euvd_id: str | None = None
     epss_score: float | None
     references: list[str]
 
@@ -335,3 +337,37 @@ class MitreHeatmapResponse(BaseModel):
     covered: int                # techniques with usage_count > 0
     total_techniques: int       # all non-deprecated techniques in source
     selected_actors: int        # number of groups (+ software if enabled) in scope
+
+
+# ── ENISA EUVD (Phase 37) ─────────────────────────────────────────────────────
+
+class EuvdEntry(BaseModel):
+    euvd_id: str
+    cve_id: str | None
+    description: str | None
+    date_published: str | None
+    date_updated: str | None
+    base_score: float | None
+    base_score_version: str | None
+    epss_score: float | None
+    assigner: str | None
+    is_exploited: bool
+    is_critical: bool
+    aliases: list[str]
+    vendors: list[str]
+    products: list[str]
+
+
+class EuvdList(BaseModel):
+    items: list[EuvdEntry]
+    total: int
+    page: int
+    per_page: int
+
+
+class EuvdStats(BaseModel):
+    total: int
+    exploited: int
+    critical: int
+    with_cvss: int
+    last_indexed: str | None

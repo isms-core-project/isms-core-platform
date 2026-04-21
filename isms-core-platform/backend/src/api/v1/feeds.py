@@ -22,6 +22,9 @@ from src.schemas.feeds import (
     CisaKevStats,
     EpssScoreList,
     EpssScoreRead,
+    EuvdEntry,
+    EuvdList,
+    EuvdStats,
     FeedSettings,
     FeedStatusItem,
     FeedStatusResponse,
@@ -55,6 +58,7 @@ _FEEDS = [
     ("epss",             "FIRST EPSS",          "FEEDS_EPSS_ENABLED"),
     ("nist_cve",         "NVD CVE",             "FEEDS_CVE_ENABLED"),
     ("nist_cpe",         "NVD CPE (KEV-vendor)","FEEDS_CPE_FULL"),
+    ("euvd",             "ENISA EUVD",          "FEEDS_EUVD_ENABLED"),
 ]
 
 
@@ -688,6 +692,8 @@ def _hit_to_cve(hit: dict) -> NvdCveEntry:
         cwe_ids          = s.get("cwe_ids") or [],
         cpe_affected     = s.get("cpe_affected") or [],
         in_kev           = bool(s.get("in_kev", False)),
+        in_euvd          = bool(s.get("in_euvd", False)),
+        euvd_id          = s.get("euvd_id"),
         epss_score       = s.get("epss_score"),
         references       = s.get("references") or [],
     )
@@ -1038,3 +1044,149 @@ def internal_notify_feed_failure(
     )
     logger.info("Queued feed failure notification for %s", feed_name)
     return {"queued": True, "feed_name": feed_name}
+
+
+# ── ENISA EUVD (Phase 37) ─────────────────────────────────────────────────────
+
+_EUVD_INDEX = "euvd"
+
+
+def _euvd_client():
+    from src.services import search_service
+    return search_service.get_client()
+
+
+def _hit_to_euvd(hit: dict) -> EuvdEntry:
+    s = hit.get("_source", {})
+    return EuvdEntry(
+        euvd_id            = s.get("euvd_id", hit.get("_id", "")),
+        cve_id             = s.get("cve_id"),
+        description        = s.get("description"),
+        date_published     = s.get("date_published"),
+        date_updated       = s.get("date_updated"),
+        base_score         = s.get("base_score"),
+        base_score_version = s.get("base_score_version"),
+        epss_score         = s.get("epss_score"),
+        assigner           = s.get("assigner"),
+        is_exploited       = bool(s.get("is_exploited", False)),
+        is_critical        = bool(s.get("is_critical", False)),
+        aliases            = s.get("aliases") or [],
+        vendors            = s.get("vendors") or [],
+        products           = s.get("products") or [],
+    )
+
+
+@router.get("/euvd/stats", response_model=EuvdStats)
+def get_euvd_stats(
+    _current_user: User = Depends(get_current_user),
+):
+    client = _euvd_client()
+    if not client:
+        return EuvdStats(total=0, exploited=0, critical=0, with_cvss=0, last_indexed=None)
+
+    def _count(q: dict) -> int:
+        try:
+            r = client.count(index=_EUVD_INDEX, body={"query": q})
+            return r.get("count", 0)
+        except Exception:
+            return 0
+
+    try:
+        total      = _count({"match_all": {}})
+        exploited  = _count({"term": {"is_exploited": True}})
+        critical   = _count({"term": {"is_critical": True}})
+        with_cvss  = _count({"exists": {"field": "base_score"}})
+
+        # Last indexed timestamp
+        last_indexed = None
+        try:
+            r = client.search(index=_EUVD_INDEX, body={
+                "size": 1,
+                "sort": [{"indexed_at": {"order": "desc"}}],
+                "_source": ["indexed_at"],
+            })
+            hits = r.get("hits", {}).get("hits", [])
+            if hits:
+                last_indexed = hits[0].get("_source", {}).get("indexed_at")
+        except Exception:
+            pass
+
+        return EuvdStats(total=total, exploited=exploited, critical=critical,
+                         with_cvss=with_cvss, last_indexed=last_indexed)
+    except Exception as exc:
+        logger.warning("EUVD stats error: %s", exc)
+        return EuvdStats(total=0, exploited=0, critical=0, with_cvss=0, last_indexed=None)
+
+
+@router.get("/euvd", response_model=EuvdList)
+def list_euvd(
+    search: str | None     = Query(None),
+    exploited_only: bool   = Query(False),
+    critical_only: bool    = Query(False),
+    min_score: float | None = Query(None, ge=0, le=10),
+    page: int              = Query(1, ge=1),
+    per_page: int          = Query(25, ge=1, le=200),
+    _current_user: User    = Depends(get_current_user),
+):
+    client = _euvd_client()
+    if not client:
+        return EuvdList(items=[], total=0, page=page, per_page=per_page)
+
+    filter_: list[dict] = []
+    if exploited_only:
+        filter_.append({"term": {"is_exploited": True}})
+    if critical_only:
+        filter_.append({"term": {"is_critical": True}})
+    if min_score is not None:
+        filter_.append({"range": {"base_score": {"gte": min_score}}})
+
+    if search:
+        query: dict = {
+            "bool": {
+                "must": {"multi_match": {
+                    "query": search,
+                    "fields": ["euvd_id^3", "cve_id^3", "description", "vendors", "products", "assigner"],
+                    "type": "best_fields",
+                }},
+                "filter": filter_,
+            }
+        }
+        sort = ["_score", {"date_published": {"order": "desc"}}]
+    else:
+        query = {"bool": {"filter": filter_}} if filter_ else {"match_all": {}}
+        sort = [
+            {"base_score": {"order": "desc", "missing": "_last"}},
+            {"date_published": {"order": "desc"}},
+        ]
+
+    try:
+        r = client.search(
+            index=_EUVD_INDEX,
+            body={"query": query, "sort": sort,
+                  "from": (page - 1) * per_page, "size": per_page},
+        )
+    except Exception as exc:
+        logger.warning("EUVD search error: %s", exc)
+        return EuvdList(items=[], total=0, page=page, per_page=per_page)
+
+    hits  = r.get("hits", {})
+    total = hits.get("total", {})
+    total = total.get("value", 0) if isinstance(total, dict) else int(total)
+    items = [_hit_to_euvd(h) for h in hits.get("hits", [])]
+    return EuvdList(items=items, total=total, page=page, per_page=per_page)
+
+
+@router.get("/euvd/{euvd_id}", response_model=EuvdEntry)
+def get_euvd_entry(
+    euvd_id: str,
+    _current_user: User = Depends(get_current_user),
+):
+    from fastapi import HTTPException
+    client = _euvd_client()
+    if not client:
+        raise HTTPException(status_code=503, detail="Search unavailable")
+    try:
+        doc = client.get(index=_EUVD_INDEX, id=euvd_id)
+        return _hit_to_euvd(doc)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc))

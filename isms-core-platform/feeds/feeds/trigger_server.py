@@ -12,6 +12,7 @@ Endpoints:
   POST /trigger/cisa_kev             — CISA KEV
   POST /trigger/epss                 — FIRST EPSS
   POST /trigger/nist_cpe             — NVD CPE (Option B)
+  POST /trigger/euvd                 — ENISA EUVD
 """
 
 import logging
@@ -19,7 +20,7 @@ import threading
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qs, urlparse
 
-from feeds import cisa_kev, epss, mitre_atlas, mitre_attack, nist_cpe, nist_cve
+from feeds import cisa_kev, epss, euvd, mitre_atlas, mitre_attack, nist_cpe, nist_cve
 
 logger = logging.getLogger(__name__)
 
@@ -31,6 +32,7 @@ _TRIGGERS: dict[str, callable] = {
     "cisa_kev":       cisa_kev.run,
     "epss":           epss.run,
     "nist_cpe":       nist_cpe.run,
+    "euvd":           euvd.run,
 }
 
 _running: dict[str, bool] = {}

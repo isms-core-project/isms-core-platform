@@ -229,6 +229,7 @@ function CveDetail({ cve, onClose }: { cve: NvdCveEntry; onClose: () => void }) 
               <Chip label={best.version.toUpperCase()} size="small" sx={{ fontSize: '0.6rem', height: 18, bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
             )}
             {cve.in_kev && <Chip label="KEV" size="small" color="error" sx={{ fontSize: '0.68rem', height: 18 }} />}
+            {cve.in_euvd && <Chip label="EUVD" size="small" sx={{ fontSize: '0.68rem', height: 18, bgcolor: '#003399', color: '#fff' }} />}
             {cve.epss_score !== null && (
               <Chip label={`EPSS ${(cve.epss_score * 100).toFixed(1)}%`} size="small" sx={{ fontSize: '0.68rem', height: 18, bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
             )}
@@ -445,6 +446,7 @@ function CveTab() {
                   <TableCell>
                     <Box sx={{ display: 'flex', gap: 0.3 }}>
                       {cve.in_kev && <Tooltip title="In CISA KEV"><WarningAmberOutlined sx={{ fontSize: 14, color: '#FFEB9C' }} /></Tooltip>}
+                      {cve.in_euvd && <Tooltip title="In ENISA EUVD"><Box component="span" sx={{ fontSize: '0.6rem', fontWeight: 700, color: '#fff', bgcolor: '#003399', borderRadius: '3px', px: 0.4, lineHeight: '14px', display: 'inline-block' }}>EU</Box></Tooltip>}
                       {cve.cpe_affected.length > 0 && <Tooltip title={`${cve.cpe_affected.length} CPEs`}><SecurityOutlined sx={{ fontSize: 14, color: INTEL_COLOR }} /></Tooltip>}
                     </Box>
                   </TableCell>
