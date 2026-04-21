@@ -94,7 +94,8 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
                         │  │ isms-core-feeds  │  │ isms-core-       │   │
                         │  │ Threat intel     │  │ connectors       │   │
                         │  │ MITRE · KEV ·    │  │ 44 evidence      │   │
-                        │  │ EPSS · NVD CVE   │  │ connectors       │   │
+                        │  │ EPSS · NVD CVE · │  │ connectors       │   │
+                        │  │ ENISA EUVD       │  │                  │   │
                         │  └──────────────────┘  └──────────────────┘   │
                         └────────────────────────────────────────────────┘
 ```
@@ -111,7 +112,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | `isms-core-opensearch` | OpenSearch 3.x | Full-text search over policy and IMP content + NVD CVE/CPE indices. Internal only. |
 | `isms-core-worker` | Celery 5.3 | Background tasks — import, sync, compliance recalculation. Queue: `isms`. |
 | `isms-core-beat` | Celery Beat | Scheduled jobs — nightly evidence archive at 02:00 UTC; daily KPI snapshots at 06:00 UTC. No healthcheck (by design). |
-| `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, FIRST EPSS, NVD CVE/CPE. Writes to Postgres and OpenSearch. Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `NIST_API_KEY`. |
+| `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, FIRST EPSS, NVD CVE/CPE, ENISA EUVD. Writes to Postgres and OpenSearch. Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `FEEDS_EUVD_ENABLED`, `NIST_API_KEY`. |
 | `isms-core-connectors` | Python 3.12 | Automated evidence runner — loads all 44 connectors dynamically, pushes evidence to `connector_evidence` table. Env: `CONNECTORS_WORKER_SECRET`. |
 
 > **Access in production:** `https://{HOST_IP}` via nginx. Do NOT access `:3000` or `:8000` directly — those ports are not exposed in production.
@@ -145,13 +146,13 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Gaps** | Identified compliance gaps with severity, owner, SLA, and remediation tracking |
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
-| **Frameworks** | 37 reference datasets: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v18 (v19 upgrade planned — see Phase 35), GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS, UK Operational Resilience, FINMA, COBIT 2019, and more |
-| **Crosswalk Mappings** | Cross-framework relationships: 3,915+ mappings — including NIST AI RMF 1.0 ↔ EU AI Act (72 mappings), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51), Swiss ISG (40), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
+| **Frameworks** | 39 reference datasets: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v18 (v19 upgrade planned), GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS, UK Operational Resilience, NCSC CAF v4.0, ReCyF v2.5 (France NIS2), FINMA, COBIT 2019, and more |
+| **Crosswalk Mappings** | Cross-framework relationships: 3,315 objects / 41 axes — including NIST AI RMF 1.0 ↔ EU AI Act (72), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51), NCSC CAF v4.0 (65), ReCyF v2.5 / FR NIS2 (50), Swiss ISG (40), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
-| **Compliance Assessments** | 23 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) for full coverage |
+| **Compliance Assessments** | 25 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) for full coverage |
 | **Projects** | Workspace layer — named projects own a curated subset of policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date) applied on add; active/inactive/draft/archived lifecycle |
 | **System Event Log** | Immutable trail of every platform action (who, what, when, resource) |
-| **Threat Intelligence** | Feed run history, CISA KEV entries, EPSS scores, MITRE techniques. NVD CVE (~250K docs) and CPE (~50-100K docs) stored in OpenSearch indices `nvd-cve` / `nvd-cpe` with EPSS + KEV denormalised at index time. |
+| **Threat Intelligence** | Feed run history, CISA KEV entries, EPSS scores, MITRE techniques, ENISA EUVD entries. NVD CVE (~250K docs) and CPE (~50-100K docs) stored in OpenSearch indices `nvd-cve` / `nvd-cpe` with EPSS + KEV + EUVD cross-enrichment at index time. CVSS 4.0 supported. |
 
 ---
 
@@ -194,13 +195,13 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Evidence Tracker** | Evidence items with expiry tracking, verification status, and freshness alerts |
 | **Connectors** | Automated evidence ingestion from 44 systems — continuous compliance signals from real infrastructure |
 | **Nightly Evidence Archive** | Celery Beat job archives stale connector evidence at 02:00 UTC daily |
-| **Crosswalk Viewer** | Cross-framework mappings: 3,915+ relationships — ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK ↔ GDPR ↔ DORA ↔ BSI IT-Grundschutz and more |
+| **Crosswalk Viewer** | Cross-framework mappings: 3,315 objects / 41 axes — ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK ↔ GDPR ↔ DORA ↔ BSI IT-Grundschutz ↔ NCSC CAF ↔ ReCyF v2.5 and more |
 | **QA / Existence Checker** | Validate that all expected artifacts are present (Framework, Operational, Privacy, Cloud, AI) |
 | **System Event Log** | Full audit log of all platform actions |
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats, import triggers |
 | **Full-Text Search** | Search across all policy and IMP document content via OpenSearch (product-filtered) |
 | **ISMS Compass** | AI gap analysis against ISMS CORE Gold Standard (requires `ANTHROPIC_API_KEY`) |
-| **Compliance Assessment Suite** | 23 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md). |
+| **Compliance Assessment Suite** | 25 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md). |
 | **NIST CSF 2.0 Assessment** | 106 subcategories across 6 functions (incl. GV — Govern), tier 1–4 ratings, radar + bar chart, XLSX import from official NIST template, XLSX/CSV export |
 | **NIS2 Assessment** | EU 2022/2555 — 10 Article 21(2) security measures + 5 Article 23 reporting obligations, maturity 0–4 |
 | **DORA Assessment** | EU 2022/2554 — 25 articles across 4 chapters (ICT Risk, Incident Mgmt, Resilience Testing, Third-Party Risk), maturity 0–4 |
@@ -221,6 +222,8 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **ACN Guidelines (IT)** | 19 guidelines across 4 groups, maturity 0–4; ISO 27001 crosswalk: 43 mappings |
 | **UK NIS Assessment** | UK NIS Regulations 2018 — 13 requirements across 3 objectives, maturity 0–4; ISO 27001 crosswalk: 51 mappings |
 | **UK Operational Resilience** | FCA/PRA PS21/3 + PS26/2 — 12 requirements across 4 objectives, maturity 0–4; ISO 27001 crosswalk: 34 mappings |
+| **NCSC CAF v4.0 Assessment** | UK NCSC Cyber Assessment Framework v4.0 — 41 Contributing Outcomes across 14 Principles and 4 Objectives; Not Achieved / Partially Achieved / Achieved; ISO 27001 crosswalk: 65 mappings |
+| **ReCyF v2.5 Assessment (France NIS2)** | ANSSI ReCyF v2.5 — 20 Security Objectives across 4 pillars (Gouvernance / Protection / Défense / Résilience), 152 requirements; French NIS2 transposition (Loi 2024-449); ISO 27001 crosswalk: 50 mappings |
 | **Assessment Collections** | Group multiple assessments into named collections with derived stats (completion %, compliance %, status rollup). Export as CSV, colour-coded XLSX, or PDF (A4). |
 | **Projects Workspace** | Create named projects — own, edit, and track a curated set of policies and implementations from the library. WYSIWYG editing, doc-vars substitution, bulk actions, SCR checklists, completeness scoring. |
 | **Document Editor** | TipTap v3 WYSIWYG + raw source toggle; grid table auto-conversion (RST → GFM); metadata comment stripping |
@@ -241,8 +244,9 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Country Localisation** | Policy rendering adapts regulatory references for 8 jurisdictions: CH (default), FR, BE, LU, DE, AT, IT, GB — applied at request time from `org.country` |
 | **Cross-Framework Coverage** | BFS inference maps ISO 27001 assessment coverage to NIS2, DORA, and GDPR; Mapping Matrix and Inferred Coverage tabs |
 | **MFA** | TOTP-based 2FA — Google Authenticator / Authy compatible; QR code setup; 8 single-use backup codes; auto-submits on 6-digit entry |
-| **Threat Intelligence Feeds** | Dedicated `isms-core-feeds` container pulling 6 sources: MITRE ATT&CK v18 (weekly — v19 upgrade planned), MITRE ATLAS (weekly), CISA KEV (daily), FIRST EPSS (daily), NVD CVE full+delta (weekly/daily — ~250K CVEs into OpenSearch), NVD CPE Option B (weekly). EPSS and KEV denormalised into CVE docs at index time. |
-| **CVE / CPE Explorer** | Search and filter ~250K NVD CVE entries by severity, EPSS score, year, KEV-only. Detail panel: CVSS scores, CPE applicability, CWEs, NVD references. Separate CPE tab. |
+| **Threat Intelligence Feeds** | Dedicated `isms-core-feeds` container pulling 7 sources: MITRE ATT&CK v18 (weekly — v19 upgrade planned), MITRE ATLAS (weekly), CISA KEV (daily), FIRST EPSS (daily — 10K limit, daily OpenSearch sync), NVD CVE full+delta (weekly/daily — ~250K CVEs into OpenSearch, CVSS 4.0 supported), NVD CPE Option B (weekly), ENISA EUVD (daily — exploited + critical CVEs). EPSS, KEV, and EUVD cross-enriched into CVE docs at index time. |
+| **CVE / CPE Explorer** | Search and filter ~250K NVD CVE entries by severity, EPSS score, CVSS version (v2/v3/v4), year, KEV-only, EUVD flag. Detail panel: CVSS scores (v2/v3/v4), CPE applicability, CWEs, NVD references, EUVD badge. Separate CPE tab. |
+| **EUVD Explorer** | ENISA European Vulnerability Database — browse exploited and critical vulnerabilities; filter by score, exploited-only; detail panel with vendors, products, EPSS, aliases. |
 | **KEV Audit Report (A.8.8)** | Audit trail for ISO 27001:2022 A.8.8 using CISA KEV feed — remediation status by CVE, per-vendor summary, CSV export for auditor evidence. |
 | **Health Alert Banner** | Dismissible warning banner when any feed run, connector sync, or OpenSearch check reports an error in the last 24 hours. Red-dot sidebar badges on Intelligence and Suppliers groups. |
 | **CPE Option B Toggle** | Admin UI switch on Threat Feeds page to enable/disable NVD CPE Option B at runtime. Setting stored in `platform_settings` DB table, overrides env var. |
@@ -279,6 +283,25 @@ echo "vm.max_map_count=262144" | sudo tee -a /etc/sysctl.conf
 ```
 
 macOS and Windows Docker Desktop handle this automatically — no action needed.
+
+---
+
+### Directory Layout
+
+The platform expects ISMS CORE content repositories to sit **alongside** the platform directory:
+
+```
+/your/base/directory/
+├── factory_isms/
+│   ├── isms-core-platform/          ← docker-compose.yml lives here
+│   ├── isms-core-framework/         ← FRAMEWORK content (mounted read-only)
+│   ├── isms-core-operational/       ← OPERATIONAL content (mounted read-only)
+│   ├── isms-core-privacy/           ← PRIVACY content — ISO 27701:2025 (mounted read-only)
+│   ├── isms-core-cloud/             ← CLOUD content — ISO 27018:2025 (mounted read-only)
+│   └── isms-core-ai/                ← AI content — ISO 42001:2023 (mounted read-only)
+```
+
+The `docker-compose.yml` mounts all five product directories as read-only volumes. The platform never modifies these files.
 
 ---
 
@@ -435,6 +458,27 @@ Log in as admin → **Admin → First-Run Setup**. Run in order, top to bottom:
 | 5 | **Import Operational Checklists** | Parses Operational compliance checklist structures. |
 | — | **Full Sync (Steps 2–5)** | Runs all four importers in sequence. Step 1 must be done separately first. |
 
+#### After Import — What You'll See
+
+| Section | What's there |
+|---------|-------------|
+| **Dashboard** | Compliance overview, audit readiness score, top gaps; ISMS / Privacy / Cloud / AI product switcher |
+| **Controls** | 99 control groups (54 ISMS + 21 Privacy + 12 Cloud + 12 AI) with policy/assessment/gap status |
+| **Policies** | Imported documents (POL + OP-POL + PRIV-POL + CLD-POL + AI-POL + foundation + REF/CTX/INS) |
+| **Assessments** | 188 framework + 53 operational + 21 privacy + 12 cloud + 10 AI workbook structures with per-item compliance status |
+| **Gaps** | Identified compliance gaps — create, assign, track |
+| **Evidence** | Upload and link evidence to control groups and requirements |
+| **Coverage** | Heatmap of Framework and Operational coverage |
+| **QA** | Existence checker — validates artifact completeness across all five products |
+| **Compliance Assessments** | 23 frameworks — NIST CSF 2.0, NIS2, DORA, CIS v8, BSI, TISAX, Swiss nDSG/ISG, EU AI Act, NIST AI RMF, and more |
+| **Risk Register** | Risk register — empty, ready for data entry |
+| **KPI Metrics** | KPI dashboard — empty, ready for data entry |
+| **TPRM** | Third-party risk management — empty, ready for data entry |
+| **BIA** | Business Impact Analysis — empty, ready for data entry |
+| **EBIOS RM** | EBIOS Risk Manager — empty, ready for data entry |
+| **Remediation** | Remediation tracking — linked to gaps, ready for assignment |
+| **Admin** | User management, system health, import controls |
+
 ---
 
 ### Step 5 — Verify
@@ -456,6 +500,20 @@ Open `https://{HOST_IP}`, accept the self-signed cert warning, and log in.
 ### Step 6 — Change Admin Password
 
 **Admin → Users → Edit admin user** — change the password before handing the system to anyone else.
+
+---
+
+### Step 7 — Enable MFA
+
+We strongly recommend enabling MFA on all admin accounts before going live.
+
+1. Log in → navigate to **System** (admin sidebar)
+2. In the **Security** section, click **Enable MFA**
+3. Scan the QR code with Google Authenticator, Authy, or any TOTP app
+4. Enter the 6-digit code to confirm
+5. **Copy your 8 backup codes** and store them securely — they are shown once
+
+On subsequent logins, after entering your password you will be prompted for a 6-digit TOTP code. If you lose your authenticator app, use a backup code on the login screen.
 
 ---
 
@@ -781,6 +839,7 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 | `ANTHROPIC_API_KEY` | No | Enables ISMS Compass AI gap analysis |
 | `FEEDS_CVE_ENABLED` | No | Set to `true` to enable NVD CVE ingestion (default: false) |
 | `FEEDS_CPE_FULL` | No | Set to `true` to enable NVD CPE Option B |
+| `FEEDS_EUVD_ENABLED` | No | Set to `false` to disable ENISA EUVD feed (default: true) |
 | `NIST_API_KEY` | No | NVD API key — removes rate-limiting on CVE/CPE downloads |
 | `MAIL_HOST` | No | SMTP host — empty = no email |
 | `MAIL_PORT` | No | SMTP port (default: 1025) |

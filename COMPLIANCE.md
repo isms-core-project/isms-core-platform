@@ -5,11 +5,11 @@
 <h1 align="center">🎋 ISMS CORE — Compliance Assessment Modules</h1>
 
 <p align="center">
-  <strong>Twenty-three built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
+  <strong>Twenty-five built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Frameworks-23-2E8B57?style=flat-square" alt="23 Frameworks"/>
+  <img src="https://img.shields.io/badge/Frameworks-25-2E8B57?style=flat-square" alt="25 Frameworks"/>
   <img src="https://img.shields.io/badge/Requirements-700+-0066CC?style=flat-square" alt="700+ Requirements"/>
   <img src="https://img.shields.io/badge/Export-CSV_%7C_XLSX_%7C_PDF-FF6600?style=flat-square" alt="Export"/>
   <img src="https://img.shields.io/badge/Assessment_Collections-Grouping_%26_Reports-2E7D32?style=flat-square" alt="Collections"/>
@@ -19,7 +19,7 @@
 
 ## Overview
 
-ISMS CORE Platform includes a unified compliance assessment layer covering 23 built-in frameworks across Europe, North America, and globally, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
+ISMS CORE Platform includes a unified compliance assessment layer covering 25 built-in frameworks across Europe, North America, and globally, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
 
 Assessment results can be grouped into **Assessment Collections** — named bundles that aggregate status across multiple frameworks for reporting or audit purposes, with CSV, XLSX (colour-coded), and PDF (A4) export.
 
@@ -54,6 +54,8 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [NIST SP 800-53 R5](#nist-sp-800-53-rev-5) | NIST | 20 control families | 3 Classes (Technical/Operational/Management) | 0–4 | US federal agencies, contractors, and any organisation seeking comprehensive security controls |
 | [CSA CCM v4.1](#csa-cloud-controls-matrix-v41) | CSA | 197 control specifications | 17 Domains | 0–4 | Cloud service providers, cloud consumers — any sector |
 | [CSA AICM v1.0.3](#csa-ai-controls-matrix-v103) | CSA | 72 controls | 7 Domains | 0–4 | Organisations developing, deploying, or procuring AI systems |
+| [NCSC CAF v4.0 (UK)](#ncsc-caf-v40-uk) | NCSC UK | 41 Contributing Outcomes | 14 Principles / 4 Objectives | 0/2/4 | UK operators of essential services / CNI |
+| [ReCyF v2.5 — France NIS2](#recyf-v25--france-nis2-anssi) | ANSSI | 20 Security Objectives | 4 Pillars | 0–4 | French NIS2 entities (EI & EE) — Loi 2024-449 |
 | [Custom (YAML)](#custom-frameworks-yaml-import) | User-defined | User-defined | User-defined | User-defined | All |
 
 ---
@@ -486,6 +488,35 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 
 ---
 
+### NCSC CAF v4.0 (UK)
+
+**Source:** UK National Cyber Security Centre — Cyber Assessment Framework v4.0 (2024)
+**Scope:** 41 Contributing Outcomes across 14 Principles and 4 Objectives (A: Managing Security Risk, B: Protecting Against Cyber Attack, C: Detecting Cyber Security Events, D: Minimising the Impact of Incidents).
+**Scoring:** 3-column model for most outcomes: Not Achieved (0) / Partially Achieved (2) / Achieved (4). Nine outcomes use 2-column model (Not Achieved / Achieved only).
+**Audience:** UK Operators of Essential Services (energy, transport, health, water, digital infrastructure), Relevant Digital Service Providers, public sector bodies subject to the UK NIS Regulations 2018.
+
+**Coverage notes:**
+- CAF v4.0 (2024) introduced Objective D (Minimising the Impact) and restructured several outcomes from v3.1 — platform implements v4.0 only
+- 65 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer (ISO27001_2022 → NCSC_CAF axis)
+- Organisations subject to both NIS Regulations and CAF should maintain both modules — NIS provides the legal baseline, CAF provides the technical assessment methodology
+
+---
+
+### ReCyF v2.5 — France NIS2 (ANSSI)
+
+**Source:** ANSSI — Agence nationale de la sécurité des systèmes d'information. Référentiel de Cybersécurité France v2.5 (17/03/2026).
+**Scope:** 20 Security Objectives (OS-01 to OS-20) structured across 4 pillars: Gouvernance, Protection, Défense, Résilience. 152 requirements (Moyens acceptables de conformité). OS-01–15 apply to both Entités Importantes (EI) and Entités Essentielles (EE). OS-16–20 apply to EE only.
+**Scoring:** Maturity levels 0–4
+**Audience:** French organisations subject to the NIS2 transposition: Entités Importantes (EI) and Entités Essentielles (EE) as classified under Loi n° 2024-449 (PJL Art. 14 / NIS2 transposition). Covers all NIS2 sectors: énergie, transport, santé, eau, infrastructures numériques, services numériques, administrations publiques.
+
+**Coverage notes:**
+- Document de travail ANSSI version 2.5 (17/03/2026) — subject to revision before final adoption
+- 50 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer (ISO27001_2022 → FR_NIS2_RECYF axis)
+- EE-only objectives (OS-16 to OS-20) are included in the assessment and clearly labelled; EI-only organisations may use them as an aspirational target
+- Assessment interface uses official ANSSI French terminology throughout
+
+---
+
 ### Custom Frameworks (YAML Import)
 
 Upload any custom, sector-specific, or proprietary control framework via YAML. Once imported, the platform maps each control against ISO 27001:2022 via `iso_mappings` fields and shows inferred coverage in the Coverage page.
@@ -532,8 +563,10 @@ All compliance assessment modules benefit from the Platform's Crosswalk Viewer, 
 - ISO 27001:2022 ↔ ACN Guidelines IT (43 mappings)
 - ISO 27001:2022 ↔ UK NIS Regulations (51 mappings)
 - ISO 27001:2022 ↔ UK Operational Resilience (34 mappings)
+- ISO 27001:2022 ↔ NCSC CAF v4.0 (65 mappings)
+- ISO 27001:2022 ↔ ReCyF v2.5 / FR NIS2 (50 mappings)
 
-Total: **3,200+ cross-framework mappings** available in the Crosswalk Viewer.
+Total: **3,315 crosswalk objects across 41 axes** available in the Crosswalk Viewer.
 
 ---
 

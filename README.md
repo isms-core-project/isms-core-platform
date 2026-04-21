@@ -18,7 +18,7 @@
 </p>
 
 <details>
-<summary><strong>23 compliance assessment modules — click to expand</strong></summary>
+<summary><strong>25 compliance assessment modules — click to expand</strong></summary>
 <br/>
 <p align="center">
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NIST_CSF_2.0-Assessment_Tool-FF6600?style=flat-square" alt="NIST CSF"/></a>
@@ -41,9 +41,11 @@
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/ACN_Guidelines_(IT)-Assessment_Tool-006630?style=flat-square" alt="ACN IT"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/UK_NIS_Regulations-Assessment_Tool-1A237E?style=flat-square" alt="UK NIS"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/UK_Op._Resilience-Assessment_Tool-283593?style=flat-square" alt="UK Op Resilience"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NCSC_CAF_v4.0_(UK)-Assessment_Tool-003366?style=flat-square" alt="NCSC CAF v4.0"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/ReCyF_v2.5_(FR_NIS2)-Assessment_Tool-002395?style=flat-square" alt="ReCyF v2.5"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/FINMA-Assessment_Tool-C62828?style=flat-square" alt="FINMA"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v18-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
-  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/3%2C915_Crosswalk_Mappings-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/3%2C315_Crosswalk_Objects_%2F_41_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
 </p>
 </details>
 
@@ -145,7 +147,7 @@ EN · FR · DE · IT
 **Live compliance management system** — turns all content products into dashboards, gap tracking, evidence ingestion, risk registers, and audit reports. Docker Compose, 10 services, self-hosted.
 
 **44** connectors · **10** services<br/>
-**23** assessment modules · **3,915** crosswalk mappings<br/>
+**25** assessment modules · **3,315** crosswalk objects / 41 axes<br/>
 7 country jurisdictions
 
 <img src="https://img.shields.io/badge/v1.0-Live-2E8B57?style=flat-square" alt="Live"/>
@@ -358,7 +360,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 ## 🔗 Framework Integration
 
 <details>
-<summary><strong>Show all 23+ framework integrations and crosswalk mappings</strong></summary>
+<summary><strong>Show all 25+ framework integrations and crosswalk mappings</strong></summary>
 <br/>
 
 | Framework / Standard | What ISMS CORE provides | Status |
@@ -388,10 +390,13 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | ACN Guidelines (IT) | 19 guidelines across 4 groups, maturity 0–4; ISO 27001 crosswalk: 43 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-006630?style=flat-square) |
 | UK NIS Regulations | 13 requirements across 3 objectives, maturity 0–4; ISO 27001 crosswalk: 51 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square) |
 | UK Operational Resilience | 12 requirements across 4 objectives, maturity 0–4; ISO 27001 crosswalk: 34 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-283593?style=flat-square) |
+| NCSC CAF v4.0 (UK) | 41 Contributing Outcomes across 14 Principles and 4 Objectives — outcome-based; ISO 27001 crosswalk: 65 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-003366?style=flat-square) |
+| ReCyF v2.5 — France NIS2 (ANSSI) | 20 Security Objectives across 4 pillars (Gouvernance / Protection / Défense / Résilience) — French NIS2 transposition (Loi 2024-449); ISO 27001 crosswalk: 50 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-002395?style=flat-square) |
 | FINMA | Assessment module | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
 | NIST SP 800-53 Rev. 5 | Security control cross-mapping | ![Mapped](https://img.shields.io/badge/Mapped-FF6600?style=flat-square) |
 | MITRE ATT&CK v18 | Threat technique mapping (Enterprise / ICS / Mobile) — 835 techniques, EPSS + CISA KEV correlation. v19 upgrade planned. | ![v18](https://img.shields.io/badge/v18-DC143C?style=flat-square) |
 | MITRE ATLAS | AI/ML adversarial threat techniques | ![Mapped](https://img.shields.io/badge/Mapped-DC143C?style=flat-square) |
+| ENISA EUVD | European Vulnerability Database — exploited + critical CVEs; daily feed; EUVD Explorer + cross-enrichment of NVD CVE index with `in_euvd` flag | ![Feed](https://img.shields.io/badge/TI_Feed-003399?style=flat-square) |
 | EU GDPR / Swiss DSG | Security and privacy control mapping, operational checklists | ![Toolkit](https://img.shields.io/badge/Toolkit-FFD700?style=flat-square) |
 
 </details>
@@ -458,7 +463,7 @@ See [STRUCTURE.md](STRUCTURE.md) for the complete repository map with per-folder
 | [PARADIGM.md](PARADIGM.md) | 🧭 Product overview and paradigm shift guide — start here |
 | [PLATFORM.md](PLATFORM.md) | 🖥️ Platform architecture, features, and full deployment guide |
 | [STRUCTURE.md](STRUCTURE.md) | 📂 Repository map — all folders and artifact types explained |
-| [COMPLIANCE.md](COMPLIANCE.md) | 📋 All 23 compliance assessment modules — coverage notes, gaps, audience |
+| [COMPLIANCE.md](COMPLIANCE.md) | 📋 All 25 compliance assessment modules — coverage notes, gaps, audience |
 | [GETTING-STARTED.md](GETTING-STARTED.md) | 🚀 Platform quick-start (Docker Compose) |
 | [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 Framework control pack index (53 packs) |
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A controls → 53 pack mapping |
