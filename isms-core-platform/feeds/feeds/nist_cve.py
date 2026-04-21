@@ -58,10 +58,22 @@ def _parse_dt(s: str | None) -> str | None:
         return None
 
 
-def _extract_cvss(metrics: dict) -> tuple[float | None, str | None, str | None, float | None]:
-    """Return (v3_score, v3_severity, v3_vector, v2_score)."""
+def _extract_cvss(
+    metrics: dict,
+) -> tuple[float | None, str | None, str | None, float | None, float | None, str | None, str | None]:
+    """Return (v3_score, v3_severity, v3_vector, v2_score, v4_score, v4_severity, v4_vector)."""
     v3_score = v3_severity = v3_vector = v2_score = None
+    v4_score = v4_severity = v4_vector = None
 
+    # CVSS 4.0 — NVD API key: cvssMetricV40
+    for item in (metrics.get("cvssMetricV40") or []):
+        cvss = item.get("cvssData", {})
+        v4_score    = cvss.get("baseScore")
+        v4_severity = cvss.get("baseSeverity")
+        v4_vector   = cvss.get("vectorString")
+        break
+
+    # CVSS 3.x — prefer 3.1 over 3.0
     for key in ("cvssMetricV31", "cvssMetricV30"):
         items = metrics.get(key) or []
         if items:
@@ -75,7 +87,7 @@ def _extract_cvss(metrics: dict) -> tuple[float | None, str | None, str | None, 
     if items_v2:
         v2_score = items_v2[0].get("cvssData", {}).get("baseScore")
 
-    return v3_score, v3_severity, v3_vector, v2_score
+    return v3_score, v3_severity, v3_vector, v2_score, v4_score, v4_severity, v4_vector
 
 
 def _extract_cpes(configurations: list) -> list[str]:
@@ -140,6 +152,9 @@ def _ensure_nvd_indices(os_client) -> None:
             "last_modified":    {"type": "date"},
             "vuln_status":      {"type": "keyword"},
             "description":      {"type": "text"},
+            "cvss_v4_score":    {"type": "float"},
+            "cvss_v4_severity": {"type": "keyword"},
+            "cvss_v4_vector":   {"type": "keyword"},
             "cvss_v3_score":    {"type": "float"},
             "cvss_v3_severity": {"type": "keyword"},
             "cvss_v3_vector":   {"type": "keyword"},
@@ -289,7 +304,7 @@ def run(full: bool = False) -> None:
                     break
 
             metrics     = cve.get("metrics") or {}
-            v3_score, v3_sev, v3_vec, v2_score = _extract_cvss(metrics)
+            v3_score, v3_sev, v3_vec, v2_score, v4_score, v4_sev, v4_vec = _extract_cvss(metrics)
             cpe_list    = _extract_cpes(cve.get("configurations") or [])
             cwe_list    = _extract_cwes(cve.get("weaknesses") or [])
             refs        = [r.get("url", "") for r in (cve.get("references") or []) if r.get("url")]
@@ -302,6 +317,9 @@ def run(full: bool = False) -> None:
                 "last_modified":    _parse_dt(cve.get("lastModified")),
                 "vuln_status":      cve.get("vulnStatus"),
                 "description":      desc,
+                "cvss_v4_score":    v4_score,
+                "cvss_v4_severity": v4_sev,
+                "cvss_v4_vector":   v4_vec,
                 "cvss_v3_score":    v3_score,
                 "cvss_v3_severity": v3_sev,
                 "cvss_v3_vector":   v3_vec,
@@ -323,6 +341,7 @@ def run(full: bool = False) -> None:
             # ── Option A: extract CPEs from HIGH/CRITICAL/KEV/EPSS≥0.1 CVEs ──
             if cpe_list and (
                 v3_sev in ("HIGH", "CRITICAL")
+                or v4_sev in ("HIGH", "CRITICAL")
                 or in_kev
                 or (epss_score is not None and epss_score >= 0.1)
             ):

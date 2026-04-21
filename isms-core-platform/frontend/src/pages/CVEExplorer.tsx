@@ -50,6 +50,12 @@ function fmtScore(score: number | null) {
   return score.toFixed(1)
 }
 
+function bestCvss(cve: NvdCveEntry): { score: number | null; severity: string | null; version: 'v4' | 'v3' | null } {
+  if (cve.cvss_v4_score != null) return { score: cve.cvss_v4_score, severity: cve.cvss_v4_severity, version: 'v4' }
+  if (cve.cvss_v3_score != null) return { score: cve.cvss_v3_score, severity: cve.cvss_v3_severity, version: 'v3' }
+  return { score: null, severity: null, version: null }
+}
+
 // ── Stats Bar ─────────────────────────────────────────────────────────────────
 
 function StatsBar() {
@@ -198,7 +204,18 @@ function InfoPanel() {
 // ── CVE Detail Panel ──────────────────────────────────────────────────────────
 
 function CveDetail({ cve, onClose }: { cve: NvdCveEntry; onClose: () => void }) {
-  const sc = SEVERITY_COLORS[cve.cvss_v3_severity ?? ''] ?? SEVERITY_COLORS.NONE
+  const best = bestCvss(cve)
+  const sc = SEVERITY_COLORS[best.severity ?? ''] ?? SEVERITY_COLORS.NONE
+  const detailRows: [string, string][] = [
+    ['Published',  fmtDate(cve.published)],
+    ['Modified',   fmtDate(cve.last_modified)],
+    ['Status',     cve.vuln_status ?? '—'],
+    ...(cve.cvss_v4_score != null ? [['CVSS 4.0', fmtScore(cve.cvss_v4_score)] as [string, string]] : []),
+    ...(cve.cvss_v4_vector      ? [['CVSS 4.0 Vector', cve.cvss_v4_vector] as [string, string]] : []),
+    ['CVSS 3.x',   fmtScore(cve.cvss_v3_score)],
+    ...(cve.cvss_v3_vector      ? [['CVSS 3.x Vector', cve.cvss_v3_vector] as [string, string]] : []),
+    ['CVSS 2.0',   fmtScore(cve.cvss_v2_score)],
+  ]
   return (
     <Paper variant="outlined" sx={{ borderRadius: 2, p: 2, position: 'sticky', top: 16, maxHeight: 'calc(100vh - 120px)', overflowY: 'auto' }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1.5 }}>
@@ -207,7 +224,10 @@ function CveDetail({ cve, onClose }: { cve: NvdCveEntry; onClose: () => void }) 
             {cve.cve_id}
           </Typography>
           <Box sx={{ display: 'flex', gap: 0.5, mt: 0.5, flexWrap: 'wrap' }}>
-            <SeverityChip severity={cve.cvss_v3_severity} />
+            <SeverityChip severity={best.severity} />
+            {best.version && (
+              <Chip label={best.version.toUpperCase()} size="small" sx={{ fontSize: '0.6rem', height: 18, bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
+            )}
             {cve.in_kev && <Chip label="KEV" size="small" color="error" sx={{ fontSize: '0.68rem', height: 18 }} />}
             {cve.epss_score !== null && (
               <Chip label={`EPSS ${(cve.epss_score * 100).toFixed(1)}%`} size="small" sx={{ fontSize: '0.68rem', height: 18, bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
@@ -222,14 +242,7 @@ function CveDetail({ cve, onClose }: { cve: NvdCveEntry; onClose: () => void }) 
       </Typography>
 
       <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0.5, mb: 1.5 }}>
-        {[
-          ['Published',   fmtDate(cve.published)],
-          ['Modified',    fmtDate(cve.last_modified)],
-          ['Status',      cve.vuln_status ?? '—'],
-          ['CVSSv3',      fmtScore(cve.cvss_v3_score)],
-          ['CVSSv2',      fmtScore(cve.cvss_v2_score)],
-          ['Vector',      cve.cvss_v3_vector ?? '—'],
-        ].map(([k, v]) => (
+        {detailRows.map(([k, v]) => (
           <Box key={k}>
             <Typography variant="caption" color="text.secondary" display="block">{k}</Typography>
             <Typography variant="caption" fontWeight={500} sx={{ wordBreak: 'break-all' }}>{v}</Typography>
@@ -384,7 +397,7 @@ function CveTab() {
                 <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 130 }}>CVE ID</TableCell>
                 <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem' }}>Description</TableCell>
                 <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 90 }}>Severity</TableCell>
-                <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 60 }}>CVSSv3</TableCell>
+                <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 70 }}>CVSS</TableCell>
                 <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 70 }}>EPSS</TableCell>
                 <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 90 }}>Published</TableCell>
                 <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 60 }}>Flags</TableCell>
@@ -407,9 +420,23 @@ function CveTab() {
                       {cve.description ?? '—'}
                     </Typography>
                   </TableCell>
-                  <TableCell><SeverityChip severity={cve.cvss_v3_severity} /></TableCell>
-                  <TableCell sx={{ fontSize: '0.75rem', fontWeight: 600, color: cve.cvss_v3_score !== null && cve.cvss_v3_score >= 9 ? '#FFC7CE' : 'text.primary' }}>
-                    {fmtScore(cve.cvss_v3_score)}
+                  <TableCell><SeverityChip severity={bestCvss(cve).severity} /></TableCell>
+                  <TableCell>
+                    {(() => {
+                      const b = bestCvss(cve)
+                      return (
+                        <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 0.3 }}>
+                          <Typography sx={{ fontSize: '0.75rem', fontWeight: 600, color: b.score != null && b.score >= 9 ? '#FFC7CE' : 'text.primary' }}>
+                            {fmtScore(b.score)}
+                          </Typography>
+                          {b.version && (
+                            <Typography sx={{ fontSize: '0.6rem', color: b.version === 'v4' ? '#9fc8f0' : 'text.disabled', lineHeight: 1 }}>
+                              {b.version}
+                            </Typography>
+                          )}
+                        </Box>
+                      )
+                    })()}
                   </TableCell>
                   <TableCell sx={{ fontSize: '0.75rem' }}>
                     {cve.epss_score !== null ? `${(cve.epss_score * 100).toFixed(1)}%` : '—'}

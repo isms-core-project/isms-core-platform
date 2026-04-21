@@ -360,6 +360,9 @@ export interface NvdCveEntry {
   last_modified: string | null
   vuln_status: string | null
   description: string | null
+  cvss_v4_score: number | null
+  cvss_v4_severity: string | null
+  cvss_v4_vector: string | null
   cvss_v3_score: number | null
   cvss_v3_severity: string | null
   cvss_v3_vector: string | null

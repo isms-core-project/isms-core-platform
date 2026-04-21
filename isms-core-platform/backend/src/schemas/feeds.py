@@ -155,6 +155,9 @@ class NvdCveEntry(BaseModel):
     last_modified: str | None
     vuln_status: str | None
     description: str | None
+    cvss_v4_score: float | None = None
+    cvss_v4_severity: str | None = None
+    cvss_v4_vector: str | None = None
     cvss_v3_score: float | None
     cvss_v3_severity: str | None
     cvss_v3_vector: str | None

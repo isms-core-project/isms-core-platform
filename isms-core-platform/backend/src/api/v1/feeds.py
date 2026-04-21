@@ -678,6 +678,9 @@ def _hit_to_cve(hit: dict) -> NvdCveEntry:
         last_modified    = s.get("last_modified"),
         vuln_status      = s.get("vuln_status"),
         description      = s.get("description"),
+        cvss_v4_score    = s.get("cvss_v4_score"),
+        cvss_v4_severity = s.get("cvss_v4_severity"),
+        cvss_v4_vector   = s.get("cvss_v4_vector"),
         cvss_v3_score    = s.get("cvss_v3_score"),
         cvss_v3_severity = s.get("cvss_v3_severity"),
         cvss_v3_vector   = s.get("cvss_v3_vector"),
@@ -722,12 +725,18 @@ def get_cve_stats(
         except Exception:
             return 0
 
-    total = _count({"match_all": {}})
-    critical = _count({"term": {"cvss_v3_severity": "CRITICAL"}})
-    high     = _count({"term": {"cvss_v3_severity": "HIGH"}})
-    medium   = _count({"term": {"cvss_v3_severity": "MEDIUM"}})
-    low      = _count({"term": {"cvss_v3_severity": "LOW"}})
-    in_kev   = _count({"term": {"in_kev": True}})
+    def _sev_count(sev: str) -> int:
+        return _count({"bool": {"should": [
+            {"term": {"cvss_v4_severity": sev}},
+            {"term": {"cvss_v3_severity": sev}},
+        ], "minimum_should_match": 1}})
+
+    total     = _count({"match_all": {}})
+    critical  = _sev_count("CRITICAL")
+    high      = _sev_count("HIGH")
+    medium    = _sev_count("MEDIUM")
+    low       = _sev_count("LOW")
+    in_kev    = _count({"term": {"in_kev": True}})
     with_epss = _count({"exists": {"field": "epss_score"}})
 
     # Last indexed_at
@@ -809,7 +818,10 @@ def list_cve(
     if search:
         must.append({"multi_match": {"query": search, "fields": ["description", "cve_id", "cwe_ids"]}})
     if severity:
-        filter_.append({"term": {"cvss_v3_severity": severity.upper()}})
+        filter_.append({"bool": {"should": [
+            {"term": {"cvss_v4_severity": severity.upper()}},
+            {"term": {"cvss_v3_severity": severity.upper()}},
+        ], "minimum_should_match": 1}})
     if kev_only:
         filter_.append({"term": {"in_kev": True}})
     if min_epss > 0:
@@ -818,7 +830,12 @@ def list_cve(
         filter_.append({"range": {"published": {"gte": f"{year}-01-01", "lte": f"{year}-12-31"}}})
 
     query = {"bool": {"must": must or [{"match_all": {}}], "filter": filter_}}
-    sort  = [{"cvss_v3_score": {"order": "desc", "missing": "_last"}}, {"published": {"order": "desc"}}]
+    # Sort: prefer CVSS 4.0 score when available, fallback to v3
+    sort = [
+        {"cvss_v4_score": {"order": "desc", "missing": "_last"}},
+        {"cvss_v3_score": {"order": "desc", "missing": "_last"}},
+        {"published": {"order": "desc"}},
+    ]
 
     try:
         result = client.search(
