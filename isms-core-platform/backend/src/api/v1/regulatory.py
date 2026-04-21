@@ -31,7 +31,7 @@ from src.services import regulatory_service
 
 router = APIRouter(prefix="/regulatory", tags=["regulatory"])
 
-_SUPPORTED = {"NIS2", "DORA", "CIS_V8", "BSI_IT_GRUNDSCHUTZ", "TISAX", "CH_NDSG", "CH_ISG", "EU_CRA", "EU_AI_ACT", "EU_CLOUD_SOV", "COBIT_2019", "NIST_AI_RMF", "NCSC_CAF"}
+_SUPPORTED = {"NIS2", "DORA", "CIS_V8", "BSI_IT_GRUNDSCHUTZ", "TISAX", "CH_NDSG", "CH_ISG", "EU_CRA", "EU_AI_ACT", "EU_CLOUD_SOV", "COBIT_2019", "NIST_AI_RMF", "NCSC_CAF", "FR_NIS2_RECYF"}
 
 
 def _validate_code(framework_code: str) -> str:

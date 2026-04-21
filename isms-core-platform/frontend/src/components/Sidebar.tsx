@@ -183,6 +183,12 @@ const NAV_FRAMEWORK_REGIONS: NavRegion[] = [
     ],
   },
   {
+    label: 'France',
+    items: [
+      { label: 'ReCyF v2.5 (NIS2 FR)', path: '/fr-recyf', icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
+    ],
+  },
+  {
     label: 'Belgium',
     items: [
       { label: 'CyberFundamentals',  path: '/cyfun-be', icon: <ShieldOutlined sx={{ fontSize: 20 }} /> },
@@ -259,7 +265,7 @@ const INTEL_COLOR       = '#B84F00'
 
 const RISK_PATHS       = ['/risk-register', '/remediation', '/metrics', '/bia', '/ebios']
 const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk', '/glossary']
-const FRAMEWORK_PATHS  = ['/nist-csf', '/nist-ai-rmf', '/nist-800-53', '/nis2', '/dora', '/uk-nis', '/ncsc-caf', '/uk-op-resilience', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/isg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit', '/csa-ccm', '/csa-aicm']
+const FRAMEWORK_PATHS  = ['/nist-csf', '/nist-ai-rmf', '/nist-800-53', '/nis2', '/dora', '/uk-nis', '/ncsc-caf', '/uk-op-resilience', '/fr-recyf', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/isg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit', '/csa-ccm', '/csa-aicm']
 const SUPPLIER_PATHS   = ['/tprm']
 const ADMIN_PATHS        = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker', '/crosswalk-tracker']
 const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/mitre-groups', '/mitre-software', '/mitre-campaigns', '/mitre-heatmap', '/cve-explorer', '/euvd-explorer']

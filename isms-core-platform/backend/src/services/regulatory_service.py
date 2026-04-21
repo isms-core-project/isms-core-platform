@@ -42,6 +42,7 @@ _ASSESSABLE_LEVEL = {
     "NIST_800_53_R5": 1,
     "ISO42001": 1,
     "NCSC_CAF": 2,
+    "FR_NIS2_RECYF": 1,
 }
 
 
