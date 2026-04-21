@@ -42,7 +42,8 @@ function cellBg(count: number, max: number): string {
 
 function cellTextColor(count: number, max: number): string {
   const ratio = Math.min(count / Math.max(max, 1), 1)
-  return ratio >= 0.5 ? '#fff' : 'inherit'
+  if (ratio >= 0.25) return '#fff'    // medium-dark backgrounds → white
+  return '#7A3800'                    // pale peach/light orange → dark brown
 }
 
 // Build per-tactic rows: parents first, then subs grouped under their parent
