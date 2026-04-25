@@ -1151,12 +1151,6 @@ def build_objects(fields_by_id: dict) -> list:
         _count_table("viz-kev-table",   "KEV — CVEs by Vendor",         "ip-cisa-kev", "vendor_project", 50),
     ]
 
-    objs.append(_dashboard("dash-evidence", "ISMS CORE — Evidence Overview", [
-        ("viz-ev-count",      0,  0, 12, 5),
-        ("viz-ev-time",      12,  0, 36, 5),
-        ("viz-ev-connector",  0,  5, 24, 9),
-        ("viz-ev-control",   24,  5, 24, 9),
-    ]))
     objs.append(_dashboard("dash-audit", "ISMS CORE — Audit Logs", [
         ("viz-al-count",      0,  0, 12, 5),
         ("viz-al-time",      12,  0, 36, 5),
