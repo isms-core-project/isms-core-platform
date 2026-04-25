@@ -1289,30 +1289,43 @@ export default function System() {
                     <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.75, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                       Evidence Indices (per org)
                     </Typography>
-                    {osDetail.evidence_indices.length > 0 ? (
-                      <TableContainer>
-                        <Table size="small">
-                          <TableHead>
-                            <TableRow>
-                              <TableCell sx={{ fontSize: '0.65rem', color: 'text.secondary', py: 0.5 }}>INDEX</TableCell>
-                              <TableCell align="right" sx={{ fontSize: '0.65rem', color: 'text.secondary', py: 0.5 }}>DOCS</TableCell>
-                              <TableCell align="right" sx={{ fontSize: '0.65rem', color: 'text.secondary', py: 0.5 }}>SIZE</TableCell>
-                            </TableRow>
-                          </TableHead>
-                          <TableBody>
-                            {osDetail.evidence_indices.map((idx) => (
-                              <TableRow key={idx.index} hover>
-                                <TableCell sx={{ py: 0.75 }}><Typography variant="caption" fontFamily="monospace">{idx.index}</Typography></TableCell>
-                                <TableCell align="right" sx={{ py: 0.75 }}><Typography variant="caption">{idx.doc_count.toLocaleString()}</Typography></TableCell>
-                                <TableCell align="right" sx={{ py: 0.75 }}><Typography variant="caption" color="text.secondary">{idx.store_size ?? '—'}</Typography></TableCell>
-                              </TableRow>
-                            ))}
-                          </TableBody>
-                        </Table>
-                      </TableContainer>
-                    ) : (
-                      <Typography variant="body2" color="text.secondary">No evidence indices found. Evidence indices are created automatically when an organisation is provisioned.</Typography>
-                    )}
+                    {(() => {
+                      const populated = osDetail.evidence_indices.filter(idx => idx.doc_count > 0);
+                      const hiddenCount = osDetail.evidence_indices.length - populated.length;
+                      return populated.length > 0 ? (
+                        <>
+                          <TableContainer>
+                            <Table size="small">
+                              <TableHead>
+                                <TableRow>
+                                  <TableCell sx={{ fontSize: '0.65rem', color: 'text.secondary', py: 0.5 }}>INDEX</TableCell>
+                                  <TableCell align="right" sx={{ fontSize: '0.65rem', color: 'text.secondary', py: 0.5 }}>DOCS</TableCell>
+                                  <TableCell align="right" sx={{ fontSize: '0.65rem', color: 'text.secondary', py: 0.5 }}>SIZE</TableCell>
+                                </TableRow>
+                              </TableHead>
+                              <TableBody>
+                                {populated.map((idx) => (
+                                  <TableRow key={idx.index} hover>
+                                    <TableCell sx={{ py: 0.75 }}><Typography variant="caption" fontFamily="monospace">{idx.index}</Typography></TableCell>
+                                    <TableCell align="right" sx={{ py: 0.75 }}><Typography variant="caption">{idx.doc_count.toLocaleString()}</Typography></TableCell>
+                                    <TableCell align="right" sx={{ py: 0.75 }}><Typography variant="caption" color="text.secondary">{idx.store_size ?? '—'}</Typography></TableCell>
+                                  </TableRow>
+                                ))}
+                              </TableBody>
+                            </Table>
+                          </TableContainer>
+                          {hiddenCount > 0 && (
+                            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.75 }}>
+                              {hiddenCount} empty {hiddenCount === 1 ? 'index' : 'indices'} hidden (no data ingested yet)
+                            </Typography>
+                          )}
+                        </>
+                      ) : (
+                        <Typography variant="body2" color="text.secondary">
+                          No evidence data ingested yet. Indices are created but will appear here once a connector runs.
+                        </Typography>
+                      );
+                    })()}
                   </Box>
 
                 </Box>
