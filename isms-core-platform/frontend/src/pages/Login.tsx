@@ -125,7 +125,10 @@ export default function Login() {
 
   const header = (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 4 }}>
-      <ShieldOutlined sx={{ color: 'primary.main', fontSize: 36 }} />
+      {isBamboo
+        ? <Box sx={{ fontSize: 32, lineHeight: 1, userSelect: 'none' }}>🎋</Box>
+        : <ShieldOutlined sx={{ color: 'primary.main', fontSize: 36 }} />
+      }
       <Box>
         <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1 }}>
           <Typography variant="h5" sx={{ lineHeight: 1 }}>ISMS CORE</Typography>

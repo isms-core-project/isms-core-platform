@@ -2,8 +2,18 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 
+const bambooFaviconPlugin = {
+  name: 'bamboo-favicon',
+  transformIndexHtml(html: string) {
+    if (process.env.VITE_SECRET_THEME === 'bamboo') {
+      return html.replace('/favicon.svg', '/favicon-bamboo.svg')
+    }
+    return html
+  },
+}
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), bambooFaviconPlugin],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

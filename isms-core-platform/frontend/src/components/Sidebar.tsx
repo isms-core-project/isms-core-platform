@@ -689,7 +689,10 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
             '&:hover': { opacity: 0.8 },
           }}
         >
-          <ShieldOutlined sx={{ color: PRODUCT_COLORS[product], fontSize: 26, transition: 'color 0.2s', flexShrink: 0 }} />
+          {isBamboo
+            ? <Box sx={{ fontSize: 22, lineHeight: 1, flexShrink: 0, userSelect: 'none' }}>🎋</Box>
+            : <ShieldOutlined sx={{ color: PRODUCT_COLORS[product], fontSize: 26, transition: 'color 0.2s', flexShrink: 0 }} />
+          }
           {!collapsed && (
             <Box>
               <Typography variant="h6" sx={{ color: PRODUCT_COLORS[product], lineHeight: 1, fontSize: '1rem', transition: 'color 0.2s', whiteSpace: 'nowrap' }}>
