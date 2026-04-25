@@ -20,9 +20,26 @@ logger = logging.getLogger(__name__)
 
 
 _ROUTED_SOURCES = {
-    "entra_id", "o365", "defender", "sentinel", "intune",
+    # Microsoft
+    "entra_id", "o365", "defender", "sentinel", "intune", "purview",
+    # EDR
     "crowdstrike", "sentinelone",
-    "tenable_sc", "tenable_io", "qualys",
+    # Vulnerability
+    "tenable_sc", "tenable_io", "qualys", "openvas",
+    # Network
+    "fortigate", "panw", "cisco_asa", "cisco_ise", "zscaler",
+    # Identity
+    "active_directory", "openldap", "freeipa", "authentik", "keycloak",
+    # Monitoring
+    "prtg", "zabbix",
+    # Asset
+    "glpi", "netbox",
+    # PAM
+    "cyberark",
+    # Cloud
+    "aws_security_hub", "azure_cspm", "gcp_scc",
+    # Filigran / TI
+    "opencti", "openaev", "siem", "threat_intel",
 }
 
 
@@ -156,6 +173,260 @@ def _promote_fields(source_system: str, raw: dict) -> dict:
             if src in raw:
                 p[dst] = raw[src]
 
+    elif source_system == "openvas":
+        for src, dst in [
+            ("severity",        "severity"),
+            ("nvt_name",        "plugin_name"),
+            ("nvt_oid",         "plugin_id"),
+            ("host",            "fqdn"),
+            ("port",            "port"),
+            ("threat",          "threat_level"),
+            ("cve",             "cve_id"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "purview":
+        for src, dst in [
+            ("activityType",    "activity_type"),
+            ("workload",        "workload"),
+            ("userId",          "user_id"),
+            ("objectName",      "object_name"),
+            ("sensitivityLabel","sensitivity_label"),
+            ("policyName",      "policy_name"),
+            ("action",          "action"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "fortigate":
+        for src, dst in [
+            ("type",            "log_type"),
+            ("subtype",         "log_subtype"),
+            ("action",          "action"),
+            ("srcip",           "src_ip"),
+            ("dstip",           "dst_ip"),
+            ("dstport",         "dst_port"),
+            ("proto",           "protocol"),
+            ("policyid",        "policy_id"),
+            ("severity",        "severity"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "panw":
+        for src, dst in [
+            ("type",            "log_type"),
+            ("subtype",         "log_subtype"),
+            ("action",          "action"),
+            ("src",             "src_ip"),
+            ("dst",             "dst_ip"),
+            ("dport",           "dst_port"),
+            ("proto",           "protocol"),
+            ("rule",            "policy_name"),
+            ("severity",        "severity"),
+            ("threat_name",     "threat_name"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system in ("cisco_asa", "cisco_ise"):
+        for src, dst in [
+            ("messageId",       "message_id"),
+            ("severity",        "severity"),
+            ("sourceAddress",   "src_ip"),
+            ("destinationAddress","dst_ip"),
+            ("destinationPort", "dst_port"),
+            ("protocol",        "protocol"),
+            ("userName",        "user_id"),
+            ("action",          "action"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "zscaler":
+        for src, dst in [
+            ("action",          "action"),
+            ("category",        "url_category"),
+            ("url",             "url"),
+            ("srcIp",           "src_ip"),
+            ("user",            "user_id"),
+            ("cloudName",       "cloud_name"),
+            ("policyName",      "policy_name"),
+            ("threatName",      "threat_name"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system in ("active_directory", "openldap", "freeipa", "authentik", "keycloak"):
+        for src, dst in [
+            ("sAMAccountName",  "username"),
+            ("uid",             "username"),
+            ("userPrincipalName","user_principal"),
+            ("distinguishedName","distinguished_name"),
+            ("department",      "department"),
+            ("enabled",         "account_enabled"),
+            ("accountExpires",  "account_expires"),
+            ("memberOf",        "group_names"),
+            ("lastLogon",       "last_logon"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "prtg":
+        for src, dst in [
+            ("sensor",          "sensor_name"),
+            ("device",          "device_name"),
+            ("group",           "group_name"),
+            ("status",          "sensor_status"),
+            ("message",         "message"),
+            ("priority",        "priority"),
+            ("lastvalue",       "last_value"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "zabbix":
+        for src, dst in [
+            ("host",            "host_name"),
+            ("trigger",         "trigger_name"),
+            ("severity",        "severity"),
+            ("status",          "alert_status"),
+            ("value",           "metric_value"),
+            ("units",           "metric_units"),
+            ("itemkey",         "item_key"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "glpi":
+        for src, dst in [
+            ("name",            "asset_name"),
+            ("itemtype",        "asset_type"),
+            ("serial",          "serial_number"),
+            ("otherserial",     "asset_tag"),
+            ("states_id",       "asset_status"),
+            ("locations_id",    "location"),
+            ("users_id_tech",   "assigned_tech"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "netbox":
+        for src, dst in [
+            ("display",         "asset_name"),
+            ("device_type",     "asset_type"),
+            ("serial",          "serial_number"),
+            ("asset_tag",       "asset_tag"),
+            ("status",          "asset_status"),
+            ("site",            "site"),
+            ("role",            "role"),
+            ("primary_ip",      "primary_ip"),
+        ]:
+            if isinstance(raw.get(src), dict):
+                p[dst] = raw[src].get("label") or raw[src].get("display") or str(raw[src])
+            elif src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "cyberark":
+        for src, dst in [
+            ("AccountName",     "account_name"),
+            ("Safe",            "safe_name"),
+            ("UserName",        "username"),
+            ("Address",         "address"),
+            ("PlatformId",      "platform"),
+            ("Action",          "action"),
+            ("Reason",          "reason"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "aws_security_hub":
+        for src, dst in [
+            ("Severity.Label",  "severity"),
+            ("Title",           "finding_title"),
+            ("Type",            "finding_type"),
+            ("ProductName",     "product_name"),
+            ("AwsAccountId",    "aws_account_id"),
+            ("Region",          "aws_region"),
+            ("RecordState",     "record_state"),
+            ("WorkflowStatus",  "workflow_status"),
+        ]:
+            # Support dotted keys
+            parts = src.split(".")
+            val = raw
+            for part in parts:
+                if isinstance(val, dict):
+                    val = val.get(part)
+                else:
+                    val = None
+                    break
+            if val is not None:
+                p[dst] = val
+
+    elif source_system == "azure_cspm":
+        for src, dst in [
+            ("severity",        "severity"),
+            ("displayName",     "finding_title"),
+            ("resourceType",    "resource_type"),
+            ("resourceName",    "resource_name"),
+            ("subscriptionId",  "subscription_id"),
+            ("status",          "compliance_status"),
+            ("policyName",      "policy_name"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "gcp_scc":
+        for src, dst in [
+            ("severity",        "severity"),
+            ("displayName",     "finding_title"),
+            ("category",        "finding_type"),
+            ("resourceName",    "resource_name"),
+            ("projectId",       "gcp_project_id"),
+            ("state",           "finding_state"),
+            ("findingClass",    "finding_class"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "opencti":
+        for src, dst in [
+            ("type",            "indicator_type"),
+            ("name",            "indicator_name"),
+            ("confidence",      "confidence"),
+            ("pattern",         "pattern"),
+            ("labels",          "labels"),
+            ("valid_from",      "valid_from"),
+            ("valid_until",     "valid_until"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "openaev":
+        for src, dst in [
+            ("type",            "event_type"),
+            ("severity",        "severity"),
+            ("source",          "source"),
+            ("indicator",       "indicator"),
+            ("tlp",             "tlp"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system in ("siem", "threat_intel"):
+        for src, dst in [
+            ("severity",        "severity"),
+            ("category",        "category"),
+            ("source",          "source"),
+            ("indicator",       "indicator"),
+            ("action",          "action"),
+            ("host",            "host_name"),
+            ("user",            "user_id"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
     return p
 
 
@@ -165,8 +436,23 @@ def _build_evidence_item(connector: Connector, item: ConnectorEvidenceIngest):
 
     src_sys = connector.source_system or ""
     routed = src_sys in _ROUTED_SOURCES
-    # tenable_sc + tenable_io share one index; strip trailing version suffix
-    _index_name = "tenable" if src_sys in ("tenable_sc", "tenable_io") else src_sys.replace("_", "-")
+    # Shared indices: multiple source_systems → one index
+    _INDEX_MAP = {
+        "tenable_sc":     "tenable",
+        "tenable_io":     "tenable",
+        "cisco_asa":      "cisco",
+        "cisco_ise":      "cisco",
+        "active_directory":"identity",
+        "openldap":       "identity",
+        "freeipa":        "identity",
+        "authentik":      "identity",
+        "keycloak":       "identity",
+        "opencti":        "threat-intel",
+        "openaev":        "threat-intel",
+        "siem":           "threat-intel",
+        "threat_intel":   "threat-intel",
+    }
+    _index_name = _INDEX_MAP.get(src_sys, src_sys.replace("_", "-"))
     os_index = f"evidence-{_index_name}" if routed else ""
     promoted = _promote_fields(src_sys, item.raw or {}) if routed else {}
 
