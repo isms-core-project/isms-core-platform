@@ -584,7 +584,9 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   const activeProject = getActiveProject(product.toUpperCase())
   const activeFamilies = (['ISMS', 'PRIVACY', 'CLOUD'] as const).filter(f => !!activeProjectsMap[f])
   const { mode, toggleTheme } = useThemeMode()
-  const isBamboo = import.meta.env.VITE_SECRET_THEME === 'bamboo'
+  const SECRET_THEME = import.meta.env.VITE_SECRET_THEME
+  const isBamboo  = SECRET_THEME === 'bamboo'
+  const isAuditor = SECRET_THEME === 'auditor'
 
   const isNeutralPage = location.pathname === '/' || ALL_PLATFORM_PATHS.some(p => location.pathname.startsWith(p))
   const isRiskPath       = RISK_PATHS.some(p => location.pathname.startsWith(p))
@@ -692,11 +694,11 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
         >
           {isBamboo
             ? <BambooIcon size={26} />
-            : <ShieldOutlined sx={{ color: PRODUCT_COLORS[product], fontSize: 26, transition: 'color 0.2s', flexShrink: 0 }} />
+            : <ShieldOutlined sx={{ color: isAuditor ? '#546E7A' : PRODUCT_COLORS[product], fontSize: 26, transition: 'color 0.2s', flexShrink: 0 }} />
           }
           {!collapsed && (
             <Box>
-              <Typography variant="h6" sx={{ color: PRODUCT_COLORS[product], lineHeight: 1, fontSize: '1rem', transition: 'color 0.2s', whiteSpace: 'nowrap' }}>
+              <Typography variant="h6" sx={{ color: isAuditor ? '#546E7A' : PRODUCT_COLORS[product], lineHeight: 1, fontSize: '1rem', transition: 'color 0.2s', whiteSpace: 'nowrap' }}>
                 ISMS CORE
               </Typography>
               <Typography variant="caption" sx={{ color: 'text.disabled', fontSize: '0.6rem', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
@@ -1073,7 +1075,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
             )}
           </ListItemButton>
         </Tooltip>
-        {!isBamboo && (
+        {!isBamboo && !isAuditor && (
           <Tooltip title={collapsed ? (mode === 'dark' ? 'Light mode' : 'Dark mode') : ''} placement="right">
             <ListItemButton
               onClick={toggleTheme}

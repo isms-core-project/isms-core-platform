@@ -4,17 +4,16 @@ import path from 'path'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const isBamboo = env.VITE_SECRET_THEME === 'bamboo'
+  const secretTheme = env.VITE_SECRET_THEME
 
   return {
     plugins: [
       react(),
       {
-        name: 'bamboo-favicon',
+        name: 'secret-theme-favicon',
         transformIndexHtml(html: string) {
-          if (isBamboo) {
-            return html.replace('/favicon.svg', '/favicon-bamboo.svg')
-          }
+          if (secretTheme === 'bamboo')  return html.replace('/favicon.svg', '/favicon-bamboo.svg')
+          if (secretTheme === 'auditor') return html.replace('/favicon.svg', '/favicon-auditor.svg')
           return html
         },
       },

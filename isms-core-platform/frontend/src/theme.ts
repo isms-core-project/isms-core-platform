@@ -277,5 +277,146 @@ export function createBambooTheme() {
   })
 }
 
+export function createAuditorTheme() {
+  return createTheme({
+    palette: {
+      mode: 'dark',
+      primary: {
+        main:  '#546E7A',
+        light: '#78909C',
+        dark:  '#37474F',
+      },
+      secondary: {
+        main: '#90A4AE',
+        dark: '#607D8B',
+      },
+      background: {
+        default: '#09090b',
+        paper:   '#101214',
+      },
+      text: {
+        primary:   '#CFD8DC',
+        secondary: '#78909C',
+        disabled:  'rgba(207,216,220,0.38)',
+      },
+      error:   { main: '#C00000' },
+      warning: {
+        main:        '#FFA000',
+        contrastText: '#ffffff',
+      },
+      success: {
+        main:        '#66BB6A',
+        contrastText: '#09090b',
+      },
+      divider: 'rgba(84,110,122,0.15)',
+      action: {
+        hover:    'rgba(84,110,122,0.08)',
+        selected: 'rgba(84,110,122,0.16)',
+      },
+    },
+    typography: {
+      fontFamily: '"Inter", "Roboto", "Helvetica Neue", sans-serif',
+      h1: { fontWeight: 700, fontSize: '2rem' },
+      h2: { fontWeight: 700, fontSize: '1.6rem' },
+      h3: { fontWeight: 600, fontSize: '1.3rem' },
+      h4: { fontWeight: 600, fontSize: '1.1rem' },
+      h5: { fontWeight: 600, fontSize: '1rem' },
+      h6: { fontWeight: 600, fontSize: '0.9rem' },
+      body1: { fontSize: '0.875rem' },
+      body2: { fontSize: '0.8rem' },
+      caption: { fontSize: '0.75rem' },
+    },
+    shape: { borderRadius: 8 },
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          'input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active': {
+            WebkitBoxShadow: '0 0 0 1000px #101214 inset !important',
+            WebkitTextFillColor: '#CFD8DC !important',
+            caretColor: '#CFD8DC',
+          },
+        },
+      },
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            backgroundImage: 'none',
+            border: '1px solid rgba(84,110,122,0.15)',
+          },
+        },
+      },
+      MuiPaper: {
+        styleOverrides: {
+          root: { backgroundImage: 'none' },
+        },
+      },
+      MuiChip: {
+        styleOverrides: {
+          root: { fontSize: '0.75rem' },
+        },
+      },
+      MuiTableCell: {
+        styleOverrides: {
+          head: ({ theme }) => ({
+            fontWeight: 600,
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.secondary,
+            fontSize: '0.75rem',
+            textTransform: 'uppercase' as const,
+            letterSpacing: '0.05em',
+            borderBottom: `1px solid ${theme.palette.divider}`,
+          }),
+          root: ({ theme }) => ({
+            borderColor: theme.palette.divider,
+          }),
+        },
+      },
+      MuiLinearProgress: {
+        styleOverrides: {
+          root: { borderRadius: 4, height: 6 },
+        },
+      },
+      MuiDrawer: {
+        styleOverrides: {
+          paper: ({ theme }) => ({
+            backgroundImage: 'none',
+            backgroundColor: theme.palette.background.paper,
+            borderColor: theme.palette.divider,
+          }),
+        },
+      },
+      MuiDialog: {
+        styleOverrides: {
+          paper: { backgroundImage: 'none' },
+        },
+      },
+      MuiInputBase: {
+        styleOverrides: {
+          input: ({ theme }) => ({
+            '&:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill:active': {
+              WebkitBoxShadow: `0 0 0 100px ${theme.palette.background.paper} inset`,
+              WebkitTextFillColor: theme.palette.text.primary,
+              caretColor: theme.palette.text.primary,
+            },
+          }),
+        },
+      },
+      MuiAlert: {
+        styleOverrides: {
+          root: { fontSize: '0.82rem' },
+        },
+      },
+      MuiTooltip: {
+        styleOverrides: {
+          tooltip: {
+            backgroundColor: 'rgba(16,18,20,0.97)',
+            fontSize: '0.75rem',
+          },
+        },
+      },
+    },
+  })
+}
+
 // Keep a default export for backward compatibility during migration
 export const theme = createAppTheme('dark')

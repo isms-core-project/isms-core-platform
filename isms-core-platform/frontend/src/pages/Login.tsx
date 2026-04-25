@@ -100,7 +100,8 @@ export default function Login() {
   }
 
   const SECRET_THEME = import.meta.env.VITE_SECRET_THEME
-  const isBamboo = SECRET_THEME === 'bamboo'
+  const isBamboo  = SECRET_THEME === 'bamboo'
+  const isAuditor = SECRET_THEME === 'auditor'
 
   // Background — subtle dot grid pattern
   const bgStyle = isBamboo
@@ -108,6 +109,13 @@ export default function Login() {
         background: 'radial-gradient(ellipse at 20% 50%, rgba(46,139,87,0.10) 0%, transparent 60%), #0a0f0d',
         backgroundImage: `radial-gradient(ellipse at 20% 50%, rgba(46,139,87,0.10) 0%, transparent 60%),
           radial-gradient(circle, rgba(46,139,87,0.06) 1px, transparent 1px)`,
+        backgroundSize: 'auto, 28px 28px',
+      }
+    : isAuditor
+    ? {
+        background: 'radial-gradient(ellipse at 20% 50%, rgba(84,110,122,0.08) 0%, transparent 60%), #09090b',
+        backgroundImage: `radial-gradient(ellipse at 20% 50%, rgba(84,110,122,0.08) 0%, transparent 60%),
+          radial-gradient(circle, rgba(84,110,122,0.04) 1px, transparent 1px)`,
         backgroundSize: 'auto, 28px 28px',
       }
     : isDark
@@ -147,8 +155,8 @@ export default function Login() {
   return (
     <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', px: 2, ...bgStyle }}>
 
-      {/* Theme toggle — top right (hidden in bamboo mode) */}
-      {!isBamboo && (
+      {/* Theme toggle — top right (hidden in bamboo and auditor modes) */}
+      {!isBamboo && !isAuditor && (
         <Box sx={{ position: 'fixed', top: 16, right: 16 }}>
           <Tooltip title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}>
             <IconButton onClick={toggleTheme} size="small" sx={{ color: 'text.secondary' }}>
