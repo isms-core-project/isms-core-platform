@@ -1056,6 +1056,70 @@ def build_objects(fields_by_id: dict) -> list:
         ("viz-kev-table",      0, 14, 48, 12),
     ]))
 
+    # ── Phase 39b — Connector Dashboards ─────────────────────────────────────
+
+    # Entra ID Entity Analytics
+    objs += [
+        _metric(    "viz-entra-total",       "Entra ID — Total Entities",         "ip-evidence-entra-id"),
+        _kql_metric("viz-entra-noncompliant","Entra ID — Non-Compliant Devices",  "ip-evidence-entra-id", "is_compliant: false"),
+        _kql_metric("viz-entra-disabled",    "Entra ID — Disabled Accounts",      "ip-evidence-entra-id", "account_enabled: false"),
+        _timeline(  "viz-entra-time",        "Entra ID — Sync Over Time",         "ip-evidence-entra-id", "collected_at"),
+        _pie(       "viz-entra-dept",        "Entra ID — By Department",          "ip-evidence-entra-id", "department"),
+        _pie(       "viz-entra-ownership",   "Entra ID — Device Ownership",       "ip-evidence-entra-id", "device_ownership"),
+        _pie(       "viz-entra-os",          "Entra ID — OS Distribution",        "ip-evidence-entra-id", "os_name"),
+        _count_table("viz-entra-groups",     "Entra ID — Top Groups",             "ip-evidence-entra-id", "group_names", 25),
+    ]
+    objs.append(_dashboard("dash-entra-id", "ISMS CORE — Entra ID Entity Analytics", [
+        ("viz-entra-total",        0,  0, 16, 5),
+        ("viz-entra-noncompliant", 16, 0, 16, 5),
+        ("viz-entra-disabled",     32, 0, 16, 5),
+        ("viz-entra-time",          0, 5, 48, 8),
+        ("viz-entra-dept",          0,13, 16, 9),
+        ("viz-entra-ownership",    16,13, 16, 9),
+        ("viz-entra-os",           32,13, 16, 9),
+        ("viz-entra-groups",        0,22, 48,10),
+    ]))
+
+    # O365 Audit
+    objs += [
+        _metric(    "viz-o365-total",        "O365 — Total Audit Events",         "ip-evidence-o365"),
+        _kql_metric("viz-o365-external",     "O365 — External Access Events",     "ip-evidence-o365", "external_access: true"),
+        _kql_metric("viz-o365-failures",     "O365 — Failed Operations",          "ip-evidence-o365", "result_status: Failed"),
+        _timeline(  "viz-o365-time",         "O365 — Events Over Time",           "ip-evidence-o365", "collected_at"),
+        _pie(       "viz-o365-workload",     "O365 — By Workload",                "ip-evidence-o365", "workload"),
+        _pie(       "viz-o365-operation",    "O365 — By Operation",               "ip-evidence-o365", "operation"),
+        _count_table("viz-o365-users",       "O365 — Top Users by Event Count",   "ip-evidence-o365", "user_id", 25),
+    ]
+    objs.append(_dashboard("dash-o365", "ISMS CORE — O365 Audit", [
+        ("viz-o365-total",     0,  0, 16, 5),
+        ("viz-o365-external", 16,  0, 16, 5),
+        ("viz-o365-failures", 32,  0, 16, 5),
+        ("viz-o365-time",      0,  5, 48, 8),
+        ("viz-o365-workload",  0, 13, 16, 9),
+        ("viz-o365-operation",16, 13, 16, 9),
+        ("viz-o365-users",    32, 13, 16, 9),
+    ]))
+
+    # Microsoft Defender
+    objs += [
+        _metric(    "viz-def-total",         "Defender — Total Alerts",           "ip-evidence-defender"),
+        _kql_metric("viz-def-critical",      "Defender — High Severity Alerts",   "ip-evidence-defender", "alert_severity: High"),
+        _kql_metric("viz-def-open",          "Defender — Open Alerts",            "ip-evidence-defender", "alert_status: New"),
+        _timeline(  "viz-def-time",          "Defender — Alerts Over Time",       "ip-evidence-defender", "collected_at"),
+        _pie(       "viz-def-severity",      "Defender — By Severity",            "ip-evidence-defender", "alert_severity"),
+        _pie(       "viz-def-category",      "Defender — By Category",            "ip-evidence-defender", "alert_category"),
+        _count_table("viz-def-machines",     "Defender — Top Affected Machines",  "ip-evidence-defender", "machine_id", 25),
+    ]
+    objs.append(_dashboard("dash-defender", "ISMS CORE — Microsoft Defender", [
+        ("viz-def-total",     0,  0, 16, 5),
+        ("viz-def-critical", 16,  0, 16, 5),
+        ("viz-def-open",     32,  0, 16, 5),
+        ("viz-def-time",      0,  5, 48, 8),
+        ("viz-def-severity",  0, 13, 16, 9),
+        ("viz-def-category", 16, 13, 16, 9),
+        ("viz-def-machines", 32, 13, 16, 9),
+    ]))
+
     return objs
 
 
