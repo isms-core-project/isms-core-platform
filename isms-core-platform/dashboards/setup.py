@@ -501,6 +501,7 @@ INDICES = {
             "properties": {
                 "collected_at":    {"type": "date"},
                 "connector_id":    {"type": "keyword"},
+                "source_system":   {"type": "keyword"},
                 "control_ids":     {"type": "keyword"},
                 "evidence_type":   {"type": "keyword"},
                 "org_id":          {"type": "integer"},
@@ -1091,6 +1092,10 @@ def build_objects(fields_by_id: dict) -> list:
         {"type": "index-pattern", "id": "ip-evidence-servicenow",
          "attributes": {"title": "evidence-servicenow", "timeFieldName": "collected_at",
                         "fields": fields_by_id.get("ip-evidence-servicenow", "[]")}, "references": []},
+        # Wildcard — all per-source evidence indices (Phase 39.11)
+        {"type": "index-pattern", "id": "ip-evidence-wildcard",
+         "attributes": {"title": "evidence-*", "timeFieldName": "collected_at",
+                        "fields": fields_by_id.get("ip-evidence-wildcard", "[]")}, "references": []},
         {"type": "index-pattern", "id": "ip-nvd-cve",
          "attributes": {
              "title": "nvd-cve",
@@ -1243,6 +1248,65 @@ def build_objects(fields_by_id: dict) -> list:
         ("viz-def-machines", 32, 13, 16, 9),
     ]))
 
+    # ── Phase 39b — Vulnerability Dashboard (39.10) ───────────────────────────
+    # Covers evidence-tenable (tenable_sc + tenable_io) and evidence-qualys
+    objs += [
+        # Tenable row
+        _metric(    "viz-vuln-ten-total",    "Tenable — Total Findings",          "ip-evidence-tenable"),
+        _kql_metric("viz-vuln-ten-critical", "Tenable — Critical Findings",       "ip-evidence-tenable", "severity: Critical"),
+        _kql_metric("viz-vuln-ten-high",     "Tenable — High Findings",           "ip-evidence-tenable", "severity: High"),
+        _timeline(  "viz-vuln-ten-time",     "Tenable — Findings Over Time",      "ip-evidence-tenable", "collected_at"),
+        _pie(       "viz-vuln-ten-severity", "Tenable — By Severity",             "ip-evidence-tenable", "severity"),
+        _count_table("viz-vuln-ten-assets",  "Tenable — Top Affected Assets",     "ip-evidence-tenable", "fqdn", 25),
+        _count_table("viz-vuln-ten-cves",    "Tenable — Top CVEs",                "ip-evidence-tenable", "cve_id", 25),
+        # Qualys row
+        _metric(    "viz-vuln-qua-total",    "Qualys — Total Findings",           "ip-evidence-qualys"),
+        _kql_metric("viz-vuln-qua-critical", "Qualys — Critical/Urgent (Sev 5)",  "ip-evidence-qualys", "severity: 5"),
+        _kql_metric("viz-vuln-qua-high",     "Qualys — High (Sev 4)",             "ip-evidence-qualys", "severity: 4"),
+        _timeline(  "viz-vuln-qua-time",     "Qualys — Findings Over Time",       "ip-evidence-qualys", "collected_at"),
+        _pie(       "viz-vuln-qua-severity", "Qualys — By Severity",              "ip-evidence-qualys", "severity"),
+        _count_table("viz-vuln-qua-assets",  "Qualys — Top Affected Assets",      "ip-evidence-qualys", "fqdn", 25),
+        _count_table("viz-vuln-qua-cves",    "Qualys — Top CVEs",                 "ip-evidence-qualys", "cve_id", 25),
+    ]
+    objs.append(_dashboard("dash-vuln", "ISMS CORE — Vulnerability Findings", [
+        # Row 0 — Tenable metrics
+        ("viz-vuln-ten-total",     0,  0, 16, 5),
+        ("viz-vuln-ten-critical", 16,  0, 16, 5),
+        ("viz-vuln-ten-high",     32,  0, 16, 5),
+        # Row 5 — Tenable timeline + severity + top assets
+        ("viz-vuln-ten-time",      0,  5, 48, 8),
+        ("viz-vuln-ten-severity",  0, 13, 16, 9),
+        ("viz-vuln-ten-assets",   16, 13, 16, 9),
+        ("viz-vuln-ten-cves",     32, 13, 16, 9),
+        # Row 22 — Qualys metrics
+        ("viz-vuln-qua-total",     0, 22, 16, 5),
+        ("viz-vuln-qua-critical", 16, 22, 16, 5),
+        ("viz-vuln-qua-high",     32, 22, 16, 5),
+        # Row 27 — Qualys timeline + severity + top assets
+        ("viz-vuln-qua-time",      0, 27, 48, 8),
+        ("viz-vuln-qua-severity",  0, 35, 16, 9),
+        ("viz-vuln-qua-assets",   16, 35, 16, 9),
+        ("viz-vuln-qua-cves",     32, 35, 16, 9),
+    ]))
+
+    # ── Phase 39.11 — Evidence Overview (wildcard — all sources) ─────────────
+    # Replaces the generic ip-evidence dashboard with a cross-source roll-up.
+    # ip-evidence-wildcard uses title evidence-* covering all 44 connector indices.
+    objs += [
+        _metric(     "viz-ev-all-total",     "Evidence — Total (All Sources)",    "ip-evidence-wildcard"),
+        _timeline(   "viz-ev-all-time",      "Evidence — Over Time (All Sources)","ip-evidence-wildcard", "collected_at"),
+        _pie(        "viz-ev-all-source",    "Evidence — By Source System",       "ip-evidence-wildcard", "source_system"),
+        _count_table("viz-ev-all-connector", "Evidence — By Connector",           "ip-evidence-wildcard", "connector_id", 50),
+        _count_table("viz-ev-all-control",   "Evidence — By Control Group",       "ip-evidence-wildcard", "control_ids", 50),
+    ]
+    objs.append(_dashboard("dash-evidence", "ISMS CORE — Evidence Overview", [
+        ("viz-ev-all-total",      0,  0, 12, 5),
+        ("viz-ev-all-time",      12,  0, 36, 5),
+        ("viz-ev-all-source",     0,  5, 16, 9),
+        ("viz-ev-all-connector", 16,  5, 16, 9),
+        ("viz-ev-all-control",   32,  5, 16, 9),
+    ]))
+
     return objs
 
 
@@ -1316,6 +1380,8 @@ def main():
         "ip-evidence-gitlab":            get_osd_fields("evidence-gitlab"),
         "ip-evidence-jira":              get_osd_fields("evidence-jira"),
         "ip-evidence-servicenow":        get_osd_fields("evidence-servicenow"),
+        # Wildcard — all per-source evidence indices (Phase 39.11)
+        "ip-evidence-wildcard":          get_osd_fields("evidence-*"),
     }
     for pid, fields_json in fields_by_id.items():
         count = len(json.loads(fields_json))
