@@ -23,19 +23,24 @@ _ROUTED_SOURCES = {
     # Microsoft
     "entra_id", "o365", "defender", "sentinel", "intune", "purview",
     # EDR
-    "crowdstrike", "sentinelone",
+    "crowdstrike", "sentinelone", "wazuh",
     # Vulnerability
     "tenable_sc", "tenable_io", "qualys", "openvas",
     # Network
     "fortigate", "panw", "cisco_asa", "cisco_ise", "zscaler",
+    "forti_analyzer", "forti_manager",
     # Identity
     "active_directory", "openldap", "freeipa", "authentik", "keycloak",
     # Monitoring
-    "prtg", "zabbix",
+    "prtg", "zabbix", "graylog",
     # Asset
     "glpi", "netbox",
     # PAM
-    "cyberark",
+    "cyberark", "hashicorp_vault", "devolutions",
+    # DevSecOps
+    "github", "gitlab",
+    # ITSM
+    "jira", "servicenow",
     # Cloud
     "aws_security_hub", "azure_cspm", "gcp_scc",
     # Filigran / TI
@@ -426,6 +431,94 @@ def _promote_fields(source_system: str, raw: dict) -> dict:
         ]:
             if src in raw:
                 p[dst] = raw[src]
+
+    elif source_system == "wazuh":
+        agents = raw.get("agents") or {}
+        p["agent_count"]              = agents.get("total", 0)
+        p["active_agent_count"]       = agents.get("active", 0)
+        p["disconnected_agent_count"] = agents.get("disconnected", 0)
+        alert_levels = raw.get("alert_levels") or {}
+        p["critical_alerts"] = alert_levels.get("critical", 0)
+        p["high_alerts"]     = alert_levels.get("high", 0)
+        cves = raw.get("cves") or {}
+        p["total_cves"]    = cves.get("total", 0)
+        p["critical_cves"] = cves.get("critical", 0)
+        p["high_cves"]     = cves.get("high", 0)
+
+    elif source_system == "forti_analyzer":
+        devices = raw.get("devices") or {}
+        p["device_count"]            = devices.get("total", 0)
+        p["connected_count"]         = devices.get("connected", 0)
+        p["disconnected_count"]      = devices.get("disconnected", 0)
+        log_coll = raw.get("log_collection") or {}
+        p["log_device_count"]        = log_coll.get("devices_registered", 0)
+        incidents_r = raw.get("incidents") or {}
+        p["incident_count"]          = incidents_r.get("total", 0)
+        p["critical_incident_count"] = incidents_r.get("critical_high", 0)
+
+    elif source_system == "forti_manager":
+        devices = raw.get("devices") or {}
+        p["device_count"]             = devices.get("total", 0)
+        p["up_count"]                 = devices.get("up", 0)
+        p["down_count"]               = devices.get("down", 0)
+        pkgs = raw.get("policy_packages") or {}
+        p["policy_count"]             = pkgs.get("total", 0)
+        p["deployed_policy_count"]    = pkgs.get("deployed", 0)
+        p["pending_policy_count"]     = pkgs.get("pending", 0)
+        fw = raw.get("firmware_templates") or {}
+        p["firmware_template_count"]  = fw.get("total", 0)
+
+    elif source_system == "graylog":
+        streams = raw.get("streams") or {}
+        p["stream_count"]           = streams.get("total", 0)
+        p["enabled_stream_count"]   = streams.get("enabled", 0)
+        alerts = raw.get("alerts") or {}
+        p["alert_count"]            = alerts.get("total", 0)
+        p["unresolved_alert_count"] = alerts.get("unresolved", 0)
+
+    elif source_system == "hashicorp_vault":
+        p["vault_version"]      = raw.get("vault_version")
+        p["is_sealed"]          = raw.get("is_sealed")
+        p["engine_count"]       = raw.get("secret_engine_count", 0)
+        p["auth_method_count"]  = raw.get("auth_method_count", 0)
+        p["audit_enabled"]      = raw.get("audit_enabled")
+        p["audit_device_count"] = raw.get("audit_device_count", 0)
+
+    elif source_system == "devolutions":
+        p["connection_count"]  = raw.get("total_connection_count", 0)
+        p["privileged_count"]  = raw.get("privileged_count", 0)
+        p["user_count"]        = raw.get("total_user_count", 0)
+        p["active_user_count"] = raw.get("active_user_count", 0)
+        p["mfa_enabled_count"] = raw.get("mfa_enabled_count", 0)
+        p["admin_count"]       = raw.get("admin_count", 0)
+
+    elif source_system == "github":
+        p["org"]                 = raw.get("org")
+        p["repo_count"]          = raw.get("repo_count", 0)
+        p["alert_count"]         = raw.get("open_alert_count", 0)
+        p["critical_high_count"] = raw.get("critical_high_count", 0)
+
+    elif source_system == "gitlab":
+        p["group_id"]            = raw.get("group_id")
+        p["project_count"]       = raw.get("total_project_count", 0)
+        p["finding_count"]       = raw.get("total_count", 0)
+        p["critical_high_count"] = raw.get("critical_high_count", 0)
+        p["member_count"]        = raw.get("total_members", 0)
+
+    elif source_system == "jira":
+        p["incident_count"]      = raw.get("total_incidents", 0)
+        p["open_incident_count"] = raw.get("open_count", 0)
+        p["high_priority_count"] = raw.get("high_priority_count", 0)
+        p["change_count"]        = raw.get("total_changes", 0)
+        p["open_change_count"]   = raw.get("open_count", 0)
+
+    elif source_system == "servicenow":
+        p["incident_count"]          = raw.get("total_incidents", 0)
+        p["open_incident_count"]     = raw.get("open_count", 0)
+        p["p1_p2_count"]             = raw.get("p1_p2_count", 0)
+        p["change_count"]            = raw.get("total_changes", 0)
+        p["open_change_count"]       = raw.get("open_changes", 0)
+        p["pending_approval_count"]  = raw.get("pending_approval", 0)
 
     return p
 
