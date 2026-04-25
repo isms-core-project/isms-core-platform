@@ -461,10 +461,9 @@ See [STRUCTURE.md](STRUCTURE.md) for the complete repository map with per-folder
 | Document | Description |
 |----------|-------------|
 | [PARADIGM.md](PARADIGM.md) | 🧭 Product overview and paradigm shift guide — start here |
-| [PLATFORM.md](PLATFORM.md) | 🖥️ Platform architecture, features, and full deployment guide |
+| [PLATFORM.md](PLATFORM.md) | 🖥️ Platform architecture, features, and full deployment guide (includes Docker Compose quick-start) |
 | [STRUCTURE.md](STRUCTURE.md) | 📂 Repository map — all folders and artifact types explained |
 | [COMPLIANCE.md](COMPLIANCE.md) | 📋 All 25 compliance assessment modules — coverage notes, gaps, audience |
-| [PLATFORM.md](PLATFORM.md#production-deployment--step-by-step) | 🚀 Platform deployment guide — Docker Compose setup instructions |
 | [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 Framework control pack index (53 packs) |
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A controls → 53 pack mapping |
 | [isms-core-framework/STACKING.md](isms-core-framework/STACKING.md) | 🔗 Control grouping methodology |
