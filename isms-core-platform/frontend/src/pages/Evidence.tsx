@@ -826,8 +826,8 @@ export default function Evidence() {
   const projectIdParam = activeProject?.id
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ['evidence', projectIdParam],
-    queryFn: () => evidenceApi.list({ limit: 500, project_id: projectIdParam }),
+    queryKey: ['evidence', projectIdParam, activeProduct],
+    queryFn: () => evidenceApi.list({ limit: 500, project_id: projectIdParam ?? undefined, product_family: activeProduct.toUpperCase() }),
   })
 
   const deleteMutation = useMutation({
@@ -1017,6 +1017,7 @@ export default function Evidence() {
                   href={evidenceApi.exportCsvUrl({
                     evidence_type: typeFilter !== 'all' ? typeFilter : undefined,
                     evidence_status: statusFilter !== 'all' ? statusFilter : undefined,
+                    product_family: activeProduct.toUpperCase(),
                   })}
                   download
                 >
@@ -1096,8 +1097,9 @@ export default function Evidence() {
                     <Typography variant="caption" color="text.secondary">{formatBytes(ev.metadata.file_size)}</Typography>
                   </TableCell>
                   <TableCell>
-                    <Typography variant="caption" color={ev.control_group_id ? 'text.primary' : 'text.disabled'}>
-                      {ev.control_group_id ? '—' : 'Unassigned'}
+                    <Typography variant="caption" sx={{ fontFamily: 'monospace' }}
+                      color={ev.group_code ? 'text.primary' : 'text.disabled'}>
+                      {ev.group_code ?? '—'}
                     </Typography>
                   </TableCell>
                   <TableCell>

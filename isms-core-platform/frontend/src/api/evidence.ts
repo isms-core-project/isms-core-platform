@@ -12,7 +12,7 @@ export interface EvidenceReview {
 }
 
 export const evidenceApi = {
-  list: (params?: { control_group_id?: string; group_code?: string; evidence_type?: string; evidence_status?: string; project_id?: string; limit?: number; offset?: number }) =>
+  list: (params?: { control_group_id?: string; group_code?: string; evidence_type?: string; evidence_status?: string; project_id?: string; limit?: number; offset?: number; product_family?: string }) =>
     client.get<EvidenceRead[]>('/evidence/', { params }).then((r) => r.data),
 
   get: (id: string) =>
@@ -48,11 +48,12 @@ export const evidenceApi = {
 
   downloadUrl: (id: string) => `/api/v1/evidence/${id}/download`,
 
-  exportCsvUrl: (params?: { group_code?: string; evidence_type?: string; evidence_status?: string }) => {
+  exportCsvUrl: (params?: { group_code?: string; evidence_type?: string; evidence_status?: string; product_family?: string }) => {
     const q = new URLSearchParams()
     if (params?.group_code) q.set('group_code', params.group_code)
     if (params?.evidence_type) q.set('evidence_type', params.evidence_type)
     if (params?.evidence_status) q.set('evidence_status', params.evidence_status)
+    if (params?.product_family) q.set('product_family', params.product_family)
     return `/api/v1/evidence/export${q.toString() ? '?' + q.toString() : ''}`
   },
 }

@@ -68,6 +68,10 @@ class Evidence(TimestampMixin, Base):
     requirement: Mapped["Requirement | None"] = relationship()
     assessment_item: Mapped["AssessmentItem | None"] = relationship()
 
+    @property
+    def group_code(self) -> str | None:
+        return self.control_group.group_code if self.control_group else None
+
 
 class Gap(TimestampMixin, Base):
     __tablename__ = "gaps"

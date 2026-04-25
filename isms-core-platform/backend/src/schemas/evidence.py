@@ -9,6 +9,7 @@ from pydantic import BaseModel, Field
 class EvidenceRead(BaseModel):
     id: uuid.UUID
     control_group_id: uuid.UUID | None = None
+    group_code: str | None = None
     requirement_id: uuid.UUID | None = None
     assessment_item_id: uuid.UUID | None = None
     evidence_type: str

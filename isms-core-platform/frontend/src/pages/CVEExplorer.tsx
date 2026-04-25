@@ -10,7 +10,7 @@ import {
   ExpandLessOutlined, ExpandMoreOutlined, InfoOutlined,
   KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined,
   LinkOutlined, OpenInNewOutlined, SecurityOutlined,
-  WarningAmberOutlined,
+  ShowChartOutlined, WarningAmberOutlined,
 } from '@mui/icons-material'
 import { useQuery } from '@tanstack/react-query'
 import { feedsApi, type NvdCveEntry } from '../api/feedsApi'
@@ -294,6 +294,178 @@ function CveDetail({ cve, onClose }: { cve: NvdCveEntry; onClose: () => void }) 
           ))}
         </Box>
       )}
+    </Paper>
+  )
+}
+
+// ── EPSS Analytics ───────────────────────────────────────────────────────────
+
+const EPSS_COLOR = '#7c4dff'
+
+function epssScoreColor(score: number): string {
+  if (score >= 0.2) return '#FFC7CE'
+  if (score >= 0.1) return '#FFEB9C'
+  return 'inherit'
+}
+
+function EpssAnalytics() {
+  const [open, setOpen] = useState(false)
+
+  const { data: allEpss } = useQuery({
+    queryKey: ['epss', 'kpi', 'all'],
+    queryFn: () => feedsApi.getEpss({ page: 1, per_page: 1 }),
+    staleTime: 120_000,
+  })
+  const { data: epss10 } = useQuery({
+    queryKey: ['epss', 'kpi', '0.1'],
+    queryFn: () => feedsApi.getEpss({ min_score: 0.1, page: 1, per_page: 1 }),
+    staleTime: 120_000,
+  })
+  const { data: epss20 } = useQuery({
+    queryKey: ['epss', 'kpi', '0.2'],
+    queryFn: () => feedsApi.getEpss({ min_score: 0.2, page: 1, per_page: 1 }),
+    staleTime: 120_000,
+  })
+  const { data: top25 } = useQuery({
+    queryKey: ['epss', 'top25'],
+    queryFn: () => feedsApi.getEpss({ page: 1, per_page: 25 }),
+    staleTime: 120_000,
+    enabled: open,
+  })
+
+  const kpiCards = [
+    {
+      label: 'Total with EPSS Score',
+      value: allEpss?.total?.toLocaleString() ?? '—',
+      icon: <ShowChartOutlined sx={{ fontSize: 16, color: EPSS_COLOR }} />,
+      color: EPSS_COLOR,
+    },
+    {
+      label: 'EPSS > 10%',
+      value: epss10?.total?.toLocaleString() ?? '—',
+      icon: <WarningAmberOutlined sx={{ fontSize: 16, color: '#FFEB9C' }} />,
+      color: '#FFEB9C',
+    },
+    {
+      label: 'EPSS > 20%',
+      value: epss20?.total?.toLocaleString() ?? '—',
+      icon: <WarningAmberOutlined sx={{ fontSize: 16, color: '#FFC7CE' }} />,
+      color: '#FFC7CE',
+    },
+  ]
+
+  return (
+    <Paper variant="outlined" sx={{ borderRadius: 2, mb: 2, overflow: 'hidden' }}>
+      {/* Header */}
+      <Box
+        onClick={() => setOpen(o => !o)}
+        sx={{ px: 2, py: 1.2, display: 'flex', alignItems: 'center', gap: 1, cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' } }}
+      >
+        <ShowChartOutlined sx={{ fontSize: 16, color: EPSS_COLOR }} />
+        <Typography variant="subtitle2" fontWeight={600} sx={{ flex: 1 }}>
+          EPSS Risk Analytics
+        </Typography>
+        {open ? <ExpandLessOutlined sx={{ fontSize: 18 }} /> : <ExpandMoreOutlined sx={{ fontSize: 18 }} />}
+      </Box>
+
+      <Collapse in={open}>
+        <Divider />
+        <Box sx={{ p: 2 }}>
+
+          {/* Row 1 — KPI Cards */}
+          <Box sx={{ display: 'flex', gap: 2, mb: 3, flexWrap: 'wrap' }}>
+            {kpiCards.map(card => (
+              <Paper
+                key={card.label}
+                variant="outlined"
+                sx={{
+                  flex: '1 1 160px',
+                  p: 1.5,
+                  borderRadius: 2,
+                  bgcolor: '#0d1117',
+                  borderColor: `${card.color}40`,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 0.5,
+                }}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
+                  {card.icon}
+                  <Typography variant="caption" color="text.secondary" fontWeight={500}>
+                    {card.label}
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="h5"
+                  fontWeight={700}
+                  sx={{ color: card.color, lineHeight: 1.2, fontSize: '1.6rem' }}
+                >
+                  {card.value}
+                </Typography>
+              </Paper>
+            ))}
+          </Box>
+
+          {/* Row 2 — Top-25 table */}
+          <Typography variant="caption" color="text.secondary" fontWeight={600} display="block" sx={{ mb: 1, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            Top 25 by EPSS Score
+          </Typography>
+          <Paper variant="outlined" sx={{ borderRadius: 2, overflow: 'hidden' }}>
+            <Table size="small">
+              <TableHead>
+                <TableRow>
+                  <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 140 }}>CVE ID</TableCell>
+                  <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 110 }}>EPSS Score</TableCell>
+                  <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 110 }}>Percentile</TableCell>
+                  <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem' }}>Score Date</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {(top25?.items ?? []).map(row => (
+                  <TableRow key={row.cve_id} hover>
+                    <TableCell sx={{ fontSize: '0.75rem', fontFamily: 'monospace', color: '#c62828', fontWeight: 600 }}>
+                      {row.cve_id}
+                    </TableCell>
+                    <TableCell>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          fontSize: '0.75rem',
+                          fontWeight: 600,
+                          color: epssScoreColor(row.score),
+                        }}
+                      >
+                        {(row.score * 100).toFixed(2)}%
+                      </Typography>
+                    </TableCell>
+                    <TableCell sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>
+                      {(row.percentile * 100).toFixed(1)}%
+                    </TableCell>
+                    <TableCell sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>
+                      {row.score_date ? row.score_date.slice(0, 10) : '—'}
+                    </TableCell>
+                  </TableRow>
+                ))}
+                {open && !top25 && (
+                  <TableRow>
+                    <TableCell colSpan={4} sx={{ textAlign: 'center', py: 2, color: 'text.secondary', fontSize: '0.82rem' }}>
+                      Loading…
+                    </TableCell>
+                  </TableRow>
+                )}
+                {top25?.items.length === 0 && (
+                  <TableRow>
+                    <TableCell colSpan={4} sx={{ textAlign: 'center', py: 2, color: 'text.secondary', fontSize: '0.82rem' }}>
+                      No EPSS data. Enable FEEDS_EPSS_ENABLED=true and restart the feeds container.
+                    </TableCell>
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
+          </Paper>
+
+        </Box>
+      </Collapse>
     </Paper>
   )
 }
@@ -643,6 +815,7 @@ export default function CVEExplorer() {
 
       <StatsBar />
       <InfoPanel />
+      <EpssAnalytics />
 
       <Tabs value={tab} onChange={(_, v) => setTab(v)} sx={{ mb: 2, borderBottom: '1px solid', borderColor: 'divider' }}>
         <Tab label="CVE" sx={{ fontSize: '0.82rem', textTransform: 'none' }} />

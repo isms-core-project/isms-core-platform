@@ -3,7 +3,7 @@
 import logging
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
@@ -152,6 +152,17 @@ def create_app() -> FastAPI:
         allow_headers=["Authorization", "Content-Type", "Accept"],
         expose_headers=["X-QA-Status", "X-QA-Issues"],
     )
+
+    # Real IP: read X-Forwarded-For / X-Real-IP set by nginx so
+    # request.client.host reflects the actual client, not the Docker network IP.
+    @app.middleware("http")
+    async def _real_ip_middleware(request: Request, call_next):
+        xff = request.headers.get("x-forwarded-for")
+        xri = request.headers.get("x-real-ip")
+        real_ip = (xff.split(",")[0].strip() if xff else None) or xri
+        if real_ip:
+            request.scope["client"] = (real_ip, 0)
+        return await call_next(request)
 
     # Rate limiter
     app.state.limiter = limiter

@@ -18,6 +18,7 @@ import Search from './pages/Search'
 import Evidence from './pages/Evidence'
 import Graph from './pages/Graph'
 import Admin from './pages/Admin'
+import Logs from './pages/Logs'
 import System from './pages/System'
 import QA from './pages/QA'
 import Generators from './pages/Generators'
@@ -112,6 +113,7 @@ export default function App() {
         <Route path="evidence" element={<Evidence />} />
         <Route path="graph" element={<Graph />} />
         <Route path="admin" element={<Admin />} />
+        <Route path="admin/logs" element={<Logs />} />
         <Route path="system" element={<System />} />
         <Route path="connectors" element={<Connectors />} />
         <Route path="qa" element={<QA />} />

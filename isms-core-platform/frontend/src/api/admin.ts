@@ -85,6 +85,45 @@ export const adminApi = {
 
   patchOrganisationSettings: (settings: Record<string, unknown>) =>
     client.patch<{ settings: Record<string, unknown> }>('/organisation/', { settings }).then((r) => r.data),
+
+  // --- Logs (Phase 39) ---
+  getFeedRuns: (params?: { feed_name?: string; status?: string; limit?: number }) =>
+    client.get<FeedRunEntry[]>('/admin/logs/feed-runs', { params }).then((r) => r.data),
+
+  getConnectorRuns: (params?: { connector_id?: string; status?: string; limit?: number }) =>
+    client.get<ConnectorRunEntry[]>('/admin/logs/connector-runs', { params }).then((r) => r.data),
+
+  // --- Sessions (Phase 39) ---
+  listSessions: (params?: { user_id?: string; include_expired?: boolean }) =>
+    client.get<SessionEntry[]>('/admin/sessions', { params }).then((r) => r.data),
+
+  revokeSession: (id: string) =>
+    client.delete(`/admin/sessions/${id}`),
+
+  revokeUserSessions: (userId: string) =>
+    client.delete(`/admin/sessions/user/${userId}`),
+
+  // --- Groups (Phase 39) ---
+  listGroups: () =>
+    client.get<GroupEntry[]>('/admin/groups').then((r) => r.data),
+
+  createGroup: (body: { name: string; description?: string }) =>
+    client.post<GroupEntry>('/admin/groups', body).then((r) => r.data),
+
+  updateGroup: (id: string, body: { name?: string; description?: string }) =>
+    client.patch<GroupEntry>(`/admin/groups/${id}`, body).then((r) => r.data),
+
+  deleteGroup: (id: string) =>
+    client.delete(`/admin/groups/${id}`),
+
+  getGroupMembers: (groupId: string) =>
+    client.get<GroupMemberEntry[]>(`/admin/groups/${groupId}/members`).then((r) => r.data),
+
+  addGroupMember: (groupId: string, userId: string) =>
+    client.post(`/admin/groups/${groupId}/members`, { user_id: userId }),
+
+  removeGroupMember: (groupId: string, userId: string) =>
+    client.delete(`/admin/groups/${groupId}/members/${userId}`),
 }
 
 export interface OrphanEntry {
@@ -124,4 +163,55 @@ export interface AuditLogPage {
   page: number
   page_size: number
   pages: number
+}
+
+export interface FeedRunEntry {
+  id: string
+  feed_name: string
+  status: string
+  started_at: string | null
+  finished_at: string | null
+  duration_seconds: number | null
+  item_count: number | null
+  error_message: string | null
+}
+
+export interface ConnectorRunEntry {
+  connector_name?: string
+  connector_id: string
+  started_at: string | null
+  finished_at: string | null
+  evidence_count?: number | null
+  item_count?: number | null
+  status: string
+  error_message: string | null
+  history_limited?: boolean
+}
+
+export interface SessionEntry {
+  id: string
+  user_id: string
+  user_email: string | null
+  user_username: string | null
+  expires_at: string
+  ip_address: string | null
+  user_agent: string | null
+  created_at: string
+  is_expired: boolean
+}
+
+export interface GroupEntry {
+  id: string
+  name: string
+  description: string | null
+  member_count: number
+  created_at: string
+}
+
+export interface GroupMemberEntry {
+  user_id: string
+  email: string
+  username: string
+  full_name: string | null
+  role: string
 }

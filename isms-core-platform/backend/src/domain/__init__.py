@@ -37,3 +37,4 @@ from src.domain.bia import BIARecord  # noqa: F401
 from src.domain.ebios import EbiosStudy, EbiosFearedEvent, EbiosRiskSource, EbiosStrategicScenario, EbiosAttackPath, EbiosMeasure  # noqa: F401
 from src.domain.custom_framework import CustomFramework, CustomControl  # noqa: F401
 from src.domain.feeds import FeedRun, MitreTechnique, CisaKevEntry, EpssScore  # noqa: F401
+from src.domain.user_groups import UserGroup, user_group_members  # noqa: F401

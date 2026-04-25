@@ -28,7 +28,7 @@ from src.schemas.users import (
     NotificationPrefsPatch,
 )
 from src.services.audit_service import CAT_SECURITY, SEV_INFO, SEV_WARNING, log_event
-from src.services.auth_service import authenticate_user, create_token_pair, refresh_tokens
+from src.services.auth_service import authenticate_user, create_session, create_token_pair, delete_session_by_token, refresh_tokens
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -68,37 +68,48 @@ def login(request: Request, body: LoginRequest, db: DBSession = Depends(get_db))
         from src.services.mfa_service import create_mfa_token
         mfa_token = create_mfa_token(user.id)
         return MfaLoginResponse(mfa_token=mfa_token)
+    tokens = create_token_pair(user)
+    user_agent = request.headers.get("user-agent")
+    create_session(db, user, tokens["refresh_token"], client_ip, user_agent)
     db.commit()
-    return _token_response_with_cookie(create_token_pair(user))
+    return _token_response_with_cookie(tokens)
 
 
 @router.post("/refresh")
 @limiter.limit("20/minute")
 def refresh(request: Request, db: DBSession = Depends(get_db)):
-    refresh_token = request.cookies.get("refresh_token")
-    if not refresh_token:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="No refresh token",
-        )
+    old_token = request.cookies.get("refresh_token")
+    if not old_token:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="No refresh token")
     try:
-        result = refresh_tokens(db, refresh_token)
+        result = refresh_tokens(db, old_token)
     except JWTError as e:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail=f"Invalid refresh token: {e}",
-        )
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=f"Invalid refresh token: {e}")
     if not result:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Could not refresh token",
-        )
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Could not refresh token")
+    # Rotate session row: delete old, create new
+    delete_session_by_token(db, old_token)
+    from src.core.security import decode_token
+    payload = decode_token(result["refresh_token"])
+    user_id = payload.get("sub")
+    if user_id:
+        from src.domain.users import User
+        user = db.get(User, user_id)
+        if user:
+            user_agent = request.headers.get("user-agent")
+            client_ip = request.client.host if request.client else None
+            create_session(db, user, result["refresh_token"], client_ip, user_agent)
+    db.commit()
     return _token_response_with_cookie(result)
 
 
 @router.post("/logout", status_code=204)
-def logout(response: Response):
-    """Clear the HttpOnly refresh token cookie."""
+def logout(request: Request, response: Response, db: DBSession = Depends(get_db)):
+    """Clear the HttpOnly refresh token cookie and revoke the session."""
+    refresh_token = request.cookies.get("refresh_token")
+    if refresh_token:
+        delete_session_by_token(db, refresh_token)
+        db.commit()
     response.delete_cookie(key="refresh_token", path="/api/v1/auth")
 
 
@@ -339,8 +350,10 @@ def mfa_verify(
     log_event(db, event_type="login.mfa_success", category=CAT_SECURITY, severity=SEV_INFO,
               user_id=user.id, actor_email=user.email, ip_address=client_ip,
               description=f"User {user.email} completed MFA login")
+    tokens = create_token_pair(user)
+    create_session(db, user, tokens["refresh_token"], client_ip, request.headers.get("user-agent"))
     db.commit()
-    return _token_response_with_cookie(create_token_pair(user))
+    return _token_response_with_cookie(tokens)
 
 
 @router.post("/mfa/backup-codes/regenerate", response_model=MfaBackupCodesResponse)

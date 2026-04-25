@@ -252,16 +252,31 @@ def list_evidence(
     control_group_id: uuid.UUID | None = None,
     evidence_type: str | None = None,
     evidence_status: str | None = None,
+    product_family: str | None = None,
     limit: int = 100,
     offset: int = 0,
 ) -> list[Evidence]:
-    stmt = select(Evidence).order_by(Evidence.created_at.desc())
+    from sqlalchemy.orm import selectinload
+    stmt = select(Evidence).options(selectinload(Evidence.control_group)).order_by(Evidence.created_at.desc())
     if control_group_id:
         stmt = stmt.where(Evidence.control_group_id == control_group_id)
     if evidence_type:
         stmt = stmt.where(Evidence.evidence_type == EvidenceType(evidence_type))
     if evidence_status:
         stmt = stmt.where(Evidence.evidence_status == EvidenceStatus(evidence_status))
+    if product_family:
+        from src.domain.control_groups import ControlGroup as CG
+        from src.database.enums import ProductFamily
+        from sqlalchemy import or_
+        try:
+            pf = ProductFamily(product_family.upper())
+            stmt = stmt.outerjoin(CG, Evidence.control_group_id == CG.id)
+            stmt = stmt.where(or_(
+                Evidence.control_group_id.is_(None),
+                CG.product_family == pf,
+            ))
+        except ValueError:
+            pass
     return db.execute(stmt.limit(limit).offset(offset)).scalars().all()
 
 

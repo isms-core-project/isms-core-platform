@@ -75,6 +75,7 @@ import {
   ManageSearchOutlined,
   MenuBookOutlined,
   SendOutlined,
+  ReceiptLongOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -229,6 +230,7 @@ const NAV_SUPPLIERS: NavItem[] = [
 // ── Admin ─────────────────────────────────────────────────────────────────────
 const NAV_ADMIN: NavItem[] = [
   { label: 'Users',             path: '/admin',             icon: <PeopleOutlined />, adminOnly: true },
+  { label: 'Logs',              path: '/admin/logs',        icon: <ReceiptLongOutlined />, adminOnly: true },
   { label: 'Connectors',        path: '/connectors',        icon: <ElectricalServicesOutlined />, adminOnly: true },
   { label: 'Custom Frameworks', path: '/custom-frameworks',  icon: <AppRegistrationOutlined />, adminOnly: true },
   { label: 'Framework Tracker', path: '/framework-tracker',  icon: <UpdateOutlined />,        adminOnly: true },
@@ -267,7 +269,7 @@ const RISK_PATHS       = ['/risk-register', '/remediation', '/metrics', '/bia', 
 const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generators', '/report', '/risk', '/glossary']
 const FRAMEWORK_PATHS  = ['/nist-csf', '/nist-ai-rmf', '/nist-800-53', '/nis2', '/dora', '/uk-nis', '/ncsc-caf', '/uk-op-resilience', '/fr-recyf', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/isg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit', '/csa-ccm', '/csa-aicm']
 const SUPPLIER_PATHS   = ['/tprm']
-const ADMIN_PATHS        = ['/admin', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker', '/crosswalk-tracker']
+const ADMIN_PATHS        = ['/admin', '/admin/logs', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker', '/crosswalk-tracker']
 const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/mitre-groups', '/mitre-software', '/mitre-campaigns', '/mitre-heatmap', '/cve-explorer', '/euvd-explorer']
 const ALL_PLATFORM_PATHS = [...RISK_PATHS, ...TOOLS_PATHS, ...FRAMEWORK_PATHS, ...SUPPLIER_PATHS, ...ADMIN_PATHS, ...INTELLIGENCE_PATHS]
 

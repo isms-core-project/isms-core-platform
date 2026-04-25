@@ -4,7 +4,7 @@ import shutil
 import tempfile
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
-from sqlalchemy import func, select, text
+from sqlalchemy import delete as sql_delete, func, select, text
 from sqlalchemy.orm import Session as DBSession
 
 from src.core.dependencies import get_current_user, get_org_context, require_role, require_admin
@@ -1181,3 +1181,231 @@ def get_opensearch_detail(
         "evidence_indices":  opensearch_service.get_evidence_indices(),
     }
 
+
+# ---------------------------------------------------------------------------
+# Logs — Feed Runs (Phase 39)
+# ---------------------------------------------------------------------------
+
+@router.get("/logs/feed-runs", tags=["admin"])
+def get_feed_runs(
+    feed_name: str | None = None,
+    status: str | None = None,
+    limit: int = 200,
+    _user=Depends(require_admin),
+    db: DBSession = Depends(get_db),
+):
+    """Return recent feed run history, newest first.
+
+    Filters (all optional):
+      feed_name — exact match, e.g. 'nist_cve' | 'cisa_kev' | 'euvd'
+      status    — 'success' | 'error' | 'running'
+      limit     — max rows to return (default 200, max 1000)
+    """
+    from datetime import timezone
+    from sqlalchemy import and_, desc
+    from src.domain.feeds import FeedRun
+
+    limit = min(max(1, limit), 1000)
+
+    q = select(FeedRun)
+    conditions = []
+    if feed_name:
+        conditions.append(FeedRun.feed_name == feed_name)
+    if status:
+        conditions.append(FeedRun.status == status)
+    if conditions:
+        q = q.where(and_(*conditions))
+
+    rows = db.execute(q.order_by(desc(FeedRun.started_at)).limit(limit)).scalars().all()
+
+    items = []
+    for r in rows:
+        duration = None
+        if r.finished_at and r.started_at:
+            duration = round((r.finished_at - r.started_at).total_seconds(), 1)
+        items.append({
+            "id":               str(r.id),
+            "feed_name":        r.feed_name,
+            "status":           r.status,
+            "started_at":       r.started_at.isoformat() if r.started_at else None,
+            "finished_at":      r.finished_at.isoformat() if r.finished_at else None,
+            "duration_seconds": duration,
+            "item_count":       r.item_count,
+            "error_message":    r.error_message,
+        })
+    return items
+
+
+# ---------------------------------------------------------------------------
+# Logs — Connector Runs (Phase 39)
+# ---------------------------------------------------------------------------
+
+@router.get("/logs/connector-runs", tags=["admin"])
+def get_connector_runs(
+    connector_id: uuid.UUID | None = None,
+    status: str | None = None,
+    limit: int = 200,
+    _user=Depends(require_admin),
+    db: DBSession = Depends(get_db),
+):
+    """Return recent connector run history, newest first.
+
+    Tries OpenSearch connector-runs index first; falls back to last-run
+    snapshot from the connectors table when OpenSearch is unavailable.
+
+    Filters (all optional):
+      connector_id — UUID of the connector
+      status       — 'success' | 'error'
+      limit        — max rows to return (default 200, max 1000)
+    """
+    from src.domain.connectors import Connector
+
+    limit = min(max(1, limit), 1000)
+
+    # ── OpenSearch path ───────────────────────────────────────────────────────
+    try:
+        from opensearchpy import OpenSearch
+        s = get_settings()
+        client = OpenSearch(hosts=[s.opensearch_url], use_ssl=False, verify_certs=False, timeout=5)
+        if client.ping():
+            body: dict = {
+                "sort": [{"started_at": {"order": "desc"}}],
+                "size": limit,
+            }
+            must = []
+            if connector_id:
+                must.append({"term": {"connector_id": str(connector_id)}})
+            if status:
+                must.append({"term": {"status": status}})
+            if must:
+                body["query"] = {"bool": {"must": must}}
+            res = client.search(index="connector-runs", body=body)
+            items = [hit["_source"] for hit in res["hits"]["hits"]]
+            # strip any sensitive fields that may have been indexed
+            for item in items:
+                item.pop("api_token_hash", None)
+                item.pop("config_encrypted", None)
+            return items
+    except Exception as exc:
+        logger.debug("OpenSearch connector-runs query failed, using postgres fallback: %s", exc)
+
+    # ── Postgres fallback — last-run snapshot per connector ───────────────────
+    from sqlalchemy import desc as _desc
+
+    q = select(Connector)
+    conditions = []
+    if connector_id:
+        conditions.append(Connector.id == connector_id)
+    if status:
+        # map requested status to postgres last_error presence
+        if status == "error":
+            conditions.append(Connector.last_error.isnot(None))
+        elif status == "success":
+            conditions.append(Connector.last_error.is_(None))
+    if conditions:
+        from sqlalchemy import and_
+        q = q.where(and_(*conditions))
+
+    rows = db.execute(q.order_by(_desc(Connector.last_run)).limit(limit)).scalars().all()
+
+    return [
+        {
+            "connector_name":  c.name,
+            "connector_id":    str(c.id),
+            "started_at":      c.last_run.isoformat() if c.last_run else None,
+            "finished_at":     None,
+            "evidence_count":  c.last_item_count,
+            "status":          "error" if c.last_error else "success",
+            "error_message":   c.last_error,
+            "history_limited": True,
+        }
+        for c in rows
+    ]
+
+
+# ---------------------------------------------------------------------------
+# Sessions (Phase 39 — B.5)
+# ---------------------------------------------------------------------------
+
+@router.get("/sessions", tags=["admin"])
+def list_sessions(
+    user_id: uuid.UUID | None = None,
+    include_expired: bool = False,
+    _user=Depends(require_admin),
+    db: DBSession = Depends(get_db),
+):
+    """Return active sessions for the organisation. Excludes expired by default."""
+    from datetime import timezone, datetime as _dt
+    from src.domain.users import Session
+
+    stmt = (
+        select(Session)
+        .join(User, Session.user_id == User.id)
+        .where(User.organisation_id == _user.organisation_id)
+    )
+    if user_id:
+        stmt = stmt.where(Session.user_id == user_id)
+    if not include_expired:
+        stmt = stmt.where(Session.expires_at > _dt.now(timezone.utc))
+    stmt = stmt.order_by(Session.created_at.desc()).limit(500)
+
+    rows = db.execute(stmt).scalars().all()
+
+    user_ids = list({r.user_id for r in rows})
+    user_map: dict[uuid.UUID, User] = {}
+    if user_ids:
+        users = db.execute(select(User).where(User.id.in_(user_ids))).scalars().all()
+        user_map = {u.id: u for u in users}
+
+    now = _dt.now(timezone.utc)
+    return [
+        {
+            "id":            str(r.id),
+            "user_id":       str(r.user_id),
+            "user_email":    user_map[r.user_id].email    if r.user_id in user_map else None,
+            "user_username": user_map[r.user_id].username if r.user_id in user_map else None,
+            "expires_at":    r.expires_at.isoformat(),
+            "ip_address":    r.ip_address,
+            "user_agent":    r.user_agent,
+            "created_at":    r.created_at.isoformat(),
+            "is_expired":    r.expires_at <= now,
+        }
+        for r in rows
+    ]
+
+
+@router.delete("/sessions/user/{target_user_id}", tags=["admin"])
+def revoke_user_sessions(
+    target_user_id: uuid.UUID,
+    _user=Depends(require_admin),
+    db: DBSession = Depends(get_db),
+):
+    """Revoke all sessions for a given user (same organisation only)."""
+    from src.domain.users import Session
+
+    target = db.get(User, target_user_id)
+    if not target or target.organisation_id != _user.organisation_id:
+        raise HTTPException(status_code=404, detail="User not found")
+    result = db.execute(sql_delete(Session).where(Session.user_id == target_user_id))
+    db.commit()
+    return {"ok": True, "deleted": result.rowcount}
+
+
+@router.delete("/sessions/{session_id}", tags=["admin"])
+def revoke_session(
+    session_id: uuid.UUID,
+    _user=Depends(require_admin),
+    db: DBSession = Depends(get_db),
+):
+    """Revoke a single session."""
+    from src.domain.users import Session
+
+    s = db.get(Session, session_id)
+    if not s:
+        raise HTTPException(status_code=404, detail="Session not found")
+    owner = db.get(User, s.user_id)
+    if not owner or owner.organisation_id != _user.organisation_id:
+        raise HTTPException(status_code=403, detail="Forbidden")
+    db.delete(s)
+    db.commit()
+    return {"ok": True}

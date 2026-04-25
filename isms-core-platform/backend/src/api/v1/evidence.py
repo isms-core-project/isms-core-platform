@@ -168,13 +168,14 @@ def list_evidence(
     evidence_type: str | None = Query(None, description="Filter by type"),
     evidence_status: str | None = Query(None, description="Filter by status: draft|pending_review|approved|rejected|active"),
     project_id: uuid.UUID | None = Query(None, description="Filter by project"),
+    product_family: str | None = Query(None, description="Filter by product family: ISMS|PRIVACY|CLOUD|AI"),
     limit: int = Query(100, ge=1, le=500),
     offset: int = Query(0, ge=0),
     db: DBSession = Depends(get_db),
     _user: User = Depends(get_current_user),
 ):
     """List evidence items with optional filters."""
-    from sqlalchemy import select as sa_select
+    from sqlalchemy import select as sa_select, or_
     from src.domain.compliance import Evidence
 
     cg_id = control_group_id
@@ -184,8 +185,9 @@ def list_evidence(
             cg_id = cg.id
 
     if project_id is not None:
-        # project_id filter not yet in evidence_service — apply directly
-        q = sa_select(Evidence)
+        from sqlalchemy.orm import selectinload
+        from src.database.enums import ProductFamily
+        q = sa_select(Evidence).options(selectinload(Evidence.control_group))
         if cg_id:
             q = q.where(Evidence.control_group_id == cg_id)
         if evidence_type:
@@ -193,6 +195,17 @@ def list_evidence(
         if evidence_status:
             q = q.where(Evidence.evidence_status == EvidenceStatus(evidence_status))
         q = q.where(Evidence.project_id == project_id)
+        if product_family:
+            from src.domain.control_groups import ControlGroup as CG
+            try:
+                pf = ProductFamily(product_family.upper())
+                q = q.outerjoin(CG, Evidence.control_group_id == CG.id)
+                q = q.where(or_(
+                    Evidence.control_group_id.is_(None),
+                    CG.product_family == pf,
+                ))
+            except ValueError:
+                pass
         q = q.order_by(Evidence.created_at.desc()).offset(offset).limit(limit)
         return db.execute(q).scalars().all()
 
@@ -201,6 +214,7 @@ def list_evidence(
         control_group_id=cg_id,
         evidence_type=evidence_type,
         evidence_status=evidence_status,
+        product_family=product_family,
         limit=limit,
         offset=offset,
     )
@@ -211,6 +225,7 @@ def export_evidence(
     group_code: str | None = Query(None),
     evidence_type: str | None = Query(None),
     evidence_status: str | None = Query(None),
+    product_family: str | None = Query(None),
     db: DBSession = Depends(get_db),
     _user: User = Depends(get_current_user),
 ):
@@ -225,6 +240,7 @@ def export_evidence(
         control_group_id=cg_id,
         evidence_type=evidence_type,
         evidence_status=evidence_status,
+        product_family=product_family,
         limit=10000,
         offset=0,
     )

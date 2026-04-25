@@ -27,6 +27,47 @@ OPENSEARCH_URL  = os.environ.get("OPENSEARCH_URL",  "http://isms-core-opensearch
 # ── OpenSearch index seeding ──────────────────────────────────────────────────
 
 INDICES = {
+    # nvd-cve is created by the feeds container; adding here so setup can
+    # seed field mappings for the index pattern even on a fresh deploy.
+    # PUT is skipped if the index already exists (HEAD check).
+    "nvd-cve": {
+        "mappings": {
+            "properties": {
+                "cve_id":          {"type": "keyword"},
+                "title":           {"type": "text"},
+                "description":     {"type": "text"},
+                "published":       {"type": "date"},
+                "last_modified":   {"type": "date"},
+                "severity":        {"type": "keyword"},
+                "cvss_base_score": {"type": "float"},
+                "cvss_vector":     {"type": "keyword"},
+                "cpe_affected":    {"type": "keyword"},
+                "in_kev":          {"type": "boolean"},
+                "in_euvd":         {"type": "boolean"},
+                "euvd_id":         {"type": "keyword"},
+                "epss_score":      {"type": "float"},
+                "references":      {"type": "text"},
+                "indexed_at":      {"type": "date"},
+            }
+        }
+    },
+    "cisa-kev": {
+        "mappings": {
+            "properties": {
+                "cve_id":             {"type": "keyword"},
+                "vendor_project":     {"type": "keyword"},
+                "product":            {"type": "keyword"},
+                "vulnerability_name": {"type": "text", "fields": {"keyword": {"type": "keyword", "ignore_above": 512}}},
+                "date_added":         {"type": "date", "format": "yyyy-MM-dd||strict_date_optional_time"},
+                "short_description":  {"type": "text"},
+                "required_action":    {"type": "text"},
+                "due_date":           {"type": "date", "format": "yyyy-MM-dd||strict_date_optional_time"},
+                "known_ransomware":   {"type": "boolean"},
+                "notes":              {"type": "text"},
+                "indexed_at":         {"type": "date"},
+            }
+        }
+    },
     "evidence-000001": {
         "aliases": {"evidence": {"is_write_index": True}},
         "settings": {
@@ -352,6 +393,108 @@ def _pie(obj_id: str, title: str, index_id: str, field: str) -> dict:
     }
 
 
+def _kql_metric(obj_id: str, title: str, index_id: str, kql: str = "") -> dict:
+    """Metric count visualization with an optional KQL filter."""
+    vis_state = {
+        "title": title, "type": "metric",
+        "params": {
+            "addTooltip": True, "addLegend": False, "type": "metric",
+            "metric": {
+                "percentageMode": False, "useRanges": False,
+                "colorSchema": "Green to Red", "metricColorMode": "None",
+                "colorsRange": [{"from": 0, "to": 10000000}],
+                "labels": {"show": True}, "invertColors": False,
+                "style": {"bgFill": "#000", "bgColor": False,
+                          "labelColor": False, "subText": "", "fontSize": 60},
+            },
+        },
+        "aggs": [{"id": "1", "enabled": True, "type": "count",
+                  "schema": "metric", "params": {}}],
+    }
+    return {
+        "type": "visualization", "id": obj_id,
+        "attributes": {
+            "title": title,
+            "visState": json.dumps(vis_state),
+            "uiStateJSON": "{}",
+            "kibanaSavedObjectMeta": {"searchSourceJSON": json.dumps({
+                "index": index_id,
+                "query": {"query": kql, "language": "kuery"},
+                "filter": [],
+            })},
+        },
+        "references": [{"name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                        "type": "index-pattern", "id": index_id}],
+    }
+
+
+def _count_table(obj_id: str, title: str, index_id: str,
+                 bucket_field: str, size: int = 50) -> dict:
+    """Data table: top N terms by count descending."""
+    vis_state = {
+        "title": title, "type": "table",
+        "params": {
+            "perPage": 25, "showPartialRows": False, "showMetricsAtAllLevels": False,
+            "sort": {"columnIndex": None, "direction": None},
+            "showTotal": False, "totalFunc": "sum", "percentageCol": "",
+        },
+        "aggs": [
+            {"id": "1", "enabled": True, "type": "count", "schema": "metric", "params": {}},
+            {"id": "2", "enabled": True, "type": "terms", "schema": "bucket",
+             "params": {
+                 "field": bucket_field, "orderBy": "1", "order": "desc",
+                 "size": size, "otherBucket": False, "missingBucket": False,
+                 "customLabel": bucket_field.replace("_", " ").replace(".", " ").title(),
+             }},
+        ],
+    }
+    return {
+        "type": "visualization", "id": obj_id,
+        "attributes": {
+            "title": title,
+            "visState": json.dumps(vis_state),
+            "uiStateJSON": "{}",
+            "kibanaSavedObjectMeta": {"searchSourceJSON": _ss(index_id)},
+        },
+        "references": [{"name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                        "type": "index-pattern", "id": index_id}],
+    }
+
+
+def _top_table(obj_id: str, title: str, index_id: str,
+               bucket_field: str, metric_field: str, size: int = 100) -> dict:
+    """Data table: top N terms by max(metric_field) descending. metric_field must be numeric."""
+    vis_state = {
+        "title": title, "type": "table",
+        "params": {
+            "perPage": 25, "showPartialRows": False, "showMetricsAtAllLevels": False,
+            "sort": {"columnIndex": None, "direction": None},
+            "showTotal": False, "totalFunc": "sum", "percentageCol": "",
+        },
+        "aggs": [
+            {"id": "1", "enabled": True, "type": "max", "schema": "metric",
+             "params": {"field": metric_field, "customLabel": metric_field.replace("_", " ").title()}},
+            {"id": "2", "enabled": True, "type": "terms", "schema": "bucket",
+             "params": {
+                 "field": bucket_field, "orderBy": "1", "order": "desc",
+                 "size": size, "otherBucket": False, "missingBucket": False,
+                 "customLabel": bucket_field.replace("_", " ").replace(".", " ").title(),
+             }},
+        ],
+    }
+    return {
+        "type": "visualization", "id": obj_id,
+        "attributes": {
+            "title": title,
+            "visState": json.dumps(vis_state),
+            "uiStateJSON": "{}",
+            "kibanaSavedObjectMeta": {"searchSourceJSON": _ss(index_id)},
+        },
+        "references": [{"name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                        "type": "index-pattern", "id": index_id}],
+    }
+
+
 def _dashboard(obj_id: str, title: str, panels: list) -> dict:
     panels_json = []
     refs = []
@@ -416,6 +559,20 @@ def build_objects(fields_by_id: dict) -> list:
              "fields": fields_by_id.get("ip-connector-runs", "[]"),
          },
          "references": []},
+        {"type": "index-pattern", "id": "ip-nvd-cve",
+         "attributes": {
+             "title": "nvd-cve",
+             "timeFieldName": "published",
+             "fields": fields_by_id.get("ip-nvd-cve", "[]"),
+         },
+         "references": []},
+        {"type": "index-pattern", "id": "ip-cisa-kev",
+         "attributes": {
+             "title": "cisa-kev",
+             "timeFieldName": "date_added",
+             "fields": fields_by_id.get("ip-cisa-kev", "[]"),
+         },
+         "references": []},
     ]
 
     objs += [
@@ -439,6 +596,24 @@ def build_objects(fields_by_id: dict) -> list:
         _pie("viz-cr-connector",     "Connector Runs — By Connector", "ip-connector-runs", "connector_name"),
     ]
 
+    # EPSS Risk Analytics
+    objs += [
+        _kql_metric("viz-epss-total", "EPSS — CVEs with Score",  "ip-nvd-cve", "epss_score: *"),
+        _kql_metric("viz-epss-10p",   "EPSS — Score ≥ 10%",      "ip-nvd-cve", "epss_score >= 0.1"),
+        _kql_metric("viz-epss-20p",   "EPSS — Score ≥ 20%",      "ip-nvd-cve", "epss_score >= 0.2"),
+        _top_table("viz-epss-top",    "EPSS — Top 100 by Score", "ip-nvd-cve", "cve_id", "epss_score", 100),
+    ]
+
+    # CISA KEV Tracker
+    objs += [
+        _metric("viz-kev-total",       "KEV — Total Entries",          "ip-cisa-kev"),
+        _timeline("viz-kev-time",      "KEV — Added Over Time",        "ip-cisa-kev", "date_added"),
+        _pie("viz-kev-vendors",        "KEV — Top Vendors",            "ip-cisa-kev", "vendor_project"),
+        _pie("viz-kev-products",       "KEV — Top Products",           "ip-cisa-kev", "product"),
+        _pie("viz-kev-ransomware",     "KEV — Ransomware Association", "ip-cisa-kev", "known_ransomware"),
+        _count_table("viz-kev-table",   "KEV — CVEs by Vendor",         "ip-cisa-kev", "vendor_project", 50),
+    ]
+
     objs.append(_dashboard("dash-evidence", "ISMS CORE — Evidence Overview", [
         ("viz-ev-count",      0,  0, 12, 5),
         ("viz-ev-time",      12,  0, 36, 5),
@@ -456,6 +631,20 @@ def build_objects(fields_by_id: dict) -> list:
         ("viz-cr-time",      12,  0, 36, 5),
         ("viz-cr-status",     0,  5, 24, 9),
         ("viz-cr-connector", 24,  5, 24, 9),
+    ]))
+    objs.append(_dashboard("dash-epss", "ISMS CORE — EPSS Risk Analytics", [
+        ("viz-epss-total",  0,  0, 16, 5),
+        ("viz-epss-10p",   16,  0, 16, 5),
+        ("viz-epss-20p",   32,  0, 16, 5),
+        ("viz-epss-top",    0,  5, 48, 15),
+    ]))
+    objs.append(_dashboard("dash-kev", "ISMS CORE — CISA KEV Tracker", [
+        ("viz-kev-total",      0,  0, 12, 5),
+        ("viz-kev-time",      12,  0, 36, 5),
+        ("viz-kev-vendors",    0,  5, 16, 9),
+        ("viz-kev-products",  16,  5, 16, 9),
+        ("viz-kev-ransomware",32,  5, 16, 9),
+        ("viz-kev-table",      0, 14, 48, 12),
     ]))
 
     return objs
@@ -492,6 +681,8 @@ def main():
         "ip-evidence":       get_osd_fields("evidence"),
         "ip-audit-logs":     get_osd_fields("audit-logs"),
         "ip-connector-runs": get_osd_fields("connector-runs"),
+        "ip-nvd-cve":        get_osd_fields("nvd-cve"),
+        "ip-cisa-kev":       get_osd_fields("cisa-kev"),
     }
     for pid, fields_json in fields_by_id.items():
         count = len(json.loads(fields_json))
