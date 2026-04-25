@@ -136,5 +136,137 @@ export function createAppTheme(mode: PaletteMode) {
   })
 }
 
+export function createBambooTheme() {
+  return createTheme({
+    palette: {
+      mode: 'dark',
+      primary: {
+        main:  '#2E8B57',
+        light: '#3da369',
+        dark:  '#246b45',
+      },
+      secondary: {
+        main: '#4ade80',
+        dark: '#22c55e',
+      },
+      background: {
+        default: '#0a0f0d',
+        paper:   '#141e19',
+      },
+      text: {
+        primary:   '#e8efe9',
+        secondary: '#9ca89e',
+        disabled:  'rgba(232,239,233,0.38)',
+      },
+      error:   { main: '#C00000' },
+      warning: {
+        main:        '#FF6600',
+        contrastText: '#ffffff',
+      },
+      success: {
+        main:        '#32CD32',
+        contrastText: '#0a0f0d',
+      },
+      divider: 'rgba(46,139,87,0.15)',
+      action: {
+        hover:    'rgba(46,139,87,0.08)',
+        selected: 'rgba(46,139,87,0.16)',
+      },
+    },
+    typography: {
+      fontFamily: '"Inter", "Roboto", "Helvetica Neue", sans-serif',
+      h1: { fontWeight: 700, fontSize: '2rem' },
+      h2: { fontWeight: 700, fontSize: '1.6rem' },
+      h3: { fontWeight: 600, fontSize: '1.3rem' },
+      h4: { fontWeight: 600, fontSize: '1.1rem' },
+      h5: { fontWeight: 600, fontSize: '1rem' },
+      h6: { fontWeight: 600, fontSize: '0.9rem' },
+      body1: { fontSize: '0.875rem' },
+      body2: { fontSize: '0.8rem' },
+      caption: { fontSize: '0.75rem' },
+    },
+    shape: { borderRadius: 8 },
+    components: {
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            backgroundImage: 'none',
+            border: '1px solid rgba(46,139,87,0.15)',
+          },
+        },
+      },
+      MuiPaper: {
+        styleOverrides: {
+          root: { backgroundImage: 'none' },
+        },
+      },
+      MuiChip: {
+        styleOverrides: {
+          root: { fontSize: '0.75rem' },
+        },
+      },
+      MuiTableCell: {
+        styleOverrides: {
+          head: ({ theme }) => ({
+            fontWeight: 600,
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.secondary,
+            fontSize: '0.75rem',
+            textTransform: 'uppercase' as const,
+            letterSpacing: '0.05em',
+            borderBottom: `1px solid ${theme.palette.divider}`,
+          }),
+          root: ({ theme }) => ({
+            borderColor: theme.palette.divider,
+          }),
+        },
+      },
+      MuiLinearProgress: {
+        styleOverrides: {
+          root: { borderRadius: 4, height: 6 },
+        },
+      },
+      MuiDrawer: {
+        styleOverrides: {
+          paper: ({ theme }) => ({
+            backgroundImage: 'none',
+            backgroundColor: theme.palette.background.paper,
+            borderColor: theme.palette.divider,
+          }),
+        },
+      },
+      MuiDialog: {
+        styleOverrides: {
+          paper: { backgroundImage: 'none' },
+        },
+      },
+      MuiInputBase: {
+        styleOverrides: {
+          input: ({ theme }) => ({
+            '&:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill:active': {
+              WebkitBoxShadow: `0 0 0 100px ${theme.palette.background.paper} inset`,
+              WebkitTextFillColor: theme.palette.text.primary,
+              caretColor: theme.palette.text.primary,
+            },
+          }),
+        },
+      },
+      MuiAlert: {
+        styleOverrides: {
+          root: { fontSize: '0.82rem' },
+        },
+      },
+      MuiTooltip: {
+        styleOverrides: {
+          tooltip: {
+            backgroundColor: 'rgba(20,30,25,0.97)',
+            fontSize: '0.75rem',
+          },
+        },
+      },
+    },
+  })
+}
+
 // Keep a default export for backward compatibility during migration
 export const theme = createAppTheme('dark')

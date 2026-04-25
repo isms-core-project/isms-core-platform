@@ -1,7 +1,9 @@
 import { createContext, useContext, useState, useMemo, type ReactNode } from 'react'
 import { ThemeProvider, CssBaseline } from '@mui/material'
 import type { PaletteMode } from '@mui/material'
-import { createAppTheme } from '../theme'
+import { createAppTheme, createBambooTheme } from '../theme'
+
+const SECRET_THEME = import.meta.env.VITE_SECRET_THEME
 
 interface ThemeModeCtx {
   mode: PaletteMode
@@ -19,6 +21,7 @@ export function ThemeModeProvider({ children }: { children: ReactNode }) {
   )
 
   function toggleTheme() {
+    if (SECRET_THEME === 'bamboo') return
     setMode(m => {
       const next: PaletteMode = m === 'dark' ? 'light' : 'dark'
       localStorage.setItem('themeMode', next)
@@ -26,10 +29,13 @@ export function ThemeModeProvider({ children }: { children: ReactNode }) {
     })
   }
 
-  const theme = useMemo(() => createAppTheme(mode), [mode])
+  const theme = useMemo(
+    () => SECRET_THEME === 'bamboo' ? createBambooTheme() : createAppTheme(mode),
+    [mode]
+  )
 
   return (
-    <ThemeModeContext.Provider value={{ mode, toggleTheme }}>
+    <ThemeModeContext.Provider value={{ mode: SECRET_THEME === 'bamboo' ? 'dark' : mode, toggleTheme }}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {children}

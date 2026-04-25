@@ -98,8 +98,18 @@ export default function Login() {
     }
   }
 
+  const SECRET_THEME = import.meta.env.VITE_SECRET_THEME
+  const isBamboo = SECRET_THEME === 'bamboo'
+
   // Background — subtle dot grid pattern
-  const bgStyle = isDark
+  const bgStyle = isBamboo
+    ? {
+        background: 'radial-gradient(ellipse at 20% 50%, rgba(46,139,87,0.10) 0%, transparent 60%), #0a0f0d',
+        backgroundImage: `radial-gradient(ellipse at 20% 50%, rgba(46,139,87,0.10) 0%, transparent 60%),
+          radial-gradient(circle, rgba(46,139,87,0.06) 1px, transparent 1px)`,
+        backgroundSize: 'auto, 28px 28px',
+      }
+    : isDark
     ? {
         background: 'radial-gradient(ellipse at 20% 50%, rgba(68,114,196,0.12) 0%, transparent 60%), #0A0F1E',
         backgroundImage: `radial-gradient(ellipse at 20% 50%, rgba(68,114,196,0.12) 0%, transparent 60%),
@@ -133,14 +143,16 @@ export default function Login() {
   return (
     <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', px: 2, ...bgStyle }}>
 
-      {/* Theme toggle — top right */}
-      <Box sx={{ position: 'fixed', top: 16, right: 16 }}>
-        <Tooltip title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}>
-          <IconButton onClick={toggleTheme} size="small" sx={{ color: 'text.secondary' }}>
-            {isDark ? <LightModeOutlined fontSize="small" /> : <DarkModeOutlined fontSize="small" />}
-          </IconButton>
-        </Tooltip>
-      </Box>
+      {/* Theme toggle — top right (hidden in bamboo mode) */}
+      {!isBamboo && (
+        <Box sx={{ position: 'fixed', top: 16, right: 16 }}>
+          <Tooltip title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}>
+            <IconButton onClick={toggleTheme} size="small" sx={{ color: 'text.secondary' }}>
+              {isDark ? <LightModeOutlined fontSize="small" /> : <DarkModeOutlined fontSize="small" />}
+            </IconButton>
+          </Tooltip>
+        </Box>
+      )}
 
       <Box sx={{ width: '100%', maxWidth: 400 }}>
         <Card

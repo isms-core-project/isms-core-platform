@@ -7,6 +7,9 @@ RUN npm ci
 
 COPY . .
 
+ARG VITE_SECRET_THEME=""
+RUN [ -n "$VITE_SECRET_THEME" ] && echo "VITE_SECRET_THEME=${VITE_SECRET_THEME}" >> .env.local || true
+
 RUN chown -R node:node /app
 USER node
 

@@ -583,6 +583,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   const activeProject = getActiveProject(product.toUpperCase())
   const activeFamilies = (['ISMS', 'PRIVACY', 'CLOUD'] as const).filter(f => !!activeProjectsMap[f])
   const { mode, toggleTheme } = useThemeMode()
+  const isBamboo = import.meta.env.VITE_SECRET_THEME === 'bamboo'
 
   const isNeutralPage = location.pathname === '/' || ALL_PLATFORM_PATHS.some(p => location.pathname.startsWith(p))
   const isRiskPath       = RISK_PATHS.some(p => location.pathname.startsWith(p))
@@ -1068,22 +1069,24 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
             )}
           </ListItemButton>
         </Tooltip>
-        <Tooltip title={collapsed ? (mode === 'dark' ? 'Light mode' : 'Dark mode') : ''} placement="right">
-          <ListItemButton
-            onClick={toggleTheme}
-            sx={{ borderRadius: 1.5, px: collapsed ? 0 : 1.5, py: 0.5, justifyContent: collapsed ? 'center' : 'flex-start' }}
-          >
-            <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 36, color: 'text.secondary' }}>
-              {mode === 'dark' ? <LightModeOutlined fontSize="small" /> : <DarkModeOutlined fontSize="small" />}
-            </ListItemIcon>
-            {!collapsed && (
-              <ListItemText
-                primary={mode === 'dark' ? 'Light mode' : 'Dark mode'}
-                primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }}
-              />
-            )}
-          </ListItemButton>
-        </Tooltip>
+        {!isBamboo && (
+          <Tooltip title={collapsed ? (mode === 'dark' ? 'Light mode' : 'Dark mode') : ''} placement="right">
+            <ListItemButton
+              onClick={toggleTheme}
+              sx={{ borderRadius: 1.5, px: collapsed ? 0 : 1.5, py: 0.5, justifyContent: collapsed ? 'center' : 'flex-start' }}
+            >
+              <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 36, color: 'text.secondary' }}>
+                {mode === 'dark' ? <LightModeOutlined fontSize="small" /> : <DarkModeOutlined fontSize="small" />}
+              </ListItemIcon>
+              {!collapsed && (
+                <ListItemText
+                  primary={mode === 'dark' ? 'Light mode' : 'Dark mode'}
+                  primaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }}
+                />
+              )}
+            </ListItemButton>
+          </Tooltip>
+        )}
         <Tooltip title={collapsed ? 'Sign out' : ''} placement="right">
           <ListItemButton
             onClick={logout}

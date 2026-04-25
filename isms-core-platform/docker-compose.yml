@@ -540,6 +540,8 @@ services:
   isms-core-frontend:
     build:
       context: ./frontend
+      args:
+        VITE_SECRET_THEME: ${VITE_SECRET_THEME:-}
     image: isms-core-frontend:latest
     container_name: isms-core-frontend
     environment:
