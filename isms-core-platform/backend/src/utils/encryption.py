@@ -1,7 +1,10 @@
 """Fernet symmetric encryption utility for connector config storage.
 
-Key is derived from SECRET_KEY env var (SHA-256 → 32 bytes → base64url).
-This ensures config_encrypted is tied to the deployment's secret key.
+Key is derived from SECRET_KEY env var using PBKDF2-HMAC-SHA256
+(600,000 iterations, fixed app salt) — NIST SP 800-132 compliant.
+
+Migration: run scripts/migrate_reencrypt_configs.py once after upgrading
+from v1 (SHA-256 derivation) to v2 (PBKDF2 derivation).
 """
 
 import base64
@@ -14,15 +17,31 @@ from cryptography.fernet import Fernet
 
 logger = logging.getLogger(__name__)
 
+# Fixed application salt — domain-separates the derived key from other uses
+# of SECRET_KEY. A fixed salt is appropriate here because SECRET_KEY is
+# already a strong random value; the iterations provide brute-force resistance.
+_SALT = b"isms-core-connector-config-v2"
+_ITERATIONS = 600_000
+
 
 def _get_fernet() -> Fernet:
     secret = os.environ.get("SECRET_KEY", "")
     if not secret:
         raise RuntimeError("SECRET_KEY env var is not set — cannot encrypt/decrypt connector config")
-    # Derive a 32-byte key from SECRET_KEY using SHA-256, then base64url-encode
+    key_bytes = hashlib.pbkdf2_hmac(
+        hash_name="sha256",
+        password=secret.encode(),
+        salt=_SALT,
+        iterations=_ITERATIONS,
+        dklen=32,
+    )
+    return Fernet(base64.urlsafe_b64encode(key_bytes))
+
+
+def _get_fernet_v1(secret: str) -> Fernet:
+    """Legacy SHA-256 derivation — used only by the migration script."""
     key_bytes = hashlib.sha256(secret.encode()).digest()
-    fernet_key = base64.urlsafe_b64encode(key_bytes)
-    return Fernet(fernet_key)
+    return Fernet(base64.urlsafe_b64encode(key_bytes))
 
 
 def encrypt_config(config: dict) -> str:
