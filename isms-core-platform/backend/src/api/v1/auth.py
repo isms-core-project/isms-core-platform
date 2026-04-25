@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from fastapi.responses import JSONResponse
 from jose import JWTError
 from pydantic import BaseModel
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session as DBSession
 
 from src.core.config import get_settings
@@ -99,7 +100,10 @@ def refresh(request: Request, db: DBSession = Depends(get_db)):
             user_agent = request.headers.get("user-agent")
             client_ip = request.client.host if request.client else None
             create_session(db, user, result["refresh_token"], client_ip, user_agent)
-    db.commit()
+    try:
+        db.commit()
+    except IntegrityError:
+        db.rollback()  # concurrent refresh already inserted this token — not an error
     return _token_response_with_cookie(result)
 
 
