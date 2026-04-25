@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BambooIcon } from './BambooIcon'
 import {
   Box,
   List,
@@ -690,7 +691,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
           }}
         >
           {isBamboo
-            ? <Box sx={{ fontSize: 22, lineHeight: 1, flexShrink: 0, userSelect: 'none' }}>🎋</Box>
+            ? <BambooIcon size={26} />
             : <ShieldOutlined sx={{ color: PRODUCT_COLORS[product], fontSize: 26, transition: 'color 0.2s', flexShrink: 0 }} />
           }
           {!collapsed && (

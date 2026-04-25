@@ -22,6 +22,7 @@ import {
   DarkModeOutlined,
   LightModeOutlined,
 } from '@mui/icons-material'
+import { BambooIcon } from '../components/BambooIcon'
 import { useAuth } from '../store/AuthContext'
 import { useThemeMode } from '../store/ThemeContext'
 
@@ -126,7 +127,7 @@ export default function Login() {
   const header = (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 4 }}>
       {isBamboo
-        ? <Box sx={{ fontSize: 32, lineHeight: 1, userSelect: 'none' }}>🎋</Box>
+        ? <BambooIcon size={36} />
         : <ShieldOutlined sx={{ color: 'primary.main', fontSize: 36 }} />
       }
       <Box>
