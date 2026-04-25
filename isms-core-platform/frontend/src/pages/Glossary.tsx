@@ -3,7 +3,7 @@ import {
   Alert, Box, Chip, CircularProgress, Divider, InputAdornment,
   Paper, Tab, Tabs, TextField, Typography,
 } from '@mui/material'
-import { CloudOutlined, PsychologyOutlined, SearchOutlined } from '@mui/icons-material'
+import { CloudOutlined, DnsOutlined, PsychologyOutlined, SearchOutlined } from '@mui/icons-material'
 import { useQuery } from '@tanstack/react-query'
 import { client } from '../api/client'
 import PageHeader from '../components/PageHeader'
@@ -26,8 +26,9 @@ interface GlossaryResponse {
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
-const CLOUD_ACCENT = '#0288d1'
-const AI_ACCENT    = '#ff6b35'
+const CLOUD_ACCENT  = '#0288d1'
+const AI_ACCENT     = '#ff6b35'
+const INFRA_ACCENT  = '#00897b'
 
 const CLOUD_PARTS = [
   { key: 'vocabulary',   label: 'Vocabulary',   subtitle: 'ISO/IEC 22123-1:2023 — Terms and definitions' },
@@ -39,6 +40,12 @@ const AI_PARTS = [
   { key: 'iso42001', label: 'ISO 42001:2023', subtitle: 'ISO/IEC 42001:2023 — AI Management System — Terms and definitions (Clause 3, 26 terms)' },
   { key: 'iso42005', label: 'ISO 42005:2025', subtitle: 'ISO/IEC 42005:2025 — AI System Impact Assessment — Terms and definitions (Clause 3–4, 9 terms + abbreviated terms)' },
   { key: 'iso22989', label: 'ISO 22989:2022', subtitle: 'ISO/IEC 22989:2022 — AI Concepts and Terminology — 117 terms across 7 categories (AI, data, machine learning, neural networks, trustworthiness, NLP, computer vision)' },
+]
+
+const INFRA_PARTS = [
+  { key: 'iso19395', label: 'ISO 19395:2015', subtitle: 'ISO/IEC 19395:2015 — Smart Data Centre Resource Monitoring — Terms, acronyms, and domain taxonomy (IT, Power, Fluid)' },
+  { key: 'iso30141', label: 'ISO 30141:2024', subtitle: 'ISO/IEC 30141:2024 — IoT Reference Architecture — Foundational, business/usage, functional, trustworthiness, and construction viewpoints' },
+  { key: 'iso24091', label: 'ISO 24091:2019', subtitle: 'ISO/IEC 24091:2019 — Data Centre Storage Power Efficiency — Taxonomy, definitions, test methodology, and power metrics' },
 ]
 
 // ── API ────────────────────────────────────────────────────────────────────────
@@ -60,7 +67,10 @@ function EntryCard({ entry, accent }: { entry: GlossaryEntry; accent: string }) 
         p: 2,
         bgcolor: '#0d1117',
         borderColor: 'divider',
-        '&:hover': { borderColor: accent, bgcolor: accent === AI_ACCENT ? '#1a0e08' : '#0a1520' },
+        '&:hover': {
+          borderColor: accent,
+          bgcolor: accent === AI_ACCENT ? '#1a0e08' : accent === INFRA_ACCENT ? '#081a18' : '#0a1520',
+        },
         transition: 'border-color 0.15s, background-color 0.15s',
       }}
     >
@@ -70,7 +80,7 @@ function EntryCard({ entry, accent }: { entry: GlossaryEntry; accent: string }) 
           size="small"
           sx={{
             fontSize: '0.68rem', height: 18, fontFamily: 'monospace',
-            bgcolor: accent === AI_ACCENT ? '#1a0e08' : '#0a1e30',
+            bgcolor: accent === AI_ACCENT ? '#1a0e08' : accent === INFRA_ACCENT ? '#081a18' : '#0a1e30',
             color: accent,
             border: `1px solid ${accent}40`, fontWeight: 600,
           }}
@@ -164,7 +174,7 @@ function GlossaryPanel({
             label={activeQuery}
             size="small"
             onDelete={() => { setActiveQuery(''); setSearchInput('') }}
-            sx={{ bgcolor: accent === AI_ACCENT ? '#1a0e08' : '#0a1e30', color: accent }}
+            sx={{ bgcolor: accent === AI_ACCENT ? '#1a0e08' : accent === INFRA_ACCENT ? '#081a18' : '#0a1e30', color: accent }}
           />
         </Box>
       )}
@@ -197,7 +207,7 @@ function GlossaryPanel({
                 <Chip
                   label={`${data.entries.length} entries`}
                   size="small"
-                  sx={{ bgcolor: accent === AI_ACCENT ? '#1a0e08' : '#0a1e30', color: accent, fontSize: '0.72rem' }}
+                  sx={{ bgcolor: accent === AI_ACCENT ? '#1a0e08' : accent === INFRA_ACCENT ? '#081a18' : '#0a1e30', color: accent, fontSize: '0.72rem' }}
                 />
                 <Divider orientation="vertical" flexItem />
                 <Typography variant="caption" color="text.disabled">{data.standard}</Typography>
@@ -218,13 +228,13 @@ function GlossaryPanel({
 // ── Main page ─────────────────────────────────────────────────────────────────
 
 export default function Glossary() {
-  const [domain, setDomain] = useState<'cloud' | 'ai'>('cloud')
+  const [domain, setDomain] = useState<'cloud' | 'ai' | 'infrastructure'>('cloud')
 
   return (
     <Box sx={{ p: 3, maxWidth: 1100 }}>
       <PageHeader
         title="Glossary"
-        subtitle="ISO/IEC standard terminology — Cloud computing (ISO 22123) and AI management (ISO 42001 · ISO 42005)"
+        subtitle="ISO/IEC standard terminology — Cloud computing (ISO 22123), AI management (ISO 42001 · ISO 42005 · ISO 22989), and Infrastructure & IoT (ISO 19395 · ISO 30141 · ISO 24091)"
       />
 
       {/* Top-level domain selector */}
@@ -247,6 +257,13 @@ export default function Glossary() {
           iconPosition="start"
           sx={{ textTransform: 'none', minHeight: 44, color: domain === 'ai' ? AI_ACCENT : undefined }}
         />
+        <Tab
+          value="infrastructure"
+          label="Infrastructure & IoT"
+          icon={<DnsOutlined sx={{ fontSize: 16 }} />}
+          iconPosition="start"
+          sx={{ textTransform: 'none', minHeight: 44, color: domain === 'infrastructure' ? INFRA_ACCENT : undefined }}
+        />
       </Tabs>
 
       {domain === 'cloud' && (
@@ -264,6 +281,15 @@ export default function Glossary() {
           parts={AI_PARTS}
           accent={AI_ACCENT}
           defaultPart="iso42001"
+        />
+      )}
+
+      {domain === 'infrastructure' && (
+        <GlossaryPanel
+          domain="infrastructure"
+          parts={INFRA_PARTS}
+          accent={INFRA_ACCENT}
+          defaultPart="iso19395"
         />
       )}
     </Box>

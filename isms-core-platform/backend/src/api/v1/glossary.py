@@ -1,4 +1,4 @@
-"""Glossary endpoints — ISO/IEC 22123 (Cloud), ISO/IEC 42001/42005/22989 (AI)."""
+"""Glossary endpoints — ISO/IEC 22123 (Cloud), ISO/IEC 42001/42005/22989 (AI), ISO/IEC 19395/30141/24091 (Infrastructure & IoT)."""
 
 import logging
 from typing import Annotated
@@ -21,6 +21,12 @@ _AI_STANDARDS = {
     "iso42001": "ISO/IEC 42001:2023",
     "iso42005": "ISO/IEC 42005:2025",
     "iso22989": "ISO/IEC 22989:2022",
+}
+
+_INFRA_STANDARDS = {
+    "iso19395": "ISO/IEC 19395:2015",
+    "iso30141": "ISO/IEC 30141:2024",
+    "iso24091": "ISO/IEC 24091:2019",
 }
 
 
@@ -51,7 +57,7 @@ def get_cloud_glossary(
 
 @router.get("/ai")
 def get_ai_glossary(
-    part: Annotated[str, Query(description="iso42001 | iso42005")] = "iso42001",
+    part: Annotated[str, Query(description="iso42001 | iso42005 | iso22989")] = "iso42001",
     q: Annotated[str | None, Query(description="Optional full-text search query")] = None,
 ):
     """Return AI management system glossary entries.
@@ -63,6 +69,31 @@ def get_ai_glossary(
     Optionally filter by **q** (full-text search within the selected part).
     """
     standard = _AI_STANDARDS.get(part, _AI_STANDARDS["iso42001"])
+
+    if q:
+        raw = search_service.search_iso_reference_by_standard(
+            query=q, standard=standard, max_results=20
+        )
+        return {"standard": standard, "part": part, "query": q, "results_text": raw, "entries": []}
+
+    entries = search_service.get_iso_reference_by_standard_all(standard=standard)
+    return {"standard": standard, "part": part, "query": None, "entries": entries}
+
+
+@router.get("/infrastructure")
+def get_infrastructure_glossary(
+    part: Annotated[str, Query(description="iso19395 | iso30141 | iso24091")] = "iso19395",
+    q: Annotated[str | None, Query(description="Optional full-text search query")] = None,
+):
+    """Return Infrastructure & IoT glossary entries.
+
+    - **part=iso19395** (default) — ISO/IEC 19395:2015 Smart Data Centre Resource Monitoring (terms, acronyms, domains)
+    - **part=iso30141** — ISO/IEC 30141:2024 IoT Reference Architecture (foundational, business, functional, trustworthiness, construction viewpoints)
+    - **part=iso24091** — ISO/IEC 24091:2019 Data Centre Storage Power Efficiency (taxonomy, test methodology, metrics)
+
+    Optionally filter by **q** (full-text search within the selected part).
+    """
+    standard = _INFRA_STANDARDS.get(part, _INFRA_STANDARDS["iso19395"])
 
     if q:
         raw = search_service.search_iso_reference_by_standard(
