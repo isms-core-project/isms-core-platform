@@ -854,6 +854,30 @@
       "file": "grc_skill_tsa_compliance.json",
       "chunks": 32,
       "standard": "TSA Security Directives"
+    },
+    {
+      "file": "iso_iec_22989_2022_en.json",
+      "source": "ISO_IEC_22989_2022(en).pdf",
+      "standard": "ISO/IEC 22989:2022",
+      "chunks": 9
+    },
+    {
+      "file": "iso_iec_19395_2015_en.json",
+      "source": "ISO_IEC_19395_2015(en).pdf",
+      "standard": "ISO/IEC 19395:2015",
+      "chunks": 3
+    },
+    {
+      "file": "iso_iec_30141_2024_en.json",
+      "source": "ISO_IEC_30141_2024(en).pdf",
+      "standard": "ISO/IEC 30141:2024",
+      "chunks": 4
+    },
+    {
+      "file": "iso_iec_24091_2019_en.json",
+      "source": "ISO_IEC_24091_2019(en).pdf",
+      "standard": "ISO/IEC 24091:2019",
+      "chunks": 3
     }
   ],
   "total_chunks": 13837,

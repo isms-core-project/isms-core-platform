@@ -1,0 +1,34 @@
+[
+  {
+    "clause_id": "30141.scope",
+    "title": "ISO/IEC 30141:2024 — Internet of Things Reference Architecture — Scope",
+    "text": "ISO/IEC 30141:2024 — Internet of things (IoT) — Reference architecture (Edition 2.0, 2024-08)\n\nScope: Provides a standardized IoT Reference Architecture (IoT RA) using a common vocabulary, reusable designs, and industry best practices. The architecture covers IoT systems from multiple viewpoints: foundational, business, usage, functional, trustworthiness, and construction.\n\nIoT Definition (from ISO/IEC 22989): infrastructure of interconnected entities, people, systems and information resources together with services that process and react to information from the physical world and virtual world.\n\nKey IoT stakeholders: IoT service providers, IoT service developers, IoT service users, IoT device vendors, network operators, regulatory authorities.\n\nThe IoT RA applies to: smart cities, smart homes, smart industry (Industry 4.0/RAMI 4.0), healthcare IoT, connected vehicles, smart agriculture, energy management, and environmental monitoring.",
+    "standard": "ISO/IEC 30141:2024",
+    "language": "en",
+    "source_file": "ISO_IEC_30141_2024(en).pdf"
+  },
+  {
+    "clause_id": "30141.6.2",
+    "title": "IoT Reference Architecture — Foundational viewpoint and view",
+    "text": "ISO/IEC 30141:2024 — Clause 6.2: Foundational IoT viewpoint and view\n\nThe foundational IoT view defines the fundamental structural elements of any IoT system:\n\nIoT component: basic building block of an IoT system with capabilities including:\n- Interaction capability: communication with other components\n- Processing capability: data computation and transformation\n- Sensing and actuation capability: physical world interface\n- Storage capability: data persistence\n- Management capability: self-management and configuration\n\nIoT system: collection of IoT components providing IoT functionalities.\nIoT environment: broader context in which IoT systems operate.\n\nKey relationships:\n- IoT devices connect to IoT gateways\n- IoT gateways connect to IoT platforms/cloud\n- IoT applications consume data from IoT platforms\n\nIoT component pattern (Clause 6.7.3): standardized pattern describing how IoT components interact, including: device capabilities, gateway functions, platform services, application interfaces.",
+    "standard": "ISO/IEC 30141:2024",
+    "language": "en",
+    "source_file": "ISO_IEC_30141_2024(en).pdf"
+  },
+  {
+    "clause_id": "30141.6.3-6.6",
+    "title": "IoT Reference Architecture — Business, usage, functional and trustworthiness viewpoints",
+    "text": "ISO/IEC 30141:2024 — Clauses 6.3-6.6: Multiple IoT viewpoints\n\n6.3 Business viewpoint: IoT business concerns including service models, monetization, stakeholder relationships, regulatory compliance, and value chains. Addresses: IoT service provider roles, contractual relationships, business process integration.\n\n6.4 Usage viewpoint: How IoT systems are used by stakeholders. Covers: use cases, usage scenarios, user interactions, accessibility, human factors. Examples: remote monitoring, automated control, predictive maintenance, asset tracking.\n\n6.5 Functional viewpoint: IoT system functional decomposition.\nExternal-facing functions: sensing, actuation, communication, data storage, data processing.\nInternal abstract function classes: device management, network management, data management, service management, security management, operations support.\n\n6.6 Trustworthiness viewpoint: IoT trustworthiness properties.\n- Security: protection against unauthorized access, data integrity, confidentiality\n- Safety: protection of physical environment and human health\n- Privacy: protection of personally identifiable information (PII)\n- Reliability: consistent correct behaviour\n- Resilience: recovery from failures and attacks\n- Common characteristics (Annex C): legacy support, network connectivity, unique identification, well-defined components, auto-configuration, content-awareness, context-awareness, discoverability, manageability, real-time capability, self-description, service subscription.",
+    "standard": "ISO/IEC 30141:2024",
+    "language": "en",
+    "source_file": "ISO_IEC_30141_2024(en).pdf"
+  },
+  {
+    "clause_id": "30141.annex-a",
+    "title": "IoT Reference Architecture — Construction viewpoint and IoT patterns",
+    "text": "ISO/IEC 30141:2024 — Clause 6.7 and Annex A: Construction viewpoint and additional IoT patterns\n\n6.7 Construction viewpoint: Physical and logical deployment architecture.\n- IoT architecture construction view: layered architecture (device, network, platform, application)\n- IoT component pattern: reusable architectural patterns for IoT components\n\nAnnex A — Additional IoT construction patterns:\n\nA.2 RAMI 4.0 pattern (Reference Architecture Model Industrie 4.0):\n- Three-dimensional architecture for Industry 4.0 / smart manufacturing\n- Axes: layers (business, functional, information, communication, integration, asset), life cycle, hierarchy levels\n- Supports digital twin concepts and manufacturing automation\n\nA.3 Dynamic IoT system pattern: supports dynamic addition/removal of IoT devices at runtime.\n\nA.4 IoT enterprise system pattern: integration of IoT with enterprise IT systems (ERP, CRM, MES).\n\nA.5 IoT enterprise networking pattern: network architecture for enterprise IoT deployments.\n\nA.6 IoT enterprise usage pattern: usage scenarios for enterprise IoT implementations including roles and activities.\n\nSecurity considerations: IoT security must address device authentication, encrypted communication, secure boot, firmware integrity, access control, and audit logging — all aligning with ISO/IEC 27001 A.8 controls.",
+    "standard": "ISO/IEC 30141:2024",
+    "language": "en",
+    "source_file": "ISO_IEC_30141_2024(en).pdf"
+  }
+]

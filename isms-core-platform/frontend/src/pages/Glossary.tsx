@@ -38,6 +38,7 @@ const CLOUD_PARTS = [
 const AI_PARTS = [
   { key: 'iso42001', label: 'ISO 42001:2023', subtitle: 'ISO/IEC 42001:2023 — AI Management System — Terms and definitions (Clause 3, 26 terms)' },
   { key: 'iso42005', label: 'ISO 42005:2025', subtitle: 'ISO/IEC 42005:2025 — AI System Impact Assessment — Terms and definitions (Clause 3–4, 9 terms + abbreviated terms)' },
+  { key: 'iso22989', label: 'ISO 22989:2022', subtitle: 'ISO/IEC 22989:2022 — AI Concepts and Terminology — 117 terms across 7 categories (AI, data, machine learning, neural networks, trustworthiness, NLP, computer vision)' },
 ]
 
 // ── API ────────────────────────────────────────────────────────────────────────

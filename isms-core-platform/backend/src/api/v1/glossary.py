@@ -1,4 +1,4 @@
-"""Glossary endpoints — ISO/IEC 22123 (Cloud) and ISO/IEC 42001/42005 (AI)."""
+"""Glossary endpoints — ISO/IEC 22123 (Cloud), ISO/IEC 42001/42005/22989 (AI)."""
 
 import logging
 from typing import Annotated
@@ -20,6 +20,7 @@ _CLOUD_STANDARDS = {
 _AI_STANDARDS = {
     "iso42001": "ISO/IEC 42001:2023",
     "iso42005": "ISO/IEC 42005:2025",
+    "iso22989": "ISO/IEC 22989:2022",
 }
 
 
@@ -57,6 +58,7 @@ def get_ai_glossary(
 
     - **part=iso42001** (default) — ISO/IEC 42001:2023 terms and definitions (26 terms, Clause 3)
     - **part=iso42005** — ISO/IEC 42005:2025 terms and definitions (9 terms + abbreviated terms, Clause 3–4)
+    - **part=iso22989** — ISO/IEC 22989:2022 AI concepts and terminology (117 terms, 7 subcategories)
 
     Optionally filter by **q** (full-text search within the selected part).
     """
