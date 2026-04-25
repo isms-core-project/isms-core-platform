@@ -187,6 +187,15 @@ export function createBambooTheme() {
     },
     shape: { borderRadius: 8 },
     components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          'input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active': {
+            WebkitBoxShadow: '0 0 0 1000px #141e19 inset !important',
+            WebkitTextFillColor: '#e8efe9 !important',
+            caretColor: '#e8efe9',
+          },
+        },
+      },
       MuiCard: {
         styleOverrides: {
           root: {
