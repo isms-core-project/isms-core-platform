@@ -46,7 +46,7 @@ services:
   # ── Core infrastructure (always on) ────────────────────────────────────────
 
   isms-core-postgres:
-    image: postgres:18-alpine
+    image: postgres:17-alpine
     container_name: isms-core-postgres
     environment:
       TZ: ${TZ:-Europe/Zurich}
