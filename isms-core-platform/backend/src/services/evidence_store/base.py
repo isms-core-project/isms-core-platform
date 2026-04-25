@@ -18,6 +18,10 @@ class EvidenceItem:
     control_ids: list[str] = field(default_factory=list)
     tags: list[str] = field(default_factory=list)
     collected_at: datetime | None = None
+    # Per-source routing (Phase 39a)
+    source_system: str = ""      # e.g. "entra_id", "o365", "defender"
+    os_index: str = ""           # target OpenSearch index; empty = fall back to evidence-{org_id}
+    promoted: dict[str, Any] = field(default_factory=dict)  # promoted fields from raw payload
     # Populated after upsert
     doc_id: str = ""
     file_refs: list[str] = field(default_factory=list)

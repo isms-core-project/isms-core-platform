@@ -1409,3 +1409,51 @@ def revoke_session(
     db.delete(s)
     db.commit()
     return {"ok": True}
+
+
+# ---------------------------------------------------------------------------
+# Evidence Indices diagnostic (Phase 39a)
+# ---------------------------------------------------------------------------
+
+_EVIDENCE_INDICES = [
+    "evidence-entra-id",
+    "evidence-o365",
+    "evidence-defender",
+    "evidence-sentinel",
+    "evidence-intune",
+    "evidence-crowdstrike",
+    "evidence-sentinelone",
+    "evidence-tenable",
+    "evidence-qualys",
+]
+
+
+@router.get("/evidence-indices", tags=["admin"])
+def evidence_indices(_user=Depends(require_admin)):
+    """Return doc counts for each per-source evidence index in OpenSearch."""
+    try:
+        from opensearchpy import OpenSearch
+        from src.core.config import get_settings
+        client = OpenSearch(
+            hosts=[get_settings().opensearch_url],
+            use_ssl=False, verify_certs=False, timeout=10,
+        )
+        if not client.ping():
+            return {"available": False, "indices": []}
+    except Exception as exc:
+        return {"available": False, "error": str(exc), "indices": []}
+
+    result = []
+    for idx in _EVIDENCE_INDICES:
+        try:
+            exists = client.indices.exists(index=idx)
+            if exists:
+                stats = client.count(index=idx)
+                count = stats.get("count", 0)
+            else:
+                count = None
+            result.append({"index": idx, "exists": exists, "doc_count": count})
+        except Exception as exc:
+            result.append({"index": idx, "exists": False, "doc_count": None, "error": str(exc)})
+
+    return {"available": True, "indices": result}

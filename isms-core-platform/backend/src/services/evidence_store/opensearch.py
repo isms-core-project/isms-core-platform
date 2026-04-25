@@ -51,9 +51,14 @@ class OpenSearchEvidenceStore(EvidenceStore):
             "file_refs": item.file_refs,
             "collected_at": (item.collected_at or datetime.now(timezone.utc)).isoformat(),
             "status": "active",
+            "source_system": item.source_system or "",
         }
 
-        index = _index(item.org_id)
+        # Merge source-specific promoted fields (Phase 39a)
+        if item.promoted:
+            doc.update(item.promoted)
+
+        index = item.os_index if item.os_index else _index(item.org_id)
         client.index(index=index, id=doc_id, body=doc)
         logger.debug("upserted evidence %s → %s/%s", item.resource_id, index, doc_id)
         item.doc_id = doc_id

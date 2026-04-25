@@ -19,9 +19,157 @@ from src.schemas.connectors import ConnectorEvidenceIngest, ConnectorRegister
 logger = logging.getLogger(__name__)
 
 
+_ROUTED_SOURCES = {
+    "entra_id", "o365", "defender", "sentinel", "intune",
+    "crowdstrike", "sentinelone",
+    "tenable_sc", "tenable_io", "qualys",
+}
+
+
+def _promote_fields(source_system: str, raw: dict) -> dict:
+    """Extract source-specific fields from raw payload into typed top-level fields.
+
+    Best-effort: unknown keys are silently skipped. The promoted dict is merged
+    into the OpenSearch document alongside the standard fields.
+    """
+    if not raw:
+        return {}
+    p: dict = {}
+
+    if source_system == "entra_id":
+        for src, dst in [
+            ("userPrincipalName", "user_principal"),
+            ("displayName",       "display_name"),
+            ("department",        "department"),
+            ("jobTitle",          "job_title"),
+            ("accountEnabled",    "account_enabled"),
+            ("isCompliant",       "is_compliant"),
+            ("isManaged",         "is_managed"),
+            ("deviceOwnership",   "device_ownership"),
+            ("operatingSystem",   "os_name"),
+            ("mail",              "email"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+        groups = raw.get("groupMemberships") or raw.get("memberOf") or []
+        if groups:
+            p["group_names"] = [g.get("displayName", g) if isinstance(g, dict) else g for g in groups]
+
+    elif source_system == "o365":
+        for src, dst in [
+            ("Operation",      "operation"),
+            ("Workload",       "workload"),
+            ("ObjectId",       "object_id"),
+            ("UserId",         "user_id"),
+            ("UserType",       "user_type"),
+            ("ExternalAccess", "external_access"),
+            ("ClientIP",       "client_ip"),
+            ("ResultStatus",   "result_status"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "defender":
+        for src, dst in [
+            ("severity",       "alert_severity"),
+            ("status",         "alert_status"),
+            ("machineId",      "machine_id"),
+            ("osPlatform",     "os_platform"),
+            ("relatedCveId",   "cve_id"),
+            ("category",       "alert_category"),
+            ("alertId",        "alert_id"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "sentinel":
+        for src, dst in [
+            ("severity",       "alert_severity"),
+            ("status",         "incident_status"),
+            ("incidentNumber", "incident_number"),
+            ("title",          "incident_title"),
+            ("tactics",        "tactics"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "intune":
+        for src, dst in [
+            ("complianceState",  "compliance_state"),
+            ("deviceName",       "device_name"),
+            ("osVersion",        "os_version"),
+            ("managedDeviceId",  "device_id"),
+            ("userPrincipalName","user_principal"),
+            ("manufacturer",     "manufacturer"),
+            ("model",            "model"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "crowdstrike":
+        for src, dst in [
+            ("Severity",        "alert_severity"),
+            ("Status",          "alert_status"),
+            ("ComputerName",    "machine_name"),
+            ("Tactic",          "tactic"),
+            ("Technique",       "technique"),
+            ("EventType",       "event_type"),
+            ("HostGroups",      "host_groups"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "sentinelone":
+        for src, dst in [
+            ("severity",        "alert_severity"),
+            ("agentComputerName","machine_name"),
+            ("classification",  "classification"),
+            ("mitreTechnique",  "technique"),
+            ("mitreTactic",     "tactic"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system in ("tenable_sc", "tenable_io"):
+        for src, dst in [
+            ("severity",        "severity"),
+            ("cvssV3BaseScore", "cvss_score"),
+            ("pluginName",      "plugin_name"),
+            ("pluginId",        "plugin_id"),
+            ("assetId",         "asset_id"),
+            ("hostDnsName",     "fqdn"),
+            ("cve",             "cve_id"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    elif source_system == "qualys":
+        for src, dst in [
+            ("Severity",        "severity"),
+            ("QdsScore",        "qds_score"),
+            ("Title",           "plugin_name"),
+            ("Qid",             "plugin_id"),
+            ("Fqdn",            "fqdn"),
+            ("Type",            "detection_type"),
+            ("Cve",             "cve_id"),
+        ]:
+            if src in raw:
+                p[dst] = raw[src]
+
+    return p
+
+
 def _build_evidence_item(connector: Connector, item: ConnectorEvidenceIngest):
     """Map ConnectorEvidenceIngest → EvidenceItem for OpenSearch upsert."""
     from src.services.evidence_store.base import EvidenceItem
+
+    src_sys = connector.source_system or ""
+    routed = src_sys in _ROUTED_SOURCES
+    # tenable_sc + tenable_io share one index; strip trailing version suffix
+    _index_name = "tenable" if src_sys in ("tenable_sc", "tenable_io") else src_sys.replace("_", "-")
+    os_index = f"evidence-{_index_name}" if routed else ""
+    promoted = _promote_fields(src_sys, item.raw or {}) if routed else {}
+
     return EvidenceItem(
         connector_id=str(connector.id),
         org_id=str(connector.organisation_id),
@@ -33,6 +181,9 @@ def _build_evidence_item(connector: Connector, item: ConnectorEvidenceIngest):
         control_ids=[item.group_code],
         tags=[t for t in [item.status, item.classification] if t],
         collected_at=item.event_date,
+        source_system=src_sys,
+        os_index=os_index,
+        promoted=promoted,
     )
 
 
