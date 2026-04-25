@@ -470,7 +470,7 @@ Log in as admin → **Admin → First-Run Setup**. Run in order, top to bottom:
 | **Evidence** | Upload and link evidence to control groups and requirements |
 | **Coverage** | Heatmap of Framework and Operational coverage |
 | **QA** | Existence checker — validates artifact completeness across all five products |
-| **Compliance Assessments** | 23 frameworks — NIST CSF 2.0, NIS2, DORA, CIS v8, BSI, TISAX, Swiss nDSG/ISG, EU AI Act, NIST AI RMF, and more |
+| **Compliance Assessments** | 25 frameworks — NIST CSF 2.0, NIS2, DORA, CIS v8, BSI, TISAX, Swiss nDSG/ISG, EU AI Act, NIST AI RMF, NCSC CAF v4.0, ReCyF v2.5 (FR NIS2), and more |
 | **Risk Register** | Risk register — empty, ready for data entry |
 | **KPI Metrics** | KPI dashboard — empty, ready for data entry |
 | **TPRM** | Third-party risk management — empty, ready for data entry |

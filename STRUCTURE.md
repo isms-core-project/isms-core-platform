@@ -38,10 +38,9 @@ factory_isms/
 │
 ├── README.md                  # Project overview and quick start
 ├── PARADIGM.md                # Product overview and paradigm shift guide
-├── PLATFORM.md                # Platform architecture, features, deployment guide
+├── PLATFORM.md                # Platform architecture, features, and full deployment guide (setup instructions included)
 ├── STRUCTURE.md               # This file
-├── COMPLIANCE.md              # 23 compliance assessment modules — coverage notes
-├── GETTING-STARTED.md         # Platform quick-start (Docker Compose)
+├── COMPLIANCE.md              # 25 compliance assessment modules — coverage notes
 ├── CONTRIBUTING.md            # QA process and standards
 ├── PHILOSOPHY.md              # Anti-cargo-cult methodology
 ├── CODE_OF_CONDUCT.md         # Community standards
@@ -54,6 +53,7 @@ factory_isms/
 ├── isms-core-cloud/           # ☁️ ISO 27018:2025 — Cloud Extension Pack
 ├── isms-core-ai/              # 🤖 ISO 42001:2023 — AI Extension Pack
 ├── isms-core-platform/        # 🖥️ Platform Deployment Package
+├── USER_MANUAL/               # 📖 Full user manual (15 chapters) — served in-app at /docs/user-manual.md
 ├── COMPLIANCE.md              # 📋 Assessment module coverage
 └── screenshots/               # Platform UI screenshots
 ```
@@ -246,8 +246,13 @@ isms-core-platform/
 │       ├── iso27001.json                  # ISO 27001:2022 control structure
 │       ├── nist_csf2.json                 # NIST CSF 2.0 subcategories
 │       ├── mitre_attck_v18.json           # MITRE ATT&CK v18 STIX bundle
-│       ├── crosswalk.json                 # 3,915 cross-framework mappings
-│       └── ...                            # DORA, NIS2, BSI, TISAX, etc.
+│       ├── crosswalk.json                 # 3,315 cross-framework mappings / 41 axes
+│       ├── ncsc_caf.json                  # NCSC CAF v4.0 (59 controls / 41 outcomes)
+│       ├── fr_nis2_recyf.json             # ReCyF v2.5 — France NIS2 (172 nodes)
+│       └── ...                            # DORA, NIS2, BSI, TISAX, and more
+│
+├── dashboards/                            # OpenSearch Dashboards automation
+│   └── setup.py                           # Provisions 5 automated dashboards on first run
 │
 ├── certs/                                 # TLS certificate mount point
 │   ├── cert.pem                           # Custom cert (optional — auto-generated if absent)
@@ -269,8 +274,9 @@ isms-core-platform/
 | `isms-core-opensearch` | OpenSearch 3.x — full-text search + threat intelligence |
 | `isms-core-worker` | Celery worker — background import and sync tasks |
 | `isms-core-beat` | Celery Beat — nightly evidence archive (02:00 UTC), daily KPI snapshot (06:00 UTC) |
-| `isms-core-feeds` | Threat intelligence scheduler — MITRE ATT&CK, ATLAS, CISA KEV, EPSS, NVD CVE/CPE |
+| `isms-core-feeds` | Threat intelligence scheduler — MITRE ATT&CK, ATLAS, CISA KEV, EPSS, NVD CVE/CPE, ENISA EUVD |
 | `isms-core-connectors` | Automated evidence runner — 44 connectors, runs continuously |
+| `isms-core-dashboards-setup` | One-shot OpenSearch Dashboards provisioning — imports 5 automated dashboards at startup |
 
 Optional profiles: `--profile mailpit` (local email catcher), `--profile smtp-bridge` (M365/OAuth email)
 

@@ -446,7 +446,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | 🔒 Privacy | 21 / 21 | 23 PRIV-POL · 42 IMPs · 21 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
 | ☁️ Cloud | 12 / 12 | 12 CLD-POL · 24 IMPs · 12 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
 | 🤖 AI | 12 / 12 | 14 AI-POL · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
-| 🖥️ Platform | 99 total | 44 connectors · 23 assessments · 3,915 mappings | 7 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
+| 🖥️ Platform | 99 total | 44 connectors · 25 assessments · 3,315 mappings / 41 axes | 7 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
 
 ---
 
@@ -464,7 +464,7 @@ See [STRUCTURE.md](STRUCTURE.md) for the complete repository map with per-folder
 | [PLATFORM.md](PLATFORM.md) | 🖥️ Platform architecture, features, and full deployment guide |
 | [STRUCTURE.md](STRUCTURE.md) | 📂 Repository map — all folders and artifact types explained |
 | [COMPLIANCE.md](COMPLIANCE.md) | 📋 All 25 compliance assessment modules — coverage notes, gaps, audience |
-| [GETTING-STARTED.md](GETTING-STARTED.md) | 🚀 Platform quick-start (Docker Compose) |
+| [PLATFORM.md](PLATFORM.md#production-deployment--step-by-step) | 🚀 Platform deployment guide — Docker Compose setup instructions |
 | [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 Framework control pack index (53 packs) |
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A controls → 53 pack mapping |
 | [isms-core-framework/STACKING.md](isms-core-framework/STACKING.md) | 🔗 Control grouping methodology |

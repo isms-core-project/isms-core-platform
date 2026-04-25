@@ -370,12 +370,12 @@ Claude Code (Anthropic, Sonnet model family) has been the primary implementation
 <tr>
 <td><strong>Python Scripts</strong></td>
 <td>Workbook Generators</td>
-<td><strong>274</strong> scripts total — 188 (FW) + 53 (OP) + 21 (PRIV) + 12 (CLD)</td>
+<td><strong>284</strong> scripts total — 188 (FW) + 53 (OP) + 21 (PRIV) + 12 (CLD) + 10 (AI)</td>
 </tr>
 <tr>
 <td><strong>IMP Documents</strong></td>
 <td>User Guides (UG) + Technical Specifications (TG) for every assessment</td>
-<td><strong>442</strong> files — 376 FW (188 UG + 188 TG) + 42 PRIV + 24 CLD</td>
+<td><strong>462</strong> files — 376 FW (188 UG + 188 TG) + 42 PRIV + 24 CLD + 20 AI</td>
 </tr>
 <tr>
 <td><strong>POL Documents</strong></td>
@@ -413,7 +413,7 @@ April 2026:         ISMS CORE AI (ISO 42001:2023) -> 12 Control Groups Completed
 
 ### Platform
 
-The **ISMS CORE Platform** (`isms-core-platform/`) is live — a FastAPI backend with PostgreSQL, Docker Compose deployment, nginx TLS, and framework correlation engine. It transforms the file-based framework into a live compliance platform: DB-driven, WebUI-editable, with evidence tracking, gap management, crosswalk mapping across 18+ regulatory frameworks, and 44 automated evidence connectors.
+The **ISMS CORE Platform** (`isms-core-platform/`) is live — a FastAPI backend with PostgreSQL, OpenSearch, Docker Compose deployment, nginx TLS, and framework correlation engine. It transforms the file-based framework into a live compliance platform: DB-driven, WebUI-editable, with evidence tracking, gap management, 25 compliance assessment modules, crosswalk mapping across 41 axes (3,315 objects), and 44 automated evidence connectors pushing live evidence into per-source OpenSearch indices.
 
 <p align="center">
   <em>Built with the conviction that security compliance should be engineering discipline, not checkbox theater.</em>

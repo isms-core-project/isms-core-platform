@@ -644,7 +644,7 @@ The Platform also includes 44 native connectors (Microsoft, network, identity, v
 
 **Platform is additive, never mandatory.** Framework and Operational are the product. Platform is the engine that makes it operational at scale.
 
-See [PLATFORM.md](PLATFORM.md) for architecture details and [GETTING-STARTED.md](GETTING-STARTED.md) for setup instructions.
+See [PLATFORM.md](PLATFORM.md) for architecture details and deployment instructions.
 
 ---
 
