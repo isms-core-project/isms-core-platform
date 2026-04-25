@@ -53,6 +53,42 @@ const KNOWN_UPDATES: Record<string, { latest: string; status: 'pending' | 'avail
   },
 }
 
+// ISO Reference Corpus & Glossary Standards — static registry
+interface CorpusStandardRow {
+  standard: string
+  title: string
+  domain: string
+  edition: string
+  status: 'current' | 'pending'
+  note?: string
+  eta?: string
+}
+
+const CORPUS_STANDARDS: CorpusStandardRow[] = [
+  // Pending
+  { standard: 'ISO/IEC 27000',      title: 'Information security management — Overview and vocabulary', domain: 'ISMS',             edition: 'FDIS (replacing 2018)', status: 'pending', note: 'FDIS ballot in progress — replaces ISO/IEC 27000:2018 with updated terminology aligned to ISO 27001:2022.', eta: '~June 2026' },
+  // Cloud
+  { standard: 'ISO/IEC 22123-1:2023', title: 'Cloud computing — Vocabulary', domain: 'Cloud Computing',  edition: '2023', status: 'current' },
+  { standard: 'ISO/IEC 22123-2:2023', title: 'Cloud computing — Concepts',   domain: 'Cloud Computing',  edition: '2023', status: 'current' },
+  { standard: 'ISO/IEC 22123-3:2023', title: 'Cloud computing — Reference Architecture (CCRA)', domain: 'Cloud Computing', edition: '2023', status: 'current' },
+  // AI
+  { standard: 'ISO/IEC 42001:2023',  title: 'AI management system (AIMS)',    domain: 'AI Management',    edition: '2023', status: 'current' },
+  { standard: 'ISO/IEC 42005:2025',  title: 'AI system impact assessment',    domain: 'AI Management',    edition: '2025', status: 'current' },
+  { standard: 'ISO/IEC 22989:2022',  title: 'AI concepts and terminology',    domain: 'AI Management',    edition: '2022', status: 'current' },
+  // Infrastructure & IoT
+  { standard: 'ISO/IEC 19395:2015',  title: 'Smart data centre resource monitoring', domain: 'Infrastructure', edition: '2015', status: 'current' },
+  { standard: 'ISO/IEC 30141:2024',  title: 'IoT reference architecture',     domain: 'IoT',              edition: '2024', status: 'current' },
+  { standard: 'ISO/IEC 24091:2019',  title: 'Data centre storage power efficiency', domain: 'Infrastructure', edition: '2019', status: 'current' },
+]
+
+const DOMAIN_COLOR: Record<string, string> = {
+  'ISMS':             '#455A64',
+  'Cloud Computing':  '#0288d1',
+  'AI Management':    '#ff6b35',
+  'Infrastructure':   '#00897b',
+  'IoT':              '#6d4c41',
+}
+
 // Jurisdiction → display label
 const JURISDICTION_LABEL: Record<string, string> = {
   INT: 'International',
@@ -279,11 +315,85 @@ export default function FrameworkTracker() {
         ))
       }
 
+      {/* ISO Reference Corpus & Glossary Standards */}
+      <Box sx={{ mt: 4, mb: 1 }}>
+        <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 0.5 }}>
+          ISO Reference Corpus &amp; Glossary Standards
+        </Typography>
+        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
+          ISO/IEC normative texts indexed in the reference corpus and exposed via the Glossary page.
+        </Typography>
+        <TableContainer sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 1 }}>
+          <Table size="small">
+            <TableHead>
+              <TableRow sx={{ bgcolor: 'background.paper' }}>
+                <TableCell sx={{ fontSize: '0.68rem', fontWeight: 700, color: 'text.secondary', textTransform: 'uppercase' }}>Standard</TableCell>
+                <TableCell sx={{ fontSize: '0.68rem', fontWeight: 700, color: 'text.secondary', textTransform: 'uppercase' }}>Title</TableCell>
+                <TableCell sx={{ fontSize: '0.68rem', fontWeight: 700, color: 'text.secondary', textTransform: 'uppercase' }}>Domain</TableCell>
+                <TableCell sx={{ fontSize: '0.68rem', fontWeight: 700, color: 'text.secondary', textTransform: 'uppercase' }}>Edition</TableCell>
+                <TableCell sx={{ fontSize: '0.68rem', fontWeight: 700, color: 'text.secondary', textTransform: 'uppercase' }}>Status</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {CORPUS_STANDARDS.map(s => (
+                <TableRow key={s.standard} hover sx={{ '&:last-child td': { border: 0 } }}>
+                  <TableCell>
+                    <Typography variant="body2" sx={{ fontWeight: 600, fontSize: '0.78rem', fontFamily: 'monospace' }}>
+                      {s.standard}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography variant="body2" sx={{ fontSize: '0.75rem' }}>{s.title}</Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Chip
+                      label={s.domain}
+                      size="small"
+                      sx={{
+                        height: 18, fontSize: '0.6rem',
+                        bgcolor: `${DOMAIN_COLOR[s.domain] ?? '#455A64'}22`,
+                        color: DOMAIN_COLOR[s.domain] ?? '#455A64',
+                        fontWeight: 600,
+                      }}
+                    />
+                  </TableCell>
+                  <TableCell>
+                    <Typography variant="body2" sx={{ fontSize: '0.75rem', fontFamily: 'monospace' }}>
+                      {s.edition}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    {s.status === 'current' && (
+                      <Chip
+                        icon={<CheckCircleOutlined sx={{ fontSize: 13 }} />}
+                        label="Current"
+                        size="small"
+                        sx={{ height: 18, fontSize: '0.6rem', bgcolor: 'rgba(76,175,80,0.1)', color: '#4CAF50', '& .MuiChip-icon': { color: '#4CAF50' } }}
+                      />
+                    )}
+                    {s.status === 'pending' && (
+                      <Tooltip title={`${s.note ?? ''}${s.eta ? ` ETA: ${s.eta}` : ''}`}>
+                        <Chip
+                          icon={<UpdateOutlined sx={{ fontSize: 13 }} />}
+                          label={`Pending${s.eta ? ` (${s.eta})` : ''}`}
+                          size="small"
+                          sx={{ height: 18, fontSize: '0.6rem', bgcolor: 'rgba(66,165,245,0.1)', color: '#42A5F5', '& .MuiChip-icon': { color: '#42A5F5' } }}
+                        />
+                      </Tooltip>
+                    )}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
+
       <Typography variant="caption" color="text.disabled" sx={{ fontSize: '0.62rem', display: 'block', mt: 2 }}>
         <InfoOutlined sx={{ fontSize: 12, verticalAlign: 'middle', mr: 0.5 }} />
-        Datasets are loaded from <code>datasets/data/*.json</code> on backend startup.
-        To update a framework, replace its JSON bundle and rebuild the backend.
-        Update availability is tracked in <code>FrameworkTracker.tsx</code> → <code>KNOWN_UPDATES</code>.
+        Compliance datasets loaded from <code>datasets/data/*.json</code> on backend startup.
+        ISO corpus seed files live in <code>datasets/data/iso-reference/</code>.
+        Update availability tracked in <code>FrameworkTracker.tsx</code> → <code>KNOWN_UPDATES</code> and <code>CORPUS_STANDARDS</code>.
       </Typography>
     </Box>
   )
