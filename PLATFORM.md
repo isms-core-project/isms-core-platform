@@ -113,6 +113,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | `isms-core-worker` | Celery 5.3 | Background tasks — import, sync, compliance recalculation. Queue: `isms`. |
 | `isms-core-beat` | Celery Beat | Scheduled jobs — nightly evidence archive at 02:00 UTC; daily KPI snapshots at 06:00 UTC. No healthcheck (by design). |
 | `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, FIRST EPSS, NVD CVE/CPE, ENISA EUVD. Writes to Postgres and OpenSearch. Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `FEEDS_EUVD_ENABLED`, `NIST_API_KEY`. |
+| `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (`--profile threat-intel`) OSINT IOC feed container — CIRCL MISP, Botvrij MISP, AbuseIPDB blacklist, Malpedia. Serves on-demand trigger server on port 9002 for backend-initiated feed runs. Env: `ABUSEIPDB_API_KEY`, `SHODAN_API_KEY`, `MALPEDIA_API_KEY`, `TI_MISP_IMPORT_FROM_DATE`. |
 | `isms-core-connectors` | Python 3.12 | Automated evidence runner — loads all 44 connectors dynamically, pushes evidence to `connector_evidence` table. Env: `CONNECTORS_WORKER_SECRET`. |
 
 > **Access in production:** `https://{HOST_IP}` via nginx. Do NOT access `:3000` or `:8000` directly — those ports are not exposed in production.
@@ -128,6 +129,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 > | `--profile opensearch-cluster` | Replaces the single OpenSearch node with a 3-node cluster (`isms-core-os01/02/03`) for HA and horizontal search capacity. Set `OPENSEARCH_HEAP` per node (e.g. `4g` for 3×4 GB on a 32 GB host). |
 > | `--profile garage` | Adds `isms-core-garage` — a Garage S3-compatible object store for evidence files and index snapshots. Requires `GARAGE_RPC_SECRET`, `GARAGE_ACCESS_KEY`, `GARAGE_SECRET_KEY`. |
 > | `--profile dashboards` | Adds `isms-core-opensearch-dashboards` (port 5601). Set `DASHBOARDS_BIND=0.0.0.0` to reach it from the LAN. |
+> | `--profile threat-intel` | Adds `isms-core-threat-intel` — OSINT IOC feed container (CIRCL MISP, Botvrij MISP, AbuseIPDB, Malpedia). Requires `ABUSEIPDB_API_KEY`. Set `VITE_THREAT_INTEL_ENABLED=true` to show the Intelligence sidebar section in the frontend. |
 > | `--profile smtp-bridge` | Adds `isms-core-smtp-bridge` — an OAuth relay for Microsoft 365 / Exchange Online. Requires `SMTP_BRIDGE_*` credentials. |
 > | `--profile mailpit` | Adds `isms-core-mailpit` — local mail catcher for dev/test (port 8025). Never use in production. |
 >
@@ -585,6 +587,60 @@ docker compose --profile mailpit up -d
 
 ---
 
+## Threat Intelligence — OSINT IOC Feeds
+
+The `isms-core-threat-intel` container is an optional profile that adds OSINT IOC intelligence on top of the standard vulnerability feeds. Activate it with:
+
+```bash
+docker compose --profile threat-intel up -d
+```
+
+Set `VITE_THREAT_INTEL_ENABLED=true` in `.env` before building the frontend to show the **IOC Explorer**, **IP Enrichment**, and **Malware Atlas** sidebar entries.
+
+### Feed sources
+
+| Feed | Schedule | API key | What it ingests |
+|------|----------|---------|-----------------|
+| **CIRCL MISP** | Every 6h (delta) | None (public) | IOCs (IPs, domains, URLs, hashes) with ATT&CK TIDs + Malpedia galaxy tags |
+| **Botvrij MISP** | Every 6h (delta, staggered) | None (public) | Same schema — deduplicated against CIRCL by `(ioc_type, value, source)` |
+| **AbuseIPDB blacklist** | Daily (02:00 UTC) | `ABUSEIPDB_API_KEY` | Top 10,000 confidence=100 abusive IPs → `ti_iocs` + `ti-abuseipdb-blacklist` OpenSearch index |
+| **Malpedia** | Weekly (Sunday 03:00 UTC) | `MALPEDIA_API_KEY` (optional) | Malware families (aliases, descriptions, ATT&CK TIDs); actor data requires key |
+
+**On-demand enrichment** (no schedule — triggered from the IP Enrichment page):
+- **AbuseIPDB check** — single-IP abuse score, report count, categories; 24h cache in `ti_enrichment_cache`
+- **Shodan** — open ports, banners, CVEs, hostnames; paid API (`SHODAN_API_KEY`) or free InternetDB fallback
+
+### First-run behaviour
+
+On first start (or when `TI_RUN_ON_START=true`), each feed runs immediately rather than waiting for its scheduled window. Subsequent runs are delta-only for MISP (only new manifest UUIDs fetched).
+
+Control the MISP history depth on first run:
+```env
+TI_MISP_IMPORT_FROM_DATE=2024-01-01   # default — 2-year window
+# TI_MISP_IMPORT_FROM_DATE=2000-01-01  # full history (slow first run)
+```
+
+### OpenSearch indices
+
+| Index | Feed |
+|-------|------|
+| `ti-misp-circl` | CIRCL MISP |
+| `ti-misp-botvrij` | Botvrij MISP |
+| `ti-abuseipdb-blacklist` | AbuseIPDB blacklist |
+| `ti-malpedia-families` | Malpedia malware families |
+| `ti-malpedia-actors` | Malpedia threat actors |
+
+### Disabling individual feeds
+
+```env
+TI_MISP_CIRCL_ENABLED=false      # disable CIRCL MISP
+TI_MISP_BOTVRIJ_ENABLED=false     # disable Botvrij MISP
+TI_ABUSEIPDB_ENABLED=false        # disable AbuseIPDB blacklist
+TI_MALPEDIA_ENABLED=false         # disable Malpedia
+```
+
+---
+
 ## Enterprise Deployment — OpenSearch Cluster + Dashboards
 
 The standard stack runs a single OpenSearch node (`isms-core-opensearch`). For production deployments with higher search capacity or HA requirements, activate the 3-node cluster profile. OpenSearch Dashboards can be added independently of the cluster profile.
@@ -844,6 +900,16 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 | `FEEDS_CPE_FULL` | No | Set to `true` to enable NVD CPE Option B |
 | `FEEDS_EUVD_ENABLED` | No | Set to `false` to disable ENISA EUVD feed (default: true) |
 | `NIST_API_KEY` | No | NVD API key — removes rate-limiting on CVE/CPE downloads |
+| `VITE_THREAT_INTEL_ENABLED` | No | Set to `true` to show IOC/IP Enrichment/Malware Atlas in frontend (baked at build time) |
+| `ABUSEIPDB_API_KEY` | No | Required for AbuseIPDB blacklist pull + on-demand IP enrichment |
+| `SHODAN_API_KEY` | No | Shodan paid API for IP enrichment — Shodan InternetDB (free) used if absent |
+| `MALPEDIA_API_KEY` | No | Malpedia API key — malware families work without key; actor data requires it |
+| `TI_MISP_IMPORT_FROM_DATE` | No | MISP first-run date floor (default: `2024-01-01`; set `2000-01-01` for full history) |
+| `TI_RUN_ON_START` | No | Set `true` to force all OSINT feeds to run immediately on container start |
+| `TI_MISP_CIRCL_ENABLED` | No | Set `false` to disable CIRCL MISP feed (default: true) |
+| `TI_MISP_BOTVRIJ_ENABLED` | No | Set `false` to disable Botvrij MISP feed (default: true) |
+| `TI_ABUSEIPDB_ENABLED` | No | Set `false` to disable AbuseIPDB blacklist pull (default: true) |
+| `TI_MALPEDIA_ENABLED` | No | Set `false` to disable Malpedia feed (default: true) |
 | `MAIL_HOST` | No | SMTP host — empty = no email |
 | `MAIL_PORT` | No | SMTP port (default: 1025) |
 | `NOTIFICATION_EMAIL` | No | Override notification recipient — defaults to admin account email |
