@@ -397,6 +397,10 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | MITRE ATT&CK v18 | Threat technique mapping (Enterprise / ICS / Mobile) — 835 techniques, EPSS + CISA KEV correlation. v19 upgrade planned. | ![v18](https://img.shields.io/badge/v18-DC143C?style=flat-square) |
 | MITRE ATLAS | AI/ML adversarial threat techniques | ![Mapped](https://img.shields.io/badge/Mapped-DC143C?style=flat-square) |
 | ENISA EUVD | European Vulnerability Database — exploited + critical CVEs; daily feed; EUVD Explorer + cross-enrichment of NVD CVE index with `in_euvd` flag | ![Feed](https://img.shields.io/badge/TI_Feed-003399?style=flat-square) |
+| CIRCL MISP OSINT Feed | Public MISP feed (Luxembourg) — 6-hourly manifest delta; 100K+ IOCs (IPs, domains, URLs, hashes) cross-enriched with ATT&CK TIDs, Malpedia family slugs, actor slugs at ingest | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| Botvrij MISP OSINT Feed | Public MISP feed (Botvrij.eu) — 6-hourly manifest delta; deduplicated against CIRCL by IOC value + source | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| AbuseIPDB | Daily blacklist (top 10K confidence=100 IPs); on-demand single-IP enrichment with 24h cache; OpenSearch `ti-abuseipdb-blacklist` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| Malpedia | Weekly malware knowledge base — families (aliases, ATT&CK TIDs), threat actors (country, motivation); links IOCs to malware + actor attribution | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | EU GDPR / Swiss DSG | Security and privacy control mapping, operational checklists | ![Toolkit](https://img.shields.io/badge/Toolkit-FFD700?style=flat-square) |
 
 </details>
