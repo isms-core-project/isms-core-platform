@@ -4,7 +4,7 @@ Pulls OSINT threat feeds on fixed schedules:
   - CIRCL MISP    : every 6h (00:00, 06:00, 12:00, 18:00 UTC)
   - Botvrij MISP  : every 6h (01:00, 07:00, 13:00, 19:00 UTC — staggered)
   - AbuseIPDB BL  : daily    (02:00 UTC)
-  - Malpedia      : weekly   (Sunday 03:00 UTC) — no key needed; MALPEDIA_API_KEY improves rate limits
+  - Malpedia      : weekly   (Sunday 03:00 UTC) — source: MISP galaxy (no key required)
 
 On-demand enrichment (AbuseIPDB check + Shodan) is served by the backend via
 POST /api/v1/threat-intel/enrich/ip — not scheduled here.

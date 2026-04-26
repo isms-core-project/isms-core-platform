@@ -563,7 +563,7 @@ Enrichment results are cached for 24 hours. The cache resets automatically per I
 
 Go to **Intelligence → Malware Atlas** for the Malpedia-sourced malware and threat actor knowledge base.
 
-> Requires the `isms-core-threat-intel` container. Actor data requires `MALPEDIA_API_KEY` (free registration at malpedia.caad.fkie.fraunhofer.de).
+> Requires the `isms-core-threat-intel` container. No API key needed — data sourced from the MISP galaxy open dataset.
 
 **Malware Families tab:**
 - Family name, aliases, description
@@ -609,7 +609,6 @@ CPE Option B queries the NVD CPE API for KEV vendor/product names and indexes ~3
 | `NIST_API_KEY` | Faster NVD seeding (free key at nvd.nist.gov) |
 | `ABUSEIPDB_API_KEY` | AbuseIPDB blacklist + IP enrichment |
 | `SHODAN_API_KEY` | Shodan paid enrichment (InternetDB free fallback used if absent) |
-| `MALPEDIA_API_KEY` | Malpedia actor data (families work without key) |
 | `TI_MISP_IMPORT_FROM_DATE` | MISP first-run date floor (default `2024-01-01`) |
 
 The first NVD full run indexes ~250,000 CVEs into OpenSearch — this takes several hours without an API key.
