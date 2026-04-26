@@ -442,9 +442,11 @@ The connector runs on its schedule and attaches new evidence items to the mapped
 
 ## Threat Intelligence & Vulnerability Feeds {#threat-intelligence}
 
-The **Intelligence** section aggregates live threat and vulnerability data from multiple public sources. All feeds run on a schedule inside the platform — no external subscription is required.
+The **Intelligence** section aggregates live threat and vulnerability data from two dedicated feed containers. All feeds run on schedule — no external subscription required for the core feeds; some OSINT feeds require free API keys.
 
 ### Available feeds
+
+**Vulnerability & adversary intelligence** (`isms-core-feeds` container):
 
 | Feed | Source | Schedule | Description |
 |------|--------|----------|-------------|
@@ -452,14 +454,24 @@ The **Intelligence** section aggregates live threat and vulnerability data from 
 | **MITRE ATLAS** | MITRE | Weekly (Sunday 00:30) | AI/ML-targeted attack techniques |
 | **CISA KEV** | CISA | Daily (02:00) | Known Exploited Vulnerabilities — CVEs with confirmed exploitation in the wild |
 | **EPSS** | FIRST | Daily (02:30) | Exploit Prediction Scoring System — probability of exploitation in the next 30 days |
-| **NVD CVE** | NIST | Daily delta (03:00) / Full weekly (Sunday 01:00) | Full NVD CVE database (~250,000 CVEs) with CVSS scores, CWEs, and CPE applicability |
-| **NVD CPE** | NIST | Weekly (Sunday 01:30) | Common Platform Enumeration entries for KEV vendor/product names (Option B — requires `FEEDS_CPE_FULL=true`) |
+| **NVD CVE** | NIST | Daily delta (03:00) / Full weekly (Sunday 01:00) | Full NVD CVE database (~250,000 CVEs) with CVSS v2/v3/v4 scores, CWEs, and CPE applicability |
+| **NVD CPE** | NIST | Weekly (Sunday 01:30) | Common Platform Enumeration entries for vendor/product resolution |
+| **ENISA EUVD** | ENISA | Daily | EU Vulnerability Database — exploited-flag CVEs and high-severity (CVSS ≥ 4.0) EU-assigned entries |
+
+**OSINT IOC feeds** (`isms-core-threat-intel` container — optional profile):
+
+| Feed | Source | Schedule | Description |
+|------|--------|----------|-------------|
+| **CIRCL MISP** | CIRCL Luxembourg | Every 6h (delta) | Public OSINT MISP feed — IOCs (IPs, domains, URLs, hashes) with ATT&CK TIDs and Malpedia family/actor tags |
+| **Botvrij MISP** | Botvrij.eu | Every 6h (delta, staggered) | Public OSINT MISP feed — same schema, deduplicated against CIRCL by IOC value + source |
+| **AbuseIPDB** | AbuseIPDB | Daily (02:00) | Top 10,000 confidence=100 abusive IPs; on-demand single-IP enrichment cached 24h |
+| **Malpedia** | Fraunhofer FKIE | Weekly (Sunday 03:00) | Malware family knowledge base (aliases, ATT&CK TIDs) and threat actor directory (country, motivation) |
 
 ### Feed status
 
 The feed status is visible on:
-- **Dashboard** — Intelligence Cards panel (CVE count, KEV count, MITRE sync status, overall feed health)
-- **Intelligence → Threat Feeds** — full feed run history with last-run timestamps, status, and record counts
+- **Dashboard** — Intelligence Cards panel (CVE count, KEV count, IOC count, MITRE sync status, overall feed health)
+- **Intelligence → Threat Feeds** — full feed run history with last-run timestamps, status, and record counts for all feeds
 - **Header banner** — if any feed or connector reports an error in the last 24 hours, a dismissible warning banner appears at the top of every page
 
 If a feed shows an error badge (red dot on the Intelligence sidebar group), go to **Intelligence → Threat Feeds** to see the error details.
@@ -467,9 +479,10 @@ If a feed shows an error badge (red dot on the Intelligence sidebar group), go t
 ### Threat Feeds page
 
 Go to **Intelligence → Threat Feeds** to see:
-- Live status of all configured feeds
-- Last successful run and record count for each feed
+- Live status cards for all configured feeds
+- Last successful run and record count per feed
 - Error details for any failed run
+- On-demand trigger button to run a feed outside its schedule (admin only)
 
 ### CVE / CPE Explorer {#cve-explorer}
 
@@ -480,8 +493,6 @@ Go to **Intelligence → CVE / CPE** to search and explore the NVD CVE and CPE i
 - Last sync timestamp
 - API key warning if `NIST_API_KEY` is not set (rate-limited to 5 req/30s without a key)
 
-**Info panel** — click the expand icon to see index breakdown by severity, feed schedule, and NIST attribution.
-
 **CVE tab**
 
 | Filter | Options |
@@ -491,10 +502,80 @@ Go to **Intelligence → CVE / CPE** to search and explore the NVD CVE and CPE i
 | Min EPSS | Slider (0.00–1.00) — filter by exploitation probability |
 | Year | Calendar year of publication |
 | KEV only | Show only CVEs on the CISA KEV list |
+| EUVD flag | Show only CVEs present in the EU Vulnerability Database |
 
-Click a CVE row to open the detail panel — shows CVSS score, vector, CWEs, CPE applicability statements, and NVD reference links.
+Click a CVE row to open the detail panel — shows CVSS v2/v3/v4 scores and vectors, CWEs, CPE applicability statements, EPSS score, KEV status, EUVD badge, and NVD reference links.
 
 **CPE tab** — search by keyword, filter by type (Application / Operating System / Hardware), source, and KEV-only.
+
+### EUVD Explorer
+
+Go to **Intelligence → EUVD Explorer** for the ENISA European Vulnerability Database view.
+
+- Browse vulnerabilities marked as **exploited in the wild** — highest priority for patching under NIS2 and DORA
+- Filter by CVSS severity (Critical / High / Medium / Low)
+- Toggle **Exploited only** to surface the highest-risk subset
+- Detail panel: affected vendors/products, EPSS score, CVSS data, EU-assigned EUVD identifier, aliases
+- Export filtered results as CSV for audit evidence (A.8.8)
+
+The EUVD feed cross-enriches the NVD CVE index: every CVE that appears in EUVD gets an `in_euvd` flag and `euvd_id` field visible in the CVE Explorer.
+
+### IOC Explorer
+
+Go to **Intelligence → IOC Explorer** to search Indicators of Compromise from the OSINT feeds.
+
+> Requires the `isms-core-threat-intel` container running with `VITE_THREAT_INTEL_ENABLED=true`.
+
+**Filters:**
+
+| Filter | Options |
+|--------|---------|
+| Type | IP / Domain / URL / MD5 / SHA1 / SHA256 |
+| Source | CIRCL MISP / Botvrij MISP / AbuseIPDB |
+| MITRE Technique | ATT&CK TID (e.g. T1190) |
+| Tag | MISP event tag (e.g. `tlp:white`) |
+| Search | Free-text IOC value search |
+
+Each IOC row shows source, type, confidence, first/last seen, and associated ATT&CK techniques, malware family, and threat actor — all resolved at ingest time from MISP galaxy tags and Malpedia slugs.
+
+### IP Enrichment
+
+Go to **Intelligence → IP Enrichment** to look up any single IP address on demand.
+
+Enter an IP address and the platform queries two sources in parallel:
+
+**AbuseIPDB** (requires `ABUSEIPDB_API_KEY`):
+- Abuse confidence score (0–100)
+- Total report count and last reported timestamp
+- Usage type and abuse categories
+
+**Shodan** — if `SHODAN_API_KEY` is set:
+- Open ports and service banners
+- Hostnames and ASN/organisation
+- CVEs detected on the host
+- Last scan date
+
+If no Shodan API key is configured, the free **Shodan InternetDB** fallback is used (open ports, CPEs, tags, CVE list — no account needed). If the IP is not indexed in Shodan (transit IPs, RFC1918 ranges), the widget shows "IP not indexed" rather than an error.
+
+Enrichment results are cached for 24 hours. The cache resets automatically per IP.
+
+### Malware Atlas
+
+Go to **Intelligence → Malware Atlas** for the Malpedia-sourced malware and threat actor knowledge base.
+
+> Requires the `isms-core-threat-intel` container. Actor data requires `MALPEDIA_API_KEY` (free registration at malpedia.caad.fkie.fraunhofer.de).
+
+**Malware Families tab:**
+- Family name, aliases, description
+- ATT&CK techniques associated with this malware
+- Threat actor groups known to use it
+
+**Threat Actors tab:**
+- Actor name and aliases
+- Country attribution (suspected state-sponsored origin)
+- Motivation (espionage / financial / hacktivism / unknown)
+
+Use the Malware Atlas to pivot from an IOC → malware family → actor → ATT&CK techniques, providing the "who and how" context for any indicator seen in your environment.
 
 ### KEV Audit Report (A.8.8)
 
@@ -512,20 +593,26 @@ The KEV Audit Report supports compliance evidence for ISO 27001:2022 **A.8.8 —
 
 ### Enabling CPE Option B (admin toggle)
 
-CPE Option B queries the NVD CPE API for KEV vendor/product names and indexes ~3-5K additional CPE entries. It can be toggled from the platform without editing `.env` or restarting containers:
+CPE Option B queries the NVD CPE API for KEV vendor/product names and indexes ~3-5K additional CPE entries. It can be toggled without editing `.env` or restarting containers:
 
 1. Go to **Intelligence → Threat Feeds**.
 2. Scroll to the **Feed Settings** panel (visible to Admins only).
 3. Toggle **NVD CPE Option B (KEV-vendor)** on or off.
-4. The change is saved immediately. It takes effect on the next scheduled CPE run (Sunday 01:30 UTC).
+4. The change takes effect on the next scheduled CPE run (Sunday 01:30 UTC).
 
-> The toggle stores the setting in the platform database. It overrides the `FEEDS_CPE_FULL` environment variable.
+> The toggle stores the setting in the platform database and overrides the `FEEDS_CPE_FULL` environment variable.
 
-### Configuring NVD feeds
+### Configuring feeds
 
-NVD feeds work without an API key but are rate-limited to 5 requests per 30 seconds. For faster initial seeding, register a free API key at [nvd.nist.gov/developers/request-an-api-key](https://nvd.nist.gov/developers/request-an-api-key) and set `NIST_API_KEY` in your `.env` file.
+| Variable | Required for |
+|----------|-------------|
+| `NIST_API_KEY` | Faster NVD seeding (free key at nvd.nist.gov) |
+| `ABUSEIPDB_API_KEY` | AbuseIPDB blacklist + IP enrichment |
+| `SHODAN_API_KEY` | Shodan paid enrichment (InternetDB free fallback used if absent) |
+| `MALPEDIA_API_KEY` | Malpedia actor data (families work without key) |
+| `TI_MISP_IMPORT_FROM_DATE` | MISP first-run date floor (default `2024-01-01`) |
 
-To enable CVE indexing, set `FEEDS_CVE_ENABLED=true` in your deployment environment. The first full run indexes the entire NVD (~250,000 CVEs) into OpenSearch — this takes several hours without an API key.
+The first NVD full run indexes ~250,000 CVEs into OpenSearch — this takes several hours without an API key.
 
 ---
 
