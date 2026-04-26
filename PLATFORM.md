@@ -604,7 +604,7 @@ Set `VITE_THREAT_INTEL_ENABLED=true` in `.env` before building the frontend to s
 | **CIRCL MISP** | Every 6h (delta) | None (public) | IOCs (IPs, domains, URLs, hashes) with ATT&CK TIDs + Malpedia galaxy tags |
 | **Botvrij MISP** | Every 6h (delta, staggered) | None (public) | Same schema — deduplicated against CIRCL by `(ioc_type, value, source)` |
 | **AbuseIPDB blacklist** | Daily (02:00 UTC) | `ABUSEIPDB_API_KEY` | Top 10,000 confidence=100 abusive IPs → `ti_iocs` + `ti-abuseipdb-blacklist` OpenSearch index |
-| **Malpedia** | Weekly (Sunday 03:00 UTC) | `MALPEDIA_API_KEY` (optional) | Malware families (aliases, descriptions, ATT&CK TIDs); actor data requires key |
+| **Malpedia** | Weekly (Sunday 03:00 UTC) | `MALPEDIA_API_KEY` (free registration) | Malware families work without key; actor data (country, motivation) requires a free API key — register at malpedia.caad.fkie.fraunhofer.de |
 
 **On-demand enrichment** (no schedule — triggered from the IP Enrichment page):
 - **AbuseIPDB check** — single-IP abuse score, report count, categories; 24h cache in `ti_enrichment_cache`
@@ -903,7 +903,7 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 | `VITE_THREAT_INTEL_ENABLED` | No | Set to `true` to show IOC/IP Enrichment/Malware Atlas in frontend (baked at build time) |
 | `ABUSEIPDB_API_KEY` | No | Required for AbuseIPDB blacklist pull + on-demand IP enrichment |
 | `SHODAN_API_KEY` | No | Shodan paid API for IP enrichment — Shodan InternetDB (free) used if absent |
-| `MALPEDIA_API_KEY` | No | Malpedia API key — malware families work without key; actor data requires it |
+| `MALPEDIA_API_KEY` | No | Malpedia API key — malware families work without key; actor data requires a free registered key (malpedia.caad.fkie.fraunhofer.de/register) |
 | `TI_MISP_IMPORT_FROM_DATE` | No | MISP first-run date floor (default: `2024-01-01`; set `2000-01-01` for full history) |
 | `TI_RUN_ON_START` | No | Set `true` to force all OSINT feeds to run immediately on container start |
 | `TI_MISP_CIRCL_ENABLED` | No | Set `false` to disable CIRCL MISP feed (default: true) |
