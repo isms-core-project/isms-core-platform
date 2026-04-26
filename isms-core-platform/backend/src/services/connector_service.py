@@ -825,8 +825,15 @@ def report_error(db: DBSession, connector: Connector, message: str) -> None:
                 connector_name=connector.name,
                 error_message=message,
             )
+            logger.info("Connector failure notification queued for %s", connector.name)
         except Exception as exc:
             logger.warning("Could not queue connector failure notification: %s", exc)
+    else:
+        logger.debug(
+            "Connector failure notification suppressed for %s (last sent %s, cooldown 24 h)",
+            connector.name,
+            prev_error_at,
+        )
 
 
 # ── Evidence queries ──────────────────────────────────────────────────────────

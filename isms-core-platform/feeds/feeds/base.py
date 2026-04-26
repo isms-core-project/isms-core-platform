@@ -89,18 +89,30 @@ def finish_run(run_id: str, item_count: int) -> None:
 def _notify_backend_feed_failure(feed_name: str, error: str, run_id: str) -> None:
     """Best-effort POST to backend to queue a failure notification email."""
     if _requests is None:
+        logger.warning("Feed failure notification skipped: requests library not available")
         return
     api_url = os.environ.get("ISMS_API_URL", "")
     secret = os.environ.get("CONNECTORS_WORKER_SECRET", "")
-    if not api_url or not secret:
+    if not api_url:
+        logger.warning("Feed failure notification skipped: ISMS_API_URL not set")
+        return
+    if not secret:
+        logger.warning("Feed failure notification skipped: CONNECTORS_WORKER_SECRET not set")
         return
     try:
-        _requests.post(
+        resp = _requests.post(
             f"{api_url}/api/v1/feeds/internal/notify-failure",
             json={"feed_name": feed_name, "error_message": error, "run_id": run_id},
             headers={"Authorization": f"Bearer {secret}"},
-            timeout=5,
+            timeout=10,
         )
+        if resp.status_code == 200:
+            logger.info("Feed failure notification queued for %s (run %s)", feed_name, run_id)
+        else:
+            logger.warning(
+                "Feed failure notification rejected by backend: HTTP %s — %s",
+                resp.status_code, resp.text[:200],
+            )
     except Exception as exc:
         logger.warning("Could not notify backend of feed failure: %s", exc)
 
