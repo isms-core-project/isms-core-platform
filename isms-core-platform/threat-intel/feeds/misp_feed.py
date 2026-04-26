@@ -22,7 +22,7 @@ from uuid import uuid4
 
 import requests
 
-from feeds.base import fail_run, finish_run, get_conn, get_os_client, os_bulk_upsert, start_run
+from feeds.base import fail_run, finish_run, get_conn, get_os_client, is_cancelled, os_bulk_upsert, start_run
 
 logger = logging.getLogger(__name__)
 
@@ -314,6 +314,11 @@ def run(source_name: str, feed_url: str, os_index: str) -> None:
     now_iso = datetime.now(timezone.utc).isoformat()
 
     for i, event_uuid in enumerate(new_uuids):
+        if is_cancelled(source_name):
+            logger.info("MISP %s cancelled at event %d/%d", source_name, i, len(new_uuids))
+            _mark_processed(source_name, processed_uuids_this_run)
+            fail_run(run_id, "Cancelled by user")
+            return
         try:
             resp = requests.get(f"{feed_url}/{event_uuid}.json", timeout=30)
             resp.raise_for_status()

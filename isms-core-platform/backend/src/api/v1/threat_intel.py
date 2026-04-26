@@ -475,6 +475,31 @@ def trigger_ti_feed(
         raise HTTPException(status_code=503, detail=f"TI trigger server unreachable: {exc}")
 
 
+@router.delete("/feeds/cancel/{source}", dependencies=[Depends(require_admin)])
+def cancel_ti_feed(source: str):
+    """Admin: request cancellation of a running TI feed."""
+    if source not in _TRIGGER_MAP:
+        raise HTTPException(status_code=422, detail=f"Unknown TI source: {source}. Valid: {list(_TRIGGER_MAP)}")
+    _require_ti_enabled()
+    ti_trigger_url = os.environ.get("TI_TRIGGER_URL", "http://isms-core-threat-intel:9002")
+    try:
+        import requests
+        resp = requests.delete(
+            f"{ti_trigger_url}/cancel/{_TRIGGER_MAP[source]}",
+            timeout=5,
+        )
+        if resp.status_code == 200:
+            return {"status": "cancel_requested", "source": source}
+        if resp.status_code == 404:
+            raise HTTPException(status_code=404, detail=f"Feed '{source}' is not running")
+        raise HTTPException(status_code=502, detail=f"TI container returned {resp.status_code}: {resp.text[:200]}")
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.warning("TI cancel failed for %s: %s", source, exc)
+        raise HTTPException(status_code=503, detail=f"TI trigger server unreachable: {exc}")
+
+
 @router.post("/internal/notify-failure", include_in_schema=False)
 def internal_notify_ti_feed_failure(
     request: Request,

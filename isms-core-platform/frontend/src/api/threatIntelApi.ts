@@ -102,4 +102,7 @@ export const threatIntelApi = {
 
   triggerFeed: (source: string) =>
     client.post<{ status: string }>('/threat-intel/feeds/trigger', { source }).then(r => r.data),
+
+  cancelFeed: (source: string) =>
+    client.delete<{ status: string; source: string }>(`/threat-intel/feeds/cancel/${source}`).then(r => r.data),
 }

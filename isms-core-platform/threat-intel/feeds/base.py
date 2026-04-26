@@ -2,9 +2,33 @@
 
 import logging
 import os
+import threading
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from uuid import uuid4
+
+# ── Cancellation flags (threading.Event per feed_name) ───────────────────────
+_cancel_flags: dict[str, threading.Event] = {}
+_cancel_lock = threading.Lock()
+
+
+def get_cancel_flag(feed_name: str) -> threading.Event:
+    with _cancel_lock:
+        return _cancel_flags.setdefault(feed_name, threading.Event())
+
+
+def is_cancelled(feed_name: str) -> bool:
+    return _cancel_flags.get(feed_name, threading.Event()).is_set()
+
+
+def set_cancelled(feed_name: str) -> None:
+    get_cancel_flag(feed_name).set()
+
+
+def clear_cancelled(feed_name: str) -> None:
+    flag = _cancel_flags.get(feed_name)
+    if flag:
+        flag.clear()
 
 import psycopg2
 import psycopg2.extras

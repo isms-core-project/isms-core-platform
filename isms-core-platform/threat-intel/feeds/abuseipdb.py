@@ -11,7 +11,7 @@ from uuid import uuid4
 
 import requests
 
-from feeds.base import fail_run, finish_run, get_conn, get_os_client, os_bulk_upsert, start_run
+from feeds.base import fail_run, finish_run, get_conn, get_os_client, is_cancelled, os_bulk_upsert, start_run
 
 logger = logging.getLogger(__name__)
 
@@ -94,6 +94,10 @@ def run_blacklist() -> None:
     with get_conn() as conn:
         with conn.cursor() as cur:
             for entry in entries:
+                if is_cancelled("abuseipdb_blacklist"):
+                    logger.info("AbuseIPDB blacklist cancelled at %d entries", upserted)
+                    fail_run(run_id, "Cancelled by user")
+                    return
                 ip = (entry.get("ipAddress") or "").strip()
                 if not ip:
                     continue

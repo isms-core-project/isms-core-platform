@@ -173,6 +173,20 @@ export default function ThreatFeeds() {
     },
   })
 
+  const tiCancelMutation = useMutation({
+    mutationFn: (source: string) => threatIntelApi.cancelFeed(source),
+    onSuccess: () => {
+      setTimeout(() => qc.invalidateQueries({ queryKey: ['threat-intel', 'summary'] }), 3000)
+    },
+    onError: (err: any) => {
+      if (err?.response?.status === 404) {
+        setTimeout(() => qc.invalidateQueries({ queryKey: ['threat-intel', 'summary'] }), 1000)
+      } else {
+        setTriggerError(err?.response?.data?.detail ?? 'TI cancel failed')
+      }
+    },
+  })
+
   const { data: kevStats } =
     useQuery({ queryKey: ['feeds', 'kev', 'stats'], queryFn: feedsApi.getKevStats })
 
@@ -265,6 +279,19 @@ export default function ThreatFeeds() {
                                 ? <CircularProgress size={12} /> : <StopOutlined sx={{ fontSize: 14 }} />}
                               disabled={cancelMutation.isPending}
                               onClick={() => cancelMutation.mutate(feed.feed_name)}
+                              sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
+                            >Stop</Button>
+                          </span>
+                        </Tooltip>
+                      ) : isTi && feed.last_status === 'running' ? (
+                        <Tooltip title="Request cancellation of this feed">
+                          <span>
+                            <Button
+                              size="small" variant="outlined" color="error"
+                              startIcon={tiCancelMutation.isPending && tiCancelMutation.variables === feed.feed_name
+                                ? <CircularProgress size={12} /> : <StopOutlined sx={{ fontSize: 14 }} />}
+                              disabled={tiCancelMutation.isPending}
+                              onClick={() => tiCancelMutation.mutate(feed.feed_name)}
                               sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
                             >Stop</Button>
                           </span>
