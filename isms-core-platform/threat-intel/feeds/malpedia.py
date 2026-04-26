@@ -2,22 +2,21 @@
 
 Primary source: Malpedia public API (no key required)
   https://malpedia.caad.fkie.fraunhofer.de/api
-  - list/families         → canonical slug list (~5 000 entries)
-  - get/family/{slug}     → common_name, alt_names, description, urls
-                            (fetched only for families NOT in MISP galaxy)
-  - list/actors           → canonical actor slug list (~1 300 entries)
-  - get/actor/{slug}      → aliases, country, motivation, malware_families links
+  - get/families        → ALL families in one request (dict keyed by slug)
+                          fields: common_name, alt_names, description, urls, attribution
+  - list/actors         → actor slug list
+  - get/actor/{slug}    → per-actor details
 
 Secondary source: MISP galaxy (GitHub, no key required)
-  - clusters/malpedia.json      → bulk descriptions + ATT&CK TIDs from refs
-  - clusters/threat-actor.json  → country/motivation supplement + IOC-correlation slugs
+  - clusters/malpedia.json      → ATT&CK TIDs from refs (merged with Malpedia URLs)
+  - clusters/threat-actor.json  → IOC-correlation slugs + country/motivation supplement
 
 Pull schedule: weekly (Sunday 03:00 UTC).
 
 Actor slug compatibility:
   MISP IOC events tag actors as misp-galaxy:threat-actor="APT28".
-  MISP galaxy value ("APT28") is used as the DB slug for IOC correlation.
-  Malpedia API actors not in MISP galaxy use the Malpedia slug (apt28).
+  MISP galaxy value ("APT28") is used as DB slug for IOC correlation.
+  Actors not in MISP galaxy use the Malpedia slug (apt28).
 """
 
 import json
@@ -37,7 +36,7 @@ logger = logging.getLogger(__name__)
 
 _MISP_GALAXY_BASE = "https://raw.githubusercontent.com/MISP/misp-galaxy/main/clusters"
 _MALPEDIA_API    = "https://malpedia.caad.fkie.fraunhofer.de/api"
-_API_DELAY       = 0.15   # seconds between individual API calls
+_API_DELAY       = 0.15   # seconds between individual actor API calls
 
 _OS_INDEX_FAMILIES = "ti-malpedia-families"
 _OS_INDEX_ACTORS   = "ti-malpedia-actors"
@@ -71,7 +70,7 @@ _OS_MAPPING_ACTORS = {
 
 
 def _fetch_galaxy(cluster: str) -> list[dict]:
-    """Fetch MISP galaxy cluster (secondary source — bulk descriptions + TID refs)."""
+    """Fetch MISP galaxy cluster (secondary source)."""
     url = f"{_MISP_GALAXY_BASE}/{cluster}.json"
     try:
         resp = requests.get(url, timeout=60)
@@ -84,11 +83,12 @@ def _fetch_galaxy(cluster: str) -> list[dict]:
         return []
 
 
-def _malpedia(path: str) -> dict | list | None:
+def _malpedia_get(path: str, delay: bool = False) -> dict | list | None:
     """GET from Malpedia public API. Returns None on error."""
-    try:
+    if delay:
         time.sleep(_API_DELAY)
-        resp = requests.get(f"{_MALPEDIA_API}/{path}", timeout=30)
+    try:
+        resp = requests.get(f"{_MALPEDIA_API}/{path}", timeout=60)
         resp.raise_for_status()
         return resp.json()
     except Exception as exc:
@@ -97,7 +97,7 @@ def _malpedia(path: str) -> dict | list | None:
 
 
 def _extract_mitre_tids(urls: list) -> list[str]:
-    """Extract ATT&CK TIDs from a list of URLs (e.g. attack.mitre.org/techniques/T1055)."""
+    """Extract ATT&CK TIDs from URLs (e.g. attack.mitre.org/techniques/T1055)."""
     tids = set()
     for u in urls or []:
         tids.update(re.findall(r"T\d{4}(?:\.\d{3})?", str(u)))
@@ -105,40 +105,50 @@ def _extract_mitre_tids(urls: list) -> list[str]:
 
 
 def _to_api_slug(misp_value: str) -> str:
-    """Convert MISP galaxy actor value to Malpedia API slug format (APT28 → apt28)."""
+    """Convert MISP galaxy actor value to Malpedia API slug (APT28 → apt28)."""
     return misp_value.lower().replace(" ", "_").replace("-", "_")
 
 
 def run() -> None:
     run_id = start_run("malpedia")
-    logger.info("Malpedia pull started (primary: Malpedia API, secondary: MISP galaxy)")
+    logger.info("Malpedia pull started (primary: Malpedia API /get/families, secondary: MISP galaxy)")
 
     now     = datetime.now(timezone.utc)
     now_iso = now.isoformat()
 
     # ── 1. Secondary: MISP galaxy lookup dicts ───────────────────────────────
-    # Families: slug → entry (for bulk descriptions + ATT&CK TIDs)
+    # Family slug → entry (for ATT&CK TIDs via refs)
     galaxy_family: dict[str, dict] = {}
     for entry in _fetch_galaxy("malpedia"):
         slug = (entry.get("value") or "").strip()
         if re.match(r"^[a-z]+\.[a-z0-9_]+$", slug):
             galaxy_family[slug] = entry
 
-    # Actors: api_slug → MISP value (for IOC-correlation slug and country/motivation)
-    galaxy_actor_by_api: dict[str, dict] = {}   # api_slug   → entry
-    galaxy_actor_by_val: dict[str, dict] = {}   # misp_value → entry
+    # Actor: api_slug → MISP entry, misp_value → MISP entry
+    galaxy_actor_by_api: dict[str, dict] = {}
+    galaxy_actor_by_val: dict[str, dict] = {}
+    # Actor name/alias → canonical DB slug (for attribution resolution)
+    actor_name_to_slug:  dict[str, str]  = {}
+
     for entry in _fetch_galaxy("threat-actor"):
         value = (entry.get("value") or "").strip()
-        if value:
-            galaxy_actor_by_val[value] = entry
-            galaxy_actor_by_api[_to_api_slug(value)] = entry
+        if not value:
+            continue
+        galaxy_actor_by_val[value] = entry
+        galaxy_actor_by_api[_to_api_slug(value)] = entry
+        # Map display name + synonyms → slug (for resolving attribution names)
+        actor_name_to_slug[value.lower()] = value
+        for syn in ((entry.get("meta") or {}).get("synonyms") or []):
+            if syn:
+                actor_name_to_slug[syn.lower()] = value
 
-    # ── 2. Primary: Malpedia family list ─────────────────────────────────────
-    family_slugs: list[str] = _malpedia("list/families") or []
-    if not family_slugs:
-        fail_run(run_id, "Empty family list from Malpedia API")
+    # ── 2. Primary: Malpedia bulk family fetch (one request) ─────────────────
+    logger.info("Fetching all Malpedia families via /api/get/families …")
+    families_raw = _malpedia_get("get/families")  # dict: slug → family_obj
+    if not families_raw or not isinstance(families_raw, dict):
+        fail_run(run_id, "Empty or invalid response from Malpedia /api/get/families")
         return
-    logger.info("Malpedia API families: %d slugs", len(family_slugs))
+    logger.info("Malpedia API returned %d families", len(families_raw))
 
     # DB cleanup — remove non-slug entries from earlier runs
     try:
@@ -148,43 +158,48 @@ def run() -> None:
                     "DELETE FROM ti_malware_families WHERE slug !~ '^[a-z]+\\.[a-z0-9_]+$'"
                 )
                 if cur.rowcount:
-                    logger.info("Cleaned %d non-slug family entries from DB", cur.rowcount)
+                    logger.info("Cleaned %d non-slug family entries", cur.rowcount)
     except Exception as exc:
         logger.warning("Family cleanup failed: %s", exc)
 
     families_upserted = 0
-    family_os_docs: list[dict] = []
-    # Build reverse map (common_name/alias → slug) for actor→family link resolution
+    family_os_docs:   list[dict]      = []
+    # slug → list of actor COMMON NAMES from Malpedia attribution (resolved later)
+    family_attribution: dict[str, list[str]] = {}
+    # alias/name.lower() → slug (for actor→family link resolution)
     name_to_slug: dict[str, str] = {}
 
-    for slug in family_slugs:
+    for slug, fdata in families_raw.items():
         if is_cancelled("malpedia"):
             logger.info("Malpedia cancelled during family phase")
             fail_run(run_id, "Cancelled by user")
             return
 
-        galaxy = galaxy_family.get(slug)
-        if galaxy:
-            # MISP galaxy has this family — use its data (has ATT&CK TIDs via refs)
-            meta     = galaxy.get("meta") or {}
-            name     = slug[:200]
-            aliases  = [a[:200] for a in (meta.get("synonyms") or []) if a]
-            desc     = (galaxy.get("description") or "")[:4000] or None
-            mitre_tids = _extract_mitre_tids(meta.get("refs") or [])
-        else:
-            # Not in MISP galaxy — fetch individual from Malpedia API
-            data       = _malpedia(f"get/family/{slug}") or {}
-            common     = (data.get("common_name") or slug)
-            name       = common[:200]
-            aliases    = [a[:200] for a in (data.get("alt_names") or []) if a]
-            desc       = (data.get("description") or "")[:4000] or None
-            mitre_tids = _extract_mitre_tids(data.get("urls") or [])
+        if not re.match(r"^[a-z]+\.[a-z0-9_]+$", slug):
+            continue
 
-        # Build name→slug reverse map for actor→family link resolution
+        common_name = (fdata.get("common_name") or slug)
+        name        = common_name[:200]
+        alt_names   = fdata.get("alt_names") or []
+        aliases     = [a[:200] for a in alt_names if a]
+        desc        = (fdata.get("description") or "")[:4000] or None
+        api_urls    = fdata.get("urls") or []
+
+        # ATT&CK TIDs: merge Malpedia API URLs + MISP galaxy refs
+        galaxy = galaxy_family.get(slug)
+        galaxy_refs = ((galaxy.get("meta") or {}).get("refs") or []) if galaxy else []
+        mitre_tids  = _extract_mitre_tids(api_urls + galaxy_refs)
+
+        # Track attribution names for later slug resolution
+        attribution = fdata.get("attribution") or []
+        if attribution:
+            family_attribution[slug] = attribution
+
+        # Build reverse name→slug map
         name_to_slug[slug.lower()] = slug
+        name_to_slug[common_name.lower()] = slug
         for alias in aliases:
-            if alias:
-                name_to_slug[alias.lower()] = slug
+            name_to_slug[alias.lower()] = slug
 
         try:
             with get_conn() as conn:
@@ -226,14 +241,36 @@ def run() -> None:
 
     logger.info("Malpedia families upserted: %d", families_upserted)
 
-    # ── 3. Primary: Malpedia actor list ──────────────────────────────────────
-    actor_api_slugs: list[str] = _malpedia("list/actors") or []
+    # ── 3. Resolve attribution → actor slugs + write actor_slugs on families ─
+    # family_attribution: slug → [actor common name, ...] (e.g. "Lazarus Group")
+    # actor_name_to_slug: actor name/alias.lower() → MISP canonical slug
+    family_actor_links: dict[str, set[str]] = {}
+
+    for fslug, attr_names in family_attribution.items():
+        for aname in attr_names:
+            actor_slug = actor_name_to_slug.get(aname.lower()) or _to_api_slug(aname)
+            family_actor_links.setdefault(fslug, set()).add(actor_slug)
+
+    links_written = 0
+    for fslug, actor_slugs in family_actor_links.items():
+        try:
+            with get_conn() as conn:
+                with conn.cursor() as cur:
+                    cur.execute(
+                        "UPDATE ti_malware_families SET actor_slugs=%s WHERE slug=%s",
+                        (json.dumps(sorted(actor_slugs)), fslug),
+                    )
+            links_written += 1
+        except Exception as exc:
+            logger.warning("Actor→family link update failed for %s: %s", fslug, exc)
+    logger.info("Actor→family links written: %d families updated", links_written)
+
+    # ── 4. Actors: MISP galaxy primary + Malpedia API per-actor enrichment ───
+    actor_api_slugs: list[str] = _malpedia_get("list/actors") or []
     logger.info("Malpedia API actors: %d slugs", len(actor_api_slugs))
 
     actors_upserted = 0
-    actor_os_docs: list[dict] = []
-    # family_slug → set of actor slugs (canonical, for DB update)
-    family_actor_map: dict[str, set[str]] = {}
+    actor_os_docs:   list[dict] = []
 
     for api_slug in actor_api_slugs:
         if is_cancelled("malpedia"):
@@ -241,50 +278,44 @@ def run() -> None:
             fail_run(run_id, "Cancelled by user")
             return
 
-        data = _malpedia(f"get/actor/{api_slug}") or {}
+        data = _malpedia_get(f"get/actor/{api_slug}", delay=True) or {}
 
-        # Canonical slug: use MISP galaxy value for IOC correlation, else Malpedia slug
+        # Canonical slug: MISP value for IOC correlation, else Malpedia slug
         galaxy = galaxy_actor_by_api.get(api_slug)
-        if galaxy:
-            slug = (galaxy.get("value") or api_slug).strip()
-        else:
-            slug = api_slug
+        slug = (galaxy.get("value") or api_slug).strip() if galaxy else api_slug
 
-        # Name: try multiple field names the API may use
+        # Name
         name = (
-            data.get("common_name") or
-            data.get("actor_name") or
-            data.get("name") or
-            slug
+            data.get("common_name") or data.get("actor_name") or
+            data.get("name") or slug
         )[:200]
 
-        # Aliases
-        aliases = data.get("aliases") or data.get("synonyms") or []
+        # Aliases: Malpedia + MISP galaxy synonyms
+        aliases = list(data.get("aliases") or data.get("synonyms") or [])
         if galaxy:
-            galaxy_meta = galaxy.get("meta") or {}
-            for a in (galaxy_meta.get("synonyms") or []):
-                if a and a not in aliases:
-                    aliases.append(a)
+            for syn in ((galaxy.get("meta") or {}).get("synonyms") or []):
+                if syn and syn not in aliases:
+                    aliases.append(syn)
 
-        # Country: Malpedia nests in attribution or metadata, MISP galaxy is flat
+        # Country
         attribution = data.get("attribution") or {}
-        if isinstance(attribution, dict):
-            country = (attribution.get("country") or "")[:5].upper() or None
-        else:
-            country = None
-        if not country and galaxy:
-            galaxy_meta = galaxy.get("meta") or {}
-            country = (galaxy_meta.get("country") or "")[:5].upper() or None
+        metadata    = data.get("metadata") or {}
+        country = (
+            (attribution.get("country") if isinstance(attribution, dict) else None) or
+            metadata.get("country_code") or
+            metadata.get("country") or
+            ((galaxy.get("meta") or {}).get("country") if galaxy else None) or ""
+        )[:5].upper() or None
 
         # Motivation
         motivation = (
             data.get("type_of_incident") or
-            data.get("cfr-type-of-incident") or
+            metadata.get("incident_type") or
             (attribution.get("cfr_type_of_incident") if isinstance(attribution, dict) else None)
         )
         if not motivation and galaxy:
-            galaxy_meta = galaxy.get("meta") or {}
-            motivation = galaxy_meta.get("cfr-type-of-incident") or galaxy_meta.get("motive") or None
+            gm = galaxy.get("meta") or {}
+            motivation = gm.get("cfr-type-of-incident") or gm.get("motive") or None
         if isinstance(motivation, list):
             motivation = motivation[0] if motivation else None
 
@@ -292,15 +323,6 @@ def run() -> None:
         desc = (data.get("description") or "")[:4000] or None
         if not desc and galaxy:
             desc = (galaxy.get("description") or "")[:4000] or None
-
-        # Actor→family links: Malpedia returns {platform: [common_names]}
-        malware_families = data.get("malware_families") or {}
-        if isinstance(malware_families, dict):
-            for platform_names in malware_families.values():
-                for fname in (platform_names or []):
-                    fslug = name_to_slug.get(fname.lower())
-                    if fslug:
-                        family_actor_map.setdefault(fslug, set()).add(slug)
 
         try:
             with get_conn() as conn:
@@ -329,25 +351,10 @@ def run() -> None:
             "motivation":  motivation,
             "description": desc,
             "updated_at":  now_iso,
-            "_os_id":      f"actor:{slug}",
+            "_os_id":      f"actor:{api_slug}",
         })
 
     logger.info("Malpedia actors upserted: %d", actors_upserted)
-
-    # ── 4. Write actor→family links ──────────────────────────────────────────
-    links_written = 0
-    for fslug, actor_slugs in family_actor_map.items():
-        try:
-            with get_conn() as conn:
-                with conn.cursor() as cur:
-                    cur.execute(
-                        "UPDATE ti_malware_families SET actor_slugs=%s WHERE slug=%s",
-                        (json.dumps(sorted(actor_slugs)), fslug),
-                    )
-            links_written += 1
-        except Exception as exc:
-            logger.warning("Actor→family link update failed for %s: %s", fslug, exc)
-    logger.info("Actor→family links written: %d families updated", links_written)
 
     # ── 5. Sync to OpenSearch ─────────────────────────────────────────────────
     os_client = get_os_client()
