@@ -22,7 +22,6 @@ Actor slug compatibility:
 import json
 import logging
 import re
-import time
 from datetime import datetime, timezone
 from uuid import uuid4
 
@@ -36,7 +35,6 @@ logger = logging.getLogger(__name__)
 
 _MISP_GALAXY_BASE = "https://raw.githubusercontent.com/MISP/misp-galaxy/main/clusters"
 _MALPEDIA_API    = "https://malpedia.caad.fkie.fraunhofer.de/api"
-_API_DELAY       = 0.15   # seconds between individual actor API calls
 
 _OS_INDEX_FAMILIES = "ti-malpedia-families"
 _OS_INDEX_ACTORS   = "ti-malpedia-actors"
@@ -83,10 +81,8 @@ def _fetch_galaxy(cluster: str) -> list[dict]:
         return []
 
 
-def _malpedia_get(path: str, delay: bool = False) -> dict | list | None:
+def _malpedia_get(path: str) -> dict | list | None:
     """GET from Malpedia public API. Returns None on error."""
-    if delay:
-        time.sleep(_API_DELAY)
     try:
         resp = requests.get(f"{_MALPEDIA_API}/{path}", timeout=60)
         resp.raise_for_status()
@@ -265,64 +261,30 @@ def run() -> None:
             logger.warning("Actor→family link update failed for %s: %s", fslug, exc)
     logger.info("Actor→family links written: %d families updated", links_written)
 
-    # ── 4. Actors: MISP galaxy primary + Malpedia API per-actor enrichment ───
-    actor_api_slugs: list[str] = _malpedia_get("list/actors") or []
-    logger.info("Malpedia API actors: %d slugs", len(actor_api_slugs))
-
+    # ── 4. Actors: MISP galaxy (no per-actor API calls — rate-limited) ──────
+    # Actor→family links already written from family attribution field (step 3).
+    # MISP galaxy provides country, motivation, description, aliases in a single
+    # bulk request — no need to hit Malpedia API per actor.
     actors_upserted = 0
     actor_os_docs:   list[dict] = []
 
-    for api_slug in actor_api_slugs:
+    for entry in galaxy_actor_by_val.values():
         if is_cancelled("malpedia"):
             logger.info("Malpedia cancelled during actor phase")
             fail_run(run_id, "Cancelled by user")
             return
 
-        data = _malpedia_get(f"get/actor/{api_slug}", delay=True) or {}
+        slug = (entry.get("value") or "").strip()
+        if not slug:
+            continue
 
-        # Canonical slug: MISP value for IOC correlation, else Malpedia slug
-        galaxy = galaxy_actor_by_api.get(api_slug)
-        slug = (galaxy.get("value") or api_slug).strip() if galaxy else api_slug
-
-        # Name
-        name = (
-            data.get("common_name") or data.get("actor_name") or
-            data.get("name") or slug
-        )[:200]
-
-        # Aliases: Malpedia + MISP galaxy synonyms
-        aliases = list(data.get("aliases") or data.get("synonyms") or [])
-        if galaxy:
-            for syn in ((galaxy.get("meta") or {}).get("synonyms") or []):
-                if syn and syn not in aliases:
-                    aliases.append(syn)
-
-        # Country
-        attribution = data.get("attribution") or {}
-        metadata    = data.get("metadata") or {}
-        country = (
-            (attribution.get("country") if isinstance(attribution, dict) else None) or
-            metadata.get("country_code") or
-            metadata.get("country") or
-            ((galaxy.get("meta") or {}).get("country") if galaxy else None) or ""
-        )[:5].upper() or None
-
-        # Motivation
-        motivation = (
-            data.get("type_of_incident") or
-            metadata.get("incident_type") or
-            (attribution.get("cfr_type_of_incident") if isinstance(attribution, dict) else None)
-        )
-        if not motivation and galaxy:
-            gm = galaxy.get("meta") or {}
-            motivation = gm.get("cfr-type-of-incident") or gm.get("motive") or None
+        meta       = entry.get("meta") or {}
+        name       = slug[:200]
+        country    = (meta.get("country") or "")[:5].upper() or None
+        motivation = meta.get("cfr-type-of-incident") or meta.get("motive") or None
         if isinstance(motivation, list):
             motivation = motivation[0] if motivation else None
-
-        # Description
-        desc = (data.get("description") or "")[:4000] or None
-        if not desc and galaxy:
-            desc = (galaxy.get("description") or "")[:4000] or None
+        desc = (entry.get("description") or "")[:4000] or None
 
         try:
             with get_conn() as conn:
@@ -351,7 +313,7 @@ def run() -> None:
             "motivation":  motivation,
             "description": desc,
             "updated_at":  now_iso,
-            "_os_id":      f"actor:{api_slug}",
+            "_os_id":      f"actor:{slug}",
         })
 
     logger.info("Malpedia actors upserted: %d", actors_upserted)
