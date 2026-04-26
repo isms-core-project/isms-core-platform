@@ -261,30 +261,62 @@ def run() -> None:
             logger.warning("Actor→family link update failed for %s: %s", fslug, exc)
     logger.info("Actor→family links written: %d families updated", links_written)
 
-    # ── 4. Actors: MISP galaxy (no per-actor API calls — rate-limited) ──────
-    # Actor→family links already written from family attribution field (step 3).
-    # MISP galaxy provides country, motivation, description, aliases in a single
-    # bulk request — no need to hit Malpedia API per actor.
+    # ── 4. Actors: Malpedia /api/get/actors bulk (mirrors /api/get/families) ─
+    # Falls back to MISP galaxy if the endpoint doesn't exist or errors.
+    actors_raw = _malpedia_get("get/actors")  # dict: api_slug → actor_obj, or None
+    use_malpedia_actors = isinstance(actors_raw, dict) and len(actors_raw) > 0
+    if use_malpedia_actors:
+        logger.info("Malpedia API returned %d actors (bulk)", len(actors_raw))
+    else:
+        logger.info("Malpedia /api/get/actors unavailable — using MISP galaxy actors")
+
     actors_upserted = 0
     actor_os_docs:   list[dict] = []
 
-    for entry in galaxy_actor_by_val.values():
+    def _iter_actors():
+        """Yield (slug, name, country, motivation, desc) from best available source."""
+        if use_malpedia_actors:
+            for api_slug, adata in actors_raw.items():
+                galaxy = galaxy_actor_by_api.get(api_slug)
+                slug   = (galaxy.get("value") or api_slug).strip() if galaxy else api_slug
+                name   = (adata.get("common_name") or adata.get("name") or slug)[:200]
+                meta   = adata.get("meta") or adata.get("metadata") or {}
+                country = (
+                    meta.get("country") or meta.get("country_code") or
+                    ((galaxy.get("meta") or {}).get("country") if galaxy else None) or ""
+                )[:5].upper() or None
+                motivation = (
+                    adata.get("cfr-type-of-incident") or adata.get("type_of_incident") or
+                    meta.get("cfr-type-of-incident") or
+                    ((galaxy.get("meta") or {}).get("cfr-type-of-incident") if galaxy else None)
+                )
+                if isinstance(motivation, list):
+                    motivation = motivation[0] if motivation else None
+                desc = (adata.get("description") or
+                        (galaxy.get("description") if galaxy else None) or "")[:4000] or None
+                yield slug, name, country, motivation, desc
+        else:
+            for entry in galaxy_actor_by_val.values():
+                slug = (entry.get("value") or "").strip()
+                if not slug:
+                    continue
+                meta       = entry.get("meta") or {}
+                name       = slug[:200]
+                country    = (meta.get("country") or "")[:5].upper() or None
+                motivation = meta.get("cfr-type-of-incident") or meta.get("motive") or None
+                if isinstance(motivation, list):
+                    motivation = motivation[0] if motivation else None
+                desc = (entry.get("description") or "")[:4000] or None
+                yield slug, name, country, motivation, desc
+
+    for slug, name, country, motivation, desc in _iter_actors():
         if is_cancelled("malpedia"):
             logger.info("Malpedia cancelled during actor phase")
             fail_run(run_id, "Cancelled by user")
             return
 
-        slug = (entry.get("value") or "").strip()
         if not slug:
             continue
-
-        meta       = entry.get("meta") or {}
-        name       = slug[:200]
-        country    = (meta.get("country") or "")[:5].upper() or None
-        motivation = meta.get("cfr-type-of-incident") or meta.get("motive") or None
-        if isinstance(motivation, list):
-            motivation = motivation[0] if motivation else None
-        desc = (entry.get("description") or "")[:4000] or None
 
         try:
             with get_conn() as conn:
