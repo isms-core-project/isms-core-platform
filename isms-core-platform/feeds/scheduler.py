@@ -20,14 +20,19 @@ Each feed can be disabled via env vars:
   FEEDS_CPE_ENABLED=true|false  (Option A always runs as part of CVE pull)
   FEEDS_CPE_FULL=false          (Option B KEV-vendor CPE — default off)
   FEEDS_EUVD_ENABLED=true|false (default: true)
+  FEEDS_RUN_ON_START=false      (force-run all feeds on every start — default: false)
 
-Set FEEDS_RUN_ON_START=true to run all enabled feeds immediately on container start.
+Startup behaviour:
+  - By default feeds do NOT run on container start — they wait for their scheduled window.
+  - Exception: if a feed has never had a successful run (first deployment), it runs once
+    automatically so the platform has data on day 1.
+  - Set FEEDS_RUN_ON_START=true to force-run all enabled feeds on every start (admin override).
 
 Environment:
   DATABASE_URL          — PostgreSQL DSN
   OPENSEARCH_URL        — OpenSearch host (default: http://opensearch:9200)
   NIST_API_KEY          — optional, raises NVD rate limit from 5→50 req/30s
-  FEEDS_RUN_ON_START    — run all feeds immediately (default: true)
+  FEEDS_RUN_ON_START    — force-run all feeds on start regardless of DB state (default: false)
   FEEDS_MITRE_ENABLED   — (default: true)
   FEEDS_ATLAS_ENABLED   — (default: true)
   FEEDS_KEV_ENABLED     — (default: true)
@@ -43,6 +48,7 @@ import time
 import schedule
 
 from feeds import cisa_kev, epss, euvd, mitre_atlas, mitre_attack, nist_cpe, nist_cve, trigger_server
+from feeds.base import has_successful_run
 
 logging.basicConfig(
     level=logging.INFO,
@@ -88,11 +94,13 @@ def _clear_stale_runs():
 def main():
     _clear_stale_runs()
     trigger_server.start()
-    run_on_start = os.environ.get("FEEDS_RUN_ON_START", "true").lower() == "true"
+
+    # FEEDS_RUN_ON_START=true → force-run all feeds now (admin override, old behaviour)
+    # FEEDS_RUN_ON_START=false (default) → only seed feeds that have never run successfully
+    force_run = os.environ.get("FEEDS_RUN_ON_START", "false").lower() == "true"
 
     # ── Schedule ────────────────────────────────────────────────────────────────
 
-    # Register all schedules first
     if _enabled("FEEDS_MITRE_ENABLED"):
         schedule.every().sunday.at("02:00").do(_safe(mitre_attack.run, "MITRE ATT&CK"))
     if _enabled("FEEDS_ATLAS_ENABLED"):
@@ -109,22 +117,32 @@ def main():
         schedule.every().sunday.at("02:45").do(_safe(euvd.run_full, "ENISA EUVD (full)"))
         schedule.every().day.at("04:00").do(_safe(euvd.run_delta, "ENISA EUVD (delta)"))
 
-    # ── Run on start: Phase 1 feeds first (fast, <5s), CVE/EUVD last (slow) ──────
-    if run_on_start:
-        if _enabled("FEEDS_MITRE_ENABLED"):
-            _safe(mitre_attack.run, "MITRE ATT&CK")()
-        if _enabled("FEEDS_ATLAS_ENABLED"):
-            _safe(mitre_atlas.run, "MITRE ATLAS")()
-        if _enabled("FEEDS_KEV_ENABLED"):
-            _safe(cisa_kev.run, "CISA KEV")()
-        if _enabled("FEEDS_EPSS_ENABLED"):
-            _safe(epss.run, "FIRST EPSS")()
-        # Full pulls run last — can take minutes to hours
-        if _enabled("FEEDS_CVE_ENABLED"):
-            _safe(nist_cve.run_full, "NVD CVE (full)")()
-            _safe(nist_cpe.run, "NVD CPE (Option B)")()
-        if _enabled("FEEDS_EUVD_ENABLED"):
-            _safe(euvd.run_full, "ENISA EUVD (full)")()
+    # ── Startup runs ─────────────────────────────────────────────────────────────
+    # Fast feeds first (<5s each), heavy full-pulls last.
+    # Each feed only runs if force_run=True OR it has never had a successful run (first deploy).
+
+    def _should_run(feed_name_prefix: str) -> bool:
+        if force_run:
+            return True
+        if not has_successful_run(feed_name_prefix):
+            logger.info("First-boot seed: %s has no successful runs — running now", feed_name_prefix)
+            return True
+        return False
+
+    if _enabled("FEEDS_MITRE_ENABLED") and _should_run("mitre_attack"):
+        _safe(mitre_attack.run, "MITRE ATT&CK")()
+    if _enabled("FEEDS_ATLAS_ENABLED") and _should_run("mitre_atlas"):
+        _safe(mitre_atlas.run, "MITRE ATLAS")()
+    if _enabled("FEEDS_KEV_ENABLED") and _should_run("cisa_kev"):
+        _safe(cisa_kev.run, "CISA KEV")()
+    if _enabled("FEEDS_EPSS_ENABLED") and _should_run("epss"):
+        _safe(epss.run, "FIRST EPSS")()
+    if _enabled("FEEDS_CVE_ENABLED") and _should_run("nist_cve"):
+        _safe(nist_cve.run_full, "NVD CVE (full)")()
+    if _enabled("FEEDS_CVE_ENABLED") and _should_run("nist_cpe"):
+        _safe(nist_cpe.run, "NVD CPE (Option B)")()
+    if _enabled("FEEDS_EUVD_ENABLED") and _should_run("euvd"):
+        _safe(euvd.run_full, "ENISA EUVD (full)")()
 
     logger.info("Scheduler running — next jobs: %s", schedule.jobs)
 

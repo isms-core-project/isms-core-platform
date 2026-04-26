@@ -137,6 +137,20 @@ def fail_run(run_id: str, error: str) -> None:
     _notify_backend_feed_failure(feed_name, error, run_id)
 
 
+def has_successful_run(feed_name_prefix: str) -> bool:
+    """Return True if at least one successful run exists for this feed (prefix match)."""
+    try:
+        with get_conn() as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "SELECT 1 FROM feed_runs WHERE feed_name LIKE %s AND status='success' LIMIT 1",
+                    (feed_name_prefix + "%",),
+                )
+                return cur.fetchone() is not None
+    except Exception:
+        return False
+
+
 def get_platform_setting(key: str, default: str = "") -> str:
     """Read a value from platform_settings. Returns default if missing or on error."""
     try:
