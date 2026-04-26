@@ -236,7 +236,7 @@ Browse the threat actor directory:
 - **Motivation** — espionage / financial / hacktivism / unknown
 - **Description** — activity summary and known targets
 
-> **Note on actors:** Actor data requires a Malpedia API key (`MALPEDIA_API_KEY`). Family data (names, descriptions, ATT&CK TIDs) is available without a key. Register free at malpedia.caad.fkie.fraunhofer.de.
+> **Note:** Malware family and threat actor data is sourced from the MISP galaxy (open GitHub dataset) — no API key required.
 
 ### Correlation Use
 
@@ -268,7 +268,6 @@ Key environment variables:
 |----------|-------------|
 | `ABUSEIPDB_API_KEY` | Required for AbuseIPDB blacklist + enrichment |
 | `SHODAN_API_KEY` | Optional — paid Shodan API; InternetDB (free) used if absent |
-| `MALPEDIA_API_KEY` | Optional — families work without key; actors require it |
 | `TI_MISP_IMPORT_FROM_DATE` | First-run date floor for MISP history (default: `2024-01-01`) |
 | `TI_RUN_ON_START` | Force all OSINT feeds to run on every container start |
 

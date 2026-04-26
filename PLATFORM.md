@@ -113,7 +113,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | `isms-core-worker` | Celery 5.3 | Background tasks — import, sync, compliance recalculation. Queue: `isms`. |
 | `isms-core-beat` | Celery Beat | Scheduled jobs — nightly evidence archive at 02:00 UTC; daily KPI snapshots at 06:00 UTC. No healthcheck (by design). |
 | `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, FIRST EPSS, NVD CVE/CPE, ENISA EUVD. Writes to Postgres and OpenSearch. Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `FEEDS_EUVD_ENABLED`, `NIST_API_KEY`. |
-| `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (`--profile threat-intel`) OSINT IOC feed container — CIRCL MISP, Botvrij MISP, AbuseIPDB blacklist, Malpedia. Serves on-demand trigger server on port 9002 for backend-initiated feed runs. Env: `ABUSEIPDB_API_KEY`, `SHODAN_API_KEY`, `MALPEDIA_API_KEY`, `TI_MISP_IMPORT_FROM_DATE`. |
+| `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (`--profile threat-intel`) OSINT IOC feed container — CIRCL MISP, Botvrij MISP, AbuseIPDB blacklist, Malpedia (MISP galaxy). Serves on-demand trigger server on port 9002 for backend-initiated feed runs. Env: `ABUSEIPDB_API_KEY`, `SHODAN_API_KEY`, `TI_MISP_IMPORT_FROM_DATE`. |
 | `isms-core-connectors` | Python 3.12 | Automated evidence runner — loads all 44 connectors dynamically, pushes evidence to `connector_evidence` table. Env: `CONNECTORS_WORKER_SECRET`. |
 
 > **Access in production:** `https://{HOST_IP}` via nginx. Do NOT access `:3000` or `:8000` directly — those ports are not exposed in production.
@@ -604,7 +604,7 @@ Set `VITE_THREAT_INTEL_ENABLED=true` in `.env` before building the frontend to s
 | **CIRCL MISP** | Every 6h (delta) | None (public) | IOCs (IPs, domains, URLs, hashes) with ATT&CK TIDs + Malpedia galaxy tags |
 | **Botvrij MISP** | Every 6h (delta, staggered) | None (public) | Same schema — deduplicated against CIRCL by `(ioc_type, value, source)` |
 | **AbuseIPDB blacklist** | Daily (02:00 UTC) | `ABUSEIPDB_API_KEY` | Top 10,000 confidence=100 abusive IPs → `ti_iocs` + `ti-abuseipdb-blacklist` OpenSearch index |
-| **Malpedia** | Weekly (Sunday 03:00 UTC) | `MALPEDIA_API_KEY` (free registration) | Malware families work without key; actor data (country, motivation) requires a free API key — register at malpedia.caad.fkie.fraunhofer.de |
+| **Malpedia** | Weekly (Sunday 03:00 UTC) | None | Malware families (3,600+) and threat actors (900+) from MISP galaxy — no API key required |
 
 **On-demand enrichment** (no schedule — triggered from the IP Enrichment page):
 - **AbuseIPDB check** — single-IP abuse score, report count, categories; 24h cache in `ti_enrichment_cache`
@@ -903,13 +903,12 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 | `VITE_THREAT_INTEL_ENABLED` | No | Set to `true` to show IOC/IP Enrichment/Malware Atlas in frontend (baked at build time) |
 | `ABUSEIPDB_API_KEY` | No | Required for AbuseIPDB blacklist pull + on-demand IP enrichment |
 | `SHODAN_API_KEY` | No | Shodan paid API for IP enrichment — Shodan InternetDB (free) used if absent |
-| `MALPEDIA_API_KEY` | No | Malpedia API key — malware families work without key; actor data requires a free registered key (malpedia.caad.fkie.fraunhofer.de/register) |
 | `TI_MISP_IMPORT_FROM_DATE` | No | MISP first-run date floor (default: `2024-01-01`; set `2000-01-01` for full history) |
 | `TI_RUN_ON_START` | No | Set `true` to force all OSINT feeds to run immediately on container start |
 | `TI_MISP_CIRCL_ENABLED` | No | Set `false` to disable CIRCL MISP feed (default: true) |
 | `TI_MISP_BOTVRIJ_ENABLED` | No | Set `false` to disable Botvrij MISP feed (default: true) |
 | `TI_ABUSEIPDB_ENABLED` | No | Set `false` to disable AbuseIPDB blacklist pull (default: true) |
-| `TI_MALPEDIA_ENABLED` | No | Set `false` to disable Malpedia feed (default: true) |
+| `TI_MALPEDIA_ENABLED` | No | Set `false` to disable Malpedia feed (default: true) — no API key required; sourced from MISP galaxy |
 | `MAIL_HOST` | No | SMTP host — empty = no email |
 | `MAIL_PORT` | No | SMTP port (default: 1025) |
 | `NOTIFICATION_EMAIL` | No | Override notification recipient — defaults to admin account email |
