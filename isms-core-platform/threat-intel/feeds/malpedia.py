@@ -153,9 +153,25 @@ def run() -> None:
     families_upserted = 0
     family_os_docs: list[dict] = []
 
+    # Remove any non-slug entries previously imported (e.g. "000Stealer", "3CX Backdoor (OS X)")
+    try:
+        with get_conn() as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "DELETE FROM ti_malware_families WHERE slug !~ '^[a-z]+\\.[a-z0-9_]+$'"
+                )
+                if cur.rowcount:
+                    logger.info("Cleaned %d non-slug family entries from DB", cur.rowcount)
+    except Exception as exc:
+        logger.warning("Cleanup of non-slug families failed: %s", exc)
+
     for entry in family_entries:
         slug = (entry.get("value") or "").strip()
         if not slug:
+            continue
+        # MISP galaxy malpedia cluster mixes proper slugs (win.emotet) with plain
+        # names (000Stealer, "3CX Backdoor (OS X)") — only import slug-format entries
+        if not re.match(r"^[a-z]+\.[a-z0-9_]+$", slug):
             continue
 
         meta = entry.get("meta") or {}
