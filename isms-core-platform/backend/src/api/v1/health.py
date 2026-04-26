@@ -5,6 +5,7 @@ from pydantic import BaseModel
 from sqlalchemy import select, text
 from sqlalchemy.orm import Session as DBSession
 
+from src.core.config import get_settings
 from src.core.dependencies import get_current_user
 from src.database.session import get_db
 from src.schemas.common import HealthResponse
@@ -27,6 +28,26 @@ def health_check(db: DBSession = Depends(get_db)):
         status="ok" if db_status == "ok" else "degraded",
         database=db_status,
         opensearch=os_status,
+    )
+
+
+# ── Platform Features (Phase 40) ─────────────────────────────────────────────
+
+
+class PlatformFeatures(BaseModel):
+    threat_intel_enabled: bool
+
+
+@router.get("/api/v1/platform/features", response_model=PlatformFeatures)
+def get_platform_features(_current_user=Depends(get_current_user)):
+    """Return which optional platform features are active.
+
+    Controlled by env vars on the backend container — no DB query needed.
+    Frontend uses this to show/disable menu items without a build-time Vite variable.
+    """
+    settings = get_settings()
+    return PlatformFeatures(
+        threat_intel_enabled=settings.threat_intel_enabled,
     )
 
 

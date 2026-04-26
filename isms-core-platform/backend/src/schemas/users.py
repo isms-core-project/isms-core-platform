@@ -119,6 +119,12 @@ NOTIFICATION_EVENTS: list[dict] = [
         "category": "infrastructure",
         "description": "Receive an alert when an evidence connector reports a sync error.",
     },
+    {
+        "event_type": "email.ti_feed_failure",
+        "label": "Threat Intel feed failures",
+        "category": "infrastructure",
+        "description": "Receive an alert when a threat intelligence feed (MISP, AbuseIPDB, Malpedia) fails to pull.",
+    },
 ]
 
 

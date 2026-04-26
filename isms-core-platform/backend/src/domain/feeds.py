@@ -176,3 +176,88 @@ class EpssScore(Base):
     score_date: Mapped[date | None] = mapped_column(Date, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+# ── Phase 40 — Threat Intelligence (ti_*) ────────────────────────────────────
+
+
+class TiIoc(Base):
+    """IOC store — deduplicated by (ioc_type, value, source)."""
+    __tablename__ = "ti_iocs"
+    __table_args__ = (
+        UniqueConstraint("ioc_type", "value", "source", name="uq_ti_iocs_type_value_source"),
+        Index("ix_ti_iocs_ioc_type",  "ioc_type"),
+        Index("ix_ti_iocs_source",    "source"),
+        Index("ix_ti_iocs_last_seen", "last_seen"),
+        Index("ix_ti_iocs_value",     "value"),
+    )
+
+    id: Mapped[uuid.UUID]       = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    ioc_type: Mapped[str]       = mapped_column(String(20),  nullable=False)
+    value: Mapped[str]          = mapped_column(Text,        nullable=False)
+    source: Mapped[str]         = mapped_column(String(50),  nullable=False)
+    confidence: Mapped[int | None] = mapped_column(Integer,  nullable=True)
+    tags: Mapped[list]          = mapped_column(JSONB,       nullable=False, default=list)
+    mitre_tids: Mapped[list]    = mapped_column(JSONB,       nullable=False, default=list)
+    family_slugs: Mapped[list]  = mapped_column(JSONB,       nullable=False, default=list)
+    actor_slugs: Mapped[list]   = mapped_column(JSONB,       nullable=False, default=list)
+    event_uuids: Mapped[list]   = mapped_column(JSONB,       nullable=False, default=list)
+    first_seen: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    last_seen: Mapped[datetime | None]  = mapped_column(DateTime(timezone=True), nullable=True)
+    raw: Mapped[dict | None]    = mapped_column(JSONB,       nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class TiMalwareFamily(Base):
+    """Malware families from Malpedia."""
+    __tablename__ = "ti_malware_families"
+    __table_args__ = (
+        Index("ix_ti_malware_name", "name"),
+    )
+
+    id: Mapped[uuid.UUID]       = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    slug: Mapped[str]           = mapped_column(String(200), nullable=False, unique=True)
+    name: Mapped[str]           = mapped_column(String(200), nullable=False)
+    aliases: Mapped[list]       = mapped_column(JSONB, nullable=False, default=list)
+    description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    actor_slugs: Mapped[list]   = mapped_column(JSONB, nullable=False, default=list)
+    mitre_tids: Mapped[list]    = mapped_column(JSONB, nullable=False, default=list)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class TiActor(Base):
+    """Threat actors from Malpedia."""
+    __tablename__ = "ti_actors"
+    __table_args__ = (
+        Index("ix_ti_actors_country", "country"),
+    )
+
+    id: Mapped[uuid.UUID]       = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    slug: Mapped[str]           = mapped_column(String(200), nullable=False, unique=True)
+    name: Mapped[str]           = mapped_column(String(200), nullable=False)
+    country: Mapped[str | None] = mapped_column(String(5),   nullable=True)
+    motivation: Mapped[str | None] = mapped_column(String(100), nullable=True)
+    description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class TiEnrichmentCache(Base):
+    """On-demand enrichment cache — 24h TTL enforced by application."""
+    __tablename__ = "ti_enrichment_cache"
+
+    ip: Mapped[str]              = mapped_column(String(45),  primary_key=True)
+    abuseipdb: Mapped[dict | None] = mapped_column(JSONB,    nullable=True)
+    shodan: Mapped[dict | None]  = mapped_column(JSONB,       nullable=True)
+    cached_at: Mapped[datetime]  = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class TiMispState(Base):
+    """MISP feed delta state — tracks processed event UUIDs per source."""
+    __tablename__ = "ti_misp_state"
+    __table_args__ = (
+        Index("ix_ti_misp_state_source", "source"),
+    )
+
+    source: Mapped[str]       = mapped_column(String(50), primary_key=True)
+    event_uuid: Mapped[str]   = mapped_column(String(36), primary_key=True)
+    processed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)

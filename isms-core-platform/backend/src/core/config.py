@@ -76,6 +76,9 @@ class Settings(BaseSettings):
     admin_email: str = "admin@isms-core.dev"
     admin_password: str = "admin123"
 
+    # Optional features (controlled by docker-compose profile + .env)
+    threat_intel_enabled: bool = False   # set THREAT_INTEL_ENABLED=true when using --profile threat-intel
+
     # App
     debug: bool = False
     log_level: str = "INFO"

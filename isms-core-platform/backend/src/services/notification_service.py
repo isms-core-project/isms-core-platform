@@ -525,6 +525,7 @@ def notify_feed_failure(self, feed_name: str, error_message: str, run_id: str | 
 
         base = _platform_url()
         sent = 0
+        emailed: set[str] = set()
 
         for user in recipients:
             if not _prefs_allow(user, "email.feed_failure"):
@@ -550,6 +551,20 @@ def notify_feed_failure(self, feed_name: str, error_message: str, run_id: str | 
                     db, "email.feed_failure", run_id,
                     f"Feed failure alert sent to {user.email} — {feed_name}",
                 )
+                emailed.add(user.email)
+                sent += 1
+
+        # Also notify NOTIFICATION_EMAIL override if set and not already covered
+        override = get_settings().notification_email
+        if override and override not in emailed:
+            html = render_template("feed_failure.html", {
+                "full_name": override, "email": override,
+                "feed_name": feed_name, "error_message": error_message[:500],
+                "run_id": run_id,
+                "failed_at": datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC"),
+                "feeds_url": f"{base}/threat-intel",
+            })
+            if send_email(to=[override], subject=f"Feed Pull Failed: {feed_name}", html_body=html):
                 sent += 1
 
         db.commit()
@@ -558,6 +573,86 @@ def notify_feed_failure(self, feed_name: str, error_message: str, run_id: str | 
     except Exception as e:
         db.rollback()
         logger.error("notify_feed_failure failed: %s", e, exc_info=True)
+        raise self.retry(exc=e, countdown=60)
+    finally:
+        db.close()
+
+
+# Task: threat-intel feed failure
+# ---------------------------------------------------------------------------
+
+@celery_app.task(name="notify_ti_feed_failure", bind=True, max_retries=2)
+def notify_ti_feed_failure(self, feed_name: str, error_message: str, run_id: str | None = None) -> int:
+    """Alert admins/managers that a threat-intel feed (MISP/AbuseIPDB/Malpedia) failed."""
+    if not is_enabled():
+        return 0
+
+    db = SessionLocal()
+    try:
+        from src.database.enums import UserRole
+        from src.domain.users import User
+
+        recipients = (
+            db.query(User)
+            .filter(
+                User.is_active.is_(True),
+                User.role.in_([UserRole.SUPER_ADMIN, UserRole.ADMIN, UserRole.ISMS_MANAGER]),
+            )
+            .all()
+        )
+        if not recipients:
+            return 0
+
+        base = _platform_url()
+        sent = 0
+        emailed: set[str] = set()
+
+        for user in recipients:
+            if not _prefs_allow(user, "email.ti_feed_failure"):
+                continue
+
+            html = render_template("feed_failure.html", {
+                "full_name": user.full_name,
+                "email": user.email,
+                "feed_name": feed_name,
+                "error_message": error_message[:500],
+                "run_id": run_id,
+                "failed_at": datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC"),
+                "feeds_url": f"{base}/threat-feeds",
+            })
+
+            ok = send_email(
+                to=[user.email],
+                subject=f"Threat Intel Feed Failed: {feed_name}",
+                html_body=html,
+            )
+            if ok:
+                _log_email_sent(
+                    db, "email.ti_feed_failure", run_id,
+                    f"TI feed failure alert sent to {user.email} — {feed_name}",
+                )
+                emailed.add(user.email)
+                sent += 1
+
+        # Also notify NOTIFICATION_EMAIL override if set and not already covered
+        override = get_settings().notification_email
+        if override and override not in emailed:
+            html = render_template("feed_failure.html", {
+                "full_name": override, "email": override,
+                "feed_name": feed_name, "error_message": error_message[:500],
+                "run_id": run_id,
+                "failed_at": datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC"),
+                "feeds_url": f"{base}/threat-feeds",
+            })
+            if send_email(to=[override], subject=f"Threat Intel Feed Failed: {feed_name}", html_body=html):
+                sent += 1
+
+        db.commit()
+        return sent
+
+    except Exception as e:
+        db.rollback()
+        logger.error("notify_ti_feed_failure failed: %s", e, exc_info=True)
         raise self.retry(exc=e, countdown=60)
     finally:
         db.close()

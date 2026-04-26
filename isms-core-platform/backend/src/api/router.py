@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from src.api.v1 import ai, admin, assessments, auth, bia, collections, compass, connectors, controls, csrm, custom_frameworks, dashboard, ebios, evidence, feeds, frameworks, gaps, generators, glossary, graph, health, implementations, metrics, nist, organisation, policies, projects, qa, regulatory, risks, search, sync, user_groups, vendors
+from src.api.v1 import ai, admin, assessments, auth, bia, collections, compass, connectors, controls, csrm, custom_frameworks, dashboard, ebios, evidence, feeds, frameworks, gaps, generators, glossary, graph, health, implementations, metrics, nist, organisation, policies, projects, qa, regulatory, risks, search, sync, threat_intel, user_groups, vendors
 from src.api.v1.remediation import acceptance_router, remediation_router
 from src.api.v1 import coverage_inference
 
@@ -44,5 +44,6 @@ api_router.include_router(bia.router, prefix="/api/v1")
 api_router.include_router(ebios.router, prefix="/api/v1")
 api_router.include_router(custom_frameworks.router, prefix="/api/v1")
 api_router.include_router(feeds.router, prefix="/api/v1")
+api_router.include_router(threat_intel.router, prefix="/api/v1")
 api_router.include_router(glossary.router, prefix="/api/v1")
 api_router.include_router(user_groups.router)

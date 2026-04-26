@@ -77,6 +77,9 @@ import {
   MenuBookOutlined,
   SendOutlined,
   ReceiptLongOutlined,
+  TrackChangesOutlined,
+  CoronavirusOutlined,
+  RouterOutlined,
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -96,6 +99,8 @@ interface NavItem {
   superAdminOnly?: boolean    // super_admin only
   managerAndAbove?: boolean   // isms_manager + admin + super_admin only
   notViewer?: boolean         // all roles except viewer
+  disabled?: boolean          // greyed out + unclickable (feature not active)
+  disabledTip?: string        // tooltip shown when disabled
 }
 
 interface NavRegion {
@@ -211,7 +216,7 @@ const NAV_FRAMEWORK_REGIONS: NavRegion[] = [
 ]
 
 // ── Intelligence (Phase 25/28) ────────────────────────────────────────────────
-const NAV_INTELLIGENCE: NavItem[] = [
+const NAV_INTELLIGENCE_BASE: NavItem[] = [
   { label: 'Threat Feeds',      path: '/threat-feeds',     icon: <StreamOutlined /> },
   { label: 'MITRE ATT&CK',      path: '/mitre-attack',     icon: <BugReportOutlined /> },
   { label: 'ATT&CK Heatmap',    path: '/mitre-heatmap',    icon: <GridViewOutlined /> },
@@ -221,6 +226,14 @@ const NAV_INTELLIGENCE: NavItem[] = [
   { label: 'MITRE ATLAS',       path: '/mitre-atlas',      icon: <TravelExploreOutlined /> },
   { label: 'CVE / CPE',         path: '/cve-explorer',     icon: <ManageSearchOutlined /> },
   { label: 'EUVD',              path: '/euvd-explorer',    icon: <ManageSearchOutlined /> },
+]
+
+// Phase 40 — Threat Intel items (shown greyed out when feature not active)
+const _TI_DISABLED_TIP = 'Activate with --profile threat-intel'
+const NAV_TI_ITEMS: NavItem[] = [
+  { label: 'IOC Explorer',      path: '/ioc-explorer',     icon: <TrackChangesOutlined />, disabledTip: _TI_DISABLED_TIP },
+  { label: 'Malware Atlas',     path: '/malware-atlas',    icon: <CoronavirusOutlined />,  disabledTip: _TI_DISABLED_TIP },
+  { label: 'IP Enrichment',     path: '/ip-enrichment',    icon: <RouterOutlined />,       disabledTip: _TI_DISABLED_TIP },
 ]
 
 // ── Suppliers / TPRM (Phase 16+) ──────────────────────────────────────────────
@@ -271,7 +284,7 @@ const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generator
 const FRAMEWORK_PATHS  = ['/nist-csf', '/nist-ai-rmf', '/nist-800-53', '/nis2', '/dora', '/uk-nis', '/ncsc-caf', '/uk-op-resilience', '/fr-recyf', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/isg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit', '/csa-ccm', '/csa-aicm']
 const SUPPLIER_PATHS   = ['/tprm']
 const ADMIN_PATHS        = ['/admin', '/admin/logs', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker', '/crosswalk-tracker']
-const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/mitre-groups', '/mitre-software', '/mitre-campaigns', '/mitre-heatmap', '/cve-explorer', '/euvd-explorer']
+const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/mitre-groups', '/mitre-software', '/mitre-campaigns', '/mitre-heatmap', '/cve-explorer', '/euvd-explorer', '/ioc-explorer', '/malware-atlas', '/ip-enrichment', '/threat-intel']
 const ALL_PLATFORM_PATHS = [...RISK_PATHS, ...TOOLS_PATHS, ...FRAMEWORK_PATHS, ...SUPPLIER_PATHS, ...ADMIN_PATHS, ...INTELLIGENCE_PATHS]
 
 // ── Notification prefs dialog ─────────────────────────────────────────────────
@@ -416,16 +429,17 @@ function NavItemRow({ item, color, isActive, onNavigate, indent = false }: {
   item: NavItem; color: string; isActive: (p: string) => boolean
   onNavigate: (p: string) => void; indent?: boolean
 }) {
-  const active = isActive(item.path)
-  return (
+  const active = isActive(item.path) && !item.disabled
+  const row = (
     <ListItem disablePadding sx={{ mb: 0.15 }}>
       <ListItemButton
         selected={active}
-        onClick={() => onNavigate(item.path)}
+        onClick={() => { if (!item.disabled) onNavigate(item.path) }}
         sx={{
           borderRadius: 1.5, py: 0.5, px: 1.25, pl: indent ? 2.5 : 2,
           '&.Mui-selected': { bgcolor: `${color}20`, color, '& .MuiListItemIcon-root': { color } },
-          '&:hover': { bgcolor: `${color}10` },
+          '&:hover': { bgcolor: item.disabled ? 'transparent' : `${color}10` },
+          ...(item.disabled ? { opacity: 0.38, cursor: 'default' } : {}),
         }}
       >
         <ListItemIcon sx={{ minWidth: 30, color: active ? color : 'text.secondary', transition: 'color 0.15s' }}>
@@ -438,6 +452,14 @@ function NavItemRow({ item, color, isActive, onNavigate, indent = false }: {
       </ListItemButton>
     </ListItem>
   )
+  if (item.disabled) {
+    return (
+      <Tooltip title={item.disabledTip ?? 'Feature not active'} placement="right">
+        <span>{row}</span>
+      </Tooltip>
+    )
+  }
+  return row
 }
 
 function NavGroup({ label, icon, items, regions, open, onToggle, collapsed, color = PLATFORM_COLOR, currentUser, isSuperAdmin, onNavigate, isActive, hasBadge }: NavGroupProps) {
@@ -611,7 +633,20 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
     refetchInterval: 5 * 60_000,
     enabled: !!user,
   })
-  const hasIntelAlert     = (healthAlerts ?? []).some(a => a.type === 'feed_failure' || a.type === 'opensearch_down')
+
+  const { data: platformFeatures } = useQuery<{ threat_intel_enabled: boolean }>({
+    queryKey: ['platform', 'features'],
+    queryFn: () => client.get<{ threat_intel_enabled: boolean }>('/platform/features').then(r => r.data),
+    staleTime: 10 * 60_000,
+    enabled: !!user,
+  })
+
+  const tiEnabled = platformFeatures?.threat_intel_enabled ?? false
+  const NAV_INTELLIGENCE = [
+    ...NAV_INTELLIGENCE_BASE,
+    ...NAV_TI_ITEMS.map(item => tiEnabled ? item : { ...item, disabled: true }),
+  ]
+  const hasIntelAlert     = (healthAlerts ?? []).some(a => a.type === 'feed_failure')
   const hasConnectorAlert = (healthAlerts ?? []).some(a => a.type === 'connector_failure')
 
   const TIER_OPTIONS: { value: IsmsTier; label: string; color: string }[] = [

@@ -69,6 +69,10 @@ import MitreCampaigns from './pages/MitreCampaigns'
 import MitreHeatmap from './pages/MitreHeatmap'
 import CVEExplorer from './pages/CVEExplorer'
 import EuvdExplorer from './pages/EuvdExplorer'
+import ThreatIntelDashboard from './pages/ThreatIntelDashboard'
+import IocExplorer from './pages/IocExplorer'
+import MalwareAtlas from './pages/MalwareAtlas'
+import IpEnrichment from './pages/IpEnrichment'
 import Glossary from './pages/Glossary'
 import Cobit from './pages/Cobit'
 import CsaCcm from './pages/CsaCcm'
@@ -168,6 +172,10 @@ export default function App() {
         <Route path="mitre-heatmap" element={<MitreHeatmap />} />
         <Route path="cve-explorer" element={<CVEExplorer />} />
         <Route path="euvd-explorer" element={<EuvdExplorer />} />
+        <Route path="ioc-explorer" element={<IocExplorer />} />
+        <Route path="malware-atlas" element={<MalwareAtlas />} />
+        <Route path="ip-enrichment" element={<IpEnrichment />} />
+        <Route path="threat-intel" element={<ThreatIntelDashboard />} />
         <Route path="glossary" element={<Glossary />} />
         <Route path="cobit" element={<Cobit />} />
         <Route path="*" element={<Navigate to="/" replace />} />

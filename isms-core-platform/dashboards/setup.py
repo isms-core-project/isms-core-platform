@@ -68,6 +68,60 @@ INDICES = {
             }
         }
     },
+    # ── Threat Intelligence indices (Phase 40e) ───────────────────────────────
+    "ti-misp-circl": {"mappings": {"properties": {
+        "ioc_type":     {"type": "keyword"},
+        "value":        {"type": "keyword"},
+        "source":       {"type": "keyword"},
+        "confidence":   {"type": "integer"},
+        "first_seen":   {"type": "date"},
+        "last_seen":    {"type": "date"},
+        "family_slugs": {"type": "keyword"},
+        "actor_slugs":  {"type": "keyword"},
+        "mitre_tids":   {"type": "keyword"},
+        "tags":         {"type": "keyword"},
+        "indexed_at":   {"type": "date"},
+    }}},
+    "ti-misp-botvrij": {"mappings": {"properties": {
+        "ioc_type":     {"type": "keyword"},
+        "value":        {"type": "keyword"},
+        "source":       {"type": "keyword"},
+        "confidence":   {"type": "integer"},
+        "first_seen":   {"type": "date"},
+        "last_seen":    {"type": "date"},
+        "family_slugs": {"type": "keyword"},
+        "actor_slugs":  {"type": "keyword"},
+        "mitre_tids":   {"type": "keyword"},
+        "tags":         {"type": "keyword"},
+        "indexed_at":   {"type": "date"},
+    }}},
+    "ti-abuseipdb-blacklist": {"mappings": {"properties": {
+        "ioc_type":     {"type": "keyword"},
+        "value":        {"type": "keyword"},
+        "source":       {"type": "keyword"},
+        "confidence":   {"type": "integer"},
+        "first_seen":   {"type": "date"},
+        "last_seen":    {"type": "date"},
+        "indexed_at":   {"type": "date"},
+    }}},
+    "ti-malpedia-families": {"mappings": {"properties": {
+        "slug":         {"type": "keyword"},
+        "name":         {"type": "text", "fields": {"keyword": {"type": "keyword", "ignore_above": 512}}},
+        "aliases":      {"type": "keyword"},
+        "description":  {"type": "text"},
+        "actor_slugs":  {"type": "keyword"},
+        "mitre_tids":   {"type": "keyword"},
+        "indexed_at":   {"type": "date"},
+    }}},
+    "ti-malpedia-actors": {"mappings": {"properties": {
+        "slug":         {"type": "keyword"},
+        "name":         {"type": "text", "fields": {"keyword": {"type": "keyword", "ignore_above": 512}}},
+        "country":      {"type": "keyword"},
+        "motivation":   {"type": "keyword"},
+        "description":  {"type": "text"},
+        "family_slugs": {"type": "keyword"},
+        "indexed_at":   {"type": "date"},
+    }}},
     # ── Per-source evidence indices (Phase 39a) ───────────────────────────────
     # Common base fields shared by all per-source indices
     "evidence-entra-id": {"mappings": {"properties": {
@@ -1110,6 +1164,35 @@ def build_objects(fields_by_id: dict) -> list:
              "fields": fields_by_id.get("ip-cisa-kev", "[]"),
          },
          "references": []},
+        # Phase 40e — Threat Intelligence index patterns
+        {"type": "index-pattern", "id": "ip-ti-misp",
+         "attributes": {
+             "title": "ti-misp-*",
+             "timeFieldName": "last_seen",
+             "fields": fields_by_id.get("ip-ti-misp", "[]"),
+         },
+         "references": []},
+        {"type": "index-pattern", "id": "ip-ti-abuseipdb",
+         "attributes": {
+             "title": "ti-abuseipdb-blacklist",
+             "timeFieldName": "last_seen",
+             "fields": fields_by_id.get("ip-ti-abuseipdb", "[]"),
+         },
+         "references": []},
+        {"type": "index-pattern", "id": "ip-ti-malpedia-families",
+         "attributes": {
+             "title": "ti-malpedia-families",
+             "timeFieldName": "indexed_at",
+             "fields": fields_by_id.get("ip-ti-malpedia-families", "[]"),
+         },
+         "references": []},
+        {"type": "index-pattern", "id": "ip-ti-malpedia-actors",
+         "attributes": {
+             "title": "ti-malpedia-actors",
+             "timeFieldName": "indexed_at",
+             "fields": fields_by_id.get("ip-ti-malpedia-actors", "[]"),
+         },
+         "references": []},
     ]
 
     objs += [
@@ -1301,6 +1384,72 @@ def build_objects(fields_by_id: dict) -> list:
         ("viz-ev-all-control",   32,  5, 16, 9),
     ]))
 
+    # ── Phase 40e — Threat Intelligence Dashboards ───────────────────────────
+
+    # MISP IOC Explorer (CIRCL + Botvrij combined via ti-misp-* wildcard)
+    objs += [
+        _metric(     "viz-ti-misp-total",    "MISP — Total IOCs",                 "ip-ti-misp"),
+        _kql_metric( "viz-ti-misp-circl",    "MISP — CIRCL Events",               "ip-ti-misp", "source: circl_misp"),
+        _kql_metric( "viz-ti-misp-botvrij",  "MISP — Botvrij Events",             "ip-ti-misp", "source: botvrij_misp"),
+        _timeline(   "viz-ti-misp-time",     "MISP — IOCs Over Time",             "ip-ti-misp", "last_seen"),
+        _pie(        "viz-ti-misp-type",     "MISP — By IOC Type",                "ip-ti-misp", "ioc_type"),
+        _count_table("viz-ti-misp-tids",     "MISP — Top ATT&CK TIDs",            "ip-ti-misp", "mitre_tids", 25),
+        _count_table("viz-ti-misp-families", "MISP — Top Malware Families",       "ip-ti-misp", "family_slugs", 25),
+        _count_table("viz-ti-misp-actors",   "MISP — Top Threat Actors",          "ip-ti-misp", "actor_slugs", 25),
+    ]
+    objs.append(_dashboard("dash-ti-misp", "ISMS CORE — MISP Threat Intelligence", [
+        ("viz-ti-misp-total",    0,  0, 16, 5),
+        ("viz-ti-misp-circl",   16,  0, 16, 5),
+        ("viz-ti-misp-botvrij", 32,  0, 16, 5),
+        ("viz-ti-misp-time",     0,  5, 48, 8),
+        ("viz-ti-misp-type",     0, 13, 16, 9),
+        ("viz-ti-misp-tids",    16, 13, 16, 9),
+        ("viz-ti-misp-families",32, 13, 16, 9),
+        ("viz-ti-misp-actors",   0, 22, 48,10),
+    ]))
+
+    # AbuseIPDB Blacklist
+    objs += [
+        _metric(     "viz-ti-abuse-total",   "AbuseIPDB — Blacklisted IPs",       "ip-ti-abuseipdb"),
+        _kql_metric( "viz-ti-abuse-100",     "AbuseIPDB — Confidence 100%",       "ip-ti-abuseipdb", "confidence: 100"),
+        _kql_metric( "viz-ti-abuse-90",      "AbuseIPDB — Confidence ≥ 90%",      "ip-ti-abuseipdb", "confidence >= 90"),
+        _timeline(   "viz-ti-abuse-time",    "AbuseIPDB — Last Seen Over Time",   "ip-ti-abuseipdb", "last_seen"),
+        _top_table(  "viz-ti-abuse-top",     "AbuseIPDB — Top IPs by Confidence", "ip-ti-abuseipdb", "value", "confidence", 50),
+    ]
+    objs.append(_dashboard("dash-ti-abuseipdb", "ISMS CORE — AbuseIPDB Blacklist", [
+        ("viz-ti-abuse-total",  0,  0, 16, 5),
+        ("viz-ti-abuse-100",   16,  0, 16, 5),
+        ("viz-ti-abuse-90",    32,  0, 16, 5),
+        ("viz-ti-abuse-time",   0,  5, 48, 8),
+        ("viz-ti-abuse-top",    0, 13, 48,12),
+    ]))
+
+    # Malpedia — Malware Families
+    objs += [
+        _metric(     "viz-ti-mal-fam-total",   "Malpedia — Malware Families",          "ip-ti-malpedia-families"),
+        _count_table("viz-ti-mal-fam-actors",  "Families — Top Actor Links",           "ip-ti-malpedia-families", "actor_slugs", 25),
+        _count_table("viz-ti-mal-fam-tids",    "Families — Top ATT&CK TIDs",           "ip-ti-malpedia-families", "mitre_tids", 25),
+    ]
+
+    # Malpedia — Threat Actors
+    objs += [
+        _metric(     "viz-ti-mal-act-total",   "Malpedia — Threat Actors",             "ip-ti-malpedia-actors"),
+        _pie(        "viz-ti-mal-act-country", "Actors — By Country",                  "ip-ti-malpedia-actors", "country"),
+        _pie(        "viz-ti-mal-act-motiv",   "Actors — By Motivation",               "ip-ti-malpedia-actors", "motivation"),
+        _count_table("viz-ti-mal-act-fams",    "Actors — Top Malware Families Used",   "ip-ti-malpedia-actors", "family_slugs", 25),
+    ]
+    objs.append(_dashboard("dash-ti-malpedia", "ISMS CORE — Malpedia Atlas", [
+        # Families row
+        ("viz-ti-mal-fam-total",    0,  0, 16, 5),
+        ("viz-ti-mal-act-total",   16,  0, 16, 5),
+        ("viz-ti-mal-fam-actors",   0,  5, 24, 9),
+        ("viz-ti-mal-fam-tids",    24,  5, 24, 9),
+        # Actors row
+        ("viz-ti-mal-act-country",  0, 14, 16, 9),
+        ("viz-ti-mal-act-motiv",   16, 14, 16, 9),
+        ("viz-ti-mal-act-fams",    32, 14, 16, 9),
+    ]))
+
     return objs
 
 
@@ -1376,6 +1525,11 @@ def main():
         "ip-evidence-servicenow":        get_osd_fields("evidence-servicenow"),
         # Wildcard — all per-source evidence indices (Phase 39.11)
         "ip-evidence-wildcard":          get_osd_fields("evidence-*"),
+        # Phase 40e — Threat Intelligence indices
+        "ip-ti-misp":                    get_osd_fields("ti-misp-*"),
+        "ip-ti-abuseipdb":               get_osd_fields("ti-abuseipdb-blacklist"),
+        "ip-ti-malpedia-families":       get_osd_fields("ti-malpedia-families"),
+        "ip-ti-malpedia-actors":         get_osd_fields("ti-malpedia-actors"),
     }
     for pid, fields_json in fields_by_id.items():
         count = len(json.loads(fields_json))

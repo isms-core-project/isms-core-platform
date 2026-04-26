@@ -325,6 +325,14 @@ def send_test_notification(body: dict, current_user=Depends(get_current_user)):
             "failed_at": "19 Apr 2026 06:00 UTC",
             "connectors_url": f"{base}/connectors",
         }),
+        "email.ti_feed_failure": ("feed_failure.html", "Test: Threat Intel Feed Failed — ISMS CORE", {
+            "full_name": name, "email": recipient,
+            "feed_name": "circl_misp (test)",
+            "error_message": "ConnectionError: Failed to connect to misp.circl.lu — this is a test notification.",
+            "run_id": "00000000-0000-0000-0000-000000000002",
+            "failed_at": "19 Apr 2026 03:00 UTC",
+            "feeds_url": f"{base}/threat-feeds",
+        }),
     }
 
     entry = TEMPLATES.get(event_type)

@@ -421,6 +421,11 @@ services:
       - GARAGE_BUCKET_EXPORTS=${GARAGE_BUCKET_EXPORTS:-isms-exports}
       # v2: storage backend switch (postgres = v1 compat, opensearch = v2 target)
       - EVIDENCE_STORE=${EVIDENCE_STORE:-postgres}
+      # Phase 40: threat-intel optional feature flag (set true when using --profile threat-intel)
+      - THREAT_INTEL_ENABLED=${THREAT_INTEL_ENABLED:-false}
+      # Phase 40: enrichment API keys — shared with TI container for IP Enrichment page
+      - ABUSEIPDB_API_KEY=${ABUSEIPDB_API_KEY:-}
+      - SHODAN_API_KEY=${SHODAN_API_KEY:-}
     depends_on:
       isms-core-postgres:
         condition: service_healthy
@@ -629,6 +634,41 @@ services:
       - NIST_API_KEY=${NIST_API_KEY:-}
       - ISMS_API_URL=http://isms-core-backend:8000
       - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET}
+    depends_on:
+      isms-core-backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - isms-core-network
+
+  # ── Threat Intelligence (optional profile) ────────────────────────────────
+
+  isms-core-threat-intel:
+    build:
+      context: ./threat-intel
+    image: isms-core-threat-intel:latest
+    container_name: isms-core-threat-intel
+    profiles: [threat-intel]
+    environment:
+      - TZ=${TZ:-Europe/Zurich}
+      - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
+      - OPENSEARCH_URL=http://isms-core-opensearch:9200
+      - ISMS_API_URL=http://isms-core-backend:8000
+      - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET}
+      # Source enable flags
+      - TI_MISP_CIRCL_ENABLED=${TI_MISP_CIRCL_ENABLED:-true}
+      - TI_MISP_BOTVRIJ_ENABLED=${TI_MISP_BOTVRIJ_ENABLED:-true}
+      - TI_ABUSEIPDB_ENABLED=${TI_ABUSEIPDB_ENABLED:-true}
+      - TI_MALPEDIA_ENABLED=${TI_MALPEDIA_ENABLED:-true}
+      # API keys (leave empty to disable that source)
+      - ABUSEIPDB_API_KEY=${ABUSEIPDB_API_KEY:-}
+      - SHODAN_API_KEY=${SHODAN_API_KEY:-}
+      - MALPEDIA_API_KEY=${MALPEDIA_API_KEY:-}
+      # MISP history depth — first run only (2000-01-01 for full archive)
+      - TI_MISP_IMPORT_FROM_DATE=${TI_MISP_IMPORT_FROM_DATE:-2024-01-01}
+      - TI_RUN_ON_START=${TI_RUN_ON_START:-false}
+    expose:
+      - "9002"          # on-demand trigger server (backend → TI container)
     depends_on:
       isms-core-backend:
         condition: service_healthy

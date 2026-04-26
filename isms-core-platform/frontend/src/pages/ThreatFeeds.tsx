@@ -5,16 +5,19 @@ import {
   TableHead, TableRow, Tooltip, Typography,
 } from '@mui/material'
 import {
-  BugReportOutlined, CheckCircleOutlined, DownloadOutlined, ErrorOutlined,
-  HourglassEmptyOutlined, PlayArrowOutlined, PolicyOutlined, SecurityOutlined,
-  StopOutlined, SyncOutlined, TuneOutlined, VerifiedOutlined,
+  BugReportOutlined, CheckCircleOutlined, CoronavirusOutlined, DownloadOutlined,
+  ErrorOutlined, HourglassEmptyOutlined, PlayArrowOutlined, PolicyOutlined,
+  RouterOutlined, SecurityOutlined, StopOutlined, SyncOutlined, TrackChangesOutlined,
+  TuneOutlined, VerifiedOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import {
   Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer,
   Tooltip as ChartTooltip, XAxis, YAxis,
 } from 'recharts'
-import { feedsApi } from '../api/feedsApi'
+import { feedsApi, type FeedStatusItem } from '../api/feedsApi'
+import { threatIntelApi } from '../api/threatIntelApi'
+import { client } from '../api/client'
 import PageHeader from '../components/PageHeader'
 import { useAuth } from '../store/AuthContext'
 
@@ -44,7 +47,18 @@ const FEED_ICONS: Record<string, React.ReactNode> = {
   mitre_atlas:      <PolicyOutlined sx={{ fontSize: 28, color: INTEL_COLOR }} />,
   cisa_kev:         <BugReportOutlined sx={{ fontSize: 28, color: '#c62828' }} />,
   epss:             <VerifiedOutlined sx={{ fontSize: 28, color: '#1565c0' }} />,
+  circl_misp:       <TrackChangesOutlined sx={{ fontSize: 28, color: INTEL_COLOR }} />,
+  botvrij_misp:     <TrackChangesOutlined sx={{ fontSize: 28, color: INTEL_COLOR }} />,
+  abuseipdb:        <RouterOutlined sx={{ fontSize: 28, color: '#7b1fa2' }} />,
+  malpedia:         <CoronavirusOutlined sx={{ fontSize: 28, color: '#b71c1c' }} />,
 }
+
+const TI_FEED_DEFS: Array<Pick<FeedStatusItem, 'feed_name' | 'display_name'>> = [
+  { feed_name: 'circl_misp',   display_name: 'MISP CIRCL' },
+  { feed_name: 'botvrij_misp', display_name: 'MISP Botvrij' },
+  { feed_name: 'abuseipdb',    display_name: 'AbuseIPDB' },
+  { feed_name: 'malpedia',     display_name: 'Malpedia' },
+]
 
 const TACTIC_COLORS = [
   '#B84F00', '#d35400', '#e67e22', '#f39c12',
@@ -92,6 +106,20 @@ export default function ThreatFeeds() {
   const isAdmin = user?.role === 'admin' || user?.role === 'super_admin'
   const qc = useQueryClient()
 
+  const { data: platformFeatures } = useQuery({
+    queryKey: ['platform', 'features'],
+    queryFn: () => client.get<{ threat_intel_enabled: boolean }>('/platform/features').then(r => r.data),
+    staleTime: 10 * 60_000,
+  })
+  const tiEnabled = platformFeatures?.threat_intel_enabled ?? false
+
+  const { data: tiSummary } = useQuery({
+    queryKey: ['threat-intel', 'summary'],
+    queryFn: threatIntelApi.getSummary,
+    enabled: tiEnabled,
+    refetchInterval: 30_000,
+  })
+
   const { data: status, isLoading: statusLoading, error: statusError } =
     useQuery({ queryKey: ['feeds', 'status'], queryFn: feedsApi.getStatus })
 
@@ -134,6 +162,17 @@ export default function ThreatFeeds() {
     },
   })
 
+  const tiTriggerMutation = useMutation({
+    mutationFn: (source: string) => threatIntelApi.triggerFeed(source),
+    onSuccess: () => {
+      setTriggerError(null)
+      setTimeout(() => qc.invalidateQueries({ queryKey: ['threat-intel', 'summary'] }), 2000)
+    },
+    onError: (err: any) => {
+      setTriggerError(err?.response?.data?.detail ?? 'TI trigger failed')
+    },
+  })
+
   const { data: kevStats } =
     useQuery({ queryKey: ['feeds', 'kev', 'stats'], queryFn: feedsApi.getKevStats })
 
@@ -170,102 +209,142 @@ export default function ThreatFeeds() {
       {triggerError && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setTriggerError(null)}>{triggerError}</Alert>}
 
       {/* ── Feed status cards ── */}
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))', gap: 2, mb: 3 }}>
-        {(status?.feeds ?? []).map(feed => (
-          <Paper key={feed.feed_name} variant="outlined" sx={{ p: 2, borderRadius: 2 }}>
-            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
-              {FEED_ICONS[feed.feed_name] ?? <SecurityOutlined sx={{ fontSize: 28, color: INTEL_COLOR }} />}
-              <Box sx={{ flex: 1, minWidth: 0 }}>
-                <Typography variant="subtitle2" sx={{ fontWeight: 600, fontSize: '0.82rem' }} noWrap>
-                  {feed.display_name}
-                </Typography>
-                <StatusChip status={feed.last_status} />
-                <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.5 }}>
-                  Last: {fmt(feed.last_run)}
-                </Typography>
-                {feed.item_count != null && (
-                  <Typography variant="caption" color="text.secondary">
-                    {feed.item_count.toLocaleString()} items
+      {(() => {
+        // TI feed items: live from summary when enabled, static placeholders when disabled
+        const tiFeedItems: FeedStatusItem[] = tiEnabled && tiSummary
+          ? tiSummary.sources.map(s => ({
+              feed_name: s.source,
+              display_name: s.display_name,
+              enabled: s.enabled,
+              last_run: s.last_run_at,
+              last_status: s.last_run_status,
+              item_count: s.ioc_count || null,
+              error_message: null,
+            }))
+          : TI_FEED_DEFS.map(f => ({
+              feed_name: f.feed_name, display_name: f.display_name,
+              enabled: false, last_run: null, last_status: null, item_count: null, error_message: null,
+            }))
+
+        const TI_NAMES = new Set(TI_FEED_DEFS.map(f => f.feed_name))
+
+        function FeedCard({ feed, isTi = false, disabled = false }: { feed: FeedStatusItem; isTi?: boolean; disabled?: boolean }) {
+          const card = (
+            <Paper
+              variant="outlined"
+              sx={{ p: 2, borderRadius: 2, ...(disabled ? { opacity: 0.38 } : {}) }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
+                {FEED_ICONS[feed.feed_name] ?? <SecurityOutlined sx={{ fontSize: 28, color: INTEL_COLOR }} />}
+                <Box sx={{ flex: 1, minWidth: 0 }}>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 600, fontSize: '0.82rem' }} noWrap>
+                    {feed.display_name}
                   </Typography>
-                )}
-                {feed.error_message && (
-                  <Typography variant="caption" color="error.main" display="block" sx={{ mt: 0.25 }} noWrap>
-                    {feed.error_message}
+                  <StatusChip status={feed.last_status} />
+                  <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.5 }}>
+                    Last: {fmt(feed.last_run)}
                   </Typography>
-                )}
-                {isAdmin && (
-                  <Box sx={{ mt: 1, display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
-                    {feed.last_status === 'running' ? (
-                      <Tooltip title="Request cancellation of this feed">
-                        <span>
-                          <Button
-                            size="small"
-                            variant="outlined"
-                            color="error"
-                            startIcon={cancelMutation.isPending && cancelMutation.variables === feed.feed_name
-                              ? <CircularProgress size={12} /> : <StopOutlined sx={{ fontSize: 14 }} />}
-                            disabled={cancelMutation.isPending}
-                            onClick={() => cancelMutation.mutate(feed.feed_name)}
-                            sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
-                          >
-                            Stop
-                          </Button>
-                        </span>
-                      </Tooltip>
-                    ) : (
-                      <>
-                        <Tooltip title={['nist_cve', 'euvd'].includes(feed.feed_name) ? 'Run delta update now' : 'Run feed now'}>
+                  {feed.item_count != null && feed.item_count > 0 && (
+                    <Typography variant="caption" color="text.secondary">
+                      {feed.item_count.toLocaleString()} items
+                    </Typography>
+                  )}
+                  {feed.error_message && (
+                    <Typography variant="caption" color="error.main" display="block" sx={{ mt: 0.25 }} noWrap>
+                      {feed.error_message}
+                    </Typography>
+                  )}
+                  {isAdmin && !disabled && (
+                    <Box sx={{ mt: 1, display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
+                      {!isTi && feed.last_status === 'running' ? (
+                        <Tooltip title="Request cancellation of this feed">
                           <span>
                             <Button
-                              size="small"
-                              variant="outlined"
-                              startIcon={triggerMutation.isPending && triggerMutation.variables?.feedName === feed.feed_name
-                                ? <CircularProgress size={12} /> : <PlayArrowOutlined sx={{ fontSize: 14 }} />}
-                              disabled={triggerMutation.isPending}
-                              onClick={() => triggerMutation.mutate({
-                                feedName: feed.feed_name,
-                                mode: ['nist_cve', 'euvd'].includes(feed.feed_name) ? 'delta' : undefined,
-                              })}
+                              size="small" variant="outlined" color="error"
+                              startIcon={cancelMutation.isPending && cancelMutation.variables === feed.feed_name
+                                ? <CircularProgress size={12} /> : <StopOutlined sx={{ fontSize: 14 }} />}
+                              disabled={cancelMutation.isPending}
+                              onClick={() => cancelMutation.mutate(feed.feed_name)}
                               sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
-                            >
-                              {['nist_cve', 'euvd'].includes(feed.feed_name) ? 'Delta' : 'Run'}
-                            </Button>
+                            >Stop</Button>
                           </span>
                         </Tooltip>
-                        {['nist_cve', 'euvd'].includes(feed.feed_name) && (
-                          <Tooltip title={
-                            feed.feed_name === 'nist_cve'
-                              ? 'Run full CVE pull (slow — 30-60 min)'
-                              : 'Run full EUVD pull (all entries)'
-                          }>
+                      ) : isTi ? (
+                        <Tooltip title="Run feed now">
+                          <span>
+                            <Button
+                              size="small" variant="outlined"
+                              startIcon={tiTriggerMutation.isPending && tiTriggerMutation.variables === feed.feed_name
+                                ? <CircularProgress size={12} /> : <PlayArrowOutlined sx={{ fontSize: 14 }} />}
+                              disabled={tiTriggerMutation.isPending || feed.last_status === 'running'}
+                              onClick={() => tiTriggerMutation.mutate(feed.feed_name)}
+                              sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
+                            >Run</Button>
+                          </span>
+                        </Tooltip>
+                      ) : (
+                        <>
+                          <Tooltip title={['nist_cve', 'euvd'].includes(feed.feed_name) ? 'Run delta update now' : 'Run feed now'}>
                             <span>
                               <Button
-                                size="small"
-                                variant="outlined"
-                                color="warning"
+                                size="small" variant="outlined"
+                                startIcon={triggerMutation.isPending && triggerMutation.variables?.feedName === feed.feed_name
+                                  ? <CircularProgress size={12} /> : <PlayArrowOutlined sx={{ fontSize: 14 }} />}
                                 disabled={triggerMutation.isPending}
-                                onClick={() => triggerMutation.mutate({ feedName: feed.feed_name, mode: 'full' })}
+                                onClick={() => triggerMutation.mutate({
+                                  feedName: feed.feed_name,
+                                  mode: ['nist_cve', 'euvd'].includes(feed.feed_name) ? 'delta' : undefined,
+                                })}
                                 sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
                               >
-                                Full
+                                {['nist_cve', 'euvd'].includes(feed.feed_name) ? 'Delta' : 'Run'}
                               </Button>
                             </span>
                           </Tooltip>
-                        )}
-                      </>
-                    )}
-                  </Box>
-                )}
+                          {['nist_cve', 'euvd'].includes(feed.feed_name) && (
+                            <Tooltip title={feed.feed_name === 'nist_cve' ? 'Run full CVE pull (slow — 30-60 min)' : 'Run full EUVD pull (all entries)'}>
+                              <span>
+                                <Button
+                                  size="small" variant="outlined" color="warning"
+                                  disabled={triggerMutation.isPending}
+                                  onClick={() => triggerMutation.mutate({ feedName: feed.feed_name, mode: 'full' })}
+                                  sx={{ fontSize: '0.7rem', py: 0.25, px: 1, minWidth: 0 }}
+                                >Full</Button>
+                              </span>
+                            </Tooltip>
+                          )}
+                        </>
+                      )}
+                    </Box>
+                  )}
+                </Box>
               </Box>
-            </Box>
-          </Paper>
-        ))}
-        {!statusLoading && (status?.feeds ?? []).length === 0 && (
-          <Alert severity="info" icon={<HourglassEmptyOutlined />} sx={{ width: '100%' }}>
-            No feed data yet — the feeds container will populate data on its first run.
-          </Alert>
-        )}
-      </Box>
+            </Paper>
+          )
+          if (disabled) {
+            return (
+              <Tooltip key={feed.feed_name} title="Activate with --profile threat-intel" placement="top">
+                <span>{card}</span>
+              </Tooltip>
+            )
+          }
+          return <span key={feed.feed_name}>{card}</span>
+        }
+
+        const regularFeeds = (status?.feeds ?? []).filter(f => !TI_NAMES.has(f.feed_name))
+
+        return (
+          <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))', gap: 2, mb: 3 }}>
+            {regularFeeds.map(feed => <FeedCard key={feed.feed_name} feed={feed} />)}
+            {tiFeedItems.map(feed => <FeedCard key={feed.feed_name} feed={feed} isTi={true} disabled={!tiEnabled} />)}
+            {!statusLoading && regularFeeds.length === 0 && tiFeedItems.length === 0 && (
+              <Alert severity="info" icon={<HourglassEmptyOutlined />} sx={{ width: '100%' }}>
+                No feed data yet — the feeds container will populate data on its first run.
+              </Alert>
+            )}
+          </Box>
+        )
+      })()}
 
       {/* ── Feed settings (admin only) ── */}
       {isAdmin && feedSettings !== undefined && (
