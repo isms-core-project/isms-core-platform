@@ -440,7 +440,7 @@ def scan_evidence_expiry(self) -> dict:
             db.query(User.email)
             .filter(
                 User.is_active.is_(True),
-                User.role.in_([UserRole.ADMIN, UserRole.ISMS_MANAGER]),
+                User.role.in_([UserRole.SUPER_ADMIN, UserRole.ADMIN, UserRole.ISMS_MANAGER]),
             )
             .all()
         )
@@ -516,7 +516,7 @@ def notify_feed_failure(self, feed_name: str, error_message: str, run_id: str | 
             db.query(User)
             .filter(
                 User.is_active.is_(True),
-                User.role.in_([UserRole.ADMIN, UserRole.ISMS_MANAGER]),
+                User.role.in_([UserRole.SUPER_ADMIN, UserRole.ADMIN, UserRole.ISMS_MANAGER]),
             )
             .all()
         )
@@ -588,7 +588,7 @@ def notify_connector_failure(self, connector_id: str, connector_name: str, error
             db.query(User)
             .filter(
                 User.is_active.is_(True),
-                User.role.in_([UserRole.ADMIN, UserRole.ISMS_MANAGER]),
+                User.role.in_([UserRole.SUPER_ADMIN, UserRole.ADMIN, UserRole.ISMS_MANAGER]),
             )
             .all()
         )
