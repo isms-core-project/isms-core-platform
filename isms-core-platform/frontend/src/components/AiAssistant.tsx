@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
+import { useTheme } from '@mui/material/styles'
 import {
   Box,
   Drawer,
@@ -25,25 +26,27 @@ import { aiApi, type ChatMessage, type AiMode } from '../api/aiApi'
 
 const DRAWER_WIDTH = 420
 
-const MODE_CONFIG: Record<AiMode, { label: string; icon: React.ReactNode; color: string; placeholder: string }> = {
-  assistant: {
-    label: 'Assistant',
-    icon: <AutoAwesomeOutlined fontSize="small" />,
-    color: '#4472C4',
-    placeholder: 'Ask anything about this control…',
-  },
-  audit_prep: {
-    label: 'Audit Prep',
-    icon: <GavelOutlined fontSize="small" />,
-    color: '#FFC7CE',
-    placeholder: 'I\'ll ask you audit questions about this control…',
-  },
-  gap_narrator: {
-    label: 'Gap Narrative',
-    icon: <SummarizeOutlined fontSize="small" />,
-    color: '#FFEB9C',
-    placeholder: 'Ask me to draft the executive gap narrative…',
-  },
+function buildModeConfig(isLight: boolean): Record<AiMode, { label: string; icon: React.ReactNode; color: string; placeholder: string }> {
+  return {
+    assistant: {
+      label: 'Assistant',
+      icon: <AutoAwesomeOutlined fontSize="small" />,
+      color: '#4472C4',
+      placeholder: 'Ask anything about this control…',
+    },
+    audit_prep: {
+      label: 'Audit Prep',
+      icon: <GavelOutlined fontSize="small" />,
+      color: isLight ? '#9e0000' : '#FFC7CE',
+      placeholder: 'I\'ll ask you audit questions about this control…',
+    },
+    gap_narrator: {
+      label: 'Gap Narrative',
+      icon: <SummarizeOutlined fontSize="small" />,
+      color: isLight ? '#9a6500' : '#FFEB9C',
+      placeholder: 'Ask me to draft the executive gap narrative…',
+    },
+  }
 }
 
 interface Props {
@@ -54,6 +57,9 @@ interface Props {
 }
 
 export default function AiAssistant({ open, onClose, controlId, controlName }: Props) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const MODE_CONFIG = buildModeConfig(isLight)
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [input, setInput] = useState('')
   const [streaming, setStreaming] = useState(false)
@@ -139,7 +145,7 @@ export default function AiAssistant({ open, onClose, controlId, controlName }: P
         flexShrink: 0,
         '& .MuiDrawer-paper': {
           width: DRAWER_WIDTH,
-          bgcolor: '#0d1117',
+          bgcolor: 'background.paper',
           borderLeft: `1px solid rgba(68,114,196,0.2)`,
           display: 'flex',
           flexDirection: 'column',
@@ -147,7 +153,7 @@ export default function AiAssistant({ open, onClose, controlId, controlName }: P
       }}
     >
       {/* Header */}
-      <Box sx={{ px: 2, py: 1.5, borderBottom: '1px solid rgba(255,255,255,0.06)', flexShrink: 0 }}>
+      <Box sx={{ px: 2, py: 1.5, borderBottom: '1px solid', borderColor: 'divider', flexShrink: 0 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
           <AutoAwesomeOutlined sx={{ color: modeColor, fontSize: 18 }} />
           <Typography variant="subtitle2" fontWeight={700} sx={{ flex: 1, color: modeColor }}>
@@ -177,7 +183,7 @@ export default function AiAssistant({ open, onClose, controlId, controlName }: P
           fullWidth
           sx={{
             '& .MuiToggleButton-root': {
-              py: 0.3, fontSize: '0.7rem', fontWeight: 600, borderColor: 'rgba(255,255,255,0.08)',
+              py: 0.3, fontSize: '0.7rem', fontWeight: 600, borderColor: isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.08)',
               color: 'text.disabled', gap: 0.5,
               '&.Mui-selected': { color: modeColor, bgcolor: `${modeColor}18`, borderColor: `${modeColor}40` },
             },
@@ -191,8 +197,8 @@ export default function AiAssistant({ open, onClose, controlId, controlName }: P
         </ToggleButtonGroup>
 
         {aiStatus && !aiStatus.configured && (
-          <Box sx={{ mt: 1, px: 1, py: 0.5, bgcolor: 'rgba(255,199,206,0.08)', borderRadius: 1, border: '1px solid rgba(255,199,206,0.2)' }}>
-            <Typography variant="caption" sx={{ color: '#FFC7CE' }}>
+          <Box sx={{ mt: 1, px: 1, py: 0.5, bgcolor: isLight ? 'rgba(192,0,0,0.06)' : 'rgba(255,199,206,0.08)', borderRadius: 1, border: `1px solid ${isLight ? 'rgba(192,0,0,0.2)' : 'rgba(255,199,206,0.2)'}` }}>
+            <Typography variant="caption" sx={{ color: isLight ? '#9e0000' : '#FFC7CE' }}>
               ⚠ API key not configured — add ANTHROPIC_API_KEY to .env
             </Typography>
           </Box>
@@ -247,15 +253,15 @@ export default function AiAssistant({ open, onClose, controlId, controlName }: P
                 borderRadius: msg.role === 'user' ? '12px 12px 2px 12px' : '2px 12px 12px 12px',
                 bgcolor: msg.role === 'user'
                   ? 'rgba(68,114,196,0.2)'
-                  : 'rgba(255,255,255,0.04)',
-                border: msg.role === 'assistant' ? `1px solid rgba(255,255,255,0.06)` : 'none',
+                  : (isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)'),
+                border: msg.role === 'assistant' ? `1px solid ${isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.06)'}` : 'none',
               }}
             >
               <Typography
                 variant="body2"
                 sx={{
                   whiteSpace: 'pre-wrap', lineHeight: 1.6, fontSize: '0.82rem',
-                  color: msg.content.startsWith('⚠') ? '#FFC7CE' : 'text.primary',
+                  color: msg.content.startsWith('⚠') ? (isLight ? '#9e0000' : '#FFC7CE') : 'text.primary',
                 }}
               >
                 {msg.content}
@@ -270,7 +276,7 @@ export default function AiAssistant({ open, onClose, controlId, controlName }: P
         <div ref={bottomRef} />
       </Box>
 
-      <Divider sx={{ borderColor: 'rgba(255,255,255,0.06)' }} />
+      <Divider />
 
       {/* Input */}
       <Box sx={{ px: 2, py: 1.5, flexShrink: 0 }}>

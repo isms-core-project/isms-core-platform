@@ -17,7 +17,7 @@ from src.database.session import SessionLocal
 from src.services import search_service
 from src.services.iso_reference_service import load_from_seeds, needs_seed as iso_needs_seed
 from src.services import kev_reference_service
-from src.services.loader_service import load_all_bundles, needs_seed
+from src.services.loader_service import load_all_bundles
 from src.core.limiter import limiter
 from src.services.qa_service import ensure_synonym_table
 
@@ -26,18 +26,15 @@ logger = logging.getLogger(__name__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Startup: auto-seed frameworks on first boot."""
+    """Startup: load/refresh dataset bundles (unchanged files skipped via content_hash)."""
     settings = get_settings()
     logger.info("ISMS CORE API starting (debug=%s)", settings.debug)
 
     db = SessionLocal()
     try:
-        if needs_seed(db):
-            logger.info("First boot detected — loading dataset bundles…")
-            stats = load_all_bundles(db)
-            logger.info("Seed complete: %s", stats)
-        else:
-            logger.info("Frameworks already loaded — skipping seed")
+        logger.info("Loading dataset bundles (unchanged files skipped)…")
+        stats = load_all_bundles(db)
+        logger.info("Bundle load complete: %s", stats)
     except Exception as e:
         logger.error("Seed failed: %s", e)
     finally:

@@ -19,7 +19,8 @@ const TACTIC_LABELS: Record<string, string> = {
   'execution':            'Execution',
   'persistence':          'Persistence',
   'privilege-escalation': 'Priv. Escalation',
-  'defense-evasion':      'Defense Evasion',
+  'defense-evasion':      'Stealth',
+  'defense-impairment':   'Defense Impairment',
   'credential-access':    'Credential Access',
   'discovery':            'Discovery',
   'lateral-movement':     'Lateral Movement',
@@ -125,7 +126,7 @@ function TechCell({ tech, maxCount, selected, onSelect }: TechCellProps) {
 }
 
 export default function MitreHeatmap() {
-  const [source, setSource] = useState<'attack_v18' | 'attack_v19'>('attack_v18')
+  const [source] = useState<'attack_v19'>('attack_v19')
   const [selectedGroups, setSelectedGroups] = useState<MitreGroup[]>([])
   const [includeSoftware, setIncludeSoftware] = useState(true)
   const [showSubs, setShowSubs] = useState(true)
@@ -194,7 +195,6 @@ export default function MitreHeatmap() {
           exclusive
           onChange={(_, v) => v && (setSource(v), setSelected(null))}
         >
-          <ToggleButton value="attack_v18" sx={{ fontSize: '0.72rem', px: 1.5 }}>v18</ToggleButton>
           <ToggleButton value="attack_v19" sx={{ fontSize: '0.72rem', px: 1.5 }}>v19</ToggleButton>
         </ToggleButtonGroup>
 

@@ -22,6 +22,7 @@ import {
   Tooltip,
   Alert,
   Pagination,
+  useTheme,
 } from '@mui/material'
 import {
   HistoryOutlined,
@@ -38,23 +39,39 @@ import type { AuditLogParams } from '../api/admin'
 import PageHeader from '../components/PageHeader'
 import { useAuth } from '../store/AuthContext'
 
-const SEV_COLOR: Record<string, { bg: string; fg: string }> = {
-  info:     { bg: 'rgba(68,114,196,0.2)',   fg: '#9DC3E6' },
-  warning:  { bg: 'rgba(255,192,0,0.15)',   fg: '#FFEB9C' },
-  error:    { bg: 'rgba(255,100,0,0.18)',   fg: '#FFB347' },
-  critical: { bg: 'rgba(192,0,0,0.18)',     fg: '#FFC7CE' },
+const SEV_DARK: Record<string, { bg: string; fg: string }> = {
+  info:     { bg: 'rgba(68,114,196,0.2)',  fg: '#9DC3E6' },
+  warning:  { bg: 'rgba(255,192,0,0.15)', fg: '#FFEB9C' },
+  error:    { bg: 'rgba(255,100,0,0.18)', fg: '#FFB347' },
+  critical: { bg: 'rgba(192,0,0,0.18)',   fg: '#FFC7CE' },
+}
+const SEV_LIGHT: Record<string, { bg: string; fg: string }> = {
+  info:     { bg: 'rgba(68,114,196,0.15)',  fg: '#2E5099' },
+  warning:  { bg: 'rgba(230,145,0,0.15)',   fg: '#7a4800' },
+  error:    { bg: 'rgba(230,100,0,0.15)',   fg: '#7a2800' },
+  critical: { bg: 'rgba(192,0,0,0.15)',     fg: '#9e0000' },
 }
 
-const CAT_COLOR: Record<string, { bg: string; fg: string }> = {
-  security: { bg: 'rgba(192,0,0,0.12)', fg: '#FFC7CE' },
-  workflow: { bg: 'rgba(68,114,196,0.12)', fg: '#9DC3E6' },
-  system:   { bg: 'rgba(255,255,255,0.07)', fg: '#d9d9d9' },
+const CAT_DARK: Record<string, { bg: string; fg: string }> = {
+  security: { bg: 'rgba(192,0,0,0.12)',        fg: '#FFC7CE' },
+  workflow: { bg: 'rgba(68,114,196,0.12)',      fg: '#9DC3E6' },
+  system:   { bg: 'rgba(255,255,255,0.07)',     fg: '#d9d9d9' },
+}
+const CAT_LIGHT: Record<string, { bg: string; fg: string }> = {
+  security: { bg: 'rgba(192,0,0,0.12)',        fg: '#9e0000' },
+  workflow: { bg: 'rgba(68,114,196,0.12)',      fg: '#2E5099' },
+  system:   { bg: 'rgba(0,0,0,0.07)',           fg: '#555555' },
 }
 
-const STATUS_COLOR: Record<string, { bg: string; fg: string }> = {
-  success: { bg: 'rgba(112,173,71,0.15)',  fg: '#C6EFCE' },
-  error:   { bg: 'rgba(192,0,0,0.18)',     fg: '#FFC7CE' },
-  running: { bg: 'rgba(255,192,0,0.15)',   fg: '#FFEB9C' },
+const STATUS_DARK: Record<string, { bg: string; fg: string }> = {
+  success: { bg: 'rgba(112,173,71,0.15)', fg: '#C6EFCE' },
+  error:   { bg: 'rgba(192,0,0,0.18)',    fg: '#FFC7CE' },
+  running: { bg: 'rgba(255,192,0,0.15)', fg: '#FFEB9C' },
+}
+const STATUS_LIGHT: Record<string, { bg: string; fg: string }> = {
+  success: { bg: 'rgba(46,125,50,0.15)',  fg: '#1b5e20' },
+  error:   { bg: 'rgba(192,0,0,0.12)',    fg: '#9e0000' },
+  running: { bg: 'rgba(230,145,0,0.15)', fg: '#7a4800' },
 }
 
 function fmtDuration(s: number | null): string {
@@ -70,6 +87,9 @@ function fmtDuration(s: number | null): string {
 // ---------------------------------------------------------------------------
 
 function AuditTrailTab() {
+  const { palette } = useTheme()
+  const SEV_COLOR = palette.mode === 'light' ? SEV_LIGHT : SEV_DARK
+  const CAT_COLOR = palette.mode === 'light' ? CAT_LIGHT : CAT_DARK
   const [page, setPage] = useState(1)
   const [filters, setFilters] = useState<AuditLogParams>({ page_size: 50 })
   const [draft, setDraft] = useState<AuditLogParams>({})
@@ -105,7 +125,7 @@ function AuditTrailTab() {
               label="Security filter active"
               size="small"
               icon={<SecurityOutlined sx={{ fontSize: '0.8rem !important' }} />}
-              sx={{ height: 18, fontSize: '0.65rem', bgcolor: 'rgba(192,0,0,0.18)', color: '#FFC7CE' }}
+              sx={{ height: 18, fontSize: '0.65rem', bgcolor: 'rgba(192,0,0,0.18)', color: palette.mode === 'light' ? '#9e0000' : '#FFC7CE' }}
             />
           )}
           <Box sx={{ ml: 'auto' }}>
@@ -322,6 +342,8 @@ function AuditTrailTab() {
 const FEED_NAMES = ['nist_cve', 'cisa_kev', 'epss', 'euvd', 'mitre_attack', 'mitre_atlas']
 
 function FeedRunsTab() {
+  const { palette } = useTheme()
+  const STATUS_COLOR = palette.mode === 'light' ? STATUS_LIGHT : STATUS_DARK
   const [feedFilter, setFeedFilter] = useState('')
   const [statusFilter, setStatusFilter] = useState('')
 

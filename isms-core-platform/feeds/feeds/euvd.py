@@ -68,7 +68,11 @@ def _paginate_search(params: dict) -> list[dict]:
         try:
             data = _get("search", {**params, "page": page, "size": _PAGE_SIZE})
         except Exception as exc:
-            logger.warning("EUVD search page %d failed: %s", page, exc)
+            # 403 at page ≥200 is ENISA's hard cap (20,000 results) — not an error
+            if "403" in str(exc) and page >= 200:
+                logger.info("EUVD reached ENISA API cap at page %d (20,000 results) — stopping", page)
+            else:
+                logger.warning("EUVD search page %d failed: %s", page, exc)
             break
 
         batch = data.get("items") or [] if isinstance(data, dict) else data

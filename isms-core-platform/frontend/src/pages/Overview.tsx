@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import { Grid, Card, CardContent, Typography, Box, Skeleton, Alert, LinearProgress, Chip, Button } from '@mui/material'
 import {
   PolicyOutlined,
@@ -82,8 +83,11 @@ const SECTION_COLORS: Record<string, string> = {
   'A.8': '#C00000',
 }
 
-const STATUS_SCORE_COLOR = (s: string) =>
+const STATUS_SCORE_COLOR_DARK = (s: string) =>
   s === 'green' ? '#C6EFCE' : s === 'amber' ? '#FFEB9C' : '#FFC7CE'
+
+const STATUS_SCORE_COLOR_LIGHT = (s: string) =>
+  s === 'green' ? '#1b5e20' : s === 'amber' ? '#9a6500' : '#9e0000'
 
 const SECTION_LABELS_27701: Record<string, string> = {
   'A.1': 'PII Controller',
@@ -105,6 +109,8 @@ const SECTION_LABELS_42001: Record<string, string> = {
 
 function FrameworkOverviewWidget({ sourceFramework, color }: { sourceFramework: string; color: string }) {
   const navigate = useNavigate()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const { data, isLoading } = useQuery({
     queryKey: ['dashboard', 'framework-overview', sourceFramework],
     queryFn: () => dashboardApi.getFrameworkOverview(sourceFramework),
@@ -175,11 +181,11 @@ function FrameworkOverviewWidget({ sourceFramework, color }: { sourceFramework: 
                 <Typography variant="h6" gutterBottom>Controls by Section</Typography>
                 <ResponsiveContainer width="100%" height={220}>
                   <BarChart data={barData} margin={{ left: -10 }}>
-                    <XAxis dataKey="name" tick={{ fill: '#8B9CC8', fontSize: 11 }} />
-                    <YAxis tick={{ fill: '#8B9CC8', fontSize: 11 }} />
+                    <XAxis dataKey="name" tick={{ fill: isLight ? '#555' : '#8B9CC8', fontSize: 11 }} />
+                    <YAxis tick={{ fill: isLight ? '#555' : '#8B9CC8', fontSize: 11 }} />
                     <Tooltip
-                      contentStyle={{ backgroundColor: '#0F1629', border: '1px solid #4472C430', borderRadius: 8 }}
-                      labelStyle={{ color: '#E8EAF0' }}
+                      contentStyle={{ backgroundColor: isLight ? '#fff' : '#0F1629', border: '1px solid #4472C430', borderRadius: 8 }}
+                      labelStyle={{ color: isLight ? '#333' : '#E8EAF0' }}
                       formatter={(v, name) => [`${v} controls`, name]}
                     />
                     <Bar dataKey="Total" fill={`${color}40`} radius={[3, 3, 0, 0]} />
@@ -234,6 +240,8 @@ function FrameworkOverviewWidget({ sourceFramework, color }: { sourceFramework: 
 }
 
 function NonIsmsOverview({ product }: { product: 'privacy' | 'cloud' | 'ai' }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const color = PRODUCT_COLORS[product] ?? '#4472C4'
   const [cloudSub, setCloudSub] = useState<'ISO27017' | 'ISO27018'>('ISO27017')
 
@@ -260,15 +268,17 @@ function NonIsmsOverview({ product }: { product: 'privacy' | 'cloud' | 'ai' }) {
               onClick={() => setCloudSub(value)}
               sx={{
                 px: 1.5, py: 0.75, borderRadius: 1, cursor: 'pointer',
-                bgcolor: cloudSub === value ? 'rgba(255,192,0,0.15)' : 'rgba(255,255,255,0.04)',
-                border: `1px solid ${cloudSub === value ? '#FFC00050' : 'rgba(255,255,255,0.08)'}`,
-                '&:hover': { bgcolor: 'rgba(255,192,0,0.1)' },
+                bgcolor: cloudSub === value
+                  ? (isLight ? 'rgba(230,160,0,0.18)' : 'rgba(255,192,0,0.15)')
+                  : (isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)'),
+                border: `1px solid ${cloudSub === value ? (isLight ? 'rgba(180,110,0,0.4)' : '#FFC00050') : (isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.08)')}`,
+                '&:hover': { bgcolor: isLight ? 'rgba(230,160,0,0.14)' : 'rgba(255,192,0,0.1)' },
               }}
             >
               <Typography variant="caption" fontWeight={cloudSub === value ? 700 : 400}
-                color={cloudSub === value ? '#FFC000' : 'text.secondary'}>{label}</Typography>
+                color={cloudSub === value ? (isLight ? '#7a4800' : '#FFC000') : 'text.secondary'}>{label}</Typography>
               <Typography variant="caption" sx={{ ml: 1, opacity: 0.6 }}
-                color={cloudSub === value ? '#FFC000' : 'text.disabled'}>{desc}</Typography>
+                color={cloudSub === value ? (isLight ? '#7a4800' : '#FFC000') : 'text.disabled'}>{desc}</Typography>
             </Box>
           ))}
         </Box>
@@ -286,6 +296,8 @@ const INTEL_COLOR = '#B84F00'
 
 function IntelligenceCards() {
   const navigate = useNavigate()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
 
   const { data: kevStats }     = useQuery({ queryKey: ['feeds', 'kev', 'stats'],     queryFn: feedsApi.getKevStats,     staleTime: 5 * 60_000 })
   const { data: indexStats }   = useQuery({ queryKey: ['nvd', 'index-stats'],        queryFn: feedsApi.getNvdIndexStats, staleTime: 5 * 60_000 })
@@ -306,10 +318,10 @@ function IntelligenceCards() {
     },
     {
       title: 'CISA KEV',
-      icon: <WarningAmberOutlined sx={{ fontSize: 20, color: '#FFEB9C' }} />,
+      icon: <WarningAmberOutlined sx={{ fontSize: 20, color: isLight ? '#9a6500' : '#FFEB9C' }} />,
       value: kevStats?.total_entries ? kevStats.total_entries.toLocaleString() : '—',
       sub: kevStats?.recent_30d != null ? `${kevStats.recent_30d} added last 30d` : '',
-      color: '#FFEB9C',
+      color: isLight ? '#9a6500' : '#FFEB9C',
       path: '/threat-feeds',
     },
     {
@@ -323,11 +335,11 @@ function IntelligenceCards() {
     {
       title: 'Feed Status',
       icon: anyFeedError
-        ? <ErrorOutlineOutlined sx={{ fontSize: 20, color: '#FFC7CE' }} />
-        : <CheckCircleOutlined sx={{ fontSize: 20, color: '#C6EFCE' }} />,
+        ? <ErrorOutlineOutlined sx={{ fontSize: 20, color: isLight ? '#9e0000' : '#FFC7CE' }} />
+        : <CheckCircleOutlined sx={{ fontSize: 20, color: isLight ? '#1b5e20' : '#C6EFCE' }} />,
       value: anyFeedError ? `${failedFeeds.length} failure${failedFeeds.length > 1 ? 's' : ''}` : 'All OK',
       sub: anyFeedError ? failedFeeds.map(f => f.display_name).join(', ') : `${(feedStatus?.feeds ?? []).length} feeds active`,
-      color: anyFeedError ? '#FFC7CE' : '#C6EFCE',
+      color: anyFeedError ? (isLight ? '#9e0000' : '#FFC7CE') : (isLight ? '#1b5e20' : '#C6EFCE'),
       path: '/threat-feeds',
     },
   ]
@@ -369,6 +381,9 @@ function IntelligenceCards() {
 export default function Overview() {
   const navigate = useNavigate()
   const { product } = useProduct()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const STATUS_SCORE_COLOR = isLight ? STATUS_SCORE_COLOR_LIGHT : STATUS_SCORE_COLOR_DARK
 
   const { data: overview, isLoading, error } = useQuery({
     queryKey: ['dashboard', 'overview'],
@@ -562,11 +577,11 @@ export default function Overview() {
                     }
                   }}
                 >
-                  <XAxis dataKey="shortName" tick={{ fill: '#8B9CC8', fontSize: 12 }} />
-                  <YAxis tick={{ fill: '#8B9CC8', fontSize: 11 }} />
+                  <XAxis dataKey="shortName" tick={{ fill: isLight ? '#555' : '#8B9CC8', fontSize: 12 }} />
+                  <YAxis tick={{ fill: isLight ? '#555' : '#8B9CC8', fontSize: 11 }} />
                   <Tooltip
-                    contentStyle={{ backgroundColor: '#0F1629', border: '1px solid #4472C430', borderRadius: 8 }}
-                    labelStyle={{ color: '#E8EAF0' }}
+                    contentStyle={{ backgroundColor: isLight ? '#fff' : '#0F1629', border: '1px solid #4472C430', borderRadius: 8 }}
+                    labelStyle={{ color: isLight ? '#333' : '#E8EAF0' }}
                     formatter={(v, name) => [`${v} controls`, name]}
                   />
                   <Bar dataKey="Framework" fill="#4472C4" radius={[3, 3, 0, 0]} />
@@ -585,7 +600,7 @@ export default function Overview() {
               <ResponsiveContainer width="100%" height={220}>
                 <RadarChart data={radarData}>
                   <PolarGrid stroke="#4472C420" />
-                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#8B9CC8', fontSize: 12 }} />
+                  <PolarAngleAxis dataKey="subject" tick={{ fill: isLight ? '#555' : '#8B9CC8', fontSize: 12 }} />
                   <Radar name="Framework" dataKey="Framework" stroke="#4472C4" fill="#4472C4" fillOpacity={0.3} />
                   <Radar name="Operational" dataKey="Operational" stroke="#70AD47" fill="#70AD47" fillOpacity={0.2} />
                 </RadarChart>
@@ -618,7 +633,7 @@ export default function Overview() {
                           borderRadius: 3,
                           bgcolor: 'rgba(68,114,196,0.12)',
                           '& .MuiLinearProgress-bar': {
-                            bgcolor: value >= 80 ? '#C6EFCE' : value >= 50 ? '#FFEB9C' : '#FFC7CE',
+                            bgcolor: value >= 80 ? (isLight ? '#2e7d32' : '#C6EFCE') : value >= 50 ? (isLight ? '#e65100' : '#FFEB9C') : (isLight ? '#c62828' : '#FFC7CE'),
                           },
                         }}
                       />
@@ -653,7 +668,7 @@ export default function Overview() {
               <ResponsiveContainer width="100%" height={200}>
                 <RadarChart data={maturityData}>
                   <PolarGrid stroke="#4472C420" />
-                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#8B9CC8', fontSize: 11 }} />
+                  <PolarAngleAxis dataKey="subject" tick={{ fill: isLight ? '#555' : '#8B9CC8', fontSize: 11 }} />
                   <Radar name="Maturity" dataKey="value" stroke="#4472C4" fill="#4472C4" fillOpacity={0.3} />
                 </RadarChart>
               </ResponsiveContainer>
@@ -667,9 +682,9 @@ export default function Overview() {
         <Card sx={{ mb: 3 }}>
           <CardContent>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-              <WarningAmberOutlined sx={{ color: '#FFC7CE', fontSize: 18 }} />
+              <WarningAmberOutlined sx={{ color: isLight ? '#9e0000' : '#FFC7CE', fontSize: 18 }} />
               <Typography variant="h6">Open Gaps</Typography>
-              <Chip label={gv.total} size="small" sx={{ bgcolor: 'rgba(192,0,0,0.15)', color: '#FFC7CE', fontSize: '0.7rem', height: 18 }} />
+              <Chip label={gv.total} size="small" sx={{ bgcolor: isLight ? 'rgba(192,0,0,0.12)' : 'rgba(192,0,0,0.15)', color: isLight ? '#9e0000' : '#FFC7CE', fontSize: '0.7rem', height: 18 }} />
             </Box>
             {gv.items.map((gap) => (
               <Box

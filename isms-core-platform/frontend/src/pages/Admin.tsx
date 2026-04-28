@@ -31,6 +31,7 @@ import {
   Tab,
   Divider,
   LinearProgress,
+  useTheme,
 } from '@mui/material'
 import {
   PeopleOutlined,
@@ -58,13 +59,21 @@ import { useAuth } from '../store/AuthContext'
 const ROLES = ['super_admin', 'admin', 'isms_manager', 'auditor', 'control_owner', 'viewer']
 const ROLES_NON_SUPER = ['admin', 'isms_manager', 'auditor', 'control_owner', 'viewer']
 
-const ROLE_COLOR: Record<string, { bg: string; fg: string }> = {
-  super_admin: { bg: 'rgba(192,0,0,0.35)', fg: '#FF6B6B' },
-  admin: { bg: 'rgba(192,0,0,0.18)', fg: '#FFC7CE' },
-  isms_manager: { bg: 'rgba(68,114,196,0.2)', fg: '#9DC3E6' },
-  auditor: { bg: 'rgba(112,173,71,0.15)', fg: '#C6EFCE' },
-  control_owner: { bg: 'rgba(255,192,0,0.15)', fg: '#FFEB9C' },
-  viewer: { bg: 'rgba(255,255,255,0.07)', fg: '#d9d9d9' },
+const ROLE_DARK: Record<string, { bg: string; fg: string }> = {
+  super_admin:   { bg: 'rgba(192,0,0,0.35)',     fg: '#FF6B6B' },
+  admin:         { bg: 'rgba(192,0,0,0.18)',     fg: '#FFC7CE' },
+  isms_manager:  { bg: 'rgba(68,114,196,0.2)',   fg: '#9DC3E6' },
+  auditor:       { bg: 'rgba(112,173,71,0.15)',  fg: '#C6EFCE' },
+  control_owner: { bg: 'rgba(255,192,0,0.15)',   fg: '#FFEB9C' },
+  viewer:        { bg: 'rgba(255,255,255,0.07)', fg: '#d9d9d9' },
+}
+const ROLE_LIGHT: Record<string, { bg: string; fg: string }> = {
+  super_admin:   { bg: 'rgba(192,0,0,0.18)',     fg: '#9e0000' },
+  admin:         { bg: 'rgba(192,0,0,0.12)',     fg: '#9e0000' },
+  isms_manager:  { bg: 'rgba(68,114,196,0.15)',  fg: '#2E5099' },
+  auditor:       { bg: 'rgba(46,125,50,0.15)',   fg: '#1b5e20' },
+  control_owner: { bg: 'rgba(230,145,0,0.15)',   fg: '#7a4800' },
+  viewer:        { bg: 'rgba(0,0,0,0.07)',        fg: '#555555' },
 }
 
 // ---------------------------------------------------------------------------
@@ -246,6 +255,10 @@ function EditUserDialog({
 // ---------------------------------------------------------------------------
 
 function UsersTab() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const ROLE_COLOR = isLight ? ROLE_LIGHT : ROLE_DARK
+  const mfaColor = isLight ? '#1b5e20' : '#C6EFCE'
   const queryClient = useQueryClient()
   const { isSuperAdmin } = useAuth()
   const [createOpen, setCreateOpen] = useState(false)
@@ -337,14 +350,21 @@ function UsersTab() {
                           <TableCell>
                             <Chip
                               label={user.is_active ? 'Active' : 'Inactive'} size="small"
-                              sx={{ fontSize: '0.65rem', height: 18, bgcolor: user.is_active ? '#1a3a27' : '#3a0000', color: user.is_active ? '#C6EFCE' : '#FFC7CE' }}
+                              sx={{ fontSize: '0.65rem', height: 18,
+                                bgcolor: user.is_active
+                                  ? (isLight ? 'rgba(46,125,50,0.15)' : '#1a3a27')
+                                  : (isLight ? 'rgba(192,0,0,0.12)' : '#3a0000'),
+                                color: user.is_active
+                                  ? (isLight ? '#1b5e20' : '#C6EFCE')
+                                  : (isLight ? '#9e0000' : '#FFC7CE'),
+                              }}
                             />
                           </TableCell>
                           <TableCell>
                             <Tooltip title={user.mfa_enabled ? 'MFA enabled' : 'MFA not set up'}>
                               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                 {user.mfa_enabled
-                                  ? <LockOutlined sx={{ fontSize: 16, color: '#C6EFCE' }} />
+                                  ? <LockOutlined sx={{ fontSize: 16, color: mfaColor }} />
                                   : <LockOpenOutlined sx={{ fontSize: 16, color: 'text.disabled' }} />}
                               </Box>
                             </Tooltip>
@@ -399,6 +419,8 @@ function UsersTab() {
 function ManageMembersDialog({
   group, open, onClose, allUsers,
 }: { group: GroupEntry; open: boolean; onClose: () => void; allUsers: UserRead[] }) {
+  const { palette } = useTheme()
+  const ROLE_COLOR = palette.mode === 'light' ? ROLE_LIGHT : ROLE_DARK
   const queryClient = useQueryClient()
 
   const { data: members, isLoading } = useQuery({
@@ -631,6 +653,10 @@ function GroupsTab() {
 // ---------------------------------------------------------------------------
 
 function MfaStatusTab() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const ROLE_COLOR = isLight ? ROLE_LIGHT : ROLE_DARK
+  const mfaColor  = isLight ? '#1b5e20' : '#C6EFCE'
   const queryClient = useQueryClient()
   const [filter, setFilter] = useState<'all' | 'enrolled' | 'not_enrolled'>('all')
 
@@ -664,7 +690,18 @@ function MfaStatusTab() {
             <Chip
               label={`${enrolled}/${total} enrolled`}
               size="small"
-              sx={{ height: 18, fontSize: '0.65rem', bgcolor: pct === 100 ? '#1a3a27' : pct >= 50 ? 'rgba(255,192,0,0.15)' : 'rgba(192,0,0,0.18)', color: pct === 100 ? '#C6EFCE' : pct >= 50 ? '#FFEB9C' : '#FFC7CE' }}
+              sx={{ height: 18, fontSize: '0.65rem',
+              bgcolor: pct === 100
+                ? (isLight ? 'rgba(46,125,50,0.15)' : '#1a3a27')
+                : pct >= 50
+                ? 'rgba(255,192,0,0.15)'
+                : 'rgba(192,0,0,0.18)',
+              color: pct === 100
+                ? (isLight ? '#1b5e20' : '#C6EFCE')
+                : pct >= 50
+                ? (isLight ? '#7a4800' : '#FFEB9C')
+                : (isLight ? '#9e0000' : '#FFC7CE'),
+            }}
             />
           )}
         </Box>
@@ -731,9 +768,9 @@ function MfaStatusTab() {
                     <TableCell>
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
                         {user.mfa_enabled
-                          ? <LockOutlined sx={{ fontSize: 15, color: '#C6EFCE' }} />
+                          ? <LockOutlined sx={{ fontSize: 15, color: mfaColor }} />
                           : <LockOpenOutlined sx={{ fontSize: 15, color: 'text.disabled' }} />}
-                        <Typography variant="caption" color={user.mfa_enabled ? '#C6EFCE' : 'text.disabled'}>
+                        <Typography variant="caption" color={user.mfa_enabled ? mfaColor : 'text.disabled'}>
                           {user.mfa_enabled ? 'Enrolled' : 'Not enrolled'}
                         </Typography>
                       </Box>

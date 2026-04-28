@@ -45,9 +45,9 @@ interface AxesResponse {
 // Pending / available reviews — update this when a source framework has a new version
 // or when a new axis should be added. Same pattern as FrameworkTracker KNOWN_UPDATES.
 const KNOWN_REVIEWS: Record<string, { status: 'pending' | 'review'; note: string; eta?: string }> = {
-  'NIST_800_53_R5 → MITRE_ATTACK_V18': {
+  'NIST_800_53_R5 → MITRE_ATTACK_V19': {
     status: 'pending',
-    note: 'MITRE ATT&CK v19 scheduled 2026-04-28 — update STIX bundle and remap ATT&CK axis after release.',
+    note: 'MITRE ATT&CK v19 live 2026-04-28 — crosswalk updated to V19. Review Defense Evasion → Stealth / Defense Impairment remapping.',
     eta: '2026-04-28',
   },
   'ISO27001_2022 → ISO27017': {

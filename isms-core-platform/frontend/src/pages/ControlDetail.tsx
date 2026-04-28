@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import { useParams, useNavigate } from 'react-router-dom'
 import {
   Box,
@@ -157,33 +158,43 @@ function TabPanel({ value, index, children }: { value: number; index: number; ch
 function ComplianceBar({ total, compliant, partial, nonCompliant, na }: {
   total: number; compliant: number; partial: number; nonCompliant: number; na: number
 }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   if (total === 0) return null
   return (
     <Box sx={{ mt: 1 }}>
-      <Box sx={{ display: 'flex', height: 5, borderRadius: 2.5, overflow: 'hidden', bgcolor: 'rgba(255,255,255,0.06)' }}>
-        {compliant > 0 && <Box sx={{ flex: compliant, bgcolor: '#C6EFCE' }} />}
-        {partial > 0 && <Box sx={{ flex: partial, bgcolor: '#FFEB9C' }} />}
-        {nonCompliant > 0 && <Box sx={{ flex: nonCompliant, bgcolor: '#FFC7CE' }} />}
+      <Box sx={{ display: 'flex', height: 5, borderRadius: 2.5, overflow: 'hidden', bgcolor: isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)' }}>
+        {compliant > 0 && <Box sx={{ flex: compliant, bgcolor: isLight ? '#4caf50' : '#C6EFCE' }} />}
+        {partial > 0 && <Box sx={{ flex: partial, bgcolor: isLight ? '#ff9800' : '#FFEB9C' }} />}
+        {nonCompliant > 0 && <Box sx={{ flex: nonCompliant, bgcolor: isLight ? '#f44336' : '#FFC7CE' }} />}
         {na > 0 && <Box sx={{ flex: na, bgcolor: '#444' }} />}
       </Box>
       <Box sx={{ display: 'flex', gap: 1.5, mt: 0.4 }}>
         <Typography variant="caption" color="text.secondary">{total} items</Typography>
-        {compliant > 0 && <Typography variant="caption" sx={{ color: '#C6EFCE' }}>{compliant} ✓</Typography>}
-        {partial > 0 && <Typography variant="caption" sx={{ color: '#FFEB9C' }}>{partial} ~</Typography>}
-        {nonCompliant > 0 && <Typography variant="caption" sx={{ color: '#FFC7CE' }}>{nonCompliant} ✗</Typography>}
+        {compliant > 0 && <Typography variant="caption" sx={{ color: isLight ? '#1b5e20' : '#C6EFCE' }}>{compliant} ✓</Typography>}
+        {partial > 0 && <Typography variant="caption" sx={{ color: isLight ? '#7a4800' : '#FFEB9C' }}>{partial} ~</Typography>}
+        {nonCompliant > 0 && <Typography variant="caption" sx={{ color: isLight ? '#9e0000' : '#FFC7CE' }}>{nonCompliant} ✗</Typography>}
         {na > 0 && <Typography variant="caption" color="text.disabled">{na} N/A</Typography>}
       </Box>
     </Box>
   )
 }
 
-const ITEM_STATUS_COLOR: Record<string, { bg: string; color: string; label: string }> = {
+const ITEM_STATUS_COLOR_DARK: Record<string, { bg: string; color: string; label: string }> = {
   compliant:      { bg: 'rgba(198,239,206,0.15)', color: '#C6EFCE', label: '✓' },
   partial:        { bg: 'rgba(255,235,156,0.12)', color: '#FFEB9C', label: '~' },
   non_compliant:  { bg: 'rgba(255,199,206,0.15)', color: '#FFC7CE', label: '✗' },
   na:             { bg: 'rgba(100,100,100,0.12)', color: '#888',    label: 'N/A' },
   not_applicable: { bg: 'rgba(100,100,100,0.12)', color: '#888',    label: 'N/A' },
   not_assessed:   { bg: 'transparent',             color: '#555',    label: '—' },
+}
+const ITEM_STATUS_COLOR_LIGHT: Record<string, { bg: string; color: string; label: string }> = {
+  compliant:      { bg: 'rgba(46,125,50,0.10)',   color: '#1b5e20', label: '✓' },
+  partial:        { bg: 'rgba(255,152,0,0.10)',    color: '#7a4800', label: '~' },
+  non_compliant:  { bg: 'rgba(192,0,0,0.10)',      color: '#9e0000', label: '✗' },
+  na:             { bg: 'rgba(100,100,100,0.08)',  color: '#555',    label: 'N/A' },
+  not_applicable: { bg: 'rgba(100,100,100,0.08)',  color: '#555',    label: 'N/A' },
+  not_assessed:   { bg: 'transparent',             color: '#888',    label: '—' },
 }
 
 const STATUS_CYCLE = ['not_assessed', 'compliant', 'partial', 'non_compliant', 'na']
@@ -193,11 +204,14 @@ function nextStatus(current: string): string {
 }
 
 function ItemStatusDot({ status }: { status: string }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const ITEM_STATUS_COLOR = isLight ? ITEM_STATUS_COLOR_LIGHT : ITEM_STATUS_COLOR_DARK
   const s = ITEM_STATUS_COLOR[status] ?? ITEM_STATUS_COLOR.not_assessed
   return (
     <Box sx={{
       width: 6, height: 6, borderRadius: '50%', flexShrink: 0, mt: '5px',
-      bgcolor: s.color === '#555' ? 'rgba(255,255,255,0.15)' : s.color,
+      bgcolor: (s.color === '#555' || s.color === '#888') ? (isLight ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.15)') : s.color,
     }} />
   )
 }
@@ -208,6 +222,9 @@ function SheetItemsTable({ sheet, expanded, onToggle, onStatusChange }: {
   onToggle: () => void
   onStatusChange?: (itemId: string, newStatus: string) => void
 }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const ITEM_STATUS_COLOR = isLight ? ITEM_STATUS_COLOR_LIGHT : ITEM_STATUS_COLOR_DARK
   if (sheet.items.length === 0) return null
   return (
     <Box>
@@ -235,11 +252,11 @@ function SheetItemsTable({ sheet, expanded, onToggle, onStatusChange }: {
                 onClick={() => onStatusChange?.(item.id, nextStatus(item.status))}
                 sx={{
                   display: 'flex', gap: 1, py: 0.4, px: 1,
-                  borderBottom: '1px solid rgba(255,255,255,0.04)',
+                  borderBottom: `1px solid ${isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)'}`,
                   cursor: onStatusChange ? 'pointer' : 'default',
                   bgcolor: sc.bg,
                   '&:hover': onStatusChange ? { bgcolor: 'rgba(68,114,196,0.08)' } : {},
-                  borderLeft: `2px solid ${sc.color}40`,
+                  borderLeft: `2px solid ${sc.color}${isLight ? '60' : '40'}`,
                 }}
               >
                 <Typography variant="caption" sx={{ color: sc.color, fontWeight: 700, flexShrink: 0, minWidth: 20 }}>
@@ -261,7 +278,7 @@ function SheetItemsTable({ sheet, expanded, onToggle, onStatusChange }: {
 }
 
 // ── Classification chip colours ──────────────────────────────────────────────
-const CLASS_COLOR: Record<string, string> = {
+const CLASS_COLOR_DARK: Record<string, string> = {
   incident:      '#FFC7CE',
   change:        '#FFEB9C',
   asset:         '#C6EFCE',
@@ -270,15 +287,32 @@ const CLASS_COLOR: Record<string, string> = {
   network:       '#FFD966',
   policy:        '#CFE2F3',
 }
+const CLASS_COLOR_LIGHT: Record<string, string> = {
+  incident:      '#9e0000',
+  change:        '#7a4800',
+  asset:         '#1b5e20',
+  user:          '#1565c0',
+  vulnerability: '#6a1b9a',
+  network:       '#e65100',
+  policy:        '#0d47a1',
+}
 
 // ── Connector status chip colour ─────────────────────────────────────────────
-const CONN_STATUS_COLOR: Record<string, string> = {
+const CONN_STATUS_COLOR_DARK: Record<string, string> = {
   active:              '#C6EFCE',
   compliant:           '#C6EFCE',
   'attention-required':'#FFEB9C',
   'non-compliant':     '#FFC7CE',
   open:                '#FFC7CE',
   resolved:            '#C6EFCE',
+}
+const CONN_STATUS_COLOR_LIGHT: Record<string, string> = {
+  active:              '#1b5e20',
+  compliant:           '#1b5e20',
+  'attention-required':'#7a4800',
+  'non-compliant':     '#9e0000',
+  open:                '#9e0000',
+  resolved:            '#1b5e20',
 }
 
 // ── Structured evidence detail views ─────────────────────────────────────────
@@ -314,6 +348,8 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
   const [showJson, setShowJson] = useState(false)
   const [showFields, setShowFields] = useState(false)
   const [copied, setCopied] = useState(false)
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
 
   let content: React.ReactNode = null
 
@@ -988,7 +1024,7 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
         <Box sx={{ display: 'flex', gap: 2, mb: 1, flexWrap: 'wrap' }}>
           <Typography variant="caption" color="text.secondary">Total: <strong>{raw.total_user_count ?? users.length}</strong></Typography>
           <Typography variant="caption" color="text.secondary">Active: <strong>{raw.active_user_count ?? 0}</strong></Typography>
-          <Typography variant="caption" color="text.secondary">MFA enabled: <strong style={{ color: '#C6EFCE' }}>{raw.mfa_enabled_count ?? 0}</strong></Typography>
+          <Typography variant="caption" color="text.secondary">MFA enabled: <strong style={{ color: isLight ? '#1b5e20' : '#C6EFCE' }}>{raw.mfa_enabled_count ?? 0}</strong></Typography>
           <Typography variant="caption" color="text.secondary">Groups: <strong>{raw.group_count ?? 0}</strong></Typography>
         </Box>
         <TableContainer sx={{ maxHeight: 240 }}>
@@ -1008,9 +1044,9 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: 'text.secondary' }}>{u.email ?? '—'}</TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: 'text.secondary' }}>{u.user_type ?? '—'}</TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4 }}>
-                    <Typography variant="caption" sx={{ color: u.mfa_enabled ? '#C6EFCE' : '#FFC7CE' }}>{u.mfa_enabled ? 'Yes' : 'No'}</Typography>
+                    <Typography variant="caption" sx={{ color: u.mfa_enabled ? (isLight ? '#1b5e20' : '#C6EFCE') : (isLight ? '#9e0000' : '#FFC7CE') }}>{u.mfa_enabled ? 'Yes' : 'No'}</Typography>
                   </TableCell>
-                  <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: u.is_disabled ? '#FFC7CE' : 'text.secondary' }}>{u.is_disabled ? 'Yes' : 'No'}</TableCell>
+                  <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: u.is_disabled ? (isLight ? '#9e0000' : '#FFC7CE') : 'text.secondary' }}>{u.is_disabled ? 'Yes' : 'No'}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -1098,13 +1134,15 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
   // ── Microsoft 365 — Security Alerts ──────────────────────────────────────
   } else if (item.source_ref === 'm365-security-alerts') {
     const alerts: any[] = raw.recent_alerts ?? []
-    const sevMap: Record<string, string> = { high: '#FFC7CE', medium: '#FFEB9C', low: '#C6EFCE', informational: '#BDD7EE' }
+    const sevMap: Record<string, string> = isLight
+      ? { high: '#9e0000', medium: '#7a4800', low: '#1b5e20', informational: '#0d47a1' }
+      : { high: '#FFC7CE', medium: '#FFEB9C', low: '#C6EFCE', informational: '#BDD7EE' }
     content = (
       <Box>
         <Box sx={{ display: 'flex', gap: 2, mb: 1, flexWrap: 'wrap' }}>
           <Typography variant="caption" color="text.secondary">Total: <strong>{raw.total_alerts ?? alerts.length}</strong></Typography>
-          {raw.high_severity_count !== undefined && <Typography variant="caption" sx={{ color: '#FFC7CE' }}>High: <strong>{raw.high_severity_count}</strong></Typography>}
-          {raw.medium_severity_count !== undefined && <Typography variant="caption" sx={{ color: '#FFEB9C' }}>Medium: <strong>{raw.medium_severity_count}</strong></Typography>}
+          {raw.high_severity_count !== undefined && <Typography variant="caption" sx={{ color: isLight ? '#9e0000' : '#FFC7CE' }}>High: <strong>{raw.high_severity_count}</strong></Typography>}
+          {raw.medium_severity_count !== undefined && <Typography variant="caption" sx={{ color: isLight ? '#7a4800' : '#FFEB9C' }}>Medium: <strong>{raw.medium_severity_count}</strong></Typography>}
           {raw.statuses && Object.entries(raw.statuses).map(([k, v]) => (
             <Typography key={k} variant="caption" color="text.secondary">{k}: <strong>{v as number}</strong></Typography>
           ))}
@@ -1123,7 +1161,7 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
                 <TableRow key={i} hover>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4, maxWidth: 200 }} title={a.title}>{String(a.title ?? '—').slice(0, 50)}{String(a.title ?? '').length > 50 ? '…' : ''}</TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4 }}>
-                    <Chip label={a.severity ?? '—'} size="small" sx={{ fontSize: '0.55rem', height: 16, bgcolor: `${sevMap[a.severity] ?? '#BDD7EE'}22`, color: sevMap[a.severity] ?? '#BDD7EE' }} />
+                    <Chip label={a.severity ?? '—'} size="small" sx={{ fontSize: '0.55rem', height: 16, bgcolor: isLight ? `${sevMap[a.severity] ?? '#0d47a1'}18` : `${sevMap[a.severity] ?? '#BDD7EE'}22`, color: sevMap[a.severity] ?? (isLight ? '#0d47a1' : '#BDD7EE') }} />
                   </TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: 'text.secondary' }}>{a.status ?? '—'}</TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: 'text.secondary' }}>{a.category ?? '—'}</TableCell>
@@ -1145,9 +1183,9 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
       <Box>
         <Box sx={{ display: 'flex', gap: 2, mb: 1, flexWrap: 'wrap' }}>
           <Typography variant="caption" color="text.secondary">Total: <strong>{raw.total ?? policies.length}</strong></Typography>
-          {raw.enabled !== undefined && <Typography variant="caption" sx={{ color: '#C6EFCE' }}>Enabled: <strong>{raw.enabled}</strong></Typography>}
-          {raw.reporting_only !== undefined && <Typography variant="caption" sx={{ color: '#FFEB9C' }}>Report-only: <strong>{raw.reporting_only}</strong></Typography>}
-          {raw.disabled !== undefined && <Typography variant="caption" sx={{ color: '#FFC7CE' }}>Disabled: <strong>{raw.disabled}</strong></Typography>}
+          {raw.enabled !== undefined && <Typography variant="caption" sx={{ color: isLight ? '#1b5e20' : '#C6EFCE' }}>Enabled: <strong>{raw.enabled}</strong></Typography>}
+          {raw.reporting_only !== undefined && <Typography variant="caption" sx={{ color: isLight ? '#7a4800' : '#FFEB9C' }}>Report-only: <strong>{raw.reporting_only}</strong></Typography>}
+          {raw.disabled !== undefined && <Typography variant="caption" sx={{ color: isLight ? '#9e0000' : '#FFC7CE' }}>Disabled: <strong>{raw.disabled}</strong></Typography>}
         </Box>
         <TableContainer sx={{ maxHeight: 240 }}>
           <Table size="small" stickyHeader>
@@ -1164,8 +1202,8 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4, maxWidth: 260 }}>{p.display_name ?? p.name ?? '—'}</TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4 }}>
                     <Chip label={p.state ?? '—'} size="small" sx={{ fontSize: '0.55rem', height: 16,
-                      bgcolor: p.state === 'enabled' ? '#C6EFCE22' : p.state === 'enabledForReportingButNotEnforced' ? '#FFEB9C22' : '#FFC7CE22',
-                      color: p.state === 'enabled' ? '#C6EFCE' : p.state === 'enabledForReportingButNotEnforced' ? '#FFEB9C' : '#FFC7CE',
+                      bgcolor: p.state === 'enabled' ? (isLight ? 'rgba(46,125,50,0.10)' : '#C6EFCE22') : p.state === 'enabledForReportingButNotEnforced' ? (isLight ? 'rgba(255,152,0,0.10)' : '#FFEB9C22') : (isLight ? 'rgba(192,0,0,0.10)' : '#FFC7CE22'),
+                      color: p.state === 'enabled' ? (isLight ? '#1b5e20' : '#C6EFCE') : p.state === 'enabledForReportingButNotEnforced' ? (isLight ? '#7a4800' : '#FFEB9C') : (isLight ? '#9e0000' : '#FFC7CE'),
                     }} />
                   </TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: 'text.secondary' }}>
@@ -1186,8 +1224,8 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
       <Box>
         <Box sx={{ display: 'flex', gap: 2, mb: 1, flexWrap: 'wrap' }}>
           <Typography variant="caption" color="text.secondary">Subscriptions: <strong>{raw.subscription_count ?? subs.length}</strong></Typography>
-          {raw.total_unhealthy !== undefined && <Typography variant="caption" sx={{ color: '#FFC7CE' }}>Unhealthy: <strong>{raw.total_unhealthy}</strong></Typography>}
-          {raw.total_healthy !== undefined && <Typography variant="caption" sx={{ color: '#C6EFCE' }}>Healthy: <strong>{raw.total_healthy}</strong></Typography>}
+          {raw.total_unhealthy !== undefined && <Typography variant="caption" sx={{ color: isLight ? '#9e0000' : '#FFC7CE' }}>Unhealthy: <strong>{raw.total_unhealthy}</strong></Typography>}
+          {raw.total_healthy !== undefined && <Typography variant="caption" sx={{ color: isLight ? '#1b5e20' : '#C6EFCE' }}>Healthy: <strong>{raw.total_healthy}</strong></Typography>}
         </Box>
         <TableContainer sx={{ maxHeight: 240 }}>
           <Table size="small" stickyHeader>
@@ -1202,8 +1240,8 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
               {subs.map((s: any, i: number) => (
                 <TableRow key={i} hover>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4, maxWidth: 160 }}>{s.subscription_name ?? s.subscription_id?.slice(0, 8) ?? '—'}</TableCell>
-                  <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: '#C6EFCE' }}>{s.healthy ?? '—'}</TableCell>
-                  <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: '#FFC7CE' }}>{s.unhealthy ?? '—'}</TableCell>
+                  <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: isLight ? '#1b5e20' : '#C6EFCE' }}>{s.healthy ?? '—'}</TableCell>
+                  <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: isLight ? '#9e0000' : '#FFC7CE' }}>{s.unhealthy ?? '—'}</TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: 'text.secondary' }}>{s.skipped ?? '—'}</TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4 }}>{s.total ?? '—'}</TableCell>
                 </TableRow>
@@ -1217,13 +1255,15 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
   // ── Azure CSPM — Security Alerts ─────────────────────────────────────────
   } else if (item.source_ref?.startsWith('azure-cspm-alerts')) {
     const subs: any[] = raw.subscriptions ?? []
-    const sevMap: Record<string, string> = { High: '#FFC7CE', Medium: '#FFEB9C', Low: '#C6EFCE', Informational: '#BDD7EE' }
+    const sevMap: Record<string, string> = isLight
+      ? { High: '#9e0000', Medium: '#7a4800', Low: '#1b5e20', Informational: '#0d47a1' }
+      : { High: '#FFC7CE', Medium: '#FFEB9C', Low: '#C6EFCE', Informational: '#BDD7EE' }
     content = (
       <Box>
         <Box sx={{ display: 'flex', gap: 2, mb: 1, flexWrap: 'wrap' }}>
           <Typography variant="caption" color="text.secondary">Total alerts: <strong>{raw.total_alerts}</strong></Typography>
-          {raw.high_count !== undefined && <Typography variant="caption" sx={{ color: '#FFC7CE' }}>High: <strong>{raw.high_count}</strong></Typography>}
-          {raw.medium_count !== undefined && <Typography variant="caption" sx={{ color: '#FFEB9C' }}>Medium: <strong>{raw.medium_count}</strong></Typography>}
+          {raw.high_count !== undefined && <Typography variant="caption" sx={{ color: isLight ? '#9e0000' : '#FFC7CE' }}>High: <strong>{raw.high_count}</strong></Typography>}
+          {raw.medium_count !== undefined && <Typography variant="caption" sx={{ color: isLight ? '#7a4800' : '#FFEB9C' }}>Medium: <strong>{raw.medium_count}</strong></Typography>}
         </Box>
         <TableContainer sx={{ maxHeight: 240 }}>
           <Table size="small" stickyHeader>
@@ -1238,9 +1278,9 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
               {subs.map((s: any, i: number) => (
                 <TableRow key={i} hover>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4 }}>{s.subscription_name ?? s.subscription_id?.slice(0, 8) ?? '—'}</TableCell>
-                  <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: '#FFC7CE' }}>{s.by_severity?.High ?? 0}</TableCell>
-                  <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: '#FFEB9C' }}>{s.by_severity?.Medium ?? 0}</TableCell>
-                  <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: '#C6EFCE' }}>{s.by_severity?.Low ?? 0}</TableCell>
+                  <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: isLight ? '#9e0000' : '#FFC7CE' }}>{s.by_severity?.High ?? 0}</TableCell>
+                  <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: isLight ? '#7a4800' : '#FFEB9C' }}>{s.by_severity?.Medium ?? 0}</TableCell>
+                  <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: isLight ? '#1b5e20' : '#C6EFCE' }}>{s.by_severity?.Low ?? 0}</TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4 }}>{s.alert_count ?? '—'}</TableCell>
                 </TableRow>
               ))}
@@ -1259,13 +1299,13 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
           <Typography variant="caption" color="text.secondary">Subscription: <strong>{raw.subscription_name ?? raw.subscription_id ?? '—'}</strong></Typography>
           <Typography variant="caption" color="text.secondary">Total assessments: <strong>{raw.total_network_assessments ?? '—'}</strong></Typography>
           {raw.unhealthy_network_assessments !== undefined && (
-            <Typography variant="caption" sx={{ color: raw.unhealthy_network_assessments > 0 ? '#FFC7CE' : '#C6EFCE' }}>
+            <Typography variant="caption" sx={{ color: raw.unhealthy_network_assessments > 0 ? (isLight ? '#9e0000' : '#FFC7CE') : (isLight ? '#1b5e20' : '#C6EFCE') }}>
               Unhealthy: <strong>{raw.unhealthy_network_assessments}</strong>
             </Typography>
           )}
         </Box>
         {issues.length === 0 ? (
-          <Typography variant="caption" sx={{ color: '#C6EFCE' }}>No network security issues found.</Typography>
+          <Typography variant="caption" sx={{ color: isLight ? '#1b5e20' : '#C6EFCE' }}>No network security issues found.</Typography>
         ) : (
           <TableContainer sx={{ maxHeight: 240 }}>
             <Table size="small" stickyHeader>
@@ -1288,8 +1328,8 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
                         size="small"
                         sx={{
                           fontSize: '0.55rem', height: 16,
-                          bgcolor: issue.status_code === 'unhealthy' ? '#FFC7CE22' : '#C6EFCE22',
-                          color: issue.status_code === 'unhealthy' ? '#FFC7CE' : '#C6EFCE',
+                          bgcolor: issue.status_code === 'unhealthy' ? (isLight ? 'rgba(192,0,0,0.10)' : '#FFC7CE22') : (isLight ? 'rgba(46,125,50,0.10)' : '#C6EFCE22'),
+                          color: issue.status_code === 'unhealthy' ? (isLight ? '#9e0000' : '#FFC7CE') : (isLight ? '#1b5e20' : '#C6EFCE'),
                         }}
                       />
                     </TableCell>
@@ -1305,7 +1345,9 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
   // ── SIEM — Alert Log ─────────────────────────────────────────────────────
   } else if (item.source_ref === 'siem-alert-log') {
     const alerts: any[] = raw.recent_alerts ?? []
-    const sevMap: Record<string, string> = { critical: '#FFC7CE', high: '#FFC7CE', medium: '#FFEB9C', low: '#C6EFCE', info: '#BDD7EE' }
+    const sevMap: Record<string, string> = isLight
+      ? { critical: '#9e0000', high: '#9e0000', medium: '#7a4800', low: '#1b5e20', info: '#0d47a1' }
+      : { critical: '#FFC7CE', high: '#FFC7CE', medium: '#FFEB9C', low: '#C6EFCE', info: '#BDD7EE' }
     content = (
       <Box>
         <Box sx={{ display: 'flex', gap: 2, mb: 1, flexWrap: 'wrap' }}>
@@ -1328,7 +1370,7 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
                 <TableRow key={i} hover>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4, maxWidth: 200 }}>{String(a.title ?? a.name ?? '—').slice(0, 50)}</TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4 }}>
-                    <Chip label={a.severity ?? '—'} size="small" sx={{ fontSize: '0.55rem', height: 16, bgcolor: `${sevMap[a.severity] ?? '#BDD7EE'}22`, color: sevMap[a.severity] ?? '#BDD7EE' }} />
+                    <Chip label={a.severity ?? '—'} size="small" sx={{ fontSize: '0.55rem', height: 16, bgcolor: isLight ? `${sevMap[a.severity] ?? '#0d47a1'}18` : `${sevMap[a.severity] ?? '#BDD7EE'}22`, color: sevMap[a.severity] ?? (isLight ? '#0d47a1' : '#BDD7EE') }} />
                   </TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: 'text.secondary' }}>{a.category ?? a.rule_name ?? '—'}</TableCell>
                   <TableCell sx={{ fontSize: '0.6rem', py: 0.4, color: 'text.secondary' }}>{a.source ?? a.host ?? '—'}</TableCell>
@@ -1373,7 +1415,7 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
       <Box>
         <Box sx={{ display: 'flex', gap: 2, mb: 1, flexWrap: 'wrap' }}>
           <Typography variant="caption" color="text.secondary">Score: <strong>{raw.current_score}/{raw.max_score}</strong></Typography>
-          {raw.percentage_score !== undefined && <Typography variant="caption" sx={{ color: raw.percentage_score >= 70 ? '#C6EFCE' : raw.percentage_score >= 40 ? '#FFEB9C' : '#FFC7CE' }}>
+          {raw.percentage_score !== undefined && <Typography variant="caption" sx={{ color: raw.percentage_score >= 70 ? (isLight ? '#1b5e20' : '#C6EFCE') : raw.percentage_score >= 40 ? (isLight ? '#7a4800' : '#FFEB9C') : (isLight ? '#9e0000' : '#FFC7CE') }}>
             {raw.percentage_score?.toFixed(1)}%
           </Typography>}
         </Box>
@@ -1405,7 +1447,7 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
   // ── Azure CSPM — Secure Score ─────────────────────────────────────────────
   } else if (item.source_ref?.startsWith('azure-cspm-secure-score')) {
     const pct: number = raw.percentage ?? 0
-    const scoreColor = pct >= 70 ? '#C6EFCE' : pct >= 40 ? '#FFEB9C' : '#FFC7CE'
+    const scoreColor = pct >= 70 ? (isLight ? '#1b5e20' : '#C6EFCE') : pct >= 40 ? (isLight ? '#7a4800' : '#FFEB9C') : (isLight ? '#9e0000' : '#FFC7CE')
     const scoreLabel = pct >= 70 ? 'Good' : pct >= 40 ? 'Needs improvement' : 'At risk'
     content = (
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
@@ -1543,7 +1585,7 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
     return (
       <Box sx={{ p: 1, borderRadius: 1, bgcolor: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.06)', overflow: 'auto', maxHeight: 280 }}>
         <Typography variant="caption" component="pre"
-          sx={{ fontFamily: 'monospace', fontSize: '0.6rem', color: '#C6EFCE', lineHeight: 1.5, whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
+          sx={{ fontFamily: 'monospace', fontSize: '0.6rem', color: isLight ? '#1b5e20' : '#C6EFCE', lineHeight: 1.5, whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
           {JSON.stringify(raw, null, 2)}
         </Typography>
       </Box>
@@ -1572,7 +1614,7 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
       <Collapse in={showJson}>
         <Box sx={{ mt: 0.25, p: 1, borderRadius: 1, bgcolor: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.06)', overflow: 'auto', maxHeight: 200 }}>
           <Typography variant="caption" component="pre"
-            sx={{ fontFamily: 'monospace', fontSize: '0.58rem', color: '#C6EFCE', lineHeight: 1.5, whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
+            sx={{ fontFamily: 'monospace', fontSize: '0.58rem', color: isLight ? '#1b5e20' : '#C6EFCE', lineHeight: 1.5, whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
             {JSON.stringify(raw, null, 2)}
           </Typography>
         </Box>
@@ -1590,7 +1632,7 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
                 </Typography>
                 <Box
                   onClick={() => { navigator.clipboard.writeText(pathText); setCopied(true); setTimeout(() => setCopied(false), 1500) }}
-                  sx={{ display: 'flex', alignItems: 'center', gap: 0.4, cursor: 'pointer', color: copied ? '#C6EFCE' : 'text.disabled', '&:hover': { color: 'text.secondary' }, fontSize: '0.57rem' }}
+                  sx={{ display: 'flex', alignItems: 'center', gap: 0.4, cursor: 'pointer', color: copied ? (isLight ? '#1b5e20' : '#C6EFCE') : 'text.disabled', '&:hover': { color: 'text.secondary' }, fontSize: '0.57rem' }}
                 >
                   <Typography variant="caption" sx={{ fontSize: '0.57rem' }}>{copied ? 'Copied!' : 'Copy all'}</Typography>
                 </Box>
@@ -1600,7 +1642,7 @@ function EvidenceDetailView({ item }: { item: ConnectorEvidenceRead }) {
                   <Typography component="span" sx={{ fontFamily: 'monospace', fontSize: '0.6rem', color: '#BDD7EE', minWidth: 0, flexShrink: 0 }}>
                     {p.path}
                   </Typography>
-                  <Typography component="span" sx={{ fontSize: '0.55rem', color: '#FFEB9C', flexShrink: 0 }}>
+                  <Typography component="span" sx={{ fontSize: '0.55rem', color: isLight ? '#7a4800' : '#FFEB9C', flexShrink: 0 }}>
                     {p.type}
                   </Typography>
                   {p.sample && (
@@ -1626,6 +1668,8 @@ function ConnectorEvidenceItem({
   connectorList: ConnectorRead[]
 }) {
   const [rawOpen, setRawOpen] = useState(false)
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
 
   const connector = connectorList.find(c => c.id === item.connector_id)
   const system = connector
@@ -1633,8 +1677,10 @@ function ConnectorEvidenceItem({
     : undefined
   const sourceLabel = system?.label ?? connector?.name ?? item.connector_id.slice(0, 8) + '…'
 
-  const classColor = CLASS_COLOR[item.classification ?? ''] ?? '#BDD7EE'
-  const statusColor = CONN_STATUS_COLOR[item.status ?? ''] ?? '#BDD7EE'
+  const CLASS_COLOR = isLight ? CLASS_COLOR_LIGHT : CLASS_COLOR_DARK
+  const CONN_STATUS_COLOR = isLight ? CONN_STATUS_COLOR_LIGHT : CONN_STATUS_COLOR_DARK
+  const classColor = CLASS_COLOR[item.classification ?? ''] ?? (isLight ? '#1565c0' : '#BDD7EE')
+  const statusColor = CONN_STATUS_COLOR[item.status ?? ''] ?? (isLight ? '#1565c0' : '#BDD7EE')
 
   return (
     <Box sx={{
@@ -1730,6 +1776,8 @@ export default function ControlDetail() {
   const navigate = useNavigate()
   const queryClient = useQueryClient()
   const { product: productView } = useProduct()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [tab, setTab] = useState(0)
   const [expandedSheets, setExpandedSheets] = useState<Set<string>>(new Set())
   const [stackedFilter, setStackedFilter] = useState<string>('all')
@@ -1900,7 +1948,7 @@ export default function ControlDetail() {
             <Chip label={cg.section_name} size="small" sx={{ fontSize: '0.65rem', height: 18 }} />
             {cg.is_stacked && (
               <Chip label={`Stacked: ${cg.stacked_control_ids.join(', ')}`} size="small"
-                sx={{ fontSize: '0.65rem', height: 18, bgcolor: 'rgba(255,192,0,0.15)', color: '#FFEB9C' }} />
+                sx={{ fontSize: '0.65rem', height: 18, bgcolor: 'rgba(255,192,0,0.15)', color: isLight ? '#7a4800' : '#FFEB9C' }} />
             )}
             <StatusChip status={cg.framework_status} />
           </Box>
@@ -1933,8 +1981,8 @@ export default function ControlDetail() {
             sx={{
               mt: 0.25, flexShrink: 0,
               color: 'text.disabled',
-              border: '1px solid rgba(255,255,255,0.08)',
-              '&:hover': { bgcolor: 'rgba(46,139,87,0.15)', color: '#C6EFCE' },
+              border: `1px solid ${isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.08)'}`,
+              '&:hover': { bgcolor: 'rgba(46,139,87,0.15)', color: isLight ? '#1b5e20' : '#C6EFCE' },
             }}
           >
             <ExploreOutlined fontSize="small" />
@@ -2008,7 +2056,7 @@ export default function ControlDetail() {
                       }
                       <Chip label={`${pol.word_count.toLocaleString()}w`} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: 'rgba(68,114,196,0.15)' }} />
                       {pol.requirements_count > 0 && (
-                        <Chip label={`${pol.requirements_count} reqs`} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: '#1a3a27', color: '#C6EFCE' }} />
+                        <Chip label={`${pol.requirements_count} reqs`} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: isLight ? 'rgba(46,125,50,0.12)' : '#1a3a27', color: isLight ? '#1b5e20' : '#C6EFCE' }} />
                       )}
                     </Box>
                   </Box>
@@ -2023,19 +2071,19 @@ export default function ControlDetail() {
               <Alert severity="info">No implementation guides (INS) for this control group.</Alert>
             )}
             {visibleInstructions.map((ins) => (
-              <Box key={ins.id} onClick={() => setDocPreview({ id: ins.id, docType: 'policy', documentId: ins.document_id, title: ins.title, typeLabel: 'INS', typeColor: '#FFEB9C' })} sx={{ mb: 1.5, p: 1.5, bgcolor: 'rgba(255,192,0,0.06)', border: '1px solid rgba(255,192,0,0.15)', borderRadius: 2, cursor: 'pointer', '&:hover': { bgcolor: 'rgba(255,192,0,0.1)' } }}>
+              <Box key={ins.id} onClick={() => setDocPreview({ id: ins.id, docType: 'policy', documentId: ins.document_id, title: ins.title, typeLabel: 'INS', typeColor: isLight ? '#7a4800' : '#FFEB9C' })} sx={{ mb: 1.5, p: 1.5, bgcolor: 'rgba(255,192,0,0.06)', border: '1px solid rgba(255,192,0,0.15)', borderRadius: 2, cursor: 'pointer', '&:hover': { bgcolor: 'rgba(255,192,0,0.1)' } }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                   <Box>
-                    <Typography variant="caption" sx={{ fontFamily: 'monospace', color: '#FFEB9C' }}>
+                    <Typography variant="caption" sx={{ fontFamily: 'monospace', color: isLight ? '#7a4800' : '#FFEB9C' }}>
                       {ins.document_id}
                     </Typography>
                     <Typography variant="body2" fontWeight={600}>{ins.title}</Typography>
                   </Box>
                   <Box sx={{ display: 'flex', gap: 0.5, flexShrink: 0, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-                    <Chip label="INS" size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: 'rgba(255,192,0,0.15)', color: '#FFEB9C' }} />
+                    <Chip label="INS" size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: 'rgba(255,192,0,0.15)', color: isLight ? '#7a4800' : '#FFEB9C' }} />
                     <Chip label={`${ins.word_count.toLocaleString()}w`} size="small" sx={{ fontSize: '0.65rem', height: 18 }} />
                     {ins.requirements_count > 0 && (
-                      <Chip label={`${ins.requirements_count} notes`} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: '#3d3200', color: '#FFEB9C' }} />
+                      <Chip label={`${ins.requirements_count} notes`} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: isLight ? 'rgba(230,160,0,0.12)' : '#3d3200', color: isLight ? '#7a4800' : '#FFEB9C' }} />
                     )}
                   </Box>
                 </Box>
@@ -2049,7 +2097,7 @@ export default function ControlDetail() {
             <Grid container spacing={1}>
               {visibleImpls.map((impl) => (
                 <Grid item xs={12} sm={6} key={impl.id}>
-                  <Box onClick={() => setDocPreview({ id: impl.id, docType: 'implementation', documentId: impl.document_id, title: impl.title, typeLabel: impl.impl_type, typeColor: impl.impl_type === 'UG' ? '#C6EFCE' : '#FFEB9C' })} sx={{ p: 1.5, bgcolor: 'rgba(68,114,196,0.07)', borderRadius: 2, cursor: 'pointer', '&:hover': { bgcolor: 'rgba(68,114,196,0.14)' } }}>
+                  <Box onClick={() => setDocPreview({ id: impl.id, docType: 'implementation', documentId: impl.document_id, title: impl.title, typeLabel: impl.impl_type, typeColor: impl.impl_type === 'UG' ? (isLight ? '#1b5e20' : '#C6EFCE') : (isLight ? '#7a4800' : '#FFEB9C') })} sx={{ p: 1.5, bgcolor: 'rgba(68,114,196,0.07)', borderRadius: 2, cursor: 'pointer', '&:hover': { bgcolor: 'rgba(68,114,196,0.14)' } }}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.25 }}>
                       <Typography variant="caption" sx={{ fontFamily: 'monospace', color: 'primary.light' }}>
                         {impl.document_id}
@@ -2060,8 +2108,8 @@ export default function ControlDetail() {
                           size="small"
                           sx={{
                             fontSize: '0.65rem', height: 18,
-                            bgcolor: impl.impl_type === 'UG' ? '#1a3a27' : '#3d3200',
-                            color: impl.impl_type === 'UG' ? '#C6EFCE' : '#FFEB9C',
+                            bgcolor: impl.impl_type === 'UG' ? (isLight ? 'rgba(46,125,50,0.12)' : '#1a3a27') : (isLight ? 'rgba(230,160,0,0.12)' : '#3d3200'),
+                            color: impl.impl_type === 'UG' ? (isLight ? '#1b5e20' : '#C6EFCE') : (isLight ? '#7a4800' : '#FFEB9C'),
                           }}
                         />
                         <Chip label={`${impl.word_count.toLocaleString()}w`} size="small" sx={{ fontSize: '0.65rem', height: 18 }} />
@@ -2140,7 +2188,7 @@ export default function ControlDetail() {
                                 <Chip label="platform" size="small" sx={{ fontSize: '0.6rem', height: 16, bgcolor: 'rgba(68,114,196,0.2)', color: 'primary.light' }} />
                                 <Chip label={`${asmnt.items_total} items`} size="small" sx={{ fontSize: '0.6rem', height: 16 }} />
                                 {asmnt.overall_score != null && (
-                                  <Chip label={`${asmnt.overall_score}%`} size="small" sx={{ fontSize: '0.6rem', height: 16, bgcolor: '#1a3a27', color: '#C6EFCE' }} />
+                                  <Chip label={`${asmnt.overall_score}%`} size="small" sx={{ fontSize: '0.6rem', height: 16, bgcolor: isLight ? 'rgba(46,125,50,0.12)' : '#1a3a27', color: isLight ? '#1b5e20' : '#C6EFCE' }} />
                                 )}
                               </Box>
                             </Box>
@@ -2282,7 +2330,7 @@ export default function ControlDetail() {
                         size="small"
                         sx={{
                           fontSize: '0.68rem', height: 18,
-                          bgcolor: 'rgba(112,173,71,0.12)', color: '#C6EFCE',
+                          bgcolor: 'rgba(112,173,71,0.12)', color: isLight ? '#1b5e20' : '#C6EFCE',
                         }}
                       />
                     ))}

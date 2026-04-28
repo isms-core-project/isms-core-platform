@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Box, Typography, Table, TableHead, TableBody, TableRow, TableCell, Button, Divider, Chip, Skeleton, ToggleButtonGroup, ToggleButton } from '@mui/material'
+import { Box, Typography, Table, TableHead, TableBody, TableRow, TableCell, Button, Divider, Chip, Skeleton, ToggleButtonGroup, ToggleButton, useTheme } from '@mui/material'
 import { PrintOutlined, FileDownloadOutlined } from '@mui/icons-material'
 import { useQuery } from '@tanstack/react-query'
 import { dashboardApi } from '../api/dashboard'
@@ -51,8 +51,10 @@ interface RealReadiness {
 }
 
 const STATUS_LABEL: Record<string, string> = { green: 'Compliant', amber: 'Partially Compliant', red: 'Non-Compliant' }
-const STATUS_BG: Record<string, string>    = { green: '#1a3a27', amber: '#3a2e00', red: '#3a0000' }
-const STATUS_FG: Record<string, string>    = { green: '#C6EFCE', amber: '#FFEB9C', red: '#FFC7CE' }
+const STATUS_BG_DARK: Record<string, string>  = { green: '#1a3a27',              amber: '#3a2e00',              red: '#3a0000' }
+const STATUS_BG_LIGHT: Record<string, string> = { green: 'rgba(46,125,50,0.12)', amber: 'rgba(230,160,0,0.12)', red: 'rgba(192,0,0,0.12)' }
+const STATUS_FG_DARK: Record<string, string>  = { green: '#C6EFCE', amber: '#FFEB9C', red: '#FFC7CE' }
+const STATUS_FG_LIGHT: Record<string, string> = { green: '#1b5e20', amber: '#7a4800', red: '#9e0000' }
 
 const STANDARD_NAMES: Record<Product, string> = {
   isms:    'ISO/IEC 27001:2022',
@@ -93,6 +95,10 @@ const TH_STYLE = { fontWeight: 700, fontSize: '0.78rem', color: '#1a1a2e', bgcol
 const TD_STYLE = { fontSize: '0.8rem', color: '#1a1a2e', borderBottom: '1px solid #e0e4ec' }
 
 export default function Report() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const STATUS_BG = isLight ? STATUS_BG_LIGHT : STATUS_BG_DARK
+  const STATUS_FG = isLight ? STATUS_FG_LIGHT : STATUS_FG_DARK
   const { product: activeProduct } = useProduct()
   const [reportProduct, setReportProduct] = useState<Product>(activeProduct)
 
@@ -330,8 +336,8 @@ export default function Report() {
                           label={value >= 80 ? 'Good' : value >= 50 ? 'Partial' : 'Attention'}
                           size="small"
                           sx={{
-                            bgcolor: value >= 80 ? '#1a3a27' : value >= 50 ? '#3a2e00' : '#3a0000',
-                            color:   value >= 80 ? '#C6EFCE' : value >= 50 ? '#FFEB9C' : '#FFC7CE',
+                            bgcolor: value >= 80 ? STATUS_BG.green : value >= 50 ? STATUS_BG.amber : STATUS_BG.red,
+                            color:   value >= 80 ? STATUS_FG.green : value >= 50 ? STATUS_FG.amber : STATUS_FG.red,
                             fontSize: '0.65rem',
                             height: 18,
                           }}
@@ -468,8 +474,8 @@ export default function Report() {
                                   label={g.has_framework ? '✓' : '✗'}
                                   size="small"
                                   sx={{
-                                    bgcolor: g.has_framework ? '#1a3a27' : '#3a0000',
-                                    color:   g.has_framework ? '#C6EFCE' : '#FFC7CE',
+                                    bgcolor: g.has_framework ? STATUS_BG.green : STATUS_BG.red,
+                                    color:   g.has_framework ? STATUS_FG.green : STATUS_FG.red,
                                     fontSize: '0.65rem', height: 18, minWidth: 28,
                                   }}
                                 />

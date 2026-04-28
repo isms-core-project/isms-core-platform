@@ -52,7 +52,7 @@ router = APIRouter(prefix="/feeds", tags=["feeds"])
 
 # Canonical feed names and display labels
 _FEEDS = [
-    ("mitre_attack_v18", "MITRE ATT&CK v18",  "FEEDS_MITRE_ENABLED"),
+    ("mitre_attack_v19", "MITRE ATT&CK v19",  "FEEDS_MITRE_ENABLED"),
     ("mitre_atlas",      "MITRE ATLAS",         "FEEDS_ATLAS_ENABLED"),
     ("cisa_kev",         "CISA KEV",            "FEEDS_KEV_ENABLED"),
     ("epss",             "FIRST EPSS",          "FEEDS_EPSS_ENABLED"),
@@ -103,7 +103,7 @@ def get_feed_status(
 
 @router.get("/mitre/attack", response_model=MitreTechniqueList)
 def list_attack_techniques(
-    source: str = Query("attack_v18", description="attack_v18 | attack_v19"),
+    source: str = Query("attack_v19", description="attack_v19"),
     tactic: str | None = Query(None),
     search: str | None = Query(None),
     subtechniques: bool = Query(True),
@@ -143,10 +143,10 @@ def get_attack_stats(
     db: DBSession = Depends(get_db),
     _current_user: User = Depends(get_current_user),
 ):
-    # Collect all non-deprecated techniques across all attack sources
+    # Collect all non-deprecated techniques from v19 only
     rows = db.scalars(
         select(MitreTechnique).where(
-            MitreTechnique.source.like("attack_%"),
+            MitreTechnique.source == "attack_v19",
             MitreTechnique.deprecated.is_(False),
         )
     ).all()
@@ -166,7 +166,7 @@ def get_attack_stats(
     sub_count = sum(1 for t in rows if t.is_subtechnique)
     dep_count = db.scalar(
         select(func.count(MitreTechnique.id)).where(
-            MitreTechnique.source.like("attack_%"),
+            MitreTechnique.source == "attack_v19",
             MitreTechnique.deprecated.is_(True),
         )
     ) or 0
@@ -236,7 +236,7 @@ def get_atlas_stats(
 
 @router.get("/mitre/groups", response_model=MitreGroupList)
 def list_mitre_groups(
-    source: str = Query("attack_v18", description="attack_v18 | attack_v19"),
+    source: str = Query("attack_v19", description="attack_v19"),
     search: str | None = Query(None),
     deprecated: bool = Query(False),
     page: int = Query(1, ge=1),
@@ -270,16 +270,12 @@ def get_mitre_group_stats(
     db: DBSession = Depends(get_db),
     _current_user: User = Depends(get_current_user),
 ):
-    rows = db.scalars(select(MitreGroup)).all()
-    sources: set[str] = set()
-    for g in rows:
-        sources.add(g.source)
-    total = len(rows)
+    rows = db.scalars(select(MitreGroup).where(MitreGroup.source == "attack_v19")).all()
     dep = sum(1 for g in rows if g.deprecated)
     return MitreGroupStats(
-        total_groups=total - dep,
+        total_groups=len(rows) - dep,
         deprecated_count=dep,
-        sources=sorted(sources),
+        sources=["attack_v19"],
     )
 
 
@@ -287,7 +283,7 @@ def get_mitre_group_stats(
 
 @router.get("/mitre/software", response_model=MitreSoftwareList)
 def list_mitre_software(
-    source: str = Query("attack_v18", description="attack_v18 | attack_v19"),
+    source: str = Query("attack_v19", description="attack_v19"),
     software_type: str | None = Query(None, description="malware | tool"),
     search: str | None = Query(None),
     deprecated: bool = Query(False),
@@ -324,10 +320,7 @@ def get_mitre_software_stats(
     db: DBSession = Depends(get_db),
     _current_user: User = Depends(get_current_user),
 ):
-    rows = db.scalars(select(MitreSoftware)).all()
-    sources: set[str] = set()
-    for s in rows:
-        sources.add(s.source)
+    rows = db.scalars(select(MitreSoftware).where(MitreSoftware.source == "attack_v19")).all()
     dep = sum(1 for s in rows if s.deprecated)
     malware = sum(1 for s in rows if s.software_type == "malware" and not s.deprecated)
     tool = sum(1 for s in rows if s.software_type == "tool" and not s.deprecated)
@@ -336,7 +329,7 @@ def get_mitre_software_stats(
         malware_count=malware,
         tool_count=tool,
         deprecated_count=dep,
-        sources=sorted(sources),
+        sources=["attack_v19"],
     )
 
 
@@ -344,7 +337,7 @@ def get_mitre_software_stats(
 
 @router.get("/mitre/campaigns", response_model=MitreCampaignList)
 def list_mitre_campaigns(
-    source: str = Query("attack_v18", description="attack_v18 | attack_v19"),
+    source: str = Query("attack_v19", description="attack_v19"),
     search: str | None = Query(None),
     deprecated: bool = Query(False),
     page: int = Query(1, ge=1),
@@ -386,7 +379,7 @@ _TACTIC_ORDER = [
 
 @router.get("/mitre/heatmap", response_model=MitreHeatmapResponse)
 def get_mitre_heatmap(
-    source: str = Query("attack_v18", description="attack_v18 | attack_v19"),
+    source: str = Query("attack_v19", description="attack_v19"),
     group_ids: str | None = Query(None, description="Comma-separated group IDs (e.g. G0001,G0016). Empty = all groups."),
     include_software: bool = Query(True, description="Also include malware/tool → technique relationships"),
     db: DBSession = Depends(get_db),
@@ -822,11 +815,17 @@ def list_cve(
     filter_: list[dict] = []
 
     if search:
-        must.append({"multi_match": {"query": search, "fields": ["description", "cve_id", "cwe_ids"]}})
+        import re as _re
+        if _re.match(r"^CVE-\d{4}-\d+$", search.strip().upper()):
+            must.append({"term": {"cve_id": search.strip().upper()}})
+        else:
+            must.append({"multi_match": {"query": search, "fields": ["description", "cve_id", "cwe_ids"]}})
     if severity:
+        sev = severity.upper()
         filter_.append({"bool": {"should": [
-            {"term": {"cvss_v4_severity": severity.upper()}},
-            {"term": {"cvss_v3_severity": severity.upper()}},
+            {"term": {"cvss_v4_severity": sev}},
+            {"term": {"cvss_v4_severity.keyword": sev}},
+            {"term": {"cvss_v3_severity": sev}},
         ], "minimum_should_match": 1}})
     if kev_only:
         filter_.append({"term": {"in_kev": True}})
@@ -837,9 +836,10 @@ def list_cve(
 
     query = {"bool": {"must": must or [{"match_all": {}}], "filter": filter_}}
     # Sort: prefer CVSS 4.0 score when available, fallback to v3
+    # unmapped_type prevents errors on indices created before Phase 37 added cvss_v4_* fields
     sort = [
-        {"cvss_v4_score": {"order": "desc", "missing": "_last"}},
-        {"cvss_v3_score": {"order": "desc", "missing": "_last"}},
+        {"cvss_v4_score": {"order": "desc", "missing": "_last", "unmapped_type": "float"}},
+        {"cvss_v3_score": {"order": "desc", "missing": "_last", "unmapped_type": "float"}},
         {"published": {"order": "desc"}},
     ]
 

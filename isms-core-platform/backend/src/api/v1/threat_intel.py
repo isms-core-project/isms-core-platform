@@ -17,17 +17,24 @@ from sqlalchemy.orm import Session as DBSession
 from src.core.config import get_settings
 from src.core.dependencies import get_current_user, require_admin
 from src.database.session import get_db
-from src.domain.feeds import FeedRun, TiIoc, TiMalwareFamily, TiActor, TiEnrichmentCache
+from src.domain.feeds import FeedRun, TiIoc, TiMalwareFamily, TiActor, TiTool, TiEnrichmentCache
 
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/threat-intel", tags=["threat-intel"])
 
 _TI_SOURCES = [
-    ("circl_misp",    "CIRCL MISP",        "TI_MISP_CIRCL_ENABLED"),
-    ("botvrij_misp",  "Botvrij MISP",       "TI_MISP_BOTVRIJ_ENABLED"),
-    ("abuseipdb",     "AbuseIPDB",          "TI_ABUSEIPDB_ENABLED"),
-    ("malpedia",      "Malpedia",           "TI_MALPEDIA_ENABLED"),
+    ("circl_misp",       "CIRCL MISP",        "TI_MISP_CIRCL_ENABLED"),
+    ("botvrij_misp",     "Botvrij MISP",       "TI_MISP_BOTVRIJ_ENABLED"),
+    ("abuseipdb",        "AbuseIPDB",          "TI_ABUSEIPDB_ENABLED"),
+    ("urlhaus",          "URLhaus",            "TI_URLHAUS_ENABLED"),
+    ("threatfox",        "ThreatFox",          "TI_THREATFOX_ENABLED"),
+    ("sslbl",            "SSL Blacklist",      "TI_SSLBL_ENABLED"),
+    ("feodotracker",     "Feodo Tracker",      "TI_FEODOTRACKER_ENABLED"),
+    ("red_flag_domains", "Red Flag Domains",   "TI_RED_FLAG_DOMAINS_ENABLED"),
+    ("stopforumspam",    "Stopforumspam",      "TI_STOPFORUMSPAM_ENABLED"),
+    ("malwarebazaar",    "MalwareBazaar",      "TI_MALWAREBAZAAR_ENABLED"),
+    ("malpedia",         "Malpedia",           "TI_MALPEDIA_ENABLED"),
 ]
 
 
@@ -56,6 +63,7 @@ class TiSummary(BaseModel):
     total_iocs: int
     total_families: int
     total_actors: int
+    total_tools: int = 0
 
 class IocRead(BaseModel):
     id: str
@@ -95,11 +103,25 @@ class ActorRead(BaseModel):
     country: str | None
     motivation: str | None
     description: str | None
+    actor_type: str = "threat-actor"
     updated_at: datetime
 
 class ActorList(BaseModel):
     total: int
     items: list[ActorRead]
+
+class ToolRead(BaseModel):
+    id: str
+    slug: str
+    name: str
+    aliases: list
+    description: str | None
+    mitre_tids: list
+    updated_at: datetime
+
+class ToolList(BaseModel):
+    total: int
+    items: list[ToolRead]
 
 class EnrichIpRequest(BaseModel):
     ip: str
@@ -108,6 +130,7 @@ class EnrichIpResponse(BaseModel):
     ip: str
     abuseipdb: dict | None = None
     shodan: dict | None = None
+    google_dns: dict | None = None
     cached: bool = False
     cache_age_minutes: int | None = None
     ioc_hits: list[IocRead] = []
@@ -134,9 +157,16 @@ def get_ti_summary(
             .limit(1)
         ).first()
 
-        ioc_count = db.scalar(
-            select(func.count()).select_from(TiIoc).where(TiIoc.source == source_key)
-        ) or 0
+        if source_key == "malpedia":
+            ioc_count = (
+                (db.scalar(select(func.count()).select_from(TiMalwareFamily)) or 0)
+                + (db.scalar(select(func.count()).select_from(TiActor)) or 0)
+                + (db.scalar(select(func.count()).select_from(TiTool)) or 0)
+            )
+        else:
+            ioc_count = db.scalar(
+                select(func.count()).select_from(TiIoc).where(TiIoc.source == source_key)
+            ) or 0
 
         sources.append(TiSourceStatus(
             source=source_key,
@@ -150,6 +180,7 @@ def get_ti_summary(
     total_iocs     = db.scalar(select(func.count()).select_from(TiIoc)) or 0
     total_families = db.scalar(select(func.count()).select_from(TiMalwareFamily)) or 0
     total_actors   = db.scalar(select(func.count()).select_from(TiActor)) or 0
+    total_tools    = db.scalar(select(func.count()).select_from(TiTool)) or 0
 
     return TiSummary(
         active=active,
@@ -157,7 +188,49 @@ def get_ti_summary(
         total_iocs=total_iocs,
         total_families=total_families,
         total_actors=total_actors,
+        total_tools=total_tools,
     )
+
+
+# ── IOC Stats ─────────────────────────────────────────────────────────────────
+
+@router.get("/ioc-stats")
+def get_ioc_stats(
+    db: DBSession = Depends(get_db),
+    _current_user=Depends(get_current_user),
+):
+    """IOC breakdown by type, source totals, and top malware families — for TI charts."""
+    _require_ti_enabled()
+    from sqlalchemy import text
+
+    type_rows = db.execute(
+        select(TiIoc.ioc_type, func.count().label("cnt"))
+        .group_by(TiIoc.ioc_type)
+        .order_by(func.count().desc())
+    ).all()
+
+    source_rows = db.execute(
+        select(TiIoc.source, func.count().label("cnt"))
+        .group_by(TiIoc.source)
+        .order_by(func.count().desc())
+    ).all()
+
+    family_rows = db.execute(
+        text("""
+            SELECT slug, COUNT(*) AS cnt
+            FROM ti_iocs, jsonb_array_elements_text(family_slugs) AS slug
+            WHERE slug <> ''
+            GROUP BY slug
+            ORDER BY cnt DESC
+            LIMIT 12
+        """)
+    ).all()
+
+    return {
+        "type_breakdown": [{"type": r.ioc_type, "count": r.cnt} for r in type_rows],
+        "source_totals":  [{"source": r.source,  "count": r.cnt} for r in source_rows],
+        "top_families":   [{"family": r.slug,    "count": r.cnt} for r in family_rows],
+    }
 
 
 # ── IOC Explorer ───────────────────────────────────────────────────────────────
@@ -274,10 +347,11 @@ def list_actors(
     _current_user=Depends(get_current_user),
     q: Annotated[str | None, Query(max_length=200)] = None,
     country: Annotated[str | None, Query(max_length=5)] = None,
+    actor_type: Annotated[str | None, Query()] = None,
     skip: int = 0,
     limit: int = 50,
 ):
-    """Threat actor list from Malpedia. Filter by name or country code."""
+    """Threat actor / ransomware group list. Filter by name, country, or actor_type."""
     _require_ti_enabled()
 
     stmt = select(TiActor)
@@ -285,6 +359,8 @@ def list_actors(
         stmt = stmt.where(TiActor.name.ilike(f"%{q}%"))
     if country:
         stmt = stmt.where(TiActor.country == country.upper())
+    if actor_type:
+        stmt = stmt.where(TiActor.actor_type == actor_type)
 
     total = db.scalar(select(func.count()).select_from(stmt.subquery()))
     rows = db.scalars(stmt.order_by(TiActor.name).offset(skip).limit(min(limit, 200))).all()
@@ -299,6 +375,52 @@ def list_actors(
                 country=r.country,
                 motivation=r.motivation,
                 description=r.description,
+                actor_type=getattr(r, "actor_type", "threat-actor"),
+                updated_at=r.updated_at,
+            )
+            for r in rows
+        ],
+    )
+
+
+# ── Attacker Tools ─────────────────────────────────────────────────────────────
+
+@router.get("/tools", response_model=ToolList)
+def list_tools(
+    db: DBSession = Depends(get_db),
+    _current_user=Depends(get_current_user),
+    q: Annotated[str | None, Query(max_length=200)] = None,
+    mitre_tid: Annotated[str | None, Query()] = None,
+    skip: int = 0,
+    limit: int = 50,
+):
+    """Attacker tooling from MISP galaxy. Filter by name or ATT&CK TID."""
+    _require_ti_enabled()
+
+    stmt = select(TiTool)
+    if q:
+        stmt = stmt.where(
+            or_(
+                TiTool.name.ilike(f"%{q}%"),
+                cast(TiTool.aliases, String).ilike(f"%{q}%"),
+            )
+        )
+    if mitre_tid:
+        stmt = stmt.where(TiTool.mitre_tids.contains([mitre_tid]))
+
+    total = db.scalar(select(func.count()).select_from(stmt.subquery()))
+    rows = db.scalars(stmt.order_by(TiTool.name).offset(skip).limit(min(limit, 200))).all()
+
+    return ToolList(
+        total=total or 0,
+        items=[
+            ToolRead(
+                id=str(r.id),
+                slug=r.slug,
+                name=r.name,
+                aliases=r.aliases or [],
+                description=r.description,
+                mitre_tids=r.mitre_tids or [],
                 updated_at=r.updated_at,
             )
             for r in rows
@@ -339,22 +461,24 @@ def enrich_ip(
         cache_age_minutes = int((now - cached_row.cached_at).total_seconds() / 60)
         abuseipdb_result = cached_row.abuseipdb
         shodan_result = cached_row.shodan
+        google_dns_result = cached_row.google_dns
     else:
-        # Call enrichment functions from threat-intel feeds package
-        # These run in-process if available, otherwise return None gracefully
         abuseipdb_result = _call_abuseipdb(ip)
         shodan_result = _call_shodan(ip)
+        google_dns_result = _call_google_dns(ip)
 
         # Persist to cache
         if cached_row:
             cached_row.abuseipdb = abuseipdb_result
             cached_row.shodan = shodan_result
+            cached_row.google_dns = google_dns_result
             cached_row.cached_at = now
         else:
             db.add(TiEnrichmentCache(
                 ip=ip,
                 abuseipdb=abuseipdb_result,
                 shodan=shodan_result,
+                google_dns=google_dns_result,
                 cached_at=now,
             ))
         db.commit()
@@ -371,6 +495,7 @@ def enrich_ip(
         ip=ip,
         abuseipdb=abuseipdb_result,
         shodan=shodan_result,
+        google_dns=google_dns_result,
         cached=is_cached,
         cache_age_minutes=cache_age_minutes,
         ioc_hits=[
@@ -439,13 +564,55 @@ def _call_shodan(ip: str) -> dict | None:
     return None
 
 
+def _call_google_dns(ip: str) -> dict | None:
+    """Reverse DNS (PTR) lookup via Google DNS-over-HTTPS. No API key required."""
+    try:
+        import ipaddress
+        import requests
+
+        addr = ipaddress.ip_address(ip)
+        if isinstance(addr, ipaddress.IPv4Address):
+            reversed_name = ".".join(reversed(ip.split("."))) + ".in-addr.arpa"
+        else:
+            # IPv6: expand, reverse nibbles
+            full = addr.exploded.replace(":", "")
+            reversed_name = ".".join(reversed(full)) + ".ip6.arpa"
+
+        resp = requests.get(
+            "https://dns.google/resolve",
+            params={"name": reversed_name, "type": "PTR"},
+            headers={"Accept": "application/dns-json"},
+            timeout=8,
+        )
+        if resp.status_code != 200:
+            return {"ptr": [], "status": resp.status_code}
+
+        data = resp.json()
+        status = data.get("Status", -1)  # 0 = NOERROR, 3 = NXDOMAIN
+        answers = data.get("Answer") or []
+        ptr_records = [
+            a["data"].rstrip(".") for a in answers if a.get("type") == 12
+        ]
+        return {"ptr": ptr_records, "status": status}
+    except Exception as exc:
+        logger.warning("Google DNS enrichment failed for %s: %s", ip, exc)
+        return None
+
+
 # ── Admin: trigger feed ───────────────────────────────────────────────────────
 
 _TRIGGER_MAP = {
-    "circl_misp":   "circl_misp",
-    "botvrij_misp": "botvrij_misp",
-    "abuseipdb":    "abuseipdb_blacklist",
-    "malpedia":     "malpedia",
+    "circl_misp":       "circl_misp",
+    "botvrij_misp":     "botvrij_misp",
+    "abuseipdb":        "abuseipdb_blacklist",
+    "malpedia":         "malpedia",
+    "urlhaus":          "urlhaus",
+    "threatfox":        "threatfox",
+    "sslbl":            "sslbl",
+    "feodotracker":     "feodotracker",
+    "red_flag_domains": "red_flag_domains",
+    "stopforumspam":    "stopforumspam",
+    "malwarebazaar":    "malwarebazaar",
 }
 
 @router.post("/feeds/trigger", dependencies=[Depends(require_admin)])

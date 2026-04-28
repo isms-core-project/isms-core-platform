@@ -17,6 +17,7 @@ export interface TiSummary {
   total_iocs: number
   total_families: number
   total_actors: number
+  total_tools: number
 }
 
 export interface IocRead {
@@ -61,7 +62,23 @@ export interface ActorRead {
   country: string | null
   motivation: string | null
   description: string | null
+  actor_type: string
   updated_at: string
+}
+
+export interface ToolRead {
+  id: string
+  slug: string
+  name: string
+  aliases: string[]
+  description: string | null
+  mitre_tids: string[]
+  updated_at: string
+}
+
+export interface ToolList {
+  total: number
+  items: ToolRead[]
 }
 
 export interface ActorList {
@@ -73,6 +90,7 @@ export interface EnrichIpResponse {
   ip: string
   abuseipdb: Record<string, unknown> | null
   shodan: Record<string, unknown> | null
+  google_dns: Record<string, unknown> | null
   cached: boolean
   cache_age_minutes: number | null
   ioc_hits: IocRead[]
@@ -94,8 +112,18 @@ export const threatIntelApi = {
   getMalware: (params: { q?: string; actor_slug?: string; mitre_tid?: string; skip?: number; limit?: number }) =>
     client.get<MalwareFamilyList>('/threat-intel/malware', { params }).then(r => r.data),
 
-  getActors: (params: { q?: string; country?: string; skip?: number; limit?: number }) =>
+  getActors: (params: { q?: string; country?: string; actor_type?: string; skip?: number; limit?: number }) =>
     client.get<ActorList>('/threat-intel/actors', { params }).then(r => r.data),
+
+  getTools: (params: { q?: string; mitre_tid?: string; skip?: number; limit?: number }) =>
+    client.get<ToolList>('/threat-intel/tools', { params }).then(r => r.data),
+
+  getIocStats: () =>
+    client.get<{
+      type_breakdown: { type: string; count: number }[]
+      source_totals:  { source: string; count: number }[]
+      top_families:   { family: string; count: number }[]
+    }>('/threat-intel/ioc-stats').then(r => r.data),
 
   enrichIp: (ip: string) =>
     client.post<EnrichIpResponse>('/threat-intel/enrich/ip', { ip }).then(r => r.data),

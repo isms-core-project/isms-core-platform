@@ -81,6 +81,7 @@ import {
   CoronavirusOutlined,
   RouterOutlined,
 } from '@mui/icons-material'
+import { useTheme } from '@mui/material/styles'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { adminApi } from '../api/admin'
@@ -274,8 +275,10 @@ export const SIDEBAR_WIDTH = 220
 export const SIDEBAR_MINI_WIDTH = 52
 
 const CAT_LABEL: Record<string, string> = { workflow: 'Workflow', system: 'System', infrastructure: 'Infrastructure' }
-const CAT_COLOR: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3a', infrastructure: '#2a1a3a' }
-const CAT_TEXT:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0', infrastructure: '#d4b8f0' }
+const CAT_COLOR_DARK: Record<string, string> = { workflow: '#1a3a27', system: '#1a2a3a', infrastructure: '#2a1a3a' }
+const CAT_TEXT_DARK:  Record<string, string> = { workflow: '#C6EFCE', system: '#9fc8f0', infrastructure: '#d4b8f0' }
+const CAT_COLOR_LIGHT: Record<string, string> = { workflow: 'rgba(27,94,32,0.1)', system: 'rgba(21,101,192,0.1)', infrastructure: 'rgba(106,27,154,0.1)' }
+const CAT_TEXT_LIGHT:  Record<string, string> = { workflow: '#1b5e20', system: '#1565c0', infrastructure: '#6a1b9a' }
 const PLATFORM_COLOR    = '#6B7A99'
 const INTEL_COLOR       = '#B84F00'
 
@@ -290,6 +293,10 @@ const ALL_PLATFORM_PATHS = [...RISK_PATHS, ...TOOLS_PATHS, ...FRAMEWORK_PATHS, .
 // ── Notification prefs dialog ─────────────────────────────────────────────────
 
 function NotificationPrefsDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const CAT_COLOR = isLight ? CAT_COLOR_LIGHT : CAT_COLOR_DARK
+  const CAT_TEXT = isLight ? CAT_TEXT_LIGHT : CAT_TEXT_DARK
   const queryClient = useQueryClient()
   const { data, isLoading } = useQuery({
     queryKey: ['my', 'notification-prefs'],
@@ -607,8 +614,9 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   const activeFamilies = (['ISMS', 'PRIVACY', 'CLOUD'] as const).filter(f => !!activeProjectsMap[f])
   const { mode, toggleTheme } = useThemeMode()
   const SECRET_THEME = import.meta.env.VITE_SECRET_THEME
-  const isBamboo  = SECRET_THEME === 'bamboo'
-  const isAuditor = SECRET_THEME === 'auditor'
+  const isBamboo    = SECRET_THEME === 'bamboo'
+  const isAuditor   = SECRET_THEME === 'auditor'
+  const isExecutive = SECRET_THEME === 'executive'
 
   const isNeutralPage = location.pathname === '/' || ALL_PLATFORM_PATHS.some(p => location.pathname.startsWith(p))
   const isRiskPath       = RISK_PATHS.some(p => location.pathname.startsWith(p))
@@ -649,8 +657,9 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   const hasIntelAlert     = (healthAlerts ?? []).some(a => a.type === 'feed_failure')
   const hasConnectorAlert = (healthAlerts ?? []).some(a => a.type === 'connector_failure')
 
+  const isLight = mode === 'light'
   const TIER_OPTIONS: { value: IsmsTier; label: string; color: string }[] = [
-    { value: 'all',         label: 'All', color: 'rgba(255,255,255,0.55)' },
+    { value: 'all',         label: 'All', color: isLight ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.55)' },
     { value: 'framework',   label: 'FW',  color: PRODUCT_COLORS.isms },
     { value: 'operational', label: 'OP',  color: '#70AD47' },
   ]
@@ -729,11 +738,11 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
         >
           {isBamboo
             ? <BambooIcon size={26} />
-            : <ShieldOutlined sx={{ color: isAuditor ? '#546E7A' : PRODUCT_COLORS[product], fontSize: 26, transition: 'color 0.2s', flexShrink: 0 }} />
+            : <ShieldOutlined sx={{ color: PRODUCT_COLORS[product], fontSize: 26, transition: 'color 0.2s', flexShrink: 0 }} />
           }
           {!collapsed && (
             <Box>
-              <Typography variant="h6" sx={{ color: isAuditor ? '#546E7A' : PRODUCT_COLORS[product], lineHeight: 1, fontSize: '1rem', transition: 'color 0.2s', whiteSpace: 'nowrap' }}>
+              <Typography variant="h6" sx={{ color: PRODUCT_COLORS[product], lineHeight: 1, fontSize: '1rem', transition: 'color 0.2s', whiteSpace: 'nowrap' }}>
                 ISMS CORE
               </Typography>
               <Typography variant="caption" sx={{ color: 'text.disabled', fontSize: '0.6rem', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
@@ -749,15 +758,15 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
           sx={{
             position: 'absolute', right: -14, top: '50%', transform: 'translateY(-50%)',
             width: 28, height: 28, borderRadius: '50%',
-            bgcolor: 'background.paper', border: '1px solid rgba(255,255,255,0.18)',
-            boxShadow: '0 0 0 1px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.5)',
+            bgcolor: 'background.paper', border: '1px solid', borderColor: isLight ? 'rgba(0,0,0,0.18)' : 'rgba(255,255,255,0.18)',
+            boxShadow: isLight ? '0 0 0 1px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.1)' : '0 0 0 1px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.5)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             cursor: 'pointer', zIndex: 101, transition: 'background-color 0.15s, border-color 0.15s',
-            '&:hover': { bgcolor: '#2a3550', borderColor: 'rgba(255,255,255,0.35)' },
+            '&:hover': { bgcolor: isLight ? '#e0e4f0' : '#2a3550', borderColor: isLight ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.35)' },
           }}
         >
           {collapsed
-            ? <ChevronRightOutlined sx={{ fontSize: 16, color: 'rgba(255,255,255,0.7)' }} />
+            ? <ChevronRightOutlined sx={{ fontSize: 16, color: isLight ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.7)' }} />
             : <ChevronLeftOutlined  sx={{ fontSize: 16, color: 'text.secondary' }} />}
         </Box>
       </Box>
@@ -804,7 +813,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
                   display: 'flex', alignItems: 'center', gap: 0.75,
                   px: collapsed ? 0 : 1.25, py: 0.5, borderRadius: 1.5,
                   cursor: 'pointer', justifyContent: collapsed ? 'center' : 'flex-start',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  border: '1px solid', borderColor: isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.08)',
                 }}
               >
                 <FolderOpenOutlined sx={{ fontSize: 14, color: 'text.disabled', flexShrink: 0 }} />
@@ -917,7 +926,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
                                 flex: 1, py: 0.4, borderRadius: 1, cursor: 'pointer',
                                 textAlign: 'center', userSelect: 'none',
                                 border: '1px solid',
-                                borderColor: tierActive ? `${tc}60` : 'rgba(255,255,255,0.07)',
+                                borderColor: tierActive ? `${tc}60` : (isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.07)'),
                                 bgcolor: tierActive ? `${tc}20` : 'transparent',
                                 transition: 'all 0.12s',
                                 '&:hover': { borderColor: `${tc}45`, bgcolor: `${tc}12` },
@@ -1110,7 +1119,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
             )}
           </ListItemButton>
         </Tooltip>
-        {!isBamboo && !isAuditor && (
+        {!isBamboo && !isAuditor && !isExecutive && (
           <Tooltip title={collapsed ? (mode === 'dark' ? 'Light mode' : 'Dark mode') : ''} placement="right">
             <ListItemButton
               onClick={toggleTheme}

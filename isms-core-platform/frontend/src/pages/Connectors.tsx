@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import {
   Alert,
   Box,
@@ -305,11 +306,13 @@ function connectorHealth(c: ConnectorRead): HealthState {
   return ageHours <= 48 ? 'healthy' : 'stale'
 }
 
-const HEALTH_CONFIG: Record<HealthState, { icon: React.ReactNode; label: string; color: string }> = {
-  healthy: { icon: <CheckCircleOutlined sx={{ fontSize: 16, color: '#C6EFCE' }} />, label: 'Healthy', color: '#C6EFCE' },
-  stale:   { icon: <HourglassEmptyOutlined sx={{ fontSize: 16, color: '#FFEB9C' }} />, label: 'Stale',   color: '#FFEB9C' },
-  error:   { icon: <ErrorOutlined sx={{ fontSize: 16, color: '#FFC7CE' }} />,          label: 'Error',   color: '#FFC7CE' },
-  pending: { icon: <HelpOutlineOutlined sx={{ fontSize: 16, color: '#9e9e9e' }} />,    label: 'Pending', color: '#9e9e9e' },
+function buildHealthConfig(isLight: boolean): Record<HealthState, { icon: React.ReactNode; label: string; color: string }> {
+  return {
+    healthy: { icon: <CheckCircleOutlined sx={{ fontSize: 16, color: isLight ? '#1b5e20' : '#C6EFCE' }} />, label: 'Healthy', color: isLight ? '#1b5e20' : '#C6EFCE' },
+    stale:   { icon: <HourglassEmptyOutlined sx={{ fontSize: 16, color: isLight ? '#9a6500' : '#FFEB9C' }} />, label: 'Stale',   color: isLight ? '#9a6500' : '#FFEB9C' },
+    error:   { icon: <ErrorOutlined sx={{ fontSize: 16, color: isLight ? '#9e0000' : '#FFC7CE' }} />,          label: 'Error',   color: isLight ? '#9e0000' : '#FFC7CE' },
+    pending: { icon: <HelpOutlineOutlined sx={{ fontSize: 16, color: '#9e9e9e' }} />,    label: 'Pending', color: '#9e9e9e' },
+  }
 }
 
 // ── Config field renderer ─────────────────────────────────────────────────────
@@ -464,14 +467,24 @@ function ConfigDialog({
 
 // ── Last Sync Detail Dialog ───────────────────────────────────────────────────
 
-const SEV_COLOUR: Record<string, string> = {
+const SEV_COLOUR_DARK: Record<string, string> = {
   info:     '#90CAF9',
   warning:  '#FFCC80',
   error:    '#FFC7CE',
   critical: '#FF8A80',
 }
 
+const SEV_COLOUR_LIGHT: Record<string, string> = {
+  info:     '#1565c0',
+  warning:  '#9a6500',
+  error:    '#9e0000',
+  critical: '#9e0000',
+}
+
 function SyncDetailDialog({ connector, onClose }: { connector: ConnectorRead; onClose: () => void }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const SEV_COLOUR = isLight ? SEV_COLOUR_LIGHT : SEV_COLOUR_DARK
   const health = connector.last_error ? 'error' : !connector.last_run ? 'pending' : 'healthy'
 
   const { data: log = [], isLoading: logLoading } = useQuery<ConnectorLogEntry[]>({
@@ -496,8 +509,16 @@ function SyncDetailDialog({ connector, onClose }: { connector: ConnectorRead; on
                 size="small"
                 label={health === 'error' ? 'Error' : health === 'pending' ? 'Pending' : 'Healthy'}
                 sx={{
-                  bgcolor: health === 'error' ? '#FFC7CE' : health === 'pending' ? '#FFEB9C' : '#C6EFCE',
-                  color: '#000',
+                  bgcolor: health === 'error'
+                    ? (isLight ? 'rgba(192,0,0,0.12)' : '#FFC7CE')
+                    : health === 'pending'
+                      ? (isLight ? 'rgba(230,145,0,0.15)' : '#FFEB9C')
+                      : (isLight ? 'rgba(46,125,50,0.15)' : '#C6EFCE'),
+                  color: health === 'error'
+                    ? (isLight ? '#9e0000' : '#000')
+                    : health === 'pending'
+                      ? (isLight ? '#9a6500' : '#000')
+                      : (isLight ? '#1b5e20' : '#000'),
                   fontSize: '0.7rem',
                   mt: 0.5,
                 }}
@@ -524,7 +545,7 @@ function SyncDetailDialog({ connector, onClose }: { connector: ConnectorRead; on
               <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.65rem' }}>
                 {connector.last_error_at ? dayjs(connector.last_error_at).format('DD MMM YYYY HH:mm:ss') : ''}
               </Typography>
-              <Typography variant="body2" sx={{ fontFamily: 'monospace', fontSize: '0.75rem', whiteSpace: 'pre-wrap', color: '#FFC7CE', mt: 0.5 }}>
+              <Typography variant="body2" sx={{ fontFamily: 'monospace', fontSize: '0.75rem', whiteSpace: 'pre-wrap', color: isLight ? '#9e0000' : '#FFC7CE', mt: 0.5 }}>
                 {connector.last_error}
               </Typography>
             </Box>
@@ -596,6 +617,8 @@ function SyncDetailDialog({ connector, onClose }: { connector: ConnectorRead; on
 
 function ArchiveDialog({ onClose }: { onClose: () => void }) {
   const qc = useQueryClient()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [confirmPurge, setConfirmPurge] = useState(false)
 
   const { data: stats = [], isLoading } = useQuery<ArchiveStats[]>({
@@ -630,7 +653,7 @@ function ArchiveDialog({ onClose }: { onClose: () => void }) {
           <Card sx={{ flex: 1 }}>
             <CardContent sx={{ pb: '12px !important' }}>
               <Typography variant="caption" color="text.secondary">Active Evidence</Typography>
-              <Typography variant="h5" sx={{ fontWeight: 700, color: '#C6EFCE' }}>{totalActive}</Typography>
+              <Typography variant="h5" sx={{ fontWeight: 700, color: isLight ? '#1b5e20' : '#C6EFCE' }}>{totalActive}</Typography>
             </CardContent>
           </Card>
           <Card sx={{ flex: 1 }}>
@@ -664,7 +687,7 @@ function ArchiveDialog({ onClose }: { onClose: () => void }) {
                       <Typography variant="body2">{row.retention_days}d</Typography>
                     </TableCell>
                     <TableCell align="right">
-                      <Typography variant="body2" sx={{ color: '#C6EFCE' }}>{row.active}</Typography>
+                      <Typography variant="body2" sx={{ color: isLight ? '#1b5e20' : '#C6EFCE' }}>{row.active}</Typography>
                     </TableCell>
                     <TableCell align="right">
                       <Typography variant="body2" color="text.secondary">{row.archived}</Typography>
@@ -1205,6 +1228,9 @@ function DeregisterDialog({
 
 export default function Connectors() {
   const queryClient = useQueryClient()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const HEALTH_CONFIG = buildHealthConfig(isLight)
   const [showRegister, setShowRegister] = useState(false)
   const [deregisterTarget, setDeregisterTarget] = useState<{ id: string; name: string } | null>(null)
   const [configureTarget, setConfigureTarget] = useState<ConnectorRead | null>(null)
@@ -1399,7 +1425,7 @@ export default function Connectors() {
                       <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 0.5 }}>
                         <Tooltip title="Sync details">
                           <IconButton size="small" onClick={() => setSyncDetailTarget(c)}>
-                            <InfoOutlined fontSize="small" sx={{ color: c.last_error ? '#FFC7CE' : 'text.secondary' }} />
+                            <InfoOutlined fontSize="small" sx={{ color: c.last_error ? (isLight ? '#9e0000' : '#FFC7CE') : 'text.secondary' }} />
                           </IconButton>
                         </Tooltip>
                         <Tooltip title="Sync now">

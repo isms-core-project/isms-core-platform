@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import { useQuery } from '@tanstack/react-query'
 import {
   Box, Chip, CircularProgress, InputAdornment, MenuItem,
@@ -32,6 +33,8 @@ function fmtDate(s: string | null): string {
 // ── Detail Panel ──────────────────────────────────────────────────────────────
 
 function EntryDetail({ entry, onClose }: { entry: EuvdEntry; onClose: () => void }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const color = severityColor(entry.base_score)
 
   const rows: [string, string][] = [
@@ -70,7 +73,7 @@ function EntryDetail({ entry, onClose }: { entry: EuvdEntry; onClose: () => void
             )}
             {entry.epss_score !== null && (
               <Chip label={`EPSS ${entry.epss_score.toFixed(1)}%`} size="small"
-                sx={{ fontSize: '0.68rem', height: 18, bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
+                sx={{ fontSize: '0.68rem', height: 18, bgcolor: isLight ? 'rgba(21,101,192,0.12)' : '#1a2a3a', color: isLight ? '#1565c0' : '#9fc8f0' }} />
             )}
           </Box>
         </Box>

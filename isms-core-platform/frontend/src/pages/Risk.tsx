@@ -22,6 +22,7 @@ import {
   TableRow,
   TableCell,
   Divider,
+  useTheme,
 } from '@mui/material'
 import { FileDownloadOutlined, RestartAltOutlined } from '@mui/icons-material'
 import PageHeader from '../components/PageHeader'
@@ -229,16 +230,24 @@ function exportRiskCsv(data: {
   URL.revokeObjectURL(url)
 }
 
-const RISK_COLOR = (level: string) => {
-  if (level === 'Critical') return { bg: '#3a0000', fg: '#FFC7CE' }
-  if (level === 'High')     return { bg: '#3a1a00', fg: '#FFD580' }
-  if (level === 'Medium')   return { bg: '#3a2e00', fg: '#FFEB9C' }
-  return { bg: '#1a3a27', fg: '#C6EFCE' }
+const RISK_COLOR_DARK = (level: string) => {
+  if (level === 'Critical') return { bg: '#3a0000',              fg: '#FFC7CE' }
+  if (level === 'High')     return { bg: '#3a1a00',              fg: '#FFD580' }
+  if (level === 'Medium')   return { bg: '#3a2e00',              fg: '#FFEB9C' }
+  return                           { bg: '#1a3a27',              fg: '#C6EFCE' }
+}
+const RISK_COLOR_LIGHT = (level: string) => {
+  if (level === 'Critical') return { bg: 'rgba(192,0,0,0.12)',   fg: '#9e0000' }
+  if (level === 'High')     return { bg: 'rgba(230,100,0,0.12)', fg: '#7a3800' }
+  if (level === 'Medium')   return { bg: 'rgba(230,160,0,0.12)', fg: '#7a4800' }
+  return                           { bg: 'rgba(46,125,50,0.12)', fg: '#1b5e20' }
 }
 
 const TD = { fontSize: '0.82rem', borderBottom: '1px solid rgba(68,114,196,0.15)' }
 
 export default function Risk() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [activeStep, setActiveStep] = useState(0)
 
   // Step 1
@@ -301,7 +310,7 @@ export default function Risk() {
 
   const recommendations = deriveRecommendations(assets, threats, cScore, iScore, aScore)
   const nextSteps = nextStepsForLevel(riskLevel)
-  const riskColors = RISK_COLOR(riskLevel)
+  const riskColors = isLight ? RISK_COLOR_LIGHT(riskLevel) : RISK_COLOR_DARK(riskLevel)
 
   function renderStepContent() {
     switch (activeStep) {
@@ -521,7 +530,7 @@ export default function Risk() {
                     label={`${r.ref} — ${r.name}`}
                     size="small"
                     sx={{
-                      bgcolor: '#1a2a3a', color: '#9fc8f0',
+                      bgcolor: isLight ? 'rgba(21,101,192,0.12)' : '#1a2a3a', color: isLight ? '#1565c0' : '#9fc8f0',
                       fontSize: '0.72rem', height: 22, fontWeight: 600,
                     }}
                   />

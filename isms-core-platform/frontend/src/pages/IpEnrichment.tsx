@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import { useMutation } from '@tanstack/react-query'
 import {
   Alert, Box, Chip, CircularProgress, Divider, InputAdornment,
@@ -6,7 +7,7 @@ import {
   TextField, Tooltip, Typography,
 } from '@mui/material'
 import {
-  CheckCircleOutlined, CoronavirusOutlined, RouterOutlined,
+  CheckCircleOutlined, CoronavirusOutlined, DnsOutlined, RouterOutlined,
   SearchOutlined, StreamOutlined, WarningAmberOutlined,
 } from '@mui/icons-material'
 import PageHeader from '../components/PageHeader'
@@ -15,10 +16,12 @@ import { threatIntelApi, EnrichIpResponse, IocRead } from '../api/threatIntelApi
 const INTEL_COLOR = '#B84F00'
 
 function ConfidenceBar({ score }: { score: number }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const color = score >= 80 ? '#d32f2f' : score >= 50 ? '#ed6c02' : score >= 25 ? '#f9a825' : '#388e3c'
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-      <Box sx={{ flex: 1, height: 6, bgcolor: 'rgba(255,255,255,0.08)', borderRadius: 3, overflow: 'hidden' }}>
+      <Box sx={{ flex: 1, height: 6, bgcolor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)', borderRadius: 3, overflow: 'hidden' }}>
         <Box sx={{ height: '100%', width: `${score}%`, bgcolor: color, borderRadius: 3, transition: 'width 0.4s' }} />
       </Box>
       <Typography variant="caption" fontWeight={700} sx={{ color, minWidth: 32 }}>{score}%</Typography>
@@ -120,7 +123,37 @@ function ShodanCard({ data }: { data: Record<string, unknown> }) {
   )
 }
 
+function GoogleDnsCard({ data }: { data: Record<string, unknown> }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  if (!data || typeof data !== 'object') return null
+  const ptr: string[] = Array.isArray(data.ptr) ? data.ptr : []
+  const status = Number(data.status ?? -1)
+  const noRecord = status === 3 || ptr.length === 0
+
+  return (
+    <Paper variant="outlined" sx={{ p: 2, flex: 1 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+        <DnsOutlined sx={{ fontSize: 20, color: '#1976d2' }} />
+        <Typography variant="subtitle2" fontWeight={700} sx={{ fontSize: '0.85rem' }}>Google DNS (PTR)</Typography>
+      </Box>
+      {noRecord ? (
+        <Typography variant="caption" color="text.secondary">No PTR record — IP has no reverse DNS entry</Typography>
+      ) : (
+        <Box>
+          <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 0.5 }}>Reverse hostname(s)</Typography>
+          {ptr.map(h => (
+            <Typography key={h} variant="caption" sx={{ fontFamily: 'monospace', display: 'block', color: isLight ? '#1565c0' : '#90caf9' }}>{h}</Typography>
+          ))}
+        </Box>
+      )}
+    </Paper>
+  )
+}
+
 function IocHitsTable({ hits }: { hits: IocRead[] }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   if (hits.length === 0) return (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 1 }}>
       <CheckCircleOutlined sx={{ fontSize: 16, color: '#388e3c' }} />
@@ -151,7 +184,7 @@ function IocHitsTable({ hits }: { hits: IocRead[] }) {
                 {h.family_slugs.slice(0, 2).map(s => (
                   <Chip key={s} icon={<CoronavirusOutlined sx={{ fontSize: 11 }} />}
                     label={s} size="small"
-                    sx={{ fontSize: '0.62rem', height: 16, bgcolor: '#2a0a3a', color: '#d4b8f0' }} />
+                    sx={{ fontSize: '0.62rem', height: 16, bgcolor: isLight ? 'rgba(106,27,154,0.12)' : '#2a0a3a', color: isLight ? '#6a1b9a' : '#d4b8f0' }} />
                 ))}
               </Box>
             </TableCell>
@@ -159,7 +192,7 @@ function IocHitsTable({ hits }: { hits: IocRead[] }) {
               <Box sx={{ display: 'flex', gap: 0.5 }}>
                 {h.actor_slugs.slice(0, 2).map(s => (
                   <Chip key={s} label={s} size="small"
-                    sx={{ fontSize: '0.62rem', height: 16, bgcolor: '#1a1a2e', color: '#9fc8f0' }} />
+                    sx={{ fontSize: '0.62rem', height: 16, bgcolor: isLight ? 'rgba(21,101,192,0.12)' : '#1a1a2e', color: isLight ? '#1565c0' : '#9fc8f0' }} />
                 ))}
               </Box>
             </TableCell>
@@ -167,7 +200,7 @@ function IocHitsTable({ hits }: { hits: IocRead[] }) {
               <Box sx={{ display: 'flex', gap: 0.5 }}>
                 {h.mitre_tids.slice(0, 3).map(t => (
                   <Chip key={t} label={t} size="small"
-                    sx={{ fontSize: '0.62rem', height: 16, bgcolor: '#3a1a00', color: '#ffcc80' }} />
+                    sx={{ fontSize: '0.62rem', height: 16, bgcolor: isLight ? 'rgba(230,145,0,0.12)' : '#3a1a00', color: isLight ? '#9a6500' : '#ffcc80' }} />
                 ))}
               </Box>
             </TableCell>
@@ -277,6 +310,15 @@ export default function IpEnrichment() {
                       ? 'Shodan — IP not indexed (no open ports in database)'
                       : 'Shodan — lookup failed'}
                   </Typography>
+                </Paper>
+              )
+            }
+            {result.google_dns
+              ? <GoogleDnsCard data={result.google_dns as Record<string, unknown>} />
+              : (
+                <Paper variant="outlined" sx={{ p: 2, flex: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <DnsOutlined sx={{ fontSize: 20, color: 'text.disabled' }} />
+                  <Typography variant="caption" color="text.secondary">Google DNS — lookup failed</Typography>
                 </Paper>
               )
             }

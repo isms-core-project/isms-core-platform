@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import { useParams, useNavigate } from 'react-router-dom'
 import {
   Box, Button, Card, CardContent, Chip, Collapse, Dialog, DialogActions,
@@ -24,11 +25,11 @@ function scoreColor(pct: number): string {
   return '#FF5252'
 }
 
-function statusChipProps(status: string) {
+function statusChipProps(status: string, isLight: boolean) {
   switch (status) {
-    case 'complete':    return { label: 'Complete',     bg: 'rgba(198,239,206,0.15)', color: '#C6EFCE' }
-    case 'in_progress': return { label: 'In Progress',  bg: 'rgba(255,192,0,0.12)',   color: '#FFC000' }
-    default:            return { label: 'Not Started',  bg: 'rgba(255,255,255,0.06)', color: '#888' }
+    case 'complete':    return { label: 'Complete',    bg: isLight ? 'rgba(27,94,32,0.1)'  : 'rgba(198,239,206,0.15)', color: isLight ? '#1b5e20' : '#C6EFCE' }
+    case 'in_progress': return { label: 'In Progress', bg: 'rgba(255,192,0,0.12)',          color: '#856404' }
+    default:            return { label: 'Not Started', bg: isLight ? 'rgba(0,0,0,0.06)'    : 'rgba(255,255,255,0.06)', color: isLight ? '#555' : '#888' }
   }
 }
 
@@ -81,6 +82,8 @@ function ManageAssessmentsDialog({
   collectionProductFamily: string
   currentMemberIds: Set<string>
 }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const qc = useQueryClient()
   const [search, setSearch] = useState('')
 
@@ -130,7 +133,7 @@ function ManageAssessmentsDialog({
                 sx={{
                   display: 'flex', alignItems: 'center', gap: 1, p: 1, borderRadius: 1,
                   border: '1px solid',
-                  borderColor: inCollection ? 'rgba(68,114,196,0.3)' : 'rgba(255,255,255,0.07)',
+                  borderColor: inCollection ? 'rgba(68,114,196,0.3)' : (isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.07)'),
                   bgcolor: inCollection ? 'rgba(68,114,196,0.06)' : 'transparent',
                 }}
               >
@@ -171,6 +174,8 @@ function ManageAssessmentsDialog({
 // ── Main page ────────────────────────────────────────────────────────────────
 
 export default function CollectionDetail() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const qc = useQueryClient()
@@ -226,7 +231,7 @@ export default function CollectionDetail() {
   }
 
   const stats = coll.stats
-  const statusProps = statusChipProps(stats.status)
+  const statusProps = statusChipProps(stats.status, isLight)
   const memberIds = new Set(coll.members.map(m => m.assessment_id))
 
   return (
@@ -286,7 +291,7 @@ export default function CollectionDetail() {
               <LinearProgress
                 variant="determinate"
                 value={Math.min(100, stats.completion_pct)}
-                sx={{ height: 6, borderRadius: 3, bgcolor: 'rgba(255,255,255,0.06)',
+                sx={{ height: 6, borderRadius: 3, bgcolor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.06)',
                   '& .MuiLinearProgress-bar': { bgcolor: 'primary.light' } }}
               />
             </Box>
@@ -302,7 +307,7 @@ export default function CollectionDetail() {
               <LinearProgress
                 variant="determinate"
                 value={Math.min(100, stats.compliance_pct)}
-                sx={{ height: 6, borderRadius: 3, bgcolor: 'rgba(255,255,255,0.06)',
+                sx={{ height: 6, borderRadius: 3, bgcolor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.06)',
                   '& .MuiLinearProgress-bar': { bgcolor: scoreColor(stats.compliance_pct) } }}
               />
             </Box>

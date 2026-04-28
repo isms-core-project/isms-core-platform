@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import { useProduct } from '../store/ProductContext'
 import { useProject } from '../store/ProjectContext'
 import {
@@ -591,6 +592,8 @@ function SaveRiskButton({ gap, autoRisk }: { gap: GapRead; autoRisk: GapRiskResu
 
 // ── Gap row ──────────────────────────────────────────────────────────────────
 function GapRow({ gap }: { gap: GapRead }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [editing, setEditing] = useState(false)
   const [riskOpen, setRiskOpen] = useState(false)
   const qc = useQueryClient()
@@ -665,7 +668,7 @@ function GapRow({ gap }: { gap: GapRead }) {
         </TableCell>
         <TableCell>
           {gap.due_date ? (
-            <Typography variant="caption" sx={{ color: overdue ? '#FFC7CE' : 'text.secondary' }}>
+            <Typography variant="caption" sx={{ color: overdue ? (isLight ? '#9e0000' : '#FFC7CE') : 'text.secondary' }}>
               {dayjs(gap.due_date).format('DD MMM YYYY')}
               {overdue && ' ⚠'}
             </Typography>
@@ -678,7 +681,7 @@ function GapRow({ gap }: { gap: GapRead }) {
             <Chip
               label={`${gap.evidence_count} ev`}
               size="small"
-              sx={{ height: 16, fontSize: '0.62rem', bgcolor: '#1a2a3a', color: '#9fc8f0', mr: 0.5 }}
+              sx={{ height: 16, fontSize: '0.62rem', bgcolor: isLight ? 'rgba(21,101,192,0.12)' : '#1a2a3a', color: isLight ? '#1565c0' : '#9fc8f0', mr: 0.5 }}
             />
           )}
           <Tooltip title="Edit">
@@ -710,7 +713,7 @@ function GapRow({ gap }: { gap: GapRead }) {
                 sx={{ mb: 1, textTransform: 'uppercase', letterSpacing: '0.06em', fontSize: '0.68rem' }}>
                 BSI 200-3 Risk Analysis
                 {savedRisk
-                  ? <Chip label="saved" size="small" sx={{ ml: 1, height: 14, fontSize: '0.58rem', bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
+                  ? <Chip label="saved" size="small" sx={{ ml: 1, height: 14, fontSize: '0.58rem', bgcolor: isLight ? 'rgba(21,101,192,0.12)' : '#1a2a3a', color: isLight ? '#1565c0' : '#9fc8f0' }} />
                   : <Chip label="auto · not saved" size="small" sx={{ ml: 1, height: 14, fontSize: '0.58rem', bgcolor: 'rgba(255,152,0,0.15)', color: '#FF9800' }} />
                 }
               </Typography>
@@ -739,7 +742,7 @@ function GapRow({ gap }: { gap: GapRead }) {
                     key={t.code}
                     label={t.code + (t.label ? ` — ${t.label}` : '')}
                     size="small"
-                    sx={{ height: 16, fontSize: '0.62rem', bgcolor: '#1a2a3a', color: '#9fc8f0' }}
+                    sx={{ height: 16, fontSize: '0.62rem', bgcolor: isLight ? 'rgba(21,101,192,0.12)' : '#1a2a3a', color: isLight ? '#1565c0' : '#9fc8f0' }}
                   />
                 ))}
               </Box>
@@ -774,6 +777,8 @@ function GapRow({ gap }: { gap: GapRead }) {
 
 // ── Main page ────────────────────────────────────────────────────────────────
 export default function Gaps() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const { product: globalProduct } = useProduct()
   const { activeProject } = useProject()
   const [severity, setSeverity] = useState('')
@@ -927,7 +932,7 @@ export default function Gaps() {
                     <Box sx={{ display: 'flex', gap: 0.5 }}>
                       {topThreats.map((code) => (
                         <Chip key={code} label={code} size="small"
-                          sx={{ height: 16, fontSize: '0.62rem', bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
+                          sx={{ height: 16, fontSize: '0.62rem', bgcolor: isLight ? 'rgba(21,101,192,0.12)' : '#1a2a3a', color: isLight ? '#1565c0' : '#9fc8f0' }} />
                       ))}
                     </Box>
                   </>

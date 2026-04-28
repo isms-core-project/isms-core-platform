@@ -45,11 +45,10 @@ interface FrameworkRow {
 // Known update availability — update this when new versions release.
 // pending: version not yet released; available: released, platform not yet updated.
 const KNOWN_UPDATES: Record<string, { latest: string; status: 'pending' | 'available'; note: string; eta?: string }> = {
-  MITRE_ATTACK_V18: {
+  MITRE_ATTACK_V19: {
     latest: 'v19',
-    status: 'pending',
-    note: 'MITRE ATT&CK v19 — scheduled release 2026-04-28. Includes defense-evasion technique revisions.',
-    eta: '2026-04-28',
+    status: 'available',
+    note: 'MITRE ATT&CK v19 released 2026-04-28. TA0005 Defense Evasion → Stealth; new tactic TA0112 Defense Impairment. Dataset + crosswalk updated.',
   },
 }
 

@@ -277,7 +277,7 @@ export function createBambooTheme() {
   })
 }
 
-export function createAuditorTheme() {
+export function createExecutiveTheme() {
   return createTheme({
     palette: {
       mode: 'dark',
@@ -410,6 +410,144 @@ export function createAuditorTheme() {
         styleOverrides: {
           tooltip: {
             backgroundColor: 'rgba(16,18,20,0.97)',
+            fontSize: '0.75rem',
+          },
+        },
+      },
+    },
+  })
+}
+
+export function createAuditorTheme() {
+  return createTheme({
+    palette: {
+      mode: 'light',
+      // Blue-grey 800/700/900 — dark enough to read on grey, harmonises with grey backgrounds
+      primary: {
+        main:  '#37474F',
+        light: '#455A64',
+        dark:  '#263238',
+      },
+      secondary: {
+        main: '#546E7A',
+        dark: '#37474F',
+      },
+      // Grey Dawn palette (color-hex #3162): page #b4b4b4 / cards #c6c6c6 (~18pt gap)
+      background: {
+        default: '#b4b4b4',
+        paper:   '#c6c6c6',
+      },
+      text: {
+        primary:   '#1a1a1a',
+        secondary: '#3d3d3d',
+        disabled:  'rgba(0,0,0,0.42)',
+      },
+      error:   { main: '#C00000', contrastText: '#ffffff' },
+      warning: { main: '#E65100', contrastText: '#ffffff' },
+      success: { main: '#2E7D32', contrastText: '#ffffff' },
+      divider: 'rgba(0,0,0,0.14)',
+      action: {
+        hover:    'rgba(55,71,79,0.08)',
+        selected: 'rgba(55,71,79,0.15)',
+      },
+    },
+    typography: {
+      fontFamily: '"Inter", "Roboto", "Helvetica Neue", sans-serif',
+      h1: { fontWeight: 700, fontSize: '2rem' },
+      h2: { fontWeight: 700, fontSize: '1.6rem' },
+      h3: { fontWeight: 600, fontSize: '1.3rem' },
+      h4: { fontWeight: 600, fontSize: '1.1rem' },
+      h5: { fontWeight: 600, fontSize: '1rem' },
+      h6: { fontWeight: 600, fontSize: '0.9rem' },
+      body1: { fontSize: '0.875rem' },
+      body2: { fontSize: '0.8rem' },
+      caption: { fontSize: '0.75rem' },
+    },
+    shape: { borderRadius: 8 },
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          'input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active': {
+            WebkitBoxShadow: '0 0 0 1000px #c6c6c6 inset !important',
+            WebkitTextFillColor: '#1a1a1a !important',
+            caretColor: '#1a1a1a',
+          },
+        },
+      },
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            backgroundImage: 'none',
+            border: '1px solid rgba(0,0,0,0.14)',
+            boxShadow: '0 1px 4px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04)',
+          },
+        },
+      },
+      MuiPaper: {
+        styleOverrides: {
+          root: { backgroundImage: 'none' },
+        },
+      },
+      MuiChip: {
+        styleOverrides: {
+          root: { fontSize: '0.75rem' },
+        },
+      },
+      MuiTableCell: {
+        styleOverrides: {
+          head: ({ theme }) => ({
+            fontWeight: 600,
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.secondary,
+            fontSize: '0.75rem',
+            textTransform: 'uppercase' as const,
+            letterSpacing: '0.05em',
+            borderBottom: `1px solid ${theme.palette.divider}`,
+          }),
+          root: ({ theme }) => ({
+            borderColor: theme.palette.divider,
+          }),
+        },
+      },
+      MuiLinearProgress: {
+        styleOverrides: {
+          root: { borderRadius: 4, height: 6 },
+        },
+      },
+      MuiDrawer: {
+        styleOverrides: {
+          paper: ({ theme }) => ({
+            backgroundImage: 'none',
+            backgroundColor: theme.palette.background.paper,
+            borderColor: theme.palette.divider,
+          }),
+        },
+      },
+      MuiDialog: {
+        styleOverrides: {
+          paper: { backgroundImage: 'none' },
+        },
+      },
+      MuiInputBase: {
+        styleOverrides: {
+          input: ({ theme }) => ({
+            '&:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill:active': {
+              WebkitBoxShadow: `0 0 0 100px ${theme.palette.background.paper} inset`,
+              WebkitTextFillColor: theme.palette.text.primary,
+              caretColor: theme.palette.text.primary,
+            },
+          }),
+        },
+      },
+      MuiAlert: {
+        styleOverrides: {
+          root: { fontSize: '0.82rem' },
+        },
+      },
+      MuiTooltip: {
+        styleOverrides: {
+          tooltip: {
+            backgroundColor: 'rgba(26,26,26,0.92)',
             fontSize: '0.75rem',
           },
         },

@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { useTheme } from '@mui/material/styles'
 import { useProduct, PRODUCT_COLORS } from '../store/ProductContext'
 import {
   Box,
@@ -39,6 +40,8 @@ import PageHeader from '../components/PageHeader'
 import MetricCard from '../components/MetricCard'
 
 export default function Policies() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const { product, ismsTier } = useProduct()
   const [externalOnly, setExternalOnly] = useState(false)
   const [typeFilter, setTypeFilter] = useState('')
@@ -107,7 +110,7 @@ export default function Policies() {
   }
 
   const productChipStyle = (type: string) => {
-    if (type === 'external')    return { bgcolor: 'rgba(255,192,0,0.15)',                      color: '#FFC000' }
+    if (type === 'external')    return { bgcolor: isLight ? 'rgba(230,160,0,0.15)' : 'rgba(255,192,0,0.15)', color: isLight ? '#7a4800' : '#FFC000' }
     if (type === 'framework')   return { bgcolor: 'rgba(68,114,196,0.15)',                     color: '#4472C4' }
     if (type === 'operational') return { bgcolor: 'rgba(112,173,71,0.15)',                     color: '#70AD47' }
     if (type === 'privacy')     return { bgcolor: `${PRODUCT_COLORS.privacy}22`,               color: PRODUCT_COLORS.privacy }
@@ -168,7 +171,7 @@ export default function Policies() {
           <Grid item xs={6} sm={3}>
             <Tooltip title="Third-party or customer documents imported via External Doc import">
               <Box>
-                <MetricCard title="External" value={externalCount} sx={externalCount > 0 ? { borderTop: '2px solid #FFC000' } : {}} />
+                <MetricCard title="External" value={externalCount} sx={externalCount > 0 ? { borderTop: `2px solid ${isLight ? '#9a6500' : '#FFC000'}` } : {}} />
               </Box>
             </Tooltip>
           </Grid>
@@ -182,7 +185,7 @@ export default function Policies() {
             <Chip
               label={
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                  <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#FFC000' }} />
+                  <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: isLight ? '#9a6500' : '#FFC000' }} />
                   External only
                 </Box>
               }
@@ -190,12 +193,12 @@ export default function Policies() {
               onClick={() => setExternalOnly(v => !v)}
               sx={{
                 fontSize: '0.75rem', height: 28, cursor: 'pointer',
-                bgcolor: externalOnly ? 'rgba(255,192,0,0.15)' : 'transparent',
-                color: externalOnly ? '#FFC000' : 'text.secondary',
+                bgcolor: externalOnly ? (isLight ? 'rgba(230,160,0,0.15)' : 'rgba(255,192,0,0.15)') : 'transparent',
+                color: externalOnly ? (isLight ? '#7a4800' : '#FFC000') : 'text.secondary',
                 border: '1px solid',
-                borderColor: externalOnly ? 'rgba(255,192,0,0.5)' : 'rgba(255,255,255,0.1)',
+                borderColor: externalOnly ? (isLight ? 'rgba(180,110,0,0.4)' : 'rgba(255,192,0,0.5)') : (isLight ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.1)'),
                 fontWeight: externalOnly ? 700 : 400,
-                '&:hover': { bgcolor: 'rgba(255,192,0,0.1)', color: '#FFC000' },
+                '&:hover': { bgcolor: isLight ? 'rgba(230,160,0,0.12)' : 'rgba(255,192,0,0.1)', color: isLight ? '#7a4800' : '#FFC000' },
               }}
             />
 
@@ -293,12 +296,12 @@ export default function Policies() {
                   hover
                   sx={{
                     cursor: 'pointer',
-                    ...(isExternal && { bgcolor: 'rgba(255,192,0,0.03)', '&:hover': { bgcolor: 'rgba(255,192,0,0.07) !important' } }),
+                    ...(isExternal && { bgcolor: isLight ? 'rgba(230,160,0,0.05)' : 'rgba(255,192,0,0.03)', '&:hover': { bgcolor: `${isLight ? 'rgba(230,160,0,0.1)' : 'rgba(255,192,0,0.07)'} !important` } }),
                   }}
                   onClick={() => navigate(`/controls/${p.control_group_id}`)}
                 >
                   <TableCell>
-                    <Typography variant="caption" sx={{ fontFamily: 'monospace', color: p.group_code === '00' ? '#FFC000' : 'primary.light', fontWeight: 700 }}>
+                    <Typography variant="caption" sx={{ fontFamily: 'monospace', color: p.group_code === '00' ? (isLight ? '#7a4800' : '#FFC000') : 'primary.light', fontWeight: 700 }}>
                       {p.group_code === '00' ? '00' : p.group_code.toUpperCase()}
                     </Typography>
                     <Typography variant="caption" color="text.secondary" sx={{ display: 'block', lineHeight: 1.3 }}>
@@ -306,12 +309,12 @@ export default function Policies() {
                     </Typography>
                   </TableCell>
                   <TableCell>
-                    <Typography variant="caption" sx={{ fontFamily: 'monospace', color: isExternal ? '#FFC000' : 'text.secondary', fontSize: '0.68rem' }}>
+                    <Typography variant="caption" sx={{ fontFamily: 'monospace', color: isExternal ? (isLight ? '#7a4800' : '#FFC000') : 'text.secondary', fontSize: '0.68rem' }}>
                       {p.document_id}
                     </Typography>
                     <Typography variant="body2" fontWeight={600} sx={{ lineHeight: 1.3 }}>{p.title}</Typography>
                     {isExternal && p.source_label && (
-                      <Typography variant="caption" sx={{ color: '#FFC000', fontSize: '0.65rem' }}>
+                      <Typography variant="caption" sx={{ color: isLight ? '#7a4800' : '#FFC000', fontSize: '0.65rem' }}>
                         External — {p.source_label}
                       </Typography>
                     )}

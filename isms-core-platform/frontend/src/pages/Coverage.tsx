@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { useTheme } from '@mui/material/styles'
 import { useProduct, PRODUCT_SUBTITLES, PRODUCT_COLORS } from '../store/ProductContext'
 import { LockPersonOutlined, CloudOutlined, PsychologyOutlined, ExpandMoreOutlined, ExpandLessOutlined } from '@mui/icons-material'
 import {
@@ -71,6 +72,13 @@ const PRODUCT_SOURCE_FRAMEWORK: Record<string, string> = {
   ai:      'ISO42001',
 }
 
+const PRODUCT_ISO_LABEL: Record<string, string> = {
+  isms:    'ISO 27001',
+  privacy: 'ISO 27701',
+  cloud:   'ISO 27018:2025',
+  ai:      'ISO 42001',
+}
+
 // Human-readable label for the source control column
 const SOURCE_CONTROL_LABEL: Record<string, string> = {
   isms:     'ISO 27001 Control',
@@ -84,19 +92,31 @@ const SOURCE_CONTROL_LABEL: Record<string, string> = {
 // ISO 27000-family extension standards — shown with amber accent in framework pills
 const ISO_EXTENSIONS = new Set(['ISO27017', 'ISO27018', 'ISO27701'])
 
-const CONFIDENCE_COLOR = (c: number) =>
+const CONFIDENCE_COLOR_DARK = (c: number) =>
   c >= 0.8 ? { bg: 'rgba(198,239,206,0.15)', color: '#C6EFCE' }
   : c >= 0.6 ? { bg: 'rgba(255,235,156,0.12)', color: '#FFEB9C' }
   : { bg: 'rgba(255,199,206,0.12)', color: '#FFC7CE' }
 
-const MISSING_CHIP: Record<string, { bg: string; color: string }> = {
+const CONFIDENCE_COLOR_LIGHT = (c: number) =>
+  c >= 0.8 ? { bg: 'rgba(46,125,50,0.15)', color: '#1b5e20' }
+  : c >= 0.6 ? { bg: 'rgba(230,145,0,0.15)', color: '#9a6500' }
+  : { bg: 'rgba(192,0,0,0.12)', color: '#9e0000' }
+
+const MISSING_CHIP_DARK: Record<string, { bg: string; color: string }> = {
   policy:      { bg: 'rgba(192,0,0,0.15)',    color: '#FFC7CE' },
   UG:          { bg: 'rgba(255,192,0,0.12)',   color: '#FFEB9C' },
   TG:          { bg: 'rgba(255,192,0,0.12)',   color: '#FFEB9C' },
   assessment:  { bg: 'rgba(192,0,0,0.15)',    color: '#FFC7CE' },
 }
 
-// ── Inferred Coverage tab ─────────────────────────────────────────────────────
+const MISSING_CHIP_LIGHT: Record<string, { bg: string; color: string }> = {
+  policy:      { bg: 'rgba(192,0,0,0.12)',    color: '#9e0000' },
+  UG:          { bg: 'rgba(230,145,0,0.15)',   color: '#9a6500' },
+  TG:          { bg: 'rgba(230,145,0,0.15)',   color: '#9a6500' },
+  assessment:  { bg: 'rgba(192,0,0,0.12)',    color: '#9e0000' },
+}
+
+// ── Inferred Coverage tab (DARK/LIGHT variants selected inside components) ────
 
 interface InferredResult {
   framework: string
@@ -190,6 +210,7 @@ function FrameworkCoverageCard({ result, projectId }: { result: InferredResult; 
 
 function InferredCoverage() {
   const { activeProject } = useProject()
+  const { product } = useProduct()
   const [projectId, setProjectId] = useState(activeProject?.id ?? '')
 
   const { data: projects } = useQuery({
@@ -216,7 +237,7 @@ function InferredCoverage() {
         </FormControl>
         {data && (
           <Typography variant="caption" sx={{ color: 'text.disabled' }}>
-            Based on {data.assessed_controls} assessed ISO 27001 control groups
+            Based on {data.assessed_controls} assessed {PRODUCT_ISO_LABEL[product] ?? 'ISO 27001'} control groups
           </Typography>
         )}
       </Box>
@@ -261,6 +282,8 @@ function CustomFrameworkCoverage({ frameworkId, frameworkName, shortCode, projec
   projectId: string
 }) {
   const [expanded, setExpanded] = useState(false)
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
 
   const { data, isLoading } = useQuery({
     queryKey: ['coverage-custom', frameworkId, projectId],
@@ -280,7 +303,7 @@ function CustomFrameworkCoverage({ frameworkId, frameworkName, shortCode, projec
         <Chip
           label={shortCode}
           size="small"
-          sx={{ height: 18, fontSize: '0.62rem', fontWeight: 700, bgcolor: 'rgba(255,192,0,0.12)', color: '#FFC000', borderRadius: 0.75 }}
+          sx={{ height: 18, fontSize: '0.62rem', fontWeight: 700, bgcolor: isLight ? 'rgba(230,160,0,0.15)' : 'rgba(255,192,0,0.12)', color: isLight ? '#7a4800' : '#FFC000', borderRadius: 0.75 }}
         />
         <Box sx={{ flex: 1 }}>
           <Typography variant="body2" sx={{ fontWeight: 600, fontSize: '0.82rem' }}>{frameworkName}</Typography>
@@ -323,7 +346,7 @@ function CustomFrameworkCoverage({ frameworkId, frameworkName, shortCode, projec
                   key={ctrl.control_id}
                   sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5, mb: 0.75, pb: 0.75, borderBottom: '1px solid', borderColor: 'divider', '&:last-child': { borderBottom: 'none', mb: 0, pb: 0 } }}
                 >
-                  <Box sx={{ width: 8, height: 8, borderRadius: '50%', mt: 0.6, flexShrink: 0, bgcolor: ctrl.covered ? '#C6EFCE' : '#FFC7CE' }} />
+                  <Box sx={{ width: 8, height: 8, borderRadius: '50%', mt: 0.6, flexShrink: 0, bgcolor: ctrl.covered ? (isLight ? '#2e7d32' : '#C6EFCE') : (isLight ? '#c62828' : '#FFC7CE') }} />
                   <Box sx={{ flex: 1, minWidth: 0 }}>
                     <Typography variant="caption" sx={{ fontWeight: 600, fontSize: '0.72rem', display: 'block' }}>
                       {ctrl.control_id}
@@ -343,7 +366,7 @@ function CustomFrameworkCoverage({ frameworkId, frameworkName, shortCode, projec
                             key={ref}
                             label={ref}
                             size="small"
-                            sx={{ height: 14, fontSize: '0.58rem', bgcolor: 'rgba(198,239,206,0.1)', color: '#C6EFCE' }}
+                            sx={{ height: 14, fontSize: '0.58rem', bgcolor: isLight ? 'rgba(46,125,50,0.12)' : 'rgba(198,239,206,0.1)', color: isLight ? '#1b5e20' : '#C6EFCE' }}
                           />
                         ))}
                         {ctrl.matched_iso.length > 5 && (
@@ -368,6 +391,8 @@ function CustomFrameworkCoverage({ frameworkId, frameworkName, shortCode, projec
 
 export default function Coverage() {
   const { product, ismsTier } = useProduct()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [activeTab, setActiveTab] = useState(0)
   const [selectedFramework, setSelectedFramework] = useState('')
   const [showUnmapped, setShowUnmapped] = useState(false)
@@ -405,9 +430,8 @@ export default function Coverage() {
 
   const sortedFrameworks = useMemo(() => {
     if (!cov?.frameworks || !cov?.by_framework) return cov?.frameworks ?? []
-    return [...cov.frameworks].sort(
-      (a, b) => (cov.by_framework[b] ?? 0) - (cov.by_framework[a] ?? 0)
-    )
+    return [...new Set(cov.frameworks)]
+      .sort((a, b) => (cov.by_framework[b] ?? 0) - (cov.by_framework[a] ?? 0))
   }, [cov])
 
   const filteredRows = useMemo(() => {
@@ -488,17 +512,19 @@ export default function Coverage() {
               onClick={() => { setCloudSub(value); setSelectedFramework(''); setPage(0) }}
               sx={{
                 px: 1.5, py: 0.75, borderRadius: 1, cursor: 'pointer',
-                bgcolor: cloudSub === value ? 'rgba(255,192,0,0.15)' : 'rgba(255,255,255,0.04)',
-                border: `1px solid ${cloudSub === value ? '#FFC00050' : 'rgba(255,255,255,0.08)'}`,
-                '&:hover': { bgcolor: 'rgba(255,192,0,0.1)' },
+                bgcolor: cloudSub === value
+                  ? (isLight ? 'rgba(230,160,0,0.18)' : 'rgba(255,192,0,0.15)')
+                  : (isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)'),
+                border: `1px solid ${cloudSub === value ? (isLight ? 'rgba(180,110,0,0.4)' : '#FFC00050') : (isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.08)')}`,
+                '&:hover': { bgcolor: isLight ? 'rgba(230,160,0,0.14)' : 'rgba(255,192,0,0.1)' },
               }}
             >
               <Typography variant="caption" fontWeight={cloudSub === value ? 700 : 400}
-                color={cloudSub === value ? '#FFC000' : 'text.secondary'}>
+                color={cloudSub === value ? (isLight ? '#7a4800' : '#FFC000') : 'text.secondary'}>
                 {label}
               </Typography>
               <Typography variant="caption" sx={{ ml: 1, opacity: 0.6 }}
-                color={cloudSub === value ? '#FFC000' : 'text.disabled'}>
+                color={cloudSub === value ? (isLight ? '#7a4800' : '#FFC000') : 'text.disabled'}>
                 {desc}
               </Typography>
             </Box>
@@ -557,7 +583,7 @@ export default function Coverage() {
                 checked={showUnmapped}
                 onChange={(e) => { setShowUnmapped(e.target.checked); setPage(0) }}
                 size="small"
-                sx={{ '& .MuiSwitch-thumb': { bgcolor: showUnmapped ? '#FFC7CE' : undefined } }}
+                sx={{ '& .MuiSwitch-thumb': { bgcolor: showUnmapped ? (isLight ? '#9e0000' : '#FFC7CE') : undefined } }}
               />
             }
             label={
@@ -589,22 +615,22 @@ export default function Coverage() {
                         borderRadius: 1,
                         cursor: 'pointer',
                         bgcolor: isActive
-                          ? (isExt ? 'rgba(255,192,0,0.2)' : 'rgba(68,114,196,0.2)')
-                          : (isExt ? 'rgba(255,192,0,0.07)' : 'rgba(68,114,196,0.06)'),
-                        border: `1px solid ${isActive ? (isExt ? '#FFC00050' : '#4472C450') : 'transparent'}`,
-                        '&:hover': { bgcolor: isExt ? 'rgba(255,192,0,0.14)' : 'rgba(68,114,196,0.15)' },
+                          ? (isExt ? (isLight ? 'rgba(230,160,0,0.22)' : 'rgba(255,192,0,0.2)') : 'rgba(68,114,196,0.2)')
+                          : (isExt ? (isLight ? 'rgba(230,160,0,0.12)' : 'rgba(255,192,0,0.07)') : 'rgba(68,114,196,0.06)'),
+                        border: `1px solid ${isActive ? (isExt ? (isLight ? 'rgba(230,160,0,0.5)' : '#FFC00050') : '#4472C450') : 'transparent'}`,
+                        '&:hover': { bgcolor: isExt ? (isLight ? 'rgba(230,160,0,0.2)' : 'rgba(255,192,0,0.14)') : 'rgba(68,114,196,0.15)' },
                       }}
                     >
                       <Typography
                         variant="caption"
                         fontWeight={isActive ? 700 : 400}
-                        color={isActive ? (isExt ? '#FFC000' : 'primary.light') : (isExt ? '#FFC00099' : 'text.secondary')}
+                        color={isActive ? (isExt ? (isLight ? '#7a4800' : '#FFC000') : 'primary.light') : (isExt ? (isLight ? '#9a6500' : '#FFC00099') : 'text.secondary')}
                       >
                         {f}
                       </Typography>
                       <Typography
                         variant="caption"
-                        sx={{ ml: 0.75, opacity: 0.6, color: isActive ? (isExt ? '#FFC000' : 'primary.light') : 'text.secondary' }}
+                        sx={{ ml: 0.75, opacity: 0.6, color: isActive ? (isExt ? (isLight ? '#7a4800' : '#FFC000') : 'primary.light') : 'text.secondary' }}
                       >
                         {count}
                       </Typography>
@@ -647,6 +673,7 @@ export default function Coverage() {
               const fwMappings = activeFramework
                 ? row.mappings.filter((m) => m.framework === activeFramework)
                 : row.mappings
+              const CONFIDENCE_COLOR = isLight ? CONFIDENCE_COLOR_LIGHT : CONFIDENCE_COLOR_DARK
               return (
                 <TableRow key={row.iso_control_id} hover>
                   <TableCell
@@ -695,7 +722,7 @@ export default function Coverage() {
                     </Box>
                   </TableCell>
                   <TableCell align="center">
-                    <Box sx={{ width: 10, height: 10, borderRadius: '50%', mx: 'auto', bgcolor: fwMappings.length > 0 ? '#C6EFCE' : '#FFC7CE' }} />
+                    <Box sx={{ width: 10, height: 10, borderRadius: '50%', mx: 'auto', bgcolor: fwMappings.length > 0 ? (isLight ? '#2e7d32' : '#C6EFCE') : (isLight ? '#c62828' : '#FFC7CE') }} />
                   </TableCell>
                 </TableRow>
               )
@@ -736,7 +763,14 @@ export default function Coverage() {
               <Chip
                 label={`${gaps.length} control${gaps.length !== 1 ? 's' : ''} affected`}
                 size="small"
-                sx={{ bgcolor: gaps.length === 0 ? 'rgba(198,239,206,0.15)' : 'rgba(255,199,206,0.15)', color: gaps.length === 0 ? '#C6EFCE' : '#FFC7CE' }}
+                sx={{
+                  bgcolor: gaps.length === 0
+                    ? (isLight ? 'rgba(46,125,50,0.15)' : 'rgba(198,239,206,0.15)')
+                    : (isLight ? 'rgba(192,0,0,0.12)' : 'rgba(255,199,206,0.15)'),
+                  color: gaps.length === 0
+                    ? (isLight ? '#1b5e20' : '#C6EFCE')
+                    : (isLight ? '#9e0000' : '#FFC7CE'),
+                }}
               />
               <Box sx={{ ml: 'auto', display: 'flex', gap: 0.75 }}>
                 {([
@@ -812,18 +846,21 @@ export default function Coverage() {
                     </TableCell>
                     <TableCell>
                       <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
-                        {gap.missing.map((m) => (
-                          <Chip
-                            key={m}
-                            label={m}
-                            size="small"
-                            sx={{
-                              fontSize: '0.65rem', height: 18,
-                              bgcolor: MISSING_CHIP[m]?.bg ?? 'rgba(255,199,206,0.15)',
-                              color: MISSING_CHIP[m]?.color ?? '#FFC7CE',
-                            }}
-                          />
-                        ))}
+                        {gap.missing.map((m) => {
+                          const MISSING_CHIP = isLight ? MISSING_CHIP_LIGHT : MISSING_CHIP_DARK
+                          return (
+                            <Chip
+                              key={m}
+                              label={m}
+                              size="small"
+                              sx={{
+                                fontSize: '0.65rem', height: 18,
+                                bgcolor: MISSING_CHIP[m]?.bg ?? (isLight ? 'rgba(192,0,0,0.12)' : 'rgba(255,199,206,0.15)'),
+                                color: MISSING_CHIP[m]?.color ?? (isLight ? '#9e0000' : '#FFC7CE'),
+                              }}
+                            />
+                          )
+                        })}
                       </Box>
                     </TableCell>
                   </TableRow>

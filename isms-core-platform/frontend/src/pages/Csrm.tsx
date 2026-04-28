@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTheme } from '@mui/material/styles'
 import {
   Alert, AlertTitle, Box, Button, Card, CardContent, Chip, Collapse,
   Dialog, DialogActions, DialogContent, DialogTitle, Divider, FormControl,
@@ -86,7 +87,7 @@ const FUNCTION_COLORS: Record<string, string> = {
   'Respond/Recover': '#C62828',
 }
 
-const STATUS_CONFIG: Record<string, { label: string; color: string; bg: string }> = {
+const STATUS_CONFIG_DARK: Record<string, { label: string; color: string; bg: string }> = {
   not_assessed: { label: 'Not Assessed', color: 'rgba(255,255,255,0.3)',  bg: 'rgba(255,255,255,0.05)' },
   met:          { label: 'Met',          color: '#C6EFCE',                bg: 'rgba(198,239,206,0.15)' },
   partial:      { label: 'Partial',      color: '#FFC000',                bg: 'rgba(255,192,0,0.12)'   },
@@ -94,11 +95,26 @@ const STATUS_CONFIG: Record<string, { label: string; color: string; bg: string }
   exception:    { label: 'Exception',    color: '#CE93D8',                bg: 'rgba(206,147,216,0.12)' },
 }
 
-const TOM_STATUS_CONFIG: Record<string, { label: string; color: string }> = {
+const STATUS_CONFIG_LIGHT: Record<string, { label: string; color: string; bg: string }> = {
+  not_assessed: { label: 'Not Assessed', color: 'rgba(0,0,0,0.4)',        bg: 'rgba(0,0,0,0.04)'       },
+  met:          { label: 'Met',          color: '#1b5e20',                 bg: 'rgba(27,94,32,0.1)'     },
+  partial:      { label: 'Partial',      color: '#856404',                 bg: 'rgba(133,100,4,0.1)'    },
+  not_met:      { label: 'Not Met',      color: '#bf360c',                 bg: 'rgba(191,54,12,0.1)'    },
+  exception:    { label: 'Exception',    color: '#6a1b9a',                 bg: 'rgba(106,27,154,0.1)'   },
+}
+
+const TOM_STATUS_CONFIG_DARK: Record<string, { label: string; color: string }> = {
   planned:        { label: 'Planned',     color: '#90CAF9' },
   in_progress:    { label: 'In Progress', color: '#FFC000' },
   implemented:    { label: 'Implemented', color: '#C6EFCE' },
   not_applicable: { label: 'N/A',         color: 'rgba(255,255,255,0.3)' },
+}
+
+const TOM_STATUS_CONFIG_LIGHT: Record<string, { label: string; color: string }> = {
+  planned:        { label: 'Planned',     color: '#1565c0' },
+  in_progress:    { label: 'In Progress', color: '#856404' },
+  implemented:    { label: 'Implemented', color: '#1b5e20' },
+  not_applicable: { label: 'N/A',         color: 'rgba(0,0,0,0.4)' },
 }
 
 const THREAT_CATEGORIES = [
@@ -144,7 +160,8 @@ const api = {
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
-function statusChip(status: string, size: 'small' | 'medium' = 'small') {
+function statusChip(status: string, isLight: boolean, size: 'small' | 'medium' = 'small') {
+  const STATUS_CONFIG = isLight ? STATUS_CONFIG_LIGHT : STATUS_CONFIG_DARK
   const cfg = STATUS_CONFIG[status] ?? STATUS_CONFIG['not_assessed']
   return (
     <Chip
@@ -155,12 +172,18 @@ function statusChip(status: string, size: 'small' | 'medium' = 'small') {
   )
 }
 
-function assessmentStatusChip(status: string) {
-  const map: Record<string, { label: string; color: string; bg: string }> = {
+function assessmentStatusChip(status: string, isLight: boolean) {
+  const mapDark: Record<string, { label: string; color: string; bg: string }> = {
     draft:       { label: 'Draft',       color: '#90CAF9',  bg: 'rgba(144,202,249,0.12)' },
     in_progress: { label: 'In Progress', color: '#FFC000',  bg: 'rgba(255,192,0,0.12)'   },
     complete:    { label: 'Complete',    color: '#C6EFCE',  bg: 'rgba(198,239,206,0.15)'  },
   }
+  const mapLight: Record<string, { label: string; color: string; bg: string }> = {
+    draft:       { label: 'Draft',       color: '#1565c0',  bg: 'rgba(21,101,192,0.1)'   },
+    in_progress: { label: 'In Progress', color: '#856404',  bg: 'rgba(133,100,4,0.1)'    },
+    complete:    { label: 'Complete',    color: '#1b5e20',  bg: 'rgba(27,94,32,0.1)'      },
+  }
+  const map = isLight ? mapLight : mapDark
   const cfg = map[status] ?? map['draft']
   return (
     <Chip
@@ -246,6 +269,9 @@ function RequirementRow({
   rating: BaselineRating | undefined
   onUpdate: (reqId: string, status: string, notes?: string, justification?: string) => void
 }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const STATUS_CONFIG = isLight ? STATUS_CONFIG_LIGHT : STATUS_CONFIG_DARK
   const [notesOpen, setNotesOpen] = useState(false)
   const [localNotes, setLocalNotes] = useState(rating?.notes ?? '')
   const [localJustification, setLocalJustification] = useState(rating?.exception_justification ?? '')
@@ -261,7 +287,7 @@ function RequirementRow({
   }
 
   return (
-    <Box sx={{ borderBottom: '1px solid rgba(255,255,255,0.05)', py: 0.75 }}>
+    <Box sx={{ borderBottom: '1px solid', borderColor: isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)', py: 0.75 }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
         {/* Req ID */}
         <Box sx={{ minWidth: 44 }}>
@@ -291,7 +317,7 @@ function RequirementRow({
               sx={{
                 px: 1, py: 0.3, borderRadius: 1, cursor: 'pointer', fontSize: '0.68rem', fontWeight: status === s ? 700 : 400,
                 border: '1px solid',
-                borderColor: status === s ? `${cfg.color}80` : 'rgba(255,255,255,0.08)',
+                borderColor: status === s ? `${cfg.color}80` : (isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.08)'),
                 bgcolor: status === s ? cfg.bg : 'transparent',
                 color: status === s ? cfg.color : 'text.disabled',
                 transition: 'all 0.1s',
@@ -355,6 +381,9 @@ function TomRow({
   onPatch: (id: string, d: any) => void
   onDelete: (id: string) => void
 }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const TOM_STATUS_CONFIG = isLight ? TOM_STATUS_CONFIG_LIGHT : TOM_STATUS_CONFIG_DARK
   const [editing, setEditing] = useState(false)
   const [desc, setDesc] = useState(tom.tom_description)
   const [notes, setNotes] = useState(tom.notes ?? '')
@@ -366,9 +395,9 @@ function TomRow({
   }
 
   return (
-    <Box sx={{ p: 1.25, border: '1px solid rgba(255,255,255,0.08)', borderRadius: 1.5, mb: 1 }}>
+    <Box sx={{ p: 1.25, border: '1px solid', borderColor: isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.08)', borderRadius: 1.5, mb: 1 }}>
       <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
-        <Chip label={tom.threat_category} size="small" sx={{ bgcolor: 'rgba(255,255,255,0.07)', color: 'text.secondary', fontSize: '0.65rem', height: 20, flexShrink: 0 }} />
+        <Chip label={tom.threat_category} size="small" sx={{ bgcolor: isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.07)', color: 'text.secondary', fontSize: '0.65rem', height: 20, flexShrink: 0 }} />
         <Box sx={{ flex: 1, minWidth: 0 }}>
           {editing ? (
             <TextField
@@ -404,7 +433,7 @@ function TomRow({
             ))}
           </Select>
           <Box sx={{ display: 'flex', gap: 0.25 }}>
-            <IconButton size="small" onClick={() => editing ? save() : setEditing(true)} sx={{ color: editing ? '#C6EFCE' : 'text.disabled' }}>
+            <IconButton size="small" onClick={() => editing ? save() : setEditing(true)} sx={{ color: editing ? (isLight ? '#1b5e20' : '#C6EFCE') : 'text.disabled' }}>
               <EditOutlined sx={{ fontSize: 15 }} />
             </IconButton>
             <IconButton size="small" onClick={() => onDelete(tom.id)} sx={{ color: 'rgba(255,82,82,0.6)', '&:hover': { color: '#FF5252' } }}>
@@ -426,6 +455,8 @@ function ObjectPanel({
   onClose: () => void
   onUpdate: (updated: ProtectionObject) => void
 }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [editMeta, setEditMeta] = useState(false)
   const [metaForm, setMetaForm] = useState({
     name: object.name,
@@ -549,8 +580,8 @@ function ObjectPanel({
               size="small"
               sx={{
                 bgcolor: isElevated ? 'rgba(255,112,67,0.12)' : 'rgba(144,202,249,0.12)',
-                color: isElevated ? '#FF7043' : '#90CAF9',
-                border: `1px solid ${isElevated ? '#FF704340' : '#90CAF940'}`,
+                color: isElevated ? '#FF7043' : (isLight ? '#1565c0' : '#90CAF9'),
+                border: `1px solid ${isElevated ? '#FF704340' : (isLight ? 'rgba(21,101,192,0.25)' : '#90CAF940')}`,
                 fontSize: '0.68rem', fontWeight: 600,
               }}
             />
@@ -566,7 +597,7 @@ function ObjectPanel({
 
       {/* Metadata edit form */}
       <Collapse in={editMeta}>
-        <Box sx={{ p: 2, bgcolor: 'rgba(255,255,255,0.03)', borderRadius: 1.5, border: '1px solid rgba(255,255,255,0.07)', mb: 2 }}>
+        <Box sx={{ p: 2, bgcolor: isLight ? 'rgba(0,0,0,0.02)' : 'rgba(255,255,255,0.03)', borderRadius: 1.5, border: '1px solid', borderColor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.07)', mb: 2 }}>
           <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1.5, fontWeight: 600, textTransform: 'uppercase', fontSize: '0.65rem', letterSpacing: '0.05em' }}>
             Object Properties
           </Typography>
@@ -702,6 +733,8 @@ function ObjectPanel({
 // ── Control Objectives card ───────────────────────────────────────────────────
 
 function ControlObjectiveCard({ co, objects }: { co: typeof CONTROL_OBJECTIVES[0]; objects: ProtectionObject[] }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const reqIds = CO_REQUIREMENT_MAP[co.id] ?? []
   const total = objects.length * reqIds.length
   const met = objects.reduce((acc, obj) => {
@@ -709,8 +742,16 @@ function ControlObjectiveCard({ co, objects }: { co: typeof CONTROL_OBJECTIVES[0
   }, 0)
   const pct = total > 0 ? Math.round(met / total * 100) : null
 
-  const color = pct === null ? 'rgba(255,255,255,0.3)' : pct >= 80 ? '#C6EFCE' : pct >= 50 ? '#FFC000' : '#FF7043'
-  const bg = pct === null ? 'rgba(255,255,255,0.05)' : pct >= 80 ? 'rgba(198,239,206,0.12)' : pct >= 50 ? 'rgba(255,192,0,0.10)' : 'rgba(255,112,67,0.10)'
+  const color = pct === null
+    ? (isLight ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)')
+    : pct >= 80 ? (isLight ? '#1b5e20' : '#C6EFCE')
+    : pct >= 50 ? '#FFC000'
+    : '#FF7043'
+  const bg = pct === null
+    ? (isLight ? 'rgba(0,0,0,0.03)' : 'rgba(255,255,255,0.05)')
+    : pct >= 80 ? 'rgba(198,239,206,0.12)'
+    : pct >= 50 ? 'rgba(255,192,0,0.10)'
+    : 'rgba(255,112,67,0.10)'
 
   return (
     <Card variant="outlined" sx={{ bgcolor: bg, border: `1px solid ${color}30` }}>
@@ -723,7 +764,7 @@ function ControlObjectiveCard({ co, objects }: { co: typeof CONTROL_OBJECTIVES[0
           {pct !== null ? (
             <Chip label={`${pct}%`} size="small" sx={{ bgcolor: bg, color, border: `1px solid ${color}50`, fontWeight: 700, fontSize: '0.72rem' }} />
           ) : (
-            <Chip label="—" size="small" sx={{ bgcolor: 'rgba(255,255,255,0.05)', color: 'text.disabled', fontSize: '0.72rem' }} />
+            <Chip label="—" size="small" sx={{ bgcolor: isLight ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.05)', color: 'text.disabled', fontSize: '0.72rem' }} />
           )}
         </Box>
         <Typography variant="caption" color="text.disabled" sx={{ fontSize: '0.7rem', lineHeight: 1.4 }}>{co.description}</Typography>
@@ -731,7 +772,7 @@ function ControlObjectiveCard({ co, objects }: { co: typeof CONTROL_OBJECTIVES[0
           <LinearProgress
             variant="determinate"
             value={Math.min(100, pct)}
-            sx={{ mt: 1, height: 3, borderRadius: 2, bgcolor: 'rgba(255,255,255,0.08)', '& .MuiLinearProgress-bar': { bgcolor: color } }}
+            sx={{ mt: 1, height: 3, borderRadius: 2, bgcolor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)', '& .MuiLinearProgress-bar': { bgcolor: color } }}
           />
         )}
         <Typography variant="caption" color="text.disabled" sx={{ display: 'block', mt: 0.5, fontSize: '0.65rem' }}>
@@ -745,6 +786,9 @@ function ControlObjectiveCard({ co, objects }: { co: typeof CONTROL_OBJECTIVES[0
 // ── Report Tab ────────────────────────────────────────────────────────────────
 
 function ReportTab({ detail }: { detail: AssessmentDetail }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const STATUS_CONFIG = isLight ? STATUS_CONFIG_LIGHT : STATUS_CONFIG_DARK
   const objects = detail.objects
   const totalObjects = objects.length
   const elevatedObjects = objects.filter(o => o.protection_level === 'elevated').length
@@ -776,9 +820,9 @@ function ReportTab({ detail }: { detail: AssessmentDetail }) {
           { label: 'Protection Objects', value: totalObjects },
           { label: 'Elevated Objects', value: elevatedObjects, color: elevatedObjects > 0 ? '#FF7043' : undefined },
           { label: 'Fully Assessed', value: `${fullyAssessed}/${totalObjects}` },
-          { label: 'Baseline Compliance', value: basePct !== null ? `${basePct}%` : '—', color: basePct !== null ? (basePct >= 80 ? '#C6EFCE' : basePct >= 50 ? '#FFC000' : '#FF7043') : undefined },
+          { label: 'Baseline Compliance', value: basePct !== null ? `${basePct}%` : '—', color: basePct !== null ? (basePct >= 80 ? (isLight ? '#1b5e20' : '#C6EFCE') : basePct >= 50 ? '#FFC000' : '#FF7043') : undefined },
         ].map((card) => (
-          <Card key={card.label} variant="outlined" sx={{ bgcolor: 'rgba(255,255,255,0.03)' }}>
+          <Card key={card.label} variant="outlined" sx={{ bgcolor: isLight ? 'rgba(0,0,0,0.02)' : 'rgba(255,255,255,0.03)' }}>
             <CardContent sx={{ p: 1.5, '&:last-child': { pb: 1.5 } }}>
               <Typography variant="caption" color="text.disabled" sx={{ fontSize: '0.68rem' }}>{card.label}</Typography>
               <Typography variant="h6" sx={{ fontWeight: 700, color: card.color ?? 'text.primary', mt: 0.25 }}>{card.value}</Typography>
@@ -795,7 +839,11 @@ function ReportTab({ detail }: { detail: AssessmentDetail }) {
           const total = objects.length * reqIds.length
           const met = objects.reduce((acc, obj) => acc + reqIds.filter(rid => getRatingForReq(obj, rid)?.status === 'met').length, 0)
           const pct = total > 0 ? Math.round(met / total * 100) : null
-          const color = pct === null ? 'rgba(255,255,255,0.3)' : pct >= 80 ? '#C6EFCE' : pct >= 50 ? '#FFC000' : '#FF7043'
+          const color = pct === null
+            ? (isLight ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)')
+            : pct >= 80 ? (isLight ? '#1b5e20' : '#C6EFCE')
+            : pct >= 50 ? '#FFC000'
+            : '#FF7043'
           return (
             <Box key={co.id} sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
               <Typography variant="caption" sx={{ width: 40, fontWeight: 600, color: 'text.secondary', flexShrink: 0 }}>{co.id}</Typography>
@@ -804,7 +852,7 @@ function ReportTab({ detail }: { detail: AssessmentDetail }) {
                 <LinearProgress
                   variant="determinate"
                   value={pct !== null ? Math.min(100, pct) : 0}
-                  sx={{ height: 6, borderRadius: 3, bgcolor: 'rgba(255,255,255,0.08)', '& .MuiLinearProgress-bar': { bgcolor: color } }}
+                  sx={{ height: 6, borderRadius: 3, bgcolor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)', '& .MuiLinearProgress-bar': { bgcolor: color } }}
                 />
               </Box>
               <Typography variant="caption" sx={{ width: 36, textAlign: 'right', color, fontWeight: 600, flexShrink: 0 }}>
@@ -819,8 +867,8 @@ function ReportTab({ detail }: { detail: AssessmentDetail }) {
       {gaps.length > 0 && (
         <>
           <Typography variant="subtitle2" sx={{ mb: 1.5, fontWeight: 600 }}>Gap Analysis ({gaps.length} items)</Typography>
-          <Box sx={{ border: '1px solid rgba(255,255,255,0.08)', borderRadius: 1.5, overflow: 'hidden' }}>
-            <Box sx={{ display: 'grid', gridTemplateColumns: '160px 80px 100px 1fr', gap: 0, bgcolor: 'rgba(255,255,255,0.05)', p: '6px 12px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          <Box sx={{ border: '1px solid', borderColor: isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.08)', borderRadius: 1.5, overflow: 'hidden' }}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: '160px 80px 100px 1fr', gap: 0, bgcolor: isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.05)', p: '6px 12px', borderBottom: '1px solid', borderBottomColor: isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.08)' }}>
               <Typography variant="caption" sx={{ fontWeight: 600, fontSize: '0.7rem' }}>Object</Typography>
               <Typography variant="caption" sx={{ fontWeight: 600, fontSize: '0.7rem' }}>Req</Typography>
               <Typography variant="caption" sx={{ fontWeight: 600, fontSize: '0.7rem' }}>Status</Typography>
@@ -829,7 +877,7 @@ function ReportTab({ detail }: { detail: AssessmentDetail }) {
             {gaps.map((g, i) => {
               const cfg = STATUS_CONFIG[g.rating?.status ?? 'not_assessed']
               return (
-                <Box key={i} sx={{ display: 'grid', gridTemplateColumns: '160px 80px 100px 1fr', gap: 0, p: '6px 12px', borderBottom: '1px solid rgba(255,255,255,0.04)', '&:last-child': { borderBottom: 'none' } }}>
+                <Box key={i} sx={{ display: 'grid', gridTemplateColumns: '160px 80px 100px 1fr', gap: 0, p: '6px 12px', borderBottom: '1px solid', borderBottomColor: isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.04)', '&:last-child': { borderBottom: 'none' } }}>
                   <Typography variant="caption" sx={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{g.object.name}</Typography>
                   <Typography variant="caption" sx={{ color: FUNCTION_COLORS[g.req.function] ?? 'text.secondary', fontWeight: 600 }}>{g.req.id}</Typography>
                   <Chip label={cfg.label} size="small" sx={{ bgcolor: cfg.bg, color: cfg.color, fontSize: '0.65rem', height: 18, width: 'fit-content' }} />
@@ -900,6 +948,8 @@ function NewAssessmentDialog({ open, onClose, onCreate }: {
 // ── Main Page ─────────────────────────────────────────────────────────────────
 
 export default function Csrm() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [assessments, setAssessments] = useState<CsrmAssessmentSummary[]>([])
   const [loading, setLoading] = useState(true)
   const [selectedId, setSelectedId] = useState<string | null>(null)
@@ -1037,13 +1087,13 @@ export default function Csrm() {
         ) : (
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
             {assessments.map(a => (
-              <Card key={a.id} variant="outlined" sx={{ bgcolor: 'rgba(255,255,255,0.02)', '&:hover': { bgcolor: 'rgba(255,255,255,0.04)' }, transition: 'background-color 0.15s' }}>
+              <Card key={a.id} variant="outlined" sx={{ bgcolor: isLight ? 'transparent' : 'rgba(255,255,255,0.02)', '&:hover': { bgcolor: isLight ? 'rgba(0,0,0,0.02)' : 'rgba(255,255,255,0.04)' }, transition: 'background-color 0.15s' }}>
                 <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
                   <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
                     <Box sx={{ flex: 1, minWidth: 0 }}>
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
                         <Typography variant="subtitle1" sx={{ fontWeight: 600, fontSize: '0.95rem' }}>{a.name}</Typography>
-                        {assessmentStatusChip(a.status)}
+                        {assessmentStatusChip(a.status, isLight)}
                       </Box>
                       {a.organisation && (
                         <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.5 }}>{a.organisation}</Typography>
@@ -1059,9 +1109,9 @@ export default function Csrm() {
                             <LinearProgress
                               variant="determinate"
                               value={Math.min(100, a.baseline_met_pct)}
-                              sx={{ width: 80, height: 4, borderRadius: 2, bgcolor: 'rgba(255,255,255,0.08)', '& .MuiLinearProgress-bar': { bgcolor: a.baseline_met_pct >= 80 ? '#C6EFCE' : a.baseline_met_pct >= 50 ? '#FFC000' : '#FF7043' } }}
+                              sx={{ width: 80, height: 4, borderRadius: 2, bgcolor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)', '& .MuiLinearProgress-bar': { bgcolor: a.baseline_met_pct >= 80 ? (isLight ? '#1b5e20' : '#C6EFCE') : a.baseline_met_pct >= 50 ? '#FFC000' : '#FF7043' } }}
                             />
-                            <Typography variant="caption" sx={{ color: a.baseline_met_pct >= 80 ? '#C6EFCE' : a.baseline_met_pct >= 50 ? '#FFC000' : '#FF7043', fontWeight: 600 }}>
+                            <Typography variant="caption" sx={{ color: a.baseline_met_pct >= 80 ? (isLight ? '#1b5e20' : '#C6EFCE') : a.baseline_met_pct >= 50 ? '#FFC000' : '#FF7043', fontWeight: 600 }}>
                               {a.baseline_met_pct}%
                             </Typography>
                           </Box>
@@ -1138,7 +1188,7 @@ export default function Csrm() {
           {activeTab === 'overview' && (
             <Box>
               {/* Assessment metadata card */}
-              <Card variant="outlined" sx={{ bgcolor: 'rgba(255,255,255,0.02)', mb: 3 }}>
+              <Card variant="outlined" sx={{ bgcolor: isLight ? 'transparent' : 'rgba(255,255,255,0.02)', mb: 3 }}>
                 <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
                     <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>Assessment Details</Typography>
@@ -1235,9 +1285,9 @@ export default function Csrm() {
                           onClick={() => setSelectedObjectId(isActive ? null : obj.id)}
                           sx={{
                             p: 1.25, borderRadius: 1.5, cursor: 'pointer', border: '1px solid',
-                            borderColor: isActive ? (isElev ? '#FF704340' : '#90CAF940') : 'rgba(255,255,255,0.08)',
-                            bgcolor: isActive ? (isElev ? 'rgba(255,112,67,0.08)' : 'rgba(144,202,249,0.08)') : 'rgba(255,255,255,0.02)',
-                            '&:hover': { bgcolor: 'rgba(255,255,255,0.04)' },
+                            borderColor: isActive ? (isElev ? '#FF704340' : (isLight ? 'rgba(21,101,192,0.3)' : '#90CAF940')) : (isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.08)'),
+                            bgcolor: isActive ? (isElev ? 'rgba(255,112,67,0.08)' : 'rgba(144,202,249,0.08)') : (isLight ? 'transparent' : 'rgba(255,255,255,0.02)'),
+                            '&:hover': { bgcolor: isLight ? 'rgba(0,0,0,0.03)' : 'rgba(255,255,255,0.04)' },
                             transition: 'all 0.12s',
                           }}
                         >
@@ -1257,7 +1307,7 @@ export default function Csrm() {
                             <Chip
                               label={isElev ? 'Elevated' : 'Standard'}
                               size="small"
-                              sx={{ bgcolor: isElev ? 'rgba(255,112,67,0.10)' : 'rgba(144,202,249,0.10)', color: isElev ? '#FF7043' : '#90CAF9', fontSize: '0.6rem', height: 16 }}
+                              sx={{ bgcolor: isElev ? 'rgba(255,112,67,0.10)' : 'rgba(144,202,249,0.10)', color: isElev ? '#FF7043' : (isLight ? '#1565c0' : '#90CAF9'), fontSize: '0.6rem', height: 16 }}
                             />
                             <Typography variant="caption" color="text.disabled" sx={{ fontSize: '0.68rem' }}>
                               {assessed}/20 · {met} met
@@ -1266,7 +1316,7 @@ export default function Csrm() {
                           <LinearProgress
                             variant="determinate"
                             value={Math.min(100, assessed / 20 * 100)}
-                            sx={{ mt: 0.75, height: 2, borderRadius: 1, bgcolor: 'rgba(255,255,255,0.06)', '& .MuiLinearProgress-bar': { bgcolor: met === 20 ? '#C6EFCE' : assessed > 0 ? '#90CAF9' : 'rgba(255,255,255,0.2)' } }}
+                            sx={{ mt: 0.75, height: 2, borderRadius: 1, bgcolor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.06)', '& .MuiLinearProgress-bar': { bgcolor: met === 20 ? (isLight ? '#1b5e20' : '#C6EFCE') : assessed > 0 ? (isLight ? '#1565c0' : '#90CAF9') : (isLight ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.2)') } }}
                           />
                         </Box>
                       )
@@ -1276,7 +1326,7 @@ export default function Csrm() {
               </Box>
 
               {/* Object detail panel */}
-              <Box sx={{ flex: 1, border: '1px solid rgba(255,255,255,0.08)', borderRadius: 2, minHeight: 400, overflow: 'hidden', display: 'flex' }}>
+              <Box sx={{ flex: 1, border: '1px solid', borderColor: isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.08)', borderRadius: 2, minHeight: 400, overflow: 'hidden', display: 'flex' }}>
                 {!selectedObject ? (
                   <Box sx={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Typography variant="body2" color="text.disabled">Select a protection object to assess its baseline requirements.</Typography>

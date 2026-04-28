@@ -13,7 +13,7 @@ const PER_PAGE = 50
 const INTEL_COLOR = '#B84F00'
 
 export default function MitreGroups() {
-  const [source, setSource] = useState<'attack_v18' | 'attack_v19'>('attack_v18')
+  const [source] = useState<'attack_v19'>('attack_v19')
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
   const [selected, setSelected] = useState<MitreGroup | null>(null)
@@ -77,7 +77,6 @@ export default function MitreGroups() {
           exclusive
           onChange={(_, v) => v && setSource(v)}
         >
-          <ToggleButton value="attack_v18" sx={{ fontSize: '0.72rem', px: 1.5 }}>v18</ToggleButton>
           <ToggleButton value="attack_v19" sx={{ fontSize: '0.72rem', px: 1.5 }}>v19</ToggleButton>
         </ToggleButtonGroup>
 

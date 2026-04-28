@@ -33,7 +33,7 @@ class MitreTechnique(Base):
     id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     stix_id: Mapped[str] = mapped_column(String(100), nullable=False)
     technique_id: Mapped[str] = mapped_column(String(20), nullable=False)
-    source: Mapped[str] = mapped_column(String(30), nullable=False)   # attack_v18 | attack_v19 | atlas
+    source: Mapped[str] = mapped_column(String(30), nullable=False)   # attack_v19 | atlas
     name: Mapped[str] = mapped_column(String(255), nullable=False)
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
     tactics: Mapped[list] = mapped_column(JSONB, nullable=False, default=list)
@@ -226,10 +226,11 @@ class TiMalwareFamily(Base):
 
 
 class TiActor(Base):
-    """Threat actors from Malpedia."""
+    """Threat actors and ransomware groups from Malpedia galaxy."""
     __tablename__ = "ti_actors"
     __table_args__ = (
         Index("ix_ti_actors_country", "country"),
+        Index("ix_ti_actors_type",    "actor_type"),
     )
 
     id: Mapped[uuid.UUID]       = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
@@ -238,6 +239,23 @@ class TiActor(Base):
     country: Mapped[str | None] = mapped_column(String(5),   nullable=True)
     motivation: Mapped[str | None] = mapped_column(String(100), nullable=True)
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    actor_type: Mapped[str]     = mapped_column(String(30),  nullable=False, default="threat-actor")
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class TiTool(Base):
+    """Attacker tooling from MISP galaxy tool.json."""
+    __tablename__ = "ti_tools"
+    __table_args__ = (
+        Index("ix_ti_tools_name", "name"),
+    )
+
+    id: Mapped[uuid.UUID]       = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    slug: Mapped[str]           = mapped_column(String(200), nullable=False, unique=True)
+    name: Mapped[str]           = mapped_column(String(200), nullable=False)
+    aliases: Mapped[list]       = mapped_column(JSONB, nullable=False, default=list)
+    description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    mitre_tids: Mapped[list]    = mapped_column(JSONB, nullable=False, default=list)
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
 
 
@@ -248,6 +266,7 @@ class TiEnrichmentCache(Base):
     ip: Mapped[str]              = mapped_column(String(45),  primary_key=True)
     abuseipdb: Mapped[dict | None] = mapped_column(JSONB,    nullable=True)
     shodan: Mapped[dict | None]  = mapped_column(JSONB,       nullable=True)
+    google_dns: Mapped[dict | None] = mapped_column(JSONB,   nullable=True)
     cached_at: Mapped[datetime]  = mapped_column(DateTime(timezone=True), nullable=False)
 
 

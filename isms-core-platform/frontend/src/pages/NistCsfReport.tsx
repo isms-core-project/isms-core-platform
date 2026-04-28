@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom'
+import { useTheme } from '@mui/material/styles'
 import { useQuery } from '@tanstack/react-query'
 import {
   Box, Typography, Chip, Grid, Stack, LinearProgress,
@@ -31,24 +32,27 @@ const TIER_LABELS: Record<number, string> = {
 }
 const FUNCTION_ORDER = ['GV', 'ID', 'PR', 'DE', 'RS', 'RC']
 
-function tierColor(tier: number | null): string {
-  if (!tier) return 'rgba(255,255,255,0.08)'
+function tierColor(tier: number | null, isLight = false): string {
+  if (!tier) return isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)'
   if (tier === 1) return '#FF5252'
-  if (tier === 2) return '#FFC000'
+  if (tier === 2) return isLight ? '#9a6500' : '#FFC000'
   if (tier === 3) return '#70AD47'
   return '#4472C4'
 }
 
 function TierBadge({ tier }: { tier: number | null }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   if (!tier) return <Typography variant="caption" color="text.disabled">{'—'}</Typography>
+  const tc = tierColor(tier, isLight)
   return (
     <Box sx={{
       display: 'inline-flex', alignItems: 'center', gap: 0.5,
       px: 1, py: 0.25, borderRadius: 1,
-      bgcolor: `${tierColor(tier)}22`, border: `1px solid ${tierColor(tier)}44`,
+      bgcolor: `${tc}22`, border: `1px solid ${tc}44`,
     }}>
-      <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: tierColor(tier) }} />
-      <Typography sx={{ fontSize: '0.7rem', fontWeight: 700, color: tierColor(tier) }}>
+      <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: tc }} />
+      <Typography sx={{ fontSize: '0.7rem', fontWeight: 700, color: tc }}>
         T{tier}
       </Typography>
     </Box>
@@ -107,6 +111,8 @@ const PRINT_STYLES = (
 // ── Main component ────────────────────────────────────────────────────────────
 
 export default function NistCsfReport() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
 
@@ -264,7 +270,7 @@ export default function NistCsfReport() {
             label: 'Total Gap Score',
             value: totalGap > 0 ? `+${totalGap}` : totalGap === 0 && summary.rated_count > 0 ? '0' : '—',
             sub: gapRatings.length > 0 ? `${gapRatings.length} subcategories behind target` : 'No gaps identified',
-            color: totalGap > 0 ? '#FFC000' : '#70AD47',
+            color: totalGap > 0 ? (isLight ? '#9a6500' : '#FFC000') : '#70AD47',
           },
         ].map(kpi => (
           <Grid item xs={12} sm={6} md={3} key={kpi.label}>
@@ -379,7 +385,7 @@ export default function NistCsfReport() {
                     <TableCell sx={{ py: 0.6, fontSize: '0.78rem' }}>{fs.function_name}</TableCell>
                     <TableCell sx={{ py: 0.6 }}><TierBadge tier={fs.avg_current ? Math.round(fs.avg_current) : null} /></TableCell>
                     <TableCell sx={{ py: 0.6 }}><TierBadge tier={fs.avg_target ? Math.round(fs.avg_target) : null} /></TableCell>
-                    <TableCell sx={{ py: 0.6, fontSize: '0.75rem', color: gap != null && gap > 0 ? '#FFC000' : gap === 0 ? '#70AD47' : 'text.disabled' }}>
+                    <TableCell sx={{ py: 0.6, fontSize: '0.75rem', color: gap != null && gap > 0 ? (isLight ? '#9a6500' : '#FFC000') : gap === 0 ? '#70AD47' : 'text.disabled' }}>
                       {gap != null ? (gap > 0 ? `+${gap.toFixed(2)}` : gap.toFixed(2)) : '—'}
                     </TableCell>
                     <TableCell sx={{ py: 0.6, fontSize: '0.75rem' }}>{fs.rated_count} / {fs.total_count}</TableCell>
@@ -432,7 +438,7 @@ export default function NistCsfReport() {
                       <TableCell sx={{ py: 0.5 }}>
                         <Chip
                           label={`+${gap}`} size="small"
-                          sx={{ fontSize: '0.62rem', height: 16, fontWeight: 700, bgcolor: '#FFC00022', color: '#FFC000' }}
+                          sx={{ fontSize: '0.62rem', height: 16, fontWeight: 700, bgcolor: isLight ? 'rgba(230,160,0,0.15)' : '#FFC00022', color: isLight ? '#9a6500' : '#FFC000' }}
                         />
                       </TableCell>
                       <TableCell sx={{ py: 0.5, fontSize: '0.65rem', color: 'text.secondary' }}>
@@ -487,7 +493,7 @@ export default function NistCsfReport() {
                     <TableCell sx={{ py: 0.5 }}><TierBadge tier={r.target_tier} /></TableCell>
                     <TableCell sx={{ py: 0.5, fontSize: '0.72rem' }}>
                       {gap != null
-                        ? <Typography sx={{ fontSize: '0.7rem', fontWeight: 700, color: gap > 0 ? '#FFC000' : gap === 0 ? '#70AD47' : '#FF5252' }}>
+                        ? <Typography sx={{ fontSize: '0.7rem', fontWeight: 700, color: gap > 0 ? (isLight ? '#9a6500' : '#FFC000') : gap === 0 ? '#70AD47' : '#FF5252' }}>
                           {gap > 0 ? `+${gap}` : gap}
                         </Typography>
                         : <Typography variant="caption" color="text.disabled">{'—'}</Typography>}

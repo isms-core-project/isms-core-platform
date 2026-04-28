@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import {
   Alert, Box, Chip, CircularProgress, Divider, InputAdornment,
   Paper, Tab, Tabs, TextField, Typography,
@@ -60,16 +61,24 @@ async function fetchGlossary(domain: string, part: string, q?: string): Promise<
 // ── Entry card ────────────────────────────────────────────────────────────────
 
 function EntryCard({ entry, accent }: { entry: GlossaryEntry; accent: string }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const chipBg = isLight
+    ? `${accent}12`
+    : accent === AI_ACCENT ? '#1a0e08' : accent === INFRA_ACCENT ? '#081a18' : '#0a1e30'
+  const hoverBg = isLight
+    ? `${accent}08`
+    : accent === AI_ACCENT ? '#1a0e08' : accent === INFRA_ACCENT ? '#081a18' : '#0a1520'
   return (
     <Paper
       variant="outlined"
       sx={{
         p: 2,
-        bgcolor: '#0d1117',
+        bgcolor: 'background.paper',
         borderColor: 'divider',
         '&:hover': {
           borderColor: accent,
-          bgcolor: accent === AI_ACCENT ? '#1a0e08' : accent === INFRA_ACCENT ? '#081a18' : '#0a1520',
+          bgcolor: hoverBg,
         },
         transition: 'border-color 0.15s, background-color 0.15s',
       }}
@@ -80,12 +89,12 @@ function EntryCard({ entry, accent }: { entry: GlossaryEntry; accent: string }) 
           size="small"
           sx={{
             fontSize: '0.68rem', height: 18, fontFamily: 'monospace',
-            bgcolor: accent === AI_ACCENT ? '#1a0e08' : accent === INFRA_ACCENT ? '#081a18' : '#0a1e30',
+            bgcolor: chipBg,
             color: accent,
             border: `1px solid ${accent}40`, fontWeight: 600,
           }}
         />
-        <Typography variant="subtitle2" sx={{ fontWeight: 600, color: '#e0e0e0' }}>
+        <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
           {entry.title}
         </Typography>
       </Box>
@@ -109,6 +118,11 @@ function GlossaryPanel({
   accent: string
   defaultPart: string
 }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const accentChipBg = isLight
+    ? `${accent}12`
+    : accent === AI_ACCENT ? '#1a0e08' : accent === INFRA_ACCENT ? '#081a18' : '#0a1e30'
   const [part, setPart] = useState(defaultPart)
   const [searchInput, setSearchInput] = useState('')
   const [activeQuery, setActiveQuery] = useState('')
@@ -174,7 +188,7 @@ function GlossaryPanel({
             label={activeQuery}
             size="small"
             onDelete={() => { setActiveQuery(''); setSearchInput('') }}
-            sx={{ bgcolor: accent === AI_ACCENT ? '#1a0e08' : accent === INFRA_ACCENT ? '#081a18' : '#0a1e30', color: accent }}
+            sx={{ bgcolor: accentChipBg, color: accent }}
           />
         </Box>
       )}
@@ -193,7 +207,7 @@ function GlossaryPanel({
       {data && !isLoading && (
         <>
           {activeQuery && data.results_text ? (
-            <Paper variant="outlined" sx={{ p: 2.5, bgcolor: '#0d1117', borderColor: 'divider' }}>
+            <Paper variant="outlined" sx={{ p: 2.5, bgcolor: 'background.paper', borderColor: 'divider' }}>
               <Typography variant="caption" color={accent} sx={{ fontWeight: 600, display: 'block', mb: 1 }}>
                 Search results — {data.standard}
               </Typography>
@@ -207,7 +221,7 @@ function GlossaryPanel({
                 <Chip
                   label={`${data.entries.length} entries`}
                   size="small"
-                  sx={{ bgcolor: accent === AI_ACCENT ? '#1a0e08' : accent === INFRA_ACCENT ? '#081a18' : '#0a1e30', color: accent, fontSize: '0.72rem' }}
+                  sx={{ bgcolor: accentChipBg, color: accent, fontSize: '0.72rem' }}
                 />
                 <Divider orientation="vertical" flexItem />
                 <Typography variant="caption" color="text.disabled">{data.standard}</Typography>

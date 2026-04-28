@@ -3,7 +3,7 @@ import { useQuery, keepPreviousData } from '@tanstack/react-query'
 import {
   Box, Chip, CircularProgress, Collapse, InputAdornment,
   MenuItem, Paper, Select, Table, TableBody, TableCell,
-  TableHead, TableRow, TextField, Tooltip, Typography,
+  TableHead, TableRow, TextField, Tooltip, Typography, useTheme,
 } from '@mui/material'
 import {
   CoronavirusOutlined, ExpandMoreOutlined, ExpandLessOutlined,
@@ -16,9 +16,29 @@ const INTEL_COLOR = '#B84F00'
 const PAGE_SIZE = 50
 
 const SOURCE_COLOR: Record<string, string> = {
-  circl_misp:   '#B84F00',
-  botvrij_misp: '#8b5a00',
-  abuseipdb:    '#1565c0',
+  circl_misp:      '#B84F00',
+  botvrij_misp:    '#8b5a00',
+  abuseipdb:       '#1565c0',
+  urlhaus:         '#e65100',
+  threatfox:       '#b71c1c',
+  sslbl:           '#6a1b9a',
+  feodotracker:    '#880e4f',
+  red_flag_domains:'#c62828',
+  stopforumspam:   '#37474f',
+  malwarebazaar:   '#e65100',
+}
+
+const SOURCE_LABEL: Record<string, string> = {
+  circl_misp:      'CIRCL MISP',
+  botvrij_misp:    'Botvrij MISP',
+  abuseipdb:       'AbuseIPDB',
+  urlhaus:         'URLhaus',
+  threatfox:       'ThreatFox',
+  sslbl:           'SSLBL',
+  feodotracker:    'Feodo Tracker',
+  red_flag_domains:'Red Flag Domains',
+  stopforumspam:   'StopForumSpam',
+  malwarebazaar:   'MalwareBazaar',
 }
 
 const TYPE_COLOR: Record<string, string> = {
@@ -36,6 +56,13 @@ function fmt(iso: string | null): string {
 }
 
 function IocRow({ ioc }: { ioc: IocRead }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const familyChip  = isLight ? { bg: 'rgba(106,13,173,0.12)', fg: '#4a0080' } : { bg: '#2a0a3a', fg: '#d4b8f0' }
+  const actorChip   = isLight ? { bg: 'rgba(68,114,196,0.12)', fg: '#2E5099' } : { bg: '#1a1a2e', fg: '#9fc8f0' }
+  const tidChip     = isLight ? { bg: 'rgba(180,100,0,0.12)',  fg: '#7a4800' } : { bg: '#3a1a00', fg: '#ffcc80' }
+  const expandBg    = isLight ? 'rgba(180,100,0,0.04)' : 'rgba(184,79,0,0.04)'
+  const expandBorder = isLight ? '1px solid rgba(0,0,0,0.08)' : '1px solid rgba(255,255,255,0.06)'
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -61,7 +88,7 @@ function IocRow({ ioc }: { ioc: IocRead }) {
         </TableCell>
         <TableCell>
           <Chip
-            label={ioc.source.replace('_misp', ' MISP').replace('abuseipdb', 'AbuseIPDB')}
+            label={SOURCE_LABEL[ioc.source] ?? ioc.source}
             size="small"
             sx={{
               fontSize: '0.65rem', height: 18,
@@ -84,16 +111,16 @@ function IocRow({ ioc }: { ioc: IocRead }) {
             {ioc.family_slugs.slice(0, 2).map(s => (
               <Chip key={s} icon={<CoronavirusOutlined sx={{ fontSize: 11 }} />}
                 label={s} size="small"
-                sx={{ fontSize: '0.62rem', height: 16, bgcolor: '#2a0a3a', color: '#d4b8f0' }} />
+                sx={{ fontSize: '0.62rem', height: 16, bgcolor: familyChip.bg, color: familyChip.fg }} />
             ))}
             {ioc.actor_slugs.slice(0, 2).map(s => (
               <Chip key={s} icon={<StreamOutlined sx={{ fontSize: 11 }} />}
                 label={s} size="small"
-                sx={{ fontSize: '0.62rem', height: 16, bgcolor: '#1a1a2e', color: '#9fc8f0' }} />
+                sx={{ fontSize: '0.62rem', height: 16, bgcolor: actorChip.bg, color: actorChip.fg }} />
             ))}
             {ioc.mitre_tids.slice(0, 3).map(t => (
               <Chip key={t} label={t} size="small"
-                sx={{ fontSize: '0.62rem', height: 16, bgcolor: '#3a1a00', color: '#ffcc80' }} />
+                sx={{ fontSize: '0.62rem', height: 16, bgcolor: tidChip.bg, color: tidChip.fg }} />
             ))}
           </Box>
         </TableCell>
@@ -107,7 +134,7 @@ function IocRow({ ioc }: { ioc: IocRead }) {
       <TableRow>
         <TableCell colSpan={7} sx={{ p: 0, border: 'none' }}>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <Box sx={{ px: 3, py: 1.5, bgcolor: 'rgba(184,79,0,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <Box sx={{ px: 3, py: 1.5, bgcolor: expandBg, borderBottom: expandBorder }}>
               <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 1.5 }}>
                 <Box>
                   <Typography variant="caption" color="text.secondary" display="block">Full value</Typography>
@@ -191,7 +218,7 @@ export default function IocExplorer() {
     <Box sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 2 }}>
       <PageHeader
         title="IOC Explorer"
-        subtitle={`Indicators of compromise from MISP feeds and AbuseIPDB${total ? ` — ${total.toLocaleString()} total` : ''}`}
+        subtitle={`Indicators of compromise from MISP, Abuse.ch, AbuseIPDB and reputation feeds${total ? ` — ${total.toLocaleString()} total` : ''}`}
       />
 
       {/* ── Filters ── */}
@@ -215,6 +242,13 @@ export default function IocExplorer() {
           <MenuItem value="circl_misp" sx={{ fontSize: '0.82rem' }}>CIRCL MISP</MenuItem>
           <MenuItem value="botvrij_misp" sx={{ fontSize: '0.82rem' }}>Botvrij MISP</MenuItem>
           <MenuItem value="abuseipdb" sx={{ fontSize: '0.82rem' }}>AbuseIPDB</MenuItem>
+          <MenuItem value="urlhaus" sx={{ fontSize: '0.82rem' }}>URLhaus</MenuItem>
+          <MenuItem value="threatfox" sx={{ fontSize: '0.82rem' }}>ThreatFox</MenuItem>
+          <MenuItem value="sslbl" sx={{ fontSize: '0.82rem' }}>SSLBL</MenuItem>
+          <MenuItem value="feodotracker" sx={{ fontSize: '0.82rem' }}>Feodo Tracker</MenuItem>
+          <MenuItem value="red_flag_domains" sx={{ fontSize: '0.82rem' }}>Red Flag Domains</MenuItem>
+          <MenuItem value="stopforumspam" sx={{ fontSize: '0.82rem' }}>StopForumSpam</MenuItem>
+          <MenuItem value="malwarebazaar" sx={{ fontSize: '0.82rem' }}>MalwareBazaar</MenuItem>
         </Select>
         <Typography variant="caption" color="text.secondary" sx={{ ml: 'auto' }}>
           {total.toLocaleString()} results

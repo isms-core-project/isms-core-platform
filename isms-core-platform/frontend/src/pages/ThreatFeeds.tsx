@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import {
   Alert, Box, Button, Chip, CircularProgress, FormControl, FormControlLabel,
-  InputLabel, MenuItem, Paper, Select, Switch, Table, TableBody, TableCell,
-  TableHead, TableRow, Tooltip, Typography,
+  InputLabel, MenuItem, Paper, Select, Switch, Tab, Table, TableBody, TableCell,
+  TableHead, TableRow, Tabs, Tooltip, Typography, useTheme,
 } from '@mui/material'
 import {
   BugReportOutlined, CheckCircleOutlined, CoronavirusOutlined, DownloadOutlined,
@@ -43,7 +43,7 @@ function StatusChip({ status }: { status: string | null }) {
 }
 
 const FEED_ICONS: Record<string, React.ReactNode> = {
-  mitre_attack_v18: <SecurityOutlined sx={{ fontSize: 28, color: INTEL_COLOR }} />,
+  mitre_attack_v19: <SecurityOutlined sx={{ fontSize: 28, color: INTEL_COLOR }} />,
   mitre_atlas:      <PolicyOutlined sx={{ fontSize: 28, color: INTEL_COLOR }} />,
   cisa_kev:         <BugReportOutlined sx={{ fontSize: 28, color: '#c62828' }} />,
   epss:             <VerifiedOutlined sx={{ fontSize: 28, color: '#1565c0' }} />,
@@ -51,13 +51,27 @@ const FEED_ICONS: Record<string, React.ReactNode> = {
   botvrij_misp:     <TrackChangesOutlined sx={{ fontSize: 28, color: INTEL_COLOR }} />,
   abuseipdb:        <RouterOutlined sx={{ fontSize: 28, color: '#7b1fa2' }} />,
   malpedia:         <CoronavirusOutlined sx={{ fontSize: 28, color: '#b71c1c' }} />,
+  urlhaus:          <RouterOutlined sx={{ fontSize: 28, color: '#e65100' }} />,
+  threatfox:        <TrackChangesOutlined sx={{ fontSize: 28, color: '#b71c1c' }} />,
+  sslbl:            <SecurityOutlined sx={{ fontSize: 28, color: '#4a148c' }} />,
+  feodotracker:     <TrackChangesOutlined sx={{ fontSize: 28, color: '#880e4f' }} />,
+  red_flag_domains: <ErrorOutlined sx={{ fontSize: 28, color: '#c62828' }} />,
+  stopforumspam:    <RouterOutlined sx={{ fontSize: 28, color: '#37474f' }} />,
+  malwarebazaar:    <BugReportOutlined sx={{ fontSize: 28, color: '#e65100' }} />,
 }
 
 const TI_FEED_DEFS: Array<Pick<FeedStatusItem, 'feed_name' | 'display_name'>> = [
-  { feed_name: 'circl_misp',   display_name: 'MISP CIRCL' },
-  { feed_name: 'botvrij_misp', display_name: 'MISP Botvrij' },
-  { feed_name: 'abuseipdb',    display_name: 'AbuseIPDB' },
-  { feed_name: 'malpedia',     display_name: 'Malpedia' },
+  { feed_name: 'circl_misp',       display_name: 'MISP CIRCL' },
+  { feed_name: 'botvrij_misp',     display_name: 'MISP Botvrij' },
+  { feed_name: 'abuseipdb',        display_name: 'AbuseIPDB' },
+  { feed_name: 'urlhaus',          display_name: 'URLhaus' },
+  { feed_name: 'threatfox',        display_name: 'ThreatFox' },
+  { feed_name: 'sslbl',            display_name: 'SSL Blacklist' },
+  { feed_name: 'feodotracker',     display_name: 'Feodo Tracker' },
+  { feed_name: 'red_flag_domains', display_name: 'Red Flag Domains' },
+  { feed_name: 'stopforumspam',    display_name: 'Stopforumspam' },
+  { feed_name: 'malwarebazaar',    display_name: 'MalwareBazaar' },
+  { feed_name: 'malpedia',         display_name: 'Malpedia' },
 ]
 
 const TACTIC_COLORS = [
@@ -68,13 +82,21 @@ const TACTIC_COLORS = [
 
 // ── Component ──────────────────────────────────────────────────────────────────
 
-const AUDIT_STATUS_COLORS: Record<string, { bg: string; color: string; label: string }> = {
-  no_evidence:    { bg: '#3a0a0a', color: '#FFC7CE', label: 'No Evidence' },
-  pending_review: { bg: '#3a2e00', color: '#FFEB9C', label: 'Pending Review' },
-  draft:          { bg: '#1e1e2e', color: '#aaa',    label: 'Draft' },
-  active:         { bg: '#1a2a3a', color: '#9fc8f0', label: 'Active' },
-  approved:       { bg: '#1a3a27', color: '#C6EFCE', label: 'Approved' },
-  rejected:       { bg: '#2a1a1a', color: '#FFC7CE', label: 'Rejected' },
+const AUDIT_STATUS_COLORS_DARK: Record<string, { bg: string; color: string; label: string }> = {
+  no_evidence:    { bg: '#3a0a0a',              color: '#FFC7CE', label: 'No Evidence' },
+  pending_review: { bg: '#3a2e00',              color: '#FFEB9C', label: 'Pending Review' },
+  draft:          { bg: '#1e1e2e',              color: '#aaa',    label: 'Draft' },
+  active:         { bg: '#1a2a3a',              color: '#9fc8f0', label: 'Active' },
+  approved:       { bg: '#1a3a27',              color: '#C6EFCE', label: 'Approved' },
+  rejected:       { bg: '#2a1a1a',              color: '#FFC7CE', label: 'Rejected' },
+}
+const AUDIT_STATUS_COLORS_LIGHT: Record<string, { bg: string; color: string; label: string }> = {
+  no_evidence:    { bg: 'rgba(192,0,0,0.12)',   color: '#9e0000', label: 'No Evidence' },
+  pending_review: { bg: 'rgba(230,160,0,0.12)', color: '#7a4800', label: 'Pending Review' },
+  draft:          { bg: 'rgba(0,0,0,0.07)',     color: '#555',    label: 'Draft' },
+  active:         { bg: 'rgba(68,114,196,0.12)',color: '#2E5099', label: 'Active' },
+  approved:       { bg: 'rgba(46,125,50,0.12)', color: '#1b5e20', label: 'Approved' },
+  rejected:       { bg: 'rgba(192,0,0,0.12)',   color: '#9e0000', label: 'Rejected' },
 }
 
 function exportAuditCsv(entries: import('../api/feedsApi').KevAuditEntry[], months: number) {
@@ -101,7 +123,18 @@ function exportAuditCsv(entries: import('../api/feedsApi').KevAuditEntry[], mont
 }
 
 export default function ThreatFeeds() {
+  const muiTheme = useTheme()
+  const isLight = muiTheme.palette.mode === 'light'
+  const AUDIT_STATUS_COLORS = isLight ? AUDIT_STATUS_COLORS_LIGHT : AUDIT_STATUS_COLORS_DARK
+  const tooltipStyle = {
+    background: muiTheme.palette.background.paper,
+    border: `1px solid ${muiTheme.palette.divider}`,
+    borderRadius: 6,
+    fontSize: 12,
+    color: muiTheme.palette.text.primary,
+  }
   const [auditMonths, setAuditMonths] = useState(12)
+  const [feedTab, setFeedTab] = useState(0)
   const { user } = useAuth()
   const isAdmin = user?.role === 'admin' || user?.role === 'super_admin'
   const qc = useQueryClient()
@@ -187,6 +220,13 @@ export default function ThreatFeeds() {
     },
   })
 
+  const { data: iocStats } = useQuery({
+    queryKey: ['threat-intel', 'ioc-stats'],
+    queryFn: threatIntelApi.getIocStats,
+    enabled: tiEnabled,
+    staleTime: 5 * 60_000,
+  })
+
   const { data: kevStats } =
     useQuery({ queryKey: ['feeds', 'kev', 'stats'], queryFn: feedsApi.getKevStats })
 
@@ -222,9 +262,8 @@ export default function ThreatFeeds() {
       {statusError && <Alert severity="error" sx={{ mb: 2 }}>Failed to load feed status</Alert>}
       {triggerError && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setTriggerError(null)}>{triggerError}</Alert>}
 
-      {/* ── Feed status cards ── */}
+      {/* ── Feed status cards (tabbed) ── */}
       {(() => {
-        // TI feed items: live from summary when enabled, static placeholders when disabled
         const tiFeedItems: FeedStatusItem[] = tiEnabled && tiSummary
           ? tiSummary.sources.map(s => ({
               feed_name: s.source,
@@ -241,6 +280,7 @@ export default function ThreatFeeds() {
             }))
 
         const TI_NAMES = new Set(TI_FEED_DEFS.map(f => f.feed_name))
+        const regularFeeds = (status?.feeds ?? []).filter(f => !TI_NAMES.has(f.feed_name))
 
         function FeedCard({ feed, isTi = false, disabled = false }: { feed: FeedStatusItem; isTi?: boolean; disabled?: boolean }) {
           const card = (
@@ -358,23 +398,60 @@ export default function ThreatFeeds() {
           return <span key={feed.feed_name}>{card}</span>
         }
 
-        const regularFeeds = (status?.feeds ?? []).filter(f => !TI_NAMES.has(f.feed_name))
-
         return (
-          <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))', gap: 2, mb: 3 }}>
-            {regularFeeds.map(feed => <FeedCard key={feed.feed_name} feed={feed} />)}
-            {tiFeedItems.map(feed => <FeedCard key={feed.feed_name} feed={feed} isTi={true} disabled={!tiEnabled} />)}
-            {!statusLoading && regularFeeds.length === 0 && tiFeedItems.length === 0 && (
-              <Alert severity="info" icon={<HourglassEmptyOutlined />} sx={{ width: '100%' }}>
-                No feed data yet — the feeds container will populate data on its first run.
-              </Alert>
+          <Box sx={{ mb: 3 }}>
+            <Tabs
+              value={feedTab}
+              onChange={(_, v) => setFeedTab(v)}
+              sx={{ mb: 2, borderBottom: 1, borderColor: 'divider', minHeight: 36 }}
+              TabIndicatorProps={{ style: { height: 2 } }}
+            >
+              <Tab
+                label={`Vulnerability Feeds (${regularFeeds.length})`}
+                sx={{ fontSize: '0.82rem', minHeight: 36, textTransform: 'none', fontWeight: 600 }}
+              />
+              <Tab
+                label={
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
+                    {`Threat Intelligence (${tiFeedItems.length})`}
+                    {!tiEnabled && (
+                      <Chip label="inactive" size="small" sx={{ fontSize: '0.62rem', height: 16, opacity: 0.6 }} />
+                    )}
+                  </Box>
+                }
+                sx={{ fontSize: '0.82rem', minHeight: 36, textTransform: 'none', fontWeight: 600 }}
+              />
+            </Tabs>
+
+            {feedTab === 0 && (
+              <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))', gap: 2 }}>
+                {regularFeeds.map(feed => <FeedCard key={feed.feed_name} feed={feed} />)}
+                {!statusLoading && regularFeeds.length === 0 && (
+                  <Alert severity="info" icon={<HourglassEmptyOutlined />} sx={{ gridColumn: '1 / -1' }}>
+                    No feed data yet — the feeds container will populate data on its first run.
+                  </Alert>
+                )}
+              </Box>
+            )}
+
+            {feedTab === 1 && (
+              <Box>
+                {!tiEnabled && (
+                  <Alert severity="info" sx={{ mb: 2 }}>
+                    Threat Intelligence feeds require <strong>--profile threat-intel</strong> to be active. Set <code>THREAT_INTEL_ENABLED=true</code> in your .env once the profile is running.
+                  </Alert>
+                )}
+                <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))', gap: 2 }}>
+                  {tiFeedItems.map(feed => <FeedCard key={feed.feed_name} feed={feed} isTi={true} disabled={!tiEnabled} />)}
+                </Box>
+              </Box>
             )}
           </Box>
         )
       })()}
 
-      {/* ── Feed settings (admin only) ── */}
-      {isAdmin && feedSettings !== undefined && (
+      {/* ── Feed settings (admin only, vuln tab) ── */}
+      {feedTab === 0 && isAdmin && feedSettings !== undefined && (
         <Paper variant="outlined" sx={{ p: 2, borderRadius: 2, mb: 3, display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
           <TuneOutlined sx={{ color: 'text.secondary', fontSize: 20 }} />
           <Typography variant="subtitle2" fontWeight={600} sx={{ mr: 1 }}>
@@ -409,8 +486,8 @@ export default function ThreatFeeds() {
         </Paper>
       )}
 
-      {/* ── Charts row ── */}
-      <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mb: 3 }}>
+      {/* ── Vuln charts + KEV tables (tab 0 only) ── */}
+      {feedTab === 0 && <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mb: 3 }}>
 
         {/* CISA KEV by month */}
         {kevStats && kevStats.by_month.length > 0 && (
@@ -448,7 +525,7 @@ export default function ThreatFeeds() {
                 />
                 <YAxis tick={{ fontSize: 10 }} width={30} />
                 <ChartTooltip
-                  contentStyle={{ background: '#1e2432', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, fontSize: 12 }}
+                  contentStyle={tooltipStyle}
                 />
                 <Bar dataKey="count" fill="#c62828" radius={[2, 2, 0, 0]} />
               </BarChart>
@@ -482,7 +559,7 @@ export default function ThreatFeeds() {
                 <XAxis type="number" tick={{ fontSize: 10 }} />
                 <YAxis dataKey="name" type="category" tick={{ fontSize: 10 }} width={110} />
                 <ChartTooltip
-                  contentStyle={{ background: '#1e2432', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, fontSize: 12 }}
+                  contentStyle={tooltipStyle}
                 />
                 <Bar dataKey="count" radius={[0, 2, 2, 0]}>
                   {tacticData.map((_, i) => (
@@ -493,8 +570,9 @@ export default function ThreatFeeds() {
             </ResponsiveContainer>
           </Paper>
         )}
-      </Box>
+      </Box>}
 
+      {feedTab === 0 && <>
       {/* ── Recent KEV entries ── */}
       {recentKev && recentKev.items.length > 0 && (
         <Paper variant="outlined" sx={{ borderRadius: 2, overflow: 'hidden' }}>
@@ -579,9 +657,9 @@ export default function ThreatFeeds() {
           <Box sx={{ display: 'flex', gap: 2, p: 2, flexWrap: 'wrap', borderBottom: '1px solid', borderColor: 'divider' }}>
             {[
               { label: 'Total KEV', value: auditReport.total, color: 'text.primary' },
-              { label: 'With Evidence', value: auditReport.covered, color: '#C6EFCE' },
-              { label: 'No Evidence', value: auditReport.uncovered, color: '#FFC7CE' },
-              { label: 'Ransomware / No Evidence', value: auditReport.ransomware_uncovered, color: '#FFC7CE' },
+              { label: 'With Evidence', value: auditReport.covered, color: isLight ? '#1b5e20' : '#C6EFCE' },
+              { label: 'No Evidence', value: auditReport.uncovered, color: isLight ? '#9e0000' : '#FFC7CE' },
+              { label: 'Ransomware / No Evidence', value: auditReport.ransomware_uncovered, color: isLight ? '#9e0000' : '#FFC7CE' },
             ].map(s => (
               <Box key={s.label} sx={{ textAlign: 'center', flex: '1 1 120px' }}>
                 <Typography variant="h5" fontWeight={700} sx={{ color: s.color, lineHeight: 1.2 }}>{s.value}</Typography>
@@ -622,7 +700,7 @@ export default function ThreatFeeds() {
                       </Typography>
                     </TableCell>
                     <TableCell sx={{ fontSize: '0.75rem', whiteSpace: 'nowrap' }}>{entry.date_added ?? '—'}</TableCell>
-                    <TableCell sx={{ fontSize: '0.75rem', whiteSpace: 'nowrap', color: entry.due_date ? '#FFEB9C' : 'text.secondary' }}>{entry.due_date ?? '—'}</TableCell>
+                    <TableCell sx={{ fontSize: '0.75rem', whiteSpace: 'nowrap', color: entry.due_date ? (muiTheme.palette.mode === 'light' ? '#9a6500' : '#FFEB9C') : 'text.secondary' }}>{entry.due_date ?? '—'}</TableCell>
                     <TableCell>
                       {entry.known_ransomware
                         ? <Chip label="Yes" size="small" color="error" sx={{ fontSize: '0.68rem', height: 18 }} />
@@ -651,6 +729,74 @@ export default function ThreatFeeds() {
           </Box>
         )}
       </Paper>
+      </>}
+
+      {/* ── TI charts (tab 1 only) ── */}
+      {feedTab === 1 && iocStats && (
+        <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mt: 1 }}>
+
+          {/* IOCs by source */}
+          <Paper variant="outlined" sx={{ p: 2, borderRadius: 2, flex: '1 1 340px' }}>
+            <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 1.5 }}>IOCs by Source</Typography>
+            <ResponsiveContainer width="100%" height={220}>
+              <BarChart
+                data={iocStats.source_totals.map(s => ({ name: s.source.replace(/_/g, ' ').replace('misp', 'MISP'), count: s.count }))}
+                layout="vertical" barSize={10}
+              >
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                <XAxis type="number" tick={{ fontSize: 10 }} />
+                <YAxis dataKey="name" type="category" tick={{ fontSize: 10 }} width={110} />
+                <ChartTooltip contentStyle={tooltipStyle} />
+                <Bar dataKey="count" radius={[0, 2, 2, 0]}>
+                  {iocStats.source_totals.map((_, i) => (
+                    <Cell key={i} fill={TACTIC_COLORS[i % TACTIC_COLORS.length]} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </Paper>
+
+          {/* IOC type breakdown */}
+          <Paper variant="outlined" sx={{ p: 2, borderRadius: 2, flex: '1 1 260px' }}>
+            <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 1.5 }}>IOC Types</Typography>
+            <ResponsiveContainer width="100%" height={220}>
+              <BarChart
+                data={iocStats.type_breakdown.map(t => ({ name: t.type, count: t.count }))}
+                layout="vertical" barSize={14}
+              >
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                <XAxis type="number" tick={{ fontSize: 10 }} />
+                <YAxis dataKey="name" type="category" tick={{ fontSize: 10, fontFamily: 'monospace' }} width={50} />
+                <ChartTooltip contentStyle={tooltipStyle} />
+                <Bar dataKey="count" radius={[0, 2, 2, 0]}>
+                  {iocStats.type_breakdown.map((_, i) => (
+                    <Cell key={i} fill={TACTIC_COLORS[i % TACTIC_COLORS.length]} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </Paper>
+
+          {/* Top malware families */}
+          {iocStats.top_families.length > 0 && (
+            <Paper variant="outlined" sx={{ p: 2, borderRadius: 2, flex: '1 1 340px' }}>
+              <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 1.5 }}>Top Malware Families</Typography>
+              <ResponsiveContainer width="100%" height={220}>
+                <BarChart
+                  data={iocStats.top_families.map(f => ({ name: f.family.replace(/_/g, ' '), count: f.count }))}
+                  layout="vertical" barSize={10}
+                >
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                  <XAxis type="number" tick={{ fontSize: 10 }} />
+                  <YAxis dataKey="name" type="category" tick={{ fontSize: 10 }} width={120} />
+                  <ChartTooltip contentStyle={tooltipStyle} />
+                  <Bar dataKey="count" fill="#b71c1c" radius={[0, 2, 2, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </Paper>
+          )}
+        </Box>
+      )}
     </Box>
   )
 }

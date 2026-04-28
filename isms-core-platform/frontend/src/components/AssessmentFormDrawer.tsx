@@ -4,6 +4,7 @@
  * Opens as a right drawer from ControlDetail.
  */
 import { useState, useEffect } from 'react'
+import { useTheme } from '@mui/material/styles'
 import {
   Drawer, Box, Typography, IconButton, Tabs, Tab, Divider,
   Table, TableHead, TableRow, TableCell, TableBody, TableContainer,
@@ -20,12 +21,20 @@ import { useProject } from '../store/ProjectContext'
 
 // ── Status chip colours ──────────────────────────────────────────────────────
 
-const STATUS_CHIP: Record<string, { bg: string; fg: string; label: string }> = {
+const STATUS_CHIP_DARK: Record<string, { bg: string; fg: string; label: string }> = {
   compliant:     { bg: '#1a3a27', fg: '#C6EFCE', label: '✅ Compliant' },
   partial:       { bg: '#3a2e00', fg: '#FFEB9C', label: '⚠️ Partial' },
   non_compliant: { bg: '#3a0000', fg: '#FFC7CE', label: '❌ Non-Compliant' },
   na:            { bg: 'rgba(255,255,255,0.06)', fg: '#9e9e9e', label: '➖ N/A' },
   not_assessed:  { bg: 'rgba(255,255,255,0.04)', fg: '#666', label: '— Not assessed' },
+}
+
+const STATUS_CHIP_LIGHT: Record<string, { bg: string; fg: string; label: string }> = {
+  compliant:     { bg: 'rgba(46,125,50,0.15)',  fg: '#1b5e20', label: '✅ Compliant' },
+  partial:       { bg: 'rgba(230,145,0,0.15)',  fg: '#9a6500', label: '⚠️ Partial' },
+  non_compliant: { bg: 'rgba(192,0,0,0.12)',    fg: '#9e0000', label: '❌ Non-Compliant' },
+  na:            { bg: 'rgba(0,0,0,0.06)',       fg: '#666',    label: '➖ N/A' },
+  not_assessed:  { bg: 'rgba(0,0,0,0.04)',       fg: '#888',    label: '— Not assessed' },
 }
 
 // ── Blank row factory ────────────────────────────────────────────────────────
@@ -50,6 +59,8 @@ interface EditRowProps {
 }
 
 function EditRow({ rowIndex, columns, values, saved, saving, onCellChange, onSave, onDelete }: EditRowProps) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   return (
     <TableRow hover sx={{ '& td': { py: 0.5, px: 1 } }}>
       <TableCell sx={{ color: 'text.disabled', fontSize: '0.65rem', width: 32 }}>{rowIndex}</TableCell>
@@ -84,7 +95,7 @@ function EditRow({ rowIndex, columns, values, saved, saving, onCellChange, onSav
         <Box sx={{ display: 'flex', gap: 0.5 }}>
           <Tooltip title={saved ? 'Saved' : 'Save row'}>
             <IconButton size="small" onClick={onSave} disabled={saving || saved}
-              sx={{ color: saved ? '#C6EFCE' : 'primary.main' }}>
+              sx={{ color: saved ? (isLight ? '#1b5e20' : '#C6EFCE') : 'primary.main' }}>
               {saving ? <CircularProgress size={14} /> : <SaveOutlined sx={{ fontSize: 16 }} />}
             </IconButton>
           </Tooltip>
@@ -107,6 +118,9 @@ function SavedRow({ item, columns, onDelete, onUpdate }: {
   onDelete: () => void
   onUpdate: (header: string, value: string) => void
 }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const STATUS_CHIP = isLight ? STATUS_CHIP_LIGHT : STATUS_CHIP_DARK
   const [editing, setEditing] = useState(false)
   const [vals, setVals] = useState<Record<string, string>>(item.col_data ?? {})
 
@@ -169,6 +183,8 @@ interface SheetPanelProps {
 
 function SheetPanel({ formSheet, assessmentId, savedSheet, onRowAdded, onRowDeleted }: SheetPanelProps) {
   const qc = useQueryClient()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [pending, setPending] = useState<Record<string, string>[]>([])
   const [savingIdx, setSavingIdx] = useState<number | null>(null)
   const [savedIdxs, setSavedIdxs] = useState<Set<number>>(new Set())
@@ -236,14 +252,14 @@ function SheetPanel({ formSheet, assessmentId, savedSheet, onRowAdded, onRowDele
         <Table size="small" stickyHeader>
           <TableHead>
             <TableRow>
-              <TableCell sx={{ width: 32, bgcolor: '#1e1e1e', color: 'text.disabled', fontSize: '0.6rem' }}>#</TableCell>
+              <TableCell sx={{ width: 32, bgcolor: isLight ? 'rgba(0,0,0,0.06)' : '#1e1e1e', color: 'text.disabled', fontSize: '0.6rem' }}>#</TableCell>
               {formSheet.columns.map((col) => (
-                <TableCell key={col.header} sx={{ bgcolor: '#1e1e1e', fontSize: '0.7rem', fontWeight: 600, whiteSpace: 'nowrap' }}>
+                <TableCell key={col.header} sx={{ bgcolor: isLight ? 'rgba(0,0,0,0.06)' : '#1e1e1e', fontSize: '0.7rem', fontWeight: 600, whiteSpace: 'nowrap' }}>
                   {col.header}
-                  {col.is_status_col && <Chip label="status" size="small" sx={{ ml: 0.5, fontSize: '0.55rem', height: 14, bgcolor: 'rgba(68,114,196,0.2)', color: '#9DC3E6' }} />}
+                  {col.is_status_col && <Chip label="status" size="small" sx={{ ml: 0.5, fontSize: '0.55rem', height: 14, bgcolor: 'rgba(68,114,196,0.2)', color: isLight ? '#1565c0' : '#9DC3E6' }} />}
                 </TableCell>
               ))}
-              <TableCell sx={{ bgcolor: '#1e1e1e', width: 80 }} />
+              <TableCell sx={{ bgcolor: isLight ? 'rgba(0,0,0,0.06)' : '#1e1e1e', width: 80 }} />
             </TableRow>
           </TableHead>
           <TableBody>
@@ -306,6 +322,8 @@ interface Props {
 export default function AssessmentFormDrawer({ open, onClose, groupCode, groupName, productType = 'framework', generatorId }: Props) {
   const qc = useQueryClient()
   const { activeProject } = useProject()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [tab, setTab] = useState(0)
   const [assessmentId, setAssessmentId] = useState<string | null>(null)
   const [creating, setCreating] = useState(false)
@@ -368,17 +386,17 @@ export default function AssessmentFormDrawer({ open, onClose, groupCode, groupNa
       anchor="right"
       open={open}
       onClose={onClose}
-      PaperProps={{ sx: { width: { xs: '100%', md: 'calc(100vw - 60px)' }, maxWidth: 1600, bgcolor: '#141414', borderLeft: '1px solid rgba(255,255,255,0.08)' } }}
+      PaperProps={{ sx: { width: { xs: '100%', md: 'calc(100vw - 60px)' }, maxWidth: 1600, bgcolor: 'background.paper', borderLeft: '1px solid', borderColor: 'divider' } }}
     >
       {/* Header */}
-      <Box sx={{ px: 3, py: 2, borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', gap: 1 }}>
+      <Box sx={{ px: 3, py: 2, borderBottom: '1px solid', borderColor: 'divider', display: 'flex', alignItems: 'center', gap: 1 }}>
         <AssignmentOutlined sx={{ color: 'primary.main', fontSize: 20 }} />
         <Box sx={{ flex: 1 }}>
           <Typography variant="subtitle1" fontWeight={700}>{groupName}</Typography>
           <Typography variant="caption" color="text.secondary">{groupCode.toUpperCase()} — Platform Assessment</Typography>
         </Box>
         {assessmentId && (
-          <Chip label="In Progress" size="small" sx={{ bgcolor: 'rgba(68,114,196,0.2)', color: '#9DC3E6', fontSize: '0.65rem' }} />
+          <Chip label="In Progress" size="small" sx={{ bgcolor: 'rgba(68,114,196,0.2)', color: isLight ? '#1565c0' : '#9DC3E6', fontSize: '0.65rem' }} />
         )}
         <IconButton onClick={onClose} size="small"><CloseOutlined /></IconButton>
       </Box>
@@ -414,7 +432,7 @@ export default function AssessmentFormDrawer({ open, onClose, groupCode, groupNa
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75, mb: 3 }}>
               {formSheets.map((s) => (
                 <Chip key={s.sheet_name} label={s.sheet_name} size="small"
-                  sx={{ fontSize: '0.65rem', bgcolor: 'rgba(68,114,196,0.1)', color: '#9DC3E6' }} />
+                  sx={{ fontSize: '0.65rem', bgcolor: 'rgba(68,114,196,0.1)', color: isLight ? '#1565c0' : '#9DC3E6' }} />
               ))}
             </Box>
 
@@ -432,7 +450,7 @@ export default function AssessmentFormDrawer({ open, onClose, groupCode, groupNa
                     value={label} onChange={(e) => setLabel(e.target.value.replace(/[^a-zA-Z0-9 \-_]/g, ''))}
                     inputProps={{ maxLength: 25 }}
                     helperText={
-                      <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', color: '#9DC3E6' }}>
+                      <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', color: isLight ? '#1565c0' : '#9DC3E6' }}>
                         {docIdPreview}
                       </span>
                     }
@@ -511,7 +529,7 @@ export default function AssessmentFormDrawer({ open, onClose, groupCode, groupNa
                         {s.sheet_name}
                         {(savedSheet?.row_count ?? 0) > 0 && (
                           <Chip label={savedSheet!.row_count} size="small"
-                            sx={{ fontSize: '0.55rem', height: 14, bgcolor: '#1a3a27', color: '#C6EFCE' }} />
+                            sx={{ fontSize: '0.55rem', height: 14, bgcolor: isLight ? 'rgba(46,125,50,0.15)' : '#1a3a27', color: isLight ? '#1b5e20' : '#C6EFCE' }} />
                         )}
                       </Box>
                     }

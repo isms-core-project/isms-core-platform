@@ -1,3 +1,4 @@
+import { useTheme } from '@mui/material/styles'
 import {
   Box,
   Drawer,
@@ -41,6 +42,8 @@ async function fetchContent(target: DocPreviewTarget): Promise<string> {
 }
 
 export default function DocPreviewDrawer({ open, onClose, target }: Props) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const isExternal = target?.productType === 'external'
 
   const { data: content, isLoading, isError } = useQuery({
@@ -61,7 +64,7 @@ export default function DocPreviewDrawer({ open, onClose, target }: Props) {
         '& .MuiDrawer-paper': {
           width: DRAWER_WIDTH,
           maxWidth: '92vw',
-          bgcolor: '#0d1117',
+          bgcolor: 'background.paper',
           borderLeft: '1px solid rgba(68,114,196,0.2)',
           display: 'flex',
           flexDirection: 'column',
@@ -69,7 +72,7 @@ export default function DocPreviewDrawer({ open, onClose, target }: Props) {
       }}
     >
       {/* Header */}
-      <Box sx={{ px: 2.5, py: 1.5, borderBottom: '1px solid rgba(255,255,255,0.06)', flexShrink: 0 }}>
+      <Box sx={{ px: 2.5, py: 1.5, borderBottom: '1px solid', borderBottomColor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.06)', flexShrink: 0 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <ArticleOutlined sx={{ color: 'primary.light', fontSize: 18 }} />
           <Box sx={{ flex: 1, minWidth: 0 }}>
@@ -101,7 +104,7 @@ export default function DocPreviewDrawer({ open, onClose, target }: Props) {
         </Box>
       </Box>
 
-      <Divider sx={{ borderColor: 'rgba(255,255,255,0.06)' }} />
+      <Divider />
 
       {/* Content */}
       <Box sx={{ flex: 1, overflowY: 'auto', px: 3, py: 2 }}>
@@ -110,11 +113,11 @@ export default function DocPreviewDrawer({ open, onClose, target }: Props) {
             <Alert severity="info" sx={{ mb: 2 }}>
               External documents are stored as uploaded files and cannot be previewed inline.
             </Alert>
-            <Box sx={{ p: 2, bgcolor: 'rgba(255,192,0,0.06)', border: '1px solid rgba(255,192,0,0.2)', borderRadius: 2 }}>
-              <Typography variant="caption" sx={{ color: '#FFC000', fontWeight: 600, display: 'block', mb: 0.5 }}>
+            <Box sx={{ p: 2, bgcolor: isLight ? 'rgba(230,160,0,0.08)' : 'rgba(255,192,0,0.06)', border: `1px solid ${isLight ? 'rgba(180,110,0,0.25)' : 'rgba(255,192,0,0.2)'}`, borderRadius: 2 }}>
+              <Typography variant="caption" sx={{ color: isLight ? '#7a4800' : '#FFC000', fontWeight: 600, display: 'block', mb: 0.5 }}>
                 External Document
               </Typography>
-              <Typography variant="caption" sx={{ fontFamily: 'monospace', color: '#FFC000', display: 'block', mb: 0.5 }}>
+              <Typography variant="caption" sx={{ fontFamily: 'monospace', color: isLight ? '#7a4800' : '#FFC000', display: 'block', mb: 0.5 }}>
                 {target?.documentId}
               </Typography>
               <Typography variant="body2" fontWeight={600}>{target?.title}</Typography>
@@ -135,20 +138,20 @@ export default function DocPreviewDrawer({ open, onClose, target }: Props) {
         {!isExternal && content && (
           <Box
             sx={{
-              '& h1': { fontSize: '1.25rem', fontWeight: 700, mt: 2, mb: 1, color: 'text.primary', borderBottom: '1px solid rgba(255,255,255,0.08)', pb: 0.5 },
+              '& h1': { fontSize: '1.25rem', fontWeight: 700, mt: 2, mb: 1, color: 'text.primary', borderBottom: '1px solid', borderBottomColor: isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.08)', pb: 0.5 },
               '& h2': { fontSize: '1.05rem', fontWeight: 700, mt: 2, mb: 0.75, color: 'text.primary' },
               '& h3': { fontSize: '0.95rem', fontWeight: 600, mt: 1.5, mb: 0.5, color: 'text.secondary' },
               '& h4,& h5,& h6': { fontSize: '0.85rem', fontWeight: 600, mt: 1, mb: 0.5, color: 'text.secondary' },
               '& p': { fontSize: '0.85rem', lineHeight: 1.7, mb: 1, color: 'text.primary' },
               '& ul,& ol': { pl: 2.5, mb: 1 },
               '& li': { fontSize: '0.85rem', lineHeight: 1.7, mb: 0.25, color: 'text.primary' },
-              '& code': { fontFamily: 'monospace', fontSize: '0.78rem', bgcolor: 'rgba(68,114,196,0.12)', px: 0.5, borderRadius: 0.5, color: '#79b8ff' },
-              '& pre': { bgcolor: 'rgba(0,0,0,0.4)', borderRadius: 1, p: 1.5, overflow: 'auto', mb: 1, '& code': { bgcolor: 'transparent', px: 0, color: '#79b8ff' } },
+              '& code': { fontFamily: 'monospace', fontSize: '0.78rem', bgcolor: 'rgba(68,114,196,0.12)', px: 0.5, borderRadius: 0.5, color: isLight ? '#1565c0' : '#79b8ff' },
+              '& pre': { bgcolor: isLight ? 'rgba(0,0,0,0.04)' : 'rgba(0,0,0,0.4)', borderRadius: 1, p: 1.5, overflow: 'auto', mb: 1, '& code': { bgcolor: 'transparent', px: 0, color: isLight ? '#1565c0' : '#79b8ff' } },
               '& blockquote': { borderLeft: '3px solid rgba(68,114,196,0.5)', pl: 2, ml: 0, color: 'text.secondary', fontStyle: 'italic' },
               '& table': { width: '100%', borderCollapse: 'collapse', mb: 1.5, fontSize: '0.8rem' },
-              '& th': { bgcolor: 'rgba(68,114,196,0.15)', px: 1, py: 0.5, textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.1)', fontWeight: 700 },
-              '& td': { px: 1, py: 0.5, borderBottom: '1px solid rgba(255,255,255,0.05)' },
-              '& hr': { borderColor: 'rgba(255,255,255,0.08)', my: 2 },
+              '& th': { bgcolor: 'rgba(68,114,196,0.15)', px: 1, py: 0.5, textAlign: 'left', borderBottom: '1px solid', borderBottomColor: isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.1)', fontWeight: 700 },
+              '& td': { px: 1, py: 0.5, borderBottom: '1px solid', borderBottomColor: isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)' },
+              '& hr': { borderColor: isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.08)', my: 2 },
               '& a': { color: 'primary.light' },
               '& strong': { fontWeight: 700 },
             }}

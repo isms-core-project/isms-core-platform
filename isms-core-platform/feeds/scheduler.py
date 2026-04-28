@@ -72,21 +72,33 @@ def _safe(fn, name: str):
 
 
 def _clear_stale_runs():
-    """Mark any feed_runs still in 'running' state as failed — left over from a previous container crash."""
+    """Delete any feed_run rows left in 'running' state from a previous container session.
+    Scoped to vuln feeds only — TI feeds have their own scheduler and clean up their own rows.
+    Deleting (not marking error) avoids false health alerts."""
     try:
         from feeds.base import get_conn
         with get_conn() as conn:
             with conn.cursor() as cur:
                 cur.execute(
                     """
-                    UPDATE feed_runs SET status='error', finished_at=NOW(),
-                      error_message='Container restarted — run interrupted'
-                    WHERE status='running'
+                    DELETE FROM feed_runs
+                    WHERE (
+                        status = 'running'
+                        OR (status = 'error' AND error_message = 'Container restarted — run interrupted')
+                    )
+                    AND (  feed_name LIKE 'mitre%'
+                        OR feed_name LIKE 'atlas%'
+                        OR feed_name LIKE 'cisa_kev%'
+                        OR feed_name LIKE 'epss%'
+                        OR feed_name LIKE 'nvd_cve%'
+                        OR feed_name LIKE 'nvd_cpe%'
+                        OR feed_name LIKE 'euvd%'
+                        )
                     """
                 )
                 count = cur.rowcount
         if count:
-            logger.info("Cleared %d stale running feed_run(s) on startup", count)
+            logger.info("Removed %d interrupted vuln feed_run(s) from previous container session", count)
     except Exception as exc:
         logger.warning("Could not clear stale feed runs: %s", exc)
 

@@ -14,6 +14,7 @@ import {
   Chip,
   Alert,
   Skeleton,
+  useTheme,
 } from '@mui/material'
 import { SearchOutlined, ClearOutlined, RefreshOutlined } from '@mui/icons-material'
 import { useQuery } from '@tanstack/react-query'
@@ -38,6 +39,8 @@ function Highlight({ html }: { html: string }) {
 }
 
 export default function Search() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [searchParams] = useSearchParams()
   const initialQ = searchParams.get('q') ?? ''
   const [query, setQuery] = useState(initialQ)
@@ -183,7 +186,7 @@ export default function Search() {
                       fontSize: '0.65rem',
                       height: 16,
                       bgcolor: hit.type === 'policy' ? 'rgba(68,114,196,0.18)' : 'rgba(112,173,71,0.15)',
-                      color: hit.type === 'policy' ? 'primary.light' : '#C6EFCE',
+                      color: hit.type === 'policy' ? 'primary.light' : (isLight ? '#1b5e20' : '#C6EFCE'),
                     }}
                   />
                   {hit.impl_type && <Chip label={hit.impl_type} size="small" sx={{ fontSize: '0.65rem', height: 16 }} />}

@@ -15,7 +15,7 @@ const MALWARE_COLOR = '#9C27B0'
 const TOOL_COLOR = '#0288D1'
 
 export default function MitreSoftware() {
-  const [source, setSource] = useState<'attack_v18' | 'attack_v19'>('attack_v18')
+  const [source] = useState<'attack_v19'>('attack_v19')
   const [softwareType, setSoftwareType] = useState<'malware' | 'tool' | ''>('')
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
@@ -82,7 +82,6 @@ export default function MitreSoftware() {
           exclusive
           onChange={(_, v) => v && setSource(v)}
         >
-          <ToggleButton value="attack_v18" sx={{ fontSize: '0.72rem', px: 1.5 }}>v18</ToggleButton>
           <ToggleButton value="attack_v19" sx={{ fontSize: '0.72rem', px: 1.5 }}>v19</ToggleButton>
         </ToggleButtonGroup>
 

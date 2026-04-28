@@ -16,6 +16,7 @@ import {
   InputAdornment,
   ToggleButtonGroup,
   ToggleButton,
+  useTheme,
 } from '@mui/material'
 import { SearchOutlined, AccountTreeOutlined, GridViewOutlined, ViewListOutlined } from '@mui/icons-material'
 import { useQuery } from '@tanstack/react-query'
@@ -25,14 +26,23 @@ import PageHeader from '../components/PageHeader'
 import { useProduct, PRODUCT_COLORS } from '../store/ProductContext'
 import { useProject } from '../store/ProjectContext'
 
-const STATUS_HM_COLOR: Record<string, string> = {
+const STATUS_HM_COLOR_DARK: Record<string, string> = {
   complete:   '#C6EFCE',
   partial:    '#FFEB9C',
   basic:      '#FFD580',
   incomplete: '#FFC7CE',
 }
+const STATUS_HM_COLOR_LIGHT: Record<string, string> = {
+  complete:   '#4caf50',
+  partial:    '#ff9800',
+  basic:      '#f57c00',
+  incomplete: '#f44336',
+}
 
 function HeatmapCell({ cg }: { cg: CgItem }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const STATUS_HM_COLOR = isLight ? STATUS_HM_COLOR_LIGHT : STATUS_HM_COLOR_DARK
   const navigate = useNavigate()
   const sectionKey = cg.section?.match(/A\.\d/)?.[0] ?? ''
   const sectionColor = SECTION_COLOR[sectionKey] ?? '#4472C4'
@@ -165,6 +175,9 @@ function ControlCard({ cg, colorOverride }: { cg: CgItem; colorOverride?: string
 type ViewMode = 'grid' | 'heatmap'
 
 export default function Controls() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const STATUS_HM_COLOR = isLight ? STATUS_HM_COLOR_LIGHT : STATUS_HM_COLOR_DARK
   const location = useLocation()
   const { product, ismsTier } = useProduct()
   const { activeProject } = useProject()

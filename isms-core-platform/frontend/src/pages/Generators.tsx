@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTheme } from '@mui/material/styles'
 import {
   Box,
   Card,
@@ -128,6 +129,8 @@ function SheetList({ sheets }: { sheets: SheetInfo[] }) {
 
 // ─── Workbook preview drawer ───────────────────────────────────────────────────
 function SheetSchemaTab({ schema }: { schema: SheetSchema }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   if (!schema.columns.length) {
     return <Typography variant="body2" sx={{ p: 2, color: 'text.secondary' }}>No column data extracted.</Typography>
   }
@@ -141,7 +144,7 @@ function SheetSchemaTab({ schema }: { schema: SheetSchema }) {
           <Chip
             label={`Status col: ${schema.status_column_letter}`}
             size="small"
-            sx={{ height: 20, fontSize: '0.65rem', bgcolor: '#FFF3CD', color: '#856404', border: '1px solid #FFC00060' }}
+            sx={{ height: 20, fontSize: '0.65rem', bgcolor: isLight ? 'rgba(230,145,0,0.12)' : 'rgba(255,192,0,0.15)', color: isLight ? '#9a6500' : '#FFC000', border: '1px solid rgba(255,192,0,0.4)' }}
           />
         )}
         {schema.header_row && (
@@ -152,7 +155,7 @@ function SheetSchemaTab({ schema }: { schema: SheetSchema }) {
         <TableHead>
           <TableRow>
             {['#', 'Col', 'Header', 'Width', 'DV Values', 'Flags'].map(h => (
-              <TableCell key={h} sx={{ fontWeight: 700, fontSize: '0.7rem', py: 0.5, whiteSpace: 'nowrap', bgcolor: '#F2F2F2' }}>
+              <TableCell key={h} sx={{ fontWeight: 700, fontSize: '0.7rem', py: 0.5, whiteSpace: 'nowrap', bgcolor: isLight ? '#F2F2F2' : 'rgba(255,255,255,0.06)' }}>
                 {h}
               </TableCell>
             ))}
@@ -163,15 +166,15 @@ function SheetSchemaTab({ schema }: { schema: SheetSchema }) {
             <TableRow
               key={col.index}
               sx={{
-                bgcolor: col.is_status_col ? '#FFF8E1' : 'inherit',
-                '&:hover': { bgcolor: col.is_status_col ? '#FFF3CD' : 'action.hover' },
+                bgcolor: col.is_status_col ? (isLight ? 'rgba(230,145,0,0.08)' : 'rgba(255,192,0,0.08)') : 'inherit',
+                '&:hover': { bgcolor: col.is_status_col ? (isLight ? 'rgba(230,145,0,0.15)' : 'rgba(255,192,0,0.15)') : 'action.hover' },
               }}
             >
               <TableCell sx={{ fontSize: '0.7rem', py: 0.4, color: 'text.secondary', width: 32 }}>{col.index}</TableCell>
-              <TableCell sx={{ fontSize: '0.7rem', py: 0.4, fontFamily: 'monospace', fontWeight: 700, color: '#003366', width: 36 }}>{col.letter}</TableCell>
+              <TableCell sx={{ fontSize: '0.7rem', py: 0.4, fontFamily: 'monospace', fontWeight: 700, color: isLight ? '#003366' : '#9fc8f0', width: 36 }}>{col.letter}</TableCell>
               <TableCell sx={{ fontSize: '0.75rem', py: 0.4, fontWeight: col.is_status_col ? 700 : 400 }}>
                 {col.header}
-                {col.required && <Chip label="*" size="small" sx={{ ml: 0.5, height: 16, fontSize: '0.6rem', bgcolor: '#FFC7CE', color: '#C00000' }} />}
+                {col.required && <Chip label="*" size="small" sx={{ ml: 0.5, height: 16, fontSize: '0.6rem', bgcolor: isLight ? 'rgba(192,0,0,0.12)' : '#FFC7CE', color: '#C00000' }} />}
               </TableCell>
               <TableCell sx={{ fontSize: '0.7rem', py: 0.4, color: 'text.secondary', width: 52 }}>{col.width}</TableCell>
               <TableCell sx={{ fontSize: '0.68rem', py: 0.4, maxWidth: 220 }}>
@@ -191,7 +194,7 @@ function SheetSchemaTab({ schema }: { schema: SheetSchema }) {
                 )}
               </TableCell>
               <TableCell sx={{ fontSize: '0.65rem', py: 0.4, width: 60 }}>
-                {col.is_status_col && <Chip label="STATUS" size="small" sx={{ height: 16, fontSize: '0.58rem', bgcolor: '#FFC7CE40', color: '#856404' }} />}
+                {col.is_status_col && <Chip label="STATUS" size="small" sx={{ height: 16, fontSize: '0.58rem', bgcolor: isLight ? 'rgba(192,0,0,0.08)' : '#FFC7CE40', color: isLight ? '#9e0000' : '#856404' }} />}
               </TableCell>
             </TableRow>
           ))}
@@ -474,6 +477,8 @@ function EditDialog({
 
 // ─── Single generator card ────────────────────────────────────────────────────
 function GeneratorCard({ gen: initialGen }: { gen: GeneratorItem }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [expanded, setExpanded] = useState(false)
   const [editOpen, setEditOpen] = useState(false)
   const [previewOpen, setPreviewOpen] = useState(false)
@@ -570,7 +575,7 @@ function GeneratorCard({ gen: initialGen }: { gen: GeneratorItem }) {
                     label="Override"
                     size="small"
                     onClick={handleClearOverride}
-                    sx={{ height: 20, fontSize: '0.65rem', bgcolor: '#FFF3CD', color: '#856404', border: '1px solid #FFC00060', cursor: 'pointer' }}
+                    sx={{ height: 20, fontSize: '0.65rem', bgcolor: isLight ? '#FFF3CD' : 'rgba(255,192,0,0.12)', color: isLight ? '#856404' : '#FFEB9C', border: `1px solid ${isLight ? '#FFC00060' : 'rgba(255,192,0,0.3)'}`, cursor: 'pointer' }}
                   />
                 </Tooltip>
               )}
@@ -580,7 +585,7 @@ function GeneratorCard({ gen: initialGen }: { gen: GeneratorItem }) {
                     icon={<LayersOutlined sx={{ fontSize: '0.8rem !important' }} />}
                     label="Stacked"
                     size="small"
-                    sx={{ height: 20, fontSize: '0.65rem', bgcolor: '#FFC7CE20', color: '#C00000', border: '1px solid #C0000040' }}
+                    sx={{ height: 20, fontSize: '0.65rem', bgcolor: isLight ? 'rgba(192,0,0,0.08)' : '#FFC7CE20', color: isLight ? '#9e0000' : '#FFC7CE', border: `1px solid ${isLight ? 'rgba(192,0,0,0.25)' : '#C0000040'}` }}
                   />
                 </Tooltip>
               )}
@@ -588,7 +593,7 @@ function GeneratorCard({ gen: initialGen }: { gen: GeneratorItem }) {
                 <Chip
                   label={domainLabel}
                   size="small"
-                  sx={{ height: 20, fontSize: '0.65rem', bgcolor: '#E3F2FD', color: '#1565C0', border: '1px solid #1565C040' }}
+                  sx={{ height: 20, fontSize: '0.65rem', bgcolor: isLight ? '#E3F2FD' : 'rgba(21,101,192,0.12)', color: '#1565C0', border: `1px solid ${isLight ? '#1565C040' : 'rgba(21,101,192,0.3)'}` }}
                 />
               )}
               <Chip

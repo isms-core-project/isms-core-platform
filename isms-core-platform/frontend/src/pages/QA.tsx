@@ -29,6 +29,7 @@ import {
   DialogContent,
   DialogActions,
   Stack,
+  useTheme,
 } from '@mui/material'
 import {
   PlayArrowOutlined,
@@ -57,18 +58,17 @@ import { useProduct, PRODUCT_SUBTITLES, PRODUCT_COLORS } from '../store/ProductC
 
 dayjs.extend(relativeTime)
 
-const STATUS_COLOR: Record<string, { bg: string; fg: string }> = {
+const STATUS_COLOR_DARK: Record<string, { bg: string; fg: string }> = {
   pass: { bg: '#1a3a27', fg: '#C6EFCE' },
   warning: { bg: '#3a2e00', fg: '#FFEB9C' },
   fail: { bg: '#3a0000', fg: '#FFC7CE' },
   needs_review: { bg: 'rgba(255,255,255,0.07)', fg: '#d9d9d9' },
 }
-
-const STATUS_ICON = {
-  pass: <CheckCircleOutlined sx={{ fontSize: 14, color: '#C6EFCE' }} />,
-  warning: <WarningAmberOutlined sx={{ fontSize: 14, color: '#FFEB9C' }} />,
-  fail: <ErrorOutlined sx={{ fontSize: 14, color: '#FFC7CE' }} />,
-  needs_review: <HelpOutlineOutlined sx={{ fontSize: 14, color: '#d9d9d9' }} />,
+const STATUS_COLOR_LIGHT: Record<string, { bg: string; fg: string }> = {
+  pass: { bg: 'rgba(46,125,50,0.12)', fg: '#1b5e20' },
+  warning: { bg: 'rgba(230,160,0,0.12)', fg: '#7a4800' },
+  fail: { bg: 'rgba(192,0,0,0.12)', fg: '#9e0000' },
+  needs_review: { bg: 'rgba(0,0,0,0.06)', fg: '#555' },
 }
 
 function SummaryCard({
@@ -80,6 +80,9 @@ function SummaryCard({
   bucket: QASummaryBucket
   color: string
 }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const STATUS_COLOR = isLight ? STATUS_COLOR_LIGHT : STATUS_COLOR_DARK
   const pct = Math.round(bucket.pass_rate * 100)
   return (
     <Card>
@@ -97,17 +100,17 @@ function SummaryCard({
             mb: 1.5,
             height: 6,
             borderRadius: 3,
-            bgcolor: 'rgba(255,255,255,0.08)',
+            bgcolor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)',
             '& .MuiLinearProgress-bar': { bgcolor: color },
           }}
         />
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-          <Chip label={`${bucket.pass_count} pass`} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: '#1a3a27', color: '#C6EFCE' }} />
+          <Chip label={`${bucket.pass_count} pass`} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: STATUS_COLOR.pass.bg, color: STATUS_COLOR.pass.fg }} />
           {bucket.warning_count > 0 && (
-            <Chip label={`${bucket.warning_count} warn`} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: '#3a2e00', color: '#FFEB9C' }} />
+            <Chip label={`${bucket.warning_count} warn`} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: STATUS_COLOR.warning.bg, color: STATUS_COLOR.warning.fg }} />
           )}
           {bucket.fail_count > 0 && (
-            <Chip label={`${bucket.fail_count} fail`} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: '#3a0000', color: '#FFC7CE' }} />
+            <Chip label={`${bucket.fail_count} fail`} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: STATUS_COLOR.fail.bg, color: STATUS_COLOR.fail.fg }} />
           )}
           {bucket.needs_review_count > 0 && (
             <Chip label={`${bucket.needs_review_count} review`} size="small" sx={{ fontSize: '0.65rem', height: 18 }} />
@@ -371,8 +374,26 @@ const METHOD_LEGEND: Record<string, { summary: string; thresholds: string; rows:
 
 function MethodLegendPopover({ method }: { method: string }) {
   const [anchor, setAnchor] = useState<HTMLButtonElement | null>(null)
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const legend = METHOD_LEGEND[method]
   if (!legend) return null
+
+  function resolveChipBg(chipBg: string): string {
+    if (chipBg === 'transparent') return 'transparent'
+    if (chipBg === '#1a3a27') return isLight ? 'rgba(46,125,50,0.12)' : '#1a3a27'
+    if (chipBg === '#3a2e00') return isLight ? 'rgba(230,160,0,0.12)' : '#3a2e00'
+    if (chipBg === '#3a0000') return isLight ? 'rgba(192,0,0,0.12)' : '#3a0000'
+    return chipBg
+  }
+
+  function resolveChipFg(chipBg: string, chipFg: string): string {
+    if (chipBg === 'transparent') return isLight ? '#555' : chipFg
+    if (chipBg === '#1a3a27') return isLight ? '#1b5e20' : '#C6EFCE'
+    if (chipBg === '#3a2e00') return isLight ? '#7a4800' : '#FFEB9C'
+    if (chipBg === '#3a0000') return isLight ? '#9e0000' : '#FFC7CE'
+    return isLight ? (chipFg === '#9DC3E6' ? '#1565c0' : chipFg) : chipFg
+  }
 
   return (
     <>
@@ -387,7 +408,7 @@ function MethodLegendPopover({ method }: { method: string }) {
         onClose={() => setAnchor(null)}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-        PaperProps={{ sx: { p: 2, maxWidth: 480, bgcolor: '#1e1e1e', border: '1px solid rgba(255,255,255,0.1)' } }}
+        PaperProps={{ sx: { p: 2, maxWidth: 480, border: '1px solid rgba(128,128,128,0.2)' } }}
       >
         <Typography variant="body2" fontWeight={600} sx={{ mb: 0.5 }}>
           {METHOD_LABELS[method]}
@@ -398,8 +419,8 @@ function MethodLegendPopover({ method }: { method: string }) {
 
         {/* Audit relevance banner */}
         {legend.auditRelevant ? (
-          <Box sx={{ mb: 1.5, px: 1, py: 0.5, bgcolor: 'rgba(198,239,206,0.08)', borderRadius: 1, border: '1px solid rgba(198,239,206,0.2)' }}>
-            <Typography variant="caption" sx={{ color: '#C6EFCE', fontWeight: 600 }}>
+          <Box sx={{ mb: 1.5, px: 1, py: 0.5, bgcolor: isLight ? 'rgba(46,125,50,0.08)' : 'rgba(198,239,206,0.08)', borderRadius: 1, border: '1px solid ' + (isLight ? 'rgba(46,125,50,0.25)' : 'rgba(198,239,206,0.2)') }}>
+            <Typography variant="caption" sx={{ color: isLight ? '#1b5e20' : '#C6EFCE', fontWeight: 600 }}>
               ✓ Audit-relevant — S1 proxy
             </Typography>
             <Typography variant="caption" color="text.secondary" sx={{ display: 'block', lineHeight: 1.4 }}>
@@ -407,8 +428,8 @@ function MethodLegendPopover({ method }: { method: string }) {
             </Typography>
           </Box>
         ) : (
-          <Box sx={{ mb: 1.5, px: 1, py: 0.5, bgcolor: 'rgba(255,235,156,0.06)', borderRadius: 1, border: '1px solid rgba(255,235,156,0.18)' }}>
-            <Typography variant="caption" sx={{ color: '#FFEB9C', fontWeight: 600 }}>
+          <Box sx={{ mb: 1.5, px: 1, py: 0.5, bgcolor: isLight ? 'rgba(230,160,0,0.08)' : 'rgba(255,235,156,0.06)', borderRadius: 1, border: '1px solid ' + (isLight ? 'rgba(230,160,0,0.25)' : 'rgba(255,235,156,0.18)') }}>
+            <Typography variant="caption" sx={{ color: isLight ? '#7a4800' : '#FFEB9C', fontWeight: 600 }}>
               ⓘ Informational only — does not affect audit status
             </Typography>
             <Typography variant="caption" color="text.secondary" sx={{ display: 'block', lineHeight: 1.4 }}>
@@ -417,8 +438,8 @@ function MethodLegendPopover({ method }: { method: string }) {
           </Box>
         )}
 
-        <Box sx={{ mb: 1.5, px: 1, py: 0.75, bgcolor: 'rgba(255,255,255,0.04)', borderRadius: 1 }}>
-          <Typography variant="caption" sx={{ fontFamily: 'monospace', color: '#FFEB9C' }}>
+        <Box sx={{ mb: 1.5, px: 1, py: 0.75, bgcolor: isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)', borderRadius: 1 }}>
+          <Typography variant="caption" sx={{ fontFamily: 'monospace', color: isLight ? '#7a4800' : '#FFEB9C' }}>
             {legend.thresholds}
           </Typography>
         </Box>
@@ -432,7 +453,12 @@ function MethodLegendPopover({ method }: { method: string }) {
               <Chip
                 label={row.label}
                 size="small"
-                sx={{ fontSize: '0.6rem', height: 16, flexShrink: 0, bgcolor: row.chipBg, color: row.chipFg, border: row.chipBg === 'transparent' ? '1px solid rgba(255,255,255,0.2)' : 'none' }}
+                sx={{
+                  fontSize: '0.6rem', height: 16, flexShrink: 0,
+                  bgcolor: resolveChipBg(row.chipBg),
+                  color: resolveChipFg(row.chipBg, row.chipFg),
+                  border: row.chipBg === 'transparent' ? ('1px solid ' + (isLight ? 'rgba(0,0,0,0.25)' : 'rgba(255,255,255,0.2)')) : 'none',
+                }}
               />
               <Typography variant="caption" color="text.secondary" sx={{ lineHeight: 1.4 }}>
                 {row.description}
@@ -443,7 +469,7 @@ function MethodLegendPopover({ method }: { method: string }) {
 
         <Divider sx={{ my: 1.5 }} />
         <Typography variant="caption" color="text.secondary">
-          Status colours: <Box component="span" sx={{ color: '#C6EFCE' }}>green = pass</Box> · <Box component="span" sx={{ color: '#FFEB9C' }}>amber = warning</Box> · <Box component="span" sx={{ color: '#FFC7CE' }}>red = fail</Box> · grey = needs review
+          Status colours: <Box component="span" sx={{ color: isLight ? '#1b5e20' : '#C6EFCE' }}>green = pass</Box> · <Box component="span" sx={{ color: isLight ? '#7a4800' : '#FFEB9C' }}>amber = warning</Box> · <Box component="span" sx={{ color: isLight ? '#9e0000' : '#FFC7CE' }}>red = fail</Box> · grey = needs review
         </Typography>
       </Popover>
     </>
@@ -475,6 +501,8 @@ const PRODUCT_TYPE_COLOR: Record<string, string> = {
 }
 
 function DetailsCell({ row, method }: { row: CorrelationResultRead; method: string }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   if (method === 'semantic_claude') {
     const reasoning = (row.metadata?.reasoning as string) ?? ''
     const model = (row.metadata?.model as string) ?? 'claude'
@@ -531,7 +559,7 @@ function DetailsCell({ row, method }: { row: CorrelationResultRead; method: stri
             <Chip
               label="short ISO text"
               size="small"
-              sx={{ fontSize: '0.6rem', height: 16, bgcolor: '#3a2e00', color: '#FFEB9C', cursor: 'default' }}
+              sx={{ fontSize: '0.6rem', height: 16, bgcolor: isLight ? 'rgba(230,160,0,0.12)' : '#3a2e00', color: isLight ? '#7a4800' : '#FFEB9C', cursor: 'default' }}
             />
           )}
           <Chip
@@ -540,8 +568,8 @@ function DetailsCell({ row, method }: { row: CorrelationResultRead; method: stri
             size="small"
             sx={{
               fontSize: '0.6rem', height: 16, cursor: 'default',
-              bgcolor: shortIso ? 'rgba(58,46,0,0.4)' : 'rgba(68,114,196,0.15)',
-              color: shortIso ? '#FFEB9C' : '#9DC3E6',
+              bgcolor: shortIso ? (isLight ? 'rgba(230,160,0,0.10)' : 'rgba(58,46,0,0.4)') : 'rgba(68,114,196,0.15)',
+              color: shortIso ? (isLight ? '#7a4800' : '#FFEB9C') : (isLight ? '#1565c0' : '#9DC3E6'),
             }}
           />
         </Box>
@@ -559,7 +587,7 @@ function DetailsCell({ row, method }: { row: CorrelationResultRead; method: stri
           key={k}
           label={k}
           size="small"
-          sx={{ fontSize: '0.6rem', height: 16, bgcolor: '#1a3a27', color: '#C6EFCE' }}
+          sx={{ fontSize: '0.6rem', height: 16, bgcolor: isLight ? 'rgba(46,125,50,0.12)' : '#1a3a27', color: isLight ? '#1b5e20' : '#C6EFCE' }}
         />
       ))}
       {Object.entries((row.metadata?.synonym_matches as Record<string, string>) ?? {}).map(([kw, syn]) => (
@@ -567,7 +595,7 @@ function DetailsCell({ row, method }: { row: CorrelationResultRead; method: stri
           <Chip
             label={`≈ ${kw}`}
             size="small"
-            sx={{ fontSize: '0.6rem', height: 16, bgcolor: '#3a2e00', color: '#FFEB9C', cursor: 'default' }}
+            sx={{ fontSize: '0.6rem', height: 16, bgcolor: isLight ? 'rgba(230,160,0,0.12)' : '#3a2e00', color: isLight ? '#7a4800' : '#FFEB9C', cursor: 'default' }}
           />
         </Tooltip>
       ))}
@@ -576,7 +604,7 @@ function DetailsCell({ row, method }: { row: CorrelationResultRead; method: stri
           <Chip
             label="⚠ External source"
             size="small"
-            sx={{ fontSize: '0.6rem', height: 16, bgcolor: 'rgba(255,192,0,0.15)', color: '#FFC000', cursor: 'default' }}
+            sx={{ fontSize: '0.6rem', height: 16, bgcolor: isLight ? 'rgba(230,160,0,0.12)' : 'rgba(255,192,0,0.15)', color: isLight ? '#7a4800' : '#FFC000', cursor: 'default' }}
           />
         </Tooltip>
       )}
@@ -588,6 +616,8 @@ function DetailsCell({ row, method }: { row: CorrelationResultRead; method: stri
 }
 
 function MissingCell({ row, method }: { row: CorrelationResultRead; method: string }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   if (method === 'semantic_claude') {
     const gaps = (row.metadata?.gaps as string[]) ?? row.missing_keywords
     return gaps.length ? (
@@ -597,7 +627,7 @@ function MissingCell({ row, method }: { row: CorrelationResultRead; method: stri
             key={i}
             label={g}
             size="small"
-            sx={{ fontSize: '0.6rem', height: 16, bgcolor: '#3a0000', color: '#FFC7CE' }}
+            sx={{ fontSize: '0.6rem', height: 16, bgcolor: isLight ? 'rgba(192,0,0,0.12)' : '#3a0000', color: isLight ? '#9e0000' : '#FFC7CE' }}
           />
         ))}
       </Box>
@@ -615,7 +645,7 @@ function MissingCell({ row, method }: { row: CorrelationResultRead; method: stri
           key={k}
           label={k}
           size="small"
-          sx={{ fontSize: '0.6rem', height: 16, bgcolor: '#3a0000', color: '#FFC7CE' }}
+          sx={{ fontSize: '0.6rem', height: 16, bgcolor: isLight ? 'rgba(192,0,0,0.12)' : '#3a0000', color: isLight ? '#9e0000' : '#FFC7CE' }}
         />
       ))}
       {row.missing_keywords.length === 0 && (
@@ -738,10 +768,13 @@ function ReferenceCorpusTab() {
 
 function ProjectHealthCard({ item, method }: { item: OrgProjectSummaryItem; method: string }) {
   const navigate = useNavigate()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const STATUS_COLOR = isLight ? STATUS_COLOR_LIGHT : STATUS_COLOR_DARK
   const pct = Math.round(item.pass_rate * 100)
   const barColor =
-    pct >= 80 ? '#C6EFCE' :
-    pct >= 50 ? '#FFEB9C' : '#FFC7CE'
+    pct >= 80 ? (isLight ? '#1b5e20' : '#C6EFCE') :
+    pct >= 50 ? (isLight ? '#7a4800' : '#FFEB9C') : (isLight ? '#9e0000' : '#FFC7CE')
 
   return (
     <Card
@@ -785,21 +818,21 @@ function ProjectHealthCard({ item, method }: { item: OrgProjectSummaryItem; meth
           value={pct}
           sx={{
             mb: 1.5, height: 5, borderRadius: 3,
-            bgcolor: 'rgba(255,255,255,0.08)',
+            bgcolor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)',
             '& .MuiLinearProgress-bar': { bgcolor: barColor },
           }}
         />
 
         <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap' }}>
           <Chip label={`${item.pass} pass`} size="small"
-            sx={{ fontSize: '0.62rem', height: 17, bgcolor: '#1a3a27', color: '#C6EFCE' }} />
+            sx={{ fontSize: '0.62rem', height: 17, bgcolor: STATUS_COLOR.pass.bg, color: STATUS_COLOR.pass.fg }} />
           {item.warning > 0 && (
             <Chip label={`${item.warning} warn`} size="small"
-              sx={{ fontSize: '0.62rem', height: 17, bgcolor: '#3a2e00', color: '#FFEB9C' }} />
+              sx={{ fontSize: '0.62rem', height: 17, bgcolor: STATUS_COLOR.warning.bg, color: STATUS_COLOR.warning.fg }} />
           )}
           {item.fail > 0 && (
             <Chip label={`${item.fail} fail`} size="small"
-              sx={{ fontSize: '0.62rem', height: 17, bgcolor: '#3a0000', color: '#FFC7CE' }} />
+              sx={{ fontSize: '0.62rem', height: 17, bgcolor: STATUS_COLOR.fail.bg, color: STATUS_COLOR.fail.fg }} />
           )}
           {item.needs_review > 0 && (
             <Chip label={`${item.needs_review} review`} size="small"
@@ -822,6 +855,8 @@ function ProjectHealthCard({ item, method }: { item: OrgProjectSummaryItem; meth
 
 function OrgProjectsTab() {
   const [method, setMethod] = useState<string>('existence')
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
 
   const { data: projects = [], isLoading } = useQuery({
     queryKey: ['qa', 'org-projects', method],
@@ -849,7 +884,7 @@ function OrgProjectsTab() {
         {avgPassRate !== null && (
           <Typography variant="caption" color="text.secondary">
             {projects.length} project{projects.length !== 1 ? 's' : ''} — avg pass rate{' '}
-            <Box component="span" sx={{ color: avgPassRate >= 80 ? '#C6EFCE' : avgPassRate >= 50 ? '#FFEB9C' : '#FFC7CE', fontWeight: 600 }}>
+            <Box component="span" sx={{ color: avgPassRate >= 80 ? (isLight ? '#1b5e20' : '#C6EFCE') : avgPassRate >= 50 ? (isLight ? '#7a4800' : '#FFEB9C') : (isLight ? '#9e0000' : '#FFC7CE'), fontWeight: 600 }}>
               {avgPassRate}%
             </Box>
           </Typography>
@@ -893,6 +928,15 @@ export default function QA() {
   const [product, setProduct] = useState<string>('all')
   const [status, setStatus] = useState<string>('all')
   const [runResult, setRunResult] = useState<string | null>(null)
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const STATUS_COLOR = isLight ? STATUS_COLOR_LIGHT : STATUS_COLOR_DARK
+  const STATUS_ICON = {
+    pass: <CheckCircleOutlined sx={{ fontSize: 14, color: isLight ? '#1b5e20' : '#C6EFCE' }} />,
+    warning: <WarningAmberOutlined sx={{ fontSize: 14, color: isLight ? '#7a4800' : '#FFEB9C' }} />,
+    fail: <ErrorOutlined sx={{ fontSize: 14, color: isLight ? '#9e0000' : '#FFC7CE' }} />,
+    needs_review: <HelpOutlineOutlined sx={{ fontSize: 14, color: isLight ? '#555' : '#d9d9d9' }} />,
+  }
 
   const { data: corpusStatus } = useQuery<ReferenceCorpusStatus>({
     queryKey: ['qa', 'reference-corpus', 'status'],
@@ -968,8 +1012,8 @@ export default function QA() {
   const overallPct = summary ? Math.round(summary.overall_pass_rate * 100) : null
   const overallColor =
     overallPct === null ? 'text.secondary' :
-    overallPct >= 80 ? '#C6EFCE' :
-    overallPct >= 50 ? '#FFEB9C' : '#FFC7CE'
+    overallPct >= 80 ? (isLight ? '#1b5e20' : '#C6EFCE') :
+    overallPct >= 50 ? (isLight ? '#7a4800' : '#FFEB9C') : (isLight ? '#9e0000' : '#FFC7CE')
 
   // Which product cards to show
   const isExistence = method === 'existence'
@@ -1149,9 +1193,9 @@ export default function QA() {
           size="small"
         >
           <ToggleButton value="all">All</ToggleButton>
-          <ToggleButton value="pass" sx={{ color: '#C6EFCE' }}>Pass</ToggleButton>
-          <ToggleButton value="warning" sx={{ color: '#FFEB9C' }}>Warning</ToggleButton>
-          <ToggleButton value="fail" sx={{ color: '#FFC7CE' }}>Fail</ToggleButton>
+          <ToggleButton value="pass" sx={{ color: isLight ? '#1b5e20' : '#C6EFCE' }}>Pass</ToggleButton>
+          <ToggleButton value="warning" sx={{ color: isLight ? '#7a4800' : '#FFEB9C' }}>Warning</ToggleButton>
+          <ToggleButton value="fail" sx={{ color: isLight ? '#9e0000' : '#FFC7CE' }}>Fail</ToggleButton>
           <ToggleButton value="needs_review">Review</ToggleButton>
         </ToggleButtonGroup>
 
@@ -1249,11 +1293,11 @@ export default function QA() {
                               width: 60,
                               height: 6,
                               borderRadius: 3,
-                              bgcolor: 'rgba(255,255,255,0.08)',
+                              bgcolor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)',
                               '& .MuiLinearProgress-bar': {
                                 bgcolor:
-                                  row.qa_status === 'pass' ? '#C6EFCE' :
-                                  row.qa_status === 'warning' ? '#FFEB9C' : '#FFC7CE',
+                                  row.qa_status === 'pass' ? (isLight ? '#1b5e20' : '#C6EFCE') :
+                                  row.qa_status === 'warning' ? (isLight ? '#7a4800' : '#FFEB9C') : (isLight ? '#9e0000' : '#FFC7CE'),
                               },
                             }}
                           />

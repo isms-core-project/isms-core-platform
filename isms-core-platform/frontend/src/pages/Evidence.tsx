@@ -31,6 +31,7 @@ import {
   ToggleButtonGroup,
   Tooltip,
   Typography,
+  useTheme,
 } from '@mui/material'
 import {
   AssignmentOutlined,
@@ -73,12 +74,19 @@ const EVIDENCE_TYPES = [
   'threat_intel',
 ]
 
-const STATUS_COLORS: Record<string, { bg: string; color: string; label: string }> = {
+const STATUS_COLORS_DARK: Record<string, { bg: string; color: string; label: string }> = {
   draft:          { bg: '#1e1e2e', color: '#aaa',    label: 'Draft' },
   pending_review: { bg: '#3a2e00', color: '#FFEB9C', label: 'Pending Review' },
   active:         { bg: '#1a2a3a', color: '#9fc8f0', label: 'Active' },
   approved:       { bg: '#1a3a27', color: '#C6EFCE', label: 'Approved' },
   rejected:       { bg: '#3a0000', color: '#FFC7CE', label: 'Rejected' },
+}
+const STATUS_COLORS_LIGHT: Record<string, { bg: string; color: string; label: string }> = {
+  draft:          { bg: 'rgba(0,0,0,0.06)',         color: '#666',    label: 'Draft' },
+  pending_review: { bg: 'rgba(230,160,0,0.12)',      color: '#7a4800', label: 'Pending Review' },
+  active:         { bg: 'rgba(21,101,192,0.12)',     color: '#1565c0', label: 'Active' },
+  approved:       { bg: 'rgba(46,125,50,0.12)',      color: '#1b5e20', label: 'Approved' },
+  rejected:       { bg: 'rgba(192,0,0,0.12)',        color: '#9e0000', label: 'Rejected' },
 }
 
 type FilterTab = 'all' | 'valid' | 'expiring' | 'expired' | 'unverified'
@@ -229,6 +237,8 @@ function BulkUploadDialog({
   onClose: () => void
   onSuccess: () => void
 }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [files, setFiles] = useState<BulkFile[]>([])
   const [evidenceType, setEvidenceType] = useState('document')
   const [notes, setNotes] = useState('')
@@ -330,10 +340,10 @@ function BulkUploadDialog({
                 </Box>
                 {bf.status === 'queued' && <Chip label="queued" size="small" sx={{ height: 16, fontSize: '0.6rem' }} />}
                 {bf.status === 'uploading' && <Chip label="uploading…" size="small" color="info" sx={{ height: 16, fontSize: '0.6rem' }} />}
-                {bf.status === 'done' && <CheckOutlined sx={{ fontSize: 16, color: '#C6EFCE' }} />}
+                {bf.status === 'done' && <CheckOutlined sx={{ fontSize: 16, color: isLight ? '#1b5e20' : '#C6EFCE' }} />}
                 {bf.status === 'error' && (
                   <Tooltip title={bf.error ?? 'error'}>
-                    <ErrorOutlineOutlined sx={{ fontSize: 16, color: '#FFC7CE' }} />
+                    <ErrorOutlineOutlined sx={{ fontSize: 16, color: isLight ? '#9e0000' : '#FFC7CE' }} />
                   </Tooltip>
                 )}
                 {!uploading && bf.status === 'queued' && (
@@ -476,14 +486,23 @@ function RejectDialog({
 }
 
 // ── Automated Evidence tab ────────────────────────────────────────────────────
-const CLASSIFICATION_COLORS: Record<string, string> = {
+const CLASSIFICATION_COLORS_DARK: Record<string, string> = {
   compliant:     '#C6EFCE',
   non_compliant: '#FFC7CE',
   warning:       '#FFEB9C',
   info:          '#9fc8f0',
 }
+const CLASSIFICATION_COLORS_LIGHT: Record<string, string> = {
+  compliant:     '#1b5e20',
+  non_compliant: '#9e0000',
+  warning:       '#7a4800',
+  info:          '#1565c0',
+}
 
 function AutomatedEvidenceTab({ isAdmin, activeProduct }: { isAdmin: boolean; activeProduct: string }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const CLASSIFICATION_COLORS = isLight ? CLASSIFICATION_COLORS_LIGHT : CLASSIFICATION_COLORS_DARK
   const qc = useQueryClient()
   const navigate = useNavigate()
   const { activeProject } = useProject()
@@ -555,14 +574,14 @@ function AutomatedEvidenceTab({ isAdmin, activeProduct }: { isAdmin: boolean; ac
           <MetricCard
             title="Non-Compliant"
             value={isLoading ? '—' : items.filter((i) => i.classification === 'non_compliant').length}
-            sx={items.some((i) => i.classification === 'non_compliant') ? { borderColor: '#C00000', '& h3': { color: '#FFC7CE' } } : {}}
+            sx={items.some((i) => i.classification === 'non_compliant') ? { borderColor: '#C00000', '& h3': { color: isLight ? '#9e0000' : '#FFC7CE' } } : {}}
           />
         </Box>
         <Box sx={{ flex: 1 }}>
           <MetricCard
             title="Warnings"
             value={isLoading ? '—' : items.filter((i) => i.classification === 'warning').length}
-            sx={items.some((i) => i.classification === 'warning') ? { borderColor: '#FF9800', '& h3': { color: '#FFEB9C' } } : {}}
+            sx={items.some((i) => i.classification === 'warning') ? { borderColor: '#FF9800', '& h3': { color: isLight ? '#7a4800' : '#FFEB9C' } } : {}}
           />
         </Box>
       </Box>
@@ -797,6 +816,9 @@ function AutomatedEvidenceTab({ isAdmin, activeProduct }: { isAdmin: boolean; ac
 
 // ── Status chip ───────────────────────────────────────────────────────────────
 function EvidenceStatusChip({ status }: { status: string }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const STATUS_COLORS = isLight ? STATUS_COLORS_LIGHT : STATUS_COLORS_DARK
   const cfg = STATUS_COLORS[status] ?? STATUS_COLORS.active
   return (
     <Chip
@@ -822,6 +844,8 @@ export default function Evidence() {
   const [assignTarget, setAssignTarget] = useState<{ id: string; title: string } | null>(null)
   const [rejectTarget, setRejectTarget] = useState<string | null>(null)
   const queryClient = useQueryClient()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
 
   const projectIdParam = activeProject?.id
 
@@ -932,7 +956,7 @@ export default function Evidence() {
         </Box>
         <Box sx={{ flex: 1 }}>
           <MetricCard title="Pending Review" value={isLoading ? '—' : pending.length}
-            sx={pending.length > 0 ? { borderColor: '#FF9800', '& h3': { color: '#FFEB9C' } } : {}} />
+            sx={pending.length > 0 ? { borderColor: '#FF9800', '& h3': { color: isLight ? '#7a4800' : '#FFEB9C' } } : {}} />
         </Box>
         <Box sx={{ flex: 1 }}>
           <MetricCard title="Expired" value={isLoading ? '—' : expired.length}
@@ -950,7 +974,7 @@ export default function Evidence() {
             icon={<CheckCircleOutlineOutlined fontSize="small" />}
             progress={items.length ? (verified.length / items.length) * 100 : 0}
             progressColor="success"
-            sx={verified.length > 0 ? { '& h3': { color: '#C6EFCE' } } : {}} />
+            sx={verified.length > 0 ? { '& h3': { color: isLight ? '#1b5e20' : '#C6EFCE' } } : {}} />
         </Box>
       </Box>
 
@@ -1065,8 +1089,8 @@ export default function Evidence() {
                             size="small"
                             sx={{
                               height: 18, fontSize: '0.62rem', fontFamily: 'monospace', fontWeight: 700,
-                              bgcolor: ev.metadata.known_ransomware ? '#3a0a0a' : '#1a2a0a',
-                              color: ev.metadata.known_ransomware ? '#FFC7CE' : '#C6EFCE',
+                              bgcolor: ev.metadata.known_ransomware ? (isLight ? 'rgba(192,0,0,0.12)' : '#3a0a0a') : (isLight ? 'rgba(46,125,50,0.10)' : '#1a2a0a'),
+                              color: ev.metadata.known_ransomware ? (isLight ? '#9e0000' : '#FFC7CE') : (isLight ? '#1b5e20' : '#C6EFCE'),
                               border: '1px solid',
                               borderColor: ev.metadata.known_ransomware ? '#c62828' : '#388e3c',
                             }}
@@ -1083,7 +1107,7 @@ export default function Evidence() {
                       </Typography>
                     )}
                     {ev.evidence_status === 'rejected' && ev.metadata.rejection_reason && (
-                      <Typography variant="caption" sx={{ color: '#FFC7CE', display: 'block', mt: 0.25 }}>
+                      <Typography variant="caption" sx={{ color: isLight ? '#9e0000' : '#FFC7CE', display: 'block', mt: 0.25 }}>
                         Reason: {ev.metadata.rejection_reason}
                       </Typography>
                     )}
@@ -1118,7 +1142,7 @@ export default function Evidence() {
                   <TableCell>
                     {ev.verified_by ? (
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                        <VerifiedOutlined sx={{ fontSize: 14, color: '#C6EFCE' }} />
+                        <VerifiedOutlined sx={{ fontSize: 14, color: isLight ? '#1b5e20' : '#C6EFCE' }} />
                         <Typography variant="caption" color="text.secondary">{ev.verified_by}</Typography>
                       </Box>
                     ) : (
@@ -1151,12 +1175,12 @@ export default function Evidence() {
                     {ev.evidence_status === 'pending_review' && (
                       <>
                         <Tooltip title="Approve">
-                          <IconButton size="small" sx={{ color: '#C6EFCE' }} onClick={() => approveMutation.mutate(ev.id)} disabled={approveMutation.isPending}>
+                          <IconButton size="small" sx={{ color: isLight ? '#1b5e20' : '#C6EFCE' }} onClick={() => approveMutation.mutate(ev.id)} disabled={approveMutation.isPending}>
                             <CheckOutlined fontSize="small" />
                           </IconButton>
                         </Tooltip>
                         <Tooltip title="Reject">
-                          <IconButton size="small" sx={{ color: '#FFC7CE' }} onClick={() => setRejectTarget(ev.id)}>
+                          <IconButton size="small" sx={{ color: isLight ? '#9e0000' : '#FFC7CE' }} onClick={() => setRejectTarget(ev.id)}>
                             <CloseOutlined fontSize="small" />
                           </IconButton>
                         </Tooltip>

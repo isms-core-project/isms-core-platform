@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import {
   Box,
   Button,
@@ -125,18 +126,20 @@ const DB_COUNT_LABELS: Record<string, string> = {
 }
 
 function ServiceCard({ svc }: { svc: ServiceHealth }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const isOk = svc.status === 'ok'
   const isError = svc.status === 'error'
 
   const Icon = isOk ? CheckCircleOutlined : isError ? ErrorOutlined : HelpOutlineOutlined
-  const iconColor = isOk ? '#C6EFCE' : isError ? '#FFC7CE' : '#FFEB9C'
+  const iconColor = isOk ? (isLight ? '#1b5e20' : '#C6EFCE') : isError ? (isLight ? '#9e0000' : '#FFC7CE') : (isLight ? '#9a6500' : '#FFEB9C')
   const bgColor = isOk
-    ? 'rgba(198,239,206,0.08)'
+    ? (isLight ? 'rgba(46,125,50,0.08)' : 'rgba(198,239,206,0.08)')
     : isError
-    ? 'rgba(255,199,206,0.08)'
-    : 'rgba(255,235,156,0.08)'
-  const chipBg = isOk ? '#1a3a27' : isError ? '#3a0000' : '#3a2e00'
-  const chipFg = isOk ? '#C6EFCE' : isError ? '#FFC7CE' : '#FFEB9C'
+    ? (isLight ? 'rgba(192,0,0,0.08)' : 'rgba(255,199,206,0.08)')
+    : (isLight ? 'rgba(230,145,0,0.08)' : 'rgba(255,235,156,0.08)')
+  const chipBg = isOk ? (isLight ? 'rgba(46,125,50,0.15)' : '#1a3a27') : isError ? (isLight ? 'rgba(192,0,0,0.12)' : '#3a0000') : (isLight ? 'rgba(230,145,0,0.15)' : '#3a2e00')
+  const chipFg = isOk ? (isLight ? '#1b5e20' : '#C6EFCE') : isError ? (isLight ? '#9e0000' : '#FFC7CE') : (isLight ? '#9a6500' : '#FFEB9C')
 
   return (
     <Card sx={{ bgcolor: bgColor, border: '1px solid', borderColor: isOk ? 'rgba(198,239,206,0.15)' : isError ? 'rgba(255,199,206,0.15)' : 'rgba(255,235,156,0.15)' }}>
@@ -505,6 +508,8 @@ function MfaBackupCodesDialog({
 
 function MfaCard({ token }: { token: string }) {
   const queryClient = useQueryClient()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [setupOpen, setSetupOpen] = useState(false)
   const [disableOpen, setDisableOpen] = useState(false)
   const [backupOpen, setBackupOpen] = useState(false)
@@ -532,7 +537,7 @@ function MfaCard({ token }: { token: string }) {
               <Chip
                 label="Active"
                 size="small"
-                sx={{ fontSize: '0.65rem', height: 18, bgcolor: '#1a3a27', color: '#C6EFCE' }}
+                sx={{ fontSize: '0.65rem', height: 18, bgcolor: isLight ? 'rgba(46,125,50,0.15)' : '#1a3a27', color: isLight ? '#1b5e20' : '#C6EFCE' }}
               />
             )}
           </Box>
@@ -545,7 +550,7 @@ function MfaCard({ token }: { token: string }) {
           ) : mfaEnabled ? (
             <>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-                <LockOutlined sx={{ color: '#C6EFCE', fontSize: 20 }} />
+                <LockOutlined sx={{ color: isLight ? '#1b5e20' : '#C6EFCE', fontSize: 20 }} />
                 <Typography variant="body2" color="text.secondary">
                   Your account is protected with an authenticator app.
                 </Typography>
@@ -617,6 +622,8 @@ function MfaCard({ token }: { token: string }) {
 export default function System() {
   const { user, token } = useAuth()
   const queryClient = useQueryClient()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [lastRefresh, setLastRefresh] = useState<Date>(new Date())
   const [reindexResult, setReindexResult] = useState<string | null>(null)
   const [testEmailRecipient, setTestEmailRecipient] = useState('')
@@ -940,8 +947,8 @@ export default function System() {
                           sx={{
                             fontSize: '0.65rem',
                             height: 18,
-                            bgcolor: data.last_sync_status === 'success' ? '#1a3a27' : '#3a0000',
-                            color: data.last_sync_status === 'success' ? '#C6EFCE' : '#FFC7CE',
+                            bgcolor: data.last_sync_status === 'success' ? (isLight ? 'rgba(46,125,50,0.15)' : '#1a3a27') : (isLight ? 'rgba(192,0,0,0.12)' : '#3a0000'),
+                            color: data.last_sync_status === 'success' ? (isLight ? '#1b5e20' : '#C6EFCE') : (isLight ? '#9e0000' : '#FFC7CE'),
                           }}
                         />
                       </Box>
@@ -984,13 +991,13 @@ export default function System() {
                           fontSize: '0.65rem',
                           height: 18,
                           bgcolor:
-                            data.opensearch_cluster_status === 'green' ? '#1a3a27'
-                            : data.opensearch_cluster_status === 'yellow' ? '#3a2e00'
-                            : '#3a0000',
+                            data.opensearch_cluster_status === 'green' ? (isLight ? 'rgba(46,125,50,0.15)' : '#1a3a27')
+                            : data.opensearch_cluster_status === 'yellow' ? (isLight ? 'rgba(230,145,0,0.15)' : '#3a2e00')
+                            : (isLight ? 'rgba(192,0,0,0.12)' : '#3a0000'),
                           color:
-                            data.opensearch_cluster_status === 'green' ? '#C6EFCE'
-                            : data.opensearch_cluster_status === 'yellow' ? '#FFEB9C'
-                            : '#FFC7CE',
+                            data.opensearch_cluster_status === 'green' ? (isLight ? '#1b5e20' : '#C6EFCE')
+                            : data.opensearch_cluster_status === 'yellow' ? (isLight ? '#9a6500' : '#FFEB9C')
+                            : (isLight ? '#9e0000' : '#FFC7CE'),
                         }}
                       />
                     )}
@@ -1086,8 +1093,8 @@ export default function System() {
                       sx={{
                         fontSize: '0.65rem',
                         height: 18,
-                        bgcolor: data.smtp_enabled ? '#1a3a27' : '#3a0000',
-                        color: data.smtp_enabled ? '#C6EFCE' : '#FFC7CE',
+                        bgcolor: data.smtp_enabled ? (isLight ? 'rgba(46,125,50,0.15)' : '#1a3a27') : (isLight ? 'rgba(192,0,0,0.12)' : '#3a0000'),
+                        color: data.smtp_enabled ? (isLight ? '#1b5e20' : '#C6EFCE') : (isLight ? '#9e0000' : '#FFC7CE'),
                       }}
                     />
                   </Box>
@@ -1276,7 +1283,7 @@ export default function System() {
                             <Chip
                               label={p.enabled ? 'enabled' : 'disabled'}
                               size="small"
-                              sx={{ fontSize: '0.6rem', height: 16, bgcolor: p.enabled ? '#1a3a27' : '#3a0000', color: p.enabled ? '#C6EFCE' : '#FFC7CE' }}
+                              sx={{ fontSize: '0.6rem', height: 16, bgcolor: p.enabled ? (isLight ? 'rgba(46,125,50,0.15)' : '#1a3a27') : (isLight ? 'rgba(192,0,0,0.12)' : '#3a0000'), color: p.enabled ? (isLight ? '#1b5e20' : '#C6EFCE') : (isLight ? '#9e0000' : '#FFC7CE') }}
                             />
                           </Box>
                         ))}
@@ -1441,7 +1448,7 @@ export default function System() {
                               Implementations ({orphanResult.implementations.length})
                             </Typography>
                             {orphanResult.implementations.map((o) => (
-                              <Typography key={o.document_id} variant="caption" fontFamily="monospace" display="block" sx={{ color: '#FFC7CE', mb: 0.25 }}>
+                              <Typography key={o.document_id} variant="caption" fontFamily="monospace" display="block" sx={{ color: isLight ? '#9e0000' : '#FFC7CE', mb: 0.25 }}>
                                 {o.document_id}
                               </Typography>
                             ))}
@@ -1453,7 +1460,7 @@ export default function System() {
                               Policies ({orphanResult.policies.length})
                             </Typography>
                             {orphanResult.policies.map((o) => (
-                              <Typography key={o.document_id} variant="caption" fontFamily="monospace" display="block" sx={{ color: '#FFC7CE', mb: 0.25 }}>
+                              <Typography key={o.document_id} variant="caption" fontFamily="monospace" display="block" sx={{ color: isLight ? '#9e0000' : '#FFC7CE', mb: 0.25 }}>
                                 {o.document_id}
                               </Typography>
                             ))}
@@ -1601,7 +1608,7 @@ export default function System() {
                 <Chip
                   label={mfaRequired ? 'Enforced' : 'Optional'}
                   size="small"
-                  sx={{ fontSize: '0.65rem', height: 18, bgcolor: mfaRequired ? '#1a3a27' : 'rgba(255,255,255,0.07)', color: mfaRequired ? '#C6EFCE' : '#d9d9d9' }}
+                  sx={{ fontSize: '0.65rem', height: 18, bgcolor: mfaRequired ? (isLight ? 'rgba(46,125,50,0.15)' : '#1a3a27') : (isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.07)'), color: mfaRequired ? (isLight ? '#1b5e20' : '#C6EFCE') : (isLight ? '#555' : '#d9d9d9') }}
                 />
               </Box>
               <Divider sx={{ mb: 1.5 }} />
@@ -1661,15 +1668,15 @@ export default function System() {
                     <TableBody>
                       {sysLogs.items.map((entry) => {
                         const sevColor = entry.severity === 'error' || entry.severity === 'critical'
-                          ? '#FFC7CE'
+                          ? (isLight ? '#9e0000' : '#FFC7CE')
                           : entry.severity === 'warning'
-                          ? '#FFEB9C'
-                          : '#C6EFCE'
+                          ? (isLight ? '#9a6500' : '#FFEB9C')
+                          : (isLight ? '#1b5e20' : '#C6EFCE')
                         const sevBg = entry.severity === 'error' || entry.severity === 'critical'
-                          ? '#3a0000'
+                          ? (isLight ? 'rgba(192,0,0,0.12)' : '#3a0000')
                           : entry.severity === 'warning'
-                          ? '#3a2e00'
-                          : '#1a3a27'
+                          ? (isLight ? 'rgba(230,145,0,0.15)' : '#3a2e00')
+                          : (isLight ? 'rgba(46,125,50,0.15)' : '#1a3a27')
                         return (
                           <TableRow key={entry.id} hover>
                             <TableCell sx={{ fontSize: '0.7rem', py: 0.5, whiteSpace: 'nowrap', color: 'text.secondary' }}>

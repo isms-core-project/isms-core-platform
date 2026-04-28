@@ -9,6 +9,7 @@ import {
   FormControl, InputLabel, Select, MenuItem,
   TextField, InputAdornment, Tab, Tabs,
 } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 import {
   AddOutlined, DeleteOutlined, AssignmentOutlined,
   FolderOpenOutlined, ExpandMoreOutlined, ExpandLessOutlined,
@@ -35,13 +36,21 @@ function getStatus(a: AssessmentListItem): AssessmentStatus {
   return 'in_progress'
 }
 
-const STATUS_STYLE: Record<AssessmentStatus, { label: string; bg: string; color: string }> = {
+const STATUS_STYLE_DARK: Record<AssessmentStatus, { label: string; bg: string; color: string }> = {
   not_started: { label: 'Not Started', bg: 'rgba(255,255,255,0.06)',  color: '#888' },
   in_progress:  { label: 'In Progress', bg: 'rgba(255,192,0,0.12)',   color: '#FFC000' },
   complete:     { label: 'Complete',    bg: 'rgba(198,239,206,0.15)', color: '#C6EFCE' },
 }
 
+const STATUS_STYLE_LIGHT: Record<AssessmentStatus, { label: string; bg: string; color: string }> = {
+  not_started: { label: 'Not Started', bg: 'rgba(0,0,0,0.06)',           color: '#555' },
+  in_progress:  { label: 'In Progress', bg: 'rgba(230,160,0,0.12)',       color: '#7a4800' },
+  complete:     { label: 'Complete',    bg: 'rgba(46,125,50,0.12)',        color: '#1b5e20' },
+}
+
 function StatusChipLocal({ a }: { a: AssessmentListItem }) {
+  const { palette } = useTheme()
+  const STATUS_STYLE = palette.mode === 'light' ? STATUS_STYLE_LIGHT : STATUS_STYLE_DARK
   const s = STATUS_STYLE[getStatus(a)]
   return <Chip label={s.label} size="small" sx={{ fontSize: '0.65rem', height: 18, bgcolor: s.bg, color: s.color, fontWeight: 600 }} />
 }
@@ -53,15 +62,17 @@ function isPlatform(a: AssessmentListItem) {
 // ── Compliance bar ─────────────────────────────────────────────────────────
 
 function ComplianceBar({ a }: { a: AssessmentListItem }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const { items_total: total, items_compliant: compliant, items_partial: partial, items_non_compliant: nonCompliant, items_na: na } = a
   if (!total) return <Typography variant="caption" color="text.disabled">No items yet</Typography>
   return (
     <Box>
-      <Box sx={{ display: 'flex', height: 5, borderRadius: 2.5, overflow: 'hidden', bgcolor: 'rgba(255,255,255,0.06)' }}>
-        {(compliant ?? 0) > 0 && <Box sx={{ flex: compliant, bgcolor: '#C6EFCE' }} />}
-        {(partial  ?? 0) > 0 && <Box sx={{ flex: partial,   bgcolor: '#FFEB9C' }} />}
-        {(nonCompliant ?? 0) > 0 && <Box sx={{ flex: nonCompliant, bgcolor: '#FFC7CE' }} />}
-        {(na ?? 0) > 0 && <Box sx={{ flex: na, bgcolor: '#444' }} />}
+      <Box sx={{ display: 'flex', height: 5, borderRadius: 2.5, overflow: 'hidden', bgcolor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.06)' }}>
+        {(compliant ?? 0) > 0 && <Box sx={{ flex: compliant, bgcolor: isLight ? '#4caf50' : '#C6EFCE' }} />}
+        {(partial  ?? 0) > 0 && <Box sx={{ flex: partial,   bgcolor: isLight ? '#ff9800' : '#FFEB9C' }} />}
+        {(nonCompliant ?? 0) > 0 && <Box sx={{ flex: nonCompliant, bgcolor: isLight ? '#f44336' : '#FFC7CE' }} />}
+        {(na ?? 0) > 0 && <Box sx={{ flex: na, bgcolor: isLight ? '#bbb' : '#444' }} />}
       </Box>
       <Box sx={{ display: 'flex', gap: 1.5, mt: 0.4, flexWrap: 'wrap' }}>
         <Typography variant="caption" color="text.disabled">{total} items</Typography>
@@ -282,11 +293,19 @@ function scoreColor(pct: number): string {
 }
 
 function CollectionStatusChip({ status }: { status: string }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const props = status === 'complete'
-    ? { label: 'Complete',     bg: 'rgba(198,239,206,0.15)', color: '#C6EFCE' }
+    ? { label: 'Complete',
+        bg:    isLight ? 'rgba(46,125,50,0.12)'   : 'rgba(198,239,206,0.15)',
+        color: isLight ? '#1b5e20'                 : '#C6EFCE' }
     : status === 'in_progress'
-    ? { label: 'In Progress',  bg: 'rgba(255,192,0,0.12)',   color: '#FFC000' }
-    : { label: 'Not Started',  bg: 'rgba(255,255,255,0.06)', color: '#888' }
+    ? { label: 'In Progress',
+        bg:    isLight ? 'rgba(230,160,0,0.12)'    : 'rgba(255,192,0,0.12)',
+        color: isLight ? '#7a4800'                  : '#FFC000' }
+    : { label: 'Not Started',
+        bg:    isLight ? 'rgba(0,0,0,0.06)'        : 'rgba(255,255,255,0.06)',
+        color: isLight ? '#555'                     : '#888' }
   return (
     <Chip label={props.label} size="small"
       sx={{ fontSize: '0.65rem', height: 18, bgcolor: props.bg, color: props.color, fontWeight: 600 }} />
@@ -518,6 +537,8 @@ function CollectionsPanel({ productFamily, productType }: { productFamily: strin
 export default function Assessments() {
   const navigate = useNavigate()
   const queryClient = useQueryClient()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const { product, ismsTier } = useProduct()
   const { activeProject } = useProject()
 
@@ -681,10 +702,10 @@ export default function Assessments() {
           {/* Status summary pills — clickable filter */}
           <Box sx={{ display: 'flex', gap: 0.75, ml: 1 }}>
             {([
-              { key: '' as const,           label: 'All',          count: tierPlatform.length, bg: 'rgba(255,255,255,0.07)', color: 'text.secondary' },
-              { key: 'not_started' as const, label: 'Not Started', count: notStarted,      bg: 'rgba(255,255,255,0.06)', color: '#888' },
-              { key: 'in_progress' as const, label: 'In Progress', count: inProgress,      bg: 'rgba(255,192,0,0.12)',   color: '#FFC000' },
-              { key: 'complete' as const,    label: 'Complete',    count: complete,        bg: 'rgba(198,239,206,0.15)', color: '#C6EFCE' },
+              { key: '' as const,           label: 'All',          count: tierPlatform.length, bg: isLight ? 'rgba(0,0,0,0.06)'        : 'rgba(255,255,255,0.07)', color: isLight ? '#444'    : 'text.secondary' },
+              { key: 'not_started' as const, label: 'Not Started', count: notStarted,           bg: isLight ? 'rgba(0,0,0,0.06)'        : 'rgba(255,255,255,0.06)', color: isLight ? '#555'    : '#888' },
+              { key: 'in_progress' as const, label: 'In Progress', count: inProgress,           bg: isLight ? 'rgba(230,160,0,0.12)'    : 'rgba(255,192,0,0.12)',   color: isLight ? '#7a4800' : '#FFC000' },
+              { key: 'complete' as const,    label: 'Complete',    count: complete,             bg: isLight ? 'rgba(46,125,50,0.12)'    : 'rgba(198,239,206,0.15)', color: isLight ? '#1b5e20' : '#C6EFCE' },
             ]).map(({ key, label, count, bg, color }) => (
               <Chip
                 key={key}
@@ -815,11 +836,11 @@ export default function Assessments() {
                     </TableCell>
                     <TableCell>
                       {(a.items_total ?? 0) > 0 ? (
-                        <Box sx={{ display: 'flex', height: 5, borderRadius: 2.5, overflow: 'hidden', bgcolor: 'rgba(255,255,255,0.06)' }}>
-                          {(a.items_compliant ?? 0) > 0 && <Box sx={{ flex: a.items_compliant, bgcolor: '#C6EFCE' }} />}
-                          {(a.items_partial ?? 0) > 0 && <Box sx={{ flex: a.items_partial, bgcolor: '#FFEB9C' }} />}
-                          {(a.items_non_compliant ?? 0) > 0 && <Box sx={{ flex: a.items_non_compliant, bgcolor: '#FFC7CE' }} />}
-                          {(a.items_na ?? 0) > 0 && <Box sx={{ flex: a.items_na, bgcolor: '#444' }} />}
+                        <Box sx={{ display: 'flex', height: 5, borderRadius: 2.5, overflow: 'hidden', bgcolor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.06)' }}>
+                          {(a.items_compliant ?? 0) > 0 && <Box sx={{ flex: a.items_compliant, bgcolor: isLight ? '#4caf50' : '#C6EFCE' }} />}
+                          {(a.items_partial ?? 0) > 0 && <Box sx={{ flex: a.items_partial, bgcolor: isLight ? '#ff9800' : '#FFEB9C' }} />}
+                          {(a.items_non_compliant ?? 0) > 0 && <Box sx={{ flex: a.items_non_compliant, bgcolor: isLight ? '#f44336' : '#FFC7CE' }} />}
+                          {(a.items_na ?? 0) > 0 && <Box sx={{ flex: a.items_na, bgcolor: isLight ? '#bbb' : '#444' }} />}
                         </Box>
                       ) : (
                         <Typography variant="caption" color="text.disabled">No items</Typography>

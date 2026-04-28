@@ -3,7 +3,7 @@ import {
   Alert, Box, Button, Chip, Collapse, Divider, FormControl,
   IconButton, InputLabel, MenuItem, Paper, Select, Switch,
   Tab, Table, TableBody, TableCell, TableHead, TableRow,
-  Tabs, TextField, Tooltip, Typography,
+  Tabs, TextField, Tooltip, Typography, useTheme,
 } from '@mui/material'
 import {
   BugReportOutlined, CheckCircleOutlined, ChevronRightOutlined,
@@ -20,7 +20,7 @@ import PageHeader from '../components/PageHeader'
 
 const INTEL_COLOR = '#B84F00'
 
-const SEVERITY_COLORS: Record<string, { bg: string; color: string }> = {
+const SEVERITY_DARK: Record<string, { bg: string; color: string }> = {
   CRITICAL: { bg: '#3a0a0a', color: '#FFC7CE' },
   HIGH:     { bg: '#2a1a00', color: '#FFEB9C' },
   MEDIUM:   { bg: '#1a2a3a', color: '#9fc8f0' },
@@ -28,9 +28,19 @@ const SEVERITY_COLORS: Record<string, { bg: string; color: string }> = {
   NONE:     { bg: '#1e1e2e', color: '#888' },
 }
 
+const SEVERITY_LIGHT: Record<string, { bg: string; color: string }> = {
+  CRITICAL: { bg: 'rgba(192,0,0,0.12)',    color: '#9e0000' },
+  HIGH:     { bg: 'rgba(192,100,0,0.12)',  color: '#7a4800' },
+  MEDIUM:   { bg: 'rgba(21,101,192,0.12)', color: '#1565c0' },
+  LOW:      { bg: 'rgba(46,125,50,0.12)',  color: '#1b5e20' },
+  NONE:     { bg: 'rgba(0,0,0,0.06)',      color: '#666' },
+}
+
 function SeverityChip({ severity }: { severity: string | null }) {
+  const { palette } = useTheme()
   if (!severity) return <Typography variant="caption" color="text.disabled">—</Typography>
-  const c = SEVERITY_COLORS[severity] ?? SEVERITY_COLORS.NONE
+  const map = palette.mode === 'light' ? SEVERITY_LIGHT : SEVERITY_DARK
+  const c = map[severity] ?? map.NONE
   return (
     <Chip
       label={severity}
@@ -59,6 +69,13 @@ function bestCvss(cve: NvdCveEntry): { score: number | null; severity: string | 
 // ── Stats Bar ─────────────────────────────────────────────────────────────────
 
 function StatsBar() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const kevColor   = isLight ? '#9a6500' : '#FFEB9C'
+  const cpeOptChip = isLight
+    ? { bg: 'rgba(21,101,192,0.12)', fg: '#1565c0' }
+    : { bg: '#1a2a3a', fg: '#9fc8f0' }
+
   const { data } = useQuery({
     queryKey: ['nvd', 'index-stats'],
     queryFn: feedsApi.getNvdIndexStats,
@@ -74,13 +91,13 @@ function StatsBar() {
   return (
     <Box sx={{
       display: 'flex', gap: 3, alignItems: 'center', flexWrap: 'wrap',
-      px: 2, py: 1, bgcolor: '#0d1117', borderRadius: 1.5,
+      px: 2, py: 1, bgcolor: 'background.paper', borderRadius: 1.5,
       border: '1px solid', borderColor: 'divider', mb: 1.5,
     }}>
       {[
-        { label: 'CVEs', value: data.cve_total.toLocaleString(), icon: <BugReportOutlined sx={{ fontSize: 14, color: '#c62828' }} /> },
-        { label: 'CPEs', value: data.cpe_total.toLocaleString(), icon: <SecurityOutlined sx={{ fontSize: 14, color: INTEL_COLOR }} /> },
-        { label: 'In KEV', value: data.kev_total.toLocaleString(), icon: <WarningAmberOutlined sx={{ fontSize: 14, color: '#FFEB9C' }} /> },
+        { label: 'CVEs',   value: data.cve_total.toLocaleString(), icon: <BugReportOutlined sx={{ fontSize: 14, color: '#c62828' }} /> },
+        { label: 'CPEs',   value: data.cpe_total.toLocaleString(), icon: <SecurityOutlined sx={{ fontSize: 14, color: INTEL_COLOR }} /> },
+        { label: 'In KEV', value: data.kev_total.toLocaleString(), icon: <WarningAmberOutlined sx={{ fontSize: 14, color: kevColor }} /> },
       ].map(s => (
         <Box key={s.label} sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
           {s.icon}
@@ -96,7 +113,7 @@ function StatsBar() {
         <Chip label="No API key — limited rate" size="small" color="warning" sx={{ fontSize: '0.68rem', height: 18 }} />
       )}
       {data.cpe_full_enabled && (
-        <Chip label="CPE Option B active" size="small" sx={{ fontSize: '0.68rem', height: 18, bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
+        <Chip label="CPE Option B active" size="small" sx={{ fontSize: '0.68rem', height: 18, bgcolor: cpeOptChip.bg, color: cpeOptChip.fg }} />
       )}
     </Box>
   )
@@ -204,8 +221,12 @@ function InfoPanel() {
 // ── CVE Detail Panel ──────────────────────────────────────────────────────────
 
 function CveDetail({ cve, onClose }: { cve: NvdCveEntry; onClose: () => void }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const infoChip = isLight ? { bg: 'rgba(21,101,192,0.12)', fg: '#1565c0' } : { bg: '#1a2a3a', fg: '#9fc8f0' }
   const best = bestCvss(cve)
-  const sc = SEVERITY_COLORS[best.severity ?? ''] ?? SEVERITY_COLORS.NONE
+  const map = palette.mode === 'light' ? SEVERITY_LIGHT : SEVERITY_DARK
+  const sc = map[best.severity ?? ''] ?? map.NONE
   const detailRows: [string, string][] = [
     ['Published',  fmtDate(cve.published)],
     ['Modified',   fmtDate(cve.last_modified)],
@@ -226,12 +247,12 @@ function CveDetail({ cve, onClose }: { cve: NvdCveEntry; onClose: () => void }) 
           <Box sx={{ display: 'flex', gap: 0.5, mt: 0.5, flexWrap: 'wrap' }}>
             <SeverityChip severity={best.severity} />
             {best.version && (
-              <Chip label={best.version.toUpperCase()} size="small" sx={{ fontSize: '0.6rem', height: 18, bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
+              <Chip label={best.version.toUpperCase()} size="small" sx={{ fontSize: '0.6rem', height: 18, bgcolor: infoChip.bg, color: infoChip.fg }} />
             )}
             {cve.in_kev && <Chip label="KEV" size="small" color="error" sx={{ fontSize: '0.68rem', height: 18 }} />}
             {cve.in_euvd && <Chip label="EUVD" size="small" sx={{ fontSize: '0.68rem', height: 18, bgcolor: '#003399', color: '#fff' }} />}
             {cve.epss_score !== null && (
-              <Chip label={`EPSS ${(cve.epss_score * 100).toFixed(1)}%`} size="small" sx={{ fontSize: '0.68rem', height: 18, bgcolor: '#1a2a3a', color: '#9fc8f0' }} />
+              <Chip label={`EPSS ${(cve.epss_score * 100).toFixed(1)}%`} size="small" sx={{ fontSize: '0.68rem', height: 18, bgcolor: infoChip.bg, color: infoChip.fg }} />
             )}
           </Box>
         </Box>
@@ -333,6 +354,11 @@ function EpssAnalytics() {
     enabled: open,
   })
 
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const epss10Color = isLight ? '#9a6500' : '#FFEB9C'
+  const epss20Color = isLight ? '#9e0000' : '#FFC7CE'
+
   const kpiCards = [
     {
       label: 'Total with EPSS Score',
@@ -343,14 +369,14 @@ function EpssAnalytics() {
     {
       label: 'EPSS > 10%',
       value: epss10?.total?.toLocaleString() ?? '—',
-      icon: <WarningAmberOutlined sx={{ fontSize: 16, color: '#FFEB9C' }} />,
-      color: '#FFEB9C',
+      icon: <WarningAmberOutlined sx={{ fontSize: 16, color: epss10Color }} />,
+      color: epss10Color,
     },
     {
       label: 'EPSS > 20%',
       value: epss20?.total?.toLocaleString() ?? '—',
-      icon: <WarningAmberOutlined sx={{ fontSize: 16, color: '#FFC7CE' }} />,
-      color: '#FFC7CE',
+      icon: <WarningAmberOutlined sx={{ fontSize: 16, color: epss20Color }} />,
+      color: epss20Color,
     },
   ]
 
@@ -382,7 +408,7 @@ function EpssAnalytics() {
                   flex: '1 1 160px',
                   p: 1.5,
                   borderRadius: 2,
-                  bgcolor: '#0d1117',
+                  bgcolor: 'background.paper',
                   borderColor: `${card.color}40`,
                   display: 'flex',
                   flexDirection: 'column',
@@ -473,6 +499,12 @@ function EpssAnalytics() {
 // ── CVE Tab ───────────────────────────────────────────────────────────────────
 
 function CveTab() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const kevColor    = isLight ? '#9a6500' : '#FFEB9C'
+  const highScore   = isLight ? '#9e0000' : '#FFC7CE'
+  const versionDark = isLight ? '#1565c0' : '#9fc8f0'
+
   const [search, setSearch]     = useState('')
   const [searchInput, setSearchInput] = useState('')
   const [severity, setSeverity] = useState('')
@@ -599,11 +631,11 @@ function CveTab() {
                       const b = bestCvss(cve)
                       return (
                         <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 0.3 }}>
-                          <Typography sx={{ fontSize: '0.75rem', fontWeight: 600, color: b.score != null && b.score >= 9 ? '#FFC7CE' : 'text.primary' }}>
+                          <Typography sx={{ fontSize: '0.75rem', fontWeight: 600, color: b.score != null && b.score >= 9 ? highScore : 'text.primary' }}>
                             {fmtScore(b.score)}
                           </Typography>
                           {b.version && (
-                            <Typography sx={{ fontSize: '0.6rem', color: b.version === 'v4' ? '#9fc8f0' : 'text.disabled', lineHeight: 1 }}>
+                            <Typography sx={{ fontSize: '0.6rem', color: b.version === 'v4' ? versionDark : 'text.disabled', lineHeight: 1 }}>
                               {b.version}
                             </Typography>
                           )}
@@ -617,7 +649,7 @@ function CveTab() {
                   <TableCell sx={{ fontSize: '0.75rem', whiteSpace: 'nowrap' }}>{fmtDate(cve.published)}</TableCell>
                   <TableCell>
                     <Box sx={{ display: 'flex', gap: 0.3 }}>
-                      {cve.in_kev && <Tooltip title="In CISA KEV"><WarningAmberOutlined sx={{ fontSize: 14, color: '#FFEB9C' }} /></Tooltip>}
+                      {cve.in_kev && <Tooltip title="In CISA KEV"><WarningAmberOutlined sx={{ fontSize: 14, color: kevColor }} /></Tooltip>}
                       {cve.in_euvd && <Tooltip title="In ENISA EUVD"><Box component="span" sx={{ fontSize: '0.6rem', fontWeight: 700, color: '#fff', bgcolor: '#003399', borderRadius: '3px', px: 0.4, lineHeight: '14px', display: 'inline-block' }}>EU</Box></Tooltip>}
                       {cve.cpe_affected.length > 0 && <Tooltip title={`${cve.cpe_affected.length} CPEs`}><SecurityOutlined sx={{ fontSize: 14, color: INTEL_COLOR }} /></Tooltip>}
                     </Box>
@@ -662,6 +694,12 @@ function CveTab() {
 // ── CPE Tab ───────────────────────────────────────────────────────────────────
 
 function CpeTab() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const kevColor   = isLight ? '#9a6500' : '#FFEB9C'
+  const kevSrc  = isLight ? { bg: 'rgba(192,0,0,0.12)',   fg: '#9e0000' } : { bg: '#3a0a0a', fg: '#FFC7CE' }
+  const cveSrc  = isLight ? { bg: 'rgba(46,125,50,0.12)', fg: '#1b5e20' } : { bg: '#1a2a1a', fg: '#C6EFCE' }
+
   const [search, setSearch]     = useState('')
   const [searchInput, setSearchInput] = useState('')
   const [part, setPart]         = useState('')
@@ -764,12 +802,12 @@ function CpeTab() {
                   <Chip
                     label={cpe.source === 'kev_vendor' ? 'KEV-vendor' : 'CVE-config'}
                     size="small"
-                    sx={{ fontSize: '0.68rem', height: 18, bgcolor: cpe.source === 'kev_vendor' ? '#3a0a0a' : '#1a2a1a', color: cpe.source === 'kev_vendor' ? '#FFC7CE' : '#C6EFCE' }}
+                    sx={{ fontSize: '0.68rem', height: 18, bgcolor: cpe.source === 'kev_vendor' ? kevSrc.bg : cveSrc.bg, color: cpe.source === 'kev_vendor' ? kevSrc.fg : cveSrc.fg }}
                   />
                 </TableCell>
                 <TableCell>
                   {cpe.in_kev
-                    ? <CheckCircleOutlined sx={{ fontSize: 14, color: '#FFEB9C' }} />
+                    ? <CheckCircleOutlined sx={{ fontSize: 14, color: kevColor }} />
                     : <Typography variant="caption" color="text.disabled">—</Typography>}
                 </TableCell>
               </TableRow>

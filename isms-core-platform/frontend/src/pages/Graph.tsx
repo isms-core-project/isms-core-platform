@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
+import { useTheme } from '@mui/material/styles'
 import { useProduct, PRODUCT_SUBTITLES } from '../store/ProductContext'
 import {
   Box,
@@ -69,6 +70,8 @@ export default function Graph() {
   const navigateRef = useRef(navigate)
   navigateRef.current = navigate
   const { product } = useProduct()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
 
   const [center, setCenter] = useState('')
   const [depth, setDepth] = useState(2)
@@ -184,8 +187,8 @@ export default function Graph() {
           selector: ':selected',
           style: {
             'border-width': 3,
-            'border-color': '#FFEB9C',
-            'line-color': '#FFEB9C',
+            'border-color': isLight ? '#7a4800' : '#FFEB9C',
+            'line-color': isLight ? '#7a4800' : '#FFEB9C',
           },
         },
       ],
@@ -215,7 +218,7 @@ export default function Graph() {
       cyInstance.current?.destroy()
       cyInstance.current = null
     }
-  }, [data])
+  }, [data, isLight])
 
   return (
     <Box sx={{ height: 'calc(100vh - 80px)', display: 'flex', flexDirection: 'column' }}>
@@ -233,17 +236,19 @@ export default function Graph() {
               onClick={() => setCloudSub(value)}
               sx={{
                 px: 1.5, py: 0.75, borderRadius: 1, cursor: 'pointer',
-                bgcolor: cloudSub === value ? 'rgba(255,192,0,0.15)' : 'rgba(255,255,255,0.04)',
-                border: `1px solid ${cloudSub === value ? '#FFC00050' : 'rgba(255,255,255,0.08)'}`,
-                '&:hover': { bgcolor: 'rgba(255,192,0,0.1)' },
+                bgcolor: cloudSub === value
+                  ? (isLight ? 'rgba(230,160,0,0.18)' : 'rgba(255,192,0,0.15)')
+                  : (isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)'),
+                border: `1px solid ${cloudSub === value ? (isLight ? 'rgba(180,110,0,0.4)' : '#FFC00050') : (isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.08)')}`,
+                '&:hover': { bgcolor: isLight ? 'rgba(230,160,0,0.12)' : 'rgba(255,192,0,0.1)' },
               }}
             >
               <Typography variant="caption" fontWeight={cloudSub === value ? 700 : 400}
-                color={cloudSub === value ? '#FFC000' : 'text.secondary'}>
+                color={cloudSub === value ? (isLight ? '#7a4800' : '#FFC000') : 'text.secondary'}>
                 {label}
               </Typography>
               <Typography variant="caption" sx={{ ml: 1, opacity: 0.6 }}
-                color={cloudSub === value ? '#FFC000' : 'text.disabled'}>
+                color={cloudSub === value ? (isLight ? '#7a4800' : '#FFC000') : 'text.disabled'}>
                 {desc}
               </Typography>
             </Box>

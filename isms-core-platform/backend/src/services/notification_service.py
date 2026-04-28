@@ -509,6 +509,7 @@ def notify_feed_failure(self, feed_name: str, error_message: str, run_id: str | 
 
     db = SessionLocal()
     try:
+        from src.core.config import get_settings
         from src.database.enums import UserRole
         from src.domain.users import User
 
@@ -589,6 +590,7 @@ def notify_ti_feed_failure(self, feed_name: str, error_message: str, run_id: str
 
     db = SessionLocal()
     try:
+        from src.core.config import get_settings
         from src.database.enums import UserRole
         from src.domain.users import User
 

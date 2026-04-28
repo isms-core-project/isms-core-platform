@@ -12,6 +12,7 @@
  *   5. SMTP configured (optional)  — smtp_enabled === true
  */
 
+import { useTheme } from '@mui/material/styles'
 import {
   Alert,
   Box,
@@ -69,6 +70,8 @@ export default function FirstRunBanner({
   smtpEnabled,
   orgSettings,
 }: Props) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const navigate = useNavigate()
   const qc = useQueryClient()
   const [expanded, setExpanded] = useState(true)
@@ -207,8 +210,8 @@ export default function FirstRunBanner({
           sx={{
             height: 20,
             fontSize: '0.65rem',
-            bgcolor: allRequiredDone ? '#1a3a27' : '#1a2a3a',
-            color: allRequiredDone ? '#C6EFCE' : '#9fc8f0',
+            bgcolor: allRequiredDone ? (isLight ? 'rgba(27,94,32,0.12)' : '#1a3a27') : (isLight ? 'rgba(21,101,192,0.12)' : '#1a2a3a'),
+            color: allRequiredDone ? (isLight ? '#1b5e20' : '#C6EFCE') : (isLight ? '#1565c0' : '#9fc8f0'),
           }}
         />
         <Tooltip title="Dismiss permanently">
@@ -239,7 +242,7 @@ export default function FirstRunBanner({
                 <StepLabel
                   icon={
                     step.done
-                      ? <CheckCircleOutlined sx={{ color: '#C6EFCE', fontSize: 20 }} />
+                      ? <CheckCircleOutlined sx={{ color: isLight ? '#1b5e20' : '#C6EFCE', fontSize: 20 }} />
                       : <Box sx={{
                           width: 20, height: 20, borderRadius: '50%',
                           bgcolor: idx === activeStep ? 'primary.main' : 'action.disabled',

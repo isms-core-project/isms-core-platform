@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTheme } from '@mui/material/styles'
 import { useSearchParams } from 'react-router-dom'
 import {
   Alert,
@@ -32,22 +33,31 @@ import { controlsApi } from '../api/controls'
 import type { ControlGroupList } from '../api/types'
 import PageHeader from '../components/PageHeader'
 
-const SEV_COLOR: Record<string, { bg: string; fg: string; icon: React.ReactNode }> = {
+const SEV_COLOR_DARK: Record<string, { bg: string; fg: string; icon: React.ReactNode }> = {
   high:   { bg: 'rgba(192,0,0,0.15)',    fg: '#FFC7CE', icon: <ErrorOutlined sx={{ fontSize: 14 }} /> },
   medium: { bg: 'rgba(255,192,0,0.12)',  fg: '#FFEB9C', icon: <WarningAmberOutlined sx={{ fontSize: 14 }} /> },
   low:    { bg: 'rgba(112,173,71,0.12)', fg: '#C6EFCE', icon: <InfoOutlined sx={{ fontSize: 14 }} /> },
 }
 
+const SEV_COLOR_LIGHT: Record<string, { bg: string; fg: string; icon: React.ReactNode }> = {
+  high:   { bg: 'rgba(192,0,0,0.12)',    fg: '#9e0000', icon: <ErrorOutlined sx={{ fontSize: 14 }} /> },
+  medium: { bg: 'rgba(230,145,0,0.15)',  fg: '#9a6500', icon: <WarningAmberOutlined sx={{ fontSize: 14 }} /> },
+  low:    { bg: 'rgba(46,125,50,0.12)',  fg: '#1b5e20', icon: <InfoOutlined sx={{ fontSize: 14 }} /> },
+}
+
 function ScoreGauge({ score }: { score: number }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+
   const color =
-    score >= 80 ? '#C6EFCE' :
-    score >= 60 ? '#FFEB9C' :
-    score >= 40 ? '#FF9900' : '#FFC7CE'
+    score >= 80 ? (isLight ? '#1b5e20' : '#C6EFCE') :
+    score >= 60 ? (isLight ? '#9a6500' : '#FFEB9C') :
+    score >= 40 ? '#FF9900' : (isLight ? '#9e0000' : '#FFC7CE')
 
   const bgColor =
-    score >= 80 ? 'rgba(198,239,206,0.12)' :
-    score >= 60 ? 'rgba(255,235,156,0.12)' :
-    score >= 40 ? 'rgba(255,153,0,0.12)'   : 'rgba(255,199,206,0.12)'
+    score >= 80 ? (isLight ? 'rgba(46,125,50,0.12)' : 'rgba(198,239,206,0.12)') :
+    score >= 60 ? (isLight ? 'rgba(230,145,0,0.15)' : 'rgba(255,235,156,0.12)') :
+    score >= 40 ? 'rgba(255,153,0,0.12)' : (isLight ? 'rgba(192,0,0,0.12)' : 'rgba(255,199,206,0.12)')
 
   return (
     <Box
@@ -75,12 +85,15 @@ function ScoreGauge({ score }: { score: number }) {
 }
 
 function GapCard({ gap }: { gap: CompassGap }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const SEV_COLOR = isLight ? SEV_COLOR_LIGHT : SEV_COLOR_DARK
   const sev = SEV_COLOR[gap.severity] ?? SEV_COLOR.low
   return (
     <Box
       sx={{
         border: '1px solid',
-        borderColor: 'rgba(255,255,255,0.08)',
+        borderColor: isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.08)',
         borderRadius: 1,
         p: 1.5,
         mb: 1,
@@ -105,8 +118,8 @@ function GapCard({ gap }: { gap: CompassGap }) {
         {gap.description}
       </Typography>
       <Box sx={{ display: 'flex', gap: 0.5, alignItems: 'flex-start' }}>
-        <CheckCircleOutlined sx={{ fontSize: 13, color: '#C6EFCE', mt: 0.2, flexShrink: 0 }} />
-        <Typography variant="caption" sx={{ color: '#C6EFCE', fontSize: '0.75rem' }}>
+        <CheckCircleOutlined sx={{ fontSize: 13, color: isLight ? '#1b5e20' : '#C6EFCE', mt: 0.2, flexShrink: 0 }} />
+        <Typography variant="caption" sx={{ color: isLight ? '#1b5e20' : '#C6EFCE', fontSize: '0.75rem' }}>
           {gap.recommendation}
         </Typography>
       </Box>
@@ -115,6 +128,8 @@ function GapCard({ gap }: { gap: CompassGap }) {
 }
 
 function ReportView({ report }: { report: CompassReport }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 2 }}>
       {/* Disclaimer */}
@@ -142,9 +157,9 @@ function ReportView({ report }: { report: CompassReport }) {
                 {report.summary}
               </Typography>
               <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-                <Chip label={`${report.gaps.filter(g => g.severity === 'high').length} high gaps`} size="small" sx={{ bgcolor: 'rgba(192,0,0,0.15)', color: '#FFC7CE', fontSize: '0.65rem', height: 18 }} />
-                <Chip label={`${report.gaps.filter(g => g.severity === 'medium').length} medium gaps`} size="small" sx={{ bgcolor: 'rgba(255,192,0,0.12)', color: '#FFEB9C', fontSize: '0.65rem', height: 18 }} />
-                <Chip label={`${report.strengths.length} strengths`} size="small" sx={{ bgcolor: 'rgba(112,173,71,0.15)', color: '#C6EFCE', fontSize: '0.65rem', height: 18 }} />
+                <Chip label={`${report.gaps.filter(g => g.severity === 'high').length} high gaps`} size="small" sx={{ bgcolor: isLight ? 'rgba(192,0,0,0.12)' : 'rgba(192,0,0,0.15)', color: isLight ? '#9e0000' : '#FFC7CE', fontSize: '0.65rem', height: 18 }} />
+                <Chip label={`${report.gaps.filter(g => g.severity === 'medium').length} medium gaps`} size="small" sx={{ bgcolor: isLight ? 'rgba(230,145,0,0.15)' : 'rgba(255,192,0,0.12)', color: isLight ? '#9a6500' : '#FFEB9C', fontSize: '0.65rem', height: 18 }} />
+                <Chip label={`${report.strengths.length} strengths`} size="small" sx={{ bgcolor: isLight ? 'rgba(46,125,50,0.12)' : 'rgba(112,173,71,0.15)', color: isLight ? '#1b5e20' : '#C6EFCE', fontSize: '0.65rem', height: 18 }} />
                 <Tooltip title={`Model: ${report.model_used}`}>
                   <Chip label={`${report.tokens_used.toLocaleString()} tokens`} size="small" sx={{ fontSize: '0.62rem', height: 18, opacity: 0.5 }} />
                 </Tooltip>
@@ -185,7 +200,7 @@ function ReportView({ report }: { report: CompassReport }) {
             <Divider sx={{ mb: 1.5 }} />
             {report.strengths.map((s, i) => (
               <Box key={i} sx={{ display: 'flex', gap: 1, mb: 1, alignItems: 'flex-start' }}>
-                <CheckCircleOutlined sx={{ fontSize: 16, color: '#C6EFCE', mt: 0.2, flexShrink: 0 }} />
+                <CheckCircleOutlined sx={{ fontSize: 16, color: isLight ? '#1b5e20' : '#C6EFCE', mt: 0.2, flexShrink: 0 }} />
                 <Box>
                   <Typography variant="body2" fontWeight={600}>{s.topic}</Typography>
                   <Typography variant="caption" color="text.secondary">{s.detail}</Typography>

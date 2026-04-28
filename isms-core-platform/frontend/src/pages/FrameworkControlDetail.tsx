@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom'
+import { useTheme } from '@mui/material/styles'
 import {
   Box,
   Card,
@@ -22,10 +23,15 @@ import { controlsApi } from '../api/controls'
 import PageHeader from '../components/PageHeader'
 import { useProduct, PRODUCT_COLORS, PRODUCT_SUBTITLES } from '../store/ProductContext'
 
-const CONFIDENCE_COLOR = (c: number) =>
+const CONFIDENCE_COLOR_DARK = (c: number) =>
   c >= 0.8 ? { bg: 'rgba(198,239,206,0.15)', color: '#C6EFCE' }
   : c >= 0.6 ? { bg: 'rgba(255,235,156,0.12)', color: '#FFEB9C' }
   : { bg: 'rgba(255,199,206,0.12)', color: '#FFC7CE' }
+
+const CONFIDENCE_COLOR_LIGHT = (c: number) =>
+  c >= 0.8 ? { bg: 'rgba(27,94,32,0.1)', color: '#1b5e20' }
+  : c >= 0.6 ? { bg: 'rgba(154,101,0,0.1)', color: '#9a6500' }
+  : { bg: 'rgba(158,0,0,0.1)', color: '#9e0000' }
 
 // Section labels for known frameworks
 const SECTION_LABELS: Record<string, string> = {
@@ -42,6 +48,9 @@ const SECTION_LABELS: Record<string, string> = {
 }
 
 export default function FrameworkControlDetail() {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const CONFIDENCE_COLOR = isLight ? CONFIDENCE_COLOR_LIGHT : CONFIDENCE_COLOR_DARK
   const { code, controlId } = useParams<{ code: string; controlId: string }>()
   const navigate = useNavigate()
   const { product } = useProduct()
@@ -116,7 +125,7 @@ export default function FrameworkControlDetail() {
               <Chip
                 label={sectionLabel}
                 size="small"
-                sx={{ bgcolor: 'rgba(255,255,255,0.06)', color: 'text.secondary', fontSize: '0.7rem' }}
+                sx={{ bgcolor: isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)', color: 'text.secondary', fontSize: '0.7rem' }}
               />
             </Box>
 
@@ -144,7 +153,7 @@ export default function FrameworkControlDetail() {
                 <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
                   {ctrl.security_properties.map((p) => (
                     <Chip key={p} label={p} size="small"
-                      sx={{ fontSize: '0.65rem', height: 18, bgcolor: 'rgba(68,114,196,0.12)', color: '#8B9CC8' }} />
+                      sx={{ fontSize: '0.65rem', height: 18, bgcolor: 'rgba(68,114,196,0.12)', color: isLight ? '#1565c0' : '#8B9CC8' }} />
                   ))}
                 </Box>
               </Box>
@@ -209,7 +218,7 @@ export default function FrameworkControlDetail() {
                         <Chip
                           label={m.mapping_type}
                           size="small"
-                          sx={{ fontSize: '0.62rem', height: 16, bgcolor: 'rgba(68,114,196,0.1)', color: '#8B9CC8' }}
+                          sx={{ fontSize: '0.62rem', height: 16, bgcolor: 'rgba(68,114,196,0.1)', color: isLight ? '#1565c0' : '#8B9CC8' }}
                         />
                       </TableCell>
                       <TableCell>

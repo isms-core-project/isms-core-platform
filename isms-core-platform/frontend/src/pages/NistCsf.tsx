@@ -6,7 +6,7 @@ import {
   Dialog, DialogTitle, DialogContent, DialogActions,
   TextField, Select, MenuItem,
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
-  CircularProgress,
+  CircularProgress, useTheme,
 } from '@mui/material'
 import {
   AddOutlined, DeleteOutlined, DownloadOutlined,
@@ -20,9 +20,13 @@ import PageHeader from '../components/PageHeader'
 
 // ── Constants ──────────────────────────────────────────────────────────────
 
-const FUNCTION_COLORS: Record<string, string> = {
+const FUNCTION_COLORS_DARK: Record<string, string> = {
   GV: '#4472C4', ID: '#ED7D31', PR: '#70AD47',
   DE: '#FFC000', RS: '#FF5252', RC: '#9966CC',
+}
+const FUNCTION_COLORS_LIGHT: Record<string, string> = {
+  GV: '#2E5099', ID: '#c05800', PR: '#375623',
+  DE: '#9a6500', RS: '#c62828', RC: '#6a3aaa',
 }
 
 const FUNCTION_NAMES: Record<string, string> = {
@@ -38,22 +42,30 @@ const FUNCTION_ORDER = ['GV', 'ID', 'PR', 'DE', 'RS', 'RC']
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
-function tierColor(tier: number | null): string {
-  if (!tier) return 'rgba(255,255,255,0.1)'
+function tierColor(tier: number | null, mode: 'light' | 'dark' = 'dark'): string {
+  if (!tier) return mode === 'light' ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.1)'
+  if (mode === 'light') {
+    if (tier === 1) return '#c62828'
+    if (tier === 2) return '#9a6500'
+    if (tier === 3) return '#375623'
+    return '#2E5099'
+  }
   if (tier === 1) return '#FF5252'
   if (tier === 2) return '#FFC000'
   if (tier === 3) return '#70AD47'
   return '#4472C4'
 }
 
-function gapColor(gap: number): string {
-  if (gap <= 0) return '#C6EFCE'
-  if (gap === 1) return '#FFC000'
-  return '#FF5252'
+function gapColor(gap: number, isLight = false): string {
+  if (gap <= 0) return isLight ? '#1b5e20' : '#C6EFCE'
+  if (gap === 1) return isLight ? '#9a6500' : '#FFC000'
+  return isLight ? '#c62828' : '#FF5252'
 }
 
 function FunctionScoreBar({ code, avg, total, rated }: { code: string; avg: number | null; total: number; rated: number }) {
-  const color = FUNCTION_COLORS[code] ?? '#888'
+  const { palette } = useTheme()
+  const FC = palette.mode === 'light' ? FUNCTION_COLORS_LIGHT : FUNCTION_COLORS_DARK
+  const color = FC[code] ?? '#888'
   const pct = total > 0 ? (rated / total) * 100 : 0
   return (
     <Box>
@@ -72,9 +84,19 @@ function FunctionScoreBar({ code, avg, total, rated }: { code: string; avg: numb
 // ── Profile card ───────────────────────────────────────────────────────────
 
 function ProfileCard({ profile, onOpen, onDelete }: { profile: NistProfileSummary; onOpen: () => void; onDelete: () => void }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const pct = profile.total_subcategories > 0 ? (profile.rated_count / profile.total_subcategories) * 100 : 0
-  const statusColor = profile.status === 'complete' ? '#C6EFCE' : profile.status === 'in_progress' ? '#FFC000' : '#888'
-  const statusBg = profile.status === 'complete' ? 'rgba(198,239,206,0.12)' : profile.status === 'in_progress' ? 'rgba(255,192,0,0.1)' : 'rgba(255,255,255,0.05)'
+  const statusColor = profile.status === 'complete'
+    ? (isLight ? '#1b5e20' : '#C6EFCE')
+    : profile.status === 'in_progress'
+      ? (isLight ? '#9a6500' : '#FFC000')
+      : (isLight ? '#555' : '#888')
+  const statusBg = profile.status === 'complete'
+    ? (isLight ? 'rgba(46,125,50,0.12)'  : 'rgba(198,239,206,0.12)')
+    : profile.status === 'in_progress'
+      ? (isLight ? 'rgba(230,160,0,0.12)' : 'rgba(255,192,0,0.1)')
+      : (isLight ? 'rgba(0,0,0,0.07)'     : 'rgba(255,255,255,0.05)')
   const statusLabel = profile.status === 'complete' ? 'Complete' : profile.status === 'in_progress' ? 'In Progress' : 'Draft'
 
   return (
@@ -106,7 +128,7 @@ function ProfileCard({ profile, onOpen, onDelete }: { profile: NistProfileSummar
               )}
               {profile.avg_current_tier != null && (
                 <Typography variant="caption" color="text.disabled" sx={{ fontSize: '0.65rem' }}>
-                  Avg: <span style={{ color: tierColor(Math.round(profile.avg_current_tier)) }}>T{profile.avg_current_tier.toFixed(1)}</span>
+                  Avg: <span style={{ color: tierColor(Math.round(profile.avg_current_tier), palette.mode) }}>T{profile.avg_current_tier.toFixed(1)}</span>
                 </Typography>
               )}
             </Box>
@@ -137,6 +159,7 @@ function ProfileCard({ profile, onOpen, onDelete }: { profile: NistProfileSummar
 // ── Detail: tier select ────────────────────────────────────────────────────
 
 function TierSelect({ value, onChange, disabled }: { value: number | null; onChange: (v: number | null) => void; disabled?: boolean }) {
+  const { palette } = useTheme()
   return (
     <Select
       value={value ?? 0}
@@ -152,7 +175,7 @@ function TierSelect({ value, onChange, disabled }: { value: number | null; onCha
       {[1, 2, 3, 4].map(t => (
         <MenuItem key={t} value={t} sx={{ fontSize: '0.72rem' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
-            <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: tierColor(t) }} />
+            <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: tierColor(t, palette.mode) }} />
             T{t} {'—'} {TIER_LABELS[t]}
           </Box>
         </MenuItem>
@@ -172,8 +195,11 @@ function FunctionSection({ functionCode, ratings, overrides, onOverride, saving 
   onOverride: (subcategoryId: string, field: 'current_tier' | 'target_tier' | 'notes', value: number | null | string) => void
   saving: boolean
 }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const FC = isLight ? FUNCTION_COLORS_LIGHT : FUNCTION_COLORS_DARK
   const [open, setOpen] = useState(true)
-  const color = FUNCTION_COLORS[functionCode] ?? '#888'
+  const color = FC[functionCode] ?? '#888'
 
   const ratedCount = ratings.filter(r => {
     const ov = overrides[r.subcategory_id]
@@ -235,7 +261,7 @@ function FunctionSection({ functionCode, ratings, overrides, onOverride, saving 
                     <TableCell align="center">
                       {gap != null ? (
                         <Chip label={gap > 0 ? `+${gap}` : gap === 0 ? '\u2713' : `${gap}`} size="small"
-                          sx={{ fontSize: '0.6rem', height: 16, fontWeight: 700, bgcolor: `${gapColor(gap)}22`, color: gapColor(gap) }} />
+                          sx={{ fontSize: '0.6rem', height: 16, fontWeight: 700, bgcolor: `${gapColor(gap, isLight)}22`, color: gapColor(gap, isLight) }} />
                       ) : (
                         <Typography variant="caption" color="text.disabled">{'—'}</Typography>
                       )}
@@ -443,7 +469,7 @@ function ProfileDetail({ profileId, onBack, onDelete }: { profileId: string; onB
             </IconButton>
           </Tooltip>
           <Tooltip title="View full report">
-            <IconButton size="small" onClick={() => navigate(`/nist-csf/${profileId}/report`)} sx={{ color: '#FFC000', bgcolor: 'rgba(255,192,0,0.1)', '&:hover': { bgcolor: 'rgba(255,192,0,0.2)' } }}>
+            <IconButton size="small" onClick={() => navigate(`/nist-csf/${profileId}/report`)} sx={{ color: isLight ? '#7a4800' : '#FFC000', bgcolor: isLight ? 'rgba(230,160,0,0.12)' : 'rgba(255,192,0,0.1)', '&:hover': { bgcolor: isLight ? 'rgba(230,160,0,0.2)' : 'rgba(255,192,0,0.2)' } }}>
               <SummarizeOutlined sx={{ fontSize: 16 }} />
             </IconButton>
           </Tooltip>
@@ -482,6 +508,9 @@ function ProfileDetail({ profileId, onBack, onDelete }: { profileId: string; onB
 // ── Main page ──────────────────────────────────────────────────────────────
 
 export default function NistCsf() {
+  const { palette } = useTheme()
+  const mode = palette.mode
+  const FUNCTION_COLORS = mode === 'light' ? FUNCTION_COLORS_LIGHT : FUNCTION_COLORS_DARK
   const queryClient = useQueryClient()
   const [selectedProfileId, setSelectedProfileId] = useState<string | null>(null)
   const [createOpen, setCreateOpen] = useState(false)
@@ -567,7 +596,7 @@ export default function NistCsf() {
       <Box sx={{ display: 'flex', gap: 1, mb: 3, flexWrap: 'wrap' }}>
         {[1, 2, 3, 4].map(t => (
           <Chip key={t} label={`T${t} \u2014 ${TIER_LABELS[t]}`} size="small"
-            sx={{ fontSize: '0.65rem', height: 20, bgcolor: `${tierColor(t)}18`, color: tierColor(t) }} />
+            sx={{ fontSize: '0.65rem', height: 20, bgcolor: `${tierColor(t, mode)}18`, color: tierColor(t, mode) }} />
         ))}
       </Box>
 
