@@ -382,7 +382,7 @@ Summary Dashboards (per workbook)
 **For Each Use Case**:
 
 - Use Case ID / Name
-- MITRE ATT&CK Tactic (Initial Access, Execution, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Discovery, Lateral Movement, Collection, Exfiltration, Command & Control, Impact)
+- MITRE ATT&CK Tactic (Initial Access, Execution, Persistence, Privilege Escalation, Stealth, Defense Impairment, Credential Access, Discovery, Lateral Movement, Collection, Exfiltration, Command & Control, Impact)
 - MITRE ATT&CK Technique(s) Detected
 - Use Case Description (What threat does this detect?)
 - Data Sources Required (Which logs feed this use case?)

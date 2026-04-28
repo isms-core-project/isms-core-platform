@@ -487,7 +487,7 @@ def create_base_validations(ws):
         ),
         'tactic': DataValidation(
             type="list",
-            formula1='"Reconnaissance,Resource Development,Initial Access,Execution,Persistence,Privilege Escalation,Defence Evasion,Credential Access,Discovery,Lateral Movement,Collection,Command and Control,Exfiltration,Impact"',
+            formula1='"Reconnaissance,Resource Development,Initial Access,Execution,Persistence,Privilege Escalation,Stealth,Defence Impairment,Credential Access,Discovery,Lateral Movement,Collection,Command and Control,Exfiltration,Impact"',
             allow_blank=False
         ),
         'coverage_status': DataValidation(
@@ -1190,7 +1190,7 @@ def create_mitre_coverage_sheet(ws, styles):
     ws[f"A{row}"].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
     ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
 
-    # MITRE 14 Tactics
+    # MITRE 15 Tactics
     tactics_summary = [
         "Reconnaissance",
         "Resource Development",
@@ -1198,7 +1198,8 @@ def create_mitre_coverage_sheet(ws, styles):
         "Execution",
         "Persistence",
         "Privilege Escalation",
-        "Defence Evasion",
+        "Stealth",
+        "Defence Impairment",
         "Credential Access",
         "Discovery",
         "Lateral Movement",
@@ -1273,7 +1274,7 @@ def create_mitre_coverage_sheet(ws, styles):
 
     checklist_items = [
         "Detection rules mapped to MITRE ATT&CK framework",
-        "All 14 MITRE tactics have at least partial coverage",
+        "All 15 MITRE tactics have at least partial coverage",
         "High-risk techniques (Initial Access, Execution) fully covered",
         "Coverage >60% across all tactics",
         "Coverage gaps identified and documented",
@@ -2417,7 +2418,7 @@ def main():
 
     logger.info("  [4/9] Creating MITRE ATT&CK Coverage...")
     create_mitre_coverage_sheet(wb["3. MITRE ATT&CK Coverage"], styles)
-    logger.info("  \u2705 MITRE mapping complete (50 technique rows, 14 tactics)")
+    logger.info("  \u2705 MITRE mapping complete (50 technique rows, 15 tactics)")
 
     logger.info("  [5/9] Creating Rule Performance & Tuning...")
     create_rule_performance_sheet(wb["4. Rule Performance"], styles)
@@ -2460,7 +2461,7 @@ def main():
     logger.info("\n Assessment Sheets:")
     logger.info("  \u2022 1. Baseline Inventory (30 baseline rows, staleness tracking)")
     logger.info("  \u2022 2. Detection Rules (50 rule rows, performance metrics)")
-    logger.info("  \u2022 3. MITRE ATT&CK Coverage (50 techniques, 14 tactics)")
+    logger.info("  \u2022 3. MITRE ATT&CK Coverage (50 techniques, 15 tactics)")
     logger.info("  \u2022 4. Rule Performance & Tuning (precision, recall, F1 score)")
     logger.error("  \u2022 5. Testing & Validation (30 test rows, pass/fail tracking)")
     logger.info("\n>>> Consolidation & Governance:")
@@ -2473,7 +2474,7 @@ def main():
     logger.info("  \u2022 30 baseline tracking rows with staleness monitoring")
     logger.info("  \u2022 50 detection rule inventory rows")
     logger.info("  \u2022 50 MITRE ATT&CK technique mapping rows")
-    logger.info("  \u2022 14 MITRE tactics coverage summary")
+    logger.info("  \u2022 15 MITRE tactics coverage summary")
     logger.info("  \u2022 30 rule performance tracking rows (TP, FP, precision, recall)")
     logger.info("  \u2022 30 test case tracking rows")
     logger.info("  \u2022 Automated compliance % calculations")
@@ -2482,7 +2483,7 @@ def main():
     logger.info(">>> KEY FEATURES:")
     logger.info("  \u2705 Baseline establishment and staleness tracking")
     logger.info("  \u2705 Comprehensive rule inventory with performance metrics")
-    logger.info("  \u2705 MITRE ATT&CK framework mapping (14 tactics)")
+    logger.info("  \u2705 MITRE ATT&CK framework mapping (15 tactics)")
     logger.info("  \u2705 Rule performance tracking (precision, recall, F1 score)")
     logger.info("  \u2705 Detection testing and validation log")
     logger.info("  \u2705 Automated calculations for TP, FP, precision, recall")

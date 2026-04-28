@@ -285,7 +285,8 @@ For relevant ATT&CK techniques:
 | **Execution** | T1059 (Command and Scripting), T1204 (User Execution) |
 | **Persistence** | T1078 (Valid Accounts), T1136 (Create Account) |
 | **Privilege Escalation** | T1068 (Exploitation), T1548 (Abuse Elevation Control) |
-| **Defense Evasion** | T1562 (Impair Defenses), T1070 (Indicator Removal) |
+| **Stealth** | T1070 (Indicator Removal) |
+| **Defense Impairment** | T1562 (Impair Defenses) |
 | **Credential Access** | T1110 (Brute Force), T1555 (Credentials from Password Stores) |
 | **Lateral Movement** | T1021 (Remote Services), T1550 (Use Alternate Authentication) |
 | **Collection** | T1005 (Data from Local System), T1114 (Email Collection) |

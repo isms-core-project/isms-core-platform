@@ -414,7 +414,7 @@ However, outputs from this assessment are INPUT to:
 
 **Quality Check:**
 
-- ✓ All 14 tactics assessed
+- ✓ All 15 tactics assessed
 - ✓ Priority techniques have ≥2 sources
 - ✓ Recently-used techniques (last 90 days) have detection capability
 - ✓ Critical gaps have action items
@@ -1010,7 +1010,7 @@ Assigned To: Infrastructure Team
 
 **Columns:**
 
-- **MITRE_Tactic**: Dropdown (14 tactics)
+- **MITRE_Tactic**: Dropdown (15 tactics)
 - **MITRE_Technique_ID**: Technique ID (e.g., T1190)
 - **Technique_Name**: Technique name
 - **Coverage_Status**: Dropdown (Covered, Partial, Gap)
