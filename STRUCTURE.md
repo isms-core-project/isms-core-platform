@@ -245,8 +245,8 @@ isms-core-platform/
 │   └── data/                              # 30+ JSON reference datasets
 │       ├── iso27001.json                  # ISO 27001:2022 control structure
 │       ├── nist_csf2.json                 # NIST CSF 2.0 subcategories
-│       ├── mitre_attck_v18.json           # MITRE ATT&CK v18 STIX bundle
-│       ├── crosswalk.json                 # 3,315 cross-framework mappings / 41 axes
+│       ├── mitre_attack_v19.json          # MITRE ATT&CK v19 (697 techniques / 15 tactics)
+│       ├── crosswalk.json                 # 3,433 cross-framework mappings / 44 axes
 │       ├── ncsc_caf.json                  # NCSC CAF v4.0 (59 controls / 41 outcomes)
 │       ├── fr_nis2_recyf.json             # ReCyF v2.5 — France NIS2 (172 nodes)
 │       └── ...                            # DORA, NIS2, BSI, TISAX, and more

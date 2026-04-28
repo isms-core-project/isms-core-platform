@@ -550,7 +550,7 @@ All compliance assessment modules benefit from the Platform's Crosswalk Viewer, 
 - ISO 27001:2022 ↔ NIST CSF 2.0
 - NIST AI RMF 1.0 ↔ EU AI Act (72 mappings)
 - ISO 27001:2022 ↔ NIST SP 800-53 Rev. 5
-- ISO 27001:2022 ↔ MITRE ATT&CK v18
+- ISO 27001:2022 ↔ MITRE ATT&CK v19
 - ISO 27001:2022 ↔ DORA
 - ISO 27001:2022 ↔ NIS2
 - ISO 27001:2022 ↔ CIS Controls v8
@@ -566,7 +566,7 @@ All compliance assessment modules benefit from the Platform's Crosswalk Viewer, 
 - ISO 27001:2022 ↔ NCSC CAF v4.0 (65 mappings)
 - ISO 27001:2022 ↔ ReCyF v2.5 / FR NIS2 (50 mappings)
 
-Total: **3,315 crosswalk objects across 41 axes** available in the Crosswalk Viewer.
+Total: **3,433 crosswalk objects across 44 axes** available in the Crosswalk Viewer.
 
 ---
 

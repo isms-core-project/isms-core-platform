@@ -61,7 +61,7 @@ Decompose strategic scenarios into concrete attack paths.
 - Existing security measures that block or detect each step
 - Residual likelihood for each attack path given current measures
 
-The MITRE ATT&CK integration here is direct: when you add a step to an attack path, you can search and select the specific technique from the full ATT&CK v18 library (14 tactics, 700+ techniques and sub-techniques).
+The MITRE ATT&CK integration here is direct: when you add a step to an attack path, you can search and select the specific technique from the full ATT&CK v19 library (15 tactics, 697 techniques and sub-techniques).
 
 ### Workshop 5 — Risk Treatment
 

@@ -71,7 +71,7 @@ This view is a starting point, not a compliance certificate. Inferred scores nee
 | Target framework | Mappings | Key source |
 |-----------------|---------|-----------|
 | NIST CSF 2.0 | ~350 | ISO 27001 → NIST (bidirectional) |
-| MITRE ATT&CK v18 | ~200 | ISO 27001 → ATT&CK techniques |
+| MITRE ATT&CK v19 | ~220 | ISO 27001 → ATT&CK techniques |
 | NIS2 | ~90 | ISO 27001 → NIS2 Article 21 |
 | DORA | ~80 | ISO 27001 → DORA chapters |
 | GDPR | ~60 | ISO 27001 → GDPR articles |

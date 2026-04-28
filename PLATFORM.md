@@ -113,7 +113,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | `isms-core-worker` | Celery 5.3 | Background tasks — import, sync, compliance recalculation. Queue: `isms`. |
 | `isms-core-beat` | Celery Beat | Scheduled jobs — nightly evidence archive at 02:00 UTC; daily KPI snapshots at 06:00 UTC. No healthcheck (by design). |
 | `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, FIRST EPSS, NVD CVE/CPE, ENISA EUVD. Writes to Postgres and OpenSearch. Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `FEEDS_EUVD_ENABLED`, `NIST_API_KEY`. |
-| `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (`--profile threat-intel`) OSINT IOC feed container — CIRCL MISP, Botvrij MISP, AbuseIPDB blacklist, Malpedia (MISP galaxy). Serves on-demand trigger server on port 9002 for backend-initiated feed runs. Env: `ABUSEIPDB_API_KEY`, `SHODAN_API_KEY`, `TI_MISP_IMPORT_FROM_DATE`. |
+| `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (`--profile threat-intel`) OSINT IOC feed container — 11 sources: CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia. Serves on-demand trigger server on port 9002. Env: `ABUSEIPDB_API_KEY`, `TI_THREATFOX_API_KEY`, `MALWAREBAZAAR_API_KEY`, `SHODAN_API_KEY`, `TI_MISP_IMPORT_FROM_DATE`. |
 | `isms-core-connectors` | Python 3.12 | Automated evidence runner — loads all 44 connectors dynamically, pushes evidence to `connector_evidence` table. Env: `CONNECTORS_WORKER_SECRET`. |
 
 > **Access in production:** `https://{HOST_IP}` via nginx. Do NOT access `:3000` or `:8000` directly — those ports are not exposed in production.
@@ -129,7 +129,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 > | `--profile opensearch-cluster` | Replaces the single OpenSearch node with a 3-node cluster (`isms-core-os01/02/03`) for HA and horizontal search capacity. Set `OPENSEARCH_HEAP` per node (e.g. `4g` for 3×4 GB on a 32 GB host). |
 > | `--profile garage` | Adds `isms-core-garage` — a Garage S3-compatible object store for evidence files and index snapshots. Requires `GARAGE_RPC_SECRET`, `GARAGE_ACCESS_KEY`, `GARAGE_SECRET_KEY`. |
 > | `--profile dashboards` | Adds `isms-core-opensearch-dashboards` (port 5601). Set `DASHBOARDS_BIND=0.0.0.0` to reach it from the LAN. |
-> | `--profile threat-intel` | Adds `isms-core-threat-intel` — OSINT IOC feed container (CIRCL MISP, Botvrij MISP, AbuseIPDB, Malpedia). Requires `ABUSEIPDB_API_KEY`. Set `VITE_THREAT_INTEL_ENABLED=true` to show the Intelligence sidebar section in the frontend. |
+> | `--profile threat-intel` | Adds `isms-core-threat-intel` — 11-source OSINT IOC container (CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia). Requires `ABUSEIPDB_API_KEY`; `TI_THREATFOX_API_KEY` + `MALWAREBAZAAR_API_KEY` for those feeds. Set `VITE_THREAT_INTEL_ENABLED=true` to show the Intelligence sidebar. |
 > | `--profile smtp-bridge` | Adds `isms-core-smtp-bridge` — an OAuth relay for Microsoft 365 / Exchange Online. Requires `SMTP_BRIDGE_*` credentials. |
 > | `--profile mailpit` | Adds `isms-core-mailpit` — local mail catcher for dev/test (port 8025). Never use in production. |
 >
@@ -148,8 +148,8 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Gaps** | Identified compliance gaps with severity, owner, SLA, and remediation tracking |
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
-| **Frameworks** | 39 reference datasets: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v18 (v19 upgrade planned), GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS, UK Operational Resilience, NCSC CAF v4.0, ReCyF v2.5 (France NIS2), FINMA, COBIT 2019, and more |
-| **Crosswalk Mappings** | Cross-framework relationships: 3,315 objects / 41 axes — including NIST AI RMF 1.0 ↔ EU AI Act (72), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51), NCSC CAF v4.0 (65), ReCyF v2.5 / FR NIS2 (50), Swiss ISG (40), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
+| **Frameworks** | 39 reference datasets: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v19, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS, UK Operational Resilience, NCSC CAF v4.0, ReCyF v2.5 (France NIS2), FINMA, COBIT 2019, and more |
+| **Crosswalk Mappings** | Cross-framework relationships: 3,433 objects / 44 axes — including ISO 27001 ↔ MITRE ATT&CK v19 (36), ISO 27001 ↔ FINMA (60), ISO 27001 ↔ OWASP ASVS 4.0 (22), NIST SP 800-53 R5 ↔ MITRE ATT&CK v19 (614), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51), NCSC CAF v4.0 (65), ReCyF v2.5 / FR NIS2 (50), Swiss ISG (40), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
 | **Compliance Assessments** | 25 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) for full coverage |
 | **Projects** | Workspace layer — named projects own a curated subset of policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date) applied on add; active/inactive/draft/archived lifecycle |
@@ -197,7 +197,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Evidence Tracker** | Evidence items with expiry tracking, verification status, and freshness alerts |
 | **Connectors** | Automated evidence ingestion from 44 systems — continuous compliance signals from real infrastructure |
 | **Nightly Evidence Archive** | Celery Beat job archives stale connector evidence at 02:00 UTC daily |
-| **Crosswalk Viewer** | Cross-framework mappings: 3,315 objects / 41 axes — ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK ↔ GDPR ↔ DORA ↔ BSI IT-Grundschutz ↔ NCSC CAF ↔ ReCyF v2.5 and more |
+| **Crosswalk Viewer** | Cross-framework mappings: 3,433 objects / 44 axes — ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK v19 ↔ GDPR ↔ DORA ↔ BSI IT-Grundschutz ↔ FINMA ↔ OWASP ASVS 4.0 ↔ NCSC CAF ↔ ReCyF v2.5 and more |
 | **QA / Existence Checker** | Validate that all expected artifacts are present (Framework, Operational, Privacy, Cloud, AI) |
 | **System Event Log** | Full audit log of all platform actions |
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats, import triggers |
@@ -246,11 +246,11 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Country Localisation** | Policy rendering adapts regulatory references for 8 jurisdictions: CH (default), FR, BE, LU, DE, AT, IT, GB — applied at request time from `org.country` |
 | **Cross-Framework Coverage** | BFS inference maps ISO 27001 assessment coverage to NIS2, DORA, and GDPR; Mapping Matrix and Inferred Coverage tabs |
 | **MFA** | TOTP-based 2FA — Google Authenticator / Authy compatible; QR code setup; 8 single-use backup codes; auto-submits on 6-digit entry |
-| **Threat Intelligence Feeds** | Two dedicated containers pulling 11 sources. `isms-core-feeds`: MITRE ATT&CK v18 (weekly — v19 upgrade planned), MITRE ATLAS (weekly), CISA KEV (daily), FIRST EPSS (daily — 10K limit, daily OpenSearch sync), NVD CVE full+delta (weekly/daily — ~250K CVEs, CVSS 4.0 supported), NVD CPE Option B (weekly), ENISA EUVD (daily — exploited + critical CVEs). `isms-core-threat-intel` (optional profile): CIRCL MISP + Botvrij MISP (6-hourly delta, 120K+ IOCs), AbuseIPDB blacklist (daily), Malpedia (weekly — malware families + actors). OSINT IOCs cross-enriched at ingest with ATT&CK TIDs, family slugs, actor slugs. |
+| **Threat Intelligence Feeds** | Two dedicated containers pulling 18 sources. `isms-core-feeds` (7): MITRE ATT&CK v19 (weekly — 697 techniques, 15 tactics), MITRE ATLAS (weekly), CISA KEV (daily), FIRST EPSS (daily — 10K limit, daily OpenSearch sync), NVD CVE full+delta (weekly/daily — ~250K CVEs, CVSS 4.0 supported), NVD CPE Option B (weekly), ENISA EUVD (daily — exploited + critical CVEs). `isms-core-threat-intel` (optional profile, 11 sources): CIRCL MISP + Botvrij MISP (6-hourly delta, 120K+ IOCs), AbuseIPDB (daily), URLhaus (daily — malware URLs), ThreatFox (daily — malware IOCs), SSLBL (daily — malicious SSL cert fingerprints), Red Flag Domains (daily), Stopforumspam (daily), MalwareBazaar (daily — malware sample hashes), Feodo Tracker (daily — C2 botnet IPs), Malpedia (weekly — malware families + actors). All OSINT IOCs cross-enriched at ingest with ATT&CK TIDs, family slugs, actor slugs. |
 | **CVE / CPE Explorer** | Search and filter ~250K NVD CVE entries by severity, EPSS score, CVSS version (v2/v3/v4), year, KEV-only, EUVD flag. Detail panel: CVSS scores (v2/v3/v4), CPE applicability, CWEs, NVD references, EUVD badge. Separate CPE tab. |
 | **EUVD Explorer** | ENISA European Vulnerability Database — browse exploited and critical vulnerabilities; filter by score, exploited-only; detail panel with vendors, products, EPSS, aliases. |
 | **KEV Audit Report (A.8.8)** | Audit trail for ISO 27001:2022 A.8.8 using CISA KEV feed — remediation status by CVE, per-vendor summary, CSV export for auditor evidence. |
-| **IOC Explorer** | Search and filter 120K+ OSINT IOCs across CIRCL MISP, Botvrij MISP, and AbuseIPDB by type (IP / domain / URL / hash), source, MITRE technique, and tag. |
+| **IOC Explorer** | Search and filter OSINT IOCs across all 11 sources (CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia) by type (IP / domain / URL / hash / certificate), source chip, MITRE technique, and tag. |
 | **IP Enrichment** | On-demand single-IP lookup: AbuseIPDB abuse score + report count + categories; Shodan paid API (open ports, banners, CVEs, hostnames) or Shodan InternetDB free fallback. Results cached 24h. |
 | **Malware Atlas** | Malpedia-sourced malware family browser (aliases, description, ATT&CK TIDs, associated actors) and threat actor directory (country attribution, motivation). |
 | **Health Alert Banner** | Dismissible warning banner when any feed run, connector sync, or OpenSearch check reports an error in the last 24 hours. Red-dot sidebar badges on Intelligence and Suppliers groups. |
@@ -604,6 +604,13 @@ Set `VITE_THREAT_INTEL_ENABLED=true` in `.env` before building the frontend to s
 | **CIRCL MISP** | Every 6h (delta) | None (public) | IOCs (IPs, domains, URLs, hashes) with ATT&CK TIDs + Malpedia galaxy tags |
 | **Botvrij MISP** | Every 6h (delta, staggered) | None (public) | Same schema — deduplicated against CIRCL by `(ioc_type, value, source)` |
 | **AbuseIPDB blacklist** | Daily (02:00 UTC) | `ABUSEIPDB_API_KEY` | Top 10,000 confidence=100 abusive IPs → `ti_iocs` + `ti-abuseipdb-blacklist` OpenSearch index |
+| **URLhaus** | Daily (03:00 UTC) | None | Malware download URLs + payload hashes (abuse.ch) |
+| **ThreatFox** | Daily | `TI_THREATFOX_API_KEY` | Malware IOCs (IPs, domains, URLs, hashes) with confidence scores and malware family labels |
+| **SSL Blacklist (SSLBL)** | Daily (04:00 UTC) | None | SHA1 fingerprints of SSL certificates used by malware C2 infrastructure |
+| **Red Flag Domains** | Daily (05:00 UTC) | None | Newly registered suspicious domains |
+| **Stopforumspam** | Daily (05:30 UTC) | None | Spammer IP, email, and username database |
+| **MalwareBazaar** | Daily | `MALWAREBAZAAR_API_KEY` | Malware sample file hashes (MD5/SHA1/SHA256) with malware family classification |
+| **Feodo Tracker** | Daily | None | C2 IPs for Emotet, QakBot, TrickBot, Dridex botnets (confidence 85); `ti-feodotracker` |
 | **Malpedia** | Weekly (Sunday 03:00 UTC) | None | Malware families (3,600+) and threat actors (900+) from MISP galaxy — no API key required |
 
 **On-demand enrichment** (no schedule — triggered from the IP Enrichment page):
@@ -627,16 +634,29 @@ TI_MISP_IMPORT_FROM_DATE=2024-01-01   # default — 2-year window
 | `ti-misp-circl` | CIRCL MISP |
 | `ti-misp-botvrij` | Botvrij MISP |
 | `ti-abuseipdb-blacklist` | AbuseIPDB blacklist |
+| `ti-urlhaus` | URLhaus |
+| `ti-threatfox` | ThreatFox |
+| `ti-sslbl` | SSL Blacklist (SSLBL) |
+| `ti-red-flag-domains` | Red Flag Domains |
+| `ti-stopforumspam` | Stopforumspam |
+| `ti-malwarebazaar` | MalwareBazaar |
+| `ti-feodotracker` | Feodo Tracker |
 | `ti-malpedia-families` | Malpedia malware families |
 | `ti-malpedia-actors` | Malpedia threat actors |
 
 ### Disabling individual feeds
 
 ```env
-TI_MISP_CIRCL_ENABLED=false      # disable CIRCL MISP
-TI_MISP_BOTVRIJ_ENABLED=false     # disable Botvrij MISP
-TI_ABUSEIPDB_ENABLED=false        # disable AbuseIPDB blacklist
-TI_MALPEDIA_ENABLED=false         # disable Malpedia
+TI_MISP_CIRCL_ENABLED=false           # disable CIRCL MISP
+TI_MISP_BOTVRIJ_ENABLED=false         # disable Botvrij MISP
+TI_ABUSEIPDB_ENABLED=false            # disable AbuseIPDB blacklist
+TI_URLHAUS_ENABLED=false              # disable URLhaus
+TI_THREATFOX_ENABLED=false            # disable ThreatFox
+TI_SSLBL_ENABLED=false                # disable SSL Blacklist
+TI_RED_FLAG_DOMAINS_ENABLED=false     # disable Red Flag Domains
+TI_STOPFORUMSPAM_ENABLED=false        # disable Stopforumspam
+TI_MALPEDIA_ENABLED=false             # disable Malpedia
+TI_FEODOTRACKER_ENABLED=false         # disable Feodo Tracker
 ```
 
 ---

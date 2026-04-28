@@ -44,7 +44,7 @@
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NCSC_CAF_v4.0_(UK)-Assessment_Tool-003366?style=flat-square" alt="NCSC CAF v4.0"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/ReCyF_v2.5_(FR_NIS2)-Assessment_Tool-002395?style=flat-square" alt="ReCyF v2.5"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/FINMA-Assessment_Tool-C62828?style=flat-square" alt="FINMA"/></a>
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v18-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
+  <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v19-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/3%2C315_Crosswalk_Objects_%2F_41_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
 </p>
 </details>
@@ -147,7 +147,7 @@ EN · FR · DE · IT
 **Live compliance management system** — turns all content products into dashboards, gap tracking, evidence ingestion, risk registers, and audit reports. Docker Compose, 10 services, self-hosted.
 
 **44** connectors · **10** services<br/>
-**25** assessment modules · **3,315** crosswalk objects / 41 axes<br/>
+**25** assessment modules · **3,433** crosswalk objects / 44 axes<br/>
 7 country jurisdictions
 
 <img src="https://img.shields.io/badge/v1.0-Live-2E8B57?style=flat-square" alt="Live"/>
@@ -350,7 +350,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 <td align="center"><strong>TPRM — Third-Party Risk</strong><br/><img src="screenshots/28_isms-core_tprm.png" width="380" alt="TPRM — vendor/supplier register with DORA ICT fields, contract expiry alerts"/></td>
 </tr>
 <tr>
-<td align="center"><strong>MITRE ATT&CK</strong><br/><img src="screenshots/32_isms-core_mitre.png" width="380" alt="MITRE ATT&CK v18 — 835 techniques across 14 tactics with EPSS and KEV correlation"/></td>
+<td align="center"><strong>MITRE ATT&CK</strong><br/><img src="screenshots/32_isms-core_mitre.png" width="380" alt="MITRE ATT&CK v19 — 697 techniques across 15 tactics with EPSS and KEV correlation"/></td>
 <td align="center"><strong>CVE / CPE Explorer</strong><br/><img src="screenshots/34_isms-core_cve_cpe.png" width="380" alt="CVE/CPE Explorer — NVD vulnerability search with CVSS, EPSS, KEV filters"/></td>
 </tr>
 </table>
@@ -394,13 +394,20 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | ReCyF v2.5 — France NIS2 (ANSSI) | 20 Security Objectives across 4 pillars (Gouvernance / Protection / Défense / Résilience) — French NIS2 transposition (Loi 2024-449); ISO 27001 crosswalk: 50 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-002395?style=flat-square) |
 | FINMA | Assessment module | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
 | NIST SP 800-53 Rev. 5 | Security control cross-mapping | ![Mapped](https://img.shields.io/badge/Mapped-FF6600?style=flat-square) |
-| MITRE ATT&CK v18 | Threat technique mapping (Enterprise / ICS / Mobile) — 835 techniques, EPSS + CISA KEV correlation. v19 upgrade planned. | ![v18](https://img.shields.io/badge/v18-DC143C?style=flat-square) |
+| MITRE ATT&CK v19 | Threat technique mapping (Enterprise / ICS / Mobile) — 697 techniques across 15 tactics, EPSS + CISA KEV correlation. | ![v19](https://img.shields.io/badge/v19-DC143C?style=flat-square) |
 | MITRE ATLAS | AI/ML adversarial threat techniques | ![Mapped](https://img.shields.io/badge/Mapped-DC143C?style=flat-square) |
 | ENISA EUVD | European Vulnerability Database — exploited + critical CVEs; daily feed; EUVD Explorer + cross-enrichment of NVD CVE index with `in_euvd` flag | ![Feed](https://img.shields.io/badge/TI_Feed-003399?style=flat-square) |
 | CIRCL MISP OSINT Feed | Public MISP feed (Luxembourg) — 6-hourly manifest delta; 100K+ IOCs (IPs, domains, URLs, hashes) cross-enriched with ATT&CK TIDs, Malpedia family slugs, actor slugs at ingest | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Botvrij MISP OSINT Feed | Public MISP feed (Botvrij.eu) — 6-hourly manifest delta; deduplicated against CIRCL by IOC value + source | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | AbuseIPDB | Daily blacklist (top 10K confidence=100 IPs); on-demand single-IP enrichment with 24h cache; OpenSearch `ti-abuseipdb-blacklist` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Malpedia | Weekly malware knowledge base — families (aliases, ATT&CK TIDs), threat actors (country, motivation); links IOCs to malware + actor attribution | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| URLhaus | Daily malware download URL feed (abuse.ch) — URLs, associated payload hashes; `ti-urlhaus` OpenSearch index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| ThreatFox | Daily malware IOC feed (abuse.ch) — IPs, domains, URLs, hashes with confidence scores and malware family labels; requires `TI_THREATFOX_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| SSL Blacklist (SSLBL) | Daily SSL certificate blacklist (abuse.ch) — SHA1 fingerprints of certificates used by malware C2 infrastructure; `ti-sslbl` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| MalwareBazaar | Daily malware sample hash feed (abuse.ch) — MD5/SHA1/SHA256 hashes with family classification; requires `MALWAREBAZAAR_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| Feodo Tracker | Daily C2 IP blacklist (abuse.ch) — Emotet, QakBot, TrickBot, Dridex botnet command-and-control IPs; confidence 85; `ti-feodotracker` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| Red Flag Domains | Daily suspicious newly-registered domain feed — `ti-red-flag-domains` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| Stopforumspam | Daily spammer IP/email/username database — `ti-stopforumspam` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | EU GDPR / Swiss DSG | Security and privacy control mapping, operational checklists | ![Toolkit](https://img.shields.io/badge/Toolkit-FFD700?style=flat-square) |
 
 </details>
@@ -450,7 +457,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | 🔒 Privacy | 21 / 21 | 23 PRIV-POL · 42 IMPs · 21 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
 | ☁️ Cloud | 12 / 12 | 12 CLD-POL · 24 IMPs · 12 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
 | 🤖 AI | 12 / 12 | 14 AI-POL · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
-| 🖥️ Platform | 99 total | 44 connectors · 25 assessments · 3,315 mappings / 41 axes | 7 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
+| 🖥️ Platform | 99 total | 44 connectors · 25 assessments · 3,433 mappings / 44 axes | 7 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
 
 ---
 
