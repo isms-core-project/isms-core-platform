@@ -24,14 +24,17 @@ export function createAppTheme(mode: PaletteMode) {
         secondary: isDark ? '#8B9CC8' : '#5568A0',
         disabled:  isDark ? 'rgba(232,234,240,0.38)' : 'rgba(28,38,56,0.38)',
       },
-      error:   { main: '#C00000' },
+      error: {
+        main:         isDark ? '#F07878' : '#C00000',
+        contrastText: isDark ? '#3B0000' : '#ffffff',
+      },
       warning: {
-        main:        isDark ? '#FFEB9C' : '#FF9800',
-        contrastText: isDark ? '#7D6608' : '#FFFFFF',
+        main:         isDark ? '#FFEB9C' : '#A84D08',
+        contrastText: isDark ? '#7D6608' : '#ffffff',
       },
       success: {
-        main:        isDark ? '#C6EFCE' : '#4CAF50',
-        contrastText: isDark ? '#375623' : '#FFFFFF',
+        main:         isDark ? '#C6EFCE' : '#2E7D32',
+        contrastText: isDark ? '#375623' : '#ffffff',
       },
       divider: 'rgba(68, 114, 196, 0.15)',
       action: {
@@ -53,6 +56,15 @@ export function createAppTheme(mode: PaletteMode) {
     },
     shape: { borderRadius: 8 },
     components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          '*, *::before, *::after': {
+            WebkitFontSmoothing: 'antialiased',
+            MozOsxFontSmoothing: 'grayscale',
+            textRendering: 'optimizeLegibility',
+          },
+        },
+      },
       MuiCard: {
         styleOverrides: {
           root: {
@@ -158,10 +170,13 @@ export function createBambooTheme() {
         secondary: '#9ca89e',
         disabled:  'rgba(232,239,233,0.38)',
       },
-      error:   { main: '#C00000' },
+      error: {
+        main:         '#E44E6C',
+        contrastText: '#3B0010',
+      },
       warning: {
-        main:        '#FF6600',
-        contrastText: '#ffffff',
+        main:         '#FF6600',
+        contrastText: '#0a0f0d',
       },
       success: {
         main:        '#32CD32',
@@ -189,6 +204,11 @@ export function createBambooTheme() {
     components: {
       MuiCssBaseline: {
         styleOverrides: {
+          '*, *::before, *::after': {
+            WebkitFontSmoothing: 'antialiased',
+            MozOsxFontSmoothing: 'grayscale',
+            textRendering: 'optimizeLegibility',
+          },
           'input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active': {
             WebkitBoxShadow: '0 0 0 1000px #141e19 inset !important',
             WebkitTextFillColor: '#e8efe9 !important',
@@ -299,10 +319,13 @@ export function createExecutiveTheme() {
         secondary: '#78909C',
         disabled:  'rgba(207,216,220,0.38)',
       },
-      error:   { main: '#C00000' },
+      error: {
+        main:         '#F07878',
+        contrastText: '#3B0000',
+      },
       warning: {
-        main:        '#FFA000',
-        contrastText: '#ffffff',
+        main:         '#FFA000',
+        contrastText: '#1A0D00',
       },
       success: {
         main:        '#66BB6A',
@@ -330,6 +353,11 @@ export function createExecutiveTheme() {
     components: {
       MuiCssBaseline: {
         styleOverrides: {
+          '*, *::before, *::after': {
+            WebkitFontSmoothing: 'antialiased',
+            MozOsxFontSmoothing: 'grayscale',
+            textRendering: 'optimizeLegibility',
+          },
           'input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active': {
             WebkitBoxShadow: '0 0 0 1000px #101214 inset !important',
             WebkitTextFillColor: '#CFD8DC !important',
@@ -442,9 +470,9 @@ export function createAuditorTheme() {
         secondary: '#3d3d3d',
         disabled:  'rgba(0,0,0,0.42)',
       },
-      error:   { main: '#C00000', contrastText: '#ffffff' },
-      warning: { main: '#E65100', contrastText: '#ffffff' },
-      success: { main: '#2E7D32', contrastText: '#ffffff' },
+      error:   { main: '#8B0000', contrastText: '#ffffff' },
+      warning: { main: '#5C3600', contrastText: '#ffffff' },
+      success: { main: '#1B5E20', contrastText: '#ffffff' },
       divider: 'rgba(0,0,0,0.14)',
       action: {
         hover:    'rgba(55,71,79,0.08)',
@@ -467,6 +495,11 @@ export function createAuditorTheme() {
     components: {
       MuiCssBaseline: {
         styleOverrides: {
+          '*, *::before, *::after': {
+            WebkitFontSmoothing: 'antialiased',
+            MozOsxFontSmoothing: 'grayscale',
+            textRendering: 'optimizeLegibility',
+          },
           'input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active': {
             WebkitBoxShadow: '0 0 0 1000px #c6c6c6 inset !important',
             WebkitTextFillColor: '#1a1a1a !important',
