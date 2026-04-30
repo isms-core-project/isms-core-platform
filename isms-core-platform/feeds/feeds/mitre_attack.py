@@ -13,7 +13,6 @@ Sources:
 
 import json
 import logging
-import os
 from datetime import date, datetime, timezone
 from uuid import uuid4
 
@@ -26,8 +25,8 @@ logger = logging.getLogger(__name__)
 
 ATTACK_URL = "https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json"
 
-_SOURCE_LABEL = "attack_v19" if os.environ.get("FEEDS_MITRE_V19", "false").lower() == "true" else "attack_v18"
-_RUN_NAME     = "mitre_attack_v19" if _SOURCE_LABEL == "attack_v19" else "mitre_attack_v18"
+_SOURCE_LABEL = "attack_v19"
+_RUN_NAME     = "mitre_attack_v19"
 
 
 # ── Parsers ───────────────────────────────────────────────────────────────────

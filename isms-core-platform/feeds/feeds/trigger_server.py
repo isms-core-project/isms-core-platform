@@ -7,7 +7,7 @@ A 409 is returned if the feed is already running.
 Endpoints:
   POST   /trigger/nist_cve?mode=full   — NVD CVE full pull
   POST   /trigger/nist_cve?mode=delta  — NVD CVE delta pull
-  POST   /trigger/mitre_attack         — MITRE ATT&CK
+  POST   /trigger/mitre_attack_v19      — MITRE ATT&CK
   POST   /trigger/mitre_atlas          — MITRE ATLAS
   POST   /trigger/cisa_kev             — CISA KEV
   POST   /trigger/epss                 — FIRST EPSS
@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 _TRIGGERS: dict[str, callable] = {
     "nist_cve_full":  nist_cve.run_full,
     "nist_cve_delta": nist_cve.run_delta,
-    "mitre_attack":   mitre_attack.run,
+    "mitre_attack_v19": mitre_attack.run,
     "mitre_atlas":    mitre_atlas.run,
     "cisa_kev":       cisa_kev.run,
     "epss":           epss.run,
