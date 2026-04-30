@@ -979,20 +979,34 @@ Deactivated users cannot log in. Their data and activity history are preserved.
 
 ### Notification preferences
 
-Each user controls which email notifications they receive:
+Go to **Notifications** (bell icon in the sidebar) to manage email notifications. The page has three tabs:
 
-1. Click your name in the sidebar (bottom-left).
-2. Go to **Profile & Settings → Notifications**.
-3. Toggle each event type on or off.
+#### My Preferences
 
-| Event | Default | Description |
-|-------|---------|-------------|
-| **Gap assigned to me** | On | Email when a gap is assigned to you |
-| **Evidence expiry alerts** | On | Warning when evidence items are approaching or past expiry |
-| **QA check failures** | On | Summary email when a QA check finds failures |
-| **Import completed** | On | Email when a data import finishes |
-| **Feed pull failures** | On | Alert when a threat intelligence feed (MITRE, KEV, NVD) fails to pull |
-| **Connector sync failures** | On | Alert when an evidence connector reports a sync error |
+Toggle which events you personally receive by email. Changes take effect immediately.
+
+| Event | Category | Default | Description |
+|-------|----------|---------|-------------|
+| **Gap assigned to me** | Workflow | On | Email when a gap is assigned to you |
+| **Evidence expiry alerts** | Workflow | On | Warning when evidence items are approaching or past expiry |
+| **QA check failures** | System | On | Summary email when a QA check finds failures |
+| **Import completed** | System | On | Email when a data import finishes |
+| **Feed pull failures** | Infrastructure | On | Alert when a vulnerability feed (MITRE, KEV, NVD) fails to pull |
+| **TI feed failures** | Infrastructure | On | Alert when an OSINT threat intelligence feed fails |
+| **Connector sync failures** | Infrastructure | On | Alert when an evidence connector reports a sync error |
+
+Use the **Send test** button (paper-plane icon) next to any event to send a test email to yourself and confirm delivery is working.
+
+#### Routing Rules (Admin only)
+
+Admins can control which roles receive each notification type. For each event:
+
+- **Target Roles** — the roles that receive this notification (multi-select). Only active users with those roles are included.
+- **Always include override** — when enabled, the `NOTIFICATION_EMAIL` address configured in the deployment environment is always added as a recipient regardless of role settings. Use this for a shared ops inbox that must receive all critical alerts.
+
+#### User Overview (Admin only)
+
+Displays all active users with their per-event preferences in a matrix view. Click any cell to toggle an individual user's preference on or off — useful for onboarding new users or correcting misconfigured preferences without asking the user to do it themselves.
 
 > **Note:** Email delivery requires `MAIL_HOST` to be configured in the deployment environment. If email is disabled, notifications are suppressed regardless of preferences.
 
