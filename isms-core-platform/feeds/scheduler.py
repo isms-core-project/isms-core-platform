@@ -8,6 +8,7 @@ Pulls threat intelligence and vulnerability data on fixed schedules:
   - CISA KEV       : daily    (03:00 UTC)
   - NVD CVE delta  : daily    (03:00 UTC — runs alongside KEV, both are fast)
   - FIRST EPSS     : daily    (03:30 UTC)
+  - Exploit-DB     : daily    (04:30 UTC — after EUVD delta, cross-enriches nvd-cve)
   - ENISA EUVD full : weekly  (Sunday 02:45 UTC)
   - ENISA EUVD delta: daily   (04:00 UTC)
 
@@ -19,8 +20,9 @@ Each feed can be disabled via env vars:
   FEEDS_CVE_ENABLED=true|false
   FEEDS_CPE_ENABLED=true|false  (Option A always runs as part of CVE pull)
   FEEDS_CPE_FULL=false          (Option B KEV-vendor CPE — default off)
-  FEEDS_EUVD_ENABLED=true|false (default: true)
-  FEEDS_RUN_ON_START=false      (force-run all feeds on every start — default: false)
+  FEEDS_EUVD_ENABLED=true|false      (default: true)
+  FEEDS_EXPLOITDB_ENABLED=true|false (default: true)
+  FEEDS_RUN_ON_START=false           (force-run all feeds on every start — default: false)
 
 Startup behaviour:
   - By default feeds do NOT run on container start — they wait for their scheduled window.
@@ -47,7 +49,7 @@ import time
 
 import schedule
 
-from feeds import cisa_kev, epss, euvd, mitre_atlas, mitre_attack, nist_cpe, nist_cve, trigger_server
+from feeds import cisa_kev, epss, euvd, exploitdb, mitre_atlas, mitre_attack, nist_cpe, nist_cve, trigger_server
 from feeds.base import has_successful_run
 
 logging.basicConfig(
@@ -93,6 +95,7 @@ def _clear_stale_runs():
                         OR feed_name LIKE 'nvd_cve%'
                         OR feed_name LIKE 'nvd_cpe%'
                         OR feed_name LIKE 'euvd%'
+                        OR feed_name LIKE 'exploitdb%'
                         )
                     """
                 )
@@ -128,6 +131,8 @@ def main():
     if _enabled("FEEDS_EUVD_ENABLED"):
         schedule.every().sunday.at("02:45").do(_safe(euvd.run_full, "ENISA EUVD (full)"))
         schedule.every().day.at("04:00").do(_safe(euvd.run_delta, "ENISA EUVD (delta)"))
+    if _enabled("FEEDS_EXPLOITDB_ENABLED"):
+        schedule.every().day.at("04:30").do(_safe(exploitdb.run, "Exploit-DB"))
 
     # ── Startup runs ─────────────────────────────────────────────────────────────
     # Fast feeds first (<5s each), heavy full-pulls last.
@@ -155,6 +160,8 @@ def main():
         _safe(nist_cpe.run, "NVD CPE (Option B)")()
     if _enabled("FEEDS_EUVD_ENABLED") and _should_run("euvd"):
         _safe(euvd.run_full, "ENISA EUVD (full)")()
+    if _enabled("FEEDS_EXPLOITDB_ENABLED") and _should_run("exploitdb"):
+        _safe(exploitdb.run, "Exploit-DB")()
 
     logger.info("Scheduler running — next jobs: %s", schedule.jobs)
 

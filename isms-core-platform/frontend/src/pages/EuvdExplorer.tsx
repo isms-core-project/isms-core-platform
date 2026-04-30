@@ -139,6 +139,7 @@ export default function EuvdExplorer() {
   const [searchInput, setSearchInput]   = useState('')
   const [search, setSearch]             = useState('')
   const [exploitedOnly, setExploited]   = useState(false)
+  const [criticalOnly, setCritical]     = useState(false)
   const [euAssignedOnly, setEuAssigned] = useState(false)
   const [minScore, setMinScore]         = useState('')
   const [page, setPage]                 = useState(1)
@@ -153,10 +154,11 @@ export default function EuvdExplorer() {
   })
 
   const { data, isLoading } = useQuery({
-    queryKey: ['euvd', 'list', search, exploitedOnly, euAssignedOnly, minScore, page],
+    queryKey: ['euvd', 'list', search, exploitedOnly, criticalOnly, euAssignedOnly, minScore, page],
     queryFn:  () => feedsApi.getEuvd({
       search:           search || undefined,
       exploited_only:   exploitedOnly || undefined,
+      critical_only:    criticalOnly || undefined,
       eu_assigned_only: euAssignedOnly || undefined,
       min_score:        minScore ? Number(minScore) : undefined,
       page,
@@ -226,13 +228,18 @@ export default function EuvdExplorer() {
             </Select>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
               <Switch size="small" checked={exploitedOnly}
-                onChange={e => { setExploited(e.target.checked); setEuAssigned(false); setPage(1) }} />
-              <Typography variant="caption">Exploited only</Typography>
+                onChange={e => { setExploited(e.target.checked); setCritical(false); setEuAssigned(false); setPage(1) }} />
+              <Typography variant="caption" sx={{ color: exploitedOnly ? '#ff6b6b' : 'text.secondary' }}>Exploited only</Typography>
+            </Box>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+              <Switch size="small" checked={criticalOnly}
+                onChange={e => { setCritical(e.target.checked); setExploited(false); setEuAssigned(false); setPage(1) }} />
+              <Typography variant="caption" sx={{ color: criticalOnly ? '#ed6c02' : 'text.secondary' }}>Critical only</Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
               <Switch size="small" checked={euAssignedOnly}
-                onChange={e => { setEuAssigned(e.target.checked); setExploited(false); setPage(1) }} />
-              <Typography variant="caption" sx={{ color: '#5c7ad6' }}>EU Assigned</Typography>
+                onChange={e => { setEuAssigned(e.target.checked); setExploited(false); setCritical(false); setPage(1) }} />
+              <Typography variant="caption" sx={{ color: euAssignedOnly ? '#5c7ad6' : 'text.secondary' }}>EU Assigned</Typography>
             </Box>
           </Box>
 

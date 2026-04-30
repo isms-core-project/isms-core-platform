@@ -45,6 +45,8 @@ INDICES = {
                 "in_kev":          {"type": "boolean"},
                 "in_euvd":         {"type": "boolean"},
                 "euvd_id":         {"type": "keyword"},
+                "edb_id":          {"type": "integer"},
+                "edb_verified":    {"type": "boolean"},
                 "epss_score":      {"type": "float"},
                 "references":      {"type": "text"},
                 "indexed_at":      {"type": "date"},
@@ -96,31 +98,33 @@ INDICES = {
         "indexed_at":   {"type": "date"},
     }}},
     "ti-abuseipdb-blacklist": {"mappings": {"properties": {
-        "ioc_type":     {"type": "keyword"},
-        "value":        {"type": "keyword"},
-        "source":       {"type": "keyword"},
-        "confidence":   {"type": "integer"},
-        "first_seen":   {"type": "date"},
-        "last_seen":    {"type": "date"},
-        "indexed_at":   {"type": "date"},
+        "ip":               {"type": "ip"},
+        "abuse_score":      {"type": "integer"},
+        "country_code":     {"type": "keyword"},
+        "isp":              {"type": "keyword"},
+        "usage_type":       {"type": "keyword"},
+        "categories":       {"type": "integer"},
+        "total_reports":    {"type": "integer"},
+        "last_reported_at": {"type": "date"},
+        "indexed_at":       {"type": "date"},
     }}},
     "ti-malpedia-families": {"mappings": {"properties": {
-        "slug":         {"type": "keyword"},
-        "name":         {"type": "text", "fields": {"keyword": {"type": "keyword", "ignore_above": 512}}},
-        "aliases":      {"type": "keyword"},
-        "description":  {"type": "text"},
-        "actor_slugs":  {"type": "keyword"},
-        "mitre_tids":   {"type": "keyword"},
-        "indexed_at":   {"type": "date"},
+        "slug":        {"type": "keyword"},
+        "name":        {"type": "text", "fields": {"keyword": {"type": "keyword", "ignore_above": 512}}},
+        "aliases":     {"type": "keyword"},
+        "description": {"type": "text"},
+        "actor_slugs": {"type": "keyword"},
+        "mitre_tids":  {"type": "keyword"},
+        "updated_at":  {"type": "date"},
     }}},
     "ti-malpedia-actors": {"mappings": {"properties": {
-        "slug":         {"type": "keyword"},
-        "name":         {"type": "text", "fields": {"keyword": {"type": "keyword", "ignore_above": 512}}},
-        "country":      {"type": "keyword"},
-        "motivation":   {"type": "keyword"},
-        "description":  {"type": "text"},
-        "family_slugs": {"type": "keyword"},
-        "indexed_at":   {"type": "date"},
+        "slug":        {"type": "keyword"},
+        "name":        {"type": "text", "fields": {"keyword": {"type": "keyword", "ignore_above": 512}}},
+        "country":     {"type": "keyword"},
+        "motivation":  {"type": "keyword"},
+        "actor_type":  {"type": "keyword"},
+        "description": {"type": "text"},
+        "updated_at":  {"type": "date"},
     }}},
     # ── Phase 41 — new TI feed indices ───────────────────────────────────────
     "ti-malpedia-tools": {"mappings": {"properties": {
@@ -128,7 +132,7 @@ INDICES = {
         "name":       {"type": "text", "fields": {"keyword": {"type": "keyword", "ignore_above": 256}}},
         "aliases":    {"type": "keyword"},
         "mitre_tids": {"type": "keyword"},
-        "indexed_at": {"type": "date"},
+        "updated_at": {"type": "date"},
     }}},
     "ti-urlhaus": {"mappings": {"properties": {
         "url":        {"type": "keyword"},
@@ -182,6 +186,21 @@ INDICES = {
         "tags":       {"type": "keyword"},
         "first_seen": {"type": "date"},
         "indexed_at": {"type": "date"},
+    }}},
+    # ── Exploit-DB (Phase 47) ─────────────────────────────────────────────────
+    "exploitdb": {"mappings": {"properties": {
+        "edb_id":         {"type": "integer"},
+        "description":    {"type": "text", "fields": {"keyword": {"type": "keyword", "ignore_above": 512}}},
+        "type":           {"type": "keyword"},
+        "platform":       {"type": "keyword"},
+        "verified":       {"type": "boolean"},
+        "has_msf":        {"type": "boolean"},
+        "date_published": {"type": "date", "format": "yyyy-MM-dd||strict_date_optional_time"},
+        "author":         {"type": "keyword"},
+        "tags":           {"type": "keyword"},
+        "cve_refs":       {"type": "keyword"},
+        "file_path":      {"type": "keyword"},
+        "indexed_at":     {"type": "date"},
     }}},
     # ── Per-source evidence indices (Phase 39a) ───────────────────────────────
     # Common base fields shared by all per-source indices
@@ -1035,6 +1054,122 @@ def _top_table(obj_id: str, title: str, index_id: str,
     }
 
 
+def _score_histogram(obj_id: str, title: str, index_id: str, field: str, interval: float) -> dict:
+    """Bar chart histogram on a numeric field (not date). Good for score distributions."""
+    vis_state = {
+        "title": title, "type": "histogram",
+        "params": {
+            "type": "histogram",
+            "grid": {"categoryLines": False},
+            "categoryAxes": [{"id": "CategoryAxis-1", "type": "category",
+                              "position": "bottom", "show": True,
+                              "scale": {"type": "linear"},
+                              "labels": {"show": True, "truncate": 100}, "title": {}}],
+            "valueAxes": [{"id": "ValueAxis-1", "name": "LeftAxis-1",
+                           "type": "value", "position": "left", "show": True,
+                           "scale": {"type": "linear"},
+                           "labels": {"show": True, "rotate": 0, "filter": False, "truncate": 100},
+                           "title": {"text": "CVE Count"}}],
+            "seriesParams": [{"show": True, "type": "histogram", "mode": "stacked",
+                              "data": {"label": "Count", "id": "1"},
+                              "valueAxis": "ValueAxis-1",
+                              "drawLinesBetweenPoints": True,
+                              "lineWidth": 2, "showCircles": True}],
+            "addTooltip": True, "addLegend": False, "legendPosition": "right",
+            "times": [], "addTimeMarker": False, "labels": {"show": False},
+        },
+        "aggs": [
+            {"id": "1", "enabled": True, "type": "count", "schema": "metric", "params": {}},
+            {"id": "2", "enabled": True, "type": "histogram", "schema": "segment",
+             "params": {"field": field, "interval": interval,
+                        "min_doc_count": 1, "extended_bounds": {}}},
+        ],
+    }
+    return {
+        "type": "visualization", "id": obj_id,
+        "attributes": {
+            "title": title,
+            "visState": json.dumps(vis_state),
+            "uiStateJSON": "{}",
+            "kibanaSavedObjectMeta": {"searchSourceJSON": _ss(index_id)},
+        },
+        "references": [{"name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                        "type": "index-pattern", "id": index_id}],
+    }
+
+
+def _kql_pie(obj_id: str, title: str, index_id: str, field: str, kql: str) -> dict:
+    """Pie chart with a KQL pre-filter."""
+    vis_state = {
+        "title": title, "type": "pie",
+        "params": {
+            "type": "pie", "addTooltip": True, "addLegend": True,
+            "legendPosition": "right", "isDonut": True,
+            "labels": {"show": False, "values": True, "last_level": True, "truncate": 100},
+        },
+        "aggs": [
+            {"id": "1", "enabled": True, "type": "count", "schema": "metric", "params": {}},
+            {"id": "2", "enabled": True, "type": "terms", "schema": "segment",
+             "params": {"field": field, "orderBy": "1", "order": "desc",
+                        "size": 10, "otherBucket": False, "missingBucket": False}},
+        ],
+    }
+    return {
+        "type": "visualization", "id": obj_id,
+        "attributes": {
+            "title": title,
+            "visState": json.dumps(vis_state),
+            "uiStateJSON": "{}",
+            "kibanaSavedObjectMeta": {"searchSourceJSON": json.dumps({
+                "index": index_id,
+                "query": {"query": kql, "language": "kuery"},
+                "filter": [],
+            })},
+        },
+        "references": [{"name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                        "type": "index-pattern", "id": index_id}],
+    }
+
+
+def _kql_top_table(obj_id: str, title: str, index_id: str,
+                   bucket_field: str, metric_field: str, kql: str, size: int = 50) -> dict:
+    """Top-N table sorted by max(metric_field), pre-filtered with KQL."""
+    vis_state = {
+        "title": title, "type": "table",
+        "params": {
+            "perPage": 25, "showPartialRows": False, "showMetricsAtAllLevels": False,
+            "sort": {"columnIndex": None, "direction": None},
+            "showTotal": False, "totalFunc": "sum", "percentageCol": "",
+        },
+        "aggs": [
+            {"id": "1", "enabled": True, "type": "max", "schema": "metric",
+             "params": {"field": metric_field,
+                        "customLabel": metric_field.replace("_", " ").title()}},
+            {"id": "2", "enabled": True, "type": "terms", "schema": "bucket",
+             "params": {
+                 "field": bucket_field, "orderBy": "1", "order": "desc",
+                 "size": size, "otherBucket": False, "missingBucket": False,
+                 "customLabel": bucket_field.replace("_", " ").replace(".", " ").title(),
+             }},
+        ],
+    }
+    return {
+        "type": "visualization", "id": obj_id,
+        "attributes": {
+            "title": title,
+            "visState": json.dumps(vis_state),
+            "uiStateJSON": "{}",
+            "kibanaSavedObjectMeta": {"searchSourceJSON": json.dumps({
+                "index": index_id,
+                "query": {"query": kql, "language": "kuery"},
+                "filter": [],
+            })},
+        },
+        "references": [{"name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                        "type": "index-pattern", "id": index_id}],
+    }
+
+
 def _dashboard(obj_id: str, title: str, panels: list) -> dict:
     panels_json = []
     refs = []
@@ -1214,7 +1349,7 @@ def build_objects(fields_by_id: dict) -> list:
         {"type": "index-pattern", "id": "ip-nvd-cve",
          "attributes": {
              "title": "nvd-cve",
-             "timeFieldName": "published",
+             "timeFieldName": "indexed_at",
              "fields": fields_by_id.get("ip-nvd-cve", "[]"),
          },
          "references": []},
@@ -1236,27 +1371,27 @@ def build_objects(fields_by_id: dict) -> list:
         {"type": "index-pattern", "id": "ip-ti-abuseipdb",
          "attributes": {
              "title": "ti-abuseipdb-blacklist",
-             "timeFieldName": "last_seen",
+             "timeFieldName": "indexed_at",
              "fields": fields_by_id.get("ip-ti-abuseipdb", "[]"),
          },
          "references": []},
         {"type": "index-pattern", "id": "ip-ti-malpedia-families",
          "attributes": {
              "title": "ti-malpedia-families",
-             "timeFieldName": "indexed_at",
+             "timeFieldName": "updated_at",
              "fields": fields_by_id.get("ip-ti-malpedia-families", "[]"),
          },
          "references": []},
         {"type": "index-pattern", "id": "ip-ti-malpedia-actors",
          "attributes": {
              "title": "ti-malpedia-actors",
-             "timeFieldName": "indexed_at",
+             "timeFieldName": "updated_at",
              "fields": fields_by_id.get("ip-ti-malpedia-actors", "[]"),
          },
          "references": []},
         # Phase 41 — new TI feed index patterns
         {"type": "index-pattern", "id": "ip-ti-malpedia-tools",
-         "attributes": {"title": "ti-malpedia-tools", "timeFieldName": "indexed_at",
+         "attributes": {"title": "ti-malpedia-tools", "timeFieldName": "updated_at",
                         "fields": fields_by_id.get("ip-ti-malpedia-tools", "[]")}, "references": []},
         {"type": "index-pattern", "id": "ip-ti-urlhaus",
          "attributes": {"title": "ti-urlhaus", "timeFieldName": "date_added",
@@ -1279,6 +1414,14 @@ def build_objects(fields_by_id: dict) -> list:
         {"type": "index-pattern", "id": "ip-ti-malwarebazaar",
          "attributes": {"title": "ti-malwarebazaar", "timeFieldName": "first_seen",
                         "fields": fields_by_id.get("ip-ti-malwarebazaar", "[]")}, "references": []},
+        # Phase 47 — Exploit-DB index pattern
+        {"type": "index-pattern", "id": "ip-exploitdb",
+         "attributes": {
+             "title": "exploitdb",
+             "timeFieldName": "date_published",
+             "fields": fields_by_id.get("ip-exploitdb", "[]"),
+         },
+         "references": []},
     ]
 
     objs += [
@@ -1304,10 +1447,12 @@ def build_objects(fields_by_id: dict) -> list:
 
     # EPSS Risk Analytics
     objs += [
-        _kql_metric("viz-epss-total", "EPSS — CVEs with Score",  "ip-nvd-cve", "epss_score: *"),
-        _kql_metric("viz-epss-10p",   "EPSS — Score ≥ 10%",      "ip-nvd-cve", "epss_score >= 0.1"),
-        _kql_metric("viz-epss-20p",   "EPSS — Score ≥ 20%",      "ip-nvd-cve", "epss_score >= 0.2"),
-        _top_table("viz-epss-top",    "EPSS — Top 100 by Score", "ip-nvd-cve", "cve_id", "epss_score", 100),
+        _kql_metric(     "viz-epss-total", "EPSS — CVEs Indexed",              "ip-nvd-cve", "epss_score: *"),
+        _kql_metric(     "viz-epss-10p",   "EPSS — Score ≥ 50% (High Risk)",   "ip-nvd-cve", "epss_score >= 0.5"),
+        _kql_metric(     "viz-epss-20p",   "EPSS — Score ≥ 90% (Extreme)",     "ip-nvd-cve", "epss_score >= 0.9"),
+        _score_histogram("viz-epss-hist",  "EPSS — Score Distribution",        "ip-nvd-cve", "epss_score", 0.05),
+        _kql_pie(        "viz-epss-kev",   "High-Risk CVEs — KEV Status",      "ip-nvd-cve", "in_kev", "epss_score >= 0.1"),
+        _kql_top_table(  "viz-epss-top",   "EPSS — Top 50 High-Risk CVEs",     "ip-nvd-cve", "cve_id", "epss_score", "epss_score >= 0.01", 50),
     ]
 
     # CISA KEV Tracker
@@ -1336,7 +1481,9 @@ def build_objects(fields_by_id: dict) -> list:
         ("viz-epss-total",  0,  0, 16, 5),
         ("viz-epss-10p",   16,  0, 16, 5),
         ("viz-epss-20p",   32,  0, 16, 5),
-        ("viz-epss-top",    0,  5, 48, 15),
+        ("viz-epss-hist",   0,  5, 32, 11),
+        ("viz-epss-kev",   32,  5, 16, 11),
+        ("viz-epss-top",    0, 16, 48, 14),
     ]))
     objs.append(_dashboard("dash-kev", "ISMS CORE — CISA KEV Tracker", [
         ("viz-kev-total",      0,  0, 12, 5),
@@ -1473,15 +1620,18 @@ def build_objects(fields_by_id: dict) -> list:
     # ── Phase 40e — Threat Intelligence Dashboards ───────────────────────────
 
     # MISP IOC Explorer (CIRCL + Botvrij combined via ti-misp-* wildcard)
+    # mitre_tids/family_slugs/actor_slugs are empty for CIRCL/Botvrij feeds — these
+    # public feeds provide raw IOCs without ATT&CK/Malpedia enrichment.
+    # Useful fields with actual data: ioc_type, source, tags, confidence.
     objs += [
         _metric(     "viz-ti-misp-total",    "MISP — Total IOCs",                 "ip-ti-misp"),
         _kql_metric( "viz-ti-misp-circl",    "MISP — CIRCL Events",               "ip-ti-misp", "source: circl_misp"),
         _kql_metric( "viz-ti-misp-botvrij",  "MISP — Botvrij Events",             "ip-ti-misp", "source: botvrij_misp"),
         _timeline(   "viz-ti-misp-time",     "MISP — IOCs Over Time",             "ip-ti-misp", "last_seen"),
         _pie(        "viz-ti-misp-type",     "MISP — By IOC Type",                "ip-ti-misp", "ioc_type"),
-        _count_table("viz-ti-misp-tids",     "MISP — Top ATT&CK TIDs",            "ip-ti-misp", "mitre_tids", 25),
-        _count_table("viz-ti-misp-families", "MISP — Top Malware Families",       "ip-ti-misp", "family_slugs", 25),
-        _count_table("viz-ti-misp-actors",   "MISP — Top Threat Actors",          "ip-ti-misp", "actor_slugs", 25),
+        _pie(        "viz-ti-misp-source",   "MISP — By Source Feed",             "ip-ti-misp", "source"),
+        _count_table("viz-ti-misp-tags",     "MISP — Top Tags",                   "ip-ti-misp", "tags", 30),
+        _score_histogram("viz-ti-misp-conf", "MISP — Confidence Distribution",    "ip-ti-misp", "confidence", 10),
     ]
     objs.append(_dashboard("dash-ti-misp", "ISMS CORE — MISP Threat Intelligence", [
         ("viz-ti-misp-total",    0,  0, 16, 5),
@@ -1489,51 +1639,178 @@ def build_objects(fields_by_id: dict) -> list:
         ("viz-ti-misp-botvrij", 32,  0, 16, 5),
         ("viz-ti-misp-time",     0,  5, 48, 8),
         ("viz-ti-misp-type",     0, 13, 16, 9),
-        ("viz-ti-misp-tids",    16, 13, 16, 9),
-        ("viz-ti-misp-families",32, 13, 16, 9),
-        ("viz-ti-misp-actors",   0, 22, 48,10),
+        ("viz-ti-misp-source",  16, 13, 16, 9),
+        ("viz-ti-misp-conf",    32, 13, 16, 9),
+        ("viz-ti-misp-tags",     0, 22, 48,10),
     ]))
 
     # AbuseIPDB Blacklist
+    # Feed uses confidenceMinimum=100 → all IPs have abuse_score=100 (not useful for metrics).
+    # Feed creates index with its own _OS_MAPPING (pure keyword, no .keyword subfields).
+    # Use plain field names: country_code, isp, usage_type are all keyword → aggregatable.
     objs += [
-        _metric(     "viz-ti-abuse-total",   "AbuseIPDB — Blacklisted IPs",       "ip-ti-abuseipdb"),
-        _kql_metric( "viz-ti-abuse-100",     "AbuseIPDB — Confidence 100%",       "ip-ti-abuseipdb", "confidence: 100"),
-        _kql_metric( "viz-ti-abuse-90",      "AbuseIPDB — Confidence ≥ 90%",      "ip-ti-abuseipdb", "confidence >= 90"),
-        _timeline(   "viz-ti-abuse-time",    "AbuseIPDB — Last Seen Over Time",   "ip-ti-abuseipdb", "last_seen"),
-        _top_table(  "viz-ti-abuse-top",     "AbuseIPDB — Top IPs by Confidence", "ip-ti-abuseipdb", "value", "confidence", 50),
+        _metric(     "viz-ti-abuse-total",   "AbuseIPDB — Blacklisted IPs",         "ip-ti-abuseipdb"),
+        _pie(        "viz-ti-abuse-country", "AbuseIPDB — By Country",              "ip-ti-abuseipdb", "country_code"),
+        _pie(        "viz-ti-abuse-usage",   "AbuseIPDB — By Usage Type",           "ip-ti-abuseipdb", "usage_type"),
+        _timeline(   "viz-ti-abuse-time",    "AbuseIPDB — Last Reported Over Time", "ip-ti-abuseipdb", "last_reported_at"),
+        _count_table("viz-ti-abuse-isp",     "AbuseIPDB — Top ISPs",               "ip-ti-abuseipdb", "isp", 25),
     ]
     objs.append(_dashboard("dash-ti-abuseipdb", "ISMS CORE — AbuseIPDB Blacklist", [
-        ("viz-ti-abuse-total",  0,  0, 16, 5),
-        ("viz-ti-abuse-100",   16,  0, 16, 5),
-        ("viz-ti-abuse-90",    32,  0, 16, 5),
-        ("viz-ti-abuse-time",   0,  5, 48, 8),
-        ("viz-ti-abuse-top",    0, 13, 48,12),
+        ("viz-ti-abuse-total",    0,  0, 16, 8),
+        ("viz-ti-abuse-country", 16,  0, 16, 8),
+        ("viz-ti-abuse-usage",   32,  0, 16, 8),
+        ("viz-ti-abuse-time",     0,  8, 48, 8),
+        ("viz-ti-abuse-isp",      0, 16, 48, 9),
     ]))
 
     # Malpedia — Malware Families
     objs += [
         _metric(     "viz-ti-mal-fam-total",   "Malpedia — Malware Families",          "ip-ti-malpedia-families"),
-        _count_table("viz-ti-mal-fam-actors",  "Families — Top Actor Links",           "ip-ti-malpedia-families", "actor_slugs", 25),
         _count_table("viz-ti-mal-fam-tids",    "Families — Top ATT&CK TIDs",           "ip-ti-malpedia-families", "mitre_tids", 25),
     ]
 
-    # Malpedia — Threat Actors
+    # Malpedia — Threat Actors + Tools
+    # actor_type field may be text-mapped (dynamically added) → use actor_type.keyword.
+    # actor_slugs on families is empty (attribution not resolved from API) → removed.
+    # Tools and Families share mitre_tids field → compare ATT&CK coverage side by side.
     objs += [
         _metric(     "viz-ti-mal-act-total",   "Malpedia — Threat Actors",             "ip-ti-malpedia-actors"),
         _pie(        "viz-ti-mal-act-country", "Actors — By Country",                  "ip-ti-malpedia-actors", "country"),
         _pie(        "viz-ti-mal-act-motiv",   "Actors — By Motivation",               "ip-ti-malpedia-actors", "motivation"),
-        _count_table("viz-ti-mal-act-fams",    "Actors — Top Malware Families Used",   "ip-ti-malpedia-actors", "family_slugs", 25),
+        _pie(        "viz-ti-mal-act-type",    "Actors — APT vs Ransomware Groups",    "ip-ti-malpedia-actors", "actor_type.keyword"),
+        _metric(     "viz-ti-mal-tool-total",  "Malpedia — Tools",                     "ip-ti-malpedia-tools"),
+        _count_table("viz-ti-mal-tool-tids",   "Tools — Top ATT&CK TIDs",             "ip-ti-malpedia-tools", "mitre_tids", 25),
     ]
     objs.append(_dashboard("dash-ti-malpedia", "ISMS CORE — Malpedia Atlas", [
-        # Families row
+        # Summary metrics row
         ("viz-ti-mal-fam-total",    0,  0, 16, 5),
         ("viz-ti-mal-act-total",   16,  0, 16, 5),
-        ("viz-ti-mal-fam-actors",   0,  5, 24, 9),
-        ("viz-ti-mal-fam-tids",    24,  5, 24, 9),
-        # Actors row
-        ("viz-ti-mal-act-country",  0, 14, 16, 9),
-        ("viz-ti-mal-act-motiv",   16, 14, 16, 9),
-        ("viz-ti-mal-act-fams",    32, 14, 16, 9),
+        ("viz-ti-mal-tool-total",  32,  0, 16, 5),
+        # Actors analysis row
+        ("viz-ti-mal-act-country",  0,  5, 16, 9),
+        ("viz-ti-mal-act-motiv",   16,  5, 16, 9),
+        ("viz-ti-mal-act-type",    32,  5, 16, 9),
+        # Families + Tools MITRE coverage row
+        ("viz-ti-mal-fam-tids",     0, 14, 24, 9),
+        ("viz-ti-mal-tool-tids",   24, 14, 24, 9),
+    ]))
+
+    # ── URLhaus ───────────────────────────────────────────────────────────────
+    # Fields: url_status (keyword), threat (keyword), tags (keyword), date_added (date)
+    # url_status values: online / offline / unknown
+    # threat values: malware_download, botnet_cc, phishing, etc.
+    objs += [
+        _metric(     "viz-ti-uh-total",   "URLhaus — Malicious URLs",         "ip-ti-urlhaus"),
+        _kql_metric( "viz-ti-uh-online",  "URLhaus — Currently Online",       "ip-ti-urlhaus", "url_status: online"),
+        _kql_metric( "viz-ti-uh-malware", "URLhaus — Malware Download URLs",  "ip-ti-urlhaus", "threat: malware_download"),
+        _timeline(   "viz-ti-uh-time",    "URLhaus — URLs Added Over Time",   "ip-ti-urlhaus", "date_added"),
+        _pie(        "viz-ti-uh-status",  "URLhaus — By Status",              "ip-ti-urlhaus", "url_status"),
+        _pie(        "viz-ti-uh-threat",  "URLhaus — By Threat Category",     "ip-ti-urlhaus", "threat"),
+        _count_table("viz-ti-uh-tags",    "URLhaus — Top Tags",               "ip-ti-urlhaus", "tags", 25),
+    ]
+    objs.append(_dashboard("dash-ti-urlhaus", "ISMS CORE — URLhaus", [
+        ("viz-ti-uh-total",    0,  0, 16, 5),
+        ("viz-ti-uh-online",  16,  0, 16, 5),
+        ("viz-ti-uh-malware", 32,  0, 16, 5),
+        ("viz-ti-uh-time",     0,  5, 48, 8),
+        ("viz-ti-uh-status",   0, 13, 24, 9),
+        ("viz-ti-uh-threat",  24, 13, 24, 9),
+        ("viz-ti-uh-tags",     0, 22, 48,10),
+    ]))
+
+    # ── ThreatFox ─────────────────────────────────────────────────────────────
+    # Fields: ioc_type (keyword), threat_type (keyword), malware (keyword),
+    #         confidence (integer 0-100), tags (keyword), first_seen (date)
+    objs += [
+        _metric(          "viz-ti-tf-total",    "ThreatFox — IOCs Indexed",              "ip-ti-threatfox"),
+        _kql_metric(      "viz-ti-tf-highconf", "ThreatFox — High Confidence (≥90)",     "ip-ti-threatfox", "confidence >= 90"),
+        _timeline(        "viz-ti-tf-time",     "ThreatFox — IOCs Over Time",            "ip-ti-threatfox", "first_seen"),
+        _pie(             "viz-ti-tf-ioctype",  "ThreatFox — By IOC Type",              "ip-ti-threatfox", "ioc_type"),
+        _pie(             "viz-ti-tf-threat",   "ThreatFox — By Threat Type",           "ip-ti-threatfox", "threat_type"),
+        _score_histogram( "viz-ti-tf-conf",     "ThreatFox — Confidence Distribution",  "ip-ti-threatfox", "confidence", 10),
+        _count_table(     "viz-ti-tf-malware",  "ThreatFox — Top Malware Families",     "ip-ti-threatfox", "malware", 25),
+    ]
+    objs.append(_dashboard("dash-ti-threatfox", "ISMS CORE — ThreatFox", [
+        ("viz-ti-tf-total",     0,  0, 24, 5),
+        ("viz-ti-tf-highconf", 24,  0, 24, 5),
+        ("viz-ti-tf-time",      0,  5, 48, 8),
+        ("viz-ti-tf-ioctype",   0, 13, 16, 9),
+        ("viz-ti-tf-threat",   16, 13, 16, 9),
+        ("viz-ti-tf-conf",     32, 13, 16, 9),
+        ("viz-ti-tf-malware",   0, 22, 48,10),
+    ]))
+
+    # ── SSLBL C2 Blacklist ────────────────────────────────────────────────────
+    # Fields: sha1 (keyword), reason (keyword), listed_at (date)
+    # reason values: Dridex botnet C2, Emotet botnet C2, etc.
+    objs += [
+        _metric(     "viz-ti-ssl-total",  "SSLBL — Blacklisted Certificates",   "ip-ti-sslbl"),
+        _timeline(   "viz-ti-ssl-time",   "SSLBL — Listings Over Time",          "ip-ti-sslbl", "listed_at"),
+        _count_table("viz-ti-ssl-reason", "SSLBL — By Botnet / Reason",          "ip-ti-sslbl", "reason", 20),
+    ]
+    objs.append(_dashboard("dash-ti-sslbl", "ISMS CORE — SSLBL C2 Blacklist", [
+        ("viz-ti-ssl-total",   0,  0, 12, 5),
+        ("viz-ti-ssl-time",   12,  0, 36, 5),
+        ("viz-ti-ssl-reason",  0,  5, 48,12),
+    ]))
+
+    # ── Feodo Tracker ─────────────────────────────────────────────────────────
+    # Fields: port (integer), c2_status (keyword), malware (keyword), first_seen (date)
+    # c2_status: online / offline  |  malware: Dridex, Emotet, QakBot, etc.
+    objs += [
+        _metric(     "viz-ti-fd-total",   "Feodo — C2 Servers Tracked",         "ip-ti-feodotracker"),
+        _kql_metric( "viz-ti-fd-online",  "Feodo — Currently Online",           "ip-ti-feodotracker", "c2_status: online"),
+        _kql_metric( "viz-ti-fd-offline", "Feodo — Offline / Historic",         "ip-ti-feodotracker", "c2_status: offline"),
+        _pie(        "viz-ti-fd-malware", "Feodo — By Malware Family",          "ip-ti-feodotracker", "malware"),
+        _pie(        "viz-ti-fd-status",  "Feodo — Online vs Offline",          "ip-ti-feodotracker", "c2_status"),
+        _timeline(   "viz-ti-fd-time",    "Feodo — C2 Servers First Seen",      "ip-ti-feodotracker", "first_seen"),
+        _count_table("viz-ti-fd-ports",   "Feodo — Top C2 Ports",              "ip-ti-feodotracker", "port", 15),
+    ]
+    objs.append(_dashboard("dash-ti-feodo", "ISMS CORE — Feodo Tracker", [
+        ("viz-ti-fd-total",    0,  0, 16, 5),
+        ("viz-ti-fd-online",  16,  0, 16, 5),
+        ("viz-ti-fd-offline", 32,  0, 16, 5),
+        ("viz-ti-fd-malware",  0,  5, 24, 9),
+        ("viz-ti-fd-status",  24,  5, 24, 9),
+        ("viz-ti-fd-time",     0, 14, 48, 8),
+        ("viz-ti-fd-ports",    0, 22, 48, 9),
+    ]))
+
+    # ── MalwareBazaar ─────────────────────────────────────────────────────────
+    # Fields: file_type (keyword), signature (keyword), tags (keyword), first_seen (date)
+    # signature: malware family name assigned by analysts
+    objs += [
+        _metric(     "viz-ti-mb-total",   "MalwareBazaar — Samples Indexed",    "ip-ti-malwarebazaar"),
+        _kql_metric( "viz-ti-mb-sig",     "MalwareBazaar — With Signature",     "ip-ti-malwarebazaar", "signature: *"),
+        _timeline(   "viz-ti-mb-time",    "MalwareBazaar — Samples Over Time",  "ip-ti-malwarebazaar", "first_seen"),
+        _pie(        "viz-ti-mb-ftype",   "MalwareBazaar — By File Type",       "ip-ti-malwarebazaar", "file_type"),
+        _count_table("viz-ti-mb-sig-tbl", "MalwareBazaar — Top Malware Families (Signature)", "ip-ti-malwarebazaar", "signature", 25),
+        _count_table("viz-ti-mb-tags",    "MalwareBazaar — Top Tags",           "ip-ti-malwarebazaar", "tags", 25),
+    ]
+    objs.append(_dashboard("dash-ti-malwarebazaar", "ISMS CORE — MalwareBazaar", [
+        ("viz-ti-mb-total",    0,  0, 24, 5),
+        ("viz-ti-mb-sig",     24,  0, 24, 5),
+        ("viz-ti-mb-time",     0,  5, 48, 8),
+        ("viz-ti-mb-ftype",    0, 13, 16, 9),
+        ("viz-ti-mb-sig-tbl", 16, 13, 32, 9),
+        ("viz-ti-mb-tags",     0, 22, 48,10),
+    ]))
+
+    # ── Red Flag Domains + Stopforumspam (combined blocklists) ────────────────
+    # Red Flag Domains: domain (keyword), date_added (date) — minimal fields
+    # Stopforumspam: ip (ip), indexed_at (date) — minimal fields
+    # Combined into one dashboard — both are simple blocklist feeds
+    objs += [
+        _metric(   "viz-ti-rfd-total",  "Red Flag Domains — Blocked Domains",     "ip-ti-red-flag-domains"),
+        _timeline( "viz-ti-rfd-time",   "Red Flag Domains — Added Over Time",      "ip-ti-red-flag-domains", "date_added"),
+        _metric(   "viz-ti-sfs-total",  "Stopforumspam — Blocked IPs",             "ip-ti-stopforumspam"),
+        _timeline( "viz-ti-sfs-time",   "Stopforumspam — Indexed Over Time",       "ip-ti-stopforumspam", "indexed_at"),
+    ]
+    objs.append(_dashboard("dash-ti-blocklists", "ISMS CORE — Blocklists (RFD + SFS)", [
+        ("viz-ti-rfd-total",  0,  0, 24, 5),
+        ("viz-ti-sfs-total", 24,  0, 24, 5),
+        ("viz-ti-rfd-time",   0,  5, 48, 8),
+        ("viz-ti-sfs-time",   0, 13, 48, 8),
     ]))
 
     return objs
@@ -1616,6 +1893,17 @@ def main():
         "ip-ti-abuseipdb":               get_osd_fields("ti-abuseipdb-blacklist"),
         "ip-ti-malpedia-families":       get_osd_fields("ti-malpedia-families"),
         "ip-ti-malpedia-actors":         get_osd_fields("ti-malpedia-actors"),
+        # Phase 41 — new TI feeds
+        "ip-ti-malpedia-tools":          get_osd_fields("ti-malpedia-tools"),
+        "ip-ti-urlhaus":                 get_osd_fields("ti-urlhaus"),
+        "ip-ti-threatfox":               get_osd_fields("ti-threatfox"),
+        "ip-ti-sslbl":                   get_osd_fields("ti-sslbl"),
+        "ip-ti-feodotracker":            get_osd_fields("ti-feodotracker"),
+        "ip-ti-red-flag-domains":        get_osd_fields("ti-red-flag-domains"),
+        "ip-ti-stopforumspam":           get_osd_fields("ti-stopforumspam"),
+        "ip-ti-malwarebazaar":           get_osd_fields("ti-malwarebazaar"),
+        # Phase 47 — Exploit-DB
+        "ip-exploitdb":                  get_osd_fields("exploitdb"),
     }
     for pid, fields_json in fields_by_id.items():
         count = len(json.loads(fields_json))

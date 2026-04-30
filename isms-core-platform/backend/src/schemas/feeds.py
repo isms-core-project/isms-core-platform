@@ -167,6 +167,8 @@ class NvdCveEntry(BaseModel):
     in_kev: bool
     in_euvd: bool = False
     euvd_id: str | None = None
+    edb_id: int | None = None
+    edb_verified: bool = False
     epss_score: float | None
     references: list[str]
 
@@ -221,6 +223,7 @@ class NvdIndexStats(BaseModel):
     cve_total: int
     cpe_total: int
     kev_total: int
+    edb_total: int = 0
     last_cve_sync: str | None
     last_cpe_sync: str | None
     nist_api_key_configured: bool
@@ -372,4 +375,33 @@ class EuvdStats(BaseModel):
     critical: int
     eu_assigned: int
     with_cvss: int
+    last_indexed: str | None
+
+
+class ExploitDbEntry(BaseModel):
+    edb_id: int
+    description: str | None
+    type: str | None
+    platform: str | None
+    verified: bool
+    has_msf: bool
+    date_published: str | None
+    author: str | None
+    tags: list[str]
+    cve_refs: list[str]
+    file_path: str | None
+
+
+class ExploitDbList(BaseModel):
+    items: list[ExploitDbEntry]
+    total: int
+    page: int
+    per_page: int
+
+
+class ExploitDbStats(BaseModel):
+    total: int
+    verified: int
+    with_msf: int
+    with_cve: int
     last_indexed: str | None

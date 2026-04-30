@@ -19,6 +19,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 import {
   CheckCircleOutlined,
   WarningAmberOutlined,
@@ -147,6 +148,18 @@ function SummaryCard({ label, value, sub, color }: { label: string; value: strin
 }
 
 export default function FrameworkTracker() {
+  const { palette } = useTheme()
+  const isAuditor = import.meta.env.VITE_SECRET_THEME === 'auditor'
+  const isDark = palette.mode === 'dark'
+
+  // Chip and summary-card colours — tuned per theme for contrast
+  const currentChipColor  = isAuditor ? '#1B5E20' : '#4CAF50'
+  const currentChipBg     = isAuditor ? 'rgba(27,94,32,0.18)'  : 'rgba(76,175,80,0.1)'
+  const pendingChipColor  = isAuditor ? '#1565C0' : isDark ? '#90CAF9' : '#42A5F5'
+  const pendingChipBg     = isAuditor ? 'rgba(21,101,192,0.18)' : 'rgba(66,165,245,0.1)'
+  const zeroUpdatesColor  = isAuditor ? '#1B5E20' : '#4CAF50'
+  const pendingCountColor = isAuditor ? '#1565C0' : isDark ? '#90CAF9' : '#42A5F5'
+
   const { data: frameworks, isLoading } = useQuery<FrameworkRow[]>({
     queryKey: ['framework-tracker'],
     queryFn: () => client.get('/frameworks/').then(r => r.data),
@@ -191,13 +204,13 @@ export default function FrameworkTracker() {
               label="Updates available"
               value={updateCount}
               sub="datasets behind latest release"
-              color={updateCount > 0 ? '#FF9800' : '#4CAF50'}
+              color={updateCount > 0 ? '#FF9800' : zeroUpdatesColor}
             />
             <SummaryCard
               label="Pending releases"
               value={pendingCount}
               sub="upcoming versions to watch"
-              color={pendingCount > 0 ? '#42A5F5' : '#9E9E9E'}
+              color={pendingCount > 0 ? pendingCountColor : '#9E9E9E'}
             />
           </>
         )}
@@ -283,7 +296,7 @@ export default function FrameworkTracker() {
                               icon={<CheckCircleOutlined sx={{ fontSize: 13 }} />}
                               label="Current"
                               size="small"
-                              sx={{ height: 18, fontSize: '0.6rem', bgcolor: 'rgba(76,175,80,0.1)', color: '#4CAF50', '& .MuiChip-icon': { color: '#4CAF50' } }}
+                              sx={{ height: 18, fontSize: '0.6rem', bgcolor: currentChipBg, color: currentChipColor, '& .MuiChip-icon': { color: currentChipColor } }}
                             />
                           )}
                           {upd?.status === 'available' && (
@@ -302,7 +315,7 @@ export default function FrameworkTracker() {
                                 icon={<UpdateOutlined sx={{ fontSize: 13 }} />}
                                 label={`Pending: ${upd.latest}${upd.eta ? ` (${upd.eta})` : ''}`}
                                 size="small"
-                                sx={{ height: 18, fontSize: '0.6rem', bgcolor: 'rgba(66,165,245,0.1)', color: '#42A5F5', '& .MuiChip-icon': { color: '#42A5F5' } }}
+                                sx={{ height: 18, fontSize: '0.6rem', bgcolor: pendingChipBg, color: pendingChipColor, '& .MuiChip-icon': { color: pendingChipColor } }}
                               />
                             </Tooltip>
                           )}
@@ -370,7 +383,7 @@ export default function FrameworkTracker() {
                         icon={<CheckCircleOutlined sx={{ fontSize: 13 }} />}
                         label="Current"
                         size="small"
-                        sx={{ height: 18, fontSize: '0.6rem', bgcolor: 'rgba(76,175,80,0.1)', color: '#4CAF50', '& .MuiChip-icon': { color: '#4CAF50' } }}
+                        sx={{ height: 18, fontSize: '0.6rem', bgcolor: currentChipBg, color: currentChipColor, '& .MuiChip-icon': { color: currentChipColor } }}
                       />
                     )}
                     {s.status === 'pending' && (
@@ -379,7 +392,7 @@ export default function FrameworkTracker() {
                           icon={<UpdateOutlined sx={{ fontSize: 13 }} />}
                           label={`Pending${s.eta ? ` (${s.eta})` : ''}`}
                           size="small"
-                          sx={{ height: 18, fontSize: '0.6rem', bgcolor: 'rgba(66,165,245,0.1)', color: '#42A5F5', '& .MuiChip-icon': { color: '#42A5F5' } }}
+                          sx={{ height: 18, fontSize: '0.6rem', bgcolor: pendingChipBg, color: pendingChipColor, '& .MuiChip-icon': { color: pendingChipColor } }}
                         />
                       </Tooltip>
                     )}

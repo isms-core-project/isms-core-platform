@@ -293,6 +293,7 @@ export const feedsApi = {
     search?: string
     severity?: string
     kev_only?: boolean
+    edb_only?: boolean
     min_epss?: number
     year?: number
     page?: number
@@ -351,6 +352,24 @@ export const feedsApi = {
 
   getEuvdEntry: (euvdId: string) =>
     client.get<EuvdEntry>(`/feeds/euvd/${euvdId}`).then(r => r.data),
+
+  getExploitDbStats: () =>
+    client.get<ExploitDbStats>('/feeds/exploitdb/stats').then(r => r.data),
+
+  listExploitDb: (params: {
+    search?: string
+    verified_only?: boolean
+    msf_only?: boolean
+    type?: string
+    platform?: string
+    cve_id?: string
+    page?: number
+    per_page?: number
+  }) =>
+    client.get<ExploitDbList>('/feeds/exploitdb', { params }).then(r => r.data),
+
+  getExploitDbEntry: (edbId: number) =>
+    client.get<ExploitDbEntry>(`/feeds/exploitdb/${edbId}`).then(r => r.data),
 }
 
 // ── Phase 27 types ────────────────────────────────────────────────────────────
@@ -393,6 +412,8 @@ export interface NvdCveEntry {
   in_kev: boolean
   in_euvd: boolean
   euvd_id: string | null
+  edb_id: number | null
+  edb_verified: boolean
   epss_score: number | null
   references: string[]
 }
@@ -430,6 +451,37 @@ export interface EuvdStats {
   critical: number
   eu_assigned: number
   with_cvss: number
+  last_indexed: string | null
+}
+
+// ── Exploit-DB (Phase 47) ─────────────────────────────────────────────────────
+
+export interface ExploitDbEntry {
+  edb_id: number
+  description: string | null
+  type: string | null
+  platform: string | null
+  verified: boolean
+  has_msf: boolean
+  date_published: string | null
+  author: string | null
+  tags: string[]
+  cve_refs: string[]
+  file_path: string | null
+}
+
+export interface ExploitDbList {
+  items: ExploitDbEntry[]
+  total: number
+  page: number
+  per_page: number
+}
+
+export interface ExploitDbStats {
+  total: number
+  verified: number
+  with_msf: number
+  with_cve: number
   last_indexed: string | null
 }
 
@@ -482,6 +534,7 @@ export interface NvdIndexStats {
   cve_total: number
   cpe_total: number
   kev_total: number
+  edb_total: number
   last_cve_sync: string | null
   last_cpe_sync: string | null
   nist_api_key_configured: boolean

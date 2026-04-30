@@ -58,6 +58,7 @@ const FEED_ICONS: Record<string, React.ReactNode> = {
   red_flag_domains: <ErrorOutlined sx={{ fontSize: 28, color: '#c62828' }} />,
   stopforumspam:    <RouterOutlined sx={{ fontSize: 28, color: '#37474f' }} />,
   malwarebazaar:    <BugReportOutlined sx={{ fontSize: 28, color: '#e65100' }} />,
+  exploitdb:        <BugReportOutlined sx={{ fontSize: 28, color: '#b71c1c' }} />,
 }
 
 const TI_FEED_DEFS: Array<Pick<FeedStatusItem, 'feed_name' | 'display_name'>> = [

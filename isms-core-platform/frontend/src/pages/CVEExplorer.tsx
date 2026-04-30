@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {
   Alert, Box, Button, Chip, Collapse, Divider, FormControl,
-  IconButton, InputLabel, MenuItem, Paper, Select, Switch,
+  IconButton, InputLabel, MenuItem, Paper, Popover, Select, Switch,
   Tab, Table, TableBody, TableCell, TableHead, TableRow,
   Tabs, TextField, Tooltip, Typography, useTheme,
 } from '@mui/material'
@@ -98,6 +98,7 @@ function StatsBar() {
         { label: 'CVEs',   value: data.cve_total.toLocaleString(), icon: <BugReportOutlined sx={{ fontSize: 14, color: '#c62828' }} /> },
         { label: 'CPEs',   value: data.cpe_total.toLocaleString(), icon: <SecurityOutlined sx={{ fontSize: 14, color: INTEL_COLOR }} /> },
         { label: 'In KEV', value: data.kev_total.toLocaleString(), icon: <WarningAmberOutlined sx={{ fontSize: 14, color: kevColor }} /> },
+        ...(data.edb_total > 0 ? [{ label: 'In EDB', value: data.edb_total.toLocaleString(), icon: <BugReportOutlined sx={{ fontSize: 14, color: '#b71c1c' }} /> }] : []),
       ].map(s => (
         <Box key={s.label} sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
           {s.icon}
@@ -251,6 +252,15 @@ function CveDetail({ cve, onClose }: { cve: NvdCveEntry; onClose: () => void }) 
             )}
             {cve.in_kev && <Chip label="KEV" size="small" color="error" sx={{ fontSize: '0.68rem', height: 18 }} />}
             {cve.in_euvd && <Chip label="EUVD" size="small" sx={{ fontSize: '0.68rem', height: 18, bgcolor: '#003399', color: '#fff' }} />}
+            {cve.edb_id != null && (
+              <Tooltip title={`Exploit-DB EDB-${cve.edb_id}${cve.edb_verified ? ' (OffSec verified)' : ''}`}>
+                <Chip
+                  label={cve.edb_verified ? 'EDB ✓' : 'EDB'}
+                  size="small"
+                  sx={{ fontSize: '0.68rem', height: 18, bgcolor: '#b71c1c', color: '#fff' }}
+                />
+              </Tooltip>
+            )}
             {cve.epss_score !== null && (
               <Chip label={`EPSS ${(cve.epss_score * 100).toFixed(1)}%`} size="small" sx={{ fontSize: '0.68rem', height: 18, bgcolor: infoChip.bg, color: infoChip.fg }} />
             )}
@@ -323,9 +333,15 @@ function CveDetail({ cve, onClose }: { cve: NvdCveEntry; onClose: () => void }) 
 
 const EPSS_COLOR = '#7c4dff'
 
-function epssScoreColor(score: number): string {
-  if (score >= 0.2) return '#FFC7CE'
-  if (score >= 0.1) return '#FFEB9C'
+function epssScoreColor(score: number, isLight: boolean, isAuditor = false): string {
+  if (score >= 0.2) {
+    if (isAuditor) return '#b71c1c'
+    return isLight ? '#EF9A9A' : '#FFC7CE'
+  }
+  if (score >= 0.1) {
+    if (isAuditor) return '#e65100'
+    return isLight ? '#FFD54F' : '#FFEB9C'
+  }
   return 'inherit'
 }
 
@@ -356,8 +372,9 @@ function EpssAnalytics() {
 
   const { palette } = useTheme()
   const isLight = palette.mode === 'light'
-  const epss10Color = isLight ? '#9a6500' : '#FFEB9C'
-  const epss20Color = isLight ? '#9e0000' : '#FFC7CE'
+  const isAuditor = import.meta.env.VITE_SECRET_THEME === 'auditor'
+  const epss10Color = isAuditor ? '#e65100' : isLight ? '#9a6500' : '#FFEB9C'
+  const epss20Color = isAuditor ? '#b71c1c' : isLight ? '#9e0000' : '#FFC7CE'
 
   const kpiCards = [
     {
@@ -458,7 +475,7 @@ function EpssAnalytics() {
                         sx={{
                           fontSize: '0.75rem',
                           fontWeight: 600,
-                          color: epssScoreColor(row.score),
+                          color: epssScoreColor(row.score, isLight, isAuditor),
                         }}
                       >
                         {(row.score * 100).toFixed(2)}%
@@ -509,18 +526,21 @@ function CveTab() {
   const [searchInput, setSearchInput] = useState('')
   const [severity, setSeverity] = useState('')
   const [kevOnly, setKevOnly]   = useState(false)
+  const [edbOnly, setEdbOnly]   = useState(false)
   const [minEpss, setMinEpss]   = useState(0)
   const [year, setYear]         = useState<number | undefined>()
   const [page, setPage]         = useState(1)
   const [selected, setSelected] = useState<NvdCveEntry | null>(null)
+  const [flagsAnchor, setFlagsAnchor] = useState<HTMLElement | null>(null)
   const PER_PAGE = 50
 
   const { data, isLoading } = useQuery({
-    queryKey: ['nvd', 'cve', search, severity, kevOnly, minEpss, year, page],
+    queryKey: ['nvd', 'cve', search, severity, kevOnly, edbOnly, minEpss, year, page],
     queryFn: () => feedsApi.getCve({
       search: search || undefined,
       severity: severity || undefined,
       kev_only: kevOnly || undefined,
+      edb_only: edbOnly || undefined,
       min_epss: minEpss || undefined,
       year: year || undefined,
       page,
@@ -584,6 +604,11 @@ function CveTab() {
             <Switch size="small" checked={kevOnly} onChange={e => { setKevOnly(e.target.checked); setPage(1) }} />
             <Typography variant="caption">KEV only</Typography>
           </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+            <Switch size="small" checked={edbOnly} onChange={e => { setEdbOnly(e.target.checked); setPage(1) }}
+              sx={{ '& .MuiSwitch-track': { bgcolor: edbOnly ? '#b71c1c !important' : undefined } }} />
+            <Typography variant="caption" sx={{ color: edbOnly ? '#d32f2f' : 'text.secondary' }}>EDB only</Typography>
+          </Box>
         </Box>
 
         {/* Result count */}
@@ -605,7 +630,38 @@ function CveTab() {
                 <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 70 }}>CVSS</TableCell>
                 <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 70 }}>EPSS</TableCell>
                 <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 90 }}>Published</TableCell>
-                <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 60 }}>Flags</TableCell>
+                <TableCell sx={{ fontWeight: 600, fontSize: '0.72rem', width: 60 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                    Flags
+                    <IconButton size="small" onClick={e => { e.stopPropagation(); setFlagsAnchor(e.currentTarget) }} sx={{ p: 0.2 }}>
+                      <InfoOutlined sx={{ fontSize: 13, color: 'text.disabled' }} />
+                    </IconButton>
+                  </Box>
+                  <Popover
+                    open={Boolean(flagsAnchor)}
+                    anchorEl={flagsAnchor}
+                    onClose={() => setFlagsAnchor(null)}
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                  >
+                    <Box sx={{ p: 1.5, minWidth: 240 }}>
+                      <Typography variant="caption" fontWeight={700} display="block" sx={{ mb: 1, color: 'text.secondary' }}>FLAGS LEGEND</Typography>
+                      {[
+                        { icon: <WarningAmberOutlined sx={{ fontSize: 14, color: '#9a6500' }} />, label: 'KEV', desc: 'In CISA Known Exploited Vulnerabilities' },
+                        { icon: <Box component="span" sx={{ fontSize: '0.6rem', fontWeight: 700, color: '#fff', bgcolor: '#003399', borderRadius: '3px', px: 0.4, lineHeight: '14px', display: 'inline-block' }}>EUVD</Box>, label: 'EUVD', desc: 'In ENISA European Vulnerability Database' },
+                        { icon: <Box component="span" sx={{ fontSize: '0.6rem', fontWeight: 700, color: '#fff', bgcolor: '#b71c1c', borderRadius: '3px', px: 0.4, lineHeight: '14px', display: 'inline-block' }}>EDB</Box>, label: 'EDB / EDB✓', desc: 'Public exploit in Exploit-DB (✓ = OffSec verified)' },
+                        { icon: <SecurityOutlined sx={{ fontSize: 14, color: '#B84F00' }} />, label: 'CPE', desc: 'Has CPE-matched affected products' },
+                      ].map(row => (
+                        <Box key={row.label} sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.75 }}>
+                          <Box sx={{ width: 28, display: 'flex', justifyContent: 'center' }}>{row.icon}</Box>
+                          <Box>
+                            <Typography variant="caption" fontWeight={600} display="block">{row.label}</Typography>
+                            <Typography variant="caption" color="text.secondary">{row.desc}</Typography>
+                          </Box>
+                        </Box>
+                      ))}
+                    </Box>
+                  </Popover>
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -650,7 +706,8 @@ function CveTab() {
                   <TableCell>
                     <Box sx={{ display: 'flex', gap: 0.3 }}>
                       {cve.in_kev && <Tooltip title="In CISA KEV"><WarningAmberOutlined sx={{ fontSize: 14, color: kevColor }} /></Tooltip>}
-                      {cve.in_euvd && <Tooltip title="In ENISA EUVD"><Box component="span" sx={{ fontSize: '0.6rem', fontWeight: 700, color: '#fff', bgcolor: '#003399', borderRadius: '3px', px: 0.4, lineHeight: '14px', display: 'inline-block' }}>EU</Box></Tooltip>}
+                      {cve.in_euvd && <Tooltip title="In ENISA EUVD"><Box component="span" sx={{ fontSize: '0.6rem', fontWeight: 700, color: '#fff', bgcolor: '#003399', borderRadius: '3px', px: 0.4, lineHeight: '14px', display: 'inline-block' }}>EUVD</Box></Tooltip>}
+                      {cve.edb_id != null && <Tooltip title={`Exploit-DB EDB-${cve.edb_id}${cve.edb_verified ? ' (verified)' : ''}`}><Box component="span" sx={{ fontSize: '0.6rem', fontWeight: 700, color: '#fff', bgcolor: '#b71c1c', borderRadius: '3px', px: 0.4, lineHeight: '14px', display: 'inline-block' }}>{cve.edb_verified ? 'EDB✓' : 'EDB'}</Box></Tooltip>}
                       {cve.cpe_affected.length > 0 && <Tooltip title={`${cve.cpe_affected.length} CPEs`}><SecurityOutlined sx={{ fontSize: 14, color: INTEL_COLOR }} /></Tooltip>}
                     </Box>
                   </TableCell>

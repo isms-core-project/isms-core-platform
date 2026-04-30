@@ -22,6 +22,9 @@ from src.schemas.feeds import (
     CisaKevStats,
     EpssScoreList,
     EpssScoreRead,
+    ExploitDbEntry,
+    ExploitDbList,
+    ExploitDbStats,
     EuvdEntry,
     EuvdList,
     EuvdStats,
@@ -59,6 +62,7 @@ _FEEDS = [
     ("nist_cve",         "NVD CVE",             "FEEDS_CVE_ENABLED"),
     ("nist_cpe",         "NVD CPE (KEV-vendor)","FEEDS_CPE_FULL"),
     ("euvd",             "ENISA EUVD",          "FEEDS_EUVD_ENABLED"),
+    ("exploitdb",        "Exploit-DB",          "FEEDS_EXPLOITDB_ENABLED"),
 ]
 
 
@@ -687,6 +691,8 @@ def _hit_to_cve(hit: dict) -> NvdCveEntry:
         in_kev           = bool(s.get("in_kev", False)),
         in_euvd          = bool(s.get("in_euvd", False)),
         euvd_id          = s.get("euvd_id"),
+        edb_id           = s.get("edb_id"),
+        edb_verified     = bool(s.get("edb_verified", False)),
         epss_score       = s.get("epss_score"),
         references       = s.get("references") or [],
     )
@@ -763,8 +769,15 @@ def get_nvd_index_stats(
     """Combined stats for the CVE Explorer info banner (CVE + CPE + KEV totals)."""
     from src.services import search_service
 
+    from sqlalchemy import text as sa_text
     nvd = search_service.get_nvd_stats()
     kev_total = db.scalar(select(func.count(CisaKevEntry.id))) or 0
+    try:
+        edb_total = db.execute(
+            sa_text("SELECT COUNT(*) FROM ti_exploitdb WHERE cardinality(cve_refs) > 0")
+        ).scalar() or 0
+    except Exception:
+        edb_total = 0
 
     def _last_run(feed_name: str) -> str | None:
         stmt = (
@@ -780,6 +793,7 @@ def get_nvd_index_stats(
         cve_total               = nvd.get("cve_total", 0),
         cpe_total               = nvd.get("cpe_total", 0),
         kev_total               = kev_total,
+        edb_total               = edb_total,
         last_cve_sync           = _last_run("nist_cve"),
         last_cpe_sync           = _last_run("nist_cpe"),
         nist_api_key_configured = bool(os.environ.get("NIST_API_KEY", "").strip()),
@@ -800,6 +814,7 @@ def list_cve(
     search: str | None = Query(None),
     severity: str | None = Query(None, description="CRITICAL|HIGH|MEDIUM|LOW"),
     kev_only: bool = Query(False),
+    edb_only: bool = Query(False),
     min_epss: float = Query(0.0, ge=0.0, le=1.0),
     year: int | None = Query(None, ge=1999, le=2099),
     page: int = Query(1, ge=1),
@@ -829,6 +844,8 @@ def list_cve(
         ], "minimum_should_match": 1}})
     if kev_only:
         filter_.append({"term": {"in_kev": True}})
+    if edb_only:
+        filter_.append({"exists": {"field": "edb_id"}})
     if min_epss > 0:
         filter_.append({"range": {"epss_score": {"gte": min_epss}}})
     if year:
@@ -1216,5 +1233,152 @@ def get_euvd_entry(
     try:
         doc = client.get(index=_EUVD_INDEX, id=euvd_id)
         return _hit_to_euvd(doc)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+
+
+# ── Exploit-DB ────────────────────────────────────────────────────────────────
+
+_EDB_INDEX = "exploitdb"
+
+
+def _edb_client():
+    from src.services import search_service
+    return search_service.get_client()
+
+
+def _hit_to_edb(hit: dict) -> ExploitDbEntry:
+    s = hit.get("_source", {})
+    return ExploitDbEntry(
+        edb_id         = int(s.get("edb_id", hit.get("_id", 0))),
+        description    = s.get("description"),
+        type           = s.get("type"),
+        platform       = s.get("platform"),
+        verified       = bool(s.get("verified", False)),
+        has_msf        = bool(s.get("has_msf", False)),
+        date_published = s.get("date_published"),
+        author         = s.get("author"),
+        tags           = s.get("tags") or [],
+        cve_refs       = s.get("cve_refs") or [],
+        file_path      = s.get("file_path"),
+    )
+
+
+@router.get("/exploitdb/stats", response_model=ExploitDbStats)
+def get_exploitdb_stats(
+    _current_user: User = Depends(get_current_user),
+):
+    client = _edb_client()
+    if not client:
+        return ExploitDbStats(total=0, verified=0, with_msf=0, with_cve=0, last_indexed=None)
+
+    def _count(q: dict) -> int:
+        try:
+            r = client.count(index=_EDB_INDEX, body={"query": q})
+            return r.get("count", 0)
+        except Exception:
+            return 0
+
+    try:
+        total    = _count({"match_all": {}})
+        verified = _count({"term": {"verified": True}})
+        with_msf = _count({"term": {"has_msf": True}})
+        with_cve = _count({"exists": {"field": "cve_refs"}})
+
+        last_indexed = None
+        try:
+            r = client.search(
+                index=_EDB_INDEX,
+                body={"query": {"match_all": {}}, "sort": [{"indexed_at": {"order": "desc"}}], "size": 1},
+            )
+            hits = r.get("hits", {}).get("hits", [])
+            if hits:
+                last_indexed = hits[0].get("_source", {}).get("indexed_at")
+        except Exception:
+            pass
+
+        return ExploitDbStats(
+            total=total, verified=verified, with_msf=with_msf, with_cve=with_cve,
+            last_indexed=last_indexed,
+        )
+    except Exception as exc:
+        logger.warning("ExploitDB stats error: %s", exc)
+        return ExploitDbStats(total=0, verified=0, with_msf=0, with_cve=0, last_indexed=None)
+
+
+@router.get("/exploitdb", response_model=ExploitDbList)
+def list_exploitdb(
+    search: str | None       = Query(None),
+    verified_only: bool      = Query(False),
+    msf_only: bool           = Query(False),
+    etype: str | None        = Query(None, alias="type"),
+    platform: str | None     = Query(None),
+    cve_id: str | None       = Query(None),
+    page: int                = Query(1, ge=1),
+    per_page: int            = Query(25, ge=1, le=200),
+    _current_user: User      = Depends(get_current_user),
+):
+    client = _edb_client()
+    if not client:
+        return ExploitDbList(items=[], total=0, page=page, per_page=per_page)
+
+    filter_: list[dict] = []
+    if verified_only:
+        filter_.append({"term": {"verified": True}})
+    if msf_only:
+        filter_.append({"term": {"has_msf": True}})
+    if etype:
+        filter_.append({"term": {"type": etype}})
+    if platform:
+        filter_.append({"term": {"platform": platform}})
+    if cve_id:
+        filter_.append({"term": {"cve_refs": cve_id.upper()}})
+
+    if search:
+        query: dict = {
+            "bool": {
+                "must": {"multi_match": {
+                    "query": search,
+                    "fields": ["description^3", "author", "cve_refs^2", "platform", "type"],
+                    "type": "best_fields",
+                }},
+                "filter": filter_,
+            }
+        }
+        sort = ["_score", {"date_published": {"order": "desc", "missing": "_last"}}]
+    else:
+        query = {"bool": {"filter": filter_}} if filter_ else {"match_all": {}}
+        sort = [{"date_published": {"order": "desc", "missing": "_last"}}]
+
+    try:
+        r = client.search(
+            index=_EDB_INDEX,
+            body={"query": query, "sort": sort,
+                  "from": (page - 1) * per_page, "size": per_page,
+                  "track_total_hits": True},
+        )
+    except Exception as exc:
+        logger.warning("ExploitDB search error: %s", exc)
+        return ExploitDbList(items=[], total=0, page=page, per_page=per_page)
+
+    hits  = r.get("hits", {})
+    total = hits.get("total", {})
+    total = total.get("value", 0) if isinstance(total, dict) else int(total)
+    items = [_hit_to_edb(h) for h in hits.get("hits", [])]
+    return ExploitDbList(items=items, total=total, page=page, per_page=per_page)
+
+
+@router.get("/exploitdb/{edb_id}", response_model=ExploitDbEntry)
+def get_exploitdb_entry(
+    edb_id: int,
+    _current_user: User = Depends(get_current_user),
+):
+    from fastapi import HTTPException
+    client = _edb_client()
+    if not client:
+        raise HTTPException(status_code=503, detail="Search unavailable")
+    try:
+        doc = client.get(index=_EDB_INDEX, id=str(edb_id))
+        return _hit_to_edb(doc)
     except Exception as exc:
         raise HTTPException(status_code=404, detail=str(exc))

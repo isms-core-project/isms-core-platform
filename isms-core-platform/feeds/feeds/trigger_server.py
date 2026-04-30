@@ -14,6 +14,7 @@ Endpoints:
   POST   /trigger/nist_cpe             — NVD CPE (Option B)
   POST   /trigger/euvd?mode=full       — ENISA EUVD full pull
   POST   /trigger/euvd?mode=delta      — ENISA EUVD delta pull
+  POST   /trigger/exploitdb            — Exploit-DB PoC feed
   DELETE /cancel/{feed_name}           — Request cancellation of a running feed
 """
 
@@ -22,7 +23,7 @@ import threading
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qs, urlparse
 
-from feeds import cisa_kev, epss, euvd, mitre_atlas, mitre_attack, nist_cpe, nist_cve
+from feeds import cisa_kev, epss, euvd, exploitdb, mitre_atlas, mitre_attack, nist_cpe, nist_cve
 from feeds.base import clear_cancelled, set_cancelled
 
 logger = logging.getLogger(__name__)
@@ -37,6 +38,7 @@ _TRIGGERS: dict[str, callable] = {
     "nist_cpe":       nist_cpe.run,
     "euvd_full":      euvd.run_full,
     "euvd_delta":     euvd.run_delta,
+    "exploitdb":      exploitdb.run,
 }
 
 _running: dict[str, bool] = {}
