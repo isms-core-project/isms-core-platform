@@ -47,6 +47,12 @@ interface FrameworkRow {
 const KNOWN_UPDATES: Record<string, { latest: string; status: 'pending' | 'available'; note: string; eta?: string }> = {
   // Add entries here when a new framework version is released but not yet integrated.
   // Remove once the platform dataset is updated.
+  ISO27017: {
+    latest: '2025',
+    status: 'pending',
+    note: 'ISO/IEC 27017:2025 revision in progress — replaces 2015 edition. New control pack planned on release.',
+    eta: '~June 2026',
+  },
 }
 
 // ISO Reference Corpus & Glossary Standards — static registry
