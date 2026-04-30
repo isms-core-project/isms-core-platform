@@ -1481,3 +1481,118 @@ def evidence_indices(_user=Depends(require_admin)):
             result.append({"index": idx, "exists": False, "doc_count": None, "error": str(exc)})
 
     return {"available": True, "indices": result}
+
+
+# ---------------------------------------------------------------------------
+# Notification routing management
+# ---------------------------------------------------------------------------
+
+@router.get("/notifications/routing", tags=["admin"], dependencies=[Depends(require_admin)])
+def get_notification_routing(db: DBSession = Depends(get_db)):
+    """Return per-event routing rules for all known event types."""
+    from src.domain.notification_routing import NotificationRouting
+    from src.schemas.users import NOTIFICATION_EVENTS
+
+    rows = {r.event_type: r for r in db.query(NotificationRouting).all()}
+    result = []
+    for ev in NOTIFICATION_EVENTS:
+        row = rows.get(ev["event_type"])
+        result.append({
+            "event_type":              ev["event_type"],
+            "label":                   ev["label"],
+            "category":                ev["category"],
+            "description":             ev["description"],
+            "target_roles":            row.target_roles if row else ["admin"],
+            "always_include_override": row.always_include_override if row else True,
+        })
+    return result
+
+
+@router.patch("/notifications/routing/{event_type}", tags=["admin"], dependencies=[Depends(require_admin)])
+def update_notification_routing(
+    event_type: str,
+    body: dict,
+    db: DBSession = Depends(get_db),
+):
+    """Update routing rules for a specific event type.
+
+    Body: {"target_roles": ["admin", "isms_manager"], "always_include_override": true}
+    """
+    from src.domain.notification_routing import NotificationRouting
+    from src.schemas.users import NOTIFICATION_EVENTS
+
+    valid_event_types = {ev["event_type"] for ev in NOTIFICATION_EVENTS}
+    if event_type not in valid_event_types:
+        raise HTTPException(status_code=422, detail=f"Unknown event_type: {event_type}")
+
+    valid_roles = {r.value for r in UserRole}
+    target_roles = body.get("target_roles", [])
+    invalid_roles = [r for r in target_roles if r not in valid_roles]
+    if invalid_roles:
+        raise HTTPException(status_code=422, detail=f"Invalid roles: {invalid_roles}")
+
+    row = db.get(NotificationRouting, event_type)
+    if not row:
+        row = NotificationRouting(event_type=event_type)
+        db.add(row)
+
+    row.target_roles = target_roles
+    if "always_include_override" in body:
+        row.always_include_override = bool(body["always_include_override"])
+
+    db.commit()
+    return {
+        "event_type":              row.event_type,
+        "target_roles":            row.target_roles,
+        "always_include_override": row.always_include_override,
+    }
+
+
+@router.get("/notifications/users", tags=["admin"], dependencies=[Depends(require_admin)])
+def get_all_user_notification_prefs(db: DBSession = Depends(get_db)):
+    """Return notification prefs for all active users."""
+    from src.domain.users import User
+    from src.schemas.users import NOTIFICATION_EVENTS
+
+    users = db.query(User).filter(User.is_active.is_(True)).order_by(User.email).all()
+    valid_types = {ev["event_type"] for ev in NOTIFICATION_EVENTS}
+
+    result = []
+    for u in users:
+        stored = u.notification_prefs or {}
+        prefs = {et: stored.get(et, True) for et in valid_types}
+        result.append({
+            "user_id":   str(u.id),
+            "email":     u.email,
+            "full_name": u.full_name,
+            "role":      u.role.value,
+            "prefs":     prefs,
+        })
+    return result
+
+
+@router.patch("/notifications/users/{user_id}", tags=["admin"], dependencies=[Depends(require_admin)])
+def update_user_notification_prefs(
+    user_id: uuid.UUID,
+    body: dict,
+    db: DBSession = Depends(get_db),
+):
+    """Admin override of any user's notification preferences."""
+    from src.domain.users import User
+    from src.schemas.users import NOTIFICATION_EVENTS
+
+    user = db.get(User, user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    valid_types = {ev["event_type"] for ev in NOTIFICATION_EVENTS}
+    prefs = body.get("prefs", {})
+    unknown = set(prefs) - valid_types
+    if unknown:
+        raise HTTPException(status_code=422, detail=f"Unknown event types: {sorted(unknown)}")
+
+    stored = dict(user.notification_prefs or {})
+    stored.update({k: bool(v) for k, v in prefs.items()})
+    user.notification_prefs = stored
+    db.commit()
+    return {"user_id": str(user.id), "prefs": stored}

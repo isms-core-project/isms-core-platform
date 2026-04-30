@@ -22,14 +22,14 @@ openpyxl==3.1.2
 reportlab==4.2.5
 
 # File Handling
-python-multipart==0.0.6
+python-multipart==0.0.20
 
 # Document Parsing (Policy Importer)
 python-docx==1.1.0
 pdfplumber==0.11.0
 
 # Authentication & Security
-python-jose[cryptography]==3.3.0
+PyJWT[crypto]==2.10.1
 passlib[bcrypt]==1.7.4
 cryptography==42.0.0
 

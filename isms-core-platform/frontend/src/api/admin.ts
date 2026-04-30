@@ -1,5 +1,5 @@
 import { client } from './client'
-import type { UserCreate, UserPatch, UserRead, SyncResult, SysInfoResponse, NotificationPrefsResponse } from './types'
+import type { UserCreate, UserPatch, UserRead, SyncResult, SysInfoResponse, NotificationPrefsResponse, NotificationRoutingRule, UserNotificationPrefs } from './types'
 
 export const adminApi = {
   listUsers: () =>
@@ -79,6 +79,18 @@ export const adminApi = {
 
   updateMyNotificationPrefs: (prefs: Record<string, boolean>) =>
     client.patch<NotificationPrefsResponse>('/auth/me/notification-prefs', { prefs }).then((r) => r.data),
+
+  getNotificationRouting: () =>
+    client.get<NotificationRoutingRule[]>('/admin/notifications/routing').then((r) => r.data),
+
+  updateNotificationRouting: (event_type: string, body: Partial<NotificationRoutingRule>) =>
+    client.patch<NotificationRoutingRule>(`/admin/notifications/routing/${event_type}`, body).then((r) => r.data),
+
+  getAllUserNotificationPrefs: () =>
+    client.get<UserNotificationPrefs[]>('/admin/notifications/users').then((r) => r.data),
+
+  updateUserNotificationPrefs: (user_id: string, prefs: Record<string, boolean>) =>
+    client.patch<{ user_id: string; prefs: Record<string, boolean> }>(`/admin/notifications/users/${user_id}`, { prefs }).then((r) => r.data),
 
   getOrganisation: () =>
     client.get<{ settings: Record<string, unknown> }>('/organisation/').then((r) => r.data),

@@ -17,8 +17,8 @@ class Settings(BaseSettings):
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 60
     refresh_token_expire_minutes: int = 10080  # 7 days
-    # Set True when the platform is served over HTTPS
-    cookie_secure: bool = False
+    # Set COOKIE_SECURE=false only for local HTTP development; True for any HTTPS deployment
+    cookie_secure: bool = True
 
     # Paths (read-only mounts)
     isms_data_path: str = "/app/isms-data"
@@ -74,7 +74,7 @@ class Settings(BaseSettings):
 
     # Admin bootstrap (set these in .env to seed/override the admin user on startup)
     admin_email: str = "admin@isms-core.dev"
-    admin_password: str = "admin123"
+    admin_password: str = ""  # no default — platform refuses to start if blank
 
     # Optional features (controlled by docker-compose profile + .env)
     threat_intel_enabled: bool = False   # set THREAT_INTEL_ENABLED=true when using --profile threat-intel

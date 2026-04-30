@@ -35,6 +35,11 @@ server {
 
     client_max_body_size 50m;
 
+    # ── Block API docs in production (FastAPI also disables them when debug=False) ──
+    location ~ ^/(docs|redoc|openapi\.json) {
+        return 404;
+    }
+
     # ── Health (proxied directly, no /api prefix rewrite needed) ────────────
     location = /health {
         proxy_pass         $backend/health;

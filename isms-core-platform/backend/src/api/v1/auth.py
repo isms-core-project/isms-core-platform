@@ -2,7 +2,7 @@ import uuid
 
 from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from fastapi.responses import JSONResponse
-from jose import JWTError
+from jwt.exceptions import InvalidTokenError
 from pydantic import BaseModel
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session as DBSession
@@ -84,7 +84,7 @@ def refresh(request: Request, db: DBSession = Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="No refresh token")
     try:
         result = refresh_tokens(db, old_token)
-    except JWTError as e:
+    except InvalidTokenError as e:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=f"Invalid refresh token: {e}")
     if not result:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Could not refresh token")

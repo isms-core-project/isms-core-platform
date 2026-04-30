@@ -58,6 +58,16 @@ def refresh_tokens(db: DBSession, refresh_token: str) -> dict | None:
     if not user_id:
         return None
 
+    # Validate token exists in sessions table — prevents reuse after logout
+    session = db.execute(
+        select(UserSession).where(
+            UserSession.token == refresh_token,
+            UserSession.expires_at > datetime.now(timezone.utc),
+        )
+    ).scalar_one_or_none()
+    if not session:
+        return None
+
     user = db.get(User, user_id)
     if not user or not user.is_active:
         return None

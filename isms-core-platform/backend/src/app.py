@@ -23,12 +23,43 @@ from src.services.qa_service import ensure_synonym_table
 
 logger = logging.getLogger(__name__)
 
+_INSECURE_DEFAULTS = {
+    "change_this_secret_key_in_production",
+    "change_this_password_in_production",
+    "change_this_redis_password",
+}
+
+
+def _validate_secrets(settings) -> None:
+    """Refuse to start if insecure default credentials or blank admin password detected."""
+    if not settings.admin_password:
+        raise RuntimeError(
+            "ADMIN_PASSWORD is not set in .env. "
+            "Set a strong password (12+ chars) before starting the platform."
+        )
+    if len(settings.admin_password) < 12:
+        raise RuntimeError(
+            "ADMIN_PASSWORD must be at least 12 characters. Update .env and restart."
+        )
+    if settings.secret_key in _INSECURE_DEFAULTS:
+        raise RuntimeError(
+            "SECRET_KEY is set to the default value. "
+            "Generate one with: python3 -c \"import secrets; print(secrets.token_hex(32))\""
+        )
+    for bad in _INSECURE_DEFAULTS:
+        if bad in settings.database_url:
+            raise RuntimeError("DATABASE_URL contains the default password. Update .env.")
+        if bad in settings.redis_url:
+            raise RuntimeError("REDIS_URL contains the default password. Update .env.")
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Startup: load/refresh dataset bundles (unchanged files skipped via content_hash)."""
     settings = get_settings()
     logger.info("ISMS CORE API starting (debug=%s)", settings.debug)
+
+    _validate_secrets(settings)
 
     db = SessionLocal()
     try:
@@ -88,7 +119,7 @@ async def lifespan(app: FastAPI):
         logger.warning("OpenSearch init failed: %s (non-fatal)", e)
 
     # Seed/update admin user from ADMIN_EMAIL / ADMIN_PASSWORD env vars
-    if settings.admin_email and settings.admin_password:
+    if settings.admin_email and settings.admin_password:  # both guaranteed non-empty by _validate_secrets
         try:
             from src.domain.users import User
             from sqlalchemy import select
@@ -134,8 +165,9 @@ def create_app() -> FastAPI:
         title="ISMS CORE Platform API",
         description="ISO 27001:2022 ISMS compliance management platform",
         version="1.0.0",
-        docs_url="/docs",
-        redoc_url="/redoc",
+        docs_url="/docs" if settings.debug else None,
+        redoc_url="/redoc" if settings.debug else None,
+        openapi_url="/openapi.json" if settings.debug else None,
         lifespan=lifespan,
     )
 
@@ -146,7 +178,7 @@ def create_app() -> FastAPI:
         allow_origins=origins,
         allow_credentials=True,
         allow_methods=["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
-        allow_headers=["Authorization", "Content-Type", "Accept"],
+        allow_headers=["Authorization", "Content-Type", "Accept", "X-Org-ID"],
         expose_headers=["X-QA-Status", "X-QA-Issues"],
     )
 

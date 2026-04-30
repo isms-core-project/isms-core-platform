@@ -472,6 +472,23 @@ export interface NotificationPrefsResponse {
   prefs: NotificationPref[]
 }
 
+export interface NotificationRoutingRule {
+  event_type: string
+  label: string
+  category: string
+  description: string
+  target_roles: string[]
+  always_include_override: boolean
+}
+
+export interface UserNotificationPrefs {
+  user_id: string
+  email: string
+  full_name: string | null
+  role: string
+  prefs: Record<string, boolean>
+}
+
 // ---------------------------------------------------------------------------
 // QA / Correlation Engine
 // ---------------------------------------------------------------------------

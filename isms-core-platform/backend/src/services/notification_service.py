@@ -58,6 +58,73 @@ def _prefs_allow(user, event_type: str) -> bool:
     return prefs.get(event_type, True)
 
 
+def _effective_email(user_email: str) -> str:
+    """Resolve the real delivery address for a user email.
+
+    If NOTIFICATION_EMAIL is set AND the user email matches the bootstrap
+    ADMIN_EMAIL (a dummy non-existent address), substitute the override.
+    Real user emails are returned unchanged — this is substitution, not
+    a blanket redirect.  Duplicate sends are prevented by the caller's
+    dedup set.
+    """
+    from src.core.config import get_settings
+    s = get_settings()
+    if s.notification_email and user_email == s.admin_email:
+        return s.notification_email
+    return user_email
+
+
+def _resolve_recipients(db, event_type: str) -> list[str]:
+    """Return deduplicated delivery addresses for an event type.
+
+    Looks up the notification_routing row to determine which roles receive
+    the event.  Applies _effective_email() substitution per user.  If
+    always_include_override is True and NOTIFICATION_EMAIL is set, that
+    address is appended after role-based recipients (guaranteed delivery
+    even when all DB admins are dummy accounts).
+
+    Falls back to [SUPER_ADMIN, ADMIN] + always_override=True when the
+    routing row is missing.
+    """
+    from src.core.config import get_settings
+    from src.database.enums import UserRole
+    from src.domain.notification_routing import NotificationRouting
+    from src.domain.users import User
+
+    routing = db.get(NotificationRouting, event_type)
+    if routing and routing.target_roles:
+        target_roles = [
+            UserRole(r) for r in routing.target_roles
+            if r in UserRole._value2member_map_
+        ]
+        always_override = routing.always_include_override
+    else:
+        target_roles = [UserRole.SUPER_ADMIN, UserRole.ADMIN]
+        always_override = True
+
+    users = (
+        db.query(User)
+        .filter(User.is_active.is_(True), User.role.in_(target_roles))
+        .all()
+    )
+
+    seen: set[str] = set()
+    result: list[str] = []
+
+    for u in users:
+        delivery = _effective_email(u.email)
+        if delivery not in seen:
+            seen.add(delivery)
+            result.append(delivery)
+
+    settings = get_settings()
+    if always_override and settings.notification_email:
+        if settings.notification_email not in seen:
+            result.append(settings.notification_email)
+
+    return result
+
+
 # ---------------------------------------------------------------------------
 # Task: welcome email
 # ---------------------------------------------------------------------------
@@ -444,7 +511,9 @@ def scan_evidence_expiry(self) -> dict:
             )
             .all()
         )
-        recipient_emails = [r.email for r in recipients]
+        # Apply override redirect + dedup so a single NOTIFICATION_EMAIL doesn't
+        # receive one task per admin when the override collapses them all to one address.
+        recipient_emails = list(dict.fromkeys(_effective_email(r.email) for r in recipients))
 
         if not recipient_emails:
             logger.info("scan_evidence_expiry: no admin/manager recipients — skipping")
@@ -509,63 +578,35 @@ def notify_feed_failure(self, feed_name: str, error_message: str, run_id: str | 
 
     db = SessionLocal()
     try:
-        from src.core.config import get_settings
-        from src.database.enums import UserRole
-        from src.domain.users import User
-
-        recipients = (
-            db.query(User)
-            .filter(
-                User.is_active.is_(True),
-                User.role.in_([UserRole.SUPER_ADMIN, UserRole.ADMIN, UserRole.ISMS_MANAGER]),
-            )
-            .all()
-        )
+        recipients = _resolve_recipients(db, "email.feed_failure")
         if not recipients:
             return 0
 
         base = _platform_url()
         sent = 0
-        emailed: set[str] = set()
+        failed_at = datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC")
 
-        for user in recipients:
-            if not _prefs_allow(user, "email.feed_failure"):
-                continue
-
+        for delivery in recipients:
             html = render_template("feed_failure.html", {
-                "full_name": user.full_name,
-                "email": user.email,
+                "full_name": delivery,
+                "email": delivery,
                 "feed_name": feed_name,
                 "error_message": error_message[:500],
                 "run_id": run_id,
-                "failed_at": datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC"),
+                "failed_at": failed_at,
                 "feeds_url": f"{base}/threat-intel",
             })
 
             ok = send_email(
-                to=[user.email],
+                to=[delivery],
                 subject=f"Feed Pull Failed: {feed_name}",
                 html_body=html,
             )
             if ok:
                 _log_email_sent(
                     db, "email.feed_failure", run_id,
-                    f"Feed failure alert sent to {user.email} — {feed_name}",
+                    f"Feed failure alert sent to {delivery} — {feed_name}",
                 )
-                emailed.add(user.email)
-                sent += 1
-
-        # Also notify NOTIFICATION_EMAIL override if set and not already covered
-        override = get_settings().notification_email
-        if override and override not in emailed:
-            html = render_template("feed_failure.html", {
-                "full_name": override, "email": override,
-                "feed_name": feed_name, "error_message": error_message[:500],
-                "run_id": run_id,
-                "failed_at": datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC"),
-                "feeds_url": f"{base}/threat-intel",
-            })
-            if send_email(to=[override], subject=f"Feed Pull Failed: {feed_name}", html_body=html):
                 sent += 1
 
         db.commit()
@@ -590,63 +631,35 @@ def notify_ti_feed_failure(self, feed_name: str, error_message: str, run_id: str
 
     db = SessionLocal()
     try:
-        from src.core.config import get_settings
-        from src.database.enums import UserRole
-        from src.domain.users import User
-
-        recipients = (
-            db.query(User)
-            .filter(
-                User.is_active.is_(True),
-                User.role.in_([UserRole.SUPER_ADMIN, UserRole.ADMIN, UserRole.ISMS_MANAGER]),
-            )
-            .all()
-        )
+        recipients = _resolve_recipients(db, "email.ti_feed_failure")
         if not recipients:
             return 0
 
         base = _platform_url()
         sent = 0
-        emailed: set[str] = set()
+        failed_at = datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC")
 
-        for user in recipients:
-            if not _prefs_allow(user, "email.ti_feed_failure"):
-                continue
-
+        for delivery in recipients:
             html = render_template("feed_failure.html", {
-                "full_name": user.full_name,
-                "email": user.email,
+                "full_name": delivery,
+                "email": delivery,
                 "feed_name": feed_name,
                 "error_message": error_message[:500],
                 "run_id": run_id,
-                "failed_at": datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC"),
+                "failed_at": failed_at,
                 "feeds_url": f"{base}/threat-feeds",
             })
 
             ok = send_email(
-                to=[user.email],
+                to=[delivery],
                 subject=f"Threat Intel Feed Failed: {feed_name}",
                 html_body=html,
             )
             if ok:
                 _log_email_sent(
                     db, "email.ti_feed_failure", run_id,
-                    f"TI feed failure alert sent to {user.email} — {feed_name}",
+                    f"TI feed failure alert sent to {delivery} — {feed_name}",
                 )
-                emailed.add(user.email)
-                sent += 1
-
-        # Also notify NOTIFICATION_EMAIL override if set and not already covered
-        override = get_settings().notification_email
-        if override and override not in emailed:
-            html = render_template("feed_failure.html", {
-                "full_name": override, "email": override,
-                "feed_name": feed_name, "error_message": error_message[:500],
-                "run_id": run_id,
-                "failed_at": datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC"),
-                "feeds_url": f"{base}/threat-feeds",
-            })
-            if send_email(to=[override], subject=f"Threat Intel Feed Failed: {feed_name}", html_body=html):
                 sent += 1
 
         db.commit()
@@ -678,46 +691,34 @@ def notify_connector_failure(self, connector_id: str, connector_name: str, error
 
     db = SessionLocal()
     try:
-        from src.database.enums import UserRole
-        from src.domain.users import User
-
-        recipients = (
-            db.query(User)
-            .filter(
-                User.is_active.is_(True),
-                User.role.in_([UserRole.SUPER_ADMIN, UserRole.ADMIN, UserRole.ISMS_MANAGER]),
-            )
-            .all()
-        )
+        recipients = _resolve_recipients(db, "email.connector_failure")
         if not recipients:
             return 0
 
         base = _platform_url()
         sent = 0
+        failed_at = datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC")
 
-        for user in recipients:
-            if not _prefs_allow(user, "email.connector_failure"):
-                continue
-
+        for delivery in recipients:
             html = render_template("connector_failure.html", {
-                "full_name": user.full_name,
-                "email": user.email,
+                "full_name": delivery,
+                "email": delivery,
                 "connector_name": connector_name,
                 "connector_id": connector_id,
                 "error_message": error_message[:500],
-                "failed_at": datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC"),
+                "failed_at": failed_at,
                 "connectors_url": f"{base}/connectors",
             })
 
             ok = send_email(
-                to=[user.email],
+                to=[delivery],
                 subject=f"Connector Sync Failed: {connector_name}",
                 html_body=html,
             )
             if ok:
                 _log_email_sent(
                     db, "email.connector_failure", connector_id,
-                    f"Connector failure alert sent to {user.email} — {connector_name}",
+                    f"Connector failure alert sent to {delivery} — {connector_name}",
                 )
                 sent += 1
 

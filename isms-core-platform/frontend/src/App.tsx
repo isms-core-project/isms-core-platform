@@ -75,6 +75,7 @@ import MalwareAtlas from './pages/MalwareAtlas'
 import IpEnrichment from './pages/IpEnrichment'
 import Glossary from './pages/Glossary'
 import Cobit from './pages/Cobit'
+import Notifications from './pages/Notifications'
 import CsaCcm from './pages/CsaCcm'
 import CsaAicm from './pages/CsaAicm'
 import NistSp80053 from './pages/NistSp80053'
@@ -178,6 +179,7 @@ export default function App() {
         <Route path="threat-intel" element={<ThreatIntelDashboard />} />
         <Route path="glossary" element={<Glossary />} />
         <Route path="cobit" element={<Cobit />} />
+        <Route path="notifications" element={<Notifications />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

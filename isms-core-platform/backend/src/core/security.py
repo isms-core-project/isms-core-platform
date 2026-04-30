@@ -3,7 +3,8 @@
 from datetime import datetime, timedelta, timezone
 
 import bcrypt
-from jose import JWTError, jwt
+import jwt
+from jwt.exceptions import InvalidTokenError
 
 from src.core.config import get_settings
 
@@ -29,7 +30,7 @@ def create_refresh_token(subject: str) -> str:
 
 
 def decode_token(token: str) -> dict:
-    """Decode and verify a JWT. Raises JWTError on failure."""
+    """Decode and verify a JWT. Raises InvalidTokenError on failure."""
     settings = get_settings()
     return jwt.decode(token, settings.secret_key, algorithms=[settings.jwt_algorithm])
 

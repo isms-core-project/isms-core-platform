@@ -8,7 +8,7 @@ import uuid
 from datetime import datetime, timedelta, timezone
 
 import pyotp
-from jose import jwt
+import jwt
 from sqlalchemy.orm import Session as DBSession
 
 from src.core.config import get_settings

@@ -10,15 +10,6 @@ import {
   Divider,
   Typography,
   Tooltip,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-  Switch,
-  FormControlLabel,
-  CircularProgress,
-  Alert,
   Chip,
   Collapse,
   IconButton,
@@ -75,7 +66,6 @@ import {
   StreamOutlined,
   ManageSearchOutlined,
   MenuBookOutlined,
-  SendOutlined,
   ReceiptLongOutlined,
   TrackChangesOutlined,
   CoronavirusOutlined,
@@ -83,10 +73,9 @@ import {
 } from '@mui/icons-material'
 import { useTheme } from '@mui/material/styles'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { adminApi } from '../api/admin'
 import { client } from '../api/client'
-import type { NotificationPref } from '../api/types'
 import { useAuth } from '../store/AuthContext'
 import { useProduct, type Product, PRODUCT_COLORS, PRODUCT_LABELS, PRODUCT_SUBTITLES } from '../store/ProductContext'
 import { useProject } from '../store/ProjectContext'
@@ -290,130 +279,6 @@ const ADMIN_PATHS        = ['/admin', '/admin/logs', '/connectors', '/system', '
 const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/mitre-groups', '/mitre-software', '/mitre-campaigns', '/mitre-heatmap', '/cve-explorer', '/euvd-explorer', '/ioc-explorer', '/malware-atlas', '/ip-enrichment', '/threat-intel']
 const ALL_PLATFORM_PATHS = [...RISK_PATHS, ...TOOLS_PATHS, ...FRAMEWORK_PATHS, ...SUPPLIER_PATHS, ...ADMIN_PATHS, ...INTELLIGENCE_PATHS]
 
-// ── Notification prefs dialog ─────────────────────────────────────────────────
-
-function NotificationPrefsDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const { palette } = useTheme()
-  const isLight = palette.mode === 'light'
-  const CAT_COLOR = isLight ? CAT_COLOR_LIGHT : CAT_COLOR_DARK
-  const CAT_TEXT = isLight ? CAT_TEXT_LIGHT : CAT_TEXT_DARK
-  const queryClient = useQueryClient()
-  const { data, isLoading } = useQuery({
-    queryKey: ['my', 'notification-prefs'],
-    queryFn: adminApi.getMyNotificationPrefs,
-    enabled: open,
-  })
-
-  const mutation = useMutation({
-    mutationFn: (prefs: Record<string, boolean>) => adminApi.updateMyNotificationPrefs(prefs),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['my', 'notification-prefs'] }),
-  })
-
-  const [testingEvent, setTestingEvent] = useState<string | null>(null)
-  const [testResult, setTestResult] = useState<{ event_type: string; ok: boolean; msg: string } | null>(null)
-
-  const testMutation = useMutation({
-    mutationFn: (event_type: string) => adminApi.sendTestNotification(event_type),
-    onMutate: (event_type) => { setTestingEvent(event_type); setTestResult(null) },
-    onSuccess: (res) => {
-      setTestResult({ event_type: res.event_type, ok: true, msg: `Test sent to ${res.recipient}` })
-      setTestingEvent(null)
-    },
-    onError: (_e, event_type) => {
-      setTestResult({ event_type, ok: false, msg: 'Send failed — check SMTP config' })
-      setTestingEvent(null)
-    },
-  })
-
-  function toggle(pref: NotificationPref) {
-    mutation.mutate({ [pref.event_type]: !pref.enabled })
-  }
-
-  const byCategory = data
-    ? Object.entries(
-        data.prefs.reduce<Record<string, NotificationPref[]>>((acc, p) => {
-          ;(acc[p.category] ??= []).push(p)
-          return acc
-        }, {})
-      )
-    : []
-
-  return (
-    <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth>
-      <DialogTitle sx={{ pb: 0.5 }}>
-        Notification Preferences
-        <Typography variant="caption" color="text.secondary" display="block">
-          Choose which emails you receive
-        </Typography>
-      </DialogTitle>
-      <DialogContent sx={{ pt: 1 }}>
-        {isLoading && <CircularProgress size={20} sx={{ display: 'block', mx: 'auto', my: 2 }} />}
-        {mutation.isError && (
-          <Alert severity="error" sx={{ mb: 1.5, py: 0 }}>Failed to save — try again.</Alert>
-        )}
-        {testResult && (
-          <Alert
-            severity={testResult.ok ? 'success' : 'error'}
-            onClose={() => setTestResult(null)}
-            sx={{ mb: 1.5, py: 0, fontSize: '0.72rem' }}
-          >
-            {testResult.msg}
-          </Alert>
-        )}
-        {byCategory.map(([cat, prefs]) => (
-          <Box key={cat} sx={{ mb: 2 }}>
-            <Chip
-              label={CAT_LABEL[cat] ?? cat}
-              size="small"
-              sx={{ mb: 1, fontSize: '0.65rem', height: 18, bgcolor: CAT_COLOR[cat] ?? '#222', color: CAT_TEXT[cat] ?? '#fff' }}
-            />
-            {prefs.map((pref) => (
-              <Box key={pref.event_type} sx={{ display: 'flex', alignItems: 'flex-start', mb: 1 }}>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      size="small"
-                      checked={pref.enabled}
-                      onChange={() => toggle(pref)}
-                      disabled={mutation.isPending}
-                    />
-                  }
-                  label={
-                    <Box>
-                      <Typography variant="body2">{pref.label}</Typography>
-                      <Typography variant="caption" color="text.secondary" display="block">
-                        {pref.description}
-                      </Typography>
-                    </Box>
-                  }
-                  sx={{ flex: 1, alignItems: 'flex-start', ml: 0, mr: 0 }}
-                />
-                <Tooltip title="Send test email to yourself">
-                  <span>
-                    <IconButton
-                      size="small"
-                      onClick={() => testMutation.mutate(pref.event_type)}
-                      disabled={testingEvent !== null}
-                      sx={{ mt: 0.25, color: 'text.disabled', '&:hover': { color: 'primary.main' } }}
-                    >
-                      {testingEvent === pref.event_type
-                        ? <CircularProgress size={14} />
-                        : <SendOutlined sx={{ fontSize: 14 }} />}
-                    </IconButton>
-                  </span>
-                </Tooltip>
-              </Box>
-            ))}
-          </Box>
-        ))}
-      </DialogContent>
-      <DialogActions sx={{ px: 3, pb: 2 }}>
-        <Button onClick={onClose}>Close</Button>
-      </DialogActions>
-    </Dialog>
-  )
-}
-
 // ── Reusable collapsible nav group ────────────────────────────────────────────
 
 interface NavGroupProps {
@@ -606,7 +471,6 @@ type IsmsTier = 'all' | 'framework' | 'operational'
 export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; onToggle: () => void }) {
   const navigate = useNavigate()
   const location = useLocation()
-  const [notifsOpen, setNotifsOpen] = useState(false)
   const { logout, user, isSuperAdmin } = useAuth()
   const { product, setProduct, ismsTier, setIsmsTier } = useProduct()
   const { getActiveProject, setActiveProject, activeProjectsMap } = useProject()
@@ -1082,7 +946,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
         )}
         <Tooltip title={collapsed ? 'Notifications' : ''} placement="right">
           <ListItemButton
-            onClick={() => setNotifsOpen(true)}
+            onClick={() => navigate('/notifications')}
             sx={{ borderRadius: 1.5, px: collapsed ? 0 : 1.5, py: 0.5, justifyContent: collapsed ? 'center' : 'flex-start' }}
           >
             <ListItemIcon sx={{ minWidth: collapsed ? 'unset' : 36, color: 'text.secondary' }}>
@@ -1152,7 +1016,6 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
         </Tooltip>
       </Box>
 
-      <NotificationPrefsDialog open={notifsOpen} onClose={() => setNotifsOpen(false)} />
     </Box>
   )
 }
