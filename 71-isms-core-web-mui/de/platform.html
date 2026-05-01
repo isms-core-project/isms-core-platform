@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ISMS CORE Platform — selbst gehostete ISO 27001:2022 GRC-Plattform. 45+ Module: Projektbereich, Nachweis-Konnektoren (44 nativ, 35 OpenSearch-Indizes), Risikoregister, EBIOS RM, BIA, TPRM, Massnahmen-Abhängigkeitsgraph, Threat Intelligence (MITRE ATT&CK, CISA KEV, ENISA EUVD, NVD CVE, CIRCL MISP, AbuseIPDB, Malpedia), KI-QA-Engine, 25 Compliance-Assessments. Docker Compose, keine Cloud, keine Abonnements.">
+    <meta name="author" content="The ISMS Core Project">
+    <link rel="canonical" href="https://isms-core.com/de/platform.html">
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://isms-core.com/platform.html">
+    <link rel="alternate" hreflang="de-CH" href="https://isms-core.com/de/platform.html">
+    <link rel="alternate" hreflang="fr" href="https://isms-core.com/fr/platform.html">
+    <link rel="alternate" hreflang="it" href="https://isms-core.com/it/platform.html">
+    <link rel="alternate" hreflang="x-default" href="https://isms-core.com/platform.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://isms-core.com/de/platform.html">
+    <meta property="og:title" content="ISMS CORE Platform — Selbst gehostetes ISO 27001 GRC">
+    <meta property="og:description" content="45+ Compliance-Module in einer Docker-basierten Plattform. Nachweisautomatisierung, Risikoregister, EBIOS RM, BIA, TPRM, 44 native Konnektoren, MITRE ATT&CK, CISA KEV, NVD CVE, OSINT IOC-Feeds, IP-Anreicherung. Keine Cloud, keine Abonnements.">
+    <meta property="og:image" content="https://isms-core.com/assets/og-image.png">
+    <meta property="og:image:width" content="1848">
+    <meta property="og:image:height" content="895">
+    <meta property="og:site_name" content="ISMS CORE">
+    <meta property="og:locale" content="de_CH">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ISMS CORE Platform — Selbst gehostetes ISO 27001 GRC">
+    <meta name="twitter:description" content="45+ Compliance-Module in einer Docker-basierten Plattform. Nachweisautomatisierung, Risikoregister, EBIOS RM, BIA, TPRM, 44 native Konnektoren, MITRE ATT&CK, CISA KEV, NVD CVE, OSINT IOC-Feeds, IP-Anreicherung. Keine Cloud, keine Abonnements.">
+    <meta name="twitter:image" content="https://isms-core.com/assets/og-image.png">
+
+    <title>ISMS CORE Platform — Selbst gehostetes ISO 27001 GRC | 44 Konnektoren, EBIOS RM, Threat Intel</title>
+
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="apple-touch-icon" href="../assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="bamboo">🎋</span> ISMS CORE
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Navigation umschalten">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#about">Über uns</a></li>
+                <li><a href="index.html#philosophy">Philosophie</a></li>
+                <li><a href="platform.html" style="color: var(--bamboo)">Plattform</a></li>
+                <li><a href="index.html#status">Status</a></li>
+                <li><a href="index.html#frameworks">Frameworks</a></li>
+                <li><a href="compliance.html">Compliance</a></li>
+                <li><a href="country.html">Länder</a></li>
+                <li><a href="https://github.com/isms-core-project/isms-core-platform" class="nav-cta" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <a href="../platform.html" class="lang-btn" hreflang="en">EN</a>
+                <a href="platform.html" class="lang-btn lang-active" hreflang="de">DE</a>
+                <a href="../fr/platform.html" class="lang-btn" hreflang="fr">FR</a>
+                <a href="../it/platform.html" class="lang-btn" hreflang="it">IT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="compliance-page-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">← Zurück zu ISMS CORE</a>
+            <h1>🎋 ISMS CORE Platform</h1>
+            <p>Eine Docker-basierte ISO 27001:2022 GRC-Plattform. Dateien funktionieren auch ohne sie — die Plattform ist die Schicht, die Live-Compliance-Betrieb, Nachweisautomatisierung, Risikometodik und Threat Intelligence hinzufügt. <strong>Selbst gehostet. Keine Cloud. Keine Abonnements.</strong></p>
+            <div class="compliance-hero-stats">
+                <div class="chs-item"><span class="chs-num">45+</span><span class="chs-lbl">Module &amp; Seiten</span></div>
+                <div class="chs-item"><span class="chs-num">44</span><span class="chs-lbl">Nachweis-Konnektoren</span></div>
+                <div class="chs-item"><span class="chs-num">34</span><span class="chs-lbl">API-Router</span></div>
+                <div class="chs-item"><span class="chs-num">5</span><span class="chs-lbl">ISO-Produkte</span></div>
+                <div class="chs-item"><span class="chs-num">25</span><span class="chs-lbl">Framework-Assessments</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 1: Compliance Operations -->
+    <section class="section" id="operations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Compliance-Betrieb</h2>
+                <p>Der zentrale GRC-Workflow — von der Richtlinie über Nachweise bis zur Audit-Bereitschaft. Alles pro Projekt und Organisation abgegrenzt.</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📁</div>
+                    <h3>Projektbereich</h3>
+                    <p>Erstellen Sie benannte Projekte, die einen kuratierten Teilbereich von Richtlinien, Implementierungshandbüchern, Assessments, Lücken und Nachweisen verwalten. Dokumentvariablen (Organisationsname, CISO, Gültigkeitsdatum, Rechtsform) werden beim Hinzufügen automatisch ersetzt. WYSIWYG-Editor mit Quell-Toggle für die In-Plattform-Richtlinienbearbeitung. Massenaktionen, Papierkorb/Wiederherstellen, Vollständigkeitsscoring und SCR-Checklisten-Tracking — alles pro Projekt abgegrenzt.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <h3>Lücken- &amp; Nachweis-Management</h3>
+                    <p>Vollständiges CRUD für Compliance-Lücken: Schweregrad, Verantwortlicher, Fälligkeitsdatum und Behebungsplan. Nachweis-Tracker mit Ablaufwarnungen, Dateidownload und Verifizierungs-Workflow. Nachweise direkt mit ISO 27001-Kontrollgruppen verknüpfen. Automatisierte Nachweise aus Konnektoren landen hier — kein manuelles Kopieren aus externen Tools.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Live-Compliance-Dashboard</h3>
+                    <p>Echtzeit-Compliance-Scores für alle 53 ISO 27001:2022-Kontrollgruppen. Audit-Bereitschafts-Gesamtscore (Richtlinien + Nachweise + Assessments + offene Lücken). Abschnittsaufschlüsselung mit Balkendiagrammen. Kontrollgruppen-Drill-down mit Richtlinien-, Implementierungs- und Nachweislinks pro Massnahme.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📈</div>
+                    <h3>KPI / Metriken-Dashboard</h3>
+                    <p>Neun benannte Sicherheits-KPIs mit Sparkline-Trenddiagrammen pro Projekt. Audit-Bereitschafts-Gesamtscore (%). Metriken-Portfolio-Ansicht für Super Admins — organisationsübergreifender KPI-Vergleich auf einen Blick.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Volltextsuche</h3>
+                    <p>OpenSearch-basierte Suche über alle Richtlinien, 570+ Implementierungshandbücher und 5'200+ extrahierte Anforderungen. Hervorgehobene Ergebnisse mit Typ- und Produktfiltern (ISMS / Datenschutz / Cloud / KI). Semantische Suche via indizierte Abschnitte — finden Sie, was eine Massnahme tatsächlich sagt, nicht nur wo sie vorkommt.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📄</div>
+                    <h3>Unterstützung externer Dokumente</h3>
+                    <p>Importieren Sie bestehende Richtlinien (PDF, DOCX, Markdown) ohne ISMS CORE-Formatierung. Führen Sie die vollständige KI-QA-Analyse gegen den ISO 27001:2022-Referenz-Corpus durch. Sehen Sie genau, was im Vergleich zur normativen Norm fehlt — bevor der Auditor es tut.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Risk & Methodology -->
+    <section class="section section-alt" id="risk">
+        <div class="container">
+            <div class="section-header">
+                <h2>Risiko &amp; Methodik</h2>
+                <p>Zweckgebaute Tools für ISO 27001-Risikobehandlung, ANSSI EBIOS RM, Business Continuity und Drittparteienrisiko — alle in den Nachweis- und Lücken-Workflow integriert.</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🚨</div>
+                    <h3>Risikoregister &amp; Heatmap</h3>
+                    <p>Projektbasiertes Risikoregister mit einer 5×5-Wahrscheinlichkeits-/Auswirkungsmatrix. Visuelle Heatmap mit farbcodierten Risikozonen (grün / amber / rot). Risikoakzeptanz- und Behebungs-Tracking — Aktionspläne, Verantwortlichenzuweisung, ETA-Tracking. ITSM-Push zu Jira oder ServiceNow für Behebungs-Tickets. BSI 200-3-automatischer Risikorechner mit vorgemappten Bedrohungscodes pro ISO-Abschnitt.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔬</div>
+                    <h3>EBIOS RM</h3>
+                    <p>Vollständige ANSSI EBIOS Risk Manager-Methodik: fünf Workshops von Anfang bis Ende. Workshop 1 (Rahmensetzung) → Workshop 2 (gefürchtete Ereignisse) → Workshop 3 (strategische Szenarien) → Workshop 4 (operative Szenarien, Angriffspfade) → Workshop 5 (Sicherheitsmassnahmen). Integriert mit Risikoregister und Behebungs-Tracker. Alle Workshops als strukturierte Risikodatei exportierbar.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏥</div>
+                    <h3>Business Impact Analysis (BIA)</h3>
+                    <p>RTO / RPO / MTPD-Erfassung pro Geschäftsfunktion. Auswirkungsscoring in fünf Kategorien. Wiederherstellungsprioritäts-Ranking. Fliesst direkt in Risikoregister und Lücken-Management-Workflows ein — ISMS-Kontinuitätsanforderungen (A.5.29, A.5.30) werden automatisch verknüpft.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Drittparteienrisiko (TPRM)</h3>
+                    <p>Lieferantenregister mit DORA-IKT-Drittparteienfeldern, Vertrags-Tracking und Risikobewertungen. Kritikalitätsklassifizierung, Datenaustausch-Flags und Behebungs-Tracking. Lieferantenrisiko in der Plattform bewerten und überwachen — keine separaten Tabellenkalkulationen. DORA-Artikel-28-IKT-Konzentrationsrisiko-Ansicht.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🕸️</div>
+                    <h3>Massnahmen-Abhängigkeitsgraph</h3>
+                    <p>Interaktiver Cytoscape.js-Graph mit 229 intra-ISO-27001-Massnahmen-Beziehungen: abhängig-von, ermöglicht, fliesst-in. Filter nach Abschnitt, Tiefe und Kantentyp. Identifizieren Sie, welche Massnahmen grundlegend sind, bevor ein Audit stattfindet — beheben Sie eine, schliessen Sie mehrere Lücken. Visuelle und tabellarische Ansichten.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>25 Compliance-Assessment-Module</h3>
+                    <p>In-Plattform-Scoring gegen NIST CSF 2.0, NIST SP 800-53 R5, NIST AI RMF 1.0, NIS2, DORA, CIS Controls v8, BSI IT-Grundschutz, CSRM (Swiss NCSC), TISAX, Swiss ISG, Swiss nDSG, EU CRA, EU AI Act, EU Cloud Sovereignty Framework, CyberFundamentals BE, BaFin BAIT, CSSF LU, ACN IT, UK NIS, UK Op. Resilience, NCSC CAF v4.0, ReCyF v2.5 (France NIS2), COBIT 2019, CSA CCM v4.1, CSA AICM v1.0.3. Reife 0–4, Lückenanalyse, Notizen, Nachweisreferenzen und Assessment Collections (gruppieren → CSV/XLSX/PDF exportieren). <a href="compliance.html" style="color:var(--bamboo)">Abdeckungsdetails →</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Threat Intelligence -->
+    <section class="section" id="threat-intel">
+        <div class="container">
+            <div class="section-header">
+                <h2>Threat Intelligence</h2>
+                <p>Zwei dedizierte Feed-Container — Schwachstellen-Intelligence (MITRE, CISA, NIST, FIRST, ENISA) und 11 OSINT IOC-Feeds (CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, Red Flag Domains, Stopforumspam, MalwareBazaar, Malpedia, Feodo Tracker) — alle in OpenSearch indiziert, mit ISO 27001:2022-Massnahmen korreliert und in der Plattform abfragbar.</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🧬</div>
+                    <h3>MITRE ATT&amp;CK Heatmap</h3>
+                    <p>Vollständige MITRE ATT&CK v19-Integration: 697 Techniken in 15 Taktiken, Bedrohungsakteur-Gruppen, Software, Kampagnen und Beziehungen. ATT&CK Heatmap rendert Techniken-Abdeckung mit einer 5-Level-Akteur-Anzahl-Farbramp — Filter nach spezifischen Bedrohungsakteur-Gruppen, Sub-Techniken umschalten und auf jede Zelle für die vollständige Akteur-Liste klicken. Wird bei jedem Feed-Pull aktualisiert.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>CISA KEV — Täglicher Pull</h3>
+                    <p>CISA Known Exploited Vulnerabilities-Katalog täglich integriert. KEV Audit-Bericht (abgebildet auf ISO 27001 A.8.8) generiert CSV-exportierbare Audit-Nachweise. Suchen, nach Anbieter und Jahr filtern, EPSS-Ausnutzungswahrscheinlichkeit überlagern.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔎</div>
+                    <h3>NVD CVE / CPE Explorer</h3>
+                    <p>250'000+ CVE-Einträge aus dem NVD, via Delta-Feed aktualisiert. Jeder CVE wird mit EPSS-Ausnutzungswahrscheinlichkeit, CISA KEV-Flag und EUVD-Flag angereichert. Nach CVSS-Schweregrad, EPSS-Score, Jahr, KEV- und EUVD-Status suchen und filtern. Gefilterte CVE-Sets werden als CSV-gestützte Audit-Nachweise für ISO 27001 A.8.8 exportiert.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>MITRE ATLAS</h3>
+                    <p>MITRE ATLAS (Adversarial Threat Landscape for AI Systems) neben ATT&CK integriert. KI-spezifische Angriffstechniken und Bedrohungsakteure für ISO 42001 und KI-Risikomanagement-Kontexte.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🇪🇺</div>
+                    <h3>ENISA EUVD — EU-Schwachstellendatenbank</h3>
+                    <p>ENISA European Vulnerability Database planmässig integriert: ausgenutzte Schwachstellen und hochschwere (CVSS ≥ 4.0) EU-zugewiesene CVEs. Vollständige CVSS 4.0-Unterstützung. <strong>EUVD Explorer</strong> bietet Suche, Schweregrad-Filter, Ausnutzungs-Flag-Filter und Audit-Nachweis-Export (A.8.8).</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h3>OSINT IOC-Feeds — 11 Quellen</h3>
+                    <p><strong>MISP-Feeds:</strong> CIRCL (Luxemburg) + Botvrij — 6-stündliches Manifest-Delta, 120'000+ deduplizierte IOCs (IPs, Domains, URLs, Hashes), zur Ingest-Zeit mit ATT&CK-TIDs und Malpedia-Slugs angereichert. <strong>abuse.ch-Feeds (täglich):</strong> URLhaus, ThreatFox, SSLBL, MalwareBazaar, Feodo Tracker. <strong>Domain-Feeds (täglich):</strong> Red Flag Domains, Stopforumspam. <strong>Reputations-Feed (täglich):</strong> AbuseIPDB Blacklist. Alle 11 Quellen in dedizierten per-Quelle OpenSearch-Indizes indexiert.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>IOC Explorer &amp; IP-Anreicherung</h3>
+                    <p>Durchsuchbare IOC-Tabelle über alle 11 OSINT-Quellen — Filter nach Typ (IP / Domain / URL / Hash / Zertifikat), Quell-Chip, MITRE-Technik und Tag. On-Demand-IP-Anreicherungs-Widget: AbuseIPDB Missbrauchs-Score, Berichtsanzahl und Shodan-Daten in einem Aufruf. Ergebnisse 24h gecacht.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🦠</div>
+                    <h3>Malware Atlas — Malpedia-Integration</h3>
+                    <p>Vollständige Malpedia-Malware-Wissensbasis wöchentlich integriert: Malware-Familien mit Aliasen, Beschreibungen, zugehörigen ATT&CK-Techniken und Bedrohungsakteur-Links. <strong>Malware Atlas</strong>-Seite bietet durchsuchbare Tabellen für Familien und Akteure.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📡</div>
+                    <h3>Intelligence-Dashboard-Karten</h3>
+                    <p>Live-Feed-Gesundheitskarten auf dem Haupt-Dashboard: totale ATT&CK-Techniken, KEV-Einträge, CVE-Anzahl, EUVD-Einträge, EPSS-Einträge, IOC-Anzahl, Malware-Familien, Bedrohungsakteure, letzte Pull-Zeitstempel und Feed-Status. Ein-Klick-Trigger führt jeden Feed ausserhalb seines geplanten Fensters aus.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📦</div>
+                    <h3>Benutzerdefinierter Framework-Import</h3>
+                    <p>Importieren Sie beliebige benutzerdefinierte oder branchenspezifische Kontroll-Frameworks via YAML-Upload. Jede Massnahme wird ISO 27001:2022 Annex A-Referenzen zugeordnet; die Plattform leitet die Abdeckung automatisch ab. Neben den 25 integrierten Assessment-Modulen ausführbar — keine Code-Änderungen erforderlich.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: AI QA Engine -->
+    <section class="section section-alt" id="ai-qa">
+        <div class="container">
+            <div class="section-header">
+                <h2>KI-QA-Engine</h2>
+                <p>Vier-Schichten-Verifizierung gegen einen normativen ISO-Referenz-Corpus. Funktioniert mit ISMS CORE-Richtlinien und extern importierten Dokumenten.</p>
+            </div>
+            <div class="framework-detail">
+                <h3>So funktioniert es</h3>
+                <p>Die QA-Engine bewertet jede Richtlinie oder jedes Implementierungshandbuch gegen ISO 27001:2022 (und die ISO 27701 / 27018 / 42001 Erweiterungspakete) mit vier unabhängigen Verifizierungsschichten:</p>
+                <table class="framework-table">
+                    <thead>
+                        <tr><th>Stufe</th><th>Prüfung</th><th>Was sie findet</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1 — Existenz</strong></td>
+                            <td>Dokument vorhanden und parsbar</td>
+                            <td>Audit-Proxy: Ist die Massnahme überhaupt dokumentiert?</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2 — Keyword-Abdeckung</strong></td>
+                            <td>ISO normatives Keyword-Scan</td>
+                            <td>Fehlende Begriffe, die vom Standard verlangt werden</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3 — Semantische Ähnlichkeit</strong></td>
+                            <td>Vektorsuche gegen Referenz-Corpus</td>
+                            <td>Konzeptionelle Lücken im Vergleich zum normativen Text</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4 — Claude KI-Analyse</strong></td>
+                            <td>Lückenanalyse mit Begründung</td>
+                            <td>Fehlende-Thema-Chips, Verbesserungsvorschläge, spezifische Auslassungen</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 style="margin-top: 1.5rem;">Referenz-Corpus</h4>
+                <p>72 JSON seed files, ~13'000 indizierte Abschnitte in OpenSearch. Deckt ISO 27001/27002/27701/27018/42001/42005, NIST 800-Reihe, GDPR, DORA, NIS2, PCI DSS 4.0.1, ENISA, NSA, CSA, OWASP, MITRE ATT&amp;CK, CIS Controls, SOC 2, HIPAA und mehr.</p>
+                <h4 style="margin-top: 1.5rem;">Crosswalk-gezielte Analyse</h4>
+                <p>Die QA kann gegen einen spezifischen Framework-Filter ausgeführt werden — z.B. nur die NIST CSF 2.0-Anforderungen validieren, die dieser Massnahme zugeordnet sind, oder die semantische Suche auf DORA-relevante Abschnitte fokussieren. Verwendet den 3'433-Objekte-Crosswalk (44 Achsen), um den Corpus automatisch abzugrenzen.</p>
+                <h4 style="margin-top: 1.5rem;">Modell</h4>
+                <p>Claude AI (konfigurierbar via Admin-Panel — Standard: Claude Sonnet 4.6). API-Key einmalig in <code>.env</code>; wird nur verwendet, wenn Stufe 4 ausgelöst wird. Stufen 1–3 laufen lokal ohne externe API-Aufrufe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Evidence Connectors -->
+    <section class="section" id="connectors">
+        <div class="container">
+            <div class="section-header">
+                <h2>44 Nachweis-Konnektoren</h2>
+                <p>Native Konnektoren integrieren Live-Nachweise aus Ihrem Stack und ordnen sie ISO 27001:2022-Kontrollgruppen automatisch zu. Kein ELK-Stack. Kein zu installierender Agent. Benutzerdefinierter Python Docker-Container für massgeschneiderte Quellen. Alle 44 Konnektoren sind vollständig zu quellenspezifischen OpenSearch-Indizes für Echtzeit-Analytik geroutet.</p>
+            </div>
+
+            <div class="framework-detail">
+
+                <h3>Wie Nachweise zu Massnahmen fliessen</h3>
+                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div style="display:flex;align-items:flex-start;gap:0.5rem;flex-wrap:wrap;font-size:0.82rem;margin-bottom:1rem;">
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.9rem;color:var(--text-secondary);">
+                            <strong style="color:var(--text-primary);display:block;font-size:0.75rem;">1. Konnektor läuft</strong>
+                            Fragt die API Ihres Tools planmässig ab
+                        </div>
+                        <span style="color:var(--bamboo);font-size:1.1rem;margin-top:0.5rem;">→</span>
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.9rem;color:var(--text-secondary);">
+                            <strong style="color:var(--text-primary);display:block;font-size:0.75rem;">2. Nachweis-Element erstellt</strong>
+                            ISO 27001-Kontrollgruppen zugeordnet (z.B. A.8.8 für CVE, A.5.23 für Cloud-Posture)
+                        </div>
+                        <span style="color:var(--bamboo);font-size:1.1rem;margin-top:0.5rem;">→</span>
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.9rem;color:var(--text-secondary);">
+                            <strong style="color:var(--text-primary);display:block;font-size:0.75rem;">3. In PostgreSQL + OpenSearch gespeichert</strong>
+                            Quellenspezifischer Index für Analytik ; Kontroll-Verknüpfung für Compliance
+                        </div>
+                        <span style="color:var(--bamboo);font-size:1.1rem;margin-top:0.5rem;">→</span>
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.9rem;color:var(--text-secondary);">
+                            <strong style="color:var(--text-primary);display:block;font-size:0.75rem;">4. Kontrollgruppen-Dashboard</strong>
+                            Anzahl, Status und Alter der Nachweise auf der Massnahme — treibt den Audit-Bereitschaftsscore
+                        </div>
+                        <span style="color:var(--bamboo);font-size:1.1rem;margin-top:0.5rem;">→</span>
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.9rem;color:var(--text-secondary);">
+                            <strong style="color:var(--text-primary);display:block;font-size:0.75rem;">5. Lücken-Alarm bei Nichtkonformität</strong>
+                            Erstellt automatisch einen Lücken-Eintrag verknüpft mit Massnahme und Nachweis-Element
+                        </div>
+                    </div>
+                    <p style="font-size:0.82rem;color:var(--text-secondary);margin:0;">Jeder Konnektor hat eine fest kodierte Kontrollgruppen-Zuordnung — z.B. Wazuh ist A.8.15 (Protokollierung), A.8.16 (Überwachung) und A.8.8 (Schwachstellenmanagement) zugeordnet; Entra ID ist A.5.15 (Zugriffskontrolle), A.5.16 (Identitätsverwaltung), A.5.17 (Authentifizierung) und A.8.5 (privilegierter Zugang) zugeordnet. Nachweise sind nie generisch — sie sind immer an die spezifische Massnahme gebunden, die sie erfüllen.</p>
+                </div>
+
+                <h3>Wie Threat-Intelligence-Feeds Massnahmen zugeordnet werden</h3>
+                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <table class="framework-table" style="font-size:0.82rem;">
+                        <thead>
+                            <tr>
+                                <th>Feed</th>
+                                <th>Primäre ISO 27001-Massnahme</th>
+                                <th>Nachweis-Typ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CISA KEV</td>
+                                <td>A.8.8 — Management technischer Schwachstellen</td>
+                                <td>KEV Audit-Bericht — bekannt ausgenutzte CVEs, die Ihren Stack betreffen, CSV-Export</td>
+                            </tr>
+                            <tr>
+                                <td>NVD CVE / EPSS</td>
+                                <td>A.8.8 — Schwachstellenmanagement</td>
+                                <td>CVE-Inventar gefiltert nach Schweregrad + EPSS-Schwellenwert — priorisierte Behebungsnachweise</td>
+                            </tr>
+                            <tr>
+                                <td>ENISA EUVD</td>
+                                <td>A.8.8 — Schwachstellenmanagement</td>
+                                <td>EU-Perspektive ausgenutzte Schwachstellen — EUVD Explorer Audit-Export</td>
+                            </tr>
+                            <tr>
+                                <td>MITRE ATT&amp;CK</td>
+                                <td>A.5.7 — Threat Intelligence · A.8.16 — Überwachung</td>
+                                <td>ATT&amp;CK Heatmap-Techniken-Abdeckung — Nachweise, dass Bedrohungsakteure Ihres Sektors verfolgt werden</td>
+                            </tr>
+                            <tr>
+                                <td>MITRE ATLAS</td>
+                                <td>A.5.7 — Threat Intelligence (KI-Kontext)</td>
+                                <td>KI-spezifische Angriffstechniken-Abdeckung für ISO 42001 / KI-Risikomanagement</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:1rem;">Feed-Daten ersetzen keine Konnektor-Nachweise — sie liefern den Bedrohungslandschafts-Kontext, der Konnektor-Nachweise bedeutsam macht. Eine Wazuh-Warnung gewinnt an Bedeutung, wenn MITRE ATT&CK zeigt, dass die beobachtete Technik von Ransomware-Gruppen aktiv genutzt wird, die Ihren Sektor angreifen.</p>
+                </div>
+
+                <table class="framework-table">
+                    <thead>
+                        <tr>
+                            <th>Kategorie</th>
+                            <th>Konnektoren</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Microsoft</strong></td>
+                            <td>Entra ID, Microsoft Defender, Microsoft Sentinel, Microsoft Intune, Microsoft 365, Azure CSPM, Microsoft Purview</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Netzwerk &amp; Perimeter</strong></td>
+                            <td>FortiGate, FortiAnalyzer, FortiManager, Cisco (ISE / Umbrella), Zscaler ZIA, Palo Alto PAN-OS</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Identität &amp; PAM</strong></td>
+                            <td>Active Directory, OpenLDAP, FreeIPA, Authentik, Keycloak, CyberArk, HashiCorp Vault, Devolutions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Schwachstellenmanagement</strong></td>
+                            <td>Qualys VMDR, Tenable SC, Tenable.io, CrowdStrike Falcon, SentinelOne, Wazuh, OpenVAS</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ITSM &amp; Ticketing</strong></td>
+                            <td>ServiceNow, Jira</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Überwachung &amp; SIEM</strong></td>
+                            <td>PRTG Network Monitor, Graylog, Zabbix</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CMDB &amp; Assets</strong></td>
+                            <td>GLPI, NetBox</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cloud-Posture</strong></td>
+                            <td>AWS Security Hub, Azure CSPM (nativ), GCP Security Command Centre</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DevOps</strong></td>
+                            <td>GitHub, GitLab</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bedrohungsintelligenz</strong></td>
+                            <td>OpenCTI, OpenAEV, SIEM (generisch), Threat Intel (generisch)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Benutzerdefiniert</strong></td>
+                            <td>Benutzerdefinierter Python Docker-Container — Konnektor-Interface implementieren, Nachweise zu beliebigen ISO 27001-Kontrollgruppen pushen</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="margin-top: 1.5rem;">Jeder Konnektor ordnet Nachweise einem oder mehreren ISO 27001:2022-Kontrollgruppen (A.5–A.8) zu, speichert Ergebnisse mit Quellenreferenz, Klassifizierung und Zeitstempel und löst Lückenwarnungen bei nichtkonformen Befunden aus. Nachweise sind über den Nachweis-Explorer abfragbar und mit Lücken und Risikobehandlungen verknüpfbar.</p>
+
+                <p style="margin-top: 0.75rem;"><strong>Sicherheit der Konnektor-Anmeldedaten:</strong> Alle API-Schlüssel und Secrets werden im Ruhezustand mit PBKDF2-HMAC-SHA256 mit mandantenspezifischem Salt verschlüsselt, bevor sie in PostgreSQL gespeichert werden — nie im Klartext gespeichert, nur zur Konnektor-Laufzeit entschlüsselt.</p>
+
+                <h4 style="margin-top: 2rem;">Quellenspezifische OpenSearch-Nachweis-Indizes</h4>
+                <p>Jeder Konnektor-Lauf schreibt Nachweise in einen dedizierten OpenSearch-Index — <code>evidence-entra-id</code>, <code>evidence-defender</code>, <code>evidence-sentinel</code>, <code>evidence-wazuh</code>, <code>evidence-tenable</code>, <code>evidence-qualys</code>, <code>evidence-crowdstrike</code>, <code>evidence-github</code>, <code>evidence-jira</code> und 25+ weitere. Alle 44 Konnektoren sind geroutet. Quellenspezifische Felder werden bei der Aufnahme befördert — native Konnektor-Daten (Schweregrad, Agentenzahl, CVE-ID, Befundtyp) landen als typisierte Top-Level-Felder, nicht vergaben in einem JSONB-Blob.</p>
+
+                <p style="margin-top: 0.75rem;">Ein Platzhalter-Index-Pattern <code>evidence-*</code> in OpenSearch Dashboards deckt alle 35 quellenspezifischen Indizes für quellübergreifende Rollup-Analytik ab. Der Diagnose-Endpunkt <code>GET /admin/evidence-indices</code> zeigt Zählungen pro Index und Zeitstempel der letzten Aktualisierung.</p>
+
+                <h4 style="margin-top: 2rem;">OpenSearch Dashboards — Automatisierte Analytik</h4>
+                <p>Fünf vorgefertigte OpenSearch Dashboards werden beim ersten Start automatisch bereitgestellt — kein manueller Import erforderlich:</p>
+                <table class="framework-table" style="margin-top: 1rem;">
+                    <thead>
+                        <tr>
+                            <th>Dashboard</th>
+                            <th>Quell-Indizes</th>
+                            <th>Wichtigste Visualisierungen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>dash-entra-id</strong></td>
+                            <td><code>evidence-entra-id</code></td>
+                            <td>MFA-Status, Benutzeranzahl, Risikorichtlinien, Bedingter Zugriff</td>
+                        </tr>
+                        <tr>
+                            <td><strong>dash-o365</strong></td>
+                            <td><code>evidence-o365</code></td>
+                            <td>Mandantenrichtlinien, DLP-Status, Sicherheitsscore, aktive Dienste</td>
+                        </tr>
+                        <tr>
+                            <td><strong>dash-defender</strong></td>
+                            <td><code>evidence-defender</code></td>
+                            <td>Gerätekonformität, Warnschweregrad, Top-Endpunkte nach Warnungen</td>
+                        </tr>
+                        <tr>
+                            <td><strong>dash-vuln</strong></td>
+                            <td><code>evidence-tenable</code> · <code>evidence-qualys</code></td>
+                            <td>Kritische/Hohe Befunde, am häufigsten betroffene Assets, Top-CVEs, Schweregrad-Aufschlüsselung (Tenable + Qualys gestapelt)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>dash-evidence</strong></td>
+                            <td><code>evidence-*</code> (Platzhalter)</td>
+                            <td>Gesamtnachweise aller Quellen, nach Quellsystem, nach Konnektor, nach Kontrollgruppe — quellübergreifender Rollup</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Access Control & Security -->
+    <section class="section section-alt" id="security">
+        <div class="container">
+            <div class="section-header">
+                <h2>Zugriffskontrolle &amp; Sicherheit</h2>
+                <p>Produktionsreife Authentifizierung, Multi-Mandantenfähigkeit und vollständige Betriebstransparenz von Anfang an integriert.</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🔐</div>
+                    <h3>RBAC &amp; Multi-Organisation</h3>
+                    <p>Sechs Rollen: Super Admin, Admin, ISMS Manager, Auditor, Control Owner, Viewer. JWT-Authentifizierung mit Refresh-Tokens. Multi-Organisations-Unterstützung — Super Admin erstellt und verwaltet mehrere Organisationen, jede mit isolierten Benutzern, Projekten und Daten. Admin-Panel für Benutzerverwaltung einschliesslich organisationsübergreifender Zuweisung.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔑</div>
+                    <h3>TOTP MFA &amp; MFA-Administration</h3>
+                    <p>TOTP-Zwei-Faktor-Authentifizierung für alle Benutzer — kompatibel mit Google Authenticator, Authy und jeder RFC 6238 TOTP-App. Pro Benutzer in den Systemeinstellungen aktivierbar. Backup-Codes für die Gerätewiederherstellung. Plattformweiter MFA-Durchsetzungs-Toggle im Admin-Panel. Admin-MFA-Reset — den Authenticator eines Benutzers widerrufen und neu registrieren, ohne Benutzeraktion zu erfordern.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👥</div>
+                    <h3>Benutzergruppen &amp; Sitzungsverwaltung</h3>
+                    <p>Benutzergruppen-Management — benannte Gruppen erstellen, Benutzer zuweisen und Gruppen für Berechtigungs-Targeting verwenden. Vollständige aktive Sitzungsverwaltung — alle Live-Sitzungen pro Benutzer mit Browser, IP und Last-Seen-Zeitstempel auflisten, einzelne Sitzungen oder alle Sitzungen für einen Benutzer widerrufen. Sitzungswiderruf erfolgt sofort.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <h3>Audit-Trail &amp; Betriebsprotokoll</h3>
+                    <p>Dreiseitige Protokoll-Seite im Admin-Panel: <strong>Audit-Trail</strong> — jede Benutzeraktion (Login, Änderungen, Admin-Operationen) mit Akteur, Zeitstempel und IP; <strong>Feed-Ausführungen</strong> — geplantes Threat-Intelligence-Feed-Ausführungsprotokoll; <strong>Konnektor-Ausführungen</strong> — pro-Konnektor-Nachweis-Pull-Verlauf. Alle Ereignisse in OpenSearch für Suche und Aufbewahrung indexiert.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Länderlokalisierung</h3>
+                    <p>Richtlinien-Rendering in 8 Rechtssystemen: Schweiz (CH), Österreich (AT), Belgien (BE), Frankreich (FR), Deutschland (DE), Italien (IT), Luxemburg (LU), Vereinigtes Königreich (GB). Länderspezifische rechtliche Referenzen, regulatorische Behördennamen und Token-Substitution zur Render-Zeit — ein Dokumenten-Set, acht Ausgaben. <a href="country.html" style="color:var(--bamboo)">Mehr erfahren →</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Stack -->
+    <section class="section" id="stack">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technischer Stack</h2>
+                <p>Standardkomponenten, keine proprietären Abhängigkeiten. Läuft auf jedem Linux-Host mit Docker.</p>
+            </div>
+            <div class="framework-detail">
+                <div class="platform-stack">
+                    <h3>Anwendung</h3>
+                    <div class="stack-pills">
+                        <span class="pill">FastAPI (Python)</span>
+                        <span class="pill">React 18 + Vite</span>
+                        <span class="pill">Material UI</span>
+                        <span class="pill">PostgreSQL 16</span>
+                        <span class="pill">Redis + Celery</span>
+                        <span class="pill">OpenSearch 2.x</span>
+                        <span class="pill">nginx (TLS)</span>
+                        <span class="pill">Docker Compose</span>
+                    </div>
+                </div>
+                <div class="platform-stack" style="margin-top: 1.5rem;">
+                    <h3>Enterprise-Erweiterungen (optionale Profile)</h3>
+                    <div class="stack-pills">
+                        <span class="pill">OpenSearch 3-node cluster</span>
+                        <span class="pill">Garage S3 (Apache 2.0)</span>
+                        <span class="pill">OpenSearch Dashboards</span>
+                        <span class="pill">SMTP Bridge (M365 relay)</span>
+                        <span class="pill">Mailpit (dev mail)</span>
+                    </div>
+                </div>
+                <table class="framework-table" style="margin-top: 1.5rem;">
+                    <thead><tr><th>Komponente</th><th>Rolle</th><th>Hinweise</th></tr></thead>
+                    <tbody>
+                        <tr><td>PostgreSQL</td><td>Struktureller Kern</td><td>Benutzer, Organisationen, Massnahmen, Assessments, Lücken, Risikoregister, Framework-Definitionen</td></tr>
+                        <tr><td>OpenSearch</td><td>Suche + Intelligence + Nachweise</td><td>Volltext-Suche, Threat-Feed-Indizes, QA-Referenz-Corpus, 35 per-Quelle-Nachweis-Indizes, OpenSearch Dashboards auto-provisioniert</td></tr>
+                        <tr><td>Redis + Celery</td><td>Aufgaben-Queue</td><td>Konnektor-Planung, Feed-Pulls, Hintergrund-Imports, asynchrone Operationen</td></tr>
+                        <tr><td>Garage S3</td><td>Objektspeicher (optional)</td><td>Nachweis-Datei-Uploads, OpenSearch-Snapshots, Report-Exporte. Apache 2.0.</td></tr>
+                        <tr><td>nginx</td><td>Reverse-Proxy</td><td>TLS-Terminierung (selbst-signiert oder Let's Encrypt), statisches Frontend-Serving</td></tr>
+                    </tbody>
+                </table>
+                <div class="platform-deploy" style="margin-top: 2rem;">
+                    <code>docker compose --profile opensearch-cluster --profile garage up -d</code>
+                    <span>Enterprise-Profil — 3-Knoten OpenSearch + Garage S3 Objektspeicher</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-dark" id="deploy">
+        <div class="container">
+            <div class="section-header light">
+                <h2>In Minuten bereitstellen</h2>
+                <p>Kopieren Sie <code>.env.example</code>, setzen Sie Ihre Server-IP, führen Sie <code>docker compose up -d</code> aus. nginx generiert automatisch ein selbst-signiertes Zertifikat. Das Ersteinrichtungs-Setup führt die Schritte 1–5 aus dem Admin-Panel aus.</p>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://github.com/isms-core-project/isms-core-platform" class="btn btn-primary" target="_blank" rel="noopener">Auf GitHub ansehen</a>
+                <a href="compliance.html" class="btn btn-secondary">25 Compliance-Module →</a>
+                <a href="country.html" class="btn btn-secondary">7-Länder-Lokalisierung →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">Copyright © 2025–2026 The ISMS Core Project · ISMS Core Contributors. Alle Rechte vorbehalten.</p>
+                <p class="footer-tagline"><a href="index.html" style="color: var(--bamboo); text-decoration: none;">← Zurück zu ISMS CORE</a> &nbsp;·&nbsp; <em>Wo Bambusantennen wirklich funktionieren.</em> 🎋</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ISMS CORE compliance assessment modules — score your organisation against 25 built-in regulatory frameworks plus custom YAML import: NIST CSF 2.0, NIST SP 800-53 Rev 5, NIST AI RMF 1.0, CSA CCM v4.1, CSA AICM v1.0.3, NIS2, DORA, CIS Controls v8, BSI IT-Grundschutz, CSRM (NCSC CH), TISAX, Swiss nDSG, EU CRA, EU AI Act, EU Cloud Sovereignty Framework, CyberFundamentals BE, BaFin BAIT, CSSF LU, ACN IT, UK NIS, UK Operational Resilience, NCSC CAF v4.0, ReCyF v2.5 (France NIS2). All mapped to ISO 27001:2022.">
+    <meta name="keywords" content="NIST CSF 2.0, NIST AI RMF 1.0, AI risk management framework, CSA CCM v4.1 cloud controls matrix, CSA AICM AI controls matrix, NIS2 compliance, DORA compliance, CIS Controls v8, BSI IT-Grundschutz, CSRM NCSC Switzerland, TISAX, Swiss ISG SR 128, Swiss nDSG, EU Cyber Resilience Act, EU AI Act, EU Cloud Sovereignty Framework, SEAL cloud sovereignty, CyberFundamentals Belgium CCB, BaFin BAIT Germany, CSSF Luxembourg ICT, ACN Italy cybersecurity, UK NIS Regulations, UK operational resilience FCA PRA, NCSC CAF v4.0, UK Cyber Assessment Framework, UK CNI cybersecurity, compliance assessment, ISO 27001 mapping, regulatory compliance platform">
+    <meta name="author" content="The ISMS Core Project">
+    <link rel="canonical" href="https://isms-core.com/compliance.html">
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://isms-core.com/compliance.html">
+    <link rel="alternate" hreflang="de-CH" href="https://isms-core.com/de/compliance.html">
+    <link rel="alternate" hreflang="fr" href="https://isms-core.com/fr/compliance.html">
+    <link rel="alternate" hreflang="it" href="https://isms-core.com/it/compliance.html">
+    <link rel="alternate" hreflang="x-default" href="https://isms-core.com/compliance.html">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://isms-core.com/compliance.html">
+    <meta property="og:title" content="Compliance Assessment Modules — ISMS CORE">
+    <meta property="og:description" content="Score your organisation against 25 built-in frameworks plus custom YAML import: NIST CSF 2.0, NIST SP 800-53 R5, NIST AI RMF 1.0, CSA CCM v4.1, CSA AICM v1.0.3, NIS2, DORA, CIS, BSI, CSRM, TISAX, nDSG, EU CRA, EU AI Act, EU Cloud Sovereignty, CyberFundamentals BE, BaFin BAIT, CSSF LU, ACN IT, UK NIS, UK Op. Resilience, NCSC CAF v4.0 — all mapped to ISO 27001:2022.">
+    <meta property="og:image" content="https://isms-core.com/assets/og-image.png">
+    <meta property="og:site_name" content="ISMS CORE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Compliance Assessment Modules — ISMS CORE">
+    <meta name="twitter:description" content="25 built-in framework assessments + custom YAML import: NIST CSF 2.0, NIST SP 800-53 R5, NIST AI RMF 1.0, CSA CCM v4.1, CSA AICM v1.0.3, NIS2, DORA, CIS, BSI, CSRM, TISAX, nDSG, EU AI Act, EU Cloud Sovereignty, CyberFundamentals BE, BaFin BAIT, CSSF LU, ACN IT, UK NIS, UK Op. Resilience, NCSC CAF v4.0 — mapped to ISO 27001:2022.">
+    <meta name="twitter:image" content="https://isms-core.com/assets/og-image.png">
+
+    <title>25 Compliance Assessment Modules | NIST 800-53 + ISO 27001 Mapped — ISMS CORE</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Compliance Assessment Modules — ISMS CORE",
+      "description": "Score your organisation against 25 built-in regulatory frameworks plus custom YAML import, all mapped to ISO 27001:2022.",
+      "url": "https://isms-core.com/compliance.html",
+      "isPartOf": { "@type": "WebSite", "url": "https://isms-core.com" }
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="bamboo">🎋</span> ISMS CORE
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#philosophy">Philosophy</a></li>
+                <li><a href="platform.html">Platform</a></li>
+                <li><a href="index.html#status">Status</a></li>
+                <li><a href="index.html#frameworks">Frameworks</a></li>
+                <li><a href="compliance.html" style="color: var(--bamboo)">Compliance</a></li>
+                <li><a href="country.html">Country</a></li>
+                <li><a href="https://github.com/isms-core-project/isms-core-platform" class="nav-cta" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+        
+            <div class="lang-switcher">
+                <a href="/" class="lang-btn lang-active" hreflang="en">EN</a>
+                <a href="/de/compliance.html" class="lang-btn" hreflang="de">DE</a>
+                <a href="/fr/compliance.html" class="lang-btn" hreflang="fr">FR</a>
+                <a href="/it/compliance.html" class="lang-btn" hreflang="it">IT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="compliance-page-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to ISMS CORE</a>
+            <h1>🎋 Compliance Assessment Modules</h1>
+            <p>Twenty-five built-in frameworks + custom YAML import. One platform. Unified scoring, gap tracking, and export — no separate tools required.</p>
+            <div class="compliance-hero-stats">
+                <div class="chs-item">
+                    <span class="chs-num">25</span>
+                    <span class="chs-lbl">Frameworks</span>
+                </div>
+                <div class="chs-item">
+                    <span class="chs-num">700+</span>
+                    <span class="chs-lbl">Requirements</span>
+                </div>
+                <div class="chs-item">
+                    <span class="chs-num">3,433+</span>
+                    <span class="chs-lbl">Cross-mappings</span>
+                </div>
+                <div class="chs-item">
+                    <span class="chs-num">CSV · XLSX · PDF</span>
+                    <span class="chs-lbl">Export formats</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview Table -->
+    <section class="section" id="overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quick Reference</h2>
+                <p>All 25 built-in modules use the same assessment workflow: create an assessment, rate requirements, track gaps, export results. Custom frameworks can also be imported via YAML upload.</p>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="overview-table">
+                    <thead>
+                        <tr>
+                            <th>Framework</th>
+                            <th>Requirements</th>
+                            <th>Grouping</th>
+                            <th>Scoring</th>
+                            <th>Primary Audience</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#nist-csf">NIST CSF 2.0</a></td>
+                            <td>106 subcategories</td>
+                            <td>6 Functions (GV/ID/PR/DE/RS/RC)</td>
+                            <td><span class="score-badge tier">Tier 1–4</span></td>
+                            <td>Any sector and size</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#nist-ai-rmf">NIST AI RMF 1.0 (AI 100-1)</a></td>
+                            <td>72 subcategories</td>
+                            <td>4 Functions (GOV/MAP/MSR/MNG)</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>AI system providers and operators — any sector</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#nist-800-53">NIST SP 800-53 Rev 5</a></td>
+                            <td>324 base controls</td>
+                            <td>20 Control Families</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>US federal / DoD / FedRAMP — any sector</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#nis2">NIS2 (EU 2022/2555)</a></td>
+                            <td>15 requirements</td>
+                            <td>Article 21 + Article 23</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>EU essential and important entities</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#dora">DORA (EU 2022/2554)</a></td>
+                            <td>25 articles</td>
+                            <td>4 Chapters</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>EU financial sector</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#cis">CIS Controls v8</a></td>
+                            <td>153 safeguards</td>
+                            <td>18 Controls</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>Any sector / SME-friendly</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#bsi">BSI IT-Grundschutz</a></td>
+                            <td>68 Bausteine</td>
+                            <td>10 Layers (Schichten)</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>Germany / DACH / IT-Grundschutz certification</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#csrm">CSRM (Swiss NCSC 2025)</a></td>
+                            <td>20 baseline requirements</td>
+                            <td>5 CSF Functions + 6 Control Objectives</td>
+                            <td><span class="score-badge bin">Binary</span></td>
+                            <td>Swiss critical infrastructure</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#tisax">TISAX / VDA ISA 6.0</a></td>
+                            <td>53 requirements</td>
+                            <td>12 Domains</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>Automotive supply chain</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#isg">Swiss ISG (SR 128)</a></td>
+                            <td>27 requirements</td>
+                            <td>8 Sections</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>Swiss federal bodies &amp; critical infrastructure operators</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#ndsg">Swiss nDSG 2023</a></td>
+                            <td>25 provisions</td>
+                            <td>6 Chapters</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>Organisations processing Swiss personal data</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#cra">EU Cyber Resilience Act</a></td>
+                            <td>26 requirements</td>
+                            <td>6 Groups</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>EU product manufacturers</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#ai-act">EU AI Act (2024/1689)</a></td>
+                            <td>25 articles</td>
+                            <td>6 Groups</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>EU AI system providers and deployers</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#eu-cloud-sov">EU Cloud Sovereignty Framework (v1.2.1)</a></td>
+                            <td>8 Sovereignty Objectives</td>
+                            <td>SEAL 0–4</td>
+                            <td><span class="score-badge m04">SEAL</span></td>
+                            <td>EU institutions / public sector cloud procurement</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#cyfun-be">CyberFundamentals (CCB/BE)</a></td>
+                            <td>41 practices</td>
+                            <td>6 CSF Functions</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>Belgian organisations / CCN/CCB certification</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#bafin-bait">BaFin BAIT (DE)</a></td>
+                            <td>23 requirements</td>
+                            <td>12 Modules</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>German financial sector (banks, investment firms)</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#cssf-lu">CSSF Circulaire 20-750 (LU)</a></td>
+                            <td>19 requirements</td>
+                            <td>7 ICT Risk Domains</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>Luxembourg financial sector</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#acn-it">ACN Guidelines (IT)</a></td>
+                            <td>19 guidelines</td>
+                            <td>4 Groups</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>Italian organisations / critical infrastructure</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#uk-nis">UK NIS Regulations 2018</a></td>
+                            <td>13 requirements</td>
+                            <td>3 Objectives</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>UK network and information systems operators</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#uk-op-resilience">UK Operational Resilience (FCA/PRA)</a></td>
+                            <td>12 requirements</td>
+                            <td>4 Objectives</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>UK financial sector — banks, insurers, FMIs</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#ncsc-caf">NCSC CAF v4.0 (UK)</a></td>
+                            <td>41 Contributing Outcomes</td>
+                            <td>14 Principles / 4 Objectives</td>
+                            <td><span class="score-badge m04">0/2/4</span></td>
+                            <td>UK operators of essential services / CNI</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#recyf">ReCyF v2.5 — France NIS2 (ANSSI)</a></td>
+                            <td>20 Security Objectives</td>
+                            <td>4 Pillars / 152 requirements</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>French NIS2 entities (EI &amp; EE) — Loi 2024-449</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#cobit-2019">COBIT 2019 (ISACA)</a></td>
+                            <td>40 objectives</td>
+                            <td>5 Domains (EDM/APO/BAI/DSS/MEA)</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>Any sector — IT governance and management</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#csa-ccm">CSA Cloud Controls Matrix v4.1</a></td>
+                            <td>207 controls</td>
+                            <td>17 Domains</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>Cloud providers and cloud customers</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#csa-aicm">CSA AI Controls Matrix v1.0.3</a></td>
+                            <td>243 controls</td>
+                            <td>18 Domains</td>
+                            <td><span class="score-badge m04">0–4</span></td>
+                            <td>Organisations deploying or operating AI systems</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#custom-framework">Custom Framework (YAML import)</a></td>
+                            <td>User-defined</td>
+                            <td>User-defined</td>
+                            <td><span class="score-badge m04">User-defined</span></td>
+                            <td>All organisations with sector-specific requirements</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+                <strong style="color: var(--text-primary);">Maturity scale (0–4):</strong>
+                &nbsp;0 = Not implemented &nbsp;·&nbsp;
+                1 = Ad hoc / partial &nbsp;·&nbsp;
+                2 = Documented but inconsistent &nbsp;·&nbsp;
+                3 = Consistent and managed &nbsp;·&nbsp;
+                4 = Measured and continuously improving
+                <br><br>
+                <strong style="color: var(--text-primary);">Assessment Collections</strong> let you group multiple assessments into a named bundle (e.g. "EU Regulatory Stack 2025") with aggregated completion %, compliance %, and status rollup. Export as CSV, colour-coded XLSX, or PDF (A4).
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework Detail Cards -->
+    <section class="section section-alt" id="modules">
+        <div class="container">
+            <div class="section-header">
+                <h2>Framework Details</h2>
+                <p>Coverage notes, known limitations, and source documents for each module.</p>
+            </div>
+
+            <!-- NIST CSF 2.0 -->
+            <div class="fw-detail-card" id="nist-csf">
+                <div class="fw-detail-header">
+                    <h2>NIST Cybersecurity Framework 2.0</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: NIST (2024)</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill blue">Tier 1–4 scoring</span>
+                    <span class="fw-pill">106 subcategories</span>
+                    <span class="fw-pill">6 functions</span>
+                </div>
+                <p>The NIST Cybersecurity Framework 2.0 covers 106 subcategories across 6 functions: <strong>Govern (GV), Identify (ID), Protect (PR), Detect (DE), Respond (RS), Recover (RC)</strong>. Each subcategory receives a current and target tier rating (Tier 1: Partial → Tier 4: Adaptive).</p>
+                <h4>Platform features</h4>
+                <ul>
+                    <li>Named profiles — create multiple assessments and track maturity over time</li>
+                    <li>Radar chart and per-function bar chart on the report page</li>
+                    <li>XLSX import directly from the official NIST CSF 2.0 Excel template</li>
+                    <li>XLSX and CSV export</li>
+                    <li>ISO 27001 ↔ NIST CSF 2.0 crosswalk in the Crosswalk Viewer</li>
+                </ul>
+                <div class="note-box green">
+                    <strong>CSF 2.0 vs CSF 1.1:</strong> This module uses CSF 2.0 throughout, including the <strong>Govern (GV)</strong> function which is the primary addition in version 2.0 (absent in CSF 1.1). Some comparison documents you may encounter from national bodies (e.g. Switzerland's ICT Minimum Standard) still reference CSF 1.1 codes — this is their limitation, not ours.
+                </div>
+            </div>
+
+            <!-- NIST AI RMF 1.0 -->
+            <div class="fw-detail-card" id="nist-ai-rmf">
+                <div class="fw-detail-header">
+                    <h2>NIST AI Risk Management Framework 1.0 (AI 100-1)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: NIST (January 2023)</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">72 subcategories</span>
+                    <span class="fw-pill">4 functions</span>
+                </div>
+                <p>The NIST AI Risk Management Framework 1.0 covers 72 subcategory-level practices across 4 core functions: <strong>GOVERN (GOV)</strong>, <strong>MAP (MAP)</strong>, <strong>MEASURE (MSR)</strong>, and <strong>MANAGE (MNG)</strong>. Assessable at the subcategory level — each practice receives a maturity score 0–4. Functions are further divided into 19 Categories (GOV-1 through MNG-4).</p>
+                <h4>Function structure</h4>
+                <ul>
+                    <li><strong>GOVERN (19 subcategories)</strong> — cultivates and implements a culture of AI risk management: policies, accountability structures, workforce practices, engagement with AI actors</li>
+                    <li><strong>MAP (21 subcategories)</strong> — establishes context to frame AI risks: intended purposes, categorisation, capabilities, benefits, costs, and societal impacts</li>
+                    <li><strong>MEASURE (19 subcategories)</strong> — employs quantitative, qualitative, or mixed-method tools to analyse, assess, benchmark, and monitor AI risk</li>
+                    <li><strong>MANAGE (13 subcategories)</strong> — allocates resources to address identified risks: risk treatment, residual risk, incident response, and post-market surveillance</li>
+                </ul>
+                <h4>Audience</h4>
+                <p>AI system providers, developers, deployers, and operators — any sector. The framework is voluntary and jurisdiction-neutral, widely adopted in the US and internationally as the reference standard for trustworthy AI governance.</p>
+                <h4>Platform features</h4>
+                <ul>
+                    <li>72 subcategory practices rated 0–4, grouped by Category (GOV-1 through MNG-4)</li>
+                    <li>EU AI Act ↔ NIST AI RMF 1.0 crosswalk in the Crosswalk Viewer (72 mappings)</li>
+                    <li>ISO 42001 ↔ NIST AI RMF 1.0 crosswalk via AI Coverage page — 32 mappings (Annex A control groups → GOVERN/MAP/MEASURE/MANAGE categories)</li>
+                    <li>ISO 42005 ↔ NIST AI RMF 1.0 crosswalk via AI Coverage page — 17 mappings (impact assessment process → AI RMF functions)</li>
+                    <li>Assessment Collections — group AI RMF assessments alongside EU AI Act assessments</li>
+                </ul>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>Subcategory descriptions sourced from the official NIST AI RMF Playbook (72 suggested actions)</li>
+                    <li>No ISO 27001 ↔ AI RMF official crosswalk exists — use EU AI Act as the ISO 27001 mapping path. ISO 42001 ↔ AI RMF crosswalk (32 mappings) is available via the AI Coverage page.</li>
+                    <li>Framework is voluntary — not a regulatory compliance requirement in any jurisdiction</li>
+                    <li>Companion document: NIST AI RMF Playbook provides implementation guidance per subcategory</li>
+                </ul>
+                <div class="note-box green">
+                    <strong>NIST CSF 2.0 relationship:</strong> The AI RMF GOVERN/MAP/MEASURE/MANAGE structure directly inspired the GOVERN function added in NIST CSF 2.0. Organisations using both frameworks will find significant conceptual overlap — particularly between AI RMF GOVERN subcategories and CSF 2.0 GV categories.
+                </div>
+            </div>
+
+            <!-- NIST SP 800-53 Rev 5 -->
+            <div class="fw-detail-card" id="nist-800-53">
+                <div class="fw-detail-header">
+                    <h2>NIST SP 800-53 Rev 5 — Security and Privacy Controls</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: NIST (September 2020 / Updated Dec 2020)</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">324 base controls</span>
+                    <span class="fw-pill">20 control families</span>
+                </div>
+                <p>NIST SP 800-53 Rev 5 is the definitive US federal catalogue of security and privacy controls for information systems and organisations. It provides 324 base controls and 872 control enhancements across 20 families. The platform assesses at the base control level (324 controls); enhancements are available as reference material. Baseline profiles — <strong>LOW</strong> (149 controls), <strong>MODERATE</strong> (287 controls), <strong>HIGH</strong> (370 controls) — define the minimum control set for US federal systems by impact category.</p>
+                <h4>Control families</h4>
+                <p><strong>AC</strong> (Access Control), <strong>AT</strong> (Awareness and Training), <strong>AU</strong> (Audit and Accountability), <strong>CA</strong> (Assessment, Authorisation and Monitoring), <strong>CM</strong> (Configuration Management), <strong>CP</strong> (Contingency Planning), <strong>IA</strong> (Identification and Authentication), <strong>IR</strong> (Incident Response), <strong>MA</strong> (Maintenance), <strong>MP</strong> (Media Protection), <strong>PE</strong> (Physical and Environmental Protection), <strong>PL</strong> (Planning), <strong>PM</strong> (Program Management), <strong>PS</strong> (Personnel Security), <strong>PT</strong> (PII Processing and Transparency), <strong>RA</strong> (Risk Assessment), <strong>SA</strong> (System and Services Acquisition), <strong>SC</strong> (System and Communications Protection), <strong>SI</strong> (System and Information Integrity), <strong>SR</strong> (Supply Chain Risk Management).</p>
+                <h4>Audience</h4>
+                <p>US federal agencies (mandatory), US DoD contractors, and any organisation pursuing FedRAMP authorisation. Widely adopted internationally as a comprehensive security control baseline — particularly in defence, financial services, and critical infrastructure. NIST 800-53 Rev 5 adds a dedicated <strong>Supply Chain Risk Management (SR)</strong> family and integrates privacy controls (PT family) not present in Rev 4.</p>
+                <h4>Platform features</h4>
+                <ul>
+                    <li>324 base controls rated 0–4, grouped by family — consistent with all other platform assessment modules</li>
+                    <li>Dataset sourced from OSCAL (Open Security Controls Assessment Language) — the authoritative NIST machine-readable format</li>
+                    <li>Assessment Collections — group 800-53 assessments alongside NIST CSF 2.0 and ISO 27001 assessments</li>
+                    <li>Gap tracking and export (CSV, XLSX, PDF) — consistent with all platform modules</li>
+                </ul>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>Control enhancements (872) are loaded in the dataset as reference; the assessment layer uses base controls only to keep scope manageable</li>
+                    <li>ISO 27001 ↔ NIST 800-53 cross-framework mappings available in the Crosswalk Viewer — NIST provides an official mapping appendix in SP 800-53B</li>
+                    <li>Rev 5 differs significantly from Rev 4: new SR family, expanded PT family, enhanced supply chain and privacy coverage — verify your organisation's contractual references specify Rev 5 before using this module</li>
+                    <li>NIST 800-171 Rev 3 (CUI protection / CMMC prerequisite) is a subset derived from 800-53 Rev 5 — if you need CMMC readiness tracking, 800-171 is the correct reference, not 800-53 directly</li>
+                </ul>
+            </div>
+
+            <!-- NIS2 -->
+            <div class="fw-detail-card" id="nis2">
+                <div class="fw-detail-header">
+                    <h2>NIS2 Directive (EU 2022/2555)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: EU Directive, 2022</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">15 requirements</span>
+                </div>
+                <p>Covers 15 requirements: 10 Article 21(2) technical and organisational security measures (a through j) plus 5 Article 23 incident reporting obligations. Maturity scoring 0–4.</p>
+                <h4>Audience</h4>
+                <p>EU essential entities (energy, transport, banking, health, water, digital infrastructure) and important entities. National transposition varies by member state — verify applicability under your jurisdiction's implementing law.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>Article 21(2) measures (a)–(j) covered</li>
+                    <li>Article 23 reporting timeline and content obligations</li>
+                    <li>Does not cover Articles 22–24 (supply chain registration, coordinated disclosure) — technical measures only</li>
+                    <li>NIS2 ↔ ISO 27001 crosswalk available in the Crosswalk Viewer</li>
+                </ul>
+            </div>
+
+            <!-- DORA -->
+            <div class="fw-detail-card" id="dora">
+                <div class="fw-detail-header">
+                    <h2>DORA (EU 2022/2554)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: EU Regulation, 2022</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">25 articles, 4 chapters</span>
+                </div>
+                <p>The Digital Operational Resilience Act covers 25 articles across 4 chapters: <strong>ICT Risk Management</strong> (10 articles), <strong>ICT Incident Management</strong> (6), <strong>Digital Operational Resilience Testing</strong> (5), <strong>ICT Third-Party Risk Management</strong> (4). Maturity scoring 0–4.</p>
+                <h4>Audience</h4>
+                <p>EU financial entities — banks, investment firms, insurance undertakings, crypto-asset service providers, payment institutions — and their critical ICT third-party providers.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>Covers core operational resilience obligations</li>
+                    <li>Does not replace engagement with your national competent authority (NCA) under DORA</li>
+                    <li>Level-1 articles covered — delegated RTS/ITS acts (ongoing regulatory development) may introduce additional obligations</li>
+                </ul>
+            </div>
+
+            <!-- CIS -->
+            <div class="fw-detail-card" id="cis">
+                <div class="fw-detail-header">
+                    <h2>CIS Critical Security Controls v8</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: Center for Internet Security, 2021</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">153 safeguards, 18 controls</span>
+                </div>
+                <p>All 153 safeguards across 18 controls, maturity scoring 0–4. Three Implementation Groups (IG1/IG2/IG3) support prioritisation — IG1 is the essential cyber hygiene baseline suitable for any organisation.</p>
+                <h4>Audience</h4>
+                <p>Any sector and size — particularly strong for SMEs and organisations without a primary framework. CIS Controls v8 ↔ ISO 27001 crosswalk available in the Crosswalk Viewer.</p>
+            </div>
+
+            <!-- BSI IT-Grundschutz -->
+            <div class="fw-detail-card" id="bsi">
+                <div class="fw-detail-header">
+                    <h2>BSI IT-Grundschutz Kompendium</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: BSI (Bundesamt für Sicherheit in der Informationstechnik)</span>
+                    <span class="fw-pill red">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">68 Bausteine, 10 Layers</span>
+                </div>
+                <p>68 Bausteine (building blocks) across 10 Schichten (layers): ISMS, ORP (Organisation), CON (Concepts), OPS (Operations), DER (Detection and Response), APP (Applications), SYS (Systems), IND (Industrial), NET (Networks), INF (Infrastructure). Maturity scoring 0–4.</p>
+                <h4>Crosswalk mappings</h4>
+                <ul>
+                    <li>ISO 27001:2022 ↔ BSI IT-Grundschutz: <strong>115 mappings</strong></li>
+                    <li>ISO 27701:2025 ↔ BSI IT-Grundschutz: <strong>103 mappings</strong></li>
+                    <li>ISO 27018:2025 ↔ BSI IT-Grundschutz: <strong>51 mappings</strong></li>
+                    <li>Total: <strong>269 cross-standard mappings</strong> — visible in the Crosswalk Viewer</li>
+                </ul>
+                <h4>Audience</h4>
+                <p>German public sector (mandatory), organisations pursuing dual ISO 27001 / IT-Grundschutz certification, DACH-region organisations. Full Kompendium text: <a href="https://www.bsi.bund.de" target="_blank" rel="noopener" style="color: var(--bamboo)">bsi.bund.de</a></p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>Based on publicly available Kompendium structure</li>
+                    <li>Coverage focuses on core Bausteine — sector-specific modules may not all be included</li>
+                </ul>
+            </div>
+
+            <!-- CSRM -->
+            <div class="fw-detail-card" id="csrm">
+                <div class="fw-detail-header">
+                    <h2>CSRM — Cyber Security Risk Method (Swiss NCSC, 2025)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: NCSC / BACS Switzerland, 2025</span>
+                    <span class="fw-pill swiss">Assessment Tool</span>
+                    <span class="fw-pill orange">Binary scoring</span>
+                    <span class="fw-pill">20 baseline requirements</span>
+                    <span class="fw-pill">Object-centric</span>
+                </div>
+                <div class="note-box">
+                    <strong>CSRM is fundamentally different from all other modules.</strong> It is not a list of controls to rate globally — it is an object-centric method. Read this section before using it.
+                </div>
+                <p>CSRM is built around <strong>IT Protection Objects</strong> — aggregated groups of systems, applications, and data that share the same protection requirements. You assess each protection object against 20 baseline requirements, then identify elevated objects requiring additional Technical and Organisational Measures (TOMs).</p>
+                <h4>The 5-step CSRM methodology</h4>
+                <ul>
+                    <li><strong>Step 1:</strong> Define scope and IT Protection Objects (not individual assets — groups with shared protection needs)</li>
+                    <li><strong>Step 2:</strong> Categorise — standard vs elevated protection objects</li>
+                    <li><strong>Step 3:</strong> Apply 20 baseline requirements per object (met / partial / not_met / exception)</li>
+                    <li><strong>Step 4:</strong> Define additional TOMs for elevated objects</li>
+                    <li><strong>Step 5:</strong> Report results via 6 Control Objectives</li>
+                </ul>
+                <h4>20 Baseline requirements</h4>
+                <p>Drawn from NIST CSF 2.0 functions: GV (Govern: 4 requirements), ID (Identify: 2), PR (Protect: 9), DE (Detect: 2), RS (Respond: 3). Binary status: <strong>met / partial / not_met / exception</strong>.</p>
+                <div class="note-box green">
+                    <strong>NIST CSF 2.0 alignment:</strong> CSRM 2025 is aligned to CSF 2.0, including the GV (Govern) function. The NCSC's own comparison document uses CSF 1.1 codes in its cross-reference table — because Switzerland's ICT Minimum Standard is still based on CSF 1.1. CSRM itself references CSF 2.0, and our implementation reflects this correctly.
+                </div>
+                <h4>BACS self-critique — known limitations</h4>
+                <p>The NCSC's comparison document (<em>Vergleich-Managementsysteme EN, 2025</em>) is candid about CSRM's limitations. We surface these directly in the Platform UI:</p>
+                <ul>
+                    <li><strong>IEC 62443 alignment pending</strong> — industrial control systems coverage not yet finalised</li>
+                    <li><strong>10 ICT Minimum Standard requirements have no CSRM equivalent</strong> — gaps in CSRM itself, not in this implementation</li>
+                    <li><strong>"No policies" label is misleading</strong> — CSRM doesn't mandate policy documents, but expects governance within its Control Objectives</li>
+                    <li><strong>Parallel ISMS + CSRM = duplication risk</strong> — organisations running both should map shared controls to avoid maintaining two parallel sets</li>
+                </ul>
+                <h4>Official BACS source documents</h4>
+                <div class="bacs-links">
+                    <a href="https://www.ncsc.admin.ch/dam/ncsc/en/dokumente/infras/Methode-CSRM-2025-EN.pdf" class="bacs-link" target="_blank" rel="noopener">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15.01l1.41 1.41L11 14.84V19h2v-4.16l1.59 1.59L16 15.01 12.01 11z"/></svg>
+                        CSRM 2025 Method (PDF)
+                    </a>
+                    <a href="https://www.ncsc.admin.ch/dam/ncsc/en/dokumente/infras/Vergleich-Managementsysteme_EN.pdf" class="bacs-link" target="_blank" rel="noopener">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15.01l1.41 1.41L11 14.84V19h2v-4.16l1.59 1.59L16 15.01 12.01 11z"/></svg>
+                        Management System Comparison (PDF)
+                    </a>
+                    <a href="https://www.ncsc.admin.ch/ncsc/en/home/infos-fuer/infos-it-spezialisten/themen/csrm.html" class="bacs-link" target="_blank" rel="noopener">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                        NCSC CSRM page
+                    </a>
+                </div>
+                <h4>Audience</h4>
+                <p>Swiss critical infrastructure operators — energy, transport, water, healthcare, finance, government. CSRM is a voluntary framework as of 2025; mandatory applicability depends on future Swiss legislation.</p>
+            </div>
+
+            <!-- TISAX -->
+            <div class="fw-detail-card" id="tisax">
+                <div class="fw-detail-header">
+                    <h2>TISAX / VDA ISA 6.0</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: VDA / ENX Association</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">53 requirements, 12 domains</span>
+                </div>
+                <p>Trusted Information Security Assessment Exchange — 53 requirements across 12 domains: Information Security, Human Resources, Physical Security, Identity and Access Management, Cryptography, Communications Security, Third-Party Management, Compliance, Prototype and Vehicle Protection, Connected Systems, Development Security, and Cloud. Maturity scoring 0–4.</p>
+                <h4>Audience</h4>
+                <p>Automotive industry suppliers, OEM partners, and subcontractors handling sensitive data — particularly prototype and vehicle data. Participation is a supply chain requirement for most major OEMs (BMW, VW Group, Mercedes-Benz, Stellantis, etc.).</p>
+                <div class="note-box">
+                    <strong>Readiness tool only.</strong> Full TISAX assessment and label issuance (AL1/AL2/AL3) requires an ENX-accredited auditor. This module is for internal self-assessment and readiness preparation before your official assessment.
+                </div>
+            </div>
+
+            <!-- Swiss ISG -->
+            <div class="fw-detail-card" id="isg">
+                <div class="fw-detail-header">
+                    <h2>Swiss ISG — Federal Act on Information Security (SR 128)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: Swiss Federal Law SR 128, in force 1 Jan. 2024</span>
+                    <span class="fw-pill swiss">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">27 requirements, 8 sections</span>
+                    <span class="fw-pill">40 ISO crosswalk mappings</span>
+                </div>
+                <p>27 assessable requirements across 8 sections: Information Security Principles (CIA triad, risk management, third-party, incidents), Information Classification (levels: internal / confidential / secret), ICT Security (categories, minimum measures, operational security), Personnel &amp; Access (screening, least privilege), Physical Security (zones), Personnel Security Checks (sensitive functions, clearances), Cyberattack Reporting Obligation (24h to BACS/OFCS — in force 1 April 2025), and ISMS Organisation (ISB appointment, standard requirements). Maturity scoring 0–4.</p>
+                <h4>Audience</h4>
+                <p>Primarily mandatory for Swiss federal authorities (Art. 2 al. 1). Also applies to organisations exercising sensitive activities under federal mandate. Critical infrastructure operators listed in Art. 74b are subject to the mandatory cyberattack reporting obligation (Chapter 5), regardless of other ISG applicability. ISO 27001 is the recognised implementation vehicle — an ISG-compliant ISMS delivers ISG compliance.</p>
+                <h4>Key obligations</h4>
+                <ul>
+                    <li><strong>24-hour cyberattack reporting to BACS/OFCS</strong> (Art. 74e) — in force 1 April 2025 for entities listed in Art. 74b (universities, federal/cantonal authorities, critical sectors: energy, banking, insurance, healthcare, telecoms, transport, cloud/data centres, media)</li>
+                    <li>Failure to report: administrative sanction up to <strong>CHF 100,000</strong> (Art. 74h)</li>
+                    <li>Information classification scheme: internal / confidential / secret (Art. 13)</li>
+                    <li>ICT security categories: baseline / elevated / very high protection (Art. 17)</li>
+                    <li>Information security officer (ISB/RSSI) appointment mandatory for in-scope bodies (Art. 81)</li>
+                </ul>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>Chapter 3 (personnel security checks / CSP) and Chapter 4 (company security / PSE procedures) are included at summary level — full implementation requires engagement with the relevant federal CSP/PSE services</li>
+                    <li>40 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer</li>
+                </ul>
+                <div class="note-box">
+                    This module is a compliance readiness self-assessment tool. Formal ISG compliance for in-scope federal bodies must be coordinated with the Federal Chancellery / OSIS. Critical infrastructure operators should engage legal counsel to confirm Art. 74b applicability and reporting channel setup with BACS.
+                </div>
+            </div>
+
+            <!-- Swiss nDSG -->
+            <div class="fw-detail-card" id="ndsg">
+                <div class="fw-detail-header">
+                    <h2>Swiss nDSG 2023 (Federal Act on Data Protection)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: Swiss Federal Law, in force Sept 2023</span>
+                    <span class="fw-pill swiss">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">25 provisions, 6 chapters</span>
+                </div>
+                <p>25 key provisions across 6 chapters: Scope and Principles, Data Subject Rights, Controller Obligations, Special Processing Cases, International Data Transfers, Enforcement. Maturity scoring 0–4.</p>
+                <h4>Audience</h4>
+                <p>Any organisation that processes personal data of Swiss residents or is established in Switzerland. The nDSG is Switzerland's counterpart to the EU GDPR — broadly similar scope, different legal basis.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>Covers core compliance obligations — legal interpretation should involve Swiss data protection counsel</li>
+                    <li>Organisations subject to both nDSG and GDPR (processing EU resident data) should use both this module and the GDPR crosswalk in the Crosswalk Viewer</li>
+                </ul>
+            </div>
+
+            <!-- EU CRA -->
+            <div class="fw-detail-card" id="cra">
+                <div class="fw-detail-header">
+                    <h2>EU Cyber Resilience Act (2024/2847)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: EU Regulation, 2024</span>
+                    <span class="fw-pill blue">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">26 requirements, 6 groups</span>
+                </div>
+                <p>26 essential requirements across 6 groups: Essential Cybersecurity Requirements (security by design, default settings, vulnerability handling), Vulnerability Handling Processes, Conformity Assessment, Market Surveillance Obligations, Coordinated Vulnerability Disclosure, and Incident Reporting. Maturity scoring 0–4.</p>
+                <h4>Audience</h4>
+                <p>Manufacturers and importers of products with digital elements (hardware and software) sold in the EU market. Obligations are tiered by criticality class: Class I, Class II, and critical products have different conformity assessment routes.</p>
+                <h4>Phased application</h4>
+                <ul>
+                    <li>Market surveillance provisions: mid-2025</li>
+                    <li>Vulnerability and incident reporting: late 2025</li>
+                    <li>Full application (all essential requirements): late 2027</li>
+                </ul>
+                <div class="note-box">
+                    This module covers Annex I (Parts I and II) essential requirements. Formal conformity assessment for Class II and critical products involves a notified body — self-declaration is not sufficient for those product classes.
+                </div>
+            </div>
+
+            <!-- EU AI Act -->
+            <div class="fw-detail-card" id="ai-act">
+                <div class="fw-detail-header">
+                    <h2>EU AI Act (2024/1689)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: EU Regulation, 2024</span>
+                    <span class="fw-pill purple">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">25 articles, 6 groups</span>
+                </div>
+                <p>25 articles across 6 groups: Risk Management System, Data and Data Governance, Technical Documentation, Transparency and User Information, Human Oversight, Robustness, Accuracy and Cybersecurity. Maturity scoring 0–4.</p>
+                <h4>Audience</h4>
+                <p>Providers and deployers of AI systems in the EU. Obligations vary by risk classification — this module focuses on <strong>high-risk AI systems</strong> (the most substantive compliance tier under Chapter 3).</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>Prohibited AI practices (Article 5) are not rated — they require absolute avoidance, not maturity scoring</li>
+                    <li>General-purpose AI model obligations (Title VIII) are not covered in this module version</li>
+                    <li>High-risk AI obligations apply progressively through 2026–2027; prohibited practices from February 2025</li>
+                </ul>
+                <div class="note-box">
+                    Formal conformity assessment for high-risk AI systems may involve standardised testing and notified bodies, depending on product domain. This module is a readiness self-assessment tool.
+                </div>
+                <div class="note-box green">
+                    <strong>AI ecosystem crosswalk:</strong> ISO 42001 ↔ EU AI Act crosswalk available in the AI Coverage page (31 mappings — Annex A control groups → RMG/DAT/TRN/HOV/OPS/GOV). OECD AI Principles crosswalk also available (14 mappings: P1 Inclusive Growth, P2 Human-centred, P3 Transparency, P4 Robustness, P5 Accountability).
+                </div>
+            </div>
+
+            <!-- EU Cloud Sovereignty Framework -->
+            <div class="fw-detail-card" id="eu-cloud-sov">
+                <div class="fw-detail-header">
+                    <h2>EU Cloud Sovereignty Framework (v1.2.1)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: European Commission — DG DIGIT, Oct. 2025</span>
+                    <span class="fw-pill blue">Assessment Tool</span>
+                    <span class="fw-pill green">SEAL 0–4</span>
+                    <span class="fw-pill">8 Sovereignty Objectives</span>
+                </div>
+                <p>8 Sovereignty Objectives (SOV-1 to SOV-8) assessed via a SEAL scale (Sovereignty Effectiveness Assurance Level). A weighted Sovereignty Score combines all dimensions. Draws on Gaia-X, ENISA/NIS2/DORA, CIGREF Trusted Cloud Referential v2, and national cloud sovereignty strategies (France Cloud de Confiance, Germany Souveräner Cloud).</p>
+                <h4>Sovereignty Objectives and weights</h4>
+                <ul>
+                    <li><strong>SOV-1 Strategic Sovereignty (15%)</strong> — EU legal anchoring, ownership stability, strategic alignment</li>
+                    <li><strong>SOV-2 Legal &amp; Jurisdictional Sovereignty (10%)</strong> — exposure to non-EU laws (CLOUD Act, etc.), IP jurisdiction</li>
+                    <li><strong>SOV-3 Data &amp; AI Sovereignty (10%)</strong> — customer control over data, auditability, EU-only processing, AI model governance</li>
+                    <li><strong>SOV-4 Operational Sovereignty (15%)</strong> — portability, EU talent, operational support under EU law</li>
+                    <li><strong>SOV-5 Supply Chain Sovereignty (20%)</strong> — hardware origin, firmware provenance, software supply chain transparency</li>
+                    <li><strong>SOV-6 Technology Sovereignty (15%)</strong> — open standards, open source, EU HPC independence</li>
+                    <li><strong>SOV-7 Security &amp; Compliance Sovereignty (10%)</strong> — EU certifications, SOC in EU jurisdiction, patch autonomy</li>
+                    <li><strong>SOV-8 Environmental Sustainability (5%)</strong> — energy efficiency, circular economy, carbon transparency</li>
+                </ul>
+                <h4>SEAL scoring scale</h4>
+                <ul>
+                    <li><strong>SEAL-0</strong> — No Sovereignty</li>
+                    <li><strong>SEAL-1</strong> — Jurisdictional Sovereignty</li>
+                    <li><strong>SEAL-2</strong> — Data Sovereignty</li>
+                    <li><strong>SEAL-3</strong> — Digital Resilience</li>
+                    <li><strong>SEAL-4</strong> — Full Digital Sovereignty</li>
+                </ul>
+                <h4>Audience</h4>
+                <p>EU institutions, public sector bodies, and regulated entities evaluating cloud service providers under EU procurement requirements and digital sovereignty policy objectives.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>The framework defines minimum assurance levels per procurement tier — this module supports self-assessment and gap analysis</li>
+                    <li>SEAL ratings are qualitative judgements; formal procurement requires vendor audit evidence and contractual commitments</li>
+                    <li>SOV-5 Supply Chain assessment requires visibility into sub-supplier chains — evidence depth varies by vendor transparency</li>
+                </ul>
+                <div class="note-box">
+                    This is a readiness self-assessment tool. Formal EU cloud procurement decisions require independent audit, contractual sovereignty commitments, and where applicable certification under EUCS (EU Cybersecurity Certification Scheme for Cloud Services).
+                </div>
+            </div>
+
+            <!-- CyberFundamentals BE -->
+            <div class="fw-detail-card" id="cyfun-be">
+                <div class="fw-detail-header">
+                    <h2>CyberFundamentals (CCN/CERT.be) — Belgium</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: Centre for Cybersecurity Belgium (CCB/CCN)</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">41 practices</span>
+                    <span class="fw-pill">6 CSF Functions</span>
+                    <span class="fw-pill">107 ISO crosswalk mappings</span>
+                </div>
+                <p>CyberFundamentals uses the <strong>NIST CSF 2.0 control structure</strong> (GV.OC-01, ID.AM-01, PR.AA-01, etc.) aligned to Belgian NIS2 transposition. Three certification levels: <strong>Basic</strong>, <strong>Important</strong>, and <strong>Essential</strong> — mapped to NIS2 entity classification. Assessment covers 41 practices across the full NIST CSF 2.0 function set.</p>
+                <h4>Audience</h4>
+                <p>Belgian organisations seeking CCN/CCB CyberFundamentals certification; NIS2-in-scope entities in Belgium; any organisation running ISO 27001 alongside a NIST CSF 2.0 assessment.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>CyberFundamentals control IDs are identical to NIST CSF 2.0 — ISO ↔ CyberFundamentals crosswalk leverages existing ISO ↔ NIST CSF mappings (107 mappings)</li>
+                    <li>Certification and label issuance through CCB — this module supports readiness self-assessment</li>
+                    <li>DORA-in-scope Belgian financial entities should also use the DORA module</li>
+                </ul>
+            </div>
+
+            <!-- BaFin BAIT -->
+            <div class="fw-detail-card" id="bafin-bait">
+                <div class="fw-detail-header">
+                    <h2>BaFin BAIT — Rundschreiben 10/2021 (Germany)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: BaFin, Rundschreiben 10/2021</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">23 requirements</span>
+                    <span class="fw-pill">12 modules</span>
+                    <span class="fw-pill">69 ISO crosswalk mappings</span>
+                </div>
+                <p>The Bankaufsichtliche Anforderungen an die IT (BAIT) Rundschreiben 10/2021 covers 23 requirements across 12 IT governance and security modules: IT Strategy, IT Governance, Information Risk Management, Information Security, IT Projects, Application Development, IT Operations, IT Emergency Management, Identity & Access Management, Cryptography, Business Continuity, and IT Outsourcing.</p>
+                <h4>Audience</h4>
+                <p>German banks and financial institutions supervised by BaFin. Entities subject to DORA (from January 2025) should use both BAIT and the DORA module — BAIT remains the domestic supervisory standard under BaFin oversight.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>BAIT is the IT supervisory circular for banks; VAIT (insurance) and KAIT (capital management) share the same structure — not currently included as separate modules</li>
+                    <li>Replaces the 2017 BAIT circular; includes cloud-specific guidance and MaRisk alignment</li>
+                    <li>69 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer</li>
+                </ul>
+            </div>
+
+            <!-- CSSF LU -->
+            <div class="fw-detail-card" id="cssf-lu">
+                <div class="fw-detail-header">
+                    <h2>CSSF Circulaire 20/750 — Luxembourg</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: CSSF Luxembourg, 2020</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">19 requirements</span>
+                    <span class="fw-pill">7 ICT risk domains</span>
+                    <span class="fw-pill">47 ISO crosswalk mappings</span>
+                </div>
+                <p>CSSF Circulaire 20/750 defines ICT risk management requirements across 7 domains: ICT Governance, Risk Management, ICT Security, Business Continuity, Third-Party Management, Incident Management, and Audit. Aligned to EBA/ESMA guidelines.</p>
+                <h4>Audience</h4>
+                <p>Luxembourg financial sector entities regulated by the Commission de Surveillance du Secteur Financier (CSSF) — banks, investment firms, payment institutions, fund administrators, and management companies.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>Entities subject to DORA (from January 2025) should use both this module and the DORA module</li>
+                    <li>47 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer</li>
+                    <li>Does not replace engagement with CSSF supervision — this is a readiness self-assessment</li>
+                </ul>
+            </div>
+
+            <!-- ACN IT -->
+            <div class="fw-detail-card" id="acn-it">
+                <div class="fw-detail-header">
+                    <h2>ACN Cyber Risk Management Guidelines — Italy</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: Agenzia per la Cybersicurezza Nazionale (ACN), 2024</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">19 guidelines</span>
+                    <span class="fw-pill">4 groups</span>
+                    <span class="fw-pill">43 ISO crosswalk mappings</span>
+                </div>
+                <p>The ACN Linee Guida per la Gestione del Rischio Cyber (2024) covers 19 guidelines across 4 groups: Governance & Risk, Asset Management, Technical Controls, and Incident Management & BCM. Aligned to Italian NIS2 transposition (D.Lgs. 138/2024).</p>
+                <h4>Audience</h4>
+                <p>Italian organisations — public administration bodies, critical infrastructure operators, and NIS2-in-scope entities in Italy regulated by ACN as the national cybersecurity authority.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>ACN is the Italian National Cybersecurity Agency; guidelines are authoritative for NIS2 Italian transposition compliance</li>
+                    <li>Organisations subject to both ACN guidelines and NIS2 can run both modules simultaneously</li>
+                    <li>43 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer</li>
+                </ul>
+            </div>
+
+            <!-- UK NIS -->
+            <div class="fw-detail-card" id="uk-nis">
+                <div class="fw-detail-header">
+                    <h2>UK NIS Regulations 2018 (SI 2018/506)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: UK Statutory Instrument 2018/506</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">13 requirements</span>
+                    <span class="fw-pill">3 objectives</span>
+                    <span class="fw-pill">51 ISO crosswalk mappings</span>
+                </div>
+                <p>The Network and Information Systems (NIS) Regulations 2018 implement the EU NIS Directive as UK domestic law. 13 requirements across 3 objectives: Governance, Risk Management & Security, and Operational Capability. Maturity scoring 0–4.</p>
+                <h4>Audience</h4>
+                <p>UK Operators of Essential Services (OES) — energy, transport, health, water, and digital infrastructure — and Relevant Digital Service Providers (RDSPs). Competent authorities vary by sector (NCSC, Ofgem, CQC, etc.).</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>UK NIS Regulations remain in force post-Brexit as domestic UK law; the Cyber Security and Resilience Bill (2025, pending Royal Assent) will update and expand scope</li>
+                    <li>NCSC's Cyber Assessment Framework (CAF) is the recommended technical tool for OES compliance readiness</li>
+                    <li>51 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer</li>
+                </ul>
+            </div>
+
+            <!-- UK Operational Resilience -->
+            <div class="fw-detail-card" id="uk-op-resilience">
+                <div class="fw-detail-header">
+                    <h2>UK Operational Resilience (FCA/PRA) — PS21/3 + PS26/2</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: FCA PS21/3, PS26/2; PRA SS1/21</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">12 requirements</span>
+                    <span class="fw-pill">4 objectives</span>
+                    <span class="fw-pill">34 ISO crosswalk mappings</span>
+                </div>
+                <p>FCA Policy Statement PS21/3 and PS26/2, plus PRA Supervisory Statement SS1/21, define operational resilience obligations for UK financial services. 12 requirements across 4 objectives: <strong>Important Business Services</strong> identification, <strong>Impact Tolerances</strong> setting, <strong>Scenario Testing</strong>, and <strong>Self-Assessment</strong>. Full effect from March 2025.</p>
+                <h4>Audience</h4>
+                <p>UK financial sector — banks, building societies, PRA-designated investment firms, insurers, financial market infrastructures (FMIs), and payment system operators. PS26/2 extended scope to additional regulated entities from 2026.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>Entities subject to both UK Op. Resilience and DORA should maintain both modules — DORA applies to EU branches, UK Op. Resilience to UK legal entities</li>
+                    <li>Important Business Services (IBS) and impact tolerance documentation are the primary deliverables — this module supports readiness self-assessment</li>
+                    <li>34 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer</li>
+                </ul>
+            </div>
+
+            <!-- NCSC CAF v4.0 -->
+            <div class="fw-detail-card" id="ncsc-caf">
+                <div class="fw-detail-header">
+                    <h2>NCSC Cyber Assessment Framework v4.0 (UK)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: NCSC UK (2024)</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Outcome-based 0/2/4</span>
+                    <span class="fw-pill">41 Contributing Outcomes</span>
+                    <span class="fw-pill">14 Principles</span>
+                    <span class="fw-pill">4 Objectives</span>
+                    <span class="fw-pill">65 ISO crosswalk mappings</span>
+                </div>
+                <p>The NCSC Cyber Assessment Framework (CAF) v4.0 is the UK's primary outcome-based cybersecurity assessment methodology. Structured into 4 Objectives, 14 Principles, and 41 Contributing Outcomes, it is used by UK Operators of Essential Services (OES), Relevant Digital Service Providers (RDSPs), and public sector bodies subject to the Network and Information Systems (NIS) Regulations 2018. The CAF is the primary compliance tool for the UK NCSC's <em>Cyber Essentials Plus</em> and CNI sector guidance.</p>
+                <h4>Structure</h4>
+                <ul>
+                    <li><strong>Objective A — Managing Security Risk:</strong> 3 Principles (A1–A3), 11 Outcomes — governance, risk management, asset management, supply chain</li>
+                    <li><strong>Objective B — Protecting Against Cyber Attack:</strong> 6 Principles (B1–B6), 17 Outcomes — service protection, identity/access, data security, resilient networks, vulnerability management, staff awareness</li>
+                    <li><strong>Objective C — Detecting Cyber Security Events:</strong> 2 Principles (C1–C2), 6 Outcomes — security monitoring, anomaly detection</li>
+                    <li><strong>Objective D — Minimising the Impact:</strong> 2 Principles (D1–D2), 7 Outcomes — response, recovery</li>
+                </ul>
+                <h4>Scoring model</h4>
+                <p>Most Contributing Outcomes use a 3-column model: <strong>Not Achieved / Partially Achieved / Achieved</strong>. Nine outcomes use a 2-column model (Not Achieved / Achieved only): A1.a, A1.b, A1.c, A2.c, A3.a, D1.b, D1.c, D2.a, D2.b. The platform maps these to the 0–4 scale (0 = Not Achieved, 2 = Partially Achieved, 4 = Achieved) for consistency with all other assessment modules.</p>
+                <h4>Audience</h4>
+                <p>UK Operators of Essential Services (energy, transport, health, water, digital infrastructure), Relevant Digital Service Providers, public sector bodies, and any organisation applying for or maintaining alignment with NCSC guidance. Increasingly referenced by UK financial regulators (FCA, PRA) as a supplementary assessment lens alongside UK Op. Resilience.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>CAF v4.0 (2024) introduced a fourth objective — Objective D (Minimising the Impact) — and restructured several outcomes from v3.1; the platform implements v4.0 only</li>
+                    <li>65 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer (ISO27001_2022 → NCSC_CAF axis)</li>
+                    <li>Organisations subject to both NIS Regulations and CAF should maintain both modules — NIS provides the legal baseline, CAF provides the technical assessment methodology</li>
+                    <li>Indicative Good Practice (IGP) guidance per outcome is embedded in each outcome description in the platform assessment view</li>
+                </ul>
+            </div>
+
+            <!-- ReCyF v2.5 — France NIS2 -->
+            <div class="fw-detail-card" id="recyf">
+                <div class="fw-detail-header">
+                    <h2>ReCyF v2.5 — Référentiel de Cybersécurité France (ANSSI)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: ANSSI (17/03/2026)</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">20 Security Objectives</span>
+                    <span class="fw-pill">4 Pillars</span>
+                    <span class="fw-pill">152 requirements</span>
+                    <span class="fw-pill">50 ISO crosswalk mappings</span>
+                    <span class="fw-pill">France</span>
+                </div>
+                <p>ReCyF (Référentiel de Cybersécurité France) v2.5 is ANSSI's working document for the French transposition of the NIS2 Directive (EU 2022/2555), enacted via Loi n° 2024-449 and the <em>Projet de loi relatif à la résilience des infrastructures critiques</em> (PJL Art. 14). It defines 20 Security Objectives structured across 4 pillars, with 152 measurable requirements (Moyens acceptables de conformité). Objectives OS-01 to OS-15 apply to both Entités Importantes (EI) and Entités Essentielles (EE); OS-16 to OS-20 apply to EE only.</p>
+                <h4>Structure</h4>
+                <ul>
+                    <li><strong>Pilier Gouvernance:</strong> OS-01 (Recensement des SI) · OS-02 (Cadre de gouvernance) · OS-03 (Maîtrise de l'écosystème)</li>
+                    <li><strong>Pilier Protection:</strong> OS-04 (Ressources humaines) · OS-05 (Maîtrise des SI) · OS-06 (Accès physiques) · OS-07 (Architecture des SI) · OS-08 (Accès distants) · OS-09 (Codes malveillants) · OS-10 (Identités et accès) · OS-11 (Administration des SI)</li>
+                    <li><strong>Pilier Défense:</strong> OS-12 (Incidents de sécurité) · OS-13 (Continuité et reprise d'activité) · OS-14 (Crises d'origine cyber) · OS-15 (Exercices et tests)</li>
+                    <li><strong>Pilier Résilience (EE only):</strong> OS-16 (Approche par les risques) · OS-17 (Audit des SI) · OS-18 (Configuration) · OS-19 (Administration dédiée) · OS-20 (Supervision de la sécurité)</li>
+                </ul>
+                <h4>Audience</h4>
+                <p>French organisations subject to the NIS2 transposition: Entités Importantes (EI) and Entités Essentielles (EE) as classified under Loi 2024-449 by ANSSI. Covers all NIS2 sectors: énergie, transport, santé, eau, infrastructures numériques, services numériques, and administrations publiques.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>Document de travail ANSSI version 2.5 (17/03/2026) — subject to revision before final adoption</li>
+                    <li>50 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer (ISO27001_2022 → FR_NIS2_RECYF axis)</li>
+                    <li>EE-only objectives (OS-16 to OS-20) are included in the assessment and clearly labelled; EI-only organisations may use them as an aspirational target</li>
+                    <li>Assessment interface is in French; objectives and requirements retain their official ANSSI French terminology</li>
+                </ul>
+            </div>
+
+            <!-- COBIT 2019 -->
+            <div class="fw-detail-card" id="cobit-2019">
+                <div class="fw-detail-header">
+                    <h2>COBIT 2019 — Governance and Management of Enterprise I&amp;T</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: ISACA (2018)</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Capability 0–4</span>
+                    <span class="fw-pill">40 objectives</span>
+                    <span class="fw-pill">5 domains</span>
+                </div>
+                <p>COBIT 2019 is ISACA's globally recognised framework for Enterprise Governance of Information and Technology (EGIT). It provides 40 governance and management objectives grouped across five domains: <strong>EDM</strong> (Evaluate, Direct and Monitor — 5 governance objectives), <strong>APO</strong> (Align, Plan and Organise — 14 objectives), <strong>BAI</strong> (Build, Acquire and Implement — 11 objectives), <strong>DSS</strong> (Deliver, Service and Support — 6 objectives), and <strong>MEA</strong> (Monitor, Evaluate and Assess — 4 objectives). Assessed using a 0–4 capability scale: <strong>0 Incomplete → 1 Performed → 2 Managed → 3 Established → 4 Optimizing</strong>.</p>
+                <h4>Audience</h4>
+                <p>Any organisation seeking to align IT strategy with business objectives, manage I&amp;T-related risk, and demonstrate governance maturity. Widely used in enterprise IT governance programmes, internal audit, and board-level IT oversight. Particularly relevant for CISM, CISA, and CGEIT certification holders.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>EDM objectives are governance-level (board/executive); APO, BAI, DSS, MEA are management-level</li>
+                    <li>APO13 (Managed Security) and DSS05 (Managed Security Services) map directly to ISO 27001:2022 Annex A information security controls</li>
+                    <li>COBIT 2019 is aligned to ISO/IEC 27001, ISO/IEC 38500, ITIL, NIST CSF, and PMBOK/PRINCE2</li>
+                    <li>Full COBIT capability levels run 0–5 (adding level 5: Optimizing with quantitative management); the platform uses a 0–4 scale consistent with all other modules</li>
+                </ul>
+            </div>
+
+            <!-- CSA CCM v4.1 -->
+            <div class="fw-detail-card" id="csa-ccm">
+                <div class="fw-detail-header">
+                    <h2>CSA Cloud Controls Matrix v4.1</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: CSA (2021)</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">207 controls</span>
+                    <span class="fw-pill">17 domains</span>
+                </div>
+                <p>The CSA Cloud Controls Matrix (CCM) v4.1 is the Cloud Security Alliance's definitive cybersecurity control framework for cloud computing. It covers 207 controls structured across 17 domains: <strong>A&amp;A</strong> (Audit &amp; Assurance), <strong>AIS</strong> (Application &amp; Interface Security), <strong>BCR</strong> (Business Continuity), <strong>CCC</strong> (Change Control &amp; Configuration), <strong>CEK</strong> (Cryptography, Encryption &amp; Key Management), <strong>DCS</strong> (Datacenter Security), <strong>DSP</strong> (Data Security &amp; Privacy Lifecycle), <strong>GRC</strong> (Governance, Risk &amp; Compliance), <strong>HRS</strong> (Human Resources), <strong>IAM</strong> (Identity &amp; Access Management), <strong>IPY</strong> (Interoperability &amp; Portability), <strong>IVS</strong> (Infrastructure &amp; Virtualization Security), <strong>LOG</strong> (Logging &amp; Monitoring), <strong>SEF</strong> (Security Incident Management, E-Discovery &amp; Cloud Forensics), <strong>STA</strong> (Supply Chain Management, Transparency &amp; Accountability), <strong>TVM</strong> (Threat &amp; Vulnerability Management), and <strong>UEM</strong> (Universal Endpoint Management).</p>
+                <h4>Audience</h4>
+                <p>Cloud service providers (CSPs) and cloud customers across any sector. CCM v4.1 is the baseline for the CSA STAR programme — the world's largest cloud security assurance programme. Relevant for organisations seeking CSA STAR Level 1 (self-assessment), Level 2 (third-party audit), or Level 3 (continuous monitoring) certification.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>CCM v4.1 supersedes CCM v3.x — controls have been restructured, renumbered, and expanded</li>
+                    <li>The CSA CAIQ (Consensus Assessments Initiative Questionnaire) v4.0.2 is the self-assessment companion to CCM v4.1; controls are identical</li>
+                    <li>ISO 27001:2022 crosswalk: not yet published by CSA at time of dataset creation — ISO 27001 mapping is pending official CSA release</li>
+                    <li>Maps to NIST SP 800-53 Rev 5, PCI DSS v4.0, SOC 2, GDPR, and HIPAA in the official CAIQ spreadsheet bundle</li>
+                    <li>Replaces the previous CCM v3.0.1 dataset in the platform — CSA does not maintain v3.x going forward</li>
+                </ul>
+            </div>
+
+            <!-- CSA AICM v1.0.3 -->
+            <div class="fw-detail-card" id="csa-aicm">
+                <div class="fw-detail-header">
+                    <h2>CSA AI Controls Matrix v1.0.3</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: CSA (November 2025)</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill green">Maturity 0–4</span>
+                    <span class="fw-pill">243 controls</span>
+                    <span class="fw-pill">18 domains</span>
+                </div>
+                <p>The CSA AI Controls Matrix (AICM) v1.0.3 is the Cloud Security Alliance's AI-specific security and governance framework. It covers 243 controls across 18 domains: <strong>AI System Design &amp; Architecture</strong>, <strong>Bias, Fairness &amp; Non-Discrimination</strong>, <strong>Data Governance &amp; Privacy</strong>, <strong>Explainability, Interpretability &amp; Transparency</strong>, <strong>Foundation Model Security</strong>, <strong>Governance, Risk &amp; Compliance</strong>, <strong>Human Oversight &amp; Control</strong>, <strong>Identity &amp; Access Management for AI</strong>, <strong>Incident Response for AI</strong>, <strong>Model Security &amp; Integrity</strong>, <strong>Multi-Tenancy &amp; Isolation</strong>, <strong>Operational Resilience of AI Systems</strong>, <strong>Privacy &amp; Confidentiality of AI Data</strong>, <strong>Robustness &amp; Adversarial Resilience</strong>, <strong>Secure Software Development for AI</strong>, <strong>Supply Chain &amp; Third-Party AI Risk</strong>, <strong>Threat Intelligence for AI</strong>, and <strong>Training Data Security</strong>.</p>
+                <h4>Audience</h4>
+                <p>Organisations developing, deploying, or procuring AI systems — including AI service providers and cloud-hosted AI consumers. Complements ISO 42001:2023 and the EU AI Act by providing operational security controls specifically designed for AI workloads. Particularly relevant alongside CSA CCM v4.1 for AI systems hosted in cloud environments.</p>
+                <h4>Coverage notes</h4>
+                <ul>
+                    <li>Maps to ISO 42001:2023, EU AI Act, BSI AI C4, and NIST AI 600-1 (the AI RMF Playbook)</li>
+                    <li>Companion to the CSA CAIQ-AI (AI Consensus Assessments Initiative Questionnaire) — the self-assessment questionnaire uses identical controls</li>
+                    <li>The AICM was released as part of the CSA AI Safety Initiative; v1.0.3 is the November 2025 release</li>
+                    <li>ISO 27001:2022 crosswalk: not separately published — ISO 42001 is the primary normative anchor for AI governance controls</li>
+                    <li>Use alongside the ISMS CORE AI Pack (ISO 42001 + ISO 42005 policy and implementation guides) for end-to-end AI governance</li>
+                </ul>
+            </div>
+
+            <!-- Custom Framework -->
+            <div class="fw-detail-card" id="custom-framework">
+                <div class="fw-detail-header">
+                    <h2>Custom Framework Import (YAML)</h2>
+                </div>
+                <div class="fw-meta-pills">
+                    <span class="fw-pill">Source: User-supplied YAML</span>
+                    <span class="fw-pill green">Assessment Tool</span>
+                    <span class="fw-pill blue">User-defined scoring</span>
+                    <span class="fw-pill">User-defined controls</span>
+                    <span class="fw-pill">ISO 27001 auto-mapping</span>
+                </div>
+                <p>Import any custom or sector-specific control framework via YAML upload. Each control can carry an optional <code>iso_27001_refs</code> field listing Annex A control identifiers; the platform infers coverage automatically and displays a coverage percentage against the full ISO 27001:2022 Annex A. Use this for internal security standards, industry baselines, or national frameworks not yet included as built-in modules.</p>
+                <h4>Platform features</h4>
+                <ul>
+                    <li>YAML upload with validation — name, controls, grouping, and ISO 27001 reference fields</li>
+                    <li>ISO 27001:2022 Annex A coverage display — inferred automatically from control references</li>
+                    <li>Assessment workflow identical to built-in modules — create, rate, track gaps, export</li>
+                    <li>User-defined scoring scale — configure maturity labels to match your framework's terminology</li>
+                    <li>Runs alongside built-in modules in the same Assessment Collections workflow</li>
+                </ul>
+                <h4>Controls</h4>
+                <p>User-defined. The YAML schema supports any grouping hierarchy — flat lists, functional domains, chapter-based structures, or nested categories.</p>
+                <h4>Scoring</h4>
+                <p>User-defined. Define your own maturity labels and scale in the YAML. Defaults to 0–4 if not specified.</p>
+                <h4>Audience</h4>
+                <p>All organisations with sector-specific requirements — healthcare, finance, defence, energy, and others operating under national or proprietary control frameworks alongside ISO 27001.</p>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer-box">
+                <h3>Limitations and Disclaimers</h3>
+                <p>All compliance assessment modules:</p>
+                <ul>
+                    <li>Are self-assessment tools for internal readiness evaluation</li>
+                    <li>Do not constitute legal advice or regulatory opinions</li>
+                    <li>Do not replace engagement with competent authorities, notified bodies, or accredited auditors where mandatory assessment applies</li>
+                    <li>Cover requirements as of the relevant regulation's publication date — delegated acts, RTS, ITS, and implementing decisions may introduce new obligations not yet reflected</li>
+                </ul>
+                <p style="margin-top: 1rem;">Specific: CSRM baseline requirements and limitation notes are based on NCSC documents from 2025. TISAX labels require ENX-accredited assessment. CIS Controls v8 text is based on the CIS v8 (2021) publication. BSI IT-Grundschutz full requirement text is available from <a href="https://www.bsi.bund.de" target="_blank" rel="noopener" style="color: var(--bamboo)">bsi.bund.de</a>.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">Copyright © 2025-2026 The ISMS Core Project · ISMS Core Contributors. All rights reserved.</p>
+                <p class="footer-tagline"><a href="index.html" style="color: var(--bamboo); text-decoration: none;">← Back to ISMS CORE</a> &nbsp;·&nbsp; <em>Where bamboo antennas actually work.</em> 🎋</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

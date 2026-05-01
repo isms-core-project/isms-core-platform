@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage ISO 27001:2022 compliance end-to-end — policies, gap tracking, evidence automation, live threat intelligence (MITRE ATT&amp;CK, CISA KEV, ENISA EUVD, NVD CVE/CPE), and 25 regulatory framework assessments in one self-hosted, open-source platform. Covers ISO 27701 (Privacy), ISO 27018 (Cloud), and ISO 42001 (AI). Multi-jurisdiction policy rendering for FR, DE, IT, BE, LU, AT, GB.">
+    <meta name="keywords" content="ISO 27001, ISO 27001:2022 compliance, ISO 27701, ISO 27018, ISMS compliance platform, information security management system, privacy compliance, PIMS, PII protection, cloud security compliance, NIST CSF 2.0, NIS2 compliance, DORA compliance, CIS Controls v8, BSI IT-Grundschutz, CSRM NCSC, TISAX, Swiss nDSG, Swiss ISG SR 128, EU AI Act, EU Cyber Resilience Act, EU Cloud Sovereignty Framework, SEAL cloud sovereignty, GDPR, CyberFundamentals Belgium CCB, BaFin BAIT, CSSF Luxembourg, ACN Italy, UK NIS Regulations, UK operational resilience, NCSC CAF v4.0, UK Cyber Assessment Framework, country localisation ISMS, multi-jurisdiction compliance, compliance gap tracking, evidence automation, audit readiness, SME ISO 27001, self-hosted compliance, open source GRC, threat intelligence feeds, CISA KEV, NVD CVE, EPSS, MITRE ATT&CK, ENISA EUVD, European Vulnerability Database, vulnerability management platform, CVE explorer, ReCyF France NIS2, ANSSI cybersecurity framework, health monitoring, OSINT threat feeds, MISP IOC feeds, CIRCL MISP, Botvrij MISP, IOC explorer, AbuseIPDB, IP enrichment, Malpedia, malware atlas, threat actors, malware families">
+    <meta name="author" content="The ISMS Core Project">
+    <link rel="canonical" href="https://isms-core.com/">
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://isms-core.com/">
+    <link rel="alternate" hreflang="de-CH" href="https://isms-core.com/de/">
+    <link rel="alternate" hreflang="fr" href="https://isms-core.com/fr/">
+    <link rel="alternate" hreflang="it" href="https://isms-core.com/it/">
+    <link rel="alternate" hreflang="x-default" href="https://isms-core.com/">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://isms-core.com/">
+    <meta property="og:title" content="ISO 27001:2022 Compliance Platform — ISMS CORE">
+    <meta property="og:description" content="Manage ISO 27001 compliance end-to-end. Gap tracking, risk register, evidence automation, and 25 regulatory framework assessments — self-hosted, open source. Multi-jurisdiction policy rendering for 8 countries.">
+    <meta property="og:image" content="https://isms-core.com/assets/og-image.png">
+    <meta property="og:image:width" content="1848">
+    <meta property="og:image:height" content="895">
+    <meta property="og:site_name" content="ISMS CORE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ISO 27001:2022 Compliance Platform — ISMS CORE">
+    <meta name="twitter:description" content="Manage ISO 27001 compliance end-to-end. Gap tracking, risk register, evidence automation, 25 regulatory frameworks — self-hosted, open source.">
+    <meta name="twitter:image" content="https://isms-core.com/assets/og-image.png">
+
+    <title>ISO 27001:2022 Compliance Platform | ISMS CORE</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "ISMS CORE",
+          "alternateName": "ISMS CORE Platform",
+          "description": "ISO 27001:2022 compliance management platform. Compliance operations, risk tracking, and evidence automation across ISO 27001, ISO 27701 (Privacy), and ISO 27018 (Cloud). Self-hosted, open source.",
+          "url": "https://isms-core.com",
+          "applicationCategory": "SecurityApplication",
+          "applicationSubCategory": "GRC Platform",
+          "operatingSystem": "Linux, Docker",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "keywords": "ISO 27001, ISMS, GRC, compliance management, risk tracking, evidence automation, ISO 27701, ISO 27018, self-hosted, open source",
+          "license": "https://github.com/isms-core-project/isms-core-platform/blob/main/LICENSE",
+          "codeRepository": "https://github.com/isms-core-project/isms-core-platform"
+        },
+        {
+          "@type": "Organization",
+          "name": "The ISMS Core Project",
+          "url": "https://isms-core.com",
+          "logo": "https://isms-core.com/assets/favicon.svg",
+          "sameAs": ["https://github.com/isms-core-project"]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is ISMS CORE?",
+              "acceptedAnswer": { "@type": "Answer", "text": "ISMS CORE is an open-source ISO 27001:2022 compliance management platform providing five products — Framework, Operational, Privacy (ISO 27701), Cloud (ISO 27018), and AI (ISO 42001) — plus a self-hosted web platform for gap tracking, evidence automation, 25 multi-framework compliance assessments, and runtime policy rendering for 8 regulatory jurisdictions." }
+            },
+            {
+              "@type": "Question",
+              "name": "Is ISMS CORE free?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. ISMS CORE is open source under AGPL 3.0 — free to use, self-host, and modify. A commercial licence is available for organisations that need to use it without AGPL copyleft obligations." }
+            },
+            {
+              "@type": "Question",
+              "name": "How is ISMS CORE different from Vanta, Drata, or Sprinto?",
+              "acceptedAnswer": { "@type": "Answer", "text": "ISMS CORE is self-hosted and open source — no SaaS subscription, no per-seat pricing, and no vendor lock-in. It ships with production-ready policy documents and Python-generated assessment workbooks, not just a checklist tool." }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I use ISMS CORE to get ISO 27001 certified?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. ISMS CORE covers all 93 controls across the 53 Annex A control groups of ISO 27001:2022. The Framework product provides the full policy, implementation guide, and assessment workbook stack required for a formal audit." }
+            },
+            {
+              "@type": "Question",
+              "name": "What compliance frameworks does ISMS CORE support?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Beyond ISO 27001, ISMS CORE includes 25 built-in assessment modules: NIST CSF 2.0, NIST SP 800-53 Rev 5, NIST AI RMF 1.0, CSA CCM v4.1, CSA AICM v1.0.3, NIS2, DORA, CIS Controls v8, BSI IT-Grundschutz, CSRM (Swiss NCSC), TISAX, Swiss ISG (SR 128), Swiss nDSG, EU Cyber Resilience Act, EU AI Act, EU Cloud Sovereignty Framework, CyberFundamentals (Belgium/CCB), BaFin BAIT (Germany), CSSF 20-750 (Luxembourg), ACN Guidelines (Italy), UK NIS Regulations, UK Operational Resilience, COBIT 2019, NCSC CAF v4.0, and ReCyF v2.5 (ANSSI/France) — all mapped to ISO 27001:2022 controls." }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need a security team to use ISMS CORE?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. The Operational product is built for SMEs and startups without a dedicated security team, using plain-language operational policies and single-sheet compliance checklists." }
+            },
+            {
+              "@type": "Question",
+              "name": "What infrastructure does ISMS CORE require?",
+              "acceptedAnswer": { "@type": "Answer", "text": "ISMS CORE Platform runs in Docker Compose — FastAPI, PostgreSQL, OpenSearch, and React (Vite + Tailwind) behind nginx with TLS. It runs on a single server with no cloud vendor accounts required." }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the platform support multi-factor authentication?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes — TOTP-based MFA (compatible with Google Authenticator and Authy) can be enabled per user from the System settings. Backup codes are provided in case the authenticator device is lost." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="bamboo">🎋</span> ISMS CORE
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="platform.html">Platform</a></li>
+                <li><a href="#status">Status</a></li>
+                <li><a href="#frameworks">Frameworks</a></li>
+                <li><a href="compliance.html">Compliance</a></li>
+                <li><a href="country.html">Country</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="https://github.com/isms-core-project/isms-core-platform" class="nav-cta" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+        
+            <div class="lang-switcher">
+                <a href="/" class="lang-btn lang-active" hreflang="en">EN</a>
+                <a href="/de/" class="lang-btn" hreflang="de">DE</a>
+                <a href="/fr/" class="lang-btn" hreflang="fr">FR</a>
+                <a href="/it/" class="lang-btn" hreflang="it">IT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">ISO 27001 &nbsp;·&nbsp; ISO 27701 &nbsp;·&nbsp; ISO 27018 &nbsp;·&nbsp; ISO 42001 Compliance Platform</div>
+            <h1 class="hero-title">
+                <span class="bamboo-large">🎋</span>
+                <span>ISMS CORE</span>
+            </h1>
+            <p class="hero-subtitle">Compliance Operations, Risk &amp; Evidence</p>
+            <p class="hero-tagline">Grows fast. Bends, doesn't break. Built to last.</p>
+
+            <div class="hero-stats">
+                <div class="stat highlight">
+                    <span class="stat-value">570+</span>
+                    <span class="stat-label">Documents Ready</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">5</span>
+                    <span class="stat-label">Products</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">4</span>
+                    <span class="stat-label">ISO Standards</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">99</span>
+                    <span class="stat-label">Control Groups</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">25</span>
+                    <span class="stat-label">Compliance Frameworks</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">44</span>
+                    <span class="stat-label">Connectors</span>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="https://github.com/isms-core-project/isms-core-platform" class="btn btn-primary" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </header>
+
+    <!-- Pick Your Path -->
+    <section class="section section-alt" id="path">
+        <div class="container">
+            <div class="section-header">
+                <h2>Which product is for you?</h2>
+                <p>ISMS CORE has five products. You don't need all of them — pick what fits your situation.</p>
+            </div>
+            <div class="path-cards">
+                <div class="path-card">
+                    <div class="path-icon">⚡</div>
+                    <div class="path-tag">Best for SMEs</div>
+                    <h3>We're a startup or SME that needs to get ISO 27001 certified</h3>
+                    <p>You want clear, practical policies and a simple compliance checklist — not a 400-page engineering framework. You need to get certified without a dedicated security team.</p>
+                    <div class="path-product">→ ISMS CORE Operational</div>
+                    <p class="path-detail">53 operational policies + single-sheet compliance checklists. Get certified in weeks, not months.</p>
+                </div>
+                <div class="path-card path-card-featured">
+                    <div class="path-icon">🏗️</div>
+                    <div class="path-tag">Best for mature security teams</div>
+                    <h3>We have a security team and need full engineering depth</h3>
+                    <p>You want the full SSE product — policies with implementation depth, separate technical and governance guides, multi-sheet assessment workbooks, and end-to-end traceability.</p>
+                    <div class="path-product">→ ISMS CORE Framework (SSE)</div>
+                    <p class="path-detail">53 control packs, 253 Python generators, 504 implementation documents. Every control engineered, not just listed.</p>
+                </div>
+                <div class="path-card">
+                    <div class="path-icon">🖥️</div>
+                    <div class="path-tag">Best for operational teams</div>
+                    <h3>We need a live compliance system with dashboards and automation</h3>
+                    <p>You already have (or want) ISMS content, but need gap tracking, evidence automation, cross-framework mapping, and audit management in one tool — self-hosted, no subscriptions.</p>
+                    <div class="path-product">→ ISMS CORE Platform</div>
+                    <p class="path-detail">Docker-based, self-hosted. Ingests all five products. 44 automated connectors. 25 compliance assessment modules. Multi-jurisdiction policy rendering.</p>
+                </div>
+            </div>
+            <p class="path-note">Privacy (ISO 27701), Cloud (ISO 27018), and AI (ISO 42001) products extend any path — add them when you need privacy, cloud PII, or AI management system controls on top of your ISO 27001 base.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>What is ISMS CORE?</h2>
+                <p>A production-grade compliance platform that treats ISMS implementation as an <strong>engineering problem</strong>, not a consulting exercise. Five products across four ISO standards — one platform, one pipeline.</p>
+            </div>
+
+            <!-- Two Products -->
+            <div class="products">
+                <div class="product-card">
+                    <div class="product-badge framework">Full SSE Engineering</div>
+                    <h3>🏗️ ISMS CORE Framework (SSE)</h3>
+                    <p class="product-audience">For mature security teams and consultants</p>
+                    <div class="deliverables">
+                        <div class="deliverable">
+                            <span class="del-icon">📜</span>
+                            <div><strong>Policy</strong><span class="del-desc">What the control requires and who's responsible</span></div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="del-icon">📋</span>
+                            <div><strong>Implementation Guide</strong><span class="del-desc">Step-by-step instructions for technical (UG) and management (TG) teams</span></div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="del-icon">🐍</span>
+                            <div><strong>Python Generator</strong><span class="del-desc">Run once — produces a pre-filled Excel workbook automatically</span></div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="del-icon">📊</span>
+                            <div><strong>Assessment Workbook</strong><span class="del-desc">Multi-sheet Excel with automated compliance scoring and evidence tracking</span></div>
+                        </div>
+                    </div>
+                    <ul class="product-features">
+                        <li>53 control packs with 6-layer stack</li>
+                        <li>570 implementation documents (504 FW + 42 PRIV + 24 CLD)</li>
+                        <li>306 Python generators, 377K+ lines</li>
+                        <li>Multi-sheet assessment workbooks with automated scoring</li>
+                        <li>🌐 Policies available in EN · FR · DE · IT</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge operational">Foundation ISMS</div>
+                    <h3>⚡ ISMS CORE Operational (Foundation ISMS)</h3>
+                    <p class="product-audience">For SMEs and startups (10–500 people)</p>
+                    <div class="deliverables">
+                        <div class="deliverable">
+                            <span class="del-icon">📜</span>
+                            <div><strong>Operational Policy</strong><span class="del-desc">Requirements + practical guidance in one document, written for non-specialists</span></div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="del-icon">🐍</span>
+                            <div><strong>Python Generator</strong><span class="del-desc">Run once — produces your compliance checklist automatically</span></div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="del-icon">📊</span>
+                            <div><strong>Compliance Checklist</strong><span class="del-desc">Single-sheet Excel — tick through requirements, add evidence, done</span></div>
+                        </div>
+                    </div>
+                    <ul class="product-features">
+                        <li>53 operational policies — requirements + guidance in one document</li>
+                        <li>Single-sheet compliance checklists per control group</li>
+                        <li>Swiss nFADP aligned, GDPR where applicable</li>
+                        <li>🌐 Policies available in EN · FR · DE · IT</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge privacy">Privacy Extension Pack</div>
+                    <h3>🔒 ISMS CORE Privacy (ISO 27701:2025)</h3>
+                    <p class="product-audience">Privacy information management — controller &amp; processor roles</p>
+                    <div class="deliverables">
+                        <div class="deliverable">
+                            <span class="del-icon">📜</span>
+                            <div><strong>Privacy Policy</strong><span class="del-desc">Controller and processor obligations per control group</span></div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="del-icon">📋</span>
+                            <div><strong>Implementation Guide</strong><span class="del-desc">How to implement ISO 27701 controls in your privacy programme</span></div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="del-icon">📊</span>
+                            <div><strong>Compliance Checklist</strong><span class="del-desc">Privacy-specific assessment checklist per control group</span></div>
+                        </div>
+                    </div>
+                    <ul class="product-features">
+                        <li>21 control groups — controller, processor, and shared roles</li>
+                        <li>23 PRIV-POL policies + 42 implementation guides (UG + TG)</li>
+                        <li>Full GDPR Article 30 / RoPA traceability</li>
+                        <li>Extends ISO 27001 ISMS with privacy-specific controls</li>
+                        <li>🌐 Policies available in EN · FR · DE · IT</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge cloud">Cloud Extension Pack</div>
+                    <h3>☁️ ISMS CORE Cloud (ISO 27018:2025)</h3>
+                    <p class="product-audience">PII protection in public cloud — for cloud service providers</p>
+                    <div class="deliverables">
+                        <div class="deliverable">
+                            <span class="del-icon">📜</span>
+                            <div><strong>Cloud Policy</strong><span class="del-desc">PII protection obligations for cloud service providers</span></div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="del-icon">📋</span>
+                            <div><strong>Implementation Guide</strong><span class="del-desc">How to implement ISO 27018 controls in cloud service delivery</span></div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="del-icon">📊</span>
+                            <div><strong>Compliance Checklist</strong><span class="del-desc">Cloud PII assessment checklist with SCC and transfer monitoring built in</span></div>
+                        </div>
+                    </div>
+                    <ul class="product-features">
+                        <li>12 Annex A control groups — consent, transfer, accountability and more</li>
+                        <li>12 CLD-POL policies + 24 implementation guides (UG + TG)</li>
+                        <li>SCCs, IDTA, adequacy status monitoring built in</li>
+                        <li>Sub-processor management and breach notification workflows</li>
+                        <li>🌐 Policies available in EN · FR · DE · IT</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge ai">AI Extension Pack</div>
+                    <h3>🤖 ISMS CORE AI (ISO 42001:2023)</h3>
+                    <p class="product-audience">AI management system governance — for AI developers &amp; deployers</p>
+                    <div class="deliverables">
+                        <div class="deliverable">
+                            <span class="del-icon">📜</span>
+                            <div><strong>AI Policy</strong><span class="del-desc">AIMS governance, impact assessment, responsible use and third-party AI obligations</span></div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="del-icon">📋</span>
+                            <div><strong>Implementation Guide</strong><span class="del-desc">How to implement ISO 42001 controls — AISIA methodology per ISO 42005:2025 built in</span></div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="del-icon">📊</span>
+                            <div><strong>Compliance Checklist</strong><span class="del-desc">AI-specific assessment checklist per control group (selected controls)</span></div>
+                        </div>
+                    </div>
+                    <ul class="product-features">
+                        <li>12 control groups — 2 foundation + 10 Annex A controls</li>
+                        <li>12 AI-POL policies + 20 implementation guides (UG + TG)</li>
+                        <li>AISIA methodology structured per ISO 42005:2025 — AI system risk assessment</li>
+                        <li>EU AI Act + NIST AI RMF 1.0 + OECD AI Principles crosswalk (82 AI-specific mappings)</li>
+                        <li>ISO 42005:2025 process crosswalk — 23 mappings to NIST AI RMF + OECD AI Principles</li>
+                        <li>Responsible use, third-party AI governance, and incident obligations</li>
+                        <li>🌐 Policies available in EN · FR · DE · IT</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- What you actually get -->
+            <div class="disclaimer-box" style="margin: 2.5rem 0; border-color: var(--bamboo);">
+                <h3 style="color: var(--bamboo); margin-bottom: 0.75rem;">Every document is already written.</h3>
+                <p>ISO 27001:2022 requires documented policies and evidence for 93 Annex A controls across 53 groups. Most organisations spend months writing them from scratch — or pay a consultant to do it.</p>
+                <p style="margin-top: 0.75rem;">ISMS CORE ships the finished work: <strong>570+ implementation documents, 53 policies, 53 assessment workbooks</strong> — already written to ISO 27001:2022 standard, in English, French, German, and Italian. You adapt your organisation name, your CISO, your legal entity. The auditable content is done.</p>
+                <p style="margin-top: 0.75rem;">These are not templates with fill-in-the-blank placeholders. They are complete, QA-verified documents that passed internal audit review. Use them as-is or adapt them — the choice is yours.</p>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Four Standards, One Platform</h3>
+                    <p>ISO 27001:2022, ISO 27701:2025 (Privacy), ISO 27018:2025 (Cloud), and ISO 42001:2023 (AI) — all in a single integrated compliance system.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Automated Evidence</h3>
+                    <p>Python generators produce structured assessment workbooks and compliance checklists — not static Word templates.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Multi-Framework</h3>
+                    <p>Mapped to NIST CSF 2.0, MITRE ATT&CK, GDPR, Swiss nDSG, DORA, NIS2, EU AI Act and more.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <h3>Modular by Design</h3>
+                    <p>Start with ISMS Operational. Add Framework depth, Privacy extension, and Cloud controls as you grow — all use the same pipeline.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Multilingual Policy Library</h3>
+                    <p>All policies available in English, French, German, and Italian — across all five products. Country-specific regulatory tokens applied at render time for 8 jurisdictions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="section section-dark" id="philosophy">
+        <div class="container">
+            <div class="section-header light">
+                <h2>✈️ Not Cargo Cult</h2>
+                <blockquote>
+                    "The first principle is that you must not fool yourself — and you are the easiest person to fool."
+                    <cite>— Richard Feynman</cite>
+                </blockquote>
+            </div>
+
+            <div class="comparison">
+                <div class="compare-column bad">
+                    <h3>❌ Cargo Cult Security</h3>
+                    <ul>
+                        <li>Impressive policies nobody reads</li>
+                        <li>Made-up compliance numbers</li>
+                        <li>Security theater for audits</li>
+                        <li>PowerPoints instead of controls</li>
+                    </ul>
+                </div>
+                <div class="compare-column good">
+                    <h3>✅ ISMS CORE</h3>
+                    <ul>
+                        <li>Controls that <strong>actually work</strong></li>
+                        <li>Evidence that <strong>proves effectiveness</strong></li>
+                        <li>Metrics that <strong>measure real security</strong></li>
+                        <li>Automation that <strong>enforces compliance</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="philosophy-note">
+                If attackers are the "planes," cargo cult ISMS won't stop them. <strong>Only real controls will.</strong> ✈️
+            </p>
+        </div>
+    </section>
+
+    <!-- Status Section -->
+    <section class="section" id="status">
+        <div class="container">
+            <div class="section-header">
+                <h2>Implementation Status</h2>
+                <p>All four ISO standards fully implemented and live on the platform.</p>
+            </div>
+
+            <div class="status-standard-label">ISO 27001:2022 — ISMS Framework &amp; Operational</div>
+            <div class="progress-grid">
+                <div class="progress-card complete">
+                    <div class="progress-header">
+                        <span class="progress-title">Section 5 🎉</span>
+                        <span class="progress-subtitle">Organizational Controls</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span>21/21 packs</span>
+                        <span class="progress-percent">100%</span>
+                    </div>
+                </div>
+
+                <div class="progress-card complete">
+                    <div class="progress-header">
+                        <span class="progress-title">Section 6 🎉</span>
+                        <span class="progress-subtitle">People Controls</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span>4/4 packs</span>
+                        <span class="progress-percent">100%</span>
+                    </div>
+                </div>
+
+                <div class="progress-card complete">
+                    <div class="progress-header">
+                        <span class="progress-title">Section 7 🎉</span>
+                        <span class="progress-subtitle">Physical Controls</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span>6/6 packs</span>
+                        <span class="progress-percent">100%</span>
+                    </div>
+                </div>
+
+                <div class="progress-card complete">
+                    <div class="progress-header">
+                        <span class="progress-title">Section 8 🎉</span>
+                        <span class="progress-subtitle">Technological Controls</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span>22/22 packs</span>
+                        <span class="progress-percent">100%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-standard-label privacy-label">ISO 27701:2025 — Privacy Extension Pack</div>
+            <div class="progress-grid">
+                <div class="progress-card complete privacy-card">
+                    <div class="progress-header">
+                        <span class="progress-title">Controller 🎉</span>
+                        <span class="progress-subtitle">PII Controller Controls</span>
+                    </div>
+                    <div class="progress-bar privacy-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span>8/8 groups</span>
+                        <span class="progress-percent">100%</span>
+                    </div>
+                </div>
+
+                <div class="progress-card complete privacy-card">
+                    <div class="progress-header">
+                        <span class="progress-title">Processor 🎉</span>
+                        <span class="progress-subtitle">PII Processor Controls</span>
+                    </div>
+                    <div class="progress-bar privacy-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span>5/5 groups</span>
+                        <span class="progress-percent">100%</span>
+                    </div>
+                </div>
+
+                <div class="progress-card complete privacy-card">
+                    <div class="progress-header">
+                        <span class="progress-title">Shared 🎉</span>
+                        <span class="progress-subtitle">Controller &amp; Processor Shared</span>
+                    </div>
+                    <div class="progress-bar privacy-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span>8/8 groups</span>
+                        <span class="progress-percent">100%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-standard-label cloud-label">ISO 27018:2025 — Cloud Extension Pack</div>
+            <div class="progress-grid single-card">
+                <div class="progress-card complete cloud-card">
+                    <div class="progress-header">
+                        <span class="progress-title">Annex A 🎉</span>
+                        <span class="progress-subtitle">PII Controls for Cloud Processors</span>
+                    </div>
+                    <div class="progress-bar cloud-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span>12/12 groups</span>
+                        <span class="progress-percent">100%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-standard-label ai-label">ISO 42001:2023 — AI Extension Pack</div>
+            <div class="progress-grid single-card">
+                <div class="progress-card complete ai-card">
+                    <div class="progress-header">
+                        <span class="progress-title">AIMS Controls 🎉</span>
+                        <span class="progress-subtitle">AI Management System Controls</span>
+                    </div>
+                    <div class="progress-bar ai-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span>12/12 groups</span>
+                        <span class="progress-percent">100%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="metric">
+                    <span class="metric-value">590</span>
+                    <span class="metric-label">IMP Documents</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-value">317</span>
+                    <span class="metric-label">Python Generators</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-value">44</span>
+                    <span class="metric-label">Connectors</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-value">377K+</span>
+                    <span class="metric-label">Lines of Code</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frameworks Section -->
+    <section class="section section-alt" id="frameworks">
+        <div class="container">
+            <div class="section-header">
+                <h2>Framework Integration</h2>
+                <p>Comprehensive mapping to industry standards and regulations.</p>
+            </div>
+
+            <div class="frameworks-grid">
+
+                <div class="frameworks-group-label">ISO Standards — Content Products</div>
+
+                <div class="framework-card">
+                    <div class="framework-badge blue">Complete</div>
+                    <h3>ISO/IEC 27001:2022</h3>
+                    <p>Full Annex A coverage — 53 control packs, 93 controls</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge blue">Complete</div>
+                    <h3>ISO/IEC 27002:2022</h3>
+                    <p>Implementation guidance integrated into all IMP-TG documents</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge purple">Complete</div>
+                    <h3>ISO/IEC 27701:2025</h3>
+                    <p>Privacy information management — 21 control groups for controller, processor, and shared roles</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge teal">Complete</div>
+                    <h3>ISO/IEC 27018:2025</h3>
+                    <p>PII protection in public cloud — 12 Annex A control groups for cloud service providers</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge orange">Complete</div>
+                    <h3>ISO/IEC 42001:2023</h3>
+                    <p>AI management system — 12 control groups for AIMS governance, impact assessment, responsible use, and third-party AI relationships</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge orange">Integrated</div>
+                    <h3>ISO/IEC 42005:2025</h3>
+                    <p>AI system impact assessment — AISIA methodology structured into the A.5.2-5 implementation guide; risk assessment lifecycle, harm identification, and mitigation planning. 23 crosswalk mappings to NIST AI RMF + OECD AI Principles.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge orange">Crosswalk</div>
+                    <h3>OECD AI Principles (2024)</h3>
+                    <p>Five principles for trustworthy AI — Inclusive Growth (P1), Human-centred Values (P2), Transparency (P3), Robustness &amp; Safety (P4), Accountability (P5). Adopted by 46+ countries, referenced in the EU AI Act preamble. ISO 42001 ↔ OECD crosswalk: 14 mappings.</p>
+                </div>
+
+                <div class="frameworks-group-label">Compliance Assessment Modules — 25 frameworks, in-platform scoring and gap tracking</div>
+
+                <div class="framework-card">
+                    <div class="framework-badge green">Assessment Tool</div>
+                    <h3>NIST CSF 2.0</h3>
+                    <p>106 subcategories across 6 functions — tier 1–4 ratings, radar chart, XLSX import/export</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge green">Assessment Tool</div>
+                    <h3>NIST AI RMF 1.0</h3>
+                    <p>72 subcategories across 4 functions (GOVERN/MAP/MEASURE/MANAGE) — AI risk management, maturity 0–4. EU AI Act crosswalk.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge green">Assessment Tool</div>
+                    <h3>NIST SP 800-53 Rev 5</h3>
+                    <p>324 base controls across 20 families — US federal/DoD/FedRAMP baseline. OSCAL sourced. ISO 27001 crosswalk via SP 800-53B.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge green">Assessment Tool</div>
+                    <h3>NIS2 (EU 2022/2555)</h3>
+                    <p>15 requirements — Article 21 security measures + Article 23 reporting obligations, maturity 0–4</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge green">Assessment Tool</div>
+                    <h3>DORA (EU 2022/2554)</h3>
+                    <p>25 articles across 4 chapters — ICT Risk, Incident Mgmt, Resilience Testing, Third-Party Risk, maturity 0–4</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge green">Assessment Tool</div>
+                    <h3>CIS Controls v8</h3>
+                    <p>153 safeguards across 18 controls — maturity 0–4</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge red">Assessment Tool</div>
+                    <h3>BSI IT-Grundschutz</h3>
+                    <p>68 Bausteine across 10 layers — maturity 0–4. Plus 269 ISO↔BSI crosswalk mappings across three ISO standards.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge swiss">Assessment Tool</div>
+                    <h3>CSRM (Swiss NCSC 2025)</h3>
+                    <p>Object-centric model — IT Protection Objects, 20 NIST CSF 2.0 baseline requirements, binary status (met/partial/not_met)</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge green">Assessment Tool</div>
+                    <h3>TISAX / VDA ISA 6.0</h3>
+                    <p>53 requirements across 12 domains — automotive supply chain readiness, maturity 0–4</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge swiss">Assessment Tool</div>
+                    <h3>Swiss ISG (SR 128)</h3>
+                    <p>27 requirements across 8 sections — Federal Act on Information Security, 24h cyberattack reporting to BACS/OFCS (in force Apr. 2025), maturity 0–4</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge swiss">Assessment Tool</div>
+                    <h3>Swiss nDSG 2023</h3>
+                    <p>25 provisions across 6 chapters — Federal Act on Data Protection, maturity 0–4</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge blue">Assessment Tool</div>
+                    <h3>EU Cyber Resilience Act</h3>
+                    <p>26 requirements across 6 groups — product cybersecurity for EU market (2024/2847), maturity 0–4</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge purple">Assessment Tool</div>
+                    <h3>EU AI Act (2024/1689)</h3>
+                    <p>25 articles across 6 groups — high-risk AI obligations incl. Risk Mgmt, Transparency, Human Oversight, maturity 0–4</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge blue">Assessment Tool</div>
+                    <h3>EU Cloud Sovereignty Framework (v1.2.1)</h3>
+                    <p>8 Sovereignty Objectives (SOV-1–8) scored via SEAL-0 to SEAL-4 — weighted Sovereignty Score for EU cloud procurement</p>
+                </div>
+
+                <div class="framework-card">
+                    <div class="framework-badge blue">Assessment Tool</div>
+                    <h3>CyberFundamentals (CCB/BE)</h3>
+                    <p>41 NIST CSF 2.0 aligned practices — Belgian NIS2 transposition, maturity 0–4. 107 ISO crosswalk mappings.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge red">Assessment Tool</div>
+                    <h3>BaFin BAIT (DE)</h3>
+                    <p>23 requirements across 12 IT modules — German financial sector supervisory circular, maturity 0–4.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge purple">Assessment Tool</div>
+                    <h3>CSSF Circulaire 20-750 (LU)</h3>
+                    <p>19 ICT risk requirements across 7 domains — Luxembourg financial sector, maturity 0–4.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge green">Assessment Tool</div>
+                    <h3>ACN Guidelines (IT)</h3>
+                    <p>19 cyber risk guidelines — Italian National Cybersecurity Agency, maturity 0–4.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge blue">Assessment Tool</div>
+                    <h3>UK NIS Regulations 2018</h3>
+                    <p>13 requirements across 3 objectives — UK network and information systems operators, maturity 0–4.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge blue">Assessment Tool</div>
+                    <h3>UK Operational Resilience (FCA/PRA)</h3>
+                    <p>12 requirements — important business services, impact tolerances, FCA/PRA PS21/3 + PS26/2, maturity 0–4.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge blue">Assessment Tool</div>
+                    <h3>NCSC CAF v4.0 (UK)</h3>
+                    <p>41 Contributing Outcomes across 14 Principles and 4 Objectives — UK NCSC outcome-based cyber assessment. Not Achieved / Partially Achieved / Achieved.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge blue">Assessment Tool</div>
+                    <h3>ReCyF v2.5 — France NIS2</h3>
+                    <p>20 Security Objectives across 4 pillars (Gouvernance, Protection, Défense, Résilience) — ANSSI French NIS2 transposition (Loi 2024-449). 152 requirements. EE/EI scoping.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge purple">Assessment Tool</div>
+                    <h3>COBIT 2019 (ISACA)</h3>
+                    <p>40 governance and management objectives across 5 domains (EDM, APO, BAI, DSS, MEA) — capability levels 0–4.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge green">Assessment Tool</div>
+                    <h3>CSA Cloud Controls Matrix v4.1</h3>
+                    <p>207 controls across 17 domains — cloud security baseline for CSA STAR Level 1/2/3. Maps to NIST 800-53, PCI DSS, SOC 2, GDPR.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge green">Assessment Tool</div>
+                    <h3>CSA AI Controls Matrix v1.0.3</h3>
+                    <p>243 controls across 18 domains — AI-specific security and governance. Maps to ISO 42001, EU AI Act, NIST AI RMF, BSI AI C4.</p>
+                </div>
+
+                <div class="frameworks-group-label">Cross-Framework Mappings — 3,433 crosswalk objects / 44 axes</div>
+
+                <div class="framework-card">
+                    <div class="framework-badge orange">Mapped</div>
+                    <h3>NIST SP 800-53 Rev. 5</h3>
+                    <p>Security control cross-mapping via Crosswalk Viewer</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge red">v19</div>
+                    <h3>MITRE ATT&CK</h3>
+                    <p>697 techniques · 174 threat actor groups · 821 software (malware + tools) · 56 campaigns · Navigator-style heatmap</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge gold">Mapped</div>
+                    <h3>EU GDPR / PCI DSS / FINMA</h3>
+                    <p>Data protection, payment card, and Swiss financial regulation cross-mappings</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-badge blue">Live Feed</div>
+                    <h3>ENISA EUVD</h3>
+                    <p>EU Vulnerability Database — exploited flag, EU-assigned CVEs, CVSS 4.0 support. Indexed to OpenSearch, cross-enriched against NVD CVE with <code>in_euvd</code> flag. EUVD Explorer + A.8.8 audit evidence.</p>
+                </div>
+
+                <div class="frameworks-group-label">Country Localisation — 7 jurisdictions, runtime policy rendering</div>
+
+                <div class="framework-card">
+                    <div class="framework-badge teal">Runtime</div>
+                    <h3>CH · FR · BE · LU · DE · AT · IT · GB</h3>
+                    <p>Policies render with country-specific regulatory references, authority names, and law citations — applied at request time. No policy clones. <a href="country.html" style="color: var(--bamboo)">Learn more →</a></p>
+                </div>
+
+            </div>
+            <div class="frameworks-cta">
+                <a href="compliance.html">See full coverage notes for all 25 assessment modules →</a>
+                <p>Audience, scope, known limitations, and official source documents for each framework</p>
+            </div>
+        </div>
+    </section>
+
+<!-- Platform Section -->
+    <section class="section" id="platform">
+        <div class="container">
+            <div class="section-header">
+                <h2>ISMS CORE Platform</h2>
+                <p>A Docker-first compliance management platform that ingests your static files and presents them as a live, correlated compliance system. <strong>Files work without the platform.</strong> The platform is the premium layer that adds multi-standard dashboards, cross-framework correlation, vector search, and audit management — across all four ISO standards in a single UI.</p>
+            </div>
+
+            <div class="platform-deploy">
+                <code>docker compose up -d</code>
+                <span>Self-hosted &nbsp;·&nbsp; No cloud &nbsp;·&nbsp; No subscriptions &nbsp;·&nbsp; Your data stays yours &nbsp;·&nbsp; Production: nginx TLS (HTTPS)</span>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Live Compliance Dashboard</h3>
+                    <p>Four ISO standards on one screen — ISO 27001:2022 (53 Annex A control groups), ISO 27701:2025 (Privacy), ISO 27018:2025 (Cloud), ISO 42001:2023 + ISO 42005:2025 (AI). Composite audit readiness score combines policy coverage, live evidence, assessment maturity across 25 frameworks, and open gap count. Section-level bar charts show exactly where you stand before an auditor asks.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Full-Text Search</h3>
+                    <p>OpenSearch-powered search across the entire ISMS CORE library — policies, 570+ implementation guides, and 5,200+ extracted requirements spanning all five products: ISMS Framework, Operational, Privacy (ISO 27701:2025), Cloud (ISO 27018:2025), and AI (ISO 42001:2023 + ISO 42005:2025). Highlighted results with relevance ranking, product filter (ISMS / Privacy / Cloud / AI), and document type filter. Find any control requirement, implementation step, or audit evidence in seconds across four ISO standards.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📄</div>
+                    <h3>External Document Support</h3>
+                    <p>Already have policies? Do not throw them away. Import existing documents in PDF, DOCX, or Markdown — no reformatting required. Run the same four-layer QA analysis that validates ISMS CORE's own library: keyword coverage, semantic similarity against 45 normative standards, and Claude AI gap analysis. See exactly which ISO 27001 topics your current policies are missing before an auditor does. The gap report tells you what to fix; the platform shows you the Gold Standard to fix it against.</p>
+                </div>
+                <div class="feature feature-full">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Cross-Framework Correlation</h3>
+                    <p>You complete your ISO 27001 gap assessment. Your board asks for NIST CSF 2.0 alignment. Your auditor needs NIS2 equivalence. Your CISO wants your DORA posture. Without a crosswalk, each is a separate project — weeks of manual mapping per framework. ISMS CORE ships 3,433 pre-built crosswalk objects across 44 framework pairs, built control by control over months. Every gap finding and every evidence item automatically inherits its multi-framework context. No re-work.</p>
+                    <div class="feature-cols">
+                        <div>
+                            <span class="feature-col-label">ISO 27001:2022 → 25 mapped frameworks</span>
+                            <p>NIST CSF 2.0 · NIST SP 800-53 R5 · NIST AI RMF 1.0 · MITRE ATT&amp;CK v19 · MITRE ATLAS · CIS Controls v8 · NIS2 · DORA · GDPR · BSI IT-Grundschutz · FINMA · OWASP ASVS 4.0 · PCI DSS 4.0.1 · EU AI Act · EU CRA · NCSC CAF v4.0 · ReCyF v2.5 · CSA CCM v4.1 · CSA AICM v1.0.3 · OECD AI Principles · Swiss nDSG · Swiss ISG · TISAX / VDA ISA · CyberFundamentals BE · COBIT 2019</p>
+                        </div>
+                        <div>
+                            <span class="feature-col-label">Extension ISO packs → 19 additional axes</span>
+                            <p>ISO 27701:2025 ↔ GDPR · NIS2 · NIST CSF 2.0 · BSI IT-Grundschutz · ISO 27001<br>ISO 27018:2025 ↔ ISO 27001 (12 control group mapping)<br>ISO 42001:2023 ↔ EU AI Act · NIST AI RMF 1.0 · ISO 27001 · BSI · OECD AI Principles<br>ISO 42005:2025 ↔ NIST AI RMF 1.0 · OECD AI Principles · EU AI Act · ISO 42001<br>MITRE ATT&amp;CK v19: 697 techniques mapped to ISO 27001 controls — Navigator-style heatmap in the platform</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <h3>Gap &amp; Evidence Management</h3>
+                    <p>Full CRUD for compliance gaps (severity, owner, due date, remediation plan). BSI 200-3 automatic risk calculator: likelihood × impact matrix, pre-mapped threat codes per ISO section, risk treatment tracking. Evidence tracker with expiry alerts, file download, and verification workflow.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📁</div>
+                    <h3>Projects Workspace</h3>
+                    <p>Create named projects that own a curated subset of your policies, implementation guides, assessments, gaps, and evidence. Document variables (organisation name, CISO, effective date, legal entity) auto-substituted on add. WYSIWYG editor with source toggle for in-platform policy editing. Bulk actions, bin/restore, completeness scoring, and SCR checklist tracking — all scoped to the project.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🕸️</div>
+                    <h3>Control Dependency Graph</h3>
+                    <p>Interactive Cytoscape.js graph of 229 intra-ISO-27001 relationships (depends-on, enables, feeds-into). Filter by section, depth, and edge type. See which controls are foundational.</p>
+                </div>
+                <div class="feature feature-full">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI QA Correlation Engine</h3>
+                    <p>Most compliance platforms check whether a policy document exists. ISMS CORE runs four independent verification layers on every document — automatically, against 45 normative standards indexed into a semantic search corpus. The result is not just "file found" — it is a precise gap report showing which ISO topics are covered, which are weak, and which are missing entirely, with AI-generated reasoning and missing-topic chips you can act on immediately.</p>
+                    <div class="feature-cols">
+                        <div>
+                            <span class="feature-col-label">Four verification layers</span>
+                            <p><strong>Stage 1 — Existence:</strong> Does the document exist? ISO 27001 Stage 1 audit proxy — a mandatory first gate.<br><br><strong>Stage 2 — Keyword coverage:</strong> Does it contain the required ISO terminology and control references?<br><br><strong>Stage 3 — Semantic similarity:</strong> Does the content actually cover the right topics? OpenSearch cosine similarity against a normative corpus of 45 standards, 5,000+ indexed chunks — ISO 27001/27002/27701/27018/42001, NIST 800-series, GDPR, DORA, NIS2, PCI DSS, OWASP, MITRE ATT&amp;CK and more.<br><br><strong>Stage 4 — Claude AI gap analysis:</strong> What is specifically missing? AI-generated reasoning, missing-topic chips, and actionable remediation guidance.</p>
+                        </div>
+                        <div>
+                            <span class="feature-col-label">What you can verify</span>
+                            <p>Any ISMS CORE policy, implementation guide, or external document (PDF, DOCX, Markdown). Scope by product (Framework / Operational / Privacy / Cloud / AI) or by ISO 27001 control reference. Run against the full corpus or a targeted subset. Compare your existing policies against the Gold Standard before an auditor does. Batch analysis across all 53 control groups in a single run. Multi-select framework codes to cross-check a document against multiple standards simultaneously.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>25 Compliance Assessment Modules</h3>
+                    <p>Built-in assessment tools for NIST CSF 2.0, NIST SP 800-53 R5, NIST AI RMF 1.0, NIS2, DORA, CIS Controls v8, BSI IT-Grundschutz, CSRM (Swiss NCSC — object-centric, binary), TISAX, Swiss ISG (SR 128), Swiss nDSG, EU Cyber Resilience Act, EU AI Act, EU Cloud Sovereignty Framework (SEAL-0 to SEAL-4), CyberFundamentals BE, BaFin BAIT, CSSF LU, ACN IT, UK NIS, UK Op. Resilience, NCSC CAF v4.0, ReCyF v2.5 (France NIS2), COBIT 2019, CSA CCM v4.1, CSA AICM v1.0.3. Maturity scoring 0–4, gap tracking, notes, evidence references, and Assessment Collections (group assessments → export CSV/XLSX/PDF). <a href="compliance.html" style="color:var(--bamboo)">Coverage details →</a></p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔐</div>
+                    <h3>RBAC, Multi-Org &amp; User Management</h3>
+                    <p>Six roles: Super Admin, Admin, ISMS Manager, Auditor, Control Owner, Viewer. JWT authentication with refresh tokens. Multi-organisation support — Super Admin can create and manage multiple organisations, each with isolated users, projects, and data. Admin panel for user management (including org assignment) and system health monitoring.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚨</div>
+                    <h3>Risk Register &amp; Heatmap</h3>
+                    <p>Project-scoped risk register with a 5×5 probability/impact matrix. Visual heatmap with colour-coded risk zones. Risk Acceptance and Remediation tracking — action plans, owner assignment, ETA tracking, and ITSM push to Jira or ServiceNow.</p>
+                </div>
+                <div class="feature feature-full">
+                    <div class="feature-icon">🔌</div>
+                    <h3>Automated Evidence Connectors</h3>
+                    <p>An auditor asks for evidence of MFA enforcement on privileged accounts. Without automation: open your IdP console, export a CSV, format it into a spreadsheet, attach a screenshot, email it — and repeat every audit cycle for every control. With ISMS CORE, you click Run on the Entra ID connector. It pulls live data, maps it to ISO 27001 A.8.2 (Privileged access rights), and stores it as timestamped, auditor-ready evidence. 44 native connectors cover every major enterprise stack.</p>
+                    <div class="feature-cols">
+                        <div>
+                            <span class="feature-col-label">Identity, endpoint &amp; cloud</span>
+                            <p>Microsoft Entra ID · Microsoft Defender · Microsoft Sentinel · Microsoft Intune · M365 Security · Azure CSPM · AWS Security Hub · GCP Security Command Centre · CyberArk PAM · HashiCorp Vault · Active Directory · LDAP · Zscaler · PAN-OS · FortiGate · Cisco</p>
+                        </div>
+                        <div>
+                            <span class="feature-col-label">Vulnerability, ITSM &amp; monitoring</span>
+                            <p>Qualys VMDR · Tenable.io · CrowdStrike Falcon · SentinelOne · Wazuh · ServiceNow · Jira · PRTG · Graylog · Zabbix · OpenCTI · OpenAEV · Custom Python container — write your own connector in a single file, deploy as a Docker sidecar. No ELK stack required.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📈</div>
+                    <h3>KPI / Metrics Dashboard</h3>
+                    <p>Nine named security KPIs with sparkline trend charts per project. Composite Audit Readiness score (%). Metrics Portfolio view for Super Admins — cross-organisation KPI comparison across all tenants.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Third-Party Risk (TPRM)</h3>
+                    <p>Vendor register with DORA ICT third-party fields, contract tracking, and risk assessments. Score and track supplier risk directly in the platform — no separate spreadsheets.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏥</div>
+                    <h3>Business Impact Analysis (BIA)</h3>
+                    <p>Structured BCM baseline inside the platform — no separate spreadsheet. Capture RTO, RPO, and MTPD per business function, linked to the assets, processes, and ISO 27001 controls that support them. Impact scoring across financial, reputational, regulatory, and operational dimensions. Recovery priority ranking feeds directly into your risk register and gap remediation plan. Required under ISO 22301, DORA Article 11, and NIS2 Article 21 — covered in one place.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔬</div>
+                    <h3>EBIOS RM</h3>
+                    <p>Full 5-workshop ANSSI methodology: feared events → attack paths → strategic scenarios → operational scenarios → security measures. Integrated with the risk register and remediation tracker.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📦</div>
+                    <h3>Custom Framework Import</h3>
+                    <p>Import any custom or sector-specific control framework via YAML upload. Each control maps to ISO 27001:2022 Annex A references; the platform infers coverage automatically. Use alongside the 25 built-in assessment modules.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔑</div>
+                    <h3>TOTP MFA</h3>
+                    <p>TOTP two-factor authentication for all users — compatible with Google Authenticator and Authy. Enable per-user from System settings. Backup codes provided for device recovery.</p>
+                </div>
+                <div class="feature feature-full">
+                    <div class="feature-icon">📡</div>
+                    <h3>Threat Intelligence Feeds</h3>
+                    <p>Two dedicated feed containers pull nineteen sources on schedule. ATT&CK Heatmap, EUVD Explorer, CVE Explorer, IOC Explorer, IP Enrichment, and Malware Atlas included. IOCs cross-enriched at ingest — no runtime joins.</p>
+                    <div class="feature-cols">
+                        <div>
+                            <span class="feature-col-label">Vulnerability intelligence (8)</span>
+                            <p>MITRE ATT&CK v19 (697 techniques, groups, software, campaigns), MITRE ATLAS (AI threats), CISA KEV (daily), FIRST EPSS (daily), NVD CVE (~250K entries, CVSS 4.0), NVD CPE, ENISA EUVD (EU Vulnerability Database — exploited flag, cross-enriched against NVD), Exploit-DB (~52K exploit entries, daily — EDB cross-reference and Metasploit module flag on every CVE).</p>
+                        </div>
+                        <div>
+                            <span class="feature-col-label">OSINT IOC feeds (11)</span>
+                            <p>CIRCL MISP + Botvrij MISP (120,000+ deduplicated IOCs), AbuseIPDB (daily top 10K abusive IPs), URLhaus (malware URLs), ThreatFox (malware IOCs), SSLBL (malicious SSL certificate fingerprints), Red Flag Domains (suspicious newly-registered domains), Stopforumspam (spammer IPs), MalwareBazaar (malware sample hashes), Feodo Tracker (C2 botnet IPs), Malpedia (malware families + threat actors).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="platform-stack">
+                <h3>Stack</h3>
+                <div class="stack-pills">
+                    <span class="pill">FastAPI</span>
+                    <span class="pill">PostgreSQL</span>
+                    <span class="pill">React + Vite + Tailwind</span>
+                    <span class="pill">OpenSearch</span>
+                    <span class="pill">Docker Compose</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="section section-alt" id="screenshots">
+        <div class="container">
+            <div class="section-header">
+                <h2>Platform in Action</h2>
+                <p>A look at the live platform — dashboard, compliance assessments, threat intelligence, and gap tracking.</p>
+            </div>
+            <div class="screenshots-hero">
+                <img src="assets/screenshots/home.png" alt="ISMS CORE home dashboard — ISMS, Privacy and Cloud product cards with intelligence bar and compliance quick-access row" loading="lazy" />
+                <p class="screenshot-caption">Home dashboard — ISMS · Privacy · Cloud products, 17 compliance modules, live intelligence bar, connector evidence</p>
+            </div>
+            <div class="screenshots-grid">
+                <div class="screenshot-item">
+                    <img src="assets/screenshots/overview.png" alt="Compliance overview — 54 controls, 100% framework and operational coverage" loading="lazy" />
+                    <p class="screenshot-caption">Compliance overview — 54 ISO 27001:2022 controls, coverage radar, audit readiness</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/screenshots/assessments.png" alt="Platform assessments with collections — grouped scoring and export" loading="lazy" />
+                    <p class="screenshot-caption">Assessments &amp; Collections — platform-native scoring, CSV / XLSX / PDF export</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/screenshots/nist-csf.png" alt="NIST CSF 2.0 — 106 subcategory assessment with tier ratings" loading="lazy" />
+                    <p class="screenshot-caption">NIST CSF 2.0 — 106 subcategories, tier 1–4 ratings, function breakdown</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/screenshots/ti.png" alt="Threat Intelligence feeds — MITRE ATT&CK, MITRE ATLAS, CISA KEV, FIRST EPSS, NVD CVE on schedule" loading="lazy" />
+                    <p class="screenshot-caption">Threat Intelligence — MITRE ATT&CK · ATLAS · CISA KEV · EPSS · NVD CVE, scheduled pulls, feed health</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/screenshots/cve-explorer.png" alt="CVE Explorer — 342,000+ CVEs with CVSS scores, EPSS probability, KEV status and CPE filtering" loading="lazy" />
+                    <p class="screenshot-caption">CVE / CPE Explorer — 342K+ CVEs, CVSS · EPSS · KEV overlay, vendor CPE filter</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>What is ISMS CORE?</h3>
+                    <p>ISMS CORE is an open-source ISO 27001:2022 compliance management platform. It provides five products — Framework (full SSE engineering), Operational (foundation ISMS for SMEs), Privacy (ISO 27701:2025 extension), Cloud (ISO 27018:2025 extension), and AI (ISO 42001:2023 extension) — plus a self-hosted web platform for gap tracking, evidence automation, and 25 multi-framework compliance assessments.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is ISMS CORE free?</h3>
+                    <p>Yes. ISMS CORE is open source under AGPL 3.0 — free to use, self-host, and modify. A commercial licence is available for organisations that need to use it without AGPL copyleft obligations.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How is ISMS CORE different from Vanta, Drata, or Sprinto?</h3>
+                    <p>ISMS CORE is self-hosted and open source — there is no SaaS subscription, no per-seat pricing, and no vendor lock-in. It is designed for organisations that want full control over their compliance data. It also ships with production-ready policy documents and Python-generated assessment workbooks, not just a checklist tool.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I use ISMS CORE to get ISO 27001 certified?</h3>
+                    <p>Yes. ISMS CORE covers all 93 controls across the 53 Annex A control groups of ISO 27001:2022. The Framework product provides the full policy, implementation guide, and assessment workbook stack required for a formal audit. The Operational product is designed for SMEs to achieve certification in weeks rather than months.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What compliance frameworks does ISMS CORE support?</h3>
+                    <p>Beyond ISO 27001, ISMS CORE includes 25 built-in assessment modules: NIST CSF 2.0, NIST SP 800-53 Rev 5, NIST AI RMF 1.0, NIS2, DORA, CIS Controls v8, BSI IT-Grundschutz, CSRM (Swiss NCSC), TISAX, Swiss ISG (SR 128), Swiss nDSG, EU Cyber Resilience Act, EU AI Act, EU Cloud Sovereignty Framework, CyberFundamentals Belgium, BaFin BAIT, CSSF LU, ACN IT, UK NIS, UK Operational Resilience, NCSC CAF v4.0, ReCyF v2.5 (France NIS2/ANSSI), COBIT 2019, CSA CCM v4.1, and CSA AICM v1.0.3 — all mapped to ISO 27001:2022 controls.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do I need a security team to use ISMS CORE?</h3>
+                    <p>No. The Operational product is built specifically for SMEs and startups without a dedicated security team. It uses plain-language operational policies and single-sheet compliance checklists. The Platform runs in Docker and can be deployed by any team comfortable with containers.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What infrastructure does ISMS CORE require?</h3>
+                    <p>ISMS CORE Platform runs entirely in Docker Compose — FastAPI backend, PostgreSQL, OpenSearch, and a React (Vite + Tailwind) frontend behind nginx with TLS. It can run on a single server or NUC. No cloud vendor accounts required.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Does the platform support multi-factor authentication?</h3>
+                    <p>Yes — TOTP-based MFA (compatible with Google Authenticator and Authy) can be enabled per user from the System settings. Backup codes are provided in case the authenticator device is lost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- License Section -->
+    <section class="section section-dark" id="license">
+        <div class="container">
+            <div class="license-grid">
+                <div class="license-card">
+                    <div class="license-badge purple">AGPL 3.0</div>
+                    <h3>Open Source</h3>
+                    <p>Free for open source use with copyleft requirements.</p>
+                </div>
+                <div class="license-card">
+                    <div class="license-badge gold">Commercial</div>
+                    <h3>Proprietary</h3>
+                    <p>Enterprise licensing without AGPL obligations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>The ISMS Core Project</h2>
+                <p class="contact-subtitle">Built by the ISMS Core Contributors</p>
+
+                <div class="contact-links">
+                    <a href="mailto:info@isms-core.com" class="contact-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        info@isms-core.com
+                    </a>
+                    <a href="https://github.com/isms-core-project/isms-core-platform" class="contact-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        isms-core-project/isms-core-platform
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">Copyright © 2025-2026 The ISMS Core Project · ISMS Core Contributors. All rights reserved.</p>
+                <p class="footer-tagline"><em>Where bamboo antennas actually work.</em> 🎋</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

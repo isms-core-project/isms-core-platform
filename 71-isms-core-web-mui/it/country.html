@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="7 giurisdizioni. Un set di politiche. ISMS CORE rende le politiche con riferimenti normativi specifici per paese, nomi di autorità e citazioni legali — al momento della richiesta, senza cloni.">
+    <meta name="author" content="The ISMS Core Project">
+    <link rel="canonical" href="https://isms-core.com/it/country.html">
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://isms-core.com/country.html">
+    <link rel="alternate" hreflang="de-CH" href="https://isms-core.com/de/country.html">
+    <link rel="alternate" hreflang="fr" href="https://isms-core.com/fr/country.html">
+    <link rel="alternate" hreflang="it" href="https://isms-core.com/it/country.html">
+    <link rel="alternate" hreflang="x-default" href="https://isms-core.com/country.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://isms-core.com/it/country.html">
+    <meta property="og:title" content="Rendering di Politiche Multi-Giurisdizionale — ISMS CORE">
+    <meta property="og:description" content="7 giurisdizioni. Un set di politiche. ISMS CORE rende le politiche con riferimenti normativi specifici per paese, nomi di autorità e citazioni legali — al momento della richiesta, senza cloni.">
+    <meta property="og:image" content="https://isms-core.com/assets/og-image.png">
+    <meta property="og:site_name" content="ISMS CORE">
+    <meta property="og:locale" content="it_IT">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rendering di Politiche Multi-Giurisdizionale — ISMS CORE">
+    <meta name="twitter:description" content="7 giurisdizioni. Un set di politiche. ISMS CORE rende le politiche con riferimenti normativi specifici per paese, nomi di autorità e citazioni legali — al momento della richiesta, senza cloni.">
+    <meta name="twitter:image" content="https://isms-core.com/assets/og-image.png">
+
+    <title>Rendering di Politiche Multi-Giurisdizionale | Localizzazione per Paese — ISMS CORE</title>
+
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="apple-touch-icon" href="../assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+    </style>
+    <style>
+        .country-hero {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 5rem 0 3rem;
+        }
+        .country-hero .container { max-width: 900px; }
+        .country-hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-primary); }
+        .country-hero p.lead { font-size: 1.1rem; color: var(--text-secondary); max-width: 680px; line-height: 1.7; margin-bottom: 2rem; }
+        .jurisdiction-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .jurisdiction-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; transition: border-color 0.2s, transform 0.15s; }
+        .jurisdiction-card:hover { border-color: var(--bamboo); transform: translateY(-2px); }
+        .jurisdiction-card.default { border-color: var(--bamboo); }
+        .jc-flag { font-size: 1.8rem; margin-bottom: 0.5rem; display: block; }
+        .jc-name { font-size: 1rem; font-weight: 600; color: var(--text-primary); }
+        .jc-code { font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; color: var(--bamboo); background: rgba(74,222,128,0.1); padding: 2px 6px; border-radius: 4px; margin-left: 0.4rem; }
+        .jc-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.75rem; }
+        .jc-tag { font-size: 0.65rem; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; color: var(--text-secondary); }
+        .jc-tag.law { border-color: #4472C4; color: #4472C4; }
+        .jc-tag.auth { border-color: #7030A0; color: #7030A0; }
+        .jc-tag.fin { border-color: #FF9800; color: #FF9800; }
+        .token-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin-top: 1rem; }
+        .token-table th { background: var(--bg-card); padding: 0.6rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); border-bottom: 1px solid var(--border); }
+        .token-table td { padding: 0.55rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-secondary); vertical-align: top; }
+        .token-table tr:last-child td { border-bottom: none; }
+        .token-table td:first-child { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--bamboo); white-space: nowrap; }
+        .token-table td.ch-val { color: var(--text-primary); font-weight: 500; }
+        .arch-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; margin: 2rem 0; }
+        .arch-box h3 { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+        .arch-flow { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; font-size: 0.82rem; }
+        .arch-step { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.9rem; color: var(--text-secondary); white-space: nowrap; }
+        .arch-step strong { color: var(--text-primary); display: block; font-size: 0.75rem; }
+        .arch-arrow { color: var(--bamboo); font-size: 1.1rem; }
+        .no-clone-box { background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.25); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+        .no-clone-box strong { color: var(--bamboo); }
+        .compliance-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .cl-link { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 0.75rem; font-size: 0.75rem; color: var(--text-secondary); text-decoration: none; transition: border-color 0.15s, color 0.15s; }
+        .cl-link:hover { border-color: var(--bamboo); color: var(--bamboo); }
+    </style>
+</head>
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="bamboo">🎋</span> ISMS CORE
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Attiva/disattiva navigazione">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#about">Chi siamo</a></li>
+                <li><a href="index.html#philosophy">Filosofia</a></li>
+                <li><a href="platform.html">Piattaforma</a></li>
+                <li><a href="index.html#status">Stato</a></li>
+                <li><a href="index.html#frameworks">Framework</a></li>
+                <li><a href="compliance.html">Conformità</a></li>
+                <li><a href="country.html" style="color: var(--bamboo)">Paesi</a></li>
+                <li><a href="https://github.com/isms-core-project/isms-core-platform" class="nav-cta" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <a href="../country.html" class="lang-btn" hreflang="en">EN</a>
+                <a href="../de/country.html" class="lang-btn" hreflang="de">DE</a>
+                <a href="../fr/country.html" class="lang-btn" hreflang="fr">FR</a>
+                <a href="country.html" class="lang-btn lang-active" hreflang="it">IT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="country-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">← Torna a ISMS CORE</a>
+            <h1>🌍 Rendering di Politiche Multi-Giurisdizionale</h1>
+            <p class="lead">Le politiche ISMS CORE si adattano a 7 giurisdizioni normative al momento della richiesta — sostituendo i riferimenti al diritto svizzero con i nomi corretti delle autorità nazionali, le leggi sulla protezione dei dati e gli organismi del settore finanziario per ogni paese. Un set di politiche. Nessun clone. Nessun onere di manutenzione.</p>
+            <div class="compliance-hero-stats">
+                <div class="chs-item"><span class="chs-num">7</span><span class="chs-lbl">Giurisdizioni</span></div>
+                <div class="chs-item"><span class="chs-num">8</span><span class="chs-lbl">Configurazioni paese</span></div>
+                <div class="chs-item"><span class="chs-num">Tempo reale</span><span class="chs-lbl">Rendering</span></div>
+                <div class="chs-item"><span class="chs-num">Zero</span><span class="chs-lbl">Cloni di politiche</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Localisation vs Translations -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header light">
+                <h2>Localizzazione e traduzioni — Due livelli distinti</h2>
+                <p>ISMS CORE fornisce entrambi — sono complementari, non la stessa cosa.</p>
+            </div>
+            <div class="features" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 1.5rem;">
+                <div class="feature">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Localizzazione per paese (questa pagina)</h3>
+                    <p>Le politiche vengono scritte una volta in inglese. Al momento del rendering, i token del diritto svizzero (PFPDT, nLPD, FINMA…) vengono sostituiti con gli equivalenti nazionali corretti per il paese dell'organizzazione. Nessun file di politica duplicato — un'unica fonte di verità.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Traduzioni multilingue</h3>
+                    <p>Tutte le politiche sono disponibili anche come documenti completamente tradotti in <strong>francese, tedesco e italiano</strong> — per tutti e quattro i prodotti (Framework, Operational, Privacy, Cloud). Sono documenti pre-scritti e verificati dalla QA, non traduzioni automatiche.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jurisdictions -->
+    <section class="section" id="jurisdictions">
+        <div class="container">
+            <div class="section-header">
+                <h2>Giurisdizioni supportate</h2>
+                <p>La Svizzera è la baseline (predefinita). Impostare il paese di un'organizzazione su uno dei seguenti applica la mappa di sostituzione token completa al momento del rendering.</p>
+            </div>
+            <div class="jurisdiction-grid">
+                <div class="jurisdiction-card default">
+                    <span class="jc-flag">🇨🇭</span>
+                    <span class="jc-name">Svizzera <span class="jc-code">CH</span> <span style="font-size:0.7rem;color:var(--text-secondary)">predefinita</span></span>
+                    <div class="jc-tags">
+                        <span class="jc-tag law">nLPD / revDSG</span>
+                        <span class="jc-tag auth">PFPDT / FDPIC</span>
+                        <span class="jc-tag fin">FINMA</span>
+                        <span class="jc-tag">CISO = RSSI</span>
+                    </div>
+                </div>
+                <div class="jurisdiction-card">
+                    <span class="jc-flag">🇫🇷</span>
+                    <span class="jc-name">Francia <span class="jc-code">FR</span></span>
+                    <div class="jc-tags">
+                        <span class="jc-tag law">RGPD</span>
+                        <span class="jc-tag auth">CNIL · ANSSI</span>
+                        <span class="jc-tag fin">ACPR · AMF</span>
+                        <span class="jc-tag">DPO = DPD</span>
+                    </div>
+                </div>
+                <div class="jurisdiction-card">
+                    <span class="jc-flag">🇧🇪</span>
+                    <span class="jc-name">Belgio <span class="jc-code">BE</span></span>
+                    <div class="jc-tags">
+                        <span class="jc-tag law">RGPD / AVG</span>
+                        <span class="jc-tag auth">APD/GBA · CCB/CCN</span>
+                        <span class="jc-tag fin">FSMA · NBB</span>
+                        <span class="jc-tag">CyberFundamentals</span>
+                    </div>
+                </div>
+                <div class="jurisdiction-card">
+                    <span class="jc-flag">🇱🇺</span>
+                    <span class="jc-name">Lussemburgo <span class="jc-code">LU</span></span>
+                    <div class="jc-tags">
+                        <span class="jc-tag law">LPD 2023</span>
+                        <span class="jc-tag auth">CNPD · ILNAS</span>
+                        <span class="jc-tag fin">CSSF</span>
+                        <span class="jc-tag">CSSF 20-750</span>
+                    </div>
+                </div>
+                <div class="jurisdiction-card">
+                    <span class="jc-flag">🇩🇪</span>
+                    <span class="jc-name">Germania <span class="jc-code">DE</span></span>
+                    <div class="jc-tags">
+                        <span class="jc-tag law">DSGVO / BDSG</span>
+                        <span class="jc-tag auth">BfDI · BSI</span>
+                        <span class="jc-tag fin">BaFin</span>
+                        <span class="jc-tag">BAIT / IT-Grundschutz</span>
+                    </div>
+                </div>
+                <div class="jurisdiction-card">
+                    <span class="jc-flag">🇦🇹</span>
+                    <span class="jc-name">Austria <span class="jc-code">AT</span></span>
+                    <div class="jc-tags">
+                        <span class="jc-tag law">DSGVO / DSG</span>
+                        <span class="jc-tag auth">DSB · A-SIT</span>
+                        <span class="jc-tag fin">FMA</span>
+                        <span class="jc-tag">NIS 2024</span>
+                    </div>
+                </div>
+                <div class="jurisdiction-card">
+                    <span class="jc-flag">🇮🇹</span>
+                    <span class="jc-name">Italia <span class="jc-code">IT</span></span>
+                    <div class="jc-tags">
+                        <span class="jc-tag law">GDPR / Codice Privacy</span>
+                        <span class="jc-tag auth">Garante · ACN</span>
+                        <span class="jc-tag fin">Banca d'Italia</span>
+                        <span class="jc-tag">ACN Guidelines</span>
+                    </div>
+                </div>
+                <div class="jurisdiction-card">
+                    <span class="jc-flag">🇬🇧</span>
+                    <span class="jc-name">Regno Unito <span class="jc-code">GB</span></span>
+                    <div class="jc-tags">
+                        <span class="jc-tag law">UK GDPR / DPA 2018</span>
+                        <span class="jc-tag auth">ICO · NCSC</span>
+                        <span class="jc-tag fin">FCA · PRA</span>
+                        <span class="jc-tag">UK NIS · Op. Resilience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What gets substituted -->
+    <section class="section section-alt" id="tokens">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cosa viene sostituito</h2>
+                <p>Ogni configurazione paese definisce una mappa di token. Quando viene richiesta una politica, la piattaforma applica le sostituzioni in ordine — corrispondenza più lunga prima, in modo che termini composti come "revDSG" vengano sostituiti prima delle sottostringhe più brevi.</p>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="token-table">
+                    <thead>
+                        <tr>
+                            <th>Token / Concetto</th>
+                            <th>CH (predefinito)</th>
+                            <th>FR</th>
+                            <th>DE</th>
+                            <th>GB</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Legge sulla protezione dei dati</td>
+                            <td class="ch-val">nLPD (revDSG)</td>
+                            <td>RGPD</td>
+                            <td>DSGVO / BDSG</td>
+                            <td>UK GDPR / DPA 2018</td>
+                        </tr>
+                        <tr>
+                            <td>Autorità per la protezione dei dati</td>
+                            <td class="ch-val">PFPDT (FDPIC)</td>
+                            <td>CNIL</td>
+                            <td>BfDI / DSK</td>
+                            <td>ICO</td>
+                        </tr>
+                        <tr>
+                            <td>Autorità di vigilanza</td>
+                            <td class="ch-val">PFPDT</td>
+                            <td>CNIL / ANSSI</td>
+                            <td>BSI / BfDI</td>
+                            <td>ICO / NCSC</td>
+                        </tr>
+                        <tr>
+                            <td>Regolatore del settore finanziario</td>
+                            <td class="ch-val">FINMA</td>
+                            <td>ACPR / AMF</td>
+                            <td>BaFin</td>
+                            <td>FCA / PRA</td>
+                        </tr>
+                        <tr>
+                            <td>Titolo CISO</td>
+                            <td class="ch-val">RSSI</td>
+                            <td>RSSI</td>
+                            <td>ISB</td>
+                            <td>CISO</td>
+                        </tr>
+                        <tr>
+                            <td>Titolo DPO</td>
+                            <td class="ch-val">DPD (préposé)</td>
+                            <td>DPD (délégué)</td>
+                            <td>DSB</td>
+                            <td>DPO</td>
+                        </tr>
+                        <tr>
+                            <td>Acronimo MFA</td>
+                            <td class="ch-val">AMF</td>
+                            <td>AMF</td>
+                            <td>MFA</td>
+                            <td>MFA</td>
+                        </tr>
+                        <tr>
+                            <td>Framework principale di cybersicurezza</td>
+                            <td class="ch-val">CSRM (NCSC CH)</td>
+                            <td>ANSSI + NIS2</td>
+                            <td>BSI IT-Grundschutz + BAIT</td>
+                            <td>NCSC CAF + UK NIS</td>
+                        </tr>
+                        <tr>
+                            <td>Recepimento NIS2</td>
+                            <td class="ch-val">Swiss ISG (teilweise)</td>
+                            <td>Legge di recepimento 2024</td>
+                            <td>NIS2UmsuCG (2024)</td>
+                            <td>UK NIS Regs 2018</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem;">
+                Le mappe di sostituzione complete sono definite nelle configurazioni YAML paese integrate nell'immagine Docker al momento della build. I token coprono anche: riferimenti agli obblighi nazionali, normative settoriali, nomi amministrativi e termini procedurali.
+            </p>
+        </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="section" id="architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2>Come funziona</h2>
+                <p>La pipeline di rendering è puramente additiva — i file di politica sorgente non vengono mai modificati.</p>
+            </div>
+            <div class="arch-box">
+                <h3>Pipeline di rendering al momento della richiesta</h3>
+                <div class="arch-flow">
+                    <div class="arch-step"><strong>1. Richiesta</strong>Politica recuperata per l'org</div>
+                    <span class="arch-arrow">→</span>
+                    <div class="arch-step"><strong>2. Ricerca</strong>Campo <code style="font-size:0.7rem">org.country</code> letto</div>
+                    <span class="arch-arrow">→</span>
+                    <div class="arch-step"><strong>3. Caricamento config</strong>Config paese caricata (cache LRU)</div>
+                    <span class="arch-arrow">→</span>
+                    <div class="arch-step"><strong>4. Rendering</strong>Sostituzione token applicata (più lungo prima)</div>
+                    <span class="arch-arrow">→</span>
+                    <div class="arch-step"><strong>5. Risposta</strong>Politica specifica per paese restituita</div>
+                </div>
+            </div>
+            <div class="no-clone-box">
+                <strong>Perché nessun clone?</strong> Clonare le politiche per paese crea un incubo di manutenzione — 250+ documenti × 7 paesi × 4+ lingue = 7.000+ file che devono essere tutti aggiornati quando cambia una normativa. ISMS CORE risolve questo con un approccio a fonte unica di verità: la politica di base è autorevole, e la configurazione del paese è un sottile strato sovrapposto. Aggiorna un file di configurazione, tutte le politiche interessate vengono aggiornate istantaneamente alla prossima richiesta.
+            </div>
+            <div class="arch-box">
+                <h3>Impostazione del paese di un'organizzazione</h3>
+                <p style="font-size:0.875rem; color:var(--text-secondary); margin-bottom:1rem;">Il paese è impostato per organizzazione (tenant) da un super admin. Tutte le politiche servite a quell'organizzazione vengono rese con i token di giurisdizione corretti.</p>
+                <ol style="font-size:0.875rem; color:var(--text-secondary); padding-left:1.5rem; line-height:1.8;">
+                    <li>Naviga verso <strong>Organizzazioni</strong> nel pannello di amministrazione</li>
+                    <li>Modifica l'organizzazione e seleziona <strong>Paese / Giurisdizione normativa</strong></li>
+                    <li>Salva — tutti i rendering di politiche successivi utilizzano la nuova configurazione paese</li>
+                    <li>Nessun riavvio o rebuild richiesto — le configurazioni sono integrate nell'immagine Docker al momento della build e memorizzate nella cache in memoria al primo accesso</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related compliance modules -->
+    <section class="section section-alt" id="related">
+        <div class="container">
+            <div class="section-header">
+                <h2>Moduli di valutazione della conformità associati</h2>
+                <p>Ogni giurisdizione dispone di uno o più moduli di valutazione dedicati nella piattaforma. Usa la localizzazione per paese + il modulo corrispondente insieme per la visione più accurata della postura di conformità.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
+                <div class="fw-detail-card" style="margin:0">
+                    <div class="fw-meta-pills" style="margin-bottom:0.75rem">
+                        <span class="fw-pill">🇧🇪 Belgio</span>
+                    </div>
+                    <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:0.75rem">Recepimento belga NIS2; framework di certificazione CyberFundamentals CCN/CCB.</p>
+                    <div class="compliance-links">
+                        <a href="compliance.html#cyfun-be" class="cl-link">CyberFundamentals (BE) →</a>
+                        <a href="compliance.html#nis2" class="cl-link">NIS2 →</a>
+                    </div>
+                </div>
+                <div class="fw-detail-card" style="margin:0">
+                    <div class="fw-meta-pills" style="margin-bottom:0.75rem">
+                        <span class="fw-pill">🇩🇪 Germania</span>
+                    </div>
+                    <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:0.75rem">Circolare di vigilanza IT BaFin per le banche; percorso di doppia certificazione BSI IT-Grundschutz.</p>
+                    <div class="compliance-links">
+                        <a href="compliance.html#bafin-bait" class="cl-link">BaFin BAIT →</a>
+                        <a href="compliance.html#bsi" class="cl-link">BSI IT-Grundschutz →</a>
+                        <a href="compliance.html#nis2" class="cl-link">NIS2 →</a>
+                    </div>
+                </div>
+                <div class="fw-detail-card" style="margin:0">
+                    <div class="fw-meta-pills" style="margin-bottom:0.75rem">
+                        <span class="fw-pill">🇱🇺 Lussemburgo</span>
+                    </div>
+                    <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:0.75rem">Circolare CSSF di gestione del rischio ICT; recepimento NIS2 lussemburghese.</p>
+                    <div class="compliance-links">
+                        <a href="compliance.html#cssf-lu" class="cl-link">CSSF 20-750 →</a>
+                        <a href="compliance.html#nis2" class="cl-link">NIS2 →</a>
+                        <a href="compliance.html#dora" class="cl-link">DORA →</a>
+                    </div>
+                </div>
+                <div class="fw-detail-card" style="margin:0">
+                    <div class="fw-meta-pills" style="margin-bottom:0.75rem">
+                        <span class="fw-pill">🇮🇹 Italia</span>
+                    </div>
+                    <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:0.75rem">Linee guida nazionali ACN di cybersicurezza; recepimento italiano NIS2 (D.Lgs. 138/2024).</p>
+                    <div class="compliance-links">
+                        <a href="compliance.html#acn-it" class="cl-link">ACN Guidelines →</a>
+                        <a href="compliance.html#nis2" class="cl-link">NIS2 →</a>
+                    </div>
+                </div>
+                <div class="fw-detail-card" style="margin:0">
+                    <div class="fw-meta-pills" style="margin-bottom:0.75rem">
+                        <span class="fw-pill">🇬🇧 Regno Unito</span>
+                    </div>
+                    <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:0.75rem">UK NIS Regulations 2018; framework di resilienza operativa FCA/PRA (PS21/3, PS26/2).</p>
+                    <div class="compliance-links">
+                        <a href="compliance.html#uk-nis" class="cl-link">UK NIS →</a>
+                        <a href="compliance.html#uk-op-resilience" class="cl-link">UK Op. Resilience →</a>
+                    </div>
+                </div>
+                <div class="fw-detail-card" style="margin:0">
+                    <div class="fw-meta-pills" style="margin-bottom:0.75rem">
+                        <span class="fw-pill">🇫🇷 Francia</span>
+                    </div>
+                    <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:0.75rem">Modulo ANSSI ReCyF v2.5 — recepimento francese NIS2 (Loi 2024-449). 20 obiettivi di sicurezza su 4 pilastri, 152 requisiti.</p>
+                    <div class="compliance-links">
+                        <a href="compliance.html#recyf" class="cl-link">ReCyF v2.5 (France NIS2) →</a>
+                        <a href="compliance.html#nis2" class="cl-link">NIS2 →</a>
+                        <a href="compliance.html#dora" class="cl-link">DORA →</a>
+                    </div>
+                </div>
+                <div class="fw-detail-card" style="margin:0">
+                    <div class="fw-meta-pills" style="margin-bottom:0.75rem">
+                        <span class="fw-pill">🇦🇹 Austria</span>
+                    </div>
+                    <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:0.75rem">Localizzazione paese attiva — token DSGVO/DSG, DSB, FMA, A-SIT applicati. Recepimento austriaco NIS2 (Netz- und Informationssystemsicherheitsgesetz 2024).</p>
+                    <div class="compliance-links">
+                        <a href="compliance.html#nis2" class="cl-link">NIS2 →</a>
+                        <a href="compliance.html#dora" class="cl-link">DORA →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">Copyright © 2025–2026 The ISMS Core Project · ISMS Core Contributors. Tutti i diritti riservati.</p>
+                <p class="footer-tagline"><a href="index.html" style="color: var(--bamboo); text-decoration: none;">← Torna a ISMS CORE</a> &nbsp;·&nbsp; <em>Dove le antenne di bambù funzionano davvero.</em> 🎋</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
