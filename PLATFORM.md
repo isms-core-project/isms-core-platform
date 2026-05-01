@@ -95,7 +95,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
                         │  │ Threat intel     │  │ connectors       │   │
                         │  │ MITRE · KEV ·    │  │ 44 evidence      │   │
                         │  │ EPSS · NVD CVE · │  │ connectors       │   │
-                        │  │ ENISA EUVD       │  │                  │   │
+                        │  │ ENISA EUVD · EDB │  │                  │   │
                         │  └──────────────────┘  └──────────────────┘   │
                         └────────────────────────────────────────────────┘
 ```
@@ -112,7 +112,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | `isms-core-opensearch` | OpenSearch 3.x | Full-text search over policy and IMP content + NVD CVE/CPE indices. Internal only. |
 | `isms-core-worker` | Celery 5.3 | Background tasks — import, sync, compliance recalculation. Queue: `isms`. |
 | `isms-core-beat` | Celery Beat | Scheduled jobs — nightly evidence archive at 02:00 UTC; daily KPI snapshots at 06:00 UTC. No healthcheck (by design). |
-| `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, FIRST EPSS, NVD CVE/CPE, ENISA EUVD. Writes to Postgres and OpenSearch. Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `FEEDS_EUVD_ENABLED`, `NIST_API_KEY`. |
+| `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, FIRST EPSS, NVD CVE/CPE, ENISA EUVD, Exploit-DB (~52K exploits daily). Writes to Postgres and OpenSearch. Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `FEEDS_EUVD_ENABLED`, `NIST_API_KEY`. |
 | `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (`--profile threat-intel`) OSINT IOC feed container — 11 sources: CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia. Serves on-demand trigger server on port 9002. Env: `ABUSEIPDB_API_KEY`, `TI_THREATFOX_API_KEY`, `MALWAREBAZAAR_API_KEY`, `SHODAN_API_KEY`, `TI_MISP_IMPORT_FROM_DATE`. |
 | `isms-core-connectors` | Python 3.12 | Automated evidence runner — loads all 44 connectors dynamically, pushes evidence to `connector_evidence` table. Env: `CONNECTORS_WORKER_SECRET`. |
 
@@ -154,7 +154,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Compliance Assessments** | 25 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) for full coverage |
 | **Projects** | Workspace layer — named projects own a curated subset of policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date) applied on add; active/inactive/draft/archived lifecycle |
 | **System Event Log** | Immutable trail of every platform action (who, what, when, resource) |
-| **Threat Intelligence** | Feed run history, CISA KEV entries, EPSS scores, MITRE techniques, ENISA EUVD entries. NVD CVE (~250K docs) and CPE (~50-100K docs) stored in OpenSearch indices `nvd-cve` / `nvd-cpe` with EPSS + KEV + EUVD cross-enrichment at index time. CVSS 4.0 supported. OSINT IOC feeds: CIRCL MISP + Botvrij MISP (120K+ IOCs), AbuseIPDB blacklist, Malpedia (malware families + threat actors) — all indexed to per-source OpenSearch indices and cross-enriched at ingest with ATT&CK TIDs, family slugs, and actor slugs. |
+| **Threat Intelligence** | Feed run history, CISA KEV entries, EPSS scores, MITRE techniques, ENISA EUVD entries, Exploit-DB cross-references. NVD CVE (~250K docs) and CPE (~50-100K docs) stored in OpenSearch indices `nvd-cve` / `nvd-cpe` with EPSS + KEV + EUVD + Exploit-DB cross-enrichment at index time (`edb_id`, `edb_verified`, `edb_description` fields added to matching CVEs). CVSS 4.0 supported. OSINT IOC feeds: CIRCL MISP + Botvrij MISP (120K+ IOCs), AbuseIPDB blacklist, Malpedia (malware families + threat actors) — all indexed to per-source OpenSearch indices and cross-enriched at ingest with ATT&CK TIDs, family slugs, and actor slugs. |
 
 ---
 
@@ -246,9 +246,9 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Country Localisation** | Policy rendering adapts regulatory references for 8 jurisdictions: CH (default), FR, BE, LU, DE, AT, IT, GB — applied at request time from `org.country` |
 | **Cross-Framework Coverage** | BFS inference maps ISO 27001 assessment coverage to NIS2, DORA, and GDPR; Mapping Matrix and Inferred Coverage tabs |
 | **MFA** | TOTP-based 2FA — Google Authenticator / Authy compatible; QR code setup; 8 single-use backup codes; auto-submits on 6-digit entry |
-| **Threat Intelligence Feeds** | Two dedicated containers pulling 18 sources. `isms-core-feeds` (7): MITRE ATT&CK v19 (weekly — 697 techniques, 15 tactics), MITRE ATLAS (weekly), CISA KEV (daily), FIRST EPSS (daily — 10K limit, daily OpenSearch sync), NVD CVE full+delta (weekly/daily — ~250K CVEs, CVSS 4.0 supported), NVD CPE Option B (weekly), ENISA EUVD (daily — exploited + critical CVEs). `isms-core-threat-intel` (optional profile, 11 sources): CIRCL MISP + Botvrij MISP (6-hourly delta, 120K+ IOCs), AbuseIPDB (daily), URLhaus (daily — malware URLs), ThreatFox (daily — malware IOCs), SSLBL (daily — malicious SSL cert fingerprints), Red Flag Domains (daily), Stopforumspam (daily), MalwareBazaar (daily — malware sample hashes), Feodo Tracker (daily — C2 botnet IPs), Malpedia (weekly — malware families + actors). All OSINT IOCs cross-enriched at ingest with ATT&CK TIDs, family slugs, actor slugs. |
-| **CVE / CPE Explorer** | Search and filter ~250K NVD CVE entries by severity, EPSS score, CVSS version (v2/v3/v4), year, KEV-only, EUVD flag. Detail panel: CVSS scores (v2/v3/v4), CPE applicability, CWEs, NVD references, EUVD badge. Separate CPE tab. |
-| **EUVD Explorer** | ENISA European Vulnerability Database — browse exploited and critical vulnerabilities; filter by score, exploited-only; detail panel with vendors, products, EPSS, aliases. |
+| **Threat Intelligence Feeds** | Two dedicated containers pulling 19 sources. `isms-core-feeds` (8): MITRE ATT&CK v19 (weekly — 697 techniques, 15 tactics), MITRE ATLAS (weekly), CISA KEV (daily), FIRST EPSS (daily — 10K limit, daily OpenSearch sync), NVD CVE full+delta (weekly/daily — ~250K CVEs, CVSS 4.0 supported), NVD CPE Option B (weekly), ENISA EUVD (daily — exploited + critical CVEs), Exploit-DB (daily — ~52K exploit entries cross-referenced to NVD CVE by CVE ID; adds EDB chip + Metasploit badge to CVE Explorer). `isms-core-threat-intel` (optional profile, 11 sources): CIRCL MISP + Botvrij MISP (6-hourly delta, 120K+ IOCs), AbuseIPDB (daily), URLhaus (daily — malware URLs), ThreatFox (daily — malware IOCs), SSLBL (daily — malicious SSL cert fingerprints), Red Flag Domains (daily), Stopforumspam (daily), MalwareBazaar (daily — malware sample hashes), Feodo Tracker (daily — C2 botnet IPs), Malpedia (weekly — malware families + actors). All OSINT IOCs cross-enriched at ingest with ATT&CK TIDs, family slugs, actor slugs. |
+| **CVE / CPE Explorer** | Search and filter ~250K NVD CVE entries by severity, EPSS score, CVSS version (v2/v3/v4), year, KEV-only, EUVD flag, EDB-only (Exploit-DB cross-reference filter). Detail panel: CVSS scores (v2/v3/v4), CPE applicability, CWEs, NVD references, EUVD badge, EDB/EDB✓ chip (Metasploit badge when `edb_verified`). Separate CPE tab. |
+| **EUVD Explorer** | ENISA European Vulnerability Database — browse exploited and critical vulnerabilities; filter by score, exploited-only toggle, critical-only toggle, EU-assigned toggle (mutually exclusive); detail panel with vendors, products, EPSS, aliases. |
 | **KEV Audit Report (A.8.8)** | Audit trail for ISO 27001:2022 A.8.8 using CISA KEV feed — remediation status by CVE, per-vendor summary, CSV export for auditor evidence. |
 | **IOC Explorer** | Search and filter OSINT IOCs across all 11 sources (CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia) by type (IP / domain / URL / hash / certificate), source chip, MITRE technique, and tag. |
 | **IP Enrichment** | On-demand single-IP lookup: AbuseIPDB abuse score + report count + categories; Shodan paid API (open ports, banners, CVEs, hostnames) or Shodan InternetDB free fallback. Results cached 24h. |
@@ -970,6 +970,10 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 - [ ] MFA enabled on all admin accounts (**System → Two-factor authentication**)
 
 ---
+
+<p align="center">
+  <a href="https://isms-core.com/platform.html">isms-core.com/platform</a> · <a href="https://isms-core.com">isms-core.com</a>
+</p>
 
 <p align="center">
 <strong>Copyright © 2025–2026 The ISMS Core Project. All rights reserved.</strong>

@@ -45,7 +45,7 @@
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/ReCyF_v2.5_(FR_NIS2)-Assessment_Tool-002395?style=flat-square" alt="ReCyF v2.5"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/FINMA-Assessment_Tool-C62828?style=flat-square" alt="FINMA"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v19-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
-  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/3%2C315_Crosswalk_Objects_%2F_41_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/3%2C433_Crosswalk_Objects_%2F_44_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
 </p>
 </details>
 
@@ -397,6 +397,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | MITRE ATT&CK v19 | Threat technique mapping (Enterprise / ICS / Mobile) — 697 techniques across 15 tactics, EPSS + CISA KEV correlation. | ![v19](https://img.shields.io/badge/v19-DC143C?style=flat-square) |
 | MITRE ATLAS | AI/ML adversarial threat techniques | ![Mapped](https://img.shields.io/badge/Mapped-DC143C?style=flat-square) |
 | ENISA EUVD | European Vulnerability Database — exploited + critical CVEs; daily feed; EUVD Explorer + cross-enrichment of NVD CVE index with `in_euvd` flag | ![Feed](https://img.shields.io/badge/TI_Feed-003399?style=flat-square) |
+| Exploit-DB | Daily exploit database (~52K entries) — cross-referenced to NVD CVE by CVE ID; adds `edb_id`, `edb_verified` (Metasploit module flag), `edb_description` to matching CVEs. EDB/EDB✓ chips in CVE Explorer; EDB-only filter. | ![Feed](https://img.shields.io/badge/TI_Feed-8B0000?style=flat-square) |
 | CIRCL MISP OSINT Feed | Public MISP feed (Luxembourg) — 6-hourly manifest delta; 100K+ IOCs (IPs, domains, URLs, hashes) cross-enriched with ATT&CK TIDs, Malpedia family slugs, actor slugs at ingest | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Botvrij MISP OSINT Feed | Public MISP feed (Botvrij.eu) — 6-hourly manifest delta; deduplicated against CIRCL by IOC value + source | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | AbuseIPDB | Daily blacklist (top 10K confidence=100 IPs); on-demand single-IP enrichment with 24h cache; OpenSearch `ti-abuseipdb-blacklist` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
@@ -512,6 +513,8 @@ Commercial licensing: **info@isms-core.com**
   <a href="mailto:info@isms-core.com"><img src="https://img.shields.io/badge/Email-info@isms--core.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
   <a href="https://github.com/isms-core-project"><img src="https://img.shields.io/badge/GitHub-isms--core--project-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/></a>
   <a href="https://isms-core.com"><img src="https://img.shields.io/badge/Website-isms--core.com-2E8B57?style=flat-square" alt="Website"/></a>
+  <a href="https://isms-core.com/platform.html"><img src="https://img.shields.io/badge/Platform-isms--core.com/platform-2E8B57?style=flat-square" alt="Platform"/></a>
+  <a href="https://isms-core.com/compliance.html"><img src="https://img.shields.io/badge/Compliance-isms--core.com/compliance-0066CC?style=flat-square" alt="Compliance Frameworks"/></a>
 </p>
 
 ---
