@@ -407,8 +407,10 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | SSL Blacklist (SSLBL) | Daily SSL certificate blacklist (abuse.ch) — SHA1 fingerprints of certificates used by malware C2 infrastructure; `ti-sslbl` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | MalwareBazaar | Daily malware sample hash feed (abuse.ch) — MD5/SHA1/SHA256 hashes with family classification; requires `MALWAREBAZAAR_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Feodo Tracker | Daily C2 IP blacklist (abuse.ch) — Emotet, QakBot, TrickBot, Dridex botnet command-and-control IPs; confidence 85; `ti-feodotracker` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| AlienVault OTX | Daily Open Threat Exchange pulses — IOCs with TLP labels (WHITE/GREEN/AMBER/RED), ATT&CK TIDs, and confidence scores derived from pulse subscriber count; requires `OTX_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Red Flag Domains | Daily suspicious newly-registered domain feed — `ti-red-flag-domains` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Stopforumspam | Daily spammer IP/email/username database — `ti-stopforumspam` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| VirusTotal enrichment | Daily IOC confidence enrichment — queries existing IOCs against VT v3 API, updates confidence scores based on AV engine detection ratios; free tier (~500 req/day); requires `VT_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | EU GDPR / Swiss DSG | Security and privacy control mapping, operational checklists | ![Toolkit](https://img.shields.io/badge/Toolkit-FFD700?style=flat-square) |
 
 </details>

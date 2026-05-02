@@ -113,7 +113,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | `isms-core-worker` | Celery 5.3 | Background tasks — import, sync, compliance recalculation. Queue: `isms`. |
 | `isms-core-beat` | Celery Beat | Scheduled jobs — nightly evidence archive at 02:00 UTC; daily KPI snapshots at 06:00 UTC. No healthcheck (by design). |
 | `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, FIRST EPSS, NVD CVE/CPE, ENISA EUVD, Exploit-DB (~52K exploits daily). Writes to Postgres and OpenSearch. Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `FEEDS_EUVD_ENABLED`, `NIST_API_KEY`. |
-| `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (`--profile threat-intel`) OSINT IOC feed container — 11 sources: CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia. Serves on-demand trigger server on port 9002. Env: `ABUSEIPDB_API_KEY`, `TI_THREATFOX_API_KEY`, `MALWAREBAZAAR_API_KEY`, `SHODAN_API_KEY`, `TI_MISP_IMPORT_FROM_DATE`. |
+| `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (`--profile threat-intel`) OSINT IOC feed container — 12 sources: CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia. VirusTotal enrichment (optional). Serves on-demand trigger server on port 9002. Env: `ABUSEIPDB_API_KEY`, `OTX_API_KEY`, `TI_THREATFOX_API_KEY`, `MALWAREBAZAAR_API_KEY`, `VT_API_KEY`, `SHODAN_API_KEY`, `TI_MISP_IMPORT_FROM_DATE`. |
 | `isms-core-connectors` | Python 3.12 | Automated evidence runner — loads all 44 connectors dynamically, pushes evidence to `connector_evidence` table. Env: `CONNECTORS_WORKER_SECRET`. |
 
 > **Access in production:** `https://{HOST_IP}` via nginx. Do NOT access `:3000` or `:8000` directly — those ports are not exposed in production.
@@ -129,7 +129,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 > | `--profile opensearch-cluster` | Replaces the single OpenSearch node with a 3-node cluster (`isms-core-os01/02/03`) for HA and horizontal search capacity. Set `OPENSEARCH_HEAP` per node (e.g. `4g` for 3×4 GB on a 32 GB host). |
 > | `--profile garage` | Adds `isms-core-garage` — a Garage S3-compatible object store for evidence files and index snapshots. Requires `GARAGE_RPC_SECRET`, `GARAGE_ACCESS_KEY`, `GARAGE_SECRET_KEY`. |
 > | `--profile dashboards` | Adds `isms-core-opensearch-dashboards` (port 5601). Set `DASHBOARDS_BIND=0.0.0.0` to reach it from the LAN. |
-> | `--profile threat-intel` | Adds `isms-core-threat-intel` — 11-source OSINT IOC container (CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia). Requires `ABUSEIPDB_API_KEY`; `TI_THREATFOX_API_KEY` + `MALWAREBAZAAR_API_KEY` for those feeds. Set `VITE_THREAT_INTEL_ENABLED=true` to show the Intelligence sidebar. |
+> | `--profile threat-intel` | Adds `isms-core-threat-intel` — 12-source OSINT IOC container (CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia). Optional VirusTotal enrichment. Requires `ABUSEIPDB_API_KEY` + `OTX_API_KEY`; `TI_THREATFOX_API_KEY` + `MALWAREBAZAAR_API_KEY` + `VT_API_KEY` for those feeds. Set `VITE_THREAT_INTEL_ENABLED=true` to show the Intelligence sidebar. |
 > | `--profile smtp-bridge` | Adds `isms-core-smtp-bridge` — an OAuth relay for Microsoft 365 / Exchange Online. Requires `SMTP_BRIDGE_*` credentials. |
 > | `--profile mailpit` | Adds `isms-core-mailpit` — local mail catcher for dev/test (port 8025). Never use in production. |
 >
@@ -154,7 +154,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Compliance Assessments** | 25 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) for full coverage |
 | **Projects** | Workspace layer — named projects own a curated subset of policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date) applied on add; active/inactive/draft/archived lifecycle |
 | **System Event Log** | Immutable trail of every platform action (who, what, when, resource) |
-| **Threat Intelligence** | Feed run history, CISA KEV entries, EPSS scores, MITRE techniques, ENISA EUVD entries, Exploit-DB cross-references. NVD CVE (~250K docs) and CPE (~50-100K docs) stored in OpenSearch indices `nvd-cve` / `nvd-cpe` with EPSS + KEV + EUVD + Exploit-DB cross-enrichment at index time (`edb_id`, `edb_verified`, `edb_description` fields added to matching CVEs). CVSS 4.0 supported. OSINT IOC feeds: CIRCL MISP + Botvrij MISP (120K+ IOCs), AbuseIPDB blacklist, Malpedia (malware families + threat actors) — all indexed to per-source OpenSearch indices and cross-enriched at ingest with ATT&CK TIDs, family slugs, and actor slugs. |
+| **Threat Intelligence** | Feed run history, CISA KEV entries, EPSS scores, MITRE techniques, ENISA EUVD entries, Exploit-DB cross-references. NVD CVE (~250K docs) and CPE (~50-100K docs) stored in OpenSearch indices `nvd-cve` / `nvd-cpe` with EPSS + KEV + EUVD + Exploit-DB cross-enrichment at index time (`edb_id`, `edb_verified`, `edb_description` fields added to matching CVEs). CVSS 4.0 supported. OSINT IOC feeds (12 sources): CIRCL MISP + Botvrij MISP (120K+ IOCs), AbuseIPDB blacklist, URLhaus, ThreatFox, SSLBL, AlienVault OTX (pulses with TLP labels + confidence), Feodo Tracker, Red Flag Domains, Stopforumspam, MalwareBazaar, Malpedia (malware families + threat actors) — all indexed to per-source OpenSearch indices and cross-enriched at ingest with ATT&CK TIDs, family slugs, actor slugs, and TLP labels. VirusTotal enrichment updates IOC confidence scores daily. |
 
 ---
 
@@ -246,11 +246,12 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Country Localisation** | Policy rendering adapts regulatory references for 8 jurisdictions: CH (default), FR, BE, LU, DE, AT, IT, GB — applied at request time from `org.country` |
 | **Cross-Framework Coverage** | BFS inference maps ISO 27001 assessment coverage to NIS2, DORA, and GDPR; Mapping Matrix and Inferred Coverage tabs |
 | **MFA** | TOTP-based 2FA — Google Authenticator / Authy compatible; QR code setup; 8 single-use backup codes; auto-submits on 6-digit entry |
-| **Threat Intelligence Feeds** | Two dedicated containers pulling 19 sources. `isms-core-feeds` (8): MITRE ATT&CK v19 (weekly — 697 techniques, 15 tactics), MITRE ATLAS (weekly), CISA KEV (daily), FIRST EPSS (daily — 10K limit, daily OpenSearch sync), NVD CVE full+delta (weekly/daily — ~250K CVEs, CVSS 4.0 supported), NVD CPE Option B (weekly), ENISA EUVD (daily — exploited + critical CVEs), Exploit-DB (daily — ~52K exploit entries cross-referenced to NVD CVE by CVE ID; adds EDB chip + Metasploit badge to CVE Explorer). `isms-core-threat-intel` (optional profile, 11 sources): CIRCL MISP + Botvrij MISP (6-hourly delta, 120K+ IOCs), AbuseIPDB (daily), URLhaus (daily — malware URLs), ThreatFox (daily — malware IOCs), SSLBL (daily — malicious SSL cert fingerprints), Red Flag Domains (daily), Stopforumspam (daily), MalwareBazaar (daily — malware sample hashes), Feodo Tracker (daily — C2 botnet IPs), Malpedia (weekly — malware families + actors). All OSINT IOCs cross-enriched at ingest with ATT&CK TIDs, family slugs, actor slugs. |
+| **Threat Intelligence Feeds** | Two dedicated containers pulling 20+ sources. `isms-core-feeds` (8): MITRE ATT&CK v19 (weekly — 697 techniques, 15 tactics), MITRE ATLAS (weekly), CISA KEV (daily), FIRST EPSS (daily — 10K limit, daily OpenSearch sync), NVD CVE full+delta (weekly/daily — ~250K CVEs, CVSS 4.0 supported), NVD CPE Option B (weekly), ENISA EUVD (daily — exploited + critical CVEs), Exploit-DB (daily — ~52K exploit entries cross-referenced to NVD CVE by CVE ID; adds EDB chip + Metasploit badge to CVE Explorer). `isms-core-threat-intel` (optional profile, 12 sources): CIRCL MISP + Botvrij MISP (6-hourly delta, 120K+ IOCs), AbuseIPDB (daily), URLhaus (daily — malware URLs), ThreatFox (6-hourly — malware IOCs), SSLBL (daily — malicious SSL cert fingerprints), AlienVault OTX (daily — pulses with TLP labels + confidence scores), Red Flag Domains (daily), Stopforumspam (daily), MalwareBazaar (6-hourly — malware hashes), Feodo Tracker (6-hourly — C2 botnet IPs), Malpedia (weekly — malware families + actors). VirusTotal enrichment (daily — optional, updates IOC confidence scores). All OSINT IOCs cross-enriched at ingest with ATT&CK TIDs, family slugs, actor slugs, TLP labels. |
 | **CVE / CPE Explorer** | Search and filter ~250K NVD CVE entries by severity, EPSS score, CVSS version (v2/v3/v4), year, KEV-only, EUVD flag, EDB-only (Exploit-DB cross-reference filter). Detail panel: CVSS scores (v2/v3/v4), CPE applicability, CWEs, NVD references, EUVD badge, EDB/EDB✓ chip (Metasploit badge when `edb_verified`). Separate CPE tab. |
 | **EUVD Explorer** | ENISA European Vulnerability Database — browse exploited and critical vulnerabilities; filter by score, exploited-only toggle, critical-only toggle, EU-assigned toggle (mutually exclusive); detail panel with vendors, products, EPSS, aliases. |
 | **KEV Audit Report (A.8.8)** | Audit trail for ISO 27001:2022 A.8.8 using CISA KEV feed — remediation status by CVE, per-vendor summary, CSV export for auditor evidence. |
-| **IOC Explorer** | Search and filter OSINT IOCs across all 11 sources (CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia) by type (IP / domain / URL / hash / certificate), source chip, MITRE technique, and tag. |
+| **Threat Exposure** | Active MITRE techniques from live IOC feeds mapped to ISO 27001 controls — gaps highlighted. Summary bar: active techniques / affected controls / gap count. Per-technique table with IOC count, source feed chips, and colour-coded control chips (green ≥ 70%, orange 40–69%, red < 40%, grey = not assessed). Requires threat-intel profile. |
+| **IOC Explorer** | Search and filter OSINT IOCs across all 12 sources (CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia) by type (IP / domain / URL / hash), source, and free-text. Columns: type, value, source, confidence, TLP label, last seen, attribution (family / actor / ATT&CK TID chips). Expand any row for full detail including all tags. |
 | **IP Enrichment** | On-demand single-IP lookup: AbuseIPDB abuse score + report count + categories; Shodan paid API (open ports, banners, CVEs, hostnames) or Shodan InternetDB free fallback. Results cached 24h. |
 | **Malware Atlas** | Malpedia-sourced malware family browser (aliases, description, ATT&CK TIDs, associated actors) and threat actor directory (country attribution, motivation). |
 | **Health Alert Banner** | Dismissible warning banner when any feed run, connector sync, or OpenSearch check reports an error in the last 24 hours. Red-dot sidebar badges on Intelligence and Suppliers groups. |
@@ -601,17 +602,19 @@ Set `VITE_THREAT_INTEL_ENABLED=true` in `.env` before building the frontend to s
 
 | Feed | Schedule | API key | What it ingests |
 |------|----------|---------|-----------------|
-| **CIRCL MISP** | Every 6h (delta) | None (public) | IOCs (IPs, domains, URLs, hashes) with ATT&CK TIDs + Malpedia galaxy tags |
-| **Botvrij MISP** | Every 6h (delta, staggered) | None (public) | Same schema — deduplicated against CIRCL by `(ioc_type, value, source)` |
-| **AbuseIPDB blacklist** | Daily (02:00 UTC) | `ABUSEIPDB_API_KEY` | Top 10,000 confidence=100 abusive IPs → `ti_iocs` + `ti-abuseipdb-blacklist` OpenSearch index |
-| **URLhaus** | Daily (03:00 UTC) | None | Malware download URLs + payload hashes (abuse.ch) |
-| **ThreatFox** | Daily | `TI_THREATFOX_API_KEY` | Malware IOCs (IPs, domains, URLs, hashes) with confidence scores and malware family labels |
-| **SSL Blacklist (SSLBL)** | Daily (04:00 UTC) | None | SHA1 fingerprints of SSL certificates used by malware C2 infrastructure |
-| **Red Flag Domains** | Daily (05:00 UTC) | None | Newly registered suspicious domains |
-| **Stopforumspam** | Daily (05:30 UTC) | None | Spammer IP, email, and username database |
-| **MalwareBazaar** | Daily | `MALWAREBAZAAR_API_KEY` | Malware sample file hashes (MD5/SHA1/SHA256) with malware family classification |
-| **Feodo Tracker** | Daily | None | C2 IPs for Emotet, QakBot, TrickBot, Dridex botnets (confidence 85); `ti-feodotracker` |
-| **Malpedia** | Weekly (Sunday 03:00 UTC) | None | Malware families (3,600+) and threat actors (900+) from MISP galaxy — no API key required |
+| **CIRCL MISP** | Every 6h: 00:00, 06:00, 12:00, 18:00 UTC (delta) | None (public) | IOCs (IPs, domains, URLs, hashes) with ATT&CK TIDs + Malpedia galaxy tags + TLP |
+| **Botvrij MISP** | Every 6h: 01:00, 07:00, 13:00, 19:00 UTC (staggered delta) | None (public) | Same schema — deduplicated against CIRCL by `(ioc_type, value, source)` |
+| **AbuseIPDB blacklist** | Daily 02:00 UTC | `ABUSEIPDB_API_KEY` | Top 10,000 confidence=100 abusive IPs → `ti_iocs` + `ti-abuseipdb-blacklist` OpenSearch index |
+| **URLhaus** | Daily 03:00 UTC | None | Malware download URLs + payload hashes (abuse.ch) |
+| **ThreatFox** | Every 6h: 03:00, 09:00, 15:00, 21:00 UTC | `TI_THREATFOX_API_KEY` (optional) | Malware IOCs (IPs, domains, URLs, hashes) with confidence scores and malware family labels |
+| **SSL Blacklist (SSLBL)** | Daily 04:00 UTC | None | SHA1 fingerprints of SSL certificates used by malware C2 infrastructure |
+| **AlienVault OTX** | Daily 04:30 UTC | `OTX_API_KEY` | Open Threat Exchange pulses — IOCs with TLP labels, ATT&CK TIDs, confidence scores derived from pulse subscriber count |
+| **Feodo Tracker** | Every 6h: 04:30, 10:30, 16:30, 22:30 UTC | None | C2 IPs for Emotet, QakBot, TrickBot, Dridex botnets (confidence 85); `ti-feodotracker` |
+| **Red Flag Domains** | Daily 05:00 UTC | None | Newly registered suspicious domains |
+| **Stopforumspam** | Daily 05:30 UTC | None | Spammer IP, email, and username database (~140K IPs) |
+| **VirusTotal enrichment** | Daily 07:00 UTC | `VT_API_KEY` (optional) | Enriches existing IOCs with VT detection ratios — updates `confidence` only; does not add new IOCs. Capped at 450 req/day (free-tier safe). |
+| **MalwareBazaar** | Every 6h: 02:00, 08:00, 14:00, 20:00 UTC | `MALWAREBAZAAR_API_KEY` | Malware sample file hashes (MD5/SHA1/SHA256) with malware family classification |
+| **Malpedia** | Weekly, Sun 03:00 UTC | None | Malware families (3,600+) and threat actors (900+) from MISP galaxy — no API key required |
 
 **On-demand enrichment** (no schedule — triggered from the IP Enrichment page):
 - **AbuseIPDB check** — single-IP abuse score, report count, categories; 24h cache in `ti_enrichment_cache`
@@ -653,10 +656,13 @@ TI_ABUSEIPDB_ENABLED=false            # disable AbuseIPDB blacklist
 TI_URLHAUS_ENABLED=false              # disable URLhaus
 TI_THREATFOX_ENABLED=false            # disable ThreatFox
 TI_SSLBL_ENABLED=false                # disable SSL Blacklist
+TI_ALIENVAULT_ENABLED=false           # disable AlienVault OTX
+TI_FEODOTRACKER_ENABLED=false         # disable Feodo Tracker
 TI_RED_FLAG_DOMAINS_ENABLED=false     # disable Red Flag Domains
 TI_STOPFORUMSPAM_ENABLED=false        # disable Stopforumspam
+TI_VIRUSTOTAL_ENABLED=false           # disable VirusTotal enrichment
+TI_MALWAREBAZAAR_ENABLED=false        # disable MalwareBazaar
 TI_MALPEDIA_ENABLED=false             # disable Malpedia
-TI_FEODOTRACKER_ENABLED=false         # disable Feodo Tracker
 ```
 
 ---
@@ -923,11 +929,21 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 | `VITE_THREAT_INTEL_ENABLED` | No | Set to `true` to show IOC/IP Enrichment/Malware Atlas in frontend (baked at build time) |
 | `ABUSEIPDB_API_KEY` | No | Required for AbuseIPDB blacklist pull + on-demand IP enrichment |
 | `SHODAN_API_KEY` | No | Shodan paid API for IP enrichment — Shodan InternetDB (free) used if absent |
+| `OTX_API_KEY` | No | AlienVault OTX feed — required for AlienVault IOC ingestion |
+| `OTX_IMPORT_DAYS` | No | OTX history depth on first run (default: `90` days) |
+| `TI_THREATFOX_API_KEY` | No | ThreatFox API key — optional, enables higher rate limits |
+| `MALWAREBAZAAR_API_KEY` | No | MalwareBazaar API key — required for the feed |
+| `VT_API_KEY` | No | VirusTotal API key — enables daily IOC confidence enrichment (free tier: ~500 req/day) |
+| `VT_DAILY_LIMIT` | No | Max IOCs enriched per VirusTotal run (default: `450`) |
+| `MAXMIND_ACCOUNT_ID` / `MAXMIND_LICENSE_KEY` | No | GeoLite2 database for IP geolocation in feeds |
+| `IPINFO_API_KEY` | No | Enhanced geo + ASN enrichment for AbuseIPDB IPs |
 | `TI_MISP_IMPORT_FROM_DATE` | No | MISP first-run date floor (default: `2024-01-01`; set `2000-01-01` for full history) |
 | `TI_RUN_ON_START` | No | Set `true` to force all OSINT feeds to run immediately on container start |
 | `TI_MISP_CIRCL_ENABLED` | No | Set `false` to disable CIRCL MISP feed (default: true) |
 | `TI_MISP_BOTVRIJ_ENABLED` | No | Set `false` to disable Botvrij MISP feed (default: true) |
 | `TI_ABUSEIPDB_ENABLED` | No | Set `false` to disable AbuseIPDB blacklist pull (default: true) |
+| `TI_ALIENVAULT_ENABLED` | No | Set `false` to disable AlienVault OTX feed (default: true) |
+| `TI_VIRUSTOTAL_ENABLED` | No | Set `false` to disable VirusTotal enrichment (default: true when `VT_API_KEY` is set) |
 | `TI_MALPEDIA_ENABLED` | No | Set `false` to disable Malpedia feed (default: true) — no API key required; sourced from MISP galaxy |
 | `MAIL_HOST` | No | SMTP host — empty = no email |
 | `MAIL_PORT` | No | SMTP port (default: 1025) |
