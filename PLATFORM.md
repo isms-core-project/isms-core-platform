@@ -10,10 +10,11 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Live_(v1.0)-00AA00?style=for-the-badge" alt="Live"/>
-  <img src="https://img.shields.io/badge/Backend-FastAPI_+_PostgreSQL-0066CC?style=flat-square" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/Backend-FastAPI-0066CC?style=flat-square" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/Database-PostgreSQL_18-336791?style=flat-square" alt="PostgreSQL 18"/>
   <img src="https://img.shields.io/badge/Frontend-React_19_+_MUI_6-61DAFB?style=flat-square" alt="React"/>
   <img src="https://img.shields.io/badge/Deployment-Docker_Compose-2496ED?style=flat-square" alt="Docker"/>
-  <img src="https://img.shields.io/badge/Services-10_containers-2E8B57?style=flat-square" alt="10 Services"/>
+  <img src="https://img.shields.io/badge/Services-11_containers-2E8B57?style=flat-square" alt="11 Services"/>
 </p>
 
 <p align="center">
