@@ -13,6 +13,10 @@
 # ============================================================================
 set -e
 
+# Auto-detect DNS resolver: 127.0.0.11 in Docker, CoreDNS cluster IP in K8s.
+# Can be overridden by setting NGINX_RESOLVER explicitly.
+export NGINX_RESOLVER="${NGINX_RESOLVER:-$(awk '/^nameserver/{print $2; exit}' /etc/resolv.conf 2>/dev/null || echo '127.0.0.11')}"
+
 CERT_DIR=/etc/nginx/certs
 LE_LIVE=/etc/letsencrypt/live
 
@@ -49,7 +53,7 @@ fi
 
 # ── Render nginx config from template ────────────────────────────────────────
 echo "[nginx/tls] Rendering nginx config (NGINX_HOST=${NGINX_HOST:-localhost})..."
-envsubst '${NGINX_HOST}' \
+envsubst '${NGINX_HOST} ${NGINX_HTTP_PORT} ${NGINX_HTTPS_PORT} ${NGINX_RESOLVER}' \
     < /etc/nginx/templates/default.conf.template \
     > /etc/nginx/conf.d/default.conf
 

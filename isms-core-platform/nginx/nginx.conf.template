@@ -1,18 +1,18 @@
 # Redirect all HTTP → HTTPS
 server {
-    listen 80;
+    listen ${NGINX_HTTP_PORT};
     server_name _;
     return 301 https://$host$request_uri;
 }
 
 server {
-    listen 443 ssl;
+    listen ${NGINX_HTTPS_PORT} ssl;
     server_name ${NGINX_HOST} _;
 
     # ── Docker DNS resolver — forces re-resolution on container restart ──────
     # Without this, nginx caches the backend IP at startup and breaks when
     # the backend container is recreated (new IP assigned by Docker).
-    resolver 127.0.0.11 valid=10s ipv6=off;
+    resolver ${NGINX_RESOLVER} valid=10s ipv6=off;
     set $backend  http://isms-core-backend:8000;
     set $frontend http://isms-core-frontend:3000;
 
@@ -36,7 +36,8 @@ server {
     client_max_body_size 50m;
 
     # ── Block API docs in production (FastAPI also disables them when debug=False) ──
-    location ~ ^/(docs|redoc|openapi\.json) {
+    # Exact match only — avoids blocking /docs/* static files (e.g. /docs/user-manual.md)
+    location ~ ^/(docs|redoc|openapi\.json)$ {
         return 404;
     }
 
