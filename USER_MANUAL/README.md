@@ -73,5 +73,5 @@ ISMS CORE Platform brings together five product families under one roof. You wil
 ---
 
 <p align="center">
-<strong>Copyright &copy; 2025–2026 Gregory Griffin. All rights reserved.</strong>
+<strong>Copyright &copy; 2025–2026 The ISMS Core Project. All rights reserved.</strong>
 </p>
