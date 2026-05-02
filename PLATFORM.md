@@ -23,7 +23,7 @@
 
 ---
 
-> **⚠️ READ THIS FIRST — IKEA MANUAL WARNING**
+> **⚠️ READ THIS FIRST — IKEA MANUAL WARNING ⚠️**
 >
 > This is the deployment manual. Read it top to bottom. Do not skip steps. Do not improvise.
 >

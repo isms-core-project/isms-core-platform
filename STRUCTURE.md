@@ -325,7 +325,7 @@ The same pattern applies to OP-POL, PRIV-POL, CLD-POL, and AI-POL files.
 
 ---
 
-## 📋 screenshots/
+## 📋 Screenshots/
 
 Platform UI screenshots referenced in README.md and PLATFORM.md. Named `NN_isms-core_feature-name.png`.
 

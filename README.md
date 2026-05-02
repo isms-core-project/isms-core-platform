@@ -5,7 +5,7 @@
 <h1 align="center">🎋 ISMS CORE Project</h1>
 
 <p align="center">
-  <strong>Compliance Operations, Risk & Evidence — ISO 27001 · ISO 27701 · ISO 27018 · ISO 42001</strong>
+  <strong>Compliance Operations, Risk & Evidence — ISO 27001 · ISO 27701 · ISO 27017 · ISO 27018 · ISO 42001</strong>
 </p>
 
 <p align="center">
