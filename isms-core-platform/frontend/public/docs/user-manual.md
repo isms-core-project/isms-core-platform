@@ -44,13 +44,13 @@ Five product families are available:
 | **ISMS Operational** | ISO 27001:2022 | 53 lightweight policies |
 | **Privacy Extension** | ISO 27701:2025 | 21 privacy groups |
 | **Cloud Extension** | ISO 27018:2025 | 12 cloud PII groups |
-| **AI Extension** | ISO 42001:2023 + ISO 42005:2025 | 10 AI management groups |
+| **AI Extension** | ISO 42001:2023 + ISO 42005:2025 | 12 AI management groups |
 
 ### What you can do with ISMS CORE
 
 - Manage your ISMS across 99 control groups covering ISO 27001, ISO 27701, ISO 27018, and ISO 42001
 - Track control implementation status, gaps, and evidence
-- Run compliance assessments across 24 regulatory frameworks (NIS2, DORA, NIST CSF 2.0, NIST AI RMF 1.0, CSA CCM, NIST SP 800-53, NCSC CAF v4.0, and more)
+- Run compliance assessments across 25 regulatory frameworks (NIS2, DORA, NIST CSF 2.0, NIST AI RMF 1.0, CSA CCM, NIST SP 800-53, NCSC CAF v4.0, and more)
 - Collect evidence automatically via 44 integrations (Microsoft, CrowdStrike, Jira, ServiceNow, and more)
 - Monitor live threat intelligence — MITRE ATT&CK, CISA KEV, NVD CVE/CPE feeds, EPSS scores
 - Manage risks with a full 5×5 risk register and treatment workflow
@@ -242,15 +242,16 @@ ISMS CORE includes 24 built-in compliance assessment modules. Each module maps y
 | EU Cyber Resilience Act | EU product security requirements |
 | EU AI Act | EU artificial intelligence regulation |
 | EU Cloud Sovereignty | EU cloud data sovereignty framework |
+| CyberFundamentals BE | Belgian Centre for Cybersecurity (CCB) baseline framework |
 | CSRM | Swiss NCSC cyber security risk management |
 | COBIT 2019 | ISACA IT governance and management framework |
-| FINMA | Swiss financial market supervisory authority |
 | BaFin BAIT | German banking IT supervision |
 | CSSF LU | Luxembourg financial sector regulator |
 | ACN IT | Italian national cybersecurity agency |
 | UK NIS | UK network and information systems regulations |
 | UK Operational Resilience | UK FCA/PRA operational resilience |
 | NCSC CAF v4.0 | UK National Cyber Security Centre Cyber Assessment Framework — outcome-based assessment, 4 Objectives, 14 Principles, 41 Contributing Outcomes |
+| ReCyF v2.5 | French ANSSI NIS2 transposition framework |
 
 ### Running an assessment
 
@@ -837,7 +838,7 @@ Set a review frequency — the platform notifies you when a vendor review is due
 
 ## Crosswalk & Framework Mapping {#crosswalk-framework-mapping}
 
-The Crosswalk engine automatically maps your ISO 27001:2022 controls to other frameworks using a database of 3,980 pre-built mappings.
+The Crosswalk engine automatically maps your ISO 27001:2022 controls to other frameworks using a database of 3,433 pre-built mappings.
 
 ### How it works
 
@@ -933,7 +934,7 @@ The AI Extension Pack brings ISO 42001:2023 (AI Management System) and ISO 42005
 
 ### What It Covers
 
-10 control groups across the ISO 42001:2023 Annex A domains:
+12 control groups across the ISO 42001:2023 Annex A domains:
 
 | Group | Domain |
 |-------|--------|
