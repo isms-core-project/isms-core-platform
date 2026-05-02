@@ -370,12 +370,12 @@ Claude Code (Anthropic, Sonnet model family) has been the primary implementation
 <tr>
 <td><strong>Python Scripts</strong></td>
 <td>Workbook Generators</td>
-<td><strong>284</strong> scripts total — 188 (FW) + 53 (OP) + 21 (PRIV) + 12 (CLD) + 10 (AI)</td>
+<td><strong>285</strong> scripts total — 188 (FW) + 53 (OP) + 21 (PRIV) + 12 (CLD) + 10 (AI) + 1 (AI generator tool)</td>
 </tr>
 <tr>
 <td><strong>IMP Documents</strong></td>
 <td>User Guides (UG) + Technical Specifications (TG) for every assessment</td>
-<td><strong>462</strong> files — 376 FW (188 UG + 188 TG) + 42 PRIV + 24 CLD + 20 AI</td>
+<td><strong>464</strong> files — 376 FW (188 UG + 188 TG) + 42 PRIV + 24 CLD + 20 AI + 2 AI foundation</td>
 </tr>
 <tr>
 <td><strong>POL Documents</strong></td>
@@ -409,6 +409,13 @@ March 2026:         ISMS CORE Privacy (ISO 27701:2025) -> 21 Control Groups Comp
 March 2026:         ISMS CORE Cloud (ISO 27018:2025) -> 12 Control Groups Completed
 March 2026:         ISMS CORE Platform -> Live at isms-core.com
 April 2026:         ISMS CORE AI (ISO 42001:2023) -> 12 Control Groups Completed
+April 2026:         FR + DE + IT Translations -> All 5 Packs Complete
+April 2026:         Threat Intelligence Expansion -> Phases 39–49
+                    Per-connector OpenSearch indices, ENISA EUVD, Exploit-DB,
+                    MITRE ATT&CK v19, AlienVault OTX (12th OSINT source),
+                    VirusTotal enrichment, TLP labels, Threat Exposure page,
+                    18 OSD dashboards, EBIOS RM, notification system, security audit
+May 2026:           User Manual Updated -> Chapter 16 (Threat Intelligence) fully rewritten
 ```
 
 ### Platform

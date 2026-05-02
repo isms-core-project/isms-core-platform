@@ -19,7 +19,7 @@ Navigate to **Intelligence** in the sidebar.
 The platform runs two dedicated feed containers:
 
 - **`isms-core-feeds`** — vulnerability and adversary intelligence (always active with the standard stack)
-- **`isms-core-threat-intel`** — OSINT IOC feeds (optional; enabled with `--profile threat-intel` + `VITE_THREAT_INTEL_ENABLED=true`)
+- **`isms-core-threat-intel`** — OSINT IOC feeds (optional; enabled with `--profile threat-intel` + `THREAT_INTEL_ENABLED=true` in `.env`)
 
 ---
 

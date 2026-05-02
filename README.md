@@ -44,6 +44,9 @@
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NCSC_CAF_v4.0_(UK)-Assessment_Tool-003366?style=flat-square" alt="NCSC CAF v4.0"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/ReCyF_v2.5_(FR_NIS2)-Assessment_Tool-002395?style=flat-square" alt="ReCyF v2.5"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/FINMA-Assessment_Tool-C62828?style=flat-square" alt="FINMA"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NIST_SP_800--53_R5-Assessment_Tool-FF6600?style=flat-square" alt="NIST SP 800-53 Rev 5"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CSA_CCM_v4.1-Assessment_Tool-2E7D32?style=flat-square" alt="CSA CCM v4.1"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CSA_AICM_v1.0.3-Assessment_Tool-1B5E20?style=flat-square" alt="CSA AICM v1.0.3"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v19-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/3%2C433_Crosswalk_Objects_%2F_44_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
 </p>
@@ -132,8 +135,8 @@ EN · FR · DE · IT
 
 **AI management system** — governance policies covering AI development, deployment, impact assessment, responsible use, and third-party AI relationships.
 
-**12** AI control groups · **14** AI-POL docs<br/>
-**10** checklist generators<br/>
+**12** AI control groups · **12** AI-POL policies<br/>
+**20** IMP docs · **10** checklist generators<br/>
 EN · FR · DE · IT
 
 <img src="https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square" alt="Complete"/>
@@ -146,9 +149,8 @@ EN · FR · DE · IT
 
 **Live compliance management system** — turns all content products into dashboards, gap tracking, evidence ingestion, risk registers, and audit reports. Docker Compose, 10 services, self-hosted.
 
-**44** connectors · **10** services<br/>
-**25** assessment modules · **3,433** crosswalk objects / 44 axes<br/>
-7 country jurisdictions
+**44** connectors · **25** assessment modules · **3,433** crosswalk objects / 44 axes<br/>
+7 country jurisdictions · **20+** threat intelligence sources
 
 <img src="https://img.shields.io/badge/v1.0-Live-2E8B57?style=flat-square" alt="Live"/>
 
@@ -305,7 +307,7 @@ cat "isms-core-ai/00-ai-foundation-policies/ai-pol-01-aims-governance-and-decisi
 ```bash
 cd isms-core-platform
 cp .env.example .env         # Fill in HOST_IP, passwords, ADMIN_PASSWORD
-docker compose up -d         # All 10 services start (takes 3–5 min first run)
+docker compose up -d             # COMPOSE_PROFILES=opensearch-single is set in .env.example
 bash bootstrap.sh            # One-shot: seeds all control groups, imports all content
 # → Open https://{HOST_IP}
 ```
@@ -403,7 +405,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | AbuseIPDB | Daily blacklist (top 10K confidence=100 IPs); on-demand single-IP enrichment with 24h cache; OpenSearch `ti-abuseipdb-blacklist` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Malpedia | Weekly malware knowledge base — families (aliases, ATT&CK TIDs), threat actors (country, motivation); links IOCs to malware + actor attribution | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | URLhaus | Daily malware download URL feed (abuse.ch) — URLs, associated payload hashes; `ti-urlhaus` OpenSearch index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
-| ThreatFox | Daily malware IOC feed (abuse.ch) — IPs, domains, URLs, hashes with confidence scores and malware family labels; requires `TI_THREATFOX_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| ThreatFox | Daily malware IOC feed (abuse.ch) — IPs, domains, URLs, hashes with confidence scores and malware family labels; requires `THREATFOX_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | SSL Blacklist (SSLBL) | Daily SSL certificate blacklist (abuse.ch) — SHA1 fingerprints of certificates used by malware C2 infrastructure; `ti-sslbl` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | MalwareBazaar | Daily malware sample hash feed (abuse.ch) — MD5/SHA1/SHA256 hashes with family classification; requires `MALWAREBAZAAR_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Feodo Tracker | Daily C2 IP blacklist (abuse.ch) — Emotet, QakBot, TrickBot, Dridex botnet command-and-control IPs; confidence 85; `ti-feodotracker` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
@@ -459,7 +461,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | ⚡ Operational | 53 / 53 | 53 OP-POL · 53 checklist generators | EN FR DE IT | ![v0.1](https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square) |
 | 🔒 Privacy | 21 / 21 | 23 PRIV-POL · 42 IMPs · 21 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
 | ☁️ Cloud | 12 / 12 | 12 CLD-POL · 24 IMPs · 12 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
-| 🤖 AI | 12 / 12 | 14 AI-POL · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
+| 🤖 AI | 12 / 12 | 12 AI-POL · 20 IMPs · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
 | 🖥️ Platform | 99 total | 44 connectors · 25 assessments · 3,433 mappings / 44 axes | 7 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
 
 ---

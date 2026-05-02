@@ -53,7 +53,7 @@ factory_isms/
 ├── isms-core-cloud/           # ☁️ ISO 27018:2025 — Cloud Extension Pack
 ├── isms-core-ai/              # 🤖 ISO 42001:2023 — AI Extension Pack
 ├── isms-core-platform/        # 🖥️ Platform Deployment Package
-├── USER_MANUAL/               # 📖 Full user manual (15 chapters) — served in-app at /docs/user-manual.md
+├── USER_MANUAL/               # 📖 Full user manual (21 chapters) — served in-app at /docs/user-manual.md
 ├── COMPLIANCE.md              # 📋 Assessment module coverage
 └── screenshots/               # Platform UI screenshots
 ```
@@ -203,10 +203,11 @@ isms-core-ai/
 │
 └── ai-a.X.X-X-control-name/              # 10 Annex A control groups
     ├── POL/                               # AI-POL (EN + fr/ + de/ + it/)
+    ├── IMP/
+    │   ├── IMP-UG/                        # User Guide — ISMS Manager
+    │   └── IMP-TG/                        # Technical Guide — Engineer
     └── SCR/                               # Python compliance checklist generator
 ```
-
-**Note:** AI control groups ship with POL + SCR. IMP-UG/TG are not included in v1.0.
 
 ---
 
@@ -218,7 +219,7 @@ The Docker Compose deployment package. This directory is what you deploy — it 
 isms-core-platform/
 │
 ├── .env.example                           # Environment variable template → copy to .env
-├── docker-compose.yml                     # 10-service production stack
+├── docker-compose.yml                     # Multi-service production stack (profile-based)
 ├── bootstrap.sh                           # First-boot import script (idempotent, safe to re-run)
 │
 ├── backend/                               # FastAPI application
@@ -227,7 +228,6 @@ isms-core-platform/
 │   ├── schemas/                           # Pydantic request/response schemas
 │   ├── services/                          # Business logic layer
 │   ├── workers/                           # Celery task definitions
-│   ├── connectors/                        # 44 automated evidence connectors
 │   └── entrypoint.sh                      # Container startup: migrations + seed
 │
 ├── frontend/                              # React 19 + MUI 6 WebUI
@@ -241,6 +241,26 @@ isms-core-platform/
 │   ├── nginx.conf                         # Main config: TLS termination, routing
 │   └── scripts/setup-letsencrypt.sh       # Let's Encrypt certificate setup
 │
+├── connectors/                            # 44 automated evidence connectors (separate container)
+├── feeds/                                 # Vulnerability & adversary intel scheduler (isms-core-feeds)
+│   └── feeds/                             # MITRE ATT&CK, ATLAS, CISA KEV, EPSS, NVD CVE/CPE, EUVD, Exploit-DB
+├── threat-intel/                          # OSINT IOC feed scheduler (isms-core-threat-intel, optional profile)
+│   └── feeds/                             # CIRCL MISP, Botvrij, AbuseIPDB, URLhaus, ThreatFox, SSLBL,
+│                                          #   AlienVault OTX, Feodo Tracker, RFD, Stopforumspam,
+│                                          #   MalwareBazaar, Malpedia, VirusTotal, MaxMind, IPInfo
+│
+├── opensearch/                            # OpenSearch setup — ISM policies, index templates
+│   └── setup.py                           # One-shot container run before backend starts
+│
+├── dashboards/                            # OpenSearch Dashboards automation (optional profile)
+│   └── setup.py                           # Provisions 19 dashboards on first run
+│
+├── garage/                                # Garage S3 object store (optional profile)
+│   ├── garage.toml                        # Garage configuration
+│   └── setup.py                           # One-shot bucket + key setup
+│
+├── smtp-bridge/                           # Microsoft 365 SMTP relay (optional profile)
+│
 ├── datasets/
 │   └── data/                              # 30+ JSON reference datasets
 │       ├── iso27001.json                  # ISO 27001:2022 control structure
@@ -250,9 +270,6 @@ isms-core-platform/
 │       ├── ncsc_caf.json                  # NCSC CAF v4.0 (59 controls / 41 outcomes)
 │       ├── fr_nis2_recyf.json             # ReCyF v2.5 — France NIS2 (172 nodes)
 │       └── ...                            # DORA, NIS2, BSI, TISAX, and more
-│
-├── dashboards/                            # OpenSearch Dashboards automation
-│   └── setup.py                           # Provisions 5 automated dashboards on first run
 │
 ├── certs/                                 # TLS certificate mount point
 │   ├── cert.pem                           # Custom cert (optional — auto-generated if absent)
@@ -276,9 +293,16 @@ isms-core-platform/
 | `isms-core-beat` | Celery Beat — nightly evidence archive (02:00 UTC), daily KPI snapshot (06:00 UTC) |
 | `isms-core-feeds` | Threat intelligence scheduler — MITRE ATT&CK, ATLAS, CISA KEV, EPSS, NVD CVE/CPE, ENISA EUVD |
 | `isms-core-connectors` | Automated evidence runner — 44 connectors, runs continuously |
-| `isms-core-dashboards-setup` | One-shot OpenSearch Dashboards provisioning — imports 5 automated dashboards at startup |
+| `isms-core-dashboards-setup` | One-shot OpenSearch Dashboards provisioning — imports 19 automated dashboards at startup |
 
-Optional profiles: `--profile mailpit` (local email catcher), `--profile smtp-bridge` (M365/OAuth email)
+Optional profiles (add to deploy command as needed):
+- `--profile opensearch-single` — **required** for standard deployment (starts OpenSearch)
+- `--profile threat-intel` — OSINT IOC feeds (CIRCL MISP, Botvrij, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Feodo Tracker, RFD, Stopforumspam, MalwareBazaar, Malpedia); requires `THREAT_INTEL_ENABLED=true` in `.env`
+- `--profile opensearch-cluster` — 3-node OpenSearch cluster (enterprise)
+- `--profile dashboards` — OpenSearch Dashboards UI on port 5601
+- `--profile garage` — Garage S3 object store
+- `--profile mailpit` — local email catcher (dev)
+- `--profile smtp-bridge` — Microsoft 365 / OAuth email relay
 
 ---
 

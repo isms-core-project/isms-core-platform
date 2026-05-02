@@ -113,27 +113,31 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | `isms-core-worker` | Celery 5.3 | Background tasks — import, sync, compliance recalculation. Queue: `isms`. |
 | `isms-core-beat` | Celery Beat | Scheduled jobs — nightly evidence archive at 02:00 UTC; daily KPI snapshots at 06:00 UTC. No healthcheck (by design). |
 | `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, FIRST EPSS, NVD CVE/CPE, ENISA EUVD, Exploit-DB (~52K exploits daily). Writes to Postgres and OpenSearch. Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `FEEDS_EUVD_ENABLED`, `NIST_API_KEY`. |
-| `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (`--profile threat-intel`) OSINT IOC feed container — 12 sources: CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia. VirusTotal enrichment (optional). Serves on-demand trigger server on port 9002. Env: `ABUSEIPDB_API_KEY`, `OTX_API_KEY`, `TI_THREATFOX_API_KEY`, `MALWAREBAZAAR_API_KEY`, `VT_API_KEY`, `SHODAN_API_KEY`, `TI_MISP_IMPORT_FROM_DATE`. |
+| `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (activate via `COMPOSE_PROFILES=...,threat-intel`) OSINT IOC feed container — 12 sources: CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia. VirusTotal enrichment (optional). On-demand trigger server on port 9002. Env: `THREAT_INTEL_ENABLED`, `ABUSEIPDB_API_KEY`, `OTX_API_KEY`, `MALWAREBAZAAR_API_KEY`, `VT_API_KEY`, `SHODAN_API_KEY`, `TI_MISP_IMPORT_FROM_DATE`. |
 | `isms-core-connectors` | Python 3.12 | Automated evidence runner — loads all 44 connectors dynamically, pushes evidence to `connector_evidence` table. Env: `CONNECTORS_WORKER_SECRET`. |
 
 > **Access in production:** `https://{HOST_IP}` via nginx. Do NOT access `:3000` or `:8000` directly — those ports are not exposed in production.
 
 ---
 
-> **Enterprise Deployment Profiles**
+> **Deployment Profiles — set in `.env`, not on the CLI**
 >
-> The platform ships with optional compose profiles that add enterprise-grade storage and observability on top of the standard ten-service stack. All profiles are additive — the standard stack runs unchanged when no profile is specified.
+> `COMPOSE_PROFILES` in `.env` controls which service groups activate. Docker Compose reads it automatically — no `--profile` flags needed on the command line. Pick one `COMPOSE_PROFILES` line in `.env.example`, uncomment it, and `docker compose up -d` just works.
 >
-> | Profile flag | What it adds |
+> | `COMPOSE_PROFILES` value | What starts |
 > |---|---|
-> | `--profile opensearch-cluster` | Replaces the single OpenSearch node with a 3-node cluster (`isms-core-os01/02/03`) for HA and horizontal search capacity. Set `OPENSEARCH_HEAP` per node (e.g. `4g` for 3×4 GB on a 32 GB host). |
-> | `--profile garage` | Adds `isms-core-garage` — a Garage S3-compatible object store for evidence files and index snapshots. Requires `GARAGE_RPC_SECRET`, `GARAGE_ACCESS_KEY`, `GARAGE_SECRET_KEY`. |
-> | `--profile dashboards` | Adds `isms-core-opensearch-dashboards` (port 5601). Set `DASHBOARDS_BIND=0.0.0.0` to reach it from the LAN. |
-> | `--profile threat-intel` | Adds `isms-core-threat-intel` — 12-source OSINT IOC container (CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia). Optional VirusTotal enrichment. Requires `ABUSEIPDB_API_KEY` + `OTX_API_KEY`; `TI_THREATFOX_API_KEY` + `MALWAREBAZAAR_API_KEY` + `VT_API_KEY` for those feeds. Set `VITE_THREAT_INTEL_ENABLED=true` to show the Intelligence sidebar. |
-> | `--profile smtp-bridge` | Adds `isms-core-smtp-bridge` — an OAuth relay for Microsoft 365 / Exchange Online. Requires `SMTP_BRIDGE_*` credentials. |
-> | `--profile mailpit` | Adds `isms-core-mailpit` — local mail catcher for dev/test (port 8025). Never use in production. |
+> | `opensearch-single` | Standard stack (default) |
+> | `opensearch-single,threat-intel` | + OSINT IOC feeds — also set `THREAT_INTEL_ENABLED=true` |
+> | `opensearch-single,dashboards` | + OpenSearch Dashboards on port 5601 |
+> | `opensearch-single,garage` | + Garage S3 object store |
+> | `opensearch-single,mailpit` | + Mailpit local mail catcher (dev only) |
+> | `opensearch-single,smtp-bridge` | + Microsoft 365 SMTP relay |
+> | `opensearch-single,threat-intel,dashboards,smtp-bridge` | Full standard stack + OSINT IOC feeds — also set `THREAT_INTEL_ENABLED=true` |
+> | `opensearch-cluster,garage,dashboards,threat-intel,smtp-bridge` | Full enterprise stack + OSINT IOC feeds — also set `THREAT_INTEL_ENABLED=true` |
 >
-> **Evidence Storage Backend (`EVIDENCE_STORE`):** defaults to `postgres` (all evidence in PostgreSQL). Setting to `opensearch` routes evidence through OpenSearch and files through Garage S3 — requires both profiles above. The default postgres backend is fully supported and recommended for most deployments.
+> **`opensearch-single` and `opensearch-cluster` are mutually exclusive — always include exactly one.**
+>
+> **Evidence Storage Backend (`EVIDENCE_STORE`):** defaults to `postgres`. Setting to `opensearch` routes evidence through OpenSearch with files in Garage S3 — requires the `garage` + `opensearch-cluster` profiles.
 
 ---
 
@@ -250,7 +254,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **CVE / CPE Explorer** | Search and filter ~250K NVD CVE entries by severity, EPSS score, CVSS version (v2/v3/v4), year, KEV-only, EUVD flag, EDB-only (Exploit-DB cross-reference filter). Detail panel: CVSS scores (v2/v3/v4), CPE applicability, CWEs, NVD references, EUVD badge, EDB/EDB✓ chip (Metasploit badge when `edb_verified`). Separate CPE tab. |
 | **EUVD Explorer** | ENISA European Vulnerability Database — browse exploited and critical vulnerabilities; filter by score, exploited-only toggle, critical-only toggle, EU-assigned toggle (mutually exclusive); detail panel with vendors, products, EPSS, aliases. |
 | **KEV Audit Report (A.8.8)** | Audit trail for ISO 27001:2022 A.8.8 using CISA KEV feed — remediation status by CVE, per-vendor summary, CSV export for auditor evidence. |
-| **Threat Exposure** | Active MITRE techniques from live IOC feeds mapped to ISO 27001 controls — gaps highlighted. Summary bar: active techniques / affected controls / gap count. Per-technique table with IOC count, source feed chips, and colour-coded control chips (green ≥ 70%, orange 40–69%, red < 40%, grey = not assessed). Requires threat-intel profile. |
+| **Threat Exposure** | Active MITRE techniques from live IOC feeds mapped to ISO 27001 controls — gaps highlighted. Summary bar: active techniques / affected controls / gap count. Per-technique table with IOC count, source feed chips, and colour-coded control chips (green ≥ 70%, orange 40–69%, red < 40%, grey = not assessed). Requires `threat-intel` in `COMPOSE_PROFILES`. |
 | **IOC Explorer** | Search and filter OSINT IOCs across all 12 sources (CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia) by type (IP / domain / URL / hash), source, and free-text. Columns: type, value, source, confidence, TLP label, last seen, attribution (family / actor / ATT&CK TID chips). Expand any row for full detail including all tags. |
 | **IP Enrichment** | On-demand single-IP lookup: AbuseIPDB abuse score + report count + categories; Shodan paid API (open ports, banners, CVEs, hostnames) or Shodan InternetDB free fallback. Results cached 24h. |
 | **Malware Atlas** | Malpedia-sourced malware family browser (aliases, description, ATT&CK TIDs, associated actors) and threat actor directory (country attribution, motivation). |
@@ -337,48 +341,38 @@ cd /home/user/isms-core
 cp .env.example .env
 ```
 
-Generate strong secrets (run three times — once per secret):
+Edit `.env` — minimum required settings. Generate each secret with:
 ```bash
 python3 -c "import secrets; print(secrets.token_hex(32))"
 ```
 
-Edit `.env`:
-
 ```env
-# ─── Server ────────────────────────────────────────────────────────────────
-HOST_IP=10.0.0.112
-FQDN=                         # Optional: domain for Let's Encrypt TLS
-PLATFORM_URL=https://10.0.0.112
-CORS_ORIGINS=https://10.0.0.112
+# Deployment mode — Docker Compose reads this automatically; no --profile flags needed.
+# The default below is correct for most deployments. See .env.example for all options.
+COMPOSE_PROFILES=opensearch-single
+# COMPOSE_PROFILES=opensearch-single,threat-intel      # ⚠ also set THREAT_INTEL_ENABLED=true
+# COMPOSE_PROFILES=opensearch-cluster,garage,dashboards,threat-intel  # enterprise
 
-# ─── Required Secrets ──────────────────────────────────────────────────────
-POSTGRES_PASSWORD=            # REQUIRED — strong password
-REDIS_PASSWORD=               # REQUIRED — strong password
-SECRET_KEY=                   # REQUIRED — min 32 chars random hex
+# Host
+HOST_IP=10.0.0.112                    # REQUIRED — your server IP
+FQDN=                                 # optional — set for Let's Encrypt TLS
+PLATFORM_URL=https://10.0.0.112       # REQUIRED — match HOST_IP above
+CORS_ORIGINS=https://10.0.0.112       # REQUIRED — match HOST_IP above
 
-# ─── Admin User ────────────────────────────────────────────────────────────
+# Secrets — generate each with the command above
+POSTGRES_PASSWORD=                    # REQUIRED
+REDIS_PASSWORD=                       # REQUIRED
+SECRET_KEY=                           # REQUIRED — min 32 chars random hex
+CONNECTORS_WORKER_SECRET=             # REQUIRED — generate same as SECRET_KEY
+
+# Admin account
 ADMIN_EMAIL=admin@isms-core.dev
-ADMIN_PASSWORD=               # REQUIRED — no default in production
-
-# ─── Optional: AI Gap Analysis ─────────────────────────────────────────────
-ANTHROPIC_API_KEY=            # Leave empty to disable ISMS Compass
-
-# ─── Optional: Connector Runner ────────────────────────────────────────────
-CONNECTORS_WORKER_SECRET=     # Required if using automated evidence connectors
-
-# ─── Optional: Email ───────────────────────────────────────────────────────
-MAIL_HOST=                    # Leave empty to disable (safe default)
-MAIL_PORT=1025
-
-# ─── Optional: SMTP Bridge (M365 / OAuth) ──────────────────────────────────
-SMTP_BRIDGE_TENANT_ID=
-SMTP_BRIDGE_CLIENT_ID=
-SMTP_BRIDGE_CLIENT_SECRET=
-SMTP_BRIDGE_FROM_ADDRESS=
-SMTP_BRIDGE_FROM_NAME=ISMS CORE
+ADMIN_PASSWORD=                       # REQUIRED — no default; platform refuses to start if blank
 ```
 
-> **Critical:** `ADMIN_PASSWORD` has no default. If empty, the admin account will not be created and you will not be able to log in.
+> **`ADMIN_PASSWORD` has no default.** If left empty the admin account is not created and you cannot log in.
+>
+> See `.env.example` for all optional settings: AI/Compass key, email, TI API keys, NVD feeds, OpenSearch tuning, and Garage S3.
 
 ---
 
@@ -388,6 +382,8 @@ SMTP_BRIDGE_FROM_NAME=ISMS CORE
 docker compose up -d
 ```
 
+> `COMPOSE_PROFILES` in `.env` tells Docker Compose which services to start. The default (`opensearch-single`) is already active in `.env.example`. No `--profile` flags needed on the command line.
+
 First run pulls all images and builds backend + frontend. This takes **3–5 minutes**. Subsequent restarts take ~60 seconds.
 
 ```bash
@@ -395,7 +391,7 @@ docker compose logs -f    # Watch progress (Ctrl+C stops watching)
 docker compose ps         # Check all containers
 ```
 
-Expected output — all 10 containers, 9 showing `healthy`, beat showing `Up` (no healthcheck — this is normal):
+Expected output — all containers showing `healthy` or `Up`:
 
 ```
 NAME                        STATUS
@@ -411,7 +407,9 @@ isms-core-feeds             Up (healthy)
 isms-core-beat              Up
 ```
 
-**Alembic migrations run automatically.** The backend stamps at the last applied migration and applies all remaining migrations via `entrypoint.sh`. No manual `alembic upgrade head` needed.
+> `isms-core-beat` shows `Up` without `(healthy)` — this is normal. Celery Beat has no HTTP endpoint.
+
+**Alembic migrations run automatically.** The backend applies all pending migrations via `entrypoint.sh` on startup. No manual `alembic upgrade head` needed.
 
 ---
 
@@ -549,20 +547,34 @@ Generated automatically on first boot. Browser shows a security warning — expe
 
 ## Email Configuration (Optional)
 
-### Option A — Mailpit (local testing)
+Email is disabled by default (`MAIL_HOST` is blank). To enable it, set `COMPOSE_PROFILES` and `MAIL_HOST` in `.env`, then run `docker compose up -d`.
 
-```bash
-docker compose --profile mailpit up -d
-# Set MAIL_HOST=isms-core-mailpit, MAIL_PORT=1025
-# Web UI: http://{HOST_IP}:8025
+### Option A — Mailpit (local testing only — never use in production)
+
+In `.env`:
+```env
+COMPOSE_PROFILES=opensearch-single,mailpit
+MAIL_HOST=isms-core-mailpit
+MAIL_PORT=1025
 ```
 
-### Option B — SMTP Bridge (Microsoft 365 / OAuth)
+Then `docker compose up -d`. Mailpit web UI: `http://{HOST_IP}:8025`
 
-1. Fill in `SMTP_BRIDGE_*` in `.env`
-2. `docker compose --profile smtp-bridge up -d`
-3. Set `MAIL_HOST=isms-core-smtp-bridge`, `MAIL_PORT=1025`
-4. `docker compose restart isms-core-backend`
+### Option B — SMTP Bridge (Microsoft 365 / Exchange Online)
+
+In `.env`:
+```env
+COMPOSE_PROFILES=opensearch-single,smtp-bridge
+MAIL_HOST=isms-core-smtp-bridge
+MAIL_PORT=1025
+SMTP_BRIDGE_TENANT_ID=<your-tenant-id>
+SMTP_BRIDGE_CLIENT_ID=<your-app-client-id>
+SMTP_BRIDGE_CLIENT_SECRET=<your-app-secret>
+SMTP_BRIDGE_FROM_ADDRESS=<sender@yourdomain.com>
+SMTP_BRIDGE_FROM_NAME=ISMS CORE
+```
+
+Then `docker compose up -d`.
 
 ---
 
@@ -590,13 +602,14 @@ docker compose --profile mailpit up -d
 
 ## Threat Intelligence — OSINT IOC Feeds
 
-The `isms-core-threat-intel` container is an optional profile that adds OSINT IOC intelligence on top of the standard vulnerability feeds. Activate it with:
+The `isms-core-threat-intel` container is an optional profile that adds OSINT IOC intelligence on top of the standard vulnerability feeds. To activate it, set this in `.env`:
 
-```bash
-docker compose --profile threat-intel up -d
+```env
+COMPOSE_PROFILES=opensearch-single,threat-intel
+THREAT_INTEL_ENABLED=true
 ```
 
-Set `VITE_THREAT_INTEL_ENABLED=true` in `.env` before building the frontend to show the **IOC Explorer**, **IP Enrichment**, and **Malware Atlas** sidebar entries.
+Then `docker compose up -d`. The `THREAT_INTEL_ENABLED=true` flag enables the **IOC Explorer**, **IP Enrichment**, **Malware Atlas**, and **Threat Exposure** sidebar entries.
 
 ### Feed sources
 
@@ -606,7 +619,7 @@ Set `VITE_THREAT_INTEL_ENABLED=true` in `.env` before building the frontend to s
 | **Botvrij MISP** | Every 6h: 01:00, 07:00, 13:00, 19:00 UTC (staggered delta) | None (public) | Same schema — deduplicated against CIRCL by `(ioc_type, value, source)` |
 | **AbuseIPDB blacklist** | Daily 02:00 UTC | `ABUSEIPDB_API_KEY` | Top 10,000 confidence=100 abusive IPs → `ti_iocs` + `ti-abuseipdb-blacklist` OpenSearch index |
 | **URLhaus** | Daily 03:00 UTC | None | Malware download URLs + payload hashes (abuse.ch) |
-| **ThreatFox** | Every 6h: 03:00, 09:00, 15:00, 21:00 UTC | `TI_THREATFOX_API_KEY` (optional) | Malware IOCs (IPs, domains, URLs, hashes) with confidence scores and malware family labels |
+| **ThreatFox** | Every 6h: 03:00, 09:00, 15:00, 21:00 UTC | `THREATFOX_API_KEY` (optional) | Malware IOCs (IPs, domains, URLs, hashes) with confidence scores and malware family labels |
 | **SSL Blacklist (SSLBL)** | Daily 04:00 UTC | None | SHA1 fingerprints of SSL certificates used by malware C2 infrastructure |
 | **AlienVault OTX** | Daily 04:30 UTC | `OTX_API_KEY` | Open Threat Exchange pulses — IOCs with TLP labels, ATT&CK TIDs, confidence scores derived from pulse subscriber count |
 | **Feodo Tracker** | Every 6h: 04:30, 10:30, 16:30, 22:30 UTC | None | C2 IPs for Emotet, QakBot, TrickBot, Dridex botnets (confidence 85); `ti-feodotracker` |
@@ -671,12 +684,12 @@ TI_MALPEDIA_ENABLED=false             # disable Malpedia
 
 The standard stack runs a single OpenSearch node (`isms-core-opensearch`). For production deployments with higher search capacity or HA requirements, activate the 3-node cluster profile. OpenSearch Dashboards can be added independently of the cluster profile.
 
-> **⚠️ Set your `.env` BEFORE running any profile command.** Docker Compose reads `.env` at startup — variables set after the stack is running have no effect until you restart the affected containers.
+> **⚠️ Set `COMPOSE_PROFILES` in `.env` BEFORE starting the stack.** Docker Compose reads `.env` at startup — changes take effect only after a full restart (`docker compose down && docker compose up -d`).
 
 ### Hardware sizing
 
-| Profile | Min RAM | Recommended |
-|---------|---------|-------------|
+| Configuration | Min RAM | Recommended |
+|---------------|---------|-------------|
 | Single node (default) | 6 GB total | 8 GB |
 | 3-node cluster | 16 GB total | 32 GB (4 GB heap × 3 nodes) |
 
@@ -684,7 +697,7 @@ The rule of thumb for OpenSearch heap: ≤ 50% of RAM assigned to OpenSearch, ne
 
 ### Option A — Standard (single OpenSearch node, no Dashboards)
 
-No `.env` changes required beyond the base setup. Run:
+No `.env` changes required beyond the base setup. The default `COMPOSE_PROFILES=opensearch-single` is already set. Run:
 
 ```bash
 docker compose up -d
@@ -694,17 +707,13 @@ Expected `docker compose ps` output: 10 containers — `isms-core-opensearch` is
 
 ### Option B — 3-node cluster, no Dashboards
 
-**Step 1 — set in `.env`:**
+**In `.env`:**
 ```env
-OPENSEARCH_HEAP=4g      # heap per node — adjust to your RAM (e.g. 2g for 16 GB host, 4g for 32 GB host)
+COMPOSE_PROFILES=opensearch-cluster
+OPENSEARCH_HEAP=4g   # heap per node — e.g. 2g for a 16 GB host, 4g for 32 GB
 ```
 
-**Step 2 — start the stack:**
-```bash
-docker compose --profile opensearch-cluster up -d
-```
-
-Expected output — 12 containers (`isms-core-opensearch` is replaced by three cluster nodes):
+Then `docker compose up -d`. Expected: 12 containers — `isms-core-os01/02/03` replace the single node.
 
 ```
 NAME                        STATUS
@@ -726,40 +735,34 @@ isms-core-beat              Up
 
 ### Option C — 3-node cluster + OpenSearch Dashboards
 
-**Step 1 — set in `.env`:**
+**In `.env`:**
 ```env
-OPENSEARCH_HEAP=4g          # heap per node
-DASHBOARDS_BIND=0.0.0.0     # expose Dashboards on LAN (127.0.0.1 = localhost only)
+COMPOSE_PROFILES=opensearch-cluster,dashboards
+OPENSEARCH_HEAP=4g
+DASHBOARDS_BIND=0.0.0.0   # 0.0.0.0 = reachable from LAN; 127.0.0.1 = localhost only
 ```
 
-**Step 2 — start the stack:**
-```bash
-docker compose --profile opensearch-cluster --profile dashboards up -d
-```
-
-This adds a 13th container: `isms-core-opensearch-dashboards`. Open `http://{HOST_IP}:5601` in a browser. No login required when `OPENSEARCH_DISABLE_SECURITY=true` (default).
+Then `docker compose up -d`. Dashboards UI: `http://{HOST_IP}:5601` — no login required when `OPENSEARCH_DISABLE_SECURITY=true` (default).
 
 > Dashboards is for infrastructure monitoring and index inspection. The platform WebUI at `https://{HOST_IP}` does not depend on it.
 
-### Option D — Dashboards only (single node + Dashboards, no cluster)
+### Option D — Single node + OpenSearch Dashboards
 
-**Step 1 — set in `.env`:**
+**In `.env`:**
 ```env
-DASHBOARDS_BIND=0.0.0.0     # expose Dashboards on LAN (127.0.0.1 = localhost only)
+COMPOSE_PROFILES=opensearch-single,dashboards
+DASHBOARDS_BIND=0.0.0.0   # 0.0.0.0 = reachable from LAN; 127.0.0.1 = localhost only
 ```
 
-**Step 2 — start the stack:**
-```bash
-docker compose --profile dashboards up -d
-```
+Then `docker compose up -d`. Dashboards UI: `http://{HOST_IP}:5601`
 
-Adds `isms-core-opensearch-dashboards` against the standard single `isms-core-opensearch` node. Useful when you want index visibility without running the full cluster.
+Useful when you want index visibility without the resource overhead of a 3-node cluster.
 
 ### Adding Garage S3 object storage
 
 Garage is an optional S3-compatible store for evidence files and index snapshots. It runs independently of the OpenSearch profile choice.
 
-**Step 1 — generate secrets and set in `.env`:**
+**Step 1 — generate secrets:**
 ```bash
 openssl rand -hex 32
 # → paste result as GARAGE_RPC_SECRET
@@ -771,23 +774,20 @@ python3 -c "import secrets; print(secrets.token_hex(32))"
 # → paste result as GARAGE_SECRET_KEY  (must be 64 hex chars)
 ```
 
+**Step 2 — in `.env`, add `garage` to `COMPOSE_PROFILES` and set secrets:**
 ```env
+# Standard + Garage:
+COMPOSE_PROFILES=opensearch-single,garage
+# Enterprise (full stack):
+# COMPOSE_PROFILES=opensearch-cluster,garage,dashboards,threat-intel
+
 GARAGE_RPC_SECRET=<generated above>
 GARAGE_ACCESS_KEY=<generated above>
 GARAGE_SECRET_KEY=<generated above>
 GARAGE_BIND=127.0.0.1   # set to 0.0.0.0 only if external S3 access is needed
 ```
 
-**Step 2 — start the stack:**
-```bash
-# Garage only (standard single-node OpenSearch):
-docker compose --profile garage up -d
-
-# Combined: cluster + dashboards + garage
-docker compose --profile opensearch-cluster --profile dashboards --profile garage up -d
-```
-
-Garage initialises its buckets (`isms-evidence`, `isms-snapshots`, `isms-exports`) automatically on first boot via `garage/setup.py`. The S3 API listens on port 3900.
+Then `docker compose up -d`. Garage initialises its buckets (`isms-evidence`, `isms-snapshots`, `isms-exports`) automatically on first boot via `garage/setup.py`. The S3 API listens on port 3900.
 
 ---
 
@@ -885,7 +885,7 @@ docker exec isms-core-backend ls /app/isms-framework
 docker exec isms-core-backend ls /app/isms-operational
 ```
 
-If empty or missing, the volume mounts in `docker-compose.yml` are pointing to non-existent paths. Update them.
+If empty or missing, the volume mounts in `docker-compose.yml` are pointing to non-existent paths. Update them to match your actual directory layout.
 
 ### bootstrap.sh fails with authentication error
 
@@ -895,7 +895,7 @@ If empty or missing, the volume mounts in `docker-compose.yml` are pointing to n
 
 ### Browser shows certificate warning
 
-Expected with the self-signed certificate. See TLS Options above.
+Expected with the self-signed certificate. See [TLS Certificate Options](#tls-certificate-options) above.
 
 ### Celery Beat has no `(healthy)` label
 
@@ -911,7 +911,8 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `HOST_IP` | Yes | Server IP — used in `VITE_BACKEND_URL` and self-signed cert SAN |
+| `COMPOSE_PROFILES` | Yes | Activates service groups — see [Deployment Profiles](#deployment-profiles--set-in-env-not-on-the-cli) table above |
+| `HOST_IP` | Yes | Server IP — used in nginx self-signed cert SAN and frontend API URL |
 | `FQDN` | No | Domain name — enables Let's Encrypt TLS when set |
 | `PLATFORM_URL` | Yes | Full URL (e.g. `https://10.0.0.112`) |
 | `CORS_ORIGINS` | Yes | CORS allowed origins — typically same as `PLATFORM_URL` |
@@ -919,24 +920,26 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 | `REDIS_PASSWORD` | Yes | Redis password |
 | `SECRET_KEY` | Yes | JWT signing key — minimum 32 chars random hex |
 | `ADMIN_EMAIL` | Yes | Admin account email |
-| `ADMIN_PASSWORD` | Yes | Admin account password — **no default** |
-| `CONNECTORS_WORKER_SECRET` | No | Shared secret for connector runner — required if using connectors |
+| `ADMIN_PASSWORD` | Yes | Admin account password — **no default; platform refuses to start if blank** |
+| `CONNECTORS_WORKER_SECRET` | Yes | Shared secret for connector runner and backend API authentication |
 | `ANTHROPIC_API_KEY` | No | Enables ISMS Compass AI gap analysis |
-| `FEEDS_CVE_ENABLED` | No | Set to `true` to enable NVD CVE ingestion (default: false) |
-| `FEEDS_CPE_FULL` | No | Set to `true` to enable NVD CPE Option B |
-| `FEEDS_EUVD_ENABLED` | No | Set to `false` to disable ENISA EUVD feed (default: true) |
-| `NIST_API_KEY` | No | NVD API key — removes rate-limiting on CVE/CPE downloads |
-| `VITE_THREAT_INTEL_ENABLED` | No | Set to `true` to show IOC/IP Enrichment/Malware Atlas in frontend (baked at build time) |
+| `FEEDS_RUN_ON_START` | No | Set `true` to run all feeds immediately on container start (default: true) |
+| `FEEDS_CVE_ENABLED` | No | Set `true` to enable NVD CVE ingestion (default: false — large initial download) |
+| `FEEDS_CPE_FULL` | No | Set `true` to enable NVD CPE Option B |
+| `FEEDS_EUVD_ENABLED` | No | Set `false` to disable ENISA EUVD feed (default: true) |
+| `FEEDS_EXPLOITDB_ENABLED` | No | Set `false` to disable Exploit-DB feed (default: true) |
+| `NIST_API_KEY` | No | NVD API key — raises rate limit from 5 to 50 req/30s; register free at nvd.nist.gov |
+| `THREAT_INTEL_ENABLED` | No | Set `true` to enable IOC Explorer / IP Enrichment / Malware Atlas / Threat Exposure in frontend — requires `threat-intel` in `COMPOSE_PROFILES` |
 | `ABUSEIPDB_API_KEY` | No | Required for AbuseIPDB blacklist pull + on-demand IP enrichment |
-| `SHODAN_API_KEY` | No | Shodan paid API for IP enrichment — Shodan InternetDB (free) used if absent |
-| `OTX_API_KEY` | No | AlienVault OTX feed — required for AlienVault IOC ingestion |
+| `SHODAN_API_KEY` | No | Shodan paid API for IP enrichment — free InternetDB fallback used if absent |
+| `OTX_API_KEY` | No | AlienVault OTX feed — required for OTX IOC ingestion |
 | `OTX_IMPORT_DAYS` | No | OTX history depth on first run (default: `90` days) |
-| `TI_THREATFOX_API_KEY` | No | ThreatFox API key — optional, enables higher rate limits |
+| `THREATFOX_API_KEY` | No | ThreatFox API key — optional, enables higher rate limits |
 | `MALWAREBAZAAR_API_KEY` | No | MalwareBazaar API key — required for the feed |
 | `VT_API_KEY` | No | VirusTotal API key — enables daily IOC confidence enrichment (free tier: ~500 req/day) |
 | `VT_DAILY_LIMIT` | No | Max IOCs enriched per VirusTotal run (default: `450`) |
-| `MAXMIND_ACCOUNT_ID` / `MAXMIND_LICENSE_KEY` | No | GeoLite2 database for IP geolocation in feeds |
-| `IPINFO_API_KEY` | No | Enhanced geo + ASN enrichment for AbuseIPDB IPs |
+| `MAXMIND_ACCOUNT_ID` / `MAXMIND_LICENSE_KEY` | No | GeoLite2 — IP geolocation enrichment (country, city, ASN) |
+| `IPINFO_API_KEY` | No | IPInfo — IP privacy detection (VPN/proxy/Tor/hosting) |
 | `TI_MISP_IMPORT_FROM_DATE` | No | MISP first-run date floor (default: `2024-01-01`; set `2000-01-01` for full history) |
 | `TI_RUN_ON_START` | No | Set `true` to force all OSINT feeds to run immediately on container start |
 | `TI_MISP_CIRCL_ENABLED` | No | Set `false` to disable CIRCL MISP feed (default: true) |
@@ -944,23 +947,24 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 | `TI_ABUSEIPDB_ENABLED` | No | Set `false` to disable AbuseIPDB blacklist pull (default: true) |
 | `TI_ALIENVAULT_ENABLED` | No | Set `false` to disable AlienVault OTX feed (default: true) |
 | `TI_VIRUSTOTAL_ENABLED` | No | Set `false` to disable VirusTotal enrichment (default: true when `VT_API_KEY` is set) |
-| `TI_MALPEDIA_ENABLED` | No | Set `false` to disable Malpedia feed (default: true) — no API key required; sourced from MISP galaxy |
-| `MAIL_HOST` | No | SMTP host — empty = no email |
+| `TI_MALPEDIA_ENABLED` | No | Set `false` to disable Malpedia feed (default: true) — no API key required |
+| `MAIL_HOST` | No | SMTP host — leave blank to disable email (default) |
 | `MAIL_PORT` | No | SMTP port (default: 1025) |
-| `NOTIFICATION_EMAIL` | No | Override notification recipient — defaults to admin account email |
-| `SMTP_BRIDGE_TENANT_ID` | No | Azure AD tenant ID — only for `smtp-bridge` profile |
-| `SMTP_BRIDGE_CLIENT_ID` | No | Azure AD app client ID — only for `smtp-bridge` profile |
-| `SMTP_BRIDGE_CLIENT_SECRET` | No | Azure AD app secret — only for `smtp-bridge` profile |
-| `SMTP_BRIDGE_FROM_ADDRESS` | No | Sender address — only for `smtp-bridge` profile |
+| `NOTIFICATION_EMAIL` | No | Notification recipient — defaults to admin account email |
+| `SMTP_BRIDGE_TENANT_ID` | No | Azure AD tenant ID — required when `smtp-bridge` is in `COMPOSE_PROFILES` |
+| `SMTP_BRIDGE_CLIENT_ID` | No | Azure AD app client ID — required when `smtp-bridge` is in `COMPOSE_PROFILES` |
+| `SMTP_BRIDGE_CLIENT_SECRET` | No | Azure AD app secret — required when `smtp-bridge` is in `COMPOSE_PROFILES` |
+| `SMTP_BRIDGE_FROM_ADDRESS` | No | Sender address — required when `smtp-bridge` is in `COMPOSE_PROFILES` |
 | `OPENSEARCH_HEAP` | No | Heap per OpenSearch node — e.g. `1g` (default) or `4g` for 3-node cluster |
 | `OPENSEARCH_DISABLE_SECURITY` | No | Set `false` to enable OpenSearch Security plugin (requires `OPENSEARCH_ADMIN_PASSWORD`) |
 | `OPENSEARCH_ADMIN_PASSWORD` | No | Required when `OPENSEARCH_DISABLE_SECURITY=false` (OpenSearch 2.12+) |
-| `EVIDENCE_STORE` | No | `postgres` (default) or `opensearch` — see Enterprise Profiles section |
-| `GARAGE_RPC_SECRET` | No | Garage cluster secret — required for `--profile garage` |
-| `GARAGE_ACCESS_KEY` | No | Garage S3 access key — required for `--profile garage` |
-| `GARAGE_SECRET_KEY` | No | Garage S3 secret key — required for `--profile garage` |
+| `EVIDENCE_STORE` | No | `postgres` (default) or `opensearch` — opensearch requires `garage` + `opensearch-cluster` in `COMPOSE_PROFILES` |
+| `GARAGE_RPC_SECRET` | No | Garage cluster secret — required when `garage` is in `COMPOSE_PROFILES` |
+| `GARAGE_ACCESS_KEY` | No | Garage S3 access key — required when `garage` is in `COMPOSE_PROFILES` |
+| `GARAGE_SECRET_KEY` | No | Garage S3 secret key — required when `garage` is in `COMPOSE_PROFILES` |
 | `GARAGE_BUCKET_EVIDENCE` | No | Garage bucket for evidence files (default: `isms-evidence`) |
-| `DASHBOARDS_BIND` | No | Bind address for OpenSearch Dashboards — `0.0.0.0` to expose on LAN |
+| `GARAGE_BIND` | No | Garage S3 API bind address — `0.0.0.0` to expose externally (default: `127.0.0.1`) |
+| `DASHBOARDS_BIND` | No | OpenSearch Dashboards bind address — `0.0.0.0` to expose on LAN (default: `127.0.0.1`) |
 
 ---
 
@@ -968,20 +972,21 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 
 - [ ] **Linux only:** `vm.max_map_count=262144` set — both immediately (`sysctl -w`) and permanently (`/etc/sysctl.conf`)
 - [ ] `.env` created from `.env.example` with all required variables filled in
-- [ ] `POSTGRES_PASSWORD` set to a strong password
-- [ ] `REDIS_PASSWORD` set to a strong password
-- [ ] `SECRET_KEY` set to a random 32+ character hex string
-- [ ] `ADMIN_PASSWORD` set — **there is no default; if empty, you cannot log in**
+- [ ] `COMPOSE_PROFILES` set — `opensearch-single` for standard, `opensearch-cluster,...` for enterprise
+- [ ] `POSTGRES_PASSWORD` set to a strong random value
+- [ ] `REDIS_PASSWORD` set to a strong random value
+- [ ] `SECRET_KEY` set — minimum 32-char random hex
+- [ ] `CONNECTORS_WORKER_SECRET` set — minimum 32-char random hex
+- [ ] `ADMIN_PASSWORD` set — **no default; platform refuses to start if blank**
 - [ ] `HOST_IP` set to your server's IP address
-- [ ] `docker compose up -d` completed — all 10 containers up
-- [ ] `docker compose ps` shows 9 containers `healthy` + `isms-core-beat` `Up`
+- [ ] `docker compose up -d` completed — all containers up
+- [ ] `docker compose ps` shows all service containers `healthy` + `isms-core-beat` `Up`
 - [ ] `bootstrap.sh` run once — import statistics show non-zero counts
 - [ ] `curl -k https://localhost/health` returns `{"status":"ok","database":"ok","opensearch":"ok"}`
 - [ ] `https://{HOST_IP}` accessible in browser — dashboard shows compliance data
 - [ ] Admin password changed (**Admin → Users → Edit admin user**)
 - [ ] TLS mode configured (self-signed / custom cert / Let's Encrypt)
-- [ ] Email profile started if needed (`--profile mailpit` or `--profile smtp-bridge`)
-- [ ] `CONNECTORS_WORKER_SECRET` set if using automated evidence
+- [ ] Email configured if needed — set `COMPOSE_PROFILES=opensearch-single,mailpit` (dev) or `opensearch-single,smtp-bridge` (prod) in `.env`
 - [ ] `ANTHROPIC_API_KEY` set if using ISMS Compass
 - [ ] MFA enabled on all admin accounts (**System → Two-factor authentication**)
 

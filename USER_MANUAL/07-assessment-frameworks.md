@@ -6,7 +6,7 @@
 
 ## Overview
 
-The platform includes 23 compliance framework assessment modules. These cover regulatory obligations, industry standards, and sector-specific requirements that organisations running an ISO 27001 ISMS commonly need to demonstrate compliance with alongside their ISO certification.
+The platform includes 25 compliance framework assessment modules. These cover regulatory obligations, industry standards, and sector-specific requirements that organisations running an ISO 27001 ISMS commonly need to demonstrate compliance with alongside their ISO certification.
 
 Framework assessments are global — they are not scoped to a specific project but cover your organisation's overall compliance posture.
 

@@ -52,8 +52,8 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [UK Operational Resilience (FCA/PRA)](#uk-operational-resilience-fcapra) | UK FCA/PRA | 12 requirements | 4 Objectives | 0–4 | UK financial sector — banks, insurers, FMIs |
 | [COBIT 2019 (ISACA)](#cobit-2019-isaca) | ISACA EGIT | 40 objectives | 5 Domains (EDM/APO/BAI/DSS/MEA) | 0–4 | Enterprise IT governance, audit, CISM/CISA/CGEIT holders |
 | [NIST SP 800-53 R5](#nist-sp-800-53-rev-5) | NIST | 20 control families | 3 Classes (Technical/Operational/Management) | 0–4 | US federal agencies, contractors, and any organisation seeking comprehensive security controls |
-| [CSA CCM v4.1](#csa-cloud-controls-matrix-v41) | CSA | 197 control specifications | 17 Domains | 0–4 | Cloud service providers, cloud consumers — any sector |
-| [CSA AICM v1.0.3](#csa-ai-controls-matrix-v103) | CSA | 72 controls | 7 Domains | 0–4 | Organisations developing, deploying, or procuring AI systems |
+| [CSA CCM v4.1](#csa-cloud-controls-matrix-v41) | CSA | 207 control specifications | 17 Domains | 0–4 | Cloud service providers, cloud consumers — any sector |
+| [CSA AICM v1.0.3](#csa-ai-controls-matrix-v103) | CSA | 243 controls | 18 Domains | 0–4 | Organisations developing, deploying, or procuring AI systems |
 | [NCSC CAF v4.0 (UK)](#ncsc-caf-v40-uk) | NCSC UK | 41 Contributing Outcomes | 14 Principles / 4 Objectives | 0/2/4 | UK operators of essential services / CNI |
 | [ReCyF v2.5 — France NIS2](#recyf-v25--france-nis2-anssi) | ANSSI | 20 Security Objectives | 4 Pillars | 0–4 | French NIS2 entities (EI & EE) — Loi 2024-449 |
 | [Custom (YAML)](#custom-frameworks-yaml-import) | User-defined | User-defined | User-defined | User-defined | All |
@@ -462,7 +462,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 ### CSA Cloud Controls Matrix v4.1
 
 **Source:** Cloud Security Alliance — Cloud Controls Matrix v4.1 (March 2023)
-**Scope:** 197 control specifications across 17 security domains: Application & Interface Security (AIS), Audit Assurance & Compliance (AAC), Business Continuity Management & Operational Resilience (BCR), Change Control & Configuration Management (CCC), Cryptography, Encryption & Key Management (CEK), Data Center Security (DCS), Data Security & Privacy Lifecycle Management (DSP), Governance, Risk & Compliance (GRC), Human Resources (HRS), Identity & Access Management (IAM), Infrastructure & Virtualization Security (IVS), Interoperability & Portability (IPY), Logging & Monitoring (LOG), Security Incident Management, E-Discovery, & Cloud Forensics (SEF), Supply Chain Management, Transparency & Accountability (STA), Threat & Vulnerability Management (TVM), Universal Endpoint Management (UEM).
+**Scope:** 207 control specifications across 17 security domains: Application & Interface Security (AIS), Audit Assurance & Compliance (AAC), Business Continuity Management & Operational Resilience (BCR), Change Control & Configuration Management (CCC), Cryptography, Encryption & Key Management (CEK), Data Center Security (DCS), Data Security & Privacy Lifecycle Management (DSP), Governance, Risk & Compliance (GRC), Human Resources (HRS), Identity & Access Management (IAM), Infrastructure & Virtualization Security (IVS), Interoperability & Portability (IPY), Logging & Monitoring (LOG), Security Incident Management, E-Discovery, & Cloud Forensics (SEF), Supply Chain Management, Transparency & Accountability (STA), Threat & Vulnerability Management (TVM), Universal Endpoint Management (UEM).
 **Scoring:** Maturity levels 0–4
 **Audience:** Cloud service providers seeking CSA STAR certification; cloud consumers performing vendor due diligence; organisations with multi-cloud or hybrid environments.
 
@@ -476,7 +476,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 ### CSA AI Controls Matrix v1.0.3
 
 **Source:** Cloud Security Alliance — AI Controls Matrix (AICM) v1.0.3 (2024)
-**Scope:** 72 controls across 7 domains: AI Governance & Accountability (AGA), Data Management & Privacy (DMP), Model Development & Validation (MDV), Security & Resilience (SAR), Transparency & Explainability (TEX), Human Oversight & Control (HOC), Regulatory Compliance & Legal (RCL).
+**Scope:** 243 controls across 18 domains including: AI Governance & Accountability (AGA), Data Management & Privacy (DMP), Model Development & Validation (MDV), Security & Resilience (SAR), Transparency & Explainability (TEX), Human Oversight & Control (HOC), Regulatory Compliance & Legal (RCL), and 11 additional domains covering AI risk management, ethics, operations, supply chain, incident response, and more.
 **Scoring:** Maturity levels 0–4
 **Audience:** Organisations developing, deploying, or procuring AI systems; AI governance teams; cloud providers offering AI/ML services; teams managing EU AI Act or ISO 42001 compliance.
 
