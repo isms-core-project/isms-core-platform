@@ -114,6 +114,17 @@ def _mark_processed(source: str, uuids: list[str]) -> None:
         logger.warning("Could not persist ti_misp_state for %s: %s", source, exc)
 
 
+def _extract_tlp(tags: list) -> str | None:
+    """Return normalised TLP level from MISP tags (e.g. 'white', 'green')."""
+    for tag in tags:
+        name = (tag.get("name", "") if isinstance(tag, dict) else str(tag)).lower()
+        if name.startswith("tlp:"):
+            level = name.split(":", 1)[1].strip()
+            if level in ("white", "green", "amber", "red"):
+                return level
+    return None
+
+
 def _parse_galaxy_tags(tags: list) -> tuple[list, list, list]:
     """
     Returns (family_slugs, actor_slugs, mitre_tids) extracted from MISP galaxy tags.
@@ -150,9 +161,10 @@ def _extract_iocs_from_event(event_data: dict, source: str, event_uuid: str) -> 
     event = event_data.get("Event", event_data)
     now = datetime.now(timezone.utc)
 
-    # Event-level tags → galaxy slugs + TIDs
+    # Event-level tags → galaxy slugs + TIDs + TLP
     tags = event.get("Tag", [])
     family_slugs, actor_slugs, mitre_tids = _parse_galaxy_tags(tags)
+    tlp = _extract_tlp(tags)
 
     # Event date
     event_date_str = event.get("date") or event.get("timestamp")
@@ -189,6 +201,7 @@ def _extract_iocs_from_event(event_data: dict, source: str, event_uuid: str) -> 
             "value":       value[:2000],
             "source":      source,
             "confidence":  None,
+            "tlp":         tlp,
             "tags":        [t.get("name", t) if isinstance(t, dict) else t for t in tags + attr_tags],
             "mitre_tids":  list(dict.fromkeys(mitre_tids + a_tids)),
             "family_slugs": list(dict.fromkeys(family_slugs + a_family)),
@@ -214,10 +227,11 @@ def _upsert_iocs(iocs: list[dict]) -> int:
                 cur.execute(
                     """
                     INSERT INTO ti_iocs
-                      (id, ioc_type, value, source, confidence, tags, mitre_tids,
+                      (id, ioc_type, value, source, confidence, tlp, tags, mitre_tids,
                        family_slugs, actor_slugs, event_uuids, first_seen, last_seen, created_at)
-                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
                     ON CONFLICT (ioc_type, value, source) DO UPDATE SET
+                      tlp          = COALESCE(ti_iocs.tlp, EXCLUDED.tlp),
                       tags         = COALESCE((
                           SELECT jsonb_agg(DISTINCT elem)
                           FROM jsonb_array_elements(ti_iocs.tags || EXCLUDED.tags) elem
@@ -244,6 +258,7 @@ def _upsert_iocs(iocs: list[dict]) -> int:
                         str(uuid4()),
                         ioc["ioc_type"], ioc["value"], ioc["source"],
                         ioc["confidence"],
+                        ioc.get("tlp"),
                         _json.dumps(ioc.get("tags") or []),
                         _json.dumps(ioc.get("mitre_tids") or []),
                         _json.dumps(ioc.get("family_slugs") or []),

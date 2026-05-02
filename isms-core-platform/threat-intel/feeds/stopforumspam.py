@@ -43,20 +43,33 @@ def run() -> None:
         logger.error("Stopforumspam download failed: %s", exc)
         return
 
-    # File format: "ip","frequency","lastseen" — extract first CSV field only
-    ips: list[str] = []
+    # File format: "ip","frequency","lastseen" — parse all three fields
+    entries: list[tuple[str, int, datetime]] = []
     for line in lines:
         line = line.strip()
         if not line or line.startswith("#"):
             continue
-        ip = line.split(",")[0].strip().strip('"')
-        if ip:
-            ips.append(ip)
-    if not ips:
+        parts = [p.strip().strip('"') for p in line.split(",")]
+        ip = parts[0] if parts else ""
+        if not ip:
+            continue
+        try:
+            freq = int(parts[1]) if len(parts) > 1 else 1
+        except ValueError:
+            freq = 1
+        try:
+            last = datetime.fromisoformat(parts[2].replace(" ", "T")) if len(parts) > 2 else None
+            if last and last.tzinfo is None:
+                last = last.replace(tzinfo=timezone.utc)
+        except (ValueError, AttributeError):
+            last = None
+        entries.append((ip, freq, last))
+
+    if not entries:
         fail_run(run_id, "Empty Stopforumspam response")
         return
 
-    logger.info("Stopforumspam: %d IPs to process", len(ips))
+    logger.info("Stopforumspam: %d IPs to process", len(entries))
 
     now     = datetime.now(timezone.utc)
     now_iso = now.isoformat()
@@ -75,7 +88,7 @@ def run() -> None:
 
     with get_conn() as conn:
         with conn.cursor() as cur:
-            for ip in ips:
+            for ip, freq, last_seen_dt in entries:
                 if is_cancelled("stopforumspam"):
                     logger.info("Stopforumspam cancelled at %d entries", upserted)
                     fail_run(run_id, "Cancelled by user")
@@ -84,18 +97,31 @@ def run() -> None:
                 if not ip or len(ip) > 45:
                     continue
 
+                # Confidence derived from sighting frequency (Wilson-style proxy)
+                if freq >= 50:
+                    confidence = 85
+                elif freq >= 10:
+                    confidence = 70
+                elif freq >= 3:
+                    confidence = 50
+                else:
+                    confidence = 30
+
+                last_seen = last_seen_dt or now
+
                 cur.execute(
                     """
                     INSERT INTO ti_iocs
                       (id, ioc_type, value, source, confidence, tags, mitre_tids,
                        family_slugs, actor_slugs, event_uuids, first_seen, last_seen, created_at)
-                    VALUES (%s,'ip',%s,'stopforumspam',60,
+                    VALUES (%s,'ip',%s,'stopforumspam',%s,
                             '["spam","botnet"]'::jsonb,'[]'::jsonb,
                             '[]'::jsonb,'[]'::jsonb,'[]'::jsonb,%s,%s,%s)
                     ON CONFLICT (ioc_type, value, source) DO UPDATE SET
-                      last_seen = GREATEST(ti_iocs.last_seen, EXCLUDED.last_seen)
+                      confidence = GREATEST(ti_iocs.confidence, EXCLUDED.confidence),
+                      last_seen  = GREATEST(ti_iocs.last_seen, EXCLUDED.last_seen)
                     """,
-                    (str(uuid4()), ip, now, now, now),
+                    (str(uuid4()), ip, confidence, now, last_seen, now),
                 )
                 upserted += 1
 

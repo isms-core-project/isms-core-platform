@@ -107,6 +107,20 @@ INDICES = {
         "total_reports":    {"type": "integer"},
         "last_reported_at": {"type": "date"},
         "indexed_at":       {"type": "date"},
+        # MaxMind GeoLite2 enrichment (free tier: country, city, ASN only)
+        "geo_country":   {"type": "keyword"},
+        "geo_city":      {"type": "keyword"},
+        "geo_lat":       {"type": "float"},
+        "geo_lon":       {"type": "float"},
+        "geo_location":  {"type": "geo_point"},
+        "geo_asn":       {"type": "integer"},
+        "geo_org":       {"type": "keyword"},
+        # IPInfo privacy enrichment
+        "privacy_label":      {"type": "keyword"},
+        "privacy_is_vpn":     {"type": "boolean"},
+        "privacy_is_proxy":   {"type": "boolean"},
+        "privacy_is_tor":     {"type": "boolean"},
+        "privacy_is_hosting": {"type": "boolean"},
     }}},
     "ti-malpedia-families": {"mappings": {"properties": {
         "slug":        {"type": "keyword"},
@@ -184,6 +198,19 @@ INDICES = {
         "file_type":  {"type": "keyword"},
         "signature":  {"type": "keyword"},
         "tags":       {"type": "keyword"},
+        "first_seen": {"type": "date"},
+        "indexed_at": {"type": "date"},
+    }}},
+    "ti-alienvault": {"mappings": {"properties": {
+        "ioc":        {"type": "keyword"},
+        "ioc_type":   {"type": "keyword"},
+        "pulse_name": {"type": "text", "fields": {"keyword": {"type": "keyword"}}},
+        "adversary":  {"type": "keyword"},
+        "industries": {"type": "keyword"},
+        "countries":  {"type": "keyword"},
+        "malware":    {"type": "keyword"},
+        "mitre_tids": {"type": "keyword"},
+        "tlp":        {"type": "keyword"},
         "first_seen": {"type": "date"},
         "indexed_at": {"type": "date"},
     }}},
@@ -1020,6 +1047,50 @@ def _count_table(obj_id: str, title: str, index_id: str,
     }
 
 
+def _geo_map(obj_id: str, title: str, index_id: str, geo_field: str = "geo_location") -> dict:
+    """Coordinate map (tile_map) over a geo_point field."""
+    vis_state = {
+        "title": title, "type": "tile_map",
+        "params": {
+            "colorSchema": "Yellow to Red",
+            "mapType": "Scaled Circle Markers",
+            "isDesaturated": False,
+            "addTooltip": True,
+            "heatClusterSize": 1.5,
+            "legendPosition": "bottomright",
+            "mapZoom": 2,
+            "mapCenter": [0, 0],
+            "wms": {
+                "enabled": False,
+                "url": "",
+                "options": {"format": "image/png", "transparent": True},
+            },
+        },
+        "aggs": [
+            {"id": "1", "enabled": True, "type": "count",
+             "schema": "metric", "params": {}},
+            {"id": "2", "enabled": True, "type": "geohash_grid",
+             "schema": "segment", "params": {
+                 "field": geo_field,
+                 "autoPrecision": True,
+                 "precision": 2,
+                 "useGeocentroid": True,
+             }},
+        ],
+    }
+    return {
+        "type": "visualization", "id": obj_id,
+        "attributes": {
+            "title": title,
+            "visState": json.dumps(vis_state),
+            "uiStateJSON": "{}",
+            "kibanaSavedObjectMeta": {"searchSourceJSON": _ss(index_id)},
+        },
+        "references": [{"name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                        "type": "index-pattern", "id": index_id}],
+    }
+
+
 def _top_table(obj_id: str, title: str, index_id: str,
                bucket_field: str, metric_field: str, size: int = 100) -> dict:
     """Data table: top N terms by max(metric_field) descending. metric_field must be numeric."""
@@ -1414,6 +1485,10 @@ def build_objects(fields_by_id: dict) -> list:
         {"type": "index-pattern", "id": "ip-ti-malwarebazaar",
          "attributes": {"title": "ti-malwarebazaar", "timeFieldName": "first_seen",
                         "fields": fields_by_id.get("ip-ti-malwarebazaar", "[]")}, "references": []},
+        # Phase 50 — AlienVault OTX
+        {"type": "index-pattern", "id": "ip-ti-alienvault",
+         "attributes": {"title": "ti-alienvault", "timeFieldName": "first_seen",
+                        "fields": fields_by_id.get("ip-ti-alienvault", "[]")}, "references": []},
         # Phase 47 — Exploit-DB index pattern
         {"type": "index-pattern", "id": "ip-exploitdb",
          "attributes": {
@@ -1646,21 +1721,26 @@ def build_objects(fields_by_id: dict) -> list:
 
     # AbuseIPDB Blacklist
     # Feed uses confidenceMinimum=100 → all IPs have abuse_score=100 (not useful for metrics).
-    # Feed creates index with its own _OS_MAPPING (pure keyword, no .keyword subfields).
-    # Use plain field names: country_code, isp, usage_type are all keyword → aggregatable.
+    # Geo enrichment via MaxMind GeoLite2 City (geo_*). Privacy enrichment via IPInfo (privacy_*).
     objs += [
-        _metric(     "viz-ti-abuse-total",   "AbuseIPDB — Blacklisted IPs",         "ip-ti-abuseipdb"),
-        _pie(        "viz-ti-abuse-country", "AbuseIPDB — By Country",              "ip-ti-abuseipdb", "country_code"),
-        _pie(        "viz-ti-abuse-usage",   "AbuseIPDB — By Usage Type",           "ip-ti-abuseipdb", "usage_type"),
-        _timeline(   "viz-ti-abuse-time",    "AbuseIPDB — Last Reported Over Time", "ip-ti-abuseipdb", "last_reported_at"),
-        _count_table("viz-ti-abuse-isp",     "AbuseIPDB — Top ISPs",               "ip-ti-abuseipdb", "isp", 25),
+        _metric(     "viz-ti-abuse-total",   "AbuseIPDB — Blacklisted IPs",          "ip-ti-abuseipdb"),
+        _pie(        "viz-ti-abuse-country", "AbuseIPDB — By Country",               "ip-ti-abuseipdb", "country_code"),
+        _pie(        "viz-ti-abuse-privacy", "AbuseIPDB — By Privacy Type",          "ip-ti-abuseipdb", "privacy_label"),
+        _timeline(   "viz-ti-abuse-time",    "AbuseIPDB — Last Reported Over Time",  "ip-ti-abuseipdb", "last_reported_at"),
+        _geo_map(    "viz-ti-abuse-geomap",  "AbuseIPDB — IP Geolocation Map",       "ip-ti-abuseipdb"),
+        _count_table("viz-ti-abuse-city",    "AbuseIPDB — Top Cities",               "ip-ti-abuseipdb", "geo_city", 25),
+        _count_table("viz-ti-abuse-asn",     "AbuseIPDB — Top ASNs",                 "ip-ti-abuseipdb", "geo_org", 25),
+        _count_table("viz-ti-abuse-isp",     "AbuseIPDB — Top ISPs",                 "ip-ti-abuseipdb", "isp", 25),
     ]
     objs.append(_dashboard("dash-ti-abuseipdb", "ISMS CORE — AbuseIPDB Blacklist", [
         ("viz-ti-abuse-total",    0,  0, 16, 8),
         ("viz-ti-abuse-country", 16,  0, 16, 8),
-        ("viz-ti-abuse-usage",   32,  0, 16, 8),
+        ("viz-ti-abuse-privacy", 32,  0, 16, 8),
         ("viz-ti-abuse-time",     0,  8, 48, 8),
-        ("viz-ti-abuse-isp",      0, 16, 48, 9),
+        ("viz-ti-abuse-geomap",   0, 16, 48,14),
+        ("viz-ti-abuse-city",     0, 30, 48, 9),
+        ("viz-ti-abuse-asn",      0, 39, 48, 9),
+        ("viz-ti-abuse-isp",      0, 48, 48, 9),
     ]))
 
     # Malpedia — Malware Families
@@ -1796,6 +1876,30 @@ def build_objects(fields_by_id: dict) -> list:
         ("viz-ti-mb-tags",     0, 22, 48,10),
     ]))
 
+    # ── AlienVault OTX ────────────────────────────────────────────────────────
+    # Fields: ioc_type (keyword), adversary (keyword), industries (keyword),
+    #         countries (keyword), malware (keyword), mitre_tids (keyword), tlp (keyword)
+    objs += [
+        _metric(     "viz-ti-otx-total",     "AlienVault OTX — IOCs Indexed",          "ip-ti-alienvault"),
+        _timeline(   "viz-ti-otx-time",      "AlienVault OTX — IOCs Over Time",        "ip-ti-alienvault", "first_seen"),
+        _pie(        "viz-ti-otx-type",      "AlienVault OTX — By IOC Type",           "ip-ti-alienvault", "ioc_type"),
+        _pie(        "viz-ti-otx-tlp",       "AlienVault OTX — By TLP",                "ip-ti-alienvault", "tlp"),
+        _count_table("viz-ti-otx-adversary", "AlienVault OTX — Top Adversaries",       "ip-ti-alienvault", "adversary", 25),
+        _count_table("viz-ti-otx-malware",   "AlienVault OTX — Top Malware Families",  "ip-ti-alienvault", "malware", 25),
+        _count_table("viz-ti-otx-tids",      "AlienVault OTX — Top ATT&CK Techniques", "ip-ti-alienvault", "mitre_tids", 25),
+        _count_table("viz-ti-otx-industry",  "AlienVault OTX — Top Targeted Industries","ip-ti-alienvault", "industries", 20),
+    ]
+    objs.append(_dashboard("dash-ti-alienvault", "ISMS CORE — AlienVault OTX", [
+        ("viz-ti-otx-total",      0,  0, 24, 5),
+        ("viz-ti-otx-time",      24,  0, 24, 5),
+        ("viz-ti-otx-type",       0,  5, 16, 9),
+        ("viz-ti-otx-tlp",       16,  5, 16, 9),
+        ("viz-ti-otx-adversary", 32,  5, 16, 9),
+        ("viz-ti-otx-malware",    0, 14, 24,10),
+        ("viz-ti-otx-tids",      24, 14, 24,10),
+        ("viz-ti-otx-industry",   0, 24, 48, 9),
+    ]))
+
     # ── Red Flag Domains + Stopforumspam (combined blocklists) ────────────────
     # Red Flag Domains: domain (keyword), date_added (date) — minimal fields
     # Stopforumspam: ip (ip), indexed_at (date) — minimal fields
@@ -1902,6 +2006,8 @@ def main():
         "ip-ti-red-flag-domains":        get_osd_fields("ti-red-flag-domains"),
         "ip-ti-stopforumspam":           get_osd_fields("ti-stopforumspam"),
         "ip-ti-malwarebazaar":           get_osd_fields("ti-malwarebazaar"),
+        # Phase 50 — AlienVault OTX
+        "ip-ti-alienvault":              get_osd_fields("ti-alienvault"),
         # Phase 47 — Exploit-DB
         "ip-exploitdb":                  get_osd_fields("exploitdb"),
     }

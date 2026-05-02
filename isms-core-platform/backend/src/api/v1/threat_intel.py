@@ -35,6 +35,8 @@ _TI_SOURCES = [
     ("stopforumspam",    "Stopforumspam",      "TI_STOPFORUMSPAM_ENABLED"),
     ("malwarebazaar",    "MalwareBazaar",      "TI_MALWAREBAZAAR_ENABLED"),
     ("malpedia",         "Malpedia",           "TI_MALPEDIA_ENABLED"),
+    ("alienvault",       "AlienVault OTX",     "TI_ALIENVAULT_ENABLED"),
+    ("virustotal",       "VirusTotal",         "TI_VIRUSTOTAL_ENABLED"),
 ]
 
 
@@ -71,6 +73,7 @@ class IocRead(BaseModel):
     value: str
     source: str
     confidence: int | None
+    tlp: str | None = None
     tags: list
     mitre_tids: list
     family_slugs: list
@@ -131,6 +134,8 @@ class EnrichIpResponse(BaseModel):
     abuseipdb: dict | None = None
     shodan: dict | None = None
     google_dns: dict | None = None
+    maxmind: dict | None = None
+    ipinfo: dict | None = None
     cached: bool = False
     cache_age_minutes: int | None = None
     ioc_hits: list[IocRead] = []
@@ -278,6 +283,7 @@ def list_iocs(
                 value=r.value,
                 source=r.source,
                 confidence=r.confidence,
+                tlp=r.tlp,
                 tags=r.tags or [],
                 mitre_tids=r.mitre_tids or [],
                 family_slugs=r.family_slugs or [],
@@ -450,36 +456,49 @@ def enrich_ip(
     except ValueError:
         raise HTTPException(status_code=422, detail=f"Invalid IP address: {ip}")
 
-    # Check cache
-    now = datetime.now(timezone.utc)
+    now        = datetime.now(timezone.utc)
+    cutoff_24h = now - timedelta(hours=24)
+    cutoff_30d = now - timedelta(days=30)
+
     cached_row = db.get(TiEnrichmentCache, ip)
-    is_cached = False
-    cache_age_minutes: int | None = None
 
-    if cached_row and (now - cached_row.cached_at) < timedelta(hours=24):
-        is_cached = True
-        cache_age_minutes = int((now - cached_row.cached_at).total_seconds() / 60)
-        abuseipdb_result = cached_row.abuseipdb
-        shodan_result = cached_row.shodan
-        google_dns_result = cached_row.google_dns
-    else:
-        abuseipdb_result = _call_abuseipdb(ip)
-        shodan_result = _call_shodan(ip)
-        google_dns_result = _call_google_dns(ip)
+    # Per-enricher freshness
+    abip_fresh = bool(cached_row and cached_row.cached_at         and cached_row.cached_at         > cutoff_24h)
+    mm_fresh   = bool(cached_row and cached_row.maxmind_cached_at and cached_row.maxmind_cached_at > cutoff_30d)
+    ipi_fresh  = bool(cached_row and cached_row.ipinfo_cached_at  and cached_row.ipinfo_cached_at  > cutoff_30d)
 
-        # Persist to cache
+    is_cached         = abip_fresh and mm_fresh and ipi_fresh
+    cache_age_minutes = int((now - cached_row.cached_at).total_seconds() / 60) if (is_cached and cached_row) else None
+
+    abuseipdb_result  = cached_row.abuseipdb  if abip_fresh else _call_abuseipdb(ip)
+    shodan_result     = cached_row.shodan     if abip_fresh else _call_shodan(ip)
+    google_dns_result = cached_row.google_dns if abip_fresh else _call_google_dns(ip)
+
+    maxmind_result = cached_row.maxmind if mm_fresh  else _call_maxmind(ip)
+    ipinfo_result  = cached_row.ipinfo  if ipi_fresh else _call_ipinfo(ip)
+
+    if not is_cached:
         if cached_row:
-            cached_row.abuseipdb = abuseipdb_result
-            cached_row.shodan = shodan_result
-            cached_row.google_dns = google_dns_result
-            cached_row.cached_at = now
+            if not abip_fresh:
+                cached_row.abuseipdb  = abuseipdb_result
+                cached_row.shodan     = shodan_result
+                cached_row.google_dns = google_dns_result
+                cached_row.cached_at  = now
+            if not mm_fresh and maxmind_result is not None:
+                cached_row.maxmind           = maxmind_result
+                cached_row.maxmind_cached_at = now
+            if not ipi_fresh and ipinfo_result is not None:
+                cached_row.ipinfo           = ipinfo_result
+                cached_row.ipinfo_cached_at = now
         else:
             db.add(TiEnrichmentCache(
                 ip=ip,
-                abuseipdb=abuseipdb_result,
-                shodan=shodan_result,
-                google_dns=google_dns_result,
-                cached_at=now,
+                abuseipdb=abuseipdb_result, shodan=shodan_result,
+                google_dns=google_dns_result, cached_at=now,
+                maxmind=maxmind_result,
+                maxmind_cached_at=now if maxmind_result is not None else None,
+                ipinfo=ipinfo_result,
+                ipinfo_cached_at=now if ipinfo_result is not None else None,
             ))
         db.commit()
 
@@ -496,6 +515,8 @@ def enrich_ip(
         abuseipdb=abuseipdb_result,
         shodan=shodan_result,
         google_dns=google_dns_result,
+        maxmind=maxmind_result,
+        ipinfo=ipinfo_result,
         cached=is_cached,
         cache_age_minutes=cache_age_minutes,
         ioc_hits=[
@@ -599,6 +620,117 @@ def _call_google_dns(ip: str) -> dict | None:
         return None
 
 
+_CITY_MMDB = "/data/ti/GeoLite2-City.mmdb"
+_ASN_MMDB  = "/data/ti/GeoLite2-ASN.mmdb"
+
+
+def _call_maxmind(ip: str) -> dict | None:
+    """MaxMind geo lookup. Uses local MMDB if available; falls back to web service."""
+    if not os.environ.get("MAXMIND_ACCOUNT_ID"):
+        return None
+
+    # Local MMDB — instant, no rate limits (downloaded by threat-intel container)
+    if os.path.exists(_CITY_MMDB):
+        try:
+            import geoip2.database
+            import geoip2.errors
+            result: dict = {}
+            with geoip2.database.Reader(_CITY_MMDB) as reader:
+                try:
+                    r = reader.city(ip)
+                    result.update({
+                        "country_code": r.country.iso_code,
+                        "country_name": r.country.name,
+                        "city":         r.city.name,
+                        "latitude":     r.location.latitude,
+                        "longitude":    r.location.longitude,
+                    })
+                except geoip2.errors.AddressNotFoundError:
+                    pass
+            if os.path.exists(_ASN_MMDB):
+                with geoip2.database.Reader(_ASN_MMDB) as reader:
+                    try:
+                        a = reader.asn(ip)
+                        result.update({
+                            "asn":     a.autonomous_system_number,
+                            "asn_org": a.autonomous_system_organization,
+                        })
+                    except geoip2.errors.AddressNotFoundError:
+                        pass
+            return result
+        except Exception as exc:
+            logger.warning("MaxMind MMDB lookup failed for %s: %s", ip, exc)
+
+    # MMDB not yet downloaded — fall back to web service
+    license_key = os.environ.get("MAXMIND_LICENSE_KEY", "")
+    if not license_key:
+        return None
+    try:
+        import requests
+        resp = requests.get(
+            f"https://geolite.info/geoip/v2.1/city/{ip}",
+            auth=(os.environ.get("MAXMIND_ACCOUNT_ID", ""), license_key),
+            headers={"Accept": "application/json"},
+            timeout=10,
+        )
+        if resp.status_code == 404:
+            return {}
+        resp.raise_for_status()
+        d        = resp.json()
+        country  = d.get("country") or {}
+        city     = d.get("city") or {}
+        location = d.get("location") or {}
+        traits   = d.get("traits") or {}
+        return {
+            "country_code": country.get("iso_code"),
+            "country_name": (country.get("names") or {}).get("en"),
+            "city":         (city.get("names") or {}).get("en"),
+            "latitude":     location.get("latitude"),
+            "longitude":    location.get("longitude"),
+            "asn":          traits.get("autonomous_system_number"),
+            "asn_org":      traits.get("autonomous_system_organization"),
+        }
+    except Exception as exc:
+        logger.warning("MaxMind web service failed for %s: %s", ip, exc)
+    return None
+
+
+def _call_ipinfo(ip: str) -> dict | None:
+    """IPInfo privacy lookup."""
+    api_key = os.environ.get("IPINFO_API_KEY", "")
+    if not api_key:
+        return None
+    try:
+        import requests
+        resp = requests.get(
+            f"https://ipinfo.io/{ip}/json",
+            params={"token": api_key},
+            timeout=10,
+        )
+        if resp.status_code == 404:
+            return {"privacy_label": "Clean"}
+        resp.raise_for_status()
+        p       = resp.json().get("privacy") or {}
+        tor     = bool(p.get("tor"))
+        vpn     = bool(p.get("vpn"))
+        proxy   = bool(p.get("proxy"))
+        relay   = bool(p.get("relay"))
+        hosting = bool(p.get("hosting"))
+        label   = "Tor" if tor else "VPN" if vpn else "Proxy" if proxy else "Relay" if relay else "Hosting" if hosting else "Clean"
+        return {
+            "privacy_label": label,
+            "is_vpn":     vpn,
+            "is_proxy":   proxy,
+            "is_tor":     tor,
+            "is_relay":   relay,
+            "is_hosting": hosting,
+            "service":    p.get("service") or "",
+        }
+    except Exception as exc:
+        logger.warning("IPInfo enrichment failed for %s: %s", ip, exc)
+    return None
+
+
 # ── Admin: trigger feed ───────────────────────────────────────────────────────
 
 _TRIGGER_MAP = {
@@ -613,6 +745,8 @@ _TRIGGER_MAP = {
     "red_flag_domains": "red_flag_domains",
     "stopforumspam":    "stopforumspam",
     "malwarebazaar":    "malwarebazaar",
+    "alienvault":       "alienvault",
+    "virustotal":       "virustotal",
 }
 
 @router.post("/feeds/trigger", dependencies=[Depends(require_admin)])

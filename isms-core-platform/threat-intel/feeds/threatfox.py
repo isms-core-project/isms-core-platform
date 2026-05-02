@@ -24,7 +24,7 @@ from feeds.base import (
 logger = logging.getLogger(__name__)
 
 _API_URL  = "https://threatfox-api.abuse.ch/api/v1/"
-_API_KEY  = os.environ.get("TI_THREATFOX_API_KEY", "")
+_API_KEY  = os.environ.get("THREATFOX_API_KEY", "")
 _OS_INDEX = "ti-threatfox"
 
 _OS_MAPPING = {
@@ -54,7 +54,7 @@ _TYPE_MAP = {
 
 def run() -> None:
     if not _API_KEY:
-        logger.warning("TI_THREATFOX_API_KEY not set — ThreatFox feed disabled")
+        logger.warning("THREATFOX_API_KEY not set — ThreatFox feed disabled")
         run_id = start_run("threatfox")
         finish_run(run_id, 0)
         return
@@ -72,7 +72,7 @@ def run() -> None:
         )
         if resp.status_code == 401:
             finish_run(run_id, 0)
-            logger.warning("ThreatFox: API key rejected (401) — fix TI_THREATFOX_API_KEY at threatfox.abuse.ch then trigger manually")
+            logger.warning("ThreatFox: API key rejected (401) — fix THREATFOX_API_KEY at threatfox.abuse.ch then trigger manually")
             return
         resp.raise_for_status()
         data = resp.json()
@@ -85,7 +85,7 @@ def run() -> None:
         status = data.get("query_status")
         if status == "unauthorized":
             finish_run(run_id, 0)
-            logger.warning("ThreatFox: API key rejected — fix TI_THREATFOX_API_KEY at auth.abuse.ch then trigger manually")
+            logger.warning("ThreatFox: API key rejected — fix THREATFOX_API_KEY at auth.abuse.ch then trigger manually")
             return
         if status == "no_results":
             finish_run(run_id, 0)

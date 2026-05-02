@@ -204,6 +204,8 @@ class TiIoc(Base):
     event_uuids: Mapped[list]   = mapped_column(JSONB,       nullable=False, default=list)
     first_seen: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     last_seen: Mapped[datetime | None]  = mapped_column(DateTime(timezone=True), nullable=True)
+    tlp: Mapped[str | None]      = mapped_column(String(10),               nullable=True)
+    vt_checked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     raw: Mapped[dict | None]    = mapped_column(JSONB,       nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
 
@@ -260,14 +262,20 @@ class TiTool(Base):
 
 
 class TiEnrichmentCache(Base):
-    """On-demand enrichment cache — 24h TTL enforced by application."""
+    """On-demand enrichment cache — TTL enforced by application (24h for ABIP/Shodan; 30d for geo)."""
     __tablename__ = "ti_enrichment_cache"
 
     ip: Mapped[str]              = mapped_column(String(45),  primary_key=True)
-    abuseipdb: Mapped[dict | None] = mapped_column(JSONB,    nullable=True)
-    shodan: Mapped[dict | None]  = mapped_column(JSONB,       nullable=True)
+    abuseipdb: Mapped[dict | None]  = mapped_column(JSONB,   nullable=True)
+    shodan: Mapped[dict | None]     = mapped_column(JSONB,   nullable=True)
     google_dns: Mapped[dict | None] = mapped_column(JSONB,   nullable=True)
-    cached_at: Mapped[datetime]  = mapped_column(DateTime(timezone=True), nullable=False)
+    cached_at: Mapped[datetime]     = mapped_column(DateTime(timezone=True), nullable=False)
+    # MaxMind GeoLite2 geo + ASN (30-day TTL, populated by TI batch + on-demand)
+    maxmind: Mapped[dict | None]         = mapped_column(JSONB, nullable=True)
+    maxmind_cached_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    # IPInfo privacy flags (30-day TTL)
+    ipinfo: Mapped[dict | None]          = mapped_column(JSONB, nullable=True)
+    ipinfo_cached_at: Mapped[datetime | None]  = mapped_column(DateTime(timezone=True), nullable=True)
 
 
 class TiMispState(Base):

@@ -10,7 +10,9 @@ Pulls OSINT threat feeds on fixed schedules:
   - Feodo Tracker      : every 6h (04:30, 10:30, 16:30, 22:30 UTC)
   - Red Flag Domains   : daily    (05:00 UTC)
   - Stopforumspam      : daily    (05:30 UTC)
+  - AlienVault OTX     : daily    (04:30 UTC)
   - Malpedia           : weekly   (Sunday 03:00 UTC)
+  - MaxMind MMDB       : weekly   (Tuesday 01:00 UTC — MaxMind publishes Tuesdays)
 
 On-demand enrichment (AbuseIPDB check + Shodan) is served by the backend via
 POST /api/v1/threat-intel/enrich/ip — not scheduled here.
@@ -25,6 +27,7 @@ Each source can be disabled via env vars:
   TI_FEODOTRACKER_ENABLED=true|false       (default: true)
   TI_RED_FLAG_DOMAINS_ENABLED=true|false   (default: true)
   TI_STOPFORUMSPAM_ENABLED=true|false      (default: true)
+  TI_ALIENVAULT_ENABLED=true|false         (default: true)
   TI_MALPEDIA_ENABLED=true|false           (default: true)
 
 First-run seed logic:
@@ -41,7 +44,7 @@ import time
 
 import schedule
 
-from feeds import abuseipdb, feodotracker, malwarebazaar, malpedia, misp_feed, red_flag_domains, sslbl, stopforumspam, threatfox, urlhaus
+from feeds import alienvault, abuseipdb, feodotracker, malwarebazaar, malpedia, maxmind, misp_feed, red_flag_domains, sslbl, stopforumspam, threatfox, urlhaus, virustotal
 from feeds.base import has_successful_run
 import trigger_server
 
@@ -92,6 +95,8 @@ def _clear_stale_runs():
                         OR feed_name LIKE 'stopforumspam%'
                         OR feed_name LIKE 'malwarebazaar%'
                         OR feed_name LIKE 'feodotracker%'
+                        OR feed_name LIKE 'alienvault%'
+                        OR feed_name LIKE 'virustotal%'
                         )
                     """
                 )
@@ -115,9 +120,14 @@ def main():
     trigger_server.register("stopforumspam",      stopforumspam.run)
     trigger_server.register("malwarebazaar",      malwarebazaar.run)
     trigger_server.register("feodotracker",       feodotracker.run)
+    trigger_server.register("alienvault",          alienvault.run)
+    trigger_server.register("virustotal",          virustotal.run)
     trigger_server.start()
 
     _clear_stale_runs()
+
+    # Download GeoLite2 MMDB files on startup if not already on the volume
+    _safe(maxmind.ensure_mmdb, "MaxMind MMDB init")()
 
     force_run = os.environ.get("TI_RUN_ON_START", "false").lower() == "true"
 
@@ -154,12 +164,21 @@ def main():
     if _enabled("TI_STOPFORUMSPAM_ENABLED"):
         schedule.every().day.at("05:30").do(_safe(stopforumspam.run, "Stopforumspam"))
 
+    if _enabled("TI_ALIENVAULT_ENABLED"):
+        schedule.every().day.at("04:30").do(_safe(alienvault.run, "AlienVault OTX"))
+
+        if _enabled("TI_VIRUSTOTAL_ENABLED"):
+            schedule.every().day.at("07:00").do(_safe(virustotal.run, "VirusTotal enrichment"))
+
     if _enabled("TI_MALWAREBAZAAR_ENABLED"):
         for hour in ("02:00", "08:00", "14:00", "20:00"):
             schedule.every().day.at(hour).do(_safe(malwarebazaar.run, "MalwareBazaar"))
 
     if _enabled("TI_MALPEDIA_ENABLED"):
         schedule.every().sunday.at("03:00").do(_safe(malpedia.run, "Malpedia"))
+
+    # MaxMind publishes updated GeoLite2 databases every Tuesday
+    schedule.every().tuesday.at("01:00").do(_safe(maxmind.refresh_mmdb, "MaxMind MMDB refresh"))
 
     # ── Startup seed (first-boot or forced) ──────────────────────────────────
 
@@ -189,6 +208,8 @@ def main():
         _safe(red_flag_domains.run, "Red Flag Domains")()
     if _enabled("TI_STOPFORUMSPAM_ENABLED") and _should_run("stopforumspam"):
         _safe(stopforumspam.run, "Stopforumspam")()
+    if _enabled("TI_ALIENVAULT_ENABLED") and _should_run("alienvault"):
+        _safe(alienvault.run, "AlienVault OTX")()
     if _enabled("TI_MALWAREBAZAAR_ENABLED") and _should_run("malwarebazaar"):
         _safe(malwarebazaar.run, "MalwareBazaar")()
     if _enabled("TI_MALPEDIA_ENABLED") and _should_run("malpedia"):

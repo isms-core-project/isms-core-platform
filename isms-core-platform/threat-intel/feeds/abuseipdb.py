@@ -11,6 +11,7 @@ from uuid import uuid4
 
 import requests
 
+from feeds import ipinfo, maxmind
 from feeds.base import fail_run, finish_run, get_conn, get_os_client, is_cancelled, os_bulk_upsert, start_run
 
 logger = logging.getLogger(__name__)
@@ -30,6 +31,20 @@ _OS_MAPPING = {
             "total_reports":    {"type": "integer"},
             "last_reported_at": {"type": "date"},
             "indexed_at":       {"type": "date"},
+            # MaxMind GeoLite2 enrichment (free tier: country, city, ASN only)
+            "geo_country":  {"type": "keyword"},
+            "geo_city":     {"type": "keyword"},
+            "geo_lat":      {"type": "float"},
+            "geo_lon":      {"type": "float"},
+            "geo_location": {"type": "geo_point"},
+            "geo_asn":      {"type": "integer"},
+            "geo_org":      {"type": "keyword"},
+            # IPInfo privacy enrichment
+            "privacy_label":    {"type": "keyword"},
+            "privacy_is_vpn":   {"type": "boolean"},
+            "privacy_is_proxy": {"type": "boolean"},
+            "privacy_is_tor":   {"type": "boolean"},
+            "privacy_is_hosting": {"type": "boolean"},
         }
     }
 }
@@ -91,6 +106,8 @@ def run_blacklist() -> None:
             logger.warning("OpenSearch index setup failed: %s", exc)
             os_client = None
 
+    # ── Step 1: write IOCs to Postgres immediately — does NOT depend on enrichment ──
+    import json as _json
     with get_conn() as conn:
         with conn.cursor() as cur:
             for entry in entries:
@@ -120,7 +137,7 @@ def run_blacklist() -> None:
                     (
                         str(uuid4()), ip, score,
                         now, now, now,
-                        __import__("json").dumps({
+                        _json.dumps({
                             "country": country, "isp": isp,
                             "totalReports": entry.get("totalReports"),
                             "lastReportedAt": entry.get("lastReportedAt"),
@@ -128,7 +145,6 @@ def run_blacklist() -> None:
                     ),
                 )
                 upserted += 1
-
                 os_docs.append({
                     "ip":               ip,
                     "abuse_score":      score,
@@ -142,11 +158,42 @@ def run_blacklist() -> None:
                     "_os_id":           f"abuseipdb:{ip}",
                 })
 
-    if os_docs and os_client:
-        os_bulk_upsert(os_client, _OS_INDEX, os_docs, "_os_id")
-
+    # Postgres data is safe — mark the run complete now so a slow enrichment
+    # cannot waste the AbuseIPDB daily blacklist pull if it hangs.
     finish_run(run_id, upserted)
     logger.info("AbuseIPDB blacklist completed: %d IPs upserted", upserted)
+
+    # ── Step 2: best-effort geo + privacy enrichment → OpenSearch only ──────────
+    # Enrichment is a separate concern; failures here do not affect Postgres IOCs.
+    if os_docs and os_client:
+        all_ips = [doc["ip"] for doc in os_docs]
+        geo_data     = maxmind.enrich_batch(all_ips)
+        privacy_data = ipinfo.enrich_batch(all_ips)
+
+        for doc in os_docs:
+            ip      = doc["ip"]
+            geo     = geo_data.get(ip) or {}
+            privacy = privacy_data.get(ip) or {}
+            doc.update({
+                "geo_country":  geo.get("country_code"),
+                "geo_city":     geo.get("city"),
+                "geo_lat":      geo.get("latitude"),
+                "geo_lon":      geo.get("longitude"),
+                "geo_location": (
+                    {"lat": geo["latitude"], "lon": geo["longitude"]}
+                    if geo.get("latitude") is not None and geo.get("longitude") is not None
+                    else None
+                ),
+                "geo_asn":      geo.get("asn"),
+                "geo_org":      geo.get("asn_org"),
+                "privacy_label":      privacy.get("privacy_label"),
+                "privacy_is_vpn":     privacy.get("is_vpn"),
+                "privacy_is_proxy":   privacy.get("is_proxy"),
+                "privacy_is_tor":     privacy.get("is_tor"),
+                "privacy_is_hosting": privacy.get("is_hosting"),
+            })
+
+        os_bulk_upsert(os_client, _OS_INDEX, os_docs, "_os_id")
 
 
 def enrich_ip(ip: str) -> dict | None:

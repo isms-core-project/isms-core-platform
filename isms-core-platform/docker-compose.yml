@@ -1,38 +1,19 @@
 name: isms-core-platform
 
 # ============================================================================
-# ISMS CORE Platform — v2 Workshop Compose
+# ISMS CORE Platform
 #
-# What changed vs 60-isms-core-api-factory (v1):
-#   + Garage S3 object store          --profile garage
-#   + OpenSearch 3-node cluster       --profile opensearch-cluster
-#   + EVIDENCE_STORE feature flag     (postgres | opensearch — Phase 3)
-#   + OPENSEARCH_HEAP / DISABLE_SECURITY vars on all OpenSearch services
+# Optional profiles:
+#   --profile opensearch-single       single-node OpenSearch (lightweight, default)
+#   --profile opensearch-cluster      3-node OpenSearch cluster (enterprise)
+#   --profile garage                  Garage S3 object store
+#   --profile dashboards              OpenSearch Dashboards (OSD)
+#   --profile threat-intel            Threat intelligence feeds container
+#   --profile mailpit                 Local SMTP testing UI
+#   --profile smtp-bridge             Microsoft 365 SMTP relay bridge
 #
-# OpenSearch modes — mutually exclusive, ALWAYS pass exactly one:
-#   --profile opensearch-single       single-node (lightweight, default for dev)
-#   --profile opensearch-cluster      3-node cluster (enterprise testing)
-#
-#   Both profiles are explicit — omitting both means no OpenSearch starts.
-#   To switch modes: docker compose down, then bring up with new profile.
-#
-# Garage S3 — add --profile garage to any command:
-#   docker compose --profile garage up -d
-#   docker compose --profile garage --profile opensearch-cluster up -d
-#
-# OpenSearch Dashboards (Kibana equivalent, Apache 2.0) — add --profile dashboards:
-#   docker compose --profile dashboards up -d            (with single-node default)
-#   docker compose --profile opensearch-cluster --profile dashboards up -d
-#
-# Cluster reference pattern:
-#   factory_docker/workspace_opencti_docker/opencti_stack_tls/
-#   docker-compose_elk_cluster-tls_opencti-base_test.yml
-#   (3 explicit named services + per-node volumes, no Swarm required)
-#
-# TLS / Security plugin (Phase 5 — DLS):
-#   Set OPENSEARCH_DISABLE_SECURITY=false and OPENSEARCH_ADMIN_PASSWORD in .env.
-#   A setup container (similar to the TLS reference) will generate demo certs.
-#   Backend OPENSEARCH_URL → https:// + OPENSEARCH_USER/PASSWORD (Phase 5 work).
+# OpenSearch modes are mutually exclusive — always pass exactly one.
+# To switch modes: docker compose down, then bring up with new profile.
 #
 # Standard usage:
 #   cp .env.example .env && nano .env
@@ -237,7 +218,7 @@ services:
     networks:
       - isms-core-network
 
-  # ── OpenSearch setup (Phase 2 — ISM policies + index templates) ───────────
+  # ── OpenSearch setup — ISM policies + index templates ─────────────────────
   # Runs once after OpenSearch is healthy, before the backend starts.
   # Idempotent — safe to re-run. Detects single-node vs cluster automatically
   # and sets number_of_replicas accordingly (0 or 1).
@@ -321,7 +302,7 @@ services:
   # Open-source Kibana fork by AWS. Apache 2.0.
   # Works with both single-node and cluster — connects via isms-core-opensearch alias.
   # Access: http://<HOST_IP>:5601
-  # When Security plugin is enabled (Phase 5): set OPENSEARCH_USERNAME/PASSWORD.
+  # To enable the Security plugin: set OPENSEARCH_DISABLE_SECURITY=false + OPENSEARCH_USERNAME/PASSWORD.
 
   isms-core-dashboards:
     image: opensearchproject/opensearch-dashboards:latest
@@ -386,6 +367,7 @@ services:
       - ${AI_HOST_PATH:-../isms-core-ai}:/app/isms-ai:ro
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
+      - ti-data:/data/ti:ro   # GeoLite2 MMDB files (downloaded by threat-intel container)
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
@@ -412,20 +394,23 @@ services:
       - MAIL_PORT=${MAIL_PORT:-1025}
       - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL:-}
       - PLATFORM_URL=${PLATFORM_URL}
-      # v2: Garage S3 — wired in Phase 3 (EvidenceStore migration)
+      # Garage S3 object storage (leave empty to use default local Postgres storage)
       - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-http://isms-core-garage:3900}
       - GARAGE_ACCESS_KEY=${GARAGE_ACCESS_KEY:-}
       - GARAGE_SECRET_KEY=${GARAGE_SECRET_KEY:-}
       - GARAGE_BUCKET_EVIDENCE=${GARAGE_BUCKET_EVIDENCE:-isms-evidence}
       - GARAGE_BUCKET_SNAPSHOTS=${GARAGE_BUCKET_SNAPSHOTS:-isms-snapshots}
       - GARAGE_BUCKET_EXPORTS=${GARAGE_BUCKET_EXPORTS:-isms-exports}
-      # v2: storage backend switch (postgres = v1 compat, opensearch = v2 target)
+      # Storage backend: postgres (default) or opensearch
       - EVIDENCE_STORE=${EVIDENCE_STORE:-postgres}
-      # Phase 40: threat-intel optional feature flag (set true when using --profile threat-intel)
+      # Threat intelligence module — set true when using --profile threat-intel
       - THREAT_INTEL_ENABLED=${THREAT_INTEL_ENABLED:-false}
-      # Phase 40: enrichment API keys — shared with TI container for IP Enrichment page
+      # Enrichment API keys for IP Enrichment page
       - ABUSEIPDB_API_KEY=${ABUSEIPDB_API_KEY:-}
       - SHODAN_API_KEY=${SHODAN_API_KEY:-}
+      - MAXMIND_ACCOUNT_ID=${MAXMIND_ACCOUNT_ID:-}
+      - MAXMIND_LICENSE_KEY=${MAXMIND_LICENSE_KEY:-}
+      - IPINFO_API_KEY=${IPINFO_API_KEY:-}
     depends_on:
       isms-core-postgres:
         condition: service_healthy
@@ -666,16 +651,27 @@ services:
       - TI_RED_FLAG_DOMAINS_ENABLED=${TI_RED_FLAG_DOMAINS_ENABLED:-true}
       - TI_STOPFORUMSPAM_ENABLED=${TI_STOPFORUMSPAM_ENABLED:-true}
       - TI_MALWAREBAZAAR_ENABLED=${TI_MALWAREBAZAAR_ENABLED:-true}
+      - TI_ALIENVAULT_ENABLED=${TI_ALIENVAULT_ENABLED:-true}
+      - TI_VIRUSTOTAL_ENABLED=${TI_VIRUSTOTAL_ENABLED:-true}
       - TI_MALPEDIA_ENABLED=${TI_MALPEDIA_ENABLED:-true}
       # API keys (leave empty to disable that source)
       - ABUSEIPDB_API_KEY=${ABUSEIPDB_API_KEY:-}
       - SHODAN_API_KEY=${SHODAN_API_KEY:-}
       - MALPEDIA_API_KEY=${MALPEDIA_API_KEY:-}
-      - TI_THREATFOX_API_KEY=${TI_THREATFOX_API_KEY:-}
+      - THREATFOX_API_KEY=${THREATFOX_API_KEY:-}
       - MALWAREBAZAAR_API_KEY=${MALWAREBAZAAR_API_KEY:-}
+      - OTX_API_KEY=${OTX_API_KEY:-}
+      - OTX_IMPORT_DAYS=${OTX_IMPORT_DAYS:-90}
+      - VT_API_KEY=${VT_API_KEY:-}
+      - VT_DAILY_LIMIT=${VT_DAILY_LIMIT:-450}
+      - MAXMIND_ACCOUNT_ID=${MAXMIND_ACCOUNT_ID:-}
+      - MAXMIND_LICENSE_KEY=${MAXMIND_LICENSE_KEY:-}
+      - IPINFO_API_KEY=${IPINFO_API_KEY:-}
       # MISP history depth — first run only (2000-01-01 for full archive)
       - TI_MISP_IMPORT_FROM_DATE=${TI_MISP_IMPORT_FROM_DATE:-2024-01-01}
       - TI_RUN_ON_START=${TI_RUN_ON_START:-false}
+    volumes:
+      - ti-data:/data/ti   # persistent store for MMDB files + future TI downloads
     expose:
       - "9002"          # on-demand trigger server (backend → TI container)
     depends_on:
@@ -744,4 +740,7 @@ volumes:
   garage-data:
     driver: local
   certbot-www:
+    driver: local
+  # Threat-intel persistent data: GeoLite2 MMDB files, feed CSVs/JSONs
+  ti-data:
     driver: local

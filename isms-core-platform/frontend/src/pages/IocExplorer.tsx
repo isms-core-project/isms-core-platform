@@ -26,6 +26,8 @@ const SOURCE_COLOR: Record<string, string> = {
   red_flag_domains:'#c62828',
   stopforumspam:   '#37474f',
   malwarebazaar:   '#e65100',
+  alienvault:      '#d84315',
+  malpedia:        '#00695c',
 }
 
 const SOURCE_LABEL: Record<string, string> = {
@@ -39,6 +41,15 @@ const SOURCE_LABEL: Record<string, string> = {
   red_flag_domains:'Red Flag Domains',
   stopforumspam:   'StopForumSpam',
   malwarebazaar:   'MalwareBazaar',
+  alienvault:      'AlienVault OTX',
+  malpedia:        'Malpedia',
+}
+
+const TLP_COLOR: Record<string, string> = {
+  white: '#9e9e9e',
+  green: '#2e7d32',
+  amber: '#e65100',
+  red:   '#b71c1c',
 }
 
 const TYPE_COLOR: Record<string, string> = {
@@ -103,6 +114,15 @@ function IocRow({ ioc }: { ioc: IocRead }) {
             : <Typography variant="caption" color="text.secondary">—</Typography>
           }
         </TableCell>
+        <TableCell>
+          {ioc.tlp
+            ? <Chip label={`TLP:${ioc.tlp.toUpperCase()}`} size="small"
+                sx={{ fontSize: '0.62rem', height: 18, fontWeight: 700,
+                      bgcolor: `${TLP_COLOR[ioc.tlp] ?? '#555'}20`,
+                      color: TLP_COLOR[ioc.tlp] ?? 'text.secondary' }} />
+            : <Typography variant="caption" color="text.secondary">—</Typography>
+          }
+        </TableCell>
         <TableCell sx={{ fontSize: '0.75rem', color: 'text.secondary', fontFamily: 'monospace' }}>
           {fmt(ioc.last_seen)}
         </TableCell>
@@ -132,7 +152,7 @@ function IocRow({ ioc }: { ioc: IocRead }) {
 
       {/* Expanded detail */}
       <TableRow>
-        <TableCell colSpan={7} sx={{ p: 0, border: 'none' }}>
+        <TableCell colSpan={8} sx={{ p: 0, border: 'none' }}>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <Box sx={{ px: 3, py: 1.5, bgcolor: expandBg, borderBottom: expandBorder }}>
               <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 1.5 }}>
@@ -218,7 +238,7 @@ export default function IocExplorer() {
     <Box sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 2 }}>
       <PageHeader
         title="IOC Explorer"
-        subtitle={`Indicators of compromise from MISP, Abuse.ch, AbuseIPDB and reputation feeds${total ? ` — ${total.toLocaleString()} total` : ''}`}
+        subtitle={`Indicators of compromise from MISP, Abuse.ch, AbuseIPDB, AlienVault OTX and reputation feeds${total ? ` — ${total.toLocaleString()} total` : ''}`}
       />
 
       {/* ── Filters ── */}
@@ -249,6 +269,8 @@ export default function IocExplorer() {
           <MenuItem value="red_flag_domains" sx={{ fontSize: '0.82rem' }}>Red Flag Domains</MenuItem>
           <MenuItem value="stopforumspam" sx={{ fontSize: '0.82rem' }}>StopForumSpam</MenuItem>
           <MenuItem value="malwarebazaar" sx={{ fontSize: '0.82rem' }}>MalwareBazaar</MenuItem>
+          <MenuItem value="alienvault" sx={{ fontSize: '0.82rem' }}>AlienVault OTX</MenuItem>
+          <MenuItem value="malpedia" sx={{ fontSize: '0.82rem' }}>Malpedia</MenuItem>
         </Select>
         <Typography variant="caption" color="text.secondary" sx={{ ml: 'auto' }}>
           {total.toLocaleString()} results
@@ -273,6 +295,7 @@ export default function IocExplorer() {
                 <TableCell sx={{ fontWeight: 700, fontSize: '0.75rem' }}>Value</TableCell>
                 <TableCell sx={{ fontWeight: 700, fontSize: '0.75rem', width: 130 }}>Source</TableCell>
                 <TableCell sx={{ fontWeight: 700, fontSize: '0.75rem', width: 80 }}>Confidence</TableCell>
+                <TableCell sx={{ fontWeight: 700, fontSize: '0.75rem', width: 90 }}>TLP</TableCell>
                 <TableCell sx={{ fontWeight: 700, fontSize: '0.75rem', width: 90 }}>Last seen</TableCell>
                 <TableCell sx={{ fontWeight: 700, fontSize: '0.75rem' }}>Attribution</TableCell>
                 <TableCell sx={{ width: 24 }} />
@@ -281,7 +304,7 @@ export default function IocExplorer() {
             <TableBody>
               {(data?.items ?? []).length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={7}>
+                  <TableCell colSpan={8}>
                     <Typography variant="body2" color="text.secondary" align="center" sx={{ py: 4 }}>
                       No IOCs found. Feeds may still be loading on first boot.
                     </Typography>

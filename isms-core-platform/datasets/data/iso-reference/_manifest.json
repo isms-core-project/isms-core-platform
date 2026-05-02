@@ -878,13 +878,20 @@
       "source": "ISO_IEC_24091_2019(en).pdf",
       "standard": "ISO/IEC 24091:2019",
       "chunks": 3
+    },
+    {
+      "file": "agentic_ai_guidance.json",
+      "source": "careful_adoption_of_agentic_ai_services.pdf",
+      "standard": "ASD/ACSC — Careful Adoption of Agentic AI Services (2026)",
+      "language": "en",
+      "chunks": 30
     }
   ],
-  "total_chunks": 13837,
-  "total_files_processed": 135,
+  "total_chunks": 13867,
+  "total_files_processed": 136,
   "failed_files": [
     "AI-Act-Compliance-Checker-Flowchart-v1.0_compressed.docx"
   ],
-  "updated": "2026-04-15T08:17:51.509114+00:00",
-  "total_files": 135
+  "updated": "2026-05-02T00:00:00.000000+00:00",
+  "total_files": 136
 }

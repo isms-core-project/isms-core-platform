@@ -73,6 +73,7 @@ import ThreatIntelDashboard from './pages/ThreatIntelDashboard'
 import IocExplorer from './pages/IocExplorer'
 import MalwareAtlas from './pages/MalwareAtlas'
 import IpEnrichment from './pages/IpEnrichment'
+import ThreatExposure from './pages/ThreatExposure'
 import Glossary from './pages/Glossary'
 import Cobit from './pages/Cobit'
 import Notifications from './pages/Notifications'
@@ -176,6 +177,7 @@ export default function App() {
         <Route path="ioc-explorer" element={<IocExplorer />} />
         <Route path="malware-atlas" element={<MalwareAtlas />} />
         <Route path="ip-enrichment" element={<IpEnrichment />} />
+        <Route path="threat-exposure" element={<ThreatExposure />} />
         <Route path="threat-intel" element={<ThreatIntelDashboard />} />
         <Route path="glossary" element={<Glossary />} />
         <Route path="cobit" element={<Cobit />} />

@@ -7,8 +7,9 @@ import {
   TextField, Tooltip, Typography,
 } from '@mui/material'
 import {
-  CheckCircleOutlined, CoronavirusOutlined, DnsOutlined, RouterOutlined,
-  SearchOutlined, StreamOutlined, WarningAmberOutlined,
+  CheckCircleOutlined, CoronavirusOutlined, DnsOutlined, GppMaybeOutlined,
+  LocationOnOutlined, RouterOutlined, SearchOutlined, StreamOutlined,
+  WarningAmberOutlined,
 } from '@mui/icons-material'
 import PageHeader from '../components/PageHeader'
 import { threatIntelApi, EnrichIpResponse, IocRead } from '../api/threatIntelApi'
@@ -151,6 +152,87 @@ function GoogleDnsCard({ data }: { data: Record<string, unknown> }) {
   )
 }
 
+function MaxMindCard({ data }: { data: Record<string, unknown> }) {
+  if (!data || typeof data !== 'object') return null
+  const rows: [string, string][] = [
+    ['Country', [String(data.country_code ?? ''), String(data.country_name ?? '')].filter(Boolean).join(' — ') || '—'],
+    ['City',    String(data.city ?? '—')],
+    ['ASN',     String(data.asn ?? '—')],
+    ['Org',     String(data.asn_org ?? '—')],
+  ]
+
+  return (
+    <Paper variant="outlined" sx={{ p: 2, flex: 1 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+        <LocationOnOutlined sx={{ fontSize: 20, color: '#2e7d32' }} />
+        <Typography variant="subtitle2" fontWeight={700} sx={{ fontSize: '0.85rem' }}>MaxMind GeoLite2</Typography>
+      </Box>
+      <Divider sx={{ my: 1 }} />
+      {rows.map(([k, v]) => (
+        <Box key={k} sx={{ display: 'flex', justifyContent: 'space-between', py: 0.25 }}>
+          <Typography variant="caption" color="text.secondary">{k}</Typography>
+          <Typography variant="caption" fontWeight={500}>{v}</Typography>
+        </Box>
+      ))}
+    </Paper>
+  )
+}
+
+const _PRIVACY_COLOR: Record<string, string> = {
+  Tor:     '#b71c1c',
+  VPN:     '#e65100',
+  Proxy:   '#f57f17',
+  Relay:   '#1565c0',
+  Hosting: '#6a1b9a',
+  Clean:   '#2e7d32',
+}
+
+function IPInfoCard({ data }: { data: Record<string, unknown> }) {
+  if (!data || typeof data !== 'object') return null
+  const label = String(data.privacy_label ?? 'Clean')
+  const color = _PRIVACY_COLOR[label] ?? '#757575'
+  const flags: [string, boolean][] = [
+    ['VPN',     !!data.is_vpn],
+    ['Proxy',   !!data.is_proxy],
+    ['Tor',     !!data.is_tor],
+    ['Relay',   !!data.is_relay],
+    ['Hosting', !!data.is_hosting],
+  ]
+
+  return (
+    <Paper variant="outlined" sx={{ p: 2, flex: 1 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+        <GppMaybeOutlined sx={{ fontSize: 20, color }} />
+        <Typography variant="subtitle2" fontWeight={700} sx={{ fontSize: '0.85rem' }}>IPInfo Privacy</Typography>
+      </Box>
+      <Box sx={{ mb: 1.5 }}>
+        <Chip
+          label={label}
+          size="small"
+          sx={{ bgcolor: color, color: '#fff', fontWeight: 700, fontSize: '0.72rem' }}
+        />
+      </Box>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mb: 1 }}>
+        {flags.map(([name, active]) => (
+          <Chip key={name} label={name} size="small"
+            sx={{
+              fontSize: '0.65rem', height: 18,
+              bgcolor: active ? _PRIVACY_COLOR[name] : 'action.disabledBackground',
+              color: active ? '#fff' : 'text.disabled',
+              opacity: active ? 1 : 0.5,
+            }} />
+        ))}
+      </Box>
+      {data.service && (
+        <Box>
+          <Typography variant="caption" color="text.secondary" display="block">Service</Typography>
+          <Typography variant="caption" fontWeight={500}>{String(data.service)}</Typography>
+        </Box>
+      )}
+    </Paper>
+  )
+}
+
 function IocHitsTable({ hits }: { hits: IocRead[] }) {
   const { palette } = useTheme()
   const isLight = palette.mode === 'light'
@@ -236,7 +318,7 @@ export default function IpEnrichment() {
     <Box sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 2.5 }}>
       <PageHeader
         title="IP Enrichment"
-        subtitle="On-demand AbuseIPDB + Shodan lookup — results cached 24h"
+        subtitle="On-demand AbuseIPDB + Shodan + MaxMind + IPInfo lookup — results cached 24h / 30d"
       />
 
       {/* ── Input ── */}
@@ -289,7 +371,7 @@ export default function IpEnrichment() {
             )}
           </Box>
 
-          {/* Enrichment cards side by side */}
+          {/* Enrichment cards — row 1: AbuseIPDB + Shodan + DNS */}
           <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
             {result.abuseipdb
               ? <AbuseCard data={result.abuseipdb as Record<string, unknown>} />
@@ -324,6 +406,30 @@ export default function IpEnrichment() {
             }
           </Box>
 
+          {/* Enrichment cards — row 2: MaxMind + IPInfo */}
+          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+            {result.maxmind && Object.keys(result.maxmind).length > 0
+              ? <MaxMindCard data={result.maxmind as Record<string, unknown>} />
+              : (
+                <Paper variant="outlined" sx={{ p: 2, flex: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <LocationOnOutlined sx={{ fontSize: 20, color: 'text.disabled' }} />
+                  <Typography variant="caption" color="text.secondary">
+                    {result.maxmind === null ? 'MaxMind — API key not configured' : 'MaxMind — IP not found in GeoLite2'}
+                  </Typography>
+                </Paper>
+              )
+            }
+            {result.ipinfo
+              ? <IPInfoCard data={result.ipinfo as Record<string, unknown>} />
+              : (
+                <Paper variant="outlined" sx={{ p: 2, flex: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <GppMaybeOutlined sx={{ fontSize: 20, color: 'text.disabled' }} />
+                  <Typography variant="caption" color="text.secondary">IPInfo — API key not configured</Typography>
+                </Paper>
+              )
+            }
+          </Box>
+
           {/* IOC hits */}
           <Paper variant="outlined">
             <Box sx={{ px: 2, pt: 1.5, pb: 0.5, display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -344,7 +450,7 @@ export default function IpEnrichment() {
       {!result && !mutation.isPending && (
         <Box sx={{ textAlign: 'center', py: 6, color: 'text.secondary' }}>
           <RouterOutlined sx={{ fontSize: 48, opacity: 0.2, mb: 1 }} />
-          <Typography variant="body2">Enter an IP address above to check AbuseIPDB confidence score, Shodan open ports, and cross-reference our IOC feeds.</Typography>
+          <Typography variant="body2">Enter an IP address above to check AbuseIPDB confidence score, Shodan open ports, MaxMind geolocation, IPInfo privacy flags, and cross-reference our IOC feeds.</Typography>
         </Box>
       )}
     </Box>

@@ -4,7 +4,9 @@ WORKDIR /app
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt \
-    && useradd -r -u 1000 -m -s /bin/false appuser
+    && useradd -r -u 1000 -m -s /bin/false appuser \
+    && mkdir -p /data/ti \
+    && chown appuser:appuser /data/ti
 
 COPY feeds/ /app/feeds/
 COPY scheduler.py .

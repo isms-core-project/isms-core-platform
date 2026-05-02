@@ -70,6 +70,7 @@ import {
   TrackChangesOutlined,
   CoronavirusOutlined,
   RouterOutlined,
+  CrisisAlertOutlined,
 } from '@mui/icons-material'
 import { useTheme } from '@mui/material/styles'
 import { useNavigate, useLocation } from 'react-router-dom'
@@ -221,9 +222,10 @@ const NAV_INTELLIGENCE_BASE: NavItem[] = [
 // Phase 40 — Threat Intel items (shown greyed out when feature not active)
 const _TI_DISABLED_TIP = 'Activate with --profile threat-intel'
 const NAV_TI_ITEMS: NavItem[] = [
-  { label: 'IOC Explorer',      path: '/ioc-explorer',     icon: <TrackChangesOutlined />, disabledTip: _TI_DISABLED_TIP },
-  { label: 'Malware Atlas',     path: '/malware-atlas',    icon: <CoronavirusOutlined />,  disabledTip: _TI_DISABLED_TIP },
-  { label: 'IP Enrichment',     path: '/ip-enrichment',    icon: <RouterOutlined />,       disabledTip: _TI_DISABLED_TIP },
+  { label: 'IOC Explorer',      path: '/ioc-explorer',     icon: <TrackChangesOutlined />,  disabledTip: _TI_DISABLED_TIP },
+  { label: 'Malware Atlas',     path: '/malware-atlas',    icon: <CoronavirusOutlined />,   disabledTip: _TI_DISABLED_TIP },
+  { label: 'IP Enrichment',     path: '/ip-enrichment',    icon: <RouterOutlined />,        disabledTip: _TI_DISABLED_TIP },
+  { label: 'Threat Exposure',   path: '/threat-exposure',  icon: <CrisisAlertOutlined />,   disabledTip: _TI_DISABLED_TIP },
 ]
 
 // ── Suppliers / TPRM (Phase 16+) ──────────────────────────────────────────────
@@ -276,7 +278,7 @@ const TOOLS_PATHS      = ['/projects', '/qa', '/search', '/compass', '/generator
 const FRAMEWORK_PATHS  = ['/nist-csf', '/nist-ai-rmf', '/nist-800-53', '/nis2', '/dora', '/uk-nis', '/ncsc-caf', '/uk-op-resilience', '/fr-recyf', '/cyfun-be', '/bafin-bait', '/cssf-lu', '/acn-it', '/cis', '/bsi', '/csrm', '/tisax', '/ndsg', '/isg', '/cra', '/ai-act', '/eu-cloud-sov', '/cobit', '/csa-ccm', '/csa-aicm']
 const SUPPLIER_PATHS   = ['/tprm']
 const ADMIN_PATHS        = ['/admin', '/admin/logs', '/connectors', '/system', '/organisations', '/custom-frameworks', '/framework-tracker', '/crosswalk-tracker']
-const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/mitre-groups', '/mitre-software', '/mitre-campaigns', '/mitre-heatmap', '/cve-explorer', '/euvd-explorer', '/ioc-explorer', '/malware-atlas', '/ip-enrichment', '/threat-intel']
+const INTELLIGENCE_PATHS = ['/threat-feeds', '/mitre-attack', '/mitre-atlas', '/mitre-groups', '/mitre-software', '/mitre-campaigns', '/mitre-heatmap', '/cve-explorer', '/euvd-explorer', '/ioc-explorer', '/malware-atlas', '/ip-enrichment', '/threat-intel', '/threat-exposure']
 const ALL_PLATFORM_PATHS = [...RISK_PATHS, ...TOOLS_PATHS, ...FRAMEWORK_PATHS, ...SUPPLIER_PATHS, ...ADMIN_PATHS, ...INTELLIGENCE_PATHS]
 
 // ── Reusable collapsible nav group ────────────────────────────────────────────

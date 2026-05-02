@@ -26,6 +26,7 @@ export interface IocRead {
   value: string
   source: string
   confidence: number | null
+  tlp: string | null
   tags: string[]
   mitre_tids: string[]
   family_slugs: string[]
@@ -91,6 +92,8 @@ export interface EnrichIpResponse {
   abuseipdb: Record<string, unknown> | null
   shodan: Record<string, unknown> | null
   google_dns: Record<string, unknown> | null
+  maxmind: Record<string, unknown> | null
+  ipinfo: Record<string, unknown> | null
   cached: boolean
   cache_age_minutes: number | null
   ioc_hits: IocRead[]

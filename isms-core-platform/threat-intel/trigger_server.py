@@ -3,8 +3,10 @@
 Backend calls:
   POST   /trigger/{feed_name}  → run feed in background thread (200 immediately)
   DELETE /cancel/{feed_name}   → request cancellation of a running feed
+  GET    /lookup/ip/{ip}       → synchronous MaxMind + IPInfo enrichment via MMDB/API
 """
 
+import json
 import logging
 import threading
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -77,6 +79,23 @@ class _Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", "application/json")
         self.end_headers()
         self.wfile.write(body)
+
+    def do_GET(self):
+        if not self.path.startswith("/lookup/ip/"):
+            self._respond(404, b'{"error":"not found"}')
+            return
+        ip = self.path[len("/lookup/ip/"):]
+        if not ip:
+            self._respond(400, b'{"error":"ip required"}')
+            return
+        try:
+            from feeds import ipinfo, maxmind
+            mm_data  = maxmind.enrich_batch([ip]).get(ip)
+            ipi_data = ipinfo.enrich_batch([ip]).get(ip)
+            self._respond(200, json.dumps({"maxmind": mm_data, "ipinfo": ipi_data}).encode())
+        except Exception as exc:
+            logger.error("IP geo lookup failed for %s: %s", ip, exc)
+            self._respond(500, json.dumps({"error": str(exc)}).encode())
 
     def log_message(self, fmt, *args):
         logger.debug("HTTP %s", fmt % args)
