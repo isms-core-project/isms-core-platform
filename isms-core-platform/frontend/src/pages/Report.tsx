@@ -383,8 +383,11 @@ export default function Report() {
 
         {/* ── Privacy / Cloud report ── */}
         {reportProduct !== 'isms' && productSummary && (() => {
-          const polPct  = productSummary.groups > 0 ? (productSummary.policies / productSummary.groups) * 100 : 0
-          const impPct  = productSummary.groups > 0 ? (productSummary.imps / (productSummary.groups * 2)) * 100 : 0
+          // policies count includes all language variants (EN/FR/DE/IT) — use
+          // groups list has_framework flag for true coverage % instead
+          const groupsWithPolicy = groups.filter(g => g.has_framework).length
+          const polPct  = groups.length > 0 ? (groupsWithPolicy / groups.length) * 100 : 0
+          const impPct  = productSummary.groups > 0 ? Math.min(100, (productSummary.imps / (productSummary.groups * 2)) * 100) : 0
           const score   = Math.round((polPct + impPct) / 2)
           const rdStatus: 'green' | 'amber' | 'red' = score >= 90 ? 'green' : score >= 60 ? 'amber' : 'red'
           return (
