@@ -498,6 +498,7 @@ const PRODUCT_TYPE_COLOR: Record<string, string> = {
   operational: '#70AD47',
   privacy:     PRODUCT_COLORS.privacy,
   cloud:       PRODUCT_COLORS.cloud,
+  ai:          PRODUCT_COLORS.ai,
 }
 
 function DetailsCell({ row, method }: { row: CorrelationResultRead; method: string }) {
