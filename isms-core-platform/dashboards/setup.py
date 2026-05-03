@@ -717,8 +717,9 @@ _TYPE_MAP = {
     "long":    ("number",  True,  True,  True),
     "float":   ("number",  True,  True,  True),
     "double":  ("number",  True,  True,  True),
-    "boolean": ("boolean", True,  True,  True),
-    "ip":      ("ip",      True,  True,  True),
+    "boolean":   ("boolean",   True,  True,  True),
+    "ip":        ("ip",        True,  True,  True),
+    "geo_point": ("geo_point", True,  True,  True),
 }
 
 _META_FIELDS = [
@@ -1750,14 +1751,14 @@ def build_objects(fields_by_id: dict) -> list:
     ]
 
     # Malpedia — Threat Actors + Tools
-    # actor_type field may be text-mapped (dynamically added) → use actor_type.keyword.
+    # actor_type is mapped as keyword → aggregate directly, no .keyword suffix needed.
     # actor_slugs on families is empty (attribution not resolved from API) → removed.
     # Tools and Families share mitre_tids field → compare ATT&CK coverage side by side.
     objs += [
         _metric(     "viz-ti-mal-act-total",   "Malpedia — Threat Actors",             "ip-ti-malpedia-actors"),
         _pie(        "viz-ti-mal-act-country", "Actors — By Country",                  "ip-ti-malpedia-actors", "country"),
         _pie(        "viz-ti-mal-act-motiv",   "Actors — By Motivation",               "ip-ti-malpedia-actors", "motivation"),
-        _pie(        "viz-ti-mal-act-type",    "Actors — APT vs Ransomware Groups",    "ip-ti-malpedia-actors", "actor_type.keyword"),
+        _pie(        "viz-ti-mal-act-type",    "Actors — APT vs Ransomware Groups",    "ip-ti-malpedia-actors", "actor_type"),
         _metric(     "viz-ti-mal-tool-total",  "Malpedia — Tools",                     "ip-ti-malpedia-tools"),
         _count_table("viz-ti-mal-tool-tids",   "Tools — Top ATT&CK TIDs",             "ip-ti-malpedia-tools", "mitre_tids", 25),
     ]

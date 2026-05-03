@@ -94,7 +94,7 @@ const ISO_EXTENSIONS = new Set(['ISO27017', 'ISO27018', 'ISO27701'])
 
 const CONFIDENCE_COLOR_DARK = (c: number) =>
   c >= 0.8 ? { bg: 'rgba(198,239,206,0.15)', color: '#C6EFCE' }
-  : c >= 0.6 ? { bg: 'rgba(255,235,156,0.12)', color: '#FFEB9C' }
+  : c >= 0.6 ? { bg: 'rgba(255,193,7,0.20)', color: '#FFC107' }
   : { bg: 'rgba(255,199,206,0.12)', color: '#FFC7CE' }
 
 const CONFIDENCE_COLOR_LIGHT = (c: number) =>
@@ -104,8 +104,8 @@ const CONFIDENCE_COLOR_LIGHT = (c: number) =>
 
 const MISSING_CHIP_DARK: Record<string, { bg: string; color: string }> = {
   policy:      { bg: 'rgba(192,0,0,0.15)',    color: '#FFC7CE' },
-  UG:          { bg: 'rgba(255,192,0,0.12)',   color: '#FFEB9C' },
-  TG:          { bg: 'rgba(255,192,0,0.12)',   color: '#FFEB9C' },
+  UG:          { bg: 'rgba(255,193,7,0.20)',   color: '#FFC107' },
+  TG:          { bg: 'rgba(255,193,7,0.20)',   color: '#FFC107' },
   assessment:  { bg: 'rgba(192,0,0,0.15)',    color: '#FFC7CE' },
 }
 
@@ -133,12 +133,16 @@ interface GapEntry {
   iso_controls_needed: { id: string; title: string }[]
 }
 
-const PCT_COLOR = (pct: number) =>
-  pct >= 75 ? '#4CAF50' : pct >= 40 ? '#FF9800' : '#F44336'
+const PCT_COLOR = (pct: number, isLight: boolean) =>
+  pct >= 75 ? (isLight ? '#2e7d32' : '#4CAF50')
+  : pct >= 40 ? (isLight ? '#E65100' : '#FF9800')
+  : (isLight ? '#c62828' : '#F44336')
 
 function FrameworkCoverageCard({ result, projectId }: { result: InferredResult; projectId: string }) {
   const [expanded, setExpanded] = useState(false)
-  const color = PCT_COLOR(result.coverage_pct)
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const color = PCT_COLOR(result.coverage_pct, isLight)
 
   const { data: gapData, isLoading: gapLoading } = useQuery({
     queryKey: ['coverage-gap-map', result.framework_code, projectId],
@@ -188,7 +192,7 @@ function FrameworkCoverageCard({ result, projectId }: { result: InferredResult; 
                       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mt: 0.5 }}>
                         {g.iso_controls_needed.slice(0, 4).map(iso => (
                           <Chip key={iso.id} label={iso.id} size="small"
-                            sx={{ height: 16, fontSize: '0.58rem', bgcolor: 'rgba(255,152,0,0.1)', color: '#FF9800' }} />
+                            sx={{ height: 16, fontSize: '0.58rem', bgcolor: isLight ? 'rgba(230,115,0,0.12)' : 'rgba(255,152,0,0.1)', color: isLight ? '#E65100' : '#FF9800' }} />
                         ))}
                         {g.iso_controls_needed.length > 4 && (
                           <Typography variant="caption" sx={{ fontSize: '0.6rem', color: 'text.disabled', alignSelf: 'center' }}>
@@ -292,7 +296,7 @@ function CustomFrameworkCoverage({ frameworkId, frameworkName, shortCode, projec
     }).then(r => r.data),
   })
 
-  const color = data ? PCT_COLOR(data.coverage_pct) : '#9E9E9E'
+  const color = data ? PCT_COLOR(data.coverage_pct, isLight) : '#9E9E9E'
 
   return (
     <Box sx={{ border: '1px solid', borderColor: `${color}30`, borderRadius: 1.5, overflow: 'hidden', mb: 1 }}>

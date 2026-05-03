@@ -1056,7 +1056,7 @@ function RegisterDialog({ onClose }: { onClose: () => void }) {
 const TICKET_STATUS_COLOUR: Record<string, string> = {
   open:       '#607D8B',
   new:        '#607D8B',
-  in_progress:'#FF9800',
+  in_progress:'#E65100',
   done:       '#4CAF50',
   resolved:   '#4CAF50',
   closed:     '#4CAF50',

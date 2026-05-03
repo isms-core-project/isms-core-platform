@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import {
   Alert,
   Box,
@@ -76,6 +77,8 @@ const EMPTY_DOC_VARS: DocVars = { ciso_name: '', ceo_name: '', dpo_name: '', leg
 
 function CreateProjectDialog({ open, onClose, isSuperAdmin }: { open: boolean; onClose: () => void; isSuperAdmin: boolean }) {
   const qc = useQueryClient()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const [form, setForm] = useState<ProjectCreate>({ name: '', product_family: 'ISMS', project_subtype: 'fw', description: '' })
   const [docVars, setDocVars] = useState<DocVars>(EMPTY_DOC_VARS)
   const [showDocVars, setShowDocVars] = useState(true)
@@ -187,7 +190,7 @@ function CreateProjectDialog({ open, onClose, isSuperAdmin }: { open: boolean; o
           <Typography variant="caption" sx={{ color: 'text.secondary', fontSize: '0.75rem', fontWeight: 500 }}>
             Document Variables
           </Typography>
-          <Typography variant="caption" sx={{ color: '#FF9800', fontSize: '0.68rem', fontWeight: 500 }}>
+          <Typography variant="caption" sx={{ color: isLight ? '#E65100' : '#FF9800', fontSize: '0.68rem', fontWeight: 500 }}>
             CISO name + date required
           </Typography>
           <Typography variant="caption" color="text.disabled" sx={{ fontSize: '0.68rem' }}>

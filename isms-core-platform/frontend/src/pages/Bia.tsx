@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import {
   Alert, Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle,
   FormControl, FormControlLabel, IconButton, InputLabel, MenuItem, Select,
@@ -23,14 +24,24 @@ const ASSET_TYPE_COLORS: Record<string, string> = {
   data:    '#4CAF50',
 }
 
-function impactColor(score: number): string {
-  if (score <= 2) return '#4CAF50'
-  if (score === 3) return '#FF9800'
-  return '#F44336'
+function impactColor(score: number, isLight: boolean): string {
+  if (score <= 2) return isLight ? '#2e7d32' : '#4CAF50'
+  if (score === 3) return isLight ? '#E65100' : '#FF9800'
+  return isLight ? '#c62828' : '#F44336'
+}
+
+const ASSET_TYPE_COLORS_LIGHT: Record<string, string> = {
+  process: '#1565C0',
+  system:  '#6A1B9A',
+  service: '#E65100',
+  data:    '#2e7d32',
 }
 
 function AssetTypeChip({ type }: { type: string }) {
-  const color = ASSET_TYPE_COLORS[type] ?? '#607D8B'
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
+  const colorMap = isLight ? ASSET_TYPE_COLORS_LIGHT : ASSET_TYPE_COLORS
+  const color = colorMap[type] ?? '#607D8B'
   return (
     <Chip
       label={type.charAt(0).toUpperCase() + type.slice(1)}
@@ -44,8 +55,9 @@ function AssetTypeChip({ type }: { type: string }) {
 }
 
 function ImpactDot({ score }: { score: number | null }) {
+  const { palette } = useTheme()
   if (score == null) return <Typography variant="caption" sx={{ color: 'text.disabled' }}>—</Typography>
-  const color = impactColor(score)
+  const color = impactColor(score, palette.mode === 'light')
   return (
     <Tooltip title={`Avg impact: ${score.toFixed(1)} / 5`}>
       <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5 }}>
@@ -61,6 +73,8 @@ function ImpactDot({ score }: { score: number | null }) {
 // ── Summary cards ─────────────────────────────────────────────────────────────
 
 function SummaryCards({ projectId }: { projectId?: string }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const { data, isLoading } = useQuery({
     queryKey: ['bia-summary', projectId],
     queryFn: () => biaApi.summary({ project_id: projectId }),
@@ -69,7 +83,7 @@ function SummaryCards({ projectId }: { projectId?: string }) {
     { label: 'Total Assets',       value: data?.total,       color: '#607D8B', suffix: '' },
     { label: 'Recovery Tested',    value: data?.tested_pct != null ? `${Math.round(data.tested_pct)}%` : null, color: '#4CAF50', suffix: '' },
     { label: 'High Impact',        value: data?.high_impact, color: '#F44336', suffix: '' },
-    { label: 'RTO Missing',        value: data?.rto_missing, color: '#FF9800', suffix: '' },
+    { label: 'RTO Missing',        value: data?.rto_missing, color: isLight ? '#E65100' : '#FF9800', suffix: '' },
   ]
   return (
     <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap', mb: 2.5 }}>
@@ -112,6 +126,8 @@ function BIADialog({
   open, onClose, existing, projectId,
 }: { open: boolean; onClose: () => void; existing?: BIARecord; projectId?: string }) {
   const qc = useQueryClient()
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   const isEdit = !!existing
 
   const [form, setForm] = useState<BIACreate>(existing ? {
@@ -216,11 +232,11 @@ function BIADialog({
                 value={val}
                 onChange={(_, v) => set(key, v as number)}
                 marks
-                sx={{ flex: 1, color: impactColor(val) }}
+                sx={{ flex: 1, color: impactColor(val, isLight) }}
               />
               <Box sx={{
                 minWidth: 24, height: 24, borderRadius: '50%',
-                bgcolor: impactColor(val), display: 'flex', alignItems: 'center', justifyContent: 'center',
+                bgcolor: impactColor(val, isLight), display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}>
                 <Typography variant="caption" sx={{ fontSize: '0.65rem', fontWeight: 700, color: '#fff' }}>{val}</Typography>
               </Box>
@@ -266,6 +282,8 @@ function BIADialog({
 function BIARow({
   record, onEdit, onDelete,
 }: { record: BIARecord; onEdit: () => void; onDelete: () => void }) {
+  const { palette } = useTheme()
+  const isLight = palette.mode === 'light'
   return (
     <Box sx={{
       display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1.25,
@@ -291,7 +309,7 @@ function BIARow({
 
       {/* RTO */}
       <Box sx={{ width: 60, textAlign: 'center' }}>
-        <Typography variant="caption" sx={{ fontSize: '0.72rem', color: record.rto_hours == null ? 'text.disabled' : '#FF9800' }}>
+        <Typography variant="caption" sx={{ fontSize: '0.72rem', color: record.rto_hours == null ? 'text.disabled' : (isLight ? '#E65100' : '#FF9800') }}>
           {record.rto_hours != null ? `${record.rto_hours}h` : '—'}
         </Typography>
       </Box>
