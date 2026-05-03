@@ -1738,10 +1738,10 @@ def build_objects(fields_by_id: dict) -> list:
         ("viz-ti-abuse-country", 16,  0, 16, 8),
         ("viz-ti-abuse-privacy", 32,  0, 16, 8),
         ("viz-ti-abuse-time",     0,  8, 48, 8),
-        ("viz-ti-abuse-geomap",   0, 16, 48,14),
-        ("viz-ti-abuse-city",     0, 30, 48, 9),
-        ("viz-ti-abuse-asn",      0, 39, 48, 9),
-        ("viz-ti-abuse-isp",      0, 48, 48, 9),
+        ("viz-ti-abuse-geomap",   0, 16, 48,22),
+        ("viz-ti-abuse-city",     0, 38, 48, 9),
+        ("viz-ti-abuse-asn",      0, 47, 48, 9),
+        ("viz-ti-abuse-isp",      0, 56, 48, 9),
     ]))
 
     # Malpedia — Malware Families
