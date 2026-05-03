@@ -220,3 +220,24 @@ class RemediationSummary(BaseModel):
     completed:   int
     cancelled:   int
     overdue:     int
+
+
+class PoamItem(BaseModel):
+    id:           str
+    source:       str          # 'risk' | 'gap' | 'tprm'
+    title:        str
+    description:  str | None = None
+    status:       str
+    owner:        str | None = None
+    eta:          date | None = None
+    control_code: str | None = None
+    severity:     str | None = None
+    is_overdue:   bool = False
+
+
+class PoamSummary(BaseModel):
+    total:      int
+    overdue:    int
+    risk_count: int
+    gap_count:  int
+    tprm_count: int

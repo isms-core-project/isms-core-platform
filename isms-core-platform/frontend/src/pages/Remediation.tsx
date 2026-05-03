@@ -2,16 +2,17 @@ import { useState } from 'react'
 import {
   Alert, Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle,
   FormControl, IconButton, InputLabel, LinearProgress, MenuItem, Select,
-  Skeleton, Snackbar, TextField, Tooltip, Typography,
+  Skeleton, Snackbar, Tab, Tabs, TextField, Tooltip, Typography,
 } from '@mui/material'
 import {
   AddOutlined, CheckCircleOutlined, ConfirmationNumberOutlined, DeleteOutlined, EditOutlined,
-  ErrorOutlined, HourglassEmptyOutlined, ScheduleOutlined,
+  ErrorOutlined, HourglassEmptyOutlined, ScheduleOutlined, WarningAmberOutlined,
 } from '@mui/icons-material'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import {
   risksApi,
+  type PoamItem,
   type RemediationAction,
   type RemediationActionCreate,
 } from '../api/risksApi'
@@ -350,10 +351,167 @@ function ActionRow({
   )
 }
 
+// ── POA&M view ────────────────────────────────────────────────────────────────
+
+const SOURCE_META: Record<string, { label: string; color: string }> = {
+  risk: { label: 'Risk',       color: '#F44336' },
+  gap:  { label: 'Gap',        color: '#FF9800' },
+  tprm: { label: 'TPRM',      color: '#9C27B0' },
+}
+
+function PoamSummaryCards() {
+  const { data, isLoading } = useQuery({
+    queryKey: ['poam-summary'],
+    queryFn: risksApi.poamSummary,
+  })
+  const cards = [
+    { label: 'Total Open',    value: data?.total,      color: '#607D8B' },
+    { label: 'Overdue',       value: data?.overdue,    color: '#F44336' },
+    { label: 'Risk Treatments', value: data?.risk_count, color: '#F44336' },
+    { label: 'Open Gaps',     value: data?.gap_count,  color: '#FF9800' },
+    { label: 'TPRM Findings', value: data?.tprm_count, color: '#9C27B0' },
+  ]
+  return (
+    <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap', mb: 2.5 }}>
+      {cards.map(c => (
+        <Box key={c.label} sx={{ minWidth: 100, p: 1.5, borderRadius: 1.5, border: '1px solid', borderColor: `${c.color}30`, bgcolor: `${c.color}08` }}>
+          {isLoading
+            ? <Skeleton width={32} height={28} />
+            : <Typography variant="h5" sx={{ fontWeight: 700, color: c.color, lineHeight: 1 }}>{c.value ?? 0}</Typography>}
+          <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.secondary' }}>{c.label}</Typography>
+        </Box>
+      ))}
+    </Box>
+  )
+}
+
+function PoamRow({ item }: { item: PoamItem }) {
+  const src = SOURCE_META[item.source] ?? { label: item.source, color: '#607D8B' }
+  return (
+    <Box sx={{
+      display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1.25,
+      borderBottom: '1px solid', borderColor: 'divider',
+      '&:hover': { bgcolor: 'action.hover' },
+      bgcolor: item.is_overdue ? '#F4433606' : 'transparent',
+    }}>
+      <Chip
+        label={src.label}
+        size="small"
+        sx={{ height: 18, fontSize: '0.6rem', fontWeight: 700, minWidth: 40,
+          bgcolor: `${src.color}18`, color: src.color, border: `1px solid ${src.color}40` }}
+      />
+      <Box sx={{ flex: 3, minWidth: 0 }}>
+        <Typography variant="body2" sx={{ fontWeight: 500, fontSize: '0.82rem', color: item.is_overdue ? 'error.main' : 'text.primary', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          {item.title}
+        </Typography>
+        {item.description && (
+          <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.disabled', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block' }}>
+            {item.description}
+          </Typography>
+        )}
+      </Box>
+      {item.control_code ? (
+        <Chip label={item.control_code} size="small" sx={{ height: 18, fontSize: '0.6rem', fontFamily: 'monospace', bgcolor: 'action.hover' }} />
+      ) : <Box sx={{ width: 60 }} />}
+      <Box sx={{ minWidth: 80 }}>
+        <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.secondary' }}>
+          {item.status.replace('_', ' ')}
+        </Typography>
+      </Box>
+      {item.severity && (
+        <Typography variant="caption" sx={{ fontSize: '0.65rem', color: 'text.disabled', minWidth: 60 }}>
+          {item.severity}
+        </Typography>
+      )}
+      <Box sx={{ minWidth: 80, textAlign: 'right' }}>
+        {item.eta && (
+          <Tooltip title={item.is_overdue ? 'Overdue' : ''}>
+            <Typography variant="caption" sx={{ fontSize: '0.65rem', color: item.is_overdue ? 'error.main' : 'text.secondary', fontWeight: item.is_overdue ? 600 : 400, display: 'flex', alignItems: 'center', gap: 0.5, justifyContent: 'flex-end' }}>
+              {item.is_overdue && <WarningAmberOutlined sx={{ fontSize: 11 }} />}
+              {dayjs(item.eta).format('D MMM YY')}
+            </Typography>
+          </Tooltip>
+        )}
+      </Box>
+    </Box>
+  )
+}
+
+function PoamView() {
+  const [sourceFilter, setSourceFilter] = useState<string>('')
+
+  const { data, isLoading } = useQuery({
+    queryKey: ['poam', sourceFilter],
+    queryFn: () => risksApi.listPoam(sourceFilter ? { source: sourceFilter } : undefined),
+  })
+
+  const sources = [
+    { value: '',     label: 'All Sources' },
+    { value: 'risk', label: 'Risk Treatments' },
+    { value: 'gap',  label: 'Open Gaps' },
+    { value: 'tprm', label: 'TPRM Findings' },
+  ]
+
+  return (
+    <Box>
+      <PoamSummaryCards />
+
+      {/* Source filter pills */}
+      <Box sx={{ display: 'flex', gap: 1, mb: 2, flexWrap: 'wrap' }}>
+        {sources.map(s => (
+          <Chip
+            key={s.value}
+            label={s.label}
+            size="small"
+            onClick={() => setSourceFilter(s.value)}
+            variant={sourceFilter === s.value ? 'filled' : 'outlined'}
+            sx={{
+              fontWeight: sourceFilter === s.value ? 700 : 400,
+              ...(s.value && sourceFilter === s.value && {
+                bgcolor: `${SOURCE_META[s.value]?.color}18`,
+                color: SOURCE_META[s.value]?.color,
+                borderColor: `${SOURCE_META[s.value]?.color}60`,
+              }),
+            }}
+          />
+        ))}
+        <Typography variant="caption" sx={{ ml: 'auto', color: 'text.disabled', alignSelf: 'center' }}>
+          {data?.length ?? 0} item{data?.length !== 1 ? 's' : ''}
+        </Typography>
+      </Box>
+
+      {/* Table header */}
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 0.75, bgcolor: 'action.hover', borderRadius: '8px 8px 0 0', border: '1px solid', borderColor: 'divider', borderBottom: 'none' }}>
+        <Typography variant="caption" sx={{ width: 40, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Source</Typography>
+        <Typography variant="caption" sx={{ flex: 3, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Title</Typography>
+        <Typography variant="caption" sx={{ width: 60, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Control</Typography>
+        <Typography variant="caption" sx={{ minWidth: 80, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Status</Typography>
+        <Typography variant="caption" sx={{ minWidth: 60, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Priority</Typography>
+        <Typography variant="caption" sx={{ minWidth: 80, textAlign: 'right', fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>ETA</Typography>
+      </Box>
+
+      <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: '0 0 8px 8px', overflow: 'hidden' }}>
+        {isLoading && [0, 1, 2, 3].map(i => (
+          <Box key={i} sx={{ px: 2, py: 1.5, borderBottom: '1px solid', borderColor: 'divider' }}>
+            <Skeleton height={20} />
+          </Box>
+        ))}
+        {!isLoading && (!data || data.length === 0) && (
+          <Box sx={{ py: 6, textAlign: 'center' }}>
+            <Typography variant="body2" color="text.secondary">No open items.</Typography>
+          </Box>
+        )}
+        {data?.map(item => <PoamRow key={`${item.source}-${item.id}`} item={item} />)}
+      </Box>
+    </Box>
+  )
+}
+
 // ── Main page ─────────────────────────────────────────────────────────────────
 
 export default function Remediation() {
   const qc = useQueryClient()
+  const [tab, setTab] = useState(0)
   const [statusFilter, setStatusFilter] = useState('')
   const [dialogOpen, setDialogOpen] = useState(false)
   const [editing, setEditing] = useState<RemediationAction | undefined>()
@@ -367,6 +525,7 @@ export default function Remediation() {
       ...(statusFilter ? { status: statusFilter } : {}),
       project_id: projectId,
     }),
+    enabled: tab === 0,
   })
 
   const deleteMut = useMutation({
@@ -384,94 +543,101 @@ export default function Remediation() {
     <Box sx={{ p: 3 }}>
       <PageHeader
         title="Remediation Tracker"
-        subtitle={activeProject
-          ? `${activeProject.name} · POA&M — ISO 27001:2022 §6.1.3`
-          : 'Plan of Action and Milestones (POA&M) — ISO 27001:2022 §6.1.3'}
+        subtitle="Plan of Action and Milestones (POA&M) — ISO 27001:2022 §6.1.3"
         actions={
-          <Tooltip title={!activeProject ? 'Select a project first to create remediation actions' : ''}>
-            <span>
-              <Button variant="contained" size="small" startIcon={<AddOutlined />}
-                onClick={openCreate} disabled={!activeProject}>
-                New Action
-              </Button>
-            </span>
-          </Tooltip>
+          tab === 0 ? (
+            <Tooltip title={!activeProject ? 'Select a project first to create remediation actions' : ''}>
+              <span>
+                <Button variant="contained" size="small" startIcon={<AddOutlined />}
+                  onClick={openCreate} disabled={!activeProject}>
+                  New Action
+                </Button>
+              </span>
+            </Tooltip>
+          ) : null
         }
       />
 
-      {activeProject && (
-        <Alert severity="info" sx={{ mb: 2, py: 0.5, fontSize: '0.8rem' }}>
-          Showing actions for project: <strong>{activeProject.name}</strong>
-          {activeProject.organisation_name ? ` — ${activeProject.organisation_name}` : ''}
-        </Alert>
-      )}
+      <Tabs value={tab} onChange={(_, v) => setTab(v)} sx={{ mb: 2.5, borderBottom: 1, borderColor: 'divider' }}>
+        <Tab label="Risk Treatments" sx={{ fontSize: '0.8rem', textTransform: 'none', minHeight: 40 }} />
+        <Tab label="All Sources (POA&M)" sx={{ fontSize: '0.8rem', textTransform: 'none', minHeight: 40 }} />
+      </Tabs>
 
-      <SummaryCards projectId={projectId} />
+      {tab === 0 && (
+        <>
+          {activeProject && (
+            <Alert severity="info" sx={{ mb: 2, py: 0.5, fontSize: '0.8rem' }}>
+              Showing actions for project: <strong>{activeProject.name}</strong>
+              {activeProject.organisation_name ? ` — ${activeProject.organisation_name}` : ''}
+            </Alert>
+          )}
 
-      {/* Filters */}
-      <Box sx={{ display: 'flex', gap: 1.5, mb: 2, alignItems: 'center' }}>
-        <FormControl size="small" sx={{ minWidth: 150 }}>
-          <InputLabel>Status</InputLabel>
-          <Select value={statusFilter} label="Status" onChange={e => setStatusFilter(e.target.value)}>
-            <MenuItem value="">All statuses</MenuItem>
-            {Object.entries(STATUS_META).map(([v, m]) => <MenuItem key={v} value={v}>{m.label}</MenuItem>)}
-          </Select>
-        </FormControl>
-        {statusFilter && (
-          <Button size="small" onClick={() => setStatusFilter('')} sx={{ textTransform: 'none', fontSize: '0.75rem' }}>
-            Clear
-          </Button>
-        )}
-        <Typography variant="caption" sx={{ ml: 'auto', color: 'text.disabled' }}>
-          {data?.length ?? 0} action{data?.length !== 1 ? 's' : ''}
-        </Typography>
-      </Box>
+          <SummaryCards projectId={projectId} />
 
-      {/* Table header */}
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 0.75, bgcolor: 'action.hover', borderRadius: '8px 8px 0 0', border: '1px solid', borderColor: 'divider', borderBottom: 'none' }}>
-        <Typography variant="caption" sx={{ flex: 3, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Title / Risk</Typography>
-        <Typography variant="caption" sx={{ flex: 1.5, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Progress</Typography>
-        <Typography variant="caption" sx={{ flex: 1, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Status</Typography>
-        <Typography variant="caption" sx={{ width: 52, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Effort</Typography>
-        <Typography variant="caption" sx={{ minWidth: 80, textAlign: 'right', fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>ETA</Typography>
-        <Box sx={{ width: 80 }} />
-      </Box>
-
-      <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: '0 0 8px 8px', overflow: 'hidden' }}>
-        {isLoading && [0, 1, 2, 3].map(i => (
-          <Box key={i} sx={{ px: 2, py: 1.5, borderBottom: '1px solid', borderColor: 'divider' }}>
-            <Skeleton height={20} />
-          </Box>
-        ))}
-
-        {!isLoading && (!data || data.length === 0) && (
-          <Box sx={{ py: 6, textAlign: 'center' }}>
-            <Typography variant="body2" color="text.secondary">
-              {activeProject ? 'No remediation actions yet.' : 'Select a project to create remediation actions.'}
-            </Typography>
-            {activeProject && (
-              <Button variant="outlined" size="small" startIcon={<AddOutlined />} onClick={openCreate} sx={{ mt: 1.5 }}>
-                Create first action
+          <Box sx={{ display: 'flex', gap: 1.5, mb: 2, alignItems: 'center' }}>
+            <FormControl size="small" sx={{ minWidth: 150 }}>
+              <InputLabel>Status</InputLabel>
+              <Select value={statusFilter} label="Status" onChange={e => setStatusFilter(e.target.value)}>
+                <MenuItem value="">All statuses</MenuItem>
+                {Object.entries(STATUS_META).map(([v, m]) => <MenuItem key={v} value={v}>{m.label}</MenuItem>)}
+              </Select>
+            </FormControl>
+            {statusFilter && (
+              <Button size="small" onClick={() => setStatusFilter('')} sx={{ textTransform: 'none', fontSize: '0.75rem' }}>
+                Clear
               </Button>
             )}
+            <Typography variant="caption" sx={{ ml: 'auto', color: 'text.disabled' }}>
+              {data?.length ?? 0} action{data?.length !== 1 ? 's' : ''}
+            </Typography>
           </Box>
-        )}
 
-        {data?.map(a => (
-          <ActionRow
-            key={a.id}
-            action={a}
-            onEdit={() => openEdit(a)}
-            onDelete={() => { if (confirm(`Delete "${a.title}"?`)) deleteMut.mutate(a.id) }}
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 0.75, bgcolor: 'action.hover', borderRadius: '8px 8px 0 0', border: '1px solid', borderColor: 'divider', borderBottom: 'none' }}>
+            <Typography variant="caption" sx={{ flex: 3, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Title / Risk</Typography>
+            <Typography variant="caption" sx={{ flex: 1.5, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Progress</Typography>
+            <Typography variant="caption" sx={{ flex: 1, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Status</Typography>
+            <Typography variant="caption" sx={{ width: 52, fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>Effort</Typography>
+            <Typography variant="caption" sx={{ minWidth: 80, textAlign: 'right', fontWeight: 600, fontSize: '0.7rem', color: 'text.secondary', textTransform: 'uppercase' }}>ETA</Typography>
+            <Box sx={{ width: 80 }} />
+          </Box>
+
+          <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: '0 0 8px 8px', overflow: 'hidden' }}>
+            {isLoading && [0, 1, 2, 3].map(i => (
+              <Box key={i} sx={{ px: 2, py: 1.5, borderBottom: '1px solid', borderColor: 'divider' }}>
+                <Skeleton height={20} />
+              </Box>
+            ))}
+            {!isLoading && (!data || data.length === 0) && (
+              <Box sx={{ py: 6, textAlign: 'center' }}>
+                <Typography variant="body2" color="text.secondary">
+                  {activeProject ? 'No remediation actions yet.' : 'Select a project to create remediation actions.'}
+                </Typography>
+                {activeProject && (
+                  <Button variant="outlined" size="small" startIcon={<AddOutlined />} onClick={openCreate} sx={{ mt: 1.5 }}>
+                    Create first action
+                  </Button>
+                )}
+              </Box>
+            )}
+            {data?.map(a => (
+              <ActionRow
+                key={a.id}
+                action={a}
+                onEdit={() => openEdit(a)}
+                onDelete={() => { if (confirm(`Delete "${a.title}"?`)) deleteMut.mutate(a.id) }}
+              />
+            ))}
+          </Box>
+
+          <ActionDialog
+            open={dialogOpen}
+            onClose={() => setDialogOpen(false)}
+            existing={editing}
           />
-        ))}
-      </Box>
+        </>
+      )}
 
-      <ActionDialog
-        open={dialogOpen}
-        onClose={() => setDialogOpen(false)}
-        existing={editing}
-      />
+      {tab === 1 && <PoamView />}
     </Box>
   )
 }

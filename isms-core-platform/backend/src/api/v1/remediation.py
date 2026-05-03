@@ -24,9 +24,15 @@ from sqlalchemy.orm import Session as DBSession
 
 from src.core.dependencies import get_current_user, get_org_context, require_qa_access
 from src.database.session import get_db
+from src.domain.compliance import Gap
+from src.domain.control_groups import ControlGroup
+from src.domain.projects import Project
 from src.domain.risks import RemediationAction, RiskAcceptance, RiskScenario
+from src.domain.tprm import Vendor, VendorAssessment
 from src.domain.users import User
 from src.schemas.risks import (
+    PoamItem,
+    PoamSummary,
     RemediationActionCreate,
     RemediationActionPatch,
     RemediationActionRead,
@@ -142,6 +148,157 @@ def revoke_acceptance(
     if not active:
         r.status = 'open'
     db.commit()
+
+
+# ── POA&M helpers ─────────────────────────────────────────────────────────────
+
+def _control_code(db: DBSession, cg_id: uuid.UUID | None) -> str | None:
+    if not cg_id:
+        return None
+    cg = db.get(ControlGroup, cg_id)
+    return cg.group_code if cg else None
+
+
+def _is_overdue(eta: date | None, status: str) -> bool:
+    if not eta:
+        return False
+    terminal = {'completed', 'cancelled', 'closed', 'accepted', 'compliant', 'not_applicable'}
+    return eta < date.today() and status not in terminal
+
+
+# ── POA&M endpoints ────────────────────────────────────────────────────────────
+
+@remediation_router.get("/poam/summary", response_model=PoamSummary)
+def get_poam_summary(
+    db: DBSession = Depends(get_db),
+    org_id: uuid.UUID = Depends(get_org_context),
+    _: User = Depends(get_current_user),
+):
+    today = date.today()
+
+    risks = db.execute(
+        select(RemediationAction).where(
+            RemediationAction.org_id == org_id,
+            RemediationAction.status.notin_(['completed', 'cancelled']),
+        )
+    ).scalars().all()
+
+    gaps = db.execute(
+        select(Gap)
+        .join(Project, Gap.project_id == Project.id)
+        .where(Project.organisation_id == org_id, Gap.status.in_(['open', 'in_progress']))
+    ).scalars().all()
+
+    tprm = db.execute(
+        select(VendorAssessment).join(Vendor).where(
+            Vendor.org_id == org_id,
+            VendorAssessment.status.notin_(['compliant', 'not_applicable', 'not_assessed']),
+        )
+    ).scalars().all()
+
+    def overdue_risk(a: RemediationAction) -> bool:
+        return bool(a.eta and a.eta < today and a.status not in ('completed', 'cancelled'))
+
+    def overdue_gap(g: Gap) -> bool:
+        return bool(g.due_date and g.due_date < today and g.status not in ('closed', 'accepted'))
+
+    def overdue_tprm(t: VendorAssessment) -> bool:
+        return bool(t.next_review_date and t.next_review_date < today
+                    and t.status not in ('compliant', 'not_applicable'))
+
+    overdue = (
+        sum(1 for a in risks if overdue_risk(a))
+        + sum(1 for g in gaps if overdue_gap(g))
+        + sum(1 for t in tprm if overdue_tprm(t))
+    )
+    return PoamSummary(
+        total=len(risks) + len(gaps) + len(tprm),
+        overdue=overdue,
+        risk_count=len(risks),
+        gap_count=len(gaps),
+        tprm_count=len(tprm),
+    )
+
+
+@remediation_router.get("/poam", response_model=list[PoamItem])
+def get_poam(
+    source: str | None = Query(None, description="Filter by source: risk|gap|tprm"),
+    db: DBSession = Depends(get_db),
+    org_id: uuid.UUID = Depends(get_org_context),
+    _: User = Depends(get_current_user),
+):
+    today = date.today()
+    items: list[PoamItem] = []
+
+    # Source A — risk treatments
+    if not source or source == 'risk':
+        rows = db.execute(
+            select(RemediationAction).where(
+                RemediationAction.org_id == org_id,
+                RemediationAction.status.notin_(['completed', 'cancelled']),
+            ).order_by(RemediationAction.eta.asc().nullslast())
+        ).scalars().all()
+        for a in rows:
+            items.append(PoamItem(
+                id=str(a.id),
+                source='risk',
+                title=a.title,
+                description=a.description,
+                status=a.status,
+                owner=a.owner_id and str(a.owner_id),
+                eta=a.eta,
+                control_code=_control_code(db, a.control_group_id),
+                severity=a.effort,
+                is_overdue=bool(a.eta and a.eta < today),
+            ))
+
+    # Source B — open gaps (scoped via project → org)
+    if not source or source == 'gap':
+        rows = db.execute(
+            select(Gap)
+            .join(Project, Gap.project_id == Project.id)
+            .where(Project.organisation_id == org_id, Gap.status.in_(['open', 'in_progress']))
+            .order_by(Gap.due_date.asc().nullslast())
+        ).scalars().all()
+        for g in rows:
+            title = (g.gap_description[:120] + '…') if len(g.gap_description) > 120 else g.gap_description
+            items.append(PoamItem(
+                id=str(g.id),
+                source='gap',
+                title=title,
+                description=g.remediation_plan,
+                status=g.status.value if hasattr(g.status, 'value') else str(g.status),
+                owner=g.owner,
+                eta=g.due_date,
+                control_code=_control_code(db, g.control_group_id),
+                severity=g.severity.value if hasattr(g.severity, 'value') else str(g.severity),
+                is_overdue=bool(g.due_date and g.due_date < today),
+            ))
+
+    # Source C — TPRM findings (non-compliant vendor assessments)
+    if not source or source == 'tprm':
+        rows = db.execute(
+            select(VendorAssessment, Vendor).join(Vendor).where(
+                Vendor.org_id == org_id,
+                VendorAssessment.status.notin_(['compliant', 'not_applicable', 'not_assessed']),
+            ).order_by(VendorAssessment.next_review_date.asc().nullslast())
+        ).all()
+        for va, vendor in rows:
+            score_str = f"Score {va.score}/100" if va.score is not None else None
+            items.append(PoamItem(
+                id=str(va.id),
+                source='tprm',
+                title=f"{vendor.name} — {va.status.replace('_', ' ').title()}",
+                description=va.notes,
+                status=va.status,
+                owner=None,
+                eta=va.next_review_date,
+                control_code=_control_code(db, va.control_group_id),
+                severity=score_str,
+                is_overdue=bool(va.next_review_date and va.next_review_date < today),
+            ))
+
+    return items
 
 
 # ── Remediation action endpoints ──────────────────────────────────────────────

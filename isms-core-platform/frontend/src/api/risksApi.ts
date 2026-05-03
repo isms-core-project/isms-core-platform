@@ -145,6 +145,27 @@ export interface RemediationSummary {
   overdue: number
 }
 
+export interface PoamItem {
+  id: string
+  source: 'risk' | 'gap' | 'tprm'
+  title: string
+  description: string | null
+  status: string
+  owner: string | null
+  eta: string | null
+  control_code: string | null
+  severity: string | null
+  is_overdue: boolean
+}
+
+export interface PoamSummary {
+  total: number
+  overdue: number
+  risk_count: number
+  gap_count: number
+  tprm_count: number
+}
+
 export const risksApi = {
   list: (params?: { status?: string; risk_level?: string; treatment_status?: string; project_id?: string }) =>
     client.get<RiskScenario[]>('/risks', { params }).then(r => r.data),
@@ -189,4 +210,10 @@ export const risksApi = {
     client.patch<RemediationAction>(`/remediation/${id}`, body).then(r => r.data),
   deleteRemediation: (id: string) =>
     client.delete(`/remediation/${id}`),
+
+  // POA&M (unified across risk / gap / tprm sources)
+  poamSummary: () =>
+    client.get<PoamSummary>('/remediation/poam/summary').then(r => r.data),
+  listPoam: (params?: { source?: string }) =>
+    client.get<PoamItem[]>('/remediation/poam', { params }).then(r => r.data),
 }
