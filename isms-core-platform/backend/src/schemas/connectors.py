@@ -25,6 +25,7 @@ class ConnectorRegister(BaseModel):
             "PAM: cyberark. "
             "Cloud: aws_security_hub | azure_cspm | gcp_scc. "
             "Filigran: opencti | openaev. "
+            "Infrastructure: kubernetes. "
             "Generic: siem | threat_intel"
         ),
     )

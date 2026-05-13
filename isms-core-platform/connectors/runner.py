@@ -99,6 +99,8 @@ CONNECTOR_MAP: dict[str, tuple[str, str]] = {
     "threat_intel":      ("/app/threat-intel/connector.py",      "ThreatIntelConnector"),
     # ── Generic ────────────────────────────────────────────────────────────────
     "siem":              ("/app/siem/connector.py",              "SIEMConnector"),
+    # ── Infrastructure ─────────────────────────────────────────────────────────
+    "kubernetes":        ("/app/kubernetes/connector.py",        "KubernetesConnector"),
 }
 
 

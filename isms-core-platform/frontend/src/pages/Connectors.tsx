@@ -43,6 +43,7 @@ import {
   ErrorOutlined,
   InfoOutlined,
   HelpOutlineOutlined,
+  HubOutlined,
   HourglassEmptyOutlined,
   ArrowForwardOutlined,
   BugReportOutlined,
@@ -108,6 +109,8 @@ const BUILT_SYSTEMS = new Set([
   'github', 'gitlab',
   // Threat Intelligence
   'opencti', 'openaev', 'threat_intel',
+  // Infrastructure
+  'kubernetes',
   // Generic
   'siem',
 ])
@@ -155,6 +158,7 @@ const SYSTEM_ICON: Record<string, React.ElementType> = {
   gitlab:           ElectricalServicesOutlined,
   opencti:          TravelExploreOutlined,
   openaev:          ShieldOutlined,
+  kubernetes:       HubOutlined,
   siem:             SecurityOutlined,
   threat_intel:     TravelExploreOutlined,
 }
@@ -224,6 +228,11 @@ const CONNECTOR_CATEGORIES: { name: string; color: string; systems: string[] }[]
     name: 'Threat Intelligence',
     color: '#6A1B9A',
     systems: ['threat_intel'],
+  },
+  {
+    name: 'Infrastructure',
+    color: '#01579B',
+    systems: ['kubernetes'],
   },
   {
     name: 'Generic',

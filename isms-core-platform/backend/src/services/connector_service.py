@@ -45,6 +45,8 @@ _ROUTED_SOURCES = {
     "aws_security_hub", "azure_cspm", "gcp_scc",
     # Filigran / TI
     "opencti", "openaev", "siem", "threat_intel",
+    # Infrastructure
+    "kubernetes",
 }
 
 
@@ -519,6 +521,17 @@ def _promote_fields(source_system: str, raw: dict) -> dict:
         p["change_count"]            = raw.get("total_changes", 0)
         p["open_change_count"]       = raw.get("open_changes", 0)
         p["pending_approval_count"]  = raw.get("pending_approval", 0)
+
+    elif source_system == "kubernetes":
+        nodes = raw.get("nodes") or {}
+        pods = raw.get("pods") or {}
+        p["cluster_name"]  = raw.get("cluster_name", "kubernetes")
+        p["total_nodes"]   = nodes.get("total", 0)
+        p["ready_nodes"]   = nodes.get("ready", 0)
+        p["total_pods"]    = pods.get("total", 0)
+        p["running_pods"]  = pods.get("running", 0)
+        p["crash_pods"]    = pods.get("crashLoopBackOff", 0)
+        p["oom_pods"]      = pods.get("oomKilled", 0)
 
     return p
 

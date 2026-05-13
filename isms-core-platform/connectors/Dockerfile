@@ -80,6 +80,9 @@ COPY threat-intel      /app/threat-intel
 # ── Generic ────────────────────────────────────────────────────────────────────
 COPY siem              /app/siem
 
+# ── Infrastructure ─────────────────────────────────────────────────────────────
+COPY kubernetes        /app/kubernetes
+
 # Orchestrator
 COPY runner.py .
 

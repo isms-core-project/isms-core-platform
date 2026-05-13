@@ -334,6 +334,11 @@ export const CONNECTOR_CONFIG_SCHEMA: Record<string, ConfigField[]> = {
     { key: 'client_id',     label: 'App (Client) ID', type: 'text',     required: true,  helperText: 'App Registration (client) ID. Required application permissions (no admin consent redirect): SecurityAlert.Read.All (unified security alerts), Policy.Read.All (Conditional Access policies). Optional: ThreatIndicators.Read.All.' },
     { key: 'client_secret', label: 'Client Secret',   type: 'password', required: true,  helperText: 'App Registration → Certificates & secrets. Grant admin consent for SecurityAlert.Read.All in API permissions after adding.' },
   ],
+  // ── Infrastructure ───────────────────────────────────────────────────────────
+  kubernetes: [
+    { key: 'dashboard_url',   label: 'Dashboard URL',   type: 'text',     required: true,  placeholder: 'http://10.0.0.60', helperText: 'Kubernetes Dashboard base URL. The connector calls /api/v1/summary on this host.' },
+    { key: 'dashboard_token', label: 'Dashboard Token', type: 'password', required: true,  helperText: 'Service Account bearer token. Run: kubectl create token admin-user -n kubernetes-dashboard' },
+  ],
   // ── Generic ──────────────────────────────────────────────────────────────────
   siem: [
     { key: 'base_url',          label: 'SIEM Base URL',      type: 'text',     required: true,  placeholder: 'https://splunk.corp.local:8089', helperText: 'Base API URL for your SIEM. Works with Splunk (REST API port 8089), QRadar, Elastic SIEM, Logpoint, ArcSight, etc.' },
@@ -403,6 +408,7 @@ export const CONNECTOR_CONTROLS: Record<string, string[]> = {
   openaev:           ['A.5.7'],
   threat_intel:      ['A.5.7', 'A.8.16'],
   siem:              ['A.8.15', 'A.8.16'],
+  kubernetes:        ['A.8.6', 'A.8.8', 'A.8.16', 'A.8.24'],
 }
 
 // ── KNOWN_SYSTEMS catalogue ────────────────────────────────────────────────────
@@ -472,6 +478,8 @@ export const KNOWN_SYSTEMS: {
   // ── Filigran XTM ─────────────────────────────────────────────────────────────
   { value: 'opencti',          label: 'OpenCTI',                         product: 'ISMS',               model: 'both',    default_interval: 86400  },
   { value: 'openaev',          label: 'OpenAEV',                         product: 'ISMS',               model: 'both',    default_interval: 86400  },
+  // ── Infrastructure ───────────────────────────────────────────────────────────
+  { value: 'kubernetes',        label: 'Kubernetes Dashboard',            product: 'ISMS',               model: 'on-prem', default_interval: 3600   },
   // ── Generic ──────────────────────────────────────────────────────────────────
   { value: 'siem',             label: 'Generic SIEM',                    product: 'SEC',                model: 'both',    default_interval: 3600   },
   { value: 'threat_intel',     label: 'Threat Intel Feed',               product: 'SEC',                model: 'both',    default_interval: 86400  },
