@@ -22,7 +22,7 @@ openpyxl==3.1.2
 reportlab==4.2.5
 
 # File Handling
-python-multipart==0.0.26
+python-multipart==0.0.27
 
 # Document Parsing (Policy Importer)
 python-docx==1.1.0

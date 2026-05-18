@@ -1,6 +1,6 @@
 # Core HTTP
 requests==2.33.0
-urllib3==2.6.3
+urllib3==2.7.0
 
 # LDAP (Active Directory, OpenLDAP, FreeIPA)
 ldap3==2.9.1
