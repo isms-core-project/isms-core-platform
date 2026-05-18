@@ -1,10 +1,14 @@
 """Kubernetes Dashboard connector for ISMS CORE v2.0.
 
-Polls the Kubernetes Dashboard /api/v1/summary endpoint and posts evidence to:
-  a.8.6   — Capacity management          (node health + resource pressure)
+Polls the Kubernetes Dashboard API and posts evidence to:
+  a.8.6   — Capacity management          (node health, pod counts, resource efficiency)
   a.8.16  — Monitoring of activities     (pod crashes, Warning events)
   a.8.8   — Technical vulnerability mgmt (policy audit score)
   a.8.24  — Use of cryptography          (TLS certificate expiry)
+
+Endpoints used:
+  GET /api/v1/summary    — cluster health snapshot (always)
+  GET /api/v1/efficiency — per-container CPU/memory vs limits (requires metrics-server)
 
 Environment variables required:
   ISMS_API_URL         — e.g. http://isms-core-backend:8000
@@ -53,9 +57,28 @@ class KubernetesConnector(ISMSConnectorBase):
         resp.raise_for_status()
         return resp.json()
 
+    def _fetch_efficiency(self) -> dict | None:
+        """Fetch per-container resource efficiency from the metrics-server.
+
+        Returns None (non-fatal) if the metrics-server is not installed or the
+        endpoint is unavailable — the rest of the sync continues normally.
+        """
+        try:
+            resp = requests.get(
+                f"{self.dashboard_url}/api/v1/efficiency",
+                headers={"Authorization": f"Bearer {self.dashboard_token}"},
+                timeout=DASHBOARD_TIMEOUT,
+            )
+            resp.raise_for_status()
+            return resp.json()
+        except Exception as exc:
+            logger.warning("Efficiency endpoint unavailable (metrics-server installed?): %s", exc)
+            return None
+
     def fetch(self, since: str | None) -> list[dict]:
         data = self._fetch_summary()
         data["_type"] = "k8s_summary_bundle"
+        data["efficiency"] = self._fetch_efficiency()
         return [data]
 
     def transform(self, item: dict) -> EvidenceItem | None:
@@ -111,6 +134,69 @@ class KubernetesConnector(ISMSConnectorBase):
                 "pods": pods,
             },
         ))
+
+        # ── A.8.6 — Resource efficiency (metrics-server, optional) ───────────
+        efficiency = bundle.get("efficiency")
+        if efficiency and isinstance(efficiency, dict):
+            containers = efficiency.get("containers") or []
+            no_limits       = [c for c in containers if c.get("verdict") == "no-limits"]
+            under_prov      = [c for c in containers if c.get("verdict") == "under-provisioned"]
+            over_prov       = [c for c in containers if c.get("verdict") == "over-provisioned"]
+            ok_count        = sum(1 for c in containers if c.get("verdict") == "ok")
+            no_data_count   = sum(1 for c in containers if c.get("verdict") == "no-data")
+
+            if under_prov:
+                eff_status = "non-compliant"
+            elif no_limits:
+                eff_status = "attention-required"
+            else:
+                eff_status = "compliant"
+
+            title_parts = [f"{cluster_name}: {len(containers)} containers"]
+            if under_prov:
+                title_parts.append(f"{len(under_prov)} under-provisioned (>80% of limit)")
+            if no_limits:
+                title_parts.append(f"{len(no_limits)} with no resource limits")
+            if over_prov:
+                title_parts.append(f"{len(over_prov)} over-provisioned")
+            if not under_prov and not no_limits:
+                title_parts.append(f"{ok_count} OK")
+
+            def _container_detail(c: dict) -> dict:
+                return {
+                    "namespace":       c.get("namespace"),
+                    "pod":             c.get("pod"),
+                    "container":       c.get("container"),
+                    "cpu_actual_m":    c.get("cpuActual"),
+                    "cpu_limit_m":     c.get("cpuLimit"),
+                    "cpu_request_m":   c.get("cpuRequest"),
+                    "mem_actual_b":    c.get("memActual"),
+                    "mem_limit_b":     c.get("memLimit"),
+                    "mem_request_b":   c.get("memRequest"),
+                    "cpu_verdict":     c.get("cpuVerdict"),
+                    "mem_verdict":     c.get("memVerdict"),
+                }
+
+            items.append(EvidenceItem(
+                group_code="a.8.6",
+                title=", ".join(title_parts),
+                source_ref=f"{cluster_name}-resource-efficiency",
+                classification="asset",
+                status=eff_status,
+                event_date=fetched_at,
+                raw={
+                    "fetched_at":         fetched_at,
+                    "cluster_name":       cluster_name,
+                    "total_containers":   len(containers),
+                    "no_limits":          len(no_limits),
+                    "under_provisioned":  len(under_prov),
+                    "over_provisioned":   len(over_prov),
+                    "ok":                 ok_count,
+                    "no_data":            no_data_count,
+                    "under_provisioned_detail": [_container_detail(c) for c in under_prov[:20]],
+                    "no_limits_detail":   [_container_detail(c) for c in no_limits[:20]],
+                },
+            ))
 
         # ── A.8.16 — Monitoring (Warning events + crash detail) ───────────────
         warning_count = events.get("warningCount", 0)

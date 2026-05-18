@@ -525,13 +525,18 @@ def _promote_fields(source_system: str, raw: dict) -> dict:
     elif source_system == "kubernetes":
         nodes = raw.get("nodes") or {}
         pods = raw.get("pods") or {}
-        p["cluster_name"]  = raw.get("cluster_name", "kubernetes")
-        p["total_nodes"]   = nodes.get("total", 0)
-        p["ready_nodes"]   = nodes.get("ready", 0)
-        p["total_pods"]    = pods.get("total", 0)
-        p["running_pods"]  = pods.get("running", 0)
-        p["crash_pods"]    = pods.get("crashLoopBackOff", 0)
-        p["oom_pods"]      = pods.get("oomKilled", 0)
+        p["cluster_name"]       = raw.get("cluster_name", "kubernetes")
+        p["total_nodes"]        = nodes.get("total", 0)
+        p["ready_nodes"]        = nodes.get("ready", 0)
+        p["total_pods"]         = pods.get("total", 0)
+        p["running_pods"]       = pods.get("running", 0)
+        p["crash_pods"]         = pods.get("crashLoopBackOff", 0)
+        p["oom_pods"]           = pods.get("oomKilled", 0)
+        # resource efficiency fields (present only on efficiency evidence items)
+        p["total_containers"]   = raw.get("total_containers")
+        p["no_limits"]          = raw.get("no_limits")
+        p["under_provisioned"]  = raw.get("under_provisioned")
+        p["over_provisioned"]   = raw.get("over_provisioned")
 
     return p
 
