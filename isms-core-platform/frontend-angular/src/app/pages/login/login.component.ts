@@ -322,22 +322,26 @@ export class LoginComponent {
   mfaToken    = signal('')
   mfaCode     = signal('')
 
+  // Synchronous guard — signals are reactive but DOM disabled update lags one
+  // change-detection cycle, so rapid double-taps on mobile bypass loading().
+  private _inFlight = false
+
   toggleTheme() { this.theme.toggle() }
 
   // ── Step 1: email + password ─────────────────────────────────────────────────
 
   async submitCredentials() {
-    if (this.credForm.invalid || this.loading()) return
+    if (this.credForm.invalid || this._inFlight) return
+    this._inFlight = true
     this.error.set(null)
     this.loading.set(true)
     const { email, password } = this.credForm.getRawValue()
     try {
       await this.auth.login(email, password)
-      // Await navigation — keeps loading=true (button disabled) until the route resolves.
-      // Without this, the finally block fires before the guard completes, re-enabling the
-      // button and allowing a second login click that races the first navigation.
       const ok = await this.router.navigate(['/'])
-      if (!ok) this.loading.set(false)  // navigation was blocked — re-enable form
+      // If Angular router fails to navigate (NavigationCancel/NavigationError),
+      // fall back to a full page reload which reliably triggers a clean auth cycle.
+      if (!ok) window.location.href = '/'
     } catch (err: unknown) {
       this.loading.set(false)
       const e = err as { mfa_required?: boolean; mfa_token?: string }
@@ -348,6 +352,8 @@ export class LoginComponent {
       } else {
         this.error.set('Invalid credentials. Please try again.')
       }
+    } finally {
+      this._inFlight = false
     }
   }
 
@@ -374,17 +380,20 @@ export class LoginComponent {
   }
 
   private async doMfaSubmit(code: string) {
-    if (!code || this.loading()) return
+    if (!code || this._inFlight) return
+    this._inFlight = true
     this.error.set(null)
     this.loading.set(true)
     try {
       await this.auth.loginMfa(this.mfaToken(), code)
-      this.router.navigate(['/'])
+      const ok = await this.router.navigate(['/'])
+      if (!ok) window.location.href = '/'
     } catch (err: unknown) {
       const e = err as Error
       this.error.set(e?.message ?? 'Invalid authentication code. Please try again.')
     } finally {
       this.loading.set(false)
+      this._inFlight = false
     }
   }
 

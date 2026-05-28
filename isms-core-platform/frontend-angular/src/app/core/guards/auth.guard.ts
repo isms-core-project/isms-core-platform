@@ -8,5 +8,10 @@ export const authGuard: CanActivateFn = async () => {
 
   await auth.init()
 
-  return auth.isAuthenticated() ? true : router.createUrlTree(['/login'])
+  if (auth.isAuthenticated()) return true
+
+  // Reset so the next login triggers a fresh refresh call instead of the
+  // cached (failed) init promise, preventing the "works once, fails once" loop.
+  auth.resetInit()
+  return router.createUrlTree(['/login'])
 }

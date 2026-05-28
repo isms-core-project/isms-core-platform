@@ -49,6 +49,10 @@ export class AuthService {
     return this._initPromise
   }
 
+  resetInit(): void {
+    this._initPromise = null
+  }
+
   private async _doInit(): Promise<void> {
     try {
       const res = await firstValueFrom(
