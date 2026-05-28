@@ -70,7 +70,10 @@ def bia_summary(
 ):
     q = select(BIARecord).where(BIARecord.org_id == org_id)
     if project_id:
-        q = q.where(BIARecord.project_id == uuid.UUID(project_id))
+        try:
+            q = q.where(BIARecord.project_id == uuid.UUID(project_id))
+        except ValueError:
+            return {"total": 0, "tested": 0, "tested_pct": 0, "rto_missing": 0, "high_impact": 0}
     records = db.execute(q).scalars().all()
     total = len(records)
     tested = sum(1 for r in records if r.recovery_tested)
@@ -97,7 +100,10 @@ def list_bia(
 ):
     q = select(BIARecord).where(BIARecord.org_id == org_id)
     if project_id:
-        q = q.where(BIARecord.project_id == uuid.UUID(project_id))
+        try:
+            q = q.where(BIARecord.project_id == uuid.UUID(project_id))
+        except ValueError:
+            return []
     if asset_type:
         q = q.where(BIARecord.asset_type == asset_type)
     q = q.order_by(BIARecord.asset_name)

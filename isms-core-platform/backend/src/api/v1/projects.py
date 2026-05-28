@@ -101,6 +101,17 @@ def _enrich_project(p: Project, db: DBSession) -> ProjectRead:
             ProjectChecklist.project_id == p.id,
         )
     ).scalar() or 0
+    # Assessments covering control groups in this project
+    project_cg_ids = db.execute(
+        select(Policy.control_group_id)
+        .join(ProjectPolicy, ProjectPolicy.lib_policy_id == Policy.id)
+        .where(ProjectPolicy.project_id == p.id, ProjectPolicy.status == "active")
+        .distinct()
+    ).scalars().all()
+    assessment_count = db.execute(
+        select(sqlfunc.count()).select_from(Assessment)
+        .where(Assessment.control_group_id.in_(project_cg_ids))
+    ).scalar() or 0 if project_cg_ids else 0
     settings = p.settings or {}
     raw_dv = settings.get("doc_vars")
     doc_vars = DocVars(**raw_dv) if isinstance(raw_dv, dict) else None
@@ -121,6 +132,7 @@ def _enrich_project(p: Project, db: DBSession) -> ProjectRead:
         policy_count=pol_count,
         implementation_count=impl_count,
         checklist_count=checklist_count,
+        assessment_count=assessment_count,
     )
 
 

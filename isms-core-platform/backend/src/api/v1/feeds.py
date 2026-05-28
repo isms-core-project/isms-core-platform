@@ -866,7 +866,8 @@ def list_cve(
             body={"query": query, "sort": sort, "from": (page - 1) * per_page, "size": per_page,
                   "track_total_hits": True},
         )
-    except Exception:
+    except Exception as e:
+        logger.warning("CVE search failed: %s", e)
         return NvdCveList(items=[], total=0, page=page, per_page=per_page)
 
     total = result.get("hits", {}).get("total", {})

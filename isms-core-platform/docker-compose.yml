@@ -262,7 +262,7 @@ services:
   # Setup container polls admin API internally until Garage is ready.
 
   isms-core-garage:
-    image: dxflrs/garage:v1.0.1
+    image: dxflrs/garage:v2.3.0
     container_name: isms-core-garage
     profiles: [garage]
     volumes:
@@ -529,14 +529,11 @@ services:
 
   isms-core-frontend:
     build:
-      context: ./frontend
-      args:
-        VITE_SECRET_THEME: ${VITE_SECRET_THEME:-}
+      context: ./frontend-angular
     image: isms-core-frontend:latest
     container_name: isms-core-frontend
     environment:
       - TZ=${TZ:-Europe/Zurich}
-      - VITE_BACKEND_URL=https://${HOST_IP}
     depends_on:
       isms-core-backend:
         condition: service_healthy

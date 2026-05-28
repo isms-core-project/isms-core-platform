@@ -389,6 +389,24 @@ def list_actors(
     )
 
 
+# ── Actor Countries ────────────────────────────────────────────────────────────
+
+@router.get("/actors/countries")
+def list_actor_countries(
+    db: DBSession = Depends(get_db),
+    _current_user=Depends(get_current_user),
+):
+    """Distinct country codes that appear on at least one threat actor, ordered by frequency."""
+    _require_ti_enabled()
+    rows = db.execute(
+        select(TiActor.country, func.count().label("n"))
+        .where(TiActor.country.is_not(None))
+        .group_by(TiActor.country)
+        .order_by(func.count().desc())
+    ).all()
+    return [{"code": r.country, "count": r.n} for r in rows]
+
+
 # ── Attacker Tools ─────────────────────────────────────────────────────────────
 
 @router.get("/tools", response_model=ToolList)

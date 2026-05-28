@@ -173,7 +173,7 @@ def get_sysinfo(db: DBSession = Depends(get_db)):
     ).scalar_one_or_none()
 
     # Effective AI model (org settings override config default)
-    org = db.execute(select(Organisation)).scalar_one_or_none()
+    org = db.execute(select(Organisation).limit(1)).scalar_one_or_none()
     effective_model = (
         (org.settings or {}).get("ai_model") or settings.ai_model
         if org else settings.ai_model

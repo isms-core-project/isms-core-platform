@@ -239,6 +239,20 @@ def _fw_status(present: list[str]) -> QAStatus:
     return QAStatus.FAIL
 
 
+def _proj_fw_status(present: list[str]) -> QAStatus:
+    """Project existence: PASS = policy + UG + TG (assessments are outside project scope)."""
+    has_pol = "policy" in present
+    has_ug = "UG" in present
+    has_tg = "TG" in present
+    if has_pol and has_ug and has_tg:
+        return QAStatus.PASS
+    if has_pol and (has_ug or has_tg):
+        return QAStatus.WARNING
+    if len(present) == 0:
+        return QAStatus.NEEDS_REVIEW
+    return QAStatus.FAIL
+
+
 def _op_status(present: list[str]) -> QAStatus:
     n = len(present)
     if n == 2:
@@ -1275,7 +1289,7 @@ def run_project_existence_check(db: DBSession, project_id: uuid.UUID) -> dict:
         ).scalar_one_or_none() is not None
 
         present = [k for k, v in [("policy", has_pol), ("UG", has_ug), ("TG", has_tg)] if v]
-        status = _fw_status(present)
+        status = _proj_fw_status(present)
 
         db.add(CorrelationResult(
             control_group_id=group.id,
@@ -1771,9 +1785,9 @@ def get_project_qa_summary(db: DBSession, project_id: uuid.UUID, method: str = "
     }
 
 
-def get_org_project_summaries(db: DBSession, method: str = "existence") -> list:
-    """Per-project QA summaries for all projects that have run QA, with name + family."""
-    from sqlalchemy import distinct as sa_distinct
+def get_org_project_summaries(db: DBSession, method: str = "existence", org_id=None) -> list:
+    """Per-project QA summaries for all org projects (includes those with no QA run yet)."""
+    import uuid as _uuid
     from src.domain.projects import Project
 
     try:
@@ -1781,21 +1795,31 @@ def get_org_project_summaries(db: DBSession, method: str = "existence") -> list:
     except ValueError:
         method_enum = CorrelationMethod.EXISTENCE
 
-    project_ids = db.execute(
-        select(sa_distinct(CorrelationResult.project_id)).where(
-            CorrelationResult.project_id.is_not(None),
-            CorrelationResult.correlation_method == method_enum,
-        )
-    ).scalars().all()
+    q = select(Project)
+    if org_id is not None:
+        q = q.where(Project.organisation_id == org_id)
+    projects = db.execute(q).scalars().all()
 
     result = []
-    for pid in project_ids:
-        summary = get_project_qa_summary(db, pid, method)
-        project = db.get(Project, pid)
+    for project in projects:
+        has_results = db.execute(
+            select(CorrelationResult.id).where(
+                CorrelationResult.project_id == project.id,
+                CorrelationResult.correlation_method == method_enum,
+            ).limit(1)
+        ).scalar_one_or_none()
+
+        if has_results:
+            summary = get_project_qa_summary(db, project.id, method)
+        else:
+            summary = {
+                "total": 0, "pass": 0, "warning": 0, "fail": 0,
+                "needs_review": 0, "pass_rate": 0.0, "last_run": None, "method": method,
+            }
         result.append({
-            "project_id": str(pid),
-            "project_name": project.name if project else str(pid)[:8],
-            "product_family": project.product_family.value if project else "ISMS",
+            "project_id": str(project.id),
+            "project_name": project.name,
+            "product_family": project.product_family.value,
             **summary,
         })
     return result

@@ -148,8 +148,6 @@ def list_assessments(
         select(RegulatoryAssessment)
         .where(RegulatoryAssessment.framework_code == framework_code)
     )
-    if project_id is not None:
-        q = q.where(RegulatoryAssessment.project_id == project_id)
     q = q.order_by(RegulatoryAssessment.created_at.desc())
     assessments = list(db.execute(q).scalars().all())
 

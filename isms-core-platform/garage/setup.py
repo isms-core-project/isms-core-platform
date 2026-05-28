@@ -22,7 +22,7 @@ LAYOUT_CAP  = 10 * 1024 * 1024 * 1024  # 10 GiB
 
 
 def api(method: str, path: str, data=None):
-    url  = f"{ADMIN_URL}/v1{path}"
+    url  = f"{ADMIN_URL}{path}"
     body = json.dumps(data).encode() if data is not None else None
     req  = urllib.request.Request(url, data=body, method=method)
     req.add_header("Authorization", f"Bearer {ADMIN_TOKEN}")
@@ -41,9 +41,13 @@ def api(method: str, path: str, data=None):
 
 def wait_for_garage(retries: int = 60, delay: float = 2.0):
     print("Waiting for Garage admin API...", flush=True)
+    url = f"{ADMIN_URL}/health"
     for attempt in range(retries):
         try:
-            api("GET", "/health")
+            req = urllib.request.Request(url, method="GET")
+            req.add_header("Authorization", f"Bearer {ADMIN_TOKEN}")
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                resp.read()  # /health returns plain text "OK", not JSON — just check 200
             print("Garage is ready.", flush=True)
             return
         except Exception:
@@ -55,7 +59,7 @@ def wait_for_garage(retries: int = 60, delay: float = 2.0):
 
 def already_configured() -> bool:
     """True only when buckets exist AND our access key is present."""
-    buckets = api("GET", "/bucket?list") or []
+    buckets = api("GET", "/v2/ListBuckets") or []
     existing = {
         alias
         for b in buckets
@@ -63,45 +67,44 @@ def already_configured() -> bool:
     }
     if "isms-evidence" not in existing:
         return False
-    # Verify our access key was actually imported (Garage returns 400, not 404, when missing)
     try:
-        key = api("GET", f"/key?id={ACCESS_KEY}")
+        key = api("GET", f"/v2/GetKeyInfo?id={ACCESS_KEY}")
         return key is not None
     except RuntimeError:
         return False
 
 
 def assign_layout():
-    status  = api("GET", "/status")
+    status  = api("GET", "/v2/GetClusterStatus")
     node_id = status["nodes"][0]["id"]
     print(f"Node: {node_id[:16]}...", flush=True)
 
-    api("POST", "/layout", [{"id": node_id, "zone": "dc1", "capacity": LAYOUT_CAP, "tags": []}])
+    api("POST", "/v2/UpdateClusterLayout", [{"node_id": node_id, "zone": "dc1", "capacity": LAYOUT_CAP, "tags": []}])
 
     # Apply with current_version + 1 (never hardcode version)
-    current = api("GET", "/layout")
+    current = api("GET", "/v2/GetClusterLayout")
     version = current.get("version", 0) + 1
-    api("POST", "/layout/apply", {"version": version})
+    api("POST", "/v2/ApplyClusterLayout", {"version": version})
     print(f"Layout assigned (dc1, 10 GiB, version {version}).", flush=True)
 
 
 def create_buckets():
     existing = {
         alias
-        for b in (api("GET", "/bucket?list") or [])
+        for b in (api("GET", "/v2/ListBuckets") or [])
         for alias in b.get("globalAliases", [])
     }
     for name in BUCKETS:
         if name in existing:
             print(f"  bucket '{name}': already exists.", flush=True)
             continue
-        result = api("POST", "/bucket", {"globalAlias": name})
+        result = api("POST", "/v2/CreateBucket", {"globalAlias": name})
         print(f"  bucket '{name}': {result['id'][:16]}...", flush=True)
 
 
 def import_key() -> str:
     """Import access key. Returns the actual key ID assigned by Garage."""
-    resp = api("POST", "/key/import", {
+    resp = api("POST", "/v2/ImportKey", {
         "accessKeyId":     ACCESS_KEY,
         "secretAccessKey": SECRET_KEY,
         "name":            "isms-core",
@@ -112,7 +115,7 @@ def import_key() -> str:
 
 
 def grant_permissions(key_id: str):
-    bucket_list = api("GET", "/bucket?list") or []
+    bucket_list = api("GET", "/v2/ListBuckets") or []
     id_map = {
         alias: b["id"]
         for b in bucket_list
@@ -123,7 +126,7 @@ def grant_permissions(key_id: str):
         if not bucket_id:
             print(f"  WARNING: bucket '{name}' not found, skipping permissions.", flush=True)
             continue
-        api("POST", "/bucket/allow", {
+        api("POST", "/v2/AllowBucketKey", {
             "bucketId":    bucket_id,
             "accessKeyId": key_id,
             "permissions": {"read": True, "write": True, "owner": True},

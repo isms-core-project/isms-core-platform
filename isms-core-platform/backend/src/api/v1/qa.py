@@ -7,7 +7,8 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session as DBSession
 
 from src.core.config import get_settings
-from src.core.dependencies import require_qa_access
+from src.core.dependencies import require_qa_access, get_current_user, get_org_context
+from src.domain.users import User
 from src.database.enums import CorrelationMethod, QAStatus, UserRole
 from src.database.session import get_db
 from src.domain.control_groups import ControlGroup
@@ -571,9 +572,11 @@ def get_project_summary(
 def list_org_project_summaries(
     method: str = "existence",
     db: DBSession = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+    org_id: uuid.UUID = Depends(get_org_context),
 ):
-    """Per-project QA summaries for all projects that have run QA (org aggregate)."""
-    return qa_service.get_org_project_summaries(db, method)
+    """Per-project QA summaries for all org projects (includes those with no QA run yet)."""
+    return qa_service.get_org_project_summaries(db, method, org_id=org_id)
 
 
 # ── Keyword translation seed ──────────────────────────────────────────────────

@@ -15,6 +15,7 @@ class ControlGroupList(BaseModel):
     is_stacked: bool
     has_framework: bool
     has_operational: bool
+    has_implementation: bool = False
     framework_status: str
     operational_status: str
     product_family: str = "ISMS"

@@ -120,6 +120,7 @@ class ProjectRead(BaseModel):
     policy_count: int = 0
     implementation_count: int = 0
     checklist_count: int = 0
+    assessment_count: int = 0
 
     model_config = {"from_attributes": True}
 

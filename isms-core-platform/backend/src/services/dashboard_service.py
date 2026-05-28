@@ -35,8 +35,10 @@ _ISMS_ONLY = ControlGroup.product_family == ProductFamily.ISMS
 _ISMS_PRODUCT_TYPES = (ProductType.FRAMEWORK, ProductType.OPERATIONAL)
 
 
-def get_overview(db: DBSession) -> dict:
+def get_overview(db: DBSession, project_id=None) -> dict:
     """Coverage counts by product and section — scoped to ISMS product family."""
+    if project_id is not None:
+        return _get_project_overview(db, project_id)
     total_controls = db.scalar(
         select(func.count()).select_from(ControlGroup).where(_ISMS_ONLY)
     ) or 0
@@ -329,6 +331,47 @@ def _extract_fw_section(control_id: str) -> str:
     return ".".join(parts[:2]) if len(parts) >= 2 else parts[0]
 
 
+_FW_FAMILY: dict[str, ProductFamily] = {
+    "ISO27701": ProductFamily.PRIVACY,
+    "ISO27017": ProductFamily.CLOUD,
+    "ISO27018": ProductFamily.CLOUD,
+    "ISO42001": ProductFamily.AI,
+}
+_FW_PRODUCT_TYPE: dict[str, ProductType] = {
+    "ISO27701": ProductType.PRIVACY,
+    "ISO27017": ProductType.CLOUD,
+    "ISO27018": ProductType.CLOUD,
+    "ISO42001": ProductType.AI,
+}
+
+
+def _ext_doc_counts(db: DBSession, src_prefix: str) -> dict:
+    """Return policy/implementation/assessment counts for a non-ISMS framework."""
+    family = _FW_FAMILY.get(src_prefix)
+    pt     = _FW_PRODUCT_TYPE.get(src_prefix)
+    if not family or not pt:
+        return {"total_policies": 0, "total_implementations": 0, "total_assessments": 0}
+
+    total_policies = db.scalar(
+        select(func.count()).select_from(Policy)
+        .where(Policy.product_type == pt)
+    ) or 0
+    total_implementations = db.scalar(
+        select(func.count()).select_from(Implementation)
+        .join(ControlGroup, Implementation.control_group_id == ControlGroup.id)
+        .where(ControlGroup.product_family == family)
+    ) or 0
+    total_assessments = db.scalar(
+        select(func.count()).select_from(Assessment)
+        .where(Assessment.product_type == pt)
+    ) or 0
+    return {
+        "total_policies": total_policies,
+        "total_implementations": total_implementations,
+        "total_assessments": total_assessments,
+    }
+
+
 def get_framework_overview(db: DBSession, source_framework: str = "ISO27701") -> dict:
     """Control counts + mapping coverage for a non-ISO27001 framework."""
     src_fw = db.execute(
@@ -348,6 +391,7 @@ def get_framework_overview(db: DBSession, source_framework: str = "ISO27701") ->
             "coverage_pct": 0.0,
             "by_target_framework": {},
             "sections": [],
+            **_ext_doc_counts(db, src_prefix),
         }
 
     leaf_controls = db.execute(
@@ -372,6 +416,7 @@ def get_framework_overview(db: DBSession, source_framework: str = "ISO27701") ->
             "coverage_pct": 0.0,
             "by_target_framework": {},
             "sections": [],
+            **_ext_doc_counts(db, src_prefix),
         }
 
     total_mappings = db.scalar(
@@ -421,6 +466,7 @@ def get_framework_overview(db: DBSession, source_framework: str = "ISO27701") ->
         "coverage_pct": _pct(controls_with_mappings, total_controls),
         "by_target_framework": by_target,
         "sections": list(sections_map.values()),
+        **_ext_doc_counts(db, src_prefix),
     }
 
 
@@ -558,8 +604,193 @@ def get_evidence_status(db: DBSession) -> dict:
 # 3.5 — Audit readiness
 # ---------------------------------------------------------------------------
 
-def get_audit_readiness(db: DBSession) -> dict:
+def _get_project_overview(db: DBSession, project_id) -> dict:
+    from src.domain.projects import ProjectPolicy, ProjectImplementation
+
+    total_controls = db.scalar(
+        select(func.count()).select_from(ControlGroup).where(_ISMS_ONLY)
+    ) or 0
+    op_total = db.scalar(
+        select(func.count()).select_from(ControlGroup)
+        .where(_ISMS_ONLY, ControlGroup.group_code != "00")
+    ) or 0
+
+    def _proj_pol_count(*extra):
+        return db.scalar(
+            select(func.count(func.distinct(Policy.control_group_id)))
+            .join(ProjectPolicy, ProjectPolicy.lib_policy_id == Policy.id)
+            .join(ControlGroup, Policy.control_group_id == ControlGroup.id)
+            .where(ProjectPolicy.project_id == project_id, ProjectPolicy.status == "active", _ISMS_ONLY, *extra)
+        ) or 0
+
+    def _proj_impl_count(*extra):
+        return db.scalar(
+            select(func.count(func.distinct(Implementation.control_group_id)))
+            .join(ProjectImplementation, ProjectImplementation.lib_impl_id == Implementation.id)
+            .join(ControlGroup, Implementation.control_group_id == ControlGroup.id)
+            .where(ProjectImplementation.project_id == project_id, ProjectImplementation.status == "active", _ISMS_ONLY, *extra)
+        ) or 0
+
+    fw_pol = _proj_pol_count(Policy.product_type == ProductType.FRAMEWORK)
+    op_pol = _proj_pol_count(Policy.product_type == ProductType.OPERATIONAL)
+    ug = _proj_impl_count(Implementation.impl_type == ImplType.UG)
+    tg = _proj_impl_count(Implementation.impl_type == ImplType.TG)
+    fw_assess = _count_distinct_groups(db, Assessment, Assessment.control_group_id,
+                                       Assessment.product_type == ProductType.FRAMEWORK)
+
+    section_rows = db.execute(
+        select(ControlGroup.section, ControlGroup.section_name, func.count(ControlGroup.id).label("total"))
+        .where(_ISMS_ONLY)
+        .group_by(ControlGroup.section, ControlGroup.section_name)
+        .order_by(ControlGroup.section)
+    ).all()
+
+    sections = []
+    for row in section_rows:
+        fw_cov = db.scalar(
+            select(func.count(func.distinct(Policy.control_group_id)))
+            .join(ProjectPolicy, ProjectPolicy.lib_policy_id == Policy.id)
+            .join(ControlGroup, Policy.control_group_id == ControlGroup.id)
+            .where(
+                ProjectPolicy.project_id == project_id, ProjectPolicy.status == "active",
+                ControlGroup.section == row.section, Policy.product_type == ProductType.FRAMEWORK,
+            )
+        ) or 0
+        op_cov = db.scalar(
+            select(func.count(func.distinct(Implementation.control_group_id)))
+            .join(ProjectImplementation, ProjectImplementation.lib_impl_id == Implementation.id)
+            .join(ControlGroup, Implementation.control_group_id == ControlGroup.id)
+            .where(
+                ProjectImplementation.project_id == project_id, ProjectImplementation.status == "active",
+                ControlGroup.section == row.section, Implementation.impl_type == ImplType.UG,
+            )
+        ) or 0
+        sections.append({
+            "section": row.section, "section_name": row.section_name,
+            "total_controls": row.total,
+            "framework_covered": fw_cov, "operational_covered": op_cov,
+            "framework_pct": _pct(fw_cov, row.total), "operational_pct": _pct(op_cov, row.total),
+        })
+
+    total_policies = db.scalar(
+        select(func.count()).select_from(ProjectPolicy)
+        .where(ProjectPolicy.project_id == project_id, ProjectPolicy.status == "active")
+    ) or 0
+    total_implementations = db.scalar(
+        select(func.count()).select_from(ProjectImplementation)
+        .where(ProjectImplementation.project_id == project_id, ProjectImplementation.status == "active")
+    ) or 0
+    total_assessments = db.scalar(
+        select(func.count()).select_from(Assessment)
+        .where(Assessment.product_type.in_(_ISMS_PRODUCT_TYPES))
+    ) or 0
+    total_open_gaps = db.scalar(
+        select(func.count()).select_from(Gap).where(Gap.status == GapStatus.OPEN)
+    ) or 0
+
+    return {
+        "total_controls": total_controls,
+        "sections": sections,
+        "framework": {
+            "total": total_controls, "has_policy": fw_pol, "has_ug": ug, "has_tg": tg,
+            "has_assessment": fw_assess, "coverage_pct": _pct(fw_pol, total_controls),
+        },
+        "operational": {
+            "total": op_total, "has_policy": op_pol, "has_assessment": 0,
+            "coverage_pct": _pct(op_pol, op_total),
+        },
+        "items_by_status": {"not_assessed": 0, "compliant": 0, "partial": 0, "non_compliant": 0, "na": 0},
+        "total_policies": total_policies,
+        "total_implementations": total_implementations,
+        "total_assessments": total_assessments,
+        "total_gaps_open": total_open_gaps,
+        "total_evidence": 0,
+    }
+
+
+def _get_project_audit_readiness(db: DBSession, project_id) -> dict:
+    from src.domain.projects import ProjectPolicy, ProjectImplementation
+
+    total = db.scalar(
+        select(func.count()).select_from(ControlGroup).where(_ISMS_ONLY)
+    ) or 0
+    if not total:
+        return {
+            "policies_pct": 0.0, "ug_pct": 0.0, "tg_pct": 0.0,
+            "assessments_pct": 0.0, "evidence_pct": 0.0,
+            "gaps_closed_pct": 100.0, "composite_score": 0.0,
+            "status": "red", "breakdown": {},
+        }
+
+    fw_pol = db.scalar(
+        select(func.count(func.distinct(Policy.control_group_id)))
+        .join(ProjectPolicy, ProjectPolicy.lib_policy_id == Policy.id)
+        .join(ControlGroup, Policy.control_group_id == ControlGroup.id)
+        .where(
+            ProjectPolicy.project_id == project_id, ProjectPolicy.status == "active",
+            _ISMS_ONLY, Policy.product_type == ProductType.FRAMEWORK,
+        )
+    ) or 0
+    ug = db.scalar(
+        select(func.count(func.distinct(Implementation.control_group_id)))
+        .join(ProjectImplementation, ProjectImplementation.lib_impl_id == Implementation.id)
+        .join(ControlGroup, Implementation.control_group_id == ControlGroup.id)
+        .where(
+            ProjectImplementation.project_id == project_id, ProjectImplementation.status == "active",
+            Implementation.impl_type == ImplType.UG, _ISMS_ONLY,
+        )
+    ) or 0
+    tg = db.scalar(
+        select(func.count(func.distinct(Implementation.control_group_id)))
+        .join(ProjectImplementation, ProjectImplementation.lib_impl_id == Implementation.id)
+        .join(ControlGroup, Implementation.control_group_id == ControlGroup.id)
+        .where(
+            ProjectImplementation.project_id == project_id, ProjectImplementation.status == "active",
+            Implementation.impl_type == ImplType.TG, _ISMS_ONLY,
+        )
+    ) or 0
+    fw_assess = _count_distinct_groups(db, Assessment, Assessment.control_group_id,
+                                       Assessment.product_type == ProductType.FRAMEWORK)
+    evidence = db.scalar(
+        select(func.count(func.distinct(Evidence.control_group_id)))
+        .join(ControlGroup, Evidence.control_group_id == ControlGroup.id)
+        .where(_ISMS_ONLY)
+    ) or 0
+    total_gaps = db.scalar(select(func.count()).select_from(Gap)) or 0
+    closed_gaps = db.scalar(
+        select(func.count()).select_from(Gap)
+        .where(Gap.status.in_([GapStatus.CLOSED, GapStatus.ACCEPTED]))
+    ) or 0
+
+    policies_pct = _pct(fw_pol, total)
+    ug_pct = _pct(ug, total)
+    tg_pct = _pct(tg, total)
+    assessments_pct = _pct(fw_assess, total)
+    evidence_pct = _pct(evidence, total)
+    gaps_closed_pct = _pct(closed_gaps, total_gaps) if total_gaps else 100.0
+
+    composite = round(
+        policies_pct * 0.20 + ug_pct * 0.15 + tg_pct * 0.15
+        + assessments_pct * 0.20 + evidence_pct * 0.20 + gaps_closed_pct * 0.10, 1,
+    )
+    status = "green" if composite >= 80 else ("amber" if composite >= 50 else "red")
+
+    return {
+        "policies_pct": policies_pct, "ug_pct": ug_pct, "tg_pct": tg_pct,
+        "assessments_pct": assessments_pct, "evidence_pct": evidence_pct,
+        "gaps_closed_pct": gaps_closed_pct, "composite_score": composite, "status": status,
+        "breakdown": {
+            "total_controls": total, "controls_with_pol": fw_pol, "controls_with_ug": ug,
+            "controls_with_tg": tg, "controls_with_assessment": fw_assess,
+            "controls_with_evidence": evidence, "total_gaps": total_gaps, "gaps_closed": closed_gaps,
+        },
+    }
+
+
+def get_audit_readiness(db: DBSession, project_id=None) -> dict:
     """Composite readiness score (0-100) across all artefact types — ISMS only."""
+    if project_id is not None:
+        return _get_project_audit_readiness(db, project_id)
     total = db.scalar(
         select(func.count()).select_from(ControlGroup).where(_ISMS_ONLY)
     ) or 0
@@ -978,7 +1209,30 @@ def get_home_summary(db: DBSession) -> dict:
         )
         imps = db.scalar(imp_join) or 0
 
-        result[key] = {"groups": groups, "policies": policies, "imps": imps}
+        pol_covered = db.scalar(
+            select(func.count(func.distinct(Policy.control_group_id)))
+            .join(ControlGroup, ControlGroup.id == Policy.control_group_id)
+            .where(is_fam)
+        ) or 0
+        impl_covered = db.scalar(
+            select(func.count(func.distinct(Implementation.control_group_id)))
+            .join(ControlGroup, ControlGroup.id == Implementation.control_group_id)
+            .where(is_fam)
+        ) or 0
+        evidence_covered = db.scalar(
+            select(func.count(func.distinct(Evidence.control_group_id)))
+            .join(ControlGroup, ControlGroup.id == Evidence.control_group_id)
+            .where(is_fam)
+        ) or 0
+        result[key] = {
+            "groups": groups,
+            "policies": policies,
+            "imps": imps,
+            "pol_coverage_pct": _pct(pol_covered, groups),
+            "impl_coverage_pct": _pct(impl_covered, groups),
+            "evidence_coverage_pct": _pct(evidence_covered, groups),
+            "coverage_gaps": groups - pol_covered,
+        }
 
     # Add ISMS-specific metrics
     isms_total = result["isms"]["groups"]

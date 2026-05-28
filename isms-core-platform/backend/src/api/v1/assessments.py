@@ -43,7 +43,7 @@ def _check_assessment_org(a: Assessment, db, current_user: User, org_id: uuid.UU
             raise HTTPException(status_code=404, detail="Assessment not found")
 
 
-@router.get("/", response_model=list[AssessmentListRead])
+@router.get("", response_model=list[AssessmentListRead])
 def list_all_assessments(
     product: str | None = None,
     product_family: str | None = None,
@@ -54,7 +54,7 @@ def list_all_assessments(
     return list_assessments(db, product=product, product_family=product_family, project_id=project_id)
 
 
-@router.post("/", response_model=AssessmentRead, status_code=201)
+@router.post("", response_model=AssessmentRead, status_code=201)
 def create_assessment(
     body: AssessmentCreate,
     db: DBSession = Depends(get_db),

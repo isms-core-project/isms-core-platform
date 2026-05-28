@@ -1,0 +1,585 @@
+// Roboto font loaded via angular.json styles[] — no @use needed here
+
+@use '@angular/material' as mat;
+
+// ── ISMS Core design tokens ────────────────────────────────────────────────
+:root {
+  --color-primary:        #327df4;
+  --color-primary-light:  #5a9bf6;
+  --color-primary-dark:   #1a5bc4;
+
+  // Status colours — dark mode defaults
+  --color-success-bg:     #1a3a27;
+  --color-success-text:   #C6EFCE;
+  --color-warning-bg:     #3d3200;
+  --color-warning-text:   #FFEB9C;
+  --color-error-bg:       #3a0000;
+  --color-error-text:     #FFC7CE;
+  --color-neutral-bg:     #1a2035;
+  --color-neutral-text:   #8baaf8;
+
+  // Layout
+  --sidebar-width:        240px;
+  --sidebar-mini-width:   64px;
+  --border-radius:        8px;
+  --transition-sidebar:   margin-left 0.2s ease;
+}
+
+// ── Light mode overrides ───────────────────────────────────────────────────
+[data-theme='light'] {
+  --color-success-bg:     rgba(46, 125, 50, 0.15);
+  --color-success-text:   #1b5e20;
+  --color-warning-bg:     rgba(230, 145, 0, 0.15);
+  --color-warning-text:   #7a4800;
+  --color-error-bg:       rgba(192, 0, 0, 0.12);
+  --color-error-text:     #9e0000;
+  --color-neutral-bg:     rgba(50, 125, 244, 0.12);
+  --color-neutral-text:   #1a5bc4;
+}
+
+// ── Angular Material M3 theme (dark default) ───────────────────────────────
+html {
+  height: 100%;
+  color-scheme: dark;
+
+  @include mat.theme((
+    color: (
+      primary: mat.$blue-palette,
+      tertiary: mat.$cyan-palette,
+    ),
+    typography: 'Roboto',
+    density: -1,
+  ));
+
+  // ISMS background overrides — warm dark grey (k8s-dashboard palette)
+  background-color: #1d1d1d;
+  --mat-sys-background:                 #1d1d1d;
+  --mat-sys-surface:                    #1d1d1d;
+  --mat-sys-surface-dim:                #1d1d1d;
+  --mat-sys-surface-bright:             #2d2d2d;
+  --mat-sys-surface-container-lowest:   #181818;
+  --mat-sys-surface-container-low:      #252525;
+  --mat-sys-surface-container:          #2d2d2d;
+  --mat-sys-surface-container-high:     #333333;
+  --mat-sys-surface-container-highest:  #3a3a3a;
+  --mat-sidenav-container-background-color: #252525;
+  --mat-card-background-color: #2d2d2d;
+  --mdc-outlined-card-container-color: #2d2d2d;
+  --mdc-dialog-container-color: #2d2d2d;
+
+  // Tune primary to match k8s #327df4 exactly
+  --mat-sys-primary: #327df4;
+  --mat-sys-on-primary: #ffffff;
+  --mat-sys-primary-container: #1a4db8;
+  --mat-sys-on-primary-container: #d4e3ff;
+}
+
+// ── Light mode ────────────────────────────────────────────────────────────
+html[data-theme='light'] {
+  color-scheme: light;
+  background-color: #E8E8E8;
+
+  // Page = Grey 250ish, cards = Grey 100/50 — clearly grey, colors still readable
+  --mat-sys-background:                 #E8E8E8;
+  --mat-sys-surface:                    #E8E8E8;
+  --mat-sys-surface-dim:                #DCDCDC;
+  --mat-sys-surface-bright:             #F2F2F2;
+  --mat-sys-surface-container-lowest:   #F5F5F5;
+  --mat-sys-surface-container-low:      #F0F0F0;
+  --mat-sys-surface-container:          #F0F0F0;
+  --mat-sys-surface-container-high:     #E4E4E4;
+  --mat-sys-surface-container-highest:  #DCDCDC;
+
+  --mat-sidenav-container-background-color: #E4E4E4;
+  --mat-card-background-color: #F0F0F0;
+  --mdc-outlined-card-container-color: #F0F0F0;
+  --mdc-dialog-container-color: #F0F0F0;
+
+  // Restore primary for light mode
+  --mat-sys-primary:           #1a4db8;
+  --mat-sys-on-primary:        #ffffff;
+  --mat-sys-primary-container: #d4e3ff;
+  --mat-sys-on-primary-container: #001947;
+}
+
+// ── Global resets ──────────────────────────────────────────────────────────
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  color: var(--mat-sys-on-surface);
+  background-color: var(--mat-sys-surface);
+}
+
+// ── Typography scale ───────────────────────────────────────────────────────
+h1 { font-size: 2rem;   font-weight: 700; }
+h2 { font-size: 1.6rem; font-weight: 700; }
+h3 { font-size: 1.3rem; font-weight: 600; }
+h4 { font-size: 1.1rem; font-weight: 600; }
+h5 { font-size: 1rem;   font-weight: 600; }
+h6 { font-size: 0.9rem; font-weight: 600; }
+
+// ── Scrollbar styling ──────────────────────────────────────────────────────
+::-webkit-scrollbar              { width: 6px; height: 6px; }
+::-webkit-scrollbar-track        { background: transparent; }
+::-webkit-scrollbar-thumb        { background: rgba(50, 125, 244, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover  { background: rgba(50, 125, 244, 0.5); }
+
+// ── Angular Material overrides ─────────────────────────────────────────────
+
+// Card — neutral white border matching k8s dashboard
+mat-card, .mat-mdc-card {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background-image: none !important;
+}
+
+// Table header
+.mat-mdc-header-cell {
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+// Table cell dividers
+.mat-mdc-cell {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+// Chip size
+.mat-mdc-chip { font-size: 0.75rem !important; }
+
+// ── Global card-container grey (k8s #2d2d2d) ──────────────────────────────
+// Custom card-like divs throughout the app that don't use mat-card.
+// !important is required because Angular component-scoped styles have
+// higher specificity than global stylesheet selectors.
+.summary-card, .stat-card, .info-card {
+  background: var(--mat-sys-surface-container) !important;
+  border-radius: 8px;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// ISMS CORE — Design System Alignment
+// ═══════════════════════════════════════════════════════════════════════════
+
+// ── 1. Toolbar layout class ──────────────────────────────────────────────────
+.isms-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+
+  .mat-mdc-form-field-subscript-wrapper { display: none !important; }
+}
+
+.isms-select-sm    { width: 120px; flex-shrink: 0; }
+.isms-select-md    { width: 160px; flex-shrink: 0; }
+.isms-select-lg    { width: 200px; flex-shrink: 0; }
+.isms-search-field { flex: 1 1 200px; min-width: 180px; max-width: 400px; }
+.isms-filter-field { width: 160px; flex-shrink: 0; }
+
+
+// ── 2. Table rows — consistent 40px min-height ──────────────────────────────
+.mat-mdc-header-row,
+.mat-mdc-row { min-height: 40px !important; }
+
+:root {
+  --mat-table-background-color: transparent;
+  --mat-paginator-container-background-color: transparent;
+}
+.mat-mdc-table     { background-color: transparent !important; }
+.mat-mdc-paginator { background-color: transparent !important; }
+
+.mat-mdc-paginator-container,
+.mat-mdc-paginator-range-actions { font-size: 14px; min-height: 40px !important; }
+
+.mat-mdc-cell,
+.mat-mdc-header-cell { padding: 0 8px !important; }
+
+.mat-mdc-header-cell {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+html[data-theme='light'] .mat-mdc-header-cell {
+  color: rgba(0, 0, 0, 0.55) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[class^='mat-column-actions'],
+[class*=' mat-column-actions'] {
+  flex: 0 0 80px !important;
+  padding-right: 8px;
+  position: sticky;
+  right: 0;
+  z-index: 1;
+  background: inherit;
+}
+
+
+// ── 3. Select dropdown panel — K8s dark card background ─────────────────────
+.mat-mdc-select-panel {
+  --mat-select-panel-background-color: #2d2d2d;
+  background: #2d2d2d !important;
+  .mat-mdc-option { color: rgba(255, 255, 255, 0.87); font-size: 14px; }
+  .mat-mdc-option:hover:not(.mdc-list-item--disabled) {
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) {
+    background: rgba(50, 125, 244, 0.18) !important;
+    .mdc-list-item__primary-text { color: #327df4; }
+  }
+}
+.mat-mdc-option { white-space: nowrap; }
+.mat-mdc-option .mdc-list-item__primary-text { white-space: nowrap; }
+
+.mat-mdc-autocomplete-panel { background: #2d2d2d !important; }
+
+html[data-theme='light'] {
+  .mat-mdc-select-panel {
+    --mat-select-panel-background-color: #F0F0F0;
+    background: #F0F0F0 !important;
+  }
+  .mat-mdc-option { color: rgba(0, 0, 0, 0.87); }
+}
+
+
+// ── 4. Tooltip — 12px like K8s ──────────────────────────────────────────────
+.mat-mdc-tooltip {
+  --mdc-plain-tooltip-supporting-text-size: 12px;
+  --mdc-plain-tooltip-container-color: #424242;
+  --mdc-plain-tooltip-supporting-text-color: rgba(255, 255, 255, 0.87);
+}
+.mat-mdc-tooltip .mdc-tooltip__surface {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+}
+
+
+// ── 5. Icon buttons — compact 36px ──────────────────────────────────────────
+.mat-mdc-icon-button {
+  --mdc-icon-button-state-layer-size: 36px;
+  width: 36px !important;
+  height: 36px !important;
+}
+
+
+// ── 6. Slide toggle — visible in dark mode ──────────────────────────────────
+.mat-mdc-slide-toggle {
+  .mdc-switch:not(.mdc-switch--selected) {
+    .mdc-switch__track::before,
+    .mdc-switch__track::after { background: rgba(255, 255, 255, 0.3) !important; }
+  }
+  .mdc-switch--selected {
+    .mdc-switch__track::before,
+    .mdc-switch__track::after { background: rgba(50, 125, 244, 0.5) !important; }
+  }
+}
+
+
+// ── 7. Scrollbar — K8s 4px width ────────────────────────────────────────────
+::-webkit-scrollbar              { width: 4px; height: 4px; }
+::-webkit-scrollbar-thumb        { background: rgba(100, 100, 100, 0.33); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover  { background: rgba(50, 125, 244, 0.5); }
+::-webkit-scrollbar-track        { background: transparent; }
+
+
+// ── 8. Menu items — 14px ────────────────────────────────────────────────────
+.mat-mdc-menu-panel .mat-mdc-menu-item {
+  font-size: 14px;
+  --mat-menu-item-label-text-size: 14px;
+}
+
+
+// ── 9. Chip — consistent size ───────────────────────────────────────────────
+.mat-mdc-chip.mat-mdc-standard-chip,
+.mat-mdc-chip {
+  box-shadow: none !important;
+  transition: none !important;
+  &:hover::after { opacity: 0 !important; }
+}
+
+
+// ── 10. Dialog ──────────────────────────────────────────────────────────────
+.mat-mdc-dialog-container { --mdc-dialog-container-color: #2d2d2d; }
+.mat-mdc-dialog-actions { justify-content: flex-start; padding: 8px 24px 16px; }
+html[data-theme='light'] .mat-mdc-dialog-container { --mdc-dialog-container-color: #F0F0F0; }
+
+
+// ── 11. Button toggle group ─────────────────────────────────────────────────
+.mat-button-toggle-group {
+  box-shadow: none !important;
+  --mat-standard-button-toggle-height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+
+  .mat-button-toggle-label-content {
+    font-size: 13px;
+    padding: 0 12px;
+    line-height: 36px;
+  }
+}
+
+
+// ── 12. Tab group ───────────────────────────────────────────────────────────
+.mat-mdc-tab-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+html[data-theme='light'] .mat-mdc-tab-header {
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+.mat-mdc-tab { font-size: 13px; min-width: 80px; }
+
+
+// ── 13. Expansion panel ─────────────────────────────────────────────────────
+.mat-expansion-panel {
+  background: #2d2d2d !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 4px !important;
+  border-radius: 4px !important;
+}
+.mat-expansion-panel-header { font-size: 14px; }
+html[data-theme='light'] .mat-expansion-panel { background: #F0F0F0 !important; }
+
+
+// ── 14. Snackbar ────────────────────────────────────────────────────────────
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: #323232;
+  --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+}
+
+
+// ── 15. Progress spinner — centred ──────────────────────────────────────────
+.mat-mdc-progress-spinner { margin: 0 auto; }
+
+
+// ── 16. Global utility classes ───────────────────────────────────────────────
+
+.isms-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 64px 24px;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  .mat-icon { font-size: 48px; width: 48px; height: 48px; opacity: 0.5; }
+  p { font-size: 14px; margin: 0; }
+}
+html[data-theme='light'] .isms-empty-state { color: rgba(0, 0, 0, 0.35); }
+
+.isms-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+}
+
+.isms-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  color: var(--color-error-text, #FFC7CE);
+  font-size: 14px;
+  .mat-icon { font-size: 20px; width: 20px; height: 20px; }
+}
+
+.isms-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  background: #2d2d2d;
+  border-radius: 4px;
+  border-left: 3px solid var(--color-primary, #327df4);
+  margin-bottom: 8px;
+
+  &__title {
+    font-size: 13px;
+    font-weight: 600;
+    flex: 1;
+    color: rgba(255, 255, 255, 0.87);
+  }
+  &__count {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1px 6px;
+    border-radius: 10px;
+  }
+}
+html[data-theme='light'] .isms-section-header {
+  background: #E4E4E4;
+  &__title { color: rgba(0, 0, 0, 0.87); }
+  &__count { color: rgba(0, 0, 0, 0.5); background: rgba(0, 0, 0, 0.05); }
+}
+
+.isms-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 8px;
+  height: 20px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+html[data-theme='light'] .isms-tag {
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.isms-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+@media (max-width: 1200px) {
+  .isms-metric-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.mat-mdc-card.isms-card { margin: 0 !important; }
+
+// ── Icon size utilities ──────────────────────────────────────────────────────
+.icon-sm { font-size: 14px !important; height: 14px !important; width: 14px !important; line-height: 14px !important; }
+.icon-md { font-size: 18px !important; height: 18px !important; width: 18px !important; line-height: 18px !important; }
+.icon-lg { font-size: 20px !important; height: 20px !important; width: 20px !important; line-height: 20px !important; }
+
+// ── Alert utilities ──────────────────────────────────────────────────────────
+.isms-alert {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px; border-radius: 6px;
+  font-size: 0.82rem; margin-bottom: 12px;
+  background: var(--mat-sys-surface-container);
+}
+.isms-alert--success { background: rgba(46,125,50,0.12);   color: #C6EFCE; }
+.isms-alert--error   { background: rgba(192,0,0,0.08);     color: var(--mat-sys-error); border: 1px solid rgba(192,0,0,0.2); }
+.isms-alert--warn    { background: rgba(230,160,0,0.1);    color: #FFEB9C; border: 1px solid rgba(230,160,0,0.3); }
+.isms-alert--info    { background: var(--mat-sys-surface-container); border: 1px solid var(--mat-sys-outline-variant); }
+html[data-theme='light'] {
+  .isms-alert--success { color: #1b5e20; }
+  .isms-alert--warn    { color: #7a4800; }
+  .isms-alert--error   { color: #9e0000; }
+}
+
+// ── Modal overlay utilities ──────────────────────────────────────────────────
+.isms-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+}
+.isms-dialog {
+  background: var(--mat-sys-surface-container); border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  min-width: 360px; max-width: 560px; max-height: 90vh; overflow-y: auto;
+}
+.isms-dialog__header {
+  padding: 20px 24px 12px;
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+  font-size: 1rem; font-weight: 500;
+}
+.isms-dialog__body   { padding: 16px 24px; }
+.isms-dialog__actions {
+  padding: 12px 24px 16px;
+  display: flex; justify-content: flex-end; gap: 8px;
+  border-top: 1px solid var(--mat-sys-outline-variant);
+}
+
+// ── Count badge utility ──────────────────────────────────────────────────────
+.isms-count-badge {
+  font-size: 0.65rem; height: 18px; line-height: 18px; padding: 0 6px;
+  border-radius: 9px; display: inline-flex; align-items: center;
+  background: rgba(50,125,244,0.15); color: #327df4; font-weight: 600;
+}
+
+// ── MatDialog theme ──────────────────────────────────────────────────────────
+.mat-mdc-dialog-container { --mdc-dialog-container-color: var(--mat-sys-surface-container); }
+.mat-mdc-dialog-actions    { justify-content: flex-end !important; padding: 8px 24px 16px; gap: 8px; }
+.cdk-overlay-backdrop.cdk-overlay-dark-backdrop { background: rgba(0,0,0,0.55); }
+
+
+// ── 17. Light-mode chip / status / structural colour overrides ───────────────
+// Single global block — !important wins over Angular ViewEncapsulation scoping.
+// Covers all 45+ pages without per-component :host-context blocks.
+html[data-theme='light'] {
+
+  // ── Success (green) ─────────────────────────────────────────────────────────
+  .chip-present, .chip-running, .expiry-green, .seg-compliant,
+  .alert-success, .notif-alert--success, .status-active,
+  .cd-chip--reqs, .cd-chip--ug, .cd-chip--score, .cd-chip--mapping {
+    background: rgba(46,125,50,0.12) !important;
+    color: #1b5e20 !important;
+    border-color: rgba(46,125,50,0.25) !important;
+  }
+
+  // ── Warning (orange) ────────────────────────────────────────────────────────
+  .chip-warn, .chip-warning, .expiry-amber, .seg-partial,
+  .alert-warn, .cd-chip--stacked, .cd-chip--ext, .cd-chip--ins, .cd-chip--tg,
+  .stacked-chip, .override-chip, .status-col-chip {
+    background: rgba(230,145,0,0.15) !important;
+    color: #7a4800 !important;
+    border-color: rgba(230,145,0,0.3) !important;
+  }
+
+  // ── Danger (red) ────────────────────────────────────────────────────────────
+  .chip-missing, .chip-security, .chip-error, .expiry-red,
+  .seg-non-compliant, .alert-error, .kev-ransomware, .status-error,
+  .cvss-high, .high-epss {
+    background: rgba(192,0,0,0.12) !important;
+    color: #9e0000 !important;
+    border-color: rgba(192,0,0,0.25) !important;
+  }
+
+  // ── Neutral (grey) ──────────────────────────────────────────────────────────
+  .chip-neutral, .chip-pill, .status-inactive, .fcd-chip--section {
+    background: rgba(0,0,0,0.07) !important;
+    color: #424242 !important;
+    border-color: rgba(0,0,0,0.12) !important;
+  }
+
+  // ── Info (blue) ─────────────────────────────────────────────────────────────
+  .cd-chip--platform, .alert-info, .chip-info, .domain-chip {
+    background: rgba(21,101,192,0.12) !important;
+    color: #1565c0 !important;
+    border-color: rgba(21,101,192,0.25) !important;
+  }
+
+  // ── Table hover rows ────────────────────────────────────────────────────────
+  .hover-row:hover, .qa-row:hover, .risk-row:hover, .poam-row:hover,
+  .action-row:hover, .tbl-row:hover, .policy-row:hover td,
+  .ev-row:hover td, .cve-row:hover td, .cpe-row:hover td,
+  .assessment-row:hover, .table-row-click:hover td, .tbody-row:hover td,
+  .mat-mdc-row:hover { background: rgba(0,0,0,0.03) !important; }
+
+  // ── Progress / skeleton tracks ──────────────────────────────────────────────
+  .bar-track, .prog-track, .prog-track-tall, .cd-cbar__track,
+  .fcd-conf__bar, .skel-value, .skel-row-inner, .skeleton {
+    background: rgba(0,0,0,0.08) !important;
+  }
+
+  // ── Table / panel borders ───────────────────────────────────────────────────
+  .tbl-header, .tbl-body { border-color: rgba(0,0,0,0.1) !important; }
+  .member-row, .tbl-row  { border-bottom-color: rgba(0,0,0,0.07) !important; }
+  thead th { background: rgba(0,0,0,0.04) !important; }
+  .th-base  { background: rgba(0,0,0,0.04) !important; color: #555 !important; }
+}

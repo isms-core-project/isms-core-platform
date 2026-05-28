@@ -216,6 +216,12 @@ def list_risks(
     _: User = Depends(get_current_user),
 ):
     """List risk scenarios for the org, with optional filters."""
+    # Guard: frontend may send literal string "undefined" when no filter selected
+    _bad = {"undefined", "null", ""}
+    if status           in _bad: status           = None
+    if risk_level       in _bad: risk_level       = None
+    if treatment_status in _bad: treatment_status = None
+    if project_id       in _bad: project_id       = None
     q = select(RiskScenario).where(RiskScenario.org_id == org_id)
     if status:
         q = q.where(RiskScenario.status == status)

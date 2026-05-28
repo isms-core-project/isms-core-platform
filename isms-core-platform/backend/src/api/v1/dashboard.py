@@ -29,13 +29,28 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/dashboard", tags=["dashboard"])
 
 
+@router.get("/", summary="Combined overview + audit readiness")
+def dashboard_root(
+    project_id: str | None = Query(None),
+    product: str | None = Query(None),
+    db: DBSession = Depends(get_db),
+    _user: User = Depends(get_current_user),
+):
+    """Combined dashboard: overview + audit_readiness in one call."""
+    return {
+        "overview": dashboard_service.get_overview(db, project_id=project_id),
+        "audit_readiness": dashboard_service.get_audit_readiness(db, project_id=project_id),
+    }
+
+
 @router.get("/overview", response_model=DashboardOverview)
 def overview(
+    project_id: str | None = Query(None),
     db: DBSession = Depends(get_db),
     _user: User = Depends(get_current_user),
 ):
     """Overall compliance coverage by product and section."""
-    return dashboard_service.get_overview(db)
+    return dashboard_service.get_overview(db, project_id=project_id)
 
 
 @router.get("/coverage", response_model=CoverageMatrix)
@@ -111,8 +126,9 @@ def home_summary(
 
 @router.get("/audit-readiness", response_model=AuditReadiness)
 def audit_readiness(
+    project_id: str | None = Query(None),
     db: DBSession = Depends(get_db),
     _user: User = Depends(get_current_user),
 ):
     """Composite audit readiness score (0-100) across all artefact types."""
-    return dashboard_service.get_audit_readiness(db)
+    return dashboard_service.get_audit_readiness(db, project_id=project_id)

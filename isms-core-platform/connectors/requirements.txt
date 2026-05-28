@@ -1,5 +1,5 @@
 # Core HTTP
-requests==2.33.0
+requests==2.34.2
 urllib3==2.7.0
 
 # LDAP (Active Directory, OpenLDAP, FreeIPA)
