@@ -74,7 +74,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 This assessment documents HOW your organisation classifies changes into different types (Standard, Normal, Emergency) and HOW you assess change risk. It evaluates:
 
 - **Standard Change Catalog:** What pre-approved, low-risk changes are documented
-- **Normal Change Procedures:** How moderate/high-risk changes are assessed and categorized
+- **Normal Change Procedures:** How moderate/high-risk changes are assessed and categorised
 - **Emergency Change Criteria:** What qualifies as emergency and how it's handled
 - **Risk Assessment Methodology:** How you calculate change risk (Impact x Likelihood)
 - **Change Calendar Management:** How you schedule changes and manage blackout windows
@@ -155,7 +155,7 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 
 **Step 3: Normal Change Classification (Days 3-6)**
 
-- Document normal change categorization criteria (Sheet 3)
+- Document normal change categorisation criteria (Sheet 3)
 - Assess classification consistency
 - Review sample normal changes
 - Verify risk assessment completion

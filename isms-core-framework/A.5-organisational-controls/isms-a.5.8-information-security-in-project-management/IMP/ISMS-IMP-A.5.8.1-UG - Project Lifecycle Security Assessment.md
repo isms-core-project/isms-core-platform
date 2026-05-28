@@ -1333,7 +1333,7 @@ Complete Sheet 5, Section B: Security Testing Results
 
   1. Integrate SAST in CI/CD or run manual scan
   2. Review findings, filter false positives
-  3. Categorize: Security hotspots, vulnerabilities, code quality issues
+  3. Categorise: Security hotspots, vulnerabilities, code quality issues
   4. Generate report
 
 - **Documentation:** Record findings by severity, false positive rate

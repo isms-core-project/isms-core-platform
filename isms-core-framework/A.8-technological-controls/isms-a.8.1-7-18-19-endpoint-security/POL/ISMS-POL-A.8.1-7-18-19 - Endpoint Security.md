@@ -248,7 +248,7 @@ Implementation guidance (ISMS-IMP-A.8.1-7-18-19 suite) provides technology-speci
 
 ## Regulatory Applicability
 
-Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicability Framework)**.
+Regulatory requirements are categorised per **ISMS-POL-00 (Regulatory Applicability Framework)**.
 
 **Tier 1: Mandatory Compliance**
 

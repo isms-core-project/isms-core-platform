@@ -156,7 +156,7 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 
 **PS-3.2.2 Severity Classification**: All confirmed incidents MUST be assigned a severity level based on impact to confidentiality, integrity, and availability using the CIA Impact Scoring Matrix defined in ISMS-REF-A.5.24-28 Section 1. Scoring considers: data volume affected, system criticality (per A.5.9 asset register), business process impact, regulatory notification triggers. Critical and High severity incidents SHALL be scored independently by two analysts to ensure consistency. Incident severity MAY be reclassified if new information changes impact assessment; reclassification to High/Critical requires Incident Response Manager approval with retroactive management notifications per Section 5.2.
 
-**PS-3.2.3 Category Classification**: All incidents MUST be categorized by type using the organisational incident taxonomy to enable appropriate response procedures and trend analysis.
+**PS-3.2.3 Category Classification**: All incidents MUST be categorised by type using the organisational incident taxonomy to enable appropriate response procedures and trend analysis.
 
 **PS-3.2.4 Escalation Requirements**: Incidents MUST be escalated to appropriate management levels based on severity. Critical incidents require immediate Executive Management notification.
 

@@ -29,7 +29,7 @@ your organisation's specific evidence management system, storage architecture,
 and audit preparation processes.
 
 Key customization areas:
-1. Evidence types and categorization (adapt to your documentation framework)
+1. Evidence types and categorisation (adapt to your documentation framework)
 2. Evidence storage and retrieval systems (match your document management)
 3. Verification and validation requirements (align with your audit processes)
 4. Retention policies and schedules (based on your regulatory obligations)
@@ -57,7 +57,7 @@ retrieval capability for all regulatory obligations.
 
 **Assessment Scope:**
 - Evidence inventory per regulation-requirement-control mapping
-- Evidence type categorization (Policy/Procedure/Configuration/Log/Report/Certificate/etc.)
+- Evidence type categorisation (Policy/Procedure/Configuration/Log/Report/Certificate/etc.)
 - Evidence metadata (location, custodian, creation date, verification status)
 - Evidence coverage analysis (which requirements lack evidence)
 - Evidence gap identification and remediation tracking
@@ -209,7 +209,7 @@ Evidence is NOT just "stuff we have" - it's PROOF that can withstand audit scrut
 - Proves: A.8.24 (Cryptography) implementation for GDPR Art. 32 (Security)
 
 **Evidence Types Taxonomy:**
-Categorize evidence for efficient management and retrieval:
+Categorise evidence for efficient management and retrieval:
 
 **1. Policy Evidence**:
 - Approved information security policies

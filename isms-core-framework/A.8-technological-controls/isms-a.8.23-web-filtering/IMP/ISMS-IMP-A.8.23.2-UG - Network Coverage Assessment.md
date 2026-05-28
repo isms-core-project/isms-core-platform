@@ -186,7 +186,7 @@ This is the CRITICAL foundation - if you miss segments here, you'll miss coverag
 3. For EACH segment, document:
 
    - Segment Name (descriptive, e.g., "HQ Corp LAN", "Branch 01 WiFi")
-   - Segment Type (use dropdown - helps categorize)
+   - Segment Type (use dropdown - helps categorise)
    - Location/Site (physical or logical)
    - Subnet/VLAN (network addressing)
    - User count (approximate)
@@ -825,7 +825,7 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 **Q: Device Type**
 
 - **Dropdown:** Laptop, Desktop, Smartphone, Tablet, Virtual Desktop, Other
-- **Categorize** by form factor/type
+- **Categorise** by form factor/type
 
 **Q: Owner/User**
 
@@ -1062,7 +1062,7 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 **Q: Evidence Type**
 
 - **Dropdown:** Network Diagram, VLAN Config, Firewall Policy, VPN Config, WiFi Config, Cloud Dashboard, NAC Policy, Exemption Approval, Test Results, Monitoring Report, Change Record, Other
-- **Choose appropriate type** for categorization
+- **Choose appropriate type** for categorisation
 
 **Q: Description**
 

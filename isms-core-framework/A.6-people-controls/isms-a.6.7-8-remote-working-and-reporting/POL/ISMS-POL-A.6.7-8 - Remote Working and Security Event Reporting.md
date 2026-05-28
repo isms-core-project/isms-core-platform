@@ -225,7 +225,7 @@ This policy does NOT:
 
 ## Regulatory Applicability
 
-Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicability Framework)**.
+Regulatory requirements are categorised per **ISMS-POL-00 (Regulatory Applicability Framework)**.
 
 **Tier 1: Mandatory Compliance**
 

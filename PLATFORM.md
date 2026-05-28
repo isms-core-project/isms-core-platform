@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/badge/Status-Live_(v1.0)-00AA00?style=flat-square" alt="Live"/>
   <img src="https://img.shields.io/badge/Backend-FastAPI-0066CC?style=flat-square" alt="FastAPI"/>
   <img src="https://img.shields.io/badge/Database-PostgreSQL_18-336791?style=flat-square" alt="PostgreSQL 18"/>
-  <img src="https://img.shields.io/badge/Frontend-React_19_+_MUI_6-61DAFB?style=flat-square" alt="React"/>
+  <img src="https://img.shields.io/badge/Frontend-Angular_21_+_Material_3-DD0031?style=flat-square" alt="Angular"/>
   <img src="https://img.shields.io/badge/Deployment-Docker_Compose-2496ED?style=flat-square" alt="Docker"/>
   <img src="https://img.shields.io/badge/Services-11_containers-2E8B57?style=flat-square" alt="11 Services"/>
 </p>
@@ -63,8 +63,8 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
                         │  ┌──────────────┐  ┌──────────────────┐        │
                         │  │ isms-core-   │  │  isms-core-      │        │
                         │  │ frontend     │  │  backend         │        │
-                        │  │ React 19     │  │  FastAPI         │        │
-                        │  │ + MUI 6      │  │  + SQLAlchemy    │        │
+                        │  │ Angular 21   │  │  FastAPI         │        │
+                        │  │ + Material 3 │  │  + SQLAlchemy    │        │
                         │  └──────────────┘  └────┬──────┬──────┘        │
                         │                         │      │                 │
                         │             ┌───────────┘      │                 │
@@ -107,7 +107,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 |-----------|-----------|------|
 | `isms-core-nginx` | nginx (Alpine) | Reverse proxy — TLS termination, routes `/api/` to backend, `/` to frontend. Ports 80 + 443. |
 | `isms-core-backend` | FastAPI 0.109+ | REST API, auth (JWT), business logic, import orchestration. Internal only — nginx proxies it. |
-| `isms-core-frontend` | React 19 + Vite 8 | WebUI — dashboards, control explorer, evidence management. Internal only — nginx proxies it. |
+| `isms-core-frontend` | Angular 21 + Material 3 | WebUI — dashboards, control explorer, evidence management. Internal only — nginx proxies it. |
 | `isms-core-postgres` | PostgreSQL 18 Alpine | Primary data store — all compliance data. Internal only (no exposed port in prod). |
 | `isms-core-redis` | Redis 8 Alpine | Session cache + Celery task broker. Internal only. |
 | `isms-core-opensearch` | OpenSearch 3.x | Full-text search over policy and IMP content + NVD CVE/CPE indices. Internal only. |

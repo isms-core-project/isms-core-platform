@@ -176,7 +176,7 @@ This policy does NOT:
 
 ## Regulatory Applicability
 
-Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicability Framework)**.
+Regulatory requirements are categorised per **ISMS-POL-00 (Regulatory Applicability Framework)**.
 
 **Tier 1: Mandatory Compliance** (applies to all [Organisation] operations):
 
@@ -191,7 +191,7 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 - **FINMA**: Risk-based asset inventory requirements for Swiss financial institutions
 - **DORA/NIS2**: ICT asset inventory for critical infrastructure and financial entities
 - **SOX**: IT general controls require documented system inventory for financial reporting
-- **Industry-specific regulations**: May require specialized asset categorization
+- **Industry-specific regulations**: May require specialized asset categorisation
 
 **Tier 3: Informational Reference** (best practices, not legally binding):
 
@@ -203,7 +203,7 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 
 **United States Federal Requirements**: References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity requirements) apply only where [Organisation] has explicit US federal contractual obligations, as defined in ISMS-POL-00.
 
-For complete regulatory categorization and applicability determination methodology, refer to ISMS-POL-00.
+For complete regulatory categorisation and applicability determination methodology, refer to ISMS-POL-00.
 
 ---
 
@@ -225,13 +225,13 @@ For complete regulatory categorization and applicability determination methodolo
 
 **Verification Method**: Completeness assessment per ISMS-IMP-A.5.9-3 (Quality & Compliance Assessment).
 
-## Asset Categorization
+## Asset Categorisation
 
-**Requirement A.5.9-R2**: [Organisation] SHALL categorize assets to enable appropriate security control application.
+**Requirement A.5.9-R2**: [Organisation] SHALL categorise assets to enable appropriate security control application.
 
-**Categorization Dimensions**:
+**Categorisation Dimensions**:
 
-1. **By Asset Type** (primary categorization):
+1. **By Asset Type** (primary categorisation):
 
    - Information Assets (what needs protection)
    - IT Infrastructure (systems processing information)
@@ -254,7 +254,7 @@ For complete regulatory categorization and applicability determination methodolo
    - Retired: Scheduled for decommissioning
    - Archived: Retained for compliance but not actively used
 
-**Decision Support**: Annex A provides categorization decision framework and examples.
+**Decision Support**: Annex A provides categorisation decision framework and examples.
 
 **Verification Method**: Category assignments reviewed during asset owner acknowledgment process per ISMS-IMP-A.5.9-4 (Owner Accountability Assessment).
 
@@ -508,7 +508,7 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 
 **Specific Responsibilities**:
 
-- Approve inventory categorization framework
+- Approve inventory categorisation framework
 - Define accuracy, completeness, currency targets
 - Review and approve assessment findings
 - Escalate significant gaps to Executive Management
@@ -821,7 +821,7 @@ This policy integrates with [Organisation]'s Information Security Management Sys
 
 **Supporting Materials**:
 
-- Asset categorization decision framework (Annex A)
+- Asset categorisation decision framework (Annex A)
 - Owner acknowledgment form template
 - Asset discovery checklist
 - Quick reference guide for asset owners (Annex B)
@@ -916,7 +916,7 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ This policy document (ISMS-POL-A.5.9 v1.0)
 - ✅ Approval signatures from CISO, Executive Management, Legal/Compliance Officer
 - ✅ Asset inventory creation requirements defined (Section 2.1)
-- ✅ Asset categorization framework documented (Section 2.2, Annex A)
+- ✅ Asset categorisation framework documented (Section 2.2, Annex A)
 - ✅ Mandatory inventory attributes specified (Section 2.3)
 - ✅ Asset ownership requirements defined (Section 2.4)
 - ✅ Inventory quality standards established (Section 2.5 - completeness, accuracy, currency)
@@ -934,7 +934,7 @@ Evidence required to demonstrate this policy is operationally effective:
 - Quality and compliance assessments per ISMS-IMP-A.5.9-3 (accuracy sampling, gap analysis, completeness metrics)
 - Owner accountability assessments per ISMS-IMP-A.5.9-4 (ownership assignment, acknowledgment tracking, responsibility verification)
 - Asset inventory records (all asset types: information, IT infrastructure, applications, physical, personnel)
-- Asset categorization determinations (type, criticality, lifecycle state)
+- Asset categorisation determinations (type, criticality, lifecycle state)
 - Asset ownership assignments with owner acknowledgments (100% target)
 - Inventory completeness metrics (percentage of assets discovered vs. inventoried)
 - Inventory accuracy metrics (percentage of records verified as accurate)
@@ -955,7 +955,7 @@ Evidence required to demonstrate this policy is operationally effective:
 
 **Clarification on Compliance Evidence:**
 
-This policy establishes asset inventory requirements (identification, categorization, ownership, maintenance). It does NOT establish:
+This policy establishes asset inventory requirements (identification, categorisation, ownership, maintenance). It does NOT establish:
 
 - **Asset classification requirements** (addressed in A.5.12 Information Classification - inventory provides foundation for classification)
 - **Access control to assets** (addressed in A.5.15 Access Control - inventory identifies what to protect)
@@ -967,13 +967,13 @@ The boundary is: POL-A.5.9 defines what must be inventoried and ownership accoun
 
 ---
 
-# Annex A: Asset Categorization Decision Matrix
+# Annex A: Asset Categorisation Decision Matrix
 
 ## Purpose
 
-This annex provides practical decision framework for categorizing assets within the inventory. These are **generic examples** that [Organisation] adapts to their specific context during risk assessment.
+This annex provides practical decision framework for categorising assets within the inventory. These are **generic examples** that [Organisation] adapts to their specific context during risk assessment.
 
-## Primary Categorization: Information vs. Associated Asset
+## Primary Categorisation: Information vs. Associated Asset
 
 **Decision Question**: Is this INFORMATION or SOMETHING THAT PROCESSES/STORES INFORMATION?
 
@@ -1044,7 +1044,7 @@ This annex provides practical decision framework for categorizing assets within 
 | Domain administrator accounts | Individual | High privilege, must track precisely |
 | Backup tapes | Grouped by rotation set | Tracked by set, not individual tape |
 
-## Information Asset Categorization Examples
+## Information Asset Categorisation Examples
 
 **Structured Data**:
 
@@ -1083,7 +1083,7 @@ This annex provides practical decision framework for categorizing assets within 
 - Infrastructure-as-Code templates
 - Database schemas and stored procedures
 
-## IT Infrastructure Categorization Examples
+## IT Infrastructure Categorisation Examples
 
 **Compute**:
 
@@ -1110,7 +1110,7 @@ This annex provides practical decision framework for categorizing assets within 
 - Wireless access points
 - DNS/DHCP servers
 
-## Application Categorization Examples
+## Application Categorisation Examples
 
 **Business Applications**:
 
@@ -1135,7 +1135,7 @@ This annex provides practical decision framework for categorizing assets within 
 - Mobile applications
 - APIs and integration services
 
-## Personnel Asset Categorization
+## Personnel Asset Categorisation
 
 **Critical Roles** (not individuals, but role capabilities):
 

@@ -306,7 +306,7 @@ Physical infrastructure control deficiencies identified through assessments (Ass
 | **DORA (EU) 2022/2554** | EU financial services entity |
 | **NIS2 Directive (EU) 2022/2555** | Essential/important entity in EU |
 
-Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulatory categorization.
+Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulatory categorisation.
 
 ---
 

@@ -134,7 +134,7 @@ This implementation guide operationalizes the regulatory applicability methodolo
 - Score each dimension
 
          ↓
-[STEP 4: Tier Categorization]
+[STEP 4: Tier Categorisation]
 
 - Apply decision framework from POL-5.31.2
 - Determine: Tier 1 (Mandatory) / Tier 2 (Conditional) / Tier 3 (Informational)
@@ -732,7 +732,7 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
 
 - Sector-specific regulations (financial services, healthcare, government, energy, etc.)
 - **Evidence to Gather**:
-  - Customer list categorized by industry vertical (from CRM)
+  - Customer list categorised by industry vertical (from CRM)
   - Revenue by sector (from Finance)
   - Customer contracts showing sector affiliation
 - **Answer**: ☐ YES ☐ NO
@@ -917,7 +917,7 @@ Review scores from Sections 4.1, 4.2, 4.3:
 
 ---
 
-# Step 4 - Tier Categorization
+# Step 4 - Tier Categorisation
 
 **Purpose**: If regulation is Applicable or Conditionally Applicable, assign it to the appropriate tier in ISMS-POL-00.
 

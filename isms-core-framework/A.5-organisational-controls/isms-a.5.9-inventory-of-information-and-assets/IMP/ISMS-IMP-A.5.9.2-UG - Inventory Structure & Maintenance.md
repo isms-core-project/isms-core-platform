@@ -86,7 +86,7 @@ This assessment documents HOW [Organisation] structures and maintains its asset 
 This assessment verifies [Organisation]'s compliance with:
 
 - **ISO/IEC 27001:2022 Control A.5.9**: "...inventory...should be created and **maintained**"
-- **ISMS-POL-A.5.9, Requirement A.5.9-R2**: Asset categorization requirements
+- **ISMS-POL-A.5.9, Requirement A.5.9-R2**: Asset categorisation requirements
 - **ISMS-POL-A.5.9, Requirement A.5.9-R3**: Mandatory inventory attributes
 - **ISMS-POL-A.5.9, Section 2.5**: Currency standards (maximum staleness by asset type)
 - **ISMS-POL-A.5.9, Requirement A.5.9-R6**: Integration with other ISMS processes

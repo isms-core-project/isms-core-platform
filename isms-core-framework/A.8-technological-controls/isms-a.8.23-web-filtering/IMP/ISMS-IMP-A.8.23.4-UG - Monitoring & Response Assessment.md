@@ -306,7 +306,7 @@ Step 7: Submission (30 mins)
 
 **Sheet 5: Incident Response** (1-2 hours with Incident Response Team)
 
-- Document incident categorization and severity definitions
+- Document incident categorisation and severity definitions
 - Review SLA compliance for recent incidents
 - Verify escalation paths
 - Check post-incident review process
@@ -697,7 +697,7 @@ These are **calculated automatically** based on your data in Sections A and B:
 - **Question:** What specific condition triggers this alert?
 - **Format:** Free text - be specific and technical
 - **Examples:**
-  - "URL categorized as 'Malware' is accessed"
+  - "URL categorised as 'Malware' is accessed"
   - ">100 blocked requests from single user in 10 minutes"
   - "Web proxy service stops responding to health checks"
   - "User accesses blocked site via VPN bypass"
@@ -1143,7 +1143,7 @@ These are **calculated automatically:**
 
 ## Sheet 5: Incident Response
 
-**Purpose:** Document how web filtering incidents are categorized, handled, and resolved.
+**Purpose:** Document how web filtering incidents are categorised, handled, and resolved.
 
 ### Section A: Incident Categories (10 categories)
 
@@ -1224,7 +1224,7 @@ These are **calculated automatically:**
 - **Question:** What evidence demonstrates this incident category is defined and used?
 - **Format:** Reference to Evidence_Register
 - **Evidence Types:**
-  - Incident categorization matrix
+  - Incident categorisation matrix
   - Sample incident tickets
   - Runbook document
   - Training materials
@@ -1270,7 +1270,7 @@ For each procedure element, answer **Yes/No/Partial:**
 
 - **Question:** What category does this incident fall into?
 - **Dropdown:** Should match categories from Section A
-- **Tip:** Consistent categorization helps with trend analysis
+- **Tip:** Consistent categorisation helps with trend analysis
 
 **Q24: Severity**
 
@@ -1591,7 +1591,7 @@ These are **calculated automatically:**
 - **Question:** What did investigation reveal?
 - **Format:** Free text - detailed findings
 - **Examples:**
-  - "Confirmed FP - URL categorized incorrectly by vendor feed"
+  - "Confirmed FP - URL categorised incorrectly by vendor feed"
   - "Confirmed FP - Internal application not in allow list"
   - "Not FP - URL recently compromised, correct block"
   - "Partial FP - Legitimate site but hosting malicious ad network"
@@ -1615,14 +1615,14 @@ These are **calculated automatically:**
 - **Dropdown Options:**
   - **Whitelist** - Added to allow list
   - **Policy_Tuning** - Adjusted policy to reduce FPs
-  - **Category_Update** - Requested vendor to recategorize
+  - **Category_Update** - Requested vendor to recategorise
   - **No_Action** - Determined to be true positive after all
   - **Escalated** - Escalated to vendor support
   - **Vendor_Update** - Waiting for vendor database update
 - **Examples:**
   - "Whitelist: Added *.vendor.com to allow list for Finance team only"
   - "Policy_Tuning: Adjusted threshold for 'suspicious' category"
-  - "Category_Update: Submitted recategorization request to vendor (ticket #12345)"
+  - "Category_Update: Submitted recategorisation request to vendor (ticket #12345)"
 
 **Q10: Resolution_Date**
 
@@ -1646,7 +1646,7 @@ These are **calculated automatically:**
 - **Question:** What was the root cause of this FP?
 - **Format:** Free text
 - **Common Root Causes:**
-  - "Vendor categorization error"
+  - "Vendor categorisation error"
   - "Internal application not in custom allow list"
   - "Policy too restrictive for department needs"
   - "CDN/hosting provider hosting mixed content"
@@ -1675,7 +1675,7 @@ These are **calculated automatically:**
   - **Open** - Being investigated
   - **Resolved** - Fixed and verified
   - **Escalated** - Escalated to vendor
-  - **Pending** - Waiting for external action (vendor recategorization)
+  - **Pending** - Waiting for external action (vendor recategorisation)
 - **Auditor Expects:** Old FPs should be Resolved
 - **Red Flag:** Many FPs stuck in "Pending" = poor vendor relationship
 
@@ -2081,7 +2081,7 @@ These are **calculated automatically:**
 - **Examples:**
   - "SIEM screenshot showing DNS filter logs being ingested - 15.01.2026"
   - "Alert rule configuration export for 'Malware Download Attempt' alert"
-  - "Sample of blocked requests log showing threat categorization"
+  - "Sample of blocked requests log showing threat categorisation"
   - "Weekly SOC Web Filtering Summary report for week of 06.01.2026"
   - "Post-Incident Review report for INC-2025-00234 (malware incident)"
   - "Email approval from CISO for whitelist exception request EXC-045"
@@ -2355,7 +2355,7 @@ These are **calculated automatically:**
 
 - **FP investigation notes**
 - **Whitelist configuration changes**
-- **Vendor support tickets** (for recategorization requests)
+- **Vendor support tickets** (for recategorisation requests)
 - **Before/after testing** (URL now accessible after FP resolution)
 
 ### Sheet 8: Reporting Schedule

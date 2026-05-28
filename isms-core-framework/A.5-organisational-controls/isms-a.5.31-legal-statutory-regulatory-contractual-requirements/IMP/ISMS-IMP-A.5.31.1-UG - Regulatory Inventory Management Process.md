@@ -270,7 +270,7 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 
 ---
 
-*This guide provides systematic procedures for creating and maintaining [Organisation]'s master regulatory inventory, ensuring all information security compliance obligations are identified, categorized, and tracked.*
+*This guide provides systematic procedures for creating and maintaining [Organisation]'s master regulatory inventory, ensuring all information security compliance obligations are identified, categorised, and tracked.*
 
 ---
 

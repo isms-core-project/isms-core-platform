@@ -68,7 +68,7 @@ This assessment evaluates [Organisation]'s **incident detection and classificati
 
 - Detection mechanisms (SIEM rules, EDR alerts, IDS/IPS, user reporting)
 - Alert triage and investigation procedures
-- Incident classification and categorization
+- Incident classification and categorisation
 - Severity assignment criteria and processes
 - False positive handling and tuning
 - Detection coverage gaps

@@ -142,7 +142,7 @@ This policy does NOT:
 
 ## Regulatory Applicability
 
-Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicability Framework)**. 
+Regulatory requirements are categorised per **ISMS-POL-00 (Regulatory Applicability Framework)**. 
 
 **Tier 1: Mandatory Compliance**
 
@@ -901,7 +901,7 @@ This policy addresses DLP requirements from multiple regulations:
 
 **Contextual Analysis**: Evaluation of data transfer context to determine sensitivity and risk. Context factors include: source system (HR database, financial system), user role (privilege level, department), destination (internal vs. external, trusted vs. untrusted domain), time of day (business hours vs. after-hours), transfer volume (single file vs. bulk export), and behavioral patterns (baseline vs. anomaly).
 
-**Data Classification**: Systematic categorization of information based on sensitivity, criticality, and regulatory requirements. Classification levels typically include: Public (unrestricted disclosure), Internal (limited to organisation), Confidential (limited distribution, business impact if leaked), Restricted (highly sensitive, significant impact, legal/regulatory constraints).
+**Data Classification**: Systematic categorisation of information based on sensitivity, criticality, and regulatory requirements. Classification levels typically include: Public (unrestricted disclosure), Internal (limited to organisation), Confidential (limited distribution, business impact if leaked), Restricted (highly sensitive, significant impact, legal/regulatory constraints).
 
 **Document Labeling**: Embedding classification metadata directly into files (headers, footers, watermarks, file properties, metadata tags). Enables DLP systems to identify sensitive documents regardless of content. Common standards: Microsoft Information Protection, Adobe Document Security, PDF metadata.
 

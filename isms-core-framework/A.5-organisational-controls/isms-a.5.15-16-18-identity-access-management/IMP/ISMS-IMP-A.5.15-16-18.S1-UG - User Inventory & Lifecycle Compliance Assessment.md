@@ -361,7 +361,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - No missing hire dates
    - Termination dates accurate (terminated employees marked correctly)
    - Manager names/emails correct
-   - Employee types categorized correctly
+   - Employee types categorised correctly
 
 **Deliverable:** HR data export CSV with authoritative employee information
 
@@ -417,7 +417,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - ✓ All active employees from HR system included
 - ✓ No duplicate users (same person listed twice)
 - ✓ Account status accurately reflects current state
-- ✓ User type correctly categorized
+- ✓ User type correctly categorised
 - ✓ Hire dates and termination dates populated where available
 - ✓ Last login dates recent (within last 90 days for active users)
 
@@ -542,7 +542,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Is this a vendor account with valid sponsor? (check vendor management system)
    - Is this a former employee whose termination was not processed? (check with HR)
 
-3. **Categorize orphaned accounts**:
+3. **Categorise orphaned accounts**:
 
    - **Confirmed Orphaned** - Former employee, contractor ended, no valid owner
    - **Service Account** - Non-human account, valid owner documented
@@ -594,7 +594,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Account Created Date
    - Justification (why is this account inactive but still active?)
 
-3. **Categorize inactive accounts**:
+3. **Categorise inactive accounts**:
 
    - **Legitimate Inactive**:
      - Employee on leave of absence (maternity, sabbatical, long-term sick)
@@ -996,7 +996,7 @@ EVID-004_Deprovisioning_Delay_Root_Cause_Analysis_20260122.pdf
 
 ❌ **Mistake:** Flagging all non-HR accounts as orphaned, including legitimate service accounts
 
-✅ **Fix:** Exclude service accounts (identified by naming convention, account type, or manual categorization) from orphaned account detection. Service accounts are NOT orphaned; they're intentionally non-human.
+✅ **Fix:** Exclude service accounts (identified by naming convention, account type, or manual categorisation) from orphaned account detection. Service accounts are NOT orphaned; they're intentionally non-human.
 
 ---
 
@@ -1056,7 +1056,7 @@ Before submitting for approval, verify:
 
 - [ ] All identity systems queried (AD, Entra ID, Okta, Google Workspace, LDAP, custom)
 - [ ] All users included (active + disabled, not just active)
-- [ ] User types correctly categorized (Employee, Contractor, Vendor, Service Account, Shared)
+- [ ] User types correctly categorised (Employee, Contractor, Vendor, Service Account, Shared)
 - [ ] HR data cross-referenced (hire dates, termination dates populated where available)
 - [ ] Last login dates accurate (from recent login logs, not stale data)
 - [ ] No "Unknown" or "TBD" values

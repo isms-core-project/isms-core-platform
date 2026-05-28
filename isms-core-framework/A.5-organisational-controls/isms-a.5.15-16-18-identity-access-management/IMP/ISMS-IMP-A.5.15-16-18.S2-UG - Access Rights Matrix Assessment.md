@@ -325,7 +325,7 @@ For EACH system/application:
 - ✓ No "Unknown" or "TBD" values
 - ✓ System owners assigned and verified
 - ✓ Criticality reflects actual business impact
-- ✓ Data sensitivity accurately categorized
+- ✓ Data sensitivity accurately categorised
 
 ---
 
@@ -393,7 +393,7 @@ Get-MgGroup -All | ForEach-Object {
 **Quality Check:**
 
 - ✓ All systems queried for access data
-- ✓ Access levels categorized consistently (Read, Write, Admin, Privileged)
+- ✓ Access levels categorised consistently (Read, Write, Admin, Privileged)
 - ✓ Group/role access identified (not just direct access)
 - ✓ User identifiers mapped across systems
 - ✓ Source system tagged for each access record
@@ -439,7 +439,7 @@ Get-MgGroup -All | ForEach-Object {
 
 - ✓ All users from IMP.1 included in matrix
 - ✓ All systems from Sheet 1 included in matrix
-- ✓ Access levels categorized consistently
+- ✓ Access levels categorised consistently
 - ✓ Group/role access documented (not just "Yes - has access")
 - ✓ Privileged access flagged
 - ✓ Data sensitivity tagged
@@ -517,7 +517,7 @@ Get-MgGroup -All | ForEach-Object {
    - HR system job descriptions (job role → required access mapping)
    - Project charters (project team → required access)
 
-3. **Categorize justification completeness**:
+3. **Categorise justification completeness**:
 
    - **✅ Complete**: Justification documented, approver identified, approval date recorded
    - **⚠️ Partial**: Justification exists but missing approver or date
@@ -537,7 +537,7 @@ Get-MgGroup -All | ForEach-Object {
 
 - ✓ All access grants from Sheet 2 assessed for justification
 - ✓ Justification sources documented (ticket ID, email, approval record)
-- ✓ Completeness categorization accurate
+- ✓ Completeness categorisation accurate
 - ✓ Missing justifications flagged for remediation
 - ✓ Documentation completeness score calculated
 
@@ -566,7 +566,7 @@ Get-MgGroup -All | ForEach-Object {
      - Higher access level than required (e.g., Write when only Read needed)
      - Multiple system access when only one required (e.g., access to both Test and Prod when only Test needed)
 
-3. **Categorize excessive access**:
+3. **Categorise excessive access**:
 
    - **Legitimate Excess**: Documented reason (e.g., "Also supporting Project X", "Backup for Manager")
    - **Questionable Excess**: No clear reason, requires manager review
@@ -949,14 +949,14 @@ Before submitting for approval, verify:
 - [ ] All systems with user access included (on-premises + cloud + SaaS)
 - [ ] System owners identified and verified
 - [ ] Criticality reflects actual business impact
-- [ ] Data sensitivity accurately categorized
+- [ ] Data sensitivity accurately categorised
 - [ ] No "Unknown" or "TBD" values
 
 ### Access Rights Matrix (Sheet 2)
 
 - [ ] All users from IMP.1 included
 - [ ] All systems from Sheet 1 included
-- [ ] Access levels categorized consistently (Read, Write, Admin, Privileged)
+- [ ] Access levels categorised consistently (Read, Write, Admin, Privileged)
 - [ ] Group/role access documented (not just "Yes")
 - [ ] Privileged access flagged
 - [ ] Data sensitivity tagged
@@ -976,7 +976,7 @@ Before submitting for approval, verify:
 
 - [ ] All access grants assessed for justification
 - [ ] Justification sources documented (ticket ID, email, approval)
-- [ ] Completeness categorization accurate
+- [ ] Completeness categorisation accurate
 - [ ] Missing justifications flagged
 - [ ] Documentation completeness score calculated
 

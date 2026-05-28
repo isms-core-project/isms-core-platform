@@ -139,7 +139,7 @@ This policy does NOT:
 
 ## Regulatory Applicability
 
-Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicability Framework)**.
+Regulatory requirements are categorised per **ISMS-POL-00 (Regulatory Applicability Framework)**.
 
 ### Tier 1: Mandatory Compliance
 
@@ -169,7 +169,7 @@ Non-mandatory guidance and best practices:
 - CIS Control 16: Application Software Security
 - OWASP Code Repository Security Guide
 
-**For complete regulatory categorization, refer to ISMS-POL-00 (Regulatory Applicability Framework).**
+**For complete regulatory categorisation, refer to ISMS-POL-00 (Regulatory Applicability Framework).**
 
 ## Related Controls Integration
 

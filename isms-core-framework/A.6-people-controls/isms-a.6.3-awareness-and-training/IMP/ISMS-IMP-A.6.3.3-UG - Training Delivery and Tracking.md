@@ -302,7 +302,7 @@ At month end, create snapshot:
 **Why It Matters:** Different training types have different implications. Failed phishing simulation requires different remediation than failed compliance quiz.
 
 **The Fix:**
-- Categorize by training type in tracking
+- Categorise by training type in tracking
 - Different escalation paths by type
 - Type-specific metrics (click rate for simulations, pass rate for assessments)
 

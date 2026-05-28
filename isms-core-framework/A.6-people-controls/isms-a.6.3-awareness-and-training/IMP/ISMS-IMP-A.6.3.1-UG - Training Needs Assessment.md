@@ -61,7 +61,7 @@ This assessment evaluates [Organisation]'s training needs to ensure all personne
 
 **Scope:** 4 assessment domains covering complete training needs analysis:
 1. **Role Inventory** - Complete inventory of roles requiring security training
-2. **Training Audience Classification** - Categorization of roles into training tiers (Tier 1-7)
+2. **Training Audience Classification** - Categorisation of roles into training tiers (Tier 1-7)
 3. **Training Requirement Mapping** - Requirements mapped to each role/tier
 4. **Gap Analysis** - Current state vs. required training identification
 

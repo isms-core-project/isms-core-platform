@@ -783,10 +783,10 @@ def get_capability_assessments():
         ("THREAT PROTECTION", "Exploit prevention", "yes_no_partial"),
         ("THREAT PROTECTION", "Zero-day threat protection", "yes_no_partial"),
         
-        # URL Categorization
-        ("URL CATEGORIZATION", "Supports URL categorization", "yes_no"),
-        ("URL CATEGORIZATION", "Number of categories available", "number"),
-        ("URL CATEGORIZATION", "Category database update frequency", "update_frequency"),
+        # URL Categorisation
+        ("URL CATEGORISATION", "Supports URL categorisation", "yes_no"),
+        ("URL CATEGORISATION", "Number of categories available", "number"),
+        ("URL CATEGORISATION", "Category database update frequency", "update_frequency"),
         
         # Content Analysis
         ("CONTENT ANALYSIS", "HTTPS/SSL inspection capable", "yes_no_partial"),
@@ -1343,7 +1343,7 @@ def create_capability_requirements(ws, styles):
         ("REQ-006", "SHALL log all filtering events"),
         ("REQ-007", "SHALL retain logs for ≥90 days"),
         ("REQ-008", "MUST support threat feed updates"),
-        ("REQ-009", "SHOULD support URL categorization"),
+        ("REQ-009", "SHOULD support URL categorisation"),
         ("REQ-010", "SHOULD support user-based policies"),
         ("REQ-011", "SHOULD support group-based policies"),
         ("REQ-012", "SHALL provide administrative audit logs"),

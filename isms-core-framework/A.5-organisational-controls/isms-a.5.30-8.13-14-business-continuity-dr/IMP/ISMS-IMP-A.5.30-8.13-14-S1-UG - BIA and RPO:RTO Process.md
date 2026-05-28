@@ -511,7 +511,7 @@ Each step builds on the previous. Do not skip steps.
      - "Which processes support regulatory compliance?"
      - "What are the inputs and outputs of each process?"
 
-3. **Categorize Business Processes**
+3. **Categorise Business Processes**
 
    - **Revenue-Generating:** Directly generate revenue
      - Examples: Order processing, e-commerce sales, customer onboarding

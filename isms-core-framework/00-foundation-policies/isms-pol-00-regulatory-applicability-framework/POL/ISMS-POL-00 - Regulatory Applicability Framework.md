@@ -90,7 +90,7 @@ This policy defines the **identification and applicability** of legal, statutory
 **This policy establishes:**
 
 - Which regulations and standards apply to the organisation
-- Categorization of regulatory obligations (Mandatory, Conditional, Informational)
+- Categorisation of regulatory obligations (Mandatory, Conditional, Informational)
 - Assessment methodology for determining applicability
 - Review and update processes for regulatory landscape changes
 
@@ -591,7 +591,7 @@ Material services outsourced by a bank to a service provider, where the service 
 **Key Requirements**:
 
 - **Risk-based approach to cybersecurity**: Following NIST SP 800-53 controls
-- **Categorization**: System categorization (Low, Moderate, High) per FIPS 199
+- **Categorisation**: System categorisation (Low, Moderate, High) per FIPS 199
 - **Control Implementation**: NIST SP 800-53 security controls based on impact level
 - **Continuous Monitoring**: Ongoing security assessment and authorisation (A&A)
 - **FedRAMP (for cloud)**: Federal Risk and Authorization Management Program
@@ -601,7 +601,7 @@ Material services outsourced by a bank to a service provider, where the service 
 **ISMS Impact**:
 
 - NIST SP 800-53 control implementation (comprehensive security controls)
-- System categorization and impact analysis (A.5.9)
+- System categorisation and impact analysis (A.5.9)
 - Continuous monitoring and assessment (A.8.15-16)
 - Supply chain risk management (A.5.19-23)
 - Incident response aligned with NIST frameworks (A.5.24-28)
@@ -875,7 +875,7 @@ All ISMS policies SHALL include one of the following:
 ## Applicability of Regulatory Frameworks
 
 References to standards, frameworks, and regulations throughout this ISMS 
-are categorized per ISMS-POL-00 (Regulatory Applicability Framework):
+are categorised per ISMS-POL-00 (Regulatory Applicability Framework):
 
 **Mandatory Compliance:**
 
@@ -892,7 +892,7 @@ are categorized per ISMS-POL-00 (Regulatory Applicability Framework):
 **United States Federal Requirements:**
 US federal frameworks (FISMA, FedRAMP, NIST) apply only where explicit US federal contractual obligations exist (see ISMS-POL-00, US Federal Requirements section).
 
-For complete regulatory categorization, refer to ISMS-POL-00.
+For complete regulatory categorisation, refer to ISMS-POL-00.
 ```
 
 **Option B: Dedicated Regulatory Framework Section** (For control-specific regulations):
@@ -900,7 +900,7 @@ For complete regulatory categorization, refer to ISMS-POL-00.
 ```markdown
 # Regulatory Framework
 
-This control implements requirements from regulations categorized per 
+This control implements requirements from regulations categorised per 
 ISMS-POL-00 (Regulatory Applicability Framework).
 
 ## Mandatory Compliance
@@ -912,7 +912,7 @@ ISMS-POL-00 (Regulatory Applicability Framework).
 ## Informational Reference
 [Control-specific best practices]
 
-For complete regulatory categorization, refer to ISMS-POL-00.
+For complete regulatory categorisation, refer to ISMS-POL-00.
 ```
 
 ## Audit References

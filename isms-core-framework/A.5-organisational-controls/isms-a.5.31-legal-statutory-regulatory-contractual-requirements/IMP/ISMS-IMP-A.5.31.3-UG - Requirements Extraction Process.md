@@ -128,7 +128,7 @@ Requirements extraction is NOT a solo activity. Best results come from team:
   - Maintain citation to regulation
 
               ↓
-[STEP 4: Categorize Requirements]
+[STEP 4: Categorise Requirements]
 
 - Assign category: Technical, Organisational, Reporting, Operational
 - Streamlines control mapping (know which Annex A sections relevant)
@@ -162,7 +162,7 @@ Requirements extraction is NOT a solo activity. Best results come from team:
 
 - Step 1 (Parse): 1-2 days
 - Step 2-3 (Extract): 2-3 days
-- Step 4-5 (Categorize & Register): 1 day
+- Step 4-5 (Categorise & Register): 1 day
 - Step 6 (Review): 2-3 days
 - **Total**: 1-2 weeks
 
@@ -170,7 +170,7 @@ Requirements extraction is NOT a solo activity. Best results come from team:
 
 - Step 1 (Parse): 3-5 days
 - Step 2-3 (Extract): 1-2 weeks (legal consultation, interpretation iterations)
-- Step 4-5 (Categorize & Register): 2-3 days
+- Step 4-5 (Categorise & Register): 2-3 days
 - Step 6 (Review): 1-2 weeks (legal review, executive review for Tier 1)
 - **Total**: 4-6 weeks
 
@@ -956,9 +956,9 @@ Some regulations have obligations in annexes (not just main articles).
 
 ---
 
-# Step 4 - Categorize Requirements
+# Step 4 - Categorise Requirements
 
-**Purpose**: Categorize each requirement by type to streamline control mapping and assign responsibilities.
+**Purpose**: Categorise each requirement by type to streamline control mapping and assign responsibilities.
 
 ## Requirement Categories
 
@@ -1085,7 +1085,7 @@ Some requirements inherently span categories.
 - Organisational control = ISMS-POL-5.26 Incident Response Policy
 - Operational control = Annual incident response tabletop exercise
 
-## Why Categorization Matters
+## Why Categorisation Matters
 
 **Benefit 1: Streamlines Control Mapping**
 
@@ -1553,7 +1553,7 @@ Categories inform resource needs.
 - Provide interpretation guidance
 - Recommend whether external legal opinion needed (e.g., novel regulatory concept, high stakes, unclear scope)
 
-**Review 4: Categorization Accuracy**
+**Review 4: Categorisation Accuracy**
 
 - Verify Technical/Organisational/Reporting/Operational categories make sense
 - Some requirements may be debatable (is "establish policy" Organisational or also Operational?)
@@ -1693,7 +1693,7 @@ Comments/Caveats: [If any]
 - Purpose: Restrict access to authorised only
 - Context: Personal data
 
-**Step 3: Categorize**:
+**Step 3: Categorise**:
 
 - REQ-001: Organisational (high-level security program)
 - REQ-002: Technical (controls to prevent unauthorised processing)
@@ -1752,7 +1752,7 @@ Comments/Caveats: [If any]
 - Exception: Unless unlikely to result in risk
 - Note: Preserves all elements of obligation including timeline and exception
 
-**Step 3: Categorize**:
+**Step 3: Categorise**:
 
 - Category: **Reporting** (external notification requirement)
 
@@ -1817,7 +1817,7 @@ Comments/Caveats: [If any]
 - For whom: Data subjects and supervisory authority
 - Regarding: Processing activities
 
-**Step 3: Categorize**:
+**Step 3: Categorise**:
 
 - REQ-001: **Organisational** (role designation)
 - REQ-002: **Organisational** (governance function)
@@ -1872,7 +1872,7 @@ Comments/Caveats: [If any]
 - Frequency: "Regular" (regulation doesn't define; [Organisation] will determine)
 - Scope: Data processing security
 
-**Step 3: Categorize**:
+**Step 3: Categorise**:
 
 - Category: **Operational** (recurring testing activity)
 
@@ -2007,7 +2007,7 @@ Before submitting for final approval (Step 6), perform these checks:
 
 **Consistency**:
 
-- ☐ Requirements categorized (Technical/Organisational/Reporting/Operational)
+- ☐ Requirements categorised (Technical/Organisational/Reporting/Operational)
 - ☐ Requirements prioritized (High/Medium/Low)
 - ☐ Consistent terminology (regulatory terms used consistently)
 - ☐ Consistent formatting (all start with action verb, etc.)
@@ -2083,16 +2083,16 @@ Before submitting for final approval (Step 6), perform these checks:
 
 **Correct Approach**: Read definitions first. Use regulatory terminology. Extract as "Implement security controls for all personal data processing operations (collection, storage, use, transmission, deletion)".
 
-**Pitfall 6: Inconsistent Categorization**
+**Pitfall 6: Inconsistent Categorisation**
 
-**Mistake**: Similar requirements categorized differently.
+**Mistake**: Similar requirements categorised differently.
 
 - "Establish incident response policy" → Organisational
 - "Establish access control policy" → Technical
 
 **Why Wrong**: Both are "establish policy" (organisational activity). Inconsistency creates confusion during control mapping.
 
-**Correct Approach**: Apply categorization guidelines consistently.
+**Correct Approach**: Apply categorisation guidelines consistently.
 
 - "Establish incident response policy" → Organisational
 - "Establish access control policy" → Organisational

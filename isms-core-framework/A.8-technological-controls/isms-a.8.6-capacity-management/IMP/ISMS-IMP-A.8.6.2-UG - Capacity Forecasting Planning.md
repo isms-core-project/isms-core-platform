@@ -483,7 +483,7 @@ Sources:
 
 **Steps:**
 1. Consolidate all planned expansions from Sheet 4
-2. Categorize costs:
+2. Categorise costs:
 
    - **Capital Expenditure (CapEx):** Hardware purchases, one-time costs
    - **Operational Expenditure (OpEx):** Cloud costs, licensing, ongoing
@@ -510,7 +510,7 @@ Sources:
 **Quality Check:**
 
 - ✓ All expansion costs included
-- ✓ CapEx vs. OpEx categorized
+- ✓ CapEx vs. OpEx categorised
 - ✓ Quarterly breakdown provided
 - ✓ Budget status documented
 - ✓ Gaps flagged

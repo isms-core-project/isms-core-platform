@@ -74,7 +74,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 This assessment documents the web filtering TECHNOLOGY and INFRASTRUCTURE deployed in your environment. This is the foundational "WHAT do we have?" assessment that answers:
 
 - What filtering solutions are deployed? (vendor, product, version)
-- What capabilities do these solutions provide? (threat protection, URL categorization, HTTPS inspection, etc.)
+- What capabilities do these solutions provide? (threat protection, URL categorisation, HTTPS inspection, etc.)
 - What is the licensing and support status?
 - How are these solutions performing?
 - What gaps exist between deployed capabilities and policy requirements?
@@ -424,7 +424,7 @@ For each solution in Sheet 1:
 
 **Steps:**
 1. Review all "Partial" or "Not Compliant" items
-2. Categorize gaps:
+2. Categorise gaps:
 
    - Technical capability gaps
    - Licensing/support gaps
@@ -685,7 +685,7 @@ For EACH capability category, assess:
 - Sandbox/detonation capability
 - Real-time threat updates
 
-**URL Categorization & Filtering:**
+**URL Categorisation & Filtering:**
 
 - URL category database (vendor-provided)
 - Number of categories
@@ -999,7 +999,7 @@ Poor evidence:
 
 #### Purpose
 
-Assess URL categorization and content filtering capabilities across all solutions. This sheet documents what categories are available, how granular filtering is, and what custom controls exist.
+Assess URL categorisation and content filtering capabilities across all solutions. This sheet documents what categories are available, how granular filtering is, and what custom controls exist.
 
 #### What to Document
 
@@ -1026,7 +1026,7 @@ For each solution, document:
 - How many URLs are in the database?
 - How many categories exist?
 - Update frequency?
-- Coverage (what percentage of web is categorized)?
+- Coverage (what percentage of web is categorised)?
 
 **Category Granularity:**
 
@@ -1111,7 +1111,7 @@ For each solution, document:
 
 | Capability | ✅ Full | ⚠️ Partial | ❌ None |
 |------------|---------|-----------|---------|
-| **URL Database** | Comprehensive (80M+ URLs), 100+ categories, daily updates | Basic (10M URLs), limited categories, weekly updates | No URL categorization |
+| **URL Database** | Comprehensive (80M+ URLs), 100+ categories, daily updates | Basic (10M URLs), limited categories, weekly updates | No URL categorisation |
 | **Custom Categories** | Unlimited, bulk import, regex support | Limited number, manual entry only | No custom categories |
 | **Whitelist/Blacklist** | Comprehensive, wildcards, time-based | Basic lists, manual entry | No list support |
 | **Application Control** | 1000+ apps, granular control | Limited app recognition | No app control |
@@ -1145,11 +1145,11 @@ Show how your filtering supports business requirements:
 
 Common gaps to check:
 
-**Uncategorized URLs:**
+**Uncategorised URLs:**
 
-- What happens with uncategorized URLs?
+- What happens with uncategorised URLs?
 - Default action (allow/block)?
-- What percentage of web traffic is uncategorized?
+- What percentage of web traffic is uncategorised?
 - How do you handle it?
 
 **New/Emerging Categories:**
@@ -1159,9 +1159,9 @@ Common gaps to check:
 - Metaverse platforms
 - What's your policy?
 
-**False Categorization:**
+**False Categorisation:**
 
-- How often are sites miscategorized?
+- How often are sites miscategorised?
 - How do users report issues?
 - How quickly are corrections made?
 - What's the interim solution?
@@ -2221,7 +2221,7 @@ For each incident (last 90 days):
 |----------|------|----------|--------|----------|------------|------------|-------------|
 | INC-12345 | 10.01.2026 | 45 min | 200 users | Service outage | Disk full (logs not rotated) | Cleared logs, fixed rotation | No (fixed) |
 | INC-12348 | 15.01.2026 | 2 hours | All users | Performance degradation | HTTPS inspection CPU spike | Excluded heavy traffic sites | No (fixed) |
-| INC-12350 | 18.01.2026 | 15 min | 50 users | False positive | Legitimate site miscategorized | Added to whitelist, reported to vendor | Yes (recurring) |
+| INC-12350 | 18.01.2026 | 15 min | 50 users | False positive | Legitimate site miscategorised | Added to whitelist, reported to vendor | Yes (recurring) |
 | INC-12355 | 25.01.2026 | 4 hours | All users | Integration failure | SIEM not receiving logs (network issue) | Fixed network ACL | No (fixed) |
 
 **Step 4: Calculate MTTD and MTTR**
@@ -2274,7 +2274,7 @@ Identify issues that occur repeatedly:
 - **Frequency:** 2-3 times per month
 - **Impact:** 10-20 users can't access site, productivity impact
 - **Temporary Fix:** Add to whitelist each time
-- **Root Cause:** Site uses dynamic IPs/CDNs, vendor database miscategorizes
+- **Root Cause:** Site uses dynamic IPs/CDNs, vendor database miscategorises
 - **Permanent Fix:** Create wildcard whitelist entry, escalate to vendor for permanent database fix
 - **Owner:** Security Operations
 - **Status:** In progress
@@ -3108,7 +3108,7 @@ Use this assessment to drive improvements:
 **Terms used in this assessment:**
 
 - **Solution:** A web filtering technology (appliance, cloud service, endpoint agent, DNS filter)
-- **Capability:** A specific function that a solution can perform (e.g., malware scanning, URL categorization)
+- **Capability:** A specific function that a solution can perform (e.g., malware scanning, URL categorisation)
 - **Requirement:** A SHALL or MUST or SHOULD statement from policy (ISMS-POL-A.8.23)
 - **Gap:** A requirement that is not fully satisfied by deployed solutions
 - **Evidence:** Documentation that proves compliance (screenshots, reports, configs, logs)

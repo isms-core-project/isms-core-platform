@@ -57,7 +57,7 @@ and identifying gaps where requirements lack control coverage.
 
 **Assessment Scope:**
 - Requirements-to-Controls mapping matrix (requirements × controls)
-- Mapping type categorization (Primary/Secondary/Supporting/Not Applicable)
+- Mapping type categorisation (Primary/Secondary/Supporting/Not Applicable)
 - Coverage analysis and scoring per requirement
 - Gap identification (requirements without adequate controls)
 - Gap prioritization and remediation planning

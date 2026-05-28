@@ -194,7 +194,7 @@ Data Classification Prerequisites:
 Swiss FADP Compliance:
     This assessment includes Swiss Federal Act on Data Protection (FADP) requirements.
     Key focus areas:
-    • Personal data identification and categorization
+    • Personal data identification and categorisation
     • Special category personal data (sensitive data)
     • Data subject rights (access, deletion, portability)
     • Cross-border data transfer requirements

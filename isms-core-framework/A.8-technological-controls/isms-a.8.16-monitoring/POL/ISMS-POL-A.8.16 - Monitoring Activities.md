@@ -147,7 +147,7 @@ This policy does NOT:
 
 ## Regulatory Applicability
 
-Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicability Framework)**. 
+Regulatory requirements are categorised per **ISMS-POL-00 (Regulatory Applicability Framework)**. 
 
 **Tier 1: Mandatory Compliance**
 
@@ -498,7 +498,7 @@ For each severity level, [Organisation] defines:
 
 **False Positive Handling**:
 
-- Document reason for false positive (baseline issue, detection rule overly sensitive, legitimate activity miscategorized)
+- Document reason for false positive (baseline issue, detection rule overly sensitive, legitimate activity miscategorised)
 - Submit detection rule tuning request to Security Engineering
 - Track false positive rates per rule and overall
 - Review high-FP rules quarterly for tuning or deactivation

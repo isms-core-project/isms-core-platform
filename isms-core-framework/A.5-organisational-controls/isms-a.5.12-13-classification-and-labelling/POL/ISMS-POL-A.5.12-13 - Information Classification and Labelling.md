@@ -134,7 +134,7 @@ Where an external party's classification scheme differs from [Organisation]'s fo
 
 ## Regulatory Applicability
 
-Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicability Framework)**.
+Regulatory requirements are categorised per **ISMS-POL-00 (Regulatory Applicability Framework)**.
 
 **Tier 1: Mandatory Compliance**
 
@@ -159,7 +159,7 @@ Apply only when specific business conditions trigger applicability:
 These frameworks inform implementation but do not constitute mandatory compliance unless contractually required:
 
 - ISO 27002:2022 Implementation Guidance for A.5.12-13
-- NIST SP 800-53 (Security Categorization)
+- NIST SP 800-53 (Security Categorisation)
 - CIS Controls v8.1 (Data Classification and Protection)
 - Government classification schemes (for reference in public sector work)
 
@@ -498,7 +498,7 @@ Evidence required to demonstrate this policy is operationally effective:
 
 | Term | Definition |
 |------|------------|
-| **Classification** | The process of categorizing information based on its sensitivity and the potential impact of unauthorised disclosure, modification, or unavailability |
+| **Classification** | The process of categorising information based on its sensitivity and the potential impact of unauthorised disclosure, modification, or unavailability |
 | **Labelling** | The application of visible or metadata markers to information indicating its classification level |
 | **Information Owner** | The individual or role accountable for the classification, handling, and protection of specific information assets |
 | **Need-to-Know** | A principle that restricts access to information to those who require it to perform their job functions |

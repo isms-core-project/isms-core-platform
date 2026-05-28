@@ -442,7 +442,7 @@ Sector-specific requirements apply where [Organisation]'s business activities tr
 | FINMA Circular 2023/1 | Swiss financial institution | Security for financial applications |
 | PCI DSS v4.0.1 | Payment card processing | Requirement 6: Secure development |
 
-**Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulatory categorization.**
+**Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulatory categorisation.**
 
 ---
 

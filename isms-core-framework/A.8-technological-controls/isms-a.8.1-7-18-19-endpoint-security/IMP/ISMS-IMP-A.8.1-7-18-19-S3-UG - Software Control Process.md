@@ -384,7 +384,7 @@ Collect from multiple sources:
 - Department heads (role-specific software)
 - Previous assessments or audits
 
-**Step 2: Categorize Software**
+**Step 2: Categorise Software**
 
 **Software Categories:**
 ```
@@ -622,7 +622,7 @@ For each software in Sheet 2 (Installed_Software):
     Flag as UNAPPROVED VERSION
 ```
 
-**Step 2: Categorize Unauthorised Software**
+**Step 2: Categorise Unauthorised Software**
 
 **Categories:**
 

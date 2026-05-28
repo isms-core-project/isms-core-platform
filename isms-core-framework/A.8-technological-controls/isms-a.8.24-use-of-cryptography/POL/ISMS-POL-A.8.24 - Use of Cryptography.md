@@ -117,7 +117,7 @@ This policy does NOT:
 
 ## Regulatory Applicability
 
-Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicability Framework)**. 
+Regulatory requirements are categorised per **ISMS-POL-00 (Regulatory Applicability Framework)**. 
 
 **Tier 1: Mandatory Compliance**
 
@@ -672,7 +672,7 @@ This policy addresses cryptographic requirements from:
 
 **Crypto Agility**: Organisational capability to rapidly change cryptographic algorithms without major system re-architecture.
 
-**Data Classification**: [Organisation]'s categorization of information based on confidentiality, integrity, and availability requirements (Public, Internal, Confidential, Restricted).
+**Data Classification**: [Organisation]'s categorisation of information based on confidentiality, integrity, and availability requirements (Public, Internal, Confidential, Restricted).
 
 **Perfect Forward Secrecy (PFS)**: Cryptographic property where compromise of long-term keys does not compromise past session keys.
 

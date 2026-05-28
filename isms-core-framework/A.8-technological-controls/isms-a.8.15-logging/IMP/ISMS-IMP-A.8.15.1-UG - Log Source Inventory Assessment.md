@@ -193,7 +193,7 @@ Before starting this assessment, gather:
 Step 1: Gather System Inventory
   |
   v
-Step 2: Categorize Systems (by type, criticality, data classification)
+Step 2: Categorise Systems (by type, criticality, data classification)
   |
   v
 Step 3: Determine Required Events (per ISMS-POL-A.8.15, Section 2.1 + Annex A)
@@ -225,7 +225,7 @@ Step 8: Approval & Sign-Off (3-level approval)
 5. Add security tools from security architecture documentation
 6. **Result**: Comprehensive system list (typically 100-1000+ entries)
 
-**Phase 2: System Categorization (Sheet 2)**
+**Phase 2: System Categorisation (Sheet 2)**
 
 For each system, document:
 

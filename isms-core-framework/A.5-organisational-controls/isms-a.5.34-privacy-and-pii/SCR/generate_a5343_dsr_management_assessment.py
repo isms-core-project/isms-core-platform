@@ -81,7 +81,7 @@ obligations for timely DSR processing.
 - Data validation with GDPR/FADP rights dropdown lists (Art. 15-22, Art. 25-28)
 - Conditional formatting for SLA compliance status (Green/Amber/Red traffic lights)
 - Automated deadline calculation with 30-day GDPR countdown
-- Exception categorization with legitimacy validation
+- Exception categorisation with legitimacy validation
 - Protected formulas with unprotected input cells
 - Rights-specific deep-dive worksheets for complex requests
 - Evidence linkage for audit traceability
@@ -135,7 +135,7 @@ Post-Generation Steps:
     2. Configure SLA timelines based on applicable regulations (GDPR 30 days, FADP variations)
     3. Define identity verification procedures and risk thresholds
     4. Set up request intake process (forms, email templates, portal configuration)
-    5. Train privacy team on DSR categorization and exception handling
+    5. Train privacy team on DSR categorisation and exception handling
     6. Establish escalation procedures for complex or legally ambiguous requests
     7. Create evidence collection protocols (request emails, identity verification, fulfillment proof)
     8. Configure automated SLA alerts (15-day warning, 25-day critical, 30-day breach)
@@ -221,7 +221,7 @@ Review and update assessment:
 **Quality Assurance:**
 Have DPO/Privacy Officer and Legal counsel validate DSR handling procedures
 before using results for compliance reporting, regulatory filings, or audit
-evidence. Conduct periodic quality checks of request categorization accuracy
+evidence. Conduct periodic quality checks of request categorisation accuracy
 and fulfillment completeness.
 
 **Regulatory Alignment:**

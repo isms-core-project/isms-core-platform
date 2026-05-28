@@ -1297,7 +1297,7 @@ This sheet contains FORMULAS that automatically calculate compliance metrics bas
 - Weights: Inventory 15%, Access Control 20%, Appropriate Access 25%, Orphaned 15%, Reviews 15%, Deprovisioning 10%
 - Target: ≥85%
 
-#### Risk Categorization
+#### Risk Categorisation
 
 - 🟢 Low Risk: Score ≥85%
 - 🟡 Medium Risk: Score 70-84%
@@ -1514,7 +1514,7 @@ Before submitting for approval, complete quality checklist (see section below).
 - Information Security Manager verifies:
   - Assessment is complete (no missing data)
   - Compliance scoring is calculated correctly
-  - Gaps are appropriately categorized by risk
+  - Gaps are appropriately categorised by risk
   - Remediation plans are reasonable
   - Evidence is collected
 - Information Security Manager provides recommendation: Approve / Approve with Conditions / Reject
@@ -2054,7 +2054,7 @@ Before submitting assessment for approval, verify:
 
 - [ ] All formulas calculate correctly
 - [ ] Overall score is accurate
-- [ ] Risk categorization is appropriate
+- [ ] Risk categorisation is appropriate
 
 **Gap Analysis:**
 

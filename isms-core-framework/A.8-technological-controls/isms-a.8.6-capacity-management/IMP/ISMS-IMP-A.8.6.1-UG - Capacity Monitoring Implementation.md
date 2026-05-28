@@ -832,7 +832,7 @@ Sheet1-Evidence-Network-Diagram-2026-01-15.pdf
 - [ ] Non-production resources documented (dev, test, DR)
 - [ ] Cloud resources included (if applicable)
 - [ ] Virtual and container resources included
-- [ ] Resource types correctly categorized
+- [ ] Resource types correctly categorised
 - [ ] Environment classification accurate
 - [ ] Criticality assigned based on business impact
 - [ ] Monitoring status verified (not assumed)
@@ -1748,7 +1748,7 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Non-production resources documented
 - [ ] Cloud resources included (if applicable)
 - [ ] Virtual and container resources included
-- [ ] Resource types correctly categorized
+- [ ] Resource types correctly categorised
 - [ ] Environment classification accurate
 - [ ] Criticality assigned based on business impact
 - [ ] Monitoring status verified (not assumed)
@@ -1959,7 +1959,7 @@ This assessment requires three levels of review and approval to ensure quality, 
 1. Review resource inventory (Sheet 1):
 
    - Is inventory complete? Any missing resources?
-   - Are resource types correctly categorized?
+   - Are resource types correctly categorised?
    - Is criticality assignment reasonable?
 
 2. Review utilization data (Sheets 2-5):

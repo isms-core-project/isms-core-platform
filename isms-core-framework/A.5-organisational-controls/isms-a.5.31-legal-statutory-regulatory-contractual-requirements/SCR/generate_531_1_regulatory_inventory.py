@@ -50,7 +50,7 @@ of all legal, statutory, regulatory, and contractual requirements applicable
 to [Organisation]'s information security management system.
 
 **Purpose:**
-Enables systematic identification, categorization, and tracking of all regulatory
+Enables systematic identification, categorisation, and tracking of all regulatory
 obligations against ISO 27001:2022 Control A.5.31 requirements, providing the
 foundation for the entire regulatory compliance framework.
 
@@ -73,7 +73,7 @@ foundation for the entire regulatory compliance framework.
 3. Summary_Metrics - Statistical dashboard with tier distribution
 
 **Key Features:**
-- Three-tier categorization system (Tier 1: Mandatory, Tier 2: Conditional, Tier 3: Informational)
+- Three-tier categorisation system (Tier 1: Mandatory, Tier 2: Conditional, Tier 3: Informational)
 - Data validation with jurisdiction and status dropdown lists
 - Conditional formatting for visual tier and status indication
 - Applicability status tracking (Applicable/Conditional/Not Applicable/Under Review)
@@ -129,7 +129,7 @@ Output:
     Location: WKBK/ (or specified output path)
 
 Post-Generation Steps:
-    1. Review three-tier categorization methodology
+    1. Review three-tier categorisation methodology
     2. Identify all potentially applicable regulations for [Organisation]
     3. Complete initial regulatory inventory population
     4. Conduct applicability assessments (use Workbook 2)
@@ -174,7 +174,7 @@ CHANGE HISTORY
 
 Version 1.0 - [Date to be set]
     - Initial release
-    - Implements three-tier regulatory categorization framework
+    - Implements three-tier regulatory categorisation framework
     - Supports comprehensive regulatory inventory management
     - Integrated with POL-00 Regulatory Applicability Framework
     - Sample data across EU, Swiss, US, and international regulations

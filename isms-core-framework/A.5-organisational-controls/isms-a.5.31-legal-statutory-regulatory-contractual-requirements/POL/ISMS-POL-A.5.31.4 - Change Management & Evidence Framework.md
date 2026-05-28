@@ -468,7 +468,7 @@ All detected regulatory changes SHALL be systematically logged in a Regulatory C
 
 - **Regulation Name**: Full regulation name for human readability
 
-- **Type of Change**: Categorization (see Section 2.3.2)
+- **Type of Change**: Categorisation (see Section 2.3.2)
   - New Regulation, Amendment, Repeal, Guidance, Enforcement Action
 
 - **Change Description**: Brief summary of change

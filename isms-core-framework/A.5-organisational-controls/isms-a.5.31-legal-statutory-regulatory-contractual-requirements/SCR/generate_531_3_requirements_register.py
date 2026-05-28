@@ -25,11 +25,11 @@ SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANISATION
 --------------------------------------------------------------------------------
 
 This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
-your organisation's specific requirements extraction methodology, categorization
+your organisation's specific requirements extraction methodology, categorisation
 taxonomy, and implementation tracking needs.
 
 Key customization areas:
-1. Requirement categorization scheme (adapt to your control framework)
+1. Requirement categorisation scheme (adapt to your control framework)
 2. Priority and criticality definitions (align with your risk methodology)
 3. Implementation status tracking (match your project management processes)
 4. Requirement granularity guidelines (specific to your operational model)
@@ -53,12 +53,12 @@ structured, implementable requirements that can be mapped to ISO 27001 controls.
 Enables systematic extraction, interpretation, and registration of regulatory
 requirements against ISO 27001:2022 Control A.5.31, providing the critical link
 between legal obligations and operational controls through structured requirement
-parsing and categorization.
+parsing and categorisation.
 
 **Assessment Scope:**
 - Legal requirement text extraction from source regulations
 - Requirement interpretation into actionable statements
-- Requirement categorization (Technical/Organisational/Reporting/Legal/Contractual)
+- Requirement categorisation (Technical/Organisational/Reporting/Legal/Contractual)
 - Priority and criticality assessment
 - Implementation status tracking
 - Regulatory citation mapping (regulation → article → section → clause)
@@ -76,7 +76,7 @@ parsing and categorization.
 
 **Key Features:**
 - Structured three-level requirement hierarchy (Regulation → Article → Requirement)
-- Multi-dimensional categorization taxonomy
+- Multi-dimensional categorisation taxonomy
 - Data validation with category and status dropdown lists
 - Conditional formatting for priority and status visualization
 - Requirement versioning and change tracking
@@ -138,7 +138,7 @@ Post-Generation Steps:
        b. Read complete regulation text (do NOT rely on summaries)
        c. Extract all relevant requirements systematically
        d. Rewrite requirements in actionable form ([Organisation] SHALL/MUST...)
-       e. Categorize each requirement (Technical/Organisational/etc.)
+       e. Categorise each requirement (Technical/Organisational/etc.)
        f. Assign priority and criticality
        g. Document regulatory citation precisely
     4. Consolidate all per-regulation extractions into Requirements_Register
@@ -180,7 +180,7 @@ CHANGE HISTORY
 Version 1.0 - [Date to be set]
     - Initial release
     - Implements structured requirements extraction framework
-    - Supports multi-level requirement categorization
+    - Supports multi-level requirement categorisation
     - Integrated traceability matrix
     - Sample GDPR extraction as reference
 
@@ -376,7 +376,7 @@ Before finalizing requirements extraction:
 - Extract ALL relevant requirements (not just obvious ones)
 - Rewrite requirements in actionable form ([Organisation] SHALL...)
 - Appropriate granularity (not too broad, not too granular)
-- Complete categorization and priority assignment
+- Complete categorisation and priority assignment
 - Precise regulatory citation for traceability
 - Legal counsel reviewed complex interpretations
 - No duplicate requirements (check for overlaps)

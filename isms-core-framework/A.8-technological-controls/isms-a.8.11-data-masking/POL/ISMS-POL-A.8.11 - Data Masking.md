@@ -157,7 +157,7 @@ This policy does NOT:
 
 ## Regulatory Applicability
 
-Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicability Framework)**. 
+Regulatory requirements are categorised per **ISMS-POL-00 (Regulatory Applicability Framework)**. 
 
 **Tier 1: Mandatory Compliance**
 
@@ -891,7 +891,7 @@ Implementation Layer (Assessment & Evidence - ISMS Governed)
 
 **Compensating Control**: Alternative security control implemented when primary control (masking) is not technically or operationally feasible, providing equivalent risk reduction.
 
-**Data Classification**: Process of categorizing data based on sensitivity, criticality, and regulatory requirements to determine appropriate protection measures including masking.
+**Data Classification**: Process of categorising data based on sensitivity, criticality, and regulatory requirements to determine appropriate protection measures including masking.
 
 **Data Custodian**: IT operations personnel responsible for deploying and maintaining technical infrastructure including masking solutions. Custodians implement requirements defined by Data Owners.
 

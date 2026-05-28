@@ -198,7 +198,7 @@ Phase 3: Completeness Assessment (Day 7-8)
 ├─ Check mandatory attribute population
 ├─ Identify missing fields
 ├─ Calculate completeness percentage
-└─ Categorize gaps (systemic vs. isolated)
+└─ Categorise gaps (systemic vs. isolated)
 
 Phase 4: Currency Assessment (Day 9-10)
 ├─ Check LastUpdated dates against policy thresholds
@@ -216,7 +216,7 @@ Phase 6: Policy Compliance Verification (Day 13-15)
 ├─ Verify against each SHALL requirement
 ├─ Document evidence of compliance
 ├─ Identify non-compliance gaps
-└─ Categorize severity (Critical, High, Medium, Low)
+└─ Categorise severity (Critical, High, Medium, Low)
 
 Phase 7: Metrics & Reporting (Day 16-18)
 ├─ Calculate quality scores
@@ -869,7 +869,7 @@ Create list of stale records (exceeding threshold):
 From ISMS-POL-A.5.9, the SHALL requirements are:
 
 - **A.5.9-R1**: [Organisation] SHALL maintain an inventory of information and associated assets
-- **A.5.9-R2**: [Organisation] SHALL categorize assets per defined taxonomy
+- **A.5.9-R2**: [Organisation] SHALL categorise assets per defined taxonomy
 - **A.5.9-R3**: [Organisation] SHALL document mandatory attributes for each inventoried asset
 - **A.5.9-R4**: [Organisation] SHALL assign ownership to all inventoried assets
 - **A.5.9-R5**: [Organisation] SHALL review and update the inventory on a defined schedule

@@ -566,7 +566,7 @@ When collecting evidence:
 - [ ] Configuration settings verified (not assumed)
 - [ ] Evidence supports compliance claims
 - [ ] Encryption algorithms correctly identified
-- [ ] MFA methods accurately categorized
+- [ ] MFA methods accurately categorised
 - [ ] Version numbers verified
 
 #### Evidence Quality Checks

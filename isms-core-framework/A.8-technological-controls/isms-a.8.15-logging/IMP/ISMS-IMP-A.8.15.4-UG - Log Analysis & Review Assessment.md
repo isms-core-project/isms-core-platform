@@ -318,7 +318,7 @@ Summary Dashboards (per workbook)
 **SIEM Use Case Analysis**:
 
 - Export use case/correlation rule list from SIEM
-- Categorize by MITRE ATT&CK tactics/techniques
+- Categorise by MITRE ATT&CK tactics/techniques
 - Assess maturity (basic detection, tuned, well-documented, regularly tested)
 
 **Alert Metrics Analysis**:

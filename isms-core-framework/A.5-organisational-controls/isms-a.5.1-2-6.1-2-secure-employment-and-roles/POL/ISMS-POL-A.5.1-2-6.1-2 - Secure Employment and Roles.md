@@ -151,7 +151,7 @@ This policy establishes WHAT governance structures are required, WHO holds secur
 - ISO/IEC 27002:2022: Implementation guidance
 - CIS Controls v8.1: Control 14
 
-For complete regulatory categorization, refer to ISMS-POL-00.
+For complete regulatory categorisation, refer to ISMS-POL-00.
 
 ---
 

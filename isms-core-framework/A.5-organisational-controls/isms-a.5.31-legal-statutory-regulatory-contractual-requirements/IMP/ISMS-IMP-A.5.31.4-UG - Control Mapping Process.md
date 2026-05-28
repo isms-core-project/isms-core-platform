@@ -139,7 +139,7 @@ For each requirement:
          ↓
 [STEP 5: Gap Analysis & Prioritization]
 
-- Categorize gaps (Complete, Partial, Implementation)
+- Categorise gaps (Complete, Partial, Implementation)
 - Prioritize by regulatory tier, deadline, severity
 - Consult stakeholders (legal, control owners)
 
@@ -648,7 +648,7 @@ ELSE:
 
 **Output**: List of requirements with gaps
 
-### Gap Categorization
+### Gap Categorisation
 
 **Complete Gap**: Requirement has NO control mappings (not even Secondary or Supporting)
 
@@ -1196,7 +1196,7 @@ How will we know remediation is complete?
 **Quality Checks**:
 
 - [ ] All gaps from Control Mapping Matrix documented
-- [ ] Gap categorization (Complete/Partial/Implementation) accurate
+- [ ] Gap categorisation (Complete/Partial/Implementation) accurate
 - [ ] Priorities assigned using framework
 - [ ] Remediation approaches defined
 - [ ] Responsible parties assigned
@@ -1299,7 +1299,7 @@ Date: 2025-01-15
 
 **Routing**:
 1. **Control Owners** (affected by new mappings): Review and confirm controls can satisfy mapped requirements
-2. **Compliance Officer**: Review for regulatory accuracy, approve gap categorization
+2. **Compliance Officer**: Review for regulatory accuracy, approve gap categorisation
 3. **Legal Counsel**: Review for legal sufficiency, approve CRITICAL/HIGH gap remediation plans
 4. **ISMS Manager**: Overall approval of mapping and gap register
 5. **Executive Management** (for significant gaps/budgets): Approve resource allocation for remediation
@@ -1307,7 +1307,7 @@ Date: 2025-01-15
 **Approval Criteria**:
 
 - [ ] Mappings accurate and defensible to auditor
-- [ ] Gaps correctly identified and categorized
+- [ ] Gaps correctly identified and categorised
 - [ ] Remediation plans realistic and resourced
 - [ ] Priorities aligned with regulatory risk
 - [ ] Budget approved for CRITICAL and HIGH priority gaps
@@ -1612,13 +1612,13 @@ See Section 2.6.2 for complete template
 **From IMP-5.31.2 (Requirements Extraction)**:
 
 - Requirements Register with all extracted requirements
-- Requirements categorized and approved
+- Requirements categorised and approved
 - Requirements prioritized
 
 **From IMP-5.31.3 (Applicability Assessment)**:
 
 - Regulatory Inventory (which regulations apply)
-- Tier categorization (Mandatory, Conditional, Informational)
+- Tier categorisation (Mandatory, Conditional, Informational)
 
 **From ISMS Implementation**:
 
@@ -1750,7 +1750,7 @@ See Section 2.6.2 for complete template
 | Role | Responsibilities in Control Mapping Process |
 |------|---------------------------------------------|
 | **ISMS Manager** | - Lead mapping process<br>- Coordinate stakeholders<br>- Approve final mappings<br>- Oversee gap remediation |
-| **Compliance Officer** | - Validate regulatory accuracy of mappings<br>- Approve gap categorization<br>- Prioritize gaps based on regulatory risk |
+| **Compliance Officer** | - Validate regulatory accuracy of mappings<br>- Approve gap categorisation<br>- Prioritize gaps based on regulatory risk |
 | **Control Owners** | - Confirm controls can satisfy mapped requirements<br>- Provide implementation details<br>- Execute gap remediation for their controls |
 | **Legal Counsel** | - Interpret complex requirements<br>- Validate legal sufficiency of mappings<br>- Approve CRITICAL/HIGH gap remediation approaches |
 | **Information Security Team** | - Technical assessment of control capabilities<br>- Implement technical controls for gap remediation |

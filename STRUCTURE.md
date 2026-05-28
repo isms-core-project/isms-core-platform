@@ -230,12 +230,12 @@ isms-core-platform/
 │   ├── workers/                           # Celery task definitions
 │   └── entrypoint.sh                      # Container startup: migrations + seed
 │
-├── frontend/                              # React 19 + MUI 6 WebUI
+├── frontend-angular/                      # Angular 21 + Material 3 WebUI
 │   ├── src/
-│   │   ├── pages/                         # 45+ page components
-│   │   ├── components/                    # Shared UI components
-│   │   └── api/                           # API client layer
-│   └── vite.config.ts
+│   │   ├── app/pages/                     # 45+ page components
+│   │   ├── app/shared/                    # Shared UI components
+│   │   └── app/api/                       # API client layer
+│   └── angular.json
 │
 ├── nginx/                                 # Reverse proxy configuration
 │   ├── nginx.conf                         # Main config: TLS termination, routing
@@ -285,7 +285,7 @@ isms-core-platform/
 |-----------|------|
 | `isms-core-nginx` | TLS termination + reverse proxy |
 | `isms-core-backend` | FastAPI REST API |
-| `isms-core-frontend` | React 19 + MUI 6 WebUI |
+| `isms-core-frontend` | Angular 21 + Material 3 WebUI |
 | `isms-core-postgres` | PostgreSQL 18 — primary data store |
 | `isms-core-redis` | Redis 8 — session cache + Celery broker |
 | `isms-core-opensearch` | OpenSearch 3.x — full-text search + threat intelligence |

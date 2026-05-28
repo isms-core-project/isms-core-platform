@@ -485,7 +485,7 @@ Before starting this assessment, gather:
    - OR collect findings from spreadsheet reviews
    - OR gather manager sign-off forms
 
-2. **Categorize Findings**:
+2. **Categorise Findings**:
 
    - **Access Confirmed**: Reviewer certified access is appropriate (no action)
    - **Access to Remove**: Reviewer identified inappropriate access (removal request)
@@ -551,7 +551,7 @@ Before starting this assessment, gather:
 
    - Days from finding to removal = Removal Executed Date - Review Date
    - Policy requirement: ≤5 business days
-   - Categorize: On-time (≤5 days), Late (6-10 days), Very Late (>10 days)
+   - Categorise: On-time (≤5 days), Late (6-10 days), Very Late (>10 days)
 
 **Deliverable:** Access removal execution and verification
 
@@ -900,7 +900,7 @@ Before starting this assessment, gather:
 
 ---
 
-### Pitfall 7: Review Findings Not Categorized
+### Pitfall 7: Review Findings Not Categorised
 
 ❌ **Mistake:** Reviewers just say "reviewed" without documenting confirmed/remove/justify
 

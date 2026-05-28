@@ -1497,7 +1497,7 @@ For each role, document:
 - **Question:** What features does the incident ticketing system provide?
 - **Checkbox (multiple selections):**
   - ☐ Incident creation and assignment
-  - ☐ Severity and categorization
+  - ☐ Severity and categorisation
   - ☐ Timeline/chronology tracking
   - ☐ Evidence attachment and storage
   - ☐ Task management (subtasks, workflows)

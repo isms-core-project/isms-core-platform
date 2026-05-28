@@ -442,7 +442,7 @@ For each utility:
 #### Common Mistakes to Avoid
 
 ❌ **Forgetting built-in utilities** - Focusing only on installed tools, missing regedit, Task Manager  
-❌ **Not categorizing** - Treating all privileged utilities the same  
+❌ **Not categorising** - Treating all privileged utilities the same  
 ❌ **No risk assessment** - Missing that some tools can disable security  
 ❌ **No prevalence data** - Not knowing which endpoints have which tools  
 ❌ **Ignoring unauthorised tools** - Remote access tools installed by users  
@@ -1432,7 +1432,7 @@ For each active privileged account:
 
 ### Accuracy (10 items)
 
-- [ ] Utility categorization correct
+- [ ] Utility categorisation correct
 - [ ] Risk levels justified
 - [ ] Access control mechanisms verified
 - [ ] RBAC groups accurate

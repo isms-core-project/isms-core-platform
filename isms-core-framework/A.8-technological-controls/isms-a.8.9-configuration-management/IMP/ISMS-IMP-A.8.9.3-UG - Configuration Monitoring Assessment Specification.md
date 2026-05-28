@@ -762,7 +762,7 @@ Not all assets require identical monitoring:
 
 **Formulas**:
 
-- Column P (False Positive Category): Auto-categorize based on reason
+- Column P (False Positive Category): Auto-categorise based on reason
 
 ```
   =IF(OR(G3="Tool Misconfiguration",G3="Tool Bug"),"Systemic (tool issue)",IF(G3="Incorrect Baseline","Baseline Issue","One-Time (environmental)"))
@@ -1247,7 +1247,7 @@ Status:
 1. Establish drift detection log process
 2. Integrate monitoring tools with central logging
 3. Train team on documenting drift incidents
-4. Define drift categorization criteria
+4. Define drift categorisation criteria
 5. Set up alerting for critical drift
 
 **Phase 3: Ongoing Operations** (Continuous)

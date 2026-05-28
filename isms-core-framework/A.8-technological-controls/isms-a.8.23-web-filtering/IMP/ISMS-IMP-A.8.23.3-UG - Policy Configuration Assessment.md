@@ -937,7 +937,7 @@ This section provides detailed guidance for completing each field in the assessm
 **Q: Policy Area**
 
 - **Dropdown:** Threat Protection / Category Filtering / Custom Lists / Exceptions / User Policies / AUP Alignment / Review Process
-- **Categorize gaps** for tracking and reporting
+- **Categorise gaps** for tracking and reporting
 
 **Q: Gap Description**
 

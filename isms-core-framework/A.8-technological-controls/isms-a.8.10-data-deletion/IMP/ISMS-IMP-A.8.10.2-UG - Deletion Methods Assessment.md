@@ -642,7 +642,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Self-Check Before Submitting for Approval:**
 
 - [ ] All media types documented (no major systems omitted)
-- [ ] Deletion methods categorized per NIST SP 800-88 Rev. 2
+- [ ] Deletion methods categorised per NIST SP 800-88 Rev. 2
 - [ ] SSD deletion methods appropriate (NOT standard overwrite)
 - [ ] Cloud deletion verified (not assumed based on provider claims)
 - [ ] Database deletion includes transaction log management
@@ -914,7 +914,7 @@ For each assessment area, gather supporting documentation:
 ## Audit-Readiness Tips
 
 **What Auditors Will Look For:**
-1. **NIST SP 800-88 Rev. 2 Alignment:** Are deletion methods categorized correctly (Clear/Purge/Destroy)?
+1. **NIST SP 800-88 Rev. 2 Alignment:** Are deletion methods categorised correctly (Clear/Purge/Destroy)?
 2. **Data Classification Match:** Are Confidential/Restricted systems using Purge or Destroy (not just Clear)?
 3. **SSD-Specific Methods:** Are SSDs being sanitized appropriately (not standard overwrite)?
 4. **Verification Evidence:** Has deletion effectiveness been tested and documented?

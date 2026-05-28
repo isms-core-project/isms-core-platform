@@ -708,9 +708,9 @@ def create_change_process_workflow(ws, styles):
 
     stages = [
         (1, "Change Request Initiation", "How changes are requested"),
-        (2, "Initial Assessment & Screening", "Validation and categorization"),
+        (2, "Initial Assessment & Screening", "Validation and categorisation"),
         (3, "Risk & Impact Assessment", "Evaluate change risks"),
-        (4, "Change Categorization", "Standard/Normal/Emergency"),
+        (4, "Change Categorisation", "Standard/Normal/Emergency"),
         (5, "CAB Scheduling (if required)", "Schedule review meeting"),
         (6, "CAB Review & Discussion", "Formal review process"),
         (7, "Change Authorisation", "Approval decision"),

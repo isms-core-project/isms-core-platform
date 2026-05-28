@@ -270,7 +270,7 @@ You'll be verifying compliance with these requirements in the assessment.
 **STEP 1:** Review S2 findings for exception candidates
 
 - Export list of non-compliant systems from S2 assessment
-- Categorize by reason for non-compliance
+- Categorise by reason for non-compliance
 - Prioritize by system criticality
 
 **STEP 2:** Research technical constraints

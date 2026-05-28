@@ -54,7 +54,7 @@ contractual scope.
 Enables systematic, auditable, and repeatable determination of regulatory
 applicability against ISO 27001:2022 Control A.5.31 requirements, providing
 documented rationale for compliance obligations and supporting evidence-based
-tier categorization decisions.
+tier categorisation decisions.
 
 **Assessment Scope:**
 - Geographic scope analysis (jurisdictional presence and data processing locations)

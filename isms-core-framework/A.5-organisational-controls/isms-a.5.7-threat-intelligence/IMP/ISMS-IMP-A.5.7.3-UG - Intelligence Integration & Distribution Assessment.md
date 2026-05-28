@@ -679,7 +679,7 @@ A prevented incident is a situation where:
    - Solicit feedback from recipients (surveys, emails, conversations)
    - Document feedback received
    - Rate feedback: Positive, Neutral, Negative
-   - Categorize feedback: Timeliness, Relevance, Actionability, Quality, Format
+   - Categorise feedback: Timeliness, Relevance, Actionability, Quality, Format
    - Document requested improvements
    - Track actions taken based on feedback
 

@@ -73,7 +73,7 @@ Regulations are written in legal language by legislators and regulators. Securit
 
 The methodology defined in this document solves this challenge through:
 1. **Systematic requirements extraction** - parsing regulatory text into discrete, actionable requirements
-2. **Requirements categorization** - organising requirements by nature (technical, organisational, reporting, operational)
+2. **Requirements categorisation** - organising requirements by nature (technical, organisational, reporting, operational)
 3. **Control mapping** - identifying which ISO 27001 Annex A controls satisfy each requirement
 4. **Gap analysis** - identifying where requirements exist without corresponding controls
 5. **Traceability** - maintaining complete audit trail from regulation through requirement to control to evidence
@@ -229,9 +229,9 @@ Ask these questions when determining extraction granularity:
 
 **General Principle**: Extract requirements at the level where the regulation ACTUALLY mandates specificity. If regulation says "encryption", don't add "AES-256". If regulation says "AES-256", don't generalize to "encryption".
 
-## Requirements Categorization
+## Requirements Categorisation
 
-Once extracted, requirements are categorized by their nature to facilitate control mapping and implementation assignment. Each requirement may fall into one or more categories.
+Once extracted, requirements are categorised by their nature to facilitate control mapping and implementation assignment. Each requirement may fall into one or more categories.
 
 ### Technical Requirements
 
@@ -335,9 +335,9 @@ Requirements that mandate specific operational procedures, business continuity m
 - Business continuity controls (A.5.29 Information security during disruption, A.5.30 ICT readiness for business continuity)
 - Compliance and audit controls (A.5.36 Compliance with policies, A.5.37 Documented operating procedures)
 
-### Purpose of Categorization
+### Purpose of Categorisation
 
-Categorization serves multiple purposes:
+Categorisation serves multiple purposes:
 
 **Control Mapping Efficiency**: 
 
@@ -611,7 +611,7 @@ These principles govern the requirements extraction process to ensure consistenc
 - Use consistent language across requirements from different regulations
   - Example: If "data at rest" is term used in Requirement 1, use same term in Requirement 2, not "stored data"
 - Apply same granularity guidelines across all extractions
-- Use same categorization logic for similar requirements
+- Use same categorisation logic for similar requirements
 - Rationale: Inconsistency creates confusion, complicates control mapping, appears unprofessional to auditors
 
 **Principle 6: No Interpretation Creep**
@@ -629,7 +629,7 @@ These principles govern the requirements extraction process to ensure consistenc
   - Interpretation is legally accurate
   - No mandatory requirements overlooked
   - No obligations added through interpretation
-  - Categorization aligns with regulatory intent
+  - Categorisation aligns with regulatory intent
 - Document legal review (Reviewed By field)
 - Rationale: Requirements extraction has legal implications; legal expertise is essential for accuracy
 

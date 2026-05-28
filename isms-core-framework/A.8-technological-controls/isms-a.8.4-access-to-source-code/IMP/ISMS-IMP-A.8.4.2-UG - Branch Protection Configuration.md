@@ -1005,7 +1005,7 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - Formula: (Configuration Rate × 40%) + (PR Enforcement × 30%) + (Status Checks × 20%) + (Signed Commits × 10%)
 - Target: ≥85%
 
-#### Risk Categorization
+#### Risk Categorisation
 
 - 🟢 Low Risk: Score ≥85%
 - 🟡 Medium Risk: Score 70-84%
@@ -1502,7 +1502,7 @@ Before submitting assessment for approval:
 
 - [ ] All formulas calculate correctly
 - [ ] Overall score is accurate
-- [ ] Risk categorization appropriate
+- [ ] Risk categorisation appropriate
 
 **Gap Analysis:**
 

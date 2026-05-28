@@ -2750,7 +2750,7 @@ Consolidate financial data for all cloud services, analyse spending patterns, id
 ### How to Complete
 
 1. Export billing data from each cloud provider console (monthly or quarterly)
-2. Categorize spend by service type (IaaS, PaaS, SaaS), department, and cost centre
+2. Categorise spend by service type (IaaS, PaaS, SaaS), department, and cost centre
 3. Identify top 10 services by spend and flag any with >10% quarter-over-quarter increase
 4. Cross-reference contract renewal dates and flag renewals within 90 days
 5. Document optimization opportunities (right-sizing, reserved instances, unused resources)
@@ -3384,7 +3384,7 @@ Move beyond periodic assessments:
 **Assessment Terms:**
 
 - **Inventory:** Complete list of all cloud services
-- **Classification:** Categorization by data type, criticality, etc.
+- **Classification:** Categorisation by data type, criticality, etc.
 - **Criticality:** Business impact rating if service unavailable
 - **Exit Strategy:** Plan for migrating away from cloud service
 - **Lock-In:** Factors preventing easy migration

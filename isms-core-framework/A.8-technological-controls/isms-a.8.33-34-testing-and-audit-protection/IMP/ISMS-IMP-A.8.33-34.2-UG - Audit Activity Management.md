@@ -438,7 +438,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 
 **Quality Check:**
 
-- Is ALL audit evidence categorized?
+- Is ALL audit evidence categorised?
 - Are sensitive materials encrypted?
 - Are retention periods defined?
 - Is destruction method appropriate?

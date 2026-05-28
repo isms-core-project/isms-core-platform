@@ -1218,7 +1218,7 @@ Change: ↑ +15% (Significant Improvement)
 From each project's A.5.8.1 (Sheet 8: Gap Analysis):
 
 - Pull all incomplete activities where Status = ⚠️ or ❌ and Required = "Required"
-- Categorize by phase and activity type
+- Categorise by phase and activity type
 
 **Step 2: Frequency Count**
 
@@ -1391,7 +1391,7 @@ Projects Stable (±5%): 18 (72%)
 
 **Prioritization Matrix:**
 
-Projects categorized into 4 priority levels based on risk and compliance:
+Projects categorised into 4 priority levels based on risk and compliance:
 
 **Priority 1: CRITICAL - Immediate Action Required**
 

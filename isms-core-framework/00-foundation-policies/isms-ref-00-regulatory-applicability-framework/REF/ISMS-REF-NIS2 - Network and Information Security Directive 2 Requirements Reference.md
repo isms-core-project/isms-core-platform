@@ -49,7 +49,7 @@ NIS2 requirements apply ONLY IF [Organisation]:
 
 - Is an essential or important entity operating in the EU in covered sectors
 - Falls within size thresholds (medium/large enterprises typically)
-- Provides services categorized under NIS2 Annex I (essential) or Annex II (important)
+- Provides services categorised under NIS2 Annex I (essential) or Annex II (important)
 - Operates in an EU member state that has transposed NIS2 into national law
 
 For all other organisations, this document serves solely as:

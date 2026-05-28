@@ -30,7 +30,7 @@ assessment requirements.
 
 Key customization areas:
 1. Network device types and vendors (match your actual infrastructure)
-2. Device categorization scheme (adapt to your network architecture)
+2. Device categorisation scheme (adapt to your network architecture)
 3. Location taxonomy (specific to your sites/data centers)
 4. Criticality classification (aligned with your business impact analysis)
 5. Discovery tool integration (based on your network management tools)
@@ -55,7 +55,7 @@ network security compliance evaluation against ISO 27001:2022 Control A.8.20.
 
 **Assessment Scope:**
 - Network device discovery and inventory
-- Device categorization (router, switch, firewall, wireless AP, load balancer)
+- Device categorisation (router, switch, firewall, wireless AP, load balancer)
 - Location and ownership tracking
 - Management interface documentation
 - Firmware/software version tracking
@@ -64,7 +64,7 @@ network security compliance evaluation against ISO 27001:2022 Control A.8.20.
 - Discovery metadata and audit trail
 
 **Generated Workbook Structure:**
-1. Instructions & Legend - Assessment guidance and device categorization standards
+1. Instructions & Legend - Assessment guidance and device categorisation standards
 2. Device Inventory - Comprehensive device inventory with all attributes
 3. Routers - Router-specific inventory
 4. Switches - Switch-specific inventory
@@ -80,7 +80,7 @@ network security compliance evaluation against ISO 27001:2022 Control A.8.20.
 **Key Features:**
 - Data validation with device type and vendor dropdown lists
 - Conditional formatting for device status and criticality
-- Automated device categorization
+- Automated device categorisation
 - Protected formulas with unprotected input cells
 - Evidence linkage for audit traceability
 - Multi-stakeholder approval workflow

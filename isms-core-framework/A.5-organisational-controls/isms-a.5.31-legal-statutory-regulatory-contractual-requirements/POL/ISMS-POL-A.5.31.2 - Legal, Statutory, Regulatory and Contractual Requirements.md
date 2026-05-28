@@ -30,7 +30,7 @@
 
 ## Purpose of This Policy Section
 
-This policy section establishes the systematic methodology by which [Organisation] identifies, assesses, and categorizes legal, statutory, regulatory, and contractual requirements applicable to its information security program. 
+This policy section establishes the systematic methodology by which [Organisation] identifies, assesses, and categorises legal, statutory, regulatory, and contractual requirements applicable to its information security program. 
 
 The methodology defined herein transforms regulatory compliance from a reactive, ad-hoc activity into a systematic, repeatable process that produces consistent, defensible determinations of regulatory applicability.
 
@@ -86,7 +86,7 @@ The systematic approach ensures that:
 
 ## Integration with ISMS-POL-00
 
-ISMS-POL-00 serves as the **authoritative regulatory register** for [Organisation]. This policy defines the **processes by which regulations enter, are categorized within, and exit POL-00**.
+ISMS-POL-00 serves as the **authoritative regulatory register** for [Organisation]. This policy defines the **processes by which regulations enter, are categorised within, and exit POL-00**.
 
 **Key Relationship:**
 
@@ -103,7 +103,7 @@ This policy section covers:
 - **Sources** for identifying potentially applicable regulations (Section 2.2)
 - **Initial screening** to filter candidates (Section 2.3)
 - **Three-dimensional applicability assessment** methodology (Section 3)
-- **Three-tier categorization** framework (Section 4)
+- **Three-tier categorisation** framework (Section 4)
 - **Documentation and approval** requirements (Section 5)
 - **Review frequency and triggers** for re-assessment (Section 6)
 
@@ -808,9 +808,9 @@ If some criteria suggest applicable and others suggest not:
 
 ---
 
-# Three-Tier Categorization Framework
+# Three-Tier Categorisation Framework
 
-Regulations determined to be applicable shall be categorized into one of three tiers within ISMS-POL-00:
+Regulations determined to be applicable shall be categorised into one of three tiers within ISMS-POL-00:
 
 ## Tier 1: Mandatory Compliance
 
@@ -1546,7 +1546,7 @@ This policy requires approval from the following roles:
 
 **Regulation**: General term encompassing laws, statutes, regulations, directives, contractual requirements, and standards (regulatory requirements).
 
-**Three-Tier Framework**: Categorization system classifying regulations as Tier 1 (Mandatory), Tier 2 (Conditional), or Tier 3 (Informational).
+**Three-Tier Framework**: Categorisation system classifying regulations as Tier 1 (Mandatory), Tier 2 (Conditional), or Tier 3 (Informational).
 
 **Trigger Event**: Circumstance initiating regulatory identification or re-assessment of applicability.
 

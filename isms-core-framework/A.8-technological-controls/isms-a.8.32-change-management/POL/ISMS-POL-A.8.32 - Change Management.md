@@ -190,11 +190,11 @@ Any changes falling into gray areas SHALL be escalated to the Change Manager for
 
 ## Regulatory Applicability
 
-Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicability Framework)**.
+Regulatory requirements are categorised per **ISMS-POL-00 (Regulatory Applicability Framework)**.
 
 **Tier 1: Mandatory Compliance**
 
-[Organisation] MUST comply with change management requirements from applicable regulations. For complete regulatory categorization, refer to **ISMS-POL-00 - Regulatory Applicability Framework**.
+[Organisation] MUST comply with change management requirements from applicable regulations. For complete regulatory categorisation, refer to **ISMS-POL-00 - Regulatory Applicability Framework**.
 
 **Key Principle**: This policy provides technology-agnostic requirements. Organisations determine specific controls through risk assessment considering their operational context, industry, jurisdiction, and regulatory obligations.
 
