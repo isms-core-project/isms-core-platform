@@ -737,7 +737,7 @@ export class CreateGapDialogComponent {
     }
 
     .info-banner {
-      padding: 8px 14px; margin-bottom: 16px; border-radius: 6px; font-size: 0.85rem;
+      padding: 8px 14px; margin-top: 16px; margin-bottom: 16px; border-radius: 6px; font-size: 0.85rem;
       background: rgba(68,114,196,0.1); border: 1px solid rgba(68,114,196,0.3);
     }
     .success-banner {

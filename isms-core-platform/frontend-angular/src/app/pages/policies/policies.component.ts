@@ -444,7 +444,7 @@ export class ImportExternalDialogComponent {
   styles: [`
     :host { display: block; }
 
-    .metrics-row { display: flex; gap: 16px; margin-bottom: 16px; }
+    .metrics-row { display: flex; gap: 16px; margin-top: 16px; margin-bottom: 16px; }
     .metrics-row > * { flex: 1; }
 
     .filter-card { margin-bottom: 16px; }

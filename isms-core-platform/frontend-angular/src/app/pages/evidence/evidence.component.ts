@@ -441,7 +441,7 @@ export class BulkDeleteConfirmDialogComponent {
   styles: [`
     :host { display: block; }
 
-    .metrics-row { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+    .metrics-row { display: flex; gap: 16px; margin-top: 16px; margin-bottom: 16px; flex-wrap: wrap; }
     .metrics-row > * { flex: 1; min-width: 120px; }
 
     .alert {

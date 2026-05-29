@@ -252,7 +252,7 @@ function shortId(id: string): string {
 
   .page-wrap { padding: 0 4px; }
 
-  .controls-card { margin-bottom: 16px; }
+  .controls-card { margin-top: 16px; margin-bottom: 16px; }
   .controls-content { padding-bottom: 12px !important; }
   .controls-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
   .field-center { min-width: 180px; }

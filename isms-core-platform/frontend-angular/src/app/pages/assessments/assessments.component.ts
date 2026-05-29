@@ -148,7 +148,7 @@ export class NewAssessmentDialogComponent {
     </app-page-header>
 
     @if (projectService.activeProject()) {
-      <div class="isms-alert isms-alert--info">
+      <div class="isms-alert isms-alert--info" style="margin-top: 16px">
         Showing assessments for project: <strong>{{ projectService.activeProject()!.name }}</strong>
         @if (projectService.activeProject()!.organisation_name) {
           — {{ projectService.activeProject()!.organisation_name }}

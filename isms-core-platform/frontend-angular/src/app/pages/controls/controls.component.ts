@@ -19,6 +19,7 @@ import { ControlsApiService } from '../../api/controls-api.service'
 import { ProductService } from '../../core/services/product.service'
 import { ThemeService } from '../../core/services/theme.service'
 import { ControlGroupList } from '../../shared/types'
+import { PageHeaderComponent } from '../../shared/components/page-header.component'
 
 const ISMS_SECTION_COLORS: Record<string, string> = {
   'A.5': '#4472C4',
@@ -91,9 +92,15 @@ function getHeatmapStatus(cg: ControlGroupList): string {
     MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule,
     MatButtonToggleModule, MatIconModule, MatChipsModule,
     MatProgressSpinnerModule, MatTooltipModule, MatButtonModule,
+    PageHeaderComponent,
   ],
   template: `
 <div class="controls-page">
+
+  <app-page-header
+    title="Controls Library"
+    [subtitle]="controlsSubtitle()"
+  />
 
   <!-- Toolbar -->
   <div class="controls-toolbar">
@@ -443,6 +450,16 @@ export class ControlsComponent {
   })
 
   readonly showSectionFilter = computed(() => this.product.product() !== 'ai')
+
+  readonly controlsSubtitle = computed(() => {
+    const subtitles: Record<string, string> = {
+      isms:    'ISO 27001:2022 Annex A control groups and implementation status',
+      privacy: 'ISO 27701:2025 privacy control groups and implementation status',
+      cloud:   'ISO 27018:2025 cloud control groups and implementation status',
+      ai:      'ISO 42001:2023 AI control groups and implementation status',
+    }
+    return subtitles[this.product.product()] ?? subtitles['isms']
+  })
 
   readonly heatmapLegend = computed(() => {
     const colors = this.theme.isDark() ? HEATMAP_DARK : HEATMAP_LIGHT
