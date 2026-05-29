@@ -188,7 +188,7 @@ export class NewAssessmentDialogComponent {
           <div class="section-header">
             <mat-icon class="icon-md color-primary">assignment</mat-icon>
             <span class="section-title">Platform Assessments</span>
-            <mat-chip class="count-chip">{{ tierPlatform().length }}</mat-chip>
+            <span class="count-chip">{{ tierPlatform().length }}</span>
 
             @for (sf of statusFilters; track sf.key) {
               <div class="status-filter-chip"
@@ -458,7 +458,7 @@ export class NewAssessmentDialogComponent {
     }
     .color-primary { color: var(--mat-sys-primary); }
     .section-title { font-size: 0.85rem; font-weight: 700; color: var(--mat-sys-primary); }
-    .count-chip    { height: 18px; font-size: 0.65rem; }
+    .count-chip    { height: 18px; line-height: 18px; font-size: 0.65rem; padding: 0 6px; border-radius: 9px; display: inline-flex; align-items: center; background: rgba(255,255,255,0.08); color: var(--mat-sys-on-surface-variant); }
     .icon-md       { font-size: 18px; }
     .icon-xs       { font-size: 12px; height: 12px; width: 12px; }
     .icon-action   { font-size: 16px; }
@@ -736,7 +736,7 @@ export class AssessmentsComponent {
       : { bg: 'rgba(230,145,0,0.15)',   color: '#7a4800' }
     if (key === 'complete') return dark
       ? { bg: 'rgba(198,239,206,0.15)', color: '#C6EFCE' }
-      : { bg: 'rgba(46,125,50,0.12)',   color: '#1b5e20' }
+      : { bg: 'rgba(29,158,117,0.12)',  color: '#0F6E56' }
     if (key === 'not_started') return dark
       ? { bg: 'rgba(255,255,255,0.06)', color: '#888' }
       : { bg: 'rgba(0,0,0,0.06)',       color: '#555' }

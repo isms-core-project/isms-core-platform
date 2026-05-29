@@ -99,7 +99,7 @@ const SECTION_LABELS: Record<string, string> = {
 
           <div class="fcd-info-card__chips">
             <mat-chip-set>
-              <mat-chip [style.background]="productColor() + '20'" [style.color]="productColor()">
+              <mat-chip [style.--mdc-chip-elevated-container-color]="productColor() + '20'" [style.color]="productColor()">
                 {{ ctrl()!.framework_name }}
               </mat-chip>
               <mat-chip class="fcd-chip--section">{{ sectionLabel() }}</mat-chip>
@@ -116,7 +116,7 @@ const SECTION_LABELS: Record<string, string> = {
               <div class="fcd-info-card__chips">
                 <mat-chip-set>
                   @for (t of ctrl()!.control_type; track t) {
-                    <mat-chip [style.background]="productColor() + '15'" [style.color]="productColor()">
+                    <mat-chip [style.--mdc-chip-elevated-container-color]="productColor() + '15'" [style.color]="productColor()">
                       {{ t }}
                     </mat-chip>
                   }

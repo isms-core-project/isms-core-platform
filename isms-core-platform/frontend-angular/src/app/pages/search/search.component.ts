@@ -256,7 +256,7 @@ export class SearchHighlightComponent implements OnChanges {
     :host { display: block; }
 
     /* Search bar card */
-    .search-bar-card { margin-bottom: 20px; }
+    .search-bar-card { margin-top: 16px; margin-bottom: 20px; }
     .search-bar-content { padding-bottom: 12px !important; }
     .search-row { display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
     .search-query-field { flex: 1; min-width: 200px; }

@@ -227,6 +227,7 @@ function exportRiskCsv(data: {
     PageHeaderComponent,
   ],
   template: `
+    <div class="risk-page">
     <app-page-header
       title="Risk Assessment Wizard"
       subtitle="CIA-based risk classification · ISO/IEC 27001:2022">
@@ -482,9 +483,11 @@ function exportRiskCsv(data: {
 
       </mat-card-content>
     </mat-card>
+    </div>
   `,
   styles: [`
-    :host { display: block; padding: 24px; }
+    :host { display: block; }
+    .risk-page { display: flex; flex-direction: column; gap: 16px; }
 
     /* Stepper */
     .stepper-header { display: flex; gap: 0; margin-bottom: 32px; overflow-x: auto; }

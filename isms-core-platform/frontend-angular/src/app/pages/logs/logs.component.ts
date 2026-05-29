@@ -38,10 +38,10 @@ const SEV_DARK: Record<string, { bg: string; fg: string }> = {
   critical: { bg: 'rgba(192,0,0,0.18)',   fg: '#FFC7CE' },
 }
 const SEV_LIGHT: Record<string, { bg: string; fg: string }> = {
-  info:     { bg: 'rgba(21,101,192,0.12)',  fg: '#1565c0' },
-  warning:  { bg: 'rgba(230,145,0,0.15)',  fg: '#7a4800' },
-  error:    { bg: 'rgba(200,80,0,0.12)',   fg: '#b94000' },
-  critical: { bg: 'rgba(192,0,0,0.12)',    fg: '#9e0000' },
+  info:     { bg: 'rgba(24,95,165,0.11)',   fg: '#185FA5' },
+  warning:  { bg: 'rgba(186,117,23,0.13)', fg: '#7A4500' },
+  error:    { bg: 'rgba(163,45,45,0.11)',  fg: '#8A1F1F' },
+  critical: { bg: 'rgba(163,45,45,0.18)',  fg: '#7A0000' },
 }
 
 const CAT_DARK: Record<string, { bg: string; fg: string }> = {
@@ -50,9 +50,9 @@ const CAT_DARK: Record<string, { bg: string; fg: string }> = {
   system:   { bg: 'rgba(255,255,255,0.07)', fg: '#d9d9d9' },
 }
 const CAT_LIGHT: Record<string, { bg: string; fg: string }> = {
-  security: { bg: 'rgba(192,0,0,0.12)',    fg: '#9e0000' },
-  workflow: { bg: 'rgba(21,101,192,0.12)', fg: '#1565c0' },
-  system:   { bg: 'rgba(0,0,0,0.07)',      fg: '#424242' },
+  security: { bg: 'rgba(163,45,45,0.11)',  fg: '#8A1F1F' },
+  workflow: { bg: 'rgba(24,95,165,0.11)',  fg: '#185FA5' },
+  system:   { bg: 'rgba(44,44,42,0.07)',   fg: '#444441' },
 }
 
 const STATUS_DARK: Record<string, { bg: string; fg: string }> = {
@@ -61,9 +61,9 @@ const STATUS_DARK: Record<string, { bg: string; fg: string }> = {
   running: { bg: 'rgba(255,192,0,0.15)',  fg: '#FFEB9C' },
 }
 const STATUS_LIGHT: Record<string, { bg: string; fg: string }> = {
-  success: { bg: 'rgba(46,125,50,0.12)',  fg: '#1b5e20' },
-  error:   { bg: 'rgba(192,0,0,0.12)',    fg: '#9e0000' },
-  running: { bg: 'rgba(230,145,0,0.15)', fg: '#7a4800' },
+  success: { bg: 'rgba(29,158,117,0.12)', fg: '#0F6E56' },
+  error:   { bg: 'rgba(163,45,45,0.11)', fg: '#8A1F1F' },
+  running: { bg: 'rgba(186,117,23,0.13)', fg: '#7A4500' },
 }
 
 const FEED_NAMES = ['nist_cve', 'cisa_kev', 'epss', 'euvd', 'mitre_attack', 'mitre_atlas',

@@ -156,6 +156,7 @@ export class FrameworkCoverageCardComponent {
     FrameworkCoverageCardComponent,
   ],
   template: `
+    <div class="compass-page">
     <app-page-header
       title="Compass"
       subtitle="Framework coverage — cross-framework assessment status for a project">
@@ -266,9 +267,11 @@ export class FrameworkCoverageCardComponent {
         </div>
       }
     }
+    </div>
   `,
   styles: [`
-    .selector-bar { display:flex;gap:12px;align-items:center;margin-bottom:24px;flex-wrap:wrap }
+    .compass-page { display:flex;flex-direction:column;gap:16px }
+    .selector-bar { display:flex;gap:12px;align-items:center;flex-wrap:wrap }
     .proj-select-field { min-width: 320px; }
     .overview-icon { vertical-align: middle; margin-right: 6px; }
     .empty-state { display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 24px;border:1px dashed var(--mat-sys-outline-variant);border-radius:12px;text-align:center }

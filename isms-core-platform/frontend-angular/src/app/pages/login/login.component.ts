@@ -152,7 +152,7 @@ type Step = 'credentials' | 'mfa'
       background: #1d1d1d;
     }
     .login-bg--light {
-      background: #edeff0;
+      background: #D3D1C7;
     }
 
     /* Theme toggle */
@@ -175,7 +175,7 @@ type Step = 'credentials' | 'mfa'
       width: 100%;
       border-radius: 12px !important;
       border-top: 3px solid var(--mat-sys-primary);
-      box-shadow: 0 8px 32px rgba(68,114,196,0.12) !important;
+      box-shadow: 0 8px 32px rgba(44,44,42,0.15) !important;
     }
     .login-card mat-card-content.login-card-content { padding: 32px !important; }
     mat-card.login-card--dark {

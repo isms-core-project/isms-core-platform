@@ -163,8 +163,9 @@ function baselinePct(objects: ProtectionObject[]): number | null {
   ],
   template: `
     <app-page-header
-      title="CSRM Assessment"
-      subtitle="Swiss NCSC Cyber Security Risk Management — object-centric baseline assessment">
+      title="CSRM"
+      subtitle="Swiss NCSC Cyber Security Risk Management — object-centric baseline & elevated TOM assessment">
+      <div class="csrm-badge">NCSC CH</div>
       @if (!selectedId()) {
         <button mat-raised-button color="primary" (click)="newAssessmentOpen.set(true)">
           <mat-icon>add</mat-icon> New Assessment
@@ -657,7 +658,13 @@ function baselinePct(objects: ProtectionObject[]): number | null {
   `,
   styles: [`
     /* ── Host ─────────────────────────────────────────────────────────────────── */
-    :host { display:block; padding:24px }
+    :host { display:block }
+
+    .csrm-badge {
+      font-size:.72rem; font-weight:600; padding:2px 10px; border-radius:10px;
+      background:rgba(196,40,40,.18); color:#C62828;
+    }
+    html[data-theme='light'] .csrm-badge { background:rgba(196,40,40,.12); color:#B71C1C; }
 
     /* ── Skeleton loader ──────────────────────────────────────────────────────── */
     .skel { background:var(--mat-sys-surface-variant); border-radius:4px }

@@ -84,17 +84,24 @@ function pct(rated: number, total: number): number {
     MatProgressBarModule, MatProgressSpinnerModule, MatTooltipModule,
     MatTableModule, MatFormFieldModule, MatInputModule, MatSelectModule,
     MatDialogModule, MatSnackBarModule,
-    PageHeaderComponent,
   ],
   template: `
 <div class="page-wrap">
-  <app-page-header
-    title="NIST CSF 2.0"
-    subtitle="Cybersecurity Framework assessments — 106 subcategories, Tier 1–4, ISO 27001 crosswalk">
-    <button mat-flat-button color="primary" (click)="openCreate()" *ngIf="!selectedProfileId()">
-      <mat-icon>add</mat-icon> New Assessment
-    </button>
-  </app-page-header>
+  <!-- Header -->
+  <div class="nist-header">
+    <div class="nist-header__left">
+      <div class="nist-header__title-row">
+        <h1 class="nist-header__title">NIST CSF 2.0</h1>
+        <span class="nist-header__badge">NIST CSF v2.0</span>
+      </div>
+      <p class="nist-header__sub">Cybersecurity Framework assessments — 106 subcategories, Tier 1–4, ISO 27001 crosswalk</p>
+    </div>
+    @if (!selectedProfileId()) {
+      <button mat-flat-button color="primary" (click)="openCreate()">
+        <mat-icon>add</mat-icon> New Assessment
+      </button>
+    }
+  </div>
 
   <!-- ── Detail view ── -->
   @if (selectedProfileId()) {
@@ -439,6 +446,15 @@ function pct(rated: number, total: number): number {
 
     /* Page wrapper */
     .page-wrap { padding: 0 4px; }
+
+    /* Header */
+    .nist-header { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
+    .nist-header__left { flex:1; }
+    .nist-header__title-row { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    .nist-header__title { margin:0; font-size:1.75rem; font-weight:700; line-height:1.2; }
+    .nist-header__badge { font-size:.72rem; font-weight:600; padding:2px 10px; border-radius:10px; background:rgba(68,114,196,.22); color:#4472C4; }
+    .nist-header__sub { margin:4px 0 0; font-size:.875rem; color:var(--mat-sys-on-surface-variant); }
+    html[data-theme='light'] .nist-header__badge { background:rgba(68,114,196,.15); color:#2E5099; }
 
     /* Detail header */
     .detail-header {

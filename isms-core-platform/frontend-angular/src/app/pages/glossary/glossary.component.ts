@@ -217,6 +217,7 @@ const DOMAIN_CONFIG: Record<Domain, { accent: string; icon: string; label: strin
     .glossary-domains {
       display: flex;
       border-bottom: 1px solid var(--mat-sys-outline-variant);
+      margin-top: 16px;
       margin-bottom: 24px;
     }
 

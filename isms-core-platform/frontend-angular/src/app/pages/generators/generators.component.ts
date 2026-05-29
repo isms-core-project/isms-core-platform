@@ -665,6 +665,7 @@ export class GeneratorCardComponent {
     GeneratorCardComponent,
   ],
   template: `
+    <div class="gen-page">
     <app-page-header
       title="Generators"
       [subtitle]="headerSubtitle()">
@@ -743,14 +744,16 @@ export class GeneratorCardComponent {
         </div>
       }
     }
+    </div>
   `,
   styles: [`
-    .metric-strip { display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap }
+    .gen-page { display:flex;flex-direction:column;gap:16px }
+    .metric-strip { display:flex;gap:16px;flex-wrap:wrap }
     .metric-card { background:var(--mat-sys-surface-container);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 16px;min-width:120px }
     .metric-value { font-size:1.5rem;font-weight:700;color:var(--mat-sys-on-surface) }
     .metric-label { font-size:0.72rem;color:var(--mat-sys-on-surface-variant) }
     .metric-skeleton { width:40px;height:28px;background:var(--mat-sys-surface-variant);border-radius:4px;animation:pulse 1.5s ease-in-out infinite }
-    .filter-bar { display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap;align-items:center }
+    .filter-bar { display:flex;gap:16px;flex-wrap:wrap;align-items:center }
     .section-toggle-row { display:flex;flex-wrap:wrap;gap:4px }
     .section-btn { padding:4px 14px;border:1px solid var(--mat-sys-outline-variant);border-radius:4px;background:transparent;cursor:pointer;font-size:0.75rem;color:var(--mat-sys-on-surface-variant);transition:all 0.12s }
     .section-btn.active { background:var(--mat-sys-primary);color:white;border-color:var(--mat-sys-primary) }

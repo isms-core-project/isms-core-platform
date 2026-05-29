@@ -44,12 +44,12 @@ const ROLE_DARK: Record<string, { bg: string; fg: string }> = {
   viewer:        { bg: 'rgba(255,255,255,0.07)', fg: '#d9d9d9' },
 }
 const ROLE_LIGHT: Record<string, { bg: string; fg: string }> = {
-  super_admin:   { bg: 'rgba(192,0,0,0.2)',     fg: '#9e0000' },
-  admin:         { bg: 'rgba(192,0,0,0.12)',    fg: '#b71c1c' },
-  isms_manager:  { bg: 'rgba(21,101,192,0.12)', fg: '#1565c0' },
-  auditor:       { bg: 'rgba(46,125,50,0.12)',  fg: '#1b5e20' },
-  control_owner: { bg: 'rgba(230,145,0,0.15)',  fg: '#7a4800' },
-  viewer:        { bg: 'rgba(0,0,0,0.07)',      fg: '#424242' },
+  super_admin:   { bg: 'rgba(163,45,45,0.15)',    fg: '#8A1F1F' },
+  admin:         { bg: 'rgba(163,45,45,0.10)',    fg: '#A32D2D' },
+  isms_manager:  { bg: 'rgba(24,95,165,0.11)',    fg: '#185FA5' },
+  auditor:       { bg: 'rgba(29,158,117,0.12)',   fg: '#0F6E56' },
+  control_owner: { bg: 'rgba(186,117,23,0.13)',   fg: '#7A4500' },
+  viewer:        { bg: 'rgba(44,44,42,0.07)',     fg: '#444441' },
 }
 
 const ALL_ROLES    = ['super_admin', 'admin', 'isms_manager', 'auditor', 'control_owner', 'viewer']
@@ -1228,17 +1228,17 @@ export class AdminComponent {
   roleColor = (r: string) => { const m = this.theme.isDark() ? ROLE_DARK : ROLE_LIGHT; return m[r] ?? m['viewer'] }
 
   activeStyle = (is_active: boolean) => this.theme.isDark()
-    ? { bg: is_active ? 'rgba(112,173,71,0.15)' : 'rgba(192,0,0,0.12)', fg: is_active ? '#C6EFCE' : '#FFC7CE' }
-    : { bg: is_active ? 'rgba(46,125,50,0.12)'  : 'rgba(192,0,0,0.08)', fg: is_active ? '#1b5e20' : '#9e0000' }
+    ? { bg: is_active ? 'rgba(112,173,71,0.15)'  : 'rgba(192,0,0,0.12)',  fg: is_active ? '#C6EFCE' : '#FFC7CE' }
+    : { bg: is_active ? 'rgba(29,158,117,0.12)'  : 'rgba(163,45,45,0.11)', fg: is_active ? '#0F6E56' : '#8A1F1F' }
 
   mfaIconColor = (mfa_enabled: boolean) =>
-    mfa_enabled ? (this.theme.isDark() ? '#C6EFCE' : '#1b5e20') : 'var(--mat-sys-on-surface-variant)'
+    mfa_enabled ? (this.theme.isDark() ? '#C6EFCE' : '#0F6E56') : 'var(--mat-sys-on-surface-variant)'
 
   mfaPctStyle = () => {
     const pct = this.mfaPct()
     return this.theme.isDark()
-      ? { bg: pct === 100 ? 'rgba(112,173,71,0.15)' : pct >= 50 ? 'rgba(255,192,0,0.15)' : 'rgba(192,0,0,0.18)', fg: pct === 100 ? '#C6EFCE' : pct >= 50 ? '#FFEB9C' : '#FFC7CE' }
-      : { bg: pct === 100 ? 'rgba(46,125,50,0.12)'  : pct >= 50 ? 'rgba(230,145,0,0.15)' : 'rgba(192,0,0,0.10)', fg: pct === 100 ? '#1b5e20' : pct >= 50 ? '#7a4800' : '#9e0000' }
+      ? { bg: pct === 100 ? 'rgba(112,173,71,0.15)'  : pct >= 50 ? 'rgba(255,192,0,0.15)'   : 'rgba(192,0,0,0.18)',   fg: pct === 100 ? '#C6EFCE' : pct >= 50 ? '#FFEB9C' : '#FFC7CE' }
+      : { bg: pct === 100 ? 'rgba(29,158,117,0.12)'  : pct >= 50 ? 'rgba(186,117,23,0.13)'  : 'rgba(163,45,45,0.11)', fg: pct === 100 ? '#0F6E56' : pct >= 50 ? '#7A4500' : '#8A1F1F' }
   }
 
   fmtDate      = fmtDate

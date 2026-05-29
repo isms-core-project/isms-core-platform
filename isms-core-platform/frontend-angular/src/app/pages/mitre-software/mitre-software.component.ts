@@ -2,83 +2,81 @@ import { Component, inject, signal, computed } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import { firstValueFrom } from 'rxjs'
-
 import { injectQuery } from '@tanstack/angular-query-experimental'
 
-import { MatTableModule } from '@angular/material/table'
-import { MatChipsModule } from '@angular/material/chips'
-import { MatTooltipModule } from '@angular/material/tooltip'
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatSelectModule } from '@angular/material/select'
 import { MatIconModule } from '@angular/material/icon'
-import { MatButtonToggleModule } from '@angular/material/button-toggle'
+import { MatTooltipModule } from '@angular/material/tooltip'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 import { FeedsApiService, MitreSoftware } from '../../api/feeds-api.service'
+import { ThemeService } from '../../core/services/theme.service'
+import { PageHeaderComponent } from '../../shared/components/page-header.component'
 
-const PER_PAGE = 50
-const INTEL_COLOR = '#FFA726'
+const INTEL_DARK  = '#FFA726'
+const INTEL_LIGHT = '#BA7517'
 const MALWARE_COLOR = '#9C27B0'
-const TOOL_COLOR = '#0288D1'
+const TOOL_COLOR    = '#0288D1'
+const PER_PAGE = 50
+
+const PLATFORM_DARK: Record<string, { bg: string; color: string }> = {
+  'Windows':    { bg: 'rgba(0,120,212,0.20)',  color: '#60b0ff' },
+  'Linux':      { bg: 'rgba(232,160,32,0.18)', color: '#FFA726' },
+  'macOS':      { bg: 'rgba(160,160,160,0.14)',color: '#cccccc' },
+  'Android':    { bg: 'rgba(61,220,132,0.15)', color: '#3DDC84' },
+  'iOS':        { bg: 'rgba(20,126,251,0.18)', color: '#60b0ff' },
+  'Network':    { bg: 'rgba(92,122,214,0.18)', color: '#8fa8f8' },
+  'Office 365': { bg: 'rgba(216,59,1,0.18)',   color: '#ff8c66' },
+  'SaaS':       { bg: 'rgba(108,92,231,0.18)', color: '#b39ddb' },
+  'ESXi':       { bg: 'rgba(96,125,139,0.20)',  color: '#90A4AE' },
+  'IaaS':       { bg: 'rgba(38,166,154,0.18)',  color: '#4DB6AC' },
+}
+const PLATFORM_LIGHT: Record<string, { bg: string; color: string }> = {
+  'Windows':    { bg: 'rgba(0,120,212,0.13)',  color: '#0055A5' },
+  'Linux':      { bg: 'rgba(186,117,23,0.15)', color: '#7A4500' },
+  'macOS':      { bg: 'rgba(44,44,42,0.10)',   color: '#5F5E5A' },
+  'Android':    { bg: 'rgba(29,158,117,0.13)', color: '#0F6E56' },
+  'iOS':        { bg: 'rgba(24,95,165,0.13)',  color: '#185FA5' },
+  'Network':    { bg: 'rgba(92,122,214,0.12)', color: '#3D5BB0' },
+  'Office 365': { bg: 'rgba(216,59,1,0.12)',   color: '#A02800' },
+  'SaaS':       { bg: 'rgba(108,92,231,0.12)', color: '#4527A0' },
+  'ESXi':       { bg: 'rgba(96,125,139,0.14)',  color: '#455A64' },
+  'IaaS':       { bg: 'rgba(38,166,154,0.13)',  color: '#00695C' },
+}
 
 @Component({
   selector: 'app-mitre-software',
   standalone: true,
   imports: [
-    CommonModule,
-    FormsModule,
-    MatTableModule,
-    MatChipsModule,
-    MatTooltipModule,
-    MatProgressSpinnerModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatIconModule,
-    MatButtonToggleModule,
+    CommonModule, FormsModule, PageHeaderComponent,
+    MatFormFieldModule, MatInputModule, MatSelectModule,
+    MatIconModule, MatTooltipModule, MatProgressSpinnerModule,
   ],
   template: `
 <div class="sw-page">
+  <app-page-header
+    title="Software"
+    subtitle="MITRE ATT&CK — malware and tools used by adversaries"
+  />
 
-  <!-- Header -->
-  <div class="sw-header">
-    <h2 class="sw-header__title">MITRE ATT&amp;CK Software</h2>
-    <p class="sw-header__sub">
-      Malware and tools used by adversaries — tracked by MITRE ATT&amp;CK
-    </p>
-  </div>
-
-  <!-- Stats row -->
-  @if (statsQuery.data(); as stats) {
-    <div class="sw-stats-row">
-      @for (s of [
-        {label:'Total', value: stats.total_software},
-        {label:'Malware', value: stats.malware_count},
-        {label:'Tools', value: stats.tool_count},
-        {label:'Deprecated', value: stats.deprecated_count}
-      ]; track s.label) {
-        <div>
-          <div class="sw-stat__val" [style.color]="INTEL_COLOR">{{s.value | number}}</div>
-          <div class="sw-stat__lbl">{{s.label}}</div>
-        </div>
-      }
+  @if (statsQuery.data(); as s) {
+    <div class="mitre-stats">
+      <div><div class="mitre-stat__val" [style.color]="INTEL_COLOR">{{ s.total_software | number }}</div><div class="mitre-stat__lbl">Total</div></div>
+      <div><div class="mitre-stat__val" [style.color]="MALWARE_COLOR">{{ s.malware_count | number }}</div><div class="mitre-stat__lbl">Malware</div></div>
+      <div><div class="mitre-stat__val" [style.color]="TOOL_COLOR">{{ s.tool_count | number }}</div><div class="mitre-stat__lbl">Tools</div></div>
+      <div><div class="mitre-stat__val" [style.color]="INTEL_COLOR">{{ s.deprecated_count | number }}</div><div class="mitre-stat__lbl">Deprecated</div></div>
     </div>
   }
 
-  <!-- Filters -->
-  <div class="sw-filters">
-    <mat-button-toggle-group value="attack_v19" class="sw-toggle-group">
-      <mat-button-toggle value="attack_v19" class="sw-toggle-btn">v19</mat-button-toggle>
-    </mat-button-toggle-group>
-
-    <mat-form-field appearance="outline" subscriptSizing="dynamic" class="sw-search-field">
-      <mat-label>Search</mat-label>
-      <mat-icon matPrefix class="icon-md">search</mat-icon>
-      <input matInput [ngModel]="search()" (ngModelChange)="onSearch($event)" placeholder="Search by ID or name…" />
+  <div class="mitre-filters">
+    <mat-form-field appearance="outline" subscriptSizing="dynamic" class="mitre-search">
+      <mat-label>Search software…</mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput [ngModel]="search()" (ngModelChange)="onSearch($event)" />
     </mat-form-field>
-
-    <mat-form-field appearance="outline" subscriptSizing="dynamic" class="sw-type-field">
+    <mat-form-field appearance="outline" subscriptSizing="dynamic" class="mitre-select">
       <mat-label>Type</mat-label>
       <mat-select [ngModel]="softwareType()" (ngModelChange)="onTypeChange($event)">
         <mat-option value="">All types</mat-option>
@@ -88,136 +86,96 @@ const TOOL_COLOR = '#0288D1'
     </mat-form-field>
   </div>
 
-  <!-- Table + detail panel -->
-  <div class="sw-layout">
-
-    <!-- Table panel -->
-    <div class="sw-table-panel">
-
+  <div class="mitre-layout">
+    <div class="mitre-table-box">
       @if (listQuery.isLoading()) {
-        <div class="sw-spinner-wrap">
-          <mat-spinner [diameter]="28" />
-        </div>
+        <div class="mitre-empty"><mat-spinner diameter="28" /></div>
       }
-
       @if (listQuery.isError()) {
-        <div class="sw-error">Failed to load software.</div>
+        <div class="mitre-error">Failed to load software.</div>
       }
-
       @if (!listQuery.isLoading() && listQuery.data()?.total === 0) {
-        <div class="sw-empty">
-          ATT&amp;CK v19 data not yet available. Check back after the scheduled weekly pull.
-        </div>
+        <div class="mitre-empty">No ATT&CK v19 data yet — check back after the scheduled weekly pull.</div>
       }
-
       @if (!listQuery.isLoading() && (listQuery.data()?.items?.length ?? 0) > 0) {
-        <table mat-table [dataSource]="listQuery.data()!.items" class="sw-table">
-
-          <ng-container matColumnDef="software_id">
-            <th mat-header-cell *matHeaderCellDef class="sw-th">ID</th>
-            <td mat-cell *matCellDef="let s" class="sw-cell-id"
-              [style.color]="INTEL_COLOR">{{s.software_id}}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="type">
-            <th mat-header-cell *matHeaderCellDef class="sw-th">Type</th>
-            <td mat-cell *matCellDef="let s">
-              <mat-chip class="sw-type-chip"
-                [style.background]="s.software_type === 'malware' ? '#9C27B022' : '#0288D122'"
-                [style.color]="s.software_type === 'malware' ? MALWARE_COLOR : TOOL_COLOR">
-                {{s.software_type}}
-              </mat-chip>
-            </td>
-          </ng-container>
-
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef class="sw-th">Name</th>
-            <td mat-cell *matCellDef="let s" class="sw-cell-name">
-              {{s.name}}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="platforms">
-            <th mat-header-cell *matHeaderCellDef class="sw-th">Platforms</th>
-            <td mat-cell *matCellDef="let s" class="sw-cell-platforms">
-              @if (s.platforms.length > 0) {
-                @for (p of s.platforms.slice(0, 2); track p) {
-                  <mat-chip class="sw-mini-chip">{{p}}</mat-chip>
-                }
-                @if (s.platforms.length > 2) {
-                  <mat-chip [matTooltip]="s.platforms.slice(2).join(', ')"
-                    class="sw-mini-chip">+{{s.platforms.length - 2}}</mat-chip>
-                }
-              } @else {
-                <span class="sw-empty-dash">—</span>
-              }
-            </td>
-          </ng-container>
-
-          <tr mat-header-row *matHeaderRowDef="displayedColumns" class="sw-header-row"></tr>
-          <tr mat-row *matRowDef="let s; columns: displayedColumns"
-            class="sw-data-row"
-            [style.background]="selected()?.id === s.id ? 'rgba(184,79,0,0.08)' : ''"
-            (click)="onRowClick(s)"></tr>
+        <table class="mitre-table">
+          <thead><tr>
+            <th class="col-id">ID</th>
+            <th class="col-type">Type</th>
+            <th>Name</th>
+            <th class="col-plat">Platforms</th>
+          </tr></thead>
+          <tbody>
+            @for (s of listQuery.data()!.items; track s.id) {
+              <tr class="mitre-row" [class.mitre-row--selected]="selected()?.id === s.id" (click)="onRowClick(s)">
+                <td class="mono" [style.color]="INTEL_COLOR">{{ s.software_id }}</td>
+                <td>
+                  <span class="type-chip"
+                    [style.background]="s.software_type === 'malware' ? '#9C27B022' : '#0288D122'"
+                    [style.color]="s.software_type === 'malware' ? MALWARE_COLOR : TOOL_COLOR">
+                    {{ s.software_type }}
+                  </span>
+                </td>
+                <td class="cell-name">{{ s.name }}</td>
+                <td class="col-plat">
+                  <div class="plat-row">
+                    @for (p of s.platforms.slice(0, 2); track p) {
+                      <span class="plat-chip"
+                        [style.background]="platStyle(p).bg"
+                        [style.color]="platStyle(p).color">{{ p }}</span>
+                    }
+                    @if (s.platforms.length > 2) {
+                      <span class="plat-chip" [matTooltip]="s.platforms.slice(2).join(', ')">+{{ s.platforms.length - 2 }}</span>
+                    }
+                  </div>
+                </td>
+              </tr>
+            }
+          </tbody>
         </table>
-
-        <!-- Pagination -->
-        <div class="sw-pagination">
-          <span class="sw-pagination__count">{{listQuery.data()!.total | number}} items</span>
-          <div class="sw-pagination__nav">
-            <span class="sw-pagination__btn" [class.disabled]="page() <= 1"
-              (click)="page() > 1 && setPage(page() - 1)">← Prev</span>
-            <span class="sw-pagination__info">{{page()}} / {{totalPages()}}</span>
-            <span class="sw-pagination__btn" [class.disabled]="page() >= totalPages()"
-              (click)="page() < totalPages() && setPage(page() + 1)">Next →</span>
+        <div class="mitre-pagination">
+          <span>{{ listQuery.data()!.total | number }} items</span>
+          <div class="mitre-pagination__nav">
+            <span class="mitre-pagination__btn" [class.disabled]="page() <= 1" (click)="page() > 1 && setPage(page() - 1)">← Prev</span>
+            <span>{{ page() }} / {{ totalPages() }}</span>
+            <span class="mitre-pagination__btn" [class.disabled]="page() >= totalPages()" (click)="page() < totalPages() && setPage(page() + 1)">Next →</span>
           </div>
         </div>
       }
     </div>
 
-    <!-- Detail panel -->
     @if (selected(); as s) {
-      <div class="sw-detail-panel">
-        <div class="sw-detail-panel__top">
-          <div class="sw-detail-panel__id" [style.color]="INTEL_COLOR">{{s.software_id}}</div>
-          <mat-chip class="sw-type-chip"
+      <div class="mitre-detail">
+        <div class="detail-top">
+          <div class="mitre-detail__id" [style.color]="INTEL_COLOR">{{ s.software_id }}</div>
+          <span class="type-chip"
             [style.background]="s.software_type === 'malware' ? '#9C27B022' : '#0288D122'"
             [style.color]="s.software_type === 'malware' ? MALWARE_COLOR : TOOL_COLOR">
-            {{s.software_type}}
-          </mat-chip>
+            {{ s.software_type }}
+          </span>
         </div>
-        <div class="sw-detail-panel__name">{{s.name}}</div>
-
+        <div class="mitre-detail__name">{{ s.name }}</div>
         @if (s.aliases.length > 0) {
-          <div class="sw-detail-section">
-            <div class="sw-detail-section__label">Also known as:</div>
+          <div class="mitre-detail__label">Also known as</div>
+          <div class="plat-row plat-row--wrap">
             @for (a of s.aliases; track a) {
-              <mat-chip class="sw-mini-chip">{{a}}</mat-chip>
+              <span class="plat-chip">{{ a }}</span>
             }
           </div>
         }
-
         @if (s.platforms.length > 0) {
-          <div class="sw-detail-section">
-            <div class="sw-detail-section__label">Platforms:</div>
+          <div class="mitre-detail__label">Platforms</div>
+          <div class="plat-row plat-row--wrap">
             @for (p of s.platforms; track p) {
-              <mat-chip class="sw-mini-chip">{{p}}</mat-chip>
+              <span class="plat-chip" [style.background]="platStyle(p).bg" [style.color]="platStyle(p).color">{{ p }}</span>
             }
           </div>
         }
-
         @if (s.description) {
-          <div class="sw-detail-panel__desc">
-            {{s.description.slice(0, 600)}}{{s.description.length > 600 ? '…' : ''}}
-          </div>
+          <div class="mitre-detail__desc">{{ s.description.slice(0, 700) }}{{ s.description.length > 700 ? '…' : '' }}</div>
         }
-
         @if (s.url) {
-          <div class="sw-detail-panel__link-wrap">
-            <a [href]="s.url" target="_blank" rel="noopener noreferrer"
-              class="sw-detail-panel__link" [style.color]="INTEL_COLOR">
-              View on attack.mitre.org →
-            </a>
-          </div>
+          <a [href]="s.url" target="_blank" rel="noopener noreferrer" class="mitre-detail__link" [style.color]="INTEL_COLOR">View on attack.mitre.org →</a>
         }
       </div>
     }
@@ -225,116 +183,63 @@ const TOOL_COLOR = '#0288D1'
 </div>
   `,
   styles: [`
-    .mat-mdc-row:hover { background: rgba(0,0,0,0.04); }
-
-    .sw-page { padding: 24px; }
-
-    .sw-header { margin-bottom: 16px; }
-    .sw-header__title { margin: 0; font-size: 1.3rem; font-weight: 700; }
-    .sw-header__sub { margin: 4px 0 0; color: #888; font-size: 0.85rem; }
-
-    .sw-stats-row { display: flex; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
-    .sw-stat__val { font-size: 1.25rem; font-weight: 700; line-height: 1; }
-    .sw-stat__lbl { font-size: 0.72rem; color: #888; }
-
-    .sw-filters { display: flex; gap: 12px; margin-bottom: 16px; align-items: center; flex-wrap: wrap; }
-    .sw-toggle-group { height: 32px; }
-    .sw-toggle-btn { font-size: 0.72rem; padding: 0 12px; }
-    .sw-search-field { width: 240px; }
-    .sw-type-field { min-width: 140px; }
-
-    .sw-layout { display: flex; gap: 16px; }
-
-    .sw-table-panel { flex: 1; min-width: 0; border: 1px solid var(--mat-sys-outline-variant); border-radius: 8px; overflow: hidden; background: var(--mat-sys-surface-container); }
-    .sw-spinner-wrap { display: flex; justify-content: center; padding: 48px; }
-    .sw-error { padding: 16px; color: #d32f2f; font-size: 0.85rem; }
-    .sw-empty { padding: 16px; font-size: 0.85rem; color: #888; }
-    .sw-table { width: 100%; }
-
-    .sw-th { font-size: 0.72rem; font-weight: 600; }
-    .mat-column-software_id { width: 80px; }
-    .mat-column-type { width: 90px; }
-
-    .sw-cell-id { font-family: monospace; font-size: 0.75rem; font-weight: 600; }
-    .sw-cell-name { font-size: 0.78rem; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .sw-cell-platforms { max-width: 180px; }
-
-    .sw-type-chip { font-size: 0.65rem; height: 18px; font-weight: 600; }
-    .sw-mini-chip { font-size: 0.62rem; height: 16px; margin: 0 2px 2px 0; }
-    .sw-empty-dash { color: #bbb; font-size: 0.75rem; }
-
-    .sw-header-row { height: 36px; }
-    .sw-data-row { height: 36px; cursor: pointer; }
-
-    .sw-pagination { display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; border-top: 1px solid var(--mat-sys-outline-variant); }
-    .sw-pagination__count { font-size: 0.75rem; color: #888; }
-    .sw-pagination__nav { display: flex; gap: 8px; align-items: center; }
-    .sw-pagination__btn { font-size: 0.75rem; cursor: pointer; color: var(--mat-sys-primary); }
-    .sw-pagination__btn.disabled { color: var(--mat-sys-on-surface-variant); cursor: default; pointer-events: none; }
-    .sw-pagination__info { font-size: 0.75rem; color: #888; }
-
-    .sw-detail-panel { width: 320px; flex-shrink: 0; border: 1px solid var(--mat-sys-outline-variant); border-radius: 8px; padding: 16px; height: fit-content; position: sticky; top: 24px; background: var(--mat-sys-surface-container); }
-    .sw-detail-panel__top { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
-    .sw-detail-panel__id { font-family: monospace; font-size: 0.85rem; font-weight: 700; }
-    .sw-detail-panel__name { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
-    .sw-detail-panel__desc { font-size: 0.72rem; color: #888; line-height: 1.5; margin-top: 12px; max-height: 280px; overflow-y: auto; }
-    .sw-detail-panel__link-wrap { margin-top: 8px; }
-    .sw-detail-panel__link { font-size: 0.72rem; text-decoration: none; }
-
-    .sw-detail-section { margin-bottom: 8px; }
-    .sw-detail-section__label { font-size: 0.72rem; color: #888; margin-bottom: 4px; }
+    .sw-page { display: flex; flex-direction: column; gap: 16px; }
+    .col-id   { width: 80px; }
+    .col-type { width: 80px; }
+    .col-plat { width: 180px; }
+    .cell-name { font-size: 0.78rem; font-weight: 500; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .mono { font-family: monospace; font-weight: 600; }
+    .type-chip { display: inline-flex; align-items: center; font-size: 0.65rem; height: 18px; padding: 0 7px; border-radius: 9px; font-weight: 600; }
+    .plat-row { display: flex; flex-wrap: nowrap; gap: 3px; align-items: center; overflow: hidden; }
+    .plat-row--wrap { flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+    .plat-chip {
+      display: inline-flex; align-items: center; font-size: 0.62rem; height: 16px;
+      padding: 0 6px; border-radius: 8px; white-space: nowrap;
+      overflow: hidden; text-overflow: ellipsis; max-width: 110px; flex-shrink: 0;
+      background: var(--mat-sys-surface-container-high);
+      color: var(--mat-sys-on-surface-variant);
+    }
+    .detail-top { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
   `],
 })
 export class MitreSoftwareComponent {
   private feedsApi = inject(FeedsApiService)
+  private readonly theme = inject(ThemeService)
 
-  readonly INTEL_COLOR = INTEL_COLOR
+  get INTEL_COLOR() { return this.theme.isDark() ? INTEL_DARK : INTEL_LIGHT }
   readonly MALWARE_COLOR = MALWARE_COLOR
-  readonly TOOL_COLOR = TOOL_COLOR
-  readonly displayedColumns = ['software_id', 'type', 'name', 'platforms']
+  readonly TOOL_COLOR    = TOOL_COLOR
 
-  search = signal('')
-  page = signal(1)
+  search       = signal('')
+  page         = signal(1)
   softwareType = signal<'malware' | 'tool' | ''>('')
-  selected = signal<MitreSoftware | null>(null)
+  selected     = signal<MitreSoftware | null>(null)
 
-  statsQuery = injectQuery(() => ({
+  readonly statsQuery = injectQuery(() => ({
     queryKey: ['feeds', 'software', 'stats'],
     queryFn: () => firstValueFrom(this.feedsApi.getMitreSoftwareStats()),
   }))
 
-  listQuery = injectQuery(() => ({
+  readonly listQuery = injectQuery(() => ({
     queryKey: ['feeds', 'software', 'attack_v19', this.softwareType(), this.search(), this.page()],
     queryFn: () => firstValueFrom(this.feedsApi.getMitreSoftware({
-      source: 'attack_v19',
-      software_type: this.softwareType() || undefined,
-      search: this.search() || undefined,
-      deprecated: false,
-      page: this.page(),
-      per_page: PER_PAGE,
+      source: 'attack_v19', software_type: this.softwareType() || undefined,
+      search: this.search() || undefined, deprecated: false,
+      page: this.page(), per_page: PER_PAGE,
     })),
   }))
 
-  totalPages = computed(() => {
-    const data = this.listQuery.data()
-    return data ? Math.ceil(data.total / PER_PAGE) : 0
-  })
+  readonly totalPages = computed(() => Math.ceil((this.listQuery.data()?.total ?? 0) / PER_PAGE) || 1)
 
-  onSearch(v: string) {
-    this.search.set(v)
-    this.page.set(1)
-  }
+  onSearch(v: string)              { this.search.set(v); this.page.set(1) }
+  onTypeChange(v: 'malware' | 'tool' | '') { this.softwareType.set(v); this.page.set(1) }
+  setPage(p: number)               { this.page.set(p) }
+  onRowClick(s: MitreSoftware)     { this.selected.update(cur => cur?.id === s.id ? null : s) }
 
-  onTypeChange(v: 'malware' | 'tool' | '') {
-    this.softwareType.set(v)
-    this.page.set(1)
-  }
-
-  setPage(p: number) {
-    this.page.set(p)
-  }
-
-  onRowClick(s: MitreSoftware) {
-    this.selected.set(this.selected()?.id === s.id ? null : s)
+  platStyle(p: string): { bg: string; color: string } {
+    const m = this.theme.isDark() ? PLATFORM_DARK : PLATFORM_LIGHT
+    return m[p] ?? (this.theme.isDark()
+      ? { bg: 'rgba(255,255,255,0.08)', color: '#aaa' }
+      : { bg: 'rgba(44,44,42,0.08)',    color: '#5F5E5A' })
   }
 }

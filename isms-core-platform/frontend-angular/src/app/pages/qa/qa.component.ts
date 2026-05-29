@@ -88,6 +88,7 @@ function fromNow(d: string): string {
     PageHeaderComponent,
   ],
   template: `
+<div class="qa-page">
 <app-page-header
   title="QA Engine"
   [subtitle]="currentSubtitle()">
@@ -678,9 +679,11 @@ function fromNow(d: string): string {
 
 </mat-tab-group>
 
+</div>
   `,
   styles: [`
-    :host { display: block; padding: 24px; }
+    :host { display: block; }
+    .qa-page { display: flex; flex-direction: column; gap: 16px; }
 
     .run-buttons { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .last-run { font-size: 0.75rem; color: var(--mat-sys-on-surface-variant); }

@@ -241,7 +241,7 @@ function markdownToHtml(md: string): string {
   imports: [
     JsonPipe, DecimalPipe, NgTemplateOutlet,
     MatTabsModule, MatCardModule, MatTableModule,
-    MatButtonModule, MatIconModule, MatChipsModule,
+    MatButtonModule, MatIconModule,
     MatProgressBarModule, MatProgressSpinnerModule,
     MatTooltipModule, MatDialogModule,
     StatusChipComponent,
@@ -279,15 +279,13 @@ function markdownToHtml(md: string): string {
 
       <div class="cd-header__info">
         <div class="cd-header__chips">
-          <span class="cd-mono" [style.color]="sectionColor()">{{ displayGroupCode() }}</span>
-          <mat-chip-set>
-            <mat-chip>{{ cg()!.section }}</mat-chip>
-            <mat-chip>{{ cg()!.section_name }}</mat-chip>
-            @if (cg()!.is_stacked) {
-              <mat-chip class="cd-chip--stacked">Stacked: {{ cg()!.stacked_control_ids.join(', ') }}</mat-chip>
-            }
-          </mat-chip-set>
-          <app-status-chip [status]="cg()!.framework_status" />
+        <span class="cd-mono" [style.color]="sectionColor()">{{ displayGroupCode() }}</span>
+        <span class="cd-chip">{{ cg()!.section }}</span>
+        <span class="cd-chip">{{ cg()!.section_name }}</span>
+        @if (cg()!.is_stacked) {
+        <span class="cd-chip cd-chip--stacked">Stacked: {{ cg()!.stacked_control_ids.join(', ') }}</span>
+        }
+        <app-status-chip [status]="cg()!.framework_status" />
         </div>
         <h1 class="cd-header__title">{{ cg()!.name }}</h1>
       </div>
@@ -355,18 +353,18 @@ function markdownToHtml(md: string): string {
                     <div class="cd-doc-card__name">{{ pol.title }}</div>
                   </div>
                   <div class="cd-doc-card__chips">
-                    <mat-chip-set>
-                      <mat-chip>{{ pol.policy_type }}</mat-chip>
+                    <div class="cd-chip-row">
+                      <span class="cd-chip">{{ pol.policy_type }}</span>
                       @if (pol.product_type === 'external') {
-                        <mat-chip class="cd-chip--ext">external</mat-chip>
+                        <span class="cd-chip cd-chip--ext">external</span>
                       } @else {
-                        <mat-chip>{{ pol.product_type }}</mat-chip>
+                        <span class="cd-chip">{{ pol.product_type }}</span>
                       }
-                      <mat-chip>{{ pol.word_count | number }}w</mat-chip>
+                      <span class="cd-chip">{{ pol.word_count | number }}w</span>
                       @if (pol.requirements_count > 0) {
-                        <mat-chip class="cd-chip--reqs">{{ pol.requirements_count }} reqs</mat-chip>
+                        <span class="cd-chip cd-chip--reqs">{{ pol.requirements_count }} reqs</span>
                       }
-                    </mat-chip-set>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -388,10 +386,10 @@ function markdownToHtml(md: string): string {
                     <div class="cd-doc-card__name">{{ ins.title }}</div>
                   </div>
                   <div class="cd-doc-card__chips">
-                    <mat-chip-set>
-                      <mat-chip class="cd-chip--ins">INS</mat-chip>
-                      <mat-chip>{{ ins.word_count | number }}w</mat-chip>
-                    </mat-chip-set>
+                    <div class="cd-chip-row">
+                      <span class="cd-chip cd-chip--ins">INS</span>
+                      <span class="cd-chip">{{ ins.word_count | number }}w</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -410,10 +408,10 @@ function markdownToHtml(md: string): string {
                 <div class="cd-impl-card" (click)="openImpl(impl)">
                   <div class="cd-impl-card__top">
                     <span class="cd-mono cd-mono--primary">{{ impl.document_id }}</span>
-                    <mat-chip-set>
-                      <mat-chip [class]="impl.impl_type === 'UG' ? 'cd-chip--ug' : 'cd-chip--tg'">{{ impl.impl_type }}</mat-chip>
-                      <mat-chip>{{ impl.word_count | number }}w</mat-chip>
-                    </mat-chip-set>
+                    <div class="cd-chip-row">
+                      <span [class]="impl.impl_type === 'UG' ? 'cd-chip cd-chip--ug' : 'cd-chip cd-chip--tg'">{{ impl.impl_type }}</span>
+                      <span class="cd-chip">{{ impl.word_count | number }}w</span>
+                    </div>
                   </div>
                   <div class="cd-impl-card__name">{{ impl.title }}</div>
                 </div>
@@ -451,13 +449,13 @@ function markdownToHtml(md: string): string {
                     <div class="cd-mono cd-mono--primary">{{ asmnt.document_id }}</div>
                     <div class="cd-assessment-card__name">{{ asmnt.workbook_name }}</div>
                     <div class="cd-assessment-card__chips">
-                      <mat-chip-set>
-                        <mat-chip class="cd-chip--platform">platform</mat-chip>
-                        <mat-chip>{{ asmnt.items_total }} items</mat-chip>
+                      <div class="cd-chip-row">
+                        <span class="cd-chip cd-chip--platform">platform</span>
+                        <span class="cd-chip">{{ asmnt.items_total }} items</span>
                         @if (asmnt.overall_score != null) {
-                          <mat-chip class="cd-chip--score">{{ asmnt.overall_score }}%</mat-chip>
+                          <span class="cd-chip cd-chip--score">{{ asmnt.overall_score }}%</span>
                         }
-                      </mat-chip-set>
+                      </div>
                     </div>
                   </div>
                   <button mat-icon-button color="warn" [matTooltip]="'Delete assessment'"
@@ -492,11 +490,11 @@ function markdownToHtml(md: string): string {
                   <div class="cd-mono cd-mono--primary">{{ asmnt.document_id }}</div>
                   <div class="cd-assessment-card__name">{{ asmnt.workbook_name }}</div>
                   <div class="cd-assessment-card__chips cd-assessment-card__chips--spaced">
-                    <mat-chip-set>
-                      <mat-chip>{{ asmnt.assessment_type }}</mat-chip>
-                      <mat-chip>{{ asmnt.product_type }}</mat-chip>
-                      <mat-chip>{{ asmnt.sheets_count }} sheets</mat-chip>
-                    </mat-chip-set>
+                    <div class="cd-chip-row">
+                      <span class="cd-chip">{{ asmnt.assessment_type }}</span>
+                      <span class="cd-chip">{{ asmnt.product_type }}</span>
+                      <span class="cd-chip">{{ asmnt.sheets_count }} sheets</span>
+                    </div>
                   </div>
                   <ng-container *ngTemplateOutlet="complianceBarTpl; context: {
                     total: asmnt.items_total,
@@ -510,9 +508,7 @@ function markdownToHtml(md: string): string {
                     <div class="cd-sheet">
                       <div class="cd-sheet__header">
                         <span class="cd-sheet__name">{{ sheet.sheet_name }}</span>
-                        <mat-chip-set>
-                          <mat-chip [class]="sheet.sheet_type === 'assessment' ? 'cd-chip--platform' : ''">{{ sheet.sheet_type }}</mat-chip>
-                        </mat-chip-set>
+                        <span [class]="sheet.sheet_type === 'assessment' ? 'cd-chip cd-chip--platform' : 'cd-chip'">{{ sheet.sheet_type }}</span>
                         @if (sheet.row_count > 0) {
                           <span class="cd-sheet__rows">{{ sheet.row_count }} rows</span>
                         }
@@ -579,13 +575,11 @@ function markdownToHtml(md: string): string {
                 }
                 @if (iso.mappings.length > 0) {
                   <div class="cd-iso-block__mappings">
-                    <mat-chip-set>
+                    <div class="cd-chip-row">
                       @for (m of iso.mappings; track $index) {
-                        <mat-chip class="cd-chip--mapping" [matTooltip]="m.framework + ': ' + m.control_title">
-                          {{ m.control_id }}
-                        </mat-chip>
+                        <span class="cd-chip cd-chip--mapping" [matTooltip]="m.framework + ': ' + m.control_title">{{ m.control_id }}</span>
                       }
-                    </mat-chip-set>
+                    </div>
                     <span class="cd-iso-block__count">
                       {{ iso.mappings.length }} mappings across {{ frameworkCount(iso.mappings) }} frameworks
                     </span>
@@ -604,9 +598,9 @@ function markdownToHtml(md: string): string {
             <div class="cd-section-header">
               <mat-icon class="cd-section-icon cd-section-icon--primary icon-md">electrical_services</mat-icon>
               <span class="cd-section-header__title">Automated Evidence</span>
-              <mat-chip-set class="cd-section-header__chip-set">
-                <mat-chip class="cd-chip--platform">{{ connectorEvidenceCount() }} items</mat-chip>
-              </mat-chip-set>
+              <div class="cd-section-header__chip-set">
+                <span class="cd-chip cd-chip--platform">{{ connectorEvidenceCount() }} items</span>
+              </div>
             </div>
 
             @if (connectorEvQuery.isLoading()) {
@@ -625,21 +619,21 @@ function markdownToHtml(md: string): string {
                   <div class="cd-conn-ev__info">
                     <div class="cd-conn-ev__title">{{ item.title }}</div>
                     <div class="cd-conn-ev__chips">
-                      <mat-chip-set>
-                        <mat-chip class="cd-chip--platform">
+                      <div class="cd-chip-row">
+                        <span class="cd-chip cd-chip--platform">
                           <mat-icon class="cd-conn-ev__chip-icon">electrical_services</mat-icon>
                           {{ resolveConnectorLabel(item.connector_id) }}
-                        </mat-chip>
+                        </span>
                         @if (item.classification) {
-                          <mat-chip [style.color]="classColor(item.classification)">{{ item.classification }}</mat-chip>
+                          <span class="cd-chip" [style.color]="classColor(item.classification)">{{ item.classification }}</span>
                         }
                         @if (item.status) {
-                          <mat-chip [style.color]="connStatusColor(item.status)">{{ item.status }}</mat-chip>
+                          <span class="cd-chip" [style.color]="connStatusColor(item.status)">{{ item.status }}</span>
                         }
                         @if (item.source_ref) {
                           <span class="cd-mono cd-mono--source-ref">{{ item.source_ref }}</span>
                         }
-                      </mat-chip-set>
+                      </div>
                     </div>
                   </div>
                   <div class="cd-conn-ev__date">
@@ -663,9 +657,9 @@ function markdownToHtml(md: string): string {
             <div class="cd-section-header cd-section-header--mt">
               <mat-icon class="cd-section-icon cd-section-icon--muted icon-md">folder_open</mat-icon>
               <span class="cd-section-header__title cd-section-header__title--muted">Manual Evidence</span>
-              <mat-chip-set class="cd-section-header__chip-set">
-                <mat-chip>{{ cg()!.evidence.length }} items</mat-chip>
-              </mat-chip-set>
+              <div class="cd-section-header__chip-set">
+                <span class="cd-chip">{{ cg()!.evidence.length }} items</span>
+              </div>
             </div>
 
             @if (cg()!.evidence.length === 0) {
@@ -678,9 +672,9 @@ function markdownToHtml(md: string): string {
                   <app-status-chip [status]="ev.verified_by ? 'green' : 'not_assessed'" />
                 </div>
                 <div class="cd-ev-row__chips">
-                  <mat-chip-set>
-                    <mat-chip>{{ ev.evidence_type }}</mat-chip>
-                  </mat-chip-set>
+                  <div class="cd-chip-row">
+                    <span class="cd-chip">{{ ev.evidence_type }}</span>
+                  </div>
                   @if (ev.collected_date) {
                     <span class="cd-ev-row__date">{{ ev.collected_date }}</span>
                   }
@@ -725,12 +719,11 @@ function markdownToHtml(md: string): string {
                       <div class="cd-bia-card__name">{{ r.asset_name }}</div>
                       <div class="cd-bia-card__type">{{ r.asset_type }}</div>
                     </div>
-                    <mat-chip-set>
-                      <mat-chip [style.background]="r.recovery_tested ? '#4CAF5020' : '#FF980020'"
-                                [style.color]="r.recovery_tested ? '#4CAF50' : '#FF9800'">
-                        {{ r.recovery_tested ? 'Tested' : 'Not Tested' }}
-                      </mat-chip>
-                    </mat-chip-set>
+                    <span class="cd-chip"
+                      [style.background]="r.recovery_tested ? '#4CAF5020' : '#FF980020'"
+                      [style.color]="r.recovery_tested ? '#4CAF50' : '#FF9800'">
+                      {{ r.recovery_tested ? 'Tested' : 'Not Tested' }}
+                    </span>
                   </div>
                   <div class="cd-bia-card__metrics">
                     @if (r.rto_hours != null) { <span>RTO: <strong>{{ r.rto_hours }}h</strong></span> }
@@ -1032,15 +1025,23 @@ function markdownToHtml(md: string): string {
     .cd-alert--warn { background:rgba(255,152,0,0.12); color:#ffb74d; }
     .cd-alert--error { background:rgba(192,0,0,0.12); color:#ef9a9a; margin-top:8px; }
 
-    .cd-chip--stacked { background:rgba(255,192,0,0.15) !important; color:#FFEB9C !important; }
-    .cd-chip--ext { background:rgba(255,192,0,0.15) !important; color:#FFC000 !important; }
-    .cd-chip--ins { background:rgba(255,192,0,0.15) !important; color:#FFEB9C !important; }
-    .cd-chip--reqs { background:rgba(46,125,50,0.12) !important; color:#C6EFCE !important; }
-    .cd-chip--ug { background:rgba(46,125,50,0.12) !important; color:#C6EFCE !important; }
-    .cd-chip--tg { background:rgba(230,160,0,0.12) !important; color:#FFEB9C !important; }
-    .cd-chip--platform { background:rgba(68,114,196,0.2) !important; color:var(--mat-sys-primary) !important; }
-    .cd-chip--score { background:rgba(46,125,50,0.12) !important; color:#C6EFCE !important; }
-    .cd-chip--mapping { background:rgba(112,173,71,0.12) !important; color:#C6EFCE !important; font-size:0.68rem !important; }
+    .cd-chip--stacked { background:rgba(255,192,0,0.15); color:#FFEB9C; }
+    .cd-chip--ext { background:rgba(255,192,0,0.15); color:#FFC000; }
+    .cd-chip--ins { background:rgba(255,192,0,0.15); color:#FFEB9C; }
+    .cd-chip--reqs { background:rgba(46,125,50,0.12); color:#C6EFCE; }
+    .cd-chip--ug { background:rgba(46,125,50,0.12); color:#C6EFCE; }
+    .cd-chip--tg { background:rgba(230,160,0,0.12); color:#FFEB9C; }
+    .cd-chip--platform { background:rgba(68,114,196,0.2); color:var(--mat-sys-primary); }
+    .cd-chip--score { background:rgba(46,125,50,0.12); color:#C6EFCE; }
+    .cd-chip--mapping { background:rgba(112,173,71,0.12); color:#C6EFCE; font-size:0.68rem; }
+    .cd-chip {
+      display:inline-flex; align-items:center; gap:3px;
+      padding:0 7px; height:20px; border-radius:10px;
+      font-size:0.7rem; font-weight:500; white-space:nowrap;
+      background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.75);
+    }
+    :host-context(html[data-theme='light']) .cd-chip { background:rgba(44,44,42,0.10); color:#2C2C2A; }
+    .cd-chip-row { display:flex; flex-wrap:wrap; gap:4px; align-items:center; }
 
     .cd-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:1000; display:flex; align-items:center; justify-content:center; }
     .cd-dialog { background:#1e1e2e; border-radius:12px; padding:24px; max-width:480px; width:100%; box-shadow:0 8px 32px rgba(0,0,0,0.5); }

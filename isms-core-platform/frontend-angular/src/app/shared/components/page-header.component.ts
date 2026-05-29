@@ -22,12 +22,13 @@ import { Component, input } from '@angular/core'
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      margin-bottom: 24px;
+      margin-bottom: 0;
     }
     .page-header__title {
       margin: 0;
-      font-size: 1.2rem;
-      font-weight: 500;
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.2;
       color: var(--mat-sys-on-surface);
     }
     .page-header__subtitle {
