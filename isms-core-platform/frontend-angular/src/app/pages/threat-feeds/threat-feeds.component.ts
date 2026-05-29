@@ -487,9 +487,6 @@ const AUDIT_STATUS: Record<string, { bg: string; color: string; label: string }>
       display: flex;
       flex-direction: column;
       gap: 16px;
-      height: 100%;
-      overflow-y: auto;
-      box-sizing: border-box;
     }
 
     .feed-tabs { margin-top: 8px; }

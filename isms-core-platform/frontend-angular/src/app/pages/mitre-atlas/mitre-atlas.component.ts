@@ -75,7 +75,7 @@ const PER_PAGE = 50
   </div>
 
   <!-- Table + detail panel -->
-  <div class="layout-row">
+  <div class="layout-row" [class.layout-row--flush]="!!selected()">
     <div class="table-box">
       @if (techQuery.isLoading()) {
         <div class="loading-center"><mat-spinner diameter="28" /></div>
@@ -157,7 +157,15 @@ const PER_PAGE = 50
           <span class="type-chip type-chip--mb">Sub-technique</span>
         }
         @if (sel.description) {
-          <p class="detail-desc">{{ sel.description.slice(0, 600) }}{{ sel.description.length > 600 ? '…' : '' }}</p>
+          <p class="detail-desc">{{ sel.description.slice(0, 700) }}{{ sel.description.length > 700 ? '…' : '' }}</p>
+        }
+        @if (sel.url) {
+          <div class="detail-url-wrap">
+            <a [href]="sel.url" target="_blank" rel="noopener noreferrer"
+              class="detail-url" [style.color]="INTEL_COLOR">
+              View on atlas.mitre.org →
+            </a>
+          </div>
         }
       </div>
     }
@@ -169,9 +177,6 @@ const PER_PAGE = 50
       display: flex;
       flex-direction: column;
       gap: 16px;
-      height: 100%;
-      overflow-y: auto;
-      box-sizing: border-box;
     }
 
     .stats-row { display: flex; gap: 24px; flex-wrap: wrap; }
@@ -193,6 +198,8 @@ const PER_PAGE = 50
     .filter-tactic { min-width: 220px; }
 
     .layout-row { display: flex; gap: 16px; align-items: flex-start; }
+    .layout-row--flush { margin-right: -24px; }
+    .layout-row--flush .detail-panel { border-radius: 8px 0 0 8px; border-right: none; }
 
     .table-box {
       flex: 1;
@@ -258,10 +265,15 @@ const PER_PAGE = 50
       flex-shrink: 0;
       border: 1px solid var(--mat-sys-outline-variant);
       border-radius: 8px;
-      padding: 14px;
+      padding: 16px;
+      height: fit-content;
       position: sticky;
-      top: 16px;
+      top: 24px;
+      background: var(--mat-sys-surface-container);
     }
+    .detail-url-wrap { margin-top: 8px; }
+    .detail-url { font-size: 0.72rem; text-decoration: none; }
+    .detail-url:hover { text-decoration: underline; }
     .detail-id   { font-family: monospace; font-size: 0.85rem; font-weight: 700; margin-bottom: 4px; }
     .detail-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; }
     .detail-desc {

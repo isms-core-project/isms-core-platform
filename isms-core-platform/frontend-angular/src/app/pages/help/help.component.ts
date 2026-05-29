@@ -1,5 +1,6 @@
-import { Component, inject, signal, effect, ElementRef, viewChild } from '@angular/core'
+import { Component, inject, signal, computed, ElementRef, viewChild } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
 import { firstValueFrom } from 'rxjs'
 import { Router } from '@angular/router'
 
@@ -156,25 +157,54 @@ function markdownToHtml(md: string): string {
 <div class="help-layout">
 
   <!-- Sidebar TOC -->
-  <div class="toc-sidebar">
-    <div class="toc-inner">
-      <div class="toc-label">Contents</div>
-      <nav>
-        @for (entry of toc(); track entry.id) {
-          <div class="toc-entry"
-            (click)="scrollTo(entry.id)"
-            [style.padding-left.px]="entry.level === 1 ? 8 : entry.level === 2 ? 16 : 24"
-            [style.font-size]="entry.level === 1 ? '0.82rem' : '0.77rem'"
-            [style.font-weight]="entry.level === 1 ? '600' : '400'"
-            [style.background]="activeId() === entry.id ? 'rgba(68,114,196,.15)' : 'transparent'"
-            [style.border-left-color]="activeId() === entry.id ? '#4472C4' : 'transparent'"
-            [style.color]="activeId() === entry.id ? '#9DC3E6' : 'inherit'"
-            [style.opacity]="entry.level === 1 ? 1 : 0.7">
-            {{ entry.label }}
+  <div class="toc-sidebar" [class.toc-sidebar--collapsed]="tocCollapsed()">
+
+    <!-- Header row: label + toggle -->
+    <div class="toc-header">
+      @if (!tocCollapsed()) {
+        <span class="toc-label">Contents</span>
+      }
+      <button mat-icon-button class="toc-toggle-btn"
+        (click)="tocCollapsed.set(!tocCollapsed())"
+        [matTooltip]="tocCollapsed() ? 'Show contents' : 'Hide contents'">
+        <mat-icon>{{ tocCollapsed() ? 'chevron_right' : 'chevron_left' }}</mat-icon>
+      </button>
+    </div>
+
+    <!-- Accordion nav — hidden when collapsed -->
+    @if (!tocCollapsed()) {
+      <nav class="toc-nav">
+        @for (sec of sections(); track sec.entry.id) {
+
+          <!-- H1 section header — click to expand/collapse -->
+          <div class="toc-sec-hdr" (click)="onSectionClick(sec.entry.id)"
+            [class.toc-sec-hdr--active]="activeId() === sec.entry.id">
+            <span class="toc-sec-lbl"
+              [style.color]="activeId() === sec.entry.id ? '#9DC3E6' : 'inherit'">
+              {{ sec.entry.label }}
+            </span>
+            <mat-icon class="toc-sec-chevron"
+              [class.toc-sec-chevron--open]="expandedSections().has(sec.entry.id)">
+              expand_more
+            </mat-icon>
           </div>
+
+          <!-- H2 / H3 children — shown when section is open -->
+          @if (expandedSections().has(sec.entry.id)) {
+            @for (child of sec.children; track child.id) {
+              <div class="toc-entry"
+                (click)="scrollTo(child.id)"
+                [style.padding-left.px]="child.level === 2 ? 16 : 28"
+                [style.background]="activeId() === child.id ? 'rgba(68,114,196,.15)' : 'transparent'"
+                [style.border-left-color]="activeId() === child.id ? '#4472C4' : 'transparent'"
+                [style.color]="activeId() === child.id ? '#9DC3E6' : 'inherit'">
+                {{ child.label }}
+              </div>
+            }
+          }
         }
       </nav>
-    </div>
+    }
   </div>
 
   <!-- Main content -->
@@ -203,7 +233,8 @@ function markdownToHtml(md: string): string {
 </div>
 `,
   styles: [`
-    :host { display: flex; height: 100%; }
+    /* Escape layout__content padding (24px top/sides, 48px bottom = 72px vertical total) */
+    :host { display: block; margin: -24px -24px -48px; height: calc(100% + 72px); overflow: hidden; }
     .user-manual h1 { font-size: 1.6rem; font-weight: 700; margin: 32px 0 12px; }
     .user-manual h2 { font-size: 1.25rem; font-weight: 700; margin: 28px 0 8px; padding-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,.08); }
     .user-manual h3 { font-size: 1.05rem; font-weight: 700; margin: 20px 0 6px; }
@@ -223,37 +254,83 @@ function markdownToHtml(md: string): string {
     .user-manual strong { font-weight: 700; }
 
     /* ── Layout ── */
+    /* Escape layout__content's 24px/48px padding so help fills edge-to-edge */
     .help-layout { display: flex; height: 100%; overflow: hidden; }
+
     .toc-sidebar {
       width: 260px;
       flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
       border-right: 1px solid var(--mat-sys-outline-variant);
-      overflow-y: auto;
-      height: 100%;
+      overflow: hidden;
+      transition: width 0.2s ease;
     }
-    .toc-inner { padding: 16px; }
+    .toc-sidebar--collapsed { width: 48px; }
+
+    .toc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 4px 4px 16px;
+      flex-shrink: 0;
+    }
+    .toc-sidebar--collapsed .toc-header { justify-content: center; padding: 12px 0 4px; }
+
     .toc-label {
       font-size: .65rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: .1em;
       opacity: .4;
-      margin-bottom: 8px;
-      padding-left: 8px;
     }
+    .toc-toggle-btn { flex-shrink: 0; }
+
+    .toc-nav { padding: 0 8px 16px; overflow-y: auto; flex: 1; }
+
+    /* Section header (H1) — mirrors .nav-group__header from sidebar */
+    .toc-sec-hdr {
+      display: flex; align-items: center; gap: 8px;
+      width: calc(100% - 8px); margin: 0 4px 1px;
+      padding: 5px 10px; border-radius: 6px;
+      background: none; border: none;
+      color: var(--mat-sys-on-surface-variant);
+      cursor: pointer; user-select: none;
+      transition: background 0.12s;
+    }
+    .toc-sec-hdr:hover { background: rgba(255,255,255,0.06); }
+    .toc-sec-hdr--active { background: rgba(68,114,196,.12); }
+
+    .toc-sec-lbl {
+      flex: 1; font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.01em; white-space: nowrap;
+      overflow: hidden; text-overflow: ellipsis;
+    }
+
+    /* Arrow — mirrors .nav-group__arrow: collapsed = -90deg, open = 0deg */
+    .toc-sec-chevron {
+      font-size: 14px; width: 14px; height: 14px; flex-shrink: 0;
+      color: var(--mat-sys-on-surface-variant);
+      transition: transform 0.2s;
+      transform: rotate(-90deg);
+    }
+    .toc-sec-chevron--open { transform: rotate(0deg); }
+
+    /* H2 / H3 leaf entries — mirrors .nav-item indented */
     .toc-entry {
-      cursor: pointer;
-      padding-top: 4px;
-      padding-bottom: 4px;
-      border-radius: 4px;
-      margin-bottom: 1px;
+      display: block;
+      padding: 5px 12px; border-radius: 6px; margin: 0 4px 1px;
+      font-size: 0.8rem; color: var(--mat-sys-on-surface-variant);
+      cursor: pointer; user-select: none;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      transition: background 0.12s, color 0.12s;
       border-left: 2px solid transparent;
     }
+    .toc-entry:hover { background: rgba(255,255,255,0.06); color: var(--mat-sys-on-surface); }
     .content-area {
       flex: 1;
       overflow-y: auto;
       padding: 32px 40px;
-      max-width: 860px;
     }
     .content-header { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
     .content-title { margin: 0; font-weight: 700; }
@@ -270,48 +347,103 @@ function markdownToHtml(md: string): string {
   `],
 })
 export class HelpComponent {
-  private http   = inject(HttpClient)
-  private router = inject(Router)
+  private http      = inject(HttpClient)
+  private router    = inject(Router)
+  private sanitizer = inject(DomSanitizer)
 
-  toc      = signal<TocEntry[]>([])
-  html     = signal<string>('')
-  error    = signal<string | null>(null)
-  activeId = signal<string>('')
+  toc          = signal<TocEntry[]>([])
+  html         = signal<SafeHtml>('')
+  error        = signal<string | null>(null)
+  activeId     = signal<string>('')
+  tocCollapsed = signal(false)
+
+  // Group flat toc entries into accordion sections (H2 = chapter/section, H3 = children)
+  // H1 is the document title — shown separately, not part of accordion
+  sections = computed(() => {
+    const result: Array<{ entry: TocEntry; children: TocEntry[] }> = []
+    for (const entry of this.toc()) {
+      if (entry.level === 2) result.push({ entry, children: [] })
+      else if (entry.level === 3 && result.length > 0) result[result.length - 1].children.push(entry)
+    }
+    return result
+  })
+
+  expandedSections = signal<Set<string>>(new Set())
 
   readonly contentArea = viewChild<ElementRef<HTMLDivElement>>('contentArea')
 
   constructor() {
-    // Load markdown on init
     firstValueFrom(this.http.get('/docs/user-manual.md', { responseType: 'text' }))
       .then(text => {
         this.toc.set(extractToc(text))
-        this.html.set(markdownToHtml(text))
-        // scroll to hash after render
+        // bypassSecurityTrustHtml: we own the HTML (generated from markdown),
+        // ensures id and style attributes survive Angular's sanitizer
+        this.html.set(this.sanitizer.bypassSecurityTrustHtml(markdownToHtml(text)))
         setTimeout(() => {
           const hash = window.location.hash.replace('#', '')
-          if (hash) { this.scrollTo(hash) }
+          if (hash) this.scrollTo(hash)
           this.setupObserver()
         }, 150)
       })
       .catch(e => this.error.set(`Failed to load manual: ${e.message}`))
   }
 
+  // Click on H1 section header: expand + scroll if was collapsed, collapse if was open
+  onSectionClick(id: string): void {
+    const wasExpanded = this.expandedSections().has(id)
+    this.toggleSection(id)
+    if (!wasExpanded) this.scrollTo(id)
+  }
+
+  toggleSection(id: string): void {
+    this.expandedSections.update(s => {
+      const n = new Set(s)
+      n.has(id) ? n.delete(id) : n.add(id)
+      return n
+    })
+  }
+
+  private expandSectionForId(id: string): void {
+    const parent = this.sections().find(s =>
+      s.entry.id === id || s.children.some(c => c.id === id)
+    )
+    if (parent) {
+      this.expandedSections.update(s =>
+        s.has(parent.entry.id) ? s : new Set([...s, parent.entry.id])
+      )
+    }
+  }
+
   scrollTo(id: string): void {
     this.activeId.set(id)
-    const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    this.expandSectionForId(id)
     this.router.navigate([], { fragment: id, replaceUrl: true })
+    const container = this.contentArea()?.nativeElement
+    if (!container) return
+    const el = container.querySelector<HTMLElement>(`[id="${id}"]`)
+    if (!el) return
+    const top = container.scrollTop
+      + el.getBoundingClientRect().top
+      - container.getBoundingClientRect().top
+      - 24
+    container.scrollTo({ top: Math.max(0, top), behavior: 'smooth' })
   }
 
   private setupObserver(): void {
+    const container = this.contentArea()?.nativeElement
+    if (!container) return
     const observer = new IntersectionObserver(
       entries => {
         for (const entry of entries) {
-          if (entry.isIntersecting) this.activeId.set(entry.target.id)
+          if (entry.isIntersecting) {
+            this.activeId.set(entry.target.id)
+            this.expandSectionForId(entry.target.id)
+          }
         }
       },
-      { rootMargin: '-10% 0px -80% 0px' }
+      { root: container, rootMargin: '-10% 0px -80% 0px' }
     )
-    document.querySelectorAll('h1[id], h2[id], h3[id]').forEach(h => observer.observe(h))
+    container.querySelectorAll<HTMLElement>('h1[id], h2[id], h3[id]')
+      .forEach(h => observer.observe(h))
   }
 }

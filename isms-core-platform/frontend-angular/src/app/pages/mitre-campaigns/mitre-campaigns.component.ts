@@ -69,7 +69,7 @@ const INTEL_COLOR = '#FFA726'
   </div>
 
   <!-- Table + detail panel -->
-  <div class="content-row">
+  <div class="content-row" [class.content-row--flush]="!!selected()">
 
     <!-- Table panel -->
     <div class="table-panel">
@@ -207,7 +207,7 @@ const INTEL_COLOR = '#FFA726'
   styles: [`
     .mat-mdc-row:hover { background: rgba(0,0,0,0.04); }
 
-    .page-wrap { padding: 24px; }
+    .page-wrap {}
 
     .page-header { margin-bottom: 16px; }
     .page-title { margin: 0; font-size: 1.3rem; font-weight: 700; }
@@ -224,6 +224,8 @@ const INTEL_COLOR = '#FFA726'
     .search-prefix-icon { font-size: 16px; line-height: 1; }
 
     .content-row { display: flex; gap: 16px; }
+    .content-row--flush { margin-right: -24px; }
+    .content-row--flush .detail-panel { border-radius: 8px 0 0 8px; border-right: none; }
 
     .table-panel {
       flex: 1; min-width: 0;

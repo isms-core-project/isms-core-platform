@@ -912,9 +912,6 @@ export class MfaBackupDialogComponent {
   `,
   styles: [`
     .sys-page {
-      height: 100%;
-      overflow-y: auto;
-      box-sizing: border-box;
     }
     .cards-col { display: flex; flex-direction: column; gap: 16px; }
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }

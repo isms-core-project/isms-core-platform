@@ -464,9 +464,6 @@ function fmtPct(n: number | null | undefined): string {
       display: flex;
       flex-direction: column;
       gap: 16px;
-      height: 100%;
-      overflow-y: auto;
-      box-sizing: border-box;
     }
 
     /* ── No project ── */

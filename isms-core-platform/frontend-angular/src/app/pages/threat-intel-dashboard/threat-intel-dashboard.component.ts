@@ -190,9 +190,6 @@ function statusIcon(s: string | null): string {
       display: flex;
       flex-direction: column;
       gap: 16px;
-      height: 100%;
-      overflow-y: auto;
-      box-sizing: border-box;
     }
 
     .loading-center { display: flex; justify-content: center; margin-top: 48px; }

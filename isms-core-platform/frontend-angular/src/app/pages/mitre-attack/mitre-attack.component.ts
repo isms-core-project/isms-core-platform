@@ -194,9 +194,6 @@ const PER_PAGE = 50
       display: flex;
       flex-direction: column;
       gap: 16px;
-      height: 100%;
-      overflow-y: auto;
-      box-sizing: border-box;
     }
 
     .stats-row { display: flex; gap: 24px; flex-wrap: wrap; }

@@ -370,9 +370,6 @@ const PRODUCT_FAMILIES = ['ISMS', 'PRIVACY', 'CLOUD'] as const
       display: flex;
       flex-direction: column;
       gap: 12px;
-      height: 100%;
-      overflow-y: auto;
-      box-sizing: border-box;
     }
 
     /* Header */
