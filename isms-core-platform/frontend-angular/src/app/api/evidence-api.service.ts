@@ -28,6 +28,10 @@ export class EvidenceApiService {
     return this.http.post<EvidenceRead>('/api/v1/evidence/', data)
   }
 
+  upload(data: FormData): Observable<EvidenceRead> {
+    return this.http.post<EvidenceRead>('/api/v1/evidence/upload', data)
+  }
+
   update(id: string, data: EvidenceUpdate): Observable<EvidenceRead> {
     return this.http.patch<EvidenceRead>(`/api/v1/evidence/${id}`, data)
   }

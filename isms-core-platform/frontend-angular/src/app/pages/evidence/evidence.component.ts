@@ -20,6 +20,7 @@ import { MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angu
 
 import { EvidenceApiService } from '../../api/evidence-api.service'
 import { ProductService } from '../../core/services/product.service'
+import { ProjectService } from '../../core/services/project.service'
 import { ThemeService } from '../../core/services/theme.service'
 import { EvidenceRead } from '../../shared/types'
 import { PageHeaderComponent } from '../../shared/components/page-header.component'
@@ -99,6 +100,103 @@ export class RejectEvidenceDialogComponent {
   }
 }
 
+// ─── Upload Evidence Dialog ───────────────────────────────────────────────────
+
+const ACCEPT_TYPES = '.pdf,.docx,.xlsx,.csv,.txt,.jpg,.jpeg,.png,.json,.md'
+
+@Component({
+  selector: 'app-upload-evidence-dialog',
+  standalone: true,
+  imports: [FormsModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule, MatDialogModule],
+  template: `
+    <h2 mat-dialog-title>Upload Evidence</h2>
+    <mat-dialog-content>
+      <!-- File picker -->
+      <input #fileInput type="file" [accept]="ACCEPT" style="display:none" (change)="onFileSelected($event)" />
+      <div class="file-pick-row">
+        <button mat-stroked-button type="button" (click)="fileInput.click()">
+          <mat-icon>attach_file</mat-icon>
+          Choose File
+        </button>
+        <span class="file-name">{{ selectedFile ? selectedFile.name : 'No file chosen' }}</span>
+      </div>
+
+      <mat-form-field appearance="outline" class="form-full">
+        <mat-label>Title *</mat-label>
+        <input matInput [(ngModel)]="title" placeholder="Descriptive title for this evidence" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-full">
+        <mat-label>Evidence Type *</mat-label>
+        <mat-select [(ngModel)]="evidenceType">
+          <mat-option value="document">Document</mat-option>
+          <mat-option value="screenshot">Screenshot</mat-option>
+          <mat-option value="log_extract">Log Extract</mat-option>
+          <mat-option value="config_export">Config Export</mat-option>
+          <mat-option value="test_result">Test Result</mat-option>
+          <mat-option value="attestation">Attestation</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-full">
+        <mat-label>Control Group Code *</mat-label>
+        <input matInput [(ngModel)]="groupCode" placeholder="e.g. a.8.8" />
+        <mat-hint>Enter the Annex A control code</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-full">
+        <mat-label>Notes</mat-label>
+        <textarea matInput [(ngModel)]="notes" rows="2"></textarea>
+      </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-stroked-button [mat-dialog-close]="null">Cancel</button>
+      <button mat-raised-button (click)="submit()" [disabled]="!canSubmit()">Upload</button>
+    </mat-dialog-actions>
+  `,
+  styles: [`
+    .form-full { width: 100%; margin-top: 12px; }
+    .file-pick-row { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+    .file-name { font-size: 0.82rem; color: var(--mat-sys-on-surface-variant); word-break: break-all; }
+  `],
+})
+export class UploadEvidenceDialogComponent {
+  readonly data = inject<{ projectId?: string }>(MAT_DIALOG_DATA)
+  private dialogRef = inject(MatDialogRef<UploadEvidenceDialogComponent>)
+
+  readonly ACCEPT = ACCEPT_TYPES
+  selectedFile: File | null = null
+  title       = ''
+  evidenceType = 'document'
+  groupCode   = ''
+  notes       = ''
+
+  onFileSelected(event: Event): void {
+    const file = (event.target as HTMLInputElement).files?.[0]
+    if (!file) return
+    this.selectedFile = file
+    if (!this.title) {
+      this.title = file.name.replace(/\.[^/.]+$/, '').replace(/[_-]/g, ' ')
+    }
+  }
+
+  canSubmit(): boolean {
+    return !!this.selectedFile && !!this.title.trim() && !!this.groupCode.trim()
+  }
+
+  submit(): void {
+    if (!this.canSubmit()) return
+    const fd = new FormData()
+    fd.append('file', this.selectedFile!)
+    fd.append('title', this.title.trim())
+    fd.append('evidence_type', this.evidenceType)
+    fd.append('group_code', this.groupCode.trim().toLowerCase())
+    if (this.notes.trim()) fd.append('notes', this.notes.trim())
+    if (this.data.projectId) fd.append('project_id', this.data.projectId)
+    this.dialogRef.close(fd)
+  }
+}
+
 // ─── Bulk Delete Confirm Dialog ───────────────────────────────────────────────
 
 export interface BulkDeleteConfirmDialogData { count: number }
@@ -138,11 +236,12 @@ export class BulkDeleteConfirmDialogComponent {
     MatSortModule, MatPaginatorModule,
     MatDialogModule,
     PageHeaderComponent, MetricCardComponent, StatusChipComponent,
+    UploadEvidenceDialogComponent,
   ],
   template: `
     <app-page-header [title]="'Evidence Tracker'" [subtitle]="headerSubtitle()">
       <div actions>
-        <button mat-stroked-button [disabled]="true" matTooltip="Select a project first (project context coming soon)">
+        <button mat-stroked-button (click)="openUploadDialog()" [disabled]="uploadMutation.isPending()">
           <mat-icon>upload_file</mat-icon>
           Upload Evidence
         </button>
@@ -491,6 +590,13 @@ export class BulkDeleteConfirmDialogComponent {
       border: 1px solid #388e3c;
     }
     .kev-ransomware { background: rgba(192,0,0,0.12); color: #FFC7CE; border-color: #c62828; }
+    html[data-theme='light'] {
+      .kev-chip { background: rgba(29,158,117,0.12); color: #0F6E56; border-color: rgba(29,158,117,0.4); }
+      .kev-ransomware { background: rgba(163,45,45,0.10); color: #8A1F1F; border-color: rgba(163,45,45,0.3); }
+      .expiry-green { background: rgba(29,158,117,0.12); color: #0F6E56; }
+      .expiry-red   { background: rgba(163,45,45,0.12);  color: #8A1F1F; }
+      .expiry-amber { background: rgba(186,117,23,0.12); color: #7A4500; }
+    }
     .notes-preview { font-size: 0.72rem; color: var(--mat-sys-on-surface-variant); }
 
     .type-chip {
@@ -534,8 +640,9 @@ export class BulkDeleteConfirmDialogComponent {
   `],
 })
 export class EvidenceComponent {
-  evidenceApi    = inject(EvidenceApiService)
+  evidenceApi            = inject(EvidenceApiService)
   private productService = inject(ProductService)
+  private projectService = inject(ProjectService)
   private themeService   = inject(ThemeService)
   private queryClient    = injectQueryClient()
   private dialog         = inject(MatDialog)
@@ -661,6 +768,11 @@ export class EvidenceComponent {
     },
   }))
 
+  uploadMutation = injectMutation(() => ({
+    mutationFn: (fd: FormData) => firstValueFrom(this.evidenceApi.upload(fd)),
+    onSuccess: () => this.queryClient.invalidateQueries({ queryKey: ['evidence'] }),
+  }))
+
   bulkDeleteMutation = injectMutation(() => ({
     mutationFn: async (ids: string[]) => {
       await Promise.all(ids.map(id => firstValueFrom(this.evidenceApi.delete(id))))
@@ -676,6 +788,17 @@ export class EvidenceComponent {
   fmtDateFn   = fmtDate
   isExpiredFn = isExpired
   isExpiringSoonFn = isExpiringSoon
+
+  openUploadDialog(): void {
+    const projectId = this.projectService.activeProject()?.id
+    const ref = this.dialog.open(UploadEvidenceDialogComponent, {
+      data: { projectId },
+      width: '480px',
+    })
+    ref.afterClosed().subscribe((fd: FormData | null) => {
+      if (fd) this.uploadMutation.mutate(fd)
+    })
+  }
 
   openRejectDialog(id: string, title?: string): void {
     const ref = this.dialog.open(RejectEvidenceDialogComponent, {

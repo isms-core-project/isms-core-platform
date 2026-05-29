@@ -18,6 +18,7 @@ import { MatTooltipModule } from '@angular/material/tooltip'
 
 import { GraphApiService } from '../../api/graph-api.service'
 import { ProductService, PRODUCT_SUBTITLES } from '../../core/services/product.service'
+import { ThemeService } from '../../core/services/theme.service'
 import { TokenStoreService } from '../../core/services/token-store.service'
 import { PageHeaderComponent } from '../../shared/components/page-header.component'
 import { GraphNode, GraphEdge, GraphResponse } from '../../shared/types'
@@ -347,6 +348,7 @@ function shortId(id: string): string {
 export class GraphComponent implements OnDestroy {
   private graphApi   = inject(GraphApiService)
   readonly product   = inject(ProductService)
+  private theme      = inject(ThemeService)
   private tokenStore = inject(TokenStoreService)
 
   centerInput  = ''
@@ -398,8 +400,19 @@ export class GraphComponent implements OnDestroy {
     effect(() => {
       const data = this.graphQuery.data()
       if (!data) return
-      // Let @if render the canvas div first
       setTimeout(() => this.renderCytoscape(data), 0)
+    })
+    effect(() => {
+      const isLight = !this.theme.isDark()
+      if (!this.cy) return
+      this.cy.style()
+        .selector('node').style({ 'color': isLight ? '#333333' : '#e0e0e0' } as any)
+        .selector('node:selected').style({ 'border-color': isLight ? '#333333' : '#ffffff' } as any)
+        .selector('edge').style({
+          'line-color': isLight ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.25)',
+          'target-arrow-color': isLight ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.35)',
+        } as any)
+        .update()
     })
   }
 

@@ -190,7 +190,7 @@ function getHeatmapStatus(cg: ControlGroupList): string {
   }
 
   <!-- Heatmap view (ISMS only) -->
-  @if (controlsQuery.isSuccess() && viewMode() === 'heatmap' && product.product() === 'isms') {
+  @if (controlsQuery.isSuccess() && viewMode() === 'heatmap') {
     <div class="heatmap">
       <div class="heatmap__legend">
         @for (entry of heatmapLegend(); track entry.label) {
