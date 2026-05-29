@@ -505,6 +505,7 @@ export class OrgCardComponent {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 16px;
+      margin-top: 16px;
     }
     .org-skel { height: 160px; border-radius: 4px; background: var(--mat-sys-surface-variant); }
 

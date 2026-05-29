@@ -529,7 +529,7 @@ export class ManageMembersDialogComponent {
       <app-page-header title="Administration"
         subtitle="User management, groups, MFA, and active sessions" />
 
-      <mat-tab-group [(selectedIndex)]="activeTab" animationDuration="0">
+      <mat-tab-group [(selectedIndex)]="activeTab" animationDuration="0" style="margin-top: 16px">
 
         <!-- ── Users tab ────────────────────────────────────────────────── -->
         <mat-tab>

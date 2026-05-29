@@ -918,7 +918,7 @@ export class MfaBackupDialogComponent {
     @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
 
     /* Service health */
-    .svc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+    .svc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 16px; }
     @media (max-width: 1100px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 600px)  { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
     .svc-card { border: 1px solid; border-radius: 8px; padding: 12px; }

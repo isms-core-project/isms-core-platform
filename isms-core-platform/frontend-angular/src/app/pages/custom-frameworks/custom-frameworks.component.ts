@@ -408,11 +408,11 @@ export class CfImportDialogComponent {
   styles: [`
     :host { display: block; padding: 24px; }
     .skel { background: var(--mat-sys-surface-variant); border-radius: 4px; }
-    .skel-card { border: 1px solid var(--mat-sys-outline-variant); border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+    .skel-card { border: 1px solid var(--mat-sys-outline-variant); border-radius: 8px; padding: 16px; margin-top: 16px; margin-bottom: 12px; }
     .skel-title { width: 40%; height: 22px; margin-bottom: 8px; }
     .skel-subtitle { width: 60%; height: 14px; }
     .stat-card { min-width: 90px; padding: 12px; border-radius: 8px; border: 1px solid; }
-    .stats-strip { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+    .stats-strip { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; margin-bottom: 20px; }
     .stat-value { font-size: 1.4rem; font-weight: 700; line-height: 1; }
     .stat-label { font-size: .65rem; color: var(--mat-sys-on-surface-variant); }
     .fw-card { border: 1px solid var(--mat-sys-outline-variant); border-radius: 8px; overflow: hidden; }
@@ -435,7 +435,7 @@ export class CfImportDialogComponent {
     .btn-danger { color: var(--mat-sys-error); }
     .fw-controls-panel { padding: 0 16px 16px; border-top: 1px solid var(--mat-sys-outline-variant); }
     .error-banner { padding: 10px 14px; border-radius: 6px; font-size: .85rem; background: rgba(192,0,0,.08); border: 1px solid rgba(192,0,0,.2); margin-bottom: 16px; }
-    .empty-state { padding: 64px; text-align: center; border: 1px dashed rgba(255,255,255,0.18); border-radius: 8px; background: var(--mat-sys-surface-container); }
+    .empty-state { padding: 64px; text-align: center; border: 1px dashed rgba(255,255,255,0.18); border-radius: 8px; background: var(--mat-sys-surface-container); margin-top: 16px; }
     .empty-msg { font-size: .875rem; color: var(--mat-sys-on-surface-variant); margin-bottom: 12px; }
   `],
 })

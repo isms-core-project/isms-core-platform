@@ -586,17 +586,10 @@ export class BulkDeleteConfirmDialogComponent {
       font-size: 0.62rem; font-weight: 700; height: 18px; line-height: 18px;
       padding: 0 6px; border-radius: 9px; display: inline-block;
       font-family: monospace;
-      background: rgba(46,125,50,0.1); color: #C6EFCE;
-      border: 1px solid #388e3c;
+      background: var(--kev-chip-bg); color: var(--kev-chip-color);
+      border: 1px solid var(--kev-chip-border);
     }
-    .kev-ransomware { background: rgba(192,0,0,0.12); color: #FFC7CE; border-color: #c62828; }
-    html[data-theme='light'] {
-      .kev-chip { background: rgba(29,158,117,0.12); color: #0F6E56; border-color: rgba(29,158,117,0.4); }
-      .kev-ransomware { background: rgba(163,45,45,0.10); color: #8A1F1F; border-color: rgba(163,45,45,0.3); }
-      .expiry-green { background: rgba(29,158,117,0.12); color: #0F6E56; }
-      .expiry-red   { background: rgba(163,45,45,0.12);  color: #8A1F1F; }
-      .expiry-amber { background: rgba(186,117,23,0.12); color: #7A4500; }
-    }
+    .kev-ransomware { background: var(--expiry-red-bg); color: var(--expiry-red-color); border-color: var(--expiry-red-color); }
     .notes-preview { font-size: 0.72rem; color: var(--mat-sys-on-surface-variant); }
 
     .type-chip {
@@ -611,9 +604,9 @@ export class BulkDeleteConfirmDialogComponent {
     .expiry-badge {
       font-size: 0.72rem; font-weight: 600; padding: 2px 6px; border-radius: 4px; display: inline-block;
     }
-    .expiry-red   { background: rgba(192,0,0,0.15);    color: #FFC7CE; }
-    .expiry-amber { background: rgba(230,160,0,0.15);  color: #FFEB9C; }
-    .expiry-green { background: rgba(46,125,50,0.12);  color: #C6EFCE; }
+    .expiry-red   { background: var(--expiry-red-bg);   color: var(--expiry-red-color); }
+    .expiry-amber { background: var(--expiry-amber-bg); color: var(--expiry-amber-color); }
+    .expiry-green { background: var(--expiry-green-bg); color: var(--expiry-green-color); }
 
     .ev-row:hover td { background: rgba(255,255,255,0.04); cursor: default; }
     .ev-row--draft { opacity: 0.75; }

@@ -255,7 +255,7 @@ function fwColor(code: string): string {
   styles: [`
     :host { display: block; }
 
-    .summary-row { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+    .summary-row { display: flex; gap: 16px; margin-top: 16px; margin-bottom: 24px; flex-wrap: wrap; }
     .summary-card { flex: 1; min-width: 140px; }
     .summary-card mat-card-content { padding-bottom: 12px !important; display: flex; flex-direction: column; }
     .card-label {

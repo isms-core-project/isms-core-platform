@@ -18,6 +18,17 @@
   --color-neutral-bg:     #1a2035;
   --color-neutral-text:   #8baaf8;
 
+  // Badge / chip colours — dark mode defaults
+  --kev-chip-bg:          rgba(46,125,50,0.1);
+  --kev-chip-color:       #C6EFCE;
+  --kev-chip-border:      #388e3c;
+  --expiry-green-bg:      rgba(46,125,50,0.12);
+  --expiry-green-color:   #C6EFCE;
+  --expiry-red-bg:        rgba(192,0,0,0.15);
+  --expiry-red-color:     #FFC7CE;
+  --expiry-amber-bg:      rgba(230,160,0,0.15);
+  --expiry-amber-color:   #FFEB9C;
+
   // Layout
   --sidebar-width:        240px;
   --sidebar-mini-width:   64px;
@@ -38,6 +49,17 @@
   --color-error-text:     #8A1F1F;
   --color-neutral-bg:     rgba(44, 44, 42, 0.07);
   --color-neutral-text:   #444441;
+
+  // Badge / chip colours — light mode overrides
+  --kev-chip-bg:          rgba(29,158,117,0.12);
+  --kev-chip-color:       #0F6E56;
+  --kev-chip-border:      rgba(29,158,117,0.4);
+  --expiry-green-bg:      rgba(29,158,117,0.12);
+  --expiry-green-color:   #0F6E56;
+  --expiry-red-bg:        rgba(163,45,45,0.12);
+  --expiry-red-color:     #8A1F1F;
+  --expiry-amber-bg:      rgba(186,117,23,0.12);
+  --expiry-amber-color:   #7A4500;
 }
 
 // ── Angular Material M3 theme (dark default) ───────────────────────────────

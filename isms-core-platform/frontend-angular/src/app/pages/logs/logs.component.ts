@@ -111,7 +111,7 @@ function fmtDateFull(iso: string | null): string {
     } @else {
       <app-page-header title="Logs" subtitle="Audit trail, feed run history, and connector run history" />
 
-      <mat-tab-group [(selectedIndex)]="activeTab" animationDuration="0">
+      <mat-tab-group [(selectedIndex)]="activeTab" animationDuration="0" style="margin-top: 16px">
 
         <!-- ── Audit Trail ─────────────────────────────────────────────────── -->
         <mat-tab>
