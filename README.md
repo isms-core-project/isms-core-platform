@@ -324,36 +324,36 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 <td align="center"><strong>Home Dashboard</strong><br/><img src="screenshots/02_isms-core_home.png" width="380" alt="Home dashboard — ISMS + Privacy + Cloud + AI product switcher with compliance quick-access row"/></td>
 </tr>
 <tr>
-<td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core_oveview.png" width="380" alt="Compliance overview — 54 controls, 100% coverage, audit readiness"/></td>
-<td align="center"><strong>Connectors — Automated Evidence</strong><br/><img src="screenshots/07_isms-core_connectors.png" width="380" alt="Automated evidence connectors — MS Entra ID, Defender, M365, Azure CSPM"/></td>
+<td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core_overview.png" width="380" alt="Compliance overview — 54 controls, 100% coverage, audit readiness"/></td>
+<td align="center"><strong>Connectors — Automated Evidence</strong><br/><img src="screenshots/53_isms-core_connectors.png" width="380" alt="Automated evidence connectors — MS Entra ID, Defender, M365, Azure CSPM"/></td>
 </tr>
 <tr>
-<td align="center"><strong>ISMS Compass (AI Gap Analysis)</strong><br/><img src="screenshots/05_isms-core_compass.png" width="380" alt="ISMS Compass — AI-powered gap analysis against Gold Standard"/></td>
-<td align="center"><strong>System Status</strong><br/><img src="screenshots/08_isms-core_system.png" width="380" alt="System status — all services healthy, OpenSearch green, Celery active"/></td>
+<td align="center"><strong>ISMS Compass (AI Gap Analysis)</strong><br/><img src="screenshots/13_isms-core_compass.png" width="380" alt="ISMS Compass — AI-powered gap analysis against Gold Standard"/></td>
+<td align="center"><strong>System Status</strong><br/><img src="screenshots/54_isms-core_system.png" width="380" alt="System status — all services healthy, OpenSearch green, Celery active"/></td>
 </tr>
 <tr>
-<td align="center"><strong>Assessments &amp; Collections</strong><br/><img src="screenshots/20_isms-core_assessments.png" width="380" alt="Platform assessments with collections — grouped scoring, CSV/XLSX/PDF export"/></td>
-<td align="center"><strong>Gap Register</strong><br/><img src="screenshots/21_isms-core_gaps.png" width="380" alt="Gap register with BSI 200-3 risk scoring — likelihood, impact, risk level"/></td>
+<td align="center"><strong>Assessments &amp; Collections</strong><br/><img src="screenshots/04_isms-core_assessments.png" width="380" alt="Platform assessments with collections — grouped scoring, CSV/XLSX/PDF export"/></td>
+<td align="center"><strong>Gap Register</strong><br/><img src="screenshots/05_isms-core_gaps.png" width="380" alt="Gap register with BSI 200-3 risk scoring — likelihood, impact, risk level"/></td>
 </tr>
 <tr>
-<td align="center"><strong>NIST CSF 2.0 Assessment</strong><br/><img src="screenshots/10_isms-core_nist_csf.png" width="380" alt="NIST CSF 2.0 — 106 subcategory assessment with tier ratings, function breakdown, and gap analysis"/></td>
-<td align="center"><strong>NIS2 Assessment</strong><br/><img src="screenshots/11_isms-core_nis2.png" width="380" alt="NIS2 Directive (EU 2022/2555) — Article 21 security measures and Article 23 reporting obligations"/></td>
+<td align="center"><strong>NIST CSF 2.0 Assessment</strong><br/><img src="screenshots/17_isms-core_nist_csf.png" width="380" alt="NIST CSF 2.0 — 106 subcategory assessment with tier ratings, function breakdown, and gap analysis"/></td>
+<td align="center"><strong>NIS2 Assessment</strong><br/><img src="screenshots/24_isms-core_nis2.png" width="380" alt="NIS2 Directive (EU 2022/2555) — Article 21 security measures and Article 23 reporting obligations"/></td>
 </tr>
 <tr>
-<td align="center"><strong>DORA Assessment</strong><br/><img src="screenshots/12_isms-core_dora.png" width="380" alt="DORA (EU 2022/2554) — 25 articles across 4 chapters, ICT risk maturity scoring 0–4"/></td>
-<td align="center"><strong>BSI IT-Grundschutz Assessment</strong><br/><img src="screenshots/14_isms-core_bsi.png" width="380" alt="BSI IT-Grundschutz Kompendium — 68 building blocks mapped to ISO 27001:2022"/></td>
+<td align="center"><strong>DORA Assessment</strong><br/><img src="screenshots/25_isms-core_dora.png" width="380" alt="DORA (EU 2022/2554) — 25 articles across 4 chapters, ICT risk maturity scoring 0–4"/></td>
+<td align="center"><strong>BSI IT-Grundschutz Assessment</strong><br/><img src="screenshots/36_isms-core_de_bsi.png" width="380" alt="BSI IT-Grundschutz Kompendium — 68 building blocks mapped to ISO 27001:2022"/></td>
 </tr>
 <tr>
-<td align="center"><strong>Risk Register &amp; Heatmap</strong><br/><img src="screenshots/23_isms-core_risk_register.png" width="380" alt="Risk Register — 5×5 probability/impact matrix, risk heatmap, treatment workflow"/></td>
-<td align="center"><strong>KPI Metrics &amp; Audit Readiness</strong><br/><img src="screenshots/25_isms-core_kpi_dashboard.png" width="380" alt="KPI dashboard — 9 named metrics, sparkline trends, Audit Readiness hero score"/></td>
+<td align="center"><strong>Risk Register &amp; Heatmap</strong><br/><img src="screenshots/07_isms-core_risk_register.png" width="380" alt="Risk Register — 5×5 probability/impact matrix, risk heatmap, treatment workflow"/></td>
+<td align="center"><strong>KPI Metrics &amp; Audit Readiness</strong><br/><img src="screenshots/09_isms-core_kpi_dashboard.png" width="380" alt="KPI dashboard — 9 named metrics, sparkline trends, Audit Readiness hero score"/></td>
 </tr>
 <tr>
-<td align="center"><strong>EBIOS RM</strong><br/><img src="screenshots/27_isms-core_ebios_rm.png" width="380" alt="EBIOS RM — 5-workshop ANSSI methodology, feared events, MITRE ATT&CK attack paths"/></td>
-<td align="center"><strong>TPRM — Third-Party Risk</strong><br/><img src="screenshots/28_isms-core_tprm.png" width="380" alt="TPRM — vendor/supplier register with DORA ICT fields, contract expiry alerts"/></td>
+<td align="center"><strong>EBIOS RM</strong><br/><img src="screenshots/11_isms-core_ebios_rm.png" width="380" alt="EBIOS RM — 5-workshop ANSSI methodology, feared events, MITRE ATT&CK attack paths"/></td>
+<td align="center"><strong>TPRM — Third-Party Risk</strong><br/><img src="screenshots/52_isms-core_tprm.png" width="380" alt="TPRM — vendor/supplier register with DORA ICT fields, contract expiry alerts"/></td>
 </tr>
 <tr>
-<td align="center"><strong>MITRE ATT&CK</strong><br/><img src="screenshots/32_isms-core_mitre.png" width="380" alt="MITRE ATT&CK v19 — 697 techniques across 15 tactics with EPSS and KEV correlation"/></td>
-<td align="center"><strong>CVE / CPE Explorer</strong><br/><img src="screenshots/34_isms-core_cve_cpe.png" width="380" alt="CVE/CPE Explorer — NVD vulnerability search with CVSS, EPSS, KEV filters"/></td>
+<td align="center"><strong>MITRE ATT&CK</strong><br/><img src="screenshots/43_isms-core_mitre_attack.png" width="380" alt="MITRE ATT&CK v19 — 697 techniques across 15 tactics with EPSS and KEV correlation"/></td>
+<td align="center"><strong>CVE / CPE Explorer</strong><br/><img src="screenshots/45_isms-core_cve_explorer.png" width="380" alt="CVE/CPE Explorer — NVD vulnerability search with CVSS, EPSS, KEV filters"/></td>
 </tr>
 </table>
 

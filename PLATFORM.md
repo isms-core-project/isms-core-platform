@@ -171,19 +171,19 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 <td align="center"><strong>Home — Product Dashboard</strong><br/><img src="screenshots/02_isms-core_home.png" width="380" alt="Home dashboard — ISMS, Privacy, Cloud, AI product switcher with live metrics"/></td>
 </tr>
 <tr>
-<td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core_oveview.png" width="380" alt="Compliance overview — 54 controls, 100% FW/OP coverage, audit readiness"/></td>
-<td align="center"><strong>Connectors — Automated Evidence</strong><br/><img src="screenshots/07_isms-core_connectors.png" width="380" alt="Connector dashboard — MS Entra ID, Defender XDR, M365, Azure CSPM — all Active/Healthy"/></td>
+<td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core_overview.png" width="380" alt="Compliance overview — 54 controls, 100% FW/OP coverage, audit readiness"/></td>
+<td align="center"><strong>Connectors — Automated Evidence</strong><br/><img src="screenshots/53_isms-core_connectors.png" width="380" alt="Connector dashboard — MS Entra ID, Defender XDR, M365, Azure CSPM — all Active/Healthy"/></td>
 </tr>
 <tr>
-<td align="center"><strong>ISMS Compass — AI Gap Analysis</strong><br/><img src="screenshots/05_isms-core_compass.png" width="380" alt="ISMS Compass — paste any document, compare against Gold Standard, get gap analysis"/></td>
-<td align="center"><strong>System Status</strong><br/><img src="screenshots/08_isms-core_system.png" width="380" alt="System status — all services healthy, DB stats, OpenSearch indices, Celery Worker active"/></td>
+<td align="center"><strong>ISMS Compass — AI Gap Analysis</strong><br/><img src="screenshots/13_isms-core_compass.png" width="380" alt="ISMS Compass — paste any document, compare against Gold Standard, get gap analysis"/></td>
+<td align="center"><strong>System Status</strong><br/><img src="screenshots/54_isms-core_system.png" width="380" alt="System status — all services healthy, DB stats, OpenSearch indices, Celery Worker active"/></td>
 </tr>
 <tr>
-<td align="center"><strong>NIST CSF 2.0 Assessment</strong><br/><img src="screenshots/10_isms-core_nist_csf.png" width="380" alt="NIST CSF 2.0 — 106 subcategory assessment, tier 1–4 ratings, function breakdown, gap analysis"/></td>
-<td align="center"><strong>NIS2 Directive Assessment</strong><br/><img src="screenshots/11_isms-core_nis2.png" width="380" alt="NIS2 EU 2022/2555 — Article 21 security measures and Article 23 reporting obligations"/></td>
+<td align="center"><strong>NIST CSF 2.0 Assessment</strong><br/><img src="screenshots/17_isms-core_nist_csf.png" width="380" alt="NIST CSF 2.0 — 106 subcategory assessment, tier 1–4 ratings, function breakdown, gap analysis"/></td>
+<td align="center"><strong>NIS2 Directive Assessment</strong><br/><img src="screenshots/24_isms-core_nis2.png" width="380" alt="NIS2 EU 2022/2555 — Article 21 security measures and Article 23 reporting obligations"/></td>
 </tr>
 <tr>
-<td align="center" colspan="2"><strong>Admin — Content Importer</strong><br/><img src="screenshots/09_isms-core_importer.png" width="700" alt="Admin panel — First-Run Setup with individual import buttons and Full Sync"/></td>
+<td align="center" colspan="2"><strong>Admin — Content Importer</strong><br/><img src="screenshots/56_isms-core_importer.png" width="700" alt="Admin panel — First-Run Setup with individual import buttons and Full Sync"/></td>
 </tr>
 </table>
 
