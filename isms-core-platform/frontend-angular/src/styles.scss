@@ -86,21 +86,21 @@ html {
     density: -1,
   ));
 
-  // ISMS background overrides — warm dark grey (k8s-dashboard palette)
-  background-color: #333232;
-  --mat-sys-background:                 #333232;
-  --mat-sys-surface:                    #333232;
-  --mat-sys-surface-dim:                #333232;
-  --mat-sys-surface-bright:             #444241;
-  --mat-sys-surface-container-lowest:   #292726;
-  --mat-sys-surface-container-low:      #3c3b39;
-  --mat-sys-surface-container:          #444241;
-  --mat-sys-surface-container-high:     #4a4947;
-  --mat-sys-surface-container-highest:  #51504e;
-  --mat-sidenav-container-background-color: #3c3b39;
-  --mat-card-background-color: #444241;
-  --mdc-outlined-card-container-color: #444241;
-  --mdc-dialog-container-color: #444241;
+  // ISMS background overrides — cool-neutral dark grey
+  background-color: #2a2a2c;
+  --mat-sys-background:                 #2a2a2c;
+  --mat-sys-surface:                    #2a2a2c;
+  --mat-sys-surface-dim:                #2a2a2c;
+  --mat-sys-surface-bright:             #38363b;
+  --mat-sys-surface-container-lowest:   #222124;
+  --mat-sys-surface-container-low:      #313034;
+  --mat-sys-surface-container:          #38363b;
+  --mat-sys-surface-container-high:     #3e3c41;
+  --mat-sys-surface-container-highest:  #454349;
+  --mat-sidenav-container-background-color: #313034;
+  --mat-card-background-color: #38363b;
+  --mdc-outlined-card-container-color: #38363b;
+  --mdc-dialog-container-color: #38363b;
 
   // Tune primary to match k8s #327df4 exactly
   --mat-sys-primary: #327df4;
