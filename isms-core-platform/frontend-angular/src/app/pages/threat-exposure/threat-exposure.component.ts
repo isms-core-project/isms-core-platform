@@ -75,7 +75,7 @@ function statusLabel(status: string | null, score: number | null): string {
           <span class="summary-lbl">Affected controls</span>
         </div>
         <div class="summary-card">
-          <span class="summary-val summary-val--red">{{ data.gap_controls }}</span>
+          <span class="summary-val summary-val--amber">{{ data.gap_controls }}</span>
           <span class="summary-lbl">Gaps identified</span>
         </div>
       </div>
@@ -189,7 +189,7 @@ function statusLabel(status: string | null, score: number | null): string {
     }
     .gap-chip {
       display: inline-block; font-size: 0.65rem; font-weight: 700;
-      padding: 2px 7px; border-radius: 8px; background: #f44336; color: #fff;
+      padding: 2px 7px; border-radius: 8px; background: #ff9800; color: #fff;
     }
 
     .mono { font-family: monospace; }
