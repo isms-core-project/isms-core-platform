@@ -353,7 +353,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 </tr>
 <tr>
 <td align="center"><strong>MITRE ATT&CK</strong><br/><img src="screenshots/43_isms-core_mitre_attack.png" width="380" alt="MITRE ATT&CK v19 — 697 techniques across 15 tactics with EPSS and KEV correlation"/></td>
-<td align="center"><strong>CVE / CPE Explorer</strong><br/><img src="screenshots/45_isms-core_cve_explorer.png" width="380" alt="CVE/CPE Explorer — NVD vulnerability search with CVSS, EPSS, KEV filters"/></td>
+<td align="center"><strong>CVE Explorer</strong><br/><img src="screenshots/45_isms-core_cve_explorer.png" width="380" alt="CVE/CPE Explorer — NVD vulnerability search with CVSS, EPSS, KEV filters"/></td>
 </tr>
 </table>
 
