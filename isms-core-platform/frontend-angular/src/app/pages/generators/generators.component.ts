@@ -18,6 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs'
 import { MatTableModule } from '@angular/material/table'
 import { GeneratorsApiService, GeneratorItem, GeneratorGroup, GeneratorUpdate, SheetInfo } from '../../api/generators-api.service'
 import { ProductService } from '../../core/services/product.service'
+import { ThemeService } from '../../core/services/theme.service'
 import { PageHeaderComponent } from '../../shared/components/page-header.component'
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
@@ -38,6 +39,14 @@ const PRODUCT_TYPE_COLOR: Record<string, string> = {
   ai:          '#ffb74d',
 }
 
+const PRODUCT_TYPE_COLOR_LIGHT: Record<string, string> = {
+  framework:   '#1565C0',
+  operational: '#1565C0',
+  privacy:     '#7B1FA2',
+  cloud:       '#00695C',
+  ai:          '#E65100',
+}
+
 const PRODUCT_TYPE_LABEL: Record<string, string> = {
   framework:   'FW',
   operational: 'OP',
@@ -52,6 +61,14 @@ const SHEET_TYPE_COLOR: Record<string, string> = {
   summary:      '#81c784',
   evidence:     '#ffb74d',
   approval:     '#ef5350',
+}
+
+const SHEET_TYPE_COLOR_LIGHT: Record<string, string> = {
+  instructions: '#1565C0',
+  input:        '#1565C0',
+  summary:      '#2E7D32',
+  evidence:     '#E65100',
+  approval:     '#C62828',
 }
 
 const SHEET_TYPE_LABEL: Record<string, string> = {
@@ -82,16 +99,16 @@ function sectionSort(a: string, b: string): number {
   return 0
 }
 
-function sheetTypeColor(type: string): string {
-  return SHEET_TYPE_COLOR[type] ?? '#888888'
+function sheetTypeColor(type: string, isDark: boolean): string {
+  return isDark ? (SHEET_TYPE_COLOR[type] ?? '#888888') : (SHEET_TYPE_COLOR_LIGHT[type] ?? '#555555')
 }
 
 function sheetTypeLabel(type: string): string {
   return SHEET_TYPE_LABEL[type] ?? type
 }
 
-function productTypeColor(type: string): string {
-  return PRODUCT_TYPE_COLOR[type] ?? '#4472C4'
+function productTypeColor(type: string, isDark: boolean): string {
+  return isDark ? (PRODUCT_TYPE_COLOR[type] ?? '#4472C4') : (PRODUCT_TYPE_COLOR_LIGHT[type] ?? '#1565C0')
 }
 
 function productTypeLabel(type: string): string {
@@ -203,6 +220,7 @@ export class GenEditDialogComponent implements OnInit {
 
   private api = inject(GeneratorsApiService)
   private queryClient = injectQueryClient()
+  private theme = inject(ThemeService)
 
   workbookName = ''
   domainNumber: number | null = null
@@ -219,7 +237,7 @@ export class GenEditDialogComponent implements OnInit {
     this.sheets.set([...this.gen.sheets])
   }
 
-  stColor(type: string): string { return sheetTypeColor(type) }
+  stColor(type: string): string { return sheetTypeColor(type, this.theme.isDark()) }
 
   addSheet() {
     this.sheets.update(s => [...s, { name: '', type: 'input' }])
@@ -433,9 +451,10 @@ export class GenPreviewDrawerComponent {
   @Input() open = false
   @Output() close = new EventEmitter<void>()
 
+  private theme = inject(ThemeService)
   activeTab = signal(0)
 
-  stColor(type: string): string { return sheetTypeColor(type) }
+  stColor(type: string): string { return sheetTypeColor(type, this.theme.isDark()) }
 
   totalColumns(): number {
     return this.gen.sheet_schemas.reduce((s, sh) => s + sh.columns.length, 0)
@@ -572,7 +591,7 @@ export class GenPreviewDrawerComponent {
     .type-chip { font-size:0.65rem;font-weight:700;padding:2px 6px;border-radius:4px;border:1px solid;line-height:1.4 }
     .override-chip { font-size:0.65rem;padding:2px 6px;border-radius:4px;background:rgba(255,192,0,0.12);color:#ffca28;border:1px solid rgba(255,192,0,0.35);cursor:pointer }
     .stacked-chip { font-size:0.65rem;padding:2px 6px;border-radius:4px;background:rgba(239,83,80,0.1);color:#ef5350;border:1px solid rgba(239,83,80,0.3) }
-    .domain-chip { font-size:0.65rem;padding:2px 6px;border-radius:4px;background:rgba(144,202,249,0.1);color:#90caf9;border:1px solid rgba(144,202,249,0.25) }
+    .domain-chip { font-size:0.65rem;padding:2px 6px;border-radius:4px;background:var(--gen-domain-chip-bg);color:var(--gen-domain-chip-color);border:1px solid var(--gen-domain-chip-border) }
     .sheet-count-chip { font-size:0.65rem;padding:2px 6px;border-radius:4px;background:var(--mat-sys-surface-variant);display:flex;align-items:center }
     .sheet-strip { display:flex;flex-wrap:wrap;gap:4px;margin-top:6px }
     .st-chip { font-size:0.65rem;font-weight:700;padding:1px 5px;border-radius:3px;border:1px solid;line-height:1.6;cursor:default }
@@ -593,6 +612,7 @@ export class GeneratorCardComponent {
 
   private api = inject(GeneratorsApiService)
   private queryClient = injectQueryClient()
+  private theme = inject(ThemeService)
 
   gen = signal<GeneratorItem>({ } as GeneratorItem)
   expanded = signal(false)
@@ -607,9 +627,9 @@ export class GeneratorCardComponent {
     return g.domain_total != null ? `Domain ${g.domain_number} of ${g.domain_total}` : `Domain ${g.domain_number}`
   })
 
-  stColor(type: string): string { return sheetTypeColor(type) }
+  stColor(type: string): string { return sheetTypeColor(type, this.theme.isDark()) }
   stLabel(type: string): string { return sheetTypeLabel(type) }
-  ptColor(type: string): string { return productTypeColor(type) }
+  ptColor(type: string): string { return productTypeColor(type, this.theme.isDark()) }
   ptLabel(type: string): string { return productTypeLabel(type) }
 
   async clearOverride() {

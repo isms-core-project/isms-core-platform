@@ -301,10 +301,12 @@ function pct(rated: number, total: number): number {
     }
 
     @if (!profilesQuery.isLoading() && (profilesQuery.data()?.length ?? 0) === 0) {
-      <div (click)="openCreate()" class="empty-state">
-        <mat-icon class="empty-icon">grid_view</mat-icon>
-        <div class="empty-label">No NIST CSF 2.0 assessments yet.</div>
-        <div class="empty-cta">Click to create your first assessment profile</div>
+      <div class="empty-state">
+        <p class="empty-title">No assessments yet</p>
+        <p class="empty-text">Create your first NIST CSF 2.0 assessment to get started.</p>
+        <button mat-stroked-button (click)="openCreate()">
+          <mat-icon>add</mat-icon> New Assessment
+        </button>
       </div>
     }
 
@@ -448,7 +450,7 @@ function pct(rated: number, total: number): number {
     .page-wrap { padding: 0 4px; }
 
     /* Header */
-    .nist-header { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
+    .nist-header { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-top:16px; margin-bottom:20px; flex-wrap:wrap; }
     .nist-header__left { flex:1; }
     .nist-header__title-row { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
     .nist-header__title { margin:0; font-size:1.75rem; font-weight:700; line-height:1.2; }
@@ -558,13 +560,9 @@ function pct(rated: number, total: number): number {
     }
 
     /* Empty state */
-    .empty-state {
-      padding: 32px; border-radius: 8px; text-align: center; cursor: pointer;
-      border: 1px dashed rgba(68,114,196,.3); background: rgba(68,114,196,.03);
-    }
-    .empty-icon { opacity: .3; font-size: 32px; display: block; margin-bottom: 8px; }
-    .empty-label { font-size: .85rem; opacity: .5; }
-    .empty-cta { font-size: .72rem; color: #9DC3E6; margin-top: 4px; }
+    .empty-state { text-align: center; padding: 64px 0; }
+    .empty-title { font-size: 1.1rem; color: var(--mat-sys-on-surface-variant); margin: 0 0 8px; font-weight: 600; }
+    .empty-text { color: var(--mat-sys-on-surface-variant); margin: 0 0 24px; }
 
     /* Profile card */
     .profile-card {
@@ -581,11 +579,11 @@ function pct(rated: number, total: number): number {
       position: relative; width: 52px; height: 52px;
       flex-shrink: 0; display: flex; align-items: center; justify-content: center;
     }
-    .ring-bg { position: absolute; opacity: .06; }
-    .ring-fg { position: absolute; color: #4472C4; }
+    .ring-bg { position: absolute; }
+    .ring-fg { position: absolute; }
     .ring-label { text-align: center; }
-    .ring-count { font-size: .7rem; font-weight: 700; line-height: 1; color: #9DC3E6; }
-    .ring-total { font-size: .52rem; opacity: .4; line-height: 1; }
+    .ring-count { font-size: .7rem; font-weight: 700; line-height: 1; color: var(--mat-sys-on-surface); }
+    .ring-total { font-size: .52rem; opacity: .5; line-height: 1; color: var(--mat-sys-on-surface-variant); }
 
     /* Profile info */
     .profile-info { flex: 1; min-width: 0; }

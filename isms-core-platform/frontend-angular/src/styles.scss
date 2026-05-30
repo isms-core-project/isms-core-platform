@@ -28,6 +28,11 @@
   --expiry-red-color:     #FFC7CE;
   --expiry-amber-bg:      rgba(230,160,0,0.15);
   --expiry-amber-color:   #FFEB9C;
+  --gen-domain-chip-bg:   rgba(144,202,249,0.1);
+  --gen-domain-chip-color: #90caf9;
+  --gen-domain-chip-border: rgba(144,202,249,0.25);
+  --gap-count-color:      #ef5350;
+  --compliant-count-color: #90caf9;
 
   // Layout
   --sidebar-width:        240px;
@@ -60,6 +65,11 @@
   --expiry-red-color:     #8A1F1F;
   --expiry-amber-bg:      rgba(186,117,23,0.12);
   --expiry-amber-color:   #7A4500;
+  --gen-domain-chip-bg:   rgba(21,101,192,0.1);
+  --gen-domain-chip-color: #1565C0;
+  --gen-domain-chip-border: rgba(21,101,192,0.3);
+  --gap-count-color:      #c62828;
+  --compliant-count-color: #1565C0;
 }
 
 // ── Angular Material M3 theme (dark default) ───────────────────────────────

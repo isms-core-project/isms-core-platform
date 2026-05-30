@@ -471,8 +471,8 @@ const PRODUCT_FAMILIES = ['ISMS', 'PRIVACY', 'CLOUD'] as const
       color: var(--mat-sys-on-surface-variant);
       text-align: center;
     }
-    .stat--warn .stat__value { color: #e65100; }
-    .stat--ok .stat__value { color: #00c752; }
+    .stat--warn .stat__value { color: var(--gap-count-color); }
+    .stat--ok .stat__value { color: var(--gap-count-color); }
 
     .stat-row {
       display: flex;

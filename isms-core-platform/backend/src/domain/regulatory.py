@@ -25,6 +25,9 @@ class RegulatoryAssessment(TimestampMixin, Base):
     scope: Mapped[str | None] = mapped_column(Text, nullable=True)
     organisation: Mapped[str | None] = mapped_column(String(200), nullable=True)
     status: Mapped[str] = mapped_column(String(20), nullable=False, default="draft")
+    project_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("projects.id", ondelete="SET NULL"), nullable=True
+    )
 
     ratings: Mapped[list["RegulatoryRating"]] = relationship(
         "RegulatoryRating", back_populates="assessment", cascade="all, delete-orphan"

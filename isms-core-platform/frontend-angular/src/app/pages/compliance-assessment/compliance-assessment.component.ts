@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, input } from '@angular/core'
+import { Component, inject, signal, computed, input, effect } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { RouterLink } from '@angular/router'
 import { firstValueFrom } from 'rxjs'
@@ -55,14 +55,14 @@ const CAF_SCORE_LABELS: Record<number, string> = {
 const FRAMEWORK_META: Record<string, FrameworkMeta> = {
   NIS2:                   { name: 'NIS2 Directive',                    subtitle: 'EU 2022/2555',        color: '#003399', description: 'Network and Information Security Directive 2 — Cybersecurity measures for essential and important entities.' },
   DORA:                   { name: 'DORA',                              subtitle: 'EU 2022/2554',        color: '#1565C0', description: 'Digital Operational Resilience Act — ICT risk management for financial entities.' },
-  CIS_V8:                 { name: 'CIS Controls',                      subtitle: 'v8',                  color: '#2E7D32', description: 'CIS Critical Security Controls v8 — 18 controls and 153 safeguards for enterprise cyber defence.' },
+  CIS_V8:                 { name: 'CIS Controls',                      subtitle: 'v8',                  color: '#BF360C', description: 'CIS Critical Security Controls v8 — 18 controls and 153 safeguards for enterprise cyber defence.' },
   BSI_IT_GRUNDSCHUTZ:     { name: 'BSI IT-Grundschutz',               subtitle: '2023',                color: '#C62828', description: 'BSI IT-Grundschutz Kompendium — 58 Bausteine across 10 layers.' },
-  TISAX:                  { name: 'TISAX / VDA ISA',                   subtitle: 'v6.0',                color: '#1B5E20', description: 'TISAX — Trusted Information Security Assessment Exchange. VDA ISA 6.0 for the automotive supply chain.' },
+  TISAX:                  { name: 'TISAX / VDA ISA',                   subtitle: 'v6.0',                color: '#37474F', description: 'TISAX — Trusted Information Security Assessment Exchange. VDA ISA 6.0 for the automotive supply chain.' },
   CH_NDSG:                { name: 'Swiss nDSG',                        subtitle: '2023',                color: '#B71C1C', description: 'Swiss Federal Act on Data Protection (nDSG) — in force 1 September 2023.' },
   CH_ISG:                 { name: 'Swiss ISG (SR 128)',                subtitle: 'State 1 Oct. 2025',   color: '#C62828', description: 'Swiss Federal Act on Information Security (ISG / LSI, SR 128) — in force 1 January 2024.' },
   EU_CRA:                 { name: 'EU Cyber Resilience Act',           subtitle: '2024/2847',           color: '#0D47A1', description: 'Mandatory cybersecurity requirements for products with digital elements.' },
   EU_AI_ACT:              { name: 'EU AI Act',                         subtitle: '2024/1689',           color: '#4A148C', description: 'EU AI Act — risk-based framework for artificial intelligence systems.' },
-  NIST_AI_RMF:            { name: 'NIST AI RMF 1.0',                  subtitle: 'NIST AI 100-1',       color: '#1B5E20', description: 'NIST AI Risk Management Framework 1.0 — voluntary framework for managing AI risks.' },
+  NIST_AI_RMF:            { name: 'NIST AI RMF 1.0',                  subtitle: 'NIST AI 100-1',       color: '#4527A0', description: 'NIST AI Risk Management Framework 1.0 — voluntary framework for managing AI risks.' },
   UK_NIS:                 { name: 'UK NIS Regulations',                subtitle: 'SI 2018/506',         color: '#003399', description: 'The Network and Information Systems (NIS) Regulations 2018 — UK cybersecurity obligations.' },
   NCSC_CAF:               { name: 'NCSC Cyber Assessment Framework',   subtitle: 'CAF v4.0',            color: '#1D3557', description: 'NCSC CAF v4.0 — Outcome-based cybersecurity assessment framework for operators of essential services.', scoreLabels: CAF_SCORE_LABELS },
   UK_OPERATIONAL_RESILIENCE:{ name: 'UK Operational Resilience',       subtitle: 'FCA PS21/3 + PRA SS1/21', color: '#1565C0', description: 'UK Financial Sector Operational Resilience.' },
@@ -73,7 +73,7 @@ const FRAMEWORK_META: Record<string, FrameworkMeta> = {
   EU_CLOUD_SOV:           { name: 'EU Cloud Sovereignty Framework',    subtitle: 'v1.2.1 — Oct. 2025',  color: '#01579B', description: 'European Commission Cloud Sovereignty Framework — SEAL-0 to SEAL-4.', scoreLabels: SEAL_SCORE_LABELS },
   COBIT_2019:             { name: 'COBIT 2019',                        subtitle: 'ISACA — EGIT Framework',color: '#7B1FA2', description: 'ISACA EGIT framework — 40 governance and management objectives.', scoreLabels: COBIT_SCORE_LABELS },
   FR_NIS2_RECYF:          { name: 'ReCyF v2.5',                        subtitle: 'NIS2 FR (ANSSI)',       color: '#002395', description: 'French NIS2 transposition reference framework (Référentiel Cyber Fondamental) — ANSSI.' },
-  NIST_800_53_R5:         { name: 'NIST SP 800-53 Rev 5',              subtitle: 'NIST SP 800-53',        color: '#1B5E20', description: 'NIST Special Publication 800-53 Rev 5 — Security and privacy controls for federal information systems.' },
+  NIST_800_53_R5:         { name: 'NIST SP 800-53 Rev 5',              subtitle: 'NIST SP 800-53',        color: '#00838F', description: 'NIST Special Publication 800-53 Rev 5 — Security and privacy controls for federal information systems.' },
   CSA_CCM_V4_1:           { name: 'CSA Cloud Controls Matrix',         subtitle: 'CCM v4.1',              color: '#0277BD', description: 'Cloud Security Alliance Cloud Controls Matrix v4.1 — security controls for cloud computing.' },
   CSA_AICM_V1:            { name: 'CSA AI Controls Matrix',            subtitle: 'AICM v1',               color: '#6A1B9A', description: 'Cloud Security Alliance AI Controls Matrix v1 — security controls for AI systems.' },
 }
@@ -595,11 +595,11 @@ function fmtDate(d: string): string {
     .del-btn:hover { color:#f44336; }
     .card-kpis { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px; }
     .kpi { display:flex; flex-direction:column; gap:2px; }
-    .kpi-label { font-size:.72rem; color:#9e9e9e; }
+    .kpi-label { font-size:.72rem; color:var(--mat-sys-on-surface-variant); }
     .kpi-value { font-size:.95rem; font-weight:700; }
     .progress-section { margin-bottom:8px; }
     .progress-header  { display:flex; justify-content:space-between; margin-bottom:4px; }
-    .card-assessor { margin:8px 0 0; font-size:.75rem; color:#9e9e9e; }
+    .card-assessor { margin:8px 0 0; font-size:.75rem; color:var(--mat-sys-on-surface-variant); }
 
     /* Detail view */
     .detail-header { display:flex; align-items:flex-start; gap:12px; margin-bottom:20px; }
@@ -617,7 +617,7 @@ function fmtDate(d: string): string {
     @media(max-width:700px){ .kpi-strip { grid-template-columns:repeat(2,1fr); } }
     .kpi-card   { padding:12px; border:1px solid var(--mat-divider-color,rgba(0,0,0,.12)); border-radius:8px; display:flex; flex-direction:column; gap:2px; }
     .kpi-big    { font-size:1.3rem; font-weight:700; line-height:1.2; }
-    .kpi-sub    { font-size:.72rem; color:#9e9e9e; }
+    .kpi-sub    { font-size:.72rem; color:var(--mat-sys-on-surface-variant); }
 
     /* Requirement groups */
     .req-group { margin-bottom:24px; }
@@ -685,7 +685,7 @@ function fmtDate(d: string): string {
     .status-select-field { width:140px; }
     .section-divider     { margin:16px 0; }
     .btn-white-text      { color:#fff; }
-    .kpi-compliant       { color:#4CAF50; }
+    .kpi-compliant       { color: var(--compliant-count-color); }
     .status-opt-icon     { vertical-align:middle; margin-right:4px; }
     .col-code   { width:110px; }
     .col-score  { width:160px; }
@@ -739,6 +739,25 @@ export class ComplianceAssessmentComponent {
   expandedGroups = signal<Set<string>>(new Set<string>())
   expandedReqs   = signal<Set<string>>(new Set<string>())
 
+  constructor() {
+    // Reset detail view when navigating between frameworks (Angular reuses component instance)
+    effect(() => {
+      this.frameworkCode()
+      this.selectedId.set(null)
+      this.expandedGroups.set(new Set())
+      this.expandedReqs.set(new Set())
+    })
+    // Auto-expand all groups when assessment data first loads
+    effect(() => {
+      const d = this.fullQuery.data()
+      if (!d) return
+      const gs = groupRequirements(d.requirements, this.frameworkCode())
+      if (gs.length > 0 && this.expandedGroups().size === 0) {
+        this.expandedGroups.set(new Set(gs.map(g => g.groupId)))
+      }
+    })
+  }
+
   // ── Queries ────────────────────────────────────────────────────────────────
   listQuery = injectQuery(() => ({
     queryKey: ['regulatory', this.frameworkCode(), 'assessments', this.activeProject()?.id ?? null],
@@ -763,12 +782,7 @@ export class ComplianceAssessmentComponent {
   groups = computed<GroupedReq[]>(() => {
     const d = this.fullQuery.data()
     if (!d) return []
-    const gs = groupRequirements(d.requirements, this.frameworkCode())
-    // Auto-expand all groups on first load
-    if (this.expandedGroups().size === 0 && gs.length > 0) {
-      this.expandedGroups.set(new Set(gs.map(g => g.groupId)))
-    }
-    return gs
+    return groupRequirements(d.requirements, this.frameworkCode())
   })
 
   scoreLabels = computed(() => resolveScoreLabels(this.frameworkCode()))
