@@ -71,7 +71,7 @@ function statusLabel(status: string | null, score: number | null): string {
           <span class="summary-lbl">Active techniques</span>
         </div>
         <div class="summary-card">
-          <span class="summary-val summary-val--amber">{{ data.affected_controls }}</span>
+          <span class="summary-val summary-val--blue">{{ data.affected_controls }}</span>
           <span class="summary-lbl">Affected controls</span>
         </div>
         <div class="summary-card">
@@ -158,6 +158,7 @@ function statusLabel(status: string | null, score: number | null): string {
     .summary-val        { font-size: 2rem; font-weight: 800; line-height: 1; }
     .summary-val--red   { color: #f44336; }
     .summary-val--amber { color: #ff9800; }
+    .summary-val--blue  { color: #1976D2; }
     .summary-lbl { font-size: 0.72rem; color: var(--mat-sys-on-surface-variant); }
 
     .table-header {
