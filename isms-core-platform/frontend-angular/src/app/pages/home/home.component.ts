@@ -72,7 +72,7 @@ const PRODUCT_FAMILIES = ['ISMS', 'PRIVACY', 'CLOUD'] as const
   <!-- Header -->
   <div class="home__header">
     <div class="home__header-left">
-      <h5 class="home__title">ISMS CORE Platform</h5>
+      <h5 class="home__title"><span class="home__bamboo">🎋</span> ISMS CORE Platform</h5>
       <span class="home__date">{{ today }}</span>
     </div>
     <span class="home__user">{{ auth.user()?.email }}</span>
@@ -385,10 +385,14 @@ const PRODUCT_FAMILIES = ['ISMS', 'PRIVACY', 'CLOUD'] as const
     }
     .home__title {
       margin: 0;
-      font-size: 1.25rem;
-      font-weight: 600;
+      font-size: 1.75rem;
+      font-weight: 700;
       color: var(--mat-sys-on-surface);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
+    .home__bamboo { font-size: 1.6rem; line-height: 1; }
     .home__date {
       font-size: 0.75rem;
       color: var(--mat-sys-on-surface-variant);
