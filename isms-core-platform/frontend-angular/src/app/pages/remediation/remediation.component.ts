@@ -90,7 +90,7 @@ function fmtDate(d: string | null | undefined): string {
   </div>
 </app-page-header>
 
-<mat-tab-group [selectedIndex]="activeTab()" (selectedIndexChange)="activeTab.set($event)">
+<mat-tab-group [selectedIndex]="activeTab()" (selectedIndexChange)="activeTab.set($event)" style="margin-top: 16px">
 
   <!-- ── TAB 0: Risk Treatments ─────────────────────────────────────────────── -->
   <mat-tab label="Risk Treatments">

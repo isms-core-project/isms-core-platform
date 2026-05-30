@@ -1510,7 +1510,7 @@ const WORKSHOP_TABS = [
       </div>
 
       <mat-tab-group [selectedIndex]="activeTab()" (selectedIndexChange)="activeTab.set($event)"
-        animationDuration="150ms">
+        animationDuration="150ms" style="margin-top: 16px">
         @for (wt of workshopTabs; track $index) {
           <mat-tab [label]="wt.label"></mat-tab>
         }
@@ -1540,7 +1540,7 @@ const WORKSHOP_TABS = [
   styles: [`
     :host { display:block;padding:24px }
     /* Summary cards */
-    .summary-row { display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px }
+    .summary-row { display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;margin-bottom:20px }
     .sum-card { min-width:90px;padding:12px;border-radius:8px;border:1px solid }
     .sum-card-skel { width:36px;height:26px;margin-bottom:4px }
     .sum-card-value { font-size:1.4rem;font-weight:700;line-height:1 }

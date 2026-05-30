@@ -734,7 +734,7 @@ function baselinePct(objects: ProtectionObject[]): number | null {
     /* ── Disclaimer banner ────────────────────────────────────────────────────── */
     .disclaimer {
       padding:12px 16px; border-radius:8px; border:1px solid rgba(255,152,0,.3);
-      background:rgba(255,152,0,.08); margin-bottom:20px; cursor:pointer; font-size:.82rem
+      background:rgba(255,152,0,.08); margin-top:16px; margin-bottom:20px; cursor:pointer; font-size:.82rem
     }
     .disclaimer-header { display:flex; align-items:center; justify-content:space-between }
     .disclaimer-subtext { font-size:.82rem }

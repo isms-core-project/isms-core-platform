@@ -141,8 +141,11 @@ html[data-theme='light'] {
 
   --mat-sys-on-surface:                 #2C2C2A;
   --mat-sys-on-surface-variant:         #5F5E5A;
+  --mat-sys-surface-variant:            #CACAC0;
+  --mat-sys-on-surface-variant:         #5F5E5A;
   --mat-sys-outline:                    rgba(44, 44, 42, 0.30);
   --mat-sys-outline-variant:            rgba(44, 44, 42, 0.15);
+  --mat-table-background-color:         transparent;
 
   --mat-sys-primary:                    #1D9E75;
   --mat-sys-on-primary:                 #ffffff;
@@ -283,8 +286,11 @@ html[data-theme='light'] .mat-mdc-chip {
   --mat-table-background-color: transparent;
   --mat-paginator-container-background-color: transparent;
 }
-.mat-mdc-table     { background-color: transparent !important; }
-.mat-mdc-paginator { background-color: transparent !important; }
+.mat-mdc-table        { background-color: transparent !important; }
+.mat-mdc-paginator    { background-color: transparent !important; }
+.mat-mdc-header-row,
+th.mat-mdc-header-cell,
+.mat-mdc-table thead  { background-color: transparent !important; }
 
 .mat-mdc-paginator-container,
 .mat-mdc-paginator-range-actions { font-size: 14px; min-height: 40px !important; }

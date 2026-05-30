@@ -508,7 +508,7 @@ export class ContractDialogComponent {
     </div>
 
     <!-- Tabs -->
-    <mat-tab-group [(selectedIndex)]="activeTab" animationDuration="0">
+    <mat-tab-group [(selectedIndex)]="activeTab" animationDuration="0" style="margin-top: 16px">
 
       <!-- Vendors tab -->
       <mat-tab label="Vendors">
@@ -763,6 +763,7 @@ export class ContractDialogComponent {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      margin-top: 16px;
       margin-bottom: 20px;
     }
     .skeleton-value {

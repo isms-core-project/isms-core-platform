@@ -471,7 +471,7 @@ function fmtDate(d: string | null | undefined): string {
   styles: [`
     :host { display: block; padding: 24px; }
 
-    .alert { padding: 10px 14px; border-radius: 6px; margin-bottom: 12px; font-size: 0.85rem; }
+    .alert { padding: 10px 14px; border-radius: 6px; margin-top: 16px; margin-bottom: 12px; font-size: 0.85rem; }
     .alert-info  { background: rgba(68,114,196,0.12); color: #9DC3E6; border: 1px solid rgba(68,114,196,0.2); }
     .alert-error { background: rgba(192,0,0,0.12); color: #FFC7CE; border: 1px solid rgba(192,0,0,0.2); }
 

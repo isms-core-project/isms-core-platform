@@ -93,7 +93,7 @@ function metricColor(unit: 'percent' | 'count', value: number, lowerIsBetter = f
 
 @if (auth.isSuperAdmin()) {
   <mat-tab-group [selectedIndex]="activeTab()" (selectedIndexChange)="activeTab.set($event)"
-    class="tabs-no-margin-bottom">
+    class="tabs-no-margin-bottom" style="margin-top: 16px">
     <mat-tab label="My Metrics" />
     <mat-tab label="Portfolio" />
   </mat-tab-group>

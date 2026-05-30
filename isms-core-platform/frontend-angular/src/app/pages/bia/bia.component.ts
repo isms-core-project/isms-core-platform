@@ -398,7 +398,7 @@ export class BiaDialogComponent {
     :host { display: block; padding: 24px; }
 
     /* Project banner */
-    .project-banner { margin-bottom: 16px; padding: 8px 12px; border-radius: 6px; font-size: 0.8rem; background: rgba(68,114,196,0.1); border: 1px solid rgba(68,114,196,0.25); }
+    .project-banner { margin-top: 16px; margin-bottom: 16px; padding: 8px 12px; border-radius: 6px; font-size: 0.8rem; background: rgba(68,114,196,0.1); border: 1px solid rgba(68,114,196,0.25); }
 
     /* Summary cards */
     .summary-cards { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
@@ -414,7 +414,7 @@ export class BiaDialogComponent {
     .record-count { margin-left: auto; font-size: 0.72rem; color: var(--mat-sys-on-surface-variant); }
 
     /* Table header */
-    .tbl-header { display: flex; align-items: center; gap: 8px; padding: 6px 16px; background: var(--mat-sys-surface-variant); border-radius: 8px 8px 0 0; border: 1px solid rgba(255,255,255,0.08); border-bottom: none; }
+    .tbl-header { display: flex; align-items: center; gap: 8px; padding: 6px 16px; background: var(--mat-sys-surface-variant); border-radius: 8px 8px 0 0; border: 1px solid var(--mat-sys-outline-variant); border-bottom: none; }
     .col-asset-hdr  { flex: 3; font-size: 0.68rem; font-weight: 600; color: var(--mat-sys-on-surface-variant); text-transform: uppercase; }
     .col-type-hdr   { width: 80px; font-size: 0.68rem; font-weight: 600; color: var(--mat-sys-on-surface-variant); text-transform: uppercase; }
     .col-rto-hdr    { width: 60px; text-align: center; font-size: 0.68rem; font-weight: 600; color: var(--mat-sys-on-surface-variant); text-transform: uppercase; }

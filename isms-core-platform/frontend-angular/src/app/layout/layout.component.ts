@@ -49,6 +49,9 @@ import { HealthAlertBannerComponent } from '../shared/components/health-alert-ba
 
           <div class="layout__content">
             <router-outlet />
+            <footer class="layout__footer">
+              🎋 ISMS CORE Platform · © {{ year }} ISMS CORE Contributors
+            </footer>
           </div>
         }
       </main>
@@ -114,6 +117,15 @@ import { HealthAlertBannerComponent } from '../shared/components/health-alert-ba
       flex-shrink: 0;
     }
     .mfa-banner span { flex: 1; }
+
+    .layout__footer {
+      margin-top: 48px;
+      padding: 16px 0 8px;
+      border-top: 1px solid var(--mat-sys-outline-variant);
+      font-size: 0.72rem;
+      color: var(--mat-sys-on-surface-variant);
+      text-align: center;
+    }
   `],
 })
 export class LayoutComponent {
@@ -123,6 +135,7 @@ export class LayoutComponent {
   private authApi = inject(AuthApiService)
   private tokenStore = inject(TokenStoreService)
 
+  readonly year = new Date().getFullYear()
   sidebarCollapsed = signal(localStorage.getItem('sidebarCollapsed') === 'true')
   mfaBannerDismissed = signal(sessionStorage.getItem('mfa_banner_dismissed') === 'true')
 
