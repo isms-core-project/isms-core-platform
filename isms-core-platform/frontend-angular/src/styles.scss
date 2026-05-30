@@ -87,20 +87,20 @@ html {
   ));
 
   // ISMS background overrides — warm dark grey (k8s-dashboard palette)
-  background-color: #1d1d1d;
-  --mat-sys-background:                 #1d1d1d;
-  --mat-sys-surface:                    #1d1d1d;
-  --mat-sys-surface-dim:                #1d1d1d;
-  --mat-sys-surface-bright:             #2d2d2d;
-  --mat-sys-surface-container-lowest:   #181818;
-  --mat-sys-surface-container-low:      #252525;
-  --mat-sys-surface-container:          #2d2d2d;
-  --mat-sys-surface-container-high:     #333333;
-  --mat-sys-surface-container-highest:  #3a3a3a;
-  --mat-sidenav-container-background-color: #252525;
-  --mat-card-background-color: #2d2d2d;
-  --mdc-outlined-card-container-color: #2d2d2d;
-  --mdc-dialog-container-color: #2d2d2d;
+  background-color: #333232;
+  --mat-sys-background:                 #333232;
+  --mat-sys-surface:                    #333232;
+  --mat-sys-surface-dim:                #333232;
+  --mat-sys-surface-bright:             #444241;
+  --mat-sys-surface-container-lowest:   #292726;
+  --mat-sys-surface-container-low:      #3c3b39;
+  --mat-sys-surface-container:          #444241;
+  --mat-sys-surface-container-high:     #4a4947;
+  --mat-sys-surface-container-highest:  #51504e;
+  --mat-sidenav-container-background-color: #3c3b39;
+  --mat-card-background-color: #444241;
+  --mdc-outlined-card-container-color: #444241;
+  --mdc-dialog-container-color: #444241;
 
   // Tune primary to match k8s #327df4 exactly
   --mat-sys-primary: #327df4;
@@ -109,9 +109,9 @@ html {
   --mat-sys-on-primary-container: #d4e3ff;
 
   // Chip token overrides — prevent secondary-container fallback (resolves to greenish teal by default)
-  --mat-sys-secondary-container:                #2d2d2d;
+  --mat-sys-secondary-container:                #444241;
   --mat-sys-on-secondary-container:             rgba(255,255,255,0.87);
-  --mdc-chip-elevated-container-color:          #2d2d2d;
+  --mdc-chip-elevated-container-color:          #444241;
   --mdc-chip-elevated-selected-container-color: rgba(50,125,244,0.20);
   --mat-chip-selected-trailing-icon-color:       rgba(255,255,255,0.7);
   --mat-chip-trailing-action-state-layer-color:  transparent;
@@ -261,7 +261,7 @@ html[data-theme='light'] .mat-mdc-chip {
   --mdc-chip-focus-outline-color: rgba(29,158,117,0.5) !important;
 }
 
-// ── Global card-container grey (k8s #2d2d2d) ──────────────────────────────
+// ── Global card-container grey (k8s #444241) ──────────────────────────────
 // Custom card-like divs throughout the app that don't use mat-card.
 // !important is required because Angular component-scoped styles have
 // higher specificity than global stylesheet selectors.
@@ -338,8 +338,8 @@ html[data-theme='light'] .mat-mdc-header-cell {
 
 // ── 3. Select dropdown panel — K8s dark card background ─────────────────────
 .mat-mdc-select-panel {
-  --mat-select-panel-background-color: #2d2d2d;
-  background: #2d2d2d !important;
+  --mat-select-panel-background-color: #444241;
+  background: #444241 !important;
   .mat-mdc-option { color: rgba(255, 255, 255, 0.87); font-size: 14px; }
   .mat-mdc-option:hover:not(.mdc-list-item--disabled) {
     background: rgba(255, 255, 255, 0.06);
@@ -352,7 +352,7 @@ html[data-theme='light'] .mat-mdc-header-cell {
 .mat-mdc-option { white-space: nowrap; }
 .mat-mdc-option .mdc-list-item__primary-text { white-space: nowrap; }
 
-.mat-mdc-autocomplete-panel { background: #2d2d2d !important; }
+.mat-mdc-autocomplete-panel { background: #444241 !important; }
 
 html[data-theme='light'] {
   .mat-mdc-select-panel {
@@ -374,7 +374,7 @@ html[data-theme='light'] {
 // ── 4. Tooltip — 12px like K8s ──────────────────────────────────────────────
 .mat-mdc-tooltip {
   --mdc-plain-tooltip-supporting-text-size: 12px;
-  --mdc-plain-tooltip-container-color: #424242;
+  --mdc-plain-tooltip-container-color: #595856;
   --mdc-plain-tooltip-supporting-text-color: rgba(255, 255, 255, 0.87);
 }
 .mat-mdc-tooltip .mdc-tooltip__surface {
@@ -450,7 +450,7 @@ html[data-theme='light'] .mat-mdc-chip {
 
 
 // ── 10. Dialog ──────────────────────────────────────────────────────────────
-.mat-mdc-dialog-container { --mdc-dialog-container-color: #2d2d2d; }
+.mat-mdc-dialog-container { --mdc-dialog-container-color: #444241; }
 .mat-mdc-dialog-actions { justify-content: flex-start; padding: 8px 24px 16px; }
 html[data-theme='light'] .mat-mdc-dialog-container { --mdc-dialog-container-color: #BFBDB3; }
 
@@ -497,7 +497,7 @@ html[data-theme='light'] .mat-mdc-tab-header {
 
 // ── 13. Expansion panel ─────────────────────────────────────────────────────
 .mat-expansion-panel {
-  background: #2d2d2d !important;
+  background: #444241 !important;
   box-shadow: none !important;
   border: 1px solid rgba(255, 255, 255, 0.08);
   margin-bottom: 4px !important;
@@ -509,7 +509,7 @@ html[data-theme='light'] .mat-expansion-panel { background: #BFBDB3 !important; 
 
 // ── 14. Snackbar ────────────────────────────────────────────────────────────
 .mat-mdc-snack-bar-container {
-  --mdc-snackbar-container-color: #323232;
+  --mdc-snackbar-container-color: #444241;
   --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
 }
 
@@ -557,7 +557,7 @@ html[data-theme='light'] .isms-empty-state { color: rgba(0, 0, 0, 0.35); }
   align-items: center;
   gap: 10px;
   padding: 6px 12px;
-  background: #2d2d2d;
+  background: #444241;
   border-radius: 4px;
   border-left: 3px solid var(--color-primary, #327df4);
   margin-bottom: 8px;
