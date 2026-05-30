@@ -149,6 +149,20 @@ html[data-theme='light'] {
 
   --mat-sys-primary:                    #1D9E75;
   --mat-sys-on-primary:                 #ffffff;
+
+  // Slide toggle — force teal in light theme (mat.theme() bakes blue from palette)
+  --mat-slide-toggle-selected-track-color:               #1D9E75;
+  --mat-slide-toggle-selected-handle-color:              #ffffff;
+  --mat-slide-toggle-selected-hover-track-color:         #178060;
+  --mat-slide-toggle-selected-focus-track-color:         #178060;
+  --mat-slide-toggle-selected-pressed-track-color:       #178060;
+  --mat-slide-toggle-selected-hover-handle-color:        #ffffff;
+  --mat-slide-toggle-selected-focus-handle-color:        #ffffff;
+  --mat-slide-toggle-selected-pressed-handle-color:      #ffffff;
+  --mat-slide-toggle-selected-icon-color:                #1D9E75;
+  --mat-slide-toggle-selected-focus-state-layer-color:   #1D9E75;
+  --mat-slide-toggle-selected-hover-state-layer-color:   #1D9E75;
+  --mat-slide-toggle-selected-pressed-state-layer-color: #1D9E75;
   --mat-sys-primary-container:          #BFBDB3;   // warm slate — prevents mat-primary chips/FABs going green
   --mat-sys-on-primary-container:       #2C2C2A;
   --mdc-chip-elevated-container-color:          #C4C2B8;
@@ -386,6 +400,17 @@ html[data-theme='light'] {
   .mdc-switch--selected {
     .mdc-switch__track::before,
     .mdc-switch__track::after { background: rgba(50, 125, 244, 0.5) !important; }
+  }
+}
+
+html[data-theme='light'] .mat-mdc-slide-toggle {
+  .mdc-switch:not(.mdc-switch--selected) {
+    .mdc-switch__track::before,
+    .mdc-switch__track::after { background: rgba(44, 44, 42, 0.18) !important; }
+  }
+  .mdc-switch--selected {
+    .mdc-switch__track::before,
+    .mdc-switch__track::after { background: rgba(29, 158, 117, 0.75) !important; }
   }
 }
 
@@ -704,15 +729,24 @@ html[data-theme='light'] .mitre-table {
 }
 
 // Pagination
+.mitre-pagination__btn {
+  cursor: pointer;
+  color: var(--mat-sys-on-surface);
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 6px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  user-select: none;
+  transition: background 0.15s;
+  &:hover:not(.disabled) { background: var(--mat-sys-surface-container-high); }
+  &.disabled { color: var(--mat-sys-on-surface-variant); cursor: default; pointer-events: none; opacity: 0.5; }
+}
+
 .mitre-pagination {
   display: flex; justify-content: space-between; align-items: center;
   padding: 7px 12px; border-top: 1px solid var(--mat-sys-outline-variant);
   font-size: 0.75rem; color: var(--mat-sys-on-surface-variant);
   .mitre-pagination__nav { display: flex; gap: 8px; align-items: center; }
-  .mitre-pagination__btn {
-    cursor: pointer; color: var(--mat-sys-primary);
-    &.disabled { color: var(--mat-sys-on-surface-variant); cursor: default; pointer-events: none; }
-  }
 }
 
 // Detail panel

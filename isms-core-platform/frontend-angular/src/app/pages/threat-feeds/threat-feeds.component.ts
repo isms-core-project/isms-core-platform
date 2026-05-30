@@ -39,10 +39,28 @@ const TI_FEED_DEFS: Pick<FeedStatusItem, 'feed_name' | 'display_name'>[] = [
 ]
 const TI_NAMES = new Set(TI_FEED_DEFS.map(f => f.feed_name))
 
-const TACTIC_COLORS = [
-  '#FFA726','#d35400','#e67e22','#f39c12',
-  '#c0392b','#e74c3c','#8e44ad','#2980b9',
-  '#27ae60','#16a085','#2c3e50','#7f8c8d',
+const TACTIC_COLORS: Record<string, string> = {
+  'reconnaissance':        '#F57C00', // deep amber
+  'resource development':  '#E53935', // red
+  'initial access':        '#8E24AA', // purple
+  'execution':             '#D81B60', // pink-red
+  'persistence':           '#C62828', // dark red
+  'privilege escalation':  '#FB8C00', // orange
+  'defense evasion':       '#6D4C41', // brown
+  'credential access':     '#1E88E5', // blue
+  'discovery':             '#43A047', // green
+  'lateral movement':      '#00ACC1', // cyan
+  'collection':            '#5C6BC0', // indigo
+  'command and control':   '#00897B', // teal
+  'exfiltration':          '#F4511E', // deep orange
+  'impact':                '#7CB342', // lime green
+  'stealth':               '#FFB300', // amber
+  'defense impairment':    '#E53935', // red
+}
+const TACTIC_FALLBACKS = [
+  '#F57C00','#1E88E5','#43A047','#8E24AA',
+  '#D81B60','#00ACC1','#FB8C00','#5C6BC0',
+  '#C62828','#00897B','#F4511E','#7CB342',
 ]
 
 function fmt(iso: string | null): string {
@@ -238,7 +256,7 @@ const AUDIT_STATUS: Record<string, { bg: string; color: string; label: string }>
                 <div class="tactic-bar__track">
                   <div class="tactic-bar__fill"
                     [style.width.%]="tac.pct"
-                    [style.background]="tacticColor(i)">
+                    [style.background]="tacticColor(i, tac.name)">
                   </div>
                 </div>
                 <span class="tactic-bar__count">{{ tac.count }}</span>
@@ -779,7 +797,13 @@ export class ThreatFeedsComponent {
   readonly feedStatusKey = feedStatusKey
 
   isDeltaFeed(name: string): boolean { return name === 'nist_cve' || name === 'euvd' }
-  tacticColor(i: number): string { return TACTIC_COLORS[i % TACTIC_COLORS.length] }
+  tacticColor(i: number, name?: string): string {
+    if (name) {
+      const key = name.toLowerCase()
+      if (TACTIC_COLORS[key]) return TACTIC_COLORS[key]
+    }
+    return TACTIC_FALLBACKS[i % TACTIC_FALLBACKS.length]
+  }
 
   triggerFeed(name: string, mode?: 'full' | 'delta') {
     this.triggerMutation.mutate({ feedName: name, mode })

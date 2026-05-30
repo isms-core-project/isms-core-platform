@@ -45,7 +45,7 @@ const PRIVACY_COLORS: Record<string, string> = {
         (keydown.enter)="handleSubmit()" />
     </mat-form-field>
     <button mat-flat-button color="primary" [disabled]="mutation.isPending()" (click)="handleSubmit()" class="lookup-btn">
-      @if (mutation.isPending()) { Looking up… } @else { <mat-icon class="icon-sm">search</mat-icon> Lookup }
+      @if (mutation.isPending()) { Looking up… } @else { Lookup }
     </button>
   </div>
 
