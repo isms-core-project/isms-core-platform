@@ -127,68 +127,10 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
 
   <!-- Tabs -->
   <mat-tab-group [selectedIndex]="activeTab()" (selectedIndexChange)="activeTab.set($event)" class="tab-group">
-    <mat-tab label="Mapping Matrix"></mat-tab>
-    <mat-tab label="Inferred Coverage"></mat-tab>
-  </mat-tab-group>
-  <div style="height: 24px; flex-shrink: 0;"></div>
 
-  <!-- ── Inferred Coverage tab ── -->
-  @if (activeTab() === 1) {
-    <div class="infer-filter-row">
-      <mat-form-field appearance="outline" class="infer-project-field" subscriptSizing="dynamic">
-        <mat-label>Project scope</mat-label>
-        <mat-select [(ngModel)]="inferProjectId" (ngModelChange)="onInferProjectChange()">
-          <mat-option value="">Org-wide (all assessments)</mat-option>
-          @for (p of projectsQuery.data() ?? []; track p.id) {
-            <mat-option [value]="p.id">{{ p.name }}</mat-option>
-          }
-        </mat-select>
-      </mat-form-field>
-      @if (inferredQuery.data()) {
-        <span class="infer-count-label">Based on {{ inferredQuery.data()!.assessed_controls }} assessed controls</span>
-      }
-    </div>
-
-    @if (inferredQuery.isLoading()) {
-      @for (i of [1,2,3,4,5]; track i) {
-        <div class="skeleton-row"></div>
-      }
-    }
-
-    @for (r of inferredQuery.data()?.frameworks ?? []; track r.framework_code) {
-      @if (r.total_controls > 0) {
-        <div class="infer-card">
-          <div class="infer-card-header"
-            (click)="toggleInferred(r.framework_code)">
-            <div class="infer-card-info">
-              <div class="infer-fw-name">{{ r.framework }}</div>
-              <div class="infer-fw-sub">{{ r.covered_controls }} / {{ r.total_controls }} controls covered</div>
-            </div>
-            <div class="infer-progress-wrap">
-              <mat-progress-bar mode="determinate" [value]="r.coverage_pct" class="infer-progress-bar"></mat-progress-bar>
-            </div>
-            <span class="infer-pct" [style.color]="getPctColor(r.coverage_pct)">{{ r.coverage_pct }}%</span>
-            <mat-icon class="icon-sm infer-expand-icon">{{ openInferred()[r.framework_code] ? 'expand_less' : 'expand_more' }}</mat-icon>
-          </div>
-          @if (openInferred()[r.framework_code]) {
-            <div class="infer-card-detail">
-              <span class="infer-detail-text">{{ r.uncovered_controls }} uncovered controls · {{ r.coverage_pct }}% covered</span>
-            </div>
-          }
-        </div>
-      }
-    }
-
-    @if (inferredQuery.data()?.frameworks?.length === 0) {
-      <div class="no-crosswalk-banner">
-        No crosswalk data loaded — run the dataset bootstrap to load framework mappings.
-      </div>
-    }
-  }
-
-  <!-- ── Mapping Matrix tab ── -->
-  @if (activeTab() === 0) {
-  <div class="tab-panel-content">
+    <!-- ── Mapping Matrix ── -->
+    <mat-tab label="Mapping Matrix">
+      <div class="tab-body">
 
     <!-- Summary cards -->
     @if (covData()) {
@@ -384,8 +326,66 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
         </mat-card>
       }
     </div>
-  </div>
-  }
+      </div>
+    </mat-tab>
+
+    <!-- ── Inferred Coverage ── -->
+    <mat-tab label="Inferred Coverage">
+      <div class="tab-body">
+        <div class="infer-filter-row">
+          <mat-form-field appearance="outline" class="infer-project-field" subscriptSizing="dynamic">
+            <mat-label>Project scope</mat-label>
+            <mat-select [(ngModel)]="inferProjectId" (ngModelChange)="onInferProjectChange()">
+              <mat-option value="">Org-wide (all assessments)</mat-option>
+              @for (p of projectsQuery.data() ?? []; track p.id) {
+                <mat-option [value]="p.id">{{ p.name }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          @if (inferredQuery.data()) {
+            <span class="infer-count-label">Based on {{ inferredQuery.data()!.assessed_controls }} assessed controls</span>
+          }
+        </div>
+
+        @if (inferredQuery.isLoading()) {
+          @for (i of [1,2,3,4,5]; track i) {
+            <div class="skeleton-row"></div>
+          }
+        }
+
+        @for (r of inferredQuery.data()?.frameworks ?? []; track r.framework_code) {
+          @if (r.total_controls > 0) {
+            <div class="infer-card">
+              <div class="infer-card-header" (click)="toggleInferred(r.framework_code)">
+                <div class="infer-card-info">
+                  <div class="infer-fw-name">{{ r.framework }}</div>
+                  <div class="infer-fw-sub">{{ r.covered_controls }} / {{ r.total_controls }} controls covered</div>
+                </div>
+                <div class="infer-progress-wrap">
+                  <mat-progress-bar mode="determinate" [value]="r.coverage_pct" class="infer-progress-bar"></mat-progress-bar>
+                </div>
+                <span class="infer-pct" [style.color]="getPctColor(r.coverage_pct)">{{ r.coverage_pct }}%</span>
+                <mat-icon class="icon-sm infer-expand-icon">{{ openInferred()[r.framework_code] ? 'expand_less' : 'expand_more' }}</mat-icon>
+              </div>
+              @if (openInferred()[r.framework_code]) {
+                <div class="infer-card-detail">
+                  <span class="infer-detail-text">{{ r.uncovered_controls }} uncovered controls · {{ r.coverage_pct }}% covered</span>
+                </div>
+              }
+            </div>
+          }
+        }
+
+        @if (inferredQuery.data()?.frameworks?.length === 0) {
+          <div class="no-crosswalk-banner">
+            No crosswalk data loaded — run the dataset bootstrap to load framework mappings.
+          </div>
+        }
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+
 </div>
 `,
   styles: [`:host { display: block; }
@@ -419,7 +419,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     .no-crosswalk-banner { padding: 16px; background: rgba(21,101,192,.1); border-radius: 6px; font-size: .85rem; }
 
     /* Summary cards */
-    .tab-panel-content { padding-top: 20px; }
+    .tab-body { padding-top: 16px; }
     .summary-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 16px; }
     .summary-card-content { padding-bottom: 12px !important; }
     .summary-card-label { font-size: .72rem; opacity: .5; margin-bottom: 4px; }
