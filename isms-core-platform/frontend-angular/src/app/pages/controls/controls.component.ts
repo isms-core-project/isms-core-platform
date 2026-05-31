@@ -134,11 +134,9 @@ function getHeatmapStatus(cg: ControlGroupList): string {
       <mat-button-toggle value="grid">
         <mat-icon>grid_view</mat-icon>
       </mat-button-toggle>
-      @if (product.product() === 'isms') {
-        <mat-button-toggle value="heatmap">
-          <mat-icon>grid_on</mat-icon>
-        </mat-button-toggle>
-      }
+      <mat-button-toggle value="heatmap">
+        <mat-icon>grid_on</mat-icon>
+      </mat-button-toggle>
     </mat-button-toggle-group>
   </div>
 
