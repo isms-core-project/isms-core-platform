@@ -24,7 +24,7 @@ const SOURCE_COLOR_DARK: Record<string, string> = {
   threatfox:        '#ef5350', sslbl:           '#ce93d8',
   feodotracker:     '#f48fb1', red_flag_domains:'#ef9a9a',
   stopforumspam:    '#90a4ae', malwarebazaar:   '#ff8a65',
-  alienvault:       '#ff7043', malpedia:        '#4db6ac',
+  alienvault:       '#ff7043',
 }
 // Light: darker hues of same palette — readable on warm slate #C2BFB5
 const SOURCE_COLOR_LIGHT: Record<string, string> = {
@@ -33,7 +33,7 @@ const SOURCE_COLOR_LIGHT: Record<string, string> = {
   threatfox:        '#B71C1C', sslbl:           '#6A1B9A',
   feodotracker:     '#880E4F', red_flag_domains:'#C62828',
   stopforumspam:    '#37474F', malwarebazaar:   '#BF360C',
-  alienvault:       '#BF360C', malpedia:        '#00695C',
+  alienvault:       '#BF360C',
 }
 const SOURCE_LABEL: Record<string, string> = {
   circl_misp:       'CIRCL MISP',    botvrij_misp:    'Botvrij MISP',
@@ -41,7 +41,7 @@ const SOURCE_LABEL: Record<string, string> = {
   threatfox:        'ThreatFox',     sslbl:           'SSLBL',
   feodotracker:     'Feodo Tracker', red_flag_domains:'Red Flag Domains',
   stopforumspam:    'StopForumSpam', malwarebazaar:   'MalwareBazaar',
-  alienvault:       'AlienVault OTX',malpedia:        'Malpedia',
+  alienvault:       'AlienVault OTX',
 }
 const TLP_COLOR: Record<string, string> = {
   red: '#d32f2f', amber: '#f57c00', green: '#388e3c', white: '#9e9e9e', clear: '#9e9e9e',
