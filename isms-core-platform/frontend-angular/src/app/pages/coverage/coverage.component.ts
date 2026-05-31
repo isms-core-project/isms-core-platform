@@ -126,11 +126,11 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
   </app-page-header>
 
   <!-- Tabs -->
-  <mat-tab-group [selectedIndex]="activeTab()" (selectedIndexChange)="activeTab.set($event)" class="tab-group" animationDuration="0">
+  <mat-tab-group [selectedIndex]="activeTab()" (selectedIndexChange)="activeTab.set($event)" class="tab-group" animationDuration="0" style="margin-top: 16px">
 
     <!-- ── Mapping Matrix ── -->
     <mat-tab label="Mapping Matrix">
-      <div class="tab-body" style="padding-top: 16px;">
+      <div class="tab-body">
 
     <!-- Summary cards -->
     @if (covData()) {
@@ -331,7 +331,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
 
     <!-- ── Inferred Coverage ── -->
     <mat-tab label="Inferred Coverage">
-      <div class="tab-body" style="padding-top: 16px;">
+      <div class="tab-body">
         <div class="infer-filter-row">
           <mat-form-field appearance="outline" class="infer-project-field" subscriptSizing="dynamic">
             <mat-label>Project scope</mat-label>
@@ -420,7 +420,6 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
 
     /* Summary cards */
     .tab-body { padding-top: 16px; }
-    :host ::ng-deep .mat-mdc-tab-body-content { padding-top: 16px !important; overflow: visible !important; }
     .summary-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 16px; }
     .summary-card-content { padding-bottom: 12px !important; }
     .summary-card-label { font-size: .72rem; opacity: .5; margin-bottom: 4px; }
