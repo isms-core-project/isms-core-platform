@@ -174,6 +174,7 @@ const PT_COLOR: Record<string, string> = {
     .breadcrumb-cur { font-weight: 600; }
 
     .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .stat-grid-wrap { grid-template-columns: repeat(2, 1fr); }
     .stat-card {
       padding: 12px 16px; border: 1px solid var(--mat-sys-outline-variant);
       border-radius: 8px; text-align: center;
@@ -287,7 +288,7 @@ const PT_COLOR: Record<string, string> = {
     .header-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 
     /* Metrics row */
-    .metrics-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .metrics-row { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px; }
     .stat-grid-wrap { align-content: start; }
 
     /* Stat value colours */
