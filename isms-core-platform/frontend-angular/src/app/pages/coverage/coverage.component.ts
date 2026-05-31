@@ -208,7 +208,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
               @let fwMaps = frameworkMappings(row);
               <tr class="tbody-row">
                 <td class="td-cell">
-                  <div class="control-id">{{ row.iso_control_id }}</div>
+                  <div class="control-id" [style.color]="packColor()">{{ row.iso_control_id }}</div>
                   <div class="control-title">{{ row.iso_control_title }}</div>
                 </td>
                 <td class="td-cell">
@@ -476,10 +476,9 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     .skeleton-cell { height: 12px; background: rgba(255,255,255,.07); border-radius: 4px; }
 
     /* Control ID cell */
-    .control-id { font-family: monospace; font-size: .75rem; font-weight: 600; color: #9DC3E6; }
+    .control-id { font-family: monospace; font-size: .75rem; font-weight: 600; }
     .control-title { font-size: .68rem; opacity: .65; line-height: 1.3; }
     .group-code { font-family: monospace; font-size: .72rem; opacity: .65; }
-    html[data-theme='light'] .control-id { color: #185FA5; }
     html[data-theme='light'] .gap-code { color: #185FA5; }
     html[data-theme='light'] .gaps-all-covered { background: rgba(29,158,117,0.12); border-color: rgba(29,158,117,0.2); color: #0F6E56; }
 
@@ -624,6 +623,7 @@ export class CoverageComponent {
   })
 
   sourceLabel = computed((): string => SOURCE_CONTROL_LABEL[this.product.product()] ?? 'ISO Control')
+  packColor   = computed((): string => PRODUCT_COLORS[this.product.product()] ?? '#327df4')
 
   // ── Helpers ────────────────────────────────────────────────────────────────
   isIsoExt(f: string): boolean { return ISO_EXTENSIONS.has(f) }
