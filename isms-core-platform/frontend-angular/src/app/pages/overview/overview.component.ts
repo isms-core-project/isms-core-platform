@@ -128,7 +128,8 @@ function fmtPct(n: number | null | undefined): string {
   <!-- ── No project selected — info card ───────────────────────────────── -->
   @if (!activeProjectId()) {
 
-    <app-page-header [title]="'Compliance Overview'" [subtitle]="pageSubtitle()" />
+    <app-page-header [title]="'Compliance Overview'"
+      [subtitle]="product.product() === 'isms' ? pageSubtitle() : nonIsmsSubtitle()" />
 
     <mat-card class="no-project-card">
       <mat-card-content>
@@ -148,10 +149,11 @@ function fmtPct(n: number | null | undefined): string {
       </mat-card-content>
     </mat-card>
 
-    <!-- Show framework overview even without project for all products -->
-    <div class="fw-section-mt">
-      <ng-container [ngTemplateOutlet]="nonIsmsTemplate" />
-    </div>
+    @if (product.product() !== 'isms') {
+      <div class="fw-section-mt">
+        <ng-container [ngTemplateOutlet]="nonIsmsTemplate" />
+      </div>
+    }
   }
 
   <!-- ── Loading ────────────────────────────────────────────────────────── -->
@@ -177,6 +179,7 @@ function fmtPct(n: number | null | undefined): string {
 
   <!-- ── Non-ISMS product (privacy / cloud / ai) with active project ────── -->
   @if (activeProjectId() && dashQuery.isSuccess() && product.product() !== 'isms') {
+    <app-page-header [title]="'Compliance Overview'" [subtitle]="nonIsmsSubtitle()" />
     <ng-container [ngTemplateOutlet]="nonIsmsTemplate" />
   }
 
@@ -386,11 +389,6 @@ function fmtPct(n: number | null | undefined): string {
 <!-- ── Non-ISMS template ───────────────────────────────────────────────────── -->
 <ng-template #nonIsmsTemplate>
 
-  <app-page-header
-    [title]="'Compliance Overview'"
-    [subtitle]="nonIsmsSubtitle()"
-  />
-
   @if (fwOverviewQuery.isLoading()) {
     <div class="skeletons">
       @for (n of [1,2,3,4]; track n) { <div class="skeleton-card"></div> }
@@ -406,6 +404,7 @@ function fmtPct(n: number | null | undefined): string {
                  [class.cloud-opt--active]="cloudSub() === opt.value"
                  (click)="cloudSub.set(opt.value)">
               <span class="cloud-opt__label">{{ opt.label }}</span>
+              <span class="cloud-opt__sep"> · </span>
               <span class="cloud-opt__desc">{{ opt.desc }}</span>
             </div>
           }
@@ -621,9 +620,10 @@ function fmtPct(n: number | null | undefined): string {
       background: var(--mat-sys-surface-container);
       transition: border-color 0.15s, background 0.15s;
     }
-    .cloud-opt--active { border-color: #FFC000; background: rgba(255,192,0,0.12); }
+    .cloud-opt--active { border-color: #29b6f6; background: rgba(41,182,246,0.12); }
     .cloud-opt__label { font-size: 0.75rem; font-weight: 600; color: var(--mat-sys-on-surface); }
-    .cloud-opt__desc { font-size: 0.7rem; color: var(--mat-sys-on-surface-variant); margin-left: 6px; }
+    .cloud-opt__sep  { font-size: 0.7rem; color: var(--mat-sys-on-surface-variant); opacity: .5; }
+    .cloud-opt__desc { font-size: 0.7rem; color: var(--mat-sys-on-surface-variant); }
 
     /* ── Top fw ── */
     .top-fw-row { margin-bottom: 8px; display: flex; flex-direction: column; gap: 3px; }
@@ -675,9 +675,9 @@ export class OverviewComponent {
   readonly nonIsmsSubtitle = computed(() => {
     const p = this.product.product()
     const fw = p === 'cloud'
-      ? (this.cloudSub() === 'ISO27017' ? 'ISO 27017 — Cloud Security' : 'ISO 27018 — PII in Cloud')
-      : p === 'ai' ? 'ISO 42001:2023 — AI Management System'
-      : 'ISO 27701:2025 Ed. 2 — Privacy'
+      ? (this.cloudSub() === 'ISO27017' ? 'Cloud Security' : 'PII in Cloud')
+      : p === 'ai' ? 'AI Management System'
+      : 'Privacy Extension'
     return `${PRODUCT_SUBTITLES[p]} · ${fw}`
   })
 

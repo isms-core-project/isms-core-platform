@@ -184,7 +184,7 @@ const PT_COLOR: Record<string, string> = {
 
     .completeness-card {
       padding: 16px; border: 1px solid var(--mat-sys-outline-variant);
-      border-radius: 8px; margin-bottom: 16px;
+      border-radius: 8px; margin-top: 16px; margin-bottom: 16px;
       background: var(--mat-sys-surface-container);
     }
     .completeness-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }

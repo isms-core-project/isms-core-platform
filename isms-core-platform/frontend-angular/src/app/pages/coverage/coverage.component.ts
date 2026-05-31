@@ -67,7 +67,7 @@ const PRODUCT_SOURCE_FRAMEWORK: Record<string, string> = {
 }
 const SOURCE_CONTROL_LABEL: Record<string, string> = {
   isms: 'ISO 27001 Control', privacy: 'ISO 27701 Control',
-  cloud: 'ISO 27017 Control', ai: 'ISO 42001 Control',
+  cloud: 'ISO 27018 Control', ai: 'ISO 42001 Control',
 }
 const ISO_EXTENSIONS = new Set(['ISO27017', 'ISO27018', 'ISO27701'])
 const ROWS_PER_PAGE = 25
@@ -222,8 +222,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
                 class="fw-pill"
                 [class.fw-pill-active]="f === activeFramework"
                 [class.fw-pill-iso-ext]="isIsoExt(f) && f !== activeFramework">
-                {{ f }}
-                <span class="fw-pill-count">{{ covData()!.by_framework[f] ?? 0 }}</span>
+                {{ f }} <span class="fw-pill-count">· {{ covData()!.by_framework[f] ?? 0 }}</span>
               </div>
             }
           </div>
