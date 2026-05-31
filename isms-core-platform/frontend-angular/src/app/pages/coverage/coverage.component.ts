@@ -420,6 +420,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
 
     /* Summary cards */
     .tab-body { padding-top: 16px; }
+    :host ::ng-deep .mat-mdc-tab-body-content { padding-top: 16px; }
     .summary-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 16px; }
     .summary-card-content { padding-bottom: 12px !important; }
     .summary-card-label { font-size: .72rem; opacity: .5; margin-bottom: 4px; }
