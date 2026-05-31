@@ -29,9 +29,9 @@ const ISMS_SECTION_COLORS: Record<string, string> = {
 }
 
 const PRIVACY_SECTION_COLORS: Record<string, string> = {
-  'A.1': '#9B72CF',
-  'A.2': '#4472C4',
-  'A.3': '#2E86AB',
+  'A.1': '#ba68c8',  // Controller — canonical Privacy purple
+  'A.2': '#5c6bc0',  // Processor — indigo
+  'A.3': '#4db6ac',  // Shared — teal-green
 }
 
 const HEATMAP_DARK: Record<string, string> = {
@@ -69,9 +69,9 @@ function deriveSectionName(cg: ControlGroupList): string {
 
 function getSectionColor(product: string, section: string): string {
   if (product === 'isms') return ISMS_SECTION_COLORS[section] ?? '#4472C4'
-  if (product === 'privacy') return PRIVACY_SECTION_COLORS[section] ?? '#7030A0'
-  if (product === 'cloud') return '#FFC000'
-  return '#ff6b35'
+  if (product === 'privacy') return PRIVACY_SECTION_COLORS[section] ?? '#ba68c8'
+  if (product === 'cloud') return '#29b6f6'
+  return '#ffa726'
 }
 
 function getHeatmapStatus(cg: ControlGroupList): string {
