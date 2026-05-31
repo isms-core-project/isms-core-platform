@@ -12,17 +12,28 @@ import { MatTooltipModule } from '@angular/material/tooltip'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 import { ThreatIntelApiService } from '../../api/threat-intel-api.service'
+import { ThemeService } from '../../core/services/theme.service'
 import { PageHeaderComponent } from '../../shared/components/page-header.component'
 
 const PAGE_SIZE = 50
 
-const SOURCE_COLOR: Record<string, string> = {
+// Dark: bright M200-300 — readable on charcoal #333232
+const SOURCE_COLOR_DARK: Record<string, string> = {
   circl_misp:       '#ffb74d', botvrij_misp:    '#ffca28',
   abuseipdb:        '#64b5f6', urlhaus:         '#ff8a65',
   threatfox:        '#ef5350', sslbl:           '#ce93d8',
   feodotracker:     '#f48fb1', red_flag_domains:'#ef9a9a',
   stopforumspam:    '#90a4ae', malwarebazaar:   '#ff8a65',
   alienvault:       '#ff7043', malpedia:        '#4db6ac',
+}
+// Light: darker hues of same palette — readable on warm slate #C2BFB5
+const SOURCE_COLOR_LIGHT: Record<string, string> = {
+  circl_misp:       '#E65100', botvrij_misp:    '#F57F17',
+  abuseipdb:        '#1565c0', urlhaus:         '#BF360C',
+  threatfox:        '#B71C1C', sslbl:           '#6A1B9A',
+  feodotracker:     '#880E4F', red_flag_domains:'#C62828',
+  stopforumspam:    '#37474F', malwarebazaar:   '#BF360C',
+  alienvault:       '#BF360C', malpedia:        '#00695C',
 }
 const SOURCE_LABEL: Record<string, string> = {
   circl_misp:       'CIRCL MISP',    botvrij_misp:    'Botvrij MISP',
@@ -209,18 +220,18 @@ function fmt(iso: string | null): string { return iso ? iso.slice(0, 10) : '—'
     .family-chip {
       display: inline-flex; align-items: center; gap: 2px; font-size: 0.62rem;
       height: 16px; padding: 0 4px; border-radius: 6px;
-      background: rgba(106,13,173,0.12); color: #4a0080;
+      background: rgba(206,147,216,0.15); color: #ce93d8;
     }
     .actor-chip {
       display: inline-flex; align-items: center; gap: 2px; font-size: 0.62rem;
       height: 16px; padding: 0 4px; border-radius: 6px;
-      background: rgba(68,114,196,0.12); color: #2E5099;
+      background: rgba(100,181,246,0.15); color: #64b5f6;
     }
     .tid-chip {
       display: inline-block; font-size: 0.62rem; height: 16px; padding: 0 4px;
-      line-height: 16px; border-radius: 6px; background: rgba(180,100,0,0.12); color: #7a4800;
+      line-height: 16px; border-radius: 6px; background: rgba(255,204,128,0.15); color: #ffcc80;
     }
-    :host-context(html[data-theme='light']) .family-chip { color: #4a148c; background: rgba(106,13,173,0.10); }
+    :host-context(html[data-theme='light']) .family-chip { color: #6A1B9A; background: rgba(106,27,154,0.10); }
     :host-context(html[data-theme='light']) .actor-chip  { color: #1565c0; background: rgba(21,101,192,0.10); }
     :host-context(html[data-theme='light']) .tid-chip    { color: #7a4800; background: rgba(180,100,0,0.10); }
 
@@ -259,8 +270,9 @@ function fmt(iso: string | null): string { return iso ? iso.slice(0, 10) : '—'
   `],
 })
 export class IocExplorerComponent {
-  private tiApi = inject(ThreatIntelApiService)
-  private route = inject(ActivatedRoute)
+  private tiApi  = inject(ThreatIntelApiService)
+  private route  = inject(ActivatedRoute)
+  private theme  = inject(ThemeService)
 
   readonly IOC_TYPES  = ['ip', 'domain', 'url', 'md5', 'sha1', 'sha256']
   readonly SOURCE_LIST = Object.entries(SOURCE_LABEL).map(([value, label]) => ({ value, label }))
@@ -307,7 +319,7 @@ export class IocExplorerComponent {
   nextPage()  { if (this._page() < this.totalPages() - 1) this._page.update(p => p + 1) }
   toggleExpand(id: string) { this.expandedId.update(cur => cur === id ? null : id) }
 
-  srcColor(s: string)  { return SOURCE_COLOR[s] ?? '#888' }
+  srcColor(s: string)  { return (this.theme.isDark() ? SOURCE_COLOR_DARK : SOURCE_COLOR_LIGHT)[s] ?? '#888' }
   srcLabel(s: string)  { return SOURCE_LABEL[s] ?? s }
   typeColor(t: string) { return TYPE_COLOR[t] ?? '#888' }
   tlpColor(t: string)  { return TLP_COLOR[t.toLowerCase()] ?? '#9e9e9e' }
