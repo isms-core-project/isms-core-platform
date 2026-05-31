@@ -126,7 +126,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
   </app-page-header>
 
   <!-- Tabs -->
-  <mat-tab-group [selectedIndex]="activeTab()" (selectedIndexChange)="activeTab.set($event)" class="tab-group">
+  <mat-tab-group [selectedIndex]="activeTab()" (selectedIndexChange)="activeTab.set($event)" class="tab-group" style="margin-bottom: 24px">
     <mat-tab label="Mapping Matrix"></mat-tab>
     <mat-tab label="Inferred Coverage"></mat-tab>
   </mat-tab-group>
