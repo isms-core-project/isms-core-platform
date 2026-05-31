@@ -15,8 +15,8 @@ import { FeedsApiService, MitreSoftware } from '../../api/feeds-api.service'
 import { ThemeService } from '../../core/services/theme.service'
 import { PageHeaderComponent } from '../../shared/components/page-header.component'
 
-const INTEL_DARK  = '#FFA726'
-const INTEL_LIGHT = '#BA7517'
+const INTEL_DARK  = '#e06030'
+const INTEL_LIGHT = '#c64227'
 const MALWARE_COLOR = '#9C27B0'
 const TOOL_COLOR    = '#0288D1'
 const PER_PAGE = 50

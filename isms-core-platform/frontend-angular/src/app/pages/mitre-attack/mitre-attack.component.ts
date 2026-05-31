@@ -16,8 +16,8 @@ import { FeedsApiService, MitreTechnique } from '../../api/feeds-api.service'
 import { ThemeService } from '../../core/services/theme.service'
 import { PageHeaderComponent } from '../../shared/components/page-header.component'
 
-const INTEL_DARK  = '#FFA726'
-const INTEL_LIGHT = '#BA7517'
+const INTEL_DARK  = '#e06030'
+const INTEL_LIGHT = '#c64227'
 const PER_PAGE = 50
 
 const PLATFORM_COLORS: Record<string, string> = {
@@ -176,7 +176,7 @@ const PLATFORM_COLORS: Record<string, string> = {
     .tech-name   { font-size: 0.78rem; font-weight: 500; }
     .sub-badge {
       display: inline-block; margin-left: 6px; font-size: 0.6rem; padding: 0 4px;
-      border-radius: 4px; background: rgba(255,167,38,0.15); color: #FFA726; vertical-align: middle;
+      border-radius: 4px; background: rgba(198,66,39,0.15); color: #e06030; vertical-align: middle;
     }
     .chip-row { display: flex; flex-wrap: wrap; gap: 2px; }
     .chip-row--gap { gap: 4px; margin-bottom: 2px; }

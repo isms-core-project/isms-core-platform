@@ -16,8 +16,8 @@ import { FeedsApiService, MitreHeatmapTechnique } from '../../api/feeds-api.serv
 import { ThemeService } from '../../core/services/theme.service'
 import { PageHeaderComponent } from '../../shared/components/page-header.component'
 
-const INTEL_DARK  = '#FFA726'
-const INTEL_LIGHT = '#BA7517'
+const INTEL_DARK  = '#e06030'
+const INTEL_LIGHT = '#c64227'
 
 const TACTIC_SHORT: Record<string, string> = {
   'reconnaissance':       'Recon',
@@ -41,17 +41,17 @@ function heatColor(count: number, max: number, isDark: boolean): string {
   if (count === 0) return isDark ? 'rgba(255,255,255,0.04)' : 'rgba(44,44,42,0.06)'
   const ratio = Math.min(count / Math.max(max, 1), 1)
   if (isDark) {
-    if (ratio < 0.15) return 'rgba(255,167,38,0.20)'
-    if (ratio < 0.35) return 'rgba(255,167,38,0.40)'
-    if (ratio < 0.60) return 'rgba(255,167,38,0.65)'
-    if (ratio < 0.85) return 'rgba(255,167,38,0.85)'
-    return '#FFA726'
+    if (ratio < 0.15) return 'rgba(224,96,48,0.20)'
+    if (ratio < 0.35) return 'rgba(224,96,48,0.40)'
+    if (ratio < 0.60) return 'rgba(224,96,48,0.65)'
+    if (ratio < 0.85) return 'rgba(224,96,48,0.85)'
+    return '#e06030'
   } else {
     if (ratio < 0.15) return 'rgba(186,117,23,0.18)'
     if (ratio < 0.35) return 'rgba(186,117,23,0.38)'
     if (ratio < 0.60) return 'rgba(186,117,23,0.60)'
     if (ratio < 0.85) return 'rgba(186,117,23,0.80)'
-    return '#BA7517'
+    return '#c64227'
   }
 }
 

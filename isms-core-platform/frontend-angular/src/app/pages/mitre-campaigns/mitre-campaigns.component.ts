@@ -14,8 +14,8 @@ import { FeedsApiService, MitreCampaign } from '../../api/feeds-api.service'
 import { ThemeService } from '../../core/services/theme.service'
 import { PageHeaderComponent } from '../../shared/components/page-header.component'
 
-const INTEL_DARK  = '#FFA726'
-const INTEL_LIGHT = '#BA7517'
+const INTEL_DARK  = '#e06030'
+const INTEL_LIGHT = '#c64227'
 const PER_PAGE = 50
 
 @Component({
