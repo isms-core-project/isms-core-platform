@@ -165,8 +165,10 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
               <div (click)="activeFramework = f; page.set(0)"
                 class="fw-pill"
                 [class.fw-pill-active]="f === activeFramework"
-                [class.fw-pill-iso-ext]="isIsoExt(f) && f !== activeFramework">
-                {{ f }} <span class="fw-pill-count">· {{ covData()!.by_framework[f] ?? 0 }}</span>
+                [class.fw-pill-iso-ext]="isIsoExt(f) && f !== activeFramework"
+                [style.background]="(covData()!.by_framework[f] ?? 0) > 0 && f !== activeFramework ? packColor() + '18' : null"
+                [style.borderColor]="(covData()!.by_framework[f] ?? 0) > 0 && f !== activeFramework ? packColor() + '40' : null">
+                {{ f }} <span class="fw-pill-count" [style.opacity]="(covData()!.by_framework[f] ?? 0) > 0 ? '0.8' : '0.35'">· {{ covData()!.by_framework[f] ?? 0 }}</span>
               </div>
             }
           </div>
@@ -409,13 +411,13 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     .infer-card-header { display: flex; align-items: center; gap: 16px; padding: 10px 16px; cursor: pointer; }
     .infer-card-info { flex: 1; }
     .infer-fw-name { font-weight: 600; font-size: .82rem; }
-    .infer-fw-sub { font-size: .65rem; opacity: .4; }
+    .infer-fw-sub { font-size: .65rem; color: var(--mat-sys-on-surface-variant); }
     .infer-progress-wrap { width: 160px; }
     .infer-progress-bar { height: 6px; border-radius: 3px; }
     .infer-pct { font-weight: 700; min-width: 44px; text-align: right; font-size: .9rem; }
     .infer-expand-icon { opacity: .4; }
     .infer-card-detail { padding: 12px 16px; border-top: 1px solid rgba(255,255,255,.08); }
-    .infer-detail-text { font-size: .72rem; opacity: .5; }
+    .infer-detail-text { font-size: .72rem; color: var(--mat-sys-on-surface-variant); }
     .no-crosswalk-banner { padding: 16px; background: rgba(21,101,192,.1); border-radius: 6px; font-size: .85rem; }
 
     /* Summary cards */

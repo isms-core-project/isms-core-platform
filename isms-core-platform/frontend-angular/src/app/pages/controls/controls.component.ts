@@ -239,7 +239,11 @@ function getHeatmapStatus(cg: ControlGroupList): string {
     }
     .search-field { flex: 1; min-width: 200px; }
     .section-field { width: 200px; }
-    .tier-toggle, .view-toggle { flex-shrink: 0; }
+    .tier-toggle, .view-toggle {
+      flex-shrink: 0;
+      --mat-button-toggle-selected-state-background-color: rgba(50,125,244,.15);
+      --mat-button-toggle-selected-state-text-color: #327df4;
+    }
 
     /* Loading / error / empty */
     .controls-loading {
