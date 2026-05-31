@@ -187,6 +187,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
 
   <!-- ── Mapping Matrix tab ── -->
   @if (activeTab() === 0) {
+  <div class="tab-panel-content">
 
     <!-- Summary cards -->
     @if (covData()) {
@@ -382,6 +383,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
         </mat-card>
       }
     </div>
+  </div>
   }
 </div>
 `,
@@ -416,7 +418,8 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     .no-crosswalk-banner { padding: 16px; background: rgba(21,101,192,.1); border-radius: 6px; font-size: .85rem; }
 
     /* Summary cards */
-    .summary-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 20px !important; margin-bottom: 16px; }
+    .tab-panel-content { padding-top: 20px; }
+    .summary-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 16px; }
     .summary-card-content { padding-bottom: 12px !important; }
     .summary-card-label { font-size: .72rem; opacity: .5; margin-bottom: 4px; }
     .summary-card-value { font-size: 1.5rem; font-weight: 700; }
