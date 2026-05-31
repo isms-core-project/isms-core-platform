@@ -130,7 +130,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
 
     <!-- ── Mapping Matrix ── -->
     <mat-tab label="Mapping Matrix">
-      <div class="tab-body">
+      <div class="tab-body" style="padding-top: 16px;">
 
     <!-- Summary cards -->
     @if (covData()) {
@@ -331,7 +331,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
 
     <!-- ── Inferred Coverage ── -->
     <mat-tab label="Inferred Coverage">
-      <div class="tab-body">
+      <div class="tab-body" style="padding-top: 16px;">
         <div class="infer-filter-row">
           <mat-form-field appearance="outline" class="infer-project-field" subscriptSizing="dynamic">
             <mat-label>Project scope</mat-label>
