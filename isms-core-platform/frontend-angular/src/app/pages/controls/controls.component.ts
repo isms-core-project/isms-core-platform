@@ -35,10 +35,10 @@ const PRIVACY_SECTION_COLORS: Record<string, string> = {
 }
 
 const HEATMAP_DARK: Record<string, string> = {
-  complete:   '#C6EFCE',
-  partial:    '#FFEB9C',
-  basic:      '#FFD580',
-  incomplete: '#FFC7CE',
+  complete:   '#66BB6A',
+  partial:    '#FFA726',
+  basic:      '#EF6C00',
+  incomplete: '#EF5350',
 }
 
 const HEATMAP_LIGHT: Record<string, string> = {
