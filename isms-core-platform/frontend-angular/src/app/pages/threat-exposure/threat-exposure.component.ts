@@ -10,6 +10,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { ThreatExposureApiService, ExposedControl, ExposureTechnique } from '../../api/threat-exposure-api.service'
 import { PageHeaderComponent } from '../../shared/components/page-header.component'
 
+const INTEL_DARK  = '#e06030'
+const INTEL_LIGHT = '#c64227'
+
 function scoreColor(score: number | null, isDark: boolean): string {
   if (score === null) return isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.08)'
   if (score >= 70) return '#00c752'
@@ -102,7 +105,7 @@ function statusLabel(status: string | null, score: number | null): string {
                 <td>
                   <div class="tid-cell">
                     @if (gapCount(item) > 0) { <mat-icon class="warn-icon">warning_amber</mat-icon> }
-                    <span class="mono bold">{{ item.mitre_tid }}</span>
+                    <span class="mono bold" [style.color]="intelColor">{{ item.mitre_tid }}</span>
                   </div>
                 </td>
                 <td><span class="bold">{{ item.ioc_count.toLocaleString() }}</span></td>
@@ -204,6 +207,7 @@ export class ThreatExposureComponent {
 
   readonly scoreColor     = (score: number | null) => scoreColor(score, this.theme.isDark())
   readonly scoreTextColor = (score: number | null) => scoreTextColor(score, this.theme.isDark())
+  get intelColor() { return this.theme.isDark() ? INTEL_DARK : INTEL_LIGHT }
 
   readonly exposureQuery = injectQuery(() => ({
     queryKey: ['threat-exposure'],
