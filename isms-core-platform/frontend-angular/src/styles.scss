@@ -475,6 +475,7 @@ html[data-theme='light'] .mat-mdc-dialog-container { --mdc-dialog-container-colo
 // Direct class override — wins over M3 internal token in both modes
 .mat-button-toggle-checked {
   background-color: rgba(50, 125, 244, 0.18) !important;
+  color: #327df4 !important;
 }
 html[data-theme='light'] .mat-button-toggle-group {
   border-color: rgba(44, 44, 42, 0.20);
@@ -482,6 +483,7 @@ html[data-theme='light'] .mat-button-toggle-group {
 }
 html[data-theme='light'] .mat-button-toggle-checked {
   background-color: rgba(29, 158, 117, 0.15) !important;
+  color: #1D9E75 !important;
 }
 
 
