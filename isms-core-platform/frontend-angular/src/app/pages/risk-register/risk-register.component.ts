@@ -37,7 +37,7 @@ function scoreColor(score: number): string {
   if (score <= 4)  return '#00c752'
   if (score <= 9)  return '#ff9800'
   if (score <= 16) return '#f44336'
-  return '#9c27b0'
+  return '#c00000'
 }
 
 function levelColor(level: string): string {
@@ -45,7 +45,7 @@ function levelColor(level: string): string {
     low:      '#00c752',
     medium:   '#ff9800',
     high:     '#f44336',
-    critical: '#9c27b0',
+    critical: '#c00000',
   }
   return m[level] ?? '#9e9e9e'
 }
@@ -472,7 +472,7 @@ function fmtDate(d: string | null | undefined): string {
     :host { display: block; padding: 24px; }
 
     .alert { padding: 10px 14px; border-radius: 6px; margin-top: 16px; margin-bottom: 12px; font-size: 0.85rem; }
-    .alert-info  { background: rgba(68,114,196,0.12); color: #9DC3E6; border: 1px solid rgba(68,114,196,0.2); }
+    .alert-info  { background: color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); color: var(--mat-sys-primary); border: 1px solid color-mix(in srgb, var(--mat-sys-primary) 25%, transparent); }
     .alert-error { background: rgba(192,0,0,0.12); color: #FFC7CE; border: 1px solid rgba(192,0,0,0.2); }
 
     .summary-row {
@@ -752,7 +752,7 @@ export class RiskRegisterComponent {
   summaryCards(s: RiskSummary) {
     return [
       { label: 'Total',        value: s.total,        color: 'var(--mat-sys-on-surface-variant)' },
-      { label: 'Critical',     value: s.critical,     color: '#9C27B0' },
+      { label: 'Critical',     value: s.critical,     color: '#c00000' },
       { label: 'High',         value: s.high,         color: '#F44336' },
       { label: 'Medium',       value: s.medium,       color: '#FF9800' },
       { label: 'Low',          value: s.low,          color: '#00c752' },

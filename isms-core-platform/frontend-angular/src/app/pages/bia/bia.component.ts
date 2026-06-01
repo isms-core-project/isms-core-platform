@@ -398,7 +398,7 @@ export class BiaDialogComponent {
     :host { display: block; padding: 24px; }
 
     /* Project banner */
-    .project-banner { margin-top: 16px; margin-bottom: 16px; padding: 8px 12px; border-radius: 6px; font-size: 0.8rem; background: rgba(68,114,196,0.1); border: 1px solid rgba(68,114,196,0.25); }
+    .project-banner { margin-top: 16px; margin-bottom: 16px; padding: 8px 12px; border-radius: 6px; font-size: 0.8rem; background: color-mix(in srgb, var(--mat-sys-primary) 9%, transparent); border: 1px solid color-mix(in srgb, var(--mat-sys-primary) 22%, transparent); }
 
     /* Summary cards */
     .summary-cards { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
@@ -444,7 +444,7 @@ export class BiaDialogComponent {
     .impact-val { font-size: 0.7rem; font-weight: 600; }
     .dash-muted { font-size: 0.72rem; color: var(--mat-sys-on-surface-variant); }
     .col-tested { width: 80px; text-align: center; }
-    .tested-yes { color: #4CAF50; display: inline-flex; }
+    .tested-yes { color: #00c752; display: inline-flex; }
     .tested-no { display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: rgba(255,255,255,0.08); }
     .col-actions { display: flex; gap: 2px; width: 56px; justify-content: flex-end; }
     .btn-sm { width: 28px; height: 28px; }

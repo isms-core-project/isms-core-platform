@@ -178,8 +178,8 @@ export class PoliciesDeleteDialogComponent {
       border: 1px dashed var(--mat-sys-outline); border-radius: 8px; padding: 20px;
       cursor: pointer; text-align: center; transition: border-color 0.2s, background 0.2s;
     }
-    .file-drop:hover { border-color: var(--mat-sys-primary); background: rgba(68,114,196,0.05); }
-    .file-drop--active { border-color: var(--mat-sys-primary); background: rgba(68,114,196,0.07); }
+    .file-drop:hover { border-color: var(--mat-sys-primary); background: color-mix(in srgb, var(--mat-sys-primary) 5%, transparent); }
+    .file-drop--active { border-color: var(--mat-sys-primary); background: color-mix(in srgb, var(--mat-sys-primary) 7%, transparent); }
     .import-success {
       display: flex; align-items: flex-start; gap: 12px;
       background: rgba(46,125,50,0.1); border: 1px solid rgba(46,125,50,0.3);
@@ -472,7 +472,7 @@ export class ImportExternalDialogComponent {
       background: rgba(0,0,0,0.04); color: var(--mat-sys-on-surface-variant);
       display: flex; align-items: center; white-space: nowrap;
     }
-    .lang-chip--active { background: rgba(68,114,196,0.25); color: var(--mat-sys-primary); border-color: rgba(68,114,196,0.4); }
+    .lang-chip--active { background: color-mix(in srgb, var(--mat-sys-primary) 22%, transparent); color: var(--mat-sys-primary); border-color: color-mix(in srgb, var(--mat-sys-primary) 40%, transparent); }
 
     .table-card { overflow: hidden; }
     .full-table { width: 100%; }

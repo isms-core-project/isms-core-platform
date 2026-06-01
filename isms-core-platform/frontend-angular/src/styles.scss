@@ -725,11 +725,11 @@ html[data-theme='light'] {
   }
   tr.mitre-row { cursor: pointer; }
   tr.mitre-row:hover td { background: var(--mat-sys-surface-container-high); }
-  tr.mitre-row--selected td { background: rgba(255,167,38,0.08); }
+  tr.mitre-row--selected td { background: rgba(198,66,39,0.08); }
 }
 html[data-theme='light'] .mitre-table {
   tr.mitre-row:hover td { background: rgba(44,44,42,0.05); }
-  tr.mitre-row--selected td { background: rgba(186,117,23,0.08); }
+  tr.mitre-row--selected td { background: rgba(198,66,39,0.06); }
 }
 
 // Pagination

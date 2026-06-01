@@ -195,9 +195,9 @@ function markdownToHtml(md: string): string {
               <div class="toc-entry"
                 (click)="scrollTo(child.id)"
                 [style.padding-left.px]="child.level === 2 ? 16 : 28"
-                [style.background]="activeId() === child.id ? 'rgba(68,114,196,.15)' : 'transparent'"
-                [style.border-left-color]="activeId() === child.id ? '#4472C4' : 'transparent'"
-                [style.color]="activeId() === child.id ? '#9DC3E6' : 'inherit'">
+                [style.background]="activeId() === child.id ? 'color-mix(in srgb, var(--mat-sys-primary) 14%, transparent)' : 'transparent'"
+                [style.border-left-color]="activeId() === child.id ? 'var(--mat-sys-primary)' : 'transparent'"
+                [style.color]="activeId() === child.id ? 'var(--mat-sys-primary)' : 'inherit'">
                 {{ child.label }}
               </div>
             }
@@ -299,7 +299,7 @@ function markdownToHtml(md: string): string {
       transition: background 0.12s;
     }
     .toc-sec-hdr:hover { background: rgba(255,255,255,0.06); }
-    .toc-sec-hdr--active { background: rgba(68,114,196,.12); }
+    .toc-sec-hdr--active { background: color-mix(in srgb, var(--mat-sys-primary) 11%, transparent); }
 
     .toc-sec-lbl {
       flex: 1; font-size: 0.8rem; font-weight: 500;

@@ -139,7 +139,7 @@ function formatDate(d: string): string {
     </div>
   `,
   styles: [`
-    .edit-panel { padding: 16px; background: rgba(68,114,196,0.06); }
+    .edit-panel { padding: 16px; background: var(--mat-sys-surface-container); }
     .section-label {
       font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
       letter-spacing: 0.06em; color: var(--mat-sys-on-surface-variant); display: block; margin-bottom: 4px;
@@ -718,7 +718,7 @@ export class CreateGapDialogComponent {
     .ev-badge {
       font-size: 0.62rem; height: 16px; line-height: 16px; padding: 0 5px;
       border-radius: 8px; display: inline-block; margin-right: 4px;
-      background: rgba(68,114,196,0.15); color: var(--mat-sys-primary);
+      background: color-mix(in srgb, var(--mat-sys-primary) 14%, transparent); color: var(--mat-sys-primary);
     }
 
     .skel-row {
@@ -738,11 +738,11 @@ export class CreateGapDialogComponent {
 
     .info-banner {
       padding: 8px 14px; margin-top: 16px; margin-bottom: 16px; border-radius: 6px; font-size: 0.85rem;
-      background: rgba(68,114,196,0.1); border: 1px solid rgba(68,114,196,0.3);
+      background: color-mix(in srgb, var(--mat-sys-primary) 9%, transparent); border: 1px solid color-mix(in srgb, var(--mat-sys-primary) 25%, transparent);
     }
     .success-banner {
       padding: 10px 14px; border-radius: 6px; font-size: 0.875rem;
-      background: rgba(46,125,50,0.1); border: 1px solid rgba(46,125,50,0.3);
+      background: rgba(29,158,117,0.1); border: 1px solid rgba(29,158,117,0.3);
     }
     .alert-error {
       padding: 10px 14px; border-radius: 6px; font-size: 0.85rem;
@@ -776,8 +776,8 @@ export class CreateGapDialogComponent {
     .alert-mb-sm { margin-bottom: 12px; }
 
     /* ── inline editor wrapper ── */
-    .editor-divider { border-top: 2px solid rgba(68,114,196,0.3); }
-    .editor-header  { padding: 4px 16px 0; background: rgba(68,114,196,0.04); }
+    .editor-divider { border-top: 2px solid var(--mat-sys-outline-variant); }
+    .editor-header  { padding: 4px 16px 0; background: var(--mat-sys-surface-container-low); }
     .group-code-sm  { font-size: 0.72rem; }
   `],
 })

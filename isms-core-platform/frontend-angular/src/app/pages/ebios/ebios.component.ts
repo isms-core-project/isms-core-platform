@@ -29,13 +29,13 @@ import { PageHeaderComponent } from '../../shared/components/page-header.compone
 const STUDY_STATUS_COLORS: Record<string, string> = {
   draft: '#607D8B',
   in_progress: '#FF9800',
-  complete: '#4CAF50',
+  complete: '#00c752',
 }
 
 const MEASURE_STATUS_COLORS: Record<string, string> = {
   planned: '#607D8B',
   in_progress: '#FF9800',
-  implemented: '#4CAF50',
+  implemented: '#00c752',
 }
 
 const GRAVITY_LABELS: Record<number, string> = {
@@ -43,7 +43,7 @@ const GRAVITY_LABELS: Record<number, string> = {
 }
 
 const GRAVITY_COLORS: Record<number, string> = {
-  1: '#4CAF50', 2: '#FF9800', 3: '#F44336', 4: '#9C27B0',
+  1: '#00c752', 2: '#FF9800', 3: '#F44336', 4: '#C00000',
 }
 
 const SCALE_OPTIONS = [1, 2, 3, 4]
@@ -76,7 +76,7 @@ function riskLevel(likelihood: number | null, gravity: number | null): number {
 }
 
 function riskColor(level: number): string {
-  return level >= 9 ? '#F44336' : level >= 4 ? '#FF9800' : '#4CAF50'
+  return level >= 9 ? '#F44336' : level >= 4 ? '#FF9800' : '#00c752'
 }
 
 // ─── Create Study Dialog ──────────────────────────────────────────────────────
@@ -720,7 +720,7 @@ export class EbiosW2Component {
               <span class="risk-chip" [style.color]="riskColor(sc.risk_level)" [style.border-color]="riskColor(sc.risk_level) + '40'" [style.background]="riskColor(sc.risk_level) + '18'">{{ sc.risk_level }}</span>
             </div>
             <div class="col-w70 col-center">
-              <span [style.color]="sc.retained ? '#4CAF50' : 'var(--mat-sys-on-surface-variant)'" class="cell-dim-text">{{ sc.retained ? 'Yes' : 'No' }}</span>
+              <span [style.color]="sc.retained ? '#00c752' : 'var(--mat-sys-on-surface-variant)'" class="cell-dim-text">{{ sc.retained ? 'Yes' : 'No' }}</span>
             </div>
             <div class="col-w40">
               <button mat-icon-button class="btn-delete-sm" (click)="deleteMut.mutate(sc.id)">
@@ -1627,7 +1627,7 @@ export class EbiosComponent {
       { label: 'Risk Sources',  value: d?.total_risk_sources ?? 0,  color: '#F44336' },
       { label: 'Scenarios',     value: d?.total_scenarios ?? 0,     color: '#FF9800' },
       { label: 'Attack Paths',  value: d?.total_attack_paths ?? 0,  color: '#2196F3' },
-      { label: 'Measures',      value: d?.total_measures ?? 0,      color: '#4CAF50' },
+      { label: 'Measures',      value: d?.total_measures ?? 0,      color: '#00c752' },
     ]
   })
 

@@ -225,15 +225,15 @@ function fmt(iso: string | null): string { return iso ? iso.slice(0, 10) : '—'
     .actor-chip {
       display: inline-flex; align-items: center; gap: 2px; font-size: 0.62rem;
       height: 16px; padding: 0 4px; border-radius: 6px;
-      background: rgba(100,181,246,0.15); color: #64b5f6;
+      background: rgba(41,182,246,0.15); color: #29b6f6;
     }
     .tid-chip {
       display: inline-block; font-size: 0.62rem; height: 16px; padding: 0 4px;
-      line-height: 16px; border-radius: 6px; background: rgba(255,204,128,0.15); color: #ffcc80;
+      line-height: 16px; border-radius: 6px; background: rgba(198,66,39,0.15); color: #e06030;
     }
     :host-context(html[data-theme='light']) .family-chip { color: #6A1B9A; background: rgba(106,27,154,0.10); }
-    :host-context(html[data-theme='light']) .actor-chip  { color: #1565c0; background: rgba(21,101,192,0.10); }
-    :host-context(html[data-theme='light']) .tid-chip    { color: #7a4800; background: rgba(180,100,0,0.10); }
+    :host-context(html[data-theme='light']) .actor-chip  { color: #0277BD; background: rgba(2,119,189,0.11); }
+    :host-context(html[data-theme='light']) .tid-chip    { color: #c64227; background: rgba(198,66,39,0.12); }
 
     .expand-cell { text-align: center; }
     .expand-icon { font-size: 16px; width: 16px; height: 16px; color: var(--mat-sys-on-surface-variant); }
@@ -261,9 +261,9 @@ function fmt(iso: string | null): string { return iso ? iso.slice(0, 10) : '—'
     .tag-chip.sm { height: 14px; font-size: 0.6rem; line-height: 14px; }
     .tid-chip-lg {
       display: inline-block; font-size: 0.62rem; height: 16px; padding: 0 5px;
-      line-height: 16px; border-radius: 6px; background: rgba(180,100,0,0.18); color: #ffcc80;
+      line-height: 16px; border-radius: 6px; background: rgba(198,66,39,0.18); color: #e06030;
     }
-    :host-context(html[data-theme='light']) .tid-chip-lg { background: rgba(180,100,0,0.12); color: #7a4800; }
+    :host-context(html[data-theme='light']) .tid-chip-lg { background: rgba(198,66,39,0.12); color: #c64227; }
 
     .mono { font-family: monospace; }
     .dim  { font-size: 0.72rem; color: var(--mat-sys-on-surface-variant); }

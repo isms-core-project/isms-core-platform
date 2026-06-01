@@ -85,7 +85,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     if (c >= 0.6) return { bg: 'rgba(255,193,7,.20)',   color: '#FFC107' }
     return { bg: 'rgba(255,199,206,.12)', color: '#FFC7CE' }
   }
-  if (c >= 0.8) return { bg: 'rgba(46,125,50,.15)',  color: '#1b5e20' }
+  if (c >= 0.8) return { bg: 'rgba(29,158,117,.15)',  color: '#0F6E56' }
   if (c >= 0.6) return { bg: 'rgba(230,145,0,.15)',  color: '#9a6500' }
   return { bg: 'rgba(192,0,0,.12)', color: '#9e0000' }
 }
@@ -441,13 +441,13 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
       border-radius: 4px;
       font-size: .72rem;
       font-weight: 400;
-      background: rgba(68,114,196,.06);
+      background: var(--mat-sys-surface-container);
       border: 1px solid transparent;
     }
     .fw-pill-active {
       font-weight: 700;
-      background: rgba(68,114,196,.2);
-      border-color: #4472C450;
+      background: color-mix(in srgb, var(--mat-sys-primary) 20%, transparent);
+      border-color: color-mix(in srgb, var(--mat-sys-primary) 45%, transparent);
     }
     .fw-pill-iso-ext { background: rgba(255,192,0,.07); }
     .fw-pill-count { margin-left: 6px; opacity: .4; }
@@ -516,8 +516,8 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     .gaps-empty-text { font-size: .85rem; }
     .gaps-all-covered {
       padding: 12px 16px;
-      background: rgba(46,125,50,.12);
-      border: 1px solid rgba(198,239,206,.2);
+      background: rgba(29,158,117,.12);
+      border: 1px solid rgba(29,158,117,.25);
       border-radius: 6px;
       color: #C6EFCE;
       font-size: .85rem;

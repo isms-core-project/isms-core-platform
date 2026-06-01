@@ -173,7 +173,7 @@ function statusLabel(status: string | null, score: number | null): string {
     .te-alert-icon { color: #f44336; }
     .te-ok-icon    { font-size: 16px; height: 16px; width: 16px; color: #00c752; }
 
-    .row-gap { background: rgba(211,47,47,0.04); }
+    .row-gap { background: rgba(211,47,47,0.07); }
     .col-tid  { width: 110px; }
     .col-ioc  { width: 80px; }
     .col-src  { width: 200px; }
@@ -193,7 +193,7 @@ function statusLabel(status: string | null, score: number | null): string {
     }
     .gap-chip {
       display: inline-block; font-size: 0.65rem; font-weight: 700;
-      padding: 2px 7px; border-radius: 8px; background: #ff9800; color: #fff;
+      padding: 2px 7px; border-radius: 8px; background: #ff9800; color: #1a1a1a;
     }
 
     .mono { font-family: monospace; }

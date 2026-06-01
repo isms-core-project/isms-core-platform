@@ -493,7 +493,7 @@ export class BulkDeleteConfirmDialogComponent {
               <!-- Pending review: approve + reject -->
               @if (ev.evidence_status === 'pending_review') {
                 <button mat-icon-button matTooltip="Approve"
-                  [style.color]="isDark() ? '#C6EFCE' : '#1b5e20'"
+                  [style.color]="isDark() ? '#C6EFCE' : '#0F6E56'"
                   [disabled]="approveMutation.isPending()"
                   (click)="approveMutation.mutate(ev.id)">
                   <mat-icon class="icon-md">check</mat-icon>
@@ -563,12 +563,12 @@ export class BulkDeleteConfirmDialogComponent {
     }
     .tab-btn:last-child { border-right: none; }
     .tab-btn:hover { background: rgba(255,255,255,0.06); }
-    .tab-btn--active { background: rgba(68,114,196,0.2); color: var(--mat-sys-primary); font-weight: 600; }
+    .tab-btn--active { background: color-mix(in srgb, var(--mat-sys-primary) 18%, transparent); color: var(--mat-sys-primary); font-weight: 600; }
 
     .bulk-bar {
       display: flex; align-items: center; gap: 12px; margin-top: 10px;
-      padding: 8px 12px; background: rgba(68,114,196,0.08); border-radius: 6px;
-      border: 1px solid rgba(68,114,196,0.2);
+      padding: 8px 12px; background: color-mix(in srgb, var(--mat-sys-primary) 7%, transparent); border-radius: 6px;
+      border: 1px solid color-mix(in srgb, var(--mat-sys-primary) 18%, transparent);
     }
 
     .table-card { overflow: hidden; }

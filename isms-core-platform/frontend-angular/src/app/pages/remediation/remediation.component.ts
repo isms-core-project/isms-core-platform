@@ -32,8 +32,8 @@ interface StatusMeta { label: string; color: string; icon: string }
 
 const STATUS_META: Record<string, StatusMeta> = {
   planned:     { label: 'Planned',     color: '#9E9E9E', icon: 'schedule' },
-  in_progress: { label: 'In Progress', color: '#2196F3', icon: 'hourglass_empty' },
-  completed:   { label: 'Completed',   color: '#4CAF50', icon: 'check_circle' },
+  in_progress: { label: 'In Progress', color: '#FFC000', icon: 'hourglass_empty' },
+  completed:   { label: 'Completed',   color: '#00c752', icon: 'check_circle' },
   cancelled:   { label: 'Cancelled',   color: '#F44336', icon: 'error' },
 }
 
@@ -478,8 +478,8 @@ function fmtDate(d: string | null | undefined): string {
       transition: background 0.15s;
     }
     .filter-chip--active {
-      background: rgba(68,114,196,0.18); color: #93bbf5;
-      border-color: rgba(68,114,196,0.4); font-weight: 700;
+      background: color-mix(in srgb, var(--mat-sys-primary) 16%, transparent); color: var(--mat-sys-primary);
+      border-color: color-mix(in srgb, var(--mat-sys-primary) 40%, transparent); font-weight: 700;
     }
 
     .poam-table-header {
@@ -680,8 +680,8 @@ export class RemediationComponent {
     return [
       { label: 'Total',       value: s.total,       color: '#607D8B' },
       { label: 'Planned',     value: s.planned,     color: '#9E9E9E' },
-      { label: 'In Progress', value: s.in_progress, color: '#2196F3' },
-      { label: 'Completed',   value: s.completed,   color: '#4CAF50' },
+      { label: 'In Progress', value: s.in_progress, color: '#FFC000' },
+      { label: 'Completed',   value: s.completed,   color: '#00c752' },
       { label: 'Overdue',     value: s.overdue,     color: '#F44336' },
     ]
   }

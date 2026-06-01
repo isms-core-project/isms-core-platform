@@ -531,7 +531,7 @@ function fmtPct(n: number | null | undefined): string {
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.07em;
-      color: #9c27b0;
+      color: #c64227;
     }
     .intel-section__icon { font-size: 14px; width: 14px; height: 14px; }
     .intel-cards { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -577,7 +577,7 @@ function fmtPct(n: number | null | undefined): string {
       cursor: pointer;
       transition: background 0.1s;
     }
-    .section-row:hover { background: rgba(68,114,196,0.06); }
+    .section-row:hover { background: var(--mat-sys-surface-container-high); }
     .section-row__head {
       display: flex; align-items: center;
       justify-content: space-between; margin-bottom: 6px;
@@ -635,9 +635,9 @@ function fmtPct(n: number | null | undefined): string {
     .fw-section-mt { margin-top: 8px; }
     .intel-icon { font-size: 18px; width: 18px; height: 18px; }
     .intel-icon--cve   { color: #f44336; }
-    .intel-icon--mitre { color: #9c27b0; }
+    .intel-icon--mitre { color: #c64227; }
     .intel-val--cve   { color: #f44336; }
-    .intel-val--mitre { color: #9c27b0; }
+    .intel-val--mitre { color: #c64227; }
     .progress-fill--fw { background: #327df4; }
     .progress-fill--op { background: #00c752; }
     .card-mt { margin-top: 12px; }

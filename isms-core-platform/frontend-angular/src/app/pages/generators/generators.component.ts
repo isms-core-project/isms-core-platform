@@ -28,7 +28,7 @@ const SECTION_COLOR: Record<string, string> = {
   'A.5': '#4472C4',
   'A.6': '#70AD47',
   'A.7': '#ED7D31',
-  'A.8': '#9370DB',
+  'A.8': '#C00000',
 }
 
 const PRODUCT_TYPE_COLOR: Record<string, string> = {

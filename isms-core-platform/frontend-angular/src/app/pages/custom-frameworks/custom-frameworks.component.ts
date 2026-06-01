@@ -27,7 +27,7 @@ const PRIORITY_COLORS: Record<string, string> = {
 }
 
 const STATUS_COLORS: Record<string, string> = {
-  active: '#4CAF50', draft: '#FF9800', archived: '#607D8B',
+  active: '#00c752', draft: '#FF9800', archived: '#607D8B',
 }
 
 function toLabel(s: string): string {
@@ -461,7 +461,7 @@ export class CustomFrameworksComponent {
     return [
       { label: 'Frameworks',    value: data.length,                              color: '#607D8B' },
       { label: 'Total Controls', value: data.reduce((s, f) => s + f.control_count, 0), color: '#2196F3' },
-      { label: 'Active',        value: data.filter(f => f.status === 'active').length, color: '#4CAF50' },
+      { label: 'Active',        value: data.filter(f => f.status === 'active').length, color: '#00c752' },
     ]
   })
 

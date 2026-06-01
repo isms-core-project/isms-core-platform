@@ -467,12 +467,12 @@ export class NewAssessmentDialogComponent {
     /* ── Assessment card ────────────────────────── */
     .assessment-card {
       margin-bottom: 12px;
-      background: rgba(68,114,196,0.05);
-      border: 1px solid rgba(68,114,196,0.12);
+      background: var(--mat-sys-surface-container);
+      border: 1px solid var(--mat-sys-outline-variant);
       border-radius: 8px;
       transition: border-color 0.15s;
     }
-    .assessment-card:hover { border-color: rgba(68,114,196,0.25); }
+    .assessment-card:hover { border-color: var(--mat-sys-primary); }
     .assessment-card__body {
       display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px;
     }
@@ -528,9 +528,9 @@ export class NewAssessmentDialogComponent {
     }
     .action-btn--primary {
       color: var(--mat-sys-primary);
-      background: rgba(68,114,196,0.1);
+      background: color-mix(in srgb, var(--mat-sys-primary) 10%, transparent);
     }
-    .action-btn--primary:hover { background: rgba(68,114,196,0.2); }
+    .action-btn--primary:hover { background: color-mix(in srgb, var(--mat-sys-primary) 20%, transparent); }
     .action-btn--danger {
       color: var(--mat-sys-error); opacity: 0.5;
       background: transparent;
@@ -540,17 +540,17 @@ export class NewAssessmentDialogComponent {
     /* ── Empty / filter-empty states ────────────── */
     .empty-state {
       padding: 24px; border-radius: 8px; text-align: center;
-      border: 1px dashed rgba(68,114,196,0.3); background: rgba(68,114,196,0.03);
+      border: 1px dashed var(--mat-sys-outline-variant); background: transparent;
     }
     .empty-state.clickable { cursor: pointer; }
     .empty-state.clickable:hover {
-      background: rgba(68,114,196,0.07); border-color: rgba(68,114,196,0.5);
+      background: var(--mat-sys-surface-container); border-color: var(--mat-sys-primary);
     }
     .empty-text  { color: var(--mat-sys-on-surface-variant); margin: 4px 0; }
     .empty-hint  { font-size: 0.8rem; color: var(--mat-sys-on-surface-variant); }
     .empty-hint.hint-active { color: var(--mat-sys-primary); }
     .filter-empty-msg {
-      padding: 12px; background: rgba(68,114,196,0.08);
+      padding: 12px; background: var(--mat-sys-surface-container);
       border-radius: 6px; font-size: 0.85rem; color: var(--mat-sys-on-surface-variant);
     }
 

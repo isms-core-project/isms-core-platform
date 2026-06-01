@@ -89,8 +89,8 @@ const AUDIT_STATUS: Record<string, { bg: string; color: string; label: string }>
   no_evidence:    { bg: 'rgba(192,0,0,0.12)',   color: '#9e0000', label: 'No Evidence' },
   pending_review: { bg: 'rgba(230,160,0,0.12)', color: '#7a4800', label: 'Pending' },
   draft:          { bg: 'rgba(0,0,0,0.07)',     color: '#555',    label: 'Draft' },
-  active:         { bg: 'rgba(68,114,196,0.12)',color: '#2E5099', label: 'Active' },
-  approved:       { bg: 'rgba(46,125,50,0.12)', color: '#1b5e20', label: 'Approved' },
+  active:         { bg: 'color-mix(in srgb, var(--mat-sys-primary) 11%, transparent)', color: 'var(--mat-sys-primary)', label: 'Active' },
+  approved:       { bg: 'rgba(29,158,117,0.12)', color: '#0F6E56', label: 'Approved' },
   rejected:       { bg: 'rgba(192,0,0,0.12)',   color: '#9e0000', label: 'Rejected' },
 }
 
