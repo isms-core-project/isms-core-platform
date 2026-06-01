@@ -459,7 +459,8 @@ html[data-theme='light'] .mat-mdc-dialog-container { --mdc-dialog-container-colo
 .mat-button-toggle-group {
   box-shadow: none !important;
   --mat-standard-button-toggle-height: 36px;
-  --mat-standard-button-toggle-selected-state-background-color: rgba(50, 125, 244, 0.18);
+  --mat-standard-button-toggle-selected-state-background-color: #327df4;
+  --mat-standard-button-toggle-selected-state-text-color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 4px;
 
@@ -472,18 +473,19 @@ html[data-theme='light'] .mat-mdc-dialog-container { --mdc-dialog-container-colo
     justify-content: center;
   }
 }
-// Direct class override — wins over M3 internal token in both modes
-.mat-button-toggle-checked {
-  background-color: rgba(50, 125, 244, 0.18) !important;
-  color: #327df4 !important;
+// Target inner button — M3 applies selected-state background there, not on the host element
+.mat-button-toggle-checked .mat-button-toggle-button {
+  background-color: #327df4 !important;
+  color: #ffffff !important;
 }
 html[data-theme='light'] .mat-button-toggle-group {
   border-color: rgba(44, 44, 42, 0.20);
-  --mat-standard-button-toggle-selected-state-background-color: rgba(29, 158, 117, 0.15);
+  --mat-standard-button-toggle-selected-state-background-color: #1D9E75;
+  --mat-standard-button-toggle-selected-state-text-color: #ffffff;
 }
-html[data-theme='light'] .mat-button-toggle-checked {
-  background-color: rgba(29, 158, 117, 0.15) !important;
-  color: #1D9E75 !important;
+html[data-theme='light'] .mat-button-toggle-checked .mat-button-toggle-button {
+  background-color: #1D9E75 !important;
+  color: #ffffff !important;
 }
 
 
