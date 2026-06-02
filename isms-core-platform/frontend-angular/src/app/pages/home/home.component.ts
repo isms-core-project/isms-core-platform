@@ -182,12 +182,48 @@ const PRODUCT_FAMILIES = ['ISMS', 'PRIVACY', 'CLOUD'] as const
       }
     </div>
 
-    <!-- Cloud card -->
+    <!-- Cloud SEC card (disabled — awaiting ISO 27017:2025) -->
+    <div class="product-card product-card--disabled"
+         [style.border-top-color]="cloudColor">
+      <div class="product-card__header">
+        <div class="product-card__label-row">
+          <span class="product-card__label" [style.color]="cloudColor">CLOUD SEC</span>
+          <span class="product-card__coming-soon">Coming Soon</span>
+        </div>
+        <span class="product-card__subtitle">ISO 27017:2025</span>
+      </div>
+      <div class="product-card__stats product-card__stats--col">
+        <div class="stat-row">
+          <span class="stat-row__label">Control Groups</span>
+          <span class="stat-row__value">—</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-row__label">Policies</span>
+          <span class="stat-row__value">—</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-row__label">Implementations</span>
+          <span class="stat-row__value">—</span>
+        </div>
+      </div>
+      <div class="product-card__dots">
+        <div class="dot-row">
+          <span class="dot" [style.background]="cloudColor"></span>
+          <span class="dot-row__label">ISO 27017:2025</span>
+        </div>
+        <div class="dot-row">
+          <span class="dot" [style.background]="cloudColor"></span>
+          <span class="dot-row__label">Cloud Security Controls</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cloud PII card -->
     <div class="product-card"
          [style.border-top-color]="cloudColor"
          (click)="selectProduct('cloud')">
       <div class="product-card__header">
-        <span class="product-card__label" [style.color]="cloudColor">CLOUD</span>
+        <span class="product-card__label" [style.color]="cloudColor">CLOUD PII</span>
         <span class="product-card__subtitle">ISO 27018:2025</span>
       </div>
       @if (cloudStats()) {
@@ -424,7 +460,16 @@ const PRODUCT_FAMILIES = ['ISMS', 'PRIVACY', 'CLOUD'] as const
       flex-direction: column;
       gap: 8px;
     }
-    .product-card--isms { flex: 0 0 48%; }
+    .product-card--isms { flex: 0 0 34%; }
+    .product-card--disabled { opacity: 0.5; cursor: default; pointer-events: none; }
+    .product-card__label-row { display: flex; align-items: center; gap: 6px; }
+    .product-card__coming-soon {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.05em;
+      padding: 1px 6px; border-radius: 8px;
+      background: var(--mat-sys-surface-container-high);
+      color: var(--mat-sys-on-surface-variant);
+      text-transform: uppercase;
+    }
     .product-card:hover { background: var(--mat-sys-surface-container-high); }
 
     .product-card__header {
