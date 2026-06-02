@@ -17,7 +17,10 @@ export class SearchApiService {
   private http = inject(HttpClient)
 
   search(params: SearchParams): Observable<SearchResponse> {
-    return this.http.get<SearchResponse>('/api/v1/search', { params: params as unknown as Record<string, string | number> })
+    const clean = Object.fromEntries(
+      Object.entries(params).filter(([, v]) => v !== undefined && v !== null)
+    ) as Record<string, string | number>
+    return this.http.get<SearchResponse>('/api/v1/search', { params: clean })
   }
 
   status(): Observable<{ available: boolean }> {

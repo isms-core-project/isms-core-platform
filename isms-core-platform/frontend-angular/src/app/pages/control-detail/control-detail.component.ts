@@ -886,6 +886,7 @@ function markdownToHtml(md: string): string {
     .cd-mono { font-family:monospace; font-size:0.8rem; }
     .cd-mono--primary { color:var(--mat-sys-primary); }
     .cd-mono--ins { color:#FFEB9C; }
+    :host-context(html[data-theme='light']) .cd-mono--ins { color:#7A4500; }
     .cd-mono--iso-id { color:var(--mat-sys-primary); font-size:0.85rem; font-weight:700; }
     .cd-mono--source-ref { font-size:0.6rem; color:#666; align-self:center; }
     .cd-mono--reader-id { color:var(--mat-sys-primary); margin-right:8px; }
@@ -900,7 +901,7 @@ function markdownToHtml(md: string): string {
     .cd-ai-panel__chat-btn { margin-left:auto; }
 
     .cd-tabs-card { overflow:hidden; }
-    .cd-tab-content { padding:16px 0; }
+    .cd-tab-content { padding:16px 20px; }
 
     .cd-doc-card { margin-bottom:12px; padding:12px 16px; border-radius:8px; background:var(--mat-sys-surface-container); cursor:pointer; }
     .cd-doc-card:hover { background:color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); }

@@ -19,6 +19,8 @@ from src.database.enums import ProductFamily, ProductType
 from src.database.session import get_db
 from src.domain.assessments import Assessment
 from src.domain.control_groups import ControlGroup
+from src.domain.frameworks import Framework, FrameworkControl
+from src.domain.regulatory import RegulatoryAssessment, RegulatoryRating
 from src.domain.users import User
 from src.services.compass_service import analyse_document
 
@@ -67,6 +69,26 @@ _PT_META: dict[ProductType, dict] = {
     ProductType.AI:          {"framework_code": "iso42001",    "framework_name": "ISO 42001:2023"},
 }
 
+# Mirrors regulatory_service._ASSESSABLE_LEVEL — which level holds assessable leaf controls
+_REG_ASSESSABLE_LEVEL: dict[str, int] = {
+    "NIS2": 0, "DORA": 1, "CIS_V8": 1, "BSI_IT_GRUNDSCHUTZ": 1,
+    "TISAX": 1, "CH_NDSG": 1, "CH_ISG": 1, "EU_CRA": 1,
+    "EU_AI_ACT": 1, "EU_CLOUD_SOV": 0, "COBIT_2019": 1,
+    "NIST_AI_RMF": 2, "CSA_CCM_V4_1": 1, "CSA_AICM_V1": 1,
+    "NIST_800_53_R5": 1, "ISO42001": 1, "NCSC_CAF": 2, "FR_NIS2_RECYF": 1,
+}
+
+_REG_META: dict[str, str] = {
+    "NIS2": "NIS2 Directive", "DORA": "DORA", "CIS_V8": "CIS Controls v8",
+    "BSI_IT_GRUNDSCHUTZ": "BSI IT-Grundschutz", "TISAX": "TISAX",
+    "CH_NDSG": "Swiss nDSG", "CH_ISG": "Swiss ISG", "EU_CRA": "EU CRA",
+    "EU_AI_ACT": "EU AI Act", "EU_CLOUD_SOV": "EU Cloud Sovereignty",
+    "COBIT_2019": "COBIT 2019", "NIST_AI_RMF": "NIST AI RMF 1.0",
+    "CSA_CCM_V4_1": "CSA CCM v4.1", "CSA_AICM_V1": "CSA AICM v1",
+    "NIST_800_53_R5": "NIST SP 800-53 R5", "ISO42001": "ISO 42001:2023",
+    "NCSC_CAF": "NCSC CAF v4.0", "FR_NIS2_RECYF": "ReCyF v2.5",
+}
+
 
 def _coverage_status(pct: float) -> str:
     if pct >= 80:
@@ -98,9 +120,6 @@ def get_coverage(
         .where(Assessment.project_id == pid)
         .group_by(Assessment.product_type)
     ).all()
-
-    if not agg:
-        return {"project_id": project_id, "frameworks": [], "generated_at": now.isoformat()}
 
     # Total control counts per product family
     totals: dict[ProductType, int] = {
@@ -139,6 +158,46 @@ def get_coverage(
             "coverage_pct": pct,
             "avg_score": float(row.avg_score) if row.avg_score is not None else None,
             "status": _coverage_status(pct),
+        })
+
+    # Regulatory/compliance assessments (NIS2, DORA, CIS, BSI, TISAX, etc.)
+    reg_rows = db.execute(
+        select(RegulatoryAssessment.id, RegulatoryAssessment.framework_code, RegulatoryAssessment.status)
+        .where(RegulatoryAssessment.project_id == pid)
+    ).all()
+
+    by_fw: dict[str, list] = {}
+    for ra in reg_rows:
+        by_fw.setdefault(ra.framework_code, []).append(ra)
+
+    for code, assessments in by_fw.items():
+        level = _REG_ASSESSABLE_LEVEL.get(code, 0)
+        fw = db.execute(select(Framework).where(Framework.code == code)).scalar_one_or_none()
+        if not fw:
+            continue
+        total = db.scalar(
+            select(func.count(FrameworkControl.id))
+            .where(FrameworkControl.framework_id == fw.id, FrameworkControl.level == level)
+        ) or 0
+        assessment_ids = [a.id for a in assessments]
+        mapped = db.scalar(
+            select(func.count(func.distinct(RegulatoryRating.requirement_id)))
+            .where(
+                RegulatoryRating.assessment_id.in_(assessment_ids),
+                RegulatoryRating.rating_status != "not_assessed",
+            )
+        ) or 0
+        pct = round(min(mapped / max(total, 1) * 100, 100), 1)
+        statuses = [a.status for a in assessments]
+        status = "complete" if "complete" in statuses else ("in_progress" if "in_progress" in statuses else "draft")
+        frameworks.append({
+            "framework_code": code.lower(),
+            "framework_name": _REG_META.get(code, code),
+            "total_controls": total,
+            "mapped_controls": mapped,
+            "coverage_pct": pct,
+            "avg_score": None,
+            "status": status,
         })
 
     frameworks.sort(key=lambda f: f["coverage_pct"], reverse=True)

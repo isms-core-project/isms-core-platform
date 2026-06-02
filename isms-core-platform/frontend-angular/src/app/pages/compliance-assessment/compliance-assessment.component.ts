@@ -1,6 +1,5 @@
 import { Component, inject, signal, computed, input, effect } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import { RouterLink } from '@angular/router'
 import { firstValueFrom } from 'rxjs'
 
 import { injectQuery, injectMutation, injectQueryClient } from '@tanstack/angular-query-experimental'
@@ -27,6 +26,7 @@ import {
   ComplianceRating,
   RatingUpsert,
 } from '../../api/regulatory-api.service'
+import { ProjectsApiService } from '../../api/projects-api.service'
 import { ProjectService } from '../../core/services/project.service'
 
 // ── Framework metadata ────────────────────────────────────────────────────────
@@ -181,7 +181,7 @@ function fmtDate(d: string): string {
     MatCardModule, MatTableModule, MatButtonModule,
     MatFormFieldModule, MatInputModule, MatSelectModule,
     MatProgressBarModule, MatIconModule, MatChipsModule,
-    MatTooltipModule, MatExpansionModule, MatDividerModule, MatProgressSpinnerModule, RouterLink,
+    MatTooltipModule, MatExpansionModule, MatDividerModule, MatProgressSpinnerModule,
   ],
   template: `
     @if (selectedId()) {
@@ -391,35 +391,29 @@ function fmtDate(d: string): string {
           <p class="page-subtitle">{{ meta().description }}</p>
         </div>
       </div>
-      <div>
-        @if (!activeProject()) {
-          <button mat-flat-button color="primary" disabled
-            matTooltip="Select a project first to create an assessment">
-            <mat-icon>add</mat-icon> New Assessment
-          </button>
-        } @else {
-          <button mat-flat-button [style.background]="meta().color" class="btn-white-text" (click)="showCreate.set(true)">
-            <mat-icon>add</mat-icon> New Assessment
-          </button>
-        }
+      <div class="header-right">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="proj-select-field">
+          <mat-label>Project</mat-label>
+          <mat-select [(ngModel)]="selectedProjectId">
+            @if (projects.isPending()) {
+              <mat-option disabled>Loading…</mat-option>
+            }
+            @for (p of projects.data() ?? []; track p.id) {
+              <mat-option [value]="p.id">{{ p.name }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <button mat-flat-button [style.background]="meta().color" class="btn-white-text"
+          [disabled]="!selectedProjectId"
+          (click)="showCreate.set(true)">
+          <mat-icon>add</mat-icon> New Assessment
+        </button>
       </div>
     </div>
 
-    <!-- Project scope banner -->
-    @if (activeProject()) {
-      <div class="alert alert-success">
-        Showing assessments for project <strong>{{ activeProject()!.name }}</strong>. New assessments will be linked to this project.
-      </div>
-    } @else {
-      <div class="alert alert-warn">
-        No project selected — assessments must be linked to a project. Select an active project first.
-        <a class="alert-link" routerLink="/projects">Go to Projects</a>
-      </div>
-    }
-
     <mat-divider class="section-divider" />
 
-    @if (activeProject()) {
+    @if (selectedProjectId) {
     @if (listQuery.isLoading()) {
       <mat-progress-bar mode="indeterminate" />
     } @else if (listQuery.isError()) {
@@ -428,7 +422,7 @@ function fmtDate(d: string): string {
       <div class="empty-state">
         <p class="empty-title">No assessments yet</p>
         <p class="empty-text">Create your first {{ meta().name }} assessment to get started.</p>
-        <button mat-stroked-button [disabled]="!activeProject()" (click)="showCreate.set(true)">
+        <button mat-stroked-button [disabled]="!selectedProjectId" (click)="showCreate.set(true)">
           <mat-icon>add</mat-icon> New Assessment
         </button>
       </div>
@@ -567,6 +561,9 @@ function fmtDate(d: string): string {
     .page-subtitle{ margin:4px 0 0; color:var(--mat-sys-on-surface-variant,#666); font-size:.875rem; max-width:600px; }
     .framework-chip { font-size:.72rem; font-weight:600; padding:2px 10px; border-radius:10px; }
 
+    .header-right { display:flex; align-items:center; gap:12px; flex-shrink:0; }
+    .proj-select-field { min-width:200px; }
+
     /* Alerts */
     .alert { padding:10px 14px; border-radius:6px; font-size:.85rem; margin-bottom:12px; }
     .alert-error   { background:rgba(244,67,54,.1);  color:#c62828; border:1px solid rgba(244,67,54,.3); }
@@ -695,6 +692,7 @@ function fmtDate(d: string): string {
 })
 export class ComplianceAssessmentComponent {
   private api          = inject(RegulatoryApiService)
+  private projectsApi  = inject(ProjectsApiService)
   private projectSvc   = inject(ProjectService)
   private queryClient  = injectQueryClient()
 
@@ -707,7 +705,14 @@ export class ComplianceAssessmentComponent {
 
   // ── Metadata ───────────────────────────────────────────────────────────────
   readonly meta          = computed(() => resolveMeta(this.frameworkCode()))
-  readonly activeProject = this.projectSvc.activeProject
+
+  // ── Project selector ───────────────────────────────────────────────────────
+  selectedProjectId = this.projectSvc.activeProjectId() ?? ''
+
+  projects = injectQuery(() => ({
+    queryKey: ['projects-list'],
+    queryFn: () => firstValueFrom(this.projectsApi.list()),
+  }))
 
   // ── Constants ──────────────────────────────────────────────────────────────
   readonly SCORES        = [0, 1, 2, 3, 4]
@@ -760,12 +765,12 @@ export class ComplianceAssessmentComponent {
 
   // ── Queries ────────────────────────────────────────────────────────────────
   listQuery = injectQuery(() => ({
-    queryKey: ['regulatory', this.frameworkCode(), 'assessments', this.activeProject()?.id ?? null],
+    queryKey: ['regulatory', this.frameworkCode(), 'assessments', this.selectedProjectId],
     queryFn: () => firstValueFrom(
       this.api.listAssessments(this.frameworkCode(),
-        this.activeProject()?.id ? { project_id: this.activeProject()!.id } : undefined)
+        this.selectedProjectId ? { project_id: this.selectedProjectId } : undefined)
     ),
-    enabled: !!this.activeProject(),
+    enabled: !!this.selectedProjectId,
   }))
 
   assessments = computed(() => this.listQuery.data() ?? [])
@@ -845,7 +850,7 @@ export class ComplianceAssessmentComponent {
       assessor:     this.createAssessor || undefined,
       organisation: this.createOrg || undefined,
       scope:        this.createScope || undefined,
-      project_id:   this.activeProject()?.id ?? null,
+      project_id:   this.selectedProjectId || null,
     })),
     onSuccess: () => {
       this.queryClient.invalidateQueries({ queryKey: ['regulatory', this.frameworkCode(), 'assessments'] })
