@@ -176,7 +176,7 @@ function connectorHealth(c: ConnectorRead): HealthState {
 
 const HEALTH_ICON: Record<HealthState, string>  = { healthy: 'check_circle', stale: 'hourglass_empty', error: 'error', pending: 'help_outline' }
 const HEALTH_LABEL: Record<HealthState, string> = { healthy: 'Healthy', stale: 'Stale', error: 'Error', pending: 'Pending' }
-const HEALTH_COLOR: Record<HealthState, string> = { healthy: '#4caf50', stale: '#ff9800', error: '#f44336', pending: '#9e9e9e' }
+const HEALTH_COLOR: Record<HealthState, string> = { healthy: '#00c752', stale: '#ff9800', error: '#f44336', pending: '#9e9e9e' }
 
 function fmtDate(d: string | null | undefined): string {
   if (!d) return '—'

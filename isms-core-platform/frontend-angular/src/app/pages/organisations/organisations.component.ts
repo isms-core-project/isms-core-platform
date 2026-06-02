@@ -315,7 +315,7 @@ export class EditOrgDialogComponent {
       <mat-card-content>
         <div class="card-header-row">
           <div class="card-name-row">
-            <mat-icon [style.color]="archived() ? 'var(--mat-sys-on-surface-variant)' : '#4472C4'"
+            <mat-icon [style.color]="archived() ? 'var(--mat-sys-on-surface-variant)' : '#327df4'"
               class="org-icon">business</mat-icon>
             <span class="org-name"
               [style.color]="archived() ? 'var(--mat-sys-on-surface-variant)' : 'inherit'">
@@ -360,8 +360,8 @@ export class EditOrgDialogComponent {
 
         <div class="chip-row">
           <span class="chip"
-            [style.background]="org.governance_mode === 'platform' ? 'rgba(68,114,196,0.1)' : 'rgba(255,152,0,0.1)'"
-            [style.color]="org.governance_mode === 'platform' ? '#4472C4' : '#FF9800'">
+            [style.background]="org.governance_mode === 'platform' ? 'rgba(50,125,244,0.1)' : 'rgba(255,152,0,0.1)'"
+            [style.color]="org.governance_mode === 'platform' ? '#327df4' : '#FF9800'">
             {{ org.governance_mode }}
           </span>
           <span class="chip chip-privacy">{{ org.privacy_role }}</span>
@@ -393,7 +393,7 @@ export class EditOrgDialogComponent {
       padding: 0 8px; border-radius: 10px; font-size: 0.68rem; font-weight: 500;
     }
     .chip-archived { background: rgba(158,158,158,0.15); color: var(--mat-sys-on-surface-variant); }
-    .chip-privacy  { background: rgba(112,48,160,0.1); color: #7030A0; }
+    .chip-privacy  { background: rgba(186,104,200,0.12); color: #ba68c8; }
     .chip-country  { background: rgba(0,150,136,0.1); color: #00897B; }
   `],
 })

@@ -24,7 +24,7 @@ import { AssessmentsApiService } from '../../api/assessments-api.service'
 import { BiaApiService } from '../../api/bia-api.service'
 import { ConnectorsApiService, ConnectorRead, ConnectorEvidenceRead } from '../../api/connectors-api.service'
 import { GeneratorsApiService } from '../../api/generators-api.service'
-import { ProductService } from '../../core/services/product.service'
+import { ProductService, PRODUCT_COLORS } from '../../core/services/product.service'
 import { ThemeService } from '../../core/services/theme.service'
 import { StatusChipComponent } from '../../shared/components/status-chip.component'
 
@@ -166,14 +166,14 @@ const ITEM_STATUS_LIGHT: Record<string, { bg: string; color: string; label: stri
 }
 
 const SECTION_COLORS: Record<string, string> = {
-  'A.5': '#4472C4',
+  'A.5': '#9E9E9E',
   'A.6': '#70AD47',
   'A.7': '#FFC000',
   'A.8': '#C00000',
 }
 
 function getSectionColor(section: string): string {
-  return SECTION_COLORS[section] ?? '#4472C4'
+  return SECTION_COLORS[section] ?? '#9E9E9E'
 }
 
 function fmtDate(d: string | null | undefined): string {
@@ -349,7 +349,7 @@ function markdownToHtml(md: string): string {
                 }
                 <div class="cd-doc-card__row">
                   <div>
-                    <div class="cd-mono" [style.color]="pol.product_type === 'external' ? '#FFC000' : 'var(--mat-sys-primary)'">{{ pol.document_id }}</div>
+                    <div class="cd-mono" [style.color]="pol.product_type === 'external' ? '#FFC000' : docIdColor()">{{ pol.document_id }}</div>
                     <div class="cd-doc-card__name">{{ pol.title }}</div>
                   </div>
                   <div class="cd-doc-card__chips">
@@ -407,7 +407,7 @@ function markdownToHtml(md: string): string {
               @for (impl of cg()!.implementations; track impl.id) {
                 <div class="cd-impl-card" (click)="openImpl(impl)">
                   <div class="cd-impl-card__top">
-                    <span class="cd-mono cd-mono--primary">{{ impl.document_id }}</span>
+                    <span class="cd-mono" [style.color]="docIdColor()">{{ impl.document_id }}</span>
                     <div class="cd-chip-row">
                       <span [class]="impl.impl_type === 'UG' ? 'cd-chip cd-chip--ug' : 'cd-chip cd-chip--tg'">{{ impl.impl_type }}</span>
                       <span class="cd-chip">{{ impl.word_count | number }}w</span>
@@ -446,7 +446,7 @@ function markdownToHtml(md: string): string {
               <div class="cd-assessment-card">
                 <div class="cd-assessment-card__header">
                   <div class="cd-assessment-card__info">
-                    <div class="cd-mono cd-mono--primary">{{ asmnt.document_id }}</div>
+                    <div class="cd-mono" [style.color]="docIdColor()">{{ asmnt.document_id }}</div>
                     <div class="cd-assessment-card__name">{{ asmnt.workbook_name }}</div>
                     <div class="cd-assessment-card__chips">
                       <div class="cd-chip-row">
@@ -487,7 +487,7 @@ function markdownToHtml(md: string): string {
               </div>
               @for (asmnt of uploadedAssessments(); track asmnt.id) {
                 <div class="cd-assessment-card cd-assessment-card--imported">
-                  <div class="cd-mono cd-mono--primary">{{ asmnt.document_id }}</div>
+                  <div class="cd-mono" [style.color]="docIdColor()">{{ asmnt.document_id }}</div>
                   <div class="cd-assessment-card__name">{{ asmnt.workbook_name }}</div>
                   <div class="cd-assessment-card__chips cd-assessment-card__chips--spaced">
                     <div class="cd-chip-row">
@@ -567,7 +567,7 @@ function markdownToHtml(md: string): string {
             @for (iso of filteredIsoControls(); track iso.control_id) {
               <div class="cd-iso-block">
                 <div class="cd-iso-block__header">
-                  <span class="cd-mono cd-mono--iso-id">{{ iso.control_id }}</span>
+                  <span class="cd-mono cd-mono--iso-id" [style.color]="docIdColor()">{{ iso.control_id }}</span>
                   <span class="cd-iso-block__title">{{ iso.title }}</span>
                 </div>
                 @if (iso.description) {
@@ -720,8 +720,8 @@ function markdownToHtml(md: string): string {
                       <div class="cd-bia-card__type">{{ r.asset_type }}</div>
                     </div>
                     <span class="cd-chip"
-                      [style.background]="r.recovery_tested ? '#4CAF5020' : '#FF980020'"
-                      [style.color]="r.recovery_tested ? '#4CAF50' : '#FF9800'">
+                      [style.background]="r.recovery_tested ? '#00c75220' : '#FF980020'"
+                      [style.color]="r.recovery_tested ? '#00c752' : '#FF9800'">
                       {{ r.recovery_tested ? 'Tested' : 'Not Tested' }}
                     </span>
                   </div>
@@ -818,7 +818,7 @@ function markdownToHtml(md: string): string {
           <div class="cd-picker-item"
                [class.cd-picker-item--selected]="pickerGeneratorId() === gen.document_id"
                (click)="pickerGeneratorId.set(gen.document_id)">
-            <div class="cd-mono cd-mono--primary">{{ gen.document_id }}</div>
+            <div class="cd-mono" [style.color]="docIdColor()">{{ gen.document_id }}</div>
             <div class="cd-picker-item__name">{{ gen.workbook_name }}</div>
             <div class="cd-picker-item__meta">{{ gen.sheet_count }} sheets</div>
           </div>
@@ -842,7 +842,7 @@ function markdownToHtml(md: string): string {
     <div class="cd-reader" (click)="$event.stopPropagation()">
       <div class="cd-reader__header">
         <div class="cd-reader__title">
-          <span class="cd-mono cd-mono--reader-id">{{ policyReaderTarget()!.docId }}</span>
+          <span class="cd-mono" [style.color]="docIdColor()" style="margin-right:8px">{{ policyReaderTarget()!.docId }}</span>
           {{ policyReaderTarget()!.title }}
         </div>
         <button mat-icon-button (click)="policyReaderTarget.set(null)"><mat-icon>close</mat-icon></button>
@@ -890,11 +890,11 @@ function markdownToHtml(md: string): string {
     .cd-mono--source-ref { font-size:0.6rem; color:#666; align-self:center; }
     .cd-mono--reader-id { color:var(--mat-sys-primary); margin-right:8px; }
 
-    .cd-ai-btn--active { color:#4472C4 !important; background:rgba(68,114,196,0.15) !important; }
+    .cd-ai-btn--active { color:var(--mat-sys-primary) !important; background:color-mix(in srgb, var(--mat-sys-primary) 14%, transparent) !important; }
 
-    .cd-ai-panel { margin-bottom:16px; border:1px solid rgba(68,114,196,0.3); border-radius:8px; background:rgba(68,114,196,0.06); padding:12px 16px; }
+    .cd-ai-panel { margin-bottom:16px; border:1px solid var(--mat-sys-outline-variant); border-radius:8px; background:var(--mat-sys-surface-container); padding:12px 16px; }
     .cd-ai-panel__inner { display:flex; align-items:center; gap:12px; }
-    .cd-ai-panel__icon { color:#4472C4; }
+    .cd-ai-panel__icon { color:var(--mat-sys-primary); }
     .cd-ai-panel__title { font-weight:600; }
     .cd-ai-panel__sub { font-size:0.78rem; color:#888; }
     .cd-ai-panel__chat-btn { margin-left:auto; }
@@ -902,8 +902,8 @@ function markdownToHtml(md: string): string {
     .cd-tabs-card { overflow:hidden; }
     .cd-tab-content { padding:16px 0; }
 
-    .cd-doc-card { margin-bottom:12px; padding:12px 16px; border-radius:8px; background:rgba(68,114,196,0.07); cursor:pointer; }
-    .cd-doc-card:hover { background:rgba(68,114,196,0.14); }
+    .cd-doc-card { margin-bottom:12px; padding:12px 16px; border-radius:8px; background:var(--mat-sys-surface-container); cursor:pointer; }
+    .cd-doc-card:hover { background:color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); }
     .cd-doc-card--external { background:rgba(255,192,0,0.06); border:1px solid rgba(255,192,0,0.25); }
     .cd-doc-card--external:hover { background:rgba(255,192,0,0.12); }
     .cd-doc-card--ins { background:rgba(255,192,0,0.06); border:1px solid rgba(255,192,0,0.15); }
@@ -914,8 +914,8 @@ function markdownToHtml(md: string): string {
     .cd-doc-card__chips { flex-shrink:0; }
 
     .cd-impl-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:8px; }
-    .cd-impl-card { padding:12px; background:rgba(68,114,196,0.07); border-radius:8px; cursor:pointer; }
-    .cd-impl-card:hover { background:rgba(68,114,196,0.14); }
+    .cd-impl-card { padding:12px; background:var(--mat-sys-surface-container); border-radius:8px; cursor:pointer; }
+    .cd-impl-card:hover { background:color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); }
     .cd-impl-card__top { display:flex; justify-content:space-between; margin-bottom:4px; }
     .cd-impl-card__name { font-weight:600; font-size:0.88rem; line-height:1.3; }
 
@@ -928,14 +928,14 @@ function markdownToHtml(md: string): string {
     .cd-section-icon--primary { color:var(--mat-sys-primary); }
     .cd-section-icon--muted { color:#888; }
 
-    .cd-empty-cta { padding:20px; border-radius:8px; border:1px dashed rgba(68,114,196,0.3); background:rgba(68,114,196,0.03); text-align:center; cursor:pointer; margin-bottom:12px; }
-    .cd-empty-cta:hover { background:rgba(68,114,196,0.08); border-color:rgba(68,114,196,0.5); }
+    .cd-empty-cta { padding:20px; border-radius:8px; border:1px dashed var(--mat-sys-outline-variant); background:var(--mat-sys-surface-container); text-align:center; cursor:pointer; margin-bottom:12px; }
+    .cd-empty-cta:hover { background:color-mix(in srgb, var(--mat-sys-primary) 8%, transparent); border-color:var(--mat-sys-primary); }
     .cd-empty-cta__icon { color:#888; display:block; margin-bottom:8px; }
     .cd-empty-cta__msg { color:#aaa; }
     .cd-empty-cta__action { color:var(--mat-sys-primary); margin-top:4px; font-size:0.8rem; }
 
-    .cd-assessment-card { margin-bottom:12px; padding:12px 16px; background:rgba(68,114,196,0.06); border-radius:8px; border:1px solid rgba(68,114,196,0.12); }
-    .cd-assessment-card--imported { background:rgba(68,114,196,0.05); border:none; }
+    .cd-assessment-card { margin-bottom:12px; padding:12px 16px; background:var(--mat-sys-surface-container); border-radius:8px; border:1px solid var(--mat-sys-outline-variant); }
+    .cd-assessment-card--imported { background:var(--mat-sys-surface-container-low); border:none; }
     .cd-assessment-card__header { display:flex; align-items:flex-start; gap:8px; }
     .cd-assessment-card__info { flex:1; }
     .cd-assessment-card__name { font-weight:600; font-size:0.9rem; }
@@ -946,12 +946,12 @@ function markdownToHtml(md: string): string {
     .cd-cbar { margin-top:8px; }
     .cd-cbar__track { display:flex; height:5px; border-radius:3px; overflow:hidden; background:rgba(255,255,255,0.06); }
     .cd-cbar__seg { flex-shrink:0; }
-    .cd-cbar__seg--compliant { background:#4caf50; }
+    .cd-cbar__seg--compliant { background:#00c752; }
     .cd-cbar__seg--partial { background:#ff9800; }
     .cd-cbar__seg--nc { background:#f44336; }
     .cd-cbar__seg--na { background:#444; }
     .cd-cbar__labels { display:flex; gap:12px; margin-top:3px; font-size:0.72rem; color:#888; }
-    .cd-cbar__lbl--c { color:#4caf50; }
+    .cd-cbar__lbl--c { color:#00c752; }
     .cd-cbar__lbl--p { color:#ff9800; }
     .cd-cbar__lbl--nc { color:#f44336; }
     .cd-cbar__lbl--na { color:#666; }
@@ -960,29 +960,29 @@ function markdownToHtml(md: string): string {
     .cd-sheet__header { display:flex; align-items:center; gap:8px; }
     .cd-sheet__name { font-weight:600; font-size:0.85rem; flex:1; }
     .cd-sheet__rows { font-size:0.75rem; color:#666; }
-    .cd-sheet__toggle { display:flex; align-items:center; gap:4px; cursor:pointer; color:#666; font-size:0.78rem; padding:2px 4px; border-radius:4px; background:rgba(68,114,196,0.06); margin-top:2px; }
-    .cd-sheet__toggle:hover { background:rgba(68,114,196,0.12); }
+    .cd-sheet__toggle { display:flex; align-items:center; gap:4px; cursor:pointer; color:#666; font-size:0.78rem; padding:2px 4px; border-radius:4px; background:var(--mat-sys-surface-container); margin-top:2px; }
+    .cd-sheet__toggle:hover { background:color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); }
     .cd-sheet__cycle-hint { margin-left:auto; font-size:0.6rem; color:#444; }
 
     .cd-items-list { margin-top:4px; }
     .cd-item { display:flex; gap:8px; padding:3px 8px; border-bottom:1px solid rgba(255,255,255,0.04); cursor:pointer; border-left:2px solid transparent; }
-    .cd-item:hover { background:rgba(68,114,196,0.08) !important; }
+    .cd-item:hover { background:color-mix(in srgb, var(--mat-sys-primary) 8%, transparent) !important; }
     .cd-item__label { font-weight:700; flex-shrink:0; min-width:20px; font-size:0.75rem; }
     .cd-item__text { flex:1; font-size:0.75rem; line-height:1.4; }
     .cd-item__owner { font-size:0.72rem; color:#666; flex-shrink:0; }
 
     .cd-stacked-filter { display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
-    .cd-filter-btn--active { color:var(--mat-sys-primary) !important; font-weight:700 !important; background:rgba(68,114,196,0.2) !important; }
+    .cd-filter-btn--active { color:var(--mat-sys-primary) !important; font-weight:700 !important; background:color-mix(in srgb, var(--mat-sys-primary) 18%, transparent) !important; }
     .cd-filter-label { font-size:0.8rem; color:#888; }
 
-    .cd-iso-block { margin-bottom:16px; padding:12px 16px; background:rgba(68,114,196,0.07); border-radius:8px; }
+    .cd-iso-block { margin-bottom:16px; padding:12px 16px; background:var(--mat-sys-surface-container); border-radius:8px; }
     .cd-iso-block__header { display:flex; align-items:center; gap:8px; margin-bottom:4px; }
     .cd-iso-block__title { font-weight:600; font-size:0.9rem; }
     .cd-iso-block__desc { font-size:0.78rem; color:#888; font-style:italic; line-height:1.6; margin-bottom:8px; }
     .cd-iso-block__mappings { display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
     .cd-iso-block__count { font-size:0.75rem; color:#888; }
 
-    .cd-conn-ev { margin-bottom:8px; padding:12px 16px; border-radius:8px; background:rgba(68,114,196,0.06); border:1px solid rgba(68,114,196,0.12); }
+    .cd-conn-ev { margin-bottom:8px; padding:12px 16px; border-radius:8px; background:var(--mat-sys-surface-container); border:1px solid var(--mat-sys-outline-variant); }
     .cd-conn-ev__header { display:flex; align-items:flex-start; gap:8px; }
     .cd-conn-ev__info { flex:1; min-width:0; }
     .cd-conn-ev__title { font-weight:600; font-size:0.9rem; }
@@ -998,7 +998,7 @@ function markdownToHtml(md: string): string {
     .cd-ev-detail__toggle-btn { font-size:0.7rem; color:#888; padding:0; }
     .cd-ev-detail__no-data { font-size:0.75rem; color:#666; }
 
-    .cd-ev-row { margin-bottom:8px; padding:12px 16px; background:rgba(68,114,196,0.07); border-radius:8px; }
+    .cd-ev-row { margin-bottom:8px; padding:12px 16px; background:var(--mat-sys-surface-container); border-radius:8px; }
     .cd-ev-row__top { display:flex; justify-content:space-between; align-items:center; }
     .cd-ev-row__title { font-weight:600; font-size:0.9rem; }
     .cd-ev-row__chips { display:flex; gap:8px; margin-top:4px; align-items:center; }
@@ -1031,7 +1031,7 @@ function markdownToHtml(md: string): string {
     .cd-chip--reqs { background:rgba(46,125,50,0.12); color:#C6EFCE; }
     .cd-chip--ug { background:rgba(46,125,50,0.12); color:#C6EFCE; }
     .cd-chip--tg { background:rgba(230,160,0,0.12); color:#FFEB9C; }
-    .cd-chip--platform { background:rgba(68,114,196,0.2); color:var(--mat-sys-primary); }
+    .cd-chip--platform { background:color-mix(in srgb, var(--mat-sys-primary) 18%, transparent); color:var(--mat-sys-primary); }
     .cd-chip--score { background:rgba(46,125,50,0.12); color:#C6EFCE; }
     .cd-chip--mapping { background:rgba(112,173,71,0.12); color:#C6EFCE; font-size:0.68rem; }
     .cd-chip {
@@ -1051,9 +1051,9 @@ function markdownToHtml(md: string): string {
     .cd-dialog__actions { display:flex; justify-content:flex-end; gap:8px; margin-top:16px; }
 
     .cd-picker-list { display:flex; flex-direction:column; gap:8px; margin-bottom:8px; }
-    .cd-picker-item { padding:12px; border-radius:8px; cursor:pointer; border:1px solid rgba(255,255,255,0.08); background:rgba(68,114,196,0.05); }
-    .cd-picker-item:hover { background:rgba(68,114,196,0.12); }
-    .cd-picker-item--selected { border-color:var(--mat-sys-primary) !important; background:rgba(68,114,196,0.18) !important; }
+    .cd-picker-item { padding:12px; border-radius:8px; cursor:pointer; border:1px solid rgba(255,255,255,0.08); background:var(--mat-sys-surface-container); }
+    .cd-picker-item:hover { background:color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); }
+    .cd-picker-item--selected { border-color:var(--mat-sys-primary) !important; background:color-mix(in srgb, var(--mat-sys-primary) 16%, transparent) !important; }
     .cd-picker-item__name { font-weight:600; }
     .cd-picker-item__meta { font-size:0.78rem; color:#888; }
 
@@ -1069,7 +1069,7 @@ function markdownToHtml(md: string): string {
     .cd-reader__body p { margin:0 0 10px; }
     .cd-reader__body ul, .cd-reader__body ol { margin:0 0 10px; padding-left:20px; }
     .cd-reader__body li { margin-bottom:3px; }
-    .cd-reader__body code { background:rgba(68,114,196,0.12); padding:1px 5px; border-radius:3px; font-family:monospace; font-size:0.78rem; }
+    .cd-reader__body code { background:var(--mat-sys-surface-container-high); padding:1px 5px; border-radius:3px; font-family:monospace; font-size:0.78rem; }
     .cd-reader__body pre { background:rgba(0,0,0,0.3); padding:10px; border-radius:6px; overflow-x:auto; margin:0 0 10px; }
     .cd-reader__body pre code { background:none; padding:0; }
     .cd-reader__body blockquote { border-left:3px solid var(--mat-sys-primary); padding-left:12px; color:var(--mat-sys-on-surface-variant); margin:0 0 10px; }
@@ -1203,6 +1203,11 @@ export class ControlDetailComponent {
   })
 
   readonly sectionColor = computed(() => getSectionColor(this.cg()?.section ?? ''))
+
+  readonly docIdColor = computed(() => {
+    const prod = this.product.product()
+    return prod === 'isms' ? this.sectionColor() : PRODUCT_COLORS[prod]
+  })
 
   readonly displayGroupCode = computed(() => {
     const cg = this.cg()

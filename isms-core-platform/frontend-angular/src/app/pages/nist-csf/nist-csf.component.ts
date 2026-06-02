@@ -60,7 +60,7 @@ function tierColor(tier: number | null, dark: boolean): string {
   if (tier === 1) return '#FF5252'
   if (tier === 2) return '#FFC000'
   if (tier === 3) return '#70AD47'
-  return '#4472C4'
+  return '#5c6bc0'
 }
 
 function gapColor(gap: number, isLight: boolean): string {
@@ -454,9 +454,9 @@ function pct(rated: number, total: number): number {
     .nist-header__left { flex:1; }
     .nist-header__title-row { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
     .nist-header__title { margin:0; font-size:1.75rem; font-weight:700; line-height:1.2; }
-    .nist-header__badge { font-size:.72rem; font-weight:600; padding:2px 10px; border-radius:10px; background:rgba(68,114,196,.22); color:#4472C4; }
+    .nist-header__badge { font-size:.72rem; font-weight:600; padding:2px 10px; border-radius:10px; background:rgba(92,107,192,.22); color:#5c6bc0; }
     .nist-header__sub { margin:4px 0 0; font-size:.875rem; color:var(--mat-sys-on-surface-variant); }
-    html[data-theme='light'] .nist-header__badge { background:rgba(68,114,196,.15); color:#2E5099; }
+    html[data-theme='light'] .nist-header__badge { background:rgba(92,107,192,.15); color:#3949AB; }
 
     /* Detail header */
     .detail-header {
@@ -473,13 +473,13 @@ function pct(rated: number, total: number): number {
     .detail-actions { display: flex; gap: 6px; align-items: center; }
 
     /* Rated chip */
-    .rated-chip { font-size: .65rem; height: 20px; background: rgba(68,114,196,.12); color: #9DC3E6; }
+    .rated-chip { font-size: .65rem; height: 20px; background: rgba(92,107,192,.12); color: #9FA8DA; }
 
     /* Hidden file input */
     .hidden-input { display: none; }
 
     /* Action buttons */
-    .btn-import    { color: #4472C4; background: rgba(68,114,196,.1); }
+    .btn-import    { color: #5c6bc0; background: rgba(92,107,192,.1); }
     .btn-export-xlsx { color: #70AD47; background: rgba(112,173,71,.1); }
     .btn-export-csv  { color: #8B9CC8; background: rgba(139,156,200,.08); }
     .btn-report    { color: #FFC000; background: rgba(255,192,0,.1); }
@@ -543,7 +543,7 @@ function pct(rated: number, total: number): number {
     .iso-tags { display: flex; flex-wrap: wrap; gap: 2px; }
     .iso-tag {
       font-size: .55rem; padding: 0 4px; height: 14px; border-radius: 7px;
-      background: rgba(68,114,196,.15); color: #9DC3E6;
+      background: rgba(92,107,192,.15); color: #9FA8DA;
       display: inline-flex; align-items: center;
     }
     .iso-more { font-size: .55rem; opacity: .5; }
@@ -567,8 +567,8 @@ function pct(rated: number, total: number): number {
     /* Profile card */
     .profile-card {
       margin-bottom: 12px;
-      background: rgba(68,114,196,.04);
-      border: 1px solid rgba(68,114,196,.12);
+      background: var(--mat-sys-surface-container);
+      border: 1px solid var(--mat-sys-outline-variant);
       cursor: pointer;
     }
     .profile-card-content { padding: 14px 16px; }

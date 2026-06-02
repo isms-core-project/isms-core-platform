@@ -302,8 +302,8 @@ const PT_COLOR: Record<string, string> = {
     /* Completeness footer rows */
     .missing-hint { font-size: 0.65rem; color: var(--mat-sys-on-surface-variant); margin-top: 6px; }
     .all-covered  { display: flex; align-items: center; gap: 4px; margin-top: 6px; }
-    .all-covered-text { font-size: 0.65rem; color: #4CAF50; }
-    .all-covered-icon { color: #4CAF50; flex-shrink: 0; }
+    .all-covered-text { font-size: 0.65rem; color: #00c752; }
+    .all-covered-icon { color: #00c752; flex-shrink: 0; }
 
     /* Doc-vars header elements */
     .doc-vars-expand-icon {
@@ -314,7 +314,7 @@ const PT_COLOR: Record<string, string> = {
       font-size: 0.6rem; padding: 1px 7px; border-radius: 10px;
     }
     .doc-vars-badge-incomplete { background: #FF980018; color: #FF9800; }
-    .doc-vars-badge-complete   { background: #4CAF5018; color: #4CAF50; }
+    .doc-vars-badge-complete   { background: #00c75218; color: #00c752; }
     .doc-vars-hint  { font-size: 0.65rem; color: var(--mat-sys-on-surface-variant); margin-left: 8px; }
     .doc-vars-desc  { font-size: 0.68rem; color: var(--mat-sys-on-surface-variant); margin: 0 0 12px; }
     .doc-vars-field { width: 100%; }
@@ -403,7 +403,7 @@ const PT_COLOR: Record<string, string> = {
     .lib-footer-actions { display: flex; gap: 8px; }
 
     /* Library in-project check icon */
-    .already-added-icon { font-size: 16px; color: #4CAF50; margin-left: 8px; }
+    .already-added-icon { font-size: 16px; color: #00c752; margin-left: 8px; }
 
     /* Side panel (SCR + detail drawers) */
     .side-panel-620 { width: 620px; }
@@ -426,7 +426,7 @@ const PT_COLOR: Record<string, string> = {
     .editor-badge-row { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
     .editor-badge { font-size: 0.6rem; padding: 1px 7px; border-radius: 12px; }
     .editor-badge-unsaved { font-size: 0.6rem; padding: 1px 7px; border-radius: 12px; background: #FF980018; color: #FF9800; }
-    .editor-badge-saved   { font-size: 0.6rem; padding: 1px 7px; border-radius: 12px; background: #4CAF5018; color: #4CAF50; }
+    .editor-badge-saved   { font-size: 0.6rem; padding: 1px 7px; border-radius: 12px; background: #00c75218; color: #00c752; }
     .editor-title { font-weight: 700; font-size: 0.88rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .editor-body { flex: 1; overflow: auto; padding: 24px; }
 
@@ -474,8 +474,8 @@ const PT_COLOR: Record<string, string> = {
             {{ proj.product_family }}
           </span>
           <span class="type-chip"
-            [style.background]="proj.status === 'active' ? '#4CAF5018' : '#9E9E9E18'"
-            [style.color]="proj.status === 'active' ? '#4CAF50' : '#9E9E9E'">
+            [style.background]="proj.status === 'active' ? '#00c75218' : '#9E9E9E18'"
+            [style.color]="proj.status === 'active' ? '#00c752' : '#9E9E9E'">
             {{ proj.status }}
           </span>
           @if (isActive()) {

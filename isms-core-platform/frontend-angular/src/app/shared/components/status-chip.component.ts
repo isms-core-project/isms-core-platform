@@ -42,12 +42,12 @@ const DARK: Record<string, { bg: string; color: string }> = {
 
 const LIGHT: Record<string, { bg: string; color: string }> = {
   // green family
-  green:         { bg: 'rgba(46,125,50,0.15)',  color: '#1b5e20' },
-  compliant:     { bg: 'rgba(46,125,50,0.15)',  color: '#1b5e20' },
-  closed:        { bg: 'rgba(46,125,50,0.15)',  color: '#1b5e20' },
-  complete:      { bg: 'rgba(46,125,50,0.15)',  color: '#1b5e20' },
-  approved:      { bg: 'rgba(46,125,50,0.15)',  color: '#1b5e20' },
-  active:        { bg: 'rgba(46,125,50,0.15)',  color: '#1b5e20' },
+  green:         { bg: 'rgba(29,158,117,0.12)',  color: '#0F6E56' },
+  compliant:     { bg: 'rgba(29,158,117,0.12)',  color: '#0F6E56' },
+  closed:        { bg: 'rgba(29,158,117,0.12)',  color: '#0F6E56' },
+  complete:      { bg: 'rgba(29,158,117,0.12)',  color: '#0F6E56' },
+  approved:      { bg: 'rgba(29,158,117,0.12)',  color: '#0F6E56' },
+  active:        { bg: 'rgba(29,158,117,0.12)',  color: '#0F6E56' },
   // amber family
   amber:         { bg: 'rgba(230,145,0,0.15)',  color: '#7a4800' },
   partial:       { bg: 'rgba(230,145,0,0.15)',  color: '#7a4800' },
@@ -68,12 +68,12 @@ const LIGHT: Record<string, { bg: string; color: string }> = {
   very_high:     { bg: 'rgba(192,0,0,0.12)',    color: '#9e0000' },
   high:          { bg: 'rgba(200,80,0,0.12)',   color: '#7a2800' },
   medium:        { bg: 'rgba(230,145,0,0.12)',  color: '#7a4800' },
-  low:           { bg: 'rgba(46,125,50,0.1)',   color: '#2e7d32' },
+  low:           { bg: 'rgba(29,158,117,0.10)',  color: '#0F6E56' },
   // neutral / not started
   not_assessed:  { bg: 'rgba(68,114,196,0.12)', color: '#2E5099' },
   not_started:   { bg: 'rgba(68,114,196,0.12)', color: '#2E5099' },
   // feed statuses
-  success:       { bg: 'rgba(46,125,50,0.15)',  color: '#1b5e20' },
+  success:       { bg: 'rgba(29,158,117,0.12)',  color: '#0F6E56' },
   running:       { bg: 'rgba(21,101,192,0.15)', color: '#1565c0' },
   never_run:     { bg: 'rgba(68,114,196,0.12)', color: '#2E5099' },
   error:         { bg: 'rgba(192,0,0,0.12)',    color: '#9e0000' },

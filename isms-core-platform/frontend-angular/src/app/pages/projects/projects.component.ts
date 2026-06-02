@@ -26,9 +26,9 @@ import { ProjectRead } from '../../shared/types'
 
 const FAMILY_COLOR: Record<string, string> = {
   ISMS:    '#4472C4',
-  PRIVACY: '#7030A0',
-  CLOUD:   '#00897B',
-  AI:      '#ff6b35',
+  PRIVACY: '#ba68c8',
+  CLOUD:   '#29b6f6',
+  AI:      '#ffa726',
 }
 
 const FAMILY_ICON: Record<string, string> = {
@@ -39,7 +39,7 @@ const FAMILY_ICON: Record<string, string> = {
 }
 
 const STATUS_COLOR: Record<string, string> = {
-  active:   '#4CAF50',
+  active:   '#00c752',
   inactive: '#FF9800',
   draft:    '#64B5F6',
   archived: '#9E9E9E',

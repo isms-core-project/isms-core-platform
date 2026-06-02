@@ -22,7 +22,7 @@ import { ControlGroupList } from '../../shared/types'
 import { PageHeaderComponent } from '../../shared/components/page-header.component'
 
 const ISMS_SECTION_COLORS: Record<string, string> = {
-  'A.5': '#4472C4',
+  'A.5': '#9E9E9E',
   'A.6': '#70AD47',
   'A.7': '#FFC000',
   'A.8': '#C00000',
@@ -42,7 +42,7 @@ const HEATMAP_DARK: Record<string, string> = {
 }
 
 const HEATMAP_LIGHT: Record<string, string> = {
-  complete:   '#4caf50',
+  complete:   '#00c752',
   partial:    '#ff9800',
   basic:      '#f57c00',
   incomplete: '#f44336',
@@ -68,7 +68,7 @@ function deriveSectionName(cg: ControlGroupList): string {
 }
 
 function getSectionColor(product: string, section: string): string {
-  if (product === 'isms') return ISMS_SECTION_COLORS[section] ?? '#4472C4'
+  if (product === 'isms') return ISMS_SECTION_COLORS[section] ?? '#9E9E9E'
   if (product === 'privacy') return PRIVACY_SECTION_COLORS[section] ?? '#ba68c8'
   if (product === 'cloud') return '#29b6f6'
   return '#ffa726'
@@ -132,10 +132,10 @@ function getHeatmapStatus(cg: ControlGroupList): string {
 
     <mat-button-toggle-group [ngModel]="viewMode()" (ngModelChange)="viewMode.set($event)" class="view-toggle">
       <mat-button-toggle value="grid">
-        <mat-icon>grid_view</mat-icon>
+        <mat-icon>grid_view</mat-icon> Grid
       </mat-button-toggle>
       <mat-button-toggle value="heatmap">
-        <mat-icon>grid_on</mat-icon>
+        <mat-icon>grid_on</mat-icon> Heatmap
       </mat-button-toggle>
     </mat-button-toggle-group>
   </div>

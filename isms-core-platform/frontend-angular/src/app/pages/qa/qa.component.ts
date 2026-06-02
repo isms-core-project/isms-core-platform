@@ -727,20 +727,20 @@ function fromNow(d: string): string {
       display: inline-block; padding: 2px 7px; border-radius: 10px;
       font-size: 0.62rem; font-weight: 600; line-height: 1.6;
     }
-    .chip-product { background: rgba(68,114,196,0.15); color: #93bbf5; }
+    .chip-product { background: rgba(50,125,244,0.15); color: #90caf9; }
     .chip-present { background: rgba(46,125,50,0.15); color: #C6EFCE; }
     .chip-missing { background: rgba(192,0,0,0.15); color: #FFC7CE; }
     .chip-warn    { background: rgba(230,160,0,0.15); color: #FFEB9C; }
     .chip-neutral { background: rgba(255,255,255,0.07); color: #d9d9d9; }
-    .chip-family  { background: rgba(68,114,196,0.15); color: #93bbf5; }
+    .chip-family  { background: rgba(50,125,244,0.15); color: #90caf9; }
 
     :host-context([data-theme='light']) {
-      .chip-product { background: rgba(68,114,196,0.12); color: #1565c0; }
+      .chip-product { background: rgba(50,125,244,0.12); color: #1565c0; }
       .chip-present { background: rgba(46,125,50,0.12); color: #1b5e20; }
       .chip-missing { background: rgba(192,0,0,0.12);   color: #9e0000; }
       .chip-warn    { background: rgba(230,145,0,0.15);  color: #7a4800; }
       .chip-neutral { background: rgba(0,0,0,0.07);      color: #424242; }
-      .chip-family  { background: rgba(68,114,196,0.12); color: #1565c0; }
+      .chip-family  { background: rgba(50,125,244,0.12); color: #1565c0; }
       .sc-pct--op  { color: #2e7d32; }
       .sc-pct--cld { color: #0277bd; }
       .sc-pct--ai  { color: #bf360c; }

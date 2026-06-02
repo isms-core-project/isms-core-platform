@@ -1,3 +1,4 @@
+import re
 import uuid
 
 from sqlalchemy import func, select
@@ -38,6 +39,18 @@ def get_control_group_by_code(db: DBSession, group_code: str) -> ControlGroup | 
     return db.execute(
         select(ControlGroup).where(ControlGroup.group_code == group_code.lower())
     ).scalar_one_or_none()
+
+
+def _expand_stacked_code(group_code: str) -> list[str]:
+    """Expand 'a.1.2.2-5' → ['A.1.2.2','A.1.2.3','A.1.2.4','A.1.2.5'].
+    Returns [group_code.upper()] for non-stacked codes."""
+    code = group_code.upper()
+    m = re.match(r'^(.*?)\.(\d+)-(\d+)$', code)
+    if m:
+        base, start, end = m.group(1), int(m.group(2)), int(m.group(3))
+        if end > start:
+            return [code] + [f'{base}.{i}' for i in range(start, end + 1)]
+    return [code]
 
 
 def get_control_group_rich(db: DBSession, cg: ControlGroup) -> dict:
@@ -123,13 +136,37 @@ def get_control_group_rich(db: DBSession, cg: ControlGroup) -> dict:
             ],
         })
 
-    # ISO 27001 framework controls via junction + their cross-framework mappings
-    iso_fw = db.execute(
-        select(Framework).where(Framework.code.ilike("ISO27001%"))
-    ).scalar_one_or_none()
+    # ISO framework controls + cross-framework mappings.
+    # ISMS: use junction table → ISO 27001.
+    # PRIV/CLOUD/AI: match by group_code against the product's native ISO standard.
+    _NATIVE_ISO_FW = {
+        "PRIVACY": "ISO27701",
+        "CLOUD":   "ISO27018",
+        "AI":      "ISO42001",
+    }
+
+    pf_str = cg.product_family.value if hasattr(cg.product_family, "value") else str(cg.product_family)
+    native_prefix = _NATIVE_ISO_FW.get(pf_str)
 
     iso_controls_out = []
-    if iso_fw:
+    if native_prefix:
+        native_fw = db.execute(
+            select(Framework).where(Framework.code.ilike(f"{native_prefix}%"))
+        ).scalar_one_or_none()
+        iso_ctrl_rows = db.execute(
+            select(FrameworkControl)
+            .where(
+                FrameworkControl.framework_id == native_fw.id,
+                func.upper(FrameworkControl.control_id).in_(
+                    _expand_stacked_code(cg.group_code)
+                ),
+            )
+            .order_by(FrameworkControl.sort_order)
+        ).scalars().all() if native_fw else []
+    else:
+        iso_fw = db.execute(
+            select(Framework).where(Framework.code.ilike("ISO27001%"))
+        ).scalar_one_or_none()
         iso_ctrl_rows = db.execute(
             select(FrameworkControl)
             .join(control_group_controls,
@@ -139,42 +176,42 @@ def get_control_group_rich(db: DBSession, cg: ControlGroup) -> dict:
                 FrameworkControl.framework_id == iso_fw.id,
             )
             .order_by(FrameworkControl.sort_order)
-        ).scalars().all()
+        ).scalars().all() if iso_fw else []
 
-        for ctrl in iso_ctrl_rows:
-            mapping_rows = db.execute(
-                select(
-                    CrossFrameworkMapping.mapping_type,
-                    CrossFrameworkMapping.confidence,
-                    FrameworkControl.control_id.label("target_id"),
-                    FrameworkControl.title.label("target_title"),
-                    Framework.name.label("fw_name"),
-                    Framework.code.label("fw_code"),
-                )
-                .join(FrameworkControl,
-                      CrossFrameworkMapping.target_control_id == FrameworkControl.id)
-                .join(Framework, FrameworkControl.framework_id == Framework.id)
-                .where(CrossFrameworkMapping.source_control_id == ctrl.id)
-                .order_by(Framework.name, FrameworkControl.control_id)
-            ).all()
+    for ctrl in iso_ctrl_rows:
+        mapping_rows = db.execute(
+            select(
+                CrossFrameworkMapping.mapping_type,
+                CrossFrameworkMapping.confidence,
+                FrameworkControl.control_id.label("target_id"),
+                FrameworkControl.title.label("target_title"),
+                Framework.name.label("fw_name"),
+                Framework.code.label("fw_code"),
+            )
+            .join(FrameworkControl,
+                  CrossFrameworkMapping.target_control_id == FrameworkControl.id)
+            .join(Framework, FrameworkControl.framework_id == Framework.id)
+            .where(CrossFrameworkMapping.source_control_id == ctrl.id)
+            .order_by(Framework.name, FrameworkControl.control_id)
+        ).all()
 
-            iso_controls_out.append({
-                "control_id": ctrl.control_id,
-                "title": ctrl.title,
-                "description": ctrl.description,
-                "mappings": [
-                    {
-                        "framework": r.fw_name,
-                        "framework_code": r.fw_code,
-                        "control_id": r.target_id,
-                        "control_title": r.target_title,
-                        "mapping_type": r.mapping_type.value
-                        if hasattr(r.mapping_type, "value") else str(r.mapping_type),
-                        "confidence": float(r.confidence) if r.confidence else 0.85,
-                    }
-                    for r in mapping_rows
-                ],
-            })
+        iso_controls_out.append({
+            "control_id": ctrl.control_id,
+            "title": ctrl.title,
+            "description": ctrl.description,
+            "mappings": [
+                {
+                    "framework": r.fw_name,
+                    "framework_code": r.fw_code,
+                    "control_id": r.target_id,
+                    "control_title": r.target_title,
+                    "mapping_type": r.mapping_type.value
+                    if hasattr(r.mapping_type, "value") else str(r.mapping_type),
+                    "confidence": float(r.confidence) if r.confidence else 0.85,
+                }
+                for r in mapping_rows
+            ],
+        })
 
     # Gaps
     gaps = db.execute(

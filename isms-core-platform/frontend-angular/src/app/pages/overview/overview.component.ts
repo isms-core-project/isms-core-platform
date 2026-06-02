@@ -68,14 +68,14 @@ interface RealReadiness {
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
 const SECTION_COLORS: Record<string, string> = {
-  'A.5': '#327df4',
+  'A.5': '#9E9E9E',
   'A.6': '#00c752',
   'A.7': '#ff9800',
   'A.8': '#f44336',
 }
 
 function sectionColor(section: string): string {
-  return SECTION_COLORS[section] ?? '#327df4'
+  return SECTION_COLORS[section] ?? '#9E9E9E'
 }
 
 function readinessScoreColor(status: string, dark: boolean): string {

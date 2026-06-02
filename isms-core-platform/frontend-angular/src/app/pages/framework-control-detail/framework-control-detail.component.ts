@@ -262,8 +262,8 @@ const SECTION_LABELS: Record<string, string> = {
     .fcd-alert--info { background:rgba(21,101,192,0.12); color:#64b5f6; }
 
     .fcd-chip--section { background:rgba(255,255,255,0.06) !important; color:#888 !important; font-size:0.7rem !important; }
-    .fcd-chip--sec-prop { background:rgba(68,114,196,0.12) !important; color:#8B9CC8 !important; font-size:0.65rem !important; }
-    .fcd-chip--mapping-type { background:rgba(68,114,196,0.1) !important; color:#8B9CC8 !important; font-size:0.62rem !important; height:16px !important; }
+    .fcd-chip--sec-prop { background:rgba(50,125,244,0.12) !important; color:#90caf9 !important; font-size:0.65rem !important; }
+    .fcd-chip--mapping-type { background:rgba(50,125,244,0.1) !important; color:#90caf9 !important; font-size:0.62rem !important; height:16px !important; }
   `],
 })
 export class FrameworkControlDetailComponent {

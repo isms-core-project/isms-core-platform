@@ -27,13 +27,13 @@ interface FrameworkMeta { label: string; color: string }
 
 const FRAMEWORK_META: Record<string, FrameworkMeta> = {
   iso27001: { label: 'ISO 27001:2022', color: '#4472C4' },
-  iso27701: { label: 'ISO 27701:2019', color: '#7030A0' },
-  iso27018: { label: 'ISO 27018:2019', color: '#00897B' },
-  iso42001: { label: 'ISO 42001:2023', color: '#ff6b35' },
+  iso27701: { label: 'ISO 27701:2019', color: '#ba68c8' },
+  iso27018: { label: 'ISO 27018:2019', color: '#29b6f6' },
+  iso42001: { label: 'ISO 42001:2023', color: '#ffa726' },
   soc2:     { label: 'SOC 2',          color: '#1565C0' },
   nist_csf: { label: 'NIST CSF 2.0',   color: '#ED7D31' },
   gdpr:     { label: 'GDPR',           color: '#C00000' },
-  ndsg:     { label: 'nDSG',           color: '#4472C4' },
+  ndsg:     { label: 'nDSG',           color: '#B71C1C' },
 }
 
 function frameworkColor(code: string): string {

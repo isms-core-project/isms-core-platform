@@ -50,7 +50,7 @@ function scoreColor(score: number | null): string {
 
 function productChipStyle(productType: string): { background: string; color: string } {
   switch (productType) {
-    case 'framework':   return { background: 'rgba(68,114,196,0.15)',  color: '#4472C4' }
+    case 'framework':   return { background: 'rgba(50,125,244,0.15)',  color: '#327df4' }
     case 'privacy':     return { background: `${PRODUCT_COLORS.privacy}22`, color: PRODUCT_COLORS.privacy }
     case 'cloud':       return { background: `${PRODUCT_COLORS.cloud}22`,   color: PRODUCT_COLORS.cloud }
     case 'ai':          return { background: `${PRODUCT_COLORS.ai}22`,      color: PRODUCT_COLORS.ai }
@@ -337,7 +337,7 @@ export class NewAssessmentDialogComponent {
               <ng-container matColumnDef="group">
                 <th mat-header-cell *matHeaderCellDef>Control Group</th>
                 <td mat-cell *matCellDef="let a">
-                  <span class="doc-id">{{ a.group_code.toUpperCase() }}</span>
+                  <span class="doc-id" [style.color]="groupCodeColor(a.group_code, a.product_type)">{{ a.group_code.toUpperCase() }}</span>
                   <br>
                   <span class="cell-sub">{{ a.group_name }}</span>
                 </td>
@@ -726,6 +726,23 @@ export class AssessmentsComponent {
   // Template helpers
   scoreColor     = scoreColor
   productStyle   = productChipStyle
+
+  groupCodeColor(groupCode: string, productType: string): string {
+    const c = (groupCode ?? '').toUpperCase()
+    if (c === '00') return '#FFC000'
+    if (productType === 'framework') {
+      if (c.startsWith('A.5')) return '#9E9E9E'
+      if (c.startsWith('A.6')) return '#70AD47'
+      if (c.startsWith('A.7')) return '#FFC000'
+      if (c.startsWith('A.8')) return '#C00000'
+    }
+    if (productType === 'privacy') {
+      if (c.startsWith('A.1')) return '#ba68c8'
+      if (c.startsWith('A.2')) return '#5c6bc0'
+      if (c.startsWith('A.3')) return '#4db6ac'
+    }
+    return productChipStyle(productType).color
+  }
   statusConfig   = (a: AssessmentListItem) => STATUS_CONFIG[getStatus(a)]
   statusStr      = (a: AssessmentListItem): string => getStatus(a)
 

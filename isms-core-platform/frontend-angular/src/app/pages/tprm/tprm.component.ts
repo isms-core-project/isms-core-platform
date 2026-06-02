@@ -30,13 +30,13 @@ const CRIT_COLORS: Record<string, string> = {
   low:      '#4CAF50',
 }
 const STATUS_COLORS: Record<string, string> = {
-  active: '#4CAF50', under_review: '#FF9800', terminated: '#9E9E9E',
+  active: '#00c752', under_review: '#FF9800', terminated: '#9E9E9E',
 }
 const STATUS_LABELS: Record<string, string> = {
   active: 'Active', under_review: 'Under Review', terminated: 'Terminated',
 }
 const ASSESSMENT_STATUS_COLORS: Record<string, string> = {
-  planned: '#607D8B', in_progress: '#FF9800', complete: '#4CAF50',
+  planned: '#607D8B', in_progress: '#FF9800', complete: '#00c752',
 }
 const VENDOR_TYPES    = ['supplier', 'provider', 'partner', 'subprocessor']
 const CRITICALITIES   = ['low', 'medium', 'high', 'critical']
@@ -1069,8 +1069,8 @@ export class TprmComponent {
     const d = this.summaryQ.data()
     return [
       { label: 'Total Vendors',      value: d?.total                   ?? 0, color: '#607D8B' },
-      { label: 'Active',             value: d?.active                  ?? 0, color: '#4CAF50' },
-      { label: 'Critical',           value: d?.critical                ?? 0, color: '#9C27B0' },
+      { label: 'Active',             value: d?.active                  ?? 0, color: '#00c752' },
+      { label: 'Critical',           value: d?.critical                ?? 0, color: '#C00000' },
       { label: 'DORA-Regulated',     value: d?.dora_regulated          ?? 0, color: '#2196F3' },
       { label: 'Contracts Expiring', value: d?.contracts_expiring_soon ?? 0, color: '#FF9800' },
     ]

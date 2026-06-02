@@ -92,7 +92,7 @@ class ImpImporter(BaseImporter):
     # ------------------------------------------------------------------
 
     # Content sniff: watermark (preferred) OR bold header pattern
-    # Covers ISMS-IMP-, PRIV-IMP-, CLD-IMP- bold headers in addition to watermark
+    # Covers ISMS-IMP-, PRIV-IMP-, CLD-PII-IMP- bold headers in addition to watermark
     _IMP_SNIFF_RE = re.compile(
         rb"<!-- ISMS-CORE:IMP:|"
         rb"\*\*(?:ISMS|PRIV|CLD|SEC)-IMP-"

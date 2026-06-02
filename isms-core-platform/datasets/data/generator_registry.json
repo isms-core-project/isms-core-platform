@@ -13314,7 +13314,7 @@
   },
   {
     "product_type": "cloud",
-    "document_id": "CLD-CHK-A.1",
+    "document_id": "CLD-PII-CHK-A.1",
     "workbook_name": "ISO 27018:2025 PII Cloud - General",
     "control_id": "A.1",
     "control_name": "General",
@@ -13333,7 +13333,7 @@
   },
   {
     "product_type": "cloud",
-    "document_id": "CLD-CHK-A.2",
+    "document_id": "CLD-PII-CHK-A.2",
     "workbook_name": "ISO 27018:2025 PII Cloud - Consent and Choice",
     "control_id": "A.2",
     "control_name": "Consent and Choice",
@@ -13352,7 +13352,7 @@
   },
   {
     "product_type": "cloud",
-    "document_id": "CLD-CHK-A.3",
+    "document_id": "CLD-PII-CHK-A.3",
     "workbook_name": "ISO 27018:2025 PII Cloud - Purpose Legitimacy and Specification",
     "control_id": "A.3",
     "control_name": "Purpose Legitimacy and Specification",
@@ -13371,7 +13371,7 @@
   },
   {
     "product_type": "cloud",
-    "document_id": "CLD-CHK-A.4",
+    "document_id": "CLD-PII-CHK-A.4",
     "workbook_name": "ISO 27018:2025 PII Cloud - Collection Limitation",
     "control_id": "A.4",
     "control_name": "Collection Limitation",
@@ -13390,7 +13390,7 @@
   },
   {
     "product_type": "cloud",
-    "document_id": "CLD-CHK-A.5",
+    "document_id": "CLD-PII-CHK-A.5",
     "workbook_name": "ISO 27018:2025 PII Cloud - Data Minimisation",
     "control_id": "A.5",
     "control_name": "Data Minimisation",
@@ -13409,7 +13409,7 @@
   },
   {
     "product_type": "cloud",
-    "document_id": "CLD-CHK-A.6",
+    "document_id": "CLD-PII-CHK-A.6",
     "workbook_name": "ISO 27018:2025 PII Cloud - Use, Retention and Disclosure Limitation",
     "control_id": "A.6",
     "control_name": "Use, Retention and Disclosure Limitation",
@@ -13428,7 +13428,7 @@
   },
   {
     "product_type": "cloud",
-    "document_id": "CLD-CHK-A.7",
+    "document_id": "CLD-PII-CHK-A.7",
     "workbook_name": "ISO 27018:2025 PII Cloud - Accuracy and Quality",
     "control_id": "A.7",
     "control_name": "Accuracy and Quality",
@@ -13447,7 +13447,7 @@
   },
   {
     "product_type": "cloud",
-    "document_id": "CLD-CHK-A.8",
+    "document_id": "CLD-PII-CHK-A.8",
     "workbook_name": "ISO 27018:2025 PII Cloud - Openness, Transparency and Notice",
     "control_id": "A.8",
     "control_name": "Openness, Transparency and Notice",
@@ -13466,7 +13466,7 @@
   },
   {
     "product_type": "cloud",
-    "document_id": "CLD-CHK-A.9",
+    "document_id": "CLD-PII-CHK-A.9",
     "workbook_name": "ISO 27018:2025 PII Cloud - Individual Participation and Access",
     "control_id": "A.9",
     "control_name": "Individual Participation and Access",
@@ -13485,7 +13485,7 @@
   },
   {
     "product_type": "cloud",
-    "document_id": "CLD-CHK-A.10",
+    "document_id": "CLD-PII-CHK-A.10",
     "workbook_name": "ISO 27018:2025 PII Cloud - Accountability",
     "control_id": "A.10",
     "control_name": "Accountability",
@@ -13504,7 +13504,7 @@
   },
   {
     "product_type": "cloud",
-    "document_id": "CLD-CHK-A.11",
+    "document_id": "CLD-PII-CHK-A.11",
     "workbook_name": "ISO 27018:2025 PII Cloud - Information Security",
     "control_id": "A.11",
     "control_name": "Information Security",
@@ -13523,7 +13523,7 @@
   },
   {
     "product_type": "cloud",
-    "document_id": "CLD-CHK-A.12",
+    "document_id": "CLD-PII-CHK-A.12",
     "workbook_name": "ISO 27018:2025 PII Cloud - Privacy Compliance",
     "control_id": "A.12",
     "control_name": "Privacy Compliance",

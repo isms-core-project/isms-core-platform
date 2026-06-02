@@ -121,7 +121,7 @@ const STATUS_CONFIG: Record<string, StatusCfg> = {
   not_applicable: { label: 'N/A',          color: '#607d8b', icon: 'remove_circle_outline' },
   non_compliant:  { label: 'Non-Compliant',color: '#f44336', icon: 'cancel' },
   partial:        { label: 'Partial',      color: '#FF9800', icon: 'pause_circle' },
-  compliant:      { label: 'Compliant',    color: '#4CAF50', icon: 'check_circle' },
+  compliant:      { label: 'Compliant',    color: '#00c752', icon: 'check_circle' },
 }
 
 const SCORE_COLORS: Record<number, string> = {
@@ -831,7 +831,7 @@ export class ComplianceAssessmentComponent {
     return [
       { label: 'Assessed',       value: `${ratedCount} / ${reqs.length}`, sub: `${pct}%`,      color: fwColor },
       { label: 'Avg Score',      value: avg !== null ? avg.toFixed(1) : '—', sub: avg !== null ? labels[Math.round(avg)] : '', color: avg !== null ? SCORE_COLORS[Math.round(avg)] : '#9e9e9e' },
-      { label: 'Compliant',      value: compliant,    sub: reqs.length > 0 ? `${Math.round(compliant/reqs.length*100)}%` : '', color: '#4CAF50' },
+      { label: 'Compliant',      value: compliant,    sub: reqs.length > 0 ? `${Math.round(compliant/reqs.length*100)}%` : '', color: '#00c752' },
       { label: 'Partial',        value: partial,      sub: '',             color: '#FF9800' },
       { label: 'Non-Compliant',  value: nonCompliant, sub: '',             color: '#f44336' },
     ]

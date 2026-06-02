@@ -522,7 +522,7 @@ function exportRiskCsv(data: {
     .section-label { font-size: 0.72rem; font-weight: 600; color: var(--mat-sys-on-surface-variant); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
     .section-label-mb { margin-bottom: 12px; }
     .cia-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 0.82rem; }
-    .cia-row { border-bottom: 1px solid rgba(68,114,196,0.15); }
+    .cia-row { border-bottom: 1px solid var(--mat-sys-outline-variant); }
     .cia-td { padding: 6px 0; }
     .cia-td-label { font-weight: 600; width: 160px; }
 

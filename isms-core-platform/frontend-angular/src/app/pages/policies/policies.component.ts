@@ -308,7 +308,7 @@ export class ImportExternalDialogComponent {
                 <mat-option value="FORM">FORM</mat-option>
               }
               @if (product() === 'privacy') { <mat-option value="PRIV-POL">PRIV-POL</mat-option> }
-              @if (product() === 'cloud')   { <mat-option value="CLD-POL">CLD-POL</mat-option> }
+              @if (product() === 'cloud')   { <mat-option value="CLD-PII-POL">CLD-PII-POL</mat-option> }
               @if (product() === 'ai')      { <mat-option value="AI-POL">AI-POL</mat-option> }
             </mat-select>
           </mat-form-field>
@@ -633,7 +633,7 @@ export class PoliciesComponent {
   productChipStyle(type: string): Record<string, string> {
     const dark = this.isDark()
     if (type === 'external')    return { background: dark ? 'rgba(255,192,0,0.15)' : 'rgba(230,160,0,0.15)', color: dark ? '#FFC000' : '#7a4800' }
-    if (type === 'framework')   return { background: 'rgba(68,114,196,0.15)',            color: '#4472C4' }
+    if (type === 'framework')   return { background: 'rgba(50,125,244,0.15)',            color: '#327df4' }
     if (type === 'operational') return { background: 'rgba(112,173,71,0.15)',             color: '#70AD47' }
     if (type === 'privacy')     return { background: `${PRODUCT_COLORS.privacy}22`,       color: PRODUCT_COLORS.privacy }
     if (type === 'cloud')       return { background: `${PRODUCT_COLORS.cloud}22`,         color: PRODUCT_COLORS.cloud }
@@ -643,7 +643,20 @@ export class PoliciesComponent {
 
   groupCodeColor(p: PolicyRead): string {
     if (p.group_code === '00') return this.isDark() ? '#FFC000' : '#7a4800'
-    return 'var(--mat-sys-primary)'
+    const prod = this.product()
+    const c = (p.group_code ?? '').toUpperCase()
+    if (prod === 'isms') {
+      if (c.startsWith('A.5')) return '#9E9E9E'
+      if (c.startsWith('A.6')) return '#70AD47'
+      if (c.startsWith('A.7')) return '#FFC000'
+      if (c.startsWith('A.8')) return '#C00000'
+    }
+    if (prod === 'privacy') {
+      if (c.startsWith('A.1')) return '#ba68c8'
+      if (c.startsWith('A.2')) return '#5c6bc0'
+      if (c.startsWith('A.3')) return '#4db6ac'
+    }
+    return PRODUCT_COLORS[prod] ?? 'var(--mat-sys-primary)'
   }
 
   navigateToControl(p: PolicyRead): void {

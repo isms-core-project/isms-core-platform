@@ -534,8 +534,8 @@ const PRODUCT_FAMILIES = ['ISMS', 'PRIVACY', 'CLOUD'] as const
       border-radius: 50%;
       flex-shrink: 0;
     }
-    .dot--green  { background: #4caf50; }
-    .dot--blue   { background: #4472C4; }
+    .dot--green  { background: #00c752; }
+    .dot--blue   { background: #327df4; }
     .dot--teal   { background: #00897B; }
     .dot--orange { background: #ff6b35; }
     .dot-row__label {
@@ -555,12 +555,12 @@ const PRODUCT_FAMILIES = ['ISMS', 'PRIVACY', 'CLOUD'] as const
       transition: background 0.15s;
     }
     .info-bar:hover { background: var(--mat-sys-surface-container-high); }
-    .info-bar--connector { border-left: 3px solid #4472C4; }
+    .info-bar--connector { border-left: 3px solid #327df4; }
     .info-bar__icon { color: var(--mat-sys-on-surface-variant); font-size: 18px; }
     .info-bar__label { font-size: 0.8rem; font-weight: 600; color: var(--mat-sys-on-surface); }
     .info-bar__badge {
       font-size: 0.7rem;
-      background: #4472C4;
+      background: #327df4;
       color: #fff;
       border-radius: 10px;
       padding: 1px 8px;

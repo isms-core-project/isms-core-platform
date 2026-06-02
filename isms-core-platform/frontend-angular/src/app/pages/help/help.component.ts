@@ -247,7 +247,7 @@ function markdownToHtml(md: string): string {
     .user-manual table { border-collapse: collapse; width: 100%; margin-bottom: 16px; font-size: .82rem; }
     .user-manual th { text-align: left; padding: 6px 12px; border-bottom: 2px solid rgba(255,255,255,.1); font-size: .75rem; font-weight: 600; opacity: .6; text-transform: uppercase; }
     .user-manual td { padding: 6px 12px; border-bottom: 1px solid rgba(255,255,255,.06); opacity: .75; }
-    .user-manual blockquote { border-left: 3px solid #4472C4; padding-left: 16px; margin: 16px 0; font-style: italic; opacity: .7; }
+    .user-manual blockquote { border-left: 3px solid var(--mat-sys-primary); padding-left: 16px; margin: 16px 0; font-style: italic; opacity: .7; }
     .user-manual a { color: #9DC3E6; text-decoration: none; }
     .user-manual a:hover { text-decoration: underline; }
     .user-manual hr { border: none; border-top: 1px solid rgba(255,255,255,.08); margin: 24px 0; }

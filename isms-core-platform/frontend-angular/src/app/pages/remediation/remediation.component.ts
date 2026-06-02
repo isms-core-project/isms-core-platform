@@ -38,7 +38,7 @@ const STATUS_META: Record<string, StatusMeta> = {
 }
 
 const EFFORT_COLOR: Record<string, string> = {
-  low:    '#4CAF50',
+  low:    '#00c752',
   medium: '#FF9800',
   high:   '#F44336',
 }

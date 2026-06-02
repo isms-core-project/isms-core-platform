@@ -26,7 +26,7 @@ import { GraphNode, GraphEdge, GraphResponse } from '../../shared/types'
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 const NODE_COLORS: Record<string, string> = {
-  control_group: '#4472C4',
+  control_group: '#327df4',
   iso_control:   '#70AD47',
   external_ref:  '#FFC000',
 }

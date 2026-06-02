@@ -314,7 +314,7 @@ const ROLE_LABEL: Record<string, string> = {
     .notif-user-meta  { font-size: 0.72rem; opacity: 0.5; }
 
     /* ── Status icons ── */
-    .notif-icon-on  { font-size: 16px; color: #4caf50; }
+    .notif-icon-on  { font-size: 16px; color: #00c752; }
     .notif-icon-off { font-size: 16px; opacity: 0.3; }
 
     /* ── Alerts ── */

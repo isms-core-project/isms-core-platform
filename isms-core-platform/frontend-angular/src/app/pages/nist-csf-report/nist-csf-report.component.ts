@@ -35,7 +35,7 @@ function tierColor(tier: number | null): string {
   if (tier === 1) return '#FF5252'
   if (tier === 2) return '#FFC000'
   if (tier === 3) return '#70AD47'
-  return '#4472C4'
+  return '#5c6bc0'
 }
 
 // ── SVG Radar helpers ─────────────────────────────────────────────────────────
@@ -450,7 +450,7 @@ function pointsToPath(pts: RadarPoint[]): string {
     /* Top bar */
     .topbar { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
     .topbar-title-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
-    .topbar-accent-bar { width: 3px; height: 32px; background: #4472C4; border-radius: 2px; }
+    .topbar-accent-bar { width: 3px; height: 32px; background: #5c6bc0; border-radius: 2px; }
     .topbar-title { margin: 0; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; }
     .topbar-profile-name { font-size: 1.1rem; color: #888; font-weight: 400; margin-left: 11px; }
     .topbar-chips { display: flex; gap: 8px; margin-top: 8px; margin-left: 11px; flex-wrap: wrap; }
@@ -459,7 +459,7 @@ function pointsToPath(pts: RadarPoint[]): string {
 
     /* Chips */
     .chip-sm { font-size: 0.68rem; height: 20px; }
-    .chip-status { background: #4472C422; color: #4472C4; }
+    .chip-status { background: #5c6bc022; color: #5c6bc0; }
     .chip-fn { font-size: 0.65rem; height: 18px; font-weight: 700; }
     .chip-gap { font-size: 0.62rem; height: 16px; font-weight: 700; background: #FFC00022; color: #FFC000; }
 
@@ -479,7 +479,7 @@ function pointsToPath(pts: RadarPoint[]): string {
     .radar-legend { display: flex; gap: 12px; margin-top: 4px; justify-content: center; }
     .radar-legend-item { display: flex; align-items: center; gap: 4px; }
     .radar-legend-line { width: 16px; height: 3px; border-radius: 2px; }
-    .radar-legend-current { background: #4472C4; }
+    .radar-legend-current { background: #5c6bc0; }
     .radar-legend-target { background: #70AD47; border-top: 1px dashed #70AD47; }
     .radar-legend-label { font-size: 0.68rem; color: #888; }
 

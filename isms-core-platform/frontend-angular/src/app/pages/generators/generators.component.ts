@@ -25,7 +25,7 @@ import { PageHeaderComponent } from '../../shared/components/page-header.compone
 
 const SECTION_COLOR: Record<string, string> = {
   '00': '#888888',
-  'A.5': '#4472C4',
+  'A.5': '#9E9E9E',
   'A.6': '#70AD47',
   'A.7': '#ED7D31',
   'A.8': '#C00000',
@@ -84,7 +84,7 @@ const SHEET_TYPES: Array<SheetInfo['type']> = ['instructions', 'input', 'summary
 function groupColor(group: GeneratorGroup): string {
   if (SECTION_COLOR[group.section]) return SECTION_COLOR[group.section]
   const pt = group.generators[0]?.product_type ?? 'framework'
-  return PRODUCT_TYPE_COLOR[pt] ?? '#4472C4'
+  return PRODUCT_TYPE_COLOR[pt] ?? '#327df4'
 }
 
 function sectionSort(a: string, b: string): number {
@@ -108,7 +108,7 @@ function sheetTypeLabel(type: string): string {
 }
 
 function productTypeColor(type: string, isDark: boolean): string {
-  return isDark ? (PRODUCT_TYPE_COLOR[type] ?? '#4472C4') : (PRODUCT_TYPE_COLOR_LIGHT[type] ?? '#1565C0')
+  return isDark ? (PRODUCT_TYPE_COLOR[type] ?? '#327df4') : (PRODUCT_TYPE_COLOR_LIGHT[type] ?? '#1565C0')
 }
 
 function productTypeLabel(type: string): string {
@@ -430,7 +430,7 @@ export class GenEditDialogComponent implements OnInit {
     .schema-table td { padding:3px 8px;border-bottom:1px solid var(--mat-sys-outline-variant) }
     .schema-table tr.status-row { background:rgba(255,192,0,0.06) }
     .mono { font-family:monospace }
-    .bold-col { font-weight:700;color:#4472C4;font-family:monospace }
+    .bold-col { font-weight:700;color:var(--mat-sys-primary);font-family:monospace }
     .col-header.bold { font-weight:700 }
     .dim { color:var(--mat-sys-on-surface-variant) }
     .small { font-size:0.68rem }

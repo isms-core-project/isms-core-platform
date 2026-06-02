@@ -177,7 +177,7 @@ const PRIVACY_COLORS: Record<string, string> = {
         </div>
         @if (result.ioc_hits.length === 0) {
           <div class="ioc-clean">
-            <mat-icon class="icon-sm" style="color:#4caf50">check_circle</mat-icon>
+            <mat-icon class="icon-sm" style="color:#00c752">check_circle</mat-icon>
             <span class="dim">No IOC hits — IP not seen in MISP or AbuseIPDB feeds.</span>
           </div>
         } @else {

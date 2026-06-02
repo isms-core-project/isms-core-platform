@@ -738,7 +738,7 @@ export class CreateGapDialogComponent {
 
     .info-banner {
       padding: 8px 14px; margin-top: 16px; margin-bottom: 16px; border-radius: 6px; font-size: 0.85rem;
-      background: color-mix(in srgb, var(--mat-sys-primary) 9%, transparent); border: 1px solid color-mix(in srgb, var(--mat-sys-primary) 25%, transparent);
+      background: var(--mat-sys-surface-container); border: 1px solid var(--mat-sys-outline-variant);
     }
     .success-banner {
       padding: 10px 14px; border-radius: 6px; font-size: 0.875rem;

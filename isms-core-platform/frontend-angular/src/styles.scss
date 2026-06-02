@@ -175,6 +175,11 @@ html[data-theme='light'] {
   --mdc-chip-focus-outline-color:                rgba(29,158,117,0.6);
   --mat-chip-focus-state-layer-color:            transparent;
 
+  // secondary-container must be overridden — html block sets #444241 (dark charcoal) which bleeds
+  // through the bottom of mat-button-toggle-checked host when inner button has border-radius
+  --mat-sys-secondary-container:     #BFBDB3;
+  --mat-sys-on-secondary-container:  #2C2C2A;
+
   --mat-sidenav-container-background-color: #444441;
   --mat-toolbar-container-background-color: #444441;
   --mat-card-background-color:              #BFBDB3;
@@ -473,7 +478,10 @@ html[data-theme='light'] .mat-mdc-dialog-container { --mdc-dialog-container-colo
     justify-content: center;
   }
 }
-// Target inner button — M3 applies selected-state background there, not on the host element
+// Target both host and inner button — dark theme needs host covered to avoid dark side strips
+.mat-button-toggle-checked {
+  background-color: #327df4 !important;
+}
 .mat-button-toggle-checked .mat-button-toggle-button {
   background-color: #327df4 !important;
   color: #ffffff !important;
@@ -482,6 +490,9 @@ html[data-theme='light'] .mat-button-toggle-group {
   border-color: rgba(44, 44, 42, 0.20);
   --mat-standard-button-toggle-selected-state-background-color: #1D9E75;
   --mat-standard-button-toggle-selected-state-text-color: #ffffff;
+}
+html[data-theme='light'] .mat-button-toggle-checked {
+  background-color: #1D9E75 !important;
 }
 html[data-theme='light'] .mat-button-toggle-checked .mat-button-toggle-button {
   background-color: #1D9E75 !important;

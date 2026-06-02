@@ -79,8 +79,8 @@ function statusConfig(status: string): { label: string; bg: string; color: strin
 
     .stats-card {
       padding: 16px;
-      background: rgba(68,114,196,0.04);
-      border: 1px solid rgba(68,114,196,0.12);
+      background: var(--mat-sys-surface-container);
+      border: 1px solid var(--mat-sys-outline-variant);
       border-radius: 8px;
       margin-bottom: 20px;
     }
@@ -99,10 +99,10 @@ function statusConfig(status: string): { label: string; bg: string; color: strin
 
     .empty-box {
       padding: 24px; border-radius: 8px; text-align: center; cursor: pointer;
-      border: 1px dashed rgba(68,114,196,0.3); background: rgba(68,114,196,0.03);
+      border: 1px dashed var(--mat-sys-outline-variant); background: var(--mat-sys-surface-container);
       transition: background 0.15s, border-color 0.15s;
     }
-    .empty-box:hover { background: rgba(68,114,196,0.07); border-color: rgba(68,114,196,0.5); }
+    .empty-box:hover { background: color-mix(in srgb, var(--mat-sys-primary) 8%, transparent); border-color: var(--mat-sys-primary); }
 
     .nc-expand-btn {
       font-size: 0.7rem; color: #FF5252; cursor: pointer; background: none; border: none;
@@ -142,11 +142,11 @@ function statusConfig(status: string): { label: string; bg: string; color: strin
       transition: background 0.1s, border-color 0.1s;
     }
     .assessment-row.in-collection {
-      border-color: rgba(68,114,196,0.3);
-      background: rgba(68,114,196,0.06);
+      border-color: color-mix(in srgb, var(--mat-sys-primary) 30%, transparent);
+      background: color-mix(in srgb, var(--mat-sys-primary) 6%, transparent);
     }
     .assessment-row:hover { background: rgba(0,0,0,0.04); }
-    .assessment-row.in-collection:hover { background: rgba(68,114,196,0.1); }
+    .assessment-row.in-collection:hover { background: color-mix(in srgb, var(--mat-sys-primary) 12%, transparent); }
 
     table { width: 100%; }
     .doc-id { font-family: monospace; font-size: 0.7rem; color: var(--mat-sys-on-surface-variant); }

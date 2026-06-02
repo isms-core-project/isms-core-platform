@@ -56,7 +56,7 @@ const DB_COUNT_LABELS: Record<string, string> = {
 
 const FIRST_RUN_STEPS = [
   { key: 'frameworks' as const,      label: 'Load Reference Frameworks',      desc: '18 bundles — ISO 27001, NIST CSF 2.0, MITRE ATT&CK, GDPR, DORA, NIS2 and more.' },
-  { key: 'policies' as const,        label: 'Import Policies',                desc: 'POL, OP-POL, PRIV-POL, CLD-POL, REF, CTX, FORM documents from the mounted content volumes.' },
+  { key: 'policies' as const,        label: 'Import Policies',                desc: 'POL, OP-POL, PRIV-POL, CLD-PII-POL, REF, CTX, FORM documents from the mounted content volumes.' },
   { key: 'implementations' as const, label: 'Import Implementations (IMP)',   desc: 'IMP-UG / IMP-TG documents — also indexed to OpenSearch for full-text search.' },
   { key: 'workbooks' as const,       label: 'Import Assessment Workbooks',    desc: 'Framework assessment workbook structures parsed from generator scripts.' },
   { key: 'operational' as const,     label: 'Import Operational Checklists',  desc: 'Operational compliance checklist structures.' },

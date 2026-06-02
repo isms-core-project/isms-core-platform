@@ -142,7 +142,7 @@ function fwColor(code: string): string {
             <mat-card-content>
               <span class="card-label">Review flagged</span>
               <span class="card-value"
-                [style.color]="reviewCount() > 0 ? '#FF9800' : '#4CAF50'">{{ reviewCount() }}</span>
+                [style.color]="reviewCount() > 0 ? '#FF9800' : '#00c752'">{{ reviewCount() }}</span>
               <span class="card-sub">axes needing manual review</span>
             </mat-card-content>
           </mat-card>
@@ -296,7 +296,7 @@ function fwColor(code: string): string {
       height: 18px; padding: 0 6px; border-radius: 9px;
       font-size: 0.6rem; font-weight: 600; white-space: nowrap;
     }
-    .chip-current { background: rgba(76,175,80,0.1); color: #4CAF50; }
+    .chip-current { background: rgba(0,199,82,0.1); color: #00c752; }
     .chip-warn    { background: rgba(255,152,0,0.1);  color: #FF9800; }
     .chip-pending { background: rgba(66,165,245,0.1); color: #42A5F5; }
 

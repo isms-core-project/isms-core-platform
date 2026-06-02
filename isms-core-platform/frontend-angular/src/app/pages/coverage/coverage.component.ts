@@ -73,7 +73,7 @@ const ISO_EXTENSIONS = new Set(['ISO27017', 'ISO27018', 'ISO27701'])
 const ROWS_PER_PAGE = 25
 
 function pctColor(pct: number, dark: boolean): string {
-  if (pct === 100) return dark ? '#4CAF50' : '#2e7d32'
+  if (pct === 100) return dark ? '#00c752' : '#0F6E56'
   if (pct >= 50)   return dark ? '#AED581' : '#558b2f'
   if (pct >= 1)    return dark ? '#FFB300' : '#E65100'
   return dark ? '#F44336' : '#c62828'
@@ -210,7 +210,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
               @let fwMaps = frameworkMappings(row);
               <tr class="tbody-row">
                 <td class="td-cell">
-                  <div class="control-id" [style.color]="packColor()">{{ row.iso_control_id }}</div>
+                  <div class="control-id" [style.color]="isoControlColor(row.iso_control_id)">{{ row.iso_control_id }}</div>
                   <div class="control-title">{{ row.iso_control_title }}</div>
                 </td>
                 <td class="td-cell">
@@ -626,6 +626,15 @@ export class CoverageComponent {
 
   sourceLabel = computed((): string => SOURCE_CONTROL_LABEL[this.product.product()] ?? 'ISO Control')
   packColor   = computed((): string => PRODUCT_COLORS[this.product.product()] ?? '#327df4')
+
+  isoControlColor(controlId: string): string {
+    if (this.product.product() !== 'isms') return this.packColor()
+    if (controlId.startsWith('A.5')) return '#9E9E9E'
+    if (controlId.startsWith('A.6')) return '#70AD47'
+    if (controlId.startsWith('A.7')) return '#FFC000'
+    if (controlId.startsWith('A.8')) return '#C00000'
+    return this.packColor()
+  }
 
   // ── Helpers ────────────────────────────────────────────────────────────────
   isIsoExt(f: string): boolean { return ISO_EXTENSIONS.has(f) }

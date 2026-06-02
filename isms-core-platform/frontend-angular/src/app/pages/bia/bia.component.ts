@@ -27,7 +27,7 @@ const ASSET_TYPE_COLORS: Record<string, string> = {
   process: '#2196F3',
   system:  '#9C27B0',
   service: '#FF9800',
-  data:    '#4CAF50',
+  data:    '#00c752',
 }
 
 const IMPACT_DIMS: { key: string; label: string }[] = [
@@ -38,7 +38,7 @@ const IMPACT_DIMS: { key: string; label: string }[] = [
 ]
 
 function impactColor(score: number): string {
-  if (score <= 2) return '#4CAF50'
+  if (score <= 2) return '#00c752'
   if (score === 3) return '#FF9800'
   return '#F44336'
 }
@@ -502,7 +502,7 @@ export class BiaComponent {
     const d = this.summaryQ.data()
     return [
       { label: 'Total Assets',    value: d?.total ?? 0,                                              color: '#607D8B' },
-      { label: 'Recovery Tested', value: d?.tested_pct != null ? `${Math.round(d.tested_pct)}%` : 0, color: '#4CAF50' },
+      { label: 'Recovery Tested', value: d?.tested_pct != null ? `${Math.round(d.tested_pct)}%` : 0, color: '#00c752' },
       { label: 'High Impact',     value: d?.high_impact ?? 0,                                         color: '#F44336' },
       { label: 'RTO Missing',     value: d?.rto_missing ?? 0,                                         color: '#FF9800' },
     ]
