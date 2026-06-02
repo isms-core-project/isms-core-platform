@@ -470,7 +470,8 @@ export class ControlsComponent {
   })
 
   getSectionColorForProduct(section: string): string {
-    return getSectionColor(this.product.product(), section)
+    const color = getSectionColor(this.product.product(), section)
+    return color === '#9E9E9E' && !this.theme.isDark() ? '#757575' : color
   }
 
   heatmapColor(cg: ControlGroupList): string {

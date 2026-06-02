@@ -1041,6 +1041,7 @@ function markdownToHtml(md: string): string {
       background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.75);
     }
     :host-context(html[data-theme='light']) .cd-chip { background:rgba(44,44,42,0.10); color:#2C2C2A; }
+    :host-context(html[data-theme='light']) .cd-alert--info { background:rgba(21,101,192,0.08); color:#1565c0; }
     .cd-chip-row { display:flex; flex-wrap:wrap; gap:4px; align-items:center; }
 
     .cd-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:1000; display:flex; align-items:center; justify-content:center; }
@@ -1202,7 +1203,10 @@ export class ControlDetailComponent {
     return gc.startsWith('a.5.29') || gc.startsWith('a.5.30')
   })
 
-  readonly sectionColor = computed(() => getSectionColor(this.cg()?.section ?? ''))
+  readonly sectionColor = computed(() => {
+    const color = getSectionColor(this.cg()?.section ?? '')
+    return color === '#9E9E9E' && !this.theme.isDark() ? '#757575' : color
+  })
 
   readonly docIdColor = computed(() => {
     const prod = this.product.product()
