@@ -29,6 +29,8 @@ services:
   isms-core-postgres:
     image: postgres:18-alpine
     container_name: isms-core-postgres
+    labels:
+      - "docker-volume-backup.stop-during-backup=true"
     environment:
       TZ: ${TZ:-Europe/Zurich}
       POSTGRES_DB: isms_db
@@ -708,6 +710,28 @@ services:
       - FROM_NAME=${SMTP_BRIDGE_FROM_NAME:-ISMS CORE}
       - SMTP_PORT=1025
       - LOG_LEVEL=INFO
+    restart: unless-stopped
+    networks:
+      - isms-core-network
+
+  # ── Volume backup ─────────────────────────────────────────────────────────
+  # Backs up postgres-data, garage-meta, garage-data daily at 03:30 UTC.
+  # isms-core-postgres is stopped briefly during backup (stop-during-backup
+  # label) to guarantee filesystem consistency (~5–30s pause).
+  # Config: copy backup.env.example → backup.env and adjust schedule/retention.
+  # Archives land at BACKUP_ARCHIVE_PATH on the host (default /var/backups/isms-core).
+  # Create the host dir first: sudo mkdir -p /var/backups/isms-core
+
+  isms-core-backup:
+    image: offen/docker-volume-backup:v2
+    container_name: isms-core-backup
+    env_file: backup.env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - postgres-data:/backup/postgres-data:ro
+      - garage-meta:/backup/garage-meta:ro
+      - garage-data:/backup/garage-data:ro
+      - ${BACKUP_ARCHIVE_PATH:-/var/backups/isms-core}:/archive
     restart: unless-stopped
     networks:
       - isms-core-network
