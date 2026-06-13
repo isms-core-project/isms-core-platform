@@ -191,8 +191,16 @@ def get_coverage_matrix(
     target_fws = [f for f in all_frameworks if not f.code.upper().startswith(src_prefix)]
     fw_names = [f.name for f in target_fws]
 
-    # Leaf level differs per framework: ISO27701 Annex A controls sit at level 2
-    leaf_level = 2 if src_prefix.startswith("ISO27701") else 1
+    # Leaf level differs per framework:
+    #   ISO27701: Annex A controls are level 2; A.3.x controls are level-1 leaves (no children)
+    #   ISO27018: actual requirements are level 2 (level 1 = clause headers only)
+    #   all others: level 1
+    if src_prefix.startswith("ISO27701"):
+        leaf_levels = [1, 2]   # include A.3.x (level 1, no children) + standard Annex A (level 2)
+    elif src_prefix.startswith("ISO27018"):
+        leaf_levels = [2]
+    else:
+        leaf_levels = [1]
 
     # Counts per target framework (scoped to source framework's controls)
     by_framework: dict[str, int] = {}
@@ -206,7 +214,7 @@ def get_coverage_matrix(
         src_ctrl_ids = db.execute(
             select(FrameworkControl.id).where(
                 FrameworkControl.framework_id == src_fw.id,
-                FrameworkControl.level == leaf_level,
+                FrameworkControl.level.in_(leaf_levels),
             )
         ).scalars().all()
         total_mappings = db.scalar(
@@ -233,7 +241,7 @@ def get_coverage_matrix(
     else:
         src_controls_stmt = select(FrameworkControl).where(
             FrameworkControl.framework_id == src_fw.id,
-            FrameworkControl.level == leaf_level,
+            FrameworkControl.level.in_(leaf_levels),
         )
         if target_framework:
             # Filter to source controls that have at least one mapping to this target framework
@@ -379,7 +387,12 @@ def get_framework_overview(db: DBSession, source_framework: str = "ISO27701") ->
     ).scalar_one_or_none()
 
     src_prefix = source_framework.upper()
-    leaf_level = 2 if src_prefix.startswith("ISO27701") else 1
+    if src_prefix.startswith("ISO27701"):
+        leaf_levels = [1, 2]
+    elif src_prefix.startswith("ISO27018"):
+        leaf_levels = [2]
+    else:
+        leaf_levels = [1]
 
     if not src_fw:
         return {
@@ -398,7 +411,7 @@ def get_framework_overview(db: DBSession, source_framework: str = "ISO27701") ->
         select(FrameworkControl)
         .where(
             FrameworkControl.framework_id == src_fw.id,
-            FrameworkControl.level == leaf_level,
+            FrameworkControl.level.in_(leaf_levels),
         )
         .order_by(FrameworkControl.sort_order)
     ).scalars().all()
@@ -907,10 +920,15 @@ def get_graph(
         seen_edges: set[tuple] = set()
 
         if src_fw:
-            leaf_level = 2 if src_prefix.startswith("ISO27701") else 1
+            if src_prefix.startswith("ISO27701"):
+                leaf_levels = [1, 2]
+            elif src_prefix.startswith("ISO27018"):
+                leaf_levels = [2]
+            else:
+                leaf_levels = [1]
             src_ctrl_stmt = select(FrameworkControl).where(
                 FrameworkControl.framework_id == src_fw.id,
-                FrameworkControl.level == leaf_level,
+                FrameworkControl.level.in_(leaf_levels),
             ).order_by(FrameworkControl.sort_order)
             if center:
                 src_ctrl_stmt = src_ctrl_stmt.where(
