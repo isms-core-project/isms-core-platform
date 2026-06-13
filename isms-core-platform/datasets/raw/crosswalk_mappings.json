@@ -34555,7 +34555,7 @@
       "source_id": "A.1.2.6",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(a)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Privacy impact assessment covers risk analysis and information system security"
@@ -34565,7 +34565,7 @@
       "source_id": "A.3.3",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(a)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Policies for information security"
@@ -34575,7 +34575,7 @@
       "source_id": "A.3.15",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(a)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Independent review of information security"
@@ -34585,7 +34585,7 @@
       "source_id": "A.3.16",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(a)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Compliance with policies, rules and standards for information security"
@@ -34595,7 +34595,7 @@
       "source_id": "A.3.11",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(b)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Information security incident management planning and preparation"
@@ -34605,7 +34605,7 @@
       "source_id": "A.3.12",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(b)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Response to information security incidents"
@@ -34615,7 +34615,7 @@
       "source_id": "A.3.24",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(c)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Information backup"
@@ -34625,7 +34625,7 @@
       "source_id": "A.1.4.8",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(c)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.7,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Retention of PII — continuity and recovery aspects"
@@ -34635,7 +34635,7 @@
       "source_id": "A.2.4.3",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(c)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.7,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Return, transfer or disposal of PII — continuity and recovery"
@@ -34645,7 +34645,7 @@
       "source_id": "A.1.2.7",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(d)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Contracts with PII processors — supply chain security"
@@ -34655,7 +34655,7 @@
       "source_id": "A.1.2.8",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(d)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Joint PII controller arrangements — supply chain security"
@@ -34665,7 +34665,7 @@
       "source_id": "A.2.2.2",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(d)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Customer agreement for PII processing"
@@ -34675,7 +34675,7 @@
       "source_id": "A.2.5.7",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(d)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Disclosure of subcontractors used to process PII"
@@ -34685,7 +34685,7 @@
       "source_id": "A.2.5.8",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(d)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Engagement of a subcontractor to process PII"
@@ -34695,7 +34695,7 @@
       "source_id": "A.2.5.9",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(d)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Change of subcontractor to process PII"
@@ -34705,7 +34705,7 @@
       "source_id": "A.3.10",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(d)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Addressing information security within supplier agreements"
@@ -34715,7 +34715,7 @@
       "source_id": "A.3.27",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(e)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Secure development life cycle"
@@ -34725,7 +34725,7 @@
       "source_id": "A.3.28",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(e)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Application security requirements"
@@ -34735,7 +34735,7 @@
       "source_id": "A.3.29",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(e)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Secure system architecture and engineering principles"
@@ -34745,7 +34745,7 @@
       "source_id": "A.3.30",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(e)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Outsourced development"
@@ -34755,7 +34755,7 @@
       "source_id": "A.3.31",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(e)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Test information security"
@@ -34765,7 +34765,7 @@
       "source_id": "A.3.15",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(f)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Independent review of information security"
@@ -34775,7 +34775,7 @@
       "source_id": "A.3.16",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(f)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Compliance with policies, rules and standards"
@@ -34785,7 +34785,7 @@
       "source_id": "A.3.17",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(g)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Information security awareness, education and training"
@@ -34795,7 +34795,7 @@
       "source_id": "A.3.3",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(g)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Policies for information security — foundation of cyber hygiene"
@@ -34805,7 +34805,7 @@
       "source_id": "A.3.26",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(h)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Use of cryptography"
@@ -34815,7 +34815,7 @@
       "source_id": "A.1.4.10",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(h)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "PII transmission controls (controller)"
@@ -34825,7 +34825,7 @@
       "source_id": "A.2.4.4",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(h)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "PII transmission controls (processor)"
@@ -34835,7 +34835,7 @@
       "source_id": "A.3.4",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Information security roles and responsibilities"
@@ -34845,7 +34845,7 @@
       "source_id": "A.3.5",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Classification of information"
@@ -34855,7 +34855,7 @@
       "source_id": "A.3.6",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Labelling of information"
@@ -34865,7 +34865,7 @@
       "source_id": "A.3.8",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Identity management"
@@ -34875,7 +34875,7 @@
       "source_id": "A.3.9",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Access rights"
@@ -34885,7 +34885,7 @@
       "source_id": "A.3.18",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Confidentiality and non-disclosure agreements"
@@ -34895,7 +34895,7 @@
       "source_id": "A.3.19",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.7,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Clear desk and clear screen"
@@ -34905,7 +34905,7 @@
       "source_id": "A.3.20",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Storage media"
@@ -34915,7 +34915,7 @@
       "source_id": "A.3.21",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Secure disposal or re-use of equipment"
@@ -34925,7 +34925,7 @@
       "source_id": "A.3.22",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "User endpoint devices"
@@ -34935,7 +34935,7 @@
       "source_id": "A.3.23",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(j)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Secure authentication (MFA)"
@@ -34945,7 +34945,7 @@
       "source_id": "A.3.7",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(j)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Information transfer"
@@ -34955,7 +34955,7 @@
       "source_id": "A.1.4.10",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(j)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "PII transmission controls (controller)"
@@ -34965,7 +34965,7 @@
       "source_id": "A.2.4.4",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(j)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "PII transmission controls (processor)"
@@ -34975,7 +34975,7 @@
       "source_id": "A.3.11",
       "target_framework": "NIS2",
       "target_id": "Art. 23",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Incident management planning — includes reporting obligations"
@@ -34985,7 +34985,7 @@
       "source_id": "A.3.12",
       "target_framework": "NIS2",
       "target_id": "Art. 23",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Response to incidents — covers reporting"
@@ -34995,7 +34995,7 @@
       "source_id": "A.2.5.5",
       "target_framework": "NIS2",
       "target_id": "Art. 23",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Notification of PII disclosure requests"
@@ -35005,7 +35005,7 @@
       "source_id": "A.2.5.6",
       "target_framework": "NIS2",
       "target_id": "Art. 23",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Legally binding PII disclosures"
@@ -35015,7 +35015,7 @@
       "source_id": "A.1.3.8",
       "target_framework": "NIS2",
       "target_id": "Art. 23",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "PII controllers' obligations to inform third parties"
@@ -35025,7 +35025,7 @@
       "source_id": "A.3.12",
       "target_framework": "NIS2",
       "target_id": "Art. 23-EW",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Response to incidents — early warning"
@@ -35035,7 +35035,7 @@
       "source_id": "A.3.12",
       "target_framework": "NIS2",
       "target_id": "Art. 23-IN",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Response to incidents — incident notification"
@@ -35045,7 +35045,7 @@
       "source_id": "A.2.5.5",
       "target_framework": "NIS2",
       "target_id": "Art. 23-IN",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Notification of PII disclosure requests — incident notification"
@@ -35055,7 +35055,7 @@
       "source_id": "A.3.12",
       "target_framework": "NIS2",
       "target_id": "Art. 23-IR",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Response to incidents — intermediate report"
@@ -35065,7 +35065,7 @@
       "source_id": "A.3.12",
       "target_framework": "NIS2",
       "target_id": "Art. 23-FR",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27701 Annex A",
       "notes": "Response to incidents — final report"
@@ -35075,7 +35075,7 @@
       "source_id": "A.3.3",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Policies for IS support organisational mission"
@@ -35085,7 +35085,7 @@
       "source_id": "A.3.3",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.PO-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Policies for IS establish cybersecurity risk management policy"
@@ -35095,7 +35095,7 @@
       "source_id": "A.3.16",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.PO-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Compliance with IS policies — policy review and update"
@@ -35105,7 +35105,7 @@
       "source_id": "A.1.2.3",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Lawful basis for PII processing covers legal/regulatory requirements"
@@ -35115,7 +35115,7 @@
       "source_id": "A.3.13",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Legal, statutory, regulatory requirements for IS"
@@ -35125,7 +35125,7 @@
       "source_id": "A.3.4",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.RR-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "IS roles and responsibilities — assignment of cyber roles"
@@ -35135,7 +35135,7 @@
       "source_id": "A.3.4",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.RR-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "IS roles — leadership accountability"
@@ -35145,7 +35145,7 @@
       "source_id": "A.3.4",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.RR-04",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "IS roles and responsibilities in HR practices"
@@ -35155,7 +35155,7 @@
       "source_id": "A.1.2.6",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.RM-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "PIA as risk management objective-setting exercise"
@@ -35165,7 +35165,7 @@
       "source_id": "A.1.2.6",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.RM-06",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "PIA provides standardized risk calculation methodology"
@@ -35175,7 +35175,7 @@
       "source_id": "A.3.15",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OV-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Independent review — cybersecurity risk management oversight"
@@ -35185,7 +35185,7 @@
       "source_id": "A.3.16",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OV-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Compliance with IS standards — performance monitoring"
@@ -35195,7 +35195,7 @@
       "source_id": "A.1.2.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Contracts with PII processors — supply chain risk programme"
@@ -35205,7 +35205,7 @@
       "source_id": "A.3.10",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "IS in supplier agreements — supply chain risk programme"
@@ -35215,7 +35215,7 @@
       "source_id": "A.2.5.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Disclosure of subcontractors — supplier roles and responsibilities"
@@ -35225,7 +35225,7 @@
       "source_id": "A.2.5.8",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Engagement of subcontractor — supplier cybersecurity requirements"
@@ -35235,7 +35235,7 @@
       "source_id": "A.1.2.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-05",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "PII processor contract requirements — supply chain requirements"
@@ -35245,7 +35245,7 @@
       "source_id": "A.2.2.2",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-05",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Customer agreement — supply chain contractual requirements"
@@ -35255,7 +35255,7 @@
       "source_id": "A.2.5.9",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-09",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Change of subcontractor — supply chain security practices update"
@@ -35265,7 +35265,7 @@
       "source_id": "A.1.2.9",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.AM-07",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Records of PII processing — data inventory"
@@ -35275,7 +35275,7 @@
       "source_id": "A.2.2.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.AM-07",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Records related to processing PII (processor) — data inventory"
@@ -35285,7 +35285,7 @@
       "source_id": "A.1.2.6",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.RA-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "PIA identifies vulnerabilities and risks"
@@ -35295,7 +35295,7 @@
       "source_id": "A.1.2.6",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.RA-04",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "PIA estimates impacts and likelihoods"
@@ -35305,7 +35305,7 @@
       "source_id": "A.3.8",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.AA-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Identity management — credentials for authorized users"
@@ -35315,7 +35315,7 @@
       "source_id": "A.3.9",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.AA-05",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Access rights — access permissions and entitlements"
@@ -35325,7 +35325,7 @@
       "source_id": "A.3.23",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.AA-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Secure authentication — user/service authentication"
@@ -35335,7 +35335,7 @@
       "source_id": "A.3.17",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.AT-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "IS awareness, education and training"
@@ -35345,7 +35345,7 @@
       "source_id": "A.3.26",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Cryptography — confidentiality of data at rest"
@@ -35355,7 +35355,7 @@
       "source_id": "A.1.4.10",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "PII transmission controls — data in transit confidentiality"
@@ -35365,7 +35365,7 @@
       "source_id": "A.2.4.4",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "PII transmission controls (processor) — data in transit"
@@ -35375,7 +35375,7 @@
       "source_id": "A.3.26",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Cryptography — data in transit protection"
@@ -35385,7 +35385,7 @@
       "source_id": "A.1.4.5",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-10",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "PII minimisation — data in use limitation"
@@ -35395,7 +35395,7 @@
       "source_id": "A.3.24",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-11",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Information backup"
@@ -35405,7 +35405,7 @@
       "source_id": "A.3.25",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "DE.CM-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Logging — network and activity monitoring"
@@ -35415,7 +35415,7 @@
       "source_id": "A.3.25",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "DE.CM-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Logging — personnel activity and technology usage monitoring"
@@ -35425,7 +35425,7 @@
       "source_id": "A.3.11",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "RS.MA-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Incident management planning and preparation"
@@ -35435,7 +35435,7 @@
       "source_id": "A.3.12",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "RS.MA-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Response to incidents — triage and validation"
@@ -35445,7 +35445,7 @@
       "source_id": "A.2.5.5",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "RS.CO-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Notification of PII disclosure — stakeholder notification"
@@ -35455,7 +35455,7 @@
       "source_id": "A.3.12",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "RS.CO-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Incident response — internal/external notification"
@@ -35465,7 +35465,7 @@
       "source_id": "A.2.5.6",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "RS.CO-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Legally binding PII disclosures — information sharing with stakeholders"
@@ -35475,7 +35475,7 @@
       "source_id": "A.3.24",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "RC.RP-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment",
       "notes": "Information backup — recovery execution"
@@ -35485,7 +35485,7 @@
       "source_id": "A.3.3",
       "target_framework": "DORA",
       "target_id": "Art. 5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Policies for IS — ICT governance and organisational arrangements"
@@ -35495,7 +35495,7 @@
       "source_id": "A.3.4",
       "target_framework": "DORA",
       "target_id": "Art. 5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "IS roles and responsibilities — ICT governance accountability"
@@ -35505,7 +35505,7 @@
       "source_id": "A.1.2.6",
       "target_framework": "DORA",
       "target_id": "Art. 6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "PIA as component of ICT risk management framework"
@@ -35515,7 +35515,7 @@
       "source_id": "A.3.3",
       "target_framework": "DORA",
       "target_id": "Art. 6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Policies for IS — ICT risk management framework policy"
@@ -35525,7 +35525,7 @@
       "source_id": "A.3.5",
       "target_framework": "DORA",
       "target_id": "Art. 7",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Classification of information — ICT asset classification"
@@ -35535,7 +35535,7 @@
       "source_id": "A.3.22",
       "target_framework": "DORA",
       "target_id": "Art. 7",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "User endpoint devices — ICT systems and tools"
@@ -35545,7 +35545,7 @@
       "source_id": "A.3.5",
       "target_framework": "DORA",
       "target_id": "Art. 8",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Classification of information — identification of ICT assets"
@@ -35555,7 +35555,7 @@
       "source_id": "A.3.8",
       "target_framework": "DORA",
       "target_id": "Art. 8",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Identity management — identification of authorised users"
@@ -35565,7 +35565,7 @@
       "source_id": "A.3.9",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Access rights — protection and prevention controls"
@@ -35575,7 +35575,7 @@
       "source_id": "A.3.22",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "User endpoint devices — endpoint protection"
@@ -35585,7 +35585,7 @@
       "source_id": "A.3.23",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Secure authentication — access protection"
@@ -35595,7 +35595,7 @@
       "source_id": "A.3.26",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Use of cryptography — data protection"
@@ -35605,7 +35605,7 @@
       "source_id": "A.3.25",
       "target_framework": "DORA",
       "target_id": "Art. 10",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Logging — ICT detection capabilities"
@@ -35615,7 +35615,7 @@
       "source_id": "A.3.11",
       "target_framework": "DORA",
       "target_id": "Art. 11",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Incident management planning — response and recovery framework"
@@ -35625,7 +35625,7 @@
       "source_id": "A.3.12",
       "target_framework": "DORA",
       "target_id": "Art. 11",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Response to incidents — ICT response and recovery"
@@ -35635,7 +35635,7 @@
       "source_id": "A.3.24",
       "target_framework": "DORA",
       "target_id": "Art. 12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Information backup — ICT backup policies"
@@ -35645,7 +35645,7 @@
       "source_id": "A.3.15",
       "target_framework": "DORA",
       "target_id": "Art. 13",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Independent review — learning and evolving from ICT incidents"
@@ -35655,7 +35655,7 @@
       "source_id": "A.3.16",
       "target_framework": "DORA",
       "target_id": "Art. 13",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Compliance with IS standards — lessons learned integration"
@@ -35665,7 +35665,7 @@
       "source_id": "A.2.5.5",
       "target_framework": "DORA",
       "target_id": "Art. 14",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Notification of PII disclosure — internal communication"
@@ -35675,7 +35675,7 @@
       "source_id": "A.3.12",
       "target_framework": "DORA",
       "target_id": "Art. 14",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Incident response — crisis communication"
@@ -35685,7 +35685,7 @@
       "source_id": "A.3.11",
       "target_framework": "DORA",
       "target_id": "Art. 17",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Incident management planning — incident management process"
@@ -35695,7 +35695,7 @@
       "source_id": "A.3.12",
       "target_framework": "DORA",
       "target_id": "Art. 17",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Response to incidents — incident handling"
@@ -35705,7 +35705,7 @@
       "source_id": "A.3.11",
       "target_framework": "DORA",
       "target_id": "Art. 18",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Incident management planning — incident classification criteria"
@@ -35715,7 +35715,7 @@
       "source_id": "A.3.12",
       "target_framework": "DORA",
       "target_id": "Art. 19",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Response to incidents — major incident reporting"
@@ -35725,7 +35725,7 @@
       "source_id": "A.2.5.5",
       "target_framework": "DORA",
       "target_id": "Art. 19",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Notification of PII disclosure requests — incident reporting to authority"
@@ -35735,7 +35735,7 @@
       "source_id": "A.1.2.7",
       "target_framework": "DORA",
       "target_id": "Art. 28",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Contracts with PII processors — ICT third-party risk"
@@ -35745,7 +35745,7 @@
       "source_id": "A.2.5.7",
       "target_framework": "DORA",
       "target_id": "Art. 28",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Disclosure of subcontractors — ICT third-party risk"
@@ -35755,7 +35755,7 @@
       "source_id": "A.2.5.8",
       "target_framework": "DORA",
       "target_id": "Art. 28",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Engagement of subcontractor — ICT third-party risk management"
@@ -35765,7 +35765,7 @@
       "source_id": "A.3.10",
       "target_framework": "DORA",
       "target_id": "Art. 28",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "IS in supplier agreements — ICT third-party risk"
@@ -35775,7 +35775,7 @@
       "source_id": "A.1.2.7",
       "target_framework": "DORA",
       "target_id": "Art. 30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Contracts with PII processors — key contractual provisions"
@@ -35785,7 +35785,7 @@
       "source_id": "A.2.2.2",
       "target_framework": "DORA",
       "target_id": "Art. 30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Customer agreement — key contractual provisions"
@@ -35795,7 +35795,7 @@
       "source_id": "A.2.5.9",
       "target_framework": "DORA",
       "target_id": "Art. 30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27701 Annex A",
       "notes": "Change of subcontractor — contractual provisions for provider changes"
@@ -35805,7 +35805,7 @@
       "source_id": "A.3.3",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-1",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Policies for IS — PII processing policy and procedures"
@@ -35815,7 +35815,7 @@
       "source_id": "A.1.2.3",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Lawful basis — authority to process PII"
@@ -35825,7 +35825,7 @@
       "source_id": "A.1.2.2",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Identify and document purpose — PII processing authority"
@@ -35835,7 +35835,7 @@
       "source_id": "A.1.2.2",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Identify and document purpose — PII processing purposes"
@@ -35845,7 +35845,7 @@
       "source_id": "A.2.2.3",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Organisation's purposes — PII processing purposes (processor)"
@@ -35855,7 +35855,7 @@
       "source_id": "A.1.2.4",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Determine how consent is obtained — consent mechanisms"
@@ -35865,7 +35865,7 @@
       "source_id": "A.1.2.5",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Obtain and record consent — consent record"
@@ -35875,7 +35875,7 @@
       "source_id": "A.1.3.3",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Determining information for PII principals — privacy notice content"
@@ -35885,7 +35885,7 @@
       "source_id": "A.1.3.4",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Providing information to PII principals — privacy notice delivery"
@@ -35895,7 +35895,7 @@
       "source_id": "A.1.2.9",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Records related to processing PII — system of records"
@@ -35905,7 +35905,7 @@
       "source_id": "A.2.2.7",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Records related to processing PII (processor) — records"
@@ -35915,7 +35915,7 @@
       "source_id": "A.3.5",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-7",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Classification of information — special categories of PII"
@@ -35925,7 +35925,7 @@
       "source_id": "A.3.13",
       "target_framework": "NIST_800_53_R5",
       "target_id": "PT-8",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Legal, statutory, regulatory requirements — compliance obligations"
@@ -35935,7 +35935,7 @@
       "source_id": "A.3.3",
       "target_framework": "NIST_800_53_R5",
       "target_id": "AC-1",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Policies for IS — access control policy"
@@ -35945,7 +35945,7 @@
       "source_id": "A.3.8",
       "target_framework": "NIST_800_53_R5",
       "target_id": "AC-2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Identity management — account management"
@@ -35955,7 +35955,7 @@
       "source_id": "A.3.9",
       "target_framework": "NIST_800_53_R5",
       "target_id": "AC-3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Access rights — access enforcement"
@@ -35965,7 +35965,7 @@
       "source_id": "A.3.9",
       "target_framework": "NIST_800_53_R5",
       "target_id": "AC-6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Access rights — least privilege"
@@ -35975,7 +35975,7 @@
       "source_id": "A.3.25",
       "target_framework": "NIST_800_53_R5",
       "target_id": "AU-2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Logging — event logging"
@@ -35985,7 +35985,7 @@
       "source_id": "A.3.25",
       "target_framework": "NIST_800_53_R5",
       "target_id": "AU-3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Logging — content of audit records"
@@ -35995,7 +35995,7 @@
       "source_id": "A.3.23",
       "target_framework": "NIST_800_53_R5",
       "target_id": "IA-2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Secure authentication — identification and authentication"
@@ -36005,7 +36005,7 @@
       "source_id": "A.3.8",
       "target_framework": "NIST_800_53_R5",
       "target_id": "IA-5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Identity management — authenticator management"
@@ -36015,7 +36015,7 @@
       "source_id": "A.3.11",
       "target_framework": "NIST_800_53_R5",
       "target_id": "IR-4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Incident management planning — incident handling"
@@ -36025,7 +36025,7 @@
       "source_id": "A.3.12",
       "target_framework": "NIST_800_53_R5",
       "target_id": "IR-4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Response to incidents — incident handling"
@@ -36035,7 +36035,7 @@
       "source_id": "A.2.5.5",
       "target_framework": "NIST_800_53_R5",
       "target_id": "IR-6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Notification of PII disclosure — incident reporting"
@@ -36045,7 +36045,7 @@
       "source_id": "A.3.12",
       "target_framework": "NIST_800_53_R5",
       "target_id": "IR-6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Response to incidents — incident reporting"
@@ -36055,7 +36055,7 @@
       "source_id": "A.3.24",
       "target_framework": "NIST_800_53_R5",
       "target_id": "CP-9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Information backup — system backup"
@@ -36065,7 +36065,7 @@
       "source_id": "A.3.26",
       "target_framework": "NIST_800_53_R5",
       "target_id": "SC-28",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Use of cryptography — protection of data at rest"
@@ -36075,7 +36075,7 @@
       "source_id": "A.1.4.10",
       "target_framework": "NIST_800_53_R5",
       "target_id": "SC-8",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "PII transmission controls — transmission confidentiality"
@@ -36085,7 +36085,7 @@
       "source_id": "A.2.4.4",
       "target_framework": "NIST_800_53_R5",
       "target_id": "SC-8",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "PII transmission controls (processor) — transmission confidentiality"
@@ -36095,7 +36095,7 @@
       "source_id": "A.1.4.8",
       "target_framework": "NIST_800_53_R5",
       "target_id": "SI-12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Retention of PII — information management and retention"
@@ -36105,7 +36105,7 @@
       "source_id": "A.1.4.9",
       "target_framework": "NIST_800_53_R5",
       "target_id": "SI-12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Disposal of PII — information management and retention"
@@ -36115,7 +36115,7 @@
       "source_id": "A.1.2.7",
       "target_framework": "NIST_800_53_R5",
       "target_id": "SA-4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Contracts with PII processors — acquisition process"
@@ -36125,7 +36125,7 @@
       "source_id": "A.3.10",
       "target_framework": "NIST_800_53_R5",
       "target_id": "SA-4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "IS in supplier agreements — acquisition process"
@@ -36135,7 +36135,7 @@
       "source_id": "A.3.10",
       "target_framework": "NIST_800_53_R5",
       "target_id": "SR-2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "IS in supplier agreements — supply chain risk management plan"
@@ -36145,7 +36145,7 @@
       "source_id": "A.2.5.7",
       "target_framework": "NIST_800_53_R5",
       "target_id": "SR-2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Disclosure of subcontractors — supply chain risk management"
@@ -36155,7 +36155,7 @@
       "source_id": "A.1.2.7",
       "target_framework": "NIST_800_53_R5",
       "target_id": "SR-3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Contracts with PII processors — supply chain controls"
@@ -36165,7 +36165,7 @@
       "source_id": "A.2.5.8",
       "target_framework": "NIST_800_53_R5",
       "target_id": "SR-3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Engagement of subcontractor — supply chain controls"
@@ -36175,7 +36175,7 @@
       "source_id": "A.2.5.9",
       "target_framework": "NIST_800_53_R5",
       "target_id": "SR-3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST SP 800-53 Rev 5 Privacy Overlay + ISO27701 Annex A mapping",
       "notes": "Change of subcontractor — supply chain controls"
@@ -36185,7 +36185,7 @@
       "source_id": "A.3.26",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "PCI DSS v4.0 Data Protection Requirements + ISO27701 Annex A",
       "notes": "Use of cryptography — protect stored account data"
@@ -36195,7 +36195,7 @@
       "source_id": "A.1.4.10",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "PCI DSS v4.0 Data Protection Requirements + ISO27701 Annex A",
       "notes": "PII transmission controls — stored data protection"
@@ -36205,7 +36205,7 @@
       "source_id": "A.1.4.10",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "PCI DSS v4.0 Data Protection Requirements + ISO27701 Annex A",
       "notes": "PII transmission controls — encryption over open networks"
@@ -36215,7 +36215,7 @@
       "source_id": "A.2.4.4",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "PCI DSS v4.0 Data Protection Requirements + ISO27701 Annex A",
       "notes": "PII transmission controls (processor) — data in transit encryption"
@@ -36225,7 +36225,7 @@
       "source_id": "A.3.26",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "PCI DSS v4.0 Data Protection Requirements + ISO27701 Annex A",
       "notes": "Use of cryptography — transmission cryptography"
@@ -36235,7 +36235,7 @@
       "source_id": "A.3.9",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 7",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "PCI DSS v4.0 Data Protection Requirements + ISO27701 Annex A",
       "notes": "Access rights — restrict access by business need"
@@ -36245,7 +36245,7 @@
       "source_id": "A.3.8",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 8",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "PCI DSS v4.0 Data Protection Requirements + ISO27701 Annex A",
       "notes": "Identity management — identify users and authenticate access"
@@ -36255,7 +36255,7 @@
       "source_id": "A.3.23",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 8",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "PCI DSS v4.0 Data Protection Requirements + ISO27701 Annex A",
       "notes": "Secure authentication — MFA and authentication controls"
@@ -36265,7 +36265,7 @@
       "source_id": "A.3.25",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 10",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "PCI DSS v4.0 Data Protection Requirements + ISO27701 Annex A",
       "notes": "Logging — log and monitor all access"
@@ -36275,7 +36275,7 @@
       "source_id": "A.3.3",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "PCI DSS v4.0 Data Protection Requirements + ISO27701 Annex A",
       "notes": "Policies for IS — information security policy"
@@ -36285,7 +36285,7 @@
       "source_id": "A.3.17",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "PCI DSS v4.0 Data Protection Requirements + ISO27701 Annex A",
       "notes": "IS awareness, education and training — security awareness programme"
@@ -36295,7 +36295,7 @@
       "source_id": "A.3.4",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "PCI DSS v4.0 Data Protection Requirements + ISO27701 Annex A",
       "notes": "IS roles and responsibilities — security responsibility assignment"
@@ -36305,7 +36305,7 @@
       "source_id": "A.3.1",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "PII processor's purpose — legal/regulatory requirements compliance"
@@ -36315,7 +36315,7 @@
       "source_id": "A.12.1",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Geographical location of PII — legal/regulatory requirements"
@@ -36325,7 +36325,7 @@
       "source_id": "A.12.2",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Intended destination of PII — legal/regulatory requirements"
@@ -36335,7 +36335,7 @@
       "source_id": "A.8.1",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Disclosure of sub-contracted PII processing — supplier roles"
@@ -36345,7 +36345,7 @@
       "source_id": "A.11.12",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Sub-contracted PII processing — supply chain risk management"
@@ -36355,7 +36355,7 @@
       "source_id": "A.11.12",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Sub-contracted PII processing — supplier cybersecurity requirements"
@@ -36365,7 +36365,7 @@
       "source_id": "A.10.2",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.PO-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Retention period for administrative security policies — IS policy"
@@ -36375,7 +36375,7 @@
       "source_id": "A.2.1",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.AM-07",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "PII principals' rights — data inventory and classification"
@@ -36385,7 +36385,7 @@
       "source_id": "A.11.3",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "DE.CM-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Control and logging of data restoration — monitoring"
@@ -36395,7 +36395,7 @@
       "source_id": "A.11.10",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "DE.CM-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Records of authorised users — authorised access monitoring"
@@ -36405,7 +36405,7 @@
       "source_id": "A.11.8",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.AA-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Unique use of user IDs — identities and credentials"
@@ -36415,7 +36415,7 @@
       "source_id": "A.11.9",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.AA-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "User ID management — identity management"
@@ -36425,7 +36425,7 @@
       "source_id": "A.11.10",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.AA-05",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Records of authorised users — access permissions"
@@ -36435,7 +36435,7 @@
       "source_id": "A.11.6",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Encryption of PII over public networks — data in transit"
@@ -36445,7 +36445,7 @@
       "source_id": "A.11.5",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Unencrypted portable storage — data in transit controls"
@@ -36455,7 +36455,7 @@
       "source_id": "A.11.4",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Storage media leaving premises — data at rest protection"
@@ -36465,7 +36465,7 @@
       "source_id": "A.11.13",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Pre-used data storage space — data at rest protection"
@@ -36475,7 +36475,7 @@
       "source_id": "A.11.3",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-11",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Control and logging of data restoration — backup integrity"
@@ -36485,7 +36485,7 @@
       "source_id": "A.10.1",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "RS.MA-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Notification of data breach — incident response execution"
@@ -36495,7 +36495,7 @@
       "source_id": "A.6.1",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "RS.CO-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "PII disclosure notification — stakeholder notification"
@@ -36505,7 +36505,7 @@
       "source_id": "A.10.1",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "RS.CO-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Data breach notification — notify internal/external stakeholders"
@@ -36515,7 +36515,7 @@
       "source_id": "A.6.2",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "RS.AN-06",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "Recording of PII disclosures — investigation records"
@@ -36525,7 +36525,7 @@
       "source_id": "A.10.3",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "RC.RP-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + ISO27018 Annex A alignment",
       "notes": "PII return, transfer and disposal — recovery actions"
@@ -36535,7 +36535,7 @@
       "source_id": "A.10.2",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "A&A-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Retention of admin security policies — audit and assurance policy"
@@ -36545,7 +36545,7 @@
       "source_id": "A.3.1",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "PII processor's purpose — data security and privacy policy"
@@ -36555,7 +36555,7 @@
       "source_id": "A.3.2",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Commercial use restriction — data security and privacy policy"
@@ -36565,7 +36565,7 @@
       "source_id": "A.5.1",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Secure erasure of temporary files — secure disposal"
@@ -36575,7 +36575,7 @@
       "source_id": "A.11.7",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Secure disposal of hardcopy materials — secure disposal"
@@ -36585,7 +36585,7 @@
       "source_id": "A.10.2",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Retention period for admin policies — data inventory"
@@ -36595,7 +36595,7 @@
       "source_id": "A.3.1",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-04",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "PII processor's purpose — data classification"
@@ -36605,7 +36605,7 @@
       "source_id": "A.3.2",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-05",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Commercial use restriction — data flow documentation"
@@ -36615,7 +36615,7 @@
       "source_id": "A.3.2",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-08",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Commercial use restriction — data privacy by design and default"
@@ -36625,7 +36625,7 @@
       "source_id": "A.3.2",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Commercial use restriction — limitation of purpose"
@@ -36635,7 +36635,7 @@
       "source_id": "A.2.1",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-11",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "PII principals' rights — access, reversal, rectification, deletion"
@@ -36645,7 +36645,7 @@
       "source_id": "A.11.12",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-13",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Sub-contracted PII processing — personal data sub-processing"
@@ -36655,7 +36655,7 @@
       "source_id": "A.8.1",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-14",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Disclosure of sub-contracted PII processing — disclosure of sub-processors"
@@ -36665,7 +36665,7 @@
       "source_id": "A.10.3",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-16",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "PII return, transfer and disposal — data retention and deletion"
@@ -36675,7 +36675,7 @@
       "source_id": "A.11.6",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-17",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Encryption over public networks — sensitive data protection"
@@ -36685,7 +36685,7 @@
       "source_id": "A.11.4",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-17",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Storage media leaving premises — sensitive data protection"
@@ -36695,7 +36695,7 @@
       "source_id": "A.11.5",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-17",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Unencrypted portable storage — sensitive data protection"
@@ -36705,7 +36705,7 @@
       "source_id": "A.10.1",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-18",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Data breach notification — disclosure notification"
@@ -36715,7 +36715,7 @@
       "source_id": "A.6.1",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-18",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "PII disclosure notification — disclosure notification"
@@ -36725,7 +36725,7 @@
       "source_id": "A.12.1",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-19",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.95,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Geographical location of PII — data location"
@@ -36735,7 +36735,7 @@
       "source_id": "A.12.2",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "DSP-19",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Intended destination of PII — data location"
@@ -36745,7 +36745,7 @@
       "source_id": "A.11.8",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "IAM-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Unique use of user IDs — identity and access management policy"
@@ -36755,7 +36755,7 @@
       "source_id": "A.11.9",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "IAM-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "User ID management — IAM policy and procedures"
@@ -36765,7 +36765,7 @@
       "source_id": "A.11.10",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "IAM-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Records of authorised users — IAM policy"
@@ -36775,7 +36775,7 @@
       "source_id": "A.11.6",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "CEK-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Encryption over public networks — cryptography and key management"
@@ -36785,7 +36785,7 @@
       "source_id": "A.11.12",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "STA-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Sub-contracted PII processing — supply chain security policy"
@@ -36795,7 +36795,7 @@
       "source_id": "A.8.1",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "STA-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Disclosure of sub-contracted processing — supply chain transparency"
@@ -36805,7 +36805,7 @@
       "source_id": "A.11.3",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "LOG-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Control and logging of data restoration — logging and monitoring"
@@ -36815,7 +36815,7 @@
       "source_id": "A.11.11",
       "target_framework": "CSA_CCM_V4_1",
       "target_id": "STA-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "CSA CCM v4.1 to ISO 27701/27018 mapping (CSA Research)",
       "notes": "Contract measures — supply chain contract requirements"
@@ -36825,7 +36825,7 @@
       "source_id": "A.10.2",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(a)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Retention of administrative security policies — risk analysis policies"
@@ -36835,7 +36835,7 @@
       "source_id": "A.3.1",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(a)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "PII processor's purpose — risk analysis context"
@@ -36845,7 +36845,7 @@
       "source_id": "A.10.1",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(b)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Notification of data breach — incident handling"
@@ -36855,7 +36855,7 @@
       "source_id": "A.6.1",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(b)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "PII disclosure notification — incident handling"
@@ -36865,7 +36865,7 @@
       "source_id": "A.6.2",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(b)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Recording of PII disclosures — incident records"
@@ -36875,7 +36875,7 @@
       "source_id": "A.10.3",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(c)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "PII return, transfer and disposal — business continuity"
@@ -36885,7 +36885,7 @@
       "source_id": "A.11.3",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(c)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Control and logging of data restoration — business continuity"
@@ -36895,7 +36895,7 @@
       "source_id": "A.8.1",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(d)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Disclosure of sub-contracted PII processing — supply chain"
@@ -36905,7 +36905,7 @@
       "source_id": "A.11.12",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(d)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Sub-contracted PII processing — supply chain security"
@@ -36915,7 +36915,7 @@
       "source_id": "A.11.11",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(d)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Contract measures — supply chain contractual requirements"
@@ -36925,7 +36925,7 @@
       "source_id": "A.3.1",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(e)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "PII processor's purpose — security in network systems"
@@ -36935,7 +36935,7 @@
       "source_id": "A.3.2",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(e)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Commercial use restriction — system security requirements"
@@ -36945,7 +36945,7 @@
       "source_id": "A.10.2",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(f)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Retention of admin security policies — effectiveness assessment"
@@ -36955,7 +36955,7 @@
       "source_id": "A.11.6",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(h)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Encryption of PII over public networks — cryptography"
@@ -36965,7 +36965,7 @@
       "source_id": "A.11.5",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(h)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Unencrypted portable storage — cryptography controls"
@@ -36975,7 +36975,7 @@
       "source_id": "A.11.4",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(h)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Storage media leaving premises — cryptography controls"
@@ -36985,7 +36985,7 @@
       "source_id": "A.11.8",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Unique use of user IDs — access control and asset management"
@@ -36995,7 +36995,7 @@
       "source_id": "A.11.9",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "User ID management — HR and access control"
@@ -37005,7 +37005,7 @@
       "source_id": "A.11.10",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Records of authorised users — access control"
@@ -37015,7 +37015,7 @@
       "source_id": "A.11.13",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(i)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Pre-used data storage — asset management"
@@ -37025,7 +37025,7 @@
       "source_id": "A.11.6",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(j)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Encryption over public networks — secured communications"
@@ -37035,7 +37035,7 @@
       "source_id": "A.11.8",
       "target_framework": "NIS2",
       "target_id": "Art. 21(2)(j)",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Unique use of user IDs — MFA and authentication"
@@ -37045,7 +37045,7 @@
       "source_id": "A.10.1",
       "target_framework": "NIS2",
       "target_id": "Art. 23",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Data breach notification — reporting obligations"
@@ -37055,7 +37055,7 @@
       "source_id": "A.6.1",
       "target_framework": "NIS2",
       "target_id": "Art. 23",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "PII disclosure notification — reporting obligations"
@@ -37065,7 +37065,7 @@
       "source_id": "A.10.1",
       "target_framework": "NIS2",
       "target_id": "Art. 23-EW",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Data breach notification — early warning"
@@ -37075,7 +37075,7 @@
       "source_id": "A.10.1",
       "target_framework": "NIS2",
       "target_id": "Art. 23-IN",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Data breach notification — incident notification"
@@ -37085,7 +37085,7 @@
       "source_id": "A.10.1",
       "target_framework": "NIS2",
       "target_id": "Art. 23-IR",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Data breach notification — intermediate report"
@@ -37095,7 +37095,7 @@
       "source_id": "A.10.1",
       "target_framework": "NIS2",
       "target_id": "Art. 23-FR",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA NIS2 Implementation Guidance + ISO27018 Annex A cloud PII controls",
       "notes": "Data breach notification — final report"
@@ -37105,7 +37105,7 @@
       "source_id": "A.3.1",
       "target_framework": "CH_NDSG",
       "target_id": "GEN.2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "PII processor's purpose — purpose limitation"
@@ -37115,7 +37115,7 @@
       "source_id": "A.3.2",
       "target_framework": "CH_NDSG",
       "target_id": "GEN.2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Commercial use restriction — purpose limitation"
@@ -37125,7 +37125,7 @@
       "source_id": "A.5.1",
       "target_framework": "CH_NDSG",
       "target_id": "GEN.3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Secure erasure of temporary files — data minimisation"
@@ -37135,7 +37135,7 @@
       "source_id": "A.10.3",
       "target_framework": "CH_NDSG",
       "target_id": "GEN.5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "PII return, transfer and disposal — storage limitation"
@@ -37145,7 +37145,7 @@
       "source_id": "A.2.1",
       "target_framework": "CH_NDSG",
       "target_id": "DSR.1",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "PII principals' rights — right to information"
@@ -37155,7 +37155,7 @@
       "source_id": "A.2.1",
       "target_framework": "CH_NDSG",
       "target_id": "DSR.2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "PII principals' rights — right of access"
@@ -37165,7 +37165,7 @@
       "source_id": "A.10.3",
       "target_framework": "CH_NDSG",
       "target_id": "DSR.4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "PII return, transfer and disposal — right to erasure"
@@ -37175,7 +37175,7 @@
       "source_id": "A.11.12",
       "target_framework": "CH_NDSG",
       "target_id": "CON.2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Sub-contracted PII processing — data processing agreements"
@@ -37185,7 +37185,7 @@
       "source_id": "A.10.2",
       "target_framework": "CH_NDSG",
       "target_id": "CON.3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Retention of admin security policies — records of processing"
@@ -37195,7 +37195,7 @@
       "source_id": "A.8.1",
       "target_framework": "CH_NDSG",
       "target_id": "CON.3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Disclosure of sub-contracted PII — records of processing"
@@ -37205,7 +37205,7 @@
       "source_id": "A.12.1",
       "target_framework": "CH_NDSG",
       "target_id": "XFR.1",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Geographical location of PII — adequacy of third country"
@@ -37215,7 +37215,7 @@
       "source_id": "A.12.2",
       "target_framework": "CH_NDSG",
       "target_id": "XFR.1",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Intended destination of PII — adequacy of third country"
@@ -37225,7 +37225,7 @@
       "source_id": "A.11.12",
       "target_framework": "CH_NDSG",
       "target_id": "XFR.2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Sub-contracted PII processing — standard contractual clauses"
@@ -37235,7 +37235,7 @@
       "source_id": "A.11.6",
       "target_framework": "CH_NDSG",
       "target_id": "SEC.1",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Encryption over public networks — technical and organisational measures"
@@ -37245,7 +37245,7 @@
       "source_id": "A.11.4",
       "target_framework": "CH_NDSG",
       "target_id": "SEC.1",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Storage media leaving premises — TOMs"
@@ -37255,7 +37255,7 @@
       "source_id": "A.11.5",
       "target_framework": "CH_NDSG",
       "target_id": "SEC.1",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Unencrypted portable storage — TOMs"
@@ -37265,7 +37265,7 @@
       "source_id": "A.11.8",
       "target_framework": "CH_NDSG",
       "target_id": "SEC.1",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Unique use of user IDs — TOMs"
@@ -37275,7 +37275,7 @@
       "source_id": "A.10.1",
       "target_framework": "CH_NDSG",
       "target_id": "SEC.2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Notification of data breach — breach notification to FDPIC"
@@ -37285,7 +37285,7 @@
       "source_id": "A.10.1",
       "target_framework": "CH_NDSG",
       "target_id": "SEC.3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 8–9 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Notification of data breach — breach notification to data subjects"
@@ -37295,7 +37295,7 @@
       "source_id": "A.5.1",
       "target_framework": "ISO27701",
       "target_id": "A.3.3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "IS policies → IS policies for PII processing"
@@ -37305,7 +37305,7 @@
       "source_id": "A.5.9",
       "target_framework": "ISO27701",
       "target_id": "A.3.5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Inventory of assets → classification of information incl. PII"
@@ -37315,7 +37315,7 @@
       "source_id": "A.5.12",
       "target_framework": "ISO27701",
       "target_id": "A.3.5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Classification of information → PII classification"
@@ -37325,7 +37325,7 @@
       "source_id": "A.5.13",
       "target_framework": "ISO27701",
       "target_id": "A.3.6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Labelling of information → labelling incl. PII categories"
@@ -37335,7 +37335,7 @@
       "source_id": "A.5.14",
       "target_framework": "ISO27701",
       "target_id": "A.3.7",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Information transfer → PII transfer controls"
@@ -37345,7 +37345,7 @@
       "source_id": "A.5.15",
       "target_framework": "ISO27701",
       "target_id": "A.3.9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Access control → access rights for PII"
@@ -37355,7 +37355,7 @@
       "source_id": "A.5.16",
       "target_framework": "ISO27701",
       "target_id": "A.3.8",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Identity management → identity management for PII access"
@@ -37365,7 +37365,7 @@
       "source_id": "A.5.17",
       "target_framework": "ISO27701",
       "target_id": "A.3.23",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Authentication information → secure authentication for PII systems"
@@ -37375,7 +37375,7 @@
       "source_id": "A.5.18",
       "target_framework": "ISO27701",
       "target_id": "A.3.9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Access rights → access rights management for PII"
@@ -37385,7 +37385,7 @@
       "source_id": "A.5.19",
       "target_framework": "ISO27701",
       "target_id": "A.3.10",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "IS in supplier relationships → IS in supplier agreements"
@@ -37395,7 +37395,7 @@
       "source_id": "A.5.20",
       "target_framework": "ISO27701",
       "target_id": "A.3.10",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "IS in supplier agreements → IS in supplier agreements (PII)"
@@ -37405,7 +37405,7 @@
       "source_id": "A.5.21",
       "target_framework": "ISO27701",
       "target_id": "A.3.10",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "IS in ICT supply chain → supply chain PII security"
@@ -37415,7 +37415,7 @@
       "source_id": "A.5.22",
       "target_framework": "ISO27701",
       "target_id": "A.3.10",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "IS monitoring of suppliers → supplier PII security monitoring"
@@ -37425,7 +37425,7 @@
       "source_id": "A.5.23",
       "target_framework": "ISO27701",
       "target_id": "A.3.10",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "IS for cloud services → cloud PII supplier security"
@@ -37435,7 +37435,7 @@
       "source_id": "A.5.24",
       "target_framework": "ISO27701",
       "target_id": "A.3.11",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "IS incident management planning → incident management for PII"
@@ -37445,7 +37445,7 @@
       "source_id": "A.5.25",
       "target_framework": "ISO27701",
       "target_id": "A.3.11",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Assessment of IS events → PII incident assessment"
@@ -37455,7 +37455,7 @@
       "source_id": "A.5.26",
       "target_framework": "ISO27701",
       "target_id": "A.3.12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Response to IS incidents → response to PII incidents"
@@ -37465,7 +37465,7 @@
       "source_id": "A.5.27",
       "target_framework": "ISO27701",
       "target_id": "A.3.12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Learning from IS incidents → PII incident learning"
@@ -37475,7 +37475,7 @@
       "source_id": "A.5.28",
       "target_framework": "ISO27701",
       "target_id": "A.3.12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Collection of evidence → PII incident evidence collection"
@@ -37485,7 +37485,7 @@
       "source_id": "A.5.29",
       "target_framework": "ISO27701",
       "target_id": "A.3.24",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "IS during disruption → PII availability continuity"
@@ -37495,7 +37495,7 @@
       "source_id": "A.5.30",
       "target_framework": "ISO27701",
       "target_id": "A.3.24",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "ICT readiness for BCM → PII system ICT readiness"
@@ -37505,7 +37505,7 @@
       "source_id": "A.5.31",
       "target_framework": "ISO27701",
       "target_id": "A.3.13",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Legal, statutory, regulatory requirements → PII legal requirements"
@@ -37515,7 +37515,7 @@
       "source_id": "A.5.33",
       "target_framework": "ISO27701",
       "target_id": "A.3.14",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Protection of records → protection of PII records"
@@ -37525,7 +37525,7 @@
       "source_id": "A.5.35",
       "target_framework": "ISO27701",
       "target_id": "A.3.15",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Independent review of IS → independent review of PII controls"
@@ -37535,7 +37535,7 @@
       "source_id": "A.5.36",
       "target_framework": "ISO27701",
       "target_id": "A.3.16",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Compliance with IS policies → compliance with PII policies"
@@ -37545,7 +37545,7 @@
       "source_id": "A.6.1",
       "target_framework": "ISO27701",
       "target_id": "A.3.18",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Screening → confidentiality agreements for PII handlers"
@@ -37555,7 +37555,7 @@
       "source_id": "A.6.2",
       "target_framework": "ISO27701",
       "target_id": "A.3.4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Terms and conditions of employment → IS roles and responsibilities"
@@ -37565,7 +37565,7 @@
       "source_id": "A.6.3",
       "target_framework": "ISO27701",
       "target_id": "A.3.17",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "IS awareness, education and training → PII training"
@@ -37575,7 +37575,7 @@
       "source_id": "A.6.5",
       "target_framework": "ISO27701",
       "target_id": "A.3.4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Responsibilities after employment → IS roles"
@@ -37585,7 +37585,7 @@
       "source_id": "A.6.6",
       "target_framework": "ISO27701",
       "target_id": "A.3.18",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Confidentiality agreements → non-disclosure agreements for PII"
@@ -37595,7 +37595,7 @@
       "source_id": "A.8.2",
       "target_framework": "ISO27701",
       "target_id": "A.3.9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Privileged access rights → privileged access to PII systems"
@@ -37605,7 +37605,7 @@
       "source_id": "A.8.3",
       "target_framework": "ISO27701",
       "target_id": "A.3.9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Information access restriction → PII access restriction"
@@ -37615,7 +37615,7 @@
       "source_id": "A.8.5",
       "target_framework": "ISO27701",
       "target_id": "A.3.23",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Secure authentication → secure authentication for PII systems"
@@ -37625,7 +37625,7 @@
       "source_id": "A.8.10",
       "target_framework": "ISO27701",
       "target_id": "A.1.4.6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Information deletion → PII de-identification and deletion"
@@ -37635,7 +37635,7 @@
       "source_id": "A.8.10",
       "target_framework": "ISO27701",
       "target_id": "A.1.4.9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Information deletion → PII disposal"
@@ -37645,7 +37645,7 @@
       "source_id": "A.8.11",
       "target_framework": "ISO27701",
       "target_id": "A.1.4.5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Data masking → PII minimisation and masking"
@@ -37655,7 +37655,7 @@
       "source_id": "A.8.12",
       "target_framework": "ISO27701",
       "target_id": "A.1.4.10",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Data leakage prevention → PII transmission controls"
@@ -37665,7 +37665,7 @@
       "source_id": "A.8.13",
       "target_framework": "ISO27701",
       "target_id": "A.3.24",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Information backup → information backup incl. PII"
@@ -37675,7 +37675,7 @@
       "source_id": "A.8.15",
       "target_framework": "ISO27701",
       "target_id": "A.3.25",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Logging → logging for PII processing activities"
@@ -37685,7 +37685,7 @@
       "source_id": "A.8.16",
       "target_framework": "ISO27701",
       "target_id": "A.3.25",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Monitoring activities → monitoring PII processing"
@@ -37695,7 +37695,7 @@
       "source_id": "A.8.20",
       "target_framework": "ISO27701",
       "target_id": "A.3.7",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Networks security → PII network transfer controls"
@@ -37705,7 +37705,7 @@
       "source_id": "A.8.21",
       "target_framework": "ISO27701",
       "target_id": "A.3.7",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Security of network services → PII secure transfer"
@@ -37715,7 +37715,7 @@
       "source_id": "A.8.24",
       "target_framework": "ISO27701",
       "target_id": "A.3.26",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Use of cryptography → cryptography for PII protection"
@@ -37725,7 +37725,7 @@
       "source_id": "A.8.25",
       "target_framework": "ISO27701",
       "target_id": "A.3.27",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Secure development lifecycle → secure development for PII systems"
@@ -37735,7 +37735,7 @@
       "source_id": "A.8.29",
       "target_framework": "ISO27701",
       "target_id": "A.3.28",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Security testing in dev → application security for PII"
@@ -37745,7 +37745,7 @@
       "source_id": "A.8.30",
       "target_framework": "ISO27701",
       "target_id": "A.3.30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Outsourced development → outsourced development of PII systems"
@@ -37755,7 +37755,7 @@
       "source_id": "A.8.31",
       "target_framework": "ISO27701",
       "target_id": "A.3.31",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Separation of development environments → test data controls"
@@ -37765,7 +37765,7 @@
       "source_id": "A.8.32",
       "target_framework": "ISO27701",
       "target_id": "A.3.27",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Change management → PII system change management"
@@ -37775,7 +37775,7 @@
       "source_id": "A.8.34",
       "target_framework": "ISO27701",
       "target_id": "A.3.15",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ISO27701:2019 Annex F — ISO 27001:2022 controls mapping to ISO 27701 Annex A extensions",
       "notes": "Protection of IS during audit testing → independent review"
@@ -37785,7 +37785,7 @@
       "source_id": "A.2.2-4",
       "target_framework": "DORA",
       "target_id": "Art. 5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "AI policy framework — ICT governance and organisational arrangements"
@@ -37795,7 +37795,7 @@
       "source_id": "A.3.2-3",
       "target_framework": "DORA",
       "target_id": "Art. 5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "AI roles and responsibilities — ICT governance accountability"
@@ -37805,7 +37805,7 @@
       "source_id": "A.5.2-5",
       "target_framework": "DORA",
       "target_id": "Art. 6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "AI impact assessment — ICT risk management framework"
@@ -37815,7 +37815,7 @@
       "source_id": "A.2.2-4",
       "target_framework": "DORA",
       "target_id": "Art. 6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "AI policy framework — ICT risk management policy"
@@ -37825,7 +37825,7 @@
       "source_id": "A.4.2-6",
       "target_framework": "DORA",
       "target_id": "Art. 7",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "AI system resources — ICT systems and tools"
@@ -37835,7 +37835,7 @@
       "source_id": "A.5.2-5",
       "target_framework": "DORA",
       "target_id": "Art. 8",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "AI impact assessment — identification and risk classification"
@@ -37845,7 +37845,7 @@
       "source_id": "A.7.2-6",
       "target_framework": "DORA",
       "target_id": "Art. 8",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "Data for AI systems — data classification and identification"
@@ -37855,7 +37855,7 @@
       "source_id": "A.6.1",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "AI development governance — protection and prevention controls"
@@ -37865,7 +37865,7 @@
       "source_id": "A.6.2",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "AI system lifecycle — operational protection controls"
@@ -37875,7 +37875,7 @@
       "source_id": "A.9.2-4",
       "target_framework": "DORA",
       "target_id": "Art. 11",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "Responsible use of AI — response and recovery planning"
@@ -37885,7 +37885,7 @@
       "source_id": "A.5.2-5",
       "target_framework": "DORA",
       "target_id": "Art. 13",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "AI impact assessment — learning and evolving from incidents"
@@ -37895,7 +37895,7 @@
       "source_id": "A.10.2-4",
       "target_framework": "DORA",
       "target_id": "Art. 28",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "Third-party and customer relationships — ICT third-party risk"
@@ -37905,7 +37905,7 @@
       "source_id": "A.10.2-4",
       "target_framework": "DORA",
       "target_id": "Art. 30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "Third-party and customer relationships — key contractual provisions"
@@ -37915,7 +37915,7 @@
       "source_id": "A.7.2-6",
       "target_framework": "DORA",
       "target_id": "Art. 30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "ENISA DORA Implementation Guidance + ISO42001 Annex A AI controls",
       "notes": "Data for AI systems — data contractual requirements"
@@ -37925,7 +37925,7 @@
       "source_id": "IAS-5.1",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 35",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.95,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Assessment process — DPIA general requirements"
@@ -37935,7 +37935,7 @@
       "source_id": "IAS-5.3",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 35",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Integration, timing, scope — DPIA timing and scope requirements"
@@ -37945,7 +37945,7 @@
       "source_id": "IAS-5.7",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 35",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Thresholds and performance — DPIA necessity thresholds (Art.35(1))"
@@ -37955,7 +37955,7 @@
       "source_id": "IAS-5.9",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 35",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Analysis, recording, approval — DPIA documentation (Art.35(7))"
@@ -37965,7 +37965,7 @@
       "source_id": "IAS-6.2",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 35",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Assessment scope and AI system info — DPIA scope and description"
@@ -37975,7 +37975,7 @@
       "source_id": "IAS-6.4",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 35",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Data and algorithm information — DPIA data processing description"
@@ -37985,7 +37985,7 @@
       "source_id": "IAS-6.6",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 35",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Deployment environment and interested parties — DPIA necessity (Art.35(9))"
@@ -37995,7 +37995,7 @@
       "source_id": "IAS-6.8",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 35",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.95,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Impact identification and mitigation — DPIA impact assessment and measures"
@@ -38005,7 +38005,7 @@
       "source_id": "IAS-5.9",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 36",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Analysis and approval — prior consultation when high residual risk"
@@ -38015,7 +38015,7 @@
       "source_id": "IAS-6.6",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 25",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Deployment environment — data protection by design and default"
@@ -38025,7 +38025,7 @@
       "source_id": "IAS-6.4",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Data and algorithm information — data minimisation and purpose limitation"
@@ -38035,7 +38035,7 @@
       "source_id": "IAS-5.3",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 24",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Integration and responsibilities — controller accountability"
@@ -38045,7 +38045,7 @@
       "source_id": "IAS-5.7",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 25",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Thresholds — privacy by design thresholds"
@@ -38055,7 +38055,7 @@
       "source_id": "IAS-6.8",
       "target_framework": "EU_GDPR",
       "target_id": "Art. 32",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "GDPR Art. 35 DPIA methodology alignment with ISO42005 IAS process",
       "notes": "Impact identification and mitigation — security of processing measures"
@@ -38065,7 +38065,7 @@
       "source_id": "IAS-5.1",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.RM-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Assessment process — risk management objectives"
@@ -38075,7 +38075,7 @@
       "source_id": "IAS-5.3",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.RM-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Integration and timing — risk management strategy"
@@ -38085,7 +38085,7 @@
       "source_id": "IAS-5.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.RM-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Thresholds — risk appetite and tolerance statements"
@@ -38095,7 +38095,7 @@
       "source_id": "IAS-5.9",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.RM-06",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Analysis and recording — standardised risk documentation method"
@@ -38105,7 +38105,7 @@
       "source_id": "IAS-5.3",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OV-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Integration and scope — risk management strategy oversight"
@@ -38115,7 +38115,7 @@
       "source_id": "IAS-6.2",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.RA-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Assessment scope and AI system info — asset risk identification"
@@ -38125,7 +38125,7 @@
       "source_id": "IAS-6.4",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.RA-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Data and algorithm info — vulnerability identification in AI data"
@@ -38135,7 +38135,7 @@
       "source_id": "IAS-6.8",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.RA-04",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Impact identification — potential impacts and likelihoods"
@@ -38145,7 +38145,7 @@
       "source_id": "IAS-5.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.RA-04",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Thresholds — impact and likelihood assessment"
@@ -38155,7 +38155,7 @@
       "source_id": "IAS-5.9",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.RA-06",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Analysis and approval — risk response choices"
@@ -38165,7 +38165,7 @@
       "source_id": "IAS-6.6",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.RA-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Deployment environment — external threats identification"
@@ -38175,7 +38175,7 @@
       "source_id": "IAS-6.8",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.IM-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Mitigation measures — improvements from evaluations"
@@ -38185,7 +38185,7 @@
       "source_id": "IAS-5.1",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.PO-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Assessment process documentation — risk management policy"
@@ -38195,7 +38195,7 @@
       "source_id": "IAS-5.3",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.RR-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Responsibilities — leadership risk management accountability"
@@ -38205,7 +38205,7 @@
       "source_id": "A.8.1",
       "target_framework": "FINMA",
       "target_id": "V.A",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "Sub-processor list disclosure implements FINMA 2018/3 V.A outsourcing inventory requirement"
@@ -38215,7 +38215,7 @@
       "source_id": "A.10.1",
       "target_framework": "FINMA",
       "target_id": "G3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "PII breach notification to controller enabling FINMA 24h cyber reporting (Guidance 03/2024 G3)"
@@ -38225,7 +38225,7 @@
       "source_id": "A.10.3",
       "target_framework": "FINMA",
       "target_id": "V.H",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "PII return and deletion terms are FINMA 2018/3 V.H written agreement provisions"
@@ -38235,7 +38235,7 @@
       "source_id": "A.11.1",
       "target_framework": "FINMA",
       "target_id": "V.E",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "Confidentiality agreements for PII access implement FINMA 2018/3 V.E security requirements"
@@ -38245,7 +38245,7 @@
       "source_id": "A.11.6",
       "target_framework": "FINMA",
       "target_id": "P3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "Encryption in transit implements FINMA 2023/1 P3 cyber risk management (mn. 61-70)"
@@ -38255,7 +38255,7 @@
       "source_id": "A.11.8",
       "target_framework": "FINMA",
       "target_id": "P3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "Unique user IDs implement FINMA 2023/1 P3 access control requirements"
@@ -38265,7 +38265,7 @@
       "source_id": "A.11.9",
       "target_framework": "FINMA",
       "target_id": "P3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "Account lifecycle management implements FINMA 2023/1 P3 cyber risk management"
@@ -38275,7 +38275,7 @@
       "source_id": "A.11.11",
       "target_framework": "FINMA",
       "target_id": "V.H",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "DPA mandatory terms overlap with FINMA 2018/3 V.H outsourcing contract requirements"
@@ -38285,7 +38285,7 @@
       "source_id": "A.11.12",
       "target_framework": "FINMA",
       "target_id": "V.B",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "Sub-processor obligations implement FINMA 2018/3 V.B selection and monitoring of service providers"
@@ -38295,7 +38295,7 @@
       "source_id": "A.12.1",
       "target_framework": "FINMA",
       "target_id": "V.G",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "Geographical location of PII directly implements FINMA 2018/3 V.G cross-border outsourcing (access from Switzerland guaranteed; mn. 33-36)"
@@ -38305,7 +38305,7 @@
       "source_id": "A.12.2",
       "target_framework": "FINMA",
       "target_id": "V.G",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "Transfer destination documentation is a FINMA 2018/3 V.G cross-border requirement"
@@ -38315,7 +38315,7 @@
       "source_id": "A.4",
       "target_framework": "FINMA",
       "target_id": "P4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "Data minimisation implements FINMA 2023/1 P4 critical data risk management (mn. 71-82)"
@@ -38325,7 +38325,7 @@
       "source_id": "A.6",
       "target_framework": "FINMA",
       "target_id": "P4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "Retention and disclosure controls implement FINMA 2023/1 P4 CIA protection of critical data"
@@ -38335,7 +38335,7 @@
       "source_id": "A.10.2",
       "target_framework": "FINMA",
       "target_id": "V.F",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
       "notes": "Policy documentation retention supports FINMA 2018/3 V.F audit rights exercisable at any time"
@@ -38345,7 +38345,7 @@
       "source_id": "A.3.3",
       "target_framework": "FINMA",
       "target_id": "P1",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Policies for IS — FINMA 2023/1 P1 overarching operational risk management (mn. 22-46)"
@@ -38355,7 +38355,7 @@
       "source_id": "A.3.4",
       "target_framework": "FINMA",
       "target_id": "P1",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "IS roles and responsibilities — FINMA 2023/1 P1 governance accountability"
@@ -38365,7 +38365,7 @@
       "source_id": "A.1.2.6",
       "target_framework": "FINMA",
       "target_id": "P2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "PIA as risk assessment component — FINMA 2023/1 P2 ICT risk management (mn. 47-60)"
@@ -38375,7 +38375,7 @@
       "source_id": "A.3.9",
       "target_framework": "FINMA",
       "target_id": "P2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Access rights for PII systems — FINMA 2023/1 P2 ICT security controls"
@@ -38385,7 +38385,7 @@
       "source_id": "A.3.23",
       "target_framework": "FINMA",
       "target_id": "P2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Secure authentication — FINMA 2023/1 P2 ICT identity management"
@@ -38395,7 +38395,7 @@
       "source_id": "A.3.26",
       "target_framework": "FINMA",
       "target_id": "P3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Use of cryptography — FINMA 2023/1 P3 cyber risk management encryption (mn. 61-70)"
@@ -38405,7 +38405,7 @@
       "source_id": "A.1.4.10",
       "target_framework": "FINMA",
       "target_id": "P3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "PII transmission controls — FINMA 2023/1 P3 network encryption requirements"
@@ -38415,7 +38415,7 @@
       "source_id": "A.2.4.4",
       "target_framework": "FINMA",
       "target_id": "P3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "PII transmission controls (processor) — FINMA 2023/1 P3 encryption requirements"
@@ -38425,7 +38425,7 @@
       "source_id": "A.3.25",
       "target_framework": "FINMA",
       "target_id": "P3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Logging — FINMA 2023/1 P3 cyber risk detection and monitoring"
@@ -38435,7 +38435,7 @@
       "source_id": "A.3.11",
       "target_framework": "FINMA",
       "target_id": "P2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Incident management planning — FINMA 2023/1 P2 ICT incident management (mn. 58-60)"
@@ -38445,7 +38445,7 @@
       "source_id": "A.3.12",
       "target_framework": "FINMA",
       "target_id": "P2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Incident response — FINMA 2023/1 P2 ICT incident response"
@@ -38455,7 +38455,7 @@
       "source_id": "A.3.12",
       "target_framework": "FINMA",
       "target_id": "G3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Incident response — FINMA Guidance 03/2024 G3 detection, response, recovery"
@@ -38465,7 +38465,7 @@
       "source_id": "A.2.5.5",
       "target_framework": "FINMA",
       "target_id": "G4",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Notification of PII disclosure — FINMA Guidance 03/2024 G4 reporting obligations (24h notification)"
@@ -38475,7 +38475,7 @@
       "source_id": "A.3.24",
       "target_framework": "FINMA",
       "target_id": "P5",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Information backup — FINMA 2023/1 P5 business continuity management (mn. 83-96)"
@@ -38485,7 +38485,7 @@
       "source_id": "A.1.2.7",
       "target_framework": "FINMA",
       "target_id": "V.H",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Contracts with PII processors — FINMA 2018/3 V.H written outsourcing agreement requirements"
@@ -38495,7 +38495,7 @@
       "source_id": "A.2.2.2",
       "target_framework": "FINMA",
       "target_id": "V.H",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Customer agreement — FINMA 2018/3 V.H mandatory contract provisions"
@@ -38505,7 +38505,7 @@
       "source_id": "A.2.5.7",
       "target_framework": "FINMA",
       "target_id": "V.A",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Disclosure of subcontractors — FINMA 2018/3 V.A inventory of outsourced functions"
@@ -38515,7 +38515,7 @@
       "source_id": "A.2.5.8",
       "target_framework": "FINMA",
       "target_id": "V.B",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Engagement of subcontractor — FINMA 2018/3 V.B selection and monitoring of service providers"
@@ -38525,7 +38525,7 @@
       "source_id": "A.2.5.9",
       "target_framework": "FINMA",
       "target_id": "V.B",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Change of subcontractor — FINMA 2018/3 V.B monitoring of service providers"
@@ -38535,7 +38535,7 @@
       "source_id": "A.3.10",
       "target_framework": "FINMA",
       "target_id": "V.E",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "IS in supplier agreements — FINMA 2018/3 V.E security requirements for outsourced functions"
@@ -38545,7 +38545,7 @@
       "source_id": "A.3.15",
       "target_framework": "FINMA",
       "target_id": "V.F",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Independent review of IS — FINMA 2018/3 V.F audit and supervision rights"
@@ -38555,7 +38555,7 @@
       "source_id": "A.2.1",
       "target_framework": "DORA",
       "target_id": "Art. 30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Cooperation on PII principal rights — DORA Art.30 audit and information access obligations"
@@ -38565,7 +38565,7 @@
       "source_id": "A.3.1",
       "target_framework": "DORA",
       "target_id": "Art. 30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "PII processor's purpose — DORA Art.30 mandatory purpose-limitation contractual provision"
@@ -38575,7 +38575,7 @@
       "source_id": "A.3.2",
       "target_framework": "DORA",
       "target_id": "Art. 30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Commercial use restriction — DORA Art.30 data security and prohibited use provisions"
@@ -38585,7 +38585,7 @@
       "source_id": "A.6.1",
       "target_framework": "DORA",
       "target_id": "Art. 14",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "PII disclosure notification — DORA Art.14 communication obligations during ICT incidents"
@@ -38595,7 +38595,7 @@
       "source_id": "A.6.2",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Recording of PII disclosures — DORA Art.9 data protection records and controls"
@@ -38605,7 +38605,7 @@
       "source_id": "A.8.1",
       "target_framework": "DORA",
       "target_id": "Art. 29",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Disclosure of sub-contracted PII processing — DORA Art.29 ICT concentration risk; sub-processors are sub-outsourcing chains"
@@ -38615,7 +38615,7 @@
       "source_id": "A.10.1",
       "target_framework": "DORA",
       "target_id": "Art. 17",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Data breach notification to controller — DORA Art.17 ICT incident management; PII breaches qualifying as ICT incidents"
@@ -38625,7 +38625,7 @@
       "source_id": "A.10.3",
       "target_framework": "DORA",
       "target_id": "Art. 30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "PII return, transfer and disposal — DORA Art.30 exit strategy and termination provisions"
@@ -38635,7 +38635,7 @@
       "source_id": "A.11.1",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Confidentiality agreements — DORA Art.9 ICT security; staff NDAs for PII access"
@@ -38645,7 +38645,7 @@
       "source_id": "A.11.3",
       "target_framework": "DORA",
       "target_id": "Art. 12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Control and logging of data restoration — DORA Art.12 backup integrity and controlled restoration"
@@ -38655,7 +38655,7 @@
       "source_id": "A.11.4",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Storage media leaving premises — DORA Art.9 physical ICT asset protection"
@@ -38665,7 +38665,7 @@
       "source_id": "A.11.5",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Prohibition on unencrypted portable storage — DORA Art.9 encryption requirements"
@@ -38675,7 +38675,7 @@
       "source_id": "A.11.6",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Encryption of PII in transit — DORA Art.9 network security and encryption"
@@ -38685,7 +38685,7 @@
       "source_id": "A.11.8",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Unique user IDs — DORA Art.9 identity and access management requirements"
@@ -38695,7 +38695,7 @@
       "source_id": "A.11.9",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "User ID management — DORA Art.9 account lifecycle management"
@@ -38705,7 +38705,7 @@
       "source_id": "A.11.10",
       "target_framework": "DORA",
       "target_id": "Art. 9",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Records of authorised users — DORA Art.9 access monitoring and control"
@@ -38715,7 +38715,7 @@
       "source_id": "A.11.11",
       "target_framework": "DORA",
       "target_id": "Art. 30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Contract measures — DORA Art.30 mandatory contract clauses; DPA and DORA Art.30 overlap on security, audit, breach notification, sub-processor management"
@@ -38725,7 +38725,7 @@
       "source_id": "A.11.12",
       "target_framework": "DORA",
       "target_id": "Art. 29",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Sub-contracted PII processing — DORA Art.29 ICT concentration risk; sub-processor change notifications"
@@ -38735,7 +38735,7 @@
       "source_id": "A.12.1",
       "target_framework": "DORA",
       "target_id": "Art. 30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Geographical location of PII — DORA Art.30 data processing location contractual provision"
@@ -38745,7 +38745,7 @@
       "source_id": "A.12.2",
       "target_framework": "DORA",
       "target_id": "Art. 30",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
       "notes": "Intended destination of PII — DORA Art.30 data transfer and location provisions"
@@ -38755,7 +38755,7 @@
       "source_id": "A.2.2-4",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
       "notes": "AI policy framework — PCI DSS Req.12 comprehensive information security policy and programme"
@@ -38765,7 +38765,7 @@
       "source_id": "A.3.2-3",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
       "notes": "AI roles and responsibilities — PCI DSS Req.12 security programme accountability and management"
@@ -38775,7 +38775,7 @@
       "source_id": "A.4.2-6",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
       "notes": "AI system resources — PCI DSS Req.12.3 targeted risk analysis for in-scope AI systems and models"
@@ -38785,7 +38785,7 @@
       "source_id": "A.5.2-5",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
       "notes": "AI impact assessment — PCI DSS Req.12.2 annual risk assessment for AI components processing cardholder data"
@@ -38795,7 +38795,7 @@
       "source_id": "A.6.1",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
       "notes": "AI development governance — PCI DSS Req.6 secure systems and software; secure coding, testing, and change control for AI applications"
@@ -38805,7 +38805,7 @@
       "source_id": "A.6.2",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 6",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
       "notes": "AI system lifecycle monitoring — PCI DSS Req.6.3 vulnerability management and Req.10 logging for AI system access and outputs"
@@ -38815,7 +38815,7 @@
       "source_id": "A.7.2-6",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
       "notes": "Data for AI systems — PCI DSS Req.3 protect stored account data; AI training data minimisation, masking, and tokenisation when PAN is in scope"
@@ -38825,7 +38825,7 @@
       "source_id": "A.9.2-4",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 7",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
       "notes": "Responsible use of AI — PCI DSS Req.7 restrict access by business need; human oversight and least-privilege access for AI systems in CDE"
@@ -38835,7 +38835,7 @@
       "source_id": "A.10.2-4",
       "target_framework": "PCI_DSS_4.0.1",
       "target_id": "Req. 12",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
       "notes": "Third-party AI relationships — PCI DSS Req.12.8 TPSP management; AI provider agreements, monitoring, and compliance confirmation"
@@ -38845,7 +38845,7 @@
       "source_id": "A.2.2.5",
       "target_framework": "CH_NDSG",
       "target_id": "CON.2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
       "notes": "Obligation to flag non-compliant controller instructions implied by nDSG Art.9 processor obligation"
@@ -38855,7 +38855,7 @@
       "source_id": "A.2.5.5",
       "target_framework": "CH_NDSG",
       "target_id": "ENF.1",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
       "notes": "Notification of PII disclosure requests — government access may require FDPIC notification"
@@ -38865,7 +38865,7 @@
       "source_id": "A.2.5.7",
       "target_framework": "CH_NDSG",
       "target_id": "CON.2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
       "notes": "Disclosure of subcontractors — nDSG Art.9 sub-processor obligations in DPAs"
@@ -38875,7 +38875,7 @@
       "source_id": "A.3.11",
       "target_framework": "CH_NDSG",
       "target_id": "SEC.2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
       "notes": "Incident management planning directly supports nDSG breach notification to FDPIC (Art.24)"
@@ -38885,7 +38885,7 @@
       "source_id": "A.3.12",
       "target_framework": "CH_NDSG",
       "target_id": "SEC.2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
       "notes": "Incident response implements nDSG breach notification to FDPIC within required timeline"
@@ -38895,7 +38895,7 @@
       "source_id": "A.3.12",
       "target_framework": "CH_NDSG",
       "target_id": "SEC.3",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
       "notes": "Incident response implements nDSG breach notification to data subjects where required"
@@ -38905,7 +38905,7 @@
       "source_id": "A.3.13",
       "target_framework": "CH_NDSG",
       "target_id": "ENF.2",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
       "notes": "Legal/regulatory requirements tracking implements nDSG accountability obligation (Art.8)"
@@ -38915,7 +38915,7 @@
       "source_id": "A.1.2.2",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Identify and document purpose — legal/regulatory requirements for PII processing"
@@ -38925,7 +38925,7 @@
       "source_id": "A.1.2.4",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.PO-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Determine how consent is obtained — consent policy documented per GV.PO-02"
@@ -38935,7 +38935,7 @@
       "source_id": "A.1.2.5",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.PO-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Obtain and record consent — consent records implement GV.PO-02 policy tracking"
@@ -38945,7 +38945,7 @@
       "source_id": "A.1.2.6",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.RA-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "PIA identifies threats — ID.RA-03 internal and external threats to the organisation"
@@ -38955,7 +38955,7 @@
       "source_id": "A.1.2.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-04",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Contracts with PII processors — GV.SC-04 suppliers known and prioritised by criticality"
@@ -38965,7 +38965,7 @@
       "source_id": "A.1.3.2",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Obligations to PII principals — data subject rights as legal/regulatory requirements"
@@ -38975,7 +38975,7 @@
       "source_id": "A.1.3.5",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Mechanism to modify/withdraw consent — regulatory compliance under GV.OC-03"
@@ -38985,7 +38985,7 @@
       "source_id": "A.1.3.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Access, correction or erasure rights — data subject rights as legal requirements"
@@ -38995,7 +38995,7 @@
       "source_id": "A.1.3.10",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Handling DSAR requests — regulatory compliance obligation under GV.OC-03"
@@ -39005,7 +39005,7 @@
       "source_id": "A.1.3.11",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Automated decision making obligations — GDPR/nDSG legal requirements under GV.OC-03"
@@ -39015,7 +39015,7 @@
       "source_id": "A.1.4.2",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Limit collection — data minimisation implements PR.DS-01 data-at-rest protection"
@@ -39025,7 +39025,7 @@
       "source_id": "A.1.4.3",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Limit processing — processing limitation implements PR.DS-01 and PR.DS-10"
@@ -39035,7 +39035,7 @@
       "source_id": "A.1.4.4",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-10",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Accuracy and quality — data integrity directly implements PR.DS-10"
@@ -39045,7 +39045,7 @@
       "source_id": "A.1.4.6",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "De-identification and deletion — implements PR.DS-01 data-at-rest protection"
@@ -39055,7 +39055,7 @@
       "source_id": "A.1.4.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Temporary files — secure erasure of temp files implements PR.DS-01"
@@ -39065,7 +39065,7 @@
       "source_id": "A.1.4.8",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.PO-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Retention — data retention policies are information policy obligations under GV.PO-02"
@@ -39075,7 +39075,7 @@
       "source_id": "A.1.4.9",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Disposal — secure disposal directly implements PR.DS-01"
@@ -39085,7 +39085,7 @@
       "source_id": "A.1.5.2",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Identify basis for PII transfer — cross-border transfer legal basis is regulatory compliance"
@@ -39095,7 +39095,7 @@
       "source_id": "A.1.5.3",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Countries for PII transfer — transfer destination documentation is a regulatory requirement"
@@ -39105,7 +39105,7 @@
       "source_id": "A.1.5.4",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.AM-07",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Records of PII transfer — transfer records contribute to data inventory ID.AM-07"
@@ -39115,7 +39115,7 @@
       "source_id": "A.1.5.5",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.AM-07",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Records of PII disclosures — disclosure records contribute to data flow inventory"
@@ -39125,7 +39125,7 @@
       "source_id": "A.2.2.3",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-07",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Organisation's purposes — purpose limitation is a supplier obligation under GV.SC-07"
@@ -39135,7 +39135,7 @@
       "source_id": "A.2.2.4",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-07",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Marketing/advertising use prohibition — commercial use prohibition under GV.SC-07"
@@ -39145,7 +39145,7 @@
       "source_id": "A.2.2.5",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-07",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Infringing instruction — obligation to flag non-compliant instructions implements GV.SC-07"
@@ -39155,7 +39155,7 @@
       "source_id": "A.2.2.6",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-04",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Customer obligations — processor information obligations to controller implement GV.SC-04"
@@ -39165,7 +39165,7 @@
       "source_id": "A.2.5.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-06",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Disclosure of subcontractors — sub-processor management implements GV.SC-06"
@@ -39175,7 +39175,7 @@
       "source_id": "A.2.5.8",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-06",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Engagement of subcontractor — sub-processor engagement implements GV.SC-06"
@@ -39185,7 +39185,7 @@
       "source_id": "A.2.5.9",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-06",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Change of subcontractor — sub-processor change notification implements GV.SC-06"
@@ -39195,7 +39195,7 @@
       "source_id": "A.3.5",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.AM-07",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Classification of information — PII classification contributes to data inventory ID.AM-07"
@@ -39205,7 +39205,7 @@
       "source_id": "A.3.6",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "ID.AM-07",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Labelling of information — PII labelling supports data inventory ID.AM-07"
@@ -39215,7 +39215,7 @@
       "source_id": "A.3.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Information transfer — PII transfer controls implement PR.DS-02 data-in-transit protection"
@@ -39225,7 +39225,7 @@
       "source_id": "A.3.10",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-04",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Supplier security agreements — implement GV.SC-04 supplier prioritisation"
@@ -39235,7 +39235,7 @@
       "source_id": "A.3.14",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-11",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Protection of records — implements PR.DS-11 data destroyed according to policy"
@@ -39245,7 +39245,7 @@
       "source_id": "A.3.18",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.RR-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Confidentiality agreements — NDAs implement GV.RR-03 adequate resources for cybersecurity"
@@ -39255,7 +39255,7 @@
       "source_id": "A.3.19",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.PS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Clear desk and clear screen — physical security implement PR.PS-01 configuration management"
@@ -39265,7 +39265,7 @@
       "source_id": "A.3.20",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Storage media — implements PR.DS-01 data-at-rest protection"
@@ -39275,7 +39275,7 @@
       "source_id": "A.3.21",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-11",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Secure disposal of equipment — implements PR.DS-11 data destroyed according to policy"
@@ -39285,7 +39285,7 @@
       "source_id": "A.3.22",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.PS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "User endpoint devices — implements PR.PS-01 device configuration management"
@@ -39295,7 +39295,7 @@
       "source_id": "A.3.27",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.PS-06",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Secure development lifecycle — implements PR.PS-06 only authorised software"
@@ -39305,7 +39305,7 @@
       "source_id": "A.3.28",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.PS-06",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Application security requirements — implements PR.PS-06"
@@ -39315,7 +39315,7 @@
       "source_id": "A.3.29",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.PS-06",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Secure system architecture — implements PR.PS-06 secure development principles"
@@ -39325,7 +39325,7 @@
       "source_id": "A.3.30",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-07",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Outsourced development — implements GV.SC-07 due diligence on suppliers"
@@ -39335,7 +39335,7 @@
       "source_id": "A.3.31",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
       "notes": "Test information — test data controls implement PR.DS-01 data-at-rest protection"
@@ -39345,7 +39345,7 @@
       "source_id": "A.2.1",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Cooperation on PII principal rights — regulatory compliance obligation under GV.OC-03"
@@ -39355,7 +39355,7 @@
       "source_id": "A.3.2",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-07",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Commercial use prohibition — supplier constraint under GV.SC-07"
@@ -39365,7 +39365,7 @@
       "source_id": "A.4",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Collection limitation — minimise collection = minimise data-at-rest exposure PR.DS-01"
@@ -39375,7 +39375,7 @@
       "source_id": "A.5",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.9,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Data minimisation — anonymisation/pseudonymisation implement PR.DS-01"
@@ -39385,7 +39385,7 @@
       "source_id": "A.6",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-11",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Use, retention and disclosure limitation — retention and controlled disclosure implement PR.DS-11"
@@ -39395,7 +39395,7 @@
       "source_id": "A.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-10",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Accuracy and quality — data accuracy directly implements PR.DS-10 data integrity"
@@ -39405,7 +39405,7 @@
       "source_id": "A.8",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Openness and transparency — sub-processor and location transparency implements GV.OC-02"
@@ -39415,7 +39415,7 @@
       "source_id": "A.9",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Individual participation and access — DSAR support = regulatory compliance GV.OC-03"
@@ -39425,7 +39425,7 @@
       "source_id": "A.10",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.PO-02",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Accountability — processing records and accountability mechanisms implement GV.PO-02"
@@ -39435,7 +39435,7 @@
       "source_id": "A.11.1",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.RR-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Confidentiality agreements — staff NDAs implement GV.RR-03 adequate resources for cybersecurity"
@@ -39445,7 +39445,7 @@
       "source_id": "A.11.2",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.PS-01",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.75,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Hardcopy restriction — print controls implement PR.PS-01 configuration management"
@@ -39455,7 +39455,7 @@
       "source_id": "A.11.7",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "PR.DS-11",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Secure disposal of hardcopy — implements PR.DS-11 data destruction"
@@ -39465,7 +39465,7 @@
       "source_id": "A.11.11",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.SC-04",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.85,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Contract measures — DPA mandatory terms implement GV.SC-04 supplier management"
@@ -39475,7 +39475,7 @@
       "source_id": "A.12",
       "target_framework": "NIST_CSF_2.0",
       "target_id": "GV.OC-03",
-      "mapping_type": "related",
+      "mapping_type": "related-to",
       "confidence": 0.8,
       "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
       "notes": "Privacy compliance — data residency laws are regulatory requirements under GV.OC-03"
