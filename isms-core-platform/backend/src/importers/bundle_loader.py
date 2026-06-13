@@ -135,7 +135,9 @@ class BundleLoader:
 
         try:
             self._upsert_framework(fw_data, content_hash, data)
-            loaded = self._upsert_controls(data.get("objects", []))
+            objects = data.get("objects", [])
+            self._purge_stale_controls(uuid.UUID(fw_data["id"]), objects)
+            loaded = self._upsert_controls(objects)
 
             self._finish_history(history, loaded, 0)
             stats["frameworks"] += 1
@@ -170,11 +172,13 @@ class BundleLoader:
         )
 
         try:
+            objects = data.get("objects", [])
             for fw_data in frameworks:
                 self._upsert_framework(fw_data, content_hash, data)
+                self._purge_stale_controls(uuid.UUID(fw_data["id"]), objects)
                 stats["frameworks"] += 1
 
-            loaded = self._upsert_controls(data.get("objects", []))
+            loaded = self._upsert_controls(objects)
 
             self._finish_history(history, loaded, 0)
             stats["controls"] += loaded
@@ -544,6 +548,35 @@ class BundleLoader:
     # ------------------------------------------------------------------
     # Shared helpers
     # ------------------------------------------------------------------
+
+    def _purge_stale_controls(self, framework_id: uuid.UUID, objects: list[dict]) -> None:
+        """Delete FrameworkControl rows for framework_id whose id is not in the incoming batch.
+
+        Required when a bundle is re-generated with a new UUID scheme: the unique
+        constraint (framework_id, control_id) would block the insert of new rows
+        while old rows with the same (framework_id, control_id) but different id
+        still exist. CASCADE clears any CrossFrameworkMapping FKs pointing at
+        stale controls; those mappings are recreated when crosswalk.json reloads.
+        """
+        incoming_ids = {
+            uuid.UUID(o["id"])
+            for o in objects
+            if o.get("type") == "framework_control" and o.get("id")
+        }
+        if not incoming_ids:
+            return
+        deleted = self.db.execute(
+            delete(FrameworkControl).where(
+                FrameworkControl.framework_id == framework_id,
+                FrameworkControl.id.not_in(incoming_ids),
+            )
+        ).rowcount
+        if deleted:
+            logger.info(
+                "Purged %d stale control(s) for framework %s (UUID scheme change)",
+                deleted, framework_id,
+            )
+        self.db.flush()
 
     def _upsert_framework(self, fw_data: dict, content_hash: str | None, bundle: dict):
         """Create or update a Framework record."""
