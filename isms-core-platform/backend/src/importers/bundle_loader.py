@@ -558,13 +558,12 @@ class BundleLoader:
     # ------------------------------------------------------------------
 
     def _purge_stale_controls(self, framework_id: uuid.UUID, objects: list[dict]) -> None:
-        """Delete FrameworkControl rows for framework_id whose id is not in the incoming batch.
+        """Delete all existing FrameworkControl rows for framework_id before reload.
 
-        Required when a bundle is re-generated with a new UUID scheme: the unique
-        constraint (framework_id, control_id) would block the insert of new rows
-        while old rows with the same (framework_id, control_id) but different id
-        still exist. CASCADE clears any CrossFrameworkMapping FKs pointing at
-        stale controls; those mappings are recreated when crosswalk.json reloads.
+        A full purge avoids UniqueViolation when rows were previously inserted with
+        different UUIDs or have swapped control_ids between load cycles. CASCADE
+        clears CrossFrameworkMapping FK references; those are recreated when
+        crosswalk.json reloads in Phase 3.
         """
         incoming_ids = {
             uuid.UUID(o["id"])
@@ -576,15 +575,15 @@ class BundleLoader:
         deleted = self.db.execute(
             delete(FrameworkControl).where(
                 FrameworkControl.framework_id == framework_id,
-                FrameworkControl.id.not_in(incoming_ids),
             )
         ).rowcount
         if deleted:
             logger.info(
-                "Purged %d stale control(s) for framework %s (UUID scheme change)",
+                "Purged %d existing control(s) for framework %s before reload",
                 deleted, framework_id,
             )
         self.db.flush()
+        self.db.expire_all()
 
     def _upsert_framework(self, fw_data: dict, content_hash: str | None, bundle: dict):
         """Create or update a Framework record."""
