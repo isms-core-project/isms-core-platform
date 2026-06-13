@@ -111,11 +111,11 @@ def _empty(fw: Framework, total: int) -> dict[str, Any]:
     }
 
 
-def get_all_target_frameworks(db: DBSession) -> list[Framework]:
-    """All frameworks except ISO 27001 (the source)."""
+def get_all_target_frameworks(db: DBSession, exclude_code: str = 'ISO27001') -> list[Framework]:
+    """All frameworks except the source framework."""
     return db.execute(
         select(Framework)
-        .where(~Framework.code.ilike('ISO27001%'))
+        .where(~Framework.code.ilike(f'{exclude_code}%'))
         .order_by(Framework.name)
     ).scalars().all()
 
@@ -124,6 +124,7 @@ def compute_multi_framework(
     db: DBSession,
     covered_fc_ids: set,
     framework_codes: list[str] | None = None,
+    exclude_code: str = 'ISO27001',
 ) -> list[dict[str, Any]]:
     """Compute coverage for multiple target frameworks."""
     if framework_codes:
@@ -134,7 +135,6 @@ def compute_multi_framework(
             )
         ).scalars().all()
         if not fws:
-            # Fallback: prefix match
             fws = []
             for code in framework_codes:
                 fw = db.execute(
@@ -143,7 +143,7 @@ def compute_multi_framework(
                 if fw:
                     fws.append(fw)
     else:
-        fws = get_all_target_frameworks(db)
+        fws = get_all_target_frameworks(db, exclude_code)
 
     return [infer_single_framework(db, covered_fc_ids, fw) for fw in fws]
 

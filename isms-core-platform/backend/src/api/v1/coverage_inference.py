@@ -64,20 +64,24 @@ def infer_coverage(
 
 @router.get("/multi-framework")
 def multi_framework_coverage(
-    project_id: str | None = Query(None),
+    source_framework: str = Query('ISO27001', description="Source ISO code, e.g. ISO27001, ISO27701"),
     frameworks: str | None = Query(None, description="Comma-separated codes, e.g. NIS2,DORA,GDPR"),
     db: DBSession = Depends(get_db),
     org_id: uuid.UUID = Depends(get_org_context),
     _: User = Depends(get_current_user),
 ):
-    """Inferred coverage across all (or selected) target frameworks for a project."""
-    covered_cg_ids = get_project_covered_cg_ids(db, project_id, str(org_id))
-    covered_fc_ids = get_covered_fc_ids(db, covered_cg_ids)
+    """Inferred coverage across all target frameworks for a given source ISO framework."""
+    from sqlalchemy import select as _select
+    from src.domain.frameworks import FrameworkControl as FC
+    src_fw = _resolve_framework(db, source_framework)
+    covered_fc_ids = set(db.scalars(
+        _select(FC.id).where(FC.framework_id == src_fw.id)
+    ).all())
     fw_codes = [c.strip() for c in frameworks.split(',')] if frameworks else None
-    results = compute_multi_framework(db, covered_fc_ids, fw_codes)
+    results = compute_multi_framework(db, covered_fc_ids, fw_codes, exclude_code=source_framework)
     return {
-        'project_id':         project_id,
-        'assessed_controls':  len(covered_cg_ids),
+        'source_framework':   src_fw.code,
+        'assessed_controls':  len(covered_fc_ids),
         'frameworks':         results,
     }
 

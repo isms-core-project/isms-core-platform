@@ -461,9 +461,9 @@ export class CoverageComponent {
   }))
 
   inferredQuery = injectQuery(() => ({
-    queryKey: ['coverage-inferred'],
+    queryKey: ['coverage-inferred', PRODUCT_SOURCE_FRAMEWORK[this.product.product()] ?? 'ISO27001'],
     queryFn: () => fetch(
-      `/api/v1/coverage/multi-framework`,
+      `/api/v1/coverage/multi-framework?source_framework=${PRODUCT_SOURCE_FRAMEWORK[this.product.product()] ?? 'ISO27001'}`,
       { headers: { Authorization: 'Bearer ' + (this.tokenStore.get() ?? '') } }
     ).then(r => r.json()) as Promise<{ assessed_controls: number; frameworks: InferredResult[] }>,
     enabled: this.activeTab() === 1,
