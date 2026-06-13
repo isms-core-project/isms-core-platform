@@ -50,7 +50,7 @@ Five product families are available:
 
 - Manage your ISMS across 99 control groups covering ISO 27001, ISO 27701, ISO 27018, and ISO 42001
 - Track control implementation status, gaps, and evidence
-- Run compliance assessments across 25 regulatory frameworks (NIS2, DORA, NIST CSF 2.0, NIST AI RMF 1.0, CSA CCM, NIST SP 800-53, NCSC CAF v4.0, and more)
+- Run compliance assessments across 29 regulatory frameworks (NIS2, DORA, NIST CSF 2.0, NIST AI RMF 1.0, PCI DSS v4.0.1, BSI C5:2026, CSA CCM, NIST SP 800-53, NCSC CAF v4.0, and more)
 - Collect evidence automatically via 44 integrations (Microsoft, CrowdStrike, Jira, ServiceNow, and more)
 - Monitor live threat intelligence — MITRE ATT&CK, CISA KEV, NVD CVE/CPE feeds, EPSS scores
 - Manage risks with a full 5×5 risk register and treatment workflow
@@ -221,7 +221,7 @@ Control Owners can update status for controls assigned to them. ISMS Managers ca
 
 ## Compliance Assessments {#compliance-assessments}
 
-ISMS CORE includes 24 built-in compliance assessment modules. Each module maps your ISO 27001 control posture to a specific regulatory framework.
+ISMS CORE includes 29 built-in compliance assessment modules. Each module maps your ISO 27001 control posture to a specific regulatory framework.
 
 ### Available frameworks
 
@@ -252,6 +252,9 @@ ISMS CORE includes 24 built-in compliance assessment modules. Each module maps y
 | UK Operational Resilience | UK FCA/PRA operational resilience |
 | NCSC CAF v4.0 | UK National Cyber Security Centre Cyber Assessment Framework — outcome-based assessment, 4 Objectives, 14 Principles, 41 Contributing Outcomes |
 | ReCyF v2.5 | French ANSSI NIS2 transposition framework |
+| BSI C5:2026 | German federal cloud security compliance criteria (2026 edition) — 130+ criteria, 17 domains |
+| BSI C3A | BSI Cybersecurity and Cloud Criteria for AI — AI-specific cloud security overlay |
+| PCI DSS v4.0.1 | Payment Card Industry Data Security Standard — 12 requirements, 323 sub-requirements, 6 milestones |
 
 ### Running an assessment
 
