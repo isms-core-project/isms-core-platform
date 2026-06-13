@@ -208,7 +208,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats, import triggers |
 | **Full-Text Search** | Search across all policy and IMP document content via OpenSearch (product-filtered) |
 | **ISMS Compass** | AI gap analysis against ISMS CORE Gold Standard (requires `ANTHROPIC_API_KEY`) |
-| **Compliance Assessment Suite** | 25 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md). |
+| **Compliance Assessment Suite** | 27 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md). |
 | **NIST CSF 2.0 Assessment** | 106 subcategories across 6 functions (incl. GV — Govern), tier 1–4 ratings, radar + bar chart, XLSX import from official NIST template, XLSX/CSV export |
 | **NIS2 Assessment** | EU 2022/2555 — 10 Article 21(2) security measures + 5 Article 23 reporting obligations, maturity 0–4 |
 | **DORA Assessment** | EU 2022/2554 — 25 articles across 4 chapters (ICT Risk, Incident Mgmt, Resilience Testing, Third-Party Risk), maturity 0–4 |
@@ -406,9 +406,11 @@ isms-core-worker            Up (healthy)
 isms-core-connectors        Up (healthy)
 isms-core-feeds             Up (healthy)
 isms-core-beat              Up
+isms-core-backup            Up
 ```
 
 > `isms-core-beat` shows `Up` without `(healthy)` — this is normal. Celery Beat has no HTTP endpoint.
+> `isms-core-backup` shows `Up` without `(healthy)` — this is normal. The backup container runs on a cron schedule and has no HTTP endpoint.
 
 **Alembic migrations run automatically.** The backend applies all pending migrations via `entrypoint.sh` on startup. No manual `alembic upgrade head` needed.
 
@@ -475,7 +477,7 @@ Log in as admin → **Admin → First-Run Setup**. Run in order, top to bottom:
 | **Evidence** | Upload and link evidence to control groups and requirements |
 | **Coverage** | Heatmap of Framework and Operational coverage |
 | **QA** | Existence checker — validates artifact completeness across all five products |
-| **Compliance Assessments** | 25 frameworks — NIST CSF 2.0, NIS2, DORA, CIS v8, BSI, TISAX, Swiss nDSG/ISG, EU AI Act, NIST AI RMF, NCSC CAF v4.0, ReCyF v2.5 (FR NIS2), and more |
+| **Compliance Assessments** | 27 frameworks — NIST CSF 2.0, NIS2, DORA, CIS v8, BSI IT-Grundschutz, BSI C5:2026, BSI C3A, TISAX, Swiss nDSG/ISG, EU AI Act, NIST AI RMF, NCSC CAF v4.0, ReCyF v2.5 (FR NIS2), and more |
 | **Risk Register** | Risk register — empty, ready for data entry |
 | **KPI Metrics** | KPI dashboard — empty, ready for data entry |
 | **TPRM** | Third-party risk management — empty, ready for data entry |
@@ -819,7 +821,42 @@ docker compose logs -f isms-core-worker
 docker compose logs -f isms-core-feeds
 ```
 
-### Backup the Database
+### Automated Volume Backup
+
+The stack includes an **`isms-core-backup`** container ([offen/docker-volume-backup](https://github.com/offen/docker-volume-backup)) that runs on a daily cron schedule.
+
+**What it backs up:** `postgres-data`, `garage-meta`, and `garage-data` volumes (OpenSearch data is excluded — ISM snapshots to Garage S3 cover it).
+
+**Configuration:** copy `backup.env.example` → `backup.env` and edit before starting:
+
+```bash
+cp backup.env.example backup.env
+# Edit BACKUP_CRON_EXPRESSION, BACKUP_RETENTION_DAYS, and optionally
+# uncomment the SSH or S3 remote destination blocks.
+```
+
+Key settings in `backup.env`:
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `BACKUP_CRON_EXPRESSION` | `30 3 * * *` | Daily at 03:30 UTC |
+| `BACKUP_FILENAME` | `isms-backup-%Y-%m-%dT%H-%M-%S.tar.gz` | Archive filename pattern |
+| `BACKUP_COMPRESSION` | `gz` | Compression algorithm |
+| `BACKUP_RETENTION_DAYS` | `7` | Archives older than this are pruned |
+| `BACKUP_PRUNING_PREFIX` | `isms-backup-` | Only prune files matching this prefix |
+
+The archive destination on the host is set in `.env`:
+
+```bash
+BACKUP_ARCHIVE_PATH=/var/backups/isms-core    # must exist before starting the stack
+```
+
+Create the directory once:
+```bash
+sudo mkdir -p /var/backups/isms-core
+```
+
+**PostgreSQL-only manual backup (one-off or CI):**
 
 ```bash
 docker exec isms-core-postgres \

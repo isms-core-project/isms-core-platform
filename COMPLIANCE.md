@@ -5,11 +5,11 @@
 <h1 align="center">🎋 ISMS CORE — Compliance Assessment Modules</h1>
 
 <p align="center">
-  <strong>Twenty-five built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
+  <strong>Twenty-seven built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Frameworks-25-2E8B57?style=flat-square" alt="25 Frameworks"/>
+  <img src="https://img.shields.io/badge/Frameworks-27-2E8B57?style=flat-square" alt="27 Frameworks"/>
   <img src="https://img.shields.io/badge/Requirements-700+-0066CC?style=flat-square" alt="700+ Requirements"/>
   <img src="https://img.shields.io/badge/Export-CSV_%7C_XLSX_%7C_PDF-FF6600?style=flat-square" alt="Export"/>
   <img src="https://img.shields.io/badge/Assessment_Collections-Grouping_%26_Reports-2E7D32?style=flat-square" alt="Collections"/>
@@ -19,7 +19,7 @@
 
 ## Overview
 
-ISMS CORE Platform includes a unified compliance assessment layer covering 25 built-in frameworks across Europe, North America, and globally, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
+ISMS CORE Platform includes a unified compliance assessment layer covering 27 built-in frameworks across Europe, North America, and globally, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
 
 Assessment results can be grouped into **Assessment Collections** — named bundles that aggregate status across multiple frameworks for reporting or audit purposes, with CSV, XLSX (colour-coded), and PDF (A4) export.
 
@@ -56,6 +56,8 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [CSA AICM v1.0.3](#csa-ai-controls-matrix-v103) | CSA | 243 controls | 18 Domains | 0–4 | Organisations developing, deploying, or procuring AI systems |
 | [NCSC CAF v4.0 (UK)](#ncsc-caf-v40-uk) | NCSC UK | 41 Contributing Outcomes | 14 Principles / 4 Objectives | 0/2/4 | UK operators of essential services / CNI |
 | [ReCyF v2.5 — France NIS2](#recyf-v25--france-nis2-anssi) | ANSSI | 20 Security Objectives | 4 Pillars | 0–4 | French NIS2 entities (EI & EE) — Loi 2024-449 |
+| [BSI C5:2026](#bsi-c52026) | BSI (Germany) | 168 criteria | 17 Domains | 0–4 | Cloud service providers (DE/EU) seeking C5 attestation |
+| [BSI C3A](#bsi-c3a-criteria-enabling-cloud-computing-autonomy) | BSI (Germany) | 30 criterion groups | 6 SOV Domains | 0–4 | Cloud CSPs + customers evaluating cloud sovereignty |
 | [Custom (YAML)](#custom-frameworks-yaml-import) | User-defined | User-defined | User-defined | User-defined | All |
 
 ---
@@ -517,6 +519,49 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 
 ---
 
+### BSI C5:2026
+
+**Source:** Bundesamt für Sicherheit in der Informationstechnik — Cloud Computing Compliance Criteria Catalogue (C5:2026), v1.0.1, published 7 April 2026. Replaces C5:2020.
+**Scope:** 168 criteria across 17 domains: Organisation of Information Security (OIS), Security Policies and Procedures (SP), Personnel (HR), Asset Management (AM), Physical Security (PS), Operations (OPS), Identity and Access Management (IAM), Cryptography and Key Management (CRY), Communication Security (COS), Portability and Interoperability (PI), Procurement/Development/Modification (DEV), Control of Service Providers and Suppliers (SSO), Security Incident Management (SIM), Business Continuity Management (BCM), Compliance (COM), Dealing with Investigation Requests from Government Agencies (INQ), Product Safety and Security (PSS).
+**Scoring:** Maturity levels 0–4
+**Audience:** Cloud service providers (CSPs) seeking BSI C5 attestation (Type 1 or Type 2); cloud customers in Germany and the EU performing vendor due diligence; public sector procurement; organisations subject to NIS2 or KRITIS with cloud dependencies.
+
+**Structure notes:**
+- Each criterion has subcriteria typed as: **Basic** (mandatory threshold), **Additional-Sharpening** (raises the bar on existing requirements), and **Additional-Complementing** (expands scope). The platform assesses at the 168 top-level criterion level — subcriteria inform the narrative but are not individually scored.
+- OIS-01 requires an ISO/IEC 27001-compliant ISMS — C5:2026 is therefore a cloud-specific extension layer on top of ISO 27001, not a standalone alternative.
+- Domain PI (Portability and Interoperability) is new in C5:2026 — not present in C5:2020.
+
+**Coverage notes:**
+- Based on the official BSI machine-readable XLSX (`C5_2026_editable_en.xlsx`, published with the standard)
+- Full English-language criterion text included; German original available at bsi.bund.de
+- Formal C5 attestation requires engagement with a C5-qualified auditor; this module supports internal readiness assessment
+
+---
+
+### BSI C3A — Criteria enabling Cloud Computing Autonomy
+
+**Source:** Bundesamt für Sicherheit in der Informationstechnik — Criteria enabling Cloud Computing Autonomy (C3A), v1.0, published 27 April 2026.
+**Scope:** 30 criterion groups across 6 Sovereignty (SOV) domains: SOV-1 Strategic Sovereignty, SOV-2 Legal & Jurisdictional Sovereignty, SOV-3 Data Sovereignty, SOV-4 Operational Sovereignty, SOV-5 Supply Chain Sovereignty, SOV-6 Technology Sovereignty.
+**Scoring:** Maturity levels 0–4
+**Audience:** Cloud service providers demonstrating sovereignty capabilities; cloud service customers (government, KRITIS operators, regulated entities) evaluating vendor autonomy; EU public sector procurement under digital sovereignty requirements.
+
+**Prerequisite:** C3A presupposes that the cloud service provider meets BSI C5:2026 criteria — C5 covers the security foundation (SOV-7 Security & Compliance) that C3A builds upon. Both modules are available in the platform and can be assessed together.
+
+**Domain structure:**
+- **SOV-1 Strategic Sovereignty (4 groups):** Jurisdiction, Registered Office, CSP Effective Control, CSP Control Change notification (90-day advance notice)
+- **SOV-2 Legal & Jurisdictional Sovereignty (3 groups):** Extraterritorial Exposure (annual non-EU law review), Audit Rights (national/German authority access), State of Defense Takeover
+- **SOV-3 Data Sovereignty (5 groups):** Data Residence (EU/DE options), External Key Management (BYOK for IaaS/PaaS/SaaS), External Identity Provider, Logging & Monitoring (real-time API access), Client-Side Encryption
+- **SOV-4 Operational Sovereignty (10 groups):** Operating Personnel (EU/DE residency), Remote Work (EU/DE access paths), Redundant Connectivity, SOC (EU/DE operated), Ingress Data Control, Update Threat Analysis, Data Exchange Monitoring, Data Exchange Gateways, Disconnect (annual tested), Reconnect (90-day recovery)
+- **SOV-5 Supply Chain Sovereignty (5 groups):** Software Dependencies (SBOM per BSI TR-03183-2), Hardware Dependencies, External Service Dependencies, Export Restriction management, Capacity Management (EU/DE)
+- **SOV-6 Technology Sovereignty (3 groups):** Source Code Availability (EU backup, max 24h old, 5 versions minimum), Continuous Service Delivery (contingency strategies), Software Development (independent toolchain access)
+
+**Coverage notes:**
+- SOV-7 (Security & Compliance) and SOV-8 (Environmental Sustainability) from the EU Cloud Sovereignty Framework are intentionally not covered — SOV-7 is addressed by C5:2026, SOV-8 is outside BSI's scope
+- Criterion variants (C1/C2 = EU vs. German tiers; AC = Additional criteria) are documented in criterion group descriptions; the platform scores at the criterion group level
+- Based on the official PDF (C3A_Cloud_Computing_Autonomy.pdf, BSI, April 2026)
+
+---
+
 ### Custom Frameworks (YAML Import)
 
 Upload any custom, sector-specific, or proprietary control framework via YAML. Once imported, the platform maps each control against ISO 27001:2022 via `iso_mappings` fields and shows inferred coverage in the Coverage page.
@@ -582,4 +627,4 @@ Total: **3,433 crosswalk objects across 44 axes** available in the Crosswalk Vie
 
 ---
 
-*Part of [ISMS CORE Project](README.md) — ISO 27001 · ISO 27701 · ISO 27017 · ISO 27018* · [Compliance details at isms-core.com/compliance.html](https://isms-core.com/compliance.html)
+*Part of [ISMS CORE Project](README.md) — ISO 27001 · ISO 27701 · ISO 27017 · ISO 27018 · ISO 42001* · [Compliance details at isms-core.com/compliance.html](https://isms-core.com/compliance.html)
