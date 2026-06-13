@@ -100,7 +100,15 @@ class BundleLoader:
             self._load_control_groups(cg_bundle[0].name, cg_bundle[1], stats)
             self.db.flush()
 
-        # Phase 3: Crosswalk mappings (crosswalk + control dependencies)
+        # Phase 3: Crosswalk mappings — full replace to handle PK changes between regenerations.
+        # db.merge() goes by primary key: when the generator produces new PKs for the same
+        # (source_control_id, target_control_id, mapping_type) triple, the INSERT conflicts with
+        # the old row still in the DB.  A full delete before re-insert is safe because
+        # CrossFrameworkMapping is derived data with no downstream FK dependents.
+        deleted_cfm = self.db.execute(delete(CrossFrameworkMapping)).rowcount
+        self.db.flush()
+        if deleted_cfm:
+            logger.info("Cleared %d stale crosswalk mappings before reload", deleted_cfm)
         for xw_fp, xw_data in xw_bundles:
             self._load_crosswalk(xw_fp.name, xw_data, stats)
 
