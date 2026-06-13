@@ -332,7 +332,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
         <div class="infer-filter-row">
           <mat-form-field appearance="outline" class="infer-project-field" subscriptSizing="dynamic">
             <mat-label>Project scope</mat-label>
-            <mat-select [(ngModel)]="inferProjectId" (ngModelChange)="onInferProjectChange()">
+            <mat-select [ngModel]="inferProjectId()" (ngModelChange)="inferProjectId.set($event)">
               <mat-option value="">Org-wide (all assessments)</mat-option>
               @for (p of projectsQuery.data() ?? []; track p.id) {
                 <mat-option [value]="p.id">{{ p.name }}</mat-option>
@@ -477,7 +477,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     .control-title { font-size: .68rem; opacity: .65; line-height: 1.3; }
     .group-code { font-family: monospace; font-size: .72rem; opacity: .65; }
     html[data-theme='light'] .gap-code { color: #185FA5; }
-    html[data-theme='light'] .gaps-all-covered { background: rgba(29,158,117,0.12); border-color: rgba(29,158,117,0.2); color: #0F6E56; }
+    html[data-theme='light'] .gaps-all-covered { background: #dff0eb; border-color: rgba(29,158,117,0.35); color: #0a5c43; }
 
     /* Mapping chips */
     .mapping-chips { display: flex; flex-wrap: wrap; gap: 4px; }
@@ -547,7 +547,7 @@ export class CoverageComponent {
   showUnmapped    = signal(false)
   page            = signal(0)
   gapProduct      = signal<'framework' | 'operational'>('framework')
-  inferProjectId  = ''
+  inferProjectId  = signal('')
   openInferred    = signal<Record<string, boolean>>({})
   readonly rowsPerPage = ROWS_PER_PAGE
 
@@ -586,9 +586,9 @@ export class CoverageComponent {
   }))
 
   inferredQuery = injectQuery(() => ({
-    queryKey: ['coverage-inferred', this.inferProjectId],
+    queryKey: ['coverage-inferred', this.inferProjectId()],
     queryFn: () => fetch(
-      `/api/v1/coverage/multi-framework${this.inferProjectId ? '?project_id=' + this.inferProjectId : ''}`,
+      `/api/v1/coverage/multi-framework${this.inferProjectId() ? '?project_id=' + this.inferProjectId() : ''}`,
       { headers: { Authorization: 'Bearer ' + (this.tokenStore.get() ?? '') } }
     ).then(r => r.json()) as Promise<{ assessed_controls: number; frameworks: InferredResult[] }>,
     enabled: this.activeTab() === 1,
@@ -656,5 +656,4 @@ export class CoverageComponent {
   onUnmappedToggle(v: boolean): void { this.showUnmapped.set(v); this.page.set(0) }
   onPage(e: PageEvent): void { this.page.set(e.pageIndex) }
   toggleInferred(code: string): void { this.openInferred.update(m => ({ ...m, [code]: !m[code] })) }
-  onInferProjectChange(): void { /* triggers query re-run via signal */ }
 }
