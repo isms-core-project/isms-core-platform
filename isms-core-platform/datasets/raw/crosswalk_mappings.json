@@ -33901,6 +33901,1486 @@
       "confidence": 0.9,
       "source_reference": "Swiss ISG (RS 128.1) — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
       "notes": "Security policy = standard security requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.7",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0043",
+      "mapping_type": "mitigates",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Threat intelligence informs defence against Reconnaissance tactics"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.7",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0042",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Threat intelligence covers adversary Resource Development tradecraft"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0001",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Timely patching reduces Initial Access via known vulnerabilities"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1190",
+      "mapping_type": "mitigates",
+      "confidence": 0.95,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Patch management directly mitigates Exploit Public-Facing Application (T1190)"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1203",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Patching client software mitigates Exploitation for Client Execution (T1203)"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1068",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Privilege escalation via exploitation is mitigated by OS/software patching"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0005",
+      "mapping_type": "detects",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Monitoring detects Defense Evasion techniques (log tampering, obfuscation)"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0007",
+      "mapping_type": "detects",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Monitoring detects unusual Discovery/enumeration activity"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0008",
+      "mapping_type": "detects",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Network monitoring detects Lateral Movement patterns"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0011",
+      "mapping_type": "detects",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Network monitoring detects Command and Control communication"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.7",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0002",
+      "mapping_type": "mitigates",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Anti-malware controls mitigate malicious Execution tactics"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.7",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1566",
+      "mapping_type": "mitigates",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Anti-malware scanning mitigates Phishing (T1566) payloads"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.7",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1059",
+      "mapping_type": "mitigates",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Script/execution controls limit Command and Scripting Interpreter abuse"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.7",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1486",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Anti-malware mitigates Data Encrypted for Impact (ransomware)"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0008",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Network segmentation limits Lateral Movement"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0011",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Network controls block Command and Control channels"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0010",
+      "mapping_type": "mitigates",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Network controls limit Exfiltration pathways"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1048",
+      "mapping_type": "mitigates",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Egress filtering mitigates Exfiltration Over Alternative Protocol"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.23",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0001",
+      "mapping_type": "mitigates",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Web filtering blocks malicious Initial Access vectors"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.23",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1566",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Web filtering blocks Phishing URLs and malicious attachments"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.23",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0011",
+      "mapping_type": "mitigates",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Web filtering blocks known C2 domains and infrastructure"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.12",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0010",
+      "mapping_type": "mitigates",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "DLP directly mitigates Exfiltration tactics"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.12",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1048",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "DLP mitigates Exfiltration Over Alternative Protocol (T1048)"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.12",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1041",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "DLP mitigates Exfiltration Over C2 Channel (T1041)"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.15",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0003",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Access control limits attacker ability to establish Persistence"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.15",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0004",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Least-privilege access control mitigates Privilege Escalation"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.15",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1078",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Access control and account hygiene mitigates Valid Accounts (T1078)"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.5",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0006",
+      "mapping_type": "mitigates",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Strong authentication controls mitigate Credential Access tactics"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.5",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1110",
+      "mapping_type": "mitigates",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "MFA and account lockout mitigates Brute Force (T1110)"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.5",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1558",
+      "mapping_type": "mitigates",
+      "confidence": 0.75,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Strong Kerberos configuration mitigates Steal or Forge Kerberos Tickets"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.2",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0004",
+      "mapping_type": "mitigates",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Privileged access management directly mitigates Privilege Escalation"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.2",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1068",
+      "mapping_type": "mitigates",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "PAM reduces impact of Exploitation for Privilege Escalation"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.13",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0040",
+      "mapping_type": "mitigates",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Backups mitigate destructive Impact tactics (ransomware, wipers)"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.13",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "T1486",
+      "mapping_type": "mitigates",
+      "confidence": 0.95,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Immutable backups are the primary mitigation for Data Encrypted for Impact"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.29",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0040",
+      "mapping_type": "mitigates",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "BC planning mitigates operational Impact from destructive attacks"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "MITRE_ATTACK_V19",
+      "target_id": "TA0005",
+      "mapping_type": "detects",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Audit logging detects Defense Evasion attempts including log tampering"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.25",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Secure development lifecycle requirements align with ASVS Architecture chapter"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.27",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Secure system architecture principles align with ASVS V1"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.16",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Identity management requirements align with ASVS Authentication chapter"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.17",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Authentication information controls align with ASVS V2"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.5",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Secure authentication controls align directly with ASVS V2"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.17",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Authentication information controls include session credential protection"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.5",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V3",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Secure authentication includes session management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.15",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V4",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Access control policy directly aligns with ASVS V4 Access Control"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.2",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V4",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Privileged access rights management aligns with ASVS V4"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.25",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V5",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Secure SDLC requires input validation per ASVS V5"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.27",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V5",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Secure architecture principles include input validation requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V6",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Use of cryptography directly aligns with ASVS V6 Stored Cryptography"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V7",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Logging controls align directly with ASVS V7 Error Handling and Logging"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V7",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Monitoring activities require comprehensive logging per ASVS V7"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.12",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V8",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Data leakage prevention aligns with ASVS V8 Data Protection"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.12",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V8",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Classification of information aligns with ASVS V8 data sensitivity handling"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V9",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Network security controls align with ASVS V9 Communication requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V9",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Cryptography controls include TLS/transport security per ASVS V9"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.7",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V10",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Protection against malware aligns with ASVS V10 Malicious Code chapter"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.27",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V13",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Secure architecture includes secure API design per ASVS V13"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V13",
+      "mapping_type": "maps-to",
+      "confidence": 0.75,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Network security includes API security controls per ASVS V13"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.9",
+      "target_framework": "OWASP_ASVS_5.0",
+      "target_id": "V14",
+      "mapping_type": "maps-to",
+      "confidence": 0.95,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Configuration management directly aligns with ASVS V14 Configuration"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.29",
+      "target_framework": "FINMA",
+      "target_id": "P1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.29 supports FINMA 2023/1 P1 Operational Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.30",
+      "target_framework": "FINMA",
+      "target_id": "P1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.30 supports FINMA 2023/1 P1 Operational Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "FINMA",
+      "target_id": "P1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.16 supports FINMA 2023/1 P1 Operational Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "FINMA",
+      "target_id": "P1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.15 supports FINMA 2023/1 P1 Operational Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "FINMA",
+      "target_id": "P2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.8 satisfies FINMA 2023/1 P2 ICT Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.9",
+      "target_framework": "FINMA",
+      "target_id": "P2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.9 satisfies FINMA 2023/1 P2 ICT Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "FINMA",
+      "target_id": "P2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.20 satisfies FINMA 2023/1 P2 ICT Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "FINMA",
+      "target_id": "P2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.16 satisfies FINMA 2023/1 P2 ICT Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.15",
+      "target_framework": "FINMA",
+      "target_id": "P2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.15 satisfies FINMA 2023/1 P2 ICT Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.5",
+      "target_framework": "FINMA",
+      "target_id": "P2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.5 satisfies FINMA 2023/1 P2 ICT Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.7",
+      "target_framework": "FINMA",
+      "target_id": "P3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.7 satisfies FINMA 2023/1 P3 Cyber Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "FINMA",
+      "target_id": "P3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.16 satisfies FINMA 2023/1 P3 Cyber Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.23",
+      "target_framework": "FINMA",
+      "target_id": "P3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.23 satisfies FINMA 2023/1 P3 Cyber Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.7",
+      "target_framework": "FINMA",
+      "target_id": "P3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.7 satisfies FINMA 2023/1 P3 Cyber Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.12",
+      "target_framework": "FINMA",
+      "target_id": "P3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.12 satisfies FINMA 2023/1 P3 Cyber Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.9",
+      "target_framework": "FINMA",
+      "target_id": "P4",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.9 satisfies FINMA 2023/1 P4 Critical Data Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.10",
+      "target_framework": "FINMA",
+      "target_id": "P4",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.10 satisfies FINMA 2023/1 P4 Critical Data Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.12",
+      "target_framework": "FINMA",
+      "target_id": "P4",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.12 satisfies FINMA 2023/1 P4 Critical Data Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.12",
+      "target_framework": "FINMA",
+      "target_id": "P4",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.12 satisfies FINMA 2023/1 P4 Critical Data Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "FINMA",
+      "target_id": "P4",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.24 satisfies FINMA 2023/1 P4 Critical Data Risk Management requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.30",
+      "target_framework": "FINMA",
+      "target_id": "P5",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.30 satisfies FINMA 2023/1 P5 Business Continuity requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.13",
+      "target_framework": "FINMA",
+      "target_id": "P5",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.13 satisfies FINMA 2023/1 P5 Business Continuity requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.14",
+      "target_framework": "FINMA",
+      "target_id": "P5",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.14 satisfies FINMA 2023/1 P5 Business Continuity requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.29",
+      "target_framework": "FINMA",
+      "target_id": "P7",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.29 contributes to FINMA 2023/1 P7 Operational Resilience"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.13",
+      "target_framework": "FINMA",
+      "target_id": "P7",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.13 contributes to FINMA 2023/1 P7 Operational Resilience"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.14",
+      "target_framework": "FINMA",
+      "target_id": "P7",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.14 contributes to FINMA 2023/1 P7 Operational Resilience"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "FINMA",
+      "target_id": "P7",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.16 contributes to FINMA 2023/1 P7 Operational Resilience"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.19",
+      "target_framework": "FINMA",
+      "target_id": "DEF",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.19 aligns with FINMA 2018/3 outsourcing definition scope"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.19",
+      "target_framework": "FINMA",
+      "target_id": "V.B",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.19 aligns with FINMA 2018/3 V.B selection and monitoring requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.19",
+      "target_framework": "FINMA",
+      "target_id": "V.D",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.19 aligns with FINMA 2018/3 V.D responsibility requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.19",
+      "target_framework": "FINMA",
+      "target_id": "V.H",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.19 aligns with FINMA 2018/3 V.H agreement requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.20",
+      "target_framework": "FINMA",
+      "target_id": "DEF",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.20 aligns with FINMA 2018/3 outsourcing definition scope"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.20",
+      "target_framework": "FINMA",
+      "target_id": "V.A",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.20 aligns with FINMA 2018/3 V.A inventory of outsourced functions"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.20",
+      "target_framework": "FINMA",
+      "target_id": "V.D",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.20 aligns with FINMA 2018/3 V.D responsibility requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "FINMA",
+      "target_id": "DEF",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.21 aligns with FINMA 2018/3 outsourcing definition scope"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "FINMA",
+      "target_id": "V.A",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.21 aligns with FINMA 2018/3 V.A inventory of outsourced functions"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "FINMA",
+      "target_id": "V.B",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.21 aligns with FINMA 2018/3 V.B selection and monitoring requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "FINMA",
+      "target_id": "V.D",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.21 aligns with FINMA 2018/3 V.D responsibility requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "FINMA",
+      "target_id": "V.H",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.21 aligns with FINMA 2018/3 V.H agreement requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "FINMA",
+      "target_id": "V.E",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Network security requirements align with FINMA 2018/3 V.E Security"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.5",
+      "target_framework": "FINMA",
+      "target_id": "V.E",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "Secure authentication requirements align with FINMA 2018/3 V.E Security"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.7",
+      "target_framework": "FINMA",
+      "target_id": "G1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.7 supports FINMA Guidance 03/2024 G1 Cyber Governance requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "FINMA",
+      "target_id": "G1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.16 supports FINMA Guidance 03/2024 G1 Cyber Governance requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.7",
+      "target_framework": "FINMA",
+      "target_id": "G2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.7 satisfies FINMA Guidance 03/2024 G2 Protective Measures"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.9",
+      "target_framework": "FINMA",
+      "target_id": "G2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.9 satisfies FINMA Guidance 03/2024 G2 Protective Measures"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "FINMA",
+      "target_id": "G2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.20 satisfies FINMA Guidance 03/2024 G2 Protective Measures"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.23",
+      "target_framework": "FINMA",
+      "target_id": "G2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.23 satisfies FINMA Guidance 03/2024 G2 Protective Measures"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.5",
+      "target_framework": "FINMA",
+      "target_id": "G2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.5 satisfies FINMA Guidance 03/2024 G2 Protective Measures"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.15",
+      "target_framework": "FINMA",
+      "target_id": "G2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.15 satisfies FINMA Guidance 03/2024 G2 Protective Measures"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "FINMA",
+      "target_id": "G3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.16 satisfies FINMA Guidance 03/2024 G3 Detection, Response and Recovery"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "FINMA",
+      "target_id": "G3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.15 satisfies FINMA Guidance 03/2024 G3 Detection, Response and Recovery"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.29",
+      "target_framework": "FINMA",
+      "target_id": "G3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.5.29 satisfies FINMA Guidance 03/2024 G3 Detection, Response and Recovery"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.13",
+      "target_framework": "FINMA",
+      "target_id": "G3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISMS CORE mapping — see add_mitre_owasp_finma_mappings.py",
+      "notes": "A.8.13 satisfies FINMA Guidance 03/2024 G3 Detection, Response and Recovery"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.3",
+      "target_framework": "CH_NDSG",
+      "target_id": "GEN.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Lawful basis for processing"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.4",
+      "target_framework": "CH_NDSG",
+      "target_id": "GEN.1",
+      "mapping_type": "supports",
+      "confidence": 0.8,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Consent as lawful basis"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.2",
+      "target_framework": "CH_NDSG",
+      "target_id": "GEN.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Purpose limitation — identify and document purpose"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.3",
+      "target_framework": "CH_NDSG",
+      "target_id": "GEN.2",
+      "mapping_type": "supports",
+      "confidence": 0.8,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Processor purpose limitation"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.2",
+      "target_framework": "CH_NDSG",
+      "target_id": "GEN.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Data minimisation — limit collection"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.5",
+      "target_framework": "CH_NDSG",
+      "target_id": "GEN.3",
+      "mapping_type": "supports",
+      "confidence": 0.85,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "PII minimisation objectives"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.4",
+      "target_framework": "CH_NDSG",
+      "target_id": "GEN.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Accuracy and quality of PII"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.8",
+      "target_framework": "CH_NDSG",
+      "target_id": "GEN.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Retention — storage limitation"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.9",
+      "target_framework": "CH_NDSG",
+      "target_id": "GEN.5",
+      "mapping_type": "supports",
+      "confidence": 0.85,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Disposal — end of storage period"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.3",
+      "target_framework": "CH_NDSG",
+      "target_id": "DSR.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Determine information for PII principals"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.4",
+      "target_framework": "CH_NDSG",
+      "target_id": "DSR.1",
+      "mapping_type": "supports",
+      "confidence": 0.85,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Provide information to PII principals"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.7",
+      "target_framework": "CH_NDSG",
+      "target_id": "DSR.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Access, correction or erasure"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.9",
+      "target_framework": "CH_NDSG",
+      "target_id": "DSR.2",
+      "mapping_type": "supports",
+      "confidence": 0.8,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Providing copy of PII processed"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.5",
+      "target_framework": "CH_NDSG",
+      "target_id": "DSR.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Mechanism to modify or withdraw consent"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.6",
+      "target_framework": "CH_NDSG",
+      "target_id": "DSR.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "PII de-identification and deletion"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.9",
+      "target_framework": "CH_NDSG",
+      "target_id": "DSR.5",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Providing copy of PII — portability"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.10",
+      "target_framework": "CH_NDSG",
+      "target_id": "DSR.5",
+      "mapping_type": "supports",
+      "confidence": 0.8,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "PII transmission controls — portability"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.11",
+      "target_framework": "CH_NDSG",
+      "target_id": "DSR.6",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Automated decision making"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.3",
+      "target_framework": "CH_NDSG",
+      "target_id": "CON.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Limit processing — privacy by default"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.5",
+      "target_framework": "CH_NDSG",
+      "target_id": "CON.1",
+      "mapping_type": "supports",
+      "confidence": 0.8,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "PII minimisation — privacy by design"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.7",
+      "target_framework": "CH_NDSG",
+      "target_id": "CON.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Contracts with PII processors"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.2",
+      "target_framework": "CH_NDSG",
+      "target_id": "CON.2",
+      "mapping_type": "supports",
+      "confidence": 0.8,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Customer agreement — processor obligations"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.9",
+      "target_framework": "CH_NDSG",
+      "target_id": "CON.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Records related to processing PII"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.7",
+      "target_framework": "CH_NDSG",
+      "target_id": "CON.3",
+      "mapping_type": "supports",
+      "confidence": 0.8,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Processor records of processing"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.6",
+      "target_framework": "CH_NDSG",
+      "target_id": "CON.4",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Privacy impact assessment → DPIA"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.2",
+      "target_framework": "CH_NDSG",
+      "target_id": "XFR.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Identify basis for PII transfer between jurisdictions"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.2",
+      "target_framework": "CH_NDSG",
+      "target_id": "XFR.1",
+      "mapping_type": "supports",
+      "confidence": 0.8,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Processor transfer basis"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.3",
+      "target_framework": "CH_NDSG",
+      "target_id": "XFR.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Countries to which PII can be transferred"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.3",
+      "target_framework": "CH_NDSG",
+      "target_id": "XFR.2",
+      "mapping_type": "supports",
+      "confidence": 0.8,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Processor — countries for PII transfer"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.4",
+      "target_framework": "CH_NDSG",
+      "target_id": "XFR.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Records of transfer — derogation basis"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.10",
+      "target_framework": "CH_NDSG",
+      "target_id": "SEC.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "PII transmission controls — TOM"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.4.4",
+      "target_framework": "CH_NDSG",
+      "target_id": "SEC.1",
+      "mapping_type": "supports",
+      "confidence": 0.8,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Processor PII transmission controls"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.5",
+      "target_framework": "CH_NDSG",
+      "target_id": "SEC.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Notification of PII disclosure requests"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.8",
+      "target_framework": "CH_NDSG",
+      "target_id": "SEC.3",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Obligations to inform third parties"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.5",
+      "target_framework": "CH_NDSG",
+      "target_id": "ENF.2",
+      "mapping_type": "maps-to",
+      "confidence": 0.85,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Records of PII disclosures — accountability"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.7",
+      "target_framework": "CH_NDSG",
+      "target_id": "ENF.2",
+      "mapping_type": "supports",
+      "confidence": 0.8,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Processor records — accountability"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.6",
+      "target_framework": "CH_NDSG",
+      "target_id": "ENF.1",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "ISO 27701:2025 Annex A alignment with Swiss nFADP (nDSG)",
+      "notes": "Legally binding PII disclosures — FDPIC cooperation"
     }
   ]
 }
